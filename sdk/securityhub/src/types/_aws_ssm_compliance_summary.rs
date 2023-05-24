@@ -2,7 +2,7 @@
 
 /// <p>Provides the details about the compliance status for a patch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSsmComplianceSummary {
     /// <p>The current patch compliance status. Valid values are as follows:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct AwsSsmComplianceSummary {
     /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>For the patches that are compliant, the number that have a severity of <code>CRITICAL</code>.</p>
     #[doc(hidden)]
     pub compliant_critical_count: i32,
@@ -23,7 +23,7 @@ pub struct AwsSsmComplianceSummary {
     pub compliant_medium_count: i32,
     /// <p>The type of execution that was used determine compliance.</p>
     #[doc(hidden)]
-    pub execution_type: std::option::Option<std::string::String>,
+    pub execution_type: ::std::option::Option<::std::string::String>,
     /// <p>For the patch items that are noncompliant, the number of items that have a severity of <code>CRITICAL</code>.</p>
     #[doc(hidden)]
     pub non_compliant_critical_count: i32,
@@ -47,10 +47,10 @@ pub struct AwsSsmComplianceSummary {
     pub compliant_low_count: i32,
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
     #[doc(hidden)]
-    pub compliance_type: std::option::Option<std::string::String>,
+    pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
     #[doc(hidden)]
-    pub patch_baseline_id: std::option::Option<std::string::String>,
+    pub patch_baseline_id: ::std::option::Option<::std::string::String>,
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>CRITICAL</code> </p> </li>
@@ -61,7 +61,7 @@ pub struct AwsSsmComplianceSummary {
     /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub overall_severity: std::option::Option<std::string::String>,
+    pub overall_severity: ::std::option::Option<::std::string::String>,
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
     #[doc(hidden)]
     pub non_compliant_medium_count: i32,
@@ -70,7 +70,7 @@ pub struct AwsSsmComplianceSummary {
     pub non_compliant_unspecified_count: i32,
     /// <p>The identifier of the patch group for which compliance was determined. A patch group uses tags to group EC2 instances that should have the same patch compliance.</p>
     #[doc(hidden)]
-    pub patch_group: std::option::Option<std::string::String>,
+    pub patch_group: ::std::option::Option<::std::string::String>,
 }
 impl AwsSsmComplianceSummary {
     /// <p>The current patch compliance status. Valid values are as follows:</p>
@@ -79,7 +79,7 @@ impl AwsSsmComplianceSummary {
     /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>CRITICAL</code>.</p>
@@ -95,7 +95,7 @@ impl AwsSsmComplianceSummary {
         self.compliant_medium_count
     }
     /// <p>The type of execution that was used determine compliance.</p>
-    pub fn execution_type(&self) -> std::option::Option<&str> {
+    pub fn execution_type(&self) -> ::std::option::Option<&str> {
         self.execution_type.as_deref()
     }
     /// <p>For the patch items that are noncompliant, the number of items that have a severity of <code>CRITICAL</code>.</p>
@@ -127,11 +127,11 @@ impl AwsSsmComplianceSummary {
         self.compliant_low_count
     }
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
-    pub fn compliance_type(&self) -> std::option::Option<&str> {
+    pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
-    pub fn patch_baseline_id(&self) -> std::option::Option<&str> {
+    pub fn patch_baseline_id(&self) -> ::std::option::Option<&str> {
         self.patch_baseline_id.as_deref()
     }
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
@@ -143,7 +143,7 @@ impl AwsSsmComplianceSummary {
     /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
-    pub fn overall_severity(&self) -> std::option::Option<&str> {
+    pub fn overall_severity(&self) -> ::std::option::Option<&str> {
         self.overall_severity.as_deref()
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
@@ -155,7 +155,7 @@ impl AwsSsmComplianceSummary {
         self.non_compliant_unspecified_count
     }
     /// <p>The identifier of the patch group for which compliance was determined. A patch group uses tags to group EC2 instances that should have the same patch compliance.</p>
-    pub fn patch_group(&self) -> std::option::Option<&str> {
+    pub fn patch_group(&self) -> ::std::option::Option<&str> {
         self.patch_group.as_deref()
     }
 }
@@ -168,26 +168,28 @@ impl AwsSsmComplianceSummary {
 
 /// A builder for [`AwsSsmComplianceSummary`](crate::types::AwsSsmComplianceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsSsmComplianceSummaryBuilder {
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) compliant_critical_count: std::option::Option<i32>,
-    pub(crate) compliant_high_count: std::option::Option<i32>,
-    pub(crate) compliant_medium_count: std::option::Option<i32>,
-    pub(crate) execution_type: std::option::Option<std::string::String>,
-    pub(crate) non_compliant_critical_count: std::option::Option<i32>,
-    pub(crate) compliant_informational_count: std::option::Option<i32>,
-    pub(crate) non_compliant_informational_count: std::option::Option<i32>,
-    pub(crate) compliant_unspecified_count: std::option::Option<i32>,
-    pub(crate) non_compliant_low_count: std::option::Option<i32>,
-    pub(crate) non_compliant_high_count: std::option::Option<i32>,
-    pub(crate) compliant_low_count: std::option::Option<i32>,
-    pub(crate) compliance_type: std::option::Option<std::string::String>,
-    pub(crate) patch_baseline_id: std::option::Option<std::string::String>,
-    pub(crate) overall_severity: std::option::Option<std::string::String>,
-    pub(crate) non_compliant_medium_count: std::option::Option<i32>,
-    pub(crate) non_compliant_unspecified_count: std::option::Option<i32>,
-    pub(crate) patch_group: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) compliant_critical_count: ::std::option::Option<i32>,
+    pub(crate) compliant_high_count: ::std::option::Option<i32>,
+    pub(crate) compliant_medium_count: ::std::option::Option<i32>,
+    pub(crate) execution_type: ::std::option::Option<::std::string::String>,
+    pub(crate) non_compliant_critical_count: ::std::option::Option<i32>,
+    pub(crate) compliant_informational_count: ::std::option::Option<i32>,
+    pub(crate) non_compliant_informational_count: ::std::option::Option<i32>,
+    pub(crate) compliant_unspecified_count: ::std::option::Option<i32>,
+    pub(crate) non_compliant_low_count: ::std::option::Option<i32>,
+    pub(crate) non_compliant_high_count: ::std::option::Option<i32>,
+    pub(crate) compliant_low_count: ::std::option::Option<i32>,
+    pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) patch_baseline_id: ::std::option::Option<::std::string::String>,
+    pub(crate) overall_severity: ::std::option::Option<::std::string::String>,
+    pub(crate) non_compliant_medium_count: ::std::option::Option<i32>,
+    pub(crate) non_compliant_unspecified_count: ::std::option::Option<i32>,
+    pub(crate) patch_group: ::std::option::Option<::std::string::String>,
 }
 impl AwsSsmComplianceSummaryBuilder {
     /// <p>The current patch compliance status. Valid values are as follows:</p>
@@ -196,8 +198,8 @@ impl AwsSsmComplianceSummaryBuilder {
     /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current patch compliance status. Valid values are as follows:</p>
@@ -206,142 +208,157 @@ impl AwsSsmComplianceSummaryBuilder {
     /// <li> <p> <code>NON_COMPLIANT</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED_DATA</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>CRITICAL</code>.</p>
     pub fn compliant_critical_count(mut self, input: i32) -> Self {
-        self.compliant_critical_count = Some(input);
+        self.compliant_critical_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>CRITICAL</code>.</p>
-    pub fn set_compliant_critical_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_critical_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_critical_count = input;
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>HIGH</code>.</p>
     pub fn compliant_high_count(mut self, input: i32) -> Self {
-        self.compliant_high_count = Some(input);
+        self.compliant_high_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>HIGH</code>.</p>
-    pub fn set_compliant_high_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_high_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_high_count = input;
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>MEDIUM</code>.</p>
     pub fn compliant_medium_count(mut self, input: i32) -> Self {
-        self.compliant_medium_count = Some(input);
+        self.compliant_medium_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>MEDIUM</code>.</p>
-    pub fn set_compliant_medium_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_medium_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_medium_count = input;
         self
     }
     /// <p>The type of execution that was used determine compliance.</p>
-    pub fn execution_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_type = Some(input.into());
+    pub fn execution_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of execution that was used determine compliance.</p>
-    pub fn set_execution_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.execution_type = input;
         self
     }
     /// <p>For the patch items that are noncompliant, the number of items that have a severity of <code>CRITICAL</code>.</p>
     pub fn non_compliant_critical_count(mut self, input: i32) -> Self {
-        self.non_compliant_critical_count = Some(input);
+        self.non_compliant_critical_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patch items that are noncompliant, the number of items that have a severity of <code>CRITICAL</code>.</p>
-    pub fn set_non_compliant_critical_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_compliant_critical_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_critical_count = input;
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
     pub fn compliant_informational_count(mut self, input: i32) -> Self {
-        self.compliant_informational_count = Some(input);
+        self.compliant_informational_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
-    pub fn set_compliant_informational_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_informational_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_informational_count = input;
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
     pub fn non_compliant_informational_count(mut self, input: i32) -> Self {
-        self.non_compliant_informational_count = Some(input);
+        self.non_compliant_informational_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>INFORMATIONAL</code>.</p>
     pub fn set_non_compliant_informational_count(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.non_compliant_informational_count = input;
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
     pub fn compliant_unspecified_count(mut self, input: i32) -> Self {
-        self.compliant_unspecified_count = Some(input);
+        self.compliant_unspecified_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    pub fn set_compliant_unspecified_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_unspecified_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_unspecified_count = input;
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>LOW</code>.</p>
     pub fn non_compliant_low_count(mut self, input: i32) -> Self {
-        self.non_compliant_low_count = Some(input);
+        self.non_compliant_low_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>LOW</code>.</p>
-    pub fn set_non_compliant_low_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_compliant_low_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_low_count = input;
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>HIGH</code>.</p>
     pub fn non_compliant_high_count(mut self, input: i32) -> Self {
-        self.non_compliant_high_count = Some(input);
+        self.non_compliant_high_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>HIGH</code>.</p>
-    pub fn set_non_compliant_high_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_compliant_high_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_high_count = input;
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>LOW</code>.</p>
     pub fn compliant_low_count(mut self, input: i32) -> Self {
-        self.compliant_low_count = Some(input);
+        self.compliant_low_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are compliant, the number that have a severity of <code>LOW</code>.</p>
-    pub fn set_compliant_low_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_low_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_low_count = input;
         self
     }
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
-    pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compliance_type = Some(input.into());
+    pub fn compliance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource for which the compliance was determined. For <code>AwsSsmPatchCompliance</code>, <code>ComplianceType</code> is <code>Patch</code>. </p>
-    pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_compliance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.compliance_type = input;
         self
     }
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
-    pub fn patch_baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.patch_baseline_id = Some(input.into());
+    pub fn patch_baseline_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.patch_baseline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the patch baseline. The patch baseline lists the patches that are approved for installation.</p>
     pub fn set_patch_baseline_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.patch_baseline_id = input;
         self
@@ -355,8 +372,11 @@ impl AwsSsmComplianceSummaryBuilder {
     /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
-    pub fn overall_severity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.overall_severity = Some(input.into());
+    pub fn overall_severity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.overall_severity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The highest severity for the patches. Valid values are as follows:</p>
@@ -368,37 +388,43 @@ impl AwsSsmComplianceSummaryBuilder {
     /// <li> <p> <code>INFORMATIONAL</code> </p> </li>
     /// <li> <p> <code>UNSPECIFIED</code> </p> </li>
     /// </ul>
-    pub fn set_overall_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_overall_severity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.overall_severity = input;
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
     pub fn non_compliant_medium_count(mut self, input: i32) -> Self {
-        self.non_compliant_medium_count = Some(input);
+        self.non_compliant_medium_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>MEDIUM</code>.</p>
-    pub fn set_non_compliant_medium_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_compliant_medium_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_medium_count = input;
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
     pub fn non_compliant_unspecified_count(mut self, input: i32) -> Self {
-        self.non_compliant_unspecified_count = Some(input);
+        self.non_compliant_unspecified_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>For the patches that are noncompliant, the number that have a severity of <code>UNSPECIFIED</code>.</p>
-    pub fn set_non_compliant_unspecified_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_compliant_unspecified_count(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.non_compliant_unspecified_count = input;
         self
     }
     /// <p>The identifier of the patch group for which compliance was determined. A patch group uses tags to group EC2 instances that should have the same patch compliance.</p>
-    pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.patch_group = Some(input.into());
+    pub fn patch_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.patch_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the patch group for which compliance was determined. A patch group uses tags to group EC2 instances that should have the same patch compliance.</p>
-    pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_patch_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.patch_group = input;
         self
     }

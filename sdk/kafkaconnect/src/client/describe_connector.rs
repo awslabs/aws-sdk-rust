@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConnector`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connector_arn(impl Into<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::connector_arn) / [`set_connector_arn(Option<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::set_connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
+    ///   - [`connector_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::connector_arn) / [`set_connector_arn(Option<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::set_connector_arn): <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
     /// - On success, responds with [`DescribeConnectorOutput`](crate::operation::describe_connector::DescribeConnectorOutput) with field(s):
     ///   - [`capacity(Option<CapacityDescription>)`](crate::operation::describe_connector::DescribeConnectorOutput::capacity): <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
     ///   - [`connector_arn(Option<String>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector_arn): <p>The Amazon Resource Name (ARN) of the connector.</p>

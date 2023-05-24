@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelBatchJobExecution`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::set_application_id): <p>The unique identifier of the application.</p>
-    ///   - [`execution_id(impl Into<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::execution_id) / [`set_execution_id(Option<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::set_execution_id): <p>The unique identifier of the batch job execution.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::set_application_id): <p>The unique identifier of the application.</p>
+    ///   - [`execution_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::execution_id) / [`set_execution_id(Option<String>)`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionFluentBuilder::set_execution_id): <p>The unique identifier of the batch job execution.</p>
     /// - On success, responds with [`CancelBatchJobExecutionOutput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionOutput)
     /// - On failure, responds with [`SdkError<CancelBatchJobExecutionError>`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionError)
     pub fn cancel_batch_job_execution(

@@ -2,22 +2,22 @@
 
 /// <p>Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberFabricAttributes {
     /// <p>The user name for the initial administrator user for the member.</p>
     #[doc(hidden)]
-    pub admin_username: std::option::Option<std::string::String>,
+    pub admin_username: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint used to access the member's certificate authority.</p>
     #[doc(hidden)]
-    pub ca_endpoint: std::option::Option<std::string::String>,
+    pub ca_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl MemberFabricAttributes {
     /// <p>The user name for the initial administrator user for the member.</p>
-    pub fn admin_username(&self) -> std::option::Option<&str> {
+    pub fn admin_username(&self) -> ::std::option::Option<&str> {
         self.admin_username.as_deref()
     }
     /// <p>The endpoint used to access the member's certificate authority.</p>
-    pub fn ca_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ca_endpoint(&self) -> ::std::option::Option<&str> {
         self.ca_endpoint.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl MemberFabricAttributes {
 
 /// A builder for [`MemberFabricAttributes`](crate::types::MemberFabricAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberFabricAttributesBuilder {
-    pub(crate) admin_username: std::option::Option<std::string::String>,
-    pub(crate) ca_endpoint: std::option::Option<std::string::String>,
+    pub(crate) admin_username: ::std::option::Option<::std::string::String>,
+    pub(crate) ca_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl MemberFabricAttributesBuilder {
     /// <p>The user name for the initial administrator user for the member.</p>
-    pub fn admin_username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.admin_username = Some(input.into());
+    pub fn admin_username(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.admin_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name for the initial administrator user for the member.</p>
-    pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_admin_username(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.admin_username = input;
         self
     }
     /// <p>The endpoint used to access the member's certificate authority.</p>
-    pub fn ca_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ca_endpoint = Some(input.into());
+    pub fn ca_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ca_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint used to access the member's certificate authority.</p>
-    pub fn set_ca_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ca_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ca_endpoint = input;
         self
     }

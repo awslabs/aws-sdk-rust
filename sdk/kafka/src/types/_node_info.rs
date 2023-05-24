@@ -2,50 +2,50 @@
 
 /// <p>The node information object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInfo {
     /// <p>The start time.</p>
     #[doc(hidden)]
-    pub added_to_cluster_time: std::option::Option<std::string::String>,
+    pub added_to_cluster_time: ::std::option::Option<::std::string::String>,
     /// <p>The broker node info.</p>
     #[doc(hidden)]
-    pub broker_node_info: std::option::Option<crate::types::BrokerNodeInfo>,
+    pub broker_node_info: ::std::option::Option<crate::types::BrokerNodeInfo>,
     /// <p>The instance type.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the node.</p>
     #[doc(hidden)]
-    pub node_arn: std::option::Option<std::string::String>,
+    pub node_arn: ::std::option::Option<::std::string::String>,
     /// <p>The node type.</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<crate::types::NodeType>,
+    pub node_type: ::std::option::Option<crate::types::NodeType>,
     /// <p>The ZookeeperNodeInfo.</p>
     #[doc(hidden)]
-    pub zookeeper_node_info: std::option::Option<crate::types::ZookeeperNodeInfo>,
+    pub zookeeper_node_info: ::std::option::Option<crate::types::ZookeeperNodeInfo>,
 }
 impl NodeInfo {
     /// <p>The start time.</p>
-    pub fn added_to_cluster_time(&self) -> std::option::Option<&str> {
+    pub fn added_to_cluster_time(&self) -> ::std::option::Option<&str> {
         self.added_to_cluster_time.as_deref()
     }
     /// <p>The broker node info.</p>
-    pub fn broker_node_info(&self) -> std::option::Option<&crate::types::BrokerNodeInfo> {
+    pub fn broker_node_info(&self) -> ::std::option::Option<&crate::types::BrokerNodeInfo> {
         self.broker_node_info.as_ref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the node.</p>
-    pub fn node_arn(&self) -> std::option::Option<&str> {
+    pub fn node_arn(&self) -> ::std::option::Option<&str> {
         self.node_arn.as_deref()
     }
     /// <p>The node type.</p>
-    pub fn node_type(&self) -> std::option::Option<&crate::types::NodeType> {
+    pub fn node_type(&self) -> ::std::option::Option<&crate::types::NodeType> {
         self.node_type.as_ref()
     }
     /// <p>The ZookeeperNodeInfo.</p>
-    pub fn zookeeper_node_info(&self) -> std::option::Option<&crate::types::ZookeeperNodeInfo> {
+    pub fn zookeeper_node_info(&self) -> ::std::option::Option<&crate::types::ZookeeperNodeInfo> {
         self.zookeeper_node_info.as_ref()
     }
 }
@@ -58,81 +58,92 @@ impl NodeInfo {
 
 /// A builder for [`NodeInfo`](crate::types::NodeInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeInfoBuilder {
-    pub(crate) added_to_cluster_time: std::option::Option<std::string::String>,
-    pub(crate) broker_node_info: std::option::Option<crate::types::BrokerNodeInfo>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) node_arn: std::option::Option<std::string::String>,
-    pub(crate) node_type: std::option::Option<crate::types::NodeType>,
-    pub(crate) zookeeper_node_info: std::option::Option<crate::types::ZookeeperNodeInfo>,
+    pub(crate) added_to_cluster_time: ::std::option::Option<::std::string::String>,
+    pub(crate) broker_node_info: ::std::option::Option<crate::types::BrokerNodeInfo>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) node_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) node_type: ::std::option::Option<crate::types::NodeType>,
+    pub(crate) zookeeper_node_info: ::std::option::Option<crate::types::ZookeeperNodeInfo>,
 }
 impl NodeInfoBuilder {
     /// <p>The start time.</p>
-    pub fn added_to_cluster_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.added_to_cluster_time = Some(input.into());
+    pub fn added_to_cluster_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.added_to_cluster_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start time.</p>
     pub fn set_added_to_cluster_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.added_to_cluster_time = input;
         self
     }
     /// <p>The broker node info.</p>
     pub fn broker_node_info(mut self, input: crate::types::BrokerNodeInfo) -> Self {
-        self.broker_node_info = Some(input);
+        self.broker_node_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>The broker node info.</p>
     pub fn set_broker_node_info(
         mut self,
-        input: std::option::Option<crate::types::BrokerNodeInfo>,
+        input: ::std::option::Option<crate::types::BrokerNodeInfo>,
     ) -> Self {
         self.broker_node_info = input;
         self
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the node.</p>
-    pub fn node_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_arn = Some(input.into());
+    pub fn node_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the node.</p>
-    pub fn set_node_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_arn = input;
         self
     }
     /// <p>The node type.</p>
     pub fn node_type(mut self, input: crate::types::NodeType) -> Self {
-        self.node_type = Some(input);
+        self.node_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The node type.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<crate::types::NodeType>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<crate::types::NodeType>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The ZookeeperNodeInfo.</p>
     pub fn zookeeper_node_info(mut self, input: crate::types::ZookeeperNodeInfo) -> Self {
-        self.zookeeper_node_info = Some(input);
+        self.zookeeper_node_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ZookeeperNodeInfo.</p>
     pub fn set_zookeeper_node_info(
         mut self,
-        input: std::option::Option<crate::types::ZookeeperNodeInfo>,
+        input: ::std::option::Option<crate::types::ZookeeperNodeInfo>,
     ) -> Self {
         self.zookeeper_node_info = input;
         self

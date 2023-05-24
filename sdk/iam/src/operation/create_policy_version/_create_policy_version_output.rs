@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreatePolicyVersion</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePolicyVersionOutput {
     /// <p>A structure containing details about the new policy version.</p>
     #[doc(hidden)]
-    pub policy_version: std::option::Option<crate::types::PolicyVersion>,
+    pub policy_version: ::std::option::Option<crate::types::PolicyVersion>,
     _request_id: Option<String>,
 }
 impl CreatePolicyVersionOutput {
     /// <p>A structure containing details about the new policy version.</p>
-    pub fn policy_version(&self) -> std::option::Option<&crate::types::PolicyVersion> {
+    pub fn policy_version(&self) -> ::std::option::Option<&crate::types::PolicyVersion> {
         self.policy_version.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreatePolicyVersionOutput {
+impl ::aws_http::request_id::RequestId for CreatePolicyVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl CreatePolicyVersionOutput {
 
 /// A builder for [`CreatePolicyVersionOutput`](crate::operation::create_policy_version::CreatePolicyVersionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePolicyVersionOutputBuilder {
-    pub(crate) policy_version: std::option::Option<crate::types::PolicyVersion>,
+    pub(crate) policy_version: ::std::option::Option<crate::types::PolicyVersion>,
     _request_id: Option<String>,
 }
 impl CreatePolicyVersionOutputBuilder {
     /// <p>A structure containing details about the new policy version.</p>
     pub fn policy_version(mut self, input: crate::types::PolicyVersion) -> Self {
-        self.policy_version = Some(input);
+        self.policy_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the new policy version.</p>
     pub fn set_policy_version(
         mut self,
-        input: std::option::Option<crate::types::PolicyVersion>,
+        input: ::std::option::Option<crate::types::PolicyVersion>,
     ) -> Self {
         self.policy_version = input;
         self

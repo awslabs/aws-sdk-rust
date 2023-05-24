@@ -2,15 +2,15 @@
 
 /// <p>Provides information to verify the integrity of stored model artifacts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDigests {
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
     #[doc(hidden)]
-    pub artifact_digest: std::option::Option<std::string::String>,
+    pub artifact_digest: ::std::option::Option<::std::string::String>,
 }
 impl ModelDigests {
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
-    pub fn artifact_digest(&self) -> std::option::Option<&str> {
+    pub fn artifact_digest(&self) -> ::std::option::Option<&str> {
         self.artifact_digest.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl ModelDigests {
 
 /// A builder for [`ModelDigests`](crate::types::ModelDigests).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelDigestsBuilder {
-    pub(crate) artifact_digest: std::option::Option<std::string::String>,
+    pub(crate) artifact_digest: ::std::option::Option<::std::string::String>,
 }
 impl ModelDigestsBuilder {
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
-    pub fn artifact_digest(mut self, input: impl Into<std::string::String>) -> Self {
-        self.artifact_digest = Some(input.into());
+    pub fn artifact_digest(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.artifact_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides a hash value that uniquely identifies the stored model artifacts.</p>
-    pub fn set_artifact_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_artifact_digest(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.artifact_digest = input;
         self
     }

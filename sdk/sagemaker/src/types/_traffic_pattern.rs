@@ -2,22 +2,22 @@
 
 /// <p>Defines the traffic pattern of the load test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficPattern {
     /// <p>Defines the traffic patterns.</p>
     #[doc(hidden)]
-    pub traffic_type: std::option::Option<crate::types::TrafficType>,
+    pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
     /// <p>Defines the phases traffic specification.</p>
     #[doc(hidden)]
-    pub phases: std::option::Option<std::vec::Vec<crate::types::Phase>>,
+    pub phases: ::std::option::Option<::std::vec::Vec<crate::types::Phase>>,
 }
 impl TrafficPattern {
     /// <p>Defines the traffic patterns.</p>
-    pub fn traffic_type(&self) -> std::option::Option<&crate::types::TrafficType> {
+    pub fn traffic_type(&self) -> ::std::option::Option<&crate::types::TrafficType> {
         self.traffic_type.as_ref()
     }
     /// <p>Defines the phases traffic specification.</p>
-    pub fn phases(&self) -> std::option::Option<&[crate::types::Phase]> {
+    pub fn phases(&self) -> ::std::option::Option<&[crate::types::Phase]> {
         self.phases.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl TrafficPattern {
 
 /// A builder for [`TrafficPattern`](crate::types::TrafficPattern).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrafficPatternBuilder {
-    pub(crate) traffic_type: std::option::Option<crate::types::TrafficType>,
-    pub(crate) phases: std::option::Option<std::vec::Vec<crate::types::Phase>>,
+    pub(crate) traffic_type: ::std::option::Option<crate::types::TrafficType>,
+    pub(crate) phases: ::std::option::Option<::std::vec::Vec<crate::types::Phase>>,
 }
 impl TrafficPatternBuilder {
     /// <p>Defines the traffic patterns.</p>
     pub fn traffic_type(mut self, input: crate::types::TrafficType) -> Self {
-        self.traffic_type = Some(input);
+        self.traffic_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the traffic patterns.</p>
     pub fn set_traffic_type(
         mut self,
-        input: std::option::Option<crate::types::TrafficType>,
+        input: ::std::option::Option<crate::types::TrafficType>,
     ) -> Self {
         self.traffic_type = input;
         self
@@ -57,13 +59,13 @@ impl TrafficPatternBuilder {
     pub fn phases(mut self, input: crate::types::Phase) -> Self {
         let mut v = self.phases.unwrap_or_default();
         v.push(input);
-        self.phases = Some(v);
+        self.phases = ::std::option::Option::Some(v);
         self
     }
     /// <p>Defines the phases traffic specification.</p>
     pub fn set_phases(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Phase>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Phase>>,
     ) -> Self {
         self.phases = input;
         self

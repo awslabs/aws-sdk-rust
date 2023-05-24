@@ -3,15 +3,15 @@
 /// <p>An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p>
 /// <p>These images and links include references to a domain operated by Amazon Web Services. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingOptions {
     /// <p>The domain to use for tracking open and click events.</p>
     #[doc(hidden)]
-    pub custom_redirect_domain: std::option::Option<std::string::String>,
+    pub custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
 impl TrackingOptions {
     /// <p>The domain to use for tracking open and click events.</p>
-    pub fn custom_redirect_domain(&self) -> std::option::Option<&str> {
+    pub fn custom_redirect_domain(&self) -> ::std::option::Option<&str> {
         self.custom_redirect_domain.as_deref()
     }
 }
@@ -24,20 +24,25 @@ impl TrackingOptions {
 
 /// A builder for [`TrackingOptions`](crate::types::TrackingOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrackingOptionsBuilder {
-    pub(crate) custom_redirect_domain: std::option::Option<std::string::String>,
+    pub(crate) custom_redirect_domain: ::std::option::Option<::std::string::String>,
 }
 impl TrackingOptionsBuilder {
     /// <p>The domain to use for tracking open and click events.</p>
-    pub fn custom_redirect_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_redirect_domain = Some(input.into());
+    pub fn custom_redirect_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_redirect_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain to use for tracking open and click events.</p>
     pub fn set_custom_redirect_domain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.custom_redirect_domain = input;
         self

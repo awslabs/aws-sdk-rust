@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSessionStatus`](crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`session_id(impl Into<String>)`](crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder::set_session_id): <p>The session ID.</p>
+    ///   - [`session_id(impl ::std::convert::Into<String>)`](crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_session_status::builders::GetSessionStatusFluentBuilder::set_session_id): <p>The session ID.</p>
     /// - On success, responds with [`GetSessionStatusOutput`](crate::operation::get_session_status::GetSessionStatusOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::operation::get_session_status::GetSessionStatusOutput::session_id): <p>The session ID.</p>
     ///   - [`status(Option<SessionStatus>)`](crate::operation::get_session_status::GetSessionStatusOutput::status): <p>Contains information about the status of the session.</p>

@@ -2,36 +2,36 @@
 
 /// <p>This input determines which steps to list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStepsInput {
     /// <p>The identifier of the cluster for which to list the steps.</p>
     #[doc(hidden)]
-    pub cluster_id: std::option::Option<std::string::String>,
+    pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The filter to limit the step list based on certain states.</p>
     #[doc(hidden)]
-    pub step_states: std::option::Option<std::vec::Vec<crate::types::StepState>>,
+    pub step_states: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
     #[doc(hidden)]
-    pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
 }
 impl ListStepsInput {
     /// <p>The identifier of the cluster for which to list the steps.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The filter to limit the step list based on certain states.</p>
-    pub fn step_states(&self) -> std::option::Option<&[crate::types::StepState]> {
+    pub fn step_states(&self) -> ::std::option::Option<&[crate::types::StepState]> {
         self.step_states.as_deref()
     }
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
-    pub fn step_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn step_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.step_ids.as_deref()
     }
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
@@ -44,21 +44,23 @@ impl ListStepsInput {
 
 /// A builder for [`ListStepsInput`](crate::operation::list_steps::ListStepsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListStepsInputBuilder {
-    pub(crate) cluster_id: std::option::Option<std::string::String>,
-    pub(crate) step_states: std::option::Option<std::vec::Vec<crate::types::StepState>>,
-    pub(crate) step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) step_states: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
+    pub(crate) step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl ListStepsInputBuilder {
     /// <p>The identifier of the cluster for which to list the steps.</p>
-    pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_id = Some(input.into());
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster for which to list the steps.</p>
-    pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
     }
@@ -70,13 +72,13 @@ impl ListStepsInputBuilder {
     pub fn step_states(mut self, input: crate::types::StepState) -> Self {
         let mut v = self.step_states.unwrap_or_default();
         v.push(input);
-        self.step_states = Some(v);
+        self.step_states = ::std::option::Option::Some(v);
         self
     }
     /// <p>The filter to limit the step list based on certain states.</p>
     pub fn set_step_states(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StepState>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
     ) -> Self {
         self.step_states = input;
         self
@@ -86,38 +88,38 @@ impl ListStepsInputBuilder {
     /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
     ///
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
-    pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn step_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.step_ids.unwrap_or_default();
         v.push(input.into());
-        self.step_ids = Some(v);
+        self.step_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
     pub fn set_step_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.step_ids = input;
         self
     }
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// Consumes the builder and constructs a [`ListStepsInput`](crate::operation::list_steps::ListStepsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_steps::ListStepsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_steps::ListStepsInput {
+        ::std::result::Result::Ok(crate::operation::list_steps::ListStepsInput {
             cluster_id: self.cluster_id,
             step_states: self.step_states,
             step_ids: self.step_ids,

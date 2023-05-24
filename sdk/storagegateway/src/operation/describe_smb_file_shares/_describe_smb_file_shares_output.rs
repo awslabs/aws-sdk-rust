@@ -2,23 +2,23 @@
 
 /// <p>DescribeSMBFileSharesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSmbFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
     #[doc(hidden)]
     pub smb_file_share_info_list:
-        std::option::Option<std::vec::Vec<crate::types::SmbFileShareInfo>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SmbFileShareInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeSmbFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
     pub fn smb_file_share_info_list(
         &self,
-    ) -> std::option::Option<&[crate::types::SmbFileShareInfo]> {
+    ) -> ::std::option::Option<&[crate::types::SmbFileShareInfo]> {
         self.smb_file_share_info_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeSmbFileSharesOutput {
+impl ::aws_http::request_id::RequestId for DescribeSmbFileSharesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -34,10 +34,12 @@ impl DescribeSmbFileSharesOutput {
 
 /// A builder for [`DescribeSmbFileSharesOutput`](crate::operation::describe_smb_file_shares::DescribeSmbFileSharesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeSmbFileSharesOutputBuilder {
     pub(crate) smb_file_share_info_list:
-        std::option::Option<std::vec::Vec<crate::types::SmbFileShareInfo>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SmbFileShareInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeSmbFileSharesOutputBuilder {
@@ -49,13 +51,13 @@ impl DescribeSmbFileSharesOutputBuilder {
     pub fn smb_file_share_info_list(mut self, input: crate::types::SmbFileShareInfo) -> Self {
         let mut v = self.smb_file_share_info_list.unwrap_or_default();
         v.push(input);
-        self.smb_file_share_info_list = Some(v);
+        self.smb_file_share_info_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing a description for each requested file share.</p>
     pub fn set_smb_file_share_info_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SmbFileShareInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SmbFileShareInfo>>,
     ) -> Self {
         self.smb_file_share_info_list = input;
         self

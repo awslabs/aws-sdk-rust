@@ -2,11 +2,11 @@
 
 /// <p>Information about a product view.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductViewDetail {
     /// <p>Summary information about the product view.</p>
     #[doc(hidden)]
-    pub product_view_summary: std::option::Option<crate::types::ProductViewSummary>,
+    pub product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
     /// <p>The status of the product.</p>
     /// <ul>
     /// <li> <p> <code>AVAILABLE</code> - The product is ready for use.</p> </li>
@@ -14,20 +14,20 @@ pub struct ProductViewDetail {
     /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The ARN of the product.</p>
     #[doc(hidden)]
-    pub product_arn: std::option::Option<std::string::String>,
+    pub product_arn: ::std::option::Option<::std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
     #[doc(hidden)]
-    pub source_connection: std::option::Option<crate::types::SourceConnectionDetail>,
+    pub source_connection: ::std::option::Option<crate::types::SourceConnectionDetail>,
 }
 impl ProductViewDetail {
     /// <p>Summary information about the product view.</p>
-    pub fn product_view_summary(&self) -> std::option::Option<&crate::types::ProductViewSummary> {
+    pub fn product_view_summary(&self) -> ::std::option::Option<&crate::types::ProductViewSummary> {
         self.product_view_summary.as_ref()
     }
     /// <p>The status of the product.</p>
@@ -36,19 +36,21 @@ impl ProductViewDetail {
     /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
     /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The ARN of the product.</p>
-    pub fn product_arn(&self) -> std::option::Option<&str> {
+    pub fn product_arn(&self) -> ::std::option::Option<&str> {
         self.product_arn.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
-    pub fn source_connection(&self) -> std::option::Option<&crate::types::SourceConnectionDetail> {
+    pub fn source_connection(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SourceConnectionDetail> {
         self.source_connection.as_ref()
     }
 }
@@ -61,24 +63,26 @@ impl ProductViewDetail {
 
 /// A builder for [`ProductViewDetail`](crate::types::ProductViewDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductViewDetailBuilder {
-    pub(crate) product_view_summary: std::option::Option<crate::types::ProductViewSummary>,
-    pub(crate) status: std::option::Option<crate::types::Status>,
-    pub(crate) product_arn: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) source_connection: std::option::Option<crate::types::SourceConnectionDetail>,
+    pub(crate) product_view_summary: ::std::option::Option<crate::types::ProductViewSummary>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) product_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) source_connection: ::std::option::Option<crate::types::SourceConnectionDetail>,
 }
 impl ProductViewDetailBuilder {
     /// <p>Summary information about the product view.</p>
     pub fn product_view_summary(mut self, input: crate::types::ProductViewSummary) -> Self {
-        self.product_view_summary = Some(input);
+        self.product_view_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary information about the product view.</p>
     pub fn set_product_view_summary(
         mut self,
-        input: std::option::Option<crate::types::ProductViewSummary>,
+        input: ::std::option::Option<crate::types::ProductViewSummary>,
     ) -> Self {
         self.product_view_summary = input;
         self
@@ -90,7 +94,7 @@ impl ProductViewDetailBuilder {
     /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the product.</p>
@@ -99,42 +103,42 @@ impl ProductViewDetailBuilder {
     /// <li> <p> <code>CREATING</code> - Product creation has started; the product is not ready for use.</p> </li>
     /// <li> <p> <code>FAILED</code> - An action failed.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
     /// <p>The ARN of the product.</p>
-    pub fn product_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_arn = Some(input.into());
+    pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the product.</p>
-    pub fn set_product_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_arn = input;
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
     pub fn source_connection(mut self, input: crate::types::SourceConnectionDetail) -> Self {
-        self.source_connection = Some(input);
+        self.source_connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.</p>
     pub fn set_source_connection(
         mut self,
-        input: std::option::Option<crate::types::SourceConnectionDetail>,
+        input: ::std::option::Option<crate::types::SourceConnectionDetail>,
     ) -> Self {
         self.source_connection = input;
         self

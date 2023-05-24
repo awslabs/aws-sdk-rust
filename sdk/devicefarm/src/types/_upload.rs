@@ -2,17 +2,17 @@
 
 /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Upload {
     /// <p>The upload's ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The upload's file name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>When the upload was created.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The upload's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -50,7 +50,7 @@ pub struct Upload {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::UploadType>,
+    pub r#type: ::std::option::Option<crate::types::UploadType>,
     /// <p>The upload's status.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -60,38 +60,38 @@ pub struct Upload {
     /// <li> <p>SUCCEEDED</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::UploadStatus>,
+    pub status: ::std::option::Option<crate::types::UploadStatus>,
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::string::String>,
+    pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A message about the upload's result.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The upload's category. Allowed values include:</p>
     /// <ul>
     /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::UploadCategory>,
+    pub category: ::std::option::Option<crate::types::UploadCategory>,
 }
 impl Upload {
     /// <p>The upload's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The upload's file name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>When the upload was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The upload's type.</p>
@@ -130,7 +130,7 @@ impl Upload {
     /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::UploadType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UploadType> {
         self.r#type.as_ref()
     }
     /// <p>The upload's status.</p>
@@ -141,23 +141,23 @@ impl Upload {
     /// <li> <p>PROCESSING</p> </li>
     /// <li> <p>SUCCEEDED</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::UploadStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::UploadStatus> {
         self.status.as_ref()
     }
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>A message about the upload's result.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The upload's category. Allowed values include:</p>
@@ -165,12 +165,12 @@ impl Upload {
     /// <li> <p>CURATED: An upload managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
     /// </ul>
-    pub fn category(&self) -> std::option::Option<&crate::types::UploadCategory> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::UploadCategory> {
         self.category.as_ref()
     }
 }
-impl std::fmt::Debug for Upload {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Upload {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Upload");
         formatter.field("arn", &self.arn);
         formatter.field("name", &self.name);
@@ -194,47 +194,50 @@ impl Upload {
 
 /// A builder for [`Upload`](crate::types::Upload).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UploadBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) r#type: std::option::Option<crate::types::UploadType>,
-    pub(crate) status: std::option::Option<crate::types::UploadStatus>,
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) metadata: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) category: std::option::Option<crate::types::UploadCategory>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<crate::types::UploadType>,
+    pub(crate) status: ::std::option::Option<crate::types::UploadStatus>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<crate::types::UploadCategory>,
 }
 impl UploadBuilder {
     /// <p>The upload's ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upload's ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The upload's file name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upload's file name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>When the upload was created.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the upload was created.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
@@ -275,7 +278,7 @@ impl UploadBuilder {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::UploadType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upload's type.</p>
@@ -314,7 +317,7 @@ impl UploadBuilder {
     /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::UploadType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::UploadType>) -> Self {
         self.r#type = input;
         self
     }
@@ -327,7 +330,7 @@ impl UploadBuilder {
     /// <li> <p>SUCCEEDED</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::UploadStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upload's status.</p>
@@ -338,47 +341,47 @@ impl UploadBuilder {
     /// <li> <p>PROCESSING</p> </li>
     /// <li> <p>SUCCEEDED</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::UploadStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::UploadStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The presigned Amazon S3 URL that was used to store a file using a PUT request.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metadata = Some(input.into());
+    pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upload's metadata. For example, for Android, this contains information that is parsed from the manifest and is displayed in the AWS Device Farm console after the associated app is uploaded.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>A message about the upload's result.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the upload's result.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -388,7 +391,7 @@ impl UploadBuilder {
     /// <li> <p>PRIVATE: An upload managed by the AWS Device Farm customer.</p> </li>
     /// </ul>
     pub fn category(mut self, input: crate::types::UploadCategory) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upload's category. Allowed values include:</p>
@@ -398,7 +401,7 @@ impl UploadBuilder {
     /// </ul>
     pub fn set_category(
         mut self,
-        input: std::option::Option<crate::types::UploadCategory>,
+        input: ::std::option::Option<crate::types::UploadCategory>,
     ) -> Self {
         self.category = input;
         self
@@ -419,8 +422,8 @@ impl UploadBuilder {
         }
     }
 }
-impl std::fmt::Debug for UploadBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UploadBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UploadBuilder");
         formatter.field("arn", &self.arn);
         formatter.field("name", &self.name);

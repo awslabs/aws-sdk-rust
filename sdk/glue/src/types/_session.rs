@@ -2,87 +2,89 @@
 
 /// <p>The period in which a remote Spark runtime environment is running.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Session {
     /// <p>The ID of the session.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The time and date when the session was created.</p>
     #[doc(hidden)]
-    pub created_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The session status. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SessionStatus>,
+    pub status: ::std::option::Option<crate::types::SessionStatus>,
     /// <p>The error message displayed during the session.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The description of the session.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<std::string::String>,
+    pub role: ::std::option::Option<::std::string::String>,
     /// <p>The command object.See SessionCommand.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<crate::types::SessionCommand>,
+    pub command: ::std::option::Option<crate::types::SessionCommand>,
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     #[doc(hidden)]
-    pub default_arguments:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub default_arguments: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The number of connections used for the session.</p>
     #[doc(hidden)]
-    pub connections: std::option::Option<crate::types::ConnectionsList>,
+    pub connections: ::std::option::Option<crate::types::ConnectionsList>,
     /// <p>The code execution progress of the session.</p>
     #[doc(hidden)]
     pub progress: f64,
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
     #[doc(hidden)]
-    pub max_capacity: std::option::Option<f64>,
+    pub max_capacity: ::std::option::Option<f64>,
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
     #[doc(hidden)]
-    pub security_configuration: std::option::Option<std::string::String>,
+    pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.</p>
     #[doc(hidden)]
-    pub glue_version: std::option::Option<std::string::String>,
+    pub glue_version: ::std::option::Option<::std::string::String>,
 }
 impl Session {
     /// <p>The ID of the session.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The time and date when the session was created.</p>
-    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_on.as_ref()
     }
     /// <p>The session status. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SessionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SessionStatus> {
         self.status.as_ref()
     }
     /// <p>The error message displayed during the session.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>The description of the session.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
     /// <p>The command object.See SessionCommand.</p>
-    pub fn command(&self) -> std::option::Option<&crate::types::SessionCommand> {
+    pub fn command(&self) -> ::std::option::Option<&crate::types::SessionCommand> {
         self.command.as_ref()
     }
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn default_arguments(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.default_arguments.as_ref()
     }
     /// <p>The number of connections used for the session.</p>
-    pub fn connections(&self) -> std::option::Option<&crate::types::ConnectionsList> {
+    pub fn connections(&self) -> ::std::option::Option<&crate::types::ConnectionsList> {
         self.connections.as_ref()
     }
     /// <p>The code execution progress of the session.</p>
@@ -90,15 +92,15 @@ impl Session {
         self.progress
     }
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
-    pub fn max_capacity(&self) -> std::option::Option<f64> {
+    pub fn max_capacity(&self) -> ::std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
-    pub fn security_configuration(&self) -> std::option::Option<&str> {
+    pub fn security_configuration(&self) -> ::std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.</p>
-    pub fn glue_version(&self) -> std::option::Option<&str> {
+    pub fn glue_version(&self) -> ::std::option::Option<&str> {
         self.glue_version.as_deref()
     }
 }
@@ -111,94 +113,106 @@ impl Session {
 
 /// A builder for [`Session`](crate::types::Session).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) created_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::SessionStatus>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) role: std::option::Option<std::string::String>,
-    pub(crate) command: std::option::Option<crate::types::SessionCommand>,
-    pub(crate) default_arguments:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) connections: std::option::Option<crate::types::ConnectionsList>,
-    pub(crate) progress: std::option::Option<f64>,
-    pub(crate) max_capacity: std::option::Option<f64>,
-    pub(crate) security_configuration: std::option::Option<std::string::String>,
-    pub(crate) glue_version: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::SessionStatus>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) role: ::std::option::Option<::std::string::String>,
+    pub(crate) command: ::std::option::Option<crate::types::SessionCommand>,
+    pub(crate) default_arguments: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) connections: ::std::option::Option<crate::types::ConnectionsList>,
+    pub(crate) progress: ::std::option::Option<f64>,
+    pub(crate) max_capacity: ::std::option::Option<f64>,
+    pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
+    pub(crate) glue_version: ::std::option::Option<::std::string::String>,
 }
 impl SessionBuilder {
     /// <p>The ID of the session.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the session.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The time and date when the session was created.</p>
-    pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_on = Some(input);
+    pub fn created_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time and date when the session was created.</p>
     pub fn set_created_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_on = input;
         self
     }
     /// <p>The session status. </p>
     pub fn status(mut self, input: crate::types::SessionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The session status. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SessionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The error message displayed during the session.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message displayed during the session.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p>The description of the session.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the session.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role = Some(input.into());
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with the Session.</p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }
     /// <p>The command object.See SessionCommand.</p>
     pub fn command(mut self, input: crate::types::SessionCommand) -> Self {
-        self.command = Some(input);
+        self.command = ::std::option::Option::Some(input);
         self
     }
     /// <p>The command object.See SessionCommand.</p>
-    pub fn set_command(mut self, input: std::option::Option<crate::types::SessionCommand>) -> Self {
+    pub fn set_command(
+        mut self,
+        input: ::std::option::Option<crate::types::SessionCommand>,
+    ) -> Self {
         self.command = input;
         self
     }
@@ -209,19 +223,19 @@ impl SessionBuilder {
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn default_arguments(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.default_arguments.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.default_arguments = Some(hash_map);
+        self.default_arguments = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn set_default_arguments(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.default_arguments = input;
@@ -229,57 +243,60 @@ impl SessionBuilder {
     }
     /// <p>The number of connections used for the session.</p>
     pub fn connections(mut self, input: crate::types::ConnectionsList) -> Self {
-        self.connections = Some(input);
+        self.connections = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of connections used for the session.</p>
     pub fn set_connections(
         mut self,
-        input: std::option::Option<crate::types::ConnectionsList>,
+        input: ::std::option::Option<crate::types::ConnectionsList>,
     ) -> Self {
         self.connections = input;
         self
     }
     /// <p>The code execution progress of the session.</p>
     pub fn progress(mut self, input: f64) -> Self {
-        self.progress = Some(input);
+        self.progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>The code execution progress of the session.</p>
-    pub fn set_progress(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_progress(mut self, input: ::std::option::Option<f64>) -> Self {
         self.progress = input;
         self
     }
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
     pub fn max_capacity(mut self, input: f64) -> Self {
-        self.max_capacity = Some(input);
+        self.max_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
-    pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_capacity = input;
         self
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
-    pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_configuration = Some(input.into());
+    pub fn security_configuration(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session.</p>
     pub fn set_security_configuration(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_configuration = input;
         self
     }
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.</p>
-    pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.glue_version = Some(input.into());
+    pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.glue_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.</p>
-    pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.glue_version = input;
         self
     }

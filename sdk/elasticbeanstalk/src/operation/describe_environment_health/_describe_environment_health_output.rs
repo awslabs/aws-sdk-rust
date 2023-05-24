@@ -2,69 +2,69 @@
 
 /// <p>Health details for an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentHealthOutput {
     /// <p>The environment's name.</p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
     #[doc(hidden)]
-    pub health_status: std::option::Option<std::string::String>,
+    pub health_status: ::std::option::Option<::std::string::String>,
     /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EnvironmentHealth>,
+    pub status: ::std::option::Option<crate::types::EnvironmentHealth>,
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
     #[doc(hidden)]
-    pub color: std::option::Option<std::string::String>,
+    pub color: ::std::option::Option<::std::string::String>,
     /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
     #[doc(hidden)]
-    pub causes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub causes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Application request metrics for the environment.</p>
     #[doc(hidden)]
-    pub application_metrics: std::option::Option<crate::types::ApplicationMetrics>,
+    pub application_metrics: ::std::option::Option<crate::types::ApplicationMetrics>,
     /// <p>Summary health information for the instances in the environment.</p>
     #[doc(hidden)]
-    pub instances_health: std::option::Option<crate::types::InstanceHealthSummary>,
+    pub instances_health: ::std::option::Option<crate::types::InstanceHealthSummary>,
     /// <p>The date and time that the health information was retrieved.</p>
     #[doc(hidden)]
-    pub refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentHealthOutput {
     /// <p>The environment's name.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
-    pub fn health_status(&self) -> std::option::Option<&str> {
+    pub fn health_status(&self) -> ::std::option::Option<&str> {
         self.health_status.as_deref()
     }
     /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EnvironmentHealth> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentHealth> {
         self.status.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<&str> {
         self.color.as_deref()
     }
     /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
-    pub fn causes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn causes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.causes.as_deref()
     }
     /// <p>Application request metrics for the environment.</p>
-    pub fn application_metrics(&self) -> std::option::Option<&crate::types::ApplicationMetrics> {
+    pub fn application_metrics(&self) -> ::std::option::Option<&crate::types::ApplicationMetrics> {
         self.application_metrics.as_ref()
     }
     /// <p>Summary health information for the instances in the environment.</p>
-    pub fn instances_health(&self) -> std::option::Option<&crate::types::InstanceHealthSummary> {
+    pub fn instances_health(&self) -> ::std::option::Option<&crate::types::InstanceHealthSummary> {
         self.instances_health.as_ref()
     }
     /// <p>The date and time that the health information was retrieved.</p>
-    pub fn refreshed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn refreshed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.refreshed_at.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEnvironmentHealthOutput {
+impl ::aws_http::request_id::RequestId for DescribeEnvironmentHealthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -78,59 +78,73 @@ impl DescribeEnvironmentHealthOutput {
 
 /// A builder for [`DescribeEnvironmentHealthOutput`](crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEnvironmentHealthOutputBuilder {
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) health_status: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::EnvironmentHealth>,
-    pub(crate) color: std::option::Option<std::string::String>,
-    pub(crate) causes: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) application_metrics: std::option::Option<crate::types::ApplicationMetrics>,
-    pub(crate) instances_health: std::option::Option<crate::types::InstanceHealthSummary>,
-    pub(crate) refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) health_status: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::EnvironmentHealth>,
+    pub(crate) color: ::std::option::Option<::std::string::String>,
+    pub(crate) causes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_metrics: ::std::option::Option<crate::types::ApplicationMetrics>,
+    pub(crate) instances_health: ::std::option::Option<crate::types::InstanceHealthSummary>,
+    pub(crate) refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentHealthOutputBuilder {
     /// <p>The environment's name.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment's name.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
-    pub fn health_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.health_status = Some(input.into());
+    pub fn health_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.health_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
-    pub fn set_health_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_health_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.health_status = input;
         self
     }
     /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
     pub fn status(mut self, input: crate::types::EnvironmentHealth) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::EnvironmentHealth>,
+        input: ::std::option::Option<crate::types::EnvironmentHealth>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
-    pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.color = Some(input.into());
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
-    pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
     }
@@ -139,55 +153,55 @@ impl DescribeEnvironmentHealthOutputBuilder {
     /// To override the contents of this collection use [`set_causes`](Self::set_causes).
     ///
     /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
-    pub fn causes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn causes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.causes.unwrap_or_default();
         v.push(input.into());
-        self.causes = Some(v);
+        self.causes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
     pub fn set_causes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.causes = input;
         self
     }
     /// <p>Application request metrics for the environment.</p>
     pub fn application_metrics(mut self, input: crate::types::ApplicationMetrics) -> Self {
-        self.application_metrics = Some(input);
+        self.application_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Application request metrics for the environment.</p>
     pub fn set_application_metrics(
         mut self,
-        input: std::option::Option<crate::types::ApplicationMetrics>,
+        input: ::std::option::Option<crate::types::ApplicationMetrics>,
     ) -> Self {
         self.application_metrics = input;
         self
     }
     /// <p>Summary health information for the instances in the environment.</p>
     pub fn instances_health(mut self, input: crate::types::InstanceHealthSummary) -> Self {
-        self.instances_health = Some(input);
+        self.instances_health = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary health information for the instances in the environment.</p>
     pub fn set_instances_health(
         mut self,
-        input: std::option::Option<crate::types::InstanceHealthSummary>,
+        input: ::std::option::Option<crate::types::InstanceHealthSummary>,
     ) -> Self {
         self.instances_health = input;
         self
     }
     /// <p>The date and time that the health information was retrieved.</p>
-    pub fn refreshed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.refreshed_at = Some(input);
+    pub fn refreshed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.refreshed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the health information was retrieved.</p>
     pub fn set_refreshed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.refreshed_at = input;
         self

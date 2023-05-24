@@ -2,34 +2,34 @@
 
 /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation, as well as the KMS key ARN used to encrypt the associated metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EncryptionSetting {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
     #[doc(hidden)]
-    pub bot_locale_export_password: std::option::Option<std::string::String>,
+    pub bot_locale_export_password: ::std::option::Option<::std::string::String>,
     /// <p>The password used to encrypt the associated transcript file.</p>
     #[doc(hidden)]
-    pub associated_transcripts_password: std::option::Option<std::string::String>,
+    pub associated_transcripts_password: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionSetting {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
-    pub fn bot_locale_export_password(&self) -> std::option::Option<&str> {
+    pub fn bot_locale_export_password(&self) -> ::std::option::Option<&str> {
         self.bot_locale_export_password.as_deref()
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
-    pub fn associated_transcripts_password(&self) -> std::option::Option<&str> {
+    pub fn associated_transcripts_password(&self) -> ::std::option::Option<&str> {
         self.associated_transcripts_password.as_deref()
     }
 }
-impl std::fmt::Debug for EncryptionSetting {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EncryptionSetting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionSetting");
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field(
@@ -52,32 +52,35 @@ impl EncryptionSetting {
 
 /// A builder for [`EncryptionSetting`](crate::types::EncryptionSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct EncryptionSettingBuilder {
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    pub(crate) bot_locale_export_password: std::option::Option<std::string::String>,
-    pub(crate) associated_transcripts_password: std::option::Option<std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) bot_locale_export_password: ::std::option::Option<::std::string::String>,
+    pub(crate) associated_transcripts_password: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionSettingBuilder {
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key ARN used to encrypt the metadata associated with the bot recommendation.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
-    pub fn bot_locale_export_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_locale_export_password = Some(input.into());
+    pub fn bot_locale_export_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bot_locale_export_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password used to encrypt the recommended bot recommendation file.</p>
     pub fn set_bot_locale_export_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.bot_locale_export_password = input;
         self
@@ -85,15 +88,15 @@ impl EncryptionSettingBuilder {
     /// <p>The password used to encrypt the associated transcript file.</p>
     pub fn associated_transcripts_password(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.associated_transcripts_password = Some(input.into());
+        self.associated_transcripts_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password used to encrypt the associated transcript file.</p>
     pub fn set_associated_transcripts_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.associated_transcripts_password = input;
         self
@@ -107,8 +110,8 @@ impl EncryptionSettingBuilder {
         }
     }
 }
-impl std::fmt::Debug for EncryptionSettingBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EncryptionSettingBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncryptionSettingBuilder");
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field(

@@ -2,15 +2,15 @@
 
 /// <p>The OpsItem data type to return.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsResultAttribute {
     /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
     #[doc(hidden)]
-    pub type_name: std::option::Option<std::string::String>,
+    pub type_name: ::std::option::Option<::std::string::String>,
 }
 impl OpsResultAttribute {
     /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl OpsResultAttribute {
 
 /// A builder for [`OpsResultAttribute`](crate::types::OpsResultAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpsResultAttributeBuilder {
-    pub(crate) type_name: std::option::Option<std::string::String>,
+    pub(crate) type_name: ::std::option::Option<::std::string::String>,
 }
 impl OpsResultAttributeBuilder {
     /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
-    pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.type_name = Some(input.into());
+    pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>, <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or <code>AWS:ComplianceSummary</code>.</p>
-    pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }

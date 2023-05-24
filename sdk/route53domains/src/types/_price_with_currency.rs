@@ -2,14 +2,14 @@
 
 /// <p>Currency-specific price information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PriceWithCurrency {
     /// <p>The price of a domain, in a specific currency.</p>
     #[doc(hidden)]
     pub price: f64,
     /// <p>The currency specifier.</p>
     #[doc(hidden)]
-    pub currency: std::option::Option<std::string::String>,
+    pub currency: ::std::option::Option<::std::string::String>,
 }
 impl PriceWithCurrency {
     /// <p>The price of a domain, in a specific currency.</p>
@@ -17,7 +17,7 @@ impl PriceWithCurrency {
         self.price
     }
     /// <p>The currency specifier.</p>
-    pub fn currency(&self) -> std::option::Option<&str> {
+    pub fn currency(&self) -> ::std::option::Option<&str> {
         self.currency.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl PriceWithCurrency {
 
 /// A builder for [`PriceWithCurrency`](crate::types::PriceWithCurrency).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PriceWithCurrencyBuilder {
-    pub(crate) price: std::option::Option<f64>,
-    pub(crate) currency: std::option::Option<std::string::String>,
+    pub(crate) price: ::std::option::Option<f64>,
+    pub(crate) currency: ::std::option::Option<::std::string::String>,
 }
 impl PriceWithCurrencyBuilder {
     /// <p>The price of a domain, in a specific currency.</p>
     pub fn price(mut self, input: f64) -> Self {
-        self.price = Some(input);
+        self.price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price of a domain, in a specific currency.</p>
-    pub fn set_price(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.price = input;
         self
     }
     /// <p>The currency specifier.</p>
-    pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
-        self.currency = Some(input.into());
+    pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.currency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency specifier.</p>
-    pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency = input;
         self
     }

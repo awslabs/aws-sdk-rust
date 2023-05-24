@@ -2,22 +2,22 @@
 
 /// <p>Information about an Amazon Web Services account or service that has access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizedPrincipal {
     /// <p>The type of principal.</p>
     #[doc(hidden)]
-    pub principal_type: std::option::Option<crate::types::PrincipalType>,
+    pub principal_type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principal</a> that is allowed access to the domain.</p>
     #[doc(hidden)]
-    pub principal: std::option::Option<std::string::String>,
+    pub principal: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizedPrincipal {
     /// <p>The type of principal.</p>
-    pub fn principal_type(&self) -> std::option::Option<&crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principal</a> that is allowed access to the domain.</p>
-    pub fn principal(&self) -> std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<&str> {
         self.principal.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl AuthorizedPrincipal {
 
 /// A builder for [`AuthorizedPrincipal`](crate::types::AuthorizedPrincipal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthorizedPrincipalBuilder {
-    pub(crate) principal_type: std::option::Option<crate::types::PrincipalType>,
-    pub(crate) principal: std::option::Option<std::string::String>,
+    pub(crate) principal_type: ::std::option::Option<crate::types::PrincipalType>,
+    pub(crate) principal: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizedPrincipalBuilder {
     /// <p>The type of principal.</p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
-        self.principal_type = Some(input);
+        self.principal_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of principal.</p>
     pub fn set_principal_type(
         mut self,
-        input: std::option::Option<crate::types::PrincipalType>,
+        input: ::std::option::Option<crate::types::PrincipalType>,
     ) -> Self {
         self.principal_type = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principal</a> that is allowed access to the domain.</p>
-    pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
-        self.principal = Some(input.into());
+    pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principal</a> that is allowed access to the domain.</p>
-    pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
     }

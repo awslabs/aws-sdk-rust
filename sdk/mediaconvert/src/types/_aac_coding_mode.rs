@@ -41,13 +41,13 @@
 /// The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels, C, L, R, Ls, Rs, LFE.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AacCodingMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum AacCodingMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AacCodingMode {
+impl ::std::convert::From<&str> for AacCodingMode {
     fn from(s: &str) -> Self {
         match s {
             "AD_RECEIVER_MIX" => AacCodingMode::AdReceiverMix,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for AacCodingMode {
         }
     }
 }
-impl std::str::FromStr for AacCodingMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AacCodingMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AacCodingMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AacCodingMode::from(s))
     }
 }
 impl AacCodingMode {
@@ -107,7 +107,7 @@ impl AacCodingMode {
         ]
     }
 }
-impl AsRef<str> for AacCodingMode {
+impl ::std::convert::AsRef<str> for AacCodingMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

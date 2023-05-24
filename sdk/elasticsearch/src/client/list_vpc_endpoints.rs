@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListVpcEndpoints`](crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder::set_next_token): <p>Identifier to allow retrieval of paginated results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsFluentBuilder::set_next_token): <p>Identifier to allow retrieval of paginated results.</p>
     /// - On success, responds with [`ListVpcEndpointsOutput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput) with field(s):
     ///   - [`vpc_endpoint_summary_list(Option<Vec<VpcEndpointSummary>>)`](crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput::vpc_endpoint_summary_list): <p>Information about each endpoint.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>

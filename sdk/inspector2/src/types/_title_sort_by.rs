@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TitleSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TitleSortBy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TitleSortBy {
+impl ::std::convert::From<&str> for TitleSortBy {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => TitleSortBy::All,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for TitleSortBy {
         }
     }
 }
-impl std::str::FromStr for TitleSortBy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TitleSortBy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TitleSortBy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TitleSortBy::from(s))
     }
 }
 impl TitleSortBy {
@@ -89,7 +89,7 @@ impl TitleSortBy {
         &["ALL", "CRITICAL", "HIGH"]
     }
 }
-impl AsRef<str> for TitleSortBy {
+impl ::std::convert::AsRef<str> for TitleSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

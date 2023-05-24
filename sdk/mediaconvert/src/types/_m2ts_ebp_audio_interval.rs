@@ -38,13 +38,13 @@
 /// When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsEbpAudioInterval {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsEbpAudioInterval {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsEbpAudioInterval {
+impl ::std::convert::From<&str> for M2tsEbpAudioInterval {
     fn from(s: &str) -> Self {
         match s {
             "VIDEO_AND_FIXED_INTERVALS" => M2tsEbpAudioInterval::VideoAndFixedIntervals,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M2tsEbpAudioInterval {
         }
     }
 }
-impl std::str::FromStr for M2tsEbpAudioInterval {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsEbpAudioInterval {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsEbpAudioInterval::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsEbpAudioInterval::from(s))
     }
 }
 impl M2tsEbpAudioInterval {
@@ -86,7 +86,7 @@ impl M2tsEbpAudioInterval {
         &["VIDEO_AND_FIXED_INTERVALS", "VIDEO_INTERVAL"]
     }
 }
-impl AsRef<str> for M2tsEbpAudioInterval {
+impl ::std::convert::AsRef<str> for M2tsEbpAudioInterval {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,27 +2,27 @@
 
 /// <p> Returns the result structure for the get artifact request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArtifactUrlOutput {
     /// <p> The unique ID for an artifact. </p>
     #[doc(hidden)]
-    pub artifact_id: std::option::Option<std::string::String>,
+    pub artifact_id: ::std::option::Option<::std::string::String>,
     /// <p> The presigned URL for the artifact. </p>
     #[doc(hidden)]
-    pub artifact_url: std::option::Option<std::string::String>,
+    pub artifact_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetArtifactUrlOutput {
     /// <p> The unique ID for an artifact. </p>
-    pub fn artifact_id(&self) -> std::option::Option<&str> {
+    pub fn artifact_id(&self) -> ::std::option::Option<&str> {
         self.artifact_id.as_deref()
     }
     /// <p> The presigned URL for the artifact. </p>
-    pub fn artifact_url(&self) -> std::option::Option<&str> {
+    pub fn artifact_url(&self) -> ::std::option::Option<&str> {
         self.artifact_url.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetArtifactUrlOutput {
+impl ::aws_http::request_id::RequestId for GetArtifactUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl GetArtifactUrlOutput {
 
 /// A builder for [`GetArtifactUrlOutput`](crate::operation::get_artifact_url::GetArtifactUrlOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetArtifactUrlOutputBuilder {
-    pub(crate) artifact_id: std::option::Option<std::string::String>,
-    pub(crate) artifact_url: std::option::Option<std::string::String>,
+    pub(crate) artifact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) artifact_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetArtifactUrlOutputBuilder {
     /// <p> The unique ID for an artifact. </p>
-    pub fn artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.artifact_id = Some(input.into());
+    pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID for an artifact. </p>
-    pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_id = input;
         self
     }
     /// <p> The presigned URL for the artifact. </p>
-    pub fn artifact_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.artifact_url = Some(input.into());
+    pub fn artifact_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.artifact_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The presigned URL for the artifact. </p>
-    pub fn set_artifact_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_artifact_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_url = input;
         self
     }

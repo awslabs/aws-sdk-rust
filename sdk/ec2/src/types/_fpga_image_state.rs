@@ -2,7 +2,7 @@
 
 /// <p>Describes the state of the bitstream generation process for an Amazon FPGA image (AFI).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FpgaImageState {
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct FpgaImageState {
     /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::FpgaImageStateCode>,
+    pub code: ::std::option::Option<crate::types::FpgaImageStateCode>,
     /// <p>If the state is <code>failed</code>, this is the error message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl FpgaImageState {
     /// <p>The state. The following are the possible values:</p>
@@ -25,11 +25,11 @@ impl FpgaImageState {
     /// <li> <p> <code>failed</code> - AFI bitstream generation failed.</p> </li>
     /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&crate::types::FpgaImageStateCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::FpgaImageStateCode> {
         self.code.as_ref()
     }
     /// <p>If the state is <code>failed</code>, this is the error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -42,10 +42,12 @@ impl FpgaImageState {
 
 /// A builder for [`FpgaImageState`](crate::types::FpgaImageState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FpgaImageStateBuilder {
-    pub(crate) code: std::option::Option<crate::types::FpgaImageStateCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::FpgaImageStateCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl FpgaImageStateBuilder {
     /// <p>The state. The following are the possible values:</p>
@@ -56,7 +58,7 @@ impl FpgaImageStateBuilder {
     /// <li> <p> <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::FpgaImageStateCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state. The following are the possible values:</p>
@@ -68,18 +70,18 @@ impl FpgaImageStateBuilder {
     /// </ul>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::FpgaImageStateCode>,
+        input: ::std::option::Option<crate::types::FpgaImageStateCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>If the state is <code>failed</code>, this is the error message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the state is <code>failed</code>, this is the error message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

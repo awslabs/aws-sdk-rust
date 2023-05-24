@@ -2,29 +2,29 @@
 
 /// <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HsmClientCertificate {
     /// <p>The identifier of the HSM client certificate.</p>
     #[doc(hidden)]
-    pub hsm_client_certificate_identifier: std::option::Option<std::string::String>,
+    pub hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
     #[doc(hidden)]
-    pub hsm_client_certificate_public_key: std::option::Option<std::string::String>,
+    pub hsm_client_certificate_public_key: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the HSM client certificate.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl HsmClientCertificate {
     /// <p>The identifier of the HSM client certificate.</p>
-    pub fn hsm_client_certificate_identifier(&self) -> std::option::Option<&str> {
+    pub fn hsm_client_certificate_identifier(&self) -> ::std::option::Option<&str> {
         self.hsm_client_certificate_identifier.as_deref()
     }
     /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
-    pub fn hsm_client_certificate_public_key(&self) -> std::option::Option<&str> {
+    pub fn hsm_client_certificate_public_key(&self) -> ::std::option::Option<&str> {
         self.hsm_client_certificate_public_key.as_deref()
     }
     /// <p>The list of tags for the HSM client certificate.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -37,25 +37,27 @@ impl HsmClientCertificate {
 
 /// A builder for [`HsmClientCertificate`](crate::types::HsmClientCertificate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HsmClientCertificateBuilder {
-    pub(crate) hsm_client_certificate_identifier: std::option::Option<std::string::String>,
-    pub(crate) hsm_client_certificate_public_key: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) hsm_client_certificate_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) hsm_client_certificate_public_key: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl HsmClientCertificateBuilder {
     /// <p>The identifier of the HSM client certificate.</p>
     pub fn hsm_client_certificate_identifier(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.hsm_client_certificate_identifier = Some(input.into());
+        self.hsm_client_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the HSM client certificate.</p>
     pub fn set_hsm_client_certificate_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.hsm_client_certificate_identifier = input;
         self
@@ -63,15 +65,15 @@ impl HsmClientCertificateBuilder {
     /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
     pub fn hsm_client_certificate_public_key(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.hsm_client_certificate_public_key = Some(input.into());
+        self.hsm_client_certificate_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.</p>
     pub fn set_hsm_client_certificate_public_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.hsm_client_certificate_public_key = input;
         self
@@ -84,13 +86,13 @@ impl HsmClientCertificateBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of tags for the HSM client certificate.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

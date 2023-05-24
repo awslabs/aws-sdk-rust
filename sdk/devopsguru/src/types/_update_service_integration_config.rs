@@ -2,25 +2,25 @@
 
 /// <p> Information about updating the integration status of an Amazon Web Services service, such as Amazon Web Services Systems Manager, with DevOps Guru. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
     #[doc(hidden)]
-    pub ops_center: std::option::Option<crate::types::OpsCenterIntegrationConfig>,
+    pub ops_center: ::std::option::Option<crate::types::OpsCenterIntegrationConfig>,
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
     #[doc(hidden)]
     pub logs_anomaly_detection:
-        std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,
+        ::std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,
 }
 impl UpdateServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
-    pub fn ops_center(&self) -> std::option::Option<&crate::types::OpsCenterIntegrationConfig> {
+    pub fn ops_center(&self) -> ::std::option::Option<&crate::types::OpsCenterIntegrationConfig> {
         self.ops_center.as_ref()
     }
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
     pub fn logs_anomaly_detection(
         &self,
-    ) -> std::option::Option<&crate::types::LogsAnomalyDetectionIntegrationConfig> {
+    ) -> ::std::option::Option<&crate::types::LogsAnomalyDetectionIntegrationConfig> {
         self.logs_anomaly_detection.as_ref()
     }
 }
@@ -33,22 +33,24 @@ impl UpdateServiceIntegrationConfig {
 
 /// A builder for [`UpdateServiceIntegrationConfig`](crate::types::UpdateServiceIntegrationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateServiceIntegrationConfigBuilder {
-    pub(crate) ops_center: std::option::Option<crate::types::OpsCenterIntegrationConfig>,
+    pub(crate) ops_center: ::std::option::Option<crate::types::OpsCenterIntegrationConfig>,
     pub(crate) logs_anomaly_detection:
-        std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,
+        ::std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,
 }
 impl UpdateServiceIntegrationConfigBuilder {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
     pub fn ops_center(mut self, input: crate::types::OpsCenterIntegrationConfig) -> Self {
-        self.ops_center = Some(input);
+        self.ops_center = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.</p>
     pub fn set_ops_center(
         mut self,
-        input: std::option::Option<crate::types::OpsCenterIntegrationConfig>,
+        input: ::std::option::Option<crate::types::OpsCenterIntegrationConfig>,
     ) -> Self {
         self.ops_center = input;
         self
@@ -58,13 +60,13 @@ impl UpdateServiceIntegrationConfigBuilder {
         mut self,
         input: crate::types::LogsAnomalyDetectionIntegrationConfig,
     ) -> Self {
-        self.logs_anomaly_detection = Some(input);
+        self.logs_anomaly_detection = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
     pub fn set_logs_anomaly_detection(
         mut self,
-        input: std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,
+        input: ::std::option::Option<crate::types::LogsAnomalyDetectionIntegrationConfig>,
     ) -> Self {
         self.logs_anomaly_detection = input;
         self

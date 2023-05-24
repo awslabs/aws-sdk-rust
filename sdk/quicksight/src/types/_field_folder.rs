@@ -2,22 +2,22 @@
 
 /// <p>A FieldFolder element is a folder that contains fields and nested subfolders.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldFolder {
     /// <p>The description for a field folder.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
     #[doc(hidden)]
-    pub columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FieldFolder {
     /// <p>The description for a field folder.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
-    pub fn columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.columns.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl FieldFolder {
 
 /// A builder for [`FieldFolder`](crate::types::FieldFolder).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FieldFolderBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FieldFolderBuilder {
     /// <p>The description for a field folder.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for a field folder.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -51,16 +53,16 @@ impl FieldFolderBuilder {
     /// To override the contents of this collection use [`set_columns`](Self::set_columns).
     ///
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
-    pub fn columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.columns.unwrap_or_default();
         v.push(input.into());
-        self.columns = Some(v);
+        self.columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A folder has a list of columns. A column can only be in one folder.</p>
     pub fn set_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.columns = input;
         self

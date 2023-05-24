@@ -2,22 +2,24 @@
 
 /// <p>The configuration for a field-level encryption content type-profile mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentTypeProfileConfig {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
     #[doc(hidden)]
-    pub forward_when_content_type_is_unknown: std::option::Option<bool>,
+    pub forward_when_content_type_is_unknown: ::std::option::Option<bool>,
     /// <p>The configuration for a field-level encryption content type-profile.</p>
     #[doc(hidden)]
-    pub content_type_profiles: std::option::Option<crate::types::ContentTypeProfiles>,
+    pub content_type_profiles: ::std::option::Option<crate::types::ContentTypeProfiles>,
 }
 impl ContentTypeProfileConfig {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
-    pub fn forward_when_content_type_is_unknown(&self) -> std::option::Option<bool> {
+    pub fn forward_when_content_type_is_unknown(&self) -> ::std::option::Option<bool> {
         self.forward_when_content_type_is_unknown
     }
     /// <p>The configuration for a field-level encryption content type-profile.</p>
-    pub fn content_type_profiles(&self) -> std::option::Option<&crate::types::ContentTypeProfiles> {
+    pub fn content_type_profiles(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ContentTypeProfiles> {
         self.content_type_profiles.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl ContentTypeProfileConfig {
 
 /// A builder for [`ContentTypeProfileConfig`](crate::types::ContentTypeProfileConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContentTypeProfileConfigBuilder {
-    pub(crate) forward_when_content_type_is_unknown: std::option::Option<bool>,
-    pub(crate) content_type_profiles: std::option::Option<crate::types::ContentTypeProfiles>,
+    pub(crate) forward_when_content_type_is_unknown: ::std::option::Option<bool>,
+    pub(crate) content_type_profiles: ::std::option::Option<crate::types::ContentTypeProfiles>,
 }
 impl ContentTypeProfileConfigBuilder {
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
     pub fn forward_when_content_type_is_unknown(mut self, input: bool) -> Self {
-        self.forward_when_content_type_is_unknown = Some(input);
+        self.forward_when_content_type_is_unknown = ::std::option::Option::Some(input);
         self
     }
     /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown.</p>
     pub fn set_forward_when_content_type_is_unknown(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.forward_when_content_type_is_unknown = input;
         self
     }
     /// <p>The configuration for a field-level encryption content type-profile.</p>
     pub fn content_type_profiles(mut self, input: crate::types::ContentTypeProfiles) -> Self {
-        self.content_type_profiles = Some(input);
+        self.content_type_profiles = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for a field-level encryption content type-profile.</p>
     pub fn set_content_type_profiles(
         mut self,
-        input: std::option::Option<crate::types::ContentTypeProfiles>,
+        input: ::std::option::Option<crate::types::ContentTypeProfiles>,
     ) -> Self {
         self.content_type_profiles = input;
         self

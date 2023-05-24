@@ -2,22 +2,22 @@
 
 /// <p>The authorizer summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizerSummary {
     /// <p>The authorizer name.</p>
     #[doc(hidden)]
-    pub authorizer_name: std::option::Option<std::string::String>,
+    pub authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer ARN.</p>
     #[doc(hidden)]
-    pub authorizer_arn: std::option::Option<std::string::String>,
+    pub authorizer_arn: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizerSummary {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+    pub fn authorizer_name(&self) -> ::std::option::Option<&str> {
         self.authorizer_name.as_deref()
     }
     /// <p>The authorizer ARN.</p>
-    pub fn authorizer_arn(&self) -> std::option::Option<&str> {
+    pub fn authorizer_arn(&self) -> ::std::option::Option<&str> {
         self.authorizer_arn.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl AuthorizerSummary {
 
 /// A builder for [`AuthorizerSummary`](crate::types::AuthorizerSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthorizerSummaryBuilder {
-    pub(crate) authorizer_name: std::option::Option<std::string::String>,
-    pub(crate) authorizer_arn: std::option::Option<std::string::String>,
+    pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) authorizer_arn: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizerSummaryBuilder {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.authorizer_name = Some(input.into());
+    pub fn authorizer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.authorizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer name.</p>
-    pub fn set_authorizer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.authorizer_name = input;
         self
     }
     /// <p>The authorizer ARN.</p>
-    pub fn authorizer_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.authorizer_arn = Some(input.into());
+    pub fn authorizer_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.authorizer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer ARN.</p>
-    pub fn set_authorizer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.authorizer_arn = input;
         self
     }

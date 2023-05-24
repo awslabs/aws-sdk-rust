@@ -2,29 +2,29 @@
 
 /// <p>Details the status of Amazon Inspector for each resource type Amazon Inspector scans.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceStatus {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
     #[doc(hidden)]
-    pub ec2: std::option::Option<crate::types::Status>,
+    pub ec2: ::std::option::Option<crate::types::Status>,
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
     #[doc(hidden)]
-    pub ecr: std::option::Option<crate::types::Status>,
+    pub ecr: ::std::option::Option<crate::types::Status>,
     /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
     #[doc(hidden)]
-    pub lambda: std::option::Option<crate::types::Status>,
+    pub lambda: ::std::option::Option<crate::types::Status>,
 }
 impl ResourceStatus {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
-    pub fn ec2(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn ec2(&self) -> ::std::option::Option<&crate::types::Status> {
         self.ec2.as_ref()
     }
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
-    pub fn ecr(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn ecr(&self) -> ::std::option::Option<&crate::types::Status> {
         self.ecr.as_ref()
     }
     /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
-    pub fn lambda(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn lambda(&self) -> ::std::option::Option<&crate::types::Status> {
         self.lambda.as_ref()
     }
 }
@@ -37,40 +37,42 @@ impl ResourceStatus {
 
 /// A builder for [`ResourceStatus`](crate::types::ResourceStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceStatusBuilder {
-    pub(crate) ec2: std::option::Option<crate::types::Status>,
-    pub(crate) ecr: std::option::Option<crate::types::Status>,
-    pub(crate) lambda: std::option::Option<crate::types::Status>,
+    pub(crate) ec2: ::std::option::Option<crate::types::Status>,
+    pub(crate) ecr: ::std::option::Option<crate::types::Status>,
+    pub(crate) lambda: ::std::option::Option<crate::types::Status>,
 }
 impl ResourceStatusBuilder {
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
     pub fn ec2(mut self, input: crate::types::Status) -> Self {
-        self.ec2 = Some(input);
+        self.ec2 = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of Amazon Inspector scanning for Amazon EC2 resources.</p>
-    pub fn set_ec2(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_ec2(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.ec2 = input;
         self
     }
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn ecr(mut self, input: crate::types::Status) -> Self {
-        self.ecr = Some(input);
+        self.ecr = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
-    pub fn set_ecr(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_ecr(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.ecr = input;
         self
     }
     /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
     pub fn lambda(mut self, input: crate::types::Status) -> Self {
-        self.lambda = Some(input);
+        self.lambda = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
-    pub fn set_lambda(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.lambda = input;
         self
     }

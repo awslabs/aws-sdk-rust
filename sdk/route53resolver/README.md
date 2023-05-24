@@ -38,9 +38,9 @@ Then in code, a client can be created with the following:
 ```rust,no_run
 use aws_sdk_route53resolver as route53resolver;
 
-#[tokio::main]
+#[::tokio::main]
 async fn main() -> Result<(), route53resolver::Error> {
-    let config = aws_config::load_from_env().await;
+    let config = ::aws_config::load_from_env().await;
     let client = route53resolver::Client::new(&config);
 
     // ... make some calls with the client

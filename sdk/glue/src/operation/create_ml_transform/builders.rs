@@ -8,29 +8,29 @@ pub use crate::operation::create_ml_transform::_create_ml_transform_input::Creat
 /// <p>Creates an Glue machine learning transform. This operation creates the transform and all the necessary parameters to train it.</p>
 /// <p>Call this operation as the first step in the process of using a machine learning transform (such as the <code>FindMatches</code> transform) for deduplicating data. You can provide an optional <code>Description</code>, in addition to the parameters that you want to use for your algorithm.</p>
 /// <p>You must also specify certain parameters for the tasks that Glue runs on your behalf as part of learning from your data and creating a high-quality machine learning transform. These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>, <code>Timeout</code>, and <code>MaxRetries</code>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMLTransformFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_ml_transform::builders::CreateMlTransformInputBuilder,
 }
 impl CreateMLTransformFluentBuilder {
     /// Creates a new `CreateMLTransform`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_ml_transform::CreateMLTransform,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_ml_transform::CreateMLTransformError,
         >,
     > {
@@ -38,30 +38,33 @@ impl CreateMLTransformFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ml_transform::CreateMlTransformOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_ml_transform::CreateMLTransformError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,31 +77,31 @@ impl CreateMLTransformFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ml_transform::CreateMlTransformOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_ml_transform::CreateMLTransformError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique name that you give the transform when you create it.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The unique name that you give the transform when you create it.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -114,7 +117,7 @@ impl CreateMLTransformFluentBuilder {
     /// <p>A list of Glue table definitions used by the transform.</p>
     pub fn set_input_record_tables(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlueTable>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueTable>>,
     ) -> Self {
         self.inner = self.inner.set_input_record_tables(input);
         self
@@ -127,7 +130,7 @@ impl CreateMLTransformFluentBuilder {
     /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<crate::types::TransformParameters>,
+        input: ::std::option::Option<crate::types::TransformParameters>,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
@@ -137,7 +140,7 @@ impl CreateMLTransformFluentBuilder {
     /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
     /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
         self
     }
@@ -146,17 +149,17 @@ impl CreateMLTransformFluentBuilder {
     /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
     /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role(input);
         self
     }
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-    pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.glue_version(input.into());
         self
     }
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-    pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_glue_version(input);
         self
     }
@@ -184,7 +187,7 @@ impl CreateMLTransformFluentBuilder {
     /// </ul>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
-    pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_max_capacity(input);
         self
     }
@@ -218,7 +221,10 @@ impl CreateMLTransformFluentBuilder {
     /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
     /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
-    pub fn set_worker_type(mut self, input: std::option::Option<crate::types::WorkerType>) -> Self {
+    pub fn set_worker_type(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkerType>,
+    ) -> Self {
         self.inner = self.inner.set_worker_type(input);
         self
     }
@@ -230,7 +236,7 @@ impl CreateMLTransformFluentBuilder {
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_workers(input);
         self
     }
@@ -240,7 +246,7 @@ impl CreateMLTransformFluentBuilder {
         self
     }
     /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout(input);
         self
     }
@@ -250,7 +256,7 @@ impl CreateMLTransformFluentBuilder {
         self
     }
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
-    pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_retries(input);
         self
     }
@@ -261,8 +267,8 @@ impl CreateMLTransformFluentBuilder {
     /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -270,8 +276,8 @@ impl CreateMLTransformFluentBuilder {
     /// <p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -285,7 +291,7 @@ impl CreateMLTransformFluentBuilder {
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     pub fn set_transform_encryption(
         mut self,
-        input: std::option::Option<crate::types::TransformEncryption>,
+        input: ::std::option::Option<crate::types::TransformEncryption>,
     ) -> Self {
         self.inner = self.inner.set_transform_encryption(input);
         self

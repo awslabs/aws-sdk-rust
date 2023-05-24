@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateDeviceWithRoom`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_arn(impl Into<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::set_device_arn): <p>The ARN of the device to associate to a room. Required.</p>
-    ///   - [`room_arn(impl Into<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::set_room_arn): <p>The ARN of the room with which to associate the device. Required.</p>
+    ///   - [`device_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::set_device_arn): <p>The ARN of the device to associate to a room. Required.</p>
+    ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::associate_device_with_room::builders::AssociateDeviceWithRoomFluentBuilder::set_room_arn): <p>The ARN of the room with which to associate the device. Required.</p>
     /// - On success, responds with [`AssociateDeviceWithRoomOutput`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomOutput)
     /// - On failure, responds with [`SdkError<AssociateDeviceWithRoomError>`](crate::operation::associate_device_with_room::AssociateDeviceWithRoomError)
     pub fn associate_device_with_room(

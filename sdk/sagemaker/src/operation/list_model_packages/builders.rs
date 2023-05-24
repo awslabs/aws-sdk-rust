@@ -6,29 +6,29 @@ pub use crate::operation::list_model_packages::_list_model_packages_input::ListM
 /// Fluent builder constructing a request to `ListModelPackages`.
 ///
 /// <p>Lists the model packages that have been created.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelPackagesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder,
 }
 impl ListModelPackagesFluentBuilder {
     /// Creates a new `ListModelPackages`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_model_packages::ListModelPackages,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_model_packages::ListModelPackagesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListModelPackagesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_model_packages::ListModelPackagesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_model_packages::ListModelPackagesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListModelPackagesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_model_packages::ListModelPackagesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_model_packages::ListModelPackagesError,
         >,
     > {
@@ -92,27 +95,27 @@ impl ListModelPackagesFluentBuilder {
         )
     }
     /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
-    pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
     pub fn set_creation_time_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
-    pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
         self
     }
     /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
     pub fn set_creation_time_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
@@ -123,17 +126,23 @@ impl ListModelPackagesFluentBuilder {
         self
     }
     /// <p>The maximum number of model packages to return in the response.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name_contains(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
-    pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name_contains(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
@@ -145,20 +154,23 @@ impl ListModelPackagesFluentBuilder {
     /// <p>A filter that returns only the model packages with the specified approval status.</p>
     pub fn set_model_approval_status(
         mut self,
-        input: std::option::Option<crate::types::ModelApprovalStatus>,
+        input: ::std::option::Option<crate::types::ModelApprovalStatus>,
     ) -> Self {
         self.inner = self.inner.set_model_approval_status(input);
         self
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-    pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn model_package_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.model_package_group_name(input.into());
         self
     }
     /// <p>A filter that returns only model versions that belong to the specified model group.</p>
     pub fn set_model_package_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
@@ -181,18 +193,18 @@ impl ListModelPackagesFluentBuilder {
     /// </ul>
     pub fn set_model_package_type(
         mut self,
-        input: std::option::Option<crate::types::ModelPackageType>,
+        input: ::std::option::Option<crate::types::ModelPackageType>,
     ) -> Self {
         self.inner = self.inner.set_model_package_type(input);
         self
     }
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -204,7 +216,7 @@ impl ListModelPackagesFluentBuilder {
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::ModelPackageSortBy>,
+        input: ::std::option::Option<crate::types::ModelPackageSortBy>,
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
@@ -215,7 +227,7 @@ impl ListModelPackagesFluentBuilder {
         self
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

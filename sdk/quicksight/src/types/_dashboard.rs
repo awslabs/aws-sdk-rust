@@ -2,57 +2,57 @@
 
 /// <p>Dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Dashboard {
     /// <p>Dashboard ID.</p>
     #[doc(hidden)]
-    pub dashboard_id: std::option::Option<std::string::String>,
+    pub dashboard_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the dashboard.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Version.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<crate::types::DashboardVersion>,
+    pub version: ::std::option::Option<crate::types::DashboardVersion>,
     /// <p>The time that this dashboard was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this dashboard was published.</p>
     #[doc(hidden)]
-    pub last_published_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_published_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this dashboard was updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Dashboard {
     /// <p>Dashboard ID.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> ::std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A display name for the dashboard.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Version.</p>
-    pub fn version(&self) -> std::option::Option<&crate::types::DashboardVersion> {
+    pub fn version(&self) -> ::std::option::Option<&crate::types::DashboardVersion> {
         self.version.as_ref()
     }
     /// <p>The time that this dashboard was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The last time that this dashboard was published.</p>
-    pub fn last_published_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_published_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_published_time.as_ref()
     }
     /// <p>The last time that this dashboard was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -65,95 +65,97 @@ impl Dashboard {
 
 /// A builder for [`Dashboard`](crate::types::Dashboard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DashboardBuilder {
-    pub(crate) dashboard_id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<crate::types::DashboardVersion>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_published_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) dashboard_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<crate::types::DashboardVersion>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_published_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DashboardBuilder {
     /// <p>Dashboard ID.</p>
-    pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dashboard_id = Some(input.into());
+    pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dashboard_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Dashboard ID.</p>
-    pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dashboard_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>A display name for the dashboard.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A display name for the dashboard.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Version.</p>
     pub fn version(mut self, input: crate::types::DashboardVersion) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Version.</p>
     pub fn set_version(
         mut self,
-        input: std::option::Option<crate::types::DashboardVersion>,
+        input: ::std::option::Option<crate::types::DashboardVersion>,
     ) -> Self {
         self.version = input;
         self
     }
     /// <p>The time that this dashboard was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that this dashboard was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The last time that this dashboard was published.</p>
-    pub fn last_published_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_published_time = Some(input);
+    pub fn last_published_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_published_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time that this dashboard was published.</p>
     pub fn set_last_published_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_published_time = input;
         self
     }
     /// <p>The last time that this dashboard was updated.</p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time that this dashboard was updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self

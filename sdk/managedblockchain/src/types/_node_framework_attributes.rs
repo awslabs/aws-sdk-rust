@@ -2,22 +2,22 @@
 
 /// <p>Attributes relevant to a node on a Managed Blockchain network for the blockchain framework that the network uses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
-    pub fabric: std::option::Option<crate::types::NodeFabricAttributes>,
+    pub fabric: ::std::option::Option<crate::types::NodeFabricAttributes>,
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     #[doc(hidden)]
-    pub ethereum: std::option::Option<crate::types::NodeEthereumAttributes>,
+    pub ethereum: ::std::option::Option<crate::types::NodeEthereumAttributes>,
 }
 impl NodeFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn fabric(&self) -> std::option::Option<&crate::types::NodeFabricAttributes> {
+    pub fn fabric(&self) -> ::std::option::Option<&crate::types::NodeFabricAttributes> {
         self.fabric.as_ref()
     }
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
-    pub fn ethereum(&self) -> std::option::Option<&crate::types::NodeEthereumAttributes> {
+    pub fn ethereum(&self) -> ::std::option::Option<&crate::types::NodeEthereumAttributes> {
         self.ethereum.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl NodeFrameworkAttributes {
 
 /// A builder for [`NodeFrameworkAttributes`](crate::types::NodeFrameworkAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeFrameworkAttributesBuilder {
-    pub(crate) fabric: std::option::Option<crate::types::NodeFabricAttributes>,
-    pub(crate) ethereum: std::option::Option<crate::types::NodeEthereumAttributes>,
+    pub(crate) fabric: ::std::option::Option<crate::types::NodeFabricAttributes>,
+    pub(crate) ethereum: ::std::option::Option<crate::types::NodeEthereumAttributes>,
 }
 impl NodeFrameworkAttributesBuilder {
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fn fabric(mut self, input: crate::types::NodeFabricAttributes) -> Self {
-        self.fabric = Some(input);
+        self.fabric = ::std::option::Option::Some(input);
         self
     }
     /// <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fn set_fabric(
         mut self,
-        input: std::option::Option<crate::types::NodeFabricAttributes>,
+        input: ::std::option::Option<crate::types::NodeFabricAttributes>,
     ) -> Self {
         self.fabric = input;
         self
     }
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub fn ethereum(mut self, input: crate::types::NodeEthereumAttributes) -> Self {
-        self.ethereum = Some(input);
+        self.ethereum = ::std::option::Option::Some(input);
         self
     }
     /// <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum. </p>
     pub fn set_ethereum(
         mut self,
-        input: std::option::Option<crate::types::NodeEthereumAttributes>,
+        input: ::std::option::Option<crate::types::NodeEthereumAttributes>,
     ) -> Self {
         self.ethereum = input;
         self

@@ -2,20 +2,20 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateImportJobOutput {
     /// <p>A string that represents the import job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateImportJobOutput {
+impl ::aws_http::request_id::RequestId for CreateImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl CreateImportJobOutput {
 
 /// A builder for [`CreateImportJobOutput`](crate::operation::create_import_job::CreateImportJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateImportJobOutputBuilder {
-    pub(crate) job_id: std::option::Option<std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateImportJobOutputBuilder {
     /// <p>A string that represents the import job ID.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that represents the import job ID.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }

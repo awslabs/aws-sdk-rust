@@ -2,29 +2,29 @@
 
 /// <p> A filter used by <code>ListInsights</code> to specify which insights to return. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInsightsStatusFilter {
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     #[doc(hidden)]
-    pub ongoing: std::option::Option<crate::types::ListInsightsOngoingStatusFilter>,
+    pub ongoing: ::std::option::Option<crate::types::ListInsightsOngoingStatusFilter>,
     /// <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     #[doc(hidden)]
-    pub closed: std::option::Option<crate::types::ListInsightsClosedStatusFilter>,
+    pub closed: ::std::option::Option<crate::types::ListInsightsClosedStatusFilter>,
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     #[doc(hidden)]
-    pub any: std::option::Option<crate::types::ListInsightsAnyStatusFilter>,
+    pub any: ::std::option::Option<crate::types::ListInsightsAnyStatusFilter>,
 }
 impl ListInsightsStatusFilter {
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
-    pub fn ongoing(&self) -> std::option::Option<&crate::types::ListInsightsOngoingStatusFilter> {
+    pub fn ongoing(&self) -> ::std::option::Option<&crate::types::ListInsightsOngoingStatusFilter> {
         self.ongoing.as_ref()
     }
     /// <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
-    pub fn closed(&self) -> std::option::Option<&crate::types::ListInsightsClosedStatusFilter> {
+    pub fn closed(&self) -> ::std::option::Option<&crate::types::ListInsightsClosedStatusFilter> {
         self.closed.as_ref()
     }
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
-    pub fn any(&self) -> std::option::Option<&crate::types::ListInsightsAnyStatusFilter> {
+    pub fn any(&self) -> ::std::option::Option<&crate::types::ListInsightsAnyStatusFilter> {
         self.any.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl ListInsightsStatusFilter {
 
 /// A builder for [`ListInsightsStatusFilter`](crate::types::ListInsightsStatusFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListInsightsStatusFilterBuilder {
-    pub(crate) ongoing: std::option::Option<crate::types::ListInsightsOngoingStatusFilter>,
-    pub(crate) closed: std::option::Option<crate::types::ListInsightsClosedStatusFilter>,
-    pub(crate) any: std::option::Option<crate::types::ListInsightsAnyStatusFilter>,
+    pub(crate) ongoing: ::std::option::Option<crate::types::ListInsightsOngoingStatusFilter>,
+    pub(crate) closed: ::std::option::Option<crate::types::ListInsightsClosedStatusFilter>,
+    pub(crate) any: ::std::option::Option<crate::types::ListInsightsAnyStatusFilter>,
 }
 impl ListInsightsStatusFilterBuilder {
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     pub fn ongoing(mut self, input: crate::types::ListInsightsOngoingStatusFilter) -> Self {
-        self.ongoing = Some(input);
+        self.ongoing = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     pub fn set_ongoing(
         mut self,
-        input: std::option::Option<crate::types::ListInsightsOngoingStatusFilter>,
+        input: ::std::option::Option<crate::types::ListInsightsOngoingStatusFilter>,
     ) -> Self {
         self.ongoing = input;
         self
     }
     /// <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     pub fn closed(mut self, input: crate::types::ListInsightsClosedStatusFilter) -> Self {
-        self.closed = Some(input);
+        self.closed = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     pub fn set_closed(
         mut self,
-        input: std::option::Option<crate::types::ListInsightsClosedStatusFilter>,
+        input: ::std::option::Option<crate::types::ListInsightsClosedStatusFilter>,
     ) -> Self {
         self.closed = input;
         self
     }
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     pub fn any(mut self, input: crate::types::ListInsightsAnyStatusFilter) -> Self {
-        self.any = Some(input);
+        self.any = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. </p>
     pub fn set_any(
         mut self,
-        input: std::option::Option<crate::types::ListInsightsAnyStatusFilter>,
+        input: ::std::option::Option<crate::types::ListInsightsAnyStatusFilter>,
     ) -> Self {
         self.any = input;
         self

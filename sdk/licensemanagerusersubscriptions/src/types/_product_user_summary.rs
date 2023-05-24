@@ -2,64 +2,64 @@
 
 /// <p>The summary of the user-based subscription products for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductUserSummary {
     /// <p>The user name from the identity provider of the user.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user-based subscription product.</p>
     #[doc(hidden)]
-    pub product: std::option::Option<std::string::String>,
+    pub product: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
-    pub identity_provider: std::option::Option<crate::types::IdentityProvider>,
+    pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The status of a product for a user.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The status message for a product for a user.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the user.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The start date of a subscription.</p>
     #[doc(hidden)]
-    pub subscription_start_date: std::option::Option<std::string::String>,
+    pub subscription_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The end date of a subscription.</p>
     #[doc(hidden)]
-    pub subscription_end_date: std::option::Option<std::string::String>,
+    pub subscription_end_date: ::std::option::Option<::std::string::String>,
 }
 impl ProductUserSummary {
     /// <p>The user name from the identity provider of the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> ::std::option::Option<&str> {
         self.product.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The status of a product for a user.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The status message for a product for a user.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The start date of a subscription.</p>
-    pub fn subscription_start_date(&self) -> std::option::Option<&str> {
+    pub fn subscription_start_date(&self) -> ::std::option::Option<&str> {
         self.subscription_start_date.as_deref()
     }
     /// <p>The end date of a subscription.</p>
-    pub fn subscription_end_date(&self) -> std::option::Option<&str> {
+    pub fn subscription_end_date(&self) -> ::std::option::Option<&str> {
         self.subscription_end_date.as_deref()
     }
 }
@@ -72,103 +72,117 @@ impl ProductUserSummary {
 
 /// A builder for [`ProductUserSummary`](crate::types::ProductUserSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductUserSummaryBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) product: std::option::Option<std::string::String>,
-    pub(crate) identity_provider: std::option::Option<crate::types::IdentityProvider>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) domain: std::option::Option<std::string::String>,
-    pub(crate) subscription_start_date: std::option::Option<std::string::String>,
-    pub(crate) subscription_end_date: std::option::Option<std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) product: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_start_date: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_end_date: ::std::option::Option<::std::string::String>,
 }
 impl ProductUserSummaryBuilder {
     /// <p>The user name from the identity provider of the user.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name from the identity provider of the user.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product = Some(input.into());
+    pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
-        self.identity_provider = Some(input);
+        self.identity_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn set_identity_provider(
         mut self,
-        input: std::option::Option<crate::types::IdentityProvider>,
+        input: ::std::option::Option<crate::types::IdentityProvider>,
     ) -> Self {
         self.identity_provider = input;
         self
     }
     /// <p>The status of a product for a user.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of a product for a user.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status message for a product for a user.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for a product for a user.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name of the user.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
     /// <p>The start date of a subscription.</p>
-    pub fn subscription_start_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_start_date = Some(input.into());
+    pub fn subscription_start_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_start_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start date of a subscription.</p>
     pub fn set_subscription_start_date(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subscription_start_date = input;
         self
     }
     /// <p>The end date of a subscription.</p>
-    pub fn subscription_end_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_end_date = Some(input.into());
+    pub fn subscription_end_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_end_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end date of a subscription.</p>
     pub fn set_subscription_end_date(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subscription_end_date = input;
         self

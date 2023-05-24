@@ -2,22 +2,22 @@
 
 /// <p>A container for the encryption of the S3 Storage Lens metrics exports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageLensDataExportEncryption {
     /// <p></p>
     #[doc(hidden)]
-    pub sses3: std::option::Option<crate::types::Sses3>,
+    pub sses3: ::std::option::Option<crate::types::Sses3>,
     /// <p></p>
     #[doc(hidden)]
-    pub ssekms: std::option::Option<crate::types::Ssekms>,
+    pub ssekms: ::std::option::Option<crate::types::Ssekms>,
 }
 impl StorageLensDataExportEncryption {
     /// <p></p>
-    pub fn sses3(&self) -> std::option::Option<&crate::types::Sses3> {
+    pub fn sses3(&self) -> ::std::option::Option<&crate::types::Sses3> {
         self.sses3.as_ref()
     }
     /// <p></p>
-    pub fn ssekms(&self) -> std::option::Option<&crate::types::Ssekms> {
+    pub fn ssekms(&self) -> ::std::option::Option<&crate::types::Ssekms> {
         self.ssekms.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl StorageLensDataExportEncryption {
 
 /// A builder for [`StorageLensDataExportEncryption`](crate::types::StorageLensDataExportEncryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StorageLensDataExportEncryptionBuilder {
-    pub(crate) sses3: std::option::Option<crate::types::Sses3>,
-    pub(crate) ssekms: std::option::Option<crate::types::Ssekms>,
+    pub(crate) sses3: ::std::option::Option<crate::types::Sses3>,
+    pub(crate) ssekms: ::std::option::Option<crate::types::Ssekms>,
 }
 impl StorageLensDataExportEncryptionBuilder {
     /// <p></p>
     pub fn sses3(mut self, input: crate::types::Sses3) -> Self {
-        self.sses3 = Some(input);
+        self.sses3 = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_sses3(mut self, input: std::option::Option<crate::types::Sses3>) -> Self {
+    pub fn set_sses3(mut self, input: ::std::option::Option<crate::types::Sses3>) -> Self {
         self.sses3 = input;
         self
     }
     /// <p></p>
     pub fn ssekms(mut self, input: crate::types::Ssekms) -> Self {
-        self.ssekms = Some(input);
+        self.ssekms = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_ssekms(mut self, input: std::option::Option<crate::types::Ssekms>) -> Self {
+    pub fn set_ssekms(mut self, input: ::std::option::Option<crate::types::Ssekms>) -> Self {
         self.ssekms = input;
         self
     }

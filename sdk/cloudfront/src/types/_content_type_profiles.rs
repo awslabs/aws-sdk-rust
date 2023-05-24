@@ -2,22 +2,22 @@
 
 /// <p>Field-level encryption content type-profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentTypeProfiles {
     /// <p>The number of field-level encryption content type-profile mappings.</p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<i32>,
+    pub quantity: ::std::option::Option<i32>,
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::ContentTypeProfile>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>>,
 }
 impl ContentTypeProfiles {
     /// <p>The number of field-level encryption content type-profile mappings.</p>
-    pub fn quantity(&self) -> std::option::Option<i32> {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::ContentTypeProfile]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ContentTypeProfile]> {
         self.items.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ContentTypeProfiles {
 
 /// A builder for [`ContentTypeProfiles`](crate::types::ContentTypeProfiles).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContentTypeProfilesBuilder {
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::ContentTypeProfile>>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>>,
 }
 impl ContentTypeProfilesBuilder {
     /// <p>The number of field-level encryption content type-profile mappings.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of field-level encryption content type-profile mappings.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
@@ -54,13 +56,13 @@ impl ContentTypeProfilesBuilder {
     pub fn items(mut self, input: crate::types::ContentTypeProfile) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContentTypeProfile>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContentTypeProfile>>,
     ) -> Self {
         self.items = input;
         self

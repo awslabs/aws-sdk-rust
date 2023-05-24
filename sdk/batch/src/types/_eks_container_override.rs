@@ -2,49 +2,49 @@
 
 /// <p>Object representing any Kubernetes overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksContainerOverride {
     /// <p>The override of the Docker image that's used to start the container.</p>
     #[doc(hidden)]
-    pub image: std::option::Option<std::string::String>,
+    pub image: ::std::option::Option<::std::string::String>,
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub args: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     #[doc(hidden)]
-    pub env: std::option::Option<std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
+    pub env: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
     /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub resources: std::option::Option<crate::types::EksContainerResourceRequirements>,
+    pub resources: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
 }
 impl EksContainerOverride {
     /// <p>The override of the Docker image that's used to start the container.</p>
-    pub fn image(&self) -> std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.command.as_deref()
     }
     /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.args.as_deref()
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn env(&self) -> std::option::Option<&[crate::types::EksContainerEnvironmentVariable]> {
+    pub fn env(&self) -> ::std::option::Option<&[crate::types::EksContainerEnvironmentVariable]> {
         self.env.as_deref()
     }
     /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn resources(
         &self,
-    ) -> std::option::Option<&crate::types::EksContainerResourceRequirements> {
+    ) -> ::std::option::Option<&crate::types::EksContainerResourceRequirements> {
         self.resources.as_ref()
     }
 }
@@ -57,23 +57,25 @@ impl EksContainerOverride {
 
 /// A builder for [`EksContainerOverride`](crate::types::EksContainerOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EksContainerOverrideBuilder {
-    pub(crate) image: std::option::Option<std::string::String>,
-    pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) image: ::std::option::Option<::std::string::String>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) env:
-        std::option::Option<std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
-    pub(crate) resources: std::option::Option<crate::types::EksContainerResourceRequirements>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
+    pub(crate) resources: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
 }
 impl EksContainerOverrideBuilder {
     /// <p>The override of the Docker image that's used to start the container.</p>
-    pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image = Some(input.into());
+    pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The override of the Docker image that's used to start the container.</p>
-    pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
     }
@@ -82,16 +84,16 @@ impl EksContainerOverrideBuilder {
     /// To override the contents of this collection use [`set_command`](Self::set_command).
     ///
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
         v.push(input.into());
-        self.command = Some(v);
+        self.command = ::std::option::Option::Some(v);
         self
     }
     /// <p>The command to send to the container that overrides the default command from the Docker image or the job definition.</p>
     pub fn set_command(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.command = input;
         self
@@ -101,16 +103,16 @@ impl EksContainerOverrideBuilder {
     /// To override the contents of this collection use [`set_args`](Self::set_args).
     ///
     /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
         v.push(input.into());
-        self.args = Some(v);
+        self.args = ::std::option::Option::Some(v);
         self
     }
     /// <p>The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker image or the job definition. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_args(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.args = input;
         self
@@ -125,7 +127,7 @@ impl EksContainerOverrideBuilder {
     pub fn env(mut self, input: crate::types::EksContainerEnvironmentVariable) -> Self {
         let mut v = self.env.unwrap_or_default();
         v.push(input);
-        self.env = Some(v);
+        self.env = ::std::option::Option::Some(v);
         self
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch. Or, you can override the existing environment variables from the Docker image or the job definition.</p> <note>
@@ -133,20 +135,22 @@ impl EksContainerOverrideBuilder {
     /// </note>
     pub fn set_env(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>,
+        >,
     ) -> Self {
         self.env = input;
         self
     }
     /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn resources(mut self, input: crate::types::EksContainerResourceRequirements) -> Self {
-        self.resources = Some(input);
+        self.resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type and amount of resources to assign to a container. These override the settings in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_resources(
         mut self,
-        input: std::option::Option<crate::types::EksContainerResourceRequirements>,
+        input: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
     ) -> Self {
         self.resources = input;
         self

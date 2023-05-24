@@ -2,22 +2,22 @@
 
 /// <p>Describes the metadata of the S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketInfo {
     /// <p>The creation date of the S3 bucket.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<std::string::String>,
+    pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketInfo {
     /// <p>The creation date of the S3 bucket.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<&str> {
         self.creation_date.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl S3BucketInfo {
 
 /// A builder for [`S3BucketInfo`](crate::types::S3BucketInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3BucketInfoBuilder {
-    pub(crate) creation_date: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketInfoBuilder {
     /// <p>The creation date of the S3 bucket.</p>
-    pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_date = Some(input.into());
+    pub fn creation_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation date of the S3 bucket.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

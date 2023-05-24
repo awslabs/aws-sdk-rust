@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateCollection`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collection_id(impl Into<String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::set_collection_id): <p>ID for the collection that you are creating.</p>
+    ///   - [`collection_id(impl ::std::convert::Into<String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::collection_id) / [`set_collection_id(Option<String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::set_collection_id): <p>ID for the collection that you are creating.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_collection::builders::CreateCollectionFluentBuilder::set_tags): <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
     /// - On success, responds with [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput) with field(s):
     ///   - [`status_code(Option<i32>)`](crate::operation::create_collection::CreateCollectionOutput::status_code): <p>HTTP status code indicating the result of the operation.</p>

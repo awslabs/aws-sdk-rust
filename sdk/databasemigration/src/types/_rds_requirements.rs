@@ -2,50 +2,50 @@
 
 /// <p>Provides information that describes the requirements to the target engine on Amazon RDS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsRequirements {
     /// <p>The required target Amazon RDS engine edition.</p>
     #[doc(hidden)]
-    pub engine_edition: std::option::Option<std::string::String>,
+    pub engine_edition: ::std::option::Option<::std::string::String>,
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
     #[doc(hidden)]
-    pub instance_vcpu: std::option::Option<f64>,
+    pub instance_vcpu: ::std::option::Option<f64>,
     /// <p>The required memory on the Amazon RDS DB instance.</p>
     #[doc(hidden)]
-    pub instance_memory: std::option::Option<f64>,
+    pub instance_memory: ::std::option::Option<f64>,
     /// <p>The required Amazon RDS DB instance storage size.</p>
     #[doc(hidden)]
-    pub storage_size: std::option::Option<i32>,
+    pub storage_size: ::std::option::Option<i32>,
     /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
     #[doc(hidden)]
-    pub storage_iops: std::option::Option<i32>,
+    pub storage_iops: ::std::option::Option<i32>,
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
     #[doc(hidden)]
-    pub deployment_option: std::option::Option<std::string::String>,
+    pub deployment_option: ::std::option::Option<::std::string::String>,
 }
 impl RdsRequirements {
     /// <p>The required target Amazon RDS engine edition.</p>
-    pub fn engine_edition(&self) -> std::option::Option<&str> {
+    pub fn engine_edition(&self) -> ::std::option::Option<&str> {
         self.engine_edition.as_deref()
     }
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
-    pub fn instance_vcpu(&self) -> std::option::Option<f64> {
+    pub fn instance_vcpu(&self) -> ::std::option::Option<f64> {
         self.instance_vcpu
     }
     /// <p>The required memory on the Amazon RDS DB instance.</p>
-    pub fn instance_memory(&self) -> std::option::Option<f64> {
+    pub fn instance_memory(&self) -> ::std::option::Option<f64> {
         self.instance_memory
     }
     /// <p>The required Amazon RDS DB instance storage size.</p>
-    pub fn storage_size(&self) -> std::option::Option<i32> {
+    pub fn storage_size(&self) -> ::std::option::Option<i32> {
         self.storage_size
     }
     /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
-    pub fn storage_iops(&self) -> std::option::Option<i32> {
+    pub fn storage_iops(&self) -> ::std::option::Option<i32> {
         self.storage_iops
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
-    pub fn deployment_option(&self) -> std::option::Option<&str> {
+    pub fn deployment_option(&self) -> ::std::option::Option<&str> {
         self.deployment_option.as_deref()
     }
 }
@@ -58,75 +58,86 @@ impl RdsRequirements {
 
 /// A builder for [`RdsRequirements`](crate::types::RdsRequirements).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RdsRequirementsBuilder {
-    pub(crate) engine_edition: std::option::Option<std::string::String>,
-    pub(crate) instance_vcpu: std::option::Option<f64>,
-    pub(crate) instance_memory: std::option::Option<f64>,
-    pub(crate) storage_size: std::option::Option<i32>,
-    pub(crate) storage_iops: std::option::Option<i32>,
-    pub(crate) deployment_option: std::option::Option<std::string::String>,
+    pub(crate) engine_edition: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_vcpu: ::std::option::Option<f64>,
+    pub(crate) instance_memory: ::std::option::Option<f64>,
+    pub(crate) storage_size: ::std::option::Option<i32>,
+    pub(crate) storage_iops: ::std::option::Option<i32>,
+    pub(crate) deployment_option: ::std::option::Option<::std::string::String>,
 }
 impl RdsRequirementsBuilder {
     /// <p>The required target Amazon RDS engine edition.</p>
-    pub fn engine_edition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_edition = Some(input.into());
+    pub fn engine_edition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_edition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The required target Amazon RDS engine edition.</p>
-    pub fn set_engine_edition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_edition(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_edition = input;
         self
     }
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
     pub fn instance_vcpu(mut self, input: f64) -> Self {
-        self.instance_vcpu = Some(input);
+        self.instance_vcpu = ::std::option::Option::Some(input);
         self
     }
     /// <p>The required number of virtual CPUs (vCPU) on the Amazon RDS DB instance.</p>
-    pub fn set_instance_vcpu(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_instance_vcpu(mut self, input: ::std::option::Option<f64>) -> Self {
         self.instance_vcpu = input;
         self
     }
     /// <p>The required memory on the Amazon RDS DB instance.</p>
     pub fn instance_memory(mut self, input: f64) -> Self {
-        self.instance_memory = Some(input);
+        self.instance_memory = ::std::option::Option::Some(input);
         self
     }
     /// <p>The required memory on the Amazon RDS DB instance.</p>
-    pub fn set_instance_memory(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_instance_memory(mut self, input: ::std::option::Option<f64>) -> Self {
         self.instance_memory = input;
         self
     }
     /// <p>The required Amazon RDS DB instance storage size.</p>
     pub fn storage_size(mut self, input: i32) -> Self {
-        self.storage_size = Some(input);
+        self.storage_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The required Amazon RDS DB instance storage size.</p>
-    pub fn set_storage_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_storage_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_size = input;
         self
     }
     /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
     pub fn storage_iops(mut self, input: i32) -> Self {
-        self.storage_iops = Some(input);
+        self.storage_iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>The required number of I/O operations completed each second (IOPS) on your Amazon RDS DB instance.</p>
-    pub fn set_storage_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_storage_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_iops = input;
         self
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
-    pub fn deployment_option(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_option = Some(input.into());
+    pub fn deployment_option(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_option = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The required deployment option for the Amazon RDS DB instance. Valid values include <code>"MULTI_AZ"</code> for Multi-AZ deployments and <code>"SINGLE_AZ"</code> for Single-AZ deployments.</p>
     pub fn set_deployment_option(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.deployment_option = input;
         self

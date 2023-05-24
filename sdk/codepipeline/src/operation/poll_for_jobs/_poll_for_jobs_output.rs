@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>PollForJobs</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
     #[doc(hidden)]
-    pub jobs: std::option::Option<std::vec::Vec<crate::types::Job>>,
+    pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     _request_id: Option<String>,
 }
 impl PollForJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::types::Job]> {
+    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::Job]> {
         self.jobs.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PollForJobsOutput {
+impl ::aws_http::request_id::RequestId for PollForJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl PollForJobsOutput {
 
 /// A builder for [`PollForJobsOutput`](crate::operation::poll_for_jobs::PollForJobsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PollForJobsOutputBuilder {
-    pub(crate) jobs: std::option::Option<std::vec::Vec<crate::types::Job>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     _request_id: Option<String>,
 }
 impl PollForJobsOutputBuilder {
@@ -43,13 +45,13 @@ impl PollForJobsOutputBuilder {
     pub fn jobs(mut self, input: crate::types::Job) -> Self {
         let mut v = self.jobs.unwrap_or_default();
         v.push(input);
-        self.jobs = Some(v);
+        self.jobs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the jobs to take action on.</p>
     pub fn set_jobs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Job>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Job>>,
     ) -> Self {
         self.jobs = input;
         self

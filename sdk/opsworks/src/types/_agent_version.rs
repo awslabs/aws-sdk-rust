@@ -2,24 +2,24 @@
 
 /// <p>Describes an agent version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentVersion {
     /// <p>The agent version.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>The configuration manager.</p>
     #[doc(hidden)]
-    pub configuration_manager: std::option::Option<crate::types::StackConfigurationManager>,
+    pub configuration_manager: ::std::option::Option<crate::types::StackConfigurationManager>,
 }
 impl AgentVersion {
     /// <p>The agent version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The configuration manager.</p>
     pub fn configuration_manager(
         &self,
-    ) -> std::option::Option<&crate::types::StackConfigurationManager> {
+    ) -> ::std::option::Option<&crate::types::StackConfigurationManager> {
         self.configuration_manager.as_ref()
     }
 }
@@ -32,31 +32,34 @@ impl AgentVersion {
 
 /// A builder for [`AgentVersion`](crate::types::AgentVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentVersionBuilder {
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) configuration_manager: std::option::Option<crate::types::StackConfigurationManager>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration_manager:
+        ::std::option::Option<crate::types::StackConfigurationManager>,
 }
 impl AgentVersionBuilder {
     /// <p>The agent version.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The agent version.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The configuration manager.</p>
     pub fn configuration_manager(mut self, input: crate::types::StackConfigurationManager) -> Self {
-        self.configuration_manager = Some(input);
+        self.configuration_manager = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration manager.</p>
     pub fn set_configuration_manager(
         mut self,
-        input: std::option::Option<crate::types::StackConfigurationManager>,
+        input: ::std::option::Option<crate::types::StackConfigurationManager>,
     ) -> Self {
         self.configuration_manager = input;
         self

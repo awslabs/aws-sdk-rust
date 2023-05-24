@@ -2,34 +2,34 @@
 
 /// <p>Contains the output of GetPipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineDefinitionOutput {
     /// <p>The objects defined in the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_objects: std::option::Option<std::vec::Vec<crate::types::PipelineObject>>,
+    pub pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     /// <p>The parameter objects used in the pipeline definition.</p>
     #[doc(hidden)]
-    pub parameter_objects: std::option::Option<std::vec::Vec<crate::types::ParameterObject>>,
+    pub parameter_objects: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
     /// <p>The parameter values used in the pipeline definition.</p>
     #[doc(hidden)]
-    pub parameter_values: std::option::Option<std::vec::Vec<crate::types::ParameterValue>>,
+    pub parameter_values: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
     _request_id: Option<String>,
 }
 impl GetPipelineDefinitionOutput {
     /// <p>The objects defined in the pipeline.</p>
-    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::types::PipelineObject]> {
+    pub fn pipeline_objects(&self) -> ::std::option::Option<&[crate::types::PipelineObject]> {
         self.pipeline_objects.as_deref()
     }
     /// <p>The parameter objects used in the pipeline definition.</p>
-    pub fn parameter_objects(&self) -> std::option::Option<&[crate::types::ParameterObject]> {
+    pub fn parameter_objects(&self) -> ::std::option::Option<&[crate::types::ParameterObject]> {
         self.parameter_objects.as_deref()
     }
     /// <p>The parameter values used in the pipeline definition.</p>
-    pub fn parameter_values(&self) -> std::option::Option<&[crate::types::ParameterValue]> {
+    pub fn parameter_values(&self) -> ::std::option::Option<&[crate::types::ParameterValue]> {
         self.parameter_values.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetPipelineDefinitionOutput {
+impl ::aws_http::request_id::RequestId for GetPipelineDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,11 +45,16 @@ impl GetPipelineDefinitionOutput {
 
 /// A builder for [`GetPipelineDefinitionOutput`](crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPipelineDefinitionOutputBuilder {
-    pub(crate) pipeline_objects: std::option::Option<std::vec::Vec<crate::types::PipelineObject>>,
-    pub(crate) parameter_objects: std::option::Option<std::vec::Vec<crate::types::ParameterObject>>,
-    pub(crate) parameter_values: std::option::Option<std::vec::Vec<crate::types::ParameterValue>>,
+    pub(crate) pipeline_objects:
+        ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
+    pub(crate) parameter_objects:
+        ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
+    pub(crate) parameter_values:
+        ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
     _request_id: Option<String>,
 }
 impl GetPipelineDefinitionOutputBuilder {
@@ -61,13 +66,13 @@ impl GetPipelineDefinitionOutputBuilder {
     pub fn pipeline_objects(mut self, input: crate::types::PipelineObject) -> Self {
         let mut v = self.pipeline_objects.unwrap_or_default();
         v.push(input);
-        self.pipeline_objects = Some(v);
+        self.pipeline_objects = ::std::option::Option::Some(v);
         self
     }
     /// <p>The objects defined in the pipeline.</p>
     pub fn set_pipeline_objects(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PipelineObject>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     ) -> Self {
         self.pipeline_objects = input;
         self
@@ -80,13 +85,13 @@ impl GetPipelineDefinitionOutputBuilder {
     pub fn parameter_objects(mut self, input: crate::types::ParameterObject) -> Self {
         let mut v = self.parameter_objects.unwrap_or_default();
         v.push(input);
-        self.parameter_objects = Some(v);
+        self.parameter_objects = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parameter objects used in the pipeline definition.</p>
     pub fn set_parameter_objects(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterObject>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
     ) -> Self {
         self.parameter_objects = input;
         self
@@ -99,13 +104,13 @@ impl GetPipelineDefinitionOutputBuilder {
     pub fn parameter_values(mut self, input: crate::types::ParameterValue) -> Self {
         let mut v = self.parameter_values.unwrap_or_default();
         v.push(input);
-        self.parameter_values = Some(v);
+        self.parameter_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parameter values used in the pipeline definition.</p>
     pub fn set_parameter_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
     ) -> Self {
         self.parameter_values = input;
         self

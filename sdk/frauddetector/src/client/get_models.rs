@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_models::builders::GetModelsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_id(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_model_id): <p>The model ID.</p>
+    ///   - [`model_id(impl ::std::convert::Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::model_id) / [`set_model_id(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_model_id): <p>The model ID.</p>
     ///   - [`model_type(ModelTypeEnum)`](crate::operation::get_models::builders::GetModelsFluentBuilder::model_type) / [`set_model_type(Option<ModelTypeEnum>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_model_type): <p>The model type.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_next_token): <p>The next token for the subsequent request.</p>
     ///   - [`max_results(i32)`](crate::operation::get_models::builders::GetModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_models::builders::GetModelsFluentBuilder::set_max_results): <p>The maximum number of objects to return for the request. </p>
     /// - On success, responds with [`GetModelsOutput`](crate::operation::get_models::GetModelsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::get_models::GetModelsOutput::next_token): <p>The next page token to be used in subsequent requests.</p>

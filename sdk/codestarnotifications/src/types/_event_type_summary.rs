@@ -2,36 +2,36 @@
 
 /// <p>Returns information about an event that has triggered a notification rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventTypeSummary {
     /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
     #[doc(hidden)]
-    pub event_type_id: std::option::Option<std::string::String>,
+    pub event_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service for which the event applies.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event.</p>
     #[doc(hidden)]
-    pub event_type_name: std::option::Option<std::string::String>,
+    pub event_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the event.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl EventTypeSummary {
     /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn event_type_id(&self) -> std::option::Option<&str> {
+    pub fn event_type_id(&self) -> ::std::option::Option<&str> {
         self.event_type_id.as_deref()
     }
     /// <p>The name of the service for which the event applies.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the event.</p>
-    pub fn event_type_name(&self) -> std::option::Option<&str> {
+    pub fn event_type_name(&self) -> ::std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
     /// <p>The resource type of the event.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
 }
@@ -44,51 +44,71 @@ impl EventTypeSummary {
 
 /// A builder for [`EventTypeSummary`](crate::types::EventTypeSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventTypeSummaryBuilder {
-    pub(crate) event_type_id: std::option::Option<std::string::String>,
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) event_type_name: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
+    pub(crate) event_type_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) event_type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }
 impl EventTypeSummaryBuilder {
     /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn event_type_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_type_id = Some(input.into());
+    pub fn event_type_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the event. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn set_event_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_type_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.event_type_id = input;
         self
     }
     /// <p>The name of the service for which the event applies.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service for which the event applies.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The name of the event.</p>
-    pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_type_name = Some(input.into());
+    pub fn event_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event.</p>
-    pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.event_type_name = input;
         self
     }
     /// <p>The resource type of the event.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type of the event.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }

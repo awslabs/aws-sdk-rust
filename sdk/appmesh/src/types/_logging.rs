@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the logging information for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Logging {
     /// <p>The access log configuration for a virtual node.</p>
     #[doc(hidden)]
-    pub access_log: std::option::Option<crate::types::AccessLog>,
+    pub access_log: ::std::option::Option<crate::types::AccessLog>,
 }
 impl Logging {
     /// <p>The access log configuration for a virtual node.</p>
-    pub fn access_log(&self) -> std::option::Option<&crate::types::AccessLog> {
+    pub fn access_log(&self) -> ::std::option::Option<&crate::types::AccessLog> {
         self.access_log.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl Logging {
 
 /// A builder for [`Logging`](crate::types::Logging).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingBuilder {
-    pub(crate) access_log: std::option::Option<crate::types::AccessLog>,
+    pub(crate) access_log: ::std::option::Option<crate::types::AccessLog>,
 }
 impl LoggingBuilder {
     /// <p>The access log configuration for a virtual node.</p>
     pub fn access_log(mut self, input: crate::types::AccessLog) -> Self {
-        self.access_log = Some(input);
+        self.access_log = ::std::option::Option::Some(input);
         self
     }
     /// <p>The access log configuration for a virtual node.</p>
-    pub fn set_access_log(mut self, input: std::option::Option<crate::types::AccessLog>) -> Self {
+    pub fn set_access_log(mut self, input: ::std::option::Option<crate::types::AccessLog>) -> Self {
         self.access_log = input;
         self
     }

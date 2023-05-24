@@ -7,56 +7,59 @@ pub use crate::operation::list_contacts::_list_contacts_input::ListContactsInput
 ///
 /// <p>Returns a list of contacts.</p>
 /// <p>If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContactsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_contacts::builders::ListContactsInputBuilder,
 }
 impl ListContactsFluentBuilder {
     /// Creates a new `ListContacts`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_contacts::ListContacts,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_contacts::ListContactsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +72,9 @@ impl ListContactsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_contacts::ListContactsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_contacts::ListContactsError>,
     > {
         self.send_middleware().await
     }
@@ -92,17 +95,17 @@ impl ListContactsFluentBuilder {
         self
     }
     /// <p>Maximum number of contacts returned.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -118,63 +121,81 @@ impl ListContactsFluentBuilder {
     /// <p>Status of a contact reservation.</p>
     pub fn set_status_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContactStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactStatus>>,
     ) -> Self {
         self.inner = self.inner.set_status_list(input);
         self
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>Start time of a contact in UTC.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ground_station(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ground_station(input.into());
         self
     }
     /// <p>Name of a ground station.</p>
-    pub fn set_ground_station(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ground_station(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ground_station(input);
         self
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn satellite_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.satellite_arn(input.into());
         self
     }
     /// <p>ARN of a satellite.</p>
-    pub fn set_satellite_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_satellite_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_satellite_arn(input);
         self
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn mission_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.mission_profile_arn(input.into());
         self
     }
     /// <p>ARN of a mission profile.</p>
     pub fn set_mission_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_mission_profile_arn(input);
         self

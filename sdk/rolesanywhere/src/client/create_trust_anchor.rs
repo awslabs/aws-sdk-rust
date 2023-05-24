@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateTrustAnchor`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::set_name): <p>The name of the trust anchor.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::set_name): <p>The name of the trust anchor.</p>
     ///   - [`source(Source)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::source) / [`set_source(Option<Source>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::set_source): <p>The trust anchor type and its related certificate data.</p>
     ///   - [`enabled(bool)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::enabled) / [`set_enabled(Option<bool>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::set_enabled): <p>Specifies whether the trust anchor is enabled.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorFluentBuilder::set_tags): <p>The tags to attach to the trust anchor.</p>

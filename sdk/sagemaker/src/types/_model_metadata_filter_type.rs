@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ModelMetadataFilterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ModelMetadataFilterType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ModelMetadataFilterType {
+impl ::std::convert::From<&str> for ModelMetadataFilterType {
     fn from(s: &str) -> Self {
         match s {
             "Domain" => ModelMetadataFilterType::Domain,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ModelMetadataFilterType {
         }
     }
 }
-impl std::str::FromStr for ModelMetadataFilterType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ModelMetadataFilterType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ModelMetadataFilterType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ModelMetadataFilterType::from(s))
     }
 }
 impl ModelMetadataFilterType {
@@ -96,7 +96,7 @@ impl ModelMetadataFilterType {
         &["Domain", "Framework", "FrameworkVersion", "Task"]
     }
 }
-impl AsRef<str> for ModelMetadataFilterType {
+impl ::std::convert::AsRef<str> for ModelMetadataFilterType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

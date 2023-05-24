@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NotificationContentType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum NotificationContentType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NotificationContentType {
+impl ::std::convert::From<&str> for NotificationContentType {
     fn from(s: &str) -> Self {
         match s {
             "PLAIN_TEXT" => NotificationContentType::PlainText,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for NotificationContentType {
         }
     }
 }
-impl std::str::FromStr for NotificationContentType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NotificationContentType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationContentType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NotificationContentType::from(s))
     }
 }
 impl NotificationContentType {
@@ -81,7 +81,7 @@ impl NotificationContentType {
         &["PLAIN_TEXT"]
     }
 }
-impl AsRef<str> for NotificationContentType {
+impl ::std::convert::AsRef<str> for NotificationContentType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

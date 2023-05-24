@@ -2,17 +2,17 @@
 
 /// <p>Provides a summary of the forecast export job properties used in the <code>ListForecastExportJobs</code> operation. To get the complete set of properties, call the <code>DescribeForecastExportJob</code> operation, and provide the listed <code>ForecastExportJobArn</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
     #[doc(hidden)]
-    pub forecast_export_job_arn: std::option::Option<std::string::String>,
+    pub forecast_export_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the forecast export job.</p>
     #[doc(hidden)]
-    pub forecast_export_job_name: std::option::Option<std::string::String>,
+    pub forecast_export_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::DataDestination>,
+    pub destination: ::std::option::Option<crate::types::DataDestination>,
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> </p> </li>
@@ -23,13 +23,13 @@ pub struct ForecastExportJobSummary {
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>When the forecast export job was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
     /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
@@ -39,19 +39,19 @@ pub struct ForecastExportJobSummary {
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ForecastExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    pub fn forecast_export_job_arn(&self) -> std::option::Option<&str> {
+    pub fn forecast_export_job_arn(&self) -> ::std::option::Option<&str> {
         self.forecast_export_job_arn.as_deref()
     }
     /// <p>The name of the forecast export job.</p>
-    pub fn forecast_export_job_name(&self) -> std::option::Option<&str> {
+    pub fn forecast_export_job_name(&self) -> ::std::option::Option<&str> {
         self.forecast_export_job_name.as_deref()
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::DataDestination> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::DataDestination> {
         self.destination.as_ref()
     }
     /// <p>The status of the forecast export job. States include:</p>
@@ -63,15 +63,15 @@ impl ForecastExportJobSummary {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>If an error occurred, an informational message about the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>When the forecast export job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
@@ -82,7 +82,7 @@ impl ForecastExportJobSummary {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -95,52 +95,60 @@ impl ForecastExportJobSummary {
 
 /// A builder for [`ForecastExportJobSummary`](crate::types::ForecastExportJobSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForecastExportJobSummaryBuilder {
-    pub(crate) forecast_export_job_arn: std::option::Option<std::string::String>,
-    pub(crate) forecast_export_job_name: std::option::Option<std::string::String>,
-    pub(crate) destination: std::option::Option<crate::types::DataDestination>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) forecast_export_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) forecast_export_job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) destination: ::std::option::Option<crate::types::DataDestination>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ForecastExportJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    pub fn forecast_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.forecast_export_job_arn = Some(input.into());
+    pub fn forecast_export_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.forecast_export_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
     pub fn set_forecast_export_job_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.forecast_export_job_arn = input;
         self
     }
     /// <p>The name of the forecast export job.</p>
-    pub fn forecast_export_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.forecast_export_job_name = Some(input.into());
+    pub fn forecast_export_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.forecast_export_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the forecast export job.</p>
     pub fn set_forecast_export_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.forecast_export_job_name = input;
         self
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::DataDestination>,
+        input: ::std::option::Option<crate::types::DataDestination>,
     ) -> Self {
         self.destination = input;
         self
@@ -154,8 +162,8 @@ impl ForecastExportJobSummaryBuilder {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the forecast export job. States include:</p>
@@ -167,29 +175,29 @@ impl ForecastExportJobSummaryBuilder {
     /// </ul> <note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>If an error occurred, an informational message about the error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred, an informational message about the error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>When the forecast export job was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the forecast export job was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
@@ -202,8 +210,8 @@ impl ForecastExportJobSummaryBuilder {
     /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
     /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modification_time = Some(input);
+    pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modification_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
@@ -216,7 +224,7 @@ impl ForecastExportJobSummaryBuilder {
     /// </ul>
     pub fn set_last_modification_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modification_time = input;
         self

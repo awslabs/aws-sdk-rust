@@ -2,31 +2,33 @@
 
 /// <p>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserStackAssociationError {
     /// <p>Information about the user and associated stack.</p>
     #[doc(hidden)]
-    pub user_stack_association: std::option::Option<crate::types::UserStackAssociation>,
+    pub user_stack_association: ::std::option::Option<crate::types::UserStackAssociation>,
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::UserStackAssociationErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::UserStackAssociationErrorCode>,
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl UserStackAssociationError {
     /// <p>Information about the user and associated stack.</p>
     pub fn user_stack_association(
         &self,
-    ) -> std::option::Option<&crate::types::UserStackAssociation> {
+    ) -> ::std::option::Option<&crate::types::UserStackAssociation> {
         self.user_stack_association.as_ref()
     }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::UserStackAssociationErrorCode> {
+    pub fn error_code(
+        &self,
+    ) -> ::std::option::Option<&crate::types::UserStackAssociationErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -39,46 +41,54 @@ impl UserStackAssociationError {
 
 /// A builder for [`UserStackAssociationError`](crate::types::UserStackAssociationError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserStackAssociationErrorBuilder {
-    pub(crate) user_stack_association: std::option::Option<crate::types::UserStackAssociation>,
-    pub(crate) error_code: std::option::Option<crate::types::UserStackAssociationErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) user_stack_association: ::std::option::Option<crate::types::UserStackAssociation>,
+    pub(crate) error_code: ::std::option::Option<crate::types::UserStackAssociationErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl UserStackAssociationErrorBuilder {
     /// <p>Information about the user and associated stack.</p>
     pub fn user_stack_association(mut self, input: crate::types::UserStackAssociation) -> Self {
-        self.user_stack_association = Some(input);
+        self.user_stack_association = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user and associated stack.</p>
     pub fn set_user_stack_association(
         mut self,
-        input: std::option::Option<crate::types::UserStackAssociation>,
+        input: ::std::option::Option<crate::types::UserStackAssociation>,
     ) -> Self {
         self.user_stack_association = input;
         self
     }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
     pub fn error_code(mut self, input: crate::types::UserStackAssociationErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::UserStackAssociationErrorCode>,
+        input: ::std::option::Option<crate::types::UserStackAssociationErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

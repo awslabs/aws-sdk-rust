@@ -2,22 +2,22 @@
 
 /// <p>Describes a propagation route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayAttachmentPropagation {
     /// <p>The ID of the propagation route table.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_table_id: std::option::Option<std::string::String>,
+    pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the propagation route table.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::TransitGatewayPropagationState>,
+    pub state: ::std::option::Option<crate::types::TransitGatewayPropagationState>,
 }
 impl TransitGatewayAttachmentPropagation {
     /// <p>The ID of the propagation route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The state of the propagation route table.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::TransitGatewayPropagationState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayPropagationState> {
         self.state.as_ref()
     }
 }
@@ -30,34 +30,39 @@ impl TransitGatewayAttachmentPropagation {
 
 /// A builder for [`TransitGatewayAttachmentPropagation`](crate::types::TransitGatewayAttachmentPropagation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransitGatewayAttachmentPropagationBuilder {
-    pub(crate) transit_gateway_route_table_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::TransitGatewayPropagationState>,
+    pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::TransitGatewayPropagationState>,
 }
 impl TransitGatewayAttachmentPropagationBuilder {
     /// <p>The ID of the propagation route table.</p>
-    pub fn transit_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = Some(input.into());
+    pub fn transit_gateway_route_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the propagation route table.</p>
     pub fn set_transit_gateway_route_table_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_route_table_id = input;
         self
     }
     /// <p>The state of the propagation route table.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayPropagationState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the propagation route table.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::TransitGatewayPropagationState>,
+        input: ::std::option::Option<crate::types::TransitGatewayPropagationState>,
     ) -> Self {
         self.state = input;
         self

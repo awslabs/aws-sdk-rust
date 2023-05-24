@@ -2,15 +2,15 @@
 
 /// <p>Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::FeedbackType>,
+    pub r#type: ::std::option::Option<crate::types::FeedbackType>,
 }
 impl UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::FeedbackType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FeedbackType> {
         self.r#type.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl UserFeedback {
 
 /// A builder for [`UserFeedback`](crate::types::UserFeedback).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserFeedbackBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::FeedbackType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::FeedbackType>,
 }
 impl UserFeedbackBuilder {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     pub fn r#type(mut self, input: crate::types::FeedbackType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::FeedbackType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FeedbackType>) -> Self {
         self.r#type = input;
         self
     }

@@ -6,47 +6,50 @@ pub use crate::operation::modify_certificate_based_auth_properties::_modify_cert
 /// Fluent builder constructing a request to `ModifyCertificateBasedAuthProperties`.
 ///
 /// <p>Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCertificateBasedAuthPropertiesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder,
 }
 impl ModifyCertificateBasedAuthPropertiesFluentBuilder {
     /// Creates a new `ModifyCertificateBasedAuthProperties`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthProperties, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthProperties, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput, aws_smithy_http::result::SdkError<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,17 @@ impl ModifyCertificateBasedAuthPropertiesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput, aws_smithy_http::result::SdkError<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesError>>
                          {
         self.send_middleware().await
     }
     /// <p>The resource identifiers, in the form of directory IDs.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>The resource identifiers, in the form of directory IDs.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
@@ -82,7 +85,7 @@ impl ModifyCertificateBasedAuthPropertiesFluentBuilder {
     /// <p>The properties of the certificate-based authentication.</p>
     pub fn set_certificate_based_auth_properties(
         mut self,
-        input: std::option::Option<crate::types::CertificateBasedAuthProperties>,
+        input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
     ) -> Self {
         self.inner = self.inner.set_certificate_based_auth_properties(input);
         self
@@ -102,8 +105,8 @@ impl ModifyCertificateBasedAuthPropertiesFluentBuilder {
     /// <p>The properties of the certificate-based authentication you want to delete.</p>
     pub fn set_properties_to_delete(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::DeletableCertificateBasedAuthProperty>,
         >,
     ) -> Self {
         self.inner = self.inner.set_properties_to_delete(input);

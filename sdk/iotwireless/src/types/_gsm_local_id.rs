@@ -2,22 +2,22 @@
 
 /// <p>GSM local ID information, which corresponds to the local identification parameters of a GSM cell.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GsmLocalId {
     /// <p>GSM base station identity code (BSIC).</p>
     #[doc(hidden)]
-    pub bsic: std::option::Option<i32>,
+    pub bsic: ::std::option::Option<i32>,
     /// <p>GSM broadcast control channel.</p>
     #[doc(hidden)]
-    pub bcch: std::option::Option<i32>,
+    pub bcch: ::std::option::Option<i32>,
 }
 impl GsmLocalId {
     /// <p>GSM base station identity code (BSIC).</p>
-    pub fn bsic(&self) -> std::option::Option<i32> {
+    pub fn bsic(&self) -> ::std::option::Option<i32> {
         self.bsic
     }
     /// <p>GSM broadcast control channel.</p>
-    pub fn bcch(&self) -> std::option::Option<i32> {
+    pub fn bcch(&self) -> ::std::option::Option<i32> {
         self.bcch
     }
 }
@@ -30,29 +30,31 @@ impl GsmLocalId {
 
 /// A builder for [`GsmLocalId`](crate::types::GsmLocalId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GsmLocalIdBuilder {
-    pub(crate) bsic: std::option::Option<i32>,
-    pub(crate) bcch: std::option::Option<i32>,
+    pub(crate) bsic: ::std::option::Option<i32>,
+    pub(crate) bcch: ::std::option::Option<i32>,
 }
 impl GsmLocalIdBuilder {
     /// <p>GSM base station identity code (BSIC).</p>
     pub fn bsic(mut self, input: i32) -> Self {
-        self.bsic = Some(input);
+        self.bsic = ::std::option::Option::Some(input);
         self
     }
     /// <p>GSM base station identity code (BSIC).</p>
-    pub fn set_bsic(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_bsic(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bsic = input;
         self
     }
     /// <p>GSM broadcast control channel.</p>
     pub fn bcch(mut self, input: i32) -> Self {
-        self.bcch = Some(input);
+        self.bcch = ::std::option::Option::Some(input);
         self
     }
     /// <p>GSM broadcast control channel.</p>
-    pub fn set_bcch(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_bcch(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bcch = input;
         self
     }

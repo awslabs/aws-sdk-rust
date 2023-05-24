@@ -8,22 +8,22 @@
 /// <li> <p>stuffed</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnumerationValue {
     /// <p>The value of the slot type.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>Additional values related to the slot type value.</p>
     #[doc(hidden)]
-    pub synonyms: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnumerationValue {
     /// <p>The value of the slot type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>Additional values related to the slot type value.</p>
-    pub fn synonyms(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.synonyms.as_deref()
     }
 }
@@ -36,19 +36,21 @@ impl EnumerationValue {
 
 /// A builder for [`EnumerationValue`](crate::types::EnumerationValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnumerationValueBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) synonyms: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnumerationValueBuilder {
     /// <p>The value of the slot type.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the slot type.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -57,16 +59,16 @@ impl EnumerationValueBuilder {
     /// To override the contents of this collection use [`set_synonyms`](Self::set_synonyms).
     ///
     /// <p>Additional values related to the slot type value.</p>
-    pub fn synonyms(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.synonyms.unwrap_or_default();
         v.push(input.into());
-        self.synonyms = Some(v);
+        self.synonyms = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional values related to the slot type value.</p>
     pub fn set_synonyms(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.synonyms = input;
         self

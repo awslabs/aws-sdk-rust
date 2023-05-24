@@ -2,22 +2,22 @@
 
 /// <p>Details for the external events data used for model version training.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
     #[doc(hidden)]
-    pub data_location: std::option::Option<std::string::String>,
+    pub data_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
     #[doc(hidden)]
-    pub data_access_role_arn: std::option::Option<std::string::String>,
+    pub data_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub fn data_location(&self) -> std::option::Option<&str> {
+    pub fn data_location(&self) -> ::std::option::Option<&str> {
         self.data_location.as_deref()
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl ExternalEventsDetail {
 
 /// A builder for [`ExternalEventsDetail`](crate::types::ExternalEventsDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExternalEventsDetailBuilder {
-    pub(crate) data_location: std::option::Option<std::string::String>,
-    pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+    pub(crate) data_location: ::std::option::Option<::std::string::String>,
+    pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExternalEventsDetailBuilder {
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub fn data_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_location = Some(input.into());
+    pub fn data_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub fn set_data_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_location(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.data_location = input;
         self
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_access_role_arn = Some(input.into());
+    pub fn data_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
     pub fn set_data_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_access_role_arn = input;
         self

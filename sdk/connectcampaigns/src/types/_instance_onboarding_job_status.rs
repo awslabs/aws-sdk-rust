@@ -2,31 +2,31 @@
 
 /// Instance onboarding job status object
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceOnboardingJobStatus {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
-    pub connect_instance_id: std::option::Option<std::string::String>,
+    pub connect_instance_id: ::std::option::Option<::std::string::String>,
     /// Enumeration of the possible states for instance onboarding job
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::InstanceOnboardingJobStatusCode>,
+    pub status: ::std::option::Option<crate::types::InstanceOnboardingJobStatusCode>,
     /// Enumeration of the possible failure codes for instance onboarding job
     #[doc(hidden)]
-    pub failure_code: std::option::Option<crate::types::InstanceOnboardingJobFailureCode>,
+    pub failure_code: ::std::option::Option<crate::types::InstanceOnboardingJobFailureCode>,
 }
 impl InstanceOnboardingJobStatus {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
         self.connect_instance_id.as_deref()
     }
     /// Enumeration of the possible states for instance onboarding job
-    pub fn status(&self) -> std::option::Option<&crate::types::InstanceOnboardingJobStatusCode> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceOnboardingJobStatusCode> {
         self.status.as_ref()
     }
     /// Enumeration of the possible failure codes for instance onboarding job
     pub fn failure_code(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceOnboardingJobFailureCode> {
+    ) -> ::std::option::Option<&crate::types::InstanceOnboardingJobFailureCode> {
         self.failure_code.as_ref()
     }
 }
@@ -39,48 +39,53 @@ impl InstanceOnboardingJobStatus {
 
 /// A builder for [`InstanceOnboardingJobStatus`](crate::types::InstanceOnboardingJobStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceOnboardingJobStatusBuilder {
-    pub(crate) connect_instance_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::InstanceOnboardingJobStatusCode>,
-    pub(crate) failure_code: std::option::Option<crate::types::InstanceOnboardingJobFailureCode>,
+    pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::InstanceOnboardingJobStatusCode>,
+    pub(crate) failure_code: ::std::option::Option<crate::types::InstanceOnboardingJobFailureCode>,
 }
 impl InstanceOnboardingJobStatusBuilder {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connect_instance_id = Some(input.into());
+    pub fn connect_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
     pub fn set_connect_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connect_instance_id = input;
         self
     }
     /// Enumeration of the possible states for instance onboarding job
     pub fn status(mut self, input: crate::types::InstanceOnboardingJobStatusCode) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// Enumeration of the possible states for instance onboarding job
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::InstanceOnboardingJobStatusCode>,
+        input: ::std::option::Option<crate::types::InstanceOnboardingJobStatusCode>,
     ) -> Self {
         self.status = input;
         self
     }
     /// Enumeration of the possible failure codes for instance onboarding job
     pub fn failure_code(mut self, input: crate::types::InstanceOnboardingJobFailureCode) -> Self {
-        self.failure_code = Some(input);
+        self.failure_code = ::std::option::Option::Some(input);
         self
     }
     /// Enumeration of the possible failure codes for instance onboarding job
     pub fn set_failure_code(
         mut self,
-        input: std::option::Option<crate::types::InstanceOnboardingJobFailureCode>,
+        input: ::std::option::Option<crate::types::InstanceOnboardingJobFailureCode>,
     ) -> Self {
         self.failure_code = input;
         self

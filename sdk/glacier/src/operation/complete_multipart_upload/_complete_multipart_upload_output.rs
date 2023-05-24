@@ -3,34 +3,34 @@
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 /// <p>For information about the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload Archive</a>. For conceptual information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working with Archives in Amazon S3 Glacier</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompleteMultipartUploadOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
     #[doc(hidden)]
-    pub checksum: std::option::Option<std::string::String>,
+    pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
     #[doc(hidden)]
-    pub archive_id: std::option::Option<std::string::String>,
+    pub archive_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CompleteMultipartUploadOutput {
     /// <p>The relative URI path of the newly added archive resource.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
-    pub fn archive_id(&self) -> std::option::Option<&str> {
+    pub fn archive_id(&self) -> ::std::option::Option<&str> {
         self.archive_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CompleteMultipartUploadOutput {
+impl ::aws_http::request_id::RequestId for CompleteMultipartUploadOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -46,41 +46,43 @@ impl CompleteMultipartUploadOutput {
 
 /// A builder for [`CompleteMultipartUploadOutput`](crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CompleteMultipartUploadOutputBuilder {
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) checksum: std::option::Option<std::string::String>,
-    pub(crate) archive_id: std::option::Option<std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum: ::std::option::Option<::std::string::String>,
+    pub(crate) archive_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CompleteMultipartUploadOutputBuilder {
     /// <p>The relative URI path of the newly added archive resource.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative URI path of the newly added archive resource.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-    pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.checksum = Some(input.into());
+    pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
-    pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
     }
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
-    pub fn archive_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.archive_id = Some(input.into());
+    pub fn archive_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.archive_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the archive. This value is also included as part of the location.</p>
-    pub fn set_archive_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_archive_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_id = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Represents an API mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiMapping {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
-    pub api_id: std::option::Option<std::string::String>,
+    pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The API mapping identifier.</p>
     #[doc(hidden)]
-    pub api_mapping_id: std::option::Option<std::string::String>,
+    pub api_mapping_id: ::std::option::Option<::std::string::String>,
     /// <p>The API mapping key.</p>
     #[doc(hidden)]
-    pub api_mapping_key: std::option::Option<std::string::String>,
+    pub api_mapping_key: ::std::option::Option<::std::string::String>,
     /// <p>The API stage.</p>
     #[doc(hidden)]
-    pub stage: std::option::Option<std::string::String>,
+    pub stage: ::std::option::Option<::std::string::String>,
 }
 impl ApiMapping {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The API mapping identifier.</p>
-    pub fn api_mapping_id(&self) -> std::option::Option<&str> {
+    pub fn api_mapping_id(&self) -> ::std::option::Option<&str> {
         self.api_mapping_id.as_deref()
     }
     /// <p>The API mapping key.</p>
-    pub fn api_mapping_key(&self) -> std::option::Option<&str> {
+    pub fn api_mapping_key(&self) -> ::std::option::Option<&str> {
         self.api_mapping_key.as_deref()
     }
     /// <p>The API stage.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> ::std::option::Option<&str> {
         self.stage.as_deref()
     }
 }
@@ -44,51 +44,65 @@ impl ApiMapping {
 
 /// A builder for [`ApiMapping`](crate::types::ApiMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApiMappingBuilder {
-    pub(crate) api_id: std::option::Option<std::string::String>,
-    pub(crate) api_mapping_id: std::option::Option<std::string::String>,
-    pub(crate) api_mapping_key: std::option::Option<std::string::String>,
-    pub(crate) stage: std::option::Option<std::string::String>,
+    pub(crate) api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) api_mapping_id: ::std::option::Option<::std::string::String>,
+    pub(crate) api_mapping_key: ::std::option::Option<::std::string::String>,
+    pub(crate) stage: ::std::option::Option<::std::string::String>,
 }
 impl ApiMappingBuilder {
     /// <p>The API identifier.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_id = Some(input.into());
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API identifier.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
     }
     /// <p>The API mapping identifier.</p>
-    pub fn api_mapping_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_mapping_id = Some(input.into());
+    pub fn api_mapping_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_mapping_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API mapping identifier.</p>
-    pub fn set_api_mapping_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_mapping_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.api_mapping_id = input;
         self
     }
     /// <p>The API mapping key.</p>
-    pub fn api_mapping_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_mapping_key = Some(input.into());
+    pub fn api_mapping_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_mapping_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API mapping key.</p>
-    pub fn set_api_mapping_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_mapping_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.api_mapping_key = input;
         self
     }
     /// <p>The API stage.</p>
-    pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage = Some(input.into());
+    pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API stage.</p>
-    pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
     }

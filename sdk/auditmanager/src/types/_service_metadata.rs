@@ -2,36 +2,36 @@
 
 /// <p> The metadata that's associated with the Amazon Web Service. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceMetadata {
     /// <p> The name of the Amazon Web Service. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The display name of the Amazon Web Service. </p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the Amazon Web Service. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::string::String>,
+    pub category: ::std::option::Option<::std::string::String>,
 }
 impl ServiceMetadata {
     /// <p> The name of the Amazon Web Service. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The display name of the Amazon Web Service. </p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p> The description of the Amazon Web Service. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<&str> {
         self.category.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl ServiceMetadata {
 
 /// A builder for [`ServiceMetadata`](crate::types::ServiceMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceMetadataBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) category: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<::std::string::String>,
 }
 impl ServiceMetadataBuilder {
     /// <p> The name of the Amazon Web Service. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the Amazon Web Service. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The display name of the Amazon Web Service. </p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The display name of the Amazon Web Service. </p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p> The description of the Amazon Web Service. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of the Amazon Web Service. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
-        self.category = Some(input.into());
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The category that the Amazon Web Service belongs to, such as compute, storage, or database. </p>
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
     }

@@ -2,36 +2,38 @@
 
 /// <p>Values for use in player attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeValue {
     /// <p>For single string values. Maximum string length is 100 characters.</p>
     #[doc(hidden)]
-    pub s: std::option::Option<std::string::String>,
+    pub s: ::std::option::Option<::std::string::String>,
     /// <p>For number values, expressed as double.</p>
     #[doc(hidden)]
-    pub n: std::option::Option<f64>,
+    pub n: ::std::option::Option<f64>,
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
     #[doc(hidden)]
-    pub sl: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub sl: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     #[doc(hidden)]
-    pub sdm: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+    pub sdm: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl AttributeValue {
     /// <p>For single string values. Maximum string length is 100 characters.</p>
-    pub fn s(&self) -> std::option::Option<&str> {
+    pub fn s(&self) -> ::std::option::Option<&str> {
         self.s.as_deref()
     }
     /// <p>For number values, expressed as double.</p>
-    pub fn n(&self) -> std::option::Option<f64> {
+    pub fn n(&self) -> ::std::option::Option<f64> {
         self.n
     }
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
-    pub fn sl(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sl(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.sl.as_deref()
     }
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
-    pub fn sdm(&self) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+    pub fn sdm(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.sdm.as_ref()
     }
 }
@@ -44,31 +46,33 @@ impl AttributeValue {
 
 /// A builder for [`AttributeValue`](crate::types::AttributeValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttributeValueBuilder {
-    pub(crate) s: std::option::Option<std::string::String>,
-    pub(crate) n: std::option::Option<f64>,
-    pub(crate) sl: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) sdm: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+    pub(crate) s: ::std::option::Option<::std::string::String>,
+    pub(crate) n: ::std::option::Option<f64>,
+    pub(crate) sl: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sdm: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
 }
 impl AttributeValueBuilder {
     /// <p>For single string values. Maximum string length is 100 characters.</p>
-    pub fn s(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s = Some(input.into());
+    pub fn s(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For single string values. Maximum string length is 100 characters.</p>
-    pub fn set_s(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s = input;
         self
     }
     /// <p>For number values, expressed as double.</p>
     pub fn n(mut self, input: f64) -> Self {
-        self.n = Some(input);
+        self.n = ::std::option::Option::Some(input);
         self
     }
     /// <p>For number values, expressed as double.</p>
-    pub fn set_n(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_n(mut self, input: ::std::option::Option<f64>) -> Self {
         self.n = input;
         self
     }
@@ -77,16 +81,16 @@ impl AttributeValueBuilder {
     /// To override the contents of this collection use [`set_sl`](Self::set_sl).
     ///
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
-    pub fn sl(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sl.unwrap_or_default();
         v.push(input.into());
-        self.sl = Some(v);
+        self.sl = ::std::option::Option::Some(v);
         self
     }
     /// <p>For a list of up to 100 strings. Maximum length for each string is 100 characters. Duplicate values are not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.</p>
     pub fn set_sl(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.sl = input;
         self
@@ -96,16 +100,16 @@ impl AttributeValueBuilder {
     /// To override the contents of this collection use [`set_sdm`](Self::set_sdm).
     ///
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
-    pub fn sdm(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
+    pub fn sdm(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.sdm.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.sdm = Some(hash_map);
+        self.sdm = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters. </p>
     pub fn set_sdm(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     ) -> Self {
         self.sdm = input;
         self

@@ -2,46 +2,48 @@
 
 /// <p>Specifies a job definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Job {
     /// <p>The name you assign to this job definition.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the job.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>This field is reserved for future use.</p>
     #[doc(hidden)]
-    pub log_uri: std::option::Option<std::string::String>,
+    pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<std::string::String>,
+    pub role: ::std::option::Option<::std::string::String>,
     /// <p>The time and date that this job definition was created.</p>
     #[doc(hidden)]
-    pub created_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last point in time when this job definition was modified.</p>
     #[doc(hidden)]
-    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     #[doc(hidden)]
-    pub execution_property: std::option::Option<crate::types::ExecutionProperty>,
+    pub execution_property: ::std::option::Option<crate::types::ExecutionProperty>,
     /// <p>The <code>JobCommand</code> that runs this job.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<crate::types::JobCommand>,
+    pub command: ::std::option::Option<crate::types::JobCommand>,
     /// <p>The default arguments for this job, specified as name-value pairs.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     #[doc(hidden)]
-    pub default_arguments:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub default_arguments: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
     #[doc(hidden)]
-    pub non_overridable_arguments:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub non_overridable_arguments: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The connections used for this job.</p>
     #[doc(hidden)]
-    pub connections: std::option::Option<crate::types::ConnectionsList>,
+    pub connections: ::std::option::Option<crate::types::ConnectionsList>,
     /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
     #[doc(hidden)]
     pub max_retries: i32,
@@ -53,7 +55,7 @@ pub struct Job {
     pub allocated_capacity: i32,
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     #[doc(hidden)]
-    pub timeout: std::option::Option<i32>,
+    pub timeout: ::std::option::Option<i32>,
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
     /// <p>Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
@@ -63,7 +65,7 @@ pub struct Job {
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub max_capacity: std::option::Option<f64>,
+    pub max_capacity: ::std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
     /// <ul>
     /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
@@ -74,66 +76,66 @@ pub struct Job {
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub worker_type: std::option::Option<crate::types::WorkerType>,
+    pub worker_type: ::std::option::Option<crate::types::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     #[doc(hidden)]
-    pub number_of_workers: std::option::Option<i32>,
+    pub number_of_workers: ::std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     #[doc(hidden)]
-    pub security_configuration: std::option::Option<std::string::String>,
+    pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Specifies configuration properties of a job notification.</p>
     #[doc(hidden)]
-    pub notification_property: std::option::Option<crate::types::NotificationProperty>,
+    pub notification_property: ::std::option::Option<crate::types::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     #[doc(hidden)]
-    pub glue_version: std::option::Option<std::string::String>,
+    pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     #[doc(hidden)]
-    pub code_gen_configuration_nodes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::CodeGenConfigurationNode>,
+    pub code_gen_configuration_nodes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>,
     >,
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     #[doc(hidden)]
-    pub execution_class: std::option::Option<crate::types::ExecutionClass>,
+    pub execution_class: ::std::option::Option<crate::types::ExecutionClass>,
     /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
     #[doc(hidden)]
-    pub source_control_details: std::option::Option<crate::types::SourceControlDetails>,
+    pub source_control_details: ::std::option::Option<crate::types::SourceControlDetails>,
 }
 impl Job {
     /// <p>The name you assign to this job definition.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the job.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>This field is reserved for future use.</p>
-    pub fn log_uri(&self) -> std::option::Option<&str> {
+    pub fn log_uri(&self) -> ::std::option::Option<&str> {
         self.log_uri.as_deref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
     /// <p>The time and date that this job definition was created.</p>
-    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_on.as_ref()
     }
     /// <p>The last point in time when this job definition was modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
-    pub fn execution_property(&self) -> std::option::Option<&crate::types::ExecutionProperty> {
+    pub fn execution_property(&self) -> ::std::option::Option<&crate::types::ExecutionProperty> {
         self.execution_property.as_ref()
     }
     /// <p>The <code>JobCommand</code> that runs this job.</p>
-    pub fn command(&self) -> std::option::Option<&crate::types::JobCommand> {
+    pub fn command(&self) -> ::std::option::Option<&crate::types::JobCommand> {
         self.command.as_ref()
     }
     /// <p>The default arguments for this job, specified as name-value pairs.</p>
@@ -142,19 +144,21 @@ impl Job {
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn default_arguments(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.default_arguments.as_ref()
     }
     /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
     pub fn non_overridable_arguments(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.non_overridable_arguments.as_ref()
     }
     /// <p>The connections used for this job.</p>
-    pub fn connections(&self) -> std::option::Option<&crate::types::ConnectionsList> {
+    pub fn connections(&self) -> ::std::option::Option<&crate::types::ConnectionsList> {
         self.connections.as_ref()
     }
     /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
@@ -169,7 +173,7 @@ impl Job {
         self.allocated_capacity
     }
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-    pub fn timeout(&self) -> std::option::Option<i32> {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
@@ -180,7 +184,7 @@ impl Job {
     /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
-    pub fn max_capacity(&self) -> std::option::Option<f64> {
+    pub fn max_capacity(&self) -> ::std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
@@ -192,52 +196,52 @@ impl Job {
     /// <li> <p>For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later jobs.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
-    pub fn worker_type(&self) -> std::option::Option<&crate::types::WorkerType> {
+    pub fn worker_type(&self) -> ::std::option::Option<&crate::types::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    pub fn number_of_workers(&self) -> std::option::Option<i32> {
+    pub fn number_of_workers(&self) -> ::std::option::Option<i32> {
         self.number_of_workers
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
-    pub fn security_configuration(&self) -> std::option::Option<&str> {
+    pub fn security_configuration(&self) -> ::std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
     /// <p>Specifies configuration properties of a job notification.</p>
     pub fn notification_property(
         &self,
-    ) -> std::option::Option<&crate::types::NotificationProperty> {
+    ) -> ::std::option::Option<&crate::types::NotificationProperty> {
         self.notification_property.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
-    pub fn glue_version(&self) -> std::option::Option<&str> {
+    pub fn glue_version(&self) -> ::std::option::Option<&str> {
         self.glue_version.as_deref()
     }
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     pub fn code_gen_configuration_nodes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::CodeGenConfigurationNode>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>,
     > {
         self.code_gen_configuration_nodes.as_ref()
     }
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
-    pub fn execution_class(&self) -> std::option::Option<&crate::types::ExecutionClass> {
+    pub fn execution_class(&self) -> ::std::option::Option<&crate::types::ExecutionClass> {
         self.execution_class.as_ref()
     }
     /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
     pub fn source_control_details(
         &self,
-    ) -> std::option::Option<&crate::types::SourceControlDetails> {
+    ) -> ::std::option::Option<&crate::types::SourceControlDetails> {
         self.source_control_details.as_ref()
     }
 }
-impl std::fmt::Debug for Job {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Job {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Job");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
@@ -277,123 +281,125 @@ impl Job {
 
 /// A builder for [`Job`](crate::types::Job).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct JobBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) log_uri: std::option::Option<std::string::String>,
-    pub(crate) role: std::option::Option<std::string::String>,
-    pub(crate) created_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) execution_property: std::option::Option<crate::types::ExecutionProperty>,
-    pub(crate) command: std::option::Option<crate::types::JobCommand>,
-    pub(crate) default_arguments:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) non_overridable_arguments:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) connections: std::option::Option<crate::types::ConnectionsList>,
-    pub(crate) max_retries: std::option::Option<i32>,
-    pub(crate) allocated_capacity: std::option::Option<i32>,
-    pub(crate) timeout: std::option::Option<i32>,
-    pub(crate) max_capacity: std::option::Option<f64>,
-    pub(crate) worker_type: std::option::Option<crate::types::WorkerType>,
-    pub(crate) number_of_workers: std::option::Option<i32>,
-    pub(crate) security_configuration: std::option::Option<std::string::String>,
-    pub(crate) notification_property: std::option::Option<crate::types::NotificationProperty>,
-    pub(crate) glue_version: std::option::Option<std::string::String>,
-    pub(crate) code_gen_configuration_nodes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::CodeGenConfigurationNode>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) log_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) role: ::std::option::Option<::std::string::String>,
+    pub(crate) created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) execution_property: ::std::option::Option<crate::types::ExecutionProperty>,
+    pub(crate) command: ::std::option::Option<crate::types::JobCommand>,
+    pub(crate) default_arguments: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
-    pub(crate) execution_class: std::option::Option<crate::types::ExecutionClass>,
-    pub(crate) source_control_details: std::option::Option<crate::types::SourceControlDetails>,
+    pub(crate) non_overridable_arguments: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) connections: ::std::option::Option<crate::types::ConnectionsList>,
+    pub(crate) max_retries: ::std::option::Option<i32>,
+    pub(crate) allocated_capacity: ::std::option::Option<i32>,
+    pub(crate) timeout: ::std::option::Option<i32>,
+    pub(crate) max_capacity: ::std::option::Option<f64>,
+    pub(crate) worker_type: ::std::option::Option<crate::types::WorkerType>,
+    pub(crate) number_of_workers: ::std::option::Option<i32>,
+    pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
+    pub(crate) notification_property: ::std::option::Option<crate::types::NotificationProperty>,
+    pub(crate) glue_version: ::std::option::Option<::std::string::String>,
+    pub(crate) code_gen_configuration_nodes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::CodeGenConfigurationNode>,
+    >,
+    pub(crate) execution_class: ::std::option::Option<crate::types::ExecutionClass>,
+    pub(crate) source_control_details: ::std::option::Option<crate::types::SourceControlDetails>,
 }
 impl JobBuilder {
     /// <p>The name you assign to this job definition.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name you assign to this job definition.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description of the job.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the job.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>This field is reserved for future use.</p>
-    pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_uri = Some(input.into());
+    pub fn log_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This field is reserved for future use.</p>
-    pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_uri = input;
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role = Some(input.into());
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }
     /// <p>The time and date that this job definition was created.</p>
-    pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_on = Some(input);
+    pub fn created_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time and date that this job definition was created.</p>
     pub fn set_created_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_on = input;
         self
     }
     /// <p>The last point in time when this job definition was modified.</p>
-    pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_on = Some(input);
+    pub fn last_modified_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last point in time when this job definition was modified.</p>
     pub fn set_last_modified_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_on = input;
         self
     }
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     pub fn execution_property(mut self, input: crate::types::ExecutionProperty) -> Self {
-        self.execution_property = Some(input);
+        self.execution_property = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     pub fn set_execution_property(
         mut self,
-        input: std::option::Option<crate::types::ExecutionProperty>,
+        input: ::std::option::Option<crate::types::ExecutionProperty>,
     ) -> Self {
         self.execution_property = input;
         self
     }
     /// <p>The <code>JobCommand</code> that runs this job.</p>
     pub fn command(mut self, input: crate::types::JobCommand) -> Self {
-        self.command = Some(input);
+        self.command = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>JobCommand</code> that runs this job.</p>
-    pub fn set_command(mut self, input: std::option::Option<crate::types::JobCommand>) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<crate::types::JobCommand>) -> Self {
         self.command = input;
         self
     }
@@ -407,12 +413,12 @@ impl JobBuilder {
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn default_arguments(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.default_arguments.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.default_arguments = Some(hash_map);
+        self.default_arguments = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The default arguments for this job, specified as name-value pairs.</p>
@@ -421,8 +427,8 @@ impl JobBuilder {
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn set_default_arguments(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.default_arguments = input;
@@ -435,19 +441,19 @@ impl JobBuilder {
     /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
     pub fn non_overridable_arguments(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.non_overridable_arguments.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.non_overridable_arguments = Some(hash_map);
+        self.non_overridable_arguments = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
     pub fn set_non_overridable_arguments(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.non_overridable_arguments = input;
@@ -455,24 +461,24 @@ impl JobBuilder {
     }
     /// <p>The connections used for this job.</p>
     pub fn connections(mut self, input: crate::types::ConnectionsList) -> Self {
-        self.connections = Some(input);
+        self.connections = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connections used for this job.</p>
     pub fn set_connections(
         mut self,
-        input: std::option::Option<crate::types::ConnectionsList>,
+        input: ::std::option::Option<crate::types::ConnectionsList>,
     ) -> Self {
         self.connections = input;
         self
     }
     /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
-        self.max_retries = Some(input);
+        self.max_retries = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
-    pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_retries = input;
         self
     }
@@ -481,24 +487,24 @@ impl JobBuilder {
     /// <p></p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
     pub fn allocated_capacity(mut self, input: i32) -> Self {
-        self.allocated_capacity = Some(input);
+        self.allocated_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p></p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
-    pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_allocated_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_capacity = input;
         self
     }
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(mut self, input: i32) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }
@@ -511,7 +517,7 @@ impl JobBuilder {
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     pub fn max_capacity(mut self, input: f64) -> Self {
-        self.max_capacity = Some(input);
+        self.max_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
@@ -522,7 +528,7 @@ impl JobBuilder {
     /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
-    pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_capacity = input;
         self
     }
@@ -536,7 +542,7 @@ impl JobBuilder {
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
     pub fn worker_type(mut self, input: crate::types::WorkerType) -> Self {
-        self.worker_type = Some(input);
+        self.worker_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, G.2X, or G.025X.</p>
@@ -548,42 +554,48 @@ impl JobBuilder {
     /// <li> <p>For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later jobs.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
-    pub fn set_worker_type(mut self, input: std::option::Option<crate::types::WorkerType>) -> Self {
+    pub fn set_worker_type(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkerType>,
+    ) -> Self {
         self.worker_type = input;
         self
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
-        self.number_of_workers = Some(input);
+        self.number_of_workers = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_workers = input;
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
-    pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_configuration = Some(input.into());
+    pub fn security_configuration(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     pub fn set_security_configuration(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_configuration = input;
         self
     }
     /// <p>Specifies configuration properties of a job notification.</p>
     pub fn notification_property(mut self, input: crate::types::NotificationProperty) -> Self {
-        self.notification_property = Some(input);
+        self.notification_property = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies configuration properties of a job notification.</p>
     pub fn set_notification_property(
         mut self,
-        input: std::option::Option<crate::types::NotificationProperty>,
+        input: ::std::option::Option<crate::types::NotificationProperty>,
     ) -> Self {
         self.notification_property = input;
         self
@@ -591,14 +603,14 @@ impl JobBuilder {
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
-    pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.glue_version = Some(input.into());
+    pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.glue_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
-    pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.glue_version = input;
         self
     }
@@ -609,19 +621,22 @@ impl JobBuilder {
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     pub fn code_gen_configuration_nodes(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::CodeGenConfigurationNode,
     ) -> Self {
         let mut hash_map = self.code_gen_configuration_nodes.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.code_gen_configuration_nodes = Some(hash_map);
+        self.code_gen_configuration_nodes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.</p>
     pub fn set_code_gen_configuration_nodes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::CodeGenConfigurationNode>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                crate::types::CodeGenConfigurationNode,
+            >,
         >,
     ) -> Self {
         self.code_gen_configuration_nodes = input;
@@ -631,7 +646,7 @@ impl JobBuilder {
     /// <p>The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary. </p>
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub fn execution_class(mut self, input: crate::types::ExecutionClass) -> Self {
-        self.execution_class = Some(input);
+        self.execution_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the job is run with a standard or flexible execution class. The standard execution class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.</p>
@@ -639,20 +654,20 @@ impl JobBuilder {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub fn set_execution_class(
         mut self,
-        input: std::option::Option<crate::types::ExecutionClass>,
+        input: ::std::option::Option<crate::types::ExecutionClass>,
     ) -> Self {
         self.execution_class = input;
         self
     }
     /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
     pub fn source_control_details(mut self, input: crate::types::SourceControlDetails) -> Self {
-        self.source_control_details = Some(input);
+        self.source_control_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.</p>
     pub fn set_source_control_details(
         mut self,
-        input: std::option::Option<crate::types::SourceControlDetails>,
+        input: ::std::option::Option<crate::types::SourceControlDetails>,
     ) -> Self {
         self.source_control_details = input;
         self
@@ -686,8 +701,8 @@ impl JobBuilder {
         }
     }
 }
-impl std::fmt::Debug for JobBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for JobBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("JobBuilder");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);

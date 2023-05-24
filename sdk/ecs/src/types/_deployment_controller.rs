@@ -2,7 +2,7 @@
 
 /// <p>The deployment controller to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentController {
     /// <p>The deployment controller type to use.</p>
     /// <p>There are three deployment controller types available:</p>
@@ -27,7 +27,7 @@ pub struct DeploymentController {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DeploymentControllerType>,
+    pub r#type: ::std::option::Option<crate::types::DeploymentControllerType>,
 }
 impl DeploymentController {
     /// <p>The deployment controller type to use.</p>
@@ -52,7 +52,7 @@ impl DeploymentController {
     /// <p>The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party deployment controller for full control over the deployment process for an Amazon ECS service.</p>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DeploymentControllerType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DeploymentControllerType> {
         self.r#type.as_ref()
     }
 }
@@ -65,9 +65,11 @@ impl DeploymentController {
 
 /// A builder for [`DeploymentController`](crate::types::DeploymentController).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentControllerBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::DeploymentControllerType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DeploymentControllerType>,
 }
 impl DeploymentControllerBuilder {
     /// <p>The deployment controller type to use.</p>
@@ -93,7 +95,7 @@ impl DeploymentControllerBuilder {
     /// </dd>
     /// </dl>
     pub fn r#type(mut self, input: crate::types::DeploymentControllerType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The deployment controller type to use.</p>
@@ -120,7 +122,7 @@ impl DeploymentControllerBuilder {
     /// </dl>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::DeploymentControllerType>,
+        input: ::std::option::Option<crate::types::DeploymentControllerType>,
     ) -> Self {
         self.r#type = input;
         self

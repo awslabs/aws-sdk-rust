@@ -2,25 +2,26 @@
 
 /// <p>Contains information about the errors that occurred when enabling fast snapshot restores.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableFastSnapshotRestoreErrorItem {
     /// <p>The ID of the snapshot.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The errors.</p>
     #[doc(hidden)]
-    pub fast_snapshot_restore_state_errors:
-        std::option::Option<std::vec::Vec<crate::types::EnableFastSnapshotRestoreStateErrorItem>>,
+    pub fast_snapshot_restore_state_errors: ::std::option::Option<
+        ::std::vec::Vec<crate::types::EnableFastSnapshotRestoreStateErrorItem>,
+    >,
 }
 impl EnableFastSnapshotRestoreErrorItem {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The errors.</p>
     pub fn fast_snapshot_restore_state_errors(
         &self,
-    ) -> std::option::Option<&[crate::types::EnableFastSnapshotRestoreStateErrorItem]> {
+    ) -> ::std::option::Option<&[crate::types::EnableFastSnapshotRestoreStateErrorItem]> {
         self.fast_snapshot_restore_state_errors.as_deref()
     }
 }
@@ -33,20 +34,23 @@ impl EnableFastSnapshotRestoreErrorItem {
 
 /// A builder for [`EnableFastSnapshotRestoreErrorItem`](crate::types::EnableFastSnapshotRestoreErrorItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnableFastSnapshotRestoreErrorItemBuilder {
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
-    pub(crate) fast_snapshot_restore_state_errors:
-        std::option::Option<std::vec::Vec<crate::types::EnableFastSnapshotRestoreStateErrorItem>>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) fast_snapshot_restore_state_errors: ::std::option::Option<
+        ::std::vec::Vec<crate::types::EnableFastSnapshotRestoreStateErrorItem>,
+    >,
 }
 impl EnableFastSnapshotRestoreErrorItemBuilder {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
@@ -61,14 +65,14 @@ impl EnableFastSnapshotRestoreErrorItemBuilder {
     ) -> Self {
         let mut v = self.fast_snapshot_restore_state_errors.unwrap_or_default();
         v.push(input);
-        self.fast_snapshot_restore_state_errors = Some(v);
+        self.fast_snapshot_restore_state_errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>The errors.</p>
     pub fn set_fast_snapshot_restore_state_errors(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::EnableFastSnapshotRestoreStateErrorItem>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::EnableFastSnapshotRestoreStateErrorItem>,
         >,
     ) -> Self {
         self.fast_snapshot_restore_state_errors = input;

@@ -7,30 +7,30 @@ pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_
 ///
 /// <p>This operation replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p>
 /// <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainNameserversFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder,
 }
 impl UpdateDomainNameserversFluentBuilder {
     /// Creates a new `UpdateDomainNameservers`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_domain_nameservers::UpdateDomainNameservers,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_nameservers::UpdateDomainNameserversError,
         >,
     > {
@@ -38,30 +38,33 @@ impl UpdateDomainNameserversFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_nameservers::UpdateDomainNameserversError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,33 +77,33 @@ impl UpdateDomainNameserversFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_nameservers::UpdateDomainNameserversError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the domain that you want to change name servers for.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>The name of the domain that you want to change name servers for.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
-    pub fn fi_auth_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fi_auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fi_auth_key(input.into());
         self
     }
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
-    pub fn set_fi_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fi_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fi_auth_key(input);
         self
     }
@@ -116,7 +119,7 @@ impl UpdateDomainNameserversFluentBuilder {
     /// <p>A list of new name servers for the domain.</p>
     pub fn set_nameservers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Nameserver>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
     ) -> Self {
         self.inner = self.inner.set_nameservers(input);
         self

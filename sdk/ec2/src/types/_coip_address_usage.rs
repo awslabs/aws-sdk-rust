@@ -2,36 +2,36 @@
 
 /// <p>Describes address usage for a customer-owned address pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoipAddressUsage {
     /// <p>The allocation ID of the address.</p>
     #[doc(hidden)]
-    pub allocation_id: std::option::Option<std::string::String>,
+    pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub aws_account_id: std::option::Option<std::string::String>,
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services service.</p>
     #[doc(hidden)]
-    pub aws_service: std::option::Option<std::string::String>,
+    pub aws_service: ::std::option::Option<::std::string::String>,
     /// <p>The customer-owned IP address.</p>
     #[doc(hidden)]
-    pub co_ip: std::option::Option<std::string::String>,
+    pub co_ip: ::std::option::Option<::std::string::String>,
 }
 impl CoipAddressUsage {
     /// <p>The allocation ID of the address.</p>
-    pub fn allocation_id(&self) -> std::option::Option<&str> {
+    pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Services service.</p>
-    pub fn aws_service(&self) -> std::option::Option<&str> {
+    pub fn aws_service(&self) -> ::std::option::Option<&str> {
         self.aws_service.as_deref()
     }
     /// <p>The customer-owned IP address.</p>
-    pub fn co_ip(&self) -> std::option::Option<&str> {
+    pub fn co_ip(&self) -> ::std::option::Option<&str> {
         self.co_ip.as_deref()
     }
 }
@@ -44,51 +44,65 @@ impl CoipAddressUsage {
 
 /// A builder for [`CoipAddressUsage`](crate::types::CoipAddressUsage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoipAddressUsageBuilder {
-    pub(crate) allocation_id: std::option::Option<std::string::String>,
-    pub(crate) aws_account_id: std::option::Option<std::string::String>,
-    pub(crate) aws_service: std::option::Option<std::string::String>,
-    pub(crate) co_ip: std::option::Option<std::string::String>,
+    pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_service: ::std::option::Option<::std::string::String>,
+    pub(crate) co_ip: ::std::option::Option<::std::string::String>,
 }
 impl CoipAddressUsageBuilder {
     /// <p>The allocation ID of the address.</p>
-    pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.allocation_id = Some(input.into());
+    pub fn allocation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation ID of the address.</p>
-    pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_allocation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.allocation_id = input;
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_account_id = Some(input.into());
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_account_id = input;
         self
     }
     /// <p>The Amazon Web Services service.</p>
-    pub fn aws_service(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_service = Some(input.into());
+    pub fn aws_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_service = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services service.</p>
-    pub fn set_aws_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_service = input;
         self
     }
     /// <p>The customer-owned IP address.</p>
-    pub fn co_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.co_ip = Some(input.into());
+    pub fn co_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.co_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-owned IP address.</p>
-    pub fn set_co_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_co_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.co_ip = input;
         self
     }

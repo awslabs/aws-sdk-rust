@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBlueprint`](crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder::set_name): <p>The name of the blueprint to delete.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_blueprint::builders::DeleteBlueprintFluentBuilder::set_name): <p>The name of the blueprint to delete.</p>
     /// - On success, responds with [`DeleteBlueprintOutput`](crate::operation::delete_blueprint::DeleteBlueprintOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_blueprint::DeleteBlueprintOutput::name): <p>Returns the name of the blueprint that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteBlueprintError>`](crate::operation::delete_blueprint::DeleteBlueprintError)

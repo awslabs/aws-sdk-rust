@@ -2,20 +2,20 @@
 
 /// Represents the output of a DescribeWorkspace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
     #[doc(hidden)]
-    pub workspace: std::option::Option<crate::types::WorkspaceDescription>,
+    pub workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
 }
 impl DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
-    pub fn workspace(&self) -> std::option::Option<&crate::types::WorkspaceDescription> {
+    pub fn workspace(&self) -> ::std::option::Option<&crate::types::WorkspaceDescription> {
         self.workspace.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeWorkspaceOutput {
+impl ::aws_http::request_id::RequestId for DescribeWorkspaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DescribeWorkspaceOutput {
 
 /// A builder for [`DescribeWorkspaceOutput`](crate::operation::describe_workspace::DescribeWorkspaceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeWorkspaceOutputBuilder {
-    pub(crate) workspace: std::option::Option<crate::types::WorkspaceDescription>,
+    pub(crate) workspace: ::std::option::Option<crate::types::WorkspaceDescription>,
     _request_id: Option<String>,
 }
 impl DescribeWorkspaceOutputBuilder {
     /// The properties of the selected workspace.
     pub fn workspace(mut self, input: crate::types::WorkspaceDescription) -> Self {
-        self.workspace = Some(input);
+        self.workspace = ::std::option::Option::Some(input);
         self
     }
     /// The properties of the selected workspace.
     pub fn set_workspace(
         mut self,
-        input: std::option::Option<crate::types::WorkspaceDescription>,
+        input: ::std::option::Option<crate::types::WorkspaceDescription>,
     ) -> Self {
         self.workspace = input;
         self

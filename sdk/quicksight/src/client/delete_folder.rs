@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFolder`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`aws_account_id(impl Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    ///   - [`folder_id(impl Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_folder_id): <p>The ID of the folder.</p>
+    ///   - [`aws_account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_aws_account_id): <p>The ID for the Amazon Web Services account that contains the folder.</p>
+    ///   - [`folder_id(impl ::std::convert::Into<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::folder_id) / [`set_folder_id(Option<String>)`](crate::operation::delete_folder::builders::DeleteFolderFluentBuilder::set_folder_id): <p>The ID of the folder.</p>
     /// - On success, responds with [`DeleteFolderOutput`](crate::operation::delete_folder::DeleteFolderOutput) with field(s):
     ///   - [`status(i32)`](crate::operation::delete_folder::DeleteFolderOutput::status): <p>The HTTP status of the request.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_folder::DeleteFolderOutput::arn): <p>The Amazon Resource Name of the deleted folder.</p>

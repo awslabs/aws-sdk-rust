@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ColumnType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ColumnType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ColumnType {
+impl ::std::convert::From<&str> for ColumnType {
     fn from(s: &str) -> Self {
         match s {
             "EDGE" => ColumnType::Edge,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for ColumnType {
         }
     }
 }
-impl std::str::FromStr for ColumnType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ColumnType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ColumnType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ColumnType::from(s))
     }
 }
 impl ColumnType {
@@ -89,7 +89,7 @@ impl ColumnType {
         &["EDGE", "NODE", "VALUE"]
     }
 }
-impl AsRef<str> for ColumnType {
+impl ::std::convert::AsRef<str> for ColumnType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

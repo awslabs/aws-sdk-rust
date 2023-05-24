@@ -2,7 +2,7 @@
 
 /// <p>The log configuration specification for the container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails  {
     /// <p>The log driver to use for the container.</p> 
     /// <p>Valid values on Fargate are as follows:</p> 
@@ -24,13 +24,13 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails  {
     /// <li> <p> <code>syslog</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub log_driver: std::option::Option<std::string::String>,
+    pub log_driver: ::std::option::Option<::std::string::String>,
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The secrets to pass to the log configuration.</p>
     #[doc(hidden)]
-    pub secret_options: std::option::Option<std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
+    pub secret_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
     /// <p>The log driver to use for the container.</p>
@@ -52,18 +52,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
     /// <li> <p> <code>splunk</code> </p> </li>
     /// <li> <p> <code>syslog</code> </p> </li>
     /// </ul>
-    pub fn log_driver(&self) -> std::option::Option<&str> {
+    pub fn log_driver(&self) -> ::std::option::Option<&str> {
         self.log_driver.as_deref()
     }
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
     pub fn options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.options.as_ref()
     }
     /// <p>The secrets to pass to the log configuration.</p>
-    pub fn secret_options(&self) -> std::option::Option<& [crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails]>{
+    pub fn secret_options(&self) -> ::std::option::Option<& [crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails]>{
         self.secret_options.as_deref()
     }
 }
@@ -76,11 +77,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
-    pub(crate) log_driver: std::option::Option<std::string::String>,
-    pub(crate) options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) secret_options: std::option::Option<std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
+    pub(crate) log_driver: ::std::option::Option<::std::string::String>,
+    pub(crate) options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) secret_options: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// <p>The log driver to use for the container.</p>
@@ -102,8 +105,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// <li> <p> <code>splunk</code> </p> </li>
     /// <li> <p> <code>syslog</code> </p> </li>
     /// </ul>
-    pub fn log_driver(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_driver = Some(input.into());
+    pub fn log_driver(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_driver = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The log driver to use for the container.</p>
@@ -125,7 +128,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// <li> <p> <code>splunk</code> </p> </li>
     /// <li> <p> <code>syslog</code> </p> </li>
     /// </ul>
-    pub fn set_log_driver(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_driver(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_driver = input;
         self
     }
@@ -136,19 +139,19 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
     pub fn options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.options = Some(hash_map);
+        self.options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The configuration options to send to the log driver. Requires version 1.19 of the Docker Remote API or greater on your container instance.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.options = input;
@@ -165,13 +168,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsBuilder {
     ) -> Self {
         let mut v = self.secret_options.unwrap_or_default();
         v.push(input);
-        self.secret_options = Some(v);
+        self.secret_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The secrets to pass to the log configuration.</p>
     pub fn set_secret_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>>,
     ) -> Self {
         self.secret_options = input;
         self

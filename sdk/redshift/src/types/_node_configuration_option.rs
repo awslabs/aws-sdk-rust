@@ -2,24 +2,24 @@
 
 /// <p>A list of node configurations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeConfigurationOption {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of nodes.</p>
     #[doc(hidden)]
     pub number_of_nodes: i32,
     /// <p>The estimated disk utilizaton percentage.</p>
     #[doc(hidden)]
-    pub estimated_disk_utilization_percent: std::option::Option<f64>,
+    pub estimated_disk_utilization_percent: ::std::option::Option<f64>,
     /// <p>The category of the node configuration recommendation.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::Mode>,
+    pub mode: ::std::option::Option<crate::types::Mode>,
 }
 impl NodeConfigurationOption {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The number of nodes.</p>
@@ -27,11 +27,11 @@ impl NodeConfigurationOption {
         self.number_of_nodes
     }
     /// <p>The estimated disk utilizaton percentage.</p>
-    pub fn estimated_disk_utilization_percent(&self) -> std::option::Option<f64> {
+    pub fn estimated_disk_utilization_percent(&self) -> ::std::option::Option<f64> {
         self.estimated_disk_utilization_percent
     }
     /// <p>The category of the node configuration recommendation.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::Mode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::Mode> {
         self.mode.as_ref()
     }
 }
@@ -44,54 +44,56 @@ impl NodeConfigurationOption {
 
 /// A builder for [`NodeConfigurationOption`](crate::types::NodeConfigurationOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeConfigurationOptionBuilder {
-    pub(crate) node_type: std::option::Option<std::string::String>,
-    pub(crate) number_of_nodes: std::option::Option<i32>,
-    pub(crate) estimated_disk_utilization_percent: std::option::Option<f64>,
-    pub(crate) mode: std::option::Option<crate::types::Mode>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) number_of_nodes: ::std::option::Option<i32>,
+    pub(crate) estimated_disk_utilization_percent: ::std::option::Option<f64>,
+    pub(crate) mode: ::std::option::Option<crate::types::Mode>,
 }
 impl NodeConfigurationOptionBuilder {
     /// <p>The node type, such as, "ds2.8xlarge".</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node type, such as, "ds2.8xlarge".</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The number of nodes.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
-        self.number_of_nodes = Some(input);
+        self.number_of_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of nodes.</p>
-    pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
     }
     /// <p>The estimated disk utilizaton percentage.</p>
     pub fn estimated_disk_utilization_percent(mut self, input: f64) -> Self {
-        self.estimated_disk_utilization_percent = Some(input);
+        self.estimated_disk_utilization_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The estimated disk utilizaton percentage.</p>
     pub fn set_estimated_disk_utilization_percent(
         mut self,
-        input: std::option::Option<f64>,
+        input: ::std::option::Option<f64>,
     ) -> Self {
         self.estimated_disk_utilization_percent = input;
         self
     }
     /// <p>The category of the node configuration recommendation.</p>
     pub fn mode(mut self, input: crate::types::Mode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The category of the node configuration recommendation.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::Mode>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Mode>) -> Self {
         self.mode = input;
         self
     }

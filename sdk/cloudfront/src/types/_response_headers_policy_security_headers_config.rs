@@ -2,77 +2,77 @@
 
 /// <p>A configuration for a set of security-related HTTP response headers. CloudFront adds these headers to HTTP responses that it sends for requests that match a cache behavior associated with this response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicySecurityHeadersConfig {
     /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
-    pub xss_protection: std::option::Option<crate::types::ResponseHeadersPolicyXssProtection>,
+    pub xss_protection: ::std::option::Option<crate::types::ResponseHeadersPolicyXssProtection>,
     /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
-    pub frame_options: std::option::Option<crate::types::ResponseHeadersPolicyFrameOptions>,
+    pub frame_options: ::std::option::Option<crate::types::ResponseHeadersPolicyFrameOptions>,
     /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
-    pub referrer_policy: std::option::Option<crate::types::ResponseHeadersPolicyReferrerPolicy>,
+    pub referrer_policy: ::std::option::Option<crate::types::ResponseHeadersPolicyReferrerPolicy>,
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
     pub content_security_policy:
-        std::option::Option<crate::types::ResponseHeadersPolicyContentSecurityPolicy>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyContentSecurityPolicy>,
     /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>.</p>
     /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
     pub content_type_options:
-        std::option::Option<crate::types::ResponseHeadersPolicyContentTypeOptions>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyContentTypeOptions>,
     /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
     pub strict_transport_security:
-        std::option::Option<crate::types::ResponseHeadersPolicyStrictTransportSecurity>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyStrictTransportSecurity>,
 }
 impl ResponseHeadersPolicySecurityHeadersConfig {
     /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub fn xss_protection(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyXssProtection> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyXssProtection> {
         self.xss_protection.as_ref()
     }
     /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn frame_options(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyFrameOptions> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyFrameOptions> {
         self.frame_options.as_ref()
     }
     /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub fn referrer_policy(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyReferrerPolicy> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyReferrerPolicy> {
         self.referrer_policy.as_ref()
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
     pub fn content_security_policy(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyContentSecurityPolicy> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyContentSecurityPolicy> {
         self.content_security_policy.as_ref()
     }
     /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>.</p>
     /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
     pub fn content_type_options(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyContentTypeOptions> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyContentTypeOptions> {
         self.content_type_options.as_ref()
     }
     /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
     pub fn strict_transport_security(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyStrictTransportSecurity> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyStrictTransportSecurity> {
         self.strict_transport_security.as_ref()
     }
 }
@@ -85,19 +85,22 @@ impl ResponseHeadersPolicySecurityHeadersConfig {
 
 /// A builder for [`ResponseHeadersPolicySecurityHeadersConfig`](crate::types::ResponseHeadersPolicySecurityHeadersConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseHeadersPolicySecurityHeadersConfigBuilder {
     pub(crate) xss_protection:
-        std::option::Option<crate::types::ResponseHeadersPolicyXssProtection>,
-    pub(crate) frame_options: std::option::Option<crate::types::ResponseHeadersPolicyFrameOptions>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyXssProtection>,
+    pub(crate) frame_options:
+        ::std::option::Option<crate::types::ResponseHeadersPolicyFrameOptions>,
     pub(crate) referrer_policy:
-        std::option::Option<crate::types::ResponseHeadersPolicyReferrerPolicy>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyReferrerPolicy>,
     pub(crate) content_security_policy:
-        std::option::Option<crate::types::ResponseHeadersPolicyContentSecurityPolicy>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyContentSecurityPolicy>,
     pub(crate) content_type_options:
-        std::option::Option<crate::types::ResponseHeadersPolicyContentTypeOptions>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyContentTypeOptions>,
     pub(crate) strict_transport_security:
-        std::option::Option<crate::types::ResponseHeadersPolicyStrictTransportSecurity>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyStrictTransportSecurity>,
 }
 impl ResponseHeadersPolicySecurityHeadersConfigBuilder {
     /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header's value.</p>
@@ -106,14 +109,14 @@ impl ResponseHeadersPolicySecurityHeadersConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyXssProtection,
     ) -> Self {
-        self.xss_protection = Some(input);
+        self.xss_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in the MDN Web Docs.</p>
     pub fn set_xss_protection(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyXssProtection>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyXssProtection>,
     ) -> Self {
         self.xss_protection = input;
         self
@@ -121,14 +124,14 @@ impl ResponseHeadersPolicySecurityHeadersConfigBuilder {
     /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn frame_options(mut self, input: crate::types::ResponseHeadersPolicyFrameOptions) -> Self {
-        self.frame_options = Some(input);
+        self.frame_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn set_frame_options(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyFrameOptions>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyFrameOptions>,
     ) -> Self {
         self.frame_options = input;
         self
@@ -139,14 +142,14 @@ impl ResponseHeadersPolicySecurityHeadersConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyReferrerPolicy,
     ) -> Self {
-        self.referrer_policy = Some(input);
+        self.referrer_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub fn set_referrer_policy(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyReferrerPolicy>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyReferrerPolicy>,
     ) -> Self {
         self.referrer_policy = input;
         self
@@ -157,14 +160,14 @@ impl ResponseHeadersPolicySecurityHeadersConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyContentSecurityPolicy,
     ) -> Self {
-        self.content_security_policy = Some(input);
+        self.content_security_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header.</p>
     /// <p>For more information about the <code>Content-Security-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
     pub fn set_content_security_policy(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyContentSecurityPolicy>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyContentSecurityPolicy>,
     ) -> Self {
         self.content_security_policy = input;
         self
@@ -175,14 +178,14 @@ impl ResponseHeadersPolicySecurityHeadersConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyContentTypeOptions,
     ) -> Self {
-        self.content_type_options = Some(input);
+        self.content_type_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>.</p>
     /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
     pub fn set_content_type_options(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyContentTypeOptions>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyContentTypeOptions>,
     ) -> Self {
         self.content_type_options = input;
         self
@@ -193,14 +196,14 @@ impl ResponseHeadersPolicySecurityHeadersConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyStrictTransportSecurity,
     ) -> Self {
-        self.strict_transport_security = Some(input);
+        self.strict_transport_security = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header's value.</p>
     /// <p>For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
     pub fn set_strict_transport_security(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyStrictTransportSecurity>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyStrictTransportSecurity>,
     ) -> Self {
         self.strict_transport_security = input;
         self

@@ -2,21 +2,21 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to reset.</p>
     #[doc(hidden)]
-    pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+    pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     #[doc(hidden)]
     pub reset_all_parameters: bool,
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is enabled.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ResetDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to reset.</p>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
@@ -24,7 +24,7 @@ impl ResetDbClusterParameterGroupInput {
         self.reset_all_parameters
     }
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is enabled.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
 }
@@ -37,36 +37,38 @@ impl ResetDbClusterParameterGroupInput {
 
 /// A builder for [`ResetDbClusterParameterGroupInput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResetDbClusterParameterGroupInputBuilder {
-    pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) reset_all_parameters: std::option::Option<bool>,
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) reset_all_parameters: ::std::option::Option<bool>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ResetDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group to reset.</p>
     pub fn db_cluster_parameter_group_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.db_cluster_parameter_group_name = Some(input.into());
+        self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB cluster parameter group to reset.</p>
     pub fn set_db_cluster_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
     }
     /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
-        self.reset_all_parameters = Some(input);
+        self.reset_all_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group to their default values. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
-    pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reset_all_parameters = input;
         self
     }
@@ -78,13 +80,13 @@ impl ResetDbClusterParameterGroupInputBuilder {
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
-        self.parameters = Some(v);
+        self.parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is enabled.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -92,11 +94,11 @@ impl ResetDbClusterParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupInput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
                 reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),

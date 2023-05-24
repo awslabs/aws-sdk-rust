@@ -2,15 +2,15 @@
 
 /// <p>Defines when your alarm is invoked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmRule {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
     #[doc(hidden)]
-    pub simple_rule: std::option::Option<crate::types::SimpleRule>,
+    pub simple_rule: ::std::option::Option<crate::types::SimpleRule>,
 }
 impl AlarmRule {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
-    pub fn simple_rule(&self) -> std::option::Option<&crate::types::SimpleRule> {
+    pub fn simple_rule(&self) -> ::std::option::Option<&crate::types::SimpleRule> {
         self.simple_rule.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl AlarmRule {
 
 /// A builder for [`AlarmRule`](crate::types::AlarmRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlarmRuleBuilder {
-    pub(crate) simple_rule: std::option::Option<crate::types::SimpleRule>,
+    pub(crate) simple_rule: ::std::option::Option<crate::types::SimpleRule>,
 }
 impl AlarmRuleBuilder {
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
     pub fn simple_rule(mut self, input: crate::types::SimpleRule) -> Self {
-        self.simple_rule = Some(input);
+        self.simple_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
-    pub fn set_simple_rule(mut self, input: std::option::Option<crate::types::SimpleRule>) -> Self {
+    pub fn set_simple_rule(
+        mut self,
+        input: ::std::option::Option<crate::types::SimpleRule>,
+    ) -> Self {
         self.simple_rule = input;
         self
     }

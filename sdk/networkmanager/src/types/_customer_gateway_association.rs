@@ -2,43 +2,43 @@
 
 /// <p>Describes the association between a customer gateway, a device, and a link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerGatewayAssociation {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     #[doc(hidden)]
-    pub customer_gateway_arn: std::option::Option<std::string::String>,
+    pub customer_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
-    pub global_network_id: std::option::Option<std::string::String>,
+    pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the link.</p>
     #[doc(hidden)]
-    pub link_id: std::option::Option<std::string::String>,
+    pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>The association state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::CustomerGatewayAssociationState>,
+    pub state: ::std::option::Option<crate::types::CustomerGatewayAssociationState>,
 }
 impl CustomerGatewayAssociation {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn customer_gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn customer_gateway_arn(&self) -> ::std::option::Option<&str> {
         self.customer_gateway_arn.as_deref()
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(&self) -> std::option::Option<&str> {
+    pub fn link_id(&self) -> ::std::option::Option<&str> {
         self.link_id.as_deref()
     }
     /// <p>The association state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::CustomerGatewayAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::CustomerGatewayAssociationState> {
         self.state.as_ref()
     }
 }
@@ -51,70 +51,78 @@ impl CustomerGatewayAssociation {
 
 /// A builder for [`CustomerGatewayAssociation`](crate::types::CustomerGatewayAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomerGatewayAssociationBuilder {
-    pub(crate) customer_gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) global_network_id: std::option::Option<std::string::String>,
-    pub(crate) device_id: std::option::Option<std::string::String>,
-    pub(crate) link_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::CustomerGatewayAssociationState>,
+    pub(crate) customer_gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) link_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::CustomerGatewayAssociationState>,
 }
 impl CustomerGatewayAssociationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn customer_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.customer_gateway_arn = Some(input.into());
+    pub fn customer_gateway_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.customer_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     pub fn set_customer_gateway_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.customer_gateway_arn = input;
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.global_network_id = Some(input.into());
+    pub fn global_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.global_network_id = input;
         self
     }
     /// <p>The ID of the device.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_id = Some(input.into());
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link_id = Some(input.into());
+    pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the link.</p>
-    pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_id = input;
         self
     }
     /// <p>The association state.</p>
     pub fn state(mut self, input: crate::types::CustomerGatewayAssociationState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The association state.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::CustomerGatewayAssociationState>,
+        input: ::std::option::Option<crate::types::CustomerGatewayAssociationState>,
     ) -> Self {
         self.state = input;
         self

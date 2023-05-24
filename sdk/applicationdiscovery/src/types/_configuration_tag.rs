@@ -2,43 +2,45 @@
 
 /// <p>Tags for a configuration item. Tags are metadata that help you categorize IT assets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationTag {
     /// <p>A type of IT asset to tag.</p>
     #[doc(hidden)]
-    pub configuration_type: std::option::Option<crate::types::ConfigurationItemType>,
+    pub configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
     #[doc(hidden)]
-    pub configuration_id: std::option::Option<std::string::String>,
+    pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
     #[doc(hidden)]
-    pub time_of_creation: std::option::Option<aws_smithy_types::DateTime>,
+    pub time_of_creation: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationTag {
     /// <p>A type of IT asset to tag.</p>
-    pub fn configuration_type(&self) -> std::option::Option<&crate::types::ConfigurationItemType> {
+    pub fn configuration_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ConfigurationItemType> {
         self.configuration_type.as_ref()
     }
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
-    pub fn configuration_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
     /// <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
-    pub fn time_of_creation(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_of_creation(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_of_creation.as_ref()
     }
 }
@@ -51,67 +53,75 @@ impl ConfigurationTag {
 
 /// A builder for [`ConfigurationTag`](crate::types::ConfigurationTag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigurationTagBuilder {
-    pub(crate) configuration_type: std::option::Option<crate::types::ConfigurationItemType>,
-    pub(crate) configuration_id: std::option::Option<std::string::String>,
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) time_of_creation: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationItemType>,
+    pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) time_of_creation: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationTagBuilder {
     /// <p>A type of IT asset to tag.</p>
     pub fn configuration_type(mut self, input: crate::types::ConfigurationItemType) -> Self {
-        self.configuration_type = Some(input);
+        self.configuration_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>A type of IT asset to tag.</p>
     pub fn set_configuration_type(
         mut self,
-        input: std::option::Option<crate::types::ConfigurationItemType>,
+        input: ::std::option::Option<crate::types::ConfigurationItemType>,
     ) -> Self {
         self.configuration_type = input;
         self
     }
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
-    pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_id = Some(input.into());
+    pub fn configuration_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration ID for the item to tag. You can specify a list of keys and values.</p>
-    pub fn set_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_configuration_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.configuration_id = input;
         self
     }
     /// <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value on which to filter. For example <i>key = serverType</i> and <i>value = web server</i>.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
-    pub fn time_of_creation(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.time_of_creation = Some(input);
+    pub fn time_of_creation(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.time_of_creation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the configuration tag was created in Coordinated Universal Time (UTC).</p>
     pub fn set_time_of_creation(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.time_of_creation = input;
         self

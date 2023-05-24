@@ -2,30 +2,30 @@
 
 /// <p>Represents the output of a <code>ListPipelineExecutions</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelineExecutionsOutput {
     /// <p>A list of executions in the history of a pipeline.</p>
     #[doc(hidden)]
     pub pipeline_execution_summaries:
-        std::option::Option<std::vec::Vec<crate::types::PipelineExecutionSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
     /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPipelineExecutionsOutput {
     /// <p>A list of executions in the history of a pipeline.</p>
     pub fn pipeline_execution_summaries(
         &self,
-    ) -> std::option::Option<&[crate::types::PipelineExecutionSummary]> {
+    ) -> ::std::option::Option<&[crate::types::PipelineExecutionSummary]> {
         self.pipeline_execution_summaries.as_deref()
     }
     /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPipelineExecutionsOutput {
+impl ::aws_http::request_id::RequestId for ListPipelineExecutionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl ListPipelineExecutionsOutput {
 
 /// A builder for [`ListPipelineExecutionsOutput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPipelineExecutionsOutputBuilder {
     pub(crate) pipeline_execution_summaries:
-        std::option::Option<std::vec::Vec<crate::types::PipelineExecutionSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPipelineExecutionsOutputBuilder {
@@ -60,24 +62,24 @@ impl ListPipelineExecutionsOutputBuilder {
     ) -> Self {
         let mut v = self.pipeline_execution_summaries.unwrap_or_default();
         v.push(input);
-        self.pipeline_execution_summaries = Some(v);
+        self.pipeline_execution_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of executions in the history of a pipeline.</p>
     pub fn set_pipeline_execution_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PipelineExecutionSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>>,
     ) -> Self {
         self.pipeline_execution_summaries = input;
         self
     }
     /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

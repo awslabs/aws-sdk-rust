@@ -2,29 +2,29 @@
 
 /// <p>Holds the normalized key-value pairs returned by AnalyzeDocument, including the document type, detected text, and geometry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingField {
     /// <p>The type of the lending document.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The results extracted for a lending document.</p>
     #[doc(hidden)]
-    pub key_detection: std::option::Option<crate::types::LendingDetection>,
+    pub key_detection: ::std::option::Option<crate::types::LendingDetection>,
     /// <p>An array of LendingDetection objects.</p>
     #[doc(hidden)]
-    pub value_detections: std::option::Option<std::vec::Vec<crate::types::LendingDetection>>,
+    pub value_detections: ::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>>,
 }
 impl LendingField {
     /// <p>The type of the lending document.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The results extracted for a lending document.</p>
-    pub fn key_detection(&self) -> std::option::Option<&crate::types::LendingDetection> {
+    pub fn key_detection(&self) -> ::std::option::Option<&crate::types::LendingDetection> {
         self.key_detection.as_ref()
     }
     /// <p>An array of LendingDetection objects.</p>
-    pub fn value_detections(&self) -> std::option::Option<&[crate::types::LendingDetection]> {
+    pub fn value_detections(&self) -> ::std::option::Option<&[crate::types::LendingDetection]> {
         self.value_detections.as_deref()
     }
 }
@@ -37,32 +37,35 @@ impl LendingField {
 
 /// A builder for [`LendingField`](crate::types::LendingField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LendingFieldBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) key_detection: std::option::Option<crate::types::LendingDetection>,
-    pub(crate) value_detections: std::option::Option<std::vec::Vec<crate::types::LendingDetection>>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) key_detection: ::std::option::Option<crate::types::LendingDetection>,
+    pub(crate) value_detections:
+        ::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>>,
 }
 impl LendingFieldBuilder {
     /// <p>The type of the lending document.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the lending document.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The results extracted for a lending document.</p>
     pub fn key_detection(mut self, input: crate::types::LendingDetection) -> Self {
-        self.key_detection = Some(input);
+        self.key_detection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The results extracted for a lending document.</p>
     pub fn set_key_detection(
         mut self,
-        input: std::option::Option<crate::types::LendingDetection>,
+        input: ::std::option::Option<crate::types::LendingDetection>,
     ) -> Self {
         self.key_detection = input;
         self
@@ -75,13 +78,13 @@ impl LendingFieldBuilder {
     pub fn value_detections(mut self, input: crate::types::LendingDetection) -> Self {
         let mut v = self.value_detections.unwrap_or_default();
         v.push(input);
-        self.value_detections = Some(v);
+        self.value_detections = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of LendingDetection objects.</p>
     pub fn set_value_detections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LendingDetection>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LendingDetection>>,
     ) -> Self {
         self.value_detections = input;
         self

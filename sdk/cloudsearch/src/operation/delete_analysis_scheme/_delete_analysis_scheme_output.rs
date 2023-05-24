@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of the deleted analysis scheme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnalysisSchemeOutput {
     /// <p>The status of the analysis scheme being deleted.</p>
     #[doc(hidden)]
-    pub analysis_scheme: std::option::Option<crate::types::AnalysisSchemeStatus>,
+    pub analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
 }
 impl DeleteAnalysisSchemeOutput {
     /// <p>The status of the analysis scheme being deleted.</p>
-    pub fn analysis_scheme(&self) -> std::option::Option<&crate::types::AnalysisSchemeStatus> {
+    pub fn analysis_scheme(&self) -> ::std::option::Option<&crate::types::AnalysisSchemeStatus> {
         self.analysis_scheme.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteAnalysisSchemeOutput {
+impl ::aws_http::request_id::RequestId for DeleteAnalysisSchemeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DeleteAnalysisSchemeOutput {
 
 /// A builder for [`DeleteAnalysisSchemeOutput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteAnalysisSchemeOutputBuilder {
-    pub(crate) analysis_scheme: std::option::Option<crate::types::AnalysisSchemeStatus>,
+    pub(crate) analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
 }
 impl DeleteAnalysisSchemeOutputBuilder {
     /// <p>The status of the analysis scheme being deleted.</p>
     pub fn analysis_scheme(mut self, input: crate::types::AnalysisSchemeStatus) -> Self {
-        self.analysis_scheme = Some(input);
+        self.analysis_scheme = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the analysis scheme being deleted.</p>
     pub fn set_analysis_scheme(
         mut self,
-        input: std::option::Option<crate::types::AnalysisSchemeStatus>,
+        input: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     ) -> Self {
         self.analysis_scheme = input;
         self

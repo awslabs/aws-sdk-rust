@@ -9,29 +9,29 @@ pub use crate::operation::respond_decision_task_completed::_respond_decision_tas
 /// <p>A <code>DecisionTaskCompleted</code> event is added to the workflow history. The <code>executionContext</code> specified is attached to the event in the workflow execution history.</p>
 /// <p> <b>Access Control</b> </p>
 /// <p>If an IAM policy grants permission to use <code>RespondDecisionTaskCompleted</code>, it can express permissions for the list of decisions in the <code>decisions</code> parameter. Each of the decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RespondDecisionTaskCompletedFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::respond_decision_task_completed::builders::RespondDecisionTaskCompletedInputBuilder,
 }
 impl RespondDecisionTaskCompletedFluentBuilder {
     /// Creates a new `RespondDecisionTaskCompleted`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::respond_decision_task_completed::RespondDecisionTaskCompleted,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError,
         >,
     > {
@@ -39,30 +39,33 @@ impl RespondDecisionTaskCompletedFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl RespondDecisionTaskCompletedFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError,
         >,
     > {
@@ -86,14 +89,14 @@ impl RespondDecisionTaskCompletedFluentBuilder {
     /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
-    pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn task_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_token(input.into());
         self
     }
     /// <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>
     /// <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>
     /// </important>
-    pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_token(input);
         self
     }
@@ -109,20 +112,23 @@ impl RespondDecisionTaskCompletedFluentBuilder {
     /// <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
     pub fn set_decisions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Decision>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Decision>>,
     ) -> Self {
         self.inner = self.inner.set_decisions(input);
         self
     }
     /// <p>User defined context to add to workflow execution.</p>
-    pub fn execution_context(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_context(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_context(input.into());
         self
     }
     /// <p>User defined context to add to workflow execution.</p>
     pub fn set_execution_context(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_execution_context(input);
         self

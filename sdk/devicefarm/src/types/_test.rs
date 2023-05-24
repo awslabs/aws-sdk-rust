@@ -2,14 +2,14 @@
 
 /// <p>Represents a condition that is evaluated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Test {
     /// <p>The test's ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The test's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -35,10 +35,10 @@ pub struct Test {
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::TestType>,
+    pub r#type: ::std::option::Option<crate::types::TestType>,
     /// <p>When the test was created.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -53,7 +53,7 @@ pub struct Test {
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The test's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -66,30 +66,30 @@ pub struct Test {
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub result: std::option::Option<crate::types::ExecutionResult>,
+    pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>The test's start time.</p>
     #[doc(hidden)]
-    pub started: std::option::Option<aws_smithy_types::DateTime>,
+    pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test's stop time.</p>
     #[doc(hidden)]
-    pub stopped: std::option::Option<aws_smithy_types::DateTime>,
+    pub stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The test's result counters.</p>
     #[doc(hidden)]
-    pub counters: std::option::Option<crate::types::Counters>,
+    pub counters: ::std::option::Option<crate::types::Counters>,
     /// <p>A message about the test's result.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Represents the total (metered or unmetered) minutes used by the test.</p>
     #[doc(hidden)]
-    pub device_minutes: std::option::Option<crate::types::DeviceMinutes>,
+    pub device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
 }
 impl Test {
     /// <p>The test's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The test's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The test's type.</p>
@@ -116,11 +116,11 @@ impl Test {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TestType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
         self.r#type.as_ref()
     }
     /// <p>When the test was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The test's status.</p>
@@ -136,7 +136,7 @@ impl Test {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The test's result.</p>
@@ -150,27 +150,27 @@ impl Test {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    pub fn result(&self) -> std::option::Option<&crate::types::ExecutionResult> {
+    pub fn result(&self) -> ::std::option::Option<&crate::types::ExecutionResult> {
         self.result.as_ref()
     }
     /// <p>The test's start time.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The test's stop time.</p>
-    pub fn stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stopped(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stopped.as_ref()
     }
     /// <p>The test's result counters.</p>
-    pub fn counters(&self) -> std::option::Option<&crate::types::Counters> {
+    pub fn counters(&self) -> ::std::option::Option<&crate::types::Counters> {
         self.counters.as_ref()
     }
     /// <p>A message about the test's result.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test.</p>
-    pub fn device_minutes(&self) -> std::option::Option<&crate::types::DeviceMinutes> {
+    pub fn device_minutes(&self) -> ::std::option::Option<&crate::types::DeviceMinutes> {
         self.device_minutes.as_ref()
     }
 }
@@ -183,38 +183,40 @@ impl Test {
 
 /// A builder for [`Test`](crate::types::Test).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::TestType>,
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::ExecutionStatus>,
-    pub(crate) result: std::option::Option<crate::types::ExecutionResult>,
-    pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) stopped: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) counters: std::option::Option<crate::types::Counters>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) device_minutes: std::option::Option<crate::types::DeviceMinutes>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TestType>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::ExecutionStatus>,
+    pub(crate) result: ::std::option::Option<crate::types::ExecutionResult>,
+    pub(crate) started: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) counters: ::std::option::Option<crate::types::Counters>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
 }
 impl TestBuilder {
     /// <p>The test's ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The test's ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The test's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The test's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -243,7 +245,7 @@ impl TestBuilder {
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The test's type.</p>
@@ -270,17 +272,20 @@ impl TestBuilder {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TestType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>When the test was created.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the test was created.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
@@ -298,7 +303,7 @@ impl TestBuilder {
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The test's status.</p>
@@ -314,7 +319,10 @@ impl TestBuilder {
     /// <li> <p>COMPLETED</p> </li>
     /// <li> <p>STOPPING</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ExecutionStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
@@ -330,7 +338,7 @@ impl TestBuilder {
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
     pub fn result(mut self, input: crate::types::ExecutionResult) -> Self {
-        self.result = Some(input);
+        self.result = ::std::option::Option::Some(input);
         self
     }
     /// <p>The test's result.</p>
@@ -344,59 +352,68 @@ impl TestBuilder {
     /// <li> <p>ERRORED</p> </li>
     /// <li> <p>STOPPED</p> </li>
     /// </ul>
-    pub fn set_result(mut self, input: std::option::Option<crate::types::ExecutionResult>) -> Self {
+    pub fn set_result(
+        mut self,
+        input: ::std::option::Option<crate::types::ExecutionResult>,
+    ) -> Self {
         self.result = input;
         self
     }
     /// <p>The test's start time.</p>
-    pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started = Some(input);
+    pub fn started(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started = ::std::option::Option::Some(input);
         self
     }
     /// <p>The test's start time.</p>
-    pub fn set_started(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_started(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.started = input;
         self
     }
     /// <p>The test's stop time.</p>
-    pub fn stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.stopped = Some(input);
+    pub fn stopped(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.stopped = ::std::option::Option::Some(input);
         self
     }
     /// <p>The test's stop time.</p>
-    pub fn set_stopped(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_stopped(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.stopped = input;
         self
     }
     /// <p>The test's result counters.</p>
     pub fn counters(mut self, input: crate::types::Counters) -> Self {
-        self.counters = Some(input);
+        self.counters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The test's result counters.</p>
-    pub fn set_counters(mut self, input: std::option::Option<crate::types::Counters>) -> Self {
+    pub fn set_counters(mut self, input: ::std::option::Option<crate::types::Counters>) -> Self {
         self.counters = input;
         self
     }
     /// <p>A message about the test's result.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the test's result.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test.</p>
     pub fn device_minutes(mut self, input: crate::types::DeviceMinutes) -> Self {
-        self.device_minutes = Some(input);
+        self.device_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the total (metered or unmetered) minutes used by the test.</p>
     pub fn set_device_minutes(
         mut self,
-        input: std::option::Option<crate::types::DeviceMinutes>,
+        input: ::std::option::Option<crate::types::DeviceMinutes>,
     ) -> Self {
         self.device_minutes = input;
         self

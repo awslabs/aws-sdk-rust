@@ -6,47 +6,50 @@ pub use crate::operation::describe_entities_detection_v2_job::_describe_entities
 /// Fluent builder constructing a request to `DescribeEntitiesDetectionV2Job`.
 ///
 /// <p>Gets the properties associated with a medical entities detection job. Use this operation to get the status of a detection job.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionV2JobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_entities_detection_v2_job::builders::DescribeEntitiesDetectionV2JobInputBuilder,
 }
 impl DescribeEntitiesDetectionV2JobFluentBuilder {
     /// Creates a new `DescribeEntitiesDetectionV2Job`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2Job, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2Job, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput, aws_smithy_http::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,17 @@ impl DescribeEntitiesDetectionV2JobFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput, aws_smithy_http::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2JobError>>
                          {
         self.send_middleware().await
     }
     /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
     /// <p>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }

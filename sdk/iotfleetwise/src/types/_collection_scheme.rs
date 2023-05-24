@@ -2,7 +2,7 @@
 
 /// <p>Specifies what data to collect and how often or when to collect it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CollectionScheme {
     /// <p>Information about a collection scheme that uses a simple logical expression to recognize what data to collect.</p>
     ConditionBasedCollectionScheme(crate::types::ConditionBasedCollectionScheme),
@@ -23,11 +23,11 @@ impl CollectionScheme {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_condition_based_collection_scheme(
         &self,
-    ) -> std::result::Result<&crate::types::ConditionBasedCollectionScheme, &Self> {
+    ) -> ::std::result::Result<&crate::types::ConditionBasedCollectionScheme, &Self> {
         if let CollectionScheme::ConditionBasedCollectionScheme(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ConditionBasedCollectionScheme`](crate::types::CollectionScheme::ConditionBasedCollectionScheme).
@@ -38,11 +38,11 @@ impl CollectionScheme {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_time_based_collection_scheme(
         &self,
-    ) -> std::result::Result<&crate::types::TimeBasedCollectionScheme, &Self> {
+    ) -> ::std::result::Result<&crate::types::TimeBasedCollectionScheme, &Self> {
         if let CollectionScheme::TimeBasedCollectionScheme(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TimeBasedCollectionScheme`](crate::types::CollectionScheme::TimeBasedCollectionScheme).

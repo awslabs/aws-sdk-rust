@@ -48,13 +48,13 @@
 /// Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note that your choice of video output container constrains your choice of output captions format. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CaptionDestinationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,7 +84,7 @@ pub enum CaptionDestinationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CaptionDestinationType {
+impl ::std::convert::From<&str> for CaptionDestinationType {
     fn from(s: &str) -> Self {
         match s {
             "BURN_IN" => CaptionDestinationType::BurnIn,
@@ -105,11 +105,11 @@ impl std::convert::From<&str> for CaptionDestinationType {
         }
     }
 }
-impl std::str::FromStr for CaptionDestinationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CaptionDestinationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CaptionDestinationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CaptionDestinationType::from(s))
     }
 }
 impl CaptionDestinationType {
@@ -149,7 +149,7 @@ impl CaptionDestinationType {
         ]
     }
 }
-impl AsRef<str> for CaptionDestinationType {
+impl ::std::convert::AsRef<str> for CaptionDestinationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

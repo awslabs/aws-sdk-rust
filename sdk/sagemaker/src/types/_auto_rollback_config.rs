@@ -2,15 +2,15 @@
 
 /// <p>Automatic rollback configuration for handling endpoint deployment failures and recovery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoRollbackConfig {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
     #[doc(hidden)]
-    pub alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
 }
 impl AutoRollbackConfig {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    pub fn alarms(&self) -> std::option::Option<&[crate::types::Alarm]> {
+    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
         self.alarms.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl AutoRollbackConfig {
 
 /// A builder for [`AutoRollbackConfig`](crate::types::AutoRollbackConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoRollbackConfigBuilder {
-    pub(crate) alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
 }
 impl AutoRollbackConfigBuilder {
     /// Appends an item to `alarms`.
@@ -36,13 +38,13 @@ impl AutoRollbackConfigBuilder {
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
         v.push(input);
-        self.alarms = Some(v);
+        self.alarms = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
     pub fn set_alarms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     ) -> Self {
         self.alarms = input;
         self

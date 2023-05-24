@@ -2,15 +2,15 @@
 
 /// <p>The description of the plugin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PluginDescription {
     /// <p>Details about a custom plugin.</p>
     #[doc(hidden)]
-    pub custom_plugin: std::option::Option<crate::types::CustomPluginDescription>,
+    pub custom_plugin: ::std::option::Option<crate::types::CustomPluginDescription>,
 }
 impl PluginDescription {
     /// <p>Details about a custom plugin.</p>
-    pub fn custom_plugin(&self) -> std::option::Option<&crate::types::CustomPluginDescription> {
+    pub fn custom_plugin(&self) -> ::std::option::Option<&crate::types::CustomPluginDescription> {
         self.custom_plugin.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl PluginDescription {
 
 /// A builder for [`PluginDescription`](crate::types::PluginDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PluginDescriptionBuilder {
-    pub(crate) custom_plugin: std::option::Option<crate::types::CustomPluginDescription>,
+    pub(crate) custom_plugin: ::std::option::Option<crate::types::CustomPluginDescription>,
 }
 impl PluginDescriptionBuilder {
     /// <p>Details about a custom plugin.</p>
     pub fn custom_plugin(mut self, input: crate::types::CustomPluginDescription) -> Self {
-        self.custom_plugin = Some(input);
+        self.custom_plugin = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a custom plugin.</p>
     pub fn set_custom_plugin(
         mut self,
-        input: std::option::Option<crate::types::CustomPluginDescription>,
+        input: ::std::option::Option<crate::types::CustomPluginDescription>,
     ) -> Self {
         self.custom_plugin = input;
         self

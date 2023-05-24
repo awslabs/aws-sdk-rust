@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ModifyInstanceFleet`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::set_cluster_id): <p>The unique identifier of the cluster.</p>
+    ///   - [`cluster_id(impl ::std::convert::Into<String>)`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::set_cluster_id): <p>The unique identifier of the cluster.</p>
     ///   - [`instance_fleet(InstanceFleetModifyConfig)`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::instance_fleet) / [`set_instance_fleet(Option<InstanceFleetModifyConfig>)`](crate::operation::modify_instance_fleet::builders::ModifyInstanceFleetFluentBuilder::set_instance_fleet): <p>The configuration parameters of the instance fleet.</p>
     /// - On success, responds with [`ModifyInstanceFleetOutput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetOutput)
     /// - On failure, responds with [`SdkError<ModifyInstanceFleetError>`](crate::operation::modify_instance_fleet::ModifyInstanceFleetError)

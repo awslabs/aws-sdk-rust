@@ -2,10 +2,10 @@
 
 /// <p>A application verion's manifest file. This is a JSON document that has a single key (<code>PayloadData</code>) where the value is an escaped string representation of the application manifest (<code>graph.json</code>). This file is located in the <code>graphs</code> folder in your application source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ManifestPayload {
     /// <p>The application manifest.</p>
-    PayloadData(std::string::String),
+    PayloadData(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum ManifestPayload {
 }
 impl ManifestPayload {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`PayloadData`](crate::types::ManifestPayload::PayloadData), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`PayloadData`](crate::types::ManifestPayload::PayloadData), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_payload_data(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_payload_data(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ManifestPayload::PayloadData(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PayloadData`](crate::types::ManifestPayload::PayloadData).

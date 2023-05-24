@@ -2,11 +2,11 @@
 
 /// <p>A structure that contains the <code>Timestamp</code>, <code>Error</code>, and <code>ImageContent</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
     #[doc(hidden)]
-    pub time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
     /// <ul>
     /// <li> <p>There is no media that exists for the specified <code>Timestamp</code>.</p> </li>
@@ -15,14 +15,14 @@ pub struct Image {
     /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::ImageError>,
+    pub error: ::std::option::Option<crate::types::ImageError>,
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
     #[doc(hidden)]
-    pub image_content: std::option::Option<std::string::String>,
+    pub image_content: ::std::option::Option<::std::string::String>,
 }
 impl Image {
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
-    pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_stamp.as_ref()
     }
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
@@ -32,11 +32,11 @@ impl Image {
     /// <ul>
     /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
     /// </ul>
-    pub fn error(&self) -> std::option::Option<&crate::types::ImageError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::ImageError> {
         self.error.as_ref()
     }
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
-    pub fn image_content(&self) -> std::option::Option<&str> {
+    pub fn image_content(&self) -> ::std::option::Option<&str> {
         self.image_content.as_deref()
     }
 }
@@ -49,22 +49,24 @@ impl Image {
 
 /// A builder for [`Image`](crate::types::Image).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageBuilder {
-    pub(crate) time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) error: std::option::Option<crate::types::ImageError>,
-    pub(crate) image_content: std::option::Option<std::string::String>,
+    pub(crate) time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) error: ::std::option::Option<crate::types::ImageError>,
+    pub(crate) image_content: ::std::option::Option<::std::string::String>,
 }
 impl ImageBuilder {
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
-    pub fn time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.time_stamp = Some(input);
+    pub fn time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.time_stamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>An attribute of the <code>Image</code> object that is used to extract an image from the video stream. This field is used to manage gaps on images or to better understand the pagination window.</p>
     pub fn set_time_stamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.time_stamp = input;
         self
@@ -77,7 +79,7 @@ impl ImageBuilder {
     /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
     /// </ul>
     pub fn error(mut self, input: crate::types::ImageError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if: </p>
@@ -87,17 +89,23 @@ impl ImageBuilder {
     /// <ul>
     /// <li> <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p> </li>
     /// </ul>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::ImageError>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::ImageError>) -> Self {
         self.error = input;
         self
     }
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
-    pub fn image_content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_content = Some(input.into());
+    pub fn image_content(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.image_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
-    pub fn set_image_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_content(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.image_content = input;
         self
     }

@@ -5,13 +5,13 @@
 /// </note>
 /// <p>This configuration is used only for <code>IPSetReferenceStatement</code>. For <code>GeoMatchStatement</code> and <code>RateBasedStatement</code>, use <code>ForwardedIPConfig</code> instead. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetForwardedIpConfig {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     #[doc(hidden)]
-    pub header_name: std::option::Option<std::string::String>,
+    pub header_name: ::std::option::Option<::std::string::String>,
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
@@ -21,7 +21,7 @@ pub struct IpSetForwardedIpConfig {
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub fallback_behavior: std::option::Option<crate::types::FallbackBehavior>,
+    pub fallback_behavior: ::std::option::Option<crate::types::FallbackBehavior>,
     /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through. </p>
     /// <p>The options for this setting are the following: </p>
     /// <ul>
@@ -30,13 +30,13 @@ pub struct IpSetForwardedIpConfig {
     /// <li> <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub position: std::option::Option<crate::types::ForwardedIpPosition>,
+    pub position: ::std::option::Option<crate::types::ForwardedIpPosition>,
 }
 impl IpSetForwardedIpConfig {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn header_name(&self) -> std::option::Option<&str> {
+    pub fn header_name(&self) -> ::std::option::Option<&str> {
         self.header_name.as_deref()
     }
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
@@ -47,7 +47,7 @@ impl IpSetForwardedIpConfig {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub fn fallback_behavior(&self) -> std::option::Option<&crate::types::FallbackBehavior> {
+    pub fn fallback_behavior(&self) -> ::std::option::Option<&crate::types::FallbackBehavior> {
         self.fallback_behavior.as_ref()
     }
     /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through. </p>
@@ -57,7 +57,7 @@ impl IpSetForwardedIpConfig {
     /// <li> <p>LAST - Inspect the last IP address in the list of IP addresses in the header.</p> </li>
     /// <li> <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p> </li>
     /// </ul>
-    pub fn position(&self) -> std::option::Option<&crate::types::ForwardedIpPosition> {
+    pub fn position(&self) -> ::std::option::Option<&crate::types::ForwardedIpPosition> {
         self.position.as_ref()
     }
 }
@@ -70,24 +70,26 @@ impl IpSetForwardedIpConfig {
 
 /// A builder for [`IpSetForwardedIpConfig`](crate::types::IpSetForwardedIpConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpSetForwardedIpConfigBuilder {
-    pub(crate) header_name: std::option::Option<std::string::String>,
-    pub(crate) fallback_behavior: std::option::Option<crate::types::FallbackBehavior>,
-    pub(crate) position: std::option::Option<crate::types::ForwardedIpPosition>,
+    pub(crate) header_name: ::std::option::Option<::std::string::String>,
+    pub(crate) fallback_behavior: ::std::option::Option<crate::types::FallbackBehavior>,
+    pub(crate) position: ::std::option::Option<crate::types::ForwardedIpPosition>,
 }
 impl IpSetForwardedIpConfigBuilder {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn header_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header_name = Some(input.into());
+    pub fn header_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header_name = input;
         self
     }
@@ -100,7 +102,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     pub fn fallback_behavior(mut self, input: crate::types::FallbackBehavior) -> Self {
-        self.fallback_behavior = Some(input);
+        self.fallback_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
@@ -113,7 +115,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// </ul>
     pub fn set_fallback_behavior(
         mut self,
-        input: std::option::Option<crate::types::FallbackBehavior>,
+        input: ::std::option::Option<crate::types::FallbackBehavior>,
     ) -> Self {
         self.fallback_behavior = input;
         self
@@ -126,7 +128,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// <li> <p>ANY - Inspect all IP addresses in the header for a match. If the header contains more than 10 IP addresses, WAF inspects the last 10.</p> </li>
     /// </ul>
     pub fn position(mut self, input: crate::types::ForwardedIpPosition) -> Self {
-        self.position = Some(input);
+        self.position = ::std::option::Option::Some(input);
         self
     }
     /// <p>The position in the header to search for the IP address. The header can contain IP addresses of the original client and also of proxies. For example, the header value could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address identifies the original client and the rest identify proxies that the request went through. </p>
@@ -138,7 +140,7 @@ impl IpSetForwardedIpConfigBuilder {
     /// </ul>
     pub fn set_position(
         mut self,
-        input: std::option::Option<crate::types::ForwardedIpPosition>,
+        input: ::std::option::Option<crate::types::ForwardedIpPosition>,
     ) -> Self {
         self.position = input;
         self

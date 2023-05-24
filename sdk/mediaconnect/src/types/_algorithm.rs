@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Algorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum Algorithm {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Algorithm {
+impl ::std::convert::From<&str> for Algorithm {
     fn from(s: &str) -> Self {
         match s {
             "aes128" => Algorithm::Aes128,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for Algorithm {
         }
     }
 }
-impl std::str::FromStr for Algorithm {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Algorithm {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Algorithm::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Algorithm::from(s))
     }
 }
 impl Algorithm {
@@ -89,7 +89,7 @@ impl Algorithm {
         &["aes128", "aes192", "aes256"]
     }
 }
-impl AsRef<str> for Algorithm {
+impl ::std::convert::AsRef<str> for Algorithm {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

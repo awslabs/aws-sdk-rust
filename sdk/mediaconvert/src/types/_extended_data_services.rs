@@ -2,24 +2,24 @@
 
 /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtendedDataServices {
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     #[doc(hidden)]
-    pub copy_protection_action: std::option::Option<crate::types::CopyProtectionAction>,
+    pub copy_protection_action: ::std::option::Option<crate::types::CopyProtectionAction>,
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     #[doc(hidden)]
-    pub vchip_action: std::option::Option<crate::types::VchipAction>,
+    pub vchip_action: ::std::option::Option<crate::types::VchipAction>,
 }
 impl ExtendedDataServices {
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn copy_protection_action(
         &self,
-    ) -> std::option::Option<&crate::types::CopyProtectionAction> {
+    ) -> ::std::option::Option<&crate::types::CopyProtectionAction> {
         self.copy_protection_action.as_ref()
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
-    pub fn vchip_action(&self) -> std::option::Option<&crate::types::VchipAction> {
+    pub fn vchip_action(&self) -> ::std::option::Option<&crate::types::VchipAction> {
         self.vchip_action.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl ExtendedDataServices {
 
 /// A builder for [`ExtendedDataServices`](crate::types::ExtendedDataServices).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExtendedDataServicesBuilder {
-    pub(crate) copy_protection_action: std::option::Option<crate::types::CopyProtectionAction>,
-    pub(crate) vchip_action: std::option::Option<crate::types::VchipAction>,
+    pub(crate) copy_protection_action: ::std::option::Option<crate::types::CopyProtectionAction>,
+    pub(crate) vchip_action: ::std::option::Option<crate::types::VchipAction>,
 }
 impl ExtendedDataServicesBuilder {
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn copy_protection_action(mut self, input: crate::types::CopyProtectionAction) -> Self {
-        self.copy_protection_action = Some(input);
+        self.copy_protection_action = ::std::option::Option::Some(input);
         self
     }
     /// The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn set_copy_protection_action(
         mut self,
-        input: std::option::Option<crate::types::CopyProtectionAction>,
+        input: ::std::option::Option<crate::types::CopyProtectionAction>,
     ) -> Self {
         self.copy_protection_action = input;
         self
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn vchip_action(mut self, input: crate::types::VchipAction) -> Self {
-        self.vchip_action = Some(input);
+        self.vchip_action = ::std::option::Option::Some(input);
         self
     }
     /// The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
     pub fn set_vchip_action(
         mut self,
-        input: std::option::Option<crate::types::VchipAction>,
+        input: ::std::option::Option<crate::types::VchipAction>,
     ) -> Self {
         self.vchip_action = input;
         self

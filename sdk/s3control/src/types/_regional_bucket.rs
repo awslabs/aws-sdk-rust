@@ -2,31 +2,31 @@
 
 /// <p>The container for the regional bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionalBucket {
     /// <p></p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
     #[doc(hidden)]
-    pub bucket_arn: std::option::Option<std::string::String>,
+    pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the regional bucket</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Outposts ID of the regional bucket.</p>
     #[doc(hidden)]
-    pub outpost_id: std::option::Option<std::string::String>,
+    pub outpost_id: ::std::option::Option<::std::string::String>,
 }
 impl RegionalBucket {
     /// <p></p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
     /// <p></p>
@@ -34,11 +34,11 @@ impl RegionalBucket {
         self.public_access_block_enabled
     }
     /// <p>The creation date of the regional bucket</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Outposts ID of the regional bucket.</p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
 }
@@ -51,65 +51,67 @@ impl RegionalBucket {
 
 /// A builder for [`RegionalBucket`](crate::types::RegionalBucket).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegionalBucketBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) bucket_arn: std::option::Option<std::string::String>,
-    pub(crate) public_access_block_enabled: std::option::Option<bool>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) outpost_id: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) public_access_block_enabled: ::std::option::Option<bool>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
 }
 impl RegionalBucketBuilder {
     /// <p></p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
-    pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_arn = Some(input.into());
+    pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the regional bucket.</p>
-    pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_arn = input;
         self
     }
     /// <p></p>
     pub fn public_access_block_enabled(mut self, input: bool) -> Self {
-        self.public_access_block_enabled = Some(input);
+        self.public_access_block_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_public_access_block_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_public_access_block_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_access_block_enabled = input;
         self
     }
     /// <p>The creation date of the regional bucket</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation date of the regional bucket</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The Outposts ID of the regional bucket.</p>
-    pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_id = Some(input.into());
+    pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Outposts ID of the regional bucket.</p>
-    pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }

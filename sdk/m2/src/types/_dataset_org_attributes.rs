@@ -2,7 +2,7 @@
 
 /// <p>Additional details about the data set. Different attributes correspond to different data set organizations. The values are populated based on datasetOrg, storageType and backend (Blu Age or Micro Focus).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DatasetOrgAttributes {
     /// <p>The generation data group of the data set.</p>
     Gdg(crate::types::GdgAttributes),
@@ -21,11 +21,11 @@ pub enum DatasetOrgAttributes {
 impl DatasetOrgAttributes {
     /// Tries to convert the enum instance into [`Gdg`](crate::types::DatasetOrgAttributes::Gdg), extracting the inner [`GdgAttributes`](crate::types::GdgAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_gdg(&self) -> std::result::Result<&crate::types::GdgAttributes, &Self> {
+    pub fn as_gdg(&self) -> ::std::result::Result<&crate::types::GdgAttributes, &Self> {
         if let DatasetOrgAttributes::Gdg(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Gdg`](crate::types::DatasetOrgAttributes::Gdg).
@@ -34,11 +34,11 @@ impl DatasetOrgAttributes {
     }
     /// Tries to convert the enum instance into [`Vsam`](crate::types::DatasetOrgAttributes::Vsam), extracting the inner [`VsamAttributes`](crate::types::VsamAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_vsam(&self) -> std::result::Result<&crate::types::VsamAttributes, &Self> {
+    pub fn as_vsam(&self) -> ::std::result::Result<&crate::types::VsamAttributes, &Self> {
         if let DatasetOrgAttributes::Vsam(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Vsam`](crate::types::DatasetOrgAttributes::Vsam).

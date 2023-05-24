@@ -2,15 +2,15 @@
 
 /// <p>The default values of a decimal parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given decimal parameter.</p>
     #[doc(hidden)]
-    pub static_values: std::option::Option<std::vec::Vec<f64>>,
+    pub static_values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl DecimalDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given decimal parameter.</p>
-    pub fn static_values(&self) -> std::option::Option<&[f64]> {
+    pub fn static_values(&self) -> ::std::option::Option<&[f64]> {
         self.static_values.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl DecimalDatasetParameterDefaultValues {
 
 /// A builder for [`DecimalDatasetParameterDefaultValues`](crate::types::DecimalDatasetParameterDefaultValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DecimalDatasetParameterDefaultValuesBuilder {
-    pub(crate) static_values: std::option::Option<std::vec::Vec<f64>>,
+    pub(crate) static_values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl DecimalDatasetParameterDefaultValuesBuilder {
     /// Appends an item to `static_values`.
@@ -36,11 +38,11 @@ impl DecimalDatasetParameterDefaultValuesBuilder {
     pub fn static_values(mut self, input: f64) -> Self {
         let mut v = self.static_values.unwrap_or_default();
         v.push(input);
-        self.static_values = Some(v);
+        self.static_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of static default values for a given decimal parameter.</p>
-    pub fn set_static_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.static_values = input;
         self
     }

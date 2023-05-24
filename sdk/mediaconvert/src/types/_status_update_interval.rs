@@ -51,13 +51,13 @@
 /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StatusUpdateInterval {
     #[allow(missing_docs)] // documentation missing in model
@@ -93,7 +93,7 @@ pub enum StatusUpdateInterval {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StatusUpdateInterval {
+impl ::std::convert::From<&str> for StatusUpdateInterval {
     fn from(s: &str) -> Self {
         match s {
             "SECONDS_10" => StatusUpdateInterval::Seconds10,
@@ -117,11 +117,11 @@ impl std::convert::From<&str> for StatusUpdateInterval {
         }
     }
 }
-impl std::str::FromStr for StatusUpdateInterval {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StatusUpdateInterval {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StatusUpdateInterval::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StatusUpdateInterval::from(s))
     }
 }
 impl StatusUpdateInterval {
@@ -167,7 +167,7 @@ impl StatusUpdateInterval {
         ]
     }
 }
-impl AsRef<str> for StatusUpdateInterval {
+impl ::std::convert::AsRef<str> for StatusUpdateInterval {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,22 +2,22 @@
 
 /// <p>Represents the drift check explainability baselines that can be used when the model monitor is set using the model package. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DriftCheckExplainability {
     /// <p>The drift check explainability constraints.</p>
     #[doc(hidden)]
-    pub constraints: std::option::Option<crate::types::MetricsSource>,
+    pub constraints: ::std::option::Option<crate::types::MetricsSource>,
     /// <p>The explainability config file for the model.</p>
     #[doc(hidden)]
-    pub config_file: std::option::Option<crate::types::FileSource>,
+    pub config_file: ::std::option::Option<crate::types::FileSource>,
 }
 impl DriftCheckExplainability {
     /// <p>The drift check explainability constraints.</p>
-    pub fn constraints(&self) -> std::option::Option<&crate::types::MetricsSource> {
+    pub fn constraints(&self) -> ::std::option::Option<&crate::types::MetricsSource> {
         self.constraints.as_ref()
     }
     /// <p>The explainability config file for the model.</p>
-    pub fn config_file(&self) -> std::option::Option<&crate::types::FileSource> {
+    pub fn config_file(&self) -> ::std::option::Option<&crate::types::FileSource> {
         self.config_file.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl DriftCheckExplainability {
 
 /// A builder for [`DriftCheckExplainability`](crate::types::DriftCheckExplainability).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DriftCheckExplainabilityBuilder {
-    pub(crate) constraints: std::option::Option<crate::types::MetricsSource>,
-    pub(crate) config_file: std::option::Option<crate::types::FileSource>,
+    pub(crate) constraints: ::std::option::Option<crate::types::MetricsSource>,
+    pub(crate) config_file: ::std::option::Option<crate::types::FileSource>,
 }
 impl DriftCheckExplainabilityBuilder {
     /// <p>The drift check explainability constraints.</p>
     pub fn constraints(mut self, input: crate::types::MetricsSource) -> Self {
-        self.constraints = Some(input);
+        self.constraints = ::std::option::Option::Some(input);
         self
     }
     /// <p>The drift check explainability constraints.</p>
     pub fn set_constraints(
         mut self,
-        input: std::option::Option<crate::types::MetricsSource>,
+        input: ::std::option::Option<crate::types::MetricsSource>,
     ) -> Self {
         self.constraints = input;
         self
     }
     /// <p>The explainability config file for the model.</p>
     pub fn config_file(mut self, input: crate::types::FileSource) -> Self {
-        self.config_file = Some(input);
+        self.config_file = ::std::option::Option::Some(input);
         self
     }
     /// <p>The explainability config file for the model.</p>
-    pub fn set_config_file(mut self, input: std::option::Option<crate::types::FileSource>) -> Self {
+    pub fn set_config_file(
+        mut self,
+        input: ::std::option::Option<crate::types::FileSource>,
+    ) -> Self {
         self.config_file = input;
         self
     }

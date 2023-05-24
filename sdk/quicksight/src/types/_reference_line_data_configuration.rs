@@ -2,35 +2,35 @@
 
 /// <p>The data configuration of the reference line.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceLineDataConfiguration {
     /// <p>The static data configuration of the reference line data configuration.</p>
     #[doc(hidden)]
     pub static_configuration:
-        std::option::Option<crate::types::ReferenceLineStaticDataConfiguration>,
+        ::std::option::Option<crate::types::ReferenceLineStaticDataConfiguration>,
     /// <p>The dynamic configuration of the reference line data configuration.</p>
     #[doc(hidden)]
     pub dynamic_configuration:
-        std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,
+        ::std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p>PrimaryY</p> </li>
     /// <li> <p>SecondaryY</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub axis_binding: std::option::Option<crate::types::AxisBinding>,
+    pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
 }
 impl ReferenceLineDataConfiguration {
     /// <p>The static data configuration of the reference line data configuration.</p>
     pub fn static_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ReferenceLineStaticDataConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ReferenceLineStaticDataConfiguration> {
         self.static_configuration.as_ref()
     }
     /// <p>The dynamic configuration of the reference line data configuration.</p>
     pub fn dynamic_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ReferenceLineDynamicDataConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ReferenceLineDynamicDataConfiguration> {
         self.dynamic_configuration.as_ref()
     }
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
@@ -38,7 +38,7 @@ impl ReferenceLineDataConfiguration {
     /// <li> <p>PrimaryY</p> </li>
     /// <li> <p>SecondaryY</p> </li>
     /// </ul>
-    pub fn axis_binding(&self) -> std::option::Option<&crate::types::AxisBinding> {
+    pub fn axis_binding(&self) -> ::std::option::Option<&crate::types::AxisBinding> {
         self.axis_binding.as_ref()
     }
 }
@@ -51,13 +51,15 @@ impl ReferenceLineDataConfiguration {
 
 /// A builder for [`ReferenceLineDataConfiguration`](crate::types::ReferenceLineDataConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReferenceLineDataConfigurationBuilder {
     pub(crate) static_configuration:
-        std::option::Option<crate::types::ReferenceLineStaticDataConfiguration>,
+        ::std::option::Option<crate::types::ReferenceLineStaticDataConfiguration>,
     pub(crate) dynamic_configuration:
-        std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,
-    pub(crate) axis_binding: std::option::Option<crate::types::AxisBinding>,
+        ::std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,
+    pub(crate) axis_binding: ::std::option::Option<crate::types::AxisBinding>,
 }
 impl ReferenceLineDataConfigurationBuilder {
     /// <p>The static data configuration of the reference line data configuration.</p>
@@ -65,13 +67,13 @@ impl ReferenceLineDataConfigurationBuilder {
         mut self,
         input: crate::types::ReferenceLineStaticDataConfiguration,
     ) -> Self {
-        self.static_configuration = Some(input);
+        self.static_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The static data configuration of the reference line data configuration.</p>
     pub fn set_static_configuration(
         mut self,
-        input: std::option::Option<crate::types::ReferenceLineStaticDataConfiguration>,
+        input: ::std::option::Option<crate::types::ReferenceLineStaticDataConfiguration>,
     ) -> Self {
         self.static_configuration = input;
         self
@@ -81,13 +83,13 @@ impl ReferenceLineDataConfigurationBuilder {
         mut self,
         input: crate::types::ReferenceLineDynamicDataConfiguration,
     ) -> Self {
-        self.dynamic_configuration = Some(input);
+        self.dynamic_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dynamic configuration of the reference line data configuration.</p>
     pub fn set_dynamic_configuration(
         mut self,
-        input: std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,
+        input: ::std::option::Option<crate::types::ReferenceLineDynamicDataConfiguration>,
     ) -> Self {
         self.dynamic_configuration = input;
         self
@@ -98,7 +100,7 @@ impl ReferenceLineDataConfigurationBuilder {
     /// <li> <p>SecondaryY</p> </li>
     /// </ul>
     pub fn axis_binding(mut self, input: crate::types::AxisBinding) -> Self {
-        self.axis_binding = Some(input);
+        self.axis_binding = ::std::option::Option::Some(input);
         self
     }
     /// <p>The axis binding type of the reference line. Choose one of the following options:</p>
@@ -108,7 +110,7 @@ impl ReferenceLineDataConfigurationBuilder {
     /// </ul>
     pub fn set_axis_binding(
         mut self,
-        input: std::option::Option<crate::types::AxisBinding>,
+        input: ::std::option::Option<crate::types::AxisBinding>,
     ) -> Self {
         self.axis_binding = input;
         self

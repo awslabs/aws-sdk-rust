@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of an update default branch operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDefaultBranchInput {
     /// <p>The name of the repository to set or change the default branch for.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the branch to set as the default.</p>
     #[doc(hidden)]
-    pub default_branch_name: std::option::Option<std::string::String>,
+    pub default_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultBranchInput {
     /// <p>The name of the repository to set or change the default branch for.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch to set as the default.</p>
-    pub fn default_branch_name(&self) -> std::option::Option<&str> {
+    pub fn default_branch_name(&self) -> ::std::option::Option<&str> {
         self.default_branch_name.as_deref()
     }
 }
@@ -32,31 +32,42 @@ impl UpdateDefaultBranchInput {
 
 /// A builder for [`UpdateDefaultBranchInput`](crate::operation::update_default_branch::UpdateDefaultBranchInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDefaultBranchInputBuilder {
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) default_branch_name: std::option::Option<std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) default_branch_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDefaultBranchInputBuilder {
     /// <p>The name of the repository to set or change the default branch for.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to set or change the default branch for.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The name of the branch to set as the default.</p>
-    pub fn default_branch_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_branch_name = Some(input.into());
+    pub fn default_branch_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the branch to set as the default.</p>
     pub fn set_default_branch_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.default_branch_name = input;
         self
@@ -64,11 +75,11 @@ impl UpdateDefaultBranchInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDefaultBranchInput`](crate::operation::update_default_branch::UpdateDefaultBranchInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_default_branch::UpdateDefaultBranchInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_default_branch::UpdateDefaultBranchInput {
                 repository_name: self.repository_name,
                 default_branch_name: self.default_branch_name,

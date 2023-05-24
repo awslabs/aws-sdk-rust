@@ -2,50 +2,50 @@
 
 /// <p> The QualificationRequest data structure represents a request a Worker has made for a Qualification. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QualificationRequest {
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted. </p>
     #[doc(hidden)]
-    pub qualification_request_id: std::option::Option<std::string::String>,
+    pub qualification_request_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation. </p>
     #[doc(hidden)]
-    pub qualification_type_id: std::option::Option<std::string::String>,
+    pub qualification_type_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Worker requesting the Qualification.</p>
     #[doc(hidden)]
-    pub worker_id: std::option::Option<std::string::String>,
+    pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p> The contents of the Qualification test that was presented to the Worker, if the type has a test and the Worker has submitted answers. This value is identical to the QuestionForm associated with the Qualification type at the time the Worker requests the Qualification.</p>
     #[doc(hidden)]
-    pub test: std::option::Option<std::string::String>,
+    pub test: ::std::option::Option<::std::string::String>,
     /// <p> The Worker's answers for the Qualification type's test contained in a QuestionFormAnswers document, if the type has a test and the Worker has submitted answers. If the Worker does not provide any answers, Answer may be empty. </p>
     #[doc(hidden)]
-    pub answer: std::option::Option<std::string::String>,
+    pub answer: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test. </p>
     #[doc(hidden)]
-    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QualificationRequest {
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted. </p>
-    pub fn qualification_request_id(&self) -> std::option::Option<&str> {
+    pub fn qualification_request_id(&self) -> ::std::option::Option<&str> {
         self.qualification_request_id.as_deref()
     }
     /// <p> The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation. </p>
-    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> ::std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
     /// <p> The ID of the Worker requesting the Qualification.</p>
-    pub fn worker_id(&self) -> std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
     /// <p> The contents of the Qualification test that was presented to the Worker, if the type has a test and the Worker has submitted answers. This value is identical to the QuestionForm associated with the Qualification type at the time the Worker requests the Qualification.</p>
-    pub fn test(&self) -> std::option::Option<&str> {
+    pub fn test(&self) -> ::std::option::Option<&str> {
         self.test.as_deref()
     }
     /// <p> The Worker's answers for the Qualification type's test contained in a QuestionFormAnswers document, if the type has a test and the Worker has submitted answers. If the Worker does not provide any answers, Answer may be empty. </p>
-    pub fn answer(&self) -> std::option::Option<&str> {
+    pub fn answer(&self) -> ::std::option::Option<&str> {
         self.answer.as_deref()
     }
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test. </p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
 }
@@ -58,81 +58,89 @@ impl QualificationRequest {
 
 /// A builder for [`QualificationRequest`](crate::types::QualificationRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QualificationRequestBuilder {
-    pub(crate) qualification_request_id: std::option::Option<std::string::String>,
-    pub(crate) qualification_type_id: std::option::Option<std::string::String>,
-    pub(crate) worker_id: std::option::Option<std::string::String>,
-    pub(crate) test: std::option::Option<std::string::String>,
-    pub(crate) answer: std::option::Option<std::string::String>,
-    pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) qualification_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) qualification_type_id: ::std::option::Option<::std::string::String>,
+    pub(crate) worker_id: ::std::option::Option<::std::string::String>,
+    pub(crate) test: ::std::option::Option<::std::string::String>,
+    pub(crate) answer: ::std::option::Option<::std::string::String>,
+    pub(crate) submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QualificationRequestBuilder {
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted. </p>
-    pub fn qualification_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.qualification_request_id = Some(input.into());
+    pub fn qualification_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.qualification_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Qualification request, a unique identifier generated when the request was submitted. </p>
     pub fn set_qualification_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.qualification_request_id = input;
         self
     }
     /// <p> The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation. </p>
-    pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.qualification_type_id = Some(input.into());
+    pub fn qualification_type_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.qualification_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Qualification type the Worker is requesting, as returned by the CreateQualificationType operation. </p>
     pub fn set_qualification_type_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.qualification_type_id = input;
         self
     }
     /// <p> The ID of the Worker requesting the Qualification.</p>
-    pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.worker_id = Some(input.into());
+    pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Worker requesting the Qualification.</p>
-    pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
     /// <p> The contents of the Qualification test that was presented to the Worker, if the type has a test and the Worker has submitted answers. This value is identical to the QuestionForm associated with the Qualification type at the time the Worker requests the Qualification.</p>
-    pub fn test(mut self, input: impl Into<std::string::String>) -> Self {
-        self.test = Some(input.into());
+    pub fn test(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.test = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The contents of the Qualification test that was presented to the Worker, if the type has a test and the Worker has submitted answers. This value is identical to the QuestionForm associated with the Qualification type at the time the Worker requests the Qualification.</p>
-    pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_test(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test = input;
         self
     }
     /// <p> The Worker's answers for the Qualification type's test contained in a QuestionFormAnswers document, if the type has a test and the Worker has submitted answers. If the Worker does not provide any answers, Answer may be empty. </p>
-    pub fn answer(mut self, input: impl Into<std::string::String>) -> Self {
-        self.answer = Some(input.into());
+    pub fn answer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.answer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Worker's answers for the Qualification type's test contained in a QuestionFormAnswers document, if the type has a test and the Worker has submitted answers. If the Worker does not provide any answers, Answer may be empty. </p>
-    pub fn set_answer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_answer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.answer = input;
         self
     }
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test. </p>
-    pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.submit_time = Some(input);
+    pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.submit_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the Qualification request had a status of Submitted. This is either the time the Worker submitted answers for a Qualification test, or the time the Worker requested the Qualification if the Qualification type does not have a test. </p>
     pub fn set_submit_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.submit_time = input;
         self

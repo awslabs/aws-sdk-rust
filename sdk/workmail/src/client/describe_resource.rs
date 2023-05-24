@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeResource`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::set_organization_id): <p>The identifier associated with the organization for which the resource is described.</p>
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::set_resource_id): <p>The identifier of the resource to be described.</p>
+    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::set_organization_id): <p>The identifier associated with the organization for which the resource is described.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::describe_resource::builders::DescribeResourceFluentBuilder::set_resource_id): <p>The identifier of the resource to be described.</p>
     /// - On success, responds with [`DescribeResourceOutput`](crate::operation::describe_resource::DescribeResourceOutput) with field(s):
     ///   - [`resource_id(Option<String>)`](crate::operation::describe_resource::DescribeResourceOutput::resource_id): <p>The identifier of the described resource.</p>
     ///   - [`email(Option<String>)`](crate::operation::describe_resource::DescribeResourceOutput::email): <p>The email of the described resource.</p>

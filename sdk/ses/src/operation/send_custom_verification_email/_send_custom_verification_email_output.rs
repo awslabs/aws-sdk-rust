@@ -2,20 +2,20 @@
 
 /// <p>The response received when attempting to send the custom verification email.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SendCustomVerificationEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for SendCustomVerificationEmailOutput {
+impl ::aws_http::request_id::RequestId for SendCustomVerificationEmailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl SendCustomVerificationEmailOutput {
 
 /// A builder for [`SendCustomVerificationEmailOutput`](crate::operation::send_custom_verification_email::SendCustomVerificationEmailOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendCustomVerificationEmailOutputBuilder {
-    pub(crate) message_id: std::option::Option<std::string::String>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SendCustomVerificationEmailOutputBuilder {
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }

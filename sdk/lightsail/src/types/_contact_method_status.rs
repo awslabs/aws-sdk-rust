@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ContactMethodStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ContactMethodStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ContactMethodStatus {
+impl ::std::convert::From<&str> for ContactMethodStatus {
     fn from(s: &str) -> Self {
         match s {
             "Invalid" => ContactMethodStatus::Invalid,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ContactMethodStatus {
         }
     }
 }
-impl std::str::FromStr for ContactMethodStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ContactMethodStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContactMethodStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ContactMethodStatus::from(s))
     }
 }
 impl ContactMethodStatus {
@@ -91,7 +91,7 @@ impl ContactMethodStatus {
         &["Invalid", "PendingVerification", "Valid"]
     }
 }
-impl AsRef<str> for ContactMethodStatus {
+impl ::std::convert::AsRef<str> for ContactMethodStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetComponent`](crate::operation::get_component::builders::GetComponentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_name): <p>The name of the component that you want to get the detailed data for.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_name): <p>The name of the component that you want to get the detailed data for.</p>
     /// - On success, responds with [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::get_component::GetComponentOutput::component): <p>The detailed data of the requested component.</p>
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::operation::get_component::GetComponentError)

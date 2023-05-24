@@ -2,32 +2,32 @@
 
 /// <p>Describes a path.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessScopePathRequest {
     /// <p>The source.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::PathStatementRequest>,
+    pub source: ::std::option::Option<crate::types::PathStatementRequest>,
     /// <p>The destination.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::PathStatementRequest>,
+    pub destination: ::std::option::Option<crate::types::PathStatementRequest>,
     /// <p>The through resources.</p>
     #[doc(hidden)]
     pub through_resources:
-        std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
 }
 impl AccessScopePathRequest {
     /// <p>The source.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::PathStatementRequest> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::PathStatementRequest> {
         self.source.as_ref()
     }
     /// <p>The destination.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::PathStatementRequest> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::PathStatementRequest> {
         self.destination.as_ref()
     }
     /// <p>The through resources.</p>
     pub fn through_resources(
         &self,
-    ) -> std::option::Option<&[crate::types::ThroughResourcesStatementRequest]> {
+    ) -> ::std::option::Option<&[crate::types::ThroughResourcesStatementRequest]> {
         self.through_resources.as_deref()
     }
 }
@@ -40,36 +40,38 @@ impl AccessScopePathRequest {
 
 /// A builder for [`AccessScopePathRequest`](crate::types::AccessScopePathRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessScopePathRequestBuilder {
-    pub(crate) source: std::option::Option<crate::types::PathStatementRequest>,
-    pub(crate) destination: std::option::Option<crate::types::PathStatementRequest>,
+    pub(crate) source: ::std::option::Option<crate::types::PathStatementRequest>,
+    pub(crate) destination: ::std::option::Option<crate::types::PathStatementRequest>,
     pub(crate) through_resources:
-        std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
 }
 impl AccessScopePathRequestBuilder {
     /// <p>The source.</p>
     pub fn source(mut self, input: crate::types::PathStatementRequest) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source.</p>
     pub fn set_source(
         mut self,
-        input: std::option::Option<crate::types::PathStatementRequest>,
+        input: ::std::option::Option<crate::types::PathStatementRequest>,
     ) -> Self {
         self.source = input;
         self
     }
     /// <p>The destination.</p>
     pub fn destination(mut self, input: crate::types::PathStatementRequest) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::PathStatementRequest>,
+        input: ::std::option::Option<crate::types::PathStatementRequest>,
     ) -> Self {
         self.destination = input;
         self
@@ -85,13 +87,15 @@ impl AccessScopePathRequestBuilder {
     ) -> Self {
         let mut v = self.through_resources.unwrap_or_default();
         v.push(input);
-        self.through_resources = Some(v);
+        self.through_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>The through resources.</p>
     pub fn set_through_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThroughResourcesStatementRequest>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ThroughResourcesStatementRequest>,
+        >,
     ) -> Self {
         self.through_resources = input;
         self

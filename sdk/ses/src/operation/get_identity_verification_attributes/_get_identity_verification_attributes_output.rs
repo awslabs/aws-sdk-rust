@@ -2,13 +2,13 @@
 
 /// <p>The Amazon SES verification status of a list of identities. For domain identities, this response also contains the verification token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     #[doc(hidden)]
-    pub verification_attributes: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub verification_attributes: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::IdentityVerificationAttributes,
         >,
     >,
@@ -18,16 +18,16 @@ impl GetIdentityVerificationAttributesOutput {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     pub fn verification_attributes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
             crate::types::IdentityVerificationAttributes,
         >,
     > {
         self.verification_attributes.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetIdentityVerificationAttributesOutput {
+impl ::aws_http::request_id::RequestId for GetIdentityVerificationAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl GetIdentityVerificationAttributesOutput {
 
 /// A builder for [`GetIdentityVerificationAttributesOutput`](crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetIdentityVerificationAttributesOutputBuilder {
-    pub(crate) verification_attributes: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub(crate) verification_attributes: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::IdentityVerificationAttributes,
         >,
     >,
@@ -59,20 +61,20 @@ impl GetIdentityVerificationAttributesOutputBuilder {
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     pub fn verification_attributes(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::IdentityVerificationAttributes,
     ) -> Self {
         let mut hash_map = self.verification_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.verification_attributes = Some(hash_map);
+        self.verification_attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of Identities to IdentityVerificationAttributes objects.</p>
     pub fn set_verification_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::IdentityVerificationAttributes,
             >,
         >,

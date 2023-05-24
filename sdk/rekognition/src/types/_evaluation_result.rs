@@ -2,22 +2,22 @@
 
 /// <p>The evaluation results for the training of a model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
     #[doc(hidden)]
-    pub f1_score: std::option::Option<f32>,
+    pub f1_score: ::std::option::Option<f32>,
     /// <p>The S3 bucket that contains the training summary.</p>
     #[doc(hidden)]
-    pub summary: std::option::Option<crate::types::Summary>,
+    pub summary: ::std::option::Option<crate::types::Summary>,
 }
 impl EvaluationResult {
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
-    pub fn f1_score(&self) -> std::option::Option<f32> {
+    pub fn f1_score(&self) -> ::std::option::Option<f32> {
         self.f1_score
     }
     /// <p>The S3 bucket that contains the training summary.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::Summary> {
+    pub fn summary(&self) -> ::std::option::Option<&crate::types::Summary> {
         self.summary.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl EvaluationResult {
 
 /// A builder for [`EvaluationResult`](crate::types::EvaluationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationResultBuilder {
-    pub(crate) f1_score: std::option::Option<f32>,
-    pub(crate) summary: std::option::Option<crate::types::Summary>,
+    pub(crate) f1_score: ::std::option::Option<f32>,
+    pub(crate) summary: ::std::option::Option<crate::types::Summary>,
 }
 impl EvaluationResultBuilder {
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
     pub fn f1_score(mut self, input: f32) -> Self {
-        self.f1_score = Some(input);
+        self.f1_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
-    pub fn set_f1_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_f1_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.f1_score = input;
         self
     }
     /// <p>The S3 bucket that contains the training summary.</p>
     pub fn summary(mut self, input: crate::types::Summary) -> Self {
-        self.summary = Some(input);
+        self.summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 bucket that contains the training summary.</p>
-    pub fn set_summary(mut self, input: std::option::Option<crate::types::Summary>) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::Summary>) -> Self {
         self.summary = input;
         self
     }

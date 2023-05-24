@@ -2,22 +2,22 @@
 
 /// <p>Describes the virtual private server (or <i>instance</i>) status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceState {
     /// <p>The status code for the instance.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<i32>,
+    pub code: ::std::option::Option<i32>,
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceState {
     /// <p>The status code for the instance.</p>
-    pub fn code(&self) -> std::option::Option<i32> {
+    pub fn code(&self) -> ::std::option::Option<i32> {
         self.code
     }
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl InstanceState {
 
 /// A builder for [`InstanceState`](crate::types::InstanceState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceStateBuilder {
-    pub(crate) code: std::option::Option<i32>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceStateBuilder {
     /// <p>The status code for the instance.</p>
     pub fn code(mut self, input: i32) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code for the instance.</p>
-    pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
     }
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

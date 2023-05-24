@@ -2,49 +2,52 @@
 
 /// <p>X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightEvent {
     /// <p>A brief description of the event.</p>
     #[doc(hidden)]
-    pub summary: std::option::Option<std::string::String>,
+    pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
     #[doc(hidden)]
-    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     #[doc(hidden)]
     pub client_request_impact_statistics:
-        std::option::Option<crate::types::RequestImpactStatistics>,
+        ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     #[doc(hidden)]
     pub root_cause_service_request_impact_statistics:
-        std::option::Option<crate::types::RequestImpactStatistics>,
+        ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The service during the event that is most impacted by the incident.</p>
     #[doc(hidden)]
-    pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
+    pub top_anomalous_services:
+        ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
 }
 impl InsightEvent {
     /// <p>A brief description of the event.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
     }
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn client_request_impact_statistics(
         &self,
-    ) -> std::option::Option<&crate::types::RequestImpactStatistics> {
+    ) -> ::std::option::Option<&crate::types::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn root_cause_service_request_impact_statistics(
         &self,
-    ) -> std::option::Option<&crate::types::RequestImpactStatistics> {
+    ) -> ::std::option::Option<&crate::types::RequestImpactStatistics> {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service during the event that is most impacted by the incident.</p>
-    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::types::AnomalousService]> {
+    pub fn top_anomalous_services(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AnomalousService]> {
         self.top_anomalous_services.as_deref()
     }
 }
@@ -57,37 +60,39 @@ impl InsightEvent {
 
 /// A builder for [`InsightEvent`](crate::types::InsightEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InsightEventBuilder {
-    pub(crate) summary: std::option::Option<std::string::String>,
-    pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) summary: ::std::option::Option<::std::string::String>,
+    pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) client_request_impact_statistics:
-        std::option::Option<crate::types::RequestImpactStatistics>,
+        ::std::option::Option<crate::types::RequestImpactStatistics>,
     pub(crate) root_cause_service_request_impact_statistics:
-        std::option::Option<crate::types::RequestImpactStatistics>,
+        ::std::option::Option<crate::types::RequestImpactStatistics>,
     pub(crate) top_anomalous_services:
-        std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
 }
 impl InsightEventBuilder {
     /// <p>A brief description of the event.</p>
-    pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
-        self.summary = Some(input.into());
+    pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the event.</p>
-    pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
     }
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-    pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.event_time = Some(input);
+    pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.event_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
     pub fn set_event_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.event_time = input;
         self
@@ -97,13 +102,13 @@ impl InsightEventBuilder {
         mut self,
         input: crate::types::RequestImpactStatistics,
     ) -> Self {
-        self.client_request_impact_statistics = Some(input);
+        self.client_request_impact_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn set_client_request_impact_statistics(
         mut self,
-        input: std::option::Option<crate::types::RequestImpactStatistics>,
+        input: ::std::option::Option<crate::types::RequestImpactStatistics>,
     ) -> Self {
         self.client_request_impact_statistics = input;
         self
@@ -113,13 +118,13 @@ impl InsightEventBuilder {
         mut self,
         input: crate::types::RequestImpactStatistics,
     ) -> Self {
-        self.root_cause_service_request_impact_statistics = Some(input);
+        self.root_cause_service_request_impact_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn set_root_cause_service_request_impact_statistics(
         mut self,
-        input: std::option::Option<crate::types::RequestImpactStatistics>,
+        input: ::std::option::Option<crate::types::RequestImpactStatistics>,
     ) -> Self {
         self.root_cause_service_request_impact_statistics = input;
         self
@@ -132,13 +137,13 @@ impl InsightEventBuilder {
     pub fn top_anomalous_services(mut self, input: crate::types::AnomalousService) -> Self {
         let mut v = self.top_anomalous_services.unwrap_or_default();
         v.push(input);
-        self.top_anomalous_services = Some(v);
+        self.top_anomalous_services = ::std::option::Option::Some(v);
         self
     }
     /// <p>The service during the event that is most impacted by the incident.</p>
     pub fn set_top_anomalous_services(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
     ) -> Self {
         self.top_anomalous_services = input;
         self

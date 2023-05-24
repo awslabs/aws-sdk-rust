@@ -2,22 +2,22 @@
 
 /// <p>Contains information about a parameter object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterObject {
     /// <p>The ID of the parameter object. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The attributes of the parameter object.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::ParameterAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
 }
 impl ParameterObject {
     /// <p>The ID of the parameter object. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The attributes of the parameter object.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::ParameterAttribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::ParameterAttribute]> {
         self.attributes.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ParameterObject {
 
 /// A builder for [`ParameterObject`](crate::types::ParameterObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterObjectBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::ParameterAttribute>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
 }
 impl ParameterObjectBuilder {
     /// <p>The ID of the parameter object. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parameter object. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -54,13 +56,13 @@ impl ParameterObjectBuilder {
     pub fn attributes(mut self, input: crate::types::ParameterAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The attributes of the parameter object.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterAttribute>>,
     ) -> Self {
         self.attributes = input;
         self

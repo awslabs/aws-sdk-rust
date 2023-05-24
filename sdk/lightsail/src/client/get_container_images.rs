@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContainerImages`](crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder::set_service_name): <p>The name of the container service for which to return registered container images.</p>
+    ///   - [`service_name(impl ::std::convert::Into<String>)`](crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::get_container_images::builders::GetContainerImagesFluentBuilder::set_service_name): <p>The name of the container service for which to return registered container images.</p>
     /// - On success, responds with [`GetContainerImagesOutput`](crate::operation::get_container_images::GetContainerImagesOutput) with field(s):
     ///   - [`container_images(Option<Vec<ContainerImage>>)`](crate::operation::get_container_images::GetContainerImagesOutput::container_images): <p>An array of objects that describe container images that are registered to the container service.</p>
     /// - On failure, responds with [`SdkError<GetContainerImagesError>`](crate::operation::get_container_images::GetContainerImagesError)

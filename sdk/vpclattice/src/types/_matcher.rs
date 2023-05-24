@@ -2,10 +2,10 @@
 
 /// <p>The codes to use when checking for a successful response from a target for health checks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Matcher {
     /// <p>The HTTP code to use when checking for a successful response from a target.</p>
-    HttpCode(std::string::String),
+    HttpCode(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum Matcher {
 }
 impl Matcher {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`HttpCode`](crate::types::Matcher::HttpCode), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`HttpCode`](crate::types::Matcher::HttpCode), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_http_code(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_http_code(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let Matcher::HttpCode(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`HttpCode`](crate::types::Matcher::HttpCode).

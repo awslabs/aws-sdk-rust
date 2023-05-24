@@ -2,17 +2,17 @@
 
 /// <p>The response from the server for a registration request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignUpOutput {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     #[doc(hidden)]
     pub user_confirmed: bool,
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     #[doc(hidden)]
-    pub code_delivery_details: std::option::Option<crate::types::CodeDeliveryDetailsType>,
+    pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
     #[doc(hidden)]
-    pub user_sub: std::option::Option<std::string::String>,
+    pub user_sub: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SignUpOutput {
@@ -23,15 +23,15 @@ impl SignUpOutput {
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub fn code_delivery_details(
         &self,
-    ) -> std::option::Option<&crate::types::CodeDeliveryDetailsType> {
+    ) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
-    pub fn user_sub(&self) -> std::option::Option<&str> {
+    pub fn user_sub(&self) -> ::std::option::Option<&str> {
         self.user_sub.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for SignUpOutput {
+impl ::aws_http::request_id::RequestId for SignUpOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,44 +45,46 @@ impl SignUpOutput {
 
 /// A builder for [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SignUpOutputBuilder {
-    pub(crate) user_confirmed: std::option::Option<bool>,
-    pub(crate) code_delivery_details: std::option::Option<crate::types::CodeDeliveryDetailsType>,
-    pub(crate) user_sub: std::option::Option<std::string::String>,
+    pub(crate) user_confirmed: ::std::option::Option<bool>,
+    pub(crate) code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
+    pub(crate) user_sub: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SignUpOutputBuilder {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     pub fn user_confirmed(mut self, input: bool) -> Self {
-        self.user_confirmed = Some(input);
+        self.user_confirmed = ::std::option::Option::Some(input);
         self
     }
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
-    pub fn set_user_confirmed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_user_confirmed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_confirmed = input;
         self
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub fn code_delivery_details(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
-        self.code_delivery_details = Some(input);
+        self.code_delivery_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub fn set_code_delivery_details(
         mut self,
-        input: std::option::Option<crate::types::CodeDeliveryDetailsType>,
+        input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     ) -> Self {
         self.code_delivery_details = input;
         self
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
-    pub fn user_sub(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_sub = Some(input.into());
+    pub fn user_sub(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_sub = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
-    pub fn set_user_sub(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_sub(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_sub = input;
         self
     }

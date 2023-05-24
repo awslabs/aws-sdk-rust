@@ -2,29 +2,29 @@
 
 /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
     #[doc(hidden)]
-    pub frame_name: std::option::Option<std::string::String>,
+    pub frame_name: ::std::option::Option<::std::string::String>,
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::MetricType>,
+    pub r#type: ::std::option::Option<crate::types::MetricType>,
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
     #[doc(hidden)]
-    pub thread_states: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub thread_states: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FrameMetric {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    pub fn frame_name(&self) -> std::option::Option<&str> {
+    pub fn frame_name(&self) -> ::std::option::Option<&str> {
         self.frame_name.as_deref()
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::MetricType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MetricType> {
         self.r#type.as_ref()
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn thread_states(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn thread_states(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.thread_states.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl FrameMetric {
 
 /// A builder for [`FrameMetric`](crate::types::FrameMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FrameMetricBuilder {
-    pub(crate) frame_name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::MetricType>,
-    pub(crate) thread_states: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) frame_name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::MetricType>,
+    pub(crate) thread_states: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FrameMetricBuilder {
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    pub fn frame_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.frame_name = Some(input.into());
+    pub fn frame_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.frame_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Name of the method common across the multiple occurrences of a frame in an application profile.</p>
-    pub fn set_frame_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_frame_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.frame_name = input;
         self
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
     pub fn r#type(mut self, input: crate::types::MetricType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> A type of aggregation that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurrences of all frames in a profile. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::MetricType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.r#type = input;
         self
     }
@@ -69,16 +71,19 @@ impl FrameMetricBuilder {
     /// To override the contents of this collection use [`set_thread_states`](Self::set_thread_states).
     ///
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
-    pub fn thread_states(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thread_states(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.thread_states.unwrap_or_default();
         v.push(input.into());
-        self.thread_states = Some(v);
+        self.thread_states = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of application runtime thread states used to get the counts for a frame a derive a metric value.</p>
     pub fn set_thread_states(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.thread_states = input;
         self

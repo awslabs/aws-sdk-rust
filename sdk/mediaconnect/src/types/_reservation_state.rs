@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReservationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ReservationState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReservationState {
+impl ::std::convert::From<&str> for ReservationState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ReservationState::Active,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ReservationState {
         }
     }
 }
-impl std::str::FromStr for ReservationState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReservationState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservationState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReservationState::from(s))
     }
 }
 impl ReservationState {
@@ -96,7 +96,7 @@ impl ReservationState {
         &["ACTIVE", "CANCELED", "EXPIRED", "PROCESSING"]
     }
 }
-impl AsRef<str> for ReservationState {
+impl ::std::convert::AsRef<str> for ReservationState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

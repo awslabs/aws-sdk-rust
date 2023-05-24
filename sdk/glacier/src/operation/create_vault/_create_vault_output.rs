@@ -2,20 +2,20 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVaultOutput {
     /// <p>The URI of the vault that was created.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateVaultOutput {
     /// <p>The URI of the vault that was created.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateVaultOutput {
+impl ::aws_http::request_id::RequestId for CreateVaultOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateVaultOutput {
 
 /// A builder for [`CreateVaultOutput`](crate::operation::create_vault::CreateVaultOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVaultOutputBuilder {
-    pub(crate) location: std::option::Option<std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateVaultOutputBuilder {
     /// <p>The URI of the vault that was created.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the vault that was created.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }

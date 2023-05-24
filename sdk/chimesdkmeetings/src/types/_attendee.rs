@@ -3,19 +3,19 @@
 /// <p>An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate and join as the specified attendee. The <code>JoinToken</code> expires when the meeting ends, or when <code>DeleteAttendee</code> is called. After that, the attendee is unable to join the meeting. </p>
 /// <p>We recommend securely transferring each <code>JoinToken</code> from your server application to the client so that no other client has access to the token except for the one authorized to represent the attendee.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Attendee {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     #[doc(hidden)]
-    pub external_user_id: std::option::Option<std::string::String>,
+    pub external_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime SDK attendee ID.</p>
     #[doc(hidden)]
-    pub attendee_id: std::option::Option<std::string::String>,
+    pub attendee_id: ::std::option::Option<::std::string::String>,
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
     #[doc(hidden)]
-    pub join_token: std::option::Option<std::string::String>,
+    pub join_token: ::std::option::Option<::std::string::String>,
     /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
     /// <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>
     /// </note>
@@ -26,21 +26,21 @@ pub struct Attendee {
     /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub capabilities: std::option::Option<crate::types::AttendeeCapabilities>,
+    pub capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
 impl Attendee {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn external_user_id(&self) -> std::option::Option<&str> {
+    pub fn external_user_id(&self) -> ::std::option::Option<&str> {
         self.external_user_id.as_deref()
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn attendee_id(&self) -> std::option::Option<&str> {
+    pub fn attendee_id(&self) -> ::std::option::Option<&str> {
         self.attendee_id.as_deref()
     }
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
-    pub fn join_token(&self) -> std::option::Option<&str> {
+    pub fn join_token(&self) -> ::std::option::Option<&str> {
         self.join_token.as_deref()
     }
     /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
@@ -52,12 +52,12 @@ impl Attendee {
     /// <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>
     /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
     /// </ul>
-    pub fn capabilities(&self) -> std::option::Option<&crate::types::AttendeeCapabilities> {
+    pub fn capabilities(&self) -> ::std::option::Option<&crate::types::AttendeeCapabilities> {
         self.capabilities.as_ref()
     }
 }
-impl std::fmt::Debug for Attendee {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Attendee {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Attendee");
         formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
         formatter.field("attendee_id", &self.attendee_id);
@@ -75,45 +75,51 @@ impl Attendee {
 
 /// A builder for [`Attendee`](crate::types::Attendee).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AttendeeBuilder {
-    pub(crate) external_user_id: std::option::Option<std::string::String>,
-    pub(crate) attendee_id: std::option::Option<std::string::String>,
-    pub(crate) join_token: std::option::Option<std::string::String>,
-    pub(crate) capabilities: std::option::Option<crate::types::AttendeeCapabilities>,
+    pub(crate) external_user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) attendee_id: ::std::option::Option<::std::string::String>,
+    pub(crate) join_token: ::std::option::Option<::std::string::String>,
+    pub(crate) capabilities: ::std::option::Option<crate::types::AttendeeCapabilities>,
 }
 impl AttendeeBuilder {
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn external_user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_user_id = Some(input.into());
+    pub fn external_user_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.external_user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn set_external_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_user_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.external_user_id = input;
         self
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attendee_id = Some(input.into());
+    pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attendee_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attendee_id = input;
         self
     }
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
-    pub fn join_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.join_token = Some(input.into());
+    pub fn join_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.join_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The join token used by the Amazon Chime SDK attendee.</p>
-    pub fn set_join_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_join_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.join_token = input;
         self
     }
@@ -127,7 +133,7 @@ impl AttendeeBuilder {
     /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
     /// </ul>
     pub fn capabilities(mut self, input: crate::types::AttendeeCapabilities) -> Self {
-        self.capabilities = Some(input);
+        self.capabilities = ::std::option::Option::Some(input);
         self
     }
     /// <p>The capabilities assigned to an attendee: audio, video, or content.</p> <note>
@@ -141,7 +147,7 @@ impl AttendeeBuilder {
     /// </ul>
     pub fn set_capabilities(
         mut self,
-        input: std::option::Option<crate::types::AttendeeCapabilities>,
+        input: ::std::option::Option<crate::types::AttendeeCapabilities>,
     ) -> Self {
         self.capabilities = input;
         self
@@ -156,8 +162,8 @@ impl AttendeeBuilder {
         }
     }
 }
-impl std::fmt::Debug for AttendeeBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AttendeeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AttendeeBuilder");
         formatter.field("external_user_id", &"*** Sensitive Data Redacted ***");
         formatter.field("attendee_id", &self.attendee_id);

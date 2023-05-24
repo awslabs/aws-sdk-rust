@@ -2,19 +2,19 @@
 
 /// <p>Details for an Amazon S3 filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfigurationS3KeyFilter {
     /// <p>The filter rules for the filter.</p>
     #[doc(hidden)]
-    pub filter_rules: std::option::Option<
-        std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
+    pub filter_rules: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
     >,
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilter {
     /// <p>The filter rules for the filter.</p>
     pub fn filter_rules(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule]>
+    ) -> ::std::option::Option<&[crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule]>
     {
         self.filter_rules.as_deref()
     }
@@ -29,10 +29,12 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilter {
 
 /// A builder for [`AwsS3BucketNotificationConfigurationS3KeyFilter`](crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsS3BucketNotificationConfigurationS3KeyFilterBuilder {
-    pub(crate) filter_rules: std::option::Option<
-        std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
+    pub(crate) filter_rules: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
     >,
 }
 impl AwsS3BucketNotificationConfigurationS3KeyFilterBuilder {
@@ -47,14 +49,14 @@ impl AwsS3BucketNotificationConfigurationS3KeyFilterBuilder {
     ) -> Self {
         let mut v = self.filter_rules.unwrap_or_default();
         v.push(input);
-        self.filter_rules = Some(v);
+        self.filter_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The filter rules for the filter.</p>
     pub fn set_filter_rules(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilterRule>,
         >,
     ) -> Self {
         self.filter_rules = input;

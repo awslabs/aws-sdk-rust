@@ -2,22 +2,22 @@
 
 /// <p>Session keys for ABP v1.1</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionKeysAbpV10X {
     /// <p>The NwkSKey value.</p>
     #[doc(hidden)]
-    pub nwk_s_key: std::option::Option<std::string::String>,
+    pub nwk_s_key: ::std::option::Option<::std::string::String>,
     /// <p>The AppSKey value.</p>
     #[doc(hidden)]
-    pub app_s_key: std::option::Option<std::string::String>,
+    pub app_s_key: ::std::option::Option<::std::string::String>,
 }
 impl SessionKeysAbpV10X {
     /// <p>The NwkSKey value.</p>
-    pub fn nwk_s_key(&self) -> std::option::Option<&str> {
+    pub fn nwk_s_key(&self) -> ::std::option::Option<&str> {
         self.nwk_s_key.as_deref()
     }
     /// <p>The AppSKey value.</p>
-    pub fn app_s_key(&self) -> std::option::Option<&str> {
+    pub fn app_s_key(&self) -> ::std::option::Option<&str> {
         self.app_s_key.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SessionKeysAbpV10X {
 
 /// A builder for [`SessionKeysAbpV10X`](crate::types::SessionKeysAbpV10X).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionKeysAbpV10XBuilder {
-    pub(crate) nwk_s_key: std::option::Option<std::string::String>,
-    pub(crate) app_s_key: std::option::Option<std::string::String>,
+    pub(crate) nwk_s_key: ::std::option::Option<::std::string::String>,
+    pub(crate) app_s_key: ::std::option::Option<::std::string::String>,
 }
 impl SessionKeysAbpV10XBuilder {
     /// <p>The NwkSKey value.</p>
-    pub fn nwk_s_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nwk_s_key = Some(input.into());
+    pub fn nwk_s_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.nwk_s_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The NwkSKey value.</p>
-    pub fn set_nwk_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nwk_s_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nwk_s_key = input;
         self
     }
     /// <p>The AppSKey value.</p>
-    pub fn app_s_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_s_key = Some(input.into());
+    pub fn app_s_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_s_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AppSKey value.</p>
-    pub fn set_app_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_s_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_s_key = input;
         self
     }

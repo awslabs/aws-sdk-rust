@@ -2,22 +2,22 @@
 
 /// <p>Represents the output of a <code>ListAttachedIndices</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListAttachedIndicesResponse {
     /// <p>The indices attached to the specified object.</p>
     #[doc(hidden)]
-    pub index_attachments: std::option::Option<std::vec::Vec<crate::types::IndexAttachment>>,
+    pub index_attachments: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListAttachedIndicesResponse {
     /// <p>The indices attached to the specified object.</p>
-    pub fn index_attachments(&self) -> std::option::Option<&[crate::types::IndexAttachment]> {
+    pub fn index_attachments(&self) -> ::std::option::Option<&[crate::types::IndexAttachment]> {
         self.index_attachments.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,10 +30,13 @@ impl BatchListAttachedIndicesResponse {
 
 /// A builder for [`BatchListAttachedIndicesResponse`](crate::types::BatchListAttachedIndicesResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchListAttachedIndicesResponseBuilder {
-    pub(crate) index_attachments: std::option::Option<std::vec::Vec<crate::types::IndexAttachment>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) index_attachments:
+        ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListAttachedIndicesResponseBuilder {
     /// Appends an item to `index_attachments`.
@@ -44,24 +47,24 @@ impl BatchListAttachedIndicesResponseBuilder {
     pub fn index_attachments(mut self, input: crate::types::IndexAttachment) -> Self {
         let mut v = self.index_attachments.unwrap_or_default();
         v.push(input);
-        self.index_attachments = Some(v);
+        self.index_attachments = ::std::option::Option::Some(v);
         self
     }
     /// <p>The indices attached to the specified object.</p>
     pub fn set_index_attachments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IndexAttachment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IndexAttachment>>,
     ) -> Self {
         self.index_attachments = input;
         self
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

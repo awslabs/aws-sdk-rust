@@ -7,29 +7,29 @@ pub use crate::operation::create_meeting_dial_out::_create_meeting_dial_out_inpu
 ///
 /// <p>Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that the From number belongs to the customer.</p>
 /// <p>To play welcome audio or implement an interactive voice response (IVR), use the <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMeetingDialOutFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_meeting_dial_out::builders::CreateMeetingDialOutInputBuilder,
 }
 impl CreateMeetingDialOutFluentBuilder {
     /// Creates a new `CreateMeetingDialOut`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_meeting_dial_out::CreateMeetingDialOut,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_meeting_dial_out::CreateMeetingDialOutError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateMeetingDialOutFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_meeting_dial_out::CreateMeetingDialOutOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_meeting_dial_out::CreateMeetingDialOutError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,54 +76,63 @@ impl CreateMeetingDialOutFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_meeting_dial_out::CreateMeetingDialOutOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_meeting_dial_out::CreateMeetingDialOutError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.meeting_id(input.into());
         self
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
-    pub fn from_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn from_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.from_phone_number(input.into());
         self
     }
     /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
     pub fn set_from_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_from_phone_number(input);
         self
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
-    pub fn to_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn to_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.to_phone_number(input.into());
         self
     }
     /// <p>Phone number called when inviting someone to a meeting.</p>
-    pub fn set_to_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_to_phone_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_to_phone_number(input);
         self
     }
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
-    pub fn join_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn join_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.join_token(input.into());
         self
     }
     /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
-    pub fn set_join_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_join_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_join_token(input);
         self
     }

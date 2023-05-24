@@ -2,22 +2,22 @@
 
 /// <p>An object that contains details about the action of a contact list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactListDestination {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
-    pub contact_list_name: std::option::Option<std::string::String>,
+    pub contact_list_name: ::std::option::Option<::std::string::String>,
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>PUT: add the addresses to the contact list. If the record already exists, it will override it with the new value.</p> </li>
     /// <li> <p>DELETE: remove the addresses from the contact list.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub contact_list_import_action: std::option::Option<crate::types::ContactListImportAction>,
+    pub contact_list_import_action: ::std::option::Option<crate::types::ContactListImportAction>,
 }
 impl ContactListDestination {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> ::std::option::Option<&str> {
         self.contact_list_name.as_deref()
     }
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
@@ -27,7 +27,7 @@ impl ContactListDestination {
     /// </ul>
     pub fn contact_list_import_action(
         &self,
-    ) -> std::option::Option<&crate::types::ContactListImportAction> {
+    ) -> ::std::option::Option<&crate::types::ContactListImportAction> {
         self.contact_list_import_action.as_ref()
     }
 }
@@ -40,22 +40,27 @@ impl ContactListDestination {
 
 /// A builder for [`ContactListDestination`](crate::types::ContactListDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContactListDestinationBuilder {
-    pub(crate) contact_list_name: std::option::Option<std::string::String>,
+    pub(crate) contact_list_name: ::std::option::Option<::std::string::String>,
     pub(crate) contact_list_import_action:
-        std::option::Option<crate::types::ContactListImportAction>,
+        ::std::option::Option<crate::types::ContactListImportAction>,
 }
 impl ContactListDestinationBuilder {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_list_name = Some(input.into());
+    pub fn contact_list_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.contact_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the contact list.</p>
     pub fn set_contact_list_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.contact_list_name = input;
         self
@@ -69,7 +74,7 @@ impl ContactListDestinationBuilder {
         mut self,
         input: crate::types::ContactListImportAction,
     ) -> Self {
-        self.contact_list_import_action = Some(input);
+        self.contact_list_import_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>&gt;The type of action to perform on the addresses. The following are the possible values:</p>
@@ -79,7 +84,7 @@ impl ContactListDestinationBuilder {
     /// </ul>
     pub fn set_contact_list_import_action(
         mut self,
-        input: std::option::Option<crate::types::ContactListImportAction>,
+        input: ::std::option::Option<crate::types::ContactListImportAction>,
     ) -> Self {
         self.contact_list_import_action = input;
         self

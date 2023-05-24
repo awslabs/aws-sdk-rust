@@ -40,13 +40,13 @@
 /// The architecture of the cores which are the targets of an update.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UpdateTargetsArchitecture {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum UpdateTargetsArchitecture {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UpdateTargetsArchitecture {
+impl ::std::convert::From<&str> for UpdateTargetsArchitecture {
     fn from(s: &str) -> Self {
         match s {
             "aarch64" => UpdateTargetsArchitecture::Aarch64,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for UpdateTargetsArchitecture {
         }
     }
 }
-impl std::str::FromStr for UpdateTargetsArchitecture {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UpdateTargetsArchitecture {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateTargetsArchitecture::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UpdateTargetsArchitecture::from(s))
     }
 }
 impl UpdateTargetsArchitecture {
@@ -96,7 +96,7 @@ impl UpdateTargetsArchitecture {
         &["aarch64", "armv6l", "armv7l", "x86_64"]
     }
 }
-impl AsRef<str> for UpdateTargetsArchitecture {
+impl ::std::convert::AsRef<str> for UpdateTargetsArchitecture {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

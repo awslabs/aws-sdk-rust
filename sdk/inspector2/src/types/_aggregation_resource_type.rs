@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AggregationResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AggregationResourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AggregationResourceType {
+impl ::std::convert::From<&str> for AggregationResourceType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_EC2_INSTANCE" => AggregationResourceType::AwsEc2Instance,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AggregationResourceType {
         }
     }
 }
-impl std::str::FromStr for AggregationResourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AggregationResourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregationResourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AggregationResourceType::from(s))
     }
 }
 impl AggregationResourceType {
@@ -95,7 +95,7 @@ impl AggregationResourceType {
         ]
     }
 }
-impl AsRef<str> for AggregationResourceType {
+impl ::std::convert::AsRef<str> for AggregationResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

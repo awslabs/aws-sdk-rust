@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MediaStreamType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum MediaStreamType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MediaStreamType {
+impl ::std::convert::From<&str> for MediaStreamType {
     fn from(s: &str) -> Self {
         match s {
             "ancillary-data" => MediaStreamType::AncillaryData,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for MediaStreamType {
         }
     }
 }
-impl std::str::FromStr for MediaStreamType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MediaStreamType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MediaStreamType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MediaStreamType::from(s))
     }
 }
 impl MediaStreamType {
@@ -91,7 +91,7 @@ impl MediaStreamType {
         &["ancillary-data", "audio", "video"]
     }
 }
-impl AsRef<str> for MediaStreamType {
+impl ::std::convert::AsRef<str> for MediaStreamType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

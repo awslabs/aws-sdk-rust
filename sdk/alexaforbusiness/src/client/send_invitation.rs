@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SendInvitation`](crate::operation::send_invitation::builders::SendInvitationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_arn(impl Into<String>)`](crate::operation::send_invitation::builders::SendInvitationFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::send_invitation::builders::SendInvitationFluentBuilder::set_user_arn): <p>The ARN of the user to whom to send an invitation. Required.</p>
+    ///   - [`user_arn(impl ::std::convert::Into<String>)`](crate::operation::send_invitation::builders::SendInvitationFluentBuilder::user_arn) / [`set_user_arn(Option<String>)`](crate::operation::send_invitation::builders::SendInvitationFluentBuilder::set_user_arn): <p>The ARN of the user to whom to send an invitation. Required.</p>
     /// - On success, responds with [`SendInvitationOutput`](crate::operation::send_invitation::SendInvitationOutput)
     /// - On failure, responds with [`SdkError<SendInvitationError>`](crate::operation::send_invitation::SendInvitationError)
     pub fn send_invitation(

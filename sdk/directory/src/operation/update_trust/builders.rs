@@ -6,56 +6,59 @@ pub use crate::operation::update_trust::_update_trust_input::UpdateTrustInputBui
 /// Fluent builder constructing a request to `UpdateTrust`.
 ///
 /// <p>Updates the trust that has been set up between your Managed Microsoft AD directory and an self-managed Active Directory.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTrustFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_trust::builders::UpdateTrustInputBuilder,
 }
 impl UpdateTrustFluentBuilder {
     /// Creates a new `UpdateTrust`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_trust::UpdateTrust,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_trust::UpdateTrustError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trust::UpdateTrustError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_trust::UpdateTrustOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_trust::UpdateTrustError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trust::UpdateTrustError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl UpdateTrustFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_trust::UpdateTrustOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_trust::UpdateTrustError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_trust::UpdateTrustError>,
     > {
         self.send_middleware().await
     }
     /// <p>Identifier of the trust relationship.</p>
-    pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_id(input.into());
         self
     }
     /// <p>Identifier of the trust relationship.</p>
-    pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_id(input);
         self
     }
@@ -92,7 +95,7 @@ impl UpdateTrustFluentBuilder {
     /// <p>Updates selective authentication for the trust.</p>
     pub fn set_selective_auth(
         mut self,
-        input: std::option::Option<crate::types::SelectiveAuth>,
+        input: ::std::option::Option<crate::types::SelectiveAuth>,
     ) -> Self {
         self.inner = self.inner.set_selective_auth(input);
         self

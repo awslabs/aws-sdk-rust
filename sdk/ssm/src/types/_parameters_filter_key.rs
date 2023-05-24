@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ParametersFilterKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ParametersFilterKey {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ParametersFilterKey {
+impl ::std::convert::From<&str> for ParametersFilterKey {
     fn from(s: &str) -> Self {
         match s {
             "KeyId" => ParametersFilterKey::KeyId,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ParametersFilterKey {
         }
     }
 }
-impl std::str::FromStr for ParametersFilterKey {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ParametersFilterKey {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParametersFilterKey::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ParametersFilterKey::from(s))
     }
 }
 impl ParametersFilterKey {
@@ -91,7 +91,7 @@ impl ParametersFilterKey {
         &["KeyId", "Name", "Type"]
     }
 }
-impl AsRef<str> for ParametersFilterKey {
+impl ::std::convert::AsRef<str> for ParametersFilterKey {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

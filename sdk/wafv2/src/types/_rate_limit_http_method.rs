@@ -3,7 +3,7 @@
 /// <p>Specifies the request's HTTP method as an aggregate key for a rate-based rule. Each distinct HTTP method contributes to the aggregation instance. If you use just the HTTP method as your custom key, then each method fully defines an aggregation instance. </p>
 /// <p>JSON specification: <code>"RateLimitHTTPMethod": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateLimitHttpMethod {}
 impl RateLimitHttpMethod {
     /// Creates a new builder-style object to manufacture [`RateLimitHttpMethod`](crate::types::RateLimitHttpMethod).
@@ -14,7 +14,9 @@ impl RateLimitHttpMethod {
 
 /// A builder for [`RateLimitHttpMethod`](crate::types::RateLimitHttpMethod).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RateLimitHttpMethodBuilder {}
 impl RateLimitHttpMethodBuilder {
     /// Consumes the builder and constructs a [`RateLimitHttpMethod`](crate::types::RateLimitHttpMethod).

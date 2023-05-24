@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DescribePackagesFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DescribePackagesFilterName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DescribePackagesFilterName {
+impl ::std::convert::From<&str> for DescribePackagesFilterName {
     fn from(s: &str) -> Self {
         match s {
             "PackageID" => DescribePackagesFilterName::PackageId,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DescribePackagesFilterName {
         }
     }
 }
-impl std::str::FromStr for DescribePackagesFilterName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DescribePackagesFilterName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DescribePackagesFilterName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DescribePackagesFilterName::from(s))
     }
 }
 impl DescribePackagesFilterName {
@@ -91,7 +91,7 @@ impl DescribePackagesFilterName {
         &["PackageID", "PackageName", "PackageStatus"]
     }
 }
-impl AsRef<str> for DescribePackagesFilterName {
+impl ::std::convert::AsRef<str> for DescribePackagesFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

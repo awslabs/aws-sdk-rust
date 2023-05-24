@@ -2,52 +2,52 @@
 
 /// <p>A new gating rule for a control panel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewGatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
-    pub control_panel_arn: std::option::Option<std::string::String>,
+    pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
     #[doc(hidden)]
-    pub gating_controls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub gating_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name for the new gating rule.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that you set for specific gating controls (routing controls) that designate how many control states must be ON to allow you to change (set or unset) the target control states.</p>
     #[doc(hidden)]
-    pub rule_config: std::option::Option<crate::types::RuleConfig>,
+    pub rule_config: ::std::option::Option<crate::types::RuleConfig>,
     /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p>
     /// <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
     #[doc(hidden)]
-    pub target_controls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub target_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     #[doc(hidden)]
-    pub wait_period_ms: std::option::Option<i32>,
+    pub wait_period_ms: ::std::option::Option<i32>,
 }
 impl NewGatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
-    pub fn gating_controls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn gating_controls(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.gating_controls.as_deref()
     }
     /// <p>The name for the new gating rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The criteria that you set for specific gating controls (routing controls) that designate how many control states must be ON to allow you to change (set or unset) the target control states.</p>
-    pub fn rule_config(&self) -> std::option::Option<&crate::types::RuleConfig> {
+    pub fn rule_config(&self) -> ::std::option::Option<&crate::types::RuleConfig> {
         self.rule_config.as_ref()
     }
     /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p>
     /// <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
-    pub fn target_controls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_controls(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.target_controls.as_deref()
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    pub fn wait_period_ms(&self) -> std::option::Option<i32> {
+    pub fn wait_period_ms(&self) -> ::std::option::Option<i32> {
         self.wait_period_ms
     }
 }
@@ -60,25 +60,30 @@ impl NewGatingRule {
 
 /// A builder for [`NewGatingRule`](crate::types::NewGatingRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NewGatingRuleBuilder {
-    pub(crate) control_panel_arn: std::option::Option<std::string::String>,
-    pub(crate) gating_controls: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) rule_config: std::option::Option<crate::types::RuleConfig>,
-    pub(crate) target_controls: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) wait_period_ms: std::option::Option<i32>,
+    pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) gating_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_config: ::std::option::Option<crate::types::RuleConfig>,
+    pub(crate) target_controls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) wait_period_ms: ::std::option::Option<i32>,
 }
 impl NewGatingRuleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_panel_arn = Some(input.into());
+    pub fn control_panel_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn set_control_panel_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.control_panel_arn = input;
         self
@@ -88,37 +93,43 @@ impl NewGatingRuleBuilder {
     /// To override the contents of this collection use [`set_gating_controls`](Self::set_gating_controls).
     ///
     /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
-    pub fn gating_controls(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn gating_controls(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.gating_controls.unwrap_or_default();
         v.push(input.into());
-        self.gating_controls = Some(v);
+        self.gating_controls = ::std::option::Option::Some(v);
         self
     }
     /// <p>The gating controls for the new gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.</p>
     pub fn set_gating_controls(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.gating_controls = input;
         self
     }
     /// <p>The name for the new gating rule.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the new gating rule.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The criteria that you set for specific gating controls (routing controls) that designate how many control states must be ON to allow you to change (set or unset) the target control states.</p>
     pub fn rule_config(mut self, input: crate::types::RuleConfig) -> Self {
-        self.rule_config = Some(input);
+        self.rule_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria that you set for specific gating controls (routing controls) that designate how many control states must be ON to allow you to change (set or unset) the target control states.</p>
-    pub fn set_rule_config(mut self, input: std::option::Option<crate::types::RuleConfig>) -> Self {
+    pub fn set_rule_config(
+        mut self,
+        input: ::std::option::Option<crate::types::RuleConfig>,
+    ) -> Self {
         self.rule_config = input;
         self
     }
@@ -128,28 +139,31 @@ impl NewGatingRuleBuilder {
     ///
     /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p>
     /// <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
-    pub fn target_controls(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_controls(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.target_controls.unwrap_or_default();
         v.push(input.into());
-        self.target_controls = Some(v);
+        self.target_controls = ::std::option::Option::Some(v);
         self
     }
     /// <p>Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true.</p>
     /// <p>In other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.</p>
     pub fn set_target_controls(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.target_controls = input;
         self
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(mut self, input: i32) -> Self {
-        self.wait_period_ms = Some(input);
+        self.wait_period_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    pub fn set_wait_period_ms(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_wait_period_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_period_ms = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateSnapshot`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl Into<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_simulation): <p>The name of the simulation.</p>
+    ///   - [`simulation(impl ::std::convert::Into<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_simulation): <p>The name of the simulation.</p>
     ///   - [`destination(S3Destination)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::destination) / [`set_destination(Option<S3Destination>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_destination): <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver creates the snapshot file.</p>
     /// - On success, responds with [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput)
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::operation::create_snapshot::CreateSnapshotError)

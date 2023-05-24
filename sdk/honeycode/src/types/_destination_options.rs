@@ -2,20 +2,26 @@
 
 /// <p>An object that contains the options relating to the destination of the import request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationOptions {
     /// <p>A map of the column id to the import properties for each column.</p>
     #[doc(hidden)]
-    pub column_map: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::SourceDataColumnProperties>,
+    pub column_map: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::SourceDataColumnProperties,
+        >,
     >,
 }
 impl DestinationOptions {
     /// <p>A map of the column id to the import properties for each column.</p>
     pub fn column_map(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::SourceDataColumnProperties>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::SourceDataColumnProperties,
+        >,
     > {
         self.column_map.as_ref()
     }
@@ -29,10 +35,15 @@ impl DestinationOptions {
 
 /// A builder for [`DestinationOptions`](crate::types::DestinationOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationOptionsBuilder {
-    pub(crate) column_map: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::SourceDataColumnProperties>,
+    pub(crate) column_map: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::SourceDataColumnProperties,
+        >,
     >,
 }
 impl DestinationOptionsBuilder {
@@ -43,20 +54,20 @@ impl DestinationOptionsBuilder {
     /// <p>A map of the column id to the import properties for each column.</p>
     pub fn column_map(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::SourceDataColumnProperties,
     ) -> Self {
         let mut hash_map = self.column_map.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.column_map = Some(hash_map);
+        self.column_map = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of the column id to the import properties for each column.</p>
     pub fn set_column_map(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::SourceDataColumnProperties,
             >,
         >,

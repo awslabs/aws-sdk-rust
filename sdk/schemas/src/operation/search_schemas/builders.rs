@@ -6,56 +6,59 @@ pub use crate::operation::search_schemas::_search_schemas_input::SearchSchemasIn
 /// Fluent builder constructing a request to `SearchSchemas`.
 ///
 /// <p>Search the schemas</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchSchemasFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::search_schemas::builders::SearchSchemasInputBuilder,
 }
 impl SearchSchemasFluentBuilder {
     /// Creates a new `SearchSchemas`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::search_schemas::SearchSchemas,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::search_schemas::SearchSchemasError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_schemas::SearchSchemasError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search_schemas::SearchSchemasOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search_schemas::SearchSchemasError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_schemas::SearchSchemasError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl SearchSchemasFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search_schemas::SearchSchemasOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search_schemas::SearchSchemasError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_schemas::SearchSchemasError>,
     > {
         self.send_middleware().await
     }
@@ -86,12 +89,12 @@ impl SearchSchemasFluentBuilder {
         )
     }
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
-    pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keywords(input.into());
         self
     }
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
-    pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_keywords(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_keywords(input);
         self
     }
@@ -101,27 +104,33 @@ impl SearchSchemasFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn registry_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registry_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }

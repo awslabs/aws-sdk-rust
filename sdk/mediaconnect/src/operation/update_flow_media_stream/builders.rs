@@ -6,29 +6,29 @@ pub use crate::operation::update_flow_media_stream::_update_flow_media_stream_in
 /// Fluent builder constructing a request to `UpdateFlowMediaStream`.
 ///
 /// Updates an existing media stream.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowMediaStreamFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStreamInputBuilder,
 }
 impl UpdateFlowMediaStreamFluentBuilder {
     /// Creates a new `UpdateFlowMediaStream`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_flow_media_stream::UpdateFlowMediaStream,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateFlowMediaStreamFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl UpdateFlowMediaStreamFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
         >,
     > {
@@ -88,7 +91,7 @@ impl UpdateFlowMediaStreamFluentBuilder {
     /// The attributes that you want to assign to the media stream.
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<crate::types::MediaStreamAttributesRequest>,
+        input: ::std::option::Option<crate::types::MediaStreamAttributesRequest>,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
@@ -99,39 +102,42 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self
     }
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
-    pub fn set_clock_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_clock_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_clock_rate(input);
         self
     }
     /// Description
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// Description
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
     /// The name of the media stream that you want to update.
-    pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn media_stream_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.media_stream_name(input.into());
         self
     }
     /// The name of the media stream that you want to update.
     pub fn set_media_stream_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_media_stream_name(input);
         self
@@ -144,18 +150,18 @@ impl UpdateFlowMediaStreamFluentBuilder {
     /// The type of media stream.
     pub fn set_media_stream_type(
         mut self,
-        input: std::option::Option<crate::types::MediaStreamType>,
+        input: ::std::option::Option<crate::types::MediaStreamType>,
     ) -> Self {
         self.inner = self.inner.set_media_stream_type(input);
         self
     }
     /// The resolution of the video.
-    pub fn video_format(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn video_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.video_format(input.into());
         self
     }
     /// The resolution of the video.
-    pub fn set_video_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_video_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_video_format(input);
         self
     }

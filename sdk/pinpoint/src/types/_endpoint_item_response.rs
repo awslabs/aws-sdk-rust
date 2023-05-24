@@ -2,22 +2,22 @@
 
 /// <p>Provides the status code and message that result from processing data for an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointItemResponse {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<i32>,
+    pub status_code: ::std::option::Option<i32>,
 }
 impl EndpointItemResponse {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
-    pub fn status_code(&self) -> std::option::Option<i32> {
+    pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
     }
 }
@@ -30,29 +30,31 @@ impl EndpointItemResponse {
 
 /// A builder for [`EndpointItemResponse`](crate::types::EndpointItemResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointItemResponseBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) status_code: std::option::Option<i32>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) status_code: ::std::option::Option<i32>,
 }
 impl EndpointItemResponseBuilder {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     pub fn status_code(mut self, input: i32) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
     }

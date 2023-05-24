@@ -2,7 +2,7 @@
 
 /// <p>Information about the number of nodes and node types in a vehicle network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeCounts {
     /// <p>The total number of nodes in a vehicle network.</p>
     #[doc(hidden)]
@@ -51,62 +51,64 @@ impl NodeCounts {
 
 /// A builder for [`NodeCounts`](crate::types::NodeCounts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeCountsBuilder {
-    pub(crate) total_nodes: std::option::Option<i32>,
-    pub(crate) total_branches: std::option::Option<i32>,
-    pub(crate) total_sensors: std::option::Option<i32>,
-    pub(crate) total_attributes: std::option::Option<i32>,
-    pub(crate) total_actuators: std::option::Option<i32>,
+    pub(crate) total_nodes: ::std::option::Option<i32>,
+    pub(crate) total_branches: ::std::option::Option<i32>,
+    pub(crate) total_sensors: ::std::option::Option<i32>,
+    pub(crate) total_attributes: ::std::option::Option<i32>,
+    pub(crate) total_actuators: ::std::option::Option<i32>,
 }
 impl NodeCountsBuilder {
     /// <p>The total number of nodes in a vehicle network.</p>
     pub fn total_nodes(mut self, input: i32) -> Self {
-        self.total_nodes = Some(input);
+        self.total_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of nodes in a vehicle network.</p>
-    pub fn set_total_nodes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_nodes = input;
         self
     }
     /// <p>The total number of nodes in a vehicle network that represent branches.</p>
     pub fn total_branches(mut self, input: i32) -> Self {
-        self.total_branches = Some(input);
+        self.total_branches = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of nodes in a vehicle network that represent branches.</p>
-    pub fn set_total_branches(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_branches(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_branches = input;
         self
     }
     /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
     pub fn total_sensors(mut self, input: i32) -> Self {
-        self.total_sensors = Some(input);
+        self.total_sensors = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
-    pub fn set_total_sensors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_sensors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_sensors = input;
         self
     }
     /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
     pub fn total_attributes(mut self, input: i32) -> Self {
-        self.total_attributes = Some(input);
+        self.total_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
-    pub fn set_total_attributes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_attributes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_attributes = input;
         self
     }
     /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
     pub fn total_actuators(mut self, input: i32) -> Self {
-        self.total_actuators = Some(input);
+        self.total_actuators = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
-    pub fn set_total_actuators(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_actuators(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_actuators = input;
         self
     }

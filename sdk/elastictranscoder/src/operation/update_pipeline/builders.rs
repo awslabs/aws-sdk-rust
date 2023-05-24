@@ -8,56 +8,59 @@ pub use crate::operation::update_pipeline::_update_pipeline_input::UpdatePipelin
 /// <p> Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.</p> <important>
 /// <p>When you change pipeline settings, your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are affected in addition to jobs that you submit after you change settings. </p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePipelineFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_pipeline::builders::UpdatePipelineInputBuilder,
 }
 impl UpdatePipelineFluentBuilder {
     /// Creates a new `UpdatePipeline`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_pipeline::UpdatePipeline,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_pipeline::UpdatePipelineError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline::UpdatePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_pipeline::UpdatePipelineOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_pipeline::UpdatePipelineError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline::UpdatePipelineError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,63 +73,69 @@ impl UpdatePipelineFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_pipeline::UpdatePipelineOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_pipeline::UpdatePipelineError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pipeline::UpdatePipelineError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the pipeline that you want to update.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The ID of the pipeline that you want to update.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
     /// <p>Constraints: Maximum 40 characters</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.</p>
-    pub fn input_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn input_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_bucket(input.into());
         self
     }
     /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.</p>
-    pub fn set_input_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_bucket(input);
         self
     }
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.</p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
         self
     }
     /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.</p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role(input);
         self
     }
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-    pub fn aws_kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_kms_key_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_kms_key_arn(input.into());
         self
     }
     /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
     /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-    pub fn set_aws_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_kms_key_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_kms_key_arn(input);
         self
     }
@@ -154,7 +163,7 @@ impl UpdatePipelineFluentBuilder {
     /// </ul>
     pub fn set_notifications(
         mut self,
-        input: std::option::Option<crate::types::Notifications>,
+        input: ::std::option::Option<crate::types::Notifications>,
     ) -> Self {
         self.inner = self.inner.set_notifications(input);
         self
@@ -213,7 +222,7 @@ impl UpdatePipelineFluentBuilder {
     /// </ul>
     pub fn set_content_config(
         mut self,
-        input: std::option::Option<crate::types::PipelineOutputConfig>,
+        input: ::std::option::Option<crate::types::PipelineOutputConfig>,
     ) -> Self {
         self.inner = self.inner.set_content_config(input);
         self
@@ -272,7 +281,7 @@ impl UpdatePipelineFluentBuilder {
     /// </ul>
     pub fn set_thumbnail_config(
         mut self,
-        input: std::option::Option<crate::types::PipelineOutputConfig>,
+        input: ::std::option::Option<crate::types::PipelineOutputConfig>,
     ) -> Self {
         self.inner = self.inner.set_thumbnail_config(input);
         self

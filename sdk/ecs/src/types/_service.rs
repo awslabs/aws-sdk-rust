@@ -2,26 +2,26 @@
 
 /// <p>Details on a service within a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Service {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub service_arn: std::option::Option<std::string::String>,
+    pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster. However, you can have similarly named services in multiple clusters within a Region or across multiple Regions.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
     #[doc(hidden)]
-    pub load_balancers: std::option::Option<std::vec::Vec<crate::types::LoadBalancer>>,
+    pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
     #[doc(hidden)]
-    pub service_registries: std::option::Option<std::vec::Vec<crate::types::ServiceRegistry>>,
+    pub service_registries: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     /// <p>The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
     #[doc(hidden)]
     pub desired_count: i32,
@@ -33,52 +33,52 @@ pub struct Service {
     pub pending_count: i32,
     /// <p>The launch type the service is using. When using the DescribeServices API, this field is omitted if the service was created using a capacity provider strategy.</p>
     #[doc(hidden)]
-    pub launch_type: std::option::Option<crate::types::LaunchType>,
+    pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
     #[doc(hidden)]
     pub capacity_provider_strategy:
-        std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     /// <p>The platform version to run your service on. A platform version is only specified for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub platform_version: std::option::Option<std::string::String>,
+    pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
     #[doc(hidden)]
-    pub platform_family: std::option::Option<std::string::String>,
+    pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
     #[doc(hidden)]
-    pub task_definition: std::option::Option<std::string::String>,
+    pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
     #[doc(hidden)]
-    pub deployment_configuration: std::option::Option<crate::types::DeploymentConfiguration>,
+    pub deployment_configuration: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
     #[doc(hidden)]
-    pub task_sets: std::option::Option<std::vec::Vec<crate::types::TaskSet>>,
+    pub task_sets: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
     /// <p>The current state of deployments for the service.</p>
     #[doc(hidden)]
-    pub deployments: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
+    pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     /// <p>The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The event stream for your service. A maximum of 100 of the latest events are displayed.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::ServiceEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEvent>>,
     /// <p>The Unix timestamp for the time when the service was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The placement constraints for the tasks in the service.</p>
     #[doc(hidden)]
     pub placement_constraints:
-        std::option::Option<std::vec::Vec<crate::types::PlacementConstraint>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     /// <p>The placement strategy that determines how tasks for the service are placed.</p>
     #[doc(hidden)]
-    pub placement_strategy: std::option::Option<std::vec::Vec<crate::types::PlacementStrategy>>,
+    pub placement_strategy: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     #[doc(hidden)]
-    pub network_configuration: std::option::Option<crate::types::NetworkConfiguration>,
+    pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
     #[doc(hidden)]
-    pub health_check_grace_period_seconds: std::option::Option<i32>,
+    pub health_check_grace_period_seconds: ::std::option::Option<i32>,
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
@@ -88,10 +88,10 @@ pub struct Service {
     /// </note> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scheduling_strategy: std::option::Option<crate::types::SchedulingStrategy>,
+    pub scheduling_strategy: ::std::option::Option<crate::types::SchedulingStrategy>,
     /// <p>The deployment controller type the service is using. </p>
     #[doc(hidden)]
-    pub deployment_controller: std::option::Option<crate::types::DeploymentController>,
+    pub deployment_controller: ::std::option::Option<crate::types::DeploymentController>,
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
@@ -104,43 +104,43 @@ pub struct Service {
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The principal that created the service.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<std::string::String>,
+    pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub enable_ecs_managed_tags: bool,
     /// <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     #[doc(hidden)]
-    pub propagate_tags: std::option::Option<crate::types::PropagateTags>,
+    pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     /// <p>Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the execute command functionality is turned on for all containers in tasks as part of the service.</p>
     #[doc(hidden)]
     pub enable_execute_command: bool,
 }
 impl Service {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn service_arn(&self) -> std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<&str> {
         self.service_arn.as_deref()
     }
     /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster. However, you can have similarly named services in multiple clusters within a Region or across multiple Regions.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
-    pub fn load_balancers(&self) -> std::option::Option<&[crate::types::LoadBalancer]> {
+    pub fn load_balancers(&self) -> ::std::option::Option<&[crate::types::LoadBalancer]> {
         self.load_balancers.as_deref()
     }
     /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
-    pub fn service_registries(&self) -> std::option::Option<&[crate::types::ServiceRegistry]> {
+    pub fn service_registries(&self) -> ::std::option::Option<&[crate::types::ServiceRegistry]> {
         self.service_registries.as_deref()
     }
     /// <p>The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
@@ -156,72 +156,72 @@ impl Service {
         self.pending_count
     }
     /// <p>The launch type the service is using. When using the DescribeServices API, this field is omitted if the service was created using a capacity provider strategy.</p>
-    pub fn launch_type(&self) -> std::option::Option<&crate::types::LaunchType> {
+    pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
     /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
     pub fn capacity_provider_strategy(
         &self,
-    ) -> std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
+    ) -> ::std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
         self.capacity_provider_strategy.as_deref()
     }
     /// <p>The platform version to run your service on. A platform version is only specified for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(&self) -> std::option::Option<&str> {
+    pub fn platform_version(&self) -> ::std::option::Option<&str> {
         self.platform_version.as_deref()
     }
     /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
-    pub fn platform_family(&self) -> std::option::Option<&str> {
+    pub fn platform_family(&self) -> ::std::option::Option<&str> {
         self.platform_family.as_deref()
     }
     /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
-    pub fn task_definition(&self) -> std::option::Option<&str> {
+    pub fn task_definition(&self) -> ::std::option::Option<&str> {
         self.task_definition.as_deref()
     }
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
     pub fn deployment_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DeploymentConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_configuration.as_ref()
     }
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
-    pub fn task_sets(&self) -> std::option::Option<&[crate::types::TaskSet]> {
+    pub fn task_sets(&self) -> ::std::option::Option<&[crate::types::TaskSet]> {
         self.task_sets.as_deref()
     }
     /// <p>The current state of deployments for the service.</p>
-    pub fn deployments(&self) -> std::option::Option<&[crate::types::Deployment]> {
+    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::Deployment]> {
         self.deployments.as_deref()
     }
     /// <p>The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The event stream for your service. A maximum of 100 of the latest events are displayed.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::ServiceEvent]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::ServiceEvent]> {
         self.events.as_deref()
     }
     /// <p>The Unix timestamp for the time when the service was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The placement constraints for the tasks in the service.</p>
     pub fn placement_constraints(
         &self,
-    ) -> std::option::Option<&[crate::types::PlacementConstraint]> {
+    ) -> ::std::option::Option<&[crate::types::PlacementConstraint]> {
         self.placement_constraints.as_deref()
     }
     /// <p>The placement strategy that determines how tasks for the service are placed.</p>
-    pub fn placement_strategy(&self) -> std::option::Option<&[crate::types::PlacementStrategy]> {
+    pub fn placement_strategy(&self) -> ::std::option::Option<&[crate::types::PlacementStrategy]> {
         self.placement_strategy.as_deref()
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub fn network_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NetworkConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
-    pub fn health_check_grace_period_seconds(&self) -> std::option::Option<i32> {
+    pub fn health_check_grace_period_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_grace_period_seconds
     }
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
@@ -232,13 +232,13 @@ impl Service {
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note> </li>
     /// </ul>
-    pub fn scheduling_strategy(&self) -> std::option::Option<&crate::types::SchedulingStrategy> {
+    pub fn scheduling_strategy(&self) -> ::std::option::Option<&crate::types::SchedulingStrategy> {
         self.scheduling_strategy.as_ref()
     }
     /// <p>The deployment controller type the service is using. </p>
     pub fn deployment_controller(
         &self,
-    ) -> std::option::Option<&crate::types::DeploymentController> {
+    ) -> ::std::option::Option<&crate::types::DeploymentController> {
         self.deployment_controller.as_ref()
     }
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
@@ -252,11 +252,11 @@ impl Service {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The principal that created the service.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -264,7 +264,7 @@ impl Service {
         self.enable_ecs_managed_tags
     }
     /// <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
-    pub fn propagate_tags(&self) -> std::option::Option<&crate::types::PropagateTags> {
+    pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
     /// <p>Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the execute command functionality is turned on for all containers in tasks as part of the service.</p>
@@ -281,72 +281,75 @@ impl Service {
 
 /// A builder for [`Service`](crate::types::Service).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceBuilder {
-    pub(crate) service_arn: std::option::Option<std::string::String>,
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) load_balancers: std::option::Option<std::vec::Vec<crate::types::LoadBalancer>>,
+    pub(crate) service_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     pub(crate) service_registries:
-        std::option::Option<std::vec::Vec<crate::types::ServiceRegistry>>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) desired_count: std::option::Option<i32>,
-    pub(crate) running_count: std::option::Option<i32>,
-    pub(crate) pending_count: std::option::Option<i32>,
-    pub(crate) launch_type: std::option::Option<crate::types::LaunchType>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) desired_count: ::std::option::Option<i32>,
+    pub(crate) running_count: ::std::option::Option<i32>,
+    pub(crate) pending_count: ::std::option::Option<i32>,
+    pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
     pub(crate) capacity_provider_strategy:
-        std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    pub(crate) platform_version: std::option::Option<std::string::String>,
-    pub(crate) platform_family: std::option::Option<std::string::String>,
-    pub(crate) task_definition: std::option::Option<std::string::String>,
-    pub(crate) deployment_configuration: std::option::Option<crate::types::DeploymentConfiguration>,
-    pub(crate) task_sets: std::option::Option<std::vec::Vec<crate::types::TaskSet>>,
-    pub(crate) deployments: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::ServiceEvent>>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub(crate) platform_version: ::std::option::Option<::std::string::String>,
+    pub(crate) platform_family: ::std::option::Option<::std::string::String>,
+    pub(crate) task_definition: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_configuration:
+        ::std::option::Option<crate::types::DeploymentConfiguration>,
+    pub(crate) task_sets: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
+    pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEvent>>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) placement_constraints:
-        std::option::Option<std::vec::Vec<crate::types::PlacementConstraint>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     pub(crate) placement_strategy:
-        std::option::Option<std::vec::Vec<crate::types::PlacementStrategy>>,
-    pub(crate) network_configuration: std::option::Option<crate::types::NetworkConfiguration>,
-    pub(crate) health_check_grace_period_seconds: std::option::Option<i32>,
-    pub(crate) scheduling_strategy: std::option::Option<crate::types::SchedulingStrategy>,
-    pub(crate) deployment_controller: std::option::Option<crate::types::DeploymentController>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) created_by: std::option::Option<std::string::String>,
-    pub(crate) enable_ecs_managed_tags: std::option::Option<bool>,
-    pub(crate) propagate_tags: std::option::Option<crate::types::PropagateTags>,
-    pub(crate) enable_execute_command: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
+    pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    pub(crate) health_check_grace_period_seconds: ::std::option::Option<i32>,
+    pub(crate) scheduling_strategy: ::std::option::Option<crate::types::SchedulingStrategy>,
+    pub(crate) deployment_controller: ::std::option::Option<crate::types::DeploymentController>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_ecs_managed_tags: ::std::option::Option<bool>,
+    pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
+    pub(crate) enable_execute_command: ::std::option::Option<bool>,
 }
 impl ServiceBuilder {
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_arn = Some(input.into());
+    pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that identifies the service. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
     }
     /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster. However, you can have similarly named services in multiple clusters within a Region or across multiple Regions.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within a cluster. However, you can have similarly named services in multiple clusters within a Region or across multiple Regions.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
@@ -358,13 +361,13 @@ impl ServiceBuilder {
     pub fn load_balancers(mut self, input: crate::types::LoadBalancer) -> Self {
         let mut v = self.load_balancers.unwrap_or_default();
         v.push(input);
-        self.load_balancers = Some(v);
+        self.load_balancers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.</p>
     pub fn set_load_balancers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LoadBalancer>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     ) -> Self {
         self.load_balancers = input;
         self
@@ -377,64 +380,67 @@ impl ServiceBuilder {
     pub fn service_registries(mut self, input: crate::types::ServiceRegistry) -> Self {
         let mut v = self.service_registries.unwrap_or_default();
         v.push(input);
-        self.service_registries = Some(v);
+        self.service_registries = ::std::option::Option::Some(v);
         self
     }
     /// <p>The details for the service discovery registries to assign to this service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.</p>
     pub fn set_service_registries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceRegistry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     ) -> Self {
         self.service_registries = input;
         self
     }
     /// <p>The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
     pub fn desired_count(mut self, input: i32) -> Self {
-        self.desired_count = Some(input);
+        self.desired_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
-    pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_desired_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_count = input;
         self
     }
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
     pub fn running_count(mut self, input: i32) -> Self {
-        self.running_count = Some(input);
+        self.running_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state.</p>
-    pub fn set_running_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_running_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_count = input;
         self
     }
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
     pub fn pending_count(mut self, input: i32) -> Self {
-        self.pending_count = Some(input);
+        self.pending_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of tasks in the cluster that are in the <code>PENDING</code> state.</p>
-    pub fn set_pending_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pending_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pending_count = input;
         self
     }
     /// <p>The launch type the service is using. When using the DescribeServices API, this field is omitted if the service was created using a capacity provider strategy.</p>
     pub fn launch_type(mut self, input: crate::types::LaunchType) -> Self {
-        self.launch_type = Some(input);
+        self.launch_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch type the service is using. When using the DescribeServices API, this field is omitted if the service was created using a capacity provider strategy.</p>
-    pub fn set_launch_type(mut self, input: std::option::Option<crate::types::LaunchType>) -> Self {
+    pub fn set_launch_type(
+        mut self,
+        input: ::std::option::Option<crate::types::LaunchType>,
+    ) -> Self {
         self.launch_type = input;
         self
     }
@@ -449,46 +455,64 @@ impl ServiceBuilder {
     ) -> Self {
         let mut v = self.capacity_provider_strategy.unwrap_or_default();
         v.push(input);
-        self.capacity_provider_strategy = Some(v);
+        self.capacity_provider_strategy = ::std::option::Option::Some(v);
         self
     }
     /// <p>The capacity provider strategy the service uses. When using the DescribeServices API, this field is omitted if the service was created using a launch type.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     ) -> Self {
         self.capacity_provider_strategy = input;
         self
     }
     /// <p>The platform version to run your service on. A platform version is only specified for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_version = Some(input.into());
+    pub fn platform_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.platform_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform version to run your service on. A platform version is only specified for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.platform_version = input;
         self
     }
     /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
-    pub fn platform_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_family = Some(input.into());
+    pub fn platform_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.platform_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system that your tasks in the service run on. A platform family is specified only for tasks using the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX</code>).</p>
-    pub fn set_platform_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_family(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.platform_family = input;
         self
     }
     /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
-    pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_definition = Some(input.into());
+    pub fn task_definition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The task definition to use for tasks in the service. This value is specified when the service is created with <code>CreateService</code>, and it can be modified with <code>UpdateService</code>.</p>
-    pub fn set_task_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_definition(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.task_definition = input;
         self
     }
@@ -497,13 +521,13 @@ impl ServiceBuilder {
         mut self,
         input: crate::types::DeploymentConfiguration,
     ) -> Self {
-        self.deployment_configuration = Some(input);
+        self.deployment_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
     pub fn set_deployment_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeploymentConfiguration>,
+        input: ::std::option::Option<crate::types::DeploymentConfiguration>,
     ) -> Self {
         self.deployment_configuration = input;
         self
@@ -516,13 +540,13 @@ impl ServiceBuilder {
     pub fn task_sets(mut self, input: crate::types::TaskSet) -> Self {
         let mut v = self.task_sets.unwrap_or_default();
         v.push(input);
-        self.task_sets = Some(v);
+        self.task_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
     pub fn set_task_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TaskSet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskSet>>,
     ) -> Self {
         self.task_sets = input;
         self
@@ -535,24 +559,24 @@ impl ServiceBuilder {
     pub fn deployments(mut self, input: crate::types::Deployment) -> Self {
         let mut v = self.deployments.unwrap_or_default();
         v.push(input);
-        self.deployments = Some(v);
+        self.deployments = ::std::option::Option::Some(v);
         self
     }
     /// <p>The current state of deployments for the service.</p>
     pub fn set_deployments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     ) -> Self {
         self.deployments = input;
         self
     }
     /// <p>The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role that's associated with the service. It allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
@@ -564,26 +588,26 @@ impl ServiceBuilder {
     pub fn events(mut self, input: crate::types::ServiceEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>The event stream for your service. A maximum of 100 of the latest events are displayed.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEvent>>,
     ) -> Self {
         self.events = input;
         self
     }
     /// <p>The Unix timestamp for the time when the service was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the service was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
@@ -596,13 +620,13 @@ impl ServiceBuilder {
     pub fn placement_constraints(mut self, input: crate::types::PlacementConstraint) -> Self {
         let mut v = self.placement_constraints.unwrap_or_default();
         v.push(input);
-        self.placement_constraints = Some(v);
+        self.placement_constraints = ::std::option::Option::Some(v);
         self
     }
     /// <p>The placement constraints for the tasks in the service.</p>
     pub fn set_placement_constraints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlacementConstraint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     ) -> Self {
         self.placement_constraints = input;
         self
@@ -615,39 +639,39 @@ impl ServiceBuilder {
     pub fn placement_strategy(mut self, input: crate::types::PlacementStrategy) -> Self {
         let mut v = self.placement_strategy.unwrap_or_default();
         v.push(input);
-        self.placement_strategy = Some(v);
+        self.placement_strategy = ::std::option::Option::Some(v);
         self
     }
     /// <p>The placement strategy that determines how tasks for the service are placed.</p>
     pub fn set_placement_strategy(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlacementStrategy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
     ) -> Self {
         self.placement_strategy = input;
         self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
-        self.network_configuration = Some(input);
+        self.network_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub fn set_network_configuration(
         mut self,
-        input: std::option::Option<crate::types::NetworkConfiguration>,
+        input: ::std::option::Option<crate::types::NetworkConfiguration>,
     ) -> Self {
         self.network_configuration = input;
         self
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
     pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
-        self.health_check_grace_period_seconds = Some(input);
+        self.health_check_grace_period_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</p>
     pub fn set_health_check_grace_period_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.health_check_grace_period_seconds = input;
         self
@@ -661,7 +685,7 @@ impl ServiceBuilder {
     /// </note> </li>
     /// </ul>
     pub fn scheduling_strategy(mut self, input: crate::types::SchedulingStrategy) -> Self {
-        self.scheduling_strategy = Some(input);
+        self.scheduling_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
@@ -674,20 +698,20 @@ impl ServiceBuilder {
     /// </ul>
     pub fn set_scheduling_strategy(
         mut self,
-        input: std::option::Option<crate::types::SchedulingStrategy>,
+        input: ::std::option::Option<crate::types::SchedulingStrategy>,
     ) -> Self {
         self.scheduling_strategy = input;
         self
     }
     /// <p>The deployment controller type the service is using. </p>
     pub fn deployment_controller(mut self, input: crate::types::DeploymentController) -> Self {
-        self.deployment_controller = Some(input);
+        self.deployment_controller = ::std::option::Option::Some(input);
         self
     }
     /// <p>The deployment controller type the service is using. </p>
     pub fn set_deployment_controller(
         mut self,
-        input: std::option::Option<crate::types::DeploymentController>,
+        input: ::std::option::Option<crate::types::DeploymentController>,
     ) -> Self {
         self.deployment_controller = input;
         self
@@ -710,7 +734,7 @@ impl ServiceBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
@@ -726,51 +750,51 @@ impl ServiceBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The principal that created the service.</p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by = Some(input.into());
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal that created the service.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
     /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
-        self.enable_ecs_managed_tags = Some(input);
+        self.enable_ecs_managed_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to use Amazon ECS managed tags for the tasks in the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_ecs_managed_tags = input;
         self
     }
     /// <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
-        self.propagate_tags = Some(input);
+        self.propagate_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     pub fn set_propagate_tags(
         mut self,
-        input: std::option::Option<crate::types::PropagateTags>,
+        input: ::std::option::Option<crate::types::PropagateTags>,
     ) -> Self {
         self.propagate_tags = input;
         self
     }
     /// <p>Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the execute command functionality is turned on for all containers in tasks as part of the service.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
-        self.enable_execute_command = Some(input);
+        self.enable_execute_command = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether the execute command functionality is turned on for the service. If <code>true</code>, the execute command functionality is turned on for all containers in tasks as part of the service.</p>
-    pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_execute_command = input;
         self
     }

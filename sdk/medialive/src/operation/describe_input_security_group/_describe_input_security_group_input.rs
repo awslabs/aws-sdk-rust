@@ -2,15 +2,15 @@
 
 /// Placeholder documentation for DescribeInputSecurityGroupRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInputSecurityGroupInput {
     /// The id of the Input Security Group to describe
     #[doc(hidden)]
-    pub input_security_group_id: std::option::Option<std::string::String>,
+    pub input_security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInputSecurityGroupInput {
     /// The id of the Input Security Group to describe
-    pub fn input_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn input_security_group_id(&self) -> ::std::option::Option<&str> {
         self.input_security_group_id.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl DescribeInputSecurityGroupInput {
 
 /// A builder for [`DescribeInputSecurityGroupInput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeInputSecurityGroupInputBuilder {
-    pub(crate) input_security_group_id: std::option::Option<std::string::String>,
+    pub(crate) input_security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeInputSecurityGroupInputBuilder {
     /// The id of the Input Security Group to describe
-    pub fn input_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_security_group_id = Some(input.into());
+    pub fn input_security_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.input_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The id of the Input Security Group to describe
     pub fn set_input_security_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.input_security_group_id = input;
         self
@@ -44,11 +49,11 @@ impl DescribeInputSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInputSecurityGroupInput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput {
                 input_security_group_id: self.input_security_group_id,
             },

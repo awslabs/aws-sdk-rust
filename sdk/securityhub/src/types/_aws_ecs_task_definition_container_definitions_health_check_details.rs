@@ -2,11 +2,11 @@
 
 /// <p>The container health check command and associated configuration parameters for the container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
     /// <p>The command that the container runs to determine whether it is healthy.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
     #[doc(hidden)]
     pub interval: i32,
@@ -22,7 +22,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
     /// <p>The command that the container runs to determine whether it is healthy.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.command.as_deref()
     }
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
@@ -53,13 +53,15 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
-    pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) interval: std::option::Option<i32>,
-    pub(crate) retries: std::option::Option<i32>,
-    pub(crate) start_period: std::option::Option<i32>,
-    pub(crate) timeout: std::option::Option<i32>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) interval: ::std::option::Option<i32>,
+    pub(crate) retries: ::std::option::Option<i32>,
+    pub(crate) start_period: ::std::option::Option<i32>,
+    pub(crate) timeout: ::std::option::Option<i32>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
     /// Appends an item to `command`.
@@ -67,57 +69,57 @@ impl AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsBuilder {
     /// To override the contents of this collection use [`set_command`](Self::set_command).
     ///
     /// <p>The command that the container runs to determine whether it is healthy.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
         v.push(input.into());
-        self.command = Some(v);
+        self.command = ::std::option::Option::Some(v);
         self
     }
     /// <p>The command that the container runs to determine whether it is healthy.</p>
     pub fn set_command(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.command = input;
         self
     }
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
     pub fn interval(mut self, input: i32) -> Self {
-        self.interval = Some(input);
+        self.interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period in seconds between each health check execution. The default value is 30 seconds.</p>
-    pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. The default value is 3.</p>
     pub fn retries(mut self, input: i32) -> Self {
-        self.retries = Some(input);
+        self.retries = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. The default value is 3.</p>
-    pub fn set_retries(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retries = input;
         self
     }
     /// <p>The optional grace period in seconds that allows containers time to bootstrap before failed health checks count towards the maximum number of retries.</p>
     pub fn start_period(mut self, input: i32) -> Self {
-        self.start_period = Some(input);
+        self.start_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The optional grace period in seconds that allows containers time to bootstrap before failed health checks count towards the maximum number of retries.</p>
-    pub fn set_start_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_period = input;
         self
     }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. The default value is 5.</p>
     pub fn timeout(mut self, input: i32) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. The default value is 5.</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }

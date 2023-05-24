@@ -4,7 +4,7 @@
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"UriPath": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UriPath {}
 impl UriPath {
     /// Creates a new builder-style object to manufacture [`UriPath`](crate::types::UriPath).
@@ -15,7 +15,9 @@ impl UriPath {
 
 /// A builder for [`UriPath`](crate::types::UriPath).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UriPathBuilder {}
 impl UriPathBuilder {
     /// Consumes the builder and constructs a [`UriPath`](crate::types::UriPath).

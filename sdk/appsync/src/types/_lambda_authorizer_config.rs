@@ -2,7 +2,7 @@
 
 /// <p>A <code>LambdaAuthorizerConfig</code> specifies how to authorize AppSync API access when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API can have only one Lambda authorizer configured at a time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaAuthorizerConfig {
     /// <p>The number of seconds a response should be cached for. The default is 0 seconds, which disables caching. If you don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The maximum value is one hour (3600 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in its response.</p>
     #[doc(hidden)]
@@ -11,10 +11,10 @@ pub struct LambdaAuthorizerConfig {
     /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
     #[doc(hidden)]
-    pub authorizer_uri: std::option::Option<std::string::String>,
+    pub authorizer_uri: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
     #[doc(hidden)]
-    pub identity_validation_expression: std::option::Option<std::string::String>,
+    pub identity_validation_expression: ::std::option::Option<::std::string::String>,
 }
 impl LambdaAuthorizerConfig {
     /// <p>The number of seconds a response should be cached for. The default is 0 seconds, which disables caching. If you don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The maximum value is one hour (3600 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in its response.</p>
@@ -24,11 +24,11 @@ impl LambdaAuthorizerConfig {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
     /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
-    pub fn authorizer_uri(&self) -> std::option::Option<&str> {
+    pub fn authorizer_uri(&self) -> ::std::option::Option<&str> {
         self.authorizer_uri.as_deref()
     }
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
-    pub fn identity_validation_expression(&self) -> std::option::Option<&str> {
+    pub fn identity_validation_expression(&self) -> ::std::option::Option<&str> {
         self.identity_validation_expression.as_deref()
     }
 }
@@ -41,46 +41,60 @@ impl LambdaAuthorizerConfig {
 
 /// A builder for [`LambdaAuthorizerConfig`](crate::types::LambdaAuthorizerConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaAuthorizerConfigBuilder {
-    pub(crate) authorizer_result_ttl_in_seconds: std::option::Option<i32>,
-    pub(crate) authorizer_uri: std::option::Option<std::string::String>,
-    pub(crate) identity_validation_expression: std::option::Option<std::string::String>,
+    pub(crate) authorizer_result_ttl_in_seconds: ::std::option::Option<i32>,
+    pub(crate) authorizer_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_validation_expression: ::std::option::Option<::std::string::String>,
 }
 impl LambdaAuthorizerConfigBuilder {
     /// <p>The number of seconds a response should be cached for. The default is 0 seconds, which disables caching. If you don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The maximum value is one hour (3600 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in its response.</p>
     pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
-        self.authorizer_result_ttl_in_seconds = Some(input);
+        self.authorizer_result_ttl_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of seconds a response should be cached for. The default is 0 seconds, which disables caching. If you don't specify a value for <code>authorizerResultTtlInSeconds</code>, the default value is used. The maximum value is one hour (3600 seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key in its response.</p>
-    pub fn set_authorizer_result_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_authorizer_result_ttl_in_seconds(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.authorizer_result_ttl_in_seconds = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
     /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
-    pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.authorizer_uri = Some(input.into());
+    pub fn authorizer_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.authorizer_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function to be called for authorization. This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias ARN. </p>
     /// <p> <b>Note</b>: This Lambda function must have the following resource-based policy assigned to it. When configuring Lambda authorizers in the console, this is done for you. To use the Command Line Interface (CLI), run the following:</p>
     /// <p> <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code> </p>
-    pub fn set_authorizer_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_uri(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.authorizer_uri = input;
         self
     }
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
-    pub fn identity_validation_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_validation_expression = Some(input.into());
+    pub fn identity_validation_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_validation_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression for validation of tokens before the Lambda function is called.</p>
     pub fn set_identity_validation_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.identity_validation_expression = input;
         self

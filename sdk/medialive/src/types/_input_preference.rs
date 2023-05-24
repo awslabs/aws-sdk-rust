@@ -40,13 +40,13 @@
 /// If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InputPreference {
     #[allow(missing_docs)] // documentation missing in model
@@ -56,7 +56,7 @@ pub enum InputPreference {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InputPreference {
+impl ::std::convert::From<&str> for InputPreference {
     fn from(s: &str) -> Self {
         match s {
             "EQUAL_INPUT_PREFERENCE" => InputPreference::EqualInputPreference,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for InputPreference {
         }
     }
 }
-impl std::str::FromStr for InputPreference {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InputPreference {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InputPreference::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InputPreference::from(s))
     }
 }
 impl InputPreference {
@@ -88,7 +88,7 @@ impl InputPreference {
         &["EQUAL_INPUT_PREFERENCE", "PRIMARY_INPUT_PREFERRED"]
     }
 }
-impl AsRef<str> for InputPreference {
+impl ::std::convert::AsRef<str> for InputPreference {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

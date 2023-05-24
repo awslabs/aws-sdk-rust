@@ -2,14 +2,14 @@
 
 /// <p>The required attributes for a generation data group data set. A generation data set is one of a collection of successive, historically related, catalogued data sets that together are known as a generation data group (GDG). Use this structure when you want to import a GDG. For more information on GDG, see <a href="https://www.ibm.com/docs/en/zos/2.3.0?topic=guide-generation-data-sets">Generation data sets</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GdgDetailAttributes {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
     #[doc(hidden)]
     pub limit: i32,
     /// <p>The disposition of the data set in the catalog.</p>
     #[doc(hidden)]
-    pub roll_disposition: std::option::Option<std::string::String>,
+    pub roll_disposition: ::std::option::Option<::std::string::String>,
 }
 impl GdgDetailAttributes {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
@@ -17,7 +17,7 @@ impl GdgDetailAttributes {
         self.limit
     }
     /// <p>The disposition of the data set in the catalog.</p>
-    pub fn roll_disposition(&self) -> std::option::Option<&str> {
+    pub fn roll_disposition(&self) -> ::std::option::Option<&str> {
         self.roll_disposition.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl GdgDetailAttributes {
 
 /// A builder for [`GdgDetailAttributes`](crate::types::GdgDetailAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GdgDetailAttributesBuilder {
-    pub(crate) limit: std::option::Option<i32>,
-    pub(crate) roll_disposition: std::option::Option<std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) roll_disposition: ::std::option::Option<::std::string::String>,
 }
 impl GdgDetailAttributesBuilder {
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// <p>The disposition of the data set in the catalog.</p>
-    pub fn roll_disposition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.roll_disposition = Some(input.into());
+    pub fn roll_disposition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.roll_disposition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The disposition of the data set in the catalog.</p>
-    pub fn set_roll_disposition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_roll_disposition(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.roll_disposition = input;
         self
     }

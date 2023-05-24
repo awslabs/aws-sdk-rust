@@ -2,29 +2,29 @@
 
 /// <p>A structure that describes a property of a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceProperty {
     /// <p>The name of this property of the resource.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the information about this resource property was last updated.</p>
     #[doc(hidden)]
-    pub last_reported_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<aws_smithy_types::Document>,
+    pub data: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl ResourceProperty {
     /// <p>The name of this property of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The date and time that the information about this resource property was last updated.</p>
-    pub fn last_reported_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_reported_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_reported_at.as_ref()
     }
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.data.as_ref()
     }
 }
@@ -37,43 +37,45 @@ impl ResourceProperty {
 
 /// A builder for [`ResourceProperty`](crate::types::ResourceProperty).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourcePropertyBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) last_reported_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) data: std::option::Option<aws_smithy_types::Document>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) data: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl ResourcePropertyBuilder {
     /// <p>The name of this property of the resource.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this property of the resource.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The date and time that the information about this resource property was last updated.</p>
-    pub fn last_reported_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_reported_at = Some(input);
+    pub fn last_reported_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_reported_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the information about this resource property was last updated.</p>
     pub fn set_last_reported_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_reported_at = input;
         self
     }
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
-    pub fn data(mut self, input: aws_smithy_types::Document) -> Self {
-        self.data = Some(input);
+    pub fn data(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about this property. The content of this field is a JSON object that varies based on the resource type.</p>
-    pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.data = input;
         self
     }

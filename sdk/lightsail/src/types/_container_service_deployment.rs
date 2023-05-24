@@ -3,11 +3,11 @@
 /// <p>Describes a container deployment configuration of an Amazon Lightsail container service.</p>
 /// <p>A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceDeployment {
     /// <p>The version number of the deployment.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<i32>,
+    pub version: ::std::option::Option<i32>,
     /// <p>The state of the deployment.</p>
     /// <p>A deployment can be in one of the following states:</p>
     /// <ul>
@@ -17,22 +17,22 @@ pub struct ContainerServiceDeployment {
     /// <li> <p> <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events for the containers in the deployment to try to determine the reason for the failure.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ContainerServiceDeploymentState>,
+    pub state: ::std::option::Option<crate::types::ContainerServiceDeploymentState>,
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     #[doc(hidden)]
-    pub containers: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Container>,
+    pub containers: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
     >,
     /// <p>An object that describes the endpoint of the deployment.</p>
     #[doc(hidden)]
-    pub public_endpoint: std::option::Option<crate::types::ContainerServiceEndpoint>,
+    pub public_endpoint: ::std::option::Option<crate::types::ContainerServiceEndpoint>,
     /// <p>The timestamp when the deployment was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContainerServiceDeployment {
     /// <p>The version number of the deployment.</p>
-    pub fn version(&self) -> std::option::Option<i32> {
+    pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
     }
     /// <p>The state of the deployment.</p>
@@ -43,22 +43,25 @@ impl ContainerServiceDeployment {
     /// <li> <p> <code>Inactive</code> - The deployment was previously successfully created, but it is not currently running on the container service.</p> </li>
     /// <li> <p> <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events for the containers in the deployment to try to determine the reason for the failure.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::types::ContainerServiceDeploymentState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ContainerServiceDeploymentState> {
         self.state.as_ref()
     }
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     pub fn containers(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Container>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::Container>,
+    > {
         self.containers.as_ref()
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
-    pub fn public_endpoint(&self) -> std::option::Option<&crate::types::ContainerServiceEndpoint> {
+    pub fn public_endpoint(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ContainerServiceEndpoint> {
         self.public_endpoint.as_ref()
     }
     /// <p>The timestamp when the deployment was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -71,24 +74,26 @@ impl ContainerServiceDeployment {
 
 /// A builder for [`ContainerServiceDeployment`](crate::types::ContainerServiceDeployment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerServiceDeploymentBuilder {
-    pub(crate) version: std::option::Option<i32>,
-    pub(crate) state: std::option::Option<crate::types::ContainerServiceDeploymentState>,
-    pub(crate) containers: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Container>,
+    pub(crate) version: ::std::option::Option<i32>,
+    pub(crate) state: ::std::option::Option<crate::types::ContainerServiceDeploymentState>,
+    pub(crate) containers: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
     >,
-    pub(crate) public_endpoint: std::option::Option<crate::types::ContainerServiceEndpoint>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) public_endpoint: ::std::option::Option<crate::types::ContainerServiceEndpoint>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContainerServiceDeploymentBuilder {
     /// <p>The version number of the deployment.</p>
     pub fn version(mut self, input: i32) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number of the deployment.</p>
-    pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
     }
@@ -101,7 +106,7 @@ impl ContainerServiceDeploymentBuilder {
     /// <li> <p> <code>Failed</code> - The deployment failed. Use the <code>GetContainerLog</code> action to view the log events for the containers in the deployment to try to determine the reason for the failure.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::ContainerServiceDeploymentState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the deployment.</p>
@@ -114,7 +119,7 @@ impl ContainerServiceDeploymentBuilder {
     /// </ul>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::ContainerServiceDeploymentState>,
+        input: ::std::option::Option<crate::types::ContainerServiceDeploymentState>,
     ) -> Self {
         self.state = input;
         self
@@ -126,19 +131,19 @@ impl ContainerServiceDeploymentBuilder {
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     pub fn containers(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::Container,
     ) -> Self {
         let mut hash_map = self.containers.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.containers = Some(hash_map);
+        self.containers = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     pub fn set_containers(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Container>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Container>,
         >,
     ) -> Self {
         self.containers = input;
@@ -146,26 +151,26 @@ impl ContainerServiceDeploymentBuilder {
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub fn public_endpoint(mut self, input: crate::types::ContainerServiceEndpoint) -> Self {
-        self.public_endpoint = Some(input);
+        self.public_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub fn set_public_endpoint(
         mut self,
-        input: std::option::Option<crate::types::ContainerServiceEndpoint>,
+        input: ::std::option::Option<crate::types::ContainerServiceEndpoint>,
     ) -> Self {
         self.public_endpoint = input;
         self
     }
     /// <p>The timestamp when the deployment was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the deployment was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self

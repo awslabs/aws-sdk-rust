@@ -11,47 +11,50 @@ pub use crate::operation::create_reserved_instances_listing::_create_reserved_in
 /// <p>The Reserved Instance Marketplace matches sellers who want to resell Standard Reserved Instance capacity that they no longer need with buyers who want to purchase additional capacity. Reserved Instances bought and sold through the Reserved Instance Marketplace work like any other Reserved Instances.</p>
 /// <p>To sell your Standard Reserved Instances, you must first register as a seller in the Reserved Instance Marketplace. After completing the registration process, you can create a Reserved Instance Marketplace listing of some or all of your Standard Reserved Instances, and specify the upfront price to receive for them. Your Standard Reserved Instance listings then become available for purchase. To view the details of your Standard Reserved Instance listing, you can use the <code>DescribeReservedInstancesListings</code> operation.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateReservedInstancesListingFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingInputBuilder,
 }
 impl CreateReservedInstancesListingFluentBuilder {
     /// Creates a new `CreateReservedInstancesListing`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListing, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListing, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput, aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -62,17 +65,17 @@ impl CreateReservedInstancesListingFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput, aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError>>
                          {
         self.send_middleware().await
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -82,7 +85,7 @@ impl CreateReservedInstancesListingFluentBuilder {
         self
     }
     /// <p>The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_instance_count(input);
         self
     }
@@ -98,20 +101,23 @@ impl CreateReservedInstancesListingFluentBuilder {
     /// <p>A list specifying the price of the Standard Reserved Instance for each month remaining in the Reserved Instance term.</p>
     pub fn set_price_schedules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PriceScheduleSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PriceScheduleSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_price_schedules(input);
         self
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
-    pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reserved_instances_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.reserved_instances_id(input.into());
         self
     }
     /// <p>The ID of the active Standard Reserved Instance.</p>
     pub fn set_reserved_instances_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_id(input);
         self

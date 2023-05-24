@@ -39,13 +39,13 @@
 /// This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H265Telecine {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum H265Telecine {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H265Telecine {
+impl ::std::convert::From<&str> for H265Telecine {
     fn from(s: &str) -> Self {
         match s {
             "HARD" => H265Telecine::Hard,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for H265Telecine {
         }
     }
 }
-impl std::str::FromStr for H265Telecine {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H265Telecine {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H265Telecine::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H265Telecine::from(s))
     }
 }
 impl H265Telecine {
@@ -91,7 +91,7 @@ impl H265Telecine {
         &["HARD", "NONE", "SOFT"]
     }
 }
-impl AsRef<str> for H265Telecine {
+impl ::std::convert::AsRef<str> for H265Telecine {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

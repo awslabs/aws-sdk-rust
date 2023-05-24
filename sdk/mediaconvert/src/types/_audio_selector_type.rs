@@ -40,13 +40,13 @@
 /// Specifies the type of the audio selector.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AudioSelectorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AudioSelectorType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AudioSelectorType {
+impl ::std::convert::From<&str> for AudioSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "HLS_RENDITION_GROUP" => AudioSelectorType::HlsRenditionGroup,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AudioSelectorType {
         }
     }
 }
-impl std::str::FromStr for AudioSelectorType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AudioSelectorType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioSelectorType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AudioSelectorType::from(s))
     }
 }
 impl AudioSelectorType {
@@ -96,7 +96,7 @@ impl AudioSelectorType {
         &["HLS_RENDITION_GROUP", "LANGUAGE_CODE", "PID", "TRACK"]
     }
 }
-impl AsRef<str> for AudioSelectorType {
+impl ::std::convert::AsRef<str> for AudioSelectorType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,22 +2,22 @@
 
 /// <p>A signal to a camera node to start or stop processing video.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeSignal {
     /// <p>The camera node's name, from the application manifest.</p>
     #[doc(hidden)]
-    pub node_instance_id: std::option::Option<std::string::String>,
+    pub node_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The signal value.</p>
     #[doc(hidden)]
-    pub signal: std::option::Option<crate::types::NodeSignalValue>,
+    pub signal: ::std::option::Option<crate::types::NodeSignalValue>,
 }
 impl NodeSignal {
     /// <p>The camera node's name, from the application manifest.</p>
-    pub fn node_instance_id(&self) -> std::option::Option<&str> {
+    pub fn node_instance_id(&self) -> ::std::option::Option<&str> {
         self.node_instance_id.as_deref()
     }
     /// <p>The signal value.</p>
-    pub fn signal(&self) -> std::option::Option<&crate::types::NodeSignalValue> {
+    pub fn signal(&self) -> ::std::option::Option<&crate::types::NodeSignalValue> {
         self.signal.as_ref()
     }
 }
@@ -30,29 +30,40 @@ impl NodeSignal {
 
 /// A builder for [`NodeSignal`](crate::types::NodeSignal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeSignalBuilder {
-    pub(crate) node_instance_id: std::option::Option<std::string::String>,
-    pub(crate) signal: std::option::Option<crate::types::NodeSignalValue>,
+    pub(crate) node_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) signal: ::std::option::Option<crate::types::NodeSignalValue>,
 }
 impl NodeSignalBuilder {
     /// <p>The camera node's name, from the application manifest.</p>
-    pub fn node_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_instance_id = Some(input.into());
+    pub fn node_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.node_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The camera node's name, from the application manifest.</p>
-    pub fn set_node_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_instance_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.node_instance_id = input;
         self
     }
     /// <p>The signal value.</p>
     pub fn signal(mut self, input: crate::types::NodeSignalValue) -> Self {
-        self.signal = Some(input);
+        self.signal = ::std::option::Option::Some(input);
         self
     }
     /// <p>The signal value.</p>
-    pub fn set_signal(mut self, input: std::option::Option<crate::types::NodeSignalValue>) -> Self {
+    pub fn set_signal(
+        mut self,
+        input: ::std::option::Option<crate::types::NodeSignalValue>,
+    ) -> Self {
         self.signal = input;
         self
     }

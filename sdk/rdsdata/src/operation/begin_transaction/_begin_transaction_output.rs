@@ -2,20 +2,20 @@
 
 /// <p>The response elements represent the output of a request to start a SQL transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BeginTransactionOutput {
     /// <p>The transaction ID of the transaction started by the call.</p>
     #[doc(hidden)]
-    pub transaction_id: std::option::Option<std::string::String>,
+    pub transaction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl BeginTransactionOutput {
     /// <p>The transaction ID of the transaction started by the call.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BeginTransactionOutput {
+impl ::aws_http::request_id::RequestId for BeginTransactionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,27 @@ impl BeginTransactionOutput {
 
 /// A builder for [`BeginTransactionOutput`](crate::operation::begin_transaction::BeginTransactionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BeginTransactionOutputBuilder {
-    pub(crate) transaction_id: std::option::Option<std::string::String>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl BeginTransactionOutputBuilder {
     /// <p>The transaction ID of the transaction started by the call.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transaction_id = Some(input.into());
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID of the transaction started by the call.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.transaction_id = input;
         self
     }

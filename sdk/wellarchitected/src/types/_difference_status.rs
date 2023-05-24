@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DifferenceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DifferenceStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DifferenceStatus {
+impl ::std::convert::From<&str> for DifferenceStatus {
     fn from(s: &str) -> Self {
         match s {
             "DELETED" => DifferenceStatus::Deleted,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DifferenceStatus {
         }
     }
 }
-impl std::str::FromStr for DifferenceStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DifferenceStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DifferenceStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DifferenceStatus::from(s))
     }
 }
 impl DifferenceStatus {
@@ -91,7 +91,7 @@ impl DifferenceStatus {
         &["DELETED", "NEW", "UPDATED"]
     }
 }
-impl AsRef<str> for DifferenceStatus {
+impl ::std::convert::AsRef<str> for DifferenceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,20 +2,20 @@
 
 /// <p>Contains the results of the <code>GetSnapshotLimits</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSnapshotLimitsOutput {
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     #[doc(hidden)]
-    pub snapshot_limits: std::option::Option<crate::types::SnapshotLimits>,
+    pub snapshot_limits: ::std::option::Option<crate::types::SnapshotLimits>,
     _request_id: Option<String>,
 }
 impl GetSnapshotLimitsOutput {
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
-    pub fn snapshot_limits(&self) -> std::option::Option<&crate::types::SnapshotLimits> {
+    pub fn snapshot_limits(&self) -> ::std::option::Option<&crate::types::SnapshotLimits> {
         self.snapshot_limits.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetSnapshotLimitsOutput {
+impl ::aws_http::request_id::RequestId for GetSnapshotLimitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl GetSnapshotLimitsOutput {
 
 /// A builder for [`GetSnapshotLimitsOutput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSnapshotLimitsOutputBuilder {
-    pub(crate) snapshot_limits: std::option::Option<crate::types::SnapshotLimits>,
+    pub(crate) snapshot_limits: ::std::option::Option<crate::types::SnapshotLimits>,
     _request_id: Option<String>,
 }
 impl GetSnapshotLimitsOutputBuilder {
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     pub fn snapshot_limits(mut self, input: crate::types::SnapshotLimits) -> Self {
-        self.snapshot_limits = Some(input);
+        self.snapshot_limits = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>SnapshotLimits</code> object that contains the manual snapshot limits for the specified directory.</p>
     pub fn set_snapshot_limits(
         mut self,
-        input: std::option::Option<crate::types::SnapshotLimits>,
+        input: ::std::option::Option<crate::types::SnapshotLimits>,
     ) -> Self {
         self.snapshot_limits = input;
         self

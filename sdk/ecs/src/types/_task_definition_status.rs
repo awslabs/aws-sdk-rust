@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TaskDefinitionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TaskDefinitionStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TaskDefinitionStatus {
+impl ::std::convert::From<&str> for TaskDefinitionStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => TaskDefinitionStatus::Active,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for TaskDefinitionStatus {
         }
     }
 }
-impl std::str::FromStr for TaskDefinitionStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TaskDefinitionStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TaskDefinitionStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TaskDefinitionStatus::from(s))
     }
 }
 impl TaskDefinitionStatus {
@@ -91,7 +91,7 @@ impl TaskDefinitionStatus {
         &["ACTIVE", "DELETE_IN_PROGRESS", "INACTIVE"]
     }
 }
-impl AsRef<str> for TaskDefinitionStatus {
+impl ::std::convert::AsRef<str> for TaskDefinitionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

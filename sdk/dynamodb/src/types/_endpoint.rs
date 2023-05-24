@@ -2,18 +2,18 @@
 
 /// <p>An endpoint information details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>IP address of the endpoint.</p>
     #[doc(hidden)]
-    pub address: std::option::Option<std::string::String>,
+    pub address: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint cache time to live (TTL) value.</p>
     #[doc(hidden)]
     pub cache_period_in_minutes: i64,
 }
 impl Endpoint {
     /// <p>IP address of the endpoint.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>Endpoint cache time to live (TTL) value.</p>
@@ -30,29 +30,31 @@ impl Endpoint {
 
 /// A builder for [`Endpoint`](crate::types::Endpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointBuilder {
-    pub(crate) address: std::option::Option<std::string::String>,
-    pub(crate) cache_period_in_minutes: std::option::Option<i64>,
+    pub(crate) address: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_period_in_minutes: ::std::option::Option<i64>,
 }
 impl EndpointBuilder {
     /// <p>IP address of the endpoint.</p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.address = Some(input.into());
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>IP address of the endpoint.</p>
-    pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
     }
     /// <p>Endpoint cache time to live (TTL) value.</p>
     pub fn cache_period_in_minutes(mut self, input: i64) -> Self {
-        self.cache_period_in_minutes = Some(input);
+        self.cache_period_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Endpoint cache time to live (TTL) value.</p>
-    pub fn set_cache_period_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_cache_period_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cache_period_in_minutes = input;
         self
     }

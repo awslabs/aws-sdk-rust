@@ -9,29 +9,29 @@ pub use crate::operation::put_position_configuration::_put_position_configuratio
 /// <p>This action is no longer supported. Calls to update the position configuration should use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a> API operation instead.</p>
 /// </important>
 #[deprecated(note = "This operation is no longer supported.")]
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPositionConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder,
 }
 impl PutPositionConfigurationFluentBuilder {
     /// Creates a new `PutPositionConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_position_configuration::PutPositionConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_position_configuration::PutPositionConfigurationError,
         >,
     > {
@@ -39,30 +39,33 @@ impl PutPositionConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_position_configuration::PutPositionConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_position_configuration::PutPositionConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,23 +78,26 @@ impl PutPositionConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_position_configuration::PutPositionConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_position_configuration::PutPositionConfigurationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Resource identifier used to update the position configuration.</p>
-    pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>Resource identifier used to update the position configuration.</p>
     pub fn set_resource_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
@@ -104,7 +110,7 @@ impl PutPositionConfigurationFluentBuilder {
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::PositionResourceType>,
+        input: ::std::option::Option<crate::types::PositionResourceType>,
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
@@ -117,18 +123,18 @@ impl PutPositionConfigurationFluentBuilder {
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
     pub fn set_solvers(
         mut self,
-        input: std::option::Option<crate::types::PositionSolverConfigurations>,
+        input: ::std::option::Option<crate::types::PositionSolverConfigurations>,
     ) -> Self {
         self.inner = self.inner.set_solvers(input);
         self
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination(input.into());
         self
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }

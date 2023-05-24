@@ -2,35 +2,35 @@
 
 /// <p>The definition of a column in a tabular Dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnDefinition {
     /// <p>Data type of a column.</p>
     /// <ul>
     /// <li> <p> <code>STRING</code> – A String data type.</p> <p> <code>CHAR</code> – A char data type.</p> <p> <code>INTEGER</code> – An integer data type.</p> <p> <code>TINYINT</code> – A tinyint data type.</p> <p> <code>SMALLINT</code> – A smallint data type.</p> <p> <code>BIGINT</code> – A bigint data type.</p> <p> <code>FLOAT</code> – A float data type.</p> <p> <code>DOUBLE</code> – A double data type.</p> <p> <code>DATE</code> – A date data type.</p> <p> <code>DATETIME</code> – A datetime data type.</p> <p> <code>BOOLEAN</code> – A boolean data type.</p> <p> <code>BINARY</code> – A binary data type.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub data_type: std::option::Option<crate::types::ColumnDataType>,
+    pub data_type: ::std::option::Option<crate::types::ColumnDataType>,
     /// <p>The name of a column.</p>
     #[doc(hidden)]
-    pub column_name: std::option::Option<std::string::String>,
+    pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>Description for a column.</p>
     #[doc(hidden)]
-    pub column_description: std::option::Option<std::string::String>,
+    pub column_description: ::std::option::Option<::std::string::String>,
 }
 impl ColumnDefinition {
     /// <p>Data type of a column.</p>
     /// <ul>
     /// <li> <p> <code>STRING</code> – A String data type.</p> <p> <code>CHAR</code> – A char data type.</p> <p> <code>INTEGER</code> – An integer data type.</p> <p> <code>TINYINT</code> – A tinyint data type.</p> <p> <code>SMALLINT</code> – A smallint data type.</p> <p> <code>BIGINT</code> – A bigint data type.</p> <p> <code>FLOAT</code> – A float data type.</p> <p> <code>DOUBLE</code> – A double data type.</p> <p> <code>DATE</code> – A date data type.</p> <p> <code>DATETIME</code> – A datetime data type.</p> <p> <code>BOOLEAN</code> – A boolean data type.</p> <p> <code>BINARY</code> – A binary data type.</p> </li>
     /// </ul>
-    pub fn data_type(&self) -> std::option::Option<&crate::types::ColumnDataType> {
+    pub fn data_type(&self) -> ::std::option::Option<&crate::types::ColumnDataType> {
         self.data_type.as_ref()
     }
     /// <p>The name of a column.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> ::std::option::Option<&str> {
         self.column_name.as_deref()
     }
     /// <p>Description for a column.</p>
-    pub fn column_description(&self) -> std::option::Option<&str> {
+    pub fn column_description(&self) -> ::std::option::Option<&str> {
         self.column_description.as_deref()
     }
 }
@@ -43,11 +43,13 @@ impl ColumnDefinition {
 
 /// A builder for [`ColumnDefinition`](crate::types::ColumnDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnDefinitionBuilder {
-    pub(crate) data_type: std::option::Option<crate::types::ColumnDataType>,
-    pub(crate) column_name: std::option::Option<std::string::String>,
-    pub(crate) column_description: std::option::Option<std::string::String>,
+    pub(crate) data_type: ::std::option::Option<crate::types::ColumnDataType>,
+    pub(crate) column_name: ::std::option::Option<::std::string::String>,
+    pub(crate) column_description: ::std::option::Option<::std::string::String>,
 }
 impl ColumnDefinitionBuilder {
     /// <p>Data type of a column.</p>
@@ -55,7 +57,7 @@ impl ColumnDefinitionBuilder {
     /// <li> <p> <code>STRING</code> – A String data type.</p> <p> <code>CHAR</code> – A char data type.</p> <p> <code>INTEGER</code> – An integer data type.</p> <p> <code>TINYINT</code> – A tinyint data type.</p> <p> <code>SMALLINT</code> – A smallint data type.</p> <p> <code>BIGINT</code> – A bigint data type.</p> <p> <code>FLOAT</code> – A float data type.</p> <p> <code>DOUBLE</code> – A double data type.</p> <p> <code>DATE</code> – A date data type.</p> <p> <code>DATETIME</code> – A datetime data type.</p> <p> <code>BOOLEAN</code> – A boolean data type.</p> <p> <code>BINARY</code> – A binary data type.</p> </li>
     /// </ul>
     pub fn data_type(mut self, input: crate::types::ColumnDataType) -> Self {
-        self.data_type = Some(input);
+        self.data_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Data type of a column.</p>
@@ -64,30 +66,33 @@ impl ColumnDefinitionBuilder {
     /// </ul>
     pub fn set_data_type(
         mut self,
-        input: std::option::Option<crate::types::ColumnDataType>,
+        input: ::std::option::Option<crate::types::ColumnDataType>,
     ) -> Self {
         self.data_type = input;
         self
     }
     /// <p>The name of a column.</p>
-    pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.column_name = Some(input.into());
+    pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a column.</p>
-    pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
     }
     /// <p>Description for a column.</p>
-    pub fn column_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.column_description = Some(input.into());
+    pub fn column_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.column_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description for a column.</p>
     pub fn set_column_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.column_description = input;
         self

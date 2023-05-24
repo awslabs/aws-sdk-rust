@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartWorkflow`](crate::operation::start_workflow::builders::StartWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::start_workflow::builders::StartWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::start_workflow::builders::StartWorkflowFluentBuilder::set_id): <p>The ID of the migration workflow.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::start_workflow::builders::StartWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::start_workflow::builders::StartWorkflowFluentBuilder::set_id): <p>The ID of the migration workflow.</p>
     /// - On success, responds with [`StartWorkflowOutput`](crate::operation::start_workflow::StartWorkflowOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::start_workflow::StartWorkflowOutput::id): <p>The ID of the migration workflow.</p>
     ///   - [`arn(Option<String>)`](crate::operation::start_workflow::StartWorkflowOutput::arn): <p>The Amazon Resource Name (ARN) of the migration workflow.</p>

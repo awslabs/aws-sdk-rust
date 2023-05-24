@@ -6,47 +6,50 @@ pub use crate::operation::describe_storage_system_resources::_describe_storage_s
 /// Fluent builder constructing a request to `DescribeStorageSystemResources`.
 ///
 /// <p>Returns information that DataSync Discovery collects about resources in your on-premises storage system.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStorageSystemResourcesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesInputBuilder,
 }
 impl DescribeStorageSystemResourcesFluentBuilder {
     /// Creates a new `DescribeStorageSystemResources`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_storage_system_resources::DescribeStorageSystemResources, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_storage_system_resources::DescribeStorageSystemResources, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError>>
                          {
         self.send_middleware().await
     }
@@ -68,14 +71,17 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         crate::operation::describe_storage_system_resources::paginator::DescribeStorageSystemResourcesPaginator::new(self.handle, self.inner)
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
-    pub fn discovery_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn discovery_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.discovery_job_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that's collecting data from your on-premises storage system.</p>
     pub fn set_discovery_job_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_discovery_job_arn(input);
         self
@@ -88,7 +94,7 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     /// <p>Specifies what kind of storage system resources that you want information about.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::DiscoveryResourceType>,
+        input: ::std::option::Option<crate::types::DiscoveryResourceType>,
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
@@ -98,14 +104,14 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
-    pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_ids(input.into());
         self
     }
     /// <p>Specifies the universally unique identifiers (UUIDs) of the storage system resources that you want information about. You can't use this parameter in combination with the <code>Filter</code> parameter.</p>
     pub fn set_resource_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
@@ -118,7 +124,7 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     pub fn filter(
         mut self,
         k: crate::types::DiscoveryResourceFilter,
-        v: std::vec::Vec<std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.filter(k, v);
         self
@@ -126,10 +132,10 @@ impl DescribeStorageSystemResourcesFluentBuilder {
     /// <p>Filters the storage system resources that you want returned. For example, this might be volumes associated with a specific storage virtual machine (SVM).</p>
     pub fn set_filter(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::DiscoveryResourceFilter,
-                std::vec::Vec<std::string::String>,
+                ::std::vec::Vec<::std::string::String>,
             >,
         >,
     ) -> Self {
@@ -142,17 +148,17 @@ impl DescribeStorageSystemResourcesFluentBuilder {
         self
     }
     /// <p>Specifies the maximum number of storage system resources that you want to list in a response.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

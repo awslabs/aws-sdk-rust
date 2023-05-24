@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptionsOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutConfigurationSetTrackingOptionsOutput {
+impl ::aws_http::request_id::RequestId for PutConfigurationSetTrackingOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl PutConfigurationSetTrackingOptionsOutput {
 
 /// A builder for [`PutConfigurationSetTrackingOptionsOutput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutConfigurationSetTrackingOptionsOutputBuilder {
     _request_id: Option<String>,
 }

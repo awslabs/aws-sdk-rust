@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDiscoverer`](crate::operation::describe_discoverer::builders::DescribeDiscovererFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`discoverer_id(impl Into<String>)`](crate::operation::describe_discoverer::builders::DescribeDiscovererFluentBuilder::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::operation::describe_discoverer::builders::DescribeDiscovererFluentBuilder::set_discoverer_id): <p>The ID of the discoverer.</p>
+    ///   - [`discoverer_id(impl ::std::convert::Into<String>)`](crate::operation::describe_discoverer::builders::DescribeDiscovererFluentBuilder::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::operation::describe_discoverer::builders::DescribeDiscovererFluentBuilder::set_discoverer_id): <p>The ID of the discoverer.</p>
     /// - On success, responds with [`DescribeDiscovererOutput`](crate::operation::describe_discoverer::DescribeDiscovererOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::operation::describe_discoverer::DescribeDiscovererOutput::description): <p>The description of the discoverer.</p>
     ///   - [`discoverer_arn(Option<String>)`](crate::operation::describe_discoverer::DescribeDiscovererOutput::discoverer_arn): <p>The ARN of the discoverer.</p>

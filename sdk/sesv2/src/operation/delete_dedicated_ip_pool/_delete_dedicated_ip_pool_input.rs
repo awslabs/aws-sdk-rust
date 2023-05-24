@@ -2,15 +2,15 @@
 
 /// <p>A request to delete a dedicated IP pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
     #[doc(hidden)]
-    pub pool_name: std::option::Option<std::string::String>,
+    pub pool_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> ::std::option::Option<&str> {
         self.pool_name.as_deref()
     }
 }
@@ -25,29 +25,31 @@ impl DeleteDedicatedIpPoolInput {
 
 /// A builder for [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteDedicatedIpPoolInputBuilder {
-    pub(crate) pool_name: std::option::Option<std::string::String>,
+    pub(crate) pool_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDedicatedIpPoolInputBuilder {
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pool_name = Some(input.into());
+    pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dedicated IP pool that you want to delete.</p>
-    pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolInput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolInput {
                 pool_name: self.pool_name,
             },

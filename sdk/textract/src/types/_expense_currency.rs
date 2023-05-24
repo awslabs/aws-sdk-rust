@@ -2,7 +2,7 @@
 
 /// <p>Returns the kind of currency detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpenseCurrency {
     /// <p>Currency code for detected currency. the current supported codes are:</p>
     /// <ul>
@@ -20,10 +20,10 @@ pub struct ExpenseCurrency {
     /// <li> <p>HKD</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     /// <p>Percentage confideence in the detected currency.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
 }
 impl ExpenseCurrency {
     /// <p>Currency code for detected currency. the current supported codes are:</p>
@@ -41,11 +41,11 @@ impl ExpenseCurrency {
     /// <li> <p>SEK</p> </li>
     /// <li> <p>HKD</p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>Percentage confideence in the detected currency.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
 }
@@ -58,10 +58,12 @@ impl ExpenseCurrency {
 
 /// A builder for [`ExpenseCurrency`](crate::types::ExpenseCurrency).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExpenseCurrencyBuilder {
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl ExpenseCurrencyBuilder {
     /// <p>Currency code for detected currency. the current supported codes are:</p>
@@ -79,8 +81,8 @@ impl ExpenseCurrencyBuilder {
     /// <li> <p>SEK</p> </li>
     /// <li> <p>HKD</p> </li>
     /// </ul>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Currency code for detected currency. the current supported codes are:</p>
@@ -98,17 +100,17 @@ impl ExpenseCurrencyBuilder {
     /// <li> <p>SEK</p> </li>
     /// <li> <p>HKD</p> </li>
     /// </ul>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     /// <p>Percentage confideence in the detected currency.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Percentage confideence in the detected currency.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }

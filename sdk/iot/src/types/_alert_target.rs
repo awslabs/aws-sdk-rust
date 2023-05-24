@@ -2,22 +2,22 @@
 
 /// <p>A structure containing the alert target ARN and the role ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlertTarget {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
     #[doc(hidden)]
-    pub alert_target_arn: std::option::Option<std::string::String>,
+    pub alert_target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AlertTarget {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    pub fn alert_target_arn(&self) -> std::option::Option<&str> {
+    pub fn alert_target_arn(&self) -> ::std::option::Option<&str> {
         self.alert_target_arn.as_deref()
     }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AlertTarget {
 
 /// A builder for [`AlertTarget`](crate::types::AlertTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlertTargetBuilder {
-    pub(crate) alert_target_arn: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) alert_target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AlertTargetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    pub fn alert_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alert_target_arn = Some(input.into());
+    pub fn alert_target_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.alert_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the notification target to which alerts are sent.</p>
-    pub fn set_alert_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alert_target_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.alert_target_arn = input;
         self
     }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that grants permission to send alerts to the notification target.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

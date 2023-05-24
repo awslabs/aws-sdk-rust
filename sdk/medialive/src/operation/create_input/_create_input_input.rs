@@ -2,92 +2,94 @@
 
 /// The name of the input
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInputInput {
     /// Destination settings for PUSH type inputs.
     #[doc(hidden)]
-    pub destinations: std::option::Option<std::vec::Vec<crate::types::InputDestinationRequest>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
     /// Settings for the devices.
     #[doc(hidden)]
-    pub input_devices: std::option::Option<std::vec::Vec<crate::types::InputDeviceSettings>>,
+    pub input_devices: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
     /// A list of security groups referenced by IDs to attach to the input.
     #[doc(hidden)]
-    pub input_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub input_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     #[doc(hidden)]
     pub media_connect_flows:
-        std::option::Option<std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
     /// Name of the input.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     #[doc(hidden)]
-    pub sources: std::option::Option<std::vec::Vec<crate::types::InputSourceRequest>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// The different types of inputs that AWS Elemental MediaLive supports.
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::InputType>,
+    pub r#type: ::std::option::Option<crate::types::InputType>,
     /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
     #[doc(hidden)]
-    pub vpc: std::option::Option<crate::types::InputVpcRequest>,
+    pub vpc: ::std::option::Option<crate::types::InputVpcRequest>,
 }
 impl CreateInputInput {
     /// Destination settings for PUSH type inputs.
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::InputDestinationRequest]> {
+    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::InputDestinationRequest]> {
         self.destinations.as_deref()
     }
     /// Settings for the devices.
-    pub fn input_devices(&self) -> std::option::Option<&[crate::types::InputDeviceSettings]> {
+    pub fn input_devices(&self) -> ::std::option::Option<&[crate::types::InputDeviceSettings]> {
         self.input_devices.as_deref()
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn input_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn input_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.input_security_groups.as_deref()
     }
     /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     pub fn media_connect_flows(
         &self,
-    ) -> std::option::Option<&[crate::types::MediaConnectFlowRequest]> {
+    ) -> ::std::option::Option<&[crate::types::MediaConnectFlowRequest]> {
         self.media_connect_flows.as_deref()
     }
     /// Name of the input.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn sources(&self) -> std::option::Option<&[crate::types::InputSourceRequest]> {
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::InputSourceRequest]> {
         self.sources.as_deref()
     }
     /// A collection of key-value pairs.
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// The different types of inputs that AWS Elemental MediaLive supports.
-    pub fn r#type(&self) -> std::option::Option<&crate::types::InputType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InputType> {
         self.r#type.as_ref()
     }
     /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
-    pub fn vpc(&self) -> std::option::Option<&crate::types::InputVpcRequest> {
+    pub fn vpc(&self) -> ::std::option::Option<&crate::types::InputVpcRequest> {
         self.vpc.as_ref()
     }
 }
@@ -100,22 +102,26 @@ impl CreateInputInput {
 
 /// A builder for [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateInputInputBuilder {
     pub(crate) destinations:
-        std::option::Option<std::vec::Vec<crate::types::InputDestinationRequest>>,
-    pub(crate) input_devices: std::option::Option<std::vec::Vec<crate::types::InputDeviceSettings>>,
-    pub(crate) input_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
+    pub(crate) input_devices:
+        ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
+    pub(crate) input_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) media_connect_flows:
-        std::option::Option<std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) sources: std::option::Option<std::vec::Vec<crate::types::InputSourceRequest>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) r#type: std::option::Option<crate::types::InputType>,
-    pub(crate) vpc: std::option::Option<crate::types::InputVpcRequest>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) r#type: ::std::option::Option<crate::types::InputType>,
+    pub(crate) vpc: ::std::option::Option<crate::types::InputVpcRequest>,
 }
 impl CreateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -126,13 +132,13 @@ impl CreateInputInputBuilder {
     pub fn destinations(mut self, input: crate::types::InputDestinationRequest) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input);
-        self.destinations = Some(v);
+        self.destinations = ::std::option::Option::Some(v);
         self
     }
     /// Destination settings for PUSH type inputs.
     pub fn set_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputDestinationRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
     ) -> Self {
         self.destinations = input;
         self
@@ -145,13 +151,13 @@ impl CreateInputInputBuilder {
     pub fn input_devices(mut self, input: crate::types::InputDeviceSettings) -> Self {
         let mut v = self.input_devices.unwrap_or_default();
         v.push(input);
-        self.input_devices = Some(v);
+        self.input_devices = ::std::option::Option::Some(v);
         self
     }
     /// Settings for the devices.
     pub fn set_input_devices(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputDeviceSettings>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceSettings>>,
     ) -> Self {
         self.input_devices = input;
         self
@@ -161,16 +167,19 @@ impl CreateInputInputBuilder {
     /// To override the contents of this collection use [`set_input_security_groups`](Self::set_input_security_groups).
     ///
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn input_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn input_security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.input_security_groups.unwrap_or_default();
         v.push(input.into());
-        self.input_security_groups = Some(v);
+        self.input_security_groups = ::std::option::Option::Some(v);
         self
     }
     /// A list of security groups referenced by IDs to attach to the input.
     pub fn set_input_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.input_security_groups = input;
         self
@@ -183,44 +192,44 @@ impl CreateInputInputBuilder {
     pub fn media_connect_flows(mut self, input: crate::types::MediaConnectFlowRequest) -> Self {
         let mut v = self.media_connect_flows.unwrap_or_default();
         v.push(input);
-        self.media_connect_flows = Some(v);
+        self.media_connect_flows = ::std::option::Option::Some(v);
         self
     }
     /// A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     pub fn set_media_connect_flows(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
     ) -> Self {
         self.media_connect_flows = input;
         self
     }
     /// Name of the input.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// Name of the input.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
@@ -232,13 +241,13 @@ impl CreateInputInputBuilder {
     pub fn sources(mut self, input: crate::types::InputSourceRequest) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
-        self.sources = Some(v);
+        self.sources = ::std::option::Option::Some(v);
         self
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub fn set_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputSourceRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
     ) -> Self {
         self.sources = input;
         self
@@ -250,19 +259,19 @@ impl CreateInputInputBuilder {
     /// A collection of key-value pairs.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -270,32 +279,32 @@ impl CreateInputInputBuilder {
     }
     /// The different types of inputs that AWS Elemental MediaLive supports.
     pub fn r#type(mut self, input: crate::types::InputType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// The different types of inputs that AWS Elemental MediaLive supports.
-    pub fn set_type(mut self, input: std::option::Option<crate::types::InputType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
         self.r#type = input;
         self
     }
     /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
     pub fn vpc(mut self, input: crate::types::InputVpcRequest) -> Self {
-        self.vpc = Some(input);
+        self.vpc = ::std::option::Option::Some(input);
         self
     }
     /// Settings for a private VPC Input. When this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses. This property requires setting the roleArn property on Input creation. Not compatible with the inputSecurityGroups property.
-    pub fn set_vpc(mut self, input: std::option::Option<crate::types::InputVpcRequest>) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::InputVpcRequest>) -> Self {
         self.vpc = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_input::CreateInputInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_input::CreateInputInput {
+        ::std::result::Result::Ok(crate::operation::create_input::CreateInputInput {
             destinations: self.destinations,
             input_devices: self.input_devices,
             input_security_groups: self.input_security_groups,

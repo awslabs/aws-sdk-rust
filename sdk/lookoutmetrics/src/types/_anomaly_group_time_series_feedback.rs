@@ -2,29 +2,29 @@
 
 /// <p>Feedback for an anomalous metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyGroupTimeSeriesFeedback {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
-    pub anomaly_group_id: std::option::Option<std::string::String>,
+    pub anomaly_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the metric.</p>
     #[doc(hidden)]
-    pub time_series_id: std::option::Option<std::string::String>,
+    pub time_series_id: ::std::option::Option<::std::string::String>,
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     #[doc(hidden)]
-    pub is_anomaly: std::option::Option<bool>,
+    pub is_anomaly: ::std::option::Option<bool>,
 }
 impl AnomalyGroupTimeSeriesFeedback {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> ::std::option::Option<&str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(&self) -> std::option::Option<&str> {
+    pub fn time_series_id(&self) -> ::std::option::Option<&str> {
         self.time_series_id.as_deref()
     }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
-    pub fn is_anomaly(&self) -> std::option::Option<bool> {
+    pub fn is_anomaly(&self) -> ::std::option::Option<bool> {
         self.is_anomaly
     }
 }
@@ -37,40 +37,54 @@ impl AnomalyGroupTimeSeriesFeedback {
 
 /// A builder for [`AnomalyGroupTimeSeriesFeedback`](crate::types::AnomalyGroupTimeSeriesFeedback).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnomalyGroupTimeSeriesFeedbackBuilder {
-    pub(crate) anomaly_group_id: std::option::Option<std::string::String>,
-    pub(crate) time_series_id: std::option::Option<std::string::String>,
-    pub(crate) is_anomaly: std::option::Option<bool>,
+    pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) time_series_id: ::std::option::Option<::std::string::String>,
+    pub(crate) is_anomaly: ::std::option::Option<bool>,
 }
 impl AnomalyGroupTimeSeriesFeedbackBuilder {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.anomaly_group_id = Some(input.into());
+    pub fn anomaly_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_anomaly_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.anomaly_group_id = input;
         self
     }
     /// <p>The ID of the metric.</p>
-    pub fn time_series_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.time_series_id = Some(input.into());
+    pub fn time_series_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.time_series_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the metric.</p>
-    pub fn set_time_series_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_time_series_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.time_series_id = input;
         self
     }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
     pub fn is_anomaly(mut self, input: bool) -> Self {
-        self.is_anomaly = Some(input);
+        self.is_anomaly = ::std::option::Option::Some(input);
         self
     }
     /// <p>Feedback on whether the metric is a legitimate anomaly.</p>
-    pub fn set_is_anomaly(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_anomaly(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_anomaly = input;
         self
     }

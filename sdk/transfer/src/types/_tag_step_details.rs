@@ -3,29 +3,29 @@
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 /// <p>The key/value pairs used to tag a file during the execution of a workflow step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::S3Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub source_file_location: std::option::Option<std::string::String>,
+    pub source_file_location: ::std::option::Option<::std::string::String>,
 }
 impl TagStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::S3Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::S3Tag]> {
         self.tags.as_deref()
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
@@ -33,7 +33,7 @@ impl TagStepDetails {
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    pub fn source_file_location(&self) -> std::option::Option<&str> {
+    pub fn source_file_location(&self) -> ::std::option::Option<&str> {
         self.source_file_location.as_deref()
     }
 }
@@ -46,20 +46,22 @@ impl TagStepDetails {
 
 /// A builder for [`TagStepDetails`](crate::types::TagStepDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagStepDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::S3Tag>>,
-    pub(crate) source_file_location: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
+    pub(crate) source_file_location: ::std::option::Option<::std::string::String>,
 }
 impl TagStepDetailsBuilder {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -71,13 +73,13 @@ impl TagStepDetailsBuilder {
     pub fn tags(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Array that contains from 1 to 10 key/value pairs.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::S3Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -87,8 +89,11 @@ impl TagStepDetailsBuilder {
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_file_location = Some(input.into());
+    pub fn source_file_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_file_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
@@ -98,7 +103,7 @@ impl TagStepDetailsBuilder {
     /// </ul>
     pub fn set_source_file_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_file_location = input;
         self

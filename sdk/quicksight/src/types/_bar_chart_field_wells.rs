@@ -3,18 +3,18 @@
 /// <p>The field wells of a <code>BarChartVisual</code>.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BarChartFieldWells {
     /// <p>The aggregated field wells of a bar chart.</p>
     #[doc(hidden)]
     pub bar_chart_aggregated_field_wells:
-        std::option::Option<crate::types::BarChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::BarChartAggregatedFieldWells>,
 }
 impl BarChartFieldWells {
     /// <p>The aggregated field wells of a bar chart.</p>
     pub fn bar_chart_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::BarChartAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::BarChartAggregatedFieldWells> {
         self.bar_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl BarChartFieldWells {
 
 /// A builder for [`BarChartFieldWells`](crate::types::BarChartFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BarChartFieldWellsBuilder {
     pub(crate) bar_chart_aggregated_field_wells:
-        std::option::Option<crate::types::BarChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::BarChartAggregatedFieldWells>,
 }
 impl BarChartFieldWellsBuilder {
     /// <p>The aggregated field wells of a bar chart.</p>
@@ -38,13 +40,13 @@ impl BarChartFieldWellsBuilder {
         mut self,
         input: crate::types::BarChartAggregatedFieldWells,
     ) -> Self {
-        self.bar_chart_aggregated_field_wells = Some(input);
+        self.bar_chart_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a bar chart.</p>
     pub fn set_bar_chart_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::BarChartAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::BarChartAggregatedFieldWells>,
     ) -> Self {
         self.bar_chart_aggregated_field_wells = input;
         self

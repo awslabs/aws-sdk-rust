@@ -6,47 +6,50 @@ pub use crate::operation::create_group_certificate_authority::_create_group_cert
 /// Fluent builder constructing a request to `CreateGroupCertificateAuthority`.
 ///
 /// Creates a CA for the group. If a CA already exists, it will rotate the existing CA.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGroupCertificateAuthorityFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityInputBuilder,
 }
 impl CreateGroupCertificateAuthorityFluentBuilder {
     /// Creates a new `CreateGroupCertificateAuthority`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthority, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthority, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput, aws_smithy_http::result::SdkError<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,30 +60,33 @@ impl CreateGroupCertificateAuthorityFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput, aws_smithy_http::result::SdkError<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityError>>
                          {
         self.send_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn amzn_client_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
         self
     }
     /// The ID of the Greengrass group.
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
     }

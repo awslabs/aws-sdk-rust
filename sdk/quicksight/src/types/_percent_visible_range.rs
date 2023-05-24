@@ -2,22 +2,22 @@
 
 /// <p>The percent range in the visible range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PercentVisibleRange {
     /// <p>The lower bound of the range.</p>
     #[doc(hidden)]
-    pub from: std::option::Option<f64>,
+    pub from: ::std::option::Option<f64>,
     /// <p>The top bound of the range.</p>
     #[doc(hidden)]
-    pub to: std::option::Option<f64>,
+    pub to: ::std::option::Option<f64>,
 }
 impl PercentVisibleRange {
     /// <p>The lower bound of the range.</p>
-    pub fn from(&self) -> std::option::Option<f64> {
+    pub fn from(&self) -> ::std::option::Option<f64> {
         self.from
     }
     /// <p>The top bound of the range.</p>
-    pub fn to(&self) -> std::option::Option<f64> {
+    pub fn to(&self) -> ::std::option::Option<f64> {
         self.to
     }
 }
@@ -30,29 +30,31 @@ impl PercentVisibleRange {
 
 /// A builder for [`PercentVisibleRange`](crate::types::PercentVisibleRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PercentVisibleRangeBuilder {
-    pub(crate) from: std::option::Option<f64>,
-    pub(crate) to: std::option::Option<f64>,
+    pub(crate) from: ::std::option::Option<f64>,
+    pub(crate) to: ::std::option::Option<f64>,
 }
 impl PercentVisibleRangeBuilder {
     /// <p>The lower bound of the range.</p>
     pub fn from(mut self, input: f64) -> Self {
-        self.from = Some(input);
+        self.from = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lower bound of the range.</p>
-    pub fn set_from(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_from(mut self, input: ::std::option::Option<f64>) -> Self {
         self.from = input;
         self
     }
     /// <p>The top bound of the range.</p>
     pub fn to(mut self, input: f64) -> Self {
-        self.to = Some(input);
+        self.to = ::std::option::Option::Some(input);
         self
     }
     /// <p>The top bound of the range.</p>
-    pub fn set_to(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_to(mut self, input: ::std::option::Option<f64>) -> Self {
         self.to = input;
         self
     }

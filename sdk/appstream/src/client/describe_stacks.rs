@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`names(Vec<String>)`](crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::set_names): <p>The names of the stacks to describe.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_stacks::builders::DescribeStacksFluentBuilder::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     /// - On success, responds with [`DescribeStacksOutput`](crate::operation::describe_stacks::DescribeStacksOutput) with field(s):
     ///   - [`stacks(Option<Vec<Stack>>)`](crate::operation::describe_stacks::DescribeStacksOutput::stacks): <p>Information about the stacks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_stacks::DescribeStacksOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>

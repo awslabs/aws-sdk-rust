@@ -2,11 +2,11 @@
 
 /// <p>Contains the output of AddTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AddTagsOutput {
+impl ::aws_http::request_id::RequestId for AddTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl AddTagsOutput {
 
 /// A builder for [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddTagsOutputBuilder {
     _request_id: Option<String>,
 }

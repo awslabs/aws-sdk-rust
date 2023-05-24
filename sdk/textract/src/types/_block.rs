@@ -4,7 +4,7 @@
 /// <p>An array of <code>Block</code> objects is returned by both synchronous and asynchronous operations. In synchronous operations, such as <code>DetectDocumentText</code>, the array of <code>Block</code> objects is the entire set of results. In asynchronous operations, such as <code>GetDocumentAnalysis</code>, the array is returned over one or more responses.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html">How Amazon Textract Works</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Block {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
     /// <ul>
@@ -29,37 +29,37 @@ pub struct Block {
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub block_type: std::option::Option<crate::types::BlockType>,
+    pub block_type: ::std::option::Option<crate::types::BlockType>,
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
     /// <p>The word or line of text that's recognized by Amazon Textract. </p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
     #[doc(hidden)]
-    pub text_type: std::option::Option<crate::types::TextType>,
+    pub text_type: ::std::option::Option<crate::types::TextType>,
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     #[doc(hidden)]
-    pub row_index: std::option::Option<i32>,
+    pub row_index: ::std::option::Option<i32>,
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     #[doc(hidden)]
-    pub column_index: std::option::Option<i32>,
+    pub column_index: ::std::option::Option<i32>,
     /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     #[doc(hidden)]
-    pub row_span: std::option::Option<i32>,
+    pub row_span: ::std::option::Option<i32>,
     /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
     #[doc(hidden)]
-    pub column_span: std::option::Option<i32>,
+    pub column_span: ::std::option::Option<i32>,
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information. </p>
     #[doc(hidden)]
-    pub geometry: std::option::Option<crate::types::Geometry>,
+    pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
     #[doc(hidden)]
-    pub relationships: std::option::Option<std::vec::Vec<crate::types::Relationship>>,
+    pub relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
     /// <p>The type of entity. </p>
     /// <p>The following entity types can be returned by FORMS analysis:</p>
     /// <ul>
@@ -78,16 +78,16 @@ pub struct Block {
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     #[doc(hidden)]
-    pub entity_types: std::option::Option<std::vec::Vec<crate::types::EntityType>>,
+    pub entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
     #[doc(hidden)]
-    pub selection_status: std::option::Option<crate::types::SelectionStatus>,
+    pub selection_status: ::std::option::Option<crate::types::SelectionStatus>,
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
     #[doc(hidden)]
-    pub page: std::option::Option<i32>,
+    pub page: ::std::option::Option<i32>,
     /// <p></p>
     #[doc(hidden)]
-    pub query: std::option::Option<crate::types::Query>,
+    pub query: ::std::option::Option<crate::types::Query>,
 }
 impl Block {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
@@ -112,47 +112,47 @@ impl Block {
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
-    pub fn block_type(&self) -> std::option::Option<&crate::types::BlockType> {
+    pub fn block_type(&self) -> ::std::option::Option<&crate::types::BlockType> {
         self.block_type.as_ref()
     }
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p>The word or line of text that's recognized by Amazon Textract. </p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
-    pub fn text_type(&self) -> std::option::Option<&crate::types::TextType> {
+    pub fn text_type(&self) -> ::std::option::Option<&crate::types::TextType> {
         self.text_type.as_ref()
     }
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn row_index(&self) -> std::option::Option<i32> {
+    pub fn row_index(&self) -> ::std::option::Option<i32> {
         self.row_index
     }
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn column_index(&self) -> std::option::Option<i32> {
+    pub fn column_index(&self) -> ::std::option::Option<i32> {
         self.column_index
     }
     /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn row_span(&self) -> std::option::Option<i32> {
+    pub fn row_span(&self) -> ::std::option::Option<i32> {
         self.row_span
     }
     /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
-    pub fn column_span(&self) -> std::option::Option<i32> {
+    pub fn column_span(&self) -> ::std::option::Option<i32> {
         self.column_span
     }
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information. </p>
-    pub fn geometry(&self) -> std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
         self.geometry.as_ref()
     }
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
-    pub fn relationships(&self) -> std::option::Option<&[crate::types::Relationship]> {
+    pub fn relationships(&self) -> ::std::option::Option<&[crate::types::Relationship]> {
         self.relationships.as_deref()
     }
     /// <p>The type of entity. </p>
@@ -172,19 +172,19 @@ impl Block {
     /// <li> <p> <i>SEMI_STRUCTURED_TABLE</i> - Identifies a non-structured table. </p> </li>
     /// </ul>
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn entity_types(&self) -> std::option::Option<&[crate::types::EntityType]> {
+    pub fn entity_types(&self) -> ::std::option::Option<&[crate::types::EntityType]> {
         self.entity_types.as_deref()
     }
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
-    pub fn selection_status(&self) -> std::option::Option<&crate::types::SelectionStatus> {
+    pub fn selection_status(&self) -> ::std::option::Option<&crate::types::SelectionStatus> {
         self.selection_status.as_ref()
     }
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
-    pub fn page(&self) -> std::option::Option<i32> {
+    pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
     /// <p></p>
-    pub fn query(&self) -> std::option::Option<&crate::types::Query> {
+    pub fn query(&self) -> ::std::option::Option<&crate::types::Query> {
         self.query.as_ref()
     }
 }
@@ -197,23 +197,25 @@ impl Block {
 
 /// A builder for [`Block`](crate::types::Block).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlockBuilder {
-    pub(crate) block_type: std::option::Option<crate::types::BlockType>,
-    pub(crate) confidence: std::option::Option<f32>,
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) text_type: std::option::Option<crate::types::TextType>,
-    pub(crate) row_index: std::option::Option<i32>,
-    pub(crate) column_index: std::option::Option<i32>,
-    pub(crate) row_span: std::option::Option<i32>,
-    pub(crate) column_span: std::option::Option<i32>,
-    pub(crate) geometry: std::option::Option<crate::types::Geometry>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) relationships: std::option::Option<std::vec::Vec<crate::types::Relationship>>,
-    pub(crate) entity_types: std::option::Option<std::vec::Vec<crate::types::EntityType>>,
-    pub(crate) selection_status: std::option::Option<crate::types::SelectionStatus>,
-    pub(crate) page: std::option::Option<i32>,
-    pub(crate) query: std::option::Option<crate::types::Query>,
+    pub(crate) block_type: ::std::option::Option<crate::types::BlockType>,
+    pub(crate) confidence: ::std::option::Option<f32>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) text_type: ::std::option::Option<crate::types::TextType>,
+    pub(crate) row_index: ::std::option::Option<i32>,
+    pub(crate) column_index: ::std::option::Option<i32>,
+    pub(crate) row_span: ::std::option::Option<i32>,
+    pub(crate) column_span: ::std::option::Option<i32>,
+    pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
+    pub(crate) entity_types: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
+    pub(crate) selection_status: ::std::option::Option<crate::types::SelectionStatus>,
+    pub(crate) page: ::std::option::Option<i32>,
+    pub(crate) query: ::std::option::Option<crate::types::Query>,
 }
 impl BlockBuilder {
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
@@ -239,7 +241,7 @@ impl BlockBuilder {
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
     pub fn block_type(mut self, input: crate::types::BlockType) -> Self {
-        self.block_type = Some(input);
+        self.block_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of text item that's recognized. In operations for text detection, the following types are returned:</p>
@@ -264,97 +266,97 @@ impl BlockBuilder {
     /// <li> <p> <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias and an ID that attaches it to its answer.</p> </li>
     /// <li> <p> <i>QUERY_RESULT</i> - A response to a question asked during the call of analyze document. Comes with an alias and ID for ease of locating in a response. Also contains location and confidence score.</p> </li>
     /// </ul>
-    pub fn set_block_type(mut self, input: std::option::Option<crate::types::BlockType>) -> Self {
+    pub fn set_block_type(mut self, input: ::std::option::Option<crate::types::BlockType>) -> Self {
         self.block_type = input;
         self
     }
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry points around the recognized text.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }
     /// <p>The word or line of text that's recognized by Amazon Textract. </p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The word or line of text that's recognized by Amazon Textract. </p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
     pub fn text_type(mut self, input: crate::types::TextType) -> Self {
-        self.text_type = Some(input);
+        self.text_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.</p>
-    pub fn set_text_type(mut self, input: std::option::Option<crate::types::TextType>) -> Self {
+    pub fn set_text_type(mut self, input: ::std::option::Option<crate::types::TextType>) -> Self {
         self.text_type = input;
         self
     }
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn row_index(mut self, input: i32) -> Self {
-        self.row_index = Some(input);
+        self.row_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn set_row_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_row_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.row_index = input;
         self
     }
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn column_index(mut self, input: i32) -> Self {
-        self.column_index = Some(input);
+        self.column_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn set_column_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_column_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column_index = input;
         self
     }
     /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn row_span(mut self, input: i32) -> Self {
-        self.row_span = Some(input);
+        self.row_span = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows that a table cell spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
-    pub fn set_row_span(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_row_span(mut self, input: ::std::option::Option<i32>) -> Self {
         self.row_span = input;
         self
     }
     /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
     pub fn column_span(mut self, input: i32) -> Self {
-        self.column_span = Some(input);
+        self.column_span = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
-    pub fn set_column_span(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_column_span(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column_span = input;
         self
     }
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information. </p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
-        self.geometry = Some(input);
+        self.geometry = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial information. </p>
-    pub fn set_geometry(mut self, input: std::option::Option<crate::types::Geometry>) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
         self.geometry = input;
         self
     }
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the recognized text. The identifier is only unique for a single operation. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -366,13 +368,13 @@ impl BlockBuilder {
     pub fn relationships(mut self, input: crate::types::Relationship) -> Self {
         let mut v = self.relationships.unwrap_or_default();
         v.push(input);
-        self.relationships = Some(v);
+        self.relationships = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of relationship objects that describe how blocks are related to each other. For example, a LINE block object contains a CHILD relationship type with the WORD blocks that make up the line of text. There aren't Relationship objects in the list for relationships that don't exist, such as when the current block has no child blocks.</p>
     pub fn set_relationships(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Relationship>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
     ) -> Self {
         self.relationships = input;
         self
@@ -401,7 +403,7 @@ impl BlockBuilder {
     pub fn entity_types(mut self, input: crate::types::EntityType) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
         v.push(input);
-        self.entity_types = Some(v);
+        self.entity_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The type of entity. </p>
@@ -423,41 +425,41 @@ impl BlockBuilder {
     /// <p> <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
     pub fn set_entity_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EntityType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     ) -> Self {
         self.entity_types = input;
         self
     }
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
     pub fn selection_status(mut self, input: crate::types::SelectionStatus) -> Self {
-        self.selection_status = Some(input);
+        self.selection_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The selection status of a selection element, such as an option button or check box. </p>
     pub fn set_selection_status(
         mut self,
-        input: std::option::Option<crate::types::SelectionStatus>,
+        input: ::std::option::Option<crate::types::SelectionStatus>,
     ) -> Self {
         self.selection_status = input;
         self
     }
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
     pub fn page(mut self, input: i32) -> Self {
-        self.page = Some(input);
+        self.page = ::std::option::Option::Some(input);
         self
     }
     /// <p>The page on which a block was detected. <code>Page</code> is returned by synchronous and asynchronous operations. Page values greater than 1 are only returned for multipage documents that are in PDF or TIFF format. A scanned image (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple document pages, is considered a single-page document. This means that for scanned images the value of <code>Page</code> is always 1. Synchronous operations will also return a <code>Page</code> value of 1 because every input document is considered to be a single-page document.</p>
-    pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page = input;
         self
     }
     /// <p></p>
     pub fn query(mut self, input: crate::types::Query) -> Self {
-        self.query = Some(input);
+        self.query = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_query(mut self, input: std::option::Option<crate::types::Query>) -> Self {
+    pub fn set_query(mut self, input: ::std::option::Option<crate::types::Query>) -> Self {
         self.query = input;
         self
     }

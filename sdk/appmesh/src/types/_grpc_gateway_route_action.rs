@@ -2,22 +2,22 @@
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<crate::types::GatewayRouteTarget>,
+    pub target: ::std::option::Option<crate::types::GatewayRouteTarget>,
     /// <p>The gateway route action to rewrite.</p>
     #[doc(hidden)]
-    pub rewrite: std::option::Option<crate::types::GrpcGatewayRouteRewrite>,
+    pub rewrite: ::std::option::Option<crate::types::GrpcGatewayRouteRewrite>,
 }
 impl GrpcGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
-    pub fn target(&self) -> std::option::Option<&crate::types::GatewayRouteTarget> {
+    pub fn target(&self) -> ::std::option::Option<&crate::types::GatewayRouteTarget> {
         self.target.as_ref()
     }
     /// <p>The gateway route action to rewrite.</p>
-    pub fn rewrite(&self) -> std::option::Option<&crate::types::GrpcGatewayRouteRewrite> {
+    pub fn rewrite(&self) -> ::std::option::Option<&crate::types::GrpcGatewayRouteRewrite> {
         self.rewrite.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl GrpcGatewayRouteAction {
 
 /// A builder for [`GrpcGatewayRouteAction`](crate::types::GrpcGatewayRouteAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GrpcGatewayRouteActionBuilder {
-    pub(crate) target: std::option::Option<crate::types::GatewayRouteTarget>,
-    pub(crate) rewrite: std::option::Option<crate::types::GrpcGatewayRouteRewrite>,
+    pub(crate) target: ::std::option::Option<crate::types::GatewayRouteTarget>,
+    pub(crate) rewrite: ::std::option::Option<crate::types::GrpcGatewayRouteRewrite>,
 }
 impl GrpcGatewayRouteActionBuilder {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     pub fn target(mut self, input: crate::types::GatewayRouteTarget) -> Self {
-        self.target = Some(input);
+        self.target = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     pub fn set_target(
         mut self,
-        input: std::option::Option<crate::types::GatewayRouteTarget>,
+        input: ::std::option::Option<crate::types::GatewayRouteTarget>,
     ) -> Self {
         self.target = input;
         self
     }
     /// <p>The gateway route action to rewrite.</p>
     pub fn rewrite(mut self, input: crate::types::GrpcGatewayRouteRewrite) -> Self {
-        self.rewrite = Some(input);
+        self.rewrite = ::std::option::Option::Some(input);
         self
     }
     /// <p>The gateway route action to rewrite.</p>
     pub fn set_rewrite(
         mut self,
-        input: std::option::Option<crate::types::GrpcGatewayRouteRewrite>,
+        input: ::std::option::Option<crate::types::GrpcGatewayRouteRewrite>,
     ) -> Self {
         self.rewrite = input;
         self

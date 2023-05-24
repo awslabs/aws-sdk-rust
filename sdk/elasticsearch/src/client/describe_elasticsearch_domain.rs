@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeElasticsearchDomain`](crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainFluentBuilder::set_domain_name): <p>The name of the Elasticsearch domain for which you want information.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainFluentBuilder::set_domain_name): <p>The name of the Elasticsearch domain for which you want information.</p>
     /// - On success, responds with [`DescribeElasticsearchDomainOutput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput) with field(s):
     ///   - [`domain_status(Option<ElasticsearchDomainStatus>)`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput::domain_status): <p>The current status of the Elasticsearch domain.</p>
     /// - On failure, responds with [`SdkError<DescribeElasticsearchDomainError>`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainError)

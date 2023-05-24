@@ -2,11 +2,11 @@
 
 /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceCollection {
     /// <p> An array of the names of Amazon Web Services CloudFormation stacks. The stacks define Amazon Web Services resources that DevOps Guru analyzes. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
-    pub cloud_formation: std::option::Option<crate::types::CloudFormationCollection>,
+    pub cloud_formation: ::std::option::Option<crate::types::CloudFormationCollection>,
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging best practices</a> whitepaper. </p>
     /// <p>Each Amazon Web Services tag has two parts. </p>
@@ -18,11 +18,13 @@ pub struct ResourceCollection {
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::TagCollection>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagCollection>>,
 }
 impl ResourceCollection {
     /// <p> An array of the names of Amazon Web Services CloudFormation stacks. The stacks define Amazon Web Services resources that DevOps Guru analyzes. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn cloud_formation(&self) -> std::option::Option<&crate::types::CloudFormationCollection> {
+    pub fn cloud_formation(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CloudFormationCollection> {
         self.cloud_formation.as_ref()
     }
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
@@ -35,7 +37,7 @@ impl ResourceCollection {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::TagCollection]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::TagCollection]> {
         self.tags.as_deref()
     }
 }
@@ -48,21 +50,23 @@ impl ResourceCollection {
 
 /// A builder for [`ResourceCollection`](crate::types::ResourceCollection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceCollectionBuilder {
-    pub(crate) cloud_formation: std::option::Option<crate::types::CloudFormationCollection>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::TagCollection>>,
+    pub(crate) cloud_formation: ::std::option::Option<crate::types::CloudFormationCollection>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagCollection>>,
 }
 impl ResourceCollectionBuilder {
     /// <p> An array of the names of Amazon Web Services CloudFormation stacks. The stacks define Amazon Web Services resources that DevOps Guru analyzes. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn cloud_formation(mut self, input: crate::types::CloudFormationCollection) -> Self {
-        self.cloud_formation = Some(input);
+        self.cloud_formation = ::std::option::Option::Some(input);
         self
     }
     /// <p> An array of the names of Amazon Web Services CloudFormation stacks. The stacks define Amazon Web Services resources that DevOps Guru analyzes. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn set_cloud_formation(
         mut self,
-        input: std::option::Option<crate::types::CloudFormationCollection>,
+        input: ::std::option::Option<crate::types::CloudFormationCollection>,
     ) -> Self {
         self.cloud_formation = input;
         self
@@ -84,7 +88,7 @@ impl ResourceCollectionBuilder {
     pub fn tags(mut self, input: crate::types::TagCollection) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Web Services tags that are used by resources in the resource collection.</p>
@@ -99,7 +103,7 @@ impl ResourceCollectionBuilder {
     /// </important>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagCollection>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagCollection>>,
     ) -> Self {
         self.tags = input;
         self

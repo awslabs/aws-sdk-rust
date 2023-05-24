@@ -2,54 +2,54 @@
 
 /// <p>The configuration for a <code>FilledMapVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapConfiguration {
     /// <p>The field wells of the visual.</p>
     #[doc(hidden)]
-    pub field_wells: std::option::Option<crate::types::FilledMapFieldWells>,
+    pub field_wells: ::std::option::Option<crate::types::FilledMapFieldWells>,
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
     #[doc(hidden)]
-    pub sort_configuration: std::option::Option<crate::types::FilledMapSortConfiguration>,
+    pub sort_configuration: ::std::option::Option<crate::types::FilledMapSortConfiguration>,
     /// <p>The legend display setup of the visual.</p>
     #[doc(hidden)]
-    pub legend: std::option::Option<crate::types::LegendOptions>,
+    pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The tooltip display setup of the visual.</p>
     #[doc(hidden)]
-    pub tooltip: std::option::Option<crate::types::TooltipOptions>,
+    pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The window options of the filled map visual.</p>
     #[doc(hidden)]
-    pub window_options: std::option::Option<crate::types::GeospatialWindowOptions>,
+    pub window_options: ::std::option::Option<crate::types::GeospatialWindowOptions>,
     /// <p>The map style options of the filled map visual.</p>
     #[doc(hidden)]
-    pub map_style_options: std::option::Option<crate::types::GeospatialMapStyleOptions>,
+    pub map_style_options: ::std::option::Option<crate::types::GeospatialMapStyleOptions>,
 }
 impl FilledMapConfiguration {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> std::option::Option<&crate::types::FilledMapFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::FilledMapFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
     pub fn sort_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::FilledMapSortConfiguration> {
+    ) -> ::std::option::Option<&crate::types::FilledMapSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn tooltip(&self) -> std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The window options of the filled map visual.</p>
-    pub fn window_options(&self) -> std::option::Option<&crate::types::GeospatialWindowOptions> {
+    pub fn window_options(&self) -> ::std::option::Option<&crate::types::GeospatialWindowOptions> {
         self.window_options.as_ref()
     }
     /// <p>The map style options of the filled map visual.</p>
     pub fn map_style_options(
         &self,
-    ) -> std::option::Option<&crate::types::GeospatialMapStyleOptions> {
+    ) -> ::std::option::Option<&crate::types::GeospatialMapStyleOptions> {
         self.map_style_options.as_ref()
     }
 }
@@ -62,84 +62,89 @@ impl FilledMapConfiguration {
 
 /// A builder for [`FilledMapConfiguration`](crate::types::FilledMapConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilledMapConfigurationBuilder {
-    pub(crate) field_wells: std::option::Option<crate::types::FilledMapFieldWells>,
-    pub(crate) sort_configuration: std::option::Option<crate::types::FilledMapSortConfiguration>,
-    pub(crate) legend: std::option::Option<crate::types::LegendOptions>,
-    pub(crate) tooltip: std::option::Option<crate::types::TooltipOptions>,
-    pub(crate) window_options: std::option::Option<crate::types::GeospatialWindowOptions>,
-    pub(crate) map_style_options: std::option::Option<crate::types::GeospatialMapStyleOptions>,
+    pub(crate) field_wells: ::std::option::Option<crate::types::FilledMapFieldWells>,
+    pub(crate) sort_configuration: ::std::option::Option<crate::types::FilledMapSortConfiguration>,
+    pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
+    pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
+    pub(crate) window_options: ::std::option::Option<crate::types::GeospatialWindowOptions>,
+    pub(crate) map_style_options: ::std::option::Option<crate::types::GeospatialMapStyleOptions>,
 }
 impl FilledMapConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
     pub fn field_wells(mut self, input: crate::types::FilledMapFieldWells) -> Self {
-        self.field_wells = Some(input);
+        self.field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field wells of the visual.</p>
     pub fn set_field_wells(
         mut self,
-        input: std::option::Option<crate::types::FilledMapFieldWells>,
+        input: ::std::option::Option<crate::types::FilledMapFieldWells>,
     ) -> Self {
         self.field_wells = input;
         self
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
     pub fn sort_configuration(mut self, input: crate::types::FilledMapSortConfiguration) -> Self {
-        self.sort_configuration = Some(input);
+        self.sort_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort configuration of a <code>FilledMapVisual</code>.</p>
     pub fn set_sort_configuration(
         mut self,
-        input: std::option::Option<crate::types::FilledMapSortConfiguration>,
+        input: ::std::option::Option<crate::types::FilledMapSortConfiguration>,
     ) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
-        self.legend = Some(input);
+        self.legend = ::std::option::Option::Some(input);
         self
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn set_legend(mut self, input: std::option::Option<crate::types::LegendOptions>) -> Self {
+    pub fn set_legend(mut self, input: ::std::option::Option<crate::types::LegendOptions>) -> Self {
         self.legend = input;
         self
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn tooltip(mut self, input: crate::types::TooltipOptions) -> Self {
-        self.tooltip = Some(input);
+        self.tooltip = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn set_tooltip(mut self, input: std::option::Option<crate::types::TooltipOptions>) -> Self {
+    pub fn set_tooltip(
+        mut self,
+        input: ::std::option::Option<crate::types::TooltipOptions>,
+    ) -> Self {
         self.tooltip = input;
         self
     }
     /// <p>The window options of the filled map visual.</p>
     pub fn window_options(mut self, input: crate::types::GeospatialWindowOptions) -> Self {
-        self.window_options = Some(input);
+        self.window_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The window options of the filled map visual.</p>
     pub fn set_window_options(
         mut self,
-        input: std::option::Option<crate::types::GeospatialWindowOptions>,
+        input: ::std::option::Option<crate::types::GeospatialWindowOptions>,
     ) -> Self {
         self.window_options = input;
         self
     }
     /// <p>The map style options of the filled map visual.</p>
     pub fn map_style_options(mut self, input: crate::types::GeospatialMapStyleOptions) -> Self {
-        self.map_style_options = Some(input);
+        self.map_style_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The map style options of the filled map visual.</p>
     pub fn set_map_style_options(
         mut self,
-        input: std::option::Option<crate::types::GeospatialMapStyleOptions>,
+        input: ::std::option::Option<crate::types::GeospatialMapStyleOptions>,
     ) -> Self {
         self.map_style_options = input;
         self

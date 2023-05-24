@@ -2,36 +2,36 @@
 
 /// <p>The summary of the step group in the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateStepGroupSummary {
     /// <p>The ID of the step group.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step group.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The previous step group.</p>
     #[doc(hidden)]
-    pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next step group.</p>
     #[doc(hidden)]
-    pub next: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TemplateStepGroupSummary {
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.next.as_deref()
     }
 }
@@ -44,31 +44,33 @@ impl TemplateStepGroupSummary {
 
 /// A builder for [`TemplateStepGroupSummary`](crate::types::TemplateStepGroupSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TemplateStepGroupSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) previous: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TemplateStepGroupSummaryBuilder {
     /// <p>The ID of the step group.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the step group.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the step group.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -77,16 +79,16 @@ impl TemplateStepGroupSummaryBuilder {
     /// To override the contents of this collection use [`set_previous`](Self::set_previous).
     ///
     /// <p>The previous step group.</p>
-    pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn previous(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.previous.unwrap_or_default();
         v.push(input.into());
-        self.previous = Some(v);
+        self.previous = ::std::option::Option::Some(v);
         self
     }
     /// <p>The previous step group.</p>
     pub fn set_previous(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.previous = input;
         self
@@ -96,16 +98,16 @@ impl TemplateStepGroupSummaryBuilder {
     /// To override the contents of this collection use [`set_next`](Self::set_next).
     ///
     /// <p>The next step group.</p>
-    pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.next.unwrap_or_default();
         v.push(input.into());
-        self.next = Some(v);
+        self.next = ::std::option::Option::Some(v);
         self
     }
     /// <p>The next step group.</p>
     pub fn set_next(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.next = input;
         self

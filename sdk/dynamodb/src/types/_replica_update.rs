@@ -7,22 +7,22 @@
 /// <li> <p>An existing replica to be removed from an existing global table.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaUpdate {
     /// <p>The parameters required for creating a replica on an existing global table.</p>
     #[doc(hidden)]
-    pub create: std::option::Option<crate::types::CreateReplicaAction>,
+    pub create: ::std::option::Option<crate::types::CreateReplicaAction>,
     /// <p>The name of the existing replica to be removed.</p>
     #[doc(hidden)]
-    pub delete: std::option::Option<crate::types::DeleteReplicaAction>,
+    pub delete: ::std::option::Option<crate::types::DeleteReplicaAction>,
 }
 impl ReplicaUpdate {
     /// <p>The parameters required for creating a replica on an existing global table.</p>
-    pub fn create(&self) -> std::option::Option<&crate::types::CreateReplicaAction> {
+    pub fn create(&self) -> ::std::option::Option<&crate::types::CreateReplicaAction> {
         self.create.as_ref()
     }
     /// <p>The name of the existing replica to be removed.</p>
-    pub fn delete(&self) -> std::option::Option<&crate::types::DeleteReplicaAction> {
+    pub fn delete(&self) -> ::std::option::Option<&crate::types::DeleteReplicaAction> {
         self.delete.as_ref()
     }
 }
@@ -35,34 +35,36 @@ impl ReplicaUpdate {
 
 /// A builder for [`ReplicaUpdate`](crate::types::ReplicaUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicaUpdateBuilder {
-    pub(crate) create: std::option::Option<crate::types::CreateReplicaAction>,
-    pub(crate) delete: std::option::Option<crate::types::DeleteReplicaAction>,
+    pub(crate) create: ::std::option::Option<crate::types::CreateReplicaAction>,
+    pub(crate) delete: ::std::option::Option<crate::types::DeleteReplicaAction>,
 }
 impl ReplicaUpdateBuilder {
     /// <p>The parameters required for creating a replica on an existing global table.</p>
     pub fn create(mut self, input: crate::types::CreateReplicaAction) -> Self {
-        self.create = Some(input);
+        self.create = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters required for creating a replica on an existing global table.</p>
     pub fn set_create(
         mut self,
-        input: std::option::Option<crate::types::CreateReplicaAction>,
+        input: ::std::option::Option<crate::types::CreateReplicaAction>,
     ) -> Self {
         self.create = input;
         self
     }
     /// <p>The name of the existing replica to be removed.</p>
     pub fn delete(mut self, input: crate::types::DeleteReplicaAction) -> Self {
-        self.delete = Some(input);
+        self.delete = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the existing replica to be removed.</p>
     pub fn set_delete(
         mut self,
-        input: std::option::Option<crate::types::DeleteReplicaAction>,
+        input: ::std::option::Option<crate::types::DeleteReplicaAction>,
     ) -> Self {
         self.delete = input;
         self

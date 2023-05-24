@@ -2,43 +2,43 @@
 
 /// <p>Describes association information for an Elastic IP address (IPv4).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceNetworkInterfaceAssociation {
     /// <p>The carrier IP address associated with the network interface.</p>
     #[doc(hidden)]
-    pub carrier_ip: std::option::Option<std::string::String>,
+    pub carrier_ip: ::std::option::Option<::std::string::String>,
     /// <p>The customer-owned IP address associated with the network interface.</p>
     #[doc(hidden)]
-    pub customer_owned_ip: std::option::Option<std::string::String>,
+    pub customer_owned_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the owner of the Elastic IP address.</p>
     #[doc(hidden)]
-    pub ip_owner_id: std::option::Option<std::string::String>,
+    pub ip_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The public DNS name.</p>
     #[doc(hidden)]
-    pub public_dns_name: std::option::Option<std::string::String>,
+    pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The public IP address or Elastic IP address bound to the network interface.</p>
     #[doc(hidden)]
-    pub public_ip: std::option::Option<std::string::String>,
+    pub public_ip: ::std::option::Option<::std::string::String>,
 }
 impl InstanceNetworkInterfaceAssociation {
     /// <p>The carrier IP address associated with the network interface.</p>
-    pub fn carrier_ip(&self) -> std::option::Option<&str> {
+    pub fn carrier_ip(&self) -> ::std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
     /// <p>The customer-owned IP address associated with the network interface.</p>
-    pub fn customer_owned_ip(&self) -> std::option::Option<&str> {
+    pub fn customer_owned_ip(&self) -> ::std::option::Option<&str> {
         self.customer_owned_ip.as_deref()
     }
     /// <p>The ID of the owner of the Elastic IP address.</p>
-    pub fn ip_owner_id(&self) -> std::option::Option<&str> {
+    pub fn ip_owner_id(&self) -> ::std::option::Option<&str> {
         self.ip_owner_id.as_deref()
     }
     /// <p>The public DNS name.</p>
-    pub fn public_dns_name(&self) -> std::option::Option<&str> {
+    pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
         self.public_dns_name.as_deref()
     }
     /// <p>The public IP address or Elastic IP address bound to the network interface.</p>
-    pub fn public_ip(&self) -> std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
 }
@@ -51,65 +51,76 @@ impl InstanceNetworkInterfaceAssociation {
 
 /// A builder for [`InstanceNetworkInterfaceAssociation`](crate::types::InstanceNetworkInterfaceAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceNetworkInterfaceAssociationBuilder {
-    pub(crate) carrier_ip: std::option::Option<std::string::String>,
-    pub(crate) customer_owned_ip: std::option::Option<std::string::String>,
-    pub(crate) ip_owner_id: std::option::Option<std::string::String>,
-    pub(crate) public_dns_name: std::option::Option<std::string::String>,
-    pub(crate) public_ip: std::option::Option<std::string::String>,
+    pub(crate) carrier_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_owned_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) public_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ip: ::std::option::Option<::std::string::String>,
 }
 impl InstanceNetworkInterfaceAssociationBuilder {
     /// <p>The carrier IP address associated with the network interface.</p>
-    pub fn carrier_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.carrier_ip = Some(input.into());
+    pub fn carrier_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.carrier_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The carrier IP address associated with the network interface.</p>
-    pub fn set_carrier_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_carrier_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.carrier_ip = input;
         self
     }
     /// <p>The customer-owned IP address associated with the network interface.</p>
-    pub fn customer_owned_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.customer_owned_ip = Some(input.into());
+    pub fn customer_owned_ip(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.customer_owned_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-owned IP address associated with the network interface.</p>
     pub fn set_customer_owned_ip(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.customer_owned_ip = input;
         self
     }
     /// <p>The ID of the owner of the Elastic IP address.</p>
-    pub fn ip_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_owner_id = Some(input.into());
+    pub fn ip_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the owner of the Elastic IP address.</p>
-    pub fn set_ip_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_owner_id = input;
         self
     }
     /// <p>The public DNS name.</p>
-    pub fn public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_dns_name = Some(input.into());
+    pub fn public_dns_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public DNS name.</p>
-    pub fn set_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_dns_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.public_dns_name = input;
         self
     }
     /// <p>The public IP address or Elastic IP address bound to the network interface.</p>
-    pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_ip = Some(input.into());
+    pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IP address or Elastic IP address bound to the network interface.</p>
-    pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
     }

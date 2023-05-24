@@ -6,29 +6,29 @@ pub use crate::operation::update_event_action::_update_event_action_input::Updat
 /// Fluent builder constructing a request to `UpdateEventAction`.
 ///
 /// <p>This operation updates the event action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventActionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_event_action::builders::UpdateEventActionInputBuilder,
 }
 impl UpdateEventActionFluentBuilder {
     /// Creates a new `UpdateEventAction`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_event_action::UpdateEventAction,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_event_action::UpdateEventActionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateEventActionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_event_action::UpdateEventActionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_event_action::UpdateEventActionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl UpdateEventActionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_event_action::UpdateEventActionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_event_action::UpdateEventActionError,
         >,
     > {
@@ -86,17 +89,23 @@ impl UpdateEventActionFluentBuilder {
         self
     }
     /// <p>What occurs after a certain event.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_action_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_action_id(input.into());
         self
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn set_event_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_action_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_event_action_id(input);
         self
     }

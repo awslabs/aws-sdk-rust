@@ -38,13 +38,13 @@
 /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LastFrameClippingBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum LastFrameClippingBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LastFrameClippingBehavior {
+impl ::std::convert::From<&str> for LastFrameClippingBehavior {
     fn from(s: &str) -> Self {
         match s {
             "EXCLUDE_LAST_FRAME" => LastFrameClippingBehavior::ExcludeLastFrame,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for LastFrameClippingBehavior {
         }
     }
 }
-impl std::str::FromStr for LastFrameClippingBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LastFrameClippingBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LastFrameClippingBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LastFrameClippingBehavior::from(s))
     }
 }
 impl LastFrameClippingBehavior {
@@ -86,7 +86,7 @@ impl LastFrameClippingBehavior {
         &["EXCLUDE_LAST_FRAME", "INCLUDE_LAST_FRAME"]
     }
 }
-impl AsRef<str> for LastFrameClippingBehavior {
+impl ::std::convert::AsRef<str> for LastFrameClippingBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

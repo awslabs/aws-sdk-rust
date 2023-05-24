@@ -2,26 +2,26 @@
 
 /// <p>A collection of additional state information, such as domain and clock configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveSimulationState {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
     #[doc(hidden)]
-    pub domains: std::option::Option<std::vec::Vec<crate::types::Domain>>,
+    pub domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
     /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
     #[doc(hidden)]
-    pub clocks: std::option::Option<std::vec::Vec<crate::types::SimulationClock>>,
+    pub clocks: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>,
 }
 impl LiveSimulationState {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
-    pub fn domains(&self) -> std::option::Option<&[crate::types::Domain]> {
+    pub fn domains(&self) -> ::std::option::Option<&[crate::types::Domain]> {
         self.domains.as_deref()
     }
     /// <p>A list of simulation clocks.</p> <note>
     /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
-    pub fn clocks(&self) -> std::option::Option<&[crate::types::SimulationClock]> {
+    pub fn clocks(&self) -> ::std::option::Option<&[crate::types::SimulationClock]> {
         self.clocks.as_deref()
     }
 }
@@ -34,10 +34,12 @@ impl LiveSimulationState {
 
 /// A builder for [`LiveSimulationState`](crate::types::LiveSimulationState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LiveSimulationStateBuilder {
-    pub(crate) domains: std::option::Option<std::vec::Vec<crate::types::Domain>>,
-    pub(crate) clocks: std::option::Option<std::vec::Vec<crate::types::SimulationClock>>,
+    pub(crate) domains: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
+    pub(crate) clocks: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>,
 }
 impl LiveSimulationStateBuilder {
     /// Appends an item to `domains`.
@@ -48,13 +50,13 @@ impl LiveSimulationStateBuilder {
     pub fn domains(mut self, input: crate::types::Domain) -> Self {
         let mut v = self.domains.unwrap_or_default();
         v.push(input);
-        self.domains = Some(v);
+        self.domains = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
     pub fn set_domains(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Domain>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Domain>>,
     ) -> Self {
         self.domains = input;
         self
@@ -69,7 +71,7 @@ impl LiveSimulationStateBuilder {
     pub fn clocks(mut self, input: crate::types::SimulationClock) -> Self {
         let mut v = self.clocks.unwrap_or_default();
         v.push(input);
-        self.clocks = Some(v);
+        self.clocks = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of simulation clocks.</p> <note>
@@ -77,7 +79,7 @@ impl LiveSimulationStateBuilder {
     /// </note>
     pub fn set_clocks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SimulationClock>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationClock>>,
     ) -> Self {
         self.clocks = input;
         self

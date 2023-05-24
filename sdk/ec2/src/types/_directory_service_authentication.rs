@@ -2,15 +2,15 @@
 
 /// <p>Describes an Active Directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectoryServiceAuthentication {
     /// <p>The ID of the Active Directory used for authentication.</p>
     #[doc(hidden)]
-    pub directory_id: std::option::Option<std::string::String>,
+    pub directory_id: ::std::option::Option<::std::string::String>,
 }
 impl DirectoryServiceAuthentication {
     /// <p>The ID of the Active Directory used for authentication.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl DirectoryServiceAuthentication {
 
 /// A builder for [`DirectoryServiceAuthentication`](crate::types::DirectoryServiceAuthentication).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DirectoryServiceAuthenticationBuilder {
-    pub(crate) directory_id: std::option::Option<std::string::String>,
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
 }
 impl DirectoryServiceAuthenticationBuilder {
     /// <p>The ID of the Active Directory used for authentication.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_id = Some(input.into());
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Active Directory used for authentication.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }

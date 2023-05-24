@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ViewerProtocolPolicy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ViewerProtocolPolicy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ViewerProtocolPolicy {
+impl ::std::convert::From<&str> for ViewerProtocolPolicy {
     fn from(s: &str) -> Self {
         match s {
             "allow-all" => ViewerProtocolPolicy::AllowAll,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ViewerProtocolPolicy {
         }
     }
 }
-impl std::str::FromStr for ViewerProtocolPolicy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ViewerProtocolPolicy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ViewerProtocolPolicy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ViewerProtocolPolicy::from(s))
     }
 }
 impl ViewerProtocolPolicy {
@@ -91,7 +91,7 @@ impl ViewerProtocolPolicy {
         &["allow-all", "https-only", "redirect-to-https"]
     }
 }
-impl AsRef<str> for ViewerProtocolPolicy {
+impl ::std::convert::AsRef<str> for ViewerProtocolPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

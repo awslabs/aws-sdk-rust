@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_services::builders::ListServicesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_services::builders::ListServicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_services::builders::ListServicesFluentBuilder::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     /// - On success, responds with [`ListServicesOutput`](crate::operation::list_services::ListServicesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_services::ListServicesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>

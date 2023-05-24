@@ -2,20 +2,20 @@
 
 /// <p>The query result body of the GetServiceSetting API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
     #[doc(hidden)]
-    pub service_setting: std::option::Option<crate::types::ServiceSetting>,
+    pub service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,
 }
 impl GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
-    pub fn service_setting(&self) -> std::option::Option<&crate::types::ServiceSetting> {
+    pub fn service_setting(&self) -> ::std::option::Option<&crate::types::ServiceSetting> {
         self.service_setting.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetServiceSettingOutput {
+impl ::aws_http::request_id::RequestId for GetServiceSettingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl GetServiceSettingOutput {
 
 /// A builder for [`GetServiceSettingOutput`](crate::operation::get_service_setting::GetServiceSettingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetServiceSettingOutputBuilder {
-    pub(crate) service_setting: std::option::Option<crate::types::ServiceSetting>,
+    pub(crate) service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,
 }
 impl GetServiceSettingOutputBuilder {
     /// <p>The query result of the current service setting.</p>
     pub fn service_setting(mut self, input: crate::types::ServiceSetting) -> Self {
-        self.service_setting = Some(input);
+        self.service_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The query result of the current service setting.</p>
     pub fn set_service_setting(
         mut self,
-        input: std::option::Option<crate::types::ServiceSetting>,
+        input: ::std::option::Option<crate::types::ServiceSetting>,
     ) -> Self {
         self.service_setting = input;
         self

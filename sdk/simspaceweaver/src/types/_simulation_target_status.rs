@@ -40,13 +40,13 @@
 /// _Note: `SimulationTargetStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SimulationTargetStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum SimulationTargetStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SimulationTargetStatus {
+impl ::std::convert::From<&str> for SimulationTargetStatus {
     fn from(s: &str) -> Self {
         match s {
             "DELETED" => SimulationTargetStatus::Deleted,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for SimulationTargetStatus {
         }
     }
 }
-impl std::str::FromStr for SimulationTargetStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SimulationTargetStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationTargetStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SimulationTargetStatus::from(s))
     }
 }
 impl SimulationTargetStatus {
@@ -96,7 +96,7 @@ impl SimulationTargetStatus {
         &["DELETED", "STARTED", "STOPPED", "UNKNOWN"]
     }
 }
-impl AsRef<str> for SimulationTargetStatus {
+impl ::std::convert::AsRef<str> for SimulationTargetStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

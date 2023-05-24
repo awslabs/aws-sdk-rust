@@ -2,7 +2,7 @@
 
 /// <p>To secure and define access to your event source, you can specify the authentication protocol, VPC components, or virtual host.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceAccessConfiguration {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
     /// <ul>
@@ -17,10 +17,10 @@ pub struct SourceAccessConfiguration {
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SourceAccessType>,
+    pub r#type: ::std::option::Option<crate::types::SourceAccessType>,
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
     #[doc(hidden)]
-    pub uri: std::option::Option<std::string::String>,
+    pub uri: ::std::option::Option<::std::string::String>,
 }
 impl SourceAccessConfiguration {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
@@ -35,11 +35,11 @@ impl SourceAccessConfiguration {
     /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SourceAccessType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SourceAccessType> {
         self.r#type.as_ref()
     }
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
 }
@@ -52,10 +52,12 @@ impl SourceAccessConfiguration {
 
 /// A builder for [`SourceAccessConfiguration`](crate::types::SourceAccessConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceAccessConfigurationBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::SourceAccessType>,
-    pub(crate) uri: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SourceAccessType>,
+    pub(crate) uri: ::std::option::Option<::std::string::String>,
 }
 impl SourceAccessConfigurationBuilder {
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
@@ -71,7 +73,7 @@ impl SourceAccessConfigurationBuilder {
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SourceAccessType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of authentication protocol, VPC components, or virtual host for your event source. For example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.</p>
@@ -86,17 +88,20 @@ impl SourceAccessConfigurationBuilder {
     /// <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p> </li>
     /// <li> <p> <code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers. </p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::SourceAccessType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::SourceAccessType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri = Some(input.into());
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
     }

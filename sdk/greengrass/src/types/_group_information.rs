@@ -2,57 +2,57 @@
 
 /// Information about a group.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupInformation {
     /// The ARN of the group.
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the group was created.
     #[doc(hidden)]
-    pub creation_timestamp: std::option::Option<std::string::String>,
+    pub creation_timestamp: ::std::option::Option<::std::string::String>,
     /// The ID of the group.
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// The time, in milliseconds since the epoch, when the group was last updated.
     #[doc(hidden)]
-    pub last_updated_timestamp: std::option::Option<std::string::String>,
+    pub last_updated_timestamp: ::std::option::Option<::std::string::String>,
     /// The ID of the latest version associated with the group.
     #[doc(hidden)]
-    pub latest_version: std::option::Option<std::string::String>,
+    pub latest_version: ::std::option::Option<::std::string::String>,
     /// The ARN of the latest version associated with the group.
     #[doc(hidden)]
-    pub latest_version_arn: std::option::Option<std::string::String>,
+    pub latest_version_arn: ::std::option::Option<::std::string::String>,
     /// The name of the group.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl GroupInformation {
     /// The ARN of the group.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the group was created.
-    pub fn creation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<&str> {
         self.creation_timestamp.as_deref()
     }
     /// The ID of the group.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the group was last updated.
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&str> {
         self.last_updated_timestamp.as_deref()
     }
     /// The ID of the latest version associated with the group.
-    pub fn latest_version(&self) -> std::option::Option<&str> {
+    pub fn latest_version(&self) -> ::std::option::Option<&str> {
         self.latest_version.as_deref()
     }
     /// The ARN of the latest version associated with the group.
-    pub fn latest_version_arn(&self) -> std::option::Option<&str> {
+    pub fn latest_version_arn(&self) -> ::std::option::Option<&str> {
         self.latest_version_arn.as_deref()
     }
     /// The name of the group.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -65,93 +65,110 @@ impl GroupInformation {
 
 /// A builder for [`GroupInformation`](crate::types::GroupInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupInformationBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) creation_timestamp: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) last_updated_timestamp: std::option::Option<std::string::String>,
-    pub(crate) latest_version: std::option::Option<std::string::String>,
-    pub(crate) latest_version_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_version: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl GroupInformationBuilder {
     /// The ARN of the group.
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the group.
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// The time, in milliseconds since the epoch, when the group was created.
-    pub fn creation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_timestamp = Some(input.into());
+    pub fn creation_timestamp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the group was created.
     pub fn set_creation_timestamp(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.creation_timestamp = input;
         self
     }
     /// The ID of the group.
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the group.
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// The time, in milliseconds since the epoch, when the group was last updated.
-    pub fn last_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_timestamp = Some(input.into());
+    pub fn last_updated_timestamp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in milliseconds since the epoch, when the group was last updated.
     pub fn set_last_updated_timestamp(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// The ID of the latest version associated with the group.
-    pub fn latest_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.latest_version = Some(input.into());
+    pub fn latest_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.latest_version = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the latest version associated with the group.
-    pub fn set_latest_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_latest_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.latest_version = input;
         self
     }
     /// The ARN of the latest version associated with the group.
-    pub fn latest_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.latest_version_arn = Some(input.into());
+    pub fn latest_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.latest_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the latest version associated with the group.
     pub fn set_latest_version_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.latest_version_arn = input;
         self
     }
     /// The name of the group.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the group.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

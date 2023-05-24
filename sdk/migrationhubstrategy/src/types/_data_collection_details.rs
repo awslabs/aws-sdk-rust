@@ -2,64 +2,64 @@
 
 /// <p> Detailed information about an assessment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCollectionDetails {
     /// <p> The status of the assessment. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AssessmentStatus>,
+    pub status: ::std::option::Option<crate::types::AssessmentStatus>,
     /// <p> The total number of servers in the assessment. </p>
     #[doc(hidden)]
-    pub servers: std::option::Option<i32>,
+    pub servers: ::std::option::Option<i32>,
     /// <p> The number of failed servers in the assessment. </p>
     #[doc(hidden)]
-    pub failed: std::option::Option<i32>,
+    pub failed: ::std::option::Option<i32>,
     /// <p> The number of successful servers in the assessment. </p>
     #[doc(hidden)]
-    pub success: std::option::Option<i32>,
+    pub success: ::std::option::Option<i32>,
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
     #[doc(hidden)]
-    pub in_progress: std::option::Option<i32>,
+    pub in_progress: ::std::option::Option<i32>,
     /// <p> The start time of assessment. </p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time the assessment completes. </p>
     #[doc(hidden)]
-    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status message of the assessment.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl DataCollectionDetails {
     /// <p> The status of the assessment. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AssessmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AssessmentStatus> {
         self.status.as_ref()
     }
     /// <p> The total number of servers in the assessment. </p>
-    pub fn servers(&self) -> std::option::Option<i32> {
+    pub fn servers(&self) -> ::std::option::Option<i32> {
         self.servers
     }
     /// <p> The number of failed servers in the assessment. </p>
-    pub fn failed(&self) -> std::option::Option<i32> {
+    pub fn failed(&self) -> ::std::option::Option<i32> {
         self.failed
     }
     /// <p> The number of successful servers in the assessment. </p>
-    pub fn success(&self) -> std::option::Option<i32> {
+    pub fn success(&self) -> ::std::option::Option<i32> {
         self.success
     }
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
-    pub fn in_progress(&self) -> std::option::Option<i32> {
+    pub fn in_progress(&self) -> ::std::option::Option<i32> {
         self.in_progress
     }
     /// <p> The start time of assessment. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The time the assessment completes. </p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The status message of the assessment.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -72,104 +72,112 @@ impl DataCollectionDetails {
 
 /// A builder for [`DataCollectionDetails`](crate::types::DataCollectionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataCollectionDetailsBuilder {
-    pub(crate) status: std::option::Option<crate::types::AssessmentStatus>,
-    pub(crate) servers: std::option::Option<i32>,
-    pub(crate) failed: std::option::Option<i32>,
-    pub(crate) success: std::option::Option<i32>,
-    pub(crate) in_progress: std::option::Option<i32>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::AssessmentStatus>,
+    pub(crate) servers: ::std::option::Option<i32>,
+    pub(crate) failed: ::std::option::Option<i32>,
+    pub(crate) success: ::std::option::Option<i32>,
+    pub(crate) in_progress: ::std::option::Option<i32>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl DataCollectionDetailsBuilder {
     /// <p> The status of the assessment. </p>
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the assessment. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AssessmentStatus>,
+        input: ::std::option::Option<crate::types::AssessmentStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> The total number of servers in the assessment. </p>
     pub fn servers(mut self, input: i32) -> Self {
-        self.servers = Some(input);
+        self.servers = ::std::option::Option::Some(input);
         self
     }
     /// <p> The total number of servers in the assessment. </p>
-    pub fn set_servers(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_servers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.servers = input;
         self
     }
     /// <p> The number of failed servers in the assessment. </p>
     pub fn failed(mut self, input: i32) -> Self {
-        self.failed = Some(input);
+        self.failed = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of failed servers in the assessment. </p>
-    pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed = input;
         self
     }
     /// <p> The number of successful servers in the assessment. </p>
     pub fn success(mut self, input: i32) -> Self {
-        self.success = Some(input);
+        self.success = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of successful servers in the assessment. </p>
-    pub fn set_success(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_success(mut self, input: ::std::option::Option<i32>) -> Self {
         self.success = input;
         self
     }
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
     pub fn in_progress(mut self, input: i32) -> Self {
-        self.in_progress = Some(input);
+        self.in_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of servers with the assessment status <code>IN_PROGESS</code>. </p>
-    pub fn set_in_progress(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_in_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress = input;
         self
     }
     /// <p> The start time of assessment. </p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The start time of assessment. </p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p> The time the assessment completes. </p>
-    pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.completion_time = Some(input);
+    pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completion_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time the assessment completes. </p>
     pub fn set_completion_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.completion_time = input;
         self
     }
     /// <p>The status message of the assessment.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message of the assessment.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

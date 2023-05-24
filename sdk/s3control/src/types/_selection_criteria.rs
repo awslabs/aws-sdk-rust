@@ -2,11 +2,11 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
     #[doc(hidden)]
-    pub delimiter: std::option::Option<std::string::String>,
+    pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The max depth of the selection criteria</p>
     #[doc(hidden)]
     pub max_depth: i32,
@@ -18,7 +18,7 @@ pub struct SelectionCriteria {
 }
 impl SelectionCriteria {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
     }
     /// <p>The max depth of the selection criteria</p>
@@ -41,30 +41,32 @@ impl SelectionCriteria {
 
 /// A builder for [`SelectionCriteria`](crate::types::SelectionCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SelectionCriteriaBuilder {
-    pub(crate) delimiter: std::option::Option<std::string::String>,
-    pub(crate) max_depth: std::option::Option<i32>,
-    pub(crate) min_storage_bytes_percentage: std::option::Option<f64>,
+    pub(crate) delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) max_depth: ::std::option::Option<i32>,
+    pub(crate) min_storage_bytes_percentage: ::std::option::Option<f64>,
 }
 impl SelectionCriteriaBuilder {
     /// <p>A container for the delimiter of the selection criteria being used.</p>
-    pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delimiter = Some(input.into());
+    pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A container for the delimiter of the selection criteria being used.</p>
-    pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
     }
     /// <p>The max depth of the selection criteria</p>
     pub fn max_depth(mut self, input: i32) -> Self {
-        self.max_depth = Some(input);
+        self.max_depth = ::std::option::Option::Some(input);
         self
     }
     /// <p>The max depth of the selection criteria</p>
-    pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_depth(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_depth = input;
         self
     }
@@ -72,13 +74,13 @@ impl SelectionCriteriaBuilder {
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub fn min_storage_bytes_percentage(mut self, input: f64) -> Self {
-        self.min_storage_bytes_percentage = Some(input);
+        self.min_storage_bytes_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
-    pub fn set_min_storage_bytes_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_min_storage_bytes_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_storage_bytes_percentage = input;
         self
     }

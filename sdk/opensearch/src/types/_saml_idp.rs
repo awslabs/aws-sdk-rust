@@ -2,22 +2,22 @@
 
 /// <p>The SAML identity povider information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlIdp {
     /// <p>The metadata of the SAML application, in XML format.</p>
     #[doc(hidden)]
-    pub metadata_content: std::option::Option<std::string::String>,
+    pub metadata_content: ::std::option::Option<::std::string::String>,
     /// <p>The unique entity ID of the application in the SAML identity provider.</p>
     #[doc(hidden)]
-    pub entity_id: std::option::Option<std::string::String>,
+    pub entity_id: ::std::option::Option<::std::string::String>,
 }
 impl SamlIdp {
     /// <p>The metadata of the SAML application, in XML format.</p>
-    pub fn metadata_content(&self) -> std::option::Option<&str> {
+    pub fn metadata_content(&self) -> ::std::option::Option<&str> {
         self.metadata_content.as_deref()
     }
     /// <p>The unique entity ID of the application in the SAML identity provider.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl SamlIdp {
 
 /// A builder for [`SamlIdp`](crate::types::SamlIdp).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SamlIdpBuilder {
-    pub(crate) metadata_content: std::option::Option<std::string::String>,
-    pub(crate) entity_id: std::option::Option<std::string::String>,
+    pub(crate) metadata_content: ::std::option::Option<::std::string::String>,
+    pub(crate) entity_id: ::std::option::Option<::std::string::String>,
 }
 impl SamlIdpBuilder {
     /// <p>The metadata of the SAML application, in XML format.</p>
-    pub fn metadata_content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metadata_content = Some(input.into());
+    pub fn metadata_content(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.metadata_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metadata of the SAML application, in XML format.</p>
-    pub fn set_metadata_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata_content(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.metadata_content = input;
         self
     }
     /// <p>The unique entity ID of the application in the SAML identity provider.</p>
-    pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entity_id = Some(input.into());
+    pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique entity ID of the application in the SAML identity provider.</p>
-    pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
     }

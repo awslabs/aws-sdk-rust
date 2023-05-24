@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PermissionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum PermissionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PermissionType {
+impl ::std::convert::From<&str> for PermissionType {
     fn from(s: &str) -> Self {
         match s {
             "FULL_ACCESS" => PermissionType::FullAccess,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for PermissionType {
         }
     }
 }
-impl std::str::FromStr for PermissionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PermissionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PermissionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PermissionType::from(s))
     }
 }
 impl PermissionType {
@@ -91,7 +91,7 @@ impl PermissionType {
         &["FULL_ACCESS", "SEND_AS", "SEND_ON_BEHALF"]
     }
 }
-impl AsRef<str> for PermissionType {
+impl ::std::convert::AsRef<str> for PermissionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

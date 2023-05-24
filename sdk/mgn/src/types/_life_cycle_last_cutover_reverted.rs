@@ -2,15 +2,15 @@
 
 /// <p>Lifecycle last Cutover reverted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastCutoverReverted {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
     #[doc(hidden)]
-    pub api_call_date_time: std::option::Option<std::string::String>,
+    pub api_call_date_time: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastCutoverReverted {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> ::std::option::Option<&str> {
         self.api_call_date_time.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl LifeCycleLastCutoverReverted {
 
 /// A builder for [`LifeCycleLastCutoverReverted`](crate::types::LifeCycleLastCutoverReverted).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LifeCycleLastCutoverRevertedBuilder {
-    pub(crate) api_call_date_time: std::option::Option<std::string::String>,
+    pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastCutoverRevertedBuilder {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
-    pub fn api_call_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_call_date_time = Some(input.into());
+    pub fn api_call_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_call_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
     pub fn set_api_call_date_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.api_call_date_time = input;
         self

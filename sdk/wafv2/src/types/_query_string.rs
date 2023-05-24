@@ -4,7 +4,7 @@
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"QueryString": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryString {}
 impl QueryString {
     /// Creates a new builder-style object to manufacture [`QueryString`](crate::types::QueryString).
@@ -15,7 +15,9 @@ impl QueryString {
 
 /// A builder for [`QueryString`](crate::types::QueryString).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryStringBuilder {}
 impl QueryStringBuilder {
     /// Consumes the builder and constructs a [`QueryString`](crate::types::QueryString).

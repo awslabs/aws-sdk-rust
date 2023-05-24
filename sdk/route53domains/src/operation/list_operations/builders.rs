@@ -7,56 +7,59 @@ pub use crate::operation::list_operations::_list_operations_input::ListOperation
 ///
 /// <p>Returns information about all of the operations that return an operation ID and that have ever been performed on domains that were registered by the current account. </p>
 /// <p>This command runs only in the us-east-1 Region.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOperationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_operations::builders::ListOperationsInputBuilder,
 }
 impl ListOperationsFluentBuilder {
     /// Creates a new `ListOperations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_operations::ListOperations,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_operations::ListOperationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_operations::ListOperationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_operations::ListOperationsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_operations::ListOperationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_operations::ListOperationsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +72,9 @@ impl ListOperationsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_operations::ListOperationsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_operations::ListOperationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_operations::ListOperationsError>,
     > {
         self.send_middleware().await
     }
@@ -87,25 +90,25 @@ impl ListOperationsFluentBuilder {
         )
     }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    pub fn submitted_since(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn submitted_since(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.submitted_since(input);
         self
     }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn set_submitted_since(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_submitted_since(input);
         self
     }
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
@@ -117,7 +120,7 @@ impl ListOperationsFluentBuilder {
     }
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
-    pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
     }
@@ -133,7 +136,7 @@ impl ListOperationsFluentBuilder {
     /// <p> The status of the operations. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OperationStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
@@ -150,7 +153,7 @@ impl ListOperationsFluentBuilder {
     /// <p> An arrays of the domains operation types. </p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OperationType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationType>>,
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
@@ -163,7 +166,7 @@ impl ListOperationsFluentBuilder {
     /// <p> The sort type for returned values. </p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::ListOperationsSortAttributeName>,
+        input: ::std::option::Option<crate::types::ListOperationsSortAttributeName>,
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
@@ -174,7 +177,7 @@ impl ListOperationsFluentBuilder {
         self
     }
     /// <p> The sort order ofr returned values, either ascending or descending. </p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

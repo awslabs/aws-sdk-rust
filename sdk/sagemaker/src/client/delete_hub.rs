@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteHub`](crate::operation::delete_hub::builders::DeleteHubFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hub_name(impl Into<String>)`](crate::operation::delete_hub::builders::DeleteHubFluentBuilder::hub_name) / [`set_hub_name(Option<String>)`](crate::operation::delete_hub::builders::DeleteHubFluentBuilder::set_hub_name): <p>The name of the hub to delete.</p>
+    ///   - [`hub_name(impl ::std::convert::Into<String>)`](crate::operation::delete_hub::builders::DeleteHubFluentBuilder::hub_name) / [`set_hub_name(Option<String>)`](crate::operation::delete_hub::builders::DeleteHubFluentBuilder::set_hub_name): <p>The name of the hub to delete.</p>
     /// - On success, responds with [`DeleteHubOutput`](crate::operation::delete_hub::DeleteHubOutput)
     /// - On failure, responds with [`SdkError<DeleteHubError>`](crate::operation::delete_hub::DeleteHubError)
     pub fn delete_hub(&self) -> crate::operation::delete_hub::builders::DeleteHubFluentBuilder {

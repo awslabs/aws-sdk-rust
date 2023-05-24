@@ -2,27 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPositionConfigurationOutput {
     /// <p>The wrapper for the solver configuration details object.</p>
     #[doc(hidden)]
-    pub solvers: std::option::Option<crate::types::PositionSolverDetails>,
+    pub solvers: ::std::option::Option<crate::types::PositionSolverDetails>,
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<std::string::String>,
+    pub destination: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPositionConfigurationOutput {
     /// <p>The wrapper for the solver configuration details object.</p>
-    pub fn solvers(&self) -> std::option::Option<&crate::types::PositionSolverDetails> {
+    pub fn solvers(&self) -> ::std::option::Option<&crate::types::PositionSolverDetails> {
         self.solvers.as_ref()
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetPositionConfigurationOutput {
+impl ::aws_http::request_id::RequestId for GetPositionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,33 +38,35 @@ impl GetPositionConfigurationOutput {
 
 /// A builder for [`GetPositionConfigurationOutput`](crate::operation::get_position_configuration::GetPositionConfigurationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPositionConfigurationOutputBuilder {
-    pub(crate) solvers: std::option::Option<crate::types::PositionSolverDetails>,
-    pub(crate) destination: std::option::Option<std::string::String>,
+    pub(crate) solvers: ::std::option::Option<crate::types::PositionSolverDetails>,
+    pub(crate) destination: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPositionConfigurationOutputBuilder {
     /// <p>The wrapper for the solver configuration details object.</p>
     pub fn solvers(mut self, input: crate::types::PositionSolverDetails) -> Self {
-        self.solvers = Some(input);
+        self.solvers = ::std::option::Option::Some(input);
         self
     }
     /// <p>The wrapper for the solver configuration details object.</p>
     pub fn set_solvers(
         mut self,
-        input: std::option::Option<crate::types::PositionSolverDetails>,
+        input: ::std::option::Option<crate::types::PositionSolverDetails>,
     ) -> Self {
         self.solvers = input;
         self
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination = Some(input.into());
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }

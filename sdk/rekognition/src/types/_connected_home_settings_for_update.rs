@@ -2,22 +2,22 @@
 
 /// <p> The label detection settings you want to use in your stream processor. This includes the labels you want the stream processor to detect and the minimum confidence level allowed to label objects. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectedHomeSettingsForUpdate {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
     #[doc(hidden)]
-    pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The minimum confidence required to label an object in the video. </p>
     #[doc(hidden)]
-    pub min_confidence: std::option::Option<f32>,
+    pub min_confidence: ::std::option::Option<f32>,
 }
 impl ConnectedHomeSettingsForUpdate {
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.labels.as_deref()
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
-    pub fn min_confidence(&self) -> std::option::Option<f32> {
+    pub fn min_confidence(&self) -> ::std::option::Option<f32> {
         self.min_confidence
     }
 }
@@ -30,10 +30,12 @@ impl ConnectedHomeSettingsForUpdate {
 
 /// A builder for [`ConnectedHomeSettingsForUpdate`](crate::types::ConnectedHomeSettingsForUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectedHomeSettingsForUpdateBuilder {
-    pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) min_confidence: std::option::Option<f32>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) min_confidence: ::std::option::Option<f32>,
 }
 impl ConnectedHomeSettingsForUpdateBuilder {
     /// Appends an item to `labels`.
@@ -41,27 +43,27 @@ impl ConnectedHomeSettingsForUpdateBuilder {
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
-    pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
         v.push(input.into());
-        self.labels = Some(v);
+        self.labels = ::std::option::Option::Some(v);
         self
     }
     /// <p> Specifies what you want to detect in the video, such as people, packages, or pets. The current valid labels you can include in this list are: "PERSON", "PET", "PACKAGE", and "ALL". </p>
     pub fn set_labels(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.labels = input;
         self
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
     pub fn min_confidence(mut self, input: f32) -> Self {
-        self.min_confidence = Some(input);
+        self.min_confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p> The minimum confidence required to label an object in the video. </p>
-    pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.min_confidence = input;
         self
     }

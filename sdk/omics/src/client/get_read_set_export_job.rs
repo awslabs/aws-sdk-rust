@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReadSetExportJob`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::set_sequence_store_id): <p>The job's sequence store ID.</p>
-    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::set_id): <p>The job's ID.</p>
+    ///   - [`sequence_store_id(impl ::std::convert::Into<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::set_sequence_store_id): <p>The job's sequence store ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_export_job::builders::GetReadSetExportJobFluentBuilder::set_id): <p>The job's ID.</p>
     /// - On success, responds with [`GetReadSetExportJobOutput`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::id): <p>The job's ID.</p>
     ///   - [`sequence_store_id(Option<String>)`](crate::operation::get_read_set_export_job::GetReadSetExportJobOutput::sequence_store_id): <p>The job's sequence store ID.</p>

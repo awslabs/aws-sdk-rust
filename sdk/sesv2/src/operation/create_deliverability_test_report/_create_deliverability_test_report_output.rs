@@ -2,29 +2,29 @@
 
 /// <p>Information about the predictive inbox placement test that you created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub report_id: std::option::Option<std::string::String>,
+    pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     #[doc(hidden)]
-    pub deliverability_test_status: std::option::Option<crate::types::DeliverabilityTestStatus>,
+    pub deliverability_test_status: ::std::option::Option<crate::types::DeliverabilityTestStatus>,
     _request_id: Option<String>,
 }
 impl CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<&str> {
         self.report_id.as_deref()
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub fn deliverability_test_status(
         &self,
-    ) -> std::option::Option<&crate::types::DeliverabilityTestStatus> {
+    ) -> ::std::option::Option<&crate::types::DeliverabilityTestStatus> {
         self.deliverability_test_status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateDeliverabilityTestReportOutput {
+impl ::aws_http::request_id::RequestId for CreateDeliverabilityTestReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,21 +38,23 @@ impl CreateDeliverabilityTestReportOutput {
 
 /// A builder for [`CreateDeliverabilityTestReportOutput`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDeliverabilityTestReportOutputBuilder {
-    pub(crate) report_id: std::option::Option<std::string::String>,
+    pub(crate) report_id: ::std::option::Option<::std::string::String>,
     pub(crate) deliverability_test_status:
-        std::option::Option<crate::types::DeliverabilityTestStatus>,
+        ::std::option::Option<crate::types::DeliverabilityTestStatus>,
     _request_id: Option<String>,
 }
 impl CreateDeliverabilityTestReportOutputBuilder {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.report_id = Some(input.into());
+    pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.report_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_id = input;
         self
     }
@@ -61,13 +63,13 @@ impl CreateDeliverabilityTestReportOutputBuilder {
         mut self,
         input: crate::types::DeliverabilityTestStatus,
     ) -> Self {
-        self.deliverability_test_status = Some(input);
+        self.deliverability_test_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     pub fn set_deliverability_test_status(
         mut self,
-        input: std::option::Option<crate::types::DeliverabilityTestStatus>,
+        input: ::std::option::Option<crate::types::DeliverabilityTestStatus>,
     ) -> Self {
         self.deliverability_test_status = input;
         self

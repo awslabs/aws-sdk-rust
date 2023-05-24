@@ -2,22 +2,22 @@
 
 /// <p>This structure contains the start and end times of a single canary run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryRunTimeline {
     /// <p>The start time of the run.</p>
     #[doc(hidden)]
-    pub started: std::option::Option<aws_smithy_types::DateTime>,
+    pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the run.</p>
     #[doc(hidden)]
-    pub completed: std::option::Option<aws_smithy_types::DateTime>,
+    pub completed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CanaryRunTimeline {
     /// <p>The start time of the run.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The end time of the run.</p>
-    pub fn completed(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed.as_ref()
     }
 }
@@ -30,29 +30,37 @@ impl CanaryRunTimeline {
 
 /// A builder for [`CanaryRunTimeline`](crate::types::CanaryRunTimeline).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CanaryRunTimelineBuilder {
-    pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) completed: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) started: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) completed: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CanaryRunTimelineBuilder {
     /// <p>The start time of the run.</p>
-    pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started = Some(input);
+    pub fn started(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time of the run.</p>
-    pub fn set_started(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_started(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.started = input;
         self
     }
     /// <p>The end time of the run.</p>
-    pub fn completed(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.completed = Some(input);
+    pub fn completed(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end time of the run.</p>
-    pub fn set_completed(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_completed(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.completed = input;
         self
     }

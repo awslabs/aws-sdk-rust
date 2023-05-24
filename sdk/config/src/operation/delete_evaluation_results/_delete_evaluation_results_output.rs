@@ -2,11 +2,11 @@
 
 /// <p>The output when you delete the evaluation results for the specified Config rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEvaluationResultsOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteEvaluationResultsOutput {
+impl ::aws_http::request_id::RequestId for DeleteEvaluationResultsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl DeleteEvaluationResultsOutput {
 
 /// A builder for [`DeleteEvaluationResultsOutput`](crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteEvaluationResultsOutputBuilder {
     _request_id: Option<String>,
 }

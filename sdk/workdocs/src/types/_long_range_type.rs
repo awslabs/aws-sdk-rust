@@ -2,22 +2,22 @@
 
 /// <p>Filter based on size (in bytes).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LongRangeType {
     /// <p>The size start range (in bytes).</p>
     #[doc(hidden)]
-    pub start_value: std::option::Option<i64>,
+    pub start_value: ::std::option::Option<i64>,
     /// <p>The size end range (in bytes).</p>
     #[doc(hidden)]
-    pub end_value: std::option::Option<i64>,
+    pub end_value: ::std::option::Option<i64>,
 }
 impl LongRangeType {
     /// <p>The size start range (in bytes).</p>
-    pub fn start_value(&self) -> std::option::Option<i64> {
+    pub fn start_value(&self) -> ::std::option::Option<i64> {
         self.start_value
     }
     /// <p>The size end range (in bytes).</p>
-    pub fn end_value(&self) -> std::option::Option<i64> {
+    pub fn end_value(&self) -> ::std::option::Option<i64> {
         self.end_value
     }
 }
@@ -30,29 +30,31 @@ impl LongRangeType {
 
 /// A builder for [`LongRangeType`](crate::types::LongRangeType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LongRangeTypeBuilder {
-    pub(crate) start_value: std::option::Option<i64>,
-    pub(crate) end_value: std::option::Option<i64>,
+    pub(crate) start_value: ::std::option::Option<i64>,
+    pub(crate) end_value: ::std::option::Option<i64>,
 }
 impl LongRangeTypeBuilder {
     /// <p>The size start range (in bytes).</p>
     pub fn start_value(mut self, input: i64) -> Self {
-        self.start_value = Some(input);
+        self.start_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size start range (in bytes).</p>
-    pub fn set_start_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_value = input;
         self
     }
     /// <p>The size end range (in bytes).</p>
     pub fn end_value(mut self, input: i64) -> Self {
-        self.end_value = Some(input);
+        self.end_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size end range (in bytes).</p>
-    pub fn set_end_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_end_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_value = input;
         self
     }

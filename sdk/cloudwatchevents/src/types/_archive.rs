@@ -2,23 +2,23 @@
 
 /// <p>An <code>Archive</code> object that contains details about an archive.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Archive {
     /// <p>The name of the archive.</p>
     #[doc(hidden)]
-    pub archive_name: std::option::Option<std::string::String>,
+    pub archive_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
     #[doc(hidden)]
-    pub event_source_arn: std::option::Option<std::string::String>,
+    pub event_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the archive.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ArchiveState>,
+    pub state: ::std::option::Option<crate::types::ArchiveState>,
     /// <p>A description for the reason that the archive is in the current state.</p>
     #[doc(hidden)]
-    pub state_reason: std::option::Option<std::string::String>,
+    pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
     #[doc(hidden)]
-    pub retention_days: std::option::Option<i32>,
+    pub retention_days: ::std::option::Option<i32>,
     /// <p>The size of the archive, in bytes.</p>
     #[doc(hidden)]
     pub size_bytes: i64,
@@ -27,27 +27,27 @@ pub struct Archive {
     pub event_count: i64,
     /// <p>The time stamp for the time that the archive was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Archive {
     /// <p>The name of the archive.</p>
-    pub fn archive_name(&self) -> std::option::Option<&str> {
+    pub fn archive_name(&self) -> ::std::option::Option<&str> {
         self.archive_name.as_deref()
     }
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> ::std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The current state of the archive.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ArchiveState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ArchiveState> {
         self.state.as_ref()
     }
     /// <p>A description for the reason that the archive is in the current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<&str> {
         self.state_reason.as_deref()
     }
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
-    pub fn retention_days(&self) -> std::option::Option<i32> {
+    pub fn retention_days(&self) -> ::std::option::Option<i32> {
         self.retention_days
     }
     /// <p>The size of the archive, in bytes.</p>
@@ -59,7 +59,7 @@ impl Archive {
         self.event_count
     }
     /// <p>The time stamp for the time that the archive was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -72,97 +72,105 @@ impl Archive {
 
 /// A builder for [`Archive`](crate::types::Archive).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArchiveBuilder {
-    pub(crate) archive_name: std::option::Option<std::string::String>,
-    pub(crate) event_source_arn: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::ArchiveState>,
-    pub(crate) state_reason: std::option::Option<std::string::String>,
-    pub(crate) retention_days: std::option::Option<i32>,
-    pub(crate) size_bytes: std::option::Option<i64>,
-    pub(crate) event_count: std::option::Option<i64>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) archive_name: ::std::option::Option<::std::string::String>,
+    pub(crate) event_source_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ArchiveState>,
+    pub(crate) state_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) retention_days: ::std::option::Option<i32>,
+    pub(crate) size_bytes: ::std::option::Option<i64>,
+    pub(crate) event_count: ::std::option::Option<i64>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ArchiveBuilder {
     /// <p>The name of the archive.</p>
-    pub fn archive_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.archive_name = Some(input.into());
+    pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.archive_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the archive.</p>
-    pub fn set_archive_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_archive_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archive_name = input;
         self
     }
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
-    pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_source_arn = Some(input.into());
+    pub fn event_source_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
-    pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_source_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.event_source_arn = input;
         self
     }
     /// <p>The current state of the archive.</p>
     pub fn state(mut self, input: crate::types::ArchiveState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the archive.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ArchiveState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArchiveState>) -> Self {
         self.state = input;
         self
     }
     /// <p>A description for the reason that the archive is in the current state.</p>
-    pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_reason = Some(input.into());
+    pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the reason that the archive is in the current state.</p>
-    pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
     }
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
     pub fn retention_days(mut self, input: i32) -> Self {
-        self.retention_days = Some(input);
+        self.retention_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain events in the archive before they are deleted.</p>
-    pub fn set_retention_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_days = input;
         self
     }
     /// <p>The size of the archive, in bytes.</p>
     pub fn size_bytes(mut self, input: i64) -> Self {
-        self.size_bytes = Some(input);
+        self.size_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the archive, in bytes.</p>
-    pub fn set_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_bytes = input;
         self
     }
     /// <p>The number of events in the archive.</p>
     pub fn event_count(mut self, input: i64) -> Self {
-        self.event_count = Some(input);
+        self.event_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of events in the archive.</p>
-    pub fn set_event_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_event_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.event_count = input;
         self
     }
     /// <p>The time stamp for the time that the archive was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time stamp for the time that the archive was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

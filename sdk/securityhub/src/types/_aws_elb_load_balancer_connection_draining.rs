@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the connection draining configuration for the load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerConnectionDraining {
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl AwsElbLoadBalancerConnectionDraining {
 
 /// A builder for [`AwsElbLoadBalancerConnectionDraining`](crate::types::AwsElbLoadBalancerConnectionDraining).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElbLoadBalancerConnectionDrainingBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) timeout: std::option::Option<i32>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) timeout: ::std::option::Option<i32>,
 }
 impl AwsElbLoadBalancerConnectionDrainingBuilder {
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether connection draining is enabled for the load balancer.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn timeout(mut self, input: i32) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }

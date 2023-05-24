@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a get device request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceOutput {
     /// <p>An object that contains information about the requested device.</p>
     #[doc(hidden)]
-    pub device: std::option::Option<crate::types::Device>,
+    pub device: ::std::option::Option<crate::types::Device>,
     _request_id: Option<String>,
 }
 impl GetDeviceOutput {
     /// <p>An object that contains information about the requested device.</p>
-    pub fn device(&self) -> std::option::Option<&crate::types::Device> {
+    pub fn device(&self) -> ::std::option::Option<&crate::types::Device> {
         self.device.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDeviceOutput {
+impl ::aws_http::request_id::RequestId for GetDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetDeviceOutput {
 
 /// A builder for [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDeviceOutputBuilder {
-    pub(crate) device: std::option::Option<crate::types::Device>,
+    pub(crate) device: ::std::option::Option<crate::types::Device>,
     _request_id: Option<String>,
 }
 impl GetDeviceOutputBuilder {
     /// <p>An object that contains information about the requested device.</p>
     pub fn device(mut self, input: crate::types::Device) -> Self {
-        self.device = Some(input);
+        self.device = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the requested device.</p>
-    pub fn set_device(mut self, input: std::option::Option<crate::types::Device>) -> Self {
+    pub fn set_device(mut self, input: ::std::option::Option<crate::types::Device>) -> Self {
         self.device = input;
         self
     }

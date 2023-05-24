@@ -2,36 +2,36 @@
 
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The gateway route host name to be matched on.</p>
     #[doc(hidden)]
-    pub hostname: std::option::Option<crate::types::GatewayRouteHostnameMatch>,
+    pub hostname: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
     /// <p>The gateway route metadata to be matched on.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
+    pub metadata: ::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
     /// <p>The port number to match from the request.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
 }
 impl GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The gateway route host name to be matched on.</p>
-    pub fn hostname(&self) -> std::option::Option<&crate::types::GatewayRouteHostnameMatch> {
+    pub fn hostname(&self) -> ::std::option::Option<&crate::types::GatewayRouteHostnameMatch> {
         self.hostname.as_ref()
     }
     /// <p>The gateway route metadata to be matched on.</p>
-    pub fn metadata(&self) -> std::option::Option<&[crate::types::GrpcGatewayRouteMetadata]> {
+    pub fn metadata(&self) -> ::std::option::Option<&[crate::types::GrpcGatewayRouteMetadata]> {
         self.metadata.as_deref()
     }
     /// <p>The port number to match from the request.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
 }
@@ -44,33 +44,36 @@ impl GrpcGatewayRouteMatch {
 
 /// A builder for [`GrpcGatewayRouteMatch`](crate::types::GrpcGatewayRouteMatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GrpcGatewayRouteMatchBuilder {
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) hostname: std::option::Option<crate::types::GatewayRouteHostnameMatch>,
-    pub(crate) metadata: std::option::Option<std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
-    pub(crate) port: std::option::Option<i32>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) hostname: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
+    pub(crate) metadata:
+        ::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
+    pub(crate) port: ::std::option::Option<i32>,
 }
 impl GrpcGatewayRouteMatchBuilder {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The gateway route host name to be matched on.</p>
     pub fn hostname(mut self, input: crate::types::GatewayRouteHostnameMatch) -> Self {
-        self.hostname = Some(input);
+        self.hostname = ::std::option::Option::Some(input);
         self
     }
     /// <p>The gateway route host name to be matched on.</p>
     pub fn set_hostname(
         mut self,
-        input: std::option::Option<crate::types::GatewayRouteHostnameMatch>,
+        input: ::std::option::Option<crate::types::GatewayRouteHostnameMatch>,
     ) -> Self {
         self.hostname = input;
         self
@@ -83,24 +86,24 @@ impl GrpcGatewayRouteMatchBuilder {
     pub fn metadata(mut self, input: crate::types::GrpcGatewayRouteMetadata) -> Self {
         let mut v = self.metadata.unwrap_or_default();
         v.push(input);
-        self.metadata = Some(v);
+        self.metadata = ::std::option::Option::Some(v);
         self
     }
     /// <p>The gateway route metadata to be matched on.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GrpcGatewayRouteMetadata>>,
     ) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The port number to match from the request.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number to match from the request.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }

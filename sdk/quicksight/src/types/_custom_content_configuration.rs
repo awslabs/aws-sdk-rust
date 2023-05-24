@@ -2,31 +2,31 @@
 
 /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomContentConfiguration {
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
     #[doc(hidden)]
-    pub content_url: std::option::Option<std::string::String>,
+    pub content_url: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<crate::types::CustomContentType>,
+    pub content_type: ::std::option::Option<crate::types::CustomContentType>,
     /// <p>The sizing options for the size of the custom content visual. This structure is required when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.</p>
     #[doc(hidden)]
-    pub image_scaling: std::option::Option<crate::types::CustomContentImageScalingConfiguration>,
+    pub image_scaling: ::std::option::Option<crate::types::CustomContentImageScalingConfiguration>,
 }
 impl CustomContentConfiguration {
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
-    pub fn content_url(&self) -> std::option::Option<&str> {
+    pub fn content_url(&self) -> ::std::option::Option<&str> {
         self.content_url.as_deref()
     }
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::CustomContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<&crate::types::CustomContentType> {
         self.content_type.as_ref()
     }
     /// <p>The sizing options for the size of the custom content visual. This structure is required when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.</p>
     pub fn image_scaling(
         &self,
-    ) -> std::option::Option<&crate::types::CustomContentImageScalingConfiguration> {
+    ) -> ::std::option::Option<&crate::types::CustomContentImageScalingConfiguration> {
         self.image_scaling.as_ref()
     }
 }
@@ -39,33 +39,35 @@ impl CustomContentConfiguration {
 
 /// A builder for [`CustomContentConfiguration`](crate::types::CustomContentConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomContentConfigurationBuilder {
-    pub(crate) content_url: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<crate::types::CustomContentType>,
+    pub(crate) content_url: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<crate::types::CustomContentType>,
     pub(crate) image_scaling:
-        std::option::Option<crate::types::CustomContentImageScalingConfiguration>,
+        ::std::option::Option<crate::types::CustomContentImageScalingConfiguration>,
 }
 impl CustomContentConfigurationBuilder {
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
-    pub fn content_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_url = Some(input.into());
+    pub fn content_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The input URL that links to the custom content that you want in the custom visual.</p>
-    pub fn set_content_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_url = input;
         self
     }
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
     pub fn content_type(mut self, input: crate::types::CustomContentType) -> Self {
-        self.content_type = Some(input);
+        self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The content type of the custom content visual. You can use this to have the visual render as an image.</p>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::CustomContentType>,
+        input: ::std::option::Option<crate::types::CustomContentType>,
     ) -> Self {
         self.content_type = input;
         self
@@ -75,13 +77,13 @@ impl CustomContentConfigurationBuilder {
         mut self,
         input: crate::types::CustomContentImageScalingConfiguration,
     ) -> Self {
-        self.image_scaling = Some(input);
+        self.image_scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sizing options for the size of the custom content visual. This structure is required when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.</p>
     pub fn set_image_scaling(
         mut self,
-        input: std::option::Option<crate::types::CustomContentImageScalingConfiguration>,
+        input: ::std::option::Option<crate::types::CustomContentImageScalingConfiguration>,
     ) -> Self {
         self.image_scaling = input;
         self

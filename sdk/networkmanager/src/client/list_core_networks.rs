@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::set_max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_core_networks::builders::ListCoreNetworksFluentBuilder::set_next_token): <p>The token for the next page of results.</p>
     /// - On success, responds with [`ListCoreNetworksOutput`](crate::operation::list_core_networks::ListCoreNetworksOutput) with field(s):
     ///   - [`core_networks(Option<Vec<CoreNetworkSummary>>)`](crate::operation::list_core_networks::ListCoreNetworksOutput::core_networks): <p>Describes the list of core networks.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_core_networks::ListCoreNetworksOutput::next_token): <p>The token for the next page of results.</p>

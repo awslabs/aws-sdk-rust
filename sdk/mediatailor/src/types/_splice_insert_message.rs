@@ -2,7 +2,7 @@
 
 /// <p>Splice insert message configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpliceInsertMessage {
     /// <p>This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
     #[doc(hidden)]
@@ -44,51 +44,53 @@ impl SpliceInsertMessage {
 
 /// A builder for [`SpliceInsertMessage`](crate::types::SpliceInsertMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpliceInsertMessageBuilder {
-    pub(crate) avail_num: std::option::Option<i32>,
-    pub(crate) avails_expected: std::option::Option<i32>,
-    pub(crate) splice_event_id: std::option::Option<i32>,
-    pub(crate) unique_program_id: std::option::Option<i32>,
+    pub(crate) avail_num: ::std::option::Option<i32>,
+    pub(crate) avails_expected: ::std::option::Option<i32>,
+    pub(crate) splice_event_id: ::std::option::Option<i32>,
+    pub(crate) unique_program_id: ::std::option::Option<i32>,
 }
 impl SpliceInsertMessageBuilder {
     /// <p>This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
     pub fn avail_num(mut self, input: i32) -> Self {
-        self.avail_num = Some(input);
+        self.avail_num = ::std::option::Option::Some(input);
         self
     }
     /// <p>This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub fn set_avail_num(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_avail_num(mut self, input: ::std::option::Option<i32>) -> Self {
         self.avail_num = input;
         self
     }
     /// <p>This is written to <code>splice_insert.avails_expected</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
     pub fn avails_expected(mut self, input: i32) -> Self {
-        self.avails_expected = Some(input);
+        self.avails_expected = ::std::option::Option::Some(input);
         self
     }
     /// <p>This is written to <code>splice_insert.avails_expected</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub fn set_avails_expected(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_avails_expected(mut self, input: ::std::option::Option<i32>) -> Self {
         self.avails_expected = input;
         self
     }
     /// <p>This is written to <code>splice_insert.splice_event_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>1</code>.</p>
     pub fn splice_event_id(mut self, input: i32) -> Self {
-        self.splice_event_id = Some(input);
+        self.splice_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>This is written to <code>splice_insert.splice_event_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>1</code>.</p>
-    pub fn set_splice_event_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_splice_event_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.splice_event_id = input;
         self
     }
     /// <p>This is written to <code>splice_insert.unique_program_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
     pub fn unique_program_id(mut self, input: i32) -> Self {
-        self.unique_program_id = Some(input);
+        self.unique_program_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>This is written to <code>splice_insert.unique_program_id</code>, as defined in section 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values must be between <code>0</code> and <code>256</code>, inclusive.</p>
-    pub fn set_unique_program_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unique_program_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unique_program_id = input;
         self
     }

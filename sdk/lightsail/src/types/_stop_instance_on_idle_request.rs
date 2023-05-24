@@ -4,22 +4,22 @@
 /// <p>This add-on only applies to Lightsail for Research resources.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInstanceOnIdleRequest {
     /// <p>The value to compare with the duration.</p>
     #[doc(hidden)]
-    pub threshold: std::option::Option<std::string::String>,
+    pub threshold: ::std::option::Option<::std::string::String>,
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
     #[doc(hidden)]
-    pub duration: std::option::Option<std::string::String>,
+    pub duration: ::std::option::Option<::std::string::String>,
 }
 impl StopInstanceOnIdleRequest {
     /// <p>The value to compare with the duration.</p>
-    pub fn threshold(&self) -> std::option::Option<&str> {
+    pub fn threshold(&self) -> ::std::option::Option<&str> {
         self.threshold.as_deref()
     }
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
-    pub fn duration(&self) -> std::option::Option<&str> {
+    pub fn duration(&self) -> ::std::option::Option<&str> {
         self.duration.as_deref()
     }
 }
@@ -32,29 +32,31 @@ impl StopInstanceOnIdleRequest {
 
 /// A builder for [`StopInstanceOnIdleRequest`](crate::types::StopInstanceOnIdleRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopInstanceOnIdleRequestBuilder {
-    pub(crate) threshold: std::option::Option<std::string::String>,
-    pub(crate) duration: std::option::Option<std::string::String>,
+    pub(crate) threshold: ::std::option::Option<::std::string::String>,
+    pub(crate) duration: ::std::option::Option<::std::string::String>,
 }
 impl StopInstanceOnIdleRequestBuilder {
     /// <p>The value to compare with the duration.</p>
-    pub fn threshold(mut self, input: impl Into<std::string::String>) -> Self {
-        self.threshold = Some(input.into());
+    pub fn threshold(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.threshold = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to compare with the duration.</p>
-    pub fn set_threshold(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.threshold = input;
         self
     }
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
-    pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
-        self.duration = Some(input.into());
+    pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
-    pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
     }

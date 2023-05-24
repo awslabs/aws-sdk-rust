@@ -2,34 +2,36 @@
 
 /// <p> The associations between a route table and one or more subnets or a gateway. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationSetDetails {
     /// <p> The state of the association between a route table and a subnet or gateway. </p>
     #[doc(hidden)]
-    pub association_state: std::option::Option<crate::types::AssociationStateDetails>,
+    pub association_state: ::std::option::Option<crate::types::AssociationStateDetails>,
     /// <p> The ID of the internet gateway or virtual private gateway. </p>
     #[doc(hidden)]
-    pub gateway_id: std::option::Option<std::string::String>,
+    pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether this is the main route table. </p>
     #[doc(hidden)]
     pub main: bool,
     /// <p> The ID of the association. </p>
     #[doc(hidden)]
-    pub route_table_association_id: std::option::Option<std::string::String>,
+    pub route_table_association_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the route table. </p>
     #[doc(hidden)]
-    pub route_table_id: std::option::Option<std::string::String>,
+    pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the subnet. A subnet ID is not returned for an implicit association. </p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociationSetDetails {
     /// <p> The state of the association between a route table and a subnet or gateway. </p>
-    pub fn association_state(&self) -> std::option::Option<&crate::types::AssociationStateDetails> {
+    pub fn association_state(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AssociationStateDetails> {
         self.association_state.as_ref()
     }
     /// <p> The ID of the internet gateway or virtual private gateway. </p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
     /// <p> Indicates whether this is the main route table. </p>
@@ -37,15 +39,15 @@ impl AssociationSetDetails {
         self.main
     }
     /// <p> The ID of the association. </p>
-    pub fn route_table_association_id(&self) -> std::option::Option<&str> {
+    pub fn route_table_association_id(&self) -> ::std::option::Option<&str> {
         self.route_table_association_id.as_deref()
     }
     /// <p> The ID of the route table. </p>
-    pub fn route_table_id(&self) -> std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
     /// <p> The ID of the subnet. A subnet ID is not returned for an implicit association. </p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
 }
@@ -58,79 +60,90 @@ impl AssociationSetDetails {
 
 /// A builder for [`AssociationSetDetails`](crate::types::AssociationSetDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociationSetDetailsBuilder {
-    pub(crate) association_state: std::option::Option<crate::types::AssociationStateDetails>,
-    pub(crate) gateway_id: std::option::Option<std::string::String>,
-    pub(crate) main: std::option::Option<bool>,
-    pub(crate) route_table_association_id: std::option::Option<std::string::String>,
-    pub(crate) route_table_id: std::option::Option<std::string::String>,
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
+    pub(crate) association_state: ::std::option::Option<crate::types::AssociationStateDetails>,
+    pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) main: ::std::option::Option<bool>,
+    pub(crate) route_table_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociationSetDetailsBuilder {
     /// <p> The state of the association between a route table and a subnet or gateway. </p>
     pub fn association_state(mut self, input: crate::types::AssociationStateDetails) -> Self {
-        self.association_state = Some(input);
+        self.association_state = ::std::option::Option::Some(input);
         self
     }
     /// <p> The state of the association between a route table and a subnet or gateway. </p>
     pub fn set_association_state(
         mut self,
-        input: std::option::Option<crate::types::AssociationStateDetails>,
+        input: ::std::option::Option<crate::types::AssociationStateDetails>,
     ) -> Self {
         self.association_state = input;
         self
     }
     /// <p> The ID of the internet gateway or virtual private gateway. </p>
-    pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_id = Some(input.into());
+    pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the internet gateway or virtual private gateway. </p>
-    pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
     }
     /// <p> Indicates whether this is the main route table. </p>
     pub fn main(mut self, input: bool) -> Self {
-        self.main = Some(input);
+        self.main = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether this is the main route table. </p>
-    pub fn set_main(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_main(mut self, input: ::std::option::Option<bool>) -> Self {
         self.main = input;
         self
     }
     /// <p> The ID of the association. </p>
-    pub fn route_table_association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.route_table_association_id = Some(input.into());
+    pub fn route_table_association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.route_table_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the association. </p>
     pub fn set_route_table_association_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.route_table_association_id = input;
         self
     }
     /// <p> The ID of the route table. </p>
-    pub fn route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.route_table_id = Some(input.into());
+    pub fn route_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the route table. </p>
-    pub fn set_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_route_table_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.route_table_id = input;
         self
     }
     /// <p> The ID of the subnet. A subnet ID is not returned for an implicit association. </p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the subnet. A subnet ID is not returned for an implicit association. </p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }

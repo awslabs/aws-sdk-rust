@@ -2,11 +2,11 @@
 
 /// <p>Details about a package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageDescription {
     /// <p>A format that specifies the type of the package.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::PackageFormat>,
+    pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
     /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
@@ -15,17 +15,17 @@ pub struct PackageDescription {
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the package.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The package origin configuration for the package.</p>
     #[doc(hidden)]
-    pub origin_configuration: std::option::Option<crate::types::PackageOriginConfiguration>,
+    pub origin_configuration: ::std::option::Option<crate::types::PackageOriginConfiguration>,
 }
 impl PackageDescription {
     /// <p>A format that specifies the type of the package.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
@@ -35,17 +35,17 @@ impl PackageDescription {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The package origin configuration for the package.</p>
     pub fn origin_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::PackageOriginConfiguration> {
+    ) -> ::std::option::Option<&crate::types::PackageOriginConfiguration> {
         self.origin_configuration.as_ref()
     }
 }
@@ -58,21 +58,24 @@ impl PackageDescription {
 
 /// A builder for [`PackageDescription`](crate::types::PackageDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PackageDescriptionBuilder {
-    pub(crate) format: std::option::Option<crate::types::PackageFormat>,
-    pub(crate) namespace: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) origin_configuration: std::option::Option<crate::types::PackageOriginConfiguration>,
+    pub(crate) format: ::std::option::Option<crate::types::PackageFormat>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) origin_configuration:
+        ::std::option::Option<crate::types::PackageOriginConfiguration>,
 }
 impl PackageDescriptionBuilder {
     /// <p>A format that specifies the type of the package.</p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>A format that specifies the type of the package.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.format = input;
         self
     }
@@ -83,8 +86,8 @@ impl PackageDescriptionBuilder {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
@@ -94,29 +97,29 @@ impl PackageDescriptionBuilder {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
     /// <p>The name of the package.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the package.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The package origin configuration for the package.</p>
     pub fn origin_configuration(mut self, input: crate::types::PackageOriginConfiguration) -> Self {
-        self.origin_configuration = Some(input);
+        self.origin_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The package origin configuration for the package.</p>
     pub fn set_origin_configuration(
         mut self,
-        input: std::option::Option<crate::types::PackageOriginConfiguration>,
+        input: ::std::option::Option<crate::types::PackageOriginConfiguration>,
     ) -> Self {
         self.origin_configuration = input;
         self

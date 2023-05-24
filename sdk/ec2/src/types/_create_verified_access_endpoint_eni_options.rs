@@ -2,29 +2,29 @@
 
 /// <p>Describes the network interface options when creating an Amazon Web Services Verified Access endpoint using the <code>network-interface</code> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointEniOptions {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
-    pub network_interface_id: std::option::Option<std::string::String>,
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP protocol.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
+    pub protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     /// <p>The IP port number.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
 }
 impl CreateVerifiedAccessEndpointEniOptions {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The IP protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The IP port number.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
 }
@@ -37,46 +37,51 @@ impl CreateVerifiedAccessEndpointEniOptions {
 
 /// A builder for [`CreateVerifiedAccessEndpointEniOptions`](crate::types::CreateVerifiedAccessEndpointEniOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVerifiedAccessEndpointEniOptionsBuilder {
-    pub(crate) network_interface_id: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
-    pub(crate) port: std::option::Option<i32>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
+    pub(crate) port: ::std::option::Option<i32>,
 }
 impl CreateVerifiedAccessEndpointEniOptionsBuilder {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_interface_id = Some(input.into());
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_interface_id = input;
         self
     }
     /// <p>The IP protocol.</p>
     pub fn protocol(mut self, input: crate::types::VerifiedAccessEndpointProtocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP protocol.</p>
     pub fn set_protocol(
         mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
+        input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     ) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The IP port number.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP port number.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }

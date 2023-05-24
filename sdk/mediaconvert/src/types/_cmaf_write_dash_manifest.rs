@@ -38,13 +38,13 @@
 /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmafWriteDashManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmafWriteDashManifest {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmafWriteDashManifest {
+impl ::std::convert::From<&str> for CmafWriteDashManifest {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => CmafWriteDashManifest::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmafWriteDashManifest {
         }
     }
 }
-impl std::str::FromStr for CmafWriteDashManifest {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmafWriteDashManifest {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafWriteDashManifest::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmafWriteDashManifest::from(s))
     }
 }
 impl CmafWriteDashManifest {
@@ -86,7 +86,7 @@ impl CmafWriteDashManifest {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for CmafWriteDashManifest {
+impl ::std::convert::AsRef<str> for CmafWriteDashManifest {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -6,29 +6,29 @@ pub use crate::operation::create_job_for_devices::_create_job_for_devices_input:
 /// Fluent builder constructing a request to `CreateJobForDevices`.
 ///
 /// <p>Creates a job to run on a device. A job can update a device's software or reboot it.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobForDevicesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder,
 }
 impl CreateJobForDevicesFluentBuilder {
     /// Creates a new `CreateJobForDevices`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_job_for_devices::CreateJobForDevices,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_job_for_devices::CreateJobForDevicesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateJobForDevicesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_job_for_devices::CreateJobForDevicesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_job_for_devices::CreateJobForDevicesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl CreateJobForDevicesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_job_for_devices::CreateJobForDevicesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_job_for_devices::CreateJobForDevicesError,
         >,
     > {
@@ -85,14 +88,14 @@ impl CreateJobForDevicesFluentBuilder {
     /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
     ///
     /// <p>ID of target device.</p>
-    pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_ids(input.into());
         self
     }
     /// <p>ID of target device.</p>
     pub fn set_device_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_device_ids(input);
         self
@@ -105,7 +108,7 @@ impl CreateJobForDevicesFluentBuilder {
     /// <p>Configuration settings for a software update job.</p>
     pub fn set_device_job_config(
         mut self,
-        input: std::option::Option<crate::types::DeviceJobConfig>,
+        input: ::std::option::Option<crate::types::DeviceJobConfig>,
     ) -> Self {
         self.inner = self.inner.set_device_job_config(input);
         self
@@ -116,7 +119,7 @@ impl CreateJobForDevicesFluentBuilder {
         self
     }
     /// <p>The type of job to run.</p>
-    pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
         self
     }

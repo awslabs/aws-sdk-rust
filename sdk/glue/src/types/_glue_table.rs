@@ -2,44 +2,45 @@
 
 /// <p>The database and table in the Glue Data Catalog that is used for input or output data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueTable {
     /// <p>A database name in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A table name in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub catalog_id: std::option::Option<std::string::String>,
+    pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection to the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub connection_name: std::option::Option<std::string::String>,
+    pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>Additional options for the table. Currently there are two keys supported:</p>
     /// <ul>
     /// <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li>
     /// <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub additional_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl GlueTable {
     /// <p>A database name in the Glue Data Catalog.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>A table name in the Glue Data Catalog.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>A unique identifier for the Glue Data Catalog.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the connection to the Glue Data Catalog.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
     }
     /// <p>Additional options for the table. Currently there are two keys supported:</p>
@@ -49,8 +50,9 @@ impl GlueTable {
     /// </ul>
     pub fn additional_options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.additional_options.as_ref()
     }
 }
@@ -63,53 +65,68 @@ impl GlueTable {
 
 /// A builder for [`GlueTable`](crate::types::GlueTable).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlueTableBuilder {
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) catalog_id: std::option::Option<std::string::String>,
-    pub(crate) connection_name: std::option::Option<std::string::String>,
-    pub(crate) additional_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl GlueTableBuilder {
     /// <p>A database name in the Glue Data Catalog.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A database name in the Glue Data Catalog.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
     /// <p>A table name in the Glue Data Catalog.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A table name in the Glue Data Catalog.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>A unique identifier for the Glue Data Catalog.</p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog_id = Some(input.into());
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the Glue Data Catalog.</p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
     }
     /// <p>The name of the connection to the Glue Data Catalog.</p>
-    pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_name = Some(input.into());
+    pub fn connection_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection to the Glue Data Catalog.</p>
-    pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_name = input;
         self
     }
@@ -124,12 +141,12 @@ impl GlueTableBuilder {
     /// </ul>
     pub fn additional_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.additional_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.additional_options = Some(hash_map);
+        self.additional_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Additional options for the table. Currently there are two keys supported:</p>
@@ -139,8 +156,8 @@ impl GlueTableBuilder {
     /// </ul>
     pub fn set_additional_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.additional_options = input;

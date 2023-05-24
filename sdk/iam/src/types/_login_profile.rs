@@ -3,25 +3,25 @@
 /// <p>Contains the user name and password create date for a user.</p>
 /// <p> This data type is used as a response element in the <code>CreateLoginProfile</code> and <code>GetLoginProfile</code> operations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoginProfile {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the password for the user was created.</p>
     #[doc(hidden)]
-    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     #[doc(hidden)]
     pub password_reset_required: bool,
 }
 impl LoginProfile {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The date when the password for the user was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
@@ -38,43 +38,45 @@ impl LoginProfile {
 
 /// A builder for [`LoginProfile`](crate::types::LoginProfile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoginProfileBuilder {
-    pub(crate) user_name: std::option::Option<std::string::String>,
-    pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) password_reset_required: std::option::Option<bool>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) password_reset_required: ::std::option::Option<bool>,
 }
 impl LoginProfileBuilder {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>The date when the password for the user was created.</p>
-    pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_date = Some(input);
+    pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the password for the user was created.</p>
     pub fn set_create_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_date = input;
         self
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub fn password_reset_required(mut self, input: bool) -> Self {
-        self.password_reset_required = Some(input);
+        self.password_reset_required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
-    pub fn set_password_reset_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_password_reset_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.password_reset_required = input;
         self
     }

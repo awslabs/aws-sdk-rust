@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRule`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::set_name): <p>The name of the rule.</p>
-    ///   - [`event_bus_name(impl Into<String>)`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::set_event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::set_name): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(impl ::std::convert::Into<String>)`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::operation::describe_rule::builders::DescribeRuleFluentBuilder::set_event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     /// - On success, responds with [`DescribeRuleOutput`](crate::operation::describe_rule::DescribeRuleOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_rule::DescribeRuleOutput::name): <p>The name of the rule.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_rule::DescribeRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the rule.</p>

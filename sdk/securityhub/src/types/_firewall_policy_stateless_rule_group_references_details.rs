@@ -2,14 +2,14 @@
 
 /// <p>A stateless rule group that is used by the firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatelessRuleGroupReferencesDetails {
     /// <p>The order in which to run the stateless rule group.</p>
     #[doc(hidden)]
     pub priority: i32,
     /// <p>The ARN of the stateless rule group.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatelessRuleGroupReferencesDetails {
     /// <p>The order in which to run the stateless rule group.</p>
@@ -17,7 +17,7 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetails {
         self.priority
     }
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl FirewallPolicyStatelessRuleGroupReferencesDetails {
 
 /// A builder for [`FirewallPolicyStatelessRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatelessRuleGroupReferencesDetailsBuilder {
     /// <p>The order in which to run the stateless rule group.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order in which to run the stateless rule group.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the stateless rule group.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }

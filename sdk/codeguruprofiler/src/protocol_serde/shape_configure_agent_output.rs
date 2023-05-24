@@ -2,7 +2,7 @@
 pub(crate) fn de_configuration_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::AgentConfiguration>,
+    ::std::option::Option<crate::types::AgentConfiguration>,
     crate::operation::configure_agent::ConfigureAgentError,
 > {
     (!body.is_empty())

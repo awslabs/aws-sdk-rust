@@ -38,13 +38,13 @@
 /// Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InputPsiControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum InputPsiControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InputPsiControl {
+impl ::std::convert::From<&str> for InputPsiControl {
     fn from(s: &str) -> Self {
         match s {
             "IGNORE_PSI" => InputPsiControl::IgnorePsi,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for InputPsiControl {
         }
     }
 }
-impl std::str::FromStr for InputPsiControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InputPsiControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InputPsiControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InputPsiControl::from(s))
     }
 }
 impl InputPsiControl {
@@ -86,7 +86,7 @@ impl InputPsiControl {
         &["IGNORE_PSI", "USE_PSI"]
     }
 }
-impl AsRef<str> for InputPsiControl {
+impl ::std::convert::AsRef<str> for InputPsiControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

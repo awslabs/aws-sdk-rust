@@ -2,34 +2,34 @@
 
 /// <p>Represents the request to list the devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListDevicesInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The limit of the device request.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    pub limit: ::std::option::Option<i32>,
     /// <p>The pagination token for the list request.</p>
     #[doc(hidden)]
-    pub pagination_token: std::option::Option<std::string::String>,
+    pub pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicesInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>The limit of the device request.</p>
-    pub fn limit(&self) -> std::option::Option<i32> {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>The pagination token for the list request.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListDevicesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ListDevicesInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("limit", &self.limit);
@@ -46,59 +46,65 @@ impl ListDevicesInput {
 
 /// A builder for [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ListDevicesInputBuilder {
-    pub(crate) access_token: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<i32>,
-    pub(crate) pagination_token: std::option::Option<std::string::String>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicesInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
     /// <p>The limit of the device request.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit of the device request.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// <p>The pagination token for the list request.</p>
-    pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pagination_token = Some(input.into());
+    pub fn pagination_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token for the list request.</p>
-    pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pagination_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pagination_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_devices::ListDevicesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_devices::ListDevicesInput {
+        ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesInput {
             access_token: self.access_token,
             limit: self.limit,
             pagination_token: self.pagination_token,
         })
     }
 }
-impl std::fmt::Debug for ListDevicesInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ListDevicesInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ListDevicesInputBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("limit", &self.limit);

@@ -2,50 +2,52 @@
 
 /// <p>A configured table analysis rule, which limits how data for this table can be used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfiguredTableAnalysisRule {
     /// <p>The unique ID for the configured table.</p>
     #[doc(hidden)]
-    pub configured_table_id: std::option::Option<std::string::String>,
+    pub configured_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the configured table.</p>
     #[doc(hidden)]
-    pub configured_table_arn: std::option::Option<std::string::String>,
+    pub configured_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The policy that controls SQL query rules.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
+    pub policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
+    pub r#type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
     /// <p>The time the configured table analysis rule was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the configured table analysis rule was last updated.</p>
     #[doc(hidden)]
-    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfiguredTableAnalysisRule {
     /// <p>The unique ID for the configured table.</p>
-    pub fn configured_table_id(&self) -> std::option::Option<&str> {
+    pub fn configured_table_id(&self) -> ::std::option::Option<&str> {
         self.configured_table_id.as_deref()
     }
     /// <p>The unique ARN for the configured table.</p>
-    pub fn configured_table_arn(&self) -> std::option::Option<&str> {
+    pub fn configured_table_arn(&self) -> ::std::option::Option<&str> {
         self.configured_table_arn.as_deref()
     }
     /// <p>The policy that controls SQL query rules.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::types::ConfiguredTableAnalysisRulePolicy> {
+    pub fn policy(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRulePolicy> {
         self.policy.as_ref()
     }
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ConfiguredTableAnalysisRuleType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAnalysisRuleType> {
         self.r#type.as_ref()
     }
     /// <p>The time the configured table analysis rule was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the configured table analysis rule was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -58,90 +60,98 @@ impl ConfiguredTableAnalysisRule {
 
 /// A builder for [`ConfiguredTableAnalysisRule`](crate::types::ConfiguredTableAnalysisRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfiguredTableAnalysisRuleBuilder {
-    pub(crate) configured_table_id: std::option::Option<std::string::String>,
-    pub(crate) configured_table_arn: std::option::Option<std::string::String>,
-    pub(crate) policy: std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
-    pub(crate) r#type: std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) configured_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) configured_table_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfiguredTableAnalysisRuleBuilder {
     /// <p>The unique ID for the configured table.</p>
-    pub fn configured_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configured_table_id = Some(input.into());
+    pub fn configured_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configured_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the configured table.</p>
     pub fn set_configured_table_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configured_table_id = input;
         self
     }
     /// <p>The unique ARN for the configured table.</p>
-    pub fn configured_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configured_table_arn = Some(input.into());
+    pub fn configured_table_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configured_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the configured table.</p>
     pub fn set_configured_table_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configured_table_arn = input;
         self
     }
     /// <p>The policy that controls SQL query rules.</p>
     pub fn policy(mut self, input: crate::types::ConfiguredTableAnalysisRulePolicy) -> Self {
-        self.policy = Some(input);
+        self.policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policy that controls SQL query rules.</p>
     pub fn set_policy(
         mut self,
-        input: std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
+        input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRulePolicy>,
     ) -> Self {
         self.policy = input;
         self
     }
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
     pub fn r#type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of configured table analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
+        input: ::std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The time the configured table analysis rule was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the configured table analysis rule was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The time the configured table analysis rule was last updated.</p>
-    pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_time = Some(input);
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the configured table analysis rule was last updated.</p>
     pub fn set_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_time = input;
         self

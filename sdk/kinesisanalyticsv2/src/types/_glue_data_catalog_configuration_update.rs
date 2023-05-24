@@ -2,15 +2,15 @@
 
 /// <p>Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     #[doc(hidden)]
-    pub database_arn_update: std::option::Option<std::string::String>,
+    pub database_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn_update(&self) -> std::option::Option<&str> {
+    pub fn database_arn_update(&self) -> ::std::option::Option<&str> {
         self.database_arn_update.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl GlueDataCatalogConfigurationUpdate {
 
 /// A builder for [`GlueDataCatalogConfigurationUpdate`](crate::types::GlueDataCatalogConfigurationUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlueDataCatalogConfigurationUpdateBuilder {
-    pub(crate) database_arn_update: std::option::Option<std::string::String>,
+    pub(crate) database_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl GlueDataCatalogConfigurationUpdateBuilder {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_arn_update = Some(input.into());
+    pub fn database_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     pub fn set_database_arn_update(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.database_arn_update = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Describes a group of files that can be streamed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stream {
     /// <p>The stream ID.</p>
     #[doc(hidden)]
-    pub stream_id: std::option::Option<std::string::String>,
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a file associated with a stream.</p>
     #[doc(hidden)]
-    pub file_id: std::option::Option<i32>,
+    pub file_id: ::std::option::Option<i32>,
 }
 impl Stream {
     /// <p>The stream ID.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
         self.stream_id.as_deref()
     }
     /// <p>The ID of a file associated with a stream.</p>
-    pub fn file_id(&self) -> std::option::Option<i32> {
+    pub fn file_id(&self) -> ::std::option::Option<i32> {
         self.file_id
     }
 }
@@ -30,29 +30,31 @@ impl Stream {
 
 /// A builder for [`Stream`](crate::types::Stream).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamBuilder {
-    pub(crate) stream_id: std::option::Option<std::string::String>,
-    pub(crate) file_id: std::option::Option<i32>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
+    pub(crate) file_id: ::std::option::Option<i32>,
 }
 impl StreamBuilder {
     /// <p>The stream ID.</p>
-    pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_id = Some(input.into());
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stream ID.</p>
-    pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_id = input;
         self
     }
     /// <p>The ID of a file associated with a stream.</p>
     pub fn file_id(mut self, input: i32) -> Self {
-        self.file_id = Some(input);
+        self.file_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of a file associated with a stream.</p>
-    pub fn set_file_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_file_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.file_id = input;
         self
     }

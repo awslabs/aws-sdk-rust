@@ -2,42 +2,42 @@
 
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmValidationParameters {
     /// <p>The location of the validation script.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::Source>,
+    pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of validation script.</p>
     #[doc(hidden)]
-    pub script_type: std::option::Option<crate::types::ScriptType>,
+    pub script_type: ::std::option::Option<crate::types::ScriptType>,
     /// <p>The command to run the validation script.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<std::string::String>,
+    pub command: ::std::option::Option<::std::string::String>,
     /// <p>The timeout interval, in seconds.</p>
     #[doc(hidden)]
     pub execution_timeout_seconds: i32,
     /// <p>The name of the S3 bucket for output.</p>
     #[doc(hidden)]
-    pub output_s3_bucket_name: std::option::Option<std::string::String>,
+    pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl SsmValidationParameters {
     /// <p>The location of the validation script.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The type of validation script.</p>
-    pub fn script_type(&self) -> std::option::Option<&crate::types::ScriptType> {
+    pub fn script_type(&self) -> ::std::option::Option<&crate::types::ScriptType> {
         self.script_type.as_ref()
     }
     /// <p>The command to run the validation script.</p>
-    pub fn command(&self) -> std::option::Option<&str> {
+    pub fn command(&self) -> ::std::option::Option<&str> {
         self.command.as_deref()
     }
     /// <p>The timeout interval, in seconds.</p>
@@ -45,7 +45,7 @@ impl SsmValidationParameters {
         self.execution_timeout_seconds
     }
     /// <p>The name of the S3 bucket for output.</p>
-    pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.output_s3_bucket_name.as_deref()
     }
 }
@@ -58,75 +58,83 @@ impl SsmValidationParameters {
 
 /// A builder for [`SsmValidationParameters`](crate::types::SsmValidationParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SsmValidationParametersBuilder {
-    pub(crate) source: std::option::Option<crate::types::Source>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) script_type: std::option::Option<crate::types::ScriptType>,
-    pub(crate) command: std::option::Option<std::string::String>,
-    pub(crate) execution_timeout_seconds: std::option::Option<i32>,
-    pub(crate) output_s3_bucket_name: std::option::Option<std::string::String>,
+    pub(crate) source: ::std::option::Option<crate::types::Source>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) script_type: ::std::option::Option<crate::types::ScriptType>,
+    pub(crate) command: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_timeout_seconds: ::std::option::Option<i32>,
+    pub(crate) output_s3_bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl SsmValidationParametersBuilder {
     /// <p>The location of the validation script.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the validation script.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
     }
     /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance. The instance must have the following tag: UserForSMSApplicationValidation=true.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The type of validation script.</p>
     pub fn script_type(mut self, input: crate::types::ScriptType) -> Self {
-        self.script_type = Some(input);
+        self.script_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of validation script.</p>
-    pub fn set_script_type(mut self, input: std::option::Option<crate::types::ScriptType>) -> Self {
+    pub fn set_script_type(
+        mut self,
+        input: ::std::option::Option<crate::types::ScriptType>,
+    ) -> Self {
         self.script_type = input;
         self
     }
     /// <p>The command to run the validation script.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
-        self.command = Some(input.into());
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.command = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command to run the validation script.</p>
-    pub fn set_command(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.command = input;
         self
     }
     /// <p>The timeout interval, in seconds.</p>
     pub fn execution_timeout_seconds(mut self, input: i32) -> Self {
-        self.execution_timeout_seconds = Some(input);
+        self.execution_timeout_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timeout interval, in seconds.</p>
-    pub fn set_execution_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_execution_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execution_timeout_seconds = input;
         self
     }
     /// <p>The name of the S3 bucket for output.</p>
-    pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_bucket_name = Some(input.into());
+    pub fn output_s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket for output.</p>
     pub fn set_output_s3_bucket_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.output_s3_bucket_name = input;
         self

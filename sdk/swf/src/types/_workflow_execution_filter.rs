@@ -2,15 +2,15 @@
 
 /// <p>Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    pub workflow_id: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl WorkflowExecutionFilter {
 
 /// A builder for [`WorkflowExecutionFilter`](crate::types::WorkflowExecutionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkflowExecutionFilterBuilder {
-    pub(crate) workflow_id: std::option::Option<std::string::String>,
+    pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionFilterBuilder {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
-    pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workflow_id = Some(input.into());
+    pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
-    pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
     }

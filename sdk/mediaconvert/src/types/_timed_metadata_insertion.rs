@@ -2,15 +2,15 @@
 
 /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimedMetadataInsertion {
     /// Id3Insertions contains the array of Id3Insertion instances.
     #[doc(hidden)]
-    pub id3_insertions: std::option::Option<std::vec::Vec<crate::types::Id3Insertion>>,
+    pub id3_insertions: ::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>>,
 }
 impl TimedMetadataInsertion {
     /// Id3Insertions contains the array of Id3Insertion instances.
-    pub fn id3_insertions(&self) -> std::option::Option<&[crate::types::Id3Insertion]> {
+    pub fn id3_insertions(&self) -> ::std::option::Option<&[crate::types::Id3Insertion]> {
         self.id3_insertions.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl TimedMetadataInsertion {
 
 /// A builder for [`TimedMetadataInsertion`](crate::types::TimedMetadataInsertion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimedMetadataInsertionBuilder {
-    pub(crate) id3_insertions: std::option::Option<std::vec::Vec<crate::types::Id3Insertion>>,
+    pub(crate) id3_insertions: ::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>>,
 }
 impl TimedMetadataInsertionBuilder {
     /// Appends an item to `id3_insertions`.
@@ -36,13 +38,13 @@ impl TimedMetadataInsertionBuilder {
     pub fn id3_insertions(mut self, input: crate::types::Id3Insertion) -> Self {
         let mut v = self.id3_insertions.unwrap_or_default();
         v.push(input);
-        self.id3_insertions = Some(v);
+        self.id3_insertions = ::std::option::Option::Some(v);
         self
     }
     /// Id3Insertions contains the array of Id3Insertion instances.
     pub fn set_id3_insertions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Id3Insertion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Id3Insertion>>,
     ) -> Self {
         self.id3_insertions = input;
         self

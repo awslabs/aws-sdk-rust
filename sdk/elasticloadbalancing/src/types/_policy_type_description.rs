@@ -2,32 +2,32 @@
 
 /// <p>Information about a policy type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyTypeDescription {
     /// <p>The name of the policy type.</p>
     #[doc(hidden)]
-    pub policy_type_name: std::option::Option<std::string::String>,
+    pub policy_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy type.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     #[doc(hidden)]
     pub policy_attribute_type_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
 }
 impl PolicyTypeDescription {
     /// <p>The name of the policy type.</p>
-    pub fn policy_type_name(&self) -> std::option::Option<&str> {
+    pub fn policy_type_name(&self) -> ::std::option::Option<&str> {
         self.policy_type_name.as_deref()
     }
     /// <p>A description of the policy type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     pub fn policy_attribute_type_descriptions(
         &self,
-    ) -> std::option::Option<&[crate::types::PolicyAttributeTypeDescription]> {
+    ) -> ::std::option::Option<&[crate::types::PolicyAttributeTypeDescription]> {
         self.policy_attribute_type_descriptions.as_deref()
     }
 }
@@ -40,31 +40,39 @@ impl PolicyTypeDescription {
 
 /// A builder for [`PolicyTypeDescription`](crate::types::PolicyTypeDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyTypeDescriptionBuilder {
-    pub(crate) policy_type_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) policy_type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) policy_attribute_type_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
 }
 impl PolicyTypeDescriptionBuilder {
     /// <p>The name of the policy type.</p>
-    pub fn policy_type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_type_name = Some(input.into());
+    pub fn policy_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy type.</p>
-    pub fn set_policy_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_type_name = input;
         self
     }
     /// <p>A description of the policy type.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the policy type.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -79,13 +87,13 @@ impl PolicyTypeDescriptionBuilder {
     ) -> Self {
         let mut v = self.policy_attribute_type_descriptions.unwrap_or_default();
         v.push(input);
-        self.policy_attribute_type_descriptions = Some(v);
+        self.policy_attribute_type_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The description of the policy attributes associated with the policies defined by Elastic Load Balancing.</p>
     pub fn set_policy_attribute_type_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttributeTypeDescription>>,
     ) -> Self {
         self.policy_attribute_type_descriptions = input;
         self

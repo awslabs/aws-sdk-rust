@@ -2,22 +2,24 @@
 
 /// <p>Input configuration information for a labeling job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobInputConfig {
     /// <p>The location of the input data.</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<crate::types::LabelingJobDataSource>,
+    pub data_source: ::std::option::Option<crate::types::LabelingJobDataSource>,
     /// <p>Attributes of the data specified by the customer.</p>
     #[doc(hidden)]
-    pub data_attributes: std::option::Option<crate::types::LabelingJobDataAttributes>,
+    pub data_attributes: ::std::option::Option<crate::types::LabelingJobDataAttributes>,
 }
 impl LabelingJobInputConfig {
     /// <p>The location of the input data.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::LabelingJobDataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<&crate::types::LabelingJobDataSource> {
         self.data_source.as_ref()
     }
     /// <p>Attributes of the data specified by the customer.</p>
-    pub fn data_attributes(&self) -> std::option::Option<&crate::types::LabelingJobDataAttributes> {
+    pub fn data_attributes(
+        &self,
+    ) -> ::std::option::Option<&crate::types::LabelingJobDataAttributes> {
         self.data_attributes.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl LabelingJobInputConfig {
 
 /// A builder for [`LabelingJobInputConfig`](crate::types::LabelingJobInputConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelingJobInputConfigBuilder {
-    pub(crate) data_source: std::option::Option<crate::types::LabelingJobDataSource>,
-    pub(crate) data_attributes: std::option::Option<crate::types::LabelingJobDataAttributes>,
+    pub(crate) data_source: ::std::option::Option<crate::types::LabelingJobDataSource>,
+    pub(crate) data_attributes: ::std::option::Option<crate::types::LabelingJobDataAttributes>,
 }
 impl LabelingJobInputConfigBuilder {
     /// <p>The location of the input data.</p>
     pub fn data_source(mut self, input: crate::types::LabelingJobDataSource) -> Self {
-        self.data_source = Some(input);
+        self.data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the input data.</p>
     pub fn set_data_source(
         mut self,
-        input: std::option::Option<crate::types::LabelingJobDataSource>,
+        input: ::std::option::Option<crate::types::LabelingJobDataSource>,
     ) -> Self {
         self.data_source = input;
         self
     }
     /// <p>Attributes of the data specified by the customer.</p>
     pub fn data_attributes(mut self, input: crate::types::LabelingJobDataAttributes) -> Self {
-        self.data_attributes = Some(input);
+        self.data_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Attributes of the data specified by the customer.</p>
     pub fn set_data_attributes(
         mut self,
-        input: std::option::Option<crate::types::LabelingJobDataAttributes>,
+        input: ::std::option::Option<crate::types::LabelingJobDataAttributes>,
     ) -> Self {
         self.data_attributes = input;
         self

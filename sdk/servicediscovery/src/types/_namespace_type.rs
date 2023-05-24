@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NamespaceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum NamespaceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NamespaceType {
+impl ::std::convert::From<&str> for NamespaceType {
     fn from(s: &str) -> Self {
         match s {
             "DNS_PRIVATE" => NamespaceType::DnsPrivate,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for NamespaceType {
         }
     }
 }
-impl std::str::FromStr for NamespaceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NamespaceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NamespaceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NamespaceType::from(s))
     }
 }
 impl NamespaceType {
@@ -91,7 +91,7 @@ impl NamespaceType {
         &["DNS_PRIVATE", "DNS_PUBLIC", "HTTP"]
     }
 }
-impl AsRef<str> for NamespaceType {
+impl ::std::convert::AsRef<str> for NamespaceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

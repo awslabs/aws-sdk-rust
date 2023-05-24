@@ -2,29 +2,29 @@
 
 /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesIdentifiers {
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<crate::types::DataSource>,
+    pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>Defines the fields of a dataset.</p>
     #[doc(hidden)]
-    pub schema: std::option::Option<crate::types::Schema>,
+    pub schema: ::std::option::Option<crate::types::Schema>,
     /// <p>The format of the data, either CSV or PARQUET.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
+    pub format: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesIdentifiers {
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>Defines the fields of a dataset.</p>
-    pub fn schema(&self) -> std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
         self.schema.as_ref()
     }
     /// <p>The format of the data, either CSV or PARQUET.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
 }
@@ -37,40 +37,45 @@ impl TimeSeriesIdentifiers {
 
 /// A builder for [`TimeSeriesIdentifiers`](crate::types::TimeSeriesIdentifiers).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeSeriesIdentifiersBuilder {
-    pub(crate) data_source: std::option::Option<crate::types::DataSource>,
-    pub(crate) schema: std::option::Option<crate::types::Schema>,
-    pub(crate) format: std::option::Option<std::string::String>,
+    pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
+    pub(crate) schema: ::std::option::Option<crate::types::Schema>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesIdentifiersBuilder {
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
-        self.data_source = Some(input);
+        self.data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
+    pub fn set_data_source(
+        mut self,
+        input: ::std::option::Option<crate::types::DataSource>,
+    ) -> Self {
         self.data_source = input;
         self
     }
     /// <p>Defines the fields of a dataset.</p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
-        self.schema = Some(input);
+        self.schema = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the fields of a dataset.</p>
-    pub fn set_schema(mut self, input: std::option::Option<crate::types::Schema>) -> Self {
+    pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.schema = input;
         self
     }
     /// <p>The format of the data, either CSV or PARQUET.</p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.format = Some(input.into());
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the data, either CSV or PARQUET.</p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }

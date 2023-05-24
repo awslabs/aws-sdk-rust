@@ -2,85 +2,85 @@
 
 /// You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Queue {
     /// An identifier for this resource that is unique within all of AWS.
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// The timestamp in epoch seconds for when you created the queue.
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// An optional description that you create for each queue.
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// The timestamp in epoch seconds for when you most recently updated the queue.
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// A name that you create for each queue. Each name must be unique within your account.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
     #[doc(hidden)]
-    pub pricing_plan: std::option::Option<crate::types::PricingPlan>,
+    pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// The estimated number of jobs with a PROGRESSING status.
     #[doc(hidden)]
-    pub progressing_jobs_count: std::option::Option<i32>,
+    pub progressing_jobs_count: ::std::option::Option<i32>,
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
     #[doc(hidden)]
-    pub reservation_plan: std::option::Option<crate::types::ReservationPlan>,
+    pub reservation_plan: ::std::option::Option<crate::types::ReservationPlan>,
     /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::QueueStatus>,
+    pub status: ::std::option::Option<crate::types::QueueStatus>,
     /// The estimated number of jobs with a SUBMITTED status.
     #[doc(hidden)]
-    pub submitted_jobs_count: std::option::Option<i32>,
+    pub submitted_jobs_count: ::std::option::Option<i32>,
     /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::Type>,
+    pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl Queue {
     /// An identifier for this resource that is unique within all of AWS.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The timestamp in epoch seconds for when you created the queue.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// An optional description that you create for each queue.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The timestamp in epoch seconds for when you most recently updated the queue.
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// A name that you create for each queue. Each name must be unique within your account.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// The estimated number of jobs with a PROGRESSING status.
-    pub fn progressing_jobs_count(&self) -> std::option::Option<i32> {
+    pub fn progressing_jobs_count(&self) -> ::std::option::Option<i32> {
         self.progressing_jobs_count
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
-    pub fn reservation_plan(&self) -> std::option::Option<&crate::types::ReservationPlan> {
+    pub fn reservation_plan(&self) -> ::std::option::Option<&crate::types::ReservationPlan> {
         self.reservation_plan.as_ref()
     }
     /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
-    pub fn status(&self) -> std::option::Option<&crate::types::QueueStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::QueueStatus> {
         self.status.as_ref()
     }
     /// The estimated number of jobs with a SUBMITTED status.
-    pub fn submitted_jobs_count(&self) -> std::option::Option<i32> {
+    pub fn submitted_jobs_count(&self) -> ::std::option::Option<i32> {
         self.submitted_jobs_count
     }
     /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
-    pub fn r#type(&self) -> std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -93,140 +93,142 @@ impl Queue {
 
 /// A builder for [`Queue`](crate::types::Queue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueueBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) pricing_plan: std::option::Option<crate::types::PricingPlan>,
-    pub(crate) progressing_jobs_count: std::option::Option<i32>,
-    pub(crate) reservation_plan: std::option::Option<crate::types::ReservationPlan>,
-    pub(crate) status: std::option::Option<crate::types::QueueStatus>,
-    pub(crate) submitted_jobs_count: std::option::Option<i32>,
-    pub(crate) r#type: std::option::Option<crate::types::Type>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
+    pub(crate) progressing_jobs_count: ::std::option::Option<i32>,
+    pub(crate) reservation_plan: ::std::option::Option<crate::types::ReservationPlan>,
+    pub(crate) status: ::std::option::Option<crate::types::QueueStatus>,
+    pub(crate) submitted_jobs_count: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::Type>,
 }
 impl QueueBuilder {
     /// An identifier for this resource that is unique within all of AWS.
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// An identifier for this resource that is unique within all of AWS.
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// The timestamp in epoch seconds for when you created the queue.
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// The timestamp in epoch seconds for when you created the queue.
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// An optional description that you create for each queue.
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// An optional description that you create for each queue.
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// The timestamp in epoch seconds for when you most recently updated the queue.
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// The timestamp in epoch seconds for when you most recently updated the queue.
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self
     }
     /// A name that you create for each queue. Each name must be unique within your account.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// A name that you create for each queue. Each name must be unique within your account.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
-        self.pricing_plan = Some(input);
+        self.pricing_plan = ::std::option::Option::Some(input);
         self
     }
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
     pub fn set_pricing_plan(
         mut self,
-        input: std::option::Option<crate::types::PricingPlan>,
+        input: ::std::option::Option<crate::types::PricingPlan>,
     ) -> Self {
         self.pricing_plan = input;
         self
     }
     /// The estimated number of jobs with a PROGRESSING status.
     pub fn progressing_jobs_count(mut self, input: i32) -> Self {
-        self.progressing_jobs_count = Some(input);
+        self.progressing_jobs_count = ::std::option::Option::Some(input);
         self
     }
     /// The estimated number of jobs with a PROGRESSING status.
-    pub fn set_progressing_jobs_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_progressing_jobs_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progressing_jobs_count = input;
         self
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
     pub fn reservation_plan(mut self, input: crate::types::ReservationPlan) -> Self {
-        self.reservation_plan = Some(input);
+        self.reservation_plan = ::std::option::Option::Some(input);
         self
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
     pub fn set_reservation_plan(
         mut self,
-        input: std::option::Option<crate::types::ReservationPlan>,
+        input: ::std::option::Option<crate::types::ReservationPlan>,
     ) -> Self {
         self.reservation_plan = input;
         self
     }
     /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin processing jobs in that queue. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
-    pub fn set_status(mut self, input: std::option::Option<crate::types::QueueStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.status = input;
         self
     }
     /// The estimated number of jobs with a SUBMITTED status.
     pub fn submitted_jobs_count(mut self, input: i32) -> Self {
-        self.submitted_jobs_count = Some(input);
+        self.submitted_jobs_count = ::std::option::Option::Some(input);
         self
     }
     /// The estimated number of jobs with a SUBMITTED status.
-    pub fn set_submitted_jobs_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_submitted_jobs_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.submitted_jobs_count = input;
         self
     }
     /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
-    pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
     }

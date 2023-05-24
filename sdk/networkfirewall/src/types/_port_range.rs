@@ -2,7 +2,7 @@
 
 /// <p>A single port range specification. This is used for source and destination port ranges in the stateless rule <code>MatchAttributes</code>, <code>SourcePorts</code>, and <code>DestinationPorts</code> settings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The lower limit of the port range. This must be less than or equal to the <code>ToPort</code> specification. </p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl PortRange {
 
 /// A builder for [`PortRange`](crate::types::PortRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortRangeBuilder {
-    pub(crate) from_port: std::option::Option<i32>,
-    pub(crate) to_port: std::option::Option<i32>,
+    pub(crate) from_port: ::std::option::Option<i32>,
+    pub(crate) to_port: ::std::option::Option<i32>,
 }
 impl PortRangeBuilder {
     /// <p>The lower limit of the port range. This must be less than or equal to the <code>ToPort</code> specification. </p>
     pub fn from_port(mut self, input: i32) -> Self {
-        self.from_port = Some(input);
+        self.from_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lower limit of the port range. This must be less than or equal to the <code>ToPort</code> specification. </p>
-    pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from_port = input;
         self
     }
     /// <p>The upper limit of the port range. This must be greater than or equal to the <code>FromPort</code> specification. </p>
     pub fn to_port(mut self, input: i32) -> Self {
-        self.to_port = Some(input);
+        self.to_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upper limit of the port range. This must be greater than or equal to the <code>FromPort</code> specification. </p>
-    pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
     }

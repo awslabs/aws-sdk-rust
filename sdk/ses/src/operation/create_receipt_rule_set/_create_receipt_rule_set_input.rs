@@ -2,7 +2,7 @@
 
 /// <p>Represents a request to create an empty receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct CreateReceiptRuleSetInput {
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub rule_set_name: std::option::Option<std::string::String>,
+    pub rule_set_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateReceiptRuleSetInput {
     /// <p>The name of the rule set to create. The name must:</p>
@@ -20,7 +20,7 @@ impl CreateReceiptRuleSetInput {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
 }
@@ -34,9 +34,11 @@ impl CreateReceiptRuleSetInput {
 
 /// A builder for [`CreateReceiptRuleSetInput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateReceiptRuleSetInputBuilder {
-    pub(crate) rule_set_name: std::option::Option<std::string::String>,
+    pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateReceiptRuleSetInputBuilder {
     /// <p>The name of the rule set to create. The name must:</p>
@@ -45,8 +47,11 @@ impl CreateReceiptRuleSetInputBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_set_name = Some(input.into());
+    pub fn rule_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule set to create. The name must:</p>
@@ -55,18 +60,21 @@ impl CreateReceiptRuleSetInputBuilder {
     /// <li> <p>Start and end with a letter or number.</p> </li>
     /// <li> <p>Contain less than 64 characters.</p> </li>
     /// </ul>
-    pub fn set_rule_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_set_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_set_name = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateReceiptRuleSetInput`](crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_receipt_rule_set::CreateReceiptRuleSetInput {
                 rule_set_name: self.rule_set_name,
             },

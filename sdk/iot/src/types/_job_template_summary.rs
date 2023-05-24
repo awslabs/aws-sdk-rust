@@ -2,36 +2,36 @@
 
 /// <p>An object that contains information about the job template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobTemplateSummary {
     /// <p>The ARN of the job template.</p>
     #[doc(hidden)]
-    pub job_template_arn: std::option::Option<std::string::String>,
+    pub job_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the job template.</p>
     #[doc(hidden)]
-    pub job_template_id: std::option::Option<std::string::String>,
+    pub job_template_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the job template.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobTemplateSummary {
     /// <p>The ARN of the job template.</p>
-    pub fn job_template_arn(&self) -> std::option::Option<&str> {
+    pub fn job_template_arn(&self) -> ::std::option::Option<&str> {
         self.job_template_arn.as_deref()
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn job_template_id(&self) -> std::option::Option<&str> {
+    pub fn job_template_id(&self) -> ::std::option::Option<&str> {
         self.job_template_id.as_deref()
     }
     /// <p>A description of the job template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -44,53 +44,67 @@ impl JobTemplateSummary {
 
 /// A builder for [`JobTemplateSummary`](crate::types::JobTemplateSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobTemplateSummaryBuilder {
-    pub(crate) job_template_arn: std::option::Option<std::string::String>,
-    pub(crate) job_template_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) job_template_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) job_template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobTemplateSummaryBuilder {
     /// <p>The ARN of the job template.</p>
-    pub fn job_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_template_arn = Some(input.into());
+    pub fn job_template_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.job_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the job template.</p>
-    pub fn set_job_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_template_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.job_template_arn = input;
         self
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn job_template_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_template_id = Some(input.into());
+    pub fn job_template_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.job_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn set_job_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_template_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.job_template_id = input;
         self
     }
     /// <p>A description of the job template.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the job template.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in seconds since the epoch, when the job template was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self

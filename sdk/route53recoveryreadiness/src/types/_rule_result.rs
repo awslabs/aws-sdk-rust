@@ -2,36 +2,36 @@
 
 /// <p>The result of a successful Rule request, with status for an individual rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleResult {
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
     #[doc(hidden)]
-    pub last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_checked_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about the resource's readiness.</p>
     #[doc(hidden)]
-    pub messages: std::option::Option<std::vec::Vec<crate::types::Message>>,
+    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     /// <p>The readiness at rule level.</p>
     #[doc(hidden)]
-    pub readiness: std::option::Option<crate::types::Readiness>,
+    pub readiness: ::std::option::Option<crate::types::Readiness>,
     /// <p>The identifier of the rule.</p>
     #[doc(hidden)]
-    pub rule_id: std::option::Option<std::string::String>,
+    pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl RuleResult {
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
-    pub fn last_checked_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_checked_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_checked_timestamp.as_ref()
     }
     /// <p>Details about the resource's readiness.</p>
-    pub fn messages(&self) -> std::option::Option<&[crate::types::Message]> {
+    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
         self.messages.as_deref()
     }
     /// <p>The readiness at rule level.</p>
-    pub fn readiness(&self) -> std::option::Option<&crate::types::Readiness> {
+    pub fn readiness(&self) -> ::std::option::Option<&crate::types::Readiness> {
         self.readiness.as_ref()
     }
     /// <p>The identifier of the rule.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
         self.rule_id.as_deref()
     }
 }
@@ -44,23 +44,25 @@ impl RuleResult {
 
 /// A builder for [`RuleResult`](crate::types::RuleResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleResultBuilder {
-    pub(crate) last_checked_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) messages: std::option::Option<std::vec::Vec<crate::types::Message>>,
-    pub(crate) readiness: std::option::Option<crate::types::Readiness>,
-    pub(crate) rule_id: std::option::Option<std::string::String>,
+    pub(crate) last_checked_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub(crate) readiness: ::std::option::Option<crate::types::Readiness>,
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
 impl RuleResultBuilder {
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
-    pub fn last_checked_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_checked_timestamp = Some(input);
+    pub fn last_checked_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_checked_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the resource was last checked for readiness, in ISO-8601 format, UTC.</p>
     pub fn set_last_checked_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_checked_timestamp = input;
         self
@@ -73,34 +75,34 @@ impl RuleResultBuilder {
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input);
-        self.messages = Some(v);
+        self.messages = ::std::option::Option::Some(v);
         self
     }
     /// <p>Details about the resource's readiness.</p>
     pub fn set_messages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Message>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     ) -> Self {
         self.messages = input;
         self
     }
     /// <p>The readiness at rule level.</p>
     pub fn readiness(mut self, input: crate::types::Readiness) -> Self {
-        self.readiness = Some(input);
+        self.readiness = ::std::option::Option::Some(input);
         self
     }
     /// <p>The readiness at rule level.</p>
-    pub fn set_readiness(mut self, input: std::option::Option<crate::types::Readiness>) -> Self {
+    pub fn set_readiness(mut self, input: ::std::option::Option<crate::types::Readiness>) -> Self {
         self.readiness = input;
         self
     }
     /// <p>The identifier of the rule.</p>
-    pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_id = Some(input.into());
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the rule.</p>
-    pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
     }

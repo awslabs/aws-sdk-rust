@@ -2,43 +2,43 @@
 
 /// <p>Contains the parameters for SetTaskStatus.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTaskStatusInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
     #[doc(hidden)]
-    pub task_id: std::option::Option<std::string::String>,
+    pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
     #[doc(hidden)]
-    pub task_status: std::option::Option<crate::types::TaskStatus>,
+    pub task_status: ::std::option::Option<crate::types::TaskStatus>,
     /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
     #[doc(hidden)]
-    pub error_id: std::option::Option<std::string::String>,
+    pub error_id: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     #[doc(hidden)]
-    pub error_stack_trace: std::option::Option<std::string::String>,
+    pub error_stack_trace: ::std::option::Option<::std::string::String>,
 }
 impl SetTaskStatusInput {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-    pub fn task_status(&self) -> std::option::Option<&crate::types::TaskStatus> {
+    pub fn task_status(&self) -> ::std::option::Option<&crate::types::TaskStatus> {
         self.task_status.as_ref()
     }
     /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
-    pub fn error_id(&self) -> std::option::Option<&str> {
+    pub fn error_id(&self) -> ::std::option::Option<&str> {
         self.error_id.as_deref()
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_stack_trace(&self) -> std::option::Option<&str> {
+    pub fn error_stack_trace(&self) -> ::std::option::Option<&str> {
         self.error_stack_trace.as_deref()
     }
 }
@@ -51,64 +51,78 @@ impl SetTaskStatusInput {
 
 /// A builder for [`SetTaskStatusInput`](crate::operation::set_task_status::SetTaskStatusInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetTaskStatusInputBuilder {
-    pub(crate) task_id: std::option::Option<std::string::String>,
-    pub(crate) task_status: std::option::Option<crate::types::TaskStatus>,
-    pub(crate) error_id: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) error_stack_trace: std::option::Option<std::string::String>,
+    pub(crate) task_id: ::std::option::Option<::std::string::String>,
+    pub(crate) task_status: ::std::option::Option<crate::types::TaskStatus>,
+    pub(crate) error_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) error_stack_trace: ::std::option::Option<::std::string::String>,
 }
 impl SetTaskStatusInputBuilder {
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_id = Some(input.into());
+    pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <code>PollForTask</code>.</p>
-    pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
     pub fn task_status(mut self, input: crate::types::TaskStatus) -> Self {
-        self.task_status = Some(input);
+        self.task_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
-    pub fn set_task_status(mut self, input: std::option::Option<crate::types::TaskStatus>) -> Self {
+    pub fn set_task_status(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskStatus>,
+    ) -> Self {
         self.task_status = input;
         self
     }
     /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
-    pub fn error_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_id = Some(input.into());
+    pub fn error_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
-    pub fn set_error_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_id = input;
         self
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
-    pub fn error_stack_trace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_stack_trace = Some(input.into());
+    pub fn error_stack_trace(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_stack_trace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>
     pub fn set_error_stack_trace(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.error_stack_trace = input;
         self
@@ -116,11 +130,11 @@ impl SetTaskStatusInputBuilder {
     /// Consumes the builder and constructs a [`SetTaskStatusInput`](crate::operation::set_task_status::SetTaskStatusInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::set_task_status::SetTaskStatusInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::set_task_status::SetTaskStatusInput {
+        ::std::result::Result::Ok(crate::operation::set_task_status::SetTaskStatusInput {
             task_id: self.task_id,
             task_status: self.task_status,
             error_id: self.error_id,

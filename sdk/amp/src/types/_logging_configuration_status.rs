@@ -2,24 +2,24 @@
 
 /// Represents the status of a logging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfigurationStatus {
     /// Status code of the logging configuration.
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::LoggingConfigurationStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>,
     /// The reason for failure if any.
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl LoggingConfigurationStatus {
     /// Status code of the logging configuration.
     pub fn status_code(
         &self,
-    ) -> std::option::Option<&crate::types::LoggingConfigurationStatusCode> {
+    ) -> ::std::option::Option<&crate::types::LoggingConfigurationStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
@@ -32,32 +32,40 @@ impl LoggingConfigurationStatus {
 
 /// A builder for [`LoggingConfigurationStatus`](crate::types::LoggingConfigurationStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingConfigurationStatusBuilder {
-    pub(crate) status_code: std::option::Option<crate::types::LoggingConfigurationStatusCode>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
+    pub(crate) status_code: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl LoggingConfigurationStatusBuilder {
     /// Status code of the logging configuration.
     pub fn status_code(mut self, input: crate::types::LoggingConfigurationStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// Status code of the logging configuration.
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::LoggingConfigurationStatusCode>,
+        input: ::std::option::Option<crate::types::LoggingConfigurationStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// The reason for failure if any.
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// The reason for failure if any.
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }

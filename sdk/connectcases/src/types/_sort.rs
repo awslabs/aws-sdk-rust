@@ -2,22 +2,22 @@
 
 /// <p>A structured set of sort terms.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sort {
     /// <p>Unique identifier of a field.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>A structured set of sort terms</p>
     #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::types::Order>,
+    pub sort_order: ::std::option::Option<crate::types::Order>,
 }
 impl Sort {
     /// <p>Unique identifier of a field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>A structured set of sort terms</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::Order> {
+    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::Order> {
         self.sort_order.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Sort {
 
 /// A builder for [`Sort`](crate::types::Sort).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SortBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) sort_order: std::option::Option<crate::types::Order>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sort_order: ::std::option::Option<crate::types::Order>,
 }
 impl SortBuilder {
     /// <p>Unique identifier of a field.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier of a field.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>A structured set of sort terms</p>
     pub fn sort_order(mut self, input: crate::types::Order) -> Self {
-        self.sort_order = Some(input);
+        self.sort_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structured set of sort terms</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::Order>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
         self.sort_order = input;
         self
     }

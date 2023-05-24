@@ -2,15 +2,15 @@
 
 /// <p>Contains a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation consumes a list of these requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateClientDeviceWithCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateClientDeviceWithCoreDeviceEntry {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AssociateClientDeviceWithCoreDeviceEntry {
 
 /// A builder for [`AssociateClientDeviceWithCoreDeviceEntry`](crate::types::AssociateClientDeviceWithCoreDeviceEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociateClientDeviceWithCoreDeviceEntryBuilder {
-    pub(crate) thing_name: std::option::Option<std::string::String>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociateClientDeviceWithCoreDeviceEntryBuilder {
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IoT thing that represents the client device to associate.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }

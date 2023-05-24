@@ -2,29 +2,29 @@
 
 /// <p>Describes the network card support of the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkCardInfo {
     /// <p>The index of the network card.</p>
     #[doc(hidden)]
-    pub network_card_index: std::option::Option<i32>,
+    pub network_card_index: ::std::option::Option<i32>,
     /// <p>The network performance of the network card.</p>
     #[doc(hidden)]
-    pub network_performance: std::option::Option<std::string::String>,
+    pub network_performance: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of network interfaces for the network card.</p>
     #[doc(hidden)]
-    pub maximum_network_interfaces: std::option::Option<i32>,
+    pub maximum_network_interfaces: ::std::option::Option<i32>,
 }
 impl NetworkCardInfo {
     /// <p>The index of the network card.</p>
-    pub fn network_card_index(&self) -> std::option::Option<i32> {
+    pub fn network_card_index(&self) -> ::std::option::Option<i32> {
         self.network_card_index
     }
     /// <p>The network performance of the network card.</p>
-    pub fn network_performance(&self) -> std::option::Option<&str> {
+    pub fn network_performance(&self) -> ::std::option::Option<&str> {
         self.network_performance.as_deref()
     }
     /// <p>The maximum number of network interfaces for the network card.</p>
-    pub fn maximum_network_interfaces(&self) -> std::option::Option<i32> {
+    pub fn maximum_network_interfaces(&self) -> ::std::option::Option<i32> {
         self.maximum_network_interfaces
     }
 }
@@ -37,43 +37,48 @@ impl NetworkCardInfo {
 
 /// A builder for [`NetworkCardInfo`](crate::types::NetworkCardInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkCardInfoBuilder {
-    pub(crate) network_card_index: std::option::Option<i32>,
-    pub(crate) network_performance: std::option::Option<std::string::String>,
-    pub(crate) maximum_network_interfaces: std::option::Option<i32>,
+    pub(crate) network_card_index: ::std::option::Option<i32>,
+    pub(crate) network_performance: ::std::option::Option<::std::string::String>,
+    pub(crate) maximum_network_interfaces: ::std::option::Option<i32>,
 }
 impl NetworkCardInfoBuilder {
     /// <p>The index of the network card.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
-        self.network_card_index = Some(input);
+        self.network_card_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index of the network card.</p>
-    pub fn set_network_card_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_card_index = input;
         self
     }
     /// <p>The network performance of the network card.</p>
-    pub fn network_performance(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_performance = Some(input.into());
+    pub fn network_performance(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_performance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network performance of the network card.</p>
     pub fn set_network_performance(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_performance = input;
         self
     }
     /// <p>The maximum number of network interfaces for the network card.</p>
     pub fn maximum_network_interfaces(mut self, input: i32) -> Self {
-        self.maximum_network_interfaces = Some(input);
+        self.maximum_network_interfaces = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of network interfaces for the network card.</p>
-    pub fn set_maximum_network_interfaces(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_network_interfaces(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_network_interfaces = input;
         self
     }

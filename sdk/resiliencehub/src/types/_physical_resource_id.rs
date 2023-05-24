@@ -2,11 +2,11 @@
 
 /// <p>Defines a physical resource identifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhysicalResourceId {
     /// <p>The identifier of the physical resource.</p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the type of physical resource identifier.</p>
     /// <dl>
     /// <dt>
@@ -23,17 +23,17 @@ pub struct PhysicalResourceId {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PhysicalIdentifierType>,
+    pub r#type: ::std::option::Option<crate::types::PhysicalIdentifierType>,
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
     #[doc(hidden)]
-    pub aws_region: std::option::Option<std::string::String>,
+    pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
     #[doc(hidden)]
-    pub aws_account_id: std::option::Option<std::string::String>,
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalResourceId {
     /// <p>The identifier of the physical resource.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>Specifies the type of physical resource identifier.</p>
@@ -51,15 +51,15 @@ impl PhysicalResourceId {
     /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PhysicalIdentifierType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PhysicalIdentifierType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<&str> {
         self.aws_region.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
 }
@@ -72,21 +72,23 @@ impl PhysicalResourceId {
 
 /// A builder for [`PhysicalResourceId`](crate::types::PhysicalResourceId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PhysicalResourceIdBuilder {
-    pub(crate) identifier: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::PhysicalIdentifierType>,
-    pub(crate) aws_region: std::option::Option<std::string::String>,
-    pub(crate) aws_account_id: std::option::Option<std::string::String>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PhysicalIdentifierType>,
+    pub(crate) aws_region: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalResourceIdBuilder {
     /// <p>The identifier of the physical resource.</p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the physical resource.</p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
@@ -106,7 +108,7 @@ impl PhysicalResourceIdBuilder {
     /// </dd>
     /// </dl>
     pub fn r#type(mut self, input: crate::types::PhysicalIdentifierType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the type of physical resource identifier.</p>
@@ -126,28 +128,34 @@ impl PhysicalResourceIdBuilder {
     /// </dl>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::PhysicalIdentifierType>,
+        input: ::std::option::Option<crate::types::PhysicalIdentifierType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
-    pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_region = Some(input.into());
+    pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
-    pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_account_id = Some(input.into());
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_account_id = input;
         self
     }

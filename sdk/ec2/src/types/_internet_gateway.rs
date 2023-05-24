@@ -2,36 +2,37 @@
 
 /// <p>Describes an internet gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InternetGateway {
     /// <p>Any VPCs attached to the internet gateway.</p>
     #[doc(hidden)]
-    pub attachments: std::option::Option<std::vec::Vec<crate::types::InternetGatewayAttachment>>,
+    pub attachments:
+        ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
     /// <p>The ID of the internet gateway.</p>
     #[doc(hidden)]
-    pub internet_gateway_id: std::option::Option<std::string::String>,
+    pub internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the internet gateway.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InternetGateway {
     /// <p>Any VPCs attached to the internet gateway.</p>
-    pub fn attachments(&self) -> std::option::Option<&[crate::types::InternetGatewayAttachment]> {
+    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::InternetGatewayAttachment]> {
         self.attachments.as_deref()
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn internet_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn internet_gateway_id(&self) -> ::std::option::Option<&str> {
         self.internet_gateway_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>Any tags assigned to the internet gateway.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,13 +45,15 @@ impl InternetGateway {
 
 /// A builder for [`InternetGateway`](crate::types::InternetGateway).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InternetGatewayBuilder {
     pub(crate) attachments:
-        std::option::Option<std::vec::Vec<crate::types::InternetGatewayAttachment>>,
-    pub(crate) internet_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
+    pub(crate) internet_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InternetGatewayBuilder {
     /// Appends an item to `attachments`.
@@ -61,37 +64,40 @@ impl InternetGatewayBuilder {
     pub fn attachments(mut self, input: crate::types::InternetGatewayAttachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
         v.push(input);
-        self.attachments = Some(v);
+        self.attachments = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any VPCs attached to the internet gateway.</p>
     pub fn set_attachments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InternetGatewayAttachment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InternetGatewayAttachment>>,
     ) -> Self {
         self.attachments = input;
         self
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn internet_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.internet_gateway_id = Some(input.into());
+    pub fn internet_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the internet gateway.</p>
     pub fn set_internet_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.internet_gateway_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
@@ -103,13 +109,13 @@ impl InternetGatewayBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the internet gateway.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>The S3 bucket that holds the application information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ContentBaseLocation {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket_arn: std::option::Option<std::string::String>,
+    pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The base path for the S3 bucket.</p>
     #[doc(hidden)]
-    pub base_path: std::option::Option<std::string::String>,
+    pub base_path: ::std::option::Option<::std::string::String>,
 }
 impl S3ContentBaseLocation {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The base path for the S3 bucket.</p>
-    pub fn base_path(&self) -> std::option::Option<&str> {
+    pub fn base_path(&self) -> ::std::option::Option<&str> {
         self.base_path.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl S3ContentBaseLocation {
 
 /// A builder for [`S3ContentBaseLocation`](crate::types::S3ContentBaseLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ContentBaseLocationBuilder {
-    pub(crate) bucket_arn: std::option::Option<std::string::String>,
-    pub(crate) base_path: std::option::Option<std::string::String>,
+    pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) base_path: ::std::option::Option<::std::string::String>,
 }
 impl S3ContentBaseLocationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_arn = Some(input.into());
+    pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_arn = input;
         self
     }
     /// <p>The base path for the S3 bucket.</p>
-    pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.base_path = Some(input.into());
+    pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.base_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base path for the S3 bucket.</p>
-    pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_path = input;
         self
     }

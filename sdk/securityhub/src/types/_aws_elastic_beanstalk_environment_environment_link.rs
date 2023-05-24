@@ -2,22 +2,22 @@
 
 /// <p>Contains information about a link to another environment that is in the same group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticBeanstalkEnvironmentEnvironmentLink {
     /// <p>The name of the linked environment.</p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment link.</p>
     #[doc(hidden)]
-    pub link_name: std::option::Option<std::string::String>,
+    pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
     /// <p>The name of the linked environment.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the environment link.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<&str> {
         self.link_name.as_deref()
     }
 }
@@ -31,29 +31,37 @@ impl AwsElasticBeanstalkEnvironmentEnvironmentLink {
 
 /// A builder for [`AwsElasticBeanstalkEnvironmentEnvironmentLink`](crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder {
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) link_name: std::option::Option<std::string::String>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) link_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticBeanstalkEnvironmentEnvironmentLinkBuilder {
     /// <p>The name of the linked environment.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the linked environment.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// <p>The name of the environment link.</p>
-    pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link_name = Some(input.into());
+    pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment link.</p>
-    pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
     }

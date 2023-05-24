@@ -2,36 +2,36 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Definition {
     /// <p>The unique model handle.</p>
     #[doc(hidden)]
-    pub model_handle: std::option::Option<std::string::String>,
+    pub model_handle: ::std::option::Option<::std::string::String>,
     /// <p>The absolute S3 location of the model.</p>
     #[doc(hidden)]
-    pub s3_url: std::option::Option<std::string::String>,
+    pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>The checksum information of the model.</p>
     #[doc(hidden)]
-    pub checksum: std::option::Option<crate::types::Checksum>,
+    pub checksum: ::std::option::Option<crate::types::Checksum>,
     /// <p>The desired state of the model.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ModelState>,
+    pub state: ::std::option::Option<crate::types::ModelState>,
 }
 impl Definition {
     /// <p>The unique model handle.</p>
-    pub fn model_handle(&self) -> std::option::Option<&str> {
+    pub fn model_handle(&self) -> ::std::option::Option<&str> {
         self.model_handle.as_deref()
     }
     /// <p>The absolute S3 location of the model.</p>
-    pub fn s3_url(&self) -> std::option::Option<&str> {
+    pub fn s3_url(&self) -> ::std::option::Option<&str> {
         self.s3_url.as_deref()
     }
     /// <p>The checksum information of the model.</p>
-    pub fn checksum(&self) -> std::option::Option<&crate::types::Checksum> {
+    pub fn checksum(&self) -> ::std::option::Option<&crate::types::Checksum> {
         self.checksum.as_ref()
     }
     /// <p>The desired state of the model.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ModelState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ModelState> {
         self.state.as_ref()
     }
 }
@@ -44,51 +44,53 @@ impl Definition {
 
 /// A builder for [`Definition`](crate::types::Definition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefinitionBuilder {
-    pub(crate) model_handle: std::option::Option<std::string::String>,
-    pub(crate) s3_url: std::option::Option<std::string::String>,
-    pub(crate) checksum: std::option::Option<crate::types::Checksum>,
-    pub(crate) state: std::option::Option<crate::types::ModelState>,
+    pub(crate) model_handle: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_url: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum: ::std::option::Option<crate::types::Checksum>,
+    pub(crate) state: ::std::option::Option<crate::types::ModelState>,
 }
 impl DefinitionBuilder {
     /// <p>The unique model handle.</p>
-    pub fn model_handle(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_handle = Some(input.into());
+    pub fn model_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_handle = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique model handle.</p>
-    pub fn set_model_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_handle = input;
         self
     }
     /// <p>The absolute S3 location of the model.</p>
-    pub fn s3_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_url = Some(input.into());
+    pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute S3 location of the model.</p>
-    pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_url = input;
         self
     }
     /// <p>The checksum information of the model.</p>
     pub fn checksum(mut self, input: crate::types::Checksum) -> Self {
-        self.checksum = Some(input);
+        self.checksum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The checksum information of the model.</p>
-    pub fn set_checksum(mut self, input: std::option::Option<crate::types::Checksum>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<crate::types::Checksum>) -> Self {
         self.checksum = input;
         self
     }
     /// <p>The desired state of the model.</p>
     pub fn state(mut self, input: crate::types::ModelState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired state of the model.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ModelState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ModelState>) -> Self {
         self.state = input;
         self
     }

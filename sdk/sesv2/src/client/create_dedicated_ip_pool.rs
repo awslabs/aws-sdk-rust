@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateDedicatedIpPool`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pool_name(impl Into<String>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::pool_name) / [`set_pool_name(Option<String>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::set_pool_name): <p>The name of the dedicated IP pool.</p>
+    ///   - [`pool_name(impl ::std::convert::Into<String>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::pool_name) / [`set_pool_name(Option<String>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::set_pool_name): <p>The name of the dedicated IP pool.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::set_tags): <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
     ///   - [`scaling_mode(ScalingMode)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::scaling_mode) / [`set_scaling_mode(Option<ScalingMode>)`](crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolFluentBuilder::set_scaling_mode): <p>The type of scaling mode.</p>
     /// - On success, responds with [`CreateDedicatedIpPoolOutput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput)

@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the location of the remote IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoLocation {
     /// <p>The latitude information of the remote IP address.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl GeoLocation {
 
 /// A builder for [`GeoLocation`](crate::types::GeoLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GeoLocationBuilder {
-    pub(crate) lat: std::option::Option<f64>,
-    pub(crate) lon: std::option::Option<f64>,
+    pub(crate) lat: ::std::option::Option<f64>,
+    pub(crate) lon: ::std::option::Option<f64>,
 }
 impl GeoLocationBuilder {
     /// <p>The latitude information of the remote IP address.</p>
     pub fn lat(mut self, input: f64) -> Self {
-        self.lat = Some(input);
+        self.lat = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latitude information of the remote IP address.</p>
-    pub fn set_lat(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lat(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lat = input;
         self
     }
     /// <p>The longitude information of the remote IP address.</p>
     pub fn lon(mut self, input: f64) -> Self {
-        self.lon = Some(input);
+        self.lon = ::std::option::Option::Some(input);
         self
     }
     /// <p>The longitude information of the remote IP address.</p>
-    pub fn set_lon(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lon(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lon = input;
         self
     }

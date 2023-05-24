@@ -5,29 +5,33 @@
 /// </note>
 /// <p>Describes the VPC peering connection options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcPeeringConnectionOptionsDescription {
     /// <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from instances in a peer VPC.</p>
     #[doc(hidden)]
-    pub allow_dns_resolution_from_remote_vpc: std::option::Option<bool>,
+    pub allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
     /// <p>Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering connection.</p>
     #[doc(hidden)]
-    pub allow_egress_from_local_classic_link_to_remote_vpc: std::option::Option<bool>,
+    pub allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,
     /// <p>Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering connection.</p>
     #[doc(hidden)]
-    pub allow_egress_from_local_vpc_to_remote_classic_link: std::option::Option<bool>,
+    pub allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
 }
 impl VpcPeeringConnectionOptionsDescription {
     /// <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from instances in a peer VPC.</p>
-    pub fn allow_dns_resolution_from_remote_vpc(&self) -> std::option::Option<bool> {
+    pub fn allow_dns_resolution_from_remote_vpc(&self) -> ::std::option::Option<bool> {
         self.allow_dns_resolution_from_remote_vpc
     }
     /// <p>Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering connection.</p>
-    pub fn allow_egress_from_local_classic_link_to_remote_vpc(&self) -> std::option::Option<bool> {
+    pub fn allow_egress_from_local_classic_link_to_remote_vpc(
+        &self,
+    ) -> ::std::option::Option<bool> {
         self.allow_egress_from_local_classic_link_to_remote_vpc
     }
     /// <p>Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering connection.</p>
-    pub fn allow_egress_from_local_vpc_to_remote_classic_link(&self) -> std::option::Option<bool> {
+    pub fn allow_egress_from_local_vpc_to_remote_classic_link(
+        &self,
+    ) -> ::std::option::Option<bool> {
         self.allow_egress_from_local_vpc_to_remote_classic_link
     }
 }
@@ -40,48 +44,52 @@ impl VpcPeeringConnectionOptionsDescription {
 
 /// A builder for [`VpcPeeringConnectionOptionsDescription`](crate::types::VpcPeeringConnectionOptionsDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcPeeringConnectionOptionsDescriptionBuilder {
-    pub(crate) allow_dns_resolution_from_remote_vpc: std::option::Option<bool>,
-    pub(crate) allow_egress_from_local_classic_link_to_remote_vpc: std::option::Option<bool>,
-    pub(crate) allow_egress_from_local_vpc_to_remote_classic_link: std::option::Option<bool>,
+    pub(crate) allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
+    pub(crate) allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,
+    pub(crate) allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
 }
 impl VpcPeeringConnectionOptionsDescriptionBuilder {
     /// <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from instances in a peer VPC.</p>
     pub fn allow_dns_resolution_from_remote_vpc(mut self, input: bool) -> Self {
-        self.allow_dns_resolution_from_remote_vpc = Some(input);
+        self.allow_dns_resolution_from_remote_vpc = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses when queried from instances in a peer VPC.</p>
     pub fn set_allow_dns_resolution_from_remote_vpc(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.allow_dns_resolution_from_remote_vpc = input;
         self
     }
     /// <p>Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering connection.</p>
     pub fn allow_egress_from_local_classic_link_to_remote_vpc(mut self, input: bool) -> Self {
-        self.allow_egress_from_local_classic_link_to_remote_vpc = Some(input);
+        self.allow_egress_from_local_classic_link_to_remote_vpc =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether a local ClassicLink connection can communicate with the peer VPC over the VPC peering connection.</p>
     pub fn set_allow_egress_from_local_classic_link_to_remote_vpc(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.allow_egress_from_local_classic_link_to_remote_vpc = input;
         self
     }
     /// <p>Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering connection.</p>
     pub fn allow_egress_from_local_vpc_to_remote_classic_link(mut self, input: bool) -> Self {
-        self.allow_egress_from_local_vpc_to_remote_classic_link = Some(input);
+        self.allow_egress_from_local_vpc_to_remote_classic_link =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether a local VPC can communicate with a ClassicLink connection in the peer VPC over the VPC peering connection.</p>
     pub fn set_allow_egress_from_local_vpc_to_remote_classic_link(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.allow_egress_from_local_vpc_to_remote_classic_link = input;
         self

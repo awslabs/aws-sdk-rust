@@ -45,13 +45,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CallAnalyticsLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +75,7 @@ pub enum CallAnalyticsLanguageCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CallAnalyticsLanguageCode {
+impl ::std::convert::From<&str> for CallAnalyticsLanguageCode {
     fn from(s: &str) -> Self {
         match s {
             "de-DE" => CallAnalyticsLanguageCode::DeDe,
@@ -93,11 +93,11 @@ impl std::convert::From<&str> for CallAnalyticsLanguageCode {
         }
     }
 }
-impl std::str::FromStr for CallAnalyticsLanguageCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CallAnalyticsLanguageCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CallAnalyticsLanguageCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CallAnalyticsLanguageCode::from(s))
     }
 }
 impl CallAnalyticsLanguageCode {
@@ -123,7 +123,7 @@ impl CallAnalyticsLanguageCode {
         ]
     }
 }
-impl AsRef<str> for CallAnalyticsLanguageCode {
+impl ::std::convert::AsRef<str> for CallAnalyticsLanguageCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

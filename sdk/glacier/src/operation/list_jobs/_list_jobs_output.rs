@@ -2,27 +2,27 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
     #[doc(hidden)]
-    pub job_list: std::option::Option<std::vec::Vec<crate::types::GlacierJobDescription>>,
+    pub job_list: ::std::option::Option<::std::vec::Vec<crate::types::GlacierJobDescription>>,
     /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListJobsOutput {
     /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
-    pub fn job_list(&self) -> std::option::Option<&[crate::types::GlacierJobDescription]> {
+    pub fn job_list(&self) -> ::std::option::Option<&[crate::types::GlacierJobDescription]> {
         self.job_list.as_deref()
     }
     /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListJobsOutput {
+impl ::aws_http::request_id::RequestId for ListJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,13 @@ impl ListJobsOutput {
 
 /// A builder for [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListJobsOutputBuilder {
-    pub(crate) job_list: std::option::Option<std::vec::Vec<crate::types::GlacierJobDescription>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) job_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::GlacierJobDescription>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListJobsOutputBuilder {
@@ -51,24 +54,24 @@ impl ListJobsOutputBuilder {
     pub fn job_list(mut self, input: crate::types::GlacierJobDescription) -> Self {
         let mut v = self.job_list.unwrap_or_default();
         v.push(input);
-        self.job_list = Some(v);
+        self.job_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of job objects. Each job object contains metadata describing the job.</p>
     pub fn set_job_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlacierJobDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlacierJobDescription>>,
     ) -> Self {
         self.job_list = input;
         self
     }
     /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An opaque string used for pagination that specifies the job at which the listing of jobs should begin. You get the <code>marker</code> value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of the results started in a previous List Jobs request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

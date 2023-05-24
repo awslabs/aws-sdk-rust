@@ -2,39 +2,39 @@
 
 /// <p>Wave aggregated status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaveAggregatedStatus {
     /// <p>Wave aggregated status last update dateTime.</p>
     #[doc(hidden)]
-    pub last_update_date_time: std::option::Option<std::string::String>,
+    pub last_update_date_time: ::std::option::Option<::std::string::String>,
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
     #[doc(hidden)]
-    pub replication_started_date_time: std::option::Option<std::string::String>,
+    pub replication_started_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Wave aggregated status health status.</p>
     #[doc(hidden)]
-    pub health_status: std::option::Option<crate::types::WaveHealthStatus>,
+    pub health_status: ::std::option::Option<crate::types::WaveHealthStatus>,
     /// <p>Wave aggregated status progress status.</p>
     #[doc(hidden)]
-    pub progress_status: std::option::Option<crate::types::WaveProgressStatus>,
+    pub progress_status: ::std::option::Option<crate::types::WaveProgressStatus>,
     /// <p>Wave aggregated status total applications amount.</p>
     #[doc(hidden)]
     pub total_applications: i64,
 }
 impl WaveAggregatedStatus {
     /// <p>Wave aggregated status last update dateTime.</p>
-    pub fn last_update_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_update_date_time(&self) -> ::std::option::Option<&str> {
         self.last_update_date_time.as_deref()
     }
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
-    pub fn replication_started_date_time(&self) -> std::option::Option<&str> {
+    pub fn replication_started_date_time(&self) -> ::std::option::Option<&str> {
         self.replication_started_date_time.as_deref()
     }
     /// <p>Wave aggregated status health status.</p>
-    pub fn health_status(&self) -> std::option::Option<&crate::types::WaveHealthStatus> {
+    pub fn health_status(&self) -> ::std::option::Option<&crate::types::WaveHealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>Wave aggregated status progress status.</p>
-    pub fn progress_status(&self) -> std::option::Option<&crate::types::WaveProgressStatus> {
+    pub fn progress_status(&self) -> ::std::option::Option<&crate::types::WaveProgressStatus> {
         self.progress_status.as_ref()
     }
     /// <p>Wave aggregated status total applications amount.</p>
@@ -51,74 +51,82 @@ impl WaveAggregatedStatus {
 
 /// A builder for [`WaveAggregatedStatus`](crate::types::WaveAggregatedStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WaveAggregatedStatusBuilder {
-    pub(crate) last_update_date_time: std::option::Option<std::string::String>,
-    pub(crate) replication_started_date_time: std::option::Option<std::string::String>,
-    pub(crate) health_status: std::option::Option<crate::types::WaveHealthStatus>,
-    pub(crate) progress_status: std::option::Option<crate::types::WaveProgressStatus>,
-    pub(crate) total_applications: std::option::Option<i64>,
+    pub(crate) last_update_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_started_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) health_status: ::std::option::Option<crate::types::WaveHealthStatus>,
+    pub(crate) progress_status: ::std::option::Option<crate::types::WaveProgressStatus>,
+    pub(crate) total_applications: ::std::option::Option<i64>,
 }
 impl WaveAggregatedStatusBuilder {
     /// <p>Wave aggregated status last update dateTime.</p>
-    pub fn last_update_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_update_date_time = Some(input.into());
+    pub fn last_update_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_update_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Wave aggregated status last update dateTime.</p>
     pub fn set_last_update_date_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_update_date_time = input;
         self
     }
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
-    pub fn replication_started_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_started_date_time = Some(input.into());
+    pub fn replication_started_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_started_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
     pub fn set_replication_started_date_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_started_date_time = input;
         self
     }
     /// <p>Wave aggregated status health status.</p>
     pub fn health_status(mut self, input: crate::types::WaveHealthStatus) -> Self {
-        self.health_status = Some(input);
+        self.health_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Wave aggregated status health status.</p>
     pub fn set_health_status(
         mut self,
-        input: std::option::Option<crate::types::WaveHealthStatus>,
+        input: ::std::option::Option<crate::types::WaveHealthStatus>,
     ) -> Self {
         self.health_status = input;
         self
     }
     /// <p>Wave aggregated status progress status.</p>
     pub fn progress_status(mut self, input: crate::types::WaveProgressStatus) -> Self {
-        self.progress_status = Some(input);
+        self.progress_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Wave aggregated status progress status.</p>
     pub fn set_progress_status(
         mut self,
-        input: std::option::Option<crate::types::WaveProgressStatus>,
+        input: ::std::option::Option<crate::types::WaveProgressStatus>,
     ) -> Self {
         self.progress_status = input;
         self
     }
     /// <p>Wave aggregated status total applications amount.</p>
     pub fn total_applications(mut self, input: i64) -> Self {
-        self.total_applications = Some(input);
+        self.total_applications = ::std::option::Option::Some(input);
         self
     }
     /// <p>Wave aggregated status total applications amount.</p>
-    pub fn set_total_applications(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_applications(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_applications = input;
         self
     }

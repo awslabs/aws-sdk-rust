@@ -2,15 +2,15 @@
 
 /// <p> The properties that are applied when using SAPOData as a flow source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
     #[doc(hidden)]
-    pub object_path: std::option::Option<std::string::String>,
+    pub object_path: ::std::option::Option<::std::string::String>,
 }
 impl SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
-    pub fn object_path(&self) -> std::option::Option<&str> {
+    pub fn object_path(&self) -> ::std::option::Option<&str> {
         self.object_path.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl SapoDataSourceProperties {
 
 /// A builder for [`SapoDataSourceProperties`](crate::types::SapoDataSourceProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SapoDataSourcePropertiesBuilder {
-    pub(crate) object_path: std::option::Option<std::string::String>,
+    pub(crate) object_path: ::std::option::Option<::std::string::String>,
 }
 impl SapoDataSourcePropertiesBuilder {
     /// <p> The object path specified in the SAPOData flow source. </p>
-    pub fn object_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_path = Some(input.into());
+    pub fn object_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The object path specified in the SAPOData flow source. </p>
-    pub fn set_object_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_path = input;
         self
     }

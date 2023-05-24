@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReservedInstancePaymentOption {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ReservedInstancePaymentOption {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReservedInstancePaymentOption {
+impl ::std::convert::From<&str> for ReservedInstancePaymentOption {
     fn from(s: &str) -> Self {
         match s {
             "ALL_UPFRONT" => ReservedInstancePaymentOption::AllUpfront,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ReservedInstancePaymentOption {
         }
     }
 }
-impl std::str::FromStr for ReservedInstancePaymentOption {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReservedInstancePaymentOption {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservedInstancePaymentOption::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReservedInstancePaymentOption::from(s))
     }
 }
 impl ReservedInstancePaymentOption {
@@ -91,7 +91,7 @@ impl ReservedInstancePaymentOption {
         &["ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"]
     }
 }
-impl AsRef<str> for ReservedInstancePaymentOption {
+impl ::std::convert::AsRef<str> for ReservedInstancePaymentOption {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

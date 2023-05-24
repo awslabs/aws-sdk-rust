@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SlotSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SlotSortAttribute {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SlotSortAttribute {
+impl ::std::convert::From<&str> for SlotSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "LastUpdatedDateTime" => SlotSortAttribute::LastUpdatedDateTime,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SlotSortAttribute {
         }
     }
 }
-impl std::str::FromStr for SlotSortAttribute {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SlotSortAttribute {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlotSortAttribute::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SlotSortAttribute::from(s))
     }
 }
 impl SlotSortAttribute {
@@ -86,7 +86,7 @@ impl SlotSortAttribute {
         &["LastUpdatedDateTime", "SlotName"]
     }
 }
-impl AsRef<str> for SlotSortAttribute {
+impl ::std::convert::AsRef<str> for SlotSortAttribute {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

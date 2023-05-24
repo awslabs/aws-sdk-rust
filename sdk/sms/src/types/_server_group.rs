@@ -2,29 +2,29 @@
 
 /// <p>Logical grouping of servers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerGroup {
     /// <p>The ID of a server group.</p>
     #[doc(hidden)]
-    pub server_group_id: std::option::Option<std::string::String>,
+    pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a server group.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The servers that belong to a server group.</p>
     #[doc(hidden)]
-    pub server_list: std::option::Option<std::vec::Vec<crate::types::Server>>,
+    pub server_list: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
 }
 impl ServerGroup {
     /// <p>The ID of a server group.</p>
-    pub fn server_group_id(&self) -> std::option::Option<&str> {
+    pub fn server_group_id(&self) -> ::std::option::Option<&str> {
         self.server_group_id.as_deref()
     }
     /// <p>The name of a server group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The servers that belong to a server group.</p>
-    pub fn server_list(&self) -> std::option::Option<&[crate::types::Server]> {
+    pub fn server_list(&self) -> ::std::option::Option<&[crate::types::Server]> {
         self.server_list.as_deref()
     }
 }
@@ -37,30 +37,38 @@ impl ServerGroup {
 
 /// A builder for [`ServerGroup`](crate::types::ServerGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerGroupBuilder {
-    pub(crate) server_group_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) server_list: std::option::Option<std::vec::Vec<crate::types::Server>>,
+    pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) server_list: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
 }
 impl ServerGroupBuilder {
     /// <p>The ID of a server group.</p>
-    pub fn server_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_group_id = Some(input.into());
+    pub fn server_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.server_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a server group.</p>
-    pub fn set_server_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.server_group_id = input;
         self
     }
     /// <p>The name of a server group.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a server group.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -72,13 +80,13 @@ impl ServerGroupBuilder {
     pub fn server_list(mut self, input: crate::types::Server) -> Self {
         let mut v = self.server_list.unwrap_or_default();
         v.push(input);
-        self.server_list = Some(v);
+        self.server_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The servers that belong to a server group.</p>
     pub fn set_server_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Server>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Server>>,
     ) -> Self {
         self.server_list = input;
         self

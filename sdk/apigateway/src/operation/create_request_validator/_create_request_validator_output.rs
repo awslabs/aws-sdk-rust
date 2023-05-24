@@ -2,14 +2,14 @@
 
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of this RequestValidator</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     #[doc(hidden)]
     pub validate_request_body: bool,
@@ -20,11 +20,11 @@ pub struct CreateRequestValidatorOutput {
 }
 impl CreateRequestValidatorOutput {
     /// <p>The identifier of this RequestValidator.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of this RequestValidator</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
@@ -36,7 +36,7 @@ impl CreateRequestValidatorOutput {
         self.validate_request_parameters
     }
 }
-impl aws_http::request_id::RequestId for CreateRequestValidatorOutput {
+impl ::aws_http::request_id::RequestId for CreateRequestValidatorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -52,52 +52,54 @@ impl CreateRequestValidatorOutput {
 
 /// A builder for [`CreateRequestValidatorOutput`](crate::operation::create_request_validator::CreateRequestValidatorOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateRequestValidatorOutputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) validate_request_body: std::option::Option<bool>,
-    pub(crate) validate_request_parameters: std::option::Option<bool>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) validate_request_body: ::std::option::Option<bool>,
+    pub(crate) validate_request_parameters: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CreateRequestValidatorOutputBuilder {
     /// <p>The identifier of this RequestValidator.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of this RequestValidator.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of this RequestValidator</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this RequestValidator</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     pub fn validate_request_body(mut self, input: bool) -> Self {
-        self.validate_request_body = Some(input);
+        self.validate_request_body = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
-    pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_validate_request_body(mut self, input: ::std::option::Option<bool>) -> Self {
         self.validate_request_body = input;
         self
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_parameters(mut self, input: bool) -> Self {
-        self.validate_request_parameters = Some(input);
+        self.validate_request_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
-    pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_validate_request_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.validate_request_parameters = input;
         self
     }

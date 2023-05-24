@@ -2,11 +2,11 @@
 
 /// <p>The settings object that specifies whether evidence finder is enabled. This object also describes the related event data store, and the backfill status for populating the event data store with evidence data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvidenceFinderEnablement {
     /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
     #[doc(hidden)]
-    pub event_data_store_arn: std::option::Option<std::string::String>,
+    pub event_data_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the evidence finder feature and the related event data store. </p>
     /// <ul>
     /// <li> <p> <code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder. An event data store is currently being created to support evidence finder queries.</p> </li>
@@ -15,7 +15,7 @@ pub struct EvidenceFinderEnablement {
     /// <li> <p> <code>DISABLED</code> means that you have permanently disabled evidence finder and the event data store has been deleted. You can't re-enable evidence finder after this point.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub enablement_status: std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
+    pub enablement_status: ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
     /// <p>The current status of the evidence data backfill process. </p>
     /// <p>The backfill starts after you enable evidence finder. During this task, Audit Manager populates an event data store with your past two years’ worth of evidence data so that your evidence can be queried.</p>
     /// <ul>
@@ -24,14 +24,14 @@ pub struct EvidenceFinderEnablement {
     /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub backfill_status: std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
+    pub backfill_status: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
     /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
     #[doc(hidden)]
-    pub error: std::option::Option<std::string::String>,
+    pub error: ::std::option::Option<::std::string::String>,
 }
 impl EvidenceFinderEnablement {
     /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
-    pub fn event_data_store_arn(&self) -> std::option::Option<&str> {
+    pub fn event_data_store_arn(&self) -> ::std::option::Option<&str> {
         self.event_data_store_arn.as_deref()
     }
     /// <p>The current status of the evidence finder feature and the related event data store. </p>
@@ -43,7 +43,7 @@ impl EvidenceFinderEnablement {
     /// </ul>
     pub fn enablement_status(
         &self,
-    ) -> std::option::Option<&crate::types::EvidenceFinderEnablementStatus> {
+    ) -> ::std::option::Option<&crate::types::EvidenceFinderEnablementStatus> {
         self.enablement_status.as_ref()
     }
     /// <p>The current status of the evidence data backfill process. </p>
@@ -55,11 +55,11 @@ impl EvidenceFinderEnablement {
     /// </ul>
     pub fn backfill_status(
         &self,
-    ) -> std::option::Option<&crate::types::EvidenceFinderBackfillStatus> {
+    ) -> ::std::option::Option<&crate::types::EvidenceFinderBackfillStatus> {
         self.backfill_status.as_ref()
     }
     /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
 }
@@ -72,23 +72,29 @@ impl EvidenceFinderEnablement {
 
 /// A builder for [`EvidenceFinderEnablement`](crate::types::EvidenceFinderEnablement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvidenceFinderEnablementBuilder {
-    pub(crate) event_data_store_arn: std::option::Option<std::string::String>,
-    pub(crate) enablement_status: std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
-    pub(crate) backfill_status: std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
-    pub(crate) error: std::option::Option<std::string::String>,
+    pub(crate) event_data_store_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) enablement_status:
+        ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
+    pub(crate) backfill_status: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
+    pub(crate) error: ::std::option::Option<::std::string::String>,
 }
 impl EvidenceFinderEnablementBuilder {
     /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
-    pub fn event_data_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_data_store_arn = Some(input.into());
+    pub fn event_data_store_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_data_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudTrail Lake event data store that’s used by evidence finder. The event data store is the lake of evidence data that evidence finder runs queries against.</p>
     pub fn set_event_data_store_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_data_store_arn = input;
         self
@@ -104,7 +110,7 @@ impl EvidenceFinderEnablementBuilder {
         mut self,
         input: crate::types::EvidenceFinderEnablementStatus,
     ) -> Self {
-        self.enablement_status = Some(input);
+        self.enablement_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the evidence finder feature and the related event data store. </p>
@@ -116,7 +122,7 @@ impl EvidenceFinderEnablementBuilder {
     /// </ul>
     pub fn set_enablement_status(
         mut self,
-        input: std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
+        input: ::std::option::Option<crate::types::EvidenceFinderEnablementStatus>,
     ) -> Self {
         self.enablement_status = input;
         self
@@ -129,7 +135,7 @@ impl EvidenceFinderEnablementBuilder {
     /// <li> <p> <code>COMPLETED</code> means that the backfill is complete. All of your past evidence is now queryable. </p> </li>
     /// </ul>
     pub fn backfill_status(mut self, input: crate::types::EvidenceFinderBackfillStatus) -> Self {
-        self.backfill_status = Some(input);
+        self.backfill_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the evidence data backfill process. </p>
@@ -141,18 +147,18 @@ impl EvidenceFinderEnablementBuilder {
     /// </ul>
     pub fn set_backfill_status(
         mut self,
-        input: std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
+        input: ::std::option::Option<crate::types::EvidenceFinderBackfillStatus>,
     ) -> Self {
         self.backfill_status = input;
         self
     }
     /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
-    pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error = Some(input.into());
+    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents any errors that occurred when enabling or disabling evidence finder. </p>
-    pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
     }

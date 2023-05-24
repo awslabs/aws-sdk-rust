@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataset`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_name(impl Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::dataset_name) / [`set_dataset_name(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_dataset_name): <p>The name of the dataset to be deleted. </p>
+    ///   - [`dataset_name(impl ::std::convert::Into<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::dataset_name) / [`set_dataset_name(Option<String>)`](crate::operation::delete_dataset::builders::DeleteDatasetFluentBuilder::set_dataset_name): <p>The name of the dataset to be deleted. </p>
     /// - On success, responds with [`DeleteDatasetOutput`](crate::operation::delete_dataset::DeleteDatasetOutput)
     /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::operation::delete_dataset::DeleteDatasetError)
     pub fn delete_dataset(

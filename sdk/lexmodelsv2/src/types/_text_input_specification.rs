@@ -2,15 +2,15 @@
 
 /// <p>Specifies the text input specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextInputSpecification {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     #[doc(hidden)]
-    pub start_timeout_ms: std::option::Option<i32>,
+    pub start_timeout_ms: ::std::option::Option<i32>,
 }
 impl TextInputSpecification {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
-    pub fn start_timeout_ms(&self) -> std::option::Option<i32> {
+    pub fn start_timeout_ms(&self) -> ::std::option::Option<i32> {
         self.start_timeout_ms
     }
 }
@@ -23,18 +23,20 @@ impl TextInputSpecification {
 
 /// A builder for [`TextInputSpecification`](crate::types::TextInputSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TextInputSpecificationBuilder {
-    pub(crate) start_timeout_ms: std::option::Option<i32>,
+    pub(crate) start_timeout_ms: ::std::option::Option<i32>,
 }
 impl TextInputSpecificationBuilder {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     pub fn start_timeout_ms(mut self, input: i32) -> Self {
-        self.start_timeout_ms = Some(input);
+        self.start_timeout_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
-    pub fn set_start_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_timeout_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_timeout_ms = input;
         self
     }

@@ -13,29 +13,29 @@ pub use crate::operation::delete_file_system::_delete_file_system_input::DeleteF
 /// </note> <important>
 /// <p>The data in a deleted file system is also deleted and can't be recovered by any means.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFileSystemFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder,
 }
 impl DeleteFileSystemFluentBuilder {
     /// Creates a new `DeleteFileSystem`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_file_system::DeleteFileSystem,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_file_system::DeleteFileSystemError,
         >,
     > {
@@ -43,30 +43,33 @@ impl DeleteFileSystemFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_file_system::DeleteFileSystemOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_file_system::DeleteFileSystemError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -79,33 +82,42 @@ impl DeleteFileSystemFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_file_system::DeleteFileSystemOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_file_system::DeleteFileSystemError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the file system that you want to delete.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
     /// <p>The ID of the file system that you want to delete.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
@@ -121,7 +133,7 @@ impl DeleteFileSystemFluentBuilder {
     /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_windows_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
+        input: ::std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_windows_configuration(input);
         self
@@ -137,7 +149,7 @@ impl DeleteFileSystemFluentBuilder {
     /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_lustre_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
+        input: ::std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_lustre_configuration(input);
         self
@@ -153,7 +165,7 @@ impl DeleteFileSystemFluentBuilder {
     /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_open_zfs_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
+        input: ::std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self

@@ -3,27 +3,27 @@
 /// <p>KMS uses the authentication credential to sign requests that it sends to the external key store proxy (XKS proxy) on your behalf. You establish these credentials on your external key store proxy and report them to KMS.</p>
 /// <p>The <code>XksProxyAuthenticationCredential</code> includes two required elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct XksProxyAuthenticationCredentialType {
     /// <p>A unique identifier for the raw secret access key.</p>
     #[doc(hidden)]
-    pub access_key_id: std::option::Option<std::string::String>,
+    pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
     #[doc(hidden)]
-    pub raw_secret_access_key: std::option::Option<std::string::String>,
+    pub raw_secret_access_key: ::std::option::Option<::std::string::String>,
 }
 impl XksProxyAuthenticationCredentialType {
     /// <p>A unique identifier for the raw secret access key.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
-    pub fn raw_secret_access_key(&self) -> std::option::Option<&str> {
+    pub fn raw_secret_access_key(&self) -> ::std::option::Option<&str> {
         self.raw_secret_access_key.as_deref()
     }
 }
-impl std::fmt::Debug for XksProxyAuthenticationCredentialType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for XksProxyAuthenticationCredentialType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("XksProxyAuthenticationCredentialType");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_secret_access_key", &"*** Sensitive Data Redacted ***");
@@ -39,31 +39,40 @@ impl XksProxyAuthenticationCredentialType {
 
 /// A builder for [`XksProxyAuthenticationCredentialType`](crate::types::XksProxyAuthenticationCredentialType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct XksProxyAuthenticationCredentialTypeBuilder {
-    pub(crate) access_key_id: std::option::Option<std::string::String>,
-    pub(crate) raw_secret_access_key: std::option::Option<std::string::String>,
+    pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) raw_secret_access_key: ::std::option::Option<::std::string::String>,
 }
 impl XksProxyAuthenticationCredentialTypeBuilder {
     /// <p>A unique identifier for the raw secret access key.</p>
-    pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_key_id = Some(input.into());
+    pub fn access_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the raw secret access key.</p>
-    pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_key_id = input;
         self
     }
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
-    pub fn raw_secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raw_secret_access_key = Some(input.into());
+    pub fn raw_secret_access_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.raw_secret_access_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /, +, and =.</p>
     pub fn set_raw_secret_access_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.raw_secret_access_key = input;
         self
@@ -76,8 +85,8 @@ impl XksProxyAuthenticationCredentialTypeBuilder {
         }
     }
 }
-impl std::fmt::Debug for XksProxyAuthenticationCredentialTypeBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for XksProxyAuthenticationCredentialTypeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("XksProxyAuthenticationCredentialTypeBuilder");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_secret_access_key", &"*** Sensitive Data Redacted ***");

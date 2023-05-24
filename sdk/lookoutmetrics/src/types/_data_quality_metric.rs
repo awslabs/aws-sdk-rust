@@ -2,36 +2,36 @@
 
 /// <p>An array that describes a data quality metric. Each <code>DataQualityMetric</code> object contains the data quality metric name, its value, a description of the metric, and the affected column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityMetric {
     /// <p>The name of the data quality metric.</p>
     #[doc(hidden)]
-    pub metric_type: std::option::Option<crate::types::DataQualityMetricType>,
+    pub metric_type: ::std::option::Option<crate::types::DataQualityMetricType>,
     /// <p>A description of the data quality metric.</p>
     #[doc(hidden)]
-    pub metric_description: std::option::Option<std::string::String>,
+    pub metric_description: ::std::option::Option<::std::string::String>,
     /// <p>The column that is being monitored.</p>
     #[doc(hidden)]
-    pub related_column_name: std::option::Option<std::string::String>,
+    pub related_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the data quality metric.</p>
     #[doc(hidden)]
-    pub metric_value: std::option::Option<f64>,
+    pub metric_value: ::std::option::Option<f64>,
 }
 impl DataQualityMetric {
     /// <p>The name of the data quality metric.</p>
-    pub fn metric_type(&self) -> std::option::Option<&crate::types::DataQualityMetricType> {
+    pub fn metric_type(&self) -> ::std::option::Option<&crate::types::DataQualityMetricType> {
         self.metric_type.as_ref()
     }
     /// <p>A description of the data quality metric.</p>
-    pub fn metric_description(&self) -> std::option::Option<&str> {
+    pub fn metric_description(&self) -> ::std::option::Option<&str> {
         self.metric_description.as_deref()
     }
     /// <p>The column that is being monitored.</p>
-    pub fn related_column_name(&self) -> std::option::Option<&str> {
+    pub fn related_column_name(&self) -> ::std::option::Option<&str> {
         self.related_column_name.as_deref()
     }
     /// <p>The value of the data quality metric.</p>
-    pub fn metric_value(&self) -> std::option::Option<f64> {
+    pub fn metric_value(&self) -> ::std::option::Option<f64> {
         self.metric_value
     }
 }
@@ -44,60 +44,68 @@ impl DataQualityMetric {
 
 /// A builder for [`DataQualityMetric`](crate::types::DataQualityMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataQualityMetricBuilder {
-    pub(crate) metric_type: std::option::Option<crate::types::DataQualityMetricType>,
-    pub(crate) metric_description: std::option::Option<std::string::String>,
-    pub(crate) related_column_name: std::option::Option<std::string::String>,
-    pub(crate) metric_value: std::option::Option<f64>,
+    pub(crate) metric_type: ::std::option::Option<crate::types::DataQualityMetricType>,
+    pub(crate) metric_description: ::std::option::Option<::std::string::String>,
+    pub(crate) related_column_name: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_value: ::std::option::Option<f64>,
 }
 impl DataQualityMetricBuilder {
     /// <p>The name of the data quality metric.</p>
     pub fn metric_type(mut self, input: crate::types::DataQualityMetricType) -> Self {
-        self.metric_type = Some(input);
+        self.metric_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the data quality metric.</p>
     pub fn set_metric_type(
         mut self,
-        input: std::option::Option<crate::types::DataQualityMetricType>,
+        input: ::std::option::Option<crate::types::DataQualityMetricType>,
     ) -> Self {
         self.metric_type = input;
         self
     }
     /// <p>A description of the data quality metric.</p>
-    pub fn metric_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_description = Some(input.into());
+    pub fn metric_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.metric_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the data quality metric.</p>
     pub fn set_metric_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.metric_description = input;
         self
     }
     /// <p>The column that is being monitored.</p>
-    pub fn related_column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.related_column_name = Some(input.into());
+    pub fn related_column_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.related_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The column that is being monitored.</p>
     pub fn set_related_column_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.related_column_name = input;
         self
     }
     /// <p>The value of the data quality metric.</p>
     pub fn metric_value(mut self, input: f64) -> Self {
-        self.metric_value = Some(input);
+        self.metric_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the data quality metric.</p>
-    pub fn set_metric_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_metric_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metric_value = input;
         self
     }

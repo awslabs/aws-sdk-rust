@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSdkTypes`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`position(impl Into<String>)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::set_position): <p>The current pagination position in the paged result set.</p>
+    ///   - [`position(impl ::std::convert::Into<String>)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::set_position): <p>The current pagination position in the paged result set.</p>
     ///   - [`limit(i32)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_sdk_types::builders::GetSdkTypesFluentBuilder::set_limit): <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     /// - On success, responds with [`GetSdkTypesOutput`](crate::operation::get_sdk_types::GetSdkTypesOutput) with field(s):
     ///   - [`items(Option<Vec<SdkType>>)`](crate::operation::get_sdk_types::GetSdkTypesOutput::items): <p>The current page of elements from this collection.</p>

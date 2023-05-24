@@ -2,18 +2,18 @@
 
 /// <p>The set parameter operation that sets parameters in custom action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionSetParametersOperation {
     /// <p>The parameter that determines the value configuration.</p>
     #[doc(hidden)]
     pub parameter_value_configurations:
-        std::option::Option<std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
 }
 impl CustomActionSetParametersOperation {
     /// <p>The parameter that determines the value configuration.</p>
     pub fn parameter_value_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::SetParameterValueConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::SetParameterValueConfiguration]> {
         self.parameter_value_configurations.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl CustomActionSetParametersOperation {
 
 /// A builder for [`CustomActionSetParametersOperation`](crate::types::CustomActionSetParametersOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomActionSetParametersOperationBuilder {
     pub(crate) parameter_value_configurations:
-        std::option::Option<std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
 }
 impl CustomActionSetParametersOperationBuilder {
     /// Appends an item to `parameter_value_configurations`.
@@ -43,13 +45,13 @@ impl CustomActionSetParametersOperationBuilder {
     ) -> Self {
         let mut v = self.parameter_value_configurations.unwrap_or_default();
         v.push(input);
-        self.parameter_value_configurations = Some(v);
+        self.parameter_value_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parameter that determines the value configuration.</p>
     pub fn set_parameter_value_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SetParameterValueConfiguration>>,
     ) -> Self {
         self.parameter_value_configurations = input;
         self

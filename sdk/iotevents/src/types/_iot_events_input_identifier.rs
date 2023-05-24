@@ -2,15 +2,15 @@
 
 /// <p> The identifier of the input routed to AWS IoT Events. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
     #[doc(hidden)]
-    pub input_name: std::option::Option<std::string::String>,
+    pub input_name: ::std::option::Option<::std::string::String>,
 }
 impl IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<&str> {
         self.input_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl IotEventsInputIdentifier {
 
 /// A builder for [`IotEventsInputIdentifier`](crate::types::IotEventsInputIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IotEventsInputIdentifierBuilder {
-    pub(crate) input_name: std::option::Option<std::string::String>,
+    pub(crate) input_name: ::std::option::Option<::std::string::String>,
 }
 impl IotEventsInputIdentifierBuilder {
     /// <p> The name of the input routed to AWS IoT Events. </p>
-    pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_name = Some(input.into());
+    pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the input routed to AWS IoT Events. </p>
-    pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_name = input;
         self
     }

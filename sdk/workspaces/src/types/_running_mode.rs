@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RunningMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum RunningMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RunningMode {
+impl ::std::convert::From<&str> for RunningMode {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS_ON" => RunningMode::AlwaysOn,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for RunningMode {
         }
     }
 }
-impl std::str::FromStr for RunningMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RunningMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RunningMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RunningMode::from(s))
     }
 }
 impl RunningMode {
@@ -89,7 +89,7 @@ impl RunningMode {
         &["ALWAYS_ON", "AUTO_STOP", "MANUAL"]
     }
 }
-impl AsRef<str> for RunningMode {
+impl ::std::convert::AsRef<str> for RunningMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

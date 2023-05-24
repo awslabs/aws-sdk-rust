@@ -2,50 +2,50 @@
 
 /// <p>Provides summary information for a work team.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobForWorkteamSummary {
     /// <p>The name of the labeling job that the work team is assigned to.</p>
     #[doc(hidden)]
-    pub labeling_job_name: std::option::Option<std::string::String>,
+    pub labeling_job_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a labeling job. You can use this to refer to a specific labeling job.</p>
     #[doc(hidden)]
-    pub job_reference_code: std::option::Option<std::string::String>,
+    pub job_reference_code: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
     #[doc(hidden)]
-    pub work_requester_account_id: std::option::Option<std::string::String>,
+    pub work_requester_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the labeling job was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides information about the progress of a labeling job.</p>
     #[doc(hidden)]
-    pub label_counters: std::option::Option<crate::types::LabelCountersForWorkteam>,
+    pub label_counters: ::std::option::Option<crate::types::LabelCountersForWorkteam>,
     /// <p>The configured number of workers per data object.</p>
     #[doc(hidden)]
-    pub number_of_human_workers_per_data_object: std::option::Option<i32>,
+    pub number_of_human_workers_per_data_object: ::std::option::Option<i32>,
 }
 impl LabelingJobForWorkteamSummary {
     /// <p>The name of the labeling job that the work team is assigned to.</p>
-    pub fn labeling_job_name(&self) -> std::option::Option<&str> {
+    pub fn labeling_job_name(&self) -> ::std::option::Option<&str> {
         self.labeling_job_name.as_deref()
     }
     /// <p>A unique identifier for a labeling job. You can use this to refer to a specific labeling job.</p>
-    pub fn job_reference_code(&self) -> std::option::Option<&str> {
+    pub fn job_reference_code(&self) -> ::std::option::Option<&str> {
         self.job_reference_code.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
-    pub fn work_requester_account_id(&self) -> std::option::Option<&str> {
+    pub fn work_requester_account_id(&self) -> ::std::option::Option<&str> {
         self.work_requester_account_id.as_deref()
     }
     /// <p>The date and time that the labeling job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Provides information about the progress of a labeling job.</p>
-    pub fn label_counters(&self) -> std::option::Option<&crate::types::LabelCountersForWorkteam> {
+    pub fn label_counters(&self) -> ::std::option::Option<&crate::types::LabelCountersForWorkteam> {
         self.label_counters.as_ref()
     }
     /// <p>The configured number of workers per data object.</p>
-    pub fn number_of_human_workers_per_data_object(&self) -> std::option::Option<i32> {
+    pub fn number_of_human_workers_per_data_object(&self) -> ::std::option::Option<i32> {
         self.number_of_human_workers_per_data_object
     }
 }
@@ -58,90 +58,101 @@ impl LabelingJobForWorkteamSummary {
 
 /// A builder for [`LabelingJobForWorkteamSummary`](crate::types::LabelingJobForWorkteamSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelingJobForWorkteamSummaryBuilder {
-    pub(crate) labeling_job_name: std::option::Option<std::string::String>,
-    pub(crate) job_reference_code: std::option::Option<std::string::String>,
-    pub(crate) work_requester_account_id: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) label_counters: std::option::Option<crate::types::LabelCountersForWorkteam>,
-    pub(crate) number_of_human_workers_per_data_object: std::option::Option<i32>,
+    pub(crate) labeling_job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_reference_code: ::std::option::Option<::std::string::String>,
+    pub(crate) work_requester_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) label_counters: ::std::option::Option<crate::types::LabelCountersForWorkteam>,
+    pub(crate) number_of_human_workers_per_data_object: ::std::option::Option<i32>,
 }
 impl LabelingJobForWorkteamSummaryBuilder {
     /// <p>The name of the labeling job that the work team is assigned to.</p>
-    pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.labeling_job_name = Some(input.into());
+    pub fn labeling_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.labeling_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the labeling job that the work team is assigned to.</p>
     pub fn set_labeling_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.labeling_job_name = input;
         self
     }
     /// <p>A unique identifier for a labeling job. You can use this to refer to a specific labeling job.</p>
-    pub fn job_reference_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_reference_code = Some(input.into());
+    pub fn job_reference_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.job_reference_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a labeling job. You can use this to refer to a specific labeling job.</p>
     pub fn set_job_reference_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.job_reference_code = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
-    pub fn work_requester_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.work_requester_account_id = Some(input.into());
+    pub fn work_requester_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.work_requester_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account used to start the labeling job.</p>
     pub fn set_work_requester_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.work_requester_account_id = input;
         self
     }
     /// <p>The date and time that the labeling job was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the labeling job was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Provides information about the progress of a labeling job.</p>
     pub fn label_counters(mut self, input: crate::types::LabelCountersForWorkteam) -> Self {
-        self.label_counters = Some(input);
+        self.label_counters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the progress of a labeling job.</p>
     pub fn set_label_counters(
         mut self,
-        input: std::option::Option<crate::types::LabelCountersForWorkteam>,
+        input: ::std::option::Option<crate::types::LabelCountersForWorkteam>,
     ) -> Self {
         self.label_counters = input;
         self
     }
     /// <p>The configured number of workers per data object.</p>
     pub fn number_of_human_workers_per_data_object(mut self, input: i32) -> Self {
-        self.number_of_human_workers_per_data_object = Some(input);
+        self.number_of_human_workers_per_data_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configured number of workers per data object.</p>
     pub fn set_number_of_human_workers_per_data_object(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.number_of_human_workers_per_data_object = input;
         self

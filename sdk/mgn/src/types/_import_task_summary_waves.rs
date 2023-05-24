@@ -2,7 +2,7 @@
 
 /// <p>Import task summery waves.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTaskSummaryWaves {
     /// <p>Import task summery waves created count.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl ImportTaskSummaryWaves {
 
 /// A builder for [`ImportTaskSummaryWaves`](crate::types::ImportTaskSummaryWaves).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportTaskSummaryWavesBuilder {
-    pub(crate) created_count: std::option::Option<i64>,
-    pub(crate) modified_count: std::option::Option<i64>,
+    pub(crate) created_count: ::std::option::Option<i64>,
+    pub(crate) modified_count: ::std::option::Option<i64>,
 }
 impl ImportTaskSummaryWavesBuilder {
     /// <p>Import task summery waves created count.</p>
     pub fn created_count(mut self, input: i64) -> Self {
-        self.created_count = Some(input);
+        self.created_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summery waves created count.</p>
-    pub fn set_created_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_created_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.created_count = input;
         self
     }
     /// <p>Import task summery waves modified count.</p>
     pub fn modified_count(mut self, input: i64) -> Self {
-        self.modified_count = Some(input);
+        self.modified_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summery waves modified count.</p>
-    pub fn set_modified_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_modified_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.modified_count = input;
         self
     }

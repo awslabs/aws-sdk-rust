@@ -2,15 +2,15 @@
 
 /// <p>Describes an encryption key for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     #[doc(hidden)]
-    pub awskms_key_arn: std::option::Option<std::string::String>,
+    pub awskms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn awskms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn awskms_key_arn(&self) -> ::std::option::Option<&str> {
         self.awskms_key_arn.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl KmsEncryptionConfig {
 
 /// A builder for [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KmsEncryptionConfigBuilder {
-    pub(crate) awskms_key_arn: std::option::Option<std::string::String>,
+    pub(crate) awskms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KmsEncryptionConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn awskms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.awskms_key_arn = Some(input.into());
+    pub fn awskms_key_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.awskms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn set_awskms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_awskms_key_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.awskms_key_arn = input;
         self
     }

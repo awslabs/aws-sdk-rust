@@ -2,15 +2,15 @@
 
 /// <p>Details about the AWS Lake Formation data permission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LakeFormationDataPermissionDetails {
     /// <p>Details about the LF-tag policy.</p>
     #[doc(hidden)]
-    pub lf_tag_policy: std::option::Option<crate::types::LfTagPolicyDetails>,
+    pub lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyDetails>,
 }
 impl LakeFormationDataPermissionDetails {
     /// <p>Details about the LF-tag policy.</p>
-    pub fn lf_tag_policy(&self) -> std::option::Option<&crate::types::LfTagPolicyDetails> {
+    pub fn lf_tag_policy(&self) -> ::std::option::Option<&crate::types::LfTagPolicyDetails> {
         self.lf_tag_policy.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl LakeFormationDataPermissionDetails {
 
 /// A builder for [`LakeFormationDataPermissionDetails`](crate::types::LakeFormationDataPermissionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LakeFormationDataPermissionDetailsBuilder {
-    pub(crate) lf_tag_policy: std::option::Option<crate::types::LfTagPolicyDetails>,
+    pub(crate) lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyDetails>,
 }
 impl LakeFormationDataPermissionDetailsBuilder {
     /// <p>Details about the LF-tag policy.</p>
     pub fn lf_tag_policy(mut self, input: crate::types::LfTagPolicyDetails) -> Self {
-        self.lf_tag_policy = Some(input);
+        self.lf_tag_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the LF-tag policy.</p>
     pub fn set_lf_tag_policy(
         mut self,
-        input: std::option::Option<crate::types::LfTagPolicyDetails>,
+        input: ::std::option::Option<crate::types::LfTagPolicyDetails>,
     ) -> Self {
         self.lf_tag_policy = input;
         self

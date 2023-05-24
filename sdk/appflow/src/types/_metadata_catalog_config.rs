@@ -2,15 +2,15 @@
 
 /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data. When Amazon AppFlow catalogs your data, it stores metadata in a data catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetadataCatalogConfig {
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub glue_data_catalog: std::option::Option<crate::types::GlueDataCatalogConfig>,
+    pub glue_data_catalog: ::std::option::Option<crate::types::GlueDataCatalogConfig>,
 }
 impl MetadataCatalogConfig {
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
-    pub fn glue_data_catalog(&self) -> std::option::Option<&crate::types::GlueDataCatalogConfig> {
+    pub fn glue_data_catalog(&self) -> ::std::option::Option<&crate::types::GlueDataCatalogConfig> {
         self.glue_data_catalog.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MetadataCatalogConfig {
 
 /// A builder for [`MetadataCatalogConfig`](crate::types::MetadataCatalogConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetadataCatalogConfigBuilder {
-    pub(crate) glue_data_catalog: std::option::Option<crate::types::GlueDataCatalogConfig>,
+    pub(crate) glue_data_catalog: ::std::option::Option<crate::types::GlueDataCatalogConfig>,
 }
 impl MetadataCatalogConfigBuilder {
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
     pub fn glue_data_catalog(mut self, input: crate::types::GlueDataCatalogConfig) -> Self {
-        self.glue_data_catalog = Some(input);
+        self.glue_data_catalog = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog.</p>
     pub fn set_glue_data_catalog(
         mut self,
-        input: std::option::Option<crate::types::GlueDataCatalogConfig>,
+        input: ::std::option::Option<crate::types::GlueDataCatalogConfig>,
     ) -> Self {
         self.glue_data_catalog = input;
         self

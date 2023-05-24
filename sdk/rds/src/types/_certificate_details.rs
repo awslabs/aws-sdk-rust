@@ -3,22 +3,22 @@
 /// <p>Returns the details of the DB instance’s server certificate.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateDetails {
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
     #[doc(hidden)]
-    pub ca_identifier: std::option::Option<std::string::String>,
+    pub ca_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The expiration date of the DB instance’s server certificate.</p>
     #[doc(hidden)]
-    pub valid_till: std::option::Option<aws_smithy_types::DateTime>,
+    pub valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CertificateDetails {
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
-    pub fn ca_identifier(&self) -> std::option::Option<&str> {
+    pub fn ca_identifier(&self) -> ::std::option::Option<&str> {
         self.ca_identifier.as_deref()
     }
     /// <p>The expiration date of the DB instance’s server certificate.</p>
-    pub fn valid_till(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn valid_till(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.valid_till.as_ref()
     }
 }
@@ -31,31 +31,39 @@ impl CertificateDetails {
 
 /// A builder for [`CertificateDetails`](crate::types::CertificateDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CertificateDetailsBuilder {
-    pub(crate) ca_identifier: std::option::Option<std::string::String>,
-    pub(crate) valid_till: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) ca_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) valid_till: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CertificateDetailsBuilder {
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
-    pub fn ca_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ca_identifier = Some(input.into());
+    pub fn ca_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ca_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA identifier of the CA certificate used for the DB instance's server certificate.</p>
-    pub fn set_ca_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ca_identifier(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ca_identifier = input;
         self
     }
     /// <p>The expiration date of the DB instance’s server certificate.</p>
-    pub fn valid_till(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.valid_till = Some(input);
+    pub fn valid_till(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.valid_till = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expiration date of the DB instance’s server certificate.</p>
     pub fn set_valid_till(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.valid_till = input;
         self

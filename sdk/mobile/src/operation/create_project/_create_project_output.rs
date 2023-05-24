@@ -2,20 +2,20 @@
 
 /// <p> Result structure used in response to a request to create a project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectOutput {
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
     #[doc(hidden)]
-    pub details: std::option::Option<crate::types::ProjectDetails>,
+    pub details: ::std::option::Option<crate::types::ProjectDetails>,
     _request_id: Option<String>,
 }
 impl CreateProjectOutput {
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
-    pub fn details(&self) -> std::option::Option<&crate::types::ProjectDetails> {
+    pub fn details(&self) -> ::std::option::Option<&crate::types::ProjectDetails> {
         self.details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateProjectOutput {
+impl ::aws_http::request_id::RequestId for CreateProjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl CreateProjectOutput {
 
 /// A builder for [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateProjectOutputBuilder {
-    pub(crate) details: std::option::Option<crate::types::ProjectDetails>,
+    pub(crate) details: ::std::option::Option<crate::types::ProjectDetails>,
     _request_id: Option<String>,
 }
 impl CreateProjectOutputBuilder {
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
     pub fn details(mut self, input: crate::types::ProjectDetails) -> Self {
-        self.details = Some(input);
+        self.details = ::std::option::Option::Some(input);
         self
     }
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
-    pub fn set_details(mut self, input: std::option::Option<crate::types::ProjectDetails>) -> Self {
+    pub fn set_details(
+        mut self,
+        input: ::std::option::Option<crate::types::ProjectDetails>,
+    ) -> Self {
         self.details = input;
         self
     }

@@ -4,27 +4,27 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFleetsOutput {
     /// <p>A list of fleet details meeting the request criteria.</p>
     #[doc(hidden)]
-    pub fleet_details: std::option::Option<std::vec::Vec<crate::types::Fleet>>,
+    pub fleet_details: ::std::option::Option<::std::vec::Vec<crate::types::Fleet>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFleetsOutput {
     /// <p>A list of fleet details meeting the request criteria.</p>
-    pub fn fleet_details(&self) -> std::option::Option<&[crate::types::Fleet]> {
+    pub fn fleet_details(&self) -> ::std::option::Option<&[crate::types::Fleet]> {
         self.fleet_details.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListFleetsOutput {
+impl ::aws_http::request_id::RequestId for ListFleetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ListFleetsOutput {
 
 /// A builder for [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListFleetsOutputBuilder {
-    pub(crate) fleet_details: std::option::Option<std::vec::Vec<crate::types::Fleet>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) fleet_details: ::std::option::Option<::std::vec::Vec<crate::types::Fleet>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFleetsOutputBuilder {
@@ -53,24 +55,24 @@ impl ListFleetsOutputBuilder {
     pub fn fleet_details(mut self, input: crate::types::Fleet) -> Self {
         let mut v = self.fleet_details.unwrap_or_default();
         v.push(input);
-        self.fleet_details = Some(v);
+        self.fleet_details = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of fleet details meeting the request criteria.</p>
     pub fn set_fleet_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Fleet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Fleet>>,
     ) -> Self {
         self.fleet_details = input;
         self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

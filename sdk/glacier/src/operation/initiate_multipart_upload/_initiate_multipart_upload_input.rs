@@ -2,38 +2,38 @@
 
 /// <p>Provides options for initiating a multipart upload to an Amazon S3 Glacier vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
     #[doc(hidden)]
-    pub vault_name: std::option::Option<std::string::String>,
+    pub vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
     #[doc(hidden)]
-    pub archive_description: std::option::Option<std::string::String>,
+    pub archive_description: ::std::option::Option<::std::string::String>,
     /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
     #[doc(hidden)]
-    pub part_size: std::option::Option<std::string::String>,
+    pub part_size: ::std::option::Option<::std::string::String>,
 }
 impl InitiateMultipartUploadInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    pub fn archive_description(&self) -> std::option::Option<&str> {
+    pub fn archive_description(&self) -> ::std::option::Option<&str> {
         self.archive_description.as_deref()
     }
     /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
-    pub fn part_size(&self) -> std::option::Option<&str> {
+    pub fn part_size(&self) -> ::std::option::Option<&str> {
         self.part_size.as_deref()
     }
 }
@@ -48,67 +48,72 @@ impl InitiateMultipartUploadInput {
 
 /// A builder for [`InitiateMultipartUploadInput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InitiateMultipartUploadInputBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) vault_name: std::option::Option<std::string::String>,
-    pub(crate) archive_description: std::option::Option<std::string::String>,
-    pub(crate) part_size: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_name: ::std::option::Option<::std::string::String>,
+    pub(crate) archive_description: ::std::option::Option<::std::string::String>,
+    pub(crate) part_size: ::std::option::Option<::std::string::String>,
 }
 impl InitiateMultipartUploadInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vault_name = Some(input.into());
+    pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the vault.</p>
-    pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_name = input;
         self
     }
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
-    pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.archive_description = Some(input.into());
+    pub fn archive_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.archive_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The archive description that you are uploading in parts.</p>
     /// <p>The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</p>
     pub fn set_archive_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.archive_description = input;
         self
     }
     /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
-    pub fn part_size(mut self, input: impl Into<std::string::String>) -> Self {
-        self.part_size = Some(input.into());
+    pub fn part_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.part_size = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The size of each part except the last, in bytes. The last part can be smaller than this part size.</p>
-    pub fn set_part_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_part_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.part_size = input;
         self
     }
     /// Consumes the builder and constructs a [`InitiateMultipartUploadInput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::initiate_multipart_upload::InitiateMultipartUploadInput {
                 account_id: self.account_id,
                 vault_name: self.vault_name,

@@ -2,15 +2,15 @@
 
 /// <p>The options that determine the sizing of the canvas used in a free-form layout.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeFormLayoutScreenCanvasSizeOptions {
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
     #[doc(hidden)]
-    pub optimized_view_port_width: std::option::Option<std::string::String>,
+    pub optimized_view_port_width: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutScreenCanvasSizeOptions {
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    pub fn optimized_view_port_width(&self) -> std::option::Option<&str> {
+    pub fn optimized_view_port_width(&self) -> ::std::option::Option<&str> {
         self.optimized_view_port_width.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl FreeFormLayoutScreenCanvasSizeOptions {
 
 /// A builder for [`FreeFormLayoutScreenCanvasSizeOptions`](crate::types::FreeFormLayoutScreenCanvasSizeOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FreeFormLayoutScreenCanvasSizeOptionsBuilder {
-    pub(crate) optimized_view_port_width: std::option::Option<std::string::String>,
+    pub(crate) optimized_view_port_width: ::std::option::Option<::std::string::String>,
 }
 impl FreeFormLayoutScreenCanvasSizeOptionsBuilder {
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
-    pub fn optimized_view_port_width(mut self, input: impl Into<std::string::String>) -> Self {
-        self.optimized_view_port_width = Some(input.into());
+    pub fn optimized_view_port_width(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.optimized_view_port_width = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
     pub fn set_optimized_view_port_width(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.optimized_view_port_width = input;
         self

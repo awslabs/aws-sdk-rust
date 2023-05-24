@@ -2,94 +2,94 @@
 
 /// <p>Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
     #[doc(hidden)]
-    pub access_key_details: std::option::Option<crate::types::AccessKeyDetails>,
+    pub access_key_details: ::std::option::Option<crate::types::AccessKeyDetails>,
     /// <p>Contains information on the S3 bucket.</p>
     #[doc(hidden)]
-    pub s3_bucket_details: std::option::Option<std::vec::Vec<crate::types::S3BucketDetail>>,
+    pub s3_bucket_details: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDetail>>,
     /// <p>The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.</p>
     #[doc(hidden)]
-    pub instance_details: std::option::Option<crate::types::InstanceDetails>,
+    pub instance_details: ::std::option::Option<crate::types::InstanceDetails>,
     /// <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
     #[doc(hidden)]
-    pub eks_cluster_details: std::option::Option<crate::types::EksClusterDetails>,
+    pub eks_cluster_details: ::std::option::Option<crate::types::EksClusterDetails>,
     /// <p>Details about the Kubernetes user and workload involved in a Kubernetes finding.</p>
     #[doc(hidden)]
-    pub kubernetes_details: std::option::Option<crate::types::KubernetesDetails>,
+    pub kubernetes_details: ::std::option::Option<crate::types::KubernetesDetails>,
     /// <p>The type of Amazon Web Services resource.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
     #[doc(hidden)]
-    pub ebs_volume_details: std::option::Option<crate::types::EbsVolumeDetails>,
+    pub ebs_volume_details: ::std::option::Option<crate::types::EbsVolumeDetails>,
     /// <p>Contains information about the details of the ECS Cluster.</p>
     #[doc(hidden)]
-    pub ecs_cluster_details: std::option::Option<crate::types::EcsClusterDetails>,
+    pub ecs_cluster_details: ::std::option::Option<crate::types::EcsClusterDetails>,
     /// <p>Details of a container.</p>
     #[doc(hidden)]
-    pub container_details: std::option::Option<crate::types::Container>,
+    pub container_details: ::std::option::Option<crate::types::Container>,
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
     #[doc(hidden)]
-    pub rds_db_instance_details: std::option::Option<crate::types::RdsDbInstanceDetails>,
+    pub rds_db_instance_details: ::std::option::Option<crate::types::RdsDbInstanceDetails>,
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     #[doc(hidden)]
-    pub rds_db_user_details: std::option::Option<crate::types::RdsDbUserDetails>,
+    pub rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
     /// <p>Contains information about the Lambda function that was involved in a finding.</p>
     #[doc(hidden)]
-    pub lambda_details: std::option::Option<crate::types::LambdaDetails>,
+    pub lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
 }
 impl Resource {
     /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
-    pub fn access_key_details(&self) -> std::option::Option<&crate::types::AccessKeyDetails> {
+    pub fn access_key_details(&self) -> ::std::option::Option<&crate::types::AccessKeyDetails> {
         self.access_key_details.as_ref()
     }
     /// <p>Contains information on the S3 bucket.</p>
-    pub fn s3_bucket_details(&self) -> std::option::Option<&[crate::types::S3BucketDetail]> {
+    pub fn s3_bucket_details(&self) -> ::std::option::Option<&[crate::types::S3BucketDetail]> {
         self.s3_bucket_details.as_deref()
     }
     /// <p>The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.</p>
-    pub fn instance_details(&self) -> std::option::Option<&crate::types::InstanceDetails> {
+    pub fn instance_details(&self) -> ::std::option::Option<&crate::types::InstanceDetails> {
         self.instance_details.as_ref()
     }
     /// <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
-    pub fn eks_cluster_details(&self) -> std::option::Option<&crate::types::EksClusterDetails> {
+    pub fn eks_cluster_details(&self) -> ::std::option::Option<&crate::types::EksClusterDetails> {
         self.eks_cluster_details.as_ref()
     }
     /// <p>Details about the Kubernetes user and workload involved in a Kubernetes finding.</p>
-    pub fn kubernetes_details(&self) -> std::option::Option<&crate::types::KubernetesDetails> {
+    pub fn kubernetes_details(&self) -> ::std::option::Option<&crate::types::KubernetesDetails> {
         self.kubernetes_details.as_ref()
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
-    pub fn ebs_volume_details(&self) -> std::option::Option<&crate::types::EbsVolumeDetails> {
+    pub fn ebs_volume_details(&self) -> ::std::option::Option<&crate::types::EbsVolumeDetails> {
         self.ebs_volume_details.as_ref()
     }
     /// <p>Contains information about the details of the ECS Cluster.</p>
-    pub fn ecs_cluster_details(&self) -> std::option::Option<&crate::types::EcsClusterDetails> {
+    pub fn ecs_cluster_details(&self) -> ::std::option::Option<&crate::types::EcsClusterDetails> {
         self.ecs_cluster_details.as_ref()
     }
     /// <p>Details of a container.</p>
-    pub fn container_details(&self) -> std::option::Option<&crate::types::Container> {
+    pub fn container_details(&self) -> ::std::option::Option<&crate::types::Container> {
         self.container_details.as_ref()
     }
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
     pub fn rds_db_instance_details(
         &self,
-    ) -> std::option::Option<&crate::types::RdsDbInstanceDetails> {
+    ) -> ::std::option::Option<&crate::types::RdsDbInstanceDetails> {
         self.rds_db_instance_details.as_ref()
     }
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
-    pub fn rds_db_user_details(&self) -> std::option::Option<&crate::types::RdsDbUserDetails> {
+    pub fn rds_db_user_details(&self) -> ::std::option::Option<&crate::types::RdsDbUserDetails> {
         self.rds_db_user_details.as_ref()
     }
     /// <p>Contains information about the Lambda function that was involved in a finding.</p>
-    pub fn lambda_details(&self) -> std::option::Option<&crate::types::LambdaDetails> {
+    pub fn lambda_details(&self) -> ::std::option::Option<&crate::types::LambdaDetails> {
         self.lambda_details.as_ref()
     }
 }
@@ -102,31 +102,34 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceBuilder {
-    pub(crate) access_key_details: std::option::Option<crate::types::AccessKeyDetails>,
-    pub(crate) s3_bucket_details: std::option::Option<std::vec::Vec<crate::types::S3BucketDetail>>,
-    pub(crate) instance_details: std::option::Option<crate::types::InstanceDetails>,
-    pub(crate) eks_cluster_details: std::option::Option<crate::types::EksClusterDetails>,
-    pub(crate) kubernetes_details: std::option::Option<crate::types::KubernetesDetails>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) ebs_volume_details: std::option::Option<crate::types::EbsVolumeDetails>,
-    pub(crate) ecs_cluster_details: std::option::Option<crate::types::EcsClusterDetails>,
-    pub(crate) container_details: std::option::Option<crate::types::Container>,
-    pub(crate) rds_db_instance_details: std::option::Option<crate::types::RdsDbInstanceDetails>,
-    pub(crate) rds_db_user_details: std::option::Option<crate::types::RdsDbUserDetails>,
-    pub(crate) lambda_details: std::option::Option<crate::types::LambdaDetails>,
+    pub(crate) access_key_details: ::std::option::Option<crate::types::AccessKeyDetails>,
+    pub(crate) s3_bucket_details:
+        ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDetail>>,
+    pub(crate) instance_details: ::std::option::Option<crate::types::InstanceDetails>,
+    pub(crate) eks_cluster_details: ::std::option::Option<crate::types::EksClusterDetails>,
+    pub(crate) kubernetes_details: ::std::option::Option<crate::types::KubernetesDetails>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_volume_details: ::std::option::Option<crate::types::EbsVolumeDetails>,
+    pub(crate) ecs_cluster_details: ::std::option::Option<crate::types::EcsClusterDetails>,
+    pub(crate) container_details: ::std::option::Option<crate::types::Container>,
+    pub(crate) rds_db_instance_details: ::std::option::Option<crate::types::RdsDbInstanceDetails>,
+    pub(crate) rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
+    pub(crate) lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
 }
 impl ResourceBuilder {
     /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
     pub fn access_key_details(mut self, input: crate::types::AccessKeyDetails) -> Self {
-        self.access_key_details = Some(input);
+        self.access_key_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.</p>
     pub fn set_access_key_details(
         mut self,
-        input: std::option::Option<crate::types::AccessKeyDetails>,
+        input: ::std::option::Option<crate::types::AccessKeyDetails>,
     ) -> Self {
         self.access_key_details = input;
         self
@@ -139,140 +142,146 @@ impl ResourceBuilder {
     pub fn s3_bucket_details(mut self, input: crate::types::S3BucketDetail) -> Self {
         let mut v = self.s3_bucket_details.unwrap_or_default();
         v.push(input);
-        self.s3_bucket_details = Some(v);
+        self.s3_bucket_details = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains information on the S3 bucket.</p>
     pub fn set_s3_bucket_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::S3BucketDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDetail>>,
     ) -> Self {
         self.s3_bucket_details = input;
         self
     }
     /// <p>The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.</p>
     pub fn instance_details(mut self, input: crate::types::InstanceDetails) -> Self {
-        self.instance_details = Some(input);
+        self.instance_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.</p>
     pub fn set_instance_details(
         mut self,
-        input: std::option::Option<crate::types::InstanceDetails>,
+        input: ::std::option::Option<crate::types::InstanceDetails>,
     ) -> Self {
         self.instance_details = input;
         self
     }
     /// <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
     pub fn eks_cluster_details(mut self, input: crate::types::EksClusterDetails) -> Self {
-        self.eks_cluster_details = Some(input);
+        self.eks_cluster_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the EKS cluster involved in a Kubernetes finding.</p>
     pub fn set_eks_cluster_details(
         mut self,
-        input: std::option::Option<crate::types::EksClusterDetails>,
+        input: ::std::option::Option<crate::types::EksClusterDetails>,
     ) -> Self {
         self.eks_cluster_details = input;
         self
     }
     /// <p>Details about the Kubernetes user and workload involved in a Kubernetes finding.</p>
     pub fn kubernetes_details(mut self, input: crate::types::KubernetesDetails) -> Self {
-        self.kubernetes_details = Some(input);
+        self.kubernetes_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the Kubernetes user and workload involved in a Kubernetes finding.</p>
     pub fn set_kubernetes_details(
         mut self,
-        input: std::option::Option<crate::types::KubernetesDetails>,
+        input: ::std::option::Option<crate::types::KubernetesDetails>,
     ) -> Self {
         self.kubernetes_details = input;
         self
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
     pub fn ebs_volume_details(mut self, input: crate::types::EbsVolumeDetails) -> Self {
-        self.ebs_volume_details = Some(input);
+        self.ebs_volume_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
     pub fn set_ebs_volume_details(
         mut self,
-        input: std::option::Option<crate::types::EbsVolumeDetails>,
+        input: ::std::option::Option<crate::types::EbsVolumeDetails>,
     ) -> Self {
         self.ebs_volume_details = input;
         self
     }
     /// <p>Contains information about the details of the ECS Cluster.</p>
     pub fn ecs_cluster_details(mut self, input: crate::types::EcsClusterDetails) -> Self {
-        self.ecs_cluster_details = Some(input);
+        self.ecs_cluster_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the details of the ECS Cluster.</p>
     pub fn set_ecs_cluster_details(
         mut self,
-        input: std::option::Option<crate::types::EcsClusterDetails>,
+        input: ::std::option::Option<crate::types::EcsClusterDetails>,
     ) -> Self {
         self.ecs_cluster_details = input;
         self
     }
     /// <p>Details of a container.</p>
     pub fn container_details(mut self, input: crate::types::Container) -> Self {
-        self.container_details = Some(input);
+        self.container_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details of a container.</p>
     pub fn set_container_details(
         mut self,
-        input: std::option::Option<crate::types::Container>,
+        input: ::std::option::Option<crate::types::Container>,
     ) -> Self {
         self.container_details = input;
         self
     }
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
     pub fn rds_db_instance_details(mut self, input: crate::types::RdsDbInstanceDetails) -> Self {
-        self.rds_db_instance_details = Some(input);
+        self.rds_db_instance_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
     pub fn set_rds_db_instance_details(
         mut self,
-        input: std::option::Option<crate::types::RdsDbInstanceDetails>,
+        input: ::std::option::Option<crate::types::RdsDbInstanceDetails>,
     ) -> Self {
         self.rds_db_instance_details = input;
         self
     }
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     pub fn rds_db_user_details(mut self, input: crate::types::RdsDbUserDetails) -> Self {
-        self.rds_db_user_details = Some(input);
+        self.rds_db_user_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     pub fn set_rds_db_user_details(
         mut self,
-        input: std::option::Option<crate::types::RdsDbUserDetails>,
+        input: ::std::option::Option<crate::types::RdsDbUserDetails>,
     ) -> Self {
         self.rds_db_user_details = input;
         self
     }
     /// <p>Contains information about the Lambda function that was involved in a finding.</p>
     pub fn lambda_details(mut self, input: crate::types::LambdaDetails) -> Self {
-        self.lambda_details = Some(input);
+        self.lambda_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the Lambda function that was involved in a finding.</p>
     pub fn set_lambda_details(
         mut self,
-        input: std::option::Option<crate::types::LambdaDetails>,
+        input: ::std::option::Option<crate::types::LambdaDetails>,
     ) -> Self {
         self.lambda_details = input;
         self

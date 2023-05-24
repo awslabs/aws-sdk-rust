@@ -2,22 +2,22 @@
 
 /// <p>CPU utilization and load average metrics for an Amazon EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemStatus {
     /// <p>CPU utilization metrics for the instance.</p>
     #[doc(hidden)]
-    pub cpu_utilization: std::option::Option<crate::types::CpuUtilization>,
+    pub cpu_utilization: ::std::option::Option<crate::types::CpuUtilization>,
     /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
     #[doc(hidden)]
-    pub load_average: std::option::Option<std::vec::Vec<f64>>,
+    pub load_average: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl SystemStatus {
     /// <p>CPU utilization metrics for the instance.</p>
-    pub fn cpu_utilization(&self) -> std::option::Option<&crate::types::CpuUtilization> {
+    pub fn cpu_utilization(&self) -> ::std::option::Option<&crate::types::CpuUtilization> {
         self.cpu_utilization.as_ref()
     }
     /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
-    pub fn load_average(&self) -> std::option::Option<&[f64]> {
+    pub fn load_average(&self) -> ::std::option::Option<&[f64]> {
         self.load_average.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl SystemStatus {
 
 /// A builder for [`SystemStatus`](crate::types::SystemStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SystemStatusBuilder {
-    pub(crate) cpu_utilization: std::option::Option<crate::types::CpuUtilization>,
-    pub(crate) load_average: std::option::Option<std::vec::Vec<f64>>,
+    pub(crate) cpu_utilization: ::std::option::Option<crate::types::CpuUtilization>,
+    pub(crate) load_average: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl SystemStatusBuilder {
     /// <p>CPU utilization metrics for the instance.</p>
     pub fn cpu_utilization(mut self, input: crate::types::CpuUtilization) -> Self {
-        self.cpu_utilization = Some(input);
+        self.cpu_utilization = ::std::option::Option::Some(input);
         self
     }
     /// <p>CPU utilization metrics for the instance.</p>
     pub fn set_cpu_utilization(
         mut self,
-        input: std::option::Option<crate::types::CpuUtilization>,
+        input: ::std::option::Option<crate::types::CpuUtilization>,
     ) -> Self {
         self.cpu_utilization = input;
         self
@@ -57,11 +59,11 @@ impl SystemStatusBuilder {
     pub fn load_average(mut self, input: f64) -> Self {
         let mut v = self.load_average.unwrap_or_default();
         v.push(input);
-        self.load_average = Some(v);
+        self.load_average = ::std::option::Option::Some(v);
         self
     }
     /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
-    pub fn set_load_average(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_load_average(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.load_average = input;
         self
     }

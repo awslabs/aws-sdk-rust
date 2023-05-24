@@ -2,29 +2,29 @@
 
 /// <p>Represents a field in a ProfileObjectType.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectTypeField {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<std::string::String>,
+    pub source: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<std::string::String>,
+    pub target: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<crate::types::FieldContentType>,
+    pub content_type: ::std::option::Option<crate::types::FieldContentType>,
 }
 impl ObjectTypeField {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
     /// <p>The content type of the field. Used for determining equality when searching.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::FieldContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<&crate::types::FieldContentType> {
         self.content_type.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl ObjectTypeField {
 
 /// A builder for [`ObjectTypeField`](crate::types::ObjectTypeField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObjectTypeFieldBuilder {
-    pub(crate) source: std::option::Option<std::string::String>,
-    pub(crate) target: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<crate::types::FieldContentType>,
+    pub(crate) source: ::std::option::Option<::std::string::String>,
+    pub(crate) target: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<crate::types::FieldContentType>,
 }
 impl ObjectTypeFieldBuilder {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
-    pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source = Some(input.into());
+    pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
-    pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
-    pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target = Some(input.into());
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
-    pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     pub fn content_type(mut self, input: crate::types::FieldContentType) -> Self {
-        self.content_type = Some(input);
+        self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::FieldContentType>,
+        input: ::std::option::Option<crate::types::FieldContentType>,
     ) -> Self {
         self.content_type = input;
         self

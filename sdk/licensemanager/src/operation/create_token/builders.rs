@@ -7,56 +7,59 @@ pub use crate::operation::create_token::_create_token_input::CreateTokenInputBui
 ///
 /// <p>Creates a long-lived token.</p>
 /// <p>A refresh token is a JWT token used to get an access token. With an access token, you can call AssumeRoleWithWebIdentity to get role credentials that you can use to call License Manager to manage the specified license.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTokenFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_token::builders::CreateTokenInputBuilder,
 }
 impl CreateTokenFluentBuilder {
     /// Creates a new `CreateToken`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_token::CreateToken,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_token::CreateTokenOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl CreateTokenFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_token::CreateTokenOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError>,
     > {
         self.send_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
-    pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
-    pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_arn(input);
         self
     }
@@ -90,14 +93,14 @@ impl CreateTokenFluentBuilder {
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
     ///
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-    pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arns(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
     pub fn set_role_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_role_arns(input);
         self
@@ -108,7 +111,7 @@ impl CreateTokenFluentBuilder {
         self
     }
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
-    pub fn set_expiration_in_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_expiration_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiration_in_days(input);
         self
     }
@@ -117,25 +120,28 @@ impl CreateTokenFluentBuilder {
     /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
     ///
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn token_properties(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.token_properties(input.into());
         self
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
     pub fn set_token_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_token_properties(input);
         self
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

@@ -3,14 +3,14 @@
 /// <p>Contains the details about a blue/green deployment.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SwitchoverDetail {
     /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
     #[doc(hidden)]
-    pub source_member: std::option::Option<std::string::String>,
+    pub source_member: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
     #[doc(hidden)]
-    pub target_member: std::option::Option<std::string::String>,
+    pub target_member: ::std::option::Option<::std::string::String>,
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
     /// <p>Values:</p>
     /// <ul>
@@ -23,15 +23,15 @@ pub struct SwitchoverDetail {
     /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl SwitchoverDetail {
     /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-    pub fn source_member(&self) -> std::option::Option<&str> {
+    pub fn source_member(&self) -> ::std::option::Option<&str> {
         self.source_member.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-    pub fn target_member(&self) -> std::option::Option<&str> {
+    pub fn target_member(&self) -> ::std::option::Option<&str> {
         self.target_member.as_deref()
     }
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
@@ -45,7 +45,7 @@ impl SwitchoverDetail {
     /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
     /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -58,30 +58,44 @@ impl SwitchoverDetail {
 
 /// A builder for [`SwitchoverDetail`](crate::types::SwitchoverDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SwitchoverDetailBuilder {
-    pub(crate) source_member: std::option::Option<std::string::String>,
-    pub(crate) target_member: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) source_member: ::std::option::Option<::std::string::String>,
+    pub(crate) target_member: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl SwitchoverDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-    pub fn source_member(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_member = Some(input.into());
+    pub fn source_member(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_member = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-    pub fn set_source_member(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_member(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_member = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-    pub fn target_member(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_member = Some(input.into());
+    pub fn target_member(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_member = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-    pub fn set_target_member(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_member(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_member = input;
         self
     }
@@ -96,8 +110,8 @@ impl SwitchoverDetailBuilder {
     /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
     /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The switchover status of a resource in a blue/green deployment.</p>
@@ -111,7 +125,7 @@ impl SwitchoverDetailBuilder {
     /// <li> <p> <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
     /// <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

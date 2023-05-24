@@ -2,20 +2,20 @@
 
 /// <p>Contains the results of the <code>GetDirectoryLimits</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDirectoryLimitsOutput {
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
     #[doc(hidden)]
-    pub directory_limits: std::option::Option<crate::types::DirectoryLimits>,
+    pub directory_limits: ::std::option::Option<crate::types::DirectoryLimits>,
     _request_id: Option<String>,
 }
 impl GetDirectoryLimitsOutput {
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
-    pub fn directory_limits(&self) -> std::option::Option<&crate::types::DirectoryLimits> {
+    pub fn directory_limits(&self) -> ::std::option::Option<&crate::types::DirectoryLimits> {
         self.directory_limits.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDirectoryLimitsOutput {
+impl ::aws_http::request_id::RequestId for GetDirectoryLimitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl GetDirectoryLimitsOutput {
 
 /// A builder for [`GetDirectoryLimitsOutput`](crate::operation::get_directory_limits::GetDirectoryLimitsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDirectoryLimitsOutputBuilder {
-    pub(crate) directory_limits: std::option::Option<crate::types::DirectoryLimits>,
+    pub(crate) directory_limits: ::std::option::Option<crate::types::DirectoryLimits>,
     _request_id: Option<String>,
 }
 impl GetDirectoryLimitsOutputBuilder {
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
     pub fn directory_limits(mut self, input: crate::types::DirectoryLimits) -> Self {
-        self.directory_limits = Some(input);
+        self.directory_limits = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>DirectoryLimits</code> object that contains the directory limits for the current Region.</p>
     pub fn set_directory_limits(
         mut self,
-        input: std::option::Option<crate::types::DirectoryLimits>,
+        input: ::std::option::Option<crate::types::DirectoryLimits>,
     ) -> Self {
         self.directory_limits = input;
         self

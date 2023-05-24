@@ -2,11 +2,11 @@
 
 /// <p>Contains the parameters for CreateLoadBalancerListener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerListenersOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateLoadBalancerListenersOutput {
+impl ::aws_http::request_id::RequestId for CreateLoadBalancerListenersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl CreateLoadBalancerListenersOutput {
 
 /// A builder for [`CreateLoadBalancerListenersOutput`](crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateLoadBalancerListenersOutputBuilder {
     _request_id: Option<String>,
 }

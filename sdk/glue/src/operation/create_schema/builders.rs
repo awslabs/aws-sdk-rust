@@ -8,56 +8,59 @@ pub use crate::operation::create_schema::_create_schema_input::CreateSchemaInput
 /// <p>Creates a new schema set and registers the schema definition. Returns an error if the schema set already exists without actually registering the version.</p>
 /// <p>When the schema set is created, a version checkpoint will be set to the first version. Compatibility mode "DISABLED" restricts any additional schema versions from being added after the first schema version. For all other compatibility modes, validation of compatibility settings will be applied only from the second version onwards when the <code>RegisterSchemaVersion</code> API is used.</p>
 /// <p>When this API is called without a <code>RegistryId</code>, this will create an entry for a "default-registry" in the registry database tables, if it is not already present.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSchemaFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_schema::builders::CreateSchemaInputBuilder,
 }
 impl CreateSchemaFluentBuilder {
     /// Creates a new `CreateSchema`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_schema::CreateSchema,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_schema::CreateSchemaOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +73,9 @@ impl CreateSchemaFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_schema::CreateSchemaOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
     > {
         self.send_middleware().await
     }
@@ -88,17 +91,20 @@ impl CreateSchemaFluentBuilder {
     /// <customer id>
     /// :registry/default-registry:random-5-letter-id
     /// </customer></code>.</p>
-    pub fn set_registry_id(mut self, input: std::option::Option<crate::types::RegistryId>) -> Self {
+    pub fn set_registry_id(
+        mut self,
+        input: ::std::option::Option<crate::types::RegistryId>,
+    ) -> Self {
         self.inner = self.inner.set_registry_id(input);
         self
     }
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
-    pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_name(input.into());
         self
     }
     /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
-    pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_name(input);
         self
     }
@@ -108,7 +114,10 @@ impl CreateSchemaFluentBuilder {
         self
     }
     /// <p>The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
-    pub fn set_data_format(mut self, input: std::option::Option<crate::types::DataFormat>) -> Self {
+    pub fn set_data_format(
+        mut self,
+        input: ::std::option::Option<crate::types::DataFormat>,
+    ) -> Self {
         self.inner = self.inner.set_data_format(input);
         self
     }
@@ -140,18 +149,18 @@ impl CreateSchemaFluentBuilder {
     /// </ul>
     pub fn set_compatibility(
         mut self,
-        input: std::option::Option<crate::types::Compatibility>,
+        input: ::std::option::Option<crate::types::Compatibility>,
     ) -> Self {
         self.inner = self.inner.set_compatibility(input);
         self
     }
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -162,8 +171,8 @@ impl CreateSchemaFluentBuilder {
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -171,22 +180,25 @@ impl CreateSchemaFluentBuilder {
     /// <p>Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
-    pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schema_definition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.schema_definition(input.into());
         self
     }
     /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
     pub fn set_schema_definition(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_schema_definition(input);
         self

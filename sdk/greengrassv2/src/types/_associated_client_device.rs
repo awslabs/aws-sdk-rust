@@ -2,22 +2,22 @@
 
 /// <p>Contains information about a client device that is associated to a core device for cloud discovery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedClientDevice {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub association_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub association_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssociatedClientDevice {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-    pub fn association_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn association_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.association_timestamp.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl AssociatedClientDevice {
 
 /// A builder for [`AssociatedClientDevice`](crate::types::AssociatedClientDevice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociatedClientDeviceBuilder {
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) association_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) association_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssociatedClientDeviceBuilder {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IoT thing that represents the associated client device.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-    pub fn association_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.association_timestamp = Some(input);
+    pub fn association_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.association_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
     pub fn set_association_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.association_timestamp = input;
         self

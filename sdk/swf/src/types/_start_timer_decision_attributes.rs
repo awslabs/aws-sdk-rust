@@ -10,33 +10,33 @@
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     #[doc(hidden)]
-    pub timer_id: std::option::Option<std::string::String>,
+    pub timer_id: ::std::option::Option<::std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
     #[doc(hidden)]
-    pub control: std::option::Option<std::string::String>,
+    pub control: ::std::option::Option<::std::string::String>,
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
     #[doc(hidden)]
-    pub start_to_fire_timeout: std::option::Option<std::string::String>,
+    pub start_to_fire_timeout: ::std::option::Option<::std::string::String>,
 }
 impl StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn timer_id(&self) -> std::option::Option<&str> {
+    pub fn timer_id(&self) -> ::std::option::Option<&str> {
         self.timer_id.as_deref()
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    pub fn control(&self) -> std::option::Option<&str> {
+    pub fn control(&self) -> ::std::option::Option<&str> {
         self.control.as_deref()
     }
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub fn start_to_fire_timeout(&self) -> std::option::Option<&str> {
+    pub fn start_to_fire_timeout(&self) -> ::std::option::Option<&str> {
         self.start_to_fire_timeout.as_deref()
     }
 }
@@ -49,46 +49,51 @@ impl StartTimerDecisionAttributes {
 
 /// A builder for [`StartTimerDecisionAttributes`](crate::types::StartTimerDecisionAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartTimerDecisionAttributesBuilder {
-    pub(crate) timer_id: std::option::Option<std::string::String>,
-    pub(crate) control: std::option::Option<std::string::String>,
-    pub(crate) start_to_fire_timeout: std::option::Option<std::string::String>,
+    pub(crate) timer_id: ::std::option::Option<::std::string::String>,
+    pub(crate) control: ::std::option::Option<::std::string::String>,
+    pub(crate) start_to_fire_timeout: ::std::option::Option<::std::string::String>,
 }
 impl StartTimerDecisionAttributesBuilder {
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn timer_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timer_id = Some(input.into());
+    pub fn timer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of the timer.</p>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
-    pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timer_id = input;
         self
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    pub fn control(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control = Some(input.into());
+    pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.control = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
-    pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control = input;
         self
     }
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
-    pub fn start_to_fire_timeout(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_to_fire_timeout = Some(input.into());
+    pub fn start_to_fire_timeout(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.start_to_fire_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The duration to wait before firing the timer.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
     pub fn set_start_to_fire_timeout(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.start_to_fire_timeout = input;
         self

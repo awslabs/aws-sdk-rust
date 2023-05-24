@@ -2,18 +2,18 @@
 
 /// <p>The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels uses the training dataset to create a test dataset with a temporary split of the training dataset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestingData {
     /// <p>The assets used for testing.</p>
     #[doc(hidden)]
-    pub assets: std::option::Option<std::vec::Vec<crate::types::Asset>>,
+    pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
     #[doc(hidden)]
     pub auto_create: bool,
 }
 impl TestingData {
     /// <p>The assets used for testing.</p>
-    pub fn assets(&self) -> std::option::Option<&[crate::types::Asset]> {
+    pub fn assets(&self) -> ::std::option::Option<&[crate::types::Asset]> {
         self.assets.as_deref()
     }
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
@@ -30,10 +30,12 @@ impl TestingData {
 
 /// A builder for [`TestingData`](crate::types::TestingData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestingDataBuilder {
-    pub(crate) assets: std::option::Option<std::vec::Vec<crate::types::Asset>>,
-    pub(crate) auto_create: std::option::Option<bool>,
+    pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
+    pub(crate) auto_create: ::std::option::Option<bool>,
 }
 impl TestingDataBuilder {
     /// Appends an item to `assets`.
@@ -44,24 +46,24 @@ impl TestingDataBuilder {
     pub fn assets(mut self, input: crate::types::Asset) -> Self {
         let mut v = self.assets.unwrap_or_default();
         v.push(input);
-        self.assets = Some(v);
+        self.assets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The assets used for testing.</p>
     pub fn set_assets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Asset>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
     ) -> Self {
         self.assets = input;
         self
     }
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
     pub fn auto_create(mut self, input: bool) -> Self {
-        self.auto_create = Some(input);
+        self.auto_create = ::std::option::Option::Some(input);
         self
     }
     /// <p>If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test dataset (20%) for the training job. After training completes, the test dataset is not stored and the training dataset reverts to its previous size.</p>
-    pub fn set_auto_create(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_create(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_create = input;
         self
     }

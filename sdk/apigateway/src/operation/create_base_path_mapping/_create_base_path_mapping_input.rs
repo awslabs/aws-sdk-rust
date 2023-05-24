@@ -2,36 +2,36 @@
 
 /// <p>Requests API Gateway to create a new BasePathMapping resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to create.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
     #[doc(hidden)]
-    pub base_path: std::option::Option<std::string::String>,
+    pub base_path: ::std::option::Option<::std::string::String>,
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
     #[doc(hidden)]
-    pub stage: std::option::Option<std::string::String>,
+    pub stage: ::std::option::Option<::std::string::String>,
 }
 impl CreateBasePathMappingInput {
     /// <p>The domain name of the BasePathMapping resource to create.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
-    pub fn base_path(&self) -> std::option::Option<&str> {
+    pub fn base_path(&self) -> ::std::option::Option<&str> {
         self.base_path.as_deref()
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> ::std::option::Option<&str> {
         self.stage.as_deref()
     }
 }
@@ -46,62 +46,64 @@ impl CreateBasePathMappingInput {
 
 /// A builder for [`CreateBasePathMappingInput`](crate::operation::create_base_path_mapping::CreateBasePathMappingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateBasePathMappingInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) base_path: std::option::Option<std::string::String>,
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) stage: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) base_path: ::std::option::Option<::std::string::String>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) stage: ::std::option::Option<::std::string::String>,
 }
 impl CreateBasePathMappingInputBuilder {
     /// <p>The domain name of the BasePathMapping resource to create.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name of the BasePathMapping resource to create.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
-    pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.base_path = Some(input.into());
+    pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.base_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
-    pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_path = input;
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
-    pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage = Some(input.into());
+    pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
-    pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateBasePathMappingInput`](crate::operation::create_base_path_mapping::CreateBasePathMappingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_base_path_mapping::CreateBasePathMappingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_base_path_mapping::CreateBasePathMappingInput {
                 domain_name: self.domain_name,
                 base_path: self.base_path,

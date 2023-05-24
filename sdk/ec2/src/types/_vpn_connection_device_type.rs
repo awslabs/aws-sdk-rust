@@ -2,36 +2,36 @@
 
 /// <p>List of customer gateway devices that have a sample configuration file available for use. You can also see the list of device types with sample configuration files available under <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpnConnectionDeviceType {
     /// <p>Customer gateway device identifier.</p>
     #[doc(hidden)]
-    pub vpn_connection_device_type_id: std::option::Option<std::string::String>,
+    pub vpn_connection_device_type_id: ::std::option::Option<::std::string::String>,
     /// <p>Customer gateway device vendor.</p>
     #[doc(hidden)]
-    pub vendor: std::option::Option<std::string::String>,
+    pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>Customer gateway device platform.</p>
     #[doc(hidden)]
-    pub platform: std::option::Option<std::string::String>,
+    pub platform: ::std::option::Option<::std::string::String>,
     /// <p>Customer gateway device software version.</p>
     #[doc(hidden)]
-    pub software: std::option::Option<std::string::String>,
+    pub software: ::std::option::Option<::std::string::String>,
 }
 impl VpnConnectionDeviceType {
     /// <p>Customer gateway device identifier.</p>
-    pub fn vpn_connection_device_type_id(&self) -> std::option::Option<&str> {
+    pub fn vpn_connection_device_type_id(&self) -> ::std::option::Option<&str> {
         self.vpn_connection_device_type_id.as_deref()
     }
     /// <p>Customer gateway device vendor.</p>
-    pub fn vendor(&self) -> std::option::Option<&str> {
+    pub fn vendor(&self) -> ::std::option::Option<&str> {
         self.vendor.as_deref()
     }
     /// <p>Customer gateway device platform.</p>
-    pub fn platform(&self) -> std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<&str> {
         self.platform.as_deref()
     }
     /// <p>Customer gateway device software version.</p>
-    pub fn software(&self) -> std::option::Option<&str> {
+    pub fn software(&self) -> ::std::option::Option<&str> {
         self.software.as_deref()
     }
 }
@@ -44,54 +44,59 @@ impl VpnConnectionDeviceType {
 
 /// A builder for [`VpnConnectionDeviceType`](crate::types::VpnConnectionDeviceType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpnConnectionDeviceTypeBuilder {
-    pub(crate) vpn_connection_device_type_id: std::option::Option<std::string::String>,
-    pub(crate) vendor: std::option::Option<std::string::String>,
-    pub(crate) platform: std::option::Option<std::string::String>,
-    pub(crate) software: std::option::Option<std::string::String>,
+    pub(crate) vpn_connection_device_type_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vendor: ::std::option::Option<::std::string::String>,
+    pub(crate) platform: ::std::option::Option<::std::string::String>,
+    pub(crate) software: ::std::option::Option<::std::string::String>,
 }
 impl VpnConnectionDeviceTypeBuilder {
     /// <p>Customer gateway device identifier.</p>
-    pub fn vpn_connection_device_type_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpn_connection_device_type_id = Some(input.into());
+    pub fn vpn_connection_device_type_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpn_connection_device_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Customer gateway device identifier.</p>
     pub fn set_vpn_connection_device_type_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpn_connection_device_type_id = input;
         self
     }
     /// <p>Customer gateway device vendor.</p>
-    pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vendor = Some(input.into());
+    pub fn vendor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vendor = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Customer gateway device vendor.</p>
-    pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor = input;
         self
     }
     /// <p>Customer gateway device platform.</p>
-    pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform = Some(input.into());
+    pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Customer gateway device platform.</p>
-    pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
     }
     /// <p>Customer gateway device software version.</p>
-    pub fn software(mut self, input: impl Into<std::string::String>) -> Self {
-        self.software = Some(input.into());
+    pub fn software(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.software = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Customer gateway device software version.</p>
-    pub fn set_software(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_software(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.software = input;
         self
     }

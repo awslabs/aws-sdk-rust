@@ -2,119 +2,123 @@
 
 /// <p>Information about the content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ContentData {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
     #[doc(hidden)]
-    pub content_arn: std::option::Option<std::string::String>,
+    pub content_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content.</p>
     #[doc(hidden)]
-    pub content_id: std::option::Option<std::string::String>,
+    pub content_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     #[doc(hidden)]
-    pub knowledge_base_arn: std::option::Option<std::string::String>,
+    pub knowledge_base_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the knowledge base.</p>
     #[doc(hidden)]
-    pub knowledge_base_id: std::option::Option<std::string::String>,
+    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the content.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content revision.</p>
     #[doc(hidden)]
-    pub revision_id: std::option::Option<std::string::String>,
+    pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the content.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The media type of the content.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the content.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ContentStatus>,
+    pub status: ::std::option::Option<crate::types::ContentStatus>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     #[doc(hidden)]
-    pub metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The URI of the content.</p>
     #[doc(hidden)]
-    pub link_out_uri: std::option::Option<std::string::String>,
+    pub link_out_uri: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the content.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     #[doc(hidden)]
-    pub url_expiry: std::option::Option<aws_smithy_types::DateTime>,
+    pub url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContentData {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn content_arn(&self) -> std::option::Option<&str> {
+    pub fn content_arn(&self) -> ::std::option::Option<&str> {
         self.content_arn.as_deref()
     }
     /// <p>The identifier of the content.</p>
-    pub fn content_id(&self) -> std::option::Option<&str> {
+    pub fn content_id(&self) -> ::std::option::Option<&str> {
         self.content_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_arn.as_deref()
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The name of the content.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the content revision.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
     /// <p>The title of the content.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The media type of the content.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The status of the content.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ContentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ContentStatus> {
         self.status.as_ref()
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.metadata.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>The URI of the content.</p>
-    pub fn link_out_uri(&self) -> std::option::Option<&str> {
+    pub fn link_out_uri(&self) -> ::std::option::Option<&str> {
         self.link_out_uri.as_deref()
     }
     /// <p>The URL of the content.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn url_expiry(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn url_expiry(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.url_expiry.as_ref()
     }
 }
-impl std::fmt::Debug for ContentData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ContentData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ContentData");
         formatter.field("content_arn", &self.content_arn);
         formatter.field("content_id", &self.content_id);
@@ -142,119 +146,127 @@ impl ContentData {
 
 /// A builder for [`ContentData`](crate::types::ContentData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ContentDataBuilder {
-    pub(crate) content_arn: std::option::Option<std::string::String>,
-    pub(crate) content_id: std::option::Option<std::string::String>,
-    pub(crate) knowledge_base_arn: std::option::Option<std::string::String>,
-    pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) revision_id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ContentStatus>,
-    pub(crate) metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) link_out_uri: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) url_expiry: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) content_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) content_id: ::std::option::Option<::std::string::String>,
+    pub(crate) knowledge_base_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ContentStatus>,
+    pub(crate) metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) link_out_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) url_expiry: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContentDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn content_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_arn = Some(input.into());
+    pub fn content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn set_content_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_arn = input;
         self
     }
     /// <p>The identifier of the content.</p>
-    pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_id = Some(input.into());
+    pub fn content_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the content.</p>
-    pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.knowledge_base_arn = Some(input.into());
+    pub fn knowledge_base_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.knowledge_base_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn set_knowledge_base_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.knowledge_base_arn = input;
         self
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.knowledge_base_id = Some(input.into());
+    pub fn knowledge_base_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the knowledge base.</p>
     pub fn set_knowledge_base_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.knowledge_base_id = input;
         self
     }
     /// <p>The name of the content.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the content.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The identifier of the content revision.</p>
-    pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revision_id = Some(input.into());
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the content revision.</p>
-    pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }
     /// <p>The title of the content.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the content.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The media type of the content.</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The media type of the content.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The status of the content.</p>
     pub fn status(mut self, input: crate::types::ContentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the content.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ContentStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -265,19 +277,19 @@ impl ContentDataBuilder {
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.metadata = Some(hash_map);
+        self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.metadata = input;
@@ -290,53 +302,53 @@ impl ContentDataBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The URI of the content.</p>
-    pub fn link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link_out_uri = Some(input.into());
+    pub fn link_out_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link_out_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the content.</p>
-    pub fn set_link_out_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_out_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_out_uri = input;
         self
     }
     /// <p>The URL of the content.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the content.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub fn url_expiry(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.url_expiry = Some(input);
+    pub fn url_expiry(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.url_expiry = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
     pub fn set_url_expiry(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.url_expiry = input;
         self
@@ -361,8 +373,8 @@ impl ContentDataBuilder {
         }
     }
 }
-impl std::fmt::Debug for ContentDataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ContentDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ContentDataBuilder");
         formatter.field("content_arn", &self.content_arn);
         formatter.field("content_id", &self.content_id);

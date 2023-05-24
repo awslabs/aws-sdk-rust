@@ -6,56 +6,59 @@ pub use crate::operation::update_contact::_update_contact_input::UpdateContactIn
 /// Fluent builder constructing a request to `UpdateContact`.
 ///
 /// <p>Updates the contact or escalation plan specified.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContactFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_contact::builders::UpdateContactInputBuilder,
 }
 impl UpdateContactFluentBuilder {
     /// Creates a new `UpdateContact`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_contact::UpdateContact,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_contact::UpdateContactOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl UpdateContactFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_contact::UpdateContactOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_contact::UpdateContactError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
-    pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan you're updating.</p>
-    pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
@@ -100,7 +103,7 @@ impl UpdateContactFluentBuilder {
         self
     }
     /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts.</p>
-    pub fn set_plan(mut self, input: std::option::Option<crate::types::Plan>) -> Self {
+    pub fn set_plan(mut self, input: ::std::option::Option<crate::types::Plan>) -> Self {
         self.inner = self.inner.set_plan(input);
         self
     }

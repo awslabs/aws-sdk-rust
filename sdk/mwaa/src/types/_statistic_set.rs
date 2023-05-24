@@ -2,36 +2,36 @@
 
 /// <p> <b>Internal only</b>. Represents a set of statistics that describe a specific metric. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatisticSet {
     /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
     #[doc(hidden)]
-    pub sample_count: std::option::Option<i32>,
+    pub sample_count: ::std::option::Option<i32>,
     /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
     #[doc(hidden)]
-    pub sum: std::option::Option<f64>,
+    pub sum: ::std::option::Option<f64>,
     /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
     #[doc(hidden)]
-    pub minimum: std::option::Option<f64>,
+    pub minimum: ::std::option::Option<f64>,
     /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
     #[doc(hidden)]
-    pub maximum: std::option::Option<f64>,
+    pub maximum: ::std::option::Option<f64>,
 }
 impl StatisticSet {
     /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
-    pub fn sample_count(&self) -> std::option::Option<i32> {
+    pub fn sample_count(&self) -> ::std::option::Option<i32> {
         self.sample_count
     }
     /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
-    pub fn sum(&self) -> std::option::Option<f64> {
+    pub fn sum(&self) -> ::std::option::Option<f64> {
         self.sum
     }
     /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
-    pub fn minimum(&self) -> std::option::Option<f64> {
+    pub fn minimum(&self) -> ::std::option::Option<f64> {
         self.minimum
     }
     /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
-    pub fn maximum(&self) -> std::option::Option<f64> {
+    pub fn maximum(&self) -> ::std::option::Option<f64> {
         self.maximum
     }
 }
@@ -44,51 +44,53 @@ impl StatisticSet {
 
 /// A builder for [`StatisticSet`](crate::types::StatisticSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatisticSetBuilder {
-    pub(crate) sample_count: std::option::Option<i32>,
-    pub(crate) sum: std::option::Option<f64>,
-    pub(crate) minimum: std::option::Option<f64>,
-    pub(crate) maximum: std::option::Option<f64>,
+    pub(crate) sample_count: ::std::option::Option<i32>,
+    pub(crate) sum: ::std::option::Option<f64>,
+    pub(crate) minimum: ::std::option::Option<f64>,
+    pub(crate) maximum: ::std::option::Option<f64>,
 }
 impl StatisticSetBuilder {
     /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
     pub fn sample_count(mut self, input: i32) -> Self {
-        self.sample_count = Some(input);
+        self.sample_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> <b>Internal only</b>. The number of samples used for the statistic set.</p>
-    pub fn set_sample_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sample_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_count = input;
         self
     }
     /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
     pub fn sum(mut self, input: f64) -> Self {
-        self.sum = Some(input);
+        self.sum = ::std::option::Option::Some(input);
         self
     }
     /// <p> <b>Internal only</b>. The sum of values for the sample set.</p>
-    pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
     }
     /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
     pub fn minimum(mut self, input: f64) -> Self {
-        self.minimum = Some(input);
+        self.minimum = ::std::option::Option::Some(input);
         self
     }
     /// <p> <b>Internal only</b>. The minimum value of the sample set.</p>
-    pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum = input;
         self
     }
     /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
     pub fn maximum(mut self, input: f64) -> Self {
-        self.maximum = Some(input);
+        self.maximum = ::std::option::Option::Some(input);
         self
     }
     /// <p> <b>Internal only</b>. The maximum value of the sample set.</p>
-    pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum = input;
         self
     }

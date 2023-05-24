@@ -2,36 +2,36 @@
 
 /// <p>Specifies the properties, such as relevance tuning and searchability, of an index field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentMetadataConfiguration {
     /// <p>The name of the index field.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the index field. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DocumentAttributeValueType>,
+    pub r#type: ::std::option::Option<crate::types::DocumentAttributeValueType>,
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
     #[doc(hidden)]
-    pub relevance: std::option::Option<crate::types::Relevance>,
+    pub relevance: ::std::option::Option<crate::types::Relevance>,
     /// <p>Provides information about how the field is used during a search.</p>
     #[doc(hidden)]
-    pub search: std::option::Option<crate::types::Search>,
+    pub search: ::std::option::Option<crate::types::Search>,
 }
 impl DocumentMetadataConfiguration {
     /// <p>The name of the index field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data type of the index field. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DocumentAttributeValueType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DocumentAttributeValueType> {
         self.r#type.as_ref()
     }
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
-    pub fn relevance(&self) -> std::option::Option<&crate::types::Relevance> {
+    pub fn relevance(&self) -> ::std::option::Option<&crate::types::Relevance> {
         self.relevance.as_ref()
     }
     /// <p>Provides information about how the field is used during a search.</p>
-    pub fn search(&self) -> std::option::Option<&crate::types::Search> {
+    pub fn search(&self) -> ::std::option::Option<&crate::types::Search> {
         self.search.as_ref()
     }
 }
@@ -44,54 +44,56 @@ impl DocumentMetadataConfiguration {
 
 /// A builder for [`DocumentMetadataConfiguration`](crate::types::DocumentMetadataConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentMetadataConfigurationBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::DocumentAttributeValueType>,
-    pub(crate) relevance: std::option::Option<crate::types::Relevance>,
-    pub(crate) search: std::option::Option<crate::types::Search>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DocumentAttributeValueType>,
+    pub(crate) relevance: ::std::option::Option<crate::types::Relevance>,
+    pub(crate) search: ::std::option::Option<crate::types::Search>,
 }
 impl DocumentMetadataConfigurationBuilder {
     /// <p>The name of the index field.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the index field.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The data type of the index field. </p>
     pub fn r#type(mut self, input: crate::types::DocumentAttributeValueType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the index field. </p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::DocumentAttributeValueType>,
+        input: ::std::option::Option<crate::types::DocumentAttributeValueType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
     pub fn relevance(mut self, input: crate::types::Relevance) -> Self {
-        self.relevance = Some(input);
+        self.relevance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
-    pub fn set_relevance(mut self, input: std::option::Option<crate::types::Relevance>) -> Self {
+    pub fn set_relevance(mut self, input: ::std::option::Option<crate::types::Relevance>) -> Self {
         self.relevance = input;
         self
     }
     /// <p>Provides information about how the field is used during a search.</p>
     pub fn search(mut self, input: crate::types::Search) -> Self {
-        self.search = Some(input);
+        self.search = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about how the field is used during a search.</p>
-    pub fn set_search(mut self, input: std::option::Option<crate::types::Search>) -> Self {
+    pub fn set_search(mut self, input: ::std::option::Option<crate::types::Search>) -> Self {
         self.search = input;
         self
     }

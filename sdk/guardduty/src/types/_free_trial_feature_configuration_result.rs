@@ -2,18 +2,18 @@
 
 /// <p>Contains information about the free trial period for a feature.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialFeatureConfigurationResult {
     /// <p>The name of the feature for which the free trial is configured.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::FreeTrialFeatureResult>,
+    pub name: ::std::option::Option<crate::types::FreeTrialFeatureResult>,
     /// <p>The number of the remaining free trial days for the feature.</p>
     #[doc(hidden)]
     pub free_trial_days_remaining: i32,
 }
 impl FreeTrialFeatureConfigurationResult {
     /// <p>The name of the feature for which the free trial is configured.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::FreeTrialFeatureResult> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::FreeTrialFeatureResult> {
         self.name.as_ref()
     }
     /// <p>The number of the remaining free trial days for the feature.</p>
@@ -30,32 +30,34 @@ impl FreeTrialFeatureConfigurationResult {
 
 /// A builder for [`FreeTrialFeatureConfigurationResult`](crate::types::FreeTrialFeatureConfigurationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FreeTrialFeatureConfigurationResultBuilder {
-    pub(crate) name: std::option::Option<crate::types::FreeTrialFeatureResult>,
-    pub(crate) free_trial_days_remaining: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<crate::types::FreeTrialFeatureResult>,
+    pub(crate) free_trial_days_remaining: ::std::option::Option<i32>,
 }
 impl FreeTrialFeatureConfigurationResultBuilder {
     /// <p>The name of the feature for which the free trial is configured.</p>
     pub fn name(mut self, input: crate::types::FreeTrialFeatureResult) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the feature for which the free trial is configured.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::FreeTrialFeatureResult>,
+        input: ::std::option::Option<crate::types::FreeTrialFeatureResult>,
     ) -> Self {
         self.name = input;
         self
     }
     /// <p>The number of the remaining free trial days for the feature.</p>
     pub fn free_trial_days_remaining(mut self, input: i32) -> Self {
-        self.free_trial_days_remaining = Some(input);
+        self.free_trial_days_remaining = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of the remaining free trial days for the feature.</p>
-    pub fn set_free_trial_days_remaining(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_free_trial_days_remaining(mut self, input: ::std::option::Option<i32>) -> Self {
         self.free_trial_days_remaining = input;
         self
     }

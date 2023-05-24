@@ -2,22 +2,22 @@
 
 /// <p>The theme display options for sheets. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetStyle {
     /// <p>The display options for tiles.</p>
     #[doc(hidden)]
-    pub tile: std::option::Option<crate::types::TileStyle>,
+    pub tile: ::std::option::Option<crate::types::TileStyle>,
     /// <p>The layout options for tiles.</p>
     #[doc(hidden)]
-    pub tile_layout: std::option::Option<crate::types::TileLayoutStyle>,
+    pub tile_layout: ::std::option::Option<crate::types::TileLayoutStyle>,
 }
 impl SheetStyle {
     /// <p>The display options for tiles.</p>
-    pub fn tile(&self) -> std::option::Option<&crate::types::TileStyle> {
+    pub fn tile(&self) -> ::std::option::Option<&crate::types::TileStyle> {
         self.tile.as_ref()
     }
     /// <p>The layout options for tiles.</p>
-    pub fn tile_layout(&self) -> std::option::Option<&crate::types::TileLayoutStyle> {
+    pub fn tile_layout(&self) -> ::std::option::Option<&crate::types::TileLayoutStyle> {
         self.tile_layout.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl SheetStyle {
 
 /// A builder for [`SheetStyle`](crate::types::SheetStyle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SheetStyleBuilder {
-    pub(crate) tile: std::option::Option<crate::types::TileStyle>,
-    pub(crate) tile_layout: std::option::Option<crate::types::TileLayoutStyle>,
+    pub(crate) tile: ::std::option::Option<crate::types::TileStyle>,
+    pub(crate) tile_layout: ::std::option::Option<crate::types::TileLayoutStyle>,
 }
 impl SheetStyleBuilder {
     /// <p>The display options for tiles.</p>
     pub fn tile(mut self, input: crate::types::TileStyle) -> Self {
-        self.tile = Some(input);
+        self.tile = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display options for tiles.</p>
-    pub fn set_tile(mut self, input: std::option::Option<crate::types::TileStyle>) -> Self {
+    pub fn set_tile(mut self, input: ::std::option::Option<crate::types::TileStyle>) -> Self {
         self.tile = input;
         self
     }
     /// <p>The layout options for tiles.</p>
     pub fn tile_layout(mut self, input: crate::types::TileLayoutStyle) -> Self {
-        self.tile_layout = Some(input);
+        self.tile_layout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The layout options for tiles.</p>
     pub fn set_tile_layout(
         mut self,
-        input: std::option::Option<crate::types::TileLayoutStyle>,
+        input: ::std::option::Option<crate::types::TileLayoutStyle>,
     ) -> Self {
         self.tile_layout = input;
         self

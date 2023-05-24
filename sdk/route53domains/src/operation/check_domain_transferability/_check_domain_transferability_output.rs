@@ -2,20 +2,20 @@
 
 /// <p>The CheckDomainTransferability response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckDomainTransferabilityOutput {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
     #[doc(hidden)]
-    pub transferability: std::option::Option<crate::types::DomainTransferability>,
+    pub transferability: ::std::option::Option<crate::types::DomainTransferability>,
     _request_id: Option<String>,
 }
 impl CheckDomainTransferabilityOutput {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
-    pub fn transferability(&self) -> std::option::Option<&crate::types::DomainTransferability> {
+    pub fn transferability(&self) -> ::std::option::Option<&crate::types::DomainTransferability> {
         self.transferability.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CheckDomainTransferabilityOutput {
+impl ::aws_http::request_id::RequestId for CheckDomainTransferabilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl CheckDomainTransferabilityOutput {
 
 /// A builder for [`CheckDomainTransferabilityOutput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CheckDomainTransferabilityOutputBuilder {
-    pub(crate) transferability: std::option::Option<crate::types::DomainTransferability>,
+    pub(crate) transferability: ::std::option::Option<crate::types::DomainTransferability>,
     _request_id: Option<String>,
 }
 impl CheckDomainTransferabilityOutputBuilder {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
     pub fn transferability(mut self, input: crate::types::DomainTransferability) -> Self {
-        self.transferability = Some(input);
+        self.transferability = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
     pub fn set_transferability(
         mut self,
-        input: std::option::Option<crate::types::DomainTransferability>,
+        input: ::std::option::Option<crate::types::DomainTransferability>,
     ) -> Self {
         self.transferability = input;
         self

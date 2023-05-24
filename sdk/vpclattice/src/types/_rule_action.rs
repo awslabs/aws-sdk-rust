@@ -2,7 +2,7 @@
 
 /// <p>Describes the action for a rule. Each rule must include exactly one of the following types of actions: <code>forward </code>or <code>fixed-response</code>, and it must be the last action to be performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RuleAction {
     /// <p> Describes the rule action that returns a custom HTTP response. </p>
     FixedResponse(crate::types::FixedResponseAction),
@@ -23,11 +23,11 @@ impl RuleAction {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_fixed_response(
         &self,
-    ) -> std::result::Result<&crate::types::FixedResponseAction, &Self> {
+    ) -> ::std::result::Result<&crate::types::FixedResponseAction, &Self> {
         if let RuleAction::FixedResponse(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`FixedResponse`](crate::types::RuleAction::FixedResponse).
@@ -36,11 +36,11 @@ impl RuleAction {
     }
     /// Tries to convert the enum instance into [`Forward`](crate::types::RuleAction::Forward), extracting the inner [`ForwardAction`](crate::types::ForwardAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_forward(&self) -> std::result::Result<&crate::types::ForwardAction, &Self> {
+    pub fn as_forward(&self) -> ::std::result::Result<&crate::types::ForwardAction, &Self> {
         if let RuleAction::Forward(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Forward`](crate::types::RuleAction::Forward).

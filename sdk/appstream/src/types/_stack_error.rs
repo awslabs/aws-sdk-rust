@@ -2,22 +2,22 @@
 
 /// <p>Describes a stack error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackError {
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::StackErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::StackErrorCode>,
     /// <p>The error message.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl StackError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::StackErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::StackErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl StackError {
 
 /// A builder for [`StackError`](crate::types::StackError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackErrorBuilder {
-    pub(crate) error_code: std::option::Option<crate::types::StackErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::StackErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl StackErrorBuilder {
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: crate::types::StackErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::StackErrorCode>,
+        input: ::std::option::Option<crate::types::StackErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error message.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

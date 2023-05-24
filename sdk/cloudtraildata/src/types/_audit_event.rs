@@ -2,31 +2,31 @@
 
 /// <p>An event from a source outside of Amazon Web Services that you want CloudTrail to log.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuditEvent {
     /// <p>The original event ID from the source event.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
     #[doc(hidden)]
-    pub event_data: std::option::Option<std::string::String>,
+    pub event_data: ::std::option::Option<::std::string::String>,
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
     #[doc(hidden)]
-    pub event_data_checksum: std::option::Option<std::string::String>,
+    pub event_data_checksum: ::std::option::Option<::std::string::String>,
 }
 impl AuditEvent {
     /// <p>The original event ID from the source event.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
-    pub fn event_data(&self) -> std::option::Option<&str> {
+    pub fn event_data(&self) -> ::std::option::Option<&str> {
         self.event_data.as_deref()
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
-    pub fn event_data_checksum(&self) -> std::option::Option<&str> {
+    pub fn event_data_checksum(&self) -> ::std::option::Option<&str> {
         self.event_data_checksum.as_deref()
     }
 }
@@ -39,44 +39,49 @@ impl AuditEvent {
 
 /// A builder for [`AuditEvent`](crate::types::AuditEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuditEventBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) event_data: std::option::Option<std::string::String>,
-    pub(crate) event_data_checksum: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) event_data: ::std::option::Option<::std::string::String>,
+    pub(crate) event_data_checksum: ::std::option::Option<::std::string::String>,
 }
 impl AuditEventBuilder {
     /// <p>The original event ID from the source event.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The original event ID from the source event.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
-    pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_data = Some(input.into());
+    pub fn event_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, <code>userAgent</code>, and <code>eventSource</code>.</p>
-    pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_data = input;
         self
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
-    pub fn event_data_checksum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_data_checksum = Some(input.into());
+    pub fn event_data_checksum(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_data_checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches with the checksum. Calculate the checksum by running a command like the following:</p>
     /// <p> <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code> </p>
     pub fn set_event_data_checksum(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_data_checksum = input;
         self

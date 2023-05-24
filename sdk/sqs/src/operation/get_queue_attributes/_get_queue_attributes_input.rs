@@ -2,12 +2,12 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
-    pub queue_url: std::option::Option<std::string::String>,
+    pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes for which to retrieve information.</p>
     /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p> <note>
     /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
@@ -61,12 +61,12 @@ pub struct GetQueueAttributesInput {
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub attribute_names: std::option::Option<std::vec::Vec<crate::types::QueueAttributeName>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
 }
 impl GetQueueAttributesInput {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
     /// <p>A list of attributes for which to retrieve information.</p>
@@ -121,7 +121,7 @@ impl GetQueueAttributesInput {
     /// </ul>
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn attribute_names(&self) -> std::option::Option<&[crate::types::QueueAttributeName]> {
+    pub fn attribute_names(&self) -> ::std::option::Option<&[crate::types::QueueAttributeName]> {
         self.attribute_names.as_deref()
     }
 }
@@ -135,22 +135,24 @@ impl GetQueueAttributesInput {
 
 /// A builder for [`GetQueueAttributesInput`](crate::operation::get_queue_attributes::GetQueueAttributesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetQueueAttributesInputBuilder {
-    pub(crate) queue_url: std::option::Option<std::string::String>,
+    pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_names:
-        std::option::Option<std::vec::Vec<crate::types::QueueAttributeName>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
 }
 impl GetQueueAttributesInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_url = Some(input.into());
+    pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_url = input;
         self
     }
@@ -213,7 +215,7 @@ impl GetQueueAttributesInputBuilder {
     pub fn attribute_names(mut self, input: crate::types::QueueAttributeName) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
         v.push(input);
-        self.attribute_names = Some(v);
+        self.attribute_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of attributes for which to retrieve information.</p>
@@ -270,7 +272,7 @@ impl GetQueueAttributesInputBuilder {
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn set_attribute_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueueAttributeName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
     ) -> Self {
         self.attribute_names = input;
         self
@@ -278,11 +280,11 @@ impl GetQueueAttributesInputBuilder {
     /// Consumes the builder and constructs a [`GetQueueAttributesInput`](crate::operation::get_queue_attributes::GetQueueAttributesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_queue_attributes::GetQueueAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_queue_attributes::GetQueueAttributesInput {
                 queue_url: self.queue_url,
                 attribute_names: self.attribute_names,

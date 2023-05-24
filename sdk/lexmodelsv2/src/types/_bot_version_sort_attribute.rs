@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BotVersionSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum BotVersionSortAttribute {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BotVersionSortAttribute {
+impl ::std::convert::From<&str> for BotVersionSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "BotVersion" => BotVersionSortAttribute::BotVersion,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for BotVersionSortAttribute {
         }
     }
 }
-impl std::str::FromStr for BotVersionSortAttribute {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BotVersionSortAttribute {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotVersionSortAttribute::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BotVersionSortAttribute::from(s))
     }
 }
 impl BotVersionSortAttribute {
@@ -81,7 +81,7 @@ impl BotVersionSortAttribute {
         &["BotVersion"]
     }
 }
-impl AsRef<str> for BotVersionSortAttribute {
+impl ::std::convert::AsRef<str> for BotVersionSortAttribute {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

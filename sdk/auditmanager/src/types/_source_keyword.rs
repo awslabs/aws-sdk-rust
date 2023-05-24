@@ -9,11 +9,11 @@
 /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail event names supported by Audit Manager</a> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceKeyword {
     /// <p> The input method for the keyword. </p>
     #[doc(hidden)]
-    pub keyword_input_type: std::option::Option<crate::types::KeywordInputType>,
+    pub keyword_input_type: ::std::option::Option<crate::types::KeywordInputType>,
     /// <p> The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call. </p>
     /// <p>If you’re mapping a data source to a rule in Config, the <code>keywordValue</code> that you specify depends on the type of rule:</p>
     /// <ul>
@@ -32,11 +32,11 @@ pub struct SourceKeyword {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub keyword_value: std::option::Option<std::string::String>,
+    pub keyword_value: ::std::option::Option<::std::string::String>,
 }
 impl SourceKeyword {
     /// <p> The input method for the keyword. </p>
-    pub fn keyword_input_type(&self) -> std::option::Option<&crate::types::KeywordInputType> {
+    pub fn keyword_input_type(&self) -> ::std::option::Option<&crate::types::KeywordInputType> {
         self.keyword_input_type.as_ref()
     }
     /// <p> The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call. </p>
@@ -56,7 +56,7 @@ impl SourceKeyword {
     /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn keyword_value(&self) -> std::option::Option<&str> {
+    pub fn keyword_value(&self) -> ::std::option::Option<&str> {
         self.keyword_value.as_deref()
     }
 }
@@ -69,21 +69,23 @@ impl SourceKeyword {
 
 /// A builder for [`SourceKeyword`](crate::types::SourceKeyword).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceKeywordBuilder {
-    pub(crate) keyword_input_type: std::option::Option<crate::types::KeywordInputType>,
-    pub(crate) keyword_value: std::option::Option<std::string::String>,
+    pub(crate) keyword_input_type: ::std::option::Option<crate::types::KeywordInputType>,
+    pub(crate) keyword_value: ::std::option::Option<::std::string::String>,
 }
 impl SourceKeywordBuilder {
     /// <p> The input method for the keyword. </p>
     pub fn keyword_input_type(mut self, input: crate::types::KeywordInputType) -> Self {
-        self.keyword_input_type = Some(input);
+        self.keyword_input_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The input method for the keyword. </p>
     pub fn set_keyword_input_type(
         mut self,
-        input: std::option::Option<crate::types::KeywordInputType>,
+        input: ::std::option::Option<crate::types::KeywordInputType>,
     ) -> Self {
         self.keyword_input_type = input;
         self
@@ -105,8 +107,11 @@ impl SourceKeywordBuilder {
     /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn keyword_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.keyword_value = Some(input.into());
+    pub fn keyword_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.keyword_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The value of the keyword that's used when mapping a control data source. For example, this can be a CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web Services API call. </p>
@@ -126,7 +131,10 @@ impl SourceKeywordBuilder {
     /// <li> <p>Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba</p> <p> <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_keyword_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_keyword_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.keyword_value = input;
         self
     }

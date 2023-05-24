@@ -2,29 +2,29 @@
 
 /// <p>The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code> object. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
-    pub tag_key: std::option::Option<std::string::String>,
+    pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::CostAllocationTagType>,
+    pub r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
     /// <p>The status of a cost allocation tag. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CostAllocationTagStatus>,
+    pub status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
 }
 impl CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::CostAllocationTagType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CostAllocationTagType> {
         self.r#type.as_ref()
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CostAllocationTagStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CostAllocationTagStatus> {
         self.status.as_ref()
     }
 }
@@ -37,45 +37,47 @@ impl CostAllocationTag {
 
 /// A builder for [`CostAllocationTag`](crate::types::CostAllocationTag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CostAllocationTagBuilder {
-    pub(crate) tag_key: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::CostAllocationTagType>,
-    pub(crate) status: std::option::Option<crate::types::CostAllocationTagStatus>,
+    pub(crate) tag_key: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::CostAllocationTagType>,
+    pub(crate) status: ::std::option::Option<crate::types::CostAllocationTagStatus>,
 }
 impl CostAllocationTagBuilder {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_key = Some(input.into());
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key for the cost allocation tag. </p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
     pub fn r#type(mut self, input: crate::types::CostAllocationTagType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::CostAllocationTagType>,
+        input: ::std::option::Option<crate::types::CostAllocationTagType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The status of a cost allocation tag. </p>
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a cost allocation tag. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CostAllocationTagStatus>,
+        input: ::std::option::Option<crate::types::CostAllocationTagStatus>,
     ) -> Self {
         self.status = input;
         self

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Compatibility {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum Compatibility {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Compatibility {
+impl ::std::convert::From<&str> for Compatibility {
     fn from(s: &str) -> Self {
         match s {
             "EC2" => Compatibility::Ec2,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for Compatibility {
         }
     }
 }
-impl std::str::FromStr for Compatibility {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Compatibility {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Compatibility::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Compatibility::from(s))
     }
 }
 impl Compatibility {
@@ -91,7 +91,7 @@ impl Compatibility {
         &["EC2", "EXTERNAL", "FARGATE"]
     }
 }
-impl AsRef<str> for Compatibility {
+impl ::std::convert::AsRef<str> for Compatibility {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

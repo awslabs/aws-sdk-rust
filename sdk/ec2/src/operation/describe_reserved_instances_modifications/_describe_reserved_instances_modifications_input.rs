@@ -2,7 +2,7 @@
 
 /// <p>Contains the parameters for DescribeReservedInstancesModifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesModificationsInput {
     /// <p>One or more filters.</p>
     /// <ul>
@@ -20,14 +20,14 @@ pub struct DescribeReservedInstancesModificationsInput {
     /// <li> <p> <code>update-date</code> - The time when the modification request was last updated.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>IDs for the submitted modification request.</p>
     #[doc(hidden)]
     pub reserved_instances_modification_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to retrieve the next page of results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedInstancesModificationsInput {
     /// <p>One or more filters.</p>
@@ -45,17 +45,17 @@ impl DescribeReservedInstancesModificationsInput {
     /// <li> <p> <code>status-message</code> - The reason for the status.</p> </li>
     /// <li> <p> <code>update-date</code> - The time when the modification request was last updated.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>IDs for the submitted modification request.</p>
     pub fn reserved_instances_modification_ids(
         &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.reserved_instances_modification_ids.as_deref()
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -68,12 +68,14 @@ impl DescribeReservedInstancesModificationsInput {
 
 /// A builder for [`DescribeReservedInstancesModificationsInput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedInstancesModificationsInputBuilder {
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     pub(crate) reserved_instances_modification_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReservedInstancesModificationsInputBuilder {
     /// Appends an item to `filters`.
@@ -98,7 +100,7 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more filters.</p>
@@ -118,7 +120,7 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filters = input;
         self
@@ -130,34 +132,34 @@ impl DescribeReservedInstancesModificationsInputBuilder {
     /// <p>IDs for the submitted modification request.</p>
     pub fn reserved_instances_modification_ids(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.reserved_instances_modification_ids.unwrap_or_default();
         v.push(input.into());
-        self.reserved_instances_modification_ids = Some(v);
+        self.reserved_instances_modification_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>IDs for the submitted modification request.</p>
     pub fn set_reserved_instances_modification_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.reserved_instances_modification_ids = input;
         self
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesModificationsInput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsInput {
                 filters: self.filters
                 ,

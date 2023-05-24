@@ -2,22 +2,22 @@
 
 /// <p>Describes a Reserved Instance offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PricingDetail {
     /// <p>The number of reservations available for the price.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// <p>The price per instance.</p>
     #[doc(hidden)]
-    pub price: std::option::Option<f64>,
+    pub price: ::std::option::Option<f64>,
 }
 impl PricingDetail {
     /// <p>The number of reservations available for the price.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The price per instance.</p>
-    pub fn price(&self) -> std::option::Option<f64> {
+    pub fn price(&self) -> ::std::option::Option<f64> {
         self.price
     }
 }
@@ -30,29 +30,31 @@ impl PricingDetail {
 
 /// A builder for [`PricingDetail`](crate::types::PricingDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PricingDetailBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) price: std::option::Option<f64>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) price: ::std::option::Option<f64>,
 }
 impl PricingDetailBuilder {
     /// <p>The number of reservations available for the price.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of reservations available for the price.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The price per instance.</p>
     pub fn price(mut self, input: f64) -> Self {
-        self.price = Some(input);
+        self.price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price per instance.</p>
-    pub fn set_price(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.price = input;
         self
     }

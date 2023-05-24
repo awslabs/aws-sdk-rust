@@ -2,22 +2,22 @@
 
 /// <p>Contains metadata about a label detection request, including the SortBy and AggregateBy options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLabelDetectionRequestMetadata {
     /// <p>The sorting method chosen for a GetLabelDetection request.</p>
     #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::types::LabelDetectionSortBy>,
+    pub sort_by: ::std::option::Option<crate::types::LabelDetectionSortBy>,
     /// <p>The aggregation method chosen for a GetLabelDetection request.</p>
     #[doc(hidden)]
-    pub aggregate_by: std::option::Option<crate::types::LabelDetectionAggregateBy>,
+    pub aggregate_by: ::std::option::Option<crate::types::LabelDetectionAggregateBy>,
 }
 impl GetLabelDetectionRequestMetadata {
     /// <p>The sorting method chosen for a GetLabelDetection request.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::LabelDetectionSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::LabelDetectionSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The aggregation method chosen for a GetLabelDetection request.</p>
-    pub fn aggregate_by(&self) -> std::option::Option<&crate::types::LabelDetectionAggregateBy> {
+    pub fn aggregate_by(&self) -> ::std::option::Option<&crate::types::LabelDetectionAggregateBy> {
         self.aggregate_by.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl GetLabelDetectionRequestMetadata {
 
 /// A builder for [`GetLabelDetectionRequestMetadata`](crate::types::GetLabelDetectionRequestMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetLabelDetectionRequestMetadataBuilder {
-    pub(crate) sort_by: std::option::Option<crate::types::LabelDetectionSortBy>,
-    pub(crate) aggregate_by: std::option::Option<crate::types::LabelDetectionAggregateBy>,
+    pub(crate) sort_by: ::std::option::Option<crate::types::LabelDetectionSortBy>,
+    pub(crate) aggregate_by: ::std::option::Option<crate::types::LabelDetectionAggregateBy>,
 }
 impl GetLabelDetectionRequestMetadataBuilder {
     /// <p>The sorting method chosen for a GetLabelDetection request.</p>
     pub fn sort_by(mut self, input: crate::types::LabelDetectionSortBy) -> Self {
-        self.sort_by = Some(input);
+        self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sorting method chosen for a GetLabelDetection request.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::LabelDetectionSortBy>,
+        input: ::std::option::Option<crate::types::LabelDetectionSortBy>,
     ) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>The aggregation method chosen for a GetLabelDetection request.</p>
     pub fn aggregate_by(mut self, input: crate::types::LabelDetectionAggregateBy) -> Self {
-        self.aggregate_by = Some(input);
+        self.aggregate_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregation method chosen for a GetLabelDetection request.</p>
     pub fn set_aggregate_by(
         mut self,
-        input: std::option::Option<crate::types::LabelDetectionAggregateBy>,
+        input: ::std::option::Option<crate::types::LabelDetectionAggregateBy>,
     ) -> Self {
         self.aggregate_by = input;
         self

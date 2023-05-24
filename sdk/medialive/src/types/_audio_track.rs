@@ -2,15 +2,15 @@
 
 /// Audio Track
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioTrack {
     /// 1-based integer value that maps to a specific audio track
     #[doc(hidden)]
-    pub track: std::option::Option<i32>,
+    pub track: ::std::option::Option<i32>,
 }
 impl AudioTrack {
     /// 1-based integer value that maps to a specific audio track
-    pub fn track(&self) -> std::option::Option<i32> {
+    pub fn track(&self) -> ::std::option::Option<i32> {
         self.track
     }
 }
@@ -23,18 +23,20 @@ impl AudioTrack {
 
 /// A builder for [`AudioTrack`](crate::types::AudioTrack).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioTrackBuilder {
-    pub(crate) track: std::option::Option<i32>,
+    pub(crate) track: ::std::option::Option<i32>,
 }
 impl AudioTrackBuilder {
     /// 1-based integer value that maps to a specific audio track
     pub fn track(mut self, input: i32) -> Self {
-        self.track = Some(input);
+        self.track = ::std::option::Option::Some(input);
         self
     }
     /// 1-based integer value that maps to a specific audio track
-    pub fn set_track(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_track(mut self, input: ::std::option::Option<i32>) -> Self {
         self.track = input;
         self
     }

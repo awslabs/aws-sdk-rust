@@ -2,31 +2,31 @@
 
 /// <p>The object representing the URL of the bot definition, the URL of the associated transcript, and a statistical summary of the bot recommendation results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotRecommendationResults {
     /// <p>The presigned URL link of the recommended bot definition.</p>
     #[doc(hidden)]
-    pub bot_locale_export_url: std::option::Option<std::string::String>,
+    pub bot_locale_export_url: ::std::option::Option<::std::string::String>,
     /// <p>The presigned url link of the associated transcript.</p>
     #[doc(hidden)]
-    pub associated_transcripts_url: std::option::Option<std::string::String>,
+    pub associated_transcripts_url: ::std::option::Option<::std::string::String>,
     /// <p>The statistical summary of the bot recommendation results.</p>
     #[doc(hidden)]
-    pub statistics: std::option::Option<crate::types::BotRecommendationResultStatistics>,
+    pub statistics: ::std::option::Option<crate::types::BotRecommendationResultStatistics>,
 }
 impl BotRecommendationResults {
     /// <p>The presigned URL link of the recommended bot definition.</p>
-    pub fn bot_locale_export_url(&self) -> std::option::Option<&str> {
+    pub fn bot_locale_export_url(&self) -> ::std::option::Option<&str> {
         self.bot_locale_export_url.as_deref()
     }
     /// <p>The presigned url link of the associated transcript.</p>
-    pub fn associated_transcripts_url(&self) -> std::option::Option<&str> {
+    pub fn associated_transcripts_url(&self) -> ::std::option::Option<&str> {
         self.associated_transcripts_url.as_deref()
     }
     /// <p>The statistical summary of the bot recommendation results.</p>
     pub fn statistics(
         &self,
-    ) -> std::option::Option<&crate::types::BotRecommendationResultStatistics> {
+    ) -> ::std::option::Option<&crate::types::BotRecommendationResultStatistics> {
         self.statistics.as_ref()
     }
 }
@@ -39,48 +39,56 @@ impl BotRecommendationResults {
 
 /// A builder for [`BotRecommendationResults`](crate::types::BotRecommendationResults).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BotRecommendationResultsBuilder {
-    pub(crate) bot_locale_export_url: std::option::Option<std::string::String>,
-    pub(crate) associated_transcripts_url: std::option::Option<std::string::String>,
-    pub(crate) statistics: std::option::Option<crate::types::BotRecommendationResultStatistics>,
+    pub(crate) bot_locale_export_url: ::std::option::Option<::std::string::String>,
+    pub(crate) associated_transcripts_url: ::std::option::Option<::std::string::String>,
+    pub(crate) statistics: ::std::option::Option<crate::types::BotRecommendationResultStatistics>,
 }
 impl BotRecommendationResultsBuilder {
     /// <p>The presigned URL link of the recommended bot definition.</p>
-    pub fn bot_locale_export_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_locale_export_url = Some(input.into());
+    pub fn bot_locale_export_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bot_locale_export_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The presigned URL link of the recommended bot definition.</p>
     pub fn set_bot_locale_export_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.bot_locale_export_url = input;
         self
     }
     /// <p>The presigned url link of the associated transcript.</p>
-    pub fn associated_transcripts_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.associated_transcripts_url = Some(input.into());
+    pub fn associated_transcripts_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.associated_transcripts_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The presigned url link of the associated transcript.</p>
     pub fn set_associated_transcripts_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.associated_transcripts_url = input;
         self
     }
     /// <p>The statistical summary of the bot recommendation results.</p>
     pub fn statistics(mut self, input: crate::types::BotRecommendationResultStatistics) -> Self {
-        self.statistics = Some(input);
+        self.statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistical summary of the bot recommendation results.</p>
     pub fn set_statistics(
         mut self,
-        input: std::option::Option<crate::types::BotRecommendationResultStatistics>,
+        input: ::std::option::Option<crate::types::BotRecommendationResultStatistics>,
     ) -> Self {
         self.statistics = input;
         self

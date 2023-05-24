@@ -2,16 +2,16 @@
 
 /// <p>A single element in a path through the JSON representation of a policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PathElement {
     /// <p>Refers to an index in a JSON array.</p>
     Index(i32),
     /// <p>Refers to a key in a JSON object.</p>
-    Key(std::string::String),
+    Key(::std::string::String),
     /// <p>Refers to a substring of a literal string in a JSON object.</p>
     Substring(crate::types::Substring),
     /// <p>Refers to the value associated with a given key in a JSON object.</p>
-    Value(std::string::String),
+    Value(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -25,24 +25,24 @@ pub enum PathElement {
 impl PathElement {
     /// Tries to convert the enum instance into [`Index`](crate::types::PathElement::Index), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_index(&self) -> std::result::Result<&i32, &Self> {
+    pub fn as_index(&self) -> ::std::result::Result<&i32, &Self> {
         if let PathElement::Index(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Index`](crate::types::PathElement::Index).
     pub fn is_index(&self) -> bool {
         self.as_index().is_ok()
     }
-    /// Tries to convert the enum instance into [`Key`](crate::types::PathElement::Key), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Key`](crate::types::PathElement::Key), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_key(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_key(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let PathElement::Key(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Key`](crate::types::PathElement::Key).
@@ -51,24 +51,24 @@ impl PathElement {
     }
     /// Tries to convert the enum instance into [`Substring`](crate::types::PathElement::Substring), extracting the inner [`Substring`](crate::types::Substring).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_substring(&self) -> std::result::Result<&crate::types::Substring, &Self> {
+    pub fn as_substring(&self) -> ::std::result::Result<&crate::types::Substring, &Self> {
         if let PathElement::Substring(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Substring`](crate::types::PathElement::Substring).
     pub fn is_substring(&self) -> bool {
         self.as_substring().is_ok()
     }
-    /// Tries to convert the enum instance into [`Value`](crate::types::PathElement::Value), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Value`](crate::types::PathElement::Value), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let PathElement::Value(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Value`](crate::types::PathElement::Value).

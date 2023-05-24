@@ -2,22 +2,22 @@
 
 /// <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Url {
     /// <p> The name or word that's used as a hyperlink to the URL. </p>
     #[doc(hidden)]
-    pub hyperlink_name: std::option::Option<std::string::String>,
+    pub hyperlink_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the internet resource. </p>
     #[doc(hidden)]
-    pub link: std::option::Option<std::string::String>,
+    pub link: ::std::option::Option<::std::string::String>,
 }
 impl Url {
     /// <p> The name or word that's used as a hyperlink to the URL. </p>
-    pub fn hyperlink_name(&self) -> std::option::Option<&str> {
+    pub fn hyperlink_name(&self) -> ::std::option::Option<&str> {
         self.hyperlink_name.as_deref()
     }
     /// <p> The unique identifier for the internet resource. </p>
-    pub fn link(&self) -> std::option::Option<&str> {
+    pub fn link(&self) -> ::std::option::Option<&str> {
         self.link.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl Url {
 
 /// A builder for [`Url`](crate::types::Url).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UrlBuilder {
-    pub(crate) hyperlink_name: std::option::Option<std::string::String>,
-    pub(crate) link: std::option::Option<std::string::String>,
+    pub(crate) hyperlink_name: ::std::option::Option<::std::string::String>,
+    pub(crate) link: ::std::option::Option<::std::string::String>,
 }
 impl UrlBuilder {
     /// <p> The name or word that's used as a hyperlink to the URL. </p>
-    pub fn hyperlink_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hyperlink_name = Some(input.into());
+    pub fn hyperlink_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hyperlink_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name or word that's used as a hyperlink to the URL. </p>
-    pub fn set_hyperlink_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hyperlink_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hyperlink_name = input;
         self
     }
     /// <p> The unique identifier for the internet resource. </p>
-    pub fn link(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link = Some(input.into());
+    pub fn link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the internet resource. </p>
-    pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link = input;
         self
     }

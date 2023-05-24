@@ -38,13 +38,13 @@
 /// Hls Redundant Manifest
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsRedundantManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsRedundantManifest {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsRedundantManifest {
+impl ::std::convert::From<&str> for HlsRedundantManifest {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => HlsRedundantManifest::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsRedundantManifest {
         }
     }
 }
-impl std::str::FromStr for HlsRedundantManifest {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsRedundantManifest {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsRedundantManifest::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsRedundantManifest::from(s))
     }
 }
 impl HlsRedundantManifest {
@@ -86,7 +86,7 @@ impl HlsRedundantManifest {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for HlsRedundantManifest {
+impl ::std::convert::AsRef<str> for HlsRedundantManifest {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

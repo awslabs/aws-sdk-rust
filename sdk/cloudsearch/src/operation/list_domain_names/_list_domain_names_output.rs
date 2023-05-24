@@ -2,24 +2,26 @@
 
 /// <p>The result of a <code>ListDomainNames</code> request. Contains a list of the domains owned by an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainNamesOutput {
     /// <p>The names of the search domains owned by an account.</p>
     #[doc(hidden)]
-    pub domain_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub domain_names: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl ListDomainNamesOutput {
     /// <p>The names of the search domains owned by an account.</p>
     pub fn domain_names(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.domain_names.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ListDomainNamesOutput {
+impl ::aws_http::request_id::RequestId for ListDomainNamesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -34,10 +36,13 @@ impl ListDomainNamesOutput {
 
 /// A builder for [`ListDomainNamesOutput`](crate::operation::list_domain_names::ListDomainNamesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDomainNamesOutputBuilder {
-    pub(crate) domain_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) domain_names: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl ListDomainNamesOutputBuilder {
@@ -48,19 +53,19 @@ impl ListDomainNamesOutputBuilder {
     /// <p>The names of the search domains owned by an account.</p>
     pub fn domain_names(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.domain_names.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.domain_names = Some(hash_map);
+        self.domain_names = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The names of the search domains owned by an account.</p>
     pub fn set_domain_names(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.domain_names = input;

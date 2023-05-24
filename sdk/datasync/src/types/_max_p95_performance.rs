@@ -2,85 +2,85 @@
 
 /// <p>The performance data that DataSync Discovery collects about an on-premises storage system resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaxP95Performance {
     /// <p>Peak IOPS related to read operations.</p>
     #[doc(hidden)]
-    pub iops_read: std::option::Option<f64>,
+    pub iops_read: ::std::option::Option<f64>,
     /// <p>Peak IOPS related to write operations.</p>
     #[doc(hidden)]
-    pub iops_write: std::option::Option<f64>,
+    pub iops_write: ::std::option::Option<f64>,
     /// <p>Peak IOPS unrelated to read and write operations.</p>
     #[doc(hidden)]
-    pub iops_other: std::option::Option<f64>,
+    pub iops_other: ::std::option::Option<f64>,
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
     #[doc(hidden)]
-    pub iops_total: std::option::Option<f64>,
+    pub iops_total: ::std::option::Option<f64>,
     /// <p>Peak throughput related to read operations.</p>
     #[doc(hidden)]
-    pub throughput_read: std::option::Option<f64>,
+    pub throughput_read: ::std::option::Option<f64>,
     /// <p>Peak throughput related to write operations.</p>
     #[doc(hidden)]
-    pub throughput_write: std::option::Option<f64>,
+    pub throughput_write: ::std::option::Option<f64>,
     /// <p>Peak throughput unrelated to read and write operations.</p>
     #[doc(hidden)]
-    pub throughput_other: std::option::Option<f64>,
+    pub throughput_other: ::std::option::Option<f64>,
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     #[doc(hidden)]
-    pub throughput_total: std::option::Option<f64>,
+    pub throughput_total: ::std::option::Option<f64>,
     /// <p>Peak latency for read operations.</p>
     #[doc(hidden)]
-    pub latency_read: std::option::Option<f64>,
+    pub latency_read: ::std::option::Option<f64>,
     /// <p>Peak latency for write operations.</p>
     #[doc(hidden)]
-    pub latency_write: std::option::Option<f64>,
+    pub latency_write: ::std::option::Option<f64>,
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
     #[doc(hidden)]
-    pub latency_other: std::option::Option<f64>,
+    pub latency_other: ::std::option::Option<f64>,
 }
 impl MaxP95Performance {
     /// <p>Peak IOPS related to read operations.</p>
-    pub fn iops_read(&self) -> std::option::Option<f64> {
+    pub fn iops_read(&self) -> ::std::option::Option<f64> {
         self.iops_read
     }
     /// <p>Peak IOPS related to write operations.</p>
-    pub fn iops_write(&self) -> std::option::Option<f64> {
+    pub fn iops_write(&self) -> ::std::option::Option<f64> {
         self.iops_write
     }
     /// <p>Peak IOPS unrelated to read and write operations.</p>
-    pub fn iops_other(&self) -> std::option::Option<f64> {
+    pub fn iops_other(&self) -> ::std::option::Option<f64> {
         self.iops_other
     }
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
-    pub fn iops_total(&self) -> std::option::Option<f64> {
+    pub fn iops_total(&self) -> ::std::option::Option<f64> {
         self.iops_total
     }
     /// <p>Peak throughput related to read operations.</p>
-    pub fn throughput_read(&self) -> std::option::Option<f64> {
+    pub fn throughput_read(&self) -> ::std::option::Option<f64> {
         self.throughput_read
     }
     /// <p>Peak throughput related to write operations.</p>
-    pub fn throughput_write(&self) -> std::option::Option<f64> {
+    pub fn throughput_write(&self) -> ::std::option::Option<f64> {
         self.throughput_write
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
-    pub fn throughput_other(&self) -> std::option::Option<f64> {
+    pub fn throughput_other(&self) -> ::std::option::Option<f64> {
         self.throughput_other
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
-    pub fn throughput_total(&self) -> std::option::Option<f64> {
+    pub fn throughput_total(&self) -> ::std::option::Option<f64> {
         self.throughput_total
     }
     /// <p>Peak latency for read operations.</p>
-    pub fn latency_read(&self) -> std::option::Option<f64> {
+    pub fn latency_read(&self) -> ::std::option::Option<f64> {
         self.latency_read
     }
     /// <p>Peak latency for write operations.</p>
-    pub fn latency_write(&self) -> std::option::Option<f64> {
+    pub fn latency_write(&self) -> ::std::option::Option<f64> {
         self.latency_write
     }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
-    pub fn latency_other(&self) -> std::option::Option<f64> {
+    pub fn latency_other(&self) -> ::std::option::Option<f64> {
         self.latency_other
     }
 }
@@ -93,128 +93,130 @@ impl MaxP95Performance {
 
 /// A builder for [`MaxP95Performance`](crate::types::MaxP95Performance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaxP95PerformanceBuilder {
-    pub(crate) iops_read: std::option::Option<f64>,
-    pub(crate) iops_write: std::option::Option<f64>,
-    pub(crate) iops_other: std::option::Option<f64>,
-    pub(crate) iops_total: std::option::Option<f64>,
-    pub(crate) throughput_read: std::option::Option<f64>,
-    pub(crate) throughput_write: std::option::Option<f64>,
-    pub(crate) throughput_other: std::option::Option<f64>,
-    pub(crate) throughput_total: std::option::Option<f64>,
-    pub(crate) latency_read: std::option::Option<f64>,
-    pub(crate) latency_write: std::option::Option<f64>,
-    pub(crate) latency_other: std::option::Option<f64>,
+    pub(crate) iops_read: ::std::option::Option<f64>,
+    pub(crate) iops_write: ::std::option::Option<f64>,
+    pub(crate) iops_other: ::std::option::Option<f64>,
+    pub(crate) iops_total: ::std::option::Option<f64>,
+    pub(crate) throughput_read: ::std::option::Option<f64>,
+    pub(crate) throughput_write: ::std::option::Option<f64>,
+    pub(crate) throughput_other: ::std::option::Option<f64>,
+    pub(crate) throughput_total: ::std::option::Option<f64>,
+    pub(crate) latency_read: ::std::option::Option<f64>,
+    pub(crate) latency_write: ::std::option::Option<f64>,
+    pub(crate) latency_other: ::std::option::Option<f64>,
 }
 impl MaxP95PerformanceBuilder {
     /// <p>Peak IOPS related to read operations.</p>
     pub fn iops_read(mut self, input: f64) -> Self {
-        self.iops_read = Some(input);
+        self.iops_read = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak IOPS related to read operations.</p>
-    pub fn set_iops_read(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_iops_read(mut self, input: ::std::option::Option<f64>) -> Self {
         self.iops_read = input;
         self
     }
     /// <p>Peak IOPS related to write operations.</p>
     pub fn iops_write(mut self, input: f64) -> Self {
-        self.iops_write = Some(input);
+        self.iops_write = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak IOPS related to write operations.</p>
-    pub fn set_iops_write(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_iops_write(mut self, input: ::std::option::Option<f64>) -> Self {
         self.iops_write = input;
         self
     }
     /// <p>Peak IOPS unrelated to read and write operations.</p>
     pub fn iops_other(mut self, input: f64) -> Self {
-        self.iops_other = Some(input);
+        self.iops_other = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak IOPS unrelated to read and write operations.</p>
-    pub fn set_iops_other(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_iops_other(mut self, input: ::std::option::Option<f64>) -> Self {
         self.iops_other = input;
         self
     }
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
     pub fn iops_total(mut self, input: f64) -> Self {
-        self.iops_total = Some(input);
+        self.iops_total = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
-    pub fn set_iops_total(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_iops_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.iops_total = input;
         self
     }
     /// <p>Peak throughput related to read operations.</p>
     pub fn throughput_read(mut self, input: f64) -> Self {
-        self.throughput_read = Some(input);
+        self.throughput_read = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak throughput related to read operations.</p>
-    pub fn set_throughput_read(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_throughput_read(mut self, input: ::std::option::Option<f64>) -> Self {
         self.throughput_read = input;
         self
     }
     /// <p>Peak throughput related to write operations.</p>
     pub fn throughput_write(mut self, input: f64) -> Self {
-        self.throughput_write = Some(input);
+        self.throughput_write = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak throughput related to write operations.</p>
-    pub fn set_throughput_write(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_throughput_write(mut self, input: ::std::option::Option<f64>) -> Self {
         self.throughput_write = input;
         self
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
     pub fn throughput_other(mut self, input: f64) -> Self {
-        self.throughput_other = Some(input);
+        self.throughput_other = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
-    pub fn set_throughput_other(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_throughput_other(mut self, input: ::std::option::Option<f64>) -> Self {
         self.throughput_other = input;
         self
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     pub fn throughput_total(mut self, input: f64) -> Self {
-        self.throughput_total = Some(input);
+        self.throughput_total = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
-    pub fn set_throughput_total(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_throughput_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.throughput_total = input;
         self
     }
     /// <p>Peak latency for read operations.</p>
     pub fn latency_read(mut self, input: f64) -> Self {
-        self.latency_read = Some(input);
+        self.latency_read = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak latency for read operations.</p>
-    pub fn set_latency_read(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_latency_read(mut self, input: ::std::option::Option<f64>) -> Self {
         self.latency_read = input;
         self
     }
     /// <p>Peak latency for write operations.</p>
     pub fn latency_write(mut self, input: f64) -> Self {
-        self.latency_write = Some(input);
+        self.latency_write = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak latency for write operations.</p>
-    pub fn set_latency_write(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_latency_write(mut self, input: ::std::option::Option<f64>) -> Self {
         self.latency_write = input;
         self
     }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
     pub fn latency_other(mut self, input: f64) -> Self {
-        self.latency_other = Some(input);
+        self.latency_other = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
-    pub fn set_latency_other(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_latency_other(mut self, input: ::std::option::Option<f64>) -> Self {
         self.latency_other = input;
         self
     }

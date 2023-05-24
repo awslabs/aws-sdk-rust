@@ -2,7 +2,7 @@
 
 /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SslProperties {
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl SslProperties {
 
 /// A builder for [`SslProperties`](crate::types::SslProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SslPropertiesBuilder {
-    pub(crate) disable_ssl: std::option::Option<bool>,
+    pub(crate) disable_ssl: ::std::option::Option<bool>,
 }
 impl SslPropertiesBuilder {
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
     pub fn disable_ssl(mut self, input: bool) -> Self {
-        self.disable_ssl = Some(input);
+        self.disable_ssl = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
-    pub fn set_disable_ssl(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_ssl(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_ssl = input;
         self
     }

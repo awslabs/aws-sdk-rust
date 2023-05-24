@@ -2,15 +2,15 @@
 
 /// <p> Information about an enabled security standard in which a security control is enabled. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedStandard {
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
     #[doc(hidden)]
-    pub standards_id: std::option::Option<std::string::String>,
+    pub standards_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedStandard {
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
-    pub fn standards_id(&self) -> std::option::Option<&str> {
+    pub fn standards_id(&self) -> ::std::option::Option<&str> {
         self.standards_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AssociatedStandard {
 
 /// A builder for [`AssociatedStandard`](crate::types::AssociatedStandard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociatedStandardBuilder {
-    pub(crate) standards_id: std::option::Option<std::string::String>,
+    pub(crate) standards_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedStandardBuilder {
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
-    pub fn standards_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.standards_id = Some(input.into());
+    pub fn standards_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.standards_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
-    pub fn set_standards_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_standards_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_id = input;
         self
     }

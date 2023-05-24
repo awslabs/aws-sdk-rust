@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>RejectInboundConnection</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RejectInboundConnectionOutput {
     /// <p>Contains details about the rejected inbound connection.</p>
     #[doc(hidden)]
-    pub connection: std::option::Option<crate::types::InboundConnection>,
+    pub connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }
 impl RejectInboundConnectionOutput {
     /// <p>Contains details about the rejected inbound connection.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::types::InboundConnection> {
+    pub fn connection(&self) -> ::std::option::Option<&crate::types::InboundConnection> {
         self.connection.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for RejectInboundConnectionOutput {
+impl ::aws_http::request_id::RequestId for RejectInboundConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl RejectInboundConnectionOutput {
 
 /// A builder for [`RejectInboundConnectionOutput`](crate::operation::reject_inbound_connection::RejectInboundConnectionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RejectInboundConnectionOutputBuilder {
-    pub(crate) connection: std::option::Option<crate::types::InboundConnection>,
+    pub(crate) connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }
 impl RejectInboundConnectionOutputBuilder {
     /// <p>Contains details about the rejected inbound connection.</p>
     pub fn connection(mut self, input: crate::types::InboundConnection) -> Self {
-        self.connection = Some(input);
+        self.connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the rejected inbound connection.</p>
     pub fn set_connection(
         mut self,
-        input: std::option::Option<crate::types::InboundConnection>,
+        input: ::std::option::Option<crate::types::InboundConnection>,
     ) -> Self {
         self.connection = input;
         self

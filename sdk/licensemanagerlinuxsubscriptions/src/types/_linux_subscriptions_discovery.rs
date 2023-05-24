@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LinuxSubscriptionsDiscovery {
     /// Disabled LinuxSubscriptionsDiscovery
@@ -54,7 +54,7 @@ pub enum LinuxSubscriptionsDiscovery {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LinuxSubscriptionsDiscovery {
+impl ::std::convert::From<&str> for LinuxSubscriptionsDiscovery {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => LinuxSubscriptionsDiscovery::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for LinuxSubscriptionsDiscovery {
         }
     }
 }
-impl std::str::FromStr for LinuxSubscriptionsDiscovery {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LinuxSubscriptionsDiscovery {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LinuxSubscriptionsDiscovery::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LinuxSubscriptionsDiscovery::from(s))
     }
 }
 impl LinuxSubscriptionsDiscovery {
@@ -86,7 +86,7 @@ impl LinuxSubscriptionsDiscovery {
         &["Disabled", "Enabled"]
     }
 }
-impl AsRef<str> for LinuxSubscriptionsDiscovery {
+impl ::std::convert::AsRef<str> for LinuxSubscriptionsDiscovery {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

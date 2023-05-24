@@ -2,26 +2,27 @@
 
 /// <p> A representation of the new charge details of a custom line item. This should contain only one of <code>Flat</code> or <code>Percentage</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
     #[doc(hidden)]
-    pub flat: std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
+    pub flat: ::std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
     #[doc(hidden)]
-    pub percentage: std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
+    pub percentage:
+        ::std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
 }
 impl UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
     pub fn flat(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateCustomLineItemFlatChargeDetails> {
+    ) -> ::std::option::Option<&crate::types::UpdateCustomLineItemFlatChargeDetails> {
         self.flat.as_ref()
     }
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
     pub fn percentage(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateCustomLineItemPercentageChargeDetails> {
+    ) -> ::std::option::Option<&crate::types::UpdateCustomLineItemPercentageChargeDetails> {
         self.percentage.as_ref()
     }
 }
@@ -34,22 +35,24 @@ impl UpdateCustomLineItemChargeDetails {
 
 /// A builder for [`UpdateCustomLineItemChargeDetails`](crate::types::UpdateCustomLineItemChargeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateCustomLineItemChargeDetailsBuilder {
-    pub(crate) flat: std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
+    pub(crate) flat: ::std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
     pub(crate) percentage:
-        std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
+        ::std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
 }
 impl UpdateCustomLineItemChargeDetailsBuilder {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
     pub fn flat(mut self, input: crate::types::UpdateCustomLineItemFlatChargeDetails) -> Self {
-        self.flat = Some(input);
+        self.flat = ::std::option::Option::Some(input);
         self
     }
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
     pub fn set_flat(
         mut self,
-        input: std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
+        input: ::std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
     ) -> Self {
         self.flat = input;
         self
@@ -59,13 +62,13 @@ impl UpdateCustomLineItemChargeDetailsBuilder {
         mut self,
         input: crate::types::UpdateCustomLineItemPercentageChargeDetails,
     ) -> Self {
-        self.percentage = Some(input);
+        self.percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
     pub fn set_percentage(
         mut self,
-        input: std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
+        input: ::std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
     ) -> Self {
         self.percentage = input;
         self

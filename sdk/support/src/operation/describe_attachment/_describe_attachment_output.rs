@@ -2,22 +2,22 @@
 
 /// <p>The content and file name of the attachment returned by the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAttachmentOutput {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     #[doc(hidden)]
-    pub attachment: std::option::Option<crate::types::Attachment>,
+    pub attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
 }
 impl DescribeAttachmentOutput {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn attachment(&self) -> std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
         self.attachment.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeAttachmentOutput {
+impl ::aws_http::request_id::RequestId for DescribeAttachmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,21 +32,26 @@ impl DescribeAttachmentOutput {
 
 /// A builder for [`DescribeAttachmentOutput`](crate::operation::describe_attachment::DescribeAttachmentOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeAttachmentOutputBuilder {
-    pub(crate) attachment: std::option::Option<crate::types::Attachment>,
+    pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     _request_id: Option<String>,
 }
 impl DescribeAttachmentOutputBuilder {
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     pub fn attachment(mut self, input: crate::types::Attachment) -> Self {
-        self.attachment = Some(input);
+        self.attachment = ::std::option::Option::Some(input);
         self
     }
     /// <p>This object includes the attachment content and file name.</p>
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn set_attachment(mut self, input: std::option::Option<crate::types::Attachment>) -> Self {
+    pub fn set_attachment(
+        mut self,
+        input: ::std::option::Option<crate::types::Attachment>,
+    ) -> Self {
         self.attachment = input;
         self
     }

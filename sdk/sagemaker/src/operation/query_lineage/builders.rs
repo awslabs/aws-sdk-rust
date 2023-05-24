@@ -6,56 +6,59 @@ pub use crate::operation::query_lineage::_query_lineage_input::QueryLineageInput
 /// Fluent builder constructing a request to `QueryLineage`.
 ///
 /// <p>Use this action to inspect your lineage and discover relationships between entities. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html"> Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct QueryLineageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::query_lineage::builders::QueryLineageInputBuilder,
 }
 impl QueryLineageFluentBuilder {
     /// Creates a new `QueryLineage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::query_lineage::QueryLineage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::query_lineage::QueryLineageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl QueryLineageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::query_lineage::QueryLineageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
     > {
         self.send_middleware().await
     }
@@ -90,14 +93,14 @@ impl QueryLineageFluentBuilder {
     /// To override the contents of this collection use [`set_start_arns`](Self::set_start_arns).
     ///
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    pub fn start_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn start_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_arns(input.into());
         self
     }
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
     pub fn set_start_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_start_arns(input);
         self
@@ -108,7 +111,7 @@ impl QueryLineageFluentBuilder {
         self
     }
     /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
-    pub fn set_direction(mut self, input: std::option::Option<crate::types::Direction>) -> Self {
+    pub fn set_direction(mut self, input: ::std::option::Option<crate::types::Direction>) -> Self {
         self.inner = self.inner.set_direction(input);
         self
     }
@@ -118,7 +121,7 @@ impl QueryLineageFluentBuilder {
         self
     }
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
-    pub fn set_include_edges(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_edges(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_edges(input);
         self
     }
@@ -142,7 +145,7 @@ impl QueryLineageFluentBuilder {
     /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
     /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::QueryFilters>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::QueryFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -152,7 +155,7 @@ impl QueryLineageFluentBuilder {
         self
     }
     /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
-    pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_depth(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_depth(input);
         self
     }
@@ -162,17 +165,17 @@ impl QueryLineageFluentBuilder {
         self
     }
     /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

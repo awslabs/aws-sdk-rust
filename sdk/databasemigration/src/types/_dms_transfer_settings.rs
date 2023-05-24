@@ -2,22 +2,22 @@
 
 /// <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DmsTransferSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     #[doc(hidden)]
-    pub service_access_role_arn: std::option::Option<std::string::String>,
+    pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the S3 bucket to use. </p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl DmsTransferSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p> The name of the S3 bucket to use. </p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl DmsTransferSettings {
 
 /// A builder for [`DmsTransferSettings`](crate::types::DmsTransferSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DmsTransferSettingsBuilder {
-    pub(crate) service_access_role_arn: std::option::Option<std::string::String>,
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
+    pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
 }
 impl DmsTransferSettingsBuilder {
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_access_role_arn = Some(input.into());
+    pub fn service_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn set_service_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_access_role_arn = input;
         self
     }
     /// <p> The name of the S3 bucket to use. </p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the S3 bucket to use. </p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }

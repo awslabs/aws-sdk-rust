@@ -2,66 +2,66 @@
 
 /// <p>Describes a launch template version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateVersion {
     /// <p>The ID of the launch template.</p>
     #[doc(hidden)]
-    pub launch_template_id: std::option::Option<std::string::String>,
+    pub launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch template.</p>
     #[doc(hidden)]
-    pub launch_template_name: std::option::Option<std::string::String>,
+    pub launch_template_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number.</p>
     #[doc(hidden)]
-    pub version_number: std::option::Option<i64>,
+    pub version_number: ::std::option::Option<i64>,
     /// <p>The description for the version.</p>
     #[doc(hidden)]
-    pub version_description: std::option::Option<std::string::String>,
+    pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>The time the version was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The principal that created the version.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<std::string::String>,
+    pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the version is the default version.</p>
     #[doc(hidden)]
-    pub default_version: std::option::Option<bool>,
+    pub default_version: ::std::option::Option<bool>,
     /// <p>Information about the launch template.</p>
     #[doc(hidden)]
-    pub launch_template_data: std::option::Option<crate::types::ResponseLaunchTemplateData>,
+    pub launch_template_data: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
 }
 impl LaunchTemplateVersion {
     /// <p>The ID of the launch template.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> ::std::option::Option<&str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> ::std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The version number.</p>
-    pub fn version_number(&self) -> std::option::Option<i64> {
+    pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
     /// <p>The description for the version.</p>
-    pub fn version_description(&self) -> std::option::Option<&str> {
+    pub fn version_description(&self) -> ::std::option::Option<&str> {
         self.version_description.as_deref()
     }
     /// <p>The time the version was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The principal that created the version.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>Indicates whether the version is the default version.</p>
-    pub fn default_version(&self) -> std::option::Option<bool> {
+    pub fn default_version(&self) -> ::std::option::Option<bool> {
         self.default_version
     }
     /// <p>Information about the launch template.</p>
     pub fn launch_template_data(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseLaunchTemplateData> {
+    ) -> ::std::option::Option<&crate::types::ResponseLaunchTemplateData> {
         self.launch_template_data.as_ref()
     }
 }
@@ -74,109 +74,121 @@ impl LaunchTemplateVersion {
 
 /// A builder for [`LaunchTemplateVersion`](crate::types::LaunchTemplateVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchTemplateVersionBuilder {
-    pub(crate) launch_template_id: std::option::Option<std::string::String>,
-    pub(crate) launch_template_name: std::option::Option<std::string::String>,
-    pub(crate) version_number: std::option::Option<i64>,
-    pub(crate) version_description: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<std::string::String>,
-    pub(crate) default_version: std::option::Option<bool>,
-    pub(crate) launch_template_data: std::option::Option<crate::types::ResponseLaunchTemplateData>,
+    pub(crate) launch_template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) version_number: ::std::option::Option<i64>,
+    pub(crate) version_description: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) default_version: ::std::option::Option<bool>,
+    pub(crate) launch_template_data:
+        ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
 }
 impl LaunchTemplateVersionBuilder {
     /// <p>The ID of the launch template.</p>
-    pub fn launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_template_id = Some(input.into());
+    pub fn launch_template_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
     pub fn set_launch_template_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.launch_template_id = input;
         self
     }
     /// <p>The name of the launch template.</p>
-    pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_template_name = Some(input.into());
+    pub fn launch_template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.launch_template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
     pub fn set_launch_template_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.launch_template_name = input;
         self
     }
     /// <p>The version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
-        self.version_number = Some(input);
+        self.version_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number.</p>
-    pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }
     /// <p>The description for the version.</p>
-    pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_description = Some(input.into());
+    pub fn version_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the version.</p>
     pub fn set_version_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.version_description = input;
         self
     }
     /// <p>The time the version was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the version was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The principal that created the version.</p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by = Some(input.into());
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal that created the version.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
     /// <p>Indicates whether the version is the default version.</p>
     pub fn default_version(mut self, input: bool) -> Self {
-        self.default_version = Some(input);
+        self.default_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the version is the default version.</p>
-    pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_version = input;
         self
     }
     /// <p>Information about the launch template.</p>
     pub fn launch_template_data(mut self, input: crate::types::ResponseLaunchTemplateData) -> Self {
-        self.launch_template_data = Some(input);
+        self.launch_template_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the launch template.</p>
     pub fn set_launch_template_data(
         mut self,
-        input: std::option::Option<crate::types::ResponseLaunchTemplateData>,
+        input: ::std::option::Option<crate::types::ResponseLaunchTemplateData>,
     ) -> Self {
         self.launch_template_data = input;
         self

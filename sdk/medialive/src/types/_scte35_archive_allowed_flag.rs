@@ -38,13 +38,13 @@
 /// Corresponds to the archive_allowed parameter. A value of ARCHIVE_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Scte35ArchiveAllowedFlag {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Scte35ArchiveAllowedFlag {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Scte35ArchiveAllowedFlag {
+impl ::std::convert::From<&str> for Scte35ArchiveAllowedFlag {
     fn from(s: &str) -> Self {
         match s {
             "ARCHIVE_ALLOWED" => Scte35ArchiveAllowedFlag::ArchiveAllowed,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Scte35ArchiveAllowedFlag {
         }
     }
 }
-impl std::str::FromStr for Scte35ArchiveAllowedFlag {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Scte35ArchiveAllowedFlag {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Scte35ArchiveAllowedFlag::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Scte35ArchiveAllowedFlag::from(s))
     }
 }
 impl Scte35ArchiveAllowedFlag {
@@ -86,7 +86,7 @@ impl Scte35ArchiveAllowedFlag {
         &["ARCHIVE_ALLOWED", "ARCHIVE_NOT_ALLOWED"]
     }
 }
-impl AsRef<str> for Scte35ArchiveAllowedFlag {
+impl ::std::convert::AsRef<str> for Scte35ArchiveAllowedFlag {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

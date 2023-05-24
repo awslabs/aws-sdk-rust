@@ -2,22 +2,22 @@
 
 /// <p>Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVpcEndpointInput {
     /// <p>Unique identifier of the VPC endpoint to be updated.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
     #[doc(hidden)]
-    pub vpc_options: std::option::Option<crate::types::VpcOptions>,
+    pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
 }
 impl UpdateVpcEndpointInput {
     /// <p>Unique identifier of the VPC endpoint to be updated.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
-    pub fn vpc_options(&self) -> std::option::Option<&crate::types::VpcOptions> {
+    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
         self.vpc_options.as_ref()
     }
 }
@@ -31,40 +31,51 @@ impl UpdateVpcEndpointInput {
 
 /// A builder for [`UpdateVpcEndpointInput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateVpcEndpointInputBuilder {
-    pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_options: std::option::Option<crate::types::VpcOptions>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_options: ::std::option::Option<crate::types::VpcOptions>,
 }
 impl UpdateVpcEndpointInputBuilder {
     /// <p>Unique identifier of the VPC endpoint to be updated.</p>
-    pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_id = Some(input.into());
+    pub fn vpc_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier of the VPC endpoint to be updated.</p>
-    pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
-        self.vpc_options = Some(input);
+        self.vpc_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The security groups and/or subnets to add, remove, or modify.</p>
-    pub fn set_vpc_options(mut self, input: std::option::Option<crate::types::VpcOptions>) -> Self {
+    pub fn set_vpc_options(
+        mut self,
+        input: ::std::option::Option<crate::types::VpcOptions>,
+    ) -> Self {
         self.vpc_options = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateVpcEndpointInput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput {
                 vpc_endpoint_id: self.vpc_endpoint_id,
                 vpc_options: self.vpc_options,

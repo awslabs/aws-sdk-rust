@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveTags`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_arn): <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_arn): <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tag_keys): <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
     /// - On success, responds with [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::operation::remove_tags::RemoveTagsError)

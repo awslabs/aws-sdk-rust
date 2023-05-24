@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartDeployment`](crate::operation::start_deployment::builders::StartDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_arn(impl Into<String>)`](crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::service_arn) / [`set_service_arn(Option<String>)`](crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
+    ///   - [`service_arn(impl ::std::convert::Into<String>)`](crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::service_arn) / [`set_service_arn(Option<String>)`](crate::operation::start_deployment::builders::StartDeploymentFluentBuilder::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
     /// - On success, responds with [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::start_deployment::StartDeploymentOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     /// - On failure, responds with [`SdkError<StartDeploymentError>`](crate::operation::start_deployment::StartDeploymentError)

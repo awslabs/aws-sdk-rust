@@ -2,15 +2,15 @@
 
 /// <p>General information about the IP set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetMetadata {
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
     #[doc(hidden)]
-    pub resolved_cidr_count: std::option::Option<i32>,
+    pub resolved_cidr_count: ::std::option::Option<i32>,
 }
 impl IpSetMetadata {
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
-    pub fn resolved_cidr_count(&self) -> std::option::Option<i32> {
+    pub fn resolved_cidr_count(&self) -> ::std::option::Option<i32> {
         self.resolved_cidr_count
     }
 }
@@ -23,18 +23,20 @@ impl IpSetMetadata {
 
 /// A builder for [`IpSetMetadata`](crate::types::IpSetMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpSetMetadataBuilder {
-    pub(crate) resolved_cidr_count: std::option::Option<i32>,
+    pub(crate) resolved_cidr_count: ::std::option::Option<i32>,
 }
 impl IpSetMetadataBuilder {
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
     pub fn resolved_cidr_count(mut self, input: i32) -> Self {
-        self.resolved_cidr_count = Some(input);
+        self.resolved_cidr_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the total number of CIDR blocks currently in use by the IP set references in a firewall. To determine how many CIDR blocks are available for you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
-    pub fn set_resolved_cidr_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_resolved_cidr_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.resolved_cidr_count = input;
         self
     }

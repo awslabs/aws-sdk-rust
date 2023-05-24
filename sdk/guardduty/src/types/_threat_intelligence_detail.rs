@@ -2,22 +2,22 @@
 
 /// <p>An instance of a threat intelligence detail that constitutes evidence for the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThreatIntelligenceDetail {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
     #[doc(hidden)]
-    pub threat_list_name: std::option::Option<std::string::String>,
+    pub threat_list_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
     #[doc(hidden)]
-    pub threat_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ThreatIntelligenceDetail {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
-    pub fn threat_list_name(&self) -> std::option::Option<&str> {
+    pub fn threat_list_name(&self) -> ::std::option::Option<&str> {
         self.threat_list_name.as_deref()
     }
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    pub fn threat_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn threat_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.threat_names.as_deref()
     }
 }
@@ -30,19 +30,27 @@ impl ThreatIntelligenceDetail {
 
 /// A builder for [`ThreatIntelligenceDetail`](crate::types::ThreatIntelligenceDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThreatIntelligenceDetailBuilder {
-    pub(crate) threat_list_name: std::option::Option<std::string::String>,
-    pub(crate) threat_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) threat_list_name: ::std::option::Option<::std::string::String>,
+    pub(crate) threat_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ThreatIntelligenceDetailBuilder {
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
-    pub fn threat_list_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.threat_list_name = Some(input.into());
+    pub fn threat_list_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.threat_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the threat intelligence list that triggered the finding.</p>
-    pub fn set_threat_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_threat_list_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.threat_list_name = input;
         self
     }
@@ -51,16 +59,16 @@ impl ThreatIntelligenceDetailBuilder {
     /// To override the contents of this collection use [`set_threat_names`](Self::set_threat_names).
     ///
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
-    pub fn threat_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn threat_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.threat_names.unwrap_or_default();
         v.push(input.into());
-        self.threat_names = Some(v);
+        self.threat_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of names of the threats in the threat intelligence list that triggered the finding.</p>
     pub fn set_threat_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.threat_names = input;
         self

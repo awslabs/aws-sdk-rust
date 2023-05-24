@@ -12,56 +12,59 @@ pub use crate::operation::accept_match::_accept_match_input::AcceptMatchInputBui
 /// <p> <b>Learn more</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html"> FlexMatch events</a> (reference)</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptMatchFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::accept_match::builders::AcceptMatchInputBuilder,
 }
 impl AcceptMatchFluentBuilder {
     /// Creates a new `AcceptMatch`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::accept_match::AcceptMatch,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::accept_match::AcceptMatchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_match::AcceptMatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::accept_match::AcceptMatchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::accept_match::AcceptMatchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_match::AcceptMatchError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,19 +77,19 @@ impl AcceptMatchFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::accept_match::AcceptMatchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::accept_match::AcceptMatchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::accept_match::AcceptMatchError>,
     > {
         self.send_middleware().await
     }
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
-    pub fn ticket_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ticket_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ticket_id(input.into());
         self
     }
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
-    pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ticket_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ticket_id(input);
         self
     }
@@ -95,14 +98,14 @@ impl AcceptMatchFluentBuilder {
     /// To override the contents of this collection use [`set_player_ids`](Self::set_player_ids).
     ///
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn player_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.player_ids(input.into());
         self
     }
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
     pub fn set_player_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_player_ids(input);
         self
@@ -115,7 +118,7 @@ impl AcceptMatchFluentBuilder {
     /// <p>Player response to the proposed match.</p>
     pub fn set_acceptance_type(
         mut self,
-        input: std::option::Option<crate::types::AcceptanceType>,
+        input: ::std::option::Option<crate::types::AcceptanceType>,
     ) -> Self {
         self.inner = self.inner.set_acceptance_type(input);
         self

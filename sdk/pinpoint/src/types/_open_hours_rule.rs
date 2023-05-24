@@ -2,22 +2,22 @@
 
 /// <p>Specifies the start and end time for OpenHours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenHoursRule {
     /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<std::string::String>,
+    pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<std::string::String>,
+    pub end_time: ::std::option::Option<::std::string::String>,
 }
 impl OpenHoursRule {
     /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl OpenHoursRule {
 
 /// A builder for [`OpenHoursRule`](crate::types::OpenHoursRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpenHoursRuleBuilder {
-    pub(crate) start_time: std::option::Option<std::string::String>,
-    pub(crate) end_time: std::option::Option<std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) end_time: ::std::option::Option<::std::string::String>,
 }
 impl OpenHoursRuleBuilder {
     /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
-    pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_time = Some(input.into());
+    pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
-    pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_time = Some(input.into());
+    pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
     }

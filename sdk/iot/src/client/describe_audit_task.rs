@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAuditTask`](crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder::set_task_id): <p>The ID of the audit whose information you want to get.</p>
+    ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_audit_task::builders::DescribeAuditTaskFluentBuilder::set_task_id): <p>The ID of the audit whose information you want to get.</p>
     /// - On success, responds with [`DescribeAuditTaskOutput`](crate::operation::describe_audit_task::DescribeAuditTaskOutput) with field(s):
     ///   - [`task_status(Option<AuditTaskStatus>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::task_status): <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     ///   - [`task_type(Option<AuditTaskType>)`](crate::operation::describe_audit_task::DescribeAuditTaskOutput::task_type): <p>The type of audit: "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>

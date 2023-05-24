@@ -7,47 +7,50 @@ pub use crate::operation::describe_reserved_instances_modifications::_describe_r
 ///
 /// <p>Describes the modifications made to your Reserved Instances. If no parameter is specified, information about all your Reserved Instances modification requests is returned. If a modification ID is specified, only information about the specific modification is returned.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesModificationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsInputBuilder,
 }
 impl DescribeReservedInstancesModificationsFluentBuilder {
     /// Creates a new `DescribeReservedInstancesModifications`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModifications, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,7 +61,7 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsError>>
                          {
         self.send_middleware().await
     }
@@ -108,7 +111,7 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -120,7 +123,7 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
     /// <p>IDs for the submitted modification request.</p>
     pub fn reserved_instances_modification_ids(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.reserved_instances_modification_ids(input.into());
         self
@@ -128,18 +131,18 @@ impl DescribeReservedInstancesModificationsFluentBuilder {
     /// <p>IDs for the submitted modification request.</p>
     pub fn set_reserved_instances_modification_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_modification_ids(input);
         self
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

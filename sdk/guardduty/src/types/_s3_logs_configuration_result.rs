@@ -2,15 +2,15 @@
 
 /// <p>Describes whether S3 data event logs will be enabled as a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3LogsConfigurationResult {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DataSourceStatus>,
+    pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl S3LogsConfigurationResult {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl S3LogsConfigurationResult {
 
 /// A builder for [`S3LogsConfigurationResult`](crate::types::S3LogsConfigurationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3LogsConfigurationResultBuilder {
-    pub(crate) status: std::option::Option<crate::types::DataSourceStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl S3LogsConfigurationResultBuilder {
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that describes whether S3 data event logs are automatically enabled for new members of the organization.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DataSourceStatus>,
+        input: ::std::option::Option<crate::types::DataSourceStatus>,
     ) -> Self {
         self.status = input;
         self

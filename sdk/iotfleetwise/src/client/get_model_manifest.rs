@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetModelManifest`](crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder::set_name): <p> The name of the vehicle model to retrieve information about. </p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_model_manifest::builders::GetModelManifestFluentBuilder::set_name): <p> The name of the vehicle model to retrieve information about. </p>
     /// - On success, responds with [`GetModelManifestOutput`](crate::operation::get_model_manifest::GetModelManifestOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_model_manifest::GetModelManifestOutput::name): <p> The name of the vehicle model. </p>
     ///   - [`arn(Option<String>)`](crate::operation::get_model_manifest::GetModelManifestOutput::arn): <p> The Amazon Resource Name (ARN) of the vehicle model. </p>

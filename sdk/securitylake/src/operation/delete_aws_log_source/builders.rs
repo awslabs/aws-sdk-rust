@@ -9,29 +9,29 @@ pub use crate::operation::delete_aws_log_source::_delete_aws_log_source_input::D
 /// <p>You can choose any source type in any Amazon Web Services Region for either accounts that are part of a trusted organization or standalone accounts. At least one of the three dimensions is a mandatory input to this API. However, you can supply any combination of the three dimensions to this API. </p>
 /// <p>By default, a dimension refers to the entire set. This is overridden when you supply any one of the inputs. For instance, when you do not specify members, the API disables all Security Lake member accounts for sources. Similarly, when you do not specify Regions, Security Lake is disabled for all the Regions where Security Lake is available as a service.</p>
 /// <p>When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set. For example, if you don't provide specific accounts, the API applies to the entire set of accounts in your organization.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAwsLogSourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder,
 }
 impl DeleteAwsLogSourceFluentBuilder {
     /// Creates a new `DeleteAwsLogSource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_aws_log_source::DeleteAwsLogSource,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
         >,
     > {
@@ -39,30 +39,33 @@ impl DeleteAwsLogSourceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl DeleteAwsLogSourceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
         >,
     > {
@@ -95,7 +98,7 @@ impl DeleteAwsLogSourceFluentBuilder {
     /// <p>This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account). </p>
     pub fn set_input_order(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     ) -> Self {
         self.inner = self.inner.set_input_order(input);
         self
@@ -107,8 +110,11 @@ impl DeleteAwsLogSourceFluentBuilder {
     /// <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
     pub fn disable_all_dimensions(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<::std::string::String>,
+        >,
     ) -> Self {
         self.inner = self.inner.disable_all_dimensions(k.into(), v);
         self
@@ -116,10 +122,13 @@ impl DeleteAwsLogSourceFluentBuilder {
     /// <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
     pub fn set_disable_all_dimensions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::collections::HashMap<
+                    ::std::string::String,
+                    ::std::vec::Vec<::std::string::String>,
+                >,
             >,
         >,
     ) -> Self {
@@ -133,8 +142,8 @@ impl DeleteAwsLogSourceFluentBuilder {
     /// <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
     pub fn disable_two_dimensions(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.disable_two_dimensions(k.into(), v);
         self
@@ -142,8 +151,11 @@ impl DeleteAwsLogSourceFluentBuilder {
     /// <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
     pub fn set_disable_two_dimensions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_disable_two_dimensions(input);
@@ -154,14 +166,17 @@ impl DeleteAwsLogSourceFluentBuilder {
     /// To override the contents of this collection use [`set_disable_single_dimension`](Self::set_disable_single_dimension).
     ///
     /// <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
-    pub fn disable_single_dimension(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn disable_single_dimension(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.disable_single_dimension(input.into());
         self
     }
     /// <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
     pub fn set_disable_single_dimension(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_disable_single_dimension(input);
         self

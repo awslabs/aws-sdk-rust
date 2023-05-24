@@ -2,43 +2,43 @@
 
 /// <p>A structure that represents a named entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamedEntityDefinition {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
-    pub field_name: std::option::Option<std::string::String>,
+    pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>The property name to be used for the named entity.</p>
     #[doc(hidden)]
-    pub property_name: std::option::Option<std::string::String>,
+    pub property_name: ::std::option::Option<::std::string::String>,
     /// <p>The property role. Valid values for this structure are <code>PRIMARY</code> and <code>ID</code>.</p>
     #[doc(hidden)]
-    pub property_role: std::option::Option<crate::types::PropertyRole>,
+    pub property_role: ::std::option::Option<crate::types::PropertyRole>,
     /// <p>The property usage. Valid values for this structure are <code>INHERIT</code>, <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
     #[doc(hidden)]
-    pub property_usage: std::option::Option<crate::types::PropertyUsage>,
+    pub property_usage: ::std::option::Option<crate::types::PropertyUsage>,
     /// <p>The definition of a metric.</p>
     #[doc(hidden)]
-    pub metric: std::option::Option<crate::types::NamedEntityDefinitionMetric>,
+    pub metric: ::std::option::Option<crate::types::NamedEntityDefinitionMetric>,
 }
 impl NamedEntityDefinition {
     /// <p>The name of the entity.</p>
-    pub fn field_name(&self) -> std::option::Option<&str> {
+    pub fn field_name(&self) -> ::std::option::Option<&str> {
         self.field_name.as_deref()
     }
     /// <p>The property name to be used for the named entity.</p>
-    pub fn property_name(&self) -> std::option::Option<&str> {
+    pub fn property_name(&self) -> ::std::option::Option<&str> {
         self.property_name.as_deref()
     }
     /// <p>The property role. Valid values for this structure are <code>PRIMARY</code> and <code>ID</code>.</p>
-    pub fn property_role(&self) -> std::option::Option<&crate::types::PropertyRole> {
+    pub fn property_role(&self) -> ::std::option::Option<&crate::types::PropertyRole> {
         self.property_role.as_ref()
     }
     /// <p>The property usage. Valid values for this structure are <code>INHERIT</code>, <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
-    pub fn property_usage(&self) -> std::option::Option<&crate::types::PropertyUsage> {
+    pub fn property_usage(&self) -> ::std::option::Option<&crate::types::PropertyUsage> {
         self.property_usage.as_ref()
     }
     /// <p>The definition of a metric.</p>
-    pub fn metric(&self) -> std::option::Option<&crate::types::NamedEntityDefinitionMetric> {
+    pub fn metric(&self) -> ::std::option::Option<&crate::types::NamedEntityDefinitionMetric> {
         self.metric.as_ref()
     }
 }
@@ -51,70 +51,78 @@ impl NamedEntityDefinition {
 
 /// A builder for [`NamedEntityDefinition`](crate::types::NamedEntityDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NamedEntityDefinitionBuilder {
-    pub(crate) field_name: std::option::Option<std::string::String>,
-    pub(crate) property_name: std::option::Option<std::string::String>,
-    pub(crate) property_role: std::option::Option<crate::types::PropertyRole>,
-    pub(crate) property_usage: std::option::Option<crate::types::PropertyUsage>,
-    pub(crate) metric: std::option::Option<crate::types::NamedEntityDefinitionMetric>,
+    pub(crate) field_name: ::std::option::Option<::std::string::String>,
+    pub(crate) property_name: ::std::option::Option<::std::string::String>,
+    pub(crate) property_role: ::std::option::Option<crate::types::PropertyRole>,
+    pub(crate) property_usage: ::std::option::Option<crate::types::PropertyUsage>,
+    pub(crate) metric: ::std::option::Option<crate::types::NamedEntityDefinitionMetric>,
 }
 impl NamedEntityDefinitionBuilder {
     /// <p>The name of the entity.</p>
-    pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_name = Some(input.into());
+    pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the entity.</p>
-    pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_name = input;
         self
     }
     /// <p>The property name to be used for the named entity.</p>
-    pub fn property_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.property_name = Some(input.into());
+    pub fn property_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.property_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property name to be used for the named entity.</p>
-    pub fn set_property_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_property_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.property_name = input;
         self
     }
     /// <p>The property role. Valid values for this structure are <code>PRIMARY</code> and <code>ID</code>.</p>
     pub fn property_role(mut self, input: crate::types::PropertyRole) -> Self {
-        self.property_role = Some(input);
+        self.property_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>The property role. Valid values for this structure are <code>PRIMARY</code> and <code>ID</code>.</p>
     pub fn set_property_role(
         mut self,
-        input: std::option::Option<crate::types::PropertyRole>,
+        input: ::std::option::Option<crate::types::PropertyRole>,
     ) -> Self {
         self.property_role = input;
         self
     }
     /// <p>The property usage. Valid values for this structure are <code>INHERIT</code>, <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
     pub fn property_usage(mut self, input: crate::types::PropertyUsage) -> Self {
-        self.property_usage = Some(input);
+        self.property_usage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The property usage. Valid values for this structure are <code>INHERIT</code>, <code>DIMENSION</code>, and <code>MEASURE</code>.</p>
     pub fn set_property_usage(
         mut self,
-        input: std::option::Option<crate::types::PropertyUsage>,
+        input: ::std::option::Option<crate::types::PropertyUsage>,
     ) -> Self {
         self.property_usage = input;
         self
     }
     /// <p>The definition of a metric.</p>
     pub fn metric(mut self, input: crate::types::NamedEntityDefinitionMetric) -> Self {
-        self.metric = Some(input);
+        self.metric = ::std::option::Option::Some(input);
         self
     }
     /// <p>The definition of a metric.</p>
     pub fn set_metric(
         mut self,
-        input: std::option::Option<crate::types::NamedEntityDefinitionMetric>,
+        input: ::std::option::Option<crate::types::NamedEntityDefinitionMetric>,
     ) -> Self {
         self.metric = input;
         self

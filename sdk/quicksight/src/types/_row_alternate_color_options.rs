@@ -2,22 +2,22 @@
 
 /// <p>Determines the row alternate color options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RowAlternateColorOptions {
     /// <p>Determines the widget status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WidgetStatus>,
+    pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>Determines the list of row alternate colors.</p>
     #[doc(hidden)]
-    pub row_alternate_colors: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub row_alternate_colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RowAlternateColorOptions {
     /// <p>Determines the widget status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::WidgetStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WidgetStatus> {
         self.status.as_ref()
     }
     /// <p>Determines the list of row alternate colors.</p>
-    pub fn row_alternate_colors(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn row_alternate_colors(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.row_alternate_colors.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl RowAlternateColorOptions {
 
 /// A builder for [`RowAlternateColorOptions`](crate::types::RowAlternateColorOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RowAlternateColorOptionsBuilder {
-    pub(crate) status: std::option::Option<crate::types::WidgetStatus>,
-    pub(crate) row_alternate_colors: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) status: ::std::option::Option<crate::types::WidgetStatus>,
+    pub(crate) row_alternate_colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RowAlternateColorOptionsBuilder {
     /// <p>Determines the widget status.</p>
     pub fn status(mut self, input: crate::types::WidgetStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the widget status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::WidgetStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WidgetStatus>) -> Self {
         self.status = input;
         self
     }
@@ -51,16 +53,19 @@ impl RowAlternateColorOptionsBuilder {
     /// To override the contents of this collection use [`set_row_alternate_colors`](Self::set_row_alternate_colors).
     ///
     /// <p>Determines the list of row alternate colors.</p>
-    pub fn row_alternate_colors(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn row_alternate_colors(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.row_alternate_colors.unwrap_or_default();
         v.push(input.into());
-        self.row_alternate_colors = Some(v);
+        self.row_alternate_colors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Determines the list of row alternate colors.</p>
     pub fn set_row_alternate_colors(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.row_alternate_colors = input;
         self

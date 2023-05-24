@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HostedZoneLimitType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HostedZoneLimitType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HostedZoneLimitType {
+impl ::std::convert::From<&str> for HostedZoneLimitType {
     fn from(s: &str) -> Self {
         match s {
             "MAX_RRSETS_BY_ZONE" => HostedZoneLimitType::MaxRrsetsByZone,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HostedZoneLimitType {
         }
     }
 }
-impl std::str::FromStr for HostedZoneLimitType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HostedZoneLimitType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HostedZoneLimitType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HostedZoneLimitType::from(s))
     }
 }
 impl HostedZoneLimitType {
@@ -86,7 +86,7 @@ impl HostedZoneLimitType {
         &["MAX_RRSETS_BY_ZONE", "MAX_VPCS_ASSOCIATED_BY_ZONE"]
     }
 }
-impl AsRef<str> for HostedZoneLimitType {
+impl ::std::convert::AsRef<str> for HostedZoneLimitType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

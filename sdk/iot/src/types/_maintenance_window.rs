@@ -2,22 +2,22 @@
 
 /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindow {
     /// <p>Displays the start time of the next maintenance window.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<std::string::String>,
+    pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>Displays the duration of the next maintenance window.</p>
     #[doc(hidden)]
-    pub duration_in_minutes: std::option::Option<i32>,
+    pub duration_in_minutes: ::std::option::Option<i32>,
 }
 impl MaintenanceWindow {
     /// <p>Displays the start time of the next maintenance window.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p>Displays the duration of the next maintenance window.</p>
-    pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
+    pub fn duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.duration_in_minutes
     }
 }
@@ -30,29 +30,31 @@ impl MaintenanceWindow {
 
 /// A builder for [`MaintenanceWindow`](crate::types::MaintenanceWindow).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaintenanceWindowBuilder {
-    pub(crate) start_time: std::option::Option<std::string::String>,
-    pub(crate) duration_in_minutes: std::option::Option<i32>,
+    pub(crate) start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) duration_in_minutes: ::std::option::Option<i32>,
 }
 impl MaintenanceWindowBuilder {
     /// <p>Displays the start time of the next maintenance window.</p>
-    pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_time = Some(input.into());
+    pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Displays the start time of the next maintenance window.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>Displays the duration of the next maintenance window.</p>
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
-        self.duration_in_minutes = Some(input);
+        self.duration_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Displays the duration of the next maintenance window.</p>
-    pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_minutes = input;
         self
     }

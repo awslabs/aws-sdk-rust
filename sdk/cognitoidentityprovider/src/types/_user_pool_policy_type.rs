@@ -2,15 +2,15 @@
 
 /// <p>The policy associated with a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPoolPolicyType {
     /// <p>The password policy.</p>
     #[doc(hidden)]
-    pub password_policy: std::option::Option<crate::types::PasswordPolicyType>,
+    pub password_policy: ::std::option::Option<crate::types::PasswordPolicyType>,
 }
 impl UserPoolPolicyType {
     /// <p>The password policy.</p>
-    pub fn password_policy(&self) -> std::option::Option<&crate::types::PasswordPolicyType> {
+    pub fn password_policy(&self) -> ::std::option::Option<&crate::types::PasswordPolicyType> {
         self.password_policy.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl UserPoolPolicyType {
 
 /// A builder for [`UserPoolPolicyType`](crate::types::UserPoolPolicyType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserPoolPolicyTypeBuilder {
-    pub(crate) password_policy: std::option::Option<crate::types::PasswordPolicyType>,
+    pub(crate) password_policy: ::std::option::Option<crate::types::PasswordPolicyType>,
 }
 impl UserPoolPolicyTypeBuilder {
     /// <p>The password policy.</p>
     pub fn password_policy(mut self, input: crate::types::PasswordPolicyType) -> Self {
-        self.password_policy = Some(input);
+        self.password_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The password policy.</p>
     pub fn set_password_policy(
         mut self,
-        input: std::option::Option<crate::types::PasswordPolicyType>,
+        input: ::std::option::Option<crate::types::PasswordPolicyType>,
     ) -> Self {
         self.password_policy = input;
         self

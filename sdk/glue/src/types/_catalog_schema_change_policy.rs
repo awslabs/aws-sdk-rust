@@ -2,22 +2,22 @@
 
 /// <p>A policy that specifies update behavior for the crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogSchemaChangePolicy {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
     #[doc(hidden)]
-    pub enable_update_catalog: std::option::Option<bool>,
+    pub enable_update_catalog: ::std::option::Option<bool>,
     /// <p>The update behavior when the crawler finds a changed schema.</p>
     #[doc(hidden)]
-    pub update_behavior: std::option::Option<crate::types::UpdateCatalogBehavior>,
+    pub update_behavior: ::std::option::Option<crate::types::UpdateCatalogBehavior>,
 }
 impl CatalogSchemaChangePolicy {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-    pub fn enable_update_catalog(&self) -> std::option::Option<bool> {
+    pub fn enable_update_catalog(&self) -> ::std::option::Option<bool> {
         self.enable_update_catalog
     }
     /// <p>The update behavior when the crawler finds a changed schema.</p>
-    pub fn update_behavior(&self) -> std::option::Option<&crate::types::UpdateCatalogBehavior> {
+    pub fn update_behavior(&self) -> ::std::option::Option<&crate::types::UpdateCatalogBehavior> {
         self.update_behavior.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl CatalogSchemaChangePolicy {
 
 /// A builder for [`CatalogSchemaChangePolicy`](crate::types::CatalogSchemaChangePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CatalogSchemaChangePolicyBuilder {
-    pub(crate) enable_update_catalog: std::option::Option<bool>,
-    pub(crate) update_behavior: std::option::Option<crate::types::UpdateCatalogBehavior>,
+    pub(crate) enable_update_catalog: ::std::option::Option<bool>,
+    pub(crate) update_behavior: ::std::option::Option<crate::types::UpdateCatalogBehavior>,
 }
 impl CatalogSchemaChangePolicyBuilder {
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
     pub fn enable_update_catalog(mut self, input: bool) -> Self {
-        self.enable_update_catalog = Some(input);
+        self.enable_update_catalog = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to use the specified update behavior when the crawler finds a changed schema.</p>
-    pub fn set_enable_update_catalog(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_update_catalog(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_update_catalog = input;
         self
     }
     /// <p>The update behavior when the crawler finds a changed schema.</p>
     pub fn update_behavior(mut self, input: crate::types::UpdateCatalogBehavior) -> Self {
-        self.update_behavior = Some(input);
+        self.update_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The update behavior when the crawler finds a changed schema.</p>
     pub fn set_update_behavior(
         mut self,
-        input: std::option::Option<crate::types::UpdateCatalogBehavior>,
+        input: ::std::option::Option<crate::types::UpdateCatalogBehavior>,
     ) -> Self {
         self.update_behavior = input;
         self

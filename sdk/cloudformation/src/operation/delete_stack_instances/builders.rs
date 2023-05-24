@@ -6,29 +6,29 @@ pub use crate::operation::delete_stack_instances::_delete_stack_instances_input:
 /// Fluent builder constructing a request to `DeleteStackInstances`.
 ///
 /// <p>Deletes stack instances for the specified accounts, in the specified Amazon Web Services Regions.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStackInstancesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_stack_instances::builders::DeleteStackInstancesInputBuilder,
 }
 impl DeleteStackInstancesFluentBuilder {
     /// Creates a new `DeleteStackInstances`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_stack_instances::DeleteStackInstances,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_stack_instances::DeleteStackInstancesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DeleteStackInstancesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_stack_instances::DeleteStackInstancesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_stack_instances::DeleteStackInstancesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl DeleteStackInstancesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_stack_instances::DeleteStackInstancesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_stack_instances::DeleteStackInstancesError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name or unique ID of the stack set that you want to delete stack instances for.</p>
-    pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.stack_set_name(input.into());
         self
     }
     /// <p>The name or unique ID of the stack set that you want to delete stack instances for.</p>
-    pub fn set_stack_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_set_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_stack_set_name(input);
         self
     }
@@ -96,7 +105,7 @@ impl DeleteStackInstancesFluentBuilder {
     ///
     /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-    pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accounts(input.into());
         self
     }
@@ -104,7 +113,7 @@ impl DeleteStackInstancesFluentBuilder {
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_accounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_accounts(input);
         self
@@ -119,7 +128,7 @@ impl DeleteStackInstancesFluentBuilder {
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_deployment_targets(
         mut self,
-        input: std::option::Option<crate::types::DeploymentTargets>,
+        input: ::std::option::Option<crate::types::DeploymentTargets>,
     ) -> Self {
         self.inner = self.inner.set_deployment_targets(input);
         self
@@ -129,14 +138,14 @@ impl DeleteStackInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
     /// <p>The Amazon Web Services Regions where you want to delete stack set instances.</p>
-    pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regions(input.into());
         self
     }
     /// <p>The Amazon Web Services Regions where you want to delete stack set instances.</p>
     pub fn set_regions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_regions(input);
         self
@@ -152,7 +161,7 @@ impl DeleteStackInstancesFluentBuilder {
     /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
     pub fn set_operation_preferences(
         mut self,
-        input: std::option::Option<crate::types::StackSetOperationPreferences>,
+        input: ::std::option::Option<crate::types::StackSetOperationPreferences>,
     ) -> Self {
         self.inner = self.inner.set_operation_preferences(input);
         self
@@ -165,7 +174,7 @@ impl DeleteStackInstancesFluentBuilder {
     }
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn set_retain_stacks(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_retain_stacks(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain_stacks(input);
         self
     }
@@ -173,7 +182,7 @@ impl DeleteStackInstancesFluentBuilder {
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
-    pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_id(input.into());
         self
     }
@@ -181,7 +190,7 @@ impl DeleteStackInstancesFluentBuilder {
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.</p>
     /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack instances whose status is <code>OUTDATED</code>.</p>
-    pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_id(input);
         self
     }
@@ -201,7 +210,7 @@ impl DeleteStackInstancesFluentBuilder {
     /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
     /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
-    pub fn set_call_as(mut self, input: std::option::Option<crate::types::CallAs>) -> Self {
+    pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.inner = self.inner.set_call_as(input);
         self
     }

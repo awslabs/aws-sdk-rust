@@ -2,22 +2,22 @@
 
 /// <p>An object that represents a duration of time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Duration {
     /// <p>A number of time units.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<i64>,
+    pub value: ::std::option::Option<i64>,
     /// <p>A unit of time.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::DurationUnit>,
+    pub unit: ::std::option::Option<crate::types::DurationUnit>,
 }
 impl Duration {
     /// <p>A number of time units.</p>
-    pub fn value(&self) -> std::option::Option<i64> {
+    pub fn value(&self) -> ::std::option::Option<i64> {
         self.value
     }
     /// <p>A unit of time.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::DurationUnit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::DurationUnit> {
         self.unit.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Duration {
 
 /// A builder for [`Duration`](crate::types::Duration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DurationBuilder {
-    pub(crate) value: std::option::Option<i64>,
-    pub(crate) unit: std::option::Option<crate::types::DurationUnit>,
+    pub(crate) value: ::std::option::Option<i64>,
+    pub(crate) unit: ::std::option::Option<crate::types::DurationUnit>,
 }
 impl DurationBuilder {
     /// <p>A number of time units.</p>
     pub fn value(mut self, input: i64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>A number of time units.</p>
-    pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
     }
     /// <p>A unit of time.</p>
     pub fn unit(mut self, input: crate::types::DurationUnit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>A unit of time.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::DurationUnit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::DurationUnit>) -> Self {
         self.unit = input;
         self
     }

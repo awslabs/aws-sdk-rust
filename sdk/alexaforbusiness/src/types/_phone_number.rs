@@ -2,27 +2,27 @@
 
 /// <p>The phone number for the contact containing the raw number and phone number type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PhoneNumber {
     /// <p>The raw value of the phone number.</p>
     #[doc(hidden)]
-    pub number: std::option::Option<std::string::String>,
+    pub number: ::std::option::Option<::std::string::String>,
     /// <p>The type of the phone number.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PhoneNumberType>,
+    pub r#type: ::std::option::Option<crate::types::PhoneNumberType>,
 }
 impl PhoneNumber {
     /// <p>The raw value of the phone number.</p>
-    pub fn number(&self) -> std::option::Option<&str> {
+    pub fn number(&self) -> ::std::option::Option<&str> {
         self.number.as_deref()
     }
     /// <p>The type of the phone number.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PhoneNumberType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PhoneNumberType> {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for PhoneNumber {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PhoneNumber {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumber");
         formatter.field("number", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl PhoneNumber {
 
 /// A builder for [`PhoneNumber`](crate::types::PhoneNumber).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PhoneNumberBuilder {
-    pub(crate) number: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::PhoneNumberType>,
+    pub(crate) number: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PhoneNumberType>,
 }
 impl PhoneNumberBuilder {
     /// <p>The raw value of the phone number.</p>
-    pub fn number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.number = Some(input.into());
+    pub fn number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The raw value of the phone number.</p>
-    pub fn set_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.number = input;
         self
     }
     /// <p>The type of the phone number.</p>
     pub fn r#type(mut self, input: crate::types::PhoneNumberType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the phone number.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::PhoneNumberType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
         self.r#type = input;
         self
     }
@@ -72,8 +72,8 @@ impl PhoneNumberBuilder {
         }
     }
 }
-impl std::fmt::Debug for PhoneNumberBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PhoneNumberBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumberBuilder");
         formatter.field("number", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");

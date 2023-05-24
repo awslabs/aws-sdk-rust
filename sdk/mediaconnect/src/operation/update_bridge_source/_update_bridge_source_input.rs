@@ -2,38 +2,40 @@
 
 /// The fields that you want to update in the bridge source.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeSourceInput {
     /// The ARN of the bridge that you want to update.
     #[doc(hidden)]
-    pub bridge_arn: std::option::Option<std::string::String>,
+    pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// Update the flow source of the bridge.
     #[doc(hidden)]
-    pub flow_source: std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,
+    pub flow_source: ::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,
     /// Update the network source of the bridge.
     #[doc(hidden)]
-    pub network_source: std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>,
+    pub network_source: ::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>,
     /// The name of the source that you want to update.
     #[doc(hidden)]
-    pub source_name: std::option::Option<std::string::String>,
+    pub source_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBridgeSourceInput {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     /// Update the flow source of the bridge.
-    pub fn flow_source(&self) -> std::option::Option<&crate::types::UpdateBridgeFlowSourceRequest> {
+    pub fn flow_source(
+        &self,
+    ) -> ::std::option::Option<&crate::types::UpdateBridgeFlowSourceRequest> {
         self.flow_source.as_ref()
     }
     /// Update the network source of the bridge.
     pub fn network_source(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateBridgeNetworkSourceRequest> {
+    ) -> ::std::option::Option<&crate::types::UpdateBridgeNetworkSourceRequest> {
         self.network_source.as_ref()
     }
     /// The name of the source that you want to update.
-    pub fn source_name(&self) -> std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<&str> {
         self.source_name.as_deref()
     }
 }
@@ -47,68 +49,71 @@ impl UpdateBridgeSourceInput {
 
 /// A builder for [`UpdateBridgeSourceInput`](crate::operation::update_bridge_source::UpdateBridgeSourceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateBridgeSourceInputBuilder {
-    pub(crate) bridge_arn: std::option::Option<std::string::String>,
-    pub(crate) flow_source: std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,
-    pub(crate) network_source: std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>,
-    pub(crate) source_name: std::option::Option<std::string::String>,
+    pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) flow_source: ::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,
+    pub(crate) network_source:
+        ::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>,
+    pub(crate) source_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBridgeSourceInputBuilder {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bridge_arn = Some(input.into());
+    pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the bridge that you want to update.
-    pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
     /// Update the flow source of the bridge.
     pub fn flow_source(mut self, input: crate::types::UpdateBridgeFlowSourceRequest) -> Self {
-        self.flow_source = Some(input);
+        self.flow_source = ::std::option::Option::Some(input);
         self
     }
     /// Update the flow source of the bridge.
     pub fn set_flow_source(
         mut self,
-        input: std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,
+        input: ::std::option::Option<crate::types::UpdateBridgeFlowSourceRequest>,
     ) -> Self {
         self.flow_source = input;
         self
     }
     /// Update the network source of the bridge.
     pub fn network_source(mut self, input: crate::types::UpdateBridgeNetworkSourceRequest) -> Self {
-        self.network_source = Some(input);
+        self.network_source = ::std::option::Option::Some(input);
         self
     }
     /// Update the network source of the bridge.
     pub fn set_network_source(
         mut self,
-        input: std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>,
+        input: ::std::option::Option<crate::types::UpdateBridgeNetworkSourceRequest>,
     ) -> Self {
         self.network_source = input;
         self
     }
     /// The name of the source that you want to update.
-    pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_name = Some(input.into());
+    pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the source that you want to update.
-    pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateBridgeSourceInput`](crate::operation::update_bridge_source::UpdateBridgeSourceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_bridge_source::UpdateBridgeSourceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_bridge_source::UpdateBridgeSourceInput {
                 bridge_arn: self.bridge_arn,
                 flow_source: self.flow_source,

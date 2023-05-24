@@ -2,18 +2,18 @@
 
 /// <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogGroupField {
     /// <p>The name of a log field.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of log events queried that contained the field.</p>
     #[doc(hidden)]
     pub percent: i32,
 }
 impl LogGroupField {
     /// <p>The name of a log field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The percentage of log events queried that contained the field.</p>
@@ -30,29 +30,31 @@ impl LogGroupField {
 
 /// A builder for [`LogGroupField`](crate::types::LogGroupField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogGroupFieldBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) percent: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) percent: ::std::option::Option<i32>,
 }
 impl LogGroupFieldBuilder {
     /// <p>The name of a log field.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a log field.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The percentage of log events queried that contained the field.</p>
     pub fn percent(mut self, input: i32) -> Self {
-        self.percent = Some(input);
+        self.percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of log events queried that contained the field.</p>
-    pub fn set_percent(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percent = input;
         self
     }

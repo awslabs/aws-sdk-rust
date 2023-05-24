@@ -2,28 +2,28 @@
 
 /// <p>Information about the job error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Details {
     /// <p>Information about the job error.</p>
     #[doc(hidden)]
     pub import_asset_from_signed_url_job_error_details:
-        std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
+        ::std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
     /// <p>Details about the job error.</p>
     #[doc(hidden)]
     pub import_assets_from_s3_job_error_details:
-        std::option::Option<std::vec::Vec<crate::types::AssetSourceEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
 }
 impl Details {
     /// <p>Information about the job error.</p>
     pub fn import_asset_from_signed_url_job_error_details(
         &self,
-    ) -> std::option::Option<&crate::types::ImportAssetFromSignedUrlJobErrorDetails> {
+    ) -> ::std::option::Option<&crate::types::ImportAssetFromSignedUrlJobErrorDetails> {
         self.import_asset_from_signed_url_job_error_details.as_ref()
     }
     /// <p>Details about the job error.</p>
     pub fn import_assets_from_s3_job_error_details(
         &self,
-    ) -> std::option::Option<&[crate::types::AssetSourceEntry]> {
+    ) -> ::std::option::Option<&[crate::types::AssetSourceEntry]> {
         self.import_assets_from_s3_job_error_details.as_deref()
     }
 }
@@ -36,12 +36,14 @@ impl Details {
 
 /// A builder for [`Details`](crate::types::Details).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetailsBuilder {
     pub(crate) import_asset_from_signed_url_job_error_details:
-        std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
+        ::std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
     pub(crate) import_assets_from_s3_job_error_details:
-        std::option::Option<std::vec::Vec<crate::types::AssetSourceEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
 }
 impl DetailsBuilder {
     /// <p>Information about the job error.</p>
@@ -49,13 +51,13 @@ impl DetailsBuilder {
         mut self,
         input: crate::types::ImportAssetFromSignedUrlJobErrorDetails,
     ) -> Self {
-        self.import_asset_from_signed_url_job_error_details = Some(input);
+        self.import_asset_from_signed_url_job_error_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the job error.</p>
     pub fn set_import_asset_from_signed_url_job_error_details(
         mut self,
-        input: std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
+        input: ::std::option::Option<crate::types::ImportAssetFromSignedUrlJobErrorDetails>,
     ) -> Self {
         self.import_asset_from_signed_url_job_error_details = input;
         self
@@ -73,13 +75,13 @@ impl DetailsBuilder {
             .import_assets_from_s3_job_error_details
             .unwrap_or_default();
         v.push(input);
-        self.import_assets_from_s3_job_error_details = Some(v);
+        self.import_assets_from_s3_job_error_details = ::std::option::Option::Some(v);
         self
     }
     /// <p>Details about the job error.</p>
     pub fn set_import_assets_from_s3_job_error_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetSourceEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetSourceEntry>>,
     ) -> Self {
         self.import_assets_from_s3_job_error_details = input;
         self

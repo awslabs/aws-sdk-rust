@@ -2,22 +2,22 @@
 
 /// <p>Information about the organization node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationNode {
     /// <p>The organization node type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::OrganizationNodeType>,
+    pub r#type: ::std::option::Option<crate::types::OrganizationNodeType>,
     /// <p>The identifier of the organization node.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationNode {
     /// <p>The organization node type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OrganizationNodeType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OrganizationNodeType> {
         self.r#type.as_ref()
     }
     /// <p>The identifier of the organization node.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl OrganizationNode {
 
 /// A builder for [`OrganizationNode`](crate::types::OrganizationNode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationNodeBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::OrganizationNodeType>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::OrganizationNodeType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationNodeBuilder {
     /// <p>The organization node type.</p>
     pub fn r#type(mut self, input: crate::types::OrganizationNodeType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The organization node type.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::OrganizationNodeType>,
+        input: ::std::option::Option<crate::types::OrganizationNodeType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The identifier of the organization node.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the organization node.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

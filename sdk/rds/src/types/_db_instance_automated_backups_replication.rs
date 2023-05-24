@@ -2,15 +2,15 @@
 
 /// <p>Automated backups of a DB instance replicated to another Amazon Web Services Region. They consist of system backups, transaction logs, and database instance properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbInstanceAutomatedBackupsReplication {
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
     #[doc(hidden)]
-    pub db_instance_automated_backups_arn: std::option::Option<std::string::String>,
+    pub db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceAutomatedBackupsReplication {
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
-    pub fn db_instance_automated_backups_arn(&self) -> std::option::Option<&str> {
+    pub fn db_instance_automated_backups_arn(&self) -> ::std::option::Option<&str> {
         self.db_instance_automated_backups_arn.as_deref()
     }
 }
@@ -23,23 +23,25 @@ impl DbInstanceAutomatedBackupsReplication {
 
 /// A builder for [`DbInstanceAutomatedBackupsReplication`](crate::types::DbInstanceAutomatedBackupsReplication).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DbInstanceAutomatedBackupsReplicationBuilder {
-    pub(crate) db_instance_automated_backups_arn: std::option::Option<std::string::String>,
+    pub(crate) db_instance_automated_backups_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceAutomatedBackupsReplicationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
     pub fn db_instance_automated_backups_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.db_instance_automated_backups_arn = Some(input.into());
+        self.db_instance_automated_backups_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
     pub fn set_db_instance_automated_backups_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_instance_automated_backups_arn = input;
         self

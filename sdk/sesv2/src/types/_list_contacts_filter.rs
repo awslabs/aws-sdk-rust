@@ -2,22 +2,22 @@
 
 /// <p>A filter that can be applied to a list of contacts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContactsFilter {
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
     #[doc(hidden)]
-    pub filtered_status: std::option::Option<crate::types::SubscriptionStatus>,
+    pub filtered_status: ::std::option::Option<crate::types::SubscriptionStatus>,
     /// <p>Used for filtering by a specific topic preference.</p>
     #[doc(hidden)]
-    pub topic_filter: std::option::Option<crate::types::TopicFilter>,
+    pub topic_filter: ::std::option::Option<crate::types::TopicFilter>,
 }
 impl ListContactsFilter {
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-    pub fn filtered_status(&self) -> std::option::Option<&crate::types::SubscriptionStatus> {
+    pub fn filtered_status(&self) -> ::std::option::Option<&crate::types::SubscriptionStatus> {
         self.filtered_status.as_ref()
     }
     /// <p>Used for filtering by a specific topic preference.</p>
-    pub fn topic_filter(&self) -> std::option::Option<&crate::types::TopicFilter> {
+    pub fn topic_filter(&self) -> ::std::option::Option<&crate::types::TopicFilter> {
         self.topic_filter.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl ListContactsFilter {
 
 /// A builder for [`ListContactsFilter`](crate::types::ListContactsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListContactsFilterBuilder {
-    pub(crate) filtered_status: std::option::Option<crate::types::SubscriptionStatus>,
-    pub(crate) topic_filter: std::option::Option<crate::types::TopicFilter>,
+    pub(crate) filtered_status: ::std::option::Option<crate::types::SubscriptionStatus>,
+    pub(crate) topic_filter: ::std::option::Option<crate::types::TopicFilter>,
 }
 impl ListContactsFilterBuilder {
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
     pub fn filtered_status(mut self, input: crate::types::SubscriptionStatus) -> Self {
-        self.filtered_status = Some(input);
+        self.filtered_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
     pub fn set_filtered_status(
         mut self,
-        input: std::option::Option<crate::types::SubscriptionStatus>,
+        input: ::std::option::Option<crate::types::SubscriptionStatus>,
     ) -> Self {
         self.filtered_status = input;
         self
     }
     /// <p>Used for filtering by a specific topic preference.</p>
     pub fn topic_filter(mut self, input: crate::types::TopicFilter) -> Self {
-        self.topic_filter = Some(input);
+        self.topic_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Used for filtering by a specific topic preference.</p>
     pub fn set_topic_filter(
         mut self,
-        input: std::option::Option<crate::types::TopicFilter>,
+        input: ::std::option::Option<crate::types::TopicFilter>,
     ) -> Self {
         self.topic_filter = input;
         self

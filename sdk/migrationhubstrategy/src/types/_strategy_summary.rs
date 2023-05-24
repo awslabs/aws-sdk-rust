@@ -2,22 +2,22 @@
 
 /// <p> Object containing the summary of the strategy recommendations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StrategySummary {
     /// <p> The name of recommended strategy. </p>
     #[doc(hidden)]
-    pub strategy: std::option::Option<crate::types::Strategy>,
+    pub strategy: ::std::option::Option<crate::types::Strategy>,
     /// <p> The count of recommendations per strategy. </p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
 }
 impl StrategySummary {
     /// <p> The name of recommended strategy. </p>
-    pub fn strategy(&self) -> std::option::Option<&crate::types::Strategy> {
+    pub fn strategy(&self) -> ::std::option::Option<&crate::types::Strategy> {
         self.strategy.as_ref()
     }
     /// <p> The count of recommendations per strategy. </p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -30,29 +30,31 @@ impl StrategySummary {
 
 /// A builder for [`StrategySummary`](crate::types::StrategySummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StrategySummaryBuilder {
-    pub(crate) strategy: std::option::Option<crate::types::Strategy>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) strategy: ::std::option::Option<crate::types::Strategy>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl StrategySummaryBuilder {
     /// <p> The name of recommended strategy. </p>
     pub fn strategy(mut self, input: crate::types::Strategy) -> Self {
-        self.strategy = Some(input);
+        self.strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p> The name of recommended strategy. </p>
-    pub fn set_strategy(mut self, input: std::option::Option<crate::types::Strategy>) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::Strategy>) -> Self {
         self.strategy = input;
         self
     }
     /// <p> The count of recommendations per strategy. </p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p> The count of recommendations per strategy. </p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

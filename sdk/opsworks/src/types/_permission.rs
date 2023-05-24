@@ -2,20 +2,20 @@
 
 /// <p>Describes stack or user permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>A stack ID.</p>
     #[doc(hidden)]
-    pub stack_id: std::option::Option<std::string::String>,
+    pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     #[doc(hidden)]
-    pub iam_user_arn: std::option::Option<std::string::String>,
+    pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the user can use SSH.</p>
     #[doc(hidden)]
-    pub allow_ssh: std::option::Option<bool>,
+    pub allow_ssh: ::std::option::Option<bool>,
     /// <p>Whether the user can use <b>sudo</b>.</p>
     #[doc(hidden)]
-    pub allow_sudo: std::option::Option<bool>,
+    pub allow_sudo: ::std::option::Option<bool>,
     /// <p>The user's permission level, which must be the following:</p>
     /// <ul>
     /// <li> <p> <code>deny</code> </p> </li>
@@ -26,23 +26,23 @@ pub struct Permission {
     /// </ul>
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
     #[doc(hidden)]
-    pub level: std::option::Option<std::string::String>,
+    pub level: ::std::option::Option<::std::string::String>,
 }
 impl Permission {
     /// <p>A stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> ::std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>Whether the user can use SSH.</p>
-    pub fn allow_ssh(&self) -> std::option::Option<bool> {
+    pub fn allow_ssh(&self) -> ::std::option::Option<bool> {
         self.allow_ssh
     }
     /// <p>Whether the user can use <b>sudo</b>.</p>
-    pub fn allow_sudo(&self) -> std::option::Option<bool> {
+    pub fn allow_sudo(&self) -> ::std::option::Option<bool> {
         self.allow_sudo
     }
     /// <p>The user's permission level, which must be the following:</p>
@@ -54,7 +54,7 @@ impl Permission {
     /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
-    pub fn level(&self) -> std::option::Option<&str> {
+    pub fn level(&self) -> ::std::option::Option<&str> {
         self.level.as_deref()
     }
 }
@@ -67,52 +67,54 @@ impl Permission {
 
 /// A builder for [`Permission`](crate::types::Permission).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PermissionBuilder {
-    pub(crate) stack_id: std::option::Option<std::string::String>,
-    pub(crate) iam_user_arn: std::option::Option<std::string::String>,
-    pub(crate) allow_ssh: std::option::Option<bool>,
-    pub(crate) allow_sudo: std::option::Option<bool>,
-    pub(crate) level: std::option::Option<std::string::String>,
+    pub(crate) stack_id: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_ssh: ::std::option::Option<bool>,
+    pub(crate) allow_sudo: ::std::option::Option<bool>,
+    pub(crate) level: ::std::option::Option<::std::string::String>,
 }
 impl PermissionBuilder {
     /// <p>A stack ID.</p>
-    pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_id = Some(input.into());
+    pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A stack ID.</p>
-    pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iam_user_arn = Some(input.into());
+    pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_user_arn = input;
         self
     }
     /// <p>Whether the user can use SSH.</p>
     pub fn allow_ssh(mut self, input: bool) -> Self {
-        self.allow_ssh = Some(input);
+        self.allow_ssh = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the user can use SSH.</p>
-    pub fn set_allow_ssh(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_ssh(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_ssh = input;
         self
     }
     /// <p>Whether the user can use <b>sudo</b>.</p>
     pub fn allow_sudo(mut self, input: bool) -> Self {
-        self.allow_sudo = Some(input);
+        self.allow_sudo = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the user can use <b>sudo</b>.</p>
-    pub fn set_allow_sudo(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_sudo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_sudo = input;
         self
     }
@@ -125,8 +127,8 @@ impl PermissionBuilder {
     /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
-    pub fn level(mut self, input: impl Into<std::string::String>) -> Self {
-        self.level = Some(input.into());
+    pub fn level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.level = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's permission level, which must be the following:</p>
@@ -138,7 +140,7 @@ impl PermissionBuilder {
     /// <li> <p> <code>iam_only</code> </p> </li>
     /// </ul>
     /// <p>For more information on the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> </p>
-    pub fn set_level(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.level = input;
         self
     }

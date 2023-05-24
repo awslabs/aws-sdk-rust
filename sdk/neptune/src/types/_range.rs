@@ -2,7 +2,7 @@
 
 /// <p>A range of integer values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The minimum value in the range.</p>
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct Range {
     pub to: i32,
     /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
     #[doc(hidden)]
-    pub step: std::option::Option<i32>,
+    pub step: ::std::option::Option<i32>,
 }
 impl Range {
     /// <p>The minimum value in the range.</p>
@@ -24,7 +24,7 @@ impl Range {
         self.to
     }
     /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
-    pub fn step(&self) -> std::option::Option<i32> {
+    pub fn step(&self) -> ::std::option::Option<i32> {
         self.step
     }
 }
@@ -37,40 +37,42 @@ impl Range {
 
 /// A builder for [`Range`](crate::types::Range).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RangeBuilder {
-    pub(crate) from: std::option::Option<i32>,
-    pub(crate) to: std::option::Option<i32>,
-    pub(crate) step: std::option::Option<i32>,
+    pub(crate) from: ::std::option::Option<i32>,
+    pub(crate) to: ::std::option::Option<i32>,
+    pub(crate) step: ::std::option::Option<i32>,
 }
 impl RangeBuilder {
     /// <p>The minimum value in the range.</p>
     pub fn from(mut self, input: i32) -> Self {
-        self.from = Some(input);
+        self.from = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value in the range.</p>
-    pub fn set_from(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_from(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from = input;
         self
     }
     /// <p>The maximum value in the range.</p>
     pub fn to(mut self, input: i32) -> Self {
-        self.to = Some(input);
+        self.to = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value in the range.</p>
-    pub fn set_to(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_to(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to = input;
         self
     }
     /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
     pub fn step(mut self, input: i32) -> Self {
-        self.step = Some(input);
+        self.step = ::std::option::Option::Some(input);
         self
     }
     /// <p>The step value for the range. For example, if you have a range of 5,000 to 10,000, with a step value of 1,000, the valid values start at 5,000 and step up by 1,000. Even though 7,500 is within the range, it isn't a valid value for the range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
-    pub fn set_step(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_step(mut self, input: ::std::option::Option<i32>) -> Self {
         self.step = input;
         self
     }

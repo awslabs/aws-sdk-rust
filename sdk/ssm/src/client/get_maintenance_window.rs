@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMaintenanceWindow`](crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`window_id(impl Into<String>)`](crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder::window_id) / [`set_window_id(Option<String>)`](crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder::set_window_id): <p>The ID of the maintenance window for which you want to retrieve information.</p>
+    ///   - [`window_id(impl ::std::convert::Into<String>)`](crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder::window_id) / [`set_window_id(Option<String>)`](crate::operation::get_maintenance_window::builders::GetMaintenanceWindowFluentBuilder::set_window_id): <p>The ID of the maintenance window for which you want to retrieve information.</p>
     /// - On success, responds with [`GetMaintenanceWindowOutput`](crate::operation::get_maintenance_window::GetMaintenanceWindowOutput) with field(s):
     ///   - [`window_id(Option<String>)`](crate::operation::get_maintenance_window::GetMaintenanceWindowOutput::window_id): <p>The ID of the created maintenance window.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_maintenance_window::GetMaintenanceWindowOutput::name): <p>The name of the maintenance window.</p>

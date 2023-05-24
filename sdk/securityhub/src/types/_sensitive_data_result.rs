@@ -2,25 +2,25 @@
 
 /// <p>Contains a detected instance of sensitive data that are based on built-in identifiers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitiveDataResult {
     /// <p>The category of sensitive data that was detected. For example, the category can indicate that the sensitive data involved credentials, financial information, or personal information.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::string::String>,
+    pub category: ::std::option::Option<::std::string::String>,
     /// <p>The list of detected instances of sensitive data.</p>
     #[doc(hidden)]
-    pub detections: std::option::Option<std::vec::Vec<crate::types::SensitiveDataDetections>>,
+    pub detections: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>,
     /// <p>The total number of occurrences of sensitive data.</p>
     #[doc(hidden)]
     pub total_count: i64,
 }
 impl SensitiveDataResult {
     /// <p>The category of sensitive data that was detected. For example, the category can indicate that the sensitive data involved credentials, financial information, or personal information.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<&str> {
         self.category.as_deref()
     }
     /// <p>The list of detected instances of sensitive data.</p>
-    pub fn detections(&self) -> std::option::Option<&[crate::types::SensitiveDataDetections]> {
+    pub fn detections(&self) -> ::std::option::Option<&[crate::types::SensitiveDataDetections]> {
         self.detections.as_deref()
     }
     /// <p>The total number of occurrences of sensitive data.</p>
@@ -37,21 +37,23 @@ impl SensitiveDataResult {
 
 /// A builder for [`SensitiveDataResult`](crate::types::SensitiveDataResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SensitiveDataResultBuilder {
-    pub(crate) category: std::option::Option<std::string::String>,
+    pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) detections:
-        std::option::Option<std::vec::Vec<crate::types::SensitiveDataDetections>>,
-    pub(crate) total_count: std::option::Option<i64>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>,
+    pub(crate) total_count: ::std::option::Option<i64>,
 }
 impl SensitiveDataResultBuilder {
     /// <p>The category of sensitive data that was detected. For example, the category can indicate that the sensitive data involved credentials, financial information, or personal information.</p>
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
-        self.category = Some(input.into());
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category of sensitive data that was detected. For example, the category can indicate that the sensitive data involved credentials, financial information, or personal information.</p>
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
     }
@@ -63,24 +65,24 @@ impl SensitiveDataResultBuilder {
     pub fn detections(mut self, input: crate::types::SensitiveDataDetections) -> Self {
         let mut v = self.detections.unwrap_or_default();
         v.push(input);
-        self.detections = Some(v);
+        self.detections = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of detected instances of sensitive data.</p>
     pub fn set_detections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SensitiveDataDetections>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataDetections>>,
     ) -> Self {
         self.detections = input;
         self
     }
     /// <p>The total number of occurrences of sensitive data.</p>
     pub fn total_count(mut self, input: i64) -> Self {
-        self.total_count = Some(input);
+        self.total_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of occurrences of sensitive data.</p>
-    pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
     }

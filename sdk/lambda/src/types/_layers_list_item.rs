@@ -2,31 +2,31 @@
 
 /// <p>Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayersListItem {
     /// <p>The name of the layer.</p>
     #[doc(hidden)]
-    pub layer_name: std::option::Option<std::string::String>,
+    pub layer_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
     #[doc(hidden)]
-    pub layer_arn: std::option::Option<std::string::String>,
+    pub layer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The newest version of the layer.</p>
     #[doc(hidden)]
-    pub latest_matching_version: std::option::Option<crate::types::LayerVersionsListItem>,
+    pub latest_matching_version: ::std::option::Option<crate::types::LayerVersionsListItem>,
 }
 impl LayersListItem {
     /// <p>The name of the layer.</p>
-    pub fn layer_name(&self) -> std::option::Option<&str> {
+    pub fn layer_name(&self) -> ::std::option::Option<&str> {
         self.layer_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    pub fn layer_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_arn(&self) -> ::std::option::Option<&str> {
         self.layer_arn.as_deref()
     }
     /// <p>The newest version of the layer.</p>
     pub fn latest_matching_version(
         &self,
-    ) -> std::option::Option<&crate::types::LayerVersionsListItem> {
+    ) -> ::std::option::Option<&crate::types::LayerVersionsListItem> {
         self.latest_matching_version.as_ref()
     }
 }
@@ -39,42 +39,44 @@ impl LayersListItem {
 
 /// A builder for [`LayersListItem`](crate::types::LayersListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LayersListItemBuilder {
-    pub(crate) layer_name: std::option::Option<std::string::String>,
-    pub(crate) layer_arn: std::option::Option<std::string::String>,
-    pub(crate) latest_matching_version: std::option::Option<crate::types::LayerVersionsListItem>,
+    pub(crate) layer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) layer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_matching_version: ::std::option::Option<crate::types::LayerVersionsListItem>,
 }
 impl LayersListItemBuilder {
     /// <p>The name of the layer.</p>
-    pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.layer_name = Some(input.into());
+    pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.layer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the layer.</p>
-    pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_layer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.layer_arn = Some(input.into());
+    pub fn layer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.layer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the function layer.</p>
-    pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_arn = input;
         self
     }
     /// <p>The newest version of the layer.</p>
     pub fn latest_matching_version(mut self, input: crate::types::LayerVersionsListItem) -> Self {
-        self.latest_matching_version = Some(input);
+        self.latest_matching_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The newest version of the layer.</p>
     pub fn set_latest_matching_version(
         mut self,
-        input: std::option::Option<crate::types::LayerVersionsListItem>,
+        input: ::std::option::Option<crate::types::LayerVersionsListItem>,
     ) -> Self {
         self.latest_matching_version = input;
         self

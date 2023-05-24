@@ -2,12 +2,12 @@
 
 /// <p> Specifies the aggregation period and aggregation start time for an aggregated profile. An aggregated profile is used to collect posted agent profiles during an aggregation period. There are three possible aggregation periods (1 day, 1 hour, or 5 minutes). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedProfileTime {
     /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
     /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     #[doc(hidden)]
-    pub start: std::option::Option<aws_smithy_types::DateTime>,
+    pub start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p>
     /// <ul>
     /// <li> <p> <code>P1D</code> — 1 day </p> </li>
@@ -15,12 +15,12 @@ pub struct AggregatedProfileTime {
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub period: std::option::Option<crate::types::AggregationPeriod>,
+    pub period: ::std::option::Option<crate::types::AggregationPeriod>,
 }
 impl AggregatedProfileTime {
     /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
     /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
     /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p>
@@ -29,7 +29,7 @@ impl AggregatedProfileTime {
     /// <li> <p> <code>PT1H</code> — 1 hour </p> </li>
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
-    pub fn period(&self) -> std::option::Option<&crate::types::AggregationPeriod> {
+    pub fn period(&self) -> ::std::option::Option<&crate::types::AggregationPeriod> {
         self.period.as_ref()
     }
 }
@@ -42,21 +42,23 @@ impl AggregatedProfileTime {
 
 /// A builder for [`AggregatedProfileTime`](crate::types::AggregatedProfileTime).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregatedProfileTimeBuilder {
-    pub(crate) start: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) period: std::option::Option<crate::types::AggregationPeriod>,
+    pub(crate) start: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) period: ::std::option::Option<crate::types::AggregationPeriod>,
 }
 impl AggregatedProfileTimeBuilder {
     /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
     /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start = Some(input);
+    pub fn start(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time that aggregation of posted agent profiles for a profiling group starts. The aggregation profile contains profiles posted by the agent starting at this time for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code> object. </p>
     /// <p> Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start = input;
         self
     }
@@ -67,7 +69,7 @@ impl AggregatedProfileTimeBuilder {
     /// <li> <p> <code>PT5M</code> — 5 minutes </p> </li>
     /// </ul>
     pub fn period(mut self, input: crate::types::AggregationPeriod) -> Self {
-        self.period = Some(input);
+        self.period = ::std::option::Option::Some(input);
         self
     }
     /// <p> The aggregation period. This indicates the period during which an aggregation profile collects posted agent profiles for a profiling group. Use one of three valid durations that are specified using the ISO 8601 format. </p>
@@ -78,7 +80,7 @@ impl AggregatedProfileTimeBuilder {
     /// </ul>
     pub fn set_period(
         mut self,
-        input: std::option::Option<crate::types::AggregationPeriod>,
+        input: ::std::option::Option<crate::types::AggregationPeriod>,
     ) -> Self {
         self.period = input;
         self

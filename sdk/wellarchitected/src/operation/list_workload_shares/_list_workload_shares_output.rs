@@ -2,37 +2,37 @@
 
 /// <p>Input for List Workload Share</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkloadSharesOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of workload share summaries.</p>
     #[doc(hidden)]
     pub workload_share_summaries:
-        std::option::Option<std::vec::Vec<crate::types::WorkloadShareSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkloadSharesOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>A list of workload share summaries.</p>
     pub fn workload_share_summaries(
         &self,
-    ) -> std::option::Option<&[crate::types::WorkloadShareSummary]> {
+    ) -> ::std::option::Option<&[crate::types::WorkloadShareSummary]> {
         self.workload_share_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListWorkloadSharesOutput {
+impl ::aws_http::request_id::RequestId for ListWorkloadSharesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -47,22 +47,24 @@ impl ListWorkloadSharesOutput {
 
 /// A builder for [`ListWorkloadSharesOutput`](crate::operation::list_workload_shares::ListWorkloadSharesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListWorkloadSharesOutputBuilder {
-    pub(crate) workload_id: std::option::Option<std::string::String>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
     pub(crate) workload_share_summaries:
-        std::option::Option<std::vec::Vec<crate::types::WorkloadShareSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkloadSharesOutputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
@@ -74,24 +76,24 @@ impl ListWorkloadSharesOutputBuilder {
     pub fn workload_share_summaries(mut self, input: crate::types::WorkloadShareSummary) -> Self {
         let mut v = self.workload_share_summaries.unwrap_or_default();
         v.push(input);
-        self.workload_share_summaries = Some(v);
+        self.workload_share_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of workload share summaries.</p>
     pub fn set_workload_share_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkloadShareSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadShareSummary>>,
     ) -> Self {
         self.workload_share_summaries = input;
         self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

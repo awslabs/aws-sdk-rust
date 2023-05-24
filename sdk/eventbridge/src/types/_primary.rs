@@ -2,15 +2,15 @@
 
 /// <p>The primary Region of the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Primary {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
     #[doc(hidden)]
-    pub health_check: std::option::Option<std::string::String>,
+    pub health_check: ::std::option::Option<::std::string::String>,
 }
 impl Primary {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
-    pub fn health_check(&self) -> std::option::Option<&str> {
+    pub fn health_check(&self) -> ::std::option::Option<&str> {
         self.health_check.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Primary {
 
 /// A builder for [`Primary`](crate::types::Primary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrimaryBuilder {
-    pub(crate) health_check: std::option::Option<std::string::String>,
+    pub(crate) health_check: ::std::option::Option<::std::string::String>,
 }
 impl PrimaryBuilder {
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
-    pub fn health_check(mut self, input: impl Into<std::string::String>) -> Self {
-        self.health_check = Some(input.into());
+    pub fn health_check(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.health_check = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the health check used by the endpoint to determine whether failover is triggered.</p>
-    pub fn set_health_check(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_health_check(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check = input;
         self
     }

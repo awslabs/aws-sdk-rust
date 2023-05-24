@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`egress_access_logs(EgressAccessLogs)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::egress_access_logs) / [`set_egress_access_logs(Option<EgressAccessLogs>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::set_egress_access_logs): Configure egress access logging.
-    ///   - [`id(impl Into<String>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::set_id): The ID of the channel to log subscription.
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::set_id): The ID of the channel to log subscription.
     ///   - [`ingress_access_logs(IngressAccessLogs)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::ingress_access_logs) / [`set_ingress_access_logs(Option<IngressAccessLogs>)`](crate::operation::configure_logs::builders::ConfigureLogsFluentBuilder::set_ingress_access_logs): Configure ingress access logging.
     /// - On success, responds with [`ConfigureLogsOutput`](crate::operation::configure_logs::ConfigureLogsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::configure_logs::ConfigureLogsOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.

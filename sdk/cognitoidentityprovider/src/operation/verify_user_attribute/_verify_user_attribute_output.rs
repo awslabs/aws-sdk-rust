@@ -2,11 +2,11 @@
 
 /// <p>A container representing the response from the server from the request to verify user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyUserAttributeOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for VerifyUserAttributeOutput {
+impl ::aws_http::request_id::RequestId for VerifyUserAttributeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl VerifyUserAttributeOutput {
 
 /// A builder for [`VerifyUserAttributeOutput`](crate::operation::verify_user_attribute::VerifyUserAttributeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifyUserAttributeOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>UploadSigningCertificate</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadSigningCertificateOutput {
     /// <p>Information about the certificate.</p>
     #[doc(hidden)]
-    pub certificate: std::option::Option<crate::types::SigningCertificate>,
+    pub certificate: ::std::option::Option<crate::types::SigningCertificate>,
     _request_id: Option<String>,
 }
 impl UploadSigningCertificateOutput {
     /// <p>Information about the certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::types::SigningCertificate> {
+    pub fn certificate(&self) -> ::std::option::Option<&crate::types::SigningCertificate> {
         self.certificate.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UploadSigningCertificateOutput {
+impl ::aws_http::request_id::RequestId for UploadSigningCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl UploadSigningCertificateOutput {
 
 /// A builder for [`UploadSigningCertificateOutput`](crate::operation::upload_signing_certificate::UploadSigningCertificateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UploadSigningCertificateOutputBuilder {
-    pub(crate) certificate: std::option::Option<crate::types::SigningCertificate>,
+    pub(crate) certificate: ::std::option::Option<crate::types::SigningCertificate>,
     _request_id: Option<String>,
 }
 impl UploadSigningCertificateOutputBuilder {
     /// <p>Information about the certificate.</p>
     pub fn certificate(mut self, input: crate::types::SigningCertificate) -> Self {
-        self.certificate = Some(input);
+        self.certificate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the certificate.</p>
     pub fn set_certificate(
         mut self,
-        input: std::option::Option<crate::types::SigningCertificate>,
+        input: ::std::option::Option<crate::types::SigningCertificate>,
     ) -> Self {
         self.certificate = input;
         self

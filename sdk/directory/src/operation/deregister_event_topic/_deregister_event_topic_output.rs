@@ -2,11 +2,11 @@
 
 /// <p>The result of a DeregisterEventTopic request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterEventTopicOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeregisterEventTopicOutput {
+impl ::aws_http::request_id::RequestId for DeregisterEventTopicOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeregisterEventTopicOutput {
 
 /// A builder for [`DeregisterEventTopicOutput`](crate::operation::deregister_event_topic::DeregisterEventTopicOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeregisterEventTopicOutputBuilder {
     _request_id: Option<String>,
 }

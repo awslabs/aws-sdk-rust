@@ -2,7 +2,7 @@
 
 /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entity {
     /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
     #[doc(hidden)]
@@ -12,17 +12,17 @@ pub struct Entity {
     pub end_time: f64,
     /// <p>The category of information identified. The only category is <code>PII</code>.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::string::String>,
+    pub category: ::std::option::Option<::std::string::String>,
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The word or words identified as PII.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score associated with the identified PII entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f64>,
+    pub confidence: ::std::option::Option<f64>,
 }
 impl Entity {
     /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
@@ -34,20 +34,20 @@ impl Entity {
         self.end_time
     }
     /// <p>The category of information identified. The only category is <code>PII</code>.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<&str> {
         self.category.as_deref()
     }
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The word or words identified as PII.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The confidence score associated with the identified PII entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
-    pub fn confidence(&self) -> std::option::Option<f64> {
+    pub fn confidence(&self) -> ::std::option::Option<f64> {
         self.confidence
     }
 }
@@ -60,75 +60,77 @@ impl Entity {
 
 /// A builder for [`Entity`](crate::types::Entity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityBuilder {
-    pub(crate) start_time: std::option::Option<f64>,
-    pub(crate) end_time: std::option::Option<f64>,
-    pub(crate) category: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) confidence: std::option::Option<f64>,
+    pub(crate) start_time: ::std::option::Option<f64>,
+    pub(crate) end_time: ::std::option::Option<f64>,
+    pub(crate) category: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) confidence: ::std::option::Option<f64>,
 }
 impl EntityBuilder {
     /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
     pub fn start_time(mut self, input: f64) -> Self {
-        self.start_time = Some(input);
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time, in milliseconds, of the utterance that was identified as PII.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
     pub fn end_time(mut self, input: f64) -> Self {
-        self.end_time = Some(input);
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end time, in milliseconds, of the utterance that was identified as PII.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The category of information identified. The only category is <code>PII</code>.</p>
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
-        self.category = Some(input.into());
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category of information identified. The only category is <code>PII</code>.</p>
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
     }
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of PII identified. For example, <code>NAME</code> or <code>CREDIT_DEBIT_NUMBER</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The word or words identified as PII.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The word or words identified as PII.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p>The confidence score associated with the identified PII entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn confidence(mut self, input: f64) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence score associated with the identified PII entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f64>) -> Self {
         self.confidence = input;
         self
     }

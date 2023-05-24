@@ -6,56 +6,59 @@ pub use crate::operation::delete_hsm::_delete_hsm_input::DeleteHsmInputBuilder;
 /// Fluent builder constructing a request to `DeleteHsm`.
 ///
 /// <p>Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI. You need to specify only one of these values. To find these values, use <code>DescribeClusters</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteHsmFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_hsm::builders::DeleteHsmInputBuilder,
 }
 impl DeleteHsmFluentBuilder {
     /// Creates a new `DeleteHsm`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_hsm::DeleteHsm,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_hsm::DeleteHsmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm::DeleteHsmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_hsm::DeleteHsmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_hsm::DeleteHsmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm::DeleteHsmError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,49 +71,49 @@ impl DeleteHsmFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_hsm::DeleteHsmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_hsm::DeleteHsmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_hsm::DeleteHsmError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
-    pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
         self
     }
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
-    pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_id(input);
         self
     }
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
-    pub fn hsm_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hsm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_id(input.into());
         self
     }
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
-    pub fn set_hsm_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hsm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_id(input);
         self
     }
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
-    pub fn eni_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn eni_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.eni_id(input.into());
         self
     }
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
-    pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_eni_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_eni_id(input);
         self
     }
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
-    pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn eni_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.eni_ip(input.into());
         self
     }
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
-    pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_eni_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_eni_ip(input);
         self
     }

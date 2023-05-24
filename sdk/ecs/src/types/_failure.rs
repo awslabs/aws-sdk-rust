@@ -2,29 +2,29 @@
 
 /// <p>A failed resource. For a list of common causes, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Failure {
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the failure.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The details of the failure.</p>
     #[doc(hidden)]
-    pub detail: std::option::Option<std::string::String>,
+    pub detail: ::std::option::Option<::std::string::String>,
 }
 impl Failure {
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The reason for the failure.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The details of the failure.</p>
-    pub fn detail(&self) -> std::option::Option<&str> {
+    pub fn detail(&self) -> ::std::option::Option<&str> {
         self.detail.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl Failure {
 
 /// A builder for [`Failure`](crate::types::Failure).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailureBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) detail: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) detail: ::std::option::Option<::std::string::String>,
 }
 impl FailureBuilder {
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the failed resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The reason for the failure.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the failure.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The details of the failure.</p>
-    pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detail = Some(input.into());
+    pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details of the failure.</p>
-    pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail = input;
         self
     }

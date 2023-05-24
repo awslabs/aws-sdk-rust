@@ -2,36 +2,36 @@
 
 /// <p>Describes the details of the script.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptDetails {
     /// <p>The S3 object location for the script.</p>
     #[doc(hidden)]
-    pub script_s3_location: std::option::Option<crate::types::S3Location>,
+    pub script_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The run path for the script.</p>
     #[doc(hidden)]
-    pub executable_path: std::option::Option<std::string::String>,
+    pub executable_path: ::std::option::Option<::std::string::String>,
     /// <p>The runtime parameters passed to the run path for the script.</p>
     #[doc(hidden)]
-    pub executable_parameters: std::option::Option<std::string::String>,
+    pub executable_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The run timeout, in seconds, for the script.</p>
     #[doc(hidden)]
-    pub timeout_in_seconds: std::option::Option<i32>,
+    pub timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl ScriptDetails {
     /// <p>The S3 object location for the script.</p>
-    pub fn script_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn script_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.script_s3_location.as_ref()
     }
     /// <p>The run path for the script.</p>
-    pub fn executable_path(&self) -> std::option::Option<&str> {
+    pub fn executable_path(&self) -> ::std::option::Option<&str> {
         self.executable_path.as_deref()
     }
     /// <p>The runtime parameters passed to the run path for the script.</p>
-    pub fn executable_parameters(&self) -> std::option::Option<&str> {
+    pub fn executable_parameters(&self) -> ::std::option::Option<&str> {
         self.executable_parameters.as_deref()
     }
     /// <p>The run timeout, in seconds, for the script.</p>
-    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_in_seconds
     }
 }
@@ -44,57 +44,68 @@ impl ScriptDetails {
 
 /// A builder for [`ScriptDetails`](crate::types::ScriptDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScriptDetailsBuilder {
-    pub(crate) script_s3_location: std::option::Option<crate::types::S3Location>,
-    pub(crate) executable_path: std::option::Option<std::string::String>,
-    pub(crate) executable_parameters: std::option::Option<std::string::String>,
-    pub(crate) timeout_in_seconds: std::option::Option<i32>,
+    pub(crate) script_s3_location: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) executable_path: ::std::option::Option<::std::string::String>,
+    pub(crate) executable_parameters: ::std::option::Option<::std::string::String>,
+    pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
 }
 impl ScriptDetailsBuilder {
     /// <p>The S3 object location for the script.</p>
     pub fn script_s3_location(mut self, input: crate::types::S3Location) -> Self {
-        self.script_s3_location = Some(input);
+        self.script_s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 object location for the script.</p>
     pub fn set_script_s3_location(
         mut self,
-        input: std::option::Option<crate::types::S3Location>,
+        input: ::std::option::Option<crate::types::S3Location>,
     ) -> Self {
         self.script_s3_location = input;
         self
     }
     /// <p>The run path for the script.</p>
-    pub fn executable_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.executable_path = Some(input.into());
+    pub fn executable_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.executable_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The run path for the script.</p>
-    pub fn set_executable_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_executable_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.executable_path = input;
         self
     }
     /// <p>The runtime parameters passed to the run path for the script.</p>
-    pub fn executable_parameters(mut self, input: impl Into<std::string::String>) -> Self {
-        self.executable_parameters = Some(input.into());
+    pub fn executable_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.executable_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The runtime parameters passed to the run path for the script.</p>
     pub fn set_executable_parameters(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.executable_parameters = input;
         self
     }
     /// <p>The run timeout, in seconds, for the script.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
-        self.timeout_in_seconds = Some(input);
+        self.timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The run timeout, in seconds, for the script.</p>
-    pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_seconds = input;
         self
     }

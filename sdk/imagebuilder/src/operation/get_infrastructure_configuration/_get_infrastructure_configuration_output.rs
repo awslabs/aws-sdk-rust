@@ -2,30 +2,30 @@
 
 /// <p>GetInfrastructureConfiguration response object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure configuration object.</p>
     #[doc(hidden)]
     pub infrastructure_configuration:
-        std::option::Option<crate::types::InfrastructureConfiguration>,
+        ::std::option::Option<crate::types::InfrastructureConfiguration>,
     _request_id: Option<String>,
 }
 impl GetInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The infrastructure configuration object.</p>
     pub fn infrastructure_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::InfrastructureConfiguration> {
+    ) -> ::std::option::Option<&crate::types::InfrastructureConfiguration> {
         self.infrastructure_configuration.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetInfrastructureConfigurationOutput {
+impl ::aws_http::request_id::RequestId for GetInfrastructureConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl GetInfrastructureConfigurationOutput {
 
 /// A builder for [`GetInfrastructureConfigurationOutput`](crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetInfrastructureConfigurationOutputBuilder {
-    pub(crate) request_id: std::option::Option<std::string::String>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
     pub(crate) infrastructure_configuration:
-        std::option::Option<crate::types::InfrastructureConfiguration>,
+        ::std::option::Option<crate::types::InfrastructureConfiguration>,
     _request_id: Option<String>,
 }
 impl GetInfrastructureConfigurationOutputBuilder {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
@@ -62,13 +64,13 @@ impl GetInfrastructureConfigurationOutputBuilder {
         mut self,
         input: crate::types::InfrastructureConfiguration,
     ) -> Self {
-        self.infrastructure_configuration = Some(input);
+        self.infrastructure_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The infrastructure configuration object.</p>
     pub fn set_infrastructure_configuration(
         mut self,
-        input: std::option::Option<crate::types::InfrastructureConfiguration>,
+        input: ::std::option::Option<crate::types::InfrastructureConfiguration>,
     ) -> Self {
         self.infrastructure_configuration = input;
         self

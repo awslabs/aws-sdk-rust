@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NotificationMessageType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum NotificationMessageType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NotificationMessageType {
+impl ::std::convert::From<&str> for NotificationMessageType {
     fn from(s: &str) -> Self {
         match s {
             "CLOSED_INSIGHT" => NotificationMessageType::ClosedInsight,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for NotificationMessageType {
         }
     }
 }
-impl std::str::FromStr for NotificationMessageType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NotificationMessageType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationMessageType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NotificationMessageType::from(s))
     }
 }
 impl NotificationMessageType {
@@ -107,7 +107,7 @@ impl NotificationMessageType {
         ]
     }
 }
-impl AsRef<str> for NotificationMessageType {
+impl ::std::convert::AsRef<str> for NotificationMessageType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

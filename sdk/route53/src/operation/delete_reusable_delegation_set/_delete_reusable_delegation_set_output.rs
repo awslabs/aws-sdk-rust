@@ -2,11 +2,11 @@
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReusableDelegationSetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteReusableDelegationSetOutput {
+impl ::aws_http::request_id::RequestId for DeleteReusableDelegationSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteReusableDelegationSetOutput {
 
 /// A builder for [`DeleteReusableDelegationSetOutput`](crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteReusableDelegationSetOutputBuilder {
     _request_id: Option<String>,
 }

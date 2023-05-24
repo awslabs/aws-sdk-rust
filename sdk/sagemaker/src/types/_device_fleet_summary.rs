@@ -2,36 +2,36 @@
 
 /// <p>Summary of the device fleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceFleetSummary {
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
     #[doc(hidden)]
-    pub device_fleet_arn: std::option::Option<std::string::String>,
+    pub device_fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the device fleet.</p>
     #[doc(hidden)]
-    pub device_fleet_name: std::option::Option<std::string::String>,
+    pub device_fleet_name: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the device fleet was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp of when the device fleet was last updated.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceFleetSummary {
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
-    pub fn device_fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_arn(&self) -> ::std::option::Option<&str> {
         self.device_fleet_arn.as_deref()
     }
     /// <p>Name of the device fleet.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> ::std::option::Option<&str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>Timestamp of when the device fleet was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -44,59 +44,70 @@ impl DeviceFleetSummary {
 
 /// A builder for [`DeviceFleetSummary`](crate::types::DeviceFleetSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceFleetSummaryBuilder {
-    pub(crate) device_fleet_arn: std::option::Option<std::string::String>,
-    pub(crate) device_fleet_name: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) device_fleet_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) device_fleet_name: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceFleetSummaryBuilder {
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
-    pub fn device_fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_fleet_arn = Some(input.into());
+    pub fn device_fleet_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the device fleet.</p>
-    pub fn set_device_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_fleet_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.device_fleet_arn = input;
         self
     }
     /// <p>Name of the device fleet.</p>
-    pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_fleet_name = Some(input.into());
+    pub fn device_fleet_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_fleet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the device fleet.</p>
     pub fn set_device_fleet_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.device_fleet_name = input;
         self
     }
     /// <p>Timestamp of when the device fleet was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp of when the device fleet was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp of when the device fleet was last updated.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self

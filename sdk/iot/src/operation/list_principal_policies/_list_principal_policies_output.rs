@@ -2,27 +2,27 @@
 
 /// <p>The output from the ListPrincipalPolicies operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPrincipalPoliciesOutput {
     /// <p>The policies.</p>
     #[doc(hidden)]
-    pub policies: std::option::Option<std::vec::Vec<crate::types::Policy>>,
+    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPrincipalPoliciesOutput {
     /// <p>The policies.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::types::Policy]> {
+    pub fn policies(&self) -> ::std::option::Option<&[crate::types::Policy]> {
         self.policies.as_deref()
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPrincipalPoliciesOutput {
+impl ::aws_http::request_id::RequestId for ListPrincipalPoliciesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ListPrincipalPoliciesOutput {
 
 /// A builder for [`ListPrincipalPoliciesOutput`](crate::operation::list_principal_policies::ListPrincipalPoliciesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPrincipalPoliciesOutputBuilder {
-    pub(crate) policies: std::option::Option<std::vec::Vec<crate::types::Policy>>,
-    pub(crate) next_marker: std::option::Option<std::string::String>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPrincipalPoliciesOutputBuilder {
@@ -53,24 +55,24 @@ impl ListPrincipalPoliciesOutputBuilder {
     pub fn policies(mut self, input: crate::types::Policy) -> Self {
         let mut v = self.policies.unwrap_or_default();
         v.push(input);
-        self.policies = Some(v);
+        self.policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>The policies.</p>
     pub fn set_policies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Policy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Policy>>,
     ) -> Self {
         self.policies = input;
         self
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }

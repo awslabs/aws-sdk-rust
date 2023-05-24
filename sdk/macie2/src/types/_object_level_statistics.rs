@@ -2,29 +2,29 @@
 
 /// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, storage size values are based on the size of the latest version of each applicable object in the bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
-    pub file_type: std::option::Option<i64>,
+    pub file_type: ::std::option::Option<i64>,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
     #[doc(hidden)]
-    pub storage_class: std::option::Option<i64>,
+    pub storage_class: ::std::option::Option<i64>,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
-    pub total: std::option::Option<i64>,
+    pub total: ::std::option::Option<i64>,
 }
 impl ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
-    pub fn file_type(&self) -> std::option::Option<i64> {
+    pub fn file_type(&self) -> ::std::option::Option<i64> {
         self.file_type
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
-    pub fn storage_class(&self) -> std::option::Option<i64> {
+    pub fn storage_class(&self) -> ::std::option::Option<i64> {
         self.storage_class
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
-    pub fn total(&self) -> std::option::Option<i64> {
+    pub fn total(&self) -> ::std::option::Option<i64> {
         self.total
     }
 }
@@ -37,40 +37,42 @@ impl ObjectLevelStatistics {
 
 /// A builder for [`ObjectLevelStatistics`](crate::types::ObjectLevelStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObjectLevelStatisticsBuilder {
-    pub(crate) file_type: std::option::Option<i64>,
-    pub(crate) storage_class: std::option::Option<i64>,
-    pub(crate) total: std::option::Option<i64>,
+    pub(crate) file_type: ::std::option::Option<i64>,
+    pub(crate) storage_class: ::std::option::Option<i64>,
+    pub(crate) total: ::std::option::Option<i64>,
 }
 impl ObjectLevelStatisticsBuilder {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     pub fn file_type(mut self, input: i64) -> Self {
-        self.file_type = Some(input);
+        self.file_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
-    pub fn set_file_type(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_file_type(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_type = input;
         self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
     pub fn storage_class(mut self, input: i64) -> Self {
-        self.storage_class = Some(input);
+        self.storage_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
-    pub fn set_storage_class(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_storage_class(mut self, input: ::std::option::Option<i64>) -> Self {
         self.storage_class = input;
         self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn total(mut self, input: i64) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
-    pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total = input;
         self
     }

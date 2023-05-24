@@ -2,15 +2,15 @@
 
 /// <p>A job's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceJobConfig {
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
     #[doc(hidden)]
-    pub ota_job_config: std::option::Option<crate::types::OtaJobConfig>,
+    pub ota_job_config: ::std::option::Option<crate::types::OtaJobConfig>,
 }
 impl DeviceJobConfig {
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
-    pub fn ota_job_config(&self) -> std::option::Option<&crate::types::OtaJobConfig> {
+    pub fn ota_job_config(&self) -> ::std::option::Option<&crate::types::OtaJobConfig> {
         self.ota_job_config.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DeviceJobConfig {
 
 /// A builder for [`DeviceJobConfig`](crate::types::DeviceJobConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceJobConfigBuilder {
-    pub(crate) ota_job_config: std::option::Option<crate::types::OtaJobConfig>,
+    pub(crate) ota_job_config: ::std::option::Option<crate::types::OtaJobConfig>,
 }
 impl DeviceJobConfigBuilder {
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
     pub fn ota_job_config(mut self, input: crate::types::OtaJobConfig) -> Self {
-        self.ota_job_config = Some(input);
+        self.ota_job_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
     pub fn set_ota_job_config(
         mut self,
-        input: std::option::Option<crate::types::OtaJobConfig>,
+        input: ::std::option::Option<crate::types::OtaJobConfig>,
     ) -> Self {
         self.ota_job_config = input;
         self

@@ -38,13 +38,13 @@
 /// Ttml Destination Style Control
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TtmlDestinationStyleControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum TtmlDestinationStyleControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TtmlDestinationStyleControl {
+impl ::std::convert::From<&str> for TtmlDestinationStyleControl {
     fn from(s: &str) -> Self {
         match s {
             "PASSTHROUGH" => TtmlDestinationStyleControl::Passthrough,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for TtmlDestinationStyleControl {
         }
     }
 }
-impl std::str::FromStr for TtmlDestinationStyleControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TtmlDestinationStyleControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TtmlDestinationStyleControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TtmlDestinationStyleControl::from(s))
     }
 }
 impl TtmlDestinationStyleControl {
@@ -86,7 +86,7 @@ impl TtmlDestinationStyleControl {
         &["PASSTHROUGH", "USE_CONFIGURED"]
     }
 }
-impl AsRef<str> for TtmlDestinationStyleControl {
+impl ::std::convert::AsRef<str> for TtmlDestinationStyleControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

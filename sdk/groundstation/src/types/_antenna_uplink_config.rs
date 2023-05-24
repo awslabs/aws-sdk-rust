@@ -2,29 +2,29 @@
 
 /// <p>Information about the uplink <code>Config</code> of an antenna.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntennaUplinkConfig {
     /// <p>Whether or not uplink transmit is disabled.</p>
     #[doc(hidden)]
-    pub transmit_disabled: std::option::Option<bool>,
+    pub transmit_disabled: ::std::option::Option<bool>,
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
     #[doc(hidden)]
-    pub spectrum_config: std::option::Option<crate::types::UplinkSpectrumConfig>,
+    pub spectrum_config: ::std::option::Option<crate::types::UplinkSpectrumConfig>,
     /// <p>EIRP of the target.</p>
     #[doc(hidden)]
-    pub target_eirp: std::option::Option<crate::types::Eirp>,
+    pub target_eirp: ::std::option::Option<crate::types::Eirp>,
 }
 impl AntennaUplinkConfig {
     /// <p>Whether or not uplink transmit is disabled.</p>
-    pub fn transmit_disabled(&self) -> std::option::Option<bool> {
+    pub fn transmit_disabled(&self) -> ::std::option::Option<bool> {
         self.transmit_disabled
     }
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
-    pub fn spectrum_config(&self) -> std::option::Option<&crate::types::UplinkSpectrumConfig> {
+    pub fn spectrum_config(&self) -> ::std::option::Option<&crate::types::UplinkSpectrumConfig> {
         self.spectrum_config.as_ref()
     }
     /// <p>EIRP of the target.</p>
-    pub fn target_eirp(&self) -> std::option::Option<&crate::types::Eirp> {
+    pub fn target_eirp(&self) -> ::std::option::Option<&crate::types::Eirp> {
         self.target_eirp.as_ref()
     }
 }
@@ -37,43 +37,45 @@ impl AntennaUplinkConfig {
 
 /// A builder for [`AntennaUplinkConfig`](crate::types::AntennaUplinkConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AntennaUplinkConfigBuilder {
-    pub(crate) transmit_disabled: std::option::Option<bool>,
-    pub(crate) spectrum_config: std::option::Option<crate::types::UplinkSpectrumConfig>,
-    pub(crate) target_eirp: std::option::Option<crate::types::Eirp>,
+    pub(crate) transmit_disabled: ::std::option::Option<bool>,
+    pub(crate) spectrum_config: ::std::option::Option<crate::types::UplinkSpectrumConfig>,
+    pub(crate) target_eirp: ::std::option::Option<crate::types::Eirp>,
 }
 impl AntennaUplinkConfigBuilder {
     /// <p>Whether or not uplink transmit is disabled.</p>
     pub fn transmit_disabled(mut self, input: bool) -> Self {
-        self.transmit_disabled = Some(input);
+        self.transmit_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not uplink transmit is disabled.</p>
-    pub fn set_transmit_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_transmit_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.transmit_disabled = input;
         self
     }
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
     pub fn spectrum_config(mut self, input: crate::types::UplinkSpectrumConfig) -> Self {
-        self.spectrum_config = Some(input);
+        self.spectrum_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the uplink spectral <code>Config</code>.</p>
     pub fn set_spectrum_config(
         mut self,
-        input: std::option::Option<crate::types::UplinkSpectrumConfig>,
+        input: ::std::option::Option<crate::types::UplinkSpectrumConfig>,
     ) -> Self {
         self.spectrum_config = input;
         self
     }
     /// <p>EIRP of the target.</p>
     pub fn target_eirp(mut self, input: crate::types::Eirp) -> Self {
-        self.target_eirp = Some(input);
+        self.target_eirp = ::std::option::Option::Some(input);
         self
     }
     /// <p>EIRP of the target.</p>
-    pub fn set_target_eirp(mut self, input: std::option::Option<crate::types::Eirp>) -> Self {
+    pub fn set_target_eirp(mut self, input: ::std::option::Option<crate::types::Eirp>) -> Self {
         self.target_eirp = input;
         self
     }

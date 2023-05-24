@@ -2,22 +2,22 @@
 
 /// <p>Reserved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryCompileErrorLocation {
     /// <p>Reserved.</p>
     #[doc(hidden)]
-    pub start_char_offset: std::option::Option<i32>,
+    pub start_char_offset: ::std::option::Option<i32>,
     /// <p>Reserved.</p>
     #[doc(hidden)]
-    pub end_char_offset: std::option::Option<i32>,
+    pub end_char_offset: ::std::option::Option<i32>,
 }
 impl QueryCompileErrorLocation {
     /// <p>Reserved.</p>
-    pub fn start_char_offset(&self) -> std::option::Option<i32> {
+    pub fn start_char_offset(&self) -> ::std::option::Option<i32> {
         self.start_char_offset
     }
     /// <p>Reserved.</p>
-    pub fn end_char_offset(&self) -> std::option::Option<i32> {
+    pub fn end_char_offset(&self) -> ::std::option::Option<i32> {
         self.end_char_offset
     }
 }
@@ -30,29 +30,31 @@ impl QueryCompileErrorLocation {
 
 /// A builder for [`QueryCompileErrorLocation`](crate::types::QueryCompileErrorLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryCompileErrorLocationBuilder {
-    pub(crate) start_char_offset: std::option::Option<i32>,
-    pub(crate) end_char_offset: std::option::Option<i32>,
+    pub(crate) start_char_offset: ::std::option::Option<i32>,
+    pub(crate) end_char_offset: ::std::option::Option<i32>,
 }
 impl QueryCompileErrorLocationBuilder {
     /// <p>Reserved.</p>
     pub fn start_char_offset(mut self, input: i32) -> Self {
-        self.start_char_offset = Some(input);
+        self.start_char_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_start_char_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_char_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_char_offset = input;
         self
     }
     /// <p>Reserved.</p>
     pub fn end_char_offset(mut self, input: i32) -> Self {
-        self.end_char_offset = Some(input);
+        self.end_char_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_end_char_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_char_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_char_offset = input;
         self
     }

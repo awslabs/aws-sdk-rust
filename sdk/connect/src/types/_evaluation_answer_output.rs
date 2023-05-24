@@ -2,24 +2,24 @@
 
 /// <p>Information about output answers for a contact evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationAnswerOutput {
     /// <p>The value for an answer in a contact evaluation.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::EvaluationAnswerData>,
+    pub value: ::std::option::Option<crate::types::EvaluationAnswerData>,
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     #[doc(hidden)]
-    pub system_suggested_value: std::option::Option<crate::types::EvaluationAnswerData>,
+    pub system_suggested_value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
 impl EvaluationAnswerOutput {
     /// <p>The value for an answer in a contact evaluation.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::EvaluationAnswerData> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::EvaluationAnswerData> {
         self.value.as_ref()
     }
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub fn system_suggested_value(
         &self,
-    ) -> std::option::Option<&crate::types::EvaluationAnswerData> {
+    ) -> ::std::option::Option<&crate::types::EvaluationAnswerData> {
         self.system_suggested_value.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl EvaluationAnswerOutput {
 
 /// A builder for [`EvaluationAnswerOutput`](crate::types::EvaluationAnswerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationAnswerOutputBuilder {
-    pub(crate) value: std::option::Option<crate::types::EvaluationAnswerData>,
-    pub(crate) system_suggested_value: std::option::Option<crate::types::EvaluationAnswerData>,
+    pub(crate) value: ::std::option::Option<crate::types::EvaluationAnswerData>,
+    pub(crate) system_suggested_value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
 impl EvaluationAnswerOutputBuilder {
     /// <p>The value for an answer in a contact evaluation.</p>
     pub fn value(mut self, input: crate::types::EvaluationAnswerData) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value for an answer in a contact evaluation.</p>
     pub fn set_value(
         mut self,
-        input: std::option::Option<crate::types::EvaluationAnswerData>,
+        input: ::std::option::Option<crate::types::EvaluationAnswerData>,
     ) -> Self {
         self.value = input;
         self
     }
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub fn system_suggested_value(mut self, input: crate::types::EvaluationAnswerData) -> Self {
-        self.system_suggested_value = Some(input);
+        self.system_suggested_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The system suggested value for an answer in a contact evaluation.</p>
     pub fn set_system_suggested_value(
         mut self,
-        input: std::option::Option<crate::types::EvaluationAnswerData>,
+        input: ::std::option::Option<crate::types::EvaluationAnswerData>,
     ) -> Self {
         self.system_suggested_value = input;
         self

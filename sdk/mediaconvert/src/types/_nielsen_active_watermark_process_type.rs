@@ -39,13 +39,13 @@
 /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NielsenActiveWatermarkProcessType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum NielsenActiveWatermarkProcessType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NielsenActiveWatermarkProcessType {
+impl ::std::convert::From<&str> for NielsenActiveWatermarkProcessType {
     fn from(s: &str) -> Self {
         match s {
             "CBET" => NielsenActiveWatermarkProcessType::Cbet,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for NielsenActiveWatermarkProcessType {
         }
     }
 }
-impl std::str::FromStr for NielsenActiveWatermarkProcessType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NielsenActiveWatermarkProcessType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NielsenActiveWatermarkProcessType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NielsenActiveWatermarkProcessType::from(s))
     }
 }
 impl NielsenActiveWatermarkProcessType {
@@ -91,7 +91,7 @@ impl NielsenActiveWatermarkProcessType {
         &["CBET", "NAES2_AND_NW", "NAES2_AND_NW_AND_CBET"]
     }
 }
-impl AsRef<str> for NielsenActiveWatermarkProcessType {
+impl ::std::convert::AsRef<str> for NielsenActiveWatermarkProcessType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

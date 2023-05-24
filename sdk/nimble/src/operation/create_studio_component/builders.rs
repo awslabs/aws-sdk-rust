@@ -6,29 +6,29 @@ pub use crate::operation::create_studio_component::_create_studio_component_inpu
 /// Fluent builder constructing a request to `CreateStudioComponent`.
 ///
 /// <p>Creates a studio component resource.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStudioComponentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_studio_component::builders::CreateStudioComponentInputBuilder,
 }
 impl CreateStudioComponentFluentBuilder {
     /// Creates a new `CreateStudioComponent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_studio_component::CreateStudioComponent,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_studio_component::CreateStudioComponentError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateStudioComponentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_studio_component::CreateStudioComponentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_studio_component::CreateStudioComponentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl CreateStudioComponentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_studio_component::CreateStudioComponentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_studio_component::CreateStudioComponentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -98,18 +101,18 @@ impl CreateStudioComponentFluentBuilder {
     /// <p>The configuration of the studio component, based on component type.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::StudioComponentConfiguration>,
+        input: ::std::option::Option<crate::types::StudioComponentConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>The description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -118,14 +121,17 @@ impl CreateStudioComponentFluentBuilder {
     /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
     ///
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ec2_security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ec2_security_group_ids(input.into());
         self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
     pub fn set_ec2_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_ec2_security_group_ids(input);
         self
@@ -145,20 +151,20 @@ impl CreateStudioComponentFluentBuilder {
     /// <p>Initialization scripts for studio components.</p>
     pub fn set_initialization_scripts(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::StudioComponentInitializationScript>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::StudioComponentInitializationScript>,
         >,
     ) -> Self {
         self.inner = self.inner.set_initialization_scripts(input);
         self
     }
     /// <p>The name for the studio component.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name for the studio component.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -174,18 +180,18 @@ impl CreateStudioComponentFluentBuilder {
     /// <p>Parameters for the studio component scripts.</p>
     pub fn set_script_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     ) -> Self {
         self.inner = self.inner.set_script_parameters(input);
         self
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
         self
     }
     /// <p>The studio ID. </p>
-    pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
     }
@@ -197,7 +203,7 @@ impl CreateStudioComponentFluentBuilder {
     /// <p>The specific subtype of a studio component.</p>
     pub fn set_subtype(
         mut self,
-        input: std::option::Option<crate::types::StudioComponentSubtype>,
+        input: ::std::option::Option<crate::types::StudioComponentSubtype>,
     ) -> Self {
         self.inner = self.inner.set_subtype(input);
         self
@@ -209,8 +215,8 @@ impl CreateStudioComponentFluentBuilder {
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -218,8 +224,8 @@ impl CreateStudioComponentFluentBuilder {
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -233,31 +239,40 @@ impl CreateStudioComponentFluentBuilder {
     /// <p>The type of the studio component.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::StudioComponentType>,
+        input: ::std::option::Option<crate::types::StudioComponentType>,
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn secure_initialization_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn secure_initialization_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.secure_initialization_role_arn(input.into());
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn set_secure_initialization_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_secure_initialization_role_arn(input);
         self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn runtime_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.runtime_role_arn(input.into());
         self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn set_runtime_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_runtime_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_runtime_role_arn(input);
         self
     }

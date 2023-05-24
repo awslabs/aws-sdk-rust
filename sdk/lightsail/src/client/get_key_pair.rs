@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKeyPair`](crate::operation::get_key_pair::builders::GetKeyPairFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`key_pair_name(impl Into<String>)`](crate::operation::get_key_pair::builders::GetKeyPairFluentBuilder::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::operation::get_key_pair::builders::GetKeyPairFluentBuilder::set_key_pair_name): <p>The name of the key pair for which you are requesting information.</p>
+    ///   - [`key_pair_name(impl ::std::convert::Into<String>)`](crate::operation::get_key_pair::builders::GetKeyPairFluentBuilder::key_pair_name) / [`set_key_pair_name(Option<String>)`](crate::operation::get_key_pair::builders::GetKeyPairFluentBuilder::set_key_pair_name): <p>The name of the key pair for which you are requesting information.</p>
     /// - On success, responds with [`GetKeyPairOutput`](crate::operation::get_key_pair::GetKeyPairOutput) with field(s):
     ///   - [`key_pair(Option<KeyPair>)`](crate::operation::get_key_pair::GetKeyPairOutput::key_pair): <p>An array of key-value pairs containing information about the key pair.</p>
     /// - On failure, responds with [`SdkError<GetKeyPairError>`](crate::operation::get_key_pair::GetKeyPairError)

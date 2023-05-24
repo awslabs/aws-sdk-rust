@@ -2,43 +2,43 @@
 
 /// <p>A summary of the model metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelMetadataSummary {
     /// <p>The machine learning domain of the model.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning framework of the model.</p>
     #[doc(hidden)]
-    pub framework: std::option::Option<std::string::String>,
+    pub framework: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning task of the model.</p>
     #[doc(hidden)]
-    pub task: std::option::Option<std::string::String>,
+    pub task: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
     #[doc(hidden)]
-    pub model: std::option::Option<std::string::String>,
+    pub model: ::std::option::Option<::std::string::String>,
     /// <p>The framework version of the model.</p>
     #[doc(hidden)]
-    pub framework_version: std::option::Option<std::string::String>,
+    pub framework_version: ::std::option::Option<::std::string::String>,
 }
 impl ModelMetadataSummary {
     /// <p>The machine learning domain of the model.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The machine learning framework of the model.</p>
-    pub fn framework(&self) -> std::option::Option<&str> {
+    pub fn framework(&self) -> ::std::option::Option<&str> {
         self.framework.as_deref()
     }
     /// <p>The machine learning task of the model.</p>
-    pub fn task(&self) -> std::option::Option<&str> {
+    pub fn task(&self) -> ::std::option::Option<&str> {
         self.task.as_deref()
     }
     /// <p>The name of the model.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<&str> {
         self.model.as_deref()
     }
     /// <p>The framework version of the model.</p>
-    pub fn framework_version(&self) -> std::option::Option<&str> {
+    pub fn framework_version(&self) -> ::std::option::Option<&str> {
         self.framework_version.as_deref()
     }
 }
@@ -51,64 +51,69 @@ impl ModelMetadataSummary {
 
 /// A builder for [`ModelMetadataSummary`](crate::types::ModelMetadataSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelMetadataSummaryBuilder {
-    pub(crate) domain: std::option::Option<std::string::String>,
-    pub(crate) framework: std::option::Option<std::string::String>,
-    pub(crate) task: std::option::Option<std::string::String>,
-    pub(crate) model: std::option::Option<std::string::String>,
-    pub(crate) framework_version: std::option::Option<std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) framework: ::std::option::Option<::std::string::String>,
+    pub(crate) task: ::std::option::Option<::std::string::String>,
+    pub(crate) model: ::std::option::Option<::std::string::String>,
+    pub(crate) framework_version: ::std::option::Option<::std::string::String>,
 }
 impl ModelMetadataSummaryBuilder {
     /// <p>The machine learning domain of the model.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The machine learning domain of the model.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
     /// <p>The machine learning framework of the model.</p>
-    pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
-        self.framework = Some(input.into());
+    pub fn framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.framework = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The machine learning framework of the model.</p>
-    pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework = input;
         self
     }
     /// <p>The machine learning task of the model.</p>
-    pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task = Some(input.into());
+    pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The machine learning task of the model.</p>
-    pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task = input;
         self
     }
     /// <p>The name of the model.</p>
-    pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model = Some(input.into());
+    pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model.</p>
-    pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
     }
     /// <p>The framework version of the model.</p>
-    pub fn framework_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.framework_version = Some(input.into());
+    pub fn framework_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.framework_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The framework version of the model.</p>
     pub fn set_framework_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.framework_version = input;
         self

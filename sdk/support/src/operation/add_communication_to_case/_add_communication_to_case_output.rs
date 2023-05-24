@@ -2,7 +2,7 @@
 
 /// <p>The result of the <code>AddCommunicationToCase</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddCommunicationToCaseOutput {
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ impl AddCommunicationToCaseOutput {
         self.result
     }
 }
-impl aws_http::request_id::RequestId for AddCommunicationToCaseOutput {
+impl ::aws_http::request_id::RequestId for AddCommunicationToCaseOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,21 @@ impl AddCommunicationToCaseOutput {
 
 /// A builder for [`AddCommunicationToCaseOutput`](crate::operation::add_communication_to_case::AddCommunicationToCaseOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddCommunicationToCaseOutputBuilder {
-    pub(crate) result: std::option::Option<bool>,
+    pub(crate) result: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl AddCommunicationToCaseOutputBuilder {
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
     pub fn result(mut self, input: bool) -> Self {
-        self.result = Some(input);
+        self.result = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
-    pub fn set_result(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<bool>) -> Self {
         self.result = input;
         self
     }

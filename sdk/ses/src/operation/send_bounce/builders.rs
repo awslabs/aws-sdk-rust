@@ -10,56 +10,59 @@ pub use crate::operation::send_bounce::_send_bounce_input::SendBounceInputBuilde
 /// </note>
 /// <p>For information about receiving email through Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.</p>
 /// <p>You can execute this operation no more than once per second.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendBounceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::send_bounce::builders::SendBounceInputBuilder,
 }
 impl SendBounceFluentBuilder {
     /// Creates a new `SendBounce`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_bounce::SendBounce,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::send_bounce::SendBounceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_bounce::SendBounceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_bounce::SendBounceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_bounce::SendBounceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_bounce::SendBounceError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,42 +75,51 @@ impl SendBounceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_bounce::SendBounceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_bounce::SendBounceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_bounce::SendBounceError>,
     > {
         self.send_middleware().await
     }
     /// <p>The message ID of the message to be bounced.</p>
-    pub fn original_message_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn original_message_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.original_message_id(input.into());
         self
     }
     /// <p>The message ID of the message to be bounced.</p>
     pub fn set_original_message_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_original_message_id(input);
         self
     }
     /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
-    pub fn bounce_sender(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bounce_sender(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.bounce_sender(input.into());
         self
     }
     /// <p>The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.</p>
-    pub fn set_bounce_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bounce_sender(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_bounce_sender(input);
         self
     }
     /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
-    pub fn explanation(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn explanation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.explanation(input.into());
         self
     }
     /// <p>Human-readable text for the bounce message to explain the failure. If not specified, the text will be auto-generated based on the bounced recipient information.</p>
-    pub fn set_explanation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_explanation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_explanation(input);
         self
     }
@@ -117,7 +129,10 @@ impl SendBounceFluentBuilder {
         self
     }
     /// <p>Message-related DSN fields. If not specified, Amazon SES will choose the values.</p>
-    pub fn set_message_dsn(mut self, input: std::option::Option<crate::types::MessageDsn>) -> Self {
+    pub fn set_message_dsn(
+        mut self,
+        input: ::std::option::Option<crate::types::MessageDsn>,
+    ) -> Self {
         self.inner = self.inner.set_message_dsn(input);
         self
     }
@@ -136,20 +151,23 @@ impl SendBounceFluentBuilder {
     /// <p>A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one <code>BouncedRecipientInfo</code> in the list.</p>
     pub fn set_bounced_recipient_info_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BouncedRecipientInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BouncedRecipientInfo>>,
     ) -> Self {
         self.inner = self.inner.set_bounced_recipient_info_list(input);
         self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn bounce_sender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bounce_sender_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.bounce_sender_arn(input.into());
         self
     }
     /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn set_bounce_sender_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_bounce_sender_arn(input);
         self

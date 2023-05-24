@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetInstanceOnboardingJobStatus`](crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusFluentBuilder::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusFluentBuilder::set_connect_instance_id): Amazon Connect Instance Id
+    ///   - [`connect_instance_id(impl ::std::convert::Into<String>)`](crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusFluentBuilder::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusFluentBuilder::set_connect_instance_id): Amazon Connect Instance Id
     /// - On success, responds with [`GetInstanceOnboardingJobStatusOutput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput) with field(s):
     ///   - [`connect_instance_onboarding_job_status(Option<InstanceOnboardingJobStatus>)`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput::connect_instance_onboarding_job_status): Instance onboarding job status object
     /// - On failure, responds with [`SdkError<GetInstanceOnboardingJobStatusError>`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusError)

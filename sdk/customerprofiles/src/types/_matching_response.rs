@@ -2,36 +2,36 @@
 
 /// <p>The flag that enables the matching process of duplicate profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchingResponse {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
     #[doc(hidden)]
-    pub job_schedule: std::option::Option<crate::types::JobSchedule>,
+    pub job_schedule: ::std::option::Option<crate::types::JobSchedule>,
     /// <p>Configuration information about the auto-merging process.</p>
     #[doc(hidden)]
-    pub auto_merging: std::option::Option<crate::types::AutoMerging>,
+    pub auto_merging: ::std::option::Option<crate::types::AutoMerging>,
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     #[doc(hidden)]
-    pub exporting_config: std::option::Option<crate::types::ExportingConfig>,
+    pub exporting_config: ::std::option::Option<crate::types::ExportingConfig>,
 }
 impl MatchingResponse {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
-    pub fn job_schedule(&self) -> std::option::Option<&crate::types::JobSchedule> {
+    pub fn job_schedule(&self) -> ::std::option::Option<&crate::types::JobSchedule> {
         self.job_schedule.as_ref()
     }
     /// <p>Configuration information about the auto-merging process.</p>
-    pub fn auto_merging(&self) -> std::option::Option<&crate::types::AutoMerging> {
+    pub fn auto_merging(&self) -> ::std::option::Option<&crate::types::AutoMerging> {
         self.auto_merging.as_ref()
     }
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
-    pub fn exporting_config(&self) -> std::option::Option<&crate::types::ExportingConfig> {
+    pub fn exporting_config(&self) -> ::std::option::Option<&crate::types::ExportingConfig> {
         self.exporting_config.as_ref()
     }
 }
@@ -44,59 +44,61 @@ impl MatchingResponse {
 
 /// A builder for [`MatchingResponse`](crate::types::MatchingResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MatchingResponseBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) job_schedule: std::option::Option<crate::types::JobSchedule>,
-    pub(crate) auto_merging: std::option::Option<crate::types::AutoMerging>,
-    pub(crate) exporting_config: std::option::Option<crate::types::ExportingConfig>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) job_schedule: ::std::option::Option<crate::types::JobSchedule>,
+    pub(crate) auto_merging: ::std::option::Option<crate::types::AutoMerging>,
+    pub(crate) exporting_config: ::std::option::Option<crate::types::ExportingConfig>,
 }
 impl MatchingResponseBuilder {
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>The flag that enables the matching process of duplicate profiles.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
     pub fn job_schedule(mut self, input: crate::types::JobSchedule) -> Self {
-        self.job_schedule = Some(input);
+        self.job_schedule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The day and time when do you want to start the Identity Resolution Job every week.</p>
     pub fn set_job_schedule(
         mut self,
-        input: std::option::Option<crate::types::JobSchedule>,
+        input: ::std::option::Option<crate::types::JobSchedule>,
     ) -> Self {
         self.job_schedule = input;
         self
     }
     /// <p>Configuration information about the auto-merging process.</p>
     pub fn auto_merging(mut self, input: crate::types::AutoMerging) -> Self {
-        self.auto_merging = Some(input);
+        self.auto_merging = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information about the auto-merging process.</p>
     pub fn set_auto_merging(
         mut self,
-        input: std::option::Option<crate::types::AutoMerging>,
+        input: ::std::option::Option<crate::types::AutoMerging>,
     ) -> Self {
         self.auto_merging = input;
         self
     }
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub fn exporting_config(mut self, input: crate::types::ExportingConfig) -> Self {
-        self.exporting_config = Some(input);
+        self.exporting_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for exporting Identity Resolution results, for example, to an S3 bucket.</p>
     pub fn set_exporting_config(
         mut self,
-        input: std::option::Option<crate::types::ExportingConfig>,
+        input: ::std::option::Option<crate::types::ExportingConfig>,
     ) -> Self {
         self.exporting_config = input;
         self

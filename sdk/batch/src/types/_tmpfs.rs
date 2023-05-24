@@ -4,31 +4,31 @@
 /// <p>This object isn't applicable to jobs that are running on Fargate resources.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tmpfs {
     /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
     #[doc(hidden)]
-    pub container_path: std::option::Option<std::string::String>,
+    pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
     #[doc(hidden)]
-    pub size: std::option::Option<i32>,
+    pub size: ::std::option::Option<i32>,
     /// <p>The list of <code>tmpfs</code> volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
     #[doc(hidden)]
-    pub mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Tmpfs {
     /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
-    pub fn container_path(&self) -> std::option::Option<&str> {
+    pub fn container_path(&self) -> ::std::option::Option<&str> {
         self.container_path.as_deref()
     }
     /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
-    pub fn size(&self) -> std::option::Option<i32> {
+    pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
     /// <p>The list of <code>tmpfs</code> volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
-    pub fn mount_options(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn mount_options(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.mount_options.as_deref()
     }
 }
@@ -41,30 +41,38 @@ impl Tmpfs {
 
 /// A builder for [`Tmpfs`](crate::types::Tmpfs).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TmpfsBuilder {
-    pub(crate) container_path: std::option::Option<std::string::String>,
-    pub(crate) size: std::option::Option<i32>,
-    pub(crate) mount_options: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) container_path: ::std::option::Option<::std::string::String>,
+    pub(crate) size: ::std::option::Option<i32>,
+    pub(crate) mount_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TmpfsBuilder {
     /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
-    pub fn container_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_path = Some(input.into());
+    pub fn container_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute file path in the container where the <code>tmpfs</code> volume is mounted.</p>
-    pub fn set_container_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.container_path = input;
         self
     }
     /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
     pub fn size(mut self, input: i32) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size (in MiB) of the <code>tmpfs</code> volume.</p>
-    pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }
@@ -74,17 +82,20 @@ impl TmpfsBuilder {
     ///
     /// <p>The list of <code>tmpfs</code> volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
-    pub fn mount_options(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn mount_options(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.mount_options.unwrap_or_default();
         v.push(input.into());
-        self.mount_options = Some(v);
+        self.mount_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of <code>tmpfs</code> volume mount options.</p>
     /// <p>Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>" | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>" | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>" | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>" | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>" | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" | "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" | "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>" | "<code>mpol</code>"</p>
     pub fn set_mount_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.mount_options = input;
         self

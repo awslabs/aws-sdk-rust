@@ -2,18 +2,18 @@
 
 /// <p>Edge Manager agent version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentVersion {
     /// <p>Version of the agent.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>The number of Edge Manager agents.</p>
     #[doc(hidden)]
     pub agent_count: i64,
 }
 impl AgentVersion {
     /// <p>Version of the agent.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The number of Edge Manager agents.</p>
@@ -30,29 +30,31 @@ impl AgentVersion {
 
 /// A builder for [`AgentVersion`](crate::types::AgentVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentVersionBuilder {
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) agent_count: std::option::Option<i64>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_count: ::std::option::Option<i64>,
 }
 impl AgentVersionBuilder {
     /// <p>Version of the agent.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version of the agent.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The number of Edge Manager agents.</p>
     pub fn agent_count(mut self, input: i64) -> Self {
-        self.agent_count = Some(input);
+        self.agent_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Edge Manager agents.</p>
-    pub fn set_agent_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_agent_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.agent_count = input;
         self
     }

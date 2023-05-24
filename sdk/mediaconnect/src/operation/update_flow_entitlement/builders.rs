@@ -6,29 +6,29 @@ pub use crate::operation::update_flow_entitlement::_update_flow_entitlement_inpu
 /// Fluent builder constructing a request to `UpdateFlowEntitlement`.
 ///
 /// You can change an entitlement's description, subscribers, and encryption. If you change the subscribers, the service will remove the outputs that are are used by the subscribers that are removed.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowEntitlementFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder,
 }
 impl UpdateFlowEntitlementFluentBuilder {
     /// Creates a new `UpdateFlowEntitlement`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_flow_entitlement::UpdateFlowEntitlement,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_flow_entitlement::UpdateFlowEntitlementError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateFlowEntitlementFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_flow_entitlement::UpdateFlowEntitlementError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl UpdateFlowEntitlementFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_flow_entitlement::UpdateFlowEntitlementError,
         >,
     > {
         self.send_middleware().await
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -98,18 +101,24 @@ impl UpdateFlowEntitlementFluentBuilder {
     /// The type of encryption that will be used on the output associated with this entitlement. Allowable encryption types: static-key, speke.
     pub fn set_encryption(
         mut self,
-        input: std::option::Option<crate::types::UpdateEncryption>,
+        input: ::std::option::Option<crate::types::UpdateEncryption>,
     ) -> Self {
         self.inner = self.inner.set_encryption(input);
         self
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn entitlement_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.entitlement_arn(input.into());
         self
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entitlement_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_entitlement_arn(input);
         self
     }
@@ -121,18 +130,18 @@ impl UpdateFlowEntitlementFluentBuilder {
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
     pub fn set_entitlement_status(
         mut self,
-        input: std::option::Option<crate::types::EntitlementStatus>,
+        input: ::std::option::Option<crate::types::EntitlementStatus>,
     ) -> Self {
         self.inner = self.inner.set_entitlement_status(input);
         self
     }
     /// The flow that is associated with the entitlement that you want to update.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
     /// The flow that is associated with the entitlement that you want to update.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
@@ -141,14 +150,14 @@ impl UpdateFlowEntitlementFluentBuilder {
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
     ///
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subscribers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscribers(input.into());
         self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     pub fn set_subscribers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_subscribers(input);
         self

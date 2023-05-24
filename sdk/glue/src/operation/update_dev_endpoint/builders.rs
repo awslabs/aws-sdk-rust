@@ -6,29 +6,29 @@ pub use crate::operation::update_dev_endpoint::_update_dev_endpoint_input::Updat
 /// Fluent builder constructing a request to `UpdateDevEndpoint`.
 ///
 /// <p>Updates a specified development endpoint.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDevEndpointFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_dev_endpoint::builders::UpdateDevEndpointInputBuilder,
 }
 impl UpdateDevEndpointFluentBuilder {
     /// Creates a new `UpdateDevEndpoint`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_dev_endpoint::UpdateDevEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_dev_endpoint::UpdateDevEndpointError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateDevEndpointFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_dev_endpoint::UpdateDevEndpointError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,37 @@ impl UpdateDevEndpointFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_dev_endpoint::UpdateDevEndpointError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
-    pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn endpoint_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
-    pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
     /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
-    pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.public_key(input.into());
         self
     }
     /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
-    pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_public_key(input);
         self
     }
@@ -105,14 +114,17 @@ impl UpdateDevEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_add_public_keys`](Self::set_add_public_keys).
     ///
     /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
-    pub fn add_public_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn add_public_keys(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.add_public_keys(input.into());
         self
     }
     /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
     pub fn set_add_public_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_add_public_keys(input);
         self
@@ -122,14 +134,17 @@ impl UpdateDevEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_delete_public_keys`](Self::set_delete_public_keys).
     ///
     /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
-    pub fn delete_public_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn delete_public_keys(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.delete_public_keys(input.into());
         self
     }
     /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
     pub fn set_delete_public_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_delete_public_keys(input);
         self
@@ -142,7 +157,7 @@ impl UpdateDevEndpointFluentBuilder {
     /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
     pub fn set_custom_libraries(
         mut self,
-        input: std::option::Option<crate::types::DevEndpointCustomLibraries>,
+        input: ::std::option::Option<crate::types::DevEndpointCustomLibraries>,
     ) -> Self {
         self.inner = self.inner.set_custom_libraries(input);
         self
@@ -153,7 +168,7 @@ impl UpdateDevEndpointFluentBuilder {
         self
     }
     /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
-    pub fn set_update_etl_libraries(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_update_etl_libraries(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_update_etl_libraries(input);
         self
     }
@@ -162,14 +177,17 @@ impl UpdateDevEndpointFluentBuilder {
     /// To override the contents of this collection use [`set_delete_arguments`](Self::set_delete_arguments).
     ///
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn delete_arguments(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn delete_arguments(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.delete_arguments(input.into());
         self
     }
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
     pub fn set_delete_arguments(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_delete_arguments(input);
         self
@@ -186,8 +204,8 @@ impl UpdateDevEndpointFluentBuilder {
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn add_arguments(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.add_arguments(k.into(), v.into());
         self
@@ -200,8 +218,8 @@ impl UpdateDevEndpointFluentBuilder {
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn set_add_arguments(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_add_arguments(input);

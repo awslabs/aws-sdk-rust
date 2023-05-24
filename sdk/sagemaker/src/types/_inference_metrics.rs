@@ -2,7 +2,7 @@
 
 /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceMetrics {
     /// <p>The expected maximum number of requests per minute for the instance.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl InferenceMetrics {
 
 /// A builder for [`InferenceMetrics`](crate::types::InferenceMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceMetricsBuilder {
-    pub(crate) max_invocations: std::option::Option<i32>,
-    pub(crate) model_latency: std::option::Option<i32>,
+    pub(crate) max_invocations: ::std::option::Option<i32>,
+    pub(crate) model_latency: ::std::option::Option<i32>,
 }
 impl InferenceMetricsBuilder {
     /// <p>The expected maximum number of requests per minute for the instance.</p>
     pub fn max_invocations(mut self, input: i32) -> Self {
-        self.max_invocations = Some(input);
+        self.max_invocations = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
-    pub fn set_max_invocations(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_invocations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_invocations = input;
         self
     }
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
     pub fn model_latency(mut self, input: i32) -> Self {
-        self.model_latency = Some(input);
+        self.model_latency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected model latency at maximum invocations per minute for the instance.</p>
-    pub fn set_model_latency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_model_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_latency = input;
         self
     }

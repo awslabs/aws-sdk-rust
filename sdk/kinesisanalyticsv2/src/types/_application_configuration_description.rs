@@ -2,88 +2,88 @@
 
 /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationConfigurationDescription {
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub sql_application_configuration_description:
-        std::option::Option<crate::types::SqlApplicationConfigurationDescription>,
+        ::std::option::Option<crate::types::SqlApplicationConfigurationDescription>,
     /// <p>The details about the application code for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub application_code_configuration_description:
-        std::option::Option<crate::types::ApplicationCodeConfigurationDescription>,
+        ::std::option::Option<crate::types::ApplicationCodeConfigurationDescription>,
     /// <p>The details about the starting properties for a Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub run_configuration_description:
-        std::option::Option<crate::types::RunConfigurationDescription>,
+        ::std::option::Option<crate::types::RunConfigurationDescription>,
     /// <p>The details about a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub flink_application_configuration_description:
-        std::option::Option<crate::types::FlinkApplicationConfigurationDescription>,
+        ::std::option::Option<crate::types::FlinkApplicationConfigurationDescription>,
     /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub environment_property_descriptions:
-        std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
+        ::std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub application_snapshot_configuration_description:
-        std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
+        ::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     #[doc(hidden)]
     pub vpc_configuration_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::VpcConfigurationDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationDescription>>,
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
     pub zeppelin_application_configuration_description:
-        std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
+        ::std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
 }
 impl ApplicationConfigurationDescription {
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
     pub fn sql_application_configuration_description(
         &self,
-    ) -> std::option::Option<&crate::types::SqlApplicationConfigurationDescription> {
+    ) -> ::std::option::Option<&crate::types::SqlApplicationConfigurationDescription> {
         self.sql_application_configuration_description.as_ref()
     }
     /// <p>The details about the application code for a Flink-based Kinesis Data Analytics application.</p>
     pub fn application_code_configuration_description(
         &self,
-    ) -> std::option::Option<&crate::types::ApplicationCodeConfigurationDescription> {
+    ) -> ::std::option::Option<&crate::types::ApplicationCodeConfigurationDescription> {
         self.application_code_configuration_description.as_ref()
     }
     /// <p>The details about the starting properties for a Kinesis Data Analytics application.</p>
     pub fn run_configuration_description(
         &self,
-    ) -> std::option::Option<&crate::types::RunConfigurationDescription> {
+    ) -> ::std::option::Option<&crate::types::RunConfigurationDescription> {
         self.run_configuration_description.as_ref()
     }
     /// <p>The details about a Flink-based Kinesis Data Analytics application.</p>
     pub fn flink_application_configuration_description(
         &self,
-    ) -> std::option::Option<&crate::types::FlinkApplicationConfigurationDescription> {
+    ) -> ::std::option::Option<&crate::types::FlinkApplicationConfigurationDescription> {
         self.flink_application_configuration_description.as_ref()
     }
     /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
     pub fn environment_property_descriptions(
         &self,
-    ) -> std::option::Option<&crate::types::EnvironmentPropertyDescriptions> {
+    ) -> ::std::option::Option<&crate::types::EnvironmentPropertyDescriptions> {
         self.environment_property_descriptions.as_ref()
     }
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     pub fn application_snapshot_configuration_description(
         &self,
-    ) -> std::option::Option<&crate::types::ApplicationSnapshotConfigurationDescription> {
+    ) -> ::std::option::Option<&crate::types::ApplicationSnapshotConfigurationDescription> {
         self.application_snapshot_configuration_description.as_ref()
     }
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     pub fn vpc_configuration_descriptions(
         &self,
-    ) -> std::option::Option<&[crate::types::VpcConfigurationDescription]> {
+    ) -> ::std::option::Option<&[crate::types::VpcConfigurationDescription]> {
         self.vpc_configuration_descriptions.as_deref()
     }
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
     pub fn zeppelin_application_configuration_description(
         &self,
-    ) -> std::option::Option<&crate::types::ZeppelinApplicationConfigurationDescription> {
+    ) -> ::std::option::Option<&crate::types::ZeppelinApplicationConfigurationDescription> {
         self.zeppelin_application_configuration_description.as_ref()
     }
 }
@@ -96,24 +96,26 @@ impl ApplicationConfigurationDescription {
 
 /// A builder for [`ApplicationConfigurationDescription`](crate::types::ApplicationConfigurationDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationConfigurationDescriptionBuilder {
     pub(crate) sql_application_configuration_description:
-        std::option::Option<crate::types::SqlApplicationConfigurationDescription>,
+        ::std::option::Option<crate::types::SqlApplicationConfigurationDescription>,
     pub(crate) application_code_configuration_description:
-        std::option::Option<crate::types::ApplicationCodeConfigurationDescription>,
+        ::std::option::Option<crate::types::ApplicationCodeConfigurationDescription>,
     pub(crate) run_configuration_description:
-        std::option::Option<crate::types::RunConfigurationDescription>,
+        ::std::option::Option<crate::types::RunConfigurationDescription>,
     pub(crate) flink_application_configuration_description:
-        std::option::Option<crate::types::FlinkApplicationConfigurationDescription>,
+        ::std::option::Option<crate::types::FlinkApplicationConfigurationDescription>,
     pub(crate) environment_property_descriptions:
-        std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
+        ::std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
     pub(crate) application_snapshot_configuration_description:
-        std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
+        ::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
     pub(crate) vpc_configuration_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::VpcConfigurationDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationDescription>>,
     pub(crate) zeppelin_application_configuration_description:
-        std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
+        ::std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
 }
 impl ApplicationConfigurationDescriptionBuilder {
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
@@ -121,13 +123,13 @@ impl ApplicationConfigurationDescriptionBuilder {
         mut self,
         input: crate::types::SqlApplicationConfigurationDescription,
     ) -> Self {
-        self.sql_application_configuration_description = Some(input);
+        self.sql_application_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details about inputs, outputs, and reference data sources for a SQL-based Kinesis Data Analytics application.</p>
     pub fn set_sql_application_configuration_description(
         mut self,
-        input: std::option::Option<crate::types::SqlApplicationConfigurationDescription>,
+        input: ::std::option::Option<crate::types::SqlApplicationConfigurationDescription>,
     ) -> Self {
         self.sql_application_configuration_description = input;
         self
@@ -137,13 +139,13 @@ impl ApplicationConfigurationDescriptionBuilder {
         mut self,
         input: crate::types::ApplicationCodeConfigurationDescription,
     ) -> Self {
-        self.application_code_configuration_description = Some(input);
+        self.application_code_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details about the application code for a Flink-based Kinesis Data Analytics application.</p>
     pub fn set_application_code_configuration_description(
         mut self,
-        input: std::option::Option<crate::types::ApplicationCodeConfigurationDescription>,
+        input: ::std::option::Option<crate::types::ApplicationCodeConfigurationDescription>,
     ) -> Self {
         self.application_code_configuration_description = input;
         self
@@ -153,13 +155,13 @@ impl ApplicationConfigurationDescriptionBuilder {
         mut self,
         input: crate::types::RunConfigurationDescription,
     ) -> Self {
-        self.run_configuration_description = Some(input);
+        self.run_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details about the starting properties for a Kinesis Data Analytics application.</p>
     pub fn set_run_configuration_description(
         mut self,
-        input: std::option::Option<crate::types::RunConfigurationDescription>,
+        input: ::std::option::Option<crate::types::RunConfigurationDescription>,
     ) -> Self {
         self.run_configuration_description = input;
         self
@@ -169,13 +171,13 @@ impl ApplicationConfigurationDescriptionBuilder {
         mut self,
         input: crate::types::FlinkApplicationConfigurationDescription,
     ) -> Self {
-        self.flink_application_configuration_description = Some(input);
+        self.flink_application_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details about a Flink-based Kinesis Data Analytics application.</p>
     pub fn set_flink_application_configuration_description(
         mut self,
-        input: std::option::Option<crate::types::FlinkApplicationConfigurationDescription>,
+        input: ::std::option::Option<crate::types::FlinkApplicationConfigurationDescription>,
     ) -> Self {
         self.flink_application_configuration_description = input;
         self
@@ -185,13 +187,13 @@ impl ApplicationConfigurationDescriptionBuilder {
         mut self,
         input: crate::types::EnvironmentPropertyDescriptions,
     ) -> Self {
-        self.environment_property_descriptions = Some(input);
+        self.environment_property_descriptions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes execution properties for a Flink-based Kinesis Data Analytics application.</p>
     pub fn set_environment_property_descriptions(
         mut self,
-        input: std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
+        input: ::std::option::Option<crate::types::EnvironmentPropertyDescriptions>,
     ) -> Self {
         self.environment_property_descriptions = input;
         self
@@ -201,13 +203,13 @@ impl ApplicationConfigurationDescriptionBuilder {
         mut self,
         input: crate::types::ApplicationSnapshotConfigurationDescription,
     ) -> Self {
-        self.application_snapshot_configuration_description = Some(input);
+        self.application_snapshot_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     pub fn set_application_snapshot_configuration_description(
         mut self,
-        input: std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
+        input: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationDescription>,
     ) -> Self {
         self.application_snapshot_configuration_description = input;
         self
@@ -223,13 +225,13 @@ impl ApplicationConfigurationDescriptionBuilder {
     ) -> Self {
         let mut v = self.vpc_configuration_descriptions.unwrap_or_default();
         v.push(input);
-        self.vpc_configuration_descriptions = Some(v);
+        self.vpc_configuration_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The array of descriptions of VPC configurations available to the application.</p>
     pub fn set_vpc_configuration_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcConfigurationDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationDescription>>,
     ) -> Self {
         self.vpc_configuration_descriptions = input;
         self
@@ -239,13 +241,13 @@ impl ApplicationConfigurationDescriptionBuilder {
         mut self,
         input: crate::types::ZeppelinApplicationConfigurationDescription,
     ) -> Self {
-        self.zeppelin_application_configuration_description = Some(input);
+        self.zeppelin_application_configuration_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration parameters for a Kinesis Data Analytics Studio notebook.</p>
     pub fn set_zeppelin_application_configuration_description(
         mut self,
-        input: std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
+        input: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationDescription>,
     ) -> Self {
         self.zeppelin_application_configuration_description = input;
         self

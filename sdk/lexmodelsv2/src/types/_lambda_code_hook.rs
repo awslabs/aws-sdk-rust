@@ -2,22 +2,22 @@
 
 /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaCodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     #[doc(hidden)]
-    pub lambda_arn: std::option::Option<std::string::String>,
+    pub lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
     #[doc(hidden)]
-    pub code_hook_interface_version: std::option::Option<std::string::String>,
+    pub code_hook_interface_version: ::std::option::Option<::std::string::String>,
 }
 impl LambdaCodeHook {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
-    pub fn code_hook_interface_version(&self) -> std::option::Option<&str> {
+    pub fn code_hook_interface_version(&self) -> ::std::option::Option<&str> {
         self.code_hook_interface_version.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl LambdaCodeHook {
 
 /// A builder for [`LambdaCodeHook`](crate::types::LambdaCodeHook).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaCodeHookBuilder {
-    pub(crate) lambda_arn: std::option::Option<std::string::String>,
-    pub(crate) code_hook_interface_version: std::option::Option<std::string::String>,
+    pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) code_hook_interface_version: ::std::option::Option<::std::string::String>,
 }
 impl LambdaCodeHookBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_arn = Some(input.into());
+    pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_arn = input;
         self
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
-    pub fn code_hook_interface_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code_hook_interface_version = Some(input.into());
+    pub fn code_hook_interface_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.code_hook_interface_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.</p>
     pub fn set_code_hook_interface_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.code_hook_interface_version = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>A search filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The field on which to filter.</p>
     #[doc(hidden)]
-    pub field: std::option::Option<crate::types::FilterField>,
+    pub field: ::std::option::Option<crate::types::FilterField>,
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::FilterOperator>,
+    pub operator: ::std::option::Option<crate::types::FilterOperator>,
     /// <p>The desired field value on which to filter.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl Filter {
     /// <p>The field on which to filter.</p>
-    pub fn field(&self) -> std::option::Option<&crate::types::FilterField> {
+    pub fn field(&self) -> ::std::option::Option<&crate::types::FilterField> {
         self.field.as_ref()
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::FilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
         self.operator.as_ref()
     }
     /// <p>The desired field value on which to filter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterBuilder {
-    pub(crate) field: std::option::Option<crate::types::FilterField>,
-    pub(crate) operator: std::option::Option<crate::types::FilterOperator>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) field: ::std::option::Option<crate::types::FilterField>,
+    pub(crate) operator: ::std::option::Option<crate::types::FilterOperator>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl FilterBuilder {
     /// <p>The field on which to filter.</p>
     pub fn field(mut self, input: crate::types::FilterField) -> Self {
-        self.field = Some(input);
+        self.field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field on which to filter.</p>
-    pub fn set_field(mut self, input: std::option::Option<crate::types::FilterField>) -> Self {
+    pub fn set_field(mut self, input: ::std::option::Option<crate::types::FilterField>) -> Self {
         self.field = input;
         self
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
     pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator to use for comparing the field’s value with the provided value.</p>
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::FilterOperator>,
+        input: ::std::option::Option<crate::types::FilterOperator>,
     ) -> Self {
         self.operator = input;
         self
     }
     /// <p>The desired field value on which to filter.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The desired field value on which to filter.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

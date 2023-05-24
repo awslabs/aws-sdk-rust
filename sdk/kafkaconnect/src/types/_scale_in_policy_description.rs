@@ -2,7 +2,7 @@
 
 /// <p>The description of the scale-in policy for the connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScaleInPolicyDescription {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl ScaleInPolicyDescription {
 
 /// A builder for [`ScaleInPolicyDescription`](crate::types::ScaleInPolicyDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScaleInPolicyDescriptionBuilder {
-    pub(crate) cpu_utilization_percentage: std::option::Option<i32>,
+    pub(crate) cpu_utilization_percentage: ::std::option::Option<i32>,
 }
 impl ScaleInPolicyDescriptionBuilder {
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
     pub fn cpu_utilization_percentage(mut self, input: i32) -> Self {
-        self.cpu_utilization_percentage = Some(input);
+        self.cpu_utilization_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the CPU utilization percentage threshold at which you want connector scale in to be triggered.</p>
-    pub fn set_cpu_utilization_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cpu_utilization_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu_utilization_percentage = input;
         self
     }

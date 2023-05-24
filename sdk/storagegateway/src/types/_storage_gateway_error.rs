@@ -2,26 +2,28 @@
 
 /// <p>Provides additional information about an error that was returned by the service. See the <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageGatewayError {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::ErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
     #[doc(hidden)]
-    pub error_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub error_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl StorageGatewayError {
     /// <p>Additional information about the error.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
     pub fn error_details(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.error_details.as_ref()
     }
 }
@@ -34,20 +36,23 @@ impl StorageGatewayError {
 
 /// A builder for [`StorageGatewayError`](crate::types::StorageGatewayError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StorageGatewayErrorBuilder {
-    pub(crate) error_code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) error_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) error_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl StorageGatewayErrorBuilder {
     /// <p>Additional information about the error.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional information about the error.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
@@ -58,19 +63,19 @@ impl StorageGatewayErrorBuilder {
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
     pub fn error_details(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.error_details.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.error_details = Some(hash_map);
+        self.error_details = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Human-readable text that provides detail about the error that occurred.</p>
     pub fn set_error_details(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.error_details = input;

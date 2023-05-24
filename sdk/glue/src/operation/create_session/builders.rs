@@ -6,56 +6,59 @@ pub use crate::operation::create_session::_create_session_input::CreateSessionIn
 /// Fluent builder constructing a request to `CreateSession`.
 ///
 /// <p>Creates a new session.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSessionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_session::builders::CreateSessionInputBuilder,
 }
 impl CreateSessionFluentBuilder {
     /// Creates a new `CreateSession`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_session::CreateSession,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_session::CreateSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_session::CreateSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_session::CreateSessionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_session::CreateSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_session::CreateSessionError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreateSessionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_session::CreateSessionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_session::CreateSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_session::CreateSessionError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the session request. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The ID of the session request. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
     /// <p>The description of the session. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the session. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The IAM Role ARN </p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
         self
     }
     /// <p>The IAM Role ARN </p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role(input);
         self
     }
@@ -110,7 +113,10 @@ impl CreateSessionFluentBuilder {
         self
     }
     /// <p>The <code>SessionCommand</code> that runs the job. </p>
-    pub fn set_command(mut self, input: std::option::Option<crate::types::SessionCommand>) -> Self {
+    pub fn set_command(
+        mut self,
+        input: ::std::option::Option<crate::types::SessionCommand>,
+    ) -> Self {
         self.inner = self.inner.set_command(input);
         self
     }
@@ -120,7 +126,7 @@ impl CreateSessionFluentBuilder {
         self
     }
     /// <p> The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the maximum session lifetime for this job type. Consult the documentation for other job types. </p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout(input);
         self
     }
@@ -130,7 +136,7 @@ impl CreateSessionFluentBuilder {
         self
     }
     /// <p> The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types. </p>
-    pub fn set_idle_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_idle_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_timeout(input);
         self
     }
@@ -141,8 +147,8 @@ impl CreateSessionFluentBuilder {
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn default_arguments(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.default_arguments(k.into(), v.into());
         self
@@ -150,8 +156,8 @@ impl CreateSessionFluentBuilder {
     /// <p>A map array of key-value pairs. Max is 75 pairs. </p>
     pub fn set_default_arguments(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_default_arguments(input);
@@ -165,7 +171,7 @@ impl CreateSessionFluentBuilder {
     /// <p>The number of connections to use for the session. </p>
     pub fn set_connections(
         mut self,
-        input: std::option::Option<crate::types::ConnectionsList>,
+        input: ::std::option::Option<crate::types::ConnectionsList>,
     ) -> Self {
         self.inner = self.inner.set_connections(input);
         self
@@ -176,7 +182,7 @@ impl CreateSessionFluentBuilder {
         self
     }
     /// <p>The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory. </p>
-    pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_max_capacity(input);
         self
     }
@@ -186,7 +192,7 @@ impl CreateSessionFluentBuilder {
         self
     }
     /// <p>The number of workers of a defined <code>WorkerType</code> to use for the session. </p>
-    pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_workers(input);
         self
     }
@@ -208,30 +214,36 @@ impl CreateSessionFluentBuilder {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
-    pub fn set_worker_type(mut self, input: std::option::Option<crate::types::WorkerType>) -> Self {
+    pub fn set_worker_type(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkerType>,
+    ) -> Self {
         self.inner = self.inner.set_worker_type(input);
         self
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
-    pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_configuration(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_configuration(input.into());
         self
     }
     /// <p>The name of the SecurityConfiguration structure to be used with the session </p>
     pub fn set_security_configuration(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_security_configuration(input);
         self
     }
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
-    pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.glue_version(input.into());
         self
     }
     /// <p>The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0. </p>
-    pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_glue_version(input);
         self
     }
@@ -242,8 +254,8 @@ impl CreateSessionFluentBuilder {
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -251,20 +263,26 @@ impl CreateSessionFluentBuilder {
     /// <p>The map of key value pairs (tags) belonging to the session.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The origin of the request. </p>
-    pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn request_origin(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.request_origin(input.into());
         self
     }
     /// <p>The origin of the request. </p>
-    pub fn set_request_origin(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_origin(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_request_origin(input);
         self
     }

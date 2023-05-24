@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub struct IntendedUse(String);
 impl IntendedUse {
@@ -21,9 +21,9 @@ impl IntendedUse {
         &["SingleUse", "Storage"]
     }
 }
-impl<T> std::convert::From<T> for IntendedUse
+impl<T> ::std::convert::From<T> for IntendedUse
 where
-    T: std::convert::AsRef<str>,
+    T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         IntendedUse(s.as_ref().to_owned())

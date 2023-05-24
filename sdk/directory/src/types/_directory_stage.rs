@@ -47,13 +47,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DirectoryStage {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum DirectoryStage {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DirectoryStage {
+impl ::std::convert::From<&str> for DirectoryStage {
     fn from(s: &str) -> Self {
         match s {
             "Active" => DirectoryStage::Active,
@@ -101,11 +101,11 @@ impl std::convert::From<&str> for DirectoryStage {
         }
     }
 }
-impl std::str::FromStr for DirectoryStage {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DirectoryStage {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectoryStage::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DirectoryStage::from(s))
     }
 }
 impl DirectoryStage {
@@ -143,7 +143,7 @@ impl DirectoryStage {
         ]
     }
 }
-impl AsRef<str> for DirectoryStage {
+impl ::std::convert::AsRef<str> for DirectoryStage {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

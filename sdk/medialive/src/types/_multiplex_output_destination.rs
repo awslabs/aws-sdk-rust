@@ -2,18 +2,18 @@
 
 /// Multiplex output destination settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexOutputDestination {
     /// Multiplex MediaConnect output destination settings.
     #[doc(hidden)]
     pub media_connect_settings:
-        std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
+        ::std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
 }
 impl MultiplexOutputDestination {
     /// Multiplex MediaConnect output destination settings.
     pub fn media_connect_settings(
         &self,
-    ) -> std::option::Option<&crate::types::MultiplexMediaConnectOutputDestinationSettings> {
+    ) -> ::std::option::Option<&crate::types::MultiplexMediaConnectOutputDestinationSettings> {
         self.media_connect_settings.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl MultiplexOutputDestination {
 
 /// A builder for [`MultiplexOutputDestination`](crate::types::MultiplexOutputDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiplexOutputDestinationBuilder {
     pub(crate) media_connect_settings:
-        std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
+        ::std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
 }
 impl MultiplexOutputDestinationBuilder {
     /// Multiplex MediaConnect output destination settings.
@@ -37,13 +39,13 @@ impl MultiplexOutputDestinationBuilder {
         mut self,
         input: crate::types::MultiplexMediaConnectOutputDestinationSettings,
     ) -> Self {
-        self.media_connect_settings = Some(input);
+        self.media_connect_settings = ::std::option::Option::Some(input);
         self
     }
     /// Multiplex MediaConnect output destination settings.
     pub fn set_media_connect_settings(
         mut self,
-        input: std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
+        input: ::std::option::Option<crate::types::MultiplexMediaConnectOutputDestinationSettings>,
     ) -> Self {
         self.media_connect_settings = input;
         self

@@ -40,13 +40,13 @@
 /// <p>The field to use to sort the results of a query for Amazon Macie account quotas and usage data. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UsageStatisticsSortKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum UsageStatisticsSortKey {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UsageStatisticsSortKey {
+impl ::std::convert::From<&str> for UsageStatisticsSortKey {
     fn from(s: &str) -> Self {
         match s {
             "accountId" => UsageStatisticsSortKey::AccountId,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for UsageStatisticsSortKey {
         }
     }
 }
-impl std::str::FromStr for UsageStatisticsSortKey {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UsageStatisticsSortKey {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageStatisticsSortKey::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UsageStatisticsSortKey::from(s))
     }
 }
 impl UsageStatisticsSortKey {
@@ -101,7 +101,7 @@ impl UsageStatisticsSortKey {
         ]
     }
 }
-impl AsRef<str> for UsageStatisticsSortKey {
+impl ::std::convert::AsRef<str> for UsageStatisticsSortKey {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

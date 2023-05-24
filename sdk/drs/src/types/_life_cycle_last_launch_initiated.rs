@@ -2,29 +2,29 @@
 
 /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastLaunchInitiated {
     /// <p>The date and time the last Source Server launch was initiated.</p>
     #[doc(hidden)]
-    pub api_call_date_time: std::option::Option<std::string::String>,
+    pub api_call_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Job type that was used to last launch the Source Server.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::LastLaunchType>,
+    pub r#type: ::std::option::Option<crate::types::LastLaunchType>,
 }
 impl LifeCycleLastLaunchInitiated {
     /// <p>The date and time the last Source Server launch was initiated.</p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> ::std::option::Option<&str> {
         self.api_call_date_time.as_deref()
     }
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The Job type that was used to last launch the Source Server.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::LastLaunchType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LastLaunchType> {
         self.r#type.as_ref()
     }
 }
@@ -37,43 +37,48 @@ impl LifeCycleLastLaunchInitiated {
 
 /// A builder for [`LifeCycleLastLaunchInitiated`](crate::types::LifeCycleLastLaunchInitiated).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LifeCycleLastLaunchInitiatedBuilder {
-    pub(crate) api_call_date_time: std::option::Option<std::string::String>,
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::LastLaunchType>,
+    pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::LastLaunchType>,
 }
 impl LifeCycleLastLaunchInitiatedBuilder {
     /// <p>The date and time the last Source Server launch was initiated.</p>
-    pub fn api_call_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_call_date_time = Some(input.into());
+    pub fn api_call_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_call_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the last Source Server launch was initiated.</p>
     pub fn set_api_call_date_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.api_call_date_time = input;
         self
     }
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Job that was used to last launch the Source Server.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>The Job type that was used to last launch the Source Server.</p>
     pub fn r#type(mut self, input: crate::types::LastLaunchType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Job type that was used to last launch the Source Server.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::LastLaunchType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LastLaunchType>) -> Self {
         self.r#type = input;
         self
     }

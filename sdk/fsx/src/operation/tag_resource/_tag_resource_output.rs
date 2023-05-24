@@ -2,11 +2,11 @@
 
 /// <p>The response object for the <code>TagResource</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for TagResourceOutput {
+impl ::aws_http::request_id::RequestId for TagResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl TagResourceOutput {
 
 /// A builder for [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagResourceOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,7 +2,7 @@
 
 /// <p>The retry strategy to use when a training job fails due to an <code>InternalServerError</code>. <code>RetryStrategy</code> is specified as part of the <code>CreateTrainingJob</code> and <code>CreateHyperParameterTuningJob</code> requests. You can add the <code>StoppingCondition</code> parameter to the request to limit the training time for the complete job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryStrategy {
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl RetryStrategy {
 
 /// A builder for [`RetryStrategy`](crate::types::RetryStrategy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetryStrategyBuilder {
-    pub(crate) maximum_retry_attempts: std::option::Option<i32>,
+    pub(crate) maximum_retry_attempts: ::std::option::Option<i32>,
 }
 impl RetryStrategyBuilder {
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
     pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
-        self.maximum_retry_attempts = Some(input);
+        self.maximum_retry_attempts = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-    pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_retry_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_retry_attempts = input;
         self
     }

@@ -7,47 +7,50 @@ pub use crate::operation::cancel_reserved_instances_listing::_cancel_reserved_in
 ///
 /// <p>Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelReservedInstancesListingFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingInputBuilder,
 }
 impl CancelReservedInstancesListingFluentBuilder {
     /// Creates a new `CancelReservedInstancesListing`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListing, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListing, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput, aws_smithy_http::result::SdkError<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,19 +61,22 @@ impl CancelReservedInstancesListingFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput, aws_smithy_http::result::SdkError<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError>>
                          {
         self.send_middleware().await
     }
     /// <p>The ID of the Reserved Instance listing.</p>
-    pub fn reserved_instances_listing_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reserved_instances_listing_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.reserved_instances_listing_id(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance listing.</p>
     pub fn set_reserved_instances_listing_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_listing_id(input);
         self

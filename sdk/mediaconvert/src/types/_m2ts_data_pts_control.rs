@@ -38,13 +38,13 @@
 /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsDataPtsControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsDataPtsControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsDataPtsControl {
+impl ::std::convert::From<&str> for M2tsDataPtsControl {
     fn from(s: &str) -> Self {
         match s {
             "ALIGN_TO_VIDEO" => M2tsDataPtsControl::AlignToVideo,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M2tsDataPtsControl {
         }
     }
 }
-impl std::str::FromStr for M2tsDataPtsControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsDataPtsControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsDataPtsControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsDataPtsControl::from(s))
     }
 }
 impl M2tsDataPtsControl {
@@ -86,7 +86,7 @@ impl M2tsDataPtsControl {
         &["ALIGN_TO_VIDEO", "AUTO"]
     }
 }
-impl AsRef<str> for M2tsDataPtsControl {
+impl ::std::convert::AsRef<str> for M2tsDataPtsControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

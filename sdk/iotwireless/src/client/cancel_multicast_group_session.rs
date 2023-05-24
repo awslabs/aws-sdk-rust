@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelMulticastGroupSession`](crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionFluentBuilder::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionFluentBuilder::set_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`CancelMulticastGroupSessionOutput`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput)
     /// - On failure, responds with [`SdkError<CancelMulticastGroupSessionError>`](crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError)
     pub fn cancel_multicast_group_session(&self) -> crate::operation::cancel_multicast_group_session::builders::CancelMulticastGroupSessionFluentBuilder{

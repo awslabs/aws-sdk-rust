@@ -2,43 +2,43 @@
 
 /// <p>The options for a table field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldOption {
     /// <p>The field ID for a table field.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The width for a table field.</p>
     #[doc(hidden)]
-    pub width: std::option::Option<std::string::String>,
+    pub width: ::std::option::Option<::std::string::String>,
     /// <p>The custom label for a table field.</p>
     #[doc(hidden)]
-    pub custom_label: std::option::Option<std::string::String>,
+    pub custom_label: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of a table field.</p>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::Visibility>,
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The URL configuration for a table field.</p>
     #[doc(hidden)]
-    pub url_styling: std::option::Option<crate::types::TableFieldUrlConfiguration>,
+    pub url_styling: ::std::option::Option<crate::types::TableFieldUrlConfiguration>,
 }
 impl TableFieldOption {
     /// <p>The field ID for a table field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The width for a table field.</p>
-    pub fn width(&self) -> std::option::Option<&str> {
+    pub fn width(&self) -> ::std::option::Option<&str> {
         self.width.as_deref()
     }
     /// <p>The custom label for a table field.</p>
-    pub fn custom_label(&self) -> std::option::Option<&str> {
+    pub fn custom_label(&self) -> ::std::option::Option<&str> {
         self.custom_label.as_deref()
     }
     /// <p>The visibility of a table field.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The URL configuration for a table field.</p>
-    pub fn url_styling(&self) -> std::option::Option<&crate::types::TableFieldUrlConfiguration> {
+    pub fn url_styling(&self) -> ::std::option::Option<&crate::types::TableFieldUrlConfiguration> {
         self.url_styling.as_ref()
     }
 }
@@ -51,64 +51,69 @@ impl TableFieldOption {
 
 /// A builder for [`TableFieldOption`](crate::types::TableFieldOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableFieldOptionBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) width: std::option::Option<std::string::String>,
-    pub(crate) custom_label: std::option::Option<std::string::String>,
-    pub(crate) visibility: std::option::Option<crate::types::Visibility>,
-    pub(crate) url_styling: std::option::Option<crate::types::TableFieldUrlConfiguration>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) width: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_label: ::std::option::Option<::std::string::String>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) url_styling: ::std::option::Option<crate::types::TableFieldUrlConfiguration>,
 }
 impl TableFieldOptionBuilder {
     /// <p>The field ID for a table field.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field ID for a table field.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The width for a table field.</p>
-    pub fn width(mut self, input: impl Into<std::string::String>) -> Self {
-        self.width = Some(input.into());
+    pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.width = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The width for a table field.</p>
-    pub fn set_width(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.width = input;
         self
     }
     /// <p>The custom label for a table field.</p>
-    pub fn custom_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_label = Some(input.into());
+    pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom label for a table field.</p>
-    pub fn set_custom_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_label = input;
         self
     }
     /// <p>The visibility of a table field.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>The visibility of a table field.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.visibility = input;
         self
     }
     /// <p>The URL configuration for a table field.</p>
     pub fn url_styling(mut self, input: crate::types::TableFieldUrlConfiguration) -> Self {
-        self.url_styling = Some(input);
+        self.url_styling = ::std::option::Option::Some(input);
         self
     }
     /// <p>The URL configuration for a table field.</p>
     pub fn set_url_styling(
         mut self,
-        input: std::option::Option<crate::types::TableFieldUrlConfiguration>,
+        input: ::std::option::Option<crate::types::TableFieldUrlConfiguration>,
     ) -> Self {
         self.url_styling = input;
         self

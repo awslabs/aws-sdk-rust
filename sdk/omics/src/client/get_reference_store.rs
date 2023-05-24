@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReferenceStore`](crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder::set_id): <p>The store's ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_reference_store::builders::GetReferenceStoreFluentBuilder::set_id): <p>The store's ID.</p>
     /// - On success, responds with [`GetReferenceStoreOutput`](crate::operation::get_reference_store::GetReferenceStoreOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_reference_store::GetReferenceStoreOutput::id): <p>The store's ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_reference_store::GetReferenceStoreOutput::arn): <p>The store's ARN.</p>

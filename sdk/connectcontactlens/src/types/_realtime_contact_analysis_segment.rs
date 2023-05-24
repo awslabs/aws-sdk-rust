@@ -2,22 +2,22 @@
 
 /// <p>An analyzed segment for a real-time analysis session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
     #[doc(hidden)]
-    pub transcript: std::option::Option<crate::types::Transcript>,
+    pub transcript: ::std::option::Option<crate::types::Transcript>,
     /// <p>The matched category rules.</p>
     #[doc(hidden)]
-    pub categories: std::option::Option<crate::types::Categories>,
+    pub categories: ::std::option::Option<crate::types::Categories>,
 }
 impl RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
-    pub fn transcript(&self) -> std::option::Option<&crate::types::Transcript> {
+    pub fn transcript(&self) -> ::std::option::Option<&crate::types::Transcript> {
         self.transcript.as_ref()
     }
     /// <p>The matched category rules.</p>
-    pub fn categories(&self) -> std::option::Option<&crate::types::Categories> {
+    pub fn categories(&self) -> ::std::option::Option<&crate::types::Categories> {
         self.categories.as_ref()
     }
 }
@@ -30,29 +30,37 @@ impl RealtimeContactAnalysisSegment {
 
 /// A builder for [`RealtimeContactAnalysisSegment`](crate::types::RealtimeContactAnalysisSegment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RealtimeContactAnalysisSegmentBuilder {
-    pub(crate) transcript: std::option::Option<crate::types::Transcript>,
-    pub(crate) categories: std::option::Option<crate::types::Categories>,
+    pub(crate) transcript: ::std::option::Option<crate::types::Transcript>,
+    pub(crate) categories: ::std::option::Option<crate::types::Categories>,
 }
 impl RealtimeContactAnalysisSegmentBuilder {
     /// <p>The analyzed transcript.</p>
     pub fn transcript(mut self, input: crate::types::Transcript) -> Self {
-        self.transcript = Some(input);
+        self.transcript = ::std::option::Option::Some(input);
         self
     }
     /// <p>The analyzed transcript.</p>
-    pub fn set_transcript(mut self, input: std::option::Option<crate::types::Transcript>) -> Self {
+    pub fn set_transcript(
+        mut self,
+        input: ::std::option::Option<crate::types::Transcript>,
+    ) -> Self {
         self.transcript = input;
         self
     }
     /// <p>The matched category rules.</p>
     pub fn categories(mut self, input: crate::types::Categories) -> Self {
-        self.categories = Some(input);
+        self.categories = ::std::option::Option::Some(input);
         self
     }
     /// <p>The matched category rules.</p>
-    pub fn set_categories(mut self, input: std::option::Option<crate::types::Categories>) -> Self {
+    pub fn set_categories(
+        mut self,
+        input: ::std::option::Option<crate::types::Categories>,
+    ) -> Self {
         self.categories = input;
         self
     }

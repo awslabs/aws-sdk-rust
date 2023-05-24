@@ -2,22 +2,22 @@
 
 /// <p>Provides the configuration information for a document field/attribute that you want to base query suggestions on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestableConfig {
     /// <p>The name of the document field/attribute.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     #[doc(hidden)]
-    pub suggestable: std::option::Option<bool>,
+    pub suggestable: ::std::option::Option<bool>,
 }
 impl SuggestableConfig {
     /// <p>The name of the document field/attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
-    pub fn suggestable(&self) -> std::option::Option<bool> {
+    pub fn suggestable(&self) -> ::std::option::Option<bool> {
         self.suggestable
     }
 }
@@ -30,29 +30,37 @@ impl SuggestableConfig {
 
 /// A builder for [`SuggestableConfig`](crate::types::SuggestableConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuggestableConfigBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) suggestable: std::option::Option<bool>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) suggestable: ::std::option::Option<bool>,
 }
 impl SuggestableConfigBuilder {
     /// <p>The name of the document field/attribute.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the document field/attribute.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
     pub fn suggestable(mut self, input: bool) -> Self {
-        self.suggestable = Some(input);
+        self.suggestable = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>TRUE</code> means the document field/attribute is suggestible, so the contents within the field can be used for query suggestions.</p>
-    pub fn set_suggestable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_suggestable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suggestable = input;
         self
     }

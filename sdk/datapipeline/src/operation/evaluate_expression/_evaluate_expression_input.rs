@@ -2,29 +2,29 @@
 
 /// <p>Contains the parameters for EvaluateExpression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_id: std::option::Option<std::string::String>,
+    pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the object.</p>
     #[doc(hidden)]
-    pub object_id: std::option::Option<std::string::String>,
+    pub object_id: ::std::option::Option<::std::string::String>,
     /// <p>The expression to evaluate.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The ID of the object.</p>
-    pub fn object_id(&self) -> std::option::Option<&str> {
+    pub fn object_id(&self) -> ::std::option::Option<&str> {
         self.object_id.as_deref()
     }
     /// <p>The expression to evaluate.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
 }
@@ -38,51 +38,53 @@ impl EvaluateExpressionInput {
 
 /// A builder for [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluateExpressionInputBuilder {
-    pub(crate) pipeline_id: std::option::Option<std::string::String>,
-    pub(crate) object_id: std::option::Option<std::string::String>,
-    pub(crate) expression: std::option::Option<std::string::String>,
+    pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
+    pub(crate) object_id: ::std::option::Option<::std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateExpressionInputBuilder {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_id = Some(input.into());
+    pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pipeline.</p>
-    pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_id = input;
         self
     }
     /// <p>The ID of the object.</p>
-    pub fn object_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_id = Some(input.into());
+    pub fn object_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the object.</p>
-    pub fn set_object_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_id = input;
         self
     }
     /// <p>The expression to evaluate.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression to evaluate.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
     /// Consumes the builder and constructs a [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::evaluate_expression::EvaluateExpressionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::evaluate_expression::EvaluateExpressionInput {
                 pipeline_id: self.pipeline_id,
                 object_id: self.object_id,

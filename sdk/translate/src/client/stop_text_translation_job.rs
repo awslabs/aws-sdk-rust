@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopTextTranslationJob`](crate::operation::stop_text_translation_job::builders::StopTextTranslationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_text_translation_job::builders::StopTextTranslationJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_text_translation_job::builders::StopTextTranslationJobFluentBuilder::set_job_id): <p>The job ID of the job to be stopped.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_text_translation_job::builders::StopTextTranslationJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_text_translation_job::builders::StopTextTranslationJobFluentBuilder::set_job_id): <p>The job ID of the job to be stopped.</p>
     /// - On success, responds with [`StopTextTranslationJobOutput`](crate::operation::stop_text_translation_job::StopTextTranslationJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_text_translation_job::StopTextTranslationJobOutput::job_id): <p>The job ID of the stopped batch translation job.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_text_translation_job::StopTextTranslationJobOutput::job_status): <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>

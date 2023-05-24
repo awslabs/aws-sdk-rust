@@ -2,31 +2,31 @@
 
 /// <p>The operation failed because one of the input parameters was invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ValidationException {
     /// <p>The message that informs you about what was invalid about the request.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The reason that validation failed.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::ValidationExceptionReason>,
+    pub reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     /// <p>The field where the invalid entry was detected.</p>
     #[doc(hidden)]
-    pub field_list: std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationException {
     /// <p>The reason that validation failed.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::ValidationExceptionReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ValidationExceptionReason> {
         self.reason.as_ref()
     }
     /// <p>The field where the invalid entry was detected.</p>
-    pub fn field_list(&self) -> std::option::Option<&[crate::types::ValidationExceptionField]> {
+    pub fn field_list(&self) -> ::std::option::Option<&[crate::types::ValidationExceptionField]> {
         self.field_list.as_deref()
     }
 }
-impl std::fmt::Debug for ValidationException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ValidationException {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
         formatter.field("message", &"*** Sensitive Data Redacted ***");
         formatter.field("reason", &self.reason);
@@ -37,26 +37,26 @@ impl std::fmt::Debug for ValidationException {
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ValidationException {
+impl ::std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ValidationException")?;
-        write!(f, ": {}", "*** Sensitive Data Redacted ***")?;
+        ::std::write!(f, "ValidationException")?;
+        ::std::write!(f, ": {}", "*** Sensitive Data Redacted ***")?;
         Ok(())
     }
 }
-impl std::error::Error for ValidationException {}
-impl aws_http::request_id::RequestId for crate::types::error::ValidationException {
+impl ::std::error::Error for ValidationException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::ValidationException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -69,34 +69,34 @@ impl ValidationException {
 
 /// A builder for [`ValidationException`](crate::types::error::ValidationException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ValidationExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::ValidationExceptionReason>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::ValidationExceptionReason>,
     pub(crate) field_list:
-        std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
     /// <p>The message that informs you about what was invalid about the request.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message that informs you about what was invalid about the request.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The reason that validation failed.</p>
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason that validation failed.</p>
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::ValidationExceptionReason>,
+        input: ::std::option::Option<crate::types::ValidationExceptionReason>,
     ) -> Self {
         self.reason = input;
         self
@@ -109,19 +109,19 @@ impl ValidationExceptionBuilder {
     pub fn field_list(mut self, input: crate::types::ValidationExceptionField) -> Self {
         let mut v = self.field_list.unwrap_or_default();
         v.push(input);
-        self.field_list = Some(v);
+        self.field_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The field where the invalid entry was detected.</p>
     pub fn set_field_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationExceptionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     ) -> Self {
         self.field_list = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -129,7 +129,7 @@ impl ValidationExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self
@@ -144,8 +144,8 @@ impl ValidationExceptionBuilder {
         }
     }
 }
-impl std::fmt::Debug for ValidationExceptionBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ValidationExceptionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionBuilder");
         formatter.field("message", &"*** Sensitive Data Redacted ***");
         formatter.field("reason", &self.reason);

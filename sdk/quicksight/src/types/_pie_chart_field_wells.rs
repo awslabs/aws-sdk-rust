@@ -3,18 +3,18 @@
 /// <p>The field well configuration of a pie chart.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PieChartFieldWells {
     /// <p>The field well configuration of a pie chart.</p>
     #[doc(hidden)]
     pub pie_chart_aggregated_field_wells:
-        std::option::Option<crate::types::PieChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::PieChartAggregatedFieldWells>,
 }
 impl PieChartFieldWells {
     /// <p>The field well configuration of a pie chart.</p>
     pub fn pie_chart_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::PieChartAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::PieChartAggregatedFieldWells> {
         self.pie_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl PieChartFieldWells {
 
 /// A builder for [`PieChartFieldWells`](crate::types::PieChartFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PieChartFieldWellsBuilder {
     pub(crate) pie_chart_aggregated_field_wells:
-        std::option::Option<crate::types::PieChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::PieChartAggregatedFieldWells>,
 }
 impl PieChartFieldWellsBuilder {
     /// <p>The field well configuration of a pie chart.</p>
@@ -38,13 +40,13 @@ impl PieChartFieldWellsBuilder {
         mut self,
         input: crate::types::PieChartAggregatedFieldWells,
     ) -> Self {
-        self.pie_chart_aggregated_field_wells = Some(input);
+        self.pie_chart_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field well configuration of a pie chart.</p>
     pub fn set_pie_chart_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::PieChartAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::PieChartAggregatedFieldWells>,
     ) -> Self {
         self.pie_chart_aggregated_field_wells = input;
         self

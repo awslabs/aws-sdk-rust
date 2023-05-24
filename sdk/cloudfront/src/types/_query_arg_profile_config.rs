@@ -2,22 +2,22 @@
 
 /// <p>Configuration for query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryArgProfileConfig {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
     #[doc(hidden)]
-    pub forward_when_query_arg_profile_is_unknown: std::option::Option<bool>,
+    pub forward_when_query_arg_profile_is_unknown: ::std::option::Option<bool>,
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
     #[doc(hidden)]
-    pub query_arg_profiles: std::option::Option<crate::types::QueryArgProfiles>,
+    pub query_arg_profiles: ::std::option::Option<crate::types::QueryArgProfiles>,
 }
 impl QueryArgProfileConfig {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
-    pub fn forward_when_query_arg_profile_is_unknown(&self) -> std::option::Option<bool> {
+    pub fn forward_when_query_arg_profile_is_unknown(&self) -> ::std::option::Option<bool> {
         self.forward_when_query_arg_profile_is_unknown
     }
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
-    pub fn query_arg_profiles(&self) -> std::option::Option<&crate::types::QueryArgProfiles> {
+    pub fn query_arg_profiles(&self) -> ::std::option::Option<&crate::types::QueryArgProfiles> {
         self.query_arg_profiles.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl QueryArgProfileConfig {
 
 /// A builder for [`QueryArgProfileConfig`](crate::types::QueryArgProfileConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryArgProfileConfigBuilder {
-    pub(crate) forward_when_query_arg_profile_is_unknown: std::option::Option<bool>,
-    pub(crate) query_arg_profiles: std::option::Option<crate::types::QueryArgProfiles>,
+    pub(crate) forward_when_query_arg_profile_is_unknown: ::std::option::Option<bool>,
+    pub(crate) query_arg_profiles: ::std::option::Option<crate::types::QueryArgProfiles>,
 }
 impl QueryArgProfileConfigBuilder {
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
     pub fn forward_when_query_arg_profile_is_unknown(mut self, input: bool) -> Self {
-        self.forward_when_query_arg_profile_is_unknown = Some(input);
+        self.forward_when_query_arg_profile_is_unknown = ::std::option::Option::Some(input);
         self
     }
     /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.</p>
     pub fn set_forward_when_query_arg_profile_is_unknown(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.forward_when_query_arg_profile_is_unknown = input;
         self
     }
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
     pub fn query_arg_profiles(mut self, input: crate::types::QueryArgProfiles) -> Self {
-        self.query_arg_profiles = Some(input);
+        self.query_arg_profiles = ::std::option::Option::Some(input);
         self
     }
     /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
     pub fn set_query_arg_profiles(
         mut self,
-        input: std::option::Option<crate::types::QueryArgProfiles>,
+        input: ::std::option::Option<crate::types::QueryArgProfiles>,
     ) -> Self {
         self.query_arg_profiles = input;
         self

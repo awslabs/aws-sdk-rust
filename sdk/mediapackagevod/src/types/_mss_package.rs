@@ -2,29 +2,29 @@
 
 /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
     #[doc(hidden)]
-    pub encryption: std::option::Option<crate::types::MssEncryption>,
+    pub encryption: ::std::option::Option<crate::types::MssEncryption>,
     /// A list of MSS manifest configurations.
     #[doc(hidden)]
-    pub mss_manifests: std::option::Option<std::vec::Vec<crate::types::MssManifest>>,
+    pub mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::MssManifest>>,
     /// The duration (in seconds) of each segment.
     #[doc(hidden)]
-    pub segment_duration_seconds: std::option::Option<i32>,
+    pub segment_duration_seconds: ::std::option::Option<i32>,
 }
 impl MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-    pub fn encryption(&self) -> std::option::Option<&crate::types::MssEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<&crate::types::MssEncryption> {
         self.encryption.as_ref()
     }
     /// A list of MSS manifest configurations.
-    pub fn mss_manifests(&self) -> std::option::Option<&[crate::types::MssManifest]> {
+    pub fn mss_manifests(&self) -> ::std::option::Option<&[crate::types::MssManifest]> {
         self.mss_manifests.as_deref()
     }
     /// The duration (in seconds) of each segment.
-    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
+    pub fn segment_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.segment_duration_seconds
     }
 }
@@ -37,22 +37,24 @@ impl MssPackage {
 
 /// A builder for [`MssPackage`](crate::types::MssPackage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MssPackageBuilder {
-    pub(crate) encryption: std::option::Option<crate::types::MssEncryption>,
-    pub(crate) mss_manifests: std::option::Option<std::vec::Vec<crate::types::MssManifest>>,
-    pub(crate) segment_duration_seconds: std::option::Option<i32>,
+    pub(crate) encryption: ::std::option::Option<crate::types::MssEncryption>,
+    pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::MssManifest>>,
+    pub(crate) segment_duration_seconds: ::std::option::Option<i32>,
 }
 impl MssPackageBuilder {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
     pub fn encryption(mut self, input: crate::types::MssEncryption) -> Self {
-        self.encryption = Some(input);
+        self.encryption = ::std::option::Option::Some(input);
         self
     }
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
     pub fn set_encryption(
         mut self,
-        input: std::option::Option<crate::types::MssEncryption>,
+        input: ::std::option::Option<crate::types::MssEncryption>,
     ) -> Self {
         self.encryption = input;
         self
@@ -65,24 +67,24 @@ impl MssPackageBuilder {
     pub fn mss_manifests(mut self, input: crate::types::MssManifest) -> Self {
         let mut v = self.mss_manifests.unwrap_or_default();
         v.push(input);
-        self.mss_manifests = Some(v);
+        self.mss_manifests = ::std::option::Option::Some(v);
         self
     }
     /// A list of MSS manifest configurations.
     pub fn set_mss_manifests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MssManifest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MssManifest>>,
     ) -> Self {
         self.mss_manifests = input;
         self
     }
     /// The duration (in seconds) of each segment.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
-        self.segment_duration_seconds = Some(input);
+        self.segment_duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// The duration (in seconds) of each segment.
-    pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_duration_seconds = input;
         self
     }

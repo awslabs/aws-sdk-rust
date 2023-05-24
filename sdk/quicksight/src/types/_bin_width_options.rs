@@ -2,22 +2,22 @@
 
 /// <p>The options that determine the bin width of a histogram.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BinWidthOptions {
     /// <p>The options that determine the bin width value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
     /// <p>The options that determine the bin count limit.</p>
     #[doc(hidden)]
-    pub bin_count_limit: std::option::Option<i64>,
+    pub bin_count_limit: ::std::option::Option<i64>,
 }
 impl BinWidthOptions {
     /// <p>The options that determine the bin width value.</p>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
     /// <p>The options that determine the bin count limit.</p>
-    pub fn bin_count_limit(&self) -> std::option::Option<i64> {
+    pub fn bin_count_limit(&self) -> ::std::option::Option<i64> {
         self.bin_count_limit
     }
 }
@@ -30,29 +30,31 @@ impl BinWidthOptions {
 
 /// A builder for [`BinWidthOptions`](crate::types::BinWidthOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BinWidthOptionsBuilder {
-    pub(crate) value: std::option::Option<f64>,
-    pub(crate) bin_count_limit: std::option::Option<i64>,
+    pub(crate) value: ::std::option::Option<f64>,
+    pub(crate) bin_count_limit: ::std::option::Option<i64>,
 }
 impl BinWidthOptionsBuilder {
     /// <p>The options that determine the bin width value.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the bin width value.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }
     /// <p>The options that determine the bin count limit.</p>
     pub fn bin_count_limit(mut self, input: i64) -> Self {
-        self.bin_count_limit = Some(input);
+        self.bin_count_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the bin count limit.</p>
-    pub fn set_bin_count_limit(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bin_count_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bin_count_limit = input;
         self
     }

@@ -5,7 +5,7 @@
 /// <p>If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualNodeConnectionPool {
     /// <p>An object that represents a type of connection pool.</p>
     Grpc(crate::types::VirtualNodeGrpcConnectionPool),
@@ -30,11 +30,11 @@ impl VirtualNodeConnectionPool {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualNodeGrpcConnectionPool, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualNodeGrpcConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Grpc(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Grpc`](crate::types::VirtualNodeConnectionPool::Grpc).
@@ -45,11 +45,11 @@ impl VirtualNodeConnectionPool {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualNodeHttpConnectionPool, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualNodeHttpConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Http(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Http`](crate::types::VirtualNodeConnectionPool::Http).
@@ -60,11 +60,11 @@ impl VirtualNodeConnectionPool {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualNodeHttp2ConnectionPool, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualNodeHttp2ConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Http2(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Http2`](crate::types::VirtualNodeConnectionPool::Http2).
@@ -75,11 +75,11 @@ impl VirtualNodeConnectionPool {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tcp(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualNodeTcpConnectionPool, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualNodeTcpConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Tcp(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Tcp`](crate::types::VirtualNodeConnectionPool::Tcp).

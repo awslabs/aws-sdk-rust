@@ -2,20 +2,20 @@
 
 /// <p>The parameters for using a Kinesis stream as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeTargetKinesisStreamParameters {
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     #[doc(hidden)]
-    pub partition_key: std::option::Option<std::string::String>,
+    pub partition_key: ::std::option::Option<::std::string::String>,
 }
 impl PipeTargetKinesisStreamParameters {
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> ::std::option::Option<&str> {
         self.partition_key.as_deref()
     }
 }
-impl std::fmt::Debug for PipeTargetKinesisStreamParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PipeTargetKinesisStreamParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetKinesisStreamParameters");
         formatter.field("partition_key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,24 @@ impl PipeTargetKinesisStreamParameters {
 
 /// A builder for [`PipeTargetKinesisStreamParameters`](crate::types::PipeTargetKinesisStreamParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PipeTargetKinesisStreamParametersBuilder {
-    pub(crate) partition_key: std::option::Option<std::string::String>,
+    pub(crate) partition_key: ::std::option::Option<::std::string::String>,
 }
 impl PipeTargetKinesisStreamParametersBuilder {
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.partition_key = Some(input.into());
+    pub fn partition_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.partition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_partition_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.partition_key = input;
         self
     }
@@ -52,8 +58,8 @@ impl PipeTargetKinesisStreamParametersBuilder {
         }
     }
 }
-impl std::fmt::Debug for PipeTargetKinesisStreamParametersBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PipeTargetKinesisStreamParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetKinesisStreamParametersBuilder");
         formatter.field("partition_key", &"*** Sensitive Data Redacted ***");
         formatter.finish()

@@ -2,36 +2,36 @@
 
 /// <p>The resource element of a resource set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
     #[doc(hidden)]
-    pub component_id: std::option::Option<std::string::String>,
+    pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS target resource.</p>
     #[doc(hidden)]
-    pub dns_target_resource: std::option::Option<crate::types::DnsTargetResource>,
+    pub dns_target_resource: ::std::option::Option<crate::types::DnsTargetResource>,
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
     #[doc(hidden)]
-    pub readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub readiness_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
-    pub fn component_id(&self) -> std::option::Option<&str> {
+    pub fn component_id(&self) -> ::std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The DNS target resource.</p>
-    pub fn dns_target_resource(&self) -> std::option::Option<&crate::types::DnsTargetResource> {
+    pub fn dns_target_resource(&self) -> ::std::option::Option<&crate::types::DnsTargetResource> {
         self.dns_target_resource.as_ref()
     }
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub fn readiness_scopes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn readiness_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.readiness_scopes.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -44,33 +44,35 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceBuilder {
-    pub(crate) component_id: std::option::Option<std::string::String>,
-    pub(crate) dns_target_resource: std::option::Option<crate::types::DnsTargetResource>,
-    pub(crate) readiness_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
+    pub(crate) component_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_target_resource: ::std::option::Option<crate::types::DnsTargetResource>,
+    pub(crate) readiness_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceBuilder {
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
-    pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_id = Some(input.into());
+    pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The component identifier of the resource, generated when DNS target resource is used.</p>
-    pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
     }
     /// <p>The DNS target resource.</p>
     pub fn dns_target_resource(mut self, input: crate::types::DnsTargetResource) -> Self {
-        self.dns_target_resource = Some(input);
+        self.dns_target_resource = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DNS target resource.</p>
     pub fn set_dns_target_resource(
         mut self,
-        input: std::option::Option<crate::types::DnsTargetResource>,
+        input: ::std::option::Option<crate::types::DnsTargetResource>,
     ) -> Self {
         self.dns_target_resource = input;
         self
@@ -80,27 +82,30 @@ impl ResourceBuilder {
     /// To override the contents of this collection use [`set_readiness_scopes`](Self::set_readiness_scopes).
     ///
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
-    pub fn readiness_scopes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn readiness_scopes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.readiness_scopes.unwrap_or_default();
         v.push(input.into());
-        self.readiness_scopes = Some(v);
+        self.readiness_scopes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of recovery group Amazon Resource Names (ARNs) and cell ARNs that this resource is contained within.</p>
     pub fn set_readiness_scopes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.readiness_scopes = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }

@@ -2,48 +2,48 @@
 
 /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeSourceRabbitMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
-    pub credentials: std::option::Option<crate::types::MqBrokerAccessCredentials>,
+    pub credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     /// <p>The name of the destination queue to consume.</p>
     #[doc(hidden)]
-    pub queue_name: std::option::Option<std::string::String>,
+    pub queue_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual host associated with the source broker.</p>
     #[doc(hidden)]
-    pub virtual_host: std::option::Option<std::string::String>,
+    pub virtual_host: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
-    pub batch_size: std::option::Option<i32>,
+    pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
-    pub maximum_batching_window_in_seconds: std::option::Option<i32>,
+    pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
 impl PipeSourceRabbitMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::types::MqBrokerAccessCredentials> {
+    pub fn credentials(&self) -> ::std::option::Option<&crate::types::MqBrokerAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn queue_name(&self) -> std::option::Option<&str> {
+    pub fn queue_name(&self) -> ::std::option::Option<&str> {
         self.queue_name.as_deref()
     }
     /// <p>The name of the virtual host associated with the source broker.</p>
-    pub fn virtual_host(&self) -> std::option::Option<&str> {
+    pub fn virtual_host(&self) -> ::std::option::Option<&str> {
         self.virtual_host.as_deref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
-    pub fn batch_size(&self) -> std::option::Option<i32> {
+    pub fn batch_size(&self) -> ::std::option::Option<i32> {
         self.batch_size
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn maximum_batching_window_in_seconds(&self) -> ::std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
     }
 }
-impl std::fmt::Debug for PipeSourceRabbitMqBrokerParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PipeSourceRabbitMqBrokerParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceRabbitMqBrokerParameters");
         formatter.field("credentials", &self.credentials);
         formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
@@ -65,67 +65,67 @@ impl PipeSourceRabbitMqBrokerParameters {
 
 /// A builder for [`PipeSourceRabbitMqBrokerParameters`](crate::types::PipeSourceRabbitMqBrokerParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PipeSourceRabbitMqBrokerParametersBuilder {
-    pub(crate) credentials: std::option::Option<crate::types::MqBrokerAccessCredentials>,
-    pub(crate) queue_name: std::option::Option<std::string::String>,
-    pub(crate) virtual_host: std::option::Option<std::string::String>,
-    pub(crate) batch_size: std::option::Option<i32>,
-    pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
+    pub(crate) credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
+    pub(crate) queue_name: ::std::option::Option<::std::string::String>,
+    pub(crate) virtual_host: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_size: ::std::option::Option<i32>,
+    pub(crate) maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
 impl PipeSourceRabbitMqBrokerParametersBuilder {
     /// <p>The credentials needed to access the resource.</p>
     pub fn credentials(mut self, input: crate::types::MqBrokerAccessCredentials) -> Self {
-        self.credentials = Some(input);
+        self.credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>The credentials needed to access the resource.</p>
     pub fn set_credentials(
         mut self,
-        input: std::option::Option<crate::types::MqBrokerAccessCredentials>,
+        input: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     ) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_name = Some(input.into());
+    pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_name = input;
         self
     }
     /// <p>The name of the virtual host associated with the source broker.</p>
-    pub fn virtual_host(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_host = Some(input.into());
+    pub fn virtual_host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.virtual_host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual host associated with the source broker.</p>
-    pub fn set_virtual_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_virtual_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_host = input;
         self
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
-        self.batch_size = Some(input);
+        self.batch_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in each batch.</p>
-    pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
-        self.maximum_batching_window_in_seconds = Some(input);
+        self.maximum_batching_window_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn set_maximum_batching_window_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self
@@ -141,8 +141,8 @@ impl PipeSourceRabbitMqBrokerParametersBuilder {
         }
     }
 }
-impl std::fmt::Debug for PipeSourceRabbitMqBrokerParametersBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PipeSourceRabbitMqBrokerParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceRabbitMqBrokerParametersBuilder");
         formatter.field("credentials", &self.credentials);
         formatter.field("queue_name", &"*** Sensitive Data Redacted ***");

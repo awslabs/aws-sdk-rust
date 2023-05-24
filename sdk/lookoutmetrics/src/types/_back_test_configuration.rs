@@ -2,15 +2,15 @@
 
 /// <p>Settings for backtest mode.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackTestConfiguration {
     /// <p>Run a backtest instead of monitoring new data.</p>
     #[doc(hidden)]
-    pub run_back_test_mode: std::option::Option<bool>,
+    pub run_back_test_mode: ::std::option::Option<bool>,
 }
 impl BackTestConfiguration {
     /// <p>Run a backtest instead of monitoring new data.</p>
-    pub fn run_back_test_mode(&self) -> std::option::Option<bool> {
+    pub fn run_back_test_mode(&self) -> ::std::option::Option<bool> {
         self.run_back_test_mode
     }
 }
@@ -23,18 +23,20 @@ impl BackTestConfiguration {
 
 /// A builder for [`BackTestConfiguration`](crate::types::BackTestConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackTestConfigurationBuilder {
-    pub(crate) run_back_test_mode: std::option::Option<bool>,
+    pub(crate) run_back_test_mode: ::std::option::Option<bool>,
 }
 impl BackTestConfigurationBuilder {
     /// <p>Run a backtest instead of monitoring new data.</p>
     pub fn run_back_test_mode(mut self, input: bool) -> Self {
-        self.run_back_test_mode = Some(input);
+        self.run_back_test_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Run a backtest instead of monitoring new data.</p>
-    pub fn set_run_back_test_mode(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_run_back_test_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.run_back_test_mode = input;
         self
     }

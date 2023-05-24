@@ -2,89 +2,89 @@
 
 /// <p>Account details for a Well-Architected best practice in relation to Trusted Advisor checks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckDetail {
     /// <p>Trusted Advisor check ID.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Trusted Advisor check name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Trusted Advisor check description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Provider of the check related to the best practice.</p>
     #[doc(hidden)]
-    pub provider: std::option::Option<crate::types::CheckProvider>,
+    pub provider: ::std::option::Option<crate::types::CheckProvider>,
     /// <p>Well-Architected Lens ARN associated to the check.</p>
     #[doc(hidden)]
-    pub lens_arn: std::option::Option<std::string::String>,
+    pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     #[doc(hidden)]
-    pub pillar_id: std::option::Option<std::string::String>,
+    pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the question.</p>
     #[doc(hidden)]
-    pub question_id: std::option::Option<std::string::String>,
+    pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a choice.</p>
     #[doc(hidden)]
-    pub choice_id: std::option::Option<std::string::String>,
+    pub choice_id: ::std::option::Option<::std::string::String>,
     /// <p>Status associated to the check.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CheckStatus>,
+    pub status: ::std::option::Option<crate::types::CheckStatus>,
     /// <p>An Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Count of flagged resources associated to the check.</p>
     #[doc(hidden)]
     pub flagged_resources: i32,
     /// <p>Reason associated to the check.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::CheckFailureReason>,
+    pub reason: ::std::option::Option<crate::types::CheckFailureReason>,
     /// <p>The date and time recorded.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CheckDetail {
     /// <p>Trusted Advisor check ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Trusted Advisor check name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Trusted Advisor check description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Provider of the check related to the best practice.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::CheckProvider> {
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::CheckProvider> {
         self.provider.as_ref()
     }
     /// <p>Well-Architected Lens ARN associated to the check.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<&str> {
         self.question_id.as_deref()
     }
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(&self) -> std::option::Option<&str> {
+    pub fn choice_id(&self) -> ::std::option::Option<&str> {
         self.choice_id.as_deref()
     }
     /// <p>Status associated to the check.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CheckStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CheckStatus> {
         self.status.as_ref()
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Count of flagged resources associated to the check.</p>
@@ -92,11 +92,11 @@ impl CheckDetail {
         self.flagged_resources
     }
     /// <p>Reason associated to the check.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::CheckFailureReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::CheckFailureReason> {
         self.reason.as_ref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -109,157 +109,162 @@ impl CheckDetail {
 
 /// A builder for [`CheckDetail`](crate::types::CheckDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CheckDetailBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) provider: std::option::Option<crate::types::CheckProvider>,
-    pub(crate) lens_arn: std::option::Option<std::string::String>,
-    pub(crate) pillar_id: std::option::Option<std::string::String>,
-    pub(crate) question_id: std::option::Option<std::string::String>,
-    pub(crate) choice_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::CheckStatus>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) flagged_resources: std::option::Option<i32>,
-    pub(crate) reason: std::option::Option<crate::types::CheckFailureReason>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) provider: ::std::option::Option<crate::types::CheckProvider>,
+    pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
+    pub(crate) question_id: ::std::option::Option<::std::string::String>,
+    pub(crate) choice_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::CheckStatus>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) flagged_resources: ::std::option::Option<i32>,
+    pub(crate) reason: ::std::option::Option<crate::types::CheckFailureReason>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CheckDetailBuilder {
     /// <p>Trusted Advisor check ID.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Trusted Advisor check ID.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Trusted Advisor check name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Trusted Advisor check name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Trusted Advisor check description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Trusted Advisor check description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Provider of the check related to the best practice.</p>
     pub fn provider(mut self, input: crate::types::CheckProvider) -> Self {
-        self.provider = Some(input);
+        self.provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provider of the check related to the best practice.</p>
-    pub fn set_provider(mut self, input: std::option::Option<crate::types::CheckProvider>) -> Self {
+    pub fn set_provider(
+        mut self,
+        input: ::std::option::Option<crate::types::CheckProvider>,
+    ) -> Self {
         self.provider = input;
         self
     }
     /// <p>Well-Architected Lens ARN associated to the check.</p>
-    pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lens_arn = Some(input.into());
+    pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lens_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Well-Architected Lens ARN associated to the check.</p>
-    pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_arn = input;
         self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pillar_id = Some(input.into());
+    pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pillar_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_id = input;
         self
     }
     /// <p>The ID of the question.</p>
-    pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.question_id = Some(input.into());
+    pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.question_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the question.</p>
-    pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_id = input;
         self
     }
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.choice_id = Some(input.into());
+    pub fn choice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.choice_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a choice.</p>
-    pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_choice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.choice_id = input;
         self
     }
     /// <p>Status associated to the check.</p>
     pub fn status(mut self, input: crate::types::CheckStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status associated to the check.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CheckStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CheckStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>Count of flagged resources associated to the check.</p>
     pub fn flagged_resources(mut self, input: i32) -> Self {
-        self.flagged_resources = Some(input);
+        self.flagged_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>Count of flagged resources associated to the check.</p>
-    pub fn set_flagged_resources(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_flagged_resources(mut self, input: ::std::option::Option<i32>) -> Self {
         self.flagged_resources = input;
         self
     }
     /// <p>Reason associated to the check.</p>
     pub fn reason(mut self, input: crate::types::CheckFailureReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reason associated to the check.</p>
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::CheckFailureReason>,
+        input: ::std::option::Option<crate::types::CheckFailureReason>,
     ) -> Self {
         self.reason = input;
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time recorded.</p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self

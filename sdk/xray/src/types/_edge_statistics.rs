@@ -2,43 +2,43 @@
 
 /// <p>Response statistics for an edge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     #[doc(hidden)]
-    pub ok_count: std::option::Option<i64>,
+    pub ok_count: ::std::option::Option<i64>,
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
     #[doc(hidden)]
-    pub error_statistics: std::option::Option<crate::types::ErrorStatistics>,
+    pub error_statistics: ::std::option::Option<crate::types::ErrorStatistics>,
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
     #[doc(hidden)]
-    pub fault_statistics: std::option::Option<crate::types::FaultStatistics>,
+    pub fault_statistics: ::std::option::Option<crate::types::FaultStatistics>,
     /// <p>The total number of completed requests.</p>
     #[doc(hidden)]
-    pub total_count: std::option::Option<i64>,
+    pub total_count: ::std::option::Option<i64>,
     /// <p>The aggregate response time of completed requests.</p>
     #[doc(hidden)]
-    pub total_response_time: std::option::Option<f64>,
+    pub total_response_time: ::std::option::Option<f64>,
 }
 impl EdgeStatistics {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
-    pub fn ok_count(&self) -> std::option::Option<i64> {
+    pub fn ok_count(&self) -> ::std::option::Option<i64> {
         self.ok_count
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-    pub fn error_statistics(&self) -> std::option::Option<&crate::types::ErrorStatistics> {
+    pub fn error_statistics(&self) -> ::std::option::Option<&crate::types::ErrorStatistics> {
         self.error_statistics.as_ref()
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-    pub fn fault_statistics(&self) -> std::option::Option<&crate::types::FaultStatistics> {
+    pub fn fault_statistics(&self) -> ::std::option::Option<&crate::types::FaultStatistics> {
         self.fault_statistics.as_ref()
     }
     /// <p>The total number of completed requests.</p>
-    pub fn total_count(&self) -> std::option::Option<i64> {
+    pub fn total_count(&self) -> ::std::option::Option<i64> {
         self.total_count
     }
     /// <p>The aggregate response time of completed requests.</p>
-    pub fn total_response_time(&self) -> std::option::Option<f64> {
+    pub fn total_response_time(&self) -> ::std::option::Option<f64> {
         self.total_response_time
     }
 }
@@ -51,68 +51,70 @@ impl EdgeStatistics {
 
 /// A builder for [`EdgeStatistics`](crate::types::EdgeStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdgeStatisticsBuilder {
-    pub(crate) ok_count: std::option::Option<i64>,
-    pub(crate) error_statistics: std::option::Option<crate::types::ErrorStatistics>,
-    pub(crate) fault_statistics: std::option::Option<crate::types::FaultStatistics>,
-    pub(crate) total_count: std::option::Option<i64>,
-    pub(crate) total_response_time: std::option::Option<f64>,
+    pub(crate) ok_count: ::std::option::Option<i64>,
+    pub(crate) error_statistics: ::std::option::Option<crate::types::ErrorStatistics>,
+    pub(crate) fault_statistics: ::std::option::Option<crate::types::FaultStatistics>,
+    pub(crate) total_count: ::std::option::Option<i64>,
+    pub(crate) total_response_time: ::std::option::Option<f64>,
 }
 impl EdgeStatisticsBuilder {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     pub fn ok_count(mut self, input: i64) -> Self {
-        self.ok_count = Some(input);
+        self.ok_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
-    pub fn set_ok_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ok_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ok_count = input;
         self
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
     pub fn error_statistics(mut self, input: crate::types::ErrorStatistics) -> Self {
-        self.error_statistics = Some(input);
+        self.error_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
     pub fn set_error_statistics(
         mut self,
-        input: std::option::Option<crate::types::ErrorStatistics>,
+        input: ::std::option::Option<crate::types::ErrorStatistics>,
     ) -> Self {
         self.error_statistics = input;
         self
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
     pub fn fault_statistics(mut self, input: crate::types::FaultStatistics) -> Self {
-        self.fault_statistics = Some(input);
+        self.fault_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
     pub fn set_fault_statistics(
         mut self,
-        input: std::option::Option<crate::types::FaultStatistics>,
+        input: ::std::option::Option<crate::types::FaultStatistics>,
     ) -> Self {
         self.fault_statistics = input;
         self
     }
     /// <p>The total number of completed requests.</p>
     pub fn total_count(mut self, input: i64) -> Self {
-        self.total_count = Some(input);
+        self.total_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of completed requests.</p>
-    pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
     }
     /// <p>The aggregate response time of completed requests.</p>
     pub fn total_response_time(mut self, input: f64) -> Self {
-        self.total_response_time = Some(input);
+        self.total_response_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregate response time of completed requests.</p>
-    pub fn set_total_response_time(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_total_response_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_response_time = input;
         self
     }

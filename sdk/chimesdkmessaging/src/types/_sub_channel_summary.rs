@@ -2,22 +2,22 @@
 
 /// <p>Summary of the sub-channels associated with the elastic channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubChannelSummary {
     /// <p>The unique ID of a SubChannel.</p>
     #[doc(hidden)]
-    pub sub_channel_id: std::option::Option<std::string::String>,
+    pub sub_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of members in a SubChannel.</p>
     #[doc(hidden)]
-    pub membership_count: std::option::Option<i32>,
+    pub membership_count: ::std::option::Option<i32>,
 }
 impl SubChannelSummary {
     /// <p>The unique ID of a SubChannel.</p>
-    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+    pub fn sub_channel_id(&self) -> ::std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
     /// <p>The number of members in a SubChannel.</p>
-    pub fn membership_count(&self) -> std::option::Option<i32> {
+    pub fn membership_count(&self) -> ::std::option::Option<i32> {
         self.membership_count
     }
 }
@@ -30,29 +30,37 @@ impl SubChannelSummary {
 
 /// A builder for [`SubChannelSummary`](crate::types::SubChannelSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubChannelSummaryBuilder {
-    pub(crate) sub_channel_id: std::option::Option<std::string::String>,
-    pub(crate) membership_count: std::option::Option<i32>,
+    pub(crate) sub_channel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_count: ::std::option::Option<i32>,
 }
 impl SubChannelSummaryBuilder {
     /// <p>The unique ID of a SubChannel.</p>
-    pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sub_channel_id = Some(input.into());
+    pub fn sub_channel_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of a SubChannel.</p>
-    pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sub_channel_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sub_channel_id = input;
         self
     }
     /// <p>The number of members in a SubChannel.</p>
     pub fn membership_count(mut self, input: i32) -> Self {
-        self.membership_count = Some(input);
+        self.membership_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of members in a SubChannel.</p>
-    pub fn set_membership_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_membership_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.membership_count = input;
         self
     }

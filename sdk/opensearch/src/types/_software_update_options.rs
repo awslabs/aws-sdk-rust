@@ -2,15 +2,15 @@
 
 /// <p>Options for configuring service software updates for a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SoftwareUpdateOptions {
     /// <p>Whether automatic service software updates are enabled for the domain.</p>
     #[doc(hidden)]
-    pub auto_software_update_enabled: std::option::Option<bool>,
+    pub auto_software_update_enabled: ::std::option::Option<bool>,
 }
 impl SoftwareUpdateOptions {
     /// <p>Whether automatic service software updates are enabled for the domain.</p>
-    pub fn auto_software_update_enabled(&self) -> std::option::Option<bool> {
+    pub fn auto_software_update_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_software_update_enabled
     }
 }
@@ -23,18 +23,20 @@ impl SoftwareUpdateOptions {
 
 /// A builder for [`SoftwareUpdateOptions`](crate::types::SoftwareUpdateOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SoftwareUpdateOptionsBuilder {
-    pub(crate) auto_software_update_enabled: std::option::Option<bool>,
+    pub(crate) auto_software_update_enabled: ::std::option::Option<bool>,
 }
 impl SoftwareUpdateOptionsBuilder {
     /// <p>Whether automatic service software updates are enabled for the domain.</p>
     pub fn auto_software_update_enabled(mut self, input: bool) -> Self {
-        self.auto_software_update_enabled = Some(input);
+        self.auto_software_update_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether automatic service software updates are enabled for the domain.</p>
-    pub fn set_auto_software_update_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_software_update_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_software_update_enabled = input;
         self
     }

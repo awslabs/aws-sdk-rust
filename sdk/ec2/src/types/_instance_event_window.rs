@@ -2,61 +2,63 @@
 
 /// <p>The event window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindow {
     /// <p>The ID of the event window.</p>
     #[doc(hidden)]
-    pub instance_event_window_id: std::option::Option<std::string::String>,
+    pub instance_event_window_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more time ranges defined for the event window.</p>
     #[doc(hidden)]
-    pub time_ranges: std::option::Option<std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
+    pub time_ranges:
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
     /// <p>The name of the event window.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The cron expression defined for the event window.</p>
     #[doc(hidden)]
-    pub cron_expression: std::option::Option<std::string::String>,
+    pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>One or more targets associated with the event window.</p>
     #[doc(hidden)]
-    pub association_target: std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
+    pub association_target:
+        ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
     /// <p>The current state of the event window.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::InstanceEventWindowState>,
+    pub state: ::std::option::Option<crate::types::InstanceEventWindowState>,
     /// <p>The instance tags associated with the event window.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceEventWindow {
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(&self) -> std::option::Option<&str> {
+    pub fn instance_event_window_id(&self) -> ::std::option::Option<&str> {
         self.instance_event_window_id.as_deref()
     }
     /// <p>One or more time ranges defined for the event window.</p>
     pub fn time_ranges(
         &self,
-    ) -> std::option::Option<&[crate::types::InstanceEventWindowTimeRange]> {
+    ) -> ::std::option::Option<&[crate::types::InstanceEventWindowTimeRange]> {
         self.time_ranges.as_deref()
     }
     /// <p>The name of the event window.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The cron expression defined for the event window.</p>
-    pub fn cron_expression(&self) -> std::option::Option<&str> {
+    pub fn cron_expression(&self) -> ::std::option::Option<&str> {
         self.cron_expression.as_deref()
     }
     /// <p>One or more targets associated with the event window.</p>
     pub fn association_target(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceEventWindowAssociationTarget> {
+    ) -> ::std::option::Option<&crate::types::InstanceEventWindowAssociationTarget> {
         self.association_target.as_ref()
     }
     /// <p>The current state of the event window.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::InstanceEventWindowState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceEventWindowState> {
         self.state.as_ref()
     }
     /// <p>The instance tags associated with the event window.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -69,28 +71,33 @@ impl InstanceEventWindow {
 
 /// A builder for [`InstanceEventWindow`](crate::types::InstanceEventWindow).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceEventWindowBuilder {
-    pub(crate) instance_event_window_id: std::option::Option<std::string::String>,
+    pub(crate) instance_event_window_id: ::std::option::Option<::std::string::String>,
     pub(crate) time_ranges:
-        std::option::Option<std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) cron_expression: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) cron_expression: ::std::option::Option<::std::string::String>,
     pub(crate) association_target:
-        std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
-    pub(crate) state: std::option::Option<crate::types::InstanceEventWindowState>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
+    pub(crate) state: ::std::option::Option<crate::types::InstanceEventWindowState>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceEventWindowBuilder {
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_event_window_id = Some(input.into());
+    pub fn instance_event_window_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_event_window_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the event window.</p>
     pub fn set_instance_event_window_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_event_window_id = input;
         self
@@ -103,34 +110,40 @@ impl InstanceEventWindowBuilder {
     pub fn time_ranges(mut self, input: crate::types::InstanceEventWindowTimeRange) -> Self {
         let mut v = self.time_ranges.unwrap_or_default();
         v.push(input);
-        self.time_ranges = Some(v);
+        self.time_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more time ranges defined for the event window.</p>
     pub fn set_time_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceEventWindowTimeRange>>,
     ) -> Self {
         self.time_ranges = input;
         self
     }
     /// <p>The name of the event window.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event window.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The cron expression defined for the event window.</p>
-    pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cron_expression = Some(input.into());
+    pub fn cron_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cron_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cron expression defined for the event window.</p>
-    pub fn set_cron_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cron_expression(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cron_expression = input;
         self
     }
@@ -139,26 +152,26 @@ impl InstanceEventWindowBuilder {
         mut self,
         input: crate::types::InstanceEventWindowAssociationTarget,
     ) -> Self {
-        self.association_target = Some(input);
+        self.association_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>One or more targets associated with the event window.</p>
     pub fn set_association_target(
         mut self,
-        input: std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
+        input: ::std::option::Option<crate::types::InstanceEventWindowAssociationTarget>,
     ) -> Self {
         self.association_target = input;
         self
     }
     /// <p>The current state of the event window.</p>
     pub fn state(mut self, input: crate::types::InstanceEventWindowState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the event window.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::InstanceEventWindowState>,
+        input: ::std::option::Option<crate::types::InstanceEventWindowState>,
     ) -> Self {
         self.state = input;
         self
@@ -171,13 +184,13 @@ impl InstanceEventWindowBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The instance tags associated with the event window.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

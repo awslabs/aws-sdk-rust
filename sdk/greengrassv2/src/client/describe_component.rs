@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeComponent`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_component::builders::DescribeComponentFluentBuilder::set_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     /// - On success, responds with [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_component::DescribeComponentOutput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     ///   - [`component_name(Option<String>)`](crate::operation::describe_component::DescribeComponentOutput::component_name): <p>The name of the component.</p>

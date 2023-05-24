@@ -2,26 +2,26 @@
 
 /// <p>Details about an Network Firewall firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallDetails {
     /// <p>Whether the firewall is protected from deletion. If set to <code>true</code>, then the firewall cannot be deleted.</p>
     #[doc(hidden)]
     pub delete_protection: bool,
     /// <p>A description of the firewall.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the firewall.</p>
     #[doc(hidden)]
-    pub firewall_arn: std::option::Option<std::string::String>,
+    pub firewall_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the firewall.</p>
     #[doc(hidden)]
-    pub firewall_id: std::option::Option<std::string::String>,
+    pub firewall_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name of the firewall.</p>
     #[doc(hidden)]
-    pub firewall_name: std::option::Option<std::string::String>,
+    pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the firewall policy.</p>
     #[doc(hidden)]
-    pub firewall_policy_arn: std::option::Option<std::string::String>,
+    pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the firewall is protected from a change to the firewall policy. If set to <code>true</code>, you cannot associate a different policy with the firewall.</p>
     #[doc(hidden)]
     pub firewall_policy_change_protection: bool,
@@ -30,12 +30,12 @@ pub struct AwsNetworkFirewallFirewallDetails {
     pub subnet_change_protection: bool,
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
     #[doc(hidden)]
-    pub subnet_mappings: std::option::Option<
-        std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
+    pub subnet_mappings: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
     >,
     /// <p>The identifier of the VPC where the firewall is used.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallFirewallDetails {
     /// <p>Whether the firewall is protected from deletion. If set to <code>true</code>, then the firewall cannot be deleted.</p>
@@ -43,23 +43,23 @@ impl AwsNetworkFirewallFirewallDetails {
         self.delete_protection
     }
     /// <p>A description of the firewall.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the firewall.</p>
-    pub fn firewall_arn(&self) -> std::option::Option<&str> {
+    pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
     /// <p>The identifier of the firewall.</p>
-    pub fn firewall_id(&self) -> std::option::Option<&str> {
+    pub fn firewall_id(&self) -> ::std::option::Option<&str> {
         self.firewall_id.as_deref()
     }
     /// <p>A descriptive name of the firewall.</p>
-    pub fn firewall_name(&self) -> std::option::Option<&str> {
+    pub fn firewall_name(&self) -> ::std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>The ARN of the firewall policy.</p>
-    pub fn firewall_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
     /// <p>Whether the firewall is protected from a change to the firewall policy. If set to <code>true</code>, you cannot associate a different policy with the firewall.</p>
@@ -73,11 +73,12 @@ impl AwsNetworkFirewallFirewallDetails {
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
     pub fn subnet_mappings(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails]> {
+    ) -> ::std::option::Option<&[crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails]>
+    {
         self.subnet_mappings.as_deref()
     }
     /// <p>The identifier of the VPC where the firewall is used.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
@@ -90,105 +91,116 @@ impl AwsNetworkFirewallFirewallDetails {
 
 /// A builder for [`AwsNetworkFirewallFirewallDetails`](crate::types::AwsNetworkFirewallFirewallDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsNetworkFirewallFirewallDetailsBuilder {
-    pub(crate) delete_protection: std::option::Option<bool>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) firewall_arn: std::option::Option<std::string::String>,
-    pub(crate) firewall_id: std::option::Option<std::string::String>,
-    pub(crate) firewall_name: std::option::Option<std::string::String>,
-    pub(crate) firewall_policy_arn: std::option::Option<std::string::String>,
-    pub(crate) firewall_policy_change_protection: std::option::Option<bool>,
-    pub(crate) subnet_change_protection: std::option::Option<bool>,
-    pub(crate) subnet_mappings: std::option::Option<
-        std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
+    pub(crate) delete_protection: ::std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_id: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_policy_change_protection: ::std::option::Option<bool>,
+    pub(crate) subnet_change_protection: ::std::option::Option<bool>,
+    pub(crate) subnet_mappings: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
     >,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallFirewallDetailsBuilder {
     /// <p>Whether the firewall is protected from deletion. If set to <code>true</code>, then the firewall cannot be deleted.</p>
     pub fn delete_protection(mut self, input: bool) -> Self {
-        self.delete_protection = Some(input);
+        self.delete_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the firewall is protected from deletion. If set to <code>true</code>, then the firewall cannot be deleted.</p>
-    pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_protection = input;
         self
     }
     /// <p>A description of the firewall.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the firewall.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The ARN of the firewall.</p>
-    pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.firewall_arn = Some(input.into());
+    pub fn firewall_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.firewall_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the firewall.</p>
-    pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_firewall_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_arn = input;
         self
     }
     /// <p>The identifier of the firewall.</p>
-    pub fn firewall_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.firewall_id = Some(input.into());
+    pub fn firewall_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.firewall_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the firewall.</p>
-    pub fn set_firewall_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_firewall_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.firewall_id = input;
         self
     }
     /// <p>A descriptive name of the firewall.</p>
-    pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.firewall_name = Some(input.into());
+    pub fn firewall_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.firewall_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A descriptive name of the firewall.</p>
-    pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_firewall_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.firewall_name = input;
         self
     }
     /// <p>The ARN of the firewall policy.</p>
-    pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.firewall_policy_arn = Some(input.into());
+    pub fn firewall_policy_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.firewall_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the firewall policy.</p>
     pub fn set_firewall_policy_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.firewall_policy_arn = input;
         self
     }
     /// <p>Whether the firewall is protected from a change to the firewall policy. If set to <code>true</code>, you cannot associate a different policy with the firewall.</p>
     pub fn firewall_policy_change_protection(mut self, input: bool) -> Self {
-        self.firewall_policy_change_protection = Some(input);
+        self.firewall_policy_change_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the firewall is protected from a change to the firewall policy. If set to <code>true</code>, you cannot associate a different policy with the firewall.</p>
     pub fn set_firewall_policy_change_protection(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.firewall_policy_change_protection = input;
         self
     }
     /// <p>Whether the firewall is protected from a change to the subnet associations. If set to <code>true</code>, you cannot map different subnets to the firewall.</p>
     pub fn subnet_change_protection(mut self, input: bool) -> Self {
-        self.subnet_change_protection = Some(input);
+        self.subnet_change_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the firewall is protected from a change to the subnet associations. If set to <code>true</code>, you cannot map different subnets to the firewall.</p>
-    pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_subnet_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.subnet_change_protection = input;
         self
     }
@@ -203,26 +215,26 @@ impl AwsNetworkFirewallFirewallDetailsBuilder {
     ) -> Self {
         let mut v = self.subnet_mappings.unwrap_or_default();
         v.push(input);
-        self.subnet_mappings = Some(v);
+        self.subnet_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The public subnets that Network Firewall uses for the firewall. Each subnet must belong to a different Availability Zone.</p>
     pub fn set_subnet_mappings(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails>,
         >,
     ) -> Self {
         self.subnet_mappings = input;
         self
     }
     /// <p>The identifier of the VPC where the firewall is used.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the VPC where the firewall is used.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }

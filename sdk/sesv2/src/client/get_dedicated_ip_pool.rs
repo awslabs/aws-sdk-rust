@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDedicatedIpPool`](crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pool_name(impl Into<String>)`](crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder::pool_name) / [`set_pool_name(Option<String>)`](crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder::set_pool_name): <p>The name of the dedicated IP pool to retrieve.</p>
+    ///   - [`pool_name(impl ::std::convert::Into<String>)`](crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder::pool_name) / [`set_pool_name(Option<String>)`](crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolFluentBuilder::set_pool_name): <p>The name of the dedicated IP pool to retrieve.</p>
     /// - On success, responds with [`GetDedicatedIpPoolOutput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolOutput) with field(s):
     ///   - [`dedicated_ip_pool(Option<DedicatedIpPool>)`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolOutput::dedicated_ip_pool): <p>An object that contains information about a dedicated IP pool.</p>
     /// - On failure, responds with [`SdkError<GetDedicatedIpPoolError>`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolError)

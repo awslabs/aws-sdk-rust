@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SnapshotStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum SnapshotStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SnapshotStatus {
+impl ::std::convert::From<&str> for SnapshotStatus {
     fn from(s: &str) -> Self {
         match s {
             "CREATING" => SnapshotStatus::Creating,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for SnapshotStatus {
         }
     }
 }
-impl std::str::FromStr for SnapshotStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SnapshotStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnapshotStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SnapshotStatus::from(s))
     }
 }
 impl SnapshotStatus {
@@ -96,7 +96,7 @@ impl SnapshotStatus {
         &["CREATING", "DELETING", "FAILED", "READY"]
     }
 }
-impl AsRef<str> for SnapshotStatus {
+impl ::std::convert::AsRef<str> for SnapshotStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

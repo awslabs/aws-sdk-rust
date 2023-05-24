@@ -9,29 +9,29 @@ pub use crate::operation::detect_moderation_labels::_detect_moderation_labels_in
 /// <p>To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of content are appropriate.</p>
 /// <p>For information about moderation labels, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p>
 /// <p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectModerationLabelsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder,
 }
 impl DetectModerationLabelsFluentBuilder {
     /// Creates a new `DetectModerationLabels`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::detect_moderation_labels::DetectModerationLabels,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::detect_moderation_labels::DetectModerationLabelsError,
         >,
     > {
@@ -39,30 +39,33 @@ impl DetectModerationLabelsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::detect_moderation_labels::DetectModerationLabelsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::detect_moderation_labels::DetectModerationLabelsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl DetectModerationLabelsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::detect_moderation_labels::DetectModerationLabelsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::detect_moderation_labels::DetectModerationLabelsError,
         >,
     > {
@@ -91,7 +94,7 @@ impl DetectModerationLabelsFluentBuilder {
     }
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    pub fn set_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_image(input);
         self
     }
@@ -103,7 +106,7 @@ impl DetectModerationLabelsFluentBuilder {
     }
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
-    pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_min_confidence(input);
         self
     }
@@ -115,7 +118,7 @@ impl DetectModerationLabelsFluentBuilder {
     /// <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
     pub fn set_human_loop_config(
         mut self,
-        input: std::option::Option<crate::types::HumanLoopConfig>,
+        input: ::std::option::Option<crate::types::HumanLoopConfig>,
     ) -> Self {
         self.inner = self.inner.set_human_loop_config(input);
         self

@@ -2,22 +2,22 @@
 
 /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformProcessingConfig {
     /// <p>The compute location for the given transform property. </p>
     #[doc(hidden)]
-    pub compute_location: std::option::Option<crate::types::ComputeLocation>,
+    pub compute_location: ::std::option::Option<crate::types::ComputeLocation>,
     /// <p>The forwarding configuration for a given property.</p>
     #[doc(hidden)]
-    pub forwarding_config: std::option::Option<crate::types::ForwardingConfig>,
+    pub forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
 impl TransformProcessingConfig {
     /// <p>The compute location for the given transform property. </p>
-    pub fn compute_location(&self) -> std::option::Option<&crate::types::ComputeLocation> {
+    pub fn compute_location(&self) -> ::std::option::Option<&crate::types::ComputeLocation> {
         self.compute_location.as_ref()
     }
     /// <p>The forwarding configuration for a given property.</p>
-    pub fn forwarding_config(&self) -> std::option::Option<&crate::types::ForwardingConfig> {
+    pub fn forwarding_config(&self) -> ::std::option::Option<&crate::types::ForwardingConfig> {
         self.forwarding_config.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl TransformProcessingConfig {
 
 /// A builder for [`TransformProcessingConfig`](crate::types::TransformProcessingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransformProcessingConfigBuilder {
-    pub(crate) compute_location: std::option::Option<crate::types::ComputeLocation>,
-    pub(crate) forwarding_config: std::option::Option<crate::types::ForwardingConfig>,
+    pub(crate) compute_location: ::std::option::Option<crate::types::ComputeLocation>,
+    pub(crate) forwarding_config: ::std::option::Option<crate::types::ForwardingConfig>,
 }
 impl TransformProcessingConfigBuilder {
     /// <p>The compute location for the given transform property. </p>
     pub fn compute_location(mut self, input: crate::types::ComputeLocation) -> Self {
-        self.compute_location = Some(input);
+        self.compute_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The compute location for the given transform property. </p>
     pub fn set_compute_location(
         mut self,
-        input: std::option::Option<crate::types::ComputeLocation>,
+        input: ::std::option::Option<crate::types::ComputeLocation>,
     ) -> Self {
         self.compute_location = input;
         self
     }
     /// <p>The forwarding configuration for a given property.</p>
     pub fn forwarding_config(mut self, input: crate::types::ForwardingConfig) -> Self {
-        self.forwarding_config = Some(input);
+        self.forwarding_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The forwarding configuration for a given property.</p>
     pub fn set_forwarding_config(
         mut self,
-        input: std::option::Option<crate::types::ForwardingConfig>,
+        input: ::std::option::Option<crate::types::ForwardingConfig>,
     ) -> Self {
         self.forwarding_config = input;
         self

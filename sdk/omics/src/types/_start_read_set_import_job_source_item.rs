@@ -2,75 +2,77 @@
 
 /// <p>A source for a read set import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReadSetImportJobSourceItem {
     /// <p>The source files' location in Amazon S3.</p>
     #[doc(hidden)]
-    pub source_files: std::option::Option<crate::types::SourceFiles>,
+    pub source_files: ::std::option::Option<crate::types::SourceFiles>,
     /// <p>The source's file type.</p>
     #[doc(hidden)]
-    pub source_file_type: std::option::Option<crate::types::FileType>,
+    pub source_file_type: ::std::option::Option<crate::types::FileType>,
     /// <p>The source's subject ID.</p>
     #[doc(hidden)]
-    pub subject_id: std::option::Option<std::string::String>,
+    pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p>The source's sample ID.</p>
     #[doc(hidden)]
-    pub sample_id: std::option::Option<std::string::String>,
+    pub sample_id: ::std::option::Option<::std::string::String>,
     /// <p>Where the source originated.</p>
     #[doc(hidden)]
-    pub generated_from: std::option::Option<std::string::String>,
+    pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p>The source's reference ARN.</p>
     #[doc(hidden)]
-    pub reference_arn: std::option::Option<std::string::String>,
+    pub reference_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The source's description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The source's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl StartReadSetImportJobSourceItem {
     /// <p>The source files' location in Amazon S3.</p>
-    pub fn source_files(&self) -> std::option::Option<&crate::types::SourceFiles> {
+    pub fn source_files(&self) -> ::std::option::Option<&crate::types::SourceFiles> {
         self.source_files.as_ref()
     }
     /// <p>The source's file type.</p>
-    pub fn source_file_type(&self) -> std::option::Option<&crate::types::FileType> {
+    pub fn source_file_type(&self) -> ::std::option::Option<&crate::types::FileType> {
         self.source_file_type.as_ref()
     }
     /// <p>The source's subject ID.</p>
-    pub fn subject_id(&self) -> std::option::Option<&str> {
+    pub fn subject_id(&self) -> ::std::option::Option<&str> {
         self.subject_id.as_deref()
     }
     /// <p>The source's sample ID.</p>
-    pub fn sample_id(&self) -> std::option::Option<&str> {
+    pub fn sample_id(&self) -> ::std::option::Option<&str> {
         self.sample_id.as_deref()
     }
     /// <p>Where the source originated.</p>
-    pub fn generated_from(&self) -> std::option::Option<&str> {
+    pub fn generated_from(&self) -> ::std::option::Option<&str> {
         self.generated_from.as_deref()
     }
     /// <p>The source's reference ARN.</p>
-    pub fn reference_arn(&self) -> std::option::Option<&str> {
+    pub fn reference_arn(&self) -> ::std::option::Option<&str> {
         self.reference_arn.as_deref()
     }
     /// <p>The source's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The source's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The source's tags.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -83,103 +85,118 @@ impl StartReadSetImportJobSourceItem {
 
 /// A builder for [`StartReadSetImportJobSourceItem`](crate::types::StartReadSetImportJobSourceItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartReadSetImportJobSourceItemBuilder {
-    pub(crate) source_files: std::option::Option<crate::types::SourceFiles>,
-    pub(crate) source_file_type: std::option::Option<crate::types::FileType>,
-    pub(crate) subject_id: std::option::Option<std::string::String>,
-    pub(crate) sample_id: std::option::Option<std::string::String>,
-    pub(crate) generated_from: std::option::Option<std::string::String>,
-    pub(crate) reference_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) source_files: ::std::option::Option<crate::types::SourceFiles>,
+    pub(crate) source_file_type: ::std::option::Option<crate::types::FileType>,
+    pub(crate) subject_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sample_id: ::std::option::Option<::std::string::String>,
+    pub(crate) generated_from: ::std::option::Option<::std::string::String>,
+    pub(crate) reference_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl StartReadSetImportJobSourceItemBuilder {
     /// <p>The source files' location in Amazon S3.</p>
     pub fn source_files(mut self, input: crate::types::SourceFiles) -> Self {
-        self.source_files = Some(input);
+        self.source_files = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source files' location in Amazon S3.</p>
     pub fn set_source_files(
         mut self,
-        input: std::option::Option<crate::types::SourceFiles>,
+        input: ::std::option::Option<crate::types::SourceFiles>,
     ) -> Self {
         self.source_files = input;
         self
     }
     /// <p>The source's file type.</p>
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
-        self.source_file_type = Some(input);
+        self.source_file_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source's file type.</p>
     pub fn set_source_file_type(
         mut self,
-        input: std::option::Option<crate::types::FileType>,
+        input: ::std::option::Option<crate::types::FileType>,
     ) -> Self {
         self.source_file_type = input;
         self
     }
     /// <p>The source's subject ID.</p>
-    pub fn subject_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subject_id = Some(input.into());
+    pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subject_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's subject ID.</p>
-    pub fn set_subject_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_id = input;
         self
     }
     /// <p>The source's sample ID.</p>
-    pub fn sample_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sample_id = Some(input.into());
+    pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sample_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's sample ID.</p>
-    pub fn set_sample_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_id = input;
         self
     }
     /// <p>Where the source originated.</p>
-    pub fn generated_from(mut self, input: impl Into<std::string::String>) -> Self {
-        self.generated_from = Some(input.into());
+    pub fn generated_from(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.generated_from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Where the source originated.</p>
-    pub fn set_generated_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_generated_from(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.generated_from = input;
         self
     }
     /// <p>The source's reference ARN.</p>
-    pub fn reference_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reference_arn = Some(input.into());
+    pub fn reference_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reference_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's reference ARN.</p>
-    pub fn set_reference_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reference_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.reference_arn = input;
         self
     }
     /// <p>The source's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The source's description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -190,19 +207,19 @@ impl StartReadSetImportJobSourceItemBuilder {
     /// <p>The source's tags.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The source's tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

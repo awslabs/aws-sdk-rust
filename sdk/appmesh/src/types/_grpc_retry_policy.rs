@@ -2,14 +2,14 @@
 
 /// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
     #[doc(hidden)]
-    pub per_retry_timeout: std::option::Option<crate::types::Duration>,
+    pub per_retry_timeout: ::std::option::Option<crate::types::Duration>,
     /// <p>The maximum number of retry attempts.</p>
     #[doc(hidden)]
-    pub max_retries: std::option::Option<i64>,
+    pub max_retries: ::std::option::Option<i64>,
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
     /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
@@ -18,21 +18,22 @@ pub struct GrpcRetryPolicy {
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub http_retry_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
     #[doc(hidden)]
-    pub tcp_retry_events: std::option::Option<std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
+    pub tcp_retry_events: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
     /// <p>Specify at least one of the valid values.</p>
     #[doc(hidden)]
-    pub grpc_retry_events: std::option::Option<std::vec::Vec<crate::types::GrpcRetryPolicyEvent>>,
+    pub grpc_retry_events:
+        ::std::option::Option<::std::vec::Vec<crate::types::GrpcRetryPolicyEvent>>,
 }
 impl GrpcRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
-    pub fn per_retry_timeout(&self) -> std::option::Option<&crate::types::Duration> {
+    pub fn per_retry_timeout(&self) -> ::std::option::Option<&crate::types::Duration> {
         self.per_retry_timeout.as_ref()
     }
     /// <p>The maximum number of retry attempts.</p>
-    pub fn max_retries(&self) -> std::option::Option<i64> {
+    pub fn max_retries(&self) -> ::std::option::Option<i64> {
         self.max_retries
     }
     /// <p>Specify at least one of the following values.</p>
@@ -42,15 +43,17 @@ impl GrpcRetryPolicy {
     /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
-    pub fn http_retry_events(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn http_retry_events(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.http_retry_events.as_deref()
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    pub fn tcp_retry_events(&self) -> std::option::Option<&[crate::types::TcpRetryPolicyEvent]> {
+    pub fn tcp_retry_events(&self) -> ::std::option::Option<&[crate::types::TcpRetryPolicyEvent]> {
         self.tcp_retry_events.as_deref()
     }
     /// <p>Specify at least one of the valid values.</p>
-    pub fn grpc_retry_events(&self) -> std::option::Option<&[crate::types::GrpcRetryPolicyEvent]> {
+    pub fn grpc_retry_events(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::GrpcRetryPolicyEvent]> {
         self.grpc_retry_events.as_deref()
     }
 }
@@ -63,37 +66,39 @@ impl GrpcRetryPolicy {
 
 /// A builder for [`GrpcRetryPolicy`](crate::types::GrpcRetryPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GrpcRetryPolicyBuilder {
-    pub(crate) per_retry_timeout: std::option::Option<crate::types::Duration>,
-    pub(crate) max_retries: std::option::Option<i64>,
-    pub(crate) http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) per_retry_timeout: ::std::option::Option<crate::types::Duration>,
+    pub(crate) max_retries: ::std::option::Option<i64>,
+    pub(crate) http_retry_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tcp_retry_events:
-        std::option::Option<std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
     pub(crate) grpc_retry_events:
-        std::option::Option<std::vec::Vec<crate::types::GrpcRetryPolicyEvent>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GrpcRetryPolicyEvent>>,
 }
 impl GrpcRetryPolicyBuilder {
     /// <p>The timeout for each retry attempt.</p>
     pub fn per_retry_timeout(mut self, input: crate::types::Duration) -> Self {
-        self.per_retry_timeout = Some(input);
+        self.per_retry_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timeout for each retry attempt.</p>
     pub fn set_per_retry_timeout(
         mut self,
-        input: std::option::Option<crate::types::Duration>,
+        input: ::std::option::Option<crate::types::Duration>,
     ) -> Self {
         self.per_retry_timeout = input;
         self
     }
     /// <p>The maximum number of retry attempts.</p>
     pub fn max_retries(mut self, input: i64) -> Self {
-        self.max_retries = Some(input);
+        self.max_retries = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of retry attempts.</p>
-    pub fn set_max_retries(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_max_retries(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_retries = input;
         self
     }
@@ -108,10 +113,13 @@ impl GrpcRetryPolicyBuilder {
     /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
     /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
     /// </ul>
-    pub fn http_retry_events(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn http_retry_events(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.http_retry_events.unwrap_or_default();
         v.push(input.into());
-        self.http_retry_events = Some(v);
+        self.http_retry_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify at least one of the following values.</p>
@@ -123,7 +131,7 @@ impl GrpcRetryPolicyBuilder {
     /// </ul>
     pub fn set_http_retry_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.http_retry_events = input;
         self
@@ -136,13 +144,13 @@ impl GrpcRetryPolicyBuilder {
     pub fn tcp_retry_events(mut self, input: crate::types::TcpRetryPolicyEvent) -> Self {
         let mut v = self.tcp_retry_events.unwrap_or_default();
         v.push(input);
-        self.tcp_retry_events = Some(v);
+        self.tcp_retry_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
     pub fn set_tcp_retry_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TcpRetryPolicyEvent>>,
     ) -> Self {
         self.tcp_retry_events = input;
         self
@@ -155,13 +163,13 @@ impl GrpcRetryPolicyBuilder {
     pub fn grpc_retry_events(mut self, input: crate::types::GrpcRetryPolicyEvent) -> Self {
         let mut v = self.grpc_retry_events.unwrap_or_default();
         v.push(input);
-        self.grpc_retry_events = Some(v);
+        self.grpc_retry_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify at least one of the valid values.</p>
     pub fn set_grpc_retry_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GrpcRetryPolicyEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GrpcRetryPolicyEvent>>,
     ) -> Self {
         self.grpc_retry_events = input;
         self

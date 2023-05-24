@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ViolationEventType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ViolationEventType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ViolationEventType {
+impl ::std::convert::From<&str> for ViolationEventType {
     fn from(s: &str) -> Self {
         match s {
             "alarm-cleared" => ViolationEventType::AlarmCleared,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ViolationEventType {
         }
     }
 }
-impl std::str::FromStr for ViolationEventType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ViolationEventType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ViolationEventType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ViolationEventType::from(s))
     }
 }
 impl ViolationEventType {
@@ -91,7 +91,7 @@ impl ViolationEventType {
         &["alarm-cleared", "alarm-invalidated", "in-alarm"]
     }
 }
-impl AsRef<str> for ViolationEventType {
+impl ::std::convert::AsRef<str> for ViolationEventType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateDatalakeDelegatedAdmin`](crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account(impl Into<String>)`](crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminFluentBuilder::set_account): <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
+    ///   - [`account(impl ::std::convert::Into<String>)`](crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminFluentBuilder::set_account): <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
     /// - On success, responds with [`CreateDatalakeDelegatedAdminOutput`](crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminOutput)
     /// - On failure, responds with [`SdkError<CreateDatalakeDelegatedAdminError>`](crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminError)
     pub fn create_datalake_delegated_admin(&self) -> crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminFluentBuilder{

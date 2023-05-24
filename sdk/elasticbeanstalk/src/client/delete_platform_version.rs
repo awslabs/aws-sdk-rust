@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePlatformVersion`](crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`platform_arn(impl Into<String>)`](crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder::platform_arn) / [`set_platform_arn(Option<String>)`](crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder::set_platform_arn): <p>The ARN of the version of the custom platform.</p>
+    ///   - [`platform_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder::platform_arn) / [`set_platform_arn(Option<String>)`](crate::operation::delete_platform_version::builders::DeletePlatformVersionFluentBuilder::set_platform_arn): <p>The ARN of the version of the custom platform.</p>
     /// - On success, responds with [`DeletePlatformVersionOutput`](crate::operation::delete_platform_version::DeletePlatformVersionOutput) with field(s):
     ///   - [`platform_summary(Option<PlatformSummary>)`](crate::operation::delete_platform_version::DeletePlatformVersionOutput::platform_summary): <p>Detailed information about the version of the custom platform.</p>
     /// - On failure, responds with [`SdkError<DeletePlatformVersionError>`](crate::operation::delete_platform_version::DeletePlatformVersionError)

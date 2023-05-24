@@ -2,22 +2,22 @@
 
 /// <p>Describes the processor parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessorParameter {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
     #[doc(hidden)]
-    pub parameter_name: std::option::Option<crate::types::ProcessorParameterName>,
+    pub parameter_name: ::std::option::Option<crate::types::ProcessorParameterName>,
     /// <p>The parameter value.</p>
     #[doc(hidden)]
-    pub parameter_value: std::option::Option<std::string::String>,
+    pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ProcessorParameter {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
-    pub fn parameter_name(&self) -> std::option::Option<&crate::types::ProcessorParameterName> {
+    pub fn parameter_name(&self) -> ::std::option::Option<&crate::types::ProcessorParameterName> {
         self.parameter_name.as_ref()
     }
     /// <p>The parameter value.</p>
-    pub fn parameter_value(&self) -> std::option::Option<&str> {
+    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl ProcessorParameter {
 
 /// A builder for [`ProcessorParameter`](crate::types::ProcessorParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProcessorParameterBuilder {
-    pub(crate) parameter_name: std::option::Option<crate::types::ProcessorParameterName>,
-    pub(crate) parameter_value: std::option::Option<std::string::String>,
+    pub(crate) parameter_name: ::std::option::Option<crate::types::ProcessorParameterName>,
+    pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ProcessorParameterBuilder {
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
     pub fn parameter_name(mut self, input: crate::types::ProcessorParameterName) -> Self {
-        self.parameter_name = Some(input);
+        self.parameter_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the parameter. Currently the following default values are supported: 3 for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB. </p>
     pub fn set_parameter_name(
         mut self,
-        input: std::option::Option<crate::types::ProcessorParameterName>,
+        input: ::std::option::Option<crate::types::ProcessorParameterName>,
     ) -> Self {
         self.parameter_name = input;
         self
     }
     /// <p>The parameter value.</p>
-    pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_value = Some(input.into());
+    pub fn parameter_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter value.</p>
-    pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_value = input;
         self
     }

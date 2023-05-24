@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ProjectionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ProjectionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ProjectionType {
+impl ::std::convert::From<&str> for ProjectionType {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => ProjectionType::All,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ProjectionType {
         }
     }
 }
-impl std::str::FromStr for ProjectionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ProjectionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProjectionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ProjectionType::from(s))
     }
 }
 impl ProjectionType {
@@ -91,7 +91,7 @@ impl ProjectionType {
         &["ALL", "INCLUDE", "KEYS_ONLY"]
     }
 }
-impl AsRef<str> for ProjectionType {
+impl ::std::convert::AsRef<str> for ProjectionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

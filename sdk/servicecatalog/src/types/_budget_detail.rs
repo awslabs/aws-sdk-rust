@@ -2,15 +2,15 @@
 
 /// <p>Information about a budget.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BudgetDetail {
     /// <p>Name of the associated budget.</p>
     #[doc(hidden)]
-    pub budget_name: std::option::Option<std::string::String>,
+    pub budget_name: ::std::option::Option<::std::string::String>,
 }
 impl BudgetDetail {
     /// <p>Name of the associated budget.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl BudgetDetail {
 
 /// A builder for [`BudgetDetail`](crate::types::BudgetDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BudgetDetailBuilder {
-    pub(crate) budget_name: std::option::Option<std::string::String>,
+    pub(crate) budget_name: ::std::option::Option<::std::string::String>,
 }
 impl BudgetDetailBuilder {
     /// <p>Name of the associated budget.</p>
-    pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.budget_name = Some(input.into());
+    pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the associated budget.</p>
-    pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }

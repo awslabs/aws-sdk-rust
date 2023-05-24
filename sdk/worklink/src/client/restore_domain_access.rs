@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RestoreDomainAccess`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::set_domain_name): <p>The name of the domain.</p>
+    ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::restore_domain_access::builders::RestoreDomainAccessFluentBuilder::set_domain_name): <p>The name of the domain.</p>
     /// - On success, responds with [`RestoreDomainAccessOutput`](crate::operation::restore_domain_access::RestoreDomainAccessOutput)
     /// - On failure, responds with [`SdkError<RestoreDomainAccessError>`](crate::operation::restore_domain_access::RestoreDomainAccessError)
     #[deprecated(

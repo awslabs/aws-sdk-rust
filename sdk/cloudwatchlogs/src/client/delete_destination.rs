@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDestination`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`destination_name(impl Into<String>)`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::destination_name) / [`set_destination_name(Option<String>)`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::set_destination_name): <p>The name of the destination.</p>
+    ///   - [`destination_name(impl ::std::convert::Into<String>)`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::destination_name) / [`set_destination_name(Option<String>)`](crate::operation::delete_destination::builders::DeleteDestinationFluentBuilder::set_destination_name): <p>The name of the destination.</p>
     /// - On success, responds with [`DeleteDestinationOutput`](crate::operation::delete_destination::DeleteDestinationOutput)
     /// - On failure, responds with [`SdkError<DeleteDestinationError>`](crate::operation::delete_destination::DeleteDestinationError)
     pub fn delete_destination(

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePeering`](crate::operation::delete_peering::builders::DeletePeeringFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`peering_id(impl Into<String>)`](crate::operation::delete_peering::builders::DeletePeeringFluentBuilder::peering_id) / [`set_peering_id(Option<String>)`](crate::operation::delete_peering::builders::DeletePeeringFluentBuilder::set_peering_id): <p>The ID of the peering connection to delete.</p>
+    ///   - [`peering_id(impl ::std::convert::Into<String>)`](crate::operation::delete_peering::builders::DeletePeeringFluentBuilder::peering_id) / [`set_peering_id(Option<String>)`](crate::operation::delete_peering::builders::DeletePeeringFluentBuilder::set_peering_id): <p>The ID of the peering connection to delete.</p>
     /// - On success, responds with [`DeletePeeringOutput`](crate::operation::delete_peering::DeletePeeringOutput) with field(s):
     ///   - [`peering(Option<Peering>)`](crate::operation::delete_peering::DeletePeeringOutput::peering): <p>Information about a deleted peering connection.</p>
     /// - On failure, responds with [`SdkError<DeletePeeringError>`](crate::operation::delete_peering::DeletePeeringError)

@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StudioComponentInitializationScriptRunContext {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum StudioComponentInitializationScriptRunContext {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StudioComponentInitializationScriptRunContext {
+impl ::std::convert::From<&str> for StudioComponentInitializationScriptRunContext {
     fn from(s: &str) -> Self {
         match s {
             "SYSTEM_INITIALIZATION" => {
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for StudioComponentInitializationScriptRunContext 
         }
     }
 }
-impl std::str::FromStr for StudioComponentInitializationScriptRunContext {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StudioComponentInitializationScriptRunContext {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StudioComponentInitializationScriptRunContext::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StudioComponentInitializationScriptRunContext::from(s))
     }
 }
 impl StudioComponentInitializationScriptRunContext {
@@ -94,7 +94,7 @@ impl StudioComponentInitializationScriptRunContext {
         &["SYSTEM_INITIALIZATION", "USER_INITIALIZATION"]
     }
 }
-impl AsRef<str> for StudioComponentInitializationScriptRunContext {
+impl ::std::convert::AsRef<str> for StudioComponentInitializationScriptRunContext {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

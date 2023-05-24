@@ -2,12 +2,12 @@
 
 /// <p>The Secrets Manager secret that stores your stream credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum MskAccessCredentials {
     /// <p>The ARN of the Secrets Manager secret.</p>
-    ClientCertificateTlsAuth(std::string::String),
+    ClientCertificateTlsAuth(::std::string::String),
     /// <p>The ARN of the Secrets Manager secret.</p>
-    SaslScram512Auth(std::string::String),
+    SaslScram512Auth(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,28 +19,28 @@ pub enum MskAccessCredentials {
     Unknown,
 }
 impl MskAccessCredentials {
-    /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::types::MskAccessCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::types::MskAccessCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_client_certificate_tls_auth(
         &self,
-    ) -> std::result::Result<&std::string::String, &Self> {
+    ) -> ::std::result::Result<&::std::string::String, &Self> {
         if let MskAccessCredentials::ClientCertificateTlsAuth(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ClientCertificateTlsAuth`](crate::types::MskAccessCredentials::ClientCertificateTlsAuth).
     pub fn is_client_certificate_tls_auth(&self) -> bool {
         self.as_client_certificate_tls_auth().is_ok()
     }
-    /// Tries to convert the enum instance into [`SaslScram512Auth`](crate::types::MskAccessCredentials::SaslScram512Auth), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`SaslScram512Auth`](crate::types::MskAccessCredentials::SaslScram512Auth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sasl_scram512_auth(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_sasl_scram512_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let MskAccessCredentials::SaslScram512Auth(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SaslScram512Auth`](crate::types::MskAccessCredentials::SaslScram512Auth).

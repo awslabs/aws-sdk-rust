@@ -2,42 +2,42 @@
 
 /// <p>Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
     #[doc(hidden)]
-    pub workflow_id: std::option::Option<std::string::String>,
+    pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
     #[doc(hidden)]
-    pub run_id: std::option::Option<std::string::String>,
+    pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the signal.</p>
     #[doc(hidden)]
-    pub signal_name: std::option::Option<std::string::String>,
+    pub signal_name: ::std::option::Option<::std::string::String>,
     /// <p>The input provided to the signal.</p>
     #[doc(hidden)]
-    pub input: std::option::Option<std::string::String>,
+    pub input: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
     #[doc(hidden)]
-    pub control: std::option::Option<std::string::String>,
+    pub control: ::std::option::Option<::std::string::String>,
 }
 impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
     /// <p>The name of the signal.</p>
-    pub fn signal_name(&self) -> std::option::Option<&str> {
+    pub fn signal_name(&self) -> ::std::option::Option<&str> {
         self.signal_name.as_deref()
     }
     /// <p>The input provided to the signal.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -45,7 +45,7 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
         self.decision_task_completed_event_id
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
-    pub fn control(&self) -> std::option::Option<&str> {
+    pub fn control(&self) -> ::std::option::Option<&str> {
         self.control.as_deref()
     }
 }
@@ -60,73 +60,78 @@ impl SignalExternalWorkflowExecutionInitiatedEventAttributes {
 
 /// A builder for [`SignalExternalWorkflowExecutionInitiatedEventAttributes`](crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
-    pub(crate) workflow_id: std::option::Option<std::string::String>,
-    pub(crate) run_id: std::option::Option<std::string::String>,
-    pub(crate) signal_name: std::option::Option<std::string::String>,
-    pub(crate) input: std::option::Option<std::string::String>,
-    pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
-    pub(crate) control: std::option::Option<std::string::String>,
+    pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
+    pub(crate) run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) signal_name: ::std::option::Option<::std::string::String>,
+    pub(crate) input: ::std::option::Option<::std::string::String>,
+    pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,
+    pub(crate) control: ::std::option::Option<::std::string::String>,
 }
 impl SignalExternalWorkflowExecutionInitiatedEventAttributesBuilder {
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
-    pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workflow_id = Some(input.into());
+    pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workflow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>workflowId</code> of the external workflow execution.</p>
-    pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_id = input;
         self
     }
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
-    pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.run_id = Some(input.into());
+    pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
-    pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
     }
     /// <p>The name of the signal.</p>
-    pub fn signal_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.signal_name = Some(input.into());
+    pub fn signal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signal_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the signal.</p>
-    pub fn set_signal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_signal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signal_name = input;
         self
     }
     /// <p>The input provided to the signal.</p>
-    pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input = Some(input.into());
+    pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The input provided to the signal.</p>
-    pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
-        self.decision_task_completed_event_id = Some(input);
+        self.decision_task_completed_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_decision_task_completed_event_id(
+        mut self,
+        input: ::std::option::Option<i64>,
+    ) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
-    pub fn control(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control = Some(input.into());
+    pub fn control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.control = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
-    pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control = input;
         self
     }

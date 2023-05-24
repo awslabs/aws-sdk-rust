@@ -2,22 +2,22 @@
 
 /// <p>The aggregated field well for a box plot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotAggregatedFieldWells {
     /// <p>The group by field well of a box plot chart. Values are grouped based on group by fields.</p>
     #[doc(hidden)]
-    pub group_by: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field well of a box plot chart. Values are aggregated based on group by fields.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl BoxPlotAggregatedFieldWells {
     /// <p>The group by field well of a box plot chart. Values are grouped based on group by fields.</p>
-    pub fn group_by(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.group_by.as_deref()
     }
     /// <p>The value field well of a box plot chart. Values are aggregated based on group by fields.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
         self.values.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl BoxPlotAggregatedFieldWells {
 
 /// A builder for [`BoxPlotAggregatedFieldWells`](crate::types::BoxPlotAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BoxPlotAggregatedFieldWellsBuilder {
-    pub(crate) group_by: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl BoxPlotAggregatedFieldWellsBuilder {
     /// Appends an item to `group_by`.
@@ -44,13 +46,13 @@ impl BoxPlotAggregatedFieldWellsBuilder {
     pub fn group_by(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.group_by.unwrap_or_default();
         v.push(input);
-        self.group_by = Some(v);
+        self.group_by = ::std::option::Option::Some(v);
         self
     }
     /// <p>The group by field well of a box plot chart. Values are grouped based on group by fields.</p>
     pub fn set_group_by(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.group_by = input;
         self
@@ -63,13 +65,13 @@ impl BoxPlotAggregatedFieldWellsBuilder {
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value field well of a box plot chart. Values are aggregated based on group by fields.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     ) -> Self {
         self.values = input;
         self

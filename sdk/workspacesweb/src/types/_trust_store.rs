@@ -2,22 +2,22 @@
 
 /// <p>A trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustStore {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
     #[doc(hidden)]
-    pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub associated_portal_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
-    pub trust_store_arn: std::option::Option<std::string::String>,
+    pub trust_store_arn: ::std::option::Option<::std::string::String>,
 }
 impl TrustStore {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    pub fn associated_portal_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn associated_portal_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.associated_portal_arns.as_deref()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> ::std::option::Option<&str> {
         self.trust_store_arn.as_deref()
     }
 }
@@ -30,10 +30,13 @@ impl TrustStore {
 
 /// A builder for [`TrustStore`](crate::types::TrustStore).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrustStoreBuilder {
-    pub(crate) associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) trust_store_arn: std::option::Option<std::string::String>,
+    pub(crate) associated_portal_arns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) trust_store_arn: ::std::option::Option<::std::string::String>,
 }
 impl TrustStoreBuilder {
     /// Appends an item to `associated_portal_arns`.
@@ -41,27 +44,36 @@ impl TrustStoreBuilder {
     /// To override the contents of this collection use [`set_associated_portal_arns`](Self::set_associated_portal_arns).
     ///
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    pub fn associated_portal_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn associated_portal_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.associated_portal_arns.unwrap_or_default();
         v.push(input.into());
-        self.associated_portal_arns = Some(v);
+        self.associated_portal_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
     pub fn set_associated_portal_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.associated_portal_arns = input;
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trust_store_arn = Some(input.into());
+    pub fn trust_store_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.trust_store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn set_trust_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_store_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.trust_store_arn = input;
         self
     }

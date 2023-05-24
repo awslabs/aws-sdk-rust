@@ -5,29 +5,29 @@
 /// </note>
 /// <p>Describes whether a VPC is enabled for ClassicLink.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcClassicLink {
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
     #[doc(hidden)]
-    pub classic_link_enabled: std::option::Option<bool>,
+    pub classic_link_enabled: ::std::option::Option<bool>,
     /// <p>Any tags assigned to the VPC.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcClassicLink {
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
-    pub fn classic_link_enabled(&self) -> std::option::Option<bool> {
+    pub fn classic_link_enabled(&self) -> ::std::option::Option<bool> {
         self.classic_link_enabled
     }
     /// <p>Any tags assigned to the VPC.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
@@ -40,20 +40,22 @@ impl VpcClassicLink {
 
 /// A builder for [`VpcClassicLink`](crate::types::VpcClassicLink).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcClassicLinkBuilder {
-    pub(crate) classic_link_enabled: std::option::Option<bool>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
+    pub(crate) classic_link_enabled: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcClassicLinkBuilder {
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
     pub fn classic_link_enabled(mut self, input: bool) -> Self {
-        self.classic_link_enabled = Some(input);
+        self.classic_link_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the VPC is enabled for ClassicLink.</p>
-    pub fn set_classic_link_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_classic_link_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.classic_link_enabled = input;
         self
     }
@@ -65,24 +67,24 @@ impl VpcClassicLinkBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the VPC.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }

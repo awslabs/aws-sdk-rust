@@ -2,15 +2,15 @@
 
 /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingExperienceSettings {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     #[doc(hidden)]
-    pub preferred_protocol: std::option::Option<crate::types::PreferredProtocol>,
+    pub preferred_protocol: ::std::option::Option<crate::types::PreferredProtocol>,
 }
 impl StreamingExperienceSettings {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
-    pub fn preferred_protocol(&self) -> std::option::Option<&crate::types::PreferredProtocol> {
+    pub fn preferred_protocol(&self) -> ::std::option::Option<&crate::types::PreferredProtocol> {
         self.preferred_protocol.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl StreamingExperienceSettings {
 
 /// A builder for [`StreamingExperienceSettings`](crate::types::StreamingExperienceSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamingExperienceSettingsBuilder {
-    pub(crate) preferred_protocol: std::option::Option<crate::types::PreferredProtocol>,
+    pub(crate) preferred_protocol: ::std::option::Option<crate::types::PreferredProtocol>,
 }
 impl StreamingExperienceSettingsBuilder {
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     pub fn preferred_protocol(mut self, input: crate::types::PreferredProtocol) -> Self {
-        self.preferred_protocol = Some(input);
+        self.preferred_protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The preferred protocol that you want to use while streaming your application.</p>
     pub fn set_preferred_protocol(
         mut self,
-        input: std::option::Option<crate::types::PreferredProtocol>,
+        input: ::std::option::Option<crate::types::PreferredProtocol>,
     ) -> Self {
         self.preferred_protocol = input;
         self

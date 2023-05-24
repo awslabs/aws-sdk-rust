@@ -2,32 +2,32 @@
 
 /// <p>A structure containing metadata information for a schema version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetadataInfo {
     /// <p>The metadata key’s corresponding value.</p>
     #[doc(hidden)]
-    pub metadata_value: std::option::Option<std::string::String>,
+    pub metadata_value: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the entry was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<std::string::String>,
+    pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>Other metadata belonging to the same metadata key.</p>
     #[doc(hidden)]
     pub other_metadata_value_list:
-        std::option::Option<std::vec::Vec<crate::types::OtherMetadataValueListItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OtherMetadataValueListItem>>,
 }
 impl MetadataInfo {
     /// <p>The metadata key’s corresponding value.</p>
-    pub fn metadata_value(&self) -> std::option::Option<&str> {
+    pub fn metadata_value(&self) -> ::std::option::Option<&str> {
         self.metadata_value.as_deref()
     }
     /// <p>The time at which the entry was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>Other metadata belonging to the same metadata key.</p>
     pub fn other_metadata_value_list(
         &self,
-    ) -> std::option::Option<&[crate::types::OtherMetadataValueListItem]> {
+    ) -> ::std::option::Option<&[crate::types::OtherMetadataValueListItem]> {
         self.other_metadata_value_list.as_deref()
     }
 }
@@ -40,31 +40,39 @@ impl MetadataInfo {
 
 /// A builder for [`MetadataInfo`](crate::types::MetadataInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetadataInfoBuilder {
-    pub(crate) metadata_value: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<std::string::String>,
+    pub(crate) metadata_value: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::std::string::String>,
     pub(crate) other_metadata_value_list:
-        std::option::Option<std::vec::Vec<crate::types::OtherMetadataValueListItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OtherMetadataValueListItem>>,
 }
 impl MetadataInfoBuilder {
     /// <p>The metadata key’s corresponding value.</p>
-    pub fn metadata_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metadata_value = Some(input.into());
+    pub fn metadata_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.metadata_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metadata key’s corresponding value.</p>
-    pub fn set_metadata_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.metadata_value = input;
         self
     }
     /// <p>The time at which the entry was created.</p>
-    pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_time = Some(input.into());
+    pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time at which the entry was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
@@ -79,13 +87,13 @@ impl MetadataInfoBuilder {
     ) -> Self {
         let mut v = self.other_metadata_value_list.unwrap_or_default();
         v.push(input);
-        self.other_metadata_value_list = Some(v);
+        self.other_metadata_value_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Other metadata belonging to the same metadata key.</p>
     pub fn set_other_metadata_value_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OtherMetadataValueListItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OtherMetadataValueListItem>>,
     ) -> Self {
         self.other_metadata_value_list = input;
         self

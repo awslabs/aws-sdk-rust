@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FpgaImageAttributeName {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum FpgaImageAttributeName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FpgaImageAttributeName {
+impl ::std::convert::From<&str> for FpgaImageAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "description" => FpgaImageAttributeName::Description,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for FpgaImageAttributeName {
         }
     }
 }
-impl std::str::FromStr for FpgaImageAttributeName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FpgaImageAttributeName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FpgaImageAttributeName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FpgaImageAttributeName::from(s))
     }
 }
 impl FpgaImageAttributeName {
@@ -96,7 +96,7 @@ impl FpgaImageAttributeName {
         &["description", "loadPermission", "name", "productCodes"]
     }
 }
-impl AsRef<str> for FpgaImageAttributeName {
+impl ::std::convert::AsRef<str> for FpgaImageAttributeName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

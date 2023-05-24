@@ -2,15 +2,15 @@
 
 /// <p>Contains information about a metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricAttribution {
     /// <p>The source of the event, such as a third party.</p>
     #[doc(hidden)]
-    pub event_attribution_source: std::option::Option<std::string::String>,
+    pub event_attribution_source: ::std::option::Option<::std::string::String>,
 }
 impl MetricAttribution {
     /// <p>The source of the event, such as a third party.</p>
-    pub fn event_attribution_source(&self) -> std::option::Option<&str> {
+    pub fn event_attribution_source(&self) -> ::std::option::Option<&str> {
         self.event_attribution_source.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl MetricAttribution {
 
 /// A builder for [`MetricAttribution`](crate::types::MetricAttribution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricAttributionBuilder {
-    pub(crate) event_attribution_source: std::option::Option<std::string::String>,
+    pub(crate) event_attribution_source: ::std::option::Option<::std::string::String>,
 }
 impl MetricAttributionBuilder {
     /// <p>The source of the event, such as a third party.</p>
-    pub fn event_attribution_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_attribution_source = Some(input.into());
+    pub fn event_attribution_source(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_attribution_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the event, such as a third party.</p>
     pub fn set_event_attribution_source(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_attribution_source = input;
         self

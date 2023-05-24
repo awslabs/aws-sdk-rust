@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelFindingsReport`](crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder::set_report_id): <p>The ID of the report to be canceled.</p>
+    ///   - [`report_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::cancel_findings_report::builders::CancelFindingsReportFluentBuilder::set_report_id): <p>The ID of the report to be canceled.</p>
     /// - On success, responds with [`CancelFindingsReportOutput`](crate::operation::cancel_findings_report::CancelFindingsReportOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::cancel_findings_report::CancelFindingsReportOutput::report_id): <p>The ID of the canceled report.</p>
     /// - On failure, responds with [`SdkError<CancelFindingsReportError>`](crate::operation::cancel_findings_report::CancelFindingsReportError)

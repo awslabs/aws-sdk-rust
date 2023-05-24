@@ -2,22 +2,22 @@
 
 /// <p>For a SQL-based Kinesis Data Analytics application, provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket and the name of the Amazon S3 object that contains the data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p>The ARN of the S3 bucket that contains the data.</p>
     #[doc(hidden)]
-    pub bucket_arn: std::option::Option<std::string::String>,
+    pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the object that contains the data.</p>
     #[doc(hidden)]
-    pub file_key: std::option::Option<std::string::String>,
+    pub file_key: ::std::option::Option<::std::string::String>,
 }
 impl S3Configuration {
     /// <p>The ARN of the S3 bucket that contains the data.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn file_key(&self) -> std::option::Option<&str> {
+    pub fn file_key(&self) -> ::std::option::Option<&str> {
         self.file_key.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl S3Configuration {
 
 /// A builder for [`S3Configuration`](crate::types::S3Configuration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ConfigurationBuilder {
-    pub(crate) bucket_arn: std::option::Option<std::string::String>,
-    pub(crate) file_key: std::option::Option<std::string::String>,
+    pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) file_key: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigurationBuilder {
     /// <p>The ARN of the S3 bucket that contains the data.</p>
-    pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_arn = Some(input.into());
+    pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the S3 bucket that contains the data.</p>
-    pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_arn = input;
         self
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn file_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_key = Some(input.into());
+    pub fn file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_key = input;
         self
     }

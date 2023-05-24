@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the status of the mesh resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayStatus {
     /// <p>The current status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::VirtualGatewayStatusCode>,
+    pub status: ::std::option::Option<crate::types::VirtualGatewayStatusCode>,
 }
 impl VirtualGatewayStatus {
     /// <p>The current status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VirtualGatewayStatusCode> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualGatewayStatusCode> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl VirtualGatewayStatus {
 
 /// A builder for [`VirtualGatewayStatus`](crate::types::VirtualGatewayStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewayStatusBuilder {
-    pub(crate) status: std::option::Option<crate::types::VirtualGatewayStatusCode>,
+    pub(crate) status: ::std::option::Option<crate::types::VirtualGatewayStatusCode>,
 }
 impl VirtualGatewayStatusBuilder {
     /// <p>The current status.</p>
     pub fn status(mut self, input: crate::types::VirtualGatewayStatusCode) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::VirtualGatewayStatusCode>,
+        input: ::std::option::Option<crate::types::VirtualGatewayStatusCode>,
     ) -> Self {
         self.status = input;
         self

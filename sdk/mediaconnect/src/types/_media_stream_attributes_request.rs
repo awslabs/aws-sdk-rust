@@ -2,22 +2,22 @@
 
 /// Attributes that are related to the media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaStreamAttributesRequest {
     /// The settings that you want to use to define the media stream.
     #[doc(hidden)]
-    pub fmtp: std::option::Option<crate::types::FmtpRequest>,
+    pub fmtp: ::std::option::Option<crate::types::FmtpRequest>,
     /// The audio language, in a format that is recognized by the receiver.
     #[doc(hidden)]
-    pub lang: std::option::Option<std::string::String>,
+    pub lang: ::std::option::Option<::std::string::String>,
 }
 impl MediaStreamAttributesRequest {
     /// The settings that you want to use to define the media stream.
-    pub fn fmtp(&self) -> std::option::Option<&crate::types::FmtpRequest> {
+    pub fn fmtp(&self) -> ::std::option::Option<&crate::types::FmtpRequest> {
         self.fmtp.as_ref()
     }
     /// The audio language, in a format that is recognized by the receiver.
-    pub fn lang(&self) -> std::option::Option<&str> {
+    pub fn lang(&self) -> ::std::option::Option<&str> {
         self.lang.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl MediaStreamAttributesRequest {
 
 /// A builder for [`MediaStreamAttributesRequest`](crate::types::MediaStreamAttributesRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MediaStreamAttributesRequestBuilder {
-    pub(crate) fmtp: std::option::Option<crate::types::FmtpRequest>,
-    pub(crate) lang: std::option::Option<std::string::String>,
+    pub(crate) fmtp: ::std::option::Option<crate::types::FmtpRequest>,
+    pub(crate) lang: ::std::option::Option<::std::string::String>,
 }
 impl MediaStreamAttributesRequestBuilder {
     /// The settings that you want to use to define the media stream.
     pub fn fmtp(mut self, input: crate::types::FmtpRequest) -> Self {
-        self.fmtp = Some(input);
+        self.fmtp = ::std::option::Option::Some(input);
         self
     }
     /// The settings that you want to use to define the media stream.
-    pub fn set_fmtp(mut self, input: std::option::Option<crate::types::FmtpRequest>) -> Self {
+    pub fn set_fmtp(mut self, input: ::std::option::Option<crate::types::FmtpRequest>) -> Self {
         self.fmtp = input;
         self
     }
     /// The audio language, in a format that is recognized by the receiver.
-    pub fn lang(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lang = Some(input.into());
+    pub fn lang(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lang = ::std::option::Option::Some(input.into());
         self
     }
     /// The audio language, in a format that is recognized by the receiver.
-    pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lang(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lang = input;
         self
     }

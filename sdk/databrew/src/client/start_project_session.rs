@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartProjectSession`](crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder::set_name): <p>The name of the project to act upon.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder::set_name): <p>The name of the project to act upon.</p>
     ///   - [`assume_control(bool)`](crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder::assume_control) / [`set_assume_control(bool)`](crate::operation::start_project_session::builders::StartProjectSessionFluentBuilder::set_assume_control): <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
     /// - On success, responds with [`StartProjectSessionOutput`](crate::operation::start_project_session::StartProjectSessionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::start_project_session::StartProjectSessionOutput::name): <p>The name of the project to be acted upon.</p>

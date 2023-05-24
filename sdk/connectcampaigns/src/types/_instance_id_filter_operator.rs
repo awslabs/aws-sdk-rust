@@ -37,13 +37,13 @@
 /// Operators for Connect instance identifier filter
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InstanceIdFilterOperator {
     /// Equals operator
@@ -51,7 +51,7 @@ pub enum InstanceIdFilterOperator {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InstanceIdFilterOperator {
+impl ::std::convert::From<&str> for InstanceIdFilterOperator {
     fn from(s: &str) -> Self {
         match s {
             "Eq" => InstanceIdFilterOperator::Eq,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for InstanceIdFilterOperator {
         }
     }
 }
-impl std::str::FromStr for InstanceIdFilterOperator {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InstanceIdFilterOperator {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceIdFilterOperator::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InstanceIdFilterOperator::from(s))
     }
 }
 impl InstanceIdFilterOperator {
@@ -81,7 +81,7 @@ impl InstanceIdFilterOperator {
         &["Eq"]
     }
 }
-impl AsRef<str> for InstanceIdFilterOperator {
+impl ::std::convert::AsRef<str> for InstanceIdFilterOperator {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

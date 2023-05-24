@@ -2,15 +2,15 @@
 
 /// <p>The Amazon Chime Business Calling settings for the administrator's AWS account. Includes any Amazon S3 buckets designated for storing call detail records.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BusinessCallingSettings {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
     #[doc(hidden)]
-    pub cdr_bucket: std::option::Option<std::string::String>,
+    pub cdr_bucket: ::std::option::Option<::std::string::String>,
 }
 impl BusinessCallingSettings {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
-    pub fn cdr_bucket(&self) -> std::option::Option<&str> {
+    pub fn cdr_bucket(&self) -> ::std::option::Option<&str> {
         self.cdr_bucket.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl BusinessCallingSettings {
 
 /// A builder for [`BusinessCallingSettings`](crate::types::BusinessCallingSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BusinessCallingSettingsBuilder {
-    pub(crate) cdr_bucket: std::option::Option<std::string::String>,
+    pub(crate) cdr_bucket: ::std::option::Option<::std::string::String>,
 }
 impl BusinessCallingSettingsBuilder {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
-    pub fn cdr_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cdr_bucket = Some(input.into());
+    pub fn cdr_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cdr_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
-    pub fn set_cdr_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cdr_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cdr_bucket = input;
         self
     }

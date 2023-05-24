@@ -2,15 +2,15 @@
 
 /// <p>A container object for the session details that are associated with a workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
     #[doc(hidden)]
-    pub user_details: std::option::Option<crate::types::UserDetails>,
+    pub user_details: ::std::option::Option<crate::types::UserDetails>,
 }
 impl ServiceMetadata {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
-    pub fn user_details(&self) -> std::option::Option<&crate::types::UserDetails> {
+    pub fn user_details(&self) -> ::std::option::Option<&crate::types::UserDetails> {
         self.user_details.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ServiceMetadata {
 
 /// A builder for [`ServiceMetadata`](crate::types::ServiceMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceMetadataBuilder {
-    pub(crate) user_details: std::option::Option<crate::types::UserDetails>,
+    pub(crate) user_details: ::std::option::Option<crate::types::UserDetails>,
 }
 impl ServiceMetadataBuilder {
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
     pub fn user_details(mut self, input: crate::types::UserDetails) -> Self {
-        self.user_details = Some(input);
+        self.user_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Server ID (<code>ServerId</code>), Session ID (<code>SessionId</code>) and user (<code>UserName</code>) make up the <code>UserDetails</code>.</p>
     pub fn set_user_details(
         mut self,
-        input: std::option::Option<crate::types::UserDetails>,
+        input: ::std::option::Option<crate::types::UserDetails>,
     ) -> Self {
         self.user_details = input;
         self

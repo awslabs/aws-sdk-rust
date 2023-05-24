@@ -2,78 +2,78 @@
 
 /// <p>Metadata structure for an analysis in Amazon QuickSight</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Analysis {
     /// <p>The ID of the analysis.</p>
     #[doc(hidden)]
-    pub analysis_id: std::option::Option<std::string::String>,
+    pub analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the analysis.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Status associated with the analysis.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ResourceStatus>,
+    pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Errors associated with the analysis.</p>
     #[doc(hidden)]
-    pub errors: std::option::Option<std::vec::Vec<crate::types::AnalysisError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>,
     /// <p>The ARNs of the datasets of the analysis.</p>
     #[doc(hidden)]
-    pub data_set_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the theme of the analysis.</p>
     #[doc(hidden)]
-    pub theme_arn: std::option::Option<std::string::String>,
+    pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the analysis was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the analysis was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     #[doc(hidden)]
-    pub sheets: std::option::Option<std::vec::Vec<crate::types::Sheet>>,
+    pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
 }
 impl Analysis {
     /// <p>The ID of the analysis.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> ::std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The descriptive name of the analysis.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Status associated with the analysis.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.status.as_ref()
     }
     /// <p>Errors associated with the analysis.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::AnalysisError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::AnalysisError]> {
         self.errors.as_deref()
     }
     /// <p>The ARNs of the datasets of the analysis.</p>
-    pub fn data_set_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn data_set_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.data_set_arns.as_deref()
     }
     /// <p>The ARN of the theme of the analysis.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> ::std::option::Option<&str> {
         self.theme_arn.as_deref()
     }
     /// <p>The time that the analysis was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that the analysis was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn sheets(&self) -> std::option::Option<&[crate::types::Sheet]> {
+    pub fn sheets(&self) -> ::std::option::Option<&[crate::types::Sheet]> {
         self.sheets.as_deref()
     }
 }
@@ -86,57 +86,62 @@ impl Analysis {
 
 /// A builder for [`Analysis`](crate::types::Analysis).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnalysisBuilder {
-    pub(crate) analysis_id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ResourceStatus>,
-    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::AnalysisError>>,
-    pub(crate) data_set_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) theme_arn: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) sheets: std::option::Option<std::vec::Vec<crate::types::Sheet>>,
+    pub(crate) analysis_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>,
+    pub(crate) data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
 }
 impl AnalysisBuilder {
     /// <p>The ID of the analysis.</p>
-    pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.analysis_id = Some(input.into());
+    pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the analysis.</p>
-    pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The descriptive name of the analysis.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the analysis.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Status associated with the analysis.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status associated with the analysis.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ResourceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ResourceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
@@ -148,13 +153,13 @@ impl AnalysisBuilder {
     pub fn errors(mut self, input: crate::types::AnalysisError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
-        self.errors = Some(v);
+        self.errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Errors associated with the analysis.</p>
     pub fn set_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnalysisError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>,
     ) -> Self {
         self.errors = input;
         self
@@ -164,52 +169,55 @@ impl AnalysisBuilder {
     /// To override the contents of this collection use [`set_data_set_arns`](Self::set_data_set_arns).
     ///
     /// <p>The ARNs of the datasets of the analysis.</p>
-    pub fn data_set_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_set_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.data_set_arns.unwrap_or_default();
         v.push(input.into());
-        self.data_set_arns = Some(v);
+        self.data_set_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the datasets of the analysis.</p>
     pub fn set_data_set_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.data_set_arns = input;
         self
     }
     /// <p>The ARN of the theme of the analysis.</p>
-    pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.theme_arn = Some(input.into());
+    pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.theme_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the theme of the analysis.</p>
-    pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_arn = input;
         self
     }
     /// <p>The time that the analysis was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the analysis was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The time that the analysis was last updated.</p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the analysis was last updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self
@@ -222,13 +230,13 @@ impl AnalysisBuilder {
     pub fn sheets(mut self, input: crate::types::Sheet) -> Self {
         let mut v = self.sheets.unwrap_or_default();
         v.push(input);
-        self.sheets = Some(v);
+        self.sheets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub fn set_sheets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Sheet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
     ) -> Self {
         self.sheets = input;
         self

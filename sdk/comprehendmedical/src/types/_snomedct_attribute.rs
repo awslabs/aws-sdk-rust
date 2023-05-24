@@ -2,87 +2,87 @@
 
 /// <p> The extracted attributes that relate to an entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the dosage of a medication taken. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnomedctAttribute {
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::SnomedctEntityCategory>,
+    pub category: ::std::option::Option<crate::types::SnomedctEntityCategory>,
     /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SnomedctAttributeType>,
+    pub r#type: ::std::option::Option<crate::types::SnomedctAttributeType>,
     /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
     #[doc(hidden)]
-    pub score: std::option::Option<f32>,
+    pub score: ::std::option::Option<f32>,
     /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
     #[doc(hidden)]
-    pub relationship_score: std::option::Option<f32>,
+    pub relationship_score: ::std::option::Option<f32>,
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
     #[doc(hidden)]
-    pub relationship_type: std::option::Option<crate::types::SnomedctRelationshipType>,
+    pub relationship_type: ::std::option::Option<crate::types::SnomedctRelationshipType>,
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<i32>,
+    pub id: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
     /// <p> The segment of input text extracted as this attribute. </p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
     #[doc(hidden)]
-    pub traits: std::option::Option<std::vec::Vec<crate::types::SnomedctTrait>>,
+    pub traits: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
     #[doc(hidden)]
-    pub snomedct_concepts: std::option::Option<std::vec::Vec<crate::types::SnomedctConcept>>,
+    pub snomedct_concepts: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
 }
 impl SnomedctAttribute {
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
-    pub fn category(&self) -> std::option::Option<&crate::types::SnomedctEntityCategory> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::SnomedctEntityCategory> {
         self.category.as_ref()
     }
     /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SnomedctAttributeType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SnomedctAttributeType> {
         self.r#type.as_ref()
     }
     /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
-    pub fn score(&self) -> std::option::Option<f32> {
+    pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
     /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
-    pub fn relationship_score(&self) -> std::option::Option<f32> {
+    pub fn relationship_score(&self) -> ::std::option::Option<f32> {
         self.relationship_score
     }
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
     pub fn relationship_type(
         &self,
-    ) -> std::option::Option<&crate::types::SnomedctRelationshipType> {
+    ) -> ::std::option::Option<&crate::types::SnomedctRelationshipType> {
         self.relationship_type.as_ref()
     }
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
-    pub fn id(&self) -> std::option::Option<i32> {
+    pub fn id(&self) -> ::std::option::Option<i32> {
         self.id
     }
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
     /// <p> The segment of input text extracted as this attribute. </p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
-    pub fn traits(&self) -> std::option::Option<&[crate::types::SnomedctTrait]> {
+    pub fn traits(&self) -> ::std::option::Option<&[crate::types::SnomedctTrait]> {
         self.traits.as_deref()
     }
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
-    pub fn snomedct_concepts(&self) -> std::option::Option<&[crate::types::SnomedctConcept]> {
+    pub fn snomedct_concepts(&self) -> ::std::option::Option<&[crate::types::SnomedctConcept]> {
         self.snomedct_concepts.as_deref()
     }
 }
@@ -95,117 +95,120 @@ impl SnomedctAttribute {
 
 /// A builder for [`SnomedctAttribute`](crate::types::SnomedctAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnomedctAttributeBuilder {
-    pub(crate) category: std::option::Option<crate::types::SnomedctEntityCategory>,
-    pub(crate) r#type: std::option::Option<crate::types::SnomedctAttributeType>,
-    pub(crate) score: std::option::Option<f32>,
-    pub(crate) relationship_score: std::option::Option<f32>,
-    pub(crate) relationship_type: std::option::Option<crate::types::SnomedctRelationshipType>,
-    pub(crate) id: std::option::Option<i32>,
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) traits: std::option::Option<std::vec::Vec<crate::types::SnomedctTrait>>,
-    pub(crate) snomedct_concepts: std::option::Option<std::vec::Vec<crate::types::SnomedctConcept>>,
+    pub(crate) category: ::std::option::Option<crate::types::SnomedctEntityCategory>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SnomedctAttributeType>,
+    pub(crate) score: ::std::option::Option<f32>,
+    pub(crate) relationship_score: ::std::option::Option<f32>,
+    pub(crate) relationship_type: ::std::option::Option<crate::types::SnomedctRelationshipType>,
+    pub(crate) id: ::std::option::Option<i32>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
+    pub(crate) snomedct_concepts:
+        ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
 }
 impl SnomedctAttributeBuilder {
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
     pub fn category(mut self, input: crate::types::SnomedctEntityCategory) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p> The category of the detected attribute. Possible categories include MEDICAL_CONDITION, ANATOMY, and TEST_TREATMENT_PROCEDURE. </p>
     pub fn set_category(
         mut self,
-        input: std::option::Option<crate::types::SnomedctEntityCategory>,
+        input: ::std::option::Option<crate::types::SnomedctEntityCategory>,
     ) -> Self {
         self.category = input;
         self
     }
     /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
     pub fn r#type(mut self, input: crate::types::SnomedctAttributeType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of attribute. Possible types include DX_NAME, ACUITY, DIRECTION, SYSTEM_ORGAN_SITE,TEST_NAME, TEST_VALUE, TEST_UNIT, PROCEDURE_NAME, and TREATMENT_NAME. </p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::SnomedctAttributeType>,
+        input: ::std::option::Option<crate::types::SnomedctAttributeType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
     pub fn score(mut self, input: f32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p> The level of confidence that Comprehend Medical has that the segment of text is correctly recognized as an attribute. </p>
-    pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }
     /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
     pub fn relationship_score(mut self, input: f32) -> Self {
-        self.relationship_score = Some(input);
+        self.relationship_score = ::std::option::Option::Some(input);
         self
     }
     /// <p> The level of confidence that Comprehend Medical has that this attribute is correctly related to this entity. </p>
-    pub fn set_relationship_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_relationship_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.relationship_score = input;
         self
     }
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
     pub fn relationship_type(mut self, input: crate::types::SnomedctRelationshipType) -> Self {
-        self.relationship_type = Some(input);
+        self.relationship_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of relationship that exists between the entity and the related attribute. </p>
     pub fn set_relationship_type(
         mut self,
-        input: std::option::Option<crate::types::SnomedctRelationshipType>,
+        input: ::std::option::Option<crate::types::SnomedctRelationshipType>,
     ) -> Self {
         self.relationship_type = input;
         self
     }
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     pub fn id(mut self, input: i32) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p> The numeric identifier for this attribute. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
-    pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
     }
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p> The 0-based character offset in the input text that shows where the attribute begins. The offset returns the UTF-8 code point in the string. </p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p> The 0-based character offset in the input text that shows where the attribute ends. The offset returns the UTF-8 code point in the string. </p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }
     /// <p> The segment of input text extracted as this attribute. </p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The segment of input text extracted as this attribute. </p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
@@ -217,13 +220,13 @@ impl SnomedctAttributeBuilder {
     pub fn traits(mut self, input: crate::types::SnomedctTrait) -> Self {
         let mut v = self.traits.unwrap_or_default();
         v.push(input);
-        self.traits = Some(v);
+        self.traits = ::std::option::Option::Some(v);
         self
     }
     /// <p> Contextual information for an attribute. Examples include signs, symptoms, diagnosis, and negation. </p>
     pub fn set_traits(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SnomedctTrait>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctTrait>>,
     ) -> Self {
         self.traits = input;
         self
@@ -236,13 +239,13 @@ impl SnomedctAttributeBuilder {
     pub fn snomedct_concepts(mut self, input: crate::types::SnomedctConcept) -> Self {
         let mut v = self.snomedct_concepts.unwrap_or_default();
         v.push(input);
-        self.snomedct_concepts = Some(v);
+        self.snomedct_concepts = ::std::option::Option::Some(v);
         self
     }
     /// <p> The SNOMED-CT concepts specific to an attribute, along with a score indicating the likelihood of the match. </p>
     pub fn set_snomedct_concepts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SnomedctConcept>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SnomedctConcept>>,
     ) -> Self {
         self.snomedct_concepts = input;
         self

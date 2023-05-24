@@ -2,15 +2,15 @@
 
 /// <p>A request to get a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     #[doc(hidden)]
-    pub sql_injection_match_set_id: std::option::Option<std::string::String>,
+    pub sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn sql_injection_match_set_id(&self) -> ::std::option::Option<&str> {
         self.sql_injection_match_set_id.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl GetSqlInjectionMatchSetInput {
 
 /// A builder for [`GetSqlInjectionMatchSetInput`](crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSqlInjectionMatchSetInputBuilder {
-    pub(crate) sql_injection_match_set_id: std::option::Option<std::string::String>,
+    pub(crate) sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSqlInjectionMatchSetInputBuilder {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sql_injection_match_set_id = Some(input.into());
+    pub fn sql_injection_match_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sql_injection_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn set_sql_injection_match_set_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sql_injection_match_set_id = input;
         self
@@ -46,11 +51,11 @@ impl GetSqlInjectionMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`GetSqlInjectionMatchSetInput`](crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput {
                 sql_injection_match_set_id: self.sql_injection_match_set_id,
             },

@@ -8,29 +8,29 @@ pub use crate::operation::create_event_destination::_create_event_destination_in
 /// <p>Creates a new event destination in a configuration set.</p>
 /// <p>An event destination is a location where you send message events. The event options are Amazon CloudWatch, Amazon Kinesis Data Firehose, or Amazon SNS. For example, when a message is delivered successfully, you can send information about that event to an event destination, or send notifications to endpoints that are subscribed to an Amazon SNS topic.</p>
 /// <p>Each configuration set can contain between 0 and 5 event destinations. Each event destination can contain a reference to a single destination, such as a CloudWatch or Kinesis Data Firehose destination.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventDestinationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder,
 }
 impl CreateEventDestinationFluentBuilder {
     /// Creates a new `CreateEventDestination`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_event_destination::CreateEventDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_destination::CreateEventDestinationError,
         >,
     > {
@@ -38,30 +38,33 @@ impl CreateEventDestinationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_event_destination::CreateEventDestinationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_destination::CreateEventDestinationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,36 +77,42 @@ impl CreateEventDestinationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_event_destination::CreateEventDestinationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_destination::CreateEventDestinationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
     /// <p>The name that identifies the event destination.</p>
-    pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_destination_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_destination_name(input.into());
         self
     }
     /// <p>The name that identifies the event destination.</p>
     pub fn set_event_destination_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_event_destination_name(input);
         self
@@ -120,7 +129,7 @@ impl CreateEventDestinationFluentBuilder {
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
     pub fn set_matching_event_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     ) -> Self {
         self.inner = self.inner.set_matching_event_types(input);
         self
@@ -136,7 +145,7 @@ impl CreateEventDestinationFluentBuilder {
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
     pub fn set_cloud_watch_logs_destination(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchLogsDestination>,
+        input: ::std::option::Option<crate::types::CloudWatchLogsDestination>,
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_destination(input);
         self
@@ -152,7 +161,7 @@ impl CreateEventDestinationFluentBuilder {
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
     pub fn set_kinesis_firehose_destination(
         mut self,
-        input: std::option::Option<crate::types::KinesisFirehoseDestination>,
+        input: ::std::option::Option<crate::types::KinesisFirehoseDestination>,
     ) -> Self {
         self.inner = self.inner.set_kinesis_firehose_destination(input);
         self
@@ -165,18 +174,18 @@ impl CreateEventDestinationFluentBuilder {
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
     pub fn set_sns_destination(
         mut self,
-        input: std::option::Option<crate::types::SnsDestination>,
+        input: ::std::option::Option<crate::types::SnsDestination>,
     ) -> Self {
         self.inner = self.inner.set_sns_destination(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

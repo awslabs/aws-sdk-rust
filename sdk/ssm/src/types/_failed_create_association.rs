@@ -2,29 +2,31 @@
 
 /// <p>Describes a failed association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCreateAssociation {
     /// <p>The association.</p>
     #[doc(hidden)]
-    pub entry: std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
+    pub entry: ::std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
     /// <p>A description of the failure.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The source of the failure.</p>
     #[doc(hidden)]
-    pub fault: std::option::Option<crate::types::Fault>,
+    pub fault: ::std::option::Option<crate::types::Fault>,
 }
 impl FailedCreateAssociation {
     /// <p>The association.</p>
-    pub fn entry(&self) -> std::option::Option<&crate::types::CreateAssociationBatchRequestEntry> {
+    pub fn entry(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CreateAssociationBatchRequestEntry> {
         self.entry.as_ref()
     }
     /// <p>A description of the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The source of the failure.</p>
-    pub fn fault(&self) -> std::option::Option<&crate::types::Fault> {
+    pub fn fault(&self) -> ::std::option::Option<&crate::types::Fault> {
         self.fault.as_ref()
     }
 }
@@ -37,43 +39,45 @@ impl FailedCreateAssociation {
 
 /// A builder for [`FailedCreateAssociation`](crate::types::FailedCreateAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedCreateAssociationBuilder {
-    pub(crate) entry: std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) fault: std::option::Option<crate::types::Fault>,
+    pub(crate) entry: ::std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) fault: ::std::option::Option<crate::types::Fault>,
 }
 impl FailedCreateAssociationBuilder {
     /// <p>The association.</p>
     pub fn entry(mut self, input: crate::types::CreateAssociationBatchRequestEntry) -> Self {
-        self.entry = Some(input);
+        self.entry = ::std::option::Option::Some(input);
         self
     }
     /// <p>The association.</p>
     pub fn set_entry(
         mut self,
-        input: std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
+        input: ::std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
     ) -> Self {
         self.entry = input;
         self
     }
     /// <p>A description of the failure.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the failure.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The source of the failure.</p>
     pub fn fault(mut self, input: crate::types::Fault) -> Self {
-        self.fault = Some(input);
+        self.fault = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source of the failure.</p>
-    pub fn set_fault(mut self, input: std::option::Option<crate::types::Fault>) -> Self {
+    pub fn set_fault(mut self, input: ::std::option::Option<crate::types::Fault>) -> Self {
         self.fault = input;
         self
     }

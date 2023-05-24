@@ -2,15 +2,15 @@
 
 /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportingLocation {
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
-    pub s3_exporting: std::option::Option<crate::types::S3ExportingLocation>,
+    pub s3_exporting: ::std::option::Option<crate::types::S3ExportingLocation>,
 }
 impl ExportingLocation {
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
-    pub fn s3_exporting(&self) -> std::option::Option<&crate::types::S3ExportingLocation> {
+    pub fn s3_exporting(&self) -> ::std::option::Option<&crate::types::S3ExportingLocation> {
         self.s3_exporting.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ExportingLocation {
 
 /// A builder for [`ExportingLocation`](crate::types::ExportingLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportingLocationBuilder {
-    pub(crate) s3_exporting: std::option::Option<crate::types::S3ExportingLocation>,
+    pub(crate) s3_exporting: ::std::option::Option<crate::types::S3ExportingLocation>,
 }
 impl ExportingLocationBuilder {
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
     pub fn s3_exporting(mut self, input: crate::types::S3ExportingLocation) -> Self {
-        self.s3_exporting = Some(input);
+        self.s3_exporting = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
     pub fn set_s3_exporting(
         mut self,
-        input: std::option::Option<crate::types::S3ExportingLocation>,
+        input: ::std::option::Option<crate::types::S3ExportingLocation>,
     ) -> Self {
         self.s3_exporting = input;
         self

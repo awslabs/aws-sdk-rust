@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FillPolicy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum FillPolicy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FillPolicy {
+impl ::std::convert::From<&str> for FillPolicy {
     fn from(s: &str) -> Self {
         match s {
             "FULL_AVAIL_ONLY" => FillPolicy::FullAvailOnly,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for FillPolicy {
         }
     }
 }
-impl std::str::FromStr for FillPolicy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FillPolicy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FillPolicy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FillPolicy::from(s))
     }
 }
 impl FillPolicy {
@@ -84,7 +84,7 @@ impl FillPolicy {
         &["FULL_AVAIL_ONLY", "PARTIAL_AVAIL"]
     }
 }
-impl AsRef<str> for FillPolicy {
+impl ::std::convert::AsRef<str> for FillPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

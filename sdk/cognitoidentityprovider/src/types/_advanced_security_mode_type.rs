@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AdvancedSecurityModeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AdvancedSecurityModeType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AdvancedSecurityModeType {
+impl ::std::convert::From<&str> for AdvancedSecurityModeType {
     fn from(s: &str) -> Self {
         match s {
             "AUDIT" => AdvancedSecurityModeType::Audit,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AdvancedSecurityModeType {
         }
     }
 }
-impl std::str::FromStr for AdvancedSecurityModeType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AdvancedSecurityModeType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdvancedSecurityModeType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AdvancedSecurityModeType::from(s))
     }
 }
 impl AdvancedSecurityModeType {
@@ -91,7 +91,7 @@ impl AdvancedSecurityModeType {
         &["AUDIT", "ENFORCED", "OFF"]
     }
 }
-impl AsRef<str> for AdvancedSecurityModeType {
+impl ::std::convert::AsRef<str> for AdvancedSecurityModeType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

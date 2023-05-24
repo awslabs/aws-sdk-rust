@@ -2,7 +2,7 @@
 
 /// <p> A container specifying the time value for S3 Replication Time Control (S3 RTC) and replication metrics <code>EventThreshold</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTimeValue {
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
@@ -25,20 +25,22 @@ impl ReplicationTimeValue {
 
 /// A builder for [`ReplicationTimeValue`](crate::types::ReplicationTimeValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationTimeValueBuilder {
-    pub(crate) minutes: std::option::Option<i32>,
+    pub(crate) minutes: ::std::option::Option<i32>,
 }
 impl ReplicationTimeValueBuilder {
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
     pub fn minutes(mut self, input: i32) -> Self {
-        self.minutes = Some(input);
+        self.minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
-    pub fn set_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minutes = input;
         self
     }

@@ -2,22 +2,24 @@
 
 /// <p>The compromised credentials risk configuration type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompromisedCredentialsRiskConfigurationType {
     /// <p>Perform the action for these events. The default is to perform all events if no event filter is specified.</p>
     #[doc(hidden)]
-    pub event_filter: std::option::Option<std::vec::Vec<crate::types::EventFilterType>>,
+    pub event_filter: ::std::option::Option<::std::vec::Vec<crate::types::EventFilterType>>,
     /// <p>The compromised credentials risk configuration actions.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<crate::types::CompromisedCredentialsActionsType>,
+    pub actions: ::std::option::Option<crate::types::CompromisedCredentialsActionsType>,
 }
 impl CompromisedCredentialsRiskConfigurationType {
     /// <p>Perform the action for these events. The default is to perform all events if no event filter is specified.</p>
-    pub fn event_filter(&self) -> std::option::Option<&[crate::types::EventFilterType]> {
+    pub fn event_filter(&self) -> ::std::option::Option<&[crate::types::EventFilterType]> {
         self.event_filter.as_deref()
     }
     /// <p>The compromised credentials risk configuration actions.</p>
-    pub fn actions(&self) -> std::option::Option<&crate::types::CompromisedCredentialsActionsType> {
+    pub fn actions(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CompromisedCredentialsActionsType> {
         self.actions.as_ref()
     }
 }
@@ -30,10 +32,12 @@ impl CompromisedCredentialsRiskConfigurationType {
 
 /// A builder for [`CompromisedCredentialsRiskConfigurationType`](crate::types::CompromisedCredentialsRiskConfigurationType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CompromisedCredentialsRiskConfigurationTypeBuilder {
-    pub(crate) event_filter: std::option::Option<std::vec::Vec<crate::types::EventFilterType>>,
-    pub(crate) actions: std::option::Option<crate::types::CompromisedCredentialsActionsType>,
+    pub(crate) event_filter: ::std::option::Option<::std::vec::Vec<crate::types::EventFilterType>>,
+    pub(crate) actions: ::std::option::Option<crate::types::CompromisedCredentialsActionsType>,
 }
 impl CompromisedCredentialsRiskConfigurationTypeBuilder {
     /// Appends an item to `event_filter`.
@@ -44,26 +48,26 @@ impl CompromisedCredentialsRiskConfigurationTypeBuilder {
     pub fn event_filter(mut self, input: crate::types::EventFilterType) -> Self {
         let mut v = self.event_filter.unwrap_or_default();
         v.push(input);
-        self.event_filter = Some(v);
+        self.event_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>Perform the action for these events. The default is to perform all events if no event filter is specified.</p>
     pub fn set_event_filter(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventFilterType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventFilterType>>,
     ) -> Self {
         self.event_filter = input;
         self
     }
     /// <p>The compromised credentials risk configuration actions.</p>
     pub fn actions(mut self, input: crate::types::CompromisedCredentialsActionsType) -> Self {
-        self.actions = Some(input);
+        self.actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The compromised credentials risk configuration actions.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<crate::types::CompromisedCredentialsActionsType>,
+        input: ::std::option::Option<crate::types::CompromisedCredentialsActionsType>,
     ) -> Self {
         self.actions = input;
         self

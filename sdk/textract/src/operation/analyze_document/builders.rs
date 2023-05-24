@@ -20,56 +20,63 @@ pub use crate::operation::analyze_document::_analyze_document_input::AnalyzeDocu
 /// <p>The output is returned in a list of <code>Block</code> objects.</p>
 /// <p> <code>AnalyzeDocument</code> is a synchronous operation. To analyze documents asynchronously, use <code>StartDocumentAnalysis</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AnalyzeDocumentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::analyze_document::builders::AnalyzeDocumentInputBuilder,
 }
 impl AnalyzeDocumentFluentBuilder {
     /// Creates a new `AnalyzeDocument`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::analyze_document::AnalyzeDocument,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::analyze_document::AnalyzeDocumentError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::analyze_document::AnalyzeDocumentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::analyze_document::AnalyzeDocumentError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -82,9 +89,11 @@ impl AnalyzeDocumentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::analyze_document::AnalyzeDocumentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::analyze_document::AnalyzeDocumentError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::analyze_document::AnalyzeDocumentError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -96,7 +105,7 @@ impl AnalyzeDocumentFluentBuilder {
     }
     /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the <code>Bytes</code> field. </p>
-    pub fn set_document(mut self, input: std::option::Option<crate::types::Document>) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<crate::types::Document>) -> Self {
         self.inner = self.inner.set_document(input);
         self
     }
@@ -112,7 +121,7 @@ impl AnalyzeDocumentFluentBuilder {
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. To perform both forms and table analysis, add TABLES and FORMS to <code>FeatureTypes</code>. To detect signatures within form data and table data, add SIGNATURES to either TABLES or FORMS. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>). </p>
     pub fn set_feature_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FeatureType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
     ) -> Self {
         self.inner = self.inner.set_feature_types(input);
         self
@@ -125,7 +134,7 @@ impl AnalyzeDocumentFluentBuilder {
     /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
     pub fn set_human_loop_config(
         mut self,
-        input: std::option::Option<crate::types::HumanLoopConfig>,
+        input: ::std::option::Option<crate::types::HumanLoopConfig>,
     ) -> Self {
         self.inner = self.inner.set_human_loop_config(input);
         self
@@ -138,7 +147,7 @@ impl AnalyzeDocumentFluentBuilder {
     /// <p>Contains Queries and the alias for those Queries, as determined by the input. </p>
     pub fn set_queries_config(
         mut self,
-        input: std::option::Option<crate::types::QueriesConfig>,
+        input: ::std::option::Option<crate::types::QueriesConfig>,
     ) -> Self {
         self.inner = self.inner.set_queries_config(input);
         self

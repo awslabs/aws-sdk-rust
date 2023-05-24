@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetField`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::set_domain_id): <p>The unique identifier of the Cases domain. </p>
+    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::set_domain_id): <p>The unique identifier of the Cases domain. </p>
     ///   - [`fields(Vec<FieldIdentifier>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::fields) / [`set_fields(Option<Vec<FieldIdentifier>>)`](crate::operation::batch_get_field::builders::BatchGetFieldFluentBuilder::set_fields): <p>A list of unique field identifiers. </p>
     /// - On success, responds with [`BatchGetFieldOutput`](crate::operation::batch_get_field::BatchGetFieldOutput) with field(s):
     ///   - [`fields(Option<Vec<GetFieldResponse>>)`](crate::operation::batch_get_field::BatchGetFieldOutput::fields): <p>A list of detailed field information. </p>

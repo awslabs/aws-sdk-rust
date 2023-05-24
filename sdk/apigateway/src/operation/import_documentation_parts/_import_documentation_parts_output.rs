@@ -2,27 +2,27 @@
 
 /// <p>A collection of the imported DocumentationPart identifiers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDocumentationPartsOutput {
     /// <p>A list of the returned documentation part identifiers.</p>
     #[doc(hidden)]
-    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of warning messages reported during import of documentation parts.</p>
     #[doc(hidden)]
-    pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ImportDocumentationPartsOutput {
     /// <p>A list of the returned documentation part identifiers.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>A list of warning messages reported during import of documentation parts.</p>
-    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn warnings(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.warnings.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ImportDocumentationPartsOutput {
+impl ::aws_http::request_id::RequestId for ImportDocumentationPartsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ImportDocumentationPartsOutput {
 
 /// A builder for [`ImportDocumentationPartsOutput`](crate::operation::import_documentation_parts::ImportDocumentationPartsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportDocumentationPartsOutputBuilder {
-    pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ImportDocumentationPartsOutputBuilder {
@@ -50,16 +52,16 @@ impl ImportDocumentationPartsOutputBuilder {
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).
     ///
     /// <p>A list of the returned documentation part identifiers.</p>
-    pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
         v.push(input.into());
-        self.ids = Some(v);
+        self.ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the returned documentation part identifiers.</p>
     pub fn set_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ids = input;
         self
@@ -69,16 +71,16 @@ impl ImportDocumentationPartsOutputBuilder {
     /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
     ///
     /// <p>A list of warning messages reported during import of documentation parts.</p>
-    pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.warnings.unwrap_or_default();
         v.push(input.into());
-        self.warnings = Some(v);
+        self.warnings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of warning messages reported during import of documentation parts.</p>
     pub fn set_warnings(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.warnings = input;
         self

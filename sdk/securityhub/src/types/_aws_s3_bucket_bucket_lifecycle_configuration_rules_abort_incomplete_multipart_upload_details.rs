@@ -2,7 +2,7 @@
 
 /// <p>Information about what Amazon S3 does when a multipart upload is incomplete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails {
     /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
     #[doc(hidden)]
@@ -23,19 +23,21 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadD
 
 /// A builder for [`AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsBuilder
 {
-    pub(crate) days_after_initiation: std::option::Option<i32>,
+    pub(crate) days_after_initiation: ::std::option::Option<i32>,
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsBuilder {
     /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
     pub fn days_after_initiation(mut self, input: i32) -> Self {
-        self.days_after_initiation = Some(input);
+        self.days_after_initiation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days after which Amazon S3 cancels an incomplete multipart upload.</p>
-    pub fn set_days_after_initiation(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_days_after_initiation(mut self, input: ::std::option::Option<i32>) -> Self {
         self.days_after_initiation = input;
         self
     }

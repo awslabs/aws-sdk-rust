@@ -2,15 +2,15 @@
 
 /// <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     #[doc(hidden)]
-    pub snapshots_enabled_update: std::option::Option<bool>,
+    pub snapshots_enabled_update: ::std::option::Option<bool>,
 }
 impl ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
-    pub fn snapshots_enabled_update(&self) -> std::option::Option<bool> {
+    pub fn snapshots_enabled_update(&self) -> ::std::option::Option<bool> {
         self.snapshots_enabled_update
     }
 }
@@ -23,18 +23,20 @@ impl ApplicationSnapshotConfigurationUpdate {
 
 /// A builder for [`ApplicationSnapshotConfigurationUpdate`](crate::types::ApplicationSnapshotConfigurationUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationSnapshotConfigurationUpdateBuilder {
-    pub(crate) snapshots_enabled_update: std::option::Option<bool>,
+    pub(crate) snapshots_enabled_update: ::std::option::Option<bool>,
 }
 impl ApplicationSnapshotConfigurationUpdateBuilder {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub fn snapshots_enabled_update(mut self, input: bool) -> Self {
-        self.snapshots_enabled_update = Some(input);
+        self.snapshots_enabled_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
-    pub fn set_snapshots_enabled_update(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_snapshots_enabled_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.snapshots_enabled_update = input;
         self
     }

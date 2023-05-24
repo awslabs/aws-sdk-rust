@@ -2,22 +2,22 @@
 
 /// <p>This structure contains information about the most recent run of a single canary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryLastRun {
     /// <p>The name of the canary.</p>
     #[doc(hidden)]
-    pub canary_name: std::option::Option<std::string::String>,
+    pub canary_name: ::std::option::Option<::std::string::String>,
     /// <p>The results from this canary's most recent run.</p>
     #[doc(hidden)]
-    pub last_run: std::option::Option<crate::types::CanaryRun>,
+    pub last_run: ::std::option::Option<crate::types::CanaryRun>,
 }
 impl CanaryLastRun {
     /// <p>The name of the canary.</p>
-    pub fn canary_name(&self) -> std::option::Option<&str> {
+    pub fn canary_name(&self) -> ::std::option::Option<&str> {
         self.canary_name.as_deref()
     }
     /// <p>The results from this canary's most recent run.</p>
-    pub fn last_run(&self) -> std::option::Option<&crate::types::CanaryRun> {
+    pub fn last_run(&self) -> ::std::option::Option<&crate::types::CanaryRun> {
         self.last_run.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl CanaryLastRun {
 
 /// A builder for [`CanaryLastRun`](crate::types::CanaryLastRun).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CanaryLastRunBuilder {
-    pub(crate) canary_name: std::option::Option<std::string::String>,
-    pub(crate) last_run: std::option::Option<crate::types::CanaryRun>,
+    pub(crate) canary_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_run: ::std::option::Option<crate::types::CanaryRun>,
 }
 impl CanaryLastRunBuilder {
     /// <p>The name of the canary.</p>
-    pub fn canary_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.canary_name = Some(input.into());
+    pub fn canary_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.canary_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the canary.</p>
-    pub fn set_canary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_canary_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.canary_name = input;
         self
     }
     /// <p>The results from this canary's most recent run.</p>
     pub fn last_run(mut self, input: crate::types::CanaryRun) -> Self {
-        self.last_run = Some(input);
+        self.last_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>The results from this canary's most recent run.</p>
-    pub fn set_last_run(mut self, input: std::option::Option<crate::types::CanaryRun>) -> Self {
+    pub fn set_last_run(mut self, input: ::std::option::Option<crate::types::CanaryRun>) -> Self {
         self.last_run = input;
         self
     }

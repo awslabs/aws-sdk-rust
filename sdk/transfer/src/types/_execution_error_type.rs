@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ExecutionErrorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum ExecutionErrorType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ExecutionErrorType {
+impl ::std::convert::From<&str> for ExecutionErrorType {
     fn from(s: &str) -> Self {
         match s {
             "ALREADY_EXISTS" => ExecutionErrorType::AlreadyExists,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for ExecutionErrorType {
         }
     }
 }
-impl std::str::FromStr for ExecutionErrorType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ExecutionErrorType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExecutionErrorType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ExecutionErrorType::from(s))
     }
 }
 impl ExecutionErrorType {
@@ -125,7 +125,7 @@ impl ExecutionErrorType {
         ]
     }
 }
-impl AsRef<str> for ExecutionErrorType {
+impl ::std::convert::AsRef<str> for ExecutionErrorType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

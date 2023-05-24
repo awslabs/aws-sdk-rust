@@ -2,21 +2,21 @@
 
 /// <p>An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
     #[doc(hidden)]
-    pub suggestion: std::option::Option<std::string::String>,
+    pub suggestion: ::std::option::Option<::std::string::String>,
     /// <p>The relevance score of a suggested match.</p>
     #[doc(hidden)]
     pub score: i64,
     /// <p>The document ID of the suggested document.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
-    pub fn suggestion(&self) -> std::option::Option<&str> {
+    pub fn suggestion(&self) -> ::std::option::Option<&str> {
         self.suggestion.as_deref()
     }
     /// <p>The relevance score of a suggested match.</p>
@@ -24,7 +24,7 @@ impl SuggestionMatch {
         self.score
     }
     /// <p>The document ID of the suggested document.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl SuggestionMatch {
 
 /// A builder for [`SuggestionMatch`](crate::types::SuggestionMatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuggestionMatchBuilder {
-    pub(crate) suggestion: std::option::Option<std::string::String>,
-    pub(crate) score: std::option::Option<i64>,
-    pub(crate) id: std::option::Option<std::string::String>,
+    pub(crate) suggestion: ::std::option::Option<::std::string::String>,
+    pub(crate) score: ::std::option::Option<i64>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl SuggestionMatchBuilder {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
-    pub fn suggestion(mut self, input: impl Into<std::string::String>) -> Self {
-        self.suggestion = Some(input.into());
+    pub fn suggestion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.suggestion = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
-    pub fn set_suggestion(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_suggestion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suggestion = input;
         self
     }
     /// <p>The relevance score of a suggested match.</p>
     pub fn score(mut self, input: i64) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The relevance score of a suggested match.</p>
-    pub fn set_score(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<i64>) -> Self {
         self.score = input;
         self
     }
     /// <p>The document ID of the suggested document.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document ID of the suggested document.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }

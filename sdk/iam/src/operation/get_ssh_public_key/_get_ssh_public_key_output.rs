@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>GetSSHPublicKey</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
     #[doc(hidden)]
-    pub ssh_public_key: std::option::Option<crate::types::SshPublicKey>,
+    pub ssh_public_key: ::std::option::Option<crate::types::SshPublicKey>,
     _request_id: Option<String>,
 }
 impl GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&crate::types::SshPublicKey> {
+    pub fn ssh_public_key(&self) -> ::std::option::Option<&crate::types::SshPublicKey> {
         self.ssh_public_key.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetSshPublicKeyOutput {
+impl ::aws_http::request_id::RequestId for GetSshPublicKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl GetSshPublicKeyOutput {
 
 /// A builder for [`GetSshPublicKeyOutput`](crate::operation::get_ssh_public_key::GetSshPublicKeyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSshPublicKeyOutputBuilder {
-    pub(crate) ssh_public_key: std::option::Option<crate::types::SshPublicKey>,
+    pub(crate) ssh_public_key: ::std::option::Option<crate::types::SshPublicKey>,
     _request_id: Option<String>,
 }
 impl GetSshPublicKeyOutputBuilder {
     /// <p>A structure containing details about the SSH public key.</p>
     pub fn ssh_public_key(mut self, input: crate::types::SshPublicKey) -> Self {
-        self.ssh_public_key = Some(input);
+        self.ssh_public_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the SSH public key.</p>
     pub fn set_ssh_public_key(
         mut self,
-        input: std::option::Option<crate::types::SshPublicKey>,
+        input: ::std::option::Option<crate::types::SshPublicKey>,
     ) -> Self {
         self.ssh_public_key = input;
         self

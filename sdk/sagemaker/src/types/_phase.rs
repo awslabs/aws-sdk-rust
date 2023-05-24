@@ -2,29 +2,29 @@
 
 /// <p>Defines the traffic pattern.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Phase {
     /// <p>Specifies how many concurrent users to start with.</p>
     #[doc(hidden)]
-    pub initial_number_of_users: std::option::Option<i32>,
+    pub initial_number_of_users: ::std::option::Option<i32>,
     /// <p>Specified how many new users to spawn in a minute.</p>
     #[doc(hidden)]
-    pub spawn_rate: std::option::Option<i32>,
+    pub spawn_rate: ::std::option::Option<i32>,
     /// <p>Specifies how long traffic phase should be.</p>
     #[doc(hidden)]
-    pub duration_in_seconds: std::option::Option<i32>,
+    pub duration_in_seconds: ::std::option::Option<i32>,
 }
 impl Phase {
     /// <p>Specifies how many concurrent users to start with.</p>
-    pub fn initial_number_of_users(&self) -> std::option::Option<i32> {
+    pub fn initial_number_of_users(&self) -> ::std::option::Option<i32> {
         self.initial_number_of_users
     }
     /// <p>Specified how many new users to spawn in a minute.</p>
-    pub fn spawn_rate(&self) -> std::option::Option<i32> {
+    pub fn spawn_rate(&self) -> ::std::option::Option<i32> {
         self.spawn_rate
     }
     /// <p>Specifies how long traffic phase should be.</p>
-    pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
     }
 }
@@ -37,40 +37,42 @@ impl Phase {
 
 /// A builder for [`Phase`](crate::types::Phase).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PhaseBuilder {
-    pub(crate) initial_number_of_users: std::option::Option<i32>,
-    pub(crate) spawn_rate: std::option::Option<i32>,
-    pub(crate) duration_in_seconds: std::option::Option<i32>,
+    pub(crate) initial_number_of_users: ::std::option::Option<i32>,
+    pub(crate) spawn_rate: ::std::option::Option<i32>,
+    pub(crate) duration_in_seconds: ::std::option::Option<i32>,
 }
 impl PhaseBuilder {
     /// <p>Specifies how many concurrent users to start with.</p>
     pub fn initial_number_of_users(mut self, input: i32) -> Self {
-        self.initial_number_of_users = Some(input);
+        self.initial_number_of_users = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how many concurrent users to start with.</p>
-    pub fn set_initial_number_of_users(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_initial_number_of_users(mut self, input: ::std::option::Option<i32>) -> Self {
         self.initial_number_of_users = input;
         self
     }
     /// <p>Specified how many new users to spawn in a minute.</p>
     pub fn spawn_rate(mut self, input: i32) -> Self {
-        self.spawn_rate = Some(input);
+        self.spawn_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specified how many new users to spawn in a minute.</p>
-    pub fn set_spawn_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_spawn_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.spawn_rate = input;
         self
     }
     /// <p>Specifies how long traffic phase should be.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
-        self.duration_in_seconds = Some(input);
+        self.duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how long traffic phase should be.</p>
-    pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_seconds = input;
         self
     }

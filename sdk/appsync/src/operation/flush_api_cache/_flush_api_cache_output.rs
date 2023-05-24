@@ -2,11 +2,11 @@
 
 /// <p>Represents the output of a <code>FlushApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlushApiCacheOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for FlushApiCacheOutput {
+impl ::aws_http::request_id::RequestId for FlushApiCacheOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl FlushApiCacheOutput {
 
 /// A builder for [`FlushApiCacheOutput`](crate::operation::flush_api_cache::FlushApiCacheOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FlushApiCacheOutputBuilder {
     _request_id: Option<String>,
 }

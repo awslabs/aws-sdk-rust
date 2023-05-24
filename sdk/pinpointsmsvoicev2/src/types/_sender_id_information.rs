@@ -2,43 +2,43 @@
 
 /// <p>The information for all SenderIds in an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SenderIdInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
     #[doc(hidden)]
-    pub sender_id_arn: std::option::Option<std::string::String>,
+    pub sender_id_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
     #[doc(hidden)]
-    pub sender_id: std::option::Option<std::string::String>,
+    pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     #[doc(hidden)]
-    pub iso_country_code: std::option::Option<std::string::String>,
+    pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     #[doc(hidden)]
-    pub message_types: std::option::Option<std::vec::Vec<crate::types::MessageType>>,
+    pub message_types: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>,
     /// <p>The monthly leasing price, in US dollars.</p>
     #[doc(hidden)]
-    pub monthly_leasing_price: std::option::Option<std::string::String>,
+    pub monthly_leasing_price: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    pub fn sender_id_arn(&self) -> std::option::Option<&str> {
+    pub fn sender_id_arn(&self) -> ::std::option::Option<&str> {
         self.sender_id_arn.as_deref()
     }
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<&str> {
         self.sender_id.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_types(&self) -> std::option::Option<&[crate::types::MessageType]> {
+    pub fn message_types(&self) -> ::std::option::Option<&[crate::types::MessageType]> {
         self.message_types.as_deref()
     }
     /// <p>The monthly leasing price, in US dollars.</p>
-    pub fn monthly_leasing_price(&self) -> std::option::Option<&str> {
+    pub fn monthly_leasing_price(&self) -> ::std::option::Option<&str> {
         self.monthly_leasing_price.as_deref()
     }
 }
@@ -51,42 +51,56 @@ impl SenderIdInformation {
 
 /// A builder for [`SenderIdInformation`](crate::types::SenderIdInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SenderIdInformationBuilder {
-    pub(crate) sender_id_arn: std::option::Option<std::string::String>,
-    pub(crate) sender_id: std::option::Option<std::string::String>,
-    pub(crate) iso_country_code: std::option::Option<std::string::String>,
-    pub(crate) message_types: std::option::Option<std::vec::Vec<crate::types::MessageType>>,
-    pub(crate) monthly_leasing_price: std::option::Option<std::string::String>,
+    pub(crate) sender_id_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sender_id: ::std::option::Option<::std::string::String>,
+    pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
+    pub(crate) message_types: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>,
+    pub(crate) monthly_leasing_price: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdInformationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    pub fn sender_id_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sender_id_arn = Some(input.into());
+    pub fn sender_id_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sender_id_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
-    pub fn set_sender_id_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sender_id_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sender_id_arn = input;
         self
     }
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
-    pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sender_id = Some(input.into());
+    pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sender_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alphanumeric sender ID in a specific country that you'd like to describe.</p>
-    pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iso_country_code = Some(input.into());
+    pub fn iso_country_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iso_country_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.iso_country_code = input;
         self
     }
@@ -98,26 +112,29 @@ impl SenderIdInformationBuilder {
     pub fn message_types(mut self, input: crate::types::MessageType) -> Self {
         let mut v = self.message_types.unwrap_or_default();
         v.push(input);
-        self.message_types = Some(v);
+        self.message_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn set_message_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MessageType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageType>>,
     ) -> Self {
         self.message_types = input;
         self
     }
     /// <p>The monthly leasing price, in US dollars.</p>
-    pub fn monthly_leasing_price(mut self, input: impl Into<std::string::String>) -> Self {
-        self.monthly_leasing_price = Some(input.into());
+    pub fn monthly_leasing_price(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.monthly_leasing_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The monthly leasing price, in US dollars.</p>
     pub fn set_monthly_leasing_price(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.monthly_leasing_price = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>A block of data in an Amazon Elastic Block Store snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Block {
     /// <p>The block index.</p>
     #[doc(hidden)]
-    pub block_index: std::option::Option<i32>,
+    pub block_index: ::std::option::Option<i32>,
     /// <p>The block token for the block index.</p>
     #[doc(hidden)]
-    pub block_token: std::option::Option<std::string::String>,
+    pub block_token: ::std::option::Option<::std::string::String>,
 }
 impl Block {
     /// <p>The block index.</p>
-    pub fn block_index(&self) -> std::option::Option<i32> {
+    pub fn block_index(&self) -> ::std::option::Option<i32> {
         self.block_index
     }
     /// <p>The block token for the block index.</p>
-    pub fn block_token(&self) -> std::option::Option<&str> {
+    pub fn block_token(&self) -> ::std::option::Option<&str> {
         self.block_token.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Block {
 
 /// A builder for [`Block`](crate::types::Block).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlockBuilder {
-    pub(crate) block_index: std::option::Option<i32>,
-    pub(crate) block_token: std::option::Option<std::string::String>,
+    pub(crate) block_index: ::std::option::Option<i32>,
+    pub(crate) block_token: ::std::option::Option<::std::string::String>,
 }
 impl BlockBuilder {
     /// <p>The block index.</p>
     pub fn block_index(mut self, input: i32) -> Self {
-        self.block_index = Some(input);
+        self.block_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The block index.</p>
-    pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_block_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.block_index = input;
         self
     }
     /// <p>The block token for the block index.</p>
-    pub fn block_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.block_token = Some(input.into());
+    pub fn block_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.block_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The block token for the block index.</p>
-    pub fn set_block_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_block_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.block_token = input;
         self
     }

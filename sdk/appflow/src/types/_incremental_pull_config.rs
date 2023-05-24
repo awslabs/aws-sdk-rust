@@ -2,15 +2,15 @@
 
 /// <p> Specifies the configuration used when importing incremental records from the source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncrementalPullConfig {
     /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
     #[doc(hidden)]
-    pub datetime_type_field_name: std::option::Option<std::string::String>,
+    pub datetime_type_field_name: ::std::option::Option<::std::string::String>,
 }
 impl IncrementalPullConfig {
     /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
-    pub fn datetime_type_field_name(&self) -> std::option::Option<&str> {
+    pub fn datetime_type_field_name(&self) -> ::std::option::Option<&str> {
         self.datetime_type_field_name.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl IncrementalPullConfig {
 
 /// A builder for [`IncrementalPullConfig`](crate::types::IncrementalPullConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IncrementalPullConfigBuilder {
-    pub(crate) datetime_type_field_name: std::option::Option<std::string::String>,
+    pub(crate) datetime_type_field_name: ::std::option::Option<::std::string::String>,
 }
 impl IncrementalPullConfigBuilder {
     /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
-    pub fn datetime_type_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.datetime_type_field_name = Some(input.into());
+    pub fn datetime_type_field_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.datetime_type_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A field that specifies the date time or timestamp field as the criteria to use when importing incremental records from the source. </p>
     pub fn set_datetime_type_field_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.datetime_type_field_name = input;
         self

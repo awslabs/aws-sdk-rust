@@ -2,48 +2,48 @@
 
 /// <p>Contains the output of DescribeNetworkInterfaceAttribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfaceAttributeOutput {
     /// <p>The attachment (if any) of the network interface.</p>
     #[doc(hidden)]
-    pub attachment: std::option::Option<crate::types::NetworkInterfaceAttachment>,
+    pub attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,
     /// <p>The description of the network interface.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<crate::types::AttributeValue>,
+    pub description: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The security groups associated with the network interface.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
-    pub network_interface_id: std::option::Option<std::string::String>,
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
     #[doc(hidden)]
-    pub source_dest_check: std::option::Option<crate::types::AttributeBooleanValue>,
+    pub source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     _request_id: Option<String>,
 }
 impl DescribeNetworkInterfaceAttributeOutput {
     /// <p>The attachment (if any) of the network interface.</p>
-    pub fn attachment(&self) -> std::option::Option<&crate::types::NetworkInterfaceAttachment> {
+    pub fn attachment(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceAttachment> {
         self.attachment.as_ref()
     }
     /// <p>The description of the network interface.</p>
-    pub fn description(&self) -> std::option::Option<&crate::types::AttributeValue> {
+    pub fn description(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.description.as_ref()
     }
     /// <p>The security groups associated with the network interface.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::GroupIdentifier]> {
+    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
         self.groups.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    pub fn source_dest_check(&self) -> std::option::Option<&crate::types::AttributeBooleanValue> {
+    pub fn source_dest_check(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.source_dest_check.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeNetworkInterfaceAttributeOutput {
+impl ::aws_http::request_id::RequestId for DescribeNetworkInterfaceAttributeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -57,38 +57,40 @@ impl DescribeNetworkInterfaceAttributeOutput {
 
 /// A builder for [`DescribeNetworkInterfaceAttributeOutput`](crate::operation::describe_network_interface_attribute::DescribeNetworkInterfaceAttributeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeNetworkInterfaceAttributeOutputBuilder {
-    pub(crate) attachment: std::option::Option<crate::types::NetworkInterfaceAttachment>,
-    pub(crate) description: std::option::Option<crate::types::AttributeValue>,
-    pub(crate) groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
-    pub(crate) network_interface_id: std::option::Option<std::string::String>,
-    pub(crate) source_dest_check: std::option::Option<crate::types::AttributeBooleanValue>,
+    pub(crate) attachment: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,
+    pub(crate) description: ::std::option::Option<crate::types::AttributeValue>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     _request_id: Option<String>,
 }
 impl DescribeNetworkInterfaceAttributeOutputBuilder {
     /// <p>The attachment (if any) of the network interface.</p>
     pub fn attachment(mut self, input: crate::types::NetworkInterfaceAttachment) -> Self {
-        self.attachment = Some(input);
+        self.attachment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attachment (if any) of the network interface.</p>
     pub fn set_attachment(
         mut self,
-        input: std::option::Option<crate::types::NetworkInterfaceAttachment>,
+        input: ::std::option::Option<crate::types::NetworkInterfaceAttachment>,
     ) -> Self {
         self.attachment = input;
         self
     }
     /// <p>The description of the network interface.</p>
     pub fn description(mut self, input: crate::types::AttributeValue) -> Self {
-        self.description = Some(input);
+        self.description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of the network interface.</p>
     pub fn set_description(
         mut self,
-        input: std::option::Option<crate::types::AttributeValue>,
+        input: ::std::option::Option<crate::types::AttributeValue>,
     ) -> Self {
         self.description = input;
         self
@@ -101,39 +103,42 @@ impl DescribeNetworkInterfaceAttributeOutputBuilder {
     pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input);
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups associated with the network interface.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     ) -> Self {
         self.groups = input;
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_interface_id = Some(input.into());
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_interface_id = input;
         self
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub fn source_dest_check(mut self, input: crate::types::AttributeBooleanValue) -> Self {
-        self.source_dest_check = Some(input);
+        self.source_dest_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub fn set_source_dest_check(
         mut self,
-        input: std::option::Option<crate::types::AttributeBooleanValue>,
+        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
     ) -> Self {
         self.source_dest_check = input;
         self

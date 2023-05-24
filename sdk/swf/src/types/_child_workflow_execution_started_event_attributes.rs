@@ -2,25 +2,25 @@
 
 /// <p>Provides the details of the <code>ChildWorkflowExecutionStarted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChildWorkflowExecutionStartedEventAttributes {
     /// <p>The child workflow execution that was started.</p>
     #[doc(hidden)]
-    pub workflow_execution: std::option::Option<crate::types::WorkflowExecution>,
+    pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The type of the child workflow execution.</p>
     #[doc(hidden)]
-    pub workflow_type: std::option::Option<crate::types::WorkflowType>,
+    pub workflow_type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     #[doc(hidden)]
     pub initiated_event_id: i64,
 }
 impl ChildWorkflowExecutionStartedEventAttributes {
     /// <p>The child workflow execution that was started.</p>
-    pub fn workflow_execution(&self) -> std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The type of the child workflow execution.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -38,46 +38,48 @@ impl ChildWorkflowExecutionStartedEventAttributes {
 
 /// A builder for [`ChildWorkflowExecutionStartedEventAttributes`](crate::types::ChildWorkflowExecutionStartedEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChildWorkflowExecutionStartedEventAttributesBuilder {
-    pub(crate) workflow_execution: std::option::Option<crate::types::WorkflowExecution>,
-    pub(crate) workflow_type: std::option::Option<crate::types::WorkflowType>,
-    pub(crate) initiated_event_id: std::option::Option<i64>,
+    pub(crate) workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
+    pub(crate) workflow_type: ::std::option::Option<crate::types::WorkflowType>,
+    pub(crate) initiated_event_id: ::std::option::Option<i64>,
 }
 impl ChildWorkflowExecutionStartedEventAttributesBuilder {
     /// <p>The child workflow execution that was started.</p>
     pub fn workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
-        self.workflow_execution = Some(input);
+        self.workflow_execution = ::std::option::Option::Some(input);
         self
     }
     /// <p>The child workflow execution that was started.</p>
     pub fn set_workflow_execution(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecution>,
+        input: ::std::option::Option<crate::types::WorkflowExecution>,
     ) -> Self {
         self.workflow_execution = input;
         self
     }
     /// <p>The type of the child workflow execution.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
-        self.workflow_type = Some(input);
+        self.workflow_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the child workflow execution.</p>
     pub fn set_workflow_type(
         mut self,
-        input: std::option::Option<crate::types::WorkflowType>,
+        input: ::std::option::Option<crate::types::WorkflowType>,
     ) -> Self {
         self.workflow_type = input;
         self
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(mut self, input: i64) -> Self {
-        self.initiated_event_id = Some(input);
+        self.initiated_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code> <code>Decision</code> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.initiated_event_id = input;
         self
     }

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ConfigurationEventResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ConfigurationEventResourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ConfigurationEventResourceType {
+impl ::std::convert::From<&str> for ConfigurationEventResourceType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUDFORMATION" => ConfigurationEventResourceType::Cloudformation,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ConfigurationEventResourceType {
         }
     }
 }
-impl std::str::FromStr for ConfigurationEventResourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ConfigurationEventResourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationEventResourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ConfigurationEventResourceType::from(s))
     }
 }
 impl ConfigurationEventResourceType {
@@ -101,7 +101,7 @@ impl ConfigurationEventResourceType {
         ]
     }
 }
-impl AsRef<str> for ConfigurationEventResourceType {
+impl ::std::convert::AsRef<str> for ConfigurationEventResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

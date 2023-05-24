@@ -2,51 +2,51 @@
 
 /// <p>Specifies the location of 1-15 occurrences of sensitive data that was detected by a managed data identifier or a custom data identifier and produced a sensitive data finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Occurrences {
     /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p>
     /// <p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
     #[doc(hidden)]
-    pub cells: std::option::Option<std::vec::Vec<crate::types::Cell>>,
+    pub cells: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
     #[doc(hidden)]
-    pub line_ranges: std::option::Option<std::vec::Vec<crate::types::Range>>,
+    pub line_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
-    pub offset_ranges: std::option::Option<std::vec::Vec<crate::types::Range>>,
+    pub offset_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p>
     /// <p>Each Page object specifies a page that contains the sensitive data.</p>
     #[doc(hidden)]
-    pub pages: std::option::Option<std::vec::Vec<crate::types::Page>>,
+    pub pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
     /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p>
     /// <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
     #[doc(hidden)]
-    pub records: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl Occurrences {
     /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p>
     /// <p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
-    pub fn cells(&self) -> std::option::Option<&[crate::types::Cell]> {
+    pub fn cells(&self) -> ::std::option::Option<&[crate::types::Cell]> {
         self.cells.as_deref()
     }
     /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
-    pub fn line_ranges(&self) -> std::option::Option<&[crate::types::Range]> {
+    pub fn line_ranges(&self) -> ::std::option::Option<&[crate::types::Range]> {
         self.line_ranges.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn offset_ranges(&self) -> std::option::Option<&[crate::types::Range]> {
+    pub fn offset_ranges(&self) -> ::std::option::Option<&[crate::types::Range]> {
         self.offset_ranges.as_deref()
     }
     /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p>
     /// <p>Each Page object specifies a page that contains the sensitive data.</p>
-    pub fn pages(&self) -> std::option::Option<&[crate::types::Page]> {
+    pub fn pages(&self) -> ::std::option::Option<&[crate::types::Page]> {
         self.pages.as_deref()
     }
     /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p>
     /// <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
-    pub fn records(&self) -> std::option::Option<&[crate::types::Record]> {
+    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
         self.records.as_deref()
     }
 }
@@ -59,13 +59,15 @@ impl Occurrences {
 
 /// A builder for [`Occurrences`](crate::types::Occurrences).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OccurrencesBuilder {
-    pub(crate) cells: std::option::Option<std::vec::Vec<crate::types::Cell>>,
-    pub(crate) line_ranges: std::option::Option<std::vec::Vec<crate::types::Range>>,
-    pub(crate) offset_ranges: std::option::Option<std::vec::Vec<crate::types::Range>>,
-    pub(crate) pages: std::option::Option<std::vec::Vec<crate::types::Page>>,
-    pub(crate) records: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    pub(crate) cells: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
+    pub(crate) line_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
+    pub(crate) offset_ranges: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
+    pub(crate) pages: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl OccurrencesBuilder {
     /// Appends an item to `cells`.
@@ -77,14 +79,14 @@ impl OccurrencesBuilder {
     pub fn cells(mut self, input: crate::types::Cell) -> Self {
         let mut v = self.cells.unwrap_or_default();
         v.push(input);
-        self.cells = Some(v);
+        self.cells = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p>
     /// <p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
     pub fn set_cells(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Cell>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
     ) -> Self {
         self.cells = input;
         self
@@ -98,14 +100,14 @@ impl OccurrencesBuilder {
     pub fn line_ranges(mut self, input: crate::types::Range) -> Self {
         let mut v = self.line_ranges.unwrap_or_default();
         v.push(input);
-        self.line_ranges = Some(v);
+        self.line_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p>
     /// <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
     pub fn set_line_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Range>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     ) -> Self {
         self.line_ranges = input;
         self
@@ -118,13 +120,13 @@ impl OccurrencesBuilder {
     pub fn offset_ranges(mut self, input: crate::types::Range) -> Self {
         let mut v = self.offset_ranges.unwrap_or_default();
         v.push(input);
-        self.offset_ranges = Some(v);
+        self.offset_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>Reserved for future use.</p>
     pub fn set_offset_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Range>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
     ) -> Self {
         self.offset_ranges = input;
         self
@@ -138,14 +140,14 @@ impl OccurrencesBuilder {
     pub fn pages(mut self, input: crate::types::Page) -> Self {
         let mut v = self.pages.unwrap_or_default();
         v.push(input);
-        self.pages = Some(v);
+        self.pages = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p>
     /// <p>Each Page object specifies a page that contains the sensitive data.</p>
     pub fn set_pages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Page>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Page>>,
     ) -> Self {
         self.pages = input;
         self
@@ -159,14 +161,14 @@ impl OccurrencesBuilder {
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
         v.push(input);
-        self.records = Some(v);
+        self.records = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p>
     /// <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
     pub fn set_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Record>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     ) -> Self {
         self.records = input;
         self

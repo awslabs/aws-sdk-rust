@@ -2,22 +2,24 @@
 
 /// <p>Describes the state of an authorization rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpnAuthorizationRuleStatus {
     /// <p>The state of the authorization rule.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
+    pub code: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
     /// <p>A message about the status of the authorization rule, if applicable.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnAuthorizationRuleStatus {
     /// <p>The state of the authorization rule.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::ClientVpnAuthorizationRuleStatusCode> {
+    pub fn code(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ClientVpnAuthorizationRuleStatusCode> {
         self.code.as_ref()
     }
     /// <p>A message about the status of the authorization rule, if applicable.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +32,34 @@ impl ClientVpnAuthorizationRuleStatus {
 
 /// A builder for [`ClientVpnAuthorizationRuleStatus`](crate::types::ClientVpnAuthorizationRuleStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientVpnAuthorizationRuleStatusBuilder {
-    pub(crate) code: std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnAuthorizationRuleStatusBuilder {
     /// <p>The state of the authorization rule.</p>
     pub fn code(mut self, input: crate::types::ClientVpnAuthorizationRuleStatusCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the authorization rule.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
+        input: ::std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>A message about the status of the authorization rule, if applicable.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the status of the authorization rule, if applicable.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

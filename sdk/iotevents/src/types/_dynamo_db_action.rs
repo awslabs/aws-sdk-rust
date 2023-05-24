@@ -15,7 +15,7 @@
 /// _raw
 /// </payload-field></code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDbAction {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
@@ -24,13 +24,13 @@ pub struct DynamoDbAction {
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
     #[doc(hidden)]
-    pub hash_key_type: std::option::Option<std::string::String>,
+    pub hash_key_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
     #[doc(hidden)]
-    pub hash_key_field: std::option::Option<std::string::String>,
+    pub hash_key_field: ::std::option::Option<::std::string::String>,
     /// <p>The value of the hash key (also called the partition key).</p>
     #[doc(hidden)]
-    pub hash_key_value: std::option::Option<std::string::String>,
+    pub hash_key_value: ::std::option::Option<::std::string::String>,
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
     /// <li> <p> <code>'STRING'</code> - The range key is a string.</p> </li>
@@ -38,13 +38,13 @@ pub struct DynamoDbAction {
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
     #[doc(hidden)]
-    pub range_key_type: std::option::Option<std::string::String>,
+    pub range_key_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table. </p>
     #[doc(hidden)]
-    pub range_key_field: std::option::Option<std::string::String>,
+    pub range_key_field: ::std::option::Option<::std::string::String>,
     /// <p>The value of the range key (also called the sort key).</p>
     #[doc(hidden)]
-    pub range_key_value: std::option::Option<std::string::String>,
+    pub range_key_value: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation to perform. You can specify the following values: </p>
     /// <ul>
     /// <li> <p> <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p> </li>
@@ -53,18 +53,18 @@ pub struct DynamoDbAction {
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
     #[doc(hidden)]
-    pub operation: std::option::Option<std::string::String>,
+    pub operation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
     #[doc(hidden)]
-    pub payload_field: std::option::Option<std::string::String>,
+    pub payload_field: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table. </p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     #[doc(hidden)]
-    pub payload: std::option::Option<crate::types::Payload>,
+    pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl DynamoDbAction {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
@@ -73,15 +73,15 @@ impl DynamoDbAction {
     /// <li> <p> <code>'NUMBER'</code> - The hash key is a number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
-    pub fn hash_key_type(&self) -> std::option::Option<&str> {
+    pub fn hash_key_type(&self) -> ::std::option::Option<&str> {
         self.hash_key_type.as_deref()
     }
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
-    pub fn hash_key_field(&self) -> std::option::Option<&str> {
+    pub fn hash_key_field(&self) -> ::std::option::Option<&str> {
         self.hash_key_field.as_deref()
     }
     /// <p>The value of the hash key (also called the partition key).</p>
-    pub fn hash_key_value(&self) -> std::option::Option<&str> {
+    pub fn hash_key_value(&self) -> ::std::option::Option<&str> {
         self.hash_key_value.as_deref()
     }
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
@@ -90,15 +90,15 @@ impl DynamoDbAction {
     /// <li> <p> <code>'NUMBER'</code> - The range key is number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
-    pub fn range_key_type(&self) -> std::option::Option<&str> {
+    pub fn range_key_type(&self) -> ::std::option::Option<&str> {
         self.range_key_type.as_deref()
     }
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table. </p>
-    pub fn range_key_field(&self) -> std::option::Option<&str> {
+    pub fn range_key_field(&self) -> ::std::option::Option<&str> {
         self.range_key_field.as_deref()
     }
     /// <p>The value of the range key (also called the sort key).</p>
-    pub fn range_key_value(&self) -> std::option::Option<&str> {
+    pub fn range_key_value(&self) -> ::std::option::Option<&str> {
         self.range_key_value.as_deref()
     }
     /// <p>The type of operation to perform. You can specify the following values: </p>
@@ -108,21 +108,21 @@ impl DynamoDbAction {
     /// <li> <p> <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<&str> {
         self.operation.as_deref()
     }
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
-    pub fn payload_field(&self) -> std::option::Option<&str> {
+    pub fn payload_field(&self) -> ::std::option::Option<&str> {
         self.payload_field.as_deref()
     }
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table. </p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
-    pub fn payload(&self) -> std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -135,18 +135,20 @@ impl DynamoDbAction {
 
 /// A builder for [`DynamoDbAction`](crate::types::DynamoDbAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DynamoDbActionBuilder {
-    pub(crate) hash_key_type: std::option::Option<std::string::String>,
-    pub(crate) hash_key_field: std::option::Option<std::string::String>,
-    pub(crate) hash_key_value: std::option::Option<std::string::String>,
-    pub(crate) range_key_type: std::option::Option<std::string::String>,
-    pub(crate) range_key_field: std::option::Option<std::string::String>,
-    pub(crate) range_key_value: std::option::Option<std::string::String>,
-    pub(crate) operation: std::option::Option<std::string::String>,
-    pub(crate) payload_field: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) payload: std::option::Option<crate::types::Payload>,
+    pub(crate) hash_key_type: ::std::option::Option<::std::string::String>,
+    pub(crate) hash_key_field: ::std::option::Option<::std::string::String>,
+    pub(crate) hash_key_value: ::std::option::Option<::std::string::String>,
+    pub(crate) range_key_type: ::std::option::Option<::std::string::String>,
+    pub(crate) range_key_field: ::std::option::Option<::std::string::String>,
+    pub(crate) range_key_value: ::std::option::Option<::std::string::String>,
+    pub(crate) operation: ::std::option::Option<::std::string::String>,
+    pub(crate) payload_field: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) payload: ::std::option::Option<crate::types::Payload>,
 }
 impl DynamoDbActionBuilder {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
@@ -155,8 +157,11 @@ impl DynamoDbActionBuilder {
     /// <li> <p> <code>'NUMBER'</code> - The hash key is a number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
-    pub fn hash_key_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hash_key_type = Some(input.into());
+    pub fn hash_key_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hash_key_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
@@ -165,27 +170,42 @@ impl DynamoDbActionBuilder {
     /// <li> <p> <code>'NUMBER'</code> - The hash key is a number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
-    pub fn set_hash_key_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hash_key_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hash_key_type = input;
         self
     }
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
-    pub fn hash_key_field(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hash_key_field = Some(input.into());
+    pub fn hash_key_field(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hash_key_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the partition key of the target DynamoDB table.</p>
-    pub fn set_hash_key_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hash_key_field(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hash_key_field = input;
         self
     }
     /// <p>The value of the hash key (also called the partition key).</p>
-    pub fn hash_key_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hash_key_value = Some(input.into());
+    pub fn hash_key_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hash_key_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the hash key (also called the partition key).</p>
-    pub fn set_hash_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hash_key_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hash_key_value = input;
         self
     }
@@ -195,8 +215,11 @@ impl DynamoDbActionBuilder {
     /// <li> <p> <code>'NUMBER'</code> - The range key is number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
-    pub fn range_key_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.range_key_type = Some(input.into());
+    pub fn range_key_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.range_key_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
@@ -205,27 +228,42 @@ impl DynamoDbActionBuilder {
     /// <li> <p> <code>'NUMBER'</code> - The range key is number.</p> </li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
-    pub fn set_range_key_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_range_key_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.range_key_type = input;
         self
     }
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table. </p>
-    pub fn range_key_field(mut self, input: impl Into<std::string::String>) -> Self {
-        self.range_key_field = Some(input.into());
+    pub fn range_key_field(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.range_key_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort key of the target DynamoDB table. </p>
-    pub fn set_range_key_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_range_key_field(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.range_key_field = input;
         self
     }
     /// <p>The value of the range key (also called the sort key).</p>
-    pub fn range_key_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.range_key_value = Some(input.into());
+    pub fn range_key_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.range_key_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the range key (also called the sort key).</p>
-    pub fn set_range_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_range_key_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.range_key_value = input;
         self
     }
@@ -236,8 +274,8 @@ impl DynamoDbActionBuilder {
     /// <li> <p> <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
-    pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operation = Some(input.into());
+    pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of operation to perform. You can specify the following values: </p>
@@ -247,41 +285,47 @@ impl DynamoDbActionBuilder {
     /// <li> <p> <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p> </li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
-    pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation = input;
         self
     }
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
-    pub fn payload_field(mut self, input: impl Into<std::string::String>) -> Self {
-        self.payload_field = Some(input.into());
+    pub fn payload_field(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.payload_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DynamoDB column that receives the action payload.</p>
     /// <p>If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.</p>
-    pub fn set_payload_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_payload_field(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.payload_field = input;
         self
     }
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table. </p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB table. </p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
-        self.payload = Some(input);
+        self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information needed to configure the payload.</p>
     /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
-    pub fn set_payload(mut self, input: std::option::Option<crate::types::Payload>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
     }

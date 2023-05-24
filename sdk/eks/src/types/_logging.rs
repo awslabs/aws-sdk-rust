@@ -2,15 +2,15 @@
 
 /// <p>An object representing the logging configuration for resources in your cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
     #[doc(hidden)]
-    pub cluster_logging: std::option::Option<std::vec::Vec<crate::types::LogSetup>>,
+    pub cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::LogSetup>>,
 }
 impl Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
-    pub fn cluster_logging(&self) -> std::option::Option<&[crate::types::LogSetup]> {
+    pub fn cluster_logging(&self) -> ::std::option::Option<&[crate::types::LogSetup]> {
         self.cluster_logging.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl Logging {
 
 /// A builder for [`Logging`](crate::types::Logging).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingBuilder {
-    pub(crate) cluster_logging: std::option::Option<std::vec::Vec<crate::types::LogSetup>>,
+    pub(crate) cluster_logging: ::std::option::Option<::std::vec::Vec<crate::types::LogSetup>>,
 }
 impl LoggingBuilder {
     /// Appends an item to `cluster_logging`.
@@ -36,13 +38,13 @@ impl LoggingBuilder {
     pub fn cluster_logging(mut self, input: crate::types::LogSetup) -> Self {
         let mut v = self.cluster_logging.unwrap_or_default();
         v.push(input);
-        self.cluster_logging = Some(v);
+        self.cluster_logging = ::std::option::Option::Some(v);
         self
     }
     /// <p>The cluster control plane logging configuration for your cluster.</p>
     pub fn set_cluster_logging(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogSetup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogSetup>>,
     ) -> Self {
         self.cluster_logging = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopFailback`](crate::operation::stop_failback::builders::StopFailbackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`recovery_instance_id(impl Into<String>)`](crate::operation::stop_failback::builders::StopFailbackFluentBuilder::recovery_instance_id) / [`set_recovery_instance_id(Option<String>)`](crate::operation::stop_failback::builders::StopFailbackFluentBuilder::set_recovery_instance_id): <p>The ID of the Recovery Instance we want to stop failback for.</p>
+    ///   - [`recovery_instance_id(impl ::std::convert::Into<String>)`](crate::operation::stop_failback::builders::StopFailbackFluentBuilder::recovery_instance_id) / [`set_recovery_instance_id(Option<String>)`](crate::operation::stop_failback::builders::StopFailbackFluentBuilder::set_recovery_instance_id): <p>The ID of the Recovery Instance we want to stop failback for.</p>
     /// - On success, responds with [`StopFailbackOutput`](crate::operation::stop_failback::StopFailbackOutput)
     /// - On failure, responds with [`SdkError<StopFailbackError>`](crate::operation::stop_failback::StopFailbackError)
     pub fn stop_failback(

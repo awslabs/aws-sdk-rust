@@ -2,11 +2,11 @@
 
 /// <p>The destination phone number's verification status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifySmsSandboxPhoneNumberOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for VerifySmsSandboxPhoneNumberOutput {
+impl ::aws_http::request_id::RequestId for VerifySmsSandboxPhoneNumberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl VerifySmsSandboxPhoneNumberOutput {
 
 /// A builder for [`VerifySmsSandboxPhoneNumberOutput`](crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifySmsSandboxPhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

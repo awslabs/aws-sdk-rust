@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConfiguration`](crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_configuration::builders::DeleteConfigurationFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     /// - On success, responds with [`DeleteConfigurationOutput`](crate::operation::delete_configuration::DeleteConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_configuration::DeleteConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     ///   - [`state(Option<ConfigurationState>)`](crate::operation::delete_configuration::DeleteConfigurationOutput::state): <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>

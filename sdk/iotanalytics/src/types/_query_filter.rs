@@ -2,15 +2,15 @@
 
 /// <p>Information that is used to filter message data, to segregate it according to the timeframe in which it arrives.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryFilter {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     #[doc(hidden)]
-    pub delta_time: std::option::Option<crate::types::DeltaTime>,
+    pub delta_time: ::std::option::Option<crate::types::DeltaTime>,
 }
 impl QueryFilter {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
-    pub fn delta_time(&self) -> std::option::Option<&crate::types::DeltaTime> {
+    pub fn delta_time(&self) -> ::std::option::Option<&crate::types::DeltaTime> {
         self.delta_time.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl QueryFilter {
 
 /// A builder for [`QueryFilter`](crate::types::QueryFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryFilterBuilder {
-    pub(crate) delta_time: std::option::Option<crate::types::DeltaTime>,
+    pub(crate) delta_time: ::std::option::Option<crate::types::DeltaTime>,
 }
 impl QueryFilterBuilder {
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
     pub fn delta_time(mut self, input: crate::types::DeltaTime) -> Self {
-        self.delta_time = Some(input);
+        self.delta_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
-    pub fn set_delta_time(mut self, input: std::option::Option<crate::types::DeltaTime>) -> Self {
+    pub fn set_delta_time(mut self, input: ::std::option::Option<crate::types::DeltaTime>) -> Self {
         self.delta_time = input;
         self
     }

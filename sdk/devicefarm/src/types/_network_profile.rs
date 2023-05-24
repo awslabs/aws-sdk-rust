@@ -2,38 +2,38 @@
 
 /// <p>An array of settings that describes characteristics of a network profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkProfile {
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network profile.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the network profile.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of network profile. Valid values are listed here.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::NetworkProfileType>,
+    pub r#type: ::std::option::Option<crate::types::NetworkProfileType>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     #[doc(hidden)]
-    pub uplink_bandwidth_bits: std::option::Option<i64>,
+    pub uplink_bandwidth_bits: ::std::option::Option<i64>,
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     #[doc(hidden)]
-    pub downlink_bandwidth_bits: std::option::Option<i64>,
+    pub downlink_bandwidth_bits: ::std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     #[doc(hidden)]
-    pub uplink_delay_ms: std::option::Option<i64>,
+    pub uplink_delay_ms: ::std::option::Option<i64>,
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     #[doc(hidden)]
-    pub downlink_delay_ms: std::option::Option<i64>,
+    pub downlink_delay_ms: ::std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     #[doc(hidden)]
-    pub uplink_jitter_ms: std::option::Option<i64>,
+    pub uplink_jitter_ms: ::std::option::Option<i64>,
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     #[doc(hidden)]
-    pub downlink_jitter_ms: std::option::Option<i64>,
+    pub downlink_jitter_ms: ::std::option::Option<i64>,
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     #[doc(hidden)]
     pub uplink_loss_percent: i32,
@@ -43,43 +43,43 @@ pub struct NetworkProfile {
 }
 impl NetworkProfile {
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the network profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the network profile.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of network profile. Valid values are listed here.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::NetworkProfileType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NetworkProfileType> {
         self.r#type.as_ref()
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
-    pub fn uplink_bandwidth_bits(&self) -> std::option::Option<i64> {
+    pub fn uplink_bandwidth_bits(&self) -> ::std::option::Option<i64> {
         self.uplink_bandwidth_bits
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
-    pub fn downlink_bandwidth_bits(&self) -> std::option::Option<i64> {
+    pub fn downlink_bandwidth_bits(&self) -> ::std::option::Option<i64> {
         self.downlink_bandwidth_bits
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
-    pub fn uplink_delay_ms(&self) -> std::option::Option<i64> {
+    pub fn uplink_delay_ms(&self) -> ::std::option::Option<i64> {
         self.uplink_delay_ms
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
-    pub fn downlink_delay_ms(&self) -> std::option::Option<i64> {
+    pub fn downlink_delay_ms(&self) -> ::std::option::Option<i64> {
         self.downlink_delay_ms
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
-    pub fn uplink_jitter_ms(&self) -> std::option::Option<i64> {
+    pub fn uplink_jitter_ms(&self) -> ::std::option::Option<i64> {
         self.uplink_jitter_ms
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
-    pub fn downlink_jitter_ms(&self) -> std::option::Option<i64> {
+    pub fn downlink_jitter_ms(&self) -> ::std::option::Option<i64> {
         self.downlink_jitter_ms
     }
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
@@ -100,142 +100,144 @@ impl NetworkProfile {
 
 /// A builder for [`NetworkProfile`](crate::types::NetworkProfile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkProfileBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::NetworkProfileType>,
-    pub(crate) uplink_bandwidth_bits: std::option::Option<i64>,
-    pub(crate) downlink_bandwidth_bits: std::option::Option<i64>,
-    pub(crate) uplink_delay_ms: std::option::Option<i64>,
-    pub(crate) downlink_delay_ms: std::option::Option<i64>,
-    pub(crate) uplink_jitter_ms: std::option::Option<i64>,
-    pub(crate) downlink_jitter_ms: std::option::Option<i64>,
-    pub(crate) uplink_loss_percent: std::option::Option<i32>,
-    pub(crate) downlink_loss_percent: std::option::Option<i32>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NetworkProfileType>,
+    pub(crate) uplink_bandwidth_bits: ::std::option::Option<i64>,
+    pub(crate) downlink_bandwidth_bits: ::std::option::Option<i64>,
+    pub(crate) uplink_delay_ms: ::std::option::Option<i64>,
+    pub(crate) downlink_delay_ms: ::std::option::Option<i64>,
+    pub(crate) uplink_jitter_ms: ::std::option::Option<i64>,
+    pub(crate) downlink_jitter_ms: ::std::option::Option<i64>,
+    pub(crate) uplink_loss_percent: ::std::option::Option<i32>,
+    pub(crate) downlink_loss_percent: ::std::option::Option<i32>,
 }
 impl NetworkProfileBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network profile.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the network profile.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the network profile.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description of the network profile.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the network profile.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The type of network profile. Valid values are listed here.</p>
     pub fn r#type(mut self, input: crate::types::NetworkProfileType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of network profile. Valid values are listed here.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::NetworkProfileType>,
+        input: ::std::option::Option<crate::types::NetworkProfileType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
-        self.uplink_bandwidth_bits = Some(input);
+        self.uplink_bandwidth_bits = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
-    pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_uplink_bandwidth_bits(mut self, input: ::std::option::Option<i64>) -> Self {
         self.uplink_bandwidth_bits = input;
         self
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
-        self.downlink_bandwidth_bits = Some(input);
+        self.downlink_bandwidth_bits = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
-    pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_downlink_bandwidth_bits(mut self, input: ::std::option::Option<i64>) -> Self {
         self.downlink_bandwidth_bits = input;
         self
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_delay_ms(mut self, input: i64) -> Self {
-        self.uplink_delay_ms = Some(input);
+        self.uplink_delay_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
-    pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_uplink_delay_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.uplink_delay_ms = input;
         self
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_delay_ms(mut self, input: i64) -> Self {
-        self.downlink_delay_ms = Some(input);
+        self.downlink_delay_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
-    pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_downlink_delay_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.downlink_delay_ms = input;
         self
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
-        self.uplink_jitter_ms = Some(input);
+        self.uplink_jitter_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
-    pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_uplink_jitter_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.uplink_jitter_ms = input;
         self
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
-        self.downlink_jitter_ms = Some(input);
+        self.downlink_jitter_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
-    pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_downlink_jitter_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.downlink_jitter_ms = input;
         self
     }
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub fn uplink_loss_percent(mut self, input: i32) -> Self {
-        self.uplink_loss_percent = Some(input);
+        self.uplink_loss_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
-    pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_uplink_loss_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.uplink_loss_percent = input;
         self
     }
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub fn downlink_loss_percent(mut self, input: i32) -> Self {
-        self.downlink_loss_percent = Some(input);
+        self.downlink_loss_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
-    pub fn set_downlink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_downlink_loss_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.downlink_loss_percent = input;
         self
     }

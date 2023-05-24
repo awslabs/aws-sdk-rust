@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CostCategoryStatusComponent {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum CostCategoryStatusComponent {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CostCategoryStatusComponent {
+impl ::std::convert::From<&str> for CostCategoryStatusComponent {
     fn from(s: &str) -> Self {
         match s {
             "COST_EXPLORER" => CostCategoryStatusComponent::CostExplorer,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for CostCategoryStatusComponent {
         }
     }
 }
-impl std::str::FromStr for CostCategoryStatusComponent {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CostCategoryStatusComponent {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostCategoryStatusComponent::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CostCategoryStatusComponent::from(s))
     }
 }
 impl CostCategoryStatusComponent {
@@ -81,7 +81,7 @@ impl CostCategoryStatusComponent {
         &["COST_EXPLORER"]
     }
 }
-impl AsRef<str> for CostCategoryStatusComponent {
+impl ::std::convert::AsRef<str> for CostCategoryStatusComponent {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

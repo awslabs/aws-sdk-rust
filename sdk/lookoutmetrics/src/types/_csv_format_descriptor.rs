@@ -2,50 +2,50 @@
 
 /// <p>Contains information about how a source CSV data file should be analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
     #[doc(hidden)]
-    pub file_compression: std::option::Option<crate::types::CsvFileCompression>,
+    pub file_compression: ::std::option::Option<crate::types::CsvFileCompression>,
     /// <p>The character set in which the source CSV file is written.</p>
     #[doc(hidden)]
-    pub charset: std::option::Option<std::string::String>,
+    pub charset: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not the source CSV file contains a header.</p>
     #[doc(hidden)]
-    pub contains_header: std::option::Option<bool>,
+    pub contains_header: ::std::option::Option<bool>,
     /// <p>The character used to delimit the source CSV file.</p>
     #[doc(hidden)]
-    pub delimiter: std::option::Option<std::string::String>,
+    pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A list of the source CSV file's headers, if any.</p>
     #[doc(hidden)]
-    pub header_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub header_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The character used as a quote character.</p>
     #[doc(hidden)]
-    pub quote_symbol: std::option::Option<std::string::String>,
+    pub quote_symbol: ::std::option::Option<::std::string::String>,
 }
 impl CsvFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
-    pub fn file_compression(&self) -> std::option::Option<&crate::types::CsvFileCompression> {
+    pub fn file_compression(&self) -> ::std::option::Option<&crate::types::CsvFileCompression> {
         self.file_compression.as_ref()
     }
     /// <p>The character set in which the source CSV file is written.</p>
-    pub fn charset(&self) -> std::option::Option<&str> {
+    pub fn charset(&self) -> ::std::option::Option<&str> {
         self.charset.as_deref()
     }
     /// <p>Whether or not the source CSV file contains a header.</p>
-    pub fn contains_header(&self) -> std::option::Option<bool> {
+    pub fn contains_header(&self) -> ::std::option::Option<bool> {
         self.contains_header
     }
     /// <p>The character used to delimit the source CSV file.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
     }
     /// <p>A list of the source CSV file's headers, if any.</p>
-    pub fn header_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn header_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.header_list.as_deref()
     }
     /// <p>The character used as a quote character.</p>
-    pub fn quote_symbol(&self) -> std::option::Option<&str> {
+    pub fn quote_symbol(&self) -> ::std::option::Option<&str> {
         self.quote_symbol.as_deref()
     }
 }
@@ -58,56 +58,58 @@ impl CsvFormatDescriptor {
 
 /// A builder for [`CsvFormatDescriptor`](crate::types::CsvFormatDescriptor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CsvFormatDescriptorBuilder {
-    pub(crate) file_compression: std::option::Option<crate::types::CsvFileCompression>,
-    pub(crate) charset: std::option::Option<std::string::String>,
-    pub(crate) contains_header: std::option::Option<bool>,
-    pub(crate) delimiter: std::option::Option<std::string::String>,
-    pub(crate) header_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) quote_symbol: std::option::Option<std::string::String>,
+    pub(crate) file_compression: ::std::option::Option<crate::types::CsvFileCompression>,
+    pub(crate) charset: ::std::option::Option<::std::string::String>,
+    pub(crate) contains_header: ::std::option::Option<bool>,
+    pub(crate) delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) header_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) quote_symbol: ::std::option::Option<::std::string::String>,
 }
 impl CsvFormatDescriptorBuilder {
     /// <p>The level of compression of the source CSV file.</p>
     pub fn file_compression(mut self, input: crate::types::CsvFileCompression) -> Self {
-        self.file_compression = Some(input);
+        self.file_compression = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of compression of the source CSV file.</p>
     pub fn set_file_compression(
         mut self,
-        input: std::option::Option<crate::types::CsvFileCompression>,
+        input: ::std::option::Option<crate::types::CsvFileCompression>,
     ) -> Self {
         self.file_compression = input;
         self
     }
     /// <p>The character set in which the source CSV file is written.</p>
-    pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
-        self.charset = Some(input.into());
+    pub fn charset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.charset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The character set in which the source CSV file is written.</p>
-    pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charset = input;
         self
     }
     /// <p>Whether or not the source CSV file contains a header.</p>
     pub fn contains_header(mut self, input: bool) -> Self {
-        self.contains_header = Some(input);
+        self.contains_header = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not the source CSV file contains a header.</p>
-    pub fn set_contains_header(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_contains_header(mut self, input: ::std::option::Option<bool>) -> Self {
         self.contains_header = input;
         self
     }
     /// <p>The character used to delimit the source CSV file.</p>
-    pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delimiter = Some(input.into());
+    pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The character used to delimit the source CSV file.</p>
-    pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
     }
@@ -116,27 +118,27 @@ impl CsvFormatDescriptorBuilder {
     /// To override the contents of this collection use [`set_header_list`](Self::set_header_list).
     ///
     /// <p>A list of the source CSV file's headers, if any.</p>
-    pub fn header_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn header_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.header_list.unwrap_or_default();
         v.push(input.into());
-        self.header_list = Some(v);
+        self.header_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the source CSV file's headers, if any.</p>
     pub fn set_header_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.header_list = input;
         self
     }
     /// <p>The character used as a quote character.</p>
-    pub fn quote_symbol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.quote_symbol = Some(input.into());
+    pub fn quote_symbol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quote_symbol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The character used as a quote character.</p>
-    pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_quote_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quote_symbol = input;
         self
     }

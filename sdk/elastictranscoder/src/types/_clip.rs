@@ -3,15 +3,15 @@
 /// <p>Settings for one clip in a composition. All jobs in a playlist must have the same clip settings.</p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Clip {
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
     #[doc(hidden)]
-    pub time_span: std::option::Option<crate::types::TimeSpan>,
+    pub time_span: ::std::option::Option<crate::types::TimeSpan>,
 }
 impl Clip {
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
-    pub fn time_span(&self) -> std::option::Option<&crate::types::TimeSpan> {
+    pub fn time_span(&self) -> ::std::option::Option<&crate::types::TimeSpan> {
         self.time_span.as_ref()
     }
 }
@@ -24,18 +24,20 @@ impl Clip {
 
 /// A builder for [`Clip`](crate::types::Clip).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClipBuilder {
-    pub(crate) time_span: std::option::Option<crate::types::TimeSpan>,
+    pub(crate) time_span: ::std::option::Option<crate::types::TimeSpan>,
 }
 impl ClipBuilder {
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
     pub fn time_span(mut self, input: crate::types::TimeSpan) -> Self {
-        self.time_span = Some(input);
+        self.time_span = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings that determine when a clip begins and how long it lasts.</p>
-    pub fn set_time_span(mut self, input: std::option::Option<crate::types::TimeSpan>) -> Self {
+    pub fn set_time_span(mut self, input: ::std::option::Option<crate::types::TimeSpan>) -> Self {
         self.time_span = input;
         self
     }

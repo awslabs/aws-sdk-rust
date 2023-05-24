@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StatusType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum StatusType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StatusType {
+impl ::std::convert::From<&str> for StatusType {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => StatusType::Disabled,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for StatusType {
         }
     }
 }
-impl std::str::FromStr for StatusType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StatusType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StatusType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StatusType::from(s))
     }
 }
 impl StatusType {
@@ -84,7 +84,7 @@ impl StatusType {
         &["Disabled", "Enabled"]
     }
 }
-impl AsRef<str> for StatusType {
+impl ::std::convert::AsRef<str> for StatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

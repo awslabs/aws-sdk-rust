@@ -2,43 +2,43 @@
 
 /// <p>TD-SCDMA object for network measurement reports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TdscdmaNmrObj {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     #[doc(hidden)]
-    pub uarfcn: std::option::Option<i32>,
+    pub uarfcn: ::std::option::Option<i32>,
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
     #[doc(hidden)]
-    pub cell_params: std::option::Option<i32>,
+    pub cell_params: ::std::option::Option<i32>,
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
     #[doc(hidden)]
-    pub utran_cid: std::option::Option<i32>,
+    pub utran_cid: ::std::option::Option<i32>,
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
     #[doc(hidden)]
-    pub rscp: std::option::Option<i32>,
+    pub rscp: ::std::option::Option<i32>,
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     #[doc(hidden)]
-    pub path_loss: std::option::Option<i32>,
+    pub path_loss: ::std::option::Option<i32>,
 }
 impl TdscdmaNmrObj {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
-    pub fn uarfcn(&self) -> std::option::Option<i32> {
+    pub fn uarfcn(&self) -> ::std::option::Option<i32> {
         self.uarfcn
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
-    pub fn cell_params(&self) -> std::option::Option<i32> {
+    pub fn cell_params(&self) -> ::std::option::Option<i32> {
         self.cell_params
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
-    pub fn utran_cid(&self) -> std::option::Option<i32> {
+    pub fn utran_cid(&self) -> ::std::option::Option<i32> {
         self.utran_cid
     }
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
-    pub fn rscp(&self) -> std::option::Option<i32> {
+    pub fn rscp(&self) -> ::std::option::Option<i32> {
         self.rscp
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
-    pub fn path_loss(&self) -> std::option::Option<i32> {
+    pub fn path_loss(&self) -> ::std::option::Option<i32> {
         self.path_loss
     }
 }
@@ -51,62 +51,64 @@ impl TdscdmaNmrObj {
 
 /// A builder for [`TdscdmaNmrObj`](crate::types::TdscdmaNmrObj).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TdscdmaNmrObjBuilder {
-    pub(crate) uarfcn: std::option::Option<i32>,
-    pub(crate) cell_params: std::option::Option<i32>,
-    pub(crate) utran_cid: std::option::Option<i32>,
-    pub(crate) rscp: std::option::Option<i32>,
-    pub(crate) path_loss: std::option::Option<i32>,
+    pub(crate) uarfcn: ::std::option::Option<i32>,
+    pub(crate) cell_params: ::std::option::Option<i32>,
+    pub(crate) utran_cid: ::std::option::Option<i32>,
+    pub(crate) rscp: ::std::option::Option<i32>,
+    pub(crate) path_loss: ::std::option::Option<i32>,
 }
 impl TdscdmaNmrObjBuilder {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
     pub fn uarfcn(mut self, input: i32) -> Self {
-        self.uarfcn = Some(input);
+        self.uarfcn = ::std::option::Option::Some(input);
         self
     }
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number.</p>
-    pub fn set_uarfcn(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_uarfcn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.uarfcn = input;
         self
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
     pub fn cell_params(mut self, input: i32) -> Self {
-        self.cell_params = Some(input);
+        self.cell_params = ::std::option::Option::Some(input);
         self
     }
     /// <p>Cell parameters for TD-SCDMA network measurement reports object.</p>
-    pub fn set_cell_params(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cell_params(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cell_params = input;
         self
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
     pub fn utran_cid(mut self, input: i32) -> Self {
-        self.utran_cid = Some(input);
+        self.utran_cid = ::std::option::Option::Some(input);
         self
     }
     /// <p>UTRAN (UMTS Terrestrial Radio Access Network) cell global identifier.</p>
-    pub fn set_utran_cid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_utran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.utran_cid = input;
         self
     }
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
     pub fn rscp(mut self, input: i32) -> Self {
-        self.rscp = Some(input);
+        self.rscp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Code power of the received signal, measured in decibel-milliwatts (dBm).</p>
-    pub fn set_rscp(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rscp(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rscp = input;
         self
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
     pub fn path_loss(mut self, input: i32) -> Self {
-        self.path_loss = Some(input);
+        self.path_loss = ::std::option::Option::Some(input);
         self
     }
     /// <p>Path loss, or path attenuation, is the reduction in power density of an electromagnetic wave as it propagates through space.</p>
-    pub fn set_path_loss(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_path_loss(mut self, input: ::std::option::Option<i32>) -> Self {
         self.path_loss = input;
         self
     }

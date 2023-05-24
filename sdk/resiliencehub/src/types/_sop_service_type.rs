@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SopServiceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum SopServiceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SopServiceType {
+impl ::std::convert::From<&str> for SopServiceType {
     fn from(s: &str) -> Self {
         match s {
             "SSM" => SopServiceType::Ssm,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for SopServiceType {
         }
     }
 }
-impl std::str::FromStr for SopServiceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SopServiceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SopServiceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SopServiceType::from(s))
     }
 }
 impl SopServiceType {
@@ -81,7 +81,7 @@ impl SopServiceType {
         &["SSM"]
     }
 }
-impl AsRef<str> for SopServiceType {
+impl ::std::convert::AsRef<str> for SopServiceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

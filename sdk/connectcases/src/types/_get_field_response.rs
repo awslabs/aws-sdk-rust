@@ -2,62 +2,68 @@
 
 /// <p>Object to store detailed field information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the field.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
     #[doc(hidden)]
-    pub field_arn: std::option::Option<std::string::String>,
+    pub field_arn: ::std::option::Option<::std::string::String>,
     /// <p>Description of the field.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Type of the field.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::FieldType>,
+    pub r#type: ::std::option::Option<crate::types::FieldType>,
     /// <p>Namespace of the field.</p>
     #[doc(hidden)]
-    pub namespace: std::option::Option<crate::types::FieldNamespace>,
+    pub namespace: ::std::option::Option<crate::types::FieldNamespace>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
     >,
 }
 impl GetFieldResponse {
     /// <p>Unique identifier of the field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>Name of the field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(&self) -> std::option::Option<&str> {
+    pub fn field_arn(&self) -> ::std::option::Option<&str> {
         self.field_arn.as_deref()
     }
     /// <p>Description of the field.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Type of the field.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::FieldType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FieldType> {
         self.r#type.as_ref()
     }
     /// <p>Namespace of the field.</p>
-    pub fn namespace(&self) -> std::option::Option<&crate::types::FieldNamespace> {
+    pub fn namespace(&self) -> ::std::option::Option<&crate::types::FieldNamespace> {
         self.namespace.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
     > {
         self.tags.as_ref()
     }
@@ -71,78 +77,83 @@ impl GetFieldResponse {
 
 /// A builder for [`GetFieldResponse`](crate::types::GetFieldResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetFieldResponseBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) field_arn: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::FieldType>,
-    pub(crate) namespace: std::option::Option<crate::types::FieldNamespace>,
-    pub(crate) tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) field_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::FieldType>,
+    pub(crate) namespace: ::std::option::Option<crate::types::FieldNamespace>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
     >,
 }
 impl GetFieldResponseBuilder {
     /// <p>Unique identifier of the field.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier of the field.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>Name of the field.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the field.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn field_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_arn = Some(input.into());
+    pub fn field_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the field.</p>
-    pub fn set_field_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_arn = input;
         self
     }
     /// <p>Description of the field.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the field.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Type of the field.</p>
     pub fn r#type(mut self, input: crate::types::FieldType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of the field.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::FieldType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FieldType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Namespace of the field.</p>
     pub fn namespace(mut self, input: crate::types::FieldNamespace) -> Self {
-        self.namespace = Some(input);
+        self.namespace = ::std::option::Option::Some(input);
         self
     }
     /// <p>Namespace of the field.</p>
     pub fn set_namespace(
         mut self,
-        input: std::option::Option<crate::types::FieldNamespace>,
+        input: ::std::option::Option<crate::types::FieldNamespace>,
     ) -> Self {
         self.namespace = input;
         self
@@ -154,21 +165,21 @@ impl GetFieldResponseBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::option::Option<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::option::Option<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::option::Option<::std::string::String>,
             >,
         >,
     ) -> Self {

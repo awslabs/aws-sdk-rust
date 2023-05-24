@@ -7,56 +7,63 @@ pub use crate::operation::create_extension::_create_extension_input::CreateExten
 ///
 /// <p>Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different points during the AppConfig workflow of creating or deploying a configuration.</p>
 /// <p>You can create your own extensions or use the Amazon Web Services authored extensions provided by AppConfig. For most use cases, to create your own extension, you must create an Lambda function to perform any computation and processing defined in the extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExtensionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_extension::builders::CreateExtensionInputBuilder,
 }
 impl CreateExtensionFluentBuilder {
     /// Creates a new `CreateExtension`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_extension::CreateExtension,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_extension::CreateExtensionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_extension::CreateExtensionError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_extension::CreateExtensionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_extension::CreateExtensionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_extension::CreateExtensionError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +76,31 @@ impl CreateExtensionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_extension::CreateExtensionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_extension::CreateExtensionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_extension::CreateExtensionError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>Information about the extension.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>Information about the extension.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -103,7 +112,7 @@ impl CreateExtensionFluentBuilder {
     pub fn actions(
         mut self,
         k: crate::types::ActionPoint,
-        v: std::vec::Vec<crate::types::Action>,
+        v: ::std::vec::Vec<crate::types::Action>,
     ) -> Self {
         self.inner = self.inner.actions(k, v);
         self
@@ -111,10 +120,10 @@ impl CreateExtensionFluentBuilder {
     /// <p>The actions defined in the extension.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::ActionPoint,
-                std::vec::Vec<crate::types::Action>,
+                ::std::vec::Vec<crate::types::Action>,
             >,
         >,
     ) -> Self {
@@ -128,7 +137,7 @@ impl CreateExtensionFluentBuilder {
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::Parameter,
     ) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
@@ -137,8 +146,8 @@ impl CreateExtensionFluentBuilder {
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Parameter>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
         >,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
@@ -151,8 +160,8 @@ impl CreateExtensionFluentBuilder {
     /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -160,8 +169,8 @@ impl CreateExtensionFluentBuilder {
     /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -173,7 +182,7 @@ impl CreateExtensionFluentBuilder {
         self
     }
     /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
-    pub fn set_latest_version_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_latest_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_latest_version_number(input);
         self
     }

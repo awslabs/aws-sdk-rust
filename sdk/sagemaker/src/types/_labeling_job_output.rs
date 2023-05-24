@@ -2,22 +2,22 @@
 
 /// <p>Specifies the location of the output produced by the labeling job. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobOutput {
     /// <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
     #[doc(hidden)]
-    pub output_dataset_s3_uri: std::option::Option<std::string::String>,
+    pub output_dataset_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
     #[doc(hidden)]
-    pub final_active_learning_model_arn: std::option::Option<std::string::String>,
+    pub final_active_learning_model_arn: ::std::option::Option<::std::string::String>,
 }
 impl LabelingJobOutput {
     /// <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
-    pub fn output_dataset_s3_uri(&self) -> std::option::Option<&str> {
+    pub fn output_dataset_s3_uri(&self) -> ::std::option::Option<&str> {
         self.output_dataset_s3_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
-    pub fn final_active_learning_model_arn(&self) -> std::option::Option<&str> {
+    pub fn final_active_learning_model_arn(&self) -> ::std::option::Option<&str> {
         self.final_active_learning_model_arn.as_deref()
     }
 }
@@ -30,21 +30,26 @@ impl LabelingJobOutput {
 
 /// A builder for [`LabelingJobOutput`](crate::types::LabelingJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelingJobOutputBuilder {
-    pub(crate) output_dataset_s3_uri: std::option::Option<std::string::String>,
-    pub(crate) final_active_learning_model_arn: std::option::Option<std::string::String>,
+    pub(crate) output_dataset_s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) final_active_learning_model_arn: ::std::option::Option<::std::string::String>,
 }
 impl LabelingJobOutputBuilder {
     /// <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
-    pub fn output_dataset_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_dataset_s3_uri = Some(input.into());
+    pub fn output_dataset_s3_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_dataset_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket location of the manifest file for labeled data. </p>
     pub fn set_output_dataset_s3_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.output_dataset_s3_uri = input;
         self
@@ -52,15 +57,15 @@ impl LabelingJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
     pub fn final_active_learning_model_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.final_active_learning_model_arn = Some(input.into());
+        self.final_active_learning_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the most recent SageMaker model trained as part of automated data labeling. </p>
     pub fn set_final_active_learning_model_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.final_active_learning_model_arn = input;
         self

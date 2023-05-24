@@ -2,15 +2,15 @@
 
 /// <p>The input for the <code>DeleteDeliveryChannel</code> action. The action accepts the following data, in JSON format. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDeliveryChannelInput {
     /// <p>The name of the delivery channel to delete.</p>
     #[doc(hidden)]
-    pub delivery_channel_name: std::option::Option<std::string::String>,
+    pub delivery_channel_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeliveryChannelInput {
     /// <p>The name of the delivery channel to delete.</p>
-    pub fn delivery_channel_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_channel_name(&self) -> ::std::option::Option<&str> {
         self.delivery_channel_name.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl DeleteDeliveryChannelInput {
 
 /// A builder for [`DeleteDeliveryChannelInput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteDeliveryChannelInputBuilder {
-    pub(crate) delivery_channel_name: std::option::Option<std::string::String>,
+    pub(crate) delivery_channel_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDeliveryChannelInputBuilder {
     /// <p>The name of the delivery channel to delete.</p>
-    pub fn delivery_channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delivery_channel_name = Some(input.into());
+    pub fn delivery_channel_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delivery_channel_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the delivery channel to delete.</p>
     pub fn set_delivery_channel_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.delivery_channel_name = input;
         self
@@ -46,11 +51,11 @@ impl DeleteDeliveryChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeliveryChannelInput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput {
                 delivery_channel_name: self.delivery_channel_name,
             },

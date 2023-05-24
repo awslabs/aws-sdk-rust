@@ -2,15 +2,15 @@
 
 /// <p>This structure contains the time and date that Evidently completed the analysis of the experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentSchedule {
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
     #[doc(hidden)]
-    pub analysis_complete_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub analysis_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExperimentSchedule {
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
-    pub fn analysis_complete_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn analysis_complete_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.analysis_complete_time.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ExperimentSchedule {
 
 /// A builder for [`ExperimentSchedule`](crate::types::ExperimentSchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperimentScheduleBuilder {
-    pub(crate) analysis_complete_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) analysis_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExperimentScheduleBuilder {
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
-    pub fn analysis_complete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.analysis_complete_time = Some(input);
+    pub fn analysis_complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.analysis_complete_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time and date that Evidently completed the analysis of the experiment.</p>
     pub fn set_analysis_complete_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.analysis_complete_time = input;
         self

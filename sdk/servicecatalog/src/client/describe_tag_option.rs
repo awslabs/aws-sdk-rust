@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTagOption`](crate::operation::describe_tag_option::builders::DescribeTagOptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_tag_option::builders::DescribeTagOptionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_tag_option::builders::DescribeTagOptionFluentBuilder::set_id): <p>The TagOption identifier.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::describe_tag_option::builders::DescribeTagOptionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_tag_option::builders::DescribeTagOptionFluentBuilder::set_id): <p>The TagOption identifier.</p>
     /// - On success, responds with [`DescribeTagOptionOutput`](crate::operation::describe_tag_option::DescribeTagOptionOutput) with field(s):
     ///   - [`tag_option_detail(Option<TagOptionDetail>)`](crate::operation::describe_tag_option::DescribeTagOptionOutput::tag_option_detail): <p>Information about the TagOption.</p>
     /// - On failure, responds with [`SdkError<DescribeTagOptionError>`](crate::operation::describe_tag_option::DescribeTagOptionError)

@@ -2,24 +2,24 @@
 
 /// <p>A secret to pass to the log configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
     /// <p>The name of the secret.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The secret to expose to the container.</p>
     /// <p>The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
     #[doc(hidden)]
-    pub value_from: std::option::Option<std::string::String>,
+    pub value_from: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails {
     /// <p>The name of the secret.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The secret to expose to the container.</p>
     /// <p>The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
-    pub fn value_from(&self) -> std::option::Option<&str> {
+    pub fn value_from(&self) -> ::std::option::Option<&str> {
         self.value_from.as_deref()
     }
 }
@@ -32,31 +32,33 @@ impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetail
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value_from: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value_from: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsBuilder {
     /// <p>The name of the secret.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the secret.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The secret to expose to the container.</p>
     /// <p>The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
-    pub fn value_from(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value_from = Some(input.into());
+    pub fn value_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value_from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret to expose to the container.</p>
     /// <p>The value is either the full ARN of the Secrets Manager secret or the full ARN of the parameter in the Systems Manager Parameter Store.</p>
-    pub fn set_value_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_from = input;
         self
     }

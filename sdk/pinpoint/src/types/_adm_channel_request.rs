@@ -2,29 +2,29 @@
 
 /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdmChannelRequest {
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
     #[doc(hidden)]
-    pub client_secret: std::option::Option<std::string::String>,
+    pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl AdmChannelRequest {
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
-    pub fn client_secret(&self) -> std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<&str> {
         self.client_secret.as_deref()
     }
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -37,40 +37,48 @@ impl AdmChannelRequest {
 
 /// A builder for [`AdmChannelRequest`](crate::types::AdmChannelRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdmChannelRequestBuilder {
-    pub(crate) client_id: std::option::Option<std::string::String>,
-    pub(crate) client_secret: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl AdmChannelRequestBuilder {
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
-    pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_secret = Some(input.into());
+    pub fn client_secret(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
-    pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_secret(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.client_secret = input;
         self
     }
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

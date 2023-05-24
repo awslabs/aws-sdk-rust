@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PositionSolverType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum PositionSolverType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PositionSolverType {
+impl ::std::convert::From<&str> for PositionSolverType {
     fn from(s: &str) -> Self {
         match s {
             "GNSS" => PositionSolverType::Gnss,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for PositionSolverType {
         }
     }
 }
-impl std::str::FromStr for PositionSolverType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PositionSolverType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PositionSolverType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PositionSolverType::from(s))
     }
 }
 impl PositionSolverType {
@@ -81,7 +81,7 @@ impl PositionSolverType {
         &["GNSS"]
     }
 }
-impl AsRef<str> for PositionSolverType {
+impl ::std::convert::AsRef<str> for PositionSolverType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

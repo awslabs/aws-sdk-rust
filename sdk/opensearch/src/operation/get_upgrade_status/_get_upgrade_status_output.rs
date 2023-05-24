@@ -2,34 +2,34 @@
 
 /// <p>Container for the response returned by the <code>GetUpgradeStatus</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUpgradeStatusOutput {
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
     #[doc(hidden)]
-    pub upgrade_step: std::option::Option<crate::types::UpgradeStep>,
+    pub upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     /// <p>The status of the current step that an upgrade is on.</p>
     #[doc(hidden)]
-    pub step_status: std::option::Option<crate::types::UpgradeStatus>,
+    pub step_status: ::std::option::Option<crate::types::UpgradeStatus>,
     /// <p>A string that describes the update.</p>
     #[doc(hidden)]
-    pub upgrade_name: std::option::Option<std::string::String>,
+    pub upgrade_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUpgradeStatusOutput {
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
-    pub fn upgrade_step(&self) -> std::option::Option<&crate::types::UpgradeStep> {
+    pub fn upgrade_step(&self) -> ::std::option::Option<&crate::types::UpgradeStep> {
         self.upgrade_step.as_ref()
     }
     /// <p>The status of the current step that an upgrade is on.</p>
-    pub fn step_status(&self) -> std::option::Option<&crate::types::UpgradeStatus> {
+    pub fn step_status(&self) -> ::std::option::Option<&crate::types::UpgradeStatus> {
         self.step_status.as_ref()
     }
     /// <p>A string that describes the update.</p>
-    pub fn upgrade_name(&self) -> std::option::Option<&str> {
+    pub fn upgrade_name(&self) -> ::std::option::Option<&str> {
         self.upgrade_name.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetUpgradeStatusOutput {
+impl ::aws_http::request_id::RequestId for GetUpgradeStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -44,47 +44,49 @@ impl GetUpgradeStatusOutput {
 
 /// A builder for [`GetUpgradeStatusOutput`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetUpgradeStatusOutputBuilder {
-    pub(crate) upgrade_step: std::option::Option<crate::types::UpgradeStep>,
-    pub(crate) step_status: std::option::Option<crate::types::UpgradeStatus>,
-    pub(crate) upgrade_name: std::option::Option<std::string::String>,
+    pub(crate) upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
+    pub(crate) step_status: ::std::option::Option<crate::types::UpgradeStatus>,
+    pub(crate) upgrade_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUpgradeStatusOutputBuilder {
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
     pub fn upgrade_step(mut self, input: crate::types::UpgradeStep) -> Self {
-        self.upgrade_step = Some(input);
+        self.upgrade_step = ::std::option::Option::Some(input);
         self
     }
     /// <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
     pub fn set_upgrade_step(
         mut self,
-        input: std::option::Option<crate::types::UpgradeStep>,
+        input: ::std::option::Option<crate::types::UpgradeStep>,
     ) -> Self {
         self.upgrade_step = input;
         self
     }
     /// <p>The status of the current step that an upgrade is on.</p>
     pub fn step_status(mut self, input: crate::types::UpgradeStatus) -> Self {
-        self.step_status = Some(input);
+        self.step_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the current step that an upgrade is on.</p>
     pub fn set_step_status(
         mut self,
-        input: std::option::Option<crate::types::UpgradeStatus>,
+        input: ::std::option::Option<crate::types::UpgradeStatus>,
     ) -> Self {
         self.step_status = input;
         self
     }
     /// <p>A string that describes the update.</p>
-    pub fn upgrade_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.upgrade_name = Some(input.into());
+    pub fn upgrade_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upgrade_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that describes the update.</p>
-    pub fn set_upgrade_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_upgrade_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upgrade_name = input;
         self
     }

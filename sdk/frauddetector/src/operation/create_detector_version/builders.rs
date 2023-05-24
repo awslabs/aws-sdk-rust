@@ -6,29 +6,29 @@ pub use crate::operation::create_detector_version::_create_detector_version_inpu
 /// Fluent builder constructing a request to `CreateDetectorVersion`.
 ///
 /// <p>Creates a detector version. The detector version starts in a <code>DRAFT</code> status.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDetectorVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_detector_version::builders::CreateDetectorVersionInputBuilder,
 }
 impl CreateDetectorVersionFluentBuilder {
     /// Creates a new `CreateDetectorVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_detector_version::CreateDetectorVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_detector_version::CreateDetectorVersionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateDetectorVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_detector_version::CreateDetectorVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_detector_version::CreateDetectorVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl CreateDetectorVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_detector_version::CreateDetectorVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_detector_version::CreateDetectorVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the detector under which you want to create a new version.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
     /// <p>The ID of the detector under which you want to create a new version.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
     /// <p>The description of the detector version.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the detector version.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -105,14 +108,17 @@ impl CreateDetectorVersionFluentBuilder {
     /// To override the contents of this collection use [`set_external_model_endpoints`](Self::set_external_model_endpoints).
     ///
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
-    pub fn external_model_endpoints(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn external_model_endpoints(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.external_model_endpoints(input.into());
         self
     }
     /// <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
     pub fn set_external_model_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_external_model_endpoints(input);
         self
@@ -129,7 +135,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>The rules to include in the detector version.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
@@ -146,7 +152,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>The model versions to include in the detector version.</p>
     pub fn set_model_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ModelVersion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersion>>,
     ) -> Self {
         self.inner = self.inner.set_model_versions(input);
         self
@@ -167,7 +173,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
     pub fn set_rule_execution_mode(
         mut self,
-        input: std::option::Option<crate::types::RuleExecutionMode>,
+        input: ::std::option::Option<crate::types::RuleExecutionMode>,
     ) -> Self {
         self.inner = self.inner.set_rule_execution_mode(input);
         self
@@ -184,7 +190,7 @@ impl CreateDetectorVersionFluentBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

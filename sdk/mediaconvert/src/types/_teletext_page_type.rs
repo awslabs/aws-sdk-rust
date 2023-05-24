@@ -41,13 +41,13 @@
 /// A page type as defined in the standard ETSI EN 300 468, Table 94
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TeletextPageType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum TeletextPageType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TeletextPageType {
+impl ::std::convert::From<&str> for TeletextPageType {
     fn from(s: &str) -> Self {
         match s {
             "PAGE_TYPE_ADDL_INFO" => TeletextPageType::PageTypeAddlInfo,
@@ -79,11 +79,11 @@ impl std::convert::From<&str> for TeletextPageType {
         }
     }
 }
-impl std::str::FromStr for TeletextPageType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TeletextPageType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TeletextPageType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TeletextPageType::from(s))
     }
 }
 impl TeletextPageType {
@@ -111,7 +111,7 @@ impl TeletextPageType {
         ]
     }
 }
-impl AsRef<str> for TeletextPageType {
+impl ::std::convert::AsRef<str> for TeletextPageType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

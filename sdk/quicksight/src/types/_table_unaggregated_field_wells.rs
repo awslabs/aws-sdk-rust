@@ -2,15 +2,15 @@
 
 /// <p>The unaggregated field well for the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableUnaggregatedFieldWells {
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::UnaggregatedField>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>>,
 }
 impl TableUnaggregatedFieldWells {
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::UnaggregatedField]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::UnaggregatedField]> {
         self.values.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl TableUnaggregatedFieldWells {
 
 /// A builder for [`TableUnaggregatedFieldWells`](crate::types::TableUnaggregatedFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableUnaggregatedFieldWellsBuilder {
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::UnaggregatedField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>>,
 }
 impl TableUnaggregatedFieldWellsBuilder {
     /// Appends an item to `values`.
@@ -36,13 +38,13 @@ impl TableUnaggregatedFieldWellsBuilder {
     pub fn values(mut self, input: crate::types::UnaggregatedField) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UnaggregatedField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UnaggregatedField>>,
     ) -> Self {
         self.values = input;
         self

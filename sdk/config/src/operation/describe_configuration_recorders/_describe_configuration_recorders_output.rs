@@ -2,23 +2,23 @@
 
 /// <p>The output for the <code>DescribeConfigurationRecorders</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersOutput {
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
     #[doc(hidden)]
     pub configuration_recorders:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationRecorder>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationRecordersOutput {
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
     pub fn configuration_recorders(
         &self,
-    ) -> std::option::Option<&[crate::types::ConfigurationRecorder]> {
+    ) -> ::std::option::Option<&[crate::types::ConfigurationRecorder]> {
         self.configuration_recorders.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeConfigurationRecordersOutput {
+impl ::aws_http::request_id::RequestId for DescribeConfigurationRecordersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeConfigurationRecordersOutput {
 
 /// A builder for [`DescribeConfigurationRecordersOutput`](crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeConfigurationRecordersOutputBuilder {
     pub(crate) configuration_recorders:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationRecorder>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationRecordersOutputBuilder {
@@ -47,13 +49,13 @@ impl DescribeConfigurationRecordersOutputBuilder {
     pub fn configuration_recorders(mut self, input: crate::types::ConfigurationRecorder) -> Self {
         let mut v = self.configuration_recorders.unwrap_or_default();
         v.push(input);
-        self.configuration_recorders = Some(v);
+        self.configuration_recorders = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains the descriptions of the specified configuration recorders.</p>
     pub fn set_configuration_recorders(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationRecorder>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorder>>,
     ) -> Self {
         self.configuration_recorders = input;
         self

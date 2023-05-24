@@ -2,77 +2,77 @@
 
 /// <p>The details of a message in a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelMessage {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
-    pub channel_arn: std::option::Option<std::string::String>,
+    pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a message.</p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The message content.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
     /// <p>The message metadata.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::string::String>,
+    pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The message type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ChannelMessageType>,
+    pub r#type: ::std::option::Option<crate::types::ChannelMessageType>,
     /// <p>The time at which the message was created.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a message was edited.</p>
     #[doc(hidden)]
-    pub last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_edited_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a message was updated.</p>
     #[doc(hidden)]
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message sender.</p>
     #[doc(hidden)]
-    pub sender: std::option::Option<crate::types::Identity>,
+    pub sender: ::std::option::Option<crate::types::Identity>,
     /// <p>Hides the content of a message.</p>
     #[doc(hidden)]
     pub redacted: bool,
     /// <p>The persistence setting for a channel message.</p>
     #[doc(hidden)]
-    pub persistence: std::option::Option<crate::types::ChannelMessagePersistenceType>,
+    pub persistence: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
 }
 impl ChannelMessage {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ID of a message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>The message content.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The message metadata.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
     /// <p>The message type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelMessageType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelMessageType> {
         self.r#type.as_ref()
     }
     /// <p>The time at which the message was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a message was edited.</p>
-    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_edited_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_edited_timestamp.as_ref()
     }
     /// <p>The time at which a message was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The message sender.</p>
-    pub fn sender(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn sender(&self) -> ::std::option::Option<&crate::types::Identity> {
         self.sender.as_ref()
     }
     /// <p>Hides the content of a message.</p>
@@ -80,12 +80,14 @@ impl ChannelMessage {
         self.redacted
     }
     /// <p>The persistence setting for a channel message.</p>
-    pub fn persistence(&self) -> std::option::Option<&crate::types::ChannelMessagePersistenceType> {
+    pub fn persistence(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ChannelMessagePersistenceType> {
         self.persistence.as_ref()
     }
 }
-impl std::fmt::Debug for ChannelMessage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ChannelMessage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMessage");
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("message_id", &self.message_id);
@@ -110,142 +112,142 @@ impl ChannelMessage {
 
 /// A builder for [`ChannelMessage`](crate::types::ChannelMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ChannelMessageBuilder {
-    pub(crate) channel_arn: std::option::Option<std::string::String>,
-    pub(crate) message_id: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) metadata: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ChannelMessageType>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_edited_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) sender: std::option::Option<crate::types::Identity>,
-    pub(crate) redacted: std::option::Option<bool>,
-    pub(crate) persistence: std::option::Option<crate::types::ChannelMessagePersistenceType>,
+    pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ChannelMessageType>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_edited_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) sender: ::std::option::Option<crate::types::Identity>,
+    pub(crate) redacted: ::std::option::Option<bool>,
+    pub(crate) persistence: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
 }
 impl ChannelMessageBuilder {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_arn = Some(input.into());
+    pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel.</p>
-    pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
     }
     /// <p>The ID of a message.</p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a message.</p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
     /// <p>The message content.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message content.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p>The message metadata.</p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metadata = Some(input.into());
+    pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message metadata.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The message type.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The message type.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ChannelMessageType>,
+        input: ::std::option::Option<crate::types::ChannelMessageType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The time at which the message was created.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the message was created.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The time at which a message was edited.</p>
-    pub fn last_edited_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_edited_timestamp = Some(input);
+    pub fn last_edited_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_edited_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a message was edited.</p>
     pub fn set_last_edited_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_edited_timestamp = input;
         self
     }
     /// <p>The time at which a message was updated.</p>
-    pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_timestamp = Some(input);
+    pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a message was updated.</p>
     pub fn set_last_updated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>The message sender.</p>
     pub fn sender(mut self, input: crate::types::Identity) -> Self {
-        self.sender = Some(input);
+        self.sender = ::std::option::Option::Some(input);
         self
     }
     /// <p>The message sender.</p>
-    pub fn set_sender(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
+    pub fn set_sender(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.sender = input;
         self
     }
     /// <p>Hides the content of a message.</p>
     pub fn redacted(mut self, input: bool) -> Self {
-        self.redacted = Some(input);
+        self.redacted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Hides the content of a message.</p>
-    pub fn set_redacted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_redacted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.redacted = input;
         self
     }
     /// <p>The persistence setting for a channel message.</p>
     pub fn persistence(mut self, input: crate::types::ChannelMessagePersistenceType) -> Self {
-        self.persistence = Some(input);
+        self.persistence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The persistence setting for a channel message.</p>
     pub fn set_persistence(
         mut self,
-        input: std::option::Option<crate::types::ChannelMessagePersistenceType>,
+        input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
     ) -> Self {
         self.persistence = input;
         self
@@ -267,8 +269,8 @@ impl ChannelMessageBuilder {
         }
     }
 }
-impl std::fmt::Debug for ChannelMessageBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ChannelMessageBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMessageBuilder");
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("message_id", &self.message_id);

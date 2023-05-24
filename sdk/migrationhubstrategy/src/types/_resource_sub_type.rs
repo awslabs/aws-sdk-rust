@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ResourceSubType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ResourceSubType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ResourceSubType {
+impl ::std::convert::From<&str> for ResourceSubType {
     fn from(s: &str) -> Self {
         match s {
             "Database" => ResourceSubType::Database,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ResourceSubType {
         }
     }
 }
-impl std::str::FromStr for ResourceSubType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ResourceSubType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceSubType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ResourceSubType::from(s))
     }
 }
 impl ResourceSubType {
@@ -91,7 +91,7 @@ impl ResourceSubType {
         &["Database", "DatabaseProcess", "Process"]
     }
 }
-impl AsRef<str> for ResourceSubType {
+impl ::std::convert::AsRef<str> for ResourceSubType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

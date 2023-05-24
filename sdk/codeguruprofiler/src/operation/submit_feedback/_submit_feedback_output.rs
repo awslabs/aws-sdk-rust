@@ -2,11 +2,11 @@
 
 /// <p>The structure representing the SubmitFeedbackResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubmitFeedbackOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for SubmitFeedbackOutput {
+impl ::aws_http::request_id::RequestId for SubmitFeedbackOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl SubmitFeedbackOutput {
 
 /// A builder for [`SubmitFeedbackOutput`](crate::operation::submit_feedback::SubmitFeedbackOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubmitFeedbackOutputBuilder {
     _request_id: Option<String>,
 }

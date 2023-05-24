@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DatabaseEngineType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum DatabaseEngineType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DatabaseEngineType {
+impl ::std::convert::From<&str> for DatabaseEngineType {
     fn from(s: &str) -> Self {
         match s {
             "RDS_AURORA_MYSQL" => DatabaseEngineType::RdsAuroraMysql,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for DatabaseEngineType {
         }
     }
 }
-impl std::str::FromStr for DatabaseEngineType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DatabaseEngineType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatabaseEngineType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DatabaseEngineType::from(s))
     }
 }
 impl DatabaseEngineType {
@@ -101,7 +101,7 @@ impl DatabaseEngineType {
         ]
     }
 }
-impl AsRef<str> for DatabaseEngineType {
+impl ::std::convert::AsRef<str> for DatabaseEngineType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

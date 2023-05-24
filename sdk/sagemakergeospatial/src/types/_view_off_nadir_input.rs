@@ -2,22 +2,22 @@
 
 /// <p>The input structure for specifying ViewOffNadir property filter. ViewOffNadir refers to the angle from the sensor between nadir (straight down) and the scene center. Measured in degrees (0-90).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewOffNadirInput {
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     #[doc(hidden)]
-    pub lower_bound: std::option::Option<f32>,
+    pub lower_bound: ::std::option::Option<f32>,
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
     #[doc(hidden)]
-    pub upper_bound: std::option::Option<f32>,
+    pub upper_bound: ::std::option::Option<f32>,
 }
 impl ViewOffNadirInput {
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
-    pub fn lower_bound(&self) -> std::option::Option<f32> {
+    pub fn lower_bound(&self) -> ::std::option::Option<f32> {
         self.lower_bound
     }
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
-    pub fn upper_bound(&self) -> std::option::Option<f32> {
+    pub fn upper_bound(&self) -> ::std::option::Option<f32> {
         self.upper_bound
     }
 }
@@ -30,29 +30,31 @@ impl ViewOffNadirInput {
 
 /// A builder for [`ViewOffNadirInput`](crate::types::ViewOffNadirInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ViewOffNadirInputBuilder {
-    pub(crate) lower_bound: std::option::Option<f32>,
-    pub(crate) upper_bound: std::option::Option<f32>,
+    pub(crate) lower_bound: ::std::option::Option<f32>,
+    pub(crate) upper_bound: ::std::option::Option<f32>,
 }
 impl ViewOffNadirInputBuilder {
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     pub fn lower_bound(mut self, input: f32) -> Self {
-        self.lower_bound = Some(input);
+        self.lower_bound = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
-    pub fn set_lower_bound(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
         self.lower_bound = input;
         self
     }
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
     pub fn upper_bound(mut self, input: f32) -> Self {
-        self.upper_bound = Some(input);
+        self.upper_bound = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
-    pub fn set_upper_bound(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
         self.upper_bound = input;
         self
     }

@@ -38,13 +38,13 @@
 /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DashIsoSegmentLengthControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DashIsoSegmentLengthControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DashIsoSegmentLengthControl {
+impl ::std::convert::From<&str> for DashIsoSegmentLengthControl {
     fn from(s: &str) -> Self {
         match s {
             "EXACT" => DashIsoSegmentLengthControl::Exact,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DashIsoSegmentLengthControl {
         }
     }
 }
-impl std::str::FromStr for DashIsoSegmentLengthControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DashIsoSegmentLengthControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DashIsoSegmentLengthControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DashIsoSegmentLengthControl::from(s))
     }
 }
 impl DashIsoSegmentLengthControl {
@@ -86,7 +86,7 @@ impl DashIsoSegmentLengthControl {
         &["EXACT", "GOP_MULTIPLE"]
     }
 }
-impl AsRef<str> for DashIsoSegmentLengthControl {
+impl ::std::convert::AsRef<str> for DashIsoSegmentLengthControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

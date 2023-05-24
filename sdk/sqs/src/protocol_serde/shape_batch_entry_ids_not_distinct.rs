@@ -5,12 +5,12 @@ pub fn de_batch_entry_ids_not_distinct_xml_err(
     mut builder: crate::types::error::builders::BatchEntryIdsNotDistinctBuilder,
 ) -> Result<
     crate::types::error::builders::BatchEntryIdsNotDistinctBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {
         return Ok(builder);
     }
-    let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut document = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
@@ -18,8 +18,8 @@ pub fn de_batch_entry_ids_not_distinct_xml_err(
             s if s.matches("Message") /* Message com.amazonaws.sqs#BatchEntryIdsNotDistinct$Message */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?

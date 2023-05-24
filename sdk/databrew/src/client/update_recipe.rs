@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateRecipe`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`description(impl Into<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_description): <p>A description of the recipe.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_name): <p>The name of the recipe to be updated.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_description): <p>A description of the recipe.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_name): <p>The name of the recipe to be updated.</p>
     ///   - [`steps(Vec<RecipeStep>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::steps) / [`set_steps(Option<Vec<RecipeStep>>)`](crate::operation::update_recipe::builders::UpdateRecipeFluentBuilder::set_steps): <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
     /// - On success, responds with [`UpdateRecipeOutput`](crate::operation::update_recipe::UpdateRecipeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::update_recipe::UpdateRecipeOutput::name): <p>The name of the recipe that was updated.</p>

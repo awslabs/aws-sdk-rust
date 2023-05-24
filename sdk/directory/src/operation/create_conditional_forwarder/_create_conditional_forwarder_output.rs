@@ -2,11 +2,11 @@
 
 /// <p>The result of a CreateConditinalForwarder request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConditionalForwarderOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateConditionalForwarderOutput {
+impl ::aws_http::request_id::RequestId for CreateConditionalForwarderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl CreateConditionalForwarderOutput {
 
 /// A builder for [`CreateConditionalForwarderOutput`](crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateConditionalForwarderOutputBuilder {
     _request_id: Option<String>,
 }

@@ -3,10 +3,10 @@ pub(crate) fn de_profiling_group_description_payload(
     input: &[u8],
 ) -> Result<
     crate::types::ProfilingGroupDescription,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(input))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(input))
             .peekable();
     let tokens = &mut tokens_owned;
     let result =
@@ -14,13 +14,13 @@ pub(crate) fn de_profiling_group_description_payload(
             tokens,
         )?
         .ok_or_else(|| {
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected payload member value",
             )
         });
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );
@@ -29,32 +29,32 @@ pub(crate) fn de_profiling_group_description_payload(
 }
 
 pub(crate) fn de_profiling_group_description<'a, I>(
-    tokens: &mut std::iter::Peekable<I>,
+    tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::types::ProfilingGroupDescription>,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
     I: Iterator<
         Item = Result<
-            aws_smithy_json::deserialize::Token<'a>,
-            aws_smithy_json::deserialize::error::DeserializeError,
+            ::aws_smithy_json::deserialize::Token<'a>,
+            ::aws_smithy_json::deserialize::error::DeserializeError,
         >,
     >,
 {
     match tokens.next().transpose()? {
-        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
-        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+        Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder = crate::types::builders::ProfilingGroupDescriptionBuilder::default();
             loop {
                 match tokens.next().transpose()? {
-                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "name" => {
                                 builder = builder.set_name(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -68,7 +68,7 @@ where
                             }
                             "arn" => {
                                 builder = builder.set_arn(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -77,18 +77,12 @@ where
                             }
                             "createdAt" => {
                                 builder = builder.set_created_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                        tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                                    )?,
+                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "updatedAt" => {
                                 builder = builder.set_updated_at(
-                                    aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                                        tokens.next(),
-                                        aws_smithy_types::date_time::Format::DateTimeWithOffset,
-                                    )?,
+                                    ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(tokens.next(), ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?
                                 );
                             }
                             "profilingStatus" => {
@@ -98,7 +92,7 @@ where
                             }
                             "computePlatform" => {
                                 builder = builder.set_compute_platform(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| {
@@ -114,15 +108,14 @@ where
                                     crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?,
                                 );
                             }
-                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
                         return Err(
-                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                                "expected object key or end object, found: {:?}",
-                                other
-                            )),
+                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                format!("expected object key or end object, found: {:?}", other),
+                            ),
                         )
                     }
                 }
@@ -130,7 +123,7 @@ where
             Ok(Some(builder.build()))
         }
         _ => Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start object or null",
             ),
         ),

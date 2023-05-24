@@ -2,15 +2,15 @@
 
 /// <p>Describes the Elastic Fabric Adapters for the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EfaInfo {
     /// <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
     #[doc(hidden)]
-    pub maximum_efa_interfaces: std::option::Option<i32>,
+    pub maximum_efa_interfaces: ::std::option::Option<i32>,
 }
 impl EfaInfo {
     /// <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
-    pub fn maximum_efa_interfaces(&self) -> std::option::Option<i32> {
+    pub fn maximum_efa_interfaces(&self) -> ::std::option::Option<i32> {
         self.maximum_efa_interfaces
     }
 }
@@ -23,18 +23,20 @@ impl EfaInfo {
 
 /// A builder for [`EfaInfo`](crate::types::EfaInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EfaInfoBuilder {
-    pub(crate) maximum_efa_interfaces: std::option::Option<i32>,
+    pub(crate) maximum_efa_interfaces: ::std::option::Option<i32>,
 }
 impl EfaInfoBuilder {
     /// <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
     pub fn maximum_efa_interfaces(mut self, input: i32) -> Self {
-        self.maximum_efa_interfaces = Some(input);
+        self.maximum_efa_interfaces = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of Elastic Fabric Adapters for the instance type.</p>
-    pub fn set_maximum_efa_interfaces(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_efa_interfaces(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_efa_interfaces = input;
         self
     }

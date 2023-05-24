@@ -2,22 +2,22 @@
 
 /// <p>Describes the mounting of a volume in a container. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeMount {
     /// <p>The name of the volume. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The path in the container at which the volume should be mounted. </p>
     #[doc(hidden)]
-    pub mount_path: std::option::Option<std::string::String>,
+    pub mount_path: ::std::option::Option<::std::string::String>,
 }
 impl VolumeMount {
     /// <p>The name of the volume. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The path in the container at which the volume should be mounted. </p>
-    pub fn mount_path(&self) -> std::option::Option<&str> {
+    pub fn mount_path(&self) -> ::std::option::Option<&str> {
         self.mount_path.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl VolumeMount {
 
 /// A builder for [`VolumeMount`](crate::types::VolumeMount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeMountBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) mount_path: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) mount_path: ::std::option::Option<::std::string::String>,
 }
 impl VolumeMountBuilder {
     /// <p>The name of the volume. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the volume. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The path in the container at which the volume should be mounted. </p>
-    pub fn mount_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mount_path = Some(input.into());
+    pub fn mount_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mount_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path in the container at which the volume should be mounted. </p>
-    pub fn set_mount_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mount_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_path = input;
         self
     }

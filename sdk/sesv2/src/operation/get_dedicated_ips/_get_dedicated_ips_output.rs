@@ -2,27 +2,27 @@
 
 /// <p>Information about the dedicated IP addresses that are associated with your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub dedicated_ips: std::option::Option<std::vec::Vec<crate::types::DedicatedIp>>,
+    pub dedicated_ips: ::std::option::Option<::std::vec::Vec<crate::types::DedicatedIp>>,
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
-    pub fn dedicated_ips(&self) -> std::option::Option<&[crate::types::DedicatedIp]> {
+    pub fn dedicated_ips(&self) -> ::std::option::Option<&[crate::types::DedicatedIp]> {
         self.dedicated_ips.as_deref()
     }
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetDedicatedIpsOutput {
+impl ::aws_http::request_id::RequestId for GetDedicatedIpsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl GetDedicatedIpsOutput {
 
 /// A builder for [`GetDedicatedIpsOutput`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDedicatedIpsOutputBuilder {
-    pub(crate) dedicated_ips: std::option::Option<std::vec::Vec<crate::types::DedicatedIp>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) dedicated_ips: ::std::option::Option<::std::vec::Vec<crate::types::DedicatedIp>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDedicatedIpsOutputBuilder {
@@ -52,24 +54,24 @@ impl GetDedicatedIpsOutputBuilder {
     pub fn dedicated_ips(mut self, input: crate::types::DedicatedIp) -> Self {
         let mut v = self.dedicated_ips.unwrap_or_default();
         v.push(input);
-        self.dedicated_ips = Some(v);
+        self.dedicated_ips = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
     pub fn set_dedicated_ips(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DedicatedIp>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DedicatedIp>>,
     ) -> Self {
         self.dedicated_ips = input;
         self
     }
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p> Information about all the available strategy options for migrating and modernizing an application component. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StrategyOption {
     /// <p> Type of transformation. For example, Rehost, Replatform, and so on. </p>
     #[doc(hidden)]
-    pub strategy: std::option::Option<crate::types::Strategy>,
+    pub strategy: ::std::option::Option<crate::types::Strategy>,
     /// <p> The name of the tool that can be used to transform an application component using this strategy. </p>
     #[doc(hidden)]
-    pub tool_name: std::option::Option<crate::types::TransformationToolName>,
+    pub tool_name: ::std::option::Option<crate::types::TransformationToolName>,
     /// <p> Destination information about where the application component can migrate to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
     #[doc(hidden)]
-    pub target_destination: std::option::Option<crate::types::TargetDestination>,
+    pub target_destination: ::std::option::Option<crate::types::TargetDestination>,
     /// <p> Indicates if a specific strategy is preferred for the application component. </p>
     #[doc(hidden)]
-    pub is_preferred: std::option::Option<bool>,
+    pub is_preferred: ::std::option::Option<bool>,
 }
 impl StrategyOption {
     /// <p> Type of transformation. For example, Rehost, Replatform, and so on. </p>
-    pub fn strategy(&self) -> std::option::Option<&crate::types::Strategy> {
+    pub fn strategy(&self) -> ::std::option::Option<&crate::types::Strategy> {
         self.strategy.as_ref()
     }
     /// <p> The name of the tool that can be used to transform an application component using this strategy. </p>
-    pub fn tool_name(&self) -> std::option::Option<&crate::types::TransformationToolName> {
+    pub fn tool_name(&self) -> ::std::option::Option<&crate::types::TransformationToolName> {
         self.tool_name.as_ref()
     }
     /// <p> Destination information about where the application component can migrate to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
-    pub fn target_destination(&self) -> std::option::Option<&crate::types::TargetDestination> {
+    pub fn target_destination(&self) -> ::std::option::Option<&crate::types::TargetDestination> {
         self.target_destination.as_ref()
     }
     /// <p> Indicates if a specific strategy is preferred for the application component. </p>
-    pub fn is_preferred(&self) -> std::option::Option<bool> {
+    pub fn is_preferred(&self) -> ::std::option::Option<bool> {
         self.is_preferred
     }
 }
@@ -44,57 +44,59 @@ impl StrategyOption {
 
 /// A builder for [`StrategyOption`](crate::types::StrategyOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StrategyOptionBuilder {
-    pub(crate) strategy: std::option::Option<crate::types::Strategy>,
-    pub(crate) tool_name: std::option::Option<crate::types::TransformationToolName>,
-    pub(crate) target_destination: std::option::Option<crate::types::TargetDestination>,
-    pub(crate) is_preferred: std::option::Option<bool>,
+    pub(crate) strategy: ::std::option::Option<crate::types::Strategy>,
+    pub(crate) tool_name: ::std::option::Option<crate::types::TransformationToolName>,
+    pub(crate) target_destination: ::std::option::Option<crate::types::TargetDestination>,
+    pub(crate) is_preferred: ::std::option::Option<bool>,
 }
 impl StrategyOptionBuilder {
     /// <p> Type of transformation. For example, Rehost, Replatform, and so on. </p>
     pub fn strategy(mut self, input: crate::types::Strategy) -> Self {
-        self.strategy = Some(input);
+        self.strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p> Type of transformation. For example, Rehost, Replatform, and so on. </p>
-    pub fn set_strategy(mut self, input: std::option::Option<crate::types::Strategy>) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::Strategy>) -> Self {
         self.strategy = input;
         self
     }
     /// <p> The name of the tool that can be used to transform an application component using this strategy. </p>
     pub fn tool_name(mut self, input: crate::types::TransformationToolName) -> Self {
-        self.tool_name = Some(input);
+        self.tool_name = ::std::option::Option::Some(input);
         self
     }
     /// <p> The name of the tool that can be used to transform an application component using this strategy. </p>
     pub fn set_tool_name(
         mut self,
-        input: std::option::Option<crate::types::TransformationToolName>,
+        input: ::std::option::Option<crate::types::TransformationToolName>,
     ) -> Self {
         self.tool_name = input;
         self
     }
     /// <p> Destination information about where the application component can migrate to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
     pub fn target_destination(mut self, input: crate::types::TargetDestination) -> Self {
-        self.target_destination = Some(input);
+        self.target_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p> Destination information about where the application component can migrate to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
     pub fn set_target_destination(
         mut self,
-        input: std::option::Option<crate::types::TargetDestination>,
+        input: ::std::option::Option<crate::types::TargetDestination>,
     ) -> Self {
         self.target_destination = input;
         self
     }
     /// <p> Indicates if a specific strategy is preferred for the application component. </p>
     pub fn is_preferred(mut self, input: bool) -> Self {
-        self.is_preferred = Some(input);
+        self.is_preferred = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates if a specific strategy is preferred for the application component. </p>
-    pub fn set_is_preferred(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_preferred(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_preferred = input;
         self
     }

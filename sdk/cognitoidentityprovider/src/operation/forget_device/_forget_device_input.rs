@@ -2,27 +2,27 @@
 
 /// <p>Represents the request to forget the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ForgetDeviceInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The device key.</p>
     #[doc(hidden)]
-    pub device_key: std::option::Option<std::string::String>,
+    pub device_key: ::std::option::Option<::std::string::String>,
 }
 impl ForgetDeviceInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> std::option::Option<&str> {
+    pub fn device_key(&self) -> ::std::option::Option<&str> {
         self.device_key.as_deref()
     }
 }
-impl std::fmt::Debug for ForgetDeviceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ForgetDeviceInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ForgetDeviceInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("device_key", &self.device_key);
@@ -38,47 +38,47 @@ impl ForgetDeviceInput {
 
 /// A builder for [`ForgetDeviceInput`](crate::operation::forget_device::ForgetDeviceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ForgetDeviceInputBuilder {
-    pub(crate) access_token: std::option::Option<std::string::String>,
-    pub(crate) device_key: std::option::Option<std::string::String>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) device_key: ::std::option::Option<::std::string::String>,
 }
 impl ForgetDeviceInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
     /// <p>The device key.</p>
-    pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_key = Some(input.into());
+    pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device key.</p>
-    pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
     }
     /// Consumes the builder and constructs a [`ForgetDeviceInput`](crate::operation::forget_device::ForgetDeviceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::forget_device::ForgetDeviceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::forget_device::ForgetDeviceInput {
+        ::std::result::Result::Ok(crate::operation::forget_device::ForgetDeviceInput {
             access_token: self.access_token,
             device_key: self.device_key,
         })
     }
 }
-impl std::fmt::Debug for ForgetDeviceInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ForgetDeviceInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ForgetDeviceInputBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("device_key", &self.device_key);

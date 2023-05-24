@@ -2,11 +2,11 @@
 
 /// <p>Represents the response received from the server for a request to delete user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminDeleteUserAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AdminDeleteUserAttributesOutput {
+impl ::aws_http::request_id::RequestId for AdminDeleteUserAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl AdminDeleteUserAttributesOutput {
 
 /// A builder for [`AdminDeleteUserAttributesOutput`](crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminDeleteUserAttributesOutputBuilder {
     _request_id: Option<String>,
 }

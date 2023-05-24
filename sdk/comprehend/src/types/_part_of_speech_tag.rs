@@ -2,22 +2,22 @@
 
 /// <p>Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartOfSpeechTag {
     /// <p>Identifies the part of speech that the token represents.</p>
     #[doc(hidden)]
-    pub tag: std::option::Option<crate::types::PartOfSpeechTagType>,
+    pub tag: ::std::option::Option<crate::types::PartOfSpeechTagType>,
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<f32>,
+    pub score: ::std::option::Option<f32>,
 }
 impl PartOfSpeechTag {
     /// <p>Identifies the part of speech that the token represents.</p>
-    pub fn tag(&self) -> std::option::Option<&crate::types::PartOfSpeechTagType> {
+    pub fn tag(&self) -> ::std::option::Option<&crate::types::PartOfSpeechTagType> {
         self.tag.as_ref()
     }
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
-    pub fn score(&self) -> std::option::Option<f32> {
+    pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
 }
@@ -30,32 +30,34 @@ impl PartOfSpeechTag {
 
 /// A builder for [`PartOfSpeechTag`](crate::types::PartOfSpeechTag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartOfSpeechTagBuilder {
-    pub(crate) tag: std::option::Option<crate::types::PartOfSpeechTagType>,
-    pub(crate) score: std::option::Option<f32>,
+    pub(crate) tag: ::std::option::Option<crate::types::PartOfSpeechTagType>,
+    pub(crate) score: ::std::option::Option<f32>,
 }
 impl PartOfSpeechTagBuilder {
     /// <p>Identifies the part of speech that the token represents.</p>
     pub fn tag(mut self, input: crate::types::PartOfSpeechTagType) -> Self {
-        self.tag = Some(input);
+        self.tag = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the part of speech that the token represents.</p>
     pub fn set_tag(
         mut self,
-        input: std::option::Option<crate::types::PartOfSpeechTagType>,
+        input: ::std::option::Option<crate::types::PartOfSpeechTagType>,
     ) -> Self {
         self.tag = input;
         self
     }
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
     pub fn score(mut self, input: f32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly identified.</p>
-    pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }

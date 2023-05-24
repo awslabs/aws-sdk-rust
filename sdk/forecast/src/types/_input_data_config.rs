@@ -5,25 +5,25 @@
 /// </note>
 /// <p>The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <code>CreatePredictor</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
-    pub dataset_group_arn: std::option::Option<std::string::String>,
+    pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
     #[doc(hidden)]
     pub supplementary_features:
-        std::option::Option<std::vec::Vec<crate::types::SupplementaryFeature>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
 }
 impl InputDataConfig {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
     pub fn supplementary_features(
         &self,
-    ) -> std::option::Option<&[crate::types::SupplementaryFeature]> {
+    ) -> ::std::option::Option<&[crate::types::SupplementaryFeature]> {
         self.supplementary_features.as_deref()
     }
 }
@@ -36,22 +36,27 @@ impl InputDataConfig {
 
 /// A builder for [`InputDataConfig`](crate::types::InputDataConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputDataConfigBuilder {
-    pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
+    pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) supplementary_features:
-        std::option::Option<std::vec::Vec<crate::types::SupplementaryFeature>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
 }
 impl InputDataConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_group_arn = Some(input.into());
+    pub fn dataset_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn set_dataset_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataset_group_arn = input;
         self
@@ -64,13 +69,13 @@ impl InputDataConfigBuilder {
     pub fn supplementary_features(mut self, input: crate::types::SupplementaryFeature) -> Self {
         let mut v = self.supplementary_features.unwrap_or_default();
         v.push(input);
-        self.supplementary_features = Some(v);
+        self.supplementary_features = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of supplementary features. The only supported feature is a holiday calendar.</p>
     pub fn set_supplementary_features(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SupplementaryFeature>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SupplementaryFeature>>,
     ) -> Self {
         self.supplementary_features = input;
         self

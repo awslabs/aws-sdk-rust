@@ -2,29 +2,29 @@
 
 /// <p>Information about the software on the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SoftwareInformation {
     /// <p>The version of the software currently installed on the device.</p>
     #[doc(hidden)]
-    pub installed_version: std::option::Option<std::string::String>,
+    pub installed_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the software being installed on the device.</p>
     #[doc(hidden)]
-    pub installing_version: std::option::Option<std::string::String>,
+    pub installing_version: ::std::option::Option<::std::string::String>,
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
     #[doc(hidden)]
-    pub install_state: std::option::Option<std::string::String>,
+    pub install_state: ::std::option::Option<::std::string::String>,
 }
 impl SoftwareInformation {
     /// <p>The version of the software currently installed on the device.</p>
-    pub fn installed_version(&self) -> std::option::Option<&str> {
+    pub fn installed_version(&self) -> ::std::option::Option<&str> {
         self.installed_version.as_deref()
     }
     /// <p>The version of the software being installed on the device.</p>
-    pub fn installing_version(&self) -> std::option::Option<&str> {
+    pub fn installing_version(&self) -> ::std::option::Option<&str> {
         self.installing_version.as_deref()
     }
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
-    pub fn install_state(&self) -> std::option::Option<&str> {
+    pub fn install_state(&self) -> ::std::option::Option<&str> {
         self.install_state.as_deref()
     }
 }
@@ -37,46 +37,60 @@ impl SoftwareInformation {
 
 /// A builder for [`SoftwareInformation`](crate::types::SoftwareInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SoftwareInformationBuilder {
-    pub(crate) installed_version: std::option::Option<std::string::String>,
-    pub(crate) installing_version: std::option::Option<std::string::String>,
-    pub(crate) install_state: std::option::Option<std::string::String>,
+    pub(crate) installed_version: ::std::option::Option<::std::string::String>,
+    pub(crate) installing_version: ::std::option::Option<::std::string::String>,
+    pub(crate) install_state: ::std::option::Option<::std::string::String>,
 }
 impl SoftwareInformationBuilder {
     /// <p>The version of the software currently installed on the device.</p>
-    pub fn installed_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.installed_version = Some(input.into());
+    pub fn installed_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.installed_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the software currently installed on the device.</p>
     pub fn set_installed_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.installed_version = input;
         self
     }
     /// <p>The version of the software being installed on the device.</p>
-    pub fn installing_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.installing_version = Some(input.into());
+    pub fn installing_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.installing_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the software being installed on the device.</p>
     pub fn set_installing_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.installing_version = input;
         self
     }
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
-    pub fn install_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.install_state = Some(input.into());
+    pub fn install_state(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.install_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
-    pub fn set_install_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_install_state(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.install_state = input;
         self
     }

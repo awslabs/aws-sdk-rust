@@ -2,20 +2,20 @@
 
 /// <p>The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new access policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain.</p>
     #[doc(hidden)]
-    pub access_policies: std::option::Option<crate::types::AccessPoliciesStatus>,
+    pub access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
     _request_id: Option<String>,
 }
 impl UpdateServiceAccessPoliciesOutput {
     /// <p>The access rules configured for the domain.</p>
-    pub fn access_policies(&self) -> std::option::Option<&crate::types::AccessPoliciesStatus> {
+    pub fn access_policies(&self) -> ::std::option::Option<&crate::types::AccessPoliciesStatus> {
         self.access_policies.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateServiceAccessPoliciesOutput {
+impl ::aws_http::request_id::RequestId for UpdateServiceAccessPoliciesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl UpdateServiceAccessPoliciesOutput {
 
 /// A builder for [`UpdateServiceAccessPoliciesOutput`](crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateServiceAccessPoliciesOutputBuilder {
-    pub(crate) access_policies: std::option::Option<crate::types::AccessPoliciesStatus>,
+    pub(crate) access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
     _request_id: Option<String>,
 }
 impl UpdateServiceAccessPoliciesOutputBuilder {
     /// <p>The access rules configured for the domain.</p>
     pub fn access_policies(mut self, input: crate::types::AccessPoliciesStatus) -> Self {
-        self.access_policies = Some(input);
+        self.access_policies = ::std::option::Option::Some(input);
         self
     }
     /// <p>The access rules configured for the domain.</p>
     pub fn set_access_policies(
         mut self,
-        input: std::option::Option<crate::types::AccessPoliciesStatus>,
+        input: ::std::option::Option<crate::types::AccessPoliciesStatus>,
     ) -> Self {
         self.access_policies = input;
         self

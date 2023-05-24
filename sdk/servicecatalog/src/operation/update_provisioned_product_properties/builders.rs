@@ -6,47 +6,50 @@ pub use crate::operation::update_provisioned_product_properties::_update_provisi
 /// Fluent builder constructing a request to `UpdateProvisionedProductProperties`.
 ///
 /// <p>Requests updates to the properties of the specified provisioned product.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProvisionedProductPropertiesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder,
 }
 impl UpdateProvisionedProductPropertiesFluentBuilder {
     /// Creates a new `UpdateProvisionedProductProperties`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductProperties, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductProperties, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput, aws_smithy_http::result::SdkError<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput, aws_smithy_http::result::SdkError<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductPropertiesError>>
                          {
         self.send_middleware().await
     }
@@ -66,7 +69,10 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn accept_language(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -75,19 +81,25 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accept_language(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provisioned_product_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.provisioned_product_id(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn set_provisioned_product_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_provisioned_product_id(input);
         self
@@ -104,7 +116,7 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     pub fn provisioned_product_properties(
         mut self,
         k: crate::types::PropertyKey,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.provisioned_product_properties(k, v.into());
         self
@@ -116,22 +128,25 @@ impl UpdateProvisionedProductPropertiesFluentBuilder {
     /// <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
     pub fn set_provisioned_product_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::PropertyKey, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::PropertyKey, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_provisioned_product_properties(input);
         self
     }
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
-    pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idempotency_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
     pub fn set_idempotency_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self

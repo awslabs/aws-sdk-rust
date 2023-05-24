@@ -2,25 +2,25 @@
 
 /// <p>Contains the configuration information of alarm state changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmCapabilities {
     /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
     #[doc(hidden)]
     pub initialization_configuration:
-        std::option::Option<crate::types::InitializationConfiguration>,
+        ::std::option::Option<crate::types::InitializationConfiguration>,
     /// <p>Specifies whether to get notified for alarm state changes.</p>
     #[doc(hidden)]
-    pub acknowledge_flow: std::option::Option<crate::types::AcknowledgeFlow>,
+    pub acknowledge_flow: ::std::option::Option<crate::types::AcknowledgeFlow>,
 }
 impl AlarmCapabilities {
     /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
     pub fn initialization_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::InitializationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::InitializationConfiguration> {
         self.initialization_configuration.as_ref()
     }
     /// <p>Specifies whether to get notified for alarm state changes.</p>
-    pub fn acknowledge_flow(&self) -> std::option::Option<&crate::types::AcknowledgeFlow> {
+    pub fn acknowledge_flow(&self) -> ::std::option::Option<&crate::types::AcknowledgeFlow> {
         self.acknowledge_flow.as_ref()
     }
 }
@@ -33,11 +33,13 @@ impl AlarmCapabilities {
 
 /// A builder for [`AlarmCapabilities`](crate::types::AlarmCapabilities).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlarmCapabilitiesBuilder {
     pub(crate) initialization_configuration:
-        std::option::Option<crate::types::InitializationConfiguration>,
-    pub(crate) acknowledge_flow: std::option::Option<crate::types::AcknowledgeFlow>,
+        ::std::option::Option<crate::types::InitializationConfiguration>,
+    pub(crate) acknowledge_flow: ::std::option::Option<crate::types::AcknowledgeFlow>,
 }
 impl AlarmCapabilitiesBuilder {
     /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
@@ -45,26 +47,26 @@ impl AlarmCapabilitiesBuilder {
         mut self,
         input: crate::types::InitializationConfiguration,
     ) -> Self {
-        self.initialization_configuration = Some(input);
+        self.initialization_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
     pub fn set_initialization_configuration(
         mut self,
-        input: std::option::Option<crate::types::InitializationConfiguration>,
+        input: ::std::option::Option<crate::types::InitializationConfiguration>,
     ) -> Self {
         self.initialization_configuration = input;
         self
     }
     /// <p>Specifies whether to get notified for alarm state changes.</p>
     pub fn acknowledge_flow(mut self, input: crate::types::AcknowledgeFlow) -> Self {
-        self.acknowledge_flow = Some(input);
+        self.acknowledge_flow = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to get notified for alarm state changes.</p>
     pub fn set_acknowledge_flow(
         mut self,
-        input: std::option::Option<crate::types::AcknowledgeFlow>,
+        input: ::std::option::Option<crate::types::AcknowledgeFlow>,
     ) -> Self {
         self.acknowledge_flow = input;
         self

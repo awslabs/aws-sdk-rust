@@ -2,25 +2,25 @@
 
 /// <p>Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignHook {
     /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
     #[doc(hidden)]
-    pub lambda_function_name: std::option::Option<std::string::String>,
+    pub lambda_function_name: ::std::option::Option<::std::string::String>,
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
     /// <ul>
     /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
     /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::Mode>,
+    pub mode: ::std::option::Option<crate::types::Mode>,
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
     #[doc(hidden)]
-    pub web_url: std::option::Option<std::string::String>,
+    pub web_url: ::std::option::Option<::std::string::String>,
 }
 impl CampaignHook {
     /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
-    pub fn lambda_function_name(&self) -> std::option::Option<&str> {
+    pub fn lambda_function_name(&self) -> ::std::option::Option<&str> {
         self.lambda_function_name.as_deref()
     }
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
@@ -28,11 +28,11 @@ impl CampaignHook {
     /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
     /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
-    pub fn mode(&self) -> std::option::Option<&crate::types::Mode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::Mode> {
         self.mode.as_ref()
     }
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
-    pub fn web_url(&self) -> std::option::Option<&str> {
+    pub fn web_url(&self) -> ::std::option::Option<&str> {
         self.web_url.as_deref()
     }
 }
@@ -45,22 +45,27 @@ impl CampaignHook {
 
 /// A builder for [`CampaignHook`](crate::types::CampaignHook).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CampaignHookBuilder {
-    pub(crate) lambda_function_name: std::option::Option<std::string::String>,
-    pub(crate) mode: std::option::Option<crate::types::Mode>,
-    pub(crate) web_url: std::option::Option<std::string::String>,
+    pub(crate) lambda_function_name: ::std::option::Option<::std::string::String>,
+    pub(crate) mode: ::std::option::Option<crate::types::Mode>,
+    pub(crate) web_url: ::std::option::Option<::std::string::String>,
 }
 impl CampaignHookBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
-    pub fn lambda_function_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_function_name = Some(input.into());
+    pub fn lambda_function_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lambda_function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
     pub fn set_lambda_function_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lambda_function_name = input;
         self
@@ -71,7 +76,7 @@ impl CampaignHookBuilder {
     /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
     pub fn mode(mut self, input: crate::types::Mode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
@@ -79,17 +84,17 @@ impl CampaignHookBuilder {
     /// <li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li>
     /// <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li>
     /// </ul>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::Mode>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Mode>) -> Self {
         self.mode = input;
         self
     }
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
-    pub fn web_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.web_url = Some(input.into());
+    pub fn web_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.web_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
-    pub fn set_web_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_web_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_url = input;
         self
     }

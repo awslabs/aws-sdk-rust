@@ -2,7 +2,7 @@
 
 /// <p>Describes the VPC options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcOptions {
     /// <p>Indicates whether IPv6 is supported.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl VpcOptions {
 
 /// A builder for [`VpcOptions`](crate::types::VpcOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcOptionsBuilder {
-    pub(crate) ipv6_support: std::option::Option<bool>,
-    pub(crate) appliance_mode_support: std::option::Option<bool>,
+    pub(crate) ipv6_support: ::std::option::Option<bool>,
+    pub(crate) appliance_mode_support: ::std::option::Option<bool>,
 }
 impl VpcOptionsBuilder {
     /// <p>Indicates whether IPv6 is supported.</p>
     pub fn ipv6_support(mut self, input: bool) -> Self {
-        self.ipv6_support = Some(input);
+        self.ipv6_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether IPv6 is supported.</p>
-    pub fn set_ipv6_support(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ipv6_support(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ipv6_support = input;
         self
     }
     /// <p>Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is <code>false</code>.</p>
     pub fn appliance_mode_support(mut self, input: bool) -> Self {
-        self.appliance_mode_support = Some(input);
+        self.appliance_mode_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is <code>false</code>.</p>
-    pub fn set_appliance_mode_support(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_appliance_mode_support(mut self, input: ::std::option::Option<bool>) -> Self {
         self.appliance_mode_support = input;
         self
     }

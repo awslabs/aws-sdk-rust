@@ -4,7 +4,7 @@
 /// <p>Suggested spell corrections are based on words that appear in your indexed documents and how closely a corrected word matches a misspelled word.</p>
 /// <p>This feature is designed with certain defaults or limits. For information on the current limits and how to request more support for some limits, see the <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-spell-check.html">Spell Checker documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpellCorrectionConfiguration {
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     #[doc(hidden)]
@@ -25,20 +25,22 @@ impl SpellCorrectionConfiguration {
 
 /// A builder for [`SpellCorrectionConfiguration`](crate::types::SpellCorrectionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpellCorrectionConfigurationBuilder {
-    pub(crate) include_query_spell_check_suggestions: std::option::Option<bool>,
+    pub(crate) include_query_spell_check_suggestions: ::std::option::Option<bool>,
 }
 impl SpellCorrectionConfigurationBuilder {
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn include_query_spell_check_suggestions(mut self, input: bool) -> Self {
-        self.include_query_spell_check_suggestions = Some(input);
+        self.include_query_spell_check_suggestions = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>TRUE</code> to suggest spell corrections for queries.</p>
     pub fn set_include_query_spell_check_suggestions(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.include_query_spell_check_suggestions = input;
         self

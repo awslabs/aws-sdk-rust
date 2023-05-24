@@ -2,31 +2,31 @@
 
 /// <p> When MTurk encounters an issue with notifying the Workers you specified, it returns back this object with failure details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyWorkersFailureStatus {
     /// <p> Encoded value for the failure type. </p>
     #[doc(hidden)]
-    pub notify_workers_failure_code: std::option::Option<crate::types::NotifyWorkersFailureCode>,
+    pub notify_workers_failure_code: ::std::option::Option<crate::types::NotifyWorkersFailureCode>,
     /// <p> A message detailing the reason the Worker could not be notified. </p>
     #[doc(hidden)]
-    pub notify_workers_failure_message: std::option::Option<std::string::String>,
+    pub notify_workers_failure_message: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the Worker.</p>
     #[doc(hidden)]
-    pub worker_id: std::option::Option<std::string::String>,
+    pub worker_id: ::std::option::Option<::std::string::String>,
 }
 impl NotifyWorkersFailureStatus {
     /// <p> Encoded value for the failure type. </p>
     pub fn notify_workers_failure_code(
         &self,
-    ) -> std::option::Option<&crate::types::NotifyWorkersFailureCode> {
+    ) -> ::std::option::Option<&crate::types::NotifyWorkersFailureCode> {
         self.notify_workers_failure_code.as_ref()
     }
     /// <p> A message detailing the reason the Worker could not be notified. </p>
-    pub fn notify_workers_failure_message(&self) -> std::option::Option<&str> {
+    pub fn notify_workers_failure_message(&self) -> ::std::option::Option<&str> {
         self.notify_workers_failure_message.as_deref()
     }
     /// <p> The ID of the Worker.</p>
-    pub fn worker_id(&self) -> std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
 }
@@ -39,12 +39,14 @@ impl NotifyWorkersFailureStatus {
 
 /// A builder for [`NotifyWorkersFailureStatus`](crate::types::NotifyWorkersFailureStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotifyWorkersFailureStatusBuilder {
     pub(crate) notify_workers_failure_code:
-        std::option::Option<crate::types::NotifyWorkersFailureCode>,
-    pub(crate) notify_workers_failure_message: std::option::Option<std::string::String>,
-    pub(crate) worker_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::NotifyWorkersFailureCode>,
+    pub(crate) notify_workers_failure_message: ::std::option::Option<::std::string::String>,
+    pub(crate) worker_id: ::std::option::Option<::std::string::String>,
 }
 impl NotifyWorkersFailureStatusBuilder {
     /// <p> Encoded value for the failure type. </p>
@@ -52,37 +54,40 @@ impl NotifyWorkersFailureStatusBuilder {
         mut self,
         input: crate::types::NotifyWorkersFailureCode,
     ) -> Self {
-        self.notify_workers_failure_code = Some(input);
+        self.notify_workers_failure_code = ::std::option::Option::Some(input);
         self
     }
     /// <p> Encoded value for the failure type. </p>
     pub fn set_notify_workers_failure_code(
         mut self,
-        input: std::option::Option<crate::types::NotifyWorkersFailureCode>,
+        input: ::std::option::Option<crate::types::NotifyWorkersFailureCode>,
     ) -> Self {
         self.notify_workers_failure_code = input;
         self
     }
     /// <p> A message detailing the reason the Worker could not be notified. </p>
-    pub fn notify_workers_failure_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notify_workers_failure_message = Some(input.into());
+    pub fn notify_workers_failure_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.notify_workers_failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message detailing the reason the Worker could not be notified. </p>
     pub fn set_notify_workers_failure_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.notify_workers_failure_message = input;
         self
     }
     /// <p> The ID of the Worker.</p>
-    pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.worker_id = Some(input.into());
+    pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Worker.</p>
-    pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }

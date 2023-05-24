@@ -2,7 +2,7 @@
 
 /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartLambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -11,10 +11,10 @@ pub struct StartLambdaFunctionFailedEventAttributes {
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
-    pub cause: std::option::Option<crate::types::StartLambdaFunctionFailedCause>,
+    pub cause: ::std::option::Option<crate::types::StartLambdaFunctionFailedCause>,
     /// <p>A description that can help diagnose the cause of the fault.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl StartLambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
@@ -24,11 +24,11 @@ impl StartLambdaFunctionFailedEventAttributes {
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
-    pub fn cause(&self) -> std::option::Option<&crate::types::StartLambdaFunctionFailedCause> {
+    pub fn cause(&self) -> ::std::option::Option<&crate::types::StartLambdaFunctionFailedCause> {
         self.cause.as_ref()
     }
     /// <p>A description that can help diagnose the cause of the fault.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -41,20 +41,22 @@ impl StartLambdaFunctionFailedEventAttributes {
 
 /// A builder for [`StartLambdaFunctionFailedEventAttributes`](crate::types::StartLambdaFunctionFailedEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartLambdaFunctionFailedEventAttributesBuilder {
-    pub(crate) scheduled_event_id: std::option::Option<i64>,
-    pub(crate) cause: std::option::Option<crate::types::StartLambdaFunctionFailedCause>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) scheduled_event_id: ::std::option::Option<i64>,
+    pub(crate) cause: ::std::option::Option<crate::types::StartLambdaFunctionFailedCause>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl StartLambdaFunctionFailedEventAttributesBuilder {
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
-        self.scheduled_event_id = Some(input);
+        self.scheduled_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scheduled_event_id = input;
         self
     }
@@ -62,7 +64,7 @@ impl StartLambdaFunctionFailedEventAttributesBuilder {
     /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed because the IAM role attached to the execution lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn cause(mut self, input: crate::types::StartLambdaFunctionFailedCause) -> Self {
-        self.cause = Some(input);
+        self.cause = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p> <note>
@@ -70,18 +72,18 @@ impl StartLambdaFunctionFailedEventAttributesBuilder {
     /// </note>
     pub fn set_cause(
         mut self,
-        input: std::option::Option<crate::types::StartLambdaFunctionFailedCause>,
+        input: ::std::option::Option<crate::types::StartLambdaFunctionFailedCause>,
     ) -> Self {
         self.cause = input;
         self
     }
     /// <p>A description that can help diagnose the cause of the fault.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description that can help diagnose the cause of the fault.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

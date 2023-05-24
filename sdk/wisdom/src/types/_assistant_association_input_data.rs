@@ -2,10 +2,10 @@
 
 /// <p>The data that is input into Wisdom as a result of the assistant association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AssistantAssociationInputData {
     /// <p>The identifier of the knowledge base.</p>
-    KnowledgeBaseId(std::string::String),
+    KnowledgeBaseId(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum AssistantAssociationInputData {
 }
 impl AssistantAssociationInputData {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`KnowledgeBaseId`](crate::types::AssistantAssociationInputData::KnowledgeBaseId), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`KnowledgeBaseId`](crate::types::AssistantAssociationInputData::KnowledgeBaseId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_knowledge_base_id(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_knowledge_base_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AssistantAssociationInputData::KnowledgeBaseId(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`KnowledgeBaseId`](crate::types::AssistantAssociationInputData::KnowledgeBaseId).

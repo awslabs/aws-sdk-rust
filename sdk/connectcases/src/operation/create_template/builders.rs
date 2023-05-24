@@ -6,56 +6,59 @@ pub use crate::operation::create_template::_create_template_input::CreateTemplat
 /// Fluent builder constructing a request to `CreateTemplate`.
 ///
 /// <p>Creates a template in the Cases domain. This template is used to define the case object model (that is, to define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template. A template can be either Active or Inactive, as indicated by its status. Inactive templates cannot be used to create cases.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTemplateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_template::builders::CreateTemplateInputBuilder,
 }
 impl CreateTemplateFluentBuilder {
     /// Creates a new `CreateTemplate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_template::CreateTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_template::CreateTemplateError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_template::CreateTemplateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_template::CreateTemplateOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_template::CreateTemplateError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_template::CreateTemplateError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreateTemplateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_template::CreateTemplateOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_template::CreateTemplateError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_template::CreateTemplateError>,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
     /// <p>A name for the template. It must be unique per domain.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A name for the template. It must be unique per domain.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A brief description of the template.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A brief description of the template.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -112,7 +115,7 @@ impl CreateTemplateFluentBuilder {
     /// <p>Configuration of layouts associated to the template.</p>
     pub fn set_layout_configuration(
         mut self,
-        input: std::option::Option<crate::types::LayoutConfiguration>,
+        input: ::std::option::Option<crate::types::LayoutConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_layout_configuration(input);
         self
@@ -129,7 +132,7 @@ impl CreateTemplateFluentBuilder {
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     pub fn set_required_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RequiredField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
     ) -> Self {
         self.inner = self.inner.set_required_fields(input);
         self
@@ -140,7 +143,10 @@ impl CreateTemplateFluentBuilder {
         self
     }
     /// <p>The status of the template.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TemplateStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::TemplateStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

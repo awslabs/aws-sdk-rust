@@ -8,56 +8,59 @@ pub use crate::operation::create_fleet::_create_fleet_input::CreateFleetInputBui
 /// <p>Launches an EC2 Fleet.</p>
 /// <p>You can create a single EC2 Fleet that includes multiple launch specifications that vary by instance type, AMI, Availability Zone, or subnet.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFleetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_fleet::builders::CreateFleetInputBuilder,
 }
 impl CreateFleetFluentBuilder {
     /// Creates a new `CreateFleet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_fleet::CreateFleet,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_fleet::CreateFleetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +73,9 @@ impl CreateFleetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_fleet::CreateFleetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
     > {
         self.send_middleware().await
     }
@@ -82,17 +85,17 @@ impl CreateFleetFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -104,7 +107,7 @@ impl CreateFleetFluentBuilder {
     /// <p>Describes the configuration of Spot Instances in an EC2 Fleet.</p>
     pub fn set_spot_options(
         mut self,
-        input: std::option::Option<crate::types::SpotOptionsRequest>,
+        input: ::std::option::Option<crate::types::SpotOptionsRequest>,
     ) -> Self {
         self.inner = self.inner.set_spot_options(input);
         self
@@ -117,7 +120,7 @@ impl CreateFleetFluentBuilder {
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
     pub fn set_on_demand_options(
         mut self,
-        input: std::option::Option<crate::types::OnDemandOptionsRequest>,
+        input: ::std::option::Option<crate::types::OnDemandOptionsRequest>,
     ) -> Self {
         self.inner = self.inner.set_on_demand_options(input);
         self
@@ -135,7 +138,7 @@ impl CreateFleetFluentBuilder {
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
-        input: std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
+        input: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
     ) -> Self {
         self.inner = self.inner.set_excess_capacity_termination_policy(input);
         self
@@ -155,7 +158,9 @@ impl CreateFleetFluentBuilder {
     /// <p>The configuration for the EC2 Fleet.</p>
     pub fn set_launch_template_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_launch_template_configs(input);
         self
@@ -171,7 +176,7 @@ impl CreateFleetFluentBuilder {
     /// <p>The number of units to request.</p>
     pub fn set_target_capacity_specification(
         mut self,
-        input: std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
+        input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
     ) -> Self {
         self.inner = self.inner.set_target_capacity_specification(input);
         self
@@ -184,7 +189,7 @@ impl CreateFleetFluentBuilder {
     /// <p>Indicates whether running instances should be terminated when the EC2 Fleet expires.</p>
     pub fn set_terminate_instances_with_expiration(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_terminate_instances_with_expiration(input);
         self
@@ -207,32 +212,32 @@ impl CreateFleetFluentBuilder {
     /// <li> <p> <code>instant</code> - The EC2 Fleet places a synchronous one-time request for your desired capacity, and returns errors for any instances that could not be launched.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html">EC2 Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::FleetType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FleetType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
-    pub fn valid_from(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn valid_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.valid_from(input);
         self
     }
     /// <p>The start date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The default is to start fulfilling the request immediately.</p>
     pub fn set_valid_from(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_valid_from(input);
         self
     }
     /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.</p>
-    pub fn valid_until(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn valid_until(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.valid_until(input);
         self
     }
     /// <p>The end date and time of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. If no value is specified, the request remains until you cancel it.</p>
     pub fn set_valid_until(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_valid_until(input);
         self
@@ -243,7 +248,7 @@ impl CreateFleetFluentBuilder {
         self
     }
     /// <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_replace_unhealthy_instances(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_replace_unhealthy_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_replace_unhealthy_instances(input);
         self
     }
@@ -263,18 +268,18 @@ impl CreateFleetFluentBuilder {
     /// <p>If the fleet type is <code>maintain</code> or <code>request</code>, specify a resource type of <code>fleet</code> to tag the fleet. You cannot specify a resource type of <code>instance</code>. To tag instances at launch, specify the tags in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a>.</p>
     pub fn set_tag_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>Reserved.</p>
-    pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context(input);
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Information about a required field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequiredFieldInfo {
     /// <p>The unique identifier for the field.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
+    pub id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
 impl RequiredFieldInfo {
     /// <p>The unique identifier for the field.</p>
-    pub fn id(&self) -> std::option::Option<&crate::types::TaskTemplateFieldIdentifier> {
+    pub fn id(&self) -> ::std::option::Option<&crate::types::TaskTemplateFieldIdentifier> {
         self.id.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl RequiredFieldInfo {
 
 /// A builder for [`RequiredFieldInfo`](crate::types::RequiredFieldInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RequiredFieldInfoBuilder {
-    pub(crate) id: std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
+    pub(crate) id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
 impl RequiredFieldInfoBuilder {
     /// <p>The unique identifier for the field.</p>
     pub fn id(mut self, input: crate::types::TaskTemplateFieldIdentifier) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unique identifier for the field.</p>
     pub fn set_id(
         mut self,
-        input: std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
+        input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
     ) -> Self {
         self.id = input;
         self

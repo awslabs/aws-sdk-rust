@@ -2,7 +2,7 @@
 
 /// <p>A complex type that contains information about the request to create a hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountLimitInput {
     /// <p>The limit that you want to get. Valid values include the following:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct GetAccountLimitInput {
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::AccountLimitType>,
+    pub r#type: ::std::option::Option<crate::types::AccountLimitType>,
 }
 impl GetAccountLimitInput {
     /// <p>The limit that you want to get. Valid values include the following:</p>
@@ -24,7 +24,7 @@ impl GetAccountLimitInput {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AccountLimitType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccountLimitType> {
         self.r#type.as_ref()
     }
 }
@@ -37,9 +37,11 @@ impl GetAccountLimitInput {
 
 /// A builder for [`GetAccountLimitInput`](crate::operation::get_account_limit::GetAccountLimitInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAccountLimitInputBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::AccountLimitType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::AccountLimitType>,
 }
 impl GetAccountLimitInputBuilder {
     /// <p>The limit that you want to get. Valid values include the following:</p>
@@ -51,7 +53,7 @@ impl GetAccountLimitInputBuilder {
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::AccountLimitType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit that you want to get. Valid values include the following:</p>
@@ -62,18 +64,21 @@ impl GetAccountLimitInputBuilder {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::AccountLimitType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::AccountLimitType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// Consumes the builder and constructs a [`GetAccountLimitInput`](crate::operation::get_account_limit::GetAccountLimitInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_account_limit::GetAccountLimitInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_account_limit::GetAccountLimitInput {
+        ::std::result::Result::Ok(crate::operation::get_account_limit::GetAccountLimitInput {
             r#type: self.r#type,
         })
     }

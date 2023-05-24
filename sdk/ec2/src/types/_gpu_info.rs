@@ -2,22 +2,22 @@
 
 /// <p>Describes the GPU accelerators for the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpuInfo {
     /// <p>Describes the GPU accelerators for the instance type.</p>
     #[doc(hidden)]
-    pub gpus: std::option::Option<std::vec::Vec<crate::types::GpuDeviceInfo>>,
+    pub gpus: ::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>>,
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
     #[doc(hidden)]
-    pub total_gpu_memory_in_mi_b: std::option::Option<i32>,
+    pub total_gpu_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl GpuInfo {
     /// <p>Describes the GPU accelerators for the instance type.</p>
-    pub fn gpus(&self) -> std::option::Option<&[crate::types::GpuDeviceInfo]> {
+    pub fn gpus(&self) -> ::std::option::Option<&[crate::types::GpuDeviceInfo]> {
         self.gpus.as_deref()
     }
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
-    pub fn total_gpu_memory_in_mi_b(&self) -> std::option::Option<i32> {
+    pub fn total_gpu_memory_in_mi_b(&self) -> ::std::option::Option<i32> {
         self.total_gpu_memory_in_mi_b
     }
 }
@@ -30,10 +30,12 @@ impl GpuInfo {
 
 /// A builder for [`GpuInfo`](crate::types::GpuInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GpuInfoBuilder {
-    pub(crate) gpus: std::option::Option<std::vec::Vec<crate::types::GpuDeviceInfo>>,
-    pub(crate) total_gpu_memory_in_mi_b: std::option::Option<i32>,
+    pub(crate) gpus: ::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>>,
+    pub(crate) total_gpu_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl GpuInfoBuilder {
     /// Appends an item to `gpus`.
@@ -44,24 +46,24 @@ impl GpuInfoBuilder {
     pub fn gpus(mut self, input: crate::types::GpuDeviceInfo) -> Self {
         let mut v = self.gpus.unwrap_or_default();
         v.push(input);
-        self.gpus = Some(v);
+        self.gpus = ::std::option::Option::Some(v);
         self
     }
     /// <p>Describes the GPU accelerators for the instance type.</p>
     pub fn set_gpus(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GpuDeviceInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GpuDeviceInfo>>,
     ) -> Self {
         self.gpus = input;
         self
     }
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
     pub fn total_gpu_memory_in_mi_b(mut self, input: i32) -> Self {
-        self.total_gpu_memory_in_mi_b = Some(input);
+        self.total_gpu_memory_in_mi_b = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total size of the memory for the GPU accelerators for the instance type, in MiB.</p>
-    pub fn set_total_gpu_memory_in_mi_b(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_gpu_memory_in_mi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_gpu_memory_in_mi_b = input;
         self
     }

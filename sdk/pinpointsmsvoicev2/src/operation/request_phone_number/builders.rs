@@ -6,29 +6,29 @@ pub use crate::operation::request_phone_number::_request_phone_number_input::Req
 /// Fluent builder constructing a request to `RequestPhoneNumber`.
 ///
 /// <p>Request an origination phone number for use in your account. For more information on phone number request see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-request-number.html"> Requesting a number </a> in the <i>Amazon Pinpoint User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestPhoneNumberFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder,
 }
 impl RequestPhoneNumberFluentBuilder {
     /// Creates a new `RequestPhoneNumber`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::request_phone_number::RequestPhoneNumber,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::request_phone_number::RequestPhoneNumberError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RequestPhoneNumberFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::request_phone_number::RequestPhoneNumberOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::request_phone_number::RequestPhoneNumberError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl RequestPhoneNumberFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::request_phone_number::RequestPhoneNumberOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::request_phone_number::RequestPhoneNumberError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn iso_country_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.iso_country_code(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iso_country_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_iso_country_code(input);
         self
     }
@@ -98,7 +107,7 @@ impl RequestPhoneNumberFluentBuilder {
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn set_message_type(
         mut self,
-        input: std::option::Option<crate::types::MessageType>,
+        input: ::std::option::Option<crate::types::MessageType>,
     ) -> Self {
         self.inner = self.inner.set_message_type(input);
         self
@@ -115,7 +124,7 @@ impl RequestPhoneNumberFluentBuilder {
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
     pub fn set_number_capabilities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     ) -> Self {
         self.inner = self.inner.set_number_capabilities(input);
         self
@@ -128,41 +137,50 @@ impl RequestPhoneNumberFluentBuilder {
     /// <p>The type of phone number to request.</p>
     pub fn set_number_type(
         mut self,
-        input: std::option::Option<crate::types::RequestableNumberType>,
+        input: ::std::option::Option<crate::types::RequestableNumberType>,
     ) -> Self {
         self.inner = self.inner.set_number_type(input);
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
-    pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn opt_out_list_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
     pub fn set_opt_out_list_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
-    pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
-    pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    pub fn registration_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn registration_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.registration_id(input.into());
         self
     }
     /// <p>Use this field to attach your phone number for an external registration process.</p>
-    pub fn set_registration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registration_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_registration_id(input);
         self
     }
@@ -172,7 +190,7 @@ impl RequestPhoneNumberFluentBuilder {
         self
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted.</p>
-    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection_enabled(input);
         self
     }
@@ -188,18 +206,18 @@ impl RequestPhoneNumberFluentBuilder {
     /// <p>An array of tags (key and value pairs) associate with the requested phone number. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

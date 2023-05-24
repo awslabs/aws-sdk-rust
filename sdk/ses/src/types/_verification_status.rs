@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum VerificationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum VerificationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for VerificationStatus {
+impl ::std::convert::From<&str> for VerificationStatus {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => VerificationStatus::Failed,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for VerificationStatus {
         }
     }
 }
-impl std::str::FromStr for VerificationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for VerificationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VerificationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(VerificationStatus::from(s))
     }
 }
 impl VerificationStatus {
@@ -107,7 +107,7 @@ impl VerificationStatus {
         ]
     }
 }
-impl AsRef<str> for VerificationStatus {
+impl ::std::convert::AsRef<str> for VerificationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

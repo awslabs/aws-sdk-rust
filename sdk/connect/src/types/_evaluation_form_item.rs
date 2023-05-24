@@ -2,7 +2,7 @@
 
 /// <p>Information about an item from an evaluation form. The item must be either a section or a question.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationFormItem {
     /// <p>The information of the question.</p>
     Question(crate::types::EvaluationFormQuestion),
@@ -21,11 +21,13 @@ pub enum EvaluationFormItem {
 impl EvaluationFormItem {
     /// Tries to convert the enum instance into [`Question`](crate::types::EvaluationFormItem::Question), extracting the inner [`EvaluationFormQuestion`](crate::types::EvaluationFormQuestion).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_question(&self) -> std::result::Result<&crate::types::EvaluationFormQuestion, &Self> {
+    pub fn as_question(
+        &self,
+    ) -> ::std::result::Result<&crate::types::EvaluationFormQuestion, &Self> {
         if let EvaluationFormItem::Question(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Question`](crate::types::EvaluationFormItem::Question).
@@ -34,11 +36,11 @@ impl EvaluationFormItem {
     }
     /// Tries to convert the enum instance into [`Section`](crate::types::EvaluationFormItem::Section), extracting the inner [`EvaluationFormSection`](crate::types::EvaluationFormSection).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_section(&self) -> std::result::Result<&crate::types::EvaluationFormSection, &Self> {
+    pub fn as_section(&self) -> ::std::result::Result<&crate::types::EvaluationFormSection, &Self> {
         if let EvaluationFormItem::Section(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Section`](crate::types::EvaluationFormItem::Section).

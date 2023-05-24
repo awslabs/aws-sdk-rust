@@ -2,14 +2,14 @@
 
 /// <p>Information required for human workers to complete a labeling task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanTaskConfig {
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.</p>
     #[doc(hidden)]
-    pub workteam_arn: std::option::Option<std::string::String>,
+    pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the user interface that workers use to complete the labeling task.</p>
     #[doc(hidden)]
-    pub ui_config: std::option::Option<crate::types::UiConfig>,
+    pub ui_config: ::std::option::Option<crate::types::UiConfig>,
     /// <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data object is sent to a human worker. Use this function to provide input to a custom labeling job.</p>
     /// <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda function ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling workflows, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation Lambda</a>. </p>
     /// <p> <b>Bounding box</b> - Finds the most similar boxes from different workers based on the Jaccard index of the boxes.</p>
@@ -347,19 +347,19 @@ pub struct HumanTaskConfig {
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub pre_human_task_lambda_arn: std::option::Option<std::string::String>,
+    pub pre_human_task_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
     #[doc(hidden)]
-    pub task_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub task_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A title for the task for your human workers.</p>
     #[doc(hidden)]
-    pub task_title: std::option::Option<std::string::String>,
+    pub task_title: ::std::option::Option<::std::string::String>,
     /// <p>A description of the task for your human workers.</p>
     #[doc(hidden)]
-    pub task_description: std::option::Option<std::string::String>,
+    pub task_description: ::std::option::Option<::std::string::String>,
     /// <p>The number of human workers that will label an object. </p>
     #[doc(hidden)]
-    pub number_of_human_workers_per_data_object: std::option::Option<i32>,
+    pub number_of_human_workers_per_data_object: ::std::option::Option<i32>,
     /// <p>The amount of time that a worker has to complete a task. </p>
     /// <p>If you create a custom labeling job, the maximum value for this parameter is 8 hours (28,800 seconds).</p>
     /// <p>If you create a labeling job using a <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task type</a> the maximum for this parameter depends on the task type you use:</p>
@@ -368,32 +368,32 @@ pub struct HumanTaskConfig {
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub task_time_limit_in_seconds: std::option::Option<i32>,
+    pub task_time_limit_in_seconds: ::std::option::Option<i32>,
     /// <p>The length of time that a task remains available for labeling by human workers. The default and maximum values for this parameter depend on the type of workforce you use.</p>
     /// <ul>
     /// <li> <p>If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours (21,600 seconds).</p> </li>
     /// <li> <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub task_availability_lifetime_in_seconds: std::option::Option<i32>,
+    pub task_availability_lifetime_in_seconds: ::std::option::Option<i32>,
     /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
     #[doc(hidden)]
-    pub max_concurrent_task_count: std::option::Option<i32>,
+    pub max_concurrent_task_count: ::std::option::Option<i32>,
     /// <p>Configures how labels are consolidated across human workers.</p>
     #[doc(hidden)]
     pub annotation_consolidation_config:
-        std::option::Option<crate::types::AnnotationConsolidationConfig>,
+        ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
     #[doc(hidden)]
-    pub public_workforce_task_price: std::option::Option<crate::types::PublicWorkforceTaskPrice>,
+    pub public_workforce_task_price: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
 }
 impl HumanTaskConfig {
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.</p>
-    pub fn workteam_arn(&self) -> std::option::Option<&str> {
+    pub fn workteam_arn(&self) -> ::std::option::Option<&str> {
         self.workteam_arn.as_deref()
     }
     /// <p>Information about the user interface that workers use to complete the labeling task.</p>
-    pub fn ui_config(&self) -> std::option::Option<&crate::types::UiConfig> {
+    pub fn ui_config(&self) -> ::std::option::Option<&crate::types::UiConfig> {
         self.ui_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data object is sent to a human worker. Use this function to provide input to a custom labeling job.</p>
@@ -732,23 +732,23 @@ impl HumanTaskConfig {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    pub fn pre_human_task_lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn pre_human_task_lambda_arn(&self) -> ::std::option::Option<&str> {
         self.pre_human_task_lambda_arn.as_deref()
     }
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
-    pub fn task_keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn task_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.task_keywords.as_deref()
     }
     /// <p>A title for the task for your human workers.</p>
-    pub fn task_title(&self) -> std::option::Option<&str> {
+    pub fn task_title(&self) -> ::std::option::Option<&str> {
         self.task_title.as_deref()
     }
     /// <p>A description of the task for your human workers.</p>
-    pub fn task_description(&self) -> std::option::Option<&str> {
+    pub fn task_description(&self) -> ::std::option::Option<&str> {
         self.task_description.as_deref()
     }
     /// <p>The number of human workers that will label an object. </p>
-    pub fn number_of_human_workers_per_data_object(&self) -> std::option::Option<i32> {
+    pub fn number_of_human_workers_per_data_object(&self) -> ::std::option::Option<i32> {
         self.number_of_human_workers_per_data_object
     }
     /// <p>The amount of time that a worker has to complete a task. </p>
@@ -758,7 +758,7 @@ impl HumanTaskConfig {
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the maximum is 8 hours (28,800 seconds).</p> </li>
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
-    pub fn task_time_limit_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn task_time_limit_in_seconds(&self) -> ::std::option::Option<i32> {
         self.task_time_limit_in_seconds
     }
     /// <p>The length of time that a task remains available for labeling by human workers. The default and maximum values for this parameter depend on the type of workforce you use.</p>
@@ -766,23 +766,23 @@ impl HumanTaskConfig {
     /// <li> <p>If you choose the Amazon Mechanical Turk workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours (21,600 seconds).</p> </li>
     /// <li> <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
-    pub fn task_availability_lifetime_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn task_availability_lifetime_in_seconds(&self) -> ::std::option::Option<i32> {
         self.task_availability_lifetime_in_seconds
     }
     /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
-    pub fn max_concurrent_task_count(&self) -> std::option::Option<i32> {
+    pub fn max_concurrent_task_count(&self) -> ::std::option::Option<i32> {
         self.max_concurrent_task_count
     }
     /// <p>Configures how labels are consolidated across human workers.</p>
     pub fn annotation_consolidation_config(
         &self,
-    ) -> std::option::Option<&crate::types::AnnotationConsolidationConfig> {
+    ) -> ::std::option::Option<&crate::types::AnnotationConsolidationConfig> {
         self.annotation_consolidation_config.as_ref()
     }
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
     pub fn public_workforce_task_price(
         &self,
-    ) -> std::option::Option<&crate::types::PublicWorkforceTaskPrice> {
+    ) -> ::std::option::Option<&crate::types::PublicWorkforceTaskPrice> {
         self.public_workforce_task_price.as_ref()
     }
 }
@@ -795,41 +795,43 @@ impl HumanTaskConfig {
 
 /// A builder for [`HumanTaskConfig`](crate::types::HumanTaskConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HumanTaskConfigBuilder {
-    pub(crate) workteam_arn: std::option::Option<std::string::String>,
-    pub(crate) ui_config: std::option::Option<crate::types::UiConfig>,
-    pub(crate) pre_human_task_lambda_arn: std::option::Option<std::string::String>,
-    pub(crate) task_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) task_title: std::option::Option<std::string::String>,
-    pub(crate) task_description: std::option::Option<std::string::String>,
-    pub(crate) number_of_human_workers_per_data_object: std::option::Option<i32>,
-    pub(crate) task_time_limit_in_seconds: std::option::Option<i32>,
-    pub(crate) task_availability_lifetime_in_seconds: std::option::Option<i32>,
-    pub(crate) max_concurrent_task_count: std::option::Option<i32>,
+    pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ui_config: ::std::option::Option<crate::types::UiConfig>,
+    pub(crate) pre_human_task_lambda_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) task_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) task_title: ::std::option::Option<::std::string::String>,
+    pub(crate) task_description: ::std::option::Option<::std::string::String>,
+    pub(crate) number_of_human_workers_per_data_object: ::std::option::Option<i32>,
+    pub(crate) task_time_limit_in_seconds: ::std::option::Option<i32>,
+    pub(crate) task_availability_lifetime_in_seconds: ::std::option::Option<i32>,
+    pub(crate) max_concurrent_task_count: ::std::option::Option<i32>,
     pub(crate) annotation_consolidation_config:
-        std::option::Option<crate::types::AnnotationConsolidationConfig>,
+        ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
     pub(crate) public_workforce_task_price:
-        std::option::Option<crate::types::PublicWorkforceTaskPrice>,
+        ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
 }
 impl HumanTaskConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.</p>
-    pub fn workteam_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workteam_arn = Some(input.into());
+    pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workteam_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the work team assigned to complete the tasks.</p>
-    pub fn set_workteam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workteam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workteam_arn = input;
         self
     }
     /// <p>Information about the user interface that workers use to complete the labeling task.</p>
     pub fn ui_config(mut self, input: crate::types::UiConfig) -> Self {
-        self.ui_config = Some(input);
+        self.ui_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user interface that workers use to complete the labeling task.</p>
-    pub fn set_ui_config(mut self, input: std::option::Option<crate::types::UiConfig>) -> Self {
+    pub fn set_ui_config(mut self, input: ::std::option::Option<crate::types::UiConfig>) -> Self {
         self.ui_config = input;
         self
     }
@@ -1169,8 +1171,11 @@ impl HumanTaskConfigBuilder {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    pub fn pre_human_task_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pre_human_task_lambda_arn = Some(input.into());
+    pub fn pre_human_task_lambda_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pre_human_task_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data object is sent to a human worker. Use this function to provide input to a custom labeling job.</p>
@@ -1511,7 +1516,7 @@ impl HumanTaskConfigBuilder {
     /// </ul>
     pub fn set_pre_human_task_lambda_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pre_human_task_lambda_arn = input;
         self
@@ -1521,49 +1526,58 @@ impl HumanTaskConfigBuilder {
     /// To override the contents of this collection use [`set_task_keywords`](Self::set_task_keywords).
     ///
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
-    pub fn task_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn task_keywords(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.task_keywords.unwrap_or_default();
         v.push(input.into());
-        self.task_keywords = Some(v);
+        self.task_keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>Keywords used to describe the task so that workers on Amazon Mechanical Turk can discover the task.</p>
     pub fn set_task_keywords(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.task_keywords = input;
         self
     }
     /// <p>A title for the task for your human workers.</p>
-    pub fn task_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_title = Some(input.into());
+    pub fn task_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A title for the task for your human workers.</p>
-    pub fn set_task_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_title = input;
         self
     }
     /// <p>A description of the task for your human workers.</p>
-    pub fn task_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_description = Some(input.into());
+    pub fn task_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the task for your human workers.</p>
-    pub fn set_task_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.task_description = input;
         self
     }
     /// <p>The number of human workers that will label an object. </p>
     pub fn number_of_human_workers_per_data_object(mut self, input: i32) -> Self {
-        self.number_of_human_workers_per_data_object = Some(input);
+        self.number_of_human_workers_per_data_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of human workers that will label an object. </p>
     pub fn set_number_of_human_workers_per_data_object(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.number_of_human_workers_per_data_object = input;
         self
@@ -1576,7 +1590,7 @@ impl HumanTaskConfigBuilder {
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
     pub fn task_time_limit_in_seconds(mut self, input: i32) -> Self {
-        self.task_time_limit_in_seconds = Some(input);
+        self.task_time_limit_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time that a worker has to complete a task. </p>
@@ -1586,7 +1600,7 @@ impl HumanTaskConfigBuilder {
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a> labeling jobs, the maximum is 8 hours (28,800 seconds).</p> </li>
     /// <li> <p>For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D point cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
-    pub fn set_task_time_limit_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_task_time_limit_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.task_time_limit_in_seconds = input;
         self
     }
@@ -1596,7 +1610,7 @@ impl HumanTaskConfigBuilder {
     /// <li> <p>If you choose a private or vendor workforce, the default value is 30 days (2592,000 seconds) for non-AL mode. For most users, the maximum is also 30 days.</p> </li>
     /// </ul>
     pub fn task_availability_lifetime_in_seconds(mut self, input: i32) -> Self {
-        self.task_availability_lifetime_in_seconds = Some(input);
+        self.task_availability_lifetime_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The length of time that a task remains available for labeling by human workers. The default and maximum values for this parameter depend on the type of workforce you use.</p>
@@ -1606,18 +1620,18 @@ impl HumanTaskConfigBuilder {
     /// </ul>
     pub fn set_task_availability_lifetime_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.task_availability_lifetime_in_seconds = input;
         self
     }
     /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
     pub fn max_concurrent_task_count(mut self, input: i32) -> Self {
-        self.max_concurrent_task_count = Some(input);
+        self.max_concurrent_task_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects. To increase the maximum value to 5000 objects, contact Amazon Web Services Support.</p>
-    pub fn set_max_concurrent_task_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_concurrent_task_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrent_task_count = input;
         self
     }
@@ -1626,13 +1640,13 @@ impl HumanTaskConfigBuilder {
         mut self,
         input: crate::types::AnnotationConsolidationConfig,
     ) -> Self {
-        self.annotation_consolidation_config = Some(input);
+        self.annotation_consolidation_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures how labels are consolidated across human workers.</p>
     pub fn set_annotation_consolidation_config(
         mut self,
-        input: std::option::Option<crate::types::AnnotationConsolidationConfig>,
+        input: ::std::option::Option<crate::types::AnnotationConsolidationConfig>,
     ) -> Self {
         self.annotation_consolidation_config = input;
         self
@@ -1642,13 +1656,13 @@ impl HumanTaskConfigBuilder {
         mut self,
         input: crate::types::PublicWorkforceTaskPrice,
     ) -> Self {
-        self.public_workforce_task_price = Some(input);
+        self.public_workforce_task_price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price that you pay for each task performed by an Amazon Mechanical Turk worker.</p>
     pub fn set_public_workforce_task_price(
         mut self,
-        input: std::option::Option<crate::types::PublicWorkforceTaskPrice>,
+        input: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
     ) -> Self {
         self.public_workforce_task_price = input;
         self

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetGroupProtocolVersion {
     /// Indicates use of gRPC to send requests to target
@@ -57,7 +57,7 @@ pub enum TargetGroupProtocolVersion {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetGroupProtocolVersion {
+impl ::std::convert::From<&str> for TargetGroupProtocolVersion {
     fn from(s: &str) -> Self {
         match s {
             "GRPC" => TargetGroupProtocolVersion::Grpc,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for TargetGroupProtocolVersion {
         }
     }
 }
-impl std::str::FromStr for TargetGroupProtocolVersion {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetGroupProtocolVersion {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetGroupProtocolVersion::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetGroupProtocolVersion::from(s))
     }
 }
 impl TargetGroupProtocolVersion {
@@ -91,7 +91,7 @@ impl TargetGroupProtocolVersion {
         &["GRPC", "HTTP1", "HTTP2"]
     }
 }
-impl AsRef<str> for TargetGroupProtocolVersion {
+impl ::std::convert::AsRef<str> for TargetGroupProtocolVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -38,13 +38,13 @@
 /// Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FunctionIsolationMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum FunctionIsolationMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FunctionIsolationMode {
+impl ::std::convert::From<&str> for FunctionIsolationMode {
     fn from(s: &str) -> Self {
         match s {
             "GreengrassContainer" => FunctionIsolationMode::GreengrassContainer,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for FunctionIsolationMode {
         }
     }
 }
-impl std::str::FromStr for FunctionIsolationMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FunctionIsolationMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FunctionIsolationMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FunctionIsolationMode::from(s))
     }
 }
 impl FunctionIsolationMode {
@@ -86,7 +86,7 @@ impl FunctionIsolationMode {
         &["GreengrassContainer", "NoContainer"]
     }
 }
-impl AsRef<str> for FunctionIsolationMode {
+impl ::std::convert::AsRef<str> for FunctionIsolationMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

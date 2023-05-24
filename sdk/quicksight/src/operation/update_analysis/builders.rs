@@ -6,56 +6,59 @@ pub use crate::operation::update_analysis::_update_analysis_input::UpdateAnalysi
 /// Fluent builder constructing a request to `UpdateAnalysis`.
 ///
 /// <p>Updates an analysis in Amazon QuickSight</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAnalysisFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_analysis::builders::UpdateAnalysisInputBuilder,
 }
 impl UpdateAnalysisFluentBuilder {
     /// Creates a new `UpdateAnalysis`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_analysis::UpdateAnalysis,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_analysis::UpdateAnalysisError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_analysis::UpdateAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_analysis::UpdateAnalysisOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_analysis::UpdateAnalysisError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_analysis::UpdateAnalysisError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,45 @@ impl UpdateAnalysisFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_analysis::UpdateAnalysisOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_analysis::UpdateAnalysisError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_analysis::UpdateAnalysisError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
-    pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_id(input.into());
         self
     }
     /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the analysis.</p>
-    pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analysis_id(input);
         self
     }
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -110,7 +119,10 @@ impl UpdateAnalysisFluentBuilder {
         self
     }
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values. </p>
-    pub fn set_parameters(mut self, input: std::option::Option<crate::types::Parameters>) -> Self {
+    pub fn set_parameters(
+        mut self,
+        input: ::std::option::Option<crate::types::Parameters>,
+    ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -122,18 +134,18 @@ impl UpdateAnalysisFluentBuilder {
     /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
     pub fn set_source_entity(
         mut self,
-        input: std::option::Option<crate::types::AnalysisSourceEntity>,
+        input: ::std::option::Option<crate::types::AnalysisSourceEntity>,
     ) -> Self {
         self.inner = self.inner.set_source_entity(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
-    pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon QuickSight console, make sure that you have access to it.</p>
-    pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_theme_arn(input);
         self
     }
@@ -147,7 +159,7 @@ impl UpdateAnalysisFluentBuilder {
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<crate::types::AnalysisDefinition>,
+        input: ::std::option::Option<crate::types::AnalysisDefinition>,
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self

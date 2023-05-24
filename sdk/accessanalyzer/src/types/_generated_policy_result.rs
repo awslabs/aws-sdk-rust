@@ -2,22 +2,22 @@
 
 /// <p>Contains the text for the generated policy and its details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeneratedPolicyResult {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<crate::types::GeneratedPolicyProperties>,
+    pub properties: ::std::option::Option<crate::types::GeneratedPolicyProperties>,
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     #[doc(hidden)]
-    pub generated_policies: std::option::Option<std::vec::Vec<crate::types::GeneratedPolicy>>,
+    pub generated_policies: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>,
 }
 impl GeneratedPolicyResult {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
-    pub fn properties(&self) -> std::option::Option<&crate::types::GeneratedPolicyProperties> {
+    pub fn properties(&self) -> ::std::option::Option<&crate::types::GeneratedPolicyProperties> {
         self.properties.as_ref()
     }
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-    pub fn generated_policies(&self) -> std::option::Option<&[crate::types::GeneratedPolicy]> {
+    pub fn generated_policies(&self) -> ::std::option::Option<&[crate::types::GeneratedPolicy]> {
         self.generated_policies.as_deref()
     }
 }
@@ -30,22 +30,24 @@ impl GeneratedPolicyResult {
 
 /// A builder for [`GeneratedPolicyResult`](crate::types::GeneratedPolicyResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GeneratedPolicyResultBuilder {
-    pub(crate) properties: std::option::Option<crate::types::GeneratedPolicyProperties>,
+    pub(crate) properties: ::std::option::Option<crate::types::GeneratedPolicyProperties>,
     pub(crate) generated_policies:
-        std::option::Option<std::vec::Vec<crate::types::GeneratedPolicy>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>,
 }
 impl GeneratedPolicyResultBuilder {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
     pub fn properties(mut self, input: crate::types::GeneratedPolicyProperties) -> Self {
-        self.properties = Some(input);
+        self.properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<crate::types::GeneratedPolicyProperties>,
+        input: ::std::option::Option<crate::types::GeneratedPolicyProperties>,
     ) -> Self {
         self.properties = input;
         self
@@ -58,13 +60,13 @@ impl GeneratedPolicyResultBuilder {
     pub fn generated_policies(mut self, input: crate::types::GeneratedPolicy) -> Self {
         let mut v = self.generated_policies.unwrap_or_default();
         v.push(input);
-        self.generated_policies = Some(v);
+        self.generated_policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub fn set_generated_policies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GeneratedPolicy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GeneratedPolicy>>,
     ) -> Self {
         self.generated_policies = input;
         self

@@ -2,20 +2,20 @@
 
 /// Placeholder documentation for UpdateChannelClassResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelClassOutput {
     /// Placeholder documentation for Channel
     #[doc(hidden)]
-    pub channel: std::option::Option<crate::types::Channel>,
+    pub channel: ::std::option::Option<crate::types::Channel>,
     _request_id: Option<String>,
 }
 impl UpdateChannelClassOutput {
     /// Placeholder documentation for Channel
-    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateChannelClassOutput {
+impl ::aws_http::request_id::RequestId for UpdateChannelClassOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl UpdateChannelClassOutput {
 
 /// A builder for [`UpdateChannelClassOutput`](crate::operation::update_channel_class::UpdateChannelClassOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateChannelClassOutputBuilder {
-    pub(crate) channel: std::option::Option<crate::types::Channel>,
+    pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     _request_id: Option<String>,
 }
 impl UpdateChannelClassOutputBuilder {
     /// Placeholder documentation for Channel
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
-        self.channel = Some(input);
+        self.channel = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for Channel
-    pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
+    pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }

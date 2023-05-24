@@ -2,93 +2,94 @@
 
 /// <p>A sheet is an object that contains a set of visuals that are viewed together on one page in a paginated report. Every analysis and dashboard must contain at least one sheet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetDefinition {
     /// <p>The unique identifier of a sheet.</p>
     #[doc(hidden)]
-    pub sheet_id: std::option::Option<std::string::String>,
+    pub sheet_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the sheet.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>A description of the sheet.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of parameter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub parameter_controls: std::option::Option<std::vec::Vec<crate::types::ParameterControl>>,
+    pub parameter_controls: ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>,
     /// <p>The list of filter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub filter_controls: std::option::Option<std::vec::Vec<crate::types::FilterControl>>,
+    pub filter_controls: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>,
     /// <p>A list of the visuals that are on a sheet. Visual placement is determined by the layout of the sheet.</p>
     #[doc(hidden)]
-    pub visuals: std::option::Option<std::vec::Vec<crate::types::Visual>>,
+    pub visuals: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
     /// <p>The text boxes that are on a sheet.</p>
     #[doc(hidden)]
-    pub text_boxes: std::option::Option<std::vec::Vec<crate::types::SheetTextBox>>,
+    pub text_boxes: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>,
     /// <p>Layouts define how the components of a sheet are arranged.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub layouts: std::option::Option<std::vec::Vec<crate::types::Layout>>,
+    pub layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
     /// <p>The control layouts of the sheet.</p>
     #[doc(hidden)]
-    pub sheet_control_layouts: std::option::Option<std::vec::Vec<crate::types::SheetControlLayout>>,
+    pub sheet_control_layouts:
+        ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
     /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub content_type: std::option::Option<crate::types::SheetContentType>,
+    pub content_type: ::std::option::Option<crate::types::SheetContentType>,
 }
 impl SheetDefinition {
     /// <p>The unique identifier of a sheet.</p>
-    pub fn sheet_id(&self) -> std::option::Option<&str> {
+    pub fn sheet_id(&self) -> ::std::option::Option<&str> {
         self.sheet_id.as_deref()
     }
     /// <p>The title of the sheet.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>A description of the sheet.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The list of parameter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn parameter_controls(&self) -> std::option::Option<&[crate::types::ParameterControl]> {
+    pub fn parameter_controls(&self) -> ::std::option::Option<&[crate::types::ParameterControl]> {
         self.parameter_controls.as_deref()
     }
     /// <p>The list of filter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn filter_controls(&self) -> std::option::Option<&[crate::types::FilterControl]> {
+    pub fn filter_controls(&self) -> ::std::option::Option<&[crate::types::FilterControl]> {
         self.filter_controls.as_deref()
     }
     /// <p>A list of the visuals that are on a sheet. Visual placement is determined by the layout of the sheet.</p>
-    pub fn visuals(&self) -> std::option::Option<&[crate::types::Visual]> {
+    pub fn visuals(&self) -> ::std::option::Option<&[crate::types::Visual]> {
         self.visuals.as_deref()
     }
     /// <p>The text boxes that are on a sheet.</p>
-    pub fn text_boxes(&self) -> std::option::Option<&[crate::types::SheetTextBox]> {
+    pub fn text_boxes(&self) -> ::std::option::Option<&[crate::types::SheetTextBox]> {
         self.text_boxes.as_deref()
     }
     /// <p>Layouts define how the components of a sheet are arranged.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn layouts(&self) -> std::option::Option<&[crate::types::Layout]> {
+    pub fn layouts(&self) -> ::std::option::Option<&[crate::types::Layout]> {
         self.layouts.as_deref()
     }
     /// <p>The control layouts of the sheet.</p>
     pub fn sheet_control_layouts(
         &self,
-    ) -> std::option::Option<&[crate::types::SheetControlLayout]> {
+    ) -> ::std::option::Option<&[crate::types::SheetControlLayout]> {
         self.sheet_control_layouts.as_deref()
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
@@ -96,7 +97,7 @@ impl SheetDefinition {
     /// <li> <p> <code>PAGINATED</code>: Creates a sheet for a paginated report.</p> </li>
     /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::SheetContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<&crate::types::SheetContentType> {
         self.content_type.as_ref()
     }
 }
@@ -109,60 +110,62 @@ impl SheetDefinition {
 
 /// A builder for [`SheetDefinition`](crate::types::SheetDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SheetDefinitionBuilder {
-    pub(crate) sheet_id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) sheet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_controls:
-        std::option::Option<std::vec::Vec<crate::types::ParameterControl>>,
-    pub(crate) filter_controls: std::option::Option<std::vec::Vec<crate::types::FilterControl>>,
-    pub(crate) visuals: std::option::Option<std::vec::Vec<crate::types::Visual>>,
-    pub(crate) text_boxes: std::option::Option<std::vec::Vec<crate::types::SheetTextBox>>,
-    pub(crate) layouts: std::option::Option<std::vec::Vec<crate::types::Layout>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>,
+    pub(crate) filter_controls: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>,
+    pub(crate) visuals: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
+    pub(crate) text_boxes: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>,
+    pub(crate) layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
     pub(crate) sheet_control_layouts:
-        std::option::Option<std::vec::Vec<crate::types::SheetControlLayout>>,
-    pub(crate) content_type: std::option::Option<crate::types::SheetContentType>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
+    pub(crate) content_type: ::std::option::Option<crate::types::SheetContentType>,
 }
 impl SheetDefinitionBuilder {
     /// <p>The unique identifier of a sheet.</p>
-    pub fn sheet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sheet_id = Some(input.into());
+    pub fn sheet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sheet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a sheet.</p>
-    pub fn set_sheet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sheet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sheet_id = input;
         self
     }
     /// <p>The title of the sheet.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the sheet.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>A description of the sheet.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the sheet.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -175,14 +178,14 @@ impl SheetDefinitionBuilder {
     pub fn parameter_controls(mut self, input: crate::types::ParameterControl) -> Self {
         let mut v = self.parameter_controls.unwrap_or_default();
         v.push(input);
-        self.parameter_controls = Some(v);
+        self.parameter_controls = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of parameter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_parameter_controls(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterControl>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterControl>>,
     ) -> Self {
         self.parameter_controls = input;
         self
@@ -196,14 +199,14 @@ impl SheetDefinitionBuilder {
     pub fn filter_controls(mut self, input: crate::types::FilterControl) -> Self {
         let mut v = self.filter_controls.unwrap_or_default();
         v.push(input);
-        self.filter_controls = Some(v);
+        self.filter_controls = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of filter controls that are on a sheet.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_filter_controls(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FilterControl>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterControl>>,
     ) -> Self {
         self.filter_controls = input;
         self
@@ -216,13 +219,13 @@ impl SheetDefinitionBuilder {
     pub fn visuals(mut self, input: crate::types::Visual) -> Self {
         let mut v = self.visuals.unwrap_or_default();
         v.push(input);
-        self.visuals = Some(v);
+        self.visuals = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the visuals that are on a sheet. Visual placement is determined by the layout of the sheet.</p>
     pub fn set_visuals(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Visual>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Visual>>,
     ) -> Self {
         self.visuals = input;
         self
@@ -235,13 +238,13 @@ impl SheetDefinitionBuilder {
     pub fn text_boxes(mut self, input: crate::types::SheetTextBox) -> Self {
         let mut v = self.text_boxes.unwrap_or_default();
         v.push(input);
-        self.text_boxes = Some(v);
+        self.text_boxes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The text boxes that are on a sheet.</p>
     pub fn set_text_boxes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SheetTextBox>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SheetTextBox>>,
     ) -> Self {
         self.text_boxes = input;
         self
@@ -255,14 +258,14 @@ impl SheetDefinitionBuilder {
     pub fn layouts(mut self, input: crate::types::Layout) -> Self {
         let mut v = self.layouts.unwrap_or_default();
         v.push(input);
-        self.layouts = Some(v);
+        self.layouts = ::std::option::Option::Some(v);
         self
     }
     /// <p>Layouts define how the components of a sheet are arranged.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_layouts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Layout>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
     ) -> Self {
         self.layouts = input;
         self
@@ -275,13 +278,13 @@ impl SheetDefinitionBuilder {
     pub fn sheet_control_layouts(mut self, input: crate::types::SheetControlLayout) -> Self {
         let mut v = self.sheet_control_layouts.unwrap_or_default();
         v.push(input);
-        self.sheet_control_layouts = Some(v);
+        self.sheet_control_layouts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The control layouts of the sheet.</p>
     pub fn set_sheet_control_layouts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SheetControlLayout>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
     ) -> Self {
         self.sheet_control_layouts = input;
         self
@@ -292,7 +295,7 @@ impl SheetDefinitionBuilder {
     /// <li> <p> <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p> </li>
     /// </ul>
     pub fn content_type(mut self, input: crate::types::SheetContentType) -> Self {
-        self.content_type = Some(input);
+        self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The layout content type of the sheet. Choose one of the following options:</p>
@@ -302,7 +305,7 @@ impl SheetDefinitionBuilder {
     /// </ul>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::SheetContentType>,
+        input: ::std::option::Option<crate::types::SheetContentType>,
     ) -> Self {
         self.content_type = input;
         self

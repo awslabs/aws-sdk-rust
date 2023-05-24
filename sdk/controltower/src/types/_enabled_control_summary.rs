@@ -2,15 +2,15 @@
 
 /// <p>A summary of enabled controls.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnabledControlSummary {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     #[doc(hidden)]
-    pub control_identifier: std::option::Option<std::string::String>,
+    pub control_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EnabledControlSummary {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn control_identifier(&self) -> std::option::Option<&str> {
+    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
         self.control_identifier.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl EnabledControlSummary {
 
 /// A builder for [`EnabledControlSummary`](crate::types::EnabledControlSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnabledControlSummaryBuilder {
-    pub(crate) control_identifier: std::option::Option<std::string::String>,
+    pub(crate) control_identifier: ::std::option::Option<::std::string::String>,
 }
 impl EnabledControlSummaryBuilder {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    pub fn control_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_identifier = Some(input.into());
+    pub fn control_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
     pub fn set_control_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.control_identifier = input;
         self

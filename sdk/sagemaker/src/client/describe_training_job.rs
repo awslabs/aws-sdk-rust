@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTrainingJob`](crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`training_job_name(impl Into<String>)`](crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder::training_job_name) / [`set_training_job_name(Option<String>)`](crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder::set_training_job_name): <p>The name of the training job.</p>
+    ///   - [`training_job_name(impl ::std::convert::Into<String>)`](crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder::training_job_name) / [`set_training_job_name(Option<String>)`](crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder::set_training_job_name): <p>The name of the training job.</p>
     /// - On success, responds with [`DescribeTrainingJobOutput`](crate::operation::describe_training_job::DescribeTrainingJobOutput) with field(s):
     ///   - [`training_job_name(Option<String>)`](crate::operation::describe_training_job::DescribeTrainingJobOutput::training_job_name): <p> Name of the model training job. </p>
     ///   - [`training_job_arn(Option<String>)`](crate::operation::describe_training_job::DescribeTrainingJobOutput::training_job_arn): <p>The Amazon Resource Name (ARN) of the training job.</p>

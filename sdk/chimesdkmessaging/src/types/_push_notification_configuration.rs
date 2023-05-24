@@ -2,34 +2,34 @@
 
 /// <p>The push notification configuration of the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PushNotificationConfiguration {
     /// <p>The title of the push notification.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The body of the push notification.</p>
     #[doc(hidden)]
-    pub body: std::option::Option<std::string::String>,
+    pub body: ::std::option::Option<::std::string::String>,
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PushNotificationType>,
+    pub r#type: ::std::option::Option<crate::types::PushNotificationType>,
 }
 impl PushNotificationConfiguration {
     /// <p>The title of the push notification.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The body of the push notification.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<&str> {
         self.body.as_deref()
     }
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PushNotificationType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PushNotificationType> {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for PushNotificationConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PushNotificationConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PushNotificationConfiguration");
         formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("body", &"*** Sensitive Data Redacted ***");
@@ -46,42 +46,42 @@ impl PushNotificationConfiguration {
 
 /// A builder for [`PushNotificationConfiguration`](crate::types::PushNotificationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PushNotificationConfigurationBuilder {
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) body: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::PushNotificationType>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) body: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PushNotificationType>,
 }
 impl PushNotificationConfigurationBuilder {
     /// <p>The title of the push notification.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the push notification.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The body of the push notification.</p>
-    pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.body = Some(input.into());
+    pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The body of the push notification.</p>
-    pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
     }
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     pub fn r#type(mut self, input: crate::types::PushNotificationType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>: Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::PushNotificationType>,
+        input: ::std::option::Option<crate::types::PushNotificationType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -95,8 +95,8 @@ impl PushNotificationConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for PushNotificationConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PushNotificationConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PushNotificationConfigurationBuilder");
         formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("body", &"*** Sensitive Data Redacted ***");

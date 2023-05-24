@@ -2,14 +2,14 @@
 
 /// <p>Contains information about the PORT_PROBE action described in the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortProbeAction {
     /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
     #[doc(hidden)]
     pub blocked: bool,
     /// <p>A list of objects related to port probe details.</p>
     #[doc(hidden)]
-    pub port_probe_details: std::option::Option<std::vec::Vec<crate::types::PortProbeDetail>>,
+    pub port_probe_details: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
 }
 impl PortProbeAction {
     /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
@@ -17,7 +17,7 @@ impl PortProbeAction {
         self.blocked
     }
     /// <p>A list of objects related to port probe details.</p>
-    pub fn port_probe_details(&self) -> std::option::Option<&[crate::types::PortProbeDetail]> {
+    pub fn port_probe_details(&self) -> ::std::option::Option<&[crate::types::PortProbeDetail]> {
         self.port_probe_details.as_deref()
     }
 }
@@ -30,20 +30,22 @@ impl PortProbeAction {
 
 /// A builder for [`PortProbeAction`](crate::types::PortProbeAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortProbeActionBuilder {
-    pub(crate) blocked: std::option::Option<bool>,
+    pub(crate) blocked: ::std::option::Option<bool>,
     pub(crate) port_probe_details:
-        std::option::Option<std::vec::Vec<crate::types::PortProbeDetail>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
 }
 impl PortProbeActionBuilder {
     /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
     pub fn blocked(mut self, input: bool) -> Self {
-        self.blocked = Some(input);
+        self.blocked = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.</p>
-    pub fn set_blocked(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_blocked(mut self, input: ::std::option::Option<bool>) -> Self {
         self.blocked = input;
         self
     }
@@ -55,13 +57,13 @@ impl PortProbeActionBuilder {
     pub fn port_probe_details(mut self, input: crate::types::PortProbeDetail) -> Self {
         let mut v = self.port_probe_details.unwrap_or_default();
         v.push(input);
-        self.port_probe_details = Some(v);
+        self.port_probe_details = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of objects related to port probe details.</p>
     pub fn set_port_probe_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PortProbeDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PortProbeDetail>>,
     ) -> Self {
         self.port_probe_details = input;
         self

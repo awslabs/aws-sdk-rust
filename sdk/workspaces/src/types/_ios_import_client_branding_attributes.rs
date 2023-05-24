@@ -4,21 +4,21 @@
 /// <p>Client branding attributes are public facing. Ensure you do not include sensitive information.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IosImportClientBrandingAttributes {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
     #[doc(hidden)]
-    pub logo: std::option::Option<aws_smithy_types::Blob>,
+    pub logo: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     #[doc(hidden)]
-    pub logo2x: std::option::Option<aws_smithy_types::Blob>,
+    pub logo2x: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
     #[doc(hidden)]
-    pub logo3x: std::option::Option<aws_smithy_types::Blob>,
+    pub logo3x: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The support email. The company's customer support email address.</p> <note>
     /// <ul>
     /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
@@ -26,7 +26,7 @@ pub struct IosImportClientBrandingAttributes {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub support_email: std::option::Option<std::string::String>,
+    pub support_email: ::std::option::Option<::std::string::String>,
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
     /// <ul>
     /// <li> <p>In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code> parameters are mutually exclusive. You can specify one parameter for each platform type, but not both.</p> </li>
@@ -34,30 +34,31 @@ pub struct IosImportClientBrandingAttributes {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub support_link: std::option::Option<std::string::String>,
+    pub support_link: ::std::option::Option<::std::string::String>,
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     #[doc(hidden)]
-    pub forgot_password_link: std::option::Option<std::string::String>,
+    pub forgot_password_link: ::std::option::Option<::std::string::String>,
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     #[doc(hidden)]
-    pub login_message:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub login_message: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl IosImportClientBrandingAttributes {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
-    pub fn logo(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn logo(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.logo.as_ref()
     }
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
-    pub fn logo2x(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn logo2x(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.logo2x.as_ref()
     }
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
-    pub fn logo3x(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn logo3x(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.logo3x.as_ref()
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
@@ -66,7 +67,7 @@ impl IosImportClientBrandingAttributes {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn support_email(&self) -> std::option::Option<&str> {
+    pub fn support_email(&self) -> ::std::option::Option<&str> {
         self.support_email.as_deref()
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
@@ -75,18 +76,19 @@ impl IosImportClientBrandingAttributes {
     /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn support_link(&self) -> std::option::Option<&str> {
+    pub fn support_link(&self) -> ::std::option::Option<&str> {
         self.support_link.as_deref()
     }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
-    pub fn forgot_password_link(&self) -> std::option::Option<&str> {
+    pub fn forgot_password_link(&self) -> ::std::option::Option<&str> {
         self.forgot_password_link.as_deref()
     }
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn login_message(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.login_message.as_ref()
     }
 }
@@ -99,53 +101,56 @@ impl IosImportClientBrandingAttributes {
 
 /// A builder for [`IosImportClientBrandingAttributes`](crate::types::IosImportClientBrandingAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IosImportClientBrandingAttributesBuilder {
-    pub(crate) logo: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) logo2x: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) logo3x: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) support_email: std::option::Option<std::string::String>,
-    pub(crate) support_link: std::option::Option<std::string::String>,
-    pub(crate) forgot_password_link: std::option::Option<std::string::String>,
-    pub(crate) login_message:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) logo: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) logo2x: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) logo3x: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) support_email: ::std::option::Option<::std::string::String>,
+    pub(crate) support_link: ::std::option::Option<::std::string::String>,
+    pub(crate) forgot_password_link: ::std::option::Option<::std::string::String>,
+    pub(crate) login_message: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl IosImportClientBrandingAttributesBuilder {
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
-    pub fn logo(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.logo = Some(input);
+    pub fn logo(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.logo = ::std::option::Option::Some(input);
         self
     }
     /// <p>The logo. This is the standard-resolution display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point. The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p>
-    pub fn set_logo(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_logo(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.logo = input;
         self
     }
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
-    pub fn logo2x(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.logo2x = Some(input);
+    pub fn logo2x(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.logo2x = ::std::option::Option::Some(input);
         self
     }
     /// <p>The @2x version of the logo. This is the higher resolution display that offers a scale factor of 2.0 (or @2x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
-    pub fn set_logo2x(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_logo2x(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.logo2x = input;
         self
     }
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
-    pub fn logo3x(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.logo3x = Some(input);
+    pub fn logo3x(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.logo3x = ::std::option::Option::Some(input);
         self
     }
     /// <p>The @3x version of the logo. This is the higher resolution display that offers a scale factor of 3.0 (or @3x). The only image format accepted is a binary data object that is converted from a <code>.png</code> file.</p> <note>
     /// <p> For more information about iOS image size and resolution, see <a href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
     /// </note>
-    pub fn set_logo3x(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_logo3x(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.logo3x = input;
         self
     }
@@ -155,8 +160,11 @@ impl IosImportClientBrandingAttributesBuilder {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.support_email = Some(input.into());
+    pub fn support_email(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.support_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support email. The company's customer support email address.</p> <note>
@@ -165,7 +173,10 @@ impl IosImportClientBrandingAttributesBuilder {
     /// <li> <p>The default email is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_support_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_email(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.support_email = input;
         self
     }
@@ -175,8 +186,8 @@ impl IosImportClientBrandingAttributesBuilder {
     /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn support_link(mut self, input: impl Into<std::string::String>) -> Self {
-        self.support_link = Some(input.into());
+    pub fn support_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.support_link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support link. The link for the company's customer support page for their WorkSpace.</p> <note>
@@ -185,19 +196,22 @@ impl IosImportClientBrandingAttributesBuilder {
     /// <li> <p>The default support link is <code>workspaces-feedback@amazon.com</code>.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_support_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_link = input;
         self
     }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
-    pub fn forgot_password_link(mut self, input: impl Into<std::string::String>) -> Self {
-        self.forgot_password_link = Some(input.into());
+    pub fn forgot_password_link(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.forgot_password_link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The forgotten password link. This is the web address that users can go to if they forget the password for their WorkSpace.</p>
     pub fn set_forgot_password_link(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.forgot_password_link = input;
         self
@@ -209,19 +223,19 @@ impl IosImportClientBrandingAttributesBuilder {
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn login_message(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.login_message.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.login_message = Some(hash_map);
+        self.login_message = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The login message. Specified as a key value pair, in which the key is a locale and the value is the localized message for that locale. The only key supported is <code>en_US</code>. The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
     pub fn set_login_message(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.login_message = input;

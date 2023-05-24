@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetInsightsByAssessment`](crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_id(impl Into<String>)`](crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentFluentBuilder::assessment_id) / [`set_assessment_id(Option<String>)`](crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentFluentBuilder::set_assessment_id): <p>The unique identifier for the assessment. </p>
+    ///   - [`assessment_id(impl ::std::convert::Into<String>)`](crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentFluentBuilder::assessment_id) / [`set_assessment_id(Option<String>)`](crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentFluentBuilder::set_assessment_id): <p>The unique identifier for the assessment. </p>
     /// - On success, responds with [`GetInsightsByAssessmentOutput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput) with field(s):
     ///   - [`insights(Option<InsightsByAssessment>)`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput::insights): <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
     /// - On failure, responds with [`SdkError<GetInsightsByAssessmentError>`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError)

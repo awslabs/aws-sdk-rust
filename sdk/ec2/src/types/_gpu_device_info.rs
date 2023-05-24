@@ -2,36 +2,36 @@
 
 /// <p>Describes the GPU accelerators for the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpuDeviceInfo {
     /// <p>The name of the GPU accelerator.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The manufacturer of the GPU accelerator.</p>
     #[doc(hidden)]
-    pub manufacturer: std::option::Option<std::string::String>,
+    pub manufacturer: ::std::option::Option<::std::string::String>,
     /// <p>The number of GPUs for the instance type.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// <p>Describes the memory available to the GPU accelerator.</p>
     #[doc(hidden)]
-    pub memory_info: std::option::Option<crate::types::GpuDeviceMemoryInfo>,
+    pub memory_info: ::std::option::Option<crate::types::GpuDeviceMemoryInfo>,
 }
 impl GpuDeviceInfo {
     /// <p>The name of the GPU accelerator.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The manufacturer of the GPU accelerator.</p>
-    pub fn manufacturer(&self) -> std::option::Option<&str> {
+    pub fn manufacturer(&self) -> ::std::option::Option<&str> {
         self.manufacturer.as_deref()
     }
     /// <p>The number of GPUs for the instance type.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>Describes the memory available to the GPU accelerator.</p>
-    pub fn memory_info(&self) -> std::option::Option<&crate::types::GpuDeviceMemoryInfo> {
+    pub fn memory_info(&self) -> ::std::option::Option<&crate::types::GpuDeviceMemoryInfo> {
         self.memory_info.as_ref()
     }
 }
@@ -44,53 +44,55 @@ impl GpuDeviceInfo {
 
 /// A builder for [`GpuDeviceInfo`](crate::types::GpuDeviceInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GpuDeviceInfoBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) manufacturer: std::option::Option<std::string::String>,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) memory_info: std::option::Option<crate::types::GpuDeviceMemoryInfo>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) manufacturer: ::std::option::Option<::std::string::String>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) memory_info: ::std::option::Option<crate::types::GpuDeviceMemoryInfo>,
 }
 impl GpuDeviceInfoBuilder {
     /// <p>The name of the GPU accelerator.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the GPU accelerator.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The manufacturer of the GPU accelerator.</p>
-    pub fn manufacturer(mut self, input: impl Into<std::string::String>) -> Self {
-        self.manufacturer = Some(input.into());
+    pub fn manufacturer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.manufacturer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The manufacturer of the GPU accelerator.</p>
-    pub fn set_manufacturer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manufacturer = input;
         self
     }
     /// <p>The number of GPUs for the instance type.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of GPUs for the instance type.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>Describes the memory available to the GPU accelerator.</p>
     pub fn memory_info(mut self, input: crate::types::GpuDeviceMemoryInfo) -> Self {
-        self.memory_info = Some(input);
+        self.memory_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the memory available to the GPU accelerator.</p>
     pub fn set_memory_info(
         mut self,
-        input: std::option::Option<crate::types::GpuDeviceMemoryInfo>,
+        input: ::std::option::Option<crate::types::GpuDeviceMemoryInfo>,
     ) -> Self {
         self.memory_info = input;
         self

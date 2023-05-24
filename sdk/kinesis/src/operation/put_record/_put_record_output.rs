@@ -2,30 +2,30 @@
 
 /// <p>Represents the output for <code>PutRecord</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRecordOutput {
     /// <p>The shard ID of the shard where the data record was placed.</p>
     #[doc(hidden)]
-    pub shard_id: std::option::Option<std::string::String>,
+    pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
     #[doc(hidden)]
-    pub sequence_number: std::option::Option<std::string::String>,
+    pub sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub encryption_type: std::option::Option<crate::types::EncryptionType>,
+    pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     _request_id: Option<String>,
 }
 impl PutRecordOutput {
     /// <p>The shard ID of the shard where the data record was placed.</p>
-    pub fn shard_id(&self) -> std::option::Option<&str> {
+    pub fn shard_id(&self) -> ::std::option::Option<&str> {
         self.shard_id.as_deref()
     }
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
-    pub fn sequence_number(&self) -> std::option::Option<&str> {
+    pub fn sequence_number(&self) -> ::std::option::Option<&str> {
         self.sequence_number.as_deref()
     }
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
@@ -33,11 +33,11 @@ impl PutRecordOutput {
     /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for PutRecordOutput {
+impl ::aws_http::request_id::RequestId for PutRecordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -51,31 +51,39 @@ impl PutRecordOutput {
 
 /// A builder for [`PutRecordOutput`](crate::operation::put_record::PutRecordOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutRecordOutputBuilder {
-    pub(crate) shard_id: std::option::Option<std::string::String>,
-    pub(crate) sequence_number: std::option::Option<std::string::String>,
-    pub(crate) encryption_type: std::option::Option<crate::types::EncryptionType>,
+    pub(crate) shard_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sequence_number: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     _request_id: Option<String>,
 }
 impl PutRecordOutputBuilder {
     /// <p>The shard ID of the shard where the data record was placed.</p>
-    pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.shard_id = Some(input.into());
+    pub fn shard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.shard_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The shard ID of the shard where the data record was placed.</p>
-    pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shard_id = input;
         self
     }
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
-    pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sequence_number = Some(input.into());
+    pub fn sequence_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>
-    pub fn set_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sequence_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sequence_number = input;
         self
     }
@@ -85,7 +93,7 @@ impl PutRecordOutputBuilder {
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
-        self.encryption_type = Some(input);
+        self.encryption_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption type to use on the record. This parameter can be one of the following values:</p>
@@ -95,7 +103,7 @@ impl PutRecordOutputBuilder {
     /// </ul>
     pub fn set_encryption_type(
         mut self,
-        input: std::option::Option<crate::types::EncryptionType>,
+        input: ::std::option::Option<crate::types::EncryptionType>,
     ) -> Self {
         self.encryption_type = input;
         self

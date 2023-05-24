@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreateVirtualMFADevice</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
     #[doc(hidden)]
-    pub virtual_mfa_device: std::option::Option<crate::types::VirtualMfaDevice>,
+    pub virtual_mfa_device: ::std::option::Option<crate::types::VirtualMfaDevice>,
     _request_id: Option<String>,
 }
 impl CreateVirtualMfaDeviceOutput {
     /// <p>A structure containing details about the new virtual MFA device.</p>
-    pub fn virtual_mfa_device(&self) -> std::option::Option<&crate::types::VirtualMfaDevice> {
+    pub fn virtual_mfa_device(&self) -> ::std::option::Option<&crate::types::VirtualMfaDevice> {
         self.virtual_mfa_device.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateVirtualMfaDeviceOutput {
+impl ::aws_http::request_id::RequestId for CreateVirtualMfaDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl CreateVirtualMfaDeviceOutput {
 
 /// A builder for [`CreateVirtualMfaDeviceOutput`](crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVirtualMfaDeviceOutputBuilder {
-    pub(crate) virtual_mfa_device: std::option::Option<crate::types::VirtualMfaDevice>,
+    pub(crate) virtual_mfa_device: ::std::option::Option<crate::types::VirtualMfaDevice>,
     _request_id: Option<String>,
 }
 impl CreateVirtualMfaDeviceOutputBuilder {
     /// <p>A structure containing details about the new virtual MFA device.</p>
     pub fn virtual_mfa_device(mut self, input: crate::types::VirtualMfaDevice) -> Self {
-        self.virtual_mfa_device = Some(input);
+        self.virtual_mfa_device = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the new virtual MFA device.</p>
     pub fn set_virtual_mfa_device(
         mut self,
-        input: std::option::Option<crate::types::VirtualMfaDevice>,
+        input: ::std::option::Option<crate::types::VirtualMfaDevice>,
     ) -> Self {
         self.virtual_mfa_device = input;
         self

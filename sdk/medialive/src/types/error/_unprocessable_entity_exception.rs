@@ -2,48 +2,48 @@
 
 /// Placeholder documentation for UnprocessableEntityException
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessableEntityException {
     /// The error message.
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// A collection of validation error responses.
     #[doc(hidden)]
-    pub validation_errors: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl UnprocessableEntityException {
     /// A collection of validation error responses.
-    pub fn validation_errors(&self) -> std::option::Option<&[crate::types::ValidationError]> {
+    pub fn validation_errors(&self) -> ::std::option::Option<&[crate::types::ValidationError]> {
         self.validation_errors.as_deref()
     }
 }
 impl UnprocessableEntityException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnprocessableEntityException {
+impl ::std::fmt::Display for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnprocessableEntityException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "UnprocessableEntityException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for UnprocessableEntityException {}
-impl aws_http::request_id::RequestId for crate::types::error::UnprocessableEntityException {
+impl ::std::error::Error for UnprocessableEntityException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::UnprocessableEntityException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnprocessableEntityException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UnprocessableEntityException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,20 +56,23 @@ impl UnprocessableEntityException {
 
 /// A builder for [`UnprocessableEntityException`](crate::types::error::UnprocessableEntityException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnprocessableEntityExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) validation_errors:
+        ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl UnprocessableEntityExceptionBuilder {
     /// The error message.
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// The error message.
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -81,19 +84,19 @@ impl UnprocessableEntityExceptionBuilder {
     pub fn validation_errors(mut self, input: crate::types::ValidationError) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
         v.push(input);
-        self.validation_errors = Some(v);
+        self.validation_errors = ::std::option::Option::Some(v);
         self
     }
     /// A collection of validation error responses.
     pub fn set_validation_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     ) -> Self {
         self.validation_errors = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -101,7 +104,7 @@ impl UnprocessableEntityExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

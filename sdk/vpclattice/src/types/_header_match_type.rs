@@ -2,14 +2,14 @@
 
 /// <p>Describes a header match type. Only one can be provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum HeaderMatchType {
     /// <p>Specifies a contains type match.</p>
-    Contains(std::string::String),
+    Contains(::std::string::String),
     /// <p>Specifies an exact type match.</p>
-    Exact(std::string::String),
+    Exact(::std::string::String),
     /// <p>Specifies a prefix type match. Matches the value with the prefix.</p>
-    Prefix(std::string::String),
+    Prefix(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -21,39 +21,39 @@ pub enum HeaderMatchType {
     Unknown,
 }
 impl HeaderMatchType {
-    /// Tries to convert the enum instance into [`Contains`](crate::types::HeaderMatchType::Contains), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Contains`](crate::types::HeaderMatchType::Contains), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_contains(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_contains(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let HeaderMatchType::Contains(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Contains`](crate::types::HeaderMatchType::Contains).
     pub fn is_contains(&self) -> bool {
         self.as_contains().is_ok()
     }
-    /// Tries to convert the enum instance into [`Exact`](crate::types::HeaderMatchType::Exact), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Exact`](crate::types::HeaderMatchType::Exact), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_exact(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let HeaderMatchType::Exact(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Exact`](crate::types::HeaderMatchType::Exact).
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::HeaderMatchType::Prefix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Prefix`](crate::types::HeaderMatchType::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let HeaderMatchType::Prefix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::types::HeaderMatchType::Prefix).

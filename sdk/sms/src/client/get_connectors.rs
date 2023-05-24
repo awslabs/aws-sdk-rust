@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_connectors::builders::GetConnectorsFluentBuilder::set_max_results): <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     /// - On success, responds with [`GetConnectorsOutput`](crate::operation::get_connectors::GetConnectorsOutput) with field(s):
     ///   - [`connector_list(Option<Vec<Connector>>)`](crate::operation::get_connectors::GetConnectorsOutput::connector_list): <p>Information about the registered connectors.</p>

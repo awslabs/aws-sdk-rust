@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWorkflow`](crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_id(impl Into<String>)`](crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder::set_workflow_id): <p>A unique identifier for the workflow.</p>
+    ///   - [`workflow_id(impl ::std::convert::Into<String>)`](crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::describe_workflow::builders::DescribeWorkflowFluentBuilder::set_workflow_id): <p>A unique identifier for the workflow.</p>
     /// - On success, responds with [`DescribeWorkflowOutput`](crate::operation::describe_workflow::DescribeWorkflowOutput) with field(s):
     ///   - [`workflow(Option<DescribedWorkflow>)`](crate::operation::describe_workflow::DescribeWorkflowOutput::workflow): <p>The structure that contains the details of the workflow.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkflowError>`](crate::operation::describe_workflow::DescribeWorkflowError)

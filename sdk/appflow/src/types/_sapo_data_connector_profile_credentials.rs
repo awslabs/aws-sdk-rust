@@ -2,24 +2,24 @@
 
 /// <p> The connector-specific profile credentials required when using SAPOData. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataConnectorProfileCredentials {
     /// <p> The SAPOData basic authentication credentials. </p>
     #[doc(hidden)]
-    pub basic_auth_credentials: std::option::Option<crate::types::BasicAuthCredentials>,
+    pub basic_auth_credentials: ::std::option::Option<crate::types::BasicAuthCredentials>,
     /// <p> The SAPOData OAuth type authentication credentials. </p>
     #[doc(hidden)]
-    pub o_auth_credentials: std::option::Option<crate::types::OAuthCredentials>,
+    pub o_auth_credentials: ::std::option::Option<crate::types::OAuthCredentials>,
 }
 impl SapoDataConnectorProfileCredentials {
     /// <p> The SAPOData basic authentication credentials. </p>
     pub fn basic_auth_credentials(
         &self,
-    ) -> std::option::Option<&crate::types::BasicAuthCredentials> {
+    ) -> ::std::option::Option<&crate::types::BasicAuthCredentials> {
         self.basic_auth_credentials.as_ref()
     }
     /// <p> The SAPOData OAuth type authentication credentials. </p>
-    pub fn o_auth_credentials(&self) -> std::option::Option<&crate::types::OAuthCredentials> {
+    pub fn o_auth_credentials(&self) -> ::std::option::Option<&crate::types::OAuthCredentials> {
         self.o_auth_credentials.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl SapoDataConnectorProfileCredentials {
 
 /// A builder for [`SapoDataConnectorProfileCredentials`](crate::types::SapoDataConnectorProfileCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SapoDataConnectorProfileCredentialsBuilder {
-    pub(crate) basic_auth_credentials: std::option::Option<crate::types::BasicAuthCredentials>,
-    pub(crate) o_auth_credentials: std::option::Option<crate::types::OAuthCredentials>,
+    pub(crate) basic_auth_credentials: ::std::option::Option<crate::types::BasicAuthCredentials>,
+    pub(crate) o_auth_credentials: ::std::option::Option<crate::types::OAuthCredentials>,
 }
 impl SapoDataConnectorProfileCredentialsBuilder {
     /// <p> The SAPOData basic authentication credentials. </p>
     pub fn basic_auth_credentials(mut self, input: crate::types::BasicAuthCredentials) -> Self {
-        self.basic_auth_credentials = Some(input);
+        self.basic_auth_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p> The SAPOData basic authentication credentials. </p>
     pub fn set_basic_auth_credentials(
         mut self,
-        input: std::option::Option<crate::types::BasicAuthCredentials>,
+        input: ::std::option::Option<crate::types::BasicAuthCredentials>,
     ) -> Self {
         self.basic_auth_credentials = input;
         self
     }
     /// <p> The SAPOData OAuth type authentication credentials. </p>
     pub fn o_auth_credentials(mut self, input: crate::types::OAuthCredentials) -> Self {
-        self.o_auth_credentials = Some(input);
+        self.o_auth_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p> The SAPOData OAuth type authentication credentials. </p>
     pub fn set_o_auth_credentials(
         mut self,
-        input: std::option::Option<crate::types::OAuthCredentials>,
+        input: ::std::option::Option<crate::types::OAuthCredentials>,
     ) -> Self {
         self.o_auth_credentials = input;
         self

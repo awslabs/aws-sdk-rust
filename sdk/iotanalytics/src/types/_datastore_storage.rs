@@ -2,7 +2,7 @@
 
 /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DatastoreStorage {
     /// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     CustomerManagedS3(crate::types::CustomerManagedDatastoreS3Storage),
@@ -25,11 +25,11 @@ impl DatastoreStorage {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_customer_managed_s3(
         &self,
-    ) -> std::result::Result<&crate::types::CustomerManagedDatastoreS3Storage, &Self> {
+    ) -> ::std::result::Result<&crate::types::CustomerManagedDatastoreS3Storage, &Self> {
         if let DatastoreStorage::CustomerManagedS3(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CustomerManagedS3`](crate::types::DatastoreStorage::CustomerManagedS3).
@@ -40,11 +40,11 @@ impl DatastoreStorage {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iot_site_wise_multi_layer_storage(
         &self,
-    ) -> std::result::Result<&crate::types::DatastoreIotSiteWiseMultiLayerStorage, &Self> {
+    ) -> ::std::result::Result<&crate::types::DatastoreIotSiteWiseMultiLayerStorage, &Self> {
         if let DatastoreStorage::IotSiteWiseMultiLayerStorage(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`IotSiteWiseMultiLayerStorage`](crate::types::DatastoreStorage::IotSiteWiseMultiLayerStorage).
@@ -55,11 +55,11 @@ impl DatastoreStorage {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_service_managed_s3(
         &self,
-    ) -> std::result::Result<&crate::types::ServiceManagedDatastoreS3Storage, &Self> {
+    ) -> ::std::result::Result<&crate::types::ServiceManagedDatastoreS3Storage, &Self> {
         if let DatastoreStorage::ServiceManagedS3(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ServiceManagedS3`](crate::types::DatastoreStorage::ServiceManagedS3).

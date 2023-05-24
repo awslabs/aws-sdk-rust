@@ -2,85 +2,85 @@
 
 /// <p>Information about the SPICE ingestion for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ingestion {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Ingestion ID.</p>
     #[doc(hidden)]
-    pub ingestion_id: std::option::Option<std::string::String>,
+    pub ingestion_id: ::std::option::Option<::std::string::String>,
     /// <p>Ingestion status.</p>
     #[doc(hidden)]
-    pub ingestion_status: std::option::Option<crate::types::IngestionStatus>,
+    pub ingestion_status: ::std::option::Option<crate::types::IngestionStatus>,
     /// <p>Error information for this ingestion.</p>
     #[doc(hidden)]
-    pub error_info: std::option::Option<crate::types::ErrorInfo>,
+    pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p>Information about rows for a data set SPICE ingestion.</p>
     #[doc(hidden)]
-    pub row_info: std::option::Option<crate::types::RowInfo>,
+    pub row_info: ::std::option::Option<crate::types::RowInfo>,
     /// <p>Information about a queued dataset SPICE ingestion.</p>
     #[doc(hidden)]
-    pub queue_info: std::option::Option<crate::types::QueueInfo>,
+    pub queue_info: ::std::option::Option<crate::types::QueueInfo>,
     /// <p>The time that this ingestion started.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that this ingestion took, measured in seconds.</p>
     #[doc(hidden)]
-    pub ingestion_time_in_seconds: std::option::Option<i64>,
+    pub ingestion_time_in_seconds: ::std::option::Option<i64>,
     /// <p>The size of the data ingested, in bytes.</p>
     #[doc(hidden)]
-    pub ingestion_size_in_bytes: std::option::Option<i64>,
+    pub ingestion_size_in_bytes: ::std::option::Option<i64>,
     /// <p>Event source for this ingestion.</p>
     #[doc(hidden)]
-    pub request_source: std::option::Option<crate::types::IngestionRequestSource>,
+    pub request_source: ::std::option::Option<crate::types::IngestionRequestSource>,
     /// <p>Type of this ingestion.</p>
     #[doc(hidden)]
-    pub request_type: std::option::Option<crate::types::IngestionRequestType>,
+    pub request_type: ::std::option::Option<crate::types::IngestionRequestType>,
 }
 impl Ingestion {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Ingestion ID.</p>
-    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> ::std::option::Option<&str> {
         self.ingestion_id.as_deref()
     }
     /// <p>Ingestion status.</p>
-    pub fn ingestion_status(&self) -> std::option::Option<&crate::types::IngestionStatus> {
+    pub fn ingestion_status(&self) -> ::std::option::Option<&crate::types::IngestionStatus> {
         self.ingestion_status.as_ref()
     }
     /// <p>Error information for this ingestion.</p>
-    pub fn error_info(&self) -> std::option::Option<&crate::types::ErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<&crate::types::ErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p>Information about rows for a data set SPICE ingestion.</p>
-    pub fn row_info(&self) -> std::option::Option<&crate::types::RowInfo> {
+    pub fn row_info(&self) -> ::std::option::Option<&crate::types::RowInfo> {
         self.row_info.as_ref()
     }
     /// <p>Information about a queued dataset SPICE ingestion.</p>
-    pub fn queue_info(&self) -> std::option::Option<&crate::types::QueueInfo> {
+    pub fn queue_info(&self) -> ::std::option::Option<&crate::types::QueueInfo> {
         self.queue_info.as_ref()
     }
     /// <p>The time that this ingestion started.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time that this ingestion took, measured in seconds.</p>
-    pub fn ingestion_time_in_seconds(&self) -> std::option::Option<i64> {
+    pub fn ingestion_time_in_seconds(&self) -> ::std::option::Option<i64> {
         self.ingestion_time_in_seconds
     }
     /// <p>The size of the data ingested, in bytes.</p>
-    pub fn ingestion_size_in_bytes(&self) -> std::option::Option<i64> {
+    pub fn ingestion_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.ingestion_size_in_bytes
     }
     /// <p>Event source for this ingestion.</p>
-    pub fn request_source(&self) -> std::option::Option<&crate::types::IngestionRequestSource> {
+    pub fn request_source(&self) -> ::std::option::Option<&crate::types::IngestionRequestSource> {
         self.request_source.as_ref()
     }
     /// <p>Type of this ingestion.</p>
-    pub fn request_type(&self) -> std::option::Option<&crate::types::IngestionRequestType> {
+    pub fn request_type(&self) -> ::std::option::Option<&crate::types::IngestionRequestType> {
         self.request_type.as_ref()
     }
 }
@@ -93,139 +93,141 @@ impl Ingestion {
 
 /// A builder for [`Ingestion`](crate::types::Ingestion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IngestionBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) ingestion_id: std::option::Option<std::string::String>,
-    pub(crate) ingestion_status: std::option::Option<crate::types::IngestionStatus>,
-    pub(crate) error_info: std::option::Option<crate::types::ErrorInfo>,
-    pub(crate) row_info: std::option::Option<crate::types::RowInfo>,
-    pub(crate) queue_info: std::option::Option<crate::types::QueueInfo>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) ingestion_time_in_seconds: std::option::Option<i64>,
-    pub(crate) ingestion_size_in_bytes: std::option::Option<i64>,
-    pub(crate) request_source: std::option::Option<crate::types::IngestionRequestSource>,
-    pub(crate) request_type: std::option::Option<crate::types::IngestionRequestType>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ingestion_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ingestion_status: ::std::option::Option<crate::types::IngestionStatus>,
+    pub(crate) error_info: ::std::option::Option<crate::types::ErrorInfo>,
+    pub(crate) row_info: ::std::option::Option<crate::types::RowInfo>,
+    pub(crate) queue_info: ::std::option::Option<crate::types::QueueInfo>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ingestion_time_in_seconds: ::std::option::Option<i64>,
+    pub(crate) ingestion_size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) request_source: ::std::option::Option<crate::types::IngestionRequestSource>,
+    pub(crate) request_type: ::std::option::Option<crate::types::IngestionRequestType>,
 }
 impl IngestionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>Ingestion ID.</p>
-    pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ingestion_id = Some(input.into());
+    pub fn ingestion_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ingestion_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Ingestion ID.</p>
-    pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ingestion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ingestion_id = input;
         self
     }
     /// <p>Ingestion status.</p>
     pub fn ingestion_status(mut self, input: crate::types::IngestionStatus) -> Self {
-        self.ingestion_status = Some(input);
+        self.ingestion_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Ingestion status.</p>
     pub fn set_ingestion_status(
         mut self,
-        input: std::option::Option<crate::types::IngestionStatus>,
+        input: ::std::option::Option<crate::types::IngestionStatus>,
     ) -> Self {
         self.ingestion_status = input;
         self
     }
     /// <p>Error information for this ingestion.</p>
     pub fn error_info(mut self, input: crate::types::ErrorInfo) -> Self {
-        self.error_info = Some(input);
+        self.error_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Error information for this ingestion.</p>
-    pub fn set_error_info(mut self, input: std::option::Option<crate::types::ErrorInfo>) -> Self {
+    pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
         self.error_info = input;
         self
     }
     /// <p>Information about rows for a data set SPICE ingestion.</p>
     pub fn row_info(mut self, input: crate::types::RowInfo) -> Self {
-        self.row_info = Some(input);
+        self.row_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about rows for a data set SPICE ingestion.</p>
-    pub fn set_row_info(mut self, input: std::option::Option<crate::types::RowInfo>) -> Self {
+    pub fn set_row_info(mut self, input: ::std::option::Option<crate::types::RowInfo>) -> Self {
         self.row_info = input;
         self
     }
     /// <p>Information about a queued dataset SPICE ingestion.</p>
     pub fn queue_info(mut self, input: crate::types::QueueInfo) -> Self {
-        self.queue_info = Some(input);
+        self.queue_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a queued dataset SPICE ingestion.</p>
-    pub fn set_queue_info(mut self, input: std::option::Option<crate::types::QueueInfo>) -> Self {
+    pub fn set_queue_info(mut self, input: ::std::option::Option<crate::types::QueueInfo>) -> Self {
         self.queue_info = input;
         self
     }
     /// <p>The time that this ingestion started.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that this ingestion started.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The time that this ingestion took, measured in seconds.</p>
     pub fn ingestion_time_in_seconds(mut self, input: i64) -> Self {
-        self.ingestion_time_in_seconds = Some(input);
+        self.ingestion_time_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that this ingestion took, measured in seconds.</p>
-    pub fn set_ingestion_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ingestion_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ingestion_time_in_seconds = input;
         self
     }
     /// <p>The size of the data ingested, in bytes.</p>
     pub fn ingestion_size_in_bytes(mut self, input: i64) -> Self {
-        self.ingestion_size_in_bytes = Some(input);
+        self.ingestion_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the data ingested, in bytes.</p>
-    pub fn set_ingestion_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ingestion_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ingestion_size_in_bytes = input;
         self
     }
     /// <p>Event source for this ingestion.</p>
     pub fn request_source(mut self, input: crate::types::IngestionRequestSource) -> Self {
-        self.request_source = Some(input);
+        self.request_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Event source for this ingestion.</p>
     pub fn set_request_source(
         mut self,
-        input: std::option::Option<crate::types::IngestionRequestSource>,
+        input: ::std::option::Option<crate::types::IngestionRequestSource>,
     ) -> Self {
         self.request_source = input;
         self
     }
     /// <p>Type of this ingestion.</p>
     pub fn request_type(mut self, input: crate::types::IngestionRequestType) -> Self {
-        self.request_type = Some(input);
+        self.request_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of this ingestion.</p>
     pub fn set_request_type(
         mut self,
-        input: std::option::Option<crate::types::IngestionRequestType>,
+        input: ::std::option::Option<crate::types::IngestionRequestType>,
     ) -> Self {
         self.request_type = input;
         self

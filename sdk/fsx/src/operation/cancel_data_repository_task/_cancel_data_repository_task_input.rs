@@ -2,15 +2,15 @@
 
 /// <p>Cancels a data repository task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelDataRepositoryTaskInput {
     /// <p>Specifies the data repository task to cancel.</p>
     #[doc(hidden)]
-    pub task_id: std::option::Option<std::string::String>,
+    pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelDataRepositoryTaskInput {
     /// <p>Specifies the data repository task to cancel.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
 }
@@ -25,29 +25,31 @@ impl CancelDataRepositoryTaskInput {
 
 /// A builder for [`CancelDataRepositoryTaskInput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelDataRepositoryTaskInputBuilder {
-    pub(crate) task_id: std::option::Option<std::string::String>,
+    pub(crate) task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelDataRepositoryTaskInputBuilder {
     /// <p>Specifies the data repository task to cancel.</p>
-    pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_id = Some(input.into());
+    pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the data repository task to cancel.</p>
-    pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
     /// Consumes the builder and constructs a [`CancelDataRepositoryTaskInput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput {
                 task_id: self.task_id,
             },

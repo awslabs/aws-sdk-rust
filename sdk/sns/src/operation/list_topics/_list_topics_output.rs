@@ -2,27 +2,27 @@
 
 /// <p>Response for ListTopics action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTopicsOutput {
     /// <p>A list of topic ARNs.</p>
     #[doc(hidden)]
-    pub topics: std::option::Option<std::vec::Vec<crate::types::Topic>>,
+    pub topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTopicsOutput {
     /// <p>A list of topic ARNs.</p>
-    pub fn topics(&self) -> std::option::Option<&[crate::types::Topic]> {
+    pub fn topics(&self) -> ::std::option::Option<&[crate::types::Topic]> {
         self.topics.as_deref()
     }
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTopicsOutput {
+impl ::aws_http::request_id::RequestId for ListTopicsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListTopicsOutput {
 
 /// A builder for [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTopicsOutputBuilder {
-    pub(crate) topics: std::option::Option<std::vec::Vec<crate::types::Topic>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) topics: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTopicsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListTopicsOutputBuilder {
     pub fn topics(mut self, input: crate::types::Topic) -> Self {
         let mut v = self.topics.unwrap_or_default();
         v.push(input);
-        self.topics = Some(v);
+        self.topics = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of topic ARNs.</p>
     pub fn set_topics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Topic>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Topic>>,
     ) -> Self {
         self.topics = input;
         self
     }
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

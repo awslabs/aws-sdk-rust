@@ -37,13 +37,13 @@
 /// <p>Whether or not AWS includes resource IDs in the report. </p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SchemaElement {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum SchemaElement {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SchemaElement {
+impl ::std::convert::From<&str> for SchemaElement {
     fn from(s: &str) -> Self {
         match s {
             "RESOURCES" => SchemaElement::Resources,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for SchemaElement {
         }
     }
 }
-impl std::str::FromStr for SchemaElement {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SchemaElement {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SchemaElement::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SchemaElement::from(s))
     }
 }
 impl SchemaElement {
@@ -81,7 +81,7 @@ impl SchemaElement {
         &["RESOURCES"]
     }
 }
-impl AsRef<str> for SchemaElement {
+impl ::std::convert::AsRef<str> for SchemaElement {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

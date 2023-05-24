@@ -44,13 +44,13 @@
 /// <p>Returns the size of the CacheCluster.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CacheClusterSize {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum CacheClusterSize {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CacheClusterSize {
+impl ::std::convert::From<&str> for CacheClusterSize {
     fn from(s: &str) -> Self {
         match s {
             "0.5" => CacheClusterSize::Size0Point5Gb,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for CacheClusterSize {
         }
     }
 }
-impl std::str::FromStr for CacheClusterSize {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CacheClusterSize {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CacheClusterSize::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CacheClusterSize::from(s))
     }
 }
 impl CacheClusterSize {
@@ -116,7 +116,7 @@ impl CacheClusterSize {
         &["0.5", "1.6", "118", "13.5", "237", "28.4", "58.2", "6.1"]
     }
 }
-impl AsRef<str> for CacheClusterSize {
+impl ::std::convert::AsRef<str> for CacheClusterSize {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

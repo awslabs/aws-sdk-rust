@@ -2,20 +2,20 @@
 
 /// <p>Result message containing a list of application descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationsOutput {
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
     #[doc(hidden)]
-    pub applications: std::option::Option<std::vec::Vec<crate::types::ApplicationDescription>>,
+    pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationsOutput {
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::types::ApplicationDescription]> {
+    pub fn applications(&self) -> ::std::option::Option<&[crate::types::ApplicationDescription]> {
         self.applications.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeApplicationsOutput {
+impl ::aws_http::request_id::RequestId for DescribeApplicationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,10 +30,12 @@ impl DescribeApplicationsOutput {
 
 /// A builder for [`DescribeApplicationsOutput`](crate::operation::describe_applications::DescribeApplicationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeApplicationsOutputBuilder {
     pub(crate) applications:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationsOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeApplicationsOutputBuilder {
     pub fn applications(mut self, input: crate::types::ApplicationDescription) -> Self {
         let mut v = self.applications.unwrap_or_default();
         v.push(input);
-        self.applications = Some(v);
+        self.applications = ::std::option::Option::Some(v);
         self
     }
     /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
     pub fn set_applications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationDescription>>,
     ) -> Self {
         self.applications = input;
         self

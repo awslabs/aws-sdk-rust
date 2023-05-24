@@ -8,56 +8,59 @@ pub use crate::operation::update_key::_update_key_input::UpdateKeyInputBuilder;
 /// <p>Updates the specified properties of a given API key resource.</p> <important>
 /// <p>The API keys feature is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateKeyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_key::builders::UpdateKeyInputBuilder,
 }
 impl UpdateKeyFluentBuilder {
     /// Creates a new `UpdateKey`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_key::UpdateKey,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_key::UpdateKeyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,41 +73,41 @@ impl UpdateKeyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_key::UpdateKeyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_key::UpdateKeyError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the API key resource to update.</p>
-    pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_name(input.into());
         self
     }
     /// <p>The name of the API key resource to update.</p>
-    pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_name(input);
         self
     }
     /// <p>Updates the description for the API key resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>Updates the description for the API key resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn expire_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn expire_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expire_time(input);
         self
     }
     /// <p>Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn set_expire_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_expire_time(input);
         self
@@ -115,7 +118,7 @@ impl UpdateKeyFluentBuilder {
         self
     }
     /// <p>Whether the API key should expire. Set to <code>true</code> to set the API key to have no expiration time.</p>
-    pub fn set_no_expiry(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_no_expiry(input);
         self
     }
@@ -131,7 +134,7 @@ impl UpdateKeyFluentBuilder {
     /// <p>Must be set to <code>true</code> to update an API key resource that has been used in the past 7 days.</p>
     /// <p> <code>False</code> if force update is not preferred</p>
     /// <p>Default value: <code>False</code> </p>
-    pub fn set_force_update(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_update(input);
         self
     }
@@ -143,7 +146,7 @@ impl UpdateKeyFluentBuilder {
     /// <p>Updates the API key restrictions for the API key resource.</p>
     pub fn set_restrictions(
         mut self,
-        input: std::option::Option<crate::types::ApiKeyRestrictions>,
+        input: ::std::option::Option<crate::types::ApiKeyRestrictions>,
     ) -> Self {
         self.inner = self.inner.set_restrictions(input);
         self

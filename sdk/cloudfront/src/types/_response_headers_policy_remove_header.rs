@@ -2,15 +2,15 @@
 
 /// <p>The name of an HTTP header that CloudFront removes from HTTP responses to requests that match the cache behavior that this response headers policy is attached to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyRemoveHeader {
     /// <p>The HTTP header name.</p>
     #[doc(hidden)]
-    pub header: std::option::Option<std::string::String>,
+    pub header: ::std::option::Option<::std::string::String>,
 }
 impl ResponseHeadersPolicyRemoveHeader {
     /// <p>The HTTP header name.</p>
-    pub fn header(&self) -> std::option::Option<&str> {
+    pub fn header(&self) -> ::std::option::Option<&str> {
         self.header.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ResponseHeadersPolicyRemoveHeader {
 
 /// A builder for [`ResponseHeadersPolicyRemoveHeader`](crate::types::ResponseHeadersPolicyRemoveHeader).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseHeadersPolicyRemoveHeaderBuilder {
-    pub(crate) header: std::option::Option<std::string::String>,
+    pub(crate) header: ::std::option::Option<::std::string::String>,
 }
 impl ResponseHeadersPolicyRemoveHeaderBuilder {
     /// <p>The HTTP header name.</p>
-    pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header = Some(input.into());
+    pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP header name.</p>
-    pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header = input;
         self
     }

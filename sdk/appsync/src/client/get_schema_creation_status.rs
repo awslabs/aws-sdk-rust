@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSchemaCreationStatus`](crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_schema_creation_status::builders::GetSchemaCreationStatusFluentBuilder::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`GetSchemaCreationStatusOutput`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput) with field(s):
     ///   - [`status(Option<SchemaStatus>)`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput::status): <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     ///   - [`details(Option<String>)`](crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput::details): <p>Detailed information about the status of the schema creation operation.</p>

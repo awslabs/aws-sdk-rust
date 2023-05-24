@@ -10,127 +10,127 @@
 /// </ul>
 /// <p>The Amazon Rekognition Image <code>DetectFaces</code> and <code>IndexFaces</code> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaceDetail {
     /// <p>Bounding box of the face. Default attribute.</p>
     #[doc(hidden)]
-    pub bounding_box: std::option::Option<crate::types::BoundingBox>,
+    pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
     #[doc(hidden)]
-    pub age_range: std::option::Option<crate::types::AgeRange>,
+    pub age_range: ::std::option::Option<crate::types::AgeRange>,
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
     #[doc(hidden)]
-    pub smile: std::option::Option<crate::types::Smile>,
+    pub smile: ::std::option::Option<crate::types::Smile>,
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
     #[doc(hidden)]
-    pub eyeglasses: std::option::Option<crate::types::Eyeglasses>,
+    pub eyeglasses: ::std::option::Option<crate::types::Eyeglasses>,
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
     #[doc(hidden)]
-    pub sunglasses: std::option::Option<crate::types::Sunglasses>,
+    pub sunglasses: ::std::option::Option<crate::types::Sunglasses>,
     /// <p>The predicted gender of a detected face. </p>
     #[doc(hidden)]
-    pub gender: std::option::Option<crate::types::Gender>,
+    pub gender: ::std::option::Option<crate::types::Gender>,
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
     #[doc(hidden)]
-    pub beard: std::option::Option<crate::types::Beard>,
+    pub beard: ::std::option::Option<crate::types::Beard>,
     /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
     #[doc(hidden)]
-    pub mustache: std::option::Option<crate::types::Mustache>,
+    pub mustache: ::std::option::Option<crate::types::Mustache>,
     /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
     #[doc(hidden)]
-    pub eyes_open: std::option::Option<crate::types::EyeOpen>,
+    pub eyes_open: ::std::option::Option<crate::types::EyeOpen>,
     /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
     #[doc(hidden)]
-    pub mouth_open: std::option::Option<crate::types::MouthOpen>,
+    pub mouth_open: ::std::option::Option<crate::types::MouthOpen>,
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
     #[doc(hidden)]
-    pub emotions: std::option::Option<std::vec::Vec<crate::types::Emotion>>,
+    pub emotions: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
     /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
     #[doc(hidden)]
-    pub landmarks: std::option::Option<std::vec::Vec<crate::types::Landmark>>,
+    pub landmarks: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
     #[doc(hidden)]
-    pub pose: std::option::Option<crate::types::Pose>,
+    pub pose: ::std::option::Option<crate::types::Pose>,
     /// <p>Identifies image brightness and sharpness. Default attribute.</p>
     #[doc(hidden)]
-    pub quality: std::option::Option<crate::types::ImageQuality>,
+    pub quality: ::std::option::Option<crate::types::ImageQuality>,
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
     /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
     #[doc(hidden)]
-    pub face_occluded: std::option::Option<crate::types::FaceOccluded>,
+    pub face_occluded: ::std::option::Option<crate::types::FaceOccluded>,
     /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
     #[doc(hidden)]
-    pub eye_direction: std::option::Option<crate::types::EyeDirection>,
+    pub eye_direction: ::std::option::Option<crate::types::EyeDirection>,
 }
 impl FaceDetail {
     /// <p>Bounding box of the face. Default attribute.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
-    pub fn age_range(&self) -> std::option::Option<&crate::types::AgeRange> {
+    pub fn age_range(&self) -> ::std::option::Option<&crate::types::AgeRange> {
         self.age_range.as_ref()
     }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
-    pub fn smile(&self) -> std::option::Option<&crate::types::Smile> {
+    pub fn smile(&self) -> ::std::option::Option<&crate::types::Smile> {
         self.smile.as_ref()
     }
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
-    pub fn eyeglasses(&self) -> std::option::Option<&crate::types::Eyeglasses> {
+    pub fn eyeglasses(&self) -> ::std::option::Option<&crate::types::Eyeglasses> {
         self.eyeglasses.as_ref()
     }
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
-    pub fn sunglasses(&self) -> std::option::Option<&crate::types::Sunglasses> {
+    pub fn sunglasses(&self) -> ::std::option::Option<&crate::types::Sunglasses> {
         self.sunglasses.as_ref()
     }
     /// <p>The predicted gender of a detected face. </p>
-    pub fn gender(&self) -> std::option::Option<&crate::types::Gender> {
+    pub fn gender(&self) -> ::std::option::Option<&crate::types::Gender> {
         self.gender.as_ref()
     }
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
-    pub fn beard(&self) -> std::option::Option<&crate::types::Beard> {
+    pub fn beard(&self) -> ::std::option::Option<&crate::types::Beard> {
         self.beard.as_ref()
     }
     /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
-    pub fn mustache(&self) -> std::option::Option<&crate::types::Mustache> {
+    pub fn mustache(&self) -> ::std::option::Option<&crate::types::Mustache> {
         self.mustache.as_ref()
     }
     /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
-    pub fn eyes_open(&self) -> std::option::Option<&crate::types::EyeOpen> {
+    pub fn eyes_open(&self) -> ::std::option::Option<&crate::types::EyeOpen> {
         self.eyes_open.as_ref()
     }
     /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
-    pub fn mouth_open(&self) -> std::option::Option<&crate::types::MouthOpen> {
+    pub fn mouth_open(&self) -> ::std::option::Option<&crate::types::MouthOpen> {
         self.mouth_open.as_ref()
     }
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
-    pub fn emotions(&self) -> std::option::Option<&[crate::types::Emotion]> {
+    pub fn emotions(&self) -> ::std::option::Option<&[crate::types::Emotion]> {
         self.emotions.as_deref()
     }
     /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
-    pub fn landmarks(&self) -> std::option::Option<&[crate::types::Landmark]> {
+    pub fn landmarks(&self) -> ::std::option::Option<&[crate::types::Landmark]> {
         self.landmarks.as_deref()
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
-    pub fn pose(&self) -> std::option::Option<&crate::types::Pose> {
+    pub fn pose(&self) -> ::std::option::Option<&crate::types::Pose> {
         self.pose.as_ref()
     }
     /// <p>Identifies image brightness and sharpness. Default attribute.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::types::ImageQuality> {
+    pub fn quality(&self) -> ::std::option::Option<&crate::types::ImageQuality> {
         self.quality.as_ref()
     }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
-    pub fn face_occluded(&self) -> std::option::Option<&crate::types::FaceOccluded> {
+    pub fn face_occluded(&self) -> ::std::option::Option<&crate::types::FaceOccluded> {
         self.face_occluded.as_ref()
     }
     /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
-    pub fn eye_direction(&self) -> std::option::Option<&crate::types::EyeDirection> {
+    pub fn eye_direction(&self) -> ::std::option::Option<&crate::types::EyeDirection> {
         self.eye_direction.as_ref()
     }
 }
@@ -143,127 +143,135 @@ impl FaceDetail {
 
 /// A builder for [`FaceDetail`](crate::types::FaceDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FaceDetailBuilder {
-    pub(crate) bounding_box: std::option::Option<crate::types::BoundingBox>,
-    pub(crate) age_range: std::option::Option<crate::types::AgeRange>,
-    pub(crate) smile: std::option::Option<crate::types::Smile>,
-    pub(crate) eyeglasses: std::option::Option<crate::types::Eyeglasses>,
-    pub(crate) sunglasses: std::option::Option<crate::types::Sunglasses>,
-    pub(crate) gender: std::option::Option<crate::types::Gender>,
-    pub(crate) beard: std::option::Option<crate::types::Beard>,
-    pub(crate) mustache: std::option::Option<crate::types::Mustache>,
-    pub(crate) eyes_open: std::option::Option<crate::types::EyeOpen>,
-    pub(crate) mouth_open: std::option::Option<crate::types::MouthOpen>,
-    pub(crate) emotions: std::option::Option<std::vec::Vec<crate::types::Emotion>>,
-    pub(crate) landmarks: std::option::Option<std::vec::Vec<crate::types::Landmark>>,
-    pub(crate) pose: std::option::Option<crate::types::Pose>,
-    pub(crate) quality: std::option::Option<crate::types::ImageQuality>,
-    pub(crate) confidence: std::option::Option<f32>,
-    pub(crate) face_occluded: std::option::Option<crate::types::FaceOccluded>,
-    pub(crate) eye_direction: std::option::Option<crate::types::EyeDirection>,
+    pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
+    pub(crate) age_range: ::std::option::Option<crate::types::AgeRange>,
+    pub(crate) smile: ::std::option::Option<crate::types::Smile>,
+    pub(crate) eyeglasses: ::std::option::Option<crate::types::Eyeglasses>,
+    pub(crate) sunglasses: ::std::option::Option<crate::types::Sunglasses>,
+    pub(crate) gender: ::std::option::Option<crate::types::Gender>,
+    pub(crate) beard: ::std::option::Option<crate::types::Beard>,
+    pub(crate) mustache: ::std::option::Option<crate::types::Mustache>,
+    pub(crate) eyes_open: ::std::option::Option<crate::types::EyeOpen>,
+    pub(crate) mouth_open: ::std::option::Option<crate::types::MouthOpen>,
+    pub(crate) emotions: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
+    pub(crate) landmarks: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
+    pub(crate) pose: ::std::option::Option<crate::types::Pose>,
+    pub(crate) quality: ::std::option::Option<crate::types::ImageQuality>,
+    pub(crate) confidence: ::std::option::Option<f32>,
+    pub(crate) face_occluded: ::std::option::Option<crate::types::FaceOccluded>,
+    pub(crate) eye_direction: ::std::option::Option<crate::types::EyeDirection>,
 }
 impl FaceDetailBuilder {
     /// <p>Bounding box of the face. Default attribute.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
-        self.bounding_box = Some(input);
+        self.bounding_box = ::std::option::Option::Some(input);
         self
     }
     /// <p>Bounding box of the face. Default attribute.</p>
     pub fn set_bounding_box(
         mut self,
-        input: std::option::Option<crate::types::BoundingBox>,
+        input: ::std::option::Option<crate::types::BoundingBox>,
     ) -> Self {
         self.bounding_box = input;
         self
     }
     /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
     pub fn age_range(mut self, input: crate::types::AgeRange) -> Self {
-        self.age_range = Some(input);
+        self.age_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the highest estimated age.</p>
-    pub fn set_age_range(mut self, input: std::option::Option<crate::types::AgeRange>) -> Self {
+    pub fn set_age_range(mut self, input: ::std::option::Option<crate::types::AgeRange>) -> Self {
         self.age_range = input;
         self
     }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
     pub fn smile(mut self, input: crate::types::Smile) -> Self {
-        self.smile = Some(input);
+        self.smile = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the face is smiling, and the confidence level in the determination.</p>
-    pub fn set_smile(mut self, input: std::option::Option<crate::types::Smile>) -> Self {
+    pub fn set_smile(mut self, input: ::std::option::Option<crate::types::Smile>) -> Self {
         self.smile = input;
         self
     }
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
     pub fn eyeglasses(mut self, input: crate::types::Eyeglasses) -> Self {
-        self.eyeglasses = Some(input);
+        self.eyeglasses = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination.</p>
-    pub fn set_eyeglasses(mut self, input: std::option::Option<crate::types::Eyeglasses>) -> Self {
+    pub fn set_eyeglasses(
+        mut self,
+        input: ::std::option::Option<crate::types::Eyeglasses>,
+    ) -> Self {
         self.eyeglasses = input;
         self
     }
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
     pub fn sunglasses(mut self, input: crate::types::Sunglasses) -> Self {
-        self.sunglasses = Some(input);
+        self.sunglasses = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination.</p>
-    pub fn set_sunglasses(mut self, input: std::option::Option<crate::types::Sunglasses>) -> Self {
+    pub fn set_sunglasses(
+        mut self,
+        input: ::std::option::Option<crate::types::Sunglasses>,
+    ) -> Self {
         self.sunglasses = input;
         self
     }
     /// <p>The predicted gender of a detected face. </p>
     pub fn gender(mut self, input: crate::types::Gender) -> Self {
-        self.gender = Some(input);
+        self.gender = ::std::option::Option::Some(input);
         self
     }
     /// <p>The predicted gender of a detected face. </p>
-    pub fn set_gender(mut self, input: std::option::Option<crate::types::Gender>) -> Self {
+    pub fn set_gender(mut self, input: ::std::option::Option<crate::types::Gender>) -> Self {
         self.gender = input;
         self
     }
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
     pub fn beard(mut self, input: crate::types::Beard) -> Self {
-        self.beard = Some(input);
+        self.beard = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the face has a beard, and the confidence level in the determination.</p>
-    pub fn set_beard(mut self, input: std::option::Option<crate::types::Beard>) -> Self {
+    pub fn set_beard(mut self, input: ::std::option::Option<crate::types::Beard>) -> Self {
         self.beard = input;
         self
     }
     /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
     pub fn mustache(mut self, input: crate::types::Mustache) -> Self {
-        self.mustache = Some(input);
+        self.mustache = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the face has a mustache, and the confidence level in the determination.</p>
-    pub fn set_mustache(mut self, input: std::option::Option<crate::types::Mustache>) -> Self {
+    pub fn set_mustache(mut self, input: ::std::option::Option<crate::types::Mustache>) -> Self {
         self.mustache = input;
         self
     }
     /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
     pub fn eyes_open(mut self, input: crate::types::EyeOpen) -> Self {
-        self.eyes_open = Some(input);
+        self.eyes_open = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
-    pub fn set_eyes_open(mut self, input: std::option::Option<crate::types::EyeOpen>) -> Self {
+    pub fn set_eyes_open(mut self, input: ::std::option::Option<crate::types::EyeOpen>) -> Self {
         self.eyes_open = input;
         self
     }
     /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
     pub fn mouth_open(mut self, input: crate::types::MouthOpen) -> Self {
-        self.mouth_open = Some(input);
+        self.mouth_open = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
-    pub fn set_mouth_open(mut self, input: std::option::Option<crate::types::MouthOpen>) -> Self {
+    pub fn set_mouth_open(mut self, input: ::std::option::Option<crate::types::MouthOpen>) -> Self {
         self.mouth_open = input;
         self
     }
@@ -275,13 +283,13 @@ impl FaceDetailBuilder {
     pub fn emotions(mut self, input: crate::types::Emotion) -> Self {
         let mut v = self.emotions.unwrap_or_default();
         v.push(input);
-        self.emotions = Some(v);
+        self.emotions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
     pub fn set_emotions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Emotion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Emotion>>,
     ) -> Self {
         self.emotions = input;
         self
@@ -294,69 +302,69 @@ impl FaceDetailBuilder {
     pub fn landmarks(mut self, input: crate::types::Landmark) -> Self {
         let mut v = self.landmarks.unwrap_or_default();
         v.push(input);
-        self.landmarks = Some(v);
+        self.landmarks = ::std::option::Option::Some(v);
         self
     }
     /// <p>Indicates the location of landmarks on the face. Default attribute.</p>
     pub fn set_landmarks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Landmark>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Landmark>>,
     ) -> Self {
         self.landmarks = input;
         self
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
     pub fn pose(mut self, input: crate::types::Pose) -> Self {
-        self.pose = Some(input);
+        self.pose = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>
-    pub fn set_pose(mut self, input: std::option::Option<crate::types::Pose>) -> Self {
+    pub fn set_pose(mut self, input: ::std::option::Option<crate::types::Pose>) -> Self {
         self.pose = input;
         self
     }
     /// <p>Identifies image brightness and sharpness. Default attribute.</p>
     pub fn quality(mut self, input: crate::types::ImageQuality) -> Self {
-        self.quality = Some(input);
+        self.quality = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies image brightness and sharpness. Default attribute.</p>
-    pub fn set_quality(mut self, input: std::option::Option<crate::types::ImageQuality>) -> Self {
+    pub fn set_quality(mut self, input: ::std::option::Option<crate::types::ImageQuality>) -> Self {
         self.quality = input;
         self
     }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }
     /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
     pub fn face_occluded(mut self, input: crate::types::FaceOccluded) -> Self {
-        self.face_occluded = Some(input);
+        self.face_occluded = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
     pub fn set_face_occluded(
         mut self,
-        input: std::option::Option<crate::types::FaceOccluded>,
+        input: ::std::option::Option<crate::types::FaceOccluded>,
     ) -> Self {
         self.face_occluded = input;
         self
     }
     /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
     pub fn eye_direction(mut self, input: crate::types::EyeDirection) -> Self {
-        self.eye_direction = Some(input);
+        self.eye_direction = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
     pub fn set_eye_direction(
         mut self,
-        input: std::option::Option<crate::types::EyeDirection>,
+        input: ::std::option::Option<crate::types::EyeDirection>,
     ) -> Self {
         self.eye_direction = input;
         self

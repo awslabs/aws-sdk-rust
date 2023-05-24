@@ -2,29 +2,29 @@
 
 /// <p>The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticChannelConfiguration {
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
     #[doc(hidden)]
-    pub maximum_sub_channels: std::option::Option<i32>,
+    pub maximum_sub_channels: ::std::option::Option<i32>,
     /// <p>The maximum number of members allowed in a SubChannel.</p>
     #[doc(hidden)]
-    pub target_memberships_per_sub_channel: std::option::Option<i32>,
+    pub target_memberships_per_sub_channel: ::std::option::Option<i32>,
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
     #[doc(hidden)]
-    pub minimum_membership_percentage: std::option::Option<i32>,
+    pub minimum_membership_percentage: ::std::option::Option<i32>,
 }
 impl ElasticChannelConfiguration {
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
-    pub fn maximum_sub_channels(&self) -> std::option::Option<i32> {
+    pub fn maximum_sub_channels(&self) -> ::std::option::Option<i32> {
         self.maximum_sub_channels
     }
     /// <p>The maximum number of members allowed in a SubChannel.</p>
-    pub fn target_memberships_per_sub_channel(&self) -> std::option::Option<i32> {
+    pub fn target_memberships_per_sub_channel(&self) -> ::std::option::Option<i32> {
         self.target_memberships_per_sub_channel
     }
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
-    pub fn minimum_membership_percentage(&self) -> std::option::Option<i32> {
+    pub fn minimum_membership_percentage(&self) -> ::std::option::Option<i32> {
         self.minimum_membership_percentage
     }
 }
@@ -37,43 +37,45 @@ impl ElasticChannelConfiguration {
 
 /// A builder for [`ElasticChannelConfiguration`](crate::types::ElasticChannelConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ElasticChannelConfigurationBuilder {
-    pub(crate) maximum_sub_channels: std::option::Option<i32>,
-    pub(crate) target_memberships_per_sub_channel: std::option::Option<i32>,
-    pub(crate) minimum_membership_percentage: std::option::Option<i32>,
+    pub(crate) maximum_sub_channels: ::std::option::Option<i32>,
+    pub(crate) target_memberships_per_sub_channel: ::std::option::Option<i32>,
+    pub(crate) minimum_membership_percentage: ::std::option::Option<i32>,
 }
 impl ElasticChannelConfigurationBuilder {
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
     pub fn maximum_sub_channels(mut self, input: i32) -> Self {
-        self.maximum_sub_channels = Some(input);
+        self.maximum_sub_channels = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of SubChannels that you want to allow in the elastic channel.</p>
-    pub fn set_maximum_sub_channels(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_sub_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_sub_channels = input;
         self
     }
     /// <p>The maximum number of members allowed in a SubChannel.</p>
     pub fn target_memberships_per_sub_channel(mut self, input: i32) -> Self {
-        self.target_memberships_per_sub_channel = Some(input);
+        self.target_memberships_per_sub_channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of members allowed in a SubChannel.</p>
     pub fn set_target_memberships_per_sub_channel(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.target_memberships_per_sub_channel = input;
         self
     }
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
     pub fn minimum_membership_percentage(mut self, input: i32) -> Self {
-        self.minimum_membership_percentage = Some(input);
+        self.minimum_membership_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum allowed percentage of TargetMembershipsPerSubChannel users. Ceil of the calculated value is used in balancing members among SubChannels of the elastic channel.</p>
-    pub fn set_minimum_membership_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minimum_membership_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_membership_percentage = input;
         self
     }

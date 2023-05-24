@@ -2,20 +2,20 @@
 
 /// <p>The result of a DeleteTrust request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrustOutput {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
     #[doc(hidden)]
-    pub trust_id: std::option::Option<std::string::String>,
+    pub trust_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteTrustOutput {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
-    pub fn trust_id(&self) -> std::option::Option<&str> {
+    pub fn trust_id(&self) -> ::std::option::Option<&str> {
         self.trust_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteTrustOutput {
+impl ::aws_http::request_id::RequestId for DeleteTrustOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DeleteTrustOutput {
 
 /// A builder for [`DeleteTrustOutput`](crate::operation::delete_trust::DeleteTrustOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteTrustOutputBuilder {
-    pub(crate) trust_id: std::option::Option<std::string::String>,
+    pub(crate) trust_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteTrustOutputBuilder {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
-    pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trust_id = Some(input.into());
+    pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trust_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
-    pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_id = input;
         self
     }

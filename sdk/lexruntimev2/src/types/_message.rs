@@ -2,36 +2,36 @@
 
 /// <p>Container for text that is returned to the customer..</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The text of the message.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of response.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<crate::types::MessageContentType>,
+    pub content_type: ::std::option::Option<crate::types::MessageContentType>,
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     #[doc(hidden)]
-    pub image_response_card: std::option::Option<crate::types::ImageResponseCard>,
+    pub image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
 impl Message {
     /// <p>The text of the message.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>Indicates the type of response.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::MessageContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<&crate::types::MessageContentType> {
         self.content_type.as_ref()
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
-    pub fn image_response_card(&self) -> std::option::Option<&crate::types::ImageResponseCard> {
+    pub fn image_response_card(&self) -> ::std::option::Option<&crate::types::ImageResponseCard> {
         self.image_response_card.as_ref()
     }
 }
-impl std::fmt::Debug for Message {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Message {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Message");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);
@@ -48,32 +48,32 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MessageBuilder {
-    pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<crate::types::MessageContentType>,
-    pub(crate) image_response_card: std::option::Option<crate::types::ImageResponseCard>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<crate::types::MessageContentType>,
+    pub(crate) image_response_card: ::std::option::Option<crate::types::ImageResponseCard>,
 }
 impl MessageBuilder {
     /// <p>The text of the message.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the message.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p>Indicates the type of response.</p>
     pub fn content_type(mut self, input: crate::types::MessageContentType) -> Self {
-        self.content_type = Some(input);
+        self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the type of response.</p>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::MessageContentType>,
+        input: ::std::option::Option<crate::types::MessageContentType>,
     ) -> Self {
         self.content_type = input;
         self
@@ -81,14 +81,14 @@ impl MessageBuilder {
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn image_response_card(mut self, input: crate::types::ImageResponseCard) -> Self {
-        self.image_response_card = Some(input);
+        self.image_response_card = ::std::option::Option::Some(input);
         self
     }
     /// <p>A card that is shown to the user by a messaging platform. You define the contents of the card, the card is displayed by the platform. </p>
     /// <p>When you use a response card, the response from the user is constrained to the text associated with a button on the card.</p>
     pub fn set_image_response_card(
         mut self,
-        input: std::option::Option<crate::types::ImageResponseCard>,
+        input: ::std::option::Option<crate::types::ImageResponseCard>,
     ) -> Self {
         self.image_response_card = input;
         self
@@ -102,8 +102,8 @@ impl MessageBuilder {
         }
     }
 }
-impl std::fmt::Debug for MessageBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MessageBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MessageBuilder");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
         formatter.field("content_type", &self.content_type);

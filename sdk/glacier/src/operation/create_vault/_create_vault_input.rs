@@ -2,22 +2,22 @@
 
 /// <p>Provides options to create a vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
     #[doc(hidden)]
-    pub vault_name: std::option::Option<std::string::String>,
+    pub vault_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateVaultInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<&str> {
         self.vault_name.as_deref()
     }
 }
@@ -30,40 +30,42 @@ impl CreateVaultInput {
 
 /// A builder for [`CreateVaultInput`](crate::operation::create_vault::CreateVaultInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVaultInputBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) vault_name: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateVaultInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vault_name = Some(input.into());
+    pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the vault.</p>
-    pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_name = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateVaultInput`](crate::operation::create_vault::CreateVaultInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_vault::CreateVaultInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_vault::CreateVaultInput {
+        ::std::result::Result::Ok(crate::operation::create_vault::CreateVaultInput {
             account_id: self.account_id,
             vault_name: self.vault_name,
         })

@@ -7,56 +7,59 @@ pub use crate::operation::update_member::_update_member_input::UpdateMemberInput
 ///
 /// <p>Updates a member configuration with new parameters.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMemberFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_member::builders::UpdateMemberInputBuilder,
 }
 impl UpdateMemberFluentBuilder {
     /// Creates a new `UpdateMember`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_member::UpdateMember,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_member::UpdateMemberError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_member::UpdateMemberError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_member::UpdateMemberOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_member::UpdateMemberError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_member::UpdateMemberError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,29 @@ impl UpdateMemberFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_member::UpdateMemberOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_member::UpdateMemberError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_member::UpdateMemberError>,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
-    pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_id(input.into());
         self
     }
     /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
-    pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_id(input);
         self
     }
     /// <p>The unique identifier of the member.</p>
-    pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.member_id(input.into());
         self
     }
     /// <p>The unique identifier of the member.</p>
-    pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_member_id(input);
         self
     }
@@ -106,7 +109,7 @@ impl UpdateMemberFluentBuilder {
     /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
     pub fn set_log_publishing_configuration(
         mut self,
-        input: std::option::Option<crate::types::MemberLogPublishingConfiguration>,
+        input: ::std::option::Option<crate::types::MemberLogPublishingConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_log_publishing_configuration(input);
         self

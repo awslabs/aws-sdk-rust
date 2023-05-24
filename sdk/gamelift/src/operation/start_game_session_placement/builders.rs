@@ -18,29 +18,29 @@ pub use crate::operation::start_game_session_placement::_start_game_session_plac
 /// </ul>
 /// <p>If successful, a new game session placement is created.</p>
 /// <p>To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, you can resubmit the request or retry it with a different queue. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartGameSessionPlacementFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder,
 }
 impl StartGameSessionPlacementFluentBuilder {
     /// Creates a new `StartGameSessionPlacement`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_game_session_placement::StartGameSessionPlacement,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_game_session_placement::StartGameSessionPlacementError,
         >,
     > {
@@ -48,30 +48,33 @@ impl StartGameSessionPlacementFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_game_session_placement::StartGameSessionPlacementError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -84,33 +87,36 @@ impl StartGameSessionPlacementFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_game_session_placement::StartGameSessionPlacementError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
-    pub fn placement_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn placement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.placement_id(input.into());
         self
     }
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
-    pub fn set_placement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_placement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_id(input);
         self
     }
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
-    pub fn game_session_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn game_session_queue_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.game_session_queue_name(input.into());
         self
     }
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
     pub fn set_game_session_queue_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_game_session_queue_name(input);
         self
@@ -127,7 +133,7 @@ impl StartGameSessionPlacementFluentBuilder {
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn set_game_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GameProperty>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
     ) -> Self {
         self.inner = self.inner.set_game_properties(input);
         self
@@ -138,19 +144,22 @@ impl StartGameSessionPlacementFluentBuilder {
         self
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-    pub fn set_maximum_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_player_session_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_player_session_count(input);
         self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn game_session_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn game_session_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.game_session_name(input.into());
         self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn set_game_session_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_game_session_name(input);
         self
@@ -167,7 +176,7 @@ impl StartGameSessionPlacementFluentBuilder {
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
     pub fn set_player_latencies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlayerLatency>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PlayerLatency>>,
     ) -> Self {
         self.inner = self.inner.set_player_latencies(input);
         self
@@ -184,20 +193,23 @@ impl StartGameSessionPlacementFluentBuilder {
     /// <p>Set of information on each player to create a player session for.</p>
     pub fn set_desired_player_sessions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DesiredPlayerSession>>,
     ) -> Self {
         self.inner = self.inner.set_desired_player_sessions(input);
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn game_session_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.game_session_data(input.into());
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn set_game_session_data(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_game_session_data(input);
         self

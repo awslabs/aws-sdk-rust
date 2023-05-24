@@ -2,7 +2,7 @@
 
 /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksContainerResourceRequirements {
     /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
@@ -28,8 +28,9 @@ pub struct EksContainerResourceRequirements {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub limits:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub limits: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
     /// <dl>
     /// <dt>
@@ -54,8 +55,9 @@ pub struct EksContainerResourceRequirements {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub requests:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub requests: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl EksContainerResourceRequirements {
     /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
@@ -83,8 +85,9 @@ impl EksContainerResourceRequirements {
     /// </dl>
     pub fn limits(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.limits.as_ref()
     }
     /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
@@ -112,8 +115,9 @@ impl EksContainerResourceRequirements {
     /// </dl>
     pub fn requests(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.requests.as_ref()
     }
 }
@@ -126,12 +130,16 @@ impl EksContainerResourceRequirements {
 
 /// A builder for [`EksContainerResourceRequirements`](crate::types::EksContainerResourceRequirements).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EksContainerResourceRequirementsBuilder {
-    pub(crate) limits:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) requests:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) limits: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) requests: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl EksContainerResourceRequirementsBuilder {
     /// Adds a key-value pair to `limits`.
@@ -163,12 +171,12 @@ impl EksContainerResourceRequirementsBuilder {
     /// </dl>
     pub fn limits(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.limits.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.limits = Some(hash_map);
+        self.limits = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The type and quantity of the resources to reserve for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested using either the <code>limits</code> or the <code>requests</code> objects.</p>
@@ -196,8 +204,8 @@ impl EksContainerResourceRequirementsBuilder {
     /// </dl>
     pub fn set_limits(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.limits = input;
@@ -232,12 +240,12 @@ impl EksContainerResourceRequirementsBuilder {
     /// </dl>
     pub fn requests(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.requests.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.requests = Some(hash_map);
+        self.requests = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The type and quantity of the resources to request for the container. The values vary based on the <code>name</code> that's specified. Resources can be requested by using either the <code>limits</code> or the <code>requests</code> objects.</p>
@@ -265,8 +273,8 @@ impl EksContainerResourceRequirementsBuilder {
     /// </dl>
     pub fn set_requests(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.requests = input;

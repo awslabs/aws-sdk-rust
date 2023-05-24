@@ -4,22 +4,25 @@
 /// <p>Here is an example of how you could specify the <code>PermissionGroupParams</code>:</p>
 /// <p> <code> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [ {"permission": "ViewDatasetDetails"}, {"permission": "AddDatasetData"}, {"permission": "EditDatasetMetadata"}, {"permission": "DeleteDataset"} ] } </code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PermissionGroupParams {
     /// <p>The unique identifier for the <code>PermissionGroup</code>.</p>
     #[doc(hidden)]
-    pub permission_group_id: std::option::Option<std::string::String>,
+    pub permission_group_id: ::std::option::Option<::std::string::String>,
     /// <p>List of resource permissions.</p>
     #[doc(hidden)]
-    pub dataset_permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    pub dataset_permissions:
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl PermissionGroupParams {
     /// <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> ::std::option::Option<&str> {
         self.permission_group_id.as_deref()
     }
     /// <p>List of resource permissions.</p>
-    pub fn dataset_permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn dataset_permissions(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
         self.dataset_permissions.as_deref()
     }
 }
@@ -32,22 +35,27 @@ impl PermissionGroupParams {
 
 /// A builder for [`PermissionGroupParams`](crate::types::PermissionGroupParams).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PermissionGroupParamsBuilder {
-    pub(crate) permission_group_id: std::option::Option<std::string::String>,
+    pub(crate) permission_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_permissions:
-        std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl PermissionGroupParamsBuilder {
     /// <p>The unique identifier for the <code>PermissionGroup</code>.</p>
-    pub fn permission_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.permission_group_id = Some(input.into());
+    pub fn permission_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.permission_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the <code>PermissionGroup</code>.</p>
     pub fn set_permission_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.permission_group_id = input;
         self
@@ -60,13 +68,13 @@ impl PermissionGroupParamsBuilder {
     pub fn dataset_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.dataset_permissions.unwrap_or_default();
         v.push(input);
-        self.dataset_permissions = Some(v);
+        self.dataset_permissions = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of resource permissions.</p>
     pub fn set_dataset_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     ) -> Self {
         self.dataset_permissions = input;
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBranch`](crate::operation::get_branch::builders::GetBranchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::set_app_id): <p> The unique ID for an Amplify app. </p>
-    ///   - [`branch_name(impl Into<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::set_branch_name): <p> The name for the branch. </p>
+    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::set_app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(impl ::std::convert::Into<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::set_branch_name): <p> The name for the branch. </p>
     /// - On success, responds with [`GetBranchOutput`](crate::operation::get_branch::GetBranchOutput) with field(s):
     ///   - [`branch(Option<Branch>)`](crate::operation::get_branch::GetBranchOutput::branch): <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     /// - On failure, responds with [`SdkError<GetBranchError>`](crate::operation::get_branch::GetBranchError)

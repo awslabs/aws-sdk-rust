@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCluster`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    ///   - [`cluster_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     /// - On success, responds with [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::describe_cluster::DescribeClusterOutput::cluster): <p>The cluster for the DescribeCluster request.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::operation::describe_cluster::DescribeClusterError)

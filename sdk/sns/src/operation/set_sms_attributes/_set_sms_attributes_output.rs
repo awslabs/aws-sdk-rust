@@ -2,11 +2,11 @@
 
 /// <p>The response for the SetSMSAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetSmsAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for SetSmsAttributesOutput {
+impl ::aws_http::request_id::RequestId for SetSmsAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl SetSmsAttributesOutput {
 
 /// A builder for [`SetSmsAttributesOutput`](crate::operation::set_sms_attributes::SetSmsAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetSmsAttributesOutputBuilder {
     _request_id: Option<String>,
 }

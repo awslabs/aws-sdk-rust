@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains settings for the new traffic policy instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficPolicyInstance {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
     #[doc(hidden)]
-    pub hosted_zone_id: std::option::Option<std::string::String>,
+    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
     #[doc(hidden)]
-    pub ttl: std::option::Option<i64>,
+    pub ttl: ::std::option::Option<i64>,
     /// <p>The value of <code>State</code> is one of the following values:</p>
     /// <dl>
     /// <dt>
@@ -38,35 +38,35 @@ pub struct TrafficPolicyInstance {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub state: std::option::Option<std::string::String>,
+    pub state: ::std::option::Option<::std::string::String>,
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     #[doc(hidden)]
-    pub traffic_policy_id: std::option::Option<std::string::String>,
+    pub traffic_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     #[doc(hidden)]
-    pub traffic_policy_version: std::option::Option<i32>,
+    pub traffic_policy_version: ::std::option::Option<i32>,
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     #[doc(hidden)]
-    pub traffic_policy_type: std::option::Option<crate::types::RrType>,
+    pub traffic_policy_type: ::std::option::Option<crate::types::RrType>,
 }
 impl TrafficPolicyInstance {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
-    pub fn ttl(&self) -> std::option::Option<i64> {
+    pub fn ttl(&self) -> ::std::option::Option<i64> {
         self.ttl
     }
     /// <p>The value of <code>State</code> is one of the following values:</p>
@@ -90,23 +90,23 @@ impl TrafficPolicyInstance {
     /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
     /// </dd>
     /// </dl>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    pub fn traffic_policy_id(&self) -> std::option::Option<&str> {
+    pub fn traffic_policy_id(&self) -> ::std::option::Option<&str> {
         self.traffic_policy_id.as_deref()
     }
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    pub fn traffic_policy_version(&self) -> std::option::Option<i32> {
+    pub fn traffic_policy_version(&self) -> ::std::option::Option<i32> {
         self.traffic_policy_version
     }
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
-    pub fn traffic_policy_type(&self) -> std::option::Option<&crate::types::RrType> {
+    pub fn traffic_policy_type(&self) -> ::std::option::Option<&crate::types::RrType> {
         self.traffic_policy_type.as_ref()
     }
 }
@@ -119,56 +119,64 @@ impl TrafficPolicyInstance {
 
 /// A builder for [`TrafficPolicyInstance`](crate::types::TrafficPolicyInstance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrafficPolicyInstanceBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) ttl: std::option::Option<i64>,
-    pub(crate) state: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) traffic_policy_id: std::option::Option<std::string::String>,
-    pub(crate) traffic_policy_version: std::option::Option<i32>,
-    pub(crate) traffic_policy_type: std::option::Option<crate::types::RrType>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) ttl: ::std::option::Option<i64>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) traffic_policy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) traffic_policy_version: ::std::option::Option<i32>,
+    pub(crate) traffic_policy_type: ::std::option::Option<crate::types::RrType>,
 }
 impl TrafficPolicyInstanceBuilder {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-    pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hosted_zone_id = Some(input.into());
+    pub fn hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-    pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hosted_zone_id = input;
         self
     }
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
     pub fn ttl(mut self, input: i64) -> Self {
-        self.ttl = Some(input);
+        self.ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
-    pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ttl = input;
         self
     }
@@ -193,8 +201,8 @@ impl TrafficPolicyInstanceBuilder {
     /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
     /// </dd>
     /// </dl>
-    pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state = Some(input.into());
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of <code>State</code> is one of the following values:</p>
@@ -218,52 +226,55 @@ impl TrafficPolicyInstanceBuilder {
     /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
     /// </dd>
     /// </dl>
-    pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
     }
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.traffic_policy_id = Some(input.into());
+    pub fn traffic_policy_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.traffic_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     pub fn set_traffic_policy_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.traffic_policy_id = input;
         self
     }
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
     pub fn traffic_policy_version(mut self, input: i32) -> Self {
-        self.traffic_policy_version = Some(input);
+        self.traffic_policy_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_traffic_policy_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_policy_version = input;
         self
     }
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     pub fn traffic_policy_type(mut self, input: crate::types::RrType) -> Self {
-        self.traffic_policy_type = Some(input);
+        self.traffic_policy_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
     pub fn set_traffic_policy_type(
         mut self,
-        input: std::option::Option<crate::types::RrType>,
+        input: ::std::option::Option<crate::types::RrType>,
     ) -> Self {
         self.traffic_policy_type = input;
         self

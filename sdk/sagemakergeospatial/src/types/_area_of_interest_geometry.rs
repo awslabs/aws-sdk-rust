@@ -2,7 +2,7 @@
 
 /// <p>A GeoJSON object representing the geographic extent in the coordinate space.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AreaOfInterestGeometry {
     /// <p>The structure representing the MultiPolygon Geometry.</p>
     MultiPolygonGeometry(crate::types::MultiPolygonGeometryInput),
@@ -23,11 +23,11 @@ impl AreaOfInterestGeometry {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_multi_polygon_geometry(
         &self,
-    ) -> std::result::Result<&crate::types::MultiPolygonGeometryInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::MultiPolygonGeometryInput, &Self> {
         if let AreaOfInterestGeometry::MultiPolygonGeometry(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`MultiPolygonGeometry`](crate::types::AreaOfInterestGeometry::MultiPolygonGeometry).
@@ -38,11 +38,11 @@ impl AreaOfInterestGeometry {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_polygon_geometry(
         &self,
-    ) -> std::result::Result<&crate::types::PolygonGeometryInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::PolygonGeometryInput, &Self> {
         if let AreaOfInterestGeometry::PolygonGeometry(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PolygonGeometry`](crate::types::AreaOfInterestGeometry::PolygonGeometry).

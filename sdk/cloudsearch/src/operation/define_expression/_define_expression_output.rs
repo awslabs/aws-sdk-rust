@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DefineExpression</code> request. Contains the status of the newly-configured expression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefineExpressionOutput {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<crate::types::ExpressionStatus>,
+    pub expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }
 impl DefineExpressionOutput {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
-    pub fn expression(&self) -> std::option::Option<&crate::types::ExpressionStatus> {
+    pub fn expression(&self) -> ::std::option::Option<&crate::types::ExpressionStatus> {
         self.expression.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DefineExpressionOutput {
+impl ::aws_http::request_id::RequestId for DefineExpressionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DefineExpressionOutput {
 
 /// A builder for [`DefineExpressionOutput`](crate::operation::define_expression::DefineExpressionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefineExpressionOutputBuilder {
-    pub(crate) expression: std::option::Option<crate::types::ExpressionStatus>,
+    pub(crate) expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }
 impl DefineExpressionOutputBuilder {
     /// <p>The value of an <code>Expression</code> and its current status.</p>
     pub fn expression(mut self, input: crate::types::ExpressionStatus) -> Self {
-        self.expression = Some(input);
+        self.expression = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of an <code>Expression</code> and its current status.</p>
     pub fn set_expression(
         mut self,
-        input: std::option::Option<crate::types::ExpressionStatus>,
+        input: ::std::option::Option<crate::types::ExpressionStatus>,
     ) -> Self {
         self.expression = input;
         self

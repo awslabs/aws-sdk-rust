@@ -2,29 +2,31 @@
 
 /// <p>The sort configuration for a column that is not used in a field well.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnSort {
     /// <p>A column of a data set.</p>
     #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::types::ColumnIdentifier>,
+    pub sort_by: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The sort direction.</p>
     #[doc(hidden)]
-    pub direction: std::option::Option<crate::types::SortDirection>,
+    pub direction: ::std::option::Option<crate::types::SortDirection>,
     /// <p>The aggregation function that is defined in the column sort.</p>
     #[doc(hidden)]
-    pub aggregation_function: std::option::Option<crate::types::AggregationFunction>,
+    pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
 }
 impl ColumnSort {
     /// <p>A column of a data set.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.sort_by.as_ref()
     }
     /// <p>The sort direction.</p>
-    pub fn direction(&self) -> std::option::Option<&crate::types::SortDirection> {
+    pub fn direction(&self) -> ::std::option::Option<&crate::types::SortDirection> {
         self.direction.as_ref()
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
-    pub fn aggregation_function(&self) -> std::option::Option<&crate::types::AggregationFunction> {
+    pub fn aggregation_function(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
 }
@@ -37,48 +39,50 @@ impl ColumnSort {
 
 /// A builder for [`ColumnSort`](crate::types::ColumnSort).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnSortBuilder {
-    pub(crate) sort_by: std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) direction: std::option::Option<crate::types::SortDirection>,
-    pub(crate) aggregation_function: std::option::Option<crate::types::AggregationFunction>,
+    pub(crate) sort_by: ::std::option::Option<crate::types::ColumnIdentifier>,
+    pub(crate) direction: ::std::option::Option<crate::types::SortDirection>,
+    pub(crate) aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
 }
 impl ColumnSortBuilder {
     /// <p>A column of a data set.</p>
     pub fn sort_by(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.sort_by = Some(input);
+        self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>A column of a data set.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.sort_by = input;
         self
     }
     /// <p>The sort direction.</p>
     pub fn direction(mut self, input: crate::types::SortDirection) -> Self {
-        self.direction = Some(input);
+        self.direction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort direction.</p>
     pub fn set_direction(
         mut self,
-        input: std::option::Option<crate::types::SortDirection>,
+        input: ::std::option::Option<crate::types::SortDirection>,
     ) -> Self {
         self.direction = input;
         self
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
-        self.aggregation_function = Some(input);
+        self.aggregation_function = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregation function that is defined in the column sort.</p>
     pub fn set_aggregation_function(
         mut self,
-        input: std::option::Option<crate::types::AggregationFunction>,
+        input: ::std::option::Option<crate::types::AggregationFunction>,
     ) -> Self {
         self.aggregation_function = input;
         self

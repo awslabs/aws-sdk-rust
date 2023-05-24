@@ -2,43 +2,43 @@
 
 /// <p>Describes the properties of a Dedicated Host.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostProperties {
     /// <p>The number of cores on the Dedicated Host.</p>
     #[doc(hidden)]
-    pub cores: std::option::Option<i32>,
+    pub cores: ::std::option::Option<i32>,
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
     #[doc(hidden)]
-    pub instance_family: std::option::Option<std::string::String>,
+    pub instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The number of sockets on the Dedicated Host.</p>
     #[doc(hidden)]
-    pub sockets: std::option::Option<i32>,
+    pub sockets: ::std::option::Option<i32>,
     /// <p>The total number of vCPUs on the Dedicated Host.</p>
     #[doc(hidden)]
-    pub total_v_cpus: std::option::Option<i32>,
+    pub total_v_cpus: ::std::option::Option<i32>,
 }
 impl HostProperties {
     /// <p>The number of cores on the Dedicated Host.</p>
-    pub fn cores(&self) -> std::option::Option<i32> {
+    pub fn cores(&self) -> ::std::option::Option<i32> {
         self.cores
     }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
-    pub fn instance_family(&self) -> std::option::Option<&str> {
+    pub fn instance_family(&self) -> ::std::option::Option<&str> {
         self.instance_family.as_deref()
     }
     /// <p>The number of sockets on the Dedicated Host.</p>
-    pub fn sockets(&self) -> std::option::Option<i32> {
+    pub fn sockets(&self) -> ::std::option::Option<i32> {
         self.sockets
     }
     /// <p>The total number of vCPUs on the Dedicated Host.</p>
-    pub fn total_v_cpus(&self) -> std::option::Option<i32> {
+    pub fn total_v_cpus(&self) -> ::std::option::Option<i32> {
         self.total_v_cpus
     }
 }
@@ -51,62 +51,76 @@ impl HostProperties {
 
 /// A builder for [`HostProperties`](crate::types::HostProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HostPropertiesBuilder {
-    pub(crate) cores: std::option::Option<i32>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) instance_family: std::option::Option<std::string::String>,
-    pub(crate) sockets: std::option::Option<i32>,
-    pub(crate) total_v_cpus: std::option::Option<i32>,
+    pub(crate) cores: ::std::option::Option<i32>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_family: ::std::option::Option<::std::string::String>,
+    pub(crate) sockets: ::std::option::Option<i32>,
+    pub(crate) total_v_cpus: ::std::option::Option<i32>,
 }
 impl HostPropertiesBuilder {
     /// <p>The number of cores on the Dedicated Host.</p>
     pub fn cores(mut self, input: i32) -> Self {
-        self.cores = Some(input);
+        self.cores = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of cores on the Dedicated Host.</p>
-    pub fn set_cores(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cores(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cores = input;
         self
     }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type supported by the Dedicated Host. For example, <code>m5.large</code>. If the host supports multiple instance types, no <b>instanceType</b> is returned.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
-    pub fn instance_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_family = Some(input.into());
+    pub fn instance_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance family supported by the Dedicated Host. For example, <code>m5</code>.</p>
-    pub fn set_instance_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_family(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_family = input;
         self
     }
     /// <p>The number of sockets on the Dedicated Host.</p>
     pub fn sockets(mut self, input: i32) -> Self {
-        self.sockets = Some(input);
+        self.sockets = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of sockets on the Dedicated Host.</p>
-    pub fn set_sockets(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sockets(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sockets = input;
         self
     }
     /// <p>The total number of vCPUs on the Dedicated Host.</p>
     pub fn total_v_cpus(mut self, input: i32) -> Self {
-        self.total_v_cpus = Some(input);
+        self.total_v_cpus = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of vCPUs on the Dedicated Host.</p>
-    pub fn set_total_v_cpus(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_v_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_v_cpus = input;
         self
     }

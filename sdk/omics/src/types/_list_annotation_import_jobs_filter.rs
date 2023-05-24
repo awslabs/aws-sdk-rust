@@ -2,22 +2,22 @@
 
 /// <p>A filter for annotation import jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnnotationImportJobsFilter {
     /// <p>A status to filter on.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::JobStatus>,
+    pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A store name to filter on.</p>
     #[doc(hidden)]
-    pub store_name: std::option::Option<std::string::String>,
+    pub store_name: ::std::option::Option<::std::string::String>,
 }
 impl ListAnnotationImportJobsFilter {
     /// <p>A status to filter on.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A store name to filter on.</p>
-    pub fn store_name(&self) -> std::option::Option<&str> {
+    pub fn store_name(&self) -> ::std::option::Option<&str> {
         self.store_name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ListAnnotationImportJobsFilter {
 
 /// A builder for [`ListAnnotationImportJobsFilter`](crate::types::ListAnnotationImportJobsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListAnnotationImportJobsFilterBuilder {
-    pub(crate) status: std::option::Option<crate::types::JobStatus>,
-    pub(crate) store_name: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
+    pub(crate) store_name: ::std::option::Option<::std::string::String>,
 }
 impl ListAnnotationImportJobsFilterBuilder {
     /// <p>A status to filter on.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>A status to filter on.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>A store name to filter on.</p>
-    pub fn store_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.store_name = Some(input.into());
+    pub fn store_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.store_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A store name to filter on.</p>
-    pub fn set_store_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_store_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.store_name = input;
         self
     }

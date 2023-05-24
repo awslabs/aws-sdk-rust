@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RotateChannelCredentials`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::set_id): The ID of the channel to update.
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsFluentBuilder::set_id): The ID of the channel to update.
     /// - On success, responds with [`RotateChannelCredentialsOutput`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.
     ///   - [`created_at(Option<String>)`](crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput::created_at): The date and time the Channel was created.

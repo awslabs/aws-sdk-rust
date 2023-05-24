@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ParameterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ParameterType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ParameterType {
+impl ::std::convert::From<&str> for ParameterType {
     fn from(s: &str) -> Self {
         match s {
             "Datetime" => ParameterType::Datetime,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ParameterType {
         }
     }
 }
-impl std::str::FromStr for ParameterType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ParameterType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParameterType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ParameterType::from(s))
     }
 }
 impl ParameterType {
@@ -91,7 +91,7 @@ impl ParameterType {
         &["Datetime", "Number", "String"]
     }
 }
-impl AsRef<str> for ParameterType {
+impl ::std::convert::AsRef<str> for ParameterType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,14 +2,14 @@
 
 /// <p>Indicates whether or not the mouth on the face is open, and the confidence level in the determination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MouthOpen {
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
     #[doc(hidden)]
     pub value: bool,
     /// <p>Level of confidence in the determination.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
 }
 impl MouthOpen {
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
@@ -17,7 +17,7 @@ impl MouthOpen {
         self.value
     }
     /// <p>Level of confidence in the determination.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
 }
@@ -30,29 +30,31 @@ impl MouthOpen {
 
 /// A builder for [`MouthOpen`](crate::types::MouthOpen).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MouthOpenBuilder {
-    pub(crate) value: std::option::Option<bool>,
-    pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) value: ::std::option::Option<bool>,
+    pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl MouthOpenBuilder {
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
     pub fn value(mut self, input: bool) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean value that indicates whether the mouth on the face is open or not.</p>
-    pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.value = input;
         self
     }
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Level of confidence in the determination.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }

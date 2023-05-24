@@ -7,56 +7,59 @@ pub use crate::operation::resolve_room::_resolve_room_input::ResolveRoomInputBui
 ///
 /// <p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p>
 /// <p>To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS account. Skills that are hosted using a custom web service must be manually authorized. To get your skill authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResolveRoomFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::resolve_room::builders::ResolveRoomInputBuilder,
 }
 impl ResolveRoomFluentBuilder {
     /// Creates a new `ResolveRoom`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::resolve_room::ResolveRoom,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::resolve_room::ResolveRoomError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_room::ResolveRoomError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::resolve_room::ResolveRoomOutput,
-        aws_smithy_http::result::SdkError<crate::operation::resolve_room::ResolveRoomError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_room::ResolveRoomError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,29 @@ impl ResolveRoomFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::resolve_room::ResolveRoomOutput,
-        aws_smithy_http::result::SdkError<crate::operation::resolve_room::ResolveRoomError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::resolve_room::ResolveRoomError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the user. Required.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
     /// <p>The ARN of the user. Required.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
     /// <p>The ARN of the skill that was requested. Required.</p>
-    pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_id(input.into());
         self
     }
     /// <p>The ARN of the skill that was requested. Required.</p>
-    pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_id(input);
         self
     }

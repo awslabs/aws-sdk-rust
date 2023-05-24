@@ -2,43 +2,43 @@
 
 /// <p>The membership information, including member ARNs, the channel ARN, and membership types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchChannelMemberships {
     /// <p>The identifier of the member who invited another member.</p>
     #[doc(hidden)]
-    pub invited_by: std::option::Option<crate::types::Identity>,
+    pub invited_by: ::std::option::Option<crate::types::Identity>,
     /// <p>The membership types set for the channel members.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ChannelMembershipType>,
+    pub r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
     /// <p>The users successfully added to the request.</p>
     #[doc(hidden)]
-    pub members: std::option::Option<std::vec::Vec<crate::types::Identity>>,
+    pub members: ::std::option::Option<::std::vec::Vec<crate::types::Identity>>,
     /// <p>The ARN of the channel to which you're adding members.</p>
     #[doc(hidden)]
-    pub channel_arn: std::option::Option<std::string::String>,
+    pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the SubChannel.</p>
     #[doc(hidden)]
-    pub sub_channel_id: std::option::Option<std::string::String>,
+    pub sub_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchChannelMemberships {
     /// <p>The identifier of the member who invited another member.</p>
-    pub fn invited_by(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn invited_by(&self) -> ::std::option::Option<&crate::types::Identity> {
         self.invited_by.as_ref()
     }
     /// <p>The membership types set for the channel members.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelMembershipType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelMembershipType> {
         self.r#type.as_ref()
     }
     /// <p>The users successfully added to the request.</p>
-    pub fn members(&self) -> std::option::Option<&[crate::types::Identity]> {
+    pub fn members(&self) -> ::std::option::Option<&[crate::types::Identity]> {
         self.members.as_deref()
     }
     /// <p>The ARN of the channel to which you're adding members.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+    pub fn sub_channel_id(&self) -> ::std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
 }
@@ -51,34 +51,36 @@ impl BatchChannelMemberships {
 
 /// A builder for [`BatchChannelMemberships`](crate::types::BatchChannelMemberships).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchChannelMembershipsBuilder {
-    pub(crate) invited_by: std::option::Option<crate::types::Identity>,
-    pub(crate) r#type: std::option::Option<crate::types::ChannelMembershipType>,
-    pub(crate) members: std::option::Option<std::vec::Vec<crate::types::Identity>>,
-    pub(crate) channel_arn: std::option::Option<std::string::String>,
-    pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+    pub(crate) invited_by: ::std::option::Option<crate::types::Identity>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
+    pub(crate) members: ::std::option::Option<::std::vec::Vec<crate::types::Identity>>,
+    pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sub_channel_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchChannelMembershipsBuilder {
     /// <p>The identifier of the member who invited another member.</p>
     pub fn invited_by(mut self, input: crate::types::Identity) -> Self {
-        self.invited_by = Some(input);
+        self.invited_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identifier of the member who invited another member.</p>
-    pub fn set_invited_by(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
+    pub fn set_invited_by(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.invited_by = input;
         self
     }
     /// <p>The membership types set for the channel members.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The membership types set for the channel members.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ChannelMembershipType>,
+        input: ::std::option::Option<crate::types::ChannelMembershipType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -91,34 +93,40 @@ impl BatchChannelMembershipsBuilder {
     pub fn members(mut self, input: crate::types::Identity) -> Self {
         let mut v = self.members.unwrap_or_default();
         v.push(input);
-        self.members = Some(v);
+        self.members = ::std::option::Option::Some(v);
         self
     }
     /// <p>The users successfully added to the request.</p>
     pub fn set_members(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Identity>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Identity>>,
     ) -> Self {
         self.members = input;
         self
     }
     /// <p>The ARN of the channel to which you're adding members.</p>
-    pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_arn = Some(input.into());
+    pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel to which you're adding members.</p>
-    pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sub_channel_id = Some(input.into());
+    pub fn sub_channel_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sub_channel_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sub_channel_id = input;
         self
     }

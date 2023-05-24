@@ -39,13 +39,13 @@
 /// <p>The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events). For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html">Monitoring and processing findings</a> in the <i>Amazon Macie User Guide</i>. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FindingPublishingFrequency {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum FindingPublishingFrequency {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FindingPublishingFrequency {
+impl ::std::convert::From<&str> for FindingPublishingFrequency {
     fn from(s: &str) -> Self {
         match s {
             "FIFTEEN_MINUTES" => FindingPublishingFrequency::FifteenMinutes,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for FindingPublishingFrequency {
         }
     }
 }
-impl std::str::FromStr for FindingPublishingFrequency {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FindingPublishingFrequency {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FindingPublishingFrequency::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FindingPublishingFrequency::from(s))
     }
 }
 impl FindingPublishingFrequency {
@@ -91,7 +91,7 @@ impl FindingPublishingFrequency {
         &["FIFTEEN_MINUTES", "ONE_HOUR", "SIX_HOURS"]
     }
 }
-impl AsRef<str> for FindingPublishingFrequency {
+impl ::std::convert::AsRef<str> for FindingPublishingFrequency {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

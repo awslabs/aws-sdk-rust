@@ -2,29 +2,29 @@
 
 /// <p>Information about contacts and times that an on-call override replaces.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreviewOverride {
     /// <p>Information about contacts to add to an on-call rotation override.</p>
     #[doc(hidden)]
-    pub new_members: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub new_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the time a rotation override would begin.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the time a rotation override would end.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PreviewOverride {
     /// <p>Information about contacts to add to an on-call rotation override.</p>
-    pub fn new_members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn new_members(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.new_members.as_deref()
     }
     /// <p>Information about the time a rotation override would begin.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Information about the time a rotation override would end.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -37,11 +37,13 @@ impl PreviewOverride {
 
 /// A builder for [`PreviewOverride`](crate::types::PreviewOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PreviewOverrideBuilder {
-    pub(crate) new_members: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) new_members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PreviewOverrideBuilder {
     /// Appends an item to `new_members`.
@@ -49,40 +51,43 @@ impl PreviewOverrideBuilder {
     /// To override the contents of this collection use [`set_new_members`](Self::set_new_members).
     ///
     /// <p>Information about contacts to add to an on-call rotation override.</p>
-    pub fn new_members(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn new_members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.new_members.unwrap_or_default();
         v.push(input.into());
-        self.new_members = Some(v);
+        self.new_members = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about contacts to add to an on-call rotation override.</p>
     pub fn set_new_members(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.new_members = input;
         self
     }
     /// <p>Information about the time a rotation override would begin.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the time a rotation override would begin.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>Information about the time a rotation override would end.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the time a rotation override would end.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }

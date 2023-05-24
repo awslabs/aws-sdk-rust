@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BrowserType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum BrowserType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BrowserType {
+impl ::std::convert::From<&str> for BrowserType {
     fn from(s: &str) -> Self {
         match s {
             "Chrome" => BrowserType::Chrome,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for BrowserType {
         }
     }
 }
-impl std::str::FromStr for BrowserType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BrowserType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BrowserType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BrowserType::from(s))
     }
 }
 impl BrowserType {
@@ -79,7 +79,7 @@ impl BrowserType {
         &["Chrome"]
     }
 }
-impl AsRef<str> for BrowserType {
+impl ::std::convert::AsRef<str> for BrowserType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

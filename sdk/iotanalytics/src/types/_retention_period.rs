@@ -2,14 +2,14 @@
 
 /// <p>How long, in days, message data is kept.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>If true, message data is kept indefinitely.</p>
     #[doc(hidden)]
     pub unlimited: bool,
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
     #[doc(hidden)]
-    pub number_of_days: std::option::Option<i32>,
+    pub number_of_days: ::std::option::Option<i32>,
 }
 impl RetentionPeriod {
     /// <p>If true, message data is kept indefinitely.</p>
@@ -17,7 +17,7 @@ impl RetentionPeriod {
         self.unlimited
     }
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
-    pub fn number_of_days(&self) -> std::option::Option<i32> {
+    pub fn number_of_days(&self) -> ::std::option::Option<i32> {
         self.number_of_days
     }
 }
@@ -30,29 +30,31 @@ impl RetentionPeriod {
 
 /// A builder for [`RetentionPeriod`](crate::types::RetentionPeriod).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetentionPeriodBuilder {
-    pub(crate) unlimited: std::option::Option<bool>,
-    pub(crate) number_of_days: std::option::Option<i32>,
+    pub(crate) unlimited: ::std::option::Option<bool>,
+    pub(crate) number_of_days: ::std::option::Option<i32>,
 }
 impl RetentionPeriodBuilder {
     /// <p>If true, message data is kept indefinitely.</p>
     pub fn unlimited(mut self, input: bool) -> Self {
-        self.unlimited = Some(input);
+        self.unlimited = ::std::option::Option::Some(input);
         self
     }
     /// <p>If true, message data is kept indefinitely.</p>
-    pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_unlimited(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unlimited = input;
         self
     }
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
     pub fn number_of_days(mut self, input: i32) -> Self {
-        self.number_of_days = Some(input);
+        self.number_of_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
-    pub fn set_number_of_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_days = input;
         self
     }

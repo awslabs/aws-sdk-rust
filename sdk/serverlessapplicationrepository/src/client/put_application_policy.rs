@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutApplicationPolicy`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
     ///   - [`statements(Vec<ApplicationPolicyStatement>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::statements) / [`set_statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::operation::put_application_policy::builders::PutApplicationPolicyFluentBuilder::set_statements): <p>An array of policy statements applied to the application.</p>
     /// - On success, responds with [`PutApplicationPolicyOutput`](crate::operation::put_application_policy::PutApplicationPolicyOutput) with field(s):
     ///   - [`statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::operation::put_application_policy::PutApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>

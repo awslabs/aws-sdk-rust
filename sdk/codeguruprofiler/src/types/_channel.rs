@@ -2,29 +2,29 @@
 
 /// <p>Notification medium for users to get alerted for events that occur in application profile. We support SNS topic as a notification channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Channel {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
     #[doc(hidden)]
-    pub uri: std::option::Option<std::string::String>,
+    pub uri: ::std::option::Option<::std::string::String>,
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
     #[doc(hidden)]
-    pub event_publishers: std::option::Option<std::vec::Vec<crate::types::EventPublisher>>,
+    pub event_publishers: ::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>>,
 }
 impl Channel {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
-    pub fn event_publishers(&self) -> std::option::Option<&[crate::types::EventPublisher]> {
+    pub fn event_publishers(&self) -> ::std::option::Option<&[crate::types::EventPublisher]> {
         self.event_publishers.as_deref()
     }
 }
@@ -37,30 +37,33 @@ impl Channel {
 
 /// A builder for [`Channel`](crate::types::Channel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) uri: std::option::Option<std::string::String>,
-    pub(crate) event_publishers: std::option::Option<std::vec::Vec<crate::types::EventPublisher>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) uri: ::std::option::Option<::std::string::String>,
+    pub(crate) event_publishers:
+        ::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>>,
 }
 impl ChannelBuilder {
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for each <code>Channel</code> in the notification configuration of a Profiling Group. A random UUID for channelId is used when adding a channel to the notification configuration if not specified in the request.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri = Some(input.into());
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique arn of the resource to be used for notifications. We support a valid SNS topic arn as a channel uri.</p>
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
     }
@@ -72,13 +75,13 @@ impl ChannelBuilder {
     pub fn event_publishers(mut self, input: crate::types::EventPublisher) -> Self {
         let mut v = self.event_publishers.unwrap_or_default();
         v.push(input);
-        self.event_publishers = Some(v);
+        self.event_publishers = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of publishers for different type of events that may be detected in an application from the profile. Anomaly detection is the only event publisher in Profiler.</p>
     pub fn set_event_publishers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventPublisher>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventPublisher>>,
     ) -> Self {
         self.event_publishers = input;
         self

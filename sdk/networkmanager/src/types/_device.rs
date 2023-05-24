@@ -2,111 +2,111 @@
 
 /// <p>Describes a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Device {
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     #[doc(hidden)]
-    pub device_arn: std::option::Option<std::string::String>,
+    pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
-    pub global_network_id: std::option::Option<std::string::String>,
+    pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services location of the device.</p>
     #[doc(hidden)]
-    pub aws_location: std::option::Option<crate::types::AwsLocation>,
+    pub aws_location: ::std::option::Option<crate::types::AwsLocation>,
     /// <p>The description of the device.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The device type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The device vendor.</p>
     #[doc(hidden)]
-    pub vendor: std::option::Option<std::string::String>,
+    pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The device model.</p>
     #[doc(hidden)]
-    pub model: std::option::Option<std::string::String>,
+    pub model: ::std::option::Option<::std::string::String>,
     /// <p>The device serial number.</p>
     #[doc(hidden)]
-    pub serial_number: std::option::Option<std::string::String>,
+    pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The site location.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::Location>,
+    pub location: ::std::option::Option<crate::types::Location>,
     /// <p>The site ID.</p>
     #[doc(hidden)]
-    pub site_id: std::option::Option<std::string::String>,
+    pub site_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the site was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::DeviceState>,
+    pub state: ::std::option::Option<crate::types::DeviceState>,
     /// <p>The tags for the device.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Device {
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn device_arn(&self) -> std::option::Option<&str> {
+    pub fn device_arn(&self) -> ::std::option::Option<&str> {
         self.device_arn.as_deref()
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Web Services location of the device.</p>
-    pub fn aws_location(&self) -> std::option::Option<&crate::types::AwsLocation> {
+    pub fn aws_location(&self) -> ::std::option::Option<&crate::types::AwsLocation> {
         self.aws_location.as_ref()
     }
     /// <p>The description of the device.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The device type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The device vendor.</p>
-    pub fn vendor(&self) -> std::option::Option<&str> {
+    pub fn vendor(&self) -> ::std::option::Option<&str> {
         self.vendor.as_deref()
     }
     /// <p>The device model.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<&str> {
         self.model.as_deref()
     }
     /// <p>The device serial number.</p>
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<&str> {
         self.serial_number.as_deref()
     }
     /// <p>The site location.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>The site ID.</p>
-    pub fn site_id(&self) -> std::option::Option<&str> {
+    pub fn site_id(&self) -> ::std::option::Option<&str> {
         self.site_id.as_deref()
     }
     /// <p>The date and time that the site was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The device state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::DeviceState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::DeviceState> {
         self.state.as_ref()
     }
     /// <p>The tags for the device.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for Device {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Device {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Device");
         formatter.field("device_id", &self.device_id);
         formatter.field("device_arn", &self.device_arn);
@@ -134,160 +134,169 @@ impl Device {
 
 /// A builder for [`Device`](crate::types::Device).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DeviceBuilder {
-    pub(crate) device_id: std::option::Option<std::string::String>,
-    pub(crate) device_arn: std::option::Option<std::string::String>,
-    pub(crate) global_network_id: std::option::Option<std::string::String>,
-    pub(crate) aws_location: std::option::Option<crate::types::AwsLocation>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) vendor: std::option::Option<std::string::String>,
-    pub(crate) model: std::option::Option<std::string::String>,
-    pub(crate) serial_number: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<crate::types::Location>,
-    pub(crate) site_id: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) state: std::option::Option<crate::types::DeviceState>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) device_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_location: ::std::option::Option<crate::types::AwsLocation>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) vendor: ::std::option::Option<::std::string::String>,
+    pub(crate) model: ::std::option::Option<::std::string::String>,
+    pub(crate) serial_number: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<crate::types::Location>,
+    pub(crate) site_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) state: ::std::option::Option<crate::types::DeviceState>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeviceBuilder {
     /// <p>The ID of the device.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_id = Some(input.into());
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_arn = Some(input.into());
+    pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_arn = input;
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.global_network_id = Some(input.into());
+    pub fn global_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.global_network_id = input;
         self
     }
     /// <p>The Amazon Web Services location of the device.</p>
     pub fn aws_location(mut self, input: crate::types::AwsLocation) -> Self {
-        self.aws_location = Some(input);
+        self.aws_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Web Services location of the device.</p>
     pub fn set_aws_location(
         mut self,
-        input: std::option::Option<crate::types::AwsLocation>,
+        input: ::std::option::Option<crate::types::AwsLocation>,
     ) -> Self {
         self.aws_location = input;
         self
     }
     /// <p>The description of the device.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the device.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The device type.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device type.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The device vendor.</p>
-    pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vendor = Some(input.into());
+    pub fn vendor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vendor = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device vendor.</p>
-    pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor = input;
         self
     }
     /// <p>The device model.</p>
-    pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model = Some(input.into());
+    pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device model.</p>
-    pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
     }
     /// <p>The device serial number.</p>
-    pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.serial_number = Some(input.into());
+    pub fn serial_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device serial number.</p>
-    pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_serial_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.serial_number = input;
         self
     }
     /// <p>The site location.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The site location.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.location = input;
         self
     }
     /// <p>The site ID.</p>
-    pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.site_id = Some(input.into());
+    pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.site_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The site ID.</p>
-    pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.site_id = input;
         self
     }
     /// <p>The date and time that the site was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the site was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The device state.</p>
     pub fn state(mut self, input: crate::types::DeviceState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The device state.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::DeviceState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::DeviceState>) -> Self {
         self.state = input;
         self
     }
@@ -299,13 +308,13 @@ impl DeviceBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags for the device.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -330,8 +339,8 @@ impl DeviceBuilder {
         }
     }
 }
-impl std::fmt::Debug for DeviceBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DeviceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceBuilder");
         formatter.field("device_id", &self.device_id);
         formatter.field("device_arn", &self.device_arn);

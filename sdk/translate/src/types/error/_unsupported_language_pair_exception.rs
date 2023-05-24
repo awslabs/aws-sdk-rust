@@ -2,55 +2,57 @@
 
 /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error messages</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsupportedLanguagePairException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The language code for the language of the input text. </p>
     #[doc(hidden)]
-    pub source_language_code: std::option::Option<std::string::String>,
+    pub source_language_code: ::std::option::Option<::std::string::String>,
     /// <p>The language code for the language of the translated text. </p>
     #[doc(hidden)]
-    pub target_language_code: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub target_language_code: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedLanguagePairException {
     /// <p>The language code for the language of the input text. </p>
-    pub fn source_language_code(&self) -> std::option::Option<&str> {
+    pub fn source_language_code(&self) -> ::std::option::Option<&str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language code for the language of the translated text. </p>
-    pub fn target_language_code(&self) -> std::option::Option<&str> {
+    pub fn target_language_code(&self) -> ::std::option::Option<&str> {
         self.target_language_code.as_deref()
     }
 }
 impl UnsupportedLanguagePairException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnsupportedLanguagePairException {
+impl ::std::fmt::Display for UnsupportedLanguagePairException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedLanguagePairException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "UnsupportedLanguagePairException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for UnsupportedLanguagePairException {}
-impl aws_http::request_id::RequestId for crate::types::error::UnsupportedLanguagePairException {
+impl ::std::error::Error for UnsupportedLanguagePairException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::UnsupportedLanguagePairException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UnsupportedLanguagePairException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for UnsupportedLanguagePairException
+{
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -63,52 +65,60 @@ impl UnsupportedLanguagePairException {
 
 /// A builder for [`UnsupportedLanguagePairException`](crate::types::error::UnsupportedLanguagePairException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnsupportedLanguagePairExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) source_language_code: std::option::Option<std::string::String>,
-    pub(crate) target_language_code: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) source_language_code: ::std::option::Option<::std::string::String>,
+    pub(crate) target_language_code: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl UnsupportedLanguagePairExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The language code for the language of the input text. </p>
-    pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_language_code = Some(input.into());
+    pub fn source_language_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code for the language of the input text. </p>
     pub fn set_source_language_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_language_code = input;
         self
     }
     /// <p>The language code for the language of the translated text. </p>
-    pub fn target_language_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_language_code = Some(input.into());
+    pub fn target_language_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language code for the language of the translated text. </p>
     pub fn set_target_language_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_language_code = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -116,7 +126,7 @@ impl UnsupportedLanguagePairExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

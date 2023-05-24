@@ -2,96 +2,98 @@
 
 /// <p>Information about a single instance of a query execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryExecution {
     /// <p>The unique identifier for each query execution.</p>
     #[doc(hidden)]
-    pub query_execution_id: std::option::Option<std::string::String>,
+    pub query_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The SQL query statements which the query execution ran.</p>
     #[doc(hidden)]
-    pub query: std::option::Option<std::string::String>,
+    pub query: ::std::option::Option<::std::string::String>,
     /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     #[doc(hidden)]
-    pub statement_type: std::option::Option<crate::types::StatementType>,
+    pub statement_type: ::std::option::Option<crate::types::StatementType>,
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     #[doc(hidden)]
-    pub result_configuration: std::option::Option<crate::types::ResultConfiguration>,
+    pub result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     /// <p>Specifies the query result reuse behavior that was used for the query.</p>
     #[doc(hidden)]
-    pub result_reuse_configuration: std::option::Option<crate::types::ResultReuseConfiguration>,
+    pub result_reuse_configuration: ::std::option::Option<crate::types::ResultReuseConfiguration>,
     /// <p>The database in which the query execution occurred.</p>
     #[doc(hidden)]
-    pub query_execution_context: std::option::Option<crate::types::QueryExecutionContext>,
+    pub query_execution_context: ::std::option::Option<crate::types::QueryExecutionContext>,
     /// <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::QueryExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::QueryExecutionStatus>,
     /// <p>Query execution statistics, such as the amount of data scanned, the amount of time that the query took to process, and the type of statement that was run.</p>
     #[doc(hidden)]
-    pub statistics: std::option::Option<crate::types::QueryExecutionStatistics>,
+    pub statistics: ::std::option::Option<crate::types::QueryExecutionStatistics>,
     /// <p>The name of the workgroup in which the query ran.</p>
     #[doc(hidden)]
-    pub work_group: std::option::Option<std::string::String>,
+    pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The engine version that executed the query.</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<crate::types::EngineVersion>,
+    pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
     #[doc(hidden)]
-    pub execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The kind of query statement that was run.</p>
     #[doc(hidden)]
-    pub substatement_type: std::option::Option<std::string::String>,
+    pub substatement_type: ::std::option::Option<::std::string::String>,
 }
 impl QueryExecution {
     /// <p>The unique identifier for each query execution.</p>
-    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+    pub fn query_execution_id(&self) -> ::std::option::Option<&str> {
         self.query_execution_id.as_deref()
     }
     /// <p>The SQL query statements which the query execution ran.</p>
-    pub fn query(&self) -> std::option::Option<&str> {
+    pub fn query(&self) -> ::std::option::Option<&str> {
         self.query.as_deref()
     }
     /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
-    pub fn statement_type(&self) -> std::option::Option<&crate::types::StatementType> {
+    pub fn statement_type(&self) -> ::std::option::Option<&crate::types::StatementType> {
         self.statement_type.as_ref()
     }
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
-    pub fn result_configuration(&self) -> std::option::Option<&crate::types::ResultConfiguration> {
+    pub fn result_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ResultConfiguration> {
         self.result_configuration.as_ref()
     }
     /// <p>Specifies the query result reuse behavior that was used for the query.</p>
     pub fn result_reuse_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ResultReuseConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ResultReuseConfiguration> {
         self.result_reuse_configuration.as_ref()
     }
     /// <p>The database in which the query execution occurred.</p>
     pub fn query_execution_context(
         &self,
-    ) -> std::option::Option<&crate::types::QueryExecutionContext> {
+    ) -> ::std::option::Option<&crate::types::QueryExecutionContext> {
         self.query_execution_context.as_ref()
     }
     /// <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::QueryExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::QueryExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>Query execution statistics, such as the amount of data scanned, the amount of time that the query took to process, and the type of statement that was run.</p>
-    pub fn statistics(&self) -> std::option::Option<&crate::types::QueryExecutionStatistics> {
+    pub fn statistics(&self) -> ::std::option::Option<&crate::types::QueryExecutionStatistics> {
         self.statistics.as_ref()
     }
     /// <p>The name of the workgroup in which the query ran.</p>
-    pub fn work_group(&self) -> std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<&str> {
         self.work_group.as_deref()
     }
     /// <p>The engine version that executed the query.</p>
-    pub fn engine_version(&self) -> std::option::Option<&crate::types::EngineVersion> {
+    pub fn engine_version(&self) -> ::std::option::Option<&crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    pub fn execution_parameters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn execution_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.execution_parameters.as_deref()
     }
     /// <p>The kind of query statement that was run.</p>
-    pub fn substatement_type(&self) -> std::option::Option<&str> {
+    pub fn substatement_type(&self) -> ::std::option::Option<&str> {
         self.substatement_type.as_deref()
     }
 }
@@ -104,68 +106,73 @@ impl QueryExecution {
 
 /// A builder for [`QueryExecution`](crate::types::QueryExecution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryExecutionBuilder {
-    pub(crate) query_execution_id: std::option::Option<std::string::String>,
-    pub(crate) query: std::option::Option<std::string::String>,
-    pub(crate) statement_type: std::option::Option<crate::types::StatementType>,
-    pub(crate) result_configuration: std::option::Option<crate::types::ResultConfiguration>,
+    pub(crate) query_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) query: ::std::option::Option<::std::string::String>,
+    pub(crate) statement_type: ::std::option::Option<crate::types::StatementType>,
+    pub(crate) result_configuration: ::std::option::Option<crate::types::ResultConfiguration>,
     pub(crate) result_reuse_configuration:
-        std::option::Option<crate::types::ResultReuseConfiguration>,
-    pub(crate) query_execution_context: std::option::Option<crate::types::QueryExecutionContext>,
-    pub(crate) status: std::option::Option<crate::types::QueryExecutionStatus>,
-    pub(crate) statistics: std::option::Option<crate::types::QueryExecutionStatistics>,
-    pub(crate) work_group: std::option::Option<std::string::String>,
-    pub(crate) engine_version: std::option::Option<crate::types::EngineVersion>,
-    pub(crate) execution_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) substatement_type: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::ResultReuseConfiguration>,
+    pub(crate) query_execution_context: ::std::option::Option<crate::types::QueryExecutionContext>,
+    pub(crate) status: ::std::option::Option<crate::types::QueryExecutionStatus>,
+    pub(crate) statistics: ::std::option::Option<crate::types::QueryExecutionStatistics>,
+    pub(crate) work_group: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<crate::types::EngineVersion>,
+    pub(crate) execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) substatement_type: ::std::option::Option<::std::string::String>,
 }
 impl QueryExecutionBuilder {
     /// <p>The unique identifier for each query execution.</p>
-    pub fn query_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_execution_id = Some(input.into());
+    pub fn query_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.query_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for each query execution.</p>
     pub fn set_query_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.query_execution_id = input;
         self
     }
     /// <p>The SQL query statements which the query execution ran.</p>
-    pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query = Some(input.into());
+    pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SQL query statements which the query execution ran.</p>
-    pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query = input;
         self
     }
     /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     pub fn statement_type(mut self, input: crate::types::StatementType) -> Self {
-        self.statement_type = Some(input);
+        self.statement_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>.</p>
     pub fn set_statement_type(
         mut self,
-        input: std::option::Option<crate::types::StatementType>,
+        input: ::std::option::Option<crate::types::StatementType>,
     ) -> Self {
         self.statement_type = input;
         self
     }
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub fn result_configuration(mut self, input: crate::types::ResultConfiguration) -> Self {
-        self.result_configuration = Some(input);
+        self.result_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query results. These are known as "client-side settings". If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup.</p>
     pub fn set_result_configuration(
         mut self,
-        input: std::option::Option<crate::types::ResultConfiguration>,
+        input: ::std::option::Option<crate::types::ResultConfiguration>,
     ) -> Self {
         self.result_configuration = input;
         self
@@ -175,75 +182,75 @@ impl QueryExecutionBuilder {
         mut self,
         input: crate::types::ResultReuseConfiguration,
     ) -> Self {
-        self.result_reuse_configuration = Some(input);
+        self.result_reuse_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the query result reuse behavior that was used for the query.</p>
     pub fn set_result_reuse_configuration(
         mut self,
-        input: std::option::Option<crate::types::ResultReuseConfiguration>,
+        input: ::std::option::Option<crate::types::ResultReuseConfiguration>,
     ) -> Self {
         self.result_reuse_configuration = input;
         self
     }
     /// <p>The database in which the query execution occurred.</p>
     pub fn query_execution_context(mut self, input: crate::types::QueryExecutionContext) -> Self {
-        self.query_execution_context = Some(input);
+        self.query_execution_context = ::std::option::Option::Some(input);
         self
     }
     /// <p>The database in which the query execution occurred.</p>
     pub fn set_query_execution_context(
         mut self,
-        input: std::option::Option<crate::types::QueryExecutionContext>,
+        input: ::std::option::Option<crate::types::QueryExecutionContext>,
     ) -> Self {
         self.query_execution_context = input;
         self
     }
     /// <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
     pub fn status(mut self, input: crate::types::QueryExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::QueryExecutionStatus>,
+        input: ::std::option::Option<crate::types::QueryExecutionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Query execution statistics, such as the amount of data scanned, the amount of time that the query took to process, and the type of statement that was run.</p>
     pub fn statistics(mut self, input: crate::types::QueryExecutionStatistics) -> Self {
-        self.statistics = Some(input);
+        self.statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Query execution statistics, such as the amount of data scanned, the amount of time that the query took to process, and the type of statement that was run.</p>
     pub fn set_statistics(
         mut self,
-        input: std::option::Option<crate::types::QueryExecutionStatistics>,
+        input: ::std::option::Option<crate::types::QueryExecutionStatistics>,
     ) -> Self {
         self.statistics = input;
         self
     }
     /// <p>The name of the workgroup in which the query ran.</p>
-    pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.work_group = Some(input.into());
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.work_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup in which the query ran.</p>
-    pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
     }
     /// <p>The engine version that executed the query.</p>
     pub fn engine_version(mut self, input: crate::types::EngineVersion) -> Self {
-        self.engine_version = Some(input);
+        self.engine_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The engine version that executed the query.</p>
     pub fn set_engine_version(
         mut self,
-        input: std::option::Option<crate::types::EngineVersion>,
+        input: ::std::option::Option<crate::types::EngineVersion>,
     ) -> Self {
         self.engine_version = input;
         self
@@ -253,29 +260,35 @@ impl QueryExecutionBuilder {
     /// To override the contents of this collection use [`set_execution_parameters`](Self::set_execution_parameters).
     ///
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    pub fn execution_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.execution_parameters.unwrap_or_default();
         v.push(input.into());
-        self.execution_parameters = Some(v);
+        self.execution_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
     pub fn set_execution_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.execution_parameters = input;
         self
     }
     /// <p>The kind of query statement that was run.</p>
-    pub fn substatement_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.substatement_type = Some(input.into());
+    pub fn substatement_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.substatement_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The kind of query statement that was run.</p>
     pub fn set_substatement_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.substatement_type = input;
         self

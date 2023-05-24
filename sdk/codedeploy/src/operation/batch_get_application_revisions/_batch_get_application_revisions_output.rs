@@ -2,34 +2,34 @@
 
 /// <p>Represents the output of a <code>BatchGetApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsOutput {
     /// <p>The name of the application that corresponds to the revisions.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about errors that might have occurred during the API call.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the revisions, including the type and location.</p>
     #[doc(hidden)]
-    pub revisions: std::option::Option<std::vec::Vec<crate::types::RevisionInfo>>,
+    pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>>,
     _request_id: Option<String>,
 }
 impl BatchGetApplicationRevisionsOutput {
     /// <p>The name of the application that corresponds to the revisions.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>Additional information about the revisions, including the type and location.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::types::RevisionInfo]> {
+    pub fn revisions(&self) -> ::std::option::Option<&[crate::types::RevisionInfo]> {
         self.revisions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchGetApplicationRevisionsOutput {
+impl ::aws_http::request_id::RequestId for BatchGetApplicationRevisionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,31 +43,45 @@ impl BatchGetApplicationRevisionsOutput {
 
 /// A builder for [`BatchGetApplicationRevisionsOutput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetApplicationRevisionsOutputBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) revisions: std::option::Option<std::vec::Vec<crate::types::RevisionInfo>>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>>,
     _request_id: Option<String>,
 }
 impl BatchGetApplicationRevisionsOutputBuilder {
     /// <p>The name of the application that corresponds to the revisions.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application that corresponds to the revisions.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
@@ -79,13 +93,13 @@ impl BatchGetApplicationRevisionsOutputBuilder {
     pub fn revisions(mut self, input: crate::types::RevisionInfo) -> Self {
         let mut v = self.revisions.unwrap_or_default();
         v.push(input);
-        self.revisions = Some(v);
+        self.revisions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional information about the revisions, including the type and location.</p>
     pub fn set_revisions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RevisionInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionInfo>>,
     ) -> Self {
         self.revisions = input;
         self

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_ids(Vec<String>)`](crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::set_instance_ids): <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
+    ///   - [`auto_scaling_group_name(impl ::std::convert::Into<String>)`](crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::attach_instances::builders::AttachInstancesFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     /// - On success, responds with [`AttachInstancesOutput`](crate::operation::attach_instances::AttachInstancesOutput)
     /// - On failure, responds with [`SdkError<AttachInstancesError>`](crate::operation::attach_instances::AttachInstancesError)
     pub fn attach_instances(

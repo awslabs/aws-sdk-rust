@@ -2,15 +2,15 @@
 
 /// <p>Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes to every object to the underlying <code>PutObjectLegalHold</code> API operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SetObjectLegalHoldOperation {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     #[doc(hidden)]
-    pub legal_hold: std::option::Option<crate::types::S3ObjectLockLegalHold>,
+    pub legal_hold: ::std::option::Option<crate::types::S3ObjectLockLegalHold>,
 }
 impl S3SetObjectLegalHoldOperation {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-    pub fn legal_hold(&self) -> std::option::Option<&crate::types::S3ObjectLockLegalHold> {
+    pub fn legal_hold(&self) -> ::std::option::Option<&crate::types::S3ObjectLockLegalHold> {
         self.legal_hold.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl S3SetObjectLegalHoldOperation {
 
 /// A builder for [`S3SetObjectLegalHoldOperation`](crate::types::S3SetObjectLegalHoldOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3SetObjectLegalHoldOperationBuilder {
-    pub(crate) legal_hold: std::option::Option<crate::types::S3ObjectLockLegalHold>,
+    pub(crate) legal_hold: ::std::option::Option<crate::types::S3ObjectLockLegalHold>,
 }
 impl S3SetObjectLegalHoldOperationBuilder {
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     pub fn legal_hold(mut self, input: crate::types::S3ObjectLockLegalHold) -> Self {
-        self.legal_hold = Some(input);
+        self.legal_hold = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     pub fn set_legal_hold(
         mut self,
-        input: std::option::Option<crate::types::S3ObjectLockLegalHold>,
+        input: ::std::option::Option<crate::types::S3ObjectLockLegalHold>,
     ) -> Self {
         self.legal_hold = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Represents the request to create the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserImportJobInput {
     /// <p>The job name for the user import job.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
+    pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserImportJobInput {
     /// <p>The job name for the user import job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
 }
@@ -39,42 +39,47 @@ impl CreateUserImportJobInput {
 
 /// A builder for [`CreateUserImportJobInput`](crate::operation::create_user_import_job::CreateUserImportJobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateUserImportJobInputBuilder {
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserImportJobInputBuilder {
     /// <p>The job name for the user import job.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job name for the user import job.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
-    pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_logs_role_arn = Some(input.into());
+    pub fn cloud_watch_logs_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import job.</p>
     pub fn set_cloud_watch_logs_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_logs_role_arn = input;
         self
@@ -82,11 +87,11 @@ impl CreateUserImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserImportJobInput`](crate::operation::create_user_import_job::CreateUserImportJobInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_user_import_job::CreateUserImportJobInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_user_import_job::CreateUserImportJobInput {
                 job_name: self.job_name,
                 user_pool_id: self.user_pool_id,

@@ -3,22 +3,22 @@
 /// <p>If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run that is used as the baseline for screenshots, and the coordinates of any parts of those screenshots that are ignored during visual monitoring comparison.</p>
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualReferenceOutput {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
     #[doc(hidden)]
-    pub base_screenshots: std::option::Option<std::vec::Vec<crate::types::BaseScreenshot>>,
+    pub base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
     #[doc(hidden)]
-    pub base_canary_run_id: std::option::Option<std::string::String>,
+    pub base_canary_run_id: ::std::option::Option<::std::string::String>,
 }
 impl VisualReferenceOutput {
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
-    pub fn base_screenshots(&self) -> std::option::Option<&[crate::types::BaseScreenshot]> {
+    pub fn base_screenshots(&self) -> ::std::option::Option<&[crate::types::BaseScreenshot]> {
         self.base_screenshots.as_deref()
     }
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
-    pub fn base_canary_run_id(&self) -> std::option::Option<&str> {
+    pub fn base_canary_run_id(&self) -> ::std::option::Option<&str> {
         self.base_canary_run_id.as_deref()
     }
 }
@@ -31,10 +31,13 @@ impl VisualReferenceOutput {
 
 /// A builder for [`VisualReferenceOutput`](crate::types::VisualReferenceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VisualReferenceOutputBuilder {
-    pub(crate) base_screenshots: std::option::Option<std::vec::Vec<crate::types::BaseScreenshot>>,
-    pub(crate) base_canary_run_id: std::option::Option<std::string::String>,
+    pub(crate) base_screenshots:
+        ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
+    pub(crate) base_canary_run_id: ::std::option::Option<::std::string::String>,
 }
 impl VisualReferenceOutputBuilder {
     /// Appends an item to `base_screenshots`.
@@ -45,26 +48,29 @@ impl VisualReferenceOutputBuilder {
     pub fn base_screenshots(mut self, input: crate::types::BaseScreenshot) -> Self {
         let mut v = self.base_screenshots.unwrap_or_default();
         v.push(input);
-        self.base_screenshots = Some(v);
+        self.base_screenshots = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of screenshots that are used as the baseline for comparisons during visual monitoring.</p>
     pub fn set_base_screenshots(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BaseScreenshot>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     ) -> Self {
         self.base_screenshots = input;
         self
     }
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
-    pub fn base_canary_run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.base_canary_run_id = Some(input.into());
+    pub fn base_canary_run_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.base_canary_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the canary run that produced the baseline screenshots that are used for visual monitoring comparisons by this canary.</p>
     pub fn set_base_canary_run_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.base_canary_run_id = input;
         self

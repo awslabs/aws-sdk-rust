@@ -2,48 +2,49 @@
 
 /// <p>The inventory result item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryResultItem {
     /// <p>The name of the inventory result item type.</p>
     #[doc(hidden)]
-    pub type_name: std::option::Option<std::string::String>,
+    pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema version for the inventory result item/</p>
     #[doc(hidden)]
-    pub schema_version: std::option::Option<std::string::String>,
+    pub schema_version: ::std::option::Option<::std::string::String>,
     /// <p>The time inventory item data was captured.</p>
     #[doc(hidden)]
-    pub capture_time: std::option::Option<std::string::String>,
+    pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
     #[doc(hidden)]
-    pub content_hash: std::option::Option<std::string::String>,
+    pub content_hash: ::std::option::Option<::std::string::String>,
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     #[doc(hidden)]
-    pub content: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub content: ::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
 }
 impl InventoryResultItem {
     /// <p>The name of the inventory result item type.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>The schema version for the inventory result item/</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> ::std::option::Option<&str> {
         self.schema_version.as_deref()
     }
     /// <p>The time inventory item data was captured.</p>
-    pub fn capture_time(&self) -> std::option::Option<&str> {
+    pub fn capture_time(&self) -> ::std::option::Option<&str> {
         self.capture_time.as_deref()
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
-    pub fn content_hash(&self) -> std::option::Option<&str> {
+    pub fn content_hash(&self) -> ::std::option::Option<&str> {
         self.content_hash.as_deref()
     }
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     pub fn content(
         &self,
-    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
-    {
+    ) -> ::std::option::Option<
+        &[::std::collections::HashMap<::std::string::String, ::std::string::String>],
+    > {
         self.content.as_deref()
     }
 }
@@ -56,54 +57,62 @@ impl InventoryResultItem {
 
 /// A builder for [`InventoryResultItem`](crate::types::InventoryResultItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InventoryResultItemBuilder {
-    pub(crate) type_name: std::option::Option<std::string::String>,
-    pub(crate) schema_version: std::option::Option<std::string::String>,
-    pub(crate) capture_time: std::option::Option<std::string::String>,
-    pub(crate) content_hash: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_version: ::std::option::Option<::std::string::String>,
+    pub(crate) capture_time: ::std::option::Option<::std::string::String>,
+    pub(crate) content_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
 }
 impl InventoryResultItemBuilder {
     /// <p>The name of the inventory result item type.</p>
-    pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.type_name = Some(input.into());
+    pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the inventory result item type.</p>
-    pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }
     /// <p>The schema version for the inventory result item/</p>
-    pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_version = Some(input.into());
+    pub fn schema_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema version for the inventory result item/</p>
-    pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.schema_version = input;
         self
     }
     /// <p>The time inventory item data was captured.</p>
-    pub fn capture_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capture_time = Some(input.into());
+    pub fn capture_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.capture_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time inventory item data was captured.</p>
-    pub fn set_capture_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_capture_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capture_time = input;
         self
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
-    pub fn content_hash(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_hash = Some(input.into());
+    pub fn content_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API doesn't update the inventory item type contents if the MD5 hash hasn't changed since last update. </p>
-    pub fn set_content_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_hash = input;
         self
     }
@@ -114,18 +123,20 @@ impl InventoryResultItemBuilder {
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     pub fn content(
         mut self,
-        input: std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     ) -> Self {
         let mut v = self.content.unwrap_or_default();
         v.push(input);
-        self.content = Some(v);
+        self.content = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains all the inventory data of the item type. Results include attribute names and values. </p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<
+                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.content = input;

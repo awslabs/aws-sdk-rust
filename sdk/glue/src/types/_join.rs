@@ -2,36 +2,36 @@
 
 /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Join {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the type of join to be performed on the datasets.</p>
     #[doc(hidden)]
-    pub join_type: std::option::Option<crate::types::JoinType>,
+    pub join_type: ::std::option::Option<crate::types::JoinType>,
     /// <p>A list of the two columns to be joined.</p>
     #[doc(hidden)]
-    pub columns: std::option::Option<std::vec::Vec<crate::types::JoinColumn>>,
+    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::JoinColumn>>,
 }
 impl Join {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
-    pub fn join_type(&self) -> std::option::Option<&crate::types::JoinType> {
+    pub fn join_type(&self) -> ::std::option::Option<&crate::types::JoinType> {
         self.join_type.as_ref()
     }
     /// <p>A list of the two columns to be joined.</p>
-    pub fn columns(&self) -> std::option::Option<&[crate::types::JoinColumn]> {
+    pub fn columns(&self) -> ::std::option::Option<&[crate::types::JoinColumn]> {
         self.columns.as_deref()
     }
 }
@@ -44,21 +44,23 @@ impl Join {
 
 /// A builder for [`Join`](crate::types::Join).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JoinBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) join_type: std::option::Option<crate::types::JoinType>,
-    pub(crate) columns: std::option::Option<std::vec::Vec<crate::types::JoinColumn>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) join_type: ::std::option::Option<crate::types::JoinType>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::JoinColumn>>,
 }
 impl JoinBuilder {
     /// <p>The name of the transform node.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transform node.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -67,27 +69,27 @@ impl JoinBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input.into());
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data inputs identified by their node names.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inputs = input;
         self
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
     pub fn join_type(mut self, input: crate::types::JoinType) -> Self {
-        self.join_type = Some(input);
+        self.join_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the type of join to be performed on the datasets.</p>
-    pub fn set_join_type(mut self, input: std::option::Option<crate::types::JoinType>) -> Self {
+    pub fn set_join_type(mut self, input: ::std::option::Option<crate::types::JoinType>) -> Self {
         self.join_type = input;
         self
     }
@@ -99,13 +101,13 @@ impl JoinBuilder {
     pub fn columns(mut self, input: crate::types::JoinColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
         v.push(input);
-        self.columns = Some(v);
+        self.columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the two columns to be joined.</p>
     pub fn set_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JoinColumn>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::JoinColumn>>,
     ) -> Self {
         self.columns = input;
         self

@@ -2,49 +2,51 @@
 
 /// <p>Information about a launch configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchConfig {
     /// <p>The package name.</p>
     #[doc(hidden)]
-    pub package_name: std::option::Option<std::string::String>,
+    pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The launch file name.</p>
     #[doc(hidden)]
-    pub launch_file: std::option::Option<std::string::String>,
+    pub launch_file: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables for the application launch.</p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The port forwarding configuration.</p>
     #[doc(hidden)]
-    pub port_forwarding_config: std::option::Option<crate::types::PortForwardingConfig>,
+    pub port_forwarding_config: ::std::option::Option<crate::types::PortForwardingConfig>,
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
     #[doc(hidden)]
     pub stream_ui: bool,
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchConfig {
     /// <p>The package name.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
     /// <p>The launch file name.</p>
-    pub fn launch_file(&self) -> std::option::Option<&str> {
+    pub fn launch_file(&self) -> ::std::option::Option<&str> {
         self.launch_file.as_deref()
     }
     /// <p>The environment variables for the application launch.</p>
     pub fn environment_variables(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.environment_variables.as_ref()
     }
     /// <p>The port forwarding configuration.</p>
     pub fn port_forwarding_config(
         &self,
-    ) -> std::option::Option<&crate::types::PortForwardingConfig> {
+    ) -> ::std::option::Option<&crate::types::PortForwardingConfig> {
         self.port_forwarding_config.as_ref()
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
@@ -53,7 +55,7 @@ impl LaunchConfig {
     }
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.command.as_deref()
     }
 }
@@ -66,34 +68,37 @@ impl LaunchConfig {
 
 /// A builder for [`LaunchConfig`](crate::types::LaunchConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchConfigBuilder {
-    pub(crate) package_name: std::option::Option<std::string::String>,
-    pub(crate) launch_file: std::option::Option<std::string::String>,
-    pub(crate) environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) port_forwarding_config: std::option::Option<crate::types::PortForwardingConfig>,
-    pub(crate) stream_ui: std::option::Option<bool>,
-    pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) package_name: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_file: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) port_forwarding_config: ::std::option::Option<crate::types::PortForwardingConfig>,
+    pub(crate) stream_ui: ::std::option::Option<bool>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchConfigBuilder {
     /// <p>The package name.</p>
-    pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_name = Some(input.into());
+    pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package name.</p>
-    pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
     /// <p>The launch file name.</p>
-    pub fn launch_file(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_file = Some(input.into());
+    pub fn launch_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.launch_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The launch file name.</p>
-    pub fn set_launch_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_file = input;
         self
     }
@@ -104,19 +109,19 @@ impl LaunchConfigBuilder {
     /// <p>The environment variables for the application launch.</p>
     pub fn environment_variables(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.environment_variables = Some(hash_map);
+        self.environment_variables = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The environment variables for the application launch.</p>
     pub fn set_environment_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.environment_variables = input;
@@ -124,24 +129,24 @@ impl LaunchConfigBuilder {
     }
     /// <p>The port forwarding configuration.</p>
     pub fn port_forwarding_config(mut self, input: crate::types::PortForwardingConfig) -> Self {
-        self.port_forwarding_config = Some(input);
+        self.port_forwarding_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port forwarding configuration.</p>
     pub fn set_port_forwarding_config(
         mut self,
-        input: std::option::Option<crate::types::PortForwardingConfig>,
+        input: ::std::option::Option<crate::types::PortForwardingConfig>,
     ) -> Self {
         self.port_forwarding_config = input;
         self
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
     pub fn stream_ui(mut self, input: bool) -> Self {
-        self.stream_ui = Some(input);
+        self.stream_ui = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as it is running in the simulation. You must configure and launch the component. It must have a graphical user interface. </p>
-    pub fn set_stream_ui(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_stream_ui(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stream_ui = input;
         self
     }
@@ -151,17 +156,17 @@ impl LaunchConfigBuilder {
     ///
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
         v.push(input.into());
-        self.command = Some(v);
+        self.command = ::std::option::Option::Some(v);
         self
     }
     /// <p>If you've specified <code>General</code> as the value for your <code>RobotSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     /// <p>If you've specified <code>SimulationRuntime</code> as the value for your <code>SimulationSoftwareSuite</code>, you can use this field to specify a list of commands for your container image.</p>
     pub fn set_command(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.command = input;
         self

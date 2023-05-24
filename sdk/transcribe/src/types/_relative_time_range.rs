@@ -5,36 +5,36 @@
 /// <p>You can use also <code>First</code> to search from the start of the media file until the time that you specify. Or use <code>Last</code> to search from the time that you specify until the end of the media file. For example, setting <code>First</code> to 10 only searches for your specified criteria in the audio contained in the first 10 percent of the media file.</p>
 /// <p>If you prefer to use milliseconds instead of percentage, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelativeTimeRange {
     /// <p>The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file. If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.</p>
     #[doc(hidden)]
-    pub start_percentage: std::option::Option<i32>,
+    pub start_percentage: ::std::option::Option<i32>,
     /// <p>The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.</p>
     #[doc(hidden)]
-    pub end_percentage: std::option::Option<i32>,
+    pub end_percentage: ::std::option::Option<i32>,
     /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     #[doc(hidden)]
-    pub first: std::option::Option<i32>,
+    pub first: ::std::option::Option<i32>,
     /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     #[doc(hidden)]
-    pub last: std::option::Option<i32>,
+    pub last: ::std::option::Option<i32>,
 }
 impl RelativeTimeRange {
     /// <p>The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file. If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.</p>
-    pub fn start_percentage(&self) -> std::option::Option<i32> {
+    pub fn start_percentage(&self) -> ::std::option::Option<i32> {
         self.start_percentage
     }
     /// <p>The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.</p>
-    pub fn end_percentage(&self) -> std::option::Option<i32> {
+    pub fn end_percentage(&self) -> ::std::option::Option<i32> {
         self.end_percentage
     }
     /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    pub fn first(&self) -> std::option::Option<i32> {
+    pub fn first(&self) -> ::std::option::Option<i32> {
         self.first
     }
     /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    pub fn last(&self) -> std::option::Option<i32> {
+    pub fn last(&self) -> ::std::option::Option<i32> {
         self.last
     }
 }
@@ -47,51 +47,53 @@ impl RelativeTimeRange {
 
 /// A builder for [`RelativeTimeRange`](crate::types::RelativeTimeRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelativeTimeRangeBuilder {
-    pub(crate) start_percentage: std::option::Option<i32>,
-    pub(crate) end_percentage: std::option::Option<i32>,
-    pub(crate) first: std::option::Option<i32>,
-    pub(crate) last: std::option::Option<i32>,
+    pub(crate) start_percentage: ::std::option::Option<i32>,
+    pub(crate) end_percentage: ::std::option::Option<i32>,
+    pub(crate) first: ::std::option::Option<i32>,
+    pub(crate) last: ::std::option::Option<i32>,
 }
 impl RelativeTimeRangeBuilder {
     /// <p>The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file. If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.</p>
     pub fn start_percentage(mut self, input: i32) -> Self {
-        self.start_percentage = Some(input);
+        self.start_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in percentage, when Amazon Transcribe starts searching for the specified criteria in your media file. If you include <code>StartPercentage</code> in your request, you must also include <code>EndPercentage</code>.</p>
-    pub fn set_start_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_percentage = input;
         self
     }
     /// <p>The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.</p>
     pub fn end_percentage(mut self, input: i32) -> Self {
-        self.end_percentage = Some(input);
+        self.end_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in percentage, when Amazon Transcribe stops searching for the specified criteria in your media file. If you include <code>EndPercentage</code> in your request, you must also include <code>StartPercentage</code>.</p>
-    pub fn set_end_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_percentage = input;
         self
     }
     /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn first(mut self, input: i32) -> Self {
-        self.first = Some(input);
+        self.first = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    pub fn set_first(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_first(mut self, input: ::std::option::Option<i32>) -> Self {
         self.first = input;
         self
     }
     /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn last(mut self, input: i32) -> Self {
-        self.last = Some(input);
+        self.last = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    pub fn set_last(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_last(mut self, input: ::std::option::Option<i32>) -> Self {
         self.last = input;
         self
     }

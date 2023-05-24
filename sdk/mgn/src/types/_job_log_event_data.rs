@@ -2,36 +2,36 @@
 
 /// <p>Job log data</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobLogEventData {
     /// <p>Job Event Source Server ID.</p>
     #[doc(hidden)]
-    pub source_server_id: std::option::Option<std::string::String>,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Job Event conversion Server ID.</p>
     #[doc(hidden)]
-    pub conversion_server_id: std::option::Option<std::string::String>,
+    pub conversion_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Job Event Target instance ID.</p>
     #[doc(hidden)]
-    pub target_instance_id: std::option::Option<std::string::String>,
+    pub target_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Job error.</p>
     #[doc(hidden)]
-    pub raw_error: std::option::Option<std::string::String>,
+    pub raw_error: ::std::option::Option<::std::string::String>,
 }
 impl JobLogEventData {
     /// <p>Job Event Source Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
     /// <p>Job Event conversion Server ID.</p>
-    pub fn conversion_server_id(&self) -> std::option::Option<&str> {
+    pub fn conversion_server_id(&self) -> ::std::option::Option<&str> {
         self.conversion_server_id.as_deref()
     }
     /// <p>Job Event Target instance ID.</p>
-    pub fn target_instance_id(&self) -> std::option::Option<&str> {
+    pub fn target_instance_id(&self) -> ::std::option::Option<&str> {
         self.target_instance_id.as_deref()
     }
     /// <p>Job error.</p>
-    pub fn raw_error(&self) -> std::option::Option<&str> {
+    pub fn raw_error(&self) -> ::std::option::Option<&str> {
         self.raw_error.as_deref()
     }
 }
@@ -44,57 +44,71 @@ impl JobLogEventData {
 
 /// A builder for [`JobLogEventData`](crate::types::JobLogEventData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobLogEventDataBuilder {
-    pub(crate) source_server_id: std::option::Option<std::string::String>,
-    pub(crate) conversion_server_id: std::option::Option<std::string::String>,
-    pub(crate) target_instance_id: std::option::Option<std::string::String>,
-    pub(crate) raw_error: std::option::Option<std::string::String>,
+    pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) conversion_server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) raw_error: ::std::option::Option<::std::string::String>,
 }
 impl JobLogEventDataBuilder {
     /// <p>Job Event Source Server ID.</p>
-    pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_server_id = Some(input.into());
+    pub fn source_server_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Job Event Source Server ID.</p>
-    pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_server_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_server_id = input;
         self
     }
     /// <p>Job Event conversion Server ID.</p>
-    pub fn conversion_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.conversion_server_id = Some(input.into());
+    pub fn conversion_server_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.conversion_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Job Event conversion Server ID.</p>
     pub fn set_conversion_server_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.conversion_server_id = input;
         self
     }
     /// <p>Job Event Target instance ID.</p>
-    pub fn target_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_instance_id = Some(input.into());
+    pub fn target_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Job Event Target instance ID.</p>
     pub fn set_target_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_instance_id = input;
         self
     }
     /// <p>Job error.</p>
-    pub fn raw_error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raw_error = Some(input.into());
+    pub fn raw_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.raw_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Job error.</p>
-    pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_raw_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_error = input;
         self
     }

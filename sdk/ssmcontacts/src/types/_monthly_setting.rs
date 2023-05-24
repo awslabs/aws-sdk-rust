@@ -2,22 +2,22 @@
 
 /// <p>Information about on-call rotations that recur monthly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonthlySetting {
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
     #[doc(hidden)]
-    pub day_of_month: std::option::Option<i32>,
+    pub day_of_month: ::std::option::Option<i32>,
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
     #[doc(hidden)]
-    pub hand_off_time: std::option::Option<crate::types::HandOffTime>,
+    pub hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
 }
 impl MonthlySetting {
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
-    pub fn day_of_month(&self) -> std::option::Option<i32> {
+    pub fn day_of_month(&self) -> ::std::option::Option<i32> {
         self.day_of_month
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-    pub fn hand_off_time(&self) -> std::option::Option<&crate::types::HandOffTime> {
+    pub fn hand_off_time(&self) -> ::std::option::Option<&crate::types::HandOffTime> {
         self.hand_off_time.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl MonthlySetting {
 
 /// A builder for [`MonthlySetting`](crate::types::MonthlySetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonthlySettingBuilder {
-    pub(crate) day_of_month: std::option::Option<i32>,
-    pub(crate) hand_off_time: std::option::Option<crate::types::HandOffTime>,
+    pub(crate) day_of_month: ::std::option::Option<i32>,
+    pub(crate) hand_off_time: ::std::option::Option<crate::types::HandOffTime>,
 }
 impl MonthlySettingBuilder {
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
-        self.day_of_month = Some(input);
+        self.day_of_month = ::std::option::Option::Some(input);
         self
     }
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
-    pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_month = input;
         self
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
     pub fn hand_off_time(mut self, input: crate::types::HandOffTime) -> Self {
-        self.hand_off_time = Some(input);
+        self.hand_off_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
     pub fn set_hand_off_time(
         mut self,
-        input: std::option::Option<crate::types::HandOffTime>,
+        input: ::std::option::Option<crate::types::HandOffTime>,
     ) -> Self {
         self.hand_off_time = input;
         self

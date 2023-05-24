@@ -39,13 +39,13 @@
 /// Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InputTimecodeSource {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum InputTimecodeSource {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InputTimecodeSource {
+impl ::std::convert::From<&str> for InputTimecodeSource {
     fn from(s: &str) -> Self {
         match s {
             "EMBEDDED" => InputTimecodeSource::Embedded,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for InputTimecodeSource {
         }
     }
 }
-impl std::str::FromStr for InputTimecodeSource {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InputTimecodeSource {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InputTimecodeSource::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InputTimecodeSource::from(s))
     }
 }
 impl InputTimecodeSource {
@@ -91,7 +91,7 @@ impl InputTimecodeSource {
         &["EMBEDDED", "SPECIFIEDSTART", "ZEROBASED"]
     }
 }
-impl AsRef<str> for InputTimecodeSource {
+impl ::std::convert::AsRef<str> for InputTimecodeSource {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,22 +2,22 @@
 
 /// <p> Provides information about the IP address type in response to <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIpAddress {
     /// <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>. </p>
     #[doc(hidden)]
-    pub ip_id: std::option::Option<std::string::String>,
+    pub ip_id: ::std::option::Option<::std::string::String>,
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
     #[doc(hidden)]
-    pub ipv6: std::option::Option<std::string::String>,
+    pub ipv6: ::std::option::Option<::std::string::String>,
 }
 impl UpdateIpAddress {
     /// <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>. </p>
-    pub fn ip_id(&self) -> std::option::Option<&str> {
+    pub fn ip_id(&self) -> ::std::option::Option<&str> {
         self.ip_id.as_deref()
     }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
-    pub fn ipv6(&self) -> std::option::Option<&str> {
+    pub fn ipv6(&self) -> ::std::option::Option<&str> {
         self.ipv6.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl UpdateIpAddress {
 
 /// A builder for [`UpdateIpAddress`](crate::types::UpdateIpAddress).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateIpAddressBuilder {
-    pub(crate) ip_id: std::option::Option<std::string::String>,
-    pub(crate) ipv6: std::option::Option<std::string::String>,
+    pub(crate) ip_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6: ::std::option::Option<::std::string::String>,
 }
 impl UpdateIpAddressBuilder {
     /// <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>. </p>
-    pub fn ip_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_id = Some(input.into());
+    pub fn ip_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the IP address, specified by the <code>ResolverEndpointId</code>. </p>
-    pub fn set_ip_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_id = input;
         self
     }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
-    pub fn ipv6(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipv6 = Some(input.into());
+    pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The IPv6 address that you want to use for DNS queries. </p>
-    pub fn set_ipv6(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>The dataset used for training.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
     #[doc(hidden)]
-    pub assets: std::option::Option<std::vec::Vec<crate::types::Asset>>,
+    pub assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
 }
 impl TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
-    pub fn assets(&self) -> std::option::Option<&[crate::types::Asset]> {
+    pub fn assets(&self) -> ::std::option::Option<&[crate::types::Asset]> {
         self.assets.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl TrainingData {
 
 /// A builder for [`TrainingData`](crate::types::TrainingData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrainingDataBuilder {
-    pub(crate) assets: std::option::Option<std::vec::Vec<crate::types::Asset>>,
+    pub(crate) assets: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
 }
 impl TrainingDataBuilder {
     /// Appends an item to `assets`.
@@ -36,13 +38,13 @@ impl TrainingDataBuilder {
     pub fn assets(mut self, input: crate::types::Asset) -> Self {
         let mut v = self.assets.unwrap_or_default();
         v.push(input);
-        self.assets = Some(v);
+        self.assets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
     pub fn set_assets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Asset>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Asset>>,
     ) -> Self {
         self.assets = input;
         self

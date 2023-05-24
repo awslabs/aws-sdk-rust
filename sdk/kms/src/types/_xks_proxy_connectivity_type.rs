@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum XksProxyConnectivityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum XksProxyConnectivityType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for XksProxyConnectivityType {
+impl ::std::convert::From<&str> for XksProxyConnectivityType {
     fn from(s: &str) -> Self {
         match s {
             "PUBLIC_ENDPOINT" => XksProxyConnectivityType::PublicEndpoint,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for XksProxyConnectivityType {
         }
     }
 }
-impl std::str::FromStr for XksProxyConnectivityType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for XksProxyConnectivityType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XksProxyConnectivityType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(XksProxyConnectivityType::from(s))
     }
 }
 impl XksProxyConnectivityType {
@@ -86,7 +86,7 @@ impl XksProxyConnectivityType {
         &["PUBLIC_ENDPOINT", "VPC_ENDPOINT_SERVICE"]
     }
 }
-impl AsRef<str> for XksProxyConnectivityType {
+impl ::std::convert::AsRef<str> for XksProxyConnectivityType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

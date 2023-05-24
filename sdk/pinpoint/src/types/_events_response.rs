@@ -2,20 +2,20 @@
 
 /// <p>Provides information about endpoints and the events that they're associated with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventsResponse {
     /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
     #[doc(hidden)]
-    pub results: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ItemResponse>,
+    pub results: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ItemResponse>,
     >,
 }
 impl EventsResponse {
     /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
     pub fn results(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::ItemResponse>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::ItemResponse>,
     > {
         self.results.as_ref()
     }
@@ -29,10 +29,12 @@ impl EventsResponse {
 
 /// A builder for [`EventsResponse`](crate::types::EventsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventsResponseBuilder {
-    pub(crate) results: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ItemResponse>,
+    pub(crate) results: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ItemResponse>,
     >,
 }
 impl EventsResponseBuilder {
@@ -43,19 +45,19 @@ impl EventsResponseBuilder {
     /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
     pub fn results(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ItemResponse,
     ) -> Self {
         let mut hash_map = self.results.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.results = Some(hash_map);
+        self.results = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
     pub fn set_results(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ItemResponse>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ItemResponse>,
         >,
     ) -> Self {
         self.results = input;

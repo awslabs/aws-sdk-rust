@@ -2,29 +2,29 @@
 
 /// <p>The receipt for the message delivered to the recipient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Receipt {
     /// <p>The time when the message was delivered to the recipient.</p>
     #[doc(hidden)]
-    pub delivered_timestamp: std::option::Option<std::string::String>,
+    pub delivered_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The time when the message was read by the recipient.</p>
     #[doc(hidden)]
-    pub read_timestamp: std::option::Option<std::string::String>,
+    pub read_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the recipient of the message. </p>
     #[doc(hidden)]
-    pub recipient_participant_id: std::option::Option<std::string::String>,
+    pub recipient_participant_id: ::std::option::Option<::std::string::String>,
 }
 impl Receipt {
     /// <p>The time when the message was delivered to the recipient.</p>
-    pub fn delivered_timestamp(&self) -> std::option::Option<&str> {
+    pub fn delivered_timestamp(&self) -> ::std::option::Option<&str> {
         self.delivered_timestamp.as_deref()
     }
     /// <p>The time when the message was read by the recipient.</p>
-    pub fn read_timestamp(&self) -> std::option::Option<&str> {
+    pub fn read_timestamp(&self) -> ::std::option::Option<&str> {
         self.read_timestamp.as_deref()
     }
     /// <p>The identifier of the recipient of the message. </p>
-    pub fn recipient_participant_id(&self) -> std::option::Option<&str> {
+    pub fn recipient_participant_id(&self) -> ::std::option::Option<&str> {
         self.recipient_participant_id.as_deref()
     }
 }
@@ -37,45 +37,59 @@ impl Receipt {
 
 /// A builder for [`Receipt`](crate::types::Receipt).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReceiptBuilder {
-    pub(crate) delivered_timestamp: std::option::Option<std::string::String>,
-    pub(crate) read_timestamp: std::option::Option<std::string::String>,
-    pub(crate) recipient_participant_id: std::option::Option<std::string::String>,
+    pub(crate) delivered_timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) read_timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) recipient_participant_id: ::std::option::Option<::std::string::String>,
 }
 impl ReceiptBuilder {
     /// <p>The time when the message was delivered to the recipient.</p>
-    pub fn delivered_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delivered_timestamp = Some(input.into());
+    pub fn delivered_timestamp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delivered_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the message was delivered to the recipient.</p>
     pub fn set_delivered_timestamp(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.delivered_timestamp = input;
         self
     }
     /// <p>The time when the message was read by the recipient.</p>
-    pub fn read_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.read_timestamp = Some(input.into());
+    pub fn read_timestamp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.read_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the message was read by the recipient.</p>
-    pub fn set_read_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_read_timestamp(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.read_timestamp = input;
         self
     }
     /// <p>The identifier of the recipient of the message. </p>
-    pub fn recipient_participant_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recipient_participant_id = Some(input.into());
+    pub fn recipient_participant_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recipient_participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the recipient of the message. </p>
     pub fn set_recipient_participant_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recipient_participant_id = input;
         self

@@ -2,54 +2,56 @@
 
 /// A new MediaPackage VOD Asset configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssetInput {
     /// The unique identifier for the Asset.
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// The ID of the PackagingGroup for the Asset.
     #[doc(hidden)]
-    pub packaging_group_id: std::option::Option<std::string::String>,
+    pub packaging_group_id: ::std::option::Option<::std::string::String>,
     /// The resource ID to include in SPEKE key requests.
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// ARN of the source object in S3.
     #[doc(hidden)]
-    pub source_arn: std::option::Option<std::string::String>,
+    pub source_arn: ::std::option::Option<::std::string::String>,
     /// The IAM role ARN used to access the source S3 bucket.
     #[doc(hidden)]
-    pub source_role_arn: std::option::Option<std::string::String>,
+    pub source_role_arn: ::std::option::Option<::std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateAssetInput {
     /// The unique identifier for the Asset.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// The ID of the PackagingGroup for the Asset.
-    pub fn packaging_group_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_group_id(&self) -> ::std::option::Option<&str> {
         self.packaging_group_id.as_deref()
     }
     /// The resource ID to include in SPEKE key requests.
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// ARN of the source object in S3.
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
     /// The IAM role ARN used to access the source S3 bucket.
-    pub fn source_role_arn(&self) -> std::option::Option<&str> {
+    pub fn source_role_arn(&self) -> ::std::option::Option<&str> {
         self.source_role_arn.as_deref()
     }
     /// A collection of tags associated with a resource
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -62,67 +64,79 @@ impl CreateAssetInput {
 
 /// A builder for [`CreateAssetInput`](crate::operation::create_asset::CreateAssetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateAssetInputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) packaging_group_id: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) source_arn: std::option::Option<std::string::String>,
-    pub(crate) source_role_arn: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) packaging_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateAssetInputBuilder {
     /// The unique identifier for the Asset.
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique identifier for the Asset.
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// The ID of the PackagingGroup for the Asset.
-    pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.packaging_group_id = Some(input.into());
+    pub fn packaging_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.packaging_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the PackagingGroup for the Asset.
     pub fn set_packaging_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.packaging_group_id = input;
         self
     }
     /// The resource ID to include in SPEKE key requests.
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The resource ID to include in SPEKE key requests.
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// ARN of the source object in S3.
-    pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_arn = Some(input.into());
+    pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// ARN of the source object in S3.
-    pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
     }
     /// The IAM role ARN used to access the source S3 bucket.
-    pub fn source_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_role_arn = Some(input.into());
+    pub fn source_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The IAM role ARN used to access the source S3 bucket.
-    pub fn set_source_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_role_arn = input;
         self
     }
@@ -133,19 +147,19 @@ impl CreateAssetInputBuilder {
     /// A collection of tags associated with a resource
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of tags associated with a resource
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -154,11 +168,11 @@ impl CreateAssetInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssetInput`](crate::operation::create_asset::CreateAssetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_asset::CreateAssetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_asset::CreateAssetInput {
+        ::std::result::Result::Ok(crate::operation::create_asset::CreateAssetInput {
             id: self.id,
             packaging_group_id: self.packaging_group_id,
             resource_id: self.resource_id,

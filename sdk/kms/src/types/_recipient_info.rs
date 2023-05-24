@@ -3,24 +3,24 @@
 /// <p>Contains information about the party that receives the response from the API operation.</p>
 /// <p>This data type is designed to support Amazon Web Services Nitro Enclaves, which lets you create an isolated compute environment in Amazon EC2. For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipientInfo {
     /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
     #[doc(hidden)]
-    pub key_encryption_algorithm: std::option::Option<crate::types::KeyEncryptionMechanism>,
+    pub key_encryption_algorithm: ::std::option::Option<crate::types::KeyEncryptionMechanism>,
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
     #[doc(hidden)]
-    pub attestation_document: std::option::Option<aws_smithy_types::Blob>,
+    pub attestation_document: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RecipientInfo {
     /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
     pub fn key_encryption_algorithm(
         &self,
-    ) -> std::option::Option<&crate::types::KeyEncryptionMechanism> {
+    ) -> ::std::option::Option<&crate::types::KeyEncryptionMechanism> {
         self.key_encryption_algorithm.as_ref()
     }
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
-    pub fn attestation_document(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn attestation_document(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.attestation_document.as_ref()
     }
 }
@@ -33,34 +33,37 @@ impl RecipientInfo {
 
 /// A builder for [`RecipientInfo`](crate::types::RecipientInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecipientInfoBuilder {
-    pub(crate) key_encryption_algorithm: std::option::Option<crate::types::KeyEncryptionMechanism>,
-    pub(crate) attestation_document: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) key_encryption_algorithm:
+        ::std::option::Option<crate::types::KeyEncryptionMechanism>,
+    pub(crate) attestation_document: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RecipientInfoBuilder {
     /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
     pub fn key_encryption_algorithm(mut self, input: crate::types::KeyEncryptionMechanism) -> Self {
-        self.key_encryption_algorithm = Some(input);
+        self.key_encryption_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption algorithm that KMS should use with the public key for an Amazon Web Services Nitro Enclave to encrypt plaintext values for the response. The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
     pub fn set_key_encryption_algorithm(
         mut self,
-        input: std::option::Option<crate::types::KeyEncryptionMechanism>,
+        input: ::std::option::Option<crate::types::KeyEncryptionMechanism>,
     ) -> Self {
         self.key_encryption_algorithm = input;
         self
     }
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
-    pub fn attestation_document(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.attestation_document = Some(input);
+    pub fn attestation_document(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.attestation_document = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attestation document for an Amazon Web Services Nitro Enclave. This document includes the enclave's public key.</p>
     pub fn set_attestation_document(
         mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
     ) -> Self {
         self.attestation_document = input;
         self

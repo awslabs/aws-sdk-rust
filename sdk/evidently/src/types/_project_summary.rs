@@ -2,96 +2,98 @@
 
 /// <p>A structure that contains configuration information about an Evidently project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The name or ARN of the project.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the project.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ProjectStatus>,
+    pub status: ::std::option::Option<crate::types::ProjectStatus>,
     /// <p>The description of the project.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the project is created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the project was most recently updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of features currently in the project.</p>
     #[doc(hidden)]
-    pub feature_count: std::option::Option<i64>,
+    pub feature_count: ::std::option::Option<i64>,
     /// <p>The number of launches currently in the project, including launches that are ongoing, completed, and not started yet.</p>
     #[doc(hidden)]
-    pub launch_count: std::option::Option<i64>,
+    pub launch_count: ::std::option::Option<i64>,
     /// <p>The number of ongoing launches currently in the project.</p>
     #[doc(hidden)]
-    pub active_launch_count: std::option::Option<i64>,
+    pub active_launch_count: ::std::option::Option<i64>,
     /// <p>The number of experiments currently in the project.</p>
     #[doc(hidden)]
-    pub experiment_count: std::option::Option<i64>,
+    pub experiment_count: ::std::option::Option<i64>,
     /// <p>The number of experiments currently in the project.</p>
     #[doc(hidden)]
-    pub active_experiment_count: std::option::Option<i64>,
+    pub active_experiment_count: ::std::option::Option<i64>,
     /// <p>The list of tag keys and values associated with this project.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ProjectSummary {
     /// <p>The name or ARN of the project.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current state of the project.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ProjectStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
         self.status.as_ref()
     }
     /// <p>The description of the project.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the project is created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the project was most recently updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The number of features currently in the project.</p>
-    pub fn feature_count(&self) -> std::option::Option<i64> {
+    pub fn feature_count(&self) -> ::std::option::Option<i64> {
         self.feature_count
     }
     /// <p>The number of launches currently in the project, including launches that are ongoing, completed, and not started yet.</p>
-    pub fn launch_count(&self) -> std::option::Option<i64> {
+    pub fn launch_count(&self) -> ::std::option::Option<i64> {
         self.launch_count
     }
     /// <p>The number of ongoing launches currently in the project.</p>
-    pub fn active_launch_count(&self) -> std::option::Option<i64> {
+    pub fn active_launch_count(&self) -> ::std::option::Option<i64> {
         self.active_launch_count
     }
     /// <p>The number of experiments currently in the project.</p>
-    pub fn experiment_count(&self) -> std::option::Option<i64> {
+    pub fn experiment_count(&self) -> ::std::option::Option<i64> {
         self.experiment_count
     }
     /// <p>The number of experiments currently in the project.</p>
-    pub fn active_experiment_count(&self) -> std::option::Option<i64> {
+    pub fn active_experiment_count(&self) -> ::std::option::Option<i64> {
         self.active_experiment_count
     }
     /// <p>The list of tag keys and values associated with this project.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -104,136 +106,139 @@ impl ProjectSummary {
 
 /// A builder for [`ProjectSummary`](crate::types::ProjectSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectSummaryBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ProjectStatus>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) feature_count: std::option::Option<i64>,
-    pub(crate) launch_count: std::option::Option<i64>,
-    pub(crate) active_launch_count: std::option::Option<i64>,
-    pub(crate) experiment_count: std::option::Option<i64>,
-    pub(crate) active_experiment_count: std::option::Option<i64>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ProjectStatus>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) feature_count: ::std::option::Option<i64>,
+    pub(crate) launch_count: ::std::option::Option<i64>,
+    pub(crate) active_launch_count: ::std::option::Option<i64>,
+    pub(crate) experiment_count: ::std::option::Option<i64>,
+    pub(crate) active_experiment_count: ::std::option::Option<i64>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ProjectSummaryBuilder {
     /// <p>The name or ARN of the project.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the project.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the project.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the project.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The current state of the project.</p>
     pub fn status(mut self, input: crate::types::ProjectStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the project.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ProjectStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The description of the project.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the project.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The date and time that the project is created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the project is created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The date and time that the project was most recently updated.</p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the project was most recently updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>The number of features currently in the project.</p>
     pub fn feature_count(mut self, input: i64) -> Self {
-        self.feature_count = Some(input);
+        self.feature_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of features currently in the project.</p>
-    pub fn set_feature_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_feature_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.feature_count = input;
         self
     }
     /// <p>The number of launches currently in the project, including launches that are ongoing, completed, and not started yet.</p>
     pub fn launch_count(mut self, input: i64) -> Self {
-        self.launch_count = Some(input);
+        self.launch_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of launches currently in the project, including launches that are ongoing, completed, and not started yet.</p>
-    pub fn set_launch_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_launch_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.launch_count = input;
         self
     }
     /// <p>The number of ongoing launches currently in the project.</p>
     pub fn active_launch_count(mut self, input: i64) -> Self {
-        self.active_launch_count = Some(input);
+        self.active_launch_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of ongoing launches currently in the project.</p>
-    pub fn set_active_launch_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_active_launch_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.active_launch_count = input;
         self
     }
     /// <p>The number of experiments currently in the project.</p>
     pub fn experiment_count(mut self, input: i64) -> Self {
-        self.experiment_count = Some(input);
+        self.experiment_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of experiments currently in the project.</p>
-    pub fn set_experiment_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_experiment_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.experiment_count = input;
         self
     }
     /// <p>The number of experiments currently in the project.</p>
     pub fn active_experiment_count(mut self, input: i64) -> Self {
-        self.active_experiment_count = Some(input);
+        self.active_experiment_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of experiments currently in the project.</p>
-    pub fn set_active_experiment_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_active_experiment_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.active_experiment_count = input;
         self
     }
@@ -244,19 +249,19 @@ impl ProjectSummaryBuilder {
     /// <p>The list of tag keys and values associated with this project.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tag keys and values associated with this project.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

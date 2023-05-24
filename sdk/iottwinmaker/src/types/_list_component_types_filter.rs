@@ -4,14 +4,14 @@
 /// <p>Only one object is accepted as a valid input.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ListComponentTypesFilter {
     /// <p>The component type that the component types in the list extend.</p>
-    ExtendsFrom(std::string::String),
+    ExtendsFrom(::std::string::String),
     /// <p>A Boolean value that specifies whether the component types in the list are abstract.</p>
     IsAbstract(bool),
     /// <p>The namespace to which the component types in the list belong.</p>
-    Namespace(std::string::String),
+    Namespace(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,13 +23,13 @@ pub enum ListComponentTypesFilter {
     Unknown,
 }
 impl ListComponentTypesFilter {
-    /// Tries to convert the enum instance into [`ExtendsFrom`](crate::types::ListComponentTypesFilter::ExtendsFrom), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`ExtendsFrom`](crate::types::ListComponentTypesFilter::ExtendsFrom), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_extends_from(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_extends_from(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ListComponentTypesFilter::ExtendsFrom(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ExtendsFrom`](crate::types::ListComponentTypesFilter::ExtendsFrom).
@@ -38,24 +38,24 @@ impl ListComponentTypesFilter {
     }
     /// Tries to convert the enum instance into [`IsAbstract`](crate::types::ListComponentTypesFilter::IsAbstract), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_is_abstract(&self) -> std::result::Result<&bool, &Self> {
+    pub fn as_is_abstract(&self) -> ::std::result::Result<&bool, &Self> {
         if let ListComponentTypesFilter::IsAbstract(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`IsAbstract`](crate::types::ListComponentTypesFilter::IsAbstract).
     pub fn is_is_abstract(&self) -> bool {
         self.as_is_abstract().is_ok()
     }
-    /// Tries to convert the enum instance into [`Namespace`](crate::types::ListComponentTypesFilter::Namespace), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Namespace`](crate::types::ListComponentTypesFilter::Namespace), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_namespace(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_namespace(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ListComponentTypesFilter::Namespace(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Namespace`](crate::types::ListComponentTypesFilter::Namespace).

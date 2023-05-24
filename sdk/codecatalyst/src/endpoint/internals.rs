@@ -10,7 +10,7 @@ pub(super) fn resolve_endpoint(
     _params: &crate::endpoint::Params,
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
-) -> aws_smithy_http::endpoint::Result {
+) -> ::aws_smithy_http::endpoint::Result {
     #[allow(unused_variables)]
     let use_fips = &_params.use_fips;
     #[allow(unused_variables)]
@@ -19,7 +19,7 @@ pub(super) fn resolve_endpoint(
     let endpoint = &_params.endpoint;
     #[allow(unused_variables)]
     if let Some(endpoint) = endpoint {
-        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
             .url(endpoint.to_owned())
             .build());
     }
@@ -30,11 +30,11 @@ pub(super) fn resolve_endpoint(
         {
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (false) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "Partition does not support FIPS.".to_string(),
                     ));
                 }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();
                         out.push_str("https://codecatalyst-fips.global.");
@@ -44,7 +44,7 @@ pub(super) fn resolve_endpoint(
                     })
                     .build());
             }
-            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                 .url({
                     let mut out = String::new();
                     out.push_str("https://codecatalyst.global.");
@@ -63,11 +63,11 @@ pub(super) fn resolve_endpoint(
         {
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (false) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "Partition does not support FIPS.".to_string(),
                     ));
                 }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();
                         out.push_str("https://codecatalyst-fips.global.");
@@ -77,7 +77,7 @@ pub(super) fn resolve_endpoint(
                     })
                     .build());
             }
-            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                 .url({
                     let mut out = String::new();
                     out.push_str("https://codecatalyst.global.");
@@ -89,7 +89,7 @@ pub(super) fn resolve_endpoint(
         }
     }
     #[allow(unreachable_code)]
-    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
         format!(
             "No rules matched these parameters. This is a bug. {:?}",
             _params

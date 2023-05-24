@@ -4,22 +4,22 @@
 /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
 /// <p> <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HomeDirectoryMapEntry {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
     #[doc(hidden)]
-    pub entry: std::option::Option<std::string::String>,
+    pub entry: ::std::option::Option<::std::string::String>,
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<std::string::String>,
+    pub target: ::std::option::Option<::std::string::String>,
 }
 impl HomeDirectoryMapEntry {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
-    pub fn entry(&self) -> std::option::Option<&str> {
+    pub fn entry(&self) -> ::std::option::Option<&str> {
         self.entry.as_deref()
     }
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
 }
@@ -32,29 +32,31 @@ impl HomeDirectoryMapEntry {
 
 /// A builder for [`HomeDirectoryMapEntry`](crate::types::HomeDirectoryMapEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HomeDirectoryMapEntryBuilder {
-    pub(crate) entry: std::option::Option<std::string::String>,
-    pub(crate) target: std::option::Option<std::string::String>,
+    pub(crate) entry: ::std::option::Option<::std::string::String>,
+    pub(crate) target: ::std::option::Option<::std::string::String>,
 }
 impl HomeDirectoryMapEntryBuilder {
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
-    pub fn entry(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entry = Some(input.into());
+    pub fn entry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entry = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
-    pub fn set_entry(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry = input;
         self
     }
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
-    pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target = Some(input.into());
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents the map target that is used in a <code>HomeDirectorymapEntry</code>.</p>
-    pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }

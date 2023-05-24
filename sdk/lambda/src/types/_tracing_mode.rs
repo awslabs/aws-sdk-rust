@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TracingMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum TracingMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TracingMode {
+impl ::std::convert::From<&str> for TracingMode {
     fn from(s: &str) -> Self {
         match s {
             "Active" => TracingMode::Active,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for TracingMode {
         }
     }
 }
-impl std::str::FromStr for TracingMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TracingMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TracingMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TracingMode::from(s))
     }
 }
 impl TracingMode {
@@ -84,7 +84,7 @@ impl TracingMode {
         &["Active", "PassThrough"]
     }
 }
-impl AsRef<str> for TracingMode {
+impl ::std::convert::AsRef<str> for TracingMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

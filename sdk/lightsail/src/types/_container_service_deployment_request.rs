@@ -3,27 +3,28 @@
 /// <p>Describes a container deployment configuration of an Amazon Lightsail container service.</p>
 /// <p>A deployment specifies the settings, such as the ports and launch command, of containers that are deployed to your container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceDeploymentRequest {
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     #[doc(hidden)]
-    pub containers: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Container>,
+    pub containers: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
     >,
     /// <p>An object that describes the endpoint of the deployment.</p>
     #[doc(hidden)]
-    pub public_endpoint: std::option::Option<crate::types::EndpointRequest>,
+    pub public_endpoint: ::std::option::Option<crate::types::EndpointRequest>,
 }
 impl ContainerServiceDeploymentRequest {
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     pub fn containers(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Container>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::Container>,
+    > {
         self.containers.as_ref()
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
-    pub fn public_endpoint(&self) -> std::option::Option<&crate::types::EndpointRequest> {
+    pub fn public_endpoint(&self) -> ::std::option::Option<&crate::types::EndpointRequest> {
         self.public_endpoint.as_ref()
     }
 }
@@ -36,12 +37,14 @@ impl ContainerServiceDeploymentRequest {
 
 /// A builder for [`ContainerServiceDeploymentRequest`](crate::types::ContainerServiceDeploymentRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerServiceDeploymentRequestBuilder {
-    pub(crate) containers: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Container>,
+    pub(crate) containers: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Container>,
     >,
-    pub(crate) public_endpoint: std::option::Option<crate::types::EndpointRequest>,
+    pub(crate) public_endpoint: ::std::option::Option<crate::types::EndpointRequest>,
 }
 impl ContainerServiceDeploymentRequestBuilder {
     /// Adds a key-value pair to `containers`.
@@ -51,19 +54,19 @@ impl ContainerServiceDeploymentRequestBuilder {
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     pub fn containers(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::Container,
     ) -> Self {
         let mut hash_map = self.containers.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.containers = Some(hash_map);
+        self.containers = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An object that describes the configuration for the containers of the deployment.</p>
     pub fn set_containers(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Container>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Container>,
         >,
     ) -> Self {
         self.containers = input;
@@ -71,13 +74,13 @@ impl ContainerServiceDeploymentRequestBuilder {
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub fn public_endpoint(mut self, input: crate::types::EndpointRequest) -> Self {
-        self.public_endpoint = Some(input);
+        self.public_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the endpoint of the deployment.</p>
     pub fn set_public_endpoint(
         mut self,
-        input: std::option::Option<crate::types::EndpointRequest>,
+        input: ::std::option::Option<crate::types::EndpointRequest>,
     ) -> Self {
         self.public_endpoint = input;
         self

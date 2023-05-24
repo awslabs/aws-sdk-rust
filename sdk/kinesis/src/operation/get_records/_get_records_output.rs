@@ -2,41 +2,41 @@
 
 /// <p>Represents the output for <code>GetRecords</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecordsOutput {
     /// <p>The data records retrieved from the shard.</p>
     #[doc(hidden)]
-    pub records: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
     #[doc(hidden)]
-    pub next_shard_iterator: std::option::Option<std::string::String>,
+    pub next_shard_iterator: ::std::option::Option<::std::string::String>,
     /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
     #[doc(hidden)]
-    pub millis_behind_latest: std::option::Option<i64>,
+    pub millis_behind_latest: ::std::option::Option<i64>,
     /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
     #[doc(hidden)]
-    pub child_shards: std::option::Option<std::vec::Vec<crate::types::ChildShard>>,
+    pub child_shards: ::std::option::Option<::std::vec::Vec<crate::types::ChildShard>>,
     _request_id: Option<String>,
 }
 impl GetRecordsOutput {
     /// <p>The data records retrieved from the shard.</p>
-    pub fn records(&self) -> std::option::Option<&[crate::types::Record]> {
+    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
         self.records.as_deref()
     }
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
-    pub fn next_shard_iterator(&self) -> std::option::Option<&str> {
+    pub fn next_shard_iterator(&self) -> ::std::option::Option<&str> {
         self.next_shard_iterator.as_deref()
     }
     /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
-    pub fn millis_behind_latest(&self) -> std::option::Option<i64> {
+    pub fn millis_behind_latest(&self) -> ::std::option::Option<i64> {
         self.millis_behind_latest
     }
     /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
-    pub fn child_shards(&self) -> std::option::Option<&[crate::types::ChildShard]> {
+    pub fn child_shards(&self) -> ::std::option::Option<&[crate::types::ChildShard]> {
         self.child_shards.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetRecordsOutput {
+impl ::aws_http::request_id::RequestId for GetRecordsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -50,12 +50,14 @@ impl GetRecordsOutput {
 
 /// A builder for [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRecordsOutputBuilder {
-    pub(crate) records: std::option::Option<std::vec::Vec<crate::types::Record>>,
-    pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
-    pub(crate) millis_behind_latest: std::option::Option<i64>,
-    pub(crate) child_shards: std::option::Option<std::vec::Vec<crate::types::ChildShard>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub(crate) next_shard_iterator: ::std::option::Option<::std::string::String>,
+    pub(crate) millis_behind_latest: ::std::option::Option<i64>,
+    pub(crate) child_shards: ::std::option::Option<::std::vec::Vec<crate::types::ChildShard>>,
     _request_id: Option<String>,
 }
 impl GetRecordsOutputBuilder {
@@ -67,37 +69,40 @@ impl GetRecordsOutputBuilder {
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
         v.push(input);
-        self.records = Some(v);
+        self.records = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data records retrieved from the shard.</p>
     pub fn set_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Record>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     ) -> Self {
         self.records = input;
         self
     }
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
-    pub fn next_shard_iterator(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_shard_iterator = Some(input.into());
+    pub fn next_shard_iterator(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator does not return any more data. </p>
     pub fn set_next_shard_iterator(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.next_shard_iterator = input;
         self
     }
     /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
     pub fn millis_behind_latest(mut self, input: i64) -> Self {
-        self.millis_behind_latest = Some(input);
+        self.millis_behind_latest = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of milliseconds the <code>GetRecords</code> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are no new records to process at this moment.</p>
-    pub fn set_millis_behind_latest(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_millis_behind_latest(mut self, input: ::std::option::Option<i64>) -> Self {
         self.millis_behind_latest = input;
         self
     }
@@ -109,13 +114,13 @@ impl GetRecordsOutputBuilder {
     pub fn child_shards(mut self, input: crate::types::ChildShard) -> Self {
         let mut v = self.child_shards.unwrap_or_default();
         v.push(input);
-        self.child_shards = Some(v);
+        self.child_shards = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of the current shard's child shards, returned in the <code>GetRecords</code> API's response only when the end of the current shard is reached.</p>
     pub fn set_child_shards(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ChildShard>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ChildShard>>,
     ) -> Self {
         self.child_shards = input;
         self

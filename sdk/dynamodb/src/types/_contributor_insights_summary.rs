@@ -2,31 +2,31 @@
 
 /// <p>Represents a Contributor Insights summary entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContributorInsightsSummary {
     /// <p>Name of the table associated with the summary.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the index associated with the summary, if any.</p>
     #[doc(hidden)]
-    pub index_name: std::option::Option<std::string::String>,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
     #[doc(hidden)]
-    pub contributor_insights_status: std::option::Option<crate::types::ContributorInsightsStatus>,
+    pub contributor_insights_status: ::std::option::Option<crate::types::ContributorInsightsStatus>,
 }
 impl ContributorInsightsSummary {
     /// <p>Name of the table associated with the summary.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>Name of the index associated with the summary, if any.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
     pub fn contributor_insights_status(
         &self,
-    ) -> std::option::Option<&crate::types::ContributorInsightsStatus> {
+    ) -> ::std::option::Option<&crate::types::ContributorInsightsStatus> {
         self.contributor_insights_status.as_ref()
     }
 }
@@ -39,31 +39,33 @@ impl ContributorInsightsSummary {
 
 /// A builder for [`ContributorInsightsSummary`](crate::types::ContributorInsightsSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContributorInsightsSummaryBuilder {
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) index_name: std::option::Option<std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) contributor_insights_status:
-        std::option::Option<crate::types::ContributorInsightsStatus>,
+        ::std::option::Option<crate::types::ContributorInsightsStatus>,
 }
 impl ContributorInsightsSummaryBuilder {
     /// <p>Name of the table associated with the summary.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the table associated with the summary.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>Name of the index associated with the summary, if any.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_name = Some(input.into());
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the index associated with the summary, if any.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
@@ -72,13 +74,13 @@ impl ContributorInsightsSummaryBuilder {
         mut self,
         input: crate::types::ContributorInsightsStatus,
     ) -> Self {
-        self.contributor_insights_status = Some(input);
+        self.contributor_insights_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the current status for contributor insights for the given table and index, if applicable.</p>
     pub fn set_contributor_insights_status(
         mut self,
-        input: std::option::Option<crate::types::ContributorInsightsStatus>,
+        input: ::std::option::Option<crate::types::ContributorInsightsStatus>,
     ) -> Self {
         self.contributor_insights_status = input;
         self

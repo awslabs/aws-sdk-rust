@@ -6,47 +6,50 @@ pub use crate::operation::update_network_analyzer_configuration::_update_network
 /// Fluent builder constructing a request to `UpdateNetworkAnalyzerConfiguration`.
 ///
 /// <p>Update network analyzer configuration.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNetworkAnalyzerConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationInputBuilder,
 }
 impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     /// Creates a new `UpdateNetworkAnalyzerConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,19 +60,22 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationError>>
                          {
         self.send_middleware().await
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn configuration_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.configuration_name(input.into());
         self
     }
     /// <p>Name of the network analyzer configuration.</p>
     pub fn set_configuration_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_configuration_name(input);
         self
@@ -82,7 +88,7 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
     pub fn set_trace_content(
         mut self,
-        input: std::option::Option<crate::types::TraceContent>,
+        input: ::std::option::Option<crate::types::TraceContent>,
     ) -> Self {
         self.inner = self.inner.set_trace_content(input);
         self
@@ -92,14 +98,17 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_wireless_devices_to_add`](Self::set_wireless_devices_to_add).
     ///
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn wireless_devices_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn wireless_devices_to_add(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.wireless_devices_to_add(input.into());
         self
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
     pub fn set_wireless_devices_to_add(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_wireless_devices_to_add(input);
         self
@@ -109,14 +118,17 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_wireless_devices_to_remove`](Self::set_wireless_devices_to_remove).
     ///
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    pub fn wireless_devices_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn wireless_devices_to_remove(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.wireless_devices_to_remove(input.into());
         self
     }
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
     pub fn set_wireless_devices_to_remove(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_wireless_devices_to_remove(input);
         self
@@ -126,14 +138,17 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_wireless_gateways_to_add`](Self::set_wireless_gateways_to_add).
     ///
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn wireless_gateways_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn wireless_gateways_to_add(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.wireless_gateways_to_add(input.into());
         self
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
     pub fn set_wireless_gateways_to_add(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_wireless_gateways_to_add(input);
         self
@@ -143,25 +158,28 @@ impl UpdateNetworkAnalyzerConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_wireless_gateways_to_remove`](Self::set_wireless_gateways_to_remove).
     ///
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    pub fn wireless_gateways_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn wireless_gateways_to_remove(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.wireless_gateways_to_remove(input.into());
         self
     }
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
     pub fn set_wireless_gateways_to_remove(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_wireless_gateways_to_remove(input);
         self
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the new resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>A tag key and optional list of possible values that you can use to filter results for tagged resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
     #[doc(hidden)]
-    pub tag_key: std::option::Option<std::string::String>,
+    pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
     #[doc(hidden)]
-    pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TagFilter {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
-    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tag_values.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl TagFilter {
 
 /// A builder for [`TagFilter`](crate::types::TagFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagFilterBuilder {
-    pub(crate) tag_key: std::option::Option<std::string::String>,
-    pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) tag_key: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TagFilterBuilder {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_key = Some(input.into());
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
     }
@@ -51,16 +53,16 @@ impl TagFilterBuilder {
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
     ///
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
-    pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
         v.push(input.into());
-        self.tag_values = Some(v);
+        self.tag_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
     pub fn set_tag_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.tag_values = input;
         self

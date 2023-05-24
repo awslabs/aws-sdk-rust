@@ -2,55 +2,55 @@
 
 /// <p>A high-level summary of a voice profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VoiceProfileSummary {
     /// <p>The ID of the voice profile in a voice profile summary.</p>
     #[doc(hidden)]
-    pub voice_profile_id: std::option::Option<std::string::String>,
+    pub voice_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the voice profile in a voice profile summary.</p>
     #[doc(hidden)]
-    pub voice_profile_arn: std::option::Option<std::string::String>,
+    pub voice_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the voice profile domain in a voice profile summary.</p>
     #[doc(hidden)]
-    pub voice_profile_domain_id: std::option::Option<std::string::String>,
+    pub voice_profile_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The time at which a voice profile summary was created.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a voice profile summary was last updated.</p>
     #[doc(hidden)]
-    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Extends the life of the voice profile. You can use <code>UpdateVoiceProfile</code> to refresh an existing voice profile's voice print and extend the life of the summary.</p>
     #[doc(hidden)]
-    pub expiration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VoiceProfileSummary {
     /// <p>The ID of the voice profile in a voice profile summary.</p>
-    pub fn voice_profile_id(&self) -> std::option::Option<&str> {
+    pub fn voice_profile_id(&self) -> ::std::option::Option<&str> {
         self.voice_profile_id.as_deref()
     }
     /// <p>The ARN of the voice profile in a voice profile summary.</p>
-    pub fn voice_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn voice_profile_arn(&self) -> ::std::option::Option<&str> {
         self.voice_profile_arn.as_deref()
     }
     /// <p>The ID of the voice profile domain in a voice profile summary.</p>
-    pub fn voice_profile_domain_id(&self) -> std::option::Option<&str> {
+    pub fn voice_profile_domain_id(&self) -> ::std::option::Option<&str> {
         self.voice_profile_domain_id.as_deref()
     }
     /// <p>The time at which a voice profile summary was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a voice profile summary was last updated.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>Extends the life of the voice profile. You can use <code>UpdateVoiceProfile</code> to refresh an existing voice profile's voice print and extend the life of the summary.</p>
-    pub fn expiration_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for VoiceProfileSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for VoiceProfileSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceProfileSummary");
         formatter.field("voice_profile_id", &self.voice_profile_id);
         formatter.field("voice_profile_arn", &"*** Sensitive Data Redacted ***");
@@ -70,87 +70,99 @@ impl VoiceProfileSummary {
 
 /// A builder for [`VoiceProfileSummary`](crate::types::VoiceProfileSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct VoiceProfileSummaryBuilder {
-    pub(crate) voice_profile_id: std::option::Option<std::string::String>,
-    pub(crate) voice_profile_arn: std::option::Option<std::string::String>,
-    pub(crate) voice_profile_domain_id: std::option::Option<std::string::String>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) expiration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) voice_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) voice_profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) voice_profile_domain_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VoiceProfileSummaryBuilder {
     /// <p>The ID of the voice profile in a voice profile summary.</p>
-    pub fn voice_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.voice_profile_id = Some(input.into());
+    pub fn voice_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.voice_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile in a voice profile summary.</p>
-    pub fn set_voice_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_voice_profile_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.voice_profile_id = input;
         self
     }
     /// <p>The ARN of the voice profile in a voice profile summary.</p>
-    pub fn voice_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.voice_profile_arn = Some(input.into());
+    pub fn voice_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.voice_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the voice profile in a voice profile summary.</p>
     pub fn set_voice_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.voice_profile_arn = input;
         self
     }
     /// <p>The ID of the voice profile domain in a voice profile summary.</p>
-    pub fn voice_profile_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.voice_profile_domain_id = Some(input.into());
+    pub fn voice_profile_domain_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.voice_profile_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice profile domain in a voice profile summary.</p>
     pub fn set_voice_profile_domain_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.voice_profile_domain_id = input;
         self
     }
     /// <p>The time at which a voice profile summary was created.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a voice profile summary was created.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The time at which a voice profile summary was last updated.</p>
-    pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_timestamp = Some(input);
+    pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a voice profile summary was last updated.</p>
     pub fn set_updated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_timestamp = input;
         self
     }
     /// <p>Extends the life of the voice profile. You can use <code>UpdateVoiceProfile</code> to refresh an existing voice profile's voice print and extend the life of the summary.</p>
-    pub fn expiration_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.expiration_timestamp = Some(input);
+    pub fn expiration_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expiration_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Extends the life of the voice profile. You can use <code>UpdateVoiceProfile</code> to refresh an existing voice profile's voice print and extend the life of the summary.</p>
     pub fn set_expiration_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.expiration_timestamp = input;
         self
@@ -167,8 +179,8 @@ impl VoiceProfileSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for VoiceProfileSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for VoiceProfileSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceProfileSummaryBuilder");
         formatter.field("voice_profile_id", &self.voice_profile_id);
         formatter.field("voice_profile_arn", &"*** Sensitive Data Redacted ***");

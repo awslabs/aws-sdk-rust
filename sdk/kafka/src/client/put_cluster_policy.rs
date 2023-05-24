@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutClusterPolicy`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    ///   - [`current_version(impl Into<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::set_current_version): <p>The policy version.</p>
-    ///   - [`policy(impl Into<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::set_policy): <p>The policy.</p>
+    ///   - [`cluster_arn(impl ::std::convert::Into<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    ///   - [`current_version(impl ::std::convert::Into<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::set_current_version): <p>The policy version.</p>
+    ///   - [`policy(impl ::std::convert::Into<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_cluster_policy::builders::PutClusterPolicyFluentBuilder::set_policy): <p>The policy.</p>
     /// - On success, responds with [`PutClusterPolicyOutput`](crate::operation::put_cluster_policy::PutClusterPolicyOutput) with field(s):
     ///   - [`current_version(Option<String>)`](crate::operation::put_cluster_policy::PutClusterPolicyOutput::current_version): <p>The policy version.</p>
     /// - On failure, responds with [`SdkError<PutClusterPolicyError>`](crate::operation::put_cluster_policy::PutClusterPolicyError)

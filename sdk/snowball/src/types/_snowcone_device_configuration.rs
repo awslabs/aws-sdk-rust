@@ -2,15 +2,15 @@
 
 /// <p>Specifies the device configuration for an Snowcone job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
     #[doc(hidden)]
-    pub wireless_connection: std::option::Option<crate::types::WirelessConnection>,
+    pub wireless_connection: ::std::option::Option<crate::types::WirelessConnection>,
 }
 impl SnowconeDeviceConfiguration {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
-    pub fn wireless_connection(&self) -> std::option::Option<&crate::types::WirelessConnection> {
+    pub fn wireless_connection(&self) -> ::std::option::Option<&crate::types::WirelessConnection> {
         self.wireless_connection.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl SnowconeDeviceConfiguration {
 
 /// A builder for [`SnowconeDeviceConfiguration`](crate::types::SnowconeDeviceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnowconeDeviceConfigurationBuilder {
-    pub(crate) wireless_connection: std::option::Option<crate::types::WirelessConnection>,
+    pub(crate) wireless_connection: ::std::option::Option<crate::types::WirelessConnection>,
 }
 impl SnowconeDeviceConfigurationBuilder {
     /// <p>Configures the wireless connection for the Snowcone device.</p>
     pub fn wireless_connection(mut self, input: crate::types::WirelessConnection) -> Self {
-        self.wireless_connection = Some(input);
+        self.wireless_connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the wireless connection for the Snowcone device.</p>
     pub fn set_wireless_connection(
         mut self,
-        input: std::option::Option<crate::types::WirelessConnection>,
+        input: ::std::option::Option<crate::types::WirelessConnection>,
     ) -> Self {
         self.wireless_connection = input;
         self

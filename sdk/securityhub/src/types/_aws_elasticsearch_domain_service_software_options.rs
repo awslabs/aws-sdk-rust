@@ -2,23 +2,23 @@
 
 /// <p>Information about the state of the domain relative to the latest service software.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
     #[doc(hidden)]
-    pub automated_update_date: std::option::Option<std::string::String>,
+    pub automated_update_date: ::std::option::Option<::std::string::String>,
     /// <p>Whether a request to update the domain can be canceled.</p>
     #[doc(hidden)]
     pub cancellable: bool,
     /// <p>The version of the service software that is currently installed on the domain.</p>
     #[doc(hidden)]
-    pub current_version: std::option::Option<std::string::String>,
+    pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed description of the service software status.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The most recent version of the service software.</p>
     #[doc(hidden)]
-    pub new_version: std::option::Option<std::string::String>,
+    pub new_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether a service software update is available for the domain.</p>
     #[doc(hidden)]
     pub update_available: bool,
@@ -31,11 +31,11 @@ pub struct AwsElasticsearchDomainServiceSoftwareOptions {
     /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub update_status: std::option::Option<std::string::String>,
+    pub update_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticsearchDomainServiceSoftwareOptions {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
-    pub fn automated_update_date(&self) -> std::option::Option<&str> {
+    pub fn automated_update_date(&self) -> ::std::option::Option<&str> {
         self.automated_update_date.as_deref()
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
@@ -43,15 +43,15 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
         self.cancellable
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
-    pub fn current_version(&self) -> std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p>A more detailed description of the service software status.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The most recent version of the service software.</p>
-    pub fn new_version(&self) -> std::option::Option<&str> {
+    pub fn new_version(&self) -> ::std::option::Option<&str> {
         self.new_version.as_deref()
     }
     /// <p>Whether a service software update is available for the domain.</p>
@@ -66,7 +66,7 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
     /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
     /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
-    pub fn update_status(&self) -> std::option::Option<&str> {
+    pub fn update_status(&self) -> ::std::option::Option<&str> {
         self.update_status.as_deref()
     }
 }
@@ -80,77 +80,88 @@ impl AwsElasticsearchDomainServiceSoftwareOptions {
 
 /// A builder for [`AwsElasticsearchDomainServiceSoftwareOptions`](crate::types::AwsElasticsearchDomainServiceSoftwareOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
-    pub(crate) automated_update_date: std::option::Option<std::string::String>,
-    pub(crate) cancellable: std::option::Option<bool>,
-    pub(crate) current_version: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) new_version: std::option::Option<std::string::String>,
-    pub(crate) update_available: std::option::Option<bool>,
-    pub(crate) update_status: std::option::Option<std::string::String>,
+    pub(crate) automated_update_date: ::std::option::Option<::std::string::String>,
+    pub(crate) cancellable: ::std::option::Option<bool>,
+    pub(crate) current_version: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) new_version: ::std::option::Option<::std::string::String>,
+    pub(crate) update_available: ::std::option::Option<bool>,
+    pub(crate) update_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
-    pub fn automated_update_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.automated_update_date = Some(input.into());
+    pub fn automated_update_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.automated_update_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The epoch time when the deployment window closes for required updates. After this time, Amazon OpenSearch Service schedules the software upgrade automatically.</p>
     pub fn set_automated_update_date(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.automated_update_date = input;
         self
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
     pub fn cancellable(mut self, input: bool) -> Self {
-        self.cancellable = Some(input);
+        self.cancellable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
-    pub fn set_cancellable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cancellable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cancellable = input;
         self
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
-    pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.current_version = Some(input.into());
+    pub fn current_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
-    pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_current_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.current_version = input;
         self
     }
     /// <p>A more detailed description of the service software status.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A more detailed description of the service software status.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The most recent version of the service software.</p>
-    pub fn new_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.new_version = Some(input.into());
+    pub fn new_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.new_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The most recent version of the service software.</p>
-    pub fn set_new_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_new_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_version = input;
         self
     }
     /// <p>Whether a service software update is available for the domain.</p>
     pub fn update_available(mut self, input: bool) -> Self {
-        self.update_available = Some(input);
+        self.update_available = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether a service software update is available for the domain.</p>
-    pub fn set_update_available(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_update_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.update_available = input;
         self
     }
@@ -162,8 +173,11 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
     /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
-    pub fn update_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.update_status = Some(input.into());
+    pub fn update_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.update_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the service software update. Valid values are as follows:</p>
@@ -174,7 +188,10 @@ impl AwsElasticsearchDomainServiceSoftwareOptionsBuilder {
     /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
     /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
-    pub fn set_update_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_update_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.update_status = input;
         self
     }

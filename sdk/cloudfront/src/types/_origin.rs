@@ -15,96 +15,96 @@
 /// </ul>
 /// <p>For the current maximum number of origins that you can specify per distribution, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html#limits-web-distributions">General Quotas on Web Distributions</a> in the <i>Amazon CloudFront Developer Guide</i> (quotas were formerly referred to as limits).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Origin {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name for the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub origin_path: std::option::Option<std::string::String>,
+    pub origin_path: ::std::option::Option<::std::string::String>,
     /// <p>A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub custom_headers: std::option::Option<crate::types::CustomHeaders>,
+    pub custom_headers: ::std::option::Option<crate::types::CustomHeaders>,
     /// <p>Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
     #[doc(hidden)]
-    pub s3_origin_config: std::option::Option<crate::types::S3OriginConfig>,
+    pub s3_origin_config: ::std::option::Option<crate::types::S3OriginConfig>,
     /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
     #[doc(hidden)]
-    pub custom_origin_config: std::option::Option<crate::types::CustomOriginConfig>,
+    pub custom_origin_config: ::std::option::Option<crate::types::CustomOriginConfig>,
     /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
     /// <p>For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub connection_attempts: std::option::Option<i32>,
+    pub connection_attempts: ::std::option::Option<i32>,
     /// <p>The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub connection_timeout: std::option::Option<i32>,
+    pub connection_timeout: ::std::option::Option<i32>,
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub origin_shield: std::option::Option<crate::types::OriginShield>,
+    pub origin_shield: ::std::option::Option<crate::types::OriginShield>,
     /// <p>The unique identifier of an origin access control for this origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub origin_access_control_id: std::option::Option<std::string::String>,
+    pub origin_access_control_id: ::std::option::Option<::std::string::String>,
 }
 impl Origin {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The domain name for the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_path(&self) -> std::option::Option<&str> {
+    pub fn origin_path(&self) -> ::std::option::Option<&str> {
         self.origin_path.as_deref()
     }
     /// <p>A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn custom_headers(&self) -> std::option::Option<&crate::types::CustomHeaders> {
+    pub fn custom_headers(&self) -> ::std::option::Option<&crate::types::CustomHeaders> {
         self.custom_headers.as_ref()
     }
     /// <p>Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
-    pub fn s3_origin_config(&self) -> std::option::Option<&crate::types::S3OriginConfig> {
+    pub fn s3_origin_config(&self) -> ::std::option::Option<&crate::types::S3OriginConfig> {
         self.s3_origin_config.as_ref()
     }
     /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
-    pub fn custom_origin_config(&self) -> std::option::Option<&crate::types::CustomOriginConfig> {
+    pub fn custom_origin_config(&self) -> ::std::option::Option<&crate::types::CustomOriginConfig> {
         self.custom_origin_config.as_ref()
     }
     /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
     /// <p>For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn connection_attempts(&self) -> std::option::Option<i32> {
+    pub fn connection_attempts(&self) -> ::std::option::Option<i32> {
         self.connection_attempts
     }
     /// <p>The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn connection_timeout(&self) -> std::option::Option<i32> {
+    pub fn connection_timeout(&self) -> ::std::option::Option<i32> {
         self.connection_timeout
     }
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_shield(&self) -> std::option::Option<&crate::types::OriginShield> {
+    pub fn origin_shield(&self) -> ::std::option::Option<&crate::types::OriginShield> {
         self.origin_shield.as_ref()
     }
     /// <p>The unique identifier of an origin access control for this origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_access_control_id(&self) -> std::option::Option<&str> {
+    pub fn origin_access_control_id(&self) -> ::std::option::Option<&str> {
         self.origin_access_control_id.as_deref()
     }
 }
@@ -117,93 +117,95 @@ impl Origin {
 
 /// A builder for [`Origin`](crate::types::Origin).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) origin_path: std::option::Option<std::string::String>,
-    pub(crate) custom_headers: std::option::Option<crate::types::CustomHeaders>,
-    pub(crate) s3_origin_config: std::option::Option<crate::types::S3OriginConfig>,
-    pub(crate) custom_origin_config: std::option::Option<crate::types::CustomOriginConfig>,
-    pub(crate) connection_attempts: std::option::Option<i32>,
-    pub(crate) connection_timeout: std::option::Option<i32>,
-    pub(crate) origin_shield: std::option::Option<crate::types::OriginShield>,
-    pub(crate) origin_access_control_id: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) origin_path: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_headers: ::std::option::Option<crate::types::CustomHeaders>,
+    pub(crate) s3_origin_config: ::std::option::Option<crate::types::S3OriginConfig>,
+    pub(crate) custom_origin_config: ::std::option::Option<crate::types::CustomOriginConfig>,
+    pub(crate) connection_attempts: ::std::option::Option<i32>,
+    pub(crate) connection_timeout: ::std::option::Option<i32>,
+    pub(crate) origin_shield: ::std::option::Option<crate::types::OriginShield>,
+    pub(crate) origin_access_control_id: ::std::option::Option<::std::string::String>,
 }
 impl OriginBuilder {
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the origin. This value must be unique within the distribution.</p>
     /// <p>Use this value to specify the <code>TargetOriginId</code> in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The domain name for the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name for the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.origin_path = Some(input.into());
+    pub fn origin_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.origin_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional path that CloudFront appends to the origin domain name when CloudFront requests content from the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin Path</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_origin_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin_path = input;
         self
     }
     /// <p>A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn custom_headers(mut self, input: crate::types::CustomHeaders) -> Self {
-        self.custom_headers = Some(input);
+        self.custom_headers = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of HTTP header names and values that CloudFront adds to the requests that it sends to the origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_custom_headers(
         mut self,
-        input: std::option::Option<crate::types::CustomHeaders>,
+        input: ::std::option::Option<crate::types::CustomHeaders>,
     ) -> Self {
         self.custom_headers = input;
         self
     }
     /// <p>Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
     pub fn s3_origin_config(mut self, input: crate::types::S3OriginConfig) -> Self {
-        self.s3_origin_config = Some(input);
+        self.s3_origin_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static website hosting. To specify any other type of origin, including an Amazon S3 bucket that is configured with static website hosting, use the <code>CustomOriginConfig</code> type instead.</p>
     pub fn set_s3_origin_config(
         mut self,
-        input: std::option::Option<crate::types::S3OriginConfig>,
+        input: ::std::option::Option<crate::types::S3OriginConfig>,
     ) -> Self {
         self.s3_origin_config = input;
         self
     }
     /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
     pub fn custom_origin_config(mut self, input: crate::types::CustomOriginConfig) -> Self {
-        self.custom_origin_config = Some(input);
+        self.custom_origin_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket is not configured with static website hosting, use the <code>S3OriginConfig</code> type instead.</p>
     pub fn set_custom_origin_config(
         mut self,
-        input: std::option::Option<crate::types::CustomOriginConfig>,
+        input: ::std::option::Option<crate::types::CustomOriginConfig>,
     ) -> Self {
         self.custom_origin_config = input;
         self
@@ -212,54 +214,57 @@ impl OriginBuilder {
     /// <p>For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn connection_attempts(mut self, input: i32) -> Self {
-        self.connection_attempts = Some(input);
+        self.connection_attempts = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
     /// <p>For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_connection_attempts(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_connection_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.connection_attempts = input;
         self
     }
     /// <p>The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn connection_timeout(mut self, input: i32) -> Self {
-        self.connection_timeout = Some(input);
+        self.connection_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_connection_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_connection_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.connection_timeout = input;
         self
     }
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_shield(mut self, input: crate::types::OriginShield) -> Self {
-        self.origin_shield = Some(input);
+        self.origin_shield = ::std::option::Option::Some(input);
         self
     }
     /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_origin_shield(
         mut self,
-        input: std::option::Option<crate::types::OriginShield>,
+        input: ::std::option::Option<crate::types::OriginShield>,
     ) -> Self {
         self.origin_shield = input;
         self
     }
     /// <p>The unique identifier of an origin access control for this origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_access_control_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.origin_access_control_id = Some(input.into());
+    pub fn origin_access_control_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.origin_access_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of an origin access control for this origin.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_origin_access_control_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.origin_access_control_id = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVariantStore`](crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder::set_name): <p>The store's name.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder::set_name): <p>The store's name.</p>
     ///   - [`force(bool)`](crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::delete_variant_store::builders::DeleteVariantStoreFluentBuilder::set_force): <p>Whether to force deletion.</p>
     /// - On success, responds with [`DeleteVariantStoreOutput`](crate::operation::delete_variant_store::DeleteVariantStoreOutput) with field(s):
     ///   - [`status(Option<StoreStatus>)`](crate::operation::delete_variant_store::DeleteVariantStoreOutput::status): <p>The store's status.</p>

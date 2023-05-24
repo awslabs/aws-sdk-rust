@@ -2,7 +2,7 @@
 
 /// <p>Provides statistical information about the FAQ questions and answers contained in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaqStatistics {
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl FaqStatistics {
 
 /// A builder for [`FaqStatistics`](crate::types::FaqStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FaqStatisticsBuilder {
-    pub(crate) indexed_question_answers_count: std::option::Option<i32>,
+    pub(crate) indexed_question_answers_count: ::std::option::Option<i32>,
 }
 impl FaqStatisticsBuilder {
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
     pub fn indexed_question_answers_count(mut self, input: i32) -> Self {
-        self.indexed_question_answers_count = Some(input);
+        self.indexed_question_answers_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of FAQ questions and answers contained in the index.</p>
-    pub fn set_indexed_question_answers_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_indexed_question_answers_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.indexed_question_answers_count = input;
         self
     }

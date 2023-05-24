@@ -2,7 +2,7 @@
 
 /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginRequestPolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -13,10 +13,10 @@ pub struct OriginRequestPolicyHeadersConfig {
     /// <li> <p> <code>allExcept</code> – All HTTP headers in viewer requests are included in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which are not included.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub header_behavior: std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
+    pub header_behavior: ::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
     /// <p>Contains a list of HTTP header names.</p>
     #[doc(hidden)]
-    pub headers: std::option::Option<crate::types::Headers>,
+    pub headers: ::std::option::Option<crate::types::Headers>,
 }
 impl OriginRequestPolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
@@ -29,11 +29,11 @@ impl OriginRequestPolicyHeadersConfig {
     /// </ul>
     pub fn header_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::OriginRequestPolicyHeaderBehavior> {
+    ) -> ::std::option::Option<&crate::types::OriginRequestPolicyHeaderBehavior> {
         self.header_behavior.as_ref()
     }
     /// <p>Contains a list of HTTP header names.</p>
-    pub fn headers(&self) -> std::option::Option<&crate::types::Headers> {
+    pub fn headers(&self) -> ::std::option::Option<&crate::types::Headers> {
         self.headers.as_ref()
     }
 }
@@ -46,11 +46,13 @@ impl OriginRequestPolicyHeadersConfig {
 
 /// A builder for [`OriginRequestPolicyHeadersConfig`](crate::types::OriginRequestPolicyHeadersConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginRequestPolicyHeadersConfigBuilder {
     pub(crate) header_behavior:
-        std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
-    pub(crate) headers: std::option::Option<crate::types::Headers>,
+        ::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
+    pub(crate) headers: ::std::option::Option<crate::types::Headers>,
 }
 impl OriginRequestPolicyHeadersConfigBuilder {
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
@@ -65,7 +67,7 @@ impl OriginRequestPolicyHeadersConfigBuilder {
         mut self,
         input: crate::types::OriginRequestPolicyHeaderBehavior,
     ) -> Self {
-        self.header_behavior = Some(input);
+        self.header_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin. Valid values are:</p>
@@ -78,18 +80,18 @@ impl OriginRequestPolicyHeadersConfigBuilder {
     /// </ul>
     pub fn set_header_behavior(
         mut self,
-        input: std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
+        input: ::std::option::Option<crate::types::OriginRequestPolicyHeaderBehavior>,
     ) -> Self {
         self.header_behavior = input;
         self
     }
     /// <p>Contains a list of HTTP header names.</p>
     pub fn headers(mut self, input: crate::types::Headers) -> Self {
-        self.headers = Some(input);
+        self.headers = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains a list of HTTP header names.</p>
-    pub fn set_headers(mut self, input: std::option::Option<crate::types::Headers>) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<crate::types::Headers>) -> Self {
         self.headers = input;
         self
     }

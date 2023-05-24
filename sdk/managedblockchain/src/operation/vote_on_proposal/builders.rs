@@ -7,56 +7,63 @@ pub use crate::operation::vote_on_proposal::_vote_on_proposal_input::VoteOnPropo
 ///
 /// <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by <code>VoterMemberId</code>, must be in the same Amazon Web Services account as the principal that calls the action.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct VoteOnProposalFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::vote_on_proposal::builders::VoteOnProposalInputBuilder,
 }
 impl VoteOnProposalFluentBuilder {
     /// Creates a new `VoteOnProposal`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::vote_on_proposal::VoteOnProposal,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::vote_on_proposal::VoteOnProposalError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::vote_on_proposal::VoteOnProposalError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::vote_on_proposal::VoteOnProposalOutput,
-        aws_smithy_http::result::SdkError<crate::operation::vote_on_proposal::VoteOnProposalError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::vote_on_proposal::VoteOnProposalError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,39 +76,47 @@ impl VoteOnProposalFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::vote_on_proposal::VoteOnProposalOutput,
-        aws_smithy_http::result::SdkError<crate::operation::vote_on_proposal::VoteOnProposalError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::vote_on_proposal::VoteOnProposalError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p> The unique identifier of the network. </p>
-    pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_id(input.into());
         self
     }
     /// <p> The unique identifier of the network. </p>
-    pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_id(input);
         self
     }
     /// <p> The unique identifier of the proposal. </p>
-    pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.proposal_id(input.into());
         self
     }
     /// <p> The unique identifier of the proposal. </p>
-    pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_proposal_id(input);
         self
     }
     /// <p>The unique identifier of the member casting the vote. </p>
-    pub fn voter_member_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn voter_member_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.voter_member_id(input.into());
         self
     }
     /// <p>The unique identifier of the member casting the vote. </p>
-    pub fn set_voter_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_voter_member_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_voter_member_id(input);
         self
     }
@@ -111,7 +126,7 @@ impl VoteOnProposalFluentBuilder {
         self
     }
     /// <p> The value of the vote. </p>
-    pub fn set_vote(mut self, input: std::option::Option<crate::types::VoteValue>) -> Self {
+    pub fn set_vote(mut self, input: ::std::option::Option<crate::types::VoteValue>) -> Self {
         self.inner = self.inner.set_vote(input);
         self
     }

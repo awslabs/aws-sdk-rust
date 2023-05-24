@@ -2,21 +2,21 @@
 
 /// <p>Contains the parameters for SetLoadBalancerListenerSSLCertificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetLoadBalancerListenerSslCertificateInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The port that uses the specified SSL certificate.</p>
     #[doc(hidden)]
     pub load_balancer_port: i32,
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     #[doc(hidden)]
-    pub ssl_certificate_id: std::option::Option<std::string::String>,
+    pub ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl SetLoadBalancerListenerSslCertificateInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The port that uses the specified SSL certificate.</p>
@@ -24,7 +24,7 @@ impl SetLoadBalancerListenerSslCertificateInput {
         self.load_balancer_port
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-    pub fn ssl_certificate_id(&self) -> std::option::Option<&str> {
+    pub fn ssl_certificate_id(&self) -> ::std::option::Option<&str> {
         self.ssl_certificate_id.as_deref()
     }
 }
@@ -37,52 +37,60 @@ impl SetLoadBalancerListenerSslCertificateInput {
 
 /// A builder for [`SetLoadBalancerListenerSslCertificateInput`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetLoadBalancerListenerSslCertificateInputBuilder {
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) load_balancer_port: std::option::Option<i32>,
-    pub(crate) ssl_certificate_id: std::option::Option<std::string::String>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) load_balancer_port: ::std::option::Option<i32>,
+    pub(crate) ssl_certificate_id: ::std::option::Option<::std::string::String>,
 }
 impl SetLoadBalancerListenerSslCertificateInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
     }
     /// <p>The port that uses the specified SSL certificate.</p>
     pub fn load_balancer_port(mut self, input: i32) -> Self {
-        self.load_balancer_port = Some(input);
+        self.load_balancer_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port that uses the specified SSL certificate.</p>
-    pub fn set_load_balancer_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_load_balancer_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.load_balancer_port = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
-    pub fn ssl_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ssl_certificate_id = Some(input.into());
+    pub fn ssl_certificate_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ssl_certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
     pub fn set_ssl_certificate_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ssl_certificate_id = input;
         self
     }
     /// Consumes the builder and constructs a [`SetLoadBalancerListenerSslCertificateInput`](crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput).
-    pub fn build(self) -> Result<crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateInput {
                 load_balancer_name: self.load_balancer_name
                 ,

@@ -47,13 +47,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ApplicationInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum ApplicationInstanceStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ApplicationInstanceStatus {
+impl ::std::convert::From<&str> for ApplicationInstanceStatus {
     fn from(s: &str) -> Self {
         match s {
             "DEPLOYMENT_ERROR" => ApplicationInstanceStatus::DeploymentError,
@@ -101,11 +101,11 @@ impl std::convert::From<&str> for ApplicationInstanceStatus {
         }
     }
 }
-impl std::str::FromStr for ApplicationInstanceStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ApplicationInstanceStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationInstanceStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ApplicationInstanceStatus::from(s))
     }
 }
 impl ApplicationInstanceStatus {
@@ -143,7 +143,7 @@ impl ApplicationInstanceStatus {
         ]
     }
 }
-impl AsRef<str> for ApplicationInstanceStatus {
+impl ::std::convert::AsRef<str> for ApplicationInstanceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

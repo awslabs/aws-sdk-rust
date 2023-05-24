@@ -2,23 +2,23 @@
 
 /// <p>The output for the <code>DescribeConfigurationRecorderStatus</code> action, in JSON format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationRecorderStatusOutput {
     /// <p>A list that contains status of the specified recorders.</p>
     #[doc(hidden)]
     pub configuration_recorders_status:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationRecorderStatusOutput {
     /// <p>A list that contains status of the specified recorders.</p>
     pub fn configuration_recorders_status(
         &self,
-    ) -> std::option::Option<&[crate::types::ConfigurationRecorderStatus]> {
+    ) -> ::std::option::Option<&[crate::types::ConfigurationRecorderStatus]> {
         self.configuration_recorders_status.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeConfigurationRecorderStatusOutput {
+impl ::aws_http::request_id::RequestId for DescribeConfigurationRecorderStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeConfigurationRecorderStatusOutput {
 
 /// A builder for [`DescribeConfigurationRecorderStatusOutput`](crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeConfigurationRecorderStatusOutputBuilder {
     pub(crate) configuration_recorders_status:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationRecorderStatusOutputBuilder {
@@ -50,13 +52,13 @@ impl DescribeConfigurationRecorderStatusOutputBuilder {
     ) -> Self {
         let mut v = self.configuration_recorders_status.unwrap_or_default();
         v.push(input);
-        self.configuration_recorders_status = Some(v);
+        self.configuration_recorders_status = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains status of the specified recorders.</p>
     pub fn set_configuration_recorders_status(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationRecorderStatus>>,
     ) -> Self {
         self.configuration_recorders_status = input;
         self

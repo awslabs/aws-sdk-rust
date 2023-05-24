@@ -2,22 +2,22 @@
 
 /// <p>Contains source Apache Kafka versions and compatible target Apache Kafka versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompatibleKafkaVersion {
     /// <p>An Apache Kafka version.</p>
     #[doc(hidden)]
-    pub source_version: std::option::Option<std::string::String>,
+    pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of Apache Kafka versions.</p>
     #[doc(hidden)]
-    pub target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub target_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CompatibleKafkaVersion {
     /// <p>An Apache Kafka version.</p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<&str> {
         self.source_version.as_deref()
     }
     /// <p>A list of Apache Kafka versions.</p>
-    pub fn target_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.target_versions.as_deref()
     }
 }
@@ -30,19 +30,27 @@ impl CompatibleKafkaVersion {
 
 /// A builder for [`CompatibleKafkaVersion`](crate::types::CompatibleKafkaVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CompatibleKafkaVersionBuilder {
-    pub(crate) source_version: std::option::Option<std::string::String>,
-    pub(crate) target_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) source_version: ::std::option::Option<::std::string::String>,
+    pub(crate) target_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CompatibleKafkaVersionBuilder {
     /// <p>An Apache Kafka version.</p>
-    pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_version = Some(input.into());
+    pub fn source_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Apache Kafka version.</p>
-    pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_version = input;
         self
     }
@@ -51,16 +59,19 @@ impl CompatibleKafkaVersionBuilder {
     /// To override the contents of this collection use [`set_target_versions`](Self::set_target_versions).
     ///
     /// <p>A list of Apache Kafka versions.</p>
-    pub fn target_versions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.target_versions.unwrap_or_default();
         v.push(input.into());
-        self.target_versions = Some(v);
+        self.target_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Apache Kafka versions.</p>
     pub fn set_target_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.target_versions = input;
         self

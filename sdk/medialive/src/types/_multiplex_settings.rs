@@ -2,36 +2,36 @@
 
 /// Contains configuration for a Multiplex event
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexSettings {
     /// Maximum video buffer delay in milliseconds.
     #[doc(hidden)]
-    pub maximum_video_buffer_delay_milliseconds: std::option::Option<i32>,
+    pub maximum_video_buffer_delay_milliseconds: ::std::option::Option<i32>,
     /// Transport stream bit rate.
     #[doc(hidden)]
-    pub transport_stream_bitrate: std::option::Option<i32>,
+    pub transport_stream_bitrate: ::std::option::Option<i32>,
     /// Transport stream ID.
     #[doc(hidden)]
-    pub transport_stream_id: std::option::Option<i32>,
+    pub transport_stream_id: ::std::option::Option<i32>,
     /// Transport stream reserved bit rate.
     #[doc(hidden)]
-    pub transport_stream_reserved_bitrate: std::option::Option<i32>,
+    pub transport_stream_reserved_bitrate: ::std::option::Option<i32>,
 }
 impl MultiplexSettings {
     /// Maximum video buffer delay in milliseconds.
-    pub fn maximum_video_buffer_delay_milliseconds(&self) -> std::option::Option<i32> {
+    pub fn maximum_video_buffer_delay_milliseconds(&self) -> ::std::option::Option<i32> {
         self.maximum_video_buffer_delay_milliseconds
     }
     /// Transport stream bit rate.
-    pub fn transport_stream_bitrate(&self) -> std::option::Option<i32> {
+    pub fn transport_stream_bitrate(&self) -> ::std::option::Option<i32> {
         self.transport_stream_bitrate
     }
     /// Transport stream ID.
-    pub fn transport_stream_id(&self) -> std::option::Option<i32> {
+    pub fn transport_stream_id(&self) -> ::std::option::Option<i32> {
         self.transport_stream_id
     }
     /// Transport stream reserved bit rate.
-    pub fn transport_stream_reserved_bitrate(&self) -> std::option::Option<i32> {
+    pub fn transport_stream_reserved_bitrate(&self) -> ::std::option::Option<i32> {
         self.transport_stream_reserved_bitrate
     }
 }
@@ -44,56 +44,58 @@ impl MultiplexSettings {
 
 /// A builder for [`MultiplexSettings`](crate::types::MultiplexSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiplexSettingsBuilder {
-    pub(crate) maximum_video_buffer_delay_milliseconds: std::option::Option<i32>,
-    pub(crate) transport_stream_bitrate: std::option::Option<i32>,
-    pub(crate) transport_stream_id: std::option::Option<i32>,
-    pub(crate) transport_stream_reserved_bitrate: std::option::Option<i32>,
+    pub(crate) maximum_video_buffer_delay_milliseconds: ::std::option::Option<i32>,
+    pub(crate) transport_stream_bitrate: ::std::option::Option<i32>,
+    pub(crate) transport_stream_id: ::std::option::Option<i32>,
+    pub(crate) transport_stream_reserved_bitrate: ::std::option::Option<i32>,
 }
 impl MultiplexSettingsBuilder {
     /// Maximum video buffer delay in milliseconds.
     pub fn maximum_video_buffer_delay_milliseconds(mut self, input: i32) -> Self {
-        self.maximum_video_buffer_delay_milliseconds = Some(input);
+        self.maximum_video_buffer_delay_milliseconds = ::std::option::Option::Some(input);
         self
     }
     /// Maximum video buffer delay in milliseconds.
     pub fn set_maximum_video_buffer_delay_milliseconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.maximum_video_buffer_delay_milliseconds = input;
         self
     }
     /// Transport stream bit rate.
     pub fn transport_stream_bitrate(mut self, input: i32) -> Self {
-        self.transport_stream_bitrate = Some(input);
+        self.transport_stream_bitrate = ::std::option::Option::Some(input);
         self
     }
     /// Transport stream bit rate.
-    pub fn set_transport_stream_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_transport_stream_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transport_stream_bitrate = input;
         self
     }
     /// Transport stream ID.
     pub fn transport_stream_id(mut self, input: i32) -> Self {
-        self.transport_stream_id = Some(input);
+        self.transport_stream_id = ::std::option::Option::Some(input);
         self
     }
     /// Transport stream ID.
-    pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_transport_stream_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transport_stream_id = input;
         self
     }
     /// Transport stream reserved bit rate.
     pub fn transport_stream_reserved_bitrate(mut self, input: i32) -> Self {
-        self.transport_stream_reserved_bitrate = Some(input);
+        self.transport_stream_reserved_bitrate = ::std::option::Option::Some(input);
         self
     }
     /// Transport stream reserved bit rate.
     pub fn set_transport_stream_reserved_bitrate(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.transport_stream_reserved_bitrate = input;
         self

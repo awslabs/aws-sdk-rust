@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
     #[doc(hidden)]
-    pub domain_config: std::option::Option<crate::types::ElasticsearchDomainConfig>,
+    pub domain_config: ::std::option::Option<crate::types::ElasticsearchDomainConfig>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchDomainConfigOutput {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
-    pub fn domain_config(&self) -> std::option::Option<&crate::types::ElasticsearchDomainConfig> {
+    pub fn domain_config(&self) -> ::std::option::Option<&crate::types::ElasticsearchDomainConfig> {
         self.domain_config.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeElasticsearchDomainConfigOutput {
+impl ::aws_http::request_id::RequestId for DescribeElasticsearchDomainConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DescribeElasticsearchDomainConfigOutput {
 
 /// A builder for [`DescribeElasticsearchDomainConfigOutput`](crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeElasticsearchDomainConfigOutputBuilder {
-    pub(crate) domain_config: std::option::Option<crate::types::ElasticsearchDomainConfig>,
+    pub(crate) domain_config: ::std::option::Option<crate::types::ElasticsearchDomainConfig>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchDomainConfigOutputBuilder {
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
     pub fn domain_config(mut self, input: crate::types::ElasticsearchDomainConfig) -> Self {
-        self.domain_config = Some(input);
+        self.domain_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
     pub fn set_domain_config(
         mut self,
-        input: std::option::Option<crate::types::ElasticsearchDomainConfig>,
+        input: ::std::option::Option<crate::types::ElasticsearchDomainConfig>,
     ) -> Self {
         self.domain_config = input;
         self

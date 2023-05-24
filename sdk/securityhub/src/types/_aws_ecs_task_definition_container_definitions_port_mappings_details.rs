@@ -2,7 +2,7 @@
 
 /// <p>A port mapping for the container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     pub host_port: i32,
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<std::string::String>,
+    pub protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
@@ -24,7 +24,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
         self.host_port
     }
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
 }
@@ -39,40 +39,42 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
-    pub(crate) container_port: std::option::Option<i32>,
-    pub(crate) host_port: std::option::Option<i32>,
-    pub(crate) protocol: std::option::Option<std::string::String>,
+    pub(crate) container_port: ::std::option::Option<i32>,
+    pub(crate) host_port: ::std::option::Option<i32>,
+    pub(crate) protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
     pub fn container_port(mut self, input: i32) -> Self {
-        self.container_port = Some(input);
+        self.container_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
-    pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_container_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.container_port = input;
         self
     }
     /// <p>The port number on the container instance to reserve for the container.</p>
     pub fn host_port(mut self, input: i32) -> Self {
-        self.host_port = Some(input);
+        self.host_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number on the container instance to reserve for the container.</p>
-    pub fn set_host_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_host_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.host_port = input;
         self
     }
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protocol = Some(input.into());
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }

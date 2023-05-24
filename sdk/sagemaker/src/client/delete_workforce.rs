@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkforce`](crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workforce_name(impl Into<String>)`](crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder::workforce_name) / [`set_workforce_name(Option<String>)`](crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder::set_workforce_name): <p>The name of the workforce.</p>
+    ///   - [`workforce_name(impl ::std::convert::Into<String>)`](crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder::workforce_name) / [`set_workforce_name(Option<String>)`](crate::operation::delete_workforce::builders::DeleteWorkforceFluentBuilder::set_workforce_name): <p>The name of the workforce.</p>
     /// - On success, responds with [`DeleteWorkforceOutput`](crate::operation::delete_workforce::DeleteWorkforceOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkforceError>`](crate::operation::delete_workforce::DeleteWorkforceError)
     pub fn delete_workforce(

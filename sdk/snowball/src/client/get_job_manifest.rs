@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJobManifest`](crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder::set_job_id): <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_job_manifest::builders::GetJobManifestFluentBuilder::set_job_id): <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     /// - On success, responds with [`GetJobManifestOutput`](crate::operation::get_job_manifest::GetJobManifestOutput) with field(s):
     ///   - [`manifest_uri(Option<String>)`](crate::operation::get_job_manifest::GetJobManifestOutput::manifest_uri): <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
     /// - On failure, responds with [`SdkError<GetJobManifestError>`](crate::operation::get_job_manifest::GetJobManifestError)

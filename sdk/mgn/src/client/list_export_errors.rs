@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`export_id(impl Into<String>)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::set_export_id): <p>List export errors request export id.</p>
+    ///   - [`export_id(impl ::std::convert::Into<String>)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::set_export_id): <p>List export errors request export id.</p>
     ///   - [`max_results(i32)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::set_max_results): <p>List export errors request max results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::set_next_token): <p>List export errors request next token.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_export_errors::builders::ListExportErrorsFluentBuilder::set_next_token): <p>List export errors request next token.</p>
     /// - On success, responds with [`ListExportErrorsOutput`](crate::operation::list_export_errors::ListExportErrorsOutput) with field(s):
     ///   - [`items(Option<Vec<ExportTaskError>>)`](crate::operation::list_export_errors::ListExportErrorsOutput::items): <p>List export errors response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_export_errors::ListExportErrorsOutput::next_token): <p>List export errors response next token.</p>

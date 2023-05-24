@@ -2,7 +2,7 @@
 
 /// <p>Details used when updating the replication set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum UpdateReplicationSetAction {
     /// <p>Details about the Amazon Web Services Region that you're adding to the replication set.</p>
     AddRegionAction(crate::types::AddRegionAction),
@@ -23,11 +23,11 @@ impl UpdateReplicationSetAction {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_add_region_action(
         &self,
-    ) -> std::result::Result<&crate::types::AddRegionAction, &Self> {
+    ) -> ::std::result::Result<&crate::types::AddRegionAction, &Self> {
         if let UpdateReplicationSetAction::AddRegionAction(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AddRegionAction`](crate::types::UpdateReplicationSetAction::AddRegionAction).
@@ -38,11 +38,11 @@ impl UpdateReplicationSetAction {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_delete_region_action(
         &self,
-    ) -> std::result::Result<&crate::types::DeleteRegionAction, &Self> {
+    ) -> ::std::result::Result<&crate::types::DeleteRegionAction, &Self> {
         if let UpdateReplicationSetAction::DeleteRegionAction(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DeleteRegionAction`](crate::types::UpdateReplicationSetAction::DeleteRegionAction).

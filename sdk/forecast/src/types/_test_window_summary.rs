@@ -2,14 +2,14 @@
 
 /// <p>The status, start time, and end time of a backtest, as well as a failure reason if applicable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestWindowSummary {
     /// <p>The time at which the test began.</p>
     #[doc(hidden)]
-    pub test_window_start: std::option::Option<aws_smithy_types::DateTime>,
+    pub test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the test ended.</p>
     #[doc(hidden)]
-    pub test_window_end: std::option::Option<aws_smithy_types::DateTime>,
+    pub test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> </p> </li>
@@ -17,18 +17,18 @@ pub struct TestWindowSummary {
     /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>If the test failed, the reason why it failed.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl TestWindowSummary {
     /// <p>The time at which the test began.</p>
-    pub fn test_window_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn test_window_start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.test_window_start.as_ref()
     }
     /// <p>The time at which the test ended.</p>
-    pub fn test_window_end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn test_window_end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.test_window_end.as_ref()
     }
     /// <p>The status of the test. Possible status values are:</p>
@@ -37,11 +37,11 @@ impl TestWindowSummary {
     /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>If the test failed, the reason why it failed.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -54,36 +54,38 @@ impl TestWindowSummary {
 
 /// A builder for [`TestWindowSummary`](crate::types::TestWindowSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestWindowSummaryBuilder {
-    pub(crate) test_window_start: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) test_window_end: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl TestWindowSummaryBuilder {
     /// <p>The time at which the test began.</p>
-    pub fn test_window_start(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.test_window_start = Some(input);
+    pub fn test_window_start(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.test_window_start = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the test began.</p>
     pub fn set_test_window_start(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.test_window_start = input;
         self
     }
     /// <p>The time at which the test ended.</p>
-    pub fn test_window_end(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.test_window_end = Some(input);
+    pub fn test_window_end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.test_window_end = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the test ended.</p>
     pub fn set_test_window_end(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.test_window_end = input;
         self
@@ -94,8 +96,8 @@ impl TestWindowSummaryBuilder {
     /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the test. Possible status values are:</p>
@@ -104,17 +106,17 @@ impl TestWindowSummaryBuilder {
     /// <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li>
     /// <li> <p> <code>CREATE_FAILED</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>If the test failed, the reason why it failed.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the test failed, the reason why it failed.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

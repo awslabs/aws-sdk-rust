@@ -2,22 +2,22 @@
 
 /// <p>A structure that contains information used to update an attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FacetAttributeUpdate {
     /// <p>The attribute to update.</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<crate::types::FacetAttribute>,
+    pub attribute: ::std::option::Option<crate::types::FacetAttribute>,
     /// <p>The action to perform when updating the attribute.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::UpdateActionType>,
+    pub action: ::std::option::Option<crate::types::UpdateActionType>,
 }
 impl FacetAttributeUpdate {
     /// <p>The attribute to update.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::FacetAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<&crate::types::FacetAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The action to perform when updating the attribute.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::UpdateActionType> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::UpdateActionType> {
         self.action.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl FacetAttributeUpdate {
 
 /// A builder for [`FacetAttributeUpdate`](crate::types::FacetAttributeUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FacetAttributeUpdateBuilder {
-    pub(crate) attribute: std::option::Option<crate::types::FacetAttribute>,
-    pub(crate) action: std::option::Option<crate::types::UpdateActionType>,
+    pub(crate) attribute: ::std::option::Option<crate::types::FacetAttribute>,
+    pub(crate) action: ::std::option::Option<crate::types::UpdateActionType>,
 }
 impl FacetAttributeUpdateBuilder {
     /// <p>The attribute to update.</p>
     pub fn attribute(mut self, input: crate::types::FacetAttribute) -> Self {
-        self.attribute = Some(input);
+        self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attribute to update.</p>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::FacetAttribute>,
+        input: ::std::option::Option<crate::types::FacetAttribute>,
     ) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The action to perform when updating the attribute.</p>
     pub fn action(mut self, input: crate::types::UpdateActionType) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to perform when updating the attribute.</p>
     pub fn set_action(
         mut self,
-        input: std::option::Option<crate::types::UpdateActionType>,
+        input: ::std::option::Option<crate::types::UpdateActionType>,
     ) -> Self {
         self.action = input;
         self

@@ -2,14 +2,14 @@
 
 /// <p>The trigger threshold of the action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionThreshold {
     /// <p> The threshold of a notification.</p>
     #[doc(hidden)]
     pub action_threshold_value: f64,
     /// <p> The type of threshold for a notification.</p>
     #[doc(hidden)]
-    pub action_threshold_type: std::option::Option<crate::types::ThresholdType>,
+    pub action_threshold_type: ::std::option::Option<crate::types::ThresholdType>,
 }
 impl ActionThreshold {
     /// <p> The threshold of a notification.</p>
@@ -17,7 +17,7 @@ impl ActionThreshold {
         self.action_threshold_value
     }
     /// <p> The type of threshold for a notification.</p>
-    pub fn action_threshold_type(&self) -> std::option::Option<&crate::types::ThresholdType> {
+    pub fn action_threshold_type(&self) -> ::std::option::Option<&crate::types::ThresholdType> {
         self.action_threshold_type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ActionThreshold {
 
 /// A builder for [`ActionThreshold`](crate::types::ActionThreshold).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionThresholdBuilder {
-    pub(crate) action_threshold_value: std::option::Option<f64>,
-    pub(crate) action_threshold_type: std::option::Option<crate::types::ThresholdType>,
+    pub(crate) action_threshold_value: ::std::option::Option<f64>,
+    pub(crate) action_threshold_type: ::std::option::Option<crate::types::ThresholdType>,
 }
 impl ActionThresholdBuilder {
     /// <p> The threshold of a notification.</p>
     pub fn action_threshold_value(mut self, input: f64) -> Self {
-        self.action_threshold_value = Some(input);
+        self.action_threshold_value = ::std::option::Option::Some(input);
         self
     }
     /// <p> The threshold of a notification.</p>
-    pub fn set_action_threshold_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_action_threshold_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.action_threshold_value = input;
         self
     }
     /// <p> The type of threshold for a notification.</p>
     pub fn action_threshold_type(mut self, input: crate::types::ThresholdType) -> Self {
-        self.action_threshold_type = Some(input);
+        self.action_threshold_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of threshold for a notification.</p>
     pub fn set_action_threshold_type(
         mut self,
-        input: std::option::Option<crate::types::ThresholdType>,
+        input: ::std::option::Option<crate::types::ThresholdType>,
     ) -> Self {
         self.action_threshold_type = input;
         self

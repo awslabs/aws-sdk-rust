@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a get repository operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositoryOutput {
     /// <p>Information about the repository.</p>
     #[doc(hidden)]
-    pub repository_metadata: std::option::Option<crate::types::RepositoryMetadata>,
+    pub repository_metadata: ::std::option::Option<crate::types::RepositoryMetadata>,
     _request_id: Option<String>,
 }
 impl GetRepositoryOutput {
     /// <p>Information about the repository.</p>
-    pub fn repository_metadata(&self) -> std::option::Option<&crate::types::RepositoryMetadata> {
+    pub fn repository_metadata(&self) -> ::std::option::Option<&crate::types::RepositoryMetadata> {
         self.repository_metadata.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetRepositoryOutput {
+impl ::aws_http::request_id::RequestId for GetRepositoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl GetRepositoryOutput {
 
 /// A builder for [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRepositoryOutputBuilder {
-    pub(crate) repository_metadata: std::option::Option<crate::types::RepositoryMetadata>,
+    pub(crate) repository_metadata: ::std::option::Option<crate::types::RepositoryMetadata>,
     _request_id: Option<String>,
 }
 impl GetRepositoryOutputBuilder {
     /// <p>Information about the repository.</p>
     pub fn repository_metadata(mut self, input: crate::types::RepositoryMetadata) -> Self {
-        self.repository_metadata = Some(input);
+        self.repository_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the repository.</p>
     pub fn set_repository_metadata(
         mut self,
-        input: std::option::Option<crate::types::RepositoryMetadata>,
+        input: ::std::option::Option<crate::types::RepositoryMetadata>,
     ) -> Self {
         self.repository_metadata = input;
         self

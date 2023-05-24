@@ -2,7 +2,7 @@
 
 /// <p>Configures the type of the job's ManifestGenerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum JobManifestGenerator {
     /// <p>The S3 job ManifestGenerator's configuration details.</p>
     S3JobManifestGenerator(crate::types::S3JobManifestGenerator),
@@ -22,11 +22,11 @@ impl JobManifestGenerator {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_job_manifest_generator(
         &self,
-    ) -> std::result::Result<&crate::types::S3JobManifestGenerator, &Self> {
+    ) -> ::std::result::Result<&crate::types::S3JobManifestGenerator, &Self> {
         if let JobManifestGenerator::S3JobManifestGenerator(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3JobManifestGenerator`](crate::types::JobManifestGenerator::S3JobManifestGenerator).

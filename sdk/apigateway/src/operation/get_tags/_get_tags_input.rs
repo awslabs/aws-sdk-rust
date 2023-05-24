@@ -2,29 +2,29 @@
 
 /// <p>Gets the Tags collection for a given resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTagsInput {
     /// <p>The ARN of a resource that can be tagged.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<std::string::String>,
+    pub position: ::std::option::Option<::std::string::String>,
     /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    pub limit: ::std::option::Option<i32>,
 }
 impl GetTagsInput {
     /// <p>The ARN of a resource that can be tagged.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<&str> {
         self.position.as_deref()
     }
     /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-    pub fn limit(&self) -> std::option::Option<i32> {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
 }
@@ -37,51 +37,53 @@ impl GetTagsInput {
 
 /// A builder for [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetTagsInputBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) position: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<i32>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) position: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
 }
 impl GetTagsInputBuilder {
     /// <p>The ARN of a resource that can be tagged.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a resource that can be tagged.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
-    pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
-        self.position = Some(input.into());
+    pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
-    pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
     }
     /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// Consumes the builder and constructs a [`GetTagsInput`](crate::operation::get_tags::GetTagsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_tags::GetTagsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_tags::GetTagsInput {
+        ::std::result::Result::Ok(crate::operation::get_tags::GetTagsInput {
             resource_arn: self.resource_arn,
             position: self.position,
             limit: self.limit,

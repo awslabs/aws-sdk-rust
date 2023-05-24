@@ -38,13 +38,13 @@
 /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ProresTelecine {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ProresTelecine {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ProresTelecine {
+impl ::std::convert::From<&str> for ProresTelecine {
     fn from(s: &str) -> Self {
         match s {
             "HARD" => ProresTelecine::Hard,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ProresTelecine {
         }
     }
 }
-impl std::str::FromStr for ProresTelecine {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ProresTelecine {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProresTelecine::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ProresTelecine::from(s))
     }
 }
 impl ProresTelecine {
@@ -86,7 +86,7 @@ impl ProresTelecine {
         &["HARD", "NONE"]
     }
 }
-impl AsRef<str> for ProresTelecine {
+impl ::std::convert::AsRef<str> for ProresTelecine {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,27 +2,27 @@
 
 /// <p>This input determines which instance groups to retrieve.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInstanceGroupsOutput {
     /// <p>The list of instance groups for the cluster and given filters.</p>
     #[doc(hidden)]
-    pub instance_groups: std::option::Option<std::vec::Vec<crate::types::InstanceGroup>>,
+    pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInstanceGroupsOutput {
     /// <p>The list of instance groups for the cluster and given filters.</p>
-    pub fn instance_groups(&self) -> std::option::Option<&[crate::types::InstanceGroup]> {
+    pub fn instance_groups(&self) -> ::std::option::Option<&[crate::types::InstanceGroup]> {
         self.instance_groups.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListInstanceGroupsOutput {
+impl ::aws_http::request_id::RequestId for ListInstanceGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl ListInstanceGroupsOutput {
 
 /// A builder for [`ListInstanceGroupsOutput`](crate::operation::list_instance_groups::ListInstanceGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListInstanceGroupsOutputBuilder {
-    pub(crate) instance_groups: std::option::Option<std::vec::Vec<crate::types::InstanceGroup>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInstanceGroupsOutputBuilder {
@@ -52,24 +54,24 @@ impl ListInstanceGroupsOutputBuilder {
     pub fn instance_groups(mut self, input: crate::types::InstanceGroup) -> Self {
         let mut v = self.instance_groups.unwrap_or_default();
         v.push(input);
-        self.instance_groups = Some(v);
+        self.instance_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of instance groups for the cluster and given filters.</p>
     pub fn set_instance_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     ) -> Self {
         self.instance_groups = input;
         self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

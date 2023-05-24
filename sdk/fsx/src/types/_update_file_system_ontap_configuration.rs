@@ -2,77 +2,77 @@
 
 /// <p>The configuration updates for an Amazon FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     #[doc(hidden)]
-    pub automatic_backup_retention_days: std::option::Option<i32>,
+    pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     #[doc(hidden)]
-    pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
+    pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
     #[doc(hidden)]
-    pub fsx_admin_password: std::option::Option<std::string::String>,
+    pub fsx_admin_password: ::std::option::Option<::std::string::String>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     #[doc(hidden)]
-    pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
     #[doc(hidden)]
-    pub disk_iops_configuration: std::option::Option<crate::types::DiskIopsConfiguration>,
+    pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
     #[doc(hidden)]
-    pub throughput_capacity: std::option::Option<i32>,
+    pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
     #[doc(hidden)]
-    pub add_route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
     #[doc(hidden)]
-    pub remove_route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
-    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+    pub fn automatic_backup_retention_days(&self) -> ::std::option::Option<i32> {
         self.automatic_backup_retention_days
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
-    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
     /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
-    pub fn fsx_admin_password(&self) -> std::option::Option<&str> {
+    pub fn fsx_admin_password(&self) -> ::std::option::Option<&str> {
         self.fsx_admin_password.as_deref()
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
     pub fn disk_iops_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DiskIopsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
     /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
-    pub fn throughput_capacity(&self) -> std::option::Option<i32> {
+    pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity
     }
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn add_route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn add_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.add_route_table_ids.as_deref()
     }
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
-    pub fn remove_route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn remove_route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.remove_route_table_ids.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFileSystemOntapConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateFileSystemOntapConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFileSystemOntapConfiguration");
         formatter.field(
             "automatic_backup_retention_days",
@@ -103,53 +103,60 @@ impl UpdateFileSystemOntapConfiguration {
 
 /// A builder for [`UpdateFileSystemOntapConfiguration`](crate::types::UpdateFileSystemOntapConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateFileSystemOntapConfigurationBuilder {
-    pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
-    pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    pub(crate) fsx_admin_password: std::option::Option<std::string::String>,
-    pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
-    pub(crate) disk_iops_configuration: std::option::Option<crate::types::DiskIopsConfiguration>,
-    pub(crate) throughput_capacity: std::option::Option<i32>,
-    pub(crate) add_route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) remove_route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) automatic_backup_retention_days: ::std::option::Option<i32>,
+    pub(crate) daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) fsx_admin_password: ::std::option::Option<::std::string::String>,
+    pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
+    pub(crate) throughput_capacity: ::std::option::Option<i32>,
+    pub(crate) add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remove_route_table_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     pub fn automatic_backup_retention_days(mut self, input: i32) -> Self {
-        self.automatic_backup_retention_days = Some(input);
+        self.automatic_backup_retention_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
-    pub fn set_automatic_backup_retention_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_automatic_backup_retention_days(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.automatic_backup_retention_days = input;
         self
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn daily_automatic_backup_start_time(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.daily_automatic_backup_start_time = Some(input.into());
+        self.daily_automatic_backup_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn set_daily_automatic_backup_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.daily_automatic_backup_start_time = input;
         self
     }
     /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
-    pub fn fsx_admin_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fsx_admin_password = Some(input.into());
+    pub fn fsx_admin_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.fsx_admin_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ONTAP administrative password for the <code>fsxadmin</code> user.</p>
     pub fn set_fsx_admin_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.fsx_admin_password = input;
         self
@@ -158,8 +165,11 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    pub fn weekly_maintenance_start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.weekly_maintenance_start_time = Some(input.into());
+    pub fn weekly_maintenance_start_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.weekly_maintenance_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
@@ -168,31 +178,31 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn set_weekly_maintenance_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.weekly_maintenance_start_time = input;
         self
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
     pub fn disk_iops_configuration(mut self, input: crate::types::DiskIopsConfiguration) -> Self {
-        self.disk_iops_configuration = Some(input);
+        self.disk_iops_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.</p>
     pub fn set_disk_iops_configuration(
         mut self,
-        input: std::option::Option<crate::types::DiskIopsConfiguration>,
+        input: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     ) -> Self {
         self.disk_iops_configuration = input;
         self
     }
     /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
-        self.throughput_capacity = Some(input);
+        self.throughput_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the throughput of an FSx for NetApp ONTAP file system, measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
-    pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
         self
     }
@@ -201,16 +211,19 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// To override the contents of this collection use [`set_add_route_table_ids`](Self::set_add_route_table_ids).
     ///
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
-    pub fn add_route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn add_route_table_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.add_route_table_ids.unwrap_or_default();
         v.push(input.into());
-        self.add_route_table_ids = Some(v);
+        self.add_route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
     pub fn set_add_route_table_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.add_route_table_ids = input;
         self
@@ -220,16 +233,19 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// To override the contents of this collection use [`set_remove_route_table_ids`](Self::set_remove_route_table_ids).
     ///
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
-    pub fn remove_route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn remove_route_table_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.remove_route_table_ids.unwrap_or_default();
         v.push(input.into());
-        self.remove_route_table_ids = Some(v);
+        self.remove_route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
     pub fn set_remove_route_table_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.remove_route_table_ids = input;
         self
@@ -248,8 +264,8 @@ impl UpdateFileSystemOntapConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for UpdateFileSystemOntapConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateFileSystemOntapConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFileSystemOntapConfigurationBuilder");
         formatter.field(
             "automatic_backup_retention_days",

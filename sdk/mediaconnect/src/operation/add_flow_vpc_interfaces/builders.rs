@@ -6,29 +6,29 @@ pub use crate::operation::add_flow_vpc_interfaces::_add_flow_vpc_interfaces_inpu
 /// Fluent builder constructing a request to `AddFlowVpcInterfaces`.
 ///
 /// Adds VPC interfaces to flow
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder,
 }
 impl AddFlowVpcInterfacesFluentBuilder {
     /// Creates a new `AddFlowVpcInterfaces`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfaces,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl AddFlowVpcInterfacesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl AddFlowVpcInterfacesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
         >,
     > {
         self.send_middleware().await
     }
     /// The flow that you want to mutate.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
     /// The flow that you want to mutate.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
@@ -102,7 +105,7 @@ impl AddFlowVpcInterfacesFluentBuilder {
     /// A list of VPC interfaces that you want to add.
     pub fn set_vpc_interfaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcInterfaceRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>,
     ) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self

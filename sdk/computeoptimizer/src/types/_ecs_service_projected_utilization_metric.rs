@@ -3,7 +3,7 @@
 /// <p> Describes the projected utilization metrics of an Amazon ECS service recommendation option. </p>
 /// <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsServiceProjectedUtilizationMetric {
     /// <p> The name of the projected utilization metric. </p>
     /// <p>The following utilization metrics are available:</p>
@@ -12,12 +12,12 @@ pub struct EcsServiceProjectedUtilizationMetric {
     /// <li> <p> <code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::EcsServiceMetricName>,
+    pub name: ::std::option::Option<crate::types::EcsServiceMetricName>,
     /// <p>The statistic of the projected utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
     #[doc(hidden)]
-    pub statistic: std::option::Option<crate::types::EcsServiceMetricStatistic>,
+    pub statistic: ::std::option::Option<crate::types::EcsServiceMetricStatistic>,
     /// <p> The lower bound values for the projected utilization metrics. </p>
     #[doc(hidden)]
     pub lower_bound_value: f64,
@@ -32,13 +32,13 @@ impl EcsServiceProjectedUtilizationMetric {
     /// <li> <p> <code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p> </li>
     /// <li> <p> <code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::types::EcsServiceMetricName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::EcsServiceMetricName> {
         self.name.as_ref()
     }
     /// <p>The statistic of the projected utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::types::EcsServiceMetricStatistic> {
+    pub fn statistic(&self) -> ::std::option::Option<&crate::types::EcsServiceMetricStatistic> {
         self.statistic.as_ref()
     }
     /// <p> The lower bound values for the projected utilization metrics. </p>
@@ -59,12 +59,14 @@ impl EcsServiceProjectedUtilizationMetric {
 
 /// A builder for [`EcsServiceProjectedUtilizationMetric`](crate::types::EcsServiceProjectedUtilizationMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcsServiceProjectedUtilizationMetricBuilder {
-    pub(crate) name: std::option::Option<crate::types::EcsServiceMetricName>,
-    pub(crate) statistic: std::option::Option<crate::types::EcsServiceMetricStatistic>,
-    pub(crate) lower_bound_value: std::option::Option<f64>,
-    pub(crate) upper_bound_value: std::option::Option<f64>,
+    pub(crate) name: ::std::option::Option<crate::types::EcsServiceMetricName>,
+    pub(crate) statistic: ::std::option::Option<crate::types::EcsServiceMetricStatistic>,
+    pub(crate) lower_bound_value: ::std::option::Option<f64>,
+    pub(crate) upper_bound_value: ::std::option::Option<f64>,
 }
 impl EcsServiceProjectedUtilizationMetricBuilder {
     /// <p> The name of the projected utilization metric. </p>
@@ -74,7 +76,7 @@ impl EcsServiceProjectedUtilizationMetricBuilder {
     /// <li> <p> <code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::EcsServiceMetricName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p> The name of the projected utilization metric. </p>
@@ -85,7 +87,7 @@ impl EcsServiceProjectedUtilizationMetricBuilder {
     /// </ul>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::EcsServiceMetricName>,
+        input: ::std::option::Option<crate::types::EcsServiceMetricName>,
     ) -> Self {
         self.name = input;
         self
@@ -94,7 +96,7 @@ impl EcsServiceProjectedUtilizationMetricBuilder {
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
     pub fn statistic(mut self, input: crate::types::EcsServiceMetricStatistic) -> Self {
-        self.statistic = Some(input);
+        self.statistic = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistic of the projected utilization metric.</p>
@@ -102,28 +104,28 @@ impl EcsServiceProjectedUtilizationMetricBuilder {
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
     pub fn set_statistic(
         mut self,
-        input: std::option::Option<crate::types::EcsServiceMetricStatistic>,
+        input: ::std::option::Option<crate::types::EcsServiceMetricStatistic>,
     ) -> Self {
         self.statistic = input;
         self
     }
     /// <p> The lower bound values for the projected utilization metrics. </p>
     pub fn lower_bound_value(mut self, input: f64) -> Self {
-        self.lower_bound_value = Some(input);
+        self.lower_bound_value = ::std::option::Option::Some(input);
         self
     }
     /// <p> The lower bound values for the projected utilization metrics. </p>
-    pub fn set_lower_bound_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lower_bound_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lower_bound_value = input;
         self
     }
     /// <p> The upper bound values for the projected utilization metrics. </p>
     pub fn upper_bound_value(mut self, input: f64) -> Self {
-        self.upper_bound_value = Some(input);
+        self.upper_bound_value = ::std::option::Option::Some(input);
         self
     }
     /// <p> The upper bound values for the projected utilization metrics. </p>
-    pub fn set_upper_bound_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_upper_bound_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.upper_bound_value = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>A legal hold configuration for an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    pub status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
 }
 impl ObjectLockLegalHold {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ObjectLockLegalHold {
 
 /// A builder for [`ObjectLockLegalHold`](crate::types::ObjectLockLegalHold).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObjectLockLegalHoldBuilder {
-    pub(crate) status: std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
 }
 impl ObjectLockLegalHoldBuilder {
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     pub fn status(mut self, input: crate::types::ObjectLockLegalHoldStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the specified object has a legal hold in place.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+        input: ::std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     ) -> Self {
         self.status = input;
         self

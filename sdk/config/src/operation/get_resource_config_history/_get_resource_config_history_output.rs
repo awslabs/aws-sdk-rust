@@ -2,27 +2,28 @@
 
 /// <p>The output for the <code>GetResourceConfigHistory</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceConfigHistoryOutput {
     /// <p>A list that contains the configuration history of one or more resources.</p>
     #[doc(hidden)]
-    pub configuration_items: std::option::Option<std::vec::Vec<crate::types::ConfigurationItem>>,
+    pub configuration_items:
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourceConfigHistoryOutput {
     /// <p>A list that contains the configuration history of one or more resources.</p>
-    pub fn configuration_items(&self) -> std::option::Option<&[crate::types::ConfigurationItem]> {
+    pub fn configuration_items(&self) -> ::std::option::Option<&[crate::types::ConfigurationItem]> {
         self.configuration_items.as_deref()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetResourceConfigHistoryOutput {
+impl ::aws_http::request_id::RequestId for GetResourceConfigHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,11 +37,13 @@ impl GetResourceConfigHistoryOutput {
 
 /// A builder for [`GetResourceConfigHistoryOutput`](crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetResourceConfigHistoryOutputBuilder {
     pub(crate) configuration_items:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationItem>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourceConfigHistoryOutputBuilder {
@@ -52,24 +55,24 @@ impl GetResourceConfigHistoryOutputBuilder {
     pub fn configuration_items(mut self, input: crate::types::ConfigurationItem) -> Self {
         let mut v = self.configuration_items.unwrap_or_default();
         v.push(input);
-        self.configuration_items = Some(v);
+        self.configuration_items = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains the configuration history of one or more resources.</p>
     pub fn set_configuration_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationItem>>,
     ) -> Self {
         self.configuration_items = input;
         self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

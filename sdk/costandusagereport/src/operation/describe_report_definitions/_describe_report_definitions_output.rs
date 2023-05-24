@@ -2,27 +2,27 @@
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReportDefinitionsOutput {
     /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
     #[doc(hidden)]
-    pub report_definitions: std::option::Option<std::vec::Vec<crate::types::ReportDefinition>>,
+    pub report_definitions: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
     /// <p>A generic string.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeReportDefinitionsOutput {
     /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
-    pub fn report_definitions(&self) -> std::option::Option<&[crate::types::ReportDefinition]> {
+    pub fn report_definitions(&self) -> ::std::option::Option<&[crate::types::ReportDefinition]> {
         self.report_definitions.as_deref()
     }
     /// <p>A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReportDefinitionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReportDefinitionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,11 +36,13 @@ impl DescribeReportDefinitionsOutput {
 
 /// A builder for [`DescribeReportDefinitionsOutput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReportDefinitionsOutputBuilder {
     pub(crate) report_definitions:
-        std::option::Option<std::vec::Vec<crate::types::ReportDefinition>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeReportDefinitionsOutputBuilder {
@@ -52,24 +54,24 @@ impl DescribeReportDefinitionsOutputBuilder {
     pub fn report_definitions(mut self, input: crate::types::ReportDefinition) -> Self {
         let mut v = self.report_definitions.unwrap_or_default();
         v.push(input);
-        self.report_definitions = Some(v);
+        self.report_definitions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
     pub fn set_report_definitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReportDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportDefinition>>,
     ) -> Self {
         self.report_definitions = input;
         self
     }
     /// <p>A generic string.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A generic string.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

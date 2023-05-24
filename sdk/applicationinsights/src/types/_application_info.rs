@@ -2,56 +2,56 @@
 
 /// <p>Describes the status of the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationInfo {
     /// <p>The name of the resource group used for the application.</p>
     #[doc(hidden)]
-    pub resource_group_name: std::option::Option<std::string::String>,
+    pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle of the application. </p>
     #[doc(hidden)]
-    pub life_cycle: std::option::Option<std::string::String>,
+    pub life_cycle: ::std::option::Option<::std::string::String>,
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
     #[doc(hidden)]
-    pub ops_item_sns_topic_arn: std::option::Option<std::string::String>,
+    pub ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
     #[doc(hidden)]
-    pub ops_center_enabled: std::option::Option<bool>,
+    pub ops_center_enabled: ::std::option::Option<bool>,
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     #[doc(hidden)]
-    pub cwe_monitor_enabled: std::option::Option<bool>,
+    pub cwe_monitor_enabled: ::std::option::Option<bool>,
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
     /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
     /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub remarks: std::option::Option<std::string::String>,
+    pub remarks: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether auto-configuration is turned on for this application. </p>
     #[doc(hidden)]
-    pub auto_config_enabled: std::option::Option<bool>,
+    pub auto_config_enabled: ::std::option::Option<bool>,
     /// <p> The method used by Application Insights to onboard your resources. </p>
     #[doc(hidden)]
-    pub discovery_type: std::option::Option<crate::types::DiscoveryType>,
+    pub discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
 }
 impl ApplicationInfo {
     /// <p>The name of the resource group used for the application.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The lifecycle of the application. </p>
-    pub fn life_cycle(&self) -> std::option::Option<&str> {
+    pub fn life_cycle(&self) -> ::std::option::Option<&str> {
         self.life_cycle.as_deref()
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
-    pub fn ops_item_sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn ops_item_sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.ops_item_sns_topic_arn.as_deref()
     }
     /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
-    pub fn ops_center_enabled(&self) -> std::option::Option<bool> {
+    pub fn ops_center_enabled(&self) -> ::std::option::Option<bool> {
         self.ops_center_enabled
     }
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
-    pub fn cwe_monitor_enabled(&self) -> std::option::Option<bool> {
+    pub fn cwe_monitor_enabled(&self) -> ::std::option::Option<bool> {
         self.cwe_monitor_enabled
     }
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
@@ -59,15 +59,15 @@ impl ApplicationInfo {
     /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
     /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
-    pub fn remarks(&self) -> std::option::Option<&str> {
+    pub fn remarks(&self) -> ::std::option::Option<&str> {
         self.remarks.as_deref()
     }
     /// <p> Indicates whether auto-configuration is turned on for this application. </p>
-    pub fn auto_config_enabled(&self) -> std::option::Option<bool> {
+    pub fn auto_config_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_config_enabled
     }
     /// <p> The method used by Application Insights to onboard your resources. </p>
-    pub fn discovery_type(&self) -> std::option::Option<&crate::types::DiscoveryType> {
+    pub fn discovery_type(&self) -> ::std::option::Option<&crate::types::DiscoveryType> {
         self.discovery_type.as_ref()
     }
 }
@@ -80,71 +80,79 @@ impl ApplicationInfo {
 
 /// A builder for [`ApplicationInfo`](crate::types::ApplicationInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationInfoBuilder {
-    pub(crate) resource_group_name: std::option::Option<std::string::String>,
-    pub(crate) life_cycle: std::option::Option<std::string::String>,
-    pub(crate) ops_item_sns_topic_arn: std::option::Option<std::string::String>,
-    pub(crate) ops_center_enabled: std::option::Option<bool>,
-    pub(crate) cwe_monitor_enabled: std::option::Option<bool>,
-    pub(crate) remarks: std::option::Option<std::string::String>,
-    pub(crate) auto_config_enabled: std::option::Option<bool>,
-    pub(crate) discovery_type: std::option::Option<crate::types::DiscoveryType>,
+    pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) life_cycle: ::std::option::Option<::std::string::String>,
+    pub(crate) ops_item_sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ops_center_enabled: ::std::option::Option<bool>,
+    pub(crate) cwe_monitor_enabled: ::std::option::Option<bool>,
+    pub(crate) remarks: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_config_enabled: ::std::option::Option<bool>,
+    pub(crate) discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
 }
 impl ApplicationInfoBuilder {
     /// <p>The name of the resource group used for the application.</p>
-    pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_group_name = Some(input.into());
+    pub fn resource_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group used for the application.</p>
     pub fn set_resource_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_group_name = input;
         self
     }
     /// <p>The lifecycle of the application. </p>
-    pub fn life_cycle(mut self, input: impl Into<std::string::String>) -> Self {
-        self.life_cycle = Some(input.into());
+    pub fn life_cycle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.life_cycle = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The lifecycle of the application. </p>
-    pub fn set_life_cycle(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_life_cycle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.life_cycle = input;
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
-    pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ops_item_sns_topic_arn = Some(input.into());
+    pub fn ops_item_sns_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ops_item_sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SNS topic provided to Application Insights that is associated to the created opsItems to receive SNS notifications for opsItem updates. </p>
     pub fn set_ops_item_sns_topic_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ops_item_sns_topic_arn = input;
         self
     }
     /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
     pub fn ops_center_enabled(mut self, input: bool) -> Self {
-        self.ops_center_enabled = Some(input);
+        self.ops_center_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether Application Insights will create opsItems for any problem detected by Application Insights for an application. </p>
-    pub fn set_ops_center_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ops_center_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ops_center_enabled = input;
         self
     }
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
     pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
-        self.cwe_monitor_enabled = Some(input);
+        self.cwe_monitor_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others. </p>
-    pub fn set_cwe_monitor_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cwe_monitor_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cwe_monitor_enabled = input;
         self
     }
@@ -153,8 +161,8 @@ impl ApplicationInfoBuilder {
     /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
     /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
-    pub fn remarks(mut self, input: impl Into<std::string::String>) -> Self {
-        self.remarks = Some(input.into());
+    pub fn remarks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.remarks = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
@@ -162,29 +170,29 @@ impl ApplicationInfoBuilder {
     /// <li> <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li>
     /// <li> <p>“Configuring application, detected 1 Unconfigured Components”</p> </li>
     /// </ul>
-    pub fn set_remarks(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_remarks(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remarks = input;
         self
     }
     /// <p> Indicates whether auto-configuration is turned on for this application. </p>
     pub fn auto_config_enabled(mut self, input: bool) -> Self {
-        self.auto_config_enabled = Some(input);
+        self.auto_config_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether auto-configuration is turned on for this application. </p>
-    pub fn set_auto_config_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_config_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_config_enabled = input;
         self
     }
     /// <p> The method used by Application Insights to onboard your resources. </p>
     pub fn discovery_type(mut self, input: crate::types::DiscoveryType) -> Self {
-        self.discovery_type = Some(input);
+        self.discovery_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The method used by Application Insights to onboard your resources. </p>
     pub fn set_discovery_type(
         mut self,
-        input: std::option::Option<crate::types::DiscoveryType>,
+        input: ::std::option::Option<crate::types::DiscoveryType>,
     ) -> Self {
         self.discovery_type = input;
         self

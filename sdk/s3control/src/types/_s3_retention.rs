@@ -2,22 +2,22 @@
 
 /// <p>Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the retention from your objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Retention {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
     #[doc(hidden)]
-    pub retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::S3ObjectLockRetentionMode>,
+    pub mode: ::std::option::Option<crate::types::S3ObjectLockRetentionMode>,
 }
 impl S3Retention {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-    pub fn retain_until_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn retain_until_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.retain_until_date.as_ref()
     }
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::S3ObjectLockRetentionMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::S3ObjectLockRetentionMode> {
         self.mode.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl S3Retention {
 
 /// A builder for [`S3Retention`](crate::types::S3Retention).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3RetentionBuilder {
-    pub(crate) retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) mode: std::option::Option<crate::types::S3ObjectLockRetentionMode>,
+    pub(crate) retain_until_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) mode: ::std::option::Option<crate::types::S3ObjectLockRetentionMode>,
 }
 impl S3RetentionBuilder {
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
-    pub fn retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.retain_until_date = Some(input);
+    pub fn retain_until_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.retain_until_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.</p>
     pub fn set_retain_until_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.retain_until_date = input;
         self
     }
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
     pub fn mode(mut self, input: crate::types::S3ObjectLockRetentionMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Object Lock retention mode to be applied to all objects in the Batch Operations job.</p>
     pub fn set_mode(
         mut self,
-        input: std::option::Option<crate::types::S3ObjectLockRetentionMode>,
+        input: ::std::option::Option<crate::types::S3ObjectLockRetentionMode>,
     ) -> Self {
         self.mode = input;
         self

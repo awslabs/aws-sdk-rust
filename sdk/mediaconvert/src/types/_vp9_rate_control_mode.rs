@@ -37,13 +37,13 @@
 /// With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Vp9RateControlMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum Vp9RateControlMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Vp9RateControlMode {
+impl ::std::convert::From<&str> for Vp9RateControlMode {
     fn from(s: &str) -> Self {
         match s {
             "VBR" => Vp9RateControlMode::Vbr,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for Vp9RateControlMode {
         }
     }
 }
-impl std::str::FromStr for Vp9RateControlMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Vp9RateControlMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Vp9RateControlMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Vp9RateControlMode::from(s))
     }
 }
 impl Vp9RateControlMode {
@@ -81,7 +81,7 @@ impl Vp9RateControlMode {
         &["VBR"]
     }
 }
-impl AsRef<str> for Vp9RateControlMode {
+impl ::std::convert::AsRef<str> for Vp9RateControlMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

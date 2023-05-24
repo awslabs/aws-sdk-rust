@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>GetPolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyOutput {
     /// <p>A structure containing details about the policy.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<crate::types::Policy>,
+    pub policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,
 }
 impl GetPolicyOutput {
     /// <p>A structure containing details about the policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::types::Policy> {
+    pub fn policy(&self) -> ::std::option::Option<&crate::types::Policy> {
         self.policy.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetPolicyOutput {
+impl ::aws_http::request_id::RequestId for GetPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetPolicyOutput {
 
 /// A builder for [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPolicyOutputBuilder {
-    pub(crate) policy: std::option::Option<crate::types::Policy>,
+    pub(crate) policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,
 }
 impl GetPolicyOutputBuilder {
     /// <p>A structure containing details about the policy.</p>
     pub fn policy(mut self, input: crate::types::Policy) -> Self {
-        self.policy = Some(input);
+        self.policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the policy.</p>
-    pub fn set_policy(mut self, input: std::option::Option<crate::types::Policy>) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
         self.policy = input;
         self
     }

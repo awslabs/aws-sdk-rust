@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FindingHistoryUpdateSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum FindingHistoryUpdateSourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FindingHistoryUpdateSourceType {
+impl ::std::convert::From<&str> for FindingHistoryUpdateSourceType {
     fn from(s: &str) -> Self {
         match s {
             "BATCH_IMPORT_FINDINGS" => FindingHistoryUpdateSourceType::BatchImportFindings,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for FindingHistoryUpdateSourceType {
         }
     }
 }
-impl std::str::FromStr for FindingHistoryUpdateSourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FindingHistoryUpdateSourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FindingHistoryUpdateSourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FindingHistoryUpdateSourceType::from(s))
     }
 }
 impl FindingHistoryUpdateSourceType {
@@ -86,7 +86,7 @@ impl FindingHistoryUpdateSourceType {
         &["BATCH_IMPORT_FINDINGS", "BATCH_UPDATE_FINDINGS"]
     }
 }
-impl AsRef<str> for FindingHistoryUpdateSourceType {
+impl ::std::convert::AsRef<str> for FindingHistoryUpdateSourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

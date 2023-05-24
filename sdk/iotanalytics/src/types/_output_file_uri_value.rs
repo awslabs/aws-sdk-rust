@@ -2,15 +2,15 @@
 
 /// <p>The value of the variable as a structure that specifies an output file URI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
     #[doc(hidden)]
-    pub file_name: std::option::Option<std::string::String>,
+    pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl OutputFileUriValue {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
-    pub fn file_name(&self) -> std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl OutputFileUriValue {
 
 /// A builder for [`OutputFileUriValue`](crate::types::OutputFileUriValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputFileUriValueBuilder {
-    pub(crate) file_name: std::option::Option<std::string::String>,
+    pub(crate) file_name: ::std::option::Option<::std::string::String>,
 }
 impl OutputFileUriValueBuilder {
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
-    pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_name = Some(input.into());
+    pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.</p>
-    pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
     }

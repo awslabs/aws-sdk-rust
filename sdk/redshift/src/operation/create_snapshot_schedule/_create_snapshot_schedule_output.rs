@@ -2,65 +2,65 @@
 
 /// <p>Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotScheduleOutput {
     /// <p>A list of ScheduleDefinitions.</p>
     #[doc(hidden)]
-    pub schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique identifier for the schedule.</p>
     #[doc(hidden)]
-    pub schedule_identifier: std::option::Option<std::string::String>,
+    pub schedule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description of the schedule.</p>
     #[doc(hidden)]
-    pub schedule_description: std::option::Option<std::string::String>,
+    pub schedule_description: ::std::option::Option<::std::string::String>,
     /// <p>An optional set of tags describing the schedule.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p></p>
     #[doc(hidden)]
-    pub next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    pub next_invocations: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>The number of clusters associated with the schedule.</p>
     #[doc(hidden)]
-    pub associated_cluster_count: std::option::Option<i32>,
+    pub associated_cluster_count: ::std::option::Option<i32>,
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
     #[doc(hidden)]
     pub associated_clusters:
-        std::option::Option<std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotScheduleOutput {
     /// <p>A list of ScheduleDefinitions.</p>
-    pub fn schedule_definitions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schedule_definitions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.schedule_definitions.as_deref()
     }
     /// <p>A unique identifier for the schedule.</p>
-    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+    pub fn schedule_identifier(&self) -> ::std::option::Option<&str> {
         self.schedule_identifier.as_deref()
     }
     /// <p>The description of the schedule.</p>
-    pub fn schedule_description(&self) -> std::option::Option<&str> {
+    pub fn schedule_description(&self) -> ::std::option::Option<&str> {
         self.schedule_description.as_deref()
     }
     /// <p>An optional set of tags describing the schedule.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p></p>
-    pub fn next_invocations(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+    pub fn next_invocations(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
         self.next_invocations.as_deref()
     }
     /// <p>The number of clusters associated with the schedule.</p>
-    pub fn associated_cluster_count(&self) -> std::option::Option<i32> {
+    pub fn associated_cluster_count(&self) -> ::std::option::Option<i32> {
         self.associated_cluster_count
     }
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
     pub fn associated_clusters(
         &self,
-    ) -> std::option::Option<&[crate::types::ClusterAssociatedToSchedule]> {
+    ) -> ::std::option::Option<&[crate::types::ClusterAssociatedToSchedule]> {
         self.associated_clusters.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateSnapshotScheduleOutput {
+impl ::aws_http::request_id::RequestId for CreateSnapshotScheduleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -76,16 +76,19 @@ impl CreateSnapshotScheduleOutput {
 
 /// A builder for [`CreateSnapshotScheduleOutput`](crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateSnapshotScheduleOutputBuilder {
-    pub(crate) schedule_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) schedule_identifier: std::option::Option<std::string::String>,
-    pub(crate) schedule_description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) next_invocations: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
-    pub(crate) associated_cluster_count: std::option::Option<i32>,
+    pub(crate) schedule_definitions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) schedule_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) schedule_description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) next_invocations:
+        ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) associated_cluster_count: ::std::option::Option<i32>,
     pub(crate) associated_clusters:
-        std::option::Option<std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotScheduleOutputBuilder {
@@ -94,42 +97,51 @@ impl CreateSnapshotScheduleOutputBuilder {
     /// To override the contents of this collection use [`set_schedule_definitions`](Self::set_schedule_definitions).
     ///
     /// <p>A list of ScheduleDefinitions.</p>
-    pub fn schedule_definitions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schedule_definitions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.schedule_definitions.unwrap_or_default();
         v.push(input.into());
-        self.schedule_definitions = Some(v);
+        self.schedule_definitions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ScheduleDefinitions.</p>
     pub fn set_schedule_definitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.schedule_definitions = input;
         self
     }
     /// <p>A unique identifier for the schedule.</p>
-    pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schedule_identifier = Some(input.into());
+    pub fn schedule_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.schedule_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the schedule.</p>
     pub fn set_schedule_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.schedule_identifier = input;
         self
     }
     /// <p>The description of the schedule.</p>
-    pub fn schedule_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schedule_description = Some(input.into());
+    pub fn schedule_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.schedule_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the schedule.</p>
     pub fn set_schedule_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.schedule_description = input;
         self
@@ -142,13 +154,13 @@ impl CreateSnapshotScheduleOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>An optional set of tags describing the schedule.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -158,27 +170,27 @@ impl CreateSnapshotScheduleOutputBuilder {
     /// To override the contents of this collection use [`set_next_invocations`](Self::set_next_invocations).
     ///
     /// <p></p>
-    pub fn next_invocations(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn next_invocations(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.next_invocations.unwrap_or_default();
         v.push(input);
-        self.next_invocations = Some(v);
+        self.next_invocations = ::std::option::Option::Some(v);
         self
     }
     /// <p></p>
     pub fn set_next_invocations(
         mut self,
-        input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     ) -> Self {
         self.next_invocations = input;
         self
     }
     /// <p>The number of clusters associated with the schedule.</p>
     pub fn associated_cluster_count(mut self, input: i32) -> Self {
-        self.associated_cluster_count = Some(input);
+        self.associated_cluster_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of clusters associated with the schedule.</p>
-    pub fn set_associated_cluster_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_associated_cluster_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.associated_cluster_count = input;
         self
     }
@@ -190,13 +202,13 @@ impl CreateSnapshotScheduleOutputBuilder {
     pub fn associated_clusters(mut self, input: crate::types::ClusterAssociatedToSchedule) -> Self {
         let mut v = self.associated_clusters.unwrap_or_default();
         v.push(input);
-        self.associated_clusters = Some(v);
+        self.associated_clusters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
     pub fn set_associated_clusters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterAssociatedToSchedule>>,
     ) -> Self {
         self.associated_clusters = input;
         self

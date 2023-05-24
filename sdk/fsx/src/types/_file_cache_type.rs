@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FileCacheType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum FileCacheType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FileCacheType {
+impl ::std::convert::From<&str> for FileCacheType {
     fn from(s: &str) -> Self {
         match s {
             "LUSTRE" => FileCacheType::Lustre,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for FileCacheType {
         }
     }
 }
-impl std::str::FromStr for FileCacheType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FileCacheType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileCacheType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FileCacheType::from(s))
     }
 }
 impl FileCacheType {
@@ -81,7 +81,7 @@ impl FileCacheType {
         &["LUSTRE"]
     }
 }
-impl AsRef<str> for FileCacheType {
+impl ::std::convert::AsRef<str> for FileCacheType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

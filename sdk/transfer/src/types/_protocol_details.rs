@@ -2,7 +2,7 @@
 
 /// <p> The protocol settings that are configured for your server. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtocolDetails {
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
     /// <p> <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code> </p>
@@ -12,7 +12,7 @@ pub struct ProtocolDetails {
     /// <p> <i>Special values</i> </p>
     /// <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>
     #[doc(hidden)]
-    pub passive_ip: std::option::Option<std::string::String>,
+    pub passive_ip: ::std::option::Option<::std::string::String>,
     /// <p>A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions through a unique session ID. This property is available during <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.</p>
     /// <ul>
     /// <li> <p> <code>DISABLED</code>: the server does not process TLS session resumption client requests and creates a new TLS session for each request. </p> </li>
@@ -22,17 +22,17 @@ pub struct ProtocolDetails {
     /// </note> </li>
     /// </ul>
     #[doc(hidden)]
-    pub tls_session_resumption_mode: std::option::Option<crate::types::TlsSessionResumptionMode>,
+    pub tls_session_resumption_mode: ::std::option::Option<crate::types::TlsSessionResumptionMode>,
     /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
     /// <p>Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can result in errors even when the file is otherwise successfully uploaded.</p>
     /// <p>Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.</p> <note>
     /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.</p>
     /// </note>
     #[doc(hidden)]
-    pub set_stat_option: std::option::Option<crate::types::SetStatOption>,
+    pub set_stat_option: ::std::option::Option<crate::types::SetStatOption>,
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
     #[doc(hidden)]
-    pub as2_transports: std::option::Option<std::vec::Vec<crate::types::As2Transport>>,
+    pub as2_transports: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
 }
 impl ProtocolDetails {
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
@@ -42,7 +42,7 @@ impl ProtocolDetails {
     /// </note>
     /// <p> <i>Special values</i> </p>
     /// <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>
-    pub fn passive_ip(&self) -> std::option::Option<&str> {
+    pub fn passive_ip(&self) -> ::std::option::Option<&str> {
         self.passive_ip.as_deref()
     }
     /// <p>A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions through a unique session ID. This property is available during <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.</p>
@@ -55,7 +55,7 @@ impl ProtocolDetails {
     /// </ul>
     pub fn tls_session_resumption_mode(
         &self,
-    ) -> std::option::Option<&crate::types::TlsSessionResumptionMode> {
+    ) -> ::std::option::Option<&crate::types::TlsSessionResumptionMode> {
         self.tls_session_resumption_mode.as_ref()
     }
     /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
@@ -63,11 +63,11 @@ impl ProtocolDetails {
     /// <p>Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.</p> <note>
     /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.</p>
     /// </note>
-    pub fn set_stat_option(&self) -> std::option::Option<&crate::types::SetStatOption> {
+    pub fn set_stat_option(&self) -> ::std::option::Option<&crate::types::SetStatOption> {
         self.set_stat_option.as_ref()
     }
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
-    pub fn as2_transports(&self) -> std::option::Option<&[crate::types::As2Transport]> {
+    pub fn as2_transports(&self) -> ::std::option::Option<&[crate::types::As2Transport]> {
         self.as2_transports.as_deref()
     }
 }
@@ -80,13 +80,15 @@ impl ProtocolDetails {
 
 /// A builder for [`ProtocolDetails`](crate::types::ProtocolDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtocolDetailsBuilder {
-    pub(crate) passive_ip: std::option::Option<std::string::String>,
+    pub(crate) passive_ip: ::std::option::Option<::std::string::String>,
     pub(crate) tls_session_resumption_mode:
-        std::option::Option<crate::types::TlsSessionResumptionMode>,
-    pub(crate) set_stat_option: std::option::Option<crate::types::SetStatOption>,
-    pub(crate) as2_transports: std::option::Option<std::vec::Vec<crate::types::As2Transport>>,
+        ::std::option::Option<crate::types::TlsSessionResumptionMode>,
+    pub(crate) set_stat_option: ::std::option::Option<crate::types::SetStatOption>,
+    pub(crate) as2_transports: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
 }
 impl ProtocolDetailsBuilder {
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
@@ -96,8 +98,8 @@ impl ProtocolDetailsBuilder {
     /// </note>
     /// <p> <i>Special values</i> </p>
     /// <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>
-    pub fn passive_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.passive_ip = Some(input.into());
+    pub fn passive_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.passive_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example: </p>
@@ -107,7 +109,7 @@ impl ProtocolDetailsBuilder {
     /// </note>
     /// <p> <i>Special values</i> </p>
     /// <p>The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code> parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and FTPS type servers. In this case, the server automatically responds with one of the endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique application for its usage. For example, if you have a High Availability (HA) Network Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>. This tells the client to use the same IP address as the Control connection and utilize all AZs for their connections. Note, however, that not all FTP clients support the <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code> response.</p>
-    pub fn set_passive_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_passive_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.passive_ip = input;
         self
     }
@@ -123,7 +125,7 @@ impl ProtocolDetailsBuilder {
         mut self,
         input: crate::types::TlsSessionResumptionMode,
     ) -> Self {
-        self.tls_session_resumption_mode = Some(input);
+        self.tls_session_resumption_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions through a unique session ID. This property is available during <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.</p>
@@ -136,7 +138,7 @@ impl ProtocolDetailsBuilder {
     /// </ul>
     pub fn set_tls_session_resumption_mode(
         mut self,
-        input: std::option::Option<crate::types::TlsSessionResumptionMode>,
+        input: ::std::option::Option<crate::types::TlsSessionResumptionMode>,
     ) -> Self {
         self.tls_session_resumption_mode = input;
         self
@@ -147,7 +149,7 @@ impl ProtocolDetailsBuilder {
     /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.</p>
     /// </note>
     pub fn set_stat_option(mut self, input: crate::types::SetStatOption) -> Self {
-        self.set_stat_option = Some(input);
+        self.set_stat_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
@@ -157,7 +159,7 @@ impl ProtocolDetailsBuilder {
     /// </note>
     pub fn set_set_stat_option(
         mut self,
-        input: std::option::Option<crate::types::SetStatOption>,
+        input: ::std::option::Option<crate::types::SetStatOption>,
     ) -> Self {
         self.set_stat_option = input;
         self
@@ -170,13 +172,13 @@ impl ProtocolDetailsBuilder {
     pub fn as2_transports(mut self, input: crate::types::As2Transport) -> Self {
         let mut v = self.as2_transports.unwrap_or_default();
         v.push(input);
-        self.as2_transports = Some(v);
+        self.as2_transports = ::std::option::Option::Some(v);
         self
     }
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
     pub fn set_as2_transports(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::As2Transport>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
     ) -> Self {
         self.as2_transports = input;
         self

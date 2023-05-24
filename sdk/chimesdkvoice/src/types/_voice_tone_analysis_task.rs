@@ -2,57 +2,57 @@
 
 /// <p>A representation of an asynchronous request to perform voice tone analysis on a Voice Connector call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceToneAnalysisTask {
     /// <p>The ID of the voice tone analysis task.</p>
     #[doc(hidden)]
-    pub voice_tone_analysis_task_id: std::option::Option<std::string::String>,
+    pub voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
     #[doc(hidden)]
-    pub voice_tone_analysis_task_status: std::option::Option<std::string::String>,
+    pub voice_tone_analysis_task_status: ::std::option::Option<::std::string::String>,
     /// <p>The call details of a voice tone analysis task.</p>
     #[doc(hidden)]
-    pub call_details: std::option::Option<crate::types::CallDetails>,
+    pub call_details: ::std::option::Option<crate::types::CallDetails>,
     /// <p>The time at which a voice tone analysis task was created.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a voice tone analysis task was updated.</p>
     #[doc(hidden)]
-    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a voice tone analysis task started.</p>
     #[doc(hidden)]
-    pub started_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of a voice tone analysis task.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl VoiceToneAnalysisTask {
     /// <p>The ID of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_task_id(&self) -> std::option::Option<&str> {
+    pub fn voice_tone_analysis_task_id(&self) -> ::std::option::Option<&str> {
         self.voice_tone_analysis_task_id.as_deref()
     }
     /// <p>The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
-    pub fn voice_tone_analysis_task_status(&self) -> std::option::Option<&str> {
+    pub fn voice_tone_analysis_task_status(&self) -> ::std::option::Option<&str> {
         self.voice_tone_analysis_task_status.as_deref()
     }
     /// <p>The call details of a voice tone analysis task.</p>
-    pub fn call_details(&self) -> std::option::Option<&crate::types::CallDetails> {
+    pub fn call_details(&self) -> ::std::option::Option<&crate::types::CallDetails> {
         self.call_details.as_ref()
     }
     /// <p>The time at which a voice tone analysis task was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a voice tone analysis task was updated.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The time at which a voice tone analysis task started.</p>
-    pub fn started_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_timestamp.as_ref()
     }
     /// <p>The status of a voice tone analysis task.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -65,26 +65,31 @@ impl VoiceToneAnalysisTask {
 
 /// A builder for [`VoiceToneAnalysisTask`](crate::types::VoiceToneAnalysisTask).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VoiceToneAnalysisTaskBuilder {
-    pub(crate) voice_tone_analysis_task_id: std::option::Option<std::string::String>,
-    pub(crate) voice_tone_analysis_task_status: std::option::Option<std::string::String>,
-    pub(crate) call_details: std::option::Option<crate::types::CallDetails>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) started_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) voice_tone_analysis_task_id: ::std::option::Option<::std::string::String>,
+    pub(crate) voice_tone_analysis_task_status: ::std::option::Option<::std::string::String>,
+    pub(crate) call_details: ::std::option::Option<crate::types::CallDetails>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl VoiceToneAnalysisTaskBuilder {
     /// <p>The ID of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_task_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.voice_tone_analysis_task_id = Some(input.into());
+    pub fn voice_tone_analysis_task_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.voice_tone_analysis_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the voice tone analysis task.</p>
     pub fn set_voice_tone_analysis_task_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.voice_tone_analysis_task_id = input;
         self
@@ -92,78 +97,84 @@ impl VoiceToneAnalysisTaskBuilder {
     /// <p>The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
     pub fn voice_tone_analysis_task_status(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.voice_tone_analysis_task_status = Some(input.into());
+        self.voice_tone_analysis_task_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
     pub fn set_voice_tone_analysis_task_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.voice_tone_analysis_task_status = input;
         self
     }
     /// <p>The call details of a voice tone analysis task.</p>
     pub fn call_details(mut self, input: crate::types::CallDetails) -> Self {
-        self.call_details = Some(input);
+        self.call_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The call details of a voice tone analysis task.</p>
     pub fn set_call_details(
         mut self,
-        input: std::option::Option<crate::types::CallDetails>,
+        input: ::std::option::Option<crate::types::CallDetails>,
     ) -> Self {
         self.call_details = input;
         self
     }
     /// <p>The time at which a voice tone analysis task was created.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a voice tone analysis task was created.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The time at which a voice tone analysis task was updated.</p>
-    pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_timestamp = Some(input);
+    pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a voice tone analysis task was updated.</p>
     pub fn set_updated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_timestamp = input;
         self
     }
     /// <p>The time at which a voice tone analysis task started.</p>
-    pub fn started_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_timestamp = Some(input);
+    pub fn started_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a voice tone analysis task started.</p>
     pub fn set_started_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_timestamp = input;
         self
     }
     /// <p>The status of a voice tone analysis task.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of a voice tone analysis task.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

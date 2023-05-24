@@ -2,15 +2,15 @@
 
 /// <p>Contains the configuration settings of a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainConfiguration {
     /// <p>The retention period for workflow executions in this domain.</p>
     #[doc(hidden)]
-    pub workflow_execution_retention_period_in_days: std::option::Option<std::string::String>,
+    pub workflow_execution_retention_period_in_days: ::std::option::Option<::std::string::String>,
 }
 impl DomainConfiguration {
     /// <p>The retention period for workflow executions in this domain.</p>
-    pub fn workflow_execution_retention_period_in_days(&self) -> std::option::Option<&str> {
+    pub fn workflow_execution_retention_period_in_days(&self) -> ::std::option::Option<&str> {
         self.workflow_execution_retention_period_in_days.as_deref()
     }
 }
@@ -23,24 +23,27 @@ impl DomainConfiguration {
 
 /// A builder for [`DomainConfiguration`](crate::types::DomainConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainConfigurationBuilder {
     pub(crate) workflow_execution_retention_period_in_days:
-        std::option::Option<std::string::String>,
+        ::std::option::Option<::std::string::String>,
 }
 impl DomainConfigurationBuilder {
     /// <p>The retention period for workflow executions in this domain.</p>
     pub fn workflow_execution_retention_period_in_days(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.workflow_execution_retention_period_in_days = Some(input.into());
+        self.workflow_execution_retention_period_in_days =
+            ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The retention period for workflow executions in this domain.</p>
     pub fn set_workflow_execution_retention_period_in_days(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.workflow_execution_retention_period_in_days = input;
         self

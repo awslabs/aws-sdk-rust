@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutEntityType`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::set_name): <p>The name of the entity type.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::set_description): <p>The description.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::set_name): <p>The name of the entity type.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::set_description): <p>The description.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::put_entity_type::builders::PutEntityTypeFluentBuilder::set_tags): <p>A collection of key and value pairs.</p>
     /// - On success, responds with [`PutEntityTypeOutput`](crate::operation::put_entity_type::PutEntityTypeOutput)
     /// - On failure, responds with [`SdkError<PutEntityTypeError>`](crate::operation::put_entity_type::PutEntityTypeError)

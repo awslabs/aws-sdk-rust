@@ -2,29 +2,29 @@
 
 /// <p>The details of the streaming configuration of an <code>AppInstance</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceStreamingConfiguration {
     /// <p>The type of data to be streamed.</p>
     #[doc(hidden)]
-    pub app_instance_data_type: std::option::Option<crate::types::AppInstanceDataType>,
+    pub app_instance_data_type: ::std::option::Option<crate::types::AppInstanceDataType>,
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppInstanceStreamingConfiguration {
     /// <p>The type of data to be streamed.</p>
     pub fn app_instance_data_type(
         &self,
-    ) -> std::option::Option<&crate::types::AppInstanceDataType> {
+    ) -> ::std::option::Option<&crate::types::AppInstanceDataType> {
         self.app_instance_data_type.as_ref()
     }
     /// <p>The resource ARN.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
-impl std::fmt::Debug for AppInstanceStreamingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AppInstanceStreamingConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceStreamingConfiguration");
         formatter.field("app_instance_data_type", &self.app_instance_data_type);
         formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");
@@ -40,32 +40,32 @@ impl AppInstanceStreamingConfiguration {
 
 /// A builder for [`AppInstanceStreamingConfiguration`](crate::types::AppInstanceStreamingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AppInstanceStreamingConfigurationBuilder {
-    pub(crate) app_instance_data_type: std::option::Option<crate::types::AppInstanceDataType>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
+    pub(crate) app_instance_data_type: ::std::option::Option<crate::types::AppInstanceDataType>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppInstanceStreamingConfigurationBuilder {
     /// <p>The type of data to be streamed.</p>
     pub fn app_instance_data_type(mut self, input: crate::types::AppInstanceDataType) -> Self {
-        self.app_instance_data_type = Some(input);
+        self.app_instance_data_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of data to be streamed.</p>
     pub fn set_app_instance_data_type(
         mut self,
-        input: std::option::Option<crate::types::AppInstanceDataType>,
+        input: ::std::option::Option<crate::types::AppInstanceDataType>,
     ) -> Self {
         self.app_instance_data_type = input;
         self
     }
     /// <p>The resource ARN.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ARN.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
@@ -77,8 +77,8 @@ impl AppInstanceStreamingConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for AppInstanceStreamingConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AppInstanceStreamingConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceStreamingConfigurationBuilder");
         formatter.field("app_instance_data_type", &self.app_instance_data_type);
         formatter.field("resource_arn", &"*** Sensitive Data Redacted ***");

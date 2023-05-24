@@ -21,56 +21,59 @@ pub use crate::operation::receive_message::_receive_message_input::ReceiveMessag
 /// <p>A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires counts as a failed receive. Depending on the configuration of the queue, the message might be sent to the dead-letter queue.</p> <note>
 /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReceiveMessageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::receive_message::builders::ReceiveMessageInputBuilder,
 }
 impl ReceiveMessageFluentBuilder {
     /// Creates a new `ReceiveMessage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::receive_message::ReceiveMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::receive_message::ReceiveMessageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -83,21 +86,21 @@ impl ReceiveMessageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::receive_message::ReceiveMessageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::receive_message::ReceiveMessageError>,
     > {
         self.send_middleware().await
     }
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_url(input.into());
         self
     }
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_url(input);
         self
     }
@@ -145,7 +148,7 @@ impl ReceiveMessageFluentBuilder {
     /// </ul>
     pub fn set_attribute_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueueAttributeName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
     ) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self
@@ -163,7 +166,10 @@ impl ReceiveMessageFluentBuilder {
     /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
-    pub fn message_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn message_attribute_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.message_attribute_names(input.into());
         self
     }
@@ -178,7 +184,7 @@ impl ReceiveMessageFluentBuilder {
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
     pub fn set_message_attribute_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_message_attribute_names(input);
         self
@@ -189,7 +195,7 @@ impl ReceiveMessageFluentBuilder {
         self
     }
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
-    pub fn set_max_number_of_messages(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_number_of_messages(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_number_of_messages(input);
         self
     }
@@ -199,7 +205,7 @@ impl ReceiveMessageFluentBuilder {
         self
     }
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
-    pub fn set_visibility_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_visibility_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_visibility_timeout(input);
         self
     }
@@ -213,7 +219,7 @@ impl ReceiveMessageFluentBuilder {
     /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
-    pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_wait_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_wait_time_seconds(input);
         self
     }
@@ -233,7 +239,10 @@ impl ReceiveMessageFluentBuilder {
     /// </ul>
     /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn receive_request_attempt_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn receive_request_attempt_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.receive_request_attempt_id(input.into());
         self
     }
@@ -255,7 +264,7 @@ impl ReceiveMessageFluentBuilder {
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn set_receive_request_attempt_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_receive_request_attempt_id(input);
         self

@@ -2,29 +2,29 @@
 
 /// <p>A filter used to search for Amazon Braket jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchJobsFilter {
     /// <p>The name to use for the jobs filter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The values to use for the jobs filter.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator to use for the jobs filter.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::SearchJobsFilterOperator>,
+    pub operator: ::std::option::Option<crate::types::SearchJobsFilterOperator>,
 }
 impl SearchJobsFilter {
     /// <p>The name to use for the jobs filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The values to use for the jobs filter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>An operator to use for the jobs filter.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::SearchJobsFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::SearchJobsFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -37,20 +37,22 @@ impl SearchJobsFilter {
 
 /// A builder for [`SearchJobsFilter`](crate::types::SearchJobsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchJobsFilterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) operator: std::option::Option<crate::types::SearchJobsFilterOperator>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operator: ::std::option::Option<crate::types::SearchJobsFilterOperator>,
 }
 impl SearchJobsFilterBuilder {
     /// <p>The name to use for the jobs filter.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name to use for the jobs filter.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -59,29 +61,29 @@ impl SearchJobsFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The values to use for the jobs filter.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values to use for the jobs filter.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>An operator to use for the jobs filter.</p>
     pub fn operator(mut self, input: crate::types::SearchJobsFilterOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>An operator to use for the jobs filter.</p>
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::SearchJobsFilterOperator>,
+        input: ::std::option::Option<crate::types::SearchJobsFilterOperator>,
     ) -> Self {
         self.operator = input;
         self

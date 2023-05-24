@@ -2,20 +2,20 @@
 
 /// <p> Result structure used for requests of project details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProjectOutput {
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
     #[doc(hidden)]
-    pub details: std::option::Option<crate::types::ProjectDetails>,
+    pub details: ::std::option::Option<crate::types::ProjectDetails>,
     _request_id: Option<String>,
 }
 impl DescribeProjectOutput {
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
-    pub fn details(&self) -> std::option::Option<&crate::types::ProjectDetails> {
+    pub fn details(&self) -> ::std::option::Option<&crate::types::ProjectDetails> {
         self.details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeProjectOutput {
+impl ::aws_http::request_id::RequestId for DescribeProjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl DescribeProjectOutput {
 
 /// A builder for [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeProjectOutputBuilder {
-    pub(crate) details: std::option::Option<crate::types::ProjectDetails>,
+    pub(crate) details: ::std::option::Option<crate::types::ProjectDetails>,
     _request_id: Option<String>,
 }
 impl DescribeProjectOutputBuilder {
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
     pub fn details(mut self, input: crate::types::ProjectDetails) -> Self {
-        self.details = Some(input);
+        self.details = ::std::option::Option::Some(input);
         self
     }
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
-    pub fn set_details(mut self, input: std::option::Option<crate::types::ProjectDetails>) -> Self {
+    pub fn set_details(
+        mut self,
+        input: ::std::option::Option<crate::types::ProjectDetails>,
+    ) -> Self {
         self.details = input;
         self
     }

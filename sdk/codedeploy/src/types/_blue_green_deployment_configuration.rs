@@ -2,37 +2,37 @@
 
 /// <p>Information about blue/green deployment options for a deployment group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlueGreenDeploymentConfiguration {
     /// <p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>
     #[doc(hidden)]
     pub terminate_blue_instances_on_deployment_success:
-        std::option::Option<crate::types::BlueInstanceTerminationOption>,
+        ::std::option::Option<crate::types::BlueInstanceTerminationOption>,
     /// <p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>
     #[doc(hidden)]
-    pub deployment_ready_option: std::option::Option<crate::types::DeploymentReadyOption>,
+    pub deployment_ready_option: ::std::option::Option<crate::types::DeploymentReadyOption>,
     /// <p>Information about how instances are provisioned for a replacement environment in a blue/green deployment.</p>
     #[doc(hidden)]
     pub green_fleet_provisioning_option:
-        std::option::Option<crate::types::GreenFleetProvisioningOption>,
+        ::std::option::Option<crate::types::GreenFleetProvisioningOption>,
 }
 impl BlueGreenDeploymentConfiguration {
     /// <p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>
     pub fn terminate_blue_instances_on_deployment_success(
         &self,
-    ) -> std::option::Option<&crate::types::BlueInstanceTerminationOption> {
+    ) -> ::std::option::Option<&crate::types::BlueInstanceTerminationOption> {
         self.terminate_blue_instances_on_deployment_success.as_ref()
     }
     /// <p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>
     pub fn deployment_ready_option(
         &self,
-    ) -> std::option::Option<&crate::types::DeploymentReadyOption> {
+    ) -> ::std::option::Option<&crate::types::DeploymentReadyOption> {
         self.deployment_ready_option.as_ref()
     }
     /// <p>Information about how instances are provisioned for a replacement environment in a blue/green deployment.</p>
     pub fn green_fleet_provisioning_option(
         &self,
-    ) -> std::option::Option<&crate::types::GreenFleetProvisioningOption> {
+    ) -> ::std::option::Option<&crate::types::GreenFleetProvisioningOption> {
         self.green_fleet_provisioning_option.as_ref()
     }
 }
@@ -45,13 +45,15 @@ impl BlueGreenDeploymentConfiguration {
 
 /// A builder for [`BlueGreenDeploymentConfiguration`](crate::types::BlueGreenDeploymentConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlueGreenDeploymentConfigurationBuilder {
     pub(crate) terminate_blue_instances_on_deployment_success:
-        std::option::Option<crate::types::BlueInstanceTerminationOption>,
-    pub(crate) deployment_ready_option: std::option::Option<crate::types::DeploymentReadyOption>,
+        ::std::option::Option<crate::types::BlueInstanceTerminationOption>,
+    pub(crate) deployment_ready_option: ::std::option::Option<crate::types::DeploymentReadyOption>,
     pub(crate) green_fleet_provisioning_option:
-        std::option::Option<crate::types::GreenFleetProvisioningOption>,
+        ::std::option::Option<crate::types::GreenFleetProvisioningOption>,
 }
 impl BlueGreenDeploymentConfigurationBuilder {
     /// <p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>
@@ -59,26 +61,26 @@ impl BlueGreenDeploymentConfigurationBuilder {
         mut self,
         input: crate::types::BlueInstanceTerminationOption,
     ) -> Self {
-        self.terminate_blue_instances_on_deployment_success = Some(input);
+        self.terminate_blue_instances_on_deployment_success = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about whether to terminate instances in the original fleet during a blue/green deployment.</p>
     pub fn set_terminate_blue_instances_on_deployment_success(
         mut self,
-        input: std::option::Option<crate::types::BlueInstanceTerminationOption>,
+        input: ::std::option::Option<crate::types::BlueInstanceTerminationOption>,
     ) -> Self {
         self.terminate_blue_instances_on_deployment_success = input;
         self
     }
     /// <p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>
     pub fn deployment_ready_option(mut self, input: crate::types::DeploymentReadyOption) -> Self {
-        self.deployment_ready_option = Some(input);
+        self.deployment_ready_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.</p>
     pub fn set_deployment_ready_option(
         mut self,
-        input: std::option::Option<crate::types::DeploymentReadyOption>,
+        input: ::std::option::Option<crate::types::DeploymentReadyOption>,
     ) -> Self {
         self.deployment_ready_option = input;
         self
@@ -88,13 +90,13 @@ impl BlueGreenDeploymentConfigurationBuilder {
         mut self,
         input: crate::types::GreenFleetProvisioningOption,
     ) -> Self {
-        self.green_fleet_provisioning_option = Some(input);
+        self.green_fleet_provisioning_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about how instances are provisioned for a replacement environment in a blue/green deployment.</p>
     pub fn set_green_fleet_provisioning_option(
         mut self,
-        input: std::option::Option<crate::types::GreenFleetProvisioningOption>,
+        input: ::std::option::Option<crate::types::GreenFleetProvisioningOption>,
     ) -> Self {
         self.green_fleet_provisioning_option = input;
         self

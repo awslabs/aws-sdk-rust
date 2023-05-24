@@ -8,30 +8,30 @@ pub use crate::operation::modify_snapshot_attribute::_modify_snapshot_attribute_
 /// <p>Adds or removes permission settings for the specified snapshot. You may add or remove specified Amazon Web Services account IDs from a snapshot's list of create volume permissions, but you cannot do both in a single operation. If you need to both add and remove account IDs for a snapshot, you must use multiple operations. You can make up to 500 modifications to a snapshot in a single operation.</p>
 /// <p>Encrypted snapshots and snapshots with Amazon Web Services Marketplace product codes cannot be made public. Snapshots encrypted with your default KMS key cannot be shared with other accounts.</p>
 /// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySnapshotAttributeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder,
 }
 impl ModifySnapshotAttributeFluentBuilder {
     /// Creates a new `ModifySnapshotAttribute`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_snapshot_attribute::ModifySnapshotAttribute,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError,
         >,
     > {
@@ -39,30 +39,33 @@ impl ModifySnapshotAttributeFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl ModifySnapshotAttributeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError,
         >,
     > {
@@ -91,7 +94,7 @@ impl ModifySnapshotAttributeFluentBuilder {
     /// <p>The snapshot attribute to modify. Only volume creation permissions can be modified.</p>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::SnapshotAttributeName>,
+        input: ::std::option::Option<crate::types::SnapshotAttributeName>,
     ) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
@@ -107,7 +110,7 @@ impl ModifySnapshotAttributeFluentBuilder {
     /// <p>A JSON representation of the snapshot attribute modification.</p>
     pub fn set_create_volume_permission(
         mut self,
-        input: std::option::Option<crate::types::CreateVolumePermissionModifications>,
+        input: ::std::option::Option<crate::types::CreateVolumePermissionModifications>,
     ) -> Self {
         self.inner = self.inner.set_create_volume_permission(input);
         self
@@ -117,14 +120,14 @@ impl ModifySnapshotAttributeFluentBuilder {
     /// To override the contents of this collection use [`set_group_names`](Self::set_group_names).
     ///
     /// <p>The group to modify for the snapshot.</p>
-    pub fn group_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_names(input.into());
         self
     }
     /// <p>The group to modify for the snapshot.</p>
     pub fn set_group_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_group_names(input);
         self
@@ -137,18 +140,18 @@ impl ModifySnapshotAttributeFluentBuilder {
     /// <p>The type of operation to perform to the attribute.</p>
     pub fn set_operation_type(
         mut self,
-        input: std::option::Option<crate::types::OperationType>,
+        input: ::std::option::Option<crate::types::OperationType>,
     ) -> Self {
         self.inner = self.inner.set_operation_type(input);
         self
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
         self
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
@@ -157,14 +160,14 @@ impl ModifySnapshotAttributeFluentBuilder {
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
     ///
     /// <p>The account ID to modify for the snapshot.</p>
-    pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_ids(input.into());
         self
     }
     /// <p>The account ID to modify for the snapshot.</p>
     pub fn set_user_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
@@ -175,7 +178,7 @@ impl ModifySnapshotAttributeFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }

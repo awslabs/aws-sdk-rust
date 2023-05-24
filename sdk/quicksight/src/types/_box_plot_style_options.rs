@@ -2,15 +2,15 @@
 
 /// <p>The style options of the box plot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotStyleOptions {
     /// <p>The fill styles (solid, transparent) of the box plot.</p>
     #[doc(hidden)]
-    pub fill_style: std::option::Option<crate::types::BoxPlotFillStyle>,
+    pub fill_style: ::std::option::Option<crate::types::BoxPlotFillStyle>,
 }
 impl BoxPlotStyleOptions {
     /// <p>The fill styles (solid, transparent) of the box plot.</p>
-    pub fn fill_style(&self) -> std::option::Option<&crate::types::BoxPlotFillStyle> {
+    pub fn fill_style(&self) -> ::std::option::Option<&crate::types::BoxPlotFillStyle> {
         self.fill_style.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BoxPlotStyleOptions {
 
 /// A builder for [`BoxPlotStyleOptions`](crate::types::BoxPlotStyleOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BoxPlotStyleOptionsBuilder {
-    pub(crate) fill_style: std::option::Option<crate::types::BoxPlotFillStyle>,
+    pub(crate) fill_style: ::std::option::Option<crate::types::BoxPlotFillStyle>,
 }
 impl BoxPlotStyleOptionsBuilder {
     /// <p>The fill styles (solid, transparent) of the box plot.</p>
     pub fn fill_style(mut self, input: crate::types::BoxPlotFillStyle) -> Self {
-        self.fill_style = Some(input);
+        self.fill_style = ::std::option::Option::Some(input);
         self
     }
     /// <p>The fill styles (solid, transparent) of the box plot.</p>
     pub fn set_fill_style(
         mut self,
-        input: std::option::Option<crate::types::BoxPlotFillStyle>,
+        input: ::std::option::Option<crate::types::BoxPlotFillStyle>,
     ) -> Self {
         self.fill_style = input;
         self

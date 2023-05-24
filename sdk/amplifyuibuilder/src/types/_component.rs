@@ -2,126 +2,130 @@
 
 /// <p>Contains the configuration settings for a user interface (UI) element for an Amplify app. A component is configured as a primary, stand-alone UI element. Use <code>ComponentChild</code> to configure an instance of a <code>Component</code>. A <code>ComponentChild</code> instance inherits the configuration of the main <code>Component</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Component {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
     #[doc(hidden)]
-    pub app_id: std::option::Option<std::string::String>,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
     #[doc(hidden)]
-    pub source_id: std::option::Option<std::string::String>,
+    pub source_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the component.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
     #[doc(hidden)]
-    pub component_type: std::option::Option<std::string::String>,
+    pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ComponentProperty>,
+    pub properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
     >,
     /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
     #[doc(hidden)]
-    pub children: std::option::Option<std::vec::Vec<crate::types::ComponentChild>>,
+    pub children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
     #[doc(hidden)]
-    pub variants: std::option::Option<std::vec::Vec<crate::types::ComponentVariant>>,
+    pub variants: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
+    pub overrides: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     >,
     /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
     /// <p></p>
     #[doc(hidden)]
-    pub binding_properties: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub binding_properties: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::ComponentBindingPropertiesValue,
         >,
     >,
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
     #[doc(hidden)]
-    pub collection_properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ComponentDataConfiguration>,
+    pub collection_properties: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentDataConfiguration,
+        >,
     >,
     /// <p>The time that the component was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the component was modified.</p>
     #[doc(hidden)]
-    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>One or more key-value pairs to use when tagging the component.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ComponentEvent>,
+    pub events: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
     >,
     /// <p>The schema version of the component when it was imported.</p>
     #[doc(hidden)]
-    pub schema_version: std::option::Option<std::string::String>,
+    pub schema_version: ::std::option::Option<::std::string::String>,
 }
 impl Component {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
     /// <p>The unique ID of the component.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> ::std::option::Option<&str> {
         self.component_type.as_deref()
     }
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
     pub fn properties(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::ComponentProperty>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
     > {
         self.properties.as_ref()
     }
     /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
-    pub fn children(&self) -> std::option::Option<&[crate::types::ComponentChild]> {
+    pub fn children(&self) -> ::std::option::Option<&[crate::types::ComponentChild]> {
         self.children.as_deref()
     }
     /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
-    pub fn variants(&self) -> std::option::Option<&[crate::types::ComponentVariant]> {
+    pub fn variants(&self) -> ::std::option::Option<&[crate::types::ComponentVariant]> {
         self.variants.as_deref()
     }
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     pub fn overrides(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     > {
         self.overrides.as_ref()
@@ -130,9 +134,9 @@ impl Component {
     /// <p></p>
     pub fn binding_properties(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
             crate::types::ComponentBindingPropertiesValue,
         >,
     > {
@@ -141,36 +145,40 @@ impl Component {
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
     pub fn collection_properties(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::ComponentDataConfiguration>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentDataConfiguration,
+        >,
     > {
         self.collection_properties.as_ref()
     }
     /// <p>The time that the component was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time that the component was modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>One or more key-value pairs to use when tagging the component.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     pub fn events(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::ComponentEvent>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
     > {
         self.events.as_ref()
     }
     /// <p>The schema version of the component when it was imported.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> ::std::option::Option<&str> {
         self.schema_version.as_deref()
     }
 }
@@ -183,101 +191,119 @@ impl Component {
 
 /// A builder for [`Component`](crate::types::Component).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentBuilder {
-    pub(crate) app_id: std::option::Option<std::string::String>,
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) source_id: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) component_type: std::option::Option<std::string::String>,
-    pub(crate) properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ComponentProperty>,
+    pub(crate) app_id: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) component_type: ::std::option::Option<::std::string::String>,
+    pub(crate) properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
     >,
-    pub(crate) children: std::option::Option<std::vec::Vec<crate::types::ComponentChild>>,
-    pub(crate) variants: std::option::Option<std::vec::Vec<crate::types::ComponentVariant>>,
-    pub(crate) overrides: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
+    pub(crate) children: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
+    pub(crate) variants: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
+    pub(crate) overrides: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     >,
-    pub(crate) binding_properties: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub(crate) binding_properties: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::ComponentBindingPropertiesValue,
         >,
     >,
-    pub(crate) collection_properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ComponentDataConfiguration>,
+    pub(crate) collection_properties: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::ComponentDataConfiguration,
+        >,
     >,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) events: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ComponentEvent>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
-    pub(crate) schema_version: std::option::Option<std::string::String>,
+    pub(crate) events: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
+    >,
+    pub(crate) schema_version: ::std::option::Option<::std::string::String>,
 }
 impl ComponentBuilder {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_id = Some(input.into());
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
-    pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_id = Some(input.into());
+    pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
-    pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_id = input;
         self
     }
     /// <p>The unique ID of the component.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the component.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the component.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_type = Some(input.into());
+    pub fn component_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_type = input;
         self
     }
@@ -288,19 +314,19 @@ impl ComponentBuilder {
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
     pub fn properties(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ComponentProperty,
     ) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.properties = Some(hash_map);
+        self.properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ComponentProperty>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ComponentProperty>,
         >,
     ) -> Self {
         self.properties = input;
@@ -314,13 +340,13 @@ impl ComponentBuilder {
     pub fn children(mut self, input: crate::types::ComponentChild) -> Self {
         let mut v = self.children.unwrap_or_default();
         v.push(input);
-        self.children = Some(v);
+        self.children = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
     pub fn set_children(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComponentChild>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentChild>>,
     ) -> Self {
         self.children = input;
         self
@@ -333,13 +359,13 @@ impl ComponentBuilder {
     pub fn variants(mut self, input: crate::types::ComponentVariant) -> Self {
         let mut v = self.variants.unwrap_or_default();
         v.push(input);
-        self.variants = Some(v);
+        self.variants = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
     pub fn set_variants(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComponentVariant>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentVariant>>,
     ) -> Self {
         self.variants = input;
         self
@@ -351,21 +377,21 @@ impl ComponentBuilder {
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     pub fn overrides(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::collections::HashMap<std::string::String, std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     ) -> Self {
         let mut hash_map = self.overrides.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.overrides = Some(hash_map);
+        self.overrides = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     pub fn set_overrides(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
             >,
         >,
     ) -> Self {
@@ -380,21 +406,21 @@ impl ComponentBuilder {
     /// <p></p>
     pub fn binding_properties(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ComponentBindingPropertiesValue,
     ) -> Self {
         let mut hash_map = self.binding_properties.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.binding_properties = Some(hash_map);
+        self.binding_properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
     /// <p></p>
     pub fn set_binding_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::ComponentBindingPropertiesValue,
             >,
         >,
@@ -409,20 +435,20 @@ impl ComponentBuilder {
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
     pub fn collection_properties(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ComponentDataConfiguration,
     ) -> Self {
         let mut hash_map = self.collection_properties.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.collection_properties = Some(hash_map);
+        self.collection_properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
     pub fn set_collection_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::ComponentDataConfiguration,
             >,
         >,
@@ -431,27 +457,27 @@ impl ComponentBuilder {
         self
     }
     /// <p>The time that the component was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the component was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The time that the component was modified.</p>
-    pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified_at = Some(input);
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the component was modified.</p>
     pub fn set_modified_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.modified_at = input;
         self
@@ -463,19 +489,19 @@ impl ComponentBuilder {
     /// <p>One or more key-value pairs to use when tagging the component.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more key-value pairs to use when tagging the component.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -488,31 +514,37 @@ impl ComponentBuilder {
     /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     pub fn events(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ComponentEvent,
     ) -> Self {
         let mut hash_map = self.events.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.events = Some(hash_map);
+        self.events = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ComponentEvent>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ComponentEvent>,
         >,
     ) -> Self {
         self.events = input;
         self
     }
     /// <p>The schema version of the component when it was imported.</p>
-    pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_version = Some(input.into());
+    pub fn schema_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema version of the component when it was imported.</p>
-    pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.schema_version = input;
         self
     }

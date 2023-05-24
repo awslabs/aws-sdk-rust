@@ -2,14 +2,14 @@
 
 /// <p>Status of edge devices with this model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeModelStat {
     /// <p>The name of the model.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The model version.</p>
     #[doc(hidden)]
-    pub model_version: std::option::Option<std::string::String>,
+    pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
     #[doc(hidden)]
     pub offline_device_count: i64,
@@ -25,11 +25,11 @@ pub struct EdgeModelStat {
 }
 impl EdgeModelStat {
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The model version.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<&str> {
         self.model_version.as_deref()
     }
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
@@ -58,73 +58,81 @@ impl EdgeModelStat {
 
 /// A builder for [`EdgeModelStat`](crate::types::EdgeModelStat).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdgeModelStatBuilder {
-    pub(crate) model_name: std::option::Option<std::string::String>,
-    pub(crate) model_version: std::option::Option<std::string::String>,
-    pub(crate) offline_device_count: std::option::Option<i64>,
-    pub(crate) connected_device_count: std::option::Option<i64>,
-    pub(crate) active_device_count: std::option::Option<i64>,
-    pub(crate) sampling_device_count: std::option::Option<i64>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_version: ::std::option::Option<::std::string::String>,
+    pub(crate) offline_device_count: ::std::option::Option<i64>,
+    pub(crate) connected_device_count: ::std::option::Option<i64>,
+    pub(crate) active_device_count: ::std::option::Option<i64>,
+    pub(crate) sampling_device_count: ::std::option::Option<i64>,
 }
 impl EdgeModelStatBuilder {
     /// <p>The name of the model.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
     /// <p>The model version.</p>
-    pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_version = Some(input.into());
+    pub fn model_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version.</p>
-    pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_version = input;
         self
     }
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
     pub fn offline_device_count(mut self, input: i64) -> Self {
-        self.offline_device_count = Some(input);
+        self.offline_device_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of devices that have this model version and do not have a heart beat.</p>
-    pub fn set_offline_device_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_offline_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.offline_device_count = input;
         self
     }
     /// <p>The number of devices that have this model version and have a heart beat. </p>
     pub fn connected_device_count(mut self, input: i64) -> Self {
-        self.connected_device_count = Some(input);
+        self.connected_device_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of devices that have this model version and have a heart beat. </p>
-    pub fn set_connected_device_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_connected_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.connected_device_count = input;
         self
     }
     /// <p>The number of devices that have this model version, a heart beat, and are currently running.</p>
     pub fn active_device_count(mut self, input: i64) -> Self {
-        self.active_device_count = Some(input);
+        self.active_device_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of devices that have this model version, a heart beat, and are currently running.</p>
-    pub fn set_active_device_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_active_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.active_device_count = input;
         self
     }
     /// <p>The number of devices with this model version and are producing sample data.</p>
     pub fn sampling_device_count(mut self, input: i64) -> Self {
-        self.sampling_device_count = Some(input);
+        self.sampling_device_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of devices with this model version and are producing sample data.</p>
-    pub fn set_sampling_device_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_sampling_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.sampling_device_count = input;
         self
     }

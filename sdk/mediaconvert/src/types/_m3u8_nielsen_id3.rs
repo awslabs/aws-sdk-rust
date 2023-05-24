@@ -38,13 +38,13 @@
 /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M3u8NielsenId3 {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M3u8NielsenId3 {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M3u8NielsenId3 {
+impl ::std::convert::From<&str> for M3u8NielsenId3 {
     fn from(s: &str) -> Self {
         match s {
             "INSERT" => M3u8NielsenId3::Insert,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M3u8NielsenId3 {
         }
     }
 }
-impl std::str::FromStr for M3u8NielsenId3 {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M3u8NielsenId3 {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M3u8NielsenId3::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M3u8NielsenId3::from(s))
     }
 }
 impl M3u8NielsenId3 {
@@ -86,7 +86,7 @@ impl M3u8NielsenId3 {
         &["INSERT", "NONE"]
     }
 }
-impl AsRef<str> for M3u8NielsenId3 {
+impl ::std::convert::AsRef<str> for M3u8NielsenId3 {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

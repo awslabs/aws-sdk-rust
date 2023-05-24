@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of an AcknowledgeThirdPartyJob action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJobOutput {
     /// <p>The status information for the third party job, if any.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::JobStatus>,
+    pub status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }
 impl AcknowledgeThirdPartyJobOutput {
     /// <p>The status information for the third party job, if any.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for AcknowledgeThirdPartyJobOutput {
+impl ::aws_http::request_id::RequestId for AcknowledgeThirdPartyJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl AcknowledgeThirdPartyJobOutput {
 
 /// A builder for [`AcknowledgeThirdPartyJobOutput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AcknowledgeThirdPartyJobOutputBuilder {
-    pub(crate) status: std::option::Option<crate::types::JobStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
 }
 impl AcknowledgeThirdPartyJobOutputBuilder {
     /// <p>The status information for the third party job, if any.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status information for the third party job, if any.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
     }

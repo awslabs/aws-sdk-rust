@@ -2,29 +2,29 @@
 
 /// <p> Provides details about a security control for which a response couldn't be returned. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedSecurityControl {
     /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
     #[doc(hidden)]
-    pub security_control_id: std::option::Option<std::string::String>,
+    pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p> The error code for the unprocessed security control. </p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::UnprocessedErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     /// <p> The reason why the security control was unprocessed. </p>
     #[doc(hidden)]
-    pub error_reason: std::option::Option<std::string::String>,
+    pub error_reason: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedSecurityControl {
     /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
-    pub fn security_control_id(&self) -> std::option::Option<&str> {
+    pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
     /// <p> The error code for the unprocessed security control. </p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::UnprocessedErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::UnprocessedErrorCode> {
         self.error_code.as_ref()
     }
     /// <p> The reason why the security control was unprocessed. </p>
-    pub fn error_reason(&self) -> std::option::Option<&str> {
+    pub fn error_reason(&self) -> ::std::option::Option<&str> {
         self.error_reason.as_deref()
     }
 }
@@ -37,46 +37,51 @@ impl UnprocessedSecurityControl {
 
 /// A builder for [`UnprocessedSecurityControl`](crate::types::UnprocessedSecurityControl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnprocessedSecurityControlBuilder {
-    pub(crate) security_control_id: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<crate::types::UnprocessedErrorCode>,
-    pub(crate) error_reason: std::option::Option<std::string::String>,
+    pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::UnprocessedErrorCode>,
+    pub(crate) error_reason: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedSecurityControlBuilder {
     /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
-    pub fn security_control_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_control_id = Some(input.into());
+    pub fn security_control_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) for which a response couldn't be returned. </p>
     pub fn set_security_control_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_control_id = input;
         self
     }
     /// <p> The error code for the unprocessed security control. </p>
     pub fn error_code(mut self, input: crate::types::UnprocessedErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p> The error code for the unprocessed security control. </p>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::UnprocessedErrorCode>,
+        input: ::std::option::Option<crate::types::UnprocessedErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p> The reason why the security control was unprocessed. </p>
-    pub fn error_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_reason = Some(input.into());
+    pub fn error_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason why the security control was unprocessed. </p>
-    pub fn set_error_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_reason = input;
         self
     }

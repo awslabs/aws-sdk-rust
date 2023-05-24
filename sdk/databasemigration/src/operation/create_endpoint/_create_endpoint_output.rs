@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEndpointOutput {
     /// <p>The endpoint that was created.</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<crate::types::Endpoint>,
+    pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     _request_id: Option<String>,
 }
 impl CreateEndpointOutput {
     /// <p>The endpoint that was created.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::types::Endpoint> {
+    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateEndpointOutput {
+impl ::aws_http::request_id::RequestId for CreateEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateEndpointOutput {
 
 /// A builder for [`CreateEndpointOutput`](crate::operation::create_endpoint::CreateEndpointOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateEndpointOutputBuilder {
-    pub(crate) endpoint: std::option::Option<crate::types::Endpoint>,
+    pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
     _request_id: Option<String>,
 }
 impl CreateEndpointOutputBuilder {
     /// <p>The endpoint that was created.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
-        self.endpoint = Some(input);
+        self.endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint that was created.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<crate::types::Endpoint>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.endpoint = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreateAccessKey</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessKeyOutput {
     /// <p>A structure with details about the access key.</p>
     #[doc(hidden)]
-    pub access_key: std::option::Option<crate::types::AccessKey>,
+    pub access_key: ::std::option::Option<crate::types::AccessKey>,
     _request_id: Option<String>,
 }
 impl CreateAccessKeyOutput {
     /// <p>A structure with details about the access key.</p>
-    pub fn access_key(&self) -> std::option::Option<&crate::types::AccessKey> {
+    pub fn access_key(&self) -> ::std::option::Option<&crate::types::AccessKey> {
         self.access_key.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateAccessKeyOutput {
+impl ::aws_http::request_id::RequestId for CreateAccessKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl CreateAccessKeyOutput {
 
 /// A builder for [`CreateAccessKeyOutput`](crate::operation::create_access_key::CreateAccessKeyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateAccessKeyOutputBuilder {
-    pub(crate) access_key: std::option::Option<crate::types::AccessKey>,
+    pub(crate) access_key: ::std::option::Option<crate::types::AccessKey>,
     _request_id: Option<String>,
 }
 impl CreateAccessKeyOutputBuilder {
     /// <p>A structure with details about the access key.</p>
     pub fn access_key(mut self, input: crate::types::AccessKey) -> Self {
-        self.access_key = Some(input);
+        self.access_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure with details about the access key.</p>
-    pub fn set_access_key(mut self, input: std::option::Option<crate::types::AccessKey>) -> Self {
+    pub fn set_access_key(mut self, input: ::std::option::Option<crate::types::AccessKey>) -> Self {
         self.access_key = input;
         self
     }

@@ -2,32 +2,32 @@
 
 /// <p>Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBatchPredictionOutput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
     #[doc(hidden)]
-    pub batch_prediction_id: std::option::Option<std::string::String>,
+    pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
     #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
     #[doc(hidden)]
-    pub batch_prediction_data_source_id: std::option::Option<std::string::String>,
+    pub batch_prediction_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     #[doc(hidden)]
-    pub input_data_location_s3: std::option::Option<std::string::String>,
+    pub input_data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     #[doc(hidden)]
-    pub created_by_iam_user: std::option::Option<std::string::String>,
+    pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p> </li>
@@ -37,64 +37,64 @@ pub struct GetBatchPredictionOutput {
     /// <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EntityStatus>,
+    pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
     #[doc(hidden)]
-    pub output_uri: std::option::Option<std::string::String>,
+    pub output_uri: ::std::option::Option<::std::string::String>,
     /// <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
     #[doc(hidden)]
-    pub log_uri: std::option::Option<std::string::String>,
+    pub log_uri: ::std::option::Option<::std::string::String>,
     /// <p>A description of the most recent details about processing the batch prediction request.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
     #[doc(hidden)]
-    pub compute_time: std::option::Option<i64>,
+    pub compute_time: ::std::option::Option<i64>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
     #[doc(hidden)]
-    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     #[doc(hidden)]
-    pub total_record_count: std::option::Option<i64>,
+    pub total_record_count: ::std::option::Option<i64>,
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     #[doc(hidden)]
-    pub invalid_record_count: std::option::Option<i64>,
+    pub invalid_record_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetBatchPredictionOutput {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> ::std::option::Option<&str> {
         self.batch_prediction_id.as_deref()
     }
     /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
-    pub fn batch_prediction_data_source_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_data_source_id(&self) -> ::std::option::Option<&str> {
         self.batch_prediction_data_source_id.as_deref()
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn input_data_location_s3(&self) -> std::option::Option<&str> {
+    pub fn input_data_location_s3(&self) -> ::std::option::Option<&str> {
         self.input_data_location_s3.as_deref()
     }
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+    pub fn created_by_iam_user(&self) -> ::std::option::Option<&str> {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
@@ -105,43 +105,43 @@ impl GetBatchPredictionOutput {
     /// <li> <p> <code>COMPLETED</code> - The batch prediction process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::EntityStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
         self.status.as_ref()
     }
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
-    pub fn output_uri(&self) -> std::option::Option<&str> {
+    pub fn output_uri(&self) -> ::std::option::Option<&str> {
         self.output_uri.as_deref()
     }
     /// <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
-    pub fn log_uri(&self) -> std::option::Option<&str> {
+    pub fn log_uri(&self) -> ::std::option::Option<&str> {
         self.log_uri.as_deref()
     }
     /// <p>A description of the most recent details about processing the batch prediction request.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
-    pub fn compute_time(&self) -> std::option::Option<i64> {
+    pub fn compute_time(&self) -> ::std::option::Option<i64> {
         self.compute_time
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn finished_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
-    pub fn total_record_count(&self) -> std::option::Option<i64> {
+    pub fn total_record_count(&self) -> ::std::option::Option<i64> {
         self.total_record_count
     }
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
-    pub fn invalid_record_count(&self) -> std::option::Option<i64> {
+    pub fn invalid_record_count(&self) -> ::std::option::Option<i64> {
         self.invalid_record_count
     }
 }
-impl aws_http::request_id::RequestId for GetBatchPredictionOutput {
+impl ::aws_http::request_id::RequestId for GetBatchPredictionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -156,126 +156,137 @@ impl GetBatchPredictionOutput {
 
 /// A builder for [`GetBatchPredictionOutput`](crate::operation::get_batch_prediction::GetBatchPredictionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetBatchPredictionOutputBuilder {
-    pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
-    pub(crate) ml_model_id: std::option::Option<std::string::String>,
-    pub(crate) batch_prediction_data_source_id: std::option::Option<std::string::String>,
-    pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
-    pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::EntityStatus>,
-    pub(crate) output_uri: std::option::Option<std::string::String>,
-    pub(crate) log_uri: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) compute_time: std::option::Option<i64>,
-    pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) total_record_count: std::option::Option<i64>,
-    pub(crate) invalid_record_count: std::option::Option<i64>,
+    pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_prediction_data_source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) input_data_location_s3: ::std::option::Option<::std::string::String>,
+    pub(crate) created_by_iam_user: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::EntityStatus>,
+    pub(crate) output_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) log_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) compute_time: ::std::option::Option<i64>,
+    pub(crate) finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) total_record_count: ::std::option::Option<i64>,
+    pub(crate) invalid_record_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetBatchPredictionOutputBuilder {
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
-    pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.batch_prediction_id = Some(input.into());
+    pub fn batch_prediction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
     pub fn set_batch_prediction_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.batch_prediction_id = input;
         self
     }
     /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
-    pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ml_model_id = Some(input.into());
+    pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
-    pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_id = input;
         self
     }
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
     pub fn batch_prediction_data_source_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.batch_prediction_data_source_id = Some(input.into());
+        self.batch_prediction_data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
     pub fn set_batch_prediction_data_source_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.batch_prediction_data_source_id = input;
         self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn input_data_location_s3(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_data_location_s3 = Some(input.into());
+    pub fn input_data_location_s3(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.input_data_location_s3 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub fn set_input_data_location_s3(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.input_data_location_s3 = input;
         self
     }
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by_iam_user = Some(input.into());
+    pub fn created_by_iam_user(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.created_by_iam_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub fn set_created_by_iam_user(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.created_by_iam_user = input;
         self
     }
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -288,7 +299,7 @@ impl GetBatchPredictionOutputBuilder {
     /// <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EntityStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>
@@ -299,93 +310,93 @@ impl GetBatchPredictionOutputBuilder {
     /// <li> <p> <code>COMPLETED</code> - The batch prediction process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::EntityStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
-    pub fn output_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_uri = Some(input.into());
+    pub fn output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
-    pub fn set_output_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_uri = input;
         self
     }
     /// <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
-    pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_uri = Some(input.into());
+    pub fn log_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
-    pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_uri = input;
         self
     }
     /// <p>A description of the most recent details about processing the batch prediction request.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the most recent details about processing the batch prediction request.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
     pub fn compute_time(mut self, input: i64) -> Self {
-        self.compute_time = Some(input);
+        self.compute_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
-    pub fn set_compute_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_compute_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.compute_time = input;
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
-    pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.finished_at = Some(input);
+    pub fn finished_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.finished_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
     pub fn set_finished_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.finished_at = input;
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
-    pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_at = Some(input);
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
     pub fn set_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_at = input;
         self
     }
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     pub fn total_record_count(mut self, input: i64) -> Self {
-        self.total_record_count = Some(input);
+        self.total_record_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
-    pub fn set_total_record_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_record_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_record_count = input;
         self
     }
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
     pub fn invalid_record_count(mut self, input: i64) -> Self {
-        self.invalid_record_count = Some(input);
+        self.invalid_record_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
-    pub fn set_invalid_record_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_invalid_record_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.invalid_record_count = input;
         self
     }

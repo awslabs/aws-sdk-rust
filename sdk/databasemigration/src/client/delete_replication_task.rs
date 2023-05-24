@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReplicationTask`](crate::operation::delete_replication_task::builders::DeleteReplicationTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::operation::delete_replication_task::builders::DeleteReplicationTaskFluentBuilder::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::operation::delete_replication_task::builders::DeleteReplicationTaskFluentBuilder::set_replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
+    ///   - [`replication_task_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_replication_task::builders::DeleteReplicationTaskFluentBuilder::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::operation::delete_replication_task::builders::DeleteReplicationTaskFluentBuilder::set_replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
     /// - On success, responds with [`DeleteReplicationTaskOutput`](crate::operation::delete_replication_task::DeleteReplicationTaskOutput) with field(s):
     ///   - [`replication_task(Option<ReplicationTask>)`](crate::operation::delete_replication_task::DeleteReplicationTaskOutput::replication_task): <p>The deleted replication task.</p>
     /// - On failure, responds with [`SdkError<DeleteReplicationTaskError>`](crate::operation::delete_replication_task::DeleteReplicationTaskError)

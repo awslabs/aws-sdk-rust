@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::set_detector_id): <p>The detector ID.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::set_next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::set_detector_id): <p>The detector ID.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::set_next_token): <p>The next token for the subsequent request.</p>
     ///   - [`max_results(i32)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_detectors::builders::GetDetectorsFluentBuilder::set_max_results): <p>The maximum number of objects to return for the request.</p>
     /// - On success, responds with [`GetDetectorsOutput`](crate::operation::get_detectors::GetDetectorsOutput) with field(s):
     ///   - [`detectors(Option<Vec<Detector>>)`](crate::operation::get_detectors::GetDetectorsOutput::detectors): <p>The detectors.</p>

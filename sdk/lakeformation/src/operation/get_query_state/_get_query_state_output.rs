@@ -2,11 +2,11 @@
 
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQueryStateOutput {
     /// <p>An error message when the operation fails.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<std::string::String>,
+    pub error: ::std::option::Option<::std::string::String>,
     /// <p>The state of a query previously submitted. The possible states are:</p>
     /// <ul>
     /// <li> <p>PENDING: the query is pending.</p> </li>
@@ -15,12 +15,12 @@ pub struct GetQueryStateOutput {
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::QueryStateString>,
+    pub state: ::std::option::Option<crate::types::QueryStateString>,
     _request_id: Option<String>,
 }
 impl GetQueryStateOutput {
     /// <p>An error message when the operation fails.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>The state of a query previously submitted. The possible states are:</p>
@@ -30,11 +30,11 @@ impl GetQueryStateOutput {
     /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::types::QueryStateString> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::QueryStateString> {
         self.state.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetQueryStateOutput {
+impl ::aws_http::request_id::RequestId for GetQueryStateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -48,20 +48,22 @@ impl GetQueryStateOutput {
 
 /// A builder for [`GetQueryStateOutput`](crate::operation::get_query_state::GetQueryStateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetQueryStateOutputBuilder {
-    pub(crate) error: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::QueryStateString>,
+    pub(crate) error: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::QueryStateString>,
     _request_id: Option<String>,
 }
 impl GetQueryStateOutputBuilder {
     /// <p>An error message when the operation fails.</p>
-    pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error = Some(input.into());
+    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error message when the operation fails.</p>
-    pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
     }
@@ -73,7 +75,7 @@ impl GetQueryStateOutputBuilder {
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::QueryStateString) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of a query previously submitted. The possible states are:</p>
@@ -83,7 +85,10 @@ impl GetQueryStateOutputBuilder {
     /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
     /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::QueryStateString>) -> Self {
+    pub fn set_state(
+        mut self,
+        input: ::std::option::Option<crate::types::QueryStateString>,
+    ) -> Self {
         self.state = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Specifies dimension settings for including or excluding endpoints from a segment based on how recently an endpoint was active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentBehaviors {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
     #[doc(hidden)]
-    pub recency: std::option::Option<crate::types::RecencyDimension>,
+    pub recency: ::std::option::Option<crate::types::RecencyDimension>,
 }
 impl SegmentBehaviors {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
-    pub fn recency(&self) -> std::option::Option<&crate::types::RecencyDimension> {
+    pub fn recency(&self) -> ::std::option::Option<&crate::types::RecencyDimension> {
         self.recency.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl SegmentBehaviors {
 
 /// A builder for [`SegmentBehaviors`](crate::types::SegmentBehaviors).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SegmentBehaviorsBuilder {
-    pub(crate) recency: std::option::Option<crate::types::RecencyDimension>,
+    pub(crate) recency: ::std::option::Option<crate::types::RecencyDimension>,
 }
 impl SegmentBehaviorsBuilder {
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
     pub fn recency(mut self, input: crate::types::RecencyDimension) -> Self {
-        self.recency = Some(input);
+        self.recency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
     pub fn set_recency(
         mut self,
-        input: std::option::Option<crate::types::RecencyDimension>,
+        input: ::std::option::Option<crate::types::RecencyDimension>,
     ) -> Self {
         self.recency = input;
         self

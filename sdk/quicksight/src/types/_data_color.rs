@@ -2,22 +2,22 @@
 
 /// <p>Determines the color that is applied to a particular data value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataColor {
     /// <p>The color that is applied to the data value.</p>
     #[doc(hidden)]
-    pub color: std::option::Option<std::string::String>,
+    pub color: ::std::option::Option<::std::string::String>,
     /// <p>The data value that the color is applied to.</p>
     #[doc(hidden)]
-    pub data_value: std::option::Option<f64>,
+    pub data_value: ::std::option::Option<f64>,
 }
 impl DataColor {
     /// <p>The color that is applied to the data value.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<&str> {
         self.color.as_deref()
     }
     /// <p>The data value that the color is applied to.</p>
-    pub fn data_value(&self) -> std::option::Option<f64> {
+    pub fn data_value(&self) -> ::std::option::Option<f64> {
         self.data_value
     }
 }
@@ -30,29 +30,31 @@ impl DataColor {
 
 /// A builder for [`DataColor`](crate::types::DataColor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataColorBuilder {
-    pub(crate) color: std::option::Option<std::string::String>,
-    pub(crate) data_value: std::option::Option<f64>,
+    pub(crate) color: ::std::option::Option<::std::string::String>,
+    pub(crate) data_value: ::std::option::Option<f64>,
 }
 impl DataColorBuilder {
     /// <p>The color that is applied to the data value.</p>
-    pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.color = Some(input.into());
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The color that is applied to the data value.</p>
-    pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
     }
     /// <p>The data value that the color is applied to.</p>
     pub fn data_value(mut self, input: f64) -> Self {
-        self.data_value = Some(input);
+        self.data_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data value that the color is applied to.</p>
-    pub fn set_data_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_data_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.data_value = input;
         self
     }

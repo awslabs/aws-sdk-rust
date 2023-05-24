@@ -2,20 +2,20 @@
 
 /// <p>The statement or request for a particular action to occur in a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statement {
     /// <p>The ID of the statement.</p>
     #[doc(hidden)]
     pub id: i32,
     /// <p>The execution code of the statement.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     /// <p>The state while request is actioned.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::StatementState>,
+    pub state: ::std::option::Option<crate::types::StatementState>,
     /// <p>The output in JSON.</p>
     #[doc(hidden)]
-    pub output: std::option::Option<crate::types::StatementOutput>,
+    pub output: ::std::option::Option<crate::types::StatementOutput>,
     /// <p>The code execution progress.</p>
     #[doc(hidden)]
     pub progress: f64,
@@ -32,15 +32,15 @@ impl Statement {
         self.id
     }
     /// <p>The execution code of the statement.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The state while request is actioned.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::StatementState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::StatementState> {
         self.state.as_ref()
     }
     /// <p>The output in JSON.</p>
-    pub fn output(&self) -> std::option::Option<&crate::types::StatementOutput> {
+    pub fn output(&self) -> ::std::option::Option<&crate::types::StatementOutput> {
         self.output.as_ref()
     }
     /// <p>The code execution progress.</p>
@@ -65,84 +65,89 @@ impl Statement {
 
 /// A builder for [`Statement`](crate::types::Statement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatementBuilder {
-    pub(crate) id: std::option::Option<i32>,
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::StatementState>,
-    pub(crate) output: std::option::Option<crate::types::StatementOutput>,
-    pub(crate) progress: std::option::Option<f64>,
-    pub(crate) started_on: std::option::Option<i64>,
-    pub(crate) completed_on: std::option::Option<i64>,
+    pub(crate) id: ::std::option::Option<i32>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::StatementState>,
+    pub(crate) output: ::std::option::Option<crate::types::StatementOutput>,
+    pub(crate) progress: ::std::option::Option<f64>,
+    pub(crate) started_on: ::std::option::Option<i64>,
+    pub(crate) completed_on: ::std::option::Option<i64>,
 }
 impl StatementBuilder {
     /// <p>The ID of the statement.</p>
     pub fn id(mut self, input: i32) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the statement.</p>
-    pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
     }
     /// <p>The execution code of the statement.</p>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution code of the statement.</p>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     /// <p>The state while request is actioned.</p>
     pub fn state(mut self, input: crate::types::StatementState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state while request is actioned.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::StatementState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::StatementState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The output in JSON.</p>
     pub fn output(mut self, input: crate::types::StatementOutput) -> Self {
-        self.output = Some(input);
+        self.output = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output in JSON.</p>
-    pub fn set_output(mut self, input: std::option::Option<crate::types::StatementOutput>) -> Self {
+    pub fn set_output(
+        mut self,
+        input: ::std::option::Option<crate::types::StatementOutput>,
+    ) -> Self {
         self.output = input;
         self
     }
     /// <p>The code execution progress.</p>
     pub fn progress(mut self, input: f64) -> Self {
-        self.progress = Some(input);
+        self.progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>The code execution progress.</p>
-    pub fn set_progress(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_progress(mut self, input: ::std::option::Option<f64>) -> Self {
         self.progress = input;
         self
     }
     /// <p>The unix time and date that the job definition was started.</p>
     pub fn started_on(mut self, input: i64) -> Self {
-        self.started_on = Some(input);
+        self.started_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unix time and date that the job definition was started.</p>
-    pub fn set_started_on(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_started_on(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_on = input;
         self
     }
     /// <p>The unix time and date that the job definition was completed.</p>
     pub fn completed_on(mut self, input: i64) -> Self {
-        self.completed_on = Some(input);
+        self.completed_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unix time and date that the job definition was completed.</p>
-    pub fn set_completed_on(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_completed_on(mut self, input: ::std::option::Option<i64>) -> Self {
         self.completed_on = input;
         self
     }

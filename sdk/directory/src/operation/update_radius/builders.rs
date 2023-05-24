@@ -6,56 +6,59 @@ pub use crate::operation::update_radius::_update_radius_input::UpdateRadiusInput
 /// Fluent builder constructing a request to `UpdateRadius`.
 ///
 /// <p>Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or Microsoft AD directory.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRadiusFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_radius::builders::UpdateRadiusInputBuilder,
 }
 impl UpdateRadiusFluentBuilder {
     /// Creates a new `UpdateRadius`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_radius::UpdateRadius,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_radius::UpdateRadiusOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl UpdateRadiusFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_radius::UpdateRadiusOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_radius::UpdateRadiusError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
         self
     }
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
     }
@@ -92,7 +95,7 @@ impl UpdateRadiusFluentBuilder {
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn set_radius_settings(
         mut self,
-        input: std::option::Option<crate::types::RadiusSettings>,
+        input: ::std::option::Option<crate::types::RadiusSettings>,
     ) -> Self {
         self.inner = self.inner.set_radius_settings(input);
         self

@@ -38,13 +38,13 @@
 /// Scte20 Convert608 To708
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Scte20Convert608To708 {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Scte20Convert608To708 {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Scte20Convert608To708 {
+impl ::std::convert::From<&str> for Scte20Convert608To708 {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => Scte20Convert608To708::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Scte20Convert608To708 {
         }
     }
 }
-impl std::str::FromStr for Scte20Convert608To708 {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Scte20Convert608To708 {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Scte20Convert608To708::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Scte20Convert608To708::from(s))
     }
 }
 impl Scte20Convert608To708 {
@@ -86,7 +86,7 @@ impl Scte20Convert608To708 {
         &["DISABLED", "UPCONVERT"]
     }
 }
-impl AsRef<str> for Scte20Convert608To708 {
+impl ::std::convert::AsRef<str> for Scte20Convert608To708 {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

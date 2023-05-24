@@ -2,40 +2,40 @@
 
 /// Multiplex Program settings configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramSettings {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
     #[doc(hidden)]
-    pub preferred_channel_pipeline: std::option::Option<crate::types::PreferredChannelPipeline>,
+    pub preferred_channel_pipeline: ::std::option::Option<crate::types::PreferredChannelPipeline>,
     /// Unique program number.
     #[doc(hidden)]
-    pub program_number: std::option::Option<i32>,
+    pub program_number: ::std::option::Option<i32>,
     /// Transport stream service descriptor configuration for the Multiplex program.
     #[doc(hidden)]
-    pub service_descriptor: std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
+    pub service_descriptor: ::std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
     /// Program video settings configuration.
     #[doc(hidden)]
-    pub video_settings: std::option::Option<crate::types::MultiplexVideoSettings>,
+    pub video_settings: ::std::option::Option<crate::types::MultiplexVideoSettings>,
 }
 impl MultiplexProgramSettings {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
     pub fn preferred_channel_pipeline(
         &self,
-    ) -> std::option::Option<&crate::types::PreferredChannelPipeline> {
+    ) -> ::std::option::Option<&crate::types::PreferredChannelPipeline> {
         self.preferred_channel_pipeline.as_ref()
     }
     /// Unique program number.
-    pub fn program_number(&self) -> std::option::Option<i32> {
+    pub fn program_number(&self) -> ::std::option::Option<i32> {
         self.program_number
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
     pub fn service_descriptor(
         &self,
-    ) -> std::option::Option<&crate::types::MultiplexProgramServiceDescriptor> {
+    ) -> ::std::option::Option<&crate::types::MultiplexProgramServiceDescriptor> {
         self.service_descriptor.as_ref()
     }
     /// Program video settings configuration.
-    pub fn video_settings(&self) -> std::option::Option<&crate::types::MultiplexVideoSettings> {
+    pub fn video_settings(&self) -> ::std::option::Option<&crate::types::MultiplexVideoSettings> {
         self.video_settings.as_ref()
     }
 }
@@ -48,14 +48,16 @@ impl MultiplexProgramSettings {
 
 /// A builder for [`MultiplexProgramSettings`](crate::types::MultiplexProgramSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiplexProgramSettingsBuilder {
     pub(crate) preferred_channel_pipeline:
-        std::option::Option<crate::types::PreferredChannelPipeline>,
-    pub(crate) program_number: std::option::Option<i32>,
+        ::std::option::Option<crate::types::PreferredChannelPipeline>,
+    pub(crate) program_number: ::std::option::Option<i32>,
     pub(crate) service_descriptor:
-        std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
-    pub(crate) video_settings: std::option::Option<crate::types::MultiplexVideoSettings>,
+        ::std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
+    pub(crate) video_settings: ::std::option::Option<crate::types::MultiplexVideoSettings>,
 }
 impl MultiplexProgramSettingsBuilder {
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
@@ -63,24 +65,24 @@ impl MultiplexProgramSettingsBuilder {
         mut self,
         input: crate::types::PreferredChannelPipeline,
     ) -> Self {
-        self.preferred_channel_pipeline = Some(input);
+        self.preferred_channel_pipeline = ::std::option::Option::Some(input);
         self
     }
     /// Indicates which pipeline is preferred by the multiplex for program ingest.
     pub fn set_preferred_channel_pipeline(
         mut self,
-        input: std::option::Option<crate::types::PreferredChannelPipeline>,
+        input: ::std::option::Option<crate::types::PreferredChannelPipeline>,
     ) -> Self {
         self.preferred_channel_pipeline = input;
         self
     }
     /// Unique program number.
     pub fn program_number(mut self, input: i32) -> Self {
-        self.program_number = Some(input);
+        self.program_number = ::std::option::Option::Some(input);
         self
     }
     /// Unique program number.
-    pub fn set_program_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_program_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_number = input;
         self
     }
@@ -89,26 +91,26 @@ impl MultiplexProgramSettingsBuilder {
         mut self,
         input: crate::types::MultiplexProgramServiceDescriptor,
     ) -> Self {
-        self.service_descriptor = Some(input);
+        self.service_descriptor = ::std::option::Option::Some(input);
         self
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
     pub fn set_service_descriptor(
         mut self,
-        input: std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
+        input: ::std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
     ) -> Self {
         self.service_descriptor = input;
         self
     }
     /// Program video settings configuration.
     pub fn video_settings(mut self, input: crate::types::MultiplexVideoSettings) -> Self {
-        self.video_settings = Some(input);
+        self.video_settings = ::std::option::Option::Some(input);
         self
     }
     /// Program video settings configuration.
     pub fn set_video_settings(
         mut self,
-        input: std::option::Option<crate::types::MultiplexVideoSettings>,
+        input: ::std::option::Option<crate::types::MultiplexVideoSettings>,
     ) -> Self {
         self.video_settings = input;
         self

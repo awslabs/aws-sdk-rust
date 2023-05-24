@@ -2,22 +2,22 @@
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultRow {
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
     #[doc(hidden)]
-    pub grouped_bys: std::option::Option<std::vec::Vec<crate::types::ResultRowValue>>,
+    pub grouped_bys: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::ResultRowValue>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
 }
 impl ResultRow {
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
-    pub fn grouped_bys(&self) -> std::option::Option<&[crate::types::ResultRowValue]> {
+    pub fn grouped_bys(&self) -> ::std::option::Option<&[crate::types::ResultRowValue]> {
         self.grouped_bys.as_deref()
     }
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::ResultRowValue]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::ResultRowValue]> {
         self.values.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl ResultRow {
 
 /// A builder for [`ResultRow`](crate::types::ResultRow).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResultRowBuilder {
-    pub(crate) grouped_bys: std::option::Option<std::vec::Vec<crate::types::ResultRowValue>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::ResultRowValue>>,
+    pub(crate) grouped_bys: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
 }
 impl ResultRowBuilder {
     /// Appends an item to `grouped_bys`.
@@ -44,13 +46,13 @@ impl ResultRowBuilder {
     pub fn grouped_bys(mut self, input: crate::types::ResultRowValue) -> Self {
         let mut v = self.grouped_bys.unwrap_or_default();
         v.push(input);
-        self.grouped_bys = Some(v);
+        self.grouped_bys = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
     pub fn set_grouped_bys(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResultRowValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
     ) -> Self {
         self.grouped_bys = input;
         self
@@ -63,13 +65,13 @@ impl ResultRowBuilder {
     pub fn values(mut self, input: crate::types::ResultRowValue) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResultRowValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRowValue>>,
     ) -> Self {
         self.values = input;
         self

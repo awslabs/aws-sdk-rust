@@ -2,15 +2,15 @@
 
 /// <p>The function's X-Ray tracing configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionTracingConfig {
     /// <p>The tracing mode.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<std::string::String>,
+    pub mode: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaFunctionTracingConfig {
     /// <p>The tracing mode.</p>
-    pub fn mode(&self) -> std::option::Option<&str> {
+    pub fn mode(&self) -> ::std::option::Option<&str> {
         self.mode.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AwsLambdaFunctionTracingConfig {
 
 /// A builder for [`AwsLambdaFunctionTracingConfig`](crate::types::AwsLambdaFunctionTracingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsLambdaFunctionTracingConfigBuilder {
-    pub(crate) mode: std::option::Option<std::string::String>,
+    pub(crate) mode: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaFunctionTracingConfigBuilder {
     /// <p>The tracing mode.</p>
-    pub fn mode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mode = Some(input.into());
+    pub fn mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tracing mode.</p>
-    pub fn set_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mode = input;
         self
     }

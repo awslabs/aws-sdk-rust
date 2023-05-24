@@ -2,7 +2,7 @@
 
 /// <p>The combination of the existing analyzers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AnalyzerNameUnion {
     /// <p>The binary analyzer names.</p>
     BinaryAnalyzerName(crate::types::BinaryAnalyzerName),
@@ -25,11 +25,11 @@ impl AnalyzerNameUnion {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_binary_analyzer_name(
         &self,
-    ) -> std::result::Result<&crate::types::BinaryAnalyzerName, &Self> {
+    ) -> ::std::result::Result<&crate::types::BinaryAnalyzerName, &Self> {
         if let AnalyzerNameUnion::BinaryAnalyzerName(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BinaryAnalyzerName`](crate::types::AnalyzerNameUnion::BinaryAnalyzerName).
@@ -40,11 +40,11 @@ impl AnalyzerNameUnion {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_run_time_analyzer_name(
         &self,
-    ) -> std::result::Result<&crate::types::RunTimeAnalyzerName, &Self> {
+    ) -> ::std::result::Result<&crate::types::RunTimeAnalyzerName, &Self> {
         if let AnalyzerNameUnion::RunTimeAnalyzerName(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RunTimeAnalyzerName`](crate::types::AnalyzerNameUnion::RunTimeAnalyzerName).
@@ -55,11 +55,11 @@ impl AnalyzerNameUnion {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_source_code_analyzer_name(
         &self,
-    ) -> std::result::Result<&crate::types::SourceCodeAnalyzerName, &Self> {
+    ) -> ::std::result::Result<&crate::types::SourceCodeAnalyzerName, &Self> {
         if let AnalyzerNameUnion::SourceCodeAnalyzerName(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SourceCodeAnalyzerName`](crate::types::AnalyzerNameUnion::SourceCodeAnalyzerName).

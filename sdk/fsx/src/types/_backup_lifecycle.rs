@@ -75,13 +75,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BackupLifecycle {
     #[allow(missing_docs)] // documentation missing in model
@@ -101,7 +101,7 @@ pub enum BackupLifecycle {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BackupLifecycle {
+impl ::std::convert::From<&str> for BackupLifecycle {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => BackupLifecycle::Available,
@@ -117,11 +117,11 @@ impl std::convert::From<&str> for BackupLifecycle {
         }
     }
 }
-impl std::str::FromStr for BackupLifecycle {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BackupLifecycle {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BackupLifecycle::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BackupLifecycle::from(s))
     }
 }
 impl BackupLifecycle {
@@ -151,7 +151,7 @@ impl BackupLifecycle {
         ]
     }
 }
-impl AsRef<str> for BackupLifecycle {
+impl ::std::convert::AsRef<str> for BackupLifecycle {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

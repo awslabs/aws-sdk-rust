@@ -8,47 +8,50 @@ pub use crate::operation::create_relational_database_from_snapshot::_create_rela
 /// <p>Creates a new database from an existing database snapshot in Amazon Lightsail.</p>
 /// <p>You can create a new database from a snapshot in if something goes wrong with your original database, or to change it to a different plan, such as a high availability or standard plan.</p>
 /// <p>The <code>create relational database from snapshot</code> operation supports tag-based access control via request tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRelationalDatabaseFromSnapshotFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder,
 }
 impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// Creates a new `CreateRelationalDatabaseFromSnapshot`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshot, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotOutput, aws_smithy_http::result::SdkError<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,7 +62,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotOutput, aws_smithy_http::result::SdkError<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotError>>
                          {
         self.send_middleware().await
     }
@@ -69,7 +72,10 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
     /// <li> <p>The first and last character must be a letter or number.</p> </li>
     /// </ul>
-    pub fn relational_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn relational_database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.relational_database_name(input.into());
         self
     }
@@ -81,14 +87,17 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// </ul>
     pub fn set_relational_database_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_relational_database_name(input);
         self
     }
     /// <p>The Availability Zone in which to create your new database. Use the <code>us-east-2a</code> case-sensitive format.</p>
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
@@ -96,7 +105,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>You can get a list of Availability Zones by using the <code>get regions</code> operation. Be sure to add the <code>include relational database Availability Zones</code> parameter to your request.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
@@ -107,14 +116,14 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
         self
     }
     /// <p>Specifies the accessibility options for your new database. A value of <code>true</code> specifies a database that is available to resources outside of your Lightsail account. A value of <code>false</code> specifies a database that is available only to your Lightsail resources in the same region as your database.</p>
-    pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publicly_accessible(input);
         self
     }
     /// <p>The name of the database snapshot from which to create your new database.</p>
     pub fn relational_database_snapshot_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.relational_database_snapshot_name(input.into());
         self
@@ -122,7 +131,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The name of the database snapshot from which to create your new database.</p>
     pub fn set_relational_database_snapshot_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_relational_database_snapshot_name(input);
         self
@@ -130,7 +139,10 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The bundle ID for your new database. A bundle describes the performance specifications for your database.</p>
     /// <p>You can get a list of database bundle IDs by using the <code>get relational database bundles</code> operation.</p>
     /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
-    pub fn relational_database_bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn relational_database_bundle_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.relational_database_bundle_id(input.into());
         self
     }
@@ -139,7 +151,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>When creating a new database from a snapshot, you cannot choose a bundle that is smaller than the bundle of the source database.</p>
     pub fn set_relational_database_bundle_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_relational_database_bundle_id(input);
         self
@@ -147,7 +159,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The name of the source database.</p>
     pub fn source_relational_database_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.source_relational_database_name(input.into());
         self
@@ -155,7 +167,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>The name of the source database.</p>
     pub fn set_source_relational_database_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_relational_database_name(input);
         self
@@ -168,7 +180,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then you input <code>1538424000</code> as the restore time.</p> </li>
     /// </ul>
-    pub fn restore_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn restore_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.restore_time(input);
         self
     }
@@ -182,7 +194,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// </ul>
     pub fn set_restore_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_restore_time(input);
         self
@@ -197,7 +209,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>Specifies whether your database is restored from the latest backup time. A value of <code>true</code> restores from the latest backup time. </p>
     /// <p>Default: <code>false</code> </p>
     /// <p>Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.</p>
-    pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_latest_restorable_time(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_latest_restorable_time(input);
         self
     }
@@ -215,7 +227,7 @@ impl CreateRelationalDatabaseFromSnapshotFluentBuilder {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

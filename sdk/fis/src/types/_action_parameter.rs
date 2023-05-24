@@ -2,22 +2,22 @@
 
 /// <p>Describes a parameter for an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionParameter {
     /// <p>The parameter description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the parameter is required.</p>
     #[doc(hidden)]
-    pub required: std::option::Option<bool>,
+    pub required: ::std::option::Option<bool>,
 }
 impl ActionParameter {
     /// <p>The parameter description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter is required.</p>
-    pub fn required(&self) -> std::option::Option<bool> {
+    pub fn required(&self) -> ::std::option::Option<bool> {
         self.required
     }
 }
@@ -30,29 +30,31 @@ impl ActionParameter {
 
 /// A builder for [`ActionParameter`](crate::types::ActionParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionParameterBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) required: std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) required: ::std::option::Option<bool>,
 }
 impl ActionParameterBuilder {
     /// <p>The parameter description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn required(mut self, input: bool) -> Self {
-        self.required = Some(input);
+        self.required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the parameter is required.</p>
-    pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
     }

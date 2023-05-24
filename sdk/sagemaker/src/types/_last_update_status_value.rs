@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LastUpdateStatusValue {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum LastUpdateStatusValue {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LastUpdateStatusValue {
+impl ::std::convert::From<&str> for LastUpdateStatusValue {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => LastUpdateStatusValue::Failed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for LastUpdateStatusValue {
         }
     }
 }
-impl std::str::FromStr for LastUpdateStatusValue {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LastUpdateStatusValue {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LastUpdateStatusValue::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LastUpdateStatusValue::from(s))
     }
 }
 impl LastUpdateStatusValue {
@@ -91,7 +91,7 @@ impl LastUpdateStatusValue {
         &["Failed", "InProgress", "Successful"]
     }
 }
-impl AsRef<str> for LastUpdateStatusValue {
+impl ::std::convert::AsRef<str> for LastUpdateStatusValue {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

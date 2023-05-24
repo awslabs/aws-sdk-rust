@@ -2,11 +2,11 @@
 
 /// <p>Summary information about a pipeline execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineExecutionSummary {
     /// <p>The ID of the pipeline execution.</p>
     #[doc(hidden)]
-    pub pipeline_execution_id: std::option::Option<std::string::String>,
+    pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the pipeline execution.</p>
     /// <ul>
     /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
@@ -17,26 +17,26 @@ pub struct PipelineExecutionSummary {
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PipelineExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
     #[doc(hidden)]
-    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
     #[doc(hidden)]
-    pub source_revisions: std::option::Option<std::vec::Vec<crate::types::SourceRevision>>,
+    pub source_revisions: ::std::option::Option<::std::vec::Vec<crate::types::SourceRevision>>,
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
     #[doc(hidden)]
-    pub trigger: std::option::Option<crate::types::ExecutionTrigger>,
+    pub trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     /// <p>The interaction that stopped a pipeline execution.</p>
     #[doc(hidden)]
-    pub stop_trigger: std::option::Option<crate::types::StopExecutionTrigger>,
+    pub stop_trigger: ::std::option::Option<crate::types::StopExecutionTrigger>,
 }
 impl PipelineExecutionSummary {
     /// <p>The ID of the pipeline execution.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>The status of the pipeline execution.</p>
@@ -48,27 +48,27 @@ impl PipelineExecutionSummary {
     /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::PipelineExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
-    pub fn source_revisions(&self) -> std::option::Option<&[crate::types::SourceRevision]> {
+    pub fn source_revisions(&self) -> ::std::option::Option<&[crate::types::SourceRevision]> {
         self.source_revisions.as_deref()
     }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
-    pub fn trigger(&self) -> std::option::Option<&crate::types::ExecutionTrigger> {
+    pub fn trigger(&self) -> ::std::option::Option<&crate::types::ExecutionTrigger> {
         self.trigger.as_ref()
     }
     /// <p>The interaction that stopped a pipeline execution.</p>
-    pub fn stop_trigger(&self) -> std::option::Option<&crate::types::StopExecutionTrigger> {
+    pub fn stop_trigger(&self) -> ::std::option::Option<&crate::types::StopExecutionTrigger> {
         self.stop_trigger.as_ref()
     }
 }
@@ -81,26 +81,32 @@ impl PipelineExecutionSummary {
 
 /// A builder for [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineExecutionSummaryBuilder {
-    pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::PipelineExecutionStatus>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) source_revisions: std::option::Option<std::vec::Vec<crate::types::SourceRevision>>,
-    pub(crate) trigger: std::option::Option<crate::types::ExecutionTrigger>,
-    pub(crate) stop_trigger: std::option::Option<crate::types::StopExecutionTrigger>,
+    pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) source_revisions:
+        ::std::option::Option<::std::vec::Vec<crate::types::SourceRevision>>,
+    pub(crate) trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
+    pub(crate) stop_trigger: ::std::option::Option<crate::types::StopExecutionTrigger>,
 }
 impl PipelineExecutionSummaryBuilder {
     /// <p>The ID of the pipeline execution.</p>
-    pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_execution_id = Some(input.into());
+    pub fn pipeline_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pipeline execution.</p>
     pub fn set_pipeline_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_execution_id = input;
         self
@@ -115,7 +121,7 @@ impl PipelineExecutionSummaryBuilder {
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::PipelineExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the pipeline execution.</p>
@@ -129,33 +135,33 @@ impl PipelineExecutionSummaryBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PipelineExecutionStatus>,
+        input: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
-    pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_update_time = Some(input);
+    pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
     pub fn set_last_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_update_time = input;
         self
@@ -168,39 +174,39 @@ impl PipelineExecutionSummaryBuilder {
     pub fn source_revisions(mut self, input: crate::types::SourceRevision) -> Self {
         let mut v = self.source_revisions.unwrap_or_default();
         v.push(input);
-        self.source_revisions = Some(v);
+        self.source_revisions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
     pub fn set_source_revisions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SourceRevision>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceRevision>>,
     ) -> Self {
         self.source_revisions = input;
         self
     }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
     pub fn trigger(mut self, input: crate::types::ExecutionTrigger) -> Self {
-        self.trigger = Some(input);
+        self.trigger = ::std::option::Option::Some(input);
         self
     }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
     pub fn set_trigger(
         mut self,
-        input: std::option::Option<crate::types::ExecutionTrigger>,
+        input: ::std::option::Option<crate::types::ExecutionTrigger>,
     ) -> Self {
         self.trigger = input;
         self
     }
     /// <p>The interaction that stopped a pipeline execution.</p>
     pub fn stop_trigger(mut self, input: crate::types::StopExecutionTrigger) -> Self {
-        self.stop_trigger = Some(input);
+        self.stop_trigger = ::std::option::Option::Some(input);
         self
     }
     /// <p>The interaction that stopped a pipeline execution.</p>
     pub fn set_stop_trigger(
         mut self,
-        input: std::option::Option<crate::types::StopExecutionTrigger>,
+        input: ::std::option::Option<crate::types::StopExecutionTrigger>,
     ) -> Self {
         self.stop_trigger = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainTransferability {
     /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
     /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
@@ -47,7 +47,7 @@ pub struct DomainTransferability {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub transferable: std::option::Option<crate::types::Transferable>,
+    pub transferable: ::std::option::Option<crate::types::Transferable>,
 }
 impl DomainTransferability {
     /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
@@ -92,7 +92,7 @@ impl DomainTransferability {
     /// <p>Premium domain transfer is not supported.</p>
     /// </dd>
     /// </dl>
-    pub fn transferable(&self) -> std::option::Option<&crate::types::Transferable> {
+    pub fn transferable(&self) -> ::std::option::Option<&crate::types::Transferable> {
         self.transferable.as_ref()
     }
 }
@@ -105,9 +105,11 @@ impl DomainTransferability {
 
 /// A builder for [`DomainTransferability`](crate::types::DomainTransferability).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainTransferabilityBuilder {
-    pub(crate) transferable: std::option::Option<crate::types::Transferable>,
+    pub(crate) transferable: ::std::option::Option<crate::types::Transferable>,
 }
 impl DomainTransferabilityBuilder {
     /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
@@ -153,7 +155,7 @@ impl DomainTransferabilityBuilder {
     /// </dd>
     /// </dl>
     pub fn transferable(mut self, input: crate::types::Transferable) -> Self {
-        self.transferable = Some(input);
+        self.transferable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
@@ -200,7 +202,7 @@ impl DomainTransferabilityBuilder {
     /// </dl>
     pub fn set_transferable(
         mut self,
-        input: std::option::Option<crate::types::Transferable>,
+        input: ::std::option::Option<crate::types::Transferable>,
     ) -> Self {
         self.transferable = input;
         self

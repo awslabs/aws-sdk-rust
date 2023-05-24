@@ -2,7 +2,7 @@
 
 /// <p>Information about the Amazon QuickSight console that you want to embed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
     /// <p>The entry point URL is constrained to the following paths:</p>
@@ -15,11 +15,11 @@ pub struct RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub initial_path: std::option::Option<std::string::String>,
+    pub initial_path: ::std::option::Option<::std::string::String>,
     /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
     #[doc(hidden)]
     pub feature_configurations:
-        std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
+        ::std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
 }
 impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
@@ -32,13 +32,13 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
     /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
     /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
     /// </ul>
-    pub fn initial_path(&self) -> std::option::Option<&str> {
+    pub fn initial_path(&self) -> ::std::option::Option<&str> {
         self.initial_path.as_deref()
     }
     /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
     pub fn feature_configurations(
         &self,
-    ) -> std::option::Option<&crate::types::RegisteredUserConsoleFeatureConfigurations> {
+    ) -> ::std::option::Option<&crate::types::RegisteredUserConsoleFeatureConfigurations> {
         self.feature_configurations.as_ref()
     }
 }
@@ -52,11 +52,13 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfiguration {
 
 /// A builder for [`RegisteredUserQuickSightConsoleEmbeddingConfiguration`](crate::types::RegisteredUserQuickSightConsoleEmbeddingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
-    pub(crate) initial_path: std::option::Option<std::string::String>,
+    pub(crate) initial_path: ::std::option::Option<::std::string::String>,
     pub(crate) feature_configurations:
-        std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
+        ::std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
 }
 impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
@@ -69,8 +71,8 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
     /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
     /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
     /// </ul>
-    pub fn initial_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.initial_path = Some(input.into());
+    pub fn initial_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.initial_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is required.</p>
@@ -83,7 +85,7 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
     /// <li> <p> <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from the Amazon QuickSight console URL of the dashboard.</p> </li>
     /// <li> <p> <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the Amazon QuickSight console URL of the analysis.</p> </li>
     /// </ul>
-    pub fn set_initial_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_initial_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initial_path = input;
         self
     }
@@ -92,13 +94,13 @@ impl RegisteredUserQuickSightConsoleEmbeddingConfigurationBuilder {
         mut self,
         input: crate::types::RegisteredUserConsoleFeatureConfigurations,
     ) -> Self {
-        self.feature_configurations = Some(input);
+        self.feature_configurations = ::std::option::Option::Some(input);
         self
     }
     /// <p>The embedding configuration of an embedded Amazon QuickSight console.</p>
     pub fn set_feature_configurations(
         mut self,
-        input: std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
+        input: ::std::option::Option<crate::types::RegisteredUserConsoleFeatureConfigurations>,
     ) -> Self {
         self.feature_configurations = input;
         self

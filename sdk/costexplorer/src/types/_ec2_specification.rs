@@ -2,15 +2,15 @@
 
 /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2Specification {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     #[doc(hidden)]
-    pub offering_class: std::option::Option<crate::types::OfferingClass>,
+    pub offering_class: ::std::option::Option<crate::types::OfferingClass>,
 }
 impl Ec2Specification {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
-    pub fn offering_class(&self) -> std::option::Option<&crate::types::OfferingClass> {
+    pub fn offering_class(&self) -> ::std::option::Option<&crate::types::OfferingClass> {
         self.offering_class.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl Ec2Specification {
 
 /// A builder for [`Ec2Specification`](crate::types::Ec2Specification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ec2SpecificationBuilder {
-    pub(crate) offering_class: std::option::Option<crate::types::OfferingClass>,
+    pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClass>,
 }
 impl Ec2SpecificationBuilder {
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     pub fn offering_class(mut self, input: crate::types::OfferingClass) -> Self {
-        self.offering_class = Some(input);
+        self.offering_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether you want a recommendation for standard or convertible reservations.</p>
     pub fn set_offering_class(
         mut self,
-        input: std::option::Option<crate::types::OfferingClass>,
+        input: ::std::option::Option<crate::types::OfferingClass>,
     ) -> Self {
         self.offering_class = input;
         self

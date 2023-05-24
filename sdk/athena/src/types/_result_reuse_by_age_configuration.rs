@@ -2,14 +2,14 @@
 
 /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultReuseByAgeConfiguration {
     /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
     #[doc(hidden)]
     pub enabled: bool,
     /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
     #[doc(hidden)]
-    pub max_age_in_minutes: std::option::Option<i32>,
+    pub max_age_in_minutes: ::std::option::Option<i32>,
 }
 impl ResultReuseByAgeConfiguration {
     /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
@@ -17,7 +17,7 @@ impl ResultReuseByAgeConfiguration {
         self.enabled
     }
     /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
-    pub fn max_age_in_minutes(&self) -> std::option::Option<i32> {
+    pub fn max_age_in_minutes(&self) -> ::std::option::Option<i32> {
         self.max_age_in_minutes
     }
 }
@@ -30,29 +30,31 @@ impl ResultReuseByAgeConfiguration {
 
 /// A builder for [`ResultReuseByAgeConfiguration`](crate::types::ResultReuseByAgeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResultReuseByAgeConfigurationBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) max_age_in_minutes: std::option::Option<i32>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) max_age_in_minutes: ::std::option::Option<i32>,
 }
 impl ResultReuseByAgeConfigurationBuilder {
     /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
     pub fn max_age_in_minutes(mut self, input: i32) -> Self {
-        self.max_age_in_minutes = Some(input);
+        self.max_age_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
-    pub fn set_max_age_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_age_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_age_in_minutes = input;
         self
     }

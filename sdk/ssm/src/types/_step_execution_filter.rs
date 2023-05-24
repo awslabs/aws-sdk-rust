@@ -2,22 +2,22 @@
 
 /// <p>A filter to limit the amount of step execution information returned by the call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepExecutionFilter {
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::StepExecutionFilterKey>,
+    pub key: ::std::option::Option<crate::types::StepExecutionFilterKey>,
     /// <p>The values of the filter key.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StepExecutionFilter {
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::StepExecutionFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::StepExecutionFilterKey> {
         self.key.as_ref()
     }
     /// <p>The values of the filter key.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl StepExecutionFilter {
 
 /// A builder for [`StepExecutionFilter`](crate::types::StepExecutionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StepExecutionFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::StepExecutionFilterKey>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) key: ::std::option::Option<crate::types::StepExecutionFilterKey>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StepExecutionFilterBuilder {
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
     pub fn key(mut self, input: crate::types::StepExecutionFilterKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>
     pub fn set_key(
         mut self,
-        input: std::option::Option<crate::types::StepExecutionFilterKey>,
+        input: ::std::option::Option<crate::types::StepExecutionFilterKey>,
     ) -> Self {
         self.key = input;
         self
@@ -54,16 +56,16 @@ impl StepExecutionFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The values of the filter key.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values of the filter key.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

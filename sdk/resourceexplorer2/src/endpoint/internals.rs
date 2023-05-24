@@ -10,7 +10,7 @@ pub(super) fn resolve_endpoint(
     _params: &crate::endpoint::Params,
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
-) -> aws_smithy_http::endpoint::Result {
+) -> ::aws_smithy_http::endpoint::Result {
     #[allow(unused_variables)]
     let region = &_params.region;
     #[allow(unused_variables)]
@@ -20,11 +20,11 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(endpoint) = endpoint {
         if (*use_fips) == (true) {
-            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
             ));
         }
-        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
             .url(endpoint.to_owned())
             .build());
     }
@@ -37,7 +37,7 @@ pub(super) fn resolve_endpoint(
             if (true) == (partition_result.supports_dual_stack()) {
                 if (*use_fips) == (true) {
                     if (true) == (partition_result.supports_fips()) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://resource-explorer-2-fips.");
@@ -50,11 +50,11 @@ pub(super) fn resolve_endpoint(
                             })
                             .build());
                     }
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "FIPS is enabled but this partition does not support FIPS".to_string(),
                     ));
                 }
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();
                         out.push_str("https://resource-explorer-2.");
@@ -69,7 +69,7 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_fips) == (true) {
                 if (true) == (partition_result.supports_fips()) {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();
                             out.push_str("https://resource-explorer-2-fips.");
@@ -82,11 +82,11 @@ pub(super) fn resolve_endpoint(
                         })
                         .build());
                 }
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                     "FIPS is enabled but this partition does not support FIPS".to_string(),
                 ));
             }
-            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                 .url({
                     let mut out = String::new();
                     out.push_str("https://resource-explorer-2.");
@@ -100,14 +100,14 @@ pub(super) fn resolve_endpoint(
                 .build());
         }
         #[allow(unreachable_code)]
-        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
             format!(
                 "No rules matched these parameters. This is a bug. {:?}",
                 _params
             ),
         ));
     }
-    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
         "Invalid Configuration: Missing Region".to_string(),
     ));
 }

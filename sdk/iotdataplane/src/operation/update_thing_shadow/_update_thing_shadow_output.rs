@@ -2,20 +2,20 @@
 
 /// <p>The output from the UpdateThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
-    pub payload: std::option::Option<aws_smithy_types::Blob>,
+    pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl UpdateThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateThingShadowOutput {
+impl ::aws_http::request_id::RequestId for UpdateThingShadowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl UpdateThingShadowOutput {
 
 /// A builder for [`UpdateThingShadowOutput`](crate::operation::update_thing_shadow::UpdateThingShadowOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateThingShadowOutputBuilder {
-    pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl UpdateThingShadowOutputBuilder {
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.payload = Some(input);
+    pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state information, in JSON format.</p>
-    pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
     }

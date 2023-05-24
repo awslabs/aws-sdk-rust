@@ -2,7 +2,7 @@
 
 /// <p>Describes an enabled Auto Scaling group metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnabledMetric {
     /// <p>One of the following metrics:</p>
     /// <ul>
@@ -29,10 +29,10 @@ pub struct EnabledMetric {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
-    pub metric: std::option::Option<std::string::String>,
+    pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
     #[doc(hidden)]
-    pub granularity: std::option::Option<std::string::String>,
+    pub granularity: ::std::option::Option<::std::string::String>,
 }
 impl EnabledMetric {
     /// <p>One of the following metrics:</p>
@@ -59,11 +59,11 @@ impl EnabledMetric {
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn metric(&self) -> std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<&str> {
         self.metric.as_deref()
     }
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    pub fn granularity(&self) -> std::option::Option<&str> {
+    pub fn granularity(&self) -> ::std::option::Option<&str> {
         self.granularity.as_deref()
     }
 }
@@ -76,10 +76,12 @@ impl EnabledMetric {
 
 /// A builder for [`EnabledMetric`](crate::types::EnabledMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnabledMetricBuilder {
-    pub(crate) metric: std::option::Option<std::string::String>,
-    pub(crate) granularity: std::option::Option<std::string::String>,
+    pub(crate) metric: ::std::option::Option<::std::string::String>,
+    pub(crate) granularity: ::std::option::Option<::std::string::String>,
 }
 impl EnabledMetricBuilder {
     /// <p>One of the following metrics:</p>
@@ -106,8 +108,8 @@ impl EnabledMetricBuilder {
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric = Some(input.into());
+    pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the following metrics:</p>
@@ -134,17 +136,17 @@ impl EnabledMetricBuilder {
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric = input;
         self
     }
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    pub fn granularity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.granularity = Some(input.into());
+    pub fn granularity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.granularity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The granularity of the metric. The only valid value is <code>1Minute</code>.</p>
-    pub fn set_granularity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_granularity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.granularity = input;
         self
     }

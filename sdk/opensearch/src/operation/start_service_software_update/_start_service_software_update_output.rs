@@ -2,22 +2,22 @@
 
 /// <p>Represents the output of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch Service software update.</p>
     #[doc(hidden)]
-    pub service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
+    pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,
 }
 impl StartServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch Service software update.</p>
     pub fn service_software_options(
         &self,
-    ) -> std::option::Option<&crate::types::ServiceSoftwareOptions> {
+    ) -> ::std::option::Option<&crate::types::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for StartServiceSoftwareUpdateOutput {
+impl ::aws_http::request_id::RequestId for StartServiceSoftwareUpdateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,24 @@ impl StartServiceSoftwareUpdateOutput {
 
 /// A builder for [`StartServiceSoftwareUpdateOutput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartServiceSoftwareUpdateOutputBuilder {
-    pub(crate) service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
+    pub(crate) service_software_options:
+        ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,
 }
 impl StartServiceSoftwareUpdateOutputBuilder {
     /// <p>The current status of the OpenSearch Service software update.</p>
     pub fn service_software_options(mut self, input: crate::types::ServiceSoftwareOptions) -> Self {
-        self.service_software_options = Some(input);
+        self.service_software_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the OpenSearch Service software update.</p>
     pub fn set_service_software_options(
         mut self,
-        input: std::option::Option<crate::types::ServiceSoftwareOptions>,
+        input: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     ) -> Self {
         self.service_software_options = input;
         self

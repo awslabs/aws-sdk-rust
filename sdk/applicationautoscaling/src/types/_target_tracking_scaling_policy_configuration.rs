@@ -2,21 +2,21 @@
 
 /// <p>Represents a target tracking scaling policy configuration to use with Application Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetTrackingScalingPolicyConfiguration {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
     #[doc(hidden)]
-    pub target_value: std::option::Option<f64>,
+    pub target_value: ::std::option::Option<f64>,
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
     pub predefined_metric_specification:
-        std::option::Option<crate::types::PredefinedMetricSpecification>,
+        ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
     pub customized_metric_specification:
-        std::option::Option<crate::types::CustomizedMetricSpecification>,
+        ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect.</p>
     /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.</p>
     /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default value of 300 for the following scalable targets:</p>
@@ -40,7 +40,7 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// <li> <p>Amazon MSK broker storage</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scale_out_cooldown: std::option::Option<i32>,
+    pub scale_out_cooldown: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.</p>
     /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Application Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.</p>
     /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default value of 300 for the following scalable targets:</p>
@@ -64,28 +64,28 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     /// <li> <p>Amazon MSK broker storage</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scale_in_cooldown: std::option::Option<i32>,
+    pub scale_in_cooldown: ::std::option::Option<i32>,
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
     #[doc(hidden)]
-    pub disable_scale_in: std::option::Option<bool>,
+    pub disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingScalingPolicyConfiguration {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
-    pub fn target_value(&self) -> std::option::Option<f64> {
+    pub fn target_value(&self) -> ::std::option::Option<f64> {
         self.target_value
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     pub fn predefined_metric_specification(
         &self,
-    ) -> std::option::Option<&crate::types::PredefinedMetricSpecification> {
+    ) -> ::std::option::Option<&crate::types::PredefinedMetricSpecification> {
         self.predefined_metric_specification.as_ref()
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
     pub fn customized_metric_specification(
         &self,
-    ) -> std::option::Option<&crate::types::CustomizedMetricSpecification> {
+    ) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
         self.customized_metric_specification.as_ref()
     }
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect.</p>
@@ -110,7 +110,7 @@ impl TargetTrackingScalingPolicyConfiguration {
     /// <li> <p>Lambda provisioned concurrency</p> </li>
     /// <li> <p>Amazon MSK broker storage</p> </li>
     /// </ul>
-    pub fn scale_out_cooldown(&self) -> std::option::Option<i32> {
+    pub fn scale_out_cooldown(&self) -> ::std::option::Option<i32> {
         self.scale_out_cooldown
     }
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.</p>
@@ -135,11 +135,11 @@ impl TargetTrackingScalingPolicyConfiguration {
     /// <li> <p>Lambda provisioned concurrency</p> </li>
     /// <li> <p>Amazon MSK broker storage</p> </li>
     /// </ul>
-    pub fn scale_in_cooldown(&self) -> std::option::Option<i32> {
+    pub fn scale_in_cooldown(&self) -> ::std::option::Option<i32> {
         self.scale_in_cooldown
     }
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
-    pub fn disable_scale_in(&self) -> std::option::Option<bool> {
+    pub fn disable_scale_in(&self) -> ::std::option::Option<bool> {
         self.disable_scale_in
     }
 }
@@ -152,29 +152,31 @@ impl TargetTrackingScalingPolicyConfiguration {
 
 /// A builder for [`TargetTrackingScalingPolicyConfiguration`](crate::types::TargetTrackingScalingPolicyConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetTrackingScalingPolicyConfigurationBuilder {
-    pub(crate) target_value: std::option::Option<f64>,
+    pub(crate) target_value: ::std::option::Option<f64>,
     pub(crate) predefined_metric_specification:
-        std::option::Option<crate::types::PredefinedMetricSpecification>,
+        ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     pub(crate) customized_metric_specification:
-        std::option::Option<crate::types::CustomizedMetricSpecification>,
-    pub(crate) scale_out_cooldown: std::option::Option<i32>,
-    pub(crate) scale_in_cooldown: std::option::Option<i32>,
-    pub(crate) disable_scale_in: std::option::Option<bool>,
+        ::std::option::Option<crate::types::CustomizedMetricSpecification>,
+    pub(crate) scale_out_cooldown: ::std::option::Option<i32>,
+    pub(crate) scale_in_cooldown: ::std::option::Option<i32>,
+    pub(crate) disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
     pub fn target_value(mut self, input: f64) -> Self {
-        self.target_value = Some(input);
+        self.target_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out. </p> <note>
     /// <p>If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target utilization as the optimal average request count per target during any one-minute interval.</p>
     /// </note>
-    pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_value = input;
         self
     }
@@ -183,13 +185,13 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
         mut self,
         input: crate::types::PredefinedMetricSpecification,
     ) -> Self {
-        self.predefined_metric_specification = Some(input);
+        self.predefined_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     pub fn set_predefined_metric_specification(
         mut self,
-        input: std::option::Option<crate::types::PredefinedMetricSpecification>,
+        input: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     ) -> Self {
         self.predefined_metric_specification = input;
         self
@@ -199,13 +201,13 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
         mut self,
         input: crate::types::CustomizedMetricSpecification,
     ) -> Self {
-        self.customized_metric_specification = Some(input);
+        self.customized_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
     pub fn set_customized_metric_specification(
         mut self,
-        input: std::option::Option<crate::types::CustomizedMetricSpecification>,
+        input: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     ) -> Self {
         self.customized_metric_specification = input;
         self
@@ -233,7 +235,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <li> <p>Amazon MSK broker storage</p> </li>
     /// </ul>
     pub fn scale_out_cooldown(mut self, input: i32) -> Self {
-        self.scale_out_cooldown = Some(input);
+        self.scale_out_cooldown = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect.</p>
@@ -258,7 +260,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <li> <p>Lambda provisioned concurrency</p> </li>
     /// <li> <p>Amazon MSK broker storage</p> </li>
     /// </ul>
-    pub fn set_scale_out_cooldown(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale_out_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_out_cooldown = input;
         self
     }
@@ -285,7 +287,7 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <li> <p>Amazon MSK broker storage</p> </li>
     /// </ul>
     pub fn scale_in_cooldown(mut self, input: i32) -> Self {
-        self.scale_in_cooldown = Some(input);
+        self.scale_in_cooldown = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.</p>
@@ -310,17 +312,17 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// <li> <p>Lambda provisioned concurrency</p> </li>
     /// <li> <p>Amazon MSK broker storage</p> </li>
     /// </ul>
-    pub fn set_scale_in_cooldown(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale_in_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_in_cooldown = input;
         self
     }
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
     pub fn disable_scale_in(mut self, input: bool) -> Self {
-        self.disable_scale_in = Some(input);
+        self.disable_scale_in = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
-    pub fn set_disable_scale_in(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_scale_in = input;
         self
     }

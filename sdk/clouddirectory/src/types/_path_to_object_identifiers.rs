@@ -2,22 +2,22 @@
 
 /// <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathToObjectIdentifiers {
     /// <p>The path that is used to identify the object starting from directory root.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
     #[doc(hidden)]
-    pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PathToObjectIdentifiers {
     /// <p>The path that is used to identify the object starting from directory root.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.object_identifiers.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl PathToObjectIdentifiers {
 
 /// A builder for [`PathToObjectIdentifiers`](crate::types::PathToObjectIdentifiers).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PathToObjectIdentifiersBuilder {
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PathToObjectIdentifiersBuilder {
     /// <p>The path that is used to identify the object starting from directory root.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path that is used to identify the object starting from directory root.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
@@ -51,16 +53,19 @@ impl PathToObjectIdentifiersBuilder {
     /// To override the contents of this collection use [`set_object_identifiers`](Self::set_object_identifiers).
     ///
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub fn object_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn object_identifiers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.object_identifiers.unwrap_or_default();
         v.push(input.into());
-        self.object_identifiers = Some(v);
+        self.object_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
     pub fn set_object_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.object_identifiers = input;
         self

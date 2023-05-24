@@ -2,17 +2,17 @@
 
 /// <p>Filters for the shot detection segments returned by <code>GetSegmentDetection</code>. For more information, see <code>StartSegmentDetectionFilters</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartShotDetectionFilter {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     #[doc(hidden)]
-    pub min_segment_confidence: std::option::Option<f32>,
+    pub min_segment_confidence: ::std::option::Option<f32>,
 }
 impl StartShotDetectionFilter {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
-    pub fn min_segment_confidence(&self) -> std::option::Option<f32> {
+    pub fn min_segment_confidence(&self) -> ::std::option::Option<f32> {
         self.min_segment_confidence
     }
 }
@@ -25,20 +25,22 @@ impl StartShotDetectionFilter {
 
 /// A builder for [`StartShotDetectionFilter`](crate::types::StartShotDetectionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartShotDetectionFilterBuilder {
-    pub(crate) min_segment_confidence: std::option::Option<f32>,
+    pub(crate) min_segment_confidence: ::std::option::Option<f32>,
 }
 impl StartShotDetectionFilterBuilder {
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
     pub fn min_segment_confidence(mut self, input: f32) -> Self {
-        self.min_segment_confidence = Some(input);
+        self.min_segment_confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence represents how certain Amazon Rekognition is that a segment is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any segments with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, the <code>GetSegmentDetection</code> returns segments with confidence values greater than or equal to 50 percent.</p>
-    pub fn set_min_segment_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_min_segment_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.min_segment_confidence = input;
         self
     }

@@ -6,47 +6,50 @@ pub use crate::operation::get_transit_gateway_route_table_attachment::_get_trans
 /// Fluent builder constructing a request to `GetTransitGatewayRouteTableAttachment`.
 ///
 /// <p>Returns information about a transit gateway route table attachment.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTransitGatewayRouteTableAttachmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentInputBuilder,
 }
 impl GetTransitGatewayRouteTableAttachmentFluentBuilder {
     /// Creates a new `GetTransitGatewayRouteTableAttachment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachment, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachment, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentOutput, aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,23 @@ impl GetTransitGatewayRouteTableAttachmentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentOutput, aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentError>>
                          {
         self.send_middleware().await
     }
     /// <p>The ID of the transit gateway route table attachment.</p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.attachment_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table attachment.</p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
     }

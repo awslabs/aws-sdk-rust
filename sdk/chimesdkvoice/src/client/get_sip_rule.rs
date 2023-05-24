@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSipRule`](crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sip_rule_id(impl Into<String>)`](crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder::sip_rule_id) / [`set_sip_rule_id(Option<String>)`](crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder::set_sip_rule_id): <p>The SIP rule ID.</p>
+    ///   - [`sip_rule_id(impl ::std::convert::Into<String>)`](crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder::sip_rule_id) / [`set_sip_rule_id(Option<String>)`](crate::operation::get_sip_rule::builders::GetSipRuleFluentBuilder::set_sip_rule_id): <p>The SIP rule ID.</p>
     /// - On success, responds with [`GetSipRuleOutput`](crate::operation::get_sip_rule::GetSipRuleOutput) with field(s):
     ///   - [`sip_rule(Option<SipRule>)`](crate::operation::get_sip_rule::GetSipRuleOutput::sip_rule): <p>The SIP rule details.</p>
     /// - On failure, responds with [`SdkError<GetSipRuleError>`](crate::operation::get_sip_rule::GetSipRuleError)

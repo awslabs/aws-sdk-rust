@@ -38,13 +38,13 @@
 /// Add texture and detail to areas of your input video content that were lost after applying the Advanced input filter. To adaptively add texture and reduce softness: Choose Enabled. To not add any texture: Keep the default value, Disabled. We recommend that you choose Disabled for input video content that doesn't have texture, including screen recordings, computer graphics, or cartoons.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AdvancedInputFilterAddTexture {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AdvancedInputFilterAddTexture {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AdvancedInputFilterAddTexture {
+impl ::std::convert::From<&str> for AdvancedInputFilterAddTexture {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AdvancedInputFilterAddTexture::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AdvancedInputFilterAddTexture {
         }
     }
 }
-impl std::str::FromStr for AdvancedInputFilterAddTexture {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AdvancedInputFilterAddTexture {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdvancedInputFilterAddTexture::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AdvancedInputFilterAddTexture::from(s))
     }
 }
 impl AdvancedInputFilterAddTexture {
@@ -86,7 +86,7 @@ impl AdvancedInputFilterAddTexture {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for AdvancedInputFilterAddTexture {
+impl ::std::convert::AsRef<str> for AdvancedInputFilterAddTexture {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

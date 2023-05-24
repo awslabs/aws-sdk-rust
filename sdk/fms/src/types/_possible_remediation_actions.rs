@@ -2,22 +2,22 @@
 
 /// <p>A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PossibleRemediationActions {
     /// <p>A description of the possible remediation actions list.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the actions.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::PossibleRemediationAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>,
 }
 impl PossibleRemediationActions {
     /// <p>A description of the possible remediation actions list.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Information about the actions.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::PossibleRemediationAction]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::PossibleRemediationAction]> {
         self.actions.as_deref()
     }
 }
@@ -30,19 +30,22 @@ impl PossibleRemediationActions {
 
 /// A builder for [`PossibleRemediationActions`](crate::types::PossibleRemediationActions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PossibleRemediationActionsBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::PossibleRemediationAction>>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) actions:
+        ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>,
 }
 impl PossibleRemediationActionsBuilder {
     /// <p>A description of the possible remediation actions list.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the possible remediation actions list.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -54,13 +57,13 @@ impl PossibleRemediationActionsBuilder {
     pub fn actions(mut self, input: crate::types::PossibleRemediationAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the actions.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PossibleRemediationAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PossibleRemediationAction>>,
     ) -> Self {
         self.actions = input;
         self

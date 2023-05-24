@@ -2,17 +2,17 @@
 
 /// <p>LoRaWANServiceProfile object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
     #[doc(hidden)]
     pub add_gw_metadata: bool,
     /// <p>The DrMin value.</p>
     #[doc(hidden)]
-    pub dr_min: std::option::Option<i32>,
+    pub dr_min: ::std::option::Option<i32>,
     /// <p>The DrMax value.</p>
     #[doc(hidden)]
-    pub dr_max: std::option::Option<i32>,
+    pub dr_max: ::std::option::Option<i32>,
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     #[doc(hidden)]
     pub pr_allowed: bool,
@@ -26,11 +26,11 @@ impl LoRaWanServiceProfile {
         self.add_gw_metadata
     }
     /// <p>The DrMin value.</p>
-    pub fn dr_min(&self) -> std::option::Option<i32> {
+    pub fn dr_min(&self) -> ::std::option::Option<i32> {
         self.dr_min
     }
     /// <p>The DrMax value.</p>
-    pub fn dr_max(&self) -> std::option::Option<i32> {
+    pub fn dr_max(&self) -> ::std::option::Option<i32> {
         self.dr_max
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
@@ -51,62 +51,64 @@ impl LoRaWanServiceProfile {
 
 /// A builder for [`LoRaWanServiceProfile`](crate::types::LoRaWanServiceProfile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanServiceProfileBuilder {
-    pub(crate) add_gw_metadata: std::option::Option<bool>,
-    pub(crate) dr_min: std::option::Option<i32>,
-    pub(crate) dr_max: std::option::Option<i32>,
-    pub(crate) pr_allowed: std::option::Option<bool>,
-    pub(crate) ra_allowed: std::option::Option<bool>,
+    pub(crate) add_gw_metadata: ::std::option::Option<bool>,
+    pub(crate) dr_min: ::std::option::Option<i32>,
+    pub(crate) dr_max: ::std::option::Option<i32>,
+    pub(crate) pr_allowed: ::std::option::Option<bool>,
+    pub(crate) ra_allowed: ::std::option::Option<bool>,
 }
 impl LoRaWanServiceProfileBuilder {
     /// <p>The AddGWMetaData value.</p>
     pub fn add_gw_metadata(mut self, input: bool) -> Self {
-        self.add_gw_metadata = Some(input);
+        self.add_gw_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The AddGWMetaData value.</p>
-    pub fn set_add_gw_metadata(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_add_gw_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
         self.add_gw_metadata = input;
         self
     }
     /// <p>The DrMin value.</p>
     pub fn dr_min(mut self, input: i32) -> Self {
-        self.dr_min = Some(input);
+        self.dr_min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DrMin value.</p>
-    pub fn set_dr_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dr_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dr_min = input;
         self
     }
     /// <p>The DrMax value.</p>
     pub fn dr_max(mut self, input: i32) -> Self {
-        self.dr_max = Some(input);
+        self.dr_max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DrMax value.</p>
-    pub fn set_dr_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dr_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dr_max = input;
         self
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     pub fn pr_allowed(mut self, input: bool) -> Self {
-        self.pr_allowed = Some(input);
+        self.pr_allowed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
-    pub fn set_pr_allowed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_pr_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pr_allowed = input;
         self
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
     pub fn ra_allowed(mut self, input: bool) -> Self {
-        self.ra_allowed = Some(input);
+        self.ra_allowed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
-    pub fn set_ra_allowed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ra_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ra_allowed = input;
         self
     }

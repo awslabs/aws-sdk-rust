@@ -2,24 +2,24 @@
 
 /// <p>Specifies the set of parameters needed to perform aggregation in the aggregate transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateOperation {
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
     #[doc(hidden)]
-    pub column: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub column: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
     #[doc(hidden)]
-    pub agg_func: std::option::Option<crate::types::AggFunction>,
+    pub agg_func: ::std::option::Option<crate::types::AggFunction>,
 }
 impl AggregateOperation {
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
-    pub fn column(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn column(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.column.as_deref()
     }
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
-    pub fn agg_func(&self) -> std::option::Option<&crate::types::AggFunction> {
+    pub fn agg_func(&self) -> ::std::option::Option<&crate::types::AggFunction> {
         self.agg_func.as_ref()
     }
 }
@@ -32,10 +32,12 @@ impl AggregateOperation {
 
 /// A builder for [`AggregateOperation`](crate::types::AggregateOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregateOperationBuilder {
-    pub(crate) column: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) agg_func: std::option::Option<crate::types::AggFunction>,
+    pub(crate) column: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agg_func: ::std::option::Option<crate::types::AggFunction>,
 }
 impl AggregateOperationBuilder {
     /// Appends an item to `column`.
@@ -43,16 +45,16 @@ impl AggregateOperationBuilder {
     /// To override the contents of this collection use [`set_column`](Self::set_column).
     ///
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
-    pub fn column(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn column(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.column.unwrap_or_default();
         v.push(input.into());
-        self.column = Some(v);
+        self.column = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the column on the data set on which the aggregation function will be applied.</p>
     pub fn set_column(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.column = input;
         self
@@ -60,12 +62,12 @@ impl AggregateOperationBuilder {
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
     pub fn agg_func(mut self, input: crate::types::AggFunction) -> Self {
-        self.agg_func = Some(input);
+        self.agg_func = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the aggregation function to apply.</p>
     /// <p>Possible aggregation functions include: avg countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop</p>
-    pub fn set_agg_func(mut self, input: std::option::Option<crate::types::AggFunction>) -> Self {
+    pub fn set_agg_func(mut self, input: ::std::option::Option<crate::types::AggFunction>) -> Self {
         self.agg_func = input;
         self
     }

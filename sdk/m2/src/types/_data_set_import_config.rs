@@ -2,12 +2,12 @@
 
 /// <p>Identifies one or more data sets you want to import with the <code>CreateDataSetImportTask</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DataSetImportConfig {
     /// <p>The data sets.</p>
-    DataSets(std::vec::Vec<crate::types::DataSetImportItem>),
+    DataSets(::std::vec::Vec<crate::types::DataSetImportItem>),
     /// <p>The Amazon S3 location of the data sets.</p>
-    S3Location(std::string::String),
+    S3Location(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,28 +19,28 @@ pub enum DataSetImportConfig {
     Unknown,
 }
 impl DataSetImportConfig {
-    /// Tries to convert the enum instance into [`DataSets`](crate::types::DataSetImportConfig::DataSets), extracting the inner [`Vec`](std::vec::Vec).
+    /// Tries to convert the enum instance into [`DataSets`](crate::types::DataSetImportConfig::DataSets), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_data_sets(
         &self,
-    ) -> std::result::Result<&std::vec::Vec<crate::types::DataSetImportItem>, &Self> {
+    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::DataSetImportItem>, &Self> {
         if let DataSetImportConfig::DataSets(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DataSets`](crate::types::DataSetImportConfig::DataSets).
     pub fn is_data_sets(&self) -> bool {
         self.as_data_sets().is_ok()
     }
-    /// Tries to convert the enum instance into [`S3Location`](crate::types::DataSetImportConfig::S3Location), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`S3Location`](crate::types::DataSetImportConfig::S3Location), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_location(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_s3_location(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let DataSetImportConfig::S3Location(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3Location`](crate::types::DataSetImportConfig::S3Location).

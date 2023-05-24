@@ -45,13 +45,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ContinueAsNewWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +75,7 @@ pub enum ContinueAsNewWorkflowExecutionFailedCause {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ContinueAsNewWorkflowExecutionFailedCause {
+impl ::std::convert::From<&str> for ContinueAsNewWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
                         "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED" => ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded,
@@ -91,11 +91,11 @@ other => ContinueAsNewWorkflowExecutionFailedCause::Unknown(crate::primitives::U
                     }
     }
 }
-impl std::str::FromStr for ContinueAsNewWorkflowExecutionFailedCause {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ContinueAsNewWorkflowExecutionFailedCause {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContinueAsNewWorkflowExecutionFailedCause::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ContinueAsNewWorkflowExecutionFailedCause::from(s))
     }
 }
 impl ContinueAsNewWorkflowExecutionFailedCause {
@@ -129,7 +129,7 @@ impl ContinueAsNewWorkflowExecutionFailedCause {
         ]
     }
 }
-impl AsRef<str> for ContinueAsNewWorkflowExecutionFailedCause {
+impl ::std::convert::AsRef<str> for ContinueAsNewWorkflowExecutionFailedCause {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,44 +2,44 @@
 
 /// The request for a CreateDataset operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Display title for a FinSpace Dataset.</p>
     #[doc(hidden)]
-    pub dataset_title: std::option::Option<std::string::String>,
+    pub dataset_title: ::std::option::Option<::std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub kind: std::option::Option<crate::types::DatasetKind>,
+    pub kind: ::std::option::Option<crate::types::DatasetKind>,
     /// <p>Description of a Dataset.</p>
     #[doc(hidden)]
-    pub dataset_description: std::option::Option<std::string::String>,
+    pub dataset_description: ::std::option::Option<::std::string::String>,
     /// <p>Contact information for a Dataset owner.</p>
     #[doc(hidden)]
-    pub owner_info: std::option::Option<crate::types::DatasetOwnerInfo>,
+    pub owner_info: ::std::option::Option<crate::types::DatasetOwnerInfo>,
     /// <p>Permission group parameters for Dataset permissions.</p>
     #[doc(hidden)]
-    pub permission_group_params: std::option::Option<crate::types::PermissionGroupParams>,
+    pub permission_group_params: ::std::option::Option<crate::types::PermissionGroupParams>,
     /// <p>The unique resource identifier for a Dataset.</p>
     #[doc(hidden)]
-    pub alias: std::option::Option<std::string::String>,
+    pub alias: ::std::option::Option<::std::string::String>,
     /// <p>Definition for a schema on a tabular Dataset.</p>
     #[doc(hidden)]
-    pub schema_definition: std::option::Option<crate::types::SchemaUnion>,
+    pub schema_definition: ::std::option::Option<crate::types::SchemaUnion>,
 }
 impl CreateDatasetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Display title for a FinSpace Dataset.</p>
-    pub fn dataset_title(&self) -> std::option::Option<&str> {
+    pub fn dataset_title(&self) -> ::std::option::Option<&str> {
         self.dataset_title.as_deref()
     }
     /// <p>The format in which Dataset data is structured.</p>
@@ -47,29 +47,29 @@ impl CreateDatasetInput {
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
-    pub fn kind(&self) -> std::option::Option<&crate::types::DatasetKind> {
+    pub fn kind(&self) -> ::std::option::Option<&crate::types::DatasetKind> {
         self.kind.as_ref()
     }
     /// <p>Description of a Dataset.</p>
-    pub fn dataset_description(&self) -> std::option::Option<&str> {
+    pub fn dataset_description(&self) -> ::std::option::Option<&str> {
         self.dataset_description.as_deref()
     }
     /// <p>Contact information for a Dataset owner.</p>
-    pub fn owner_info(&self) -> std::option::Option<&crate::types::DatasetOwnerInfo> {
+    pub fn owner_info(&self) -> ::std::option::Option<&crate::types::DatasetOwnerInfo> {
         self.owner_info.as_ref()
     }
     /// <p>Permission group parameters for Dataset permissions.</p>
     pub fn permission_group_params(
         &self,
-    ) -> std::option::Option<&crate::types::PermissionGroupParams> {
+    ) -> ::std::option::Option<&crate::types::PermissionGroupParams> {
         self.permission_group_params.as_ref()
     }
     /// <p>The unique resource identifier for a Dataset.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    pub fn schema_definition(&self) -> std::option::Option<&crate::types::SchemaUnion> {
+    pub fn schema_definition(&self) -> ::std::option::Option<&crate::types::SchemaUnion> {
         self.schema_definition.as_ref()
     }
 }
@@ -82,35 +82,43 @@ impl CreateDatasetInput {
 
 /// A builder for [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDatasetInputBuilder {
-    pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) dataset_title: std::option::Option<std::string::String>,
-    pub(crate) kind: std::option::Option<crate::types::DatasetKind>,
-    pub(crate) dataset_description: std::option::Option<std::string::String>,
-    pub(crate) owner_info: std::option::Option<crate::types::DatasetOwnerInfo>,
-    pub(crate) permission_group_params: std::option::Option<crate::types::PermissionGroupParams>,
-    pub(crate) alias: std::option::Option<std::string::String>,
-    pub(crate) schema_definition: std::option::Option<crate::types::SchemaUnion>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_title: ::std::option::Option<::std::string::String>,
+    pub(crate) kind: ::std::option::Option<crate::types::DatasetKind>,
+    pub(crate) dataset_description: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_info: ::std::option::Option<crate::types::DatasetOwnerInfo>,
+    pub(crate) permission_group_params: ::std::option::Option<crate::types::PermissionGroupParams>,
+    pub(crate) alias: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_definition: ::std::option::Option<crate::types::SchemaUnion>,
 }
 impl CreateDatasetInputBuilder {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
     /// <p>Display title for a FinSpace Dataset.</p>
-    pub fn dataset_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_title = Some(input.into());
+    pub fn dataset_title(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Display title for a FinSpace Dataset.</p>
-    pub fn set_dataset_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_title(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dataset_title = input;
         self
     }
@@ -120,7 +128,7 @@ impl CreateDatasetInputBuilder {
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(mut self, input: crate::types::DatasetKind) -> Self {
-        self.kind = Some(input);
+        self.kind = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format in which Dataset data is structured.</p>
@@ -128,68 +136,71 @@ impl CreateDatasetInputBuilder {
     /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
     /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
-    pub fn set_kind(mut self, input: std::option::Option<crate::types::DatasetKind>) -> Self {
+    pub fn set_kind(mut self, input: ::std::option::Option<crate::types::DatasetKind>) -> Self {
         self.kind = input;
         self
     }
     /// <p>Description of a Dataset.</p>
-    pub fn dataset_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_description = Some(input.into());
+    pub fn dataset_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of a Dataset.</p>
     pub fn set_dataset_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataset_description = input;
         self
     }
     /// <p>Contact information for a Dataset owner.</p>
     pub fn owner_info(mut self, input: crate::types::DatasetOwnerInfo) -> Self {
-        self.owner_info = Some(input);
+        self.owner_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contact information for a Dataset owner.</p>
     pub fn set_owner_info(
         mut self,
-        input: std::option::Option<crate::types::DatasetOwnerInfo>,
+        input: ::std::option::Option<crate::types::DatasetOwnerInfo>,
     ) -> Self {
         self.owner_info = input;
         self
     }
     /// <p>Permission group parameters for Dataset permissions.</p>
     pub fn permission_group_params(mut self, input: crate::types::PermissionGroupParams) -> Self {
-        self.permission_group_params = Some(input);
+        self.permission_group_params = ::std::option::Option::Some(input);
         self
     }
     /// <p>Permission group parameters for Dataset permissions.</p>
     pub fn set_permission_group_params(
         mut self,
-        input: std::option::Option<crate::types::PermissionGroupParams>,
+        input: ::std::option::Option<crate::types::PermissionGroupParams>,
     ) -> Self {
         self.permission_group_params = input;
         self
     }
     /// <p>The unique resource identifier for a Dataset.</p>
-    pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alias = Some(input.into());
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique resource identifier for a Dataset.</p>
-    pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
     pub fn schema_definition(mut self, input: crate::types::SchemaUnion) -> Self {
-        self.schema_definition = Some(input);
+        self.schema_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
     pub fn set_schema_definition(
         mut self,
-        input: std::option::Option<crate::types::SchemaUnion>,
+        input: ::std::option::Option<crate::types::SchemaUnion>,
     ) -> Self {
         self.schema_definition = input;
         self
@@ -197,11 +208,11 @@ impl CreateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_dataset::CreateDatasetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_dataset::CreateDatasetInput {
+        ::std::result::Result::Ok(crate::operation::create_dataset::CreateDatasetInput {
             client_token: self.client_token,
             dataset_title: self.dataset_title,
             kind: self.kind,

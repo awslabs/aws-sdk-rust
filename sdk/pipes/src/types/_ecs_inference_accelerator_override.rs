@@ -2,22 +2,22 @@
 
 /// <p>Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsInferenceAcceleratorOverride {
     /// <p>The Elastic Inference accelerator device name to override for the task. This parameter must match a <code>deviceName</code> specified in the task definition.</p>
     #[doc(hidden)]
-    pub device_name: std::option::Option<std::string::String>,
+    pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The Elastic Inference accelerator type to use.</p>
     #[doc(hidden)]
-    pub device_type: std::option::Option<std::string::String>,
+    pub device_type: ::std::option::Option<::std::string::String>,
 }
 impl EcsInferenceAcceleratorOverride {
     /// <p>The Elastic Inference accelerator device name to override for the task. This parameter must match a <code>deviceName</code> specified in the task definition.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>The Elastic Inference accelerator type to use.</p>
-    pub fn device_type(&self) -> std::option::Option<&str> {
+    pub fn device_type(&self) -> ::std::option::Option<&str> {
         self.device_type.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl EcsInferenceAcceleratorOverride {
 
 /// A builder for [`EcsInferenceAcceleratorOverride`](crate::types::EcsInferenceAcceleratorOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcsInferenceAcceleratorOverrideBuilder {
-    pub(crate) device_name: std::option::Option<std::string::String>,
-    pub(crate) device_type: std::option::Option<std::string::String>,
+    pub(crate) device_name: ::std::option::Option<::std::string::String>,
+    pub(crate) device_type: ::std::option::Option<::std::string::String>,
 }
 impl EcsInferenceAcceleratorOverrideBuilder {
     /// <p>The Elastic Inference accelerator device name to override for the task. This parameter must match a <code>deviceName</code> specified in the task definition.</p>
-    pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_name = Some(input.into());
+    pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elastic Inference accelerator device name to override for the task. This parameter must match a <code>deviceName</code> specified in the task definition.</p>
-    pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
     /// <p>The Elastic Inference accelerator type to use.</p>
-    pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_type = Some(input.into());
+    pub fn device_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elastic Inference accelerator type to use.</p>
-    pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_type = input;
         self
     }

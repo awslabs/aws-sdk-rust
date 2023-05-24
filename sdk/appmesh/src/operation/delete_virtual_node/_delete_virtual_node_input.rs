@@ -2,29 +2,29 @@
 
 /// <p>Deletes a virtual node input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVirtualNodeInput {
     /// <p>The name of the virtual node to delete.</p>
     #[doc(hidden)]
-    pub virtual_node_name: std::option::Option<std::string::String>,
+    pub virtual_node_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service mesh to delete the virtual node in.</p>
     #[doc(hidden)]
-    pub mesh_name: std::option::Option<std::string::String>,
+    pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     #[doc(hidden)]
-    pub mesh_owner: std::option::Option<std::string::String>,
+    pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVirtualNodeInput {
     /// <p>The name of the virtual node to delete.</p>
-    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_node_name(&self) -> ::std::option::Option<&str> {
         self.virtual_node_name.as_deref()
     }
     /// <p>The name of the service mesh to delete the virtual node in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
 }
@@ -38,54 +38,59 @@ impl DeleteVirtualNodeInput {
 
 /// A builder for [`DeleteVirtualNodeInput`](crate::operation::delete_virtual_node::DeleteVirtualNodeInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteVirtualNodeInputBuilder {
-    pub(crate) virtual_node_name: std::option::Option<std::string::String>,
-    pub(crate) mesh_name: std::option::Option<std::string::String>,
-    pub(crate) mesh_owner: std::option::Option<std::string::String>,
+    pub(crate) virtual_node_name: ::std::option::Option<::std::string::String>,
+    pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
+    pub(crate) mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl DeleteVirtualNodeInputBuilder {
     /// <p>The name of the virtual node to delete.</p>
-    pub fn virtual_node_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_node_name = Some(input.into());
+    pub fn virtual_node_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual node to delete.</p>
     pub fn set_virtual_node_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_node_name = input;
         self
     }
     /// <p>The name of the service mesh to delete the virtual node in.</p>
-    pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mesh_name = Some(input.into());
+    pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mesh_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service mesh to delete the virtual node in.</p>
-    pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_name = input;
         self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mesh_owner = Some(input.into());
+    pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mesh_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_owner = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteVirtualNodeInput`](crate::operation::delete_virtual_node::DeleteVirtualNodeInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_virtual_node::DeleteVirtualNodeInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_virtual_node::DeleteVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
                 mesh_name: self.mesh_name,

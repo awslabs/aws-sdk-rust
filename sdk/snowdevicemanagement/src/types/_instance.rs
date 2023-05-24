@@ -2,102 +2,105 @@
 
 /// <p>The description of an instance. Currently, Amazon EC2 instances are the only supported instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The ID of the AMI used to launch the instance.</p>
     #[doc(hidden)]
-    pub image_id: std::option::Option<std::string::String>,
+    pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
     #[doc(hidden)]
-    pub ami_launch_index: std::option::Option<i32>,
+    pub ami_launch_index: ::std::option::Option<i32>,
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the current state of an instance.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::InstanceState>,
+    pub state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>The instance type.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address assigned to the instance.</p>
     #[doc(hidden)]
-    pub private_ip_address: std::option::Option<std::string::String>,
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The public IPv4 address assigned to the instance.</p>
     #[doc(hidden)]
-    pub public_ip_address: std::option::Option<std::string::String>,
+    pub public_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>When the instance was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the instance was last updated.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any block device mapping entries for the instance.</p>
     #[doc(hidden)]
     pub block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The security groups for the instance.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+    pub security_groups:
+        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     /// <p>The CPU options for the instance.</p>
     #[doc(hidden)]
-    pub cpu_options: std::option::Option<crate::types::CpuOptions>,
+    pub cpu_options: ::std::option::Option<crate::types::CpuOptions>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
     #[doc(hidden)]
-    pub root_device_name: std::option::Option<std::string::String>,
+    pub root_device_name: ::std::option::Option<::std::string::String>,
 }
 impl Instance {
     /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
-    pub fn ami_launch_index(&self) -> std::option::Option<i32> {
+    pub fn ami_launch_index(&self) -> ::std::option::Option<i32> {
         self.ami_launch_index
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The description of the current state of an instance.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::InstanceState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
         self.state.as_ref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The public IPv4 address assigned to the instance.</p>
-    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> ::std::option::Option<&str> {
         self.public_ip_address.as_deref()
     }
     /// <p>When the instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the instance was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Any block device mapping entries for the instance.</p>
     pub fn block_device_mappings(
         &self,
-    ) -> std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
+    ) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>The security groups for the instance.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::types::SecurityGroupIdentifier]> {
+    pub fn security_groups(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::SecurityGroupIdentifier]> {
         self.security_groups.as_deref()
     }
     /// <p>The CPU options for the instance.</p>
-    pub fn cpu_options(&self) -> std::option::Option<&crate::types::CpuOptions> {
+    pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::CpuOptions> {
         self.cpu_options.as_ref()
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
-    pub fn root_device_name(&self) -> std::option::Option<&str> {
+    pub fn root_device_name(&self) -> ::std::option::Option<&str> {
         self.root_device_name.as_deref()
     }
 }
@@ -110,123 +113,137 @@ impl Instance {
 
 /// A builder for [`Instance`](crate::types::Instance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceBuilder {
-    pub(crate) image_id: std::option::Option<std::string::String>,
-    pub(crate) ami_launch_index: std::option::Option<i32>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::InstanceState>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) private_ip_address: std::option::Option<std::string::String>,
-    pub(crate) public_ip_address: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ami_launch_index: ::std::option::Option<i32>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     pub(crate) security_groups:
-        std::option::Option<std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
-    pub(crate) cpu_options: std::option::Option<crate::types::CpuOptions>,
-    pub(crate) root_device_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+    pub(crate) cpu_options: ::std::option::Option<crate::types::CpuOptions>,
+    pub(crate) root_device_name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBuilder {
     /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_id = Some(input.into());
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }
     /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
     pub fn ami_launch_index(mut self, input: i32) -> Self {
-        self.ami_launch_index = Some(input);
+        self.ami_launch_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
-    pub fn set_ami_launch_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ami_launch_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ami_launch_index = input;
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The description of the current state of an instance.</p>
     pub fn state(mut self, input: crate::types::InstanceState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of the current state of an instance.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::InstanceState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_ip_address = Some(input.into());
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_ip_address = input;
         self
     }
     /// <p>The public IPv4 address assigned to the instance.</p>
-    pub fn public_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_ip_address = Some(input.into());
+    pub fn public_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.public_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IPv4 address assigned to the instance.</p>
     pub fn set_public_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.public_ip_address = input;
         self
     }
     /// <p>When the instance was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the instance was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>When the instance was last updated.</p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the instance was last updated.</p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self
@@ -242,13 +259,13 @@ impl InstanceBuilder {
     ) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
-        self.block_device_mappings = Some(v);
+        self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any block device mapping entries for the instance.</p>
     pub fn set_block_device_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     ) -> Self {
         self.block_device_mappings = input;
         self
@@ -261,34 +278,43 @@ impl InstanceBuilder {
     pub fn security_groups(mut self, input: crate::types::SecurityGroupIdentifier) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups for the instance.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     ) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The CPU options for the instance.</p>
     pub fn cpu_options(mut self, input: crate::types::CpuOptions) -> Self {
-        self.cpu_options = Some(input);
+        self.cpu_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CPU options for the instance.</p>
-    pub fn set_cpu_options(mut self, input: std::option::Option<crate::types::CpuOptions>) -> Self {
+    pub fn set_cpu_options(
+        mut self,
+        input: ::std::option::Option<crate::types::CpuOptions>,
+    ) -> Self {
         self.cpu_options = input;
         self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
-    pub fn root_device_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.root_device_name = Some(input.into());
+    pub fn root_device_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.root_device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
-    pub fn set_root_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_root_device_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.root_device_name = input;
         self
     }

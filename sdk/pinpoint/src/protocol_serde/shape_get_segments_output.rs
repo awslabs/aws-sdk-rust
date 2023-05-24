@@ -2,7 +2,7 @@
 pub(crate) fn de_segments_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::SegmentsResponse>,
+    ::std::option::Option<crate::types::SegmentsResponse>,
     crate::operation::get_segments::GetSegmentsError,
 > {
     (!body.is_empty())

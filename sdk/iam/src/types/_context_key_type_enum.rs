@@ -48,13 +48,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ContextKeyTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,7 +84,7 @@ pub enum ContextKeyTypeEnum {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ContextKeyTypeEnum {
+impl ::std::convert::From<&str> for ContextKeyTypeEnum {
     fn from(s: &str) -> Self {
         match s {
             "binary" => ContextKeyTypeEnum::Binary,
@@ -105,11 +105,11 @@ impl std::convert::From<&str> for ContextKeyTypeEnum {
         }
     }
 }
-impl std::str::FromStr for ContextKeyTypeEnum {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ContextKeyTypeEnum {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContextKeyTypeEnum::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ContextKeyTypeEnum::from(s))
     }
 }
 impl ContextKeyTypeEnum {
@@ -149,7 +149,7 @@ impl ContextKeyTypeEnum {
         ]
     }
 }
-impl AsRef<str> for ContextKeyTypeEnum {
+impl ::std::convert::AsRef<str> for ContextKeyTypeEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

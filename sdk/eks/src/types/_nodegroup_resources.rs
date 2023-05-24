@@ -2,22 +2,22 @@
 
 /// <p>An object representing the resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodegroupResources {
     /// <p>The Auto Scaling groups associated with the node group.</p>
     #[doc(hidden)]
-    pub auto_scaling_groups: std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>>,
+    pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
     #[doc(hidden)]
-    pub remote_access_security_group: std::option::Option<std::string::String>,
+    pub remote_access_security_group: ::std::option::Option<::std::string::String>,
 }
 impl NodegroupResources {
     /// <p>The Auto Scaling groups associated with the node group.</p>
-    pub fn auto_scaling_groups(&self) -> std::option::Option<&[crate::types::AutoScalingGroup]> {
+    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[crate::types::AutoScalingGroup]> {
         self.auto_scaling_groups.as_deref()
     }
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
-    pub fn remote_access_security_group(&self) -> std::option::Option<&str> {
+    pub fn remote_access_security_group(&self) -> ::std::option::Option<&str> {
         self.remote_access_security_group.as_deref()
     }
 }
@@ -30,11 +30,13 @@ impl NodegroupResources {
 
 /// A builder for [`NodegroupResources`](crate::types::NodegroupResources).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodegroupResourcesBuilder {
     pub(crate) auto_scaling_groups:
-        std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>>,
-    pub(crate) remote_access_security_group: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
+    pub(crate) remote_access_security_group: ::std::option::Option<::std::string::String>,
 }
 impl NodegroupResourcesBuilder {
     /// Appends an item to `auto_scaling_groups`.
@@ -45,26 +47,29 @@ impl NodegroupResourcesBuilder {
     pub fn auto_scaling_groups(mut self, input: crate::types::AutoScalingGroup) -> Self {
         let mut v = self.auto_scaling_groups.unwrap_or_default();
         v.push(input);
-        self.auto_scaling_groups = Some(v);
+        self.auto_scaling_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Auto Scaling groups associated with the node group.</p>
     pub fn set_auto_scaling_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingGroup>>,
     ) -> Self {
         self.auto_scaling_groups = input;
         self
     }
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
-    pub fn remote_access_security_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.remote_access_security_group = Some(input.into());
+    pub fn remote_access_security_group(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.remote_access_security_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The remote access security group associated with the node group. This security group controls SSH access to the nodes.</p>
     pub fn set_remote_access_security_group(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.remote_access_security_group = input;
         self

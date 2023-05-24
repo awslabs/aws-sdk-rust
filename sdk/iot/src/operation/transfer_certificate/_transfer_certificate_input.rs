@@ -2,29 +2,29 @@
 
 /// <p>The input for the TransferCertificate operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransferCertificateInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     #[doc(hidden)]
-    pub certificate_id: std::option::Option<std::string::String>,
+    pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub target_aws_account: std::option::Option<std::string::String>,
+    pub target_aws_account: ::std::option::Option<::std::string::String>,
     /// <p>The transfer message.</p>
     #[doc(hidden)]
-    pub transfer_message: std::option::Option<std::string::String>,
+    pub transfer_message: ::std::option::Option<::std::string::String>,
 }
 impl TransferCertificateInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
     /// <p>The Amazon Web Services account.</p>
-    pub fn target_aws_account(&self) -> std::option::Option<&str> {
+    pub fn target_aws_account(&self) -> ::std::option::Option<&str> {
         self.target_aws_account.as_deref()
     }
     /// <p>The transfer message.</p>
-    pub fn transfer_message(&self) -> std::option::Option<&str> {
+    pub fn transfer_message(&self) -> ::std::option::Option<&str> {
         self.transfer_message.as_deref()
     }
 }
@@ -38,54 +38,71 @@ impl TransferCertificateInput {
 
 /// A builder for [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransferCertificateInputBuilder {
-    pub(crate) certificate_id: std::option::Option<std::string::String>,
-    pub(crate) target_aws_account: std::option::Option<std::string::String>,
-    pub(crate) transfer_message: std::option::Option<std::string::String>,
+    pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_aws_account: ::std::option::Option<::std::string::String>,
+    pub(crate) transfer_message: ::std::option::Option<::std::string::String>,
 }
 impl TransferCertificateInputBuilder {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_id = Some(input.into());
+    pub fn certificate_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_id = input;
         self
     }
     /// <p>The Amazon Web Services account.</p>
-    pub fn target_aws_account(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_aws_account = Some(input.into());
+    pub fn target_aws_account(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_aws_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account.</p>
     pub fn set_target_aws_account(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_aws_account = input;
         self
     }
     /// <p>The transfer message.</p>
-    pub fn transfer_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transfer_message = Some(input.into());
+    pub fn transfer_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transfer_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transfer message.</p>
-    pub fn set_transfer_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transfer_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.transfer_message = input;
         self
     }
     /// Consumes the builder and constructs a [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::transfer_certificate::TransferCertificateInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::transfer_certificate::TransferCertificateInput {
                 certificate_id: self.certificate_id,
                 target_aws_account: self.target_aws_account,

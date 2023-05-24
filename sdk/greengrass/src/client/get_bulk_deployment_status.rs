@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBulkDeploymentStatus`](crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bulk_deployment_id(impl Into<String>)`](crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusFluentBuilder::bulk_deployment_id) / [`set_bulk_deployment_id(Option<String>)`](crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusFluentBuilder::set_bulk_deployment_id): The ID of the bulk deployment.
+    ///   - [`bulk_deployment_id(impl ::std::convert::Into<String>)`](crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusFluentBuilder::bulk_deployment_id) / [`set_bulk_deployment_id(Option<String>)`](crate::operation::get_bulk_deployment_status::builders::GetBulkDeploymentStatusFluentBuilder::set_bulk_deployment_id): The ID of the bulk deployment.
     /// - On success, responds with [`GetBulkDeploymentStatusOutput`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput) with field(s):
     ///   - [`bulk_deployment_metrics(Option<BulkDeploymentMetrics>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::bulk_deployment_metrics): Relevant metrics on input records processed during bulk deployment.
     ///   - [`bulk_deployment_status(Option<BulkDeploymentStatus>)`](crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusOutput::bulk_deployment_status): The status of the bulk deployment.

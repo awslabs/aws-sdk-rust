@@ -8,65 +8,65 @@
 /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WafInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The settings where the invalid parameter was found. </p>
     #[doc(hidden)]
-    pub field: std::option::Option<crate::types::ParameterExceptionField>,
+    pub field: ::std::option::Option<crate::types::ParameterExceptionField>,
     /// <p>The invalid parameter that resulted in the exception. </p>
     #[doc(hidden)]
-    pub parameter: std::option::Option<std::string::String>,
+    pub parameter: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the exception.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub reason: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl WafInvalidParameterException {
     /// <p>The settings where the invalid parameter was found. </p>
-    pub fn field(&self) -> std::option::Option<&crate::types::ParameterExceptionField> {
+    pub fn field(&self) -> ::std::option::Option<&crate::types::ParameterExceptionField> {
         self.field.as_ref()
     }
     /// <p>The invalid parameter that resulted in the exception. </p>
-    pub fn parameter(&self) -> std::option::Option<&str> {
+    pub fn parameter(&self) -> ::std::option::Option<&str> {
         self.parameter.as_deref()
     }
     /// <p>Additional information about the exception.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
 impl WafInvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for WafInvalidParameterException {
+impl ::std::fmt::Display for WafInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
+        ::std::write!(
             f,
             "WafInvalidParameterException [WAFInvalidParameterException]"
         )?;
-        if let Some(inner_1) = &self.message {
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for WafInvalidParameterException {}
-impl aws_http::request_id::RequestId for crate::types::error::WafInvalidParameterException {
+impl ::std::error::Error for WafInvalidParameterException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::WafInvalidParameterException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidParameterException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for WafInvalidParameterException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -79,60 +79,62 @@ impl WafInvalidParameterException {
 
 /// A builder for [`WafInvalidParameterException`](crate::types::error::WafInvalidParameterException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WafInvalidParameterExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) field: std::option::Option<crate::types::ParameterExceptionField>,
-    pub(crate) parameter: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) field: ::std::option::Option<crate::types::ParameterExceptionField>,
+    pub(crate) parameter: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl WafInvalidParameterExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The settings where the invalid parameter was found. </p>
     pub fn field(mut self, input: crate::types::ParameterExceptionField) -> Self {
-        self.field = Some(input);
+        self.field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings where the invalid parameter was found. </p>
     pub fn set_field(
         mut self,
-        input: std::option::Option<crate::types::ParameterExceptionField>,
+        input: ::std::option::Option<crate::types::ParameterExceptionField>,
     ) -> Self {
         self.field = input;
         self
     }
     /// <p>The invalid parameter that resulted in the exception. </p>
-    pub fn parameter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter = Some(input.into());
+    pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The invalid parameter that resulted in the exception. </p>
-    pub fn set_parameter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter = input;
         self
     }
     /// <p>Additional information about the exception.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the exception.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -140,7 +142,7 @@ impl WafInvalidParameterExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

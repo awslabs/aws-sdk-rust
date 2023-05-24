@@ -2,7 +2,7 @@
 pub(crate) fn de_field_level_encryption_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::FieldLevelEncryptionList>,
+    ::std::option::Option<crate::types::FieldLevelEncryptionList>,
     crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError,
 > {
     (!body.is_empty()).then(||{
@@ -12,13 +12,13 @@ pub(crate) fn de_field_level_encryption_list_payload(
 
 pub fn de_field_level_encryption_list(
     inp: &[u8],
-) -> Result<crate::types::FieldLevelEncryptionList, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::FieldLevelEncryptionList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("FieldLevelEncryptionList")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected FieldLevelEncryptionList got {:?}",
             start_el
         )));

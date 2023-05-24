@@ -2,30 +2,30 @@
 
 /// <p>Result message wrapping a list of application version descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationVersionsOutput {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     #[doc(hidden)]
     pub application_versions:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationVersionDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationVersionsOutput {
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     pub fn application_versions(
         &self,
-    ) -> std::option::Option<&[crate::types::ApplicationVersionDescription]> {
+    ) -> ::std::option::Option<&[crate::types::ApplicationVersionDescription]> {
         self.application_versions.as_deref()
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeApplicationVersionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeApplicationVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl DescribeApplicationVersionsOutput {
 
 /// A builder for [`DescribeApplicationVersionsOutput`](crate::operation::describe_application_versions::DescribeApplicationVersionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeApplicationVersionsOutputBuilder {
     pub(crate) application_versions:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationVersionDescription>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationVersionsOutputBuilder {
@@ -58,24 +60,24 @@ impl DescribeApplicationVersionsOutputBuilder {
     ) -> Self {
         let mut v = self.application_versions.unwrap_or_default();
         v.push(input);
-        self.application_versions = Some(v);
+        self.application_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     pub fn set_application_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationVersionDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationVersionDescription>>,
     ) -> Self {
         self.application_versions = input;
         self
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

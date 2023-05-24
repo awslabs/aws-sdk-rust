@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMetricSet`](crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`metric_set_arn(impl Into<String>)`](crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder::metric_set_arn) / [`set_metric_set_arn(Option<String>)`](crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder::set_metric_set_arn): <p>The ARN of the dataset.</p>
+    ///   - [`metric_set_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder::metric_set_arn) / [`set_metric_set_arn(Option<String>)`](crate::operation::describe_metric_set::builders::DescribeMetricSetFluentBuilder::set_metric_set_arn): <p>The ARN of the dataset.</p>
     /// - On success, responds with [`DescribeMetricSetOutput`](crate::operation::describe_metric_set::DescribeMetricSetOutput) with field(s):
     ///   - [`metric_set_arn(Option<String>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::metric_set_arn): <p>The ARN of the dataset.</p>
     ///   - [`anomaly_detector_arn(Option<String>)`](crate::operation::describe_metric_set::DescribeMetricSetOutput::anomaly_detector_arn): <p>The ARN of the detector that contains the dataset.</p>

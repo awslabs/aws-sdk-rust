@@ -2,21 +2,21 @@
 
 /// <p>List imports request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsInput {
     /// <p>List imports request filters.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<crate::types::ListImportsRequestFilters>,
+    pub filters: ::std::option::Option<crate::types::ListImportsRequestFilters>,
     /// <p>List imports request max results.</p>
     #[doc(hidden)]
     pub max_results: i32,
     /// <p>List imports request next token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportsInput {
     /// <p>List imports request filters.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ListImportsRequestFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::ListImportsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>List imports request max results.</p>
@@ -24,7 +24,7 @@ impl ListImportsInput {
         self.max_results
     }
     /// <p>List imports request next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -37,54 +37,56 @@ impl ListImportsInput {
 
 /// A builder for [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListImportsInputBuilder {
-    pub(crate) filters: std::option::Option<crate::types::ListImportsRequestFilters>,
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) filters: ::std::option::Option<crate::types::ListImportsRequestFilters>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImportsInputBuilder {
     /// <p>List imports request filters.</p>
     pub fn filters(mut self, input: crate::types::ListImportsRequestFilters) -> Self {
-        self.filters = Some(input);
+        self.filters = ::std::option::Option::Some(input);
         self
     }
     /// <p>List imports request filters.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<crate::types::ListImportsRequestFilters>,
+        input: ::std::option::Option<crate::types::ListImportsRequestFilters>,
     ) -> Self {
         self.filters = input;
         self
     }
     /// <p>List imports request max results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>List imports request max results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>List imports request next token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>List imports request next token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_imports::ListImportsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_imports::ListImportsInput {
+        ::std::result::Result::Ok(crate::operation::list_imports::ListImportsInput {
             filters: self.filters,
             max_results: self.max_results.unwrap_or_default(),
             next_token: self.next_token,

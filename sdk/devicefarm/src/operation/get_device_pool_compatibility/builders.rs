@@ -6,29 +6,29 @@ pub use crate::operation::get_device_pool_compatibility::_get_device_pool_compat
 /// Fluent builder constructing a request to `GetDevicePoolCompatibility`.
 ///
 /// <p>Gets information about compatibility with a device pool.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_device_pool_compatibility::builders::GetDevicePoolCompatibilityInputBuilder,
 }
 impl GetDevicePoolCompatibilityFluentBuilder {
     /// Creates a new `GetDevicePoolCompatibility`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibility,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetDevicePoolCompatibilityFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,37 @@ impl GetDevicePoolCompatibilityFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The device pool's ARN.</p>
-    pub fn device_pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_pool_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.device_pool_arn(input.into());
         self
     }
     /// <p>The device pool's ARN.</p>
-    pub fn set_device_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_pool_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_device_pool_arn(input);
         self
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
-    pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
         self
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
-    pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
     }
@@ -148,7 +157,7 @@ impl GetDevicePoolCompatibilityFluentBuilder {
     /// <li> <p>XCTEST.</p> </li>
     /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
-    pub fn set_test_type(mut self, input: std::option::Option<crate::types::TestType>) -> Self {
+    pub fn set_test_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
         self.inner = self.inner.set_test_type(input);
         self
     }
@@ -158,7 +167,7 @@ impl GetDevicePoolCompatibilityFluentBuilder {
         self
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
-    pub fn set_test(mut self, input: std::option::Option<crate::types::ScheduleRunTest>) -> Self {
+    pub fn set_test(mut self, input: ::std::option::Option<crate::types::ScheduleRunTest>) -> Self {
         self.inner = self.inner.set_test(input);
         self
     }
@@ -170,7 +179,7 @@ impl GetDevicePoolCompatibilityFluentBuilder {
     /// <p>An object that contains information about the settings for a run.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::ScheduleRunConfiguration>,
+        input: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self

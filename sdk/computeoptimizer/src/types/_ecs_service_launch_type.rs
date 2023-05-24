@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EcsServiceLaunchType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum EcsServiceLaunchType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EcsServiceLaunchType {
+impl ::std::convert::From<&str> for EcsServiceLaunchType {
     fn from(s: &str) -> Self {
         match s {
             "EC2" => EcsServiceLaunchType::Ec2,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for EcsServiceLaunchType {
         }
     }
 }
-impl std::str::FromStr for EcsServiceLaunchType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EcsServiceLaunchType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EcsServiceLaunchType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EcsServiceLaunchType::from(s))
     }
 }
 impl EcsServiceLaunchType {
@@ -86,7 +86,7 @@ impl EcsServiceLaunchType {
         &["EC2", "Fargate"]
     }
 }
-impl AsRef<str> for EcsServiceLaunchType {
+impl ::std::convert::AsRef<str> for EcsServiceLaunchType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

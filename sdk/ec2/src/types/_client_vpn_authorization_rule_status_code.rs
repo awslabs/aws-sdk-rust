@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ClientVpnAuthorizationRuleStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ClientVpnAuthorizationRuleStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ClientVpnAuthorizationRuleStatusCode {
+impl ::std::convert::From<&str> for ClientVpnAuthorizationRuleStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "active" => ClientVpnAuthorizationRuleStatusCode::Active,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ClientVpnAuthorizationRuleStatusCode {
         }
     }
 }
-impl std::str::FromStr for ClientVpnAuthorizationRuleStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ClientVpnAuthorizationRuleStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClientVpnAuthorizationRuleStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ClientVpnAuthorizationRuleStatusCode::from(s))
     }
 }
 impl ClientVpnAuthorizationRuleStatusCode {
@@ -96,7 +96,7 @@ impl ClientVpnAuthorizationRuleStatusCode {
         &["active", "authorizing", "failed", "revoking"]
     }
 }
-impl AsRef<str> for ClientVpnAuthorizationRuleStatusCode {
+impl ::std::convert::AsRef<str> for ClientVpnAuthorizationRuleStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,26 +2,26 @@
 
 /// Returned for a successful ListRecordsRequest.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecordsOutput {
     /// A list of all records.
     #[doc(hidden)]
-    pub records: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     /// A pagination token for obtaining the next page of results.
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// Total number of records.
     #[doc(hidden)]
     pub count: i32,
     /// Server sync count for this dataset.
     #[doc(hidden)]
-    pub dataset_sync_count: std::option::Option<i64>,
+    pub dataset_sync_count: ::std::option::Option<i64>,
     /// The user/device that made the last change to this record.
     #[doc(hidden)]
-    pub last_modified_by: std::option::Option<std::string::String>,
+    pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// Names of merged datasets.
     #[doc(hidden)]
-    pub merged_dataset_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub merged_dataset_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Indicates whether the dataset exists.
     #[doc(hidden)]
     pub dataset_exists: bool,
@@ -30,16 +30,16 @@ pub struct ListRecordsOutput {
     pub dataset_deleted_after_requested_sync_count: bool,
     /// A token containing a session ID, identity ID, and expiration.
     #[doc(hidden)]
-    pub sync_session_token: std::option::Option<std::string::String>,
+    pub sync_session_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRecordsOutput {
     /// A list of all records.
-    pub fn records(&self) -> std::option::Option<&[crate::types::Record]> {
+    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
         self.records.as_deref()
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// Total number of records.
@@ -47,15 +47,15 @@ impl ListRecordsOutput {
         self.count
     }
     /// Server sync count for this dataset.
-    pub fn dataset_sync_count(&self) -> std::option::Option<i64> {
+    pub fn dataset_sync_count(&self) -> ::std::option::Option<i64> {
         self.dataset_sync_count
     }
     /// The user/device that made the last change to this record.
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
     /// Names of merged datasets.
-    pub fn merged_dataset_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn merged_dataset_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.merged_dataset_names.as_deref()
     }
     /// Indicates whether the dataset exists.
@@ -67,11 +67,11 @@ impl ListRecordsOutput {
         self.dataset_deleted_after_requested_sync_count
     }
     /// A token containing a session ID, identity ID, and expiration.
-    pub fn sync_session_token(&self) -> std::option::Option<&str> {
+    pub fn sync_session_token(&self) -> ::std::option::Option<&str> {
         self.sync_session_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListRecordsOutput {
+impl ::aws_http::request_id::RequestId for ListRecordsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -85,17 +85,19 @@ impl ListRecordsOutput {
 
 /// A builder for [`ListRecordsOutput`](crate::operation::list_records::ListRecordsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListRecordsOutputBuilder {
-    pub(crate) records: std::option::Option<std::vec::Vec<crate::types::Record>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) dataset_sync_count: std::option::Option<i64>,
-    pub(crate) last_modified_by: std::option::Option<std::string::String>,
-    pub(crate) merged_dataset_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) dataset_exists: std::option::Option<bool>,
-    pub(crate) dataset_deleted_after_requested_sync_count: std::option::Option<bool>,
-    pub(crate) sync_session_token: std::option::Option<std::string::String>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) dataset_sync_count: ::std::option::Option<i64>,
+    pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
+    pub(crate) merged_dataset_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dataset_exists: ::std::option::Option<bool>,
+    pub(crate) dataset_deleted_after_requested_sync_count: ::std::option::Option<bool>,
+    pub(crate) sync_session_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRecordsOutputBuilder {
@@ -107,54 +109,60 @@ impl ListRecordsOutputBuilder {
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
         v.push(input);
-        self.records = Some(v);
+        self.records = ::std::option::Option::Some(v);
         self
     }
     /// A list of all records.
     pub fn set_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Record>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     ) -> Self {
         self.records = input;
         self
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Total number of records.
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// Total number of records.
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// Server sync count for this dataset.
     pub fn dataset_sync_count(mut self, input: i64) -> Self {
-        self.dataset_sync_count = Some(input);
+        self.dataset_sync_count = ::std::option::Option::Some(input);
         self
     }
     /// Server sync count for this dataset.
-    pub fn set_dataset_sync_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_dataset_sync_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.dataset_sync_count = input;
         self
     }
     /// The user/device that made the last change to this record.
-    pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_modified_by = Some(input.into());
+    pub fn last_modified_by(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// The user/device that made the last change to this record.
-    pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_modified_by(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -163,52 +171,58 @@ impl ListRecordsOutputBuilder {
     /// To override the contents of this collection use [`set_merged_dataset_names`](Self::set_merged_dataset_names).
     ///
     /// Names of merged datasets.
-    pub fn merged_dataset_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn merged_dataset_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.merged_dataset_names.unwrap_or_default();
         v.push(input.into());
-        self.merged_dataset_names = Some(v);
+        self.merged_dataset_names = ::std::option::Option::Some(v);
         self
     }
     /// Names of merged datasets.
     pub fn set_merged_dataset_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.merged_dataset_names = input;
         self
     }
     /// Indicates whether the dataset exists.
     pub fn dataset_exists(mut self, input: bool) -> Self {
-        self.dataset_exists = Some(input);
+        self.dataset_exists = ::std::option::Option::Some(input);
         self
     }
     /// Indicates whether the dataset exists.
-    pub fn set_dataset_exists(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dataset_exists(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dataset_exists = input;
         self
     }
     /// A boolean value specifying whether to delete the dataset locally.
     pub fn dataset_deleted_after_requested_sync_count(mut self, input: bool) -> Self {
-        self.dataset_deleted_after_requested_sync_count = Some(input);
+        self.dataset_deleted_after_requested_sync_count = ::std::option::Option::Some(input);
         self
     }
     /// A boolean value specifying whether to delete the dataset locally.
     pub fn set_dataset_deleted_after_requested_sync_count(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.dataset_deleted_after_requested_sync_count = input;
         self
     }
     /// A token containing a session ID, identity ID, and expiration.
-    pub fn sync_session_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sync_session_token = Some(input.into());
+    pub fn sync_session_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sync_session_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A token containing a session ID, identity ID, and expiration.
     pub fn set_sync_session_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sync_session_token = input;
         self

@@ -2,92 +2,92 @@
 
 /// <p>Launch configuration for a server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerLaunchConfiguration {
     /// <p>The ID of the server with which the launch configuration is associated.</p>
     #[doc(hidden)]
-    pub server: std::option::Option<crate::types::Server>,
+    pub server: ::std::option::Option<crate::types::Server>,
     /// <p>The logical ID of the server in the CloudFormation template.</p>
     #[doc(hidden)]
-    pub logical_id: std::option::Option<std::string::String>,
+    pub logical_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC into which the server should be launched.</p>
     #[doc(hidden)]
-    pub vpc: std::option::Option<std::string::String>,
+    pub vpc: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet the server should be launched into.</p>
     #[doc(hidden)]
-    pub subnet: std::option::Option<std::string::String>,
+    pub subnet: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group that applies to the launched server.</p>
     #[doc(hidden)]
-    pub security_group: std::option::Option<std::string::String>,
+    pub security_group: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
     #[doc(hidden)]
-    pub ec2_key_name: std::option::Option<std::string::String>,
+    pub ec2_key_name: ::std::option::Option<::std::string::String>,
     /// <p>Location of the user-data script to be executed when launching the server.</p>
     #[doc(hidden)]
-    pub user_data: std::option::Option<crate::types::UserData>,
+    pub user_data: ::std::option::Option<crate::types::UserData>,
     /// <p>The instance type to use when launching the server.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
     #[doc(hidden)]
-    pub associate_public_ip_address: std::option::Option<bool>,
+    pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>The name of the IAM instance profile.</p>
     #[doc(hidden)]
-    pub iam_instance_profile_name: std::option::Option<std::string::String>,
+    pub iam_instance_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>Location of an Amazon S3 object.</p>
     #[doc(hidden)]
-    pub configure_script: std::option::Option<crate::types::S3Location>,
+    pub configure_script: ::std::option::Option<crate::types::S3Location>,
     /// <p>The type of configuration script.</p>
     #[doc(hidden)]
-    pub configure_script_type: std::option::Option<crate::types::ScriptType>,
+    pub configure_script_type: ::std::option::Option<crate::types::ScriptType>,
 }
 impl ServerLaunchConfiguration {
     /// <p>The ID of the server with which the launch configuration is associated.</p>
-    pub fn server(&self) -> std::option::Option<&crate::types::Server> {
+    pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
         self.server.as_ref()
     }
     /// <p>The logical ID of the server in the CloudFormation template.</p>
-    pub fn logical_id(&self) -> std::option::Option<&str> {
+    pub fn logical_id(&self) -> ::std::option::Option<&str> {
         self.logical_id.as_deref()
     }
     /// <p>The ID of the VPC into which the server should be launched.</p>
-    pub fn vpc(&self) -> std::option::Option<&str> {
+    pub fn vpc(&self) -> ::std::option::Option<&str> {
         self.vpc.as_deref()
     }
     /// <p>The ID of the subnet the server should be launched into.</p>
-    pub fn subnet(&self) -> std::option::Option<&str> {
+    pub fn subnet(&self) -> ::std::option::Option<&str> {
         self.subnet.as_deref()
     }
     /// <p>The ID of the security group that applies to the launched server.</p>
-    pub fn security_group(&self) -> std::option::Option<&str> {
+    pub fn security_group(&self) -> ::std::option::Option<&str> {
         self.security_group.as_deref()
     }
     /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
-    pub fn ec2_key_name(&self) -> std::option::Option<&str> {
+    pub fn ec2_key_name(&self) -> ::std::option::Option<&str> {
         self.ec2_key_name.as_deref()
     }
     /// <p>Location of the user-data script to be executed when launching the server.</p>
-    pub fn user_data(&self) -> std::option::Option<&crate::types::UserData> {
+    pub fn user_data(&self) -> ::std::option::Option<&crate::types::UserData> {
         self.user_data.as_ref()
     }
     /// <p>The instance type to use when launching the server.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
-    pub fn associate_public_ip_address(&self) -> std::option::Option<bool> {
+    pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_public_ip_address
     }
     /// <p>The name of the IAM instance profile.</p>
-    pub fn iam_instance_profile_name(&self) -> std::option::Option<&str> {
+    pub fn iam_instance_profile_name(&self) -> ::std::option::Option<&str> {
         self.iam_instance_profile_name.as_deref()
     }
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn configure_script(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn configure_script(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.configure_script.as_ref()
     }
     /// <p>The type of configuration script.</p>
-    pub fn configure_script_type(&self) -> std::option::Option<&crate::types::ScriptType> {
+    pub fn configure_script_type(&self) -> ::std::option::Option<&crate::types::ScriptType> {
         self.configure_script_type.as_ref()
     }
 }
@@ -100,147 +100,164 @@ impl ServerLaunchConfiguration {
 
 /// A builder for [`ServerLaunchConfiguration`](crate::types::ServerLaunchConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerLaunchConfigurationBuilder {
-    pub(crate) server: std::option::Option<crate::types::Server>,
-    pub(crate) logical_id: std::option::Option<std::string::String>,
-    pub(crate) vpc: std::option::Option<std::string::String>,
-    pub(crate) subnet: std::option::Option<std::string::String>,
-    pub(crate) security_group: std::option::Option<std::string::String>,
-    pub(crate) ec2_key_name: std::option::Option<std::string::String>,
-    pub(crate) user_data: std::option::Option<crate::types::UserData>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) associate_public_ip_address: std::option::Option<bool>,
-    pub(crate) iam_instance_profile_name: std::option::Option<std::string::String>,
-    pub(crate) configure_script: std::option::Option<crate::types::S3Location>,
-    pub(crate) configure_script_type: std::option::Option<crate::types::ScriptType>,
+    pub(crate) server: ::std::option::Option<crate::types::Server>,
+    pub(crate) logical_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_key_name: ::std::option::Option<::std::string::String>,
+    pub(crate) user_data: ::std::option::Option<crate::types::UserData>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
+    pub(crate) iam_instance_profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) configure_script: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) configure_script_type: ::std::option::Option<crate::types::ScriptType>,
 }
 impl ServerLaunchConfigurationBuilder {
     /// <p>The ID of the server with which the launch configuration is associated.</p>
     pub fn server(mut self, input: crate::types::Server) -> Self {
-        self.server = Some(input);
+        self.server = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the server with which the launch configuration is associated.</p>
-    pub fn set_server(mut self, input: std::option::Option<crate::types::Server>) -> Self {
+    pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
         self.server = input;
         self
     }
     /// <p>The logical ID of the server in the CloudFormation template.</p>
-    pub fn logical_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.logical_id = Some(input.into());
+    pub fn logical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.logical_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical ID of the server in the CloudFormation template.</p>
-    pub fn set_logical_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_logical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_id = input;
         self
     }
     /// <p>The ID of the VPC into which the server should be launched.</p>
-    pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc = Some(input.into());
+    pub fn vpc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC into which the server should be launched.</p>
-    pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc = input;
         self
     }
     /// <p>The ID of the subnet the server should be launched into.</p>
-    pub fn subnet(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet = Some(input.into());
+    pub fn subnet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet the server should be launched into.</p>
-    pub fn set_subnet(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet = input;
         self
     }
     /// <p>The ID of the security group that applies to the launched server.</p>
-    pub fn security_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_group = Some(input.into());
+    pub fn security_group(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group that applies to the launched server.</p>
-    pub fn set_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_security_group(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.security_group = input;
         self
     }
     /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
-    pub fn ec2_key_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_key_name = Some(input.into());
+    pub fn ec2_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ec2_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon EC2 SSH key to be used for connecting to the launched server.</p>
-    pub fn set_ec2_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ec2_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_key_name = input;
         self
     }
     /// <p>Location of the user-data script to be executed when launching the server.</p>
     pub fn user_data(mut self, input: crate::types::UserData) -> Self {
-        self.user_data = Some(input);
+        self.user_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Location of the user-data script to be executed when launching the server.</p>
-    pub fn set_user_data(mut self, input: std::option::Option<crate::types::UserData>) -> Self {
+    pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::UserData>) -> Self {
         self.user_data = input;
         self
     }
     /// <p>The instance type to use when launching the server.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type to use when launching the server.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
     pub fn associate_public_ip_address(mut self, input: bool) -> Self {
-        self.associate_public_ip_address = Some(input);
+        self.associate_public_ip_address = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether a publicly accessible IP address is created when launching the server.</p>
-    pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
         self.associate_public_ip_address = input;
         self
     }
     /// <p>The name of the IAM instance profile.</p>
-    pub fn iam_instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iam_instance_profile_name = Some(input.into());
+    pub fn iam_instance_profile_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.iam_instance_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM instance profile.</p>
     pub fn set_iam_instance_profile_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.iam_instance_profile_name = input;
         self
     }
     /// <p>Location of an Amazon S3 object.</p>
     pub fn configure_script(mut self, input: crate::types::S3Location) -> Self {
-        self.configure_script = Some(input);
+        self.configure_script = ::std::option::Option::Some(input);
         self
     }
     /// <p>Location of an Amazon S3 object.</p>
     pub fn set_configure_script(
         mut self,
-        input: std::option::Option<crate::types::S3Location>,
+        input: ::std::option::Option<crate::types::S3Location>,
     ) -> Self {
         self.configure_script = input;
         self
     }
     /// <p>The type of configuration script.</p>
     pub fn configure_script_type(mut self, input: crate::types::ScriptType) -> Self {
-        self.configure_script_type = Some(input);
+        self.configure_script_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of configuration script.</p>
     pub fn set_configure_script_type(
         mut self,
-        input: std::option::Option<crate::types::ScriptType>,
+        input: ::std::option::Option<crate::types::ScriptType>,
     ) -> Self {
         self.configure_script_type = input;
         self

@@ -4,11 +4,11 @@
 /// <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.</p>
 /// <p>You can specify the <code>ulimit</code> settings for a container in a task definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ulimit {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::UlimitName>,
+    pub name: ::std::option::Option<crate::types::UlimitName>,
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     #[doc(hidden)]
     pub soft_limit: i32,
@@ -18,7 +18,7 @@ pub struct Ulimit {
 }
 impl Ulimit {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::UlimitName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::UlimitName> {
         self.name.as_ref()
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
@@ -39,40 +39,42 @@ impl Ulimit {
 
 /// A builder for [`Ulimit`](crate::types::Ulimit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UlimitBuilder {
-    pub(crate) name: std::option::Option<crate::types::UlimitName>,
-    pub(crate) soft_limit: std::option::Option<i32>,
-    pub(crate) hard_limit: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<crate::types::UlimitName>,
+    pub(crate) soft_limit: ::std::option::Option<i32>,
+    pub(crate) hard_limit: ::std::option::Option<i32>,
 }
 impl UlimitBuilder {
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
     pub fn name(mut self, input: crate::types::UlimitName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>type</code> of the <code>ulimit</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::UlimitName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::UlimitName>) -> Self {
         self.name = input;
         self
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
     pub fn soft_limit(mut self, input: i32) -> Self {
-        self.soft_limit = Some(input);
+        self.soft_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The soft limit for the <code>ulimit</code> type.</p>
-    pub fn set_soft_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_soft_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.soft_limit = input;
         self
     }
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
     pub fn hard_limit(mut self, input: i32) -> Self {
-        self.hard_limit = Some(input);
+        self.hard_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hard limit for the <code>ulimit</code> type.</p>
-    pub fn set_hard_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_hard_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hard_limit = input;
         self
     }

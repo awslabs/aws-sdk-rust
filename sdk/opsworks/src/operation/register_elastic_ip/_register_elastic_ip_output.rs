@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>RegisterElasticIp</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterElasticIpOutput {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
-    pub elastic_ip: std::option::Option<std::string::String>,
+    pub elastic_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterElasticIpOutput {
     /// <p>The Elastic IP address.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> ::std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RegisterElasticIpOutput {
+impl ::aws_http::request_id::RequestId for RegisterElasticIpOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl RegisterElasticIpOutput {
 
 /// A builder for [`RegisterElasticIpOutput`](crate::operation::register_elastic_ip::RegisterElasticIpOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterElasticIpOutputBuilder {
-    pub(crate) elastic_ip: std::option::Option<std::string::String>,
+    pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterElasticIpOutputBuilder {
     /// <p>The Elastic IP address.</p>
-    pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.elastic_ip = Some(input.into());
+    pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.elastic_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elastic IP address.</p>
-    pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_ip = input;
         self
     }

@@ -6,56 +6,59 @@ pub use crate::operation::get_tags::_get_tags_input::GetTagsInputBuilder;
 /// Fluent builder constructing a request to `GetTags`.
 ///
 /// <p>Queries for available tag keys and tag values for a specified period. You can search the tag values for an arbitrary string. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTagsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_tags::builders::GetTagsInputBuilder,
 }
 impl GetTagsFluentBuilder {
     /// Creates a new `GetTags`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_tags::GetTags,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_tags::GetTagsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,25 @@ impl GetTagsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_tags::GetTagsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tags::GetTagsError>,
     > {
         self.send_middleware().await
     }
     /// <p>The value that you want to search for.</p>
-    pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn search_string(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.search_string(input.into());
         self
     }
     /// <p>The value that you want to search for.</p>
-    pub fn set_search_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_search_string(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_search_string(input);
         self
     }
@@ -92,18 +101,18 @@ impl GetTagsFluentBuilder {
     /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub fn set_time_period(
         mut self,
-        input: std::option::Option<crate::types::DateInterval>,
+        input: ::std::option::Option<crate::types::DateInterval>,
     ) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
     }
     /// <p>The key of the tag that you want to return values for.</p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_key(input.into());
         self
     }
     /// <p>The key of the tag that you want to return values for.</p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tag_key(input);
         self
     }
@@ -185,7 +194,7 @@ impl GetTagsFluentBuilder {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::Expression>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -225,7 +234,7 @@ impl GetTagsFluentBuilder {
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SortDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SortDefinition>>,
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
@@ -238,17 +247,23 @@ impl GetTagsFluentBuilder {
     }
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that are returned for this request. If MaxResults isn't specified with SortBy, the request returns 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_page_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_page_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

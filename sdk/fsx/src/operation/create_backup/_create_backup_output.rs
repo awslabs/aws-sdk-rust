@@ -2,20 +2,20 @@
 
 /// <p>The response object for the <code>CreateBackup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackupOutput {
     /// <p>A description of the backup.</p>
     #[doc(hidden)]
-    pub backup: std::option::Option<crate::types::Backup>,
+    pub backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,
 }
 impl CreateBackupOutput {
     /// <p>A description of the backup.</p>
-    pub fn backup(&self) -> std::option::Option<&crate::types::Backup> {
+    pub fn backup(&self) -> ::std::option::Option<&crate::types::Backup> {
         self.backup.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateBackupOutput {
+impl ::aws_http::request_id::RequestId for CreateBackupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateBackupOutput {
 
 /// A builder for [`CreateBackupOutput`](crate::operation::create_backup::CreateBackupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateBackupOutputBuilder {
-    pub(crate) backup: std::option::Option<crate::types::Backup>,
+    pub(crate) backup: ::std::option::Option<crate::types::Backup>,
     _request_id: Option<String>,
 }
 impl CreateBackupOutputBuilder {
     /// <p>A description of the backup.</p>
     pub fn backup(mut self, input: crate::types::Backup) -> Self {
-        self.backup = Some(input);
+        self.backup = ::std::option::Option::Some(input);
         self
     }
     /// <p>A description of the backup.</p>
-    pub fn set_backup(mut self, input: std::option::Option<crate::types::Backup>) -> Self {
+    pub fn set_backup(mut self, input: ::std::option::Option<crate::types::Backup>) -> Self {
         self.backup = input;
         self
     }

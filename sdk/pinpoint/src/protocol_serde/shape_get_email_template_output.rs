@@ -2,7 +2,7 @@
 pub(crate) fn de_email_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::EmailTemplateResponse>,
+    ::std::option::Option<crate::types::EmailTemplateResponse>,
     crate::operation::get_email_template::GetEmailTemplateError,
 > {
     (!body.is_empty()).then(||{

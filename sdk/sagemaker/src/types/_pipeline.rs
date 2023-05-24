@@ -2,101 +2,101 @@
 
 /// <p>A SageMaker Model Building Pipeline instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Pipeline {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_arn: std::option::Option<std::string::String>,
+    pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_name: std::option::Option<std::string::String>,
+    pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_display_name: std::option::Option<std::string::String>,
+    pub pipeline_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_description: std::option::Option<std::string::String>,
+    pub pipeline_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that created the pipeline.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_status: std::option::Option<crate::types::PipelineStatus>,
+    pub pipeline_status: ::std::option::Option<crate::types::PipelineStatus>,
     /// <p>The creation time of the pipeline.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the pipeline was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the pipeline was last run.</p>
     #[doc(hidden)]
-    pub last_run_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<crate::types::UserContext>,
+    pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
-    pub last_modified_by: std::option::Option<crate::types::UserContext>,
+    pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The parallelism configuration applied to the pipeline.</p>
     #[doc(hidden)]
-    pub parallelism_configuration: std::option::Option<crate::types::ParallelismConfiguration>,
+    pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
     /// <p>A list of tags that apply to the pipeline.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Pipeline {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn pipeline_display_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_display_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_display_name.as_deref()
     }
     /// <p>The description of the pipeline.</p>
-    pub fn pipeline_description(&self) -> std::option::Option<&str> {
+    pub fn pipeline_description(&self) -> ::std::option::Option<&str> {
         self.pipeline_description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role that created the pipeline.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The status of the pipeline.</p>
-    pub fn pipeline_status(&self) -> std::option::Option<&crate::types::PipelineStatus> {
+    pub fn pipeline_status(&self) -> ::std::option::Option<&crate::types::PipelineStatus> {
         self.pipeline_status.as_ref()
     }
     /// <p>The creation time of the pipeline.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time that the pipeline was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The time when the pipeline was last run.</p>
-    pub fn last_run_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_run_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_run_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>The parallelism configuration applied to the pipeline.</p>
     pub fn parallelism_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ParallelismConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
     /// <p>A list of tags that apply to the pipeline.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -109,151 +109,168 @@ impl Pipeline {
 
 /// A builder for [`Pipeline`](crate::types::Pipeline).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineBuilder {
-    pub(crate) pipeline_arn: std::option::Option<std::string::String>,
-    pub(crate) pipeline_name: std::option::Option<std::string::String>,
-    pub(crate) pipeline_display_name: std::option::Option<std::string::String>,
-    pub(crate) pipeline_description: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) pipeline_status: std::option::Option<crate::types::PipelineStatus>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_run_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) last_modified_by: std::option::Option<crate::types::UserContext>,
+    pub(crate) pipeline_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_description: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_status: ::std::option::Option<crate::types::PipelineStatus>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_run_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) parallelism_configuration:
-        std::option::Option<crate::types::ParallelismConfiguration>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::ParallelismConfiguration>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PipelineBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_arn = Some(input.into());
+    pub fn pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn set_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_arn = input;
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_name = Some(input.into());
+    pub fn pipeline_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pipeline_name = input;
         self
     }
     /// <p>The display name of the pipeline.</p>
-    pub fn pipeline_display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_display_name = Some(input.into());
+    pub fn pipeline_display_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the pipeline.</p>
     pub fn set_pipeline_display_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_display_name = input;
         self
     }
     /// <p>The description of the pipeline.</p>
-    pub fn pipeline_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_description = Some(input.into());
+    pub fn pipeline_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the pipeline.</p>
     pub fn set_pipeline_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_description = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the role that created the pipeline.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the role that created the pipeline.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The status of the pipeline.</p>
     pub fn pipeline_status(mut self, input: crate::types::PipelineStatus) -> Self {
-        self.pipeline_status = Some(input);
+        self.pipeline_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the pipeline.</p>
     pub fn set_pipeline_status(
         mut self,
-        input: std::option::Option<crate::types::PipelineStatus>,
+        input: ::std::option::Option<crate::types::PipelineStatus>,
     ) -> Self {
         self.pipeline_status = input;
         self
     }
     /// <p>The creation time of the pipeline.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation time of the pipeline.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The time that the pipeline was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the pipeline was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>The time when the pipeline was last run.</p>
-    pub fn last_run_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_run_time = Some(input);
+    pub fn last_run_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_run_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the pipeline was last run.</p>
     pub fn set_last_run_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_run_time = input;
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
-        self.created_by = Some(input);
+        self.created_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
+    pub fn set_created_by(
+        mut self,
+        input: ::std::option::Option<crate::types::UserContext>,
+    ) -> Self {
         self.created_by = input;
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
-        self.last_modified_by = Some(input);
+        self.last_modified_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_last_modified_by(
         mut self,
-        input: std::option::Option<crate::types::UserContext>,
+        input: ::std::option::Option<crate::types::UserContext>,
     ) -> Self {
         self.last_modified_by = input;
         self
@@ -263,13 +280,13 @@ impl PipelineBuilder {
         mut self,
         input: crate::types::ParallelismConfiguration,
     ) -> Self {
-        self.parallelism_configuration = Some(input);
+        self.parallelism_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parallelism configuration applied to the pipeline.</p>
     pub fn set_parallelism_configuration(
         mut self,
-        input: std::option::Option<crate::types::ParallelismConfiguration>,
+        input: ::std::option::Option<crate::types::ParallelismConfiguration>,
     ) -> Self {
         self.parallelism_configuration = input;
         self
@@ -282,13 +299,13 @@ impl PipelineBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags that apply to the pipeline.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

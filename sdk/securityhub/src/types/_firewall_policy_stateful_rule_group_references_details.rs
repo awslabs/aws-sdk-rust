@@ -2,15 +2,15 @@
 
 /// <p>A stateful rule group that is used by the firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallPolicyStatefulRuleGroupReferencesDetails {
     /// <p>The ARN of the stateful rule group.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatefulRuleGroupReferencesDetails {
     /// <p>The ARN of the stateful rule group.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -24,18 +24,20 @@ impl FirewallPolicyStatefulRuleGroupReferencesDetails {
 
 /// A builder for [`FirewallPolicyStatefulRuleGroupReferencesDetails`](crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FirewallPolicyStatefulRuleGroupReferencesDetailsBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl FirewallPolicyStatefulRuleGroupReferencesDetailsBuilder {
     /// <p>The ARN of the stateful rule group.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the stateful rule group.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }

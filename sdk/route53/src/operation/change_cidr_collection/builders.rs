@@ -15,29 +15,29 @@ pub use crate::operation::change_cidr_collection::_change_cidr_collection_input:
 /// <li> <p> <code>PUT</code>: Create a CIDR block within the specified collection.</p> </li>
 /// <li> <p> <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeCidrCollectionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::change_cidr_collection::builders::ChangeCidrCollectionInputBuilder,
 }
 impl ChangeCidrCollectionFluentBuilder {
     /// Creates a new `ChangeCidrCollection`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::change_cidr_collection::ChangeCidrCollection,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_cidr_collection::ChangeCidrCollectionError,
         >,
     > {
@@ -45,30 +45,33 @@ impl ChangeCidrCollectionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::change_cidr_collection::ChangeCidrCollectionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_cidr_collection::ChangeCidrCollectionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -81,21 +84,21 @@ impl ChangeCidrCollectionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::change_cidr_collection::ChangeCidrCollectionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_cidr_collection::ChangeCidrCollectionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The UUID of the CIDR collection to update.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The UUID of the CIDR collection to update.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
@@ -115,7 +118,7 @@ impl ChangeCidrCollectionFluentBuilder {
     /// <li> <p>If the value in the request matches the value of <code>CollectionVersion</code> in the collection, Route&nbsp;53 updates the collection.</p> </li>
     /// <li> <p>If the value of <code>CollectionVersion</code> in the collection is greater than the value in the request, the collection was changed after you got the version number. Route&nbsp;53 does not update the collection, and it returns a <code>CidrCollectionVersionMismatch</code> error. </p> </li>
     /// </ul>
-    pub fn set_collection_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_collection_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_collection_version(input);
         self
     }
@@ -131,7 +134,7 @@ impl ChangeCidrCollectionFluentBuilder {
     /// <p> Information about changes to a CIDR collection.</p>
     pub fn set_changes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CidrCollectionChange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CidrCollectionChange>>,
     ) -> Self {
         self.inner = self.inner.set_changes(input);
         self

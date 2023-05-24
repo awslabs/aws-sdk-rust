@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreateInstanceProfile</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
     #[doc(hidden)]
-    pub instance_profile: std::option::Option<crate::types::InstanceProfile>,
+    pub instance_profile: ::std::option::Option<crate::types::InstanceProfile>,
     _request_id: Option<String>,
 }
 impl CreateInstanceProfileOutput {
     /// <p>A structure containing details about the new instance profile.</p>
-    pub fn instance_profile(&self) -> std::option::Option<&crate::types::InstanceProfile> {
+    pub fn instance_profile(&self) -> ::std::option::Option<&crate::types::InstanceProfile> {
         self.instance_profile.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateInstanceProfileOutput {
+impl ::aws_http::request_id::RequestId for CreateInstanceProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl CreateInstanceProfileOutput {
 
 /// A builder for [`CreateInstanceProfileOutput`](crate::operation::create_instance_profile::CreateInstanceProfileOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateInstanceProfileOutputBuilder {
-    pub(crate) instance_profile: std::option::Option<crate::types::InstanceProfile>,
+    pub(crate) instance_profile: ::std::option::Option<crate::types::InstanceProfile>,
     _request_id: Option<String>,
 }
 impl CreateInstanceProfileOutputBuilder {
     /// <p>A structure containing details about the new instance profile.</p>
     pub fn instance_profile(mut self, input: crate::types::InstanceProfile) -> Self {
-        self.instance_profile = Some(input);
+        self.instance_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the new instance profile.</p>
     pub fn set_instance_profile(
         mut self,
-        input: std::option::Option<crate::types::InstanceProfile>,
+        input: ::std::option::Option<crate::types::InstanceProfile>,
     ) -> Self {
         self.instance_profile = input;
         self

@@ -2,20 +2,20 @@
 
 /// <p>The ListTagsForDomain response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForDomainOutput {
     /// <p>A list of the tags that are associated with the specified domain.</p>
     #[doc(hidden)]
-    pub tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl ListTagsForDomainOutput {
     /// <p>A list of the tags that are associated with the specified domain.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tag_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTagsForDomainOutput {
+impl ::aws_http::request_id::RequestId for ListTagsForDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl ListTagsForDomainOutput {
 
 /// A builder for [`ListTagsForDomainOutput`](crate::operation::list_tags_for_domain::ListTagsForDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTagsForDomainOutputBuilder {
-    pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl ListTagsForDomainOutputBuilder {
@@ -44,13 +46,13 @@ impl ListTagsForDomainOutputBuilder {
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
-        self.tag_list = Some(v);
+        self.tag_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the tags that are associated with the specified domain.</p>
     pub fn set_tag_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tag_list = input;
         self

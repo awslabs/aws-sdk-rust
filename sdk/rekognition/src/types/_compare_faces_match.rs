@@ -2,22 +2,22 @@
 
 /// <p>Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompareFacesMatch {
     /// <p>Level of confidence that the faces match.</p>
     #[doc(hidden)]
-    pub similarity: std::option::Option<f32>,
+    pub similarity: ::std::option::Option<f32>,
     /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
     #[doc(hidden)]
-    pub face: std::option::Option<crate::types::ComparedFace>,
+    pub face: ::std::option::Option<crate::types::ComparedFace>,
 }
 impl CompareFacesMatch {
     /// <p>Level of confidence that the faces match.</p>
-    pub fn similarity(&self) -> std::option::Option<f32> {
+    pub fn similarity(&self) -> ::std::option::Option<f32> {
         self.similarity
     }
     /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
-    pub fn face(&self) -> std::option::Option<&crate::types::ComparedFace> {
+    pub fn face(&self) -> ::std::option::Option<&crate::types::ComparedFace> {
         self.face.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl CompareFacesMatch {
 
 /// A builder for [`CompareFacesMatch`](crate::types::CompareFacesMatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CompareFacesMatchBuilder {
-    pub(crate) similarity: std::option::Option<f32>,
-    pub(crate) face: std::option::Option<crate::types::ComparedFace>,
+    pub(crate) similarity: ::std::option::Option<f32>,
+    pub(crate) face: ::std::option::Option<crate::types::ComparedFace>,
 }
 impl CompareFacesMatchBuilder {
     /// <p>Level of confidence that the faces match.</p>
     pub fn similarity(mut self, input: f32) -> Self {
-        self.similarity = Some(input);
+        self.similarity = ::std::option::Option::Some(input);
         self
     }
     /// <p>Level of confidence that the faces match.</p>
-    pub fn set_similarity(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_similarity(mut self, input: ::std::option::Option<f32>) -> Self {
         self.similarity = input;
         self
     }
     /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
     pub fn face(mut self, input: crate::types::ComparedFace) -> Self {
-        self.face = Some(input);
+        self.face = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides face metadata (bounding box and confidence that the bounding box actually contains a face).</p>
-    pub fn set_face(mut self, input: std::option::Option<crate::types::ComparedFace>) -> Self {
+    pub fn set_face(mut self, input: ::std::option::Option<crate::types::ComparedFace>) -> Self {
         self.face = input;
         self
     }

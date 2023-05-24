@@ -2,14 +2,14 @@
 
 /// <p>Information about the state of a vehicle and how it relates to the status of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VehicleStatus {
     /// <p>The name of a campaign.</p>
     #[doc(hidden)]
-    pub campaign_name: std::option::Option<std::string::String>,
+    pub campaign_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the vehicle.</p>
     #[doc(hidden)]
-    pub vehicle_name: std::option::Option<std::string::String>,
+    pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of a vehicle, which can be one of the following:</p>
     /// <ul>
     /// <li> <p> <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the vehicle. </p> </li>
@@ -19,15 +19,15 @@ pub struct VehicleStatus {
     /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::VehicleState>,
+    pub status: ::std::option::Option<crate::types::VehicleState>,
 }
 impl VehicleStatus {
     /// <p>The name of a campaign.</p>
-    pub fn campaign_name(&self) -> std::option::Option<&str> {
+    pub fn campaign_name(&self) -> ::std::option::Option<&str> {
         self.campaign_name.as_deref()
     }
     /// <p>The unique ID of the vehicle.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
@@ -38,7 +38,7 @@ impl VehicleStatus {
     /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
     /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::VehicleState> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::VehicleState> {
         self.status.as_ref()
     }
 }
@@ -51,30 +51,38 @@ impl VehicleStatus {
 
 /// A builder for [`VehicleStatus`](crate::types::VehicleStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VehicleStatusBuilder {
-    pub(crate) campaign_name: std::option::Option<std::string::String>,
-    pub(crate) vehicle_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::VehicleState>,
+    pub(crate) campaign_name: ::std::option::Option<::std::string::String>,
+    pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::VehicleState>,
 }
 impl VehicleStatusBuilder {
     /// <p>The name of a campaign.</p>
-    pub fn campaign_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.campaign_name = Some(input.into());
+    pub fn campaign_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.campaign_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a campaign.</p>
-    pub fn set_campaign_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_campaign_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.campaign_name = input;
         self
     }
     /// <p>The unique ID of the vehicle.</p>
-    pub fn vehicle_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vehicle_name = Some(input.into());
+    pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vehicle_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the vehicle.</p>
-    pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
     }
@@ -87,7 +95,7 @@ impl VehicleStatusBuilder {
     /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::VehicleState) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of a vehicle, which can be one of the following:</p>
@@ -98,7 +106,7 @@ impl VehicleStatusBuilder {
     /// <li> <p> <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and data collection was paused. </p> </li>
     /// <li> <p> <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::VehicleState>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::VehicleState>) -> Self {
         self.status = input;
         self
     }

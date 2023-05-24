@@ -2,7 +2,7 @@
 
 /// <p>Details for a cluster logging configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEksClusterLoggingClusterLoggingDetails {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     #[doc(hidden)]
@@ -16,7 +16,7 @@ pub struct AwsEksClusterLoggingClusterLoggingDetails {
     /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsEksClusterLoggingClusterLoggingDetails {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
@@ -31,7 +31,7 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
     /// <li> <p> <code>controllerManager</code> </p> </li>
     /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
-    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.types.as_deref()
     }
 }
@@ -44,19 +44,21 @@ impl AwsEksClusterLoggingClusterLoggingDetails {
 
 /// A builder for [`AwsEksClusterLoggingClusterLoggingDetails`](crate::types::AwsEksClusterLoggingClusterLoggingDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEksClusterLoggingClusterLoggingDetailsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the logging types that are listed in <code>Types</code> are enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
@@ -72,10 +74,10 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// <li> <p> <code>controllerManager</code> </p> </li>
     /// <li> <p> <code>scheduler</code> </p> </li>
     /// </ul>
-    pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
         v.push(input.into());
-        self.types = Some(v);
+        self.types = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of logging types. Valid values are as follows:</p>
@@ -88,7 +90,7 @@ impl AwsEksClusterLoggingClusterLoggingDetailsBuilder {
     /// </ul>
     pub fn set_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.types = input;
         self

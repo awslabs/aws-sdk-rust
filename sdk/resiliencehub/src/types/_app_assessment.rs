@@ -2,86 +2,90 @@
 
 /// <p>Defines an application assessment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppAssessment {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
-    pub app_arn: std::option::Option<std::string::String>,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
     #[doc(hidden)]
-    pub app_version: std::option::Option<std::string::String>,
+    pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>The entity that invoked the assessment.</p>
     #[doc(hidden)]
-    pub invoker: std::option::Option<crate::types::AssessmentInvoker>,
+    pub invoker: ::std::option::Option<crate::types::AssessmentInvoker>,
     /// <p>The cost for the application.</p>
     #[doc(hidden)]
-    pub cost: std::option::Option<crate::types::Cost>,
+    pub cost: ::std::option::Option<crate::types::Cost>,
     /// <p>The current resiliency score for the application.</p>
     #[doc(hidden)]
-    pub resiliency_score: std::option::Option<crate::types::ResiliencyScore>,
+    pub resiliency_score: ::std::option::Option<crate::types::ResiliencyScore>,
     /// <p>The application compliance against the resiliency policy.</p>
     #[doc(hidden)]
-    pub compliance: std::option::Option<
-        std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>,
+    pub compliance: ::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DisruptionType,
+            crate::types::DisruptionCompliance,
+        >,
     >,
     /// <p>The current status of the compliance for the resiliency policy.</p>
     #[doc(hidden)]
-    pub compliance_status: std::option::Option<crate::types::ComplianceStatus>,
+    pub compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The current status of the assessment for the resiliency policy.</p>
     #[doc(hidden)]
-    pub assessment_status: std::option::Option<crate::types::AssessmentStatus>,
+    pub assessment_status: ::std::option::Option<crate::types::AssessmentStatus>,
     /// <p>The starting time for the action.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Error or warning message from the assessment execution</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assessment.</p>
     #[doc(hidden)]
-    pub assessment_name: std::option::Option<std::string::String>,
+    pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
-    pub assessment_arn: std::option::Option<std::string::String>,
+    pub assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resiliency policy.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<crate::types::ResiliencyPolicy>,
+    pub policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
     #[doc(hidden)]
-    pub resource_errors_details: std::option::Option<crate::types::ResourceErrorsDetails>,
+    pub resource_errors_details: ::std::option::Option<crate::types::ResourceErrorsDetails>,
 }
 impl AppAssessment {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> ::std::option::Option<&str> {
         self.app_version.as_deref()
     }
     /// <p>The entity that invoked the assessment.</p>
-    pub fn invoker(&self) -> std::option::Option<&crate::types::AssessmentInvoker> {
+    pub fn invoker(&self) -> ::std::option::Option<&crate::types::AssessmentInvoker> {
         self.invoker.as_ref()
     }
     /// <p>The cost for the application.</p>
-    pub fn cost(&self) -> std::option::Option<&crate::types::Cost> {
+    pub fn cost(&self) -> ::std::option::Option<&crate::types::Cost> {
         self.cost.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
-    pub fn resiliency_score(&self) -> std::option::Option<&crate::types::ResiliencyScore> {
+    pub fn resiliency_score(&self) -> ::std::option::Option<&crate::types::ResiliencyScore> {
         self.resiliency_score.as_ref()
     }
     /// <p>The application compliance against the resiliency policy.</p>
     pub fn compliance(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
             crate::types::DisruptionType,
             crate::types::DisruptionCompliance,
         >,
@@ -89,53 +93,54 @@ impl AppAssessment {
         self.compliance.as_ref()
     }
     /// <p>The current status of the compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::types::ComplianceStatus> {
+    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
-    pub fn assessment_status(&self) -> std::option::Option<&crate::types::AssessmentStatus> {
+    pub fn assessment_status(&self) -> ::std::option::Option<&crate::types::AssessmentStatus> {
         self.assessment_status.as_ref()
     }
     /// <p>The starting time for the action.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time for the action.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Error or warning message from the assessment execution</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The name of the assessment.</p>
-    pub fn assessment_name(&self) -> std::option::Option<&str> {
+    pub fn assessment_name(&self) -> ::std::option::Option<&str> {
         self.assessment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
     /// <p>The resiliency policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::types::ResiliencyPolicy> {
+    pub fn policy(&self) -> ::std::option::Option<&crate::types::ResiliencyPolicy> {
         self.policy.as_ref()
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
     pub fn resource_errors_details(
         &self,
-    ) -> std::option::Option<&crate::types::ResourceErrorsDetails> {
+    ) -> ::std::option::Option<&crate::types::ResourceErrorsDetails> {
         self.resource_errors_details.as_ref()
     }
 }
-impl std::fmt::Debug for AppAssessment {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AppAssessment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppAssessment");
         formatter.field("app_arn", &self.app_arn);
         formatter.field("app_version", &self.app_version);
@@ -165,81 +170,85 @@ impl AppAssessment {
 
 /// A builder for [`AppAssessment`](crate::types::AppAssessment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AppAssessmentBuilder {
-    pub(crate) app_arn: std::option::Option<std::string::String>,
-    pub(crate) app_version: std::option::Option<std::string::String>,
-    pub(crate) invoker: std::option::Option<crate::types::AssessmentInvoker>,
-    pub(crate) cost: std::option::Option<crate::types::Cost>,
-    pub(crate) resiliency_score: std::option::Option<crate::types::ResiliencyScore>,
-    pub(crate) compliance: std::option::Option<
-        std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>,
+    pub(crate) app_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) app_version: ::std::option::Option<::std::string::String>,
+    pub(crate) invoker: ::std::option::Option<crate::types::AssessmentInvoker>,
+    pub(crate) cost: ::std::option::Option<crate::types::Cost>,
+    pub(crate) resiliency_score: ::std::option::Option<crate::types::ResiliencyScore>,
+    pub(crate) compliance: ::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DisruptionType,
+            crate::types::DisruptionCompliance,
+        >,
     >,
-    pub(crate) compliance_status: std::option::Option<crate::types::ComplianceStatus>,
-    pub(crate) assessment_status: std::option::Option<crate::types::AssessmentStatus>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) assessment_name: std::option::Option<std::string::String>,
-    pub(crate) assessment_arn: std::option::Option<std::string::String>,
-    pub(crate) policy: std::option::Option<crate::types::ResiliencyPolicy>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) resource_errors_details: std::option::Option<crate::types::ResourceErrorsDetails>,
+    pub(crate) compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
+    pub(crate) assessment_status: ::std::option::Option<crate::types::AssessmentStatus>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy: ::std::option::Option<crate::types::ResiliencyPolicy>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) resource_errors_details: ::std::option::Option<crate::types::ResourceErrorsDetails>,
 }
 impl AppAssessmentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_arn = Some(input.into());
+    pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_version = Some(input.into());
+    pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the application.</p>
-    pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
     }
     /// <p>The entity that invoked the assessment.</p>
     pub fn invoker(mut self, input: crate::types::AssessmentInvoker) -> Self {
-        self.invoker = Some(input);
+        self.invoker = ::std::option::Option::Some(input);
         self
     }
     /// <p>The entity that invoked the assessment.</p>
     pub fn set_invoker(
         mut self,
-        input: std::option::Option<crate::types::AssessmentInvoker>,
+        input: ::std::option::Option<crate::types::AssessmentInvoker>,
     ) -> Self {
         self.invoker = input;
         self
     }
     /// <p>The cost for the application.</p>
     pub fn cost(mut self, input: crate::types::Cost) -> Self {
-        self.cost = Some(input);
+        self.cost = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cost for the application.</p>
-    pub fn set_cost(mut self, input: std::option::Option<crate::types::Cost>) -> Self {
+    pub fn set_cost(mut self, input: ::std::option::Option<crate::types::Cost>) -> Self {
         self.cost = input;
         self
     }
     /// <p>The current resiliency score for the application.</p>
     pub fn resiliency_score(mut self, input: crate::types::ResiliencyScore) -> Self {
-        self.resiliency_score = Some(input);
+        self.resiliency_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current resiliency score for the application.</p>
     pub fn set_resiliency_score(
         mut self,
-        input: std::option::Option<crate::types::ResiliencyScore>,
+        input: ::std::option::Option<crate::types::ResiliencyScore>,
     ) -> Self {
         self.resiliency_score = input;
         self
@@ -256,14 +265,14 @@ impl AppAssessmentBuilder {
     ) -> Self {
         let mut hash_map = self.compliance.unwrap_or_default();
         hash_map.insert(k, v);
-        self.compliance = Some(hash_map);
+        self.compliance = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The application compliance against the resiliency policy.</p>
     pub fn set_compliance(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::DisruptionType,
                 crate::types::DisruptionCompliance,
             >,
@@ -274,92 +283,107 @@ impl AppAssessmentBuilder {
     }
     /// <p>The current status of the compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
-        self.compliance_status = Some(input);
+        self.compliance_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the compliance for the resiliency policy.</p>
     pub fn set_compliance_status(
         mut self,
-        input: std::option::Option<crate::types::ComplianceStatus>,
+        input: ::std::option::Option<crate::types::ComplianceStatus>,
     ) -> Self {
         self.compliance_status = input;
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
     pub fn assessment_status(mut self, input: crate::types::AssessmentStatus) -> Self {
-        self.assessment_status = Some(input);
+        self.assessment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the assessment for the resiliency policy.</p>
     pub fn set_assessment_status(
         mut self,
-        input: std::option::Option<crate::types::AssessmentStatus>,
+        input: ::std::option::Option<crate::types::AssessmentStatus>,
     ) -> Self {
         self.assessment_status = input;
         self
     }
     /// <p>The starting time for the action.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting time for the action.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The end time for the action.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end time for the action.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>Error or warning message from the assessment execution</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error or warning message from the assessment execution</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The name of the assessment.</p>
-    pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_name = Some(input.into());
+    pub fn assessment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the assessment.</p>
-    pub fn set_assessment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assessment_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_arn = Some(input.into());
+    pub fn assessment_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_assessment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assessment_arn = input;
         self
     }
     /// <p>The resiliency policy.</p>
     pub fn policy(mut self, input: crate::types::ResiliencyPolicy) -> Self {
-        self.policy = Some(input);
+        self.policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resiliency policy.</p>
     pub fn set_policy(
         mut self,
-        input: std::option::Option<crate::types::ResiliencyPolicy>,
+        input: ::std::option::Option<crate::types::ResiliencyPolicy>,
     ) -> Self {
         self.policy = input;
         self
@@ -371,19 +395,19 @@ impl AppAssessmentBuilder {
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -391,13 +415,13 @@ impl AppAssessmentBuilder {
     }
     /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
     pub fn resource_errors_details(mut self, input: crate::types::ResourceErrorsDetails) -> Self {
-        self.resource_errors_details = Some(input);
+        self.resource_errors_details = ::std::option::Option::Some(input);
         self
     }
     /// <p> A resource error object containing a list of errors retrieving an application's resources. </p>
     pub fn set_resource_errors_details(
         mut self,
-        input: std::option::Option<crate::types::ResourceErrorsDetails>,
+        input: ::std::option::Option<crate::types::ResourceErrorsDetails>,
     ) -> Self {
         self.resource_errors_details = input;
         self
@@ -424,8 +448,8 @@ impl AppAssessmentBuilder {
         }
     }
 }
-impl std::fmt::Debug for AppAssessmentBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AppAssessmentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppAssessmentBuilder");
         formatter.field("app_arn", &self.app_arn);
         formatter.field("app_version", &self.app_version);

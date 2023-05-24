@@ -2,20 +2,20 @@
 
 /// <p> The connector-specific profile credentials required when using Singular. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SingularConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     #[doc(hidden)]
-    pub api_key: std::option::Option<std::string::String>,
+    pub api_key: ::std::option::Option<::std::string::String>,
 }
 impl SingularConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub fn api_key(&self) -> std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<&str> {
         self.api_key.as_deref()
     }
 }
-impl std::fmt::Debug for SingularConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SingularConnectorProfileCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SingularConnectorProfileCredentials");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,18 @@ impl SingularConnectorProfileCredentials {
 
 /// A builder for [`SingularConnectorProfileCredentials`](crate::types::SingularConnectorProfileCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SingularConnectorProfileCredentialsBuilder {
-    pub(crate) api_key: std::option::Option<std::string::String>,
+    pub(crate) api_key: ::std::option::Option<::std::string::String>,
 }
 impl SingularConnectorProfileCredentialsBuilder {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_key = Some(input.into());
+    pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key = input;
         self
     }
@@ -52,8 +52,8 @@ impl SingularConnectorProfileCredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for SingularConnectorProfileCredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SingularConnectorProfileCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SingularConnectorProfileCredentialsBuilder");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
         formatter.finish()

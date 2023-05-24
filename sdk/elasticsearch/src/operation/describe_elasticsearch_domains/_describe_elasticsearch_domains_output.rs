@@ -2,23 +2,23 @@
 
 /// <p>The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
     #[doc(hidden)]
     pub domain_status_list:
-        std::option::Option<std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchDomainsOutput {
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
     pub fn domain_status_list(
         &self,
-    ) -> std::option::Option<&[crate::types::ElasticsearchDomainStatus]> {
+    ) -> ::std::option::Option<&[crate::types::ElasticsearchDomainStatus]> {
         self.domain_status_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeElasticsearchDomainsOutput {
+impl ::aws_http::request_id::RequestId for DescribeElasticsearchDomainsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeElasticsearchDomainsOutput {
 
 /// A builder for [`DescribeElasticsearchDomainsOutput`](crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeElasticsearchDomainsOutputBuilder {
     pub(crate) domain_status_list:
-        std::option::Option<std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticsearchDomainsOutputBuilder {
@@ -47,13 +49,13 @@ impl DescribeElasticsearchDomainsOutputBuilder {
     pub fn domain_status_list(mut self, input: crate::types::ElasticsearchDomainStatus) -> Self {
         let mut v = self.domain_status_list.unwrap_or_default();
         v.push(input);
-        self.domain_status_list = Some(v);
+        self.domain_status_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
     pub fn set_domain_status_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticsearchDomainStatus>>,
     ) -> Self {
         self.domain_status_list = input;
         self

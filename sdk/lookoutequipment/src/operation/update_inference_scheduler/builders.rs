@@ -6,29 +6,29 @@ pub use crate::operation::update_inference_scheduler::_update_inference_schedule
 /// Fluent builder constructing a request to `UpdateInferenceScheduler`.
 ///
 /// <p>Updates an inference scheduler. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInferenceSchedulerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_inference_scheduler::builders::UpdateInferenceSchedulerInputBuilder,
 }
 impl UpdateInferenceSchedulerFluentBuilder {
     /// Creates a new `UpdateInferenceScheduler`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_inference_scheduler::UpdateInferenceScheduler,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateInferenceSchedulerFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl UpdateInferenceSchedulerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the inference scheduler to be updated. </p>
-    pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inference_scheduler_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.inference_scheduler_name(input.into());
         self
     }
     /// <p>The name of the inference scheduler to be updated. </p>
     pub fn set_inference_scheduler_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_inference_scheduler_name(input);
         self
@@ -99,7 +105,7 @@ impl UpdateInferenceSchedulerFluentBuilder {
         self
     }
     /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
-    pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_data_delay_offset_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_data_delay_offset_in_minutes(input);
         self
     }
@@ -111,7 +117,7 @@ impl UpdateInferenceSchedulerFluentBuilder {
     /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
     pub fn set_data_upload_frequency(
         mut self,
-        input: std::option::Option<crate::types::DataUploadFrequency>,
+        input: ::std::option::Option<crate::types::DataUploadFrequency>,
     ) -> Self {
         self.inner = self.inner.set_data_upload_frequency(input);
         self
@@ -127,7 +133,7 @@ impl UpdateInferenceSchedulerFluentBuilder {
     /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
     pub fn set_data_input_configuration(
         mut self,
-        input: std::option::Option<crate::types::InferenceInputConfiguration>,
+        input: ::std::option::Option<crate::types::InferenceInputConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_data_input_configuration(input);
         self
@@ -143,18 +149,18 @@ impl UpdateInferenceSchedulerFluentBuilder {
     /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
     pub fn set_data_output_configuration(
         mut self,
-        input: std::option::Option<crate::types::InferenceOutputConfiguration>,
+        input: ::std::option::Option<crate::types::InferenceOutputConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_data_output_configuration(input);
         self
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }

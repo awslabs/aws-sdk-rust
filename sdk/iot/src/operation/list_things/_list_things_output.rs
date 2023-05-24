@@ -2,27 +2,27 @@
 
 /// <p>The output from the ListThings operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThingsOutput {
     /// <p>The things.</p>
     #[doc(hidden)]
-    pub things: std::option::Option<std::vec::Vec<crate::types::ThingAttribute>>,
+    pub things: ::std::option::Option<::std::vec::Vec<crate::types::ThingAttribute>>,
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListThingsOutput {
     /// <p>The things.</p>
-    pub fn things(&self) -> std::option::Option<&[crate::types::ThingAttribute]> {
+    pub fn things(&self) -> ::std::option::Option<&[crate::types::ThingAttribute]> {
         self.things.as_deref()
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListThingsOutput {
+impl ::aws_http::request_id::RequestId for ListThingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListThingsOutput {
 
 /// A builder for [`ListThingsOutput`](crate::operation::list_things::ListThingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListThingsOutputBuilder {
-    pub(crate) things: std::option::Option<std::vec::Vec<crate::types::ThingAttribute>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) things: ::std::option::Option<::std::vec::Vec<crate::types::ThingAttribute>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListThingsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListThingsOutputBuilder {
     pub fn things(mut self, input: crate::types::ThingAttribute) -> Self {
         let mut v = self.things.unwrap_or_default();
         v.push(input);
-        self.things = Some(v);
+        self.things = ::std::option::Option::Some(v);
         self
     }
     /// <p>The things.</p>
     pub fn set_things(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThingAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ThingAttribute>>,
     ) -> Self {
         self.things = input;
         self
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,7 +2,7 @@
 pub(crate) fn de_inventory_configuration_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::InventoryConfiguration>,
+    ::std::option::Option<crate::types::InventoryConfiguration>,
     crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationError,
 > {
     (!body.is_empty()).then(||{
@@ -12,13 +12,13 @@ pub(crate) fn de_inventory_configuration_payload(
 
 pub fn de_inventory_configuration(
     inp: &[u8],
-) -> Result<crate::types::InventoryConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::InventoryConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("InventoryConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected InventoryConfiguration got {:?}",
             start_el
         )));

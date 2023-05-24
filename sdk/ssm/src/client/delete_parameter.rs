@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteParameter`](crate::operation::delete_parameter::builders::DeleteParameterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_parameter::builders::DeleteParameterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_parameter::builders::DeleteParameterFluentBuilder::set_name): <p>The name of the parameter to delete.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_parameter::builders::DeleteParameterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_parameter::builders::DeleteParameterFluentBuilder::set_name): <p>The name of the parameter to delete.</p>
     /// - On success, responds with [`DeleteParameterOutput`](crate::operation::delete_parameter::DeleteParameterOutput)
     /// - On failure, responds with [`SdkError<DeleteParameterError>`](crate::operation::delete_parameter::DeleteParameterError)
     pub fn delete_parameter(

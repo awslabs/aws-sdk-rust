@@ -2,27 +2,27 @@
 
 /// <p>Information about a Sidewalk account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SidewalkAccountInfo {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
-    pub amazon_id: std::option::Option<std::string::String>,
+    pub amazon_id: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk application server private key.</p>
     #[doc(hidden)]
-    pub app_server_private_key: std::option::Option<std::string::String>,
+    pub app_server_private_key: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkAccountInfo {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<&str> {
+    pub fn amazon_id(&self) -> ::std::option::Option<&str> {
         self.amazon_id.as_deref()
     }
     /// <p>The Sidewalk application server private key.</p>
-    pub fn app_server_private_key(&self) -> std::option::Option<&str> {
+    pub fn app_server_private_key(&self) -> ::std::option::Option<&str> {
         self.app_server_private_key.as_deref()
     }
 }
-impl std::fmt::Debug for SidewalkAccountInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SidewalkAccountInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkAccountInfo");
         formatter.field("amazon_id", &self.amazon_id);
         formatter.field("app_server_private_key", &"*** Sensitive Data Redacted ***");
@@ -38,31 +38,34 @@ impl SidewalkAccountInfo {
 
 /// A builder for [`SidewalkAccountInfo`](crate::types::SidewalkAccountInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SidewalkAccountInfoBuilder {
-    pub(crate) amazon_id: std::option::Option<std::string::String>,
-    pub(crate) app_server_private_key: std::option::Option<std::string::String>,
+    pub(crate) amazon_id: ::std::option::Option<::std::string::String>,
+    pub(crate) app_server_private_key: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkAccountInfoBuilder {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.amazon_id = Some(input.into());
+    pub fn amazon_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.amazon_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_amazon_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amazon_id = input;
         self
     }
     /// <p>The Sidewalk application server private key.</p>
-    pub fn app_server_private_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_server_private_key = Some(input.into());
+    pub fn app_server_private_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_server_private_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Sidewalk application server private key.</p>
     pub fn set_app_server_private_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.app_server_private_key = input;
         self
@@ -75,8 +78,8 @@ impl SidewalkAccountInfoBuilder {
         }
     }
 }
-impl std::fmt::Debug for SidewalkAccountInfoBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SidewalkAccountInfoBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkAccountInfoBuilder");
         formatter.field("amazon_id", &self.amazon_id);
         formatter.field("app_server_private_key", &"*** Sensitive Data Redacted ***");

@@ -2,15 +2,15 @@
 
 /// Settings for pausing a pipeline.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelinePauseStateSettings {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
     #[doc(hidden)]
-    pub pipeline_id: std::option::Option<crate::types::PipelineId>,
+    pub pipeline_id: ::std::option::Option<crate::types::PipelineId>,
 }
 impl PipelinePauseStateSettings {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-    pub fn pipeline_id(&self) -> std::option::Option<&crate::types::PipelineId> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<&crate::types::PipelineId> {
         self.pipeline_id.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl PipelinePauseStateSettings {
 
 /// A builder for [`PipelinePauseStateSettings`](crate::types::PipelinePauseStateSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelinePauseStateSettingsBuilder {
-    pub(crate) pipeline_id: std::option::Option<crate::types::PipelineId>,
+    pub(crate) pipeline_id: ::std::option::Option<crate::types::PipelineId>,
 }
 impl PipelinePauseStateSettingsBuilder {
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
     pub fn pipeline_id(mut self, input: crate::types::PipelineId) -> Self {
-        self.pipeline_id = Some(input);
+        self.pipeline_id = ::std::option::Option::Some(input);
         self
     }
     /// Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
-    pub fn set_pipeline_id(mut self, input: std::option::Option<crate::types::PipelineId>) -> Self {
+    pub fn set_pipeline_id(
+        mut self,
+        input: ::std::option::Option<crate::types::PipelineId>,
+    ) -> Self {
         self.pipeline_id = input;
         self
     }

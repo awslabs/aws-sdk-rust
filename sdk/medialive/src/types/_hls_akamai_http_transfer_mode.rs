@@ -38,13 +38,13 @@
 /// Hls Akamai Http Transfer Mode
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsAkamaiHttpTransferMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsAkamaiHttpTransferMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsAkamaiHttpTransferMode {
+impl ::std::convert::From<&str> for HlsAkamaiHttpTransferMode {
     fn from(s: &str) -> Self {
         match s {
             "CHUNKED" => HlsAkamaiHttpTransferMode::Chunked,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsAkamaiHttpTransferMode {
         }
     }
 }
-impl std::str::FromStr for HlsAkamaiHttpTransferMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsAkamaiHttpTransferMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsAkamaiHttpTransferMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsAkamaiHttpTransferMode::from(s))
     }
 }
 impl HlsAkamaiHttpTransferMode {
@@ -86,7 +86,7 @@ impl HlsAkamaiHttpTransferMode {
         &["CHUNKED", "NON_CHUNKED"]
     }
 }
-impl AsRef<str> for HlsAkamaiHttpTransferMode {
+impl ::std::convert::AsRef<str> for HlsAkamaiHttpTransferMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

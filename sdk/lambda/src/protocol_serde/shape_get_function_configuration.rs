@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_function_configuration_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_function_configuration::GetFunctionConfigurationOutput,
@@ -17,7 +17,7 @@ pub fn de_get_function_configuration_http_error(
     .map_err(
         crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -105,7 +105,7 @@ pub fn de_get_function_configuration_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_function_configuration_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_function_configuration::GetFunctionConfigurationOutput,
@@ -116,7 +116,7 @@ pub fn de_get_function_configuration_http_response_with_props(
         let mut output = crate::operation::get_function_configuration::builders::GetFunctionConfigurationOutputBuilder::default();
         output = crate::protocol_serde::shape_get_function_configuration::de_get_function_configuration(_response_body, output).map_err(crate::operation::get_function_configuration::GetFunctionConfigurationError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -127,17 +127,17 @@ pub(crate) fn de_get_function_configuration(
     mut builder: crate::operation::get_function_configuration::builders::GetFunctionConfigurationOutputBuilder,
 ) -> Result<
     crate::operation::get_function_configuration::builders::GetFunctionConfigurationOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "Architectures" => {
                         builder = builder.set_architectures(
@@ -148,7 +148,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "CodeSha256" => {
                         builder = builder.set_code_sha256(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -157,7 +157,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "CodeSize" => {
                         builder = builder.set_code_size(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i64::try_from)
@@ -173,7 +173,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "Description" => {
                         builder = builder.set_description(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -199,7 +199,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "FunctionArn" => {
                         builder = builder.set_function_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -208,7 +208,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "FunctionName" => {
                         builder = builder.set_function_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -217,7 +217,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "Handler" => {
                         builder = builder.set_handler(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -231,7 +231,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "KMSKeyArn" => {
                         builder = builder.set_kms_key_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -240,7 +240,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "LastModified" => {
                         builder = builder.set_last_modified(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -249,7 +249,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "LastUpdateStatus" => {
                         builder = builder.set_last_update_status(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -261,7 +261,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "LastUpdateStatusReason" => {
                         builder = builder.set_last_update_status_reason(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -270,7 +270,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "LastUpdateStatusReasonCode" => {
                         builder = builder.set_last_update_status_reason_code(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -288,7 +288,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "MasterArn" => {
                         builder = builder.set_master_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -297,7 +297,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "MemorySize" => {
                         builder = builder.set_memory_size(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -306,7 +306,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "PackageType" => {
                         builder = builder.set_package_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -318,7 +318,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "RevisionId" => {
                         builder = builder.set_revision_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -327,7 +327,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "Role" => {
                         builder = builder.set_role(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -336,7 +336,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "Runtime" => {
                         builder = builder.set_runtime(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -353,7 +353,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "SigningJobArn" => {
                         builder = builder.set_signing_job_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -362,7 +362,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "SigningProfileVersionArn" => {
                         builder = builder.set_signing_profile_version_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -376,7 +376,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "State" => {
                         builder = builder.set_state(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -388,7 +388,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "StateReason" => {
                         builder = builder.set_state_reason(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -397,7 +397,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "StateReasonCode" => {
                         builder = builder.set_state_reason_code(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -409,7 +409,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "Timeout" => {
                         builder = builder.set_timeout(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -423,7 +423,7 @@ pub(crate) fn de_get_function_configuration(
                     }
                     "Version" => {
                         builder = builder.set_version(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -435,12 +435,12 @@ pub(crate) fn de_get_function_configuration(
                             crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(tokens)?
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -450,7 +450,7 @@ pub(crate) fn de_get_function_configuration(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

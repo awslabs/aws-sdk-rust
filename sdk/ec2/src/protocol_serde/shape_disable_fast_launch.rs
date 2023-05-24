@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_fast_launch_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::disable_fast_launch::DisableFastLaunchOutput,
@@ -15,7 +15,7 @@ pub fn de_disable_fast_launch_http_error(
         _response_body,
     )
     .map_err(crate::operation::disable_fast_launch::DisableFastLaunchError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::disable_fast_launch::DisableFastLaunchError::generic(generic))
 }
@@ -23,7 +23,7 @@ pub fn de_disable_fast_launch_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_fast_launch_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::disable_fast_launch::DisableFastLaunchOutput,
@@ -38,7 +38,7 @@ pub fn de_disable_fast_launch_http_response_with_props(
         )
         .map_err(crate::operation::disable_fast_launch::DisableFastLaunchError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -50,16 +50,16 @@ pub fn de_disable_fast_launch(
     mut builder: crate::operation::disable_fast_launch::builders::DisableFastLaunchOutputBuilder,
 ) -> Result<
     crate::operation::disable_fast_launch::builders::DisableFastLaunchOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableFastLaunchResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisableFastLaunchResponse got {:?}",
             start_el
         )));
@@ -69,8 +69,8 @@ pub fn de_disable_fast_launch(
             s if s.matches("imageId") /* ImageId com.amazonaws.ec2.synthetic#DisableFastLaunchOutput$ImageId */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -82,9 +82,9 @@ pub fn de_disable_fast_launch(
             s if s.matches("resourceType") /* ResourceType com.amazonaws.ec2.synthetic#DisableFastLaunchOutput$ResourceType */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::types::FastLaunchResourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::FastLaunchResourceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::FastLaunchResourceType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -117,10 +117,10 @@ pub fn de_disable_fast_launch(
                 let var_5 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
                         }
                         ?
                     )
@@ -131,8 +131,8 @@ pub fn de_disable_fast_launch(
             s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2.synthetic#DisableFastLaunchOutput$OwnerId */ =>  {
                 let var_6 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -144,9 +144,9 @@ pub fn de_disable_fast_launch(
             s if s.matches("state") /* State com.amazonaws.ec2.synthetic#DisableFastLaunchOutput$State */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::types::FastLaunchStateCode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::FastLaunchStateCode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::FastLaunchStateCode::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -158,8 +158,8 @@ pub fn de_disable_fast_launch(
             s if s.matches("stateTransitionReason") /* StateTransitionReason com.amazonaws.ec2.synthetic#DisableFastLaunchOutput$StateTransitionReason */ =>  {
                 let var_8 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -171,11 +171,11 @@ pub fn de_disable_fast_launch(
             s if s.matches("stateTransitionTime") /* StateTransitionTime com.amazonaws.ec2.synthetic#DisableFastLaunchOutput$StateTransitionTime */ =>  {
                 let var_9 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
                         ?
                     )
                 ;

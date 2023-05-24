@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of ModifySpotFleetRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySpotFleetRequestOutput {
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     #[doc(hidden)]
-    pub r#return: std::option::Option<bool>,
+    pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ModifySpotFleetRequestOutput {
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
-    pub fn r#return(&self) -> std::option::Option<bool> {
+    pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
 }
-impl aws_http::request_id::RequestId for ModifySpotFleetRequestOutput {
+impl ::aws_http::request_id::RequestId for ModifySpotFleetRequestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,21 @@ impl ModifySpotFleetRequestOutput {
 
 /// A builder for [`ModifySpotFleetRequestOutput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifySpotFleetRequestOutputBuilder {
-    pub(crate) r#return: std::option::Option<bool>,
+    pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ModifySpotFleetRequestOutputBuilder {
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
     pub fn r#return(mut self, input: bool) -> Self {
-        self.r#return = Some(input);
+        self.r#return = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the request succeeds, the response returns <code>true</code>. If the request fails, no response is returned, and instead an error message is returned.</p>
-    pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#return = input;
         self
     }

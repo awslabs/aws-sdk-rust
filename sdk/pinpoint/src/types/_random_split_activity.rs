@@ -2,15 +2,15 @@
 
 /// <p>Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RandomSplitActivity {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
     #[doc(hidden)]
-    pub branches: std::option::Option<std::vec::Vec<crate::types::RandomSplitEntry>>,
+    pub branches: ::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>>,
 }
 impl RandomSplitActivity {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
-    pub fn branches(&self) -> std::option::Option<&[crate::types::RandomSplitEntry]> {
+    pub fn branches(&self) -> ::std::option::Option<&[crate::types::RandomSplitEntry]> {
         self.branches.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl RandomSplitActivity {
 
 /// A builder for [`RandomSplitActivity`](crate::types::RandomSplitActivity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RandomSplitActivityBuilder {
-    pub(crate) branches: std::option::Option<std::vec::Vec<crate::types::RandomSplitEntry>>,
+    pub(crate) branches: ::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>>,
 }
 impl RandomSplitActivityBuilder {
     /// Appends an item to `branches`.
@@ -36,13 +38,13 @@ impl RandomSplitActivityBuilder {
     pub fn branches(mut self, input: crate::types::RandomSplitEntry) -> Self {
         let mut v = self.branches.unwrap_or_default();
         v.push(input);
-        self.branches = Some(v);
+        self.branches = ::std::option::Option::Some(v);
         self
     }
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
     pub fn set_branches(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RandomSplitEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RandomSplitEntry>>,
     ) -> Self {
         self.branches = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Provides details about the management of a security standard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsManagedBy {
     /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
     #[doc(hidden)]
-    pub company: std::option::Option<std::string::String>,
+    pub company: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
     #[doc(hidden)]
-    pub product: std::option::Option<std::string::String>,
+    pub product: ::std::option::Option<::std::string::String>,
 }
 impl StandardsManagedBy {
     /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-    pub fn company(&self) -> std::option::Option<&str> {
+    pub fn company(&self) -> ::std::option::Option<&str> {
         self.company.as_deref()
     }
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> ::std::option::Option<&str> {
         self.product.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl StandardsManagedBy {
 
 /// A builder for [`StandardsManagedBy`](crate::types::StandardsManagedBy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StandardsManagedByBuilder {
-    pub(crate) company: std::option::Option<std::string::String>,
-    pub(crate) product: std::option::Option<std::string::String>,
+    pub(crate) company: ::std::option::Option<::std::string::String>,
+    pub(crate) product: ::std::option::Option<::std::string::String>,
 }
 impl StandardsManagedByBuilder {
     /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-    pub fn company(mut self, input: impl Into<std::string::String>) -> Self {
-        self.company = Some(input.into());
+    pub fn company(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.company = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for the company that manages a specific security standard. For existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-    pub fn set_company(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_company(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.company = input;
         self
     }
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
-    pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product = Some(input.into());
+    pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for the product that manages a specific security standard. For existing standards, the value is equal to the Amazon Web Services service that manages the standard.</p>
-    pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
     }

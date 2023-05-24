@@ -2,11 +2,11 @@
 
 /// <p>An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in Config.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
@@ -15,7 +15,7 @@ pub struct RetentionConfiguration {
 }
 impl RetentionConfiguration {
     /// <p>The name of the retention configuration object.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Number of days Config stores your historical information.</p> <note>
@@ -34,19 +34,21 @@ impl RetentionConfiguration {
 
 /// A builder for [`RetentionConfiguration`](crate::types::RetentionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetentionConfigurationBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) retention_period_in_days: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) retention_period_in_days: ::std::option::Option<i32>,
 }
 impl RetentionConfigurationBuilder {
     /// <p>The name of the retention configuration object.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the retention configuration object.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -54,13 +56,13 @@ impl RetentionConfigurationBuilder {
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
     pub fn retention_period_in_days(mut self, input: i32) -> Self {
-        self.retention_period_in_days = Some(input);
+        self.retention_period_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of days Config stores your historical information.</p> <note>
     /// <p>Currently, only applicable to the configuration item history.</p>
     /// </note>
-    pub fn set_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period_in_days = input;
         self
     }

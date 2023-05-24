@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ExpirationModelType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ExpirationModelType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ExpirationModelType {
+impl ::std::convert::From<&str> for ExpirationModelType {
     fn from(s: &str) -> Self {
         match s {
             "KEY_MATERIAL_DOES_NOT_EXPIRE" => ExpirationModelType::KeyMaterialDoesNotExpire,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ExpirationModelType {
         }
     }
 }
-impl std::str::FromStr for ExpirationModelType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ExpirationModelType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExpirationModelType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ExpirationModelType::from(s))
     }
 }
 impl ExpirationModelType {
@@ -86,7 +86,7 @@ impl ExpirationModelType {
         &["KEY_MATERIAL_DOES_NOT_EXPIRE", "KEY_MATERIAL_EXPIRES"]
     }
 }
-impl AsRef<str> for ExpirationModelType {
+impl ::std::convert::AsRef<str> for ExpirationModelType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

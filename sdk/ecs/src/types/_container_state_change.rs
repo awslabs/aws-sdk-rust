@@ -2,57 +2,57 @@
 
 /// <p>An object that represents a change in state for a container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerStateChange {
     /// <p>The name of the container.</p>
     #[doc(hidden)]
-    pub container_name: std::option::Option<std::string::String>,
+    pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The container image SHA 256 digest.</p>
     #[doc(hidden)]
-    pub image_digest: std::option::Option<std::string::String>,
+    pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Docker container.</p>
     #[doc(hidden)]
-    pub runtime_id: std::option::Option<std::string::String>,
+    pub runtime_id: ::std::option::Option<::std::string::String>,
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
     #[doc(hidden)]
-    pub exit_code: std::option::Option<i32>,
+    pub exit_code: ::std::option::Option<i32>,
     /// <p>Any network bindings that are associated with the container.</p>
     #[doc(hidden)]
-    pub network_bindings: std::option::Option<std::vec::Vec<crate::types::NetworkBinding>>,
+    pub network_bindings: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
     /// <p>The reason for the state change.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The status of the container.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl ContainerStateChange {
     /// <p>The name of the container.</p>
-    pub fn container_name(&self) -> std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
     /// <p>The container image SHA 256 digest.</p>
-    pub fn image_digest(&self) -> std::option::Option<&str> {
+    pub fn image_digest(&self) -> ::std::option::Option<&str> {
         self.image_digest.as_deref()
     }
     /// <p>The ID of the Docker container.</p>
-    pub fn runtime_id(&self) -> std::option::Option<&str> {
+    pub fn runtime_id(&self) -> ::std::option::Option<&str> {
         self.runtime_id.as_deref()
     }
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
-    pub fn exit_code(&self) -> std::option::Option<i32> {
+    pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
     }
     /// <p>Any network bindings that are associated with the container.</p>
-    pub fn network_bindings(&self) -> std::option::Option<&[crate::types::NetworkBinding]> {
+    pub fn network_bindings(&self) -> ::std::option::Option<&[crate::types::NetworkBinding]> {
         self.network_bindings.as_deref()
     }
     /// <p>The reason for the state change.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The status of the container.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -65,54 +65,63 @@ impl ContainerStateChange {
 
 /// A builder for [`ContainerStateChange`](crate::types::ContainerStateChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerStateChangeBuilder {
-    pub(crate) container_name: std::option::Option<std::string::String>,
-    pub(crate) image_digest: std::option::Option<std::string::String>,
-    pub(crate) runtime_id: std::option::Option<std::string::String>,
-    pub(crate) exit_code: std::option::Option<i32>,
-    pub(crate) network_bindings: std::option::Option<std::vec::Vec<crate::types::NetworkBinding>>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) container_name: ::std::option::Option<::std::string::String>,
+    pub(crate) image_digest: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime_id: ::std::option::Option<::std::string::String>,
+    pub(crate) exit_code: ::std::option::Option<i32>,
+    pub(crate) network_bindings:
+        ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl ContainerStateChangeBuilder {
     /// <p>The name of the container.</p>
-    pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_name = Some(input.into());
+    pub fn container_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container.</p>
-    pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.container_name = input;
         self
     }
     /// <p>The container image SHA 256 digest.</p>
-    pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_digest = Some(input.into());
+    pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The container image SHA 256 digest.</p>
-    pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
     }
     /// <p>The ID of the Docker container.</p>
-    pub fn runtime_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.runtime_id = Some(input.into());
+    pub fn runtime_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.runtime_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Docker container.</p>
-    pub fn set_runtime_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_runtime_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_id = input;
         self
     }
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
-        self.exit_code = Some(input);
+        self.exit_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
-    pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.exit_code = input;
         self
     }
@@ -124,34 +133,34 @@ impl ContainerStateChangeBuilder {
     pub fn network_bindings(mut self, input: crate::types::NetworkBinding) -> Self {
         let mut v = self.network_bindings.unwrap_or_default();
         v.push(input);
-        self.network_bindings = Some(v);
+        self.network_bindings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any network bindings that are associated with the container.</p>
     pub fn set_network_bindings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkBinding>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkBinding>>,
     ) -> Self {
         self.network_bindings = input;
         self
     }
     /// <p>The reason for the state change.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the state change.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The status of the container.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the container.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

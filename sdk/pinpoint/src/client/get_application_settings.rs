@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplicationSettings`](crate::operation::get_application_settings::builders::GetApplicationSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application_settings::builders::GetApplicationSettingsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application_settings::builders::GetApplicationSettingsFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_application_settings::builders::GetApplicationSettingsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application_settings::builders::GetApplicationSettingsFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetApplicationSettingsOutput`](crate::operation::get_application_settings::GetApplicationSettingsOutput) with field(s):
     ///   - [`application_settings_resource(Option<ApplicationSettingsResource>)`](crate::operation::get_application_settings::GetApplicationSettingsOutput::application_settings_resource): <p>Provides information about an application, including the default settings for an application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationSettingsError>`](crate::operation::get_application_settings::GetApplicationSettingsError)

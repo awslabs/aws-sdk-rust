@@ -28,56 +28,59 @@ pub use crate::operation::create_solution::_create_solution_input::CreateSolutio
 /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a> </p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSolutionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_solution::builders::CreateSolutionInputBuilder,
 }
 impl CreateSolutionFluentBuilder {
     /// Creates a new `CreateSolution`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_solution::CreateSolution,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_solution::CreateSolutionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_solution::CreateSolutionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_solution::CreateSolutionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_solution::CreateSolutionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_solution::CreateSolutionError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -90,19 +93,19 @@ impl CreateSolutionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_solution::CreateSolutionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_solution::CreateSolutionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_solution::CreateSolutionError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name for the solution.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name for the solution.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -114,7 +117,7 @@ impl CreateSolutionFluentBuilder {
     }
     /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
     /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
-    pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_perform_hpo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_perform_hpo(input);
         self
     }
@@ -126,42 +129,45 @@ impl CreateSolutionFluentBuilder {
     }
     /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
     /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
-    pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_perform_auto_ml(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_perform_auto_ml(input);
         self
     }
     /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
-    pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_arn(input.into());
         self
     }
     /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
-    pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
-    pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dataset_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
     pub fn set_dataset_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
     /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
     /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
-    pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_type(input.into());
         self
     }
     /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
     /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
-    pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_type(input);
         self
     }
@@ -177,7 +183,7 @@ impl CreateSolutionFluentBuilder {
     /// </note>
     pub fn set_solution_config(
         mut self,
-        input: std::option::Option<crate::types::SolutionConfig>,
+        input: ::std::option::Option<crate::types::SolutionConfig>,
     ) -> Self {
         self.inner = self.inner.set_solution_config(input);
         self
@@ -194,7 +200,7 @@ impl CreateSolutionFluentBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMasterAccount`](crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
+    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_master_account::builders::GetMasterAccountFluentBuilder::set_detector_id): <p>The unique ID of the detector of the GuardDuty member account.</p>
     /// - On success, responds with [`GetMasterAccountOutput`](crate::operation::get_master_account::GetMasterAccountOutput) with field(s):
     ///   - [`master(Option<Master>)`](crate::operation::get_master_account::GetMasterAccountOutput::master): <p>The administrator account details.</p>
     /// - On failure, responds with [`SdkError<GetMasterAccountError>`](crate::operation::get_master_account::GetMasterAccountError)

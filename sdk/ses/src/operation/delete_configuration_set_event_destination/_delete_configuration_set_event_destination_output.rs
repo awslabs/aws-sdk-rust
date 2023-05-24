@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteConfigurationSetEventDestinationOutput {
+impl ::aws_http::request_id::RequestId for DeleteConfigurationSetEventDestinationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteConfigurationSetEventDestinationOutput {
 
 /// A builder for [`DeleteConfigurationSetEventDestinationOutput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteConfigurationSetEventDestinationOutputBuilder {
     _request_id: Option<String>,
 }

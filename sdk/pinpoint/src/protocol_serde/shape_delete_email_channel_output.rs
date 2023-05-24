@@ -2,7 +2,7 @@
 pub(crate) fn de_email_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::EmailChannelResponse>,
+    ::std::option::Option<crate::types::EmailChannelResponse>,
     crate::operation::delete_email_channel::DeleteEmailChannelError,
 > {
     (!body.is_empty())

@@ -8,29 +8,29 @@ pub use crate::operation::register_task_definition::_register_task_definition_in
 /// <p>Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>. Optionally, you can add data volumes to your containers with the <code>volumes</code> parameter. For more information about task definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>You can specify a role for your task with the <code>taskRoleArn</code> parameter. When you specify a role for a task, its containers can then use the latest versions of the CLI or SDKs to make API requests to the Amazon Web Services services that are specified in the policy that's associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>You can specify a Docker networking mode for the containers in your task definition with the <code>networkMode</code> parameter. The available network modes correspond to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network settings</a> in the Docker run reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an elastic network interface, and you must specify a <code>NetworkConfiguration</code> when you create a service or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTaskDefinitionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::register_task_definition::builders::RegisterTaskDefinitionInputBuilder,
 }
 impl RegisterTaskDefinitionFluentBuilder {
     /// Creates a new `RegisterTaskDefinition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_task_definition::RegisterTaskDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_task_definition::RegisterTaskDefinitionError,
         >,
     > {
@@ -38,30 +38,33 @@ impl RegisterTaskDefinitionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_task_definition::RegisterTaskDefinitionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,43 +77,52 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_task_definition::RegisterTaskDefinitionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
-    pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.family(input.into());
         self
     }
     /// <p>You must specify a <code>family</code> for a task definition. You can use it track multiple versions of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.</p>
-    pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_family(input);
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn task_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn task_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.task_role_arn(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_task_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_task_role_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. The task execution IAM role is required depending on the requirements of your task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
@@ -139,7 +151,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network settings</a> in the <i>Docker run reference</i>.</p>
     pub fn set_network_mode(
         mut self,
-        input: std::option::Option<crate::types::NetworkMode>,
+        input: ::std::option::Option<crate::types::NetworkMode>,
     ) -> Self {
         self.inner = self.inner.set_network_mode(input);
         self
@@ -156,7 +168,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>A list of container definitions in JSON format that describe the different containers that make up your task.</p>
     pub fn set_container_definitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContainerDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDefinition>>,
     ) -> Self {
         self.inner = self.inner.set_container_definitions(input);
         self
@@ -173,7 +185,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>A list of volume definitions in JSON format that containers in your task might use.</p>
     pub fn set_volumes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Volume>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     ) -> Self {
         self.inner = self.inner.set_volumes(input);
         self
@@ -193,7 +205,9 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>An array of placement constraint objects to use for the task. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.</p>
     pub fn set_placement_constraints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::TaskDefinitionPlacementConstraint>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_placement_constraints(input);
         self
@@ -210,7 +224,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>The task launch type that Amazon ECS validates the task definition against. A client exception is returned if the task definition doesn't validate against the compatibilities specified. If no value is specified, the parameter is omitted from the response.</p>
     pub fn set_requires_compatibilities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Compatibility>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Compatibility>>,
     ) -> Self {
         self.inner = self.inner.set_requires_compatibilities(input);
         self
@@ -230,7 +244,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cpu(input.into());
         self
     }
@@ -249,7 +263,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cpu(input);
         self
     }
@@ -268,7 +282,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory(input.into());
         self
     }
@@ -287,7 +301,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_memory(input);
         self
     }
@@ -323,7 +337,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -340,7 +354,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.</p> <note>
     /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
     /// </note>
-    pub fn set_pid_mode(mut self, input: std::option::Option<crate::types::PidMode>) -> Self {
+    pub fn set_pid_mode(mut self, input: ::std::option::Option<crate::types::PidMode>) -> Self {
         self.inner = self.inner.set_pid_mode(input);
         self
     }
@@ -366,7 +380,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// </ul> <note>
     /// <p>This parameter is not supported for Windows containers or tasks run on Fargate.</p>
     /// </note>
-    pub fn set_ipc_mode(mut self, input: std::option::Option<crate::types::IpcMode>) -> Self {
+    pub fn set_ipc_mode(mut self, input: ::std::option::Option<crate::types::IpcMode>) -> Self {
         self.inner = self.inner.set_ipc_mode(input);
         self
     }
@@ -380,7 +394,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_proxy_configuration(
         mut self,
-        input: std::option::Option<crate::types::ProxyConfiguration>,
+        input: ::std::option::Option<crate::types::ProxyConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_proxy_configuration(input);
         self
@@ -397,7 +411,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
     pub fn set_inference_accelerators(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InferenceAccelerator>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     ) -> Self {
         self.inner = self.inner.set_inference_accelerators(input);
         self
@@ -422,7 +436,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// </note>
     pub fn set_ephemeral_storage(
         mut self,
-        input: std::option::Option<crate::types::EphemeralStorage>,
+        input: ::std::option::Option<crate::types::EphemeralStorage>,
     ) -> Self {
         self.inner = self.inner.set_ephemeral_storage(input);
         self
@@ -437,7 +451,7 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// <p>When you specify a task definition in a service, this value must match the <code>runtimePlatform</code> value of the service.</p>
     pub fn set_runtime_platform(
         mut self,
-        input: std::option::Option<crate::types::RuntimePlatform>,
+        input: ::std::option::Option<crate::types::RuntimePlatform>,
     ) -> Self {
         self.inner = self.inner.set_runtime_platform(input);
         self

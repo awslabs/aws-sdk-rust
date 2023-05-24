@@ -4,22 +4,22 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncDeploymentJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
+    pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The target fleet for the synchronization.</p>
     #[doc(hidden)]
-    pub fleet: std::option::Option<std::string::String>,
+    pub fleet: ::std::option::Option<::std::string::String>,
 }
 impl SyncDeploymentJobInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The target fleet for the synchronization.</p>
-    pub fn fleet(&self) -> std::option::Option<&str> {
+    pub fn fleet(&self) -> ::std::option::Option<&str> {
         self.fleet.as_deref()
     }
 }
@@ -33,43 +33,48 @@ impl SyncDeploymentJobInput {
 
 /// A builder for [`SyncDeploymentJobInput`](crate::operation::sync_deployment_job::SyncDeploymentJobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SyncDeploymentJobInputBuilder {
-    pub(crate) client_request_token: std::option::Option<std::string::String>,
-    pub(crate) fleet: std::option::Option<std::string::String>,
+    pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) fleet: ::std::option::Option<::std::string::String>,
 }
 impl SyncDeploymentJobInputBuilder {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_request_token = Some(input.into());
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_request_token = input;
         self
     }
     /// <p>The target fleet for the synchronization.</p>
-    pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet = Some(input.into());
+    pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target fleet for the synchronization.</p>
-    pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
     }
     /// Consumes the builder and constructs a [`SyncDeploymentJobInput`](crate::operation::sync_deployment_job::SyncDeploymentJobInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::sync_deployment_job::SyncDeploymentJobInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::sync_deployment_job::SyncDeploymentJobInput {
                 client_request_token: self.client_request_token,
                 fleet: self.fleet,

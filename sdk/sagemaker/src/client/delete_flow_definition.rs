@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFlowDefinition`](crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_definition_name(impl Into<String>)`](crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionFluentBuilder::flow_definition_name) / [`set_flow_definition_name(Option<String>)`](crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionFluentBuilder::set_flow_definition_name): <p>The name of the flow definition you are deleting.</p>
+    ///   - [`flow_definition_name(impl ::std::convert::Into<String>)`](crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionFluentBuilder::flow_definition_name) / [`set_flow_definition_name(Option<String>)`](crate::operation::delete_flow_definition::builders::DeleteFlowDefinitionFluentBuilder::set_flow_definition_name): <p>The name of the flow definition you are deleting.</p>
     /// - On success, responds with [`DeleteFlowDefinitionOutput`](crate::operation::delete_flow_definition::DeleteFlowDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteFlowDefinitionError>`](crate::operation::delete_flow_definition::DeleteFlowDefinitionError)
     pub fn delete_flow_definition(

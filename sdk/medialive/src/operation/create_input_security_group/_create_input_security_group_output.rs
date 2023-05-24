@@ -2,20 +2,20 @@
 
 /// Placeholder documentation for CreateInputSecurityGroupResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInputSecurityGroupOutput {
     /// An Input Security Group
     #[doc(hidden)]
-    pub security_group: std::option::Option<crate::types::InputSecurityGroup>,
+    pub security_group: ::std::option::Option<crate::types::InputSecurityGroup>,
     _request_id: Option<String>,
 }
 impl CreateInputSecurityGroupOutput {
     /// An Input Security Group
-    pub fn security_group(&self) -> std::option::Option<&crate::types::InputSecurityGroup> {
+    pub fn security_group(&self) -> ::std::option::Option<&crate::types::InputSecurityGroup> {
         self.security_group.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateInputSecurityGroupOutput {
+impl ::aws_http::request_id::RequestId for CreateInputSecurityGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl CreateInputSecurityGroupOutput {
 
 /// A builder for [`CreateInputSecurityGroupOutput`](crate::operation::create_input_security_group::CreateInputSecurityGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateInputSecurityGroupOutputBuilder {
-    pub(crate) security_group: std::option::Option<crate::types::InputSecurityGroup>,
+    pub(crate) security_group: ::std::option::Option<crate::types::InputSecurityGroup>,
     _request_id: Option<String>,
 }
 impl CreateInputSecurityGroupOutputBuilder {
     /// An Input Security Group
     pub fn security_group(mut self, input: crate::types::InputSecurityGroup) -> Self {
-        self.security_group = Some(input);
+        self.security_group = ::std::option::Option::Some(input);
         self
     }
     /// An Input Security Group
     pub fn set_security_group(
         mut self,
-        input: std::option::Option<crate::types::InputSecurityGroup>,
+        input: ::std::option::Option<crate::types::InputSecurityGroup>,
     ) -> Self {
         self.security_group = input;
         self

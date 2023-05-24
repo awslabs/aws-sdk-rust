@@ -2,29 +2,29 @@
 
 /// <p>In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetAddress {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
     #[doc(hidden)]
-    pub ip: std::option::Option<std::string::String>,
+    pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p> One IPv6 address that you want to forward DNS queries to. </p>
     #[doc(hidden)]
-    pub ipv6: std::option::Option<std::string::String>,
+    pub ipv6: ::std::option::Option<::std::string::String>,
 }
 impl TargetAddress {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> ::std::option::Option<&str> {
         self.ip.as_deref()
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p> One IPv6 address that you want to forward DNS queries to. </p>
-    pub fn ipv6(&self) -> std::option::Option<&str> {
+    pub fn ipv6(&self) -> ::std::option::Option<&str> {
         self.ipv6.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl TargetAddress {
 
 /// A builder for [`TargetAddress`](crate::types::TargetAddress).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetAddressBuilder {
-    pub(crate) ip: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) ipv6: std::option::Option<std::string::String>,
+    pub(crate) ip: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) ipv6: ::std::option::Option<::std::string::String>,
 }
 impl TargetAddressBuilder {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
-    pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip = Some(input.into());
+    pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
-    pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip = input;
         self
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p> One IPv6 address that you want to forward DNS queries to. </p>
-    pub fn ipv6(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipv6 = Some(input.into());
+    pub fn ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> One IPv6 address that you want to forward DNS queries to. </p>
-    pub fn set_ipv6(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6 = input;
         self
     }

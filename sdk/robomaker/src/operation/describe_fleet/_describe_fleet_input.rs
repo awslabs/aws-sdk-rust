@@ -4,15 +4,15 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
-    pub fleet: std::option::Option<std::string::String>,
+    pub fleet: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFleetInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(&self) -> std::option::Option<&str> {
+    pub fn fleet(&self) -> ::std::option::Option<&str> {
         self.fleet.as_deref()
     }
 }
@@ -25,28 +25,32 @@ impl DescribeFleetInput {
 
 /// A builder for [`DescribeFleetInput`](crate::operation::describe_fleet::DescribeFleetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeFleetInputBuilder {
-    pub(crate) fleet: std::option::Option<std::string::String>,
+    pub(crate) fleet: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFleetInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet = Some(input.into());
+    pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeFleetInput`](crate::operation::describe_fleet::DescribeFleetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_fleet::DescribeFleetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_fleet::DescribeFleetInput { fleet: self.fleet })
+        ::std::result::Result::Ok(crate::operation::describe_fleet::DescribeFleetInput {
+            fleet: self.fleet,
+        })
     }
 }

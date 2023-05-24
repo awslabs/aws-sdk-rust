@@ -2,30 +2,30 @@
 
 /// <p>Contains the output of DescribeReservedInstancesOfferings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsOutput {
     /// <p>A list of Reserved Instances offerings.</p>
     #[doc(hidden)]
     pub reserved_instances_offerings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstancesOffering>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesOfferingsOutput {
     /// <p>A list of Reserved Instances offerings.</p>
     pub fn reserved_instances_offerings(
         &self,
-    ) -> std::option::Option<&[crate::types::ReservedInstancesOffering]> {
+    ) -> ::std::option::Option<&[crate::types::ReservedInstancesOffering]> {
         self.reserved_instances_offerings.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedInstancesOfferingsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedInstancesOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl DescribeReservedInstancesOfferingsOutput {
 
 /// A builder for [`DescribeReservedInstancesOfferingsOutput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedInstancesOfferingsOutputBuilder {
     pub(crate) reserved_instances_offerings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstancesOffering>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesOfferingsOutputBuilder {
@@ -58,24 +60,24 @@ impl DescribeReservedInstancesOfferingsOutputBuilder {
     ) -> Self {
         let mut v = self.reserved_instances_offerings.unwrap_or_default();
         v.push(input);
-        self.reserved_instances_offerings = Some(v);
+        self.reserved_instances_offerings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Reserved Instances offerings.</p>
     pub fn set_reserved_instances_offerings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesOffering>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>>,
     ) -> Self {
         self.reserved_instances_offerings = input;
         self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

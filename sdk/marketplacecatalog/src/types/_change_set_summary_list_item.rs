@@ -2,64 +2,64 @@
 
 /// <p>A summary of a change set returned in a list of change sets when the <code>ListChangeSets</code> action is called.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSetSummaryListItem {
     /// <p>The unique identifier for a change set.</p>
     #[doc(hidden)]
-    pub change_set_id: std::option::Option<std::string::String>,
+    pub change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
     #[doc(hidden)]
-    pub change_set_arn: std::option::Option<std::string::String>,
+    pub change_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The non-unique name for the change set.</p>
     #[doc(hidden)]
-    pub change_set_name: std::option::Option<std::string::String>,
+    pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<std::string::String>,
+    pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<std::string::String>,
+    pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the change set.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ChangeStatus>,
+    pub status: ::std::option::Option<crate::types::ChangeStatus>,
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
     #[doc(hidden)]
-    pub entity_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub entity_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     #[doc(hidden)]
-    pub failure_code: std::option::Option<crate::types::FailureCode>,
+    pub failure_code: ::std::option::Option<crate::types::FailureCode>,
 }
 impl ChangeSetSummaryListItem {
     /// <p>The unique identifier for a change set.</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> ::std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+    pub fn change_set_arn(&self) -> ::std::option::Option<&str> {
         self.change_set_arn.as_deref()
     }
     /// <p>The non-unique name for the change set.</p>
-    pub fn change_set_name(&self) -> std::option::Option<&str> {
+    pub fn change_set_name(&self) -> ::std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
     /// <p>The current status of the change set.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ChangeStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ChangeStatus> {
         self.status.as_ref()
     }
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-    pub fn entity_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn entity_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.entity_id_list.as_deref()
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::FailureCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::FailureCode> {
         self.failure_code.as_ref()
     }
 }
@@ -72,75 +72,95 @@ impl ChangeSetSummaryListItem {
 
 /// A builder for [`ChangeSetSummaryListItem`](crate::types::ChangeSetSummaryListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeSetSummaryListItemBuilder {
-    pub(crate) change_set_id: std::option::Option<std::string::String>,
-    pub(crate) change_set_arn: std::option::Option<std::string::String>,
-    pub(crate) change_set_name: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<std::string::String>,
-    pub(crate) end_time: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ChangeStatus>,
-    pub(crate) entity_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) failure_code: std::option::Option<crate::types::FailureCode>,
+    pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) change_set_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) end_time: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ChangeStatus>,
+    pub(crate) entity_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_code: ::std::option::Option<crate::types::FailureCode>,
 }
 impl ChangeSetSummaryListItemBuilder {
     /// <p>The unique identifier for a change set.</p>
-    pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_set_id = Some(input.into());
+    pub fn change_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.change_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a change set.</p>
-    pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_set_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.change_set_id = input;
         self
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_set_arn = Some(input.into());
+    pub fn change_set_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.change_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_set_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.change_set_arn = input;
         self
     }
     /// <p>The non-unique name for the change set.</p>
-    pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_set_name = Some(input.into());
+    pub fn change_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The non-unique name for the change set.</p>
-    pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_set_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.change_set_name = input;
         self
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
-    pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_time = Some(input.into());
+    pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
-    pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_time = Some(input.into());
+    pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The current status of the change set.</p>
     pub fn status(mut self, input: crate::types::ChangeStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the change set.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ChangeStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeStatus>) -> Self {
         self.status = input;
         self
     }
@@ -149,29 +169,32 @@ impl ChangeSetSummaryListItemBuilder {
     /// To override the contents of this collection use [`set_entity_id_list`](Self::set_entity_id_list).
     ///
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
-    pub fn entity_id_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn entity_id_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.entity_id_list.unwrap_or_default();
         v.push(input.into());
-        self.entity_id_list = Some(v);
+        self.entity_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>
     pub fn set_entity_id_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.entity_id_list = input;
         self
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub fn failure_code(mut self, input: crate::types::FailureCode) -> Self {
-        self.failure_code = Some(input);
+        self.failure_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub fn set_failure_code(
         mut self,
-        input: std::option::Option<crate::types::FailureCode>,
+        input: ::std::option::Option<crate::types::FailureCode>,
     ) -> Self {
         self.failure_code = input;
         self

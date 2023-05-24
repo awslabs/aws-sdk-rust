@@ -61,13 +61,13 @@
 /// <p>The historical metric names.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HistoricalMetricName {
     #[allow(missing_docs)] // documentation missing in model
@@ -123,7 +123,7 @@ pub enum HistoricalMetricName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HistoricalMetricName {
+impl ::std::convert::From<&str> for HistoricalMetricName {
     fn from(s: &str) -> Self {
         match s {
             "ABANDON_TIME" => HistoricalMetricName::AbandonTime,
@@ -161,11 +161,11 @@ impl std::convert::From<&str> for HistoricalMetricName {
         }
     }
 }
-impl std::str::FromStr for HistoricalMetricName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HistoricalMetricName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HistoricalMetricName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HistoricalMetricName::from(s))
     }
 }
 impl HistoricalMetricName {
@@ -235,7 +235,7 @@ impl HistoricalMetricName {
         ]
     }
 }
-impl AsRef<str> for HistoricalMetricName {
+impl ::std::convert::AsRef<str> for HistoricalMetricName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

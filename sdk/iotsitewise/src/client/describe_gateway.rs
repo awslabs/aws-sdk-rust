@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeGateway`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_id(impl Into<String>)`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::gateway_id) / [`set_gateway_id(Option<String>)`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::set_gateway_id): <p>The ID of the gateway device.</p>
+    ///   - [`gateway_id(impl ::std::convert::Into<String>)`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::gateway_id) / [`set_gateway_id(Option<String>)`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::set_gateway_id): <p>The ID of the gateway device.</p>
     /// - On success, responds with [`DescribeGatewayOutput`](crate::operation::describe_gateway::DescribeGatewayOutput) with field(s):
     ///   - [`gateway_id(Option<String>)`](crate::operation::describe_gateway::DescribeGatewayOutput::gateway_id): <p>The ID of the gateway device.</p>
     ///   - [`gateway_name(Option<String>)`](crate::operation::describe_gateway::DescribeGatewayOutput::gateway_name): <p>The name of the gateway.</p>

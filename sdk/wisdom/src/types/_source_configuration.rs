@@ -2,7 +2,7 @@
 
 /// <p>Configuration information about the external data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SourceConfiguration {
     /// <p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>
     AppIntegrations(crate::types::AppIntegrationsConfiguration),
@@ -22,11 +22,11 @@ impl SourceConfiguration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_app_integrations(
         &self,
-    ) -> std::result::Result<&crate::types::AppIntegrationsConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::AppIntegrationsConfiguration, &Self> {
         if let SourceConfiguration::AppIntegrations(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AppIntegrations`](crate::types::SourceConfiguration::AppIntegrations).

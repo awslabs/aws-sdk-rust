@@ -2,26 +2,26 @@
 
 /// <p>Contains the configuration parameters for a POST Object restore job. S3 Batch Operations passes every object to the underlying <code>RestoreObject</code> API operation. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">RestoreObject</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3InitiateRestoreObjectOperation {
     /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
     /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
     /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
     #[doc(hidden)]
-    pub expiration_in_days: std::option::Option<i32>,
+    pub expiration_in_days: ::std::option::Option<i32>,
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
     #[doc(hidden)]
-    pub glacier_job_tier: std::option::Option<crate::types::S3GlacierJobTier>,
+    pub glacier_job_tier: ::std::option::Option<crate::types::S3GlacierJobTier>,
 }
 impl S3InitiateRestoreObjectOperation {
     /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
     /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
     /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
-    pub fn expiration_in_days(&self) -> std::option::Option<i32> {
+    pub fn expiration_in_days(&self) -> ::std::option::Option<i32> {
         self.expiration_in_days
     }
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
-    pub fn glacier_job_tier(&self) -> std::option::Option<&crate::types::S3GlacierJobTier> {
+    pub fn glacier_job_tier(&self) -> ::std::option::Option<&crate::types::S3GlacierJobTier> {
         self.glacier_job_tier.as_ref()
     }
 }
@@ -34,35 +34,37 @@ impl S3InitiateRestoreObjectOperation {
 
 /// A builder for [`S3InitiateRestoreObjectOperation`](crate::types::S3InitiateRestoreObjectOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3InitiateRestoreObjectOperationBuilder {
-    pub(crate) expiration_in_days: std::option::Option<i32>,
-    pub(crate) glacier_job_tier: std::option::Option<crate::types::S3GlacierJobTier>,
+    pub(crate) expiration_in_days: ::std::option::Option<i32>,
+    pub(crate) glacier_job_tier: ::std::option::Option<crate::types::S3GlacierJobTier>,
 }
 impl S3InitiateRestoreObjectOperationBuilder {
     /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
     /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
     /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
     pub fn expiration_in_days(mut self, input: i32) -> Self {
-        self.expiration_in_days = Some(input);
+        self.expiration_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1 or greater.</p>
     /// <p>Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying <code>ExpirationInDays</code> results in restore request failure.</p>
     /// <p>S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs. </p>
-    pub fn set_expiration_in_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_expiration_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expiration_in_days = input;
         self
     }
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
     pub fn glacier_job_tier(mut self, input: crate::types::S3GlacierJobTier) -> Self {
-        self.glacier_job_tier = Some(input);
+        self.glacier_job_tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the <code>EXPEDITED</code> retrieval tier.</p>
     pub fn set_glacier_job_tier(
         mut self,
-        input: std::option::Option<crate::types::S3GlacierJobTier>,
+        input: ::std::option::Option<crate::types::S3GlacierJobTier>,
     ) -> Self {
         self.glacier_job_tier = input;
         self

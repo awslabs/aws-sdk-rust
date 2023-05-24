@@ -3,12 +3,12 @@
 /// <p>The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code> can be specified.</p>
 /// <p>This object is specified in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html">CreateTrialComponent</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum TrialComponentParameterValue {
     /// <p>The numeric value of a numeric hyperparameter. If you specify a value for this parameter, you can't specify the <code>StringValue</code> parameter.</p>
     NumberValue(f64),
     /// <p>The string value of a categorical hyperparameter. If you specify a value for this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
-    StringValue(std::string::String),
+    StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -22,24 +22,24 @@ pub enum TrialComponentParameterValue {
 impl TrialComponentParameterValue {
     /// Tries to convert the enum instance into [`NumberValue`](crate::types::TrialComponentParameterValue::NumberValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_number_value(&self) -> std::result::Result<&f64, &Self> {
+    pub fn as_number_value(&self) -> ::std::result::Result<&f64, &Self> {
         if let TrialComponentParameterValue::NumberValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`NumberValue`](crate::types::TrialComponentParameterValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
         self.as_number_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`StringValue`](crate::types::TrialComponentParameterValue::StringValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`StringValue`](crate::types::TrialComponentParameterValue::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let TrialComponentParameterValue::StringValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::types::TrialComponentParameterValue::StringValue).

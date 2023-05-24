@@ -2,22 +2,22 @@
 
 /// <p>Description of ephemeris.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EphemerisDescription {
     /// <p>Source S3 object used for the ephemeris.</p>
     #[doc(hidden)]
-    pub source_s3_object: std::option::Option<crate::types::S3Object>,
+    pub source_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>Supplied ephemeris data.</p>
     #[doc(hidden)]
-    pub ephemeris_data: std::option::Option<std::string::String>,
+    pub ephemeris_data: ::std::option::Option<::std::string::String>,
 }
 impl EphemerisDescription {
     /// <p>Source S3 object used for the ephemeris.</p>
-    pub fn source_s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn source_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.source_s3_object.as_ref()
     }
     /// <p>Supplied ephemeris data.</p>
-    pub fn ephemeris_data(&self) -> std::option::Option<&str> {
+    pub fn ephemeris_data(&self) -> ::std::option::Option<&str> {
         self.ephemeris_data.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl EphemerisDescription {
 
 /// A builder for [`EphemerisDescription`](crate::types::EphemerisDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EphemerisDescriptionBuilder {
-    pub(crate) source_s3_object: std::option::Option<crate::types::S3Object>,
-    pub(crate) ephemeris_data: std::option::Option<std::string::String>,
+    pub(crate) source_s3_object: ::std::option::Option<crate::types::S3Object>,
+    pub(crate) ephemeris_data: ::std::option::Option<::std::string::String>,
 }
 impl EphemerisDescriptionBuilder {
     /// <p>Source S3 object used for the ephemeris.</p>
     pub fn source_s3_object(mut self, input: crate::types::S3Object) -> Self {
-        self.source_s3_object = Some(input);
+        self.source_s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>Source S3 object used for the ephemeris.</p>
     pub fn set_source_s3_object(
         mut self,
-        input: std::option::Option<crate::types::S3Object>,
+        input: ::std::option::Option<crate::types::S3Object>,
     ) -> Self {
         self.source_s3_object = input;
         self
     }
     /// <p>Supplied ephemeris data.</p>
-    pub fn ephemeris_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ephemeris_data = Some(input.into());
+    pub fn ephemeris_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ephemeris_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Supplied ephemeris data.</p>
-    pub fn set_ephemeris_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ephemeris_data(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ephemeris_data = input;
         self
     }

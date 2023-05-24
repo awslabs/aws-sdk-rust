@@ -2,22 +2,22 @@
 
 /// <p>Includes details about the failed items.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedItemDetails {
     /// <p>The status code of a failed item.</p>
     #[doc(hidden)]
-    pub failure_code: std::option::Option<crate::types::FailedItemErrorCode>,
+    pub failure_code: ::std::option::Option<crate::types::FailedItemErrorCode>,
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
     #[doc(hidden)]
-    pub retryable: std::option::Option<bool>,
+    pub retryable: ::std::option::Option<bool>,
 }
 impl FailedItemDetails {
     /// <p>The status code of a failed item.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::FailedItemErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::FailedItemErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
-    pub fn retryable(&self) -> std::option::Option<bool> {
+    pub fn retryable(&self) -> ::std::option::Option<bool> {
         self.retryable
     }
 }
@@ -30,32 +30,34 @@ impl FailedItemDetails {
 
 /// A builder for [`FailedItemDetails`](crate::types::FailedItemDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedItemDetailsBuilder {
-    pub(crate) failure_code: std::option::Option<crate::types::FailedItemErrorCode>,
-    pub(crate) retryable: std::option::Option<bool>,
+    pub(crate) failure_code: ::std::option::Option<crate::types::FailedItemErrorCode>,
+    pub(crate) retryable: ::std::option::Option<bool>,
 }
 impl FailedItemDetailsBuilder {
     /// <p>The status code of a failed item.</p>
     pub fn failure_code(mut self, input: crate::types::FailedItemErrorCode) -> Self {
-        self.failure_code = Some(input);
+        self.failure_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code of a failed item.</p>
     pub fn set_failure_code(
         mut self,
-        input: std::option::Option<crate::types::FailedItemErrorCode>,
+        input: ::std::option::Option<crate::types::FailedItemErrorCode>,
     ) -> Self {
         self.failure_code = input;
         self
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
     pub fn retryable(mut self, input: bool) -> Self {
-        self.retryable = Some(input);
+        self.retryable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
-    pub fn set_retryable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_retryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retryable = input;
         self
     }

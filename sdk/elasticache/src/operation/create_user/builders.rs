@@ -6,56 +6,59 @@ pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilde
 /// Fluent builder constructing a request to `CreateUser`.
 ///
 /// <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_user::builders::CreateUserInputBuilder,
 }
 impl CreateUserFluentBuilder {
     /// Creates a new `CreateUser`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_user::CreateUser,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_user::CreateUserOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreateUserFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_user::CreateUserOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the user.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
     /// <p>The ID of the user.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
     /// <p>The username of the user.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
     /// <p>The username of the user.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
     }
     /// <p>The current supported value is Redis. </p>
-    pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
     /// <p>The current supported value is Redis. </p>
-    pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
@@ -109,25 +112,31 @@ impl CreateUserFluentBuilder {
     /// To override the contents of this collection use [`set_passwords`](Self::set_passwords).
     ///
     /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
-    pub fn passwords(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn passwords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.passwords(input.into());
         self
     }
     /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
     pub fn set_passwords(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_passwords(input);
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_string(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.access_string(input.into());
         self
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn set_access_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_string(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_access_string(input);
         self
     }
@@ -137,7 +146,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>Indicates a password is not required for this user.</p>
-    pub fn set_no_password_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_password_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_no_password_required(input);
         self
     }
@@ -153,7 +162,7 @@ impl CreateUserFluentBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -166,7 +175,7 @@ impl CreateUserFluentBuilder {
     /// <p>Specifies how to authenticate the user.</p>
     pub fn set_authentication_mode(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationMode>,
+        input: ::std::option::Option<crate::types::AuthenticationMode>,
     ) -> Self {
         self.inner = self.inner.set_authentication_mode(input);
         self

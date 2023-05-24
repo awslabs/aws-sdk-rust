@@ -38,13 +38,13 @@
 /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AuthenticationStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AuthenticationStrategy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AuthenticationStrategy {
+impl ::std::convert::From<&str> for AuthenticationStrategy {
     fn from(s: &str) -> Self {
         match s {
             "LDAP" => AuthenticationStrategy::Ldap,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AuthenticationStrategy {
         }
     }
 }
-impl std::str::FromStr for AuthenticationStrategy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AuthenticationStrategy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthenticationStrategy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AuthenticationStrategy::from(s))
     }
 }
 impl AuthenticationStrategy {
@@ -86,7 +86,7 @@ impl AuthenticationStrategy {
         &["LDAP", "SIMPLE"]
     }
 }
-impl AsRef<str> for AuthenticationStrategy {
+impl ::std::convert::AsRef<str> for AuthenticationStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

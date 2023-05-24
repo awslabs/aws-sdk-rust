@@ -38,13 +38,13 @@
 /// When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AudioTypeControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AudioTypeControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AudioTypeControl {
+impl ::std::convert::From<&str> for AudioTypeControl {
     fn from(s: &str) -> Self {
         match s {
             "FOLLOW_INPUT" => AudioTypeControl::FollowInput,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AudioTypeControl {
         }
     }
 }
-impl std::str::FromStr for AudioTypeControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AudioTypeControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioTypeControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AudioTypeControl::from(s))
     }
 }
 impl AudioTypeControl {
@@ -86,7 +86,7 @@ impl AudioTypeControl {
         &["FOLLOW_INPUT", "USE_CONFIGURED"]
     }
 }
-impl AsRef<str> for AudioTypeControl {
+impl ::std::convert::AsRef<str> for AudioTypeControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

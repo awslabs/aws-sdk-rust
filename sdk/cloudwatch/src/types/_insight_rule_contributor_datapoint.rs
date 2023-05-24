@@ -3,22 +3,22 @@
 /// <p>One data point related to one contributor.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightRuleContributorDatapoint {
     /// <p>The timestamp of the data point.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     #[doc(hidden)]
-    pub approximate_value: std::option::Option<f64>,
+    pub approximate_value: ::std::option::Option<f64>,
 }
 impl InsightRuleContributorDatapoint {
     /// <p>The timestamp of the data point.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
-    pub fn approximate_value(&self) -> std::option::Option<f64> {
+    pub fn approximate_value(&self) -> ::std::option::Option<f64> {
         self.approximate_value
     }
 }
@@ -31,29 +31,34 @@ impl InsightRuleContributorDatapoint {
 
 /// A builder for [`InsightRuleContributorDatapoint`](crate::types::InsightRuleContributorDatapoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InsightRuleContributorDatapointBuilder {
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) approximate_value: std::option::Option<f64>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) approximate_value: ::std::option::Option<f64>,
 }
 impl InsightRuleContributorDatapointBuilder {
     /// <p>The timestamp of the data point.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the data point.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub fn approximate_value(mut self, input: f64) -> Self {
-        self.approximate_value = Some(input);
+        self.approximate_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The approximate value that this contributor added during this timestamp.</p>
-    pub fn set_approximate_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_approximate_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.approximate_value = input;
         self
     }

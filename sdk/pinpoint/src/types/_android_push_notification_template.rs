@@ -2,7 +2,7 @@
 
 /// <p>Specifies channel-specific content and settings for a message template that can be used in push notifications that are sent through the ADM (Amazon Device Messaging), Baidu (Baidu Cloud Push), or GCM (Firebase Cloud Messaging, formerly Google Cloud Messaging) channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AndroidPushNotificationTemplate {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
     /// <ul>
@@ -11,31 +11,31 @@ pub struct AndroidPushNotificationTemplate {
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::Action>,
+    pub action: ::std::option::Option<crate::types::Action>,
     /// <p>The message body to use in a push notification that's based on the message template.</p>
     #[doc(hidden)]
-    pub body: std::option::Option<std::string::String>,
+    pub body: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
     #[doc(hidden)]
-    pub image_icon_url: std::option::Option<std::string::String>,
+    pub image_icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL of an image to display in a push notification that's based on the message template.</p>
     #[doc(hidden)]
-    pub image_url: std::option::Option<std::string::String>,
+    pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>The raw, JSON-formatted string to use as the payload for a push notification that's based on the message template. If specified, this value overrides all other content for the message template.</p>
     #[doc(hidden)]
-    pub raw_content: std::option::Option<std::string::String>,
+    pub raw_content: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
     #[doc(hidden)]
-    pub small_image_icon_url: std::option::Option<std::string::String>,
+    pub small_image_icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
     #[doc(hidden)]
-    pub sound: std::option::Option<std::string::String>,
+    pub sound: ::std::option::Option<::std::string::String>,
     /// <p>The title to use in a push notification that's based on the message template. This title appears above the notification message on a recipient's device.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
 }
 impl AndroidPushNotificationTemplate {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
@@ -44,39 +44,39 @@ impl AndroidPushNotificationTemplate {
     /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
-    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>The message body to use in a push notification that's based on the message template.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<&str> {
         self.body.as_deref()
     }
     /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
-    pub fn image_icon_url(&self) -> std::option::Option<&str> {
+    pub fn image_icon_url(&self) -> ::std::option::Option<&str> {
         self.image_icon_url.as_deref()
     }
     /// <p>The URL of an image to display in a push notification that's based on the message template.</p>
-    pub fn image_url(&self) -> std::option::Option<&str> {
+    pub fn image_url(&self) -> ::std::option::Option<&str> {
         self.image_url.as_deref()
     }
     /// <p>The raw, JSON-formatted string to use as the payload for a push notification that's based on the message template. If specified, this value overrides all other content for the message template.</p>
-    pub fn raw_content(&self) -> std::option::Option<&str> {
+    pub fn raw_content(&self) -> ::std::option::Option<&str> {
         self.raw_content.as_deref()
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
-    pub fn small_image_icon_url(&self) -> std::option::Option<&str> {
+    pub fn small_image_icon_url(&self) -> ::std::option::Option<&str> {
         self.small_image_icon_url.as_deref()
     }
     /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
-    pub fn sound(&self) -> std::option::Option<&str> {
+    pub fn sound(&self) -> ::std::option::Option<&str> {
         self.sound.as_deref()
     }
     /// <p>The title to use in a push notification that's based on the message template. This title appears above the notification message on a recipient's device.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
 }
@@ -89,17 +89,19 @@ impl AndroidPushNotificationTemplate {
 
 /// A builder for [`AndroidPushNotificationTemplate`](crate::types::AndroidPushNotificationTemplate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AndroidPushNotificationTemplateBuilder {
-    pub(crate) action: std::option::Option<crate::types::Action>,
-    pub(crate) body: std::option::Option<std::string::String>,
-    pub(crate) image_icon_url: std::option::Option<std::string::String>,
-    pub(crate) image_url: std::option::Option<std::string::String>,
-    pub(crate) raw_content: std::option::Option<std::string::String>,
-    pub(crate) small_image_icon_url: std::option::Option<std::string::String>,
-    pub(crate) sound: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
+    pub(crate) action: ::std::option::Option<crate::types::Action>,
+    pub(crate) body: ::std::option::Option<::std::string::String>,
+    pub(crate) image_icon_url: ::std::option::Option<::std::string::String>,
+    pub(crate) image_url: ::std::option::Option<::std::string::String>,
+    pub(crate) raw_content: ::std::option::Option<::std::string::String>,
+    pub(crate) small_image_icon_url: ::std::option::Option<::std::string::String>,
+    pub(crate) sound: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl AndroidPushNotificationTemplateBuilder {
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
@@ -109,7 +111,7 @@ impl AndroidPushNotificationTemplateBuilder {
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn action(mut self, input: crate::types::Action) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p>
@@ -118,90 +120,99 @@ impl AndroidPushNotificationTemplateBuilder {
     /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
         self
     }
     /// <p>The message body to use in a push notification that's based on the message template.</p>
-    pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.body = Some(input.into());
+    pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message body to use in a push notification that's based on the message template.</p>
-    pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
     }
     /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
-    pub fn image_icon_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_icon_url = Some(input.into());
+    pub fn image_icon_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
-    pub fn set_image_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_icon_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.image_icon_url = input;
         self
     }
     /// <p>The URL of an image to display in a push notification that's based on the message template.</p>
-    pub fn image_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_url = Some(input.into());
+    pub fn image_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of an image to display in a push notification that's based on the message template.</p>
-    pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_url = input;
         self
     }
     /// <p>The raw, JSON-formatted string to use as the payload for a push notification that's based on the message template. If specified, this value overrides all other content for the message template.</p>
-    pub fn raw_content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raw_content = Some(input.into());
+    pub fn raw_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.raw_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The raw, JSON-formatted string to use as the payload for a push notification that's based on the message template. If specified, this value overrides all other content for the message template.</p>
-    pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_raw_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_content = input;
         self
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
-    pub fn small_image_icon_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.small_image_icon_url = Some(input.into());
+    pub fn small_image_icon_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.small_image_icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
     pub fn set_small_image_icon_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.small_image_icon_url = input;
         self
     }
     /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
-    pub fn sound(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sound = Some(input.into());
+    pub fn sound(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sound = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
-    pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sound(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sound = input;
         self
     }
     /// <p>The title to use in a push notification that's based on the message template. This title appears above the notification message on a recipient's device.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title to use in a push notification that's based on the message template. This title appears above the notification message on a recipient's device.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }

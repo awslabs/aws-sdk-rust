@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TermInYears {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum TermInYears {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TermInYears {
+impl ::std::convert::From<&str> for TermInYears {
     fn from(s: &str) -> Self {
         match s {
             "ONE_YEAR" => TermInYears::OneYear,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for TermInYears {
         }
     }
 }
-impl std::str::FromStr for TermInYears {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TermInYears {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TermInYears::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TermInYears::from(s))
     }
 }
 impl TermInYears {
@@ -84,7 +84,7 @@ impl TermInYears {
         &["ONE_YEAR", "THREE_YEARS"]
     }
 }
-impl AsRef<str> for TermInYears {
+impl ::std::convert::AsRef<str> for TermInYears {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

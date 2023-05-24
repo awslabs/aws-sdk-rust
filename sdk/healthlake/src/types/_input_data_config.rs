@@ -2,10 +2,10 @@
 
 /// <p> The input properties for an import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum InputDataConfig {
     /// <p>The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
-    S3Uri(std::string::String),
+    S3Uri(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum InputDataConfig {
 }
 impl InputDataConfig {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`S3Uri`](crate::types::InputDataConfig::S3Uri), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`S3Uri`](crate::types::InputDataConfig::S3Uri), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_uri(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_s3_uri(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let InputDataConfig::S3Uri(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3Uri`](crate::types::InputDataConfig::S3Uri).

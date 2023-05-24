@@ -2,50 +2,51 @@
 
 /// <p>The details of the SIP media application, including name and endpoints. An AWS account can have multiple SIP media applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SipMediaApplication {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
-    pub sip_media_application_id: std::option::Option<std::string::String>,
+    pub sip_media_application_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Region in which the SIP media application is created.</p>
     #[doc(hidden)]
-    pub aws_region: std::option::Option<std::string::String>,
+    pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SIP media application.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
     #[doc(hidden)]
-    pub endpoints: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub endpoints:
+        ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SipMediaApplication {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> ::std::option::Option<&str> {
         self.sip_media_application_id.as_deref()
     }
     /// <p>The AWS Region in which the SIP media application is created.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<&str> {
         self.aws_region.as_deref()
     }
     /// <p>The name of the SIP media application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
+    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::SipMediaApplicationEndpoint]> {
         self.endpoints.as_deref()
     }
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -58,47 +59,52 @@ impl SipMediaApplication {
 
 /// A builder for [`SipMediaApplication`](crate::types::SipMediaApplication).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SipMediaApplicationBuilder {
-    pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
-    pub(crate) aws_region: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) sip_media_application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_region: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoints:
-        std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SipMediaApplicationBuilder {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sip_media_application_id = Some(input.into());
+    pub fn sip_media_application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sip_media_application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SIP media application ID.</p>
     pub fn set_sip_media_application_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sip_media_application_id = input;
         self
     }
     /// <p>The AWS Region in which the SIP media application is created.</p>
-    pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_region = Some(input.into());
+    pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Region in which the SIP media application is created.</p>
-    pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
     }
     /// <p>The name of the SIP media application.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SIP media application.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -110,39 +116,39 @@ impl SipMediaApplicationBuilder {
     pub fn endpoints(mut self, input: crate::types::SipMediaApplicationEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
         v.push(input);
-        self.endpoints = Some(v);
+        self.endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.</p>
     pub fn set_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SipMediaApplicationEndpoint>>,
     ) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The SIP media application creation timestamp, in ISO 8601 format.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_timestamp = Some(input);
+    pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The SIP media application updated timestamp, in ISO 8601 format.</p>
     pub fn set_updated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_timestamp = input;
         self

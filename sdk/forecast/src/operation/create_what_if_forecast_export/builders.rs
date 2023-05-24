@@ -22,29 +22,29 @@ pub use crate::operation::create_what_if_forecast_export::_create_what_if_foreca
 /// <p>To get a list of all your what-if forecast export jobs, use the <code>ListWhatIfForecastExports</code> operation.</p> <note>
 /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your Amazon S3 bucket. To get the status, use the <code>DescribeWhatIfForecastExport</code> operation.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWhatIfForecastExportFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_what_if_forecast_export::builders::CreateWhatIfForecastExportInputBuilder,
 }
 impl CreateWhatIfForecastExportFluentBuilder {
     /// Creates a new `CreateWhatIfForecastExport`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExport,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError,
         >,
     > {
@@ -52,30 +52,33 @@ impl CreateWhatIfForecastExportFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -88,23 +91,26 @@ impl CreateWhatIfForecastExportFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the what-if forecast to export.</p>
-    pub fn what_if_forecast_export_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn what_if_forecast_export_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.what_if_forecast_export_name(input.into());
         self
     }
     /// <p>The name of the what-if forecast to export.</p>
     pub fn set_what_if_forecast_export_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_what_if_forecast_export_name(input);
         self
@@ -114,14 +120,17 @@ impl CreateWhatIfForecastExportFluentBuilder {
     /// To override the contents of this collection use [`set_what_if_forecast_arns`](Self::set_what_if_forecast_arns).
     ///
     /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
-    pub fn what_if_forecast_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn what_if_forecast_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.what_if_forecast_arns(input.into());
         self
     }
     /// <p>The list of what-if forecast Amazon Resource Names (ARNs) to export.</p>
     pub fn set_what_if_forecast_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_what_if_forecast_arns(input);
         self
@@ -136,7 +145,7 @@ impl CreateWhatIfForecastExportFluentBuilder {
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::DataDestination>,
+        input: ::std::option::Option<crate::types::DataDestination>,
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
@@ -153,18 +162,18 @@ impl CreateWhatIfForecastExportFluentBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format(input.into());
         self
     }
     /// <p>The format of the exported data, CSV or PARQUET.</p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }

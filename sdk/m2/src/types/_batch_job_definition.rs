@@ -2,7 +2,7 @@
 
 /// <p>Defines the details of a batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum BatchJobDefinition {
     /// <p>Specifies a file containing a batch job definition.</p>
     FileBatchJobDefinition(crate::types::FileBatchJobDefinition),
@@ -23,11 +23,11 @@ impl BatchJobDefinition {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file_batch_job_definition(
         &self,
-    ) -> std::result::Result<&crate::types::FileBatchJobDefinition, &Self> {
+    ) -> ::std::result::Result<&crate::types::FileBatchJobDefinition, &Self> {
         if let BatchJobDefinition::FileBatchJobDefinition(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`FileBatchJobDefinition`](crate::types::BatchJobDefinition::FileBatchJobDefinition).
@@ -38,11 +38,11 @@ impl BatchJobDefinition {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_script_batch_job_definition(
         &self,
-    ) -> std::result::Result<&crate::types::ScriptBatchJobDefinition, &Self> {
+    ) -> ::std::result::Result<&crate::types::ScriptBatchJobDefinition, &Self> {
         if let BatchJobDefinition::ScriptBatchJobDefinition(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ScriptBatchJobDefinition`](crate::types::BatchJobDefinition::ScriptBatchJobDefinition).

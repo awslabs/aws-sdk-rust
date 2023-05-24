@@ -6,29 +6,29 @@ pub use crate::operation::list_resources_for_tag_option::_list_resources_for_tag
 /// Fluent builder constructing a request to `ListResourcesForTagOption`.
 ///
 /// <p>Lists the resources associated with the specified TagOption.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListResourcesForTagOptionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder,
 }
 impl ListResourcesForTagOptionFluentBuilder {
     /// Creates a new `ListResourcesForTagOption`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_resources_for_tag_option::ListResourcesForTagOption,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListResourcesForTagOptionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListResourcesForTagOptionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError,
         >,
     > {
@@ -87,12 +90,18 @@ impl ListResourcesForTagOptionFluentBuilder {
         crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator::new(self.handle, self.inner)
     }
     /// <p>The TagOption identifier.</p>
-    pub fn tag_option_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_option_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tag_option_id(input.into());
         self
     }
     /// <p>The TagOption identifier.</p>
-    pub fn set_tag_option_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_option_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_tag_option_id(input);
         self
     }
@@ -101,7 +110,10 @@ impl ListResourcesForTagOptionFluentBuilder {
     /// <li> <p> <code>Portfolio</code> </p> </li>
     /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
@@ -110,7 +122,10 @@ impl ListResourcesForTagOptionFluentBuilder {
     /// <li> <p> <code>Portfolio</code> </p> </li>
     /// <li> <p> <code>Product</code> </p> </li>
     /// </ul>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -120,17 +135,17 @@ impl ListResourcesForTagOptionFluentBuilder {
         self
     }
     /// <p>The maximum number of items to return with this call.</p>
-    pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn page_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.page_token(input.into());
         self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_page_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_page_token(input);
         self
     }

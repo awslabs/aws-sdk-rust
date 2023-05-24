@@ -2,27 +2,27 @@
 
 /// <p>The output from the RegisterCertificate operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterCertificateOutput {
     /// <p>The certificate ARN.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The certificate identifier.</p>
     #[doc(hidden)]
-    pub certificate_id: std::option::Option<std::string::String>,
+    pub certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterCertificateOutput {
     /// <p>The certificate ARN.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The certificate identifier.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RegisterCertificateOutput {
+impl ::aws_http::request_id::RequestId for RegisterCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,30 +38,44 @@ impl RegisterCertificateOutput {
 
 /// A builder for [`RegisterCertificateOutput`](crate::operation::register_certificate::RegisterCertificateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterCertificateOutputBuilder {
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_id: std::option::Option<std::string::String>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterCertificateOutputBuilder {
     /// <p>The certificate ARN.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate ARN.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The certificate identifier.</p>
-    pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_id = Some(input.into());
+    pub fn certificate_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate identifier.</p>
-    pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_id = input;
         self
     }

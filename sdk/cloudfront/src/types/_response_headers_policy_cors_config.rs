@@ -3,81 +3,81 @@
 /// <p>A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS). CloudFront adds these headers to HTTP responses that it sends for CORS requests that match a cache behavior associated with this response headers policy.</p>
 /// <p>For more information about CORS, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS)</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCorsConfig {
     /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
     pub access_control_allow_origins:
-        std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins>,
     /// <p>A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
     pub access_control_allow_headers:
-        std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders>,
     /// <p>A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
     pub access_control_allow_methods:
-        std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowMethods>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowMethods>,
     /// <p>A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Credentials</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
-    pub access_control_allow_credentials: std::option::Option<bool>,
+    pub access_control_allow_credentials: ::std::option::Option<bool>,
     /// <p>A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
     pub access_control_expose_headers:
-        std::option::Option<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders>,
     /// <p>A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Max-Age</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
-    pub access_control_max_age_sec: std::option::Option<i32>,
+    pub access_control_max_age_sec: ::std::option::Option<i32>,
     /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the origin with the ones specified in this response headers policy.</p>
     #[doc(hidden)]
-    pub origin_override: std::option::Option<bool>,
+    pub origin_override: ::std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyCorsConfig {
     /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
     pub fn access_control_allow_origins(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyAccessControlAllowOrigins> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyAccessControlAllowOrigins> {
         self.access_control_allow_origins.as_ref()
     }
     /// <p>A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
     pub fn access_control_allow_headers(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyAccessControlAllowHeaders> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyAccessControlAllowHeaders> {
         self.access_control_allow_headers.as_ref()
     }
     /// <p>A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
     pub fn access_control_allow_methods(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyAccessControlAllowMethods> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyAccessControlAllowMethods> {
         self.access_control_allow_methods.as_ref()
     }
     /// <p>A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Credentials</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a> in the MDN Web Docs.</p>
-    pub fn access_control_allow_credentials(&self) -> std::option::Option<bool> {
+    pub fn access_control_allow_credentials(&self) -> ::std::option::Option<bool> {
         self.access_control_allow_credentials
     }
     /// <p>A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
     pub fn access_control_expose_headers(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseHeadersPolicyAccessControlExposeHeaders> {
+    ) -> ::std::option::Option<&crate::types::ResponseHeadersPolicyAccessControlExposeHeaders> {
         self.access_control_expose_headers.as_ref()
     }
     /// <p>A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Max-Age</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a> in the MDN Web Docs.</p>
-    pub fn access_control_max_age_sec(&self) -> std::option::Option<i32> {
+    pub fn access_control_max_age_sec(&self) -> ::std::option::Option<i32> {
         self.access_control_max_age_sec
     }
     /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the origin with the ones specified in this response headers policy.</p>
-    pub fn origin_override(&self) -> std::option::Option<bool> {
+    pub fn origin_override(&self) -> ::std::option::Option<bool> {
         self.origin_override
     }
 }
@@ -90,19 +90,21 @@ impl ResponseHeadersPolicyCorsConfig {
 
 /// A builder for [`ResponseHeadersPolicyCorsConfig`](crate::types::ResponseHeadersPolicyCorsConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseHeadersPolicyCorsConfigBuilder {
     pub(crate) access_control_allow_origins:
-        std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins>,
     pub(crate) access_control_allow_headers:
-        std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders>,
     pub(crate) access_control_allow_methods:
-        std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowMethods>,
-    pub(crate) access_control_allow_credentials: std::option::Option<bool>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowMethods>,
+    pub(crate) access_control_allow_credentials: ::std::option::Option<bool>,
     pub(crate) access_control_expose_headers:
-        std::option::Option<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders>,
-    pub(crate) access_control_max_age_sec: std::option::Option<i32>,
-    pub(crate) origin_override: std::option::Option<bool>,
+        ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders>,
+    pub(crate) access_control_max_age_sec: ::std::option::Option<i32>,
+    pub(crate) origin_override: ::std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyCorsConfigBuilder {
     /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
@@ -111,14 +113,14 @@ impl ResponseHeadersPolicyCorsConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyAccessControlAllowOrigins,
     ) -> Self {
-        self.access_control_allow_origins = Some(input);
+        self.access_control_allow_origins = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
     pub fn set_access_control_allow_origins(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins>,
     ) -> Self {
         self.access_control_allow_origins = input;
         self
@@ -129,14 +131,14 @@ impl ResponseHeadersPolicyCorsConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyAccessControlAllowHeaders,
     ) -> Self {
-        self.access_control_allow_headers = Some(input);
+        self.access_control_allow_headers = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a> in the MDN Web Docs.</p>
     pub fn set_access_control_allow_headers(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowHeaders>,
     ) -> Self {
         self.access_control_allow_headers = input;
         self
@@ -147,14 +149,14 @@ impl ResponseHeadersPolicyCorsConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyAccessControlAllowMethods,
     ) -> Self {
-        self.access_control_allow_methods = Some(input);
+        self.access_control_allow_methods = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
     pub fn set_access_control_allow_methods(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowMethods>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlAllowMethods>,
     ) -> Self {
         self.access_control_allow_methods = input;
         self
@@ -162,14 +164,14 @@ impl ResponseHeadersPolicyCorsConfigBuilder {
     /// <p>A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Credentials</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a> in the MDN Web Docs.</p>
     pub fn access_control_allow_credentials(mut self, input: bool) -> Self {
-        self.access_control_allow_credentials = Some(input);
+        self.access_control_allow_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Allow-Credentials</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a> in the MDN Web Docs.</p>
     pub fn set_access_control_allow_credentials(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.access_control_allow_credentials = input;
         self
@@ -180,14 +182,14 @@ impl ResponseHeadersPolicyCorsConfigBuilder {
         mut self,
         input: crate::types::ResponseHeadersPolicyAccessControlExposeHeaders,
     ) -> Self {
-        self.access_control_expose_headers = Some(input);
+        self.access_control_expose_headers = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
     pub fn set_access_control_expose_headers(
         mut self,
-        input: std::option::Option<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders>,
+        input: ::std::option::Option<crate::types::ResponseHeadersPolicyAccessControlExposeHeaders>,
     ) -> Self {
         self.access_control_expose_headers = input;
         self
@@ -195,22 +197,22 @@ impl ResponseHeadersPolicyCorsConfigBuilder {
     /// <p>A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Max-Age</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a> in the MDN Web Docs.</p>
     pub fn access_control_max_age_sec(mut self, input: i32) -> Self {
-        self.access_control_max_age_sec = Some(input);
+        self.access_control_max_age_sec = ::std::option::Option::Some(input);
         self
     }
     /// <p>A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code> HTTP response header.</p>
     /// <p>For more information about the <code>Access-Control-Max-Age</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a> in the MDN Web Docs.</p>
-    pub fn set_access_control_max_age_sec(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_access_control_max_age_sec(mut self, input: ::std::option::Option<i32>) -> Self {
         self.access_control_max_age_sec = input;
         self
     }
     /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the origin with the ones specified in this response headers policy.</p>
     pub fn origin_override(mut self, input: bool) -> Self {
-        self.origin_override = Some(input);
+        self.origin_override = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean that determines whether CloudFront overrides HTTP response headers received from the origin with the ones specified in this response headers policy.</p>
-    pub fn set_origin_override(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_origin_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.origin_override = input;
         self
     }

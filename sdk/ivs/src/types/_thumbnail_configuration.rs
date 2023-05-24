@@ -2,11 +2,11 @@
 
 /// <p>An object representing a configuration of thumbnails for recorded video.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThumbnailConfiguration {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     #[doc(hidden)]
-    pub recording_mode: std::option::Option<crate::types::RecordingMode>,
+    pub recording_mode: ::std::option::Option<crate::types::RecordingMode>,
     /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
     /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
     #[doc(hidden)]
@@ -14,7 +14,7 @@ pub struct ThumbnailConfiguration {
 }
 impl ThumbnailConfiguration {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
-    pub fn recording_mode(&self) -> std::option::Option<&crate::types::RecordingMode> {
+    pub fn recording_mode(&self) -> ::std::option::Option<&crate::types::RecordingMode> {
         self.recording_mode.as_ref()
     }
     /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
@@ -32,21 +32,23 @@ impl ThumbnailConfiguration {
 
 /// A builder for [`ThumbnailConfiguration`](crate::types::ThumbnailConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThumbnailConfigurationBuilder {
-    pub(crate) recording_mode: std::option::Option<crate::types::RecordingMode>,
-    pub(crate) target_interval_seconds: std::option::Option<i64>,
+    pub(crate) recording_mode: ::std::option::Option<crate::types::RecordingMode>,
+    pub(crate) target_interval_seconds: ::std::option::Option<i64>,
 }
 impl ThumbnailConfigurationBuilder {
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     pub fn recording_mode(mut self, input: crate::types::RecordingMode) -> Self {
-        self.recording_mode = Some(input);
+        self.recording_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Thumbnail recording mode. Default: <code>INTERVAL</code>.</p>
     pub fn set_recording_mode(
         mut self,
-        input: std::option::Option<crate::types::RecordingMode>,
+        input: ::std::option::Option<crate::types::RecordingMode>,
     ) -> Self {
         self.recording_mode = input;
         self
@@ -54,12 +56,12 @@ impl ThumbnailConfigurationBuilder {
     /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
     /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
     pub fn target_interval_seconds(mut self, input: i64) -> Self {
-        self.target_interval_seconds = Some(input);
+        self.target_interval_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The targeted thumbnail-generation interval in seconds. This is configurable (and required) only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</p>
     /// <p> <b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not guarantee that thumbnails are generated at the specified interval. For thumbnails to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code> value for the input video must be less than the <code>targetIntervalSeconds</code> value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html"> Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code> to the recommended value in video-encoder settings.</p>
-    pub fn set_target_interval_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_target_interval_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.target_interval_seconds = input;
         self
     }

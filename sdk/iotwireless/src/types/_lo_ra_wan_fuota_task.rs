@@ -2,15 +2,15 @@
 
 /// <p>The LoRaWAN information used with a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanFuotaTask {
     /// <p>Supported RfRegions</p>
     #[doc(hidden)]
-    pub rf_region: std::option::Option<crate::types::SupportedRfRegion>,
+    pub rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
 }
 impl LoRaWanFuotaTask {
     /// <p>Supported RfRegions</p>
-    pub fn rf_region(&self) -> std::option::Option<&crate::types::SupportedRfRegion> {
+    pub fn rf_region(&self) -> ::std::option::Option<&crate::types::SupportedRfRegion> {
         self.rf_region.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl LoRaWanFuotaTask {
 
 /// A builder for [`LoRaWanFuotaTask`](crate::types::LoRaWanFuotaTask).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanFuotaTaskBuilder {
-    pub(crate) rf_region: std::option::Option<crate::types::SupportedRfRegion>,
+    pub(crate) rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
 }
 impl LoRaWanFuotaTaskBuilder {
     /// <p>Supported RfRegions</p>
     pub fn rf_region(mut self, input: crate::types::SupportedRfRegion) -> Self {
-        self.rf_region = Some(input);
+        self.rf_region = ::std::option::Option::Some(input);
         self
     }
     /// <p>Supported RfRegions</p>
     pub fn set_rf_region(
         mut self,
-        input: std::option::Option<crate::types::SupportedRfRegion>,
+        input: ::std::option::Option<crate::types::SupportedRfRegion>,
     ) -> Self {
         self.rf_region = input;
         self

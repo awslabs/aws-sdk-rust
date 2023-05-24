@@ -2,22 +2,22 @@
 
 /// <p>A socket address with a port range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RangedSocketAddress {
     /// <p>IPv4 socket address.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Port range of a socket address.</p>
     #[doc(hidden)]
-    pub port_range: std::option::Option<crate::types::IntegerRange>,
+    pub port_range: ::std::option::Option<crate::types::IntegerRange>,
 }
 impl RangedSocketAddress {
     /// <p>IPv4 socket address.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Port range of a socket address.</p>
-    pub fn port_range(&self) -> std::option::Option<&crate::types::IntegerRange> {
+    pub fn port_range(&self) -> ::std::option::Option<&crate::types::IntegerRange> {
         self.port_range.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl RangedSocketAddress {
 
 /// A builder for [`RangedSocketAddress`](crate::types::RangedSocketAddress).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RangedSocketAddressBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) port_range: std::option::Option<crate::types::IntegerRange>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) port_range: ::std::option::Option<crate::types::IntegerRange>,
 }
 impl RangedSocketAddressBuilder {
     /// <p>IPv4 socket address.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>IPv4 socket address.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Port range of a socket address.</p>
     pub fn port_range(mut self, input: crate::types::IntegerRange) -> Self {
-        self.port_range = Some(input);
+        self.port_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>Port range of a socket address.</p>
     pub fn set_port_range(
         mut self,
-        input: std::option::Option<crate::types::IntegerRange>,
+        input: ::std::option::Option<crate::types::IntegerRange>,
     ) -> Self {
         self.port_range = input;
         self

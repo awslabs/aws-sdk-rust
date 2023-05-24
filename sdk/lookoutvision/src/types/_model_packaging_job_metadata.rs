@@ -2,71 +2,71 @@
 
 /// <p> Metadata for a model packaging job. For more information, see <code>ListModelPackagingJobs</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackagingJobMetadata {
     /// <p> The name of the model packaging job. </p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p> The project that contains the model that is in the model package. </p>
     #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    pub project_name: ::std::option::Option<::std::string::String>,
     /// <p> The version of the model that is in the model package. </p>
     #[doc(hidden)]
-    pub model_version: std::option::Option<std::string::String>,
+    pub model_version: ::std::option::Option<::std::string::String>,
     /// <p> The description for the model packaging job. </p>
     #[doc(hidden)]
-    pub model_packaging_job_description: std::option::Option<std::string::String>,
+    pub model_packaging_job_description: ::std::option::Option<::std::string::String>,
     /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
     #[doc(hidden)]
-    pub model_packaging_method: std::option::Option<std::string::String>,
+    pub model_packaging_method: ::std::option::Option<::std::string::String>,
     /// <p>The status of the model packaging job. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ModelPackagingJobStatus>,
+    pub status: ::std::option::Option<crate::types::ModelPackagingJobStatus>,
     /// <p>The status message for the model packaging job. </p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
     #[doc(hidden)]
-    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ModelPackagingJobMetadata {
     /// <p> The name of the model packaging job. </p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p> The project that contains the model that is in the model package. </p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p> The version of the model that is in the model package. </p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<&str> {
         self.model_version.as_deref()
     }
     /// <p> The description for the model packaging job. </p>
-    pub fn model_packaging_job_description(&self) -> std::option::Option<&str> {
+    pub fn model_packaging_job_description(&self) -> ::std::option::Option<&str> {
         self.model_packaging_job_description.as_deref()
     }
     /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
-    pub fn model_packaging_method(&self) -> std::option::Option<&str> {
+    pub fn model_packaging_method(&self) -> ::std::option::Option<&str> {
         self.model_packaging_method.as_deref()
     }
     /// <p>The status of the model packaging job. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ModelPackagingJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ModelPackagingJobStatus> {
         self.status.as_ref()
     }
     /// <p>The status message for the model packaging job. </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
@@ -79,123 +79,140 @@ impl ModelPackagingJobMetadata {
 
 /// A builder for [`ModelPackagingJobMetadata`](crate::types::ModelPackagingJobMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelPackagingJobMetadataBuilder {
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) project_name: std::option::Option<std::string::String>,
-    pub(crate) model_version: std::option::Option<std::string::String>,
-    pub(crate) model_packaging_job_description: std::option::Option<std::string::String>,
-    pub(crate) model_packaging_method: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ModelPackagingJobStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) project_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_version: ::std::option::Option<::std::string::String>,
+    pub(crate) model_packaging_job_description: ::std::option::Option<::std::string::String>,
+    pub(crate) model_packaging_method: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ModelPackagingJobStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ModelPackagingJobMetadataBuilder {
     /// <p> The name of the model packaging job. </p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the model packaging job. </p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p> The project that contains the model that is in the model package. </p>
-    pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_name = Some(input.into());
+    pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The project that contains the model that is in the model package. </p>
-    pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
     }
     /// <p> The version of the model that is in the model package. </p>
-    pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_version = Some(input.into());
+    pub fn model_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version of the model that is in the model package. </p>
-    pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_version = input;
         self
     }
     /// <p> The description for the model packaging job. </p>
     pub fn model_packaging_job_description(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.model_packaging_job_description = Some(input.into());
+        self.model_packaging_job_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description for the model packaging job. </p>
     pub fn set_model_packaging_job_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_packaging_job_description = input;
         self
     }
     /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
-    pub fn model_packaging_method(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_packaging_method = Some(input.into());
+    pub fn model_packaging_method(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_packaging_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The AWS service used to package the job. Currently Lookout for Vision can package jobs with AWS IoT Greengrass. </p>
     pub fn set_model_packaging_method(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_packaging_method = input;
         self
     }
     /// <p>The status of the model packaging job. </p>
     pub fn status(mut self, input: crate::types::ModelPackagingJobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the model packaging job. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ModelPackagingJobStatus>,
+        input: ::std::option::Option<crate::types::ModelPackagingJobStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The status message for the model packaging job. </p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for the model packaging job. </p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
-    pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_timestamp = Some(input);
+    pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time and date that the model packaging job was created.</p>
     pub fn set_creation_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_timestamp = input;
         self
     }
     /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
-    pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_timestamp = Some(input);
+    pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time and date that the model packaging job was last updated.</p>
     pub fn set_last_updated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_timestamp = input;
         self

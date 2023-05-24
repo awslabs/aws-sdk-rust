@@ -2,22 +2,22 @@
 
 /// <p>Contains information about the result of the total usage based on the feature.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageFeatureResult {
     /// <p>The feature that generated the usage cost.</p>
     #[doc(hidden)]
-    pub feature: std::option::Option<crate::types::UsageFeature>,
+    pub feature: ::std::option::Option<crate::types::UsageFeature>,
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
     #[doc(hidden)]
-    pub total: std::option::Option<crate::types::Total>,
+    pub total: ::std::option::Option<crate::types::Total>,
 }
 impl UsageFeatureResult {
     /// <p>The feature that generated the usage cost.</p>
-    pub fn feature(&self) -> std::option::Option<&crate::types::UsageFeature> {
+    pub fn feature(&self) -> ::std::option::Option<&crate::types::UsageFeature> {
         self.feature.as_ref()
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
-    pub fn total(&self) -> std::option::Option<&crate::types::Total> {
+    pub fn total(&self) -> ::std::option::Option<&crate::types::Total> {
         self.total.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl UsageFeatureResult {
 
 /// A builder for [`UsageFeatureResult`](crate::types::UsageFeatureResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UsageFeatureResultBuilder {
-    pub(crate) feature: std::option::Option<crate::types::UsageFeature>,
-    pub(crate) total: std::option::Option<crate::types::Total>,
+    pub(crate) feature: ::std::option::Option<crate::types::UsageFeature>,
+    pub(crate) total: ::std::option::Option<crate::types::Total>,
 }
 impl UsageFeatureResultBuilder {
     /// <p>The feature that generated the usage cost.</p>
     pub fn feature(mut self, input: crate::types::UsageFeature) -> Self {
-        self.feature = Some(input);
+        self.feature = ::std::option::Option::Some(input);
         self
     }
     /// <p>The feature that generated the usage cost.</p>
-    pub fn set_feature(mut self, input: std::option::Option<crate::types::UsageFeature>) -> Self {
+    pub fn set_feature(mut self, input: ::std::option::Option<crate::types::UsageFeature>) -> Self {
         self.feature = input;
         self
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
     pub fn total(mut self, input: crate::types::Total) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
-    pub fn set_total(mut self, input: std::option::Option<crate::types::Total>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<crate::types::Total>) -> Self {
         self.total = input;
         self
     }

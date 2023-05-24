@@ -2,36 +2,36 @@
 
 /// <p> Contains information about the label group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelGroupSummary {
     /// <p> The name of the label group. </p>
     #[doc(hidden)]
-    pub label_group_name: std::option::Option<std::string::String>,
+    pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the label group. </p>
     #[doc(hidden)]
-    pub label_group_arn: std::option::Option<std::string::String>,
+    pub label_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The time at which the label group was created. </p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time at which the label group was updated. </p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LabelGroupSummary {
     /// <p> The name of the label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ARN of the label group. </p>
-    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> ::std::option::Option<&str> {
         self.label_group_arn.as_deref()
     }
     /// <p> The time at which the label group was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The time at which the label group was updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -44,56 +44,70 @@ impl LabelGroupSummary {
 
 /// A builder for [`LabelGroupSummary`](crate::types::LabelGroupSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelGroupSummaryBuilder {
-    pub(crate) label_group_name: std::option::Option<std::string::String>,
-    pub(crate) label_group_arn: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) label_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LabelGroupSummaryBuilder {
     /// <p> The name of the label group. </p>
-    pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label_group_name = Some(input.into());
+    pub fn label_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the label group. </p>
-    pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.label_group_name = input;
         self
     }
     /// <p> The ARN of the label group. </p>
-    pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label_group_arn = Some(input.into());
+    pub fn label_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.label_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the label group. </p>
-    pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.label_group_arn = input;
         self
     }
     /// <p> The time at which the label group was created. </p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time at which the label group was created. </p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p> The time at which the label group was updated. </p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time at which the label group was updated. </p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self

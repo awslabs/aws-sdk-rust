@@ -9,56 +9,59 @@ pub use crate::operation::put_image::_put_image_input::PutImageInputBuilder;
 /// <p>When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or update the image manifest and the tags associated with the image.</p> <note>
 /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutImageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_image::builders::PutImageInputBuilder,
 }
 impl PutImageFluentBuilder {
     /// Creates a new `PutImage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_image::PutImage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_image::PutImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image::PutImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_image::PutImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_image::PutImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image::PutImageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,72 +74,87 @@ impl PutImageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_image::PutImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_image::PutImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_image::PutImageError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_id(input);
         self
     }
     /// <p>The name of the repository in which to put the image.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository in which to put the image.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
     /// <p>The image manifest corresponding to the image to be uploaded.</p>
-    pub fn image_manifest(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_manifest(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.image_manifest(input.into());
         self
     }
     /// <p>The image manifest corresponding to the image to be uploaded.</p>
-    pub fn set_image_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_manifest(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_image_manifest(input);
         self
     }
     /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-    pub fn image_manifest_media_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_manifest_media_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.image_manifest_media_type(input.into());
         self
     }
     /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
     pub fn set_image_manifest_media_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_image_manifest_media_type(input);
         self
     }
     /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
-    pub fn image_tag(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_tag(input.into());
         self
     }
     /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
-    pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_tag(input);
         self
     }
     /// <p>The image digest of the image manifest corresponding to the image.</p>
-    pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_digest(input.into());
         self
     }
     /// <p>The image digest of the image manifest corresponding to the image.</p>
-    pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_digest(input);
         self
     }

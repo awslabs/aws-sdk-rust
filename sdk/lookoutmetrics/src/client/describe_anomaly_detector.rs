@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAnomalyDetector`](crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The ARN of the detector to describe.</p>
+    ///   - [`anomaly_detector_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The ARN of the detector to describe.</p>
     /// - On success, responds with [`DescribeAnomalyDetectorOutput`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput) with field(s):
     ///   - [`anomaly_detector_arn(Option<String>)`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput::anomaly_detector_arn): <p>The ARN of the detector.</p>
     ///   - [`anomaly_detector_name(Option<String>)`](crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorOutput::anomaly_detector_name): <p>The name of the detector.</p>

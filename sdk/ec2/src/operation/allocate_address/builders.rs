@@ -13,56 +13,63 @@ pub use crate::operation::allocate_address::_allocate_address_input::AllocateAdd
 /// <p>You can allocate a carrier IP address which is a public IP address from a telecommunication carrier, to a network interface which resides in a subnet in a Wavelength Zone (for example an EC2 instance). </p> <note>
 /// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllocateAddressFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::allocate_address::builders::AllocateAddressInputBuilder,
 }
 impl AllocateAddressFluentBuilder {
     /// Creates a new `AllocateAddress`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::allocate_address::AllocateAddress,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::allocate_address::AllocateAddressError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_address::AllocateAddressError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::allocate_address::AllocateAddressOutput,
-        aws_smithy_http::result::SdkError<crate::operation::allocate_address::AllocateAddressError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_address::AllocateAddressError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +82,11 @@ impl AllocateAddressFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::allocate_address::AllocateAddressOutput,
-        aws_smithy_http::result::SdkError<crate::operation::allocate_address::AllocateAddressError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_address::AllocateAddressError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -89,34 +98,43 @@ impl AllocateAddressFluentBuilder {
     }
     /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.</p>
     /// <p>Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is <code>vpc</code>.</p>
-    pub fn set_domain(mut self, input: std::option::Option<crate::types::DomainType>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<crate::types::DomainType>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
     /// <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address(input.into());
         self
     }
     /// <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.</p>
-    pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address(input);
         self
     }
     /// <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</p>
-    pub fn public_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn public_ipv4_pool(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.public_ipv4_pool(input.into());
         self
     }
     /// <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.</p>
-    pub fn set_public_ipv4_pool(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_ipv4_pool(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_public_ipv4_pool(input);
         self
     }
     /// <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.</p>
     /// <p>Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a> to view the network border groups.</p>
     /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an <code>InvalidParameterCombination</code> error.</p>
-    pub fn network_border_group(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_border_group(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.network_border_group(input.into());
         self
     }
@@ -125,20 +143,23 @@ impl AllocateAddressFluentBuilder {
     /// <p>You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an <code>InvalidParameterCombination</code> error.</p>
     pub fn set_network_border_group(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_network_border_group(input);
         self
     }
     /// <p>The ID of a customer-owned address pool. Use this parameter to let Amazon EC2 select an address from the address pool. Alternatively, specify a specific address from the address pool.</p>
-    pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn customer_owned_ipv4_pool(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.customer_owned_ipv4_pool(input.into());
         self
     }
     /// <p>The ID of a customer-owned address pool. Use this parameter to let Amazon EC2 select an address from the address pool. Alternatively, specify a specific address from the address pool.</p>
     pub fn set_customer_owned_ipv4_pool(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_customer_owned_ipv4_pool(input);
         self
@@ -149,7 +170,7 @@ impl AllocateAddressFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -165,7 +186,7 @@ impl AllocateAddressFluentBuilder {
     /// <p>The tags to assign to the Elastic IP address.</p>
     pub fn set_tag_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self

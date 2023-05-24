@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`instance_groups(Vec<InstanceGroupConfig>)`](crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder::instance_groups) / [`set_instance_groups(Option<Vec<InstanceGroupConfig>>)`](crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder::set_instance_groups): <p>Instance groups to add.</p>
-    ///   - [`job_flow_id(impl Into<String>)`](crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder::job_flow_id) / [`set_job_flow_id(Option<String>)`](crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder::set_job_flow_id): <p>Job flow in which to add the instance groups.</p>
+    ///   - [`job_flow_id(impl ::std::convert::Into<String>)`](crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder::job_flow_id) / [`set_job_flow_id(Option<String>)`](crate::operation::add_instance_groups::builders::AddInstanceGroupsFluentBuilder::set_job_flow_id): <p>Job flow in which to add the instance groups.</p>
     /// - On success, responds with [`AddInstanceGroupsOutput`](crate::operation::add_instance_groups::AddInstanceGroupsOutput) with field(s):
     ///   - [`job_flow_id(Option<String>)`](crate::operation::add_instance_groups::AddInstanceGroupsOutput::job_flow_id): <p>The job flow ID in which the instance groups are added.</p>
     ///   - [`instance_group_ids(Option<Vec<String>>)`](crate::operation::add_instance_groups::AddInstanceGroupsOutput::instance_group_ids): <p>Instance group IDs of the newly created instance groups.</p>

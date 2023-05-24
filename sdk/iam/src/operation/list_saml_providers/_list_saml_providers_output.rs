@@ -2,22 +2,23 @@
 
 /// <p>Contains the response to a successful <code>ListSAMLProviders</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSamlProvidersOutput {
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub saml_provider_list: std::option::Option<std::vec::Vec<crate::types::SamlProviderListEntry>>,
+    pub saml_provider_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::SamlProviderListEntry>>,
     _request_id: Option<String>,
 }
 impl ListSamlProvidersOutput {
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
     pub fn saml_provider_list(
         &self,
-    ) -> std::option::Option<&[crate::types::SamlProviderListEntry]> {
+    ) -> ::std::option::Option<&[crate::types::SamlProviderListEntry]> {
         self.saml_provider_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListSamlProvidersOutput {
+impl ::aws_http::request_id::RequestId for ListSamlProvidersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +33,12 @@ impl ListSamlProvidersOutput {
 
 /// A builder for [`ListSamlProvidersOutput`](crate::operation::list_saml_providers::ListSamlProvidersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSamlProvidersOutputBuilder {
     pub(crate) saml_provider_list:
-        std::option::Option<std::vec::Vec<crate::types::SamlProviderListEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SamlProviderListEntry>>,
     _request_id: Option<String>,
 }
 impl ListSamlProvidersOutputBuilder {
@@ -47,13 +50,13 @@ impl ListSamlProvidersOutputBuilder {
     pub fn saml_provider_list(mut self, input: crate::types::SamlProviderListEntry) -> Self {
         let mut v = self.saml_provider_list.unwrap_or_default();
         v.push(input);
-        self.saml_provider_list = Some(v);
+        self.saml_provider_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of SAML provider resource objects defined in IAM for this Amazon Web Services account.</p>
     pub fn set_saml_provider_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SamlProviderListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SamlProviderListEntry>>,
     ) -> Self {
         self.saml_provider_list = input;
         self

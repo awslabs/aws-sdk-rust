@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_topics::builders::ListTopicsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_topics::builders::ListTopicsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_topics::builders::ListTopicsFluentBuilder::set_next_token): <p>Token returned by the previous <code>ListTopics</code> request.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_topics::builders::ListTopicsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_topics::builders::ListTopicsFluentBuilder::set_next_token): <p>Token returned by the previous <code>ListTopics</code> request.</p>
     /// - On success, responds with [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput) with field(s):
     ///   - [`topics(Option<Vec<Topic>>)`](crate::operation::list_topics::ListTopicsOutput::topics): <p>A list of topic ARNs.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_topics::ListTopicsOutput::next_token): <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>

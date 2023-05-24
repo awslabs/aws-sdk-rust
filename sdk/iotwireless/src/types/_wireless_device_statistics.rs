@@ -2,85 +2,85 @@
 
 /// <p>Information about a wireless device's operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessDeviceStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless device reporting the data.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The wireless device type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::WirelessDeviceType>,
+    pub r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the destination to which the device is assigned.</p>
     #[doc(hidden)]
-    pub destination_name: std::option::Option<std::string::String>,
+    pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the most recent uplink was received.</p>
     #[doc(hidden)]
-    pub last_uplink_received_at: std::option::Option<std::string::String>,
+    pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
     /// <p>LoRaWAN device info.</p>
     #[doc(hidden)]
-    pub lo_ra_wan: std::option::Option<crate::types::LoRaWanListDevice>,
+    pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanListDevice>,
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
-    pub sidewalk: std::option::Option<crate::types::SidewalkListDevice>,
+    pub sidewalk: ::std::option::Option<crate::types::SidewalkListDevice>,
     /// <p>The status of a wireless device in a FUOTA task.</p>
     #[doc(hidden)]
-    pub fuota_device_status: std::option::Option<crate::types::FuotaDeviceStatus>,
+    pub fuota_device_status: ::std::option::Option<crate::types::FuotaDeviceStatus>,
     /// <p>The status of the wireless device in the multicast group.</p>
     #[doc(hidden)]
-    pub multicast_device_status: std::option::Option<std::string::String>,
+    pub multicast_device_status: ::std::option::Option<::std::string::String>,
     /// <p>Id of the multicast group.</p>
     #[doc(hidden)]
-    pub mc_group_id: std::option::Option<i32>,
+    pub mc_group_id: ::std::option::Option<i32>,
 }
 impl WirelessDeviceStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the wireless device reporting the data.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The wireless device type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::WirelessDeviceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WirelessDeviceType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the destination to which the device is assigned.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<&str> {
         self.destination_name.as_deref()
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+    pub fn last_uplink_received_at(&self) -> ::std::option::Option<&str> {
         self.last_uplink_received_at.as_deref()
     }
     /// <p>LoRaWAN device info.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanListDevice> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanListDevice> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::types::SidewalkListDevice> {
+    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkListDevice> {
         self.sidewalk.as_ref()
     }
     /// <p>The status of a wireless device in a FUOTA task.</p>
-    pub fn fuota_device_status(&self) -> std::option::Option<&crate::types::FuotaDeviceStatus> {
+    pub fn fuota_device_status(&self) -> ::std::option::Option<&crate::types::FuotaDeviceStatus> {
         self.fuota_device_status.as_ref()
     }
     /// <p>The status of the wireless device in the multicast group.</p>
-    pub fn multicast_device_status(&self) -> std::option::Option<&str> {
+    pub fn multicast_device_status(&self) -> ::std::option::Option<&str> {
         self.multicast_device_status.as_deref()
     }
     /// <p>Id of the multicast group.</p>
-    pub fn mc_group_id(&self) -> std::option::Option<i32> {
+    pub fn mc_group_id(&self) -> ::std::option::Option<i32> {
         self.mc_group_id
     }
 }
@@ -93,146 +93,160 @@ impl WirelessDeviceStatistics {
 
 /// A builder for [`WirelessDeviceStatistics`](crate::types::WirelessDeviceStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WirelessDeviceStatisticsBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::WirelessDeviceType>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) destination_name: std::option::Option<std::string::String>,
-    pub(crate) last_uplink_received_at: std::option::Option<std::string::String>,
-    pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanListDevice>,
-    pub(crate) sidewalk: std::option::Option<crate::types::SidewalkListDevice>,
-    pub(crate) fuota_device_status: std::option::Option<crate::types::FuotaDeviceStatus>,
-    pub(crate) multicast_device_status: std::option::Option<std::string::String>,
-    pub(crate) mc_group_id: std::option::Option<i32>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::WirelessDeviceType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_uplink_received_at: ::std::option::Option<::std::string::String>,
+    pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanListDevice>,
+    pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkListDevice>,
+    pub(crate) fuota_device_status: ::std::option::Option<crate::types::FuotaDeviceStatus>,
+    pub(crate) multicast_device_status: ::std::option::Option<::std::string::String>,
+    pub(crate) mc_group_id: ::std::option::Option<i32>,
 }
 impl WirelessDeviceStatisticsBuilder {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ID of the wireless device reporting the data.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless device reporting the data.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The wireless device type.</p>
     pub fn r#type(mut self, input: crate::types::WirelessDeviceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The wireless device type.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::WirelessDeviceType>,
+        input: ::std::option::Option<crate::types::WirelessDeviceType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the destination to which the device is assigned.</p>
-    pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_name = Some(input.into());
+    pub fn destination_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the destination to which the device is assigned.</p>
-    pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_name = input;
         self
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_uplink_received_at = Some(input.into());
+    pub fn last_uplink_received_at(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_uplink_received_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the most recent uplink was received.</p>
     pub fn set_last_uplink_received_at(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_uplink_received_at = input;
         self
     }
     /// <p>LoRaWAN device info.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanListDevice) -> Self {
-        self.lo_ra_wan = Some(input);
+        self.lo_ra_wan = ::std::option::Option::Some(input);
         self
     }
     /// <p>LoRaWAN device info.</p>
     pub fn set_lo_ra_wan(
         mut self,
-        input: std::option::Option<crate::types::LoRaWanListDevice>,
+        input: ::std::option::Option<crate::types::LoRaWanListDevice>,
     ) -> Self {
         self.lo_ra_wan = input;
         self
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkListDevice) -> Self {
-        self.sidewalk = Some(input);
+        self.sidewalk = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Sidewalk account credentials.</p>
     pub fn set_sidewalk(
         mut self,
-        input: std::option::Option<crate::types::SidewalkListDevice>,
+        input: ::std::option::Option<crate::types::SidewalkListDevice>,
     ) -> Self {
         self.sidewalk = input;
         self
     }
     /// <p>The status of a wireless device in a FUOTA task.</p>
     pub fn fuota_device_status(mut self, input: crate::types::FuotaDeviceStatus) -> Self {
-        self.fuota_device_status = Some(input);
+        self.fuota_device_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a wireless device in a FUOTA task.</p>
     pub fn set_fuota_device_status(
         mut self,
-        input: std::option::Option<crate::types::FuotaDeviceStatus>,
+        input: ::std::option::Option<crate::types::FuotaDeviceStatus>,
     ) -> Self {
         self.fuota_device_status = input;
         self
     }
     /// <p>The status of the wireless device in the multicast group.</p>
-    pub fn multicast_device_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.multicast_device_status = Some(input.into());
+    pub fn multicast_device_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.multicast_device_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the wireless device in the multicast group.</p>
     pub fn set_multicast_device_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.multicast_device_status = input;
         self
     }
     /// <p>Id of the multicast group.</p>
     pub fn mc_group_id(mut self, input: i32) -> Self {
-        self.mc_group_id = Some(input);
+        self.mc_group_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Id of the multicast group.</p>
-    pub fn set_mc_group_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_mc_group_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mc_group_id = input;
         self
     }

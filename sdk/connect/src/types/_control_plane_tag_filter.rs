@@ -6,32 +6,32 @@
 /// <li> <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlPlaneTagFilter {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
     #[doc(hidden)]
     pub or_conditions:
-        std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::TagCondition>>>,
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagCondition>>>,
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
     #[doc(hidden)]
-    pub and_conditions: std::option::Option<std::vec::Vec<crate::types::TagCondition>>,
+    pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TagCondition>>,
     /// <p>A leaf node condition which can be used to specify a tag condition. </p>
     #[doc(hidden)]
-    pub tag_condition: std::option::Option<crate::types::TagCondition>,
+    pub tag_condition: ::std::option::Option<crate::types::TagCondition>,
 }
 impl ControlPlaneTagFilter {
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
     pub fn or_conditions(
         &self,
-    ) -> std::option::Option<&[std::vec::Vec<crate::types::TagCondition>]> {
+    ) -> ::std::option::Option<&[::std::vec::Vec<crate::types::TagCondition>]> {
         self.or_conditions.as_deref()
     }
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
-    pub fn and_conditions(&self) -> std::option::Option<&[crate::types::TagCondition]> {
+    pub fn and_conditions(&self) -> ::std::option::Option<&[crate::types::TagCondition]> {
         self.and_conditions.as_deref()
     }
     /// <p>A leaf node condition which can be used to specify a tag condition. </p>
-    pub fn tag_condition(&self) -> std::option::Option<&crate::types::TagCondition> {
+    pub fn tag_condition(&self) -> ::std::option::Option<&crate::types::TagCondition> {
         self.tag_condition.as_ref()
     }
 }
@@ -44,12 +44,14 @@ impl ControlPlaneTagFilter {
 
 /// A builder for [`ControlPlaneTagFilter`](crate::types::ControlPlaneTagFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ControlPlaneTagFilterBuilder {
     pub(crate) or_conditions:
-        std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::TagCondition>>>,
-    pub(crate) and_conditions: std::option::Option<std::vec::Vec<crate::types::TagCondition>>,
-    pub(crate) tag_condition: std::option::Option<crate::types::TagCondition>,
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagCondition>>>,
+    pub(crate) and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::TagCondition>>,
+    pub(crate) tag_condition: ::std::option::Option<crate::types::TagCondition>,
 }
 impl ControlPlaneTagFilterBuilder {
     /// Appends an item to `or_conditions`.
@@ -57,16 +59,16 @@ impl ControlPlaneTagFilterBuilder {
     /// To override the contents of this collection use [`set_or_conditions`](Self::set_or_conditions).
     ///
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
-    pub fn or_conditions(mut self, input: std::vec::Vec<crate::types::TagCondition>) -> Self {
+    pub fn or_conditions(mut self, input: ::std::vec::Vec<crate::types::TagCondition>) -> Self {
         let mut v = self.or_conditions.unwrap_or_default();
         v.push(input);
-        self.or_conditions = Some(v);
+        self.or_conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of conditions which would be applied together with an <code>OR</code> condition. </p>
     pub fn set_or_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::TagCondition>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::TagCondition>>>,
     ) -> Self {
         self.or_conditions = input;
         self
@@ -79,26 +81,26 @@ impl ControlPlaneTagFilterBuilder {
     pub fn and_conditions(mut self, input: crate::types::TagCondition) -> Self {
         let mut v = self.and_conditions.unwrap_or_default();
         v.push(input);
-        self.and_conditions = Some(v);
+        self.and_conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
     pub fn set_and_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagCondition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagCondition>>,
     ) -> Self {
         self.and_conditions = input;
         self
     }
     /// <p>A leaf node condition which can be used to specify a tag condition. </p>
     pub fn tag_condition(mut self, input: crate::types::TagCondition) -> Self {
-        self.tag_condition = Some(input);
+        self.tag_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A leaf node condition which can be used to specify a tag condition. </p>
     pub fn set_tag_condition(
         mut self,
-        input: std::option::Option<crate::types::TagCondition>,
+        input: ::std::option::Option<crate::types::TagCondition>,
     ) -> Self {
         self.tag_condition = input;
         self

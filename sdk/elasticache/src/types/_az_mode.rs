@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AzMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AzMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AzMode {
+impl ::std::convert::From<&str> for AzMode {
     fn from(s: &str) -> Self {
         match s {
             "cross-az" => AzMode::CrossAz,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for AzMode {
         }
     }
 }
-impl std::str::FromStr for AzMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AzMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AzMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AzMode::from(s))
     }
 }
 impl AzMode {
@@ -84,7 +84,7 @@ impl AzMode {
         &["cross-az", "single-az"]
     }
 }
-impl AsRef<str> for AzMode {
+impl ::std::convert::AsRef<str> for AzMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

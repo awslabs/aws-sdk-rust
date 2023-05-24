@@ -2,7 +2,7 @@
 
 /// <p>The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to apply to the Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. You can make the access point accessible from the internet, or you can specify that all requests made through that access point must originate from a specific virtual private cloud (VPC). You can specify only one type of network configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum NetworkOriginConfiguration {
     /// <p>The configuration for the Amazon S3 access point or multi-region access point with an <code>Internet</code> origin.</p>
     InternetConfiguration(crate::types::InternetConfiguration),
@@ -23,11 +23,11 @@ impl NetworkOriginConfiguration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_internet_configuration(
         &self,
-    ) -> std::result::Result<&crate::types::InternetConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::InternetConfiguration, &Self> {
         if let NetworkOriginConfiguration::InternetConfiguration(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`InternetConfiguration`](crate::types::NetworkOriginConfiguration::InternetConfiguration).
@@ -38,11 +38,11 @@ impl NetworkOriginConfiguration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vpc_configuration(
         &self,
-    ) -> std::result::Result<&crate::types::VpcConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::VpcConfiguration, &Self> {
         if let NetworkOriginConfiguration::VpcConfiguration(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`VpcConfiguration`](crate::types::NetworkOriginConfiguration::VpcConfiguration).

@@ -2,15 +2,15 @@
 
 /// Represents the status of a workspace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceStatus {
     /// Status code of this workspace.
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::WorkspaceStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::WorkspaceStatusCode>,
 }
 impl WorkspaceStatus {
     /// Status code of this workspace.
-    pub fn status_code(&self) -> std::option::Option<&crate::types::WorkspaceStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::WorkspaceStatusCode> {
         self.status_code.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl WorkspaceStatus {
 
 /// A builder for [`WorkspaceStatus`](crate::types::WorkspaceStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkspaceStatusBuilder {
-    pub(crate) status_code: std::option::Option<crate::types::WorkspaceStatusCode>,
+    pub(crate) status_code: ::std::option::Option<crate::types::WorkspaceStatusCode>,
 }
 impl WorkspaceStatusBuilder {
     /// Status code of this workspace.
     pub fn status_code(mut self, input: crate::types::WorkspaceStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// Status code of this workspace.
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::WorkspaceStatusCode>,
+        input: ::std::option::Option<crate::types::WorkspaceStatusCode>,
     ) -> Self {
         self.status_code = input;
         self

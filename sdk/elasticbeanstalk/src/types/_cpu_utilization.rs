@@ -2,76 +2,76 @@
 
 /// <p>CPU utilization metrics for an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CpuUtilization {
     /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
-    pub user: std::option::Option<f64>,
+    pub user: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
-    pub nice: std::option::Option<f64>,
+    pub nice: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
-    pub system: std::option::Option<f64>,
+    pub system: ::std::option::Option<f64>,
     /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
-    pub idle: std::option::Option<f64>,
+    pub idle: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
-    pub io_wait: std::option::Option<f64>,
+    pub io_wait: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
-    pub irq: std::option::Option<f64>,
+    pub irq: ::std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
-    pub soft_irq: std::option::Option<f64>,
+    pub soft_irq: ::std::option::Option<f64>,
     /// <p>Available on Windows environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
     #[doc(hidden)]
-    pub privileged: std::option::Option<f64>,
+    pub privileged: ::std::option::Option<f64>,
 }
 impl CpuUtilization {
     /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
-    pub fn user(&self) -> std::option::Option<f64> {
+    pub fn user(&self) -> ::std::option::Option<f64> {
         self.user
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
-    pub fn nice(&self) -> std::option::Option<f64> {
+    pub fn nice(&self) -> ::std::option::Option<f64> {
         self.nice
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
-    pub fn system(&self) -> std::option::Option<f64> {
+    pub fn system(&self) -> ::std::option::Option<f64> {
         self.system
     }
     /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
-    pub fn idle(&self) -> std::option::Option<f64> {
+    pub fn idle(&self) -> ::std::option::Option<f64> {
         self.idle
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
-    pub fn io_wait(&self) -> std::option::Option<f64> {
+    pub fn io_wait(&self) -> ::std::option::Option<f64> {
         self.io_wait
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
-    pub fn irq(&self) -> std::option::Option<f64> {
+    pub fn irq(&self) -> ::std::option::Option<f64> {
         self.irq
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
-    pub fn soft_irq(&self) -> std::option::Option<f64> {
+    pub fn soft_irq(&self) -> ::std::option::Option<f64> {
         self.soft_irq
     }
     /// <p>Available on Windows environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
-    pub fn privileged(&self) -> std::option::Option<f64> {
+    pub fn privileged(&self) -> ::std::option::Option<f64> {
         self.privileged
     }
 }
@@ -84,107 +84,109 @@ impl CpuUtilization {
 
 /// A builder for [`CpuUtilization`](crate::types::CpuUtilization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CpuUtilizationBuilder {
-    pub(crate) user: std::option::Option<f64>,
-    pub(crate) nice: std::option::Option<f64>,
-    pub(crate) system: std::option::Option<f64>,
-    pub(crate) idle: std::option::Option<f64>,
-    pub(crate) io_wait: std::option::Option<f64>,
-    pub(crate) irq: std::option::Option<f64>,
-    pub(crate) soft_irq: std::option::Option<f64>,
-    pub(crate) privileged: std::option::Option<f64>,
+    pub(crate) user: ::std::option::Option<f64>,
+    pub(crate) nice: ::std::option::Option<f64>,
+    pub(crate) system: ::std::option::Option<f64>,
+    pub(crate) idle: ::std::option::Option<f64>,
+    pub(crate) io_wait: ::std::option::Option<f64>,
+    pub(crate) irq: ::std::option::Option<f64>,
+    pub(crate) soft_irq: ::std::option::Option<f64>,
+    pub(crate) privileged: ::std::option::Option<f64>,
 }
 impl CpuUtilizationBuilder {
     /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     pub fn user(mut self, input: f64) -> Self {
-        self.user = Some(input);
+        self.user = ::std::option::Option::Some(input);
         self
     }
     /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
-    pub fn set_user(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<f64>) -> Self {
         self.user = input;
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     pub fn nice(mut self, input: f64) -> Self {
-        self.nice = Some(input);
+        self.nice = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
-    pub fn set_nice(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_nice(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nice = input;
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     pub fn system(mut self, input: f64) -> Self {
-        self.system = Some(input);
+        self.system = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
-    pub fn set_system(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_system(mut self, input: ::std::option::Option<f64>) -> Self {
         self.system = input;
         self
     }
     /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     pub fn idle(mut self, input: f64) -> Self {
-        self.idle = Some(input);
+        self.idle = ::std::option::Option::Some(input);
         self
     }
     /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
-    pub fn set_idle(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_idle(mut self, input: ::std::option::Option<f64>) -> Self {
         self.idle = input;
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     pub fn io_wait(mut self, input: f64) -> Self {
-        self.io_wait = Some(input);
+        self.io_wait = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
-    pub fn set_io_wait(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_io_wait(mut self, input: ::std::option::Option<f64>) -> Self {
         self.io_wait = input;
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     pub fn irq(mut self, input: f64) -> Self {
-        self.irq = Some(input);
+        self.irq = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
-    pub fn set_irq(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_irq(mut self, input: ::std::option::Option<f64>) -> Self {
         self.irq = input;
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     pub fn soft_irq(mut self, input: f64) -> Self {
-        self.soft_irq = Some(input);
+        self.soft_irq = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available on Linux environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
-    pub fn set_soft_irq(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_soft_irq(mut self, input: ::std::option::Option<f64>) -> Self {
         self.soft_irq = input;
         self
     }
     /// <p>Available on Windows environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
     pub fn privileged(mut self, input: f64) -> Self {
-        self.privileged = Some(input);
+        self.privileged = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available on Windows environments only.</p>
     /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
-    pub fn set_privileged(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_privileged(mut self, input: ::std::option::Option<f64>) -> Self {
         self.privileged = input;
         self
     }

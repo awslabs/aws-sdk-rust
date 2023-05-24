@@ -2,11 +2,11 @@
 
 /// <p>Represents the response received from the server to disable the user as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminDisableUserOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AdminDisableUserOutput {
+impl ::aws_http::request_id::RequestId for AdminDisableUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl AdminDisableUserOutput {
 
 /// A builder for [`AdminDisableUserOutput`](crate::operation::admin_disable_user::AdminDisableUserOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminDisableUserOutputBuilder {
     _request_id: Option<String>,
 }

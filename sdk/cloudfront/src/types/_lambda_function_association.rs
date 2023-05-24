@@ -2,11 +2,11 @@
 
 /// <p>A complex type that contains a Lambda@Edge function association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionAssociation {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
     #[doc(hidden)]
-    pub lambda_function_arn: std::option::Option<std::string::String>,
+    pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
     /// <ul>
     /// <li> <p> <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and before it checks to see whether the requested object is in the edge cache.</p> </li>
@@ -15,14 +15,14 @@ pub struct LambdaFunctionAssociation {
     /// <li> <p> <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer. The function executes regardless of whether the object was already in the edge cache.</p> <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub event_type: std::option::Option<crate::types::EventType>,
+    pub event_type: ::std::option::Option<crate::types::EventType>,
     /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
     #[doc(hidden)]
-    pub include_body: std::option::Option<bool>,
+    pub include_body: ::std::option::Option<bool>,
 }
 impl LambdaFunctionAssociation {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
-    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_function_arn.as_deref()
     }
     /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
@@ -32,11 +32,11 @@ impl LambdaFunctionAssociation {
     /// <li> <p> <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and before it caches the object in the response. When the requested object is in the edge cache, the function doesn't execute.</p> </li>
     /// <li> <p> <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer. The function executes regardless of whether the object was already in the edge cache.</p> <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
     /// </ul>
-    pub fn event_type(&self) -> std::option::Option<&crate::types::EventType> {
+    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
         self.event_type.as_ref()
     }
     /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
-    pub fn include_body(&self) -> std::option::Option<bool> {
+    pub fn include_body(&self) -> ::std::option::Option<bool> {
         self.include_body
     }
 }
@@ -49,22 +49,27 @@ impl LambdaFunctionAssociation {
 
 /// A builder for [`LambdaFunctionAssociation`](crate::types::LambdaFunctionAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionAssociationBuilder {
-    pub(crate) lambda_function_arn: std::option::Option<std::string::String>,
-    pub(crate) event_type: std::option::Option<crate::types::EventType>,
-    pub(crate) include_body: std::option::Option<bool>,
+    pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) event_type: ::std::option::Option<crate::types::EventType>,
+    pub(crate) include_body: ::std::option::Option<bool>,
 }
 impl LambdaFunctionAssociationBuilder {
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
-    pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_function_arn = Some(input.into());
+    pub fn lambda_function_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias or $LATEST.</p>
     pub fn set_lambda_function_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lambda_function_arn = input;
         self
@@ -77,7 +82,7 @@ impl LambdaFunctionAssociationBuilder {
     /// <li> <p> <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer. The function executes regardless of whether the object was already in the edge cache.</p> <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
     /// </ul>
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
-        self.event_type = Some(input);
+        self.event_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
@@ -87,17 +92,17 @@ impl LambdaFunctionAssociationBuilder {
     /// <li> <p> <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and before it caches the object in the response. When the requested object is in the edge cache, the function doesn't execute.</p> </li>
     /// <li> <p> <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer. The function executes regardless of whether the object was already in the edge cache.</p> <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p> </li>
     /// </ul>
-    pub fn set_event_type(mut self, input: std::option::Option<crate::types::EventType>) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
         self.event_type = input;
         self
     }
     /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
     pub fn include_body(mut self, input: bool) -> Self {
-        self.include_body = Some(input);
+        self.include_body = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
-    pub fn set_include_body(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_body(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_body = input;
         self
     }

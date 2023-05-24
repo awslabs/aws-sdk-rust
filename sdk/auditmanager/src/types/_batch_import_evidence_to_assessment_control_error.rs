@@ -2,29 +2,29 @@
 
 /// <p> An error entity for the <code>BatchImportEvidenceToAssessmentControl</code> API. This is used to provide more meaningful errors than a simple string message. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlError {
     /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
     #[doc(hidden)]
-    pub manual_evidence: std::option::Option<crate::types::ManualEvidence>,
+    pub manual_evidence: ::std::option::Option<crate::types::ManualEvidence>,
     /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchImportEvidenceToAssessmentControlError {
     /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
-    pub fn manual_evidence(&self) -> std::option::Option<&crate::types::ManualEvidence> {
+    pub fn manual_evidence(&self) -> ::std::option::Option<&crate::types::ManualEvidence> {
         self.manual_evidence.as_ref()
     }
     /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl BatchImportEvidenceToAssessmentControlError {
 
 /// A builder for [`BatchImportEvidenceToAssessmentControlError`](crate::types::BatchImportEvidenceToAssessmentControlError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchImportEvidenceToAssessmentControlErrorBuilder {
-    pub(crate) manual_evidence: std::option::Option<crate::types::ManualEvidence>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) manual_evidence: ::std::option::Option<crate::types::ManualEvidence>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchImportEvidenceToAssessmentControlErrorBuilder {
     /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
     pub fn manual_evidence(mut self, input: crate::types::ManualEvidence) -> Self {
-        self.manual_evidence = Some(input);
+        self.manual_evidence = ::std::option::Option::Some(input);
         self
     }
     /// <p> Manual evidence that can't be collected automatically by Audit Manager. </p>
     pub fn set_manual_evidence(
         mut self,
-        input: std::option::Option<crate::types::ManualEvidence>,
+        input: ::std::option::Option<crate::types::ManualEvidence>,
     ) -> Self {
         self.manual_evidence = input;
         self
     }
     /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

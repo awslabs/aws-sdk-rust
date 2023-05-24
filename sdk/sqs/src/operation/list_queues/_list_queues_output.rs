@@ -2,27 +2,27 @@
 
 /// <p>A list of your queues.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListQueuesOutput {
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
     #[doc(hidden)]
-    pub queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub queue_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListQueuesOutput {
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
-    pub fn queue_urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queue_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.queue_urls.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListQueuesOutput {
+impl ::aws_http::request_id::RequestId for ListQueuesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,20 +36,22 @@ impl ListQueuesOutput {
 
 /// A builder for [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListQueuesOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) queue_urls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) queue_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListQueuesOutputBuilder {
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Pagination token to include in the next request. Token value is <code>null</code> if there are no additional results to request, or if you did not set <code>MaxResults</code> in the request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -58,16 +60,16 @@ impl ListQueuesOutputBuilder {
     /// To override the contents of this collection use [`set_queue_urls`](Self::set_queue_urls).
     ///
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
-    pub fn queue_urls(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn queue_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.queue_urls.unwrap_or_default();
         v.push(input.into());
-        self.queue_urls = Some(v);
+        self.queue_urls = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.</p>
     pub fn set_queue_urls(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.queue_urls = input;
         self

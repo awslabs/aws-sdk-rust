@@ -38,13 +38,13 @@
 /// <p>The format that AWS saves the report in.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReportFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ReportFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReportFormat {
+impl ::std::convert::From<&str> for ReportFormat {
     fn from(s: &str) -> Self {
         match s {
             "Parquet" => ReportFormat::Parquet,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ReportFormat {
         }
     }
 }
-impl std::str::FromStr for ReportFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReportFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReportFormat::from(s))
     }
 }
 impl ReportFormat {
@@ -86,7 +86,7 @@ impl ReportFormat {
         &["Parquet", "textORcsv"]
     }
 }
-impl AsRef<str> for ReportFormat {
+impl ::std::convert::AsRef<str> for ReportFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

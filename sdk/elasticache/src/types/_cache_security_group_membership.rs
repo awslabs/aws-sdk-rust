@@ -2,22 +2,22 @@
 
 /// <p>Represents a cluster's status within a particular cache security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheSecurityGroupMembership {
     /// <p>The name of the cache security group.</p>
     #[doc(hidden)]
-    pub cache_security_group_name: std::option::Option<std::string::String>,
+    pub cache_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl CacheSecurityGroupMembership {
     /// <p>The name of the cache security group.</p>
-    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn cache_security_group_name(&self) -> ::std::option::Option<&str> {
         self.cache_security_group_name.as_deref()
     }
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl CacheSecurityGroupMembership {
 
 /// A builder for [`CacheSecurityGroupMembership`](crate::types::CacheSecurityGroupMembership).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CacheSecurityGroupMembershipBuilder {
-    pub(crate) cache_security_group_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl CacheSecurityGroupMembershipBuilder {
     /// <p>The name of the cache security group.</p>
-    pub fn cache_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cache_security_group_name = Some(input.into());
+    pub fn cache_security_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cache_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache security group.</p>
     pub fn set_cache_security_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cache_security_group_name = input;
         self
     }
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

@@ -9,56 +9,63 @@ pub use crate::operation::register_targets::_register_targets_input::RegisterTar
 /// <p>If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.</p>
 /// <p>By default, the load balancer routes requests to registered targets using the protocol and port for the target group. Alternatively, you can override the port for a target when you register it. You can register each EC2 instance or IP address with the same target group multiple times using different ports.</p>
 /// <p>With a Network Load Balancer, you cannot register instances by instance ID if they have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTargetsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::register_targets::builders::RegisterTargetsInputBuilder,
 }
 impl RegisterTargetsFluentBuilder {
     /// Creates a new `RegisterTargets`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_targets::RegisterTargets,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::register_targets::RegisterTargetsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_targets::RegisterTargetsError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_targets::RegisterTargetsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_targets::RegisterTargetsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_targets::RegisterTargetsError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,19 +78,27 @@ impl RegisterTargetsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_targets::RegisterTargetsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_targets::RegisterTargetsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_targets::RegisterTargetsError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_group_arn(input);
         self
     }
@@ -99,7 +114,7 @@ impl RegisterTargetsFluentBuilder {
     /// <p>The targets.</p>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>>,
     ) -> Self {
         self.inner = self.inner.set_targets(input);
         self

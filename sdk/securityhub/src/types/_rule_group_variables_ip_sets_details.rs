@@ -2,15 +2,15 @@
 
 /// <p>A list of IP addresses and address ranges, in CIDR notation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupVariablesIpSetsDetails {
     /// <p>The list of IP addresses and ranges.</p>
     #[doc(hidden)]
-    pub definition: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleGroupVariablesIpSetsDetails {
     /// <p>The list of IP addresses and ranges.</p>
-    pub fn definition(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn definition(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.definition.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl RuleGroupVariablesIpSetsDetails {
 
 /// A builder for [`RuleGroupVariablesIpSetsDetails`](crate::types::RuleGroupVariablesIpSetsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupVariablesIpSetsDetailsBuilder {
-    pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleGroupVariablesIpSetsDetailsBuilder {
     /// Appends an item to `definition`.
@@ -33,16 +35,16 @@ impl RuleGroupVariablesIpSetsDetailsBuilder {
     /// To override the contents of this collection use [`set_definition`](Self::set_definition).
     ///
     /// <p>The list of IP addresses and ranges.</p>
-    pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.definition.unwrap_or_default();
         v.push(input.into());
-        self.definition = Some(v);
+        self.definition = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of IP addresses and ranges.</p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.definition = input;
         self

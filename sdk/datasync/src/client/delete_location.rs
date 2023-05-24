@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLocation`](crate::operation::delete_location::builders::DeleteLocationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::delete_location::builders::DeleteLocationFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::delete_location::builders::DeleteLocationFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the location to delete.</p>
+    ///   - [`location_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_location::builders::DeleteLocationFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::delete_location::builders::DeleteLocationFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the location to delete.</p>
     /// - On success, responds with [`DeleteLocationOutput`](crate::operation::delete_location::DeleteLocationOutput)
     /// - On failure, responds with [`SdkError<DeleteLocationError>`](crate::operation::delete_location::DeleteLocationError)
     pub fn delete_location(

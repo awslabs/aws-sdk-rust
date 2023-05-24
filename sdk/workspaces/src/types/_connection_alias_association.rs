@@ -2,36 +2,36 @@
 
 /// <p>Describes a connection alias association that is used for cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionAliasAssociation {
     /// <p>The association status of the connection alias.</p>
     #[doc(hidden)]
-    pub association_status: std::option::Option<crate::types::AssociationStatus>,
+    pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
     #[doc(hidden)]
-    pub associated_account_id: std::option::Option<std::string::String>,
+    pub associated_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the directory associated with a connection alias.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     #[doc(hidden)]
-    pub connection_identifier: std::option::Option<std::string::String>,
+    pub connection_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionAliasAssociation {
     /// <p>The association status of the connection alias.</p>
-    pub fn association_status(&self) -> std::option::Option<&crate::types::AssociationStatus> {
+    pub fn association_status(&self) -> ::std::option::Option<&crate::types::AssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
-    pub fn associated_account_id(&self) -> std::option::Option<&str> {
+    pub fn associated_account_id(&self) -> ::std::option::Option<&str> {
         self.associated_account_id.as_deref()
     }
     /// <p>The identifier of the directory associated with a connection alias.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
-    pub fn connection_identifier(&self) -> std::option::Option<&str> {
+    pub fn connection_identifier(&self) -> ::std::option::Option<&str> {
         self.connection_identifier.as_deref()
     }
 }
@@ -44,59 +44,67 @@ impl ConnectionAliasAssociation {
 
 /// A builder for [`ConnectionAliasAssociation`](crate::types::ConnectionAliasAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectionAliasAssociationBuilder {
-    pub(crate) association_status: std::option::Option<crate::types::AssociationStatus>,
-    pub(crate) associated_account_id: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) connection_identifier: std::option::Option<std::string::String>,
+    pub(crate) association_status: ::std::option::Option<crate::types::AssociationStatus>,
+    pub(crate) associated_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionAliasAssociationBuilder {
     /// <p>The association status of the connection alias.</p>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
-        self.association_status = Some(input);
+        self.association_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The association status of the connection alias.</p>
     pub fn set_association_status(
         mut self,
-        input: std::option::Option<crate::types::AssociationStatus>,
+        input: ::std::option::Option<crate::types::AssociationStatus>,
     ) -> Self {
         self.association_status = input;
         self
     }
     /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
-    pub fn associated_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.associated_account_id = Some(input.into());
+    pub fn associated_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.associated_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
     pub fn set_associated_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.associated_account_id = input;
         self
     }
     /// <p>The identifier of the directory associated with a connection alias.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the directory associated with a connection alias.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
-    pub fn connection_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_identifier = Some(input.into());
+    pub fn connection_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when you're configuring your DNS routing policies.</p>
     pub fn set_connection_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connection_identifier = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeThingType`](crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_type_name(impl Into<String>)`](crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder::set_thing_type_name): <p>The name of the thing type.</p>
+    ///   - [`thing_type_name(impl ::std::convert::Into<String>)`](crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder::thing_type_name) / [`set_thing_type_name(Option<String>)`](crate::operation::describe_thing_type::builders::DescribeThingTypeFluentBuilder::set_thing_type_name): <p>The name of the thing type.</p>
     /// - On success, responds with [`DescribeThingTypeOutput`](crate::operation::describe_thing_type::DescribeThingTypeOutput) with field(s):
     ///   - [`thing_type_name(Option<String>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_name): <p>The name of the thing type.</p>
     ///   - [`thing_type_id(Option<String>)`](crate::operation::describe_thing_type::DescribeThingTypeOutput::thing_type_id): <p>The thing type ID.</p>

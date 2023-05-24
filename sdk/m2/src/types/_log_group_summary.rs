@@ -2,22 +2,22 @@
 
 /// <p>A subset of the attributes that describe a log group. In CloudWatch a log group is a group of log streams that share the same retention, monitoring, and access control settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogGroupSummary {
     /// <p>The type of log.</p>
     #[doc(hidden)]
-    pub log_type: std::option::Option<std::string::String>,
+    pub log_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
-    pub log_group_name: std::option::Option<std::string::String>,
+    pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl LogGroupSummary {
     /// <p>The type of log.</p>
-    pub fn log_type(&self) -> std::option::Option<&str> {
+    pub fn log_type(&self) -> ::std::option::Option<&str> {
         self.log_type.as_deref()
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl LogGroupSummary {
 
 /// A builder for [`LogGroupSummary`](crate::types::LogGroupSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogGroupSummaryBuilder {
-    pub(crate) log_type: std::option::Option<std::string::String>,
-    pub(crate) log_group_name: std::option::Option<std::string::String>,
+    pub(crate) log_type: ::std::option::Option<::std::string::String>,
+    pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl LogGroupSummaryBuilder {
     /// <p>The type of log.</p>
-    pub fn log_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_type = Some(input.into());
+    pub fn log_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of log.</p>
-    pub fn set_log_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_type = input;
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_group_name = Some(input.into());
+    pub fn log_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group.</p>
-    pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_group_name = input;
         self
     }

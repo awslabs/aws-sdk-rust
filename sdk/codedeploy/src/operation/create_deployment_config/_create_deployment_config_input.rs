@@ -2,11 +2,11 @@
 
 /// <p>Represents the input of a <code>CreateDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentConfigInput {
     /// <p>The name of the deployment configuration to create.</p>
     #[doc(hidden)]
-    pub deployment_config_name: std::option::Option<std::string::String>,
+    pub deployment_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
     /// <p>The type parameter takes either of the following values:</p>
     /// <ul>
@@ -16,17 +16,17 @@ pub struct CreateDeploymentConfigInput {
     /// <p>The value parameter takes an integer.</p>
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
     #[doc(hidden)]
-    pub minimum_healthy_hosts: std::option::Option<crate::types::MinimumHealthyHosts>,
+    pub minimum_healthy_hosts: ::std::option::Option<crate::types::MinimumHealthyHosts>,
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
     #[doc(hidden)]
-    pub traffic_routing_config: std::option::Option<crate::types::TrafficRoutingConfig>,
+    pub traffic_routing_config: ::std::option::Option<crate::types::TrafficRoutingConfig>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     #[doc(hidden)]
-    pub compute_platform: std::option::Option<crate::types::ComputePlatform>,
+    pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
 }
 impl CreateDeploymentConfigInput {
     /// <p>The name of the deployment configuration to create.</p>
-    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+    pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
     /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
@@ -37,17 +37,19 @@ impl CreateDeploymentConfigInput {
     /// </ul>
     /// <p>The value parameter takes an integer.</p>
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
-    pub fn minimum_healthy_hosts(&self) -> std::option::Option<&crate::types::MinimumHealthyHosts> {
+    pub fn minimum_healthy_hosts(
+        &self,
+    ) -> ::std::option::Option<&crate::types::MinimumHealthyHosts> {
         self.minimum_healthy_hosts.as_ref()
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
     pub fn traffic_routing_config(
         &self,
-    ) -> std::option::Option<&crate::types::TrafficRoutingConfig> {
+    ) -> ::std::option::Option<&crate::types::TrafficRoutingConfig> {
         self.traffic_routing_config.as_ref()
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    pub fn compute_platform(&self) -> std::option::Option<&crate::types::ComputePlatform> {
+    pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
 }
@@ -62,23 +64,28 @@ impl CreateDeploymentConfigInput {
 
 /// A builder for [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDeploymentConfigInputBuilder {
-    pub(crate) deployment_config_name: std::option::Option<std::string::String>,
-    pub(crate) minimum_healthy_hosts: std::option::Option<crate::types::MinimumHealthyHosts>,
-    pub(crate) traffic_routing_config: std::option::Option<crate::types::TrafficRoutingConfig>,
-    pub(crate) compute_platform: std::option::Option<crate::types::ComputePlatform>,
+    pub(crate) deployment_config_name: ::std::option::Option<::std::string::String>,
+    pub(crate) minimum_healthy_hosts: ::std::option::Option<crate::types::MinimumHealthyHosts>,
+    pub(crate) traffic_routing_config: ::std::option::Option<crate::types::TrafficRoutingConfig>,
+    pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
 }
 impl CreateDeploymentConfigInputBuilder {
     /// <p>The name of the deployment configuration to create.</p>
-    pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_config_name = Some(input.into());
+    pub fn deployment_config_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deployment configuration to create.</p>
     pub fn set_deployment_config_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.deployment_config_name = input;
         self
@@ -92,7 +99,7 @@ impl CreateDeploymentConfigInputBuilder {
     /// <p>The value parameter takes an integer.</p>
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
     pub fn minimum_healthy_hosts(mut self, input: crate::types::MinimumHealthyHosts) -> Self {
-        self.minimum_healthy_hosts = Some(input);
+        self.minimum_healthy_hosts = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
@@ -105,33 +112,33 @@ impl CreateDeploymentConfigInputBuilder {
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
     pub fn set_minimum_healthy_hosts(
         mut self,
-        input: std::option::Option<crate::types::MinimumHealthyHosts>,
+        input: ::std::option::Option<crate::types::MinimumHealthyHosts>,
     ) -> Self {
         self.minimum_healthy_hosts = input;
         self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
     pub fn traffic_routing_config(mut self, input: crate::types::TrafficRoutingConfig) -> Self {
-        self.traffic_routing_config = Some(input);
+        self.traffic_routing_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
     pub fn set_traffic_routing_config(
         mut self,
-        input: std::option::Option<crate::types::TrafficRoutingConfig>,
+        input: ::std::option::Option<crate::types::TrafficRoutingConfig>,
     ) -> Self {
         self.traffic_routing_config = input;
         self
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn compute_platform(mut self, input: crate::types::ComputePlatform) -> Self {
-        self.compute_platform = Some(input);
+        self.compute_platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn set_compute_platform(
         mut self,
-        input: std::option::Option<crate::types::ComputePlatform>,
+        input: ::std::option::Option<crate::types::ComputePlatform>,
     ) -> Self {
         self.compute_platform = input;
         self
@@ -139,11 +146,11 @@ impl CreateDeploymentConfigInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deployment_config::CreateDeploymentConfigInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_deployment_config::CreateDeploymentConfigInput {
                 deployment_config_name: self.deployment_config_name,
                 minimum_healthy_hosts: self.minimum_healthy_hosts,

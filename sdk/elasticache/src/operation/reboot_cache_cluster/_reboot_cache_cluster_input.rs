@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of a <code>RebootCacheCluster</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootCacheClusterInput {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
-    pub cache_cluster_id: std::option::Option<std::string::String>,
+    pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
     #[doc(hidden)]
-    pub cache_node_ids_to_reboot: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cache_node_ids_to_reboot: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RebootCacheClusterInput {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cache_cluster_id(&self) -> ::std::option::Option<&str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn cache_node_ids_to_reboot(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cache_node_ids_to_reboot(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cache_node_ids_to_reboot.as_deref()
     }
 }
@@ -31,19 +31,28 @@ impl RebootCacheClusterInput {
 
 /// A builder for [`RebootCacheClusterInput`](crate::operation::reboot_cache_cluster::RebootCacheClusterInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RebootCacheClusterInputBuilder {
-    pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
-    pub(crate) cache_node_ids_to_reboot: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_node_ids_to_reboot:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RebootCacheClusterInputBuilder {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    pub fn cache_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cache_cluster_id = Some(input.into());
+    pub fn cache_cluster_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    pub fn set_cache_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cache_cluster_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cache_cluster_id = input;
         self
     }
@@ -52,16 +61,19 @@ impl RebootCacheClusterInputBuilder {
     /// To override the contents of this collection use [`set_cache_node_ids_to_reboot`](Self::set_cache_node_ids_to_reboot).
     ///
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn cache_node_ids_to_reboot(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_node_ids_to_reboot(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.cache_node_ids_to_reboot.unwrap_or_default();
         v.push(input.into());
-        self.cache_node_ids_to_reboot = Some(v);
+        self.cache_node_ids_to_reboot = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
     pub fn set_cache_node_ids_to_reboot(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cache_node_ids_to_reboot = input;
         self
@@ -69,11 +81,11 @@ impl RebootCacheClusterInputBuilder {
     /// Consumes the builder and constructs a [`RebootCacheClusterInput`](crate::operation::reboot_cache_cluster::RebootCacheClusterInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::reboot_cache_cluster::RebootCacheClusterInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::reboot_cache_cluster::RebootCacheClusterInput {
                 cache_cluster_id: self.cache_cluster_id,
                 cache_node_ids_to_reboot: self.cache_node_ids_to_reboot,

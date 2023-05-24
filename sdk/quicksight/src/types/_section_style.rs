@@ -2,26 +2,26 @@
 
 /// <p>The options that style a section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionStyle {
     /// <p>The height of a section.</p>
     /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
     #[doc(hidden)]
-    pub height: std::option::Option<std::string::String>,
+    pub height: ::std::option::Option<::std::string::String>,
     /// <p>The spacing between section content and its top, bottom, left, and right edges.</p>
     /// <p>There is no padding by default.</p>
     #[doc(hidden)]
-    pub padding: std::option::Option<crate::types::Spacing>,
+    pub padding: ::std::option::Option<crate::types::Spacing>,
 }
 impl SectionStyle {
     /// <p>The height of a section.</p>
     /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
-    pub fn height(&self) -> std::option::Option<&str> {
+    pub fn height(&self) -> ::std::option::Option<&str> {
         self.height.as_deref()
     }
     /// <p>The spacing between section content and its top, bottom, left, and right edges.</p>
     /// <p>There is no padding by default.</p>
-    pub fn padding(&self) -> std::option::Option<&crate::types::Spacing> {
+    pub fn padding(&self) -> ::std::option::Option<&crate::types::Spacing> {
         self.padding.as_ref()
     }
 }
@@ -34,33 +34,35 @@ impl SectionStyle {
 
 /// A builder for [`SectionStyle`](crate::types::SectionStyle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SectionStyleBuilder {
-    pub(crate) height: std::option::Option<std::string::String>,
-    pub(crate) padding: std::option::Option<crate::types::Spacing>,
+    pub(crate) height: ::std::option::Option<::std::string::String>,
+    pub(crate) padding: ::std::option::Option<crate::types::Spacing>,
 }
 impl SectionStyleBuilder {
     /// <p>The height of a section.</p>
     /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
-    pub fn height(mut self, input: impl Into<std::string::String>) -> Self {
-        self.height = Some(input.into());
+    pub fn height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.height = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The height of a section.</p>
     /// <p>Heights can only be defined for header and footer sections. The default height margin is 0.5 inches. </p>
-    pub fn set_height(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.height = input;
         self
     }
     /// <p>The spacing between section content and its top, bottom, left, and right edges.</p>
     /// <p>There is no padding by default.</p>
     pub fn padding(mut self, input: crate::types::Spacing) -> Self {
-        self.padding = Some(input);
+        self.padding = ::std::option::Option::Some(input);
         self
     }
     /// <p>The spacing between section content and its top, bottom, left, and right edges.</p>
     /// <p>There is no padding by default.</p>
-    pub fn set_padding(mut self, input: std::option::Option<crate::types::Spacing>) -> Self {
+    pub fn set_padding(mut self, input: ::std::option::Option<crate::types::Spacing>) -> Self {
         self.padding = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Contains the parameters for AddTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsInput {
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
     #[doc(hidden)]
-    pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsInput {
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.load_balancer_names.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl AddTagsInput {
 
 /// A builder for [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddTagsInputBuilder {
-    pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddTagsInputBuilder {
     /// Appends an item to `load_balancer_names`.
@@ -41,16 +43,19 @@ impl AddTagsInputBuilder {
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
     ///
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
-    pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn load_balancer_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
         v.push(input.into());
-        self.load_balancer_names = Some(v);
+        self.load_balancer_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of the load balancer. You can specify one load balancer only.</p>
     pub fn set_load_balancer_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.load_balancer_names = input;
         self
@@ -63,13 +68,13 @@ impl AddTagsInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -77,11 +82,11 @@ impl AddTagsInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::add_tags::AddTagsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::add_tags::AddTagsInput {
+        ::std::result::Result::Ok(crate::operation::add_tags::AddTagsInput {
             load_balancer_names: self.load_balancer_names,
             tags: self.tags,
         })

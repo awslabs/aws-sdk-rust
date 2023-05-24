@@ -4,165 +4,167 @@
 /// <p>Access to a studio component is managed by specifying security groups for the resource, as well as its endpoint.</p>
 /// <p>A studio component also has a set of initialization scripts that are returned by <code>GetLaunchProfileInitialization</code>. These initialization scripts run on streaming sessions when they start. They provide users with flexibility in controlling how the studio resources are configured on a streaming session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StudioComponent {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::StudioComponentConfiguration>,
+    pub configuration: ::std::option::Option<crate::types::StudioComponentConfiguration>,
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that created the studio component.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<std::string::String>,
+    pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description for the studio component resource.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 security groups that control access to the studio component.</p>
     #[doc(hidden)]
-    pub ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ec2_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Initialization scripts for studio components.</p>
     #[doc(hidden)]
     pub initialization_scripts:
-        std::option::Option<std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
     /// <p>A friendly name for the studio component resource.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Parameters for the studio component scripts.</p>
     #[doc(hidden)]
     pub script_parameters:
-        std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     /// <p>The current state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::StudioComponentState>,
+    pub state: ::std::option::Option<crate::types::StudioComponentState>,
     /// <p>The status code.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::StudioComponentStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::StudioComponentStatusCode>,
     /// <p>The status message for the studio component.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a studio component resource.</p>
     #[doc(hidden)]
-    pub studio_component_id: std::option::Option<std::string::String>,
+    pub studio_component_id: ::std::option::Option<::std::string::String>,
     /// <p>The specific subtype of a studio component.</p>
     #[doc(hidden)]
-    pub subtype: std::option::Option<crate::types::StudioComponentSubtype>,
+    pub subtype: ::std::option::Option<crate::types::StudioComponentSubtype>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The type of the studio component.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::StudioComponentType>,
+    pub r#type: ::std::option::Option<crate::types::StudioComponentType>,
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user ID of the user that most recently updated the resource.</p>
     #[doc(hidden)]
-    pub updated_by: std::option::Option<std::string::String>,
+    pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     #[doc(hidden)]
-    pub secure_initialization_role_arn: std::option::Option<std::string::String>,
+    pub secure_initialization_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
     #[doc(hidden)]
-    pub runtime_role_arn: std::option::Option<std::string::String>,
+    pub runtime_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StudioComponent {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The configuration of the studio component, based on component type.</p>
     pub fn configuration(
         &self,
-    ) -> std::option::Option<&crate::types::StudioComponentConfiguration> {
+    ) -> ::std::option::Option<&crate::types::StudioComponentConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user ID of the user that created the studio component.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>A human-readable description for the studio component resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ec2_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ec2_security_group_ids.as_deref()
     }
     /// <p>Initialization scripts for studio components.</p>
     pub fn initialization_scripts(
         &self,
-    ) -> std::option::Option<&[crate::types::StudioComponentInitializationScript]> {
+    ) -> ::std::option::Option<&[crate::types::StudioComponentInitializationScript]> {
         self.initialization_scripts.as_deref()
     }
     /// <p>A friendly name for the studio component resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Parameters for the studio component scripts.</p>
     pub fn script_parameters(
         &self,
-    ) -> std::option::Option<&[crate::types::ScriptParameterKeyValue]> {
+    ) -> ::std::option::Option<&[crate::types::ScriptParameterKeyValue]> {
         self.script_parameters.as_deref()
     }
     /// <p>The current state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::StudioComponentState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::StudioComponentState> {
         self.state.as_ref()
     }
     /// <p>The status code.</p>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::StudioComponentStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::StudioComponentStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The status message for the studio component.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn studio_component_id(&self) -> std::option::Option<&str> {
+    pub fn studio_component_id(&self) -> ::std::option::Option<&str> {
         self.studio_component_id.as_deref()
     }
     /// <p>The specific subtype of a studio component.</p>
-    pub fn subtype(&self) -> std::option::Option<&crate::types::StudioComponentSubtype> {
+    pub fn subtype(&self) -> ::std::option::Option<&crate::types::StudioComponentSubtype> {
         self.subtype.as_ref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>The type of the studio component.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::StudioComponentType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::StudioComponentType> {
         self.r#type.as_ref()
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
-    pub fn updated_by(&self) -> std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn secure_initialization_role_arn(&self) -> std::option::Option<&str> {
+    pub fn secure_initialization_role_arn(&self) -> ::std::option::Option<&str> {
         self.secure_initialization_role_arn.as_deref()
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn runtime_role_arn(&self) -> std::option::Option<&str> {
+    pub fn runtime_role_arn(&self) -> ::std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for StudioComponent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StudioComponent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StudioComponent");
         formatter.field("arn", &self.arn);
         formatter.field("configuration", &self.configuration);
@@ -199,86 +201,88 @@ impl StudioComponent {
 
 /// A builder for [`StudioComponent`](crate::types::StudioComponent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StudioComponentBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) configuration: std::option::Option<crate::types::StudioComponentConfiguration>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) ec2_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration: ::std::option::Option<crate::types::StudioComponentConfiguration>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_security_group_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) initialization_scripts:
-        std::option::Option<std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
-    pub(crate) name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StudioComponentInitializationScript>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) script_parameters:
-        std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
-    pub(crate) state: std::option::Option<crate::types::StudioComponentState>,
-    pub(crate) status_code: std::option::Option<crate::types::StudioComponentStatusCode>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) studio_component_id: std::option::Option<std::string::String>,
-    pub(crate) subtype: std::option::Option<crate::types::StudioComponentSubtype>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) r#type: std::option::Option<crate::types::StudioComponentType>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_by: std::option::Option<std::string::String>,
-    pub(crate) secure_initialization_role_arn: std::option::Option<std::string::String>,
-    pub(crate) runtime_role_arn: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+    pub(crate) state: ::std::option::Option<crate::types::StudioComponentState>,
+    pub(crate) status_code: ::std::option::Option<crate::types::StudioComponentStatusCode>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) studio_component_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subtype: ::std::option::Option<crate::types::StudioComponentSubtype>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) r#type: ::std::option::Option<crate::types::StudioComponentType>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) secure_initialization_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StudioComponentBuilder {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
     pub fn configuration(mut self, input: crate::types::StudioComponentConfiguration) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the studio component, based on component type.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::StudioComponentConfiguration>,
+        input: ::std::option::Option<crate::types::StudioComponentConfiguration>,
     ) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The user ID of the user that created the studio component.</p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by = Some(input.into());
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user ID of the user that created the studio component.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
     /// <p>A human-readable description for the studio component resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A human-readable description for the studio component resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -287,16 +291,19 @@ impl StudioComponentBuilder {
     /// To override the contents of this collection use [`set_ec2_security_group_ids`](Self::set_ec2_security_group_ids).
     ///
     /// <p>The EC2 security groups that control access to the studio component.</p>
-    pub fn ec2_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ec2_security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.ec2_security_group_ids.unwrap_or_default();
         v.push(input.into());
-        self.ec2_security_group_ids = Some(v);
+        self.ec2_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The EC2 security groups that control access to the studio component.</p>
     pub fn set_ec2_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ec2_security_group_ids = input;
         self
@@ -312,26 +319,26 @@ impl StudioComponentBuilder {
     ) -> Self {
         let mut v = self.initialization_scripts.unwrap_or_default();
         v.push(input);
-        self.initialization_scripts = Some(v);
+        self.initialization_scripts = ::std::option::Option::Some(v);
         self
     }
     /// <p>Initialization scripts for studio components.</p>
     pub fn set_initialization_scripts(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::StudioComponentInitializationScript>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::StudioComponentInitializationScript>,
         >,
     ) -> Self {
         self.initialization_scripts = input;
         self
     }
     /// <p>A friendly name for the studio component resource.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A friendly name for the studio component resource.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -343,75 +350,84 @@ impl StudioComponentBuilder {
     pub fn script_parameters(mut self, input: crate::types::ScriptParameterKeyValue) -> Self {
         let mut v = self.script_parameters.unwrap_or_default();
         v.push(input);
-        self.script_parameters = Some(v);
+        self.script_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Parameters for the studio component scripts.</p>
     pub fn set_script_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScriptParameterKeyValue>>,
     ) -> Self {
         self.script_parameters = input;
         self
     }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::StudioComponentState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::StudioComponentState>,
+        input: ::std::option::Option<crate::types::StudioComponentState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The status code.</p>
     pub fn status_code(mut self, input: crate::types::StudioComponentStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code.</p>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::StudioComponentStatusCode>,
+        input: ::std::option::Option<crate::types::StudioComponentStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p>The status message for the studio component.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for the studio component.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn studio_component_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.studio_component_id = Some(input.into());
+    pub fn studio_component_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.studio_component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a studio component resource.</p>
     pub fn set_studio_component_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.studio_component_id = input;
         self
     }
     /// <p>The specific subtype of a studio component.</p>
     pub fn subtype(mut self, input: crate::types::StudioComponentSubtype) -> Self {
-        self.subtype = Some(input);
+        self.subtype = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specific subtype of a studio component.</p>
     pub fn set_subtype(
         mut self,
-        input: std::option::Option<crate::types::StudioComponentSubtype>,
+        input: ::std::option::Option<crate::types::StudioComponentSubtype>,
     ) -> Self {
         self.subtype = input;
         self
@@ -423,19 +439,19 @@ impl StudioComponentBuilder {
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -443,60 +459,69 @@ impl StudioComponentBuilder {
     }
     /// <p>The type of the studio component.</p>
     pub fn r#type(mut self, input: crate::types::StudioComponentType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the studio component.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::StudioComponentType>,
+        input: ::std::option::Option<crate::types::StudioComponentType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was updated.</p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
-    pub fn updated_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_by = Some(input.into());
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user ID of the user that most recently updated the resource.</p>
-    pub fn set_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    pub fn secure_initialization_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secure_initialization_role_arn = Some(input.into());
+    pub fn secure_initialization_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secure_initialization_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
     pub fn set_secure_initialization_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secure_initialization_role_arn = input;
         self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn runtime_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.runtime_role_arn = Some(input.into());
+    pub fn runtime_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.runtime_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    pub fn set_runtime_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_runtime_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.runtime_role_arn = input;
         self
     }
@@ -526,8 +551,8 @@ impl StudioComponentBuilder {
         }
     }
 }
-impl std::fmt::Debug for StudioComponentBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StudioComponentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StudioComponentBuilder");
         formatter.field("arn", &self.arn);
         formatter.field("configuration", &self.configuration);

@@ -2,39 +2,39 @@
 
 /// <p>Provides information about a WAF rule. This rule specifies the web requests that you want to allow, block, or count. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRuleDetails {
     /// <p>The name of the metrics for this rule. </p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive name for the rule. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
     #[doc(hidden)]
     pub predicate_list:
-        std::option::Option<std::vec::Vec<crate::types::AwsWafRulePredicateListDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRulePredicateListDetails>>,
     /// <p>The ID of the WAF rule. </p>
     #[doc(hidden)]
-    pub rule_id: std::option::Option<std::string::String>,
+    pub rule_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRuleDetails {
     /// <p>The name of the metrics for this rule. </p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>A descriptive name for the rule. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
     pub fn predicate_list(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsWafRulePredicateListDetails]> {
+    ) -> ::std::option::Option<&[crate::types::AwsWafRulePredicateListDetails]> {
         self.predicate_list.as_deref()
     }
     /// <p>The ID of the WAF rule. </p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
         self.rule_id.as_deref()
     }
 }
@@ -47,32 +47,34 @@ impl AwsWafRuleDetails {
 
 /// A builder for [`AwsWafRuleDetails`](crate::types::AwsWafRuleDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafRuleDetailsBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) predicate_list:
-        std::option::Option<std::vec::Vec<crate::types::AwsWafRulePredicateListDetails>>,
-    pub(crate) rule_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRulePredicateListDetails>>,
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRuleDetailsBuilder {
     /// <p>The name of the metrics for this rule. </p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metrics for this rule. </p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>A descriptive name for the rule. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A descriptive name for the rule. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -84,24 +86,24 @@ impl AwsWafRuleDetailsBuilder {
     pub fn predicate_list(mut self, input: crate::types::AwsWafRulePredicateListDetails) -> Self {
         let mut v = self.predicate_list.unwrap_or_default();
         v.push(input);
-        self.predicate_list = Some(v);
+        self.predicate_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
     pub fn set_predicate_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsWafRulePredicateListDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRulePredicateListDetails>>,
     ) -> Self {
         self.predicate_list = input;
         self
     }
     /// <p>The ID of the WAF rule. </p>
-    pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_id = Some(input.into());
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the WAF rule. </p>
-    pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
     }

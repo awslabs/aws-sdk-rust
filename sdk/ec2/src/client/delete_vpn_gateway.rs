@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVpnGateway`](crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpn_gateway_id(impl Into<String>)`](crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayFluentBuilder::vpn_gateway_id) / [`set_vpn_gateway_id(Option<String>)`](crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayFluentBuilder::set_vpn_gateway_id): <p>The ID of the virtual private gateway.</p>
+    ///   - [`vpn_gateway_id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayFluentBuilder::vpn_gateway_id) / [`set_vpn_gateway_id(Option<String>)`](crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayFluentBuilder::set_vpn_gateway_id): <p>The ID of the virtual private gateway.</p>
     ///   - [`dry_run(bool)`](crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayFluentBuilder::dry_run) / [`set_dry_run(Option<bool>)`](crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayFluentBuilder::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     /// - On success, responds with [`DeleteVpnGatewayOutput`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayOutput)
     /// - On failure, responds with [`SdkError<DeleteVpnGatewayError>`](crate::operation::delete_vpn_gateway::DeleteVpnGatewayError)

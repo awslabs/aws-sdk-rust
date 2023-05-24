@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AcknowledgeOrderReceipt`](crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`order_arn(impl Into<String>)`](crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptFluentBuilder::order_arn) / [`set_order_arn(Option<String>)`](crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptFluentBuilder::set_order_arn): <p>The Amazon Resource Name (ARN) of the order.</p>
+    ///   - [`order_arn(impl ::std::convert::Into<String>)`](crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptFluentBuilder::order_arn) / [`set_order_arn(Option<String>)`](crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptFluentBuilder::set_order_arn): <p>The Amazon Resource Name (ARN) of the order.</p>
     /// - On success, responds with [`AcknowledgeOrderReceiptOutput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput) with field(s):
     ///   - [`order(Option<Order>)`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput::order): <p>Information about the order.</p>
     /// - On failure, responds with [`SdkError<AcknowledgeOrderReceiptError>`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError)

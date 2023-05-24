@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDashboard`](crate::operation::get_dashboard::builders::GetDashboardFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dashboard_name(impl Into<String>)`](crate::operation::get_dashboard::builders::GetDashboardFluentBuilder::dashboard_name) / [`set_dashboard_name(Option<String>)`](crate::operation::get_dashboard::builders::GetDashboardFluentBuilder::set_dashboard_name): <p>The name of the dashboard to be described.</p>
+    ///   - [`dashboard_name(impl ::std::convert::Into<String>)`](crate::operation::get_dashboard::builders::GetDashboardFluentBuilder::dashboard_name) / [`set_dashboard_name(Option<String>)`](crate::operation::get_dashboard::builders::GetDashboardFluentBuilder::set_dashboard_name): <p>The name of the dashboard to be described.</p>
     /// - On success, responds with [`GetDashboardOutput`](crate::operation::get_dashboard::GetDashboardOutput) with field(s):
     ///   - [`dashboard_arn(Option<String>)`](crate::operation::get_dashboard::GetDashboardOutput::dashboard_arn): <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     ///   - [`dashboard_body(Option<String>)`](crate::operation::get_dashboard::GetDashboardOutput::dashboard_body): <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>

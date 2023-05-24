@@ -2,22 +2,22 @@
 
 /// A request to add outputs to the specified flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowOutputsInput {
     /// The flow that you want to add outputs to.
     #[doc(hidden)]
-    pub flow_arn: std::option::Option<std::string::String>,
+    pub flow_arn: ::std::option::Option<::std::string::String>,
     /// A list of outputs that you want to add.
     #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::types::AddOutputRequest>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
 }
 impl AddFlowOutputsInput {
     /// The flow that you want to add outputs to.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// A list of outputs that you want to add.
-    pub fn outputs(&self) -> std::option::Option<&[crate::types::AddOutputRequest]> {
+    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::AddOutputRequest]> {
         self.outputs.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl AddFlowOutputsInput {
 
 /// A builder for [`AddFlowOutputsInput`](crate::operation::add_flow_outputs::AddFlowOutputsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddFlowOutputsInputBuilder {
-    pub(crate) flow_arn: std::option::Option<std::string::String>,
-    pub(crate) outputs: std::option::Option<std::vec::Vec<crate::types::AddOutputRequest>>,
+    pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
 }
 impl AddFlowOutputsInputBuilder {
     /// The flow that you want to add outputs to.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_arn = Some(input.into());
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The flow that you want to add outputs to.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
@@ -54,13 +56,13 @@ impl AddFlowOutputsInputBuilder {
     pub fn outputs(mut self, input: crate::types::AddOutputRequest) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
-        self.outputs = Some(v);
+        self.outputs = ::std::option::Option::Some(v);
         self
     }
     /// A list of outputs that you want to add.
     pub fn set_outputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddOutputRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>,
     ) -> Self {
         self.outputs = input;
         self
@@ -68,11 +70,11 @@ impl AddFlowOutputsInputBuilder {
     /// Consumes the builder and constructs a [`AddFlowOutputsInput`](crate::operation::add_flow_outputs::AddFlowOutputsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::add_flow_outputs::AddFlowOutputsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::add_flow_outputs::AddFlowOutputsInput {
+        ::std::result::Result::Ok(crate::operation::add_flow_outputs::AddFlowOutputsInput {
             flow_arn: self.flow_arn,
             outputs: self.outputs,
         })

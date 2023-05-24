@@ -2,7 +2,7 @@
 
 /// <p>Information about a cache behavior for the distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionCacheBehavior {
     /// <p>The protocol that viewers can use to access the files in an origin. You can specify the following options:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct AwsCloudFrontDistributionCacheBehavior {
     /// <li> <p> <code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub viewer_protocol_policy: std::option::Option<std::string::String>,
+    pub viewer_protocol_policy: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionCacheBehavior {
     /// <p>The protocol that viewers can use to access the files in an origin. You can specify the following options:</p>
@@ -20,7 +20,7 @@ impl AwsCloudFrontDistributionCacheBehavior {
     /// <li> <p> <code>redirect-to-https</code> - CloudFront responds to HTTP requests with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL. The viewer then uses the new URL to resubmit.</p> </li>
     /// <li> <p> <code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p> </li>
     /// </ul>
-    pub fn viewer_protocol_policy(&self) -> std::option::Option<&str> {
+    pub fn viewer_protocol_policy(&self) -> ::std::option::Option<&str> {
         self.viewer_protocol_policy.as_deref()
     }
 }
@@ -33,9 +33,11 @@ impl AwsCloudFrontDistributionCacheBehavior {
 
 /// A builder for [`AwsCloudFrontDistributionCacheBehavior`](crate::types::AwsCloudFrontDistributionCacheBehavior).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCloudFrontDistributionCacheBehaviorBuilder {
-    pub(crate) viewer_protocol_policy: std::option::Option<std::string::String>,
+    pub(crate) viewer_protocol_policy: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionCacheBehaviorBuilder {
     /// <p>The protocol that viewers can use to access the files in an origin. You can specify the following options:</p>
@@ -44,8 +46,11 @@ impl AwsCloudFrontDistributionCacheBehaviorBuilder {
     /// <li> <p> <code>redirect-to-https</code> - CloudFront responds to HTTP requests with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL. The viewer then uses the new URL to resubmit.</p> </li>
     /// <li> <p> <code>https-only</code> - CloudFront responds to HTTP request with an HTTP status code of 403 (Forbidden).</p> </li>
     /// </ul>
-    pub fn viewer_protocol_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.viewer_protocol_policy = Some(input.into());
+    pub fn viewer_protocol_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.viewer_protocol_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol that viewers can use to access the files in an origin. You can specify the following options:</p>
@@ -56,7 +61,7 @@ impl AwsCloudFrontDistributionCacheBehaviorBuilder {
     /// </ul>
     pub fn set_viewer_protocol_policy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.viewer_protocol_policy = input;
         self

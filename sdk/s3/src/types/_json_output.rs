@@ -2,15 +2,15 @@
 
 /// <p>Specifies JSON as request's output serialization format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonOutput {
     /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
     #[doc(hidden)]
-    pub record_delimiter: std::option::Option<std::string::String>,
+    pub record_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl JsonOutput {
     /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
-    pub fn record_delimiter(&self) -> std::option::Option<&str> {
+    pub fn record_delimiter(&self) -> ::std::option::Option<&str> {
         self.record_delimiter.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl JsonOutput {
 
 /// A builder for [`JsonOutput`](crate::types::JsonOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JsonOutputBuilder {
-    pub(crate) record_delimiter: std::option::Option<std::string::String>,
+    pub(crate) record_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl JsonOutputBuilder {
     /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
-    pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.record_delimiter = Some(input.into());
+    pub fn record_delimiter(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.record_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value used to separate individual records in the output. If no value is specified, Amazon S3 uses a newline character ('\n').</p>
-    pub fn set_record_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_delimiter(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.record_delimiter = input;
         self
     }

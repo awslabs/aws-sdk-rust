@@ -2,29 +2,29 @@
 
 /// <p>Updates the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSettings {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
     #[doc(hidden)]
-    pub add_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub add_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of one or more subnets to remove.</p>
     #[doc(hidden)]
-    pub remove_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub remove_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
     #[doc(hidden)]
-    pub security_group_id: std::option::Option<std::string::String>,
+    pub security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSettings {
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn add_subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn add_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.add_subnets.as_deref()
     }
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn remove_subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn remove_subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.remove_subnets.as_deref()
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
-    pub fn security_group_id(&self) -> std::option::Option<&str> {
+    pub fn security_group_id(&self) -> ::std::option::Option<&str> {
         self.security_group_id.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl UpdateSettings {
 
 /// A builder for [`UpdateSettings`](crate::types::UpdateSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateSettingsBuilder {
-    pub(crate) add_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) remove_subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) security_group_id: std::option::Option<std::string::String>,
+    pub(crate) add_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remove_subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSettingsBuilder {
     /// Appends an item to `add_subnets`.
@@ -49,16 +51,16 @@ impl UpdateSettingsBuilder {
     /// To override the contents of this collection use [`set_add_subnets`](Self::set_add_subnets).
     ///
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
-    pub fn add_subnets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn add_subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.add_subnets.unwrap_or_default();
         v.push(input.into());
-        self.add_subnets = Some(v);
+        self.add_subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of one or more subnets in which License Manager will create a VPC endpoint for products that require connectivity to activation servers.</p>
     pub fn set_add_subnets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.add_subnets = input;
         self
@@ -68,29 +70,35 @@ impl UpdateSettingsBuilder {
     /// To override the contents of this collection use [`set_remove_subnets`](Self::set_remove_subnets).
     ///
     /// <p>The ID of one or more subnets to remove.</p>
-    pub fn remove_subnets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn remove_subnets(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.remove_subnets.unwrap_or_default();
         v.push(input.into());
-        self.remove_subnets = Some(v);
+        self.remove_subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of one or more subnets to remove.</p>
     pub fn set_remove_subnets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.remove_subnets = input;
         self
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
-    pub fn security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_group_id = Some(input.into());
+    pub fn security_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A security group ID that allows inbound TCP port 1688 communication between resources in your VPC and the VPC endpoints for activation servers.</p>
     pub fn set_security_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_group_id = input;
         self

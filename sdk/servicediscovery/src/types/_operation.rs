@@ -2,14 +2,14 @@
 
 /// <p>A complex type that contains information about a specified operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operation {
     /// <p>The ID of the operation that you want to get information about.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the operation that's associated with the specified ID.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::OperationType>,
+    pub r#type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The status of the operation. Values include the following:</p>
     /// <dl>
     /// <dt>
@@ -38,10 +38,10 @@ pub struct Operation {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OperationStatus>,
+    pub status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
     /// <ul>
     /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
@@ -53,13 +53,13 @@ pub struct Operation {
     /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
-    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
-    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the target entity that's associated with the operation:</p>
     /// <dl>
     /// <dt>
@@ -82,17 +82,17 @@ pub struct Operation {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub targets: std::option::Option<
-        std::collections::HashMap<crate::types::OperationTargetType, std::string::String>,
+    pub targets: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::OperationTargetType, ::std::string::String>,
     >,
 }
 impl Operation {
     /// <p>The ID of the operation that you want to get information about.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the operation that's associated with the specified ID.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OperationType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OperationType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the operation. Values include the following:</p>
@@ -122,11 +122,11 @@ impl Operation {
     /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
@@ -139,15 +139,15 @@ impl Operation {
     /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
     /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>The name of the target entity that's associated with the operation:</p>
@@ -173,8 +173,8 @@ impl Operation {
     /// </dl>
     pub fn targets(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::OperationTargetType, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::OperationTargetType, ::std::string::String>,
     > {
         self.targets.as_ref()
     }
@@ -188,37 +188,39 @@ impl Operation {
 
 /// A builder for [`Operation`](crate::types::Operation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OperationBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::OperationType>,
-    pub(crate) status: std::option::Option<crate::types::OperationStatus>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) targets: std::option::Option<
-        std::collections::HashMap<crate::types::OperationTargetType, std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::OperationType>,
+    pub(crate) status: ::std::option::Option<crate::types::OperationStatus>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) targets: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::OperationTargetType, ::std::string::String>,
     >,
 }
 impl OperationBuilder {
     /// <p>The ID of the operation that you want to get information about.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the operation that you want to get information about.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the operation that's associated with the specified ID.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the operation that's associated with the specified ID.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.r#type = input;
         self
     }
@@ -250,7 +252,7 @@ impl OperationBuilder {
     /// </dd>
     /// </dl>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the operation. Values include the following:</p>
@@ -280,17 +282,26 @@ impl OperationBuilder {
     /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
     /// </dd>
     /// </dl>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OperationStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::OperationStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
@@ -304,8 +315,8 @@ impl OperationBuilder {
     /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
     /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
@@ -318,32 +329,32 @@ impl OperationBuilder {
     /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
     /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
     /// </ul>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_date = Some(input);
+    pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_create_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_date = input;
         self
     }
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_date = Some(input);
+    pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_update_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_date = input;
         self
@@ -376,11 +387,11 @@ impl OperationBuilder {
     pub fn targets(
         mut self,
         k: crate::types::OperationTargetType,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.targets.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.targets = Some(hash_map);
+        self.targets = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The name of the target entity that's associated with the operation:</p>
@@ -406,8 +417,8 @@ impl OperationBuilder {
     /// </dl>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::OperationTargetType, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::OperationTargetType, ::std::string::String>,
         >,
     ) -> Self {
         self.targets = input;

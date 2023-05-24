@@ -2,11 +2,11 @@
 
 /// <p>Represents the output of a <code>DeleteApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApiCacheOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteApiCacheOutput {
+impl ::aws_http::request_id::RequestId for DeleteApiCacheOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteApiCacheOutput {
 
 /// A builder for [`DeleteApiCacheOutput`](crate::operation::delete_api_cache::DeleteApiCacheOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteApiCacheOutputBuilder {
     _request_id: Option<String>,
 }

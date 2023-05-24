@@ -2,29 +2,29 @@
 
 /// Channel class that the channel should be updated to.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelClassInput {
     /// The channel class that you wish to update this channel to use.
     #[doc(hidden)]
-    pub channel_class: std::option::Option<crate::types::ChannelClass>,
+    pub channel_class: ::std::option::Option<crate::types::ChannelClass>,
     /// Channel Id of the channel whose class should be updated.
     #[doc(hidden)]
-    pub channel_id: std::option::Option<std::string::String>,
+    pub channel_id: ::std::option::Option<::std::string::String>,
     /// A list of output destinations for this channel.
     #[doc(hidden)]
-    pub destinations: std::option::Option<std::vec::Vec<crate::types::OutputDestination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
 }
 impl UpdateChannelClassInput {
     /// The channel class that you wish to update this channel to use.
-    pub fn channel_class(&self) -> std::option::Option<&crate::types::ChannelClass> {
+    pub fn channel_class(&self) -> ::std::option::Option<&crate::types::ChannelClass> {
         self.channel_class.as_ref()
     }
     /// Channel Id of the channel whose class should be updated.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<&str> {
         self.channel_id.as_deref()
     }
     /// A list of output destinations for this channel.
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::OutputDestination]> {
+    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::OutputDestination]> {
         self.destinations.as_deref()
     }
 }
@@ -38,33 +38,36 @@ impl UpdateChannelClassInput {
 
 /// A builder for [`UpdateChannelClassInput`](crate::operation::update_channel_class::UpdateChannelClassInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateChannelClassInputBuilder {
-    pub(crate) channel_class: std::option::Option<crate::types::ChannelClass>,
-    pub(crate) channel_id: std::option::Option<std::string::String>,
-    pub(crate) destinations: std::option::Option<std::vec::Vec<crate::types::OutputDestination>>,
+    pub(crate) channel_class: ::std::option::Option<crate::types::ChannelClass>,
+    pub(crate) channel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) destinations:
+        ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
 }
 impl UpdateChannelClassInputBuilder {
     /// The channel class that you wish to update this channel to use.
     pub fn channel_class(mut self, input: crate::types::ChannelClass) -> Self {
-        self.channel_class = Some(input);
+        self.channel_class = ::std::option::Option::Some(input);
         self
     }
     /// The channel class that you wish to update this channel to use.
     pub fn set_channel_class(
         mut self,
-        input: std::option::Option<crate::types::ChannelClass>,
+        input: ::std::option::Option<crate::types::ChannelClass>,
     ) -> Self {
         self.channel_class = input;
         self
     }
     /// Channel Id of the channel whose class should be updated.
-    pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_id = Some(input.into());
+    pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Channel Id of the channel whose class should be updated.
-    pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
     }
@@ -76,13 +79,13 @@ impl UpdateChannelClassInputBuilder {
     pub fn destinations(mut self, input: crate::types::OutputDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input);
-        self.destinations = Some(v);
+        self.destinations = ::std::option::Option::Some(v);
         self
     }
     /// A list of output destinations for this channel.
     pub fn set_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDestination>>,
     ) -> Self {
         self.destinations = input;
         self
@@ -90,11 +93,11 @@ impl UpdateChannelClassInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelClassInput`](crate::operation::update_channel_class::UpdateChannelClassInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_channel_class::UpdateChannelClassInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_channel_class::UpdateChannelClassInput {
                 channel_class: self.channel_class,
                 channel_id: self.channel_id,

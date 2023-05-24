@@ -8,29 +8,29 @@ pub use crate::operation::create_aws_log_source::_create_aws_log_source_input::C
 /// <p>Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables source types for member accounts in required Amazon Web Services Regions, based on the parameters you specify. You can choose any source type in any Region for either accounts that are part of a trusted organization or standalone accounts. At least one of the three dimensions is a mandatory input to this API. However, you can supply any combination of the three dimensions to this API. </p>
 /// <p>By default, a dimension refers to the entire set. When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set. This is overridden when you supply any one of the inputs. For instance, when you do not specify members, the API enables all Security Lake member accounts for all sources. Similarly, when you do not specify Regions, Security Lake is enabled for all the Regions where Security Lake is available as a service.</p>
 /// <p>You can use this API only to enable natively supported Amazon Web Services as a source. Use <code>CreateCustomLogSource</code> to enable data collection from a custom source. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAwsLogSourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder,
 }
 impl CreateAwsLogSourceFluentBuilder {
     /// Creates a new `CreateAwsLogSource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_aws_log_source::CreateAwsLogSource,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_aws_log_source::CreateAwsLogSourceError,
         >,
     > {
@@ -38,30 +38,33 @@ impl CreateAwsLogSourceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_aws_log_source::CreateAwsLogSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_aws_log_source::CreateAwsLogSourceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,9 +77,9 @@ impl CreateAwsLogSourceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_aws_log_source::CreateAwsLogSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_aws_log_source::CreateAwsLogSourceError,
         >,
     > {
@@ -94,7 +97,7 @@ impl CreateAwsLogSourceFluentBuilder {
     /// <p>Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.</p>
     pub fn set_input_order(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     ) -> Self {
         self.inner = self.inner.set_input_order(input);
         self
@@ -106,8 +109,11 @@ impl CreateAwsLogSourceFluentBuilder {
     /// <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
     pub fn enable_all_dimensions(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<::std::string::String>,
+        >,
     ) -> Self {
         self.inner = self.inner.enable_all_dimensions(k.into(), v);
         self
@@ -115,10 +121,13 @@ impl CreateAwsLogSourceFluentBuilder {
     /// <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
     pub fn set_enable_all_dimensions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::collections::HashMap<
+                    ::std::string::String,
+                    ::std::vec::Vec<::std::string::String>,
+                >,
             >,
         >,
     ) -> Self {
@@ -132,8 +141,8 @@ impl CreateAwsLogSourceFluentBuilder {
     /// <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
     pub fn enable_two_dimensions(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.enable_two_dimensions(k.into(), v);
         self
@@ -141,8 +150,11 @@ impl CreateAwsLogSourceFluentBuilder {
     /// <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
     pub fn set_enable_two_dimensions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_enable_two_dimensions(input);
@@ -153,14 +165,17 @@ impl CreateAwsLogSourceFluentBuilder {
     /// To override the contents of this collection use [`set_enable_single_dimension`](Self::set_enable_single_dimension).
     ///
     /// <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
-    pub fn enable_single_dimension(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn enable_single_dimension(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.enable_single_dimension(input.into());
         self
     }
     /// <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
     pub fn set_enable_single_dimension(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_enable_single_dimension(input);
         self

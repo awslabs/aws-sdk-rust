@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateFleet`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_name): <p>The name of the fleet.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_name): <p>The name of the fleet.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_fleet::builders::CreateFleetFluentBuilder::set_tags): <p>A map that contains tag keys and tag values that are attached to the fleet.</p>
     /// - On success, responds with [`CreateFleetOutput`](crate::operation::create_fleet::CreateFleetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_fleet::CreateFleetOutput::arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>

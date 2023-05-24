@@ -45,13 +45,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SignalDecoderFailureReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +75,7 @@ pub enum SignalDecoderFailureReason {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SignalDecoderFailureReason {
+impl ::std::convert::From<&str> for SignalDecoderFailureReason {
     fn from(s: &str) -> Self {
         match s {
             "CAN_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CanSignalInfoIsNull,
@@ -99,11 +99,11 @@ impl std::convert::From<&str> for SignalDecoderFailureReason {
         }
     }
 }
-impl std::str::FromStr for SignalDecoderFailureReason {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SignalDecoderFailureReason {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SignalDecoderFailureReason::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SignalDecoderFailureReason::from(s))
     }
 }
 impl SignalDecoderFailureReason {
@@ -143,7 +143,7 @@ impl SignalDecoderFailureReason {
         ]
     }
 }
-impl AsRef<str> for SignalDecoderFailureReason {
+impl ::std::convert::AsRef<str> for SignalDecoderFailureReason {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

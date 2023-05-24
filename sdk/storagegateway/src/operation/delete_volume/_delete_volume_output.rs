@@ -2,20 +2,20 @@
 
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
     #[doc(hidden)]
-    pub volume_arn: std::option::Option<std::string::String>,
+    pub volume_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteVolumeOutput {
+impl ::aws_http::request_id::RequestId for DeleteVolumeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DeleteVolumeOutput {
 
 /// A builder for [`DeleteVolumeOutput`](crate::operation::delete_volume::DeleteVolumeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteVolumeOutputBuilder {
-    pub(crate) volume_arn: std::option::Option<std::string::String>,
+    pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteVolumeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
-    pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_arn = Some(input.into());
+    pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
-    pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }

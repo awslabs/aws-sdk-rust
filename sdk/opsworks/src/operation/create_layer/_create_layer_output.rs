@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>CreateLayer</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLayerOutput {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
-    pub layer_id: std::option::Option<std::string::String>,
+    pub layer_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLayerOutput {
     /// <p>The layer ID.</p>
-    pub fn layer_id(&self) -> std::option::Option<&str> {
+    pub fn layer_id(&self) -> ::std::option::Option<&str> {
         self.layer_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateLayerOutput {
+impl ::aws_http::request_id::RequestId for CreateLayerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateLayerOutput {
 
 /// A builder for [`CreateLayerOutput`](crate::operation::create_layer::CreateLayerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateLayerOutputBuilder {
-    pub(crate) layer_id: std::option::Option<std::string::String>,
+    pub(crate) layer_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLayerOutputBuilder {
     /// <p>The layer ID.</p>
-    pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.layer_id = Some(input.into());
+    pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.layer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The layer ID.</p>
-    pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_id = input;
         self
     }

@@ -2,17 +2,17 @@
 
 /// <p>The options that determine the default settings for a paginated layout configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultPaginatedLayoutConfiguration {
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
     #[doc(hidden)]
-    pub section_based: std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>,
+    pub section_based: ::std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>,
 }
 impl DefaultPaginatedLayoutConfiguration {
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
     pub fn section_based(
         &self,
-    ) -> std::option::Option<&crate::types::DefaultSectionBasedLayoutConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DefaultSectionBasedLayoutConfiguration> {
         self.section_based.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl DefaultPaginatedLayoutConfiguration {
 
 /// A builder for [`DefaultPaginatedLayoutConfiguration`](crate::types::DefaultPaginatedLayoutConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefaultPaginatedLayoutConfigurationBuilder {
     pub(crate) section_based:
-        std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>,
+        ::std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>,
 }
 impl DefaultPaginatedLayoutConfigurationBuilder {
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
@@ -36,13 +38,13 @@ impl DefaultPaginatedLayoutConfigurationBuilder {
         mut self,
         input: crate::types::DefaultSectionBasedLayoutConfiguration,
     ) -> Self {
-        self.section_based = Some(input);
+        self.section_based = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the default settings for a section-based layout configuration.</p>
     pub fn set_section_based(
         mut self,
-        input: std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>,
+        input: ::std::option::Option<crate::types::DefaultSectionBasedLayoutConfiguration>,
     ) -> Self {
         self.section_based = input;
         self

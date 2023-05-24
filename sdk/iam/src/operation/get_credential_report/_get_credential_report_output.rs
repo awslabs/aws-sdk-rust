@@ -2,34 +2,34 @@
 
 /// <p>Contains the response to a successful <code>GetCredentialReport</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCredentialReportOutput {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<aws_smithy_types::Blob>,
+    pub content: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The format (MIME type) of the credential report.</p>
     #[doc(hidden)]
-    pub report_format: std::option::Option<crate::types::ReportFormatType>,
+    pub report_format: ::std::option::Option<crate::types::ReportFormatType>,
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
     #[doc(hidden)]
-    pub generated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub generated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetCredentialReportOutput {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
-    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn content(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>The format (MIME type) of the credential report.</p>
-    pub fn report_format(&self) -> std::option::Option<&crate::types::ReportFormatType> {
+    pub fn report_format(&self) -> ::std::option::Option<&crate::types::ReportFormatType> {
         self.report_format.as_ref()
     }
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-    pub fn generated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn generated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.generated_time.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetCredentialReportOutput {
+impl ::aws_http::request_id::RequestId for GetCredentialReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,46 +45,48 @@ impl GetCredentialReportOutput {
 
 /// A builder for [`GetCredentialReportOutput`](crate::operation::get_credential_report::GetCredentialReportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCredentialReportOutputBuilder {
-    pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) report_format: std::option::Option<crate::types::ReportFormatType>,
-    pub(crate) generated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) content: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) report_format: ::std::option::Option<crate::types::ReportFormatType>,
+    pub(crate) generated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetCredentialReportOutputBuilder {
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
-    pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.content = Some(input);
+    pub fn content(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.content = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the credential report. The report is Base64-encoded.</p>
-    pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.content = input;
         self
     }
     /// <p>The format (MIME type) of the credential report.</p>
     pub fn report_format(mut self, input: crate::types::ReportFormatType) -> Self {
-        self.report_format = Some(input);
+        self.report_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format (MIME type) of the credential report.</p>
     pub fn set_report_format(
         mut self,
-        input: std::option::Option<crate::types::ReportFormatType>,
+        input: ::std::option::Option<crate::types::ReportFormatType>,
     ) -> Self {
         self.report_format = input;
         self
     }
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-    pub fn generated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.generated_time = Some(input);
+    pub fn generated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.generated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
     pub fn set_generated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.generated_time = input;
         self

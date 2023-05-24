@@ -2,141 +2,143 @@
 
 /// <p>An object representing an Amazon EKS managed node group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Nodegroup {
     /// <p>The name associated with an Amazon EKS managed node group.</p>
     #[doc(hidden)]
-    pub nodegroup_name: std::option::Option<std::string::String>,
+    pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the managed node group.</p>
     #[doc(hidden)]
-    pub nodegroup_arn: std::option::Option<std::string::String>,
+    pub nodegroup_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster that the managed node group resides in.</p>
     #[doc(hidden)]
-    pub cluster_name: std::option::Option<std::string::String>,
+    pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes version of the managed node group.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was specified in the launch template. For node groups that weren't deployed using a launch template, this is the version of the Amazon EKS optimized AMI that the node group was deployed with.</p>
     #[doc(hidden)]
-    pub release_version: std::option::Option<std::string::String>,
+    pub release_version: ::std::option::Option<::std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last modified.</p>
     #[doc(hidden)]
-    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the managed node group.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::NodegroupStatus>,
+    pub status: ::std::option::Option<crate::types::NodegroupStatus>,
     /// <p>The capacity type of your managed node group.</p>
     #[doc(hidden)]
-    pub capacity_type: std::option::Option<crate::types::CapacityTypes>,
+    pub capacity_type: ::std::option::Option<crate::types::CapacityTypes>,
     /// <p>The scaling configuration details for the Auto Scaling group that is associated with your node group.</p>
     #[doc(hidden)]
-    pub scaling_config: std::option::Option<crate::types::NodegroupScalingConfig>,
+    pub scaling_config: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the instance type that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
     #[doc(hidden)]
-    pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnets that were specified for the Auto Scaling group that is associated with your node group.</p>
     #[doc(hidden)]
-    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the remote access configuration that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
     #[doc(hidden)]
-    pub remote_access: std::option::Option<crate::types::RemoteAccessConfig>,
+    pub remote_access: ::std::option::Option<crate::types::RemoteAccessConfig>,
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node group configuration.</p>
     #[doc(hidden)]
-    pub ami_type: std::option::Option<crate::types::AmiTypes>,
+    pub ami_type: ::std::option::Option<crate::types::AmiTypes>,
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.</p>
     #[doc(hidden)]
-    pub node_role: std::option::Option<std::string::String>,
+    pub node_role: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
     /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied to the nodes in this group.</p>
     /// </note>
     #[doc(hidden)]
-    pub labels:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub labels: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
     #[doc(hidden)]
-    pub taints: std::option::Option<std::vec::Vec<crate::types::Taint>>,
+    pub taints: ::std::option::Option<::std::vec::Vec<crate::types::Taint>>,
     /// <p>The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
     #[doc(hidden)]
-    pub resources: std::option::Option<crate::types::NodegroupResources>,
+    pub resources: ::std::option::Option<crate::types::NodegroupResources>,
     /// <p>If the node group wasn't deployed with a launch template, then this is the disk size in the node group configuration. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
     #[doc(hidden)]
-    pub disk_size: std::option::Option<i32>,
+    pub disk_size: ::std::option::Option<i32>,
     /// <p>The health status of the node group. If there are issues with your node group's health, they are listed here.</p>
     #[doc(hidden)]
-    pub health: std::option::Option<crate::types::NodegroupHealth>,
+    pub health: ::std::option::Option<crate::types::NodegroupHealth>,
     /// <p>The node group update configuration.</p>
     #[doc(hidden)]
-    pub update_config: std::option::Option<crate::types::NodegroupUpdateConfig>,
+    pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
     #[doc(hidden)]
-    pub launch_template: std::option::Option<crate::types::LaunchTemplateSpecification>,
+    pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl Nodegroup {
     /// <p>The name associated with an Amazon EKS managed node group.</p>
-    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+    pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) associated with the managed node group.</p>
-    pub fn nodegroup_arn(&self) -> std::option::Option<&str> {
+    pub fn nodegroup_arn(&self) -> ::std::option::Option<&str> {
         self.nodegroup_arn.as_deref()
     }
     /// <p>The name of the cluster that the managed node group resides in.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>The Kubernetes version of the managed node group.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was specified in the launch template. For node groups that weren't deployed using a launch template, this is the version of the Amazon EKS optimized AMI that the node group was deployed with.</p>
-    pub fn release_version(&self) -> std::option::Option<&str> {
+    pub fn release_version(&self) -> ::std::option::Option<&str> {
         self.release_version.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>The current status of the managed node group.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::NodegroupStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::NodegroupStatus> {
         self.status.as_ref()
     }
     /// <p>The capacity type of your managed node group.</p>
-    pub fn capacity_type(&self) -> std::option::Option<&crate::types::CapacityTypes> {
+    pub fn capacity_type(&self) -> ::std::option::Option<&crate::types::CapacityTypes> {
         self.capacity_type.as_ref()
     }
     /// <p>The scaling configuration details for the Auto Scaling group that is associated with your node group.</p>
-    pub fn scaling_config(&self) -> std::option::Option<&crate::types::NodegroupScalingConfig> {
+    pub fn scaling_config(&self) -> ::std::option::Option<&crate::types::NodegroupScalingConfig> {
         self.scaling_config.as_ref()
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the instance type that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_types.as_deref()
     }
     /// <p>The subnets that were specified for the Auto Scaling group that is associated with your node group.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the remote access configuration that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    pub fn remote_access(&self) -> std::option::Option<&crate::types::RemoteAccessConfig> {
+    pub fn remote_access(&self) -> ::std::option::Option<&crate::types::RemoteAccessConfig> {
         self.remote_access.as_ref()
     }
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node group configuration.</p>
-    pub fn ami_type(&self) -> std::option::Option<&crate::types::AmiTypes> {
+    pub fn ami_type(&self) -> ::std::option::Option<&crate::types::AmiTypes> {
         self.ami_type.as_ref()
     }
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.</p>
-    pub fn node_role(&self) -> std::option::Option<&str> {
+    pub fn node_role(&self) -> ::std::option::Option<&str> {
         self.node_role.as_deref()
     }
     /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
@@ -144,41 +146,43 @@ impl Nodegroup {
     /// </note>
     pub fn labels(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.labels.as_ref()
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
-    pub fn taints(&self) -> std::option::Option<&[crate::types::Taint]> {
+    pub fn taints(&self) -> ::std::option::Option<&[crate::types::Taint]> {
         self.taints.as_deref()
     }
     /// <p>The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
-    pub fn resources(&self) -> std::option::Option<&crate::types::NodegroupResources> {
+    pub fn resources(&self) -> ::std::option::Option<&crate::types::NodegroupResources> {
         self.resources.as_ref()
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the disk size in the node group configuration. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    pub fn disk_size(&self) -> std::option::Option<i32> {
+    pub fn disk_size(&self) -> ::std::option::Option<i32> {
         self.disk_size
     }
     /// <p>The health status of the node group. If there are issues with your node group's health, they are listed here.</p>
-    pub fn health(&self) -> std::option::Option<&crate::types::NodegroupHealth> {
+    pub fn health(&self) -> ::std::option::Option<&crate::types::NodegroupHealth> {
         self.health.as_ref()
     }
     /// <p>The node group update configuration.</p>
-    pub fn update_config(&self) -> std::option::Option<&crate::types::NodegroupUpdateConfig> {
+    pub fn update_config(&self) -> ::std::option::Option<&crate::types::NodegroupUpdateConfig> {
         self.update_config.as_ref()
     }
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
     pub fn launch_template(
         &self,
-    ) -> std::option::Option<&crate::types::LaunchTemplateSpecification> {
+    ) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
     /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -191,143 +195,168 @@ impl Nodegroup {
 
 /// A builder for [`Nodegroup`](crate::types::Nodegroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodegroupBuilder {
-    pub(crate) nodegroup_name: std::option::Option<std::string::String>,
-    pub(crate) nodegroup_arn: std::option::Option<std::string::String>,
-    pub(crate) cluster_name: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) release_version: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::NodegroupStatus>,
-    pub(crate) capacity_type: std::option::Option<crate::types::CapacityTypes>,
-    pub(crate) scaling_config: std::option::Option<crate::types::NodegroupScalingConfig>,
-    pub(crate) instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) remote_access: std::option::Option<crate::types::RemoteAccessConfig>,
-    pub(crate) ami_type: std::option::Option<crate::types::AmiTypes>,
-    pub(crate) node_role: std::option::Option<std::string::String>,
-    pub(crate) labels:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) taints: std::option::Option<std::vec::Vec<crate::types::Taint>>,
-    pub(crate) resources: std::option::Option<crate::types::NodegroupResources>,
-    pub(crate) disk_size: std::option::Option<i32>,
-    pub(crate) health: std::option::Option<crate::types::NodegroupHealth>,
-    pub(crate) update_config: std::option::Option<crate::types::NodegroupUpdateConfig>,
-    pub(crate) launch_template: std::option::Option<crate::types::LaunchTemplateSpecification>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,
+    pub(crate) nodegroup_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) release_version: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::NodegroupStatus>,
+    pub(crate) capacity_type: ::std::option::Option<crate::types::CapacityTypes>,
+    pub(crate) scaling_config: ::std::option::Option<crate::types::NodegroupScalingConfig>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) remote_access: ::std::option::Option<crate::types::RemoteAccessConfig>,
+    pub(crate) ami_type: ::std::option::Option<crate::types::AmiTypes>,
+    pub(crate) node_role: ::std::option::Option<::std::string::String>,
+    pub(crate) labels: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) taints: ::std::option::Option<::std::vec::Vec<crate::types::Taint>>,
+    pub(crate) resources: ::std::option::Option<crate::types::NodegroupResources>,
+    pub(crate) disk_size: ::std::option::Option<i32>,
+    pub(crate) health: ::std::option::Option<crate::types::NodegroupHealth>,
+    pub(crate) update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
+    pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl NodegroupBuilder {
     /// <p>The name associated with an Amazon EKS managed node group.</p>
-    pub fn nodegroup_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nodegroup_name = Some(input.into());
+    pub fn nodegroup_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.nodegroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name associated with an Amazon EKS managed node group.</p>
-    pub fn set_nodegroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nodegroup_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.nodegroup_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the managed node group.</p>
-    pub fn nodegroup_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nodegroup_arn = Some(input.into());
+    pub fn nodegroup_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.nodegroup_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the managed node group.</p>
-    pub fn set_nodegroup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nodegroup_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.nodegroup_arn = input;
         self
     }
     /// <p>The name of the cluster that the managed node group resides in.</p>
-    pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_name = Some(input.into());
+    pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster that the managed node group resides in.</p>
-    pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
     /// <p>The Kubernetes version of the managed node group.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kubernetes version of the managed node group.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was specified in the launch template. For node groups that weren't deployed using a launch template, this is the version of the Amazon EKS optimized AMI that the node group was deployed with.</p>
-    pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.release_version = Some(input.into());
+    pub fn release_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.release_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was specified in the launch template. For node groups that weren't deployed using a launch template, this is the version of the Amazon EKS optimized AMI that the node group was deployed with.</p>
-    pub fn set_release_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.release_version = input;
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last modified.</p>
-    pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified_at = Some(input);
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last modified.</p>
     pub fn set_modified_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.modified_at = input;
         self
     }
     /// <p>The current status of the managed node group.</p>
     pub fn status(mut self, input: crate::types::NodegroupStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the managed node group.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::NodegroupStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::NodegroupStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The capacity type of your managed node group.</p>
     pub fn capacity_type(mut self, input: crate::types::CapacityTypes) -> Self {
-        self.capacity_type = Some(input);
+        self.capacity_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The capacity type of your managed node group.</p>
     pub fn set_capacity_type(
         mut self,
-        input: std::option::Option<crate::types::CapacityTypes>,
+        input: ::std::option::Option<crate::types::CapacityTypes>,
     ) -> Self {
         self.capacity_type = input;
         self
     }
     /// <p>The scaling configuration details for the Auto Scaling group that is associated with your node group.</p>
     pub fn scaling_config(mut self, input: crate::types::NodegroupScalingConfig) -> Self {
-        self.scaling_config = Some(input);
+        self.scaling_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scaling configuration details for the Auto Scaling group that is associated with your node group.</p>
     pub fn set_scaling_config(
         mut self,
-        input: std::option::Option<crate::types::NodegroupScalingConfig>,
+        input: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     ) -> Self {
         self.scaling_config = input;
         self
@@ -337,16 +366,19 @@ impl NodegroupBuilder {
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
     /// <p>If the node group wasn't deployed with a launch template, then this is the instance type that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
         v.push(input.into());
-        self.instance_types = Some(v);
+        self.instance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the instance type that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
     pub fn set_instance_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instance_types = input;
         self
@@ -356,50 +388,50 @@ impl NodegroupBuilder {
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
     /// <p>The subnets that were specified for the Auto Scaling group that is associated with your node group.</p>
-    pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input.into());
-        self.subnets = Some(v);
+        self.subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The subnets that were specified for the Auto Scaling group that is associated with your node group.</p>
     pub fn set_subnets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subnets = input;
         self
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the remote access configuration that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
     pub fn remote_access(mut self, input: crate::types::RemoteAccessConfig) -> Self {
-        self.remote_access = Some(input);
+        self.remote_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the remote access configuration that is associated with the node group. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
     pub fn set_remote_access(
         mut self,
-        input: std::option::Option<crate::types::RemoteAccessConfig>,
+        input: ::std::option::Option<crate::types::RemoteAccessConfig>,
     ) -> Self {
         self.remote_access = input;
         self
     }
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node group configuration.</p>
     pub fn ami_type(mut self, input: crate::types::AmiTypes) -> Self {
-        self.ami_type = Some(input);
+        self.ami_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node group configuration.</p>
-    pub fn set_ami_type(mut self, input: std::option::Option<crate::types::AmiTypes>) -> Self {
+    pub fn set_ami_type(mut self, input: ::std::option::Option<crate::types::AmiTypes>) -> Self {
         self.ami_type = input;
         self
     }
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.</p>
-    pub fn node_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_role = Some(input.into());
+    pub fn node_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies.</p>
-    pub fn set_node_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_role = input;
         self
     }
@@ -412,12 +444,12 @@ impl NodegroupBuilder {
     /// </note>
     pub fn labels(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.labels.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.labels = Some(hash_map);
+        self.labels = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The Kubernetes labels applied to the nodes in the node group.</p> <note>
@@ -425,8 +457,8 @@ impl NodegroupBuilder {
     /// </note>
     pub fn set_labels(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.labels = input;
@@ -440,72 +472,75 @@ impl NodegroupBuilder {
     pub fn taints(mut self, input: crate::types::Taint) -> Self {
         let mut v = self.taints.unwrap_or_default();
         v.push(input);
-        self.taints = Some(v);
+        self.taints = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints can be used together with tolerations to control how workloads are scheduled to your nodes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
     pub fn set_taints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Taint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Taint>>,
     ) -> Self {
         self.taints = input;
         self
     }
     /// <p>The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
     pub fn resources(mut self, input: crate::types::NodegroupResources) -> Self {
-        self.resources = Some(input);
+        self.resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.</p>
     pub fn set_resources(
         mut self,
-        input: std::option::Option<crate::types::NodegroupResources>,
+        input: ::std::option::Option<crate::types::NodegroupResources>,
     ) -> Self {
         self.resources = input;
         self
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the disk size in the node group configuration. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
     pub fn disk_size(mut self, input: i32) -> Self {
-        self.disk_size = Some(input);
+        self.disk_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the node group wasn't deployed with a launch template, then this is the disk size in the node group configuration. If the node group was deployed with a launch template, then this is <code>null</code>.</p>
-    pub fn set_disk_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_disk_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.disk_size = input;
         self
     }
     /// <p>The health status of the node group. If there are issues with your node group's health, they are listed here.</p>
     pub fn health(mut self, input: crate::types::NodegroupHealth) -> Self {
-        self.health = Some(input);
+        self.health = ::std::option::Option::Some(input);
         self
     }
     /// <p>The health status of the node group. If there are issues with your node group's health, they are listed here.</p>
-    pub fn set_health(mut self, input: std::option::Option<crate::types::NodegroupHealth>) -> Self {
+    pub fn set_health(
+        mut self,
+        input: ::std::option::Option<crate::types::NodegroupHealth>,
+    ) -> Self {
         self.health = input;
         self
     }
     /// <p>The node group update configuration.</p>
     pub fn update_config(mut self, input: crate::types::NodegroupUpdateConfig) -> Self {
-        self.update_config = Some(input);
+        self.update_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The node group update configuration.</p>
     pub fn set_update_config(
         mut self,
-        input: std::option::Option<crate::types::NodegroupUpdateConfig>,
+        input: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
     ) -> Self {
         self.update_config = input;
         self
     }
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
-        self.launch_template = Some(input);
+        self.launch_template = ::std::option::Option::Some(input);
         self
     }
     /// <p>If a launch template was used to create the node group, then this is the launch template that was used.</p>
     pub fn set_launch_template(
         mut self,
-        input: std::option::Option<crate::types::LaunchTemplateSpecification>,
+        input: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     ) -> Self {
         self.launch_template = input;
         self
@@ -517,19 +552,19 @@ impl NodegroupBuilder {
     /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

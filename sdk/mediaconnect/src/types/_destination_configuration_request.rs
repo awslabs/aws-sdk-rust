@@ -2,29 +2,29 @@
 
 /// The transport parameters that you want to associate with an outbound media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfigurationRequest {
     /// The IP address where you want MediaConnect to send contents of the media stream.
     #[doc(hidden)]
-    pub destination_ip: std::option::Option<std::string::String>,
+    pub destination_ip: ::std::option::Option<::std::string::String>,
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
     #[doc(hidden)]
-    pub destination_port: std::option::Option<i32>,
+    pub destination_port: ::std::option::Option<i32>,
     /// The VPC interface that you want to use for the media stream associated with the output.
     #[doc(hidden)]
-    pub interface: std::option::Option<crate::types::InterfaceRequest>,
+    pub interface: ::std::option::Option<crate::types::InterfaceRequest>,
 }
 impl DestinationConfigurationRequest {
     /// The IP address where you want MediaConnect to send contents of the media stream.
-    pub fn destination_ip(&self) -> std::option::Option<&str> {
+    pub fn destination_ip(&self) -> ::std::option::Option<&str> {
         self.destination_ip.as_deref()
     }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
-    pub fn destination_port(&self) -> std::option::Option<i32> {
+    pub fn destination_port(&self) -> ::std::option::Option<i32> {
         self.destination_port
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
-    pub fn interface(&self) -> std::option::Option<&crate::types::InterfaceRequest> {
+    pub fn interface(&self) -> ::std::option::Option<&crate::types::InterfaceRequest> {
         self.interface.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl DestinationConfigurationRequest {
 
 /// A builder for [`DestinationConfigurationRequest`](crate::types::DestinationConfigurationRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationConfigurationRequestBuilder {
-    pub(crate) destination_ip: std::option::Option<std::string::String>,
-    pub(crate) destination_port: std::option::Option<i32>,
-    pub(crate) interface: std::option::Option<crate::types::InterfaceRequest>,
+    pub(crate) destination_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_port: ::std::option::Option<i32>,
+    pub(crate) interface: ::std::option::Option<crate::types::InterfaceRequest>,
 }
 impl DestinationConfigurationRequestBuilder {
     /// The IP address where you want MediaConnect to send contents of the media stream.
-    pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_ip = Some(input.into());
+    pub fn destination_ip(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// The IP address where you want MediaConnect to send contents of the media stream.
-    pub fn set_destination_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_ip(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_ip = input;
         self
     }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
     pub fn destination_port(mut self, input: i32) -> Self {
-        self.destination_port = Some(input);
+        self.destination_port = ::std::option::Option::Some(input);
         self
     }
     /// The port that you want MediaConnect to use when it distributes the media stream to the output.
-    pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.destination_port = input;
         self
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
     pub fn interface(mut self, input: crate::types::InterfaceRequest) -> Self {
-        self.interface = Some(input);
+        self.interface = ::std::option::Option::Some(input);
         self
     }
     /// The VPC interface that you want to use for the media stream associated with the output.
     pub fn set_interface(
         mut self,
-        input: std::option::Option<crate::types::InterfaceRequest>,
+        input: ::std::option::Option<crate::types::InterfaceRequest>,
     ) -> Self {
         self.interface = input;
         self

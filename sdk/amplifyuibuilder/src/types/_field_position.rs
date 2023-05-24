@@ -2,14 +2,14 @@
 
 /// <p>Describes the field position.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum FieldPosition {
     /// <p>The field position is below the field specified by the string.</p>
-    Below(std::string::String),
+    Below(::std::string::String),
     /// <p>The field position is fixed and doesn't change in relation to other fields.</p>
     Fixed(crate::types::FixedPosition),
     /// <p>The field position is to the right of the field specified by the string.</p>
-    RightOf(std::string::String),
+    RightOf(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -21,13 +21,13 @@ pub enum FieldPosition {
     Unknown,
 }
 impl FieldPosition {
-    /// Tries to convert the enum instance into [`Below`](crate::types::FieldPosition::Below), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Below`](crate::types::FieldPosition::Below), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_below(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_below(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let FieldPosition::Below(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Below`](crate::types::FieldPosition::Below).
@@ -36,24 +36,24 @@ impl FieldPosition {
     }
     /// Tries to convert the enum instance into [`Fixed`](crate::types::FieldPosition::Fixed), extracting the inner [`FixedPosition`](crate::types::FixedPosition).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_fixed(&self) -> std::result::Result<&crate::types::FixedPosition, &Self> {
+    pub fn as_fixed(&self) -> ::std::result::Result<&crate::types::FixedPosition, &Self> {
         if let FieldPosition::Fixed(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Fixed`](crate::types::FieldPosition::Fixed).
     pub fn is_fixed(&self) -> bool {
         self.as_fixed().is_ok()
     }
-    /// Tries to convert the enum instance into [`RightOf`](crate::types::FieldPosition::RightOf), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`RightOf`](crate::types::FieldPosition::RightOf), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_right_of(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_right_of(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let FieldPosition::RightOf(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RightOf`](crate::types::FieldPosition::RightOf).

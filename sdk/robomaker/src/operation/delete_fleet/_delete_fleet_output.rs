@@ -4,11 +4,11 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteFleetOutput {
+impl ::aws_http::request_id::RequestId for DeleteFleetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl DeleteFleetOutput {
 
 /// A builder for [`DeleteFleetOutput`](crate::operation::delete_fleet::DeleteFleetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFleetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -54,13 +54,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PartOfSpeechTagType {
     #[allow(missing_docs)] // documentation missing in model
@@ -102,7 +102,7 @@ pub enum PartOfSpeechTagType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PartOfSpeechTagType {
+impl ::std::convert::From<&str> for PartOfSpeechTagType {
     fn from(s: &str) -> Self {
         match s {
             "ADJ" => PartOfSpeechTagType::Adj,
@@ -129,11 +129,11 @@ impl std::convert::From<&str> for PartOfSpeechTagType {
         }
     }
 }
-impl std::str::FromStr for PartOfSpeechTagType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PartOfSpeechTagType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PartOfSpeechTagType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PartOfSpeechTagType::from(s))
     }
 }
 impl PartOfSpeechTagType {
@@ -169,7 +169,7 @@ impl PartOfSpeechTagType {
         ]
     }
 }
-impl AsRef<str> for PartOfSpeechTagType {
+impl ::std::convert::AsRef<str> for PartOfSpeechTagType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>Workflow specific execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowMetrics {
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl AppflowIntegrationWorkflowMetrics {
 
 /// A builder for [`AppflowIntegrationWorkflowMetrics`](crate::types::AppflowIntegrationWorkflowMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppflowIntegrationWorkflowMetricsBuilder {
-    pub(crate) records_processed: std::option::Option<i64>,
-    pub(crate) steps_completed: std::option::Option<i64>,
-    pub(crate) total_steps: std::option::Option<i64>,
+    pub(crate) records_processed: ::std::option::Option<i64>,
+    pub(crate) steps_completed: ::std::option::Option<i64>,
+    pub(crate) total_steps: ::std::option::Option<i64>,
 }
 impl AppflowIntegrationWorkflowMetricsBuilder {
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn records_processed(mut self, input: i64) -> Self {
-        self.records_processed = Some(input);
+        self.records_processed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn set_records_processed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_records_processed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.records_processed = input;
         self
     }
     /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn steps_completed(mut self, input: i64) -> Self {
-        self.steps_completed = Some(input);
+        self.steps_completed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn set_steps_completed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_steps_completed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.steps_completed = input;
         self
     }
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn total_steps(mut self, input: i64) -> Self {
-        self.total_steps = Some(input);
+        self.total_steps = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn set_total_steps(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_steps(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_steps = input;
         self
     }

@@ -6,47 +6,50 @@ pub use crate::operation::create_media_insights_pipeline_configuration::_create_
 /// Fluent builder constructing a request to `CreateMediaInsightsPipelineConfiguration`.
 ///
 /// <p>A structure that contains the static configurations for a media insights pipeline.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMediaInsightsPipelineConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationInputBuilder,
 }
 impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
     /// Creates a new `CreateMediaInsightsPipelineConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,14 +60,14 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name of the media insights pipeline configuration.</p>
     pub fn media_insights_pipeline_configuration_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -74,7 +77,7 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
     /// <p>The name of the media insights pipeline configuration.</p>
     pub fn set_media_insights_pipeline_configuration_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -82,14 +85,17 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
         self
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
-    pub fn resource_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_access_role_arn(input.into());
         self
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
     pub fn set_resource_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_resource_access_role_arn(input);
         self
@@ -105,7 +111,7 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
     pub fn set_real_time_alert_configuration(
         mut self,
-        input: std::option::Option<crate::types::RealTimeAlertConfiguration>,
+        input: ::std::option::Option<crate::types::RealTimeAlertConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_real_time_alert_configuration(input);
         self
@@ -125,8 +131,8 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
     pub fn set_elements(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
         >,
     ) -> Self {
         self.inner = self.inner.set_elements(input);
@@ -144,20 +150,23 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
     /// <p>The tags assigned to the media insights pipeline configuration.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self

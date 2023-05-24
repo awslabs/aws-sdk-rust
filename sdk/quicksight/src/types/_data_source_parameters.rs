@@ -2,7 +2,7 @@
 
 /// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DataSourceParameters {
     /// <p>The parameters for OpenSearch.</p>
     AmazonElasticsearchParameters(crate::types::AmazonElasticsearchParameters),
@@ -65,11 +65,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_amazon_elasticsearch_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::AmazonElasticsearchParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::AmazonElasticsearchParameters, &Self> {
         if let DataSourceParameters::AmazonElasticsearchParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AmazonElasticsearchParameters`](crate::types::DataSourceParameters::AmazonElasticsearchParameters).
@@ -80,11 +80,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_amazon_open_search_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::AmazonOpenSearchParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::AmazonOpenSearchParameters, &Self> {
         if let DataSourceParameters::AmazonOpenSearchParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AmazonOpenSearchParameters`](crate::types::DataSourceParameters::AmazonOpenSearchParameters).
@@ -95,11 +95,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_athena_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::AthenaParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::AthenaParameters, &Self> {
         if let DataSourceParameters::AthenaParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AthenaParameters`](crate::types::DataSourceParameters::AthenaParameters).
@@ -110,11 +110,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aurora_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::AuroraParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::AuroraParameters, &Self> {
         if let DataSourceParameters::AuroraParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AuroraParameters`](crate::types::DataSourceParameters::AuroraParameters).
@@ -125,11 +125,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aurora_postgre_sql_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::AuroraPostgreSqlParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::AuroraPostgreSqlParameters, &Self> {
         if let DataSourceParameters::AuroraPostgreSqlParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AuroraPostgreSqlParameters`](crate::types::DataSourceParameters::AuroraPostgreSqlParameters).
@@ -140,11 +140,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_iot_analytics_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::AwsIotAnalyticsParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::AwsIotAnalyticsParameters, &Self> {
         if let DataSourceParameters::AwsIotAnalyticsParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AwsIotAnalyticsParameters`](crate::types::DataSourceParameters::AwsIotAnalyticsParameters).
@@ -155,11 +155,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_databricks_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::DatabricksParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::DatabricksParameters, &Self> {
         if let DataSourceParameters::DatabricksParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DatabricksParameters`](crate::types::DataSourceParameters::DatabricksParameters).
@@ -170,11 +170,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exasol_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::ExasolParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::ExasolParameters, &Self> {
         if let DataSourceParameters::ExasolParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ExasolParameters`](crate::types::DataSourceParameters::ExasolParameters).
@@ -183,11 +183,13 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`JiraParameters`](crate::types::DataSourceParameters::JiraParameters), extracting the inner [`JiraParameters`](crate::types::JiraParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_jira_parameters(&self) -> std::result::Result<&crate::types::JiraParameters, &Self> {
+    pub fn as_jira_parameters(
+        &self,
+    ) -> ::std::result::Result<&crate::types::JiraParameters, &Self> {
         if let DataSourceParameters::JiraParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`JiraParameters`](crate::types::DataSourceParameters::JiraParameters).
@@ -198,11 +200,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_maria_db_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::MariaDbParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::MariaDbParameters, &Self> {
         if let DataSourceParameters::MariaDbParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`MariaDbParameters`](crate::types::DataSourceParameters::MariaDbParameters).
@@ -213,11 +215,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_my_sql_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::MySqlParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::MySqlParameters, &Self> {
         if let DataSourceParameters::MySqlParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`MySqlParameters`](crate::types::DataSourceParameters::MySqlParameters).
@@ -228,11 +230,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_oracle_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::OracleParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::OracleParameters, &Self> {
         if let DataSourceParameters::OracleParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`OracleParameters`](crate::types::DataSourceParameters::OracleParameters).
@@ -243,11 +245,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_postgre_sql_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::PostgreSqlParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::PostgreSqlParameters, &Self> {
         if let DataSourceParameters::PostgreSqlParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PostgreSqlParameters`](crate::types::DataSourceParameters::PostgreSqlParameters).
@@ -258,11 +260,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_presto_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::PrestoParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::PrestoParameters, &Self> {
         if let DataSourceParameters::PrestoParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PrestoParameters`](crate::types::DataSourceParameters::PrestoParameters).
@@ -271,11 +273,11 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`RdsParameters`](crate::types::DataSourceParameters::RdsParameters), extracting the inner [`RdsParameters`](crate::types::RdsParameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rds_parameters(&self) -> std::result::Result<&crate::types::RdsParameters, &Self> {
+    pub fn as_rds_parameters(&self) -> ::std::result::Result<&crate::types::RdsParameters, &Self> {
         if let DataSourceParameters::RdsParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RdsParameters`](crate::types::DataSourceParameters::RdsParameters).
@@ -286,11 +288,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_redshift_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::RedshiftParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::RedshiftParameters, &Self> {
         if let DataSourceParameters::RedshiftParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RedshiftParameters`](crate::types::DataSourceParameters::RedshiftParameters).
@@ -299,11 +301,11 @@ impl DataSourceParameters {
     }
     /// Tries to convert the enum instance into [`S3Parameters`](crate::types::DataSourceParameters::S3Parameters), extracting the inner [`S3Parameters`](crate::types::S3Parameters).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_parameters(&self) -> std::result::Result<&crate::types::S3Parameters, &Self> {
+    pub fn as_s3_parameters(&self) -> ::std::result::Result<&crate::types::S3Parameters, &Self> {
         if let DataSourceParameters::S3Parameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3Parameters`](crate::types::DataSourceParameters::S3Parameters).
@@ -314,11 +316,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_service_now_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::ServiceNowParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::ServiceNowParameters, &Self> {
         if let DataSourceParameters::ServiceNowParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ServiceNowParameters`](crate::types::DataSourceParameters::ServiceNowParameters).
@@ -329,11 +331,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_snowflake_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::SnowflakeParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::SnowflakeParameters, &Self> {
         if let DataSourceParameters::SnowflakeParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SnowflakeParameters`](crate::types::DataSourceParameters::SnowflakeParameters).
@@ -344,11 +346,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_spark_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::SparkParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::SparkParameters, &Self> {
         if let DataSourceParameters::SparkParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SparkParameters`](crate::types::DataSourceParameters::SparkParameters).
@@ -359,11 +361,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sql_server_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::SqlServerParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::SqlServerParameters, &Self> {
         if let DataSourceParameters::SqlServerParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SqlServerParameters`](crate::types::DataSourceParameters::SqlServerParameters).
@@ -374,11 +376,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_teradata_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::TeradataParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::TeradataParameters, &Self> {
         if let DataSourceParameters::TeradataParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TeradataParameters`](crate::types::DataSourceParameters::TeradataParameters).
@@ -389,11 +391,11 @@ impl DataSourceParameters {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_twitter_parameters(
         &self,
-    ) -> std::result::Result<&crate::types::TwitterParameters, &Self> {
+    ) -> ::std::result::Result<&crate::types::TwitterParameters, &Self> {
         if let DataSourceParameters::TwitterParameters(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TwitterParameters`](crate::types::DataSourceParameters::TwitterParameters).

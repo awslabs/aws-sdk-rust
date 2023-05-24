@@ -2,14 +2,15 @@
 
 /// <p>Contains the output of ValidatePipelineDefinition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionOutput {
     /// <p>Any validation errors that were found.</p>
     #[doc(hidden)]
-    pub validation_errors: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
+    pub validation_errors: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     /// <p>Any validation warnings that were found.</p>
     #[doc(hidden)]
-    pub validation_warnings: std::option::Option<std::vec::Vec<crate::types::ValidationWarning>>,
+    pub validation_warnings:
+        ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
     /// <p>Indicates whether there were validation errors.</p>
     #[doc(hidden)]
     pub errored: bool,
@@ -17,11 +18,11 @@ pub struct ValidatePipelineDefinitionOutput {
 }
 impl ValidatePipelineDefinitionOutput {
     /// <p>Any validation errors that were found.</p>
-    pub fn validation_errors(&self) -> std::option::Option<&[crate::types::ValidationError]> {
+    pub fn validation_errors(&self) -> ::std::option::Option<&[crate::types::ValidationError]> {
         self.validation_errors.as_deref()
     }
     /// <p>Any validation warnings that were found.</p>
-    pub fn validation_warnings(&self) -> std::option::Option<&[crate::types::ValidationWarning]> {
+    pub fn validation_warnings(&self) -> ::std::option::Option<&[crate::types::ValidationWarning]> {
         self.validation_warnings.as_deref()
     }
     /// <p>Indicates whether there were validation errors.</p>
@@ -29,7 +30,7 @@ impl ValidatePipelineDefinitionOutput {
         self.errored
     }
 }
-impl aws_http::request_id::RequestId for ValidatePipelineDefinitionOutput {
+impl ::aws_http::request_id::RequestId for ValidatePipelineDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,12 +44,15 @@ impl ValidatePipelineDefinitionOutput {
 
 /// A builder for [`ValidatePipelineDefinitionOutput`](crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValidatePipelineDefinitionOutputBuilder {
-    pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
+    pub(crate) validation_errors:
+        ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     pub(crate) validation_warnings:
-        std::option::Option<std::vec::Vec<crate::types::ValidationWarning>>,
-    pub(crate) errored: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
+    pub(crate) errored: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ValidatePipelineDefinitionOutputBuilder {
@@ -60,13 +64,13 @@ impl ValidatePipelineDefinitionOutputBuilder {
     pub fn validation_errors(mut self, input: crate::types::ValidationError) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
         v.push(input);
-        self.validation_errors = Some(v);
+        self.validation_errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any validation errors that were found.</p>
     pub fn set_validation_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationError>>,
     ) -> Self {
         self.validation_errors = input;
         self
@@ -79,24 +83,24 @@ impl ValidatePipelineDefinitionOutputBuilder {
     pub fn validation_warnings(mut self, input: crate::types::ValidationWarning) -> Self {
         let mut v = self.validation_warnings.unwrap_or_default();
         v.push(input);
-        self.validation_warnings = Some(v);
+        self.validation_warnings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any validation warnings that were found.</p>
     pub fn set_validation_warnings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationWarning>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationWarning>>,
     ) -> Self {
         self.validation_warnings = input;
         self
     }
     /// <p>Indicates whether there were validation errors.</p>
     pub fn errored(mut self, input: bool) -> Self {
-        self.errored = Some(input);
+        self.errored = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether there were validation errors.</p>
-    pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_errored(mut self, input: ::std::option::Option<bool>) -> Self {
         self.errored = input;
         self
     }

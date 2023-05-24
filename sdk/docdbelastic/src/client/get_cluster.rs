@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCluster`](crate::operation::get_cluster::builders::GetClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::get_cluster::builders::GetClusterFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::get_cluster::builders::GetClusterFluentBuilder::set_cluster_arn): <p>The arn of the Elastic DocumentDB cluster.</p>
+    ///   - [`cluster_arn(impl ::std::convert::Into<String>)`](crate::operation::get_cluster::builders::GetClusterFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::get_cluster::builders::GetClusterFluentBuilder::set_cluster_arn): <p>The arn of the Elastic DocumentDB cluster.</p>
     /// - On success, responds with [`GetClusterOutput`](crate::operation::get_cluster::GetClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::get_cluster::GetClusterOutput::cluster): <p>Returns information about a specific Elastic DocumentDB cluster.</p>
     /// - On failure, responds with [`SdkError<GetClusterError>`](crate::operation::get_cluster::GetClusterError)

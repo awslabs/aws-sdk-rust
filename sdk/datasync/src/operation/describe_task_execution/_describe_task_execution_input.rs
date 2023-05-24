@@ -2,15 +2,15 @@
 
 /// <p>DescribeTaskExecutionRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
     #[doc(hidden)]
-    pub task_execution_arn: std::option::Option<std::string::String>,
+    pub task_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTaskExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl DescribeTaskExecutionInput {
 
 /// A builder for [`DescribeTaskExecutionInput`](crate::operation::describe_task_execution::DescribeTaskExecutionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTaskExecutionInputBuilder {
-    pub(crate) task_execution_arn: std::option::Option<std::string::String>,
+    pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTaskExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
-    pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_execution_arn = Some(input.into());
+    pub fn task_execution_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
     pub fn set_task_execution_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.task_execution_arn = input;
         self
@@ -46,11 +51,11 @@ impl DescribeTaskExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTaskExecutionInput`](crate::operation::describe_task_execution::DescribeTaskExecutionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_task_execution::DescribeTaskExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_task_execution::DescribeTaskExecutionInput {
                 task_execution_arn: self.task_execution_arn,
             },

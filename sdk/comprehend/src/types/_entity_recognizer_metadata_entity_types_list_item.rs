@@ -2,31 +2,31 @@
 
 /// <p>Individual item from the list of entity types in the metadata of an entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerMetadataEntityTypesListItem {
     /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types. </p>
     #[doc(hidden)]
-    pub evaluation_metrics: std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
+    pub evaluation_metrics: ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
     #[doc(hidden)]
-    pub number_of_train_mentions: std::option::Option<i32>,
+    pub number_of_train_mentions: ::std::option::Option<i32>,
 }
 impl EntityRecognizerMetadataEntityTypesListItem {
     /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types. </p>
     pub fn evaluation_metrics(
         &self,
-    ) -> std::option::Option<&crate::types::EntityTypesEvaluationMetrics> {
+    ) -> ::std::option::Option<&crate::types::EntityTypesEvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
-    pub fn number_of_train_mentions(&self) -> std::option::Option<i32> {
+    pub fn number_of_train_mentions(&self) -> ::std::option::Option<i32> {
         self.number_of_train_mentions
     }
 }
@@ -39,43 +39,46 @@ impl EntityRecognizerMetadataEntityTypesListItem {
 
 /// A builder for [`EntityRecognizerMetadataEntityTypesListItem`](crate::types::EntityRecognizerMetadataEntityTypesListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityRecognizerMetadataEntityTypesListItemBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) evaluation_metrics: std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
-    pub(crate) number_of_train_mentions: std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_metrics:
+        ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
+    pub(crate) number_of_train_mentions: ::std::option::Option<i32>,
 }
 impl EntityRecognizerMetadataEntityTypesListItemBuilder {
     /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer. </p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer. </p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types. </p>
     pub fn evaluation_metrics(mut self, input: crate::types::EntityTypesEvaluationMetrics) -> Self {
-        self.evaluation_metrics = Some(input);
+        self.evaluation_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on the list of entity types. </p>
     pub fn set_evaluation_metrics(
         mut self,
-        input: std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
+        input: ::std::option::Option<crate::types::EntityTypesEvaluationMetrics>,
     ) -> Self {
         self.evaluation_metrics = input;
         self
     }
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
     pub fn number_of_train_mentions(mut self, input: i32) -> Self {
-        self.number_of_train_mentions = Some(input);
+        self.number_of_train_mentions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
-    pub fn set_number_of_train_mentions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_train_mentions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_train_mentions = input;
         self
     }

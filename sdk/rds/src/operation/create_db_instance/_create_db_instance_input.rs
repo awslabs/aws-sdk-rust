@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
     /// <p> <b>MySQL</b> </p>
@@ -65,7 +65,7 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_name: std::option::Option<std::string::String>,
+    pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -75,7 +75,7 @@ pub struct CreateDbInstanceInput {
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
     #[doc(hidden)]
-    pub db_instance_identifier: std::option::Option<std::string::String>,
+    pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
     /// <p>Type: Integer</p>
     /// <p> <b>Amazon Aurora</b> </p>
@@ -134,10 +134,10 @@ pub struct CreateDbInstanceInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub allocated_storage: std::option::Option<i32>,
+    pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
-    pub db_instance_class: std::option::Option<std::string::String>,
+    pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to be used for this instance.</p>
     /// <p>Not every database engine is available for every Amazon Web Services Region.</p>
     /// <p>Valid Values:</p>
@@ -162,7 +162,7 @@ pub struct CreateDbInstanceInput {
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub engine: std::option::Option<std::string::String>,
+    pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The name for the master user.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The name for the master user is managed by the DB cluster.</p>
@@ -175,7 +175,7 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub master_username: std::option::Option<std::string::String>,
+    pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The password for the master user is managed by the DB cluster.</p>
@@ -191,17 +191,17 @@ pub struct CreateDbInstanceInput {
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
     #[doc(hidden)]
-    pub master_user_password: std::option::Option<std::string::String>,
+    pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
     #[doc(hidden)]
-    pub db_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
     #[doc(hidden)]
-    pub vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.</p>
@@ -209,19 +209,19 @@ pub struct CreateDbInstanceInput {
     /// <p>Example: <code>us-east-1d</code> </p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     #[doc(hidden)]
-    pub db_subnet_group_name: std::option::Option<std::string::String>,
+    pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a>.</p>
     /// <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     #[doc(hidden)]
-    pub preferred_maintenance_window: std::option::Option<std::string::String>,
+    pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then the default DB parameter group for the specified DB engine and version is used.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
@@ -231,7 +231,7 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_parameter_group_name: std::option::Option<std::string::String>,
+    pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster.</p>
@@ -243,7 +243,7 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub backup_retention_period: std::option::Option<i32>,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster.</p>
@@ -255,7 +255,7 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub preferred_backup_window: std::option::Option<std::string::String>,
+    pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the database accepts connections.</p>
     /// <p> <b>MySQL</b> </p>
     /// <p>Default: <code>3306</code> </p>
@@ -280,13 +280,13 @@ pub struct CreateDbInstanceInput {
     /// <p>Valid values: <code>1150-65535</code> </p>
     /// <p>Type: Integer</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     #[doc(hidden)]
-    pub multi_az: std::option::Option<bool>,
+    pub multi_az: ::std::option::Option<bool>,
     /// <p>The version number of the database engine to use.</p>
     /// <p>For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
     /// <p>The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.</p>
@@ -307,41 +307,41 @@ pub struct CreateDbInstanceInput {
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
     /// <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to <code>false</code>.</p>
     #[doc(hidden)]
-    pub auto_minor_version_upgrade: std::option::Option<bool>,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>License model information for this DB instance.</p>
     /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
     #[doc(hidden)]
-    pub license_model: std::option::Option<std::string::String>,
+    pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     #[doc(hidden)]
-    pub iops: std::option::Option<i32>,
+    pub iops: ::std::option::Option<i32>,
     /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
     #[doc(hidden)]
-    pub option_group_name: std::option::Option<std::string::String>,
+    pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>For supported engines, this value indicates that the DB instance should be associated with the specified <code>CharacterSet</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom. However, if you need to change the character set, you can change it on the database itself.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     #[doc(hidden)]
-    pub character_set_name: std::option::Option<std::string::String>,
+    pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
     /// <p>This parameter doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
-    pub nchar_character_set_name: std::option::Option<std::string::String>,
+    pub nchar_character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
     /// <p>When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
     /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>
@@ -357,14 +357,14 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub publicly_accessible: std::option::Option<bool>,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>Tags to assign to the DB instance.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The identifier of the DB cluster that the instance will belong to.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
-    pub db_cluster_identifier: std::option::Option<std::string::String>,
+    pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
     /// <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p>
     /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
@@ -372,23 +372,23 @@ pub struct CreateDbInstanceInput {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     #[doc(hidden)]
-    pub storage_type: std::option::Option<std::string::String>,
+    pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
     #[doc(hidden)]
-    pub tde_credential_arn: std::option::Option<std::string::String>,
+    pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
-    pub tde_credential_password: std::option::Option<std::string::String>,
+    pub tde_credential_password: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
     /// <p>For RDS Custom instances, either set this parameter to <code>true</code> or leave it unset. If you set this parameter to <code>false</code>, RDS reports an error.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster.</p>
     #[doc(hidden)]
-    pub storage_encrypted: std::option::Option<bool>,
+    pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p> <b>Amazon Aurora</b> </p>
@@ -397,62 +397,62 @@ pub struct CreateDbInstanceInput {
     /// <p> <b>Amazon RDS Custom</b> </p>
     /// <p>A KMS key is required for RDS Custom instances. For most RDS engines, if you leave this parameter empty while enabling <code>StorageEncrypted</code>, the engine uses the default KMS key. However, RDS Custom doesn't use the default key when this parameter is empty. You must explicitly specify a key.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The domain is managed by the DB cluster.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting.</p>
     #[doc(hidden)]
-    pub copy_tags_to_snapshot: std::option::Option<bool>,
+    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
     #[doc(hidden)]
-    pub monitoring_interval: std::option::Option<i32>,
+    pub monitoring_interval: ::std::option::Option<i32>,
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
-    pub monitoring_role_arn: std::option::Option<std::string::String>,
+    pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The domain is managed by the DB cluster.</p>
     #[doc(hidden)]
-    pub domain_iam_role_name: std::option::Option<std::string::String>,
+    pub domain_iam_role_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     #[doc(hidden)]
-    pub promotion_tier: std::option::Option<i32>,
+    pub promotion_tier: ::std::option::Option<i32>,
     /// <p>The time zone of the DB instance. The time zone parameter is currently supported only by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.</p>
     #[doc(hidden)]
-    pub timezone: std::option::Option<std::string::String>,
+    pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     #[doc(hidden)]
-    pub enable_iam_database_authentication: std::option::Option<bool>,
+    pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
-    pub enable_performance_insights: std::option::Option<bool>,
+    pub enable_performance_insights: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
-    pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
+    pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
     /// <ul>
     /// <li> <p>7</p> </li>
@@ -469,7 +469,7 @@ pub struct CreateDbInstanceInput {
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     #[doc(hidden)]
-    pub performance_insights_retention_period: std::option::Option<i32>,
+    pub performance_insights_retention_period: ::std::option::Option<i32>,
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. CloudWatch Logs exports are managed by the DB cluster.</p>
@@ -486,31 +486,32 @@ pub struct CreateDbInstanceInput {
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
     #[doc(hidden)]
-    pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub enable_cloudwatch_logs_exports:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
     #[doc(hidden)]
-    pub processor_features: std::option::Option<std::vec::Vec<crate::types::ProcessorFeature>>,
+    pub processor_features: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. You can enable or disable deletion protection for the DB cluster. For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.</p>
     #[doc(hidden)]
-    pub deletion_protection: std::option::Option<bool>,
+    pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"> Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     #[doc(hidden)]
-    pub max_allocated_storage: std::option::Option<i32>,
+    pub max_allocated_storage: ::std::option::Option<i32>,
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     #[doc(hidden)]
-    pub enable_customer_owned_ip: std::option::Option<bool>,
+    pub enable_customer_owned_ip: ::std::option::Option<bool>,
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
     /// <ul>
     /// <li> <p>The profile must exist in your account.</p> </li>
@@ -520,12 +521,12 @@ pub struct CreateDbInstanceInput {
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     #[doc(hidden)]
-    pub custom_iam_instance_profile: std::option::Option<std::string::String>,
+    pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
     /// <p>Specifies where automated backups and manual snapshots are stored.</p>
     /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     #[doc(hidden)]
-    pub backup_target: std::option::Option<std::string::String>,
+    pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB instance.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -535,12 +536,12 @@ pub struct CreateDbInstanceInput {
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
-    pub network_type: std::option::Option<std::string::String>,
+    pub network_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the storage throughput value for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
     #[doc(hidden)]
-    pub storage_throughput: std::option::Option<i32>,
+    pub storage_throughput: ::std::option::Option<i32>,
     /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Constraints:</p>
@@ -548,19 +549,19 @@ pub struct CreateDbInstanceInput {
     /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub manage_master_user_password: std::option::Option<bool>,
+    pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub master_user_secret_kms_key_id: std::option::Option<std::string::String>,
+    pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
-    pub ca_certificate_identifier: std::option::Option<std::string::String>,
+    pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInput {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -623,7 +624,7 @@ impl CreateDbInstanceInput {
     /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
     /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
     /// </ul>
-    pub fn db_name(&self) -> std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -634,7 +635,7 @@ impl CreateDbInstanceInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
@@ -694,11 +695,11 @@ impl CreateDbInstanceInput {
     /// <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn allocated_storage(&self) -> std::option::Option<i32> {
+    pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
     /// <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn db_instance_class(&self) -> std::option::Option<&str> {
+    pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The name of the database engine to be used for this instance.</p>
@@ -724,7 +725,7 @@ impl CreateDbInstanceInput {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The name for the master user.</p>
@@ -738,7 +739,7 @@ impl CreateDbInstanceInput {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
-    pub fn master_username(&self) -> std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
     }
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
@@ -755,19 +756,19 @@ impl CreateDbInstanceInput {
     /// <p>Constraints: Must contain from 8 to 30 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn master_user_password(&self) -> std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
-    pub fn db_security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn db_security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.db_security_groups.as_deref()
     }
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpc_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
@@ -776,13 +777,13 @@ impl CreateDbInstanceInput {
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a>.</p>
@@ -790,7 +791,7 @@ impl CreateDbInstanceInput {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then the default DB parameter group for the specified DB engine and version is used.</p>
@@ -801,7 +802,7 @@ impl CreateDbInstanceInput {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -814,7 +815,7 @@ impl CreateDbInstanceInput {
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas</p> </li>
     /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance</p> </li>
     /// </ul>
-    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -827,7 +828,7 @@ impl CreateDbInstanceInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The port number on which the database accepts connections.</p>
@@ -853,14 +854,14 @@ impl CreateDbInstanceInput {
     /// <p>Default: <code>3306</code> </p>
     /// <p>Valid values: <code>1150-65535</code> </p>
     /// <p>Type: Integer</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
-    pub fn multi_az(&self) -> std::option::Option<bool> {
+    pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
     /// <p>The version number of the database engine to use.</p>
@@ -882,12 +883,12 @@ impl CreateDbInstanceInput {
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
     /// <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to <code>false</code>.</p>
-    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>License model information for this DB instance.</p>
@@ -895,14 +896,14 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
-    pub fn license_model(&self) -> std::option::Option<&str> {
+    pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
-    pub fn iops(&self) -> std::option::Option<i32> {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
@@ -910,19 +911,19 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
-    pub fn option_group_name(&self) -> std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
     /// <p>For supported engines, this value indicates that the DB instance should be associated with the specified <code>CharacterSet</code>.</p>
     /// <p>This setting doesn't apply to RDS Custom. However, if you need to change the character set, you can change it on the database itself.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-    pub fn character_set_name(&self) -> std::option::Option<&str> {
+    pub fn character_set_name(&self) -> ::std::option::Option<&str> {
         self.character_set_name.as_deref()
     }
     /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
     /// <p>This parameter doesn't apply to RDS Custom.</p>
-    pub fn nchar_character_set_name(&self) -> std::option::Option<&str> {
+    pub fn nchar_character_set_name(&self) -> ::std::option::Option<&str> {
         self.nchar_character_set_name.as_deref()
     }
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -939,16 +940,16 @@ impl CreateDbInstanceInput {
     /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
     /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
     /// </ul>
-    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>Tags to assign to the DB instance.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The identifier of the DB cluster that the instance will belong to.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -957,26 +958,26 @@ impl CreateDbInstanceInput {
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
-    pub fn storage_type(&self) -> std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
-    pub fn tde_credential_arn(&self) -> std::option::Option<&str> {
+    pub fn tde_credential_arn(&self) -> ::std::option::Option<&str> {
         self.tde_credential_arn.as_deref()
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn tde_credential_password(&self) -> std::option::Option<&str> {
+    pub fn tde_credential_password(&self) -> ::std::option::Option<&str> {
         self.tde_credential_password.as_deref()
     }
     /// <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
     /// <p>For RDS Custom instances, either set this parameter to <code>true</code> or leave it unset. If you set this parameter to <code>false</code>, RDS reports an error.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster.</p>
-    pub fn storage_encrypted(&self) -> std::option::Option<bool> {
+    pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
@@ -986,7 +987,7 @@ impl CreateDbInstanceInput {
     /// <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p> <b>Amazon RDS Custom</b> </p>
     /// <p>A KMS key is required for RDS Custom instances. For most RDS engines, if you leave this parameter empty while enabling <code>StorageEncrypted</code>, the engine uses the default KMS key. However, RDS Custom doesn't use the default key when this parameter is empty. You must explicitly specify a key.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
@@ -994,44 +995,44 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The domain is managed by the DB cluster.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting.</p>
-    pub fn copy_tags_to_snapshot(&self) -> std::option::Option<bool> {
+    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
-    pub fn monitoring_interval(&self) -> std::option::Option<i32> {
+    pub fn monitoring_interval(&self) -> ::std::option::Option<i32> {
         self.monitoring_interval
     }
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn monitoring_role_arn(&self) -> std::option::Option<&str> {
+    pub fn monitoring_role_arn(&self) -> ::std::option::Option<&str> {
         self.monitoring_role_arn.as_deref()
     }
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The domain is managed by the DB cluster.</p>
-    pub fn domain_iam_role_name(&self) -> std::option::Option<&str> {
+    pub fn domain_iam_role_name(&self) -> ::std::option::Option<&str> {
         self.domain_iam_role_name.as_deref()
     }
     /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
-    pub fn promotion_tier(&self) -> std::option::Option<i32> {
+    pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
         self.promotion_tier
     }
     /// <p>The time zone of the DB instance. The time zone parameter is currently supported only by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
@@ -1039,19 +1040,19 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
-    pub fn enable_iam_database_authentication(&self) -> std::option::Option<bool> {
+    pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn enable_performance_insights(&self) -> std::option::Option<bool> {
+    pub fn enable_performance_insights(&self) -> ::std::option::Option<bool> {
         self.enable_performance_insights
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     /// <p>If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn performance_insights_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.performance_insights_kms_key_id.as_deref()
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
@@ -1069,7 +1070,7 @@ impl CreateDbInstanceInput {
     /// </ul>
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn performance_insights_retention_period(&self) -> std::option::Option<i32> {
+    pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
         self.performance_insights_retention_period
     }
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1087,20 +1088,22 @@ impl CreateDbInstanceInput {
     /// <p>Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
-    pub fn enable_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn enable_cloudwatch_logs_exports(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.enable_cloudwatch_logs_exports.as_deref()
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
-    pub fn processor_features(&self) -> std::option::Option<&[crate::types::ProcessorFeature]> {
+    pub fn processor_features(&self) -> ::std::option::Option<&[crate::types::ProcessorFeature]> {
         self.processor_features.as_deref()
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. You can enable or disable deletion protection for the DB cluster. For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.</p>
-    pub fn deletion_protection(&self) -> std::option::Option<bool> {
+    pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -1108,14 +1111,14 @@ impl CreateDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
-    pub fn max_allocated_storage(&self) -> std::option::Option<i32> {
+    pub fn max_allocated_storage(&self) -> ::std::option::Option<i32> {
         self.max_allocated_storage
     }
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    pub fn enable_customer_owned_ip(&self) -> std::option::Option<bool> {
+    pub fn enable_customer_owned_ip(&self) -> ::std::option::Option<bool> {
         self.enable_customer_owned_ip
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
@@ -1126,13 +1129,13 @@ impl CreateDbInstanceInput {
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
-    pub fn custom_iam_instance_profile(&self) -> std::option::Option<&str> {
+    pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
     }
     /// <p>Specifies where automated backups and manual snapshots are stored.</p>
     /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn backup_target(&self) -> std::option::Option<&str> {
+    pub fn backup_target(&self) -> ::std::option::Option<&str> {
         self.backup_target.as_deref()
     }
     /// <p>The network type of the DB instance.</p>
@@ -1143,13 +1146,13 @@ impl CreateDbInstanceInput {
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn network_type(&self) -> std::option::Option<&str> {
+    pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
     /// <p>Specifies the storage throughput value for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn storage_throughput(&self) -> std::option::Option<i32> {
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
     }
     /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
@@ -1158,7 +1161,7 @@ impl CreateDbInstanceInput {
     /// <ul>
     /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
     /// </ul>
-    pub fn manage_master_user_password(&self) -> std::option::Option<bool> {
+    pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
         self.manage_master_user_password
     }
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
@@ -1166,13 +1169,13 @@ impl CreateDbInstanceInput {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    pub fn master_user_secret_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_user_secret_kms_key_id.as_deref()
     }
     /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn ca_certificate_identifier(&self) -> std::option::Option<&str> {
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
 }
@@ -1186,65 +1189,68 @@ impl CreateDbInstanceInput {
 
 /// A builder for [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDbInstanceInputBuilder {
-    pub(crate) db_name: std::option::Option<std::string::String>,
-    pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
-    pub(crate) allocated_storage: std::option::Option<i32>,
-    pub(crate) db_instance_class: std::option::Option<std::string::String>,
-    pub(crate) engine: std::option::Option<std::string::String>,
-    pub(crate) master_username: std::option::Option<std::string::String>,
-    pub(crate) master_user_password: std::option::Option<std::string::String>,
-    pub(crate) db_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
-    pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
-    pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
-    pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) backup_retention_period: std::option::Option<i32>,
-    pub(crate) preferred_backup_window: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) multi_az: std::option::Option<bool>,
-    pub(crate) engine_version: std::option::Option<std::string::String>,
-    pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
-    pub(crate) license_model: std::option::Option<std::string::String>,
-    pub(crate) iops: std::option::Option<i32>,
-    pub(crate) option_group_name: std::option::Option<std::string::String>,
-    pub(crate) character_set_name: std::option::Option<std::string::String>,
-    pub(crate) nchar_character_set_name: std::option::Option<std::string::String>,
-    pub(crate) publicly_accessible: std::option::Option<bool>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) storage_type: std::option::Option<std::string::String>,
-    pub(crate) tde_credential_arn: std::option::Option<std::string::String>,
-    pub(crate) tde_credential_password: std::option::Option<std::string::String>,
-    pub(crate) storage_encrypted: std::option::Option<bool>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) domain: std::option::Option<std::string::String>,
-    pub(crate) copy_tags_to_snapshot: std::option::Option<bool>,
-    pub(crate) monitoring_interval: std::option::Option<i32>,
-    pub(crate) monitoring_role_arn: std::option::Option<std::string::String>,
-    pub(crate) domain_iam_role_name: std::option::Option<std::string::String>,
-    pub(crate) promotion_tier: std::option::Option<i32>,
-    pub(crate) timezone: std::option::Option<std::string::String>,
-    pub(crate) enable_iam_database_authentication: std::option::Option<bool>,
-    pub(crate) enable_performance_insights: std::option::Option<bool>,
-    pub(crate) performance_insights_kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) performance_insights_retention_period: std::option::Option<i32>,
+    pub(crate) db_name: ::std::option::Option<::std::string::String>,
+    pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) db_instance_class: ::std::option::Option<::std::string::String>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) master_username: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
+    pub(crate) db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_security_group_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
+    pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) multi_az: ::std::option::Option<bool>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
+    pub(crate) license_model: ::std::option::Option<::std::string::String>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) nchar_character_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) publicly_accessible: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) tde_credential_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tde_credential_password: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_encrypted: ::std::option::Option<bool>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
+    pub(crate) monitoring_interval: ::std::option::Option<i32>,
+    pub(crate) monitoring_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_iam_role_name: ::std::option::Option<::std::string::String>,
+    pub(crate) promotion_tier: ::std::option::Option<i32>,
+    pub(crate) timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_iam_database_authentication: ::std::option::Option<bool>,
+    pub(crate) enable_performance_insights: ::std::option::Option<bool>,
+    pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
     pub(crate) enable_cloudwatch_logs_exports:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) processor_features:
-        std::option::Option<std::vec::Vec<crate::types::ProcessorFeature>>,
-    pub(crate) deletion_protection: std::option::Option<bool>,
-    pub(crate) max_allocated_storage: std::option::Option<i32>,
-    pub(crate) enable_customer_owned_ip: std::option::Option<bool>,
-    pub(crate) custom_iam_instance_profile: std::option::Option<std::string::String>,
-    pub(crate) backup_target: std::option::Option<std::string::String>,
-    pub(crate) network_type: std::option::Option<std::string::String>,
-    pub(crate) storage_throughput: std::option::Option<i32>,
-    pub(crate) manage_master_user_password: std::option::Option<bool>,
-    pub(crate) master_user_secret_kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) ca_certificate_identifier: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
+    pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) max_allocated_storage: ::std::option::Option<i32>,
+    pub(crate) enable_customer_owned_ip: ::std::option::Option<bool>,
+    pub(crate) custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_target: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
+    pub(crate) manage_master_user_password: ::std::option::Option<bool>,
+    pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInputBuilder {
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -1307,8 +1313,8 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
     /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
     /// </ul>
-    pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_name = Some(input.into());
+    pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -1371,7 +1377,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
     /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
     /// </ul>
-    pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
     }
@@ -1383,8 +1389,11 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_instance_identifier = Some(input.into());
+    pub fn db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -1397,7 +1406,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Example: <code>mydbinstance</code> </p>
     pub fn set_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_instance_identifier = input;
         self
@@ -1460,7 +1469,7 @@ impl CreateDbInstanceInputBuilder {
     /// </ul> </li>
     /// </ul>
     pub fn allocated_storage(mut self, input: i32) -> Self {
-        self.allocated_storage = Some(input);
+        self.allocated_storage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
@@ -1520,19 +1529,22 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_storage = input;
         self
     }
     /// <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_instance_class = Some(input.into());
+    pub fn db_instance_class(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance classes</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_db_instance_class(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_instance_class = input;
         self
@@ -1560,8 +1572,8 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine = Some(input.into());
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database engine to be used for this instance.</p>
@@ -1587,7 +1599,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
@@ -1602,8 +1614,11 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
-    pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_username = Some(input.into());
+    pub fn master_username(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the master user.</p>
@@ -1617,7 +1632,10 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't be a reserved word for the chosen database engine.</p> </li>
     /// </ul>
-    pub fn set_master_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_username(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.master_username = input;
         self
     }
@@ -1635,8 +1653,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Constraints: Must contain from 8 to 30 characters.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_password = Some(input.into());
+    pub fn master_user_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
@@ -1655,7 +1676,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Constraints: Must contain from 8 to 128 characters.</p>
     pub fn set_master_user_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.master_user_password = input;
         self
@@ -1666,17 +1687,20 @@ impl CreateDbInstanceInputBuilder {
     ///
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
-    pub fn db_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.db_security_groups.unwrap_or_default();
         v.push(input.into());
-        self.db_security_groups = Some(v);
+        self.db_security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of DB security groups to associate with this DB instance.</p>
     /// <p>This setting applies to the legacy EC2-Classic platform, which is no longer used to create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.</p>
     pub fn set_db_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.db_security_groups = input;
         self
@@ -1689,10 +1713,13 @@ impl CreateDbInstanceInputBuilder {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
-    pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpc_security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
-        self.vpc_security_group_ids = Some(v);
+        self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance.</p>
@@ -1701,7 +1728,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
     pub fn set_vpc_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.vpc_security_group_ids = input;
         self
@@ -1712,8 +1739,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.</p>
     /// <p>Example: <code>us-east-1d</code> </p>
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions and Availability Zones</a>.</p>
@@ -1724,7 +1754,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self
@@ -1732,8 +1762,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>A DB subnet group to associate with this DB instance.</p>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_subnet_group_name = Some(input.into());
+    pub fn db_subnet_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A DB subnet group to associate with this DB instance.</p>
@@ -1741,7 +1774,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn set_db_subnet_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_subnet_group_name = input;
         self
@@ -1751,8 +1784,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
-    pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
-        self.preferred_maintenance_window = Some(input.into());
+    pub fn preferred_maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon RDS Maintenance Window</a>.</p>
@@ -1762,7 +1798,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Constraints: Minimum 30-minute window.</p>
     pub fn set_preferred_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.preferred_maintenance_window = input;
         self
@@ -1775,8 +1811,11 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>It can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_parameter_group_name = Some(input.into());
+    pub fn db_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then the default DB parameter group for the specified DB engine and version is used.</p>
@@ -1789,7 +1828,7 @@ impl CreateDbInstanceInputBuilder {
     /// </ul>
     pub fn set_db_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_parameter_group_name = input;
         self
@@ -1805,7 +1844,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance</p> </li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
-        self.backup_retention_period = Some(input);
+        self.backup_retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -1818,7 +1857,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas</p> </li>
     /// <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance</p> </li>
     /// </ul>
-    pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
     }
@@ -1832,8 +1871,11 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
-        self.preferred_backup_window = Some(input.into());
+    pub fn preferred_backup_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -1848,7 +1890,7 @@ impl CreateDbInstanceInputBuilder {
     /// </ul>
     pub fn set_preferred_backup_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.preferred_backup_window = input;
         self
@@ -1877,7 +1919,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Valid values: <code>1150-65535</code> </p>
     /// <p>Type: Integer</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number on which the database accepts connections.</p>
@@ -1903,7 +1945,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: <code>3306</code> </p>
     /// <p>Valid values: <code>1150-65535</code> </p>
     /// <p>Type: Integer</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
@@ -1912,14 +1954,14 @@ impl CreateDbInstanceInputBuilder {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
-        self.multi_az = Some(input);
+        self.multi_az = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. DB instance Availability Zones (AZs) are managed by the DB cluster.</p>
-    pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
     }
@@ -1942,8 +1984,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the database engine to use.</p>
@@ -1965,19 +2010,22 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle Database Engine Release Notes</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
     /// <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to <code>false</code>.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
-        self.auto_minor_version_upgrade = Some(input);
+        self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
     /// <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to <code>false</code>.</p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
@@ -1986,8 +2034,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
-    pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
-        self.license_model = Some(input.into());
+    pub fn license_model(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.license_model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>License model information for this DB instance.</p>
@@ -1995,7 +2046,10 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
-    pub fn set_license_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_license_model(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.license_model = input;
         self
     }
@@ -2004,14 +2058,14 @@ impl CreateDbInstanceInputBuilder {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     pub fn iops(mut self, input: i32) -> Self {
-        self.iops = Some(input);
+        self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be a multiple between .5 and 50 of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of the storage amount for the DB instance.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
@@ -2020,8 +2074,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
-    pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_group_name = Some(input.into());
+    pub fn option_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
@@ -2031,7 +2088,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not applicable.</p>
     pub fn set_option_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.option_group_name = input;
         self
@@ -2040,8 +2097,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom. However, if you need to change the character set, you can change it on the database itself.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-    pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.character_set_name = Some(input.into());
+    pub fn character_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.character_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For supported engines, this value indicates that the DB instance should be associated with the specified <code>CharacterSet</code>.</p>
@@ -2050,22 +2110,25 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not applicable. The character set is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
     pub fn set_character_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.character_set_name = input;
         self
     }
     /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
     /// <p>This parameter doesn't apply to RDS Custom.</p>
-    pub fn nchar_character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nchar_character_set_name = Some(input.into());
+    pub fn nchar_character_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.nchar_character_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
     /// <p>This parameter doesn't apply to RDS Custom.</p>
     pub fn set_nchar_character_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.nchar_character_set_name = input;
         self
@@ -2085,7 +2148,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
     /// </ul>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
-        self.publicly_accessible = Some(input);
+        self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -2102,7 +2165,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB instance is private.</p> </li>
     /// <li> <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p> </li>
     /// </ul>
-    pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }
@@ -2114,28 +2177,31 @@ impl CreateDbInstanceInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Tags to assign to the DB instance.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The identifier of the DB cluster that the instance will belong to.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_identifier = Some(input.into());
+    pub fn db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the DB cluster that the instance will belong to.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_identifier = input;
         self
@@ -2146,8 +2212,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
-    pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.storage_type = Some(input.into());
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -2156,7 +2222,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
-    pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
@@ -2164,8 +2230,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable.</p>
-    pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tde_credential_arn = Some(input.into());
+    pub fn tde_credential_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.tde_credential_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -2174,22 +2243,25 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not applicable.</p>
     pub fn set_tde_credential_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.tde_credential_arn = input;
         self
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tde_credential_password = Some(input.into());
+    pub fn tde_credential_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.tde_credential_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_tde_credential_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.tde_credential_password = input;
         self
@@ -2199,14 +2271,14 @@ impl CreateDbInstanceInputBuilder {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
-        self.storage_encrypted = Some(input);
+        self.storage_encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
     /// <p>For RDS Custom instances, either set this parameter to <code>true</code> or leave it unset. If you set this parameter to <code>false</code>, RDS reports an error.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster.</p>
-    pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
     }
@@ -2217,8 +2289,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p> <b>Amazon RDS Custom</b> </p>
     /// <p>A KMS key is required for RDS Custom instances. For most RDS engines, if you leave this parameter empty while enabling <code>StorageEncrypted</code>, the engine uses the default KMS key. However, RDS Custom doesn't use the default key when this parameter is empty. You must explicitly specify a key.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
@@ -2228,7 +2300,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p> <b>Amazon RDS Custom</b> </p>
     /// <p>A KMS key is required for RDS Custom instances. For most RDS engines, if you leave this parameter empty while enabling <code>StorageEncrypted</code>, the engine uses the default KMS key. However, RDS Custom doesn't use the default key when this parameter is empty. You must explicitly specify a key.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
@@ -2237,8 +2309,8 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The domain is managed by the DB cluster.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
@@ -2246,7 +2318,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The domain is managed by the DB cluster.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
@@ -2254,13 +2326,13 @@ impl CreateDbInstanceInputBuilder {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting.</p>
     pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
-        self.copy_tags_to_snapshot = Some(input);
+        self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB instance has no effect on the DB cluster setting.</p>
-    pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshot = input;
         self
     }
@@ -2269,22 +2341,25 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
     pub fn monitoring_interval(mut self, input: i32) -> Self {
-        self.monitoring_interval = Some(input);
+        self.monitoring_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
-    pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.monitoring_interval = input;
         self
     }
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.monitoring_role_arn = Some(input.into());
+    pub fn monitoring_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.monitoring_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -2292,7 +2367,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_monitoring_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.monitoring_role_arn = input;
         self
@@ -2301,8 +2376,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. The domain is managed by the DB cluster.</p>
-    pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_iam_role_name = Some(input.into());
+    pub fn domain_iam_role_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.domain_iam_role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -2311,7 +2389,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not applicable. The domain is managed by the DB cluster.</p>
     pub fn set_domain_iam_role_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.domain_iam_role_name = input;
         self
@@ -2321,24 +2399,24 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
-        self.promotion_tier = Some(input);
+        self.promotion_tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure of the existing primary instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"> Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
-    pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
     }
     /// <p>The time zone of the DB instance. The time zone parameter is currently supported only by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.</p>
-    pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timezone = Some(input.into());
+    pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone of the DB instance. The time zone parameter is currently supported only by <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.</p>
-    pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }
@@ -2348,7 +2426,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
-        self.enable_iam_database_authentication = Some(input);
+        self.enable_iam_database_authentication = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
@@ -2358,7 +2436,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not applicable. Mapping Amazon Web Services IAM accounts to database accounts is managed by the DB cluster.</p>
     pub fn set_enable_iam_database_authentication(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.enable_iam_database_authentication = input;
         self
@@ -2366,12 +2444,12 @@ impl CreateDbInstanceInputBuilder {
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn enable_performance_insights(mut self, input: bool) -> Self {
-        self.enable_performance_insights = Some(input);
+        self.enable_performance_insights = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to enable Performance Insights for the DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
-    pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_performance_insights = input;
         self
     }
@@ -2381,9 +2459,9 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn performance_insights_kms_key_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.performance_insights_kms_key_id = Some(input.into());
+        self.performance_insights_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -2392,7 +2470,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_performance_insights_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.performance_insights_kms_key_id = input;
         self
@@ -2413,7 +2491,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
-        self.performance_insights_retention_period = Some(input);
+        self.performance_insights_retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:</p>
@@ -2433,7 +2511,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_performance_insights_retention_period(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.performance_insights_retention_period = input;
         self
@@ -2457,10 +2535,13 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and <code>oemagent</code>.</p>
     /// <p> <b>PostgreSQL</b> </p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
-    pub fn enable_cloudwatch_logs_exports(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn enable_cloudwatch_logs_exports(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
-        self.enable_cloudwatch_logs_exports = Some(v);
+        self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -2480,7 +2561,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
     pub fn set_enable_cloudwatch_logs_exports(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.enable_cloudwatch_logs_exports = input;
         self
@@ -2496,7 +2577,7 @@ impl CreateDbInstanceInputBuilder {
     pub fn processor_features(mut self, input: crate::types::ProcessorFeature) -> Self {
         let mut v = self.processor_features.unwrap_or_default();
         v.push(input);
-        self.processor_features = Some(v);
+        self.processor_features = ::std::option::Option::Some(v);
         self
     }
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -2505,7 +2586,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Not applicable.</p>
     pub fn set_processor_features(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProcessorFeature>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorFeature>>,
     ) -> Self {
         self.processor_features = input;
         self
@@ -2514,13 +2595,13 @@ impl CreateDbInstanceInputBuilder {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. You can enable or disable deletion protection for the DB cluster. For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
-        self.deletion_protection = Some(input);
+        self.deletion_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB Instance</a>.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. You can enable or disable deletion protection for the DB cluster. For more information, see <code>CreateDBCluster</code>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.</p>
-    pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
     }
@@ -2530,7 +2611,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
     pub fn max_allocated_storage(mut self, input: i32) -> Self {
-        self.max_allocated_storage = Some(input);
+        self.max_allocated_storage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -2538,7 +2619,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p> <b>Amazon Aurora</b> </p>
     /// <p>Not applicable. Storage is managed by the DB cluster.</p>
-    pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_allocated_storage = input;
         self
     }
@@ -2547,14 +2628,14 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
     pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
-        self.enable_customer_owned_ip = Some(input);
+        self.enable_customer_owned_ip = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
     /// <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p>
     /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-    pub fn set_enable_customer_owned_ip(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_customer_owned_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_customer_owned_ip = input;
         self
     }
@@ -2566,8 +2647,11 @@ impl CreateDbInstanceInputBuilder {
     /// </ul>
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
-    pub fn custom_iam_instance_profile(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_iam_instance_profile = Some(input.into());
+    pub fn custom_iam_instance_profile(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_iam_instance_profile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:</p>
@@ -2580,7 +2664,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting is required for RDS Custom.</p>
     pub fn set_custom_iam_instance_profile(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.custom_iam_instance_profile = input;
         self
@@ -2588,14 +2672,20 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Specifies where automated backups and manual snapshots are stored.</p>
     /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.backup_target = Some(input.into());
+    pub fn backup_target(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.backup_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies where automated backups and manual snapshots are stored.</p>
     /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn set_backup_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_backup_target(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.backup_target = input;
         self
     }
@@ -2607,8 +2697,8 @@ impl CreateDbInstanceInputBuilder {
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_type = Some(input.into());
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network type of the DB instance.</p>
@@ -2619,7 +2709,7 @@ impl CreateDbInstanceInputBuilder {
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
         self
     }
@@ -2627,13 +2717,13 @@ impl CreateDbInstanceInputBuilder {
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
-        self.storage_throughput = Some(input);
+        self.storage_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the storage throughput value for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
-    pub fn set_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_throughput = input;
         self
     }
@@ -2644,7 +2734,7 @@ impl CreateDbInstanceInputBuilder {
     /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
     /// </ul>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
-        self.manage_master_user_password = Some(input);
+        self.manage_master_user_password = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to manage the master user password with Amazon Web Services Secrets Manager.</p>
@@ -2653,7 +2743,7 @@ impl CreateDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p> </li>
     /// </ul>
-    pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manage_master_user_password = input;
         self
     }
@@ -2662,8 +2752,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
-    pub fn master_user_secret_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_secret_kms_key_id = Some(input.into());
+    pub fn master_user_secret_kms_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_secret_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
@@ -2673,7 +2766,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub fn set_master_user_secret_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.master_user_secret_kms_key_id = input;
         self
@@ -2681,8 +2774,11 @@ impl CreateDbInstanceInputBuilder {
     /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ca_certificate_identifier = Some(input.into());
+    pub fn ca_certificate_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the CA certificate identifier to use for the DB instance’s server certificate.</p>
@@ -2690,7 +2786,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_ca_certificate_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ca_certificate_identifier = input;
         self
@@ -2698,11 +2794,11 @@ impl CreateDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_db_instance::CreateDbInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_db_instance::CreateDbInstanceInput {
                 db_name: self.db_name,
                 db_instance_identifier: self.db_instance_identifier,

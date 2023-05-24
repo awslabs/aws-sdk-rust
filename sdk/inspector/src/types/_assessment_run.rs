@@ -3,69 +3,73 @@
 /// <p>A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .</p>
 /// <p>Used as the response element in the <code>DescribeAssessmentRuns</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRun {
     /// <p>The ARN of the assessment run.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The auto-generated name for the assessment run.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
     #[doc(hidden)]
-    pub assessment_template_arn: std::option::Option<std::string::String>,
+    pub assessment_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the assessment run.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::AssessmentRunState>,
+    pub state: ::std::option::Option<crate::types::AssessmentRunState>,
     /// <p>The duration of the assessment run.</p>
     #[doc(hidden)]
     pub duration_in_seconds: i32,
     /// <p>The rules packages selected for the assessment run.</p>
     #[doc(hidden)]
-    pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
     #[doc(hidden)]
-    pub user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    pub user_attributes_for_findings:
+        ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
     #[doc(hidden)]
-    pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time when the assessment run's state changed.</p>
     #[doc(hidden)]
-    pub state_changed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub state_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
     #[doc(hidden)]
-    pub data_collected: std::option::Option<bool>,
+    pub data_collected: ::std::option::Option<bool>,
     /// <p>A list of the assessment run state changes.</p>
     #[doc(hidden)]
-    pub state_changes: std::option::Option<std::vec::Vec<crate::types::AssessmentRunStateChange>>,
+    pub state_changes:
+        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
     #[doc(hidden)]
-    pub notifications: std::option::Option<std::vec::Vec<crate::types::AssessmentRunNotification>>,
+    pub notifications:
+        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
     /// <p>Provides a total count of generated findings per severity.</p>
     #[doc(hidden)]
-    pub finding_counts: std::option::Option<std::collections::HashMap<crate::types::Severity, i32>>,
+    pub finding_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
 }
 impl AssessmentRun {
     /// <p>The ARN of the assessment run.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The auto-generated name for the assessment run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_template_arn(&self) -> ::std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
     /// <p>The state of the assessment run.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::AssessmentRunState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::AssessmentRunState> {
         self.state.as_ref()
     }
     /// <p>The duration of the assessment run.</p>
@@ -73,45 +77,51 @@ impl AssessmentRun {
         self.duration_in_seconds
     }
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rules_package_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn user_attributes_for_findings(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::Attribute]> {
         self.user_attributes_for_findings.as_deref()
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>The last time when the assessment run's state changed.</p>
-    pub fn state_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn state_changed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.state_changed_at.as_ref()
     }
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
-    pub fn data_collected(&self) -> std::option::Option<bool> {
+    pub fn data_collected(&self) -> ::std::option::Option<bool> {
         self.data_collected
     }
     /// <p>A list of the assessment run state changes.</p>
-    pub fn state_changes(&self) -> std::option::Option<&[crate::types::AssessmentRunStateChange]> {
+    pub fn state_changes(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AssessmentRunStateChange]> {
         self.state_changes.as_deref()
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub fn notifications(&self) -> std::option::Option<&[crate::types::AssessmentRunNotification]> {
+    pub fn notifications(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AssessmentRunNotification]> {
         self.notifications.as_deref()
     }
     /// <p>Provides a total count of generated findings per severity.</p>
     pub fn finding_counts(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::types::Severity, i32>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Severity, i32>> {
         self.finding_counts.as_ref()
     }
 }
@@ -124,82 +134,87 @@ impl AssessmentRun {
 
 /// A builder for [`AssessmentRun`](crate::types::AssessmentRun).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssessmentRunBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) assessment_template_arn: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::AssessmentRunState>,
-    pub(crate) duration_in_seconds: std::option::Option<i32>,
-    pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_template_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::AssessmentRunState>,
+    pub(crate) duration_in_seconds: ::std::option::Option<i32>,
+    pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) user_attributes_for_findings:
-        std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) state_changed_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) data_collected: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) state_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) data_collected: ::std::option::Option<bool>,
     pub(crate) state_changes:
-        std::option::Option<std::vec::Vec<crate::types::AssessmentRunStateChange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
     pub(crate) notifications:
-        std::option::Option<std::vec::Vec<crate::types::AssessmentRunNotification>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
     pub(crate) finding_counts:
-        std::option::Option<std::collections::HashMap<crate::types::Severity, i32>>,
+        ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
 }
 impl AssessmentRunBuilder {
     /// <p>The ARN of the assessment run.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment run.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The auto-generated name for the assessment run.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The auto-generated name for the assessment run.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
-    pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_template_arn = Some(input.into());
+    pub fn assessment_template_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
     pub fn set_assessment_template_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.assessment_template_arn = input;
         self
     }
     /// <p>The state of the assessment run.</p>
     pub fn state(mut self, input: crate::types::AssessmentRunState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the assessment run.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::AssessmentRunState>,
+        input: ::std::option::Option<crate::types::AssessmentRunState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The duration of the assessment run.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
-        self.duration_in_seconds = Some(input);
+        self.duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration of the assessment run.</p>
-    pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_seconds = input;
         self
     }
@@ -208,16 +223,19 @@ impl AssessmentRunBuilder {
     /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
     ///
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rules_package_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
         v.push(input.into());
-        self.rules_package_arns = Some(v);
+        self.rules_package_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rules packages selected for the assessment run.</p>
     pub fn set_rules_package_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.rules_package_arns = input;
         self
@@ -230,76 +248,76 @@ impl AssessmentRunBuilder {
     pub fn user_attributes_for_findings(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.user_attributes_for_findings.unwrap_or_default();
         v.push(input);
-        self.user_attributes_for_findings = Some(v);
+        self.user_attributes_for_findings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
     pub fn set_user_attributes_for_findings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     ) -> Self {
         self.user_attributes_for_findings = input;
         self
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_at = Some(input);
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
     pub fn set_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_at = input;
         self
     }
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
-    pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.completed_at = Some(input);
+    pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
     pub fn set_completed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.completed_at = input;
         self
     }
     /// <p>The last time when the assessment run's state changed.</p>
-    pub fn state_changed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.state_changed_at = Some(input);
+    pub fn state_changed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.state_changed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time when the assessment run's state changed.</p>
     pub fn set_state_changed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.state_changed_at = input;
         self
     }
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
     pub fn data_collected(mut self, input: bool) -> Self {
-        self.data_collected = Some(input);
+        self.data_collected = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
-    pub fn set_data_collected(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_data_collected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.data_collected = input;
         self
     }
@@ -311,13 +329,13 @@ impl AssessmentRunBuilder {
     pub fn state_changes(mut self, input: crate::types::AssessmentRunStateChange) -> Self {
         let mut v = self.state_changes.unwrap_or_default();
         v.push(input);
-        self.state_changes = Some(v);
+        self.state_changes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the assessment run state changes.</p>
     pub fn set_state_changes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssessmentRunStateChange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunStateChange>>,
     ) -> Self {
         self.state_changes = input;
         self
@@ -330,13 +348,13 @@ impl AssessmentRunBuilder {
     pub fn notifications(mut self, input: crate::types::AssessmentRunNotification) -> Self {
         let mut v = self.notifications.unwrap_or_default();
         v.push(input);
-        self.notifications = Some(v);
+        self.notifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
     pub fn set_notifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssessmentRunNotification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssessmentRunNotification>>,
     ) -> Self {
         self.notifications = input;
         self
@@ -349,13 +367,13 @@ impl AssessmentRunBuilder {
     pub fn finding_counts(mut self, k: crate::types::Severity, v: i32) -> Self {
         let mut hash_map = self.finding_counts.unwrap_or_default();
         hash_map.insert(k, v);
-        self.finding_counts = Some(hash_map);
+        self.finding_counts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Provides a total count of generated findings per severity.</p>
     pub fn set_finding_counts(
         mut self,
-        input: std::option::Option<std::collections::HashMap<crate::types::Severity, i32>>,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::Severity, i32>>,
     ) -> Self {
         self.finding_counts = input;
         self

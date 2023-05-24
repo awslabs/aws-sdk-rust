@@ -2,64 +2,64 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentModel {
     /// <p>The unique handle of the model.</p>
     #[doc(hidden)]
-    pub model_handle: std::option::Option<std::string::String>,
+    pub model_handle: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model.</p>
     #[doc(hidden)]
-    pub model_version: std::option::Option<std::string::String>,
+    pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The desired state of the model.</p>
     #[doc(hidden)]
-    pub desired_state: std::option::Option<crate::types::ModelState>,
+    pub desired_state: ::std::option::Option<crate::types::ModelState>,
     /// <p>Returns the current state of the model.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ModelState>,
+    pub state: ::std::option::Option<crate::types::ModelState>,
     /// <p>Returns the deployment status of the model.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DeploymentStatus>,
+    pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>Returns the error message for the deployment status result.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Returns the error message if there is a rollback.</p>
     #[doc(hidden)]
-    pub rollback_failure_reason: std::option::Option<std::string::String>,
+    pub rollback_failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentModel {
     /// <p>The unique handle of the model.</p>
-    pub fn model_handle(&self) -> std::option::Option<&str> {
+    pub fn model_handle(&self) -> ::std::option::Option<&str> {
         self.model_handle.as_deref()
     }
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<&str> {
         self.model_version.as_deref()
     }
     /// <p>The desired state of the model.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::types::ModelState> {
+    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::ModelState> {
         self.desired_state.as_ref()
     }
     /// <p>Returns the current state of the model.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ModelState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ModelState> {
         self.state.as_ref()
     }
     /// <p>Returns the deployment status of the model.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>Returns the error message for the deployment status result.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>Returns the error message if there is a rollback.</p>
-    pub fn rollback_failure_reason(&self) -> std::option::Option<&str> {
+    pub fn rollback_failure_reason(&self) -> ::std::option::Option<&str> {
         self.rollback_failure_reason.as_deref()
     }
 }
@@ -72,103 +72,120 @@ impl DeploymentModel {
 
 /// A builder for [`DeploymentModel`](crate::types::DeploymentModel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentModelBuilder {
-    pub(crate) model_handle: std::option::Option<std::string::String>,
-    pub(crate) model_name: std::option::Option<std::string::String>,
-    pub(crate) model_version: std::option::Option<std::string::String>,
-    pub(crate) desired_state: std::option::Option<crate::types::ModelState>,
-    pub(crate) state: std::option::Option<crate::types::ModelState>,
-    pub(crate) status: std::option::Option<crate::types::DeploymentStatus>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
-    pub(crate) rollback_failure_reason: std::option::Option<std::string::String>,
+    pub(crate) model_handle: ::std::option::Option<::std::string::String>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_version: ::std::option::Option<::std::string::String>,
+    pub(crate) desired_state: ::std::option::Option<crate::types::ModelState>,
+    pub(crate) state: ::std::option::Option<crate::types::ModelState>,
+    pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) rollback_failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentModelBuilder {
     /// <p>The unique handle of the model.</p>
-    pub fn model_handle(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_handle = Some(input.into());
+    pub fn model_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_handle = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique handle of the model.</p>
-    pub fn set_model_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_handle = input;
         self
     }
     /// <p>The name of the model.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_version = Some(input.into());
+    pub fn model_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model.</p>
-    pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_version = input;
         self
     }
     /// <p>The desired state of the model.</p>
     pub fn desired_state(mut self, input: crate::types::ModelState) -> Self {
-        self.desired_state = Some(input);
+        self.desired_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired state of the model.</p>
     pub fn set_desired_state(
         mut self,
-        input: std::option::Option<crate::types::ModelState>,
+        input: ::std::option::Option<crate::types::ModelState>,
     ) -> Self {
         self.desired_state = input;
         self
     }
     /// <p>Returns the current state of the model.</p>
     pub fn state(mut self, input: crate::types::ModelState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the current state of the model.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ModelState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ModelState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Returns the deployment status of the model.</p>
     pub fn status(mut self, input: crate::types::DeploymentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the deployment status of the model.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DeploymentStatus>,
+        input: ::std::option::Option<crate::types::DeploymentStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Returns the error message for the deployment status result.</p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the error message for the deployment status result.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }
     /// <p>Returns the error message if there is a rollback.</p>
-    pub fn rollback_failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rollback_failure_reason = Some(input.into());
+    pub fn rollback_failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rollback_failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the error message if there is a rollback.</p>
     pub fn set_rollback_failure_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.rollback_failure_reason = input;
         self

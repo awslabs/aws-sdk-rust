@@ -2,7 +2,7 @@
 pub(crate) fn de_application_date_range_kpi_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
+    ::std::option::Option<crate::types::ApplicationDateRangeKpiResponse>,
     crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiError,
 > {
     (!body.is_empty()).then(||{

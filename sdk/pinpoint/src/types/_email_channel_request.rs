@@ -2,43 +2,43 @@
 
 /// <p>Specifies the status and settings of the email channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailChannelRequest {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
     #[doc(hidden)]
-    pub configuration_set: std::option::Option<std::string::String>,
+    pub configuration_set: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable the email channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
     #[doc(hidden)]
-    pub from_address: std::option::Option<std::string::String>,
+    pub from_address: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
     #[doc(hidden)]
-    pub identity: std::option::Option<std::string::String>,
+    pub identity: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EmailChannelRequest {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
-    pub fn configuration_set(&self) -> std::option::Option<&str> {
+    pub fn configuration_set(&self) -> ::std::option::Option<&str> {
         self.configuration_set.as_deref()
     }
     /// <p>Specifies whether to enable the email channel for the application.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
-    pub fn from_address(&self) -> std::option::Option<&str> {
+    pub fn from_address(&self) -> ::std::option::Option<&str> {
         self.from_address.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
-    pub fn identity(&self) -> std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<&str> {
         self.identity.as_deref()
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -51,65 +51,70 @@ impl EmailChannelRequest {
 
 /// A builder for [`EmailChannelRequest`](crate::types::EmailChannelRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmailChannelRequestBuilder {
-    pub(crate) configuration_set: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) from_address: std::option::Option<std::string::String>,
-    pub(crate) identity: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) configuration_set: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) from_address: ::std::option::Option<::std::string::String>,
+    pub(crate) identity: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EmailChannelRequestBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
-    pub fn configuration_set(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_set = Some(input.into());
+    pub fn configuration_set(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_set = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
     pub fn set_configuration_set(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_set = input;
         self
     }
     /// <p>Specifies whether to enable the email channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to enable the email channel for the application.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
-    pub fn from_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from_address = Some(input.into());
+    pub fn from_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.from_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
-    pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_address = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
-    pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity = Some(input.into());
+    pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
-    pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity = input;
         self
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

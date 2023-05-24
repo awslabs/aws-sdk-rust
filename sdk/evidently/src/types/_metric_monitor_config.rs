@@ -2,15 +2,17 @@
 
 /// <p>A structure that defines a metric to be used to monitor performance of the variations during a launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricMonitorConfig {
     /// <p>A structure that defines the metric.</p>
     #[doc(hidden)]
-    pub metric_definition: std::option::Option<crate::types::MetricDefinitionConfig>,
+    pub metric_definition: ::std::option::Option<crate::types::MetricDefinitionConfig>,
 }
 impl MetricMonitorConfig {
     /// <p>A structure that defines the metric.</p>
-    pub fn metric_definition(&self) -> std::option::Option<&crate::types::MetricDefinitionConfig> {
+    pub fn metric_definition(
+        &self,
+    ) -> ::std::option::Option<&crate::types::MetricDefinitionConfig> {
         self.metric_definition.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl MetricMonitorConfig {
 
 /// A builder for [`MetricMonitorConfig`](crate::types::MetricMonitorConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricMonitorConfigBuilder {
-    pub(crate) metric_definition: std::option::Option<crate::types::MetricDefinitionConfig>,
+    pub(crate) metric_definition: ::std::option::Option<crate::types::MetricDefinitionConfig>,
 }
 impl MetricMonitorConfigBuilder {
     /// <p>A structure that defines the metric.</p>
     pub fn metric_definition(mut self, input: crate::types::MetricDefinitionConfig) -> Self {
-        self.metric_definition = Some(input);
+        self.metric_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that defines the metric.</p>
     pub fn set_metric_definition(
         mut self,
-        input: std::option::Option<crate::types::MetricDefinitionConfig>,
+        input: ::std::option::Option<crate::types::MetricDefinitionConfig>,
     ) -> Self {
         self.metric_definition = input;
         self

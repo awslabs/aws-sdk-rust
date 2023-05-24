@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteParameterGroup`](crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`parameter_group_name(impl Into<String>)`](crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder::set_parameter_group_name): <p>The name of the parameter group to delete.</p>
+    ///   - [`parameter_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder::parameter_group_name) / [`set_parameter_group_name(Option<String>)`](crate::operation::delete_parameter_group::builders::DeleteParameterGroupFluentBuilder::set_parameter_group_name): <p>The name of the parameter group to delete.</p>
     /// - On success, responds with [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput) with field(s):
     ///   - [`deletion_message(Option<String>)`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput::deletion_message): <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
     /// - On failure, responds with [`SdkError<DeleteParameterGroupError>`](crate::operation::delete_parameter_group::DeleteParameterGroupError)

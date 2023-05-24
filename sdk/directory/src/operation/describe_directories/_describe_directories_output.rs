@@ -2,16 +2,16 @@
 
 /// <p>Contains the results of the <code>DescribeDirectories</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDirectoriesOutput {
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     #[doc(hidden)]
     pub directory_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::DirectoryDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>>,
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDirectoriesOutput {
@@ -19,15 +19,15 @@ impl DescribeDirectoriesOutput {
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn directory_descriptions(
         &self,
-    ) -> std::option::Option<&[crate::types::DirectoryDescription]> {
+    ) -> ::std::option::Option<&[crate::types::DirectoryDescription]> {
         self.directory_descriptions.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDirectoriesOutput {
+impl ::aws_http::request_id::RequestId for DescribeDirectoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,11 +43,13 @@ impl DescribeDirectoriesOutput {
 
 /// A builder for [`DescribeDirectoriesOutput`](crate::operation::describe_directories::DescribeDirectoriesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDirectoriesOutputBuilder {
     pub(crate) directory_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::DirectoryDescription>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDirectoriesOutputBuilder {
@@ -60,25 +62,25 @@ impl DescribeDirectoriesOutputBuilder {
     pub fn directory_descriptions(mut self, input: crate::types::DirectoryDescription) -> Self {
         let mut v = self.directory_descriptions.unwrap_or_default();
         v.push(input);
-        self.directory_descriptions = Some(v);
+        self.directory_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of <code>DirectoryDescription</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <code>Limit</code> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn set_directory_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DirectoryDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DirectoryDescription>>,
     ) -> Self {
         self.directory_descriptions = input;
         self
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDirectories</code> to retrieve the next set of items.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

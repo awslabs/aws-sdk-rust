@@ -2,27 +2,27 @@
 
 /// Placeholder documentation for DescribeScheduleResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduleOutput {
     /// The next token; for use in pagination.
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// The list of actions in the schedule.
     #[doc(hidden)]
-    pub schedule_actions: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
+    pub schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduleOutput {
     /// The next token; for use in pagination.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// The list of actions in the schedule.
-    pub fn schedule_actions(&self) -> std::option::Option<&[crate::types::ScheduleAction]> {
+    pub fn schedule_actions(&self) -> ::std::option::Option<&[crate::types::ScheduleAction]> {
         self.schedule_actions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeScheduleOutput {
+impl ::aws_http::request_id::RequestId for DescribeScheduleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,20 +37,23 @@ impl DescribeScheduleOutput {
 
 /// A builder for [`DescribeScheduleOutput`](crate::operation::describe_schedule::DescribeScheduleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeScheduleOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) schedule_actions: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) schedule_actions:
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduleOutputBuilder {
     /// The next token; for use in pagination.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// The next token; for use in pagination.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -62,13 +65,13 @@ impl DescribeScheduleOutputBuilder {
     pub fn schedule_actions(mut self, input: crate::types::ScheduleAction) -> Self {
         let mut v = self.schedule_actions.unwrap_or_default();
         v.push(input);
-        self.schedule_actions = Some(v);
+        self.schedule_actions = ::std::option::Option::Some(v);
         self
     }
     /// The list of actions in the schedule.
     pub fn set_schedule_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
     ) -> Self {
         self.schedule_actions = input;
         self

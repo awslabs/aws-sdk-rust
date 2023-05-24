@@ -2,7 +2,7 @@
 
 /// <p>The driver that the job runs on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum JobDriver {
     /// <p>The job driver parameters specified for Hive.</p>
     Hive(crate::types::Hive),
@@ -21,11 +21,11 @@ pub enum JobDriver {
 impl JobDriver {
     /// Tries to convert the enum instance into [`Hive`](crate::types::JobDriver::Hive), extracting the inner [`Hive`](crate::types::Hive).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_hive(&self) -> std::result::Result<&crate::types::Hive, &Self> {
+    pub fn as_hive(&self) -> ::std::result::Result<&crate::types::Hive, &Self> {
         if let JobDriver::Hive(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Hive`](crate::types::JobDriver::Hive).
@@ -34,11 +34,11 @@ impl JobDriver {
     }
     /// Tries to convert the enum instance into [`SparkSubmit`](crate::types::JobDriver::SparkSubmit), extracting the inner [`SparkSubmit`](crate::types::SparkSubmit).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_spark_submit(&self) -> std::result::Result<&crate::types::SparkSubmit, &Self> {
+    pub fn as_spark_submit(&self) -> ::std::result::Result<&crate::types::SparkSubmit, &Self> {
         if let JobDriver::SparkSubmit(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SparkSubmit`](crate::types::JobDriver::SparkSubmit).

@@ -3,22 +3,22 @@
 /// <p>An object that specifies what screenshots to use as a baseline for visual monitoring by this canary. It can optionally also specify parts of the screenshots to ignore during the visual monitoring comparison.</p>
 /// <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualReferenceInput {
     /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
     #[doc(hidden)]
-    pub base_screenshots: std::option::Option<std::vec::Vec<crate::types::BaseScreenshot>>,
+    pub base_screenshots: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from any past run of this canary.</p>
     #[doc(hidden)]
-    pub base_canary_run_id: std::option::Option<std::string::String>,
+    pub base_canary_run_id: ::std::option::Option<::std::string::String>,
 }
 impl VisualReferenceInput {
     /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
-    pub fn base_screenshots(&self) -> std::option::Option<&[crate::types::BaseScreenshot]> {
+    pub fn base_screenshots(&self) -> ::std::option::Option<&[crate::types::BaseScreenshot]> {
         self.base_screenshots.as_deref()
     }
     /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from any past run of this canary.</p>
-    pub fn base_canary_run_id(&self) -> std::option::Option<&str> {
+    pub fn base_canary_run_id(&self) -> ::std::option::Option<&str> {
         self.base_canary_run_id.as_deref()
     }
 }
@@ -31,10 +31,13 @@ impl VisualReferenceInput {
 
 /// A builder for [`VisualReferenceInput`](crate::types::VisualReferenceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VisualReferenceInputBuilder {
-    pub(crate) base_screenshots: std::option::Option<std::vec::Vec<crate::types::BaseScreenshot>>,
-    pub(crate) base_canary_run_id: std::option::Option<std::string::String>,
+    pub(crate) base_screenshots:
+        ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
+    pub(crate) base_canary_run_id: ::std::option::Option<::std::string::String>,
 }
 impl VisualReferenceInputBuilder {
     /// Appends an item to `base_screenshots`.
@@ -45,26 +48,29 @@ impl VisualReferenceInputBuilder {
     pub fn base_screenshots(mut self, input: crate::types::BaseScreenshot) -> Self {
         let mut v = self.base_screenshots.unwrap_or_default();
         v.push(input);
-        self.base_screenshots = Some(v);
+        self.base_screenshots = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of screenshots that will be used as the baseline for visual monitoring in future runs of this canary. If there is a screenshot that you don't want to be used for visual monitoring, remove it from this array.</p>
     pub fn set_base_screenshots(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BaseScreenshot>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BaseScreenshot>>,
     ) -> Self {
         self.base_screenshots = input;
         self
     }
     /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from any past run of this canary.</p>
-    pub fn base_canary_run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.base_canary_run_id = Some(input.into());
+    pub fn base_canary_run_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.base_canary_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies which canary run to use the screenshots from as the baseline for future visual monitoring with this canary. Valid values are <code>nextrun</code> to use the screenshots from the next run after this update is made, <code>lastrun</code> to use the screenshots from the most recent run before this update was made, or the value of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html"> CanaryRun</a> from any past run of this canary.</p>
     pub fn set_base_canary_run_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.base_canary_run_id = input;
         self

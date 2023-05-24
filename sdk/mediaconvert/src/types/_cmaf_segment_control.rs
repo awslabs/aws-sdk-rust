@@ -38,13 +38,13 @@
 /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmafSegmentControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmafSegmentControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmafSegmentControl {
+impl ::std::convert::From<&str> for CmafSegmentControl {
     fn from(s: &str) -> Self {
         match s {
             "SEGMENTED_FILES" => CmafSegmentControl::SegmentedFiles,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmafSegmentControl {
         }
     }
 }
-impl std::str::FromStr for CmafSegmentControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmafSegmentControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafSegmentControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmafSegmentControl::from(s))
     }
 }
 impl CmafSegmentControl {
@@ -86,7 +86,7 @@ impl CmafSegmentControl {
         &["SEGMENTED_FILES", "SINGLE_FILE"]
     }
 }
-impl AsRef<str> for CmafSegmentControl {
+impl ::std::convert::AsRef<str> for CmafSegmentControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

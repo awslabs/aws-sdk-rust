@@ -2,20 +2,20 @@
 
 /// <p> The result structure for create branch request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBranchOutput {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
-    pub branch: std::option::Option<crate::types::Branch>,
+    pub branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,
 }
 impl CreateBranchOutput {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
-    pub fn branch(&self) -> std::option::Option<&crate::types::Branch> {
+    pub fn branch(&self) -> ::std::option::Option<&crate::types::Branch> {
         self.branch.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateBranchOutput {
+impl ::aws_http::request_id::RequestId for CreateBranchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateBranchOutput {
 
 /// A builder for [`CreateBranchOutput`](crate::operation::create_branch::CreateBranchOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateBranchOutputBuilder {
-    pub(crate) branch: std::option::Option<crate::types::Branch>,
+    pub(crate) branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,
 }
 impl CreateBranchOutputBuilder {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(mut self, input: crate::types::Branch) -> Self {
-        self.branch = Some(input);
+        self.branch = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
-    pub fn set_branch(mut self, input: std::option::Option<crate::types::Branch>) -> Self {
+    pub fn set_branch(mut self, input: ::std::option::Option<crate::types::Branch>) -> Self {
         self.branch = input;
         self
     }

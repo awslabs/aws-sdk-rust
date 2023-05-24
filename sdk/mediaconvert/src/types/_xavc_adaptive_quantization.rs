@@ -43,13 +43,13 @@
 /// Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set Adaptive quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off (OFF). Related settings: The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum XavcAdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum XavcAdaptiveQuantization {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for XavcAdaptiveQuantization {
+impl ::std::convert::From<&str> for XavcAdaptiveQuantization {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => XavcAdaptiveQuantization::Auto,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for XavcAdaptiveQuantization {
         }
     }
 }
-impl std::str::FromStr for XavcAdaptiveQuantization {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for XavcAdaptiveQuantization {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XavcAdaptiveQuantization::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(XavcAdaptiveQuantization::from(s))
     }
 }
 impl XavcAdaptiveQuantization {
@@ -111,7 +111,7 @@ impl XavcAdaptiveQuantization {
         &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
 }
-impl AsRef<str> for XavcAdaptiveQuantization {
+impl ::std::convert::AsRef<str> for XavcAdaptiveQuantization {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

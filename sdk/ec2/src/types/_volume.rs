@@ -2,120 +2,120 @@
 
 /// <p>Describes a volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
     /// <p>Information about the volume attachments.</p>
     #[doc(hidden)]
-    pub attachments: std::option::Option<std::vec::Vec<crate::types::VolumeAttachment>>,
+    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>,
     /// <p>The Availability Zone for the volume.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp when volume creation was initiated.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the volume is encrypted.</p>
     #[doc(hidden)]
-    pub encrypted: std::option::Option<bool>,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     #[doc(hidden)]
-    pub outpost_arn: std::option::Option<std::string::String>,
+    pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs.</p>
     #[doc(hidden)]
-    pub size: std::option::Option<i32>,
+    pub size: ::std::option::Option<i32>,
     /// <p>The snapshot from which the volume was created, if applicable.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::VolumeState>,
+    pub state: ::std::option::Option<crate::types::VolumeState>,
     /// <p>The ID of the volume.</p>
     #[doc(hidden)]
-    pub volume_id: std::option::Option<std::string::String>,
+    pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     #[doc(hidden)]
-    pub iops: std::option::Option<i32>,
+    pub iops: ::std::option::Option<i32>,
     /// <p>Any tags assigned to the volume.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The volume type.</p>
     #[doc(hidden)]
-    pub volume_type: std::option::Option<crate::types::VolumeType>,
+    pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
     #[doc(hidden)]
-    pub fast_restored: std::option::Option<bool>,
+    pub fast_restored: ::std::option::Option<bool>,
     /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
     #[doc(hidden)]
-    pub multi_attach_enabled: std::option::Option<bool>,
+    pub multi_attach_enabled: ::std::option::Option<bool>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     #[doc(hidden)]
-    pub throughput: std::option::Option<i32>,
+    pub throughput: ::std::option::Option<i32>,
 }
 impl Volume {
     /// <p>Information about the volume attachments.</p>
-    pub fn attachments(&self) -> std::option::Option<&[crate::types::VolumeAttachment]> {
+    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::VolumeAttachment]> {
         self.attachments.as_deref()
     }
     /// <p>The Availability Zone for the volume.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The time stamp when volume creation was initiated.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Indicates whether the volume is encrypted.</p>
-    pub fn encrypted(&self) -> std::option::Option<bool> {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The size of the volume, in GiBs.</p>
-    pub fn size(&self) -> std::option::Option<i32> {
+    pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
     /// <p>The snapshot from which the volume was created, if applicable.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The volume state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::VolumeState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::VolumeState> {
         self.state.as_ref()
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    pub fn iops(&self) -> std::option::Option<i32> {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>Any tags assigned to the volume.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The volume type.</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
-    pub fn fast_restored(&self) -> std::option::Option<bool> {
+    pub fn fast_restored(&self) -> ::std::option::Option<bool> {
         self.fast_restored
     }
     /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
-    pub fn multi_attach_enabled(&self) -> std::option::Option<bool> {
+    pub fn multi_attach_enabled(&self) -> ::std::option::Option<bool> {
         self.multi_attach_enabled
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
-    pub fn throughput(&self) -> std::option::Option<i32> {
+    pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
 }
@@ -128,24 +128,26 @@ impl Volume {
 
 /// A builder for [`Volume`](crate::types::Volume).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeBuilder {
-    pub(crate) attachments: std::option::Option<std::vec::Vec<crate::types::VolumeAttachment>>,
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) encrypted: std::option::Option<bool>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) outpost_arn: std::option::Option<std::string::String>,
-    pub(crate) size: std::option::Option<i32>,
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::VolumeState>,
-    pub(crate) volume_id: std::option::Option<std::string::String>,
-    pub(crate) iops: std::option::Option<i32>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) volume_type: std::option::Option<crate::types::VolumeType>,
-    pub(crate) fast_restored: std::option::Option<bool>,
-    pub(crate) multi_attach_enabled: std::option::Option<bool>,
-    pub(crate) throughput: std::option::Option<i32>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) encrypted: ::std::option::Option<bool>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) size: ::std::option::Option<i32>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::VolumeState>,
+    pub(crate) volume_id: ::std::option::Option<::std::string::String>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
+    pub(crate) fast_restored: ::std::option::Option<bool>,
+    pub(crate) multi_attach_enabled: ::std::option::Option<bool>,
+    pub(crate) throughput: ::std::option::Option<i32>,
 }
 impl VolumeBuilder {
     /// Appends an item to `attachments`.
@@ -156,120 +158,123 @@ impl VolumeBuilder {
     pub fn attachments(mut self, input: crate::types::VolumeAttachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
         v.push(input);
-        self.attachments = Some(v);
+        self.attachments = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the volume attachments.</p>
     pub fn set_attachments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeAttachment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeAttachment>>,
     ) -> Self {
         self.attachments = input;
         self
     }
     /// <p>The Availability Zone for the volume.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the volume.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The time stamp when volume creation was initiated.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time stamp when volume creation was initiated.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>Indicates whether the volume is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
-        self.encrypted = Some(input);
+        self.encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the volume is encrypted.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_arn = Some(input.into());
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
     /// <p>The size of the volume, in GiBs.</p>
     pub fn size(mut self, input: i32) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the volume, in GiBs.</p>
-    pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }
     /// <p>The snapshot from which the volume was created, if applicable.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot from which the volume was created, if applicable.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
     /// <p>The volume state.</p>
     pub fn state(mut self, input: crate::types::VolumeState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The volume state.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::VolumeState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::VolumeState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_id = Some(input.into());
+    pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the volume.</p>
-    pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
     }
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     pub fn iops(mut self, input: i32) -> Self {
-        self.iops = Some(input);
+        self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
@@ -281,54 +286,57 @@ impl VolumeBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the volume.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The volume type.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
-        self.volume_type = Some(input);
+        self.volume_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The volume type.</p>
-    pub fn set_volume_type(mut self, input: std::option::Option<crate::types::VolumeType>) -> Self {
+    pub fn set_volume_type(
+        mut self,
+        input: ::std::option::Option<crate::types::VolumeType>,
+    ) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
     pub fn fast_restored(mut self, input: bool) -> Self {
-        self.fast_restored = Some(input);
+        self.fast_restored = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
-    pub fn set_fast_restored(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_fast_restored(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fast_restored = input;
         self
     }
     /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
     pub fn multi_attach_enabled(mut self, input: bool) -> Self {
-        self.multi_attach_enabled = Some(input);
+        self.multi_attach_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
-    pub fn set_multi_attach_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_multi_attach_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_attach_enabled = input;
         self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub fn throughput(mut self, input: i32) -> Self {
-        self.throughput = Some(input);
+        self.throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
-    pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }

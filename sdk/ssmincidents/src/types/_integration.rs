@@ -2,7 +2,7 @@
 
 /// <p>Information about third-party services integrated into a response plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Integration {
     /// <p>Information about the PagerDuty service where the response plan creates an incident.</p>
     PagerDutyConfiguration(crate::types::PagerDutyConfiguration),
@@ -22,11 +22,11 @@ impl Integration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_pager_duty_configuration(
         &self,
-    ) -> std::result::Result<&crate::types::PagerDutyConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::PagerDutyConfiguration, &Self> {
         if let Integration::PagerDutyConfiguration(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PagerDutyConfiguration`](crate::types::Integration::PagerDutyConfiguration).

@@ -2,17 +2,17 @@
 
 /// <p>Information about a provisioning artifact (also known as a version) for a product.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisioningArtifactDetail {
     /// <p>The identifier of the provisioning artifact.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the provisioning artifact.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the provisioning artifact.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
     /// <li> <p> <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li>
@@ -20,32 +20,32 @@ pub struct ProvisioningArtifactDetail {
     /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ProvisioningArtifactType>,
+    pub r#type: ::std::option::Option<crate::types::ProvisioningArtifactType>,
     /// <p>The UTC time stamp of the creation time.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the product version is active.</p>
     #[doc(hidden)]
-    pub active: std::option::Option<bool>,
+    pub active: ::std::option::Option<bool>,
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     #[doc(hidden)]
-    pub guidance: std::option::Option<crate::types::ProvisioningArtifactGuidance>,
+    pub guidance: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
     /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
     /// <p>This field only exists for Repo-Synced products. </p>
     #[doc(hidden)]
-    pub source_revision: std::option::Option<std::string::String>,
+    pub source_revision: ::std::option::Option<::std::string::String>,
 }
 impl ProvisioningArtifactDetail {
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the provisioning artifact.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of provisioning artifact.</p>
@@ -54,24 +54,24 @@ impl ProvisioningArtifactDetail {
     /// <li> <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
     /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ProvisioningArtifactType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactType> {
         self.r#type.as_ref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Indicates whether the product version is active.</p>
-    pub fn active(&self) -> std::option::Option<bool> {
+    pub fn active(&self) -> ::std::option::Option<bool> {
         self.active
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
-    pub fn guidance(&self) -> std::option::Option<&crate::types::ProvisioningArtifactGuidance> {
+    pub fn guidance(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactGuidance> {
         self.guidance.as_ref()
     }
     /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
     /// <p>This field only exists for Repo-Synced products. </p>
-    pub fn source_revision(&self) -> std::option::Option<&str> {
+    pub fn source_revision(&self) -> ::std::option::Option<&str> {
         self.source_revision.as_deref()
     }
 }
@@ -84,45 +84,47 @@ impl ProvisioningArtifactDetail {
 
 /// A builder for [`ProvisioningArtifactDetail`](crate::types::ProvisioningArtifactDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisioningArtifactDetailBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ProvisioningArtifactType>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) active: std::option::Option<bool>,
-    pub(crate) guidance: std::option::Option<crate::types::ProvisioningArtifactGuidance>,
-    pub(crate) source_revision: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ProvisioningArtifactType>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) active: ::std::option::Option<bool>,
+    pub(crate) guidance: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
+    pub(crate) source_revision: ::std::option::Option<::std::string::String>,
 }
 impl ProvisioningArtifactDetailBuilder {
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description of the provisioning artifact.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the provisioning artifact.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -133,7 +135,7 @@ impl ProvisioningArtifactDetailBuilder {
     /// <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ProvisioningArtifactType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of provisioning artifact.</p>
@@ -144,56 +146,62 @@ impl ProvisioningArtifactDetailBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ProvisioningArtifactType>,
+        input: ::std::option::Option<crate::types::ProvisioningArtifactType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>Indicates whether the product version is active.</p>
     pub fn active(mut self, input: bool) -> Self {
-        self.active = Some(input);
+        self.active = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the product version is active.</p>
-    pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub fn guidance(mut self, input: crate::types::ProvisioningArtifactGuidance) -> Self {
-        self.guidance = Some(input);
+        self.guidance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>
     pub fn set_guidance(
         mut self,
-        input: std::option::Option<crate::types::ProvisioningArtifactGuidance>,
+        input: ::std::option::Option<crate::types::ProvisioningArtifactGuidance>,
     ) -> Self {
         self.guidance = input;
         self
     }
     /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
     /// <p>This field only exists for Repo-Synced products. </p>
-    pub fn source_revision(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_revision = Some(input.into());
+    pub fn source_revision(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the revision of the external artifact that was used to automatically sync the Service Catalog product and create the provisioning artifact. Service Catalog includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code> type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>, and <code>UpdateProvisioningArticat</code> APIs. </p>
     /// <p>This field only exists for Repo-Synced products. </p>
-    pub fn set_source_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_revision(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_revision = input;
         self
     }

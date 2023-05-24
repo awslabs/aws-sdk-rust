@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeStacks</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStacksOutput {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     #[doc(hidden)]
-    pub stacks: std::option::Option<std::vec::Vec<crate::types::Stack>>,
+    pub stacks: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>,
     _request_id: Option<String>,
 }
 impl DescribeStacksOutput {
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
-    pub fn stacks(&self) -> std::option::Option<&[crate::types::Stack]> {
+    pub fn stacks(&self) -> ::std::option::Option<&[crate::types::Stack]> {
         self.stacks.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeStacksOutput {
+impl ::aws_http::request_id::RequestId for DescribeStacksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl DescribeStacksOutput {
 
 /// A builder for [`DescribeStacksOutput`](crate::operation::describe_stacks::DescribeStacksOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStacksOutputBuilder {
-    pub(crate) stacks: std::option::Option<std::vec::Vec<crate::types::Stack>>,
+    pub(crate) stacks: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>,
     _request_id: Option<String>,
 }
 impl DescribeStacksOutputBuilder {
@@ -43,13 +45,13 @@ impl DescribeStacksOutputBuilder {
     pub fn stacks(mut self, input: crate::types::Stack) -> Self {
         let mut v = self.stacks.unwrap_or_default();
         v.push(input);
-        self.stacks = Some(v);
+        self.stacks = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>Stack</code> objects that describe the stacks.</p>
     pub fn set_stacks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Stack>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Stack>>,
     ) -> Self {
         self.stacks = input;
         self

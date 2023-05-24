@@ -2,25 +2,28 @@
 
 /// <p> A configuration specification to be used to override existing configurations. This data type allows job template parameters to be specified within.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParametricConfigurationOverrides {
     /// <p> The configurations for the application running by the job run.</p>
     #[doc(hidden)]
-    pub application_configuration: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+    pub application_configuration:
+        ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p> The configurations for monitoring. </p>
     #[doc(hidden)]
     pub monitoring_configuration:
-        std::option::Option<crate::types::ParametricMonitoringConfiguration>,
+        ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
 }
 impl ParametricConfigurationOverrides {
     /// <p> The configurations for the application running by the job run.</p>
-    pub fn application_configuration(&self) -> std::option::Option<&[crate::types::Configuration]> {
+    pub fn application_configuration(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::Configuration]> {
         self.application_configuration.as_deref()
     }
     /// <p> The configurations for monitoring. </p>
     pub fn monitoring_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ParametricMonitoringConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ParametricMonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
 }
@@ -33,12 +36,14 @@ impl ParametricConfigurationOverrides {
 
 /// A builder for [`ParametricConfigurationOverrides`](crate::types::ParametricConfigurationOverrides).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParametricConfigurationOverridesBuilder {
     pub(crate) application_configuration:
-        std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration:
-        std::option::Option<crate::types::ParametricMonitoringConfiguration>,
+        ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
 }
 impl ParametricConfigurationOverridesBuilder {
     /// Appends an item to `application_configuration`.
@@ -49,13 +54,13 @@ impl ParametricConfigurationOverridesBuilder {
     pub fn application_configuration(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.application_configuration.unwrap_or_default();
         v.push(input);
-        self.application_configuration = Some(v);
+        self.application_configuration = ::std::option::Option::Some(v);
         self
     }
     /// <p> The configurations for the application running by the job run.</p>
     pub fn set_application_configuration(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     ) -> Self {
         self.application_configuration = input;
         self
@@ -65,13 +70,13 @@ impl ParametricConfigurationOverridesBuilder {
         mut self,
         input: crate::types::ParametricMonitoringConfiguration,
     ) -> Self {
-        self.monitoring_configuration = Some(input);
+        self.monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> The configurations for monitoring. </p>
     pub fn set_monitoring_configuration(
         mut self,
-        input: std::option::Option<crate::types::ParametricMonitoringConfiguration>,
+        input: ::std::option::Option<crate::types::ParametricMonitoringConfiguration>,
     ) -> Self {
         self.monitoring_configuration = input;
         self

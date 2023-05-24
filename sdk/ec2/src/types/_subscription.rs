@@ -2,43 +2,43 @@
 
 /// <p>Describes an Infrastructure Performance subscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<std::string::String>,
+    pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<std::string::String>,
+    pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The metric used for the subscription.</p>
     #[doc(hidden)]
-    pub metric: std::option::Option<crate::types::MetricType>,
+    pub metric: ::std::option::Option<crate::types::MetricType>,
     /// <p>The statistic used for the subscription.</p>
     #[doc(hidden)]
-    pub statistic: std::option::Option<crate::types::StatisticType>,
+    pub statistic: ::std::option::Option<crate::types::StatisticType>,
     /// <p>The data aggregation time for the subscription.</p>
     #[doc(hidden)]
-    pub period: std::option::Option<crate::types::PeriodType>,
+    pub period: ::std::option::Option<crate::types::PeriodType>,
 }
 impl Subscription {
     /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
     /// <p>The metric used for the subscription.</p>
-    pub fn metric(&self) -> std::option::Option<&crate::types::MetricType> {
+    pub fn metric(&self) -> ::std::option::Option<&crate::types::MetricType> {
         self.metric.as_ref()
     }
     /// <p>The statistic used for the subscription.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::types::StatisticType> {
+    pub fn statistic(&self) -> ::std::option::Option<&crate::types::StatisticType> {
         self.statistic.as_ref()
     }
     /// <p>The data aggregation time for the subscription.</p>
-    pub fn period(&self) -> std::option::Option<&crate::types::PeriodType> {
+    pub fn period(&self) -> ::std::option::Option<&crate::types::PeriodType> {
         self.period.as_ref()
     }
 }
@@ -51,65 +51,67 @@ impl Subscription {
 
 /// A builder for [`Subscription`](crate::types::Subscription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubscriptionBuilder {
-    pub(crate) source: std::option::Option<std::string::String>,
-    pub(crate) destination: std::option::Option<std::string::String>,
-    pub(crate) metric: std::option::Option<crate::types::MetricType>,
-    pub(crate) statistic: std::option::Option<crate::types::StatisticType>,
-    pub(crate) period: std::option::Option<crate::types::PeriodType>,
+    pub(crate) source: ::std::option::Option<::std::string::String>,
+    pub(crate) destination: ::std::option::Option<::std::string::String>,
+    pub(crate) metric: ::std::option::Option<crate::types::MetricType>,
+    pub(crate) statistic: ::std::option::Option<crate::types::StatisticType>,
+    pub(crate) period: ::std::option::Option<crate::types::PeriodType>,
 }
 impl SubscriptionBuilder {
     /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
-    pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source = Some(input.into());
+    pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
-    pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
-    pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination = Some(input.into());
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
-    pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }
     /// <p>The metric used for the subscription.</p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
-        self.metric = Some(input);
+        self.metric = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metric used for the subscription.</p>
-    pub fn set_metric(mut self, input: std::option::Option<crate::types::MetricType>) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.metric = input;
         self
     }
     /// <p>The statistic used for the subscription.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
-        self.statistic = Some(input);
+        self.statistic = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistic used for the subscription.</p>
     pub fn set_statistic(
         mut self,
-        input: std::option::Option<crate::types::StatisticType>,
+        input: ::std::option::Option<crate::types::StatisticType>,
     ) -> Self {
         self.statistic = input;
         self
     }
     /// <p>The data aggregation time for the subscription.</p>
     pub fn period(mut self, input: crate::types::PeriodType) -> Self {
-        self.period = Some(input);
+        self.period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data aggregation time for the subscription.</p>
-    pub fn set_period(mut self, input: std::option::Option<crate::types::PeriodType>) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::PeriodType>) -> Self {
         self.period = input;
         self
     }

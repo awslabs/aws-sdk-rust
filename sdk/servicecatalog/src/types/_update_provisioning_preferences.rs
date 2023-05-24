@@ -2,45 +2,45 @@
 
 /// <p>The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProvisioningPreferences {
     /// <p>One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
     #[doc(hidden)]
-    pub stack_set_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub stack_set_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
     #[doc(hidden)]
-    pub stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub stack_set_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
     #[doc(hidden)]
-    pub stack_set_failure_tolerance_count: std::option::Option<i32>,
+    pub stack_set_failure_tolerance_count: ::std::option::Option<i32>,
     /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     #[doc(hidden)]
-    pub stack_set_failure_tolerance_percentage: std::option::Option<i32>,
+    pub stack_set_failure_tolerance_percentage: ::std::option::Option<i32>,
     /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
     #[doc(hidden)]
-    pub stack_set_max_concurrency_count: std::option::Option<i32>,
+    pub stack_set_max_concurrency_count: ::std::option::Option<i32>,
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number. This is true except in cases where rounding down would result is zero. In this case, Service Catalog sets the number as <code>1</code> instead.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
     #[doc(hidden)]
-    pub stack_set_max_concurrency_percentage: std::option::Option<i32>,
+    pub stack_set_max_concurrency_percentage: ::std::option::Option<i32>,
     /// <p>Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <dl>
@@ -64,42 +64,42 @@ pub struct UpdateProvisioningPreferences {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub stack_set_operation_type: std::option::Option<crate::types::StackSetOperationType>,
+    pub stack_set_operation_type: ::std::option::Option<crate::types::StackSetOperationType>,
 }
 impl UpdateProvisioningPreferences {
     /// <p>One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
-    pub fn stack_set_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn stack_set_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.stack_set_accounts.as_deref()
     }
     /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
-    pub fn stack_set_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn stack_set_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.stack_set_regions.as_deref()
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
-    pub fn stack_set_failure_tolerance_count(&self) -> std::option::Option<i32> {
+    pub fn stack_set_failure_tolerance_count(&self) -> ::std::option::Option<i32> {
         self.stack_set_failure_tolerance_count
     }
     /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
     /// <p>When calculating the number of accounts based on the specified percentage, Service Catalog rounds down to the next whole number.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
-    pub fn stack_set_failure_tolerance_percentage(&self) -> std::option::Option<i32> {
+    pub fn stack_set_failure_tolerance_percentage(&self) -> ::std::option::Option<i32> {
         self.stack_set_failure_tolerance_percentage
     }
     /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
-    pub fn stack_set_max_concurrency_count(&self) -> std::option::Option<i32> {
+    pub fn stack_set_max_concurrency_count(&self) -> ::std::option::Option<i32> {
         self.stack_set_max_concurrency_count
     }
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
@@ -107,7 +107,7 @@ impl UpdateProvisioningPreferences {
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
-    pub fn stack_set_max_concurrency_percentage(&self) -> std::option::Option<i32> {
+    pub fn stack_set_max_concurrency_percentage(&self) -> ::std::option::Option<i32> {
         self.stack_set_max_concurrency_percentage
     }
     /// <p>Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
@@ -134,7 +134,7 @@ impl UpdateProvisioningPreferences {
     /// </dl>
     pub fn stack_set_operation_type(
         &self,
-    ) -> std::option::Option<&crate::types::StackSetOperationType> {
+    ) -> ::std::option::Option<&crate::types::StackSetOperationType> {
         self.stack_set_operation_type.as_ref()
     }
 }
@@ -147,15 +147,17 @@ impl UpdateProvisioningPreferences {
 
 /// A builder for [`UpdateProvisioningPreferences`](crate::types::UpdateProvisioningPreferences).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateProvisioningPreferencesBuilder {
-    pub(crate) stack_set_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) stack_set_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) stack_set_failure_tolerance_count: std::option::Option<i32>,
-    pub(crate) stack_set_failure_tolerance_percentage: std::option::Option<i32>,
-    pub(crate) stack_set_max_concurrency_count: std::option::Option<i32>,
-    pub(crate) stack_set_max_concurrency_percentage: std::option::Option<i32>,
-    pub(crate) stack_set_operation_type: std::option::Option<crate::types::StackSetOperationType>,
+    pub(crate) stack_set_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) stack_set_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) stack_set_failure_tolerance_count: ::std::option::Option<i32>,
+    pub(crate) stack_set_failure_tolerance_percentage: ::std::option::Option<i32>,
+    pub(crate) stack_set_max_concurrency_count: ::std::option::Option<i32>,
+    pub(crate) stack_set_max_concurrency_percentage: ::std::option::Option<i32>,
+    pub(crate) stack_set_operation_type: ::std::option::Option<crate::types::StackSetOperationType>,
 }
 impl UpdateProvisioningPreferencesBuilder {
     /// Appends an item to `stack_set_accounts`.
@@ -166,10 +168,13 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
-    pub fn stack_set_accounts(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_set_accounts(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.stack_set_accounts.unwrap_or_default();
         v.push(input.into());
-        self.stack_set_accounts = Some(v);
+        self.stack_set_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more Amazon Web Services accounts that will have access to the provisioned product.</p>
@@ -178,7 +183,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.</p>
     pub fn set_stack_set_accounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.stack_set_accounts = input;
         self
@@ -191,10 +196,13 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>The specified Regions should be within the list of Regions from the <code>STACKSET</code> constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation.</p>
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
-    pub fn stack_set_regions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_set_regions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.stack_set_regions.unwrap_or_default();
         v.push(input.into());
-        self.stack_set_regions = Some(v);
+        self.stack_set_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more Amazon Web Services Regions where the provisioned product will be available.</p>
@@ -203,7 +211,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>If no values are specified, the default value is all Regions from the <code>STACKSET</code> constraint.</p>
     pub fn set_stack_set_regions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.stack_set_regions = input;
         self
@@ -213,7 +221,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     /// <p>The default value is <code>0</code> if no value is specified.</p>
     pub fn stack_set_failure_tolerance_count(mut self, input: i32) -> Self {
-        self.stack_set_failure_tolerance_count = Some(input);
+        self.stack_set_failure_tolerance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of accounts, per Region, for which this operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
@@ -222,7 +230,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>The default value is <code>0</code> if no value is specified.</p>
     pub fn set_stack_set_failure_tolerance_count(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.stack_set_failure_tolerance_count = input;
         self
@@ -232,7 +240,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     pub fn stack_set_failure_tolerance_percentage(mut self, input: i32) -> Self {
-        self.stack_set_failure_tolerance_percentage = Some(input);
+        self.stack_set_failure_tolerance_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of accounts, per Region, for which this stack operation can fail before Service Catalog stops the operation in that Region. If the operation is stopped in a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.</p>
@@ -241,7 +249,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
     pub fn set_stack_set_failure_tolerance_percentage(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.stack_set_failure_tolerance_percentage = input;
         self
@@ -251,14 +259,17 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
     pub fn stack_set_max_concurrency_count(mut self, input: i32) -> Self {
-        self.stack_set_max_concurrency_count = Some(input);
+        self.stack_set_max_concurrency_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code> is at most one more than the <code>StackSetFailureToleranceCount</code>.</p>
     /// <p>Note that this setting lets you specify the maximum for operations. For large deployments, under certain circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.</p>
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
-    pub fn set_stack_set_max_concurrency_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_stack_set_max_concurrency_count(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.stack_set_max_concurrency_count = input;
         self
     }
@@ -268,7 +279,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>Applicable only to a <code>CFN_STACKSET</code> provisioned product type.</p>
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
     pub fn stack_set_max_concurrency_percentage(mut self, input: i32) -> Self {
-        self.stack_set_max_concurrency_percentage = Some(input);
+        self.stack_set_max_concurrency_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum percentage of accounts in which to perform this operation at one time.</p>
@@ -278,7 +289,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// <p>Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
     pub fn set_stack_set_max_concurrency_percentage(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.stack_set_max_concurrency_percentage = input;
         self
@@ -306,7 +317,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// </dd>
     /// </dl>
     pub fn stack_set_operation_type(mut self, input: crate::types::StackSetOperationType) -> Self {
-        self.stack_set_operation_type = Some(input);
+        self.stack_set_operation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines what action Service Catalog performs to a stack set or a stack instance represented by the provisioned product. The default value is <code>UPDATE</code> if nothing is specified.</p>
@@ -333,7 +344,7 @@ impl UpdateProvisioningPreferencesBuilder {
     /// </dl>
     pub fn set_stack_set_operation_type(
         mut self,
-        input: std::option::Option<crate::types::StackSetOperationType>,
+        input: ::std::option::Option<crate::types::StackSetOperationType>,
     ) -> Self {
         self.stack_set_operation_type = input;
         self

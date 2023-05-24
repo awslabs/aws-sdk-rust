@@ -2,43 +2,43 @@
 
 /// <p>Gets metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStatisticsForDescribeQuery {
     /// <p>The number of events that matched a query.</p>
     #[doc(hidden)]
-    pub events_matched: std::option::Option<i64>,
+    pub events_matched: ::std::option::Option<i64>,
     /// <p>The number of events that the query scanned in the event data store.</p>
     #[doc(hidden)]
-    pub events_scanned: std::option::Option<i64>,
+    pub events_scanned: ::std::option::Option<i64>,
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     #[doc(hidden)]
-    pub bytes_scanned: std::option::Option<i64>,
+    pub bytes_scanned: ::std::option::Option<i64>,
     /// <p>The query's run time, in milliseconds.</p>
     #[doc(hidden)]
-    pub execution_time_in_millis: std::option::Option<i32>,
+    pub execution_time_in_millis: ::std::option::Option<i32>,
     /// <p>The creation time of the query.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QueryStatisticsForDescribeQuery {
     /// <p>The number of events that matched a query.</p>
-    pub fn events_matched(&self) -> std::option::Option<i64> {
+    pub fn events_matched(&self) -> ::std::option::Option<i64> {
         self.events_matched
     }
     /// <p>The number of events that the query scanned in the event data store.</p>
-    pub fn events_scanned(&self) -> std::option::Option<i64> {
+    pub fn events_scanned(&self) -> ::std::option::Option<i64> {
         self.events_scanned
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
-    pub fn bytes_scanned(&self) -> std::option::Option<i64> {
+    pub fn bytes_scanned(&self) -> ::std::option::Option<i64> {
         self.bytes_scanned
     }
     /// <p>The query's run time, in milliseconds.</p>
-    pub fn execution_time_in_millis(&self) -> std::option::Option<i32> {
+    pub fn execution_time_in_millis(&self) -> ::std::option::Option<i32> {
         self.execution_time_in_millis
     }
     /// <p>The creation time of the query.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -51,64 +51,66 @@ impl QueryStatisticsForDescribeQuery {
 
 /// A builder for [`QueryStatisticsForDescribeQuery`](crate::types::QueryStatisticsForDescribeQuery).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryStatisticsForDescribeQueryBuilder {
-    pub(crate) events_matched: std::option::Option<i64>,
-    pub(crate) events_scanned: std::option::Option<i64>,
-    pub(crate) bytes_scanned: std::option::Option<i64>,
-    pub(crate) execution_time_in_millis: std::option::Option<i32>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) events_matched: ::std::option::Option<i64>,
+    pub(crate) events_scanned: ::std::option::Option<i64>,
+    pub(crate) bytes_scanned: ::std::option::Option<i64>,
+    pub(crate) execution_time_in_millis: ::std::option::Option<i32>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QueryStatisticsForDescribeQueryBuilder {
     /// <p>The number of events that matched a query.</p>
     pub fn events_matched(mut self, input: i64) -> Self {
-        self.events_matched = Some(input);
+        self.events_matched = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of events that matched a query.</p>
-    pub fn set_events_matched(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_events_matched(mut self, input: ::std::option::Option<i64>) -> Self {
         self.events_matched = input;
         self
     }
     /// <p>The number of events that the query scanned in the event data store.</p>
     pub fn events_scanned(mut self, input: i64) -> Self {
-        self.events_scanned = Some(input);
+        self.events_scanned = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of events that the query scanned in the event data store.</p>
-    pub fn set_events_scanned(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_events_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.events_scanned = input;
         self
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn bytes_scanned(mut self, input: i64) -> Self {
-        self.bytes_scanned = Some(input);
+        self.bytes_scanned = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
-    pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_scanned = input;
         self
     }
     /// <p>The query's run time, in milliseconds.</p>
     pub fn execution_time_in_millis(mut self, input: i32) -> Self {
-        self.execution_time_in_millis = Some(input);
+        self.execution_time_in_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The query's run time, in milliseconds.</p>
-    pub fn set_execution_time_in_millis(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_execution_time_in_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execution_time_in_millis = input;
         self
     }
     /// <p>The creation time of the query.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation time of the query.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

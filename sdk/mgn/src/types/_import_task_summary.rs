@@ -2,31 +2,31 @@
 
 /// <p>Import task summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTaskSummary {
     /// <p>Import task summary waves.</p>
     #[doc(hidden)]
-    pub waves: std::option::Option<crate::types::ImportTaskSummaryWaves>,
+    pub waves: ::std::option::Option<crate::types::ImportTaskSummaryWaves>,
     /// <p>Import task summary applications.</p>
     #[doc(hidden)]
-    pub applications: std::option::Option<crate::types::ImportTaskSummaryApplications>,
+    pub applications: ::std::option::Option<crate::types::ImportTaskSummaryApplications>,
     /// <p>Import task summary servers.</p>
     #[doc(hidden)]
-    pub servers: std::option::Option<crate::types::ImportTaskSummaryServers>,
+    pub servers: ::std::option::Option<crate::types::ImportTaskSummaryServers>,
 }
 impl ImportTaskSummary {
     /// <p>Import task summary waves.</p>
-    pub fn waves(&self) -> std::option::Option<&crate::types::ImportTaskSummaryWaves> {
+    pub fn waves(&self) -> ::std::option::Option<&crate::types::ImportTaskSummaryWaves> {
         self.waves.as_ref()
     }
     /// <p>Import task summary applications.</p>
     pub fn applications(
         &self,
-    ) -> std::option::Option<&crate::types::ImportTaskSummaryApplications> {
+    ) -> ::std::option::Option<&crate::types::ImportTaskSummaryApplications> {
         self.applications.as_ref()
     }
     /// <p>Import task summary servers.</p>
-    pub fn servers(&self) -> std::option::Option<&crate::types::ImportTaskSummaryServers> {
+    pub fn servers(&self) -> ::std::option::Option<&crate::types::ImportTaskSummaryServers> {
         self.servers.as_ref()
     }
 }
@@ -39,48 +39,50 @@ impl ImportTaskSummary {
 
 /// A builder for [`ImportTaskSummary`](crate::types::ImportTaskSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportTaskSummaryBuilder {
-    pub(crate) waves: std::option::Option<crate::types::ImportTaskSummaryWaves>,
-    pub(crate) applications: std::option::Option<crate::types::ImportTaskSummaryApplications>,
-    pub(crate) servers: std::option::Option<crate::types::ImportTaskSummaryServers>,
+    pub(crate) waves: ::std::option::Option<crate::types::ImportTaskSummaryWaves>,
+    pub(crate) applications: ::std::option::Option<crate::types::ImportTaskSummaryApplications>,
+    pub(crate) servers: ::std::option::Option<crate::types::ImportTaskSummaryServers>,
 }
 impl ImportTaskSummaryBuilder {
     /// <p>Import task summary waves.</p>
     pub fn waves(mut self, input: crate::types::ImportTaskSummaryWaves) -> Self {
-        self.waves = Some(input);
+        self.waves = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summary waves.</p>
     pub fn set_waves(
         mut self,
-        input: std::option::Option<crate::types::ImportTaskSummaryWaves>,
+        input: ::std::option::Option<crate::types::ImportTaskSummaryWaves>,
     ) -> Self {
         self.waves = input;
         self
     }
     /// <p>Import task summary applications.</p>
     pub fn applications(mut self, input: crate::types::ImportTaskSummaryApplications) -> Self {
-        self.applications = Some(input);
+        self.applications = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summary applications.</p>
     pub fn set_applications(
         mut self,
-        input: std::option::Option<crate::types::ImportTaskSummaryApplications>,
+        input: ::std::option::Option<crate::types::ImportTaskSummaryApplications>,
     ) -> Self {
         self.applications = input;
         self
     }
     /// <p>Import task summary servers.</p>
     pub fn servers(mut self, input: crate::types::ImportTaskSummaryServers) -> Self {
-        self.servers = Some(input);
+        self.servers = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summary servers.</p>
     pub fn set_servers(
         mut self,
-        input: std::option::Option<crate::types::ImportTaskSummaryServers>,
+        input: ::std::option::Option<crate::types::ImportTaskSummaryServers>,
     ) -> Self {
         self.servers = input;
         self

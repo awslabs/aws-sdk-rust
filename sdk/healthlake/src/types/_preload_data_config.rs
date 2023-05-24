@@ -2,15 +2,15 @@
 
 /// <p> The input properties for the preloaded Data Store. Only data preloaded from Synthea is supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     #[doc(hidden)]
-    pub preload_data_type: std::option::Option<crate::types::PreloadDataType>,
+    pub preload_data_type: ::std::option::Option<crate::types::PreloadDataType>,
 }
 impl PreloadDataConfig {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
-    pub fn preload_data_type(&self) -> std::option::Option<&crate::types::PreloadDataType> {
+    pub fn preload_data_type(&self) -> ::std::option::Option<&crate::types::PreloadDataType> {
         self.preload_data_type.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl PreloadDataConfig {
 
 /// A builder for [`PreloadDataConfig`](crate::types::PreloadDataConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PreloadDataConfigBuilder {
-    pub(crate) preload_data_type: std::option::Option<crate::types::PreloadDataType>,
+    pub(crate) preload_data_type: ::std::option::Option<crate::types::PreloadDataType>,
 }
 impl PreloadDataConfigBuilder {
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     pub fn preload_data_type(mut self, input: crate::types::PreloadDataType) -> Self {
-        self.preload_data_type = Some(input);
+        self.preload_data_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of preloaded data. Only Synthea preloaded data is supported.</p>
     pub fn set_preload_data_type(
         mut self,
-        input: std::option::Option<crate::types::PreloadDataType>,
+        input: ::std::option::Option<crate::types::PreloadDataType>,
     ) -> Self {
         self.preload_data_type = input;
         self

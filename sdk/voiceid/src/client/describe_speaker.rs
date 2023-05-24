@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSpeaker`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::set_domain_id): <p>The identifier of the domain that contains the speaker.</p>
-    ///   - [`speaker_id(impl Into<String>)`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::speaker_id) / [`set_speaker_id(Option<String>)`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::set_speaker_id): <p>The identifier of the speaker you are describing.</p>
+    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::set_domain_id): <p>The identifier of the domain that contains the speaker.</p>
+    ///   - [`speaker_id(impl ::std::convert::Into<String>)`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::speaker_id) / [`set_speaker_id(Option<String>)`](crate::operation::describe_speaker::builders::DescribeSpeakerFluentBuilder::set_speaker_id): <p>The identifier of the speaker you are describing.</p>
     /// - On success, responds with [`DescribeSpeakerOutput`](crate::operation::describe_speaker::DescribeSpeakerOutput) with field(s):
     ///   - [`speaker(Option<Speaker>)`](crate::operation::describe_speaker::DescribeSpeakerOutput::speaker): <p>Information about the specified speaker.</p>
     /// - On failure, responds with [`SdkError<DescribeSpeakerError>`](crate::operation::describe_speaker::DescribeSpeakerError)

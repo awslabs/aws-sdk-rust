@@ -2,7 +2,7 @@
 pub(crate) fn de_in_app_messages_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::InAppMessagesResponse>,
+    ::std::option::Option<crate::types::InAppMessagesResponse>,
     crate::operation::get_in_app_messages::GetInAppMessagesError,
 > {
     (!body.is_empty()).then(||{

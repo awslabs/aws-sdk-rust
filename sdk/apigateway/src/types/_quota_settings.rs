@@ -2,7 +2,7 @@
 
 /// <p>Quotas configured for a usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuotaSettings {
     /// <p>The target maximum number of requests that can be made in a given time period.</p>
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct QuotaSettings {
     pub offset: i32,
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
     #[doc(hidden)]
-    pub period: std::option::Option<crate::types::QuotaPeriodType>,
+    pub period: ::std::option::Option<crate::types::QuotaPeriodType>,
 }
 impl QuotaSettings {
     /// <p>The target maximum number of requests that can be made in a given time period.</p>
@@ -24,7 +24,7 @@ impl QuotaSettings {
         self.offset
     }
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
-    pub fn period(&self) -> std::option::Option<&crate::types::QuotaPeriodType> {
+    pub fn period(&self) -> ::std::option::Option<&crate::types::QuotaPeriodType> {
         self.period.as_ref()
     }
 }
@@ -37,40 +37,45 @@ impl QuotaSettings {
 
 /// A builder for [`QuotaSettings`](crate::types::QuotaSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QuotaSettingsBuilder {
-    pub(crate) limit: std::option::Option<i32>,
-    pub(crate) offset: std::option::Option<i32>,
-    pub(crate) period: std::option::Option<crate::types::QuotaPeriodType>,
+    pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) offset: ::std::option::Option<i32>,
+    pub(crate) period: ::std::option::Option<crate::types::QuotaPeriodType>,
 }
 impl QuotaSettingsBuilder {
     /// <p>The target maximum number of requests that can be made in a given time period.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target maximum number of requests that can be made in a given time period.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// <p>The number of requests subtracted from the given limit in the initial time period.</p>
     pub fn offset(mut self, input: i32) -> Self {
-        self.offset = Some(input);
+        self.offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of requests subtracted from the given limit in the initial time period.</p>
-    pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
     }
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
     pub fn period(mut self, input: crate::types::QuotaPeriodType) -> Self {
-        self.period = Some(input);
+        self.period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or "MONTH".</p>
-    pub fn set_period(mut self, input: std::option::Option<crate::types::QuotaPeriodType>) -> Self {
+    pub fn set_period(
+        mut self,
+        input: ::std::option::Option<crate::types::QuotaPeriodType>,
+    ) -> Self {
         self.period = input;
         self
     }

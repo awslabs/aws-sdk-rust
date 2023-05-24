@@ -2,7 +2,7 @@
 
 /// <p>Specifies conditions for stopping a job. When a job reaches a stopping condition limit, SageMaker ends the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationJobStoppingConditions {
     /// <p>The maximum number of requests per minute expected for the endpoint.</p>
     #[doc(hidden)]
@@ -10,7 +10,7 @@ pub struct RecommendationJobStoppingConditions {
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. The interval includes the local communication time taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
     #[doc(hidden)]
     pub model_latency_thresholds:
-        std::option::Option<std::vec::Vec<crate::types::ModelLatencyThreshold>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>>,
 }
 impl RecommendationJobStoppingConditions {
     /// <p>The maximum number of requests per minute expected for the endpoint.</p>
@@ -20,7 +20,7 @@ impl RecommendationJobStoppingConditions {
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. The interval includes the local communication time taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
     pub fn model_latency_thresholds(
         &self,
-    ) -> std::option::Option<&[crate::types::ModelLatencyThreshold]> {
+    ) -> ::std::option::Option<&[crate::types::ModelLatencyThreshold]> {
         self.model_latency_thresholds.as_deref()
     }
 }
@@ -33,20 +33,22 @@ impl RecommendationJobStoppingConditions {
 
 /// A builder for [`RecommendationJobStoppingConditions`](crate::types::RecommendationJobStoppingConditions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationJobStoppingConditionsBuilder {
-    pub(crate) max_invocations: std::option::Option<i32>,
+    pub(crate) max_invocations: ::std::option::Option<i32>,
     pub(crate) model_latency_thresholds:
-        std::option::Option<std::vec::Vec<crate::types::ModelLatencyThreshold>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>>,
 }
 impl RecommendationJobStoppingConditionsBuilder {
     /// <p>The maximum number of requests per minute expected for the endpoint.</p>
     pub fn max_invocations(mut self, input: i32) -> Self {
-        self.max_invocations = Some(input);
+        self.max_invocations = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of requests per minute expected for the endpoint.</p>
-    pub fn set_max_invocations(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_invocations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_invocations = input;
         self
     }
@@ -58,13 +60,13 @@ impl RecommendationJobStoppingConditionsBuilder {
     pub fn model_latency_thresholds(mut self, input: crate::types::ModelLatencyThreshold) -> Self {
         let mut v = self.model_latency_thresholds.unwrap_or_default();
         v.push(input);
-        self.model_latency_thresholds = Some(v);
+        self.model_latency_thresholds = ::std::option::Option::Some(v);
         self
     }
     /// <p>The interval of time taken by a model to respond as viewed from SageMaker. The interval includes the local communication time taken to send the request and to fetch the response from the container of a model and the time taken to complete the inference in the container.</p>
     pub fn set_model_latency_thresholds(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ModelLatencyThreshold>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelLatencyThreshold>>,
     ) -> Self {
         self.model_latency_thresholds = input;
         self

@@ -2,17 +2,17 @@
 
 /// <p>The configuration for a training job launched by a hyperparameter tuning job. Choose <code>Bayesian</code> for Bayesian optimization, and <code>Random</code> for random search optimization. For more advanced use cases, use <code>Hyperband</code>, which evaluates objective metrics for training jobs after every epoch. For more information about strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobStrategyConfig {
     /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
     #[doc(hidden)]
-    pub hyperband_strategy_config: std::option::Option<crate::types::HyperbandStrategyConfig>,
+    pub hyperband_strategy_config: ::std::option::Option<crate::types::HyperbandStrategyConfig>,
 }
 impl HyperParameterTuningJobStrategyConfig {
     /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
     pub fn hyperband_strategy_config(
         &self,
-    ) -> std::option::Option<&crate::types::HyperbandStrategyConfig> {
+    ) -> ::std::option::Option<&crate::types::HyperbandStrategyConfig> {
         self.hyperband_strategy_config.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl HyperParameterTuningJobStrategyConfig {
 
 /// A builder for [`HyperParameterTuningJobStrategyConfig`](crate::types::HyperParameterTuningJobStrategyConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HyperParameterTuningJobStrategyConfigBuilder {
     pub(crate) hyperband_strategy_config:
-        std::option::Option<crate::types::HyperbandStrategyConfig>,
+        ::std::option::Option<crate::types::HyperbandStrategyConfig>,
 }
 impl HyperParameterTuningJobStrategyConfigBuilder {
     /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
@@ -36,13 +38,13 @@ impl HyperParameterTuningJobStrategyConfigBuilder {
         mut self,
         input: crate::types::HyperbandStrategyConfig,
     ) -> Self {
-        self.hyperband_strategy_config = Some(input);
+        self.hyperband_strategy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the object that specifies the <code>Hyperband</code> strategy. This parameter is only supported for the <code>Hyperband</code> selection for <code>Strategy</code> within the <code>HyperParameterTuningJobConfig</code> API.</p>
     pub fn set_hyperband_strategy_config(
         mut self,
-        input: std::option::Option<crate::types::HyperbandStrategyConfig>,
+        input: ::std::option::Option<crate::types::HyperbandStrategyConfig>,
     ) -> Self {
         self.hyperband_strategy_config = input;
         self

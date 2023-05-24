@@ -2,55 +2,55 @@
 
 /// <p> Describes the recommendation options for an Amazon ECS service. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsServiceRecommendationOption {
     /// <p> The memory size of the Amazon ECS service recommendation option. </p>
     #[doc(hidden)]
-    pub memory: std::option::Option<i32>,
+    pub memory: ::std::option::Option<i32>,
     /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
     #[doc(hidden)]
-    pub cpu: std::option::Option<i32>,
+    pub cpu: ::std::option::Option<i32>,
     /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
     /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
     /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
     /// </important>
     #[doc(hidden)]
-    pub savings_opportunity: std::option::Option<crate::types::SavingsOpportunity>,
+    pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
     #[doc(hidden)]
     pub projected_utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>,
     /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
     #[doc(hidden)]
     pub container_recommendations:
-        std::option::Option<std::vec::Vec<crate::types::ContainerRecommendation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecommendation>>,
 }
 impl EcsServiceRecommendationOption {
     /// <p> The memory size of the Amazon ECS service recommendation option. </p>
-    pub fn memory(&self) -> std::option::Option<i32> {
+    pub fn memory(&self) -> ::std::option::Option<i32> {
         self.memory
     }
     /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
-    pub fn cpu(&self) -> std::option::Option<i32> {
+    pub fn cpu(&self) -> ::std::option::Option<i32> {
         self.cpu
     }
     /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
     /// <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important>
     /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
     /// </important>
-    pub fn savings_opportunity(&self) -> std::option::Option<&crate::types::SavingsOpportunity> {
+    pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
     /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
     pub fn projected_utilization_metrics(
         &self,
-    ) -> std::option::Option<&[crate::types::EcsServiceProjectedUtilizationMetric]> {
+    ) -> ::std::option::Option<&[crate::types::EcsServiceProjectedUtilizationMetric]> {
         self.projected_utilization_metrics.as_deref()
     }
     /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
     pub fn container_recommendations(
         &self,
-    ) -> std::option::Option<&[crate::types::ContainerRecommendation]> {
+    ) -> ::std::option::Option<&[crate::types::ContainerRecommendation]> {
         self.container_recommendations.as_deref()
     }
 }
@@ -63,34 +63,36 @@ impl EcsServiceRecommendationOption {
 
 /// A builder for [`EcsServiceRecommendationOption`](crate::types::EcsServiceRecommendationOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcsServiceRecommendationOptionBuilder {
-    pub(crate) memory: std::option::Option<i32>,
-    pub(crate) cpu: std::option::Option<i32>,
-    pub(crate) savings_opportunity: std::option::Option<crate::types::SavingsOpportunity>,
+    pub(crate) memory: ::std::option::Option<i32>,
+    pub(crate) cpu: ::std::option::Option<i32>,
+    pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     pub(crate) projected_utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>>,
     pub(crate) container_recommendations:
-        std::option::Option<std::vec::Vec<crate::types::ContainerRecommendation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecommendation>>,
 }
 impl EcsServiceRecommendationOptionBuilder {
     /// <p> The memory size of the Amazon ECS service recommendation option. </p>
     pub fn memory(mut self, input: i32) -> Self {
-        self.memory = Some(input);
+        self.memory = ::std::option::Option::Some(input);
         self
     }
     /// <p> The memory size of the Amazon ECS service recommendation option. </p>
-    pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory = input;
         self
     }
     /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
     pub fn cpu(mut self, input: i32) -> Self {
-        self.cpu = Some(input);
+        self.cpu = ::std::option::Option::Some(input);
         self
     }
     /// <p> The CPU size of the Amazon ECS service recommendation option. </p>
-    pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cpu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu = input;
         self
     }
@@ -99,7 +101,7 @@ impl EcsServiceRecommendationOptionBuilder {
     /// <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html">Enabling Cost Explorer</a> and <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p>
     /// </important>
     pub fn savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
-        self.savings_opportunity = Some(input);
+        self.savings_opportunity = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p>
@@ -108,7 +110,7 @@ impl EcsServiceRecommendationOptionBuilder {
     /// </important>
     pub fn set_savings_opportunity(
         mut self,
-        input: std::option::Option<crate::types::SavingsOpportunity>,
+        input: ::std::option::Option<crate::types::SavingsOpportunity>,
     ) -> Self {
         self.savings_opportunity = input;
         self
@@ -124,14 +126,14 @@ impl EcsServiceRecommendationOptionBuilder {
     ) -> Self {
         let mut v = self.projected_utilization_metrics.unwrap_or_default();
         v.push(input);
-        self.projected_utilization_metrics = Some(v);
+        self.projected_utilization_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>
     pub fn set_projected_utilization_metrics(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::EcsServiceProjectedUtilizationMetric>,
         >,
     ) -> Self {
         self.projected_utilization_metrics = input;
@@ -148,13 +150,13 @@ impl EcsServiceRecommendationOptionBuilder {
     ) -> Self {
         let mut v = self.container_recommendations.unwrap_or_default();
         v.push(input);
-        self.container_recommendations = Some(v);
+        self.container_recommendations = ::std::option::Option::Some(v);
         self
     }
     /// <p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>
     pub fn set_container_recommendations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContainerRecommendation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerRecommendation>>,
     ) -> Self {
         self.container_recommendations = input;
         self

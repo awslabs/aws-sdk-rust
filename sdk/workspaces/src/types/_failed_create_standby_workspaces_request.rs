@@ -2,31 +2,31 @@
 
 /// <p>Describes the standby WorkSpace that could not be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCreateStandbyWorkspacesRequest {
     /// <p>Information about the standby WorkSpace that could not be created.</p>
     #[doc(hidden)]
-    pub standby_workspace_request: std::option::Option<crate::types::StandbyWorkspace>,
+    pub standby_workspace_request: ::std::option::Option<crate::types::StandbyWorkspace>,
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedCreateStandbyWorkspacesRequest {
     /// <p>Information about the standby WorkSpace that could not be created.</p>
     pub fn standby_workspace_request(
         &self,
-    ) -> std::option::Option<&crate::types::StandbyWorkspace> {
+    ) -> ::std::option::Option<&crate::types::StandbyWorkspace> {
         self.standby_workspace_request.as_ref()
     }
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -39,43 +39,51 @@ impl FailedCreateStandbyWorkspacesRequest {
 
 /// A builder for [`FailedCreateStandbyWorkspacesRequest`](crate::types::FailedCreateStandbyWorkspacesRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedCreateStandbyWorkspacesRequestBuilder {
-    pub(crate) standby_workspace_request: std::option::Option<crate::types::StandbyWorkspace>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) standby_workspace_request: ::std::option::Option<crate::types::StandbyWorkspace>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedCreateStandbyWorkspacesRequestBuilder {
     /// <p>Information about the standby WorkSpace that could not be created.</p>
     pub fn standby_workspace_request(mut self, input: crate::types::StandbyWorkspace) -> Self {
-        self.standby_workspace_request = Some(input);
+        self.standby_workspace_request = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the standby WorkSpace that could not be created.</p>
     pub fn set_standby_workspace_request(
         mut self,
-        input: std::option::Option<crate::types::StandbyWorkspace>,
+        input: ::std::option::Option<crate::types::StandbyWorkspace>,
     ) -> Self {
         self.standby_workspace_request = input;
         self
     }
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code that is returned if the standby WorkSpace could not be created.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the error message that is returned if the standby WorkSpace could not be created.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSubscriber`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::set_id): <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_subscriber::builders::DeleteSubscriberFluentBuilder::set_id): <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
     /// - On success, responds with [`DeleteSubscriberOutput`](crate::operation::delete_subscriber::DeleteSubscriberOutput)
     /// - On failure, responds with [`SdkError<DeleteSubscriberError>`](crate::operation::delete_subscriber::DeleteSubscriberError)
     pub fn delete_subscriber(

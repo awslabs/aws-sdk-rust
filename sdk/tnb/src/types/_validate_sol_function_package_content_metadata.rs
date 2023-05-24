@@ -3,17 +3,17 @@
 /// <p>Validates function package content metadata.</p>
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSolFunctionPackageContentMetadata {
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     #[doc(hidden)]
-    pub vnfd: std::option::Option<crate::types::FunctionArtifactMeta>,
+    pub vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
 }
 impl ValidateSolFunctionPackageContentMetadata {
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
-    pub fn vnfd(&self) -> std::option::Option<&crate::types::FunctionArtifactMeta> {
+    pub fn vnfd(&self) -> ::std::option::Option<&crate::types::FunctionArtifactMeta> {
         self.vnfd.as_ref()
     }
 }
@@ -26,22 +26,24 @@ impl ValidateSolFunctionPackageContentMetadata {
 
 /// A builder for [`ValidateSolFunctionPackageContentMetadata`](crate::types::ValidateSolFunctionPackageContentMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValidateSolFunctionPackageContentMetadataBuilder {
-    pub(crate) vnfd: std::option::Option<crate::types::FunctionArtifactMeta>,
+    pub(crate) vnfd: ::std::option::Option<crate::types::FunctionArtifactMeta>,
 }
 impl ValidateSolFunctionPackageContentMetadataBuilder {
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     pub fn vnfd(mut self, input: crate::types::FunctionArtifactMeta) -> Self {
-        self.vnfd = Some(input);
+        self.vnfd = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metadata for function package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     pub fn set_vnfd(
         mut self,
-        input: std::option::Option<crate::types::FunctionArtifactMeta>,
+        input: ::std::option::Option<crate::types::FunctionArtifactMeta>,
     ) -> Self {
         self.vnfd = input;
         self

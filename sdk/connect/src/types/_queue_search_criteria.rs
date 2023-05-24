@@ -4,40 +4,42 @@
 /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueueSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     #[doc(hidden)]
-    pub or_conditions: std::option::Option<std::vec::Vec<crate::types::QueueSearchCriteria>>,
+    pub or_conditions: ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
     #[doc(hidden)]
-    pub and_conditions: std::option::Option<std::vec::Vec<crate::types::QueueSearchCriteria>>,
+    pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
     /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
     /// </note>
     #[doc(hidden)]
-    pub string_condition: std::option::Option<crate::types::StringCondition>,
+    pub string_condition: ::std::option::Option<crate::types::StringCondition>,
     /// <p>The type of queue.</p>
     #[doc(hidden)]
-    pub queue_type_condition: std::option::Option<crate::types::SearchableQueueType>,
+    pub queue_type_condition: ::std::option::Option<crate::types::SearchableQueueType>,
 }
 impl QueueSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
-    pub fn or_conditions(&self) -> std::option::Option<&[crate::types::QueueSearchCriteria]> {
+    pub fn or_conditions(&self) -> ::std::option::Option<&[crate::types::QueueSearchCriteria]> {
         self.or_conditions.as_deref()
     }
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
-    pub fn and_conditions(&self) -> std::option::Option<&[crate::types::QueueSearchCriteria]> {
+    pub fn and_conditions(&self) -> ::std::option::Option<&[crate::types::QueueSearchCriteria]> {
         self.and_conditions.as_deref()
     }
     /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
     /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
     /// </note>
-    pub fn string_condition(&self) -> std::option::Option<&crate::types::StringCondition> {
+    pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
     }
     /// <p>The type of queue.</p>
-    pub fn queue_type_condition(&self) -> std::option::Option<&crate::types::SearchableQueueType> {
+    pub fn queue_type_condition(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SearchableQueueType> {
         self.queue_type_condition.as_ref()
     }
 }
@@ -50,13 +52,16 @@ impl QueueSearchCriteria {
 
 /// A builder for [`QueueSearchCriteria`](crate::types::QueueSearchCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueueSearchCriteriaBuilder {
-    pub(crate) or_conditions: std::option::Option<std::vec::Vec<crate::types::QueueSearchCriteria>>,
+    pub(crate) or_conditions:
+        ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,
     pub(crate) and_conditions:
-        std::option::Option<std::vec::Vec<crate::types::QueueSearchCriteria>>,
-    pub(crate) string_condition: std::option::Option<crate::types::StringCondition>,
-    pub(crate) queue_type_condition: std::option::Option<crate::types::SearchableQueueType>,
+        ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,
+    pub(crate) string_condition: ::std::option::Option<crate::types::StringCondition>,
+    pub(crate) queue_type_condition: ::std::option::Option<crate::types::SearchableQueueType>,
 }
 impl QueueSearchCriteriaBuilder {
     /// Appends an item to `or_conditions`.
@@ -67,13 +72,13 @@ impl QueueSearchCriteriaBuilder {
     pub fn or_conditions(mut self, input: crate::types::QueueSearchCriteria) -> Self {
         let mut v = self.or_conditions.unwrap_or_default();
         v.push(input);
-        self.or_conditions = Some(v);
+        self.or_conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     pub fn set_or_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueueSearchCriteria>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,
     ) -> Self {
         self.or_conditions = input;
         self
@@ -86,13 +91,13 @@ impl QueueSearchCriteriaBuilder {
     pub fn and_conditions(mut self, input: crate::types::QueueSearchCriteria) -> Self {
         let mut v = self.and_conditions.unwrap_or_default();
         v.push(input);
-        self.and_conditions = Some(v);
+        self.and_conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
     pub fn set_and_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueueSearchCriteria>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueSearchCriteria>>,
     ) -> Self {
         self.and_conditions = input;
         self
@@ -101,7 +106,7 @@ impl QueueSearchCriteriaBuilder {
     /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
     /// </note>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
-        self.string_condition = Some(input);
+        self.string_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
@@ -109,20 +114,20 @@ impl QueueSearchCriteriaBuilder {
     /// </note>
     pub fn set_string_condition(
         mut self,
-        input: std::option::Option<crate::types::StringCondition>,
+        input: ::std::option::Option<crate::types::StringCondition>,
     ) -> Self {
         self.string_condition = input;
         self
     }
     /// <p>The type of queue.</p>
     pub fn queue_type_condition(mut self, input: crate::types::SearchableQueueType) -> Self {
-        self.queue_type_condition = Some(input);
+        self.queue_type_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of queue.</p>
     pub fn set_queue_type_condition(
         mut self,
-        input: std::option::Option<crate::types::SearchableQueueType>,
+        input: ::std::option::Option<crate::types::SearchableQueueType>,
     ) -> Self {
         self.queue_type_condition = input;
         self

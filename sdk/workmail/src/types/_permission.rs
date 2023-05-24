@@ -2,29 +2,29 @@
 
 /// <p>Permission granted to a user, group, or resource to access a certain aspect of another user, group, or resource mailbox.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
     #[doc(hidden)]
-    pub grantee_id: std::option::Option<std::string::String>,
+    pub grantee_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
     #[doc(hidden)]
-    pub grantee_type: std::option::Option<crate::types::MemberType>,
+    pub grantee_type: ::std::option::Option<crate::types::MemberType>,
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
     #[doc(hidden)]
-    pub permission_values: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    pub permission_values: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl Permission {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
-    pub fn grantee_id(&self) -> std::option::Option<&str> {
+    pub fn grantee_id(&self) -> ::std::option::Option<&str> {
         self.grantee_id.as_deref()
     }
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
-    pub fn grantee_type(&self) -> std::option::Option<&crate::types::MemberType> {
+    pub fn grantee_type(&self) -> ::std::option::Option<&crate::types::MemberType> {
         self.grantee_type.as_ref()
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
-    pub fn permission_values(&self) -> std::option::Option<&[crate::types::PermissionType]> {
+    pub fn permission_values(&self) -> ::std::option::Option<&[crate::types::PermissionType]> {
         self.permission_values.as_deref()
     }
 }
@@ -37,32 +37,35 @@ impl Permission {
 
 /// A builder for [`Permission`](crate::types::Permission).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PermissionBuilder {
-    pub(crate) grantee_id: std::option::Option<std::string::String>,
-    pub(crate) grantee_type: std::option::Option<crate::types::MemberType>,
-    pub(crate) permission_values: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) grantee_id: ::std::option::Option<::std::string::String>,
+    pub(crate) grantee_type: ::std::option::Option<crate::types::MemberType>,
+    pub(crate) permission_values:
+        ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
 }
 impl PermissionBuilder {
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
-    pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.grantee_id = Some(input.into());
+    pub fn grantee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grantee_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the user, group, or resource to which the permissions are granted.</p>
-    pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grantee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee_id = input;
         self
     }
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
     pub fn grantee_type(mut self, input: crate::types::MemberType) -> Self {
-        self.grantee_type = Some(input);
+        self.grantee_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of user, group, or resource referred to in GranteeId.</p>
     pub fn set_grantee_type(
         mut self,
-        input: std::option::Option<crate::types::MemberType>,
+        input: ::std::option::Option<crate::types::MemberType>,
     ) -> Self {
         self.grantee_type = input;
         self
@@ -75,13 +78,13 @@ impl PermissionBuilder {
     pub fn permission_values(mut self, input: crate::types::PermissionType) -> Self {
         let mut v = self.permission_values.unwrap_or_default();
         v.push(input);
-        self.permission_values = Some(v);
+        self.permission_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
     pub fn set_permission_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
     ) -> Self {
         self.permission_values = input;
         self

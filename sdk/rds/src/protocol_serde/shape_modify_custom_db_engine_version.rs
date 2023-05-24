@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_custom_db_engine_version_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput,
@@ -10,7 +10,7 @@ pub fn de_modify_custom_db_engine_version_http_error(
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -58,7 +58,7 @@ pub fn de_modify_custom_db_engine_version_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_custom_db_engine_version_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput,
@@ -69,22 +69,22 @@ pub fn de_modify_custom_db_engine_version_http_response_with_props(
         let mut output = crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionOutputBuilder::default();
         output = crate::protocol_serde::shape_modify_custom_db_engine_version::de_modify_custom_db_engine_version(_response_body, output).map_err(crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionOutputBuilder) -> Result<crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionOutputBuilder) -> Result<crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyCustomDBEngineVersionResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyCustomDBEngineVersionResponse got {:?}",
             start_el
         )));
@@ -92,7 +92,7 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ModifyCustomDBEngineVersionResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected ModifyCustomDBEngineVersionResult got {:?}",
                 start_el
             )));
@@ -102,8 +102,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("Engine") /* Engine com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$Engine */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -115,8 +115,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("EngineVersion") /* EngineVersion com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$EngineVersion */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -128,8 +128,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("DBParameterGroupFamily") /* DBParameterGroupFamily com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBParameterGroupFamily */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -141,8 +141,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("DBEngineDescription") /* DBEngineDescription com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBEngineDescription */ =>  {
                 let var_4 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -154,8 +154,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("DBEngineVersionDescription") /* DBEngineVersionDescription com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBEngineVersionDescription */ =>  {
                 let var_5 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -187,8 +187,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("DBEngineMediaType") /* DBEngineMediaType com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBEngineMediaType */ =>  {
                 let var_8 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -251,10 +251,10 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
                 let var_14 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
@@ -266,10 +266,10 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
                 let var_15 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
@@ -300,8 +300,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$Status */ =>  {
                 let var_18 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -314,10 +314,10 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
                 let var_19 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
@@ -329,10 +329,10 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
                 let var_20 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
@@ -343,8 +343,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("MajorEngineVersion") /* MajorEngineVersion com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$MajorEngineVersion */ =>  {
                 let var_21 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -356,8 +356,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("DatabaseInstallationFilesS3BucketName") /* DatabaseInstallationFilesS3BucketName com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DatabaseInstallationFilesS3BucketName */ =>  {
                 let var_22 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -369,8 +369,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("DatabaseInstallationFilesS3Prefix") /* DatabaseInstallationFilesS3Prefix com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DatabaseInstallationFilesS3Prefix */ =>  {
                 let var_23 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -382,8 +382,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("DBEngineVersionArn") /* DBEngineVersionArn com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$DBEngineVersionArn */ =>  {
                 let var_24 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -395,8 +395,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("KMSKeyId") /* KMSKeyId com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$KMSKeyId */ =>  {
                 let var_25 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -408,11 +408,11 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("CreateTime") /* CreateTime com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$CreateTime */ =>  {
                 let var_26 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
@@ -433,10 +433,10 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
                 let var_28 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
                         }
                         ?
                     )
@@ -447,8 +447,8 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
             s if s.matches("CustomDBEngineVersionManifest") /* CustomDBEngineVersionManifest com.amazonaws.rds.synthetic#ModifyCustomDBEngineVersionOutput$CustomDBEngineVersionManifest */ =>  {
                 let var_29 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -461,10 +461,10 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
                 let var_30 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
                         }
                         ?
                     )
@@ -486,7 +486,7 @@ pub fn de_modify_custom_db_engine_version(inp: &[u8], mut builder: crate::operat
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected ModifyCustomDBEngineVersionResult tag",
         ));
     };

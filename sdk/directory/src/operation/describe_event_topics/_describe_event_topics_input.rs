@@ -2,24 +2,24 @@
 
 /// <p>Describes event topics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventTopicsInput {
     /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
     #[doc(hidden)]
-    pub directory_id: std::option::Option<std::string::String>,
+    pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     #[doc(hidden)]
-    pub topic_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub topic_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeEventTopicsInput {
     /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn topic_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn topic_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.topic_names.as_deref()
     }
 }
@@ -34,19 +34,21 @@ impl DescribeEventTopicsInput {
 
 /// A builder for [`DescribeEventTopicsInput`](crate::operation::describe_event_topics::DescribeEventTopicsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEventTopicsInputBuilder {
-    pub(crate) directory_id: std::option::Option<std::string::String>,
-    pub(crate) topic_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeEventTopicsInputBuilder {
     /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_id = Some(input.into());
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
@@ -56,17 +58,17 @@ impl DescribeEventTopicsInputBuilder {
     ///
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn topic_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn topic_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.topic_names.unwrap_or_default();
         v.push(input.into());
-        self.topic_names = Some(v);
+        self.topic_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub fn set_topic_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.topic_names = input;
         self
@@ -74,11 +76,11 @@ impl DescribeEventTopicsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventTopicsInput`](crate::operation::describe_event_topics::DescribeEventTopicsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_event_topics::DescribeEventTopicsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_event_topics::DescribeEventTopicsInput {
                 directory_id: self.directory_id,
                 topic_names: self.topic_names,

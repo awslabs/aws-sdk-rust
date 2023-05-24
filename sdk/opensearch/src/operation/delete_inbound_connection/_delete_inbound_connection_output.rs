@@ -2,20 +2,20 @@
 
 /// <p>The results of a <code>DeleteInboundConnection</code> operation. Contains details about the deleted inbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInboundConnectionOutput {
     /// <p>The deleted inbound connection.</p>
     #[doc(hidden)]
-    pub connection: std::option::Option<crate::types::InboundConnection>,
+    pub connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }
 impl DeleteInboundConnectionOutput {
     /// <p>The deleted inbound connection.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::types::InboundConnection> {
+    pub fn connection(&self) -> ::std::option::Option<&crate::types::InboundConnection> {
         self.connection.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteInboundConnectionOutput {
+impl ::aws_http::request_id::RequestId for DeleteInboundConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl DeleteInboundConnectionOutput {
 
 /// A builder for [`DeleteInboundConnectionOutput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteInboundConnectionOutputBuilder {
-    pub(crate) connection: std::option::Option<crate::types::InboundConnection>,
+    pub(crate) connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }
 impl DeleteInboundConnectionOutputBuilder {
     /// <p>The deleted inbound connection.</p>
     pub fn connection(mut self, input: crate::types::InboundConnection) -> Self {
-        self.connection = Some(input);
+        self.connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The deleted inbound connection.</p>
     pub fn set_connection(
         mut self,
-        input: std::option::Option<crate::types::InboundConnection>,
+        input: ::std::option::Option<crate::types::InboundConnection>,
     ) -> Self {
         self.connection = input;
         self

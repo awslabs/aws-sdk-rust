@@ -2,80 +2,82 @@
 
 /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bridge {
     /// The Amazon Resource Number (ARN) of the bridge.
     #[doc(hidden)]
-    pub bridge_arn: std::option::Option<std::string::String>,
+    pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub bridge_messages: std::option::Option<std::vec::Vec<crate::types::MessageDetail>>,
+    pub bridge_messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub bridge_state: std::option::Option<crate::types::BridgeState>,
+    pub bridge_state: ::std::option::Option<crate::types::BridgeState>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub egress_gateway_bridge: std::option::Option<crate::types::EgressGatewayBridge>,
+    pub egress_gateway_bridge: ::std::option::Option<crate::types::EgressGatewayBridge>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub ingress_gateway_bridge: std::option::Option<crate::types::IngressGatewayBridge>,
+    pub ingress_gateway_bridge: ::std::option::Option<crate::types::IngressGatewayBridge>,
     /// The name of the bridge.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// The outputs on this bridge.
     #[doc(hidden)]
-    pub outputs: std::option::Option<std::vec::Vec<crate::types::BridgeOutput>>,
+    pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>>,
     /// The placement Amazon Resource Number (ARN) of the bridge.
     #[doc(hidden)]
-    pub placement_arn: std::option::Option<std::string::String>,
+    pub placement_arn: ::std::option::Option<::std::string::String>,
     /// The settings for source failover.
     #[doc(hidden)]
-    pub source_failover_config: std::option::Option<crate::types::FailoverConfig>,
+    pub source_failover_config: ::std::option::Option<crate::types::FailoverConfig>,
     /// The sources on this bridge.
     #[doc(hidden)]
-    pub sources: std::option::Option<std::vec::Vec<crate::types::BridgeSource>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>,
 }
 impl Bridge {
     /// The Amazon Resource Number (ARN) of the bridge.
-    pub fn bridge_arn(&self) -> std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn bridge_messages(&self) -> std::option::Option<&[crate::types::MessageDetail]> {
+    pub fn bridge_messages(&self) -> ::std::option::Option<&[crate::types::MessageDetail]> {
         self.bridge_messages.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn bridge_state(&self) -> std::option::Option<&crate::types::BridgeState> {
+    pub fn bridge_state(&self) -> ::std::option::Option<&crate::types::BridgeState> {
         self.bridge_state.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn egress_gateway_bridge(&self) -> std::option::Option<&crate::types::EgressGatewayBridge> {
+    pub fn egress_gateway_bridge(
+        &self,
+    ) -> ::std::option::Option<&crate::types::EgressGatewayBridge> {
         self.egress_gateway_bridge.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn ingress_gateway_bridge(
         &self,
-    ) -> std::option::Option<&crate::types::IngressGatewayBridge> {
+    ) -> ::std::option::Option<&crate::types::IngressGatewayBridge> {
         self.ingress_gateway_bridge.as_ref()
     }
     /// The name of the bridge.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The outputs on this bridge.
-    pub fn outputs(&self) -> std::option::Option<&[crate::types::BridgeOutput]> {
+    pub fn outputs(&self) -> ::std::option::Option<&[crate::types::BridgeOutput]> {
         self.outputs.as_deref()
     }
     /// The placement Amazon Resource Number (ARN) of the bridge.
-    pub fn placement_arn(&self) -> std::option::Option<&str> {
+    pub fn placement_arn(&self) -> ::std::option::Option<&str> {
         self.placement_arn.as_deref()
     }
     /// The settings for source failover.
-    pub fn source_failover_config(&self) -> std::option::Option<&crate::types::FailoverConfig> {
+    pub fn source_failover_config(&self) -> ::std::option::Option<&crate::types::FailoverConfig> {
         self.source_failover_config.as_ref()
     }
     /// The sources on this bridge.
-    pub fn sources(&self) -> std::option::Option<&[crate::types::BridgeSource]> {
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::BridgeSource]> {
         self.sources.as_deref()
     }
 }
@@ -88,27 +90,29 @@ impl Bridge {
 
 /// A builder for [`Bridge`](crate::types::Bridge).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BridgeBuilder {
-    pub(crate) bridge_arn: std::option::Option<std::string::String>,
-    pub(crate) bridge_messages: std::option::Option<std::vec::Vec<crate::types::MessageDetail>>,
-    pub(crate) bridge_state: std::option::Option<crate::types::BridgeState>,
-    pub(crate) egress_gateway_bridge: std::option::Option<crate::types::EgressGatewayBridge>,
-    pub(crate) ingress_gateway_bridge: std::option::Option<crate::types::IngressGatewayBridge>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) outputs: std::option::Option<std::vec::Vec<crate::types::BridgeOutput>>,
-    pub(crate) placement_arn: std::option::Option<std::string::String>,
-    pub(crate) source_failover_config: std::option::Option<crate::types::FailoverConfig>,
-    pub(crate) sources: std::option::Option<std::vec::Vec<crate::types::BridgeSource>>,
+    pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) bridge_messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
+    pub(crate) bridge_state: ::std::option::Option<crate::types::BridgeState>,
+    pub(crate) egress_gateway_bridge: ::std::option::Option<crate::types::EgressGatewayBridge>,
+    pub(crate) ingress_gateway_bridge: ::std::option::Option<crate::types::IngressGatewayBridge>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>>,
+    pub(crate) placement_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_failover_config: ::std::option::Option<crate::types::FailoverConfig>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>,
 }
 impl BridgeBuilder {
     /// The Amazon Resource Number (ARN) of the bridge.
-    pub fn bridge_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bridge_arn = Some(input.into());
+    pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Number (ARN) of the bridge.
-    pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
@@ -119,63 +123,63 @@ impl BridgeBuilder {
     pub fn bridge_messages(mut self, input: crate::types::MessageDetail) -> Self {
         let mut v = self.bridge_messages.unwrap_or_default();
         v.push(input);
-        self.bridge_messages = Some(v);
+        self.bridge_messages = ::std::option::Option::Some(v);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_bridge_messages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MessageDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
     ) -> Self {
         self.bridge_messages = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn bridge_state(mut self, input: crate::types::BridgeState) -> Self {
-        self.bridge_state = Some(input);
+        self.bridge_state = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_bridge_state(
         mut self,
-        input: std::option::Option<crate::types::BridgeState>,
+        input: ::std::option::Option<crate::types::BridgeState>,
     ) -> Self {
         self.bridge_state = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn egress_gateway_bridge(mut self, input: crate::types::EgressGatewayBridge) -> Self {
-        self.egress_gateway_bridge = Some(input);
+        self.egress_gateway_bridge = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_egress_gateway_bridge(
         mut self,
-        input: std::option::Option<crate::types::EgressGatewayBridge>,
+        input: ::std::option::Option<crate::types::EgressGatewayBridge>,
     ) -> Self {
         self.egress_gateway_bridge = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn ingress_gateway_bridge(mut self, input: crate::types::IngressGatewayBridge) -> Self {
-        self.ingress_gateway_bridge = Some(input);
+        self.ingress_gateway_bridge = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_ingress_gateway_bridge(
         mut self,
-        input: std::option::Option<crate::types::IngressGatewayBridge>,
+        input: ::std::option::Option<crate::types::IngressGatewayBridge>,
     ) -> Self {
         self.ingress_gateway_bridge = input;
         self
     }
     /// The name of the bridge.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the bridge.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -187,36 +191,42 @@ impl BridgeBuilder {
     pub fn outputs(mut self, input: crate::types::BridgeOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
-        self.outputs = Some(v);
+        self.outputs = ::std::option::Option::Some(v);
         self
     }
     /// The outputs on this bridge.
     pub fn set_outputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BridgeOutput>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>>,
     ) -> Self {
         self.outputs = input;
         self
     }
     /// The placement Amazon Resource Number (ARN) of the bridge.
-    pub fn placement_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.placement_arn = Some(input.into());
+    pub fn placement_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.placement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The placement Amazon Resource Number (ARN) of the bridge.
-    pub fn set_placement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_placement_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.placement_arn = input;
         self
     }
     /// The settings for source failover.
     pub fn source_failover_config(mut self, input: crate::types::FailoverConfig) -> Self {
-        self.source_failover_config = Some(input);
+        self.source_failover_config = ::std::option::Option::Some(input);
         self
     }
     /// The settings for source failover.
     pub fn set_source_failover_config(
         mut self,
-        input: std::option::Option<crate::types::FailoverConfig>,
+        input: ::std::option::Option<crate::types::FailoverConfig>,
     ) -> Self {
         self.source_failover_config = input;
         self
@@ -229,13 +239,13 @@ impl BridgeBuilder {
     pub fn sources(mut self, input: crate::types::BridgeSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
-        self.sources = Some(v);
+        self.sources = ::std::option::Option::Some(v);
         self
     }
     /// The sources on this bridge.
     pub fn set_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BridgeSource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>,
     ) -> Self {
         self.sources = input;
         self

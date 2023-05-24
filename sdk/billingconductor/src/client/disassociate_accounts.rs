@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateAccounts`](crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
     ///   - [`account_ids(Vec<String>)`](crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::disassociate_accounts::builders::DisassociateAccountsFluentBuilder::set_account_ids): <p>The array of account IDs to disassociate. </p>
     /// - On success, responds with [`DisassociateAccountsOutput`](crate::operation::disassociate_accounts::DisassociateAccountsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::disassociate_accounts::DisassociateAccountsOutput::arn): <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs is disassociated from. </p>

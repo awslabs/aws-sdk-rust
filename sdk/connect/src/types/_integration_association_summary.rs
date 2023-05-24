@@ -2,64 +2,64 @@
 
 /// <p>Contains summary information about the associated AppIntegrations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegrationAssociationSummary {
     /// <p>The identifier for the AppIntegration association.</p>
     #[doc(hidden)]
-    pub integration_association_id: std::option::Option<std::string::String>,
+    pub integration_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
     #[doc(hidden)]
-    pub integration_association_arn: std::option::Option<std::string::String>,
+    pub integration_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The integration type.</p>
     #[doc(hidden)]
-    pub integration_type: std::option::Option<crate::types::IntegrationType>,
+    pub integration_type: ::std::option::Option<crate::types::IntegrationType>,
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
     #[doc(hidden)]
-    pub integration_arn: std::option::Option<std::string::String>,
+    pub integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the external application.</p>
     #[doc(hidden)]
-    pub source_application_url: std::option::Option<std::string::String>,
+    pub source_application_url: ::std::option::Option<::std::string::String>,
     /// <p>The user-provided, friendly name for the external application.</p>
     #[doc(hidden)]
-    pub source_application_name: std::option::Option<std::string::String>,
+    pub source_application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source.</p>
     #[doc(hidden)]
-    pub source_type: std::option::Option<crate::types::SourceType>,
+    pub source_type: ::std::option::Option<crate::types::SourceType>,
 }
 impl IntegrationAssociationSummary {
     /// <p>The identifier for the AppIntegration association.</p>
-    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+    pub fn integration_association_id(&self) -> ::std::option::Option<&str> {
         self.integration_association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
-    pub fn integration_association_arn(&self) -> std::option::Option<&str> {
+    pub fn integration_association_arn(&self) -> ::std::option::Option<&str> {
         self.integration_association_arn.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The integration type.</p>
-    pub fn integration_type(&self) -> std::option::Option<&crate::types::IntegrationType> {
+    pub fn integration_type(&self) -> ::std::option::Option<&crate::types::IntegrationType> {
         self.integration_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
-    pub fn integration_arn(&self) -> std::option::Option<&str> {
+    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
         self.integration_arn.as_deref()
     }
     /// <p>The URL for the external application.</p>
-    pub fn source_application_url(&self) -> std::option::Option<&str> {
+    pub fn source_application_url(&self) -> ::std::option::Option<&str> {
         self.source_application_url.as_deref()
     }
     /// <p>The user-provided, friendly name for the external application.</p>
-    pub fn source_application_name(&self) -> std::option::Option<&str> {
+    pub fn source_application_name(&self) -> ::std::option::Option<&str> {
         self.source_application_name.as_deref()
     }
     /// <p>The name of the source.</p>
-    pub fn source_type(&self) -> std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
     }
 }
@@ -72,110 +72,133 @@ impl IntegrationAssociationSummary {
 
 /// A builder for [`IntegrationAssociationSummary`](crate::types::IntegrationAssociationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IntegrationAssociationSummaryBuilder {
-    pub(crate) integration_association_id: std::option::Option<std::string::String>,
-    pub(crate) integration_association_arn: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) integration_type: std::option::Option<crate::types::IntegrationType>,
-    pub(crate) integration_arn: std::option::Option<std::string::String>,
-    pub(crate) source_application_url: std::option::Option<std::string::String>,
-    pub(crate) source_application_name: std::option::Option<std::string::String>,
-    pub(crate) source_type: std::option::Option<crate::types::SourceType>,
+    pub(crate) integration_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) integration_association_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) integration_type: ::std::option::Option<crate::types::IntegrationType>,
+    pub(crate) integration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_application_url: ::std::option::Option<::std::string::String>,
+    pub(crate) source_application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
 }
 impl IntegrationAssociationSummaryBuilder {
     /// <p>The identifier for the AppIntegration association.</p>
-    pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.integration_association_id = Some(input.into());
+    pub fn integration_association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.integration_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the AppIntegration association.</p>
     pub fn set_integration_association_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.integration_association_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
-    pub fn integration_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.integration_association_arn = Some(input.into());
+    pub fn integration_association_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.integration_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration association.</p>
     pub fn set_integration_association_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.integration_association_arn = input;
         self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The integration type.</p>
     pub fn integration_type(mut self, input: crate::types::IntegrationType) -> Self {
-        self.integration_type = Some(input);
+        self.integration_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The integration type.</p>
     pub fn set_integration_type(
         mut self,
-        input: std::option::Option<crate::types::IntegrationType>,
+        input: ::std::option::Option<crate::types::IntegrationType>,
     ) -> Self {
         self.integration_type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
-    pub fn integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.integration_arn = Some(input.into());
+    pub fn integration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.integration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppIntegration.</p>
-    pub fn set_integration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_integration_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.integration_arn = input;
         self
     }
     /// <p>The URL for the external application.</p>
-    pub fn source_application_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_application_url = Some(input.into());
+    pub fn source_application_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_application_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the external application.</p>
     pub fn set_source_application_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_application_url = input;
         self
     }
     /// <p>The user-provided, friendly name for the external application.</p>
-    pub fn source_application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_application_name = Some(input.into());
+    pub fn source_application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-provided, friendly name for the external application.</p>
     pub fn set_source_application_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_application_name = input;
         self
     }
     /// <p>The name of the source.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
-        self.source_type = Some(input);
+        self.source_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the source.</p>
-    pub fn set_source_type(mut self, input: std::option::Option<crate::types::SourceType>) -> Self {
+    pub fn set_source_type(
+        mut self,
+        input: ::std::option::Option<crate::types::SourceType>,
+    ) -> Self {
         self.source_type = input;
         self
     }

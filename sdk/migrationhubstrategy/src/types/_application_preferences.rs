@@ -2,17 +2,17 @@
 
 /// <p> Application preferences that you specify. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationPreferences {
     /// <p> Application preferences that you specify to prefer managed environment. </p>
     #[doc(hidden)]
-    pub management_preference: std::option::Option<crate::types::ManagementPreference>,
+    pub management_preference: ::std::option::Option<crate::types::ManagementPreference>,
 }
 impl ApplicationPreferences {
     /// <p> Application preferences that you specify to prefer managed environment. </p>
     pub fn management_preference(
         &self,
-    ) -> std::option::Option<&crate::types::ManagementPreference> {
+    ) -> ::std::option::Option<&crate::types::ManagementPreference> {
         self.management_preference.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ApplicationPreferences {
 
 /// A builder for [`ApplicationPreferences`](crate::types::ApplicationPreferences).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationPreferencesBuilder {
-    pub(crate) management_preference: std::option::Option<crate::types::ManagementPreference>,
+    pub(crate) management_preference: ::std::option::Option<crate::types::ManagementPreference>,
 }
 impl ApplicationPreferencesBuilder {
     /// <p> Application preferences that you specify to prefer managed environment. </p>
     pub fn management_preference(mut self, input: crate::types::ManagementPreference) -> Self {
-        self.management_preference = Some(input);
+        self.management_preference = ::std::option::Option::Some(input);
         self
     }
     /// <p> Application preferences that you specify to prefer managed environment. </p>
     pub fn set_management_preference(
         mut self,
-        input: std::option::Option<crate::types::ManagementPreference>,
+        input: ::std::option::Option<crate::types::ManagementPreference>,
     ) -> Self {
         self.management_preference = input;
         self

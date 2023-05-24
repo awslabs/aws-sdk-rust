@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBatchPrediction`](crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`batch_prediction_id(impl Into<String>)`](crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionFluentBuilder::batch_prediction_id) / [`set_batch_prediction_id(Option<String>)`](crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionFluentBuilder::set_batch_prediction_id): <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    ///   - [`batch_prediction_id(impl ::std::convert::Into<String>)`](crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionFluentBuilder::batch_prediction_id) / [`set_batch_prediction_id(Option<String>)`](crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionFluentBuilder::set_batch_prediction_id): <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
     /// - On success, responds with [`DeleteBatchPredictionOutput`](crate::operation::delete_batch_prediction::DeleteBatchPredictionOutput) with field(s):
     ///   - [`batch_prediction_id(Option<String>)`](crate::operation::delete_batch_prediction::DeleteBatchPredictionOutput::batch_prediction_id): <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
     /// - On failure, responds with [`SdkError<DeleteBatchPredictionError>`](crate::operation::delete_batch_prediction::DeleteBatchPredictionError)

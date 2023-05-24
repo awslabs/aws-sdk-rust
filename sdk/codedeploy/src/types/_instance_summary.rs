@@ -3,14 +3,14 @@
 /// <p>Information about an instance in a deployment.</p>
 #[deprecated(note = "InstanceSummary is deprecated, use DeploymentTarget instead.")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSummary {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
-    pub deployment_id: std::option::Option<std::string::String>,
+    pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status for this instance:</p>
     /// <ul>
     /// <li> <p> <code>Pending</code>: The deployment is pending for this instance.</p> </li>
@@ -21,28 +21,28 @@ pub struct InstanceSummary {
     /// <li> <p> <code>Unknown</code>: The deployment status is unknown for this instance.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::InstanceStatus>,
+    pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of lifecycle events for this instance.</p>
     #[doc(hidden)]
-    pub lifecycle_events: std::option::Option<std::vec::Vec<crate::types::LifecycleEvent>>,
+    pub lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
     /// <li> <p>BLUE: The instance is part of the original environment.</p> </li>
     /// <li> <p>GREEN: The instance is part of the replacement environment.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::InstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
 }
 impl InstanceSummary {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The deployment status for this instance:</p>
@@ -54,15 +54,15 @@ impl InstanceSummary {
     /// <li> <p> <code>Skipped</code>: The deployment has been skipped for this instance.</p> </li>
     /// <li> <p> <code>Unknown</code>: The deployment status is unknown for this instance.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::InstanceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A list of lifecycle events for this instance.</p>
-    pub fn lifecycle_events(&self) -> std::option::Option<&[crate::types::LifecycleEvent]> {
+    pub fn lifecycle_events(&self) -> ::std::option::Option<&[crate::types::LifecycleEvent]> {
         self.lifecycle_events.as_deref()
     }
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
@@ -70,7 +70,7 @@ impl InstanceSummary {
     /// <li> <p>BLUE: The instance is part of the original environment.</p> </li>
     /// <li> <p>GREEN: The instance is part of the replacement environment.</p> </li>
     /// </ul>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
 }
@@ -83,33 +83,42 @@ impl InstanceSummary {
 
 /// A builder for [`InstanceSummary`](crate::types::InstanceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceSummaryBuilder {
-    pub(crate) deployment_id: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::InstanceStatus>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) lifecycle_events: std::option::Option<std::vec::Vec<crate::types::LifecycleEvent>>,
-    pub(crate) instance_type: std::option::Option<crate::types::InstanceType>,
+    pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::InstanceStatus>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) lifecycle_events:
+        ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
 }
 impl InstanceSummaryBuilder {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_id = Some(input.into());
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deployment_id = input;
         self
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance ID.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
@@ -123,7 +132,7 @@ impl InstanceSummaryBuilder {
     /// <li> <p> <code>Unknown</code>: The deployment status is unknown for this instance.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::InstanceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The deployment status for this instance:</p>
@@ -135,19 +144,22 @@ impl InstanceSummaryBuilder {
     /// <li> <p> <code>Skipped</code>: The deployment has been skipped for this instance.</p> </li>
     /// <li> <p> <code>Unknown</code>: The deployment status is unknown for this instance.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::InstanceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::InstanceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self
@@ -160,13 +172,13 @@ impl InstanceSummaryBuilder {
     pub fn lifecycle_events(mut self, input: crate::types::LifecycleEvent) -> Self {
         let mut v = self.lifecycle_events.unwrap_or_default();
         v.push(input);
-        self.lifecycle_events = Some(v);
+        self.lifecycle_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of lifecycle events for this instance.</p>
     pub fn set_lifecycle_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LifecycleEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     ) -> Self {
         self.lifecycle_events = input;
         self
@@ -177,7 +189,7 @@ impl InstanceSummaryBuilder {
     /// <li> <p>GREEN: The instance is part of the replacement environment.</p> </li>
     /// </ul>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
@@ -187,7 +199,7 @@ impl InstanceSummaryBuilder {
     /// </ul>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::InstanceType>,
+        input: ::std::option::Option<crate::types::InstanceType>,
     ) -> Self {
         self.instance_type = input;
         self

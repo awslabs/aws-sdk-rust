@@ -7,56 +7,59 @@ pub use crate::operation::update_case::_update_case_input::UpdateCaseInputBuilde
 ///
 /// <p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input .</p>
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCaseFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_case::builders::UpdateCaseInputBuilder,
 }
 impl UpdateCaseFluentBuilder {
     /// Creates a new `UpdateCase`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_case::UpdateCase,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_case::UpdateCaseOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,29 @@ impl UpdateCaseFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_case::UpdateCaseOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_case::UpdateCaseError>,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.case_id(input.into());
         self
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_case_id(input);
         self
     }
@@ -107,7 +110,7 @@ impl UpdateCaseFluentBuilder {
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
     pub fn set_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     ) -> Self {
         self.inner = self.inner.set_fields(input);
         self

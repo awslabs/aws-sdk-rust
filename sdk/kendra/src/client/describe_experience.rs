@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExperience`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::set_id): <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::set_id): <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
+    ///   - [`index_id(impl ::std::convert::Into<String>)`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::describe_experience::builders::DescribeExperienceFluentBuilder::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
     /// - On success, responds with [`DescribeExperienceOutput`](crate::operation::describe_experience::DescribeExperienceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::describe_experience::DescribeExperienceOutput::id): <p>Shows the identifier of your Amazon Kendra experience.</p>
     ///   - [`index_id(Option<String>)`](crate::operation::describe_experience::DescribeExperienceOutput::index_id): <p>Shows the identifier of the index for your Amazon Kendra experience.</p>

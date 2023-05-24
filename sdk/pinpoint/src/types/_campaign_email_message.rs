@@ -2,36 +2,36 @@
 
 /// <p>Specifies the content and "From" address for an email message that's sent to recipients of a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignEmailMessage {
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
     #[doc(hidden)]
-    pub body: std::option::Option<std::string::String>,
+    pub body: ::std::option::Option<::std::string::String>,
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
     #[doc(hidden)]
-    pub from_address: std::option::Option<std::string::String>,
+    pub from_address: ::std::option::Option<::std::string::String>,
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
     #[doc(hidden)]
-    pub html_body: std::option::Option<std::string::String>,
+    pub html_body: ::std::option::Option<::std::string::String>,
     /// <p>The subject line, or title, of the email.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
 }
 impl CampaignEmailMessage {
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<&str> {
         self.body.as_deref()
     }
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
-    pub fn from_address(&self) -> std::option::Option<&str> {
+    pub fn from_address(&self) -> ::std::option::Option<&str> {
         self.from_address.as_deref()
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
-    pub fn html_body(&self) -> std::option::Option<&str> {
+    pub fn html_body(&self) -> ::std::option::Option<&str> {
         self.html_body.as_deref()
     }
     /// <p>The subject line, or title, of the email.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl CampaignEmailMessage {
 
 /// A builder for [`CampaignEmailMessage`](crate::types::CampaignEmailMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CampaignEmailMessageBuilder {
-    pub(crate) body: std::option::Option<std::string::String>,
-    pub(crate) from_address: std::option::Option<std::string::String>,
-    pub(crate) html_body: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
+    pub(crate) body: ::std::option::Option<::std::string::String>,
+    pub(crate) from_address: ::std::option::Option<::std::string::String>,
+    pub(crate) html_body: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
 }
 impl CampaignEmailMessageBuilder {
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
-    pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.body = Some(input.into());
+    pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
-    pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
     }
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
-    pub fn from_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from_address = Some(input.into());
+    pub fn from_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.from_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
-    pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_address = input;
         self
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
-    pub fn html_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.html_body = Some(input.into());
+    pub fn html_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.html_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
-    pub fn set_html_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_html_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.html_body = input;
         self
     }
     /// <p>The subject line, or title, of the email.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subject line, or title, of the email.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }

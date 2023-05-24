@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountSuppressionAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutAccountSuppressionAttributesOutput {
+impl ::aws_http::request_id::RequestId for PutAccountSuppressionAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl PutAccountSuppressionAttributesOutput {
 
 /// A builder for [`PutAccountSuppressionAttributesOutput`](crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutAccountSuppressionAttributesOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,36 +2,36 @@
 
 /// <p>Describes a core network BGP configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectPeerBgpConfiguration {
     /// <p>The ASN of the Coret Network.</p>
     #[doc(hidden)]
-    pub core_network_asn: std::option::Option<i64>,
+    pub core_network_asn: ::std::option::Option<i64>,
     /// <p>The ASN of the Connect peer.</p>
     #[doc(hidden)]
-    pub peer_asn: std::option::Option<i64>,
+    pub peer_asn: ::std::option::Option<i64>,
     /// <p>The address of a core network.</p>
     #[doc(hidden)]
-    pub core_network_address: std::option::Option<std::string::String>,
+    pub core_network_address: ::std::option::Option<::std::string::String>,
     /// <p>The address of a core network Connect peer.</p>
     #[doc(hidden)]
-    pub peer_address: std::option::Option<std::string::String>,
+    pub peer_address: ::std::option::Option<::std::string::String>,
 }
 impl ConnectPeerBgpConfiguration {
     /// <p>The ASN of the Coret Network.</p>
-    pub fn core_network_asn(&self) -> std::option::Option<i64> {
+    pub fn core_network_asn(&self) -> ::std::option::Option<i64> {
         self.core_network_asn
     }
     /// <p>The ASN of the Connect peer.</p>
-    pub fn peer_asn(&self) -> std::option::Option<i64> {
+    pub fn peer_asn(&self) -> ::std::option::Option<i64> {
         self.peer_asn
     }
     /// <p>The address of a core network.</p>
-    pub fn core_network_address(&self) -> std::option::Option<&str> {
+    pub fn core_network_address(&self) -> ::std::option::Option<&str> {
         self.core_network_address.as_deref()
     }
     /// <p>The address of a core network Connect peer.</p>
-    pub fn peer_address(&self) -> std::option::Option<&str> {
+    pub fn peer_address(&self) -> ::std::option::Option<&str> {
         self.peer_address.as_deref()
     }
 }
@@ -44,54 +44,59 @@ impl ConnectPeerBgpConfiguration {
 
 /// A builder for [`ConnectPeerBgpConfiguration`](crate::types::ConnectPeerBgpConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectPeerBgpConfigurationBuilder {
-    pub(crate) core_network_asn: std::option::Option<i64>,
-    pub(crate) peer_asn: std::option::Option<i64>,
-    pub(crate) core_network_address: std::option::Option<std::string::String>,
-    pub(crate) peer_address: std::option::Option<std::string::String>,
+    pub(crate) core_network_asn: ::std::option::Option<i64>,
+    pub(crate) peer_asn: ::std::option::Option<i64>,
+    pub(crate) core_network_address: ::std::option::Option<::std::string::String>,
+    pub(crate) peer_address: ::std::option::Option<::std::string::String>,
 }
 impl ConnectPeerBgpConfigurationBuilder {
     /// <p>The ASN of the Coret Network.</p>
     pub fn core_network_asn(mut self, input: i64) -> Self {
-        self.core_network_asn = Some(input);
+        self.core_network_asn = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ASN of the Coret Network.</p>
-    pub fn set_core_network_asn(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_core_network_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.core_network_asn = input;
         self
     }
     /// <p>The ASN of the Connect peer.</p>
     pub fn peer_asn(mut self, input: i64) -> Self {
-        self.peer_asn = Some(input);
+        self.peer_asn = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ASN of the Connect peer.</p>
-    pub fn set_peer_asn(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_peer_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.peer_asn = input;
         self
     }
     /// <p>The address of a core network.</p>
-    pub fn core_network_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.core_network_address = Some(input.into());
+    pub fn core_network_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.core_network_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address of a core network.</p>
     pub fn set_core_network_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.core_network_address = input;
         self
     }
     /// <p>The address of a core network Connect peer.</p>
-    pub fn peer_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.peer_address = Some(input.into());
+    pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.peer_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address of a core network Connect peer.</p>
-    pub fn set_peer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_address = input;
         self
     }

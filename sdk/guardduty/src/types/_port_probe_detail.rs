@@ -2,29 +2,29 @@
 
 /// <p>Contains information about the port probe details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortProbeDetail {
     /// <p>The local port information of the connection.</p>
     #[doc(hidden)]
-    pub local_port_details: std::option::Option<crate::types::LocalPortDetails>,
+    pub local_port_details: ::std::option::Option<crate::types::LocalPortDetails>,
     /// <p>The local IP information of the connection.</p>
     #[doc(hidden)]
-    pub local_ip_details: std::option::Option<crate::types::LocalIpDetails>,
+    pub local_ip_details: ::std::option::Option<crate::types::LocalIpDetails>,
     /// <p>The remote IP information of the connection.</p>
     #[doc(hidden)]
-    pub remote_ip_details: std::option::Option<crate::types::RemoteIpDetails>,
+    pub remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
 }
 impl PortProbeDetail {
     /// <p>The local port information of the connection.</p>
-    pub fn local_port_details(&self) -> std::option::Option<&crate::types::LocalPortDetails> {
+    pub fn local_port_details(&self) -> ::std::option::Option<&crate::types::LocalPortDetails> {
         self.local_port_details.as_ref()
     }
     /// <p>The local IP information of the connection.</p>
-    pub fn local_ip_details(&self) -> std::option::Option<&crate::types::LocalIpDetails> {
+    pub fn local_ip_details(&self) -> ::std::option::Option<&crate::types::LocalIpDetails> {
         self.local_ip_details.as_ref()
     }
     /// <p>The remote IP information of the connection.</p>
-    pub fn remote_ip_details(&self) -> std::option::Option<&crate::types::RemoteIpDetails> {
+    pub fn remote_ip_details(&self) -> ::std::option::Option<&crate::types::RemoteIpDetails> {
         self.remote_ip_details.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl PortProbeDetail {
 
 /// A builder for [`PortProbeDetail`](crate::types::PortProbeDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortProbeDetailBuilder {
-    pub(crate) local_port_details: std::option::Option<crate::types::LocalPortDetails>,
-    pub(crate) local_ip_details: std::option::Option<crate::types::LocalIpDetails>,
-    pub(crate) remote_ip_details: std::option::Option<crate::types::RemoteIpDetails>,
+    pub(crate) local_port_details: ::std::option::Option<crate::types::LocalPortDetails>,
+    pub(crate) local_ip_details: ::std::option::Option<crate::types::LocalIpDetails>,
+    pub(crate) remote_ip_details: ::std::option::Option<crate::types::RemoteIpDetails>,
 }
 impl PortProbeDetailBuilder {
     /// <p>The local port information of the connection.</p>
     pub fn local_port_details(mut self, input: crate::types::LocalPortDetails) -> Self {
-        self.local_port_details = Some(input);
+        self.local_port_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The local port information of the connection.</p>
     pub fn set_local_port_details(
         mut self,
-        input: std::option::Option<crate::types::LocalPortDetails>,
+        input: ::std::option::Option<crate::types::LocalPortDetails>,
     ) -> Self {
         self.local_port_details = input;
         self
     }
     /// <p>The local IP information of the connection.</p>
     pub fn local_ip_details(mut self, input: crate::types::LocalIpDetails) -> Self {
-        self.local_ip_details = Some(input);
+        self.local_ip_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The local IP information of the connection.</p>
     pub fn set_local_ip_details(
         mut self,
-        input: std::option::Option<crate::types::LocalIpDetails>,
+        input: ::std::option::Option<crate::types::LocalIpDetails>,
     ) -> Self {
         self.local_ip_details = input;
         self
     }
     /// <p>The remote IP information of the connection.</p>
     pub fn remote_ip_details(mut self, input: crate::types::RemoteIpDetails) -> Self {
-        self.remote_ip_details = Some(input);
+        self.remote_ip_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The remote IP information of the connection.</p>
     pub fn set_remote_ip_details(
         mut self,
-        input: std::option::Option<crate::types::RemoteIpDetails>,
+        input: ::std::option::Option<crate::types::RemoteIpDetails>,
     ) -> Self {
         self.remote_ip_details = input;
         self

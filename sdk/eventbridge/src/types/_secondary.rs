@@ -2,15 +2,15 @@
 
 /// <p>The secondary Region that processes events when failover is triggered or replication is enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Secondary {
     /// <p>Defines the secondary Region.</p>
     #[doc(hidden)]
-    pub route: std::option::Option<std::string::String>,
+    pub route: ::std::option::Option<::std::string::String>,
 }
 impl Secondary {
     /// <p>Defines the secondary Region.</p>
-    pub fn route(&self) -> std::option::Option<&str> {
+    pub fn route(&self) -> ::std::option::Option<&str> {
         self.route.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Secondary {
 
 /// A builder for [`Secondary`](crate::types::Secondary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SecondaryBuilder {
-    pub(crate) route: std::option::Option<std::string::String>,
+    pub(crate) route: ::std::option::Option<::std::string::String>,
 }
 impl SecondaryBuilder {
     /// <p>Defines the secondary Region.</p>
-    pub fn route(mut self, input: impl Into<std::string::String>) -> Self {
-        self.route = Some(input.into());
+    pub fn route(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.route = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Defines the secondary Region.</p>
-    pub fn set_route(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_route(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.route = input;
         self
     }

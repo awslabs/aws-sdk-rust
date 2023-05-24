@@ -2,22 +2,22 @@
 
 /// <p>Name of a readiness check to describe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
     #[doc(hidden)]
-    pub readiness_check_name: std::option::Option<std::string::String>,
+    pub readiness_check_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource set to be checked.</p>
     #[doc(hidden)]
-    pub resource_set_name: std::option::Option<std::string::String>,
+    pub resource_set_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+    pub fn readiness_check_name(&self) -> ::std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
     /// <p>The name of the resource set to be checked.</p>
-    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> ::std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
 }
@@ -31,34 +31,42 @@ impl UpdateReadinessCheckInput {
 
 /// A builder for [`UpdateReadinessCheckInput`](crate::operation::update_readiness_check::UpdateReadinessCheckInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateReadinessCheckInputBuilder {
-    pub(crate) readiness_check_name: std::option::Option<std::string::String>,
-    pub(crate) resource_set_name: std::option::Option<std::string::String>,
+    pub(crate) readiness_check_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateReadinessCheckInputBuilder {
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.readiness_check_name = Some(input.into());
+    pub fn readiness_check_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.readiness_check_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a readiness check.</p>
     pub fn set_readiness_check_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.readiness_check_name = input;
         self
     }
     /// <p>The name of the resource set to be checked.</p>
-    pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_set_name = Some(input.into());
+    pub fn resource_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource set to be checked.</p>
     pub fn set_resource_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_set_name = input;
         self
@@ -66,11 +74,11 @@ impl UpdateReadinessCheckInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReadinessCheckInput`](crate::operation::update_readiness_check::UpdateReadinessCheckInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_readiness_check::UpdateReadinessCheckInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_readiness_check::UpdateReadinessCheckInput {
                 readiness_check_name: self.readiness_check_name,
                 resource_set_name: self.resource_set_name,

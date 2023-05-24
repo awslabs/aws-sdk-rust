@@ -2,22 +2,22 @@
 
 /// <p> Information about a frame metric and its values. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameMetricDatum {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
     #[doc(hidden)]
-    pub frame_metric: std::option::Option<crate::types::FrameMetric>,
+    pub frame_metric: ::std::option::Option<crate::types::FrameMetric>,
     /// <p> A list of values that are associated with a frame metric. </p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<f64>>,
+    pub values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl FrameMetricDatum {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
-    pub fn frame_metric(&self) -> std::option::Option<&crate::types::FrameMetric> {
+    pub fn frame_metric(&self) -> ::std::option::Option<&crate::types::FrameMetric> {
         self.frame_metric.as_ref()
     }
     /// <p> A list of values that are associated with a frame metric. </p>
-    pub fn values(&self) -> std::option::Option<&[f64]> {
+    pub fn values(&self) -> ::std::option::Option<&[f64]> {
         self.values.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl FrameMetricDatum {
 
 /// A builder for [`FrameMetricDatum`](crate::types::FrameMetricDatum).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FrameMetricDatumBuilder {
-    pub(crate) frame_metric: std::option::Option<crate::types::FrameMetric>,
-    pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
+    pub(crate) frame_metric: ::std::option::Option<crate::types::FrameMetric>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl FrameMetricDatumBuilder {
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
     pub fn frame_metric(mut self, input: crate::types::FrameMetric) -> Self {
-        self.frame_metric = Some(input);
+        self.frame_metric = ::std::option::Option::Some(input);
         self
     }
     /// <p> The frame name, metric type, and thread states. These are used to derive the value of the metric for the frame.</p>
     pub fn set_frame_metric(
         mut self,
-        input: std::option::Option<crate::types::FrameMetric>,
+        input: ::std::option::Option<crate::types::FrameMetric>,
     ) -> Self {
         self.frame_metric = input;
         self
@@ -57,11 +59,11 @@ impl FrameMetricDatumBuilder {
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of values that are associated with a frame metric. </p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.values = input;
         self
     }

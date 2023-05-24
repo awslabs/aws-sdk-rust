@@ -2,22 +2,22 @@
 
 /// <p>Container for the response returned by an <code>DissociatePackage</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DissociatePackageOutput {
     /// <p> Information about a package that has been dissociated from the domain.</p>
     #[doc(hidden)]
-    pub domain_package_details: std::option::Option<crate::types::DomainPackageDetails>,
+    pub domain_package_details: ::std::option::Option<crate::types::DomainPackageDetails>,
     _request_id: Option<String>,
 }
 impl DissociatePackageOutput {
     /// <p> Information about a package that has been dissociated from the domain.</p>
     pub fn domain_package_details(
         &self,
-    ) -> std::option::Option<&crate::types::DomainPackageDetails> {
+    ) -> ::std::option::Option<&crate::types::DomainPackageDetails> {
         self.domain_package_details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DissociatePackageOutput {
+impl ::aws_http::request_id::RequestId for DissociatePackageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,21 +32,23 @@ impl DissociatePackageOutput {
 
 /// A builder for [`DissociatePackageOutput`](crate::operation::dissociate_package::DissociatePackageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DissociatePackageOutputBuilder {
-    pub(crate) domain_package_details: std::option::Option<crate::types::DomainPackageDetails>,
+    pub(crate) domain_package_details: ::std::option::Option<crate::types::DomainPackageDetails>,
     _request_id: Option<String>,
 }
 impl DissociatePackageOutputBuilder {
     /// <p> Information about a package that has been dissociated from the domain.</p>
     pub fn domain_package_details(mut self, input: crate::types::DomainPackageDetails) -> Self {
-        self.domain_package_details = Some(input);
+        self.domain_package_details = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about a package that has been dissociated from the domain.</p>
     pub fn set_domain_package_details(
         mut self,
-        input: std::option::Option<crate::types::DomainPackageDetails>,
+        input: ::std::option::Option<crate::types::DomainPackageDetails>,
     ) -> Self {
         self.domain_package_details = input;
         self

@@ -3,11 +3,11 @@ pub(crate) mod shape_start_call_analytics_stream_transcription;
 
 pub fn parse_http_error_metadata(
     _response_status: u16,
-    response_headers: &http::HeaderMap,
+    response_headers: &::http::HeaderMap,
     response_body: &[u8],
 ) -> Result<
-    aws_smithy_types::error::metadata::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_types::error::metadata::Builder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
@@ -45,13 +45,13 @@ pub(crate) mod shape_start_medical_stream_transcription_output;
 pub(crate) mod shape_start_stream_transcription_output;
 
 pub fn parse_event_stream_error_metadata(
-    payload: &bytes::Bytes,
+    payload: &::bytes::Bytes,
 ) -> Result<
-    aws_smithy_types::error::metadata::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_types::error::metadata::Builder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     // Note: HeaderMap::new() doesn't allocate
-    crate::json_errors::parse_error_metadata(payload, &http::HeaderMap::new())
+    crate::json_errors::parse_error_metadata(payload, &::http::HeaderMap::new())
 }
 
 pub(crate) mod shape_channel_definition;

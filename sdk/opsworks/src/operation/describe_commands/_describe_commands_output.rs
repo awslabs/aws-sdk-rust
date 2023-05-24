@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeCommands</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCommandsOutput {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     #[doc(hidden)]
-    pub commands: std::option::Option<std::vec::Vec<crate::types::Command>>,
+    pub commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     _request_id: Option<String>,
 }
 impl DescribeCommandsOutput {
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
-    pub fn commands(&self) -> std::option::Option<&[crate::types::Command]> {
+    pub fn commands(&self) -> ::std::option::Option<&[crate::types::Command]> {
         self.commands.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCommandsOutput {
+impl ::aws_http::request_id::RequestId for DescribeCommandsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl DescribeCommandsOutput {
 
 /// A builder for [`DescribeCommandsOutput`](crate::operation::describe_commands::DescribeCommandsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCommandsOutputBuilder {
-    pub(crate) commands: std::option::Option<std::vec::Vec<crate::types::Command>>,
+    pub(crate) commands: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     _request_id: Option<String>,
 }
 impl DescribeCommandsOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeCommandsOutputBuilder {
     pub fn commands(mut self, input: crate::types::Command) -> Self {
         let mut v = self.commands.unwrap_or_default();
         v.push(input);
-        self.commands = Some(v);
+        self.commands = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>Command</code> objects that describe each of the specified commands.</p>
     pub fn set_commands(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Command>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Command>>,
     ) -> Self {
         self.commands = input;
         self

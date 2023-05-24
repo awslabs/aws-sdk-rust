@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of a get commit operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommitInput {
     /// <p>The name of the repository to which the commit was made.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
     #[doc(hidden)]
-    pub commit_id: std::option::Option<std::string::String>,
+    pub commit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCommitInput {
     /// <p>The name of the repository to which the commit was made.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> ::std::option::Option<&str> {
         self.commit_id.as_deref()
     }
 }
@@ -30,40 +30,48 @@ impl GetCommitInput {
 
 /// A builder for [`GetCommitInput`](crate::operation::get_commit::GetCommitInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCommitInputBuilder {
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) commit_id: std::option::Option<std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) commit_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCommitInputBuilder {
     /// <p>The name of the repository to which the commit was made.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to which the commit was made.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
-    pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.commit_id = Some(input.into());
+    pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
-    pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetCommitInput`](crate::operation::get_commit::GetCommitInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_commit::GetCommitInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_commit::GetCommitInput {
+        ::std::result::Result::Ok(crate::operation::get_commit::GetCommitInput {
             repository_name: self.repository_name,
             commit_id: self.commit_id,
         })

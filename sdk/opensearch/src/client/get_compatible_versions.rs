@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCompatibleVersions`](crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder::set_domain_name): <p>The name of an existing domain. Provide this parameter to limit the results to a single domain.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_compatible_versions::builders::GetCompatibleVersionsFluentBuilder::set_domain_name): <p>The name of an existing domain. Provide this parameter to limit the results to a single domain.</p>
     /// - On success, responds with [`GetCompatibleVersionsOutput`](crate::operation::get_compatible_versions::GetCompatibleVersionsOutput) with field(s):
     ///   - [`compatible_versions(Option<Vec<CompatibleVersionsMap>>)`](crate::operation::get_compatible_versions::GetCompatibleVersionsOutput::compatible_versions): <p>A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
     /// - On failure, responds with [`SdkError<GetCompatibleVersionsError>`](crate::operation::get_compatible_versions::GetCompatibleVersionsError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateSubnetCidrBlock`](crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`association_id(impl Into<String>)`](crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockFluentBuilder::set_association_id): <p>The association ID for the CIDR block.</p>
+    ///   - [`association_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockFluentBuilder::set_association_id): <p>The association ID for the CIDR block.</p>
     /// - On success, responds with [`DisassociateSubnetCidrBlockOutput`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput) with field(s):
     ///   - [`ipv6_cidr_block_association(Option<SubnetIpv6CidrBlockAssociation>)`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput::ipv6_cidr_block_association): <p>Information about the IPv6 CIDR block association.</p>
     ///   - [`subnet_id(Option<String>)`](crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput::subnet_id): <p>The ID of the subnet.</p>

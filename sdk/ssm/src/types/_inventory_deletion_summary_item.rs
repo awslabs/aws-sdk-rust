@@ -2,11 +2,11 @@
 
 /// <p>Either a count, remaining count, or a version number in a delete inventory summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryDeletionSummaryItem {
     /// <p>The inventory type version.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>A count of the number of deleted items.</p>
     #[doc(hidden)]
     pub count: i32,
@@ -16,7 +16,7 @@ pub struct InventoryDeletionSummaryItem {
 }
 impl InventoryDeletionSummaryItem {
     /// <p>The inventory type version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>A count of the number of deleted items.</p>
@@ -37,40 +37,42 @@ impl InventoryDeletionSummaryItem {
 
 /// A builder for [`InventoryDeletionSummaryItem`](crate::types::InventoryDeletionSummaryItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InventoryDeletionSummaryItemBuilder {
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) remaining_count: std::option::Option<i32>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) remaining_count: ::std::option::Option<i32>,
 }
 impl InventoryDeletionSummaryItemBuilder {
     /// <p>The inventory type version.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inventory type version.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>A count of the number of deleted items.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>A count of the number of deleted items.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The remaining number of items to delete.</p>
     pub fn remaining_count(mut self, input: i32) -> Self {
-        self.remaining_count = Some(input);
+        self.remaining_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The remaining number of items to delete.</p>
-    pub fn set_remaining_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_remaining_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.remaining_count = input;
         self
     }

@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IpAddressVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum IpAddressVersion {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IpAddressVersion {
+impl ::std::convert::From<&str> for IpAddressVersion {
     fn from(s: &str) -> Self {
         match s {
             "IPV4" => IpAddressVersion::Ipv4,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for IpAddressVersion {
         }
     }
 }
-impl std::str::FromStr for IpAddressVersion {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IpAddressVersion {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IpAddressVersion::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IpAddressVersion::from(s))
     }
 }
 impl IpAddressVersion {
@@ -86,7 +86,7 @@ impl IpAddressVersion {
         &["IPV4", "IPV6"]
     }
 }
-impl AsRef<str> for IpAddressVersion {
+impl ::std::convert::AsRef<str> for IpAddressVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

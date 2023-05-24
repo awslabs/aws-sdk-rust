@@ -6,29 +6,29 @@ pub use crate::operation::create_application::_create_application_input::CreateA
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
 /// <p>Creates an application.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_application::builders::CreateApplicationInputBuilder,
 }
 impl CreateApplicationFluentBuilder {
     /// Creates a new `CreateApplication`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_application::CreateApplication,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_application::CreateApplicationError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateApplicationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_application::CreateApplicationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,51 +75,57 @@ impl CreateApplicationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_application::CreateApplicationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_application::CreateApplicationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the application.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the application.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The EMR release associated with the application.</p>
-    pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn release_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.release_label(input.into());
         self
     }
     /// <p>The EMR release associated with the application.</p>
-    pub fn set_release_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_release_label(input);
         self
     }
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
         self
     }
     /// <p>The type of application you want to start, such as Spark or Hive.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The client idempotency token of the application to create. Its value must be unique for each request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -127,7 +136,7 @@ impl CreateApplicationFluentBuilder {
     /// <p>The capacity to initialize when the application is created.</p>
     pub fn initial_capacity(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::InitialCapacityConfig,
     ) -> Self {
         self.inner = self.inner.initial_capacity(k.into(), v);
@@ -136,8 +145,8 @@ impl CreateApplicationFluentBuilder {
     /// <p>The capacity to initialize when the application is created.</p>
     pub fn set_initial_capacity(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::InitialCapacityConfig>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::InitialCapacityConfig>,
         >,
     ) -> Self {
         self.inner = self.inner.set_initial_capacity(input);
@@ -151,7 +160,7 @@ impl CreateApplicationFluentBuilder {
     /// <p>The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.</p>
     pub fn set_maximum_capacity(
         mut self,
-        input: std::option::Option<crate::types::MaximumAllowedResources>,
+        input: ::std::option::Option<crate::types::MaximumAllowedResources>,
     ) -> Self {
         self.inner = self.inner.set_maximum_capacity(input);
         self
@@ -163,8 +172,8 @@ impl CreateApplicationFluentBuilder {
     /// <p>The tags assigned to the application.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -172,8 +181,8 @@ impl CreateApplicationFluentBuilder {
     /// <p>The tags assigned to the application.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -187,7 +196,7 @@ impl CreateApplicationFluentBuilder {
     /// <p>The configuration for an application to automatically start on job submission.</p>
     pub fn set_auto_start_configuration(
         mut self,
-        input: std::option::Option<crate::types::AutoStartConfig>,
+        input: ::std::option::Option<crate::types::AutoStartConfig>,
     ) -> Self {
         self.inner = self.inner.set_auto_start_configuration(input);
         self
@@ -200,7 +209,7 @@ impl CreateApplicationFluentBuilder {
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
     pub fn set_auto_stop_configuration(
         mut self,
-        input: std::option::Option<crate::types::AutoStopConfig>,
+        input: ::std::option::Option<crate::types::AutoStopConfig>,
     ) -> Self {
         self.inner = self.inner.set_auto_stop_configuration(input);
         self
@@ -213,7 +222,7 @@ impl CreateApplicationFluentBuilder {
     /// <p>The network configuration for customer VPC connectivity.</p>
     pub fn set_network_configuration(
         mut self,
-        input: std::option::Option<crate::types::NetworkConfiguration>,
+        input: ::std::option::Option<crate::types::NetworkConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
@@ -226,7 +235,7 @@ impl CreateApplicationFluentBuilder {
     /// <p>The CPU architecture of an application.</p>
     pub fn set_architecture(
         mut self,
-        input: std::option::Option<crate::types::Architecture>,
+        input: ::std::option::Option<crate::types::Architecture>,
     ) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
@@ -239,7 +248,7 @@ impl CreateApplicationFluentBuilder {
     /// <p>The image configuration for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.</p>
     pub fn set_image_configuration(
         mut self,
-        input: std::option::Option<crate::types::ImageConfigurationInput>,
+        input: ::std::option::Option<crate::types::ImageConfigurationInput>,
     ) -> Self {
         self.inner = self.inner.set_image_configuration(input);
         self
@@ -251,7 +260,7 @@ impl CreateApplicationFluentBuilder {
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
     pub fn worker_type_specifications(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::WorkerTypeSpecificationInput,
     ) -> Self {
         self.inner = self.inner.worker_type_specifications(k.into(), v);
@@ -260,9 +269,9 @@ impl CreateApplicationFluentBuilder {
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
     pub fn set_worker_type_specifications(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::WorkerTypeSpecificationInput,
             >,
         >,

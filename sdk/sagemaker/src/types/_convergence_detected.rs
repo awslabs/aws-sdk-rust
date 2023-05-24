@@ -2,17 +2,17 @@
 
 /// <p>A flag to indicating that automatic model tuning (AMT) has detected model convergence, defined as a lack of significant improvement (1% or less) against an objective metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConvergenceDetected {
     /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
     #[doc(hidden)]
-    pub complete_on_convergence: std::option::Option<crate::types::CompleteOnConvergence>,
+    pub complete_on_convergence: ::std::option::Option<crate::types::CompleteOnConvergence>,
 }
 impl ConvergenceDetected {
     /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
     pub fn complete_on_convergence(
         &self,
-    ) -> std::option::Option<&crate::types::CompleteOnConvergence> {
+    ) -> ::std::option::Option<&crate::types::CompleteOnConvergence> {
         self.complete_on_convergence.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ConvergenceDetected {
 
 /// A builder for [`ConvergenceDetected`](crate::types::ConvergenceDetected).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConvergenceDetectedBuilder {
-    pub(crate) complete_on_convergence: std::option::Option<crate::types::CompleteOnConvergence>,
+    pub(crate) complete_on_convergence: ::std::option::Option<crate::types::CompleteOnConvergence>,
 }
 impl ConvergenceDetectedBuilder {
     /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
     pub fn complete_on_convergence(mut self, input: crate::types::CompleteOnConvergence) -> Self {
-        self.complete_on_convergence = Some(input);
+        self.complete_on_convergence = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag to stop a tuning job once AMT has detected that the job has converged.</p>
     pub fn set_complete_on_convergence(
         mut self,
-        input: std::option::Option<crate::types::CompleteOnConvergence>,
+        input: ::std::option::Option<crate::types::CompleteOnConvergence>,
     ) -> Self {
         self.complete_on_convergence = input;
         self

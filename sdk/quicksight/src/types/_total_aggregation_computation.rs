@@ -2,29 +2,29 @@
 
 /// <p>The total aggregation computation configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TotalAggregationComputation {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
-    pub computation_id: std::option::Option<std::string::String>,
+    pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value field that is used in a computation.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::MeasureField>,
+    pub value: ::std::option::Option<crate::types::MeasureField>,
 }
 impl TotalAggregationComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> std::option::Option<&str> {
+    pub fn computation_id(&self) -> ::std::option::Option<&str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::MeasureField> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::MeasureField> {
         self.value.as_ref()
     }
 }
@@ -37,40 +37,48 @@ impl TotalAggregationComputation {
 
 /// A builder for [`TotalAggregationComputation`](crate::types::TotalAggregationComputation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TotalAggregationComputationBuilder {
-    pub(crate) computation_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<crate::types::MeasureField>,
+    pub(crate) computation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<crate::types::MeasureField>,
 }
 impl TotalAggregationComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.computation_id = Some(input.into());
+    pub fn computation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_computation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.computation_id = input;
         self
     }
     /// <p>The name of a computation.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a computation.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::MeasureField>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::MeasureField>) -> Self {
         self.value = input;
         self
     }

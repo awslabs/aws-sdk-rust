@@ -2,14 +2,14 @@
 
 /// <p>Summary information about a target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetSummary {
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The port on which the target is listening.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>The status of the target.</p>
     /// <ul>
     /// <li> <p> <code>Draining</code>: The target is being deregistered. No new connections will be sent to this target while current connections are being drained. Default draining time is 5 minutes.</p> </li>
@@ -20,18 +20,18 @@ pub struct TargetSummary {
     /// <li> <p> <code>Unused</code>: Target group is not used in a service.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::TargetStatus>,
+    pub status: ::std::option::Option<crate::types::TargetStatus>,
     /// <p>The code for why the target status is what it is.</p>
     #[doc(hidden)]
-    pub reason_code: std::option::Option<std::string::String>,
+    pub reason_code: ::std::option::Option<::std::string::String>,
 }
 impl TargetSummary {
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The port on which the target is listening.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The status of the target.</p>
@@ -43,11 +43,11 @@ impl TargetSummary {
     /// <li> <p> <code>Initial</code>: Initial health checks on the target are being performed.</p> </li>
     /// <li> <p> <code>Unused</code>: Target group is not used in a service.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::TargetStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::TargetStatus> {
         self.status.as_ref()
     }
     /// <p>The code for why the target status is what it is.</p>
-    pub fn reason_code(&self) -> std::option::Option<&str> {
+    pub fn reason_code(&self) -> ::std::option::Option<&str> {
         self.reason_code.as_deref()
     }
 }
@@ -60,31 +60,33 @@ impl TargetSummary {
 
 /// A builder for [`TargetSummary`](crate::types::TargetSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::TargetStatus>,
-    pub(crate) reason_code: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::TargetStatus>,
+    pub(crate) reason_code: ::std::option::Option<::std::string::String>,
 }
 impl TargetSummaryBuilder {
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target. If the target type of the target group is <code>INSTANCE</code>, this is an instance ID. If the target type is <code>IP</code> , this is an IP address. If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function. If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The port on which the target is listening.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port on which the target is listening.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
@@ -98,7 +100,7 @@ impl TargetSummaryBuilder {
     /// <li> <p> <code>Unused</code>: Target group is not used in a service.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::TargetStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the target.</p>
@@ -110,17 +112,17 @@ impl TargetSummaryBuilder {
     /// <li> <p> <code>Initial</code>: Initial health checks on the target are being performed.</p> </li>
     /// <li> <p> <code>Unused</code>: Target group is not used in a service.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TargetStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::TargetStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The code for why the target status is what it is.</p>
-    pub fn reason_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason_code = Some(input.into());
+    pub fn reason_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for why the target status is what it is.</p>
-    pub fn set_reason_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason_code = input;
         self
     }

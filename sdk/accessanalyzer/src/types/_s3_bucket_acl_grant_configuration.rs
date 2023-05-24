@@ -2,22 +2,22 @@
 
 /// <p>A proposed access control list grant configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls">How to Specify an ACL</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketAclGrantConfiguration {
     /// <p>The permissions being granted.</p>
     #[doc(hidden)]
-    pub permission: std::option::Option<crate::types::AclPermission>,
+    pub permission: ::std::option::Option<crate::types::AclPermission>,
     /// <p>The grantee to whom you’re assigning access rights.</p>
     #[doc(hidden)]
-    pub grantee: std::option::Option<crate::types::AclGrantee>,
+    pub grantee: ::std::option::Option<crate::types::AclGrantee>,
 }
 impl S3BucketAclGrantConfiguration {
     /// <p>The permissions being granted.</p>
-    pub fn permission(&self) -> std::option::Option<&crate::types::AclPermission> {
+    pub fn permission(&self) -> ::std::option::Option<&crate::types::AclPermission> {
         self.permission.as_ref()
     }
     /// <p>The grantee to whom you’re assigning access rights.</p>
-    pub fn grantee(&self) -> std::option::Option<&crate::types::AclGrantee> {
+    pub fn grantee(&self) -> ::std::option::Option<&crate::types::AclGrantee> {
         self.grantee.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl S3BucketAclGrantConfiguration {
 
 /// A builder for [`S3BucketAclGrantConfiguration`](crate::types::S3BucketAclGrantConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3BucketAclGrantConfigurationBuilder {
-    pub(crate) permission: std::option::Option<crate::types::AclPermission>,
-    pub(crate) grantee: std::option::Option<crate::types::AclGrantee>,
+    pub(crate) permission: ::std::option::Option<crate::types::AclPermission>,
+    pub(crate) grantee: ::std::option::Option<crate::types::AclGrantee>,
 }
 impl S3BucketAclGrantConfigurationBuilder {
     /// <p>The permissions being granted.</p>
     pub fn permission(mut self, input: crate::types::AclPermission) -> Self {
-        self.permission = Some(input);
+        self.permission = ::std::option::Option::Some(input);
         self
     }
     /// <p>The permissions being granted.</p>
     pub fn set_permission(
         mut self,
-        input: std::option::Option<crate::types::AclPermission>,
+        input: ::std::option::Option<crate::types::AclPermission>,
     ) -> Self {
         self.permission = input;
         self
     }
     /// <p>The grantee to whom you’re assigning access rights.</p>
     pub fn grantee(mut self, input: crate::types::AclGrantee) -> Self {
-        self.grantee = Some(input);
+        self.grantee = ::std::option::Option::Some(input);
         self
     }
     /// <p>The grantee to whom you’re assigning access rights.</p>
-    pub fn set_grantee(mut self, input: std::option::Option<crate::types::AclGrantee>) -> Self {
+    pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::AclGrantee>) -> Self {
         self.grantee = input;
         self
     }

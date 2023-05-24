@@ -2,18 +2,19 @@
 
 /// <p>Describes the style configuration of a unique variation of a main component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentVariant {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
     #[doc(hidden)]
-    pub variant_values:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub variant_values: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
+    pub overrides: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     >,
 }
@@ -21,17 +22,18 @@ impl ComponentVariant {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
     pub fn variant_values(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.variant_values.as_ref()
     }
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     pub fn overrides(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     > {
         self.overrides.as_ref()
@@ -46,14 +48,17 @@ impl ComponentVariant {
 
 /// A builder for [`ComponentVariant`](crate::types::ComponentVariant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentVariantBuilder {
-    pub(crate) variant_values:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) overrides: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
+    pub(crate) variant_values: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) overrides: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     >,
 }
@@ -65,19 +70,19 @@ impl ComponentVariantBuilder {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
     pub fn variant_values(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.variant_values.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.variant_values = Some(hash_map);
+        self.variant_values = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
     pub fn set_variant_values(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.variant_values = input;
@@ -90,21 +95,21 @@ impl ComponentVariantBuilder {
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     pub fn overrides(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::collections::HashMap<std::string::String, std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     ) -> Self {
         let mut hash_map = self.overrides.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.overrides = Some(hash_map);
+        self.overrides = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     pub fn set_overrides(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
             >,
         >,
     ) -> Self {

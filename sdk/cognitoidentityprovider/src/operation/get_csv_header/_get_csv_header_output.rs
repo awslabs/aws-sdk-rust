@@ -2,27 +2,27 @@
 
 /// <p>Represents the response from the server to the request to get the header information of the CSV file for the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCsvHeaderOutput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The header information of the CSV file for the user import job.</p>
     #[doc(hidden)]
-    pub csv_header: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub csv_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCsvHeaderOutput {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The header information of the CSV file for the user import job.</p>
-    pub fn csv_header(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn csv_header(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.csv_header.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetCsvHeaderOutput {
+impl ::aws_http::request_id::RequestId for GetCsvHeaderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,20 +36,22 @@ impl GetCsvHeaderOutput {
 
 /// A builder for [`GetCsvHeaderOutput`](crate::operation::get_csv_header::GetCsvHeaderOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCsvHeaderOutputBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) csv_header: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) csv_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCsvHeaderOutputBuilder {
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
@@ -58,16 +60,16 @@ impl GetCsvHeaderOutputBuilder {
     /// To override the contents of this collection use [`set_csv_header`](Self::set_csv_header).
     ///
     /// <p>The header information of the CSV file for the user import job.</p>
-    pub fn csv_header(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn csv_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.csv_header.unwrap_or_default();
         v.push(input.into());
-        self.csv_header = Some(v);
+        self.csv_header = ::std::option::Option::Some(v);
         self
     }
     /// <p>The header information of the CSV file for the user import job.</p>
     pub fn set_csv_header(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.csv_header = input;
         self

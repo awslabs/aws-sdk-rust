@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of a get blob operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlobInput {
     /// <p>The name of the repository that contains the blob.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
     #[doc(hidden)]
-    pub blob_id: std::option::Option<std::string::String>,
+    pub blob_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBlobInput {
     /// <p>The name of the repository that contains the blob.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
-    pub fn blob_id(&self) -> std::option::Option<&str> {
+    pub fn blob_id(&self) -> ::std::option::Option<&str> {
         self.blob_id.as_deref()
     }
 }
@@ -30,40 +30,48 @@ impl GetBlobInput {
 
 /// A builder for [`GetBlobInput`](crate::operation::get_blob::GetBlobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetBlobInputBuilder {
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) blob_id: std::option::Option<std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) blob_id: ::std::option::Option<::std::string::String>,
 }
 impl GetBlobInputBuilder {
     /// <p>The name of the repository that contains the blob.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the blob.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
-    pub fn blob_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.blob_id = Some(input.into());
+    pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
-    pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blob_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetBlobInput`](crate::operation::get_blob::GetBlobInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_blob::GetBlobInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_blob::GetBlobInput {
+        ::std::result::Result::Ok(crate::operation::get_blob::GetBlobInput {
             repository_name: self.repository_name,
             blob_id: self.blob_id,
         })

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOffering`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`offering_arn(impl Into<String>)`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::offering_arn) / [`set_offering_arn(Option<String>)`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::set_offering_arn): The Amazon Resource Name (ARN) of the offering.
+    ///   - [`offering_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::offering_arn) / [`set_offering_arn(Option<String>)`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::set_offering_arn): The Amazon Resource Name (ARN) of the offering.
     /// - On success, responds with [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput) with field(s):
     ///   - [`offering(Option<Offering>)`](crate::operation::describe_offering::DescribeOfferingOutput::offering): A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     /// - On failure, responds with [`SdkError<DescribeOfferingError>`](crate::operation::describe_offering::DescribeOfferingError)

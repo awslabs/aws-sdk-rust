@@ -2,7 +2,7 @@
 
 /// <p>Provides the configuration information for crawling service catalog items in the ServiceNow site</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowServiceCatalogConfiguration {
     /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
     #[doc(hidden)]
@@ -10,21 +10,23 @@ pub struct ServiceNowServiceCatalogConfiguration {
     /// <p>A list of regular expression patterns to include certain attachments of catalogs in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
     #[doc(hidden)]
-    pub include_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub include_attachment_file_patterns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain attachments of catalogs in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
     #[doc(hidden)]
-    pub exclude_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub exclude_attachment_file_patterns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
     #[doc(hidden)]
-    pub document_data_field_name: std::option::Option<std::string::String>,
+    pub document_data_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
     #[doc(hidden)]
-    pub document_title_field_name: std::option::Option<std::string::String>,
+    pub document_title_field_name: ::std::option::Option<::std::string::String>,
     /// <p>Maps attributes or field names of catalogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
     #[doc(hidden)]
     pub field_mappings:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl ServiceNowServiceCatalogConfiguration {
     /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
@@ -33,26 +35,30 @@ impl ServiceNowServiceCatalogConfiguration {
     }
     /// <p>A list of regular expression patterns to include certain attachments of catalogs in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
-    pub fn include_attachment_file_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn include_attachment_file_patterns(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.include_attachment_file_patterns.as_deref()
     }
     /// <p>A list of regular expression patterns to exclude certain attachments of catalogs in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
-    pub fn exclude_attachment_file_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exclude_attachment_file_patterns(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.exclude_attachment_file_patterns.as_deref()
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
-    pub fn document_data_field_name(&self) -> std::option::Option<&str> {
+    pub fn document_data_field_name(&self) -> ::std::option::Option<&str> {
         self.document_data_field_name.as_deref()
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
-    pub fn document_title_field_name(&self) -> std::option::Option<&str> {
+    pub fn document_title_field_name(&self) -> ::std::option::Option<&str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>Maps attributes or field names of catalogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
     pub fn field_mappings(
         &self,
-    ) -> std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
+    ) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
     }
 }
@@ -65,26 +71,28 @@ impl ServiceNowServiceCatalogConfiguration {
 
 /// A builder for [`ServiceNowServiceCatalogConfiguration`](crate::types::ServiceNowServiceCatalogConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceNowServiceCatalogConfigurationBuilder {
-    pub(crate) crawl_attachments: std::option::Option<bool>,
+    pub(crate) crawl_attachments: ::std::option::Option<bool>,
     pub(crate) include_attachment_file_patterns:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) exclude_attachment_file_patterns:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) document_data_field_name: std::option::Option<std::string::String>,
-    pub(crate) document_title_field_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) document_data_field_name: ::std::option::Option<::std::string::String>,
+    pub(crate) document_title_field_name: ::std::option::Option<::std::string::String>,
     pub(crate) field_mappings:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl ServiceNowServiceCatalogConfigurationBuilder {
     /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
-        self.crawl_attachments = Some(input);
+        self.crawl_attachments = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>TRUE</code> to index attachments to service catalog items.</p>
-    pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_attachments = input;
         self
     }
@@ -96,18 +104,18 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
     /// <p>The regex is applied to the file name of the attachment.</p>
     pub fn include_attachment_file_patterns(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.include_attachment_file_patterns.unwrap_or_default();
         v.push(input.into());
-        self.include_attachment_file_patterns = Some(v);
+        self.include_attachment_file_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to include certain attachments of catalogs in your ServiceNow. Item that match the patterns are included in the index. Items that don't match the patterns are excluded from the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
     pub fn set_include_attachment_file_patterns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.include_attachment_file_patterns = input;
         self
@@ -120,44 +128,50 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
     /// <p>The regex is applied to the file name of the attachment.</p>
     pub fn exclude_attachment_file_patterns(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.exclude_attachment_file_patterns.unwrap_or_default();
         v.push(input.into());
-        self.exclude_attachment_file_patterns = Some(v);
+        self.exclude_attachment_file_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to exclude certain attachments of catalogs in your ServiceNow. Item that match the patterns are excluded from the index. Items that don't match the patterns are included in the index. If an item matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the item isn't included in the index.</p>
     /// <p>The regex is applied to the file name of the attachment.</p>
     pub fn set_exclude_attachment_file_patterns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.exclude_attachment_file_patterns = input;
         self
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
-    pub fn document_data_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_data_field_name = Some(input.into());
+    pub fn document_data_field_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_data_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document contents field in the Amazon Kendra index.</p>
     pub fn set_document_data_field_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.document_data_field_name = input;
         self
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
-    pub fn document_title_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_title_field_name = Some(input.into());
+    pub fn document_title_field_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_title_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ServiceNow field that is mapped to the index document title field.</p>
     pub fn set_document_title_field_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.document_title_field_name = input;
         self
@@ -170,13 +184,13 @@ impl ServiceNowServiceCatalogConfigurationBuilder {
     pub fn field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.field_mappings.unwrap_or_default();
         v.push(input);
-        self.field_mappings = Some(v);
+        self.field_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Maps attributes or field names of catalogs to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The ServiceNow data source field names must exist in your ServiceNow custom metadata.</p>
     pub fn set_field_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     ) -> Self {
         self.field_mappings = input;
         self

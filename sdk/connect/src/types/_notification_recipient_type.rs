@@ -2,26 +2,28 @@
 
 /// <p>The type of notification recipient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationRecipientType {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
     #[doc(hidden)]
-    pub user_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub user_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A list of user IDs.</p>
     #[doc(hidden)]
-    pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NotificationRecipientType {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
     pub fn user_tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.user_tags.as_ref()
     }
     /// <p>A list of user IDs.</p>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.user_ids.as_deref()
     }
 }
@@ -34,11 +36,14 @@ impl NotificationRecipientType {
 
 /// A builder for [`NotificationRecipientType`](crate::types::NotificationRecipientType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationRecipientTypeBuilder {
-    pub(crate) user_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) user_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NotificationRecipientTypeBuilder {
     /// Adds a key-value pair to `user_tags`.
@@ -48,19 +53,19 @@ impl NotificationRecipientTypeBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
     pub fn user_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.user_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.user_tags = Some(hash_map);
+        self.user_tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
     pub fn set_user_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.user_tags = input;
@@ -71,16 +76,16 @@ impl NotificationRecipientTypeBuilder {
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
     ///
     /// <p>A list of user IDs.</p>
-    pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
         v.push(input.into());
-        self.user_ids = Some(v);
+        self.user_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of user IDs.</p>
     pub fn set_user_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.user_ids = input;
         self

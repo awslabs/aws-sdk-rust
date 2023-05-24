@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWorkspaceSnapshots`](crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
+    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
     /// - On success, responds with [`DescribeWorkspaceSnapshotsOutput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput) with field(s):
     ///   - [`rebuild_snapshots(Option<Vec<Snapshot>>)`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput::rebuild_snapshots): <p>Information about the snapshots that can be used to rebuild a WorkSpace. These snapshots include the user volume.</p>
     ///   - [`restore_snapshots(Option<Vec<Snapshot>>)`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput::restore_snapshots): <p>Information about the snapshots that can be used to restore a WorkSpace. These snapshots include both the root volume and the user volume.</p>

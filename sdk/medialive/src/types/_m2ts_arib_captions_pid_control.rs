@@ -38,13 +38,13 @@
 /// M2ts Arib Captions Pid Control
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsAribCaptionsPidControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsAribCaptionsPidControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsAribCaptionsPidControl {
+impl ::std::convert::From<&str> for M2tsAribCaptionsPidControl {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => M2tsAribCaptionsPidControl::Auto,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M2tsAribCaptionsPidControl {
         }
     }
 }
-impl std::str::FromStr for M2tsAribCaptionsPidControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsAribCaptionsPidControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsAribCaptionsPidControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsAribCaptionsPidControl::from(s))
     }
 }
 impl M2tsAribCaptionsPidControl {
@@ -86,7 +86,7 @@ impl M2tsAribCaptionsPidControl {
         &["AUTO", "USE_CONFIGURED"]
     }
 }
-impl AsRef<str> for M2tsAribCaptionsPidControl {
+impl ::std::convert::AsRef<str> for M2tsAribCaptionsPidControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

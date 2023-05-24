@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeviceConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum DeviceConnectionStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeviceConnectionStatus {
+impl ::std::convert::From<&str> for DeviceConnectionStatus {
     fn from(s: &str) -> Self {
         match s {
             "AWAITING_CREDENTIALS" => DeviceConnectionStatus::AwaitingCredentials,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for DeviceConnectionStatus {
         }
     }
 }
-impl std::str::FromStr for DeviceConnectionStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeviceConnectionStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceConnectionStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeviceConnectionStatus::from(s))
     }
 }
 impl DeviceConnectionStatus {
@@ -107,7 +107,7 @@ impl DeviceConnectionStatus {
         ]
     }
 }
-impl AsRef<str> for DeviceConnectionStatus {
+impl ::std::convert::AsRef<str> for DeviceConnectionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

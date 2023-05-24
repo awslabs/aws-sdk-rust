@@ -2,15 +2,15 @@
 
 /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseDestinationDetails {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
-    pub delivery_stream: std::option::Option<std::string::String>,
+    pub delivery_stream: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseDestinationDetails {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
-    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream(&self) -> ::std::option::Option<&str> {
         self.delivery_stream.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl KinesisFirehoseDestinationDetails {
 
 /// A builder for [`KinesisFirehoseDestinationDetails`](crate::types::KinesisFirehoseDestinationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisFirehoseDestinationDetailsBuilder {
-    pub(crate) delivery_stream: std::option::Option<std::string::String>,
+    pub(crate) delivery_stream: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseDestinationDetailsBuilder {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
-    pub fn delivery_stream(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delivery_stream = Some(input.into());
+    pub fn delivery_stream(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delivery_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
-    pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delivery_stream(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.delivery_stream = input;
         self
     }

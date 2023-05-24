@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MlModelType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum MlModelType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MlModelType {
+impl ::std::convert::From<&str> for MlModelType {
     fn from(s: &str) -> Self {
         match s {
             "BINARY" => MlModelType::Binary,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for MlModelType {
         }
     }
 }
-impl std::str::FromStr for MlModelType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MlModelType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MlModelType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MlModelType::from(s))
     }
 }
 impl MlModelType {
@@ -89,7 +89,7 @@ impl MlModelType {
         &["BINARY", "MULTICLASS", "REGRESSION"]
     }
 }
-impl AsRef<str> for MlModelType {
+impl ::std::convert::AsRef<str> for MlModelType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

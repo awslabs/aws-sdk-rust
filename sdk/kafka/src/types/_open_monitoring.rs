@@ -2,15 +2,15 @@
 
 /// <p>JMX and Node monitoring for the MSK cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenMonitoring {
     /// <p>Prometheus settings.</p>
     #[doc(hidden)]
-    pub prometheus: std::option::Option<crate::types::Prometheus>,
+    pub prometheus: ::std::option::Option<crate::types::Prometheus>,
 }
 impl OpenMonitoring {
     /// <p>Prometheus settings.</p>
-    pub fn prometheus(&self) -> std::option::Option<&crate::types::Prometheus> {
+    pub fn prometheus(&self) -> ::std::option::Option<&crate::types::Prometheus> {
         self.prometheus.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl OpenMonitoring {
 
 /// A builder for [`OpenMonitoring`](crate::types::OpenMonitoring).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpenMonitoringBuilder {
-    pub(crate) prometheus: std::option::Option<crate::types::Prometheus>,
+    pub(crate) prometheus: ::std::option::Option<crate::types::Prometheus>,
 }
 impl OpenMonitoringBuilder {
     /// <p>Prometheus settings.</p>
     pub fn prometheus(mut self, input: crate::types::Prometheus) -> Self {
-        self.prometheus = Some(input);
+        self.prometheus = ::std::option::Option::Some(input);
         self
     }
     /// <p>Prometheus settings.</p>
-    pub fn set_prometheus(mut self, input: std::option::Option<crate::types::Prometheus>) -> Self {
+    pub fn set_prometheus(
+        mut self,
+        input: ::std::option::Option<crate::types::Prometheus>,
+    ) -> Self {
         self.prometheus = input;
         self
     }

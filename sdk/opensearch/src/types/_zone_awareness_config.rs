@@ -2,15 +2,15 @@
 
 /// <p>The zone awareness configuration for an Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZoneAwarenessConfig {
     /// <p>If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use. Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be equal to number of subnets.</p>
     #[doc(hidden)]
-    pub availability_zone_count: std::option::Option<i32>,
+    pub availability_zone_count: ::std::option::Option<i32>,
 }
 impl ZoneAwarenessConfig {
     /// <p>If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use. Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be equal to number of subnets.</p>
-    pub fn availability_zone_count(&self) -> std::option::Option<i32> {
+    pub fn availability_zone_count(&self) -> ::std::option::Option<i32> {
         self.availability_zone_count
     }
 }
@@ -23,18 +23,20 @@ impl ZoneAwarenessConfig {
 
 /// A builder for [`ZoneAwarenessConfig`](crate::types::ZoneAwarenessConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ZoneAwarenessConfigBuilder {
-    pub(crate) availability_zone_count: std::option::Option<i32>,
+    pub(crate) availability_zone_count: ::std::option::Option<i32>,
 }
 impl ZoneAwarenessConfigBuilder {
     /// <p>If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use. Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be equal to number of subnets.</p>
     pub fn availability_zone_count(mut self, input: i32) -> Self {
-        self.availability_zone_count = Some(input);
+        self.availability_zone_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use. Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be equal to number of subnets.</p>
-    pub fn set_availability_zone_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_availability_zone_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.availability_zone_count = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Information about a failed create simulation job request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCreateSimulationJobRequest {
     /// <p>The simulation job request.</p>
     #[doc(hidden)]
-    pub request: std::option::Option<crate::types::SimulationJobRequest>,
+    pub request: ::std::option::Option<crate::types::SimulationJobRequest>,
     /// <p>The failure reason of the simulation job request.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The failure code.</p>
     #[doc(hidden)]
-    pub failure_code: std::option::Option<crate::types::SimulationJobErrorCode>,
+    pub failure_code: ::std::option::Option<crate::types::SimulationJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
     #[doc(hidden)]
-    pub failed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub failed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FailedCreateSimulationJobRequest {
     /// <p>The simulation job request.</p>
-    pub fn request(&self) -> std::option::Option<&crate::types::SimulationJobRequest> {
+    pub fn request(&self) -> ::std::option::Option<&crate::types::SimulationJobRequest> {
         self.request.as_ref()
     }
     /// <p>The failure reason of the simulation job request.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::SimulationJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::SimulationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
-    pub fn failed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn failed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.failed_at.as_ref()
     }
 }
@@ -44,57 +44,68 @@ impl FailedCreateSimulationJobRequest {
 
 /// A builder for [`FailedCreateSimulationJobRequest`](crate::types::FailedCreateSimulationJobRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedCreateSimulationJobRequestBuilder {
-    pub(crate) request: std::option::Option<crate::types::SimulationJobRequest>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
-    pub(crate) failure_code: std::option::Option<crate::types::SimulationJobErrorCode>,
-    pub(crate) failed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) request: ::std::option::Option<crate::types::SimulationJobRequest>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_code: ::std::option::Option<crate::types::SimulationJobErrorCode>,
+    pub(crate) failed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FailedCreateSimulationJobRequestBuilder {
     /// <p>The simulation job request.</p>
     pub fn request(mut self, input: crate::types::SimulationJobRequest) -> Self {
-        self.request = Some(input);
+        self.request = ::std::option::Option::Some(input);
         self
     }
     /// <p>The simulation job request.</p>
     pub fn set_request(
         mut self,
-        input: std::option::Option<crate::types::SimulationJobRequest>,
+        input: ::std::option::Option<crate::types::SimulationJobRequest>,
     ) -> Self {
         self.request = input;
         self
     }
     /// <p>The failure reason of the simulation job request.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason of the simulation job request.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: crate::types::SimulationJobErrorCode) -> Self {
-        self.failure_code = Some(input);
+        self.failure_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The failure code.</p>
     pub fn set_failure_code(
         mut self,
-        input: std::option::Option<crate::types::SimulationJobErrorCode>,
+        input: ::std::option::Option<crate::types::SimulationJobErrorCode>,
     ) -> Self {
         self.failure_code = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
-    pub fn failed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.failed_at = Some(input);
+    pub fn failed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.failed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch failed.</p>
-    pub fn set_failed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_failed_at(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.failed_at = input;
         self
     }

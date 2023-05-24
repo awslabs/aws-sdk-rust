@@ -2,15 +2,15 @@
 
 /// <p>A prefix list ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2SecurityGroupPrefixListId {
     /// <p>The ID of the prefix.</p>
     #[doc(hidden)]
-    pub prefix_list_id: std::option::Option<std::string::String>,
+    pub prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2SecurityGroupPrefixListId {
     /// <p>The ID of the prefix.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.prefix_list_id.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl AwsEc2SecurityGroupPrefixListId {
 
 /// A builder for [`AwsEc2SecurityGroupPrefixListId`](crate::types::AwsEc2SecurityGroupPrefixListId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2SecurityGroupPrefixListIdBuilder {
-    pub(crate) prefix_list_id: std::option::Option<std::string::String>,
+    pub(crate) prefix_list_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2SecurityGroupPrefixListIdBuilder {
     /// <p>The ID of the prefix.</p>
-    pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix_list_id = Some(input.into());
+    pub fn prefix_list_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the prefix.</p>
-    pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix_list_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.prefix_list_id = input;
         self
     }

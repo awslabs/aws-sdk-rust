@@ -2,22 +2,24 @@
 
 /// <p>Describes the encryption for a destination in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
     #[doc(hidden)]
-    pub no_encryption_config: std::option::Option<crate::types::NoEncryptionConfig>,
+    pub no_encryption_config: ::std::option::Option<crate::types::NoEncryptionConfig>,
     /// <p>The encryption key.</p>
     #[doc(hidden)]
-    pub kms_encryption_config: std::option::Option<crate::types::KmsEncryptionConfig>,
+    pub kms_encryption_config: ::std::option::Option<crate::types::KmsEncryptionConfig>,
 }
 impl EncryptionConfiguration {
     /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
-    pub fn no_encryption_config(&self) -> std::option::Option<&crate::types::NoEncryptionConfig> {
+    pub fn no_encryption_config(&self) -> ::std::option::Option<&crate::types::NoEncryptionConfig> {
         self.no_encryption_config.as_ref()
     }
     /// <p>The encryption key.</p>
-    pub fn kms_encryption_config(&self) -> std::option::Option<&crate::types::KmsEncryptionConfig> {
+    pub fn kms_encryption_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::KmsEncryptionConfig> {
         self.kms_encryption_config.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl EncryptionConfiguration {
 
 /// A builder for [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EncryptionConfigurationBuilder {
-    pub(crate) no_encryption_config: std::option::Option<crate::types::NoEncryptionConfig>,
-    pub(crate) kms_encryption_config: std::option::Option<crate::types::KmsEncryptionConfig>,
+    pub(crate) no_encryption_config: ::std::option::Option<crate::types::NoEncryptionConfig>,
+    pub(crate) kms_encryption_config: ::std::option::Option<crate::types::KmsEncryptionConfig>,
 }
 impl EncryptionConfigurationBuilder {
     /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
     pub fn no_encryption_config(mut self, input: crate::types::NoEncryptionConfig) -> Self {
-        self.no_encryption_config = Some(input);
+        self.no_encryption_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifically override existing encryption information to ensure that no encryption is used.</p>
     pub fn set_no_encryption_config(
         mut self,
-        input: std::option::Option<crate::types::NoEncryptionConfig>,
+        input: ::std::option::Option<crate::types::NoEncryptionConfig>,
     ) -> Self {
         self.no_encryption_config = input;
         self
     }
     /// <p>The encryption key.</p>
     pub fn kms_encryption_config(mut self, input: crate::types::KmsEncryptionConfig) -> Self {
-        self.kms_encryption_config = Some(input);
+        self.kms_encryption_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption key.</p>
     pub fn set_kms_encryption_config(
         mut self,
-        input: std::option::Option<crate::types::KmsEncryptionConfig>,
+        input: ::std::option::Option<crate::types::KmsEncryptionConfig>,
     ) -> Self {
         self.kms_encryption_config = input;
         self

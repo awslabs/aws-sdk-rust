@@ -2,20 +2,20 @@
 
 /// <p>Contains the output for DescribeReservedInstances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOutput {
     /// <p>A list of Reserved Instances.</p>
     #[doc(hidden)]
-    pub reserved_instances: std::option::Option<std::vec::Vec<crate::types::ReservedInstances>>,
+    pub reserved_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesOutput {
     /// <p>A list of Reserved Instances.</p>
-    pub fn reserved_instances(&self) -> std::option::Option<&[crate::types::ReservedInstances]> {
+    pub fn reserved_instances(&self) -> ::std::option::Option<&[crate::types::ReservedInstances]> {
         self.reserved_instances.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedInstancesOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,10 +29,12 @@ impl DescribeReservedInstancesOutput {
 
 /// A builder for [`DescribeReservedInstancesOutput`](crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedInstancesOutputBuilder {
     pub(crate) reserved_instances:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstances>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeReservedInstancesOutputBuilder {
     pub fn reserved_instances(mut self, input: crate::types::ReservedInstances) -> Self {
         let mut v = self.reserved_instances.unwrap_or_default();
         v.push(input);
-        self.reserved_instances = Some(v);
+        self.reserved_instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Reserved Instances.</p>
     pub fn set_reserved_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedInstances>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstances>>,
     ) -> Self {
         self.reserved_instances = input;
         self

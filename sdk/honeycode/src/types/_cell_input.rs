@@ -4,27 +4,27 @@
 /// <p> CellInput object has only a facts field or a fact field, but not both. A 400 bad request will be thrown if both fact and facts field are present. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CellInput {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
     #[doc(hidden)]
-    pub fact: std::option::Option<std::string::String>,
+    pub fact: ::std::option::Option<::std::string::String>,
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
     #[doc(hidden)]
-    pub facts: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub facts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CellInput {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
-    pub fn fact(&self) -> std::option::Option<&str> {
+    pub fn fact(&self) -> ::std::option::Option<&str> {
         self.fact.as_deref()
     }
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
-    pub fn facts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn facts(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.facts.as_deref()
     }
 }
-impl std::fmt::Debug for CellInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CellInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CellInput");
         formatter.field("fact", &"*** Sensitive Data Redacted ***");
         formatter.field("facts", &self.facts);
@@ -40,19 +40,19 @@ impl CellInput {
 
 /// A builder for [`CellInput`](crate::types::CellInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CellInputBuilder {
-    pub(crate) fact: std::option::Option<std::string::String>,
-    pub(crate) facts: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) fact: ::std::option::Option<::std::string::String>,
+    pub(crate) facts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CellInputBuilder {
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
-    pub fn fact(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fact = Some(input.into());
+    pub fn fact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fact = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Fact represents the data that is entered into a cell. This data can be free text or a formula. Formulas need to start with the equals (=) sign. </p>
-    pub fn set_fact(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fact = input;
         self
     }
@@ -61,16 +61,16 @@ impl CellInputBuilder {
     /// To override the contents of this collection use [`set_facts`](Self::set_facts).
     ///
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
-    pub fn facts(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn facts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.facts.unwrap_or_default();
         v.push(input.into());
-        self.facts = Some(v);
+        self.facts = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list representing the values that are entered into a ROWSET cell. Facts list can have either only values or rowIDs, and rowIDs should from the same table. </p>
     pub fn set_facts(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.facts = input;
         self
@@ -83,8 +83,8 @@ impl CellInputBuilder {
         }
     }
 }
-impl std::fmt::Debug for CellInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CellInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CellInputBuilder");
         formatter.field("fact", &"*** Sensitive Data Redacted ***");
         formatter.field("facts", &self.facts);

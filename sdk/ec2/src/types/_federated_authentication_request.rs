@@ -2,22 +2,22 @@
 
 /// <p>The IAM SAML identity provider used for federated authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FederatedAuthenticationRequest {
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
     #[doc(hidden)]
-    pub saml_provider_arn: std::option::Option<std::string::String>,
+    pub saml_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.</p>
     #[doc(hidden)]
-    pub self_service_saml_provider_arn: std::option::Option<std::string::String>,
+    pub self_service_saml_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl FederatedAuthenticationRequest {
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-    pub fn saml_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn saml_provider_arn(&self) -> ::std::option::Option<&str> {
         self.saml_provider_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.</p>
-    pub fn self_service_saml_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn self_service_saml_provider_arn(&self) -> ::std::option::Option<&str> {
         self.self_service_saml_provider_arn.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl FederatedAuthenticationRequest {
 
 /// A builder for [`FederatedAuthenticationRequest`](crate::types::FederatedAuthenticationRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FederatedAuthenticationRequestBuilder {
-    pub(crate) saml_provider_arn: std::option::Option<std::string::String>,
-    pub(crate) self_service_saml_provider_arn: std::option::Option<std::string::String>,
+    pub(crate) saml_provider_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) self_service_saml_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl FederatedAuthenticationRequestBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
-    pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.saml_provider_arn = Some(input.into());
+    pub fn saml_provider_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.saml_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider.</p>
     pub fn set_saml_provider_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.saml_provider_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.</p>
-    pub fn self_service_saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.self_service_saml_provider_arn = Some(input.into());
+    pub fn self_service_saml_provider_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.self_service_saml_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.</p>
     pub fn set_self_service_saml_provider_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.self_service_saml_provider_arn = input;
         self

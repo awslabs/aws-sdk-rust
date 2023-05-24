@@ -2,511 +2,525 @@
 
 /// <p> <code>CodeGenConfigurationNode</code> enumerates all valid Node types. One and only one of its member variables can be populated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
     #[doc(hidden)]
-    pub athena_connector_source: std::option::Option<crate::types::AthenaConnectorSource>,
+    pub athena_connector_source: ::std::option::Option<crate::types::AthenaConnectorSource>,
     /// <p>Specifies a connector to a JDBC data source.</p>
     #[doc(hidden)]
-    pub jdbc_connector_source: std::option::Option<crate::types::JdbcConnectorSource>,
+    pub jdbc_connector_source: ::std::option::Option<crate::types::JdbcConnectorSource>,
     /// <p>Specifies a connector to an Apache Spark data source.</p>
     #[doc(hidden)]
-    pub spark_connector_source: std::option::Option<crate::types::SparkConnectorSource>,
+    pub spark_connector_source: ::std::option::Option<crate::types::SparkConnectorSource>,
     /// <p>Specifies a data store in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub catalog_source: std::option::Option<crate::types::CatalogSource>,
+    pub catalog_source: ::std::option::Option<crate::types::CatalogSource>,
     /// <p>Specifies an Amazon Redshift data store.</p>
     #[doc(hidden)]
-    pub redshift_source: std::option::Option<crate::types::RedshiftSource>,
+    pub redshift_source: ::std::option::Option<crate::types::RedshiftSource>,
     /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub s3_catalog_source: std::option::Option<crate::types::S3CatalogSource>,
+    pub s3_catalog_source: ::std::option::Option<crate::types::S3CatalogSource>,
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_csv_source: std::option::Option<crate::types::S3CsvSource>,
+    pub s3_csv_source: ::std::option::Option<crate::types::S3CsvSource>,
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_json_source: std::option::Option<crate::types::S3JsonSource>,
+    pub s3_json_source: ::std::option::Option<crate::types::S3JsonSource>,
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_parquet_source: std::option::Option<crate::types::S3ParquetSource>,
+    pub s3_parquet_source: ::std::option::Option<crate::types::S3ParquetSource>,
     /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub relational_catalog_source: std::option::Option<crate::types::RelationalCatalogSource>,
+    pub relational_catalog_source: ::std::option::Option<crate::types::RelationalCatalogSource>,
     /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub dynamo_db_catalog_source: std::option::Option<crate::types::DynamoDbCatalogSource>,
+    pub dynamo_db_catalog_source: ::std::option::Option<crate::types::DynamoDbCatalogSource>,
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     #[doc(hidden)]
-    pub jdbc_connector_target: std::option::Option<crate::types::JdbcConnectorTarget>,
+    pub jdbc_connector_target: ::std::option::Option<crate::types::JdbcConnectorTarget>,
     /// <p>Specifies a target that uses an Apache Spark connector.</p>
     #[doc(hidden)]
-    pub spark_connector_target: std::option::Option<crate::types::SparkConnectorTarget>,
+    pub spark_connector_target: ::std::option::Option<crate::types::SparkConnectorTarget>,
     /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
     #[doc(hidden)]
-    pub catalog_target: std::option::Option<crate::types::BasicCatalogTarget>,
+    pub catalog_target: ::std::option::Option<crate::types::BasicCatalogTarget>,
     /// <p>Specifies a target that uses Amazon Redshift.</p>
     #[doc(hidden)]
-    pub redshift_target: std::option::Option<crate::types::RedshiftTarget>,
+    pub redshift_target: ::std::option::Option<crate::types::RedshiftTarget>,
     /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub s3_catalog_target: std::option::Option<crate::types::S3CatalogTarget>,
+    pub s3_catalog_target: ::std::option::Option<crate::types::S3CatalogTarget>,
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     #[doc(hidden)]
-    pub s3_glue_parquet_target: std::option::Option<crate::types::S3GlueParquetTarget>,
+    pub s3_glue_parquet_target: ::std::option::Option<crate::types::S3GlueParquetTarget>,
     /// <p>Specifies a data target that writes to Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_direct_target: std::option::Option<crate::types::S3DirectTarget>,
+    pub s3_direct_target: ::std::option::Option<crate::types::S3DirectTarget>,
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
     #[doc(hidden)]
-    pub apply_mapping: std::option::Option<crate::types::ApplyMapping>,
+    pub apply_mapping: ::std::option::Option<crate::types::ApplyMapping>,
     /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
     #[doc(hidden)]
-    pub select_fields: std::option::Option<crate::types::SelectFields>,
+    pub select_fields: ::std::option::Option<crate::types::SelectFields>,
     /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
     #[doc(hidden)]
-    pub drop_fields: std::option::Option<crate::types::DropFields>,
+    pub drop_fields: ::std::option::Option<crate::types::DropFields>,
     /// <p>Specifies a transform that renames a single data property key.</p>
     #[doc(hidden)]
-    pub rename_field: std::option::Option<crate::types::RenameField>,
+    pub rename_field: ::std::option::Option<crate::types::RenameField>,
     /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub spigot: std::option::Option<crate::types::Spigot>,
+    pub spigot: ::std::option::Option<crate::types::Spigot>,
     /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
     #[doc(hidden)]
-    pub join: std::option::Option<crate::types::Join>,
+    pub join: ::std::option::Option<crate::types::Join>,
     /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
     #[doc(hidden)]
-    pub split_fields: std::option::Option<crate::types::SplitFields>,
+    pub split_fields: ::std::option::Option<crate::types::SplitFields>,
     /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
     #[doc(hidden)]
-    pub select_from_collection: std::option::Option<crate::types::SelectFromCollection>,
+    pub select_from_collection: ::std::option::Option<crate::types::SelectFromCollection>,
     /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
     #[doc(hidden)]
-    pub fill_missing_values: std::option::Option<crate::types::FillMissingValues>,
+    pub fill_missing_values: ::std::option::Option<crate::types::FillMissingValues>,
     /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
     #[doc(hidden)]
-    pub filter: std::option::Option<crate::types::Filter>,
+    pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
     #[doc(hidden)]
-    pub custom_code: std::option::Option<crate::types::CustomCode>,
+    pub custom_code: ::std::option::Option<crate::types::CustomCode>,
     /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
     #[doc(hidden)]
-    pub spark_sql: std::option::Option<crate::types::SparkSql>,
+    pub spark_sql: ::std::option::Option<crate::types::SparkSql>,
     /// <p>Specifies a direct Amazon Kinesis data source.</p>
     #[doc(hidden)]
-    pub direct_kinesis_source: std::option::Option<crate::types::DirectKinesisSource>,
+    pub direct_kinesis_source: ::std::option::Option<crate::types::DirectKinesisSource>,
     /// <p>Specifies an Apache Kafka data store.</p>
     #[doc(hidden)]
-    pub direct_kafka_source: std::option::Option<crate::types::DirectKafkaSource>,
+    pub direct_kafka_source: ::std::option::Option<crate::types::DirectKafkaSource>,
     /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub catalog_kinesis_source: std::option::Option<crate::types::CatalogKinesisSource>,
+    pub catalog_kinesis_source: ::std::option::Option<crate::types::CatalogKinesisSource>,
     /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
     #[doc(hidden)]
-    pub catalog_kafka_source: std::option::Option<crate::types::CatalogKafkaSource>,
+    pub catalog_kafka_source: ::std::option::Option<crate::types::CatalogKafkaSource>,
     /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
     #[doc(hidden)]
-    pub drop_null_fields: std::option::Option<crate::types::DropNullFields>,
+    pub drop_null_fields: ::std::option::Option<crate::types::DropNullFields>,
     /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
     #[doc(hidden)]
-    pub merge: std::option::Option<crate::types::Merge>,
+    pub merge: ::std::option::Option<crate::types::Merge>,
     /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
     #[doc(hidden)]
-    pub union: std::option::Option<crate::types::Union>,
+    pub union: ::std::option::Option<crate::types::Union>,
     /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
     #[doc(hidden)]
-    pub pii_detection: std::option::Option<crate::types::PiiDetection>,
+    pub pii_detection: ::std::option::Option<crate::types::PiiDetection>,
     /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
     #[doc(hidden)]
-    pub aggregate: std::option::Option<crate::types::Aggregate>,
+    pub aggregate: ::std::option::Option<crate::types::Aggregate>,
     /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
     #[doc(hidden)]
-    pub drop_duplicates: std::option::Option<crate::types::DropDuplicates>,
+    pub drop_duplicates: ::std::option::Option<crate::types::DropDuplicates>,
     /// <p>Specifies a data target that writes to a goverened catalog.</p>
     #[doc(hidden)]
-    pub governed_catalog_target: std::option::Option<crate::types::GovernedCatalogTarget>,
+    pub governed_catalog_target: ::std::option::Option<crate::types::GovernedCatalogTarget>,
     /// <p>Specifies a data source in a goverened Data Catalog.</p>
     #[doc(hidden)]
-    pub governed_catalog_source: std::option::Option<crate::types::GovernedCatalogSource>,
+    pub governed_catalog_source: ::std::option::Option<crate::types::GovernedCatalogSource>,
     /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
     #[doc(hidden)]
     pub microsoft_sql_server_catalog_source:
-        std::option::Option<crate::types::MicrosoftSqlServerCatalogSource>,
+        ::std::option::Option<crate::types::MicrosoftSqlServerCatalogSource>,
     /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub my_sql_catalog_source: std::option::Option<crate::types::MySqlCatalogSource>,
+    pub my_sql_catalog_source: ::std::option::Option<crate::types::MySqlCatalogSource>,
     /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub oracle_sql_catalog_source: std::option::Option<crate::types::OracleSqlCatalogSource>,
+    pub oracle_sql_catalog_source: ::std::option::Option<crate::types::OracleSqlCatalogSource>,
     /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub postgre_sql_catalog_source: std::option::Option<crate::types::PostgreSqlCatalogSource>,
+    pub postgre_sql_catalog_source: ::std::option::Option<crate::types::PostgreSqlCatalogSource>,
     /// <p>Specifies a target that uses Microsoft SQL.</p>
     #[doc(hidden)]
     pub microsoft_sql_server_catalog_target:
-        std::option::Option<crate::types::MicrosoftSqlServerCatalogTarget>,
+        ::std::option::Option<crate::types::MicrosoftSqlServerCatalogTarget>,
     /// <p>Specifies a target that uses MySQL.</p>
     #[doc(hidden)]
-    pub my_sql_catalog_target: std::option::Option<crate::types::MySqlCatalogTarget>,
+    pub my_sql_catalog_target: ::std::option::Option<crate::types::MySqlCatalogTarget>,
     /// <p>Specifies a target that uses Oracle SQL.</p>
     #[doc(hidden)]
-    pub oracle_sql_catalog_target: std::option::Option<crate::types::OracleSqlCatalogTarget>,
+    pub oracle_sql_catalog_target: ::std::option::Option<crate::types::OracleSqlCatalogTarget>,
     /// <p>Specifies a target that uses Postgres SQL.</p>
     #[doc(hidden)]
-    pub postgre_sql_catalog_target: std::option::Option<crate::types::PostgreSqlCatalogTarget>,
+    pub postgre_sql_catalog_target: ::std::option::Option<crate::types::PostgreSqlCatalogTarget>,
     /// <p>Specifies a custom visual transform created by a user.</p>
     #[doc(hidden)]
-    pub dynamic_transform: std::option::Option<crate::types::DynamicTransform>,
+    pub dynamic_transform: ::std::option::Option<crate::types::DynamicTransform>,
     /// <p>Specifies your data quality evaluation criteria.</p>
     #[doc(hidden)]
-    pub evaluate_data_quality: std::option::Option<crate::types::EvaluateDataQuality>,
+    pub evaluate_data_quality: ::std::option::Option<crate::types::EvaluateDataQuality>,
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_catalog_hudi_source: std::option::Option<crate::types::S3CatalogHudiSource>,
+    pub s3_catalog_hudi_source: ::std::option::Option<crate::types::S3CatalogHudiSource>,
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub catalog_hudi_source: std::option::Option<crate::types::CatalogHudiSource>,
+    pub catalog_hudi_source: ::std::option::Option<crate::types::CatalogHudiSource>,
     /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_hudi_source: std::option::Option<crate::types::S3HudiSource>,
+    pub s3_hudi_source: ::std::option::Option<crate::types::S3HudiSource>,
     /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub s3_hudi_catalog_target: std::option::Option<crate::types::S3HudiCatalogTarget>,
+    pub s3_hudi_catalog_target: ::std::option::Option<crate::types::S3HudiCatalogTarget>,
     /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_hudi_direct_target: std::option::Option<crate::types::S3HudiDirectTarget>,
+    pub s3_hudi_direct_target: ::std::option::Option<crate::types::S3HudiDirectTarget>,
     /// <p>Specifies the direct JDBC source connection.</p>
     #[doc(hidden)]
-    pub direct_jdbc_source: std::option::Option<crate::types::DirectJdbcSource>,
+    pub direct_jdbc_source: ::std::option::Option<crate::types::DirectJdbcSource>,
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_catalog_delta_source: std::option::Option<crate::types::S3CatalogDeltaSource>,
+    pub s3_catalog_delta_source: ::std::option::Option<crate::types::S3CatalogDeltaSource>,
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub catalog_delta_source: std::option::Option<crate::types::CatalogDeltaSource>,
+    pub catalog_delta_source: ::std::option::Option<crate::types::CatalogDeltaSource>,
     /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_delta_source: std::option::Option<crate::types::S3DeltaSource>,
+    pub s3_delta_source: ::std::option::Option<crate::types::S3DeltaSource>,
     /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub s3_delta_catalog_target: std::option::Option<crate::types::S3DeltaCatalogTarget>,
+    pub s3_delta_catalog_target: ::std::option::Option<crate::types::S3DeltaCatalogTarget>,
     /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_delta_direct_target: std::option::Option<crate::types::S3DeltaDirectTarget>,
+    pub s3_delta_direct_target: ::std::option::Option<crate::types::S3DeltaDirectTarget>,
     /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
     #[doc(hidden)]
-    pub amazon_redshift_source: std::option::Option<crate::types::AmazonRedshiftSource>,
+    pub amazon_redshift_source: ::std::option::Option<crate::types::AmazonRedshiftSource>,
     /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
     #[doc(hidden)]
-    pub amazon_redshift_target: std::option::Option<crate::types::AmazonRedshiftTarget>,
+    pub amazon_redshift_target: ::std::option::Option<crate::types::AmazonRedshiftTarget>,
 }
 impl CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
     pub fn athena_connector_source(
         &self,
-    ) -> std::option::Option<&crate::types::AthenaConnectorSource> {
+    ) -> ::std::option::Option<&crate::types::AthenaConnectorSource> {
         self.athena_connector_source.as_ref()
     }
     /// <p>Specifies a connector to a JDBC data source.</p>
-    pub fn jdbc_connector_source(&self) -> std::option::Option<&crate::types::JdbcConnectorSource> {
+    pub fn jdbc_connector_source(
+        &self,
+    ) -> ::std::option::Option<&crate::types::JdbcConnectorSource> {
         self.jdbc_connector_source.as_ref()
     }
     /// <p>Specifies a connector to an Apache Spark data source.</p>
     pub fn spark_connector_source(
         &self,
-    ) -> std::option::Option<&crate::types::SparkConnectorSource> {
+    ) -> ::std::option::Option<&crate::types::SparkConnectorSource> {
         self.spark_connector_source.as_ref()
     }
     /// <p>Specifies a data store in the Glue Data Catalog.</p>
-    pub fn catalog_source(&self) -> std::option::Option<&crate::types::CatalogSource> {
+    pub fn catalog_source(&self) -> ::std::option::Option<&crate::types::CatalogSource> {
         self.catalog_source.as_ref()
     }
     /// <p>Specifies an Amazon Redshift data store.</p>
-    pub fn redshift_source(&self) -> std::option::Option<&crate::types::RedshiftSource> {
+    pub fn redshift_source(&self) -> ::std::option::Option<&crate::types::RedshiftSource> {
         self.redshift_source.as_ref()
     }
     /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
-    pub fn s3_catalog_source(&self) -> std::option::Option<&crate::types::S3CatalogSource> {
+    pub fn s3_catalog_source(&self) -> ::std::option::Option<&crate::types::S3CatalogSource> {
         self.s3_catalog_source.as_ref()
     }
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
-    pub fn s3_csv_source(&self) -> std::option::Option<&crate::types::S3CsvSource> {
+    pub fn s3_csv_source(&self) -> ::std::option::Option<&crate::types::S3CsvSource> {
         self.s3_csv_source.as_ref()
     }
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
-    pub fn s3_json_source(&self) -> std::option::Option<&crate::types::S3JsonSource> {
+    pub fn s3_json_source(&self) -> ::std::option::Option<&crate::types::S3JsonSource> {
         self.s3_json_source.as_ref()
     }
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
-    pub fn s3_parquet_source(&self) -> std::option::Option<&crate::types::S3ParquetSource> {
+    pub fn s3_parquet_source(&self) -> ::std::option::Option<&crate::types::S3ParquetSource> {
         self.s3_parquet_source.as_ref()
     }
     /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
     pub fn relational_catalog_source(
         &self,
-    ) -> std::option::Option<&crate::types::RelationalCatalogSource> {
+    ) -> ::std::option::Option<&crate::types::RelationalCatalogSource> {
         self.relational_catalog_source.as_ref()
     }
     /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     pub fn dynamo_db_catalog_source(
         &self,
-    ) -> std::option::Option<&crate::types::DynamoDbCatalogSource> {
+    ) -> ::std::option::Option<&crate::types::DynamoDbCatalogSource> {
         self.dynamo_db_catalog_source.as_ref()
     }
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
-    pub fn jdbc_connector_target(&self) -> std::option::Option<&crate::types::JdbcConnectorTarget> {
+    pub fn jdbc_connector_target(
+        &self,
+    ) -> ::std::option::Option<&crate::types::JdbcConnectorTarget> {
         self.jdbc_connector_target.as_ref()
     }
     /// <p>Specifies a target that uses an Apache Spark connector.</p>
     pub fn spark_connector_target(
         &self,
-    ) -> std::option::Option<&crate::types::SparkConnectorTarget> {
+    ) -> ::std::option::Option<&crate::types::SparkConnectorTarget> {
         self.spark_connector_target.as_ref()
     }
     /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
-    pub fn catalog_target(&self) -> std::option::Option<&crate::types::BasicCatalogTarget> {
+    pub fn catalog_target(&self) -> ::std::option::Option<&crate::types::BasicCatalogTarget> {
         self.catalog_target.as_ref()
     }
     /// <p>Specifies a target that uses Amazon Redshift.</p>
-    pub fn redshift_target(&self) -> std::option::Option<&crate::types::RedshiftTarget> {
+    pub fn redshift_target(&self) -> ::std::option::Option<&crate::types::RedshiftTarget> {
         self.redshift_target.as_ref()
     }
     /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
-    pub fn s3_catalog_target(&self) -> std::option::Option<&crate::types::S3CatalogTarget> {
+    pub fn s3_catalog_target(&self) -> ::std::option::Option<&crate::types::S3CatalogTarget> {
         self.s3_catalog_target.as_ref()
     }
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     pub fn s3_glue_parquet_target(
         &self,
-    ) -> std::option::Option<&crate::types::S3GlueParquetTarget> {
+    ) -> ::std::option::Option<&crate::types::S3GlueParquetTarget> {
         self.s3_glue_parquet_target.as_ref()
     }
     /// <p>Specifies a data target that writes to Amazon S3.</p>
-    pub fn s3_direct_target(&self) -> std::option::Option<&crate::types::S3DirectTarget> {
+    pub fn s3_direct_target(&self) -> ::std::option::Option<&crate::types::S3DirectTarget> {
         self.s3_direct_target.as_ref()
     }
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
-    pub fn apply_mapping(&self) -> std::option::Option<&crate::types::ApplyMapping> {
+    pub fn apply_mapping(&self) -> ::std::option::Option<&crate::types::ApplyMapping> {
         self.apply_mapping.as_ref()
     }
     /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
-    pub fn select_fields(&self) -> std::option::Option<&crate::types::SelectFields> {
+    pub fn select_fields(&self) -> ::std::option::Option<&crate::types::SelectFields> {
         self.select_fields.as_ref()
     }
     /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
-    pub fn drop_fields(&self) -> std::option::Option<&crate::types::DropFields> {
+    pub fn drop_fields(&self) -> ::std::option::Option<&crate::types::DropFields> {
         self.drop_fields.as_ref()
     }
     /// <p>Specifies a transform that renames a single data property key.</p>
-    pub fn rename_field(&self) -> std::option::Option<&crate::types::RenameField> {
+    pub fn rename_field(&self) -> ::std::option::Option<&crate::types::RenameField> {
         self.rename_field.as_ref()
     }
     /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
-    pub fn spigot(&self) -> std::option::Option<&crate::types::Spigot> {
+    pub fn spigot(&self) -> ::std::option::Option<&crate::types::Spigot> {
         self.spigot.as_ref()
     }
     /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
-    pub fn join(&self) -> std::option::Option<&crate::types::Join> {
+    pub fn join(&self) -> ::std::option::Option<&crate::types::Join> {
         self.join.as_ref()
     }
     /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
-    pub fn split_fields(&self) -> std::option::Option<&crate::types::SplitFields> {
+    pub fn split_fields(&self) -> ::std::option::Option<&crate::types::SplitFields> {
         self.split_fields.as_ref()
     }
     /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
     pub fn select_from_collection(
         &self,
-    ) -> std::option::Option<&crate::types::SelectFromCollection> {
+    ) -> ::std::option::Option<&crate::types::SelectFromCollection> {
         self.select_from_collection.as_ref()
     }
     /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
-    pub fn fill_missing_values(&self) -> std::option::Option<&crate::types::FillMissingValues> {
+    pub fn fill_missing_values(&self) -> ::std::option::Option<&crate::types::FillMissingValues> {
         self.fill_missing_values.as_ref()
     }
     /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::Filter> {
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
         self.filter.as_ref()
     }
     /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
-    pub fn custom_code(&self) -> std::option::Option<&crate::types::CustomCode> {
+    pub fn custom_code(&self) -> ::std::option::Option<&crate::types::CustomCode> {
         self.custom_code.as_ref()
     }
     /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
-    pub fn spark_sql(&self) -> std::option::Option<&crate::types::SparkSql> {
+    pub fn spark_sql(&self) -> ::std::option::Option<&crate::types::SparkSql> {
         self.spark_sql.as_ref()
     }
     /// <p>Specifies a direct Amazon Kinesis data source.</p>
-    pub fn direct_kinesis_source(&self) -> std::option::Option<&crate::types::DirectKinesisSource> {
+    pub fn direct_kinesis_source(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DirectKinesisSource> {
         self.direct_kinesis_source.as_ref()
     }
     /// <p>Specifies an Apache Kafka data store.</p>
-    pub fn direct_kafka_source(&self) -> std::option::Option<&crate::types::DirectKafkaSource> {
+    pub fn direct_kafka_source(&self) -> ::std::option::Option<&crate::types::DirectKafkaSource> {
         self.direct_kafka_source.as_ref()
     }
     /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
     pub fn catalog_kinesis_source(
         &self,
-    ) -> std::option::Option<&crate::types::CatalogKinesisSource> {
+    ) -> ::std::option::Option<&crate::types::CatalogKinesisSource> {
         self.catalog_kinesis_source.as_ref()
     }
     /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
-    pub fn catalog_kafka_source(&self) -> std::option::Option<&crate::types::CatalogKafkaSource> {
+    pub fn catalog_kafka_source(&self) -> ::std::option::Option<&crate::types::CatalogKafkaSource> {
         self.catalog_kafka_source.as_ref()
     }
     /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
-    pub fn drop_null_fields(&self) -> std::option::Option<&crate::types::DropNullFields> {
+    pub fn drop_null_fields(&self) -> ::std::option::Option<&crate::types::DropNullFields> {
         self.drop_null_fields.as_ref()
     }
     /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
-    pub fn merge(&self) -> std::option::Option<&crate::types::Merge> {
+    pub fn merge(&self) -> ::std::option::Option<&crate::types::Merge> {
         self.merge.as_ref()
     }
     /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
-    pub fn union(&self) -> std::option::Option<&crate::types::Union> {
+    pub fn union(&self) -> ::std::option::Option<&crate::types::Union> {
         self.union.as_ref()
     }
     /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
-    pub fn pii_detection(&self) -> std::option::Option<&crate::types::PiiDetection> {
+    pub fn pii_detection(&self) -> ::std::option::Option<&crate::types::PiiDetection> {
         self.pii_detection.as_ref()
     }
     /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
-    pub fn aggregate(&self) -> std::option::Option<&crate::types::Aggregate> {
+    pub fn aggregate(&self) -> ::std::option::Option<&crate::types::Aggregate> {
         self.aggregate.as_ref()
     }
     /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
-    pub fn drop_duplicates(&self) -> std::option::Option<&crate::types::DropDuplicates> {
+    pub fn drop_duplicates(&self) -> ::std::option::Option<&crate::types::DropDuplicates> {
         self.drop_duplicates.as_ref()
     }
     /// <p>Specifies a data target that writes to a goverened catalog.</p>
     pub fn governed_catalog_target(
         &self,
-    ) -> std::option::Option<&crate::types::GovernedCatalogTarget> {
+    ) -> ::std::option::Option<&crate::types::GovernedCatalogTarget> {
         self.governed_catalog_target.as_ref()
     }
     /// <p>Specifies a data source in a goverened Data Catalog.</p>
     pub fn governed_catalog_source(
         &self,
-    ) -> std::option::Option<&crate::types::GovernedCatalogSource> {
+    ) -> ::std::option::Option<&crate::types::GovernedCatalogSource> {
         self.governed_catalog_source.as_ref()
     }
     /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
     pub fn microsoft_sql_server_catalog_source(
         &self,
-    ) -> std::option::Option<&crate::types::MicrosoftSqlServerCatalogSource> {
+    ) -> ::std::option::Option<&crate::types::MicrosoftSqlServerCatalogSource> {
         self.microsoft_sql_server_catalog_source.as_ref()
     }
     /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
-    pub fn my_sql_catalog_source(&self) -> std::option::Option<&crate::types::MySqlCatalogSource> {
+    pub fn my_sql_catalog_source(
+        &self,
+    ) -> ::std::option::Option<&crate::types::MySqlCatalogSource> {
         self.my_sql_catalog_source.as_ref()
     }
     /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
     pub fn oracle_sql_catalog_source(
         &self,
-    ) -> std::option::Option<&crate::types::OracleSqlCatalogSource> {
+    ) -> ::std::option::Option<&crate::types::OracleSqlCatalogSource> {
         self.oracle_sql_catalog_source.as_ref()
     }
     /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
     pub fn postgre_sql_catalog_source(
         &self,
-    ) -> std::option::Option<&crate::types::PostgreSqlCatalogSource> {
+    ) -> ::std::option::Option<&crate::types::PostgreSqlCatalogSource> {
         self.postgre_sql_catalog_source.as_ref()
     }
     /// <p>Specifies a target that uses Microsoft SQL.</p>
     pub fn microsoft_sql_server_catalog_target(
         &self,
-    ) -> std::option::Option<&crate::types::MicrosoftSqlServerCatalogTarget> {
+    ) -> ::std::option::Option<&crate::types::MicrosoftSqlServerCatalogTarget> {
         self.microsoft_sql_server_catalog_target.as_ref()
     }
     /// <p>Specifies a target that uses MySQL.</p>
-    pub fn my_sql_catalog_target(&self) -> std::option::Option<&crate::types::MySqlCatalogTarget> {
+    pub fn my_sql_catalog_target(
+        &self,
+    ) -> ::std::option::Option<&crate::types::MySqlCatalogTarget> {
         self.my_sql_catalog_target.as_ref()
     }
     /// <p>Specifies a target that uses Oracle SQL.</p>
     pub fn oracle_sql_catalog_target(
         &self,
-    ) -> std::option::Option<&crate::types::OracleSqlCatalogTarget> {
+    ) -> ::std::option::Option<&crate::types::OracleSqlCatalogTarget> {
         self.oracle_sql_catalog_target.as_ref()
     }
     /// <p>Specifies a target that uses Postgres SQL.</p>
     pub fn postgre_sql_catalog_target(
         &self,
-    ) -> std::option::Option<&crate::types::PostgreSqlCatalogTarget> {
+    ) -> ::std::option::Option<&crate::types::PostgreSqlCatalogTarget> {
         self.postgre_sql_catalog_target.as_ref()
     }
     /// <p>Specifies a custom visual transform created by a user.</p>
-    pub fn dynamic_transform(&self) -> std::option::Option<&crate::types::DynamicTransform> {
+    pub fn dynamic_transform(&self) -> ::std::option::Option<&crate::types::DynamicTransform> {
         self.dynamic_transform.as_ref()
     }
     /// <p>Specifies your data quality evaluation criteria.</p>
-    pub fn evaluate_data_quality(&self) -> std::option::Option<&crate::types::EvaluateDataQuality> {
+    pub fn evaluate_data_quality(
+        &self,
+    ) -> ::std::option::Option<&crate::types::EvaluateDataQuality> {
         self.evaluate_data_quality.as_ref()
     }
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn s3_catalog_hudi_source(
         &self,
-    ) -> std::option::Option<&crate::types::S3CatalogHudiSource> {
+    ) -> ::std::option::Option<&crate::types::S3CatalogHudiSource> {
         self.s3_catalog_hudi_source.as_ref()
     }
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
-    pub fn catalog_hudi_source(&self) -> std::option::Option<&crate::types::CatalogHudiSource> {
+    pub fn catalog_hudi_source(&self) -> ::std::option::Option<&crate::types::CatalogHudiSource> {
         self.catalog_hudi_source.as_ref()
     }
     /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
-    pub fn s3_hudi_source(&self) -> std::option::Option<&crate::types::S3HudiSource> {
+    pub fn s3_hudi_source(&self) -> ::std::option::Option<&crate::types::S3HudiSource> {
         self.s3_hudi_source.as_ref()
     }
     /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
     pub fn s3_hudi_catalog_target(
         &self,
-    ) -> std::option::Option<&crate::types::S3HudiCatalogTarget> {
+    ) -> ::std::option::Option<&crate::types::S3HudiCatalogTarget> {
         self.s3_hudi_catalog_target.as_ref()
     }
     /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
-    pub fn s3_hudi_direct_target(&self) -> std::option::Option<&crate::types::S3HudiDirectTarget> {
+    pub fn s3_hudi_direct_target(
+        &self,
+    ) -> ::std::option::Option<&crate::types::S3HudiDirectTarget> {
         self.s3_hudi_direct_target.as_ref()
     }
     /// <p>Specifies the direct JDBC source connection.</p>
-    pub fn direct_jdbc_source(&self) -> std::option::Option<&crate::types::DirectJdbcSource> {
+    pub fn direct_jdbc_source(&self) -> ::std::option::Option<&crate::types::DirectJdbcSource> {
         self.direct_jdbc_source.as_ref()
     }
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn s3_catalog_delta_source(
         &self,
-    ) -> std::option::Option<&crate::types::S3CatalogDeltaSource> {
+    ) -> ::std::option::Option<&crate::types::S3CatalogDeltaSource> {
         self.s3_catalog_delta_source.as_ref()
     }
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
-    pub fn catalog_delta_source(&self) -> std::option::Option<&crate::types::CatalogDeltaSource> {
+    pub fn catalog_delta_source(&self) -> ::std::option::Option<&crate::types::CatalogDeltaSource> {
         self.catalog_delta_source.as_ref()
     }
     /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
-    pub fn s3_delta_source(&self) -> std::option::Option<&crate::types::S3DeltaSource> {
+    pub fn s3_delta_source(&self) -> ::std::option::Option<&crate::types::S3DeltaSource> {
         self.s3_delta_source.as_ref()
     }
     /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
     pub fn s3_delta_catalog_target(
         &self,
-    ) -> std::option::Option<&crate::types::S3DeltaCatalogTarget> {
+    ) -> ::std::option::Option<&crate::types::S3DeltaCatalogTarget> {
         self.s3_delta_catalog_target.as_ref()
     }
     /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
     pub fn s3_delta_direct_target(
         &self,
-    ) -> std::option::Option<&crate::types::S3DeltaDirectTarget> {
+    ) -> ::std::option::Option<&crate::types::S3DeltaDirectTarget> {
         self.s3_delta_direct_target.as_ref()
     }
     /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
     pub fn amazon_redshift_source(
         &self,
-    ) -> std::option::Option<&crate::types::AmazonRedshiftSource> {
+    ) -> ::std::option::Option<&crate::types::AmazonRedshiftSource> {
         self.amazon_redshift_source.as_ref()
     }
     /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
     pub fn amazon_redshift_target(
         &self,
-    ) -> std::option::Option<&crate::types::AmazonRedshiftTarget> {
+    ) -> ::std::option::Option<&crate::types::AmazonRedshiftTarget> {
         self.amazon_redshift_target.as_ref()
     }
 }
@@ -519,193 +533,197 @@ impl CodeGenConfigurationNode {
 
 /// A builder for [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeGenConfigurationNodeBuilder {
-    pub(crate) athena_connector_source: std::option::Option<crate::types::AthenaConnectorSource>,
-    pub(crate) jdbc_connector_source: std::option::Option<crate::types::JdbcConnectorSource>,
-    pub(crate) spark_connector_source: std::option::Option<crate::types::SparkConnectorSource>,
-    pub(crate) catalog_source: std::option::Option<crate::types::CatalogSource>,
-    pub(crate) redshift_source: std::option::Option<crate::types::RedshiftSource>,
-    pub(crate) s3_catalog_source: std::option::Option<crate::types::S3CatalogSource>,
-    pub(crate) s3_csv_source: std::option::Option<crate::types::S3CsvSource>,
-    pub(crate) s3_json_source: std::option::Option<crate::types::S3JsonSource>,
-    pub(crate) s3_parquet_source: std::option::Option<crate::types::S3ParquetSource>,
+    pub(crate) athena_connector_source: ::std::option::Option<crate::types::AthenaConnectorSource>,
+    pub(crate) jdbc_connector_source: ::std::option::Option<crate::types::JdbcConnectorSource>,
+    pub(crate) spark_connector_source: ::std::option::Option<crate::types::SparkConnectorSource>,
+    pub(crate) catalog_source: ::std::option::Option<crate::types::CatalogSource>,
+    pub(crate) redshift_source: ::std::option::Option<crate::types::RedshiftSource>,
+    pub(crate) s3_catalog_source: ::std::option::Option<crate::types::S3CatalogSource>,
+    pub(crate) s3_csv_source: ::std::option::Option<crate::types::S3CsvSource>,
+    pub(crate) s3_json_source: ::std::option::Option<crate::types::S3JsonSource>,
+    pub(crate) s3_parquet_source: ::std::option::Option<crate::types::S3ParquetSource>,
     pub(crate) relational_catalog_source:
-        std::option::Option<crate::types::RelationalCatalogSource>,
-    pub(crate) dynamo_db_catalog_source: std::option::Option<crate::types::DynamoDbCatalogSource>,
-    pub(crate) jdbc_connector_target: std::option::Option<crate::types::JdbcConnectorTarget>,
-    pub(crate) spark_connector_target: std::option::Option<crate::types::SparkConnectorTarget>,
-    pub(crate) catalog_target: std::option::Option<crate::types::BasicCatalogTarget>,
-    pub(crate) redshift_target: std::option::Option<crate::types::RedshiftTarget>,
-    pub(crate) s3_catalog_target: std::option::Option<crate::types::S3CatalogTarget>,
-    pub(crate) s3_glue_parquet_target: std::option::Option<crate::types::S3GlueParquetTarget>,
-    pub(crate) s3_direct_target: std::option::Option<crate::types::S3DirectTarget>,
-    pub(crate) apply_mapping: std::option::Option<crate::types::ApplyMapping>,
-    pub(crate) select_fields: std::option::Option<crate::types::SelectFields>,
-    pub(crate) drop_fields: std::option::Option<crate::types::DropFields>,
-    pub(crate) rename_field: std::option::Option<crate::types::RenameField>,
-    pub(crate) spigot: std::option::Option<crate::types::Spigot>,
-    pub(crate) join: std::option::Option<crate::types::Join>,
-    pub(crate) split_fields: std::option::Option<crate::types::SplitFields>,
-    pub(crate) select_from_collection: std::option::Option<crate::types::SelectFromCollection>,
-    pub(crate) fill_missing_values: std::option::Option<crate::types::FillMissingValues>,
-    pub(crate) filter: std::option::Option<crate::types::Filter>,
-    pub(crate) custom_code: std::option::Option<crate::types::CustomCode>,
-    pub(crate) spark_sql: std::option::Option<crate::types::SparkSql>,
-    pub(crate) direct_kinesis_source: std::option::Option<crate::types::DirectKinesisSource>,
-    pub(crate) direct_kafka_source: std::option::Option<crate::types::DirectKafkaSource>,
-    pub(crate) catalog_kinesis_source: std::option::Option<crate::types::CatalogKinesisSource>,
-    pub(crate) catalog_kafka_source: std::option::Option<crate::types::CatalogKafkaSource>,
-    pub(crate) drop_null_fields: std::option::Option<crate::types::DropNullFields>,
-    pub(crate) merge: std::option::Option<crate::types::Merge>,
-    pub(crate) union: std::option::Option<crate::types::Union>,
-    pub(crate) pii_detection: std::option::Option<crate::types::PiiDetection>,
-    pub(crate) aggregate: std::option::Option<crate::types::Aggregate>,
-    pub(crate) drop_duplicates: std::option::Option<crate::types::DropDuplicates>,
-    pub(crate) governed_catalog_target: std::option::Option<crate::types::GovernedCatalogTarget>,
-    pub(crate) governed_catalog_source: std::option::Option<crate::types::GovernedCatalogSource>,
+        ::std::option::Option<crate::types::RelationalCatalogSource>,
+    pub(crate) dynamo_db_catalog_source: ::std::option::Option<crate::types::DynamoDbCatalogSource>,
+    pub(crate) jdbc_connector_target: ::std::option::Option<crate::types::JdbcConnectorTarget>,
+    pub(crate) spark_connector_target: ::std::option::Option<crate::types::SparkConnectorTarget>,
+    pub(crate) catalog_target: ::std::option::Option<crate::types::BasicCatalogTarget>,
+    pub(crate) redshift_target: ::std::option::Option<crate::types::RedshiftTarget>,
+    pub(crate) s3_catalog_target: ::std::option::Option<crate::types::S3CatalogTarget>,
+    pub(crate) s3_glue_parquet_target: ::std::option::Option<crate::types::S3GlueParquetTarget>,
+    pub(crate) s3_direct_target: ::std::option::Option<crate::types::S3DirectTarget>,
+    pub(crate) apply_mapping: ::std::option::Option<crate::types::ApplyMapping>,
+    pub(crate) select_fields: ::std::option::Option<crate::types::SelectFields>,
+    pub(crate) drop_fields: ::std::option::Option<crate::types::DropFields>,
+    pub(crate) rename_field: ::std::option::Option<crate::types::RenameField>,
+    pub(crate) spigot: ::std::option::Option<crate::types::Spigot>,
+    pub(crate) join: ::std::option::Option<crate::types::Join>,
+    pub(crate) split_fields: ::std::option::Option<crate::types::SplitFields>,
+    pub(crate) select_from_collection: ::std::option::Option<crate::types::SelectFromCollection>,
+    pub(crate) fill_missing_values: ::std::option::Option<crate::types::FillMissingValues>,
+    pub(crate) filter: ::std::option::Option<crate::types::Filter>,
+    pub(crate) custom_code: ::std::option::Option<crate::types::CustomCode>,
+    pub(crate) spark_sql: ::std::option::Option<crate::types::SparkSql>,
+    pub(crate) direct_kinesis_source: ::std::option::Option<crate::types::DirectKinesisSource>,
+    pub(crate) direct_kafka_source: ::std::option::Option<crate::types::DirectKafkaSource>,
+    pub(crate) catalog_kinesis_source: ::std::option::Option<crate::types::CatalogKinesisSource>,
+    pub(crate) catalog_kafka_source: ::std::option::Option<crate::types::CatalogKafkaSource>,
+    pub(crate) drop_null_fields: ::std::option::Option<crate::types::DropNullFields>,
+    pub(crate) merge: ::std::option::Option<crate::types::Merge>,
+    pub(crate) union: ::std::option::Option<crate::types::Union>,
+    pub(crate) pii_detection: ::std::option::Option<crate::types::PiiDetection>,
+    pub(crate) aggregate: ::std::option::Option<crate::types::Aggregate>,
+    pub(crate) drop_duplicates: ::std::option::Option<crate::types::DropDuplicates>,
+    pub(crate) governed_catalog_target: ::std::option::Option<crate::types::GovernedCatalogTarget>,
+    pub(crate) governed_catalog_source: ::std::option::Option<crate::types::GovernedCatalogSource>,
     pub(crate) microsoft_sql_server_catalog_source:
-        std::option::Option<crate::types::MicrosoftSqlServerCatalogSource>,
-    pub(crate) my_sql_catalog_source: std::option::Option<crate::types::MySqlCatalogSource>,
-    pub(crate) oracle_sql_catalog_source: std::option::Option<crate::types::OracleSqlCatalogSource>,
+        ::std::option::Option<crate::types::MicrosoftSqlServerCatalogSource>,
+    pub(crate) my_sql_catalog_source: ::std::option::Option<crate::types::MySqlCatalogSource>,
+    pub(crate) oracle_sql_catalog_source:
+        ::std::option::Option<crate::types::OracleSqlCatalogSource>,
     pub(crate) postgre_sql_catalog_source:
-        std::option::Option<crate::types::PostgreSqlCatalogSource>,
+        ::std::option::Option<crate::types::PostgreSqlCatalogSource>,
     pub(crate) microsoft_sql_server_catalog_target:
-        std::option::Option<crate::types::MicrosoftSqlServerCatalogTarget>,
-    pub(crate) my_sql_catalog_target: std::option::Option<crate::types::MySqlCatalogTarget>,
-    pub(crate) oracle_sql_catalog_target: std::option::Option<crate::types::OracleSqlCatalogTarget>,
+        ::std::option::Option<crate::types::MicrosoftSqlServerCatalogTarget>,
+    pub(crate) my_sql_catalog_target: ::std::option::Option<crate::types::MySqlCatalogTarget>,
+    pub(crate) oracle_sql_catalog_target:
+        ::std::option::Option<crate::types::OracleSqlCatalogTarget>,
     pub(crate) postgre_sql_catalog_target:
-        std::option::Option<crate::types::PostgreSqlCatalogTarget>,
-    pub(crate) dynamic_transform: std::option::Option<crate::types::DynamicTransform>,
-    pub(crate) evaluate_data_quality: std::option::Option<crate::types::EvaluateDataQuality>,
-    pub(crate) s3_catalog_hudi_source: std::option::Option<crate::types::S3CatalogHudiSource>,
-    pub(crate) catalog_hudi_source: std::option::Option<crate::types::CatalogHudiSource>,
-    pub(crate) s3_hudi_source: std::option::Option<crate::types::S3HudiSource>,
-    pub(crate) s3_hudi_catalog_target: std::option::Option<crate::types::S3HudiCatalogTarget>,
-    pub(crate) s3_hudi_direct_target: std::option::Option<crate::types::S3HudiDirectTarget>,
-    pub(crate) direct_jdbc_source: std::option::Option<crate::types::DirectJdbcSource>,
-    pub(crate) s3_catalog_delta_source: std::option::Option<crate::types::S3CatalogDeltaSource>,
-    pub(crate) catalog_delta_source: std::option::Option<crate::types::CatalogDeltaSource>,
-    pub(crate) s3_delta_source: std::option::Option<crate::types::S3DeltaSource>,
-    pub(crate) s3_delta_catalog_target: std::option::Option<crate::types::S3DeltaCatalogTarget>,
-    pub(crate) s3_delta_direct_target: std::option::Option<crate::types::S3DeltaDirectTarget>,
-    pub(crate) amazon_redshift_source: std::option::Option<crate::types::AmazonRedshiftSource>,
-    pub(crate) amazon_redshift_target: std::option::Option<crate::types::AmazonRedshiftTarget>,
+        ::std::option::Option<crate::types::PostgreSqlCatalogTarget>,
+    pub(crate) dynamic_transform: ::std::option::Option<crate::types::DynamicTransform>,
+    pub(crate) evaluate_data_quality: ::std::option::Option<crate::types::EvaluateDataQuality>,
+    pub(crate) s3_catalog_hudi_source: ::std::option::Option<crate::types::S3CatalogHudiSource>,
+    pub(crate) catalog_hudi_source: ::std::option::Option<crate::types::CatalogHudiSource>,
+    pub(crate) s3_hudi_source: ::std::option::Option<crate::types::S3HudiSource>,
+    pub(crate) s3_hudi_catalog_target: ::std::option::Option<crate::types::S3HudiCatalogTarget>,
+    pub(crate) s3_hudi_direct_target: ::std::option::Option<crate::types::S3HudiDirectTarget>,
+    pub(crate) direct_jdbc_source: ::std::option::Option<crate::types::DirectJdbcSource>,
+    pub(crate) s3_catalog_delta_source: ::std::option::Option<crate::types::S3CatalogDeltaSource>,
+    pub(crate) catalog_delta_source: ::std::option::Option<crate::types::CatalogDeltaSource>,
+    pub(crate) s3_delta_source: ::std::option::Option<crate::types::S3DeltaSource>,
+    pub(crate) s3_delta_catalog_target: ::std::option::Option<crate::types::S3DeltaCatalogTarget>,
+    pub(crate) s3_delta_direct_target: ::std::option::Option<crate::types::S3DeltaDirectTarget>,
+    pub(crate) amazon_redshift_source: ::std::option::Option<crate::types::AmazonRedshiftSource>,
+    pub(crate) amazon_redshift_target: ::std::option::Option<crate::types::AmazonRedshiftTarget>,
 }
 impl CodeGenConfigurationNodeBuilder {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
     pub fn athena_connector_source(mut self, input: crate::types::AthenaConnectorSource) -> Self {
-        self.athena_connector_source = Some(input);
+        self.athena_connector_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
     pub fn set_athena_connector_source(
         mut self,
-        input: std::option::Option<crate::types::AthenaConnectorSource>,
+        input: ::std::option::Option<crate::types::AthenaConnectorSource>,
     ) -> Self {
         self.athena_connector_source = input;
         self
     }
     /// <p>Specifies a connector to a JDBC data source.</p>
     pub fn jdbc_connector_source(mut self, input: crate::types::JdbcConnectorSource) -> Self {
-        self.jdbc_connector_source = Some(input);
+        self.jdbc_connector_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a connector to a JDBC data source.</p>
     pub fn set_jdbc_connector_source(
         mut self,
-        input: std::option::Option<crate::types::JdbcConnectorSource>,
+        input: ::std::option::Option<crate::types::JdbcConnectorSource>,
     ) -> Self {
         self.jdbc_connector_source = input;
         self
     }
     /// <p>Specifies a connector to an Apache Spark data source.</p>
     pub fn spark_connector_source(mut self, input: crate::types::SparkConnectorSource) -> Self {
-        self.spark_connector_source = Some(input);
+        self.spark_connector_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a connector to an Apache Spark data source.</p>
     pub fn set_spark_connector_source(
         mut self,
-        input: std::option::Option<crate::types::SparkConnectorSource>,
+        input: ::std::option::Option<crate::types::SparkConnectorSource>,
     ) -> Self {
         self.spark_connector_source = input;
         self
     }
     /// <p>Specifies a data store in the Glue Data Catalog.</p>
     pub fn catalog_source(mut self, input: crate::types::CatalogSource) -> Self {
-        self.catalog_source = Some(input);
+        self.catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a data store in the Glue Data Catalog.</p>
     pub fn set_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::CatalogSource>,
+        input: ::std::option::Option<crate::types::CatalogSource>,
     ) -> Self {
         self.catalog_source = input;
         self
     }
     /// <p>Specifies an Amazon Redshift data store.</p>
     pub fn redshift_source(mut self, input: crate::types::RedshiftSource) -> Self {
-        self.redshift_source = Some(input);
+        self.redshift_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies an Amazon Redshift data store.</p>
     pub fn set_redshift_source(
         mut self,
-        input: std::option::Option<crate::types::RedshiftSource>,
+        input: ::std::option::Option<crate::types::RedshiftSource>,
     ) -> Self {
         self.redshift_source = input;
         self
     }
     /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
     pub fn s3_catalog_source(mut self, input: crate::types::S3CatalogSource) -> Self {
-        self.s3_catalog_source = Some(input);
+        self.s3_catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
     pub fn set_s3_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::S3CatalogSource>,
+        input: ::std::option::Option<crate::types::S3CatalogSource>,
     ) -> Self {
         self.s3_catalog_source = input;
         self
     }
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
     pub fn s3_csv_source(mut self, input: crate::types::S3CsvSource) -> Self {
-        self.s3_csv_source = Some(input);
+        self.s3_csv_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
     pub fn set_s3_csv_source(
         mut self,
-        input: std::option::Option<crate::types::S3CsvSource>,
+        input: ::std::option::Option<crate::types::S3CsvSource>,
     ) -> Self {
         self.s3_csv_source = input;
         self
     }
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
     pub fn s3_json_source(mut self, input: crate::types::S3JsonSource) -> Self {
-        self.s3_json_source = Some(input);
+        self.s3_json_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a JSON data store stored in Amazon S3.</p>
     pub fn set_s3_json_source(
         mut self,
-        input: std::option::Option<crate::types::S3JsonSource>,
+        input: ::std::option::Option<crate::types::S3JsonSource>,
     ) -> Self {
         self.s3_json_source = input;
         self
     }
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
     pub fn s3_parquet_source(mut self, input: crate::types::S3ParquetSource) -> Self {
-        self.s3_parquet_source = Some(input);
+        self.s3_parquet_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies an Apache Parquet data store stored in Amazon S3.</p>
     pub fn set_s3_parquet_source(
         mut self,
-        input: std::option::Option<crate::types::S3ParquetSource>,
+        input: ::std::option::Option<crate::types::S3ParquetSource>,
     ) -> Self {
         self.s3_parquet_source = input;
         self
@@ -715,402 +733,408 @@ impl CodeGenConfigurationNodeBuilder {
         mut self,
         input: crate::types::RelationalCatalogSource,
     ) -> Self {
-        self.relational_catalog_source = Some(input);
+        self.relational_catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a relational catalog data store in the Glue Data Catalog.</p>
     pub fn set_relational_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::RelationalCatalogSource>,
+        input: ::std::option::Option<crate::types::RelationalCatalogSource>,
     ) -> Self {
         self.relational_catalog_source = input;
         self
     }
     /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     pub fn dynamo_db_catalog_source(mut self, input: crate::types::DynamoDbCatalogSource) -> Self {
-        self.dynamo_db_catalog_source = Some(input);
+        self.dynamo_db_catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.</p>
     pub fn set_dynamo_db_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::DynamoDbCatalogSource>,
+        input: ::std::option::Option<crate::types::DynamoDbCatalogSource>,
     ) -> Self {
         self.dynamo_db_catalog_source = input;
         self
     }
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     pub fn jdbc_connector_target(mut self, input: crate::types::JdbcConnectorTarget) -> Self {
-        self.jdbc_connector_target = Some(input);
+        self.jdbc_connector_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     pub fn set_jdbc_connector_target(
         mut self,
-        input: std::option::Option<crate::types::JdbcConnectorTarget>,
+        input: ::std::option::Option<crate::types::JdbcConnectorTarget>,
     ) -> Self {
         self.jdbc_connector_target = input;
         self
     }
     /// <p>Specifies a target that uses an Apache Spark connector.</p>
     pub fn spark_connector_target(mut self, input: crate::types::SparkConnectorTarget) -> Self {
-        self.spark_connector_target = Some(input);
+        self.spark_connector_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that uses an Apache Spark connector.</p>
     pub fn set_spark_connector_target(
         mut self,
-        input: std::option::Option<crate::types::SparkConnectorTarget>,
+        input: ::std::option::Option<crate::types::SparkConnectorTarget>,
     ) -> Self {
         self.spark_connector_target = input;
         self
     }
     /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
     pub fn catalog_target(mut self, input: crate::types::BasicCatalogTarget) -> Self {
-        self.catalog_target = Some(input);
+        self.catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
     pub fn set_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::BasicCatalogTarget>,
+        input: ::std::option::Option<crate::types::BasicCatalogTarget>,
     ) -> Self {
         self.catalog_target = input;
         self
     }
     /// <p>Specifies a target that uses Amazon Redshift.</p>
     pub fn redshift_target(mut self, input: crate::types::RedshiftTarget) -> Self {
-        self.redshift_target = Some(input);
+        self.redshift_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that uses Amazon Redshift.</p>
     pub fn set_redshift_target(
         mut self,
-        input: std::option::Option<crate::types::RedshiftTarget>,
+        input: ::std::option::Option<crate::types::RedshiftTarget>,
     ) -> Self {
         self.redshift_target = input;
         self
     }
     /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
     pub fn s3_catalog_target(mut self, input: crate::types::S3CatalogTarget) -> Self {
-        self.s3_catalog_target = Some(input);
+        self.s3_catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.</p>
     pub fn set_s3_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::S3CatalogTarget>,
+        input: ::std::option::Option<crate::types::S3CatalogTarget>,
     ) -> Self {
         self.s3_catalog_target = input;
         self
     }
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     pub fn s3_glue_parquet_target(mut self, input: crate::types::S3GlueParquetTarget) -> Self {
-        self.s3_glue_parquet_target = Some(input);
+        self.s3_glue_parquet_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
     pub fn set_s3_glue_parquet_target(
         mut self,
-        input: std::option::Option<crate::types::S3GlueParquetTarget>,
+        input: ::std::option::Option<crate::types::S3GlueParquetTarget>,
     ) -> Self {
         self.s3_glue_parquet_target = input;
         self
     }
     /// <p>Specifies a data target that writes to Amazon S3.</p>
     pub fn s3_direct_target(mut self, input: crate::types::S3DirectTarget) -> Self {
-        self.s3_direct_target = Some(input);
+        self.s3_direct_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a data target that writes to Amazon S3.</p>
     pub fn set_s3_direct_target(
         mut self,
-        input: std::option::Option<crate::types::S3DirectTarget>,
+        input: ::std::option::Option<crate::types::S3DirectTarget>,
     ) -> Self {
         self.s3_direct_target = input;
         self
     }
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
     pub fn apply_mapping(mut self, input: crate::types::ApplyMapping) -> Self {
-        self.apply_mapping = Some(input);
+        self.apply_mapping = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>
     pub fn set_apply_mapping(
         mut self,
-        input: std::option::Option<crate::types::ApplyMapping>,
+        input: ::std::option::Option<crate::types::ApplyMapping>,
     ) -> Self {
         self.apply_mapping = input;
         self
     }
     /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
     pub fn select_fields(mut self, input: crate::types::SelectFields) -> Self {
-        self.select_fields = Some(input);
+        self.select_fields = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that chooses the data property keys that you want to keep.</p>
     pub fn set_select_fields(
         mut self,
-        input: std::option::Option<crate::types::SelectFields>,
+        input: ::std::option::Option<crate::types::SelectFields>,
     ) -> Self {
         self.select_fields = input;
         self
     }
     /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
     pub fn drop_fields(mut self, input: crate::types::DropFields) -> Self {
-        self.drop_fields = Some(input);
+        self.drop_fields = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that chooses the data property keys that you want to drop.</p>
-    pub fn set_drop_fields(mut self, input: std::option::Option<crate::types::DropFields>) -> Self {
+    pub fn set_drop_fields(
+        mut self,
+        input: ::std::option::Option<crate::types::DropFields>,
+    ) -> Self {
         self.drop_fields = input;
         self
     }
     /// <p>Specifies a transform that renames a single data property key.</p>
     pub fn rename_field(mut self, input: crate::types::RenameField) -> Self {
-        self.rename_field = Some(input);
+        self.rename_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that renames a single data property key.</p>
     pub fn set_rename_field(
         mut self,
-        input: std::option::Option<crate::types::RenameField>,
+        input: ::std::option::Option<crate::types::RenameField>,
     ) -> Self {
         self.rename_field = input;
         self
     }
     /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
     pub fn spigot(mut self, input: crate::types::Spigot) -> Self {
-        self.spigot = Some(input);
+        self.spigot = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that writes samples of the data to an Amazon S3 bucket.</p>
-    pub fn set_spigot(mut self, input: std::option::Option<crate::types::Spigot>) -> Self {
+    pub fn set_spigot(mut self, input: ::std::option::Option<crate::types::Spigot>) -> Self {
         self.spigot = input;
         self
     }
     /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
     pub fn join(mut self, input: crate::types::Join) -> Self {
-        self.join = Some(input);
+        self.join = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.</p>
-    pub fn set_join(mut self, input: std::option::Option<crate::types::Join>) -> Self {
+    pub fn set_join(mut self, input: ::std::option::Option<crate::types::Join>) -> Self {
         self.join = input;
         self
     }
     /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
     pub fn split_fields(mut self, input: crate::types::SplitFields) -> Self {
-        self.split_fields = Some(input);
+        self.split_fields = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.</p>
     pub fn set_split_fields(
         mut self,
-        input: std::option::Option<crate::types::SplitFields>,
+        input: ::std::option::Option<crate::types::SplitFields>,
     ) -> Self {
         self.split_fields = input;
         self
     }
     /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
     pub fn select_from_collection(mut self, input: crate::types::SelectFromCollection) -> Self {
-        self.select_from_collection = Some(input);
+        self.select_from_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
     pub fn set_select_from_collection(
         mut self,
-        input: std::option::Option<crate::types::SelectFromCollection>,
+        input: ::std::option::Option<crate::types::SelectFromCollection>,
     ) -> Self {
         self.select_from_collection = input;
         self
     }
     /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
     pub fn fill_missing_values(mut self, input: crate::types::FillMissingValues) -> Self {
-        self.fill_missing_values = Some(input);
+        self.fill_missing_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.</p>
     pub fn set_fill_missing_values(
         mut self,
-        input: std::option::Option<crate::types::FillMissingValues>,
+        input: ::std::option::Option<crate::types::FillMissingValues>,
     ) -> Self {
         self.fill_missing_values = input;
         self
     }
     /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
-        self.filter = Some(input);
+        self.filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::Filter>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.filter = input;
         self
     }
     /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
     pub fn custom_code(mut self, input: crate::types::CustomCode) -> Self {
-        self.custom_code = Some(input);
+        self.custom_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.</p>
-    pub fn set_custom_code(mut self, input: std::option::Option<crate::types::CustomCode>) -> Self {
+    pub fn set_custom_code(
+        mut self,
+        input: ::std::option::Option<crate::types::CustomCode>,
+    ) -> Self {
         self.custom_code = input;
         self
     }
     /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
     pub fn spark_sql(mut self, input: crate::types::SparkSql) -> Self {
-        self.spark_sql = Some(input);
+        self.spark_sql = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.</p>
-    pub fn set_spark_sql(mut self, input: std::option::Option<crate::types::SparkSql>) -> Self {
+    pub fn set_spark_sql(mut self, input: ::std::option::Option<crate::types::SparkSql>) -> Self {
         self.spark_sql = input;
         self
     }
     /// <p>Specifies a direct Amazon Kinesis data source.</p>
     pub fn direct_kinesis_source(mut self, input: crate::types::DirectKinesisSource) -> Self {
-        self.direct_kinesis_source = Some(input);
+        self.direct_kinesis_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a direct Amazon Kinesis data source.</p>
     pub fn set_direct_kinesis_source(
         mut self,
-        input: std::option::Option<crate::types::DirectKinesisSource>,
+        input: ::std::option::Option<crate::types::DirectKinesisSource>,
     ) -> Self {
         self.direct_kinesis_source = input;
         self
     }
     /// <p>Specifies an Apache Kafka data store.</p>
     pub fn direct_kafka_source(mut self, input: crate::types::DirectKafkaSource) -> Self {
-        self.direct_kafka_source = Some(input);
+        self.direct_kafka_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies an Apache Kafka data store.</p>
     pub fn set_direct_kafka_source(
         mut self,
-        input: std::option::Option<crate::types::DirectKafkaSource>,
+        input: ::std::option::Option<crate::types::DirectKafkaSource>,
     ) -> Self {
         self.direct_kafka_source = input;
         self
     }
     /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
     pub fn catalog_kinesis_source(mut self, input: crate::types::CatalogKinesisSource) -> Self {
-        self.catalog_kinesis_source = Some(input);
+        self.catalog_kinesis_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Kinesis data source in the Glue Data Catalog.</p>
     pub fn set_catalog_kinesis_source(
         mut self,
-        input: std::option::Option<crate::types::CatalogKinesisSource>,
+        input: ::std::option::Option<crate::types::CatalogKinesisSource>,
     ) -> Self {
         self.catalog_kinesis_source = input;
         self
     }
     /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
     pub fn catalog_kafka_source(mut self, input: crate::types::CatalogKafkaSource) -> Self {
-        self.catalog_kafka_source = Some(input);
+        self.catalog_kafka_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies an Apache Kafka data store in the Data Catalog.</p>
     pub fn set_catalog_kafka_source(
         mut self,
-        input: std::option::Option<crate::types::CatalogKafkaSource>,
+        input: ::std::option::Option<crate::types::CatalogKafkaSource>,
     ) -> Self {
         self.catalog_kafka_source = input;
         self
     }
     /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
     pub fn drop_null_fields(mut self, input: crate::types::DropNullFields) -> Self {
-        self.drop_null_fields = Some(input);
+        self.drop_null_fields = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.</p>
     pub fn set_drop_null_fields(
         mut self,
-        input: std::option::Option<crate::types::DropNullFields>,
+        input: ::std::option::Option<crate::types::DropNullFields>,
     ) -> Self {
         self.drop_null_fields = input;
         self
     }
     /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
     pub fn merge(mut self, input: crate::types::Merge) -> Self {
-        self.merge = Some(input);
+        self.merge = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated. </p>
-    pub fn set_merge(mut self, input: std::option::Option<crate::types::Merge>) -> Self {
+    pub fn set_merge(mut self, input: ::std::option::Option<crate::types::Merge>) -> Self {
         self.merge = input;
         self
     }
     /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
     pub fn union(mut self, input: crate::types::Union) -> Self {
-        self.union = Some(input);
+        self.union = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that combines the rows from two or more datasets into a single result.</p>
-    pub fn set_union(mut self, input: std::option::Option<crate::types::Union>) -> Self {
+    pub fn set_union(mut self, input: ::std::option::Option<crate::types::Union>) -> Self {
         self.union = input;
         self
     }
     /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
     pub fn pii_detection(mut self, input: crate::types::PiiDetection) -> Self {
-        self.pii_detection = Some(input);
+        self.pii_detection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that identifies, removes or masks PII data.</p>
     pub fn set_pii_detection(
         mut self,
-        input: std::option::Option<crate::types::PiiDetection>,
+        input: ::std::option::Option<crate::types::PiiDetection>,
     ) -> Self {
         self.pii_detection = input;
         self
     }
     /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
     pub fn aggregate(mut self, input: crate::types::Aggregate) -> Self {
-        self.aggregate = Some(input);
+        self.aggregate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.</p>
-    pub fn set_aggregate(mut self, input: std::option::Option<crate::types::Aggregate>) -> Self {
+    pub fn set_aggregate(mut self, input: ::std::option::Option<crate::types::Aggregate>) -> Self {
         self.aggregate = input;
         self
     }
     /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
     pub fn drop_duplicates(mut self, input: crate::types::DropDuplicates) -> Self {
-        self.drop_duplicates = Some(input);
+        self.drop_duplicates = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a transform that removes rows of repeating data from a data set.</p>
     pub fn set_drop_duplicates(
         mut self,
-        input: std::option::Option<crate::types::DropDuplicates>,
+        input: ::std::option::Option<crate::types::DropDuplicates>,
     ) -> Self {
         self.drop_duplicates = input;
         self
     }
     /// <p>Specifies a data target that writes to a goverened catalog.</p>
     pub fn governed_catalog_target(mut self, input: crate::types::GovernedCatalogTarget) -> Self {
-        self.governed_catalog_target = Some(input);
+        self.governed_catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a data target that writes to a goverened catalog.</p>
     pub fn set_governed_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::GovernedCatalogTarget>,
+        input: ::std::option::Option<crate::types::GovernedCatalogTarget>,
     ) -> Self {
         self.governed_catalog_target = input;
         self
     }
     /// <p>Specifies a data source in a goverened Data Catalog.</p>
     pub fn governed_catalog_source(mut self, input: crate::types::GovernedCatalogSource) -> Self {
-        self.governed_catalog_source = Some(input);
+        self.governed_catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a data source in a goverened Data Catalog.</p>
     pub fn set_governed_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::GovernedCatalogSource>,
+        input: ::std::option::Option<crate::types::GovernedCatalogSource>,
     ) -> Self {
         self.governed_catalog_source = input;
         self
@@ -1120,26 +1144,26 @@ impl CodeGenConfigurationNodeBuilder {
         mut self,
         input: crate::types::MicrosoftSqlServerCatalogSource,
     ) -> Self {
-        self.microsoft_sql_server_catalog_source = Some(input);
+        self.microsoft_sql_server_catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Microsoft SQL server data source in the Glue Data Catalog.</p>
     pub fn set_microsoft_sql_server_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::MicrosoftSqlServerCatalogSource>,
+        input: ::std::option::Option<crate::types::MicrosoftSqlServerCatalogSource>,
     ) -> Self {
         self.microsoft_sql_server_catalog_source = input;
         self
     }
     /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
     pub fn my_sql_catalog_source(mut self, input: crate::types::MySqlCatalogSource) -> Self {
-        self.my_sql_catalog_source = Some(input);
+        self.my_sql_catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a MySQL data source in the Glue Data Catalog.</p>
     pub fn set_my_sql_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::MySqlCatalogSource>,
+        input: ::std::option::Option<crate::types::MySqlCatalogSource>,
     ) -> Self {
         self.my_sql_catalog_source = input;
         self
@@ -1149,13 +1173,13 @@ impl CodeGenConfigurationNodeBuilder {
         mut self,
         input: crate::types::OracleSqlCatalogSource,
     ) -> Self {
-        self.oracle_sql_catalog_source = Some(input);
+        self.oracle_sql_catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies an Oracle data source in the Glue Data Catalog.</p>
     pub fn set_oracle_sql_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::OracleSqlCatalogSource>,
+        input: ::std::option::Option<crate::types::OracleSqlCatalogSource>,
     ) -> Self {
         self.oracle_sql_catalog_source = input;
         self
@@ -1165,13 +1189,13 @@ impl CodeGenConfigurationNodeBuilder {
         mut self,
         input: crate::types::PostgreSqlCatalogSource,
     ) -> Self {
-        self.postgre_sql_catalog_source = Some(input);
+        self.postgre_sql_catalog_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a PostgresSQL data source in the Glue Data Catalog.</p>
     pub fn set_postgre_sql_catalog_source(
         mut self,
-        input: std::option::Option<crate::types::PostgreSqlCatalogSource>,
+        input: ::std::option::Option<crate::types::PostgreSqlCatalogSource>,
     ) -> Self {
         self.postgre_sql_catalog_source = input;
         self
@@ -1181,26 +1205,26 @@ impl CodeGenConfigurationNodeBuilder {
         mut self,
         input: crate::types::MicrosoftSqlServerCatalogTarget,
     ) -> Self {
-        self.microsoft_sql_server_catalog_target = Some(input);
+        self.microsoft_sql_server_catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that uses Microsoft SQL.</p>
     pub fn set_microsoft_sql_server_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::MicrosoftSqlServerCatalogTarget>,
+        input: ::std::option::Option<crate::types::MicrosoftSqlServerCatalogTarget>,
     ) -> Self {
         self.microsoft_sql_server_catalog_target = input;
         self
     }
     /// <p>Specifies a target that uses MySQL.</p>
     pub fn my_sql_catalog_target(mut self, input: crate::types::MySqlCatalogTarget) -> Self {
-        self.my_sql_catalog_target = Some(input);
+        self.my_sql_catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that uses MySQL.</p>
     pub fn set_my_sql_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::MySqlCatalogTarget>,
+        input: ::std::option::Option<crate::types::MySqlCatalogTarget>,
     ) -> Self {
         self.my_sql_catalog_target = input;
         self
@@ -1210,13 +1234,13 @@ impl CodeGenConfigurationNodeBuilder {
         mut self,
         input: crate::types::OracleSqlCatalogTarget,
     ) -> Self {
-        self.oracle_sql_catalog_target = Some(input);
+        self.oracle_sql_catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that uses Oracle SQL.</p>
     pub fn set_oracle_sql_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::OracleSqlCatalogTarget>,
+        input: ::std::option::Option<crate::types::OracleSqlCatalogTarget>,
     ) -> Self {
         self.oracle_sql_catalog_target = input;
         self
@@ -1226,208 +1250,208 @@ impl CodeGenConfigurationNodeBuilder {
         mut self,
         input: crate::types::PostgreSqlCatalogTarget,
     ) -> Self {
-        self.postgre_sql_catalog_target = Some(input);
+        self.postgre_sql_catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that uses Postgres SQL.</p>
     pub fn set_postgre_sql_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::PostgreSqlCatalogTarget>,
+        input: ::std::option::Option<crate::types::PostgreSqlCatalogTarget>,
     ) -> Self {
         self.postgre_sql_catalog_target = input;
         self
     }
     /// <p>Specifies a custom visual transform created by a user.</p>
     pub fn dynamic_transform(mut self, input: crate::types::DynamicTransform) -> Self {
-        self.dynamic_transform = Some(input);
+        self.dynamic_transform = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a custom visual transform created by a user.</p>
     pub fn set_dynamic_transform(
         mut self,
-        input: std::option::Option<crate::types::DynamicTransform>,
+        input: ::std::option::Option<crate::types::DynamicTransform>,
     ) -> Self {
         self.dynamic_transform = input;
         self
     }
     /// <p>Specifies your data quality evaluation criteria.</p>
     pub fn evaluate_data_quality(mut self, input: crate::types::EvaluateDataQuality) -> Self {
-        self.evaluate_data_quality = Some(input);
+        self.evaluate_data_quality = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies your data quality evaluation criteria.</p>
     pub fn set_evaluate_data_quality(
         mut self,
-        input: std::option::Option<crate::types::EvaluateDataQuality>,
+        input: ::std::option::Option<crate::types::EvaluateDataQuality>,
     ) -> Self {
         self.evaluate_data_quality = input;
         self
     }
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn s3_catalog_hudi_source(mut self, input: crate::types::S3CatalogHudiSource) -> Self {
-        self.s3_catalog_hudi_source = Some(input);
+        self.s3_catalog_hudi_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn set_s3_catalog_hudi_source(
         mut self,
-        input: std::option::Option<crate::types::S3CatalogHudiSource>,
+        input: ::std::option::Option<crate::types::S3CatalogHudiSource>,
     ) -> Self {
         self.s3_catalog_hudi_source = input;
         self
     }
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
     pub fn catalog_hudi_source(mut self, input: crate::types::CatalogHudiSource) -> Self {
-        self.catalog_hudi_source = Some(input);
+        self.catalog_hudi_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Hudi data source that is registered in the Glue Data Catalog.</p>
     pub fn set_catalog_hudi_source(
         mut self,
-        input: std::option::Option<crate::types::CatalogHudiSource>,
+        input: ::std::option::Option<crate::types::CatalogHudiSource>,
     ) -> Self {
         self.catalog_hudi_source = input;
         self
     }
     /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
     pub fn s3_hudi_source(mut self, input: crate::types::S3HudiSource) -> Self {
-        self.s3_hudi_source = Some(input);
+        self.s3_hudi_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Hudi data source stored in Amazon S3.</p>
     pub fn set_s3_hudi_source(
         mut self,
-        input: std::option::Option<crate::types::S3HudiSource>,
+        input: ::std::option::Option<crate::types::S3HudiSource>,
     ) -> Self {
         self.s3_hudi_source = input;
         self
     }
     /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
     pub fn s3_hudi_catalog_target(mut self, input: crate::types::S3HudiCatalogTarget) -> Self {
-        self.s3_hudi_catalog_target = Some(input);
+        self.s3_hudi_catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that writes to a Hudi data source in the Glue Data Catalog.</p>
     pub fn set_s3_hudi_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::S3HudiCatalogTarget>,
+        input: ::std::option::Option<crate::types::S3HudiCatalogTarget>,
     ) -> Self {
         self.s3_hudi_catalog_target = input;
         self
     }
     /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
     pub fn s3_hudi_direct_target(mut self, input: crate::types::S3HudiDirectTarget) -> Self {
-        self.s3_hudi_direct_target = Some(input);
+        self.s3_hudi_direct_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
     pub fn set_s3_hudi_direct_target(
         mut self,
-        input: std::option::Option<crate::types::S3HudiDirectTarget>,
+        input: ::std::option::Option<crate::types::S3HudiDirectTarget>,
     ) -> Self {
         self.s3_hudi_direct_target = input;
         self
     }
     /// <p>Specifies the direct JDBC source connection.</p>
     pub fn direct_jdbc_source(mut self, input: crate::types::DirectJdbcSource) -> Self {
-        self.direct_jdbc_source = Some(input);
+        self.direct_jdbc_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the direct JDBC source connection.</p>
     pub fn set_direct_jdbc_source(
         mut self,
-        input: std::option::Option<crate::types::DirectJdbcSource>,
+        input: ::std::option::Option<crate::types::DirectJdbcSource>,
     ) -> Self {
         self.direct_jdbc_source = input;
         self
     }
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn s3_catalog_delta_source(mut self, input: crate::types::S3CatalogDeltaSource) -> Self {
-        self.s3_catalog_delta_source = Some(input);
+        self.s3_catalog_delta_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in Amazon S3.</p>
     pub fn set_s3_catalog_delta_source(
         mut self,
-        input: std::option::Option<crate::types::S3CatalogDeltaSource>,
+        input: ::std::option::Option<crate::types::S3CatalogDeltaSource>,
     ) -> Self {
         self.s3_catalog_delta_source = input;
         self
     }
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
     pub fn catalog_delta_source(mut self, input: crate::types::CatalogDeltaSource) -> Self {
-        self.catalog_delta_source = Some(input);
+        self.catalog_delta_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Delta Lake data source that is registered in the Glue Data Catalog.</p>
     pub fn set_catalog_delta_source(
         mut self,
-        input: std::option::Option<crate::types::CatalogDeltaSource>,
+        input: ::std::option::Option<crate::types::CatalogDeltaSource>,
     ) -> Self {
         self.catalog_delta_source = input;
         self
     }
     /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
     pub fn s3_delta_source(mut self, input: crate::types::S3DeltaSource) -> Self {
-        self.s3_delta_source = Some(input);
+        self.s3_delta_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
     pub fn set_s3_delta_source(
         mut self,
-        input: std::option::Option<crate::types::S3DeltaSource>,
+        input: ::std::option::Option<crate::types::S3DeltaSource>,
     ) -> Self {
         self.s3_delta_source = input;
         self
     }
     /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
     pub fn s3_delta_catalog_target(mut self, input: crate::types::S3DeltaCatalogTarget) -> Self {
-        self.s3_delta_catalog_target = Some(input);
+        self.s3_delta_catalog_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
     pub fn set_s3_delta_catalog_target(
         mut self,
-        input: std::option::Option<crate::types::S3DeltaCatalogTarget>,
+        input: ::std::option::Option<crate::types::S3DeltaCatalogTarget>,
     ) -> Self {
         self.s3_delta_catalog_target = input;
         self
     }
     /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
     pub fn s3_delta_direct_target(mut self, input: crate::types::S3DeltaDirectTarget) -> Self {
-        self.s3_delta_direct_target = Some(input);
+        self.s3_delta_direct_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
     pub fn set_s3_delta_direct_target(
         mut self,
-        input: std::option::Option<crate::types::S3DeltaDirectTarget>,
+        input: ::std::option::Option<crate::types::S3DeltaDirectTarget>,
     ) -> Self {
         self.s3_delta_direct_target = input;
         self
     }
     /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
     pub fn amazon_redshift_source(mut self, input: crate::types::AmazonRedshiftSource) -> Self {
-        self.amazon_redshift_source = Some(input);
+        self.amazon_redshift_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
     pub fn set_amazon_redshift_source(
         mut self,
-        input: std::option::Option<crate::types::AmazonRedshiftSource>,
+        input: ::std::option::Option<crate::types::AmazonRedshiftSource>,
     ) -> Self {
         self.amazon_redshift_source = input;
         self
     }
     /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
     pub fn amazon_redshift_target(mut self, input: crate::types::AmazonRedshiftTarget) -> Self {
-        self.amazon_redshift_target = Some(input);
+        self.amazon_redshift_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
     pub fn set_amazon_redshift_target(
         mut self,
-        input: std::option::Option<crate::types::AmazonRedshiftTarget>,
+        input: ::std::option::Option<crate::types::AmazonRedshiftTarget>,
     ) -> Self {
         self.amazon_redshift_target = input;
         self

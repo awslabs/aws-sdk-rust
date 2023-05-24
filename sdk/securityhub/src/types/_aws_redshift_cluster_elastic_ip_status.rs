@@ -2,22 +2,22 @@
 
 /// <p>The status of the elastic IP (EIP) address for an Amazon Redshift cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterElasticIpStatus {
     /// <p>The elastic IP address for the cluster.</p>
     #[doc(hidden)]
-    pub elastic_ip: std::option::Option<std::string::String>,
+    pub elastic_ip: ::std::option::Option<::std::string::String>,
     /// <p>The status of the elastic IP address.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterElasticIpStatus {
     /// <p>The elastic IP address for the cluster.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> ::std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
     /// <p>The status of the elastic IP address.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AwsRedshiftClusterElasticIpStatus {
 
 /// A builder for [`AwsRedshiftClusterElasticIpStatus`](crate::types::AwsRedshiftClusterElasticIpStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRedshiftClusterElasticIpStatusBuilder {
-    pub(crate) elastic_ip: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) elastic_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterElasticIpStatusBuilder {
     /// <p>The elastic IP address for the cluster.</p>
-    pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.elastic_ip = Some(input.into());
+    pub fn elastic_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.elastic_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The elastic IP address for the cluster.</p>
-    pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_elastic_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.elastic_ip = input;
         self
     }
     /// <p>The status of the elastic IP address.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the elastic IP address.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

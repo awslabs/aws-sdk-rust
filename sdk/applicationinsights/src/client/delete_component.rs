@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteComponent`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_group_name(impl Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_resource_group_name): <p>The name of the resource group.</p>
-    ///   - [`component_name(impl Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_component_name): <p>The name of the component.</p>
+    ///   - [`resource_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_resource_group_name): <p>The name of the resource group.</p>
+    ///   - [`component_name(impl ::std::convert::Into<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::delete_component::builders::DeleteComponentFluentBuilder::set_component_name): <p>The name of the component.</p>
     /// - On success, responds with [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput)
     /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::operation::delete_component::DeleteComponentError)
     pub fn delete_component(

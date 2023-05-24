@@ -2,11 +2,11 @@
 
 /// <p>Contains information about the condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterCondition {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
     #[doc(hidden)]
-    pub equals_value: std::option::Option<std::string::String>,
+    pub equals_value: ::std::option::Option<::std::string::String>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
     #[doc(hidden)]
     pub greater_than: i64,
@@ -16,7 +16,7 @@ pub struct FilterCondition {
 }
 impl FilterCondition {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
-    pub fn equals_value(&self) -> std::option::Option<&str> {
+    pub fn equals_value(&self) -> ::std::option::Option<&str> {
         self.equals_value.as_deref()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
@@ -37,40 +37,42 @@ impl FilterCondition {
 
 /// A builder for [`FilterCondition`](crate::types::FilterCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterConditionBuilder {
-    pub(crate) equals_value: std::option::Option<std::string::String>,
-    pub(crate) greater_than: std::option::Option<i64>,
-    pub(crate) less_than: std::option::Option<i64>,
+    pub(crate) equals_value: ::std::option::Option<::std::string::String>,
+    pub(crate) greater_than: ::std::option::Option<i64>,
+    pub(crate) less_than: ::std::option::Option<i64>,
 }
 impl FilterConditionBuilder {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
-    pub fn equals_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.equals_value = Some(input.into());
+    pub fn equals_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.equals_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
-    pub fn set_equals_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_equals_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.equals_value = input;
         self
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
     pub fn greater_than(mut self, input: i64) -> Self {
-        self.greater_than = Some(input);
+        self.greater_than = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
-    pub fn set_greater_than(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_greater_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.greater_than = input;
         self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
     pub fn less_than(mut self, input: i64) -> Self {
-        self.less_than = Some(input);
+        self.less_than = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
-    pub fn set_less_than(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.less_than = input;
         self
     }

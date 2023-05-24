@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FleetCapacityReservationUsageStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum FleetCapacityReservationUsageStrategy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FleetCapacityReservationUsageStrategy {
+impl ::std::convert::From<&str> for FleetCapacityReservationUsageStrategy {
     fn from(s: &str) -> Self {
         match s {
             "use-capacity-reservations-first" => {
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for FleetCapacityReservationUsageStrategy {
         }
     }
 }
-impl std::str::FromStr for FleetCapacityReservationUsageStrategy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FleetCapacityReservationUsageStrategy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FleetCapacityReservationUsageStrategy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FleetCapacityReservationUsageStrategy::from(s))
     }
 }
 impl FleetCapacityReservationUsageStrategy {
@@ -85,7 +85,7 @@ impl FleetCapacityReservationUsageStrategy {
         &["use-capacity-reservations-first"]
     }
 }
-impl AsRef<str> for FleetCapacityReservationUsageStrategy {
+impl ::std::convert::AsRef<str> for FleetCapacityReservationUsageStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

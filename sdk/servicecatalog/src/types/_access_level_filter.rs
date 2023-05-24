@@ -2,7 +2,7 @@
 
 /// <p>The access level to use to filter results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessLevelFilter {
     /// <p>The access level.</p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct AccessLevelFilter {
     /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::AccessLevelFilterKey>,
+    pub key: ::std::option::Option<crate::types::AccessLevelFilterKey>,
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl AccessLevelFilter {
     /// <p>The access level.</p>
@@ -23,11 +23,11 @@ impl AccessLevelFilter {
     /// <li> <p> <code>Role</code> - Filter results based on the federated role of the specified user.</p> </li>
     /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
-    pub fn key(&self) -> std::option::Option<&crate::types::AccessLevelFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::AccessLevelFilterKey> {
         self.key.as_ref()
     }
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -40,10 +40,12 @@ impl AccessLevelFilter {
 
 /// A builder for [`AccessLevelFilter`](crate::types::AccessLevelFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessLevelFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::AccessLevelFilterKey>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<crate::types::AccessLevelFilterKey>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl AccessLevelFilterBuilder {
     /// <p>The access level.</p>
@@ -53,7 +55,7 @@ impl AccessLevelFilterBuilder {
     /// <li> <p> <code>User</code> - Filter results based on the specified user.</p> </li>
     /// </ul>
     pub fn key(mut self, input: crate::types::AccessLevelFilterKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The access level.</p>
@@ -64,18 +66,18 @@ impl AccessLevelFilterBuilder {
     /// </ul>
     pub fn set_key(
         mut self,
-        input: std::option::Option<crate::types::AccessLevelFilterKey>,
+        input: ::std::option::Option<crate::types::AccessLevelFilterKey>,
     ) -> Self {
         self.key = input;
         self
     }
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user to which the access level applies. The only supported value is <code>Self</code>.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

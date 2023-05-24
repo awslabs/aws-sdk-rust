@@ -2,17 +2,17 @@
 
 /// H265 Filter Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct H265FilterSettings {
     /// Temporal Filter Settings
     #[doc(hidden)]
-    pub temporal_filter_settings: std::option::Option<crate::types::TemporalFilterSettings>,
+    pub temporal_filter_settings: ::std::option::Option<crate::types::TemporalFilterSettings>,
 }
 impl H265FilterSettings {
     /// Temporal Filter Settings
     pub fn temporal_filter_settings(
         &self,
-    ) -> std::option::Option<&crate::types::TemporalFilterSettings> {
+    ) -> ::std::option::Option<&crate::types::TemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
     }
 }
@@ -25,20 +25,23 @@ impl H265FilterSettings {
 
 /// A builder for [`H265FilterSettings`](crate::types::H265FilterSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct H265FilterSettingsBuilder {
-    pub(crate) temporal_filter_settings: std::option::Option<crate::types::TemporalFilterSettings>,
+    pub(crate) temporal_filter_settings:
+        ::std::option::Option<crate::types::TemporalFilterSettings>,
 }
 impl H265FilterSettingsBuilder {
     /// Temporal Filter Settings
     pub fn temporal_filter_settings(mut self, input: crate::types::TemporalFilterSettings) -> Self {
-        self.temporal_filter_settings = Some(input);
+        self.temporal_filter_settings = ::std::option::Option::Some(input);
         self
     }
     /// Temporal Filter Settings
     pub fn set_temporal_filter_settings(
         mut self,
-        input: std::option::Option<crate::types::TemporalFilterSettings>,
+        input: ::std::option::Option<crate::types::TemporalFilterSettings>,
     ) -> Self {
         self.temporal_filter_settings = input;
         self

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InputCompressionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum InputCompressionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InputCompressionType {
+impl ::std::convert::From<&str> for InputCompressionType {
     fn from(s: &str) -> Self {
         match s {
             "GZIP" => InputCompressionType::Gzip,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for InputCompressionType {
         }
     }
 }
-impl std::str::FromStr for InputCompressionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InputCompressionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InputCompressionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InputCompressionType::from(s))
     }
 }
 impl InputCompressionType {
@@ -91,7 +91,7 @@ impl InputCompressionType {
         &["GZIP", "NONE", "ZSTD"]
     }
 }
-impl AsRef<str> for InputCompressionType {
+impl ::std::convert::AsRef<str> for InputCompressionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

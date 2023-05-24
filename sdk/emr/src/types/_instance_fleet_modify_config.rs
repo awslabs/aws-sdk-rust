@@ -4,39 +4,39 @@
 /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
     #[doc(hidden)]
-    pub instance_fleet_id: std::option::Option<std::string::String>,
+    pub instance_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
     #[doc(hidden)]
-    pub target_on_demand_capacity: std::option::Option<i32>,
+    pub target_on_demand_capacity: ::std::option::Option<i32>,
     /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
     #[doc(hidden)]
-    pub target_spot_capacity: std::option::Option<i32>,
+    pub target_spot_capacity: ::std::option::Option<i32>,
     /// <p>The resize specification for the instance fleet.</p>
     #[doc(hidden)]
     pub resize_specifications:
-        std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+        ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
 impl InstanceFleetModifyConfig {
     /// <p>A unique identifier for the instance fleet.</p>
-    pub fn instance_fleet_id(&self) -> std::option::Option<&str> {
+    pub fn instance_fleet_id(&self) -> ::std::option::Option<&str> {
         self.instance_fleet_id.as_deref()
     }
     /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
-    pub fn target_on_demand_capacity(&self) -> std::option::Option<i32> {
+    pub fn target_on_demand_capacity(&self) -> ::std::option::Option<i32> {
         self.target_on_demand_capacity
     }
     /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
-    pub fn target_spot_capacity(&self) -> std::option::Option<i32> {
+    pub fn target_spot_capacity(&self) -> ::std::option::Option<i32> {
         self.target_spot_capacity
     }
     /// <p>The resize specification for the instance fleet.</p>
     pub fn resize_specifications(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceFleetResizingSpecifications> {
+    ) -> ::std::option::Option<&crate::types::InstanceFleetResizingSpecifications> {
         self.resize_specifications.as_ref()
     }
 }
@@ -49,45 +49,50 @@ impl InstanceFleetModifyConfig {
 
 /// A builder for [`InstanceFleetModifyConfig`](crate::types::InstanceFleetModifyConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceFleetModifyConfigBuilder {
-    pub(crate) instance_fleet_id: std::option::Option<std::string::String>,
-    pub(crate) target_on_demand_capacity: std::option::Option<i32>,
-    pub(crate) target_spot_capacity: std::option::Option<i32>,
+    pub(crate) instance_fleet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_on_demand_capacity: ::std::option::Option<i32>,
+    pub(crate) target_spot_capacity: ::std::option::Option<i32>,
     pub(crate) resize_specifications:
-        std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+        ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
 }
 impl InstanceFleetModifyConfigBuilder {
     /// <p>A unique identifier for the instance fleet.</p>
-    pub fn instance_fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_fleet_id = Some(input.into());
+    pub fn instance_fleet_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the instance fleet.</p>
     pub fn set_instance_fleet_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_fleet_id = input;
         self
     }
     /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
     pub fn target_on_demand_capacity(mut self, input: i32) -> Self {
-        self.target_on_demand_capacity = Some(input);
+        self.target_on_demand_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target capacity of On-Demand units for the instance fleet. For more information see <code>InstanceFleetConfig$TargetOnDemandCapacity</code>.</p>
-    pub fn set_target_on_demand_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_target_on_demand_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_on_demand_capacity = input;
         self
     }
     /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
     pub fn target_spot_capacity(mut self, input: i32) -> Self {
-        self.target_spot_capacity = Some(input);
+        self.target_spot_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target capacity of Spot units for the instance fleet. For more information, see <code>InstanceFleetConfig$TargetSpotCapacity</code>.</p>
-    pub fn set_target_spot_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_target_spot_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_spot_capacity = input;
         self
     }
@@ -96,13 +101,13 @@ impl InstanceFleetModifyConfigBuilder {
         mut self,
         input: crate::types::InstanceFleetResizingSpecifications,
     ) -> Self {
-        self.resize_specifications = Some(input);
+        self.resize_specifications = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resize specification for the instance fleet.</p>
     pub fn set_resize_specifications(
         mut self,
-        input: std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
+        input: ::std::option::Option<crate::types::InstanceFleetResizingSpecifications>,
     ) -> Self {
         self.resize_specifications = input;
         self

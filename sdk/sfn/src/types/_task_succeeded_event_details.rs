@@ -2,43 +2,43 @@
 
 /// <p>Contains details about the successful completion of a task state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskSucceededEventDetails {
     /// <p>The service name of the resource in a task state.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The action of the resource called by a task state.</p>
     #[doc(hidden)]
-    pub resource: std::option::Option<std::string::String>,
+    pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     #[doc(hidden)]
-    pub output: std::option::Option<std::string::String>,
+    pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
     #[doc(hidden)]
-    pub output_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl TaskSucceededEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn output(&self) -> std::option::Option<&str> {
+    pub fn output(&self) -> ::std::option::Option<&str> {
         self.output.as_deref()
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn output_details(
         &self,
-    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.output_details.as_ref()
     }
 }
-impl std::fmt::Debug for TaskSucceededEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TaskSucceededEventDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TaskSucceededEventDetails");
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource", &self.resource);
@@ -56,53 +56,60 @@ impl TaskSucceededEventDetails {
 
 /// A builder for [`TaskSucceededEventDetails`](crate::types::TaskSucceededEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TaskSucceededEventDetailsBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) resource: std::option::Option<std::string::String>,
-    pub(crate) output: std::option::Option<std::string::String>,
-    pub(crate) output_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource: ::std::option::Option<::std::string::String>,
+    pub(crate) output: ::std::option::Option<::std::string::String>,
+    pub(crate) output_details:
+        ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl TaskSucceededEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service name of the resource in a task state.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource = Some(input.into());
+    pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
     }
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output = Some(input.into());
+    pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output = input;
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn output_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
-        self.output_details = Some(input);
+        self.output_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn set_output_details(
         mut self,
-        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     ) -> Self {
         self.output_details = input;
         self
@@ -117,8 +124,8 @@ impl TaskSucceededEventDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for TaskSucceededEventDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TaskSucceededEventDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TaskSucceededEventDetailsBuilder");
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource", &self.resource);

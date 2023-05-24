@@ -2,29 +2,29 @@
 
 /// <p>The full POSIX identity, including the user ID, group ID, and any secondary group IDs, on the access point that is used for all file system operations performed by NFS clients using the access point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PosixUser {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
     #[doc(hidden)]
-    pub uid: std::option::Option<i64>,
+    pub uid: ::std::option::Option<i64>,
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
     #[doc(hidden)]
-    pub gid: std::option::Option<i64>,
+    pub gid: ::std::option::Option<i64>,
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
     #[doc(hidden)]
-    pub secondary_gids: std::option::Option<std::vec::Vec<i64>>,
+    pub secondary_gids: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl PosixUser {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
-    pub fn uid(&self) -> std::option::Option<i64> {
+    pub fn uid(&self) -> ::std::option::Option<i64> {
         self.uid
     }
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
-    pub fn gid(&self) -> std::option::Option<i64> {
+    pub fn gid(&self) -> ::std::option::Option<i64> {
         self.gid
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    pub fn secondary_gids(&self) -> std::option::Option<&[i64]> {
+    pub fn secondary_gids(&self) -> ::std::option::Option<&[i64]> {
         self.secondary_gids.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl PosixUser {
 
 /// A builder for [`PosixUser`](crate::types::PosixUser).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PosixUserBuilder {
-    pub(crate) uid: std::option::Option<i64>,
-    pub(crate) gid: std::option::Option<i64>,
-    pub(crate) secondary_gids: std::option::Option<std::vec::Vec<i64>>,
+    pub(crate) uid: ::std::option::Option<i64>,
+    pub(crate) gid: ::std::option::Option<i64>,
+    pub(crate) secondary_gids: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl PosixUserBuilder {
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
     pub fn uid(mut self, input: i64) -> Self {
-        self.uid = Some(input);
+        self.uid = ::std::option::Option::Some(input);
         self
     }
     /// <p>The POSIX user ID used for all file system operations using this access point.</p>
-    pub fn set_uid(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_uid(mut self, input: ::std::option::Option<i64>) -> Self {
         self.uid = input;
         self
     }
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
     pub fn gid(mut self, input: i64) -> Self {
-        self.gid = Some(input);
+        self.gid = ::std::option::Option::Some(input);
         self
     }
     /// <p>The POSIX group ID used for all file system operations using this access point.</p>
-    pub fn set_gid(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_gid(mut self, input: ::std::option::Option<i64>) -> Self {
         self.gid = input;
         self
     }
@@ -72,11 +74,14 @@ impl PosixUserBuilder {
     pub fn secondary_gids(mut self, input: i64) -> Self {
         let mut v = self.secondary_gids.unwrap_or_default();
         v.push(input);
-        self.secondary_gids = Some(v);
+        self.secondary_gids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point.</p>
-    pub fn set_secondary_gids(mut self, input: std::option::Option<std::vec::Vec<i64>>) -> Self {
+    pub fn set_secondary_gids(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<i64>>,
+    ) -> Self {
         self.secondary_gids = input;
         self
     }

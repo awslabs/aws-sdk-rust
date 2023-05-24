@@ -2,52 +2,52 @@
 
 /// <p>Summary information for a simulation application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationApplicationSummary {
     /// <p>The name of the simulation application.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the simulation application.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about a robot software suite (ROS distribution).</p>
     #[doc(hidden)]
-    pub robot_software_suite: std::option::Option<crate::types::RobotSoftwareSuite>,
+    pub robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     /// <p>Information about a simulation software suite.</p>
     #[doc(hidden)]
-    pub simulation_software_suite: std::option::Option<crate::types::SimulationSoftwareSuite>,
+    pub simulation_software_suite: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
 }
 impl SimulationApplicationSummary {
     /// <p>The name of the simulation application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The version of the simulation application.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<&crate::types::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> ::std::option::Option<&crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>Information about a simulation software suite.</p>
     pub fn simulation_software_suite(
         &self,
-    ) -> std::option::Option<&crate::types::SimulationSoftwareSuite> {
+    ) -> ::std::option::Option<&crate::types::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
 }
@@ -60,69 +60,71 @@ impl SimulationApplicationSummary {
 
 /// A builder for [`SimulationApplicationSummary`](crate::types::SimulationApplicationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SimulationApplicationSummaryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) robot_software_suite: std::option::Option<crate::types::RobotSoftwareSuite>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) robot_software_suite: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     pub(crate) simulation_software_suite:
-        std::option::Option<crate::types::SimulationSoftwareSuite>,
+        ::std::option::Option<crate::types::SimulationSoftwareSuite>,
 }
 impl SimulationApplicationSummaryBuilder {
     /// <p>The name of the simulation application.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the simulation application.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The version of the simulation application.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the simulation application.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
-        self.robot_software_suite = Some(input);
+        self.robot_software_suite = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a robot software suite (ROS distribution).</p>
     pub fn set_robot_software_suite(
         mut self,
-        input: std::option::Option<crate::types::RobotSoftwareSuite>,
+        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     ) -> Self {
         self.robot_software_suite = input;
         self
@@ -132,13 +134,13 @@ impl SimulationApplicationSummaryBuilder {
         mut self,
         input: crate::types::SimulationSoftwareSuite,
     ) -> Self {
-        self.simulation_software_suite = Some(input);
+        self.simulation_software_suite = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a simulation software suite.</p>
     pub fn set_simulation_software_suite(
         mut self,
-        input: std::option::Option<crate::types::SimulationSoftwareSuite>,
+        input: ::std::option::Option<crate::types::SimulationSoftwareSuite>,
     ) -> Self {
         self.simulation_software_suite = input;
         self

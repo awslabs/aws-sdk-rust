@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>GetPipelineExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineExecutionOutput {
     /// <p>Represents information about the execution of a pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_execution: std::option::Option<crate::types::PipelineExecution>,
+    pub pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
     _request_id: Option<String>,
 }
 impl GetPipelineExecutionOutput {
     /// <p>Represents information about the execution of a pipeline.</p>
-    pub fn pipeline_execution(&self) -> std::option::Option<&crate::types::PipelineExecution> {
+    pub fn pipeline_execution(&self) -> ::std::option::Option<&crate::types::PipelineExecution> {
         self.pipeline_execution.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetPipelineExecutionOutput {
+impl ::aws_http::request_id::RequestId for GetPipelineExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl GetPipelineExecutionOutput {
 
 /// A builder for [`GetPipelineExecutionOutput`](crate::operation::get_pipeline_execution::GetPipelineExecutionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPipelineExecutionOutputBuilder {
-    pub(crate) pipeline_execution: std::option::Option<crate::types::PipelineExecution>,
+    pub(crate) pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
     _request_id: Option<String>,
 }
 impl GetPipelineExecutionOutputBuilder {
     /// <p>Represents information about the execution of a pipeline.</p>
     pub fn pipeline_execution(mut self, input: crate::types::PipelineExecution) -> Self {
-        self.pipeline_execution = Some(input);
+        self.pipeline_execution = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents information about the execution of a pipeline.</p>
     pub fn set_pipeline_execution(
         mut self,
-        input: std::option::Option<crate::types::PipelineExecution>,
+        input: ::std::option::Option<crate::types::PipelineExecution>,
     ) -> Self {
         self.pipeline_execution = input;
         self

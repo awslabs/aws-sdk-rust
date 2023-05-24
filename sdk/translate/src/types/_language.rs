@@ -2,22 +2,22 @@
 
 /// <p>A supported language.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Language {
     /// <p>Language name of the supported language.</p>
     #[doc(hidden)]
-    pub language_name: std::option::Option<std::string::String>,
+    pub language_name: ::std::option::Option<::std::string::String>,
     /// <p>Language code for the supported language.</p>
     #[doc(hidden)]
-    pub language_code: std::option::Option<std::string::String>,
+    pub language_code: ::std::option::Option<::std::string::String>,
 }
 impl Language {
     /// <p>Language name of the supported language.</p>
-    pub fn language_name(&self) -> std::option::Option<&str> {
+    pub fn language_name(&self) -> ::std::option::Option<&str> {
         self.language_name.as_deref()
     }
     /// <p>Language code for the supported language.</p>
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> ::std::option::Option<&str> {
         self.language_code.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl Language {
 
 /// A builder for [`Language`](crate::types::Language).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LanguageBuilder {
-    pub(crate) language_name: std::option::Option<std::string::String>,
-    pub(crate) language_code: std::option::Option<std::string::String>,
+    pub(crate) language_name: ::std::option::Option<::std::string::String>,
+    pub(crate) language_code: ::std::option::Option<::std::string::String>,
 }
 impl LanguageBuilder {
     /// <p>Language name of the supported language.</p>
-    pub fn language_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language_name = Some(input.into());
+    pub fn language_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Language name of the supported language.</p>
-    pub fn set_language_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.language_name = input;
         self
     }
     /// <p>Language code for the supported language.</p>
-    pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language_code = Some(input.into());
+    pub fn language_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Language code for the supported language.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.language_code = input;
         self
     }

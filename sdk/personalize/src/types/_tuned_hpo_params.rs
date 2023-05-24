@@ -2,19 +2,21 @@
 
 /// <p>If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     #[doc(hidden)]
-    pub algorithm_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub algorithm_hyper_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl TunedHpoParams {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     pub fn algorithm_hyper_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.algorithm_hyper_parameters.as_ref()
     }
 }
@@ -27,10 +29,13 @@ impl TunedHpoParams {
 
 /// A builder for [`TunedHpoParams`](crate::types::TunedHpoParams).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TunedHpoParamsBuilder {
-    pub(crate) algorithm_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) algorithm_hyper_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl TunedHpoParamsBuilder {
     /// Adds a key-value pair to `algorithm_hyper_parameters`.
@@ -40,19 +45,19 @@ impl TunedHpoParamsBuilder {
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     pub fn algorithm_hyper_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.algorithm_hyper_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.algorithm_hyper_parameters = Some(hash_map);
+        self.algorithm_hyper_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of the hyperparameter values of the best performing model.</p>
     pub fn set_algorithm_hyper_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.algorithm_hyper_parameters = input;

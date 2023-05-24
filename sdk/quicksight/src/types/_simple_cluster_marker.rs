@@ -2,15 +2,15 @@
 
 /// <p>The simple cluster marker of the cluster marker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleClusterMarker {
     /// <p>The color of the simple cluster marker.</p>
     #[doc(hidden)]
-    pub color: std::option::Option<std::string::String>,
+    pub color: ::std::option::Option<::std::string::String>,
 }
 impl SimpleClusterMarker {
     /// <p>The color of the simple cluster marker.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<&str> {
         self.color.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl SimpleClusterMarker {
 
 /// A builder for [`SimpleClusterMarker`](crate::types::SimpleClusterMarker).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SimpleClusterMarkerBuilder {
-    pub(crate) color: std::option::Option<std::string::String>,
+    pub(crate) color: ::std::option::Option<::std::string::String>,
 }
 impl SimpleClusterMarkerBuilder {
     /// <p>The color of the simple cluster marker.</p>
-    pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.color = Some(input.into());
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The color of the simple cluster marker.</p>
-    pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
     }

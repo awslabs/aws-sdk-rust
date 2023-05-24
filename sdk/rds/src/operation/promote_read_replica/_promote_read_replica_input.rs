@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PromoteReadReplicaInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -11,7 +11,7 @@ pub struct PromoteReadReplicaInput {
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
     #[doc(hidden)]
-    pub db_instance_identifier: std::option::Option<std::string::String>,
+    pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
@@ -20,7 +20,7 @@ pub struct PromoteReadReplicaInput {
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub backup_retention_period: std::option::Option<i32>,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>Constraints:</p>
@@ -31,7 +31,7 @@ pub struct PromoteReadReplicaInput {
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub preferred_backup_window: std::option::Option<std::string::String>,
+    pub preferred_backup_window: ::std::option::Option<::std::string::String>,
 }
 impl PromoteReadReplicaInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -40,7 +40,7 @@ impl PromoteReadReplicaInput {
     /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -50,7 +50,7 @@ impl PromoteReadReplicaInput {
     /// <li> <p>Must be a value from 0 to 35.</p> </li>
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
     /// </ul>
-    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
@@ -62,7 +62,7 @@ impl PromoteReadReplicaInput {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
 }
@@ -76,11 +76,13 @@ impl PromoteReadReplicaInput {
 
 /// A builder for [`PromoteReadReplicaInput`](crate::operation::promote_read_replica::PromoteReadReplicaInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PromoteReadReplicaInputBuilder {
-    pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
-    pub(crate) backup_retention_period: std::option::Option<i32>,
-    pub(crate) preferred_backup_window: std::option::Option<std::string::String>,
+    pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
 }
 impl PromoteReadReplicaInputBuilder {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -89,8 +91,11 @@ impl PromoteReadReplicaInputBuilder {
     /// <li> <p>Must match the identifier of an existing read replica DB instance.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_instance_identifier = Some(input.into());
+    pub fn db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -101,7 +106,7 @@ impl PromoteReadReplicaInputBuilder {
     /// <p>Example: <code>mydbinstance</code> </p>
     pub fn set_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_instance_identifier = input;
         self
@@ -114,7 +119,7 @@ impl PromoteReadReplicaInputBuilder {
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
-        self.backup_retention_period = Some(input);
+        self.backup_retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -124,7 +129,7 @@ impl PromoteReadReplicaInputBuilder {
     /// <li> <p>Must be a value from 0 to 35.</p> </li>
     /// <li> <p>Can't be set to 0 if the DB instance is a source to read replicas.</p> </li>
     /// </ul>
-    pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
     }
@@ -137,8 +142,11 @@ impl PromoteReadReplicaInputBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window.</p> </li>
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
-        self.preferred_backup_window = Some(input.into());
+    pub fn preferred_backup_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>
@@ -152,7 +160,7 @@ impl PromoteReadReplicaInputBuilder {
     /// </ul>
     pub fn set_preferred_backup_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.preferred_backup_window = input;
         self
@@ -160,11 +168,11 @@ impl PromoteReadReplicaInputBuilder {
     /// Consumes the builder and constructs a [`PromoteReadReplicaInput`](crate::operation::promote_read_replica::PromoteReadReplicaInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::promote_read_replica::PromoteReadReplicaInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::promote_read_replica::PromoteReadReplicaInput {
                 db_instance_identifier: self.db_instance_identifier,
                 backup_retention_period: self.backup_retention_period,

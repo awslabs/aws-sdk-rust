@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FaceAttributes {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum FaceAttributes {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FaceAttributes {
+impl ::std::convert::From<&str> for FaceAttributes {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => FaceAttributes::All,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for FaceAttributes {
         }
     }
 }
-impl std::str::FromStr for FaceAttributes {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FaceAttributes {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FaceAttributes::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FaceAttributes::from(s))
     }
 }
 impl FaceAttributes {
@@ -86,7 +86,7 @@ impl FaceAttributes {
         &["ALL", "DEFAULT"]
     }
 }
-impl AsRef<str> for FaceAttributes {
+impl ::std::convert::AsRef<str> for FaceAttributes {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

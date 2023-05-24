@@ -2,15 +2,15 @@
 
 /// <p>Contains the details of the aborted transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbortTransactionResult {
     /// <p>Contains server-side performance information for the command.</p>
     #[doc(hidden)]
-    pub timing_information: std::option::Option<crate::types::TimingInformation>,
+    pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
 }
 impl AbortTransactionResult {
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::types::TimingInformation> {
+    pub fn timing_information(&self) -> ::std::option::Option<&crate::types::TimingInformation> {
         self.timing_information.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AbortTransactionResult {
 
 /// A builder for [`AbortTransactionResult`](crate::types::AbortTransactionResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AbortTransactionResultBuilder {
-    pub(crate) timing_information: std::option::Option<crate::types::TimingInformation>,
+    pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,
 }
 impl AbortTransactionResultBuilder {
     /// <p>Contains server-side performance information for the command.</p>
     pub fn timing_information(mut self, input: crate::types::TimingInformation) -> Self {
-        self.timing_information = Some(input);
+        self.timing_information = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn set_timing_information(
         mut self,
-        input: std::option::Option<crate::types::TimingInformation>,
+        input: ::std::option::Option<crate::types::TimingInformation>,
     ) -> Self {
         self.timing_information = input;
         self

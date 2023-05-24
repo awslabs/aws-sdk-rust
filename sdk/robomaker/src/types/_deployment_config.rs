@@ -2,36 +2,36 @@
 
 /// <p>Information about a deployment configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentConfig {
     /// <p>The percentage of robots receiving the deployment at the same time.</p>
     #[doc(hidden)]
-    pub concurrent_deployment_percentage: std::option::Option<i32>,
+    pub concurrent_deployment_percentage: ::std::option::Option<i32>,
     /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
     #[doc(hidden)]
-    pub failure_threshold_percentage: std::option::Option<i32>,
+    pub failure_threshold_percentage: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
     #[doc(hidden)]
-    pub robot_deployment_timeout_in_seconds: std::option::Option<i64>,
+    pub robot_deployment_timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The download condition file.</p>
     #[doc(hidden)]
-    pub download_condition_file: std::option::Option<crate::types::S3Object>,
+    pub download_condition_file: ::std::option::Option<crate::types::S3Object>,
 }
 impl DeploymentConfig {
     /// <p>The percentage of robots receiving the deployment at the same time.</p>
-    pub fn concurrent_deployment_percentage(&self) -> std::option::Option<i32> {
+    pub fn concurrent_deployment_percentage(&self) -> ::std::option::Option<i32> {
         self.concurrent_deployment_percentage
     }
     /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
-    pub fn failure_threshold_percentage(&self) -> std::option::Option<i32> {
+    pub fn failure_threshold_percentage(&self) -> ::std::option::Option<i32> {
         self.failure_threshold_percentage
     }
     /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
-    pub fn robot_deployment_timeout_in_seconds(&self) -> std::option::Option<i64> {
+    pub fn robot_deployment_timeout_in_seconds(&self) -> ::std::option::Option<i64> {
         self.robot_deployment_timeout_in_seconds
     }
     /// <p>The download condition file.</p>
-    pub fn download_condition_file(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn download_condition_file(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.download_condition_file.as_ref()
     }
 }
@@ -44,56 +44,61 @@ impl DeploymentConfig {
 
 /// A builder for [`DeploymentConfig`](crate::types::DeploymentConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentConfigBuilder {
-    pub(crate) concurrent_deployment_percentage: std::option::Option<i32>,
-    pub(crate) failure_threshold_percentage: std::option::Option<i32>,
-    pub(crate) robot_deployment_timeout_in_seconds: std::option::Option<i64>,
-    pub(crate) download_condition_file: std::option::Option<crate::types::S3Object>,
+    pub(crate) concurrent_deployment_percentage: ::std::option::Option<i32>,
+    pub(crate) failure_threshold_percentage: ::std::option::Option<i32>,
+    pub(crate) robot_deployment_timeout_in_seconds: ::std::option::Option<i64>,
+    pub(crate) download_condition_file: ::std::option::Option<crate::types::S3Object>,
 }
 impl DeploymentConfigBuilder {
     /// <p>The percentage of robots receiving the deployment at the same time.</p>
     pub fn concurrent_deployment_percentage(mut self, input: i32) -> Self {
-        self.concurrent_deployment_percentage = Some(input);
+        self.concurrent_deployment_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of robots receiving the deployment at the same time.</p>
-    pub fn set_concurrent_deployment_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_concurrent_deployment_percentage(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.concurrent_deployment_percentage = input;
         self
     }
     /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
     pub fn failure_threshold_percentage(mut self, input: i32) -> Self {
-        self.failure_threshold_percentage = Some(input);
+        self.failure_threshold_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of deployments that need to fail before stopping deployment.</p>
-    pub fn set_failure_threshold_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failure_threshold_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_threshold_percentage = input;
         self
     }
     /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
     pub fn robot_deployment_timeout_in_seconds(mut self, input: i64) -> Self {
-        self.robot_deployment_timeout_in_seconds = Some(input);
+        self.robot_deployment_timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, to wait for deployment to a single robot to complete. Choose a time between 1 minute and 7 days. The default is 5 hours.</p>
     pub fn set_robot_deployment_timeout_in_seconds(
         mut self,
-        input: std::option::Option<i64>,
+        input: ::std::option::Option<i64>,
     ) -> Self {
         self.robot_deployment_timeout_in_seconds = input;
         self
     }
     /// <p>The download condition file.</p>
     pub fn download_condition_file(mut self, input: crate::types::S3Object) -> Self {
-        self.download_condition_file = Some(input);
+        self.download_condition_file = ::std::option::Option::Some(input);
         self
     }
     /// <p>The download condition file.</p>
     pub fn set_download_condition_file(
         mut self,
-        input: std::option::Option<crate::types::S3Object>,
+        input: ::std::option::Option<crate::types::S3Object>,
     ) -> Self {
         self.download_condition_file = input;
         self

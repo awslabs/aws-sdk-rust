@@ -2,22 +2,22 @@
 
 /// <p>The filter to apply to stack instances</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackInstanceFilter {
     /// <p>The type of filter to apply.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::StackInstanceFilterName>,
+    pub name: ::std::option::Option<crate::types::StackInstanceFilterName>,
     /// <p>The status to filter by.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::string::String>,
+    pub values: ::std::option::Option<::std::string::String>,
 }
 impl StackInstanceFilter {
     /// <p>The type of filter to apply.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::StackInstanceFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::StackInstanceFilterName> {
         self.name.as_ref()
     }
     /// <p>The status to filter by.</p>
-    pub fn values(&self) -> std::option::Option<&str> {
+    pub fn values(&self) -> ::std::option::Option<&str> {
         self.values.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl StackInstanceFilter {
 
 /// A builder for [`StackInstanceFilter`](crate::types::StackInstanceFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackInstanceFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::StackInstanceFilterName>,
-    pub(crate) values: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<crate::types::StackInstanceFilterName>,
+    pub(crate) values: ::std::option::Option<::std::string::String>,
 }
 impl StackInstanceFilterBuilder {
     /// <p>The type of filter to apply.</p>
     pub fn name(mut self, input: crate::types::StackInstanceFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of filter to apply.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::StackInstanceFilterName>,
+        input: ::std::option::Option<crate::types::StackInstanceFilterName>,
     ) -> Self {
         self.name = input;
         self
     }
     /// <p>The status to filter by.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
-        self.values = Some(input.into());
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status to filter by.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.values = input;
         self
     }

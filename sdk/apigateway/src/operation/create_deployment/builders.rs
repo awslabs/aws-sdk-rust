@@ -6,29 +6,29 @@ pub use crate::operation::create_deployment::_create_deployment_input::CreateDep
 /// Fluent builder constructing a request to `CreateDeployment`.
 ///
 /// <p>Creates a Deployment resource, which makes a specified RestApi callable over the internet.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDeploymentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_deployment::builders::CreateDeploymentInputBuilder,
 }
 impl CreateDeploymentFluentBuilder {
     /// Creates a new `CreateDeployment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_deployment::CreateDeployment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment::CreateDeploymentError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateDeploymentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment::CreateDeploymentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,54 +75,57 @@ impl CreateDeploymentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment::CreateDeploymentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
         self
     }
     /// <p>The name of the Stage resource for the Deployment resource to create.</p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
     }
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
-    pub fn stage_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stage_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.stage_description(input.into());
         self
     }
     /// <p>The description of the Stage resource for the Deployment resource to create.</p>
     pub fn set_stage_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_stage_description(input);
         self
     }
     /// <p>The description for the Deployment resource to create.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description for the Deployment resource to create.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -129,7 +135,7 @@ impl CreateDeploymentFluentBuilder {
         self
     }
     /// <p>Enables a cache cluster for the Stage resource specified in the input.</p>
-    pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cache_cluster_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_cache_cluster_enabled(input);
         self
     }
@@ -141,7 +147,7 @@ impl CreateDeploymentFluentBuilder {
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub fn set_cache_cluster_size(
         mut self,
-        input: std::option::Option<crate::types::CacheClusterSize>,
+        input: ::std::option::Option<crate::types::CacheClusterSize>,
     ) -> Self {
         self.inner = self.inner.set_cache_cluster_size(input);
         self
@@ -153,8 +159,8 @@ impl CreateDeploymentFluentBuilder {
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub fn variables(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.variables(k.into(), v.into());
         self
@@ -162,8 +168,8 @@ impl CreateDeploymentFluentBuilder {
     /// <p>A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub fn set_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_variables(input);
@@ -177,7 +183,7 @@ impl CreateDeploymentFluentBuilder {
     /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
     pub fn set_canary_settings(
         mut self,
-        input: std::option::Option<crate::types::DeploymentCanarySettings>,
+        input: ::std::option::Option<crate::types::DeploymentCanarySettings>,
     ) -> Self {
         self.inner = self.inner.set_canary_settings(input);
         self
@@ -188,7 +194,7 @@ impl CreateDeploymentFluentBuilder {
         self
     }
     /// <p>Specifies whether active tracing with X-ray is enabled for the Stage.</p>
-    pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_tracing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_tracing_enabled(input);
         self
     }

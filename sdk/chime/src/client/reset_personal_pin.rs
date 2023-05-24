@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResetPersonalPIN`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::set_user_id): <p>The user ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::reset_personal_pin::builders::ResetPersonalPINFluentBuilder::set_user_id): <p>The user ID.</p>
     /// - On success, responds with [`ResetPersonalPinOutput`](crate::operation::reset_personal_pin::ResetPersonalPinOutput) with field(s):
     ///   - [`user(Option<User>)`](crate::operation::reset_personal_pin::ResetPersonalPinOutput::user): <p>The user details and new personal meeting PIN.</p>
     /// - On failure, responds with [`SdkError<ResetPersonalPINError>`](crate::operation::reset_personal_pin::ResetPersonalPINError)

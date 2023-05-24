@@ -2,20 +2,20 @@
 
 /// <p>The output from the DescribeEndpoint operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointOutput {
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
     #[doc(hidden)]
-    pub endpoint_address: std::option::Option<std::string::String>,
+    pub endpoint_address: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointOutput {
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
-    pub fn endpoint_address(&self) -> std::option::Option<&str> {
+    pub fn endpoint_address(&self) -> ::std::option::Option<&str> {
         self.endpoint_address.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEndpointOutput {
+impl ::aws_http::request_id::RequestId for DescribeEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,27 @@ impl DescribeEndpointOutput {
 
 /// A builder for [`DescribeEndpointOutput`](crate::operation::describe_endpoint::DescribeEndpointOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEndpointOutputBuilder {
-    pub(crate) endpoint_address: std::option::Option<std::string::String>,
+    pub(crate) endpoint_address: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointOutputBuilder {
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
-    pub fn endpoint_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_address = Some(input.into());
+    pub fn endpoint_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
-    pub fn set_endpoint_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.endpoint_address = input;
         self
     }

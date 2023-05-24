@@ -2,50 +2,50 @@
 
 /// <p>Detail data for a resource sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSyncAttempt {
     /// <p>Detail data for the initial repository commit, path and push.</p>
     #[doc(hidden)]
-    pub initial_revision: std::option::Option<crate::types::Revision>,
+    pub initial_revision: ::std::option::Option<crate::types::Revision>,
     /// <p>Detail data for the target revision.</p>
     #[doc(hidden)]
-    pub target_revision: std::option::Option<crate::types::Revision>,
+    pub target_revision: ::std::option::Option<crate::types::Revision>,
     /// <p>The resource that is synced to.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<std::string::String>,
+    pub target: ::std::option::Option<::std::string::String>,
     /// <p>The time when the sync attempt started.</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the sync attempt.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ResourceSyncStatus>,
+    pub status: ::std::option::Option<crate::types::ResourceSyncStatus>,
     /// <p>An array of events with detail data.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::ResourceSyncEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>>,
 }
 impl ResourceSyncAttempt {
     /// <p>Detail data for the initial repository commit, path and push.</p>
-    pub fn initial_revision(&self) -> std::option::Option<&crate::types::Revision> {
+    pub fn initial_revision(&self) -> ::std::option::Option<&crate::types::Revision> {
         self.initial_revision.as_ref()
     }
     /// <p>Detail data for the target revision.</p>
-    pub fn target_revision(&self) -> std::option::Option<&crate::types::Revision> {
+    pub fn target_revision(&self) -> ::std::option::Option<&crate::types::Revision> {
         self.target_revision.as_ref()
     }
     /// <p>The resource that is synced to.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The status of the sync attempt.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResourceSyncStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceSyncStatus> {
         self.status.as_ref()
     }
     /// <p>An array of events with detail data.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::ResourceSyncEvent]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::ResourceSyncEvent]> {
         self.events.as_deref()
     }
 }
@@ -58,74 +58,76 @@ impl ResourceSyncAttempt {
 
 /// A builder for [`ResourceSyncAttempt`](crate::types::ResourceSyncAttempt).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceSyncAttemptBuilder {
-    pub(crate) initial_revision: std::option::Option<crate::types::Revision>,
-    pub(crate) target_revision: std::option::Option<crate::types::Revision>,
-    pub(crate) target: std::option::Option<std::string::String>,
-    pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::ResourceSyncStatus>,
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::ResourceSyncEvent>>,
+    pub(crate) initial_revision: ::std::option::Option<crate::types::Revision>,
+    pub(crate) target_revision: ::std::option::Option<crate::types::Revision>,
+    pub(crate) target: ::std::option::Option<::std::string::String>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::ResourceSyncStatus>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>>,
 }
 impl ResourceSyncAttemptBuilder {
     /// <p>Detail data for the initial repository commit, path and push.</p>
     pub fn initial_revision(mut self, input: crate::types::Revision) -> Self {
-        self.initial_revision = Some(input);
+        self.initial_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detail data for the initial repository commit, path and push.</p>
     pub fn set_initial_revision(
         mut self,
-        input: std::option::Option<crate::types::Revision>,
+        input: ::std::option::Option<crate::types::Revision>,
     ) -> Self {
         self.initial_revision = input;
         self
     }
     /// <p>Detail data for the target revision.</p>
     pub fn target_revision(mut self, input: crate::types::Revision) -> Self {
-        self.target_revision = Some(input);
+        self.target_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detail data for the target revision.</p>
     pub fn set_target_revision(
         mut self,
-        input: std::option::Option<crate::types::Revision>,
+        input: ::std::option::Option<crate::types::Revision>,
     ) -> Self {
         self.target_revision = input;
         self
     }
     /// <p>The resource that is synced to.</p>
-    pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target = Some(input.into());
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource that is synced to.</p>
-    pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_at = Some(input);
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the sync attempt started.</p>
     pub fn set_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_at = input;
         self
     }
     /// <p>The status of the sync attempt.</p>
     pub fn status(mut self, input: crate::types::ResourceSyncStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the sync attempt.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ResourceSyncStatus>,
+        input: ::std::option::Option<crate::types::ResourceSyncStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -138,13 +140,13 @@ impl ResourceSyncAttemptBuilder {
     pub fn events(mut self, input: crate::types::ResourceSyncEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of events with detail data.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceSyncEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceSyncEvent>>,
     ) -> Self {
         self.events = input;
         self

@@ -8,47 +8,50 @@ pub use crate::operation::get_sol_function_package_descriptor::_get_sol_function
 /// <p>Gets a function package descriptor in a function package.</p>
 /// <p>A function package descriptor is a .yaml file in a function package that uses the TOSCA standard to describe how the network function in the function package should run on your network.</p>
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSolFunctionPackageDescriptorFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorInputBuilder,
 }
 impl GetSolFunctionPackageDescriptorFluentBuilder {
     /// Creates a new `GetSolFunctionPackageDescriptor`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptor, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptor, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput, aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,17 +62,17 @@ impl GetSolFunctionPackageDescriptorFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput, aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError>>
                          {
         self.send_middleware().await
     }
     /// <p>ID of the function package.</p>
-    pub fn vnf_pkg_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vnf_pkg_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vnf_pkg_id(input.into());
         self
     }
     /// <p>ID of the function package.</p>
-    pub fn set_vnf_pkg_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vnf_pkg_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vnf_pkg_id(input);
         self
     }
@@ -81,7 +84,7 @@ impl GetSolFunctionPackageDescriptorFluentBuilder {
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
     pub fn set_accept(
         mut self,
-        input: std::option::Option<crate::types::DescriptorContentType>,
+        input: ::std::option::Option<crate::types::DescriptorContentType>,
     ) -> Self {
         self.inner = self.inner.set_accept(input);
         self

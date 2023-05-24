@@ -13,25 +13,25 @@
 /// <p> <code>} ]</code> </p>
 /// <p> <code>}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Featurization {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
     #[doc(hidden)]
     pub featurization_pipeline:
-        std::option::Option<std::vec::Vec<crate::types::FeaturizationMethod>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
 }
 impl Featurization {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
     pub fn featurization_pipeline(
         &self,
-    ) -> std::option::Option<&[crate::types::FeaturizationMethod]> {
+    ) -> ::std::option::Option<&[crate::types::FeaturizationMethod]> {
         self.featurization_pipeline.as_deref()
     }
 }
@@ -44,20 +44,28 @@ impl Featurization {
 
 /// A builder for [`Featurization`](crate::types::Featurization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FeaturizationBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) featurization_pipeline:
-        std::option::Option<std::vec::Vec<crate::types::FeaturizationMethod>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
 }
 impl FeaturizationBuilder {
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see <code>howitworks-missing-values</code>.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
@@ -69,13 +77,13 @@ impl FeaturizationBuilder {
     pub fn featurization_pipeline(mut self, input: crate::types::FeaturizationMethod) -> Self {
         let mut v = self.featurization_pipeline.unwrap_or_default();
         v.push(input);
-        self.featurization_pipeline = Some(v);
+        self.featurization_pipeline = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of one <code>FeaturizationMethod</code> object that specifies the feature transformation method.</p>
     pub fn set_featurization_pipeline(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FeaturizationMethod>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FeaturizationMethod>>,
     ) -> Self {
         self.featurization_pipeline = input;
         self

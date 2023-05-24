@@ -2,22 +2,22 @@
 
 /// <p>Settings that Image Builder uses to configure the ECR repository and the output container images that Amazon Inspector scans.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrConfiguration {
     /// <p>The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don’t provide this information, Image Builder creates a repository in your account named <code>image-builder-image-scanning-repository</code> for vulnerability scans of your output container images.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
     #[doc(hidden)]
-    pub container_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub container_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EcrConfiguration {
     /// <p>The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don’t provide this information, Image Builder creates a repository in your account named <code>image-builder-image-scanning-repository</code> for vulnerability scans of your output container images.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
-    pub fn container_tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn container_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.container_tags.as_deref()
     }
 }
@@ -30,19 +30,27 @@ impl EcrConfiguration {
 
 /// A builder for [`EcrConfiguration`](crate::types::EcrConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcrConfigurationBuilder {
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) container_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) container_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EcrConfigurationBuilder {
     /// <p>The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don’t provide this information, Image Builder creates a repository in your account named <code>image-builder-image-scanning-repository</code> for vulnerability scans of your output container images.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don’t provide this information, Image Builder creates a repository in your account named <code>image-builder-image-scanning-repository</code> for vulnerability scans of your output container images.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
@@ -51,16 +59,19 @@ impl EcrConfigurationBuilder {
     /// To override the contents of this collection use [`set_container_tags`](Self::set_container_tags).
     ///
     /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
-    pub fn container_tags(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn container_tags(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.container_tags.unwrap_or_default();
         v.push(input.into());
-        self.container_tags = Some(v);
+        self.container_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Tags for Image Builder to apply to the output container image that &amp;INS; scans. Tags can help you identify and manage your scanned images.</p>
     pub fn set_container_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.container_tags = input;
         self

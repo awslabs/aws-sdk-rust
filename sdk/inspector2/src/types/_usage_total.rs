@@ -2,22 +2,22 @@
 
 /// <p>The total of usage for an account ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageTotal {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the total usage for an account.</p>
     #[doc(hidden)]
-    pub usage: std::option::Option<std::vec::Vec<crate::types::Usage>>,
+    pub usage: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
 }
 impl UsageTotal {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An object representing the total usage for an account.</p>
-    pub fn usage(&self) -> std::option::Option<&[crate::types::Usage]> {
+    pub fn usage(&self) -> ::std::option::Option<&[crate::types::Usage]> {
         self.usage.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl UsageTotal {
 
 /// A builder for [`UsageTotal`](crate::types::UsageTotal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UsageTotalBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) usage: std::option::Option<std::vec::Vec<crate::types::Usage>>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) usage: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
 }
 impl UsageTotalBuilder {
     /// <p>The account ID of the account that usage data was retrieved for.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the account that usage data was retrieved for.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
@@ -54,13 +56,13 @@ impl UsageTotalBuilder {
     pub fn usage(mut self, input: crate::types::Usage) -> Self {
         let mut v = self.usage.unwrap_or_default();
         v.push(input);
-        self.usage = Some(v);
+        self.usage = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object representing the total usage for an account.</p>
     pub fn set_usage(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Usage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Usage>>,
     ) -> Self {
         self.usage = input;
         self

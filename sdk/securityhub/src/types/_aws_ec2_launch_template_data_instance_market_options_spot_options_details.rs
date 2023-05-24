@@ -2,23 +2,23 @@
 
 /// <p> Provides details about the market (purchasing) options for Spot Instances. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
     /// <p> Deprecated. </p>
     #[doc(hidden)]
     pub block_duration_minutes: i32,
     /// <p> The behavior when a Spot Instance is interrupted. </p>
     #[doc(hidden)]
-    pub instance_interruption_behavior: std::option::Option<std::string::String>,
+    pub instance_interruption_behavior: ::std::option::Option<::std::string::String>,
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
     #[doc(hidden)]
-    pub max_price: std::option::Option<std::string::String>,
+    pub max_price: ::std::option::Option<::std::string::String>,
     /// <p> The Spot Instance request type. </p>
     #[doc(hidden)]
-    pub spot_instance_type: std::option::Option<std::string::String>,
+    pub spot_instance_type: ::std::option::Option<::std::string::String>,
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
     #[doc(hidden)]
-    pub valid_until: std::option::Option<std::string::String>,
+    pub valid_until: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
     /// <p> Deprecated. </p>
@@ -26,19 +26,19 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
         self.block_duration_minutes
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    pub fn instance_interruption_behavior(&self) -> std::option::Option<&str> {
+    pub fn instance_interruption_behavior(&self) -> ::std::option::Option<&str> {
         self.instance_interruption_behavior.as_deref()
     }
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
-    pub fn max_price(&self) -> std::option::Option<&str> {
+    pub fn max_price(&self) -> ::std::option::Option<&str> {
         self.max_price.as_deref()
     }
     /// <p> The Spot Instance request type. </p>
-    pub fn spot_instance_type(&self) -> std::option::Option<&str> {
+    pub fn spot_instance_type(&self) -> ::std::option::Option<&str> {
         self.spot_instance_type.as_deref()
     }
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
-    pub fn valid_until(&self) -> std::option::Option<&str> {
+    pub fn valid_until(&self) -> ::std::option::Option<&str> {
         self.valid_until.as_deref()
     }
 }
@@ -51,68 +51,76 @@ impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
-    pub(crate) block_duration_minutes: std::option::Option<i32>,
-    pub(crate) instance_interruption_behavior: std::option::Option<std::string::String>,
-    pub(crate) max_price: std::option::Option<std::string::String>,
-    pub(crate) spot_instance_type: std::option::Option<std::string::String>,
-    pub(crate) valid_until: std::option::Option<std::string::String>,
+    pub(crate) block_duration_minutes: ::std::option::Option<i32>,
+    pub(crate) instance_interruption_behavior: ::std::option::Option<::std::string::String>,
+    pub(crate) max_price: ::std::option::Option<::std::string::String>,
+    pub(crate) spot_instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) valid_until: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsBuilder {
     /// <p> Deprecated. </p>
     pub fn block_duration_minutes(mut self, input: i32) -> Self {
-        self.block_duration_minutes = Some(input);
+        self.block_duration_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p> Deprecated. </p>
-    pub fn set_block_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_block_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.block_duration_minutes = input;
         self
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
-    pub fn instance_interruption_behavior(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_interruption_behavior = Some(input.into());
+    pub fn instance_interruption_behavior(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_interruption_behavior = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The behavior when a Spot Instance is interrupted. </p>
     pub fn set_instance_interruption_behavior(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_interruption_behavior = input;
         self
     }
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
-    pub fn max_price(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_price = Some(input.into());
+    pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The maximum hourly price you're willing to pay for the Spot Instances. </p>
-    pub fn set_max_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_price = input;
         self
     }
     /// <p> The Spot Instance request type. </p>
-    pub fn spot_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.spot_instance_type = Some(input.into());
+    pub fn spot_instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.spot_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Spot Instance request type. </p>
     pub fn set_spot_instance_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.spot_instance_type = input;
         self
     }
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
-    pub fn valid_until(mut self, input: impl Into<std::string::String>) -> Self {
-        self.valid_until = Some(input.into());
+    pub fn valid_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.valid_until = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The end date of the request, in UTC format (YYYY-MM-DDTHH:MM:SSZ), for persistent requests. </p>
-    pub fn set_valid_until(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_valid_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.valid_until = input;
         self
     }

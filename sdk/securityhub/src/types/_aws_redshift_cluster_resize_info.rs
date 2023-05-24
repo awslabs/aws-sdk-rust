@@ -2,7 +2,7 @@
 
 /// <p>Information about the resize operation for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterResizeInfo {
     /// <p>Indicates whether the resize operation can be canceled.</p>
     #[doc(hidden)]
@@ -10,7 +10,7 @@ pub struct AwsRedshiftClusterResizeInfo {
     /// <p>The type of resize operation.</p>
     /// <p>Valid values: <code>ClassicResize</code> </p>
     #[doc(hidden)]
-    pub resize_type: std::option::Option<std::string::String>,
+    pub resize_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterResizeInfo {
     /// <p>Indicates whether the resize operation can be canceled.</p>
@@ -19,7 +19,7 @@ impl AwsRedshiftClusterResizeInfo {
     }
     /// <p>The type of resize operation.</p>
     /// <p>Valid values: <code>ClassicResize</code> </p>
-    pub fn resize_type(&self) -> std::option::Option<&str> {
+    pub fn resize_type(&self) -> ::std::option::Option<&str> {
         self.resize_type.as_deref()
     }
 }
@@ -32,31 +32,33 @@ impl AwsRedshiftClusterResizeInfo {
 
 /// A builder for [`AwsRedshiftClusterResizeInfo`](crate::types::AwsRedshiftClusterResizeInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRedshiftClusterResizeInfoBuilder {
-    pub(crate) allow_cancel_resize: std::option::Option<bool>,
-    pub(crate) resize_type: std::option::Option<std::string::String>,
+    pub(crate) allow_cancel_resize: ::std::option::Option<bool>,
+    pub(crate) resize_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterResizeInfoBuilder {
     /// <p>Indicates whether the resize operation can be canceled.</p>
     pub fn allow_cancel_resize(mut self, input: bool) -> Self {
-        self.allow_cancel_resize = Some(input);
+        self.allow_cancel_resize = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the resize operation can be canceled.</p>
-    pub fn set_allow_cancel_resize(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_cancel_resize(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_cancel_resize = input;
         self
     }
     /// <p>The type of resize operation.</p>
     /// <p>Valid values: <code>ClassicResize</code> </p>
-    pub fn resize_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resize_type = Some(input.into());
+    pub fn resize_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resize_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resize operation.</p>
     /// <p>Valid values: <code>ClassicResize</code> </p>
-    pub fn set_resize_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resize_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resize_type = input;
         self
     }

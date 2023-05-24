@@ -2,29 +2,29 @@
 
 /// <p>The Auto-Tune settings for a domain, displayed when enabling or disabling Auto-Tune.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptionsOutput {
     /// <p>The current state of Auto-Tune on the domain.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::AutoTuneState>,
+    pub state: ::std::option::Option<crate::types::AutoTuneState>,
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
     #[doc(hidden)]
-    pub use_off_peak_window: std::option::Option<bool>,
+    pub use_off_peak_window: ::std::option::Option<bool>,
 }
 impl AutoTuneOptionsOutput {
     /// <p>The current state of Auto-Tune on the domain.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::AutoTuneState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::AutoTuneState> {
         self.state.as_ref()
     }
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
-    pub fn use_off_peak_window(&self) -> std::option::Option<bool> {
+    pub fn use_off_peak_window(&self) -> ::std::option::Option<bool> {
         self.use_off_peak_window
     }
 }
@@ -37,40 +37,48 @@ impl AutoTuneOptionsOutput {
 
 /// A builder for [`AutoTuneOptionsOutput`](crate::types::AutoTuneOptionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoTuneOptionsOutputBuilder {
-    pub(crate) state: std::option::Option<crate::types::AutoTuneState>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) use_off_peak_window: std::option::Option<bool>,
+    pub(crate) state: ::std::option::Option<crate::types::AutoTuneState>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) use_off_peak_window: ::std::option::Option<bool>,
 }
 impl AutoTuneOptionsOutputBuilder {
     /// <p>The current state of Auto-Tune on the domain.</p>
     pub fn state(mut self, input: crate::types::AutoTuneState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of Auto-Tune on the domain.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::AutoTuneState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AutoTuneState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Any errors that occurred while enabling or disabling Auto-Tune.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
     pub fn use_off_peak_window(mut self, input: bool) -> Self {
-        self.use_off_peak_window = Some(input);
+        self.use_off_peak_window = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather than a maintenance schedule.</p>
-    pub fn set_use_off_peak_window(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_off_peak_window(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_off_peak_window = input;
         self
     }

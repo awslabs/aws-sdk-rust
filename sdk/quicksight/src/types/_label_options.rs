@@ -2,29 +2,29 @@
 
 /// <p>The share label options for the labels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelOptions {
     /// <p>Determines whether or not the label is visible.</p>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::Visibility>,
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The font configuration of the label.</p>
     #[doc(hidden)]
-    pub font_configuration: std::option::Option<crate::types::FontConfiguration>,
+    pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The text for the label.</p>
     #[doc(hidden)]
-    pub custom_label: std::option::Option<std::string::String>,
+    pub custom_label: ::std::option::Option<::std::string::String>,
 }
 impl LabelOptions {
     /// <p>Determines whether or not the label is visible.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The font configuration of the label.</p>
-    pub fn font_configuration(&self) -> std::option::Option<&crate::types::FontConfiguration> {
+    pub fn font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
         self.font_configuration.as_ref()
     }
     /// <p>The text for the label.</p>
-    pub fn custom_label(&self) -> std::option::Option<&str> {
+    pub fn custom_label(&self) -> ::std::option::Option<&str> {
         self.custom_label.as_deref()
     }
 }
@@ -37,43 +37,48 @@ impl LabelOptions {
 
 /// A builder for [`LabelOptions`](crate::types::LabelOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelOptionsBuilder {
-    pub(crate) visibility: std::option::Option<crate::types::Visibility>,
-    pub(crate) font_configuration: std::option::Option<crate::types::FontConfiguration>,
-    pub(crate) custom_label: std::option::Option<std::string::String>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    pub(crate) custom_label: ::std::option::Option<::std::string::String>,
 }
 impl LabelOptionsBuilder {
     /// <p>Determines whether or not the label is visible.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether or not the label is visible.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.visibility = input;
         self
     }
     /// <p>The font configuration of the label.</p>
     pub fn font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
-        self.font_configuration = Some(input);
+        self.font_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The font configuration of the label.</p>
     pub fn set_font_configuration(
         mut self,
-        input: std::option::Option<crate::types::FontConfiguration>,
+        input: ::std::option::Option<crate::types::FontConfiguration>,
     ) -> Self {
         self.font_configuration = input;
         self
     }
     /// <p>The text for the label.</p>
-    pub fn custom_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_label = Some(input.into());
+    pub fn custom_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text for the label.</p>
-    pub fn set_custom_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_label = input;
         self
     }

@@ -2,62 +2,62 @@
 
 /// <p>Lightsail throws this exception when an operation fails to execute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperationFailureException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub docs: std::option::Option<std::string::String>,
+    pub docs: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub tip: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub tip: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl OperationFailureException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn docs(&self) -> std::option::Option<&str> {
+    pub fn docs(&self) -> ::std::option::Option<&str> {
         self.docs.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn tip(&self) -> std::option::Option<&str> {
+    pub fn tip(&self) -> ::std::option::Option<&str> {
         self.tip.as_deref()
     }
 }
 impl OperationFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for OperationFailureException {
+impl ::std::fmt::Display for OperationFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "OperationFailureException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "OperationFailureException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for OperationFailureException {}
-impl aws_http::request_id::RequestId for crate::types::error::OperationFailureException {
+impl ::std::error::Error for OperationFailureException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::OperationFailureException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for OperationFailureException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for OperationFailureException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -70,57 +70,59 @@ impl OperationFailureException {
 
 /// A builder for [`OperationFailureException`](crate::types::error::OperationFailureException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OperationFailureExceptionBuilder {
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) docs: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) tip: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) docs: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) tip: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl OperationFailureExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn docs(mut self, input: impl Into<std::string::String>) -> Self {
-        self.docs = Some(input.into());
+    pub fn docs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.docs = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_docs(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_docs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.docs = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn tip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tip = Some(input.into());
+    pub fn tip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tip = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_tip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tip = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -128,7 +130,7 @@ impl OperationFailureExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

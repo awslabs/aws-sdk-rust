@@ -2,29 +2,29 @@
 
 /// <p>Applications list filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsRequestFilters {
     /// <p>Filter applications list by application ID.</p>
     #[doc(hidden)]
-    pub application_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter applications list by archival status.</p>
     #[doc(hidden)]
-    pub is_archived: std::option::Option<bool>,
+    pub is_archived: ::std::option::Option<bool>,
     /// <p>Filter applications list by wave ID.</p>
     #[doc(hidden)]
-    pub wave_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub wave_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListApplicationsRequestFilters {
     /// <p>Filter applications list by application ID.</p>
-    pub fn application_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn application_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.application_i_ds.as_deref()
     }
     /// <p>Filter applications list by archival status.</p>
-    pub fn is_archived(&self) -> std::option::Option<bool> {
+    pub fn is_archived(&self) -> ::std::option::Option<bool> {
         self.is_archived
     }
     /// <p>Filter applications list by wave ID.</p>
-    pub fn wave_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wave_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.wave_i_ds.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl ListApplicationsRequestFilters {
 
 /// A builder for [`ListApplicationsRequestFilters`](crate::types::ListApplicationsRequestFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListApplicationsRequestFiltersBuilder {
-    pub(crate) application_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) is_archived: std::option::Option<bool>,
-    pub(crate) wave_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) is_archived: ::std::option::Option<bool>,
+    pub(crate) wave_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListApplicationsRequestFiltersBuilder {
     /// Appends an item to `application_i_ds`.
@@ -49,27 +51,30 @@ impl ListApplicationsRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
     ///
     /// <p>Filter applications list by application ID.</p>
-    pub fn application_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_i_ds(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.application_i_ds.unwrap_or_default();
         v.push(input.into());
-        self.application_i_ds = Some(v);
+        self.application_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filter applications list by application ID.</p>
     pub fn set_application_i_ds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.application_i_ds = input;
         self
     }
     /// <p>Filter applications list by archival status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
-        self.is_archived = Some(input);
+        self.is_archived = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter applications list by archival status.</p>
-    pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
     }
@@ -78,16 +83,16 @@ impl ListApplicationsRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_wave_i_ds`](Self::set_wave_i_ds).
     ///
     /// <p>Filter applications list by wave ID.</p>
-    pub fn wave_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn wave_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wave_i_ds.unwrap_or_default();
         v.push(input.into());
-        self.wave_i_ds = Some(v);
+        self.wave_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filter applications list by wave ID.</p>
     pub fn set_wave_i_ds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.wave_i_ds = input;
         self

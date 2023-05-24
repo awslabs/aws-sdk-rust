@@ -2,32 +2,32 @@
 
 /// <p>Represents the data binding configuration for a component at runtime. You can use <code>ComponentBindingPropertiesValue</code> to add exposed properties to a component to allow different values to be entered when a component is reused in different places in an app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentBindingPropertiesValue {
     /// <p>The property type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties to customize with data at runtime.</p>
     #[doc(hidden)]
     pub binding_properties:
-        std::option::Option<crate::types::ComponentBindingPropertiesValueProperties>,
+        ::std::option::Option<crate::types::ComponentBindingPropertiesValueProperties>,
     /// <p>The default value of the property.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl ComponentBindingPropertiesValue {
     /// <p>The property type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>Describes the properties to customize with data at runtime.</p>
     pub fn binding_properties(
         &self,
-    ) -> std::option::Option<&crate::types::ComponentBindingPropertiesValueProperties> {
+    ) -> ::std::option::Option<&crate::types::ComponentBindingPropertiesValueProperties> {
         self.binding_properties.as_ref()
     }
     /// <p>The default value of the property.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
 }
@@ -40,21 +40,23 @@ impl ComponentBindingPropertiesValue {
 
 /// A builder for [`ComponentBindingPropertiesValue`](crate::types::ComponentBindingPropertiesValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentBindingPropertiesValueBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) binding_properties:
-        std::option::Option<crate::types::ComponentBindingPropertiesValueProperties>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::ComponentBindingPropertiesValueProperties>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }
 impl ComponentBindingPropertiesValueBuilder {
     /// <p>The property type.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property type.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
@@ -63,24 +65,30 @@ impl ComponentBindingPropertiesValueBuilder {
         mut self,
         input: crate::types::ComponentBindingPropertiesValueProperties,
     ) -> Self {
-        self.binding_properties = Some(input);
+        self.binding_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the properties to customize with data at runtime.</p>
     pub fn set_binding_properties(
         mut self,
-        input: std::option::Option<crate::types::ComponentBindingPropertiesValueProperties>,
+        input: ::std::option::Option<crate::types::ComponentBindingPropertiesValueProperties>,
     ) -> Self {
         self.binding_properties = input;
         self
     }
     /// <p>The default value of the property.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the property.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }

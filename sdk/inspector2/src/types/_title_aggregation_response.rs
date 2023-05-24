@@ -2,36 +2,36 @@
 
 /// <p>A response that contains details on the results of a finding aggregation by title.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TitleAggregationResponse {
     /// <p>The title that the findings were aggregated on.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The vulnerability ID of the finding.</p>
     #[doc(hidden)]
-    pub vulnerability_id: std::option::Option<std::string::String>,
+    pub vulnerability_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that represent the count of matched findings per severity.</p>
     #[doc(hidden)]
-    pub severity_counts: std::option::Option<crate::types::SeverityCounts>,
+    pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl TitleAggregationResponse {
     /// <p>The title that the findings were aggregated on.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The vulnerability ID of the finding.</p>
-    pub fn vulnerability_id(&self) -> std::option::Option<&str> {
+    pub fn vulnerability_id(&self) -> ::std::option::Option<&str> {
         self.vulnerability_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -44,53 +44,61 @@ impl TitleAggregationResponse {
 
 /// A builder for [`TitleAggregationResponse`](crate::types::TitleAggregationResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TitleAggregationResponseBuilder {
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) vulnerability_id: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) severity_counts: std::option::Option<crate::types::SeverityCounts>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) vulnerability_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl TitleAggregationResponseBuilder {
     /// <p>The title that the findings were aggregated on.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title that the findings were aggregated on.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The vulnerability ID of the finding.</p>
-    pub fn vulnerability_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vulnerability_id = Some(input.into());
+    pub fn vulnerability_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vulnerability_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The vulnerability ID of the finding.</p>
-    pub fn set_vulnerability_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vulnerability_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vulnerability_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
-        self.severity_counts = Some(input);
+        self.severity_counts = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn set_severity_counts(
         mut self,
-        input: std::option::Option<crate::types::SeverityCounts>,
+        input: ::std::option::Option<crate::types::SeverityCounts>,
     ) -> Self {
         self.severity_counts = input;
         self

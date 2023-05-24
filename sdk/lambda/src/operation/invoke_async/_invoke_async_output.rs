@@ -3,7 +3,7 @@
 /// <p>A success response (<code>202 Accepted</code>) indicates that the request is queued for invocation.</p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvokeAsyncOutput {
     /// <p>The status code.</p>
     #[doc(hidden)]
@@ -16,7 +16,7 @@ impl InvokeAsyncOutput {
         self.status
     }
 }
-impl aws_http::request_id::RequestId for InvokeAsyncOutput {
+impl ::aws_http::request_id::RequestId for InvokeAsyncOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl InvokeAsyncOutput {
 
 /// A builder for [`InvokeAsyncOutput`](crate::operation::invoke_async::InvokeAsyncOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvokeAsyncOutputBuilder {
-    pub(crate) status: std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl InvokeAsyncOutputBuilder {
     /// <p>The status code.</p>
     pub fn status(mut self, input: i32) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code.</p>
-    pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
     }

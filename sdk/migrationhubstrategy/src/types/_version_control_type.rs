@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum VersionControlType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum VersionControlType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for VersionControlType {
+impl ::std::convert::From<&str> for VersionControlType {
     fn from(s: &str) -> Self {
         match s {
             "AZURE_DEVOPS_GIT" => VersionControlType::AzureDevopsGit,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for VersionControlType {
         }
     }
 }
-impl std::str::FromStr for VersionControlType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for VersionControlType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VersionControlType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(VersionControlType::from(s))
     }
 }
 impl VersionControlType {
@@ -91,7 +91,7 @@ impl VersionControlType {
         &["AZURE_DEVOPS_GIT", "GITHUB", "GITHUB_ENTERPRISE"]
     }
 }
-impl AsRef<str> for VersionControlType {
+impl ::std::convert::AsRef<str> for VersionControlType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

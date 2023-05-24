@@ -2,24 +2,25 @@
 
 /// <p>Information about the error for the burstable performance instance whose credit option for CPU usage was not modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsuccessfulInstanceCreditSpecificationItemError {
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>,
+    pub code: ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>,
     /// <p>The applicable error message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl UnsuccessfulInstanceCreditSpecificationItemError {
     /// <p>The error code.</p>
     pub fn code(
         &self,
-    ) -> std::option::Option<&crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode> {
+    ) -> ::std::option::Option<&crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>
+    {
         self.code.as_ref()
     }
     /// <p>The applicable error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -33,11 +34,13 @@ impl UnsuccessfulInstanceCreditSpecificationItemError {
 
 /// A builder for [`UnsuccessfulInstanceCreditSpecificationItemError`](crate::types::UnsuccessfulInstanceCreditSpecificationItemError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
     pub(crate) code:
-        std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
     /// <p>The error code.</p>
@@ -45,24 +48,26 @@ impl UnsuccessfulInstanceCreditSpecificationItemErrorBuilder {
         mut self,
         input: crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode,
     ) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode>,
+        input: ::std::option::Option<
+            crate::types::UnsuccessfulInstanceCreditSpecificationErrorCode,
+        >,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>The applicable error message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The applicable error message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

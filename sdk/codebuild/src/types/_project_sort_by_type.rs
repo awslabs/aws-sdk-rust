@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ProjectSortByType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ProjectSortByType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ProjectSortByType {
+impl ::std::convert::From<&str> for ProjectSortByType {
     fn from(s: &str) -> Self {
         match s {
             "CREATED_TIME" => ProjectSortByType::CreatedTime,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ProjectSortByType {
         }
     }
 }
-impl std::str::FromStr for ProjectSortByType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ProjectSortByType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProjectSortByType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ProjectSortByType::from(s))
     }
 }
 impl ProjectSortByType {
@@ -91,7 +91,7 @@ impl ProjectSortByType {
         &["CREATED_TIME", "LAST_MODIFIED_TIME", "NAME"]
     }
 }
-impl AsRef<str> for ProjectSortByType {
+impl ::std::convert::AsRef<str> for ProjectSortByType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

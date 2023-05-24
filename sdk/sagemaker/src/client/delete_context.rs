@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContext`](crate::operation::delete_context::builders::DeleteContextFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`context_name(impl Into<String>)`](crate::operation::delete_context::builders::DeleteContextFluentBuilder::context_name) / [`set_context_name(Option<String>)`](crate::operation::delete_context::builders::DeleteContextFluentBuilder::set_context_name): <p>The name of the context to delete.</p>
+    ///   - [`context_name(impl ::std::convert::Into<String>)`](crate::operation::delete_context::builders::DeleteContextFluentBuilder::context_name) / [`set_context_name(Option<String>)`](crate::operation::delete_context::builders::DeleteContextFluentBuilder::set_context_name): <p>The name of the context to delete.</p>
     /// - On success, responds with [`DeleteContextOutput`](crate::operation::delete_context::DeleteContextOutput) with field(s):
     ///   - [`context_arn(Option<String>)`](crate::operation::delete_context::DeleteContextOutput::context_arn): <p>The Amazon Resource Name (ARN) of the context.</p>
     /// - On failure, responds with [`SdkError<DeleteContextError>`](crate::operation::delete_context::DeleteContextError)

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LocationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum LocationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LocationType {
+impl ::std::convert::From<&str> for LocationType {
     fn from(s: &str) -> Self {
         match s {
             "availability-zone" => LocationType::AvailabilityZone,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for LocationType {
         }
     }
 }
-impl std::str::FromStr for LocationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LocationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LocationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LocationType::from(s))
     }
 }
 impl LocationType {
@@ -91,7 +91,7 @@ impl LocationType {
         &["availability-zone", "availability-zone-id", "region"]
     }
 }
-impl AsRef<str> for LocationType {
+impl ::std::convert::AsRef<str> for LocationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

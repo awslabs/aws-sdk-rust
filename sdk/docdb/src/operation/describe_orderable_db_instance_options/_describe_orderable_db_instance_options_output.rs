@@ -2,30 +2,30 @@
 
 /// <p>Represents the output of <code>DescribeOrderableDBInstanceOptions</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrderableDbInstanceOptionsOutput {
     /// <p>The options that are available for a particular orderable instance.</p>
     #[doc(hidden)]
     pub orderable_db_instance_options:
-        std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// <p>The options that are available for a particular orderable instance.</p>
     pub fn orderable_db_instance_options(
         &self,
-    ) -> std::option::Option<&[crate::types::OrderableDbInstanceOption]> {
+    ) -> ::std::option::Option<&[crate::types::OrderableDbInstanceOption]> {
         self.orderable_db_instance_options.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeOrderableDbInstanceOptionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeOrderableDbInstanceOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 
 /// A builder for [`DescribeOrderableDbInstanceOptionsOutput`](crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOrderableDbInstanceOptionsOutputBuilder {
     pub(crate) orderable_db_instance_options:
-        std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutputBuilder {
@@ -58,24 +60,24 @@ impl DescribeOrderableDbInstanceOptionsOutputBuilder {
     ) -> Self {
         let mut v = self.orderable_db_instance_options.unwrap_or_default();
         v.push(input);
-        self.orderable_db_instance_options = Some(v);
+        self.orderable_db_instance_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The options that are available for a particular orderable instance.</p>
     pub fn set_orderable_db_instance_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrderableDbInstanceOption>>,
     ) -> Self {
         self.orderable_db_instance_options = input;
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

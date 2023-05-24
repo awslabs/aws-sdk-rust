@@ -2,17 +2,17 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryByResourceTypeInput {
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     #[doc(hidden)]
-    pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetComplianceSummaryByResourceTypeInput {
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_types.as_deref()
     }
 }
@@ -25,9 +25,11 @@ impl GetComplianceSummaryByResourceTypeInput {
 
 /// A builder for [`GetComplianceSummaryByResourceTypeInput`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetComplianceSummaryByResourceTypeInputBuilder {
-    pub(crate) resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetComplianceSummaryByResourceTypeInputBuilder {
     /// Appends an item to `resource_types`.
@@ -36,24 +38,27 @@ impl GetComplianceSummaryByResourceTypeInputBuilder {
     ///
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
-    pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
         v.push(input.into());
-        self.resource_types = Some(v);
+        self.resource_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.</p>
     /// <p>For this request, you can specify an Amazon Web Services resource type such as <code>AWS::EC2::Instance</code>. You can specify that the resource type is an Amazon Web Services account by specifying <code>AWS::::Account</code>.</p>
     pub fn set_resource_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_types = input;
         self
     }
     /// Consumes the builder and constructs a [`GetComplianceSummaryByResourceTypeInput`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeInput).
-    pub fn build(self) -> Result<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeInput {
                 resource_types: self.resource_types
                 ,

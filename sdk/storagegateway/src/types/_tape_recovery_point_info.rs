@@ -2,38 +2,38 @@
 
 /// <p>Describes a recovery point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TapeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
     #[doc(hidden)]
-    pub tape_arn: std::option::Option<std::string::String>,
+    pub tape_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
     #[doc(hidden)]
-    pub tape_recovery_point_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub tape_recovery_point_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
     #[doc(hidden)]
-    pub tape_size_in_bytes: std::option::Option<i64>,
+    pub tape_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The status of the virtual tapes.</p>
     #[doc(hidden)]
-    pub tape_status: std::option::Option<std::string::String>,
+    pub tape_status: ::std::option::Option<::std::string::String>,
 }
 impl TapeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
-    pub fn tape_arn(&self) -> std::option::Option<&str> {
+    pub fn tape_arn(&self) -> ::std::option::Option<&str> {
         self.tape_arn.as_deref()
     }
     /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn tape_recovery_point_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn tape_recovery_point_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.tape_recovery_point_time.as_ref()
     }
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
-    pub fn tape_size_in_bytes(&self) -> std::option::Option<i64> {
+    pub fn tape_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.tape_size_in_bytes
     }
     /// <p>The status of the virtual tapes.</p>
-    pub fn tape_status(&self) -> std::option::Option<&str> {
+    pub fn tape_status(&self) -> ::std::option::Option<&str> {
         self.tape_status.as_deref()
     }
 }
@@ -46,56 +46,58 @@ impl TapeRecoveryPointInfo {
 
 /// A builder for [`TapeRecoveryPointInfo`](crate::types::TapeRecoveryPointInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TapeRecoveryPointInfoBuilder {
-    pub(crate) tape_arn: std::option::Option<std::string::String>,
-    pub(crate) tape_recovery_point_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tape_size_in_bytes: std::option::Option<i64>,
-    pub(crate) tape_status: std::option::Option<std::string::String>,
+    pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tape_recovery_point_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tape_size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) tape_status: ::std::option::Option<::std::string::String>,
 }
 impl TapeRecoveryPointInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
-    pub fn tape_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tape_arn = Some(input.into());
+    pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tape_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
-    pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tape_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_arn = input;
         self
     }
     /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
-    pub fn tape_recovery_point_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.tape_recovery_point_time = Some(input);
+    pub fn tape_recovery_point_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.tape_recovery_point_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
     /// <p>The default timestamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
     pub fn set_tape_recovery_point_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.tape_recovery_point_time = input;
         self
     }
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
     pub fn tape_size_in_bytes(mut self, input: i64) -> Self {
-        self.tape_size_in_bytes = Some(input);
+        self.tape_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size, in bytes, of the virtual tapes to recover.</p>
-    pub fn set_tape_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_tape_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.tape_size_in_bytes = input;
         self
     }
     /// <p>The status of the virtual tapes.</p>
-    pub fn tape_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tape_status = Some(input.into());
+    pub fn tape_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tape_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the virtual tapes.</p>
-    pub fn set_tape_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tape_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_status = input;
         self
     }

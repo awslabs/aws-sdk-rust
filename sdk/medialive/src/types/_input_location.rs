@@ -2,29 +2,29 @@
 
 /// Input Location
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputLocation {
     /// key used to extract the password from EC2 Parameter store
     #[doc(hidden)]
-    pub password_param: std::option::Option<std::string::String>,
+    pub password_param: ::std::option::Option<::std::string::String>,
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
     #[doc(hidden)]
-    pub uri: std::option::Option<std::string::String>,
+    pub uri: ::std::option::Option<::std::string::String>,
     /// Documentation update needed
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
 }
 impl InputLocation {
     /// key used to extract the password from EC2 Parameter store
-    pub fn password_param(&self) -> std::option::Option<&str> {
+    pub fn password_param(&self) -> ::std::option::Option<&str> {
         self.password_param.as_deref()
     }
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// Documentation update needed
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl InputLocation {
 
 /// A builder for [`InputLocation`](crate::types::InputLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputLocationBuilder {
-    pub(crate) password_param: std::option::Option<std::string::String>,
-    pub(crate) uri: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
+    pub(crate) password_param: ::std::option::Option<::std::string::String>,
+    pub(crate) uri: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
 }
 impl InputLocationBuilder {
     /// key used to extract the password from EC2 Parameter store
-    pub fn password_param(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password_param = Some(input.into());
+    pub fn password_param(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.password_param = ::std::option::Option::Some(input.into());
         self
     }
     /// key used to extract the password from EC2 Parameter store
-    pub fn set_password_param(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password_param(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.password_param = input;
         self
     }
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri = Some(input.into());
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri = ::std::option::Option::Some(input.into());
         self
     }
     /// Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a http:// URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
     }
     /// Documentation update needed
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// Documentation update needed
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }

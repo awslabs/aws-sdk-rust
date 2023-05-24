@@ -2,36 +2,36 @@
 
 /// <p>The TemplateParameter data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateParameter {
     /// <p>The name associated with the parameter.</p>
     #[doc(hidden)]
-    pub parameter_key: std::option::Option<std::string::String>,
+    pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The default value associated with the parameter.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
     #[doc(hidden)]
-    pub no_echo: std::option::Option<bool>,
+    pub no_echo: ::std::option::Option<bool>,
     /// <p>User defined description associated with the parameter.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl TemplateParameter {
     /// <p>The name associated with the parameter.</p>
-    pub fn parameter_key(&self) -> std::option::Option<&str> {
+    pub fn parameter_key(&self) -> ::std::option::Option<&str> {
         self.parameter_key.as_deref()
     }
     /// <p>The default value associated with the parameter.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
-    pub fn no_echo(&self) -> std::option::Option<bool> {
+    pub fn no_echo(&self) -> ::std::option::Option<bool> {
         self.no_echo
     }
     /// <p>User defined description associated with the parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -44,51 +44,65 @@ impl TemplateParameter {
 
 /// A builder for [`TemplateParameter`](crate::types::TemplateParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TemplateParameterBuilder {
-    pub(crate) parameter_key: std::option::Option<std::string::String>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
-    pub(crate) no_echo: std::option::Option<bool>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) parameter_key: ::std::option::Option<::std::string::String>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
+    pub(crate) no_echo: ::std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl TemplateParameterBuilder {
     /// <p>The name associated with the parameter.</p>
-    pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_key = Some(input.into());
+    pub fn parameter_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name associated with the parameter.</p>
-    pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_key = input;
         self
     }
     /// <p>The default value associated with the parameter.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value associated with the parameter.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
     pub fn no_echo(mut self, input: bool) -> Self {
-        self.no_echo = Some(input);
+        self.no_echo = ::std::option::Option::Some(input);
         self
     }
     /// <p>Flag indicating whether the parameter should be displayed as plain text in logs and UIs.</p>
-    pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_echo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_echo = input;
         self
     }
     /// <p>User defined description associated with the parameter.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User defined description associated with the parameter.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

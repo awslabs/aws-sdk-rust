@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreatePolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePolicyOutput {
     /// <p>A structure containing details about the new policy.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<crate::types::Policy>,
+    pub policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,
 }
 impl CreatePolicyOutput {
     /// <p>A structure containing details about the new policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::types::Policy> {
+    pub fn policy(&self) -> ::std::option::Option<&crate::types::Policy> {
         self.policy.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreatePolicyOutput {
+impl ::aws_http::request_id::RequestId for CreatePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreatePolicyOutput {
 
 /// A builder for [`CreatePolicyOutput`](crate::operation::create_policy::CreatePolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePolicyOutputBuilder {
-    pub(crate) policy: std::option::Option<crate::types::Policy>,
+    pub(crate) policy: ::std::option::Option<crate::types::Policy>,
     _request_id: Option<String>,
 }
 impl CreatePolicyOutputBuilder {
     /// <p>A structure containing details about the new policy.</p>
     pub fn policy(mut self, input: crate::types::Policy) -> Self {
-        self.policy = Some(input);
+        self.policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the new policy.</p>
-    pub fn set_policy(mut self, input: std::option::Option<crate::types::Policy>) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
         self.policy = input;
         self
     }

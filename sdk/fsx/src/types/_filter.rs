@@ -2,22 +2,22 @@
 
 /// <p>A filter used to restrict the results of describe calls. You can use multiple filters to return results that meet all applied filter requirements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name for this filter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::FilterName>,
+    pub name: ::std::option::Option<crate::types::FilterName>,
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filter {
     /// <p>The name for this filter.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::FilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::FilterName> {
         self.name.as_ref()
     }
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::FilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<crate::types::FilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FilterBuilder {
     /// <p>The name for this filter.</p>
     pub fn name(mut self, input: crate::types::FilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name for this filter.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::FilterName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FilterName>) -> Self {
         self.name = input;
         self
     }
@@ -51,16 +53,16 @@ impl FilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

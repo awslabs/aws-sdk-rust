@@ -2,26 +2,26 @@
 
 /// <p>A container that specifies replication metrics-related settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metrics {
     /// <p>Specifies whether replication metrics are enabled. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::MetricsStatus>,
+    pub status: ::std::option::Option<crate::types::MetricsStatus>,
     /// <p>A container that specifies the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     #[doc(hidden)]
-    pub event_threshold: std::option::Option<crate::types::ReplicationTimeValue>,
+    pub event_threshold: ::std::option::Option<crate::types::ReplicationTimeValue>,
 }
 impl Metrics {
     /// <p>Specifies whether replication metrics are enabled. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MetricsStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::MetricsStatus> {
         self.status.as_ref()
     }
     /// <p>A container that specifies the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p> <note>
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
-    pub fn event_threshold(&self) -> std::option::Option<&crate::types::ReplicationTimeValue> {
+    pub fn event_threshold(&self) -> ::std::option::Option<&crate::types::ReplicationTimeValue> {
         self.event_threshold.as_ref()
     }
 }
@@ -34,19 +34,21 @@ impl Metrics {
 
 /// A builder for [`Metrics`](crate::types::Metrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricsBuilder {
-    pub(crate) status: std::option::Option<crate::types::MetricsStatus>,
-    pub(crate) event_threshold: std::option::Option<crate::types::ReplicationTimeValue>,
+    pub(crate) status: ::std::option::Option<crate::types::MetricsStatus>,
+    pub(crate) event_threshold: ::std::option::Option<crate::types::ReplicationTimeValue>,
 }
 impl MetricsBuilder {
     /// <p>Specifies whether replication metrics are enabled. </p>
     pub fn status(mut self, input: crate::types::MetricsStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether replication metrics are enabled. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MetricsStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MetricsStatus>) -> Self {
         self.status = input;
         self
     }
@@ -54,7 +56,7 @@ impl MetricsBuilder {
     /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
     /// </note>
     pub fn event_threshold(mut self, input: crate::types::ReplicationTimeValue) -> Self {
-        self.event_threshold = Some(input);
+        self.event_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container that specifies the time threshold for emitting the <code>s3:Replication:OperationMissedThreshold</code> event. </p> <note>
@@ -62,7 +64,7 @@ impl MetricsBuilder {
     /// </note>
     pub fn set_event_threshold(
         mut self,
-        input: std::option::Option<crate::types::ReplicationTimeValue>,
+        input: ::std::option::Option<crate::types::ReplicationTimeValue>,
     ) -> Self {
         self.event_threshold = input;
         self

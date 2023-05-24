@@ -2,25 +2,25 @@
 
 /// <p>Compatibility information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Compatibility {
     /// <p>The supported Kubernetes version of the cluster.</p>
     #[doc(hidden)]
-    pub cluster_version: std::option::Option<std::string::String>,
+    pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The supported compute platform.</p>
     #[doc(hidden)]
-    pub platform_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub platform_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported default version.</p>
     #[doc(hidden)]
     pub default_version: bool,
 }
 impl Compatibility {
     /// <p>The supported Kubernetes version of the cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> ::std::option::Option<&str> {
         self.cluster_version.as_deref()
     }
     /// <p>The supported compute platform.</p>
-    pub fn platform_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn platform_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.platform_versions.as_deref()
     }
     /// <p>The supported default version.</p>
@@ -37,20 +37,28 @@ impl Compatibility {
 
 /// A builder for [`Compatibility`](crate::types::Compatibility).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CompatibilityBuilder {
-    pub(crate) cluster_version: std::option::Option<std::string::String>,
-    pub(crate) platform_versions: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) default_version: std::option::Option<bool>,
+    pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
+    pub(crate) platform_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) default_version: ::std::option::Option<bool>,
 }
 impl CompatibilityBuilder {
     /// <p>The supported Kubernetes version of the cluster.</p>
-    pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_version = Some(input.into());
+    pub fn cluster_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The supported Kubernetes version of the cluster.</p>
-    pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cluster_version = input;
         self
     }
@@ -59,27 +67,30 @@ impl CompatibilityBuilder {
     /// To override the contents of this collection use [`set_platform_versions`](Self::set_platform_versions).
     ///
     /// <p>The supported compute platform.</p>
-    pub fn platform_versions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn platform_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.platform_versions.unwrap_or_default();
         v.push(input.into());
-        self.platform_versions = Some(v);
+        self.platform_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported compute platform.</p>
     pub fn set_platform_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.platform_versions = input;
         self
     }
     /// <p>The supported default version.</p>
     pub fn default_version(mut self, input: bool) -> Self {
-        self.default_version = Some(input);
+        self.default_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The supported default version.</p>
-    pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_version = input;
         self
     }

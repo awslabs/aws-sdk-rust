@@ -2,24 +2,24 @@
 
 /// <p>Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDriver {
     /// <p>The job driver parameters specified for spark submit.</p>
     #[doc(hidden)]
-    pub spark_submit_job_driver: std::option::Option<crate::types::SparkSubmitJobDriver>,
+    pub spark_submit_job_driver: ::std::option::Option<crate::types::SparkSubmitJobDriver>,
     /// <p>The job driver for job type.</p>
     #[doc(hidden)]
-    pub spark_sql_job_driver: std::option::Option<crate::types::SparkSqlJobDriver>,
+    pub spark_sql_job_driver: ::std::option::Option<crate::types::SparkSqlJobDriver>,
 }
 impl JobDriver {
     /// <p>The job driver parameters specified for spark submit.</p>
     pub fn spark_submit_job_driver(
         &self,
-    ) -> std::option::Option<&crate::types::SparkSubmitJobDriver> {
+    ) -> ::std::option::Option<&crate::types::SparkSubmitJobDriver> {
         self.spark_submit_job_driver.as_ref()
     }
     /// <p>The job driver for job type.</p>
-    pub fn spark_sql_job_driver(&self) -> std::option::Option<&crate::types::SparkSqlJobDriver> {
+    pub fn spark_sql_job_driver(&self) -> ::std::option::Option<&crate::types::SparkSqlJobDriver> {
         self.spark_sql_job_driver.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl JobDriver {
 
 /// A builder for [`JobDriver`](crate::types::JobDriver).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobDriverBuilder {
-    pub(crate) spark_submit_job_driver: std::option::Option<crate::types::SparkSubmitJobDriver>,
-    pub(crate) spark_sql_job_driver: std::option::Option<crate::types::SparkSqlJobDriver>,
+    pub(crate) spark_submit_job_driver: ::std::option::Option<crate::types::SparkSubmitJobDriver>,
+    pub(crate) spark_sql_job_driver: ::std::option::Option<crate::types::SparkSqlJobDriver>,
 }
 impl JobDriverBuilder {
     /// <p>The job driver parameters specified for spark submit.</p>
     pub fn spark_submit_job_driver(mut self, input: crate::types::SparkSubmitJobDriver) -> Self {
-        self.spark_submit_job_driver = Some(input);
+        self.spark_submit_job_driver = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job driver parameters specified for spark submit.</p>
     pub fn set_spark_submit_job_driver(
         mut self,
-        input: std::option::Option<crate::types::SparkSubmitJobDriver>,
+        input: ::std::option::Option<crate::types::SparkSubmitJobDriver>,
     ) -> Self {
         self.spark_submit_job_driver = input;
         self
     }
     /// <p>The job driver for job type.</p>
     pub fn spark_sql_job_driver(mut self, input: crate::types::SparkSqlJobDriver) -> Self {
-        self.spark_sql_job_driver = Some(input);
+        self.spark_sql_job_driver = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job driver for job type.</p>
     pub fn set_spark_sql_job_driver(
         mut self,
-        input: std::option::Option<crate::types::SparkSqlJobDriver>,
+        input: ::std::option::Option<crate::types::SparkSqlJobDriver>,
     ) -> Self {
         self.spark_sql_job_driver = input;
         self

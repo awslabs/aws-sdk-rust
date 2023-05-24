@@ -2,21 +2,21 @@
 
 /// <p>Defines an instance group for heterogeneous cluster training. When requesting a training job using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API, you can configure multiple instance groups .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceGroup {
     /// <p>Specifies the instance type of the instance group.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::TrainingInstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>Specifies the number of instances of the instance group.</p>
     #[doc(hidden)]
     pub instance_count: i32,
     /// <p>Specifies the name of the instance group.</p>
     #[doc(hidden)]
-    pub instance_group_name: std::option::Option<std::string::String>,
+    pub instance_group_name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroup {
     /// <p>Specifies the instance type of the instance group.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::TrainingInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::TrainingInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Specifies the number of instances of the instance group.</p>
@@ -24,7 +24,7 @@ impl InstanceGroup {
         self.instance_count
     }
     /// <p>Specifies the name of the instance group.</p>
-    pub fn instance_group_name(&self) -> std::option::Option<&str> {
+    pub fn instance_group_name(&self) -> ::std::option::Option<&str> {
         self.instance_group_name.as_deref()
     }
 }
@@ -37,45 +37,50 @@ impl InstanceGroup {
 
 /// A builder for [`InstanceGroup`](crate::types::InstanceGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceGroupBuilder {
-    pub(crate) instance_type: std::option::Option<crate::types::TrainingInstanceType>,
-    pub(crate) instance_count: std::option::Option<i32>,
-    pub(crate) instance_group_name: std::option::Option<std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
+    pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroupBuilder {
     /// <p>Specifies the instance type of the instance group.</p>
     pub fn instance_type(mut self, input: crate::types::TrainingInstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the instance type of the instance group.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::TrainingInstanceType>,
+        input: ::std::option::Option<crate::types::TrainingInstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>Specifies the number of instances of the instance group.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
-        self.instance_count = Some(input);
+        self.instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the number of instances of the instance group.</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
     /// <p>Specifies the name of the instance group.</p>
-    pub fn instance_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_group_name = Some(input.into());
+    pub fn instance_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the instance group.</p>
     pub fn set_instance_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_group_name = input;
         self

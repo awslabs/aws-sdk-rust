@@ -2,7 +2,7 @@
 
 /// <p>Describes the point at which the application reads from the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputStartingPositionConfiguration {
     /// <p>The starting position on the stream.</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct InputStartingPositionConfiguration {
     /// <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub input_starting_position: std::option::Option<crate::types::InputStartingPosition>,
+    pub input_starting_position: ::std::option::Option<crate::types::InputStartingPosition>,
 }
 impl InputStartingPositionConfiguration {
     /// <p>The starting position on the stream.</p>
@@ -22,7 +22,7 @@ impl InputStartingPositionConfiguration {
     /// </ul>
     pub fn input_starting_position(
         &self,
-    ) -> std::option::Option<&crate::types::InputStartingPosition> {
+    ) -> ::std::option::Option<&crate::types::InputStartingPosition> {
         self.input_starting_position.as_ref()
     }
 }
@@ -35,9 +35,11 @@ impl InputStartingPositionConfiguration {
 
 /// A builder for [`InputStartingPositionConfiguration`](crate::types::InputStartingPositionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputStartingPositionConfigurationBuilder {
-    pub(crate) input_starting_position: std::option::Option<crate::types::InputStartingPosition>,
+    pub(crate) input_starting_position: ::std::option::Option<crate::types::InputStartingPosition>,
 }
 impl InputStartingPositionConfigurationBuilder {
     /// <p>The starting position on the stream.</p>
@@ -47,7 +49,7 @@ impl InputStartingPositionConfigurationBuilder {
     /// <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li>
     /// </ul>
     pub fn input_starting_position(mut self, input: crate::types::InputStartingPosition) -> Self {
-        self.input_starting_position = Some(input);
+        self.input_starting_position = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting position on the stream.</p>
@@ -58,7 +60,7 @@ impl InputStartingPositionConfigurationBuilder {
     /// </ul>
     pub fn set_input_starting_position(
         mut self,
-        input: std::option::Option<crate::types::InputStartingPosition>,
+        input: ::std::option::Option<crate::types::InputStartingPosition>,
     ) -> Self {
         self.input_starting_position = input;
         self

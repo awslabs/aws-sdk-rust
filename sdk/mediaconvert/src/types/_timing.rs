@@ -2,29 +2,29 @@
 
 /// Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Timing {
     /// The time, in Unix epoch format, that the transcoding job finished
     #[doc(hidden)]
-    pub finish_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub finish_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The time, in Unix epoch format, that transcoding for the job began.
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The time, in Unix epoch format, that you submitted the job.
     #[doc(hidden)]
-    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Timing {
     /// The time, in Unix epoch format, that the transcoding job finished
-    pub fn finish_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn finish_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.finish_time.as_ref()
     }
     /// The time, in Unix epoch format, that transcoding for the job began.
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// The time, in Unix epoch format, that you submitted the job.
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl Timing {
 
 /// A builder for [`Timing`](crate::types::Timing).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimingBuilder {
-    pub(crate) finish_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) finish_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimingBuilder {
     /// The time, in Unix epoch format, that the transcoding job finished
-    pub fn finish_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.finish_time = Some(input);
+    pub fn finish_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.finish_time = ::std::option::Option::Some(input);
         self
     }
     /// The time, in Unix epoch format, that the transcoding job finished
     pub fn set_finish_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.finish_time = input;
         self
     }
     /// The time, in Unix epoch format, that transcoding for the job began.
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// The time, in Unix epoch format, that transcoding for the job began.
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// The time, in Unix epoch format, that you submitted the job.
-    pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.submit_time = Some(input);
+    pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.submit_time = ::std::option::Option::Some(input);
         self
     }
     /// The time, in Unix epoch format, that you submitted the job.
     pub fn set_submit_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.submit_time = input;
         self

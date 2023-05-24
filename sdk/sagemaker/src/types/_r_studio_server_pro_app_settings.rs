@@ -2,24 +2,24 @@
 
 /// <p>A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app. <code>RStudioServerProAppSettings</code> cannot be updated. The <code>RStudioServerPro</code> app must be deleted and a new one created to make any changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RStudioServerProAppSettings {
     /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
     #[doc(hidden)]
-    pub access_status: std::option::Option<crate::types::RStudioServerProAccessStatus>,
+    pub access_status: ::std::option::Option<crate::types::RStudioServerProAccessStatus>,
     /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
     #[doc(hidden)]
-    pub user_group: std::option::Option<crate::types::RStudioServerProUserGroup>,
+    pub user_group: ::std::option::Option<crate::types::RStudioServerProUserGroup>,
 }
 impl RStudioServerProAppSettings {
     /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
     pub fn access_status(
         &self,
-    ) -> std::option::Option<&crate::types::RStudioServerProAccessStatus> {
+    ) -> ::std::option::Option<&crate::types::RStudioServerProAccessStatus> {
         self.access_status.as_ref()
     }
     /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
-    pub fn user_group(&self) -> std::option::Option<&crate::types::RStudioServerProUserGroup> {
+    pub fn user_group(&self) -> ::std::option::Option<&crate::types::RStudioServerProUserGroup> {
         self.user_group.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl RStudioServerProAppSettings {
 
 /// A builder for [`RStudioServerProAppSettings`](crate::types::RStudioServerProAppSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RStudioServerProAppSettingsBuilder {
-    pub(crate) access_status: std::option::Option<crate::types::RStudioServerProAccessStatus>,
-    pub(crate) user_group: std::option::Option<crate::types::RStudioServerProUserGroup>,
+    pub(crate) access_status: ::std::option::Option<crate::types::RStudioServerProAccessStatus>,
+    pub(crate) user_group: ::std::option::Option<crate::types::RStudioServerProUserGroup>,
 }
 impl RStudioServerProAppSettingsBuilder {
     /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
     pub fn access_status(mut self, input: crate::types::RStudioServerProAccessStatus) -> Self {
-        self.access_status = Some(input);
+        self.access_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the current user has access to the <code>RStudioServerPro</code> app.</p>
     pub fn set_access_status(
         mut self,
-        input: std::option::Option<crate::types::RStudioServerProAccessStatus>,
+        input: ::std::option::Option<crate::types::RStudioServerProAccessStatus>,
     ) -> Self {
         self.access_status = input;
         self
     }
     /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
     pub fn user_group(mut self, input: crate::types::RStudioServerProUserGroup) -> Self {
-        self.user_group = Some(input);
+        self.user_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of permissions that the user has within the <code>RStudioServerPro</code> app. This value defaults to `User`. The `Admin` value allows the user access to the RStudio Administrative Dashboard.</p>
     pub fn set_user_group(
         mut self,
-        input: std::option::Option<crate::types::RStudioServerProUserGroup>,
+        input: ::std::option::Option<crate::types::RStudioServerProUserGroup>,
     ) -> Self {
         self.user_group = input;
         self

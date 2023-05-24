@@ -3,22 +3,22 @@
 /// <p>The text format for the title.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShortFormatText {
     /// <p>Plain text format.</p>
     #[doc(hidden)]
-    pub plain_text: std::option::Option<std::string::String>,
+    pub plain_text: ::std::option::Option<::std::string::String>,
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
     #[doc(hidden)]
-    pub rich_text: std::option::Option<std::string::String>,
+    pub rich_text: ::std::option::Option<::std::string::String>,
 }
 impl ShortFormatText {
     /// <p>Plain text format.</p>
-    pub fn plain_text(&self) -> std::option::Option<&str> {
+    pub fn plain_text(&self) -> ::std::option::Option<&str> {
         self.plain_text.as_deref()
     }
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
-    pub fn rich_text(&self) -> std::option::Option<&str> {
+    pub fn rich_text(&self) -> ::std::option::Option<&str> {
         self.rich_text.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl ShortFormatText {
 
 /// A builder for [`ShortFormatText`](crate::types::ShortFormatText).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShortFormatTextBuilder {
-    pub(crate) plain_text: std::option::Option<std::string::String>,
-    pub(crate) rich_text: std::option::Option<std::string::String>,
+    pub(crate) plain_text: ::std::option::Option<::std::string::String>,
+    pub(crate) rich_text: ::std::option::Option<::std::string::String>,
 }
 impl ShortFormatTextBuilder {
     /// <p>Plain text format.</p>
-    pub fn plain_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.plain_text = Some(input.into());
+    pub fn plain_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.plain_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Plain text format.</p>
-    pub fn set_plain_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_plain_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plain_text = input;
         self
     }
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
-    pub fn rich_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rich_text = Some(input.into());
+    pub fn rich_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rich_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Rich text. Examples of rich text include bold, underline, and italics.</p>
-    pub fn set_rich_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rich_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rich_text = input;
         self
     }

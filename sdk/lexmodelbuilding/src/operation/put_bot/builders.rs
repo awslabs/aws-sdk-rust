@@ -8,56 +8,59 @@ pub use crate::operation::put_bot::_put_bot_input::PutBotInputBuilder;
 /// <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update a bot you are only required to specify a name, a locale, and whether the bot is directed toward children under age 13. You can use this to add intents later, or to remove intents from an existing bot. When you create a bot with the minimum information, the bot is created or updated but Amazon Lex returns the <code></code> response <code>FAILED</code>. You can build the bot after you add one or more intents. For more information about Amazon Lex bots, see <code>how-it-works</code>. </p>
 /// <p>If you specify the name of an existing bot, the fields in the request replace the existing values in the <code>$LATEST</code> version of the bot. Amazon Lex removes any fields that you don't provide values for in the request, except for the <code>idleTTLInSeconds</code> and <code>privacySettings</code> fields, which are set to their default values. If you don't specify values for required fields, Amazon Lex throws an exception.</p>
 /// <p>This operation requires permissions for the <code>lex:PutBot</code> action. For more information, see <code>security-iam</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBotFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_bot::builders::PutBotInputBuilder,
 }
 impl PutBotFluentBuilder {
     /// Creates a new `PutBot`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_bot::PutBot,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_bot::PutBotOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,29 +73,29 @@ impl PutBotFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_bot::PutBotOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description of the bot.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the bot.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -108,7 +111,7 @@ impl PutBotFluentBuilder {
     /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
     pub fn set_intents(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Intent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Intent>>,
     ) -> Self {
         self.inner = self.inner.set_intents(input);
         self
@@ -139,7 +142,7 @@ impl PutBotFluentBuilder {
     /// <li> <p>EU (Ireland) (eu-west-1)</p> </li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
-    pub fn set_enable_model_improvements(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_model_improvements(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_model_improvements(input);
         self
     }
@@ -179,7 +182,10 @@ impl PutBotFluentBuilder {
     /// <li> <p>IntentB</p> </li>
     /// <li> <p>IntentC</p> </li>
     /// </ul>
-    pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_nlu_intent_confidence_threshold(
+        mut self,
+        input: ::std::option::Option<f64>,
+    ) -> Self {
         self.inner = self.inner.set_nlu_intent_confidence_threshold(input);
         self
     }
@@ -207,7 +213,7 @@ impl PutBotFluentBuilder {
     /// </ul>
     pub fn set_clarification_prompt(
         mut self,
-        input: std::option::Option<crate::types::Prompt>,
+        input: ::std::option::Option<crate::types::Prompt>,
     ) -> Self {
         self.inner = self.inner.set_clarification_prompt(input);
         self
@@ -226,7 +232,7 @@ impl PutBotFluentBuilder {
     /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
     pub fn set_abort_statement(
         mut self,
-        input: std::option::Option<crate::types::Statement>,
+        input: ::std::option::Option<crate::types::Statement>,
     ) -> Self {
         self.inner = self.inner.set_abort_statement(input);
         self
@@ -245,31 +251,31 @@ impl PutBotFluentBuilder {
     /// <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p>
     /// <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p>
     /// <p>The default is 300 seconds (5 minutes).</p>
-    pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
         self
     }
     /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
-    pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn voice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.voice_id(input.into());
         self
     }
     /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
-    pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_voice_id(input);
         self
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
-    pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.checksum(input.into());
         self
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
-    pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_checksum(input);
         self
     }
@@ -283,7 +289,7 @@ impl PutBotFluentBuilder {
     /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
     pub fn set_process_behavior(
         mut self,
-        input: std::option::Option<crate::types::ProcessBehavior>,
+        input: ::std::option::Option<crate::types::ProcessBehavior>,
     ) -> Self {
         self.inner = self.inner.set_process_behavior(input);
         self
@@ -296,7 +302,7 @@ impl PutBotFluentBuilder {
     }
     /// <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p>
     /// <p>The default is <code>en-US</code>.</p>
-    pub fn set_locale(mut self, input: std::option::Option<crate::types::Locale>) -> Self {
+    pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
@@ -308,7 +314,7 @@ impl PutBotFluentBuilder {
     }
     /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
     /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
-    pub fn set_child_directed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_child_directed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_child_directed(input);
         self
     }
@@ -318,7 +324,7 @@ impl PutBotFluentBuilder {
         self
     }
     /// <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
-    pub fn set_detect_sentiment(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_detect_sentiment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_detect_sentiment(input);
         self
     }
@@ -328,7 +334,7 @@ impl PutBotFluentBuilder {
         self
     }
     /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
-    pub fn set_create_version(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_create_version(input);
         self
     }
@@ -344,7 +350,7 @@ impl PutBotFluentBuilder {
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

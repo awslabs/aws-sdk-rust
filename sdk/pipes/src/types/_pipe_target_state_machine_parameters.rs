@@ -2,15 +2,17 @@
 
 /// <p>The parameters for using a Step Functions state machine as a target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeTargetStateMachineParameters {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
     #[doc(hidden)]
-    pub invocation_type: std::option::Option<crate::types::PipeTargetInvocationType>,
+    pub invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetStateMachineParameters {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
-    pub fn invocation_type(&self) -> std::option::Option<&crate::types::PipeTargetInvocationType> {
+    pub fn invocation_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl PipeTargetStateMachineParameters {
 
 /// A builder for [`PipeTargetStateMachineParameters`](crate::types::PipeTargetStateMachineParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipeTargetStateMachineParametersBuilder {
-    pub(crate) invocation_type: std::option::Option<crate::types::PipeTargetInvocationType>,
+    pub(crate) invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetStateMachineParametersBuilder {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
     pub fn invocation_type(mut self, input: crate::types::PipeTargetInvocationType) -> Self {
-        self.invocation_type = Some(input);
+        self.invocation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
     pub fn set_invocation_type(
         mut self,
-        input: std::option::Option<crate::types::PipeTargetInvocationType>,
+        input: ::std::option::Option<crate::types::PipeTargetInvocationType>,
     ) -> Self {
         self.invocation_type = input;
         self

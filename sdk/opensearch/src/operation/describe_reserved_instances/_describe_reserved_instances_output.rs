@@ -2,27 +2,27 @@
 
 /// <p>Container for results from <code>DescribeReservedInstances</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of Reserved Instances in the current Region.</p>
     #[doc(hidden)]
-    pub reserved_instances: std::option::Option<std::vec::Vec<crate::types::ReservedInstance>>,
+    pub reserved_instances: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesOutput {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>List of Reserved Instances in the current Region.</p>
-    pub fn reserved_instances(&self) -> std::option::Option<&[crate::types::ReservedInstance]> {
+    pub fn reserved_instances(&self) -> ::std::option::Option<&[crate::types::ReservedInstance]> {
         self.reserved_instances.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedInstancesOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,21 +36,23 @@ impl DescribeReservedInstancesOutput {
 
 /// A builder for [`DescribeReservedInstancesOutput`](crate::operation::describe_reserved_instances::DescribeReservedInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedInstancesOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_instances:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstance>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesOutputBuilder {
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -62,13 +64,13 @@ impl DescribeReservedInstancesOutputBuilder {
     pub fn reserved_instances(mut self, input: crate::types::ReservedInstance) -> Self {
         let mut v = self.reserved_instances.unwrap_or_default();
         v.push(input);
-        self.reserved_instances = Some(v);
+        self.reserved_instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of Reserved Instances in the current Region.</p>
     pub fn set_reserved_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedInstance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstance>>,
     ) -> Self {
         self.reserved_instances = input;
         self

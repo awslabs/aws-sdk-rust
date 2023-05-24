@@ -9,56 +9,59 @@ pub use crate::operation::set_alarm_state::_set_alarm_state_input::SetAlarmState
 /// <p>Metric alarms returns to their actual state quickly, often within seconds. Because the metric alarm state change happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
 /// <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is not guaranteed to return to its actual state. It returns to its actual state only once any of its children alarms change state. It is also reevaluated if you update its configuration.</p>
 /// <p>If an alarm triggers EC2 Auto Scaling policies or application Auto Scaling policies, you must include information in the <code>StateReasonData</code> parameter to enable the policy to take the correct action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetAlarmStateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::set_alarm_state::builders::SetAlarmStateInputBuilder,
 }
 impl SetAlarmStateFluentBuilder {
     /// Creates a new `SetAlarmState`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::set_alarm_state::SetAlarmState,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::set_alarm_state::SetAlarmStateError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_alarm_state::SetAlarmStateError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_alarm_state::SetAlarmStateOutput,
-        aws_smithy_http::result::SdkError<crate::operation::set_alarm_state::SetAlarmStateError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_alarm_state::SetAlarmStateError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,19 +74,19 @@ impl SetAlarmStateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_alarm_state::SetAlarmStateOutput,
-        aws_smithy_http::result::SdkError<crate::operation::set_alarm_state::SetAlarmStateError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::set_alarm_state::SetAlarmStateError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the alarm.</p>
-    pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_name(input.into());
         self
     }
     /// <p>The name of the alarm.</p>
-    pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_name(input);
         self
     }
@@ -93,23 +96,29 @@ impl SetAlarmStateFluentBuilder {
         self
     }
     /// <p>The value of the state.</p>
-    pub fn set_state_value(mut self, input: std::option::Option<crate::types::StateValue>) -> Self {
+    pub fn set_state_value(
+        mut self,
+        input: ::std::option::Option<crate::types::StateValue>,
+    ) -> Self {
         self.inner = self.inner.set_state_value(input);
         self
     }
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
-    pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.state_reason(input.into());
         self
     }
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
-    pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_state_reason(input);
         self
     }
     /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-    pub fn state_reason_data(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn state_reason_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.state_reason_data(input.into());
         self
     }
@@ -117,7 +126,7 @@ impl SetAlarmStateFluentBuilder {
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
     pub fn set_state_reason_data(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_state_reason_data(input);
         self

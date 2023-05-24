@@ -2,20 +2,20 @@
 
 /// <p>Contains the status of the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainOutput {
     /// <p>List that contains the status of each specified OpenSearch Service domain.</p>
     #[doc(hidden)]
-    pub domain_status: std::option::Option<crate::types::DomainStatus>,
+    pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     _request_id: Option<String>,
 }
 impl DescribeDomainOutput {
     /// <p>List that contains the status of each specified OpenSearch Service domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::types::DomainStatus> {
+    pub fn domain_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDomainOutput {
+impl ::aws_http::request_id::RequestId for DescribeDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DescribeDomainOutput {
 
 /// A builder for [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDomainOutputBuilder {
-    pub(crate) domain_status: std::option::Option<crate::types::DomainStatus>,
+    pub(crate) domain_status: ::std::option::Option<crate::types::DomainStatus>,
     _request_id: Option<String>,
 }
 impl DescribeDomainOutputBuilder {
     /// <p>List that contains the status of each specified OpenSearch Service domain.</p>
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
-        self.domain_status = Some(input);
+        self.domain_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>List that contains the status of each specified OpenSearch Service domain.</p>
     pub fn set_domain_status(
         mut self,
-        input: std::option::Option<crate::types::DomainStatus>,
+        input: ::std::option::Option<crate::types::DomainStatus>,
     ) -> Self {
         self.domain_status = input;
         self

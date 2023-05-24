@@ -2,15 +2,15 @@
 
 /// Configure egress access logging.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EgressAccessLogs {
     /// Customize the log group name.
     #[doc(hidden)]
-    pub log_group_name: std::option::Option<std::string::String>,
+    pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl EgressAccessLogs {
     /// Customize the log group name.
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl EgressAccessLogs {
 
 /// A builder for [`EgressAccessLogs`](crate::types::EgressAccessLogs).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EgressAccessLogsBuilder {
-    pub(crate) log_group_name: std::option::Option<std::string::String>,
+    pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl EgressAccessLogsBuilder {
     /// Customize the log group name.
-    pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_group_name = Some(input.into());
+    pub fn log_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Customize the log group name.
-    pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_group_name = input;
         self
     }

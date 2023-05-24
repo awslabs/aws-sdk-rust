@@ -2,38 +2,38 @@
 
 /// <p>A string parameter for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringDatasetParameter {
     /// <p>An identifier for the string parameter that is created in the dataset.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the string parameter that is created in the dataset.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
     #[doc(hidden)]
-    pub value_type: std::option::Option<crate::types::DatasetParameterValueType>,
+    pub value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
     /// <p>A list of default values for a given string dataset parameter type. This structure only accepts static values.</p>
     #[doc(hidden)]
-    pub default_values: std::option::Option<crate::types::StringDatasetParameterDefaultValues>,
+    pub default_values: ::std::option::Option<crate::types::StringDatasetParameterDefaultValues>,
 }
 impl StringDatasetParameter {
     /// <p>An identifier for the string parameter that is created in the dataset.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the string parameter that is created in the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub fn value_type(&self) -> std::option::Option<&crate::types::DatasetParameterValueType> {
+    pub fn value_type(&self) -> ::std::option::Option<&crate::types::DatasetParameterValueType> {
         self.value_type.as_ref()
     }
     /// <p>A list of default values for a given string dataset parameter type. This structure only accepts static values.</p>
     pub fn default_values(
         &self,
-    ) -> std::option::Option<&crate::types::StringDatasetParameterDefaultValues> {
+    ) -> ::std::option::Option<&crate::types::StringDatasetParameterDefaultValues> {
         self.default_values.as_ref()
     }
 }
@@ -46,44 +46,46 @@ impl StringDatasetParameter {
 
 /// A builder for [`StringDatasetParameter`](crate::types::StringDatasetParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StringDatasetParameterBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value_type: std::option::Option<crate::types::DatasetParameterValueType>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
     pub(crate) default_values:
-        std::option::Option<crate::types::StringDatasetParameterDefaultValues>,
+        ::std::option::Option<crate::types::StringDatasetParameterDefaultValues>,
 }
 impl StringDatasetParameterBuilder {
     /// <p>An identifier for the string parameter that is created in the dataset.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for the string parameter that is created in the dataset.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the string parameter that is created in the dataset.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the string parameter that is created in the dataset.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
     pub fn value_type(mut self, input: crate::types::DatasetParameterValueType) -> Self {
-        self.value_type = Some(input);
+        self.value_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
     pub fn set_value_type(
         mut self,
-        input: std::option::Option<crate::types::DatasetParameterValueType>,
+        input: ::std::option::Option<crate::types::DatasetParameterValueType>,
     ) -> Self {
         self.value_type = input;
         self
@@ -93,13 +95,13 @@ impl StringDatasetParameterBuilder {
         mut self,
         input: crate::types::StringDatasetParameterDefaultValues,
     ) -> Self {
-        self.default_values = Some(input);
+        self.default_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of default values for a given string dataset parameter type. This structure only accepts static values.</p>
     pub fn set_default_values(
         mut self,
-        input: std::option::Option<crate::types::StringDatasetParameterDefaultValues>,
+        input: ::std::option::Option<crate::types::StringDatasetParameterDefaultValues>,
     ) -> Self {
         self.default_values = input;
         self

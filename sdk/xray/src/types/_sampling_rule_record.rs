@@ -2,29 +2,29 @@
 
 /// <p>A <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingRule.html">SamplingRule</a> and its metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamplingRuleRecord {
     /// <p>The sampling rule.</p>
     #[doc(hidden)]
-    pub sampling_rule: std::option::Option<crate::types::SamplingRule>,
+    pub sampling_rule: ::std::option::Option<crate::types::SamplingRule>,
     /// <p>When the rule was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the rule was last modified.</p>
     #[doc(hidden)]
-    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SamplingRuleRecord {
     /// <p>The sampling rule.</p>
-    pub fn sampling_rule(&self) -> std::option::Option<&crate::types::SamplingRule> {
+    pub fn sampling_rule(&self) -> ::std::option::Option<&crate::types::SamplingRule> {
         self.sampling_rule.as_ref()
     }
     /// <p>When the rule was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the rule was last modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl SamplingRuleRecord {
 
 /// A builder for [`SamplingRuleRecord`](crate::types::SamplingRuleRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SamplingRuleRecordBuilder {
-    pub(crate) sampling_rule: std::option::Option<crate::types::SamplingRule>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) sampling_rule: ::std::option::Option<crate::types::SamplingRule>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SamplingRuleRecordBuilder {
     /// <p>The sampling rule.</p>
     pub fn sampling_rule(mut self, input: crate::types::SamplingRule) -> Self {
-        self.sampling_rule = Some(input);
+        self.sampling_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sampling rule.</p>
     pub fn set_sampling_rule(
         mut self,
-        input: std::option::Option<crate::types::SamplingRule>,
+        input: ::std::option::Option<crate::types::SamplingRule>,
     ) -> Self {
         self.sampling_rule = input;
         self
     }
     /// <p>When the rule was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the rule was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>When the rule was last modified.</p>
-    pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified_at = Some(input);
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the rule was last modified.</p>
     pub fn set_modified_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.modified_at = input;
         self

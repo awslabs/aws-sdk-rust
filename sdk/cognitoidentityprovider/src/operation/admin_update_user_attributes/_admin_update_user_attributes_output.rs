@@ -2,11 +2,11 @@
 
 /// <p>Represents the response from the server for the request to update user attributes as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminUpdateUserAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AdminUpdateUserAttributesOutput {
+impl ::aws_http::request_id::RequestId for AdminUpdateUserAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl AdminUpdateUserAttributesOutput {
 
 /// A builder for [`AdminUpdateUserAttributesOutput`](crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminUpdateUserAttributesOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,15 +2,15 @@
 
 /// <p>A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserData {
     /// <p>Amazon S3 location of the user-data script.</p>
     #[doc(hidden)]
-    pub s3_location: std::option::Option<crate::types::S3Location>,
+    pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl UserData {
     /// <p>Amazon S3 location of the user-data script.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl UserData {
 
 /// A builder for [`UserData`](crate::types::UserData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserDataBuilder {
-    pub(crate) s3_location: std::option::Option<crate::types::S3Location>,
+    pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl UserDataBuilder {
     /// <p>Amazon S3 location of the user-data script.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
-        self.s3_location = Some(input);
+        self.s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amazon S3 location of the user-data script.</p>
-    pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+    pub fn set_s3_location(
+        mut self,
+        input: ::std::option::Option<crate::types::S3Location>,
+    ) -> Self {
         self.s3_location = input;
         self
     }

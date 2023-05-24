@@ -2,27 +2,27 @@
 
 /// <p>Describes a refresh token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RefreshTokenRequestBody {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
     #[doc(hidden)]
-    pub token: std::option::Option<std::string::String>,
+    pub token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client to request the token from.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl RefreshTokenRequestBody {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
     /// <p>The ID of the client to request the token from.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
 }
-impl std::fmt::Debug for RefreshTokenRequestBody {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RefreshTokenRequestBody {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RefreshTokenRequestBody");
         formatter.field("token", &"*** Sensitive Data Redacted ***");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl RefreshTokenRequestBody {
 
 /// A builder for [`RefreshTokenRequestBody`](crate::types::RefreshTokenRequestBody).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RefreshTokenRequestBodyBuilder {
-    pub(crate) token: std::option::Option<std::string::String>,
-    pub(crate) client_id: std::option::Option<std::string::String>,
+    pub(crate) token: ::std::option::Option<::std::string::String>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
 impl RefreshTokenRequestBodyBuilder {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.token = Some(input.into());
+    pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
     }
     /// <p>The ID of the client to request the token from.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the client to request the token from.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
@@ -72,8 +72,8 @@ impl RefreshTokenRequestBodyBuilder {
         }
     }
 }
-impl std::fmt::Debug for RefreshTokenRequestBodyBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RefreshTokenRequestBodyBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RefreshTokenRequestBodyBuilder");
         formatter.field("token", &"*** Sensitive Data Redacted ***");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");

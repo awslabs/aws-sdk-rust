@@ -2,7 +2,7 @@
 
 /// <p>Describes open ports on an instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstancePortState {
     /// <p>The first port in a range of open ports on an instance.</p>
     /// <p>Allowed ports:</p>
@@ -31,28 +31,28 @@ pub struct InstancePortState {
     /// <li> <p> <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::NetworkProtocol>,
+    pub protocol: ::std::option::Option<crate::types::NetworkProtocol>,
     /// <p>Specifies whether the instance port is <code>open</code> or <code>closed</code>.</p> <note>
     /// <p>The port state for Lightsail instances is always <code>open</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::PortState>,
+    pub state: ::std::option::Option<crate::types::PortState>,
     /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance through the ports, and the protocol.</p> <note>
     /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
     #[doc(hidden)]
-    pub cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6; otherwise, IPv4 should be used.</p> <note>
     /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
     #[doc(hidden)]
-    pub ipv6_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ipv6_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
     #[doc(hidden)]
-    pub cidr_list_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cidr_list_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstancePortState {
     /// <p>The first port in a range of open ports on an instance.</p>
@@ -83,32 +83,32 @@ impl InstancePortState {
     /// <li> <p> <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p> </li>
     /// <li> <p> <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p> </li>
     /// </ul>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::NetworkProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::NetworkProtocol> {
         self.protocol.as_ref()
     }
     /// <p>Specifies whether the instance port is <code>open</code> or <code>closed</code>.</p> <note>
     /// <p>The port state for Lightsail instances is always <code>open</code>.</p>
     /// </note>
-    pub fn state(&self) -> std::option::Option<&crate::types::PortState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::PortState> {
         self.state.as_ref()
     }
     /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance through the ports, and the protocol.</p> <note>
     /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
-    pub fn cidrs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cidrs.as_deref()
     }
     /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6; otherwise, IPv4 should be used.</p> <note>
     /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
-    pub fn ipv6_cidrs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ipv6_cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ipv6_cidrs.as_deref()
     }
     /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
-    pub fn cidr_list_aliases(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidr_list_aliases(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cidr_list_aliases.as_deref()
     }
 }
@@ -121,15 +121,17 @@ impl InstancePortState {
 
 /// A builder for [`InstancePortState`](crate::types::InstancePortState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstancePortStateBuilder {
-    pub(crate) from_port: std::option::Option<i32>,
-    pub(crate) to_port: std::option::Option<i32>,
-    pub(crate) protocol: std::option::Option<crate::types::NetworkProtocol>,
-    pub(crate) state: std::option::Option<crate::types::PortState>,
-    pub(crate) cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ipv6_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) cidr_list_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) from_port: ::std::option::Option<i32>,
+    pub(crate) to_port: ::std::option::Option<i32>,
+    pub(crate) protocol: ::std::option::Option<crate::types::NetworkProtocol>,
+    pub(crate) state: ::std::option::Option<crate::types::PortState>,
+    pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cidr_list_aliases: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstancePortStateBuilder {
     /// <p>The first port in a range of open ports on an instance.</p>
@@ -140,7 +142,7 @@ impl InstancePortStateBuilder {
     /// <li> <p>ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol for IPv6</a>.</p> </li>
     /// </ul>
     pub fn from_port(mut self, input: i32) -> Self {
-        self.from_port = Some(input);
+        self.from_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The first port in a range of open ports on an instance.</p>
@@ -150,7 +152,7 @@ impl InstancePortStateBuilder {
     /// <li> <p>ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on <i>Wikipedia</i>.</p> </li>
     /// <li> <p>ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol for IPv6</a>.</p> </li>
     /// </ul>
-    pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from_port = input;
         self
     }
@@ -162,7 +164,7 @@ impl InstancePortStateBuilder {
     /// <li> <p>ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol for IPv6</a>.</p> </li>
     /// </ul>
     pub fn to_port(mut self, input: i32) -> Self {
-        self.to_port = Some(input);
+        self.to_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last port in a range of open ports on an instance.</p>
@@ -172,7 +174,7 @@ impl InstancePortStateBuilder {
     /// <li> <p>ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control Messages</a> on <i>Wikipedia</i>.</p> </li>
     /// <li> <p>ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code> (ICMPv6 code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet Control Message Protocol for IPv6</a>.</p> </li>
     /// </ul>
-    pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
     }
@@ -185,7 +187,7 @@ impl InstancePortStateBuilder {
     /// <li> <p> <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error messages and operational information indicating success or failure when communicating with an instance. For example, an error is indicated when an instance could not be reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using the <code>toPort</code> parameter.</p> </li>
     /// </ul>
     pub fn protocol(mut self, input: crate::types::NetworkProtocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP protocol name.</p>
@@ -198,7 +200,7 @@ impl InstancePortStateBuilder {
     /// </ul>
     pub fn set_protocol(
         mut self,
-        input: std::option::Option<crate::types::NetworkProtocol>,
+        input: ::std::option::Option<crate::types::NetworkProtocol>,
     ) -> Self {
         self.protocol = input;
         self
@@ -207,13 +209,13 @@ impl InstancePortStateBuilder {
     /// <p>The port state for Lightsail instances is always <code>open</code>.</p>
     /// </note>
     pub fn state(mut self, input: crate::types::PortState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the instance port is <code>open</code> or <code>closed</code>.</p> <note>
     /// <p>The port state for Lightsail instances is always <code>open</code>.</p>
     /// </note>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::PortState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::PortState>) -> Self {
         self.state = input;
         self
     }
@@ -225,10 +227,10 @@ impl InstancePortStateBuilder {
     /// <p>The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
-    pub fn cidrs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidrs.unwrap_or_default();
         v.push(input.into());
-        self.cidrs = Some(v);
+        self.cidrs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to connect to an instance through the ports, and the protocol.</p> <note>
@@ -237,7 +239,7 @@ impl InstancePortStateBuilder {
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
     pub fn set_cidrs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cidrs = input;
         self
@@ -250,10 +252,10 @@ impl InstancePortStateBuilder {
     /// <p>The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect to an instance.</p>
     /// </note>
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
-    pub fn ipv6_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ipv6_cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ipv6_cidrs.unwrap_or_default();
         v.push(input.into());
-        self.ipv6_cidrs = Some(v);
+        self.ipv6_cidrs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to connect to an instance through the ports, and the protocol. Only devices with an IPv6 address can connect to an instance through IPv6; otherwise, IPv4 should be used.</p> <note>
@@ -262,7 +264,7 @@ impl InstancePortStateBuilder {
     /// <p>For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless Inter-Domain Routing</a> on <i>Wikipedia</i>.</p>
     pub fn set_ipv6_cidrs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ipv6_cidrs = input;
         self
@@ -273,17 +275,20 @@ impl InstancePortStateBuilder {
     ///
     /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
-    pub fn cidr_list_aliases(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cidr_list_aliases(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.cidr_list_aliases.unwrap_or_default();
         v.push(input.into());
-        self.cidr_list_aliases = Some(v);
+        self.cidr_list_aliases = ::std::option::Option::Some(v);
         self
     }
     /// <p>An alias that defines access for a preconfigured range of IP addresses.</p>
     /// <p>The only alias currently supported is <code>lightsail-connect</code>, which allows IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.</p>
     pub fn set_cidr_list_aliases(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cidr_list_aliases = input;
         self

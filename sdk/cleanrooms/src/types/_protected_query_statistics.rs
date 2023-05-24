@@ -2,15 +2,15 @@
 
 /// <p>Contains statistics about the execution of the protected query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryStatistics {
     /// <p>The duration of the Protected Query, from creation until query completion.</p>
     #[doc(hidden)]
-    pub total_duration_in_millis: std::option::Option<i64>,
+    pub total_duration_in_millis: ::std::option::Option<i64>,
 }
 impl ProtectedQueryStatistics {
     /// <p>The duration of the Protected Query, from creation until query completion.</p>
-    pub fn total_duration_in_millis(&self) -> std::option::Option<i64> {
+    pub fn total_duration_in_millis(&self) -> ::std::option::Option<i64> {
         self.total_duration_in_millis
     }
 }
@@ -23,18 +23,20 @@ impl ProtectedQueryStatistics {
 
 /// A builder for [`ProtectedQueryStatistics`](crate::types::ProtectedQueryStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtectedQueryStatisticsBuilder {
-    pub(crate) total_duration_in_millis: std::option::Option<i64>,
+    pub(crate) total_duration_in_millis: ::std::option::Option<i64>,
 }
 impl ProtectedQueryStatisticsBuilder {
     /// <p>The duration of the Protected Query, from creation until query completion.</p>
     pub fn total_duration_in_millis(mut self, input: i64) -> Self {
-        self.total_duration_in_millis = Some(input);
+        self.total_duration_in_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration of the Protected Query, from creation until query completion.</p>
-    pub fn set_total_duration_in_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_duration_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_duration_in_millis = input;
         self
     }

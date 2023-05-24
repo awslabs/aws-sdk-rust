@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStack`](crate::operation::delete_stack::builders::DeleteStackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_stack::builders::DeleteStackFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_stack::builders::DeleteStackFluentBuilder::set_name): <p>The name of the stack.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_stack::builders::DeleteStackFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_stack::builders::DeleteStackFluentBuilder::set_name): <p>The name of the stack.</p>
     /// - On success, responds with [`DeleteStackOutput`](crate::operation::delete_stack::DeleteStackOutput)
     /// - On failure, responds with [`SdkError<DeleteStackError>`](crate::operation::delete_stack::DeleteStackError)
     pub fn delete_stack(

@@ -2,17 +2,17 @@
 
 /// <p>The configuration information for the bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     #[doc(hidden)]
-    pub location_constraint: std::option::Option<crate::types::BucketLocationConstraint>,
+    pub location_constraint: ::std::option::Option<crate::types::BucketLocationConstraint>,
 }
 impl CreateBucketConfiguration {
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     pub fn location_constraint(
         &self,
-    ) -> std::option::Option<&crate::types::BucketLocationConstraint> {
+    ) -> ::std::option::Option<&crate::types::BucketLocationConstraint> {
         self.location_constraint.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl CreateBucketConfiguration {
 
 /// A builder for [`CreateBucketConfiguration`](crate::types::CreateBucketConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateBucketConfigurationBuilder {
-    pub(crate) location_constraint: std::option::Option<crate::types::BucketLocationConstraint>,
+    pub(crate) location_constraint: ::std::option::Option<crate::types::BucketLocationConstraint>,
 }
 impl CreateBucketConfigurationBuilder {
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     pub fn location_constraint(mut self, input: crate::types::BucketLocationConstraint) -> Self {
-        self.location_constraint = Some(input);
+        self.location_constraint = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
     pub fn set_location_constraint(
         mut self,
-        input: std::option::Option<crate::types::BucketLocationConstraint>,
+        input: ::std::option::Option<crate::types::BucketLocationConstraint>,
     ) -> Self {
         self.location_constraint = input;
         self

@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_node_from_template_job_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput,
@@ -10,7 +10,7 @@ pub fn de_describe_node_from_template_job_http_error(
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -94,7 +94,7 @@ pub fn de_describe_node_from_template_job_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_node_from_template_job_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput,
@@ -105,34 +105,34 @@ pub fn de_describe_node_from_template_job_http_response_with_props(
         let mut output = crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder::default();
         output = crate::protocol_serde::shape_describe_node_from_template_job::de_describe_node_from_template_job(_response_body, output).map_err(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
-pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder) -> Result<crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder, aws_smithy_json::deserialize::error::DeserializeError>{
+pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder) -> Result<crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "CreatedTime" => {
                         builder = builder.set_created_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "JobId" => {
                         builder = builder.set_job_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -146,15 +146,15 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
                     }
                     "LastUpdatedTime" => {
                         builder = builder.set_last_updated_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "NodeDescription" => {
                         builder = builder.set_node_description(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -163,7 +163,7 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
                     }
                     "NodeName" => {
                         builder = builder.set_node_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -172,7 +172,7 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
                     }
                     "OutputPackageName" => {
                         builder = builder.set_output_package_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -181,7 +181,7 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
                     }
                     "OutputPackageVersion" => {
                         builder = builder.set_output_package_version(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -190,7 +190,7 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
                     }
                     "Status" => {
                         builder = builder.set_status(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -203,7 +203,7 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
                     }
                     "StatusMessage" => {
                         builder = builder.set_status_message(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -217,7 +217,7 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
                     }
                     "TemplateType" => {
                         builder = builder.set_template_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -227,12 +227,12 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
                             .transpose()?,
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -242,7 +242,7 @@ pub(crate) fn de_describe_node_from_template_job(value: &[u8], mut builder: crat
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

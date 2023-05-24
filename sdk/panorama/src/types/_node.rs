@@ -2,85 +2,85 @@
 
 /// <p>An application node that represents a camera stream, a model, code, or output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Node {
     /// <p>The node's ID.</p>
     #[doc(hidden)]
-    pub node_id: std::option::Option<std::string::String>,
+    pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The node's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The node's category.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::NodeCategory>,
+    pub category: ::std::option::Option<crate::types::NodeCategory>,
     /// <p>The account ID of the node's owner.</p>
     #[doc(hidden)]
-    pub owner_account: std::option::Option<std::string::String>,
+    pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The node's package name.</p>
     #[doc(hidden)]
-    pub package_name: std::option::Option<std::string::String>,
+    pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The node's package ID.</p>
     #[doc(hidden)]
-    pub package_id: std::option::Option<std::string::String>,
+    pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>The node's ARN.</p>
     #[doc(hidden)]
-    pub package_arn: std::option::Option<std::string::String>,
+    pub package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The node's package version.</p>
     #[doc(hidden)]
-    pub package_version: std::option::Option<std::string::String>,
+    pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The node's patch version.</p>
     #[doc(hidden)]
-    pub patch_version: std::option::Option<std::string::String>,
+    pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The node's description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>When the node was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Node {
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<&str> {
         self.node_id.as_deref()
     }
     /// <p>The node's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The node's category.</p>
-    pub fn category(&self) -> std::option::Option<&crate::types::NodeCategory> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::NodeCategory> {
         self.category.as_ref()
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<&str> {
         self.owner_account.as_deref()
     }
     /// <p>The node's package name.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
     /// <p>The node's package ID.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<&str> {
         self.package_id.as_deref()
     }
     /// <p>The node's ARN.</p>
-    pub fn package_arn(&self) -> std::option::Option<&str> {
+    pub fn package_arn(&self) -> ::std::option::Option<&str> {
         self.package_arn.as_deref()
     }
     /// <p>The node's package version.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p>The node's patch version.</p>
-    pub fn patch_version(&self) -> std::option::Option<&str> {
+    pub fn patch_version(&self) -> ::std::option::Option<&str> {
         self.patch_version.as_deref()
     }
     /// <p>The node's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>When the node was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -93,130 +93,153 @@ impl Node {
 
 /// A builder for [`Node`](crate::types::Node).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeBuilder {
-    pub(crate) node_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) category: std::option::Option<crate::types::NodeCategory>,
-    pub(crate) owner_account: std::option::Option<std::string::String>,
-    pub(crate) package_name: std::option::Option<std::string::String>,
-    pub(crate) package_id: std::option::Option<std::string::String>,
-    pub(crate) package_arn: std::option::Option<std::string::String>,
-    pub(crate) package_version: std::option::Option<std::string::String>,
-    pub(crate) patch_version: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) node_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<crate::types::NodeCategory>,
+    pub(crate) owner_account: ::std::option::Option<::std::string::String>,
+    pub(crate) package_name: ::std::option::Option<::std::string::String>,
+    pub(crate) package_id: ::std::option::Option<::std::string::String>,
+    pub(crate) package_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) package_version: ::std::option::Option<::std::string::String>,
+    pub(crate) patch_version: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NodeBuilder {
     /// <p>The node's ID.</p>
-    pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_id = Some(input.into());
+    pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's ID.</p>
-    pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
     }
     /// <p>The node's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The node's category.</p>
     pub fn category(mut self, input: crate::types::NodeCategory) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p>The node's category.</p>
-    pub fn set_category(mut self, input: std::option::Option<crate::types::NodeCategory>) -> Self {
+    pub fn set_category(
+        mut self,
+        input: ::std::option::Option<crate::types::NodeCategory>,
+    ) -> Self {
         self.category = input;
         self
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_account = Some(input.into());
+    pub fn owner_account(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the node's owner.</p>
-    pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_account(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.owner_account = input;
         self
     }
     /// <p>The node's package name.</p>
-    pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_name = Some(input.into());
+    pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's package name.</p>
-    pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
     /// <p>The node's package ID.</p>
-    pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_id = Some(input.into());
+    pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's package ID.</p>
-    pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_id = input;
         self
     }
     /// <p>The node's ARN.</p>
-    pub fn package_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_arn = Some(input.into());
+    pub fn package_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's ARN.</p>
-    pub fn set_package_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_arn = input;
         self
     }
     /// <p>The node's package version.</p>
-    pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_version = Some(input.into());
+    pub fn package_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's package version.</p>
-    pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.package_version = input;
         self
     }
     /// <p>The node's patch version.</p>
-    pub fn patch_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.patch_version = Some(input.into());
+    pub fn patch_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's patch version.</p>
-    pub fn set_patch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_patch_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.patch_version = input;
         self
     }
     /// <p>The node's description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>When the node was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the node was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self

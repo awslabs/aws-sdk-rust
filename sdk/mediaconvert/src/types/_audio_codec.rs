@@ -47,13 +47,13 @@
 /// Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AudioCodec {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum AudioCodec {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AudioCodec {
+impl ::std::convert::From<&str> for AudioCodec {
     fn from(s: &str) -> Self {
         match s {
             "AAC" => AudioCodec::Aac,
@@ -99,11 +99,11 @@ impl std::convert::From<&str> for AudioCodec {
         }
     }
 }
-impl std::str::FromStr for AudioCodec {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AudioCodec {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioCodec::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AudioCodec::from(s))
     }
 }
 impl AudioCodec {
@@ -141,7 +141,7 @@ impl AudioCodec {
         ]
     }
 }
-impl AsRef<str> for AudioCodec {
+impl ::std::convert::AsRef<str> for AudioCodec {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

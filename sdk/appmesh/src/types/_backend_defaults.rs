@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     #[doc(hidden)]
-    pub client_policy: std::option::Option<crate::types::ClientPolicy>,
+    pub client_policy: ::std::option::Option<crate::types::ClientPolicy>,
 }
 impl BackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
-    pub fn client_policy(&self) -> std::option::Option<&crate::types::ClientPolicy> {
+    pub fn client_policy(&self) -> ::std::option::Option<&crate::types::ClientPolicy> {
         self.client_policy.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BackendDefaults {
 
 /// A builder for [`BackendDefaults`](crate::types::BackendDefaults).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackendDefaultsBuilder {
-    pub(crate) client_policy: std::option::Option<crate::types::ClientPolicy>,
+    pub(crate) client_policy: ::std::option::Option<crate::types::ClientPolicy>,
 }
 impl BackendDefaultsBuilder {
     /// <p>A reference to an object that represents a client policy.</p>
     pub fn client_policy(mut self, input: crate::types::ClientPolicy) -> Self {
-        self.client_policy = Some(input);
+        self.client_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to an object that represents a client policy.</p>
     pub fn set_client_policy(
         mut self,
-        input: std::option::Option<crate::types::ClientPolicy>,
+        input: ::std::option::Option<crate::types::ClientPolicy>,
     ) -> Self {
         self.client_policy = input;
         self

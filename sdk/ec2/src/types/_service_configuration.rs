@@ -2,119 +2,121 @@
 
 /// <p>Describes a service configuration for a VPC endpoint service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceConfiguration {
     /// <p>The type of service.</p>
     #[doc(hidden)]
-    pub service_type: std::option::Option<std::vec::Vec<crate::types::ServiceTypeDetail>>,
+    pub service_type: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
     /// <p>The ID of the service.</p>
     #[doc(hidden)]
-    pub service_id: std::option::Option<std::string::String>,
+    pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The service state.</p>
     #[doc(hidden)]
-    pub service_state: std::option::Option<crate::types::ServiceState>,
+    pub service_state: ::std::option::Option<crate::types::ServiceState>,
     /// <p>The Availability Zones in which the service is available.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
     #[doc(hidden)]
-    pub acceptance_required: std::option::Option<bool>,
+    pub acceptance_required: ::std::option::Option<bool>,
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC endpoint API is restricted.</p>
     #[doc(hidden)]
-    pub manages_vpc_endpoints: std::option::Option<bool>,
+    pub manages_vpc_endpoints: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.</p>
     #[doc(hidden)]
-    pub network_load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub network_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
     #[doc(hidden)]
-    pub gateway_load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub gateway_load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported IP address types.</p>
     #[doc(hidden)]
     pub supported_ip_address_types:
-        std::option::Option<std::vec::Vec<crate::types::ServiceConnectivityType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>>,
     /// <p>The DNS names for the service.</p>
     #[doc(hidden)]
-    pub base_endpoint_dns_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub base_endpoint_dns_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The private DNS name for the service.</p>
     #[doc(hidden)]
-    pub private_dns_name: std::option::Option<std::string::String>,
+    pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the endpoint service private DNS name configuration.</p>
     #[doc(hidden)]
     pub private_dns_name_configuration:
-        std::option::Option<crate::types::PrivateDnsNameConfiguration>,
+        ::std::option::Option<crate::types::PrivateDnsNameConfiguration>,
     /// <p>The payer responsibility.</p>
     #[doc(hidden)]
-    pub payer_responsibility: std::option::Option<crate::types::PayerResponsibility>,
+    pub payer_responsibility: ::std::option::Option<crate::types::PayerResponsibility>,
     /// <p>The tags assigned to the service.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ServiceConfiguration {
     /// <p>The type of service.</p>
-    pub fn service_type(&self) -> std::option::Option<&[crate::types::ServiceTypeDetail]> {
+    pub fn service_type(&self) -> ::std::option::Option<&[crate::types::ServiceTypeDetail]> {
         self.service_type.as_deref()
     }
     /// <p>The ID of the service.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<&str> {
         self.service_id.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The service state.</p>
-    pub fn service_state(&self) -> std::option::Option<&crate::types::ServiceState> {
+    pub fn service_state(&self) -> ::std::option::Option<&crate::types::ServiceState> {
         self.service_state.as_ref()
     }
     /// <p>The Availability Zones in which the service is available.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
-    pub fn acceptance_required(&self) -> std::option::Option<bool> {
+    pub fn acceptance_required(&self) -> ::std::option::Option<bool> {
         self.acceptance_required
     }
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC endpoint API is restricted.</p>
-    pub fn manages_vpc_endpoints(&self) -> std::option::Option<bool> {
+    pub fn manages_vpc_endpoints(&self) -> ::std::option::Option<bool> {
         self.manages_vpc_endpoints
     }
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.</p>
-    pub fn network_load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn network_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.network_load_balancer_arns.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
-    pub fn gateway_load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn gateway_load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.gateway_load_balancer_arns.as_deref()
     }
     /// <p>The supported IP address types.</p>
     pub fn supported_ip_address_types(
         &self,
-    ) -> std::option::Option<&[crate::types::ServiceConnectivityType]> {
+    ) -> ::std::option::Option<&[crate::types::ServiceConnectivityType]> {
         self.supported_ip_address_types.as_deref()
     }
     /// <p>The DNS names for the service.</p>
-    pub fn base_endpoint_dns_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn base_endpoint_dns_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.base_endpoint_dns_names.as_deref()
     }
     /// <p>The private DNS name for the service.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
     }
     /// <p>Information about the endpoint service private DNS name configuration.</p>
     pub fn private_dns_name_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::PrivateDnsNameConfiguration> {
+    ) -> ::std::option::Option<&crate::types::PrivateDnsNameConfiguration> {
         self.private_dns_name_configuration.as_ref()
     }
     /// <p>The payer responsibility.</p>
-    pub fn payer_responsibility(&self) -> std::option::Option<&crate::types::PayerResponsibility> {
+    pub fn payer_responsibility(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PayerResponsibility> {
         self.payer_responsibility.as_ref()
     }
     /// <p>The tags assigned to the service.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -127,25 +129,31 @@ impl ServiceConfiguration {
 
 /// A builder for [`ServiceConfiguration`](crate::types::ServiceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceConfigurationBuilder {
-    pub(crate) service_type: std::option::Option<std::vec::Vec<crate::types::ServiceTypeDetail>>,
-    pub(crate) service_id: std::option::Option<std::string::String>,
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) service_state: std::option::Option<crate::types::ServiceState>,
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) acceptance_required: std::option::Option<bool>,
-    pub(crate) manages_vpc_endpoints: std::option::Option<bool>,
-    pub(crate) network_load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) gateway_load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) service_type:
+        ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
+    pub(crate) service_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) service_state: ::std::option::Option<crate::types::ServiceState>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) acceptance_required: ::std::option::Option<bool>,
+    pub(crate) manages_vpc_endpoints: ::std::option::Option<bool>,
+    pub(crate) network_load_balancer_arns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) gateway_load_balancer_arns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supported_ip_address_types:
-        std::option::Option<std::vec::Vec<crate::types::ServiceConnectivityType>>,
-    pub(crate) base_endpoint_dns_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) private_dns_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>>,
+    pub(crate) base_endpoint_dns_names:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) private_dns_name_configuration:
-        std::option::Option<crate::types::PrivateDnsNameConfiguration>,
-    pub(crate) payer_responsibility: std::option::Option<crate::types::PayerResponsibility>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::PrivateDnsNameConfiguration>,
+    pub(crate) payer_responsibility: ::std::option::Option<crate::types::PayerResponsibility>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ServiceConfigurationBuilder {
     /// Appends an item to `service_type`.
@@ -156,46 +164,46 @@ impl ServiceConfigurationBuilder {
     pub fn service_type(mut self, input: crate::types::ServiceTypeDetail) -> Self {
         let mut v = self.service_type.unwrap_or_default();
         v.push(input);
-        self.service_type = Some(v);
+        self.service_type = ::std::option::Option::Some(v);
         self
     }
     /// <p>The type of service.</p>
     pub fn set_service_type(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceTypeDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceTypeDetail>>,
     ) -> Self {
         self.service_type = input;
         self
     }
     /// <p>The ID of the service.</p>
-    pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_id = Some(input.into());
+    pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service.</p>
-    pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
     }
     /// <p>The name of the service.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The service state.</p>
     pub fn service_state(mut self, input: crate::types::ServiceState) -> Self {
-        self.service_state = Some(input);
+        self.service_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The service state.</p>
     pub fn set_service_state(
         mut self,
-        input: std::option::Option<crate::types::ServiceState>,
+        input: ::std::option::Option<crate::types::ServiceState>,
     ) -> Self {
         self.service_state = input;
         self
@@ -205,37 +213,40 @@ impl ServiceConfigurationBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones in which the service is available.</p>
-    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zones in which the service is available.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
     pub fn acceptance_required(mut self, input: bool) -> Self {
-        self.acceptance_required = Some(input);
+        self.acceptance_required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether requests from other Amazon Web Services accounts to create an endpoint to the service must first be accepted.</p>
-    pub fn set_acceptance_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_acceptance_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.acceptance_required = input;
         self
     }
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC endpoint API is restricted.</p>
     pub fn manages_vpc_endpoints(mut self, input: bool) -> Self {
-        self.manages_vpc_endpoints = Some(input);
+        self.manages_vpc_endpoints = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC endpoint API is restricted.</p>
-    pub fn set_manages_vpc_endpoints(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_manages_vpc_endpoints(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manages_vpc_endpoints = input;
         self
     }
@@ -244,16 +255,19 @@ impl ServiceConfigurationBuilder {
     /// To override the contents of this collection use [`set_network_load_balancer_arns`](Self::set_network_load_balancer_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.</p>
-    pub fn network_load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_load_balancer_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.network_load_balancer_arns.unwrap_or_default();
         v.push(input.into());
-        self.network_load_balancer_arns = Some(v);
+        self.network_load_balancer_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.</p>
     pub fn set_network_load_balancer_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.network_load_balancer_arns = input;
         self
@@ -263,16 +277,19 @@ impl ServiceConfigurationBuilder {
     /// To override the contents of this collection use [`set_gateway_load_balancer_arns`](Self::set_gateway_load_balancer_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
-    pub fn gateway_load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn gateway_load_balancer_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.gateway_load_balancer_arns.unwrap_or_default();
         v.push(input.into());
-        self.gateway_load_balancer_arns = Some(v);
+        self.gateway_load_balancer_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
     pub fn set_gateway_load_balancer_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.gateway_load_balancer_arns = input;
         self
@@ -288,13 +305,13 @@ impl ServiceConfigurationBuilder {
     ) -> Self {
         let mut v = self.supported_ip_address_types.unwrap_or_default();
         v.push(input);
-        self.supported_ip_address_types = Some(v);
+        self.supported_ip_address_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported IP address types.</p>
     pub fn set_supported_ip_address_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceConnectivityType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectivityType>>,
     ) -> Self {
         self.supported_ip_address_types = input;
         self
@@ -304,27 +321,36 @@ impl ServiceConfigurationBuilder {
     /// To override the contents of this collection use [`set_base_endpoint_dns_names`](Self::set_base_endpoint_dns_names).
     ///
     /// <p>The DNS names for the service.</p>
-    pub fn base_endpoint_dns_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn base_endpoint_dns_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.base_endpoint_dns_names.unwrap_or_default();
         v.push(input.into());
-        self.base_endpoint_dns_names = Some(v);
+        self.base_endpoint_dns_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The DNS names for the service.</p>
     pub fn set_base_endpoint_dns_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.base_endpoint_dns_names = input;
         self
     }
     /// <p>The private DNS name for the service.</p>
-    pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_dns_name = Some(input.into());
+    pub fn private_dns_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private DNS name for the service.</p>
-    pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_dns_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.private_dns_name = input;
         self
     }
@@ -333,26 +359,26 @@ impl ServiceConfigurationBuilder {
         mut self,
         input: crate::types::PrivateDnsNameConfiguration,
     ) -> Self {
-        self.private_dns_name_configuration = Some(input);
+        self.private_dns_name_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the endpoint service private DNS name configuration.</p>
     pub fn set_private_dns_name_configuration(
         mut self,
-        input: std::option::Option<crate::types::PrivateDnsNameConfiguration>,
+        input: ::std::option::Option<crate::types::PrivateDnsNameConfiguration>,
     ) -> Self {
         self.private_dns_name_configuration = input;
         self
     }
     /// <p>The payer responsibility.</p>
     pub fn payer_responsibility(mut self, input: crate::types::PayerResponsibility) -> Self {
-        self.payer_responsibility = Some(input);
+        self.payer_responsibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>The payer responsibility.</p>
     pub fn set_payer_responsibility(
         mut self,
-        input: std::option::Option<crate::types::PayerResponsibility>,
+        input: ::std::option::Option<crate::types::PayerResponsibility>,
     ) -> Self {
         self.payer_responsibility = input;
         self
@@ -365,13 +391,13 @@ impl ServiceConfigurationBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags assigned to the service.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>A list of choices to be updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChoiceUpdate {
     /// <p>The status of a choice.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ChoiceStatus>,
+    pub status: ::std::option::Option<crate::types::ChoiceStatus>,
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::ChoiceReason>,
+    pub reason: ::std::option::Option<crate::types::ChoiceReason>,
     /// <p>The notes associated with a choice.</p>
     #[doc(hidden)]
-    pub notes: std::option::Option<std::string::String>,
+    pub notes: ::std::option::Option<::std::string::String>,
 }
 impl ChoiceUpdate {
     /// <p>The status of a choice.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ChoiceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ChoiceStatus> {
         self.status.as_ref()
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::ChoiceReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ChoiceReason> {
         self.reason.as_ref()
     }
     /// <p>The notes associated with a choice.</p>
-    pub fn notes(&self) -> std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ChoiceUpdate {
 
 /// A builder for [`ChoiceUpdate`](crate::types::ChoiceUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChoiceUpdateBuilder {
-    pub(crate) status: std::option::Option<crate::types::ChoiceStatus>,
-    pub(crate) reason: std::option::Option<crate::types::ChoiceReason>,
-    pub(crate) notes: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ChoiceStatus>,
+    pub(crate) reason: ::std::option::Option<crate::types::ChoiceReason>,
+    pub(crate) notes: ::std::option::Option<::std::string::String>,
 }
 impl ChoiceUpdateBuilder {
     /// <p>The status of a choice.</p>
     pub fn status(mut self, input: crate::types::ChoiceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a choice.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ChoiceStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChoiceStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
     pub fn reason(mut self, input: crate::types::ChoiceReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason why a choice is non-applicable to a question in your workload.</p>
-    pub fn set_reason(mut self, input: std::option::Option<crate::types::ChoiceReason>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ChoiceReason>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The notes associated with a choice.</p>
-    pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notes = Some(input.into());
+    pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with a choice.</p>
-    pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }

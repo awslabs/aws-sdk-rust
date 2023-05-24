@@ -2,40 +2,42 @@
 
 /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WriteSegmentRequest {
     /// <p>The criteria that define the dimensions for the segment.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<crate::types::SegmentDimensions>,
+    pub dimensions: ::std::option::Option<crate::types::SegmentDimensions>,
     /// <p>The name of the segment.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The segment group to use and the dimensions to apply to the group's base segments in order to build the segment. A segment group can consist of zero or more base segments. Your request can include only one segment group.</p>
     #[doc(hidden)]
-    pub segment_groups: std::option::Option<crate::types::SegmentGroupList>,
+    pub segment_groups: ::std::option::Option<crate::types::SegmentGroupList>,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl WriteSegmentRequest {
     /// <p>The criteria that define the dimensions for the segment.</p>
-    pub fn dimensions(&self) -> std::option::Option<&crate::types::SegmentDimensions> {
+    pub fn dimensions(&self) -> ::std::option::Option<&crate::types::SegmentDimensions> {
         self.dimensions.as_ref()
     }
     /// <p>The name of the segment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The segment group to use and the dimensions to apply to the group's base segments in order to build the segment. A segment group can consist of zero or more base segments. Your request can include only one segment group.</p>
-    pub fn segment_groups(&self) -> std::option::Option<&crate::types::SegmentGroupList> {
+    pub fn segment_groups(&self) -> ::std::option::Option<&crate::types::SegmentGroupList> {
         self.segment_groups.as_ref()
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -48,47 +50,50 @@ impl WriteSegmentRequest {
 
 /// A builder for [`WriteSegmentRequest`](crate::types::WriteSegmentRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WriteSegmentRequestBuilder {
-    pub(crate) dimensions: std::option::Option<crate::types::SegmentDimensions>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) segment_groups: std::option::Option<crate::types::SegmentGroupList>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) dimensions: ::std::option::Option<crate::types::SegmentDimensions>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_groups: ::std::option::Option<crate::types::SegmentGroupList>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl WriteSegmentRequestBuilder {
     /// <p>The criteria that define the dimensions for the segment.</p>
     pub fn dimensions(mut self, input: crate::types::SegmentDimensions) -> Self {
-        self.dimensions = Some(input);
+        self.dimensions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria that define the dimensions for the segment.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<crate::types::SegmentDimensions>,
+        input: ::std::option::Option<crate::types::SegmentDimensions>,
     ) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The name of the segment.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the segment.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The segment group to use and the dimensions to apply to the group's base segments in order to build the segment. A segment group can consist of zero or more base segments. Your request can include only one segment group.</p>
     pub fn segment_groups(mut self, input: crate::types::SegmentGroupList) -> Self {
-        self.segment_groups = Some(input);
+        self.segment_groups = ::std::option::Option::Some(input);
         self
     }
     /// <p>The segment group to use and the dimensions to apply to the group's base segments in order to build the segment. A segment group can consist of zero or more base segments. Your request can include only one segment group.</p>
     pub fn set_segment_groups(
         mut self,
-        input: std::option::Option<crate::types::SegmentGroupList>,
+        input: ::std::option::Option<crate::types::SegmentGroupList>,
     ) -> Self {
         self.segment_groups = input;
         self
@@ -100,19 +105,19 @@ impl WriteSegmentRequestBuilder {
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

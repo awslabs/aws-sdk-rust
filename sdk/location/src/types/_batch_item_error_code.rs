@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub struct BatchItemErrorCode(String);
 impl BatchItemErrorCode {
@@ -28,9 +28,9 @@ impl BatchItemErrorCode {
         ]
     }
 }
-impl<T> std::convert::From<T> for BatchItemErrorCode
+impl<T> ::std::convert::From<T> for BatchItemErrorCode
 where
-    T: std::convert::AsRef<str>,
+    T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         BatchItemErrorCode(s.as_ref().to_owned())

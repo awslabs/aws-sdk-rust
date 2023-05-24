@@ -2,7 +2,7 @@
 pub(crate) fn de_entity_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::Form>,
+    ::std::option::Option<crate::types::Form>,
     crate::operation::update_form::UpdateFormError,
 > {
     (!body.is_empty())

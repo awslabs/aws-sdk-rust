@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolNetworkPackageDescriptor`](crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`nsd_info_id(impl Into<String>)`](crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorFluentBuilder::nsd_info_id) / [`set_nsd_info_id(Option<String>)`](crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorFluentBuilder::set_nsd_info_id): <p>ID of the network service descriptor in the network package.</p>
+    ///   - [`nsd_info_id(impl ::std::convert::Into<String>)`](crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorFluentBuilder::nsd_info_id) / [`set_nsd_info_id(Option<String>)`](crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorFluentBuilder::set_nsd_info_id): <p>ID of the network service descriptor in the network package.</p>
     /// - On success, responds with [`GetSolNetworkPackageDescriptorOutput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput) with field(s):
     ///   - [`content_type(Option<DescriptorContentType>)`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput::content_type): <p>Indicates the media type of the resource.</p>
     ///   - [`nsd(Option<Blob>)`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorOutput::nsd): <p>Contents of the network service descriptor in the network package.</p>

@@ -2,29 +2,29 @@
 
 /// <p>A structure describing the source of an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionSource {
     /// <p>The URI of the source.</p>
     #[doc(hidden)]
-    pub source_uri: std::option::Option<std::string::String>,
+    pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of the source.</p>
     #[doc(hidden)]
-    pub source_type: std::option::Option<std::string::String>,
+    pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the source.</p>
     #[doc(hidden)]
-    pub source_id: std::option::Option<std::string::String>,
+    pub source_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionSource {
     /// <p>The URI of the source.</p>
-    pub fn source_uri(&self) -> std::option::Option<&str> {
+    pub fn source_uri(&self) -> ::std::option::Option<&str> {
         self.source_uri.as_deref()
     }
     /// <p>The type of the source.</p>
-    pub fn source_type(&self) -> std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<&str> {
         self.source_type.as_deref()
     }
     /// <p>The ID of the source.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ActionSource {
 
 /// A builder for [`ActionSource`](crate::types::ActionSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionSourceBuilder {
-    pub(crate) source_uri: std::option::Option<std::string::String>,
-    pub(crate) source_type: std::option::Option<std::string::String>,
-    pub(crate) source_id: std::option::Option<std::string::String>,
+    pub(crate) source_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) source_type: ::std::option::Option<::std::string::String>,
+    pub(crate) source_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionSourceBuilder {
     /// <p>The URI of the source.</p>
-    pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_uri = Some(input.into());
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the source.</p>
-    pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_uri = input;
         self
     }
     /// <p>The type of the source.</p>
-    pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_type = Some(input.into());
+    pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the source.</p>
-    pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
     }
     /// <p>The ID of the source.</p>
-    pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_id = Some(input.into());
+    pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the source.</p>
-    pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_id = input;
         self
     }

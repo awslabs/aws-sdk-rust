@@ -6,29 +6,29 @@ pub use crate::operation::create_elasticsearch_domain::_create_elasticsearch_dom
 /// Fluent builder constructing a request to `CreateElasticsearchDomain`.
 ///
 /// <p>Creates a new Elasticsearch domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateElasticsearchDomainFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainInputBuilder,
 }
 impl CreateElasticsearchDomainFluentBuilder {
     /// Creates a new `CreateElasticsearchDomain`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_elasticsearch_domain::CreateElasticsearchDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateElasticsearchDomainFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,33 +75,36 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
     /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
-    pub fn elasticsearch_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn elasticsearch_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.elasticsearch_version(input.into());
         self
     }
     /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
     pub fn set_elasticsearch_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_elasticsearch_version(input);
         self
@@ -114,7 +120,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
     pub fn set_elasticsearch_cluster_config(
         mut self,
-        input: std::option::Option<crate::types::ElasticsearchClusterConfig>,
+        input: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
     ) -> Self {
         self.inner = self.inner.set_elasticsearch_cluster_config(input);
         self
@@ -125,17 +131,26 @@ impl CreateElasticsearchDomainFluentBuilder {
         self
     }
     /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
-    pub fn set_ebs_options(mut self, input: std::option::Option<crate::types::EbsOptions>) -> Self {
+    pub fn set_ebs_options(
+        mut self,
+        input: ::std::option::Option<crate::types::EbsOptions>,
+    ) -> Self {
         self.inner = self.inner.set_ebs_options(input);
         self
     }
     /// <p> IAM access policy as a JSON-formatted string.</p>
-    pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_policies(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.access_policies(input.into());
         self
     }
     /// <p> IAM access policy as a JSON-formatted string.</p>
-    pub fn set_access_policies(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_policies(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_access_policies(input);
         self
     }
@@ -147,7 +162,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
     pub fn set_snapshot_options(
         mut self,
-        input: std::option::Option<crate::types::SnapshotOptions>,
+        input: ::std::option::Option<crate::types::SnapshotOptions>,
     ) -> Self {
         self.inner = self.inner.set_snapshot_options(input);
         self
@@ -158,7 +173,10 @@ impl CreateElasticsearchDomainFluentBuilder {
         self
     }
     /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
-    pub fn set_vpc_options(mut self, input: std::option::Option<crate::types::VpcOptions>) -> Self {
+    pub fn set_vpc_options(
+        mut self,
+        input: ::std::option::Option<crate::types::VpcOptions>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_options(input);
         self
     }
@@ -170,7 +188,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
     pub fn set_cognito_options(
         mut self,
-        input: std::option::Option<crate::types::CognitoOptions>,
+        input: ::std::option::Option<crate::types::CognitoOptions>,
     ) -> Self {
         self.inner = self.inner.set_cognito_options(input);
         self
@@ -186,7 +204,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Specifies the Encryption At Rest Options.</p>
     pub fn set_encryption_at_rest_options(
         mut self,
-        input: std::option::Option<crate::types::EncryptionAtRestOptions>,
+        input: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     ) -> Self {
         self.inner = self.inner.set_encryption_at_rest_options(input);
         self
@@ -202,7 +220,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
     pub fn set_node_to_node_encryption_options(
         mut self,
-        input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+        input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     ) -> Self {
         self.inner = self.inner.set_node_to_node_encryption_options(input);
         self
@@ -214,8 +232,8 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn advanced_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.advanced_options(k.into(), v.into());
         self
@@ -223,8 +241,8 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn set_advanced_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_advanced_options(input);
@@ -246,8 +264,8 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
     pub fn set_log_publishing_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
         >,
     ) -> Self {
         self.inner = self.inner.set_log_publishing_options(input);
@@ -261,7 +279,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
     pub fn set_domain_endpoint_options(
         mut self,
-        input: std::option::Option<crate::types::DomainEndpointOptions>,
+        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
     ) -> Self {
         self.inner = self.inner.set_domain_endpoint_options(input);
         self
@@ -277,7 +295,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Specifies advanced security options.</p>
     pub fn set_advanced_security_options(
         mut self,
-        input: std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+        input: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     ) -> Self {
         self.inner = self.inner.set_advanced_security_options(input);
         self
@@ -290,7 +308,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>Specifies Auto-Tune options.</p>
     pub fn set_auto_tune_options(
         mut self,
-        input: std::option::Option<crate::types::AutoTuneOptionsInput>,
+        input: ::std::option::Option<crate::types::AutoTuneOptionsInput>,
     ) -> Self {
         self.inner = self.inner.set_auto_tune_options(input);
         self
@@ -307,7 +325,7 @@ impl CreateElasticsearchDomainFluentBuilder {
     /// <p>A list of <code>Tag</code> added during domain creation.</p>
     pub fn set_tag_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self

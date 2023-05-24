@@ -2,57 +2,57 @@
 
 /// <p>The configuration of a report in AWS Application Cost Profiler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportDefinition {
     /// <p>The ID of the report.</p>
     #[doc(hidden)]
-    pub report_id: std::option::Option<std::string::String>,
+    pub report_id: ::std::option::Option<::std::string::String>,
     /// <p>Description of the report</p>
     #[doc(hidden)]
-    pub report_description: std::option::Option<std::string::String>,
+    pub report_description: ::std::option::Option<::std::string::String>,
     /// <p>The cadence at which the report is generated.</p>
     #[doc(hidden)]
-    pub report_frequency: std::option::Option<crate::types::ReportFrequency>,
+    pub report_frequency: ::std::option::Option<crate::types::ReportFrequency>,
     /// <p>The format used for the generated reports.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::Format>,
+    pub format: ::std::option::Option<crate::types::Format>,
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
     #[doc(hidden)]
-    pub destination_s3_location: std::option::Option<crate::types::S3Location>,
+    pub destination_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportDefinition {
     /// <p>The ID of the report.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> ::std::option::Option<&str> {
         self.report_id.as_deref()
     }
     /// <p>Description of the report</p>
-    pub fn report_description(&self) -> std::option::Option<&str> {
+    pub fn report_description(&self) -> ::std::option::Option<&str> {
         self.report_description.as_deref()
     }
     /// <p>The cadence at which the report is generated.</p>
-    pub fn report_frequency(&self) -> std::option::Option<&crate::types::ReportFrequency> {
+    pub fn report_frequency(&self) -> ::std::option::Option<&crate::types::ReportFrequency> {
         self.report_frequency.as_ref()
     }
     /// <p>The format used for the generated reports.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
-    pub fn destination_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn destination_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.destination_s3_location.as_ref()
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -65,98 +65,103 @@ impl ReportDefinition {
 
 /// A builder for [`ReportDefinition`](crate::types::ReportDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportDefinitionBuilder {
-    pub(crate) report_id: std::option::Option<std::string::String>,
-    pub(crate) report_description: std::option::Option<std::string::String>,
-    pub(crate) report_frequency: std::option::Option<crate::types::ReportFrequency>,
-    pub(crate) format: std::option::Option<crate::types::Format>,
-    pub(crate) destination_s3_location: std::option::Option<crate::types::S3Location>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) report_id: ::std::option::Option<::std::string::String>,
+    pub(crate) report_description: ::std::option::Option<::std::string::String>,
+    pub(crate) report_frequency: ::std::option::Option<crate::types::ReportFrequency>,
+    pub(crate) format: ::std::option::Option<crate::types::Format>,
+    pub(crate) destination_s3_location: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportDefinitionBuilder {
     /// <p>The ID of the report.</p>
-    pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.report_id = Some(input.into());
+    pub fn report_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.report_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the report.</p>
-    pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_report_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_id = input;
         self
     }
     /// <p>Description of the report</p>
-    pub fn report_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.report_description = Some(input.into());
+    pub fn report_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.report_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the report</p>
     pub fn set_report_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.report_description = input;
         self
     }
     /// <p>The cadence at which the report is generated.</p>
     pub fn report_frequency(mut self, input: crate::types::ReportFrequency) -> Self {
-        self.report_frequency = Some(input);
+        self.report_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cadence at which the report is generated.</p>
     pub fn set_report_frequency(
         mut self,
-        input: std::option::Option<crate::types::ReportFrequency>,
+        input: ::std::option::Option<crate::types::ReportFrequency>,
     ) -> Self {
         self.report_frequency = input;
         self
     }
     /// <p>The format used for the generated reports.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format used for the generated reports.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::Format>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
     }
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
     pub fn destination_s3_location(mut self, input: crate::types::S3Location) -> Self {
-        self.destination_s3_location = Some(input);
+        self.destination_s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location in Amazon Simple Storage Service (Amazon S3) the reports should be saved to.</p>
     pub fn set_destination_s3_location(
         mut self,
-        input: std::option::Option<crate::types::S3Location>,
+        input: ::std::option::Option<crate::types::S3Location>,
     ) -> Self {
         self.destination_s3_location = input;
         self
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp (milliseconds) when this report definition was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self

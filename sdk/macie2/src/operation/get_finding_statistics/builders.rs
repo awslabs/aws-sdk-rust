@@ -6,29 +6,29 @@ pub use crate::operation::get_finding_statistics::_get_finding_statistics_input:
 /// Fluent builder constructing a request to `GetFindingStatistics`.
 ///
 /// <p>Retrieves (queries) aggregated statistical data about findings.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingStatisticsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder,
 }
 impl GetFindingStatisticsFluentBuilder {
     /// Creates a new `GetFindingStatistics`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_finding_statistics::GetFindingStatistics,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_finding_statistics::GetFindingStatisticsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetFindingStatisticsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_finding_statistics::GetFindingStatisticsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_finding_statistics::GetFindingStatisticsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl GetFindingStatisticsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_finding_statistics::GetFindingStatisticsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_finding_statistics::GetFindingStatisticsError,
         >,
     > {
@@ -88,7 +91,7 @@ impl GetFindingStatisticsFluentBuilder {
     /// <p>The criteria to use to filter the query results.</p>
     pub fn set_finding_criteria(
         mut self,
-        input: std::option::Option<crate::types::FindingCriteria>,
+        input: ::std::option::Option<crate::types::FindingCriteria>,
     ) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self
@@ -111,7 +114,7 @@ impl GetFindingStatisticsFluentBuilder {
     /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
-    pub fn set_group_by(mut self, input: std::option::Option<crate::types::GroupBy>) -> Self {
+    pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::GroupBy>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
@@ -121,7 +124,7 @@ impl GetFindingStatisticsFluentBuilder {
         self
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
-    pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_size(input);
         self
     }
@@ -133,7 +136,7 @@ impl GetFindingStatisticsFluentBuilder {
     /// <p>The criteria to use to sort the query results.</p>
     pub fn set_sort_criteria(
         mut self,
-        input: std::option::Option<crate::types::FindingStatisticsSortCriteria>,
+        input: ::std::option::Option<crate::types::FindingStatisticsSortCriteria>,
     ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self

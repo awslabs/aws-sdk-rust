@@ -2,22 +2,22 @@
 
 /// <p>An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has four endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SvmEndpoint {
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
     #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
+    pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The SVM endpoint's IP addresses.</p>
     #[doc(hidden)]
-    pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SvmEndpoint {
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>The SVM endpoint's IP addresses.</p>
-    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ip_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ip_addresses.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl SvmEndpoint {
 
 /// A builder for [`SvmEndpoint`](crate::types::SvmEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SvmEndpointBuilder {
-    pub(crate) dns_name: std::option::Option<std::string::String>,
-    pub(crate) ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SvmEndpointBuilder {
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
-    pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dns_name = Some(input.into());
+    pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
-    pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }
@@ -51,16 +53,16 @@ impl SvmEndpointBuilder {
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
     ///
     /// <p>The SVM endpoint's IP addresses.</p>
-    pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
         v.push(input.into());
-        self.ip_addresses = Some(v);
+        self.ip_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The SVM endpoint's IP addresses.</p>
     pub fn set_ip_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ip_addresses = input;
         self

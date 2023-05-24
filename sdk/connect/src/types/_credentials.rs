@@ -2,41 +2,41 @@
 
 /// <p>Contains credentials to use for federation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Credentials {
     /// <p>An access token generated for a federated user to access Amazon Connect.</p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
     #[doc(hidden)]
-    pub access_token_expiration: std::option::Option<aws_smithy_types::DateTime>,
+    pub access_token_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
     #[doc(hidden)]
-    pub refresh_token: std::option::Option<std::string::String>,
+    pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p>Renews the expiration timer for a generated token.</p>
     #[doc(hidden)]
-    pub refresh_token_expiration: std::option::Option<aws_smithy_types::DateTime>,
+    pub refresh_token_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Credentials {
     /// <p>An access token generated for a federated user to access Amazon Connect.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
-    pub fn access_token_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn access_token_expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.access_token_expiration.as_ref()
     }
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
-    pub fn refresh_token(&self) -> std::option::Option<&str> {
+    pub fn refresh_token(&self) -> ::std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
     /// <p>Renews the expiration timer for a generated token.</p>
-    pub fn refresh_token_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn refresh_token_expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.refresh_token_expiration.as_ref()
     }
 }
-impl std::fmt::Debug for Credentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Credentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Credentials");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token_expiration", &self.access_token_expiration);
@@ -54,56 +54,62 @@ impl Credentials {
 
 /// A builder for [`Credentials`](crate::types::Credentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CredentialsBuilder {
-    pub(crate) access_token: std::option::Option<std::string::String>,
-    pub(crate) access_token_expiration: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) refresh_token: std::option::Option<std::string::String>,
-    pub(crate) refresh_token_expiration: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) access_token_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) refresh_token: ::std::option::Option<::std::string::String>,
+    pub(crate) refresh_token_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CredentialsBuilder {
     /// <p>An access token generated for a federated user to access Amazon Connect.</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An access token generated for a federated user to access Amazon Connect.</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
-    pub fn access_token_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.access_token_expiration = Some(input);
+    pub fn access_token_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.access_token_expiration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A token generated with an expiration time for the session a user is logged in to Amazon Connect.</p>
     pub fn set_access_token_expiration(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.access_token_expiration = input;
         self
     }
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
-    pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.refresh_token = Some(input.into());
+    pub fn refresh_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Renews a token generated for a user to access the Amazon Connect instance.</p>
-    pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_refresh_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.refresh_token = input;
         self
     }
     /// <p>Renews the expiration timer for a generated token.</p>
-    pub fn refresh_token_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.refresh_token_expiration = Some(input);
+    pub fn refresh_token_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.refresh_token_expiration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Renews the expiration timer for a generated token.</p>
     pub fn set_refresh_token_expiration(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.refresh_token_expiration = input;
         self
@@ -118,8 +124,8 @@ impl CredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for CredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CredentialsBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token_expiration", &self.access_token_expiration);

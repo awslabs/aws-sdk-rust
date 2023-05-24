@@ -2,27 +2,27 @@
 
 /// <p>A list of configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationSetsOutput {
     /// <p>A list of configuration sets.</p>
     #[doc(hidden)]
-    pub configuration_sets: std::option::Option<std::vec::Vec<crate::types::ConfigurationSet>>,
+    pub configuration_sets: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>>,
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListConfigurationSetsOutput {
     /// <p>A list of configuration sets.</p>
-    pub fn configuration_sets(&self) -> std::option::Option<&[crate::types::ConfigurationSet]> {
+    pub fn configuration_sets(&self) -> ::std::option::Option<&[crate::types::ConfigurationSet]> {
         self.configuration_sets.as_deref()
     }
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListConfigurationSetsOutput {
+impl ::aws_http::request_id::RequestId for ListConfigurationSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,11 +38,13 @@ impl ListConfigurationSetsOutput {
 
 /// A builder for [`ListConfigurationSetsOutput`](crate::operation::list_configuration_sets::ListConfigurationSetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListConfigurationSetsOutputBuilder {
     pub(crate) configuration_sets:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationSet>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListConfigurationSetsOutputBuilder {
@@ -54,24 +56,24 @@ impl ListConfigurationSetsOutputBuilder {
     pub fn configuration_sets(mut self, input: crate::types::ConfigurationSet) -> Self {
         let mut v = self.configuration_sets.unwrap_or_default();
         v.push(input);
-        self.configuration_sets = Some(v);
+        self.configuration_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of configuration sets.</p>
     pub fn set_configuration_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationSet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationSet>>,
     ) -> Self {
         self.configuration_sets = input;
         self
     }
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

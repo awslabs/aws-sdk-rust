@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteJob`](crate::operation::delete_job::builders::DeleteJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_name(impl Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_job_name): <p>The name of the job definition to delete.</p>
+    ///   - [`job_name(impl ::std::convert::Into<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::delete_job::builders::DeleteJobFluentBuilder::set_job_name): <p>The name of the job definition to delete.</p>
     /// - On success, responds with [`DeleteJobOutput`](crate::operation::delete_job::DeleteJobOutput) with field(s):
     ///   - [`job_name(Option<String>)`](crate::operation::delete_job::DeleteJobOutput::job_name): <p>The name of the job definition that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::operation::delete_job::DeleteJobError)

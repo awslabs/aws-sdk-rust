@@ -2,29 +2,29 @@
 
 /// <p>A specification identifying an individual configuration option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionSpecification {
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
     #[doc(hidden)]
-    pub resource_name: std::option::Option<std::string::String>,
+    pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration option.</p>
     #[doc(hidden)]
-    pub option_name: std::option::Option<std::string::String>,
+    pub option_name: ::std::option::Option<::std::string::String>,
 }
 impl OptionSpecification {
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the configuration option.</p>
-    pub fn option_name(&self) -> std::option::Option<&str> {
+    pub fn option_name(&self) -> ::std::option::Option<&str> {
         self.option_name.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl OptionSpecification {
 
 /// A builder for [`OptionSpecification`](crate::types::OptionSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OptionSpecificationBuilder {
-    pub(crate) resource_name: std::option::Option<std::string::String>,
-    pub(crate) namespace: std::option::Option<std::string::String>,
-    pub(crate) option_name: std::option::Option<std::string::String>,
+    pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) option_name: ::std::option::Option<::std::string::String>,
 }
 impl OptionSpecificationBuilder {
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
-    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_name = Some(input.into());
+    pub fn resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
-    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_name = input;
         self
     }
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
     /// <p>The name of the configuration option.</p>
-    pub fn option_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_name = Some(input.into());
+    pub fn option_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.option_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration option.</p>
-    pub fn set_option_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_option_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_name = input;
         self
     }

@@ -6,22 +6,22 @@
 /// <li> <p> <code>DeleteChapCredentialsInput$TargetARN</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
     #[doc(hidden)]
-    pub initiator_name: std::option::Option<std::string::String>,
+    pub initiator_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(&self) -> std::option::Option<&str> {
+    pub fn initiator_name(&self) -> ::std::option::Option<&str> {
         self.initiator_name.as_deref()
     }
 }
@@ -36,40 +36,48 @@ impl DeleteChapCredentialsInput {
 
 /// A builder for [`DeleteChapCredentialsInput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteChapCredentialsInputBuilder {
-    pub(crate) target_arn: std::option::Option<std::string::String>,
-    pub(crate) initiator_name: std::option::Option<std::string::String>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) initiator_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteChapCredentialsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.initiator_name = Some(input.into());
+    pub fn initiator_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.initiator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn set_initiator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_initiator_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.initiator_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteChapCredentialsInput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_chap_credentials::DeleteChapCredentialsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_chap_credentials::DeleteChapCredentialsInput {
                 target_arn: self.target_arn,
                 initiator_name: self.initiator_name,

@@ -2,27 +2,30 @@
 
 /// <p>Contains the output from the <code>DescribeClusterParameterGroups</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterParameterGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
     #[doc(hidden)]
-    pub parameter_groups: std::option::Option<std::vec::Vec<crate::types::ClusterParameterGroup>>,
+    pub parameter_groups:
+        ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterParameterGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
-    pub fn parameter_groups(&self) -> std::option::Option<&[crate::types::ClusterParameterGroup]> {
+    pub fn parameter_groups(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ClusterParameterGroup]> {
         self.parameter_groups.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeClusterParameterGroupsOutput {
+impl ::aws_http::request_id::RequestId for DescribeClusterParameterGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,21 +39,23 @@ impl DescribeClusterParameterGroupsOutput {
 
 /// A builder for [`DescribeClusterParameterGroupsOutput`](crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeClusterParameterGroupsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) parameter_groups:
-        std::option::Option<std::vec::Vec<crate::types::ClusterParameterGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterParameterGroupsOutputBuilder {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -62,13 +67,13 @@ impl DescribeClusterParameterGroupsOutputBuilder {
     pub fn parameter_groups(mut self, input: crate::types::ClusterParameterGroup) -> Self {
         let mut v = self.parameter_groups.unwrap_or_default();
         v.push(input);
-        self.parameter_groups = Some(v);
+        self.parameter_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
     pub fn set_parameter_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClusterParameterGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterParameterGroup>>,
     ) -> Self {
         self.parameter_groups = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Contains trend statistics for a set of reports. The actual values depend on the type of trend being collected. For more information, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportGroupTrendStats {
     /// <p>Contains the average of all values analyzed.</p>
     #[doc(hidden)]
-    pub average: std::option::Option<std::string::String>,
+    pub average: ::std::option::Option<::std::string::String>,
     /// <p>Contains the maximum value analyzed.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<std::string::String>,
+    pub max: ::std::option::Option<::std::string::String>,
     /// <p>Contains the minimum value analyzed.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<std::string::String>,
+    pub min: ::std::option::Option<::std::string::String>,
 }
 impl ReportGroupTrendStats {
     /// <p>Contains the average of all values analyzed.</p>
-    pub fn average(&self) -> std::option::Option<&str> {
+    pub fn average(&self) -> ::std::option::Option<&str> {
         self.average.as_deref()
     }
     /// <p>Contains the maximum value analyzed.</p>
-    pub fn max(&self) -> std::option::Option<&str> {
+    pub fn max(&self) -> ::std::option::Option<&str> {
         self.max.as_deref()
     }
     /// <p>Contains the minimum value analyzed.</p>
-    pub fn min(&self) -> std::option::Option<&str> {
+    pub fn min(&self) -> ::std::option::Option<&str> {
         self.min.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ReportGroupTrendStats {
 
 /// A builder for [`ReportGroupTrendStats`](crate::types::ReportGroupTrendStats).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportGroupTrendStatsBuilder {
-    pub(crate) average: std::option::Option<std::string::String>,
-    pub(crate) max: std::option::Option<std::string::String>,
-    pub(crate) min: std::option::Option<std::string::String>,
+    pub(crate) average: ::std::option::Option<::std::string::String>,
+    pub(crate) max: ::std::option::Option<::std::string::String>,
+    pub(crate) min: ::std::option::Option<::std::string::String>,
 }
 impl ReportGroupTrendStatsBuilder {
     /// <p>Contains the average of all values analyzed.</p>
-    pub fn average(mut self, input: impl Into<std::string::String>) -> Self {
-        self.average = Some(input.into());
+    pub fn average(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.average = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the average of all values analyzed.</p>
-    pub fn set_average(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_average(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.average = input;
         self
     }
     /// <p>Contains the maximum value analyzed.</p>
-    pub fn max(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max = Some(input.into());
+    pub fn max(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the maximum value analyzed.</p>
-    pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max = input;
         self
     }
     /// <p>Contains the minimum value analyzed.</p>
-    pub fn min(mut self, input: impl Into<std::string::String>) -> Self {
-        self.min = Some(input.into());
+    pub fn min(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.min = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the minimum value analyzed.</p>
-    pub fn set_min(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min = input;
         self
     }

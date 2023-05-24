@@ -2,15 +2,15 @@
 
 /// <p> The configuration of an ML Detect Security Profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MachineLearningDetectionConfig {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     #[doc(hidden)]
-    pub confidence_level: std::option::Option<crate::types::ConfidenceLevel>,
+    pub confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
 }
 impl MachineLearningDetectionConfig {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
-    pub fn confidence_level(&self) -> std::option::Option<&crate::types::ConfidenceLevel> {
+    pub fn confidence_level(&self) -> ::std::option::Option<&crate::types::ConfidenceLevel> {
         self.confidence_level.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MachineLearningDetectionConfig {
 
 /// A builder for [`MachineLearningDetectionConfig`](crate::types::MachineLearningDetectionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MachineLearningDetectionConfigBuilder {
-    pub(crate) confidence_level: std::option::Option<crate::types::ConfidenceLevel>,
+    pub(crate) confidence_level: ::std::option::Option<crate::types::ConfidenceLevel>,
 }
 impl MachineLearningDetectionConfigBuilder {
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     pub fn confidence_level(mut self, input: crate::types::ConfidenceLevel) -> Self {
-        self.confidence_level = Some(input);
+        self.confidence_level = ::std::option::Option::Some(input);
         self
     }
     /// <p> The sensitivity of anomalous behavior evaluation. Can be <code>Low</code>, <code>Medium</code>, or <code>High</code>. </p>
     pub fn set_confidence_level(
         mut self,
-        input: std::option::Option<crate::types::ConfidenceLevel>,
+        input: ::std::option::Option<crate::types::ConfidenceLevel>,
     ) -> Self {
         self.confidence_level = input;
         self

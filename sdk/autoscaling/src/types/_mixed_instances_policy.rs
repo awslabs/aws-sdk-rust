@@ -3,24 +3,24 @@
 /// <p>Use this structure to launch multiple instance types and On-Demand Instances and Spot Instances within a single Auto Scaling group.</p>
 /// <p>A mixed instances policy contains information that Amazon EC2 Auto Scaling can use to launch instances and help optimize your costs. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MixedInstancesPolicy {
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
     #[doc(hidden)]
-    pub launch_template: std::option::Option<crate::types::LaunchTemplate>,
+    pub launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
     /// <p>The instances distribution.</p>
     #[doc(hidden)]
-    pub instances_distribution: std::option::Option<crate::types::InstancesDistribution>,
+    pub instances_distribution: ::std::option::Option<crate::types::InstancesDistribution>,
 }
 impl MixedInstancesPolicy {
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
-    pub fn launch_template(&self) -> std::option::Option<&crate::types::LaunchTemplate> {
+    pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplate> {
         self.launch_template.as_ref()
     }
     /// <p>The instances distribution.</p>
     pub fn instances_distribution(
         &self,
-    ) -> std::option::Option<&crate::types::InstancesDistribution> {
+    ) -> ::std::option::Option<&crate::types::InstancesDistribution> {
         self.instances_distribution.as_ref()
     }
 }
@@ -33,34 +33,36 @@ impl MixedInstancesPolicy {
 
 /// A builder for [`MixedInstancesPolicy`](crate::types::MixedInstancesPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MixedInstancesPolicyBuilder {
-    pub(crate) launch_template: std::option::Option<crate::types::LaunchTemplate>,
-    pub(crate) instances_distribution: std::option::Option<crate::types::InstancesDistribution>,
+    pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplate>,
+    pub(crate) instances_distribution: ::std::option::Option<crate::types::InstancesDistribution>,
 }
 impl MixedInstancesPolicyBuilder {
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplate) -> Self {
-        self.launch_template = Some(input);
+        self.launch_template = ::std::option::Option::Some(input);
         self
     }
     /// <p>One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.</p>
     pub fn set_launch_template(
         mut self,
-        input: std::option::Option<crate::types::LaunchTemplate>,
+        input: ::std::option::Option<crate::types::LaunchTemplate>,
     ) -> Self {
         self.launch_template = input;
         self
     }
     /// <p>The instances distribution.</p>
     pub fn instances_distribution(mut self, input: crate::types::InstancesDistribution) -> Self {
-        self.instances_distribution = Some(input);
+        self.instances_distribution = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instances distribution.</p>
     pub fn set_instances_distribution(
         mut self,
-        input: std::option::Option<crate::types::InstancesDistribution>,
+        input: ::std::option::Option<crate::types::InstancesDistribution>,
     ) -> Self {
         self.instances_distribution = input;
         self

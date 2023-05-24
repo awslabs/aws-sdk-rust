@@ -3,22 +3,22 @@
 /// <p>Information about an uplink echo <code>Config</code>.</p>
 /// <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UplinkEchoConfig {
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>ARN of an uplink <code>Config</code>.</p>
     #[doc(hidden)]
-    pub antenna_uplink_config_arn: std::option::Option<std::string::String>,
+    pub antenna_uplink_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl UplinkEchoConfig {
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>ARN of an uplink <code>Config</code>.</p>
-    pub fn antenna_uplink_config_arn(&self) -> std::option::Option<&str> {
+    pub fn antenna_uplink_config_arn(&self) -> ::std::option::Option<&str> {
         self.antenna_uplink_config_arn.as_deref()
     }
 }
@@ -31,31 +31,36 @@ impl UplinkEchoConfig {
 
 /// A builder for [`UplinkEchoConfig`](crate::types::UplinkEchoConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UplinkEchoConfigBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) antenna_uplink_config_arn: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) antenna_uplink_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl UplinkEchoConfigBuilder {
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>ARN of an uplink <code>Config</code>.</p>
-    pub fn antenna_uplink_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.antenna_uplink_config_arn = Some(input.into());
+    pub fn antenna_uplink_config_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.antenna_uplink_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of an uplink <code>Config</code>.</p>
     pub fn set_antenna_uplink_config_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.antenna_uplink_config_arn = input;
         self

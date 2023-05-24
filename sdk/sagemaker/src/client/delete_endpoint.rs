@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_name(impl Into<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::set_endpoint_name): <p>The name of the endpoint that you want to delete.</p>
+    ///   - [`endpoint_name(impl ::std::convert::Into<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::endpoint_name) / [`set_endpoint_name(Option<String>)`](crate::operation::delete_endpoint::builders::DeleteEndpointFluentBuilder::set_endpoint_name): <p>The name of the endpoint that you want to delete.</p>
     /// - On success, responds with [`DeleteEndpointOutput`](crate::operation::delete_endpoint::DeleteEndpointOutput)
     /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::operation::delete_endpoint::DeleteEndpointError)
     pub fn delete_endpoint(

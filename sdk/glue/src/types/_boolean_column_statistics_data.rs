@@ -2,7 +2,7 @@
 
 /// <p>Defines column statistics supported for Boolean data columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BooleanColumnStatisticsData {
     /// <p>The number of true values in the column.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl BooleanColumnStatisticsData {
 
 /// A builder for [`BooleanColumnStatisticsData`](crate::types::BooleanColumnStatisticsData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BooleanColumnStatisticsDataBuilder {
-    pub(crate) number_of_trues: std::option::Option<i64>,
-    pub(crate) number_of_falses: std::option::Option<i64>,
-    pub(crate) number_of_nulls: std::option::Option<i64>,
+    pub(crate) number_of_trues: ::std::option::Option<i64>,
+    pub(crate) number_of_falses: ::std::option::Option<i64>,
+    pub(crate) number_of_nulls: ::std::option::Option<i64>,
 }
 impl BooleanColumnStatisticsDataBuilder {
     /// <p>The number of true values in the column.</p>
     pub fn number_of_trues(mut self, input: i64) -> Self {
-        self.number_of_trues = Some(input);
+        self.number_of_trues = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of true values in the column.</p>
-    pub fn set_number_of_trues(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_trues(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_trues = input;
         self
     }
     /// <p>The number of false values in the column.</p>
     pub fn number_of_falses(mut self, input: i64) -> Self {
-        self.number_of_falses = Some(input);
+        self.number_of_falses = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of false values in the column.</p>
-    pub fn set_number_of_falses(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_falses(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_falses = input;
         self
     }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
-        self.number_of_nulls = Some(input);
+        self.number_of_nulls = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of null values in the column.</p>
-    pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_nulls(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_nulls = input;
         self
     }

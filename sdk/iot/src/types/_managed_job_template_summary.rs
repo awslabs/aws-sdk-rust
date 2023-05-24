@@ -2,43 +2,43 @@
 
 /// <p>An object that contains information about the managed template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedJobTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
     #[doc(hidden)]
-    pub template_arn: std::option::Option<std::string::String>,
+    pub template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique Name for a managed template.</p>
     #[doc(hidden)]
-    pub template_name: std::option::Option<std::string::String>,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for a managed template.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of environments that are supported with the managed job template.</p>
     #[doc(hidden)]
-    pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub environments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version for a managed template.</p>
     #[doc(hidden)]
-    pub template_version: std::option::Option<std::string::String>,
+    pub template_version: ::std::option::Option<::std::string::String>,
 }
 impl ManagedJobTemplateSummary {
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
-    pub fn template_arn(&self) -> std::option::Option<&str> {
+    pub fn template_arn(&self) -> ::std::option::Option<&str> {
         self.template_arn.as_deref()
     }
     /// <p>The unique Name for a managed template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The description for a managed template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of environments that are supported with the managed job template.</p>
-    pub fn environments(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn environments(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.environments.as_deref()
     }
     /// <p>The version for a managed template.</p>
-    pub fn template_version(&self) -> std::option::Option<&str> {
+    pub fn template_version(&self) -> ::std::option::Option<&str> {
         self.template_version.as_deref()
     }
 }
@@ -51,42 +51,50 @@ impl ManagedJobTemplateSummary {
 
 /// A builder for [`ManagedJobTemplateSummary`](crate::types::ManagedJobTemplateSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ManagedJobTemplateSummaryBuilder {
-    pub(crate) template_arn: std::option::Option<std::string::String>,
-    pub(crate) template_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) environments: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) template_version: std::option::Option<std::string::String>,
+    pub(crate) template_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) environments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) template_version: ::std::option::Option<::std::string::String>,
 }
 impl ManagedJobTemplateSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
-    pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_arn = Some(input.into());
+    pub fn template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a managed template.</p>
-    pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_arn = input;
         self
     }
     /// <p>The unique Name for a managed template.</p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_name = Some(input.into());
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Name for a managed template.</p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.template_name = input;
         self
     }
     /// <p>The description for a managed template.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for a managed template.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -95,27 +103,33 @@ impl ManagedJobTemplateSummaryBuilder {
     /// To override the contents of this collection use [`set_environments`](Self::set_environments).
     ///
     /// <p>A list of environments that are supported with the managed job template.</p>
-    pub fn environments(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn environments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.environments.unwrap_or_default();
         v.push(input.into());
-        self.environments = Some(v);
+        self.environments = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of environments that are supported with the managed job template.</p>
     pub fn set_environments(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.environments = input;
         self
     }
     /// <p>The version for a managed template.</p>
-    pub fn template_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_version = Some(input.into());
+    pub fn template_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.template_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version for a managed template.</p>
-    pub fn set_template_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.template_version = input;
         self
     }

@@ -7,56 +7,59 @@ pub use crate::operation::put_session::_put_session_input::PutSessionInputBuilde
 ///
 /// <p>Creates a new session or modifies an existing session with an Amazon Lex bot. Use this operation to enable your application to set the state of the bot.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing Sessions</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSessionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_session::builders::PutSessionInputBuilder,
 }
 impl PutSessionFluentBuilder {
     /// Creates a new `PutSession`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_session::PutSession,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_session::PutSessionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,39 +72,39 @@ impl PutSessionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_session::PutSessionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the bot that contains the session data.</p>
-    pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
         self
     }
     /// <p>The name of the bot that contains the session data.</p>
-    pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_name(input);
         self
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
-    pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias(input.into());
         self
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
-    pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_alias(input);
         self
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
@@ -112,8 +115,8 @@ impl PutSessionFluentBuilder {
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
     pub fn session_attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.session_attributes(k.into(), v.into());
         self
@@ -121,8 +124,8 @@ impl PutSessionFluentBuilder {
     /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
     pub fn set_session_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_session_attributes(input);
@@ -136,7 +139,7 @@ impl PutSessionFluentBuilder {
     /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
     pub fn set_dialog_action(
         mut self,
-        input: std::option::Option<crate::types::DialogAction>,
+        input: ::std::option::Option<crate::types::DialogAction>,
     ) -> Self {
         self.inner = self.inner.set_dialog_action(input);
         self
@@ -167,7 +170,7 @@ impl PutSessionFluentBuilder {
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
     pub fn set_recent_intent_summary_view(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IntentSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>,
     ) -> Self {
         self.inner = self.inner.set_recent_intent_summary_view(input);
         self
@@ -186,7 +189,7 @@ impl PutSessionFluentBuilder {
     /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn accept(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accept(input.into());
         self
     }
@@ -204,7 +207,7 @@ impl PutSessionFluentBuilder {
     /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_accept(input);
         self
     }
@@ -222,7 +225,7 @@ impl PutSessionFluentBuilder {
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
     pub fn set_active_contexts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ActiveContext>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     ) -> Self {
         self.inner = self.inner.set_active_contexts(input);
         self

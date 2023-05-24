@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelAuditTask`](crate::operation::cancel_audit_task::builders::CancelAuditTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::cancel_audit_task::builders::CancelAuditTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_audit_task::builders::CancelAuditTaskFluentBuilder::set_task_id): <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
+    ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_audit_task::builders::CancelAuditTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_audit_task::builders::CancelAuditTaskFluentBuilder::set_task_id): <p>The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".</p>
     /// - On success, responds with [`CancelAuditTaskOutput`](crate::operation::cancel_audit_task::CancelAuditTaskOutput)
     /// - On failure, responds with [`SdkError<CancelAuditTaskError>`](crate::operation::cancel_audit_task::CancelAuditTaskError)
     pub fn cancel_audit_task(

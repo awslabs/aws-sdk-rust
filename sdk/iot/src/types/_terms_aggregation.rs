@@ -2,7 +2,7 @@
 
 /// <p>Performs an aggregation that will return a list of buckets. The list of buckets is a ranked list of the number of occurrences of an aggregation field value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TermsAggregation {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl TermsAggregation {
 
 /// A builder for [`TermsAggregation`](crate::types::TermsAggregation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TermsAggregationBuilder {
-    pub(crate) max_buckets: std::option::Option<i32>,
+    pub(crate) max_buckets: ::std::option::Option<i32>,
 }
 impl TermsAggregationBuilder {
     /// <p>The number of buckets to return in the response. Default to 10.</p>
     pub fn max_buckets(mut self, input: i32) -> Self {
-        self.max_buckets = Some(input);
+        self.max_buckets = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of buckets to return in the response. Default to 10.</p>
-    pub fn set_max_buckets(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_buckets(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_buckets = input;
         self
     }

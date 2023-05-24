@@ -2,7 +2,7 @@
 
 /// <p>Places uses a point geometry to specify a location or a Place.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PlaceGeometry {
     /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
     /// <ul>
@@ -10,7 +10,7 @@ pub struct PlaceGeometry {
     /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub point: std::option::Option<std::vec::Vec<f64>>,
+    pub point: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl PlaceGeometry {
     /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
@@ -18,12 +18,12 @@ impl PlaceGeometry {
     /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
     /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
     /// </ul>
-    pub fn point(&self) -> std::option::Option<&[f64]> {
+    pub fn point(&self) -> ::std::option::Option<&[f64]> {
         self.point.as_deref()
     }
 }
-impl std::fmt::Debug for PlaceGeometry {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PlaceGeometry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PlaceGeometry");
         formatter.field("point", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -38,9 +38,9 @@ impl PlaceGeometry {
 
 /// A builder for [`PlaceGeometry`](crate::types::PlaceGeometry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PlaceGeometryBuilder {
-    pub(crate) point: std::option::Option<std::vec::Vec<f64>>,
+    pub(crate) point: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl PlaceGeometryBuilder {
     /// Appends an item to `point`.
@@ -55,7 +55,7 @@ impl PlaceGeometryBuilder {
     pub fn point(mut self, input: f64) -> Self {
         let mut v = self.point.unwrap_or_default();
         v.push(input);
-        self.point = Some(v);
+        self.point = ::std::option::Option::Some(v);
         self
     }
     /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates:</p>
@@ -63,7 +63,7 @@ impl PlaceGeometryBuilder {
     /// <li> <p> <i>x</i> — Specifies the x coordinate or longitude. </p> </li>
     /// <li> <p> <i>y</i> — Specifies the y coordinate or latitude. </p> </li>
     /// </ul>
-    pub fn set_point(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_point(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.point = input;
         self
     }
@@ -72,8 +72,8 @@ impl PlaceGeometryBuilder {
         crate::types::PlaceGeometry { point: self.point }
     }
 }
-impl std::fmt::Debug for PlaceGeometryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PlaceGeometryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PlaceGeometryBuilder");
         formatter.field("point", &"*** Sensitive Data Redacted ***");
         formatter.finish()

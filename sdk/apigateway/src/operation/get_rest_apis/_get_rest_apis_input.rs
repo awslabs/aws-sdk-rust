@@ -2,22 +2,22 @@
 
 /// <p>The GET request to list existing RestApis defined for your collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRestApisInput {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<std::string::String>,
+    pub position: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    pub limit: ::std::option::Option<i32>,
 }
 impl GetRestApisInput {
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<&str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-    pub fn limit(&self) -> std::option::Option<i32> {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
 }
@@ -30,40 +30,42 @@ impl GetRestApisInput {
 
 /// A builder for [`GetRestApisInput`](crate::operation::get_rest_apis::GetRestApisInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRestApisInputBuilder {
-    pub(crate) position: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<i32>,
+    pub(crate) position: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
 }
 impl GetRestApisInputBuilder {
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
-        self.position = Some(input.into());
+    pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// Consumes the builder and constructs a [`GetRestApisInput`](crate::operation::get_rest_apis::GetRestApisInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_rest_apis::GetRestApisInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_rest_apis::GetRestApisInput {
+        ::std::result::Result::Ok(crate::operation::get_rest_apis::GetRestApisInput {
             position: self.position,
             limit: self.limit,
         })

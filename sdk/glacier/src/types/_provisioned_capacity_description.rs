@@ -2,29 +2,29 @@
 
 /// <p>The definition for a provisioned capacity unit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedCapacityDescription {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
     #[doc(hidden)]
-    pub capacity_id: std::option::Option<std::string::String>,
+    pub capacity_id: ::std::option::Option<::std::string::String>,
     /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
     #[doc(hidden)]
-    pub start_date: std::option::Option<std::string::String>,
+    pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
     #[doc(hidden)]
-    pub expiration_date: std::option::Option<std::string::String>,
+    pub expiration_date: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedCapacityDescription {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
-    pub fn capacity_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_id(&self) -> ::std::option::Option<&str> {
         self.capacity_id.as_deref()
     }
     /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> ::std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
-    pub fn expiration_date(&self) -> std::option::Option<&str> {
+    pub fn expiration_date(&self) -> ::std::option::Option<&str> {
         self.expiration_date.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl ProvisionedCapacityDescription {
 
 /// A builder for [`ProvisionedCapacityDescription`](crate::types::ProvisionedCapacityDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisionedCapacityDescriptionBuilder {
-    pub(crate) capacity_id: std::option::Option<std::string::String>,
-    pub(crate) start_date: std::option::Option<std::string::String>,
-    pub(crate) expiration_date: std::option::Option<std::string::String>,
+    pub(crate) capacity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) start_date: ::std::option::Option<::std::string::String>,
+    pub(crate) expiration_date: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedCapacityDescriptionBuilder {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
-    pub fn capacity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capacity_id = Some(input.into());
+    pub fn capacity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.capacity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that identifies the provisioned capacity unit.</p>
-    pub fn set_capacity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_capacity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_id = input;
         self
     }
     /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
-    pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_date = Some(input.into());
+    pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
-    pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_date = input;
         self
     }
     /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
-    pub fn expiration_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expiration_date = Some(input.into());
+    pub fn expiration_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.expiration_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
-    pub fn set_expiration_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expiration_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.expiration_date = input;
         self
     }

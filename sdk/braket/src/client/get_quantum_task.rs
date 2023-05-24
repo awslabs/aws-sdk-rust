@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQuantumTask`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`quantum_task_arn(impl Into<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(Option<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_quantum_task_arn): <p>the ARN of the task to retrieve.</p>
+    ///   - [`quantum_task_arn(impl ::std::convert::Into<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(Option<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_quantum_task_arn): <p>the ARN of the task to retrieve.</p>
     /// - On success, responds with [`GetQuantumTaskOutput`](crate::operation::get_quantum_task::GetQuantumTaskOutput) with field(s):
     ///   - [`quantum_task_arn(Option<String>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task.</p>
     ///   - [`status(Option<QuantumTaskStatus>)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::status): <p>The status of the task.</p>

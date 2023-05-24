@@ -2,27 +2,27 @@
 
 /// <p>Contains the output of AttachNetworkInterface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachNetworkInterfaceOutput {
     /// <p>The ID of the network interface attachment.</p>
     #[doc(hidden)]
-    pub attachment_id: std::option::Option<std::string::String>,
+    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The index of the network card.</p>
     #[doc(hidden)]
-    pub network_card_index: std::option::Option<i32>,
+    pub network_card_index: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl AttachNetworkInterfaceOutput {
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
     /// <p>The index of the network card.</p>
-    pub fn network_card_index(&self) -> std::option::Option<i32> {
+    pub fn network_card_index(&self) -> ::std::option::Option<i32> {
         self.network_card_index
     }
 }
-impl aws_http::request_id::RequestId for AttachNetworkInterfaceOutput {
+impl ::aws_http::request_id::RequestId for AttachNetworkInterfaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,30 +38,38 @@ impl AttachNetworkInterfaceOutput {
 
 /// A builder for [`AttachNetworkInterfaceOutput`](crate::operation::attach_network_interface::AttachNetworkInterfaceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttachNetworkInterfaceOutputBuilder {
-    pub(crate) attachment_id: std::option::Option<std::string::String>,
-    pub(crate) network_card_index: std::option::Option<i32>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) network_card_index: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl AttachNetworkInterfaceOutputBuilder {
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attachment_id = Some(input.into());
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attachment_id = input;
         self
     }
     /// <p>The index of the network card.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
-        self.network_card_index = Some(input);
+        self.network_card_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index of the network card.</p>
-    pub fn set_network_card_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_card_index = input;
         self
     }

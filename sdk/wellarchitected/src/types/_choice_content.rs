@@ -2,22 +2,22 @@
 
 /// <p>The choice content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChoiceContent {
     /// <p>The display text for the choice content.</p>
     #[doc(hidden)]
-    pub display_text: std::option::Option<std::string::String>,
+    pub display_text: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the choice content.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
 }
 impl ChoiceContent {
     /// <p>The display text for the choice content.</p>
-    pub fn display_text(&self) -> std::option::Option<&str> {
+    pub fn display_text(&self) -> ::std::option::Option<&str> {
         self.display_text.as_deref()
     }
     /// <p>The URL for the choice content.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ChoiceContent {
 
 /// A builder for [`ChoiceContent`](crate::types::ChoiceContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChoiceContentBuilder {
-    pub(crate) display_text: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
+    pub(crate) display_text: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl ChoiceContentBuilder {
     /// <p>The display text for the choice content.</p>
-    pub fn display_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_text = Some(input.into());
+    pub fn display_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display text for the choice content.</p>
-    pub fn set_display_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_text = input;
         self
     }
     /// <p>The URL for the choice content.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the choice content.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }

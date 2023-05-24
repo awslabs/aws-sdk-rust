@@ -2,15 +2,15 @@
 
 /// <p>Information about the Amazon Inspector score given to a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InspectorScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
     #[doc(hidden)]
-    pub adjusted_cvss: std::option::Option<crate::types::CvssScoreDetails>,
+    pub adjusted_cvss: ::std::option::Option<crate::types::CvssScoreDetails>,
 }
 impl InspectorScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
-    pub fn adjusted_cvss(&self) -> std::option::Option<&crate::types::CvssScoreDetails> {
+    pub fn adjusted_cvss(&self) -> ::std::option::Option<&crate::types::CvssScoreDetails> {
         self.adjusted_cvss.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl InspectorScoreDetails {
 
 /// A builder for [`InspectorScoreDetails`](crate::types::InspectorScoreDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InspectorScoreDetailsBuilder {
-    pub(crate) adjusted_cvss: std::option::Option<crate::types::CvssScoreDetails>,
+    pub(crate) adjusted_cvss: ::std::option::Option<crate::types::CvssScoreDetails>,
 }
 impl InspectorScoreDetailsBuilder {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
     pub fn adjusted_cvss(mut self, input: crate::types::CvssScoreDetails) -> Self {
-        self.adjusted_cvss = Some(input);
+        self.adjusted_cvss = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
     pub fn set_adjusted_cvss(
         mut self,
-        input: std::option::Option<crate::types::CvssScoreDetails>,
+        input: ::std::option::Option<crate::types::CvssScoreDetails>,
     ) -> Self {
         self.adjusted_cvss = input;
         self

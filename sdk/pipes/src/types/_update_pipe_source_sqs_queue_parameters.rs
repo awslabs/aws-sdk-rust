@@ -2,22 +2,22 @@
 
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceSqsQueueParameters {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
-    pub batch_size: std::option::Option<i32>,
+    pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
-    pub maximum_batching_window_in_seconds: std::option::Option<i32>,
+    pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
 impl UpdatePipeSourceSqsQueueParameters {
     /// <p>The maximum number of records to include in each batch.</p>
-    pub fn batch_size(&self) -> std::option::Option<i32> {
+    pub fn batch_size(&self) -> ::std::option::Option<i32> {
         self.batch_size
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn maximum_batching_window_in_seconds(&self) -> ::std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
     }
 }
@@ -30,31 +30,33 @@ impl UpdatePipeSourceSqsQueueParameters {
 
 /// A builder for [`UpdatePipeSourceSqsQueueParameters`](crate::types::UpdatePipeSourceSqsQueueParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdatePipeSourceSqsQueueParametersBuilder {
-    pub(crate) batch_size: std::option::Option<i32>,
-    pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
+    pub(crate) batch_size: ::std::option::Option<i32>,
+    pub(crate) maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
 impl UpdatePipeSourceSqsQueueParametersBuilder {
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
-        self.batch_size = Some(input);
+        self.batch_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in each batch.</p>
-    pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
-        self.maximum_batching_window_in_seconds = Some(input);
+        self.maximum_batching_window_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn set_maximum_batching_window_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self

@@ -2,23 +2,23 @@
 
 /// <p>Output of a get lens review report call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLensReviewReportOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
     pub milestone_number: i32,
     /// <p>A report of a lens review.</p>
     #[doc(hidden)]
-    pub lens_review_report: std::option::Option<crate::types::LensReviewReport>,
+    pub lens_review_report: ::std::option::Option<crate::types::LensReviewReport>,
     _request_id: Option<String>,
 }
 impl GetLensReviewReportOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>The milestone number.</p>
@@ -27,11 +27,11 @@ impl GetLensReviewReportOutput {
         self.milestone_number
     }
     /// <p>A report of a lens review.</p>
-    pub fn lens_review_report(&self) -> std::option::Option<&crate::types::LensReviewReport> {
+    pub fn lens_review_report(&self) -> ::std::option::Option<&crate::types::LensReviewReport> {
         self.lens_review_report.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetLensReviewReportOutput {
+impl ::aws_http::request_id::RequestId for GetLensReviewReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -46,45 +46,47 @@ impl GetLensReviewReportOutput {
 
 /// A builder for [`GetLensReviewReportOutput`](crate::operation::get_lens_review_report::GetLensReviewReportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetLensReviewReportOutputBuilder {
-    pub(crate) workload_id: std::option::Option<std::string::String>,
-    pub(crate) milestone_number: std::option::Option<i32>,
-    pub(crate) lens_review_report: std::option::Option<crate::types::LensReviewReport>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) milestone_number: ::std::option::Option<i32>,
+    pub(crate) lens_review_report: ::std::option::Option<crate::types::LensReviewReport>,
     _request_id: Option<String>,
 }
 impl GetLensReviewReportOutputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(mut self, input: i32) -> Self {
-        self.milestone_number = Some(input);
+        self.milestone_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.milestone_number = input;
         self
     }
     /// <p>A report of a lens review.</p>
     pub fn lens_review_report(mut self, input: crate::types::LensReviewReport) -> Self {
-        self.lens_review_report = Some(input);
+        self.lens_review_report = ::std::option::Option::Some(input);
         self
     }
     /// <p>A report of a lens review.</p>
     pub fn set_lens_review_report(
         mut self,
-        input: std::option::Option<crate::types::LensReviewReport>,
+        input: ::std::option::Option<crate::types::LensReviewReport>,
     ) -> Self {
         self.lens_review_report = input;
         self

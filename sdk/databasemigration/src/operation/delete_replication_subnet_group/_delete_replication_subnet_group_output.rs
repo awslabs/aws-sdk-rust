@@ -2,11 +2,11 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationSubnetGroupOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteReplicationSubnetGroupOutput {
+impl ::aws_http::request_id::RequestId for DeleteReplicationSubnetGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteReplicationSubnetGroupOutput {
 
 /// A builder for [`DeleteReplicationSubnetGroupOutput`](crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteReplicationSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,15 +2,15 @@
 
 /// <p>Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FsxProtocolNfs {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     #[doc(hidden)]
-    pub mount_options: std::option::Option<crate::types::NfsMountOptions>,
+    pub mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
 }
 impl FsxProtocolNfs {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    pub fn mount_options(&self) -> std::option::Option<&crate::types::NfsMountOptions> {
+    pub fn mount_options(&self) -> ::std::option::Option<&crate::types::NfsMountOptions> {
         self.mount_options.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl FsxProtocolNfs {
 
 /// A builder for [`FsxProtocolNfs`](crate::types::FsxProtocolNfs).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FsxProtocolNfsBuilder {
-    pub(crate) mount_options: std::option::Option<crate::types::NfsMountOptions>,
+    pub(crate) mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
 }
 impl FsxProtocolNfsBuilder {
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub fn mount_options(mut self, input: crate::types::NfsMountOptions) -> Self {
-        self.mount_options = Some(input);
+        self.mount_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
     pub fn set_mount_options(
         mut self,
-        input: std::option::Option<crate::types::NfsMountOptions>,
+        input: ::std::option::Option<crate::types::NfsMountOptions>,
     ) -> Self {
         self.mount_options = input;
         self

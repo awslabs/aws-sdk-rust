@@ -36,7 +36,7 @@
 /// <p>If you only aggregate on the individual IP address or forwarded IP address, you can retrieve the list of IP addresses that WAF is currently rate limiting for a rule through the API call <code>GetRateBasedStatementManagedKeys</code>. This option is not available for other aggregation configurations.</p>
 /// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateBasedStatement {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples: </p>
@@ -56,19 +56,20 @@ pub struct RateBasedStatement {
     /// <li> <p> <code>IP</code> - Aggregate the request counts on the IP address from the web request origin.</p> <p>To aggregate on a combination of the IP address with other aggregate keys, use <code>CUSTOM_KEYS</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub aggregate_key_type: std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
+    pub aggregate_key_type: ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     #[doc(hidden)]
-    pub scope_down_statement: std::option::Option<std::boxed::Box<crate::types::Statement>>,
+    pub scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings. </p>
     #[doc(hidden)]
-    pub forwarded_ip_config: std::option::Option<crate::types::ForwardedIpConfig>,
+    pub forwarded_ip_config: ::std::option::Option<crate::types::ForwardedIpConfig>,
     /// <p>Specifies the aggregate keys to use in a rate-base rule. </p>
     #[doc(hidden)]
-    pub custom_keys: std::option::Option<std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
+    pub custom_keys:
+        ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
 }
 impl RateBasedStatement {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
@@ -91,22 +92,24 @@ impl RateBasedStatement {
     /// </ul>
     pub fn aggregate_key_type(
         &self,
-    ) -> std::option::Option<&crate::types::RateBasedStatementAggregateKeyType> {
+    ) -> ::std::option::Option<&crate::types::RateBasedStatementAggregateKeyType> {
         self.aggregate_key_type.as_ref()
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
-    pub fn scope_down_statement(&self) -> std::option::Option<&crate::types::Statement> {
+    pub fn scope_down_statement(&self) -> ::std::option::Option<&crate::types::Statement> {
         self.scope_down_statement.as_deref()
     }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings. </p>
-    pub fn forwarded_ip_config(&self) -> std::option::Option<&crate::types::ForwardedIpConfig> {
+    pub fn forwarded_ip_config(&self) -> ::std::option::Option<&crate::types::ForwardedIpConfig> {
         self.forwarded_ip_config.as_ref()
     }
     /// <p>Specifies the aggregate keys to use in a rate-base rule. </p>
-    pub fn custom_keys(&self) -> std::option::Option<&[crate::types::RateBasedStatementCustomKey]> {
+    pub fn custom_keys(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::RateBasedStatementCustomKey]> {
         self.custom_keys.as_deref()
     }
 }
@@ -119,15 +122,18 @@ impl RateBasedStatement {
 
 /// A builder for [`RateBasedStatement`](crate::types::RateBasedStatement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RateBasedStatementBuilder {
-    pub(crate) limit: std::option::Option<i64>,
+    pub(crate) limit: ::std::option::Option<i64>,
     pub(crate) aggregate_key_type:
-        std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
-    pub(crate) scope_down_statement: std::option::Option<std::boxed::Box<crate::types::Statement>>,
-    pub(crate) forwarded_ip_config: std::option::Option<crate::types::ForwardedIpConfig>,
+        ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
+    pub(crate) scope_down_statement:
+        ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
+    pub(crate) forwarded_ip_config: ::std::option::Option<crate::types::ForwardedIpConfig>,
     pub(crate) custom_keys:
-        std::option::Option<std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
 }
 impl RateBasedStatementBuilder {
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
@@ -137,7 +143,7 @@ impl RateBasedStatementBuilder {
     /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
     /// </ul>
     pub fn limit(mut self, input: i64) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
@@ -146,7 +152,7 @@ impl RateBasedStatementBuilder {
     /// <li> <p>If you aggregate on just the IP address, this is the limit on requests from any single IP address. </p> </li>
     /// <li> <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair. </p> </li>
     /// </ul>
-    pub fn set_limit(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.limit = input;
         self
     }
@@ -163,7 +169,7 @@ impl RateBasedStatementBuilder {
         mut self,
         input: crate::types::RateBasedStatementAggregateKeyType,
     ) -> Self {
-        self.aggregate_key_type = Some(input);
+        self.aggregate_key_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Setting that indicates how to aggregate the request counts. </p> <note>
@@ -177,7 +183,7 @@ impl RateBasedStatementBuilder {
     /// </ul>
     pub fn set_aggregate_key_type(
         mut self,
-        input: std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
+        input: ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
     ) -> Self {
         self.aggregate_key_type = input;
         self
@@ -185,15 +191,15 @@ impl RateBasedStatementBuilder {
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub fn scope_down_statement(
         mut self,
-        input: impl Into<std::boxed::Box<crate::types::Statement>>,
+        input: impl ::std::convert::Into<::std::boxed::Box<crate::types::Statement>>,
     ) -> Self {
-        self.scope_down_statement = Some(input.into());
+        self.scope_down_statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional nested statement that narrows the scope of the web requests that are evaluated and managed by the rate-based statement. When you use a scope-down statement, the rate-based rule only tracks and rate limits requests that match the scope-down statement. You can use any nestable <code>Statement</code> in the scope-down statement, and you can nest statements at any level, the same as you can for a rule statement. </p>
     pub fn set_scope_down_statement(
         mut self,
-        input: std::option::Option<std::boxed::Box<crate::types::Statement>>,
+        input: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     ) -> Self {
         self.scope_down_statement = input;
         self
@@ -203,7 +209,7 @@ impl RateBasedStatementBuilder {
     /// </note>
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings. </p>
     pub fn forwarded_ip_config(mut self, input: crate::types::ForwardedIpConfig) -> Self {
-        self.forwarded_ip_config = Some(input);
+        self.forwarded_ip_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name. </p> <note>
@@ -212,7 +218,7 @@ impl RateBasedStatementBuilder {
     /// <p>This is required if you specify a forwarded IP in the rule's aggregate key settings. </p>
     pub fn set_forwarded_ip_config(
         mut self,
-        input: std::option::Option<crate::types::ForwardedIpConfig>,
+        input: ::std::option::Option<crate::types::ForwardedIpConfig>,
     ) -> Self {
         self.forwarded_ip_config = input;
         self
@@ -225,13 +231,13 @@ impl RateBasedStatementBuilder {
     pub fn custom_keys(mut self, input: crate::types::RateBasedStatementCustomKey) -> Self {
         let mut v = self.custom_keys.unwrap_or_default();
         v.push(input);
-        self.custom_keys = Some(v);
+        self.custom_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the aggregate keys to use in a rate-base rule. </p>
     pub fn set_custom_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
     ) -> Self {
         self.custom_keys = input;
         self

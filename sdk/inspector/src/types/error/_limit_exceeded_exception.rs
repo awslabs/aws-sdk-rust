@@ -2,55 +2,55 @@
 
 /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LimitExceededException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Code that indicates the type of error that is generated.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::LimitExceededErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::LimitExceededErrorCode>,
     /// <p>You can immediately retry your request.</p>
     #[doc(hidden)]
-    pub can_retry: std::option::Option<bool>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub can_retry: ::std::option::Option<bool>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl LimitExceededException {
     /// <p>Code that indicates the type of error that is generated.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::LimitExceededErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::LimitExceededErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>You can immediately retry your request.</p>
-    pub fn can_retry(&self) -> std::option::Option<bool> {
+    pub fn can_retry(&self) -> ::std::option::Option<bool> {
         self.can_retry
     }
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for LimitExceededException {
+impl ::std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "LimitExceededException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for LimitExceededException {}
-impl aws_http::request_id::RequestId for crate::types::error::LimitExceededException {
+impl ::std::error::Error for LimitExceededException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::LimitExceededException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for LimitExceededException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for LimitExceededException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -63,49 +63,51 @@ impl LimitExceededException {
 
 /// A builder for [`LimitExceededException`](crate::types::error::LimitExceededException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LimitExceededExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<crate::types::LimitExceededErrorCode>,
-    pub(crate) can_retry: std::option::Option<bool>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::LimitExceededErrorCode>,
+    pub(crate) can_retry: ::std::option::Option<bool>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl LimitExceededExceptionBuilder {
     /// <p>Details of the exception error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details of the exception error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn error_code(mut self, input: crate::types::LimitExceededErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Code that indicates the type of error that is generated.</p>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::LimitExceededErrorCode>,
+        input: ::std::option::Option<crate::types::LimitExceededErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(mut self, input: bool) -> Self {
-        self.can_retry = Some(input);
+        self.can_retry = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can immediately retry your request.</p>
-    pub fn set_can_retry(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_retry = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -113,7 +115,7 @@ impl LimitExceededExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

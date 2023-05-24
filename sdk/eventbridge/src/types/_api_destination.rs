@@ -2,71 +2,73 @@
 
 /// <p>Contains details about an API destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiDestination {
     /// <p>The ARN of the API destination.</p>
     #[doc(hidden)]
-    pub api_destination_arn: std::option::Option<std::string::String>,
+    pub api_destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the API destination.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the API destination.</p>
     #[doc(hidden)]
-    pub api_destination_state: std::option::Option<crate::types::ApiDestinationState>,
+    pub api_destination_state: ::std::option::Option<crate::types::ApiDestinationState>,
     /// <p>The ARN of the connection specified for the API destination.</p>
     #[doc(hidden)]
-    pub connection_arn: std::option::Option<std::string::String>,
+    pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the endpoint for the API destination.</p>
     #[doc(hidden)]
-    pub invocation_endpoint: std::option::Option<std::string::String>,
+    pub invocation_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The method to use to connect to the HTTP endpoint.</p>
     #[doc(hidden)]
-    pub http_method: std::option::Option<crate::types::ApiDestinationHttpMethod>,
+    pub http_method: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
     /// <p>The maximum number of invocations per second to send to the HTTP endpoint.</p>
     #[doc(hidden)]
-    pub invocation_rate_limit_per_second: std::option::Option<i32>,
+    pub invocation_rate_limit_per_second: ::std::option::Option<i32>,
     /// <p>A time stamp for the time that the API destination was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ApiDestination {
     /// <p>The ARN of the API destination.</p>
-    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn api_destination_arn(&self) -> ::std::option::Option<&str> {
         self.api_destination_arn.as_deref()
     }
     /// <p>The name of the API destination.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The state of the API destination.</p>
-    pub fn api_destination_state(&self) -> std::option::Option<&crate::types::ApiDestinationState> {
+    pub fn api_destination_state(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ApiDestinationState> {
         self.api_destination_state.as_ref()
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
     /// <p>The URL to the endpoint for the API destination.</p>
-    pub fn invocation_endpoint(&self) -> std::option::Option<&str> {
+    pub fn invocation_endpoint(&self) -> ::std::option::Option<&str> {
         self.invocation_endpoint.as_deref()
     }
     /// <p>The method to use to connect to the HTTP endpoint.</p>
-    pub fn http_method(&self) -> std::option::Option<&crate::types::ApiDestinationHttpMethod> {
+    pub fn http_method(&self) -> ::std::option::Option<&crate::types::ApiDestinationHttpMethod> {
         self.http_method.as_ref()
     }
     /// <p>The maximum number of invocations per second to send to the HTTP endpoint.</p>
-    pub fn invocation_rate_limit_per_second(&self) -> std::option::Option<i32> {
+    pub fn invocation_rate_limit_per_second(&self) -> ::std::option::Option<i32> {
         self.invocation_rate_limit_per_second
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -79,123 +81,140 @@ impl ApiDestination {
 
 /// A builder for [`ApiDestination`](crate::types::ApiDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApiDestinationBuilder {
-    pub(crate) api_destination_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) api_destination_state: std::option::Option<crate::types::ApiDestinationState>,
-    pub(crate) connection_arn: std::option::Option<std::string::String>,
-    pub(crate) invocation_endpoint: std::option::Option<std::string::String>,
-    pub(crate) http_method: std::option::Option<crate::types::ApiDestinationHttpMethod>,
-    pub(crate) invocation_rate_limit_per_second: std::option::Option<i32>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) api_destination_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) api_destination_state: ::std::option::Option<crate::types::ApiDestinationState>,
+    pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) invocation_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) http_method: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
+    pub(crate) invocation_rate_limit_per_second: ::std::option::Option<i32>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ApiDestinationBuilder {
     /// <p>The ARN of the API destination.</p>
-    pub fn api_destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_destination_arn = Some(input.into());
+    pub fn api_destination_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the API destination.</p>
     pub fn set_api_destination_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.api_destination_arn = input;
         self
     }
     /// <p>The name of the API destination.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the API destination.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The state of the API destination.</p>
     pub fn api_destination_state(mut self, input: crate::types::ApiDestinationState) -> Self {
-        self.api_destination_state = Some(input);
+        self.api_destination_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the API destination.</p>
     pub fn set_api_destination_state(
         mut self,
-        input: std::option::Option<crate::types::ApiDestinationState>,
+        input: ::std::option::Option<crate::types::ApiDestinationState>,
     ) -> Self {
         self.api_destination_state = input;
         self
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
-    pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_arn = Some(input.into());
+    pub fn connection_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the connection specified for the API destination.</p>
-    pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_arn = input;
         self
     }
     /// <p>The URL to the endpoint for the API destination.</p>
-    pub fn invocation_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.invocation_endpoint = Some(input.into());
+    pub fn invocation_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.invocation_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to the endpoint for the API destination.</p>
     pub fn set_invocation_endpoint(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.invocation_endpoint = input;
         self
     }
     /// <p>The method to use to connect to the HTTP endpoint.</p>
     pub fn http_method(mut self, input: crate::types::ApiDestinationHttpMethod) -> Self {
-        self.http_method = Some(input);
+        self.http_method = ::std::option::Option::Some(input);
         self
     }
     /// <p>The method to use to connect to the HTTP endpoint.</p>
     pub fn set_http_method(
         mut self,
-        input: std::option::Option<crate::types::ApiDestinationHttpMethod>,
+        input: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
     ) -> Self {
         self.http_method = input;
         self
     }
     /// <p>The maximum number of invocations per second to send to the HTTP endpoint.</p>
     pub fn invocation_rate_limit_per_second(mut self, input: i32) -> Self {
-        self.invocation_rate_limit_per_second = Some(input);
+        self.invocation_rate_limit_per_second = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of invocations per second to send to the HTTP endpoint.</p>
-    pub fn set_invocation_rate_limit_per_second(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_invocation_rate_limit_per_second(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.invocation_rate_limit_per_second = input;
         self
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self

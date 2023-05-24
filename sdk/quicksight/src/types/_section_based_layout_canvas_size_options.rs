@@ -2,18 +2,18 @@
 
 /// <p>The options for the canvas of a section-based layout.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionBasedLayoutCanvasSizeOptions {
     /// <p>The options for a paper canvas of a section-based layout.</p>
     #[doc(hidden)]
     pub paper_canvas_size_options:
-        std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>,
+        ::std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>,
 }
 impl SectionBasedLayoutCanvasSizeOptions {
     /// <p>The options for a paper canvas of a section-based layout.</p>
     pub fn paper_canvas_size_options(
         &self,
-    ) -> std::option::Option<&crate::types::SectionBasedLayoutPaperCanvasSizeOptions> {
+    ) -> ::std::option::Option<&crate::types::SectionBasedLayoutPaperCanvasSizeOptions> {
         self.paper_canvas_size_options.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl SectionBasedLayoutCanvasSizeOptions {
 
 /// A builder for [`SectionBasedLayoutCanvasSizeOptions`](crate::types::SectionBasedLayoutCanvasSizeOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SectionBasedLayoutCanvasSizeOptionsBuilder {
     pub(crate) paper_canvas_size_options:
-        std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>,
+        ::std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>,
 }
 impl SectionBasedLayoutCanvasSizeOptionsBuilder {
     /// <p>The options for a paper canvas of a section-based layout.</p>
@@ -37,13 +39,13 @@ impl SectionBasedLayoutCanvasSizeOptionsBuilder {
         mut self,
         input: crate::types::SectionBasedLayoutPaperCanvasSizeOptions,
     ) -> Self {
-        self.paper_canvas_size_options = Some(input);
+        self.paper_canvas_size_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options for a paper canvas of a section-based layout.</p>
     pub fn set_paper_canvas_size_options(
         mut self,
-        input: std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>,
+        input: ::std::option::Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>,
     ) -> Self {
         self.paper_canvas_size_options = input;
         self

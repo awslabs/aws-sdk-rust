@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UrlTargetConfiguration {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum UrlTargetConfiguration {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UrlTargetConfiguration {
+impl ::std::convert::From<&str> for UrlTargetConfiguration {
     fn from(s: &str) -> Self {
         match s {
             "NEW_TAB" => UrlTargetConfiguration::NewTab,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for UrlTargetConfiguration {
         }
     }
 }
-impl std::str::FromStr for UrlTargetConfiguration {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UrlTargetConfiguration {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UrlTargetConfiguration::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UrlTargetConfiguration::from(s))
     }
 }
 impl UrlTargetConfiguration {
@@ -91,7 +91,7 @@ impl UrlTargetConfiguration {
         &["NEW_TAB", "NEW_WINDOW", "SAME_TAB"]
     }
 }
-impl AsRef<str> for UrlTargetConfiguration {
+impl ::std::convert::AsRef<str> for UrlTargetConfiguration {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,18 +2,18 @@
 
 /// <p> The identifer of the input routed from AWS IoT SiteWise. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotSiteWiseInputIdentifier {
     /// <p> The identifier of the AWS IoT SiteWise asset model property. </p>
     #[doc(hidden)]
     pub iot_site_wise_asset_model_property_identifier:
-        std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
+        ::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
 }
 impl IotSiteWiseInputIdentifier {
     /// <p> The identifier of the AWS IoT SiteWise asset model property. </p>
     pub fn iot_site_wise_asset_model_property_identifier(
         &self,
-    ) -> std::option::Option<&crate::types::IotSiteWiseAssetModelPropertyIdentifier> {
+    ) -> ::std::option::Option<&crate::types::IotSiteWiseAssetModelPropertyIdentifier> {
         self.iot_site_wise_asset_model_property_identifier.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl IotSiteWiseInputIdentifier {
 
 /// A builder for [`IotSiteWiseInputIdentifier`](crate::types::IotSiteWiseInputIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IotSiteWiseInputIdentifierBuilder {
     pub(crate) iot_site_wise_asset_model_property_identifier:
-        std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
+        ::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
 }
 impl IotSiteWiseInputIdentifierBuilder {
     /// <p> The identifier of the AWS IoT SiteWise asset model property. </p>
@@ -37,13 +39,13 @@ impl IotSiteWiseInputIdentifierBuilder {
         mut self,
         input: crate::types::IotSiteWiseAssetModelPropertyIdentifier,
     ) -> Self {
-        self.iot_site_wise_asset_model_property_identifier = Some(input);
+        self.iot_site_wise_asset_model_property_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p> The identifier of the AWS IoT SiteWise asset model property. </p>
     pub fn set_iot_site_wise_asset_model_property_identifier(
         mut self,
-        input: std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
+        input: ::std::option::Option<crate::types::IotSiteWiseAssetModelPropertyIdentifier>,
     ) -> Self {
         self.iot_site_wise_asset_model_property_identifier = input;
         self

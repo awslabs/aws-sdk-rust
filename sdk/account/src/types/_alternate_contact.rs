@@ -2,50 +2,50 @@
 
 /// <p>A structure that contains the details of an alternate contact associated with an Amazon Web Services account</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AlternateContact {
     /// <p>The name associated with this alternate contact.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The title associated with this alternate contact.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The email address associated with this alternate contact.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The phone number associated with this alternate contact.</p>
     #[doc(hidden)]
-    pub phone_number: std::option::Option<std::string::String>,
+    pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The type of alternate contact.</p>
     #[doc(hidden)]
-    pub alternate_contact_type: std::option::Option<crate::types::AlternateContactType>,
+    pub alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
 }
 impl AlternateContact {
     /// <p>The name associated with this alternate contact.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The title associated with this alternate contact.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The email address associated with this alternate contact.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p>The phone number associated with this alternate contact.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
     /// <p>The type of alternate contact.</p>
     pub fn alternate_contact_type(
         &self,
-    ) -> std::option::Option<&crate::types::AlternateContactType> {
+    ) -> ::std::option::Option<&crate::types::AlternateContactType> {
         self.alternate_contact_type.as_ref()
     }
 }
-impl std::fmt::Debug for AlternateContact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AlternateContact {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AlternateContact");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("title", &"*** Sensitive Data Redacted ***");
@@ -64,64 +64,70 @@ impl AlternateContact {
 
 /// A builder for [`AlternateContact`](crate::types::AlternateContact).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AlternateContactBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) email_address: std::option::Option<std::string::String>,
-    pub(crate) phone_number: std::option::Option<std::string::String>,
-    pub(crate) alternate_contact_type: std::option::Option<crate::types::AlternateContactType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) alternate_contact_type: ::std::option::Option<crate::types::AlternateContactType>,
 }
 impl AlternateContactBuilder {
     /// <p>The name associated with this alternate contact.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name associated with this alternate contact.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The title associated with this alternate contact.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title associated with this alternate contact.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The email address associated with this alternate contact.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address associated with this alternate contact.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
     /// <p>The phone number associated with this alternate contact.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number = Some(input.into());
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number associated with this alternate contact.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
     /// <p>The type of alternate contact.</p>
     pub fn alternate_contact_type(mut self, input: crate::types::AlternateContactType) -> Self {
-        self.alternate_contact_type = Some(input);
+        self.alternate_contact_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of alternate contact.</p>
     pub fn set_alternate_contact_type(
         mut self,
-        input: std::option::Option<crate::types::AlternateContactType>,
+        input: ::std::option::Option<crate::types::AlternateContactType>,
     ) -> Self {
         self.alternate_contact_type = input;
         self
@@ -137,8 +143,8 @@ impl AlternateContactBuilder {
         }
     }
 }
-impl std::fmt::Debug for AlternateContactBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AlternateContactBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AlternateContactBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("title", &"*** Sensitive Data Redacted ***");

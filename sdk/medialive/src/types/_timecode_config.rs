@@ -2,22 +2,22 @@
 
 /// Timecode Config
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimecodeConfig {
     /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::TimecodeConfigSource>,
+    pub source: ::std::option::Option<crate::types::TimecodeConfigSource>,
     /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
     #[doc(hidden)]
-    pub sync_threshold: std::option::Option<i32>,
+    pub sync_threshold: ::std::option::Option<i32>,
 }
 impl TimecodeConfig {
     /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
-    pub fn source(&self) -> std::option::Option<&crate::types::TimecodeConfigSource> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::TimecodeConfigSource> {
         self.source.as_ref()
     }
     /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
-    pub fn sync_threshold(&self) -> std::option::Option<i32> {
+    pub fn sync_threshold(&self) -> ::std::option::Option<i32> {
         self.sync_threshold
     }
 }
@@ -30,32 +30,34 @@ impl TimecodeConfig {
 
 /// A builder for [`TimecodeConfig`](crate::types::TimecodeConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimecodeConfigBuilder {
-    pub(crate) source: std::option::Option<crate::types::TimecodeConfigSource>,
-    pub(crate) sync_threshold: std::option::Option<i32>,
+    pub(crate) source: ::std::option::Option<crate::types::TimecodeConfigSource>,
+    pub(crate) sync_threshold: ::std::option::Option<i32>,
 }
 impl TimecodeConfigBuilder {
     /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
     pub fn source(mut self, input: crate::types::TimecodeConfigSource) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using "Start at 0" (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.
     pub fn set_source(
         mut self,
-        input: std::option::Option<crate::types::TimecodeConfigSource>,
+        input: ::std::option::Option<crate::types::TimecodeConfigSource>,
     ) -> Self {
         self.source = input;
         self
     }
     /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
     pub fn sync_threshold(mut self, input: i32) -> Self {
-        self.sync_threshold = Some(input);
+        self.sync_threshold = ::std::option::Option::Some(input);
         self
     }
     /// Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.
-    pub fn set_sync_threshold(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sync_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sync_threshold = input;
         self
     }

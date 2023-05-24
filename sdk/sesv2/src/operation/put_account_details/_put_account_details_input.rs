@@ -2,61 +2,62 @@
 
 /// <p>A request to submit new account details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutAccountDetailsInput {
     /// <p>The type of email your account will send.</p>
     #[doc(hidden)]
-    pub mail_type: std::option::Option<crate::types::MailType>,
+    pub mail_type: ::std::option::Option<crate::types::MailType>,
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
     #[doc(hidden)]
-    pub website_url: std::option::Option<std::string::String>,
+    pub website_url: ::std::option::Option<::std::string::String>,
     /// <p>The language you would prefer to be contacted with.</p>
     #[doc(hidden)]
-    pub contact_language: std::option::Option<crate::types::ContactLanguage>,
+    pub contact_language: ::std::option::Option<crate::types::ContactLanguage>,
     /// <p>A description of the types of email that you plan to send.</p>
     #[doc(hidden)]
-    pub use_case_description: std::option::Option<std::string::String>,
+    pub use_case_description: ::std::option::Option<::std::string::String>,
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
     #[doc(hidden)]
-    pub additional_contact_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub additional_contact_email_addresses:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     #[doc(hidden)]
-    pub production_access_enabled: std::option::Option<bool>,
+    pub production_access_enabled: ::std::option::Option<bool>,
 }
 impl PutAccountDetailsInput {
     /// <p>The type of email your account will send.</p>
-    pub fn mail_type(&self) -> std::option::Option<&crate::types::MailType> {
+    pub fn mail_type(&self) -> ::std::option::Option<&crate::types::MailType> {
         self.mail_type.as_ref()
     }
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
-    pub fn website_url(&self) -> std::option::Option<&str> {
+    pub fn website_url(&self) -> ::std::option::Option<&str> {
         self.website_url.as_deref()
     }
     /// <p>The language you would prefer to be contacted with.</p>
-    pub fn contact_language(&self) -> std::option::Option<&crate::types::ContactLanguage> {
+    pub fn contact_language(&self) -> ::std::option::Option<&crate::types::ContactLanguage> {
         self.contact_language.as_ref()
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    pub fn use_case_description(&self) -> std::option::Option<&str> {
+    pub fn use_case_description(&self) -> ::std::option::Option<&str> {
         self.use_case_description.as_deref()
     }
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
     pub fn additional_contact_email_addresses(
         &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.additional_contact_email_addresses.as_deref()
     }
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
-    pub fn production_access_enabled(&self) -> std::option::Option<bool> {
+    pub fn production_access_enabled(&self) -> ::std::option::Option<bool> {
         self.production_access_enabled
     }
 }
-impl std::fmt::Debug for PutAccountDetailsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PutAccountDetailsInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccountDetailsInput");
         formatter.field("mail_type", &self.mail_type);
         formatter.field("website_url", &"*** Sensitive Data Redacted ***");
@@ -80,59 +81,62 @@ impl PutAccountDetailsInput {
 
 /// A builder for [`PutAccountDetailsInput`](crate::operation::put_account_details::PutAccountDetailsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PutAccountDetailsInputBuilder {
-    pub(crate) mail_type: std::option::Option<crate::types::MailType>,
-    pub(crate) website_url: std::option::Option<std::string::String>,
-    pub(crate) contact_language: std::option::Option<crate::types::ContactLanguage>,
-    pub(crate) use_case_description: std::option::Option<std::string::String>,
+    pub(crate) mail_type: ::std::option::Option<crate::types::MailType>,
+    pub(crate) website_url: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_language: ::std::option::Option<crate::types::ContactLanguage>,
+    pub(crate) use_case_description: ::std::option::Option<::std::string::String>,
     pub(crate) additional_contact_email_addresses:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) production_access_enabled: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) production_access_enabled: ::std::option::Option<bool>,
 }
 impl PutAccountDetailsInputBuilder {
     /// <p>The type of email your account will send.</p>
     pub fn mail_type(mut self, input: crate::types::MailType) -> Self {
-        self.mail_type = Some(input);
+        self.mail_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of email your account will send.</p>
-    pub fn set_mail_type(mut self, input: std::option::Option<crate::types::MailType>) -> Self {
+    pub fn set_mail_type(mut self, input: ::std::option::Option<crate::types::MailType>) -> Self {
         self.mail_type = input;
         self
     }
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
-    pub fn website_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.website_url = Some(input.into());
+    pub fn website_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.website_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
-    pub fn set_website_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_website_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.website_url = input;
         self
     }
     /// <p>The language you would prefer to be contacted with.</p>
     pub fn contact_language(mut self, input: crate::types::ContactLanguage) -> Self {
-        self.contact_language = Some(input);
+        self.contact_language = ::std::option::Option::Some(input);
         self
     }
     /// <p>The language you would prefer to be contacted with.</p>
     pub fn set_contact_language(
         mut self,
-        input: std::option::Option<crate::types::ContactLanguage>,
+        input: ::std::option::Option<crate::types::ContactLanguage>,
     ) -> Self {
         self.contact_language = input;
         self
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    pub fn use_case_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.use_case_description = Some(input.into());
+    pub fn use_case_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.use_case_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the types of email that you plan to send.</p>
     pub fn set_use_case_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.use_case_description = input;
         self
@@ -144,17 +148,17 @@ impl PutAccountDetailsInputBuilder {
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
     pub fn additional_contact_email_addresses(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.additional_contact_email_addresses.unwrap_or_default();
         v.push(input.into());
-        self.additional_contact_email_addresses = Some(v);
+        self.additional_contact_email_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
     pub fn set_additional_contact_email_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.additional_contact_email_addresses = input;
         self
@@ -163,24 +167,24 @@ impl PutAccountDetailsInputBuilder {
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn production_access_enabled(mut self, input: bool) -> Self {
-        self.production_access_enabled = Some(input);
+        self.production_access_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
-    pub fn set_production_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_production_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.production_access_enabled = input;
         self
     }
     /// Consumes the builder and constructs a [`PutAccountDetailsInput`](crate::operation::put_account_details::PutAccountDetailsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::put_account_details::PutAccountDetailsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::put_account_details::PutAccountDetailsInput {
                 mail_type: self.mail_type,
                 website_url: self.website_url,
@@ -192,8 +196,8 @@ impl PutAccountDetailsInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for PutAccountDetailsInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PutAccountDetailsInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PutAccountDetailsInputBuilder");
         formatter.field("mail_type", &self.mail_type);
         formatter.field("website_url", &"*** Sensitive Data Redacted ***");

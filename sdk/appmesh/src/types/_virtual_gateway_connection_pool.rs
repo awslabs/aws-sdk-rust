@@ -4,7 +4,7 @@
 /// <p>Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.</p>
 /// <p>If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualGatewayConnectionPool {
     /// <p>An object that represents a type of connection pool. </p>
     Grpc(crate::types::VirtualGatewayGrpcConnectionPool),
@@ -27,11 +27,11 @@ impl VirtualGatewayConnectionPool {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayGrpcConnectionPool, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayGrpcConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Grpc(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Grpc`](crate::types::VirtualGatewayConnectionPool::Grpc).
@@ -42,11 +42,11 @@ impl VirtualGatewayConnectionPool {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayHttpConnectionPool, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayHttpConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Http(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Http`](crate::types::VirtualGatewayConnectionPool::Http).
@@ -57,11 +57,11 @@ impl VirtualGatewayConnectionPool {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayHttp2ConnectionPool, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayHttp2ConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Http2(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Http2`](crate::types::VirtualGatewayConnectionPool::Http2).

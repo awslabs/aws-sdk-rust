@@ -2,22 +2,22 @@
 
 /// <p>Includes information about tags you define to assign tagged resources to a backup plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionParameter {
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
     #[doc(hidden)]
-    pub condition_key: std::option::Option<std::string::String>,
+    pub condition_key: ::std::option::Option<::std::string::String>,
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
     #[doc(hidden)]
-    pub condition_value: std::option::Option<std::string::String>,
+    pub condition_value: ::std::option::Option<::std::string::String>,
 }
 impl ConditionParameter {
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    pub fn condition_key(&self) -> std::option::Option<&str> {
+    pub fn condition_key(&self) -> ::std::option::Option<&str> {
         self.condition_key.as_deref()
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    pub fn condition_value(&self) -> std::option::Option<&str> {
+    pub fn condition_value(&self) -> ::std::option::Option<&str> {
         self.condition_value.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl ConditionParameter {
 
 /// A builder for [`ConditionParameter`](crate::types::ConditionParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionParameterBuilder {
-    pub(crate) condition_key: std::option::Option<std::string::String>,
-    pub(crate) condition_value: std::option::Option<std::string::String>,
+    pub(crate) condition_key: ::std::option::Option<::std::string::String>,
+    pub(crate) condition_value: ::std::option::Option<::std::string::String>,
 }
 impl ConditionParameterBuilder {
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    pub fn condition_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.condition_key = Some(input.into());
+    pub fn condition_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.condition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Department</code> is the key.</p>
-    pub fn set_condition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_condition_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.condition_key = input;
         self
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    pub fn condition_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.condition_value = Some(input.into());
+    pub fn condition_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.condition_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>, <code>Accounting</code> is the value.</p>
-    pub fn set_condition_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_condition_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.condition_value = input;
         self
     }

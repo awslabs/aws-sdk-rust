@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AwsLogSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AwsLogSourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AwsLogSourceType {
+impl ::std::convert::From<&str> for AwsLogSourceType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD_TRAIL" => AwsLogSourceType::CloudTrail,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AwsLogSourceType {
         }
     }
 }
-impl std::str::FromStr for AwsLogSourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AwsLogSourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AwsLogSourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AwsLogSourceType::from(s))
     }
 }
 impl AwsLogSourceType {
@@ -96,7 +96,7 @@ impl AwsLogSourceType {
         &["CLOUD_TRAIL", "ROUTE53", "SH_FINDINGS", "VPC_FLOW"]
     }
 }
-impl AsRef<str> for AwsLogSourceType {
+impl ::std::convert::AsRef<str> for AwsLogSourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

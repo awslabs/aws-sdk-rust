@@ -2,7 +2,7 @@
 
 /// <p>A data transformation on a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum TransformOperation {
     /// <p>A transform operation that casts a column to a different type.</p>
     CastColumnTypeOperation(crate::types::CastColumnTypeOperation),
@@ -35,11 +35,11 @@ impl TransformOperation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cast_column_type_operation(
         &self,
-    ) -> std::result::Result<&crate::types::CastColumnTypeOperation, &Self> {
+    ) -> ::std::result::Result<&crate::types::CastColumnTypeOperation, &Self> {
         if let TransformOperation::CastColumnTypeOperation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CastColumnTypeOperation`](crate::types::TransformOperation::CastColumnTypeOperation).
@@ -50,11 +50,11 @@ impl TransformOperation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_create_columns_operation(
         &self,
-    ) -> std::result::Result<&crate::types::CreateColumnsOperation, &Self> {
+    ) -> ::std::result::Result<&crate::types::CreateColumnsOperation, &Self> {
         if let TransformOperation::CreateColumnsOperation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CreateColumnsOperation`](crate::types::TransformOperation::CreateColumnsOperation).
@@ -65,11 +65,11 @@ impl TransformOperation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_filter_operation(
         &self,
-    ) -> std::result::Result<&crate::types::FilterOperation, &Self> {
+    ) -> ::std::result::Result<&crate::types::FilterOperation, &Self> {
         if let TransformOperation::FilterOperation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`FilterOperation`](crate::types::TransformOperation::FilterOperation).
@@ -80,11 +80,11 @@ impl TransformOperation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_override_dataset_parameter_operation(
         &self,
-    ) -> std::result::Result<&crate::types::OverrideDatasetParameterOperation, &Self> {
+    ) -> ::std::result::Result<&crate::types::OverrideDatasetParameterOperation, &Self> {
         if let TransformOperation::OverrideDatasetParameterOperation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`OverrideDatasetParameterOperation`](crate::types::TransformOperation::OverrideDatasetParameterOperation).
@@ -95,11 +95,11 @@ impl TransformOperation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_project_operation(
         &self,
-    ) -> std::result::Result<&crate::types::ProjectOperation, &Self> {
+    ) -> ::std::result::Result<&crate::types::ProjectOperation, &Self> {
         if let TransformOperation::ProjectOperation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ProjectOperation`](crate::types::TransformOperation::ProjectOperation).
@@ -110,11 +110,11 @@ impl TransformOperation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_rename_column_operation(
         &self,
-    ) -> std::result::Result<&crate::types::RenameColumnOperation, &Self> {
+    ) -> ::std::result::Result<&crate::types::RenameColumnOperation, &Self> {
         if let TransformOperation::RenameColumnOperation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RenameColumnOperation`](crate::types::TransformOperation::RenameColumnOperation).
@@ -125,11 +125,11 @@ impl TransformOperation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tag_column_operation(
         &self,
-    ) -> std::result::Result<&crate::types::TagColumnOperation, &Self> {
+    ) -> ::std::result::Result<&crate::types::TagColumnOperation, &Self> {
         if let TransformOperation::TagColumnOperation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TagColumnOperation`](crate::types::TransformOperation::TagColumnOperation).
@@ -140,11 +140,11 @@ impl TransformOperation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_untag_column_operation(
         &self,
-    ) -> std::result::Result<&crate::types::UntagColumnOperation, &Self> {
+    ) -> ::std::result::Result<&crate::types::UntagColumnOperation, &Self> {
         if let TransformOperation::UntagColumnOperation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`UntagColumnOperation`](crate::types::TransformOperation::UntagColumnOperation).

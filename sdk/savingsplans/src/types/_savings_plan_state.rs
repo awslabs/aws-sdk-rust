@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SavingsPlanState {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum SavingsPlanState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SavingsPlanState {
+impl ::std::convert::From<&str> for SavingsPlanState {
     fn from(s: &str) -> Self {
         match s {
             "active" => SavingsPlanState::Active,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for SavingsPlanState {
         }
     }
 }
-impl std::str::FromStr for SavingsPlanState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SavingsPlanState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SavingsPlanState::from(s))
     }
 }
 impl SavingsPlanState {
@@ -113,7 +113,7 @@ impl SavingsPlanState {
         ]
     }
 }
-impl AsRef<str> for SavingsPlanState {
+impl ::std::convert::AsRef<str> for SavingsPlanState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

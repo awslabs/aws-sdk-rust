@@ -2,18 +2,18 @@
 
 /// <p>The field well configuration of a sankey diagram.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SankeyDiagramFieldWells {
     /// <p>The field well configuration of a sankey diagram.</p>
     #[doc(hidden)]
     pub sankey_diagram_aggregated_field_wells:
-        std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
+        ::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
 }
 impl SankeyDiagramFieldWells {
     /// <p>The field well configuration of a sankey diagram.</p>
     pub fn sankey_diagram_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::SankeyDiagramAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::SankeyDiagramAggregatedFieldWells> {
         self.sankey_diagram_aggregated_field_wells.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl SankeyDiagramFieldWells {
 
 /// A builder for [`SankeyDiagramFieldWells`](crate::types::SankeyDiagramFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SankeyDiagramFieldWellsBuilder {
     pub(crate) sankey_diagram_aggregated_field_wells:
-        std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
+        ::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
 }
 impl SankeyDiagramFieldWellsBuilder {
     /// <p>The field well configuration of a sankey diagram.</p>
@@ -37,13 +39,13 @@ impl SankeyDiagramFieldWellsBuilder {
         mut self,
         input: crate::types::SankeyDiagramAggregatedFieldWells,
     ) -> Self {
-        self.sankey_diagram_aggregated_field_wells = Some(input);
+        self.sankey_diagram_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field well configuration of a sankey diagram.</p>
     pub fn set_sankey_diagram_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::SankeyDiagramAggregatedFieldWells>,
     ) -> Self {
         self.sankey_diagram_aggregated_field_wells = input;
         self

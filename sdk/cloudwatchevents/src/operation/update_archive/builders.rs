@@ -6,56 +6,59 @@ pub use crate::operation::update_archive::_update_archive_input::UpdateArchiveIn
 /// Fluent builder constructing a request to `UpdateArchive`.
 ///
 /// <p>Updates the specified archive.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateArchiveFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_archive::builders::UpdateArchiveInputBuilder,
 }
 impl UpdateArchiveFluentBuilder {
     /// Creates a new `UpdateArchive`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_archive::UpdateArchive,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_archive::UpdateArchiveError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive::UpdateArchiveError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_archive::UpdateArchiveOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_archive::UpdateArchiveError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive::UpdateArchiveError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,45 @@ impl UpdateArchiveFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_archive::UpdateArchiveOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_archive::UpdateArchiveError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_archive::UpdateArchiveError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the archive to update.</p>
-    pub fn archive_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn archive_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.archive_name(input.into());
         self
     }
     /// <p>The name of the archive to update.</p>
-    pub fn set_archive_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_archive_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_archive_name(input);
         self
     }
     /// <p>The description for the archive.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description for the archive.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
-    pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_pattern(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_pattern(input.into());
         self
     }
     /// <p>The event pattern to use to filter events sent to the archive.</p>
-    pub fn set_event_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_pattern(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_event_pattern(input);
         self
     }
@@ -110,7 +119,7 @@ impl UpdateArchiveFluentBuilder {
         self
     }
     /// <p>The number of days to retain events in the archive.</p>
-    pub fn set_retention_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_days(input);
         self
     }

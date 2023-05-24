@@ -2,7 +2,7 @@
 
 /// <p>Represents a single step of the Upgrade or Upgrade Eligibility Check workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeStepItem {
     /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
     /// <ul>
@@ -12,7 +12,7 @@ pub struct UpgradeStepItem {
     /// </ul>
     /// <p></p>
     #[doc(hidden)]
-    pub upgrade_step: std::option::Option<crate::types::UpgradeStep>,
+    pub upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
     /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
     /// <ul>
     /// <li>In Progress</li>
@@ -22,13 +22,13 @@ pub struct UpgradeStepItem {
     /// </ul>
     /// <p></p>
     #[doc(hidden)]
-    pub upgrade_step_status: std::option::Option<crate::types::UpgradeStatus>,
+    pub upgrade_step_status: ::std::option::Option<crate::types::UpgradeStatus>,
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
     #[doc(hidden)]
-    pub issues: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub issues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Floating point value representing progress percentage of a particular step.</p>
     #[doc(hidden)]
-    pub progress_percent: std::option::Option<f64>,
+    pub progress_percent: ::std::option::Option<f64>,
 }
 impl UpgradeStepItem {
     /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
@@ -38,7 +38,7 @@ impl UpgradeStepItem {
     /// <li>Upgrade</li>
     /// </ul>
     /// <p></p>
-    pub fn upgrade_step(&self) -> std::option::Option<&crate::types::UpgradeStep> {
+    pub fn upgrade_step(&self) -> ::std::option::Option<&crate::types::UpgradeStep> {
         self.upgrade_step.as_ref()
     }
     /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
@@ -49,15 +49,15 @@ impl UpgradeStepItem {
     /// <li>Failed</li>
     /// </ul>
     /// <p></p>
-    pub fn upgrade_step_status(&self) -> std::option::Option<&crate::types::UpgradeStatus> {
+    pub fn upgrade_step_status(&self) -> ::std::option::Option<&crate::types::UpgradeStatus> {
         self.upgrade_step_status.as_ref()
     }
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
-    pub fn issues(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn issues(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.issues.as_deref()
     }
     /// <p>The Floating point value representing progress percentage of a particular step.</p>
-    pub fn progress_percent(&self) -> std::option::Option<f64> {
+    pub fn progress_percent(&self) -> ::std::option::Option<f64> {
         self.progress_percent
     }
 }
@@ -70,12 +70,14 @@ impl UpgradeStepItem {
 
 /// A builder for [`UpgradeStepItem`](crate::types::UpgradeStepItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpgradeStepItemBuilder {
-    pub(crate) upgrade_step: std::option::Option<crate::types::UpgradeStep>,
-    pub(crate) upgrade_step_status: std::option::Option<crate::types::UpgradeStatus>,
-    pub(crate) issues: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) progress_percent: std::option::Option<f64>,
+    pub(crate) upgrade_step: ::std::option::Option<crate::types::UpgradeStep>,
+    pub(crate) upgrade_step_status: ::std::option::Option<crate::types::UpgradeStatus>,
+    pub(crate) issues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) progress_percent: ::std::option::Option<f64>,
 }
 impl UpgradeStepItemBuilder {
     /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
@@ -86,7 +88,7 @@ impl UpgradeStepItemBuilder {
     /// </ul>
     /// <p></p>
     pub fn upgrade_step(mut self, input: crate::types::UpgradeStep) -> Self {
-        self.upgrade_step = Some(input);
+        self.upgrade_step = ::std::option::Option::Some(input);
         self
     }
     /// <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p>
@@ -98,7 +100,7 @@ impl UpgradeStepItemBuilder {
     /// <p></p>
     pub fn set_upgrade_step(
         mut self,
-        input: std::option::Option<crate::types::UpgradeStep>,
+        input: ::std::option::Option<crate::types::UpgradeStep>,
     ) -> Self {
         self.upgrade_step = input;
         self
@@ -112,7 +114,7 @@ impl UpgradeStepItemBuilder {
     /// </ul>
     /// <p></p>
     pub fn upgrade_step_status(mut self, input: crate::types::UpgradeStatus) -> Self {
-        self.upgrade_step_status = Some(input);
+        self.upgrade_step_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of a particular step during an upgrade. The status can take one of the following values: </p>
@@ -125,7 +127,7 @@ impl UpgradeStepItemBuilder {
     /// <p></p>
     pub fn set_upgrade_step_status(
         mut self,
-        input: std::option::Option<crate::types::UpgradeStatus>,
+        input: ::std::option::Option<crate::types::UpgradeStatus>,
     ) -> Self {
         self.upgrade_step_status = input;
         self
@@ -135,27 +137,27 @@ impl UpgradeStepItemBuilder {
     /// To override the contents of this collection use [`set_issues`](Self::set_issues).
     ///
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
-    pub fn issues(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn issues(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.issues.unwrap_or_default();
         v.push(input.into());
-        self.issues = Some(v);
+        self.issues = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of strings containing detailed information about the errors encountered in a particular step.</p>
     pub fn set_issues(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.issues = input;
         self
     }
     /// <p>The Floating point value representing progress percentage of a particular step.</p>
     pub fn progress_percent(mut self, input: f64) -> Self {
-        self.progress_percent = Some(input);
+        self.progress_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Floating point value representing progress percentage of a particular step.</p>
-    pub fn set_progress_percent(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_progress_percent(mut self, input: ::std::option::Option<f64>) -> Self {
         self.progress_percent = input;
         self
     }

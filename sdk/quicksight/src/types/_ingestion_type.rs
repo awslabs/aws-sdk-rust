@@ -38,13 +38,13 @@
 /// This defines the type of ingestion user wants to trigger. This is part of create ingestion request.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IngestionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum IngestionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IngestionType {
+impl ::std::convert::From<&str> for IngestionType {
     fn from(s: &str) -> Self {
         match s {
             "FULL_REFRESH" => IngestionType::FullRefresh,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for IngestionType {
         }
     }
 }
-impl std::str::FromStr for IngestionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IngestionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IngestionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IngestionType::from(s))
     }
 }
 impl IngestionType {
@@ -86,7 +86,7 @@ impl IngestionType {
         &["FULL_REFRESH", "INCREMENTAL_REFRESH"]
     }
 }
-impl AsRef<str> for IngestionType {
+impl ::std::convert::AsRef<str> for IngestionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

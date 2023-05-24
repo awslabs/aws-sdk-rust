@@ -2,36 +2,38 @@
 
 /// <p>The execution status details of the cluster step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepStatus {
     /// <p>The execution state of the cluster step.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::StepState>,
+    pub state: ::std::option::Option<crate::types::StepState>,
     /// <p>The reason for the step execution status change.</p>
     #[doc(hidden)]
-    pub state_change_reason: std::option::Option<crate::types::StepStateChangeReason>,
+    pub state_change_reason: ::std::option::Option<crate::types::StepStateChangeReason>,
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
     #[doc(hidden)]
-    pub failure_details: std::option::Option<crate::types::FailureDetails>,
+    pub failure_details: ::std::option::Option<crate::types::FailureDetails>,
     /// <p>The timeline of the cluster step status over time.</p>
     #[doc(hidden)]
-    pub timeline: std::option::Option<crate::types::StepTimeline>,
+    pub timeline: ::std::option::Option<crate::types::StepTimeline>,
 }
 impl StepStatus {
     /// <p>The execution state of the cluster step.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::StepState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::StepState> {
         self.state.as_ref()
     }
     /// <p>The reason for the step execution status change.</p>
-    pub fn state_change_reason(&self) -> std::option::Option<&crate::types::StepStateChangeReason> {
+    pub fn state_change_reason(
+        &self,
+    ) -> ::std::option::Option<&crate::types::StepStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
-    pub fn failure_details(&self) -> std::option::Option<&crate::types::FailureDetails> {
+    pub fn failure_details(&self) -> ::std::option::Option<&crate::types::FailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>The timeline of the cluster step status over time.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::types::StepTimeline> {
+    pub fn timeline(&self) -> ::std::option::Option<&crate::types::StepTimeline> {
         self.timeline.as_ref()
     }
 }
@@ -44,57 +46,62 @@ impl StepStatus {
 
 /// A builder for [`StepStatus`](crate::types::StepStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StepStatusBuilder {
-    pub(crate) state: std::option::Option<crate::types::StepState>,
-    pub(crate) state_change_reason: std::option::Option<crate::types::StepStateChangeReason>,
-    pub(crate) failure_details: std::option::Option<crate::types::FailureDetails>,
-    pub(crate) timeline: std::option::Option<crate::types::StepTimeline>,
+    pub(crate) state: ::std::option::Option<crate::types::StepState>,
+    pub(crate) state_change_reason: ::std::option::Option<crate::types::StepStateChangeReason>,
+    pub(crate) failure_details: ::std::option::Option<crate::types::FailureDetails>,
+    pub(crate) timeline: ::std::option::Option<crate::types::StepTimeline>,
 }
 impl StepStatusBuilder {
     /// <p>The execution state of the cluster step.</p>
     pub fn state(mut self, input: crate::types::StepState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The execution state of the cluster step.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::StepState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::StepState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The reason for the step execution status change.</p>
     pub fn state_change_reason(mut self, input: crate::types::StepStateChangeReason) -> Self {
-        self.state_change_reason = Some(input);
+        self.state_change_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason for the step execution status change.</p>
     pub fn set_state_change_reason(
         mut self,
-        input: std::option::Option<crate::types::StepStateChangeReason>,
+        input: ::std::option::Option<crate::types::StepStateChangeReason>,
     ) -> Self {
         self.state_change_reason = input;
         self
     }
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
-        self.failure_details = Some(input);
+        self.failure_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for the step failure including reason, message, and log file path where the root cause was identified.</p>
     pub fn set_failure_details(
         mut self,
-        input: std::option::Option<crate::types::FailureDetails>,
+        input: ::std::option::Option<crate::types::FailureDetails>,
     ) -> Self {
         self.failure_details = input;
         self
     }
     /// <p>The timeline of the cluster step status over time.</p>
     pub fn timeline(mut self, input: crate::types::StepTimeline) -> Self {
-        self.timeline = Some(input);
+        self.timeline = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timeline of the cluster step status over time.</p>
-    pub fn set_timeline(mut self, input: std::option::Option<crate::types::StepTimeline>) -> Self {
+    pub fn set_timeline(
+        mut self,
+        input: ::std::option::Option<crate::types::StepTimeline>,
+    ) -> Self {
         self.timeline = input;
         self
     }

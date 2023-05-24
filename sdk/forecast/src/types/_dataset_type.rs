@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DatasetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DatasetType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DatasetType {
+impl ::std::convert::From<&str> for DatasetType {
     fn from(s: &str) -> Self {
         match s {
             "ITEM_METADATA" => DatasetType::ItemMetadata,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for DatasetType {
         }
     }
 }
-impl std::str::FromStr for DatasetType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DatasetType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatasetType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DatasetType::from(s))
     }
 }
 impl DatasetType {
@@ -89,7 +89,7 @@ impl DatasetType {
         &["ITEM_METADATA", "RELATED_TIME_SERIES", "TARGET_TIME_SERIES"]
     }
 }
-impl AsRef<str> for DatasetType {
+impl ::std::convert::AsRef<str> for DatasetType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

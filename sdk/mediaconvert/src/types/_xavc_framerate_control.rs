@@ -38,13 +38,13 @@
 /// If you are using the console, use the Frame rate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list. The framerates shown in the dropdown list are decimal approximations of fractions. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate that you specify in the settings FramerateNumerator and FramerateDenominator.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum XavcFramerateControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum XavcFramerateControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for XavcFramerateControl {
+impl ::std::convert::From<&str> for XavcFramerateControl {
     fn from(s: &str) -> Self {
         match s {
             "INITIALIZE_FROM_SOURCE" => XavcFramerateControl::InitializeFromSource,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for XavcFramerateControl {
         }
     }
 }
-impl std::str::FromStr for XavcFramerateControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for XavcFramerateControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XavcFramerateControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(XavcFramerateControl::from(s))
     }
 }
 impl XavcFramerateControl {
@@ -86,7 +86,7 @@ impl XavcFramerateControl {
         &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
     }
 }
-impl AsRef<str> for XavcFramerateControl {
+impl ::std::convert::AsRef<str> for XavcFramerateControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

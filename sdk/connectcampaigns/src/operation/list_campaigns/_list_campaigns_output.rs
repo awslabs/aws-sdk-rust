@@ -2,27 +2,28 @@
 
 /// ListCampaignsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCampaignsOutput {
     /// The token for the next set of results.
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// A list of Amazon Connect campaigns.
     #[doc(hidden)]
-    pub campaign_summary_list: std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>,
+    pub campaign_summary_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     _request_id: Option<String>,
 }
 impl ListCampaignsOutput {
     /// The token for the next set of results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// A list of Amazon Connect campaigns.
-    pub fn campaign_summary_list(&self) -> std::option::Option<&[crate::types::CampaignSummary]> {
+    pub fn campaign_summary_list(&self) -> ::std::option::Option<&[crate::types::CampaignSummary]> {
         self.campaign_summary_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListCampaignsOutput {
+impl ::aws_http::request_id::RequestId for ListCampaignsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,21 +37,23 @@ impl ListCampaignsOutput {
 
 /// A builder for [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListCampaignsOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) campaign_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     _request_id: Option<String>,
 }
 impl ListCampaignsOutputBuilder {
     /// The token for the next set of results.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// The token for the next set of results.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -62,13 +65,13 @@ impl ListCampaignsOutputBuilder {
     pub fn campaign_summary_list(mut self, input: crate::types::CampaignSummary) -> Self {
         let mut v = self.campaign_summary_list.unwrap_or_default();
         v.push(input);
-        self.campaign_summary_list = Some(v);
+        self.campaign_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// A list of Amazon Connect campaigns.
     pub fn set_campaign_summary_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CampaignSummary>>,
     ) -> Self {
         self.campaign_summary_list = input;
         self

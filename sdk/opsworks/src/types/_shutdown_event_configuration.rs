@@ -2,22 +2,22 @@
 
 /// <p>The Shutdown event configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShutdownEventConfiguration {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     #[doc(hidden)]
-    pub execution_timeout: std::option::Option<i32>,
+    pub execution_timeout: ::std::option::Option<i32>,
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
     #[doc(hidden)]
-    pub delay_until_elb_connections_drained: std::option::Option<bool>,
+    pub delay_until_elb_connections_drained: ::std::option::Option<bool>,
 }
 impl ShutdownEventConfiguration {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
-    pub fn execution_timeout(&self) -> std::option::Option<i32> {
+    pub fn execution_timeout(&self) -> ::std::option::Option<i32> {
         self.execution_timeout
     }
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
-    pub fn delay_until_elb_connections_drained(&self) -> std::option::Option<bool> {
+    pub fn delay_until_elb_connections_drained(&self) -> ::std::option::Option<bool> {
         self.delay_until_elb_connections_drained
     }
 }
@@ -30,31 +30,33 @@ impl ShutdownEventConfiguration {
 
 /// A builder for [`ShutdownEventConfiguration`](crate::types::ShutdownEventConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShutdownEventConfigurationBuilder {
-    pub(crate) execution_timeout: std::option::Option<i32>,
-    pub(crate) delay_until_elb_connections_drained: std::option::Option<bool>,
+    pub(crate) execution_timeout: ::std::option::Option<i32>,
+    pub(crate) delay_until_elb_connections_drained: ::std::option::Option<bool>,
 }
 impl ShutdownEventConfigurationBuilder {
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
     pub fn execution_timeout(mut self, input: i32) -> Self {
-        self.execution_timeout = Some(input);
+        self.execution_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</p>
-    pub fn set_execution_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_execution_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execution_timeout = input;
         self
     }
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
     pub fn delay_until_elb_connections_drained(mut self, input: bool) -> Self {
-        self.delay_until_elb_connections_drained = Some(input);
+        self.delay_until_elb_connections_drained = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to enable Elastic Load Balancing connection draining. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a> </p>
     pub fn set_delay_until_elb_connections_drained(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.delay_until_elb_connections_drained = input;
         self

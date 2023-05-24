@@ -6,29 +6,29 @@ pub use crate::operation::create_job_template::_create_job_template_input::Creat
 /// Fluent builder constructing a request to `CreateJobTemplate`.
 ///
 /// Create a new job template. For information about job templates see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobTemplateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder,
 }
 impl CreateJobTemplateFluentBuilder {
     /// Creates a new `CreateJobTemplate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_job_template::CreateJobTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_job_template::CreateJobTemplateError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateJobTemplateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_job_template::CreateJobTemplateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_job_template::CreateJobTemplateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl CreateJobTemplateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_job_template::CreateJobTemplateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_job_template::CreateJobTemplateError,
         >,
     > {
@@ -88,28 +91,28 @@ impl CreateJobTemplateFluentBuilder {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     pub fn set_acceleration_settings(
         mut self,
-        input: std::option::Option<crate::types::AccelerationSettings>,
+        input: ::std::option::Option<crate::types::AccelerationSettings>,
     ) -> Self {
         self.inner = self.inner.set_acceleration_settings(input);
         self
     }
     /// Optional. A category for the job template you are creating
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category(input.into());
         self
     }
     /// Optional. A category for the job template you are creating
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }
     /// Optional. A description of the job template you are creating.
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// Optional. A description of the job template you are creating.
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -125,18 +128,18 @@ impl CreateJobTemplateFluentBuilder {
     /// Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
     pub fn set_hop_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HopDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     ) -> Self {
         self.inner = self.inner.set_hop_destinations(input);
         self
     }
     /// The name of the job template you are creating.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// The name of the job template you are creating.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -146,17 +149,17 @@ impl CreateJobTemplateFluentBuilder {
         self
     }
     /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
-    pub fn queue(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue(input.into());
         self
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
-    pub fn set_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue(input);
         self
     }
@@ -168,7 +171,7 @@ impl CreateJobTemplateFluentBuilder {
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
     pub fn set_settings(
         mut self,
-        input: std::option::Option<crate::types::JobTemplateSettings>,
+        input: ::std::option::Option<crate::types::JobTemplateSettings>,
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
@@ -181,7 +184,7 @@ impl CreateJobTemplateFluentBuilder {
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn set_status_update_interval(
         mut self,
-        input: std::option::Option<crate::types::StatusUpdateInterval>,
+        input: ::std::option::Option<crate::types::StatusUpdateInterval>,
     ) -> Self {
         self.inner = self.inner.set_status_update_interval(input);
         self
@@ -193,8 +196,8 @@ impl CreateJobTemplateFluentBuilder {
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -202,8 +205,8 @@ impl CreateJobTemplateFluentBuilder {
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

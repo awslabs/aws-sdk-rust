@@ -2,15 +2,15 @@
 
 /// <p>Configure Licensing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Licensing {
     /// <p>Configure BYOL OS licensing.</p>
     #[doc(hidden)]
-    pub os_byol: std::option::Option<bool>,
+    pub os_byol: ::std::option::Option<bool>,
 }
 impl Licensing {
     /// <p>Configure BYOL OS licensing.</p>
-    pub fn os_byol(&self) -> std::option::Option<bool> {
+    pub fn os_byol(&self) -> ::std::option::Option<bool> {
         self.os_byol
     }
 }
@@ -23,18 +23,20 @@ impl Licensing {
 
 /// A builder for [`Licensing`](crate::types::Licensing).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LicensingBuilder {
-    pub(crate) os_byol: std::option::Option<bool>,
+    pub(crate) os_byol: ::std::option::Option<bool>,
 }
 impl LicensingBuilder {
     /// <p>Configure BYOL OS licensing.</p>
     pub fn os_byol(mut self, input: bool) -> Self {
-        self.os_byol = Some(input);
+        self.os_byol = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configure BYOL OS licensing.</p>
-    pub fn set_os_byol(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_os_byol(mut self, input: ::std::option::Option<bool>) -> Self {
         self.os_byol = input;
         self
     }

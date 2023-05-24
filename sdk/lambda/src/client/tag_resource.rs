@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource): <p>The function's Amazon Resource Name (ARN).</p>
+    ///   - [`resource(impl ::std::convert::Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource): <p>The function's Amazon Resource Name (ARN).</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>A list of tags to apply to the function.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)

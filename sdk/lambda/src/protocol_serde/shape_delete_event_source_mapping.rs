@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_event_source_mapping_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::delete_event_source_mapping::DeleteEventSourceMappingOutput,
@@ -17,7 +17,7 @@ pub fn de_delete_event_source_mapping_http_error(
     .map_err(
         crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -121,7 +121,7 @@ pub fn de_delete_event_source_mapping_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_event_source_mapping_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::delete_event_source_mapping::DeleteEventSourceMappingOutput,
@@ -132,7 +132,7 @@ pub fn de_delete_event_source_mapping_http_response_with_props(
         let mut output = crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingOutputBuilder::default();
         output = crate::protocol_serde::shape_delete_event_source_mapping::de_delete_event_source_mapping(_response_body, output).map_err(crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -143,17 +143,17 @@ pub(crate) fn de_delete_event_source_mapping(
     mut builder: crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingOutputBuilder,
 ) -> Result<
     crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "AmazonManagedKafkaEventSourceConfig" => {
                         builder = builder.set_amazon_managed_kafka_event_source_config(
@@ -162,7 +162,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "BatchSize" => {
                         builder = builder.set_batch_size(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -171,7 +171,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "BisectBatchOnFunctionError" => {
                         builder = builder.set_bisect_batch_on_function_error(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
@@ -190,7 +190,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "EventSourceArn" => {
                         builder = builder.set_event_source_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -206,7 +206,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "FunctionArn" => {
                         builder = builder.set_function_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -220,15 +220,15 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "LastModified" => {
                         builder = builder.set_last_modified(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "LastProcessingResult" => {
                         builder = builder.set_last_processing_result(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -237,7 +237,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "MaximumBatchingWindowInSeconds" => {
                         builder = builder.set_maximum_batching_window_in_seconds(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -246,7 +246,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "MaximumRecordAgeInSeconds" => {
                         builder = builder.set_maximum_record_age_in_seconds(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -255,7 +255,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "MaximumRetryAttempts" => {
                         builder = builder.set_maximum_retry_attempts(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -264,7 +264,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "ParallelizationFactor" => {
                         builder = builder.set_parallelization_factor(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -297,7 +297,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "StartingPosition" => {
                         builder = builder.set_starting_position(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -309,15 +309,15 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "StartingPositionTimestamp" => {
                         builder = builder.set_starting_position_timestamp(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "State" => {
                         builder = builder.set_state(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -326,7 +326,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "StateTransitionReason" => {
                         builder = builder.set_state_transition_reason(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -339,7 +339,7 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "TumblingWindowInSeconds" => {
                         builder = builder.set_tumbling_window_in_seconds(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -348,19 +348,19 @@ pub(crate) fn de_delete_event_source_mapping(
                     }
                     "UUID" => {
                         builder = builder.set_uuid(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -370,7 +370,7 @@ pub(crate) fn de_delete_event_source_mapping(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

@@ -2,22 +2,22 @@
 
 /// <p>Contains error details for a failed batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>An HTTP status code representing the nature of the error.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<i32>,
+    pub status_code: ::std::option::Option<i32>,
     /// <p>A description of the error that caused the batch job failure.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl FailureDetails {
     /// <p>An HTTP status code representing the nature of the error.</p>
-    pub fn status_code(&self) -> std::option::Option<i32> {
+    pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
     }
     /// <p>A description of the error that caused the batch job failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl FailureDetails {
 
 /// A builder for [`FailureDetails`](crate::types::FailureDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailureDetailsBuilder {
-    pub(crate) status_code: std::option::Option<i32>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) status_code: ::std::option::Option<i32>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl FailureDetailsBuilder {
     /// <p>An HTTP status code representing the nature of the error.</p>
     pub fn status_code(mut self, input: i32) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>An HTTP status code representing the nature of the error.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>A description of the error that caused the batch job failure.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the error that caused the batch job failure.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

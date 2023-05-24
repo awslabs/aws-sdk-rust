@@ -38,13 +38,13 @@
 /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsSegmentationStyle {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsSegmentationStyle {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsSegmentationStyle {
+impl ::std::convert::From<&str> for M2tsSegmentationStyle {
     fn from(s: &str) -> Self {
         match s {
             "MAINTAIN_CADENCE" => M2tsSegmentationStyle::MaintainCadence,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M2tsSegmentationStyle {
         }
     }
 }
-impl std::str::FromStr for M2tsSegmentationStyle {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsSegmentationStyle {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsSegmentationStyle::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsSegmentationStyle::from(s))
     }
 }
 impl M2tsSegmentationStyle {
@@ -86,7 +86,7 @@ impl M2tsSegmentationStyle {
         &["MAINTAIN_CADENCE", "RESET_CADENCE"]
     }
 }
-impl AsRef<str> for M2tsSegmentationStyle {
+impl ::std::convert::AsRef<str> for M2tsSegmentationStyle {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

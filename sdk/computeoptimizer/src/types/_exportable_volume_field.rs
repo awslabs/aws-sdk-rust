@@ -66,13 +66,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
@@ -138,7 +138,7 @@ pub enum ExportableVolumeField {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ExportableVolumeField {
+impl ::std::convert::From<&str> for ExportableVolumeField {
     fn from(s: &str) -> Self {
         match s {
             "AccountId" => ExportableVolumeField::AccountId,
@@ -219,11 +219,11 @@ impl std::convert::From<&str> for ExportableVolumeField {
         }
     }
 }
-impl std::str::FromStr for ExportableVolumeField {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ExportableVolumeField {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExportableVolumeField::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ExportableVolumeField::from(s))
     }
 }
 impl ExportableVolumeField {
@@ -341,7 +341,7 @@ impl ExportableVolumeField {
         ]
     }
 }
-impl AsRef<str> for ExportableVolumeField {
+impl ::std::convert::AsRef<str> for ExportableVolumeField {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,37 +2,37 @@
 
 /// <p> Container for response returned by <code> <code>GetPackageVersionHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub package_id: std::option::Option<std::string::String>,
+    pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
     #[doc(hidden)]
     pub package_version_history_list:
-        std::option::Option<std::vec::Vec<crate::types::PackageVersionHistory>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPackageVersionHistoryOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<&str> {
         self.package_id.as_deref()
     }
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
     pub fn package_version_history_list(
         &self,
-    ) -> std::option::Option<&[crate::types::PackageVersionHistory]> {
+    ) -> ::std::option::Option<&[crate::types::PackageVersionHistory]> {
         self.package_version_history_list.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetPackageVersionHistoryOutput {
+impl ::aws_http::request_id::RequestId for GetPackageVersionHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -46,22 +46,24 @@ impl GetPackageVersionHistoryOutput {
 
 /// A builder for [`GetPackageVersionHistoryOutput`](crate::operation::get_package_version_history::GetPackageVersionHistoryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPackageVersionHistoryOutputBuilder {
-    pub(crate) package_id: std::option::Option<std::string::String>,
+    pub(crate) package_id: ::std::option::Option<::std::string::String>,
     pub(crate) package_version_history_list:
-        std::option::Option<std::vec::Vec<crate::types::PackageVersionHistory>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPackageVersionHistoryOutputBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_id = Some(input.into());
+    pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_id = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_id = input;
         self
     }
@@ -76,24 +78,24 @@ impl GetPackageVersionHistoryOutputBuilder {
     ) -> Self {
         let mut v = self.package_version_history_list.unwrap_or_default();
         v.push(input);
-        self.package_version_history_list = Some(v);
+        self.package_version_history_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
     pub fn set_package_version_history_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PackageVersionHistory>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageVersionHistory>>,
     ) -> Self {
         self.package_version_history_list = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

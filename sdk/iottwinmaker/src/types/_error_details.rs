@@ -2,22 +2,22 @@
 
 /// <p>The error details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorDetails {
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::ErrorCode>,
+    pub code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The error message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDetails {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ErrorDetails {
 
 /// A builder for [`ErrorDetails`](crate::types::ErrorDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ErrorDetailsBuilder {
-    pub(crate) code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDetailsBuilder {
     /// <p>The error code.</p>
     pub fn code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>The error message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

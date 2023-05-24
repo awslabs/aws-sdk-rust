@@ -8,7 +8,7 @@
 /// <li> <p>Value for <code>Values</code>: <code>3</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstancePatchStateFilter {
     /// <p>The key for the filter. Supported values include the following:</p>
     /// <ul>
@@ -22,13 +22,13 @@ pub struct InstancePatchStateFilter {
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of comparison that should be performed for the value.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::InstancePatchStateOperatorType>,
+    pub r#type: ::std::option::Option<crate::types::InstancePatchStateOperatorType>,
 }
 impl InstancePatchStateFilter {
     /// <p>The key for the filter. Supported values include the following:</p>
@@ -42,15 +42,15 @@ impl InstancePatchStateFilter {
     /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The type of comparison that should be performed for the value.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::InstancePatchStateOperatorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InstancePatchStateOperatorType> {
         self.r#type.as_ref()
     }
 }
@@ -63,11 +63,13 @@ impl InstancePatchStateFilter {
 
 /// A builder for [`InstancePatchStateFilter`](crate::types::InstancePatchStateFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstancePatchStateFilterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) r#type: std::option::Option<crate::types::InstancePatchStateOperatorType>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::InstancePatchStateOperatorType>,
 }
 impl InstancePatchStateFilterBuilder {
     /// <p>The key for the filter. Supported values include the following:</p>
@@ -81,8 +83,8 @@ impl InstancePatchStateFilterBuilder {
     /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key for the filter. Supported values include the following:</p>
@@ -96,7 +98,7 @@ impl InstancePatchStateFilterBuilder {
     /// <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li>
     /// <li> <p> <code>NotApplicableCount</code> </p> </li>
     /// </ul>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
@@ -105,29 +107,29 @@ impl InstancePatchStateFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>The type of comparison that should be performed for the value.</p>
     pub fn r#type(mut self, input: crate::types::InstancePatchStateOperatorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of comparison that should be performed for the value.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::InstancePatchStateOperatorType>,
+        input: ::std::option::Option<crate::types::InstancePatchStateOperatorType>,
     ) -> Self {
         self.r#type = input;
         self

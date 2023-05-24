@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetHost`](crate::operation::get_host::builders::GetHostFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`host_arn(impl Into<String>)`](crate::operation::get_host::builders::GetHostFluentBuilder::host_arn) / [`set_host_arn(Option<String>)`](crate::operation::get_host::builders::GetHostFluentBuilder::set_host_arn): <p>The Amazon Resource Name (ARN) of the requested host.</p>
+    ///   - [`host_arn(impl ::std::convert::Into<String>)`](crate::operation::get_host::builders::GetHostFluentBuilder::host_arn) / [`set_host_arn(Option<String>)`](crate::operation::get_host::builders::GetHostFluentBuilder::set_host_arn): <p>The Amazon Resource Name (ARN) of the requested host.</p>
     /// - On success, responds with [`GetHostOutput`](crate::operation::get_host::GetHostOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_host::GetHostOutput::name): <p>The name of the requested host.</p>
     ///   - [`status(Option<String>)`](crate::operation::get_host::GetHostOutput::status): <p>The status of the requested host.</p>

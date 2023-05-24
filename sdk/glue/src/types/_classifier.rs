@@ -3,36 +3,36 @@
 /// <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p>
 /// <p>You can use the standard classifiers that Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Classifier {
     /// <p>A classifier that uses <code>grok</code>.</p>
     #[doc(hidden)]
-    pub grok_classifier: std::option::Option<crate::types::GrokClassifier>,
+    pub grok_classifier: ::std::option::Option<crate::types::GrokClassifier>,
     /// <p>A classifier for XML content.</p>
     #[doc(hidden)]
-    pub xml_classifier: std::option::Option<crate::types::XmlClassifier>,
+    pub xml_classifier: ::std::option::Option<crate::types::XmlClassifier>,
     /// <p>A classifier for JSON content.</p>
     #[doc(hidden)]
-    pub json_classifier: std::option::Option<crate::types::JsonClassifier>,
+    pub json_classifier: ::std::option::Option<crate::types::JsonClassifier>,
     /// <p>A classifier for comma-separated values (CSV).</p>
     #[doc(hidden)]
-    pub csv_classifier: std::option::Option<crate::types::CsvClassifier>,
+    pub csv_classifier: ::std::option::Option<crate::types::CsvClassifier>,
 }
 impl Classifier {
     /// <p>A classifier that uses <code>grok</code>.</p>
-    pub fn grok_classifier(&self) -> std::option::Option<&crate::types::GrokClassifier> {
+    pub fn grok_classifier(&self) -> ::std::option::Option<&crate::types::GrokClassifier> {
         self.grok_classifier.as_ref()
     }
     /// <p>A classifier for XML content.</p>
-    pub fn xml_classifier(&self) -> std::option::Option<&crate::types::XmlClassifier> {
+    pub fn xml_classifier(&self) -> ::std::option::Option<&crate::types::XmlClassifier> {
         self.xml_classifier.as_ref()
     }
     /// <p>A classifier for JSON content.</p>
-    pub fn json_classifier(&self) -> std::option::Option<&crate::types::JsonClassifier> {
+    pub fn json_classifier(&self) -> ::std::option::Option<&crate::types::JsonClassifier> {
         self.json_classifier.as_ref()
     }
     /// <p>A classifier for comma-separated values (CSV).</p>
-    pub fn csv_classifier(&self) -> std::option::Option<&crate::types::CsvClassifier> {
+    pub fn csv_classifier(&self) -> ::std::option::Option<&crate::types::CsvClassifier> {
         self.csv_classifier.as_ref()
     }
 }
@@ -45,62 +45,64 @@ impl Classifier {
 
 /// A builder for [`Classifier`](crate::types::Classifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClassifierBuilder {
-    pub(crate) grok_classifier: std::option::Option<crate::types::GrokClassifier>,
-    pub(crate) xml_classifier: std::option::Option<crate::types::XmlClassifier>,
-    pub(crate) json_classifier: std::option::Option<crate::types::JsonClassifier>,
-    pub(crate) csv_classifier: std::option::Option<crate::types::CsvClassifier>,
+    pub(crate) grok_classifier: ::std::option::Option<crate::types::GrokClassifier>,
+    pub(crate) xml_classifier: ::std::option::Option<crate::types::XmlClassifier>,
+    pub(crate) json_classifier: ::std::option::Option<crate::types::JsonClassifier>,
+    pub(crate) csv_classifier: ::std::option::Option<crate::types::CsvClassifier>,
 }
 impl ClassifierBuilder {
     /// <p>A classifier that uses <code>grok</code>.</p>
     pub fn grok_classifier(mut self, input: crate::types::GrokClassifier) -> Self {
-        self.grok_classifier = Some(input);
+        self.grok_classifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>A classifier that uses <code>grok</code>.</p>
     pub fn set_grok_classifier(
         mut self,
-        input: std::option::Option<crate::types::GrokClassifier>,
+        input: ::std::option::Option<crate::types::GrokClassifier>,
     ) -> Self {
         self.grok_classifier = input;
         self
     }
     /// <p>A classifier for XML content.</p>
     pub fn xml_classifier(mut self, input: crate::types::XmlClassifier) -> Self {
-        self.xml_classifier = Some(input);
+        self.xml_classifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>A classifier for XML content.</p>
     pub fn set_xml_classifier(
         mut self,
-        input: std::option::Option<crate::types::XmlClassifier>,
+        input: ::std::option::Option<crate::types::XmlClassifier>,
     ) -> Self {
         self.xml_classifier = input;
         self
     }
     /// <p>A classifier for JSON content.</p>
     pub fn json_classifier(mut self, input: crate::types::JsonClassifier) -> Self {
-        self.json_classifier = Some(input);
+        self.json_classifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>A classifier for JSON content.</p>
     pub fn set_json_classifier(
         mut self,
-        input: std::option::Option<crate::types::JsonClassifier>,
+        input: ::std::option::Option<crate::types::JsonClassifier>,
     ) -> Self {
         self.json_classifier = input;
         self
     }
     /// <p>A classifier for comma-separated values (CSV).</p>
     pub fn csv_classifier(mut self, input: crate::types::CsvClassifier) -> Self {
-        self.csv_classifier = Some(input);
+        self.csv_classifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>A classifier for comma-separated values (CSV).</p>
     pub fn set_csv_classifier(
         mut self,
-        input: std::option::Option<crate::types::CsvClassifier>,
+        input: ::std::option::Option<crate::types::CsvClassifier>,
     ) -> Self {
         self.csv_classifier = input;
         self

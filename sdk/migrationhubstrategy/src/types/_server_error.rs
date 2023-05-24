@@ -2,15 +2,17 @@
 
 /// <p>The error in server analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerError {
     /// <p>The error category of server analysis.</p>
     #[doc(hidden)]
-    pub server_error_category: std::option::Option<crate::types::ServerErrorCategory>,
+    pub server_error_category: ::std::option::Option<crate::types::ServerErrorCategory>,
 }
 impl ServerError {
     /// <p>The error category of server analysis.</p>
-    pub fn server_error_category(&self) -> std::option::Option<&crate::types::ServerErrorCategory> {
+    pub fn server_error_category(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ServerErrorCategory> {
         self.server_error_category.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl ServerError {
 
 /// A builder for [`ServerError`](crate::types::ServerError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerErrorBuilder {
-    pub(crate) server_error_category: std::option::Option<crate::types::ServerErrorCategory>,
+    pub(crate) server_error_category: ::std::option::Option<crate::types::ServerErrorCategory>,
 }
 impl ServerErrorBuilder {
     /// <p>The error category of server analysis.</p>
     pub fn server_error_category(mut self, input: crate::types::ServerErrorCategory) -> Self {
-        self.server_error_category = Some(input);
+        self.server_error_category = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error category of server analysis.</p>
     pub fn set_server_error_category(
         mut self,
-        input: std::option::Option<crate::types::ServerErrorCategory>,
+        input: ::std::option::Option<crate::types::ServerErrorCategory>,
     ) -> Self {
         self.server_error_category = input;
         self

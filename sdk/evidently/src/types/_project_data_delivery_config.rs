@@ -2,24 +2,24 @@
 
 /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectDataDeliveryConfig {
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     #[doc(hidden)]
-    pub s3_destination: std::option::Option<crate::types::S3DestinationConfig>,
+    pub s3_destination: ::std::option::Option<crate::types::S3DestinationConfig>,
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs: std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
+    pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
 }
 impl ProjectDataDeliveryConfig {
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
-    pub fn s3_destination(&self) -> std::option::Option<&crate::types::S3DestinationConfig> {
+    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3DestinationConfig> {
         self.s3_destination.as_ref()
     }
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
     pub fn cloud_watch_logs(
         &self,
-    ) -> std::option::Option<&crate::types::CloudWatchLogsDestinationConfig> {
+    ) -> ::std::option::Option<&crate::types::CloudWatchLogsDestinationConfig> {
         self.cloud_watch_logs.as_ref()
     }
 }
@@ -32,21 +32,24 @@ impl ProjectDataDeliveryConfig {
 
 /// A builder for [`ProjectDataDeliveryConfig`](crate::types::ProjectDataDeliveryConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectDataDeliveryConfigBuilder {
-    pub(crate) s3_destination: std::option::Option<crate::types::S3DestinationConfig>,
-    pub(crate) cloud_watch_logs: std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
+    pub(crate) s3_destination: ::std::option::Option<crate::types::S3DestinationConfig>,
+    pub(crate) cloud_watch_logs:
+        ::std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
 }
 impl ProjectDataDeliveryConfigBuilder {
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     pub fn s3_destination(mut self, input: crate::types::S3DestinationConfig) -> Self {
-        self.s3_destination = Some(input);
+        self.s3_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.</p>
     pub fn set_s3_destination(
         mut self,
-        input: std::option::Option<crate::types::S3DestinationConfig>,
+        input: ::std::option::Option<crate::types::S3DestinationConfig>,
     ) -> Self {
         self.s3_destination = input;
         self
@@ -56,13 +59,13 @@ impl ProjectDataDeliveryConfigBuilder {
         mut self,
         input: crate::types::CloudWatchLogsDestinationConfig,
     ) -> Self {
-        self.cloud_watch_logs = Some(input);
+        self.cloud_watch_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the project stores evaluation events in CloudWatch Logs, this structure stores the log group name.</p>
     pub fn set_cloud_watch_logs(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
+        input: ::std::option::Option<crate::types::CloudWatchLogsDestinationConfig>,
     ) -> Self {
         self.cloud_watch_logs = input;
         self

@@ -2,17 +2,17 @@
 
 /// <p>Updated properties for the public DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicDnsNamespacePropertiesChange {
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
     #[doc(hidden)]
-    pub dns_properties: std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
+    pub dns_properties: ::std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
 }
 impl PublicDnsNamespacePropertiesChange {
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
     pub fn dns_properties(
         &self,
-    ) -> std::option::Option<&crate::types::PublicDnsPropertiesMutableChange> {
+    ) -> ::std::option::Option<&crate::types::PublicDnsPropertiesMutableChange> {
         self.dns_properties.as_ref()
     }
 }
@@ -25,20 +25,23 @@ impl PublicDnsNamespacePropertiesChange {
 
 /// A builder for [`PublicDnsNamespacePropertiesChange`](crate::types::PublicDnsNamespacePropertiesChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PublicDnsNamespacePropertiesChangeBuilder {
-    pub(crate) dns_properties: std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
+    pub(crate) dns_properties:
+        ::std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
 }
 impl PublicDnsNamespacePropertiesChangeBuilder {
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
     pub fn dns_properties(mut self, input: crate::types::PublicDnsPropertiesMutableChange) -> Self {
-        self.dns_properties = Some(input);
+        self.dns_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
     pub fn set_dns_properties(
         mut self,
-        input: std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
+        input: ::std::option::Option<crate::types::PublicDnsPropertiesMutableChange>,
     ) -> Self {
         self.dns_properties = input;
         self

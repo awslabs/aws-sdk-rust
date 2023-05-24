@@ -2,22 +2,22 @@
 
 /// <p>The hash algorithms that are available to a code signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HashAlgorithmOptions {
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
     #[doc(hidden)]
-    pub allowed_values: std::option::Option<std::vec::Vec<crate::types::HashAlgorithm>>,
+    pub allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::HashAlgorithm>>,
     /// <p>The default hash algorithm that is used in a code signing job.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<crate::types::HashAlgorithm>,
+    pub default_value: ::std::option::Option<crate::types::HashAlgorithm>,
 }
 impl HashAlgorithmOptions {
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[crate::types::HashAlgorithm]> {
+    pub fn allowed_values(&self) -> ::std::option::Option<&[crate::types::HashAlgorithm]> {
         self.allowed_values.as_deref()
     }
     /// <p>The default hash algorithm that is used in a code signing job.</p>
-    pub fn default_value(&self) -> std::option::Option<&crate::types::HashAlgorithm> {
+    pub fn default_value(&self) -> ::std::option::Option<&crate::types::HashAlgorithm> {
         self.default_value.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl HashAlgorithmOptions {
 
 /// A builder for [`HashAlgorithmOptions`](crate::types::HashAlgorithmOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HashAlgorithmOptionsBuilder {
-    pub(crate) allowed_values: std::option::Option<std::vec::Vec<crate::types::HashAlgorithm>>,
-    pub(crate) default_value: std::option::Option<crate::types::HashAlgorithm>,
+    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<crate::types::HashAlgorithm>>,
+    pub(crate) default_value: ::std::option::Option<crate::types::HashAlgorithm>,
 }
 impl HashAlgorithmOptionsBuilder {
     /// Appends an item to `allowed_values`.
@@ -44,26 +46,26 @@ impl HashAlgorithmOptionsBuilder {
     pub fn allowed_values(mut self, input: crate::types::HashAlgorithm) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
         v.push(input);
-        self.allowed_values = Some(v);
+        self.allowed_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
     pub fn set_allowed_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HashAlgorithm>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HashAlgorithm>>,
     ) -> Self {
         self.allowed_values = input;
         self
     }
     /// <p>The default hash algorithm that is used in a code signing job.</p>
     pub fn default_value(mut self, input: crate::types::HashAlgorithm) -> Self {
-        self.default_value = Some(input);
+        self.default_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default hash algorithm that is used in a code signing job.</p>
     pub fn set_default_value(
         mut self,
-        input: std::option::Option<crate::types::HashAlgorithm>,
+        input: ::std::option::Option<crate::types::HashAlgorithm>,
     ) -> Self {
         self.default_value = input;
         self

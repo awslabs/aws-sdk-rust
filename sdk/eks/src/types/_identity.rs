@@ -2,15 +2,15 @@
 
 /// <p>An object representing an identity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Identity {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
     #[doc(hidden)]
-    pub oidc: std::option::Option<crate::types::Oidc>,
+    pub oidc: ::std::option::Option<crate::types::Oidc>,
 }
 impl Identity {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
-    pub fn oidc(&self) -> std::option::Option<&crate::types::Oidc> {
+    pub fn oidc(&self) -> ::std::option::Option<&crate::types::Oidc> {
         self.oidc.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl Identity {
 
 /// A builder for [`Identity`](crate::types::Identity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IdentityBuilder {
-    pub(crate) oidc: std::option::Option<crate::types::Oidc>,
+    pub(crate) oidc: ::std::option::Option<crate::types::Oidc>,
 }
 impl IdentityBuilder {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
     pub fn oidc(mut self, input: crate::types::Oidc) -> Self {
-        self.oidc = Some(input);
+        self.oidc = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
-    pub fn set_oidc(mut self, input: std::option::Option<crate::types::Oidc>) -> Self {
+    pub fn set_oidc(mut self, input: ::std::option::Option<crate::types::Oidc>) -> Self {
         self.oidc = input;
         self
     }

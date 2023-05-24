@@ -2,15 +2,15 @@
 
 /// <p>Information about the client certificate used for authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateAuthentication {
     /// <p>The ARN of the client certificate. </p>
     #[doc(hidden)]
-    pub client_root_certificate_chain: std::option::Option<std::string::String>,
+    pub client_root_certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl CertificateAuthentication {
     /// <p>The ARN of the client certificate. </p>
-    pub fn client_root_certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn client_root_certificate_chain(&self) -> ::std::option::Option<&str> {
         self.client_root_certificate_chain.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl CertificateAuthentication {
 
 /// A builder for [`CertificateAuthentication`](crate::types::CertificateAuthentication).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CertificateAuthenticationBuilder {
-    pub(crate) client_root_certificate_chain: std::option::Option<std::string::String>,
+    pub(crate) client_root_certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl CertificateAuthenticationBuilder {
     /// <p>The ARN of the client certificate. </p>
-    pub fn client_root_certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_root_certificate_chain = Some(input.into());
+    pub fn client_root_certificate_chain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_root_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the client certificate. </p>
     pub fn set_client_root_certificate_chain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_root_certificate_chain = input;
         self

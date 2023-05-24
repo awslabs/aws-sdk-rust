@@ -2,22 +2,22 @@
 
 /// <p>A list of identifiers for the public keys that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KgKeyPairIds {
     /// <p>The identifier of the key group that contains the public keys.</p>
     #[doc(hidden)]
-    pub key_group_id: std::option::Option<std::string::String>,
+    pub key_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of CloudFront key pair identifiers.</p>
     #[doc(hidden)]
-    pub key_pair_ids: std::option::Option<crate::types::KeyPairIds>,
+    pub key_pair_ids: ::std::option::Option<crate::types::KeyPairIds>,
 }
 impl KgKeyPairIds {
     /// <p>The identifier of the key group that contains the public keys.</p>
-    pub fn key_group_id(&self) -> std::option::Option<&str> {
+    pub fn key_group_id(&self) -> ::std::option::Option<&str> {
         self.key_group_id.as_deref()
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
-    pub fn key_pair_ids(&self) -> std::option::Option<&crate::types::KeyPairIds> {
+    pub fn key_pair_ids(&self) -> ::std::option::Option<&crate::types::KeyPairIds> {
         self.key_pair_ids.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl KgKeyPairIds {
 
 /// A builder for [`KgKeyPairIds`](crate::types::KgKeyPairIds).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KgKeyPairIdsBuilder {
-    pub(crate) key_group_id: std::option::Option<std::string::String>,
-    pub(crate) key_pair_ids: std::option::Option<crate::types::KeyPairIds>,
+    pub(crate) key_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_pair_ids: ::std::option::Option<crate::types::KeyPairIds>,
 }
 impl KgKeyPairIdsBuilder {
     /// <p>The identifier of the key group that contains the public keys.</p>
-    pub fn key_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_group_id = Some(input.into());
+    pub fn key_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the key group that contains the public keys.</p>
-    pub fn set_key_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_group_id = input;
         self
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn key_pair_ids(mut self, input: crate::types::KeyPairIds) -> Self {
-        self.key_pair_ids = Some(input);
+        self.key_pair_ids = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of CloudFront key pair identifiers.</p>
     pub fn set_key_pair_ids(
         mut self,
-        input: std::option::Option<crate::types::KeyPairIds>,
+        input: ::std::option::Option<crate::types::KeyPairIds>,
     ) -> Self {
         self.key_pair_ids = input;
         self

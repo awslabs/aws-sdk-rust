@@ -2,7 +2,7 @@
 
 /// <p>Provides information about alerts and warnings that Amazon Lex sends during a migration. The alerts include information about how to resolve the issue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MigrationAlert {
     /// <p>The type of alert. There are two kinds of alerts:</p>
     /// <ul>
@@ -10,16 +10,16 @@ pub struct MigrationAlert {
     /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::MigrationAlertType>,
+    pub r#type: ::std::option::Option<crate::types::MigrationAlertType>,
     /// <p>A message that describes why the alert was issued.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Additional details about the alert.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub details: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
     #[doc(hidden)]
-    pub reference_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub reference_ur_ls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MigrationAlert {
     /// <p>The type of alert. There are two kinds of alerts:</p>
@@ -27,19 +27,19 @@ impl MigrationAlert {
     /// <li> <p> <code>ERROR</code> - There was an issue with the migration that can't be resolved. The migration stops.</p> </li>
     /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::MigrationAlertType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MigrationAlertType> {
         self.r#type.as_ref()
     }
     /// <p>A message that describes why the alert was issued.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Additional details about the alert.</p>
-    pub fn details(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn details(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.details.as_deref()
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn reference_ur_ls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn reference_ur_ls(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.reference_ur_ls.as_deref()
     }
 }
@@ -52,12 +52,14 @@ impl MigrationAlert {
 
 /// A builder for [`MigrationAlert`](crate::types::MigrationAlert).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MigrationAlertBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::MigrationAlertType>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) details: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) reference_ur_ls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::MigrationAlertType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) details: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reference_ur_ls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MigrationAlertBuilder {
     /// <p>The type of alert. There are two kinds of alerts:</p>
@@ -66,7 +68,7 @@ impl MigrationAlertBuilder {
     /// <li> <p> <code>WARN</code> - There was an issue with the migration that requires manual changes to the new Amazon Lex V2 bot. The migration continues.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::MigrationAlertType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of alert. There are two kinds of alerts:</p>
@@ -76,18 +78,18 @@ impl MigrationAlertBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::MigrationAlertType>,
+        input: ::std::option::Option<crate::types::MigrationAlertType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>A message that describes why the alert was issued.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that describes why the alert was issued.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -96,16 +98,16 @@ impl MigrationAlertBuilder {
     /// To override the contents of this collection use [`set_details`](Self::set_details).
     ///
     /// <p>Additional details about the alert.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.details.unwrap_or_default();
         v.push(input.into());
-        self.details = Some(v);
+        self.details = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional details about the alert.</p>
     pub fn set_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.details = input;
         self
@@ -115,16 +117,19 @@ impl MigrationAlertBuilder {
     /// To override the contents of this collection use [`set_reference_ur_ls`](Self::set_reference_ur_ls).
     ///
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
-    pub fn reference_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reference_ur_ls(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.reference_ur_ls.unwrap_or_default();
         v.push(input.into());
-        self.reference_ur_ls = Some(v);
+        self.reference_ur_ls = ::std::option::Option::Some(v);
         self
     }
     /// <p>A link to the Amazon Lex documentation that describes how to resolve the alert.</p>
     pub fn set_reference_ur_ls(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.reference_ur_ls = input;
         self

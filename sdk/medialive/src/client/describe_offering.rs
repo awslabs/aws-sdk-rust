@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeOffering`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`offering_id(impl Into<String>)`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::offering_id) / [`set_offering_id(Option<String>)`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::set_offering_id): Unique offering ID, e.g. '87654321'
+    ///   - [`offering_id(impl ::std::convert::Into<String>)`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::offering_id) / [`set_offering_id(Option<String>)`](crate::operation::describe_offering::builders::DescribeOfferingFluentBuilder::set_offering_id): Unique offering ID, e.g. '87654321'
     /// - On success, responds with [`DescribeOfferingOutput`](crate::operation::describe_offering::DescribeOfferingOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_offering::DescribeOfferingOutput::arn): Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
     ///   - [`currency_code(Option<String>)`](crate::operation::describe_offering::DescribeOfferingOutput::currency_code): Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'

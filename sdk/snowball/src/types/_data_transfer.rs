@@ -2,7 +2,7 @@
 
 /// <p>Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataTransfer {
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
     #[doc(hidden)]
@@ -44,51 +44,53 @@ impl DataTransfer {
 
 /// A builder for [`DataTransfer`](crate::types::DataTransfer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataTransferBuilder {
-    pub(crate) bytes_transferred: std::option::Option<i64>,
-    pub(crate) objects_transferred: std::option::Option<i64>,
-    pub(crate) total_bytes: std::option::Option<i64>,
-    pub(crate) total_objects: std::option::Option<i64>,
+    pub(crate) bytes_transferred: ::std::option::Option<i64>,
+    pub(crate) objects_transferred: ::std::option::Option<i64>,
+    pub(crate) total_bytes: ::std::option::Option<i64>,
+    pub(crate) total_objects: ::std::option::Option<i64>,
 }
 impl DataTransferBuilder {
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
     pub fn bytes_transferred(mut self, input: i64) -> Self {
-        self.bytes_transferred = Some(input);
+        self.bytes_transferred = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of bytes transferred between a Snow device and Amazon S3.</p>
-    pub fn set_bytes_transferred(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_transferred = input;
         self
     }
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
     pub fn objects_transferred(mut self, input: i64) -> Self {
-        self.objects_transferred = Some(input);
+        self.objects_transferred = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of objects transferred between a Snow device and Amazon S3.</p>
-    pub fn set_objects_transferred(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_objects_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
         self.objects_transferred = input;
         self
     }
     /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn total_bytes(mut self, input: i64) -> Self {
-        self.total_bytes = Some(input);
+        self.total_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total bytes of data for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
-    pub fn set_total_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_bytes = input;
         self
     }
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
     pub fn total_objects(mut self, input: i64) -> Self {
-        self.total_objects = Some(input);
+        self.total_objects = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of objects for a transfer between a Snow device and Amazon S3. This value is set to 0 (zero) until all the keys that will be transferred have been listed.</p>
-    pub fn set_total_objects(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_objects(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_objects = input;
         self
     }

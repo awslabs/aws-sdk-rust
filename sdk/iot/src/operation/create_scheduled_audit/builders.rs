@@ -7,29 +7,29 @@ pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_input:
 ///
 /// <p>Creates a scheduled audit that is run at a specified time interval.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateScheduledAuditFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_scheduled_audit::builders::CreateScheduledAuditInputBuilder,
 }
 impl CreateScheduledAuditFluentBuilder {
     /// Creates a new `CreateScheduledAudit`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_scheduled_audit::CreateScheduledAudit,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_scheduled_audit::CreateScheduledAuditError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateScheduledAuditFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_scheduled_audit::CreateScheduledAuditOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_scheduled_audit::CreateScheduledAuditError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl CreateScheduledAuditFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_scheduled_audit::CreateScheduledAuditOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_scheduled_audit::CreateScheduledAuditError,
         >,
     > {
@@ -89,18 +92,18 @@ impl CreateScheduledAuditFluentBuilder {
     /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub fn set_frequency(
         mut self,
-        input: std::option::Option<crate::types::AuditFrequency>,
+        input: ::std::option::Option<crate::types::AuditFrequency>,
     ) -> Self {
         self.inner = self.inner.set_frequency(input);
         self
     }
     /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
-    pub fn day_of_month(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn day_of_month(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.day_of_month(input.into());
         self
     }
     /// <p>The day of the month on which the scheduled audit takes place. This can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>. If days 29 to 31 are specified, and the month doesn't have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
-    pub fn set_day_of_month(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_day_of_month(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_day_of_month(input);
         self
     }
@@ -110,7 +113,10 @@ impl CreateScheduledAuditFluentBuilder {
         self
     }
     /// <p>The day of the week on which the scheduled audit takes place, either <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>. This field is required if the <code>frequency</code> parameter is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.</p>
-    pub fn set_day_of_week(mut self, input: std::option::Option<crate::types::DayOfWeek>) -> Self {
+    pub fn set_day_of_week(
+        mut self,
+        input: ::std::option::Option<crate::types::DayOfWeek>,
+    ) -> Self {
         self.inner = self.inner.set_day_of_week(input);
         self
     }
@@ -119,27 +125,33 @@ impl CreateScheduledAuditFluentBuilder {
     /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
     ///
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_check_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_check_names(input.into());
         self
     }
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn set_target_check_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_target_check_names(input);
         self
     }
     /// <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-    pub fn scheduled_audit_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn scheduled_audit_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.scheduled_audit_name(input.into());
         self
     }
     /// <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
     pub fn set_scheduled_audit_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_scheduled_audit_name(input);
         self
@@ -156,7 +168,7 @@ impl CreateScheduledAuditFluentBuilder {
     /// <p>Metadata that can be used to manage the scheduled audit.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

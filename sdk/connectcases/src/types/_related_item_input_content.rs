@@ -2,7 +2,7 @@
 
 /// <p>Represents the content of a related item to be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RelatedItemInputContent {
     /// <p>Represents the content of a comment to be returned to agents.</p>
     Comment(crate::types::CommentContent),
@@ -21,11 +21,11 @@ pub enum RelatedItemInputContent {
 impl RelatedItemInputContent {
     /// Tries to convert the enum instance into [`Comment`](crate::types::RelatedItemInputContent::Comment), extracting the inner [`CommentContent`](crate::types::CommentContent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_comment(&self) -> std::result::Result<&crate::types::CommentContent, &Self> {
+    pub fn as_comment(&self) -> ::std::result::Result<&crate::types::CommentContent, &Self> {
         if let RelatedItemInputContent::Comment(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Comment`](crate::types::RelatedItemInputContent::Comment).
@@ -34,11 +34,11 @@ impl RelatedItemInputContent {
     }
     /// Tries to convert the enum instance into [`Contact`](crate::types::RelatedItemInputContent::Contact), extracting the inner [`Contact`](crate::types::Contact).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_contact(&self) -> std::result::Result<&crate::types::Contact, &Self> {
+    pub fn as_contact(&self) -> ::std::result::Result<&crate::types::Contact, &Self> {
         if let RelatedItemInputContent::Contact(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemInputContent::Contact).

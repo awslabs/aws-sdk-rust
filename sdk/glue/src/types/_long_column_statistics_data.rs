@@ -2,7 +2,7 @@
 
 /// <p>Defines column statistics supported for integer data columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LongColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
     #[doc(hidden)]
@@ -44,51 +44,53 @@ impl LongColumnStatisticsData {
 
 /// A builder for [`LongColumnStatisticsData`](crate::types::LongColumnStatisticsData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LongColumnStatisticsDataBuilder {
-    pub(crate) minimum_value: std::option::Option<i64>,
-    pub(crate) maximum_value: std::option::Option<i64>,
-    pub(crate) number_of_nulls: std::option::Option<i64>,
-    pub(crate) number_of_distinct_values: std::option::Option<i64>,
+    pub(crate) minimum_value: ::std::option::Option<i64>,
+    pub(crate) maximum_value: ::std::option::Option<i64>,
+    pub(crate) number_of_nulls: ::std::option::Option<i64>,
+    pub(crate) number_of_distinct_values: ::std::option::Option<i64>,
 }
 impl LongColumnStatisticsDataBuilder {
     /// <p>The lowest value in the column.</p>
     pub fn minimum_value(mut self, input: i64) -> Self {
-        self.minimum_value = Some(input);
+        self.minimum_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lowest value in the column.</p>
-    pub fn set_minimum_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_minimum_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.minimum_value = input;
         self
     }
     /// <p>The highest value in the column.</p>
     pub fn maximum_value(mut self, input: i64) -> Self {
-        self.maximum_value = Some(input);
+        self.maximum_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The highest value in the column.</p>
-    pub fn set_maximum_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_maximum_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.maximum_value = input;
         self
     }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
-        self.number_of_nulls = Some(input);
+        self.number_of_nulls = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of null values in the column.</p>
-    pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_nulls(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_nulls = input;
         self
     }
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(mut self, input: i64) -> Self {
-        self.number_of_distinct_values = Some(input);
+        self.number_of_distinct_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of distinct values in a column.</p>
-    pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_distinct_values(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_distinct_values = input;
         self
     }

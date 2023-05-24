@@ -2,30 +2,30 @@
 
 /// <p>Represents the response from the server that lists user pool clients.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserPoolClientsOutput {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
     #[doc(hidden)]
     pub user_pool_clients:
-        std::option::Option<std::vec::Vec<crate::types::UserPoolClientDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUserPoolClientsOutput {
     /// <p>The user pool clients in the response that lists user pool clients.</p>
     pub fn user_pool_clients(
         &self,
-    ) -> std::option::Option<&[crate::types::UserPoolClientDescription]> {
+    ) -> ::std::option::Option<&[crate::types::UserPoolClientDescription]> {
         self.user_pool_clients.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListUserPoolClientsOutput {
+impl ::aws_http::request_id::RequestId for ListUserPoolClientsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,11 +40,13 @@ impl ListUserPoolClientsOutput {
 
 /// A builder for [`ListUserPoolClientsOutput`](crate::operation::list_user_pool_clients::ListUserPoolClientsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListUserPoolClientsOutputBuilder {
     pub(crate) user_pool_clients:
-        std::option::Option<std::vec::Vec<crate::types::UserPoolClientDescription>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUserPoolClientsOutputBuilder {
@@ -56,24 +58,24 @@ impl ListUserPoolClientsOutputBuilder {
     pub fn user_pool_clients(mut self, input: crate::types::UserPoolClientDescription) -> Self {
         let mut v = self.user_pool_clients.unwrap_or_default();
         v.push(input);
-        self.user_pool_clients = Some(v);
+        self.user_pool_clients = ::std::option::Option::Some(v);
         self
     }
     /// <p>The user pool clients in the response that lists user pool clients.</p>
     pub fn set_user_pool_clients(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UserPoolClientDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
     ) -> Self {
         self.user_pool_clients = input;
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

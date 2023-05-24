@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartWorkflowRun`](crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder::set_name): <p>The name of the workflow to start.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder::set_name): <p>The name of the workflow to start.</p>
     ///   - [`run_properties(HashMap<String, String>)`](crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder::run_properties) / [`set_run_properties(Option<HashMap<String, String>>)`](crate::operation::start_workflow_run::builders::StartWorkflowRunFluentBuilder::set_run_properties): <p>The workflow run properties for the new workflow run.</p>
     /// - On success, responds with [`StartWorkflowRunOutput`](crate::operation::start_workflow_run::StartWorkflowRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::start_workflow_run::StartWorkflowRunOutput::run_id): <p>An Id for the new run.</p>

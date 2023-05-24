@@ -2,36 +2,36 @@
 
 /// Use these settings to set up encryption with a static key provider.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticKeyProvider {
     /// Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must be 'identity' or a reverse DNS string. May be omitted to indicate an implicit value of 'identity'.
     #[doc(hidden)]
-    pub key_format: std::option::Option<std::string::String>,
+    pub key_format: ::std::option::Option<::std::string::String>,
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
     #[doc(hidden)]
-    pub key_format_versions: std::option::Option<std::string::String>,
+    pub key_format_versions: ::std::option::Option<::std::string::String>,
     /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
     #[doc(hidden)]
-    pub static_key_value: std::option::Option<std::string::String>,
+    pub static_key_value: ::std::option::Option<::std::string::String>,
     /// Relates to DRM implementation. The location of the license server used for protecting content.
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
 }
 impl StaticKeyProvider {
     /// Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must be 'identity' or a reverse DNS string. May be omitted to indicate an implicit value of 'identity'.
-    pub fn key_format(&self) -> std::option::Option<&str> {
+    pub fn key_format(&self) -> ::std::option::Option<&str> {
         self.key_format.as_deref()
     }
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
-    pub fn key_format_versions(&self) -> std::option::Option<&str> {
+    pub fn key_format_versions(&self) -> ::std::option::Option<&str> {
         self.key_format_versions.as_deref()
     }
     /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
-    pub fn static_key_value(&self) -> std::option::Option<&str> {
+    pub fn static_key_value(&self) -> ::std::option::Option<&str> {
         self.static_key_value.as_deref()
     }
     /// Relates to DRM implementation. The location of the license server used for protecting content.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
 }
@@ -44,54 +44,65 @@ impl StaticKeyProvider {
 
 /// A builder for [`StaticKeyProvider`](crate::types::StaticKeyProvider).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StaticKeyProviderBuilder {
-    pub(crate) key_format: std::option::Option<std::string::String>,
-    pub(crate) key_format_versions: std::option::Option<std::string::String>,
-    pub(crate) static_key_value: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
+    pub(crate) key_format: ::std::option::Option<::std::string::String>,
+    pub(crate) key_format_versions: ::std::option::Option<::std::string::String>,
+    pub(crate) static_key_value: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl StaticKeyProviderBuilder {
     /// Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must be 'identity' or a reverse DNS string. May be omitted to indicate an implicit value of 'identity'.
-    pub fn key_format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_format = Some(input.into());
+    pub fn key_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_format = ::std::option::Option::Some(input.into());
         self
     }
     /// Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must be 'identity' or a reverse DNS string. May be omitted to indicate an implicit value of 'identity'.
-    pub fn set_key_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_format = input;
         self
     }
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
-    pub fn key_format_versions(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_format_versions = Some(input.into());
+    pub fn key_format_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.key_format_versions = ::std::option::Option::Some(input.into());
         self
     }
     /// Relates to DRM implementation. Either a single positive integer version value or a slash delimited list of version values (1/2/3).
     pub fn set_key_format_versions(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.key_format_versions = input;
         self
     }
     /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
-    pub fn static_key_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.static_key_value = Some(input.into());
+    pub fn static_key_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.static_key_value = ::std::option::Option::Some(input.into());
         self
     }
     /// Relates to DRM implementation. Use a 32-character hexidecimal string to specify Key Value (StaticKeyValue).
-    pub fn set_static_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_static_key_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.static_key_value = input;
         self
     }
     /// Relates to DRM implementation. The location of the license server used for protecting content.
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// Relates to DRM implementation. The location of the license server used for protecting content.
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }

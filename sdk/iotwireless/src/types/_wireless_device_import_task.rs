@@ -2,85 +2,85 @@
 
 /// <p>Information about an import task for wireless devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessDeviceImportTask {
     /// <p>The ID of the wireless device import task.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) of the wireless device import task.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>
     #[doc(hidden)]
-    pub destination_name: std::option::Option<std::string::String>,
+    pub destination_name: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk-related information of the wireless device import task.</p>
     #[doc(hidden)]
-    pub sidewalk: std::option::Option<crate::types::SidewalkGetStartImportInfo>,
+    pub sidewalk: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>,
     /// <p>The time at which the import task was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status information of the wireless device import task.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ImportTaskStatus>,
+    pub status: ::std::option::Option<crate::types::ImportTaskStatus>,
     /// <p>The reason that provides additional information about the import task status.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The summary information of count of wireless devices that are waiting for the control log to be added to an import task.</p>
     #[doc(hidden)]
-    pub initialized_imported_device_count: std::option::Option<i64>,
+    pub initialized_imported_device_count: ::std::option::Option<i64>,
     /// <p>The summary information of count of wireless devices in an import task that are waiting in the queue to be onboarded.</p>
     #[doc(hidden)]
-    pub pending_imported_device_count: std::option::Option<i64>,
+    pub pending_imported_device_count: ::std::option::Option<i64>,
     /// <p>The summary information of count of wireless devices in an import task that have been onboarded to the import task.</p>
     #[doc(hidden)]
-    pub onboarded_imported_device_count: std::option::Option<i64>,
+    pub onboarded_imported_device_count: ::std::option::Option<i64>,
     /// <p>The summary information of count of wireless devices in an import task that failed to onboarded to the import task.</p>
     #[doc(hidden)]
-    pub failed_imported_device_count: std::option::Option<i64>,
+    pub failed_imported_device_count: ::std::option::Option<i64>,
 }
 impl WirelessDeviceImportTask {
     /// <p>The ID of the wireless device import task.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the wireless device import task.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> ::std::option::Option<&str> {
         self.destination_name.as_deref()
     }
     /// <p>The Sidewalk-related information of the wireless device import task.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::types::SidewalkGetStartImportInfo> {
+    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::SidewalkGetStartImportInfo> {
         self.sidewalk.as_ref()
     }
     /// <p>The time at which the import task was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The status information of the wireless device import task.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ImportTaskStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ImportTaskStatus> {
         self.status.as_ref()
     }
     /// <p>The reason that provides additional information about the import task status.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The summary information of count of wireless devices that are waiting for the control log to be added to an import task.</p>
-    pub fn initialized_imported_device_count(&self) -> std::option::Option<i64> {
+    pub fn initialized_imported_device_count(&self) -> ::std::option::Option<i64> {
         self.initialized_imported_device_count
     }
     /// <p>The summary information of count of wireless devices in an import task that are waiting in the queue to be onboarded.</p>
-    pub fn pending_imported_device_count(&self) -> std::option::Option<i64> {
+    pub fn pending_imported_device_count(&self) -> ::std::option::Option<i64> {
         self.pending_imported_device_count
     }
     /// <p>The summary information of count of wireless devices in an import task that have been onboarded to the import task.</p>
-    pub fn onboarded_imported_device_count(&self) -> std::option::Option<i64> {
+    pub fn onboarded_imported_device_count(&self) -> ::std::option::Option<i64> {
         self.onboarded_imported_device_count
     }
     /// <p>The summary information of count of wireless devices in an import task that failed to onboarded to the import task.</p>
-    pub fn failed_imported_device_count(&self) -> std::option::Option<i64> {
+    pub fn failed_imported_device_count(&self) -> ::std::option::Option<i64> {
         self.failed_imported_device_count
     }
 }
@@ -93,140 +93,157 @@ impl WirelessDeviceImportTask {
 
 /// A builder for [`WirelessDeviceImportTask`](crate::types::WirelessDeviceImportTask).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WirelessDeviceImportTaskBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) destination_name: std::option::Option<std::string::String>,
-    pub(crate) sidewalk: std::option::Option<crate::types::SidewalkGetStartImportInfo>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::ImportTaskStatus>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
-    pub(crate) initialized_imported_device_count: std::option::Option<i64>,
-    pub(crate) pending_imported_device_count: std::option::Option<i64>,
-    pub(crate) onboarded_imported_device_count: std::option::Option<i64>,
-    pub(crate) failed_imported_device_count: std::option::Option<i64>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_name: ::std::option::Option<::std::string::String>,
+    pub(crate) sidewalk: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::ImportTaskStatus>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) initialized_imported_device_count: ::std::option::Option<i64>,
+    pub(crate) pending_imported_device_count: ::std::option::Option<i64>,
+    pub(crate) onboarded_imported_device_count: ::std::option::Option<i64>,
+    pub(crate) failed_imported_device_count: ::std::option::Option<i64>,
 }
 impl WirelessDeviceImportTaskBuilder {
     /// <p>The ID of the wireless device import task.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless device import task.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the wireless device import task.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the wireless device import task.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>
-    pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_name = Some(input.into());
+    pub fn destination_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Sidewalk destination that that describes the IoT rule to route messages from the device in the import task that will be onboarded to AWS IoT Wireless</p>
-    pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_name = input;
         self
     }
     /// <p>The Sidewalk-related information of the wireless device import task.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkGetStartImportInfo) -> Self {
-        self.sidewalk = Some(input);
+        self.sidewalk = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Sidewalk-related information of the wireless device import task.</p>
     pub fn set_sidewalk(
         mut self,
-        input: std::option::Option<crate::types::SidewalkGetStartImportInfo>,
+        input: ::std::option::Option<crate::types::SidewalkGetStartImportInfo>,
     ) -> Self {
         self.sidewalk = input;
         self
     }
     /// <p>The time at which the import task was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the import task was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The status information of the wireless device import task.</p>
     pub fn status(mut self, input: crate::types::ImportTaskStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status information of the wireless device import task.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ImportTaskStatus>,
+        input: ::std::option::Option<crate::types::ImportTaskStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The reason that provides additional information about the import task status.</p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that provides additional information about the import task status.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }
     /// <p>The summary information of count of wireless devices that are waiting for the control log to be added to an import task.</p>
     pub fn initialized_imported_device_count(mut self, input: i64) -> Self {
-        self.initialized_imported_device_count = Some(input);
+        self.initialized_imported_device_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The summary information of count of wireless devices that are waiting for the control log to be added to an import task.</p>
     pub fn set_initialized_imported_device_count(
         mut self,
-        input: std::option::Option<i64>,
+        input: ::std::option::Option<i64>,
     ) -> Self {
         self.initialized_imported_device_count = input;
         self
     }
     /// <p>The summary information of count of wireless devices in an import task that are waiting in the queue to be onboarded.</p>
     pub fn pending_imported_device_count(mut self, input: i64) -> Self {
-        self.pending_imported_device_count = Some(input);
+        self.pending_imported_device_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The summary information of count of wireless devices in an import task that are waiting in the queue to be onboarded.</p>
-    pub fn set_pending_imported_device_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_pending_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.pending_imported_device_count = input;
         self
     }
     /// <p>The summary information of count of wireless devices in an import task that have been onboarded to the import task.</p>
     pub fn onboarded_imported_device_count(mut self, input: i64) -> Self {
-        self.onboarded_imported_device_count = Some(input);
+        self.onboarded_imported_device_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The summary information of count of wireless devices in an import task that have been onboarded to the import task.</p>
-    pub fn set_onboarded_imported_device_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_onboarded_imported_device_count(
+        mut self,
+        input: ::std::option::Option<i64>,
+    ) -> Self {
         self.onboarded_imported_device_count = input;
         self
     }
     /// <p>The summary information of count of wireless devices in an import task that failed to onboarded to the import task.</p>
     pub fn failed_imported_device_count(mut self, input: i64) -> Self {
-        self.failed_imported_device_count = Some(input);
+        self.failed_imported_device_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The summary information of count of wireless devices in an import task that failed to onboarded to the import task.</p>
-    pub fn set_failed_imported_device_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_failed_imported_device_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed_imported_device_count = input;
         self
     }

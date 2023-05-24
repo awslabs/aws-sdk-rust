@@ -2,29 +2,29 @@
 
 /// <p>Describes the Inference accelerators for the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceDeviceInfo {
     /// <p>The number of Inference accelerators for the instance type.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// <p>The name of the Inference accelerator.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The manufacturer of the Inference accelerator.</p>
     #[doc(hidden)]
-    pub manufacturer: std::option::Option<std::string::String>,
+    pub manufacturer: ::std::option::Option<::std::string::String>,
 }
 impl InferenceDeviceInfo {
     /// <p>The number of Inference accelerators for the instance type.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The name of the Inference accelerator.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
-    pub fn manufacturer(&self) -> std::option::Option<&str> {
+    pub fn manufacturer(&self) -> ::std::option::Option<&str> {
         self.manufacturer.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl InferenceDeviceInfo {
 
 /// A builder for [`InferenceDeviceInfo`](crate::types::InferenceDeviceInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceDeviceInfoBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) manufacturer: std::option::Option<std::string::String>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) manufacturer: ::std::option::Option<::std::string::String>,
 }
 impl InferenceDeviceInfoBuilder {
     /// <p>The number of Inference accelerators for the instance type.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Inference accelerators for the instance type.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The name of the Inference accelerator.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Inference accelerator.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
-    pub fn manufacturer(mut self, input: impl Into<std::string::String>) -> Self {
-        self.manufacturer = Some(input.into());
+    pub fn manufacturer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.manufacturer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The manufacturer of the Inference accelerator.</p>
-    pub fn set_manufacturer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manufacturer = input;
         self
     }

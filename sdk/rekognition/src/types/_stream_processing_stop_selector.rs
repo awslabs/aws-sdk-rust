@@ -2,15 +2,15 @@
 
 /// <p> Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessingStopSelector {
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
     #[doc(hidden)]
-    pub max_duration_in_seconds: std::option::Option<i64>,
+    pub max_duration_in_seconds: ::std::option::Option<i64>,
 }
 impl StreamProcessingStopSelector {
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
-    pub fn max_duration_in_seconds(&self) -> std::option::Option<i64> {
+    pub fn max_duration_in_seconds(&self) -> ::std::option::Option<i64> {
         self.max_duration_in_seconds
     }
 }
@@ -23,18 +23,20 @@ impl StreamProcessingStopSelector {
 
 /// A builder for [`StreamProcessingStopSelector`](crate::types::StreamProcessingStopSelector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamProcessingStopSelectorBuilder {
-    pub(crate) max_duration_in_seconds: std::option::Option<i64>,
+    pub(crate) max_duration_in_seconds: ::std::option::Option<i64>,
 }
 impl StreamProcessingStopSelectorBuilder {
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
     pub fn max_duration_in_seconds(mut self, input: i64) -> Self {
-        self.max_duration_in_seconds = Some(input);
+        self.max_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the maximum amount of time in seconds that you want the stream to be processed. The largest amount of time is 2 minutes. The default is 10 seconds. </p>
-    pub fn set_max_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_max_duration_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_duration_in_seconds = input;
         self
     }

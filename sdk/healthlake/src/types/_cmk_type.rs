@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmkType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmkType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmkType {
+impl ::std::convert::From<&str> for CmkType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_OWNED_KMS_KEY" => CmkType::AoCmk,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for CmkType {
         }
     }
 }
-impl std::str::FromStr for CmkType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmkType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmkType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmkType::from(s))
     }
 }
 impl CmkType {
@@ -84,7 +84,7 @@ impl CmkType {
         &["AWS_OWNED_KMS_KEY", "CUSTOMER_MANAGED_KMS_KEY"]
     }
 }
-impl AsRef<str> for CmkType {
+impl ::std::convert::AsRef<str> for CmkType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

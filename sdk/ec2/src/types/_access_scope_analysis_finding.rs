@@ -2,36 +2,36 @@
 
 /// <p>Describes a finding for a Network Access Scope.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessScopeAnalysisFinding {
     /// <p>The ID of the Network Access Scope analysis.</p>
     #[doc(hidden)]
-    pub network_insights_access_scope_analysis_id: std::option::Option<std::string::String>,
+    pub network_insights_access_scope_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Network Access Scope.</p>
     #[doc(hidden)]
-    pub network_insights_access_scope_id: std::option::Option<std::string::String>,
+    pub network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the finding.</p>
     #[doc(hidden)]
-    pub finding_id: std::option::Option<std::string::String>,
+    pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The finding components.</p>
     #[doc(hidden)]
-    pub finding_components: std::option::Option<std::vec::Vec<crate::types::PathComponent>>,
+    pub finding_components: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
 }
 impl AccessScopeAnalysisFinding {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(&self) -> std::option::Option<&str> {
+    pub fn network_insights_access_scope_analysis_id(&self) -> ::std::option::Option<&str> {
         self.network_insights_access_scope_analysis_id.as_deref()
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(&self) -> std::option::Option<&str> {
+    pub fn network_insights_access_scope_id(&self) -> ::std::option::Option<&str> {
         self.network_insights_access_scope_id.as_deref()
     }
     /// <p>The ID of the finding.</p>
-    pub fn finding_id(&self) -> std::option::Option<&str> {
+    pub fn finding_id(&self) -> ::std::option::Option<&str> {
         self.finding_id.as_deref()
     }
     /// <p>The finding components.</p>
-    pub fn finding_components(&self) -> std::option::Option<&[crate::types::PathComponent]> {
+    pub fn finding_components(&self) -> ::std::option::Option<&[crate::types::PathComponent]> {
         self.finding_components.as_deref()
     }
 }
@@ -44,26 +44,30 @@ impl AccessScopeAnalysisFinding {
 
 /// A builder for [`AccessScopeAnalysisFinding`](crate::types::AccessScopeAnalysisFinding).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessScopeAnalysisFindingBuilder {
-    pub(crate) network_insights_access_scope_analysis_id: std::option::Option<std::string::String>,
-    pub(crate) network_insights_access_scope_id: std::option::Option<std::string::String>,
-    pub(crate) finding_id: std::option::Option<std::string::String>,
-    pub(crate) finding_components: std::option::Option<std::vec::Vec<crate::types::PathComponent>>,
+    pub(crate) network_insights_access_scope_analysis_id:
+        ::std::option::Option<::std::string::String>,
+    pub(crate) network_insights_access_scope_id: ::std::option::Option<::std::string::String>,
+    pub(crate) finding_id: ::std::option::Option<::std::string::String>,
+    pub(crate) finding_components:
+        ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
 }
 impl AccessScopeAnalysisFindingBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub fn network_insights_access_scope_analysis_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.network_insights_access_scope_analysis_id = Some(input.into());
+        self.network_insights_access_scope_analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub fn set_network_insights_access_scope_analysis_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_insights_access_scope_analysis_id = input;
         self
@@ -71,26 +75,26 @@ impl AccessScopeAnalysisFindingBuilder {
     /// <p>The ID of the Network Access Scope.</p>
     pub fn network_insights_access_scope_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.network_insights_access_scope_id = Some(input.into());
+        self.network_insights_access_scope_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
     pub fn set_network_insights_access_scope_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_insights_access_scope_id = input;
         self
     }
     /// <p>The ID of the finding.</p>
-    pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.finding_id = Some(input.into());
+    pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.finding_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the finding.</p>
-    pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.finding_id = input;
         self
     }
@@ -102,13 +106,13 @@ impl AccessScopeAnalysisFindingBuilder {
     pub fn finding_components(mut self, input: crate::types::PathComponent) -> Self {
         let mut v = self.finding_components.unwrap_or_default();
         v.push(input);
-        self.finding_components = Some(v);
+        self.finding_components = ::std::option::Option::Some(v);
         self
     }
     /// <p>The finding components.</p>
     pub fn set_finding_components(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PathComponent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PathComponent>>,
     ) -> Self {
         self.finding_components = input;
         self

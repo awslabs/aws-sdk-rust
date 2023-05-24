@@ -2,15 +2,15 @@
 
 /// <p>Represents the output of a <code>DeleteObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteObject {
     /// <p>The reference that identifies the object.</p>
     #[doc(hidden)]
-    pub object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchDeleteObject {
     /// <p>The reference that identifies the object.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BatchDeleteObject {
 
 /// A builder for [`BatchDeleteObject`](crate::types::BatchDeleteObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDeleteObjectBuilder {
-    pub(crate) object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchDeleteObjectBuilder {
     /// <p>The reference that identifies the object.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.object_reference = Some(input);
+        self.object_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reference that identifies the object.</p>
     pub fn set_object_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.object_reference = input;
         self

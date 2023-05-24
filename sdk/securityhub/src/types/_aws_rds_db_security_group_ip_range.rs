@@ -2,22 +2,22 @@
 
 /// <p>IP range information for an RDS DB security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbSecurityGroupIpRange {
     /// <p>Specifies the IP range.</p>
     #[doc(hidden)]
-    pub cidr_ip: std::option::Option<std::string::String>,
+    pub cidr_ip: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the status of the IP range.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSecurityGroupIpRange {
     /// <p>Specifies the IP range.</p>
-    pub fn cidr_ip(&self) -> std::option::Option<&str> {
+    pub fn cidr_ip(&self) -> ::std::option::Option<&str> {
         self.cidr_ip.as_deref()
     }
     /// <p>Specifies the status of the IP range.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AwsRdsDbSecurityGroupIpRange {
 
 /// A builder for [`AwsRdsDbSecurityGroupIpRange`](crate::types::AwsRdsDbSecurityGroupIpRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRdsDbSecurityGroupIpRangeBuilder {
-    pub(crate) cidr_ip: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbSecurityGroupIpRangeBuilder {
     /// <p>Specifies the IP range.</p>
-    pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cidr_ip = Some(input.into());
+    pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the IP range.</p>
-    pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_ip = input;
         self
     }
     /// <p>Specifies the status of the IP range.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the status of the IP range.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

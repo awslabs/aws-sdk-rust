@@ -2,22 +2,22 @@
 
 /// <p>The term being translated by the custom terminology.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Term {
     /// <p>The source text of the term being translated by the custom terminology.</p>
     #[doc(hidden)]
-    pub source_text: std::option::Option<std::string::String>,
+    pub source_text: ::std::option::Option<::std::string::String>,
     /// <p>The target text of the term being translated by the custom terminology.</p>
     #[doc(hidden)]
-    pub target_text: std::option::Option<std::string::String>,
+    pub target_text: ::std::option::Option<::std::string::String>,
 }
 impl Term {
     /// <p>The source text of the term being translated by the custom terminology.</p>
-    pub fn source_text(&self) -> std::option::Option<&str> {
+    pub fn source_text(&self) -> ::std::option::Option<&str> {
         self.source_text.as_deref()
     }
     /// <p>The target text of the term being translated by the custom terminology.</p>
-    pub fn target_text(&self) -> std::option::Option<&str> {
+    pub fn target_text(&self) -> ::std::option::Option<&str> {
         self.target_text.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Term {
 
 /// A builder for [`Term`](crate::types::Term).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TermBuilder {
-    pub(crate) source_text: std::option::Option<std::string::String>,
-    pub(crate) target_text: std::option::Option<std::string::String>,
+    pub(crate) source_text: ::std::option::Option<::std::string::String>,
+    pub(crate) target_text: ::std::option::Option<::std::string::String>,
 }
 impl TermBuilder {
     /// <p>The source text of the term being translated by the custom terminology.</p>
-    pub fn source_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_text = Some(input.into());
+    pub fn source_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source text of the term being translated by the custom terminology.</p>
-    pub fn set_source_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_text = input;
         self
     }
     /// <p>The target text of the term being translated by the custom terminology.</p>
-    pub fn target_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_text = Some(input.into());
+    pub fn target_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target text of the term being translated by the custom terminology.</p>
-    pub fn set_target_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_text = input;
         self
     }

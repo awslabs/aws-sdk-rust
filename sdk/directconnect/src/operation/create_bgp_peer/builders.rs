@@ -12,56 +12,59 @@ pub use crate::operation::create_bgp_peer::_create_bgp_peer_input::CreateBgpPeer
 /// <p>If you let Amazon Web Services auto-assign IPv4 addresses, a /30 CIDR will be allocated from 169.254.0.0/16. Amazon Web Services does not recommend this option if you intend to use the customer router peer IP address as the source and destination for traffic. Instead you should use RFC 1918 or other addressing, and specify the address yourself. For more information about RFC 1918 see <a href="https://datatracker.ietf.org/doc/html/rfc1918"> Address Allocation for Private Internets</a>.</p>
 /// </important>
 /// <p>For a public virtual interface, the Autonomous System Number (ASN) must be private or already on the allow list for the virtual interface.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBGPPeerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_bgp_peer::builders::CreateBgpPeerInputBuilder,
 }
 impl CreateBGPPeerFluentBuilder {
     /// Creates a new `CreateBGPPeer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_bgp_peer::CreateBGPPeer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_bgp_peer::CreateBGPPeerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bgp_peer::CreateBGPPeerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_bgp_peer::CreateBgpPeerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_bgp_peer::CreateBGPPeerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bgp_peer::CreateBGPPeerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,21 +77,24 @@ impl CreateBGPPeerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_bgp_peer::CreateBgpPeerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_bgp_peer::CreateBGPPeerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bgp_peer::CreateBGPPeerError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn virtual_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn set_virtual_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
@@ -101,7 +107,7 @@ impl CreateBGPPeerFluentBuilder {
     /// <p>Information about the BGP peer.</p>
     pub fn set_new_bgp_peer(
         mut self,
-        input: std::option::Option<crate::types::NewBgpPeer>,
+        input: ::std::option::Option<crate::types::NewBgpPeer>,
     ) -> Self {
         self.inner = self.inner.set_new_bgp_peer(input);
         self

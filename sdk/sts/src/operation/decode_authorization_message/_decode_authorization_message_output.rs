@@ -2,20 +2,20 @@
 
 /// <p>A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an Amazon Web Services request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageOutput {
     /// <p>The API returns a response with the decoded message.</p>
     #[doc(hidden)]
-    pub decoded_message: std::option::Option<std::string::String>,
+    pub decoded_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DecodeAuthorizationMessageOutput {
     /// <p>The API returns a response with the decoded message.</p>
-    pub fn decoded_message(&self) -> std::option::Option<&str> {
+    pub fn decoded_message(&self) -> ::std::option::Option<&str> {
         self.decoded_message.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DecodeAuthorizationMessageOutput {
+impl ::aws_http::request_id::RequestId for DecodeAuthorizationMessageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,27 @@ impl DecodeAuthorizationMessageOutput {
 
 /// A builder for [`DecodeAuthorizationMessageOutput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DecodeAuthorizationMessageOutputBuilder {
-    pub(crate) decoded_message: std::option::Option<std::string::String>,
+    pub(crate) decoded_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DecodeAuthorizationMessageOutputBuilder {
     /// <p>The API returns a response with the decoded message.</p>
-    pub fn decoded_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.decoded_message = Some(input.into());
+    pub fn decoded_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.decoded_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API returns a response with the decoded message.</p>
-    pub fn set_decoded_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_decoded_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.decoded_message = input;
         self
     }

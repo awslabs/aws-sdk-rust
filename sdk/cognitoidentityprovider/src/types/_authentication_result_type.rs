@@ -2,30 +2,30 @@
 
 /// <p>The authentication result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AuthenticationResultType {
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The expiration period of the authentication result in seconds.</p>
     #[doc(hidden)]
     pub expires_in: i32,
     /// <p>The token type.</p>
     #[doc(hidden)]
-    pub token_type: std::option::Option<std::string::String>,
+    pub token_type: ::std::option::Option<::std::string::String>,
     /// <p>The refresh token.</p>
     #[doc(hidden)]
-    pub refresh_token: std::option::Option<std::string::String>,
+    pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID token.</p>
     #[doc(hidden)]
-    pub id_token: std::option::Option<std::string::String>,
+    pub id_token: ::std::option::Option<::std::string::String>,
     /// <p>The new device metadata from an authentication result.</p>
     #[doc(hidden)]
-    pub new_device_metadata: std::option::Option<crate::types::NewDeviceMetadataType>,
+    pub new_device_metadata: ::std::option::Option<crate::types::NewDeviceMetadataType>,
 }
 impl AuthenticationResultType {
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>The expiration period of the authentication result in seconds.</p>
@@ -33,24 +33,26 @@ impl AuthenticationResultType {
         self.expires_in
     }
     /// <p>The token type.</p>
-    pub fn token_type(&self) -> std::option::Option<&str> {
+    pub fn token_type(&self) -> ::std::option::Option<&str> {
         self.token_type.as_deref()
     }
     /// <p>The refresh token.</p>
-    pub fn refresh_token(&self) -> std::option::Option<&str> {
+    pub fn refresh_token(&self) -> ::std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
     /// <p>The ID token.</p>
-    pub fn id_token(&self) -> std::option::Option<&str> {
+    pub fn id_token(&self) -> ::std::option::Option<&str> {
         self.id_token.as_deref()
     }
     /// <p>The new device metadata from an authentication result.</p>
-    pub fn new_device_metadata(&self) -> std::option::Option<&crate::types::NewDeviceMetadataType> {
+    pub fn new_device_metadata(
+        &self,
+    ) -> ::std::option::Option<&crate::types::NewDeviceMetadataType> {
         self.new_device_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for AuthenticationResultType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AuthenticationResultType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AuthenticationResultType");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("expires_in", &self.expires_in);
@@ -70,75 +72,81 @@ impl AuthenticationResultType {
 
 /// A builder for [`AuthenticationResultType`](crate::types::AuthenticationResultType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AuthenticationResultTypeBuilder {
-    pub(crate) access_token: std::option::Option<std::string::String>,
-    pub(crate) expires_in: std::option::Option<i32>,
-    pub(crate) token_type: std::option::Option<std::string::String>,
-    pub(crate) refresh_token: std::option::Option<std::string::String>,
-    pub(crate) id_token: std::option::Option<std::string::String>,
-    pub(crate) new_device_metadata: std::option::Option<crate::types::NewDeviceMetadataType>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) expires_in: ::std::option::Option<i32>,
+    pub(crate) token_type: ::std::option::Option<::std::string::String>,
+    pub(crate) refresh_token: ::std::option::Option<::std::string::String>,
+    pub(crate) id_token: ::std::option::Option<::std::string::String>,
+    pub(crate) new_device_metadata: ::std::option::Option<crate::types::NewDeviceMetadataType>,
 }
 impl AuthenticationResultTypeBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user who you want to authenticate.</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
     /// <p>The expiration period of the authentication result in seconds.</p>
     pub fn expires_in(mut self, input: i32) -> Self {
-        self.expires_in = Some(input);
+        self.expires_in = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expiration period of the authentication result in seconds.</p>
-    pub fn set_expires_in(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_expires_in(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expires_in = input;
         self
     }
     /// <p>The token type.</p>
-    pub fn token_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.token_type = Some(input.into());
+    pub fn token_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.token_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token type.</p>
-    pub fn set_token_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_type = input;
         self
     }
     /// <p>The refresh token.</p>
-    pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.refresh_token = Some(input.into());
+    pub fn refresh_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The refresh token.</p>
-    pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_refresh_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.refresh_token = input;
         self
     }
     /// <p>The ID token.</p>
-    pub fn id_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id_token = Some(input.into());
+    pub fn id_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID token.</p>
-    pub fn set_id_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id_token = input;
         self
     }
     /// <p>The new device metadata from an authentication result.</p>
     pub fn new_device_metadata(mut self, input: crate::types::NewDeviceMetadataType) -> Self {
-        self.new_device_metadata = Some(input);
+        self.new_device_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new device metadata from an authentication result.</p>
     pub fn set_new_device_metadata(
         mut self,
-        input: std::option::Option<crate::types::NewDeviceMetadataType>,
+        input: ::std::option::Option<crate::types::NewDeviceMetadataType>,
     ) -> Self {
         self.new_device_metadata = input;
         self
@@ -155,8 +163,8 @@ impl AuthenticationResultTypeBuilder {
         }
     }
 }
-impl std::fmt::Debug for AuthenticationResultTypeBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AuthenticationResultTypeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AuthenticationResultTypeBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("expires_in", &self.expires_in);

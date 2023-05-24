@@ -2,29 +2,29 @@
 
 /// <p>Contains the output of ModifyLoadBalancerAttributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesOutput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the load balancer attributes.</p>
     #[doc(hidden)]
-    pub load_balancer_attributes: std::option::Option<crate::types::LoadBalancerAttributes>,
+    pub load_balancer_attributes: ::std::option::Option<crate::types::LoadBalancerAttributes>,
     _request_id: Option<String>,
 }
 impl ModifyLoadBalancerAttributesOutput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>Information about the load balancer attributes.</p>
     pub fn load_balancer_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::LoadBalancerAttributes> {
+    ) -> ::std::option::Option<&crate::types::LoadBalancerAttributes> {
         self.load_balancer_attributes.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ModifyLoadBalancerAttributesOutput {
+impl ::aws_http::request_id::RequestId for ModifyLoadBalancerAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,35 +38,41 @@ impl ModifyLoadBalancerAttributesOutput {
 
 /// A builder for [`ModifyLoadBalancerAttributesOutput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyLoadBalancerAttributesOutputBuilder {
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) load_balancer_attributes: std::option::Option<crate::types::LoadBalancerAttributes>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) load_balancer_attributes:
+        ::std::option::Option<crate::types::LoadBalancerAttributes>,
     _request_id: Option<String>,
 }
 impl ModifyLoadBalancerAttributesOutputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
     }
     /// <p>Information about the load balancer attributes.</p>
     pub fn load_balancer_attributes(mut self, input: crate::types::LoadBalancerAttributes) -> Self {
-        self.load_balancer_attributes = Some(input);
+        self.load_balancer_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the load balancer attributes.</p>
     pub fn set_load_balancer_attributes(
         mut self,
-        input: std::option::Option<crate::types::LoadBalancerAttributes>,
+        input: ::std::option::Option<crate::types::LoadBalancerAttributes>,
     ) -> Self {
         self.load_balancer_attributes = input;
         self

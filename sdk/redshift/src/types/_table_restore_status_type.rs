@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TableRestoreStatusType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum TableRestoreStatusType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TableRestoreStatusType {
+impl ::std::convert::From<&str> for TableRestoreStatusType {
     fn from(s: &str) -> Self {
         match s {
             "CANCELED" => TableRestoreStatusType::Canceled,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for TableRestoreStatusType {
         }
     }
 }
-impl std::str::FromStr for TableRestoreStatusType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TableRestoreStatusType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TableRestoreStatusType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TableRestoreStatusType::from(s))
     }
 }
 impl TableRestoreStatusType {
@@ -101,7 +101,7 @@ impl TableRestoreStatusType {
         &["CANCELED", "FAILED", "IN_PROGRESS", "PENDING", "SUCCEEDED"]
     }
 }
-impl AsRef<str> for TableRestoreStatusType {
+impl ::std::convert::AsRef<str> for TableRestoreStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

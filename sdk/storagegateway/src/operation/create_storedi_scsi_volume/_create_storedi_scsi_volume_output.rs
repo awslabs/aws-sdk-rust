@@ -2,22 +2,22 @@
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStorediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
     #[doc(hidden)]
-    pub volume_arn: std::option::Option<std::string::String>,
+    pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume in bytes.</p>
     #[doc(hidden)]
     pub volume_size_in_bytes: i64,
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStorediScsiVolumeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
@@ -25,11 +25,11 @@ impl CreateStorediScsiVolumeOutput {
         self.volume_size_in_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateStorediScsiVolumeOutput {
+impl ::aws_http::request_id::RequestId for CreateStorediScsiVolumeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,41 +45,43 @@ impl CreateStorediScsiVolumeOutput {
 
 /// A builder for [`CreateStorediScsiVolumeOutput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateStorediScsiVolumeOutputBuilder {
-    pub(crate) volume_arn: std::option::Option<std::string::String>,
-    pub(crate) volume_size_in_bytes: std::option::Option<i64>,
-    pub(crate) target_arn: std::option::Option<std::string::String>,
+    pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStorediScsiVolumeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
-    pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_arn = Some(input.into());
+    pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the configured volume.</p>
-    pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
-        self.volume_size_in_bytes = Some(input);
+        self.volume_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the volume in bytes.</p>
-    pub fn set_volume_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_volume_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.volume_size_in_bytes = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }

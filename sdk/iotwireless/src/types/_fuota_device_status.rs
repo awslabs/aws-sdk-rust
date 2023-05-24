@@ -47,13 +47,13 @@
 /// <p>The status of a wireless device in a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FuotaDeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum FuotaDeviceStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FuotaDeviceStatus {
+impl ::std::convert::From<&str> for FuotaDeviceStatus {
     fn from(s: &str) -> Self {
         match s {
             "FragAlgo_unsupported" => FuotaDeviceStatus::FragAlgoUnsupported,
@@ -101,11 +101,11 @@ impl std::convert::From<&str> for FuotaDeviceStatus {
         }
     }
 }
-impl std::str::FromStr for FuotaDeviceStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FuotaDeviceStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FuotaDeviceStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FuotaDeviceStatus::from(s))
     }
 }
 impl FuotaDeviceStatus {
@@ -143,7 +143,7 @@ impl FuotaDeviceStatus {
         ]
     }
 }
-impl AsRef<str> for FuotaDeviceStatus {
+impl ::std::convert::AsRef<str> for FuotaDeviceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

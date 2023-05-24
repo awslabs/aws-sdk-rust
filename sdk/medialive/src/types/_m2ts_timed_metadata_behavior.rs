@@ -38,13 +38,13 @@
 /// M2ts Timed Metadata Behavior
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsTimedMetadataBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsTimedMetadataBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsTimedMetadataBehavior {
+impl ::std::convert::From<&str> for M2tsTimedMetadataBehavior {
     fn from(s: &str) -> Self {
         match s {
             "NO_PASSTHROUGH" => M2tsTimedMetadataBehavior::NoPassthrough,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M2tsTimedMetadataBehavior {
         }
     }
 }
-impl std::str::FromStr for M2tsTimedMetadataBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsTimedMetadataBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsTimedMetadataBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsTimedMetadataBehavior::from(s))
     }
 }
 impl M2tsTimedMetadataBehavior {
@@ -86,7 +86,7 @@ impl M2tsTimedMetadataBehavior {
         &["NO_PASSTHROUGH", "PASSTHROUGH"]
     }
 }
-impl AsRef<str> for M2tsTimedMetadataBehavior {
+impl ::std::convert::AsRef<str> for M2tsTimedMetadataBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

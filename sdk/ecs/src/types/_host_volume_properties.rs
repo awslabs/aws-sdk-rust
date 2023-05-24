@@ -2,17 +2,17 @@
 
 /// <p>Details on a container instance bind mount host volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HostVolumeProperties {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the <code>sourcePath</code> value doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p>
     /// <p>If you're using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
     #[doc(hidden)]
-    pub source_path: std::option::Option<std::string::String>,
+    pub source_path: ::std::option::Option<::std::string::String>,
 }
 impl HostVolumeProperties {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the <code>sourcePath</code> value doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p>
     /// <p>If you're using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> ::std::option::Option<&str> {
         self.source_path.as_deref()
     }
 }
@@ -25,20 +25,22 @@ impl HostVolumeProperties {
 
 /// A builder for [`HostVolumeProperties`](crate::types::HostVolumeProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HostVolumePropertiesBuilder {
-    pub(crate) source_path: std::option::Option<std::string::String>,
+    pub(crate) source_path: ::std::option::Option<::std::string::String>,
 }
 impl HostVolumePropertiesBuilder {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the <code>sourcePath</code> value doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p>
     /// <p>If you're using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-    pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_path = Some(input.into());
+    pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. If this parameter is empty, then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file location, then the data volume persists at the specified location on the host container instance until you delete it manually. If the <code>sourcePath</code> value doesn't exist on the host container instance, the Docker daemon creates it. If the location does exist, the contents of the source path folder are exported.</p>
     /// <p>If you're using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
-    pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_path = input;
         self
     }

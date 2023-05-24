@@ -2,29 +2,29 @@
 
 /// <p>The input for the SetIdentityPoolConfiguration operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIdentityPoolConfigurationInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>Options to apply to this identity pool for push synchronization.</p>
     #[doc(hidden)]
-    pub push_sync: std::option::Option<crate::types::PushSync>,
+    pub push_sync: ::std::option::Option<crate::types::PushSync>,
     /// Options to apply to this identity pool for Amazon Cognito streams.
     #[doc(hidden)]
-    pub cognito_streams: std::option::Option<crate::types::CognitoStreams>,
+    pub cognito_streams: ::std::option::Option<crate::types::CognitoStreams>,
 }
 impl SetIdentityPoolConfigurationInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>Options to apply to this identity pool for push synchronization.</p>
-    pub fn push_sync(&self) -> std::option::Option<&crate::types::PushSync> {
+    pub fn push_sync(&self) -> ::std::option::Option<&crate::types::PushSync> {
         self.push_sync.as_ref()
     }
     /// Options to apply to this identity pool for Amazon Cognito streams.
-    pub fn cognito_streams(&self) -> std::option::Option<&crate::types::CognitoStreams> {
+    pub fn cognito_streams(&self) -> ::std::option::Option<&crate::types::CognitoStreams> {
         self.cognito_streams.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl SetIdentityPoolConfigurationInput {
 
 /// A builder for [`SetIdentityPoolConfigurationInput`](crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetIdentityPoolConfigurationInputBuilder {
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-    pub(crate) push_sync: std::option::Option<crate::types::PushSync>,
-    pub(crate) cognito_streams: std::option::Option<crate::types::CognitoStreams>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) push_sync: ::std::option::Option<crate::types::PushSync>,
+    pub(crate) cognito_streams: ::std::option::Option<crate::types::CognitoStreams>,
 }
 impl SetIdentityPoolConfigurationInputBuilder {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
     /// <p>Options to apply to this identity pool for push synchronization.</p>
     pub fn push_sync(mut self, input: crate::types::PushSync) -> Self {
-        self.push_sync = Some(input);
+        self.push_sync = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options to apply to this identity pool for push synchronization.</p>
-    pub fn set_push_sync(mut self, input: std::option::Option<crate::types::PushSync>) -> Self {
+    pub fn set_push_sync(mut self, input: ::std::option::Option<crate::types::PushSync>) -> Self {
         self.push_sync = input;
         self
     }
     /// Options to apply to this identity pool for Amazon Cognito streams.
     pub fn cognito_streams(mut self, input: crate::types::CognitoStreams) -> Self {
-        self.cognito_streams = Some(input);
+        self.cognito_streams = ::std::option::Option::Some(input);
         self
     }
     /// Options to apply to this identity pool for Amazon Cognito streams.
     pub fn set_cognito_streams(
         mut self,
-        input: std::option::Option<crate::types::CognitoStreams>,
+        input: ::std::option::Option<crate::types::CognitoStreams>,
     ) -> Self {
         self.cognito_streams = input;
         self
@@ -80,11 +88,11 @@ impl SetIdentityPoolConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`SetIdentityPoolConfigurationInput`](crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationInput {
                 identity_pool_id: self.identity_pool_id,
                 push_sync: self.push_sync,

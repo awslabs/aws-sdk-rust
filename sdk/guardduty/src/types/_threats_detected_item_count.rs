@@ -2,7 +2,7 @@
 
 /// <p>Contains total number of infected files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThreatsDetectedItemCount {
     /// <p>Total number of infected files.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl ThreatsDetectedItemCount {
 
 /// A builder for [`ThreatsDetectedItemCount`](crate::types::ThreatsDetectedItemCount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThreatsDetectedItemCountBuilder {
-    pub(crate) files: std::option::Option<i32>,
+    pub(crate) files: ::std::option::Option<i32>,
 }
 impl ThreatsDetectedItemCountBuilder {
     /// <p>Total number of infected files.</p>
     pub fn files(mut self, input: i32) -> Self {
-        self.files = Some(input);
+        self.files = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of infected files.</p>
-    pub fn set_files(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<i32>) -> Self {
         self.files = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelContactOutput {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
-    pub contact_id: std::option::Option<std::string::String>,
+    pub contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelContactOutput {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CancelContactOutput {
+impl ::aws_http::request_id::RequestId for CancelContactOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CancelContactOutput {
 
 /// A builder for [`CancelContactOutput`](crate::operation::cancel_contact::CancelContactOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelContactOutputBuilder {
-    pub(crate) contact_id: std::option::Option<std::string::String>,
+    pub(crate) contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelContactOutputBuilder {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_id = Some(input.into());
+    pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a contact.</p>
-    pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }

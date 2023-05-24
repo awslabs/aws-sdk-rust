@@ -3,7 +3,7 @@
 /// <p>Describes a filter that returns a more specific list of Lambda function recommendations. Use this filter with the <code>GetLambdaFunctionRecommendations</code> action.</p>
 /// <p>You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action, and <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionRecommendationFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
@@ -12,7 +12,7 @@ pub struct LambdaFunctionRecommendationFilter {
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::LambdaFunctionRecommendationFilterName>,
+    pub name: ::std::option::Option<crate::types::LambdaFunctionRecommendationFilterName>,
     /// <p>The value of the filter.</p>
     /// <p>The valid values for this parameter are as follows, depending on what you specify for the <code>name</code> parameter:</p>
     /// <ul>
@@ -20,7 +20,7 @@ pub struct LambdaFunctionRecommendationFilter {
     /// <li> <p>Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LambdaFunctionRecommendationFilter {
     /// <p>The name of the filter.</p>
@@ -31,7 +31,7 @@ impl LambdaFunctionRecommendationFilter {
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn name(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionRecommendationFilterName> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionRecommendationFilterName> {
         self.name.as_ref()
     }
     /// <p>The value of the filter.</p>
@@ -40,7 +40,7 @@ impl LambdaFunctionRecommendationFilter {
     /// <li> <p>Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the <code>name</code> parameter as <code>Finding</code>.</p> </li>
     /// <li> <p>Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.</p> </li>
     /// </ul>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -53,10 +53,12 @@ impl LambdaFunctionRecommendationFilter {
 
 /// A builder for [`LambdaFunctionRecommendationFilter`](crate::types::LambdaFunctionRecommendationFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionRecommendationFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::LambdaFunctionRecommendationFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<crate::types::LambdaFunctionRecommendationFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LambdaFunctionRecommendationFilterBuilder {
     /// <p>The name of the filter.</p>
@@ -66,7 +68,7 @@ impl LambdaFunctionRecommendationFilterBuilder {
     /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn name(mut self, input: crate::types::LambdaFunctionRecommendationFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the filter.</p>
@@ -77,7 +79,7 @@ impl LambdaFunctionRecommendationFilterBuilder {
     /// <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionRecommendationFilterName>,
+        input: ::std::option::Option<crate::types::LambdaFunctionRecommendationFilterName>,
     ) -> Self {
         self.name = input;
         self
@@ -92,10 +94,10 @@ impl LambdaFunctionRecommendationFilterBuilder {
     /// <li> <p>Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the <code>name</code> parameter as <code>Finding</code>.</p> </li>
     /// <li> <p>Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.</p> </li>
     /// </ul>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value of the filter.</p>
@@ -106,7 +108,7 @@ impl LambdaFunctionRecommendationFilterBuilder {
     /// </ul>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

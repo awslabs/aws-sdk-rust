@@ -2,15 +2,15 @@
 
 /// Video Selector Program Id
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoSelectorProgramId {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     #[doc(hidden)]
-    pub program_id: std::option::Option<i32>,
+    pub program_id: ::std::option::Option<i32>,
 }
 impl VideoSelectorProgramId {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
-    pub fn program_id(&self) -> std::option::Option<i32> {
+    pub fn program_id(&self) -> ::std::option::Option<i32> {
         self.program_id
     }
 }
@@ -23,18 +23,20 @@ impl VideoSelectorProgramId {
 
 /// A builder for [`VideoSelectorProgramId`](crate::types::VideoSelectorProgramId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoSelectorProgramIdBuilder {
-    pub(crate) program_id: std::option::Option<i32>,
+    pub(crate) program_id: ::std::option::Option<i32>,
 }
 impl VideoSelectorProgramIdBuilder {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     pub fn program_id(mut self, input: i32) -> Self {
-        self.program_id = Some(input);
+        self.program_id = ::std::option::Option::Some(input);
         self
     }
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
-    pub fn set_program_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_program_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_id = input;
         self
     }

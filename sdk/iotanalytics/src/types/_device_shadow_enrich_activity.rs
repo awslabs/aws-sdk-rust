@@ -2,43 +2,43 @@
 
 /// <p>An activity that adds information from the IoT Device Shadow service to a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute that is added to the message.</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<std::string::String>,
+    pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     #[doc(hidden)]
-    pub next: std::option::Option<std::string::String>,
+    pub next: ::std::option::Option<::std::string::String>,
 }
 impl DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the attribute that is added to the message.</p>
-    pub fn attribute(&self) -> std::option::Option<&str> {
+    pub fn attribute(&self) -> ::std::option::Option<&str> {
         self.attribute.as_deref()
     }
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<&str> {
+    pub fn next(&self) -> ::std::option::Option<&str> {
         self.next.as_deref()
     }
 }
@@ -51,62 +51,64 @@ impl DeviceShadowEnrichActivity {
 
 /// A builder for [`DeviceShadowEnrichActivity`](crate::types::DeviceShadowEnrichActivity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceShadowEnrichActivityBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) attribute: std::option::Option<std::string::String>,
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) next: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) next: ::std::option::Option<::std::string::String>,
 }
 impl DeviceShadowEnrichActivityBuilder {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the attribute that is added to the message.</p>
-    pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute = Some(input.into());
+    pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute that is added to the message.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next = Some(input.into());
+    pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
     }

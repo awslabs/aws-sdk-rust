@@ -2,30 +2,30 @@
 
 /// <p>The response to the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAnalyzedResourcesOutput {
     /// <p>A list of resources that were analyzed.</p>
     #[doc(hidden)]
     pub analyzed_resources:
-        std::option::Option<std::vec::Vec<crate::types::AnalyzedResourceSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AnalyzedResourceSummary>>,
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAnalyzedResourcesOutput {
     /// <p>A list of resources that were analyzed.</p>
     pub fn analyzed_resources(
         &self,
-    ) -> std::option::Option<&[crate::types::AnalyzedResourceSummary]> {
+    ) -> ::std::option::Option<&[crate::types::AnalyzedResourceSummary]> {
         self.analyzed_resources.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListAnalyzedResourcesOutput {
+impl ::aws_http::request_id::RequestId for ListAnalyzedResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl ListAnalyzedResourcesOutput {
 
 /// A builder for [`ListAnalyzedResourcesOutput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListAnalyzedResourcesOutputBuilder {
     pub(crate) analyzed_resources:
-        std::option::Option<std::vec::Vec<crate::types::AnalyzedResourceSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AnalyzedResourceSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAnalyzedResourcesOutputBuilder {
@@ -57,24 +59,24 @@ impl ListAnalyzedResourcesOutputBuilder {
     pub fn analyzed_resources(mut self, input: crate::types::AnalyzedResourceSummary) -> Self {
         let mut v = self.analyzed_resources.unwrap_or_default();
         v.push(input);
-        self.analyzed_resources = Some(v);
+        self.analyzed_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of resources that were analyzed.</p>
     pub fn set_analyzed_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnalyzedResourceSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalyzedResourceSummary>>,
     ) -> Self {
         self.analyzed_resources = input;
         self
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>Contains the results of the <code>DescribeSnapshots</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSnapshotsOutput {
     /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     #[doc(hidden)]
-    pub snapshots: std::option::Option<std::vec::Vec<crate::types::Snapshot>>,
+    pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSnapshotsOutput {
     /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn snapshots(&self) -> std::option::Option<&[crate::types::Snapshot]> {
+    pub fn snapshots(&self) -> ::std::option::Option<&[crate::types::Snapshot]> {
         self.snapshots.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeSnapshotsOutput {
+impl ::aws_http::request_id::RequestId for DescribeSnapshotsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,10 +39,12 @@ impl DescribeSnapshotsOutput {
 
 /// A builder for [`DescribeSnapshotsOutput`](crate::operation::describe_snapshots::DescribeSnapshotsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeSnapshotsOutputBuilder {
-    pub(crate) snapshots: std::option::Option<std::vec::Vec<crate::types::Snapshot>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSnapshotsOutputBuilder {
@@ -55,25 +57,25 @@ impl DescribeSnapshotsOutputBuilder {
     pub fn snapshots(mut self, input: crate::types::Snapshot) -> Self {
         let mut v = self.snapshots.unwrap_or_default();
         v.push(input);
-        self.snapshots = Some(v);
+        self.snapshots = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of <code>Snapshot</code> objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn set_snapshots(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Snapshot>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Snapshot>>,
     ) -> Self {
         self.snapshots = input;
         self
     }
     /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If not null, more results are available. Pass this value in the <i>NextToken</i> member of a subsequent call to <code>DescribeSnapshots</code>.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

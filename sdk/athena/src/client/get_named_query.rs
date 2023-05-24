@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNamedQuery`](crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`named_query_id(impl Into<String>)`](crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder::named_query_id) / [`set_named_query_id(Option<String>)`](crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder::set_named_query_id): <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
+    ///   - [`named_query_id(impl ::std::convert::Into<String>)`](crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder::named_query_id) / [`set_named_query_id(Option<String>)`](crate::operation::get_named_query::builders::GetNamedQueryFluentBuilder::set_named_query_id): <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
     /// - On success, responds with [`GetNamedQueryOutput`](crate::operation::get_named_query::GetNamedQueryOutput) with field(s):
     ///   - [`named_query(Option<NamedQuery>)`](crate::operation::get_named_query::GetNamedQueryOutput::named_query): <p>Information about the query.</p>
     /// - On failure, responds with [`SdkError<GetNamedQueryError>`](crate::operation::get_named_query::GetNamedQueryError)

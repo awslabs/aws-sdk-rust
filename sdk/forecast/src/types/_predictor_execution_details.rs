@@ -2,15 +2,18 @@
 
 /// <p>Contains details on the backtests performed to evaluate the accuracy of the predictor. The tests are returned in descending order of accuracy, with the most accurate backtest appearing first. You specify the number of backtests to perform when you call the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictorExecutionDetails {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     #[doc(hidden)]
-    pub predictor_executions: std::option::Option<std::vec::Vec<crate::types::PredictorExecution>>,
+    pub predictor_executions:
+        ::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>>,
 }
 impl PredictorExecutionDetails {
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    pub fn predictor_executions(&self) -> std::option::Option<&[crate::types::PredictorExecution]> {
+    pub fn predictor_executions(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::PredictorExecution]> {
         self.predictor_executions.as_deref()
     }
 }
@@ -23,10 +26,12 @@ impl PredictorExecutionDetails {
 
 /// A builder for [`PredictorExecutionDetails`](crate::types::PredictorExecutionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PredictorExecutionDetailsBuilder {
     pub(crate) predictor_executions:
-        std::option::Option<std::vec::Vec<crate::types::PredictorExecution>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>>,
 }
 impl PredictorExecutionDetailsBuilder {
     /// Appends an item to `predictor_executions`.
@@ -37,13 +42,13 @@ impl PredictorExecutionDetailsBuilder {
     pub fn predictor_executions(mut self, input: crate::types::PredictorExecution) -> Self {
         let mut v = self.predictor_executions.unwrap_or_default();
         v.push(input);
-        self.predictor_executions = Some(v);
+        self.predictor_executions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of the backtests performed to evaluate the accuracy of the predictor against a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub fn set_predictor_executions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PredictorExecution>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PredictorExecution>>,
     ) -> Self {
         self.predictor_executions = input;
         self

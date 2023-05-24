@@ -8,22 +8,22 @@
 /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentFile {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EnvironmentFileType>,
+    pub r#type: ::std::option::Option<crate::types::EnvironmentFileType>,
 }
 impl EnvironmentFile {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EnvironmentFileType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EnvironmentFileType> {
         self.r#type.as_ref()
     }
 }
@@ -36,31 +36,33 @@ impl EnvironmentFile {
 
 /// A builder for [`EnvironmentFile`](crate::types::EnvironmentFile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnvironmentFileBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::EnvironmentFileType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EnvironmentFileType>,
 }
 impl EnvironmentFileBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     pub fn r#type(mut self, input: crate::types::EnvironmentFileType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::EnvironmentFileType>,
+        input: ::std::option::Option<crate::types::EnvironmentFileType>,
     ) -> Self {
         self.r#type = input;
         self

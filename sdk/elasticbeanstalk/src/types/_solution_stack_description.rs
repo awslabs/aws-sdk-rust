@@ -2,22 +2,22 @@
 
 /// <p>Describes the solution stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SolutionStackDescription {
     /// <p>The name of the solution stack.</p>
     #[doc(hidden)]
-    pub solution_stack_name: std::option::Option<std::string::String>,
+    pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The permitted file types allowed for a solution stack.</p>
     #[doc(hidden)]
-    pub permitted_file_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub permitted_file_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SolutionStackDescription {
     /// <p>The name of the solution stack.</p>
-    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> ::std::option::Option<&str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The permitted file types allowed for a solution stack.</p>
-    pub fn permitted_file_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn permitted_file_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.permitted_file_types.as_deref()
     }
 }
@@ -30,21 +30,26 @@ impl SolutionStackDescription {
 
 /// A builder for [`SolutionStackDescription`](crate::types::SolutionStackDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SolutionStackDescriptionBuilder {
-    pub(crate) solution_stack_name: std::option::Option<std::string::String>,
-    pub(crate) permitted_file_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
+    pub(crate) permitted_file_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SolutionStackDescriptionBuilder {
     /// <p>The name of the solution stack.</p>
-    pub fn solution_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.solution_stack_name = Some(input.into());
+    pub fn solution_stack_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the solution stack.</p>
     pub fn set_solution_stack_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.solution_stack_name = input;
         self
@@ -54,16 +59,19 @@ impl SolutionStackDescriptionBuilder {
     /// To override the contents of this collection use [`set_permitted_file_types`](Self::set_permitted_file_types).
     ///
     /// <p>The permitted file types allowed for a solution stack.</p>
-    pub fn permitted_file_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn permitted_file_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.permitted_file_types.unwrap_or_default();
         v.push(input.into());
-        self.permitted_file_types = Some(v);
+        self.permitted_file_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The permitted file types allowed for a solution stack.</p>
     pub fn set_permitted_file_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.permitted_file_types = input;
         self

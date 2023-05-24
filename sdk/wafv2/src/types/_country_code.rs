@@ -286,13 +286,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CountryCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -798,7 +798,7 @@ pub enum CountryCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CountryCode {
+impl ::std::convert::From<&str> for CountryCode {
     fn from(s: &str) -> Self {
         match s {
             "AD" => CountryCode::Ad,
@@ -1055,11 +1055,11 @@ impl std::convert::From<&str> for CountryCode {
         }
     }
 }
-impl std::str::FromStr for CountryCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CountryCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CountryCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CountryCode::from(s))
     }
 }
 impl CountryCode {
@@ -1343,7 +1343,7 @@ impl CountryCode {
         ]
     }
 }
-impl AsRef<str> for CountryCode {
+impl ::std::convert::AsRef<str> for CountryCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

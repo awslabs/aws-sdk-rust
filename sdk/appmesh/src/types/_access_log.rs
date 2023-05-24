@@ -2,7 +2,7 @@
 
 /// <p>An object that represents the access logging information for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AccessLog {
     /// <p>The file object to send virtual node access logs to.</p>
     File(crate::types::FileAccessLog),
@@ -20,11 +20,11 @@ impl AccessLog {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`File`](crate::types::AccessLog::File), extracting the inner [`FileAccessLog`](crate::types::FileAccessLog).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(&self) -> std::result::Result<&crate::types::FileAccessLog, &Self> {
+    pub fn as_file(&self) -> ::std::result::Result<&crate::types::FileAccessLog, &Self> {
         if let AccessLog::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::AccessLog::File).

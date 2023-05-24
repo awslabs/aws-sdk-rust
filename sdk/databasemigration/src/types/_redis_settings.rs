@@ -2,34 +2,34 @@
 
 /// <p>Provides information that defines a Redis target endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RedisSettings {
     /// <p>Fully qualified domain name of the endpoint.</p>
     #[doc(hidden)]
-    pub server_name: std::option::Option<std::string::String>,
+    pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
     #[doc(hidden)]
     pub port: i32,
     /// <p>The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid values include <code>plaintext</code> and <code>ssl-encryption</code>. The default is <code>ssl-encryption</code>. The <code>ssl-encryption</code> option makes an encrypted connection. Optionally, you can identify an Amazon Resource Name (ARN) for an SSL certificate authority (CA) using the <code>SslCaCertificateArn </code>setting. If an ARN isn't given for a CA, DMS uses the Amazon root CA.</p>
     /// <p>The <code>plaintext</code> option doesn't provide Transport Layer Security (TLS) encryption for traffic between endpoint and database.</p>
     #[doc(hidden)]
-    pub ssl_security_protocol: std::option::Option<crate::types::SslSecurityProtocolValue>,
+    pub ssl_security_protocol: ::std::option::Option<crate::types::SslSecurityProtocolValue>,
     /// <p>The type of authentication to perform when connecting to a Redis target. Options include <code>none</code>, <code>auth-token</code>, and <code>auth-role</code>. The <code>auth-token</code> option requires an <code>AuthPassword</code> value to be provided. The <code>auth-role</code> option requires <code>AuthUserName</code> and <code>AuthPassword</code> values to be provided.</p>
     #[doc(hidden)]
-    pub auth_type: std::option::Option<crate::types::RedisAuthTypeValue>,
+    pub auth_type: ::std::option::Option<crate::types::RedisAuthTypeValue>,
     /// <p>The user name provided with the <code>auth-role</code> option of the <code>AuthType</code> setting for a Redis target endpoint.</p>
     #[doc(hidden)]
-    pub auth_user_name: std::option::Option<std::string::String>,
+    pub auth_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password provided with the <code>auth-role</code> and <code>auth-token</code> options of the <code>AuthType</code> setting for a Redis target endpoint.</p>
     #[doc(hidden)]
-    pub auth_password: std::option::Option<std::string::String>,
+    pub auth_password: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the certificate authority (CA) that DMS uses to connect to your Redis target endpoint.</p>
     #[doc(hidden)]
-    pub ssl_ca_certificate_arn: std::option::Option<std::string::String>,
+    pub ssl_ca_certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl RedisSettings {
     /// <p>Fully qualified domain name of the endpoint.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
     /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
@@ -40,28 +40,28 @@ impl RedisSettings {
     /// <p>The <code>plaintext</code> option doesn't provide Transport Layer Security (TLS) encryption for traffic between endpoint and database.</p>
     pub fn ssl_security_protocol(
         &self,
-    ) -> std::option::Option<&crate::types::SslSecurityProtocolValue> {
+    ) -> ::std::option::Option<&crate::types::SslSecurityProtocolValue> {
         self.ssl_security_protocol.as_ref()
     }
     /// <p>The type of authentication to perform when connecting to a Redis target. Options include <code>none</code>, <code>auth-token</code>, and <code>auth-role</code>. The <code>auth-token</code> option requires an <code>AuthPassword</code> value to be provided. The <code>auth-role</code> option requires <code>AuthUserName</code> and <code>AuthPassword</code> values to be provided.</p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::types::RedisAuthTypeValue> {
+    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::RedisAuthTypeValue> {
         self.auth_type.as_ref()
     }
     /// <p>The user name provided with the <code>auth-role</code> option of the <code>AuthType</code> setting for a Redis target endpoint.</p>
-    pub fn auth_user_name(&self) -> std::option::Option<&str> {
+    pub fn auth_user_name(&self) -> ::std::option::Option<&str> {
         self.auth_user_name.as_deref()
     }
     /// <p>The password provided with the <code>auth-role</code> and <code>auth-token</code> options of the <code>AuthType</code> setting for a Redis target endpoint.</p>
-    pub fn auth_password(&self) -> std::option::Option<&str> {
+    pub fn auth_password(&self) -> ::std::option::Option<&str> {
         self.auth_password.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate authority (CA) that DMS uses to connect to your Redis target endpoint.</p>
-    pub fn ssl_ca_certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn ssl_ca_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.ssl_ca_certificate_arn.as_deref()
     }
 }
-impl std::fmt::Debug for RedisSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RedisSettings {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RedisSettings");
         formatter.field("server_name", &self.server_name);
         formatter.field("port", &self.port);
@@ -82,94 +82,109 @@ impl RedisSettings {
 
 /// A builder for [`RedisSettings`](crate::types::RedisSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RedisSettingsBuilder {
-    pub(crate) server_name: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) ssl_security_protocol: std::option::Option<crate::types::SslSecurityProtocolValue>,
-    pub(crate) auth_type: std::option::Option<crate::types::RedisAuthTypeValue>,
-    pub(crate) auth_user_name: std::option::Option<std::string::String>,
-    pub(crate) auth_password: std::option::Option<std::string::String>,
-    pub(crate) ssl_ca_certificate_arn: std::option::Option<std::string::String>,
+    pub(crate) server_name: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) ssl_security_protocol: ::std::option::Option<crate::types::SslSecurityProtocolValue>,
+    pub(crate) auth_type: ::std::option::Option<crate::types::RedisAuthTypeValue>,
+    pub(crate) auth_user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) auth_password: ::std::option::Option<::std::string::String>,
+    pub(crate) ssl_ca_certificate_arn: ::std::option::Option<::std::string::String>,
 }
 impl RedisSettingsBuilder {
     /// <p>Fully qualified domain name of the endpoint.</p>
-    pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_name = Some(input.into());
+    pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
-    pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
     /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid values include <code>plaintext</code> and <code>ssl-encryption</code>. The default is <code>ssl-encryption</code>. The <code>ssl-encryption</code> option makes an encrypted connection. Optionally, you can identify an Amazon Resource Name (ARN) for an SSL certificate authority (CA) using the <code>SslCaCertificateArn </code>setting. If an ARN isn't given for a CA, DMS uses the Amazon root CA.</p>
     /// <p>The <code>plaintext</code> option doesn't provide Transport Layer Security (TLS) encryption for traffic between endpoint and database.</p>
     pub fn ssl_security_protocol(mut self, input: crate::types::SslSecurityProtocolValue) -> Self {
-        self.ssl_security_protocol = Some(input);
+        self.ssl_security_protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid values include <code>plaintext</code> and <code>ssl-encryption</code>. The default is <code>ssl-encryption</code>. The <code>ssl-encryption</code> option makes an encrypted connection. Optionally, you can identify an Amazon Resource Name (ARN) for an SSL certificate authority (CA) using the <code>SslCaCertificateArn </code>setting. If an ARN isn't given for a CA, DMS uses the Amazon root CA.</p>
     /// <p>The <code>plaintext</code> option doesn't provide Transport Layer Security (TLS) encryption for traffic between endpoint and database.</p>
     pub fn set_ssl_security_protocol(
         mut self,
-        input: std::option::Option<crate::types::SslSecurityProtocolValue>,
+        input: ::std::option::Option<crate::types::SslSecurityProtocolValue>,
     ) -> Self {
         self.ssl_security_protocol = input;
         self
     }
     /// <p>The type of authentication to perform when connecting to a Redis target. Options include <code>none</code>, <code>auth-token</code>, and <code>auth-role</code>. The <code>auth-token</code> option requires an <code>AuthPassword</code> value to be provided. The <code>auth-role</code> option requires <code>AuthUserName</code> and <code>AuthPassword</code> values to be provided.</p>
     pub fn auth_type(mut self, input: crate::types::RedisAuthTypeValue) -> Self {
-        self.auth_type = Some(input);
+        self.auth_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of authentication to perform when connecting to a Redis target. Options include <code>none</code>, <code>auth-token</code>, and <code>auth-role</code>. The <code>auth-token</code> option requires an <code>AuthPassword</code> value to be provided. The <code>auth-role</code> option requires <code>AuthUserName</code> and <code>AuthPassword</code> values to be provided.</p>
     pub fn set_auth_type(
         mut self,
-        input: std::option::Option<crate::types::RedisAuthTypeValue>,
+        input: ::std::option::Option<crate::types::RedisAuthTypeValue>,
     ) -> Self {
         self.auth_type = input;
         self
     }
     /// <p>The user name provided with the <code>auth-role</code> option of the <code>AuthType</code> setting for a Redis target endpoint.</p>
-    pub fn auth_user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auth_user_name = Some(input.into());
+    pub fn auth_user_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auth_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name provided with the <code>auth-role</code> option of the <code>AuthType</code> setting for a Redis target endpoint.</p>
-    pub fn set_auth_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_user_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.auth_user_name = input;
         self
     }
     /// <p>The password provided with the <code>auth-role</code> and <code>auth-token</code> options of the <code>AuthType</code> setting for a Redis target endpoint.</p>
-    pub fn auth_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auth_password = Some(input.into());
+    pub fn auth_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auth_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password provided with the <code>auth-role</code> and <code>auth-token</code> options of the <code>AuthType</code> setting for a Redis target endpoint.</p>
-    pub fn set_auth_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_password(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.auth_password = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate authority (CA) that DMS uses to connect to your Redis target endpoint.</p>
-    pub fn ssl_ca_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ssl_ca_certificate_arn = Some(input.into());
+    pub fn ssl_ca_certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ssl_ca_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the certificate authority (CA) that DMS uses to connect to your Redis target endpoint.</p>
     pub fn set_ssl_ca_certificate_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ssl_ca_certificate_arn = input;
         self
@@ -187,8 +202,8 @@ impl RedisSettingsBuilder {
         }
     }
 }
-impl std::fmt::Debug for RedisSettingsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RedisSettingsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RedisSettingsBuilder");
         formatter.field("server_name", &self.server_name);
         formatter.field("port", &self.port);

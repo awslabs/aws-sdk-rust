@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CheckStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum CheckStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CheckStatus {
+impl ::std::convert::From<&str> for CheckStatus {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => CheckStatus::Error,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for CheckStatus {
         }
     }
 }
-impl std::str::FromStr for CheckStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CheckStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CheckStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CheckStatus::from(s))
     }
 }
 impl CheckStatus {
@@ -99,7 +99,7 @@ impl CheckStatus {
         &["ERROR", "FETCH_FAILED", "NOT_AVAILABLE", "OKAY", "WARNING"]
     }
 }
-impl AsRef<str> for CheckStatus {
+impl ::std::convert::AsRef<str> for CheckStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

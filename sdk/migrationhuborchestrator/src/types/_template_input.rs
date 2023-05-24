@@ -2,29 +2,29 @@
 
 /// <p>The input parameters of a template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateInput {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
-    pub input_name: std::option::Option<std::string::String>,
+    pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the template input.</p>
     #[doc(hidden)]
-    pub data_type: std::option::Option<crate::types::DataType>,
+    pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>Determine if an input is required from the template.</p>
     #[doc(hidden)]
-    pub required: std::option::Option<bool>,
+    pub required: ::std::option::Option<bool>,
 }
 impl TemplateInput {
     /// <p>The name of the template.</p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<&str> {
         self.input_name.as_deref()
     }
     /// <p>The data type of the template input.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::types::DataType> {
+    pub fn data_type(&self) -> ::std::option::Option<&crate::types::DataType> {
         self.data_type.as_ref()
     }
     /// <p>Determine if an input is required from the template.</p>
-    pub fn required(&self) -> std::option::Option<bool> {
+    pub fn required(&self) -> ::std::option::Option<bool> {
         self.required
     }
 }
@@ -37,40 +37,42 @@ impl TemplateInput {
 
 /// A builder for [`TemplateInput`](crate::types::TemplateInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TemplateInputBuilder {
-    pub(crate) input_name: std::option::Option<std::string::String>,
-    pub(crate) data_type: std::option::Option<crate::types::DataType>,
-    pub(crate) required: std::option::Option<bool>,
+    pub(crate) input_name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_type: ::std::option::Option<crate::types::DataType>,
+    pub(crate) required: ::std::option::Option<bool>,
 }
 impl TemplateInputBuilder {
     /// <p>The name of the template.</p>
-    pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_name = Some(input.into());
+    pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template.</p>
-    pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_name = input;
         self
     }
     /// <p>The data type of the template input.</p>
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
-        self.data_type = Some(input);
+        self.data_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the template input.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<crate::types::DataType>) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>Determine if an input is required from the template.</p>
     pub fn required(mut self, input: bool) -> Self {
-        self.required = Some(input);
+        self.required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determine if an input is required from the template.</p>
-    pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
     }

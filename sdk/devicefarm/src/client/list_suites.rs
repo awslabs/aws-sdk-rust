@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::set_arn): <p>The job's Amazon Resource Name (ARN).</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::set_arn): <p>The job's Amazon Resource Name (ARN).</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_suites::builders::ListSuitesFluentBuilder::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On success, responds with [`ListSuitesOutput`](crate::operation::list_suites::ListSuitesOutput) with field(s):
     ///   - [`suites(Option<Vec<Suite>>)`](crate::operation::list_suites::ListSuitesOutput::suites): <p>Information about the suites.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_suites::ListSuitesOutput::next_token): <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>

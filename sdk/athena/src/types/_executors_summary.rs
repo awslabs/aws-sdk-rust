@@ -2,20 +2,20 @@
 
 /// <p>Contains summary information about an executor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutorsSummary {
     /// <p>The UUID of the executor.</p>
     #[doc(hidden)]
-    pub executor_id: std::option::Option<std::string::String>,
+    pub executor_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
     #[doc(hidden)]
-    pub executor_type: std::option::Option<crate::types::ExecutorType>,
+    pub executor_type: ::std::option::Option<crate::types::ExecutorType>,
     /// <p>The date and time that the executor started.</p>
     #[doc(hidden)]
-    pub start_date_time: std::option::Option<i64>,
+    pub start_date_time: ::std::option::Option<i64>,
     /// <p>The date and time that the executor was terminated.</p>
     #[doc(hidden)]
-    pub termination_date_time: std::option::Option<i64>,
+    pub termination_date_time: ::std::option::Option<i64>,
     /// <p>The processing state of the executor. A description of each state follows.</p>
     /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
     /// <p> <code>CREATED</code> - The executor has been started.</p>
@@ -24,26 +24,26 @@ pub struct ExecutorsSummary {
     /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     #[doc(hidden)]
-    pub executor_state: std::option::Option<crate::types::ExecutorState>,
+    pub executor_state: ::std::option::Option<crate::types::ExecutorState>,
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
     #[doc(hidden)]
-    pub executor_size: std::option::Option<i64>,
+    pub executor_size: ::std::option::Option<i64>,
 }
 impl ExecutorsSummary {
     /// <p>The UUID of the executor.</p>
-    pub fn executor_id(&self) -> std::option::Option<&str> {
+    pub fn executor_id(&self) -> ::std::option::Option<&str> {
         self.executor_id.as_deref()
     }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
-    pub fn executor_type(&self) -> std::option::Option<&crate::types::ExecutorType> {
+    pub fn executor_type(&self) -> ::std::option::Option<&crate::types::ExecutorType> {
         self.executor_type.as_ref()
     }
     /// <p>The date and time that the executor started.</p>
-    pub fn start_date_time(&self) -> std::option::Option<i64> {
+    pub fn start_date_time(&self) -> ::std::option::Option<i64> {
         self.start_date_time
     }
     /// <p>The date and time that the executor was terminated.</p>
-    pub fn termination_date_time(&self) -> std::option::Option<i64> {
+    pub fn termination_date_time(&self) -> ::std::option::Option<i64> {
         self.termination_date_time
     }
     /// <p>The processing state of the executor. A description of each state follows.</p>
@@ -53,11 +53,11 @@ impl ExecutorsSummary {
     /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
     /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
-    pub fn executor_state(&self) -> std::option::Option<&crate::types::ExecutorState> {
+    pub fn executor_state(&self) -> ::std::option::Option<&crate::types::ExecutorState> {
         self.executor_state.as_ref()
     }
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
-    pub fn executor_size(&self) -> std::option::Option<i64> {
+    pub fn executor_size(&self) -> ::std::option::Option<i64> {
         self.executor_size
     }
 }
@@ -70,56 +70,58 @@ impl ExecutorsSummary {
 
 /// A builder for [`ExecutorsSummary`](crate::types::ExecutorsSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutorsSummaryBuilder {
-    pub(crate) executor_id: std::option::Option<std::string::String>,
-    pub(crate) executor_type: std::option::Option<crate::types::ExecutorType>,
-    pub(crate) start_date_time: std::option::Option<i64>,
-    pub(crate) termination_date_time: std::option::Option<i64>,
-    pub(crate) executor_state: std::option::Option<crate::types::ExecutorState>,
-    pub(crate) executor_size: std::option::Option<i64>,
+    pub(crate) executor_id: ::std::option::Option<::std::string::String>,
+    pub(crate) executor_type: ::std::option::Option<crate::types::ExecutorType>,
+    pub(crate) start_date_time: ::std::option::Option<i64>,
+    pub(crate) termination_date_time: ::std::option::Option<i64>,
+    pub(crate) executor_state: ::std::option::Option<crate::types::ExecutorState>,
+    pub(crate) executor_size: ::std::option::Option<i64>,
 }
 impl ExecutorsSummaryBuilder {
     /// <p>The UUID of the executor.</p>
-    pub fn executor_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.executor_id = Some(input.into());
+    pub fn executor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.executor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UUID of the executor.</p>
-    pub fn set_executor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_executor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.executor_id = input;
         self
     }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
     pub fn executor_type(mut self, input: crate::types::ExecutorType) -> Self {
-        self.executor_type = Some(input);
+        self.executor_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
     pub fn set_executor_type(
         mut self,
-        input: std::option::Option<crate::types::ExecutorType>,
+        input: ::std::option::Option<crate::types::ExecutorType>,
     ) -> Self {
         self.executor_type = input;
         self
     }
     /// <p>The date and time that the executor started.</p>
     pub fn start_date_time(mut self, input: i64) -> Self {
-        self.start_date_time = Some(input);
+        self.start_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the executor started.</p>
-    pub fn set_start_date_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_date_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_date_time = input;
         self
     }
     /// <p>The date and time that the executor was terminated.</p>
     pub fn termination_date_time(mut self, input: i64) -> Self {
-        self.termination_date_time = Some(input);
+        self.termination_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the executor was terminated.</p>
-    pub fn set_termination_date_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_termination_date_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.termination_date_time = input;
         self
     }
@@ -131,7 +133,7 @@ impl ExecutorsSummaryBuilder {
     /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     pub fn executor_state(mut self, input: crate::types::ExecutorState) -> Self {
-        self.executor_state = Some(input);
+        self.executor_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The processing state of the executor. A description of each state follows.</p>
@@ -143,18 +145,18 @@ impl ExecutorsSummaryBuilder {
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     pub fn set_executor_state(
         mut self,
-        input: std::option::Option<crate::types::ExecutorState>,
+        input: ::std::option::Option<crate::types::ExecutorState>,
     ) -> Self {
         self.executor_state = input;
         self
     }
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
     pub fn executor_size(mut self, input: i64) -> Self {
-        self.executor_size = Some(input);
+        self.executor_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
-    pub fn set_executor_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_executor_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.executor_size = input;
         self
     }

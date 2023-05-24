@@ -2,29 +2,29 @@
 
 /// <p>Details about an imported variant item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VariantImportItemDetail {
     /// <p>The source file's location in Amazon S3.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<std::string::String>,
+    pub source: ::std::option::Option<::std::string::String>,
     /// <p>The item's job status.</p>
     #[doc(hidden)]
-    pub job_status: std::option::Option<crate::types::JobStatus>,
+    pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p> A message that provides additional context about a job </p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl VariantImportItemDetail {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The item's job status.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p> A message that provides additional context about a job </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl VariantImportItemDetail {
 
 /// A builder for [`VariantImportItemDetail`](crate::types::VariantImportItemDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VariantImportItemDetailBuilder {
-    pub(crate) source: std::option::Option<std::string::String>,
-    pub(crate) job_status: std::option::Option<crate::types::JobStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) source: ::std::option::Option<::std::string::String>,
+    pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl VariantImportItemDetailBuilder {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source = Some(input.into());
+    pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
     /// <p>The item's job status.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
-        self.job_status = Some(input);
+        self.job_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The item's job status.</p>
-    pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
     }
     /// <p> A message that provides additional context about a job </p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message that provides additional context about a job </p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

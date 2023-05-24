@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContact`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_list_name(impl Into<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::set_contact_list_name): <p>The name of the contact list from which the contact should be removed.</p>
-    ///   - [`email_address(impl Into<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::set_email_address): <p>The contact's email address.</p>
+    ///   - [`contact_list_name(impl ::std::convert::Into<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::set_contact_list_name): <p>The name of the contact list from which the contact should be removed.</p>
+    ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::delete_contact::builders::DeleteContactFluentBuilder::set_email_address): <p>The contact's email address.</p>
     /// - On success, responds with [`DeleteContactOutput`](crate::operation::delete_contact::DeleteContactOutput)
     /// - On failure, responds with [`SdkError<DeleteContactError>`](crate::operation::delete_contact::DeleteContactError)
     pub fn delete_contact(

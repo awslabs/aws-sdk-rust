@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder::set_max_results): <p>The maximum number of staging Accounts to retrieve.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder::set_next_token): <p>The token of the next staging Account to retrieve.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_staging_accounts::builders::ListStagingAccountsFluentBuilder::set_next_token): <p>The token of the next staging Account to retrieve.</p>
     /// - On success, responds with [`ListStagingAccountsOutput`](crate::operation::list_staging_accounts::ListStagingAccountsOutput) with field(s):
     ///   - [`accounts(Option<Vec<Account>>)`](crate::operation::list_staging_accounts::ListStagingAccountsOutput::accounts): <p>An array of staging AWS Accounts.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_staging_accounts::ListStagingAccountsOutput::next_token): <p>The token of the next staging Account to retrieve.</p>

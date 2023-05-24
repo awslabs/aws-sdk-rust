@@ -6,56 +6,59 @@ pub use crate::operation::analyze_id::_analyze_id_input::AnalyzeIdInputBuilder;
 /// Fluent builder constructing a request to `AnalyzeID`.
 ///
 /// <p>Analyzes identity documents for relevant information. This information is extracted and returned as <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AnalyzeIDFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::analyze_id::builders::AnalyzeIdInputBuilder,
 }
 impl AnalyzeIDFluentBuilder {
     /// Creates a new `AnalyzeID`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::analyze_id::AnalyzeID,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::analyze_id::AnalyzeIdOutput,
-        aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl AnalyzeIDFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::analyze_id::AnalyzeIdOutput,
-        aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::analyze_id::AnalyzeIDError>,
     > {
         self.send_middleware().await
     }
@@ -86,7 +89,7 @@ impl AnalyzeIDFluentBuilder {
     /// <p>The document being passed to AnalyzeID.</p>
     pub fn set_document_pages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Document>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
     ) -> Self {
         self.inner = self.inner.set_document_pages(input);
         self

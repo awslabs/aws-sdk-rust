@@ -2,57 +2,57 @@
 
 /// <p>Summary information about a service network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNetworkSummary {
     /// <p>The ID of the service network.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service network.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of VPCs associated with the service network.</p>
     #[doc(hidden)]
-    pub number_of_associated_vp_cs: std::option::Option<i64>,
+    pub number_of_associated_vp_cs: ::std::option::Option<i64>,
     /// <p>The number of services associated with the service network.</p>
     #[doc(hidden)]
-    pub number_of_associated_services: std::option::Option<i64>,
+    pub number_of_associated_services: ::std::option::Option<i64>,
 }
 impl ServiceNetworkSummary {
     /// <p>The ID of the service network.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the service network.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn number_of_associated_vp_cs(&self) -> std::option::Option<i64> {
+    pub fn number_of_associated_vp_cs(&self) -> ::std::option::Option<i64> {
         self.number_of_associated_vp_cs
     }
     /// <p>The number of services associated with the service network.</p>
-    pub fn number_of_associated_services(&self) -> std::option::Option<i64> {
+    pub fn number_of_associated_services(&self) -> ::std::option::Option<i64> {
         self.number_of_associated_services
     }
 }
@@ -65,90 +65,92 @@ impl ServiceNetworkSummary {
 
 /// A builder for [`ServiceNetworkSummary`](crate::types::ServiceNetworkSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceNetworkSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) number_of_associated_vp_cs: std::option::Option<i64>,
-    pub(crate) number_of_associated_services: std::option::Option<i64>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) number_of_associated_vp_cs: ::std::option::Option<i64>,
+    pub(crate) number_of_associated_services: ::std::option::Option<i64>,
 }
 impl ServiceNetworkSummaryBuilder {
     /// <p>The ID of the service network.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service network.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the service network.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service network.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self
     }
     /// <p>The number of VPCs associated with the service network.</p>
     pub fn number_of_associated_vp_cs(mut self, input: i64) -> Self {
-        self.number_of_associated_vp_cs = Some(input);
+        self.number_of_associated_vp_cs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn set_number_of_associated_vp_cs(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_associated_vp_cs(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_associated_vp_cs = input;
         self
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn number_of_associated_services(mut self, input: i64) -> Self {
-        self.number_of_associated_services = Some(input);
+        self.number_of_associated_services = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of services associated with the service network.</p>
-    pub fn set_number_of_associated_services(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_associated_services(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_associated_services = input;
         self
     }

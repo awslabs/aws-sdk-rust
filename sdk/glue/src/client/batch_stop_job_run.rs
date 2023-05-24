@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchStopJobRun`](crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_name(impl Into<String>)`](crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder::set_job_name): <p>The name of the job definition for which to stop job runs.</p>
+    ///   - [`job_name(impl ::std::convert::Into<String>)`](crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder::set_job_name): <p>The name of the job definition for which to stop job runs.</p>
     ///   - [`job_run_ids(Vec<String>)`](crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder::job_run_ids) / [`set_job_run_ids(Option<Vec<String>>)`](crate::operation::batch_stop_job_run::builders::BatchStopJobRunFluentBuilder::set_job_run_ids): <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
     /// - On success, responds with [`BatchStopJobRunOutput`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput) with field(s):
     ///   - [`successful_submissions(Option<Vec<BatchStopJobRunSuccessfulSubmission>>)`](crate::operation::batch_stop_job_run::BatchStopJobRunOutput::successful_submissions): <p>A list of the JobRuns that were successfully submitted for stopping.</p>

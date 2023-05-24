@@ -2,50 +2,50 @@
 
 /// <p>The template summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSummary {
     /// <p>A summary of a template.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>A display name for the template.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing a list of version numbers for the template summary.</p>
     #[doc(hidden)]
-    pub latest_version_number: std::option::Option<i64>,
+    pub latest_version_number: ::std::option::Option<i64>,
     /// <p>The last time that this template was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time that this template was updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TemplateSummary {
     /// <p>A summary of a template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the template. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<&str> {
         self.template_id.as_deref()
     }
     /// <p>A display name for the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A structure containing a list of version numbers for the template summary.</p>
-    pub fn latest_version_number(&self) -> std::option::Option<i64> {
+    pub fn latest_version_number(&self) -> ::std::option::Option<i64> {
         self.latest_version_number
     }
     /// <p>The last time that this template was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The last time that this template was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -58,78 +58,80 @@ impl TemplateSummary {
 
 /// A builder for [`TemplateSummary`](crate::types::TemplateSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TemplateSummaryBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) template_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) latest_version_number: std::option::Option<i64>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_version_number: ::std::option::Option<i64>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TemplateSummaryBuilder {
     /// <p>A summary of a template.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A summary of a template.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ID of the template. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_id = Some(input.into());
+    pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the template. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
     }
     /// <p>A display name for the template.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A display name for the template.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A structure containing a list of version numbers for the template summary.</p>
     pub fn latest_version_number(mut self, input: i64) -> Self {
-        self.latest_version_number = Some(input);
+        self.latest_version_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing a list of version numbers for the template summary.</p>
-    pub fn set_latest_version_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_latest_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.latest_version_number = input;
         self
     }
     /// <p>The last time that this template was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time that this template was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The last time that this template was updated.</p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time that this template was updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self

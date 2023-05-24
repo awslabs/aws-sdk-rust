@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApp`](crate::operation::delete_app::builders::DeleteAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteAppOutput`](crate::operation::delete_app::DeleteAppOutput) with field(s):
     ///   - [`application_response(Option<ApplicationResponse>)`](crate::operation::delete_app::DeleteAppOutput::application_response): <p>Provides information about an application.</p>
     /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::operation::delete_app::DeleteAppError)

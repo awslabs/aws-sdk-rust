@@ -2,20 +2,20 @@
 
 /// GetCampaignStateResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignStateOutput {
     /// State of a campaign
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::CampaignState>,
+    pub state: ::std::option::Option<crate::types::CampaignState>,
     _request_id: Option<String>,
 }
 impl GetCampaignStateOutput {
     /// State of a campaign
-    pub fn state(&self) -> std::option::Option<&crate::types::CampaignState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::CampaignState> {
         self.state.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetCampaignStateOutput {
+impl ::aws_http::request_id::RequestId for GetCampaignStateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl GetCampaignStateOutput {
 
 /// A builder for [`GetCampaignStateOutput`](crate::operation::get_campaign_state::GetCampaignStateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCampaignStateOutputBuilder {
-    pub(crate) state: std::option::Option<crate::types::CampaignState>,
+    pub(crate) state: ::std::option::Option<crate::types::CampaignState>,
     _request_id: Option<String>,
 }
 impl GetCampaignStateOutputBuilder {
     /// State of a campaign
     pub fn state(mut self, input: crate::types::CampaignState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// State of a campaign
-    pub fn set_state(mut self, input: std::option::Option<crate::types::CampaignState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CampaignState>) -> Self {
         self.state = input;
         self
     }

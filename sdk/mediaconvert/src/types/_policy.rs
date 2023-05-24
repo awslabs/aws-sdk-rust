@@ -2,29 +2,29 @@
 
 /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Policy {
     /// Allow or disallow jobs that specify HTTP inputs.
     #[doc(hidden)]
-    pub http_inputs: std::option::Option<crate::types::InputPolicy>,
+    pub http_inputs: ::std::option::Option<crate::types::InputPolicy>,
     /// Allow or disallow jobs that specify HTTPS inputs.
     #[doc(hidden)]
-    pub https_inputs: std::option::Option<crate::types::InputPolicy>,
+    pub https_inputs: ::std::option::Option<crate::types::InputPolicy>,
     /// Allow or disallow jobs that specify Amazon S3 inputs.
     #[doc(hidden)]
-    pub s3_inputs: std::option::Option<crate::types::InputPolicy>,
+    pub s3_inputs: ::std::option::Option<crate::types::InputPolicy>,
 }
 impl Policy {
     /// Allow or disallow jobs that specify HTTP inputs.
-    pub fn http_inputs(&self) -> std::option::Option<&crate::types::InputPolicy> {
+    pub fn http_inputs(&self) -> ::std::option::Option<&crate::types::InputPolicy> {
         self.http_inputs.as_ref()
     }
     /// Allow or disallow jobs that specify HTTPS inputs.
-    pub fn https_inputs(&self) -> std::option::Option<&crate::types::InputPolicy> {
+    pub fn https_inputs(&self) -> ::std::option::Option<&crate::types::InputPolicy> {
         self.https_inputs.as_ref()
     }
     /// Allow or disallow jobs that specify Amazon S3 inputs.
-    pub fn s3_inputs(&self) -> std::option::Option<&crate::types::InputPolicy> {
+    pub fn s3_inputs(&self) -> ::std::option::Option<&crate::types::InputPolicy> {
         self.s3_inputs.as_ref()
     }
 }
@@ -37,46 +37,51 @@ impl Policy {
 
 /// A builder for [`Policy`](crate::types::Policy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyBuilder {
-    pub(crate) http_inputs: std::option::Option<crate::types::InputPolicy>,
-    pub(crate) https_inputs: std::option::Option<crate::types::InputPolicy>,
-    pub(crate) s3_inputs: std::option::Option<crate::types::InputPolicy>,
+    pub(crate) http_inputs: ::std::option::Option<crate::types::InputPolicy>,
+    pub(crate) https_inputs: ::std::option::Option<crate::types::InputPolicy>,
+    pub(crate) s3_inputs: ::std::option::Option<crate::types::InputPolicy>,
 }
 impl PolicyBuilder {
     /// Allow or disallow jobs that specify HTTP inputs.
     pub fn http_inputs(mut self, input: crate::types::InputPolicy) -> Self {
-        self.http_inputs = Some(input);
+        self.http_inputs = ::std::option::Option::Some(input);
         self
     }
     /// Allow or disallow jobs that specify HTTP inputs.
     pub fn set_http_inputs(
         mut self,
-        input: std::option::Option<crate::types::InputPolicy>,
+        input: ::std::option::Option<crate::types::InputPolicy>,
     ) -> Self {
         self.http_inputs = input;
         self
     }
     /// Allow or disallow jobs that specify HTTPS inputs.
     pub fn https_inputs(mut self, input: crate::types::InputPolicy) -> Self {
-        self.https_inputs = Some(input);
+        self.https_inputs = ::std::option::Option::Some(input);
         self
     }
     /// Allow or disallow jobs that specify HTTPS inputs.
     pub fn set_https_inputs(
         mut self,
-        input: std::option::Option<crate::types::InputPolicy>,
+        input: ::std::option::Option<crate::types::InputPolicy>,
     ) -> Self {
         self.https_inputs = input;
         self
     }
     /// Allow or disallow jobs that specify Amazon S3 inputs.
     pub fn s3_inputs(mut self, input: crate::types::InputPolicy) -> Self {
-        self.s3_inputs = Some(input);
+        self.s3_inputs = ::std::option::Option::Some(input);
         self
     }
     /// Allow or disallow jobs that specify Amazon S3 inputs.
-    pub fn set_s3_inputs(mut self, input: std::option::Option<crate::types::InputPolicy>) -> Self {
+    pub fn set_s3_inputs(
+        mut self,
+        input: ::std::option::Option<crate::types::InputPolicy>,
+    ) -> Self {
         self.s3_inputs = input;
         self
     }

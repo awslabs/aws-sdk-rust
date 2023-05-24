@@ -7,22 +7,22 @@
 /// </ul>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogPublishingOption {
     /// <p>ARN of the Cloudwatch log group to which log needs to be published.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
+    pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether given log publishing option is enabled or not.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl LogPublishingOption {
     /// <p>ARN of the Cloudwatch log group to which log needs to be published.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p> Specifies whether given log publishing option is enabled or not.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -35,32 +35,37 @@ impl LogPublishingOption {
 
 /// A builder for [`LogPublishingOption`](crate::types::LogPublishingOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogPublishingOptionBuilder {
-    pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl LogPublishingOptionBuilder {
     /// <p>ARN of the Cloudwatch log group to which log needs to be published.</p>
-    pub fn cloud_watch_logs_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_logs_log_group_arn = Some(input.into());
+    pub fn cloud_watch_logs_log_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the Cloudwatch log group to which log needs to be published.</p>
     pub fn set_cloud_watch_logs_log_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
     /// <p> Specifies whether given log publishing option is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies whether given log publishing option is enabled or not.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

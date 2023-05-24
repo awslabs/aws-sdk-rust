@@ -6,29 +6,29 @@ pub use crate::operation::create_quantum_task::_create_quantum_task_input::Creat
 /// Fluent builder constructing a request to `CreateQuantumTask`.
 ///
 /// <p>Creates a quantum task.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateQuantumTaskFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder,
 }
 impl CreateQuantumTaskFluentBuilder {
     /// Creates a new `CreateQuantumTask`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_quantum_task::CreateQuantumTask,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_quantum_task::CreateQuantumTaskError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateQuantumTaskFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_quantum_task::CreateQuantumTaskOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_quantum_task::CreateQuantumTaskError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,43 +75,46 @@ impl CreateQuantumTaskFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_quantum_task::CreateQuantumTaskOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_quantum_task::CreateQuantumTaskError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The client token associated with the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>The ARN of the device to run the task on.</p>
-    pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_arn(input.into());
         self
     }
     /// <p>The ARN of the device to run the task on.</p>
-    pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_arn(input);
         self
     }
     /// <p>The parameters for the device to run the task on.</p>
-    pub fn device_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.device_parameters(input.into());
         self
     }
     /// <p>The parameters for the device to run the task on.</p>
     pub fn set_device_parameters(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_device_parameters(input);
         self
@@ -119,40 +125,49 @@ impl CreateQuantumTaskFluentBuilder {
         self
     }
     /// <p>The number of shots to use for the task.</p>
-    pub fn set_shots(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_shots(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_shots(input);
         self
     }
     /// <p>The S3 bucket to store task result files in.</p>
-    pub fn output_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn output_s3_bucket(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.output_s3_bucket(input.into());
         self
     }
     /// <p>The S3 bucket to store task result files in.</p>
-    pub fn set_output_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_s3_bucket(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_output_s3_bucket(input);
         self
     }
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
-    pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn output_s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.output_s3_key_prefix(input.into());
         self
     }
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
     pub fn set_output_s3_key_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_output_s3_key_prefix(input);
         self
     }
     /// <p>The action associated with the task.</p>
-    pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action(input.into());
         self
     }
     /// <p>The action associated with the task.</p>
-    pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -163,8 +178,8 @@ impl CreateQuantumTaskFluentBuilder {
     /// <p>Tags to be added to the quantum task you're creating.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -172,20 +187,20 @@ impl CreateQuantumTaskFluentBuilder {
     /// <p>Tags to be added to the quantum task you're creating.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
-    pub fn job_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_token(input.into());
         self
     }
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
-    pub fn set_job_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_token(input);
         self
     }

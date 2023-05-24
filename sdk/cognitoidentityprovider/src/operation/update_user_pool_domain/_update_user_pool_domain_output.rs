@@ -2,20 +2,20 @@
 
 /// <p>The UpdateUserPoolDomain response output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
     #[doc(hidden)]
-    pub cloud_front_domain: std::option::Option<std::string::String>,
+    pub cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
-    pub fn cloud_front_domain(&self) -> std::option::Option<&str> {
+    pub fn cloud_front_domain(&self) -> ::std::option::Option<&str> {
         self.cloud_front_domain.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateUserPoolDomainOutput {
+impl ::aws_http::request_id::RequestId for UpdateUserPoolDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,26 @@ impl UpdateUserPoolDomainOutput {
 
 /// A builder for [`UpdateUserPoolDomainOutput`](crate::operation::update_user_pool_domain::UpdateUserPoolDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateUserPoolDomainOutputBuilder {
-    pub(crate) cloud_front_domain: std::option::Option<std::string::String>,
+    pub(crate) cloud_front_domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateUserPoolDomainOutputBuilder {
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
-    pub fn cloud_front_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_front_domain = Some(input.into());
+    pub fn cloud_front_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_front_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the custom domain to your user pool.</p>
     pub fn set_cloud_front_domain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_front_domain = input;
         self

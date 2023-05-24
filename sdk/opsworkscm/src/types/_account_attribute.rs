@@ -2,7 +2,7 @@
 
 /// <p>Stores account attributes. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountAttribute {
     /// <p> The attribute name. The following are supported attribute names. </p>
     /// <ul>
@@ -10,13 +10,13 @@ pub struct AccountAttribute {
     /// <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The maximum allowed value. </p>
     #[doc(hidden)]
-    pub maximum: std::option::Option<i32>,
+    pub maximum: ::std::option::Option<i32>,
     /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
     #[doc(hidden)]
-    pub used: std::option::Option<i32>,
+    pub used: ::std::option::Option<i32>,
 }
 impl AccountAttribute {
     /// <p> The attribute name. The following are supported attribute names. </p>
@@ -24,15 +24,15 @@ impl AccountAttribute {
     /// <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
     /// <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The maximum allowed value. </p>
-    pub fn maximum(&self) -> std::option::Option<i32> {
+    pub fn maximum(&self) -> ::std::option::Option<i32> {
         self.maximum
     }
     /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
-    pub fn used(&self) -> std::option::Option<i32> {
+    pub fn used(&self) -> ::std::option::Option<i32> {
         self.used
     }
 }
@@ -45,11 +45,13 @@ impl AccountAttribute {
 
 /// A builder for [`AccountAttribute`](crate::types::AccountAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountAttributeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) maximum: std::option::Option<i32>,
-    pub(crate) used: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) maximum: ::std::option::Option<i32>,
+    pub(crate) used: ::std::option::Option<i32>,
 }
 impl AccountAttributeBuilder {
     /// <p> The attribute name. The following are supported attribute names. </p>
@@ -57,8 +59,8 @@ impl AccountAttributeBuilder {
     /// <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
     /// <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>
     /// </ul>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The attribute name. The following are supported attribute names. </p>
@@ -66,27 +68,27 @@ impl AccountAttributeBuilder {
     /// <li> <p> <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers. </p> </li>
     /// <li> <p> <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved. </p> </li>
     /// </ul>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The maximum allowed value. </p>
     pub fn maximum(mut self, input: i32) -> Self {
-        self.maximum = Some(input);
+        self.maximum = ::std::option::Option::Some(input);
         self
     }
     /// <p> The maximum allowed value. </p>
-    pub fn set_maximum(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum = input;
         self
     }
     /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
     pub fn used(mut self, input: i32) -> Self {
-        self.used = Some(input);
+        self.used = ::std::option::Option::Some(input);
         self
     }
     /// <p> The current usage, such as the current number of servers that are associated with the account. </p>
-    pub fn set_used(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_used(mut self, input: ::std::option::Option<i32>) -> Self {
         self.used = input;
         self
     }

@@ -6,56 +6,63 @@ pub use crate::operation::update_connector::_update_connector_input::UpdateConne
 /// Fluent builder constructing a request to `UpdateConnector`.
 ///
 /// <p>Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code> for the connector that you want to update, along with the new values for the parameters to update.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConnectorFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_connector::builders::UpdateConnectorInputBuilder,
 }
 impl UpdateConnectorFluentBuilder {
     /// Creates a new `UpdateConnector`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_connector::UpdateConnector,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_connector::UpdateConnectorError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_connector::UpdateConnectorOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_connector::UpdateConnectorError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +75,31 @@ impl UpdateConnectorFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_connector::UpdateConnectorOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_connector::UpdateConnectorError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_connector::UpdateConnectorError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier for the connector.</p>
-    pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_id(input.into());
         self
     }
     /// <p>The unique identifier for the connector.</p>
-    pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_connector_id(input);
         self
     }
     /// <p>The URL of the partner's AS2 endpoint.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.url(input.into());
         self
     }
     /// <p>The URL of the partner's AS2 endpoint.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_url(input);
         self
     }
@@ -102,28 +111,28 @@ impl UpdateConnectorFluentBuilder {
     /// <p>A structure that contains the parameters for a connector object.</p>
     pub fn set_as2_config(
         mut self,
-        input: std::option::Option<crate::types::As2ConnectorConfig>,
+        input: ::std::option::Option<crate::types::As2ConnectorConfig>,
     ) -> Self {
         self.inner = self.inner.set_as2_config(input);
         self
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
-    pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_role(input.into());
         self
     }
     /// <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2 message file, store the MDN when we receive them from the partner, and write a final JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code> needs to provide read and write access to the parent directory of the file location used in the <code>StartFileTransfer</code> request. Additionally, you need to provide read and write access to the parent directory of the files that you intend to send with <code>StartFileTransfer</code>.</p>
-    pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_role(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
-    pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn logging_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logging_role(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a connector to turn on CloudWatch logging for Amazon S3 events. When set, you can view connector activity in your CloudWatch logs.</p>
-    pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logging_role(input);
         self
     }

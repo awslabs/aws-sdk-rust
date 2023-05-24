@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TestSegmentPattern`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pattern(impl Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::pattern) / [`set_pattern(Option<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::set_pattern): <p>The pattern to test.</p>
-    ///   - [`payload(impl Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::payload) / [`set_payload(Option<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::set_payload): <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
+    ///   - [`pattern(impl ::std::convert::Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::pattern) / [`set_pattern(Option<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::set_pattern): <p>The pattern to test.</p>
+    ///   - [`payload(impl ::std::convert::Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::payload) / [`set_payload(Option<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::set_payload): <p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p>
     /// - On success, responds with [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput) with field(s):
     ///   - [`r#match(Option<bool>)`](crate::operation::test_segment_pattern::TestSegmentPatternOutput::match): <p>Returns <code>true</code> if the pattern matches the payload.</p>
     /// - On failure, responds with [`SdkError<TestSegmentPatternError>`](crate::operation::test_segment_pattern::TestSegmentPatternError)

@@ -4,24 +4,24 @@
 /// <p>The default file format is JSON. You can specify only one format.</p>
 /// <p>You can't change the file format after you create the data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileFormatConfiguration {
     /// <p>Contains the configuration information of the JSON format.</p>
     #[doc(hidden)]
-    pub json_configuration: std::option::Option<crate::types::JsonConfiguration>,
+    pub json_configuration: ::std::option::Option<crate::types::JsonConfiguration>,
     /// <p>Contains the configuration information of the Parquet format.</p>
     #[doc(hidden)]
-    pub parquet_configuration: std::option::Option<crate::types::ParquetConfiguration>,
+    pub parquet_configuration: ::std::option::Option<crate::types::ParquetConfiguration>,
 }
 impl FileFormatConfiguration {
     /// <p>Contains the configuration information of the JSON format.</p>
-    pub fn json_configuration(&self) -> std::option::Option<&crate::types::JsonConfiguration> {
+    pub fn json_configuration(&self) -> ::std::option::Option<&crate::types::JsonConfiguration> {
         self.json_configuration.as_ref()
     }
     /// <p>Contains the configuration information of the Parquet format.</p>
     pub fn parquet_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ParquetConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ParquetConfiguration> {
         self.parquet_configuration.as_ref()
     }
 }
@@ -34,34 +34,36 @@ impl FileFormatConfiguration {
 
 /// A builder for [`FileFormatConfiguration`](crate::types::FileFormatConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileFormatConfigurationBuilder {
-    pub(crate) json_configuration: std::option::Option<crate::types::JsonConfiguration>,
-    pub(crate) parquet_configuration: std::option::Option<crate::types::ParquetConfiguration>,
+    pub(crate) json_configuration: ::std::option::Option<crate::types::JsonConfiguration>,
+    pub(crate) parquet_configuration: ::std::option::Option<crate::types::ParquetConfiguration>,
 }
 impl FileFormatConfigurationBuilder {
     /// <p>Contains the configuration information of the JSON format.</p>
     pub fn json_configuration(mut self, input: crate::types::JsonConfiguration) -> Self {
-        self.json_configuration = Some(input);
+        self.json_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the configuration information of the JSON format.</p>
     pub fn set_json_configuration(
         mut self,
-        input: std::option::Option<crate::types::JsonConfiguration>,
+        input: ::std::option::Option<crate::types::JsonConfiguration>,
     ) -> Self {
         self.json_configuration = input;
         self
     }
     /// <p>Contains the configuration information of the Parquet format.</p>
     pub fn parquet_configuration(mut self, input: crate::types::ParquetConfiguration) -> Self {
-        self.parquet_configuration = Some(input);
+        self.parquet_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the configuration information of the Parquet format.</p>
     pub fn set_parquet_configuration(
         mut self,
-        input: std::option::Option<crate::types::ParquetConfiguration>,
+        input: ::std::option::Option<crate::types::ParquetConfiguration>,
     ) -> Self {
         self.parquet_configuration = input;
         self

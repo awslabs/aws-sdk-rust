@@ -2,17 +2,17 @@
 
 /// <p>Contains details about the resource involved in the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
     #[doc(hidden)]
-    pub aws_ecr_container_image: std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+    pub aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
 }
 impl ResourceDetails {
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
     pub fn aws_ecr_container_image(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
         self.aws_ecr_container_image.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceDetailsBuilder {
     pub(crate) aws_ecr_container_image:
-        std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+        ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
@@ -36,13 +38,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEcrContainerImageDetails,
     ) -> Self {
-        self.aws_ecr_container_image = Some(input);
+        self.aws_ecr_container_image = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
     pub fn set_aws_ecr_container_image(
         mut self,
-        input: std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+        input: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     ) -> Self {
         self.aws_ecr_container_image = input;
         self

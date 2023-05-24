@@ -2,27 +2,27 @@
 
 /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubSlotSetting {
     /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Specifications for the constituent sub slots of a composite slot.</p>
     #[doc(hidden)]
-    pub slot_specifications: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Specifications>,
+    pub slot_specifications: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Specifications>,
     >,
 }
 impl SubSlotSetting {
     /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>Specifications for the constituent sub slots of a composite slot.</p>
     pub fn slot_specifications(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::Specifications>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::Specifications>,
     > {
         self.slot_specifications.as_ref()
     }
@@ -36,21 +36,23 @@ impl SubSlotSetting {
 
 /// A builder for [`SubSlotSetting`](crate::types::SubSlotSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubSlotSettingBuilder {
-    pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) slot_specifications: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Specifications>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
+    pub(crate) slot_specifications: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Specifications>,
     >,
 }
 impl SubSlotSettingBuilder {
     /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression text for defining the constituent sub slots in the composite slot using logical AND and OR operators.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
@@ -61,19 +63,19 @@ impl SubSlotSettingBuilder {
     /// <p>Specifications for the constituent sub slots of a composite slot.</p>
     pub fn slot_specifications(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::Specifications,
     ) -> Self {
         let mut hash_map = self.slot_specifications.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.slot_specifications = Some(hash_map);
+        self.slot_specifications = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Specifications for the constituent sub slots of a composite slot.</p>
     pub fn set_slot_specifications(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Specifications>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Specifications>,
         >,
     ) -> Self {
         self.slot_specifications = input;

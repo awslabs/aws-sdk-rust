@@ -6,29 +6,29 @@ pub use crate::operation::get_reservation_utilization::_get_reservation_utilizat
 /// Fluent builder constructing a request to `GetReservationUtilization`.
 ///
 /// <p>Retrieves the reservation utilization for your account. Management account in an organization have access to member accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReservationUtilizationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder,
 }
 impl GetReservationUtilizationFluentBuilder {
     /// Creates a new `GetReservationUtilization`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_reservation_utilization::GetReservationUtilization,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_reservation_utilization::GetReservationUtilizationError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetReservationUtilizationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_reservation_utilization::GetReservationUtilizationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_reservation_utilization::GetReservationUtilizationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl GetReservationUtilizationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_reservation_utilization::GetReservationUtilizationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_reservation_utilization::GetReservationUtilizationError,
         >,
     > {
@@ -88,7 +91,7 @@ impl GetReservationUtilizationFluentBuilder {
     /// <p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
     pub fn set_time_period(
         mut self,
-        input: std::option::Option<crate::types::DateInterval>,
+        input: ::std::option::Option<crate::types::DateInterval>,
     ) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
@@ -105,7 +108,7 @@ impl GetReservationUtilizationFluentBuilder {
     /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
     pub fn set_group_by(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
     ) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
@@ -120,7 +123,7 @@ impl GetReservationUtilizationFluentBuilder {
     /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn set_granularity(
         mut self,
-        input: std::option::Option<crate::types::Granularity>,
+        input: ::std::option::Option<crate::types::Granularity>,
     ) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
@@ -159,7 +162,7 @@ impl GetReservationUtilizationFluentBuilder {
     /// <li> <p>TENANCY</p> </li>
     /// </ul>
     /// <p> <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::Expression>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -211,17 +214,26 @@ impl GetReservationUtilizationFluentBuilder {
     /// <li> <p> <code>UnrealizedSavings</code> </p> </li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::SortDefinition>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: ::std::option::Option<crate::types::SortDefinition>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_page_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_page_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
@@ -231,7 +243,7 @@ impl GetReservationUtilizationFluentBuilder {
         self
     }
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

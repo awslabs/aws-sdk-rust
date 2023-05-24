@@ -2,22 +2,22 @@
 
 /// <p>Contains a definition of an attribute for the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableAttributeDefinition {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the attribute.</p>
     #[doc(hidden)]
-    pub attribute_type: std::option::Option<std::string::String>,
+    pub attribute_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableAttributeDefinition {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The type of the attribute.</p>
-    pub fn attribute_type(&self) -> std::option::Option<&str> {
+    pub fn attribute_type(&self) -> ::std::option::Option<&str> {
         self.attribute_type.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl AwsDynamoDbTableAttributeDefinition {
 
 /// A builder for [`AwsDynamoDbTableAttributeDefinition`](crate::types::AwsDynamoDbTableAttributeDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsDynamoDbTableAttributeDefinitionBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) attribute_type: std::option::Option<std::string::String>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableAttributeDefinitionBuilder {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The type of the attribute.</p>
-    pub fn attribute_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_type = Some(input.into());
+    pub fn attribute_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the attribute.</p>
-    pub fn set_attribute_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_type = input;
         self
     }

@@ -53,13 +53,13 @@
 /// <p>The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -99,7 +99,7 @@ pub enum PartitionInstanceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PartitionInstanceType {
+impl ::std::convert::From<&str> for PartitionInstanceType {
     fn from(s: &str) -> Self {
         match s {
             "search.2xlarge" => PartitionInstanceType::Search2xlarge,
@@ -133,11 +133,11 @@ impl std::convert::From<&str> for PartitionInstanceType {
         }
     }
 }
-impl std::str::FromStr for PartitionInstanceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PartitionInstanceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PartitionInstanceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PartitionInstanceType::from(s))
     }
 }
 impl PartitionInstanceType {
@@ -195,7 +195,7 @@ impl PartitionInstanceType {
         ]
     }
 }
-impl AsRef<str> for PartitionInstanceType {
+impl ::std::convert::AsRef<str> for PartitionInstanceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

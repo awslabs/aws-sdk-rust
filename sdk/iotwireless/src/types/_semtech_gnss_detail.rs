@@ -2,36 +2,36 @@
 
 /// <p>Details of the Semtech GNSS solver object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SemtechGnssDetail {
     /// <p>The vendor of the solver object.</p>
     #[doc(hidden)]
-    pub provider: std::option::Option<crate::types::PositionSolverProvider>,
+    pub provider: ::std::option::Option<crate::types::PositionSolverProvider>,
     /// <p>The type of positioning solver used.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PositionSolverType>,
+    pub r#type: ::std::option::Option<crate::types::PositionSolverType>,
     /// <p>The status indicating whether the solver is enabled.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PositionConfigurationStatus>,
+    pub status: ::std::option::Option<crate::types::PositionConfigurationStatus>,
     /// <p>Whether forward error correction is enabled.</p>
     #[doc(hidden)]
-    pub fec: std::option::Option<crate::types::PositionConfigurationFec>,
+    pub fec: ::std::option::Option<crate::types::PositionConfigurationFec>,
 }
 impl SemtechGnssDetail {
     /// <p>The vendor of the solver object.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::PositionSolverProvider> {
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::PositionSolverProvider> {
         self.provider.as_ref()
     }
     /// <p>The type of positioning solver used.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PositionSolverType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PositionSolverType> {
         self.r#type.as_ref()
     }
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PositionConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PositionConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> std::option::Option<&crate::types::PositionConfigurationFec> {
+    pub fn fec(&self) -> ::std::option::Option<&crate::types::PositionConfigurationFec> {
         self.fec.as_ref()
     }
 }
@@ -44,62 +44,64 @@ impl SemtechGnssDetail {
 
 /// A builder for [`SemtechGnssDetail`](crate::types::SemtechGnssDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SemtechGnssDetailBuilder {
-    pub(crate) provider: std::option::Option<crate::types::PositionSolverProvider>,
-    pub(crate) r#type: std::option::Option<crate::types::PositionSolverType>,
-    pub(crate) status: std::option::Option<crate::types::PositionConfigurationStatus>,
-    pub(crate) fec: std::option::Option<crate::types::PositionConfigurationFec>,
+    pub(crate) provider: ::std::option::Option<crate::types::PositionSolverProvider>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PositionSolverType>,
+    pub(crate) status: ::std::option::Option<crate::types::PositionConfigurationStatus>,
+    pub(crate) fec: ::std::option::Option<crate::types::PositionConfigurationFec>,
 }
 impl SemtechGnssDetailBuilder {
     /// <p>The vendor of the solver object.</p>
     pub fn provider(mut self, input: crate::types::PositionSolverProvider) -> Self {
-        self.provider = Some(input);
+        self.provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The vendor of the solver object.</p>
     pub fn set_provider(
         mut self,
-        input: std::option::Option<crate::types::PositionSolverProvider>,
+        input: ::std::option::Option<crate::types::PositionSolverProvider>,
     ) -> Self {
         self.provider = input;
         self
     }
     /// <p>The type of positioning solver used.</p>
     pub fn r#type(mut self, input: crate::types::PositionSolverType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of positioning solver used.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::PositionSolverType>,
+        input: ::std::option::Option<crate::types::PositionSolverType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn status(mut self, input: crate::types::PositionConfigurationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PositionConfigurationStatus>,
+        input: ::std::option::Option<crate::types::PositionConfigurationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn fec(mut self, input: crate::types::PositionConfigurationFec) -> Self {
-        self.fec = Some(input);
+        self.fec = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn set_fec(
         mut self,
-        input: std::option::Option<crate::types::PositionConfigurationFec>,
+        input: ::std::option::Option<crate::types::PositionConfigurationFec>,
     ) -> Self {
         self.fec = input;
         self

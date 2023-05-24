@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteImageVersion`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_name(impl Into<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::image_name) / [`set_image_name(Option<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::set_image_name): <p>The name of the image to delete.</p>
+    ///   - [`image_name(impl ::std::convert::Into<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::image_name) / [`set_image_name(Option<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::set_image_name): <p>The name of the image to delete.</p>
     ///   - [`version(i32)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::version) / [`set_version(Option<i32>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::set_version): <p>The version to delete.</p>
-    ///   - [`alias(impl Into<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::set_alias): <p>The alias of the image to delete.</p>
+    ///   - [`alias(impl ::std::convert::Into<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::delete_image_version::builders::DeleteImageVersionFluentBuilder::set_alias): <p>The alias of the image to delete.</p>
     /// - On success, responds with [`DeleteImageVersionOutput`](crate::operation::delete_image_version::DeleteImageVersionOutput)
     /// - On failure, responds with [`SdkError<DeleteImageVersionError>`](crate::operation::delete_image_version::DeleteImageVersionError)
     pub fn delete_image_version(

@@ -2,22 +2,22 @@
 
 /// <p>Information about the retention rule unlock delay. The unlock delay is the period after which a retention rule can be modified or edited after it has been unlocked by a user with the required permissions. The retention rule can't be modified or deleted during the unlock delay.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlockDelay {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
     #[doc(hidden)]
-    pub unlock_delay_value: std::option::Option<i32>,
+    pub unlock_delay_value: ::std::option::Option<i32>,
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
     #[doc(hidden)]
-    pub unlock_delay_unit: std::option::Option<crate::types::UnlockDelayUnit>,
+    pub unlock_delay_unit: ::std::option::Option<crate::types::UnlockDelayUnit>,
 }
 impl UnlockDelay {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
-    pub fn unlock_delay_value(&self) -> std::option::Option<i32> {
+    pub fn unlock_delay_value(&self) -> ::std::option::Option<i32> {
         self.unlock_delay_value
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-    pub fn unlock_delay_unit(&self) -> std::option::Option<&crate::types::UnlockDelayUnit> {
+    pub fn unlock_delay_unit(&self) -> ::std::option::Option<&crate::types::UnlockDelayUnit> {
         self.unlock_delay_unit.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl UnlockDelay {
 
 /// A builder for [`UnlockDelay`](crate::types::UnlockDelay).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnlockDelayBuilder {
-    pub(crate) unlock_delay_value: std::option::Option<i32>,
-    pub(crate) unlock_delay_unit: std::option::Option<crate::types::UnlockDelayUnit>,
+    pub(crate) unlock_delay_value: ::std::option::Option<i32>,
+    pub(crate) unlock_delay_unit: ::std::option::Option<crate::types::UnlockDelayUnit>,
 }
 impl UnlockDelayBuilder {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
     pub fn unlock_delay_value(mut self, input: i32) -> Self {
-        self.unlock_delay_value = Some(input);
+        self.unlock_delay_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
-    pub fn set_unlock_delay_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unlock_delay_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unlock_delay_value = input;
         self
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
     pub fn unlock_delay_unit(mut self, input: crate::types::UnlockDelayUnit) -> Self {
-        self.unlock_delay_unit = Some(input);
+        self.unlock_delay_unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
     pub fn set_unlock_delay_unit(
         mut self,
-        input: std::option::Option<crate::types::UnlockDelayUnit>,
+        input: ::std::option::Option<crate::types::UnlockDelayUnit>,
     ) -> Self {
         self.unlock_delay_unit = input;
         self

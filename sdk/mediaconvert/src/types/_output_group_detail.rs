@@ -2,15 +2,15 @@
 
 /// Contains details about the output groups specified in the job settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputGroupDetail {
     /// Details about the output
     #[doc(hidden)]
-    pub output_details: std::option::Option<std::vec::Vec<crate::types::OutputDetail>>,
+    pub output_details: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>,
 }
 impl OutputGroupDetail {
     /// Details about the output
-    pub fn output_details(&self) -> std::option::Option<&[crate::types::OutputDetail]> {
+    pub fn output_details(&self) -> ::std::option::Option<&[crate::types::OutputDetail]> {
         self.output_details.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl OutputGroupDetail {
 
 /// A builder for [`OutputGroupDetail`](crate::types::OutputGroupDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputGroupDetailBuilder {
-    pub(crate) output_details: std::option::Option<std::vec::Vec<crate::types::OutputDetail>>,
+    pub(crate) output_details: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>,
 }
 impl OutputGroupDetailBuilder {
     /// Appends an item to `output_details`.
@@ -36,13 +38,13 @@ impl OutputGroupDetailBuilder {
     pub fn output_details(mut self, input: crate::types::OutputDetail) -> Self {
         let mut v = self.output_details.unwrap_or_default();
         v.push(input);
-        self.output_details = Some(v);
+        self.output_details = ::std::option::Option::Some(v);
         self
     }
     /// Details about the output
     pub fn set_output_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputDetail>>,
     ) -> Self {
         self.output_details = input;
         self

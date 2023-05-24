@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventSubscription`](crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subscription_name(impl Into<String>)`](crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder::subscription_name) / [`set_subscription_name(Option<String>)`](crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder::set_subscription_name): <p>The name of the DMS event notification subscription to be deleted.</p>
+    ///   - [`subscription_name(impl ::std::convert::Into<String>)`](crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder::subscription_name) / [`set_subscription_name(Option<String>)`](crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionFluentBuilder::set_subscription_name): <p>The name of the DMS event notification subscription to be deleted.</p>
     /// - On success, responds with [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput) with field(s):
     ///   - [`event_subscription(Option<EventSubscription>)`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput::event_subscription): <p>The event subscription that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::operation::delete_event_subscription::DeleteEventSubscriptionError)

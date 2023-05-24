@@ -2,15 +2,15 @@
 
 /// <p>Information relating to readiness check status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The text of a readiness check message.</p>
     #[doc(hidden)]
-    pub message_text: std::option::Option<std::string::String>,
+    pub message_text: ::std::option::Option<::std::string::String>,
 }
 impl Message {
     /// <p>The text of a readiness check message.</p>
-    pub fn message_text(&self) -> std::option::Option<&str> {
+    pub fn message_text(&self) -> ::std::option::Option<&str> {
         self.message_text.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MessageBuilder {
-    pub(crate) message_text: std::option::Option<std::string::String>,
+    pub(crate) message_text: ::std::option::Option<::std::string::String>,
 }
 impl MessageBuilder {
     /// <p>The text of a readiness check message.</p>
-    pub fn message_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_text = Some(input.into());
+    pub fn message_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of a readiness check message.</p>
-    pub fn set_message_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_text = input;
         self
     }

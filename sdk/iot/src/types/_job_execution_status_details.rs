@@ -2,19 +2,21 @@
 
 /// <p>Details of the job execution status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionStatusDetails {
     /// <p>The job execution status.</p>
     #[doc(hidden)]
-    pub details_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub details_map: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl JobExecutionStatusDetails {
     /// <p>The job execution status.</p>
     pub fn details_map(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.details_map.as_ref()
     }
 }
@@ -27,10 +29,13 @@ impl JobExecutionStatusDetails {
 
 /// A builder for [`JobExecutionStatusDetails`](crate::types::JobExecutionStatusDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobExecutionStatusDetailsBuilder {
-    pub(crate) details_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) details_map: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl JobExecutionStatusDetailsBuilder {
     /// Adds a key-value pair to `details_map`.
@@ -40,19 +45,19 @@ impl JobExecutionStatusDetailsBuilder {
     /// <p>The job execution status.</p>
     pub fn details_map(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.details_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.details_map = Some(hash_map);
+        self.details_map = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The job execution status.</p>
     pub fn set_details_map(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.details_map = input;

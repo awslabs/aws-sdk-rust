@@ -2,26 +2,26 @@
 
 /// <p>Details about the rule group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupDetails {
     /// <p>Additional settings to use in the specified rules.</p>
     #[doc(hidden)]
-    pub rule_variables: std::option::Option<crate::types::RuleGroupVariables>,
+    pub rule_variables: ::std::option::Option<crate::types::RuleGroupVariables>,
     /// <p>The rules and actions for the rule group.</p>
     /// <p>For stateful rule groups, can contain <code>RulesString</code>, <code>RulesSourceList</code>, or <code>StatefulRules</code>.</p>
     /// <p>For stateless rule groups, contains <code>StatelessRulesAndCustomActions</code>.</p>
     #[doc(hidden)]
-    pub rules_source: std::option::Option<crate::types::RuleGroupSource>,
+    pub rules_source: ::std::option::Option<crate::types::RuleGroupSource>,
 }
 impl RuleGroupDetails {
     /// <p>Additional settings to use in the specified rules.</p>
-    pub fn rule_variables(&self) -> std::option::Option<&crate::types::RuleGroupVariables> {
+    pub fn rule_variables(&self) -> ::std::option::Option<&crate::types::RuleGroupVariables> {
         self.rule_variables.as_ref()
     }
     /// <p>The rules and actions for the rule group.</p>
     /// <p>For stateful rule groups, can contain <code>RulesString</code>, <code>RulesSourceList</code>, or <code>StatefulRules</code>.</p>
     /// <p>For stateless rule groups, contains <code>StatelessRulesAndCustomActions</code>.</p>
-    pub fn rules_source(&self) -> std::option::Option<&crate::types::RuleGroupSource> {
+    pub fn rules_source(&self) -> ::std::option::Option<&crate::types::RuleGroupSource> {
         self.rules_source.as_ref()
     }
 }
@@ -34,21 +34,23 @@ impl RuleGroupDetails {
 
 /// A builder for [`RuleGroupDetails`](crate::types::RuleGroupDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupDetailsBuilder {
-    pub(crate) rule_variables: std::option::Option<crate::types::RuleGroupVariables>,
-    pub(crate) rules_source: std::option::Option<crate::types::RuleGroupSource>,
+    pub(crate) rule_variables: ::std::option::Option<crate::types::RuleGroupVariables>,
+    pub(crate) rules_source: ::std::option::Option<crate::types::RuleGroupSource>,
 }
 impl RuleGroupDetailsBuilder {
     /// <p>Additional settings to use in the specified rules.</p>
     pub fn rule_variables(mut self, input: crate::types::RuleGroupVariables) -> Self {
-        self.rule_variables = Some(input);
+        self.rule_variables = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional settings to use in the specified rules.</p>
     pub fn set_rule_variables(
         mut self,
-        input: std::option::Option<crate::types::RuleGroupVariables>,
+        input: ::std::option::Option<crate::types::RuleGroupVariables>,
     ) -> Self {
         self.rule_variables = input;
         self
@@ -57,7 +59,7 @@ impl RuleGroupDetailsBuilder {
     /// <p>For stateful rule groups, can contain <code>RulesString</code>, <code>RulesSourceList</code>, or <code>StatefulRules</code>.</p>
     /// <p>For stateless rule groups, contains <code>StatelessRulesAndCustomActions</code>.</p>
     pub fn rules_source(mut self, input: crate::types::RuleGroupSource) -> Self {
-        self.rules_source = Some(input);
+        self.rules_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rules and actions for the rule group.</p>
@@ -65,7 +67,7 @@ impl RuleGroupDetailsBuilder {
     /// <p>For stateless rule groups, contains <code>StatelessRulesAndCustomActions</code>.</p>
     pub fn set_rules_source(
         mut self,
-        input: std::option::Option<crate::types::RuleGroupSource>,
+        input: ::std::option::Option<crate::types::RuleGroupSource>,
     ) -> Self {
         self.rules_source = input;
         self

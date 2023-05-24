@@ -2,15 +2,15 @@
 
 /// <p>A structure that contains information about custom events for this app monitor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomEvents {
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CustomEventsStatus>,
+    pub status: ::std::option::Option<crate::types::CustomEventsStatus>,
 }
 impl CustomEvents {
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CustomEventsStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CustomEventsStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl CustomEvents {
 
 /// A builder for [`CustomEvents`](crate::types::CustomEvents).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomEventsBuilder {
-    pub(crate) status: std::option::Option<crate::types::CustomEventsStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::CustomEventsStatus>,
 }
 impl CustomEventsBuilder {
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
     pub fn status(mut self, input: crate::types::CustomEventsStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CustomEventsStatus>,
+        input: ::std::option::Option<crate::types::CustomEventsStatus>,
     ) -> Self {
         self.status = input;
         self

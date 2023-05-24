@@ -2,15 +2,15 @@
 
 /// <p>Details of what related item data is published through the case event stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedItemEventIncludedData {
     /// <p>Details of what related item data is published through the case event stream.</p>
     #[doc(hidden)]
-    pub include_content: std::option::Option<bool>,
+    pub include_content: ::std::option::Option<bool>,
 }
 impl RelatedItemEventIncludedData {
     /// <p>Details of what related item data is published through the case event stream.</p>
-    pub fn include_content(&self) -> std::option::Option<bool> {
+    pub fn include_content(&self) -> ::std::option::Option<bool> {
         self.include_content
     }
 }
@@ -23,18 +23,20 @@ impl RelatedItemEventIncludedData {
 
 /// A builder for [`RelatedItemEventIncludedData`](crate::types::RelatedItemEventIncludedData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelatedItemEventIncludedDataBuilder {
-    pub(crate) include_content: std::option::Option<bool>,
+    pub(crate) include_content: ::std::option::Option<bool>,
 }
 impl RelatedItemEventIncludedDataBuilder {
     /// <p>Details of what related item data is published through the case event stream.</p>
     pub fn include_content(mut self, input: bool) -> Self {
-        self.include_content = Some(input);
+        self.include_content = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details of what related item data is published through the case event stream.</p>
-    pub fn set_include_content(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_content(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_content = input;
         self
     }

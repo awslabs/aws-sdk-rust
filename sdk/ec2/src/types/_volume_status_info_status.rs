@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum VolumeStatusInfoStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum VolumeStatusInfoStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for VolumeStatusInfoStatus {
+impl ::std::convert::From<&str> for VolumeStatusInfoStatus {
     fn from(s: &str) -> Self {
         match s {
             "impaired" => VolumeStatusInfoStatus::Impaired,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for VolumeStatusInfoStatus {
         }
     }
 }
-impl std::str::FromStr for VolumeStatusInfoStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for VolumeStatusInfoStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VolumeStatusInfoStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(VolumeStatusInfoStatus::from(s))
     }
 }
 impl VolumeStatusInfoStatus {
@@ -91,7 +91,7 @@ impl VolumeStatusInfoStatus {
         &["impaired", "insufficient-data", "ok"]
     }
 }
-impl AsRef<str> for VolumeStatusInfoStatus {
+impl ::std::convert::AsRef<str> for VolumeStatusInfoStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

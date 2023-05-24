@@ -21,29 +21,29 @@ pub use crate::operation::create_file_system::_create_file_system_input::CreateF
 /// <p>You can set the throughput mode for the file system using the <code>ThroughputMode</code> parameter.</p>
 /// <p>After the file system is fully created, Amazon EFS sets its lifecycle state to <code>available</code>, at which point you can create one or more mount targets for the file system in your VPC. For more information, see <code>CreateMountTarget</code>. You mount your Amazon EFS file system on an EC2 instances in your VPC by using the mount target. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How it Works</a>. </p>
 /// <p> This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code> action. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFileSystemFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_file_system::builders::CreateFileSystemInputBuilder,
 }
 impl CreateFileSystemFluentBuilder {
     /// Creates a new `CreateFileSystem`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_file_system::CreateFileSystem,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_file_system::CreateFileSystemError,
         >,
     > {
@@ -51,30 +51,33 @@ impl CreateFileSystemFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_file_system::CreateFileSystemOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_file_system::CreateFileSystemError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -87,21 +90,27 @@ impl CreateFileSystemFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_file_system::CreateFileSystemOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_file_system::CreateFileSystemError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    pub fn creation_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn creation_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.creation_token(input.into());
         self
     }
     /// <p>A string of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>
-    pub fn set_creation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_creation_token(input);
         self
     }
@@ -117,7 +126,7 @@ impl CreateFileSystemFluentBuilder {
     /// </note>
     pub fn set_performance_mode(
         mut self,
-        input: std::option::Option<crate::types::PerformanceMode>,
+        input: ::std::option::Option<crate::types::PerformanceMode>,
     ) -> Self {
         self.inner = self.inner.set_performance_mode(input);
         self
@@ -128,7 +137,7 @@ impl CreateFileSystemFluentBuilder {
         self
     }
     /// <p>A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying an existing Key Management Service key (KMS key). If you don't specify a KMS key, then the default KMS key for Amazon EFS, <code>/aws/elasticfilesystem</code>, is used to protect the encrypted file system. </p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_encrypted(input);
         self
     }
@@ -142,7 +151,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
     /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
     /// </important>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -156,7 +165,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>If you use <code>KmsKeyId</code>, you must set the <code>CreateFileSystemRequest$Encrypted</code> parameter to true.</p> <important>
     /// <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with Amazon EFS file systems.</p>
     /// </important>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
@@ -170,7 +179,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>Default is <code>bursting</code>.</p>
     pub fn set_throughput_mode(
         mut self,
-        input: std::option::Option<crate::types::ThroughputMode>,
+        input: ::std::option::Option<crate::types::ThroughputMode>,
     ) -> Self {
         self.inner = self.inner.set_throughput_mode(input);
         self
@@ -181,14 +190,20 @@ impl CreateFileSystemFluentBuilder {
         self
     }
     /// <p>The throughput, measured in MiB/s, that you want to provision for a file system that you're creating. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web Services Support. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
-    pub fn set_provisioned_throughput_in_mibps(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_provisioned_throughput_in_mibps(
+        mut self,
+        input: ::std::option::Option<f64>,
+    ) -> Self {
         self.inner = self.inner.set_provisioned_throughput_in_mibps(input);
         self
     }
     /// <p>Used to create a file system that uses One Zone storage classes. It specifies the Amazon Web Services Availability Zone in which to create the file system. Use the format <code>us-east-1a</code> to specify the Availability Zone. For more information about One Zone storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> <note>
     /// <p>One Zone storage classes are not available in all Availability Zones in Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
-    pub fn availability_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zone_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.availability_zone_name(input.into());
         self
     }
@@ -197,7 +212,7 @@ impl CreateFileSystemFluentBuilder {
     /// </note>
     pub fn set_availability_zone_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_availability_zone_name(input);
         self
@@ -214,7 +229,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>Default is <code>false</code>. However, if you specify an <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> <note>
     /// <p>Backup is not available in all Amazon Web Services Regions where Amazon EFS is available.</p>
     /// </note>
-    pub fn set_backup(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_backup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_backup(input);
         self
     }
@@ -230,7 +245,7 @@ impl CreateFileSystemFluentBuilder {
     /// <p>Use to create one or more tags associated with the file system. Each tag is a user-defined key-value pair. Name your file system on creation by including a <code>"Key":"Name","Value":"{value}"</code> key-value pair. Each key must be unique. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

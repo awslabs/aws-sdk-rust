@@ -2,22 +2,22 @@
 
 /// UpdateCampaignDialerConfigRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfigInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// The possible types of dialer config parameters
     #[doc(hidden)]
-    pub dialer_config: std::option::Option<crate::types::DialerConfig>,
+    pub dialer_config: ::std::option::Option<crate::types::DialerConfig>,
 }
 impl UpdateCampaignDialerConfigInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// The possible types of dialer config parameters
-    pub fn dialer_config(&self) -> std::option::Option<&crate::types::DialerConfig> {
+    pub fn dialer_config(&self) -> ::std::option::Option<&crate::types::DialerConfig> {
         self.dialer_config.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl UpdateCampaignDialerConfigInput {
 
 /// A builder for [`UpdateCampaignDialerConfigInput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateCampaignDialerConfigInputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) dialer_config: std::option::Option<crate::types::DialerConfig>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) dialer_config: ::std::option::Option<crate::types::DialerConfig>,
 }
 impl UpdateCampaignDialerConfigInputBuilder {
     /// Identifier representing a Campaign
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// Identifier representing a Campaign
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// The possible types of dialer config parameters
     pub fn dialer_config(mut self, input: crate::types::DialerConfig) -> Self {
-        self.dialer_config = Some(input);
+        self.dialer_config = ::std::option::Option::Some(input);
         self
     }
     /// The possible types of dialer config parameters
     pub fn set_dialer_config(
         mut self,
-        input: std::option::Option<crate::types::DialerConfig>,
+        input: ::std::option::Option<crate::types::DialerConfig>,
     ) -> Self {
         self.dialer_config = input;
         self
@@ -62,11 +64,11 @@ impl UpdateCampaignDialerConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCampaignDialerConfigInput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigInput {
                 id: self.id,
                 dialer_config: self.dialer_config,

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ListenerTlsMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ListenerTlsMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ListenerTlsMode {
+impl ::std::convert::From<&str> for ListenerTlsMode {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ListenerTlsMode::Disabled,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ListenerTlsMode {
         }
     }
 }
-impl std::str::FromStr for ListenerTlsMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ListenerTlsMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListenerTlsMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ListenerTlsMode::from(s))
     }
 }
 impl ListenerTlsMode {
@@ -91,7 +91,7 @@ impl ListenerTlsMode {
         &["DISABLED", "PERMISSIVE", "STRICT"]
     }
 }
-impl AsRef<str> for ListenerTlsMode {
+impl ::std::convert::AsRef<str> for ListenerTlsMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

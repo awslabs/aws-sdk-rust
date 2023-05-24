@@ -38,13 +38,13 @@
 /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HdrToSdrToneMapper {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HdrToSdrToneMapper {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HdrToSdrToneMapper {
+impl ::std::convert::From<&str> for HdrToSdrToneMapper {
     fn from(s: &str) -> Self {
         match s {
             "PRESERVE_DETAILS" => HdrToSdrToneMapper::PreserveDetails,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HdrToSdrToneMapper {
         }
     }
 }
-impl std::str::FromStr for HdrToSdrToneMapper {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HdrToSdrToneMapper {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HdrToSdrToneMapper::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HdrToSdrToneMapper::from(s))
     }
 }
 impl HdrToSdrToneMapper {
@@ -86,7 +86,7 @@ impl HdrToSdrToneMapper {
         &["PRESERVE_DETAILS", "VIBRANT"]
     }
 }
-impl AsRef<str> for HdrToSdrToneMapper {
+impl ::std::convert::AsRef<str> for HdrToSdrToneMapper {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,43 +2,43 @@
 
 /// <p>Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsOptions {
     /// <p>Specifies whether EBS-based storage is enabled.</p>
     #[doc(hidden)]
-    pub ebs_enabled: std::option::Option<bool>,
+    pub ebs_enabled: ::std::option::Option<bool>,
     /// <p> Specifies the volume type for EBS-based storage.</p>
     #[doc(hidden)]
-    pub volume_type: std::option::Option<crate::types::VolumeType>,
+    pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p> Integer to specify the size of an EBS volume.</p>
     #[doc(hidden)]
-    pub volume_size: std::option::Option<i32>,
+    pub volume_size: ::std::option::Option<i32>,
     /// <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
     #[doc(hidden)]
-    pub iops: std::option::Option<i32>,
+    pub iops: ::std::option::Option<i32>,
     /// <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
     #[doc(hidden)]
-    pub throughput: std::option::Option<i32>,
+    pub throughput: ::std::option::Option<i32>,
 }
 impl EbsOptions {
     /// <p>Specifies whether EBS-based storage is enabled.</p>
-    pub fn ebs_enabled(&self) -> std::option::Option<bool> {
+    pub fn ebs_enabled(&self) -> ::std::option::Option<bool> {
         self.ebs_enabled
     }
     /// <p> Specifies the volume type for EBS-based storage.</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p> Integer to specify the size of an EBS volume.</p>
-    pub fn volume_size(&self) -> std::option::Option<i32> {
+    pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
     /// <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
-    pub fn iops(&self) -> std::option::Option<i32> {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
-    pub fn throughput(&self) -> std::option::Option<i32> {
+    pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
 }
@@ -51,62 +51,67 @@ impl EbsOptions {
 
 /// A builder for [`EbsOptions`](crate::types::EbsOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EbsOptionsBuilder {
-    pub(crate) ebs_enabled: std::option::Option<bool>,
-    pub(crate) volume_type: std::option::Option<crate::types::VolumeType>,
-    pub(crate) volume_size: std::option::Option<i32>,
-    pub(crate) iops: std::option::Option<i32>,
-    pub(crate) throughput: std::option::Option<i32>,
+    pub(crate) ebs_enabled: ::std::option::Option<bool>,
+    pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
+    pub(crate) volume_size: ::std::option::Option<i32>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) throughput: ::std::option::Option<i32>,
 }
 impl EbsOptionsBuilder {
     /// <p>Specifies whether EBS-based storage is enabled.</p>
     pub fn ebs_enabled(mut self, input: bool) -> Self {
-        self.ebs_enabled = Some(input);
+        self.ebs_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether EBS-based storage is enabled.</p>
-    pub fn set_ebs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ebs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_enabled = input;
         self
     }
     /// <p> Specifies the volume type for EBS-based storage.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
-        self.volume_type = Some(input);
+        self.volume_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the volume type for EBS-based storage.</p>
-    pub fn set_volume_type(mut self, input: std::option::Option<crate::types::VolumeType>) -> Self {
+    pub fn set_volume_type(
+        mut self,
+        input: ::std::option::Option<crate::types::VolumeType>,
+    ) -> Self {
         self.volume_type = input;
         self
     }
     /// <p> Integer to specify the size of an EBS volume.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
-        self.volume_size = Some(input);
+        self.volume_size = ::std::option::Option::Some(input);
         self
     }
     /// <p> Integer to specify the size of an EBS volume.</p>
-    pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
     }
     /// <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
     pub fn iops(mut self, input: i32) -> Self {
-        self.iops = Some(input);
+        self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the IOPS for Provisioned IOPS And GP3 EBS volume (SSD).</p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
     /// <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
     pub fn throughput(mut self, input: i32) -> Self {
-        self.throughput = Some(input);
+        self.throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the Throughput for GP3 EBS volume (SSD).</p>
-    pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }

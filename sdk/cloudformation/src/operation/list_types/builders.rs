@@ -6,56 +6,59 @@ pub use crate::operation::list_types::_list_types_input::ListTypesInputBuilder;
 /// Fluent builder constructing a request to `ListTypes`.
 ///
 /// <p>Returns summary information about extension that have been registered with CloudFormation.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTypesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_types::builders::ListTypesInputBuilder,
 }
 impl ListTypesFluentBuilder {
     /// Creates a new `ListTypes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_types::ListTypes,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_types::ListTypesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListTypesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_types::ListTypesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_types::ListTypesError>,
     > {
         self.send_middleware().await
     }
@@ -106,7 +109,10 @@ impl ListTypesFluentBuilder {
     /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
     /// </ul>
     /// <p>The default is <code>PRIVATE</code>.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.inner = self.inner.set_visibility(input);
         self
     }
@@ -132,7 +138,7 @@ impl ListTypesFluentBuilder {
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
     pub fn set_provisioning_type(
         mut self,
-        input: std::option::Option<crate::types::ProvisioningType>,
+        input: ::std::option::Option<crate::types::ProvisioningType>,
     ) -> Self {
         self.inner = self.inner.set_provisioning_type(input);
         self
@@ -155,7 +161,7 @@ impl ListTypesFluentBuilder {
     /// </ul>
     pub fn set_deprecated_status(
         mut self,
-        input: std::option::Option<crate::types::DeprecatedStatus>,
+        input: ::std::option::Option<crate::types::DeprecatedStatus>,
     ) -> Self {
         self.inner = self.inner.set_deprecated_status(input);
         self
@@ -166,7 +172,7 @@ impl ListTypesFluentBuilder {
         self
     }
     /// <p>The type of extension.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::RegistryType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RegistryType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -178,7 +184,7 @@ impl ListTypesFluentBuilder {
     }
     /// <p>Filter criteria to use in determining which extensions to return.</p>
     /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::TypeFilters>) -> Self {
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::TypeFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -188,17 +194,17 @@ impl ListTypesFluentBuilder {
         self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

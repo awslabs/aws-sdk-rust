@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSigningProfile`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_name(impl Into<String>)`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::profile_name) / [`set_profile_name(Option<String>)`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::set_profile_name): <p>The name of the target signing profile.</p>
-    ///   - [`profile_owner(impl Into<String>)`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::profile_owner) / [`set_profile_owner(Option<String>)`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::set_profile_owner): <p>The AWS account ID of the profile owner.</p>
+    ///   - [`profile_name(impl ::std::convert::Into<String>)`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::profile_name) / [`set_profile_name(Option<String>)`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::set_profile_name): <p>The name of the target signing profile.</p>
+    ///   - [`profile_owner(impl ::std::convert::Into<String>)`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::profile_owner) / [`set_profile_owner(Option<String>)`](crate::operation::get_signing_profile::builders::GetSigningProfileFluentBuilder::set_profile_owner): <p>The AWS account ID of the profile owner.</p>
     /// - On success, responds with [`GetSigningProfileOutput`](crate::operation::get_signing_profile::GetSigningProfileOutput) with field(s):
     ///   - [`profile_name(Option<String>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::profile_name): <p>The name of the target signing profile.</p>
     ///   - [`profile_version(Option<String>)`](crate::operation::get_signing_profile::GetSigningProfileOutput::profile_version): <p>The current version of the signing profile.</p>

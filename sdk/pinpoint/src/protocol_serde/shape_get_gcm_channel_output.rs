@@ -2,7 +2,7 @@
 pub(crate) fn de_gcm_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::GcmChannelResponse>,
+    ::std::option::Option<crate::types::GcmChannelResponse>,
     crate::operation::get_gcm_channel::GetGcmChannelError,
 > {
     (!body.is_empty())

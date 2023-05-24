@@ -2,29 +2,29 @@
 
 /// <p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capacity {
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
     #[doc(hidden)]
-    pub read_capacity_units: std::option::Option<f64>,
+    pub read_capacity_units: ::std::option::Option<f64>,
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
     #[doc(hidden)]
-    pub write_capacity_units: std::option::Option<f64>,
+    pub write_capacity_units: ::std::option::Option<f64>,
     /// <p>The total number of capacity units consumed on a table or an index.</p>
     #[doc(hidden)]
-    pub capacity_units: std::option::Option<f64>,
+    pub capacity_units: ::std::option::Option<f64>,
 }
 impl Capacity {
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
-    pub fn read_capacity_units(&self) -> std::option::Option<f64> {
+    pub fn read_capacity_units(&self) -> ::std::option::Option<f64> {
         self.read_capacity_units
     }
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
-    pub fn write_capacity_units(&self) -> std::option::Option<f64> {
+    pub fn write_capacity_units(&self) -> ::std::option::Option<f64> {
         self.write_capacity_units
     }
     /// <p>The total number of capacity units consumed on a table or an index.</p>
-    pub fn capacity_units(&self) -> std::option::Option<f64> {
+    pub fn capacity_units(&self) -> ::std::option::Option<f64> {
         self.capacity_units
     }
 }
@@ -37,40 +37,42 @@ impl Capacity {
 
 /// A builder for [`Capacity`](crate::types::Capacity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityBuilder {
-    pub(crate) read_capacity_units: std::option::Option<f64>,
-    pub(crate) write_capacity_units: std::option::Option<f64>,
-    pub(crate) capacity_units: std::option::Option<f64>,
+    pub(crate) read_capacity_units: ::std::option::Option<f64>,
+    pub(crate) write_capacity_units: ::std::option::Option<f64>,
+    pub(crate) capacity_units: ::std::option::Option<f64>,
 }
 impl CapacityBuilder {
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
     pub fn read_capacity_units(mut self, input: f64) -> Self {
-        self.read_capacity_units = Some(input);
+        self.read_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
-    pub fn set_read_capacity_units(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_read_capacity_units(mut self, input: ::std::option::Option<f64>) -> Self {
         self.read_capacity_units = input;
         self
     }
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
     pub fn write_capacity_units(mut self, input: f64) -> Self {
-        self.write_capacity_units = Some(input);
+        self.write_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
-    pub fn set_write_capacity_units(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_write_capacity_units(mut self, input: ::std::option::Option<f64>) -> Self {
         self.write_capacity_units = input;
         self
     }
     /// <p>The total number of capacity units consumed on a table or an index.</p>
     pub fn capacity_units(mut self, input: f64) -> Self {
-        self.capacity_units = Some(input);
+        self.capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of capacity units consumed on a table or an index.</p>
-    pub fn set_capacity_units(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_capacity_units(mut self, input: ::std::option::Option<f64>) -> Self {
         self.capacity_units = input;
         self
     }

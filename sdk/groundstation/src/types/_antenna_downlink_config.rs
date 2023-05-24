@@ -2,15 +2,15 @@
 
 /// <p>Information about how AWS Ground Station should configure an antenna for downlink during a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
     #[doc(hidden)]
-    pub spectrum_config: std::option::Option<crate::types::SpectrumConfig>,
+    pub spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
 }
 impl AntennaDownlinkConfig {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
-    pub fn spectrum_config(&self) -> std::option::Option<&crate::types::SpectrumConfig> {
+    pub fn spectrum_config(&self) -> ::std::option::Option<&crate::types::SpectrumConfig> {
         self.spectrum_config.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AntennaDownlinkConfig {
 
 /// A builder for [`AntennaDownlinkConfig`](crate::types::AntennaDownlinkConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AntennaDownlinkConfigBuilder {
-    pub(crate) spectrum_config: std::option::Option<crate::types::SpectrumConfig>,
+    pub(crate) spectrum_config: ::std::option::Option<crate::types::SpectrumConfig>,
 }
 impl AntennaDownlinkConfigBuilder {
     /// <p>Object that describes a spectral <code>Config</code>.</p>
     pub fn spectrum_config(mut self, input: crate::types::SpectrumConfig) -> Self {
-        self.spectrum_config = Some(input);
+        self.spectrum_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Object that describes a spectral <code>Config</code>.</p>
     pub fn set_spectrum_config(
         mut self,
-        input: std::option::Option<crate::types::SpectrumConfig>,
+        input: ::std::option::Option<crate::types::SpectrumConfig>,
     ) -> Self {
         self.spectrum_config = input;
         self

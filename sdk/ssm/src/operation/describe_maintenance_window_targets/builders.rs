@@ -6,47 +6,50 @@ pub use crate::operation::describe_maintenance_window_targets::_describe_mainten
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowTargets`.
 ///
 /// <p>Lists the targets registered with the maintenance window.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTargetsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsInputBuilder,
 }
 impl DescribeMaintenanceWindowTargetsFluentBuilder {
     /// Creates a new `DescribeMaintenanceWindowTargets`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargets, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargets, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl DescribeMaintenanceWindowTargetsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsError>>
                          {
         self.send_middleware().await
     }
@@ -68,12 +71,12 @@ impl DescribeMaintenanceWindowTargetsFluentBuilder {
         crate::operation::describe_maintenance_window_targets::paginator::DescribeMaintenanceWindowTargetsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
-    pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
         self
     }
     /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
-    pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_window_id(input);
         self
     }
@@ -89,7 +92,7 @@ impl DescribeMaintenanceWindowTargetsFluentBuilder {
     /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -100,17 +103,17 @@ impl DescribeMaintenanceWindowTargetsFluentBuilder {
         self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

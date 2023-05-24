@@ -2,40 +2,41 @@
 
 /// <p>A returned array object for the <code>Steps</code> response field in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceRecommendationsJobSteps.html">ListInferenceRecommendationsJobSteps</a> API command.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceRecommendationsJobStep {
     /// <p>The type of the subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     #[doc(hidden)]
-    pub step_type: std::option::Option<crate::types::RecommendationStepType>,
+    pub step_type: ::std::option::Option<crate::types::RecommendationStepType>,
     /// <p>The name of the Inference Recommender job.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the benchmark.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::RecommendationJobStatus>,
+    pub status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>The details for a specific benchmark.</p>
     #[doc(hidden)]
-    pub inference_benchmark: std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
+    pub inference_benchmark:
+        ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
 }
 impl InferenceRecommendationsJobStep {
     /// <p>The type of the subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
-    pub fn step_type(&self) -> std::option::Option<&crate::types::RecommendationStepType> {
+    pub fn step_type(&self) -> ::std::option::Option<&crate::types::RecommendationStepType> {
         self.step_type.as_ref()
     }
     /// <p>The name of the Inference Recommender job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The current status of the benchmark.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::RecommendationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The details for a specific benchmark.</p>
     pub fn inference_benchmark(
         &self,
-    ) -> std::option::Option<&crate::types::RecommendationJobInferenceBenchmark> {
+    ) -> ::std::option::Option<&crate::types::RecommendationJobInferenceBenchmark> {
         self.inference_benchmark.as_ref()
     }
 }
@@ -48,49 +49,51 @@ impl InferenceRecommendationsJobStep {
 
 /// A builder for [`InferenceRecommendationsJobStep`](crate::types::InferenceRecommendationsJobStep).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceRecommendationsJobStepBuilder {
-    pub(crate) step_type: std::option::Option<crate::types::RecommendationStepType>,
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::RecommendationJobStatus>,
+    pub(crate) step_type: ::std::option::Option<crate::types::RecommendationStepType>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     pub(crate) inference_benchmark:
-        std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
+        ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
 }
 impl InferenceRecommendationsJobStepBuilder {
     /// <p>The type of the subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn step_type(mut self, input: crate::types::RecommendationStepType) -> Self {
-        self.step_type = Some(input);
+        self.step_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the subtask.</p>
     /// <p> <code>BENCHMARK</code>: Evaluate the performance of your model on different instance types.</p>
     pub fn set_step_type(
         mut self,
-        input: std::option::Option<crate::types::RecommendationStepType>,
+        input: ::std::option::Option<crate::types::RecommendationStepType>,
     ) -> Self {
         self.step_type = input;
         self
     }
     /// <p>The name of the Inference Recommender job.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Inference Recommender job.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p>The current status of the benchmark.</p>
     pub fn status(mut self, input: crate::types::RecommendationJobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the benchmark.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::RecommendationJobStatus>,
+        input: ::std::option::Option<crate::types::RecommendationJobStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -100,13 +103,13 @@ impl InferenceRecommendationsJobStepBuilder {
         mut self,
         input: crate::types::RecommendationJobInferenceBenchmark,
     ) -> Self {
-        self.inference_benchmark = Some(input);
+        self.inference_benchmark = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for a specific benchmark.</p>
     pub fn set_inference_benchmark(
         mut self,
-        input: std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
+        input: ::std::option::Option<crate::types::RecommendationJobInferenceBenchmark>,
     ) -> Self {
         self.inference_benchmark = input;
         self

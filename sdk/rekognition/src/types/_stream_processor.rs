@@ -2,22 +2,22 @@
 
 /// <p>An object that recognizes faces or labels in a streaming video. An Amazon Rekognition stream processor is created by a call to <code>CreateStreamProcessor</code>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessor {
     /// <p>Name of the Amazon Rekognition stream processor. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StreamProcessorStatus>,
+    pub status: ::std::option::Option<crate::types::StreamProcessorStatus>,
 }
 impl StreamProcessor {
     /// <p>Name of the Amazon Rekognition stream processor. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StreamProcessorStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StreamProcessorStatus> {
         self.status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl StreamProcessor {
 
 /// A builder for [`StreamProcessor`](crate::types::StreamProcessor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamProcessorBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::StreamProcessorStatus>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::StreamProcessorStatus>,
 }
 impl StreamProcessorBuilder {
     /// <p>Name of the Amazon Rekognition stream processor. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the Amazon Rekognition stream processor. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
     pub fn status(mut self, input: crate::types::StreamProcessorStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Current status of the Amazon Rekognition stream processor.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::StreamProcessorStatus>,
+        input: ::std::option::Option<crate::types::StreamProcessorStatus>,
     ) -> Self {
         self.status = input;
         self

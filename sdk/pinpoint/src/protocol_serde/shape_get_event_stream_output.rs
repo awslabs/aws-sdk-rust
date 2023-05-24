@@ -2,7 +2,7 @@
 pub(crate) fn de_event_stream_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::EventStream>,
+    ::std::option::Option<crate::types::EventStream>,
     crate::operation::get_event_stream::GetEventStreamError,
 > {
     (!body.is_empty())

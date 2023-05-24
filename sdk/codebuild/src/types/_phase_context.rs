@@ -2,22 +2,22 @@
 
 /// <p>Additional information about a build phase that has an error. You can use this information for troubleshooting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhaseContext {
     /// <p>The status code for the context of the build phase.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<std::string::String>,
+    pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl PhaseContext {
     /// <p>The status code for the context of the build phase.</p>
-    pub fn status_code(&self) -> std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<&str> {
         self.status_code.as_deref()
     }
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl PhaseContext {
 
 /// A builder for [`PhaseContext`](crate::types::PhaseContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PhaseContextBuilder {
-    pub(crate) status_code: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) status_code: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl PhaseContextBuilder {
     /// <p>The status code for the context of the build phase.</p>
-    pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_code = Some(input.into());
+    pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status code for the context of the build phase.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

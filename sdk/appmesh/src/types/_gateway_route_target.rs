@@ -2,24 +2,24 @@
 
 /// <p>An object that represents a gateway route target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
     #[doc(hidden)]
-    pub virtual_service: std::option::Option<crate::types::GatewayRouteVirtualService>,
+    pub virtual_service: ::std::option::Option<crate::types::GatewayRouteVirtualService>,
     /// <p>The port number of the gateway route target.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
 }
 impl GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
     pub fn virtual_service(
         &self,
-    ) -> std::option::Option<&crate::types::GatewayRouteVirtualService> {
+    ) -> ::std::option::Option<&crate::types::GatewayRouteVirtualService> {
         self.virtual_service.as_ref()
     }
     /// <p>The port number of the gateway route target.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
 }
@@ -32,32 +32,34 @@ impl GatewayRouteTarget {
 
 /// A builder for [`GatewayRouteTarget`](crate::types::GatewayRouteTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GatewayRouteTargetBuilder {
-    pub(crate) virtual_service: std::option::Option<crate::types::GatewayRouteVirtualService>,
-    pub(crate) port: std::option::Option<i32>,
+    pub(crate) virtual_service: ::std::option::Option<crate::types::GatewayRouteVirtualService>,
+    pub(crate) port: ::std::option::Option<i32>,
 }
 impl GatewayRouteTargetBuilder {
     /// <p>An object that represents a virtual service gateway route target.</p>
     pub fn virtual_service(mut self, input: crate::types::GatewayRouteVirtualService) -> Self {
-        self.virtual_service = Some(input);
+        self.virtual_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents a virtual service gateway route target.</p>
     pub fn set_virtual_service(
         mut self,
-        input: std::option::Option<crate::types::GatewayRouteVirtualService>,
+        input: ::std::option::Option<crate::types::GatewayRouteVirtualService>,
     ) -> Self {
         self.virtual_service = input;
         self
     }
     /// <p>The port number of the gateway route target.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number of the gateway route target.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }

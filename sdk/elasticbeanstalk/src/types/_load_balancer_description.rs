@@ -2,29 +2,29 @@
 
 /// <p>Describes the details of a LoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerDescription {
     /// <p>The name of the LoadBalancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the LoadBalancer.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>A list of Listeners used by the LoadBalancer.</p>
     #[doc(hidden)]
-    pub listeners: std::option::Option<std::vec::Vec<crate::types::Listener>>,
+    pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
 }
 impl LoadBalancerDescription {
     /// <p>The name of the LoadBalancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The domain name of the LoadBalancer.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>A list of Listeners used by the LoadBalancer.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::types::Listener]> {
+    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::Listener]> {
         self.listeners.as_deref()
     }
 }
@@ -37,33 +37,38 @@ impl LoadBalancerDescription {
 
 /// A builder for [`LoadBalancerDescription`](crate::types::LoadBalancerDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoadBalancerDescriptionBuilder {
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) domain: std::option::Option<std::string::String>,
-    pub(crate) listeners: std::option::Option<std::vec::Vec<crate::types::Listener>>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) listeners: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
 }
 impl LoadBalancerDescriptionBuilder {
     /// <p>The name of the LoadBalancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the LoadBalancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
     }
     /// <p>The domain name of the LoadBalancer.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name of the LoadBalancer.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
@@ -75,13 +80,13 @@ impl LoadBalancerDescriptionBuilder {
     pub fn listeners(mut self, input: crate::types::Listener) -> Self {
         let mut v = self.listeners.unwrap_or_default();
         v.push(input);
-        self.listeners = Some(v);
+        self.listeners = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Listeners used by the LoadBalancer.</p>
     pub fn set_listeners(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Listener>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Listener>>,
     ) -> Self {
         self.listeners = input;
         self

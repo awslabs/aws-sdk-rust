@@ -2,7 +2,7 @@
 
 /// <p>The instance metadata options that apply to the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceMetadataOptions {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct InstanceMetadataOptions {
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
     #[doc(hidden)]
-    pub http_tokens: std::option::Option<std::string::String>,
+    pub http_tokens: ::std::option::Option<::std::string::String>,
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
     #[doc(hidden)]
-    pub http_put_response_hop_limit: std::option::Option<i32>,
+    pub http_put_response_hop_limit: ::std::option::Option<i32>,
 }
 impl InstanceMetadataOptions {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
@@ -23,11 +23,11 @@ impl InstanceMetadataOptions {
     /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
-    pub fn http_tokens(&self) -> std::option::Option<&str> {
+    pub fn http_tokens(&self) -> ::std::option::Option<&str> {
         self.http_tokens.as_deref()
     }
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
-    pub fn http_put_response_hop_limit(&self) -> std::option::Option<i32> {
+    pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
 }
@@ -40,10 +40,12 @@ impl InstanceMetadataOptions {
 
 /// A builder for [`InstanceMetadataOptions`](crate::types::InstanceMetadataOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceMetadataOptionsBuilder {
-    pub(crate) http_tokens: std::option::Option<std::string::String>,
-    pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
+    pub(crate) http_tokens: ::std::option::Option<::std::string::String>,
+    pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,
 }
 impl InstanceMetadataOptionsBuilder {
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
@@ -52,8 +54,8 @@ impl InstanceMetadataOptionsBuilder {
     /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
-    pub fn http_tokens(mut self, input: impl Into<std::string::String>) -> Self {
-        self.http_tokens = Some(input.into());
+    pub fn http_tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.http_tokens = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests. The values affect the response as follows:</p>
@@ -62,17 +64,17 @@ impl InstanceMetadataOptionsBuilder {
     /// <li> <p> <b>optional</b> – You can include a signed token header in your request to retrieve instance metadata, or you can leave it out. If you include it, version 2.0 credentials are returned for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
     /// </ul>
     /// <p>The default setting is <b>optional</b>.</p>
-    pub fn set_http_tokens(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_http_tokens(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_tokens = input;
         self
     }
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
-        self.http_put_response_hop_limit = Some(input);
+        self.http_put_response_hop_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.</p>
-    pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
     }

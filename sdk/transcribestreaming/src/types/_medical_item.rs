@@ -2,7 +2,7 @@
 
 /// <p>A word, phrase, or punctuation mark in your transcription output, along with various associated attributes, such as confidence score, type, and start and end times.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalItem {
     /// <p>The start time, in milliseconds, of the transcribed item.</p>
     #[doc(hidden)]
@@ -12,17 +12,17 @@ pub struct MedicalItem {
     pub end_time: f64,
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ItemType>,
+    pub r#type: ::std::option::Option<crate::types::ItemType>,
     /// <p>The word or punctuation that was transcribed.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
     /// <p>The confidence score associated with a word or phrase in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f64>,
+    pub confidence: ::std::option::Option<f64>,
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
     #[doc(hidden)]
-    pub speaker: std::option::Option<std::string::String>,
+    pub speaker: ::std::option::Option<::std::string::String>,
 }
 impl MedicalItem {
     /// <p>The start time, in milliseconds, of the transcribed item.</p>
@@ -34,20 +34,20 @@ impl MedicalItem {
         self.end_time
     }
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ItemType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ItemType> {
         self.r#type.as_ref()
     }
     /// <p>The word or punctuation that was transcribed.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The confidence score associated with a word or phrase in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
-    pub fn confidence(&self) -> std::option::Option<f64> {
+    pub fn confidence(&self) -> ::std::option::Option<f64> {
         self.confidence
     }
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
-    pub fn speaker(&self) -> std::option::Option<&str> {
+    pub fn speaker(&self) -> ::std::option::Option<&str> {
         self.speaker.as_deref()
     }
 }
@@ -60,75 +60,77 @@ impl MedicalItem {
 
 /// A builder for [`MedicalItem`](crate::types::MedicalItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MedicalItemBuilder {
-    pub(crate) start_time: std::option::Option<f64>,
-    pub(crate) end_time: std::option::Option<f64>,
-    pub(crate) r#type: std::option::Option<crate::types::ItemType>,
-    pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) confidence: std::option::Option<f64>,
-    pub(crate) speaker: std::option::Option<std::string::String>,
+    pub(crate) start_time: ::std::option::Option<f64>,
+    pub(crate) end_time: ::std::option::Option<f64>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ItemType>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) confidence: ::std::option::Option<f64>,
+    pub(crate) speaker: ::std::option::Option<::std::string::String>,
 }
 impl MedicalItemBuilder {
     /// <p>The start time, in milliseconds, of the transcribed item.</p>
     pub fn start_time(mut self, input: f64) -> Self {
-        self.start_time = Some(input);
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time, in milliseconds, of the transcribed item.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The end time, in milliseconds, of the transcribed item.</p>
     pub fn end_time(mut self, input: f64) -> Self {
-        self.end_time = Some(input);
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end time, in milliseconds, of the transcribed item.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of item identified. Options are: <code>PRONUNCIATION</code> (spoken words) and <code>PUNCTUATION</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ItemType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ItemType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The word or punctuation that was transcribed.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The word or punctuation that was transcribed.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p>The confidence score associated with a word or phrase in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
     pub fn confidence(mut self, input: f64) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence score associated with a word or phrase in your transcript.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified item correctly matches the item spoken in your media.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f64>) -> Self {
         self.confidence = input;
         self
     }
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
-    pub fn speaker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.speaker = Some(input.into());
+    pub fn speaker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.speaker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If speaker partitioning is enabled, <code>Speaker</code> labels the speaker of the specified item.</p>
-    pub fn set_speaker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_speaker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.speaker = input;
         self
     }

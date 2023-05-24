@@ -38,13 +38,13 @@
 /// Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS container. Keep the default value Automatic (AUTOMATIC) to create a raw audio-only file with no container. Regardless of the value that you specify here, if this output has video, the service will place outputs into an MPEG2-TS container.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsAudioOnlyContainer {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsAudioOnlyContainer {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsAudioOnlyContainer {
+impl ::std::convert::From<&str> for HlsAudioOnlyContainer {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATIC" => HlsAudioOnlyContainer::Automatic,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsAudioOnlyContainer {
         }
     }
 }
-impl std::str::FromStr for HlsAudioOnlyContainer {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsAudioOnlyContainer {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsAudioOnlyContainer::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsAudioOnlyContainer::from(s))
     }
 }
 impl HlsAudioOnlyContainer {
@@ -86,7 +86,7 @@ impl HlsAudioOnlyContainer {
         &["AUTOMATIC", "M2TS"]
     }
 }
-impl AsRef<str> for HlsAudioOnlyContainer {
+impl ::std::convert::AsRef<str> for HlsAudioOnlyContainer {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

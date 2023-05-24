@@ -2,22 +2,22 @@
 
 /// <p>The location of artifacts for an AutoML candidate job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
     #[doc(hidden)]
-    pub explainability: std::option::Option<std::string::String>,
+    pub explainability: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
     #[doc(hidden)]
-    pub model_insights: std::option::Option<std::string::String>,
+    pub model_insights: ::std::option::Option<::std::string::String>,
 }
 impl CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
-    pub fn explainability(&self) -> std::option::Option<&str> {
+    pub fn explainability(&self) -> ::std::option::Option<&str> {
         self.explainability.as_deref()
     }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
-    pub fn model_insights(&self) -> std::option::Option<&str> {
+    pub fn model_insights(&self) -> ::std::option::Option<&str> {
         self.model_insights.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl CandidateArtifactLocations {
 
 /// A builder for [`CandidateArtifactLocations`](crate::types::CandidateArtifactLocations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CandidateArtifactLocationsBuilder {
-    pub(crate) explainability: std::option::Option<std::string::String>,
-    pub(crate) model_insights: std::option::Option<std::string::String>,
+    pub(crate) explainability: ::std::option::Option<::std::string::String>,
+    pub(crate) model_insights: ::std::option::Option<::std::string::String>,
 }
 impl CandidateArtifactLocationsBuilder {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
-    pub fn explainability(mut self, input: impl Into<std::string::String>) -> Self {
-        self.explainability = Some(input.into());
+    pub fn explainability(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.explainability = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
-    pub fn set_explainability(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_explainability(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.explainability = input;
         self
     }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
-    pub fn model_insights(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_insights = Some(input.into());
+    pub fn model_insights(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_insights = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
-    pub fn set_model_insights(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_insights(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_insights = input;
         self
     }

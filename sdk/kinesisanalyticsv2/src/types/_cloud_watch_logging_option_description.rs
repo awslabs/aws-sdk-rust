@@ -2,33 +2,33 @@
 
 /// <p>Describes the Amazon CloudWatch logging option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionDescription {
     /// <p>The ID of the CloudWatch logging option description.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
+    pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
     #[doc(hidden)]
-    pub log_stream_arn: std::option::Option<std::string::String>,
+    pub log_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptionDescription {
     /// <p>The ID of the CloudWatch logging option description.</p>
-    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logging_option_id(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logging_option_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn(&self) -> std::option::Option<&str> {
+    pub fn log_stream_arn(&self) -> ::std::option::Option<&str> {
         self.log_stream_arn.as_deref()
     }
     /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -41,47 +41,58 @@ impl CloudWatchLoggingOptionDescription {
 
 /// A builder for [`CloudWatchLoggingOptionDescription`](crate::types::CloudWatchLoggingOptionDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchLoggingOptionDescriptionBuilder {
-    pub(crate) cloud_watch_logging_option_id: std::option::Option<std::string::String>,
-    pub(crate) log_stream_arn: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
+    pub(crate) log_stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptionDescriptionBuilder {
     /// <p>The ID of the CloudWatch logging option description.</p>
-    pub fn cloud_watch_logging_option_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_logging_option_id = Some(input.into());
+    pub fn cloud_watch_logging_option_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_logging_option_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the CloudWatch logging option description.</p>
     pub fn set_cloud_watch_logging_option_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_logging_option_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_stream_arn = Some(input.into());
+    pub fn log_stream_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
-    pub fn set_log_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_stream_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_stream_arn = input;
         self
     }
     /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM ARN of the role to use to send application messages. </p> <note>
     /// <p>Provided for backward compatibility. Applications created with the current API version have an application-level service execution role rather than a resource-level role.</p>
     /// </note>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

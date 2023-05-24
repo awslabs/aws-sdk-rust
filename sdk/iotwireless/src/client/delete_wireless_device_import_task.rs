@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWirelessDeviceImportTask`](crate::operation::delete_wireless_device_import_task::builders::DeleteWirelessDeviceImportTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_wireless_device_import_task::builders::DeleteWirelessDeviceImportTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_device_import_task::builders::DeleteWirelessDeviceImportTaskFluentBuilder::set_id): <p>The unique identifier of the import task to be deleted.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_wireless_device_import_task::builders::DeleteWirelessDeviceImportTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_device_import_task::builders::DeleteWirelessDeviceImportTaskFluentBuilder::set_id): <p>The unique identifier of the import task to be deleted.</p>
     /// - On success, responds with [`DeleteWirelessDeviceImportTaskOutput`](crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskOutput)
     /// - On failure, responds with [`SdkError<DeleteWirelessDeviceImportTaskError>`](crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskError)
     pub fn delete_wireless_device_import_task(&self) -> crate::operation::delete_wireless_device_import_task::builders::DeleteWirelessDeviceImportTaskFluentBuilder{

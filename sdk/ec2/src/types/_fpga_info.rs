@@ -2,22 +2,22 @@
 
 /// <p>Describes the FPGAs for the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FpgaInfo {
     /// <p>Describes the FPGAs for the instance type.</p>
     #[doc(hidden)]
-    pub fpgas: std::option::Option<std::vec::Vec<crate::types::FpgaDeviceInfo>>,
+    pub fpgas: ::std::option::Option<::std::vec::Vec<crate::types::FpgaDeviceInfo>>,
     /// <p>The total memory of all FPGA accelerators for the instance type.</p>
     #[doc(hidden)]
-    pub total_fpga_memory_in_mi_b: std::option::Option<i32>,
+    pub total_fpga_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl FpgaInfo {
     /// <p>Describes the FPGAs for the instance type.</p>
-    pub fn fpgas(&self) -> std::option::Option<&[crate::types::FpgaDeviceInfo]> {
+    pub fn fpgas(&self) -> ::std::option::Option<&[crate::types::FpgaDeviceInfo]> {
         self.fpgas.as_deref()
     }
     /// <p>The total memory of all FPGA accelerators for the instance type.</p>
-    pub fn total_fpga_memory_in_mi_b(&self) -> std::option::Option<i32> {
+    pub fn total_fpga_memory_in_mi_b(&self) -> ::std::option::Option<i32> {
         self.total_fpga_memory_in_mi_b
     }
 }
@@ -30,10 +30,12 @@ impl FpgaInfo {
 
 /// A builder for [`FpgaInfo`](crate::types::FpgaInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FpgaInfoBuilder {
-    pub(crate) fpgas: std::option::Option<std::vec::Vec<crate::types::FpgaDeviceInfo>>,
-    pub(crate) total_fpga_memory_in_mi_b: std::option::Option<i32>,
+    pub(crate) fpgas: ::std::option::Option<::std::vec::Vec<crate::types::FpgaDeviceInfo>>,
+    pub(crate) total_fpga_memory_in_mi_b: ::std::option::Option<i32>,
 }
 impl FpgaInfoBuilder {
     /// Appends an item to `fpgas`.
@@ -44,24 +46,24 @@ impl FpgaInfoBuilder {
     pub fn fpgas(mut self, input: crate::types::FpgaDeviceInfo) -> Self {
         let mut v = self.fpgas.unwrap_or_default();
         v.push(input);
-        self.fpgas = Some(v);
+        self.fpgas = ::std::option::Option::Some(v);
         self
     }
     /// <p>Describes the FPGAs for the instance type.</p>
     pub fn set_fpgas(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FpgaDeviceInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FpgaDeviceInfo>>,
     ) -> Self {
         self.fpgas = input;
         self
     }
     /// <p>The total memory of all FPGA accelerators for the instance type.</p>
     pub fn total_fpga_memory_in_mi_b(mut self, input: i32) -> Self {
-        self.total_fpga_memory_in_mi_b = Some(input);
+        self.total_fpga_memory_in_mi_b = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total memory of all FPGA accelerators for the instance type.</p>
-    pub fn set_total_fpga_memory_in_mi_b(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_fpga_memory_in_mi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_fpga_memory_in_mi_b = input;
         self
     }

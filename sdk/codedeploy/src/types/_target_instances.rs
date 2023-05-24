@@ -2,29 +2,29 @@
 
 /// <p>Information about the instances to be used in the replacement environment in a blue/green deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetInstances {
     /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>.</p>
     #[doc(hidden)]
-    pub tag_filters: std::option::Option<std::vec::Vec<crate::types::Ec2TagFilter>>,
+    pub tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>>,
     /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>
     #[doc(hidden)]
-    pub auto_scaling_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub auto_scaling_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
     #[doc(hidden)]
-    pub ec2_tag_set: std::option::Option<crate::types::Ec2TagSet>,
+    pub ec2_tag_set: ::std::option::Option<crate::types::Ec2TagSet>,
 }
 impl TargetInstances {
     /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>.</p>
-    pub fn tag_filters(&self) -> std::option::Option<&[crate::types::Ec2TagFilter]> {
+    pub fn tag_filters(&self) -> ::std::option::Option<&[crate::types::Ec2TagFilter]> {
         self.tag_filters.as_deref()
     }
     /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>
-    pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_scaling_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.auto_scaling_groups.as_deref()
     }
     /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
-    pub fn ec2_tag_set(&self) -> std::option::Option<&crate::types::Ec2TagSet> {
+    pub fn ec2_tag_set(&self) -> ::std::option::Option<&crate::types::Ec2TagSet> {
         self.ec2_tag_set.as_ref()
     }
 }
@@ -37,11 +37,13 @@ impl TargetInstances {
 
 /// A builder for [`TargetInstances`](crate::types::TargetInstances).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetInstancesBuilder {
-    pub(crate) tag_filters: std::option::Option<std::vec::Vec<crate::types::Ec2TagFilter>>,
-    pub(crate) auto_scaling_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ec2_tag_set: std::option::Option<crate::types::Ec2TagSet>,
+    pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>>,
+    pub(crate) auto_scaling_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ec2_tag_set: ::std::option::Option<crate::types::Ec2TagSet>,
 }
 impl TargetInstancesBuilder {
     /// Appends an item to `tag_filters`.
@@ -52,13 +54,13 @@ impl TargetInstancesBuilder {
     pub fn tag_filters(mut self, input: crate::types::Ec2TagFilter) -> Self {
         let mut v = self.tag_filters.unwrap_or_default();
         v.push(input);
-        self.tag_filters = Some(v);
+        self.tag_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>.</p>
     pub fn set_tag_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Ec2TagFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2TagFilter>>,
     ) -> Self {
         self.tag_filters = input;
         self
@@ -68,27 +70,33 @@ impl TargetInstancesBuilder {
     /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
     ///
     /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>
-    pub fn auto_scaling_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auto_scaling_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.auto_scaling_groups.unwrap_or_default();
         v.push(input.into());
-        self.auto_scaling_groups = Some(v);
+        self.auto_scaling_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment.</p>
     pub fn set_auto_scaling_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.auto_scaling_groups = input;
         self
     }
     /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
     pub fn ec2_tag_set(mut self, input: crate::types::Ec2TagSet) -> Self {
-        self.ec2_tag_set = Some(input);
+        self.ec2_tag_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.</p>
-    pub fn set_ec2_tag_set(mut self, input: std::option::Option<crate::types::Ec2TagSet>) -> Self {
+    pub fn set_ec2_tag_set(
+        mut self,
+        input: ::std::option::Option<crate::types::Ec2TagSet>,
+    ) -> Self {
         self.ec2_tag_set = input;
         self
     }

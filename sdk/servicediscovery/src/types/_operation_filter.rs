@@ -2,7 +2,7 @@
 
 /// <p>A complex type that lets you select the operations that you want to list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperationFilter {
     /// <p>Specify the operations that you want to get:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct OperationFilter {
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::OperationFilterName>,
+    pub name: ::std::option::Option<crate::types::OperationFilterName>,
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
     /// <ul>
     /// <li> <p> <b>NAMESPACE_ID</b>: Specify one namespace ID.</p> </li>
@@ -23,7 +23,7 @@ pub struct OperationFilter {
     /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>, <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
@@ -31,7 +31,7 @@ pub struct OperationFilter {
     /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub condition: std::option::Option<crate::types::FilterCondition>,
+    pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl OperationFilter {
     /// <p>Specify the operations that you want to get:</p>
@@ -42,7 +42,7 @@ impl OperationFilter {
     /// <li> <p> <b>TYPE</b>: Gets specified types of operation.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::types::OperationFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::OperationFilterName> {
         self.name.as_ref()
     }
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
@@ -53,7 +53,7 @@ impl OperationFilter {
     /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
@@ -62,7 +62,7 @@ impl OperationFilter {
     /// <li> <p> <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify a list of one or more values. <code>IN</code> is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must match one of the specified values to be returned in the response.</p> </li>
     /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
-    pub fn condition(&self) -> std::option::Option<&crate::types::FilterCondition> {
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterCondition> {
         self.condition.as_ref()
     }
 }
@@ -75,11 +75,13 @@ impl OperationFilter {
 
 /// A builder for [`OperationFilter`](crate::types::OperationFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OperationFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::OperationFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) condition: std::option::Option<crate::types::FilterCondition>,
+    pub(crate) name: ::std::option::Option<crate::types::OperationFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl OperationFilterBuilder {
     /// <p>Specify the operations that you want to get:</p>
@@ -91,7 +93,7 @@ impl OperationFilterBuilder {
     /// <li> <p> <b>UPDATE_DATE</b>: Gets operations that changed status during a specified date/time range. </p> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::OperationFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the operations that you want to get:</p>
@@ -104,7 +106,7 @@ impl OperationFilterBuilder {
     /// </ul>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::OperationFilterName>,
+        input: ::std::option::Option<crate::types::OperationFilterName>,
     ) -> Self {
         self.name = input;
         self
@@ -121,10 +123,10 @@ impl OperationFilterBuilder {
     /// <li> <p> <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>, <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>, or <code>DEREGISTER_INSTANCE</code>.</p> </li>
     /// <li> <p> <b>UPDATE_DATE</b>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value.</p> </li>
     /// </ul>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify values that are applicable to the value that you specify for <code>Name</code>: </p>
@@ -137,7 +139,7 @@ impl OperationFilterBuilder {
     /// </ul>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
@@ -149,7 +151,7 @@ impl OperationFilterBuilder {
     /// <li> <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p> </li>
     /// </ul>
     pub fn condition(mut self, input: crate::types::FilterCondition) -> Self {
-        self.condition = Some(input);
+        self.condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator that you want to use to determine whether an operation matches the specified value. Valid values for condition include:</p>
@@ -160,7 +162,7 @@ impl OperationFilterBuilder {
     /// </ul>
     pub fn set_condition(
         mut self,
-        input: std::option::Option<crate::types::FilterCondition>,
+        input: ::std::option::Option<crate::types::FilterCondition>,
     ) -> Self {
         self.condition = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>Import task summary servers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTaskSummaryServers {
     /// <p>Import task summary servers created count.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl ImportTaskSummaryServers {
 
 /// A builder for [`ImportTaskSummaryServers`](crate::types::ImportTaskSummaryServers).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportTaskSummaryServersBuilder {
-    pub(crate) created_count: std::option::Option<i64>,
-    pub(crate) modified_count: std::option::Option<i64>,
+    pub(crate) created_count: ::std::option::Option<i64>,
+    pub(crate) modified_count: ::std::option::Option<i64>,
 }
 impl ImportTaskSummaryServersBuilder {
     /// <p>Import task summary servers created count.</p>
     pub fn created_count(mut self, input: i64) -> Self {
-        self.created_count = Some(input);
+        self.created_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summary servers created count.</p>
-    pub fn set_created_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_created_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.created_count = input;
         self
     }
     /// <p>Import task summary servers modified count.</p>
     pub fn modified_count(mut self, input: i64) -> Self {
-        self.modified_count = Some(input);
+        self.modified_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summary servers modified count.</p>
-    pub fn set_modified_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_modified_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.modified_count = input;
         self
     }

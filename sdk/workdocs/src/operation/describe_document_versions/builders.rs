@@ -7,29 +7,29 @@ pub use crate::operation::describe_document_versions::_describe_document_version
 ///
 /// <p>Retrieves the document versions for the specified document.</p>
 /// <p>By default, only active versions are returned.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDocumentVersionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder,
 }
 impl DescribeDocumentVersionsFluentBuilder {
     /// Creates a new `DescribeDocumentVersions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_document_versions::DescribeDocumentVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_document_versions::DescribeDocumentVersionsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl DescribeDocumentVersionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_document_versions::DescribeDocumentVersionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_document_versions::DescribeDocumentVersionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl DescribeDocumentVersionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_document_versions::DescribeDocumentVersionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_document_versions::DescribeDocumentVersionsError,
         >,
     > {
@@ -91,35 +94,38 @@ impl DescribeDocumentVersionsFluentBuilder {
         crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator::new(self.handle, self.inner)
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn authentication_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
     /// <p>The ID of the document.</p>
-    pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.document_id(input.into());
         self
     }
     /// <p>The ID of the document.</p>
-    pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_document_id(input);
         self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
@@ -129,27 +135,27 @@ impl DescribeDocumentVersionsFluentBuilder {
         self
     }
     /// <p>The maximum number of versions to return with this call.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
-    pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn include(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.include(input.into());
         self
     }
     /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
-    pub fn set_include(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
     /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
-    pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fields(input.into());
         self
     }
     /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
-    pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }

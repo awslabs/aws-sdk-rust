@@ -6,56 +6,59 @@ pub use crate::operation::get_migrations::_get_migrations_input::GetMigrationsIn
 /// Fluent builder constructing a request to `GetMigrations`.
 ///
 /// <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMigrationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_migrations::builders::GetMigrationsInputBuilder,
 }
 impl GetMigrationsFluentBuilder {
     /// Creates a new `GetMigrations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_migrations::GetMigrations,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_migrations::GetMigrationsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl GetMigrationsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_migrations::GetMigrationsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_migrations::GetMigrationsError>,
     > {
         self.send_middleware().await
     }
@@ -93,7 +96,7 @@ impl GetMigrationsFluentBuilder {
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
     pub fn set_sort_by_attribute(
         mut self,
-        input: std::option::Option<crate::types::MigrationSortAttribute>,
+        input: ::std::option::Option<crate::types::MigrationSortAttribute>,
     ) -> Self {
         self.inner = self.inner.set_sort_by_attribute(input);
         self
@@ -106,20 +109,23 @@ impl GetMigrationsFluentBuilder {
     /// <p>The order so sort the list.</p>
     pub fn set_sort_by_order(
         mut self,
-        input: std::option::Option<crate::types::SortOrder>,
+        input: ::std::option::Option<crate::types::SortOrder>,
     ) -> Self {
         self.inner = self.inner.set_sort_by_order(input);
         self
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
-    pub fn v1_bot_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn v1_bot_name_contains(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.v1_bot_name_contains(input.into());
         self
     }
     /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
     pub fn set_v1_bot_name_contains(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_v1_bot_name_contains(input);
         self
@@ -132,7 +138,7 @@ impl GetMigrationsFluentBuilder {
     /// <p>Filters the list to contain only migrations in the specified state.</p>
     pub fn set_migration_status_equals(
         mut self,
-        input: std::option::Option<crate::types::MigrationStatus>,
+        input: ::std::option::Option<crate::types::MigrationStatus>,
     ) -> Self {
         self.inner = self.inner.set_migration_status_equals(input);
         self
@@ -143,17 +149,17 @@ impl GetMigrationsFluentBuilder {
         self
     }
     /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

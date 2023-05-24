@@ -2,15 +2,15 @@
 
 /// <p>The options that determine how a date axis is displayed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateAxisOptions {
     /// <p>Determines whether or not missing dates are displayed.</p>
     #[doc(hidden)]
-    pub missing_date_visibility: std::option::Option<crate::types::Visibility>,
+    pub missing_date_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DateAxisOptions {
     /// <p>Determines whether or not missing dates are displayed.</p>
-    pub fn missing_date_visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn missing_date_visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.missing_date_visibility.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DateAxisOptions {
 
 /// A builder for [`DateAxisOptions`](crate::types::DateAxisOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DateAxisOptionsBuilder {
-    pub(crate) missing_date_visibility: std::option::Option<crate::types::Visibility>,
+    pub(crate) missing_date_visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DateAxisOptionsBuilder {
     /// <p>Determines whether or not missing dates are displayed.</p>
     pub fn missing_date_visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.missing_date_visibility = Some(input);
+        self.missing_date_visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether or not missing dates are displayed.</p>
     pub fn set_missing_date_visibility(
         mut self,
-        input: std::option::Option<crate::types::Visibility>,
+        input: ::std::option::Option<crate::types::Visibility>,
     ) -> Self {
         self.missing_date_visibility = input;
         self

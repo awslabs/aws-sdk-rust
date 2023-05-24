@@ -2,43 +2,43 @@
 
 /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FPorts {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
-    pub fuota: std::option::Option<i32>,
+    pub fuota: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
     #[doc(hidden)]
-    pub multicast: std::option::Option<i32>,
+    pub multicast: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
     #[doc(hidden)]
-    pub clock_sync: std::option::Option<i32>,
+    pub clock_sync: ::std::option::Option<i32>,
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     #[doc(hidden)]
-    pub positioning: std::option::Option<crate::types::Positioning>,
+    pub positioning: ::std::option::Option<crate::types::Positioning>,
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
     #[doc(hidden)]
-    pub applications: std::option::Option<std::vec::Vec<crate::types::ApplicationConfig>>,
+    pub applications: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
 }
 impl FPorts {
     /// <p>The Fport value.</p>
-    pub fn fuota(&self) -> std::option::Option<i32> {
+    pub fn fuota(&self) -> ::std::option::Option<i32> {
         self.fuota
     }
     /// <p>The Fport value.</p>
-    pub fn multicast(&self) -> std::option::Option<i32> {
+    pub fn multicast(&self) -> ::std::option::Option<i32> {
         self.multicast
     }
     /// <p>The Fport value.</p>
-    pub fn clock_sync(&self) -> std::option::Option<i32> {
+    pub fn clock_sync(&self) -> ::std::option::Option<i32> {
         self.clock_sync
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn positioning(&self) -> std::option::Option<&crate::types::Positioning> {
+    pub fn positioning(&self) -> ::std::option::Option<&crate::types::Positioning> {
         self.positioning.as_ref()
     }
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
-    pub fn applications(&self) -> std::option::Option<&[crate::types::ApplicationConfig]> {
+    pub fn applications(&self) -> ::std::option::Option<&[crate::types::ApplicationConfig]> {
         self.applications.as_deref()
     }
 }
@@ -51,54 +51,57 @@ impl FPorts {
 
 /// A builder for [`FPorts`](crate::types::FPorts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FPortsBuilder {
-    pub(crate) fuota: std::option::Option<i32>,
-    pub(crate) multicast: std::option::Option<i32>,
-    pub(crate) clock_sync: std::option::Option<i32>,
-    pub(crate) positioning: std::option::Option<crate::types::Positioning>,
-    pub(crate) applications: std::option::Option<std::vec::Vec<crate::types::ApplicationConfig>>,
+    pub(crate) fuota: ::std::option::Option<i32>,
+    pub(crate) multicast: ::std::option::Option<i32>,
+    pub(crate) clock_sync: ::std::option::Option<i32>,
+    pub(crate) positioning: ::std::option::Option<crate::types::Positioning>,
+    pub(crate) applications:
+        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
 }
 impl FPortsBuilder {
     /// <p>The Fport value.</p>
     pub fn fuota(mut self, input: i32) -> Self {
-        self.fuota = Some(input);
+        self.fuota = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Fport value.</p>
-    pub fn set_fuota(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_fuota(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fuota = input;
         self
     }
     /// <p>The Fport value.</p>
     pub fn multicast(mut self, input: i32) -> Self {
-        self.multicast = Some(input);
+        self.multicast = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Fport value.</p>
-    pub fn set_multicast(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_multicast(mut self, input: ::std::option::Option<i32>) -> Self {
         self.multicast = input;
         self
     }
     /// <p>The Fport value.</p>
     pub fn clock_sync(mut self, input: i32) -> Self {
-        self.clock_sync = Some(input);
+        self.clock_sync = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Fport value.</p>
-    pub fn set_clock_sync(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_clock_sync(mut self, input: ::std::option::Option<i32>) -> Self {
         self.clock_sync = input;
         self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn positioning(mut self, input: crate::types::Positioning) -> Self {
-        self.positioning = Some(input);
+        self.positioning = ::std::option::Option::Some(input);
         self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
     pub fn set_positioning(
         mut self,
-        input: std::option::Option<crate::types::Positioning>,
+        input: ::std::option::Option<crate::types::Positioning>,
     ) -> Self {
         self.positioning = input;
         self
@@ -111,13 +114,13 @@ impl FPortsBuilder {
     pub fn applications(mut self, input: crate::types::ApplicationConfig) -> Self {
         let mut v = self.applications.unwrap_or_default();
         v.push(input);
-        self.applications = Some(v);
+        self.applications = ::std::option::Option::Some(v);
         self
     }
     /// <p>Optional LoRaWAN application information, which can be used for geolocation.</p>
     pub fn set_applications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationConfig>>,
     ) -> Self {
         self.applications = input;
         self

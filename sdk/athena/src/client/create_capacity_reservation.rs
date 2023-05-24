@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`target_dpus(i32)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::target_dpus) / [`set_target_dpus(Option<i32>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::set_target_dpus): <p>The number of requested data processing units.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::set_name): <p>The name of the capacity reservation to create.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::set_name): <p>The name of the capacity reservation to create.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_capacity_reservation::builders::CreateCapacityReservationFluentBuilder::set_tags): <p>The tags for the capacity reservation.</p>
     /// - On success, responds with [`CreateCapacityReservationOutput`](crate::operation::create_capacity_reservation::CreateCapacityReservationOutput)
     /// - On failure, responds with [`SdkError<CreateCapacityReservationError>`](crate::operation::create_capacity_reservation::CreateCapacityReservationError)

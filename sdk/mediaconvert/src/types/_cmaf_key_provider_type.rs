@@ -38,13 +38,13 @@
 /// Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmafKeyProviderType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmafKeyProviderType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmafKeyProviderType {
+impl ::std::convert::From<&str> for CmafKeyProviderType {
     fn from(s: &str) -> Self {
         match s {
             "SPEKE" => CmafKeyProviderType::Speke,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmafKeyProviderType {
         }
     }
 }
-impl std::str::FromStr for CmafKeyProviderType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmafKeyProviderType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafKeyProviderType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmafKeyProviderType::from(s))
     }
 }
 impl CmafKeyProviderType {
@@ -86,7 +86,7 @@ impl CmafKeyProviderType {
         &["SPEKE", "STATIC_KEY"]
     }
 }
-impl AsRef<str> for CmafKeyProviderType {
+impl ::std::convert::AsRef<str> for CmafKeyProviderType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

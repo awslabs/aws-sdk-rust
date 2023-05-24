@@ -41,13 +41,13 @@
 /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum XavcProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum XavcProfile {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for XavcProfile {
+impl ::std::convert::From<&str> for XavcProfile {
     fn from(s: &str) -> Self {
         match s {
             "XAVC_4K" => XavcProfile::Xavc4K,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for XavcProfile {
         }
     }
 }
-impl std::str::FromStr for XavcProfile {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for XavcProfile {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XavcProfile::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(XavcProfile::from(s))
     }
 }
 impl XavcProfile {
@@ -105,7 +105,7 @@ impl XavcProfile {
         ]
     }
 }
-impl AsRef<str> for XavcProfile {
+impl ::std::convert::AsRef<str> for XavcProfile {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

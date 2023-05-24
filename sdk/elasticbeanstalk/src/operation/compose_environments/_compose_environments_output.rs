@@ -2,27 +2,27 @@
 
 /// <p>Result message containing a list of environment descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComposeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     #[doc(hidden)]
-    pub environments: std::option::Option<std::vec::Vec<crate::types::EnvironmentDescription>>,
+    pub environments: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ComposeEnvironmentsOutput {
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
-    pub fn environments(&self) -> std::option::Option<&[crate::types::EnvironmentDescription]> {
+    pub fn environments(&self) -> ::std::option::Option<&[crate::types::EnvironmentDescription]> {
         self.environments.as_deref()
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ComposeEnvironmentsOutput {
+impl ::aws_http::request_id::RequestId for ComposeEnvironmentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,11 +38,13 @@ impl ComposeEnvironmentsOutput {
 
 /// A builder for [`ComposeEnvironmentsOutput`](crate::operation::compose_environments::ComposeEnvironmentsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComposeEnvironmentsOutputBuilder {
     pub(crate) environments:
-        std::option::Option<std::vec::Vec<crate::types::EnvironmentDescription>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ComposeEnvironmentsOutputBuilder {
@@ -54,24 +56,24 @@ impl ComposeEnvironmentsOutputBuilder {
     pub fn environments(mut self, input: crate::types::EnvironmentDescription) -> Self {
         let mut v = self.environments.unwrap_or_default();
         v.push(input);
-        self.environments = Some(v);
+        self.environments = ::std::option::Option::Some(v);
         self
     }
     /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     pub fn set_environments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentDescription>>,
     ) -> Self {
         self.environments = input;
         self
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

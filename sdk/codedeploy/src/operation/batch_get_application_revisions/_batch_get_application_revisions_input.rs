@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of a <code>BatchGetApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetApplicationRevisionsInput {
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
     #[doc(hidden)]
-    pub revisions: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>,
+    pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
 }
 impl BatchGetApplicationRevisionsInput {
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::types::RevisionLocation]> {
+    pub fn revisions(&self) -> ::std::option::Option<&[crate::types::RevisionLocation]> {
         self.revisions.as_deref()
     }
 }
@@ -30,19 +30,27 @@ impl BatchGetApplicationRevisionsInput {
 
 /// A builder for [`BatchGetApplicationRevisionsInput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetApplicationRevisionsInputBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) revisions: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
 }
 impl BatchGetApplicationRevisionsInputBuilder {
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application about which to get revision information.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
@@ -54,13 +62,13 @@ impl BatchGetApplicationRevisionsInputBuilder {
     pub fn revisions(mut self, input: crate::types::RevisionLocation) -> Self {
         let mut v = self.revisions.unwrap_or_default();
         v.push(input);
-        self.revisions = Some(v);
+        self.revisions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
     pub fn set_revisions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
     ) -> Self {
         self.revisions = input;
         self
@@ -68,11 +76,11 @@ impl BatchGetApplicationRevisionsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetApplicationRevisionsInput`](crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsInput {
                 application_name: self.application_name,
                 revisions: self.revisions,

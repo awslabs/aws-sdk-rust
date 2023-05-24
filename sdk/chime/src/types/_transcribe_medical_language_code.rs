@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TranscribeMedicalLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum TranscribeMedicalLanguageCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TranscribeMedicalLanguageCode {
+impl ::std::convert::From<&str> for TranscribeMedicalLanguageCode {
     fn from(s: &str) -> Self {
         match s {
             "en-US" => TranscribeMedicalLanguageCode::EnUs,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for TranscribeMedicalLanguageCode {
         }
     }
 }
-impl std::str::FromStr for TranscribeMedicalLanguageCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TranscribeMedicalLanguageCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TranscribeMedicalLanguageCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TranscribeMedicalLanguageCode::from(s))
     }
 }
 impl TranscribeMedicalLanguageCode {
@@ -81,7 +81,7 @@ impl TranscribeMedicalLanguageCode {
         &["en-US"]
     }
 }
-impl AsRef<str> for TranscribeMedicalLanguageCode {
+impl ::std::convert::AsRef<str> for TranscribeMedicalLanguageCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_restore_address_to_classic_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput,
@@ -17,7 +17,7 @@ pub fn de_restore_address_to_classic_http_error(
     .map_err(
         crate::operation::restore_address_to_classic::RestoreAddressToClassicError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(
         crate::operation::restore_address_to_classic::RestoreAddressToClassicError::generic(
@@ -29,7 +29,7 @@ pub fn de_restore_address_to_classic_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_restore_address_to_classic_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput,
@@ -40,7 +40,7 @@ pub fn de_restore_address_to_classic_http_response_with_props(
         let mut output = crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder::default();
         output = crate::protocol_serde::shape_restore_address_to_classic::de_restore_address_to_classic(_response_body, output).map_err(crate::operation::restore_address_to_classic::RestoreAddressToClassicError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -52,16 +52,16 @@ pub fn de_restore_address_to_classic(
     mut builder: crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder,
 ) -> Result<
     crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RestoreAddressToClassicResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RestoreAddressToClassicResponse got {:?}",
             start_el
         )));
@@ -71,8 +71,8 @@ pub fn de_restore_address_to_classic(
             s if s.matches("publicIp") /* PublicIp com.amazonaws.ec2.synthetic#RestoreAddressToClassicOutput$PublicIp */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -84,9 +84,9 @@ pub fn de_restore_address_to_classic(
             s if s.matches("status") /* Status com.amazonaws.ec2.synthetic#RestoreAddressToClassicOutput$Status */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::types::Status, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::Status, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Status::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?

@@ -2,15 +2,15 @@
 
 /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
     #[doc(hidden)]
-    pub message_group_id: std::option::Option<std::string::String>,
+    pub message_group_id: ::std::option::Option<::std::string::String>,
 }
 impl SqsParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn message_group_id(&self) -> std::option::Option<&str> {
+    pub fn message_group_id(&self) -> ::std::option::Option<&str> {
         self.message_group_id.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl SqsParameters {
 
 /// A builder for [`SqsParameters`](crate::types::SqsParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SqsParametersBuilder {
-    pub(crate) message_group_id: std::option::Option<std::string::String>,
+    pub(crate) message_group_id: ::std::option::Option<::std::string::String>,
 }
 impl SqsParametersBuilder {
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_group_id = Some(input.into());
+    pub fn message_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.message_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn set_message_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.message_group_id = input;
         self
     }

@@ -2,43 +2,43 @@
 
 /// <p>Contains details about the firewall subnet that violates the policy scope.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallSubnetIsOutOfScopeViolation {
     /// <p>The ID of the firewall subnet that violates the policy scope.</p>
     #[doc(hidden)]
-    pub firewall_subnet_id: std::option::Option<std::string::String>,
+    pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the firewall subnet that violates the policy scope.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone of the firewall subnet that violates the policy scope.</p>
     #[doc(hidden)]
-    pub subnet_availability_zone: std::option::Option<std::string::String>,
+    pub subnet_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone ID of the firewall subnet that violates the policy scope.</p>
     #[doc(hidden)]
-    pub subnet_availability_zone_id: std::option::Option<std::string::String>,
+    pub subnet_availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC endpoint ID of the firewall subnet that violates the policy scope.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl FirewallSubnetIsOutOfScopeViolation {
     /// <p>The ID of the firewall subnet that violates the policy scope.</p>
-    pub fn firewall_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn firewall_subnet_id(&self) -> ::std::option::Option<&str> {
         self.firewall_subnet_id.as_deref()
     }
     /// <p>The VPC ID of the firewall subnet that violates the policy scope.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The Availability Zone of the firewall subnet that violates the policy scope.</p>
-    pub fn subnet_availability_zone(&self) -> std::option::Option<&str> {
+    pub fn subnet_availability_zone(&self) -> ::std::option::Option<&str> {
         self.subnet_availability_zone.as_deref()
     }
     /// <p>The Availability Zone ID of the firewall subnet that violates the policy scope.</p>
-    pub fn subnet_availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.subnet_availability_zone_id.as_deref()
     }
     /// <p>The VPC endpoint ID of the firewall subnet that violates the policy scope.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
 }
@@ -51,71 +51,88 @@ impl FirewallSubnetIsOutOfScopeViolation {
 
 /// A builder for [`FirewallSubnetIsOutOfScopeViolation`](crate::types::FirewallSubnetIsOutOfScopeViolation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FirewallSubnetIsOutOfScopeViolationBuilder {
-    pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) subnet_availability_zone: std::option::Option<std::string::String>,
-    pub(crate) subnet_availability_zone_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub(crate) firewall_subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_availability_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl FirewallSubnetIsOutOfScopeViolationBuilder {
     /// <p>The ID of the firewall subnet that violates the policy scope.</p>
-    pub fn firewall_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.firewall_subnet_id = Some(input.into());
+    pub fn firewall_subnet_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.firewall_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the firewall subnet that violates the policy scope.</p>
     pub fn set_firewall_subnet_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.firewall_subnet_id = input;
         self
     }
     /// <p>The VPC ID of the firewall subnet that violates the policy scope.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC ID of the firewall subnet that violates the policy scope.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The Availability Zone of the firewall subnet that violates the policy scope.</p>
-    pub fn subnet_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_availability_zone = Some(input.into());
+    pub fn subnet_availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subnet_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the firewall subnet that violates the policy scope.</p>
     pub fn set_subnet_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subnet_availability_zone = input;
         self
     }
     /// <p>The Availability Zone ID of the firewall subnet that violates the policy scope.</p>
-    pub fn subnet_availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_availability_zone_id = Some(input.into());
+    pub fn subnet_availability_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subnet_availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone ID of the firewall subnet that violates the policy scope.</p>
     pub fn set_subnet_availability_zone_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subnet_availability_zone_id = input;
         self
     }
     /// <p>The VPC endpoint ID of the firewall subnet that violates the policy scope.</p>
-    pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_id = Some(input.into());
+    pub fn vpc_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC endpoint ID of the firewall subnet that violates the policy scope.</p>
-    pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vpc_endpoint_id = input;
         self
     }

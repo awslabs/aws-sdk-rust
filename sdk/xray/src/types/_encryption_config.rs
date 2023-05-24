@@ -2,29 +2,29 @@
 
 /// <p>A configuration document that specifies encryption configuration settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
     #[doc(hidden)]
-    pub key_id: std::option::Option<std::string::String>,
+    pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EncryptionStatus>,
+    pub status: ::std::option::Option<crate::types::EncryptionStatus>,
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EncryptionType>,
+    pub r#type: ::std::option::Option<crate::types::EncryptionType>,
 }
 impl EncryptionConfig {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EncryptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EncryptionStatus> {
         self.status.as_ref()
     }
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.r#type.as_ref()
     }
 }
@@ -37,43 +37,45 @@ impl EncryptionConfig {
 
 /// A builder for [`EncryptionConfig`](crate::types::EncryptionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EncryptionConfigBuilder {
-    pub(crate) key_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::EncryptionStatus>,
-    pub(crate) r#type: std::option::Option<crate::types::EncryptionType>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::EncryptionStatus>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EncryptionType>,
 }
 impl EncryptionConfigBuilder {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_id = Some(input.into());
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
     pub fn status(mut self, input: crate::types::EncryptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::EncryptionStatus>,
+        input: ::std::option::Option<crate::types::EncryptionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.r#type = input;
         self
     }

@@ -4,29 +4,29 @@
 /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The recipients to place on the To: line of the message.</p>
     #[doc(hidden)]
-    pub to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The recipients to place on the CC: line of the message.</p>
     #[doc(hidden)]
-    pub cc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The recipients to place on the BCC: line of the message.</p>
     #[doc(hidden)]
-    pub bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub bcc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Destination {
     /// <p>The recipients to place on the To: line of the message.</p>
-    pub fn to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn to_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.to_addresses.as_deref()
     }
     /// <p>The recipients to place on the CC: line of the message.</p>
-    pub fn cc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cc_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cc_addresses.as_deref()
     }
     /// <p>The recipients to place on the BCC: line of the message.</p>
-    pub fn bcc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bcc_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.bcc_addresses.as_deref()
     }
 }
@@ -39,11 +39,13 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationBuilder {
-    pub(crate) to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) cc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) to_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bcc_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DestinationBuilder {
     /// Appends an item to `to_addresses`.
@@ -51,16 +53,16 @@ impl DestinationBuilder {
     /// To override the contents of this collection use [`set_to_addresses`](Self::set_to_addresses).
     ///
     /// <p>The recipients to place on the To: line of the message.</p>
-    pub fn to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn to_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.to_addresses.unwrap_or_default();
         v.push(input.into());
-        self.to_addresses = Some(v);
+        self.to_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The recipients to place on the To: line of the message.</p>
     pub fn set_to_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.to_addresses = input;
         self
@@ -70,16 +72,16 @@ impl DestinationBuilder {
     /// To override the contents of this collection use [`set_cc_addresses`](Self::set_cc_addresses).
     ///
     /// <p>The recipients to place on the CC: line of the message.</p>
-    pub fn cc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cc_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cc_addresses.unwrap_or_default();
         v.push(input.into());
-        self.cc_addresses = Some(v);
+        self.cc_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The recipients to place on the CC: line of the message.</p>
     pub fn set_cc_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cc_addresses = input;
         self
@@ -89,16 +91,19 @@ impl DestinationBuilder {
     /// To override the contents of this collection use [`set_bcc_addresses`](Self::set_bcc_addresses).
     ///
     /// <p>The recipients to place on the BCC: line of the message.</p>
-    pub fn bcc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bcc_addresses(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.bcc_addresses.unwrap_or_default();
         v.push(input.into());
-        self.bcc_addresses = Some(v);
+        self.bcc_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The recipients to place on the BCC: line of the message.</p>
     pub fn set_bcc_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.bcc_addresses = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::grant_flow_entitlements::_grant_flow_entitlements_inpu
 /// Fluent builder constructing a request to `GrantFlowEntitlements`.
 ///
 /// Grants entitlements to an existing flow.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GrantFlowEntitlementsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsInputBuilder,
 }
 impl GrantFlowEntitlementsFluentBuilder {
     /// Creates a new `GrantFlowEntitlements`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::grant_flow_entitlements::GrantFlowEntitlements,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GrantFlowEntitlementsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl GrantFlowEntitlementsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
         >,
     > {
@@ -92,18 +95,18 @@ impl GrantFlowEntitlementsFluentBuilder {
     /// The list of entitlements that you want to grant.
     pub fn set_entitlements(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GrantEntitlementRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>,
     ) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
     /// The flow that you want to grant entitlements on.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
     /// The flow that you want to grant entitlements on.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DateAggregationFunction {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum DateAggregationFunction {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DateAggregationFunction {
+impl ::std::convert::From<&str> for DateAggregationFunction {
     fn from(s: &str) -> Self {
         match s {
             "COUNT" => DateAggregationFunction::Count,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for DateAggregationFunction {
         }
     }
 }
-impl std::str::FromStr for DateAggregationFunction {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DateAggregationFunction {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DateAggregationFunction::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DateAggregationFunction::from(s))
     }
 }
 impl DateAggregationFunction {
@@ -96,7 +96,7 @@ impl DateAggregationFunction {
         &["COUNT", "DISTINCT_COUNT", "MAX", "MIN"]
     }
 }
-impl AsRef<str> for DateAggregationFunction {
+impl ::std::convert::AsRef<str> for DateAggregationFunction {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

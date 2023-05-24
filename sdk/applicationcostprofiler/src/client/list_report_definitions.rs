@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::set_next_token): <p>The token value from a previous call to access the next page of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::set_next_token): <p>The token value from a previous call to access the next page of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_report_definitions::builders::ListReportDefinitionsFluentBuilder::set_max_results): <p>The maximum number of results to return.</p>
     /// - On success, responds with [`ListReportDefinitionsOutput`](crate::operation::list_report_definitions::ListReportDefinitionsOutput) with field(s):
     ///   - [`report_definitions(Option<Vec<ReportDefinition>>)`](crate::operation::list_report_definitions::ListReportDefinitionsOutput::report_definitions): <p>The retrieved reports.</p>

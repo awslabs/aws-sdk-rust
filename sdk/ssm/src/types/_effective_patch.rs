@@ -2,22 +2,22 @@
 
 /// <p>The <code>EffectivePatch</code> structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EffectivePatch {
     /// <p>Provides metadata for a patch, including information such as the KB ID, severity, classification and a URL for where more information can be obtained about the patch.</p>
     #[doc(hidden)]
-    pub patch: std::option::Option<crate::types::Patch>,
+    pub patch: ::std::option::Option<crate::types::Patch>,
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
     #[doc(hidden)]
-    pub patch_status: std::option::Option<crate::types::PatchStatus>,
+    pub patch_status: ::std::option::Option<crate::types::PatchStatus>,
 }
 impl EffectivePatch {
     /// <p>Provides metadata for a patch, including information such as the KB ID, severity, classification and a URL for where more information can be obtained about the patch.</p>
-    pub fn patch(&self) -> std::option::Option<&crate::types::Patch> {
+    pub fn patch(&self) -> ::std::option::Option<&crate::types::Patch> {
         self.patch.as_ref()
     }
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
-    pub fn patch_status(&self) -> std::option::Option<&crate::types::PatchStatus> {
+    pub fn patch_status(&self) -> ::std::option::Option<&crate::types::PatchStatus> {
         self.patch_status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl EffectivePatch {
 
 /// A builder for [`EffectivePatch`](crate::types::EffectivePatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EffectivePatchBuilder {
-    pub(crate) patch: std::option::Option<crate::types::Patch>,
-    pub(crate) patch_status: std::option::Option<crate::types::PatchStatus>,
+    pub(crate) patch: ::std::option::Option<crate::types::Patch>,
+    pub(crate) patch_status: ::std::option::Option<crate::types::PatchStatus>,
 }
 impl EffectivePatchBuilder {
     /// <p>Provides metadata for a patch, including information such as the KB ID, severity, classification and a URL for where more information can be obtained about the patch.</p>
     pub fn patch(mut self, input: crate::types::Patch) -> Self {
-        self.patch = Some(input);
+        self.patch = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides metadata for a patch, including information such as the KB ID, severity, classification and a URL for where more information can be obtained about the patch.</p>
-    pub fn set_patch(mut self, input: std::option::Option<crate::types::Patch>) -> Self {
+    pub fn set_patch(mut self, input: ::std::option::Option<crate::types::Patch>) -> Self {
         self.patch = input;
         self
     }
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
     pub fn patch_status(mut self, input: crate::types::PatchStatus) -> Self {
-        self.patch_status = Some(input);
+        self.patch_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the patch in a patch baseline. This includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.</p>
     pub fn set_patch_status(
         mut self,
-        input: std::option::Option<crate::types::PatchStatus>,
+        input: ::std::option::Option<crate::types::PatchStatus>,
     ) -> Self {
         self.patch_status = input;
         self

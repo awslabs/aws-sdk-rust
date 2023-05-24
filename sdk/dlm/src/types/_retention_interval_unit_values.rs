@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RetentionIntervalUnitValues {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum RetentionIntervalUnitValues {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RetentionIntervalUnitValues {
+impl ::std::convert::From<&str> for RetentionIntervalUnitValues {
     fn from(s: &str) -> Self {
         match s {
             "DAYS" => RetentionIntervalUnitValues::Days,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for RetentionIntervalUnitValues {
         }
     }
 }
-impl std::str::FromStr for RetentionIntervalUnitValues {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RetentionIntervalUnitValues {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RetentionIntervalUnitValues::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RetentionIntervalUnitValues::from(s))
     }
 }
 impl RetentionIntervalUnitValues {
@@ -96,7 +96,7 @@ impl RetentionIntervalUnitValues {
         &["DAYS", "MONTHS", "WEEKS", "YEARS"]
     }
 }
-impl AsRef<str> for RetentionIntervalUnitValues {
+impl ::std::convert::AsRef<str> for RetentionIntervalUnitValues {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -6,29 +6,29 @@ pub use crate::operation::update_subscriber::_update_subscriber_input::UpdateSub
 /// Fluent builder constructing a request to `UpdateSubscriber`.
 ///
 /// <p>Updates a subscriber.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSubscriberFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder,
 }
 impl UpdateSubscriberFluentBuilder {
     /// Creates a new `UpdateSubscriber`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_subscriber::UpdateSubscriber,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_subscriber::UpdateSubscriberError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateSubscriberFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_subscriber::UpdateSubscriberOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_subscriber::UpdateSubscriberError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl UpdateSubscriberFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_subscriber::UpdateSubscriberOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_subscriber::UpdateSubscriberError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
     /// <p>The name of the budget whose subscriber you want to update.</p>
-    pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
         self
     }
     /// <p>The name of the budget whose subscriber you want to update.</p>
-    pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
     }
@@ -108,7 +111,7 @@ impl UpdateSubscriberFluentBuilder {
     /// <p>The notification whose subscriber you want to update.</p>
     pub fn set_notification(
         mut self,
-        input: std::option::Option<crate::types::Notification>,
+        input: ::std::option::Option<crate::types::Notification>,
     ) -> Self {
         self.inner = self.inner.set_notification(input);
         self
@@ -121,7 +124,7 @@ impl UpdateSubscriberFluentBuilder {
     /// <p>The previous subscriber that is associated with a budget notification.</p>
     pub fn set_old_subscriber(
         mut self,
-        input: std::option::Option<crate::types::Subscriber>,
+        input: ::std::option::Option<crate::types::Subscriber>,
     ) -> Self {
         self.inner = self.inner.set_old_subscriber(input);
         self
@@ -134,7 +137,7 @@ impl UpdateSubscriberFluentBuilder {
     /// <p>The updated subscriber that is associated with a budget notification.</p>
     pub fn set_new_subscriber(
         mut self,
-        input: std::option::Option<crate::types::Subscriber>,
+        input: ::std::option::Option<crate::types::Subscriber>,
     ) -> Self {
         self.inner = self.inner.set_new_subscriber(input);
         self

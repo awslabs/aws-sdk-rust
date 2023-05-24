@@ -2,14 +2,14 @@
 
 /// <p> The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for how long to return profiling data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     #[doc(hidden)]
-    pub should_profile: std::option::Option<bool>,
+    pub should_profile: ::std::option::Option<bool>,
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
     #[doc(hidden)]
-    pub period_in_seconds: std::option::Option<i32>,
+    pub period_in_seconds: ::std::option::Option<i32>,
     /// <p> Parameters used by the profiler. The valid parameters are: </p>
     /// <ul>
     /// <li> <p> <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the profiler evaluates <code>A</code> and <code>B</code>. </p> </li>
@@ -19,17 +19,17 @@ pub struct AgentConfiguration {
     /// <li> <p> <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds that is used to profile samples. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub agent_parameters: std::option::Option<
-        std::collections::HashMap<crate::types::AgentParameterField, std::string::String>,
+    pub agent_parameters: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
     >,
 }
 impl AgentConfiguration {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
-    pub fn should_profile(&self) -> std::option::Option<bool> {
+    pub fn should_profile(&self) -> ::std::option::Option<bool> {
         self.should_profile
     }
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
-    pub fn period_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn period_in_seconds(&self) -> ::std::option::Option<i32> {
         self.period_in_seconds
     }
     /// <p> Parameters used by the profiler. The valid parameters are: </p>
@@ -42,8 +42,8 @@ impl AgentConfiguration {
     /// </ul>
     pub fn agent_parameters(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::AgentParameterField, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
     > {
         self.agent_parameters.as_ref()
     }
@@ -57,32 +57,34 @@ impl AgentConfiguration {
 
 /// A builder for [`AgentConfiguration`](crate::types::AgentConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentConfigurationBuilder {
-    pub(crate) should_profile: std::option::Option<bool>,
-    pub(crate) period_in_seconds: std::option::Option<i32>,
-    pub(crate) agent_parameters: std::option::Option<
-        std::collections::HashMap<crate::types::AgentParameterField, std::string::String>,
+    pub(crate) should_profile: ::std::option::Option<bool>,
+    pub(crate) period_in_seconds: ::std::option::Option<i32>,
+    pub(crate) agent_parameters: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
     >,
 }
 impl AgentConfigurationBuilder {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     pub fn should_profile(mut self, input: bool) -> Self {
-        self.should_profile = Some(input);
+        self.should_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
-    pub fn set_should_profile(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_should_profile(mut self, input: ::std::option::Option<bool>) -> Self {
         self.should_profile = input;
         self
     }
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
     pub fn period_in_seconds(mut self, input: i32) -> Self {
-        self.period_in_seconds = Some(input);
+        self.period_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p> How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected during that period. </p>
-    pub fn set_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period_in_seconds = input;
         self
     }
@@ -101,11 +103,11 @@ impl AgentConfigurationBuilder {
     pub fn agent_parameters(
         mut self,
         k: crate::types::AgentParameterField,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.agent_parameters.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.agent_parameters = Some(hash_map);
+        self.agent_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> Parameters used by the profiler. The valid parameters are: </p>
@@ -118,8 +120,8 @@ impl AgentConfigurationBuilder {
     /// </ul>
     pub fn set_agent_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::AgentParameterField, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::AgentParameterField, ::std::string::String>,
         >,
     ) -> Self {
         self.agent_parameters = input;

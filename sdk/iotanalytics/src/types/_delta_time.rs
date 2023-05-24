@@ -2,22 +2,22 @@
 
 /// <p>Used to limit data to that which has arrived since the last execution of the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeltaTime {
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     #[doc(hidden)]
-    pub offset_seconds: std::option::Option<i32>,
+    pub offset_seconds: ::std::option::Option<i32>,
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
     #[doc(hidden)]
-    pub time_expression: std::option::Option<std::string::String>,
+    pub time_expression: ::std::option::Option<::std::string::String>,
 }
 impl DeltaTime {
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
-    pub fn offset_seconds(&self) -> std::option::Option<i32> {
+    pub fn offset_seconds(&self) -> ::std::option::Option<i32> {
         self.offset_seconds
     }
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
-    pub fn time_expression(&self) -> std::option::Option<&str> {
+    pub fn time_expression(&self) -> ::std::option::Option<&str> {
         self.time_expression.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl DeltaTime {
 
 /// A builder for [`DeltaTime`](crate::types::DeltaTime).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeltaTimeBuilder {
-    pub(crate) offset_seconds: std::option::Option<i32>,
-    pub(crate) time_expression: std::option::Option<std::string::String>,
+    pub(crate) offset_seconds: ::std::option::Option<i32>,
+    pub(crate) time_expression: ::std::option::Option<::std::string::String>,
 }
 impl DeltaTimeBuilder {
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
     pub fn offset_seconds(mut self, input: i32) -> Self {
-        self.offset_seconds = Some(input);
+        self.offset_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of seconds of estimated in-flight lag time of message data. When you create dataset contents using message data from a specified timeframe, some message data might still be in flight when processing begins, and so do not arrive in time to be processed. Use this field to make allowances for the in flight time of your message data, so that data not processed from a previous timeframe is included with the next timeframe. Otherwise, missed message data would be excluded from processing during the next timeframe too, because its timestamp places it within the previous timeframe.</p>
-    pub fn set_offset_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_offset_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset_seconds = input;
         self
     }
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
-    pub fn time_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.time_expression = Some(input.into());
+    pub fn time_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.time_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An expression by which the time of the message data might be determined. This can be the name of a timestamp field or a SQL expression that is used to derive the time the message data was generated.</p>
-    pub fn set_time_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_time_expression(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.time_expression = input;
         self
     }

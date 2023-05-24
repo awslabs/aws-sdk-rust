@@ -6,29 +6,29 @@ pub use crate::operation::create_custom_log_source::_create_custom_log_source_in
 /// Fluent builder constructing a request to `CreateCustomLogSource`.
 ///
 /// <p>Adds a third-party custom source in Amazon Security Lake, from the Amazon Web Services Region where you want to create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from the custom source in addition to an associated Glue table and an Glue crawler.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCustomLogSourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder,
 }
 impl CreateCustomLogSourceFluentBuilder {
     /// Creates a new `CreateCustomLogSource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_custom_log_source::CreateCustomLogSource,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_custom_log_source::CreateCustomLogSourceError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateCustomLogSourceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_custom_log_source::CreateCustomLogSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_custom_log_source::CreateCustomLogSourceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl CreateCustomLogSourceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_custom_log_source::CreateCustomLogSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_custom_log_source::CreateCustomLogSourceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
-    pub fn custom_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.custom_source_name(input.into());
         self
     }
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
     pub fn set_custom_source_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_custom_source_name(input);
         self
@@ -101,7 +107,7 @@ impl CreateCustomLogSourceFluentBuilder {
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom source will send to Security Lake.</p>
     pub fn set_event_class(
         mut self,
-        input: std::option::Option<crate::types::OcsfEventClass>,
+        input: ::std::option::Option<crate::types::OcsfEventClass>,
     ) -> Self {
         self.inner = self.inner.set_event_class(input);
         self
@@ -111,7 +117,10 @@ impl CreateCustomLogSourceFluentBuilder {
     /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
     /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
     /// </ul>
-    pub fn glue_invocation_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn glue_invocation_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.glue_invocation_role_arn(input.into());
         self
     }
@@ -122,20 +131,23 @@ impl CreateCustomLogSourceFluentBuilder {
     /// </ul>
     pub fn set_glue_invocation_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_glue_invocation_role_arn(input);
         self
     }
     /// <p>The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data Lake.</p>
-    pub fn log_provider_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn log_provider_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.log_provider_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data Lake.</p>
     pub fn set_log_provider_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_log_provider_account_id(input);
         self

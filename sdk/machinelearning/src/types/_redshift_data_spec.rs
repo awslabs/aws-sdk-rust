@@ -2,20 +2,20 @@
 
 /// <p>Describes the data specification of an Amazon Redshift <code>DataSource</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftDataSpec {
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
     #[doc(hidden)]
-    pub database_information: std::option::Option<crate::types::RedshiftDatabase>,
+    pub database_information: ::std::option::Option<crate::types::RedshiftDatabase>,
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
     #[doc(hidden)]
-    pub select_sql_query: std::option::Option<std::string::String>,
+    pub select_sql_query: ::std::option::Option<::std::string::String>,
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
     #[doc(hidden)]
-    pub database_credentials: std::option::Option<crate::types::RedshiftDatabaseCredentials>,
+    pub database_credentials: ::std::option::Option<crate::types::RedshiftDatabaseCredentials>,
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
     #[doc(hidden)]
-    pub s3_staging_location: std::option::Option<std::string::String>,
+    pub s3_staging_location: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
     /// <p>There are multiple parameters that control what data is used to create a datasource:</p>
     /// <ul>
@@ -25,7 +25,7 @@ pub struct RedshiftDataSpec {
     /// <li> <p> <b> <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.</p> <p>The default value for the <code>strategy</code> parameter is <code>sequential</code>, meaning that Amazon ML takes all of the data records between the <code>percentBegin</code> and <code>percentEnd</code> parameters for the datasource, in the order that the records appear in the input data.</p> <p>The following two <code>DataRearrangement</code> lines are examples of sequentially ordered training and evaluation datasources:</p> <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential"}}</code> </p> <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split the input data into the proportions indicated by the percentBegin and percentEnd parameters, set the <code>strategy</code> parameter to <code>random</code> and provide a string that is used as the seed value for the random data splitting (for example, you can use the S3 path to your data as the random seed string). If you choose the random split strategy, Amazon ML assigns each row of data a pseudo-random number between 0 and 100, and then selects the rows that have an assigned number between <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned using both the input seed string value and the byte offset as a seed, so changing the data results in a different split. Any existing ordering is preserved. The random splitting strategy ensures that variables in the training and evaluation data are distributed similarly. It is useful in the cases where the input data may have an implicit sort order, which would otherwise result in training and evaluation datasources containing non-similar data records.</p> <p>The following two <code>DataRearrangement</code> lines are examples of non-sequentially ordered training and evaluation datasources:</p> <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub data_rearrangement: std::option::Option<std::string::String>,
+    pub data_rearrangement: ::std::option::Option<::std::string::String>,
     /// <p>A JSON string that represents the schema for an Amazon Redshift <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>.</p>
     /// <p>A <code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code>.</p>
     /// <p>Define your <code>DataSchema</code> as a series of key-value pairs. <code>attributes</code> and <code>excludedVariableNames</code> have an array of key-value pairs for their value. Use the following format to define your <code>DataSchema</code>.</p>
@@ -39,28 +39,28 @@ pub struct RedshiftDataSpec {
     /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
     /// <p>"excludedVariableNames": [ "F6" ] }</p>
     #[doc(hidden)]
-    pub data_schema: std::option::Option<std::string::String>,
+    pub data_schema: ::std::option::Option<::std::string::String>,
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
     #[doc(hidden)]
-    pub data_schema_uri: std::option::Option<std::string::String>,
+    pub data_schema_uri: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftDataSpec {
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn database_information(&self) -> std::option::Option<&crate::types::RedshiftDatabase> {
+    pub fn database_information(&self) -> ::std::option::Option<&crate::types::RedshiftDatabase> {
         self.database_information.as_ref()
     }
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn select_sql_query(&self) -> std::option::Option<&str> {
+    pub fn select_sql_query(&self) -> ::std::option::Option<&str> {
         self.select_sql_query.as_deref()
     }
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
     pub fn database_credentials(
         &self,
-    ) -> std::option::Option<&crate::types::RedshiftDatabaseCredentials> {
+    ) -> ::std::option::Option<&crate::types::RedshiftDatabaseCredentials> {
         self.database_credentials.as_ref()
     }
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
-    pub fn s3_staging_location(&self) -> std::option::Option<&str> {
+    pub fn s3_staging_location(&self) -> ::std::option::Option<&str> {
         self.s3_staging_location.as_deref()
     }
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
@@ -71,7 +71,7 @@ impl RedshiftDataSpec {
     /// <li> <p> <b> <code>complement</code> </b> </p> <p>The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the range of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The <code>complement</code> parameter is useful if you need to create complementary datasources for training and evaluation. To create a complementary datasource, use the same values for <code>percentBegin</code> and <code>percentEnd</code>, along with the <code>complement</code> parameter.</p> <p>For example, the following two datasources do not share any data, and can be used to train and evaluate a model. The first datasource has 25 percent of the data, and the second one has 75 percent of the data.</p> <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p> <p>Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code> </p> </li>
     /// <li> <p> <b> <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.</p> <p>The default value for the <code>strategy</code> parameter is <code>sequential</code>, meaning that Amazon ML takes all of the data records between the <code>percentBegin</code> and <code>percentEnd</code> parameters for the datasource, in the order that the records appear in the input data.</p> <p>The following two <code>DataRearrangement</code> lines are examples of sequentially ordered training and evaluation datasources:</p> <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential"}}</code> </p> <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split the input data into the proportions indicated by the percentBegin and percentEnd parameters, set the <code>strategy</code> parameter to <code>random</code> and provide a string that is used as the seed value for the random data splitting (for example, you can use the S3 path to your data as the random seed string). If you choose the random split strategy, Amazon ML assigns each row of data a pseudo-random number between 0 and 100, and then selects the rows that have an assigned number between <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned using both the input seed string value and the byte offset as a seed, so changing the data results in a different split. Any existing ordering is preserved. The random splitting strategy ensures that variables in the training and evaluation data are distributed similarly. It is useful in the cases where the input data may have an implicit sort order, which would otherwise result in training and evaluation datasources containing non-similar data records.</p> <p>The following two <code>DataRearrangement</code> lines are examples of non-sequentially ordered training and evaluation datasources:</p> <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code> </p> </li>
     /// </ul>
-    pub fn data_rearrangement(&self) -> std::option::Option<&str> {
+    pub fn data_rearrangement(&self) -> ::std::option::Option<&str> {
         self.data_rearrangement.as_deref()
     }
     /// <p>A JSON string that represents the schema for an Amazon Redshift <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>.</p>
@@ -86,11 +86,11 @@ impl RedshiftDataSpec {
     /// <p>"attributes": [</p>
     /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
     /// <p>"excludedVariableNames": [ "F6" ] }</p>
-    pub fn data_schema(&self) -> std::option::Option<&str> {
+    pub fn data_schema(&self) -> ::std::option::Option<&str> {
         self.data_schema.as_deref()
     }
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn data_schema_uri(&self) -> std::option::Option<&str> {
+    pub fn data_schema_uri(&self) -> ::std::option::Option<&str> {
         self.data_schema_uri.as_deref()
     }
 }
@@ -103,37 +103,46 @@ impl RedshiftDataSpec {
 
 /// A builder for [`RedshiftDataSpec`](crate::types::RedshiftDataSpec).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RedshiftDataSpecBuilder {
-    pub(crate) database_information: std::option::Option<crate::types::RedshiftDatabase>,
-    pub(crate) select_sql_query: std::option::Option<std::string::String>,
-    pub(crate) database_credentials: std::option::Option<crate::types::RedshiftDatabaseCredentials>,
-    pub(crate) s3_staging_location: std::option::Option<std::string::String>,
-    pub(crate) data_rearrangement: std::option::Option<std::string::String>,
-    pub(crate) data_schema: std::option::Option<std::string::String>,
-    pub(crate) data_schema_uri: std::option::Option<std::string::String>,
+    pub(crate) database_information: ::std::option::Option<crate::types::RedshiftDatabase>,
+    pub(crate) select_sql_query: ::std::option::Option<::std::string::String>,
+    pub(crate) database_credentials:
+        ::std::option::Option<crate::types::RedshiftDatabaseCredentials>,
+    pub(crate) s3_staging_location: ::std::option::Option<::std::string::String>,
+    pub(crate) data_rearrangement: ::std::option::Option<::std::string::String>,
+    pub(crate) data_schema: ::std::option::Option<::std::string::String>,
+    pub(crate) data_schema_uri: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftDataSpecBuilder {
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn database_information(mut self, input: crate::types::RedshiftDatabase) -> Self {
-        self.database_information = Some(input);
+        self.database_information = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code> for an Amazon Redshift <code>DataSource</code>.</p>
     pub fn set_database_information(
         mut self,
-        input: std::option::Option<crate::types::RedshiftDatabase>,
+        input: ::std::option::Option<crate::types::RedshiftDatabase>,
     ) -> Self {
         self.database_information = input;
         self
     }
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn select_sql_query(mut self, input: impl Into<std::string::String>) -> Self {
-        self.select_sql_query = Some(input.into());
+    pub fn select_sql_query(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.select_sql_query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn set_select_sql_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_select_sql_query(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.select_sql_query = input;
         self
     }
@@ -142,26 +151,29 @@ impl RedshiftDataSpecBuilder {
         mut self,
         input: crate::types::RedshiftDatabaseCredentials,
     ) -> Self {
-        self.database_credentials = Some(input);
+        self.database_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes AWS Identity and Access Management (IAM) credentials that are used connect to the Amazon Redshift database.</p>
     pub fn set_database_credentials(
         mut self,
-        input: std::option::Option<crate::types::RedshiftDatabaseCredentials>,
+        input: ::std::option::Option<crate::types::RedshiftDatabaseCredentials>,
     ) -> Self {
         self.database_credentials = input;
         self
     }
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
-    pub fn s3_staging_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_staging_location = Some(input.into());
+    pub fn s3_staging_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_staging_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code> query.</p>
     pub fn set_s3_staging_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.s3_staging_location = input;
         self
@@ -174,8 +186,11 @@ impl RedshiftDataSpecBuilder {
     /// <li> <p> <b> <code>complement</code> </b> </p> <p>The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the range of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The <code>complement</code> parameter is useful if you need to create complementary datasources for training and evaluation. To create a complementary datasource, use the same values for <code>percentBegin</code> and <code>percentEnd</code>, along with the <code>complement</code> parameter.</p> <p>For example, the following two datasources do not share any data, and can be used to train and evaluate a model. The first datasource has 25 percent of the data, and the second one has 75 percent of the data.</p> <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p> <p>Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code> </p> </li>
     /// <li> <p> <b> <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.</p> <p>The default value for the <code>strategy</code> parameter is <code>sequential</code>, meaning that Amazon ML takes all of the data records between the <code>percentBegin</code> and <code>percentEnd</code> parameters for the datasource, in the order that the records appear in the input data.</p> <p>The following two <code>DataRearrangement</code> lines are examples of sequentially ordered training and evaluation datasources:</p> <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential"}}</code> </p> <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split the input data into the proportions indicated by the percentBegin and percentEnd parameters, set the <code>strategy</code> parameter to <code>random</code> and provide a string that is used as the seed value for the random data splitting (for example, you can use the S3 path to your data as the random seed string). If you choose the random split strategy, Amazon ML assigns each row of data a pseudo-random number between 0 and 100, and then selects the rows that have an assigned number between <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned using both the input seed string value and the byte offset as a seed, so changing the data results in a different split. Any existing ordering is preserved. The random splitting strategy ensures that variables in the training and evaluation data are distributed similarly. It is useful in the cases where the input data may have an implicit sort order, which would otherwise result in training and evaluation datasources containing non-similar data records.</p> <p>The following two <code>DataRearrangement</code> lines are examples of non-sequentially ordered training and evaluation datasources:</p> <p>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code> </p> </li>
     /// </ul>
-    pub fn data_rearrangement(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_rearrangement = Some(input.into());
+    pub fn data_rearrangement(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_rearrangement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that represents the splitting and rearrangement processing to be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not provided, all of the input data is used to create the <code>Datasource</code>.</p>
@@ -188,7 +203,7 @@ impl RedshiftDataSpecBuilder {
     /// </ul>
     pub fn set_data_rearrangement(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_rearrangement = input;
         self
@@ -205,8 +220,8 @@ impl RedshiftDataSpecBuilder {
     /// <p>"attributes": [</p>
     /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
     /// <p>"excludedVariableNames": [ "F6" ] }</p>
-    pub fn data_schema(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_schema = Some(input.into());
+    pub fn data_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that represents the schema for an Amazon Redshift <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>.</p>
@@ -221,17 +236,23 @@ impl RedshiftDataSpecBuilder {
     /// <p>"attributes": [</p>
     /// <p>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
     /// <p>"excludedVariableNames": [ "F6" ] }</p>
-    pub fn set_data_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_schema = input;
         self
     }
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn data_schema_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_schema_uri = Some(input.into());
+    pub fn data_schema_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_schema_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</p>
-    pub fn set_data_schema_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_schema_uri(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.data_schema_uri = input;
         self
     }

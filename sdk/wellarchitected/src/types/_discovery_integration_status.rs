@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DiscoveryIntegrationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DiscoveryIntegrationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DiscoveryIntegrationStatus {
+impl ::std::convert::From<&str> for DiscoveryIntegrationStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => DiscoveryIntegrationStatus::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DiscoveryIntegrationStatus {
         }
     }
 }
-impl std::str::FromStr for DiscoveryIntegrationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DiscoveryIntegrationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DiscoveryIntegrationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DiscoveryIntegrationStatus::from(s))
     }
 }
 impl DiscoveryIntegrationStatus {
@@ -86,7 +86,7 @@ impl DiscoveryIntegrationStatus {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for DiscoveryIntegrationStatus {
+impl ::std::convert::AsRef<str> for DiscoveryIntegrationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

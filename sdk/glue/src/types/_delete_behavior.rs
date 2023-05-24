@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeleteBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DeleteBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeleteBehavior {
+impl ::std::convert::From<&str> for DeleteBehavior {
     fn from(s: &str) -> Self {
         match s {
             "DELETE_FROM_DATABASE" => DeleteBehavior::DeleteFromDatabase,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DeleteBehavior {
         }
     }
 }
-impl std::str::FromStr for DeleteBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeleteBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeleteBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeleteBehavior::from(s))
     }
 }
 impl DeleteBehavior {
@@ -91,7 +91,7 @@ impl DeleteBehavior {
         &["DELETE_FROM_DATABASE", "DEPRECATE_IN_DATABASE", "LOG"]
     }
 }
-impl AsRef<str> for DeleteBehavior {
+impl ::std::convert::AsRef<str> for DeleteBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

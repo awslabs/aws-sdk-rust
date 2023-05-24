@@ -2,22 +2,22 @@
 
 /// <p>The credentials used by the participant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantTokenCredentials {
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant. </p>
     #[doc(hidden)]
-    pub participant_token: std::option::Option<std::string::String>,
+    pub participant_token: ::std::option::Option<::std::string::String>,
     /// <p>The expiration of the token. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
     #[doc(hidden)]
-    pub expiry: std::option::Option<std::string::String>,
+    pub expiry: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantTokenCredentials {
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant. </p>
-    pub fn participant_token(&self) -> std::option::Option<&str> {
+    pub fn participant_token(&self) -> ::std::option::Option<&str> {
         self.participant_token.as_deref()
     }
     /// <p>The expiration of the token. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn expiry(&self) -> std::option::Option<&str> {
+    pub fn expiry(&self) -> ::std::option::Option<&str> {
         self.expiry.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl ParticipantTokenCredentials {
 
 /// A builder for [`ParticipantTokenCredentials`](crate::types::ParticipantTokenCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParticipantTokenCredentialsBuilder {
-    pub(crate) participant_token: std::option::Option<std::string::String>,
-    pub(crate) expiry: std::option::Option<std::string::String>,
+    pub(crate) participant_token: ::std::option::Option<::std::string::String>,
+    pub(crate) expiry: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantTokenCredentialsBuilder {
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant. </p>
-    pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.participant_token = Some(input.into());
+    pub fn participant_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.participant_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant. </p>
     pub fn set_participant_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.participant_token = input;
         self
     }
     /// <p>The expiration of the token. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn expiry(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expiry = Some(input.into());
+    pub fn expiry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expiry = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expiration of the token. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
-    pub fn set_expiry(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expiry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiry = input;
         self
     }

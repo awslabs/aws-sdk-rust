@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SavingsPlanRateUnit {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum SavingsPlanRateUnit {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SavingsPlanRateUnit {
+impl ::std::convert::From<&str> for SavingsPlanRateUnit {
     fn from(s: &str) -> Self {
         match s {
             "Hrs" => SavingsPlanRateUnit::Hours,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for SavingsPlanRateUnit {
         }
     }
 }
-impl std::str::FromStr for SavingsPlanRateUnit {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SavingsPlanRateUnit {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanRateUnit::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SavingsPlanRateUnit::from(s))
     }
 }
 impl SavingsPlanRateUnit {
@@ -91,7 +91,7 @@ impl SavingsPlanRateUnit {
         &["Hrs", "Lambda-GB-Second", "Request"]
     }
 }
-impl AsRef<str> for SavingsPlanRateUnit {
+impl ::std::convert::AsRef<str> for SavingsPlanRateUnit {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

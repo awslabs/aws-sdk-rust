@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a listener's Transport Layer Security (TLS) certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualGatewayListenerTlsCertificate {
     /// <p>A reference to an object that represents an Certificate Manager certificate.</p>
     Acm(crate::types::VirtualGatewayListenerTlsAcmCertificate),
@@ -25,11 +25,11 @@ impl VirtualGatewayListenerTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsAcmCertificate, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayListenerTlsAcmCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::Acm(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Acm`](crate::types::VirtualGatewayListenerTlsCertificate::Acm).
@@ -40,11 +40,11 @@ impl VirtualGatewayListenerTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsFileCertificate, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayListenerTlsFileCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayListenerTlsCertificate::File).
@@ -55,11 +55,11 @@ impl VirtualGatewayListenerTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsSdsCertificate, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayListenerTlsSdsCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::Sds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::types::VirtualGatewayListenerTlsCertificate::Sds).

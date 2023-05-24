@@ -2,22 +2,22 @@
 
 /// <p> The aggregation settings that you can use to customize the output format of your flow data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     #[doc(hidden)]
-    pub aggregation_type: std::option::Option<crate::types::AggregationType>,
+    pub aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
     #[doc(hidden)]
-    pub target_file_size: std::option::Option<i64>,
+    pub target_file_size: ::std::option::Option<i64>,
 }
 impl AggregationConfig {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
-    pub fn aggregation_type(&self) -> std::option::Option<&crate::types::AggregationType> {
+    pub fn aggregation_type(&self) -> ::std::option::Option<&crate::types::AggregationType> {
         self.aggregation_type.as_ref()
     }
     /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
-    pub fn target_file_size(&self) -> std::option::Option<i64> {
+    pub fn target_file_size(&self) -> ::std::option::Option<i64> {
         self.target_file_size
     }
 }
@@ -30,32 +30,34 @@ impl AggregationConfig {
 
 /// A builder for [`AggregationConfig`](crate::types::AggregationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregationConfigBuilder {
-    pub(crate) aggregation_type: std::option::Option<crate::types::AggregationType>,
-    pub(crate) target_file_size: std::option::Option<i64>,
+    pub(crate) aggregation_type: ::std::option::Option<crate::types::AggregationType>,
+    pub(crate) target_file_size: ::std::option::Option<i64>,
 }
 impl AggregationConfigBuilder {
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     pub fn aggregation_type(mut self, input: crate::types::AggregationType) -> Self {
-        self.aggregation_type = Some(input);
+        self.aggregation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or leave them unaggregated. </p>
     pub fn set_aggregation_type(
         mut self,
-        input: std::option::Option<crate::types::AggregationType>,
+        input: ::std::option::Option<crate::types::AggregationType>,
     ) -> Self {
         self.aggregation_type = input;
         self
     }
     /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
     pub fn target_file_size(mut self, input: i64) -> Self {
-        self.target_file_size = Some(input);
+        self.target_file_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this target based on the number and size of the records that each file contains.</p>
-    pub fn set_target_file_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_target_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.target_file_size = input;
         self
     }

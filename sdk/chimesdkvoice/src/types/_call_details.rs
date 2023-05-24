@@ -2,29 +2,29 @@
 
 /// <p>The details of an Amazon Chime SDK Voice Connector call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CallDetails {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
-    pub voice_connector_id: std::option::Option<std::string::String>,
+    pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The transaction ID of a Voice Connector call.</p>
     #[doc(hidden)]
-    pub transaction_id: std::option::Option<std::string::String>,
+    pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies a person as the caller or the callee.</p>
     #[doc(hidden)]
-    pub is_caller: std::option::Option<bool>,
+    pub is_caller: ::std::option::Option<bool>,
 }
 impl CallDetails {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The transaction ID of a Voice Connector call.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
     /// <p>Identifies a person as the caller or the callee.</p>
-    pub fn is_caller(&self) -> std::option::Option<bool> {
+    pub fn is_caller(&self) -> ::std::option::Option<bool> {
         self.is_caller
     }
 }
@@ -37,43 +37,54 @@ impl CallDetails {
 
 /// A builder for [`CallDetails`](crate::types::CallDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CallDetailsBuilder {
-    pub(crate) voice_connector_id: std::option::Option<std::string::String>,
-    pub(crate) transaction_id: std::option::Option<std::string::String>,
-    pub(crate) is_caller: std::option::Option<bool>,
+    pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
+    pub(crate) is_caller: ::std::option::Option<bool>,
 }
 impl CallDetailsBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.voice_connector_id = Some(input.into());
+    pub fn voice_connector_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.voice_connector_id = input;
         self
     }
     /// <p>The transaction ID of a Voice Connector call.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transaction_id = Some(input.into());
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID of a Voice Connector call.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.transaction_id = input;
         self
     }
     /// <p>Identifies a person as the caller or the callee.</p>
     pub fn is_caller(mut self, input: bool) -> Self {
-        self.is_caller = Some(input);
+        self.is_caller = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies a person as the caller or the callee.</p>
-    pub fn set_is_caller(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_caller(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_caller = input;
         self
     }

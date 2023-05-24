@@ -2,34 +2,34 @@
 
 /// <p>The option that specifies individual data values for labels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataPathLabelType {
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual value of the field that is labeled.</p>
     #[doc(hidden)]
-    pub field_value: std::option::Option<std::string::String>,
+    pub field_value: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of the data label.</p>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::Visibility>,
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DataPathLabelType {
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The actual value of the field that is labeled.</p>
-    pub fn field_value(&self) -> std::option::Option<&str> {
+    pub fn field_value(&self) -> ::std::option::Option<&str> {
         self.field_value.as_deref()
     }
     /// <p>The visibility of the data label.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
-impl std::fmt::Debug for DataPathLabelType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataPathLabelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataPathLabelType");
         formatter.field("field_id", &self.field_id);
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");
@@ -46,40 +46,43 @@ impl DataPathLabelType {
 
 /// A builder for [`DataPathLabelType`](crate::types::DataPathLabelType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DataPathLabelTypeBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) field_value: std::option::Option<std::string::String>,
-    pub(crate) visibility: std::option::Option<crate::types::Visibility>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) field_value: ::std::option::Option<::std::string::String>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl DataPathLabelTypeBuilder {
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field ID of the field that the data label needs to be applied to.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The actual value of the field that is labeled.</p>
-    pub fn field_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_value = Some(input.into());
+    pub fn field_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The actual value of the field that is labeled.</p>
-    pub fn set_field_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_value = input;
         self
     }
     /// <p>The visibility of the data label.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>The visibility of the data label.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.visibility = input;
         self
     }
@@ -92,8 +95,8 @@ impl DataPathLabelTypeBuilder {
         }
     }
 }
-impl std::fmt::Debug for DataPathLabelTypeBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataPathLabelTypeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataPathLabelTypeBuilder");
         formatter.field("field_id", &self.field_id);
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");

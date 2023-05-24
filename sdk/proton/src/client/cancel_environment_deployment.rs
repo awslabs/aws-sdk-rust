@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelEnvironmentDeployment`](crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_name(impl Into<String>)`](crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentFluentBuilder::set_environment_name): <p>The name of the environment with the deployment to cancel.</p>
+    ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentFluentBuilder::set_environment_name): <p>The name of the environment with the deployment to cancel.</p>
     /// - On success, responds with [`CancelEnvironmentDeploymentOutput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput::environment): <p>The environment summary data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<CancelEnvironmentDeploymentError>`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentError)

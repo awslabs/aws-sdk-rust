@@ -2,15 +2,15 @@
 
 /// <p>Configuration information of an Amazon Lex V2 bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexV2Bot {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
     #[doc(hidden)]
-    pub alias_arn: std::option::Option<std::string::String>,
+    pub alias_arn: ::std::option::Option<::std::string::String>,
 }
 impl LexV2Bot {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
-    pub fn alias_arn(&self) -> std::option::Option<&str> {
+    pub fn alias_arn(&self) -> ::std::option::Option<&str> {
         self.alias_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl LexV2Bot {
 
 /// A builder for [`LexV2Bot`](crate::types::LexV2Bot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LexV2BotBuilder {
-    pub(crate) alias_arn: std::option::Option<std::string::String>,
+    pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
 }
 impl LexV2BotBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
-    pub fn alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alias_arn = Some(input.into());
+    pub fn alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Lex V2 bot.</p>
-    pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_arn = input;
         self
     }

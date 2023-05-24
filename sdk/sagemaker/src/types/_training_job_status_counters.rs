@@ -2,7 +2,7 @@
 
 /// <p>The numbers of training jobs launched by a hyperparameter tuning job, categorized by status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingJobStatusCounters {
     /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
     #[doc(hidden)]
@@ -51,62 +51,64 @@ impl TrainingJobStatusCounters {
 
 /// A builder for [`TrainingJobStatusCounters`](crate::types::TrainingJobStatusCounters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrainingJobStatusCountersBuilder {
-    pub(crate) completed: std::option::Option<i32>,
-    pub(crate) in_progress: std::option::Option<i32>,
-    pub(crate) retryable_error: std::option::Option<i32>,
-    pub(crate) non_retryable_error: std::option::Option<i32>,
-    pub(crate) stopped: std::option::Option<i32>,
+    pub(crate) completed: ::std::option::Option<i32>,
+    pub(crate) in_progress: ::std::option::Option<i32>,
+    pub(crate) retryable_error: ::std::option::Option<i32>,
+    pub(crate) non_retryable_error: ::std::option::Option<i32>,
+    pub(crate) stopped: ::std::option::Option<i32>,
 }
 impl TrainingJobStatusCountersBuilder {
     /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
     pub fn completed(mut self, input: i32) -> Self {
-        self.completed = Some(input);
+        self.completed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of completed training jobs launched by the hyperparameter tuning job.</p>
-    pub fn set_completed(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_completed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.completed = input;
         self
     }
     /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
     pub fn in_progress(mut self, input: i32) -> Self {
-        self.in_progress = Some(input);
+        self.in_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of in-progress training jobs launched by a hyperparameter tuning job.</p>
-    pub fn set_in_progress(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_in_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress = input;
         self
     }
     /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
     pub fn retryable_error(mut self, input: i32) -> Self {
-        self.retryable_error = Some(input);
+        self.retryable_error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</p>
-    pub fn set_retryable_error(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retryable_error(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retryable_error = input;
         self
     }
     /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
     pub fn non_retryable_error(mut self, input: i32) -> Self {
-        self.non_retryable_error = Some(input);
+        self.non_retryable_error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</p>
-    pub fn set_non_retryable_error(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_retryable_error(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_retryable_error = input;
         self
     }
     /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
     pub fn stopped(mut self, input: i32) -> Self {
-        self.stopped = Some(input);
+        self.stopped = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</p>
-    pub fn set_stopped(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_stopped(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stopped = input;
         self
     }

@@ -2,20 +2,21 @@
 
 /// <p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
     #[doc(hidden)]
-    pub analysis_schemes: std::option::Option<std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+    pub analysis_schemes:
+        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
-    pub fn analysis_schemes(&self) -> std::option::Option<&[crate::types::AnalysisSchemeStatus]> {
+    pub fn analysis_schemes(&self) -> ::std::option::Option<&[crate::types::AnalysisSchemeStatus]> {
         self.analysis_schemes.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeAnalysisSchemesOutput {
+impl ::aws_http::request_id::RequestId for DescribeAnalysisSchemesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,10 +32,12 @@ impl DescribeAnalysisSchemesOutput {
 
 /// A builder for [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeAnalysisSchemesOutputBuilder {
     pub(crate) analysis_schemes:
-        std::option::Option<std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeAnalysisSchemesOutputBuilder {
@@ -46,13 +49,13 @@ impl DescribeAnalysisSchemesOutputBuilder {
     pub fn analysis_schemes(mut self, input: crate::types::AnalysisSchemeStatus) -> Self {
         let mut v = self.analysis_schemes.unwrap_or_default();
         v.push(input);
-        self.analysis_schemes = Some(v);
+        self.analysis_schemes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The analysis scheme descriptions.</p>
     pub fn set_analysis_schemes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
     ) -> Self {
         self.analysis_schemes = input;
         self

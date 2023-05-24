@@ -2,22 +2,22 @@
 
 /// <p>A structure that represents a range constant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RangeConstant {
     /// <p>The minimum value for a range constant.</p>
     #[doc(hidden)]
-    pub minimum: std::option::Option<std::string::String>,
+    pub minimum: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value for a range constant.</p>
     #[doc(hidden)]
-    pub maximum: std::option::Option<std::string::String>,
+    pub maximum: ::std::option::Option<::std::string::String>,
 }
 impl RangeConstant {
     /// <p>The minimum value for a range constant.</p>
-    pub fn minimum(&self) -> std::option::Option<&str> {
+    pub fn minimum(&self) -> ::std::option::Option<&str> {
         self.minimum.as_deref()
     }
     /// <p>The maximum value for a range constant.</p>
-    pub fn maximum(&self) -> std::option::Option<&str> {
+    pub fn maximum(&self) -> ::std::option::Option<&str> {
         self.maximum.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl RangeConstant {
 
 /// A builder for [`RangeConstant`](crate::types::RangeConstant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RangeConstantBuilder {
-    pub(crate) minimum: std::option::Option<std::string::String>,
-    pub(crate) maximum: std::option::Option<std::string::String>,
+    pub(crate) minimum: ::std::option::Option<::std::string::String>,
+    pub(crate) maximum: ::std::option::Option<::std::string::String>,
 }
 impl RangeConstantBuilder {
     /// <p>The minimum value for a range constant.</p>
-    pub fn minimum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.minimum = Some(input.into());
+    pub fn minimum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.minimum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum value for a range constant.</p>
-    pub fn set_minimum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_minimum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.minimum = input;
         self
     }
     /// <p>The maximum value for a range constant.</p>
-    pub fn maximum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.maximum = Some(input.into());
+    pub fn maximum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.maximum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum value for a range constant.</p>
-    pub fn set_maximum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_maximum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.maximum = input;
         self
     }

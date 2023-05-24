@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>CreateDomainRequest</code>. Contains the status of a newly created domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainOutput {
     /// <p>The current status of the search domain.</p>
     #[doc(hidden)]
-    pub domain_status: std::option::Option<crate::types::DomainStatus>,
+    pub domain_status: ::std::option::Option<crate::types::DomainStatus>,
     _request_id: Option<String>,
 }
 impl CreateDomainOutput {
     /// <p>The current status of the search domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::types::DomainStatus> {
+    pub fn domain_status(&self) -> ::std::option::Option<&crate::types::DomainStatus> {
         self.domain_status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateDomainOutput {
+impl ::aws_http::request_id::RequestId for CreateDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl CreateDomainOutput {
 
 /// A builder for [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDomainOutputBuilder {
-    pub(crate) domain_status: std::option::Option<crate::types::DomainStatus>,
+    pub(crate) domain_status: ::std::option::Option<crate::types::DomainStatus>,
     _request_id: Option<String>,
 }
 impl CreateDomainOutputBuilder {
     /// <p>The current status of the search domain.</p>
     pub fn domain_status(mut self, input: crate::types::DomainStatus) -> Self {
-        self.domain_status = Some(input);
+        self.domain_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the search domain.</p>
     pub fn set_domain_status(
         mut self,
-        input: std::option::Option<crate::types::DomainStatus>,
+        input: ::std::option::Option<crate::types::DomainStatus>,
     ) -> Self {
         self.domain_status = input;
         self

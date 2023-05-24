@@ -7,56 +7,59 @@ pub use crate::operation::start_migration::_start_migration_input::StartMigratio
 ///
 /// <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when you want to take advantage of the new features of Amazon Lex V2.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex developer guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMigrationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_migration::builders::StartMigrationInputBuilder,
 }
 impl StartMigrationFluentBuilder {
     /// Creates a new `StartMigration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_migration::StartMigration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::start_migration::StartMigrationError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_migration::StartMigrationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_migration::StartMigrationOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_migration::StartMigrationError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_migration::StartMigrationError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,35 @@ impl StartMigrationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_migration::StartMigrationOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_migration::StartMigrationError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_migration::StartMigrationError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
-    pub fn v1_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn v1_bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.v1_bot_name(input.into());
         self
     }
     /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
-    pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_v1_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_v1_bot_name(input);
         self
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
-    pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn v1_bot_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.v1_bot_version(input.into());
         self
     }
     /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
-    pub fn set_v1_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_v1_bot_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_v1_bot_version(input);
         self
     }
@@ -100,7 +109,7 @@ impl StartMigrationFluentBuilder {
     /// <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li>
     /// <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    pub fn v2_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn v2_bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.v2_bot_name(input.into());
         self
     }
@@ -109,17 +118,17 @@ impl StartMigrationFluentBuilder {
     /// <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li>
     /// <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li>
     /// </ul>
-    pub fn set_v2_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_v2_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_v2_bot_name(input);
         self
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn v2_bot_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.v2_bot_role(input.into());
         self
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_v2_bot_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_v2_bot_role(input);
         self
     }
@@ -139,7 +148,7 @@ impl StartMigrationFluentBuilder {
     /// </ul>
     pub fn set_migration_strategy(
         mut self,
-        input: std::option::Option<crate::types::MigrationStrategy>,
+        input: ::std::option::Option<crate::types::MigrationStrategy>,
     ) -> Self {
         self.inner = self.inner.set_migration_strategy(input);
         self

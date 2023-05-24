@@ -7,56 +7,63 @@ pub use crate::operation::disassociate_bot::_disassociate_bot_input::Disassociat
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateBotFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::disassociate_bot::builders::DisassociateBotInputBuilder,
 }
 impl DisassociateBotFluentBuilder {
     /// Creates a new `DisassociateBot`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::disassociate_bot::DisassociateBot,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::disassociate_bot::DisassociateBotError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_bot::DisassociateBotError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::disassociate_bot::DisassociateBotOutput,
-        aws_smithy_http::result::SdkError<crate::operation::disassociate_bot::DisassociateBotError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_bot::DisassociateBotError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +76,21 @@ impl DisassociateBotFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::disassociate_bot::DisassociateBotOutput,
-        aws_smithy_http::result::SdkError<crate::operation::disassociate_bot::DisassociateBotError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_bot::DisassociateBotError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
@@ -91,7 +100,7 @@ impl DisassociateBotFluentBuilder {
         self
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
-    pub fn set_lex_bot(mut self, input: std::option::Option<crate::types::LexBot>) -> Self {
+    pub fn set_lex_bot(mut self, input: ::std::option::Option<crate::types::LexBot>) -> Self {
         self.inner = self.inner.set_lex_bot(input);
         self
     }
@@ -101,7 +110,7 @@ impl DisassociateBotFluentBuilder {
         self
     }
     /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
-    pub fn set_lex_v2_bot(mut self, input: std::option::Option<crate::types::LexV2Bot>) -> Self {
+    pub fn set_lex_v2_bot(mut self, input: ::std::option::Option<crate::types::LexV2Bot>) -> Self {
         self.inner = self.inner.set_lex_v2_bot(input);
         self
     }

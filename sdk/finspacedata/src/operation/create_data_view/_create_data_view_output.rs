@@ -2,27 +2,27 @@
 
 /// Response for creating a data view.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataViewOutput {
     /// <p>The unique identifier of the Dataset used for the Dataview.</p>
     #[doc(hidden)]
-    pub dataset_id: std::option::Option<std::string::String>,
+    pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the created Dataview.</p>
     #[doc(hidden)]
-    pub data_view_id: std::option::Option<std::string::String>,
+    pub data_view_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDataViewOutput {
     /// <p>The unique identifier of the Dataset used for the Dataview.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
     /// <p>The unique identifier for the created Dataview.</p>
-    pub fn data_view_id(&self) -> std::option::Option<&str> {
+    pub fn data_view_id(&self) -> ::std::option::Option<&str> {
         self.data_view_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateDataViewOutput {
+impl ::aws_http::request_id::RequestId for CreateDataViewOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl CreateDataViewOutput {
 
 /// A builder for [`CreateDataViewOutput`](crate::operation::create_data_view::CreateDataViewOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDataViewOutputBuilder {
-    pub(crate) dataset_id: std::option::Option<std::string::String>,
-    pub(crate) data_view_id: std::option::Option<std::string::String>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_view_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDataViewOutputBuilder {
     /// <p>The unique identifier of the Dataset used for the Dataview.</p>
-    pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_id = Some(input.into());
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the Dataset used for the Dataview.</p>
-    pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
     }
     /// <p>The unique identifier for the created Dataview.</p>
-    pub fn data_view_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_view_id = Some(input.into());
+    pub fn data_view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_view_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the created Dataview.</p>
-    pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_view_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_view_id = input;
         self
     }

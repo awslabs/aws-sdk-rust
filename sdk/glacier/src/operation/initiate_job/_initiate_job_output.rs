@@ -2,34 +2,34 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateJobOutput {
     /// <p>The relative URI path of the job.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the location of where the select results are stored.</p>
     #[doc(hidden)]
-    pub job_output_path: std::option::Option<std::string::String>,
+    pub job_output_path: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InitiateJobOutput {
     /// <p>The relative URI path of the job.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The ID of the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The path to the location of where the select results are stored.</p>
-    pub fn job_output_path(&self) -> std::option::Option<&str> {
+    pub fn job_output_path(&self) -> ::std::option::Option<&str> {
         self.job_output_path.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for InitiateJobOutput {
+impl ::aws_http::request_id::RequestId for InitiateJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,41 +43,49 @@ impl InitiateJobOutput {
 
 /// A builder for [`InitiateJobOutput`](crate::operation::initiate_job::InitiateJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InitiateJobOutputBuilder {
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) job_output_path: std::option::Option<std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_output_path: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InitiateJobOutputBuilder {
     /// <p>The relative URI path of the job.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative URI path of the job.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The ID of the job.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>The path to the location of where the select results are stored.</p>
-    pub fn job_output_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_output_path = Some(input.into());
+    pub fn job_output_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.job_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the location of where the select results are stored.</p>
-    pub fn set_job_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_output_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.job_output_path = input;
         self
     }

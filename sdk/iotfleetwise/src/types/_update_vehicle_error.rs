@@ -2,21 +2,21 @@
 
 /// <p>An HTTP error resulting from updating the description for a vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
     #[doc(hidden)]
-    pub vehicle_name: std::option::Option<std::string::String>,
+    pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The relevant HTTP error code (400+).</p>
     #[doc(hidden)]
     pub code: i32,
     /// <p>A message associated with the error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVehicleError {
     /// <p>The ID of the vehicle with the error.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The relevant HTTP error code (400+).</p>
@@ -24,7 +24,7 @@ impl UpdateVehicleError {
         self.code
     }
     /// <p>A message associated with the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl UpdateVehicleError {
 
 /// A builder for [`UpdateVehicleError`](crate::types::UpdateVehicleError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateVehicleErrorBuilder {
-    pub(crate) vehicle_name: std::option::Option<std::string::String>,
-    pub(crate) code: std::option::Option<i32>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
+    pub(crate) code: ::std::option::Option<i32>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVehicleErrorBuilder {
     /// <p>The ID of the vehicle with the error.</p>
-    pub fn vehicle_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vehicle_name = Some(input.into());
+    pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vehicle_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the vehicle with the error.</p>
-    pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
     }
     /// <p>The relevant HTTP error code (400+).</p>
     pub fn code(mut self, input: i32) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The relevant HTTP error code (400+).</p>
-    pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
     }
     /// <p>A message associated with the error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message associated with the error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

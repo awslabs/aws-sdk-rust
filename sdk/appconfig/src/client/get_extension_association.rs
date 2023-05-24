@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetExtensionAssociation`](crate::operation::get_extension_association::builders::GetExtensionAssociationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`extension_association_id(impl Into<String>)`](crate::operation::get_extension_association::builders::GetExtensionAssociationFluentBuilder::extension_association_id) / [`set_extension_association_id(Option<String>)`](crate::operation::get_extension_association::builders::GetExtensionAssociationFluentBuilder::set_extension_association_id): <p>The extension association ID to get.</p>
+    ///   - [`extension_association_id(impl ::std::convert::Into<String>)`](crate::operation::get_extension_association::builders::GetExtensionAssociationFluentBuilder::extension_association_id) / [`set_extension_association_id(Option<String>)`](crate::operation::get_extension_association::builders::GetExtensionAssociationFluentBuilder::set_extension_association_id): <p>The extension association ID to get.</p>
     /// - On success, responds with [`GetExtensionAssociationOutput`](crate::operation::get_extension_association::GetExtensionAssociationOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_extension_association::GetExtensionAssociationOutput::id): <p>The system-generated ID for the association.</p>
     ///   - [`extension_arn(Option<String>)`](crate::operation::get_extension_association::GetExtensionAssociationOutput::extension_arn): <p>The ARN of the extension defined in the association.</p>

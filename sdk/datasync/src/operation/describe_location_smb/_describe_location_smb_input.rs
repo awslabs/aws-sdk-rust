@@ -2,15 +2,15 @@
 
 /// <p>DescribeLocationSmbRequest</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
     #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    pub location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationSmbInput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
 }
@@ -25,29 +25,31 @@ impl DescribeLocationSmbInput {
 
 /// A builder for [`DescribeLocationSmbInput`](crate::operation::describe_location_smb::DescribeLocationSmbInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLocationSmbInputBuilder {
-    pub(crate) location_arn: std::option::Option<std::string::String>,
+    pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationSmbInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
-    pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_arn = Some(input.into());
+    pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
-    pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeLocationSmbInput`](crate::operation::describe_location_smb::DescribeLocationSmbInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_location_smb::DescribeLocationSmbInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_location_smb::DescribeLocationSmbInput {
                 location_arn: self.location_arn,
             },

@@ -2,10 +2,10 @@
 pub(crate) fn de_payload_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Blob>,
+    ::std::option::Option<::aws_smithy_types::Blob>,
     crate::operation::get_thing_shadow::GetThingShadowError,
 > {
     (!body.is_empty())
-        .then(|| Ok(aws_smithy_types::Blob::new(body)))
+        .then(|| Ok(::aws_smithy_types::Blob::new(body)))
         .transpose()
 }

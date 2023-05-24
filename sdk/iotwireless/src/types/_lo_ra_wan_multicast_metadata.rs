@@ -2,15 +2,15 @@
 
 /// <p>The metadata information of the LoRaWAN multicast group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastMetadata {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
-    pub f_port: std::option::Option<i32>,
+    pub f_port: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastMetadata {
     /// <p>The Fport value.</p>
-    pub fn f_port(&self) -> std::option::Option<i32> {
+    pub fn f_port(&self) -> ::std::option::Option<i32> {
         self.f_port
     }
 }
@@ -23,18 +23,20 @@ impl LoRaWanMulticastMetadata {
 
 /// A builder for [`LoRaWanMulticastMetadata`](crate::types::LoRaWanMulticastMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanMulticastMetadataBuilder {
-    pub(crate) f_port: std::option::Option<i32>,
+    pub(crate) f_port: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastMetadataBuilder {
     /// <p>The Fport value.</p>
     pub fn f_port(mut self, input: i32) -> Self {
-        self.f_port = Some(input);
+        self.f_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Fport value.</p>
-    pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_f_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.f_port = input;
         self
     }

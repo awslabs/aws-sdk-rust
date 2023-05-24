@@ -2,15 +2,15 @@
 
 /// <p>Represents the data binding configuration for a specific property using data stored in Amazon Web Services. For Amazon Web Services connected properties, you can bind a property to data stored in an Amplify DataStore model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormInputBindingPropertiesValueProperties {
     /// <p>An Amplify DataStore model.</p>
     #[doc(hidden)]
-    pub model: std::option::Option<std::string::String>,
+    pub model: ::std::option::Option<::std::string::String>,
 }
 impl FormInputBindingPropertiesValueProperties {
     /// <p>An Amplify DataStore model.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<&str> {
         self.model.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl FormInputBindingPropertiesValueProperties {
 
 /// A builder for [`FormInputBindingPropertiesValueProperties`](crate::types::FormInputBindingPropertiesValueProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FormInputBindingPropertiesValuePropertiesBuilder {
-    pub(crate) model: std::option::Option<std::string::String>,
+    pub(crate) model: ::std::option::Option<::std::string::String>,
 }
 impl FormInputBindingPropertiesValuePropertiesBuilder {
     /// <p>An Amplify DataStore model.</p>
-    pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model = Some(input.into());
+    pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amplify DataStore model.</p>
-    pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
     }

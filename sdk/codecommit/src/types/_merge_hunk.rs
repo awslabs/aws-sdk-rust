@@ -2,20 +2,20 @@
 
 /// <p>Information about merge hunks in a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeHunk {
     /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
     #[doc(hidden)]
     pub is_conflict: bool,
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::MergeHunkDetail>,
+    pub source: ::std::option::Option<crate::types::MergeHunkDetail>,
     /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::MergeHunkDetail>,
+    pub destination: ::std::option::Option<crate::types::MergeHunkDetail>,
     /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
     #[doc(hidden)]
-    pub base: std::option::Option<crate::types::MergeHunkDetail>,
+    pub base: ::std::option::Option<crate::types::MergeHunkDetail>,
 }
 impl MergeHunk {
     /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
@@ -23,15 +23,15 @@ impl MergeHunk {
         self.is_conflict
     }
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::MergeHunkDetail> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::MergeHunkDetail> {
         self.source.as_ref()
     }
     /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::MergeHunkDetail> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::MergeHunkDetail> {
         self.destination.as_ref()
     }
     /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
-    pub fn base(&self) -> std::option::Option<&crate::types::MergeHunkDetail> {
+    pub fn base(&self) -> ::std::option::Option<&crate::types::MergeHunkDetail> {
         self.base.as_ref()
     }
 }
@@ -44,54 +44,59 @@ impl MergeHunk {
 
 /// A builder for [`MergeHunk`](crate::types::MergeHunk).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MergeHunkBuilder {
-    pub(crate) is_conflict: std::option::Option<bool>,
-    pub(crate) source: std::option::Option<crate::types::MergeHunkDetail>,
-    pub(crate) destination: std::option::Option<crate::types::MergeHunkDetail>,
-    pub(crate) base: std::option::Option<crate::types::MergeHunkDetail>,
+    pub(crate) is_conflict: ::std::option::Option<bool>,
+    pub(crate) source: ::std::option::Option<crate::types::MergeHunkDetail>,
+    pub(crate) destination: ::std::option::Option<crate::types::MergeHunkDetail>,
+    pub(crate) base: ::std::option::Option<crate::types::MergeHunkDetail>,
 }
 impl MergeHunkBuilder {
     /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
     pub fn is_conflict(mut self, input: bool) -> Self {
-        self.is_conflict = Some(input);
+        self.is_conflict = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether a combination of hunks contains a conflict. Conflicts occur when the same file or the same lines in a file were modified in both the source and destination of a merge or pull request. Valid values include true, false, and null. True when the hunk represents a conflict and one or more files contains a line conflict. File mode conflicts in a merge do not set this to true.</p>
-    pub fn set_is_conflict(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_conflict(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_conflict = input;
         self
     }
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
     pub fn source(mut self, input: crate::types::MergeHunkDetail) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::MergeHunkDetail>) -> Self {
+    pub fn set_source(
+        mut self,
+        input: ::std::option::Option<crate::types::MergeHunkDetail>,
+    ) -> Self {
         self.source = input;
         self
     }
     /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: crate::types::MergeHunkDetail) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::MergeHunkDetail>,
+        input: ::std::option::Option<crate::types::MergeHunkDetail>,
     ) -> Self {
         self.destination = input;
         self
     }
     /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
     pub fn base(mut self, input: crate::types::MergeHunkDetail) -> Self {
-        self.base = Some(input);
+        self.base = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
-    pub fn set_base(mut self, input: std::option::Option<crate::types::MergeHunkDetail>) -> Self {
+    pub fn set_base(mut self, input: ::std::option::Option<crate::types::MergeHunkDetail>) -> Self {
         self.base = input;
         self
     }

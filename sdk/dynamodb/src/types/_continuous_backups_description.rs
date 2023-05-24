@@ -2,27 +2,27 @@
 
 /// <p>Represents the continuous backups and point in time recovery settings on the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousBackupsDescription {
     /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     #[doc(hidden)]
-    pub continuous_backups_status: std::option::Option<crate::types::ContinuousBackupsStatus>,
+    pub continuous_backups_status: ::std::option::Option<crate::types::ContinuousBackupsStatus>,
     /// <p>The description of the point in time recovery settings applied to the table.</p>
     #[doc(hidden)]
     pub point_in_time_recovery_description:
-        std::option::Option<crate::types::PointInTimeRecoveryDescription>,
+        ::std::option::Option<crate::types::PointInTimeRecoveryDescription>,
 }
 impl ContinuousBackupsDescription {
     /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     pub fn continuous_backups_status(
         &self,
-    ) -> std::option::Option<&crate::types::ContinuousBackupsStatus> {
+    ) -> ::std::option::Option<&crate::types::ContinuousBackupsStatus> {
         self.continuous_backups_status.as_ref()
     }
     /// <p>The description of the point in time recovery settings applied to the table.</p>
     pub fn point_in_time_recovery_description(
         &self,
-    ) -> std::option::Option<&crate::types::PointInTimeRecoveryDescription> {
+    ) -> ::std::option::Option<&crate::types::PointInTimeRecoveryDescription> {
         self.point_in_time_recovery_description.as_ref()
     }
 }
@@ -35,12 +35,14 @@ impl ContinuousBackupsDescription {
 
 /// A builder for [`ContinuousBackupsDescription`](crate::types::ContinuousBackupsDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContinuousBackupsDescriptionBuilder {
     pub(crate) continuous_backups_status:
-        std::option::Option<crate::types::ContinuousBackupsStatus>,
+        ::std::option::Option<crate::types::ContinuousBackupsStatus>,
     pub(crate) point_in_time_recovery_description:
-        std::option::Option<crate::types::PointInTimeRecoveryDescription>,
+        ::std::option::Option<crate::types::PointInTimeRecoveryDescription>,
 }
 impl ContinuousBackupsDescriptionBuilder {
     /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
@@ -48,13 +50,13 @@ impl ContinuousBackupsDescriptionBuilder {
         mut self,
         input: crate::types::ContinuousBackupsStatus,
     ) -> Self {
-        self.continuous_backups_status = Some(input);
+        self.continuous_backups_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED, DISABLED</p>
     pub fn set_continuous_backups_status(
         mut self,
-        input: std::option::Option<crate::types::ContinuousBackupsStatus>,
+        input: ::std::option::Option<crate::types::ContinuousBackupsStatus>,
     ) -> Self {
         self.continuous_backups_status = input;
         self
@@ -64,13 +66,13 @@ impl ContinuousBackupsDescriptionBuilder {
         mut self,
         input: crate::types::PointInTimeRecoveryDescription,
     ) -> Self {
-        self.point_in_time_recovery_description = Some(input);
+        self.point_in_time_recovery_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of the point in time recovery settings applied to the table.</p>
     pub fn set_point_in_time_recovery_description(
         mut self,
-        input: std::option::Option<crate::types::PointInTimeRecoveryDescription>,
+        input: ::std::option::Option<crate::types::PointInTimeRecoveryDescription>,
     ) -> Self {
         self.point_in_time_recovery_description = input;
         self

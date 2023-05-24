@@ -2,22 +2,22 @@
 
 /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Monitor {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
     #[doc(hidden)]
-    pub alarm_arn: std::option::Option<std::string::String>,
+    pub alarm_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
     #[doc(hidden)]
-    pub alarm_role_arn: std::option::Option<std::string::String>,
+    pub alarm_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Monitor {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
-    pub fn alarm_arn(&self) -> std::option::Option<&str> {
+    pub fn alarm_arn(&self) -> ::std::option::Option<&str> {
         self.alarm_arn.as_deref()
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
-    pub fn alarm_role_arn(&self) -> std::option::Option<&str> {
+    pub fn alarm_role_arn(&self) -> ::std::option::Option<&str> {
         self.alarm_role_arn.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl Monitor {
 
 /// A builder for [`Monitor`](crate::types::Monitor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitorBuilder {
-    pub(crate) alarm_arn: std::option::Option<std::string::String>,
-    pub(crate) alarm_role_arn: std::option::Option<std::string::String>,
+    pub(crate) alarm_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) alarm_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MonitorBuilder {
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
-    pub fn alarm_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alarm_arn = Some(input.into());
+    pub fn alarm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alarm_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.</p>
-    pub fn set_alarm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alarm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alarm_arn = input;
         self
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
-    pub fn alarm_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alarm_role_arn = Some(input.into());
+    pub fn alarm_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.alarm_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.</p>
-    pub fn set_alarm_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alarm_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.alarm_role_arn = input;
         self
     }

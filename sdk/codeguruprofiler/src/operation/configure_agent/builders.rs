@@ -6,56 +6,59 @@ pub use crate::operation::configure_agent::_configure_agent_input::ConfigureAgen
 /// Fluent builder constructing a request to `ConfigureAgent`.
 ///
 /// <p> Used by profiler agents to report their current state and to receive remote configuration updates. For example, <code>ConfigureAgent</code> can be used to tell an agent whether to profile or not and for how long to return profiling data. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfigureAgentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::configure_agent::builders::ConfigureAgentInputBuilder,
 }
 impl ConfigureAgentFluentBuilder {
     /// Creates a new `ConfigureAgent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::configure_agent::ConfigureAgent,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::configure_agent::ConfigureAgentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_agent::ConfigureAgentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::configure_agent::ConfigureAgentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::configure_agent::ConfigureAgentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_agent::ConfigureAgentError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,34 +71,40 @@ impl ConfigureAgentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::configure_agent::ConfigureAgentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::configure_agent::ConfigureAgentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::configure_agent::ConfigureAgentError>,
     > {
         self.send_middleware().await
     }
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
-    pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn profiling_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p> The name of the profiling group for which the configured agent is collecting profiling data. </p>
     pub fn set_profiling_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
-    pub fn fleet_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fleet_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.fleet_instance_id(input.into());
         self
     }
     /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. </p>
     pub fn set_fleet_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_fleet_instance_id(input);
         self
@@ -119,7 +128,7 @@ impl ConfigureAgentFluentBuilder {
     pub fn metadata(
         mut self,
         k: crate::types::MetadataField,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.metadata(k, v.into());
         self
@@ -138,8 +147,8 @@ impl ConfigureAgentFluentBuilder {
     /// </ul>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::MetadataField, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_metadata(input);

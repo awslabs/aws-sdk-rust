@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyEmailIdentityOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for VerifyEmailIdentityOutput {
+impl ::aws_http::request_id::RequestId for VerifyEmailIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl VerifyEmailIdentityOutput {
 
 /// A builder for [`VerifyEmailIdentityOutput`](crate::operation::verify_email_identity::VerifyEmailIdentityOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifyEmailIdentityOutputBuilder {
     _request_id: Option<String>,
 }

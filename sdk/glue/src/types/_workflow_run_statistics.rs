@@ -2,7 +2,7 @@
 
 /// <p>Workflow run statistics provides statistics about the workflow run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowRunStatistics {
     /// <p>Total number of Actions in the workflow run.</p>
     #[doc(hidden)]
@@ -72,95 +72,97 @@ impl WorkflowRunStatistics {
 
 /// A builder for [`WorkflowRunStatistics`](crate::types::WorkflowRunStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkflowRunStatisticsBuilder {
-    pub(crate) total_actions: std::option::Option<i32>,
-    pub(crate) timeout_actions: std::option::Option<i32>,
-    pub(crate) failed_actions: std::option::Option<i32>,
-    pub(crate) stopped_actions: std::option::Option<i32>,
-    pub(crate) succeeded_actions: std::option::Option<i32>,
-    pub(crate) running_actions: std::option::Option<i32>,
-    pub(crate) errored_actions: std::option::Option<i32>,
-    pub(crate) waiting_actions: std::option::Option<i32>,
+    pub(crate) total_actions: ::std::option::Option<i32>,
+    pub(crate) timeout_actions: ::std::option::Option<i32>,
+    pub(crate) failed_actions: ::std::option::Option<i32>,
+    pub(crate) stopped_actions: ::std::option::Option<i32>,
+    pub(crate) succeeded_actions: ::std::option::Option<i32>,
+    pub(crate) running_actions: ::std::option::Option<i32>,
+    pub(crate) errored_actions: ::std::option::Option<i32>,
+    pub(crate) waiting_actions: ::std::option::Option<i32>,
 }
 impl WorkflowRunStatisticsBuilder {
     /// <p>Total number of Actions in the workflow run.</p>
     pub fn total_actions(mut self, input: i32) -> Self {
-        self.total_actions = Some(input);
+        self.total_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of Actions in the workflow run.</p>
-    pub fn set_total_actions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_actions = input;
         self
     }
     /// <p>Total number of Actions that timed out.</p>
     pub fn timeout_actions(mut self, input: i32) -> Self {
-        self.timeout_actions = Some(input);
+        self.timeout_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of Actions that timed out.</p>
-    pub fn set_timeout_actions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_actions = input;
         self
     }
     /// <p>Total number of Actions that have failed.</p>
     pub fn failed_actions(mut self, input: i32) -> Self {
-        self.failed_actions = Some(input);
+        self.failed_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of Actions that have failed.</p>
-    pub fn set_failed_actions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failed_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_actions = input;
         self
     }
     /// <p>Total number of Actions that have stopped.</p>
     pub fn stopped_actions(mut self, input: i32) -> Self {
-        self.stopped_actions = Some(input);
+        self.stopped_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of Actions that have stopped.</p>
-    pub fn set_stopped_actions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_stopped_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stopped_actions = input;
         self
     }
     /// <p>Total number of Actions that have succeeded.</p>
     pub fn succeeded_actions(mut self, input: i32) -> Self {
-        self.succeeded_actions = Some(input);
+        self.succeeded_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of Actions that have succeeded.</p>
-    pub fn set_succeeded_actions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_succeeded_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.succeeded_actions = input;
         self
     }
     /// <p>Total number Actions in running state.</p>
     pub fn running_actions(mut self, input: i32) -> Self {
-        self.running_actions = Some(input);
+        self.running_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number Actions in running state.</p>
-    pub fn set_running_actions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_running_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_actions = input;
         self
     }
     /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
     pub fn errored_actions(mut self, input: i32) -> Self {
-        self.errored_actions = Some(input);
+        self.errored_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the count of job runs in the ERROR state in the workflow run.</p>
-    pub fn set_errored_actions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_errored_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.errored_actions = input;
         self
     }
     /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
     pub fn waiting_actions(mut self, input: i32) -> Self {
-        self.waiting_actions = Some(input);
+        self.waiting_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the count of job runs in WAITING state in the workflow run.</p>
-    pub fn set_waiting_actions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_waiting_actions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.waiting_actions = input;
         self
     }

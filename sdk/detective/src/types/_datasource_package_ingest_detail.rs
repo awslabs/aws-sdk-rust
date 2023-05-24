@@ -2,16 +2,16 @@
 
 /// <p>Details about the data source packages ingested by your behavior graph.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasourcePackageIngestDetail {
     /// <p>Details on which data source packages are ingested for a member account.</p>
     #[doc(hidden)]
     pub datasource_package_ingest_state:
-        std::option::Option<crate::types::DatasourcePackageIngestState>,
+        ::std::option::Option<crate::types::DatasourcePackageIngestState>,
     /// <p>The date a data source package was enabled for this account</p>
     #[doc(hidden)]
-    pub last_ingest_state_change: std::option::Option<
-        std::collections::HashMap<
+    pub last_ingest_state_change: ::std::option::Option<
+        ::std::collections::HashMap<
             crate::types::DatasourcePackageIngestState,
             crate::types::TimestampForCollection,
         >,
@@ -21,14 +21,14 @@ impl DatasourcePackageIngestDetail {
     /// <p>Details on which data source packages are ingested for a member account.</p>
     pub fn datasource_package_ingest_state(
         &self,
-    ) -> std::option::Option<&crate::types::DatasourcePackageIngestState> {
+    ) -> ::std::option::Option<&crate::types::DatasourcePackageIngestState> {
         self.datasource_package_ingest_state.as_ref()
     }
     /// <p>The date a data source package was enabled for this account</p>
     pub fn last_ingest_state_change(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
             crate::types::DatasourcePackageIngestState,
             crate::types::TimestampForCollection,
         >,
@@ -45,12 +45,14 @@ impl DatasourcePackageIngestDetail {
 
 /// A builder for [`DatasourcePackageIngestDetail`](crate::types::DatasourcePackageIngestDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasourcePackageIngestDetailBuilder {
     pub(crate) datasource_package_ingest_state:
-        std::option::Option<crate::types::DatasourcePackageIngestState>,
-    pub(crate) last_ingest_state_change: std::option::Option<
-        std::collections::HashMap<
+        ::std::option::Option<crate::types::DatasourcePackageIngestState>,
+    pub(crate) last_ingest_state_change: ::std::option::Option<
+        ::std::collections::HashMap<
             crate::types::DatasourcePackageIngestState,
             crate::types::TimestampForCollection,
         >,
@@ -62,13 +64,13 @@ impl DatasourcePackageIngestDetailBuilder {
         mut self,
         input: crate::types::DatasourcePackageIngestState,
     ) -> Self {
-        self.datasource_package_ingest_state = Some(input);
+        self.datasource_package_ingest_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details on which data source packages are ingested for a member account.</p>
     pub fn set_datasource_package_ingest_state(
         mut self,
-        input: std::option::Option<crate::types::DatasourcePackageIngestState>,
+        input: ::std::option::Option<crate::types::DatasourcePackageIngestState>,
     ) -> Self {
         self.datasource_package_ingest_state = input;
         self
@@ -85,14 +87,14 @@ impl DatasourcePackageIngestDetailBuilder {
     ) -> Self {
         let mut hash_map = self.last_ingest_state_change.unwrap_or_default();
         hash_map.insert(k, v);
-        self.last_ingest_state_change = Some(hash_map);
+        self.last_ingest_state_change = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The date a data source package was enabled for this account</p>
     pub fn set_last_ingest_state_change(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::DatasourcePackageIngestState,
                 crate::types::TimestampForCollection,
             >,

@@ -38,13 +38,13 @@
 /// The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AntiAlias {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AntiAlias {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AntiAlias {
+impl ::std::convert::From<&str> for AntiAlias {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AntiAlias::Disabled,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for AntiAlias {
         }
     }
 }
-impl std::str::FromStr for AntiAlias {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AntiAlias {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AntiAlias::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AntiAlias::from(s))
     }
 }
 impl AntiAlias {
@@ -84,7 +84,7 @@ impl AntiAlias {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for AntiAlias {
+impl ::std::convert::AsRef<str> for AntiAlias {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

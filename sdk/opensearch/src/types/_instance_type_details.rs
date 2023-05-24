@@ -2,66 +2,66 @@
 
 /// <p>Lists all instance types and available features for a given OpenSearch or Elasticsearch version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTypeDetails {
     /// <p>The instance type.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
     #[doc(hidden)]
-    pub encryption_enabled: std::option::Option<bool>,
+    pub encryption_enabled: ::std::option::Option<bool>,
     /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
     #[doc(hidden)]
-    pub cognito_enabled: std::option::Option<bool>,
+    pub cognito_enabled: ::std::option::Option<bool>,
     /// <p>Whether logging is supported for the instance type.</p>
     #[doc(hidden)]
-    pub app_logs_enabled: std::option::Option<bool>,
+    pub app_logs_enabled: ::std::option::Option<bool>,
     /// <p>Whether fine-grained access control is supported for the instance type.</p>
     #[doc(hidden)]
-    pub advanced_security_enabled: std::option::Option<bool>,
+    pub advanced_security_enabled: ::std::option::Option<bool>,
     /// <p>Whether UltraWarm is supported for the instance type.</p>
     #[doc(hidden)]
-    pub warm_enabled: std::option::Option<bool>,
+    pub warm_enabled: ::std::option::Option<bool>,
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
     #[doc(hidden)]
-    pub instance_role: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instance_role: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported Availability Zones for the instance type.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceTypeDetails {
     /// <p>The instance type.</p>
     pub fn instance_type(
         &self,
-    ) -> std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
+    ) -> ::std::option::Option<&crate::types::OpenSearchPartitionInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
-    pub fn encryption_enabled(&self) -> std::option::Option<bool> {
+    pub fn encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.encryption_enabled
     }
     /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
-    pub fn cognito_enabled(&self) -> std::option::Option<bool> {
+    pub fn cognito_enabled(&self) -> ::std::option::Option<bool> {
         self.cognito_enabled
     }
     /// <p>Whether logging is supported for the instance type.</p>
-    pub fn app_logs_enabled(&self) -> std::option::Option<bool> {
+    pub fn app_logs_enabled(&self) -> ::std::option::Option<bool> {
         self.app_logs_enabled
     }
     /// <p>Whether fine-grained access control is supported for the instance type.</p>
-    pub fn advanced_security_enabled(&self) -> std::option::Option<bool> {
+    pub fn advanced_security_enabled(&self) -> ::std::option::Option<bool> {
         self.advanced_security_enabled
     }
     /// <p>Whether UltraWarm is supported for the instance type.</p>
-    pub fn warm_enabled(&self) -> std::option::Option<bool> {
+    pub fn warm_enabled(&self) -> ::std::option::Option<bool> {
         self.warm_enabled
     }
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub fn instance_role(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_role(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_role.as_deref()
     }
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
@@ -74,78 +74,80 @@ impl InstanceTypeDetails {
 
 /// A builder for [`InstanceTypeDetails`](crate::types::InstanceTypeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceTypeDetailsBuilder {
-    pub(crate) instance_type: std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
-    pub(crate) encryption_enabled: std::option::Option<bool>,
-    pub(crate) cognito_enabled: std::option::Option<bool>,
-    pub(crate) app_logs_enabled: std::option::Option<bool>,
-    pub(crate) advanced_security_enabled: std::option::Option<bool>,
-    pub(crate) warm_enabled: std::option::Option<bool>,
-    pub(crate) instance_role: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
+    pub(crate) encryption_enabled: ::std::option::Option<bool>,
+    pub(crate) cognito_enabled: ::std::option::Option<bool>,
+    pub(crate) app_logs_enabled: ::std::option::Option<bool>,
+    pub(crate) advanced_security_enabled: ::std::option::Option<bool>,
+    pub(crate) warm_enabled: ::std::option::Option<bool>,
+    pub(crate) instance_role: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceTypeDetailsBuilder {
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::OpenSearchPartitionInstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance type.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
+        input: ::std::option::Option<crate::types::OpenSearchPartitionInstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
     pub fn encryption_enabled(mut self, input: bool) -> Self {
-        self.encryption_enabled = Some(input);
+        self.encryption_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether encryption at rest and node-to-node encryption are supported for the instance type.</p>
-    pub fn set_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_enabled = input;
         self
     }
     /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
     pub fn cognito_enabled(mut self, input: bool) -> Self {
-        self.cognito_enabled = Some(input);
+        self.cognito_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether Amazon Cognito access is supported for the instance type.</p>
-    pub fn set_cognito_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cognito_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cognito_enabled = input;
         self
     }
     /// <p>Whether logging is supported for the instance type.</p>
     pub fn app_logs_enabled(mut self, input: bool) -> Self {
-        self.app_logs_enabled = Some(input);
+        self.app_logs_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether logging is supported for the instance type.</p>
-    pub fn set_app_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_app_logs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.app_logs_enabled = input;
         self
     }
     /// <p>Whether fine-grained access control is supported for the instance type.</p>
     pub fn advanced_security_enabled(mut self, input: bool) -> Self {
-        self.advanced_security_enabled = Some(input);
+        self.advanced_security_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether fine-grained access control is supported for the instance type.</p>
-    pub fn set_advanced_security_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_advanced_security_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.advanced_security_enabled = input;
         self
     }
     /// <p>Whether UltraWarm is supported for the instance type.</p>
     pub fn warm_enabled(mut self, input: bool) -> Self {
-        self.warm_enabled = Some(input);
+        self.warm_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether UltraWarm is supported for the instance type.</p>
-    pub fn set_warm_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_warm_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.warm_enabled = input;
         self
     }
@@ -154,16 +156,19 @@ impl InstanceTypeDetailsBuilder {
     /// To override the contents of this collection use [`set_instance_role`](Self::set_instance_role).
     ///
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
-    pub fn instance_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.instance_role.unwrap_or_default();
         v.push(input.into());
-        self.instance_role = Some(v);
+        self.instance_role = ::std::option::Option::Some(v);
         self
     }
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
     pub fn set_instance_role(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instance_role = input;
         self
@@ -173,16 +178,19 @@ impl InstanceTypeDetailsBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The supported Availability Zones for the instance type.</p>
-    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported Availability Zones for the instance type.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.availability_zones = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>An error or warning for the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardValidationMessage {
     /// <p>The data path related to the message.</p>
     #[doc(hidden)]
-    pub data_path: std::option::Option<std::string::String>,
+    pub data_path: ::std::option::Option<::std::string::String>,
     /// <p>A message describing the error or warning.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DashboardValidationMessage {
     /// <p>The data path related to the message.</p>
-    pub fn data_path(&self) -> std::option::Option<&str> {
+    pub fn data_path(&self) -> ::std::option::Option<&str> {
         self.data_path.as_deref()
     }
     /// <p>A message describing the error or warning.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl DashboardValidationMessage {
 
 /// A builder for [`DashboardValidationMessage`](crate::types::DashboardValidationMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DashboardValidationMessageBuilder {
-    pub(crate) data_path: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) data_path: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DashboardValidationMessageBuilder {
     /// <p>The data path related to the message.</p>
-    pub fn data_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_path = Some(input.into());
+    pub fn data_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data path related to the message.</p>
-    pub fn set_data_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_path = input;
         self
     }
     /// <p>A message describing the error or warning.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message describing the error or warning.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

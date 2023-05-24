@@ -38,13 +38,13 @@
 /// A predefined code indicating the error that caused the failure in getting state of campaigns
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum GetCampaignStateBatchFailureCode {
     /// The specified resource was not found
@@ -54,7 +54,7 @@ pub enum GetCampaignStateBatchFailureCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for GetCampaignStateBatchFailureCode {
+impl ::std::convert::From<&str> for GetCampaignStateBatchFailureCode {
     fn from(s: &str) -> Self {
         match s {
             "ResourceNotFound" => GetCampaignStateBatchFailureCode::ResourceNotFound,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for GetCampaignStateBatchFailureCode {
         }
     }
 }
-impl std::str::FromStr for GetCampaignStateBatchFailureCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for GetCampaignStateBatchFailureCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GetCampaignStateBatchFailureCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(GetCampaignStateBatchFailureCode::from(s))
     }
 }
 impl GetCampaignStateBatchFailureCode {
@@ -86,7 +86,7 @@ impl GetCampaignStateBatchFailureCode {
         &["ResourceNotFound", "UnknownError"]
     }
 }
-impl AsRef<str> for GetCampaignStateBatchFailureCode {
+impl ::std::convert::AsRef<str> for GetCampaignStateBatchFailureCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

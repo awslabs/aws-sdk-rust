@@ -2,22 +2,22 @@
 
 /// <p>An array of objects representing the destination for a replication rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationDestination {
     /// <p>The Region to replicate to.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
     #[doc(hidden)]
-    pub registry_id: std::option::Option<std::string::String>,
+    pub registry_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationDestination {
     /// <p>The Region to replicate to.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<&str> {
         self.registry_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ReplicationDestination {
 
 /// A builder for [`ReplicationDestination`](crate::types::ReplicationDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationDestinationBuilder {
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) registry_id: std::option::Option<std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) registry_id: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationDestinationBuilder {
     /// <p>The Region to replicate to.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region to replicate to.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
-    pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registry_id = Some(input.into());
+    pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.registry_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
-    pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
     }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateRegistry`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`description(impl Into<String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::set_description): <p>A description of the registry to be created.</p>
-    ///   - [`registry_name(impl Into<String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::set_description): <p>A description of the registry to be created.</p>
+    ///   - [`registry_name(impl ::std::convert::Into<String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::set_registry_name): <p>The name of the registry.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_registry::builders::CreateRegistryFluentBuilder::set_tags): <p>Tags to associate with the registry.</p>
     /// - On success, responds with [`CreateRegistryOutput`](crate::operation::create_registry::CreateRegistryOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::operation::create_registry::CreateRegistryOutput::description): <p>The description of the registry.</p>

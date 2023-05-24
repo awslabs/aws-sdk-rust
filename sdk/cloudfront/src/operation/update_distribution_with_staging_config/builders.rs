@@ -7,47 +7,50 @@ pub use crate::operation::update_distribution_with_staging_config::_update_distr
 ///
 /// <p>Copies the staging distribution's configuration to its corresponding primary distribution. The primary distribution retains its <code>Aliases</code> (also known as alternate domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise its configuration is overwritten to match the staging distribution.</p>
 /// <p>You can use this operation in a continuous deployment workflow after you have tested configuration changes on the staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic to the staging distribution and verifying that it works as intended, you can use this operation to copy the staging distribution's configuration to the primary distribution. This action will disable the continuous deployment policy and move your domain's traffic back to the primary distribution.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDistributionWithStagingConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder,
 }
 impl UpdateDistributionWithStagingConfigFluentBuilder {
     /// Creates a new `UpdateDistributionWithStagingConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,29 +61,32 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError>>
                          {
         self.send_middleware().await
     }
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
-    pub fn staging_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn staging_distribution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.staging_distribution_id(input.into());
         self
     }
     /// <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
     pub fn set_staging_distribution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_staging_distribution_id(input);
         self
@@ -91,7 +97,7 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
     /// ,
     /// <staging etag></staging>
     /// </primary></code> </p>
-    pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
@@ -101,7 +107,7 @@ impl UpdateDistributionWithStagingConfigFluentBuilder {
     /// ,
     /// <staging etag></staging>
     /// </primary></code> </p>
-    pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }

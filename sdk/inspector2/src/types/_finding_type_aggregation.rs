@@ -2,36 +2,36 @@
 
 /// <p>The details that define an aggregation based on finding type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingTypeAggregation {
     /// <p>The finding type to aggregate.</p>
     #[doc(hidden)]
-    pub finding_type: std::option::Option<crate::types::AggregationFindingType>,
+    pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
     /// <p>The resource type to aggregate.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::AggregationResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
     /// <p>The order to sort results by.</p>
     #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::types::SortOrder>,
+    pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
     #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::types::FindingTypeSortBy>,
+    pub sort_by: ::std::option::Option<crate::types::FindingTypeSortBy>,
 }
 impl FindingTypeAggregation {
     /// <p>The finding type to aggregate.</p>
-    pub fn finding_type(&self) -> std::option::Option<&crate::types::AggregationFindingType> {
+    pub fn finding_type(&self) -> ::std::option::Option<&crate::types::AggregationFindingType> {
         self.finding_type.as_ref()
     }
     /// <p>The resource type to aggregate.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::AggregationResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::AggregationResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The order to sort results by.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort results by.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::FindingTypeSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::FindingTypeSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -44,59 +44,61 @@ impl FindingTypeAggregation {
 
 /// A builder for [`FindingTypeAggregation`](crate::types::FindingTypeAggregation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindingTypeAggregationBuilder {
-    pub(crate) finding_type: std::option::Option<crate::types::AggregationFindingType>,
-    pub(crate) resource_type: std::option::Option<crate::types::AggregationResourceType>,
-    pub(crate) sort_order: std::option::Option<crate::types::SortOrder>,
-    pub(crate) sort_by: std::option::Option<crate::types::FindingTypeSortBy>,
+    pub(crate) finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
+    pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
+    pub(crate) sort_by: ::std::option::Option<crate::types::FindingTypeSortBy>,
 }
 impl FindingTypeAggregationBuilder {
     /// <p>The finding type to aggregate.</p>
     pub fn finding_type(mut self, input: crate::types::AggregationFindingType) -> Self {
-        self.finding_type = Some(input);
+        self.finding_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The finding type to aggregate.</p>
     pub fn set_finding_type(
         mut self,
-        input: std::option::Option<crate::types::AggregationFindingType>,
+        input: ::std::option::Option<crate::types::AggregationFindingType>,
     ) -> Self {
         self.finding_type = input;
         self
     }
     /// <p>The resource type to aggregate.</p>
     pub fn resource_type(mut self, input: crate::types::AggregationResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type to aggregate.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::AggregationResourceType>,
+        input: ::std::option::Option<crate::types::AggregationResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
-        self.sort_order = Some(input);
+        self.sort_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order to sort results by.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::FindingTypeSortBy) -> Self {
-        self.sort_by = Some(input);
+        self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value to sort results by.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::FindingTypeSortBy>,
+        input: ::std::option::Option<crate::types::FindingTypeSortBy>,
     ) -> Self {
         self.sort_by = input;
         self

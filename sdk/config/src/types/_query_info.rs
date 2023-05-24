@@ -2,15 +2,15 @@
 
 /// <p>Details about the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryInfo {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
     #[doc(hidden)]
-    pub select_fields: std::option::Option<std::vec::Vec<crate::types::FieldInfo>>,
+    pub select_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldInfo>>,
 }
 impl QueryInfo {
     /// <p>Returns a <code>FieldInfo</code> object.</p>
-    pub fn select_fields(&self) -> std::option::Option<&[crate::types::FieldInfo]> {
+    pub fn select_fields(&self) -> ::std::option::Option<&[crate::types::FieldInfo]> {
         self.select_fields.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl QueryInfo {
 
 /// A builder for [`QueryInfo`](crate::types::QueryInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryInfoBuilder {
-    pub(crate) select_fields: std::option::Option<std::vec::Vec<crate::types::FieldInfo>>,
+    pub(crate) select_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldInfo>>,
 }
 impl QueryInfoBuilder {
     /// Appends an item to `select_fields`.
@@ -36,13 +38,13 @@ impl QueryInfoBuilder {
     pub fn select_fields(mut self, input: crate::types::FieldInfo) -> Self {
         let mut v = self.select_fields.unwrap_or_default();
         v.push(input);
-        self.select_fields = Some(v);
+        self.select_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a <code>FieldInfo</code> object.</p>
     pub fn set_select_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldInfo>>,
     ) -> Self {
         self.select_fields = input;
         self

@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SortPipelineExecutionsBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SortPipelineExecutionsBy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SortPipelineExecutionsBy {
+impl ::std::convert::From<&str> for SortPipelineExecutionsBy {
     fn from(s: &str) -> Self {
         match s {
             "CreationTime" => SortPipelineExecutionsBy::CreationTime,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SortPipelineExecutionsBy {
         }
     }
 }
-impl std::str::FromStr for SortPipelineExecutionsBy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SortPipelineExecutionsBy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortPipelineExecutionsBy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SortPipelineExecutionsBy::from(s))
     }
 }
 impl SortPipelineExecutionsBy {
@@ -86,7 +86,7 @@ impl SortPipelineExecutionsBy {
         &["CreationTime", "PipelineExecutionArn"]
     }
 }
-impl AsRef<str> for SortPipelineExecutionsBy {
+impl ::std::convert::AsRef<str> for SortPipelineExecutionsBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

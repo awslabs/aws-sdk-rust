@@ -2,22 +2,22 @@
 
 /// <p> Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountHealth {
     /// <p>The ID of the Amazon Web Services account. </p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     #[doc(hidden)]
-    pub insight: std::option::Option<crate::types::AccountInsightHealth>,
+    pub insight: ::std::option::Option<crate::types::AccountInsightHealth>,
 }
 impl AccountHealth {
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
-    pub fn insight(&self) -> std::option::Option<&crate::types::AccountInsightHealth> {
+    pub fn insight(&self) -> ::std::option::Option<&crate::types::AccountInsightHealth> {
         self.insight.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl AccountHealth {
 
 /// A builder for [`AccountHealth`](crate::types::AccountHealth).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountHealthBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) insight: std::option::Option<crate::types::AccountInsightHealth>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) insight: ::std::option::Option<crate::types::AccountInsightHealth>,
 }
 impl AccountHealthBuilder {
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     pub fn insight(mut self, input: crate::types::AccountInsightHealth) -> Self {
-        self.insight = Some(input);
+        self.insight = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about the health of the Amazon Web Services resources in your account, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     pub fn set_insight(
         mut self,
-        input: std::option::Option<crate::types::AccountInsightHealth>,
+        input: ::std::option::Option<crate::types::AccountInsightHealth>,
     ) -> Self {
         self.insight = input;
         self

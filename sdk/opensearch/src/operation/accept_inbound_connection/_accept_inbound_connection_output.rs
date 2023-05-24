@@ -2,20 +2,20 @@
 
 /// <p>Contains details about the accepted inbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptInboundConnectionOutput {
     /// <p>Information about the accepted inbound connection.</p>
     #[doc(hidden)]
-    pub connection: std::option::Option<crate::types::InboundConnection>,
+    pub connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }
 impl AcceptInboundConnectionOutput {
     /// <p>Information about the accepted inbound connection.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::types::InboundConnection> {
+    pub fn connection(&self) -> ::std::option::Option<&crate::types::InboundConnection> {
         self.connection.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for AcceptInboundConnectionOutput {
+impl ::aws_http::request_id::RequestId for AcceptInboundConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl AcceptInboundConnectionOutput {
 
 /// A builder for [`AcceptInboundConnectionOutput`](crate::operation::accept_inbound_connection::AcceptInboundConnectionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AcceptInboundConnectionOutputBuilder {
-    pub(crate) connection: std::option::Option<crate::types::InboundConnection>,
+    pub(crate) connection: ::std::option::Option<crate::types::InboundConnection>,
     _request_id: Option<String>,
 }
 impl AcceptInboundConnectionOutputBuilder {
     /// <p>Information about the accepted inbound connection.</p>
     pub fn connection(mut self, input: crate::types::InboundConnection) -> Self {
-        self.connection = Some(input);
+        self.connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the accepted inbound connection.</p>
     pub fn set_connection(
         mut self,
-        input: std::option::Option<crate::types::InboundConnection>,
+        input: ::std::option::Option<crate::types::InboundConnection>,
     ) -> Self {
         self.connection = input;
         self

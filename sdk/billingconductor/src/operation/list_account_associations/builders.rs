@@ -6,30 +6,30 @@ pub use crate::operation::list_account_associations::_list_account_associations_
 /// Fluent builder constructing a request to `ListAccountAssociations`.
 ///
 /// <p> This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group that's associated with the linked account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder,
 }
 impl ListAccountAssociationsFluentBuilder {
     /// Creates a new `ListAccountAssociations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_account_associations::ListAccountAssociations,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_account_associations::ListAccountAssociationsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl ListAccountAssociationsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_account_associations::ListAccountAssociationsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_account_associations::ListAccountAssociationsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl ListAccountAssociationsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_account_associations::ListAccountAssociationsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_account_associations::ListAccountAssociationsError,
         >,
     > {
@@ -91,12 +94,18 @@ impl ListAccountAssociationsFluentBuilder {
         crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator::new(self.handle, self.inner)
     }
     /// <p> The preferred billing period to get account associations. </p>
-    pub fn billing_period(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn billing_period(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.billing_period(input.into());
         self
     }
     /// <p> The preferred billing period to get account associations. </p>
-    pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_billing_period(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_billing_period(input);
         self
     }
@@ -114,18 +123,18 @@ impl ListAccountAssociationsFluentBuilder {
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn. </p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<crate::types::ListAccountAssociationsFilter>,
+        input: ::std::option::Option<crate::types::ListAccountAssociationsFilter>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p> The pagination token that's used on subsequent calls to retrieve accounts. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

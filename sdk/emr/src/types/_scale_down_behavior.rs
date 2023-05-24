@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ScaleDownBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ScaleDownBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ScaleDownBehavior {
+impl ::std::convert::From<&str> for ScaleDownBehavior {
     fn from(s: &str) -> Self {
         match s {
             "TERMINATE_AT_INSTANCE_HOUR" => ScaleDownBehavior::TerminateAtInstanceHour,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ScaleDownBehavior {
         }
     }
 }
-impl std::str::FromStr for ScaleDownBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ScaleDownBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScaleDownBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ScaleDownBehavior::from(s))
     }
 }
 impl ScaleDownBehavior {
@@ -86,7 +86,7 @@ impl ScaleDownBehavior {
         &["TERMINATE_AT_INSTANCE_HOUR", "TERMINATE_AT_TASK_COMPLETION"]
     }
 }
-impl AsRef<str> for ScaleDownBehavior {
+impl ::std::convert::AsRef<str> for ScaleDownBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

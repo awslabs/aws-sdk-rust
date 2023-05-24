@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteResourceDefinition`](crate::operation::delete_resource_definition::builders::DeleteResourceDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_definition_id(impl Into<String>)`](crate::operation::delete_resource_definition::builders::DeleteResourceDefinitionFluentBuilder::resource_definition_id) / [`set_resource_definition_id(Option<String>)`](crate::operation::delete_resource_definition::builders::DeleteResourceDefinitionFluentBuilder::set_resource_definition_id): The ID of the resource definition.
+    ///   - [`resource_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_resource_definition::builders::DeleteResourceDefinitionFluentBuilder::resource_definition_id) / [`set_resource_definition_id(Option<String>)`](crate::operation::delete_resource_definition::builders::DeleteResourceDefinitionFluentBuilder::set_resource_definition_id): The ID of the resource definition.
     /// - On success, responds with [`DeleteResourceDefinitionOutput`](crate::operation::delete_resource_definition::DeleteResourceDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteResourceDefinitionError>`](crate::operation::delete_resource_definition::DeleteResourceDefinitionError)
     pub fn delete_resource_definition(

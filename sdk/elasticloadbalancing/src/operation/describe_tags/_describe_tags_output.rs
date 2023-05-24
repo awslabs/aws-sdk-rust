@@ -2,20 +2,20 @@
 
 /// <p>Contains the output for DescribeTags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTagsOutput {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
-    pub tag_descriptions: std::option::Option<std::vec::Vec<crate::types::TagDescription>>,
+    pub tag_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeTagsOutput {
     /// <p>Information about the tags.</p>
-    pub fn tag_descriptions(&self) -> std::option::Option<&[crate::types::TagDescription]> {
+    pub fn tag_descriptions(&self) -> ::std::option::Option<&[crate::types::TagDescription]> {
         self.tag_descriptions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTagsOutput {
+impl ::aws_http::request_id::RequestId for DescribeTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,12 @@ impl DescribeTagsOutput {
 
 /// A builder for [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTagsOutputBuilder {
-    pub(crate) tag_descriptions: std::option::Option<std::vec::Vec<crate::types::TagDescription>>,
+    pub(crate) tag_descriptions:
+        ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeTagsOutputBuilder {
@@ -43,13 +46,13 @@ impl DescribeTagsOutputBuilder {
     pub fn tag_descriptions(mut self, input: crate::types::TagDescription) -> Self {
         let mut v = self.tag_descriptions.unwrap_or_default();
         v.push(input);
-        self.tag_descriptions = Some(v);
+        self.tag_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the tags.</p>
     pub fn set_tag_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagDescription>>,
     ) -> Self {
         self.tag_descriptions = input;
         self

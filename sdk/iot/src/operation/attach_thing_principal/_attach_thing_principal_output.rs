@@ -2,11 +2,11 @@
 
 /// <p>The output from the AttachThingPrincipal operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachThingPrincipalOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AttachThingPrincipalOutput {
+impl ::aws_http::request_id::RequestId for AttachThingPrincipalOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl AttachThingPrincipalOutput {
 
 /// A builder for [`AttachThingPrincipalOutput`](crate::operation::attach_thing_principal::AttachThingPrincipalOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttachThingPrincipalOutputBuilder {
     _request_id: Option<String>,
 }

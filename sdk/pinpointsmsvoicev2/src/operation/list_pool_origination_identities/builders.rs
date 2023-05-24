@@ -7,29 +7,29 @@ pub use crate::operation::list_pool_origination_identities::_list_pool_originati
 ///
 /// <p>Lists all associated origination identities in your pool.</p>
 /// <p>If you specify filters, the output includes information for only those origination identities that meet the filter criteria.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPoolOriginationIdentitiesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesInputBuilder,
 }
 impl ListPoolOriginationIdentitiesFluentBuilder {
     /// Creates a new `ListPoolOriginationIdentities`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_pool_origination_identities::ListPoolOriginationIdentities,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError,
         >,
     > {
@@ -37,30 +37,33 @@ impl ListPoolOriginationIdentitiesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl ListPoolOriginationIdentitiesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError,
         >,
     > {
@@ -88,12 +91,12 @@ impl ListPoolOriginationIdentitiesFluentBuilder {
         crate::operation::list_pool_origination_identities::paginator::ListPoolOriginationIdentitiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
-    pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
-    pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
@@ -109,18 +112,20 @@ impl ListPoolOriginationIdentitiesFluentBuilder {
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -130,7 +135,7 @@ impl ListPoolOriginationIdentitiesFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return per each request.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

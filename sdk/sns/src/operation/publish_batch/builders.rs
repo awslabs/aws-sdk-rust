@@ -13,56 +13,59 @@ pub use crate::operation::publish_batch::_publish_batch_input::PublishBatchInput
 /// <p>&amp;AttributeName.2=second</p>
 /// <p>If you send a batch message to a topic, Amazon SNS publishes the batch message to each endpoint that is subscribed to the topic. The format of the batch message depends on the notification protocol for each subscribed endpoint.</p>
 /// <p>When a <code>messageId</code> is returned, the batch message is saved and Amazon SNS immediately delivers the message to subscribers.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PublishBatchFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::publish_batch::builders::PublishBatchInputBuilder,
 }
 impl PublishBatchFluentBuilder {
     /// Creates a new `PublishBatch`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::publish_batch::PublishBatch,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::publish_batch::PublishBatchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,19 +78,19 @@ impl PublishBatchFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::publish_batch::PublishBatchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::publish_batch::PublishBatchError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-    pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_arn(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) of the topic you want to batch publish to.</p>
-    pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_arn(input);
         self
     }
@@ -106,7 +109,7 @@ impl PublishBatchFluentBuilder {
     /// <p>A list of <code>PublishBatch</code> request entries to be sent to the SNS topic.</p>
     pub fn set_publish_batch_request_entries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PublishBatchRequestEntry>>,
     ) -> Self {
         self.inner = self.inner.set_publish_batch_request_entries(input);
         self

@@ -6,29 +6,29 @@ pub use crate::operation::modify_saml_properties::_modify_saml_properties_input:
 /// Fluent builder constructing a request to `ModifySamlProperties`.
 ///
 /// <p>Modifies multiple properties related to SAML 2.0 authentication, including the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifySamlPropertiesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder,
 }
 impl ModifySamlPropertiesFluentBuilder {
     /// Creates a new `ModifySamlProperties`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_saml_properties::ModifySamlProperties,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_saml_properties::ModifySamlPropertiesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ModifySamlPropertiesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_saml_properties::ModifySamlPropertiesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_saml_properties::ModifySamlPropertiesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl ModifySamlPropertiesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_saml_properties::ModifySamlPropertiesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_saml_properties::ModifySamlPropertiesError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>The directory identifier for which you want to configure SAML properties.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
@@ -98,7 +101,7 @@ impl ModifySamlPropertiesFluentBuilder {
     /// <p>The properties for configuring SAML 2.0 authentication.</p>
     pub fn set_saml_properties(
         mut self,
-        input: std::option::Option<crate::types::SamlProperties>,
+        input: ::std::option::Option<crate::types::SamlProperties>,
     ) -> Self {
         self.inner = self.inner.set_saml_properties(input);
         self
@@ -125,7 +128,7 @@ impl ModifySamlPropertiesFluentBuilder {
     /// </ul>
     pub fn set_properties_to_delete(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeletableSamlProperty>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeletableSamlProperty>>,
     ) -> Self {
         self.inner = self.inner.set_properties_to_delete(input);
         self

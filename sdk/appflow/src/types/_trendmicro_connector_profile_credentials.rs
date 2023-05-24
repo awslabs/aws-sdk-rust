@@ -2,20 +2,20 @@
 
 /// <p> The connector-specific profile credentials required when using Trend Micro. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TrendmicroConnectorProfileCredentials {
     /// <p> The Secret Access Key portion of the credentials. </p>
     #[doc(hidden)]
-    pub api_secret_key: std::option::Option<std::string::String>,
+    pub api_secret_key: ::std::option::Option<::std::string::String>,
 }
 impl TrendmicroConnectorProfileCredentials {
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn api_secret_key(&self) -> std::option::Option<&str> {
+    pub fn api_secret_key(&self) -> ::std::option::Option<&str> {
         self.api_secret_key.as_deref()
     }
 }
-impl std::fmt::Debug for TrendmicroConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TrendmicroConnectorProfileCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TrendmicroConnectorProfileCredentials");
         formatter.field("api_secret_key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,24 @@ impl TrendmicroConnectorProfileCredentials {
 
 /// A builder for [`TrendmicroConnectorProfileCredentials`](crate::types::TrendmicroConnectorProfileCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TrendmicroConnectorProfileCredentialsBuilder {
-    pub(crate) api_secret_key: std::option::Option<std::string::String>,
+    pub(crate) api_secret_key: ::std::option::Option<::std::string::String>,
 }
 impl TrendmicroConnectorProfileCredentialsBuilder {
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn api_secret_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_secret_key = Some(input.into());
+    pub fn api_secret_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_secret_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn set_api_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_secret_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.api_secret_key = input;
         self
     }
@@ -52,8 +58,8 @@ impl TrendmicroConnectorProfileCredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for TrendmicroConnectorProfileCredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TrendmicroConnectorProfileCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TrendmicroConnectorProfileCredentialsBuilder");
         formatter.field("api_secret_key", &"*** Sensitive Data Redacted ***");
         formatter.finish()

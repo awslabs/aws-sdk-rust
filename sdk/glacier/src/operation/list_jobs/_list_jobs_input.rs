@@ -2,50 +2,50 @@
 
 /// <p>Provides options for retrieving a job list for an Amazon S3 Glacier vault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vault.</p>
     #[doc(hidden)]
-    pub vault_name: std::option::Option<std::string::String>,
+    pub vault_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    pub limit: ::std::option::Option<i32>,
     /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
     #[doc(hidden)]
-    pub statuscode: std::option::Option<std::string::String>,
+    pub statuscode: ::std::option::Option<::std::string::String>,
     /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
     #[doc(hidden)]
-    pub completed: std::option::Option<std::string::String>,
+    pub completed: ::std::option::Option<::std::string::String>,
 }
 impl ListJobsInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<&str> {
+    pub fn vault_name(&self) -> ::std::option::Option<&str> {
         self.vault_name.as_deref()
     }
     /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
-    pub fn limit(&self) -> std::option::Option<i32> {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
-    pub fn statuscode(&self) -> std::option::Option<&str> {
+    pub fn statuscode(&self) -> ::std::option::Option<&str> {
         self.statuscode.as_deref()
     }
     /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
-    pub fn completed(&self) -> std::option::Option<&str> {
+    pub fn completed(&self) -> ::std::option::Option<&str> {
         self.completed.as_deref()
     }
 }
@@ -58,84 +58,86 @@ impl ListJobsInput {
 
 /// A builder for [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListJobsInputBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) vault_name: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<i32>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) statuscode: std::option::Option<std::string::String>,
-    pub(crate) completed: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_name: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) statuscode: ::std::option::Option<::std::string::String>,
+    pub(crate) completed: ::std::option::Option<::std::string::String>,
 }
 impl ListJobsInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vault_name = Some(input.into());
+    pub fn vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vault_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the vault.</p>
-    pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_name = input;
         self
     }
     /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of jobs to be returned. The default limit is 50. The number of jobs returned might be fewer than the specified limit, but the number of returned jobs never exceeds the limit.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string used for pagination. This value specifies the job at which the listing of jobs should begin. Get the marker value from a previous List Jobs response. You only need to include the marker if you are continuing the pagination of results started in a previous List Jobs request.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
-    pub fn statuscode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.statuscode = Some(input.into());
+    pub fn statuscode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.statuscode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of job status to return. You can specify the following values: <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
-    pub fn set_statuscode(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_statuscode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statuscode = input;
         self
     }
     /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
-    pub fn completed(mut self, input: impl Into<std::string::String>) -> Self {
-        self.completed = Some(input.into());
+    pub fn completed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.completed = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</p>
-    pub fn set_completed(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_completed(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completed = input;
         self
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_jobs::ListJobsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_jobs::ListJobsInput {
+        ::std::result::Result::Ok(crate::operation::list_jobs::ListJobsInput {
             account_id: self.account_id,
             vault_name: self.vault_name,
             limit: self.limit,

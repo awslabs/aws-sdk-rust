@@ -2,22 +2,22 @@
 
 /// <p>The input for the DeleteThing operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteThingInput {
     /// <p>The name of the thing to delete.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     #[doc(hidden)]
-    pub expected_version: std::option::Option<i64>,
+    pub expected_version: ::std::option::Option<i64>,
 }
 impl DeleteThingInput {
     /// <p>The name of the thing to delete.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
-    pub fn expected_version(&self) -> std::option::Option<i64> {
+    pub fn expected_version(&self) -> ::std::option::Option<i64> {
         self.expected_version
     }
 }
@@ -30,40 +30,42 @@ impl DeleteThingInput {
 
 /// A builder for [`DeleteThingInput`](crate::operation::delete_thing::DeleteThingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteThingInputBuilder {
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) expected_version: std::option::Option<i64>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) expected_version: ::std::option::Option<i64>,
 }
 impl DeleteThingInputBuilder {
     /// <p>The name of the thing to delete.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing to delete.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
-        self.expected_version = Some(input);
+        self.expected_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
-    pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteThingInput`](crate::operation::delete_thing::DeleteThingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_thing::DeleteThingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_thing::DeleteThingInput {
+        ::std::result::Result::Ok(crate::operation::delete_thing::DeleteThingInput {
             thing_name: self.thing_name,
             expected_version: self.expected_version,
         })

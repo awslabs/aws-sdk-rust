@@ -2,11 +2,11 @@
 
 /// <p>Represents the response from the server for the request to enable a user as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminEnableUserOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AdminEnableUserOutput {
+impl ::aws_http::request_id::RequestId for AdminEnableUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl AdminEnableUserOutput {
 
 /// A builder for [`AdminEnableUserOutput`](crate::operation::admin_enable_user::AdminEnableUserOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminEnableUserOutputBuilder {
     _request_id: Option<String>,
 }

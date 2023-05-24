@@ -41,13 +41,13 @@
 /// Use Intra DC precision (Mpeg2IntraDcPrecision) to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Mpeg2IntraDcPrecision {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum Mpeg2IntraDcPrecision {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Mpeg2IntraDcPrecision {
+impl ::std::convert::From<&str> for Mpeg2IntraDcPrecision {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => Mpeg2IntraDcPrecision::Auto,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for Mpeg2IntraDcPrecision {
         }
     }
 }
-impl std::str::FromStr for Mpeg2IntraDcPrecision {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Mpeg2IntraDcPrecision {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mpeg2IntraDcPrecision::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Mpeg2IntraDcPrecision::from(s))
     }
 }
 impl Mpeg2IntraDcPrecision {
@@ -107,7 +107,7 @@ impl Mpeg2IntraDcPrecision {
         ]
     }
 }
-impl AsRef<str> for Mpeg2IntraDcPrecision {
+impl ::std::convert::AsRef<str> for Mpeg2IntraDcPrecision {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

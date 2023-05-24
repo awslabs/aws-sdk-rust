@@ -6,29 +6,29 @@ pub use crate::operation::update_image_version::_update_image_version_input::Upd
 /// Fluent builder constructing a request to `UpdateImageVersion`.
 ///
 /// <p>Updates the properties of a SageMaker image version.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateImageVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder,
 }
 impl UpdateImageVersionFluentBuilder {
     /// Creates a new `UpdateImageVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_image_version::UpdateImageVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_image_version::UpdateImageVersionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateImageVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_image_version::UpdateImageVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_image_version::UpdateImageVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl UpdateImageVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_image_version::UpdateImageVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_image_version::UpdateImageVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the image.</p>
-    pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_name(input.into());
         self
     }
     /// <p>The name of the image.</p>
-    pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_name(input);
         self
     }
     /// <p>The alias of the image version.</p>
-    pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
         self
     }
     /// <p>The alias of the image version.</p>
-    pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
@@ -106,7 +109,7 @@ impl UpdateImageVersionFluentBuilder {
         self
     }
     /// <p>The version of the image.</p>
-    pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_version(input);
         self
     }
@@ -115,14 +118,17 @@ impl UpdateImageVersionFluentBuilder {
     /// To override the contents of this collection use [`set_aliases_to_add`](Self::set_aliases_to_add).
     ///
     /// <p>A list of aliases to add.</p>
-    pub fn aliases_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aliases_to_add(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aliases_to_add(input.into());
         self
     }
     /// <p>A list of aliases to add.</p>
     pub fn set_aliases_to_add(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_aliases_to_add(input);
         self
@@ -132,14 +138,17 @@ impl UpdateImageVersionFluentBuilder {
     /// To override the contents of this collection use [`set_aliases_to_delete`](Self::set_aliases_to_delete).
     ///
     /// <p>A list of aliases to delete.</p>
-    pub fn aliases_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aliases_to_delete(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aliases_to_delete(input.into());
         self
     }
     /// <p>A list of aliases to delete.</p>
     pub fn set_aliases_to_delete(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_aliases_to_delete(input);
         self
@@ -164,7 +173,7 @@ impl UpdateImageVersionFluentBuilder {
     /// </ul>
     pub fn set_vendor_guidance(
         mut self,
-        input: std::option::Option<crate::types::VendorGuidance>,
+        input: ::std::option::Option<crate::types::VendorGuidance>,
     ) -> Self {
         self.inner = self.inner.set_vendor_guidance(input);
         self
@@ -185,27 +194,33 @@ impl UpdateImageVersionFluentBuilder {
     /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
     /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
-    pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
         self
     }
     /// <p>The machine learning framework vended in the image version.</p>
-    pub fn ml_framework(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ml_framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ml_framework(input.into());
         self
     }
     /// <p>The machine learning framework vended in the image version.</p>
-    pub fn set_ml_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ml_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ml_framework(input);
         self
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn programming_lang(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn programming_lang(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.programming_lang(input.into());
         self
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn set_programming_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_programming_lang(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_programming_lang(input);
         self
     }
@@ -223,7 +238,7 @@ impl UpdateImageVersionFluentBuilder {
     /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
     /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
-    pub fn set_processor(mut self, input: std::option::Option<crate::types::Processor>) -> Self {
+    pub fn set_processor(mut self, input: ::std::option::Option<crate::types::Processor>) -> Self {
         self.inner = self.inner.set_processor(input);
         self
     }
@@ -233,17 +248,23 @@ impl UpdateImageVersionFluentBuilder {
         self
     }
     /// <p>Indicates Horovod compatibility.</p>
-    pub fn set_horovod(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_horovod(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_horovod(input);
         self
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn release_notes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.release_notes(input.into());
         self
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn set_release_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release_notes(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_release_notes(input);
         self
     }

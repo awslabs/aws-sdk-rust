@@ -2,11 +2,11 @@
 
 /// <p>Represents the result of a delete device pool request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDevicePoolOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteDevicePoolOutput {
+impl ::aws_http::request_id::RequestId for DeleteDevicePoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteDevicePoolOutput {
 
 /// A builder for [`DeleteDevicePoolOutput`](crate::operation::delete_device_pool::DeleteDevicePoolOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteDevicePoolOutputBuilder {
     _request_id: Option<String>,
 }

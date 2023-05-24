@@ -2,64 +2,64 @@
 
 /// <p>Describes an export image task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportImageTask {
     /// <p>A description of the image being exported.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the export image task.</p>
     #[doc(hidden)]
-    pub export_image_task_id: std::option::Option<std::string::String>,
+    pub export_image_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the image.</p>
     #[doc(hidden)]
-    pub image_id: std::option::Option<std::string::String>,
+    pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The percent complete of the export image task.</p>
     #[doc(hidden)]
-    pub progress: std::option::Option<std::string::String>,
+    pub progress: ::std::option::Option<::std::string::String>,
     /// <p>Information about the destination Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub s3_export_location: std::option::Option<crate::types::ExportTaskS3Location>,
+    pub s3_export_location: ::std::option::Option<crate::types::ExportTaskS3Location>,
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The status message for the export image task.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the export image task.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ExportImageTask {
     /// <p>A description of the image being exported.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of the export image task.</p>
-    pub fn export_image_task_id(&self) -> std::option::Option<&str> {
+    pub fn export_image_task_id(&self) -> ::std::option::Option<&str> {
         self.export_image_task_id.as_deref()
     }
     /// <p>The ID of the image.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>The percent complete of the export image task.</p>
-    pub fn progress(&self) -> std::option::Option<&str> {
+    pub fn progress(&self) -> ::std::option::Option<&str> {
         self.progress.as_deref()
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
-    pub fn s3_export_location(&self) -> std::option::Option<&crate::types::ExportTaskS3Location> {
+    pub fn s3_export_location(&self) -> ::std::option::Option<&crate::types::ExportTaskS3Location> {
         self.s3_export_location.as_ref()
     }
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The status message for the export image task.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>Any tags assigned to the export image task.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -72,91 +72,102 @@ impl ExportImageTask {
 
 /// A builder for [`ExportImageTask`](crate::types::ExportImageTask).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportImageTaskBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) export_image_task_id: std::option::Option<std::string::String>,
-    pub(crate) image_id: std::option::Option<std::string::String>,
-    pub(crate) progress: std::option::Option<std::string::String>,
-    pub(crate) s3_export_location: std::option::Option<crate::types::ExportTaskS3Location>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) export_image_task_id: ::std::option::Option<::std::string::String>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) progress: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_export_location: ::std::option::Option<crate::types::ExportTaskS3Location>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ExportImageTaskBuilder {
     /// <p>A description of the image being exported.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the image being exported.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The ID of the export image task.</p>
-    pub fn export_image_task_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.export_image_task_id = Some(input.into());
+    pub fn export_image_task_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.export_image_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the export image task.</p>
     pub fn set_export_image_task_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.export_image_task_id = input;
         self
     }
     /// <p>The ID of the image.</p>
-    pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_id = Some(input.into());
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the image.</p>
-    pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }
     /// <p>The percent complete of the export image task.</p>
-    pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
-        self.progress = Some(input.into());
+    pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.progress = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The percent complete of the export image task.</p>
-    pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
     pub fn s3_export_location(mut self, input: crate::types::ExportTaskS3Location) -> Self {
-        self.s3_export_location = Some(input);
+        self.s3_export_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the destination Amazon S3 bucket.</p>
     pub fn set_s3_export_location(
         mut self,
-        input: std::option::Option<crate::types::ExportTaskS3Location>,
+        input: ::std::option::Option<crate::types::ExportTaskS3Location>,
     ) -> Self {
         self.s3_export_location = input;
         self
     }
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status message for the export image task.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for the export image task.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
@@ -168,13 +179,13 @@ impl ExportImageTaskBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the export image task.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

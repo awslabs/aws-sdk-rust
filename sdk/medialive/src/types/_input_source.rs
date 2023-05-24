@@ -2,29 +2,29 @@
 
 /// The settings for a PULL type input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSource {
     /// The key used to extract the password from EC2 Parameter store.
     #[doc(hidden)]
-    pub password_param: std::option::Option<std::string::String>,
+    pub password_param: ::std::option::Option<::std::string::String>,
     /// This represents the customer's source URL where stream is pulled from.
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// The username for the input source.
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
 }
 impl InputSource {
     /// The key used to extract the password from EC2 Parameter store.
-    pub fn password_param(&self) -> std::option::Option<&str> {
+    pub fn password_param(&self) -> ::std::option::Option<&str> {
         self.password_param.as_deref()
     }
     /// This represents the customer's source URL where stream is pulled from.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// The username for the input source.
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl InputSource {
 
 /// A builder for [`InputSource`](crate::types::InputSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputSourceBuilder {
-    pub(crate) password_param: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
+    pub(crate) password_param: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
 }
 impl InputSourceBuilder {
     /// The key used to extract the password from EC2 Parameter store.
-    pub fn password_param(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password_param = Some(input.into());
+    pub fn password_param(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.password_param = ::std::option::Option::Some(input.into());
         self
     }
     /// The key used to extract the password from EC2 Parameter store.
-    pub fn set_password_param(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password_param(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.password_param = input;
         self
     }
     /// This represents the customer's source URL where stream is pulled from.
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// This represents the customer's source URL where stream is pulled from.
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// The username for the input source.
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// The username for the input source.
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }

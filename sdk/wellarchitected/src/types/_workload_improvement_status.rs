@@ -41,13 +41,13 @@
 /// <p>The improvement status for a workload.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WorkloadImprovementStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum WorkloadImprovementStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WorkloadImprovementStatus {
+impl ::std::convert::From<&str> for WorkloadImprovementStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETE" => WorkloadImprovementStatus::Complete,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for WorkloadImprovementStatus {
         }
     }
 }
-impl std::str::FromStr for WorkloadImprovementStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WorkloadImprovementStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkloadImprovementStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WorkloadImprovementStatus::from(s))
     }
 }
 impl WorkloadImprovementStatus {
@@ -107,7 +107,7 @@ impl WorkloadImprovementStatus {
         ]
     }
 }
-impl AsRef<str> for WorkloadImprovementStatus {
+impl ::std::convert::AsRef<str> for WorkloadImprovementStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

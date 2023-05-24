@@ -2,22 +2,22 @@
 
 /// <p>Artifact details for the action execution, such as the artifact location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactDetail {
     /// <p>The artifact object name for the action execution.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 artifact location for the action execution.</p>
     #[doc(hidden)]
-    pub s3location: std::option::Option<crate::types::S3Location>,
+    pub s3location: ::std::option::Option<crate::types::S3Location>,
 }
 impl ArtifactDetail {
     /// <p>The artifact object name for the action execution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
-    pub fn s3location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.s3location.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl ArtifactDetail {
 
 /// A builder for [`ArtifactDetail`](crate::types::ArtifactDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArtifactDetailBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) s3location: std::option::Option<crate::types::S3Location>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3location: ::std::option::Option<crate::types::S3Location>,
 }
 impl ArtifactDetailBuilder {
     /// <p>The artifact object name for the action execution.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact object name for the action execution.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
     pub fn s3location(mut self, input: crate::types::S3Location) -> Self {
-        self.s3location = Some(input);
+        self.s3location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
-    pub fn set_s3location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+    pub fn set_s3location(
+        mut self,
+        input: ::std::option::Option<crate::types::S3Location>,
+    ) -> Self {
         self.s3location = input;
         self
     }

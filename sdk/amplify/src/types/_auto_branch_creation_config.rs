@@ -2,89 +2,91 @@
 
 /// <p> Describes the automated branch creation configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AutoBranchCreationConfig {
     /// <p> Describes the current stage for the autocreated branch. </p>
     #[doc(hidden)]
-    pub stage: std::option::Option<crate::types::Stage>,
+    pub stage: ::std::option::Option<crate::types::Stage>,
     /// <p> The framework for the autocreated branch. </p>
     #[doc(hidden)]
-    pub framework: std::option::Option<std::string::String>,
+    pub framework: ::std::option::Option<::std::string::String>,
     /// <p> Enables auto building for the autocreated branch. </p>
     #[doc(hidden)]
-    pub enable_auto_build: std::option::Option<bool>,
+    pub enable_auto_build: ::std::option::Option<bool>,
     /// <p> The environment variables for the autocreated branch. </p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     #[doc(hidden)]
-    pub basic_auth_credentials: std::option::Option<std::string::String>,
+    pub basic_auth_credentials: ::std::option::Option<::std::string::String>,
     /// <p> Enables basic authorization for the autocreated branch. </p>
     #[doc(hidden)]
-    pub enable_basic_auth: std::option::Option<bool>,
+    pub enable_basic_auth: ::std::option::Option<bool>,
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     #[doc(hidden)]
-    pub enable_performance_mode: std::option::Option<bool>,
+    pub enable_performance_mode: ::std::option::Option<bool>,
     /// <p> The build specification (build spec) for the autocreated branch. </p>
     #[doc(hidden)]
-    pub build_spec: std::option::Option<std::string::String>,
+    pub build_spec: ::std::option::Option<::std::string::String>,
     /// <p> Enables pull request previews for the autocreated branch. </p>
     #[doc(hidden)]
-    pub enable_pull_request_preview: std::option::Option<bool>,
+    pub enable_pull_request_preview: ::std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
     #[doc(hidden)]
-    pub pull_request_environment_name: std::option::Option<std::string::String>,
+    pub pull_request_environment_name: ::std::option::Option<::std::string::String>,
 }
 impl AutoBranchCreationConfig {
     /// <p> Describes the current stage for the autocreated branch. </p>
-    pub fn stage(&self) -> std::option::Option<&crate::types::Stage> {
+    pub fn stage(&self) -> ::std::option::Option<&crate::types::Stage> {
         self.stage.as_ref()
     }
     /// <p> The framework for the autocreated branch. </p>
-    pub fn framework(&self) -> std::option::Option<&str> {
+    pub fn framework(&self) -> ::std::option::Option<&str> {
         self.framework.as_deref()
     }
     /// <p> Enables auto building for the autocreated branch. </p>
-    pub fn enable_auto_build(&self) -> std::option::Option<bool> {
+    pub fn enable_auto_build(&self) -> ::std::option::Option<bool> {
         self.enable_auto_build
     }
     /// <p> The environment variables for the autocreated branch. </p>
     pub fn environment_variables(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.environment_variables.as_ref()
     }
     /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+    pub fn basic_auth_credentials(&self) -> ::std::option::Option<&str> {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> Enables basic authorization for the autocreated branch. </p>
-    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+    pub fn enable_basic_auth(&self) -> ::std::option::Option<bool> {
         self.enable_basic_auth
     }
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-    pub fn enable_performance_mode(&self) -> std::option::Option<bool> {
+    pub fn enable_performance_mode(&self) -> ::std::option::Option<bool> {
         self.enable_performance_mode
     }
     /// <p> The build specification (build spec) for the autocreated branch. </p>
-    pub fn build_spec(&self) -> std::option::Option<&str> {
+    pub fn build_spec(&self) -> ::std::option::Option<&str> {
         self.build_spec.as_deref()
     }
     /// <p> Enables pull request previews for the autocreated branch. </p>
-    pub fn enable_pull_request_preview(&self) -> std::option::Option<bool> {
+    pub fn enable_pull_request_preview(&self) -> ::std::option::Option<bool> {
         self.enable_pull_request_preview
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
+    pub fn pull_request_environment_name(&self) -> ::std::option::Option<&str> {
         self.pull_request_environment_name.as_deref()
     }
 }
-impl std::fmt::Debug for AutoBranchCreationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AutoBranchCreationConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AutoBranchCreationConfig");
         formatter.field("stage", &self.stage);
         formatter.field("framework", &self.framework);
@@ -114,48 +116,49 @@ impl AutoBranchCreationConfig {
 
 /// A builder for [`AutoBranchCreationConfig`](crate::types::AutoBranchCreationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AutoBranchCreationConfigBuilder {
-    pub(crate) stage: std::option::Option<crate::types::Stage>,
-    pub(crate) framework: std::option::Option<std::string::String>,
-    pub(crate) enable_auto_build: std::option::Option<bool>,
-    pub(crate) environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) basic_auth_credentials: std::option::Option<std::string::String>,
-    pub(crate) enable_basic_auth: std::option::Option<bool>,
-    pub(crate) enable_performance_mode: std::option::Option<bool>,
-    pub(crate) build_spec: std::option::Option<std::string::String>,
-    pub(crate) enable_pull_request_preview: std::option::Option<bool>,
-    pub(crate) pull_request_environment_name: std::option::Option<std::string::String>,
+    pub(crate) stage: ::std::option::Option<crate::types::Stage>,
+    pub(crate) framework: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_auto_build: ::std::option::Option<bool>,
+    pub(crate) environment_variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) basic_auth_credentials: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_basic_auth: ::std::option::Option<bool>,
+    pub(crate) enable_performance_mode: ::std::option::Option<bool>,
+    pub(crate) build_spec: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_pull_request_preview: ::std::option::Option<bool>,
+    pub(crate) pull_request_environment_name: ::std::option::Option<::std::string::String>,
 }
 impl AutoBranchCreationConfigBuilder {
     /// <p> Describes the current stage for the autocreated branch. </p>
     pub fn stage(mut self, input: crate::types::Stage) -> Self {
-        self.stage = Some(input);
+        self.stage = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the current stage for the autocreated branch. </p>
-    pub fn set_stage(mut self, input: std::option::Option<crate::types::Stage>) -> Self {
+    pub fn set_stage(mut self, input: ::std::option::Option<crate::types::Stage>) -> Self {
         self.stage = input;
         self
     }
     /// <p> The framework for the autocreated branch. </p>
-    pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
-        self.framework = Some(input.into());
+    pub fn framework(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.framework = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The framework for the autocreated branch. </p>
-    pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_framework(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework = input;
         self
     }
     /// <p> Enables auto building for the autocreated branch. </p>
     pub fn enable_auto_build(mut self, input: bool) -> Self {
-        self.enable_auto_build = Some(input);
+        self.enable_auto_build = ::std::option::Option::Some(input);
         self
     }
     /// <p> Enables auto building for the autocreated branch. </p>
-    pub fn set_enable_auto_build(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_auto_build(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_auto_build = input;
         self
     }
@@ -166,88 +169,94 @@ impl AutoBranchCreationConfigBuilder {
     /// <p> The environment variables for the autocreated branch. </p>
     pub fn environment_variables(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.environment_variables = Some(hash_map);
+        self.environment_variables = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The environment variables for the autocreated branch. </p>
     pub fn set_environment_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.environment_variables = input;
         self
     }
     /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
-        self.basic_auth_credentials = Some(input.into());
+    pub fn basic_auth_credentials(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.basic_auth_credentials = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The basic authorization credentials for the autocreated branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn set_basic_auth_credentials(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.basic_auth_credentials = input;
         self
     }
     /// <p> Enables basic authorization for the autocreated branch. </p>
     pub fn enable_basic_auth(mut self, input: bool) -> Self {
-        self.enable_basic_auth = Some(input);
+        self.enable_basic_auth = ::std::option::Option::Some(input);
         self
     }
     /// <p> Enables basic authorization for the autocreated branch. </p>
-    pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_basic_auth(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_basic_auth = input;
         self
     }
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn enable_performance_mode(mut self, input: bool) -> Self {
-        self.enable_performance_mode = Some(input);
+        self.enable_performance_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-    pub fn set_enable_performance_mode(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_performance_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_performance_mode = input;
         self
     }
     /// <p> The build specification (build spec) for the autocreated branch. </p>
-    pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
-        self.build_spec = Some(input.into());
+    pub fn build_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.build_spec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The build specification (build spec) for the autocreated branch. </p>
-    pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_build_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.build_spec = input;
         self
     }
     /// <p> Enables pull request previews for the autocreated branch. </p>
     pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
-        self.enable_pull_request_preview = Some(input);
+        self.enable_pull_request_preview = ::std::option::Option::Some(input);
         self
     }
     /// <p> Enables pull request previews for the autocreated branch. </p>
-    pub fn set_enable_pull_request_preview(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_pull_request_preview(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_pull_request_preview = input;
         self
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn pull_request_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pull_request_environment_name = Some(input.into());
+    pub fn pull_request_environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pull_request_environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amplify environment name for the pull request. </p>
     pub fn set_pull_request_environment_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pull_request_environment_name = input;
         self
@@ -268,8 +277,8 @@ impl AutoBranchCreationConfigBuilder {
         }
     }
 }
-impl std::fmt::Debug for AutoBranchCreationConfigBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AutoBranchCreationConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AutoBranchCreationConfigBuilder");
         formatter.field("stage", &self.stage);
         formatter.field("framework", &self.framework);

@@ -2,22 +2,24 @@
 
 /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningConfigurationOverrides {
     /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
     #[doc(hidden)]
-    pub encryption_algorithm: std::option::Option<crate::types::EncryptionAlgorithm>,
+    pub encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithm>,
     /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
     #[doc(hidden)]
-    pub hash_algorithm: std::option::Option<crate::types::HashAlgorithm>,
+    pub hash_algorithm: ::std::option::Option<crate::types::HashAlgorithm>,
 }
 impl SigningConfigurationOverrides {
     /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
-    pub fn encryption_algorithm(&self) -> std::option::Option<&crate::types::EncryptionAlgorithm> {
+    pub fn encryption_algorithm(
+        &self,
+    ) -> ::std::option::Option<&crate::types::EncryptionAlgorithm> {
         self.encryption_algorithm.as_ref()
     }
     /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
-    pub fn hash_algorithm(&self) -> std::option::Option<&crate::types::HashAlgorithm> {
+    pub fn hash_algorithm(&self) -> ::std::option::Option<&crate::types::HashAlgorithm> {
         self.hash_algorithm.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl SigningConfigurationOverrides {
 
 /// A builder for [`SigningConfigurationOverrides`](crate::types::SigningConfigurationOverrides).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SigningConfigurationOverridesBuilder {
-    pub(crate) encryption_algorithm: std::option::Option<crate::types::EncryptionAlgorithm>,
-    pub(crate) hash_algorithm: std::option::Option<crate::types::HashAlgorithm>,
+    pub(crate) encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlgorithm>,
+    pub(crate) hash_algorithm: ::std::option::Option<crate::types::HashAlgorithm>,
 }
 impl SigningConfigurationOverridesBuilder {
     /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
     pub fn encryption_algorithm(mut self, input: crate::types::EncryptionAlgorithm) -> Self {
-        self.encryption_algorithm = Some(input);
+        self.encryption_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>A specified override of the default encryption algorithm that is used in a code signing job.</p>
     pub fn set_encryption_algorithm(
         mut self,
-        input: std::option::Option<crate::types::EncryptionAlgorithm>,
+        input: ::std::option::Option<crate::types::EncryptionAlgorithm>,
     ) -> Self {
         self.encryption_algorithm = input;
         self
     }
     /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
     pub fn hash_algorithm(mut self, input: crate::types::HashAlgorithm) -> Self {
-        self.hash_algorithm = Some(input);
+        self.hash_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>A specified override of the default hash algorithm that is used in a code signing job.</p>
     pub fn set_hash_algorithm(
         mut self,
-        input: std::option::Option<crate::types::HashAlgorithm>,
+        input: ::std::option::Option<crate::types::HashAlgorithm>,
     ) -> Self {
         self.hash_algorithm = input;
         self

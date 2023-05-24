@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBulkImportJob`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobFluentBuilder::set_job_id): <p>The ID of the job.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobFluentBuilder::set_job_id): <p>The ID of the job.</p>
     /// - On success, responds with [`DescribeBulkImportJobOutput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput::job_id): <p>The ID of the job.</p>
     ///   - [`job_name(Option<String>)`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput::job_name): <p>The unique name that helps identify the job request.</p>

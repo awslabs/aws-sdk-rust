@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSubnetGroup`](crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subnet_group_name(impl Into<String>)`](crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder::subnet_group_name) / [`set_subnet_group_name(Option<String>)`](crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder::set_subnet_group_name): <p>The name of the subnet group to delete.</p>
+    ///   - [`subnet_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder::subnet_group_name) / [`set_subnet_group_name(Option<String>)`](crate::operation::delete_subnet_group::builders::DeleteSubnetGroupFluentBuilder::set_subnet_group_name): <p>The name of the subnet group to delete.</p>
     /// - On success, responds with [`DeleteSubnetGroupOutput`](crate::operation::delete_subnet_group::DeleteSubnetGroupOutput) with field(s):
     ///   - [`deletion_message(Option<String>)`](crate::operation::delete_subnet_group::DeleteSubnetGroupOutput::deletion_message): <p>A user-specified message for this action (i.e., a reason for deleting the subnet group).</p>
     /// - On failure, responds with [`SdkError<DeleteSubnetGroupError>`](crate::operation::delete_subnet_group::DeleteSubnetGroupError)

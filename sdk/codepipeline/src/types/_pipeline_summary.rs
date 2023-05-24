@@ -2,36 +2,36 @@
 
 /// <p>Returns a summary of a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineSummary {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<i32>,
+    pub version: ::std::option::Option<i32>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
     #[doc(hidden)]
-    pub updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineSummary {
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The version number of the pipeline.</p>
-    pub fn version(&self) -> std::option::Option<i32> {
+    pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
-    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
@@ -44,51 +44,59 @@ impl PipelineSummary {
 
 /// A builder for [`PipelineSummary`](crate::types::PipelineSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineSummaryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<i32>,
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<i32>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineSummaryBuilder {
     /// <p>The name of the pipeline.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The version number of the pipeline.</p>
     pub fn version(mut self, input: i32) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number of the pipeline.</p>
-    pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
-    pub fn updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated = Some(input);
+    pub fn updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
-    pub fn set_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_updated(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.updated = input;
         self
     }

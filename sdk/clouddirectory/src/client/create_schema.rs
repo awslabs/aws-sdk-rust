@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateSchema`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::set_name): <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_schema::builders::CreateSchemaFluentBuilder::set_name): <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
     /// - On success, responds with [`CreateSchemaOutput`](crate::operation::create_schema::CreateSchemaOutput) with field(s):
     ///   - [`schema_arn(Option<String>)`](crate::operation::create_schema::CreateSchemaOutput::schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     /// - On failure, responds with [`SdkError<CreateSchemaError>`](crate::operation::create_schema::CreateSchemaError)

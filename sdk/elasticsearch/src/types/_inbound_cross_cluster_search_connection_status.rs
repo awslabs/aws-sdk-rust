@@ -2,7 +2,7 @@
 
 /// <p>Specifies the coonection status of an inbound cross-cluster search connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InboundCrossClusterSearchConnectionStatus {
     /// <p>The state code for inbound connection. This can be one of the following:</p>
     /// <ul>
@@ -15,10 +15,10 @@ pub struct InboundCrossClusterSearchConnectionStatus {
     /// </ul>
     #[doc(hidden)]
     pub status_code:
-        std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatusCode>,
+        ::std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatusCode>,
     /// <p>Specifies verbose information for the inbound connection status.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl InboundCrossClusterSearchConnectionStatus {
     /// <p>The state code for inbound connection. This can be one of the following:</p>
@@ -32,11 +32,11 @@ impl InboundCrossClusterSearchConnectionStatus {
     /// </ul>
     pub fn status_code(
         &self,
-    ) -> std::option::Option<&crate::types::InboundCrossClusterSearchConnectionStatusCode> {
+    ) -> ::std::option::Option<&crate::types::InboundCrossClusterSearchConnectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Specifies verbose information for the inbound connection status.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -49,11 +49,13 @@ impl InboundCrossClusterSearchConnectionStatus {
 
 /// A builder for [`InboundCrossClusterSearchConnectionStatus`](crate::types::InboundCrossClusterSearchConnectionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InboundCrossClusterSearchConnectionStatusBuilder {
     pub(crate) status_code:
-        std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatusCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatusCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl InboundCrossClusterSearchConnectionStatusBuilder {
     /// <p>The state code for inbound connection. This can be one of the following:</p>
@@ -69,7 +71,7 @@ impl InboundCrossClusterSearchConnectionStatusBuilder {
         mut self,
         input: crate::types::InboundCrossClusterSearchConnectionStatusCode,
     ) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state code for inbound connection. This can be one of the following:</p>
@@ -83,18 +85,18 @@ impl InboundCrossClusterSearchConnectionStatusBuilder {
     /// </ul>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatusCode>,
+        input: ::std::option::Option<crate::types::InboundCrossClusterSearchConnectionStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p>Specifies verbose information for the inbound connection status.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies verbose information for the inbound connection status.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

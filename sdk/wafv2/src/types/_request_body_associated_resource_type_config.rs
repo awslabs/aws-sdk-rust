@@ -5,19 +5,19 @@
 /// </note>
 /// <p>This is used in the <code>AssociationConfig</code> of the web ACL. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestBodyAssociatedResourceTypeConfig {
     /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
     /// <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
     #[doc(hidden)]
-    pub default_size_inspection_limit: std::option::Option<crate::types::SizeInspectionLimit>,
+    pub default_size_inspection_limit: ::std::option::Option<crate::types::SizeInspectionLimit>,
 }
 impl RequestBodyAssociatedResourceTypeConfig {
     /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
     /// <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
     pub fn default_size_inspection_limit(
         &self,
-    ) -> std::option::Option<&crate::types::SizeInspectionLimit> {
+    ) -> ::std::option::Option<&crate::types::SizeInspectionLimit> {
         self.default_size_inspection_limit.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl RequestBodyAssociatedResourceTypeConfig {
 
 /// A builder for [`RequestBodyAssociatedResourceTypeConfig`](crate::types::RequestBodyAssociatedResourceTypeConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RequestBodyAssociatedResourceTypeConfigBuilder {
     pub(crate) default_size_inspection_limit:
-        std::option::Option<crate::types::SizeInspectionLimit>,
+        ::std::option::Option<crate::types::SizeInspectionLimit>,
 }
 impl RequestBodyAssociatedResourceTypeConfigBuilder {
     /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
@@ -42,14 +44,14 @@ impl RequestBodyAssociatedResourceTypeConfigBuilder {
         mut self,
         input: crate::types::SizeInspectionLimit,
     ) -> Self {
-        self.default_size_inspection_limit = Some(input);
+        self.default_size_inspection_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the maximum size of the web request body component that an associated CloudFront distribution should send to WAF for inspection. This applies to statements in the web ACL that inspect the body or JSON body. </p>
     /// <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
     pub fn set_default_size_inspection_limit(
         mut self,
-        input: std::option::Option<crate::types::SizeInspectionLimit>,
+        input: ::std::option::Option<crate::types::SizeInspectionLimit>,
     ) -> Self {
         self.default_size_inspection_limit = input;
         self

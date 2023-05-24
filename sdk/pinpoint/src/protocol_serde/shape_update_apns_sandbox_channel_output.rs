@@ -2,7 +2,7 @@
 pub(crate) fn de_apns_sandbox_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ApnsSandboxChannelResponse>,
+    ::std::option::Option<crate::types::ApnsSandboxChannelResponse>,
     crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelError,
 > {
     (!body.is_empty()).then(||{

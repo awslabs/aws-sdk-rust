@@ -38,13 +38,13 @@
 /// When set to "standard", an I-Frame only playlist will be written out for each video output in the output group. This I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IFrameOnlyPlaylistType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum IFrameOnlyPlaylistType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IFrameOnlyPlaylistType {
+impl ::std::convert::From<&str> for IFrameOnlyPlaylistType {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => IFrameOnlyPlaylistType::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for IFrameOnlyPlaylistType {
         }
     }
 }
-impl std::str::FromStr for IFrameOnlyPlaylistType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IFrameOnlyPlaylistType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IFrameOnlyPlaylistType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IFrameOnlyPlaylistType::from(s))
     }
 }
 impl IFrameOnlyPlaylistType {
@@ -86,7 +86,7 @@ impl IFrameOnlyPlaylistType {
         &["DISABLED", "STANDARD"]
     }
 }
-impl AsRef<str> for IFrameOnlyPlaylistType {
+impl ::std::convert::AsRef<str> for IFrameOnlyPlaylistType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,34 +2,34 @@
 
 /// <p>Describes the configuration for experiment logging.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentLogConfiguration {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
     pub cloud_watch_logs_configuration:
-        std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>,
+        ::std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>,
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_configuration: std::option::Option<crate::types::ExperimentS3LogConfiguration>,
+    pub s3_configuration: ::std::option::Option<crate::types::ExperimentS3LogConfiguration>,
     /// <p>The schema version.</p>
     #[doc(hidden)]
-    pub log_schema_version: std::option::Option<i32>,
+    pub log_schema_version: ::std::option::Option<i32>,
 }
 impl ExperimentLogConfiguration {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub fn cloud_watch_logs_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ExperimentCloudWatchLogsLogConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ExperimentCloudWatchLogsLogConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn s3_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ExperimentS3LogConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ExperimentS3LogConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>The schema version.</p>
-    pub fn log_schema_version(&self) -> std::option::Option<i32> {
+    pub fn log_schema_version(&self) -> ::std::option::Option<i32> {
         self.log_schema_version
     }
 }
@@ -42,12 +42,14 @@ impl ExperimentLogConfiguration {
 
 /// A builder for [`ExperimentLogConfiguration`](crate::types::ExperimentLogConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperimentLogConfigurationBuilder {
     pub(crate) cloud_watch_logs_configuration:
-        std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>,
-    pub(crate) s3_configuration: std::option::Option<crate::types::ExperimentS3LogConfiguration>,
-    pub(crate) log_schema_version: std::option::Option<i32>,
+        ::std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>,
+    pub(crate) s3_configuration: ::std::option::Option<crate::types::ExperimentS3LogConfiguration>,
+    pub(crate) log_schema_version: ::std::option::Option<i32>,
 }
 impl ExperimentLogConfigurationBuilder {
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
@@ -55,37 +57,37 @@ impl ExperimentLogConfigurationBuilder {
         mut self,
         input: crate::types::ExperimentCloudWatchLogsLogConfiguration,
     ) -> Self {
-        self.cloud_watch_logs_configuration = Some(input);
+        self.cloud_watch_logs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for experiment logging to Amazon CloudWatch Logs.</p>
     pub fn set_cloud_watch_logs_configuration(
         mut self,
-        input: std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>,
+        input: ::std::option::Option<crate::types::ExperimentCloudWatchLogsLogConfiguration>,
     ) -> Self {
         self.cloud_watch_logs_configuration = input;
         self
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn s3_configuration(mut self, input: crate::types::ExperimentS3LogConfiguration) -> Self {
-        self.s3_configuration = Some(input);
+        self.s3_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for experiment logging to Amazon S3.</p>
     pub fn set_s3_configuration(
         mut self,
-        input: std::option::Option<crate::types::ExperimentS3LogConfiguration>,
+        input: ::std::option::Option<crate::types::ExperimentS3LogConfiguration>,
     ) -> Self {
         self.s3_configuration = input;
         self
     }
     /// <p>The schema version.</p>
     pub fn log_schema_version(mut self, input: i32) -> Self {
-        self.log_schema_version = Some(input);
+        self.log_schema_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The schema version.</p>
-    pub fn set_log_schema_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_log_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.log_schema_version = input;
         self
     }

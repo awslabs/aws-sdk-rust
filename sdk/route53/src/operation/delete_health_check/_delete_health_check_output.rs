@@ -2,11 +2,11 @@
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHealthCheckOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteHealthCheckOutput {
+impl ::aws_http::request_id::RequestId for DeleteHealthCheckOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteHealthCheckOutput {
 
 /// A builder for [`DeleteHealthCheckOutput`](crate::operation::delete_health_check::DeleteHealthCheckOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteHealthCheckOutputBuilder {
     _request_id: Option<String>,
 }

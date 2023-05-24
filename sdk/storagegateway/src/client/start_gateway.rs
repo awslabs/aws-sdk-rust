@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartGateway`](crate::operation::start_gateway::builders::StartGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::start_gateway::builders::StartGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::start_gateway::builders::StartGatewayFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`gateway_arn(impl ::std::convert::Into<String>)`](crate::operation::start_gateway::builders::StartGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::start_gateway::builders::StartGatewayFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On success, responds with [`StartGatewayOutput`](crate::operation::start_gateway::StartGatewayOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::start_gateway::StartGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<StartGatewayError>`](crate::operation::start_gateway::StartGatewayError)

@@ -5,526 +5,538 @@
 /// <p>If the type-specific object does not contain all of the fields you want to populate, then you use the <code>Other</code> object to populate those additional fields.</p>
 /// <p>You also use the <code>Other</code> object to populate the details when the selected type does not have a corresponding object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
     #[doc(hidden)]
     pub aws_auto_scaling_auto_scaling_group:
-        std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>,
+        ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>,
     /// <p>Details for an CodeBuild project.</p>
     #[doc(hidden)]
-    pub aws_code_build_project: std::option::Option<crate::types::AwsCodeBuildProjectDetails>,
+    pub aws_code_build_project: ::std::option::Option<crate::types::AwsCodeBuildProjectDetails>,
     /// <p>Details about a CloudFront distribution.</p>
     #[doc(hidden)]
     pub aws_cloud_front_distribution:
-        std::option::Option<crate::types::AwsCloudFrontDistributionDetails>,
+        ::std::option::Option<crate::types::AwsCloudFrontDistributionDetails>,
     /// <p>Details about an EC2 instance related to a finding.</p>
     #[doc(hidden)]
-    pub aws_ec2_instance: std::option::Option<crate::types::AwsEc2InstanceDetails>,
+    pub aws_ec2_instance: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     /// <p>Details for an EC2 network interface.</p>
     #[doc(hidden)]
-    pub aws_ec2_network_interface: std::option::Option<crate::types::AwsEc2NetworkInterfaceDetails>,
+    pub aws_ec2_network_interface:
+        ::std::option::Option<crate::types::AwsEc2NetworkInterfaceDetails>,
     /// <p>Details for an EC2 security group.</p>
     #[doc(hidden)]
-    pub aws_ec2_security_group: std::option::Option<crate::types::AwsEc2SecurityGroupDetails>,
+    pub aws_ec2_security_group: ::std::option::Option<crate::types::AwsEc2SecurityGroupDetails>,
     /// <p>Details for an Amazon EC2 volume.</p>
     #[doc(hidden)]
-    pub aws_ec2_volume: std::option::Option<crate::types::AwsEc2VolumeDetails>,
+    pub aws_ec2_volume: ::std::option::Option<crate::types::AwsEc2VolumeDetails>,
     /// <p>Details for an Amazon EC2 VPC.</p>
     #[doc(hidden)]
-    pub aws_ec2_vpc: std::option::Option<crate::types::AwsEc2VpcDetails>,
+    pub aws_ec2_vpc: ::std::option::Option<crate::types::AwsEc2VpcDetails>,
     /// <p>Details about an Elastic IP address.</p>
     #[doc(hidden)]
-    pub aws_ec2_eip: std::option::Option<crate::types::AwsEc2EipDetails>,
+    pub aws_ec2_eip: ::std::option::Option<crate::types::AwsEc2EipDetails>,
     /// <p>Details about a subnet in Amazon EC2.</p>
     #[doc(hidden)]
-    pub aws_ec2_subnet: std::option::Option<crate::types::AwsEc2SubnetDetails>,
+    pub aws_ec2_subnet: ::std::option::Option<crate::types::AwsEc2SubnetDetails>,
     /// <p>Details about an EC2 network access control list (ACL).</p>
     #[doc(hidden)]
-    pub aws_ec2_network_acl: std::option::Option<crate::types::AwsEc2NetworkAclDetails>,
+    pub aws_ec2_network_acl: ::std::option::Option<crate::types::AwsEc2NetworkAclDetails>,
     /// <p>Details about a load balancer.</p>
     #[doc(hidden)]
-    pub aws_elbv2_load_balancer: std::option::Option<crate::types::AwsElbv2LoadBalancerDetails>,
+    pub aws_elbv2_load_balancer: ::std::option::Option<crate::types::AwsElbv2LoadBalancerDetails>,
     /// <p>Details about an Elastic Beanstalk environment.</p>
     #[doc(hidden)]
     pub aws_elastic_beanstalk_environment:
-        std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentDetails>,
+        ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentDetails>,
     /// <p>Details for an Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub aws_elasticsearch_domain: std::option::Option<crate::types::AwsElasticsearchDomainDetails>,
+    pub aws_elasticsearch_domain:
+        ::std::option::Option<crate::types::AwsElasticsearchDomainDetails>,
     /// <p>Details about an S3 bucket related to a finding.</p>
     #[doc(hidden)]
-    pub aws_s3_bucket: std::option::Option<crate::types::AwsS3BucketDetails>,
+    pub aws_s3_bucket: ::std::option::Option<crate::types::AwsS3BucketDetails>,
     /// <p>Details about the Amazon S3 Public Access Block configuration for an account.</p>
     #[doc(hidden)]
     pub aws_s3_account_public_access_block:
-        std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>,
+        ::std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>,
     /// <p>Details about an S3 object related to a finding.</p>
     #[doc(hidden)]
-    pub aws_s3_object: std::option::Option<crate::types::AwsS3ObjectDetails>,
+    pub aws_s3_object: ::std::option::Option<crate::types::AwsS3ObjectDetails>,
     /// <p>Details about a Secrets Manager secret.</p>
     #[doc(hidden)]
     pub aws_secrets_manager_secret:
-        std::option::Option<crate::types::AwsSecretsManagerSecretDetails>,
+        ::std::option::Option<crate::types::AwsSecretsManagerSecretDetails>,
     /// <p>Details about an IAM access key related to a finding.</p>
     #[doc(hidden)]
-    pub aws_iam_access_key: std::option::Option<crate::types::AwsIamAccessKeyDetails>,
+    pub aws_iam_access_key: ::std::option::Option<crate::types::AwsIamAccessKeyDetails>,
     /// <p>Details about an IAM user.</p>
     #[doc(hidden)]
-    pub aws_iam_user: std::option::Option<crate::types::AwsIamUserDetails>,
+    pub aws_iam_user: ::std::option::Option<crate::types::AwsIamUserDetails>,
     /// <p>Details about an IAM permissions policy.</p>
     #[doc(hidden)]
-    pub aws_iam_policy: std::option::Option<crate::types::AwsIamPolicyDetails>,
+    pub aws_iam_policy: ::std::option::Option<crate::types::AwsIamPolicyDetails>,
     /// <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
     #[doc(hidden)]
-    pub aws_api_gateway_v2_stage: std::option::Option<crate::types::AwsApiGatewayV2StageDetails>,
+    pub aws_api_gateway_v2_stage: ::std::option::Option<crate::types::AwsApiGatewayV2StageDetails>,
     /// <p>Provides information about a version 2 API in Amazon API Gateway.</p>
     #[doc(hidden)]
-    pub aws_api_gateway_v2_api: std::option::Option<crate::types::AwsApiGatewayV2ApiDetails>,
+    pub aws_api_gateway_v2_api: ::std::option::Option<crate::types::AwsApiGatewayV2ApiDetails>,
     /// <p>Details about a DynamoDB table.</p>
     #[doc(hidden)]
-    pub aws_dynamo_db_table: std::option::Option<crate::types::AwsDynamoDbTableDetails>,
+    pub aws_dynamo_db_table: ::std::option::Option<crate::types::AwsDynamoDbTableDetails>,
     /// <p>Provides information about a version 1 Amazon API Gateway stage.</p>
     #[doc(hidden)]
-    pub aws_api_gateway_stage: std::option::Option<crate::types::AwsApiGatewayStageDetails>,
+    pub aws_api_gateway_stage: ::std::option::Option<crate::types::AwsApiGatewayStageDetails>,
     /// <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
     #[doc(hidden)]
-    pub aws_api_gateway_rest_api: std::option::Option<crate::types::AwsApiGatewayRestApiDetails>,
+    pub aws_api_gateway_rest_api: ::std::option::Option<crate::types::AwsApiGatewayRestApiDetails>,
     /// <p>Provides details about a CloudTrail trail.</p>
     #[doc(hidden)]
-    pub aws_cloud_trail_trail: std::option::Option<crate::types::AwsCloudTrailTrailDetails>,
+    pub aws_cloud_trail_trail: ::std::option::Option<crate::types::AwsCloudTrailTrailDetails>,
     /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
     #[doc(hidden)]
-    pub aws_ssm_patch_compliance: std::option::Option<crate::types::AwsSsmPatchComplianceDetails>,
+    pub aws_ssm_patch_compliance: ::std::option::Option<crate::types::AwsSsmPatchComplianceDetails>,
     /// <p>Provides details about an Certificate Manager certificate.</p>
     #[doc(hidden)]
     pub aws_certificate_manager_certificate:
-        std::option::Option<crate::types::AwsCertificateManagerCertificateDetails>,
+        ::std::option::Option<crate::types::AwsCertificateManagerCertificateDetails>,
     /// <p>Contains details about an Amazon Redshift cluster.</p>
     #[doc(hidden)]
-    pub aws_redshift_cluster: std::option::Option<crate::types::AwsRedshiftClusterDetails>,
+    pub aws_redshift_cluster: ::std::option::Option<crate::types::AwsRedshiftClusterDetails>,
     /// <p>Contains details about a Classic Load Balancer.</p>
     #[doc(hidden)]
-    pub aws_elb_load_balancer: std::option::Option<crate::types::AwsElbLoadBalancerDetails>,
+    pub aws_elb_load_balancer: ::std::option::Option<crate::types::AwsElbLoadBalancerDetails>,
     /// <p>Contains details about an IAM group.</p>
     #[doc(hidden)]
-    pub aws_iam_group: std::option::Option<crate::types::AwsIamGroupDetails>,
+    pub aws_iam_group: ::std::option::Option<crate::types::AwsIamGroupDetails>,
     /// <p>Details about an IAM role.</p>
     #[doc(hidden)]
-    pub aws_iam_role: std::option::Option<crate::types::AwsIamRoleDetails>,
+    pub aws_iam_role: ::std::option::Option<crate::types::AwsIamRoleDetails>,
     /// <p>Details about an KMS key.</p>
     #[doc(hidden)]
-    pub aws_kms_key: std::option::Option<crate::types::AwsKmsKeyDetails>,
+    pub aws_kms_key: ::std::option::Option<crate::types::AwsKmsKeyDetails>,
     /// <p>Details about a Lambda function.</p>
     #[doc(hidden)]
-    pub aws_lambda_function: std::option::Option<crate::types::AwsLambdaFunctionDetails>,
+    pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     /// <p>Details for a Lambda layer version.</p>
     #[doc(hidden)]
-    pub aws_lambda_layer_version: std::option::Option<crate::types::AwsLambdaLayerVersionDetails>,
+    pub aws_lambda_layer_version: ::std::option::Option<crate::types::AwsLambdaLayerVersionDetails>,
     /// <p>Details about an Amazon RDS database instance.</p>
     #[doc(hidden)]
-    pub aws_rds_db_instance: std::option::Option<crate::types::AwsRdsDbInstanceDetails>,
+    pub aws_rds_db_instance: ::std::option::Option<crate::types::AwsRdsDbInstanceDetails>,
     /// <p>Details about an SNS topic.</p>
     #[doc(hidden)]
-    pub aws_sns_topic: std::option::Option<crate::types::AwsSnsTopicDetails>,
+    pub aws_sns_topic: ::std::option::Option<crate::types::AwsSnsTopicDetails>,
     /// <p>Details about an SQS queue.</p>
     #[doc(hidden)]
-    pub aws_sqs_queue: std::option::Option<crate::types::AwsSqsQueueDetails>,
+    pub aws_sqs_queue: ::std::option::Option<crate::types::AwsSqsQueueDetails>,
     /// <p>Details for an WAF web ACL.</p>
     #[doc(hidden)]
-    pub aws_waf_web_acl: std::option::Option<crate::types::AwsWafWebAclDetails>,
+    pub aws_waf_web_acl: ::std::option::Option<crate::types::AwsWafWebAclDetails>,
     /// <p>Details about an Amazon RDS database snapshot.</p>
     #[doc(hidden)]
-    pub aws_rds_db_snapshot: std::option::Option<crate::types::AwsRdsDbSnapshotDetails>,
+    pub aws_rds_db_snapshot: ::std::option::Option<crate::types::AwsRdsDbSnapshotDetails>,
     /// <p>Details about an Amazon RDS database cluster snapshot.</p>
     #[doc(hidden)]
     pub aws_rds_db_cluster_snapshot:
-        std::option::Option<crate::types::AwsRdsDbClusterSnapshotDetails>,
+        ::std::option::Option<crate::types::AwsRdsDbClusterSnapshotDetails>,
     /// <p>Details about an Amazon RDS database cluster.</p>
     #[doc(hidden)]
-    pub aws_rds_db_cluster: std::option::Option<crate::types::AwsRdsDbClusterDetails>,
+    pub aws_rds_db_cluster: ::std::option::Option<crate::types::AwsRdsDbClusterDetails>,
     /// <p>Details about an Amazon ECS cluster.</p>
     #[doc(hidden)]
-    pub aws_ecs_cluster: std::option::Option<crate::types::AwsEcsClusterDetails>,
+    pub aws_ecs_cluster: ::std::option::Option<crate::types::AwsEcsClusterDetails>,
     /// <p>Provides information about a Docker container that's part of a task. </p>
     #[doc(hidden)]
-    pub aws_ecs_container: std::option::Option<crate::types::AwsEcsContainerDetails>,
+    pub aws_ecs_container: ::std::option::Option<crate::types::AwsEcsContainerDetails>,
     /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
     #[doc(hidden)]
-    pub aws_ecs_task_definition: std::option::Option<crate::types::AwsEcsTaskDefinitionDetails>,
+    pub aws_ecs_task_definition: ::std::option::Option<crate::types::AwsEcsTaskDefinitionDetails>,
     /// <p>Details about a container resource related to a finding.</p>
     #[doc(hidden)]
-    pub container: std::option::Option<crate::types::ContainerDetails>,
+    pub container: ::std::option::Option<crate::types::ContainerDetails>,
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
     /// <li> <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p> </li>
     /// <li> <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub other:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub other: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Details about an RDS event notification subscription.</p>
     #[doc(hidden)]
     pub aws_rds_event_subscription:
-        std::option::Option<crate::types::AwsRdsEventSubscriptionDetails>,
+        ::std::option::Option<crate::types::AwsRdsEventSubscriptionDetails>,
     /// <p>Details about a service within an ECS cluster.</p>
     #[doc(hidden)]
-    pub aws_ecs_service: std::option::Option<crate::types::AwsEcsServiceDetails>,
+    pub aws_ecs_service: ::std::option::Option<crate::types::AwsEcsServiceDetails>,
     /// <p>Provides details about a launch configuration.</p>
     #[doc(hidden)]
     pub aws_auto_scaling_launch_configuration:
-        std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>,
+        ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>,
     /// <p>Details about an Amazon EC2 VPN connection.</p>
     #[doc(hidden)]
-    pub aws_ec2_vpn_connection: std::option::Option<crate::types::AwsEc2VpnConnectionDetails>,
+    pub aws_ec2_vpn_connection: ::std::option::Option<crate::types::AwsEc2VpnConnectionDetails>,
     /// <p>Information about an Amazon ECR image.</p>
     #[doc(hidden)]
-    pub aws_ecr_container_image: std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+    pub aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     /// <p>Details about an Amazon OpenSearch Service domain.</p>
     #[doc(hidden)]
     pub aws_open_search_service_domain:
-        std::option::Option<crate::types::AwsOpenSearchServiceDomainDetails>,
+        ::std::option::Option<crate::types::AwsOpenSearchServiceDomainDetails>,
     /// <p>Details about the service configuration for a VPC endpoint service.</p>
     #[doc(hidden)]
     pub aws_ec2_vpc_endpoint_service:
-        std::option::Option<crate::types::AwsEc2VpcEndpointServiceDetails>,
+        ::std::option::Option<crate::types::AwsEc2VpcEndpointServiceDetails>,
     /// <p>Information about the encryption configuration for X-Ray.</p>
     #[doc(hidden)]
     pub aws_xray_encryption_config:
-        std::option::Option<crate::types::AwsXrayEncryptionConfigDetails>,
+        ::std::option::Option<crate::types::AwsXrayEncryptionConfigDetails>,
     /// <p>Details about a rate-based rule for global resources.</p>
     #[doc(hidden)]
-    pub aws_waf_rate_based_rule: std::option::Option<crate::types::AwsWafRateBasedRuleDetails>,
+    pub aws_waf_rate_based_rule: ::std::option::Option<crate::types::AwsWafRateBasedRuleDetails>,
     /// <p>Details about a rate-based rule for Regional resources.</p>
     #[doc(hidden)]
     pub aws_waf_regional_rate_based_rule:
-        std::option::Option<crate::types::AwsWafRegionalRateBasedRuleDetails>,
+        ::std::option::Option<crate::types::AwsWafRegionalRateBasedRuleDetails>,
     /// <p>Information about an Amazon Elastic Container Registry repository.</p>
     #[doc(hidden)]
-    pub aws_ecr_repository: std::option::Option<crate::types::AwsEcrRepositoryDetails>,
+    pub aws_ecr_repository: ::std::option::Option<crate::types::AwsEcrRepositoryDetails>,
     /// <p>Details about an Amazon EKS cluster.</p>
     #[doc(hidden)]
-    pub aws_eks_cluster: std::option::Option<crate::types::AwsEksClusterDetails>,
+    pub aws_eks_cluster: ::std::option::Option<crate::types::AwsEksClusterDetails>,
     /// <p>Details about an Network Firewall firewall policy.</p>
     #[doc(hidden)]
     pub aws_network_firewall_firewall_policy:
-        std::option::Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails>,
+        ::std::option::Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails>,
     /// <p>Details about an Network Firewall firewall.</p>
     #[doc(hidden)]
     pub aws_network_firewall_firewall:
-        std::option::Option<crate::types::AwsNetworkFirewallFirewallDetails>,
+        ::std::option::Option<crate::types::AwsNetworkFirewallFirewallDetails>,
     /// <p>Details about an Network Firewall rule group.</p>
     #[doc(hidden)]
     pub aws_network_firewall_rule_group:
-        std::option::Option<crate::types::AwsNetworkFirewallRuleGroupDetails>,
+        ::std::option::Option<crate::types::AwsNetworkFirewallRuleGroupDetails>,
     /// <p>Details about an Amazon RDS DB security group.</p>
     #[doc(hidden)]
-    pub aws_rds_db_security_group: std::option::Option<crate::types::AwsRdsDbSecurityGroupDetails>,
+    pub aws_rds_db_security_group:
+        ::std::option::Option<crate::types::AwsRdsDbSecurityGroupDetails>,
     /// <p>Details about an Amazon Kinesis data stream.</p>
     #[doc(hidden)]
-    pub aws_kinesis_stream: std::option::Option<crate::types::AwsKinesisStreamDetails>,
+    pub aws_kinesis_stream: ::std::option::Option<crate::types::AwsKinesisStreamDetails>,
     /// <p>Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises networks.</p>
     #[doc(hidden)]
-    pub aws_ec2_transit_gateway: std::option::Option<crate::types::AwsEc2TransitGatewayDetails>,
+    pub aws_ec2_transit_gateway: ::std::option::Option<crate::types::AwsEc2TransitGatewayDetails>,
     /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     #[doc(hidden)]
-    pub aws_efs_access_point: std::option::Option<crate::types::AwsEfsAccessPointDetails>,
+    pub aws_efs_access_point: ::std::option::Option<crate::types::AwsEfsAccessPointDetails>,
     /// <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can manage as a single unit.</p>
     #[doc(hidden)]
-    pub aws_cloud_formation_stack: std::option::Option<crate::types::AwsCloudFormationStackDetails>,
+    pub aws_cloud_formation_stack:
+        ::std::option::Option<crate::types::AwsCloudFormationStackDetails>,
     /// <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web Services resources and applications across multiple Regions.</p>
     #[doc(hidden)]
-    pub aws_cloud_watch_alarm: std::option::Option<crate::types::AwsCloudWatchAlarmDetails>,
+    pub aws_cloud_watch_alarm: ::std::option::Option<crate::types::AwsCloudWatchAlarmDetails>,
     /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     #[doc(hidden)]
     pub aws_ec2_vpc_peering_connection:
-        std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>,
+        ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>,
     /// <p>Details about an WAF rule group for Regional resources. </p>
     #[doc(hidden)]
     pub aws_waf_regional_rule_group:
-        std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>,
+        ::std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>,
     /// <p>Details about an WAF rule for Regional resources. </p>
     #[doc(hidden)]
-    pub aws_waf_regional_rule: std::option::Option<crate::types::AwsWafRegionalRuleDetails>,
+    pub aws_waf_regional_rule: ::std::option::Option<crate::types::AwsWafRegionalRuleDetails>,
     /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     #[doc(hidden)]
-    pub aws_waf_regional_web_acl: std::option::Option<crate::types::AwsWafRegionalWebAclDetails>,
+    pub aws_waf_regional_web_acl: ::std::option::Option<crate::types::AwsWafRegionalWebAclDetails>,
     /// <p>Details about an WAF rule for global resources. </p>
     #[doc(hidden)]
-    pub aws_waf_rule: std::option::Option<crate::types::AwsWafRuleDetails>,
+    pub aws_waf_rule: ::std::option::Option<crate::types::AwsWafRuleDetails>,
     /// <p>Details about an WAF rule group for global resources. </p>
     #[doc(hidden)]
-    pub aws_waf_rule_group: std::option::Option<crate::types::AwsWafRuleGroupDetails>,
+    pub aws_waf_rule_group: ::std::option::Option<crate::types::AwsWafRuleGroupDetails>,
     /// <p>Details about a task in a cluster. </p>
     #[doc(hidden)]
-    pub aws_ecs_task: std::option::Option<crate::types::AwsEcsTaskDetails>,
+    pub aws_ecs_task: ::std::option::Option<crate::types::AwsEcsTaskDetails>,
     /// <p>Provides details about an Backup backup vault. </p>
     #[doc(hidden)]
-    pub aws_backup_backup_vault: std::option::Option<crate::types::AwsBackupBackupVaultDetails>,
+    pub aws_backup_backup_vault: ::std::option::Option<crate::types::AwsBackupBackupVaultDetails>,
     /// <p>Provides details about an Backup backup plan. </p>
     #[doc(hidden)]
-    pub aws_backup_backup_plan: std::option::Option<crate::types::AwsBackupBackupPlanDetails>,
+    pub aws_backup_backup_plan: ::std::option::Option<crate::types::AwsBackupBackupPlanDetails>,
     /// <p>Provides details about an Backup backup, or recovery point. </p>
     #[doc(hidden)]
-    pub aws_backup_recovery_point: std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
+    pub aws_backup_recovery_point:
+        ::std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
     /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     #[doc(hidden)]
-    pub aws_ec2_launch_template: std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
+    pub aws_ec2_launch_template: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
     /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     #[doc(hidden)]
     pub aws_sage_maker_notebook_instance:
-        std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
+        ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
     /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     #[doc(hidden)]
-    pub aws_wafv2_web_acl: std::option::Option<crate::types::AwsWafv2WebAclDetails>,
+    pub aws_wafv2_web_acl: ::std::option::Option<crate::types::AwsWafv2WebAclDetails>,
     /// <p> Details about an WAFv2 rule group. </p>
     #[doc(hidden)]
-    pub aws_wafv2_rule_group: std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
+    pub aws_wafv2_rule_group: ::std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
     /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     #[doc(hidden)]
-    pub aws_ec2_route_table: std::option::Option<crate::types::AwsEc2RouteTableDetails>,
+    pub aws_ec2_route_table: ::std::option::Option<crate::types::AwsEc2RouteTableDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
     pub fn aws_auto_scaling_auto_scaling_group(
         &self,
-    ) -> std::option::Option<&crate::types::AwsAutoScalingAutoScalingGroupDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsAutoScalingAutoScalingGroupDetails> {
         self.aws_auto_scaling_auto_scaling_group.as_ref()
     }
     /// <p>Details for an CodeBuild project.</p>
     pub fn aws_code_build_project(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCodeBuildProjectDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectDetails> {
         self.aws_code_build_project.as_ref()
     }
     /// <p>Details about a CloudFront distribution.</p>
     pub fn aws_cloud_front_distribution(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCloudFrontDistributionDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionDetails> {
         self.aws_cloud_front_distribution.as_ref()
     }
     /// <p>Details about an EC2 instance related to a finding.</p>
-    pub fn aws_ec2_instance(&self) -> std::option::Option<&crate::types::AwsEc2InstanceDetails> {
+    pub fn aws_ec2_instance(&self) -> ::std::option::Option<&crate::types::AwsEc2InstanceDetails> {
         self.aws_ec2_instance.as_ref()
     }
     /// <p>Details for an EC2 network interface.</p>
     pub fn aws_ec2_network_interface(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2NetworkInterfaceDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2NetworkInterfaceDetails> {
         self.aws_ec2_network_interface.as_ref()
     }
     /// <p>Details for an EC2 security group.</p>
     pub fn aws_ec2_security_group(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2SecurityGroupDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2SecurityGroupDetails> {
         self.aws_ec2_security_group.as_ref()
     }
     /// <p>Details for an Amazon EC2 volume.</p>
-    pub fn aws_ec2_volume(&self) -> std::option::Option<&crate::types::AwsEc2VolumeDetails> {
+    pub fn aws_ec2_volume(&self) -> ::std::option::Option<&crate::types::AwsEc2VolumeDetails> {
         self.aws_ec2_volume.as_ref()
     }
     /// <p>Details for an Amazon EC2 VPC.</p>
-    pub fn aws_ec2_vpc(&self) -> std::option::Option<&crate::types::AwsEc2VpcDetails> {
+    pub fn aws_ec2_vpc(&self) -> ::std::option::Option<&crate::types::AwsEc2VpcDetails> {
         self.aws_ec2_vpc.as_ref()
     }
     /// <p>Details about an Elastic IP address.</p>
-    pub fn aws_ec2_eip(&self) -> std::option::Option<&crate::types::AwsEc2EipDetails> {
+    pub fn aws_ec2_eip(&self) -> ::std::option::Option<&crate::types::AwsEc2EipDetails> {
         self.aws_ec2_eip.as_ref()
     }
     /// <p>Details about a subnet in Amazon EC2.</p>
-    pub fn aws_ec2_subnet(&self) -> std::option::Option<&crate::types::AwsEc2SubnetDetails> {
+    pub fn aws_ec2_subnet(&self) -> ::std::option::Option<&crate::types::AwsEc2SubnetDetails> {
         self.aws_ec2_subnet.as_ref()
     }
     /// <p>Details about an EC2 network access control list (ACL).</p>
     pub fn aws_ec2_network_acl(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2NetworkAclDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2NetworkAclDetails> {
         self.aws_ec2_network_acl.as_ref()
     }
     /// <p>Details about a load balancer.</p>
     pub fn aws_elbv2_load_balancer(
         &self,
-    ) -> std::option::Option<&crate::types::AwsElbv2LoadBalancerDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsElbv2LoadBalancerDetails> {
         self.aws_elbv2_load_balancer.as_ref()
     }
     /// <p>Details about an Elastic Beanstalk environment.</p>
     pub fn aws_elastic_beanstalk_environment(
         &self,
-    ) -> std::option::Option<&crate::types::AwsElasticBeanstalkEnvironmentDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsElasticBeanstalkEnvironmentDetails> {
         self.aws_elastic_beanstalk_environment.as_ref()
     }
     /// <p>Details for an Elasticsearch domain.</p>
     pub fn aws_elasticsearch_domain(
         &self,
-    ) -> std::option::Option<&crate::types::AwsElasticsearchDomainDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsElasticsearchDomainDetails> {
         self.aws_elasticsearch_domain.as_ref()
     }
     /// <p>Details about an S3 bucket related to a finding.</p>
-    pub fn aws_s3_bucket(&self) -> std::option::Option<&crate::types::AwsS3BucketDetails> {
+    pub fn aws_s3_bucket(&self) -> ::std::option::Option<&crate::types::AwsS3BucketDetails> {
         self.aws_s3_bucket.as_ref()
     }
     /// <p>Details about the Amazon S3 Public Access Block configuration for an account.</p>
     pub fn aws_s3_account_public_access_block(
         &self,
-    ) -> std::option::Option<&crate::types::AwsS3AccountPublicAccessBlockDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsS3AccountPublicAccessBlockDetails> {
         self.aws_s3_account_public_access_block.as_ref()
     }
     /// <p>Details about an S3 object related to a finding.</p>
-    pub fn aws_s3_object(&self) -> std::option::Option<&crate::types::AwsS3ObjectDetails> {
+    pub fn aws_s3_object(&self) -> ::std::option::Option<&crate::types::AwsS3ObjectDetails> {
         self.aws_s3_object.as_ref()
     }
     /// <p>Details about a Secrets Manager secret.</p>
     pub fn aws_secrets_manager_secret(
         &self,
-    ) -> std::option::Option<&crate::types::AwsSecretsManagerSecretDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsSecretsManagerSecretDetails> {
         self.aws_secrets_manager_secret.as_ref()
     }
     /// <p>Details about an IAM access key related to a finding.</p>
-    pub fn aws_iam_access_key(&self) -> std::option::Option<&crate::types::AwsIamAccessKeyDetails> {
+    pub fn aws_iam_access_key(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsIamAccessKeyDetails> {
         self.aws_iam_access_key.as_ref()
     }
     /// <p>Details about an IAM user.</p>
-    pub fn aws_iam_user(&self) -> std::option::Option<&crate::types::AwsIamUserDetails> {
+    pub fn aws_iam_user(&self) -> ::std::option::Option<&crate::types::AwsIamUserDetails> {
         self.aws_iam_user.as_ref()
     }
     /// <p>Details about an IAM permissions policy.</p>
-    pub fn aws_iam_policy(&self) -> std::option::Option<&crate::types::AwsIamPolicyDetails> {
+    pub fn aws_iam_policy(&self) -> ::std::option::Option<&crate::types::AwsIamPolicyDetails> {
         self.aws_iam_policy.as_ref()
     }
     /// <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
     pub fn aws_api_gateway_v2_stage(
         &self,
-    ) -> std::option::Option<&crate::types::AwsApiGatewayV2StageDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsApiGatewayV2StageDetails> {
         self.aws_api_gateway_v2_stage.as_ref()
     }
     /// <p>Provides information about a version 2 API in Amazon API Gateway.</p>
     pub fn aws_api_gateway_v2_api(
         &self,
-    ) -> std::option::Option<&crate::types::AwsApiGatewayV2ApiDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsApiGatewayV2ApiDetails> {
         self.aws_api_gateway_v2_api.as_ref()
     }
     /// <p>Details about a DynamoDB table.</p>
     pub fn aws_dynamo_db_table(
         &self,
-    ) -> std::option::Option<&crate::types::AwsDynamoDbTableDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableDetails> {
         self.aws_dynamo_db_table.as_ref()
     }
     /// <p>Provides information about a version 1 Amazon API Gateway stage.</p>
     pub fn aws_api_gateway_stage(
         &self,
-    ) -> std::option::Option<&crate::types::AwsApiGatewayStageDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsApiGatewayStageDetails> {
         self.aws_api_gateway_stage.as_ref()
     }
     /// <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
     pub fn aws_api_gateway_rest_api(
         &self,
-    ) -> std::option::Option<&crate::types::AwsApiGatewayRestApiDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsApiGatewayRestApiDetails> {
         self.aws_api_gateway_rest_api.as_ref()
     }
     /// <p>Provides details about a CloudTrail trail.</p>
     pub fn aws_cloud_trail_trail(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCloudTrailTrailDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsCloudTrailTrailDetails> {
         self.aws_cloud_trail_trail.as_ref()
     }
     /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
     pub fn aws_ssm_patch_compliance(
         &self,
-    ) -> std::option::Option<&crate::types::AwsSsmPatchComplianceDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsSsmPatchComplianceDetails> {
         self.aws_ssm_patch_compliance.as_ref()
     }
     /// <p>Provides details about an Certificate Manager certificate.</p>
     pub fn aws_certificate_manager_certificate(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCertificateManagerCertificateDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsCertificateManagerCertificateDetails> {
         self.aws_certificate_manager_certificate.as_ref()
     }
     /// <p>Contains details about an Amazon Redshift cluster.</p>
     pub fn aws_redshift_cluster(
         &self,
-    ) -> std::option::Option<&crate::types::AwsRedshiftClusterDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsRedshiftClusterDetails> {
         self.aws_redshift_cluster.as_ref()
     }
     /// <p>Contains details about a Classic Load Balancer.</p>
     pub fn aws_elb_load_balancer(
         &self,
-    ) -> std::option::Option<&crate::types::AwsElbLoadBalancerDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsElbLoadBalancerDetails> {
         self.aws_elb_load_balancer.as_ref()
     }
     /// <p>Contains details about an IAM group.</p>
-    pub fn aws_iam_group(&self) -> std::option::Option<&crate::types::AwsIamGroupDetails> {
+    pub fn aws_iam_group(&self) -> ::std::option::Option<&crate::types::AwsIamGroupDetails> {
         self.aws_iam_group.as_ref()
     }
     /// <p>Details about an IAM role.</p>
-    pub fn aws_iam_role(&self) -> std::option::Option<&crate::types::AwsIamRoleDetails> {
+    pub fn aws_iam_role(&self) -> ::std::option::Option<&crate::types::AwsIamRoleDetails> {
         self.aws_iam_role.as_ref()
     }
     /// <p>Details about an KMS key.</p>
-    pub fn aws_kms_key(&self) -> std::option::Option<&crate::types::AwsKmsKeyDetails> {
+    pub fn aws_kms_key(&self) -> ::std::option::Option<&crate::types::AwsKmsKeyDetails> {
         self.aws_kms_key.as_ref()
     }
     /// <p>Details about a Lambda function.</p>
     pub fn aws_lambda_function(
         &self,
-    ) -> std::option::Option<&crate::types::AwsLambdaFunctionDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsLambdaFunctionDetails> {
         self.aws_lambda_function.as_ref()
     }
     /// <p>Details for a Lambda layer version.</p>
     pub fn aws_lambda_layer_version(
         &self,
-    ) -> std::option::Option<&crate::types::AwsLambdaLayerVersionDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsLambdaLayerVersionDetails> {
         self.aws_lambda_layer_version.as_ref()
     }
     /// <p>Details about an Amazon RDS database instance.</p>
     pub fn aws_rds_db_instance(
         &self,
-    ) -> std::option::Option<&crate::types::AwsRdsDbInstanceDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsRdsDbInstanceDetails> {
         self.aws_rds_db_instance.as_ref()
     }
     /// <p>Details about an SNS topic.</p>
-    pub fn aws_sns_topic(&self) -> std::option::Option<&crate::types::AwsSnsTopicDetails> {
+    pub fn aws_sns_topic(&self) -> ::std::option::Option<&crate::types::AwsSnsTopicDetails> {
         self.aws_sns_topic.as_ref()
     }
     /// <p>Details about an SQS queue.</p>
-    pub fn aws_sqs_queue(&self) -> std::option::Option<&crate::types::AwsSqsQueueDetails> {
+    pub fn aws_sqs_queue(&self) -> ::std::option::Option<&crate::types::AwsSqsQueueDetails> {
         self.aws_sqs_queue.as_ref()
     }
     /// <p>Details for an WAF web ACL.</p>
-    pub fn aws_waf_web_acl(&self) -> std::option::Option<&crate::types::AwsWafWebAclDetails> {
+    pub fn aws_waf_web_acl(&self) -> ::std::option::Option<&crate::types::AwsWafWebAclDetails> {
         self.aws_waf_web_acl.as_ref()
     }
     /// <p>Details about an Amazon RDS database snapshot.</p>
     pub fn aws_rds_db_snapshot(
         &self,
-    ) -> std::option::Option<&crate::types::AwsRdsDbSnapshotDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsRdsDbSnapshotDetails> {
         self.aws_rds_db_snapshot.as_ref()
     }
     /// <p>Details about an Amazon RDS database cluster snapshot.</p>
     pub fn aws_rds_db_cluster_snapshot(
         &self,
-    ) -> std::option::Option<&crate::types::AwsRdsDbClusterSnapshotDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsRdsDbClusterSnapshotDetails> {
         self.aws_rds_db_cluster_snapshot.as_ref()
     }
     /// <p>Details about an Amazon RDS database cluster.</p>
-    pub fn aws_rds_db_cluster(&self) -> std::option::Option<&crate::types::AwsRdsDbClusterDetails> {
+    pub fn aws_rds_db_cluster(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsRdsDbClusterDetails> {
         self.aws_rds_db_cluster.as_ref()
     }
     /// <p>Details about an Amazon ECS cluster.</p>
-    pub fn aws_ecs_cluster(&self) -> std::option::Option<&crate::types::AwsEcsClusterDetails> {
+    pub fn aws_ecs_cluster(&self) -> ::std::option::Option<&crate::types::AwsEcsClusterDetails> {
         self.aws_ecs_cluster.as_ref()
     }
     /// <p>Provides information about a Docker container that's part of a task. </p>
-    pub fn aws_ecs_container(&self) -> std::option::Option<&crate::types::AwsEcsContainerDetails> {
+    pub fn aws_ecs_container(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsEcsContainerDetails> {
         self.aws_ecs_container.as_ref()
     }
     /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
     pub fn aws_ecs_task_definition(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEcsTaskDefinitionDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEcsTaskDefinitionDetails> {
         self.aws_ecs_task_definition.as_ref()
     }
     /// <p>Details about a container resource related to a finding.</p>
-    pub fn container(&self) -> std::option::Option<&crate::types::ContainerDetails> {
+    pub fn container(&self) -> ::std::option::Option<&crate::types::ContainerDetails> {
         self.container.as_ref()
     }
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
@@ -534,212 +546,215 @@ impl ResourceDetails {
     /// </ul>
     pub fn other(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.other.as_ref()
     }
     /// <p>Details about an RDS event notification subscription.</p>
     pub fn aws_rds_event_subscription(
         &self,
-    ) -> std::option::Option<&crate::types::AwsRdsEventSubscriptionDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsRdsEventSubscriptionDetails> {
         self.aws_rds_event_subscription.as_ref()
     }
     /// <p>Details about a service within an ECS cluster.</p>
-    pub fn aws_ecs_service(&self) -> std::option::Option<&crate::types::AwsEcsServiceDetails> {
+    pub fn aws_ecs_service(&self) -> ::std::option::Option<&crate::types::AwsEcsServiceDetails> {
         self.aws_ecs_service.as_ref()
     }
     /// <p>Provides details about a launch configuration.</p>
     pub fn aws_auto_scaling_launch_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::AwsAutoScalingLaunchConfigurationDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsAutoScalingLaunchConfigurationDetails> {
         self.aws_auto_scaling_launch_configuration.as_ref()
     }
     /// <p>Details about an Amazon EC2 VPN connection.</p>
     pub fn aws_ec2_vpn_connection(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2VpnConnectionDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2VpnConnectionDetails> {
         self.aws_ec2_vpn_connection.as_ref()
     }
     /// <p>Information about an Amazon ECR image.</p>
     pub fn aws_ecr_container_image(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
         self.aws_ecr_container_image.as_ref()
     }
     /// <p>Details about an Amazon OpenSearch Service domain.</p>
     pub fn aws_open_search_service_domain(
         &self,
-    ) -> std::option::Option<&crate::types::AwsOpenSearchServiceDomainDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainDetails> {
         self.aws_open_search_service_domain.as_ref()
     }
     /// <p>Details about the service configuration for a VPC endpoint service.</p>
     pub fn aws_ec2_vpc_endpoint_service(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2VpcEndpointServiceDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2VpcEndpointServiceDetails> {
         self.aws_ec2_vpc_endpoint_service.as_ref()
     }
     /// <p>Information about the encryption configuration for X-Ray.</p>
     pub fn aws_xray_encryption_config(
         &self,
-    ) -> std::option::Option<&crate::types::AwsXrayEncryptionConfigDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsXrayEncryptionConfigDetails> {
         self.aws_xray_encryption_config.as_ref()
     }
     /// <p>Details about a rate-based rule for global resources.</p>
     pub fn aws_waf_rate_based_rule(
         &self,
-    ) -> std::option::Option<&crate::types::AwsWafRateBasedRuleDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsWafRateBasedRuleDetails> {
         self.aws_waf_rate_based_rule.as_ref()
     }
     /// <p>Details about a rate-based rule for Regional resources.</p>
     pub fn aws_waf_regional_rate_based_rule(
         &self,
-    ) -> std::option::Option<&crate::types::AwsWafRegionalRateBasedRuleDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsWafRegionalRateBasedRuleDetails> {
         self.aws_waf_regional_rate_based_rule.as_ref()
     }
     /// <p>Information about an Amazon Elastic Container Registry repository.</p>
     pub fn aws_ecr_repository(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEcrRepositoryDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEcrRepositoryDetails> {
         self.aws_ecr_repository.as_ref()
     }
     /// <p>Details about an Amazon EKS cluster.</p>
-    pub fn aws_eks_cluster(&self) -> std::option::Option<&crate::types::AwsEksClusterDetails> {
+    pub fn aws_eks_cluster(&self) -> ::std::option::Option<&crate::types::AwsEksClusterDetails> {
         self.aws_eks_cluster.as_ref()
     }
     /// <p>Details about an Network Firewall firewall policy.</p>
     pub fn aws_network_firewall_firewall_policy(
         &self,
-    ) -> std::option::Option<&crate::types::AwsNetworkFirewallFirewallPolicyDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsNetworkFirewallFirewallPolicyDetails> {
         self.aws_network_firewall_firewall_policy.as_ref()
     }
     /// <p>Details about an Network Firewall firewall.</p>
     pub fn aws_network_firewall_firewall(
         &self,
-    ) -> std::option::Option<&crate::types::AwsNetworkFirewallFirewallDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsNetworkFirewallFirewallDetails> {
         self.aws_network_firewall_firewall.as_ref()
     }
     /// <p>Details about an Network Firewall rule group.</p>
     pub fn aws_network_firewall_rule_group(
         &self,
-    ) -> std::option::Option<&crate::types::AwsNetworkFirewallRuleGroupDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsNetworkFirewallRuleGroupDetails> {
         self.aws_network_firewall_rule_group.as_ref()
     }
     /// <p>Details about an Amazon RDS DB security group.</p>
     pub fn aws_rds_db_security_group(
         &self,
-    ) -> std::option::Option<&crate::types::AwsRdsDbSecurityGroupDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsRdsDbSecurityGroupDetails> {
         self.aws_rds_db_security_group.as_ref()
     }
     /// <p>Details about an Amazon Kinesis data stream.</p>
     pub fn aws_kinesis_stream(
         &self,
-    ) -> std::option::Option<&crate::types::AwsKinesisStreamDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsKinesisStreamDetails> {
         self.aws_kinesis_stream.as_ref()
     }
     /// <p>Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises networks.</p>
     pub fn aws_ec2_transit_gateway(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2TransitGatewayDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2TransitGatewayDetails> {
         self.aws_ec2_transit_gateway.as_ref()
     }
     /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub fn aws_efs_access_point(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEfsAccessPointDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEfsAccessPointDetails> {
         self.aws_efs_access_point.as_ref()
     }
     /// <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can manage as a single unit.</p>
     pub fn aws_cloud_formation_stack(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCloudFormationStackDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsCloudFormationStackDetails> {
         self.aws_cloud_formation_stack.as_ref()
     }
     /// <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web Services resources and applications across multiple Regions.</p>
     pub fn aws_cloud_watch_alarm(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCloudWatchAlarmDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsCloudWatchAlarmDetails> {
         self.aws_cloud_watch_alarm.as_ref()
     }
     /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     pub fn aws_ec2_vpc_peering_connection(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2VpcPeeringConnectionDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2VpcPeeringConnectionDetails> {
         self.aws_ec2_vpc_peering_connection.as_ref()
     }
     /// <p>Details about an WAF rule group for Regional resources. </p>
     pub fn aws_waf_regional_rule_group(
         &self,
-    ) -> std::option::Option<&crate::types::AwsWafRegionalRuleGroupDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsWafRegionalRuleGroupDetails> {
         self.aws_waf_regional_rule_group.as_ref()
     }
     /// <p>Details about an WAF rule for Regional resources. </p>
     pub fn aws_waf_regional_rule(
         &self,
-    ) -> std::option::Option<&crate::types::AwsWafRegionalRuleDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsWafRegionalRuleDetails> {
         self.aws_waf_regional_rule.as_ref()
     }
     /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     pub fn aws_waf_regional_web_acl(
         &self,
-    ) -> std::option::Option<&crate::types::AwsWafRegionalWebAclDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsWafRegionalWebAclDetails> {
         self.aws_waf_regional_web_acl.as_ref()
     }
     /// <p>Details about an WAF rule for global resources. </p>
-    pub fn aws_waf_rule(&self) -> std::option::Option<&crate::types::AwsWafRuleDetails> {
+    pub fn aws_waf_rule(&self) -> ::std::option::Option<&crate::types::AwsWafRuleDetails> {
         self.aws_waf_rule.as_ref()
     }
     /// <p>Details about an WAF rule group for global resources. </p>
-    pub fn aws_waf_rule_group(&self) -> std::option::Option<&crate::types::AwsWafRuleGroupDetails> {
+    pub fn aws_waf_rule_group(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsWafRuleGroupDetails> {
         self.aws_waf_rule_group.as_ref()
     }
     /// <p>Details about a task in a cluster. </p>
-    pub fn aws_ecs_task(&self) -> std::option::Option<&crate::types::AwsEcsTaskDetails> {
+    pub fn aws_ecs_task(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskDetails> {
         self.aws_ecs_task.as_ref()
     }
     /// <p>Provides details about an Backup backup vault. </p>
     pub fn aws_backup_backup_vault(
         &self,
-    ) -> std::option::Option<&crate::types::AwsBackupBackupVaultDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsBackupBackupVaultDetails> {
         self.aws_backup_backup_vault.as_ref()
     }
     /// <p>Provides details about an Backup backup plan. </p>
     pub fn aws_backup_backup_plan(
         &self,
-    ) -> std::option::Option<&crate::types::AwsBackupBackupPlanDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsBackupBackupPlanDetails> {
         self.aws_backup_backup_plan.as_ref()
     }
     /// <p>Provides details about an Backup backup, or recovery point. </p>
     pub fn aws_backup_recovery_point(
         &self,
-    ) -> std::option::Option<&crate::types::AwsBackupRecoveryPointDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsBackupRecoveryPointDetails> {
         self.aws_backup_recovery_point.as_ref()
     }
     /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     pub fn aws_ec2_launch_template(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2LaunchTemplateDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDetails> {
         self.aws_ec2_launch_template.as_ref()
     }
     /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     pub fn aws_sage_maker_notebook_instance(
         &self,
-    ) -> std::option::Option<&crate::types::AwsSageMakerNotebookInstanceDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsSageMakerNotebookInstanceDetails> {
         self.aws_sage_maker_notebook_instance.as_ref()
     }
     /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
-    pub fn aws_wafv2_web_acl(&self) -> std::option::Option<&crate::types::AwsWafv2WebAclDetails> {
+    pub fn aws_wafv2_web_acl(&self) -> ::std::option::Option<&crate::types::AwsWafv2WebAclDetails> {
         self.aws_wafv2_web_acl.as_ref()
     }
     /// <p> Details about an WAFv2 rule group. </p>
     pub fn aws_wafv2_rule_group(
         &self,
-    ) -> std::option::Option<&crate::types::AwsWafv2RuleGroupDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsWafv2RuleGroupDetails> {
         self.aws_wafv2_rule_group.as_ref()
     }
     /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub fn aws_ec2_route_table(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEc2RouteTableDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEc2RouteTableDetails> {
         self.aws_ec2_route_table.as_ref()
     }
 }
@@ -752,133 +767,142 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceDetailsBuilder {
     pub(crate) aws_auto_scaling_auto_scaling_group:
-        std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>,
+        ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>,
     pub(crate) aws_code_build_project:
-        std::option::Option<crate::types::AwsCodeBuildProjectDetails>,
+        ::std::option::Option<crate::types::AwsCodeBuildProjectDetails>,
     pub(crate) aws_cloud_front_distribution:
-        std::option::Option<crate::types::AwsCloudFrontDistributionDetails>,
-    pub(crate) aws_ec2_instance: std::option::Option<crate::types::AwsEc2InstanceDetails>,
+        ::std::option::Option<crate::types::AwsCloudFrontDistributionDetails>,
+    pub(crate) aws_ec2_instance: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     pub(crate) aws_ec2_network_interface:
-        std::option::Option<crate::types::AwsEc2NetworkInterfaceDetails>,
+        ::std::option::Option<crate::types::AwsEc2NetworkInterfaceDetails>,
     pub(crate) aws_ec2_security_group:
-        std::option::Option<crate::types::AwsEc2SecurityGroupDetails>,
-    pub(crate) aws_ec2_volume: std::option::Option<crate::types::AwsEc2VolumeDetails>,
-    pub(crate) aws_ec2_vpc: std::option::Option<crate::types::AwsEc2VpcDetails>,
-    pub(crate) aws_ec2_eip: std::option::Option<crate::types::AwsEc2EipDetails>,
-    pub(crate) aws_ec2_subnet: std::option::Option<crate::types::AwsEc2SubnetDetails>,
-    pub(crate) aws_ec2_network_acl: std::option::Option<crate::types::AwsEc2NetworkAclDetails>,
+        ::std::option::Option<crate::types::AwsEc2SecurityGroupDetails>,
+    pub(crate) aws_ec2_volume: ::std::option::Option<crate::types::AwsEc2VolumeDetails>,
+    pub(crate) aws_ec2_vpc: ::std::option::Option<crate::types::AwsEc2VpcDetails>,
+    pub(crate) aws_ec2_eip: ::std::option::Option<crate::types::AwsEc2EipDetails>,
+    pub(crate) aws_ec2_subnet: ::std::option::Option<crate::types::AwsEc2SubnetDetails>,
+    pub(crate) aws_ec2_network_acl: ::std::option::Option<crate::types::AwsEc2NetworkAclDetails>,
     pub(crate) aws_elbv2_load_balancer:
-        std::option::Option<crate::types::AwsElbv2LoadBalancerDetails>,
+        ::std::option::Option<crate::types::AwsElbv2LoadBalancerDetails>,
     pub(crate) aws_elastic_beanstalk_environment:
-        std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentDetails>,
+        ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentDetails>,
     pub(crate) aws_elasticsearch_domain:
-        std::option::Option<crate::types::AwsElasticsearchDomainDetails>,
-    pub(crate) aws_s3_bucket: std::option::Option<crate::types::AwsS3BucketDetails>,
+        ::std::option::Option<crate::types::AwsElasticsearchDomainDetails>,
+    pub(crate) aws_s3_bucket: ::std::option::Option<crate::types::AwsS3BucketDetails>,
     pub(crate) aws_s3_account_public_access_block:
-        std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>,
-    pub(crate) aws_s3_object: std::option::Option<crate::types::AwsS3ObjectDetails>,
+        ::std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>,
+    pub(crate) aws_s3_object: ::std::option::Option<crate::types::AwsS3ObjectDetails>,
     pub(crate) aws_secrets_manager_secret:
-        std::option::Option<crate::types::AwsSecretsManagerSecretDetails>,
-    pub(crate) aws_iam_access_key: std::option::Option<crate::types::AwsIamAccessKeyDetails>,
-    pub(crate) aws_iam_user: std::option::Option<crate::types::AwsIamUserDetails>,
-    pub(crate) aws_iam_policy: std::option::Option<crate::types::AwsIamPolicyDetails>,
+        ::std::option::Option<crate::types::AwsSecretsManagerSecretDetails>,
+    pub(crate) aws_iam_access_key: ::std::option::Option<crate::types::AwsIamAccessKeyDetails>,
+    pub(crate) aws_iam_user: ::std::option::Option<crate::types::AwsIamUserDetails>,
+    pub(crate) aws_iam_policy: ::std::option::Option<crate::types::AwsIamPolicyDetails>,
     pub(crate) aws_api_gateway_v2_stage:
-        std::option::Option<crate::types::AwsApiGatewayV2StageDetails>,
-    pub(crate) aws_api_gateway_v2_api: std::option::Option<crate::types::AwsApiGatewayV2ApiDetails>,
-    pub(crate) aws_dynamo_db_table: std::option::Option<crate::types::AwsDynamoDbTableDetails>,
-    pub(crate) aws_api_gateway_stage: std::option::Option<crate::types::AwsApiGatewayStageDetails>,
+        ::std::option::Option<crate::types::AwsApiGatewayV2StageDetails>,
+    pub(crate) aws_api_gateway_v2_api:
+        ::std::option::Option<crate::types::AwsApiGatewayV2ApiDetails>,
+    pub(crate) aws_dynamo_db_table: ::std::option::Option<crate::types::AwsDynamoDbTableDetails>,
+    pub(crate) aws_api_gateway_stage:
+        ::std::option::Option<crate::types::AwsApiGatewayStageDetails>,
     pub(crate) aws_api_gateway_rest_api:
-        std::option::Option<crate::types::AwsApiGatewayRestApiDetails>,
-    pub(crate) aws_cloud_trail_trail: std::option::Option<crate::types::AwsCloudTrailTrailDetails>,
+        ::std::option::Option<crate::types::AwsApiGatewayRestApiDetails>,
+    pub(crate) aws_cloud_trail_trail:
+        ::std::option::Option<crate::types::AwsCloudTrailTrailDetails>,
     pub(crate) aws_ssm_patch_compliance:
-        std::option::Option<crate::types::AwsSsmPatchComplianceDetails>,
+        ::std::option::Option<crate::types::AwsSsmPatchComplianceDetails>,
     pub(crate) aws_certificate_manager_certificate:
-        std::option::Option<crate::types::AwsCertificateManagerCertificateDetails>,
-    pub(crate) aws_redshift_cluster: std::option::Option<crate::types::AwsRedshiftClusterDetails>,
-    pub(crate) aws_elb_load_balancer: std::option::Option<crate::types::AwsElbLoadBalancerDetails>,
-    pub(crate) aws_iam_group: std::option::Option<crate::types::AwsIamGroupDetails>,
-    pub(crate) aws_iam_role: std::option::Option<crate::types::AwsIamRoleDetails>,
-    pub(crate) aws_kms_key: std::option::Option<crate::types::AwsKmsKeyDetails>,
-    pub(crate) aws_lambda_function: std::option::Option<crate::types::AwsLambdaFunctionDetails>,
+        ::std::option::Option<crate::types::AwsCertificateManagerCertificateDetails>,
+    pub(crate) aws_redshift_cluster: ::std::option::Option<crate::types::AwsRedshiftClusterDetails>,
+    pub(crate) aws_elb_load_balancer:
+        ::std::option::Option<crate::types::AwsElbLoadBalancerDetails>,
+    pub(crate) aws_iam_group: ::std::option::Option<crate::types::AwsIamGroupDetails>,
+    pub(crate) aws_iam_role: ::std::option::Option<crate::types::AwsIamRoleDetails>,
+    pub(crate) aws_kms_key: ::std::option::Option<crate::types::AwsKmsKeyDetails>,
+    pub(crate) aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     pub(crate) aws_lambda_layer_version:
-        std::option::Option<crate::types::AwsLambdaLayerVersionDetails>,
-    pub(crate) aws_rds_db_instance: std::option::Option<crate::types::AwsRdsDbInstanceDetails>,
-    pub(crate) aws_sns_topic: std::option::Option<crate::types::AwsSnsTopicDetails>,
-    pub(crate) aws_sqs_queue: std::option::Option<crate::types::AwsSqsQueueDetails>,
-    pub(crate) aws_waf_web_acl: std::option::Option<crate::types::AwsWafWebAclDetails>,
-    pub(crate) aws_rds_db_snapshot: std::option::Option<crate::types::AwsRdsDbSnapshotDetails>,
+        ::std::option::Option<crate::types::AwsLambdaLayerVersionDetails>,
+    pub(crate) aws_rds_db_instance: ::std::option::Option<crate::types::AwsRdsDbInstanceDetails>,
+    pub(crate) aws_sns_topic: ::std::option::Option<crate::types::AwsSnsTopicDetails>,
+    pub(crate) aws_sqs_queue: ::std::option::Option<crate::types::AwsSqsQueueDetails>,
+    pub(crate) aws_waf_web_acl: ::std::option::Option<crate::types::AwsWafWebAclDetails>,
+    pub(crate) aws_rds_db_snapshot: ::std::option::Option<crate::types::AwsRdsDbSnapshotDetails>,
     pub(crate) aws_rds_db_cluster_snapshot:
-        std::option::Option<crate::types::AwsRdsDbClusterSnapshotDetails>,
-    pub(crate) aws_rds_db_cluster: std::option::Option<crate::types::AwsRdsDbClusterDetails>,
-    pub(crate) aws_ecs_cluster: std::option::Option<crate::types::AwsEcsClusterDetails>,
-    pub(crate) aws_ecs_container: std::option::Option<crate::types::AwsEcsContainerDetails>,
+        ::std::option::Option<crate::types::AwsRdsDbClusterSnapshotDetails>,
+    pub(crate) aws_rds_db_cluster: ::std::option::Option<crate::types::AwsRdsDbClusterDetails>,
+    pub(crate) aws_ecs_cluster: ::std::option::Option<crate::types::AwsEcsClusterDetails>,
+    pub(crate) aws_ecs_container: ::std::option::Option<crate::types::AwsEcsContainerDetails>,
     pub(crate) aws_ecs_task_definition:
-        std::option::Option<crate::types::AwsEcsTaskDefinitionDetails>,
-    pub(crate) container: std::option::Option<crate::types::ContainerDetails>,
-    pub(crate) other:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        ::std::option::Option<crate::types::AwsEcsTaskDefinitionDetails>,
+    pub(crate) container: ::std::option::Option<crate::types::ContainerDetails>,
+    pub(crate) other: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     pub(crate) aws_rds_event_subscription:
-        std::option::Option<crate::types::AwsRdsEventSubscriptionDetails>,
-    pub(crate) aws_ecs_service: std::option::Option<crate::types::AwsEcsServiceDetails>,
+        ::std::option::Option<crate::types::AwsRdsEventSubscriptionDetails>,
+    pub(crate) aws_ecs_service: ::std::option::Option<crate::types::AwsEcsServiceDetails>,
     pub(crate) aws_auto_scaling_launch_configuration:
-        std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>,
+        ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>,
     pub(crate) aws_ec2_vpn_connection:
-        std::option::Option<crate::types::AwsEc2VpnConnectionDetails>,
+        ::std::option::Option<crate::types::AwsEc2VpnConnectionDetails>,
     pub(crate) aws_ecr_container_image:
-        std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+        ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     pub(crate) aws_open_search_service_domain:
-        std::option::Option<crate::types::AwsOpenSearchServiceDomainDetails>,
+        ::std::option::Option<crate::types::AwsOpenSearchServiceDomainDetails>,
     pub(crate) aws_ec2_vpc_endpoint_service:
-        std::option::Option<crate::types::AwsEc2VpcEndpointServiceDetails>,
+        ::std::option::Option<crate::types::AwsEc2VpcEndpointServiceDetails>,
     pub(crate) aws_xray_encryption_config:
-        std::option::Option<crate::types::AwsXrayEncryptionConfigDetails>,
+        ::std::option::Option<crate::types::AwsXrayEncryptionConfigDetails>,
     pub(crate) aws_waf_rate_based_rule:
-        std::option::Option<crate::types::AwsWafRateBasedRuleDetails>,
+        ::std::option::Option<crate::types::AwsWafRateBasedRuleDetails>,
     pub(crate) aws_waf_regional_rate_based_rule:
-        std::option::Option<crate::types::AwsWafRegionalRateBasedRuleDetails>,
-    pub(crate) aws_ecr_repository: std::option::Option<crate::types::AwsEcrRepositoryDetails>,
-    pub(crate) aws_eks_cluster: std::option::Option<crate::types::AwsEksClusterDetails>,
+        ::std::option::Option<crate::types::AwsWafRegionalRateBasedRuleDetails>,
+    pub(crate) aws_ecr_repository: ::std::option::Option<crate::types::AwsEcrRepositoryDetails>,
+    pub(crate) aws_eks_cluster: ::std::option::Option<crate::types::AwsEksClusterDetails>,
     pub(crate) aws_network_firewall_firewall_policy:
-        std::option::Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails>,
+        ::std::option::Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails>,
     pub(crate) aws_network_firewall_firewall:
-        std::option::Option<crate::types::AwsNetworkFirewallFirewallDetails>,
+        ::std::option::Option<crate::types::AwsNetworkFirewallFirewallDetails>,
     pub(crate) aws_network_firewall_rule_group:
-        std::option::Option<crate::types::AwsNetworkFirewallRuleGroupDetails>,
+        ::std::option::Option<crate::types::AwsNetworkFirewallRuleGroupDetails>,
     pub(crate) aws_rds_db_security_group:
-        std::option::Option<crate::types::AwsRdsDbSecurityGroupDetails>,
-    pub(crate) aws_kinesis_stream: std::option::Option<crate::types::AwsKinesisStreamDetails>,
+        ::std::option::Option<crate::types::AwsRdsDbSecurityGroupDetails>,
+    pub(crate) aws_kinesis_stream: ::std::option::Option<crate::types::AwsKinesisStreamDetails>,
     pub(crate) aws_ec2_transit_gateway:
-        std::option::Option<crate::types::AwsEc2TransitGatewayDetails>,
-    pub(crate) aws_efs_access_point: std::option::Option<crate::types::AwsEfsAccessPointDetails>,
+        ::std::option::Option<crate::types::AwsEc2TransitGatewayDetails>,
+    pub(crate) aws_efs_access_point: ::std::option::Option<crate::types::AwsEfsAccessPointDetails>,
     pub(crate) aws_cloud_formation_stack:
-        std::option::Option<crate::types::AwsCloudFormationStackDetails>,
-    pub(crate) aws_cloud_watch_alarm: std::option::Option<crate::types::AwsCloudWatchAlarmDetails>,
+        ::std::option::Option<crate::types::AwsCloudFormationStackDetails>,
+    pub(crate) aws_cloud_watch_alarm:
+        ::std::option::Option<crate::types::AwsCloudWatchAlarmDetails>,
     pub(crate) aws_ec2_vpc_peering_connection:
-        std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>,
+        ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>,
     pub(crate) aws_waf_regional_rule_group:
-        std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>,
-    pub(crate) aws_waf_regional_rule: std::option::Option<crate::types::AwsWafRegionalRuleDetails>,
+        ::std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>,
+    pub(crate) aws_waf_regional_rule:
+        ::std::option::Option<crate::types::AwsWafRegionalRuleDetails>,
     pub(crate) aws_waf_regional_web_acl:
-        std::option::Option<crate::types::AwsWafRegionalWebAclDetails>,
-    pub(crate) aws_waf_rule: std::option::Option<crate::types::AwsWafRuleDetails>,
-    pub(crate) aws_waf_rule_group: std::option::Option<crate::types::AwsWafRuleGroupDetails>,
-    pub(crate) aws_ecs_task: std::option::Option<crate::types::AwsEcsTaskDetails>,
+        ::std::option::Option<crate::types::AwsWafRegionalWebAclDetails>,
+    pub(crate) aws_waf_rule: ::std::option::Option<crate::types::AwsWafRuleDetails>,
+    pub(crate) aws_waf_rule_group: ::std::option::Option<crate::types::AwsWafRuleGroupDetails>,
+    pub(crate) aws_ecs_task: ::std::option::Option<crate::types::AwsEcsTaskDetails>,
     pub(crate) aws_backup_backup_vault:
-        std::option::Option<crate::types::AwsBackupBackupVaultDetails>,
+        ::std::option::Option<crate::types::AwsBackupBackupVaultDetails>,
     pub(crate) aws_backup_backup_plan:
-        std::option::Option<crate::types::AwsBackupBackupPlanDetails>,
+        ::std::option::Option<crate::types::AwsBackupBackupPlanDetails>,
     pub(crate) aws_backup_recovery_point:
-        std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
+        ::std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
     pub(crate) aws_ec2_launch_template:
-        std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
+        ::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
     pub(crate) aws_sage_maker_notebook_instance:
-        std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
-    pub(crate) aws_wafv2_web_acl: std::option::Option<crate::types::AwsWafv2WebAclDetails>,
-    pub(crate) aws_wafv2_rule_group: std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
-    pub(crate) aws_ec2_route_table: std::option::Option<crate::types::AwsEc2RouteTableDetails>,
+        ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
+    pub(crate) aws_wafv2_web_acl: ::std::option::Option<crate::types::AwsWafv2WebAclDetails>,
+    pub(crate) aws_wafv2_rule_group: ::std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
+    pub(crate) aws_ec2_route_table: ::std::option::Option<crate::types::AwsEc2RouteTableDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>Details for an autoscaling group.</p>
@@ -886,13 +910,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsAutoScalingAutoScalingGroupDetails,
     ) -> Self {
-        self.aws_auto_scaling_auto_scaling_group = Some(input);
+        self.aws_auto_scaling_auto_scaling_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an autoscaling group.</p>
     pub fn set_aws_auto_scaling_auto_scaling_group(
         mut self,
-        input: std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>,
+        input: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupDetails>,
     ) -> Self {
         self.aws_auto_scaling_auto_scaling_group = input;
         self
@@ -902,13 +926,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsCodeBuildProjectDetails,
     ) -> Self {
-        self.aws_code_build_project = Some(input);
+        self.aws_code_build_project = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an CodeBuild project.</p>
     pub fn set_aws_code_build_project(
         mut self,
-        input: std::option::Option<crate::types::AwsCodeBuildProjectDetails>,
+        input: ::std::option::Option<crate::types::AwsCodeBuildProjectDetails>,
     ) -> Self {
         self.aws_code_build_project = input;
         self
@@ -918,26 +942,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsCloudFrontDistributionDetails,
     ) -> Self {
-        self.aws_cloud_front_distribution = Some(input);
+        self.aws_cloud_front_distribution = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a CloudFront distribution.</p>
     pub fn set_aws_cloud_front_distribution(
         mut self,
-        input: std::option::Option<crate::types::AwsCloudFrontDistributionDetails>,
+        input: ::std::option::Option<crate::types::AwsCloudFrontDistributionDetails>,
     ) -> Self {
         self.aws_cloud_front_distribution = input;
         self
     }
     /// <p>Details about an EC2 instance related to a finding.</p>
     pub fn aws_ec2_instance(mut self, input: crate::types::AwsEc2InstanceDetails) -> Self {
-        self.aws_ec2_instance = Some(input);
+        self.aws_ec2_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an EC2 instance related to a finding.</p>
     pub fn set_aws_ec2_instance(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2InstanceDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     ) -> Self {
         self.aws_ec2_instance = input;
         self
@@ -947,13 +971,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEc2NetworkInterfaceDetails,
     ) -> Self {
-        self.aws_ec2_network_interface = Some(input);
+        self.aws_ec2_network_interface = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an EC2 network interface.</p>
     pub fn set_aws_ec2_network_interface(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2NetworkInterfaceDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2NetworkInterfaceDetails>,
     ) -> Self {
         self.aws_ec2_network_interface = input;
         self
@@ -963,78 +987,78 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEc2SecurityGroupDetails,
     ) -> Self {
-        self.aws_ec2_security_group = Some(input);
+        self.aws_ec2_security_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an EC2 security group.</p>
     pub fn set_aws_ec2_security_group(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2SecurityGroupDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2SecurityGroupDetails>,
     ) -> Self {
         self.aws_ec2_security_group = input;
         self
     }
     /// <p>Details for an Amazon EC2 volume.</p>
     pub fn aws_ec2_volume(mut self, input: crate::types::AwsEc2VolumeDetails) -> Self {
-        self.aws_ec2_volume = Some(input);
+        self.aws_ec2_volume = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an Amazon EC2 volume.</p>
     pub fn set_aws_ec2_volume(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2VolumeDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2VolumeDetails>,
     ) -> Self {
         self.aws_ec2_volume = input;
         self
     }
     /// <p>Details for an Amazon EC2 VPC.</p>
     pub fn aws_ec2_vpc(mut self, input: crate::types::AwsEc2VpcDetails) -> Self {
-        self.aws_ec2_vpc = Some(input);
+        self.aws_ec2_vpc = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an Amazon EC2 VPC.</p>
     pub fn set_aws_ec2_vpc(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2VpcDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2VpcDetails>,
     ) -> Self {
         self.aws_ec2_vpc = input;
         self
     }
     /// <p>Details about an Elastic IP address.</p>
     pub fn aws_ec2_eip(mut self, input: crate::types::AwsEc2EipDetails) -> Self {
-        self.aws_ec2_eip = Some(input);
+        self.aws_ec2_eip = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Elastic IP address.</p>
     pub fn set_aws_ec2_eip(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2EipDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2EipDetails>,
     ) -> Self {
         self.aws_ec2_eip = input;
         self
     }
     /// <p>Details about a subnet in Amazon EC2.</p>
     pub fn aws_ec2_subnet(mut self, input: crate::types::AwsEc2SubnetDetails) -> Self {
-        self.aws_ec2_subnet = Some(input);
+        self.aws_ec2_subnet = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a subnet in Amazon EC2.</p>
     pub fn set_aws_ec2_subnet(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2SubnetDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2SubnetDetails>,
     ) -> Self {
         self.aws_ec2_subnet = input;
         self
     }
     /// <p>Details about an EC2 network access control list (ACL).</p>
     pub fn aws_ec2_network_acl(mut self, input: crate::types::AwsEc2NetworkAclDetails) -> Self {
-        self.aws_ec2_network_acl = Some(input);
+        self.aws_ec2_network_acl = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an EC2 network access control list (ACL).</p>
     pub fn set_aws_ec2_network_acl(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2NetworkAclDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2NetworkAclDetails>,
     ) -> Self {
         self.aws_ec2_network_acl = input;
         self
@@ -1044,13 +1068,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsElbv2LoadBalancerDetails,
     ) -> Self {
-        self.aws_elbv2_load_balancer = Some(input);
+        self.aws_elbv2_load_balancer = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a load balancer.</p>
     pub fn set_aws_elbv2_load_balancer(
         mut self,
-        input: std::option::Option<crate::types::AwsElbv2LoadBalancerDetails>,
+        input: ::std::option::Option<crate::types::AwsElbv2LoadBalancerDetails>,
     ) -> Self {
         self.aws_elbv2_load_balancer = input;
         self
@@ -1060,13 +1084,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsElasticBeanstalkEnvironmentDetails,
     ) -> Self {
-        self.aws_elastic_beanstalk_environment = Some(input);
+        self.aws_elastic_beanstalk_environment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Elastic Beanstalk environment.</p>
     pub fn set_aws_elastic_beanstalk_environment(
         mut self,
-        input: std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentDetails>,
+        input: ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentDetails>,
     ) -> Self {
         self.aws_elastic_beanstalk_environment = input;
         self
@@ -1076,26 +1100,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsElasticsearchDomainDetails,
     ) -> Self {
-        self.aws_elasticsearch_domain = Some(input);
+        self.aws_elasticsearch_domain = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an Elasticsearch domain.</p>
     pub fn set_aws_elasticsearch_domain(
         mut self,
-        input: std::option::Option<crate::types::AwsElasticsearchDomainDetails>,
+        input: ::std::option::Option<crate::types::AwsElasticsearchDomainDetails>,
     ) -> Self {
         self.aws_elasticsearch_domain = input;
         self
     }
     /// <p>Details about an S3 bucket related to a finding.</p>
     pub fn aws_s3_bucket(mut self, input: crate::types::AwsS3BucketDetails) -> Self {
-        self.aws_s3_bucket = Some(input);
+        self.aws_s3_bucket = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an S3 bucket related to a finding.</p>
     pub fn set_aws_s3_bucket(
         mut self,
-        input: std::option::Option<crate::types::AwsS3BucketDetails>,
+        input: ::std::option::Option<crate::types::AwsS3BucketDetails>,
     ) -> Self {
         self.aws_s3_bucket = input;
         self
@@ -1105,26 +1129,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsS3AccountPublicAccessBlockDetails,
     ) -> Self {
-        self.aws_s3_account_public_access_block = Some(input);
+        self.aws_s3_account_public_access_block = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the Amazon S3 Public Access Block configuration for an account.</p>
     pub fn set_aws_s3_account_public_access_block(
         mut self,
-        input: std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>,
+        input: ::std::option::Option<crate::types::AwsS3AccountPublicAccessBlockDetails>,
     ) -> Self {
         self.aws_s3_account_public_access_block = input;
         self
     }
     /// <p>Details about an S3 object related to a finding.</p>
     pub fn aws_s3_object(mut self, input: crate::types::AwsS3ObjectDetails) -> Self {
-        self.aws_s3_object = Some(input);
+        self.aws_s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an S3 object related to a finding.</p>
     pub fn set_aws_s3_object(
         mut self,
-        input: std::option::Option<crate::types::AwsS3ObjectDetails>,
+        input: ::std::option::Option<crate::types::AwsS3ObjectDetails>,
     ) -> Self {
         self.aws_s3_object = input;
         self
@@ -1134,52 +1158,52 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsSecretsManagerSecretDetails,
     ) -> Self {
-        self.aws_secrets_manager_secret = Some(input);
+        self.aws_secrets_manager_secret = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a Secrets Manager secret.</p>
     pub fn set_aws_secrets_manager_secret(
         mut self,
-        input: std::option::Option<crate::types::AwsSecretsManagerSecretDetails>,
+        input: ::std::option::Option<crate::types::AwsSecretsManagerSecretDetails>,
     ) -> Self {
         self.aws_secrets_manager_secret = input;
         self
     }
     /// <p>Details about an IAM access key related to a finding.</p>
     pub fn aws_iam_access_key(mut self, input: crate::types::AwsIamAccessKeyDetails) -> Self {
-        self.aws_iam_access_key = Some(input);
+        self.aws_iam_access_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an IAM access key related to a finding.</p>
     pub fn set_aws_iam_access_key(
         mut self,
-        input: std::option::Option<crate::types::AwsIamAccessKeyDetails>,
+        input: ::std::option::Option<crate::types::AwsIamAccessKeyDetails>,
     ) -> Self {
         self.aws_iam_access_key = input;
         self
     }
     /// <p>Details about an IAM user.</p>
     pub fn aws_iam_user(mut self, input: crate::types::AwsIamUserDetails) -> Self {
-        self.aws_iam_user = Some(input);
+        self.aws_iam_user = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an IAM user.</p>
     pub fn set_aws_iam_user(
         mut self,
-        input: std::option::Option<crate::types::AwsIamUserDetails>,
+        input: ::std::option::Option<crate::types::AwsIamUserDetails>,
     ) -> Self {
         self.aws_iam_user = input;
         self
     }
     /// <p>Details about an IAM permissions policy.</p>
     pub fn aws_iam_policy(mut self, input: crate::types::AwsIamPolicyDetails) -> Self {
-        self.aws_iam_policy = Some(input);
+        self.aws_iam_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an IAM permissions policy.</p>
     pub fn set_aws_iam_policy(
         mut self,
-        input: std::option::Option<crate::types::AwsIamPolicyDetails>,
+        input: ::std::option::Option<crate::types::AwsIamPolicyDetails>,
     ) -> Self {
         self.aws_iam_policy = input;
         self
@@ -1189,13 +1213,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsApiGatewayV2StageDetails,
     ) -> Self {
-        self.aws_api_gateway_v2_stage = Some(input);
+        self.aws_api_gateway_v2_stage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
     pub fn set_aws_api_gateway_v2_stage(
         mut self,
-        input: std::option::Option<crate::types::AwsApiGatewayV2StageDetails>,
+        input: ::std::option::Option<crate::types::AwsApiGatewayV2StageDetails>,
     ) -> Self {
         self.aws_api_gateway_v2_stage = input;
         self
@@ -1205,39 +1229,39 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsApiGatewayV2ApiDetails,
     ) -> Self {
-        self.aws_api_gateway_v2_api = Some(input);
+        self.aws_api_gateway_v2_api = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a version 2 API in Amazon API Gateway.</p>
     pub fn set_aws_api_gateway_v2_api(
         mut self,
-        input: std::option::Option<crate::types::AwsApiGatewayV2ApiDetails>,
+        input: ::std::option::Option<crate::types::AwsApiGatewayV2ApiDetails>,
     ) -> Self {
         self.aws_api_gateway_v2_api = input;
         self
     }
     /// <p>Details about a DynamoDB table.</p>
     pub fn aws_dynamo_db_table(mut self, input: crate::types::AwsDynamoDbTableDetails) -> Self {
-        self.aws_dynamo_db_table = Some(input);
+        self.aws_dynamo_db_table = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a DynamoDB table.</p>
     pub fn set_aws_dynamo_db_table(
         mut self,
-        input: std::option::Option<crate::types::AwsDynamoDbTableDetails>,
+        input: ::std::option::Option<crate::types::AwsDynamoDbTableDetails>,
     ) -> Self {
         self.aws_dynamo_db_table = input;
         self
     }
     /// <p>Provides information about a version 1 Amazon API Gateway stage.</p>
     pub fn aws_api_gateway_stage(mut self, input: crate::types::AwsApiGatewayStageDetails) -> Self {
-        self.aws_api_gateway_stage = Some(input);
+        self.aws_api_gateway_stage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a version 1 Amazon API Gateway stage.</p>
     pub fn set_aws_api_gateway_stage(
         mut self,
-        input: std::option::Option<crate::types::AwsApiGatewayStageDetails>,
+        input: ::std::option::Option<crate::types::AwsApiGatewayStageDetails>,
     ) -> Self {
         self.aws_api_gateway_stage = input;
         self
@@ -1247,26 +1271,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsApiGatewayRestApiDetails,
     ) -> Self {
-        self.aws_api_gateway_rest_api = Some(input);
+        self.aws_api_gateway_rest_api = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
     pub fn set_aws_api_gateway_rest_api(
         mut self,
-        input: std::option::Option<crate::types::AwsApiGatewayRestApiDetails>,
+        input: ::std::option::Option<crate::types::AwsApiGatewayRestApiDetails>,
     ) -> Self {
         self.aws_api_gateway_rest_api = input;
         self
     }
     /// <p>Provides details about a CloudTrail trail.</p>
     pub fn aws_cloud_trail_trail(mut self, input: crate::types::AwsCloudTrailTrailDetails) -> Self {
-        self.aws_cloud_trail_trail = Some(input);
+        self.aws_cloud_trail_trail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about a CloudTrail trail.</p>
     pub fn set_aws_cloud_trail_trail(
         mut self,
-        input: std::option::Option<crate::types::AwsCloudTrailTrailDetails>,
+        input: ::std::option::Option<crate::types::AwsCloudTrailTrailDetails>,
     ) -> Self {
         self.aws_cloud_trail_trail = input;
         self
@@ -1276,13 +1300,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsSsmPatchComplianceDetails,
     ) -> Self {
-        self.aws_ssm_patch_compliance = Some(input);
+        self.aws_ssm_patch_compliance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
     pub fn set_aws_ssm_patch_compliance(
         mut self,
-        input: std::option::Option<crate::types::AwsSsmPatchComplianceDetails>,
+        input: ::std::option::Option<crate::types::AwsSsmPatchComplianceDetails>,
     ) -> Self {
         self.aws_ssm_patch_compliance = input;
         self
@@ -1292,91 +1316,91 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsCertificateManagerCertificateDetails,
     ) -> Self {
-        self.aws_certificate_manager_certificate = Some(input);
+        self.aws_certificate_manager_certificate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about an Certificate Manager certificate.</p>
     pub fn set_aws_certificate_manager_certificate(
         mut self,
-        input: std::option::Option<crate::types::AwsCertificateManagerCertificateDetails>,
+        input: ::std::option::Option<crate::types::AwsCertificateManagerCertificateDetails>,
     ) -> Self {
         self.aws_certificate_manager_certificate = input;
         self
     }
     /// <p>Contains details about an Amazon Redshift cluster.</p>
     pub fn aws_redshift_cluster(mut self, input: crate::types::AwsRedshiftClusterDetails) -> Self {
-        self.aws_redshift_cluster = Some(input);
+        self.aws_redshift_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an Amazon Redshift cluster.</p>
     pub fn set_aws_redshift_cluster(
         mut self,
-        input: std::option::Option<crate::types::AwsRedshiftClusterDetails>,
+        input: ::std::option::Option<crate::types::AwsRedshiftClusterDetails>,
     ) -> Self {
         self.aws_redshift_cluster = input;
         self
     }
     /// <p>Contains details about a Classic Load Balancer.</p>
     pub fn aws_elb_load_balancer(mut self, input: crate::types::AwsElbLoadBalancerDetails) -> Self {
-        self.aws_elb_load_balancer = Some(input);
+        self.aws_elb_load_balancer = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a Classic Load Balancer.</p>
     pub fn set_aws_elb_load_balancer(
         mut self,
-        input: std::option::Option<crate::types::AwsElbLoadBalancerDetails>,
+        input: ::std::option::Option<crate::types::AwsElbLoadBalancerDetails>,
     ) -> Self {
         self.aws_elb_load_balancer = input;
         self
     }
     /// <p>Contains details about an IAM group.</p>
     pub fn aws_iam_group(mut self, input: crate::types::AwsIamGroupDetails) -> Self {
-        self.aws_iam_group = Some(input);
+        self.aws_iam_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an IAM group.</p>
     pub fn set_aws_iam_group(
         mut self,
-        input: std::option::Option<crate::types::AwsIamGroupDetails>,
+        input: ::std::option::Option<crate::types::AwsIamGroupDetails>,
     ) -> Self {
         self.aws_iam_group = input;
         self
     }
     /// <p>Details about an IAM role.</p>
     pub fn aws_iam_role(mut self, input: crate::types::AwsIamRoleDetails) -> Self {
-        self.aws_iam_role = Some(input);
+        self.aws_iam_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an IAM role.</p>
     pub fn set_aws_iam_role(
         mut self,
-        input: std::option::Option<crate::types::AwsIamRoleDetails>,
+        input: ::std::option::Option<crate::types::AwsIamRoleDetails>,
     ) -> Self {
         self.aws_iam_role = input;
         self
     }
     /// <p>Details about an KMS key.</p>
     pub fn aws_kms_key(mut self, input: crate::types::AwsKmsKeyDetails) -> Self {
-        self.aws_kms_key = Some(input);
+        self.aws_kms_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an KMS key.</p>
     pub fn set_aws_kms_key(
         mut self,
-        input: std::option::Option<crate::types::AwsKmsKeyDetails>,
+        input: ::std::option::Option<crate::types::AwsKmsKeyDetails>,
     ) -> Self {
         self.aws_kms_key = input;
         self
     }
     /// <p>Details about a Lambda function.</p>
     pub fn aws_lambda_function(mut self, input: crate::types::AwsLambdaFunctionDetails) -> Self {
-        self.aws_lambda_function = Some(input);
+        self.aws_lambda_function = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a Lambda function.</p>
     pub fn set_aws_lambda_function(
         mut self,
-        input: std::option::Option<crate::types::AwsLambdaFunctionDetails>,
+        input: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     ) -> Self {
         self.aws_lambda_function = input;
         self
@@ -1386,78 +1410,78 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsLambdaLayerVersionDetails,
     ) -> Self {
-        self.aws_lambda_layer_version = Some(input);
+        self.aws_lambda_layer_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for a Lambda layer version.</p>
     pub fn set_aws_lambda_layer_version(
         mut self,
-        input: std::option::Option<crate::types::AwsLambdaLayerVersionDetails>,
+        input: ::std::option::Option<crate::types::AwsLambdaLayerVersionDetails>,
     ) -> Self {
         self.aws_lambda_layer_version = input;
         self
     }
     /// <p>Details about an Amazon RDS database instance.</p>
     pub fn aws_rds_db_instance(mut self, input: crate::types::AwsRdsDbInstanceDetails) -> Self {
-        self.aws_rds_db_instance = Some(input);
+        self.aws_rds_db_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon RDS database instance.</p>
     pub fn set_aws_rds_db_instance(
         mut self,
-        input: std::option::Option<crate::types::AwsRdsDbInstanceDetails>,
+        input: ::std::option::Option<crate::types::AwsRdsDbInstanceDetails>,
     ) -> Self {
         self.aws_rds_db_instance = input;
         self
     }
     /// <p>Details about an SNS topic.</p>
     pub fn aws_sns_topic(mut self, input: crate::types::AwsSnsTopicDetails) -> Self {
-        self.aws_sns_topic = Some(input);
+        self.aws_sns_topic = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an SNS topic.</p>
     pub fn set_aws_sns_topic(
         mut self,
-        input: std::option::Option<crate::types::AwsSnsTopicDetails>,
+        input: ::std::option::Option<crate::types::AwsSnsTopicDetails>,
     ) -> Self {
         self.aws_sns_topic = input;
         self
     }
     /// <p>Details about an SQS queue.</p>
     pub fn aws_sqs_queue(mut self, input: crate::types::AwsSqsQueueDetails) -> Self {
-        self.aws_sqs_queue = Some(input);
+        self.aws_sqs_queue = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an SQS queue.</p>
     pub fn set_aws_sqs_queue(
         mut self,
-        input: std::option::Option<crate::types::AwsSqsQueueDetails>,
+        input: ::std::option::Option<crate::types::AwsSqsQueueDetails>,
     ) -> Self {
         self.aws_sqs_queue = input;
         self
     }
     /// <p>Details for an WAF web ACL.</p>
     pub fn aws_waf_web_acl(mut self, input: crate::types::AwsWafWebAclDetails) -> Self {
-        self.aws_waf_web_acl = Some(input);
+        self.aws_waf_web_acl = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an WAF web ACL.</p>
     pub fn set_aws_waf_web_acl(
         mut self,
-        input: std::option::Option<crate::types::AwsWafWebAclDetails>,
+        input: ::std::option::Option<crate::types::AwsWafWebAclDetails>,
     ) -> Self {
         self.aws_waf_web_acl = input;
         self
     }
     /// <p>Details about an Amazon RDS database snapshot.</p>
     pub fn aws_rds_db_snapshot(mut self, input: crate::types::AwsRdsDbSnapshotDetails) -> Self {
-        self.aws_rds_db_snapshot = Some(input);
+        self.aws_rds_db_snapshot = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon RDS database snapshot.</p>
     pub fn set_aws_rds_db_snapshot(
         mut self,
-        input: std::option::Option<crate::types::AwsRdsDbSnapshotDetails>,
+        input: ::std::option::Option<crate::types::AwsRdsDbSnapshotDetails>,
     ) -> Self {
         self.aws_rds_db_snapshot = input;
         self
@@ -1467,52 +1491,52 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsRdsDbClusterSnapshotDetails,
     ) -> Self {
-        self.aws_rds_db_cluster_snapshot = Some(input);
+        self.aws_rds_db_cluster_snapshot = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon RDS database cluster snapshot.</p>
     pub fn set_aws_rds_db_cluster_snapshot(
         mut self,
-        input: std::option::Option<crate::types::AwsRdsDbClusterSnapshotDetails>,
+        input: ::std::option::Option<crate::types::AwsRdsDbClusterSnapshotDetails>,
     ) -> Self {
         self.aws_rds_db_cluster_snapshot = input;
         self
     }
     /// <p>Details about an Amazon RDS database cluster.</p>
     pub fn aws_rds_db_cluster(mut self, input: crate::types::AwsRdsDbClusterDetails) -> Self {
-        self.aws_rds_db_cluster = Some(input);
+        self.aws_rds_db_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon RDS database cluster.</p>
     pub fn set_aws_rds_db_cluster(
         mut self,
-        input: std::option::Option<crate::types::AwsRdsDbClusterDetails>,
+        input: ::std::option::Option<crate::types::AwsRdsDbClusterDetails>,
     ) -> Self {
         self.aws_rds_db_cluster = input;
         self
     }
     /// <p>Details about an Amazon ECS cluster.</p>
     pub fn aws_ecs_cluster(mut self, input: crate::types::AwsEcsClusterDetails) -> Self {
-        self.aws_ecs_cluster = Some(input);
+        self.aws_ecs_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon ECS cluster.</p>
     pub fn set_aws_ecs_cluster(
         mut self,
-        input: std::option::Option<crate::types::AwsEcsClusterDetails>,
+        input: ::std::option::Option<crate::types::AwsEcsClusterDetails>,
     ) -> Self {
         self.aws_ecs_cluster = input;
         self
     }
     /// <p>Provides information about a Docker container that's part of a task. </p>
     pub fn aws_ecs_container(mut self, input: crate::types::AwsEcsContainerDetails) -> Self {
-        self.aws_ecs_container = Some(input);
+        self.aws_ecs_container = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a Docker container that's part of a task. </p>
     pub fn set_aws_ecs_container(
         mut self,
-        input: std::option::Option<crate::types::AwsEcsContainerDetails>,
+        input: ::std::option::Option<crate::types::AwsEcsContainerDetails>,
     ) -> Self {
         self.aws_ecs_container = input;
         self
@@ -1522,26 +1546,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEcsTaskDefinitionDetails,
     ) -> Self {
-        self.aws_ecs_task_definition = Some(input);
+        self.aws_ecs_task_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a task definition. A task definition describes the container and volume definitions of an Amazon Elastic Container Service task.</p>
     pub fn set_aws_ecs_task_definition(
         mut self,
-        input: std::option::Option<crate::types::AwsEcsTaskDefinitionDetails>,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDefinitionDetails>,
     ) -> Self {
         self.aws_ecs_task_definition = input;
         self
     }
     /// <p>Details about a container resource related to a finding.</p>
     pub fn container(mut self, input: crate::types::ContainerDetails) -> Self {
-        self.container = Some(input);
+        self.container = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a container resource related to a finding.</p>
     pub fn set_container(
         mut self,
-        input: std::option::Option<crate::types::ContainerDetails>,
+        input: ::std::option::Option<crate::types::ContainerDetails>,
     ) -> Self {
         self.container = input;
         self
@@ -1557,12 +1581,12 @@ impl ResourceDetailsBuilder {
     /// </ul>
     pub fn other(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.other.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.other = Some(hash_map);
+        self.other = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
@@ -1572,8 +1596,8 @@ impl ResourceDetailsBuilder {
     /// </ul>
     pub fn set_other(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.other = input;
@@ -1584,26 +1608,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsRdsEventSubscriptionDetails,
     ) -> Self {
-        self.aws_rds_event_subscription = Some(input);
+        self.aws_rds_event_subscription = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an RDS event notification subscription.</p>
     pub fn set_aws_rds_event_subscription(
         mut self,
-        input: std::option::Option<crate::types::AwsRdsEventSubscriptionDetails>,
+        input: ::std::option::Option<crate::types::AwsRdsEventSubscriptionDetails>,
     ) -> Self {
         self.aws_rds_event_subscription = input;
         self
     }
     /// <p>Details about a service within an ECS cluster.</p>
     pub fn aws_ecs_service(mut self, input: crate::types::AwsEcsServiceDetails) -> Self {
-        self.aws_ecs_service = Some(input);
+        self.aws_ecs_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a service within an ECS cluster.</p>
     pub fn set_aws_ecs_service(
         mut self,
-        input: std::option::Option<crate::types::AwsEcsServiceDetails>,
+        input: ::std::option::Option<crate::types::AwsEcsServiceDetails>,
     ) -> Self {
         self.aws_ecs_service = input;
         self
@@ -1613,13 +1637,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsAutoScalingLaunchConfigurationDetails,
     ) -> Self {
-        self.aws_auto_scaling_launch_configuration = Some(input);
+        self.aws_auto_scaling_launch_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about a launch configuration.</p>
     pub fn set_aws_auto_scaling_launch_configuration(
         mut self,
-        input: std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>,
+        input: ::std::option::Option<crate::types::AwsAutoScalingLaunchConfigurationDetails>,
     ) -> Self {
         self.aws_auto_scaling_launch_configuration = input;
         self
@@ -1629,13 +1653,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEc2VpnConnectionDetails,
     ) -> Self {
-        self.aws_ec2_vpn_connection = Some(input);
+        self.aws_ec2_vpn_connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon EC2 VPN connection.</p>
     pub fn set_aws_ec2_vpn_connection(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2VpnConnectionDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2VpnConnectionDetails>,
     ) -> Self {
         self.aws_ec2_vpn_connection = input;
         self
@@ -1645,13 +1669,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEcrContainerImageDetails,
     ) -> Self {
-        self.aws_ecr_container_image = Some(input);
+        self.aws_ecr_container_image = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about an Amazon ECR image.</p>
     pub fn set_aws_ecr_container_image(
         mut self,
-        input: std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+        input: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     ) -> Self {
         self.aws_ecr_container_image = input;
         self
@@ -1661,13 +1685,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsOpenSearchServiceDomainDetails,
     ) -> Self {
-        self.aws_open_search_service_domain = Some(input);
+        self.aws_open_search_service_domain = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon OpenSearch Service domain.</p>
     pub fn set_aws_open_search_service_domain(
         mut self,
-        input: std::option::Option<crate::types::AwsOpenSearchServiceDomainDetails>,
+        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainDetails>,
     ) -> Self {
         self.aws_open_search_service_domain = input;
         self
@@ -1677,13 +1701,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEc2VpcEndpointServiceDetails,
     ) -> Self {
-        self.aws_ec2_vpc_endpoint_service = Some(input);
+        self.aws_ec2_vpc_endpoint_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the service configuration for a VPC endpoint service.</p>
     pub fn set_aws_ec2_vpc_endpoint_service(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2VpcEndpointServiceDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2VpcEndpointServiceDetails>,
     ) -> Self {
         self.aws_ec2_vpc_endpoint_service = input;
         self
@@ -1693,13 +1717,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsXrayEncryptionConfigDetails,
     ) -> Self {
-        self.aws_xray_encryption_config = Some(input);
+        self.aws_xray_encryption_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the encryption configuration for X-Ray.</p>
     pub fn set_aws_xray_encryption_config(
         mut self,
-        input: std::option::Option<crate::types::AwsXrayEncryptionConfigDetails>,
+        input: ::std::option::Option<crate::types::AwsXrayEncryptionConfigDetails>,
     ) -> Self {
         self.aws_xray_encryption_config = input;
         self
@@ -1709,13 +1733,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsWafRateBasedRuleDetails,
     ) -> Self {
-        self.aws_waf_rate_based_rule = Some(input);
+        self.aws_waf_rate_based_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a rate-based rule for global resources.</p>
     pub fn set_aws_waf_rate_based_rule(
         mut self,
-        input: std::option::Option<crate::types::AwsWafRateBasedRuleDetails>,
+        input: ::std::option::Option<crate::types::AwsWafRateBasedRuleDetails>,
     ) -> Self {
         self.aws_waf_rate_based_rule = input;
         self
@@ -1725,39 +1749,39 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsWafRegionalRateBasedRuleDetails,
     ) -> Self {
-        self.aws_waf_regional_rate_based_rule = Some(input);
+        self.aws_waf_regional_rate_based_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a rate-based rule for Regional resources.</p>
     pub fn set_aws_waf_regional_rate_based_rule(
         mut self,
-        input: std::option::Option<crate::types::AwsWafRegionalRateBasedRuleDetails>,
+        input: ::std::option::Option<crate::types::AwsWafRegionalRateBasedRuleDetails>,
     ) -> Self {
         self.aws_waf_regional_rate_based_rule = input;
         self
     }
     /// <p>Information about an Amazon Elastic Container Registry repository.</p>
     pub fn aws_ecr_repository(mut self, input: crate::types::AwsEcrRepositoryDetails) -> Self {
-        self.aws_ecr_repository = Some(input);
+        self.aws_ecr_repository = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about an Amazon Elastic Container Registry repository.</p>
     pub fn set_aws_ecr_repository(
         mut self,
-        input: std::option::Option<crate::types::AwsEcrRepositoryDetails>,
+        input: ::std::option::Option<crate::types::AwsEcrRepositoryDetails>,
     ) -> Self {
         self.aws_ecr_repository = input;
         self
     }
     /// <p>Details about an Amazon EKS cluster.</p>
     pub fn aws_eks_cluster(mut self, input: crate::types::AwsEksClusterDetails) -> Self {
-        self.aws_eks_cluster = Some(input);
+        self.aws_eks_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon EKS cluster.</p>
     pub fn set_aws_eks_cluster(
         mut self,
-        input: std::option::Option<crate::types::AwsEksClusterDetails>,
+        input: ::std::option::Option<crate::types::AwsEksClusterDetails>,
     ) -> Self {
         self.aws_eks_cluster = input;
         self
@@ -1767,13 +1791,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsNetworkFirewallFirewallPolicyDetails,
     ) -> Self {
-        self.aws_network_firewall_firewall_policy = Some(input);
+        self.aws_network_firewall_firewall_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Network Firewall firewall policy.</p>
     pub fn set_aws_network_firewall_firewall_policy(
         mut self,
-        input: std::option::Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails>,
+        input: ::std::option::Option<crate::types::AwsNetworkFirewallFirewallPolicyDetails>,
     ) -> Self {
         self.aws_network_firewall_firewall_policy = input;
         self
@@ -1783,13 +1807,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsNetworkFirewallFirewallDetails,
     ) -> Self {
-        self.aws_network_firewall_firewall = Some(input);
+        self.aws_network_firewall_firewall = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Network Firewall firewall.</p>
     pub fn set_aws_network_firewall_firewall(
         mut self,
-        input: std::option::Option<crate::types::AwsNetworkFirewallFirewallDetails>,
+        input: ::std::option::Option<crate::types::AwsNetworkFirewallFirewallDetails>,
     ) -> Self {
         self.aws_network_firewall_firewall = input;
         self
@@ -1799,13 +1823,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsNetworkFirewallRuleGroupDetails,
     ) -> Self {
-        self.aws_network_firewall_rule_group = Some(input);
+        self.aws_network_firewall_rule_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Network Firewall rule group.</p>
     pub fn set_aws_network_firewall_rule_group(
         mut self,
-        input: std::option::Option<crate::types::AwsNetworkFirewallRuleGroupDetails>,
+        input: ::std::option::Option<crate::types::AwsNetworkFirewallRuleGroupDetails>,
     ) -> Self {
         self.aws_network_firewall_rule_group = input;
         self
@@ -1815,26 +1839,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsRdsDbSecurityGroupDetails,
     ) -> Self {
-        self.aws_rds_db_security_group = Some(input);
+        self.aws_rds_db_security_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon RDS DB security group.</p>
     pub fn set_aws_rds_db_security_group(
         mut self,
-        input: std::option::Option<crate::types::AwsRdsDbSecurityGroupDetails>,
+        input: ::std::option::Option<crate::types::AwsRdsDbSecurityGroupDetails>,
     ) -> Self {
         self.aws_rds_db_security_group = input;
         self
     }
     /// <p>Details about an Amazon Kinesis data stream.</p>
     pub fn aws_kinesis_stream(mut self, input: crate::types::AwsKinesisStreamDetails) -> Self {
-        self.aws_kinesis_stream = Some(input);
+        self.aws_kinesis_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon Kinesis data stream.</p>
     pub fn set_aws_kinesis_stream(
         mut self,
-        input: std::option::Option<crate::types::AwsKinesisStreamDetails>,
+        input: ::std::option::Option<crate::types::AwsKinesisStreamDetails>,
     ) -> Self {
         self.aws_kinesis_stream = input;
         self
@@ -1844,26 +1868,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEc2TransitGatewayDetails,
     ) -> Self {
-        self.aws_ec2_transit_gateway = Some(input);
+        self.aws_ec2_transit_gateway = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon EC2 transit gateway that interconnects your virtual private clouds (VPC) and on-premises networks.</p>
     pub fn set_aws_ec2_transit_gateway(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2TransitGatewayDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2TransitGatewayDetails>,
     ) -> Self {
         self.aws_ec2_transit_gateway = input;
         self
     }
     /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub fn aws_efs_access_point(mut self, input: crate::types::AwsEfsAccessPointDetails) -> Self {
-        self.aws_efs_access_point = Some(input);
+        self.aws_efs_access_point = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. </p>
     pub fn set_aws_efs_access_point(
         mut self,
-        input: std::option::Option<crate::types::AwsEfsAccessPointDetails>,
+        input: ::std::option::Option<crate::types::AwsEfsAccessPointDetails>,
     ) -> Self {
         self.aws_efs_access_point = input;
         self
@@ -1873,26 +1897,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsCloudFormationStackDetails,
     ) -> Self {
-        self.aws_cloud_formation_stack = Some(input);
+        self.aws_cloud_formation_stack = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an CloudFormation stack. A stack is a collection of Amazon Web Services resources that you can manage as a single unit.</p>
     pub fn set_aws_cloud_formation_stack(
         mut self,
-        input: std::option::Option<crate::types::AwsCloudFormationStackDetails>,
+        input: ::std::option::Option<crate::types::AwsCloudFormationStackDetails>,
     ) -> Self {
         self.aws_cloud_formation_stack = input;
         self
     }
     /// <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web Services resources and applications across multiple Regions.</p>
     pub fn aws_cloud_watch_alarm(mut self, input: crate::types::AwsCloudWatchAlarmDetails) -> Self {
-        self.aws_cloud_watch_alarm = Some(input);
+        self.aws_cloud_watch_alarm = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon CloudWatch alarm. An alarm allows you to monitor and receive alerts about your Amazon Web Services resources and applications across multiple Regions.</p>
     pub fn set_aws_cloud_watch_alarm(
         mut self,
-        input: std::option::Option<crate::types::AwsCloudWatchAlarmDetails>,
+        input: ::std::option::Option<crate::types::AwsCloudWatchAlarmDetails>,
     ) -> Self {
         self.aws_cloud_watch_alarm = input;
         self
@@ -1902,13 +1926,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEc2VpcPeeringConnectionDetails,
     ) -> Self {
-        self.aws_ec2_vpc_peering_connection = Some(input);
+        self.aws_ec2_vpc_peering_connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an Amazon EC2 VPC peering connection. A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. </p>
     pub fn set_aws_ec2_vpc_peering_connection(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2VpcPeeringConnectionDetails>,
     ) -> Self {
         self.aws_ec2_vpc_peering_connection = input;
         self
@@ -1918,26 +1942,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsWafRegionalRuleGroupDetails,
     ) -> Self {
-        self.aws_waf_regional_rule_group = Some(input);
+        self.aws_waf_regional_rule_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an WAF rule group for Regional resources. </p>
     pub fn set_aws_waf_regional_rule_group(
         mut self,
-        input: std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>,
+        input: ::std::option::Option<crate::types::AwsWafRegionalRuleGroupDetails>,
     ) -> Self {
         self.aws_waf_regional_rule_group = input;
         self
     }
     /// <p>Details about an WAF rule for Regional resources. </p>
     pub fn aws_waf_regional_rule(mut self, input: crate::types::AwsWafRegionalRuleDetails) -> Self {
-        self.aws_waf_regional_rule = Some(input);
+        self.aws_waf_regional_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an WAF rule for Regional resources. </p>
     pub fn set_aws_waf_regional_rule(
         mut self,
-        input: std::option::Option<crate::types::AwsWafRegionalRuleDetails>,
+        input: ::std::option::Option<crate::types::AwsWafRegionalRuleDetails>,
     ) -> Self {
         self.aws_waf_regional_rule = input;
         self
@@ -1947,52 +1971,52 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsWafRegionalWebAclDetails,
     ) -> Self {
-        self.aws_waf_regional_web_acl = Some(input);
+        self.aws_waf_regional_web_acl = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an WAF web access control list (web ACL) for Regional resources. </p>
     pub fn set_aws_waf_regional_web_acl(
         mut self,
-        input: std::option::Option<crate::types::AwsWafRegionalWebAclDetails>,
+        input: ::std::option::Option<crate::types::AwsWafRegionalWebAclDetails>,
     ) -> Self {
         self.aws_waf_regional_web_acl = input;
         self
     }
     /// <p>Details about an WAF rule for global resources. </p>
     pub fn aws_waf_rule(mut self, input: crate::types::AwsWafRuleDetails) -> Self {
-        self.aws_waf_rule = Some(input);
+        self.aws_waf_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an WAF rule for global resources. </p>
     pub fn set_aws_waf_rule(
         mut self,
-        input: std::option::Option<crate::types::AwsWafRuleDetails>,
+        input: ::std::option::Option<crate::types::AwsWafRuleDetails>,
     ) -> Self {
         self.aws_waf_rule = input;
         self
     }
     /// <p>Details about an WAF rule group for global resources. </p>
     pub fn aws_waf_rule_group(mut self, input: crate::types::AwsWafRuleGroupDetails) -> Self {
-        self.aws_waf_rule_group = Some(input);
+        self.aws_waf_rule_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about an WAF rule group for global resources. </p>
     pub fn set_aws_waf_rule_group(
         mut self,
-        input: std::option::Option<crate::types::AwsWafRuleGroupDetails>,
+        input: ::std::option::Option<crate::types::AwsWafRuleGroupDetails>,
     ) -> Self {
         self.aws_waf_rule_group = input;
         self
     }
     /// <p>Details about a task in a cluster. </p>
     pub fn aws_ecs_task(mut self, input: crate::types::AwsEcsTaskDetails) -> Self {
-        self.aws_ecs_task = Some(input);
+        self.aws_ecs_task = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a task in a cluster. </p>
     pub fn set_aws_ecs_task(
         mut self,
-        input: std::option::Option<crate::types::AwsEcsTaskDetails>,
+        input: ::std::option::Option<crate::types::AwsEcsTaskDetails>,
     ) -> Self {
         self.aws_ecs_task = input;
         self
@@ -2002,13 +2026,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsBackupBackupVaultDetails,
     ) -> Self {
-        self.aws_backup_backup_vault = Some(input);
+        self.aws_backup_backup_vault = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about an Backup backup vault. </p>
     pub fn set_aws_backup_backup_vault(
         mut self,
-        input: std::option::Option<crate::types::AwsBackupBackupVaultDetails>,
+        input: ::std::option::Option<crate::types::AwsBackupBackupVaultDetails>,
     ) -> Self {
         self.aws_backup_backup_vault = input;
         self
@@ -2018,13 +2042,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsBackupBackupPlanDetails,
     ) -> Self {
-        self.aws_backup_backup_plan = Some(input);
+        self.aws_backup_backup_plan = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about an Backup backup plan. </p>
     pub fn set_aws_backup_backup_plan(
         mut self,
-        input: std::option::Option<crate::types::AwsBackupBackupPlanDetails>,
+        input: ::std::option::Option<crate::types::AwsBackupBackupPlanDetails>,
     ) -> Self {
         self.aws_backup_backup_plan = input;
         self
@@ -2034,13 +2058,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsBackupRecoveryPointDetails,
     ) -> Self {
-        self.aws_backup_recovery_point = Some(input);
+        self.aws_backup_recovery_point = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about an Backup backup, or recovery point. </p>
     pub fn set_aws_backup_recovery_point(
         mut self,
-        input: std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
+        input: ::std::option::Option<crate::types::AwsBackupRecoveryPointDetails>,
     ) -> Self {
         self.aws_backup_recovery_point = input;
         self
@@ -2050,13 +2074,13 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEc2LaunchTemplateDetails,
     ) -> Self {
-        self.aws_ec2_launch_template = Some(input);
+        self.aws_ec2_launch_template = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the properties for creating an Amazon Elastic Compute Cloud (Amazon EC2) launch template. </p>
     pub fn set_aws_ec2_launch_template(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDetails>,
     ) -> Self {
         self.aws_ec2_launch_template = input;
         self
@@ -2066,52 +2090,52 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsSageMakerNotebookInstanceDetails,
     ) -> Self {
-        self.aws_sage_maker_notebook_instance = Some(input);
+        self.aws_sage_maker_notebook_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p> Provides details about an Amazon SageMaker notebook instance. </p>
     pub fn set_aws_sage_maker_notebook_instance(
         mut self,
-        input: std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
+        input: ::std::option::Option<crate::types::AwsSageMakerNotebookInstanceDetails>,
     ) -> Self {
         self.aws_sage_maker_notebook_instance = input;
         self
     }
     /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     pub fn aws_wafv2_web_acl(mut self, input: crate::types::AwsWafv2WebAclDetails) -> Self {
-        self.aws_wafv2_web_acl = Some(input);
+        self.aws_wafv2_web_acl = ::std::option::Option::Some(input);
         self
     }
     /// <p> Details about an WAFv2 web Access Control List (ACL). </p>
     pub fn set_aws_wafv2_web_acl(
         mut self,
-        input: std::option::Option<crate::types::AwsWafv2WebAclDetails>,
+        input: ::std::option::Option<crate::types::AwsWafv2WebAclDetails>,
     ) -> Self {
         self.aws_wafv2_web_acl = input;
         self
     }
     /// <p> Details about an WAFv2 rule group. </p>
     pub fn aws_wafv2_rule_group(mut self, input: crate::types::AwsWafv2RuleGroupDetails) -> Self {
-        self.aws_wafv2_rule_group = Some(input);
+        self.aws_wafv2_rule_group = ::std::option::Option::Some(input);
         self
     }
     /// <p> Details about an WAFv2 rule group. </p>
     pub fn set_aws_wafv2_rule_group(
         mut self,
-        input: std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
+        input: ::std::option::Option<crate::types::AwsWafv2RuleGroupDetails>,
     ) -> Self {
         self.aws_wafv2_rule_group = input;
         self
     }
     /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub fn aws_ec2_route_table(mut self, input: crate::types::AwsEc2RouteTableDetails) -> Self {
-        self.aws_ec2_route_table = Some(input);
+        self.aws_ec2_route_table = ::std::option::Option::Some(input);
         self
     }
     /// <p> Provides details about a route table. A route table contains a set of rules, called routes, that determine where to direct network traffic from your subnet or gateway. </p>
     pub fn set_aws_ec2_route_table(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2RouteTableDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2RouteTableDetails>,
     ) -> Self {
         self.aws_ec2_route_table = input;
         self

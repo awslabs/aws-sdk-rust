@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMap`](crate::operation::describe_map::builders::DescribeMapFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::operation::describe_map::builders::DescribeMapFluentBuilder::map_name) / [`set_map_name(Option<String>)`](crate::operation::describe_map::builders::DescribeMapFluentBuilder::set_map_name): <p>The name of the map resource.</p>
+    ///   - [`map_name(impl ::std::convert::Into<String>)`](crate::operation::describe_map::builders::DescribeMapFluentBuilder::map_name) / [`set_map_name(Option<String>)`](crate::operation::describe_map::builders::DescribeMapFluentBuilder::set_map_name): <p>The name of the map resource.</p>
     /// - On success, responds with [`DescribeMapOutput`](crate::operation::describe_map::DescribeMapOutput) with field(s):
     ///   - [`map_name(Option<String>)`](crate::operation::describe_map::DescribeMapOutput::map_name): <p>The map style selected from an available provider.</p>
     ///   - [`map_arn(Option<String>)`](crate::operation::describe_map::DescribeMapOutput::map_arn): <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>  </ul>

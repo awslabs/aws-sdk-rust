@@ -2,27 +2,27 @@
 
 /// <p>The configuration setting for monitoring.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringConfiguration {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
     #[doc(hidden)]
-    pub s3_monitoring_configuration: std::option::Option<crate::types::S3MonitoringConfiguration>,
+    pub s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     /// <p>The managed log persistence configuration for a job run.</p>
     #[doc(hidden)]
     pub managed_persistence_monitoring_configuration:
-        std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
+        ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
 }
 impl MonitoringConfiguration {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
     pub fn s3_monitoring_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::S3MonitoringConfiguration> {
+    ) -> ::std::option::Option<&crate::types::S3MonitoringConfiguration> {
         self.s3_monitoring_configuration.as_ref()
     }
     /// <p>The managed log persistence configuration for a job run.</p>
     pub fn managed_persistence_monitoring_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ManagedPersistenceMonitoringConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ManagedPersistenceMonitoringConfiguration> {
         self.managed_persistence_monitoring_configuration.as_ref()
     }
 }
@@ -35,12 +35,14 @@ impl MonitoringConfiguration {
 
 /// A builder for [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringConfigurationBuilder {
     pub(crate) s3_monitoring_configuration:
-        std::option::Option<crate::types::S3MonitoringConfiguration>,
+        ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     pub(crate) managed_persistence_monitoring_configuration:
-        std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
+        ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
 }
 impl MonitoringConfigurationBuilder {
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
@@ -48,13 +50,13 @@ impl MonitoringConfigurationBuilder {
         mut self,
         input: crate::types::S3MonitoringConfiguration,
     ) -> Self {
-        self.s3_monitoring_configuration = Some(input);
+        self.s3_monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 configuration for monitoring log publishing.</p>
     pub fn set_s3_monitoring_configuration(
         mut self,
-        input: std::option::Option<crate::types::S3MonitoringConfiguration>,
+        input: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     ) -> Self {
         self.s3_monitoring_configuration = input;
         self
@@ -64,13 +66,13 @@ impl MonitoringConfigurationBuilder {
         mut self,
         input: crate::types::ManagedPersistenceMonitoringConfiguration,
     ) -> Self {
-        self.managed_persistence_monitoring_configuration = Some(input);
+        self.managed_persistence_monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The managed log persistence configuration for a job run.</p>
     pub fn set_managed_persistence_monitoring_configuration(
         mut self,
-        input: std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
+        input: ::std::option::Option<crate::types::ManagedPersistenceMonitoringConfiguration>,
     ) -> Self {
         self.managed_persistence_monitoring_configuration = input;
         self

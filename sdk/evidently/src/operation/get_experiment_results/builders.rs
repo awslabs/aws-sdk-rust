@@ -7,29 +7,29 @@ pub use crate::operation::get_experiment_results::_get_experiment_results_input:
 ///
 /// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment. Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during the experiment do not find statistical significance.</p>
 /// <p>Experiment results are available up to 63 days after the start of the experiment. They are not available after that because of CloudWatch data retention policies.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExperimentResultsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder,
 }
 impl GetExperimentResultsFluentBuilder {
     /// Creates a new `GetExperimentResults`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_experiment_results::GetExperimentResults,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_experiment_results::GetExperimentResultsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl GetExperimentResultsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_experiment_results::GetExperimentResultsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_experiment_results::GetExperimentResultsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,54 +76,57 @@ impl GetExperimentResultsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_experiment_results::GetExperimentResultsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_experiment_results::GetExperimentResultsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-    pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
         self
     }
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-    pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project(input);
         self
     }
     /// <p>The name of the experiment to retrieve the results of.</p>
-    pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn experiment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.experiment(input.into());
         self
     }
     /// <p>The name of the experiment to retrieve the results of.</p>
-    pub fn set_experiment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_experiment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_experiment(input);
         self
     }
     /// <p>The date and time that the experiment started.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The date and time that the experiment started.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -129,14 +135,14 @@ impl GetExperimentResultsFluentBuilder {
     /// To override the contents of this collection use [`set_metric_names`](Self::set_metric_names).
     ///
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub fn metric_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_names(input.into());
         self
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
     pub fn set_metric_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_metric_names(input);
         self
@@ -146,14 +152,17 @@ impl GetExperimentResultsFluentBuilder {
     /// To override the contents of this collection use [`set_treatment_names`](Self::set_treatment_names).
     ///
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub fn treatment_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn treatment_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.treatment_names(input.into());
         self
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
     pub fn set_treatment_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_treatment_names(input);
         self
@@ -166,7 +175,7 @@ impl GetExperimentResultsFluentBuilder {
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub fn set_base_stat(
         mut self,
-        input: std::option::Option<crate::types::ExperimentBaseStat>,
+        input: ::std::option::Option<crate::types::ExperimentBaseStat>,
     ) -> Self {
         self.inner = self.inner.set_base_stat(input);
         self
@@ -195,7 +204,7 @@ impl GetExperimentResultsFluentBuilder {
     /// </ul>
     pub fn set_result_stats(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExperimentResultRequestType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentResultRequestType>>,
     ) -> Self {
         self.inner = self.inner.set_result_stats(input);
         self
@@ -212,7 +221,7 @@ impl GetExperimentResultsFluentBuilder {
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
     pub fn set_report_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExperimentReportName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>,
     ) -> Self {
         self.inner = self.inner.set_report_names(input);
         self
@@ -223,7 +232,7 @@ impl GetExperimentResultsFluentBuilder {
         self
     }
     /// <p>In seconds, the amount of time to aggregate results together. </p>
-    pub fn set_period(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }

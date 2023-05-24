@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyInstanceCountOutput {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub traffic_policy_instance_count: std::option::Option<i32>,
+    pub traffic_policy_instance_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetTrafficPolicyInstanceCountOutput {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
-    pub fn traffic_policy_instance_count(&self) -> std::option::Option<i32> {
+    pub fn traffic_policy_instance_count(&self) -> ::std::option::Option<i32> {
         self.traffic_policy_instance_count
     }
 }
-impl aws_http::request_id::RequestId for GetTrafficPolicyInstanceCountOutput {
+impl ::aws_http::request_id::RequestId for GetTrafficPolicyInstanceCountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetTrafficPolicyInstanceCountOutput {
 
 /// A builder for [`GetTrafficPolicyInstanceCountOutput`](crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetTrafficPolicyInstanceCountOutputBuilder {
-    pub(crate) traffic_policy_instance_count: std::option::Option<i32>,
+    pub(crate) traffic_policy_instance_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetTrafficPolicyInstanceCountOutputBuilder {
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     pub fn traffic_policy_instance_count(mut self, input: i32) -> Self {
-        self.traffic_policy_instance_count = Some(input);
+        self.traffic_policy_instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
-    pub fn set_traffic_policy_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_traffic_policy_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.traffic_policy_instance_count = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>Information about a CloudTrail trail, including the trail's name, home region, and Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrailInfo {
     /// <p>The ARN of a trail.</p>
     #[doc(hidden)]
-    pub trail_arn: std::option::Option<std::string::String>,
+    pub trail_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a trail.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
     #[doc(hidden)]
-    pub home_region: std::option::Option<std::string::String>,
+    pub home_region: ::std::option::Option<::std::string::String>,
 }
 impl TrailInfo {
     /// <p>The ARN of a trail.</p>
-    pub fn trail_arn(&self) -> std::option::Option<&str> {
+    pub fn trail_arn(&self) -> ::std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
     /// <p>The name of a trail.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> ::std::option::Option<&str> {
         self.home_region.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl TrailInfo {
 
 /// A builder for [`TrailInfo`](crate::types::TrailInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrailInfoBuilder {
-    pub(crate) trail_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) home_region: std::option::Option<std::string::String>,
+    pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) home_region: ::std::option::Option<::std::string::String>,
 }
 impl TrailInfoBuilder {
     /// <p>The ARN of a trail.</p>
-    pub fn trail_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trail_arn = Some(input.into());
+    pub fn trail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trail_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a trail.</p>
-    pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trail_arn = input;
         self
     }
     /// <p>The name of a trail.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a trail.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
-    pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.home_region = Some(input.into());
+    pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.home_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region in which a trail was created.</p>
-    pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
     }

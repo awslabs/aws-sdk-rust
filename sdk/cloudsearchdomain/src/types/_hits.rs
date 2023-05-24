@@ -2,7 +2,7 @@
 
 /// <p>The collection of documents that match the search request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Hits {
     /// <p>The total number of documents that match the search request.</p>
     #[doc(hidden)]
@@ -12,10 +12,10 @@ pub struct Hits {
     pub start: i64,
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
     #[doc(hidden)]
-    pub cursor: std::option::Option<std::string::String>,
+    pub cursor: ::std::option::Option<::std::string::String>,
     /// <p>A document that matches the search request.</p>
     #[doc(hidden)]
-    pub hit: std::option::Option<std::vec::Vec<crate::types::Hit>>,
+    pub hit: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
 }
 impl Hits {
     /// <p>The total number of documents that match the search request.</p>
@@ -27,11 +27,11 @@ impl Hits {
         self.start
     }
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
-    pub fn cursor(&self) -> std::option::Option<&str> {
+    pub fn cursor(&self) -> ::std::option::Option<&str> {
         self.cursor.as_deref()
     }
     /// <p>A document that matches the search request.</p>
-    pub fn hit(&self) -> std::option::Option<&[crate::types::Hit]> {
+    pub fn hit(&self) -> ::std::option::Option<&[crate::types::Hit]> {
         self.hit.as_deref()
     }
 }
@@ -44,41 +44,43 @@ impl Hits {
 
 /// A builder for [`Hits`](crate::types::Hits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HitsBuilder {
-    pub(crate) found: std::option::Option<i64>,
-    pub(crate) start: std::option::Option<i64>,
-    pub(crate) cursor: std::option::Option<std::string::String>,
-    pub(crate) hit: std::option::Option<std::vec::Vec<crate::types::Hit>>,
+    pub(crate) found: ::std::option::Option<i64>,
+    pub(crate) start: ::std::option::Option<i64>,
+    pub(crate) cursor: ::std::option::Option<::std::string::String>,
+    pub(crate) hit: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
 }
 impl HitsBuilder {
     /// <p>The total number of documents that match the search request.</p>
     pub fn found(mut self, input: i64) -> Self {
-        self.found = Some(input);
+        self.found = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of documents that match the search request.</p>
-    pub fn set_found(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_found(mut self, input: ::std::option::Option<i64>) -> Self {
         self.found = input;
         self
     }
     /// <p>The index of the first matching document.</p>
     pub fn start(mut self, input: i64) -> Self {
-        self.start = Some(input);
+        self.start = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index of the first matching document.</p>
-    pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start = input;
         self
     }
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
-    pub fn cursor(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cursor = Some(input.into());
+    pub fn cursor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cursor = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A cursor that can be used to retrieve the next set of matching documents when you want to page through a large result set.</p>
-    pub fn set_cursor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cursor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cursor = input;
         self
     }
@@ -90,11 +92,14 @@ impl HitsBuilder {
     pub fn hit(mut self, input: crate::types::Hit) -> Self {
         let mut v = self.hit.unwrap_or_default();
         v.push(input);
-        self.hit = Some(v);
+        self.hit = ::std::option::Option::Some(v);
         self
     }
     /// <p>A document that matches the search request.</p>
-    pub fn set_hit(mut self, input: std::option::Option<std::vec::Vec<crate::types::Hit>>) -> Self {
+    pub fn set_hit(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Hit>>,
+    ) -> Self {
         self.hit = input;
         self
     }

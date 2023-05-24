@@ -5,111 +5,113 @@
 /// <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>
 /// <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StreamingImage {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of the streaming image.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
     #[doc(hidden)]
-    pub ec2_image_id: std::option::Option<std::string::String>,
+    pub ec2_image_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption configuration.</p>
     #[doc(hidden)]
     pub encryption_configuration:
-        std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
+        ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
     #[doc(hidden)]
-    pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A friendly name for a streaming image resource.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<std::string::String>,
+    pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The platform of the streaming image, either Windows or Linux.</p>
     #[doc(hidden)]
-    pub platform: std::option::Option<std::string::String>,
+    pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The current state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::StreamingImageState>,
+    pub state: ::std::option::Option<crate::types::StreamingImageState>,
     /// <p>The status code.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::StreamingImageStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::StreamingImageStatusCode>,
     /// <p>The status message for the streaming image.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the streaming image.</p>
     #[doc(hidden)]
-    pub streaming_image_id: std::option::Option<std::string::String>,
+    pub streaming_image_id: ::std::option::Option<::std::string::String>,
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl StreamingImage {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A human-readable description of the streaming image.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
-    pub fn ec2_image_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_image_id(&self) -> ::std::option::Option<&str> {
         self.ec2_image_id.as_deref()
     }
     /// <p>The encryption configuration.</p>
     pub fn encryption_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::StreamingImageEncryptionConfiguration> {
+    ) -> ::std::option::Option<&crate::types::StreamingImageEncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
-    pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn eula_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.eula_ids.as_deref()
     }
     /// <p>A friendly name for a streaming image resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The platform of the streaming image, either Windows or Linux.</p>
-    pub fn platform(&self) -> std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<&str> {
         self.platform.as_deref()
     }
     /// <p>The current state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::StreamingImageState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::StreamingImageState> {
         self.state.as_ref()
     }
     /// <p>The status code.</p>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::StreamingImageStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::StreamingImageStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The status message for the streaming image.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The ID of the streaming image.</p>
-    pub fn streaming_image_id(&self) -> std::option::Option<&str> {
+    pub fn streaming_image_id(&self) -> ::std::option::Option<&str> {
         self.streaming_image_id.as_deref()
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StreamingImage {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StreamingImage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingImage");
         formatter.field("arn", &self.arn);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -136,52 +138,53 @@ impl StreamingImage {
 
 /// A builder for [`StreamingImage`](crate::types::StreamingImage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StreamingImageBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) ec2_image_id: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_image_id: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration:
-        std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
-    pub(crate) eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) owner: std::option::Option<std::string::String>,
-    pub(crate) platform: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::StreamingImageState>,
-    pub(crate) status_code: std::option::Option<crate::types::StreamingImageStatusCode>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) streaming_image_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
+    pub(crate) eula_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) platform: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::StreamingImageState>,
+    pub(crate) status_code: ::std::option::Option<crate::types::StreamingImageStatusCode>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) streaming_image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl StreamingImageBuilder {
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique across all Regions.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>A human-readable description of the streaming image.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A human-readable description of the streaming image.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
-    pub fn ec2_image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_image_id = Some(input.into());
+    pub fn ec2_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ec2_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an EC2 machine image with which to create the streaming image.</p>
-    pub fn set_ec2_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ec2_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ec2_image_id = input;
         self
     }
@@ -190,13 +193,13 @@ impl StreamingImageBuilder {
         mut self,
         input: crate::types::StreamingImageEncryptionConfiguration,
     ) -> Self {
-        self.encryption_configuration = Some(input);
+        self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption configuration.</p>
     pub fn set_encryption_configuration(
         mut self,
-        input: std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
+        input: ::std::option::Option<crate::types::StreamingImageEncryptionConfiguration>,
     ) -> Self {
         self.encryption_configuration = input;
         self
@@ -206,95 +209,104 @@ impl StreamingImageBuilder {
     /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).
     ///
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
-    pub fn eula_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn eula_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.eula_ids.unwrap_or_default();
         v.push(input.into());
-        self.eula_ids = Some(v);
+        self.eula_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of EULAs that must be accepted before a Streaming Session can be started using this streaming image.</p>
     pub fn set_eula_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.eula_ids = input;
         self
     }
     /// <p>A friendly name for a streaming image resource.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A friendly name for a streaming image resource.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner = Some(input.into());
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble Studio.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
     /// <p>The platform of the streaming image, either Windows or Linux.</p>
-    pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform = Some(input.into());
+    pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform of the streaming image, either Windows or Linux.</p>
-    pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
     }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::StreamingImageState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::StreamingImageState>,
+        input: ::std::option::Option<crate::types::StreamingImageState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The status code.</p>
     pub fn status_code(mut self, input: crate::types::StreamingImageStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code.</p>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::StreamingImageStatusCode>,
+        input: ::std::option::Option<crate::types::StreamingImageStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p>The status message for the streaming image.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for the streaming image.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The ID of the streaming image.</p>
-    pub fn streaming_image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.streaming_image_id = Some(input.into());
+    pub fn streaming_image_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.streaming_image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the streaming image.</p>
     pub fn set_streaming_image_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.streaming_image_id = input;
         self
@@ -306,19 +318,19 @@ impl StreamingImageBuilder {
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -343,8 +355,8 @@ impl StreamingImageBuilder {
         }
     }
 }
-impl std::fmt::Debug for StreamingImageBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StreamingImageBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingImageBuilder");
         formatter.field("arn", &self.arn);
         formatter.field("description", &"*** Sensitive Data Redacted ***");

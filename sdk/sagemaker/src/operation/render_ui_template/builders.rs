@@ -6,29 +6,29 @@ pub use crate::operation::render_ui_template::_render_ui_template_input::RenderU
 /// Fluent builder constructing a request to `RenderUiTemplate`.
 ///
 /// <p>Renders the UI template so that you can preview the worker's experience. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RenderUiTemplateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::render_ui_template::builders::RenderUiTemplateInputBuilder,
 }
 impl RenderUiTemplateFluentBuilder {
     /// Creates a new `RenderUiTemplate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::render_ui_template::RenderUiTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::render_ui_template::RenderUiTemplateError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RenderUiTemplateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::render_ui_template::RenderUiTemplateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::render_ui_template::RenderUiTemplateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl RenderUiTemplateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::render_ui_template::RenderUiTemplateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::render_ui_template::RenderUiTemplateError,
         >,
     > {
@@ -86,7 +89,10 @@ impl RenderUiTemplateFluentBuilder {
         self
     }
     /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
-    pub fn set_ui_template(mut self, input: std::option::Option<crate::types::UiTemplate>) -> Self {
+    pub fn set_ui_template(
+        mut self,
+        input: ::std::option::Option<crate::types::UiTemplate>,
+    ) -> Self {
         self.inner = self.inner.set_ui_template(input);
         self
     }
@@ -96,23 +102,26 @@ impl RenderUiTemplateFluentBuilder {
         self
     }
     /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
-    pub fn set_task(mut self, input: std::option::Option<crate::types::RenderableTask>) -> Self {
+    pub fn set_task(mut self, input: ::std::option::Option<crate::types::RenderableTask>) -> Self {
         self.inner = self.inner.set_task(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
     /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
-    pub fn human_task_ui_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn human_task_ui_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.human_task_ui_arn(input.into());
         self
     }
@@ -120,7 +129,7 @@ impl RenderUiTemplateFluentBuilder {
     /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
     pub fn set_human_task_ui_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_human_task_ui_arn(input);
         self

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AdminAddUserToGroup`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool.</p>
-    ///   - [`username(impl Into<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::set_username): <p>The username for the user.</p>
-    ///   - [`group_name(impl Into<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::set_group_name): <p>The group name.</p>
+    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool.</p>
+    ///   - [`username(impl ::std::convert::Into<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::username) / [`set_username(Option<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::set_username): <p>The username for the user.</p>
+    ///   - [`group_name(impl ::std::convert::Into<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupFluentBuilder::set_group_name): <p>The group name.</p>
     /// - On success, responds with [`AdminAddUserToGroupOutput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput)
     /// - On failure, responds with [`SdkError<AdminAddUserToGroupError>`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupError)
     pub fn admin_add_user_to_group(

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDevice`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_arn(impl Into<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::set_device_arn): <p>The ARN of the device to update. Required.</p>
-    ///   - [`device_name(impl Into<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::device_name) / [`set_device_name(Option<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::set_device_name): <p>The updated device name. Required.</p>
+    ///   - [`device_arn(impl ::std::convert::Into<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::set_device_arn): <p>The ARN of the device to update. Required.</p>
+    ///   - [`device_name(impl ::std::convert::Into<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::device_name) / [`set_device_name(Option<String>)`](crate::operation::update_device::builders::UpdateDeviceFluentBuilder::set_device_name): <p>The updated device name. Required.</p>
     /// - On success, responds with [`UpdateDeviceOutput`](crate::operation::update_device::UpdateDeviceOutput)
     /// - On failure, responds with [`SdkError<UpdateDeviceError>`](crate::operation::update_device::UpdateDeviceError)
     pub fn update_device(

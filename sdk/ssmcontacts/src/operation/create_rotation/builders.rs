@@ -6,56 +6,59 @@ pub use crate::operation::create_rotation::_create_rotation_input::CreateRotatio
 /// Fluent builder constructing a request to `CreateRotation`.
 ///
 /// <p>Creates a rotation in an on-call schedule.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRotationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_rotation::builders::CreateRotationInputBuilder,
 }
 impl CreateRotationFluentBuilder {
     /// Creates a new `CreateRotation`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_rotation::CreateRotation,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_rotation::CreateRotationError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rotation::CreateRotationError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_rotation::CreateRotationOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_rotation::CreateRotationError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rotation::CreateRotationError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl CreateRotationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_rotation::CreateRotationOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_rotation::CreateRotationError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rotation::CreateRotationError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the rotation.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the rotation.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -90,7 +93,7 @@ impl CreateRotationFluentBuilder {
     ///
     /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p>
     /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
-    pub fn contact_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_ids(input.into());
         self
     }
@@ -98,20 +101,20 @@ impl CreateRotationFluentBuilder {
     /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
     pub fn set_contact_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_contact_ids(input);
         self
     }
     /// <p>The date and time that the rotation goes into effect.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The date and time that the rotation goes into effect.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
@@ -119,14 +122,14 @@ impl CreateRotationFluentBuilder {
     /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
     /// </note>
-    pub fn time_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.time_zone_id(input.into());
         self
     }
     /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
     /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
     /// </note>
-    pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_time_zone_id(input);
         self
     }
@@ -138,7 +141,7 @@ impl CreateRotationFluentBuilder {
     /// <p>Information about the rule that specifies when a shift's team members rotate.</p>
     pub fn set_recurrence(
         mut self,
-        input: std::option::Option<crate::types::RecurrenceSettings>,
+        input: ::std::option::Option<crate::types::RecurrenceSettings>,
     ) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
@@ -155,20 +158,23 @@ impl CreateRotationFluentBuilder {
     /// <p>Optional metadata to assign to the rotation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html">Tagging Incident Manager resources</a> in the <i>Incident Manager User Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idempotency_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn set_idempotency_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self

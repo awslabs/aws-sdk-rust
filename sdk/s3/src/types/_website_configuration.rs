@@ -2,30 +2,30 @@
 
 /// <p>Specifies website configuration parameters for an Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebsiteConfiguration {
     /// <p>The name of the error document for the website.</p>
     #[doc(hidden)]
-    pub error_document: std::option::Option<crate::types::ErrorDocument>,
+    pub error_document: ::std::option::Option<crate::types::ErrorDocument>,
     /// <p>The name of the index document for the website.</p>
     #[doc(hidden)]
-    pub index_document: std::option::Option<crate::types::IndexDocument>,
+    pub index_document: ::std::option::Option<crate::types::IndexDocument>,
     /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     #[doc(hidden)]
-    pub redirect_all_requests_to: std::option::Option<crate::types::RedirectAllRequestsTo>,
+    pub redirect_all_requests_to: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     #[doc(hidden)]
-    pub routing_rules: std::option::Option<std::vec::Vec<crate::types::RoutingRule>>,
+    pub routing_rules: ::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>>,
 }
 impl WebsiteConfiguration {
     /// <p>The name of the error document for the website.</p>
-    pub fn error_document(&self) -> std::option::Option<&crate::types::ErrorDocument> {
+    pub fn error_document(&self) -> ::std::option::Option<&crate::types::ErrorDocument> {
         self.error_document.as_ref()
     }
     /// <p>The name of the index document for the website.</p>
-    pub fn index_document(&self) -> std::option::Option<&crate::types::IndexDocument> {
+    pub fn index_document(&self) -> ::std::option::Option<&crate::types::IndexDocument> {
         self.index_document.as_ref()
     }
     /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
@@ -33,11 +33,11 @@ impl WebsiteConfiguration {
     /// </important>
     pub fn redirect_all_requests_to(
         &self,
-    ) -> std::option::Option<&crate::types::RedirectAllRequestsTo> {
+    ) -> ::std::option::Option<&crate::types::RedirectAllRequestsTo> {
         self.redirect_all_requests_to.as_ref()
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    pub fn routing_rules(&self) -> std::option::Option<&[crate::types::RoutingRule]> {
+    pub fn routing_rules(&self) -> ::std::option::Option<&[crate::types::RoutingRule]> {
         self.routing_rules.as_deref()
     }
 }
@@ -50,36 +50,38 @@ impl WebsiteConfiguration {
 
 /// A builder for [`WebsiteConfiguration`](crate::types::WebsiteConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WebsiteConfigurationBuilder {
-    pub(crate) error_document: std::option::Option<crate::types::ErrorDocument>,
-    pub(crate) index_document: std::option::Option<crate::types::IndexDocument>,
-    pub(crate) redirect_all_requests_to: std::option::Option<crate::types::RedirectAllRequestsTo>,
-    pub(crate) routing_rules: std::option::Option<std::vec::Vec<crate::types::RoutingRule>>,
+    pub(crate) error_document: ::std::option::Option<crate::types::ErrorDocument>,
+    pub(crate) index_document: ::std::option::Option<crate::types::IndexDocument>,
+    pub(crate) redirect_all_requests_to: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
+    pub(crate) routing_rules: ::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>>,
 }
 impl WebsiteConfigurationBuilder {
     /// <p>The name of the error document for the website.</p>
     pub fn error_document(mut self, input: crate::types::ErrorDocument) -> Self {
-        self.error_document = Some(input);
+        self.error_document = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the error document for the website.</p>
     pub fn set_error_document(
         mut self,
-        input: std::option::Option<crate::types::ErrorDocument>,
+        input: ::std::option::Option<crate::types::ErrorDocument>,
     ) -> Self {
         self.error_document = input;
         self
     }
     /// <p>The name of the index document for the website.</p>
     pub fn index_document(mut self, input: crate::types::IndexDocument) -> Self {
-        self.index_document = Some(input);
+        self.index_document = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the index document for the website.</p>
     pub fn set_index_document(
         mut self,
-        input: std::option::Option<crate::types::IndexDocument>,
+        input: ::std::option::Option<crate::types::IndexDocument>,
     ) -> Self {
         self.index_document = input;
         self
@@ -88,7 +90,7 @@ impl WebsiteConfigurationBuilder {
     /// <p>If you specify this property, you can't specify any other property.</p>
     /// </important>
     pub fn redirect_all_requests_to(mut self, input: crate::types::RedirectAllRequestsTo) -> Self {
-        self.redirect_all_requests_to = Some(input);
+        self.redirect_all_requests_to = ::std::option::Option::Some(input);
         self
     }
     /// <p>The redirect behavior for every request to this bucket's website endpoint.</p> <important>
@@ -96,7 +98,7 @@ impl WebsiteConfigurationBuilder {
     /// </important>
     pub fn set_redirect_all_requests_to(
         mut self,
-        input: std::option::Option<crate::types::RedirectAllRequestsTo>,
+        input: ::std::option::Option<crate::types::RedirectAllRequestsTo>,
     ) -> Self {
         self.redirect_all_requests_to = input;
         self
@@ -109,13 +111,13 @@ impl WebsiteConfigurationBuilder {
     pub fn routing_rules(mut self, input: crate::types::RoutingRule) -> Self {
         let mut v = self.routing_rules.unwrap_or_default();
         v.push(input);
-        self.routing_rules = Some(v);
+        self.routing_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     pub fn set_routing_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RoutingRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingRule>>,
     ) -> Self {
         self.routing_rules = input;
         self

@@ -3,50 +3,50 @@
 /// <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p>
 /// <p> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Label {
     /// <p>The name (label) of the object or scene.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Level of confidence.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
     /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
     #[doc(hidden)]
-    pub instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
     #[doc(hidden)]
-    pub parents: std::option::Option<std::vec::Vec<crate::types::Parent>>,
+    pub parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
     /// <p>A list of potential aliases for a given label.</p>
     #[doc(hidden)]
-    pub aliases: std::option::Option<std::vec::Vec<crate::types::LabelAlias>>,
+    pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::LabelAlias>>,
     /// <p>A list of the categories associated with a given label.</p>
     #[doc(hidden)]
-    pub categories: std::option::Option<std::vec::Vec<crate::types::LabelCategory>>,
+    pub categories: ::std::option::Option<::std::vec::Vec<crate::types::LabelCategory>>,
 }
 impl Label {
     /// <p>The name (label) of the object or scene.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Level of confidence.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
         self.instances.as_deref()
     }
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
-    pub fn parents(&self) -> std::option::Option<&[crate::types::Parent]> {
+    pub fn parents(&self) -> ::std::option::Option<&[crate::types::Parent]> {
         self.parents.as_deref()
     }
     /// <p>A list of potential aliases for a given label.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::types::LabelAlias]> {
+    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::LabelAlias]> {
         self.aliases.as_deref()
     }
     /// <p>A list of the categories associated with a given label.</p>
-    pub fn categories(&self) -> std::option::Option<&[crate::types::LabelCategory]> {
+    pub fn categories(&self) -> ::std::option::Option<&[crate::types::LabelCategory]> {
         self.categories.as_deref()
     }
 }
@@ -59,33 +59,35 @@ impl Label {
 
 /// A builder for [`Label`](crate::types::Label).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) confidence: std::option::Option<f32>,
-    pub(crate) instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
-    pub(crate) parents: std::option::Option<std::vec::Vec<crate::types::Parent>>,
-    pub(crate) aliases: std::option::Option<std::vec::Vec<crate::types::LabelAlias>>,
-    pub(crate) categories: std::option::Option<std::vec::Vec<crate::types::LabelCategory>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) confidence: ::std::option::Option<f32>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
+    pub(crate) parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::LabelAlias>>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec<crate::types::LabelCategory>>,
 }
 impl LabelBuilder {
     /// <p>The name (label) of the object or scene.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name (label) of the object or scene.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Level of confidence.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Level of confidence.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }
@@ -97,13 +99,13 @@ impl LabelBuilder {
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
         v.push(input);
-        self.instances = Some(v);
+        self.instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each instance of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture, apparel or pets.</p>
     pub fn set_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     ) -> Self {
         self.instances = input;
         self
@@ -116,13 +118,13 @@ impl LabelBuilder {
     pub fn parents(mut self, input: crate::types::Parent) -> Self {
         let mut v = self.parents.unwrap_or_default();
         v.push(input);
-        self.parents = Some(v);
+        self.parents = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parent labels for a label. The response includes all ancestor labels.</p>
     pub fn set_parents(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
     ) -> Self {
         self.parents = input;
         self
@@ -135,13 +137,13 @@ impl LabelBuilder {
     pub fn aliases(mut self, input: crate::types::LabelAlias) -> Self {
         let mut v = self.aliases.unwrap_or_default();
         v.push(input);
-        self.aliases = Some(v);
+        self.aliases = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of potential aliases for a given label.</p>
     pub fn set_aliases(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LabelAlias>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelAlias>>,
     ) -> Self {
         self.aliases = input;
         self
@@ -154,13 +156,13 @@ impl LabelBuilder {
     pub fn categories(mut self, input: crate::types::LabelCategory) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input);
-        self.categories = Some(v);
+        self.categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the categories associated with a given label.</p>
     pub fn set_categories(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LabelCategory>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelCategory>>,
     ) -> Self {
         self.categories = input;
         self

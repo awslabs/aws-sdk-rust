@@ -2,50 +2,50 @@
 
 /// <p> Describes the backend environment for an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendEnvironment {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     #[doc(hidden)]
-    pub backend_environment_arn: std::option::Option<std::string::String>,
+    pub backend_environment_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
     #[doc(hidden)]
-    pub stack_name: std::option::Option<std::string::String>,
+    pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of deployment artifacts. </p>
     #[doc(hidden)]
-    pub deployment_artifacts: std::option::Option<std::string::String>,
+    pub deployment_artifacts: ::std::option::Option<::std::string::String>,
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
     #[doc(hidden)]
-    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BackendEnvironment {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_arn(&self) -> ::std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p> The name of deployment artifacts. </p>
-    pub fn deployment_artifacts(&self) -> std::option::Option<&str> {
+    pub fn deployment_artifacts(&self) -> ::std::option::Option<&str> {
         self.deployment_artifacts.as_deref()
     }
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -58,84 +58,98 @@ impl BackendEnvironment {
 
 /// A builder for [`BackendEnvironment`](crate::types::BackendEnvironment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackendEnvironmentBuilder {
-    pub(crate) backend_environment_arn: std::option::Option<std::string::String>,
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) stack_name: std::option::Option<std::string::String>,
-    pub(crate) deployment_artifacts: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) backend_environment_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) stack_name: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_artifacts: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BackendEnvironmentBuilder {
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.backend_environment_arn = Some(input.into());
+    pub fn backend_environment_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.backend_environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn set_backend_environment_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.backend_environment_arn = input;
         self
     }
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
-    pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_name = Some(input.into());
+    pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
-    pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
     }
     /// <p> The name of deployment artifacts. </p>
-    pub fn deployment_artifacts(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_artifacts = Some(input.into());
+    pub fn deployment_artifacts(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_artifacts = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of deployment artifacts. </p>
     pub fn set_deployment_artifacts(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.deployment_artifacts = input;
         self
     }
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
-    pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_time = Some(input);
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
     pub fn set_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_time = input;
         self

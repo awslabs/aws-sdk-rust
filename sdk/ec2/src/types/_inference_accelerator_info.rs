@@ -2,15 +2,15 @@
 
 /// <p>Describes the Inference accelerators for the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceAcceleratorInfo {
     /// <p>Describes the Inference accelerators for the instance type.</p>
     #[doc(hidden)]
-    pub accelerators: std::option::Option<std::vec::Vec<crate::types::InferenceDeviceInfo>>,
+    pub accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
 }
 impl InferenceAcceleratorInfo {
     /// <p>Describes the Inference accelerators for the instance type.</p>
-    pub fn accelerators(&self) -> std::option::Option<&[crate::types::InferenceDeviceInfo]> {
+    pub fn accelerators(&self) -> ::std::option::Option<&[crate::types::InferenceDeviceInfo]> {
         self.accelerators.as_deref()
     }
 }
@@ -23,9 +23,12 @@ impl InferenceAcceleratorInfo {
 
 /// A builder for [`InferenceAcceleratorInfo`](crate::types::InferenceAcceleratorInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceAcceleratorInfoBuilder {
-    pub(crate) accelerators: std::option::Option<std::vec::Vec<crate::types::InferenceDeviceInfo>>,
+    pub(crate) accelerators:
+        ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
 }
 impl InferenceAcceleratorInfoBuilder {
     /// Appends an item to `accelerators`.
@@ -36,13 +39,13 @@ impl InferenceAcceleratorInfoBuilder {
     pub fn accelerators(mut self, input: crate::types::InferenceDeviceInfo) -> Self {
         let mut v = self.accelerators.unwrap_or_default();
         v.push(input);
-        self.accelerators = Some(v);
+        self.accelerators = ::std::option::Option::Some(v);
         self
     }
     /// <p>Describes the Inference accelerators for the instance type.</p>
     pub fn set_accelerators(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InferenceDeviceInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceDeviceInfo>>,
     ) -> Self {
         self.accelerators = input;
         self

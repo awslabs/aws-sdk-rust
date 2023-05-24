@@ -2,20 +2,20 @@
 
 /// <p>The configuration settings for the SQS sink.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SqsQueueSinkConfiguration {
     /// <p>The ARN of the SQS sink.</p>
     #[doc(hidden)]
-    pub insights_target: std::option::Option<std::string::String>,
+    pub insights_target: ::std::option::Option<::std::string::String>,
 }
 impl SqsQueueSinkConfiguration {
     /// <p>The ARN of the SQS sink.</p>
-    pub fn insights_target(&self) -> std::option::Option<&str> {
+    pub fn insights_target(&self) -> ::std::option::Option<&str> {
         self.insights_target.as_deref()
     }
 }
-impl std::fmt::Debug for SqsQueueSinkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SqsQueueSinkConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SqsQueueSinkConfiguration");
         formatter.field("insights_target", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,24 @@ impl SqsQueueSinkConfiguration {
 
 /// A builder for [`SqsQueueSinkConfiguration`](crate::types::SqsQueueSinkConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SqsQueueSinkConfigurationBuilder {
-    pub(crate) insights_target: std::option::Option<std::string::String>,
+    pub(crate) insights_target: ::std::option::Option<::std::string::String>,
 }
 impl SqsQueueSinkConfigurationBuilder {
     /// <p>The ARN of the SQS sink.</p>
-    pub fn insights_target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.insights_target = Some(input.into());
+    pub fn insights_target(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.insights_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SQS sink.</p>
-    pub fn set_insights_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_insights_target(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.insights_target = input;
         self
     }
@@ -52,8 +58,8 @@ impl SqsQueueSinkConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for SqsQueueSinkConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SqsQueueSinkConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SqsQueueSinkConfigurationBuilder");
         formatter.field("insights_target", &"*** Sensitive Data Redacted ***");
         formatter.finish()

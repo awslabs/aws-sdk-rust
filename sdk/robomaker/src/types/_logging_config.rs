@@ -2,7 +2,7 @@
 
 /// <p>The logging configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfig {
     /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
@@ -11,7 +11,7 @@ pub struct LoggingConfig {
         note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
     )]
     #[doc(hidden)]
-    pub record_all_ros_topics: std::option::Option<bool>,
+    pub record_all_ros_topics: ::std::option::Option<bool>,
 }
 impl LoggingConfig {
     /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
@@ -20,7 +20,7 @@ impl LoggingConfig {
     #[deprecated(
         note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
     )]
-    pub fn record_all_ros_topics(&self) -> std::option::Option<bool> {
+    pub fn record_all_ros_topics(&self) -> ::std::option::Option<bool> {
         self.record_all_ros_topics
     }
 }
@@ -33,9 +33,11 @@ impl LoggingConfig {
 
 /// A builder for [`LoggingConfig`](crate::types::LoggingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingConfigBuilder {
-    pub(crate) record_all_ros_topics: std::option::Option<bool>,
+    pub(crate) record_all_ros_topics: ::std::option::Option<bool>,
 }
 impl LoggingConfigBuilder {
     /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
@@ -45,7 +47,7 @@ impl LoggingConfigBuilder {
         note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
     )]
     pub fn record_all_ros_topics(mut self, input: bool) -> Self {
-        self.record_all_ros_topics = Some(input);
+        self.record_all_ros_topics = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
@@ -54,7 +56,7 @@ impl LoggingConfigBuilder {
     #[deprecated(
         note = "AWS RoboMaker is ending support for ROS software suite. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/software-support-policy.html."
     )]
-    pub fn set_record_all_ros_topics(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_record_all_ros_topics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.record_all_ros_topics = input;
         self
     }

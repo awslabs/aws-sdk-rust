@@ -2,15 +2,15 @@
 
 /// <p>Information about the IPv4 delegated prefixes assigned to a network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ipv4PrefixSpecificationResponse {
     /// <p>The IPv4 delegated prefixes assigned to the network interface.</p>
     #[doc(hidden)]
-    pub ipv4_prefix: std::option::Option<std::string::String>,
+    pub ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
 impl Ipv4PrefixSpecificationResponse {
     /// <p>The IPv4 delegated prefixes assigned to the network interface.</p>
-    pub fn ipv4_prefix(&self) -> std::option::Option<&str> {
+    pub fn ipv4_prefix(&self) -> ::std::option::Option<&str> {
         self.ipv4_prefix.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Ipv4PrefixSpecificationResponse {
 
 /// A builder for [`Ipv4PrefixSpecificationResponse`](crate::types::Ipv4PrefixSpecificationResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ipv4PrefixSpecificationResponseBuilder {
-    pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
+    pub(crate) ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
 impl Ipv4PrefixSpecificationResponseBuilder {
     /// <p>The IPv4 delegated prefixes assigned to the network interface.</p>
-    pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipv4_prefix = Some(input.into());
+    pub fn ipv4_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv4_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 delegated prefixes assigned to the network interface.</p>
-    pub fn set_ipv4_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv4_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv4_prefix = input;
         self
     }

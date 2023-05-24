@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetClassifier`](crate::operation::get_classifier::builders::GetClassifierFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_classifier::builders::GetClassifierFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_classifier::builders::GetClassifierFluentBuilder::set_name): <p>Name of the classifier to retrieve.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_classifier::builders::GetClassifierFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_classifier::builders::GetClassifierFluentBuilder::set_name): <p>Name of the classifier to retrieve.</p>
     /// - On success, responds with [`GetClassifierOutput`](crate::operation::get_classifier::GetClassifierOutput) with field(s):
     ///   - [`classifier(Option<Classifier>)`](crate::operation::get_classifier::GetClassifierOutput::classifier): <p>The requested classifier.</p>
     /// - On failure, responds with [`SdkError<GetClassifierError>`](crate::operation::get_classifier::GetClassifierError)

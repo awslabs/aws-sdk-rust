@@ -2,22 +2,22 @@
 
 /// <p>Defines the storage configuration for an Amazon FSx file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FsxStorageConfiguration {
     /// <p>The file system identifier.</p>
     #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
+    pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The mount point for the file system.</p>
     #[doc(hidden)]
-    pub mount_point: std::option::Option<std::string::String>,
+    pub mount_point: ::std::option::Option<::std::string::String>,
 }
 impl FsxStorageConfiguration {
     /// <p>The file system identifier.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>The mount point for the file system.</p>
-    pub fn mount_point(&self) -> std::option::Option<&str> {
+    pub fn mount_point(&self) -> ::std::option::Option<&str> {
         self.mount_point.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl FsxStorageConfiguration {
 
 /// A builder for [`FsxStorageConfiguration`](crate::types::FsxStorageConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FsxStorageConfigurationBuilder {
-    pub(crate) file_system_id: std::option::Option<std::string::String>,
-    pub(crate) mount_point: std::option::Option<std::string::String>,
+    pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) mount_point: ::std::option::Option<::std::string::String>,
 }
 impl FsxStorageConfigurationBuilder {
     /// <p>The file system identifier.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_id = Some(input.into());
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file system identifier.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_id = input;
         self
     }
     /// <p>The mount point for the file system.</p>
-    pub fn mount_point(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mount_point = Some(input.into());
+    pub fn mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mount_point = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The mount point for the file system.</p>
-    pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mount_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_point = input;
         self
     }

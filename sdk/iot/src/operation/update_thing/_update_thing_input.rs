@@ -2,49 +2,49 @@
 
 /// <p>The input for the UpdateThing operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingInput {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing type.</p>
     #[doc(hidden)]
-    pub thing_type_name: std::option::Option<std::string::String>,
+    pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
     /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     #[doc(hidden)]
-    pub attribute_payload: std::option::Option<crate::types::AttributePayload>,
+    pub attribute_payload: ::std::option::Option<crate::types::AttributePayload>,
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     #[doc(hidden)]
-    pub expected_version: std::option::Option<i64>,
+    pub expected_version: ::std::option::Option<i64>,
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     #[doc(hidden)]
-    pub remove_thing_type: std::option::Option<bool>,
+    pub remove_thing_type: ::std::option::Option<bool>,
 }
 impl UpdateThingInput {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
     /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
-    pub fn attribute_payload(&self) -> std::option::Option<&crate::types::AttributePayload> {
+    pub fn attribute_payload(&self) -> ::std::option::Option<&crate::types::AttributePayload> {
         self.attribute_payload.as_ref()
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
-    pub fn expected_version(&self) -> std::option::Option<i64> {
+    pub fn expected_version(&self) -> ::std::option::Option<i64> {
         self.expected_version
     }
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
-    pub fn remove_thing_type(&self) -> std::option::Option<bool> {
+    pub fn remove_thing_type(&self) -> ::std::option::Option<bool> {
         self.remove_thing_type
     }
 }
@@ -57,34 +57,42 @@ impl UpdateThingInput {
 
 /// A builder for [`UpdateThingInput`](crate::operation::update_thing::UpdateThingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateThingInputBuilder {
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) thing_type_name: std::option::Option<std::string::String>,
-    pub(crate) attribute_payload: std::option::Option<crate::types::AttributePayload>,
-    pub(crate) expected_version: std::option::Option<i64>,
-    pub(crate) remove_thing_type: std::option::Option<bool>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_payload: ::std::option::Option<crate::types::AttributePayload>,
+    pub(crate) expected_version: ::std::option::Option<i64>,
+    pub(crate) remove_thing_type: ::std::option::Option<bool>,
 }
 impl UpdateThingInputBuilder {
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing to update.</p>
     /// <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_type_name = Some(input.into());
+    pub fn thing_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.thing_type_name = input;
         self
     }
@@ -92,7 +100,7 @@ impl UpdateThingInputBuilder {
     /// <p> <code>{\"attributes\":{\"name1\":\"value2\"}}</code> </p>
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn attribute_payload(mut self, input: crate::types::AttributePayload) -> Self {
-        self.attribute_payload = Some(input);
+        self.attribute_payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
@@ -100,39 +108,39 @@ impl UpdateThingInputBuilder {
     /// <p>This data is used to add new attributes or update existing attributes.</p>
     pub fn set_attribute_payload(
         mut self,
-        input: std::option::Option<crate::types::AttributePayload>,
+        input: ::std::option::Option<crate::types::AttributePayload>,
     ) -> Self {
         self.attribute_payload = input;
         self
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
-        self.expected_version = Some(input);
+        self.expected_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.</p>
-    pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_expected_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.expected_version = input;
         self
     }
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
     pub fn remove_thing_type(mut self, input: bool) -> Self {
-        self.remove_thing_type = Some(input);
+        self.remove_thing_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Remove a thing type association. If <b>true</b>, the association is removed.</p>
-    pub fn set_remove_thing_type(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_remove_thing_type(mut self, input: ::std::option::Option<bool>) -> Self {
         self.remove_thing_type = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateThingInput`](crate::operation::update_thing::UpdateThingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_thing::UpdateThingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_thing::UpdateThingInput {
+        ::std::result::Result::Ok(crate::operation::update_thing::UpdateThingInput {
             thing_name: self.thing_name,
             thing_type_name: self.thing_type_name,
             attribute_payload: self.attribute_payload,

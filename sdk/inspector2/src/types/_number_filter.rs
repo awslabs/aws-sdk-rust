@@ -2,22 +2,22 @@
 
 /// <p>An object that describes the details of a number filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumberFilter {
     /// <p>The highest number to be included in the filter.</p>
     #[doc(hidden)]
-    pub upper_inclusive: std::option::Option<f64>,
+    pub upper_inclusive: ::std::option::Option<f64>,
     /// <p>The lowest number to be included in the filter.</p>
     #[doc(hidden)]
-    pub lower_inclusive: std::option::Option<f64>,
+    pub lower_inclusive: ::std::option::Option<f64>,
 }
 impl NumberFilter {
     /// <p>The highest number to be included in the filter.</p>
-    pub fn upper_inclusive(&self) -> std::option::Option<f64> {
+    pub fn upper_inclusive(&self) -> ::std::option::Option<f64> {
         self.upper_inclusive
     }
     /// <p>The lowest number to be included in the filter.</p>
-    pub fn lower_inclusive(&self) -> std::option::Option<f64> {
+    pub fn lower_inclusive(&self) -> ::std::option::Option<f64> {
         self.lower_inclusive
     }
 }
@@ -30,29 +30,31 @@ impl NumberFilter {
 
 /// A builder for [`NumberFilter`](crate::types::NumberFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NumberFilterBuilder {
-    pub(crate) upper_inclusive: std::option::Option<f64>,
-    pub(crate) lower_inclusive: std::option::Option<f64>,
+    pub(crate) upper_inclusive: ::std::option::Option<f64>,
+    pub(crate) lower_inclusive: ::std::option::Option<f64>,
 }
 impl NumberFilterBuilder {
     /// <p>The highest number to be included in the filter.</p>
     pub fn upper_inclusive(mut self, input: f64) -> Self {
-        self.upper_inclusive = Some(input);
+        self.upper_inclusive = ::std::option::Option::Some(input);
         self
     }
     /// <p>The highest number to be included in the filter.</p>
-    pub fn set_upper_inclusive(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_upper_inclusive(mut self, input: ::std::option::Option<f64>) -> Self {
         self.upper_inclusive = input;
         self
     }
     /// <p>The lowest number to be included in the filter.</p>
     pub fn lower_inclusive(mut self, input: f64) -> Self {
-        self.lower_inclusive = Some(input);
+        self.lower_inclusive = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lowest number to be included in the filter.</p>
-    pub fn set_lower_inclusive(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lower_inclusive(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lower_inclusive = input;
         self
     }

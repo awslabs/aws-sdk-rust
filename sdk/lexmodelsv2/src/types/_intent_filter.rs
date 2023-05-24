@@ -2,29 +2,29 @@
 
 /// <p>Filters the response from the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntentFilter {
     /// <p>The name of the field to use for the filter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::IntentFilterName>,
+    pub name: ::std::option::Option<crate::types::IntentFilterName>,
     /// <p>The value to use for the filter.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::IntentFilterOperator>,
+    pub operator: ::std::option::Option<crate::types::IntentFilterOperator>,
 }
 impl IntentFilter {
     /// <p>The name of the field to use for the filter.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::IntentFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::IntentFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use for the filter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::IntentFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::IntentFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -37,20 +37,25 @@ impl IntentFilter {
 
 /// A builder for [`IntentFilter`](crate::types::IntentFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IntentFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::IntentFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) operator: std::option::Option<crate::types::IntentFilterOperator>,
+    pub(crate) name: ::std::option::Option<crate::types::IntentFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operator: ::std::option::Option<crate::types::IntentFilterOperator>,
 }
 impl IntentFilterBuilder {
     /// <p>The name of the field to use for the filter.</p>
     pub fn name(mut self, input: crate::types::IntentFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the field to use for the filter.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::IntentFilterName>) -> Self {
+    pub fn set_name(
+        mut self,
+        input: ::std::option::Option<crate::types::IntentFilterName>,
+    ) -> Self {
         self.name = input;
         self
     }
@@ -59,29 +64,29 @@ impl IntentFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The value to use for the filter.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value to use for the filter.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::IntentFilterOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::IntentFilterOperator>,
+        input: ::std::option::Option<crate::types::IntentFilterOperator>,
     ) -> Self {
         self.operator = input;
         self

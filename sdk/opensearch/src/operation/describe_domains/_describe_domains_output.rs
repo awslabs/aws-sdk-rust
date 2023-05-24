@@ -2,20 +2,20 @@
 
 /// <p>Contains the status of the specified domains or all domains owned by the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainsOutput {
     /// <p>The status of the requested domains.</p>
     #[doc(hidden)]
-    pub domain_status_list: std::option::Option<std::vec::Vec<crate::types::DomainStatus>>,
+    pub domain_status_list: ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeDomainsOutput {
     /// <p>The status of the requested domains.</p>
-    pub fn domain_status_list(&self) -> std::option::Option<&[crate::types::DomainStatus]> {
+    pub fn domain_status_list(&self) -> ::std::option::Option<&[crate::types::DomainStatus]> {
         self.domain_status_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDomainsOutput {
+impl ::aws_http::request_id::RequestId for DescribeDomainsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,12 @@ impl DescribeDomainsOutput {
 
 /// A builder for [`DescribeDomainsOutput`](crate::operation::describe_domains::DescribeDomainsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDomainsOutputBuilder {
-    pub(crate) domain_status_list: std::option::Option<std::vec::Vec<crate::types::DomainStatus>>,
+    pub(crate) domain_status_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeDomainsOutputBuilder {
@@ -43,13 +46,13 @@ impl DescribeDomainsOutputBuilder {
     pub fn domain_status_list(mut self, input: crate::types::DomainStatus) -> Self {
         let mut v = self.domain_status_list.unwrap_or_default();
         v.push(input);
-        self.domain_status_list = Some(v);
+        self.domain_status_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The status of the requested domains.</p>
     pub fn set_domain_status_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainStatus>>,
     ) -> Self {
         self.domain_status_list = input;
         self

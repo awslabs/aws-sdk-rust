@@ -21,22 +21,22 @@
 /// <li> <p> <code>OtherValidationError</code> - The given inputs were not valid or a route was not found. More information is given in the error <code>Message</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteMatrixEntryError {
     /// <p>The type of error which occurred for the route calculation.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::RouteMatrixErrorCode>,
+    pub code: ::std::option::Option<crate::types::RouteMatrixErrorCode>,
     /// <p>A message about the error that occurred for the route calculation.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl RouteMatrixEntryError {
     /// <p>The type of error which occurred for the route calculation.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::RouteMatrixErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::RouteMatrixErrorCode> {
         self.code.as_ref()
     }
     /// <p>A message about the error that occurred for the route calculation.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -49,32 +49,34 @@ impl RouteMatrixEntryError {
 
 /// A builder for [`RouteMatrixEntryError`](crate::types::RouteMatrixEntryError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RouteMatrixEntryErrorBuilder {
-    pub(crate) code: std::option::Option<crate::types::RouteMatrixErrorCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::RouteMatrixErrorCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl RouteMatrixEntryErrorBuilder {
     /// <p>The type of error which occurred for the route calculation.</p>
     pub fn code(mut self, input: crate::types::RouteMatrixErrorCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of error which occurred for the route calculation.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::RouteMatrixErrorCode>,
+        input: ::std::option::Option<crate::types::RouteMatrixErrorCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>A message about the error that occurred for the route calculation.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the error that occurred for the route calculation.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

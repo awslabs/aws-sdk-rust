@@ -2,15 +2,15 @@
 
 /// <p>Represents a request to delete an IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReceiptFilterInput {
     /// <p>The name of the IP address filter to delete.</p>
     #[doc(hidden)]
-    pub filter_name: std::option::Option<std::string::String>,
+    pub filter_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReceiptFilterInput {
     /// <p>The name of the IP address filter to delete.</p>
-    pub fn filter_name(&self) -> std::option::Option<&str> {
+    pub fn filter_name(&self) -> ::std::option::Option<&str> {
         self.filter_name.as_deref()
     }
 }
@@ -25,29 +25,31 @@ impl DeleteReceiptFilterInput {
 
 /// A builder for [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteReceiptFilterInputBuilder {
-    pub(crate) filter_name: std::option::Option<std::string::String>,
+    pub(crate) filter_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReceiptFilterInputBuilder {
     /// <p>The name of the IP address filter to delete.</p>
-    pub fn filter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filter_name = Some(input.into());
+    pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.filter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IP address filter to delete.</p>
-    pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_receipt_filter::DeleteReceiptFilterInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_receipt_filter::DeleteReceiptFilterInput {
                 filter_name: self.filter_name,
             },

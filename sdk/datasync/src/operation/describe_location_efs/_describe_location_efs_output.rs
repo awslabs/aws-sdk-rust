@@ -2,64 +2,64 @@
 
 /// <p>DescribeLocationEfsResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationEfsOutput {
     /// <p>The ARN of the Amazon EFS file system location.</p>
     #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon EFS file system location.</p>
     #[doc(hidden)]
-    pub location_uri: std::option::Option<std::string::String>,
+    pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
     #[doc(hidden)]
-    pub ec2_config: std::option::Option<crate::types::Ec2Config>,
+    pub ec2_config: ::std::option::Option<crate::types::Ec2Config>,
     /// <p>The time that the location was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
     #[doc(hidden)]
-    pub access_point_arn: std::option::Option<std::string::String>,
+    pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
     #[doc(hidden)]
-    pub file_system_access_role_arn: std::option::Option<std::string::String>,
+    pub file_system_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     #[doc(hidden)]
-    pub in_transit_encryption: std::option::Option<crate::types::EfsInTransitEncryption>,
+    pub in_transit_encryption: ::std::option::Option<crate::types::EfsInTransitEncryption>,
     _request_id: Option<String>,
 }
 impl DescribeLocationEfsOutput {
     /// <p>The ARN of the Amazon EFS file system location.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the Amazon EFS file system location.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
     /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
-    pub fn ec2_config(&self) -> std::option::Option<&crate::types::Ec2Config> {
+    pub fn ec2_config(&self) -> ::std::option::Option<&crate::types::Ec2Config> {
         self.ec2_config.as_ref()
     }
     /// <p>The time that the location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    pub fn file_system_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.file_system_access_role_arn.as_deref()
     }
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     pub fn in_transit_encryption(
         &self,
-    ) -> std::option::Option<&crate::types::EfsInTransitEncryption> {
+    ) -> ::std::option::Option<&crate::types::EfsInTransitEncryption> {
         self.in_transit_encryption.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeLocationEfsOutput {
+impl ::aws_http::request_id::RequestId for DescribeLocationEfsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -75,93 +75,104 @@ impl DescribeLocationEfsOutput {
 
 /// A builder for [`DescribeLocationEfsOutput`](crate::operation::describe_location_efs::DescribeLocationEfsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLocationEfsOutputBuilder {
-    pub(crate) location_arn: std::option::Option<std::string::String>,
-    pub(crate) location_uri: std::option::Option<std::string::String>,
-    pub(crate) ec2_config: std::option::Option<crate::types::Ec2Config>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) access_point_arn: std::option::Option<std::string::String>,
-    pub(crate) file_system_access_role_arn: std::option::Option<std::string::String>,
-    pub(crate) in_transit_encryption: std::option::Option<crate::types::EfsInTransitEncryption>,
+    pub(crate) location_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) location_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_config: ::std::option::Option<crate::types::Ec2Config>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) file_system_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) in_transit_encryption: ::std::option::Option<crate::types::EfsInTransitEncryption>,
     _request_id: Option<String>,
 }
 impl DescribeLocationEfsOutputBuilder {
     /// <p>The ARN of the Amazon EFS file system location.</p>
-    pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_arn = Some(input.into());
+    pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon EFS file system location.</p>
-    pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
     /// <p>The URL of the Amazon EFS file system location.</p>
-    pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_uri = Some(input.into());
+    pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon EFS file system location.</p>
-    pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
     /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
     pub fn ec2_config(mut self, input: crate::types::Ec2Config) -> Self {
-        self.ec2_config = Some(input);
+        self.ec2_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
-    pub fn set_ec2_config(mut self, input: std::option::Option<crate::types::Ec2Config>) -> Self {
+    pub fn set_ec2_config(mut self, input: ::std::option::Option<crate::types::Ec2Config>) -> Self {
         self.ec2_config = input;
         self
     }
     /// <p>The time that the location was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the location was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_point_arn = Some(input.into());
+    pub fn access_point_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_point_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_point_arn = input;
         self
     }
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    pub fn file_system_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_access_role_arn = Some(input.into());
+    pub fn file_system_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
     pub fn set_file_system_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.file_system_access_role_arn = input;
         self
     }
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     pub fn in_transit_encryption(mut self, input: crate::types::EfsInTransitEncryption) -> Self {
-        self.in_transit_encryption = Some(input);
+        self.in_transit_encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
     pub fn set_in_transit_encryption(
         mut self,
-        input: std::option::Option<crate::types::EfsInTransitEncryption>,
+        input: ::std::option::Option<crate::types::EfsInTransitEncryption>,
     ) -> Self {
         self.in_transit_encryption = input;
         self

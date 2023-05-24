@@ -6,47 +6,50 @@ pub use crate::operation::create_streaming_distribution_with_tags::_create_strea
 /// Fluent builder constructing a request to `CreateStreamingDistributionWithTags`.
 ///
 /// <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStreamingDistributionWithTagsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsInputBuilder,
 }
 impl CreateStreamingDistributionWithTagsFluentBuilder {
     /// Creates a new `CreateStreamingDistributionWithTags`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTags, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTags, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput, aws_smithy_http::result::SdkError<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl CreateStreamingDistributionWithTagsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput, aws_smithy_http::result::SdkError<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError>>
                          {
         self.send_middleware().await
     }
@@ -72,7 +75,7 @@ impl CreateStreamingDistributionWithTagsFluentBuilder {
     /// <p>The streaming distribution's configuration information.</p>
     pub fn set_streaming_distribution_config_with_tags(
         mut self,
-        input: std::option::Option<crate::types::StreamingDistributionConfigWithTags>,
+        input: ::std::option::Option<crate::types::StreamingDistributionConfigWithTags>,
     ) -> Self {
         self.inner = self
             .inner

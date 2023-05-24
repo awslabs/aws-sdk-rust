@@ -2,31 +2,31 @@
 
 /// <p>Information about an action that returns a custom HTTP response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FixedResponseActionConfig {
     /// <p>The message.</p>
     #[doc(hidden)]
-    pub message_body: std::option::Option<std::string::String>,
+    pub message_body: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<std::string::String>,
+    pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>The content type.</p>
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl FixedResponseActionConfig {
     /// <p>The message.</p>
-    pub fn message_body(&self) -> std::option::Option<&str> {
+    pub fn message_body(&self) -> ::std::option::Option<&str> {
         self.message_body.as_deref()
     }
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-    pub fn status_code(&self) -> std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<&str> {
         self.status_code.as_deref()
     }
     /// <p>The content type.</p>
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
 }
@@ -39,42 +39,44 @@ impl FixedResponseActionConfig {
 
 /// A builder for [`FixedResponseActionConfig`](crate::types::FixedResponseActionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FixedResponseActionConfigBuilder {
-    pub(crate) message_body: std::option::Option<std::string::String>,
-    pub(crate) status_code: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
+    pub(crate) message_body: ::std::option::Option<::std::string::String>,
+    pub(crate) status_code: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
 }
 impl FixedResponseActionConfigBuilder {
     /// <p>The message.</p>
-    pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_body = Some(input.into());
+    pub fn message_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message.</p>
-    pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_body = input;
         self
     }
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-    pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_code = Some(input.into());
+    pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
-    pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>The content type.</p>
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content type.</p>
     /// <p>Valid Values: text/plain | text/css | text/html | application/javascript | application/json</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }

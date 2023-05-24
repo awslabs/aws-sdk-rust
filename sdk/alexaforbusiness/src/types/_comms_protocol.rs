@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CommsProtocol {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum CommsProtocol {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CommsProtocol {
+impl ::std::convert::From<&str> for CommsProtocol {
     fn from(s: &str) -> Self {
         match s {
             "H323" => CommsProtocol::H323,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for CommsProtocol {
         }
     }
 }
-impl std::str::FromStr for CommsProtocol {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CommsProtocol {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CommsProtocol::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CommsProtocol::from(s))
     }
 }
 impl CommsProtocol {
@@ -91,7 +91,7 @@ impl CommsProtocol {
         &["H323", "SIP", "SIPS"]
     }
 }
-impl AsRef<str> for CommsProtocol {
+impl ::std::convert::AsRef<str> for CommsProtocol {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

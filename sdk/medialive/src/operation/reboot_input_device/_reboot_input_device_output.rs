@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for RebootInputDeviceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootInputDeviceOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for RebootInputDeviceOutput {
+impl ::aws_http::request_id::RequestId for RebootInputDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl RebootInputDeviceOutput {
 
 /// A builder for [`RebootInputDeviceOutput`](crate::operation::reboot_input_device::RebootInputDeviceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RebootInputDeviceOutputBuilder {
     _request_id: Option<String>,
 }

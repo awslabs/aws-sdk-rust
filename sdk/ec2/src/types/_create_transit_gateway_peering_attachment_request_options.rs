@@ -2,15 +2,15 @@
 
 /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringAttachmentRequestOptions {
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
     #[doc(hidden)]
-    pub dynamic_routing: std::option::Option<crate::types::DynamicRoutingValue>,
+    pub dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
 }
 impl CreateTransitGatewayPeeringAttachmentRequestOptions {
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
-    pub fn dynamic_routing(&self) -> std::option::Option<&crate::types::DynamicRoutingValue> {
+    pub fn dynamic_routing(&self) -> ::std::option::Option<&crate::types::DynamicRoutingValue> {
         self.dynamic_routing.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl CreateTransitGatewayPeeringAttachmentRequestOptions {
 
 /// A builder for [`CreateTransitGatewayPeeringAttachmentRequestOptions`](crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder {
-    pub(crate) dynamic_routing: std::option::Option<crate::types::DynamicRoutingValue>,
+    pub(crate) dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
 }
 impl CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder {
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
     pub fn dynamic_routing(mut self, input: crate::types::DynamicRoutingValue) -> Self {
-        self.dynamic_routing = Some(input);
+        self.dynamic_routing = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
     pub fn set_dynamic_routing(
         mut self,
-        input: std::option::Option<crate::types::DynamicRoutingValue>,
+        input: ::std::option::Option<crate::types::DynamicRoutingValue>,
     ) -> Self {
         self.dynamic_routing = input;
         self

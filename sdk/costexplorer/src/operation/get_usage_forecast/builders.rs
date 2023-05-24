@@ -6,29 +6,29 @@ pub use crate::operation::get_usage_forecast::_get_usage_forecast_input::GetUsag
 /// Fluent builder constructing a request to `GetUsageForecast`.
 ///
 /// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period that you select, based on your past usage. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUsageForecastFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_usage_forecast::builders::GetUsageForecastInputBuilder,
 }
 impl GetUsageForecastFluentBuilder {
     /// Creates a new `GetUsageForecast`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_usage_forecast::GetUsageForecast,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_usage_forecast::GetUsageForecastError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetUsageForecastFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_usage_forecast::GetUsageForecastOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_usage_forecast::GetUsageForecastError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl GetUsageForecastFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_usage_forecast::GetUsageForecastOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_usage_forecast::GetUsageForecastError,
         >,
     > {
@@ -88,7 +91,7 @@ impl GetUsageForecastFluentBuilder {
     /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is included in the period, but the end date isn't included in the period. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
     pub fn set_time_period(
         mut self,
-        input: std::option::Option<crate::types::DateInterval>,
+        input: ::std::option::Option<crate::types::DateInterval>,
     ) -> Self {
         self.inner = self.inner.set_time_period(input);
         self
@@ -109,7 +112,7 @@ impl GetUsageForecastFluentBuilder {
     /// <li> <p>USAGE_QUANTITY</p> </li>
     /// <li> <p>NORMALIZED_USAGE_AMOUNT</p> </li>
     /// </ul>
-    pub fn set_metric(mut self, input: std::option::Option<crate::types::Metric>) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
         self.inner = self.inner.set_metric(input);
         self
     }
@@ -123,7 +126,7 @@ impl GetUsageForecastFluentBuilder {
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub fn set_granularity(
         mut self,
-        input: std::option::Option<crate::types::Granularity>,
+        input: ::std::option::Option<crate::types::Granularity>,
     ) -> Self {
         self.inner = self.inner.set_granularity(input);
         self
@@ -184,7 +187,7 @@ impl GetUsageForecastFluentBuilder {
     /// <li> <p> <code>RESERVATION_ID</code> </p> </li>
     /// <li> <p> <code>SAVINGS_PLAN_ARN</code> </p> </li>
     /// </ul>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::Expression>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -194,7 +197,7 @@ impl GetUsageForecastFluentBuilder {
         self
     }
     /// <p>Amazon Web Services Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
-    pub fn set_prediction_interval_level(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_prediction_interval_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_prediction_interval_level(input);
         self
     }

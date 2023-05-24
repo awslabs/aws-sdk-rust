@@ -2,26 +2,26 @@
 
 /// <p>The action to take on the object attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectAttributeAction {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
     #[doc(hidden)]
-    pub object_attribute_action_type: std::option::Option<crate::types::UpdateActionType>,
+    pub object_attribute_action_type: ::std::option::Option<crate::types::UpdateActionType>,
     /// <p>The value that you want to update to.</p>
     #[doc(hidden)]
-    pub object_attribute_update_value: std::option::Option<crate::types::TypedAttributeValue>,
+    pub object_attribute_update_value: ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl ObjectAttributeAction {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
     pub fn object_attribute_action_type(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateActionType> {
+    ) -> ::std::option::Option<&crate::types::UpdateActionType> {
         self.object_attribute_action_type.as_ref()
     }
     /// <p>The value that you want to update to.</p>
     pub fn object_attribute_update_value(
         &self,
-    ) -> std::option::Option<&crate::types::TypedAttributeValue> {
+    ) -> ::std::option::Option<&crate::types::TypedAttributeValue> {
         self.object_attribute_update_value.as_ref()
     }
 }
@@ -34,22 +34,24 @@ impl ObjectAttributeAction {
 
 /// A builder for [`ObjectAttributeAction`](crate::types::ObjectAttributeAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObjectAttributeActionBuilder {
-    pub(crate) object_attribute_action_type: std::option::Option<crate::types::UpdateActionType>,
+    pub(crate) object_attribute_action_type: ::std::option::Option<crate::types::UpdateActionType>,
     pub(crate) object_attribute_update_value:
-        std::option::Option<crate::types::TypedAttributeValue>,
+        ::std::option::Option<crate::types::TypedAttributeValue>,
 }
 impl ObjectAttributeActionBuilder {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
     pub fn object_attribute_action_type(mut self, input: crate::types::UpdateActionType) -> Self {
-        self.object_attribute_action_type = Some(input);
+        self.object_attribute_action_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
     pub fn set_object_attribute_action_type(
         mut self,
-        input: std::option::Option<crate::types::UpdateActionType>,
+        input: ::std::option::Option<crate::types::UpdateActionType>,
     ) -> Self {
         self.object_attribute_action_type = input;
         self
@@ -59,13 +61,13 @@ impl ObjectAttributeActionBuilder {
         mut self,
         input: crate::types::TypedAttributeValue,
     ) -> Self {
-        self.object_attribute_update_value = Some(input);
+        self.object_attribute_update_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value that you want to update to.</p>
     pub fn set_object_attribute_update_value(
         mut self,
-        input: std::option::Option<crate::types::TypedAttributeValue>,
+        input: ::std::option::Option<crate::types::TypedAttributeValue>,
     ) -> Self {
         self.object_attribute_update_value = input;
         self

@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum StatusReasonCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StatusReasonCode {
+impl ::std::convert::From<&str> for StatusReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "INTERNAL_ERROR" => StatusReasonCode::InternalError,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for StatusReasonCode {
         }
     }
 }
-impl std::str::FromStr for StatusReasonCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StatusReasonCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StatusReasonCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StatusReasonCode::from(s))
     }
 }
 impl StatusReasonCode {
@@ -90,7 +90,7 @@ impl StatusReasonCode {
         &["INTERNAL_ERROR", "NO_AVAILABLE_CONFIGURATION_RECORDER"]
     }
 }
-impl AsRef<str> for StatusReasonCode {
+impl ::std::convert::AsRef<str> for StatusReasonCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

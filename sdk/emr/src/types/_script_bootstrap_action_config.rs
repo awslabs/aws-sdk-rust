@@ -2,22 +2,22 @@
 
 /// <p>Configuration of the script to run during a bootstrap action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptBootstrapActionConfig {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
     #[doc(hidden)]
-    pub args: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScriptBootstrapActionConfig {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.args.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ScriptBootstrapActionConfig {
 
 /// A builder for [`ScriptBootstrapActionConfig`](crate::types::ScriptBootstrapActionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScriptBootstrapActionConfigBuilder {
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScriptBootstrapActionConfigBuilder {
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Location in Amazon S3 of the script to run during a bootstrap action.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
@@ -51,16 +53,16 @@ impl ScriptBootstrapActionConfigBuilder {
     /// To override the contents of this collection use [`set_args`](Self::set_args).
     ///
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
-    pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
         v.push(input.into());
-        self.args = Some(v);
+        self.args = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of command line arguments to pass to the bootstrap action script.</p>
     pub fn set_args(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.args = input;
         self

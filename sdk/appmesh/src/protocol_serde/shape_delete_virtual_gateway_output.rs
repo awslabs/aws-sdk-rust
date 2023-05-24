@@ -2,7 +2,7 @@
 pub(crate) fn de_virtual_gateway_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::VirtualGatewayData>,
+    ::std::option::Option<crate::types::VirtualGatewayData>,
     crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
 > {
     (!body.is_empty())

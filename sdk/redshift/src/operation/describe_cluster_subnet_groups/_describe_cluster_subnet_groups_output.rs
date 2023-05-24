@@ -2,29 +2,30 @@
 
 /// <p>Contains the output from the <code>DescribeClusterSubnetGroups</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterSubnetGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
     #[doc(hidden)]
-    pub cluster_subnet_groups: std::option::Option<std::vec::Vec<crate::types::ClusterSubnetGroup>>,
+    pub cluster_subnet_groups:
+        ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSubnetGroupsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
     pub fn cluster_subnet_groups(
         &self,
-    ) -> std::option::Option<&[crate::types::ClusterSubnetGroup]> {
+    ) -> ::std::option::Option<&[crate::types::ClusterSubnetGroup]> {
         self.cluster_subnet_groups.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeClusterSubnetGroupsOutput {
+impl ::aws_http::request_id::RequestId for DescribeClusterSubnetGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,21 +39,23 @@ impl DescribeClusterSubnetGroupsOutput {
 
 /// A builder for [`DescribeClusterSubnetGroupsOutput`](crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeClusterSubnetGroupsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_subnet_groups:
-        std::option::Option<std::vec::Vec<crate::types::ClusterSubnetGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterSubnetGroupsOutputBuilder {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -64,13 +67,13 @@ impl DescribeClusterSubnetGroupsOutputBuilder {
     pub fn cluster_subnet_groups(mut self, input: crate::types::ClusterSubnetGroup) -> Self {
         let mut v = self.cluster_subnet_groups.unwrap_or_default();
         v.push(input);
-        self.cluster_subnet_groups = Some(v);
+        self.cluster_subnet_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
     pub fn set_cluster_subnet_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClusterSubnetGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSubnetGroup>>,
     ) -> Self {
         self.cluster_subnet_groups = input;
         self

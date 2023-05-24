@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationFsxOntap`](crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapFluentBuilder::set_location_arn): <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
+    ///   - [`location_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapFluentBuilder::set_location_arn): <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
     /// - On success, responds with [`DescribeLocationFsxOntapOutput`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput) with field(s):
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput::creation_time): <p>The time that the location was created.</p>
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput::location_arn): <p>The ARN of the FSx for ONTAP file system location.</p>

@@ -2,7 +2,7 @@
 pub(crate) fn de_message_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::MessageResponse>,
+    ::std::option::Option<crate::types::MessageResponse>,
     crate::operation::send_otp_message::SendOTPMessageError,
 > {
     (!body.is_empty())

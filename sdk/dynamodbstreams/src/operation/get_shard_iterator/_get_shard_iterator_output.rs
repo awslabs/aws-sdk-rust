@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>GetShardIterator</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
     #[doc(hidden)]
-    pub shard_iterator: std::option::Option<std::string::String>,
+    pub shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
-    pub fn shard_iterator(&self) -> std::option::Option<&str> {
+    pub fn shard_iterator(&self) -> ::std::option::Option<&str> {
         self.shard_iterator.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetShardIteratorOutput {
+impl ::aws_http::request_id::RequestId for GetShardIteratorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,27 @@ impl GetShardIteratorOutput {
 
 /// A builder for [`GetShardIteratorOutput`](crate::operation::get_shard_iterator::GetShardIteratorOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetShardIteratorOutputBuilder {
-    pub(crate) shard_iterator: std::option::Option<std::string::String>,
+    pub(crate) shard_iterator: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetShardIteratorOutputBuilder {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
-    pub fn shard_iterator(mut self, input: impl Into<std::string::String>) -> Self {
-        self.shard_iterator = Some(input.into());
+    pub fn shard_iterator(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.shard_iterator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
-    pub fn set_shard_iterator(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shard_iterator(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.shard_iterator = input;
         self
     }

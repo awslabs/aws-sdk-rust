@@ -2,20 +2,20 @@
 
 /// <p>The response elements represent the output of a SQL statement over an array of data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementOutput {
     /// <p>The execution results of each batch entry.</p>
     #[doc(hidden)]
-    pub update_results: std::option::Option<std::vec::Vec<crate::types::UpdateResult>>,
+    pub update_results: ::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>>,
     _request_id: Option<String>,
 }
 impl BatchExecuteStatementOutput {
     /// <p>The execution results of each batch entry.</p>
-    pub fn update_results(&self) -> std::option::Option<&[crate::types::UpdateResult]> {
+    pub fn update_results(&self) -> ::std::option::Option<&[crate::types::UpdateResult]> {
         self.update_results.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchExecuteStatementOutput {
+impl ::aws_http::request_id::RequestId for BatchExecuteStatementOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl BatchExecuteStatementOutput {
 
 /// A builder for [`BatchExecuteStatementOutput`](crate::operation::batch_execute_statement::BatchExecuteStatementOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchExecuteStatementOutputBuilder {
-    pub(crate) update_results: std::option::Option<std::vec::Vec<crate::types::UpdateResult>>,
+    pub(crate) update_results: ::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>>,
     _request_id: Option<String>,
 }
 impl BatchExecuteStatementOutputBuilder {
@@ -45,13 +47,13 @@ impl BatchExecuteStatementOutputBuilder {
     pub fn update_results(mut self, input: crate::types::UpdateResult) -> Self {
         let mut v = self.update_results.unwrap_or_default();
         v.push(input);
-        self.update_results = Some(v);
+        self.update_results = ::std::option::Option::Some(v);
         self
     }
     /// <p>The execution results of each batch entry.</p>
     pub fn set_update_results(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpdateResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateResult>>,
     ) -> Self {
         self.update_results = input;
         self

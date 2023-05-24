@@ -2,40 +2,42 @@
 
 /// <p>The AWS Lambda function metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionMetadata {
     /// <p>The resource tags on an AWS Lambda function.</p>
     #[doc(hidden)]
-    pub function_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub function_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
     #[doc(hidden)]
-    pub layers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of a function.</p>
     #[doc(hidden)]
-    pub function_name: std::option::Option<std::string::String>,
+    pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>An AWS Lambda function's runtime.</p>
     #[doc(hidden)]
-    pub runtime: std::option::Option<crate::types::Runtime>,
+    pub runtime: ::std::option::Option<crate::types::Runtime>,
 }
 impl LambdaFunctionMetadata {
     /// <p>The resource tags on an AWS Lambda function.</p>
     pub fn function_tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.function_tags.as_ref()
     }
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
-    pub fn layers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn layers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.layers.as_deref()
     }
     /// <p>The name of a function.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<&str> {
         self.function_name.as_deref()
     }
     /// <p>An AWS Lambda function's runtime.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::types::Runtime> {
+    pub fn runtime(&self) -> ::std::option::Option<&crate::types::Runtime> {
         self.runtime.as_ref()
     }
 }
@@ -48,13 +50,16 @@ impl LambdaFunctionMetadata {
 
 /// A builder for [`LambdaFunctionMetadata`](crate::types::LambdaFunctionMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionMetadataBuilder {
-    pub(crate) function_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) layers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) function_name: std::option::Option<std::string::String>,
-    pub(crate) runtime: std::option::Option<crate::types::Runtime>,
+    pub(crate) function_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) function_name: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime: ::std::option::Option<crate::types::Runtime>,
 }
 impl LambdaFunctionMetadataBuilder {
     /// Adds a key-value pair to `function_tags`.
@@ -64,19 +69,19 @@ impl LambdaFunctionMetadataBuilder {
     /// <p>The resource tags on an AWS Lambda function.</p>
     pub fn function_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.function_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.function_tags = Some(hash_map);
+        self.function_tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The resource tags on an AWS Lambda function.</p>
     pub fn set_function_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.function_tags = input;
@@ -87,37 +92,43 @@ impl LambdaFunctionMetadataBuilder {
     /// To override the contents of this collection use [`set_layers`](Self::set_layers).
     ///
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
-    pub fn layers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn layers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.layers.unwrap_or_default();
         v.push(input.into());
-        self.layers = Some(v);
+        self.layers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The layers for an AWS Lambda function. A Lambda function can have up to five layers.</p>
     pub fn set_layers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.layers = input;
         self
     }
     /// <p>The name of a function.</p>
-    pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_name = Some(input.into());
+    pub fn function_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a function.</p>
-    pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.function_name = input;
         self
     }
     /// <p>An AWS Lambda function's runtime.</p>
     pub fn runtime(mut self, input: crate::types::Runtime) -> Self {
-        self.runtime = Some(input);
+        self.runtime = ::std::option::Option::Some(input);
         self
     }
     /// <p>An AWS Lambda function's runtime.</p>
-    pub fn set_runtime(mut self, input: std::option::Option<crate::types::Runtime>) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
         self.runtime = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Specifies an Amazon Redshift source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonRedshiftSource {
     /// <p>The name of the Amazon Redshift source.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data of the Amazon Reshift source node.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<crate::types::AmazonRedshiftNodeData>,
+    pub data: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,
 }
 impl AmazonRedshiftSource {
     /// <p>The name of the Amazon Redshift source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies the data of the Amazon Reshift source node.</p>
-    pub fn data(&self) -> std::option::Option<&crate::types::AmazonRedshiftNodeData> {
+    pub fn data(&self) -> ::std::option::Option<&crate::types::AmazonRedshiftNodeData> {
         self.data.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl AmazonRedshiftSource {
 
 /// A builder for [`AmazonRedshiftSource`](crate::types::AmazonRedshiftSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AmazonRedshiftSourceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) data: std::option::Option<crate::types::AmazonRedshiftNodeData>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) data: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,
 }
 impl AmazonRedshiftSourceBuilder {
     /// <p>The name of the Amazon Redshift source.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Redshift source.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Specifies the data of the Amazon Reshift source node.</p>
     pub fn data(mut self, input: crate::types::AmazonRedshiftNodeData) -> Self {
-        self.data = Some(input);
+        self.data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the data of the Amazon Reshift source node.</p>
     pub fn set_data(
         mut self,
-        input: std::option::Option<crate::types::AmazonRedshiftNodeData>,
+        input: ::std::option::Option<crate::types::AmazonRedshiftNodeData>,
     ) -> Self {
         self.data = input;
         self

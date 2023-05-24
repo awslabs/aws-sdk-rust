@@ -2,24 +2,24 @@
 
 /// <p>Input for Update Share Invitation</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateShareInvitationInput {
     /// <p>The ID assigned to the share invitation.</p>
     #[doc(hidden)]
-    pub share_invitation_id: std::option::Option<std::string::String>,
+    pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>Share invitation action taken by contributor.</p>
     #[doc(hidden)]
-    pub share_invitation_action: std::option::Option<crate::types::ShareInvitationAction>,
+    pub share_invitation_action: ::std::option::Option<crate::types::ShareInvitationAction>,
 }
 impl UpdateShareInvitationInput {
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
+    pub fn share_invitation_id(&self) -> ::std::option::Option<&str> {
         self.share_invitation_id.as_deref()
     }
     /// <p>Share invitation action taken by contributor.</p>
     pub fn share_invitation_action(
         &self,
-    ) -> std::option::Option<&crate::types::ShareInvitationAction> {
+    ) -> ::std::option::Option<&crate::types::ShareInvitationAction> {
         self.share_invitation_action.as_ref()
     }
 }
@@ -34,34 +34,39 @@ impl UpdateShareInvitationInput {
 
 /// A builder for [`UpdateShareInvitationInput`](crate::operation::update_share_invitation::UpdateShareInvitationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateShareInvitationInputBuilder {
-    pub(crate) share_invitation_id: std::option::Option<std::string::String>,
-    pub(crate) share_invitation_action: std::option::Option<crate::types::ShareInvitationAction>,
+    pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) share_invitation_action: ::std::option::Option<crate::types::ShareInvitationAction>,
 }
 impl UpdateShareInvitationInputBuilder {
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.share_invitation_id = Some(input.into());
+    pub fn share_invitation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.share_invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
     pub fn set_share_invitation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.share_invitation_id = input;
         self
     }
     /// <p>Share invitation action taken by contributor.</p>
     pub fn share_invitation_action(mut self, input: crate::types::ShareInvitationAction) -> Self {
-        self.share_invitation_action = Some(input);
+        self.share_invitation_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Share invitation action taken by contributor.</p>
     pub fn set_share_invitation_action(
         mut self,
-        input: std::option::Option<crate::types::ShareInvitationAction>,
+        input: ::std::option::Option<crate::types::ShareInvitationAction>,
     ) -> Self {
         self.share_invitation_action = input;
         self
@@ -69,11 +74,11 @@ impl UpdateShareInvitationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateShareInvitationInput`](crate::operation::update_share_invitation::UpdateShareInvitationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_share_invitation::UpdateShareInvitationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_share_invitation::UpdateShareInvitationInput {
                 share_invitation_id: self.share_invitation_id,
                 share_invitation_action: self.share_invitation_action,

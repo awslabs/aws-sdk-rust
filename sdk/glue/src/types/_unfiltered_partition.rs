@@ -2,25 +2,25 @@
 
 /// <p>A partition that contains unfiltered metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnfilteredPartition {
     /// <p>The partition object.</p>
     #[doc(hidden)]
-    pub partition: std::option::Option<crate::types::Partition>,
+    pub partition: ::std::option::Option<crate::types::Partition>,
     /// <p>The list of columns the user has permissions to access.</p>
     #[doc(hidden)]
-    pub authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A Boolean value indicating that the partition location is registered with Lake Formation.</p>
     #[doc(hidden)]
     pub is_registered_with_lake_formation: bool,
 }
 impl UnfilteredPartition {
     /// <p>The partition object.</p>
-    pub fn partition(&self) -> std::option::Option<&crate::types::Partition> {
+    pub fn partition(&self) -> ::std::option::Option<&crate::types::Partition> {
         self.partition.as_ref()
     }
     /// <p>The list of columns the user has permissions to access.</p>
-    pub fn authorized_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn authorized_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.authorized_columns.as_deref()
     }
     /// <p>A Boolean value indicating that the partition location is registered with Lake Formation.</p>
@@ -37,20 +37,22 @@ impl UnfilteredPartition {
 
 /// A builder for [`UnfilteredPartition`](crate::types::UnfilteredPartition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnfilteredPartitionBuilder {
-    pub(crate) partition: std::option::Option<crate::types::Partition>,
-    pub(crate) authorized_columns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) is_registered_with_lake_formation: std::option::Option<bool>,
+    pub(crate) partition: ::std::option::Option<crate::types::Partition>,
+    pub(crate) authorized_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) is_registered_with_lake_formation: ::std::option::Option<bool>,
 }
 impl UnfilteredPartitionBuilder {
     /// <p>The partition object.</p>
     pub fn partition(mut self, input: crate::types::Partition) -> Self {
-        self.partition = Some(input);
+        self.partition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The partition object.</p>
-    pub fn set_partition(mut self, input: std::option::Option<crate::types::Partition>) -> Self {
+    pub fn set_partition(mut self, input: ::std::option::Option<crate::types::Partition>) -> Self {
         self.partition = input;
         self
     }
@@ -59,29 +61,32 @@ impl UnfilteredPartitionBuilder {
     /// To override the contents of this collection use [`set_authorized_columns`](Self::set_authorized_columns).
     ///
     /// <p>The list of columns the user has permissions to access.</p>
-    pub fn authorized_columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn authorized_columns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.authorized_columns.unwrap_or_default();
         v.push(input.into());
-        self.authorized_columns = Some(v);
+        self.authorized_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of columns the user has permissions to access.</p>
     pub fn set_authorized_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.authorized_columns = input;
         self
     }
     /// <p>A Boolean value indicating that the partition location is registered with Lake Formation.</p>
     pub fn is_registered_with_lake_formation(mut self, input: bool) -> Self {
-        self.is_registered_with_lake_formation = Some(input);
+        self.is_registered_with_lake_formation = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating that the partition location is registered with Lake Formation.</p>
     pub fn set_is_registered_with_lake_formation(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.is_registered_with_lake_formation = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmbMountOptions {
     /// <p>By default, DataSync automatically chooses an SMB protocol version based on negotiation with your SMB file server. You also can configure DataSync to use a specific SMB version, but we recommend doing this only if DataSync has trouble negotiating with the SMB file server automatically.</p>
     /// <p>These are the following options for configuring the SMB version:</p>
@@ -16,7 +16,7 @@ pub struct SmbMountOptions {
     /// </note> </li>
     /// </ul>
     #[doc(hidden)]
-    pub version: std::option::Option<crate::types::SmbVersion>,
+    pub version: ::std::option::Option<crate::types::SmbVersion>,
 }
 impl SmbMountOptions {
     /// <p>By default, DataSync automatically chooses an SMB protocol version based on negotiation with your SMB file server. You also can configure DataSync to use a specific SMB version, but we recommend doing this only if DataSync has trouble negotiating with the SMB file server automatically.</p>
@@ -30,7 +30,7 @@ impl SmbMountOptions {
     /// <p>The <code>SMB1</code> option isn't available when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating an Amazon FSx for NetApp ONTAP location</a>.</p>
     /// </note> </li>
     /// </ul>
-    pub fn version(&self) -> std::option::Option<&crate::types::SmbVersion> {
+    pub fn version(&self) -> ::std::option::Option<&crate::types::SmbVersion> {
         self.version.as_ref()
     }
 }
@@ -43,9 +43,11 @@ impl SmbMountOptions {
 
 /// A builder for [`SmbMountOptions`](crate::types::SmbMountOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SmbMountOptionsBuilder {
-    pub(crate) version: std::option::Option<crate::types::SmbVersion>,
+    pub(crate) version: ::std::option::Option<crate::types::SmbVersion>,
 }
 impl SmbMountOptionsBuilder {
     /// <p>By default, DataSync automatically chooses an SMB protocol version based on negotiation with your SMB file server. You also can configure DataSync to use a specific SMB version, but we recommend doing this only if DataSync has trouble negotiating with the SMB file server automatically.</p>
@@ -60,7 +62,7 @@ impl SmbMountOptionsBuilder {
     /// </note> </li>
     /// </ul>
     pub fn version(mut self, input: crate::types::SmbVersion) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>By default, DataSync automatically chooses an SMB protocol version based on negotiation with your SMB file server. You also can configure DataSync to use a specific SMB version, but we recommend doing this only if DataSync has trouble negotiating with the SMB file server automatically.</p>
@@ -74,7 +76,7 @@ impl SmbMountOptionsBuilder {
     /// <p>The <code>SMB1</code> option isn't available when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating an Amazon FSx for NetApp ONTAP location</a>.</p>
     /// </note> </li>
     /// </ul>
-    pub fn set_version(mut self, input: std::option::Option<crate::types::SmbVersion>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<crate::types::SmbVersion>) -> Self {
         self.version = input;
         self
     }

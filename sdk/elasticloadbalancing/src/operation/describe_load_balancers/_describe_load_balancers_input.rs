@@ -2,29 +2,29 @@
 
 /// <p>Contains the parameters for DescribeLoadBalancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
     #[doc(hidden)]
-    pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    pub page_size: ::std::option::Option<i32>,
 }
 impl DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn load_balancer_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.load_balancer_names.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
-    pub fn page_size(&self) -> std::option::Option<i32> {
+    pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
 }
@@ -39,11 +39,13 @@ impl DescribeLoadBalancersInput {
 
 /// A builder for [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLoadBalancersInputBuilder {
-    pub(crate) load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) page_size: std::option::Option<i32>,
+    pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) page_size: ::std::option::Option<i32>,
 }
 impl DescribeLoadBalancersInputBuilder {
     /// Appends an item to `load_balancer_names`.
@@ -51,48 +53,51 @@ impl DescribeLoadBalancersInputBuilder {
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
     ///
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn load_balancer_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
         v.push(input.into());
-        self.load_balancer_names = Some(v);
+        self.load_balancer_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the load balancers.</p>
     pub fn set_load_balancer_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.load_balancer_names = input;
         self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     pub fn page_size(mut self, input: i32) -> Self {
-        self.page_size = Some(input);
+        self.page_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
-    pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_load_balancers::DescribeLoadBalancersInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_load_balancers::DescribeLoadBalancersInput {
                 load_balancer_names: self.load_balancer_names,
                 marker: self.marker,

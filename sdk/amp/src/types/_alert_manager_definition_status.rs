@@ -2,24 +2,24 @@
 
 /// Represents the status of a definition.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlertManagerDefinitionStatus {
     /// Status code of this definition.
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::AlertManagerDefinitionStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::AlertManagerDefinitionStatusCode>,
     /// The reason for failure if any.
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl AlertManagerDefinitionStatus {
     /// Status code of this definition.
     pub fn status_code(
         &self,
-    ) -> std::option::Option<&crate::types::AlertManagerDefinitionStatusCode> {
+    ) -> ::std::option::Option<&crate::types::AlertManagerDefinitionStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
@@ -32,32 +32,40 @@ impl AlertManagerDefinitionStatus {
 
 /// A builder for [`AlertManagerDefinitionStatus`](crate::types::AlertManagerDefinitionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlertManagerDefinitionStatusBuilder {
-    pub(crate) status_code: std::option::Option<crate::types::AlertManagerDefinitionStatusCode>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
+    pub(crate) status_code: ::std::option::Option<crate::types::AlertManagerDefinitionStatusCode>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl AlertManagerDefinitionStatusBuilder {
     /// Status code of this definition.
     pub fn status_code(mut self, input: crate::types::AlertManagerDefinitionStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// Status code of this definition.
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::AlertManagerDefinitionStatusCode>,
+        input: ::std::option::Option<crate::types::AlertManagerDefinitionStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// The reason for failure if any.
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// The reason for failure if any.
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }

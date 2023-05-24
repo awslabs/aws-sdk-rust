@@ -4,22 +4,22 @@
 /// <p>If you want to invoke one or more Lambda@Edge functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with only one function.</p>
 /// <p>If you don't want to invoke any Lambda@Edge functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<i32>,
+    pub quantity: ::std::option::Option<i32>,
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
 }
 impl LambdaFunctionAssociations {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
-    pub fn quantity(&self) -> std::option::Option<i32> {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::LambdaFunctionAssociation]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::LambdaFunctionAssociation]> {
         self.items.as_deref()
     }
 }
@@ -32,19 +32,22 @@ impl LambdaFunctionAssociations {
 
 /// A builder for [`LambdaFunctionAssociations`](crate::types::LambdaFunctionAssociations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionAssociationsBuilder {
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) items:
+        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
 }
 impl LambdaFunctionAssociationsBuilder {
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
@@ -56,13 +59,13 @@ impl LambdaFunctionAssociationsBuilder {
     pub fn items(mut self, input: crate::types::LambdaFunctionAssociation) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p> <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionAssociation>>,
     ) -> Self {
         self.items = input;
         self

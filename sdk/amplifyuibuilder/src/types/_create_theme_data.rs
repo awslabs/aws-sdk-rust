@@ -2,40 +2,42 @@
 
 /// <p>Represents all of the information that is required to create a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThemeData {
     /// <p>The name of the theme.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
     /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
+    pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
     /// <p>One or more key-value pairs to use when tagging the theme data.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateThemeData {
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::ThemeValues]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::ThemeValues]> {
         self.values.as_deref()
     }
     /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::types::ThemeValues]> {
+    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::ThemeValues]> {
         self.overrides.as_deref()
     }
     /// <p>One or more key-value pairs to use when tagging the theme data.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -48,22 +50,25 @@ impl CreateThemeData {
 
 /// A builder for [`CreateThemeData`](crate::types::CreateThemeData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateThemeDataBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
-    pub(crate) overrides: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
+    pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateThemeDataBuilder {
     /// <p>The name of the theme.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the theme.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -75,13 +80,13 @@ impl CreateThemeDataBuilder {
     pub fn values(mut self, input: crate::types::ThemeValues) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
     ) -> Self {
         self.values = input;
         self
@@ -94,13 +99,13 @@ impl CreateThemeDataBuilder {
     pub fn overrides(mut self, input: crate::types::ThemeValues) -> Self {
         let mut v = self.overrides.unwrap_or_default();
         v.push(input);
-        self.overrides = Some(v);
+        self.overrides = ::std::option::Option::Some(v);
         self
     }
     /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
     pub fn set_overrides(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ThemeValues>>,
     ) -> Self {
         self.overrides = input;
         self
@@ -112,19 +117,19 @@ impl CreateThemeDataBuilder {
     /// <p>One or more key-value pairs to use when tagging the theme data.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more key-value pairs to use when tagging the theme data.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

@@ -38,13 +38,13 @@
 /// Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers from your audio segments.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsAudioOnlyHeader {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsAudioOnlyHeader {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsAudioOnlyHeader {
+impl ::std::convert::From<&str> for HlsAudioOnlyHeader {
     fn from(s: &str) -> Self {
         match s {
             "EXCLUDE" => HlsAudioOnlyHeader::Exclude,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsAudioOnlyHeader {
         }
     }
 }
-impl std::str::FromStr for HlsAudioOnlyHeader {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsAudioOnlyHeader {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsAudioOnlyHeader::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsAudioOnlyHeader::from(s))
     }
 }
 impl HlsAudioOnlyHeader {
@@ -86,7 +86,7 @@ impl HlsAudioOnlyHeader {
         &["EXCLUDE", "INCLUDE"]
     }
 }
-impl AsRef<str> for HlsAudioOnlyHeader {
+impl ::std::convert::AsRef<str> for HlsAudioOnlyHeader {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,31 +2,31 @@
 
 /// <p>Options for Kinesis as a logging destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogKinesisDataFirehoseDestination {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The delivery status.</p>
     #[doc(hidden)]
-    pub delivery_status: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
+    pub delivery_status: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
     /// <p>The ID of the delivery stream.</p>
     #[doc(hidden)]
-    pub delivery_stream: std::option::Option<std::string::String>,
+    pub delivery_stream: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogKinesisDataFirehoseDestination {
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The delivery status.</p>
     pub fn delivery_status(
         &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
+    ) -> ::std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
         self.delivery_status.as_ref()
     }
     /// <p>The ID of the delivery stream.</p>
-    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream(&self) -> ::std::option::Option<&str> {
         self.delivery_stream.as_deref()
     }
 }
@@ -40,43 +40,52 @@ impl VerifiedAccessLogKinesisDataFirehoseDestination {
 
 /// A builder for [`VerifiedAccessLogKinesisDataFirehoseDestination`](crate::types::VerifiedAccessLogKinesisDataFirehoseDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifiedAccessLogKinesisDataFirehoseDestinationBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) delivery_status: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
-    pub(crate) delivery_stream: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) delivery_status:
+        ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
+    pub(crate) delivery_stream: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogKinesisDataFirehoseDestinationBuilder {
     /// <p>Indicates whether logging is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The delivery status.</p>
     pub fn delivery_status(mut self, input: crate::types::VerifiedAccessLogDeliveryStatus) -> Self {
-        self.delivery_status = Some(input);
+        self.delivery_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The delivery status.</p>
     pub fn set_delivery_status(
         mut self,
-        input: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
+        input: ::std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
     ) -> Self {
         self.delivery_status = input;
         self
     }
     /// <p>The ID of the delivery stream.</p>
-    pub fn delivery_stream(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delivery_stream = Some(input.into());
+    pub fn delivery_stream(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delivery_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the delivery stream.</p>
-    pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delivery_stream(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.delivery_stream = input;
         self
     }

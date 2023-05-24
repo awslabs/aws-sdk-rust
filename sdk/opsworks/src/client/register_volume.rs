@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterVolume`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ec2_volume_id(impl Into<String>)`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::ec2_volume_id) / [`set_ec2_volume_id(Option<String>)`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::set_ec2_volume_id): <p>The Amazon EBS volume ID.</p>
-    ///   - [`stack_id(impl Into<String>)`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::set_stack_id): <p>The stack ID.</p>
+    ///   - [`ec2_volume_id(impl ::std::convert::Into<String>)`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::ec2_volume_id) / [`set_ec2_volume_id(Option<String>)`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::set_ec2_volume_id): <p>The Amazon EBS volume ID.</p>
+    ///   - [`stack_id(impl ::std::convert::Into<String>)`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::register_volume::builders::RegisterVolumeFluentBuilder::set_stack_id): <p>The stack ID.</p>
     /// - On success, responds with [`RegisterVolumeOutput`](crate::operation::register_volume::RegisterVolumeOutput) with field(s):
     ///   - [`volume_id(Option<String>)`](crate::operation::register_volume::RegisterVolumeOutput::volume_id): <p>The volume ID.</p>
     /// - On failure, responds with [`SdkError<RegisterVolumeError>`](crate::operation::register_volume::RegisterVolumeError)

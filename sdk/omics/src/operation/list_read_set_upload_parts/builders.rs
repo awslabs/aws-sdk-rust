@@ -6,30 +6,30 @@ pub use crate::operation::list_read_set_upload_parts::_list_read_set_upload_part
 /// Fluent builder constructing a request to `ListReadSetUploadParts`.
 ///
 /// <p> This operation will list all parts in a requested multipart upload for a sequence store. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetUploadPartsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsInputBuilder,
 }
 impl ListReadSetUploadPartsFluentBuilder {
     /// Creates a new `ListReadSetUploadParts`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_read_set_upload_parts::ListReadSetUploadParts,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl ListReadSetUploadPartsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl ListReadSetUploadPartsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError,
         >,
     > {
@@ -91,25 +94,28 @@ impl ListReadSetUploadPartsFluentBuilder {
         crate::operation::list_read_set_upload_parts::paginator::ListReadSetUploadPartsPaginator::new(self.handle, self.inner)
     }
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
-    pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sequence_store_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p> The Sequence Store ID used for the multipart uploads. </p>
     pub fn set_sequence_store_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
     }
     /// <p> The ID for the initiated multipart upload. </p>
-    pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upload_id(input.into());
         self
     }
     /// <p> The ID for the initiated multipart upload. </p>
-    pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upload_id(input);
         self
     }
@@ -121,7 +127,7 @@ impl ListReadSetUploadPartsFluentBuilder {
     /// <p> The source file for the upload part. </p>
     pub fn set_part_source(
         mut self,
-        input: std::option::Option<crate::types::ReadSetPartSource>,
+        input: ::std::option::Option<crate::types::ReadSetPartSource>,
     ) -> Self {
         self.inner = self.inner.set_part_source(input);
         self
@@ -132,17 +138,17 @@ impl ListReadSetUploadPartsFluentBuilder {
         self
     }
     /// <p> The maximum number of read set upload parts returned in a page. </p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -154,7 +160,7 @@ impl ListReadSetUploadPartsFluentBuilder {
     /// <p> Attributes used to filter for a specific subset of read set part uploads. </p>
     pub fn set_filter(
         mut self,
-        input: std::option::Option<crate::types::ReadSetUploadPartListFilter>,
+        input: ::std::option::Option<crate::types::ReadSetUploadPartListFilter>,
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self

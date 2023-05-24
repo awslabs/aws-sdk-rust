@@ -2,15 +2,15 @@
 
 /// <p>A request to get information about a specified health check. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckInput {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
     #[doc(hidden)]
-    pub health_check_id: std::option::Option<std::string::String>,
+    pub health_check_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthCheckInput {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-    pub fn health_check_id(&self) -> std::option::Option<&str> {
+    pub fn health_check_id(&self) -> ::std::option::Option<&str> {
         self.health_check_id.as_deref()
     }
 }
@@ -23,29 +23,37 @@ impl GetHealthCheckInput {
 
 /// A builder for [`GetHealthCheckInput`](crate::operation::get_health_check::GetHealthCheckInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetHealthCheckInputBuilder {
-    pub(crate) health_check_id: std::option::Option<std::string::String>,
+    pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthCheckInputBuilder {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-    pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.health_check_id = Some(input.into());
+    pub fn health_check_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.health_check_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-    pub fn set_health_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_health_check_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.health_check_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetHealthCheckInput`](crate::operation::get_health_check::GetHealthCheckInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_health_check::GetHealthCheckInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_health_check::GetHealthCheckInput {
+        ::std::result::Result::Ok(crate::operation::get_health_check::GetHealthCheckInput {
             health_check_id: self.health_check_id,
         })
     }

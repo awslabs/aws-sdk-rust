@@ -2,17 +2,17 @@
 
 /// <p>Specifies how WAF should handle <code>Challenge</code> evaluations. This is available at the web ACL level and in each rule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChallengeConfig {
     /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
     #[doc(hidden)]
-    pub immunity_time_property: std::option::Option<crate::types::ImmunityTimeProperty>,
+    pub immunity_time_property: ::std::option::Option<crate::types::ImmunityTimeProperty>,
 }
 impl ChallengeConfig {
     /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
     pub fn immunity_time_property(
         &self,
-    ) -> std::option::Option<&crate::types::ImmunityTimeProperty> {
+    ) -> ::std::option::Option<&crate::types::ImmunityTimeProperty> {
         self.immunity_time_property.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ChallengeConfig {
 
 /// A builder for [`ChallengeConfig`](crate::types::ChallengeConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChallengeConfigBuilder {
-    pub(crate) immunity_time_property: std::option::Option<crate::types::ImmunityTimeProperty>,
+    pub(crate) immunity_time_property: ::std::option::Option<crate::types::ImmunityTimeProperty>,
 }
 impl ChallengeConfigBuilder {
     /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
     pub fn immunity_time_property(mut self, input: crate::types::ImmunityTimeProperty) -> Self {
-        self.immunity_time_property = Some(input);
+        self.immunity_time_property = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines how long a challenge timestamp in the token remains valid after the client successfully responds to a challenge. </p>
     pub fn set_immunity_time_property(
         mut self,
-        input: std::option::Option<crate::types::ImmunityTimeProperty>,
+        input: ::std::option::Option<crate::types::ImmunityTimeProperty>,
     ) -> Self {
         self.immunity_time_property = input;
         self

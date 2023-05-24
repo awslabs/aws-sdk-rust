@@ -38,13 +38,13 @@
 /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MsSmoothFragmentLengthControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum MsSmoothFragmentLengthControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MsSmoothFragmentLengthControl {
+impl ::std::convert::From<&str> for MsSmoothFragmentLengthControl {
     fn from(s: &str) -> Self {
         match s {
             "EXACT" => MsSmoothFragmentLengthControl::Exact,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for MsSmoothFragmentLengthControl {
         }
     }
 }
-impl std::str::FromStr for MsSmoothFragmentLengthControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MsSmoothFragmentLengthControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MsSmoothFragmentLengthControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MsSmoothFragmentLengthControl::from(s))
     }
 }
 impl MsSmoothFragmentLengthControl {
@@ -86,7 +86,7 @@ impl MsSmoothFragmentLengthControl {
         &["EXACT", "GOP_MULTIPLE"]
     }
 }
-impl AsRef<str> for MsSmoothFragmentLengthControl {
+impl ::std::convert::AsRef<str> for MsSmoothFragmentLengthControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

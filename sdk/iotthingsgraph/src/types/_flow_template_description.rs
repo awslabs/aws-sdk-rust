@@ -2,29 +2,29 @@
 
 /// <p>An object that contains a workflow's definition and summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowTemplateDescription {
     /// <p>An object that contains summary information about a workflow.</p>
     #[doc(hidden)]
-    pub summary: std::option::Option<crate::types::FlowTemplateSummary>,
+    pub summary: ::std::option::Option<crate::types::FlowTemplateSummary>,
     /// <p>A workflow's definition document.</p>
     #[doc(hidden)]
-    pub definition: std::option::Option<crate::types::DefinitionDocument>,
+    pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
     #[doc(hidden)]
-    pub validated_namespace_version: std::option::Option<i64>,
+    pub validated_namespace_version: ::std::option::Option<i64>,
 }
 impl FlowTemplateDescription {
     /// <p>An object that contains summary information about a workflow.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::FlowTemplateSummary> {
+    pub fn summary(&self) -> ::std::option::Option<&crate::types::FlowTemplateSummary> {
         self.summary.as_ref()
     }
     /// <p>A workflow's definition document.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
-    pub fn validated_namespace_version(&self) -> std::option::Option<i64> {
+    pub fn validated_namespace_version(&self) -> ::std::option::Option<i64> {
         self.validated_namespace_version
     }
 }
@@ -37,46 +37,48 @@ impl FlowTemplateDescription {
 
 /// A builder for [`FlowTemplateDescription`](crate::types::FlowTemplateDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FlowTemplateDescriptionBuilder {
-    pub(crate) summary: std::option::Option<crate::types::FlowTemplateSummary>,
-    pub(crate) definition: std::option::Option<crate::types::DefinitionDocument>,
-    pub(crate) validated_namespace_version: std::option::Option<i64>,
+    pub(crate) summary: ::std::option::Option<crate::types::FlowTemplateSummary>,
+    pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
+    pub(crate) validated_namespace_version: ::std::option::Option<i64>,
 }
 impl FlowTemplateDescriptionBuilder {
     /// <p>An object that contains summary information about a workflow.</p>
     pub fn summary(mut self, input: crate::types::FlowTemplateSummary) -> Self {
-        self.summary = Some(input);
+        self.summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains summary information about a workflow.</p>
     pub fn set_summary(
         mut self,
-        input: std::option::Option<crate::types::FlowTemplateSummary>,
+        input: ::std::option::Option<crate::types::FlowTemplateSummary>,
     ) -> Self {
         self.summary = input;
         self
     }
     /// <p>A workflow's definition document.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
-        self.definition = Some(input);
+        self.definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A workflow's definition document.</p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<crate::types::DefinitionDocument>,
+        input: ::std::option::Option<crate::types::DefinitionDocument>,
     ) -> Self {
         self.definition = input;
         self
     }
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
     pub fn validated_namespace_version(mut self, input: i64) -> Self {
-        self.validated_namespace_version = Some(input);
+        self.validated_namespace_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
-    pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_validated_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validated_namespace_version = input;
         self
     }

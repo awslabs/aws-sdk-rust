@@ -2,7 +2,7 @@
 pub(crate) fn de_applications_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ApplicationsResponse>,
+    ::std::option::Option<crate::types::ApplicationsResponse>,
     crate::operation::get_apps::GetAppsError,
 > {
     (!body.is_empty())

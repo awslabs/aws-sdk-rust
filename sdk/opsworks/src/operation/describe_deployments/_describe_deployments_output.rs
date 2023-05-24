@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeDeployments</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeploymentsOutput {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     #[doc(hidden)]
-    pub deployments: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
+    pub deployments: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     _request_id: Option<String>,
 }
 impl DescribeDeploymentsOutput {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    pub fn deployments(&self) -> std::option::Option<&[crate::types::Deployment]> {
+    pub fn deployments(&self) -> ::std::option::Option<&[crate::types::Deployment]> {
         self.deployments.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDeploymentsOutput {
+impl ::aws_http::request_id::RequestId for DescribeDeploymentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeDeploymentsOutput {
 
 /// A builder for [`DescribeDeploymentsOutput`](crate::operation::describe_deployments::DescribeDeploymentsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDeploymentsOutputBuilder {
-    pub(crate) deployments: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
+    pub(crate) deployments: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     _request_id: Option<String>,
 }
 impl DescribeDeploymentsOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeDeploymentsOutputBuilder {
     pub fn deployments(mut self, input: crate::types::Deployment) -> Self {
         let mut v = self.deployments.unwrap_or_default();
         v.push(input);
-        self.deployments = Some(v);
+        self.deployments = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     pub fn set_deployments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     ) -> Self {
         self.deployments = input;
         self

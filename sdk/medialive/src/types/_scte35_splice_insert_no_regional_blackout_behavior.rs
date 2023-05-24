@@ -38,13 +38,13 @@
 /// Scte35 Splice Insert No Regional Blackout Behavior
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Scte35SpliceInsertNoRegionalBlackoutBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Scte35SpliceInsertNoRegionalBlackoutBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
+impl ::std::convert::From<&str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
     fn from(s: &str) -> Self {
         match s {
             "FOLLOW" => Scte35SpliceInsertNoRegionalBlackoutBehavior::Follow,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
         }
     }
 }
-impl std::str::FromStr for Scte35SpliceInsertNoRegionalBlackoutBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Scte35SpliceInsertNoRegionalBlackoutBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Scte35SpliceInsertNoRegionalBlackoutBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Scte35SpliceInsertNoRegionalBlackoutBehavior::from(s))
     }
 }
 impl Scte35SpliceInsertNoRegionalBlackoutBehavior {
@@ -86,7 +86,7 @@ impl Scte35SpliceInsertNoRegionalBlackoutBehavior {
         &["FOLLOW", "IGNORE"]
     }
 }
-impl AsRef<str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
+impl ::std::convert::AsRef<str> for Scte35SpliceInsertNoRegionalBlackoutBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

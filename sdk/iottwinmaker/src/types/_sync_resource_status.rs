@@ -2,22 +2,22 @@
 
 /// <p>The sync resource status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncResourceStatus {
     /// <p>The sync resource status state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::SyncResourceState>,
+    pub state: ::std::option::Option<crate::types::SyncResourceState>,
     /// <p>The status error.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::ErrorDetails>,
+    pub error: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl SyncResourceStatus {
     /// <p>The sync resource status state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::SyncResourceState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::SyncResourceState> {
         self.state.as_ref()
     }
     /// <p>The status error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl SyncResourceStatus {
 
 /// A builder for [`SyncResourceStatus`](crate::types::SyncResourceStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SyncResourceStatusBuilder {
-    pub(crate) state: std::option::Option<crate::types::SyncResourceState>,
-    pub(crate) error: std::option::Option<crate::types::ErrorDetails>,
+    pub(crate) state: ::std::option::Option<crate::types::SyncResourceState>,
+    pub(crate) error: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl SyncResourceStatusBuilder {
     /// <p>The sync resource status state.</p>
     pub fn state(mut self, input: crate::types::SyncResourceState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sync resource status state.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::SyncResourceState>,
+        input: ::std::option::Option<crate::types::SyncResourceState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The status error.</p>
     pub fn error(mut self, input: crate::types::ErrorDetails) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status error.</p>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::ErrorDetails>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
         self.error = input;
         self
     }

@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InspectorEvent {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum InspectorEvent {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InspectorEvent {
+impl ::std::convert::From<&str> for InspectorEvent {
     fn from(s: &str) -> Self {
         match s {
             "ASSESSMENT_RUN_COMPLETED" => InspectorEvent::AssessmentRunCompleted,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for InspectorEvent {
         }
     }
 }
-impl std::str::FromStr for InspectorEvent {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InspectorEvent {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InspectorEvent::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InspectorEvent::from(s))
     }
 }
 impl InspectorEvent {
@@ -107,7 +107,7 @@ impl InspectorEvent {
         ]
     }
 }
-impl AsRef<str> for InspectorEvent {
+impl ::std::convert::AsRef<str> for InspectorEvent {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

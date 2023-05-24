@@ -2,27 +2,27 @@
 
 /// <p>Represents the result of a list suites request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSuitesOutput {
     /// <p>Information about the suites.</p>
     #[doc(hidden)]
-    pub suites: std::option::Option<std::vec::Vec<crate::types::Suite>>,
+    pub suites: ::std::option::Option<::std::vec::Vec<crate::types::Suite>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSuitesOutput {
     /// <p>Information about the suites.</p>
-    pub fn suites(&self) -> std::option::Option<&[crate::types::Suite]> {
+    pub fn suites(&self) -> ::std::option::Option<&[crate::types::Suite]> {
         self.suites.as_deref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListSuitesOutput {
+impl ::aws_http::request_id::RequestId for ListSuitesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListSuitesOutput {
 
 /// A builder for [`ListSuitesOutput`](crate::operation::list_suites::ListSuitesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSuitesOutputBuilder {
-    pub(crate) suites: std::option::Option<std::vec::Vec<crate::types::Suite>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) suites: ::std::option::Option<::std::vec::Vec<crate::types::Suite>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSuitesOutputBuilder {
@@ -51,24 +53,24 @@ impl ListSuitesOutputBuilder {
     pub fn suites(mut self, input: crate::types::Suite) -> Self {
         let mut v = self.suites.unwrap_or_default();
         v.push(input);
-        self.suites = Some(v);
+        self.suites = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the suites.</p>
     pub fn set_suites(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Suite>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Suite>>,
     ) -> Self {
         self.suites = input;
         self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

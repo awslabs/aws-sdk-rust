@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::set_identifier): <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
+    ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_resource_policy::builders::GetResourcePolicyFluentBuilder::set_identifier): <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
     /// - On success, responds with [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_resource_policy::GetResourcePolicyOutput::policy): <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::operation::get_resource_policy::GetResourcePolicyError)

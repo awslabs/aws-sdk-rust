@@ -2,22 +2,22 @@
 
 /// <p>The constraints associated with a string attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringAttributeConstraintsType {
     /// <p>The minimum length.</p>
     #[doc(hidden)]
-    pub min_length: std::option::Option<std::string::String>,
+    pub min_length: ::std::option::Option<::std::string::String>,
     /// <p>The maximum length.</p>
     #[doc(hidden)]
-    pub max_length: std::option::Option<std::string::String>,
+    pub max_length: ::std::option::Option<::std::string::String>,
 }
 impl StringAttributeConstraintsType {
     /// <p>The minimum length.</p>
-    pub fn min_length(&self) -> std::option::Option<&str> {
+    pub fn min_length(&self) -> ::std::option::Option<&str> {
         self.min_length.as_deref()
     }
     /// <p>The maximum length.</p>
-    pub fn max_length(&self) -> std::option::Option<&str> {
+    pub fn max_length(&self) -> ::std::option::Option<&str> {
         self.max_length.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl StringAttributeConstraintsType {
 
 /// A builder for [`StringAttributeConstraintsType`](crate::types::StringAttributeConstraintsType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StringAttributeConstraintsTypeBuilder {
-    pub(crate) min_length: std::option::Option<std::string::String>,
-    pub(crate) max_length: std::option::Option<std::string::String>,
+    pub(crate) min_length: ::std::option::Option<::std::string::String>,
+    pub(crate) max_length: ::std::option::Option<::std::string::String>,
 }
 impl StringAttributeConstraintsTypeBuilder {
     /// <p>The minimum length.</p>
-    pub fn min_length(mut self, input: impl Into<std::string::String>) -> Self {
-        self.min_length = Some(input.into());
+    pub fn min_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.min_length = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum length.</p>
-    pub fn set_min_length(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_min_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min_length = input;
         self
     }
     /// <p>The maximum length.</p>
-    pub fn max_length(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_length = Some(input.into());
+    pub fn max_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_length = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum length.</p>
-    pub fn set_max_length(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_length = input;
         self
     }

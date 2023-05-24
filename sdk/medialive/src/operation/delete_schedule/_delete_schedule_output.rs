@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for DeleteScheduleResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteScheduleOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteScheduleOutput {
+impl ::aws_http::request_id::RequestId for DeleteScheduleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteScheduleOutput {
 
 /// A builder for [`DeleteScheduleOutput`](crate::operation::delete_schedule::DeleteScheduleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteScheduleOutputBuilder {
     _request_id: Option<String>,
 }

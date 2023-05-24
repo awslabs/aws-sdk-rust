@@ -2,22 +2,22 @@
 
 /// <p>Describes the state of an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentActionState {
     /// <p>The state of the action.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ExperimentActionStatus>,
+    pub status: ::std::option::Option<crate::types::ExperimentActionStatus>,
     /// <p>The reason for the state.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentActionState {
     /// <p>The state of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ExperimentActionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ExperimentActionStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the state.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl ExperimentActionState {
 
 /// A builder for [`ExperimentActionState`](crate::types::ExperimentActionState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperimentActionStateBuilder {
-    pub(crate) status: std::option::Option<crate::types::ExperimentActionStatus>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ExperimentActionStatus>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentActionStateBuilder {
     /// <p>The state of the action.</p>
     pub fn status(mut self, input: crate::types::ExperimentActionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the action.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ExperimentActionStatus>,
+        input: ::std::option::Option<crate::types::ExperimentActionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The reason for the state.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the state.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }

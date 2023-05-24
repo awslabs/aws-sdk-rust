@@ -2,43 +2,43 @@
 
 /// <p> Contains information about an import that was returned by a lookup request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportsListItem {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
-    pub import_id: std::option::Option<std::string::String>,
+    pub import_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the import. </p>
     #[doc(hidden)]
-    pub import_status: std::option::Option<crate::types::ImportStatus>,
+    pub import_status: ::std::option::Option<crate::types::ImportStatus>,
     /// <p> The ARN of the destination event data store. </p>
     #[doc(hidden)]
-    pub destinations: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The timestamp of the import's creation. </p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The timestamp of the import's last update. </p>
     #[doc(hidden)]
-    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportsListItem {
     /// <p> The ID of the import. </p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> ::std::option::Option<&str> {
         self.import_id.as_deref()
     }
     /// <p> The status of the import. </p>
-    pub fn import_status(&self) -> std::option::Option<&crate::types::ImportStatus> {
+    pub fn import_status(&self) -> ::std::option::Option<&crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p> The ARN of the destination event data store. </p>
-    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn destinations(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.destinations.as_deref()
     }
     /// <p> The timestamp of the import's creation. </p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p> The timestamp of the import's last update. </p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -51,34 +51,36 @@ impl ImportsListItem {
 
 /// A builder for [`ImportsListItem`](crate::types::ImportsListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportsListItemBuilder {
-    pub(crate) import_id: std::option::Option<std::string::String>,
-    pub(crate) import_status: std::option::Option<crate::types::ImportStatus>,
-    pub(crate) destinations: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) import_id: ::std::option::Option<::std::string::String>,
+    pub(crate) import_status: ::std::option::Option<crate::types::ImportStatus>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportsListItemBuilder {
     /// <p> The ID of the import. </p>
-    pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.import_id = Some(input.into());
+    pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.import_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the import. </p>
-    pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.import_id = input;
         self
     }
     /// <p> The status of the import. </p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
-        self.import_status = Some(input);
+        self.import_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the import. </p>
     pub fn set_import_status(
         mut self,
-        input: std::option::Option<crate::types::ImportStatus>,
+        input: ::std::option::Option<crate::types::ImportStatus>,
     ) -> Self {
         self.import_status = input;
         self
@@ -88,42 +90,42 @@ impl ImportsListItemBuilder {
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
     ///
     /// <p> The ARN of the destination event data store. </p>
-    pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input.into());
-        self.destinations = Some(v);
+        self.destinations = ::std::option::Option::Some(v);
         self
     }
     /// <p> The ARN of the destination event data store. </p>
     pub fn set_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.destinations = input;
         self
     }
     /// <p> The timestamp of the import's creation. </p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p> The timestamp of the import's creation. </p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p> The timestamp of the import's last update. </p>
-    pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_timestamp = Some(input);
+    pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p> The timestamp of the import's last update. </p>
     pub fn set_updated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_timestamp = input;
         self

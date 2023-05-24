@@ -2,15 +2,15 @@
 
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaseKpiResult {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
     #[doc(hidden)]
-    pub rows: std::option::Option<std::vec::Vec<crate::types::ResultRow>>,
+    pub rows: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
 }
 impl BaseKpiResult {
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
-    pub fn rows(&self) -> std::option::Option<&[crate::types::ResultRow]> {
+    pub fn rows(&self) -> ::std::option::Option<&[crate::types::ResultRow]> {
         self.rows.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl BaseKpiResult {
 
 /// A builder for [`BaseKpiResult`](crate::types::BaseKpiResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BaseKpiResultBuilder {
-    pub(crate) rows: std::option::Option<std::vec::Vec<crate::types::ResultRow>>,
+    pub(crate) rows: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
 }
 impl BaseKpiResultBuilder {
     /// Appends an item to `rows`.
@@ -36,13 +38,13 @@ impl BaseKpiResultBuilder {
     pub fn rows(mut self, input: crate::types::ResultRow) -> Self {
         let mut v = self.rows.unwrap_or_default();
         v.push(input);
-        self.rows = Some(v);
+        self.rows = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
     pub fn set_rows(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResultRow>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultRow>>,
     ) -> Self {
         self.rows = input;
         self

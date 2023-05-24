@@ -10,22 +10,22 @@
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordMarkerDecisionAttributes {
     /// <p> The name of the marker.</p>
     #[doc(hidden)]
-    pub marker_name: std::option::Option<std::string::String>,
+    pub marker_name: ::std::option::Option<::std::string::String>,
     /// <p> The details of the marker.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::string::String>,
+    pub details: ::std::option::Option<::std::string::String>,
 }
 impl RecordMarkerDecisionAttributes {
     /// <p> The name of the marker.</p>
-    pub fn marker_name(&self) -> std::option::Option<&str> {
+    pub fn marker_name(&self) -> ::std::option::Option<&str> {
         self.marker_name.as_deref()
     }
     /// <p> The details of the marker.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
 }
@@ -38,29 +38,31 @@ impl RecordMarkerDecisionAttributes {
 
 /// A builder for [`RecordMarkerDecisionAttributes`](crate::types::RecordMarkerDecisionAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordMarkerDecisionAttributesBuilder {
-    pub(crate) marker_name: std::option::Option<std::string::String>,
-    pub(crate) details: std::option::Option<std::string::String>,
+    pub(crate) marker_name: ::std::option::Option<::std::string::String>,
+    pub(crate) details: ::std::option::Option<::std::string::String>,
 }
 impl RecordMarkerDecisionAttributesBuilder {
     /// <p> The name of the marker.</p>
-    pub fn marker_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker_name = Some(input.into());
+    pub fn marker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the marker.</p>
-    pub fn set_marker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker_name = input;
         self
     }
     /// <p> The details of the marker.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.details = Some(input.into());
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The details of the marker.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
     }

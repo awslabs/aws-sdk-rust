@@ -6,56 +6,59 @@ pub use crate::operation::get_snapshots::_get_snapshots_input::GetSnapshotsInput
 /// Fluent builder constructing a request to `GetSnapshots`.
 ///
 /// <p>Retrieves search metrics data. The data provides a snapshot of how your users interact with your search application and how effective the application is.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSnapshotsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_snapshots::builders::GetSnapshotsInputBuilder,
 }
 impl GetSnapshotsFluentBuilder {
     /// Creates a new `GetSnapshots`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_snapshots::GetSnapshots,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_snapshots::GetSnapshotsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl GetSnapshotsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_snapshots::GetSnapshotsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_snapshots::GetSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -86,12 +89,12 @@ impl GetSnapshotsFluentBuilder {
         )
     }
     /// <p>The identifier of the index to get search metrics data.</p>
-    pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
     /// <p>The identifier of the index to get search metrics data.</p>
-    pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
@@ -117,7 +120,7 @@ impl GetSnapshotsFluentBuilder {
     /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
     /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
     /// </ul>
-    pub fn set_interval(mut self, input: std::option::Option<crate::types::Interval>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<crate::types::Interval>) -> Self {
         self.inner = self.inner.set_interval(input);
         self
     }
@@ -129,17 +132,20 @@ impl GetSnapshotsFluentBuilder {
     }
     /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
-    pub fn set_metric_type(mut self, input: std::option::Option<crate::types::MetricType>) -> Self {
+    pub fn set_metric_type(
+        mut self,
+        input: ::std::option::Option<crate::types::MetricType>,
+    ) -> Self {
         self.inner = self.inner.set_metric_type(input);
         self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -149,7 +155,7 @@ impl GetSnapshotsFluentBuilder {
         self
     }
     /// <p>The maximum number of returned data for the metric.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

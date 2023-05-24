@@ -2,26 +2,28 @@
 
 /// <p>Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
     #[doc(hidden)]
-    pub operation: std::option::Option<std::string::String>,
+    pub operation: ::std::option::Option<::std::string::String>,
     /// <p>Contextual parameters for the transformation.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> ::std::option::Option<&str> {
         self.operation.as_deref()
     }
     /// <p>Contextual parameters for the transformation.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
 }
@@ -34,20 +36,23 @@ impl RecipeAction {
 
 /// A builder for [`RecipeAction`](crate::types::RecipeAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecipeActionBuilder {
-    pub(crate) operation: std::option::Option<std::string::String>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) operation: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl RecipeActionBuilder {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operation = Some(input.into());
+    pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation = input;
         self
     }
@@ -58,19 +63,19 @@ impl RecipeActionBuilder {
     /// <p>Contextual parameters for the transformation.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Contextual parameters for the transformation.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;

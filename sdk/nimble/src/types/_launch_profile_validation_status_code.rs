@@ -45,13 +45,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LaunchProfileValidationStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +75,7 @@ pub enum LaunchProfileValidationStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LaunchProfileValidationStatusCode {
+impl ::std::convert::From<&str> for LaunchProfileValidationStatusCode {
     fn from(s: &str) -> Self {
         match s {
                         "VALIDATION_FAILED_INTERNAL_SERVER_ERROR" => LaunchProfileValidationStatusCode::ValidationFailedInternalServerError,
@@ -91,11 +91,11 @@ other => LaunchProfileValidationStatusCode::Unknown(crate::primitives::UnknownVa
                     }
     }
 }
-impl std::str::FromStr for LaunchProfileValidationStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LaunchProfileValidationStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LaunchProfileValidationStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LaunchProfileValidationStatusCode::from(s))
     }
 }
 impl LaunchProfileValidationStatusCode {
@@ -129,7 +129,7 @@ impl LaunchProfileValidationStatusCode {
         ]
     }
 }
-impl AsRef<str> for LaunchProfileValidationStatusCode {
+impl ::std::convert::AsRef<str> for LaunchProfileValidationStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

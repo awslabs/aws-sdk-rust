@@ -2,39 +2,39 @@
 
 /// <p>Details about a rate-based rule for global resources. A rate-based rule provides settings to indicate when to allow, block, or count a request. Rate-based rules include the number of requests that arrive over a specified period of time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRateBasedRuleDetails {
     /// <p>The name of the metrics for the rate-based rule.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rate-based rule.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The field that WAF uses to determine whether requests are likely arriving from single source and are subject to rate monitoring.</p>
     #[doc(hidden)]
-    pub rate_key: std::option::Option<std::string::String>,
+    pub rate_key: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
     #[doc(hidden)]
     pub rate_limit: i64,
     /// <p>The unique identifier for the rate-based rule.</p>
     #[doc(hidden)]
-    pub rule_id: std::option::Option<std::string::String>,
+    pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The predicates to include in the rate-based rule.</p>
     #[doc(hidden)]
     pub match_predicates:
-        std::option::Option<std::vec::Vec<crate::types::AwsWafRateBasedRuleMatchPredicate>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRateBasedRuleMatchPredicate>>,
 }
 impl AwsWafRateBasedRuleDetails {
     /// <p>The name of the metrics for the rate-based rule.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The name of the rate-based rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The field that WAF uses to determine whether requests are likely arriving from single source and are subject to rate monitoring.</p>
-    pub fn rate_key(&self) -> std::option::Option<&str> {
+    pub fn rate_key(&self) -> ::std::option::Option<&str> {
         self.rate_key.as_deref()
     }
     /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
@@ -42,13 +42,13 @@ impl AwsWafRateBasedRuleDetails {
         self.rate_limit
     }
     /// <p>The unique identifier for the rate-based rule.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
         self.rule_id.as_deref()
     }
     /// <p>The predicates to include in the rate-based rule.</p>
     pub fn match_predicates(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsWafRateBasedRuleMatchPredicate]> {
+    ) -> ::std::option::Option<&[crate::types::AwsWafRateBasedRuleMatchPredicate]> {
         self.match_predicates.as_deref()
     }
 }
@@ -61,64 +61,66 @@ impl AwsWafRateBasedRuleDetails {
 
 /// A builder for [`AwsWafRateBasedRuleDetails`](crate::types::AwsWafRateBasedRuleDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafRateBasedRuleDetailsBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) rate_key: std::option::Option<std::string::String>,
-    pub(crate) rate_limit: std::option::Option<i64>,
-    pub(crate) rule_id: std::option::Option<std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) rate_key: ::std::option::Option<::std::string::String>,
+    pub(crate) rate_limit: ::std::option::Option<i64>,
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) match_predicates:
-        std::option::Option<std::vec::Vec<crate::types::AwsWafRateBasedRuleMatchPredicate>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafRateBasedRuleMatchPredicate>>,
 }
 impl AwsWafRateBasedRuleDetailsBuilder {
     /// <p>The name of the metrics for the rate-based rule.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metrics for the rate-based rule.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The name of the rate-based rule.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rate-based rule.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The field that WAF uses to determine whether requests are likely arriving from single source and are subject to rate monitoring.</p>
-    pub fn rate_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rate_key = Some(input.into());
+    pub fn rate_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rate_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field that WAF uses to determine whether requests are likely arriving from single source and are subject to rate monitoring.</p>
-    pub fn set_rate_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rate_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rate_key = input;
         self
     }
     /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
     pub fn rate_limit(mut self, input: i64) -> Self {
-        self.rate_limit = Some(input);
+        self.rate_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of requests that have an identical value for the field specified in <code>RateKey</code> that are allowed within a five-minute period. If the number of requests exceeds <code>RateLimit</code> and the other predicates specified in the rule are met, WAF triggers the action for the rule.</p>
-    pub fn set_rate_limit(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_rate_limit(mut self, input: ::std::option::Option<i64>) -> Self {
         self.rate_limit = input;
         self
     }
     /// <p>The unique identifier for the rate-based rule.</p>
-    pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_id = Some(input.into());
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the rate-based rule.</p>
-    pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
     }
@@ -133,13 +135,15 @@ impl AwsWafRateBasedRuleDetailsBuilder {
     ) -> Self {
         let mut v = self.match_predicates.unwrap_or_default();
         v.push(input);
-        self.match_predicates = Some(v);
+        self.match_predicates = ::std::option::Option::Some(v);
         self
     }
     /// <p>The predicates to include in the rate-based rule.</p>
     pub fn set_match_predicates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsWafRateBasedRuleMatchPredicate>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsWafRateBasedRuleMatchPredicate>,
+        >,
     ) -> Self {
         self.match_predicates = input;
         self

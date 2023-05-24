@@ -2,14 +2,14 @@
 
 /// <p>Contains details about the events of an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryEvent {
     /// <p>The date and time the event occurred.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the event.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::HistoryEventType>,
+    pub r#type: ::std::option::Option<crate::types::HistoryEventType>,
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
     #[doc(hidden)]
     pub id: i64,
@@ -19,137 +19,141 @@ pub struct HistoryEvent {
     /// <p>Contains details about an activity that failed during an execution.</p>
     #[doc(hidden)]
     pub activity_failed_event_details:
-        std::option::Option<crate::types::ActivityFailedEventDetails>,
+        ::std::option::Option<crate::types::ActivityFailedEventDetails>,
     /// <p>Contains details about an activity schedule event that failed during an execution.</p>
     #[doc(hidden)]
     pub activity_schedule_failed_event_details:
-        std::option::Option<crate::types::ActivityScheduleFailedEventDetails>,
+        ::std::option::Option<crate::types::ActivityScheduleFailedEventDetails>,
     /// <p>Contains details about an activity scheduled during an execution.</p>
     #[doc(hidden)]
     pub activity_scheduled_event_details:
-        std::option::Option<crate::types::ActivityScheduledEventDetails>,
+        ::std::option::Option<crate::types::ActivityScheduledEventDetails>,
     /// <p>Contains details about the start of an activity during an execution.</p>
     #[doc(hidden)]
     pub activity_started_event_details:
-        std::option::Option<crate::types::ActivityStartedEventDetails>,
+        ::std::option::Option<crate::types::ActivityStartedEventDetails>,
     /// <p>Contains details about an activity that successfully terminated during an execution.</p>
     #[doc(hidden)]
     pub activity_succeeded_event_details:
-        std::option::Option<crate::types::ActivitySucceededEventDetails>,
+        ::std::option::Option<crate::types::ActivitySucceededEventDetails>,
     /// <p>Contains details about an activity timeout that occurred during an execution.</p>
     #[doc(hidden)]
     pub activity_timed_out_event_details:
-        std::option::Option<crate::types::ActivityTimedOutEventDetails>,
+        ::std::option::Option<crate::types::ActivityTimedOutEventDetails>,
     /// <p>Contains details about the failure of a task.</p>
     #[doc(hidden)]
-    pub task_failed_event_details: std::option::Option<crate::types::TaskFailedEventDetails>,
+    pub task_failed_event_details: ::std::option::Option<crate::types::TaskFailedEventDetails>,
     /// <p>Contains details about a task that was scheduled.</p>
     #[doc(hidden)]
-    pub task_scheduled_event_details: std::option::Option<crate::types::TaskScheduledEventDetails>,
+    pub task_scheduled_event_details:
+        ::std::option::Option<crate::types::TaskScheduledEventDetails>,
     /// <p>Contains details about a task that failed to start.</p>
     #[doc(hidden)]
     pub task_start_failed_event_details:
-        std::option::Option<crate::types::TaskStartFailedEventDetails>,
+        ::std::option::Option<crate::types::TaskStartFailedEventDetails>,
     /// <p>Contains details about a task that was started.</p>
     #[doc(hidden)]
-    pub task_started_event_details: std::option::Option<crate::types::TaskStartedEventDetails>,
+    pub task_started_event_details: ::std::option::Option<crate::types::TaskStartedEventDetails>,
     /// <p>Contains details about a task that where the submit failed.</p>
     #[doc(hidden)]
     pub task_submit_failed_event_details:
-        std::option::Option<crate::types::TaskSubmitFailedEventDetails>,
+        ::std::option::Option<crate::types::TaskSubmitFailedEventDetails>,
     /// <p>Contains details about a submitted task.</p>
     #[doc(hidden)]
-    pub task_submitted_event_details: std::option::Option<crate::types::TaskSubmittedEventDetails>,
+    pub task_submitted_event_details:
+        ::std::option::Option<crate::types::TaskSubmittedEventDetails>,
     /// <p>Contains details about a task that succeeded.</p>
     #[doc(hidden)]
-    pub task_succeeded_event_details: std::option::Option<crate::types::TaskSucceededEventDetails>,
+    pub task_succeeded_event_details:
+        ::std::option::Option<crate::types::TaskSucceededEventDetails>,
     /// <p>Contains details about a task that timed out.</p>
     #[doc(hidden)]
-    pub task_timed_out_event_details: std::option::Option<crate::types::TaskTimedOutEventDetails>,
+    pub task_timed_out_event_details: ::std::option::Option<crate::types::TaskTimedOutEventDetails>,
     /// <p>Contains details about an execution failure event.</p>
     #[doc(hidden)]
     pub execution_failed_event_details:
-        std::option::Option<crate::types::ExecutionFailedEventDetails>,
+        ::std::option::Option<crate::types::ExecutionFailedEventDetails>,
     /// <p>Contains details about the start of the execution.</p>
     #[doc(hidden)]
     pub execution_started_event_details:
-        std::option::Option<crate::types::ExecutionStartedEventDetails>,
+        ::std::option::Option<crate::types::ExecutionStartedEventDetails>,
     /// <p>Contains details about the successful termination of the execution.</p>
     #[doc(hidden)]
     pub execution_succeeded_event_details:
-        std::option::Option<crate::types::ExecutionSucceededEventDetails>,
+        ::std::option::Option<crate::types::ExecutionSucceededEventDetails>,
     /// <p>Contains details about an abort of an execution.</p>
     #[doc(hidden)]
     pub execution_aborted_event_details:
-        std::option::Option<crate::types::ExecutionAbortedEventDetails>,
+        ::std::option::Option<crate::types::ExecutionAbortedEventDetails>,
     /// <p>Contains details about the execution timeout that occurred during the execution.</p>
     #[doc(hidden)]
     pub execution_timed_out_event_details:
-        std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
+        ::std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
     /// <p>Contains details about Map state that was started.</p>
     #[doc(hidden)]
     pub map_state_started_event_details:
-        std::option::Option<crate::types::MapStateStartedEventDetails>,
+        ::std::option::Option<crate::types::MapStateStartedEventDetails>,
     /// <p>Contains details about an iteration of a Map state that was started.</p>
     #[doc(hidden)]
     pub map_iteration_started_event_details:
-        std::option::Option<crate::types::MapIterationEventDetails>,
+        ::std::option::Option<crate::types::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that succeeded.</p>
     #[doc(hidden)]
     pub map_iteration_succeeded_event_details:
-        std::option::Option<crate::types::MapIterationEventDetails>,
+        ::std::option::Option<crate::types::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that failed.</p>
     #[doc(hidden)]
     pub map_iteration_failed_event_details:
-        std::option::Option<crate::types::MapIterationEventDetails>,
+        ::std::option::Option<crate::types::MapIterationEventDetails>,
     /// <p>Contains details about an iteration of a Map state that was aborted.</p>
     #[doc(hidden)]
     pub map_iteration_aborted_event_details:
-        std::option::Option<crate::types::MapIterationEventDetails>,
+        ::std::option::Option<crate::types::MapIterationEventDetails>,
     /// <p>Contains details about a Lambda function that failed during an execution.</p>
     #[doc(hidden)]
     pub lambda_function_failed_event_details:
-        std::option::Option<crate::types::LambdaFunctionFailedEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionFailedEventDetails>,
     /// <p>Contains details about a failed Lambda function schedule event that occurred during an execution.</p>
     #[doc(hidden)]
     pub lambda_function_schedule_failed_event_details:
-        std::option::Option<crate::types::LambdaFunctionScheduleFailedEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionScheduleFailedEventDetails>,
     /// <p>Contains details about a Lambda function scheduled during an execution.</p>
     #[doc(hidden)]
     pub lambda_function_scheduled_event_details:
-        std::option::Option<crate::types::LambdaFunctionScheduledEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionScheduledEventDetails>,
     /// <p>Contains details about a lambda function that failed to start during an execution.</p>
     #[doc(hidden)]
     pub lambda_function_start_failed_event_details:
-        std::option::Option<crate::types::LambdaFunctionStartFailedEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionStartFailedEventDetails>,
     /// <p>Contains details about a Lambda function that terminated successfully during an execution.</p>
     #[doc(hidden)]
     pub lambda_function_succeeded_event_details:
-        std::option::Option<crate::types::LambdaFunctionSucceededEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionSucceededEventDetails>,
     /// <p>Contains details about a Lambda function timeout that occurred during an execution.</p>
     #[doc(hidden)]
     pub lambda_function_timed_out_event_details:
-        std::option::Option<crate::types::LambdaFunctionTimedOutEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionTimedOutEventDetails>,
     /// <p>Contains details about a state entered during an execution.</p>
     #[doc(hidden)]
-    pub state_entered_event_details: std::option::Option<crate::types::StateEnteredEventDetails>,
+    pub state_entered_event_details: ::std::option::Option<crate::types::StateEnteredEventDetails>,
     /// <p>Contains details about an exit from a state during an execution.</p>
     #[doc(hidden)]
-    pub state_exited_event_details: std::option::Option<crate::types::StateExitedEventDetails>,
+    pub state_exited_event_details: ::std::option::Option<crate::types::StateExitedEventDetails>,
     /// <p>Contains details, such as <code>mapRunArn</code>, and the start date and time of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the Map Run that was started.</p>
     #[doc(hidden)]
-    pub map_run_started_event_details: std::option::Option<crate::types::MapRunStartedEventDetails>,
+    pub map_run_started_event_details:
+        ::std::option::Option<crate::types::MapRunStartedEventDetails>,
     /// <p>Contains error and cause details about a Map Run that failed.</p>
     #[doc(hidden)]
-    pub map_run_failed_event_details: std::option::Option<crate::types::MapRunFailedEventDetails>,
+    pub map_run_failed_event_details: ::std::option::Option<crate::types::MapRunFailedEventDetails>,
 }
 impl HistoryEvent {
     /// <p>The date and time the event occurred.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The type of the event.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::HistoryEventType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HistoryEventType> {
         self.r#type.as_ref()
     }
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
@@ -163,205 +167,205 @@ impl HistoryEvent {
     /// <p>Contains details about an activity that failed during an execution.</p>
     pub fn activity_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ActivityFailedEventDetails> {
         self.activity_failed_event_details.as_ref()
     }
     /// <p>Contains details about an activity schedule event that failed during an execution.</p>
     pub fn activity_schedule_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityScheduleFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ActivityScheduleFailedEventDetails> {
         self.activity_schedule_failed_event_details.as_ref()
     }
     /// <p>Contains details about an activity scheduled during an execution.</p>
     pub fn activity_scheduled_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityScheduledEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ActivityScheduledEventDetails> {
         self.activity_scheduled_event_details.as_ref()
     }
     /// <p>Contains details about the start of an activity during an execution.</p>
     pub fn activity_started_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityStartedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ActivityStartedEventDetails> {
         self.activity_started_event_details.as_ref()
     }
     /// <p>Contains details about an activity that successfully terminated during an execution.</p>
     pub fn activity_succeeded_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ActivitySucceededEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ActivitySucceededEventDetails> {
         self.activity_succeeded_event_details.as_ref()
     }
     /// <p>Contains details about an activity timeout that occurred during an execution.</p>
     pub fn activity_timed_out_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityTimedOutEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ActivityTimedOutEventDetails> {
         self.activity_timed_out_event_details.as_ref()
     }
     /// <p>Contains details about the failure of a task.</p>
     pub fn task_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::TaskFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::TaskFailedEventDetails> {
         self.task_failed_event_details.as_ref()
     }
     /// <p>Contains details about a task that was scheduled.</p>
     pub fn task_scheduled_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::TaskScheduledEventDetails> {
+    ) -> ::std::option::Option<&crate::types::TaskScheduledEventDetails> {
         self.task_scheduled_event_details.as_ref()
     }
     /// <p>Contains details about a task that failed to start.</p>
     pub fn task_start_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::TaskStartFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::TaskStartFailedEventDetails> {
         self.task_start_failed_event_details.as_ref()
     }
     /// <p>Contains details about a task that was started.</p>
     pub fn task_started_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::TaskStartedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::TaskStartedEventDetails> {
         self.task_started_event_details.as_ref()
     }
     /// <p>Contains details about a task that where the submit failed.</p>
     pub fn task_submit_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::TaskSubmitFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::TaskSubmitFailedEventDetails> {
         self.task_submit_failed_event_details.as_ref()
     }
     /// <p>Contains details about a submitted task.</p>
     pub fn task_submitted_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::TaskSubmittedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::TaskSubmittedEventDetails> {
         self.task_submitted_event_details.as_ref()
     }
     /// <p>Contains details about a task that succeeded.</p>
     pub fn task_succeeded_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::TaskSucceededEventDetails> {
+    ) -> ::std::option::Option<&crate::types::TaskSucceededEventDetails> {
         self.task_succeeded_event_details.as_ref()
     }
     /// <p>Contains details about a task that timed out.</p>
     pub fn task_timed_out_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::TaskTimedOutEventDetails> {
+    ) -> ::std::option::Option<&crate::types::TaskTimedOutEventDetails> {
         self.task_timed_out_event_details.as_ref()
     }
     /// <p>Contains details about an execution failure event.</p>
     pub fn execution_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ExecutionFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ExecutionFailedEventDetails> {
         self.execution_failed_event_details.as_ref()
     }
     /// <p>Contains details about the start of the execution.</p>
     pub fn execution_started_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ExecutionStartedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ExecutionStartedEventDetails> {
         self.execution_started_event_details.as_ref()
     }
     /// <p>Contains details about the successful termination of the execution.</p>
     pub fn execution_succeeded_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ExecutionSucceededEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ExecutionSucceededEventDetails> {
         self.execution_succeeded_event_details.as_ref()
     }
     /// <p>Contains details about an abort of an execution.</p>
     pub fn execution_aborted_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ExecutionAbortedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ExecutionAbortedEventDetails> {
         self.execution_aborted_event_details.as_ref()
     }
     /// <p>Contains details about the execution timeout that occurred during the execution.</p>
     pub fn execution_timed_out_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::ExecutionTimedOutEventDetails> {
+    ) -> ::std::option::Option<&crate::types::ExecutionTimedOutEventDetails> {
         self.execution_timed_out_event_details.as_ref()
     }
     /// <p>Contains details about Map state that was started.</p>
     pub fn map_state_started_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::MapStateStartedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::MapStateStartedEventDetails> {
         self.map_state_started_event_details.as_ref()
     }
     /// <p>Contains details about an iteration of a Map state that was started.</p>
     pub fn map_iteration_started_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::MapIterationEventDetails> {
+    ) -> ::std::option::Option<&crate::types::MapIterationEventDetails> {
         self.map_iteration_started_event_details.as_ref()
     }
     /// <p>Contains details about an iteration of a Map state that succeeded.</p>
     pub fn map_iteration_succeeded_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::MapIterationEventDetails> {
+    ) -> ::std::option::Option<&crate::types::MapIterationEventDetails> {
         self.map_iteration_succeeded_event_details.as_ref()
     }
     /// <p>Contains details about an iteration of a Map state that failed.</p>
     pub fn map_iteration_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::MapIterationEventDetails> {
+    ) -> ::std::option::Option<&crate::types::MapIterationEventDetails> {
         self.map_iteration_failed_event_details.as_ref()
     }
     /// <p>Contains details about an iteration of a Map state that was aborted.</p>
     pub fn map_iteration_aborted_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::MapIterationEventDetails> {
+    ) -> ::std::option::Option<&crate::types::MapIterationEventDetails> {
         self.map_iteration_aborted_event_details.as_ref()
     }
     /// <p>Contains details about a Lambda function that failed during an execution.</p>
     pub fn lambda_function_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionFailedEventDetails> {
         self.lambda_function_failed_event_details.as_ref()
     }
     /// <p>Contains details about a failed Lambda function schedule event that occurred during an execution.</p>
     pub fn lambda_function_schedule_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionScheduleFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionScheduleFailedEventDetails> {
         self.lambda_function_schedule_failed_event_details.as_ref()
     }
     /// <p>Contains details about a Lambda function scheduled during an execution.</p>
     pub fn lambda_function_scheduled_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionScheduledEventDetails> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionScheduledEventDetails> {
         self.lambda_function_scheduled_event_details.as_ref()
     }
     /// <p>Contains details about a lambda function that failed to start during an execution.</p>
     pub fn lambda_function_start_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionStartFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionStartFailedEventDetails> {
         self.lambda_function_start_failed_event_details.as_ref()
     }
     /// <p>Contains details about a Lambda function that terminated successfully during an execution.</p>
     pub fn lambda_function_succeeded_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionSucceededEventDetails> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionSucceededEventDetails> {
         self.lambda_function_succeeded_event_details.as_ref()
     }
     /// <p>Contains details about a Lambda function timeout that occurred during an execution.</p>
     pub fn lambda_function_timed_out_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionTimedOutEventDetails> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionTimedOutEventDetails> {
         self.lambda_function_timed_out_event_details.as_ref()
     }
     /// <p>Contains details about a state entered during an execution.</p>
     pub fn state_entered_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::StateEnteredEventDetails> {
+    ) -> ::std::option::Option<&crate::types::StateEnteredEventDetails> {
         self.state_entered_event_details.as_ref()
     }
     /// <p>Contains details about an exit from a state during an execution.</p>
     pub fn state_exited_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::StateExitedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::StateExitedEventDetails> {
         self.state_exited_event_details.as_ref()
     }
     /// <p>Contains details, such as <code>mapRunArn</code>, and the start date and time of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the Map Run that was started.</p>
     pub fn map_run_started_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::MapRunStartedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::MapRunStartedEventDetails> {
         self.map_run_started_event_details.as_ref()
     }
     /// <p>Contains error and cause details about a Map Run that failed.</p>
     pub fn map_run_failed_event_details(
         &self,
-    ) -> std::option::Option<&crate::types::MapRunFailedEventDetails> {
+    ) -> ::std::option::Option<&crate::types::MapRunFailedEventDetails> {
         self.map_run_failed_event_details.as_ref()
     }
 }
@@ -374,118 +378,127 @@ impl HistoryEvent {
 
 /// A builder for [`HistoryEvent`](crate::types::HistoryEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HistoryEventBuilder {
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) r#type: std::option::Option<crate::types::HistoryEventType>,
-    pub(crate) id: std::option::Option<i64>,
-    pub(crate) previous_event_id: std::option::Option<i64>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<crate::types::HistoryEventType>,
+    pub(crate) id: ::std::option::Option<i64>,
+    pub(crate) previous_event_id: ::std::option::Option<i64>,
     pub(crate) activity_failed_event_details:
-        std::option::Option<crate::types::ActivityFailedEventDetails>,
+        ::std::option::Option<crate::types::ActivityFailedEventDetails>,
     pub(crate) activity_schedule_failed_event_details:
-        std::option::Option<crate::types::ActivityScheduleFailedEventDetails>,
+        ::std::option::Option<crate::types::ActivityScheduleFailedEventDetails>,
     pub(crate) activity_scheduled_event_details:
-        std::option::Option<crate::types::ActivityScheduledEventDetails>,
+        ::std::option::Option<crate::types::ActivityScheduledEventDetails>,
     pub(crate) activity_started_event_details:
-        std::option::Option<crate::types::ActivityStartedEventDetails>,
+        ::std::option::Option<crate::types::ActivityStartedEventDetails>,
     pub(crate) activity_succeeded_event_details:
-        std::option::Option<crate::types::ActivitySucceededEventDetails>,
+        ::std::option::Option<crate::types::ActivitySucceededEventDetails>,
     pub(crate) activity_timed_out_event_details:
-        std::option::Option<crate::types::ActivityTimedOutEventDetails>,
-    pub(crate) task_failed_event_details: std::option::Option<crate::types::TaskFailedEventDetails>,
+        ::std::option::Option<crate::types::ActivityTimedOutEventDetails>,
+    pub(crate) task_failed_event_details:
+        ::std::option::Option<crate::types::TaskFailedEventDetails>,
     pub(crate) task_scheduled_event_details:
-        std::option::Option<crate::types::TaskScheduledEventDetails>,
+        ::std::option::Option<crate::types::TaskScheduledEventDetails>,
     pub(crate) task_start_failed_event_details:
-        std::option::Option<crate::types::TaskStartFailedEventDetails>,
+        ::std::option::Option<crate::types::TaskStartFailedEventDetails>,
     pub(crate) task_started_event_details:
-        std::option::Option<crate::types::TaskStartedEventDetails>,
+        ::std::option::Option<crate::types::TaskStartedEventDetails>,
     pub(crate) task_submit_failed_event_details:
-        std::option::Option<crate::types::TaskSubmitFailedEventDetails>,
+        ::std::option::Option<crate::types::TaskSubmitFailedEventDetails>,
     pub(crate) task_submitted_event_details:
-        std::option::Option<crate::types::TaskSubmittedEventDetails>,
+        ::std::option::Option<crate::types::TaskSubmittedEventDetails>,
     pub(crate) task_succeeded_event_details:
-        std::option::Option<crate::types::TaskSucceededEventDetails>,
+        ::std::option::Option<crate::types::TaskSucceededEventDetails>,
     pub(crate) task_timed_out_event_details:
-        std::option::Option<crate::types::TaskTimedOutEventDetails>,
+        ::std::option::Option<crate::types::TaskTimedOutEventDetails>,
     pub(crate) execution_failed_event_details:
-        std::option::Option<crate::types::ExecutionFailedEventDetails>,
+        ::std::option::Option<crate::types::ExecutionFailedEventDetails>,
     pub(crate) execution_started_event_details:
-        std::option::Option<crate::types::ExecutionStartedEventDetails>,
+        ::std::option::Option<crate::types::ExecutionStartedEventDetails>,
     pub(crate) execution_succeeded_event_details:
-        std::option::Option<crate::types::ExecutionSucceededEventDetails>,
+        ::std::option::Option<crate::types::ExecutionSucceededEventDetails>,
     pub(crate) execution_aborted_event_details:
-        std::option::Option<crate::types::ExecutionAbortedEventDetails>,
+        ::std::option::Option<crate::types::ExecutionAbortedEventDetails>,
     pub(crate) execution_timed_out_event_details:
-        std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
+        ::std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
     pub(crate) map_state_started_event_details:
-        std::option::Option<crate::types::MapStateStartedEventDetails>,
+        ::std::option::Option<crate::types::MapStateStartedEventDetails>,
     pub(crate) map_iteration_started_event_details:
-        std::option::Option<crate::types::MapIterationEventDetails>,
+        ::std::option::Option<crate::types::MapIterationEventDetails>,
     pub(crate) map_iteration_succeeded_event_details:
-        std::option::Option<crate::types::MapIterationEventDetails>,
+        ::std::option::Option<crate::types::MapIterationEventDetails>,
     pub(crate) map_iteration_failed_event_details:
-        std::option::Option<crate::types::MapIterationEventDetails>,
+        ::std::option::Option<crate::types::MapIterationEventDetails>,
     pub(crate) map_iteration_aborted_event_details:
-        std::option::Option<crate::types::MapIterationEventDetails>,
+        ::std::option::Option<crate::types::MapIterationEventDetails>,
     pub(crate) lambda_function_failed_event_details:
-        std::option::Option<crate::types::LambdaFunctionFailedEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionFailedEventDetails>,
     pub(crate) lambda_function_schedule_failed_event_details:
-        std::option::Option<crate::types::LambdaFunctionScheduleFailedEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionScheduleFailedEventDetails>,
     pub(crate) lambda_function_scheduled_event_details:
-        std::option::Option<crate::types::LambdaFunctionScheduledEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionScheduledEventDetails>,
     pub(crate) lambda_function_start_failed_event_details:
-        std::option::Option<crate::types::LambdaFunctionStartFailedEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionStartFailedEventDetails>,
     pub(crate) lambda_function_succeeded_event_details:
-        std::option::Option<crate::types::LambdaFunctionSucceededEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionSucceededEventDetails>,
     pub(crate) lambda_function_timed_out_event_details:
-        std::option::Option<crate::types::LambdaFunctionTimedOutEventDetails>,
+        ::std::option::Option<crate::types::LambdaFunctionTimedOutEventDetails>,
     pub(crate) state_entered_event_details:
-        std::option::Option<crate::types::StateEnteredEventDetails>,
+        ::std::option::Option<crate::types::StateEnteredEventDetails>,
     pub(crate) state_exited_event_details:
-        std::option::Option<crate::types::StateExitedEventDetails>,
+        ::std::option::Option<crate::types::StateExitedEventDetails>,
     pub(crate) map_run_started_event_details:
-        std::option::Option<crate::types::MapRunStartedEventDetails>,
+        ::std::option::Option<crate::types::MapRunStartedEventDetails>,
     pub(crate) map_run_failed_event_details:
-        std::option::Option<crate::types::MapRunFailedEventDetails>,
+        ::std::option::Option<crate::types::MapRunFailedEventDetails>,
 }
 impl HistoryEventBuilder {
     /// <p>The date and time the event occurred.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the event occurred.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The type of the event.</p>
     pub fn r#type(mut self, input: crate::types::HistoryEventType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the event.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::HistoryEventType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::HistoryEventType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
     pub fn id(mut self, input: i64) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
-    pub fn set_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.id = input;
         self
     }
     /// <p>The id of the previous event.</p>
     pub fn previous_event_id(mut self, input: i64) -> Self {
-        self.previous_event_id = Some(input);
+        self.previous_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The id of the previous event.</p>
-    pub fn set_previous_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_previous_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.previous_event_id = input;
         self
     }
@@ -494,13 +507,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityFailedEventDetails,
     ) -> Self {
-        self.activity_failed_event_details = Some(input);
+        self.activity_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an activity that failed during an execution.</p>
     pub fn set_activity_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::ActivityFailedEventDetails>,
+        input: ::std::option::Option<crate::types::ActivityFailedEventDetails>,
     ) -> Self {
         self.activity_failed_event_details = input;
         self
@@ -510,13 +523,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityScheduleFailedEventDetails,
     ) -> Self {
-        self.activity_schedule_failed_event_details = Some(input);
+        self.activity_schedule_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an activity schedule event that failed during an execution.</p>
     pub fn set_activity_schedule_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::ActivityScheduleFailedEventDetails>,
+        input: ::std::option::Option<crate::types::ActivityScheduleFailedEventDetails>,
     ) -> Self {
         self.activity_schedule_failed_event_details = input;
         self
@@ -526,13 +539,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityScheduledEventDetails,
     ) -> Self {
-        self.activity_scheduled_event_details = Some(input);
+        self.activity_scheduled_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an activity scheduled during an execution.</p>
     pub fn set_activity_scheduled_event_details(
         mut self,
-        input: std::option::Option<crate::types::ActivityScheduledEventDetails>,
+        input: ::std::option::Option<crate::types::ActivityScheduledEventDetails>,
     ) -> Self {
         self.activity_scheduled_event_details = input;
         self
@@ -542,13 +555,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityStartedEventDetails,
     ) -> Self {
-        self.activity_started_event_details = Some(input);
+        self.activity_started_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the start of an activity during an execution.</p>
     pub fn set_activity_started_event_details(
         mut self,
-        input: std::option::Option<crate::types::ActivityStartedEventDetails>,
+        input: ::std::option::Option<crate::types::ActivityStartedEventDetails>,
     ) -> Self {
         self.activity_started_event_details = input;
         self
@@ -558,13 +571,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivitySucceededEventDetails,
     ) -> Self {
-        self.activity_succeeded_event_details = Some(input);
+        self.activity_succeeded_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an activity that successfully terminated during an execution.</p>
     pub fn set_activity_succeeded_event_details(
         mut self,
-        input: std::option::Option<crate::types::ActivitySucceededEventDetails>,
+        input: ::std::option::Option<crate::types::ActivitySucceededEventDetails>,
     ) -> Self {
         self.activity_succeeded_event_details = input;
         self
@@ -574,13 +587,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityTimedOutEventDetails,
     ) -> Self {
-        self.activity_timed_out_event_details = Some(input);
+        self.activity_timed_out_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an activity timeout that occurred during an execution.</p>
     pub fn set_activity_timed_out_event_details(
         mut self,
-        input: std::option::Option<crate::types::ActivityTimedOutEventDetails>,
+        input: ::std::option::Option<crate::types::ActivityTimedOutEventDetails>,
     ) -> Self {
         self.activity_timed_out_event_details = input;
         self
@@ -590,13 +603,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TaskFailedEventDetails,
     ) -> Self {
-        self.task_failed_event_details = Some(input);
+        self.task_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the failure of a task.</p>
     pub fn set_task_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::TaskFailedEventDetails>,
+        input: ::std::option::Option<crate::types::TaskFailedEventDetails>,
     ) -> Self {
         self.task_failed_event_details = input;
         self
@@ -606,13 +619,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TaskScheduledEventDetails,
     ) -> Self {
-        self.task_scheduled_event_details = Some(input);
+        self.task_scheduled_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a task that was scheduled.</p>
     pub fn set_task_scheduled_event_details(
         mut self,
-        input: std::option::Option<crate::types::TaskScheduledEventDetails>,
+        input: ::std::option::Option<crate::types::TaskScheduledEventDetails>,
     ) -> Self {
         self.task_scheduled_event_details = input;
         self
@@ -622,13 +635,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TaskStartFailedEventDetails,
     ) -> Self {
-        self.task_start_failed_event_details = Some(input);
+        self.task_start_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a task that failed to start.</p>
     pub fn set_task_start_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::TaskStartFailedEventDetails>,
+        input: ::std::option::Option<crate::types::TaskStartFailedEventDetails>,
     ) -> Self {
         self.task_start_failed_event_details = input;
         self
@@ -638,13 +651,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TaskStartedEventDetails,
     ) -> Self {
-        self.task_started_event_details = Some(input);
+        self.task_started_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a task that was started.</p>
     pub fn set_task_started_event_details(
         mut self,
-        input: std::option::Option<crate::types::TaskStartedEventDetails>,
+        input: ::std::option::Option<crate::types::TaskStartedEventDetails>,
     ) -> Self {
         self.task_started_event_details = input;
         self
@@ -654,13 +667,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TaskSubmitFailedEventDetails,
     ) -> Self {
-        self.task_submit_failed_event_details = Some(input);
+        self.task_submit_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a task that where the submit failed.</p>
     pub fn set_task_submit_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::TaskSubmitFailedEventDetails>,
+        input: ::std::option::Option<crate::types::TaskSubmitFailedEventDetails>,
     ) -> Self {
         self.task_submit_failed_event_details = input;
         self
@@ -670,13 +683,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TaskSubmittedEventDetails,
     ) -> Self {
-        self.task_submitted_event_details = Some(input);
+        self.task_submitted_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a submitted task.</p>
     pub fn set_task_submitted_event_details(
         mut self,
-        input: std::option::Option<crate::types::TaskSubmittedEventDetails>,
+        input: ::std::option::Option<crate::types::TaskSubmittedEventDetails>,
     ) -> Self {
         self.task_submitted_event_details = input;
         self
@@ -686,13 +699,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TaskSucceededEventDetails,
     ) -> Self {
-        self.task_succeeded_event_details = Some(input);
+        self.task_succeeded_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a task that succeeded.</p>
     pub fn set_task_succeeded_event_details(
         mut self,
-        input: std::option::Option<crate::types::TaskSucceededEventDetails>,
+        input: ::std::option::Option<crate::types::TaskSucceededEventDetails>,
     ) -> Self {
         self.task_succeeded_event_details = input;
         self
@@ -702,13 +715,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TaskTimedOutEventDetails,
     ) -> Self {
-        self.task_timed_out_event_details = Some(input);
+        self.task_timed_out_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a task that timed out.</p>
     pub fn set_task_timed_out_event_details(
         mut self,
-        input: std::option::Option<crate::types::TaskTimedOutEventDetails>,
+        input: ::std::option::Option<crate::types::TaskTimedOutEventDetails>,
     ) -> Self {
         self.task_timed_out_event_details = input;
         self
@@ -718,13 +731,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ExecutionFailedEventDetails,
     ) -> Self {
-        self.execution_failed_event_details = Some(input);
+        self.execution_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an execution failure event.</p>
     pub fn set_execution_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::ExecutionFailedEventDetails>,
+        input: ::std::option::Option<crate::types::ExecutionFailedEventDetails>,
     ) -> Self {
         self.execution_failed_event_details = input;
         self
@@ -734,13 +747,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ExecutionStartedEventDetails,
     ) -> Self {
-        self.execution_started_event_details = Some(input);
+        self.execution_started_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the start of the execution.</p>
     pub fn set_execution_started_event_details(
         mut self,
-        input: std::option::Option<crate::types::ExecutionStartedEventDetails>,
+        input: ::std::option::Option<crate::types::ExecutionStartedEventDetails>,
     ) -> Self {
         self.execution_started_event_details = input;
         self
@@ -750,13 +763,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ExecutionSucceededEventDetails,
     ) -> Self {
-        self.execution_succeeded_event_details = Some(input);
+        self.execution_succeeded_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the successful termination of the execution.</p>
     pub fn set_execution_succeeded_event_details(
         mut self,
-        input: std::option::Option<crate::types::ExecutionSucceededEventDetails>,
+        input: ::std::option::Option<crate::types::ExecutionSucceededEventDetails>,
     ) -> Self {
         self.execution_succeeded_event_details = input;
         self
@@ -766,13 +779,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ExecutionAbortedEventDetails,
     ) -> Self {
-        self.execution_aborted_event_details = Some(input);
+        self.execution_aborted_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an abort of an execution.</p>
     pub fn set_execution_aborted_event_details(
         mut self,
-        input: std::option::Option<crate::types::ExecutionAbortedEventDetails>,
+        input: ::std::option::Option<crate::types::ExecutionAbortedEventDetails>,
     ) -> Self {
         self.execution_aborted_event_details = input;
         self
@@ -782,13 +795,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ExecutionTimedOutEventDetails,
     ) -> Self {
-        self.execution_timed_out_event_details = Some(input);
+        self.execution_timed_out_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the execution timeout that occurred during the execution.</p>
     pub fn set_execution_timed_out_event_details(
         mut self,
-        input: std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
+        input: ::std::option::Option<crate::types::ExecutionTimedOutEventDetails>,
     ) -> Self {
         self.execution_timed_out_event_details = input;
         self
@@ -798,13 +811,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::MapStateStartedEventDetails,
     ) -> Self {
-        self.map_state_started_event_details = Some(input);
+        self.map_state_started_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about Map state that was started.</p>
     pub fn set_map_state_started_event_details(
         mut self,
-        input: std::option::Option<crate::types::MapStateStartedEventDetails>,
+        input: ::std::option::Option<crate::types::MapStateStartedEventDetails>,
     ) -> Self {
         self.map_state_started_event_details = input;
         self
@@ -814,13 +827,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::MapIterationEventDetails,
     ) -> Self {
-        self.map_iteration_started_event_details = Some(input);
+        self.map_iteration_started_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an iteration of a Map state that was started.</p>
     pub fn set_map_iteration_started_event_details(
         mut self,
-        input: std::option::Option<crate::types::MapIterationEventDetails>,
+        input: ::std::option::Option<crate::types::MapIterationEventDetails>,
     ) -> Self {
         self.map_iteration_started_event_details = input;
         self
@@ -830,13 +843,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::MapIterationEventDetails,
     ) -> Self {
-        self.map_iteration_succeeded_event_details = Some(input);
+        self.map_iteration_succeeded_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an iteration of a Map state that succeeded.</p>
     pub fn set_map_iteration_succeeded_event_details(
         mut self,
-        input: std::option::Option<crate::types::MapIterationEventDetails>,
+        input: ::std::option::Option<crate::types::MapIterationEventDetails>,
     ) -> Self {
         self.map_iteration_succeeded_event_details = input;
         self
@@ -846,13 +859,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::MapIterationEventDetails,
     ) -> Self {
-        self.map_iteration_failed_event_details = Some(input);
+        self.map_iteration_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an iteration of a Map state that failed.</p>
     pub fn set_map_iteration_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::MapIterationEventDetails>,
+        input: ::std::option::Option<crate::types::MapIterationEventDetails>,
     ) -> Self {
         self.map_iteration_failed_event_details = input;
         self
@@ -862,13 +875,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::MapIterationEventDetails,
     ) -> Self {
-        self.map_iteration_aborted_event_details = Some(input);
+        self.map_iteration_aborted_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an iteration of a Map state that was aborted.</p>
     pub fn set_map_iteration_aborted_event_details(
         mut self,
-        input: std::option::Option<crate::types::MapIterationEventDetails>,
+        input: ::std::option::Option<crate::types::MapIterationEventDetails>,
     ) -> Self {
         self.map_iteration_aborted_event_details = input;
         self
@@ -878,13 +891,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionFailedEventDetails,
     ) -> Self {
-        self.lambda_function_failed_event_details = Some(input);
+        self.lambda_function_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a Lambda function that failed during an execution.</p>
     pub fn set_lambda_function_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionFailedEventDetails>,
+        input: ::std::option::Option<crate::types::LambdaFunctionFailedEventDetails>,
     ) -> Self {
         self.lambda_function_failed_event_details = input;
         self
@@ -894,13 +907,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionScheduleFailedEventDetails,
     ) -> Self {
-        self.lambda_function_schedule_failed_event_details = Some(input);
+        self.lambda_function_schedule_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a failed Lambda function schedule event that occurred during an execution.</p>
     pub fn set_lambda_function_schedule_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionScheduleFailedEventDetails>,
+        input: ::std::option::Option<crate::types::LambdaFunctionScheduleFailedEventDetails>,
     ) -> Self {
         self.lambda_function_schedule_failed_event_details = input;
         self
@@ -910,13 +923,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionScheduledEventDetails,
     ) -> Self {
-        self.lambda_function_scheduled_event_details = Some(input);
+        self.lambda_function_scheduled_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a Lambda function scheduled during an execution.</p>
     pub fn set_lambda_function_scheduled_event_details(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionScheduledEventDetails>,
+        input: ::std::option::Option<crate::types::LambdaFunctionScheduledEventDetails>,
     ) -> Self {
         self.lambda_function_scheduled_event_details = input;
         self
@@ -926,13 +939,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionStartFailedEventDetails,
     ) -> Self {
-        self.lambda_function_start_failed_event_details = Some(input);
+        self.lambda_function_start_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a lambda function that failed to start during an execution.</p>
     pub fn set_lambda_function_start_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionStartFailedEventDetails>,
+        input: ::std::option::Option<crate::types::LambdaFunctionStartFailedEventDetails>,
     ) -> Self {
         self.lambda_function_start_failed_event_details = input;
         self
@@ -942,13 +955,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionSucceededEventDetails,
     ) -> Self {
-        self.lambda_function_succeeded_event_details = Some(input);
+        self.lambda_function_succeeded_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a Lambda function that terminated successfully during an execution.</p>
     pub fn set_lambda_function_succeeded_event_details(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionSucceededEventDetails>,
+        input: ::std::option::Option<crate::types::LambdaFunctionSucceededEventDetails>,
     ) -> Self {
         self.lambda_function_succeeded_event_details = input;
         self
@@ -958,13 +971,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionTimedOutEventDetails,
     ) -> Self {
-        self.lambda_function_timed_out_event_details = Some(input);
+        self.lambda_function_timed_out_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a Lambda function timeout that occurred during an execution.</p>
     pub fn set_lambda_function_timed_out_event_details(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionTimedOutEventDetails>,
+        input: ::std::option::Option<crate::types::LambdaFunctionTimedOutEventDetails>,
     ) -> Self {
         self.lambda_function_timed_out_event_details = input;
         self
@@ -974,13 +987,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::StateEnteredEventDetails,
     ) -> Self {
-        self.state_entered_event_details = Some(input);
+        self.state_entered_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about a state entered during an execution.</p>
     pub fn set_state_entered_event_details(
         mut self,
-        input: std::option::Option<crate::types::StateEnteredEventDetails>,
+        input: ::std::option::Option<crate::types::StateEnteredEventDetails>,
     ) -> Self {
         self.state_entered_event_details = input;
         self
@@ -990,13 +1003,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::StateExitedEventDetails,
     ) -> Self {
-        self.state_exited_event_details = Some(input);
+        self.state_exited_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about an exit from a state during an execution.</p>
     pub fn set_state_exited_event_details(
         mut self,
-        input: std::option::Option<crate::types::StateExitedEventDetails>,
+        input: ::std::option::Option<crate::types::StateExitedEventDetails>,
     ) -> Self {
         self.state_exited_event_details = input;
         self
@@ -1006,13 +1019,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::MapRunStartedEventDetails,
     ) -> Self {
-        self.map_run_started_event_details = Some(input);
+        self.map_run_started_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details, such as <code>mapRunArn</code>, and the start date and time of a Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the Map Run that was started.</p>
     pub fn set_map_run_started_event_details(
         mut self,
-        input: std::option::Option<crate::types::MapRunStartedEventDetails>,
+        input: ::std::option::Option<crate::types::MapRunStartedEventDetails>,
     ) -> Self {
         self.map_run_started_event_details = input;
         self
@@ -1022,13 +1035,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::MapRunFailedEventDetails,
     ) -> Self {
-        self.map_run_failed_event_details = Some(input);
+        self.map_run_failed_event_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains error and cause details about a Map Run that failed.</p>
     pub fn set_map_run_failed_event_details(
         mut self,
-        input: std::option::Option<crate::types::MapRunFailedEventDetails>,
+        input: ::std::option::Option<crate::types::MapRunFailedEventDetails>,
     ) -> Self {
         self.map_run_failed_event_details = input;
         self

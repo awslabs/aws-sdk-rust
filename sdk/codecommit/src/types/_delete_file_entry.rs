@@ -2,15 +2,15 @@
 
 /// <p>A file that is deleted as part of a commit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     #[doc(hidden)]
-    pub file_path: std::option::Option<std::string::String>,
+    pub file_path: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl DeleteFileEntry {
 
 /// A builder for [`DeleteFileEntry`](crate::types::DeleteFileEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFileEntryBuilder {
-    pub(crate) file_path: std::option::Option<std::string::String>,
+    pub(crate) file_path: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFileEntryBuilder {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_path = Some(input.into());
+    pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
     }

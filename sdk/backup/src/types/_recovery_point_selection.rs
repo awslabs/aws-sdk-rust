@@ -2,31 +2,31 @@
 
 /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryPointSelection {
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
     #[doc(hidden)]
-    pub vault_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub vault_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
     #[doc(hidden)]
-    pub resource_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
-    pub date_range: std::option::Option<crate::types::DateRange>,
+    pub date_range: ::std::option::Option<crate::types::DateRange>,
 }
 impl RecoveryPointSelection {
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    pub fn vault_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vault_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vault_names.as_deref()
     }
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub fn resource_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_identifiers.as_deref()
     }
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn date_range(&self) -> std::option::Option<&crate::types::DateRange> {
+    pub fn date_range(&self) -> ::std::option::Option<&crate::types::DateRange> {
         self.date_range.as_ref()
     }
 }
@@ -39,11 +39,13 @@ impl RecoveryPointSelection {
 
 /// A builder for [`RecoveryPointSelection`](crate::types::RecoveryPointSelection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecoveryPointSelectionBuilder {
-    pub(crate) vault_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) resource_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) date_range: std::option::Option<crate::types::DateRange>,
+    pub(crate) vault_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) date_range: ::std::option::Option<crate::types::DateRange>,
 }
 impl RecoveryPointSelectionBuilder {
     /// Appends an item to `vault_names`.
@@ -51,16 +53,16 @@ impl RecoveryPointSelectionBuilder {
     /// To override the contents of this collection use [`set_vault_names`](Self::set_vault_names).
     ///
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
-    pub fn vault_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vault_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vault_names.unwrap_or_default();
         v.push(input.into());
-        self.vault_names = Some(v);
+        self.vault_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>These are the names of the vaults in which the selected recovery points are contained.</p>
     pub fn set_vault_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.vault_names = input;
         self
@@ -70,16 +72,19 @@ impl RecoveryPointSelectionBuilder {
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
-    pub fn resource_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_identifiers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
         v.push(input.into());
-        self.resource_identifiers = Some(v);
+        self.resource_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>These are the resources included in the resource selection (including type of resources and vaults).</p>
     pub fn set_resource_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_identifiers = input;
         self
@@ -87,12 +92,12 @@ impl RecoveryPointSelectionBuilder {
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn date_range(mut self, input: crate::types::DateRange) -> Self {
-        self.date_range = Some(input);
+        self.date_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>This is a resource filter containing FromDate: DateTime and ToDate: DateTime. Both values are required. Future DateTime values are not permitted.</p>
     /// <p>The date and time are in Unix format and Coordinated Universal Time (UTC), and it is accurate to milliseconds ((milliseconds are optional). For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_date_range(mut self, input: std::option::Option<crate::types::DateRange>) -> Self {
+    pub fn set_date_range(mut self, input: ::std::option::Option<crate::types::DateRange>) -> Self {
         self.date_range = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Provides details about execution input or output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchEventsExecutionDataDetails {
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls. </p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl CloudWatchEventsExecutionDataDetails {
 
 /// A builder for [`CloudWatchEventsExecutionDataDetails`](crate::types::CloudWatchEventsExecutionDataDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchEventsExecutionDataDetailsBuilder {
-    pub(crate) included: std::option::Option<bool>,
+    pub(crate) included: ::std::option::Option<bool>,
 }
 impl CloudWatchEventsExecutionDataDetailsBuilder {
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls. </p>
     pub fn included(mut self, input: bool) -> Self {
-        self.included = Some(input);
+        self.included = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether input or output was included in the response. Always <code>true</code> for API calls. </p>
-    pub fn set_included(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_included(mut self, input: ::std::option::Option<bool>) -> Self {
         self.included = input;
         self
     }

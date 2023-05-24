@@ -2,36 +2,36 @@
 
 /// <p>Describes an Amazon Cognito user pool configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPoolConfig {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     #[doc(hidden)]
-    pub aws_region: std::option::Option<std::string::String>,
+    pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
     #[doc(hidden)]
-    pub default_action: std::option::Option<crate::types::DefaultAction>,
+    pub default_action: ::std::option::Option<crate::types::DefaultAction>,
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     #[doc(hidden)]
-    pub app_id_client_regex: std::option::Option<std::string::String>,
+    pub app_id_client_regex: ::std::option::Option<::std::string::String>,
 }
 impl UserPoolConfig {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<&str> {
         self.aws_region.as_deref()
     }
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
-    pub fn default_action(&self) -> std::option::Option<&crate::types::DefaultAction> {
+    pub fn default_action(&self) -> ::std::option::Option<&crate::types::DefaultAction> {
         self.default_action.as_ref()
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-    pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
+    pub fn app_id_client_regex(&self) -> ::std::option::Option<&str> {
         self.app_id_client_regex.as_deref()
     }
 }
@@ -44,56 +44,61 @@ impl UserPoolConfig {
 
 /// A builder for [`UserPoolConfig`](crate::types::UserPoolConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserPoolConfigBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) aws_region: std::option::Option<std::string::String>,
-    pub(crate) default_action: std::option::Option<crate::types::DefaultAction>,
-    pub(crate) app_id_client_regex: std::option::Option<std::string::String>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_region: ::std::option::Option<::std::string::String>,
+    pub(crate) default_action: ::std::option::Option<crate::types::DefaultAction>,
+    pub(crate) app_id_client_regex: ::std::option::Option<::std::string::String>,
 }
 impl UserPoolConfigBuilder {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_region = Some(input.into());
+    pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
     }
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
     pub fn default_action(mut self, input: crate::types::DefaultAction) -> Self {
-        self.default_action = Some(input);
+        self.default_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.</p>
     pub fn set_default_action(
         mut self,
-        input: std::option::Option<crate::types::DefaultAction>,
+        input: ::std::option::Option<crate::types::DefaultAction>,
     ) -> Self {
         self.default_action = input;
         self
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-    pub fn app_id_client_regex(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_id_client_regex = Some(input.into());
+    pub fn app_id_client_regex(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_id_client_regex = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn set_app_id_client_regex(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.app_id_client_regex = input;
         self

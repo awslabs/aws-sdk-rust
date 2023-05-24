@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDeviceUsageData`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_arn(impl Into<String>)`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::set_device_arn): <p>The ARN of the device.</p>
+    ///   - [`device_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::set_device_arn): <p>The ARN of the device.</p>
     ///   - [`device_usage_type(DeviceUsageType)`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::device_usage_type) / [`set_device_usage_type(Option<DeviceUsageType>)`](crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataFluentBuilder::set_device_usage_type): <p>The type of usage data to delete.</p>
     /// - On success, responds with [`DeleteDeviceUsageDataOutput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceUsageDataError>`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError)

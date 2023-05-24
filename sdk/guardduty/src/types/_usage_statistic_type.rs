@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UsageStatisticType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum UsageStatisticType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UsageStatisticType {
+impl ::std::convert::From<&str> for UsageStatisticType {
     fn from(s: &str) -> Self {
         match s {
             "SUM_BY_ACCOUNT" => UsageStatisticType::SumByAccount,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for UsageStatisticType {
         }
     }
 }
-impl std::str::FromStr for UsageStatisticType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UsageStatisticType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageStatisticType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UsageStatisticType::from(s))
     }
 }
 impl UsageStatisticType {
@@ -107,7 +107,7 @@ impl UsageStatisticType {
         ]
     }
 }
-impl AsRef<str> for UsageStatisticType {
+impl ::std::convert::AsRef<str> for UsageStatisticType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

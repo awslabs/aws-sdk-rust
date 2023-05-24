@@ -2,14 +2,14 @@
 
 /// <p>Gets the suite definition configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuiteDefinitionConfiguration {
     /// <p>Gets the suite definition name. This is a required parameter.</p>
     #[doc(hidden)]
-    pub suite_definition_name: std::option::Option<std::string::String>,
+    pub suite_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Gets the devices configured.</p>
     #[doc(hidden)]
-    pub devices: std::option::Option<std::vec::Vec<crate::types::DeviceUnderTest>>,
+    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
     /// <p>Gets the tests intended for qualification in a suite.</p>
     #[doc(hidden)]
     pub intended_for_qualification: bool,
@@ -18,21 +18,21 @@ pub struct SuiteDefinitionConfiguration {
     pub is_long_duration_test: bool,
     /// <p>Gets the test suite root group. This is a required parameter.</p>
     #[doc(hidden)]
-    pub root_group: std::option::Option<std::string::String>,
+    pub root_group: ::std::option::Option<::std::string::String>,
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
     #[doc(hidden)]
-    pub device_permission_role_arn: std::option::Option<std::string::String>,
+    pub device_permission_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::Protocol>,
+    pub protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl SuiteDefinitionConfiguration {
     /// <p>Gets the suite definition name. This is a required parameter.</p>
-    pub fn suite_definition_name(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_name(&self) -> ::std::option::Option<&str> {
         self.suite_definition_name.as_deref()
     }
     /// <p>Gets the devices configured.</p>
-    pub fn devices(&self) -> std::option::Option<&[crate::types::DeviceUnderTest]> {
+    pub fn devices(&self) -> ::std::option::Option<&[crate::types::DeviceUnderTest]> {
         self.devices.as_deref()
     }
     /// <p>Gets the tests intended for qualification in a suite.</p>
@@ -44,15 +44,15 @@ impl SuiteDefinitionConfiguration {
         self.is_long_duration_test
     }
     /// <p>Gets the test suite root group. This is a required parameter.</p>
-    pub fn root_group(&self) -> std::option::Option<&str> {
+    pub fn root_group(&self) -> ::std::option::Option<&str> {
         self.root_group.as_deref()
     }
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
-    pub fn device_permission_role_arn(&self) -> std::option::Option<&str> {
+    pub fn device_permission_role_arn(&self) -> ::std::option::Option<&str> {
         self.device_permission_role_arn.as_deref()
     }
     /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
 }
@@ -65,26 +65,31 @@ impl SuiteDefinitionConfiguration {
 
 /// A builder for [`SuiteDefinitionConfiguration`](crate::types::SuiteDefinitionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuiteDefinitionConfigurationBuilder {
-    pub(crate) suite_definition_name: std::option::Option<std::string::String>,
-    pub(crate) devices: std::option::Option<std::vec::Vec<crate::types::DeviceUnderTest>>,
-    pub(crate) intended_for_qualification: std::option::Option<bool>,
-    pub(crate) is_long_duration_test: std::option::Option<bool>,
-    pub(crate) root_group: std::option::Option<std::string::String>,
-    pub(crate) device_permission_role_arn: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<crate::types::Protocol>,
+    pub(crate) suite_definition_name: ::std::option::Option<::std::string::String>,
+    pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
+    pub(crate) intended_for_qualification: ::std::option::Option<bool>,
+    pub(crate) is_long_duration_test: ::std::option::Option<bool>,
+    pub(crate) root_group: ::std::option::Option<::std::string::String>,
+    pub(crate) device_permission_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl SuiteDefinitionConfigurationBuilder {
     /// <p>Gets the suite definition name. This is a required parameter.</p>
-    pub fn suite_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.suite_definition_name = Some(input.into());
+    pub fn suite_definition_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.suite_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Gets the suite definition name. This is a required parameter.</p>
     pub fn set_suite_definition_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.suite_definition_name = input;
         self
@@ -97,67 +102,70 @@ impl SuiteDefinitionConfigurationBuilder {
     pub fn devices(mut self, input: crate::types::DeviceUnderTest) -> Self {
         let mut v = self.devices.unwrap_or_default();
         v.push(input);
-        self.devices = Some(v);
+        self.devices = ::std::option::Option::Some(v);
         self
     }
     /// <p>Gets the devices configured.</p>
     pub fn set_devices(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeviceUnderTest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceUnderTest>>,
     ) -> Self {
         self.devices = input;
         self
     }
     /// <p>Gets the tests intended for qualification in a suite.</p>
     pub fn intended_for_qualification(mut self, input: bool) -> Self {
-        self.intended_for_qualification = Some(input);
+        self.intended_for_qualification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Gets the tests intended for qualification in a suite.</p>
-    pub fn set_intended_for_qualification(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_intended_for_qualification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.intended_for_qualification = input;
         self
     }
     /// <p>Verifies if the test suite is a long duration test.</p>
     pub fn is_long_duration_test(mut self, input: bool) -> Self {
-        self.is_long_duration_test = Some(input);
+        self.is_long_duration_test = ::std::option::Option::Some(input);
         self
     }
     /// <p>Verifies if the test suite is a long duration test.</p>
-    pub fn set_is_long_duration_test(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_long_duration_test(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_long_duration_test = input;
         self
     }
     /// <p>Gets the test suite root group. This is a required parameter.</p>
-    pub fn root_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.root_group = Some(input.into());
+    pub fn root_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.root_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Gets the test suite root group. This is a required parameter.</p>
-    pub fn set_root_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_root_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.root_group = input;
         self
     }
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
-    pub fn device_permission_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_permission_role_arn = Some(input.into());
+    pub fn device_permission_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_permission_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Gets the device permission ARN. This is a required parameter.</p>
     pub fn set_device_permission_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.device_permission_role_arn = input;
         self
     }
     /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the MQTT protocol that is configured in the suite definition.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::Protocol>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.protocol = input;
         self
     }

@@ -2,24 +2,24 @@
 
 /// <p>Contains information about an instance that is part of a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the cluster.</p>
     #[doc(hidden)]
-    pub db_instance_identifier: std::option::Option<std::string::String>,
+    pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
     #[doc(hidden)]
     pub is_cluster_writer: bool,
     /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
     #[doc(hidden)]
-    pub db_cluster_parameter_group_status: std::option::Option<std::string::String>,
+    pub db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
     #[doc(hidden)]
-    pub promotion_tier: std::option::Option<i32>,
+    pub promotion_tier: ::std::option::Option<i32>,
 }
 impl DbClusterMember {
     /// <p>Specifies the instance identifier for this member of the cluster.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
@@ -27,11 +27,11 @@ impl DbClusterMember {
         self.is_cluster_writer
     }
     /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
-    pub fn db_cluster_parameter_group_status(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_status(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_status.as_deref()
     }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
-    pub fn promotion_tier(&self) -> std::option::Option<i32> {
+    pub fn promotion_tier(&self) -> ::std::option::Option<i32> {
         self.promotion_tier
     }
 }
@@ -44,60 +44,65 @@ impl DbClusterMember {
 
 /// A builder for [`DbClusterMember`](crate::types::DbClusterMember).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DbClusterMemberBuilder {
-    pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
-    pub(crate) is_cluster_writer: std::option::Option<bool>,
-    pub(crate) db_cluster_parameter_group_status: std::option::Option<std::string::String>,
-    pub(crate) promotion_tier: std::option::Option<i32>,
+    pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) is_cluster_writer: ::std::option::Option<bool>,
+    pub(crate) db_cluster_parameter_group_status: ::std::option::Option<::std::string::String>,
+    pub(crate) promotion_tier: ::std::option::Option<i32>,
 }
 impl DbClusterMemberBuilder {
     /// <p>Specifies the instance identifier for this member of the cluster.</p>
-    pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_instance_identifier = Some(input.into());
+    pub fn db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the instance identifier for this member of the cluster.</p>
     pub fn set_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_instance_identifier = input;
         self
     }
     /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
     pub fn is_cluster_writer(mut self, input: bool) -> Self {
-        self.is_cluster_writer = Some(input);
+        self.is_cluster_writer = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that is <code>true</code> if the cluster member is the primary instance for the cluster and <code>false</code> otherwise.</p>
-    pub fn set_is_cluster_writer(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_cluster_writer(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_cluster_writer = input;
         self
     }
     /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
     pub fn db_cluster_parameter_group_status(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.db_cluster_parameter_group_status = Some(input.into());
+        self.db_cluster_parameter_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the status of the cluster parameter group for this member of the DB cluster.</p>
     pub fn set_db_cluster_parameter_group_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_parameter_group_status = input;
         self
     }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
     pub fn promotion_tier(mut self, input: i32) -> Self {
-        self.promotion_tier = Some(input);
+        self.promotion_tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance. </p>
-    pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.promotion_tier = input;
         self
     }

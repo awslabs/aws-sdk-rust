@@ -2,14 +2,14 @@
 
 /// <p>The options for the legend setup of a visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LegendOptions {
     /// <p>Determines whether or not the legend is visible.</p>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::Visibility>,
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The custom title for the legend.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<crate::types::LabelOptions>,
+    pub title: ::std::option::Option<crate::types::LabelOptions>,
     /// <p>The positions for the legend. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>AUTO</code> </p> </li>
@@ -18,21 +18,21 @@ pub struct LegendOptions {
     /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub position: std::option::Option<crate::types::LegendPosition>,
+    pub position: ::std::option::Option<crate::types::LegendPosition>,
     /// <p>The width of the legend. If this value is omitted, a default width is used when rendering.</p>
     #[doc(hidden)]
-    pub width: std::option::Option<std::string::String>,
+    pub width: ::std::option::Option<::std::string::String>,
     /// <p>The height of the legend. If this value is omitted, a default height is used when rendering.</p>
     #[doc(hidden)]
-    pub height: std::option::Option<std::string::String>,
+    pub height: ::std::option::Option<::std::string::String>,
 }
 impl LegendOptions {
     /// <p>Determines whether or not the legend is visible.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The custom title for the legend.</p>
-    pub fn title(&self) -> std::option::Option<&crate::types::LabelOptions> {
+    pub fn title(&self) -> ::std::option::Option<&crate::types::LabelOptions> {
         self.title.as_ref()
     }
     /// <p>The positions for the legend. Choose one of the following options:</p>
@@ -42,15 +42,15 @@ impl LegendOptions {
     /// <li> <p> <code>BOTTOM</code> </p> </li>
     /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
-    pub fn position(&self) -> std::option::Option<&crate::types::LegendPosition> {
+    pub fn position(&self) -> ::std::option::Option<&crate::types::LegendPosition> {
         self.position.as_ref()
     }
     /// <p>The width of the legend. If this value is omitted, a default width is used when rendering.</p>
-    pub fn width(&self) -> std::option::Option<&str> {
+    pub fn width(&self) -> ::std::option::Option<&str> {
         self.width.as_deref()
     }
     /// <p>The height of the legend. If this value is omitted, a default height is used when rendering.</p>
-    pub fn height(&self) -> std::option::Option<&str> {
+    pub fn height(&self) -> ::std::option::Option<&str> {
         self.height.as_deref()
     }
 }
@@ -63,32 +63,37 @@ impl LegendOptions {
 
 /// A builder for [`LegendOptions`](crate::types::LegendOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LegendOptionsBuilder {
-    pub(crate) visibility: std::option::Option<crate::types::Visibility>,
-    pub(crate) title: std::option::Option<crate::types::LabelOptions>,
-    pub(crate) position: std::option::Option<crate::types::LegendPosition>,
-    pub(crate) width: std::option::Option<std::string::String>,
-    pub(crate) height: std::option::Option<std::string::String>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) title: ::std::option::Option<crate::types::LabelOptions>,
+    pub(crate) position: ::std::option::Option<crate::types::LegendPosition>,
+    pub(crate) width: ::std::option::Option<::std::string::String>,
+    pub(crate) height: ::std::option::Option<::std::string::String>,
 }
 impl LegendOptionsBuilder {
     /// <p>Determines whether or not the legend is visible.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether or not the legend is visible.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.visibility = input;
         self
     }
     /// <p>The custom title for the legend.</p>
     pub fn title(mut self, input: crate::types::LabelOptions) -> Self {
-        self.title = Some(input);
+        self.title = ::std::option::Option::Some(input);
         self
     }
     /// <p>The custom title for the legend.</p>
-    pub fn set_title(mut self, input: std::option::Option<crate::types::LabelOptions>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<crate::types::LabelOptions>) -> Self {
         self.title = input;
         self
     }
@@ -100,7 +105,7 @@ impl LegendOptionsBuilder {
     /// <li> <p> <code>LEFT</code> </p> </li>
     /// </ul>
     pub fn position(mut self, input: crate::types::LegendPosition) -> Self {
-        self.position = Some(input);
+        self.position = ::std::option::Option::Some(input);
         self
     }
     /// <p>The positions for the legend. Choose one of the following options:</p>
@@ -112,28 +117,28 @@ impl LegendOptionsBuilder {
     /// </ul>
     pub fn set_position(
         mut self,
-        input: std::option::Option<crate::types::LegendPosition>,
+        input: ::std::option::Option<crate::types::LegendPosition>,
     ) -> Self {
         self.position = input;
         self
     }
     /// <p>The width of the legend. If this value is omitted, a default width is used when rendering.</p>
-    pub fn width(mut self, input: impl Into<std::string::String>) -> Self {
-        self.width = Some(input.into());
+    pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.width = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The width of the legend. If this value is omitted, a default width is used when rendering.</p>
-    pub fn set_width(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.width = input;
         self
     }
     /// <p>The height of the legend. If this value is omitted, a default height is used when rendering.</p>
-    pub fn height(mut self, input: impl Into<std::string::String>) -> Self {
-        self.height = Some(input.into());
+    pub fn height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.height = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The height of the legend. If this value is omitted, a default height is used when rendering.</p>
-    pub fn set_height(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.height = input;
         self
     }

@@ -2,69 +2,69 @@
 
 /// <p>Summary data of an Proton service template resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceTemplateSummary {
     /// <p>The name of the service template.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time when the service template was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the service template was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The service template name as displayed in the developer interface.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the service template.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The recommended version of the service template.</p>
     #[doc(hidden)]
-    pub recommended_version: std::option::Option<std::string::String>,
+    pub recommended_version: ::std::option::Option<::std::string::String>,
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
     #[doc(hidden)]
-    pub pipeline_provisioning: std::option::Option<crate::types::Provisioning>,
+    pub pipeline_provisioning: ::std::option::Option<crate::types::Provisioning>,
 }
 impl ServiceTemplateSummary {
     /// <p>The name of the service template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time when the service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The service template name as displayed in the developer interface.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>A description of the service template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The recommended version of the service template.</p>
-    pub fn recommended_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_version(&self) -> ::std::option::Option<&str> {
         self.recommended_version.as_deref()
     }
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
-    pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::types::Provisioning> {
+    pub fn pipeline_provisioning(&self) -> ::std::option::Option<&crate::types::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceTemplateSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ServiceTemplateSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplateSummary");
         formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);
@@ -86,106 +86,109 @@ impl ServiceTemplateSummary {
 
 /// A builder for [`ServiceTemplateSummary`](crate::types::ServiceTemplateSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ServiceTemplateSummaryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) recommended_version: std::option::Option<std::string::String>,
-    pub(crate) pipeline_provisioning: std::option::Option<crate::types::Provisioning>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) recommended_version: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_provisioning: ::std::option::Option<crate::types::Provisioning>,
 }
 impl ServiceTemplateSummaryBuilder {
     /// <p>The name of the service template.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service template.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service template.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The time when the service template was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the service template was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The time when the service template was last modified.</p>
-    pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_at = Some(input);
+    pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the service template was last modified.</p>
     pub fn set_last_modified_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_at = input;
         self
     }
     /// <p>The service template name as displayed in the developer interface.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service template name as displayed in the developer interface.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>A description of the service template.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the service template.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The recommended version of the service template.</p>
-    pub fn recommended_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recommended_version = Some(input.into());
+    pub fn recommended_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recommended_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommended version of the service template.</p>
     pub fn set_recommended_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recommended_version = input;
         self
     }
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
     pub fn pipeline_provisioning(mut self, input: crate::types::Provisioning) -> Self {
-        self.pipeline_provisioning = Some(input);
+        self.pipeline_provisioning = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>pipelineProvisioning</code> is <code>true</code>, a service pipeline is included in the service template, otherwise a service pipeline <i>isn't</i> included in the service template.</p>
     pub fn set_pipeline_provisioning(
         mut self,
-        input: std::option::Option<crate::types::Provisioning>,
+        input: ::std::option::Option<crate::types::Provisioning>,
     ) -> Self {
         self.pipeline_provisioning = input;
         self
@@ -204,8 +207,8 @@ impl ServiceTemplateSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for ServiceTemplateSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ServiceTemplateSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplateSummaryBuilder");
         formatter.field("name", &self.name);
         formatter.field("arn", &self.arn);

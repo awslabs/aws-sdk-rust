@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutInventory`](crate::operation::put_inventory::builders::PutInventoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::put_inventory::builders::PutInventoryFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::put_inventory::builders::PutInventoryFluentBuilder::set_instance_id): <p>An managed node ID where you want to add or update inventory items.</p>
+    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::put_inventory::builders::PutInventoryFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::put_inventory::builders::PutInventoryFluentBuilder::set_instance_id): <p>An managed node ID where you want to add or update inventory items.</p>
     ///   - [`items(Vec<InventoryItem>)`](crate::operation::put_inventory::builders::PutInventoryFluentBuilder::items) / [`set_items(Option<Vec<InventoryItem>>)`](crate::operation::put_inventory::builders::PutInventoryFluentBuilder::set_items): <p>The inventory items that you want to add or update on managed nodes.</p>
     /// - On success, responds with [`PutInventoryOutput`](crate::operation::put_inventory::PutInventoryOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::put_inventory::PutInventoryOutput::message): <p>Information about the request.</p>

@@ -2,41 +2,41 @@
 
 /// <p>Information about a line item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItem {
     /// <p> The ID of the catalog item. </p>
     #[doc(hidden)]
-    pub catalog_item_id: std::option::Option<std::string::String>,
+    pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the line item.</p>
     #[doc(hidden)]
-    pub line_item_id: std::option::Option<std::string::String>,
+    pub line_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of the line item.</p>
     #[doc(hidden)]
     pub quantity: i32,
     /// <p>The status of the line item.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::LineItemStatus>,
+    pub status: ::std::option::Option<crate::types::LineItemStatus>,
     /// <p> Information about a line item shipment. </p>
     #[doc(hidden)]
-    pub shipment_information: std::option::Option<crate::types::ShipmentInformation>,
+    pub shipment_information: ::std::option::Option<crate::types::ShipmentInformation>,
     /// <p> Information about assets. </p>
     #[doc(hidden)]
     pub asset_information_list:
-        std::option::Option<std::vec::Vec<crate::types::LineItemAssetInformation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>>,
     /// <p>The ID of the previous line item.</p>
     #[doc(hidden)]
-    pub previous_line_item_id: std::option::Option<std::string::String>,
+    pub previous_line_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the previous order.</p>
     #[doc(hidden)]
-    pub previous_order_id: std::option::Option<std::string::String>,
+    pub previous_order_id: ::std::option::Option<::std::string::String>,
 }
 impl LineItem {
     /// <p> The ID of the catalog item. </p>
-    pub fn catalog_item_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_item_id(&self) -> ::std::option::Option<&str> {
         self.catalog_item_id.as_deref()
     }
     /// <p>The ID of the line item.</p>
-    pub fn line_item_id(&self) -> std::option::Option<&str> {
+    pub fn line_item_id(&self) -> ::std::option::Option<&str> {
         self.line_item_id.as_deref()
     }
     /// <p>The quantity of the line item.</p>
@@ -44,25 +44,27 @@ impl LineItem {
         self.quantity
     }
     /// <p>The status of the line item.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::LineItemStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::LineItemStatus> {
         self.status.as_ref()
     }
     /// <p> Information about a line item shipment. </p>
-    pub fn shipment_information(&self) -> std::option::Option<&crate::types::ShipmentInformation> {
+    pub fn shipment_information(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ShipmentInformation> {
         self.shipment_information.as_ref()
     }
     /// <p> Information about assets. </p>
     pub fn asset_information_list(
         &self,
-    ) -> std::option::Option<&[crate::types::LineItemAssetInformation]> {
+    ) -> ::std::option::Option<&[crate::types::LineItemAssetInformation]> {
         self.asset_information_list.as_deref()
     }
     /// <p>The ID of the previous line item.</p>
-    pub fn previous_line_item_id(&self) -> std::option::Option<&str> {
+    pub fn previous_line_item_id(&self) -> ::std::option::Option<&str> {
         self.previous_line_item_id.as_deref()
     }
     /// <p>The ID of the previous order.</p>
-    pub fn previous_order_id(&self) -> std::option::Option<&str> {
+    pub fn previous_order_id(&self) -> ::std::option::Option<&str> {
         self.previous_order_id.as_deref()
     }
 }
@@ -75,68 +77,79 @@ impl LineItem {
 
 /// A builder for [`LineItem`](crate::types::LineItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LineItemBuilder {
-    pub(crate) catalog_item_id: std::option::Option<std::string::String>,
-    pub(crate) line_item_id: std::option::Option<std::string::String>,
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::LineItemStatus>,
-    pub(crate) shipment_information: std::option::Option<crate::types::ShipmentInformation>,
+    pub(crate) catalog_item_id: ::std::option::Option<::std::string::String>,
+    pub(crate) line_item_id: ::std::option::Option<::std::string::String>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::LineItemStatus>,
+    pub(crate) shipment_information: ::std::option::Option<crate::types::ShipmentInformation>,
     pub(crate) asset_information_list:
-        std::option::Option<std::vec::Vec<crate::types::LineItemAssetInformation>>,
-    pub(crate) previous_line_item_id: std::option::Option<std::string::String>,
-    pub(crate) previous_order_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>>,
+    pub(crate) previous_line_item_id: ::std::option::Option<::std::string::String>,
+    pub(crate) previous_order_id: ::std::option::Option<::std::string::String>,
 }
 impl LineItemBuilder {
     /// <p> The ID of the catalog item. </p>
-    pub fn catalog_item_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog_item_id = Some(input.into());
+    pub fn catalog_item_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.catalog_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the catalog item. </p>
-    pub fn set_catalog_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_item_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.catalog_item_id = input;
         self
     }
     /// <p>The ID of the line item.</p>
-    pub fn line_item_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.line_item_id = Some(input.into());
+    pub fn line_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.line_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the line item.</p>
-    pub fn set_line_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_line_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.line_item_id = input;
         self
     }
     /// <p>The quantity of the line item.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The quantity of the line item.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
     /// <p>The status of the line item.</p>
     pub fn status(mut self, input: crate::types::LineItemStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the line item.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::LineItemStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::LineItemStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p> Information about a line item shipment. </p>
     pub fn shipment_information(mut self, input: crate::types::ShipmentInformation) -> Self {
-        self.shipment_information = Some(input);
+        self.shipment_information = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about a line item shipment. </p>
     pub fn set_shipment_information(
         mut self,
-        input: std::option::Option<crate::types::ShipmentInformation>,
+        input: ::std::option::Option<crate::types::ShipmentInformation>,
     ) -> Self {
         self.shipment_information = input;
         self
@@ -149,39 +162,45 @@ impl LineItemBuilder {
     pub fn asset_information_list(mut self, input: crate::types::LineItemAssetInformation) -> Self {
         let mut v = self.asset_information_list.unwrap_or_default();
         v.push(input);
-        self.asset_information_list = Some(v);
+        self.asset_information_list = ::std::option::Option::Some(v);
         self
     }
     /// <p> Information about assets. </p>
     pub fn set_asset_information_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LineItemAssetInformation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LineItemAssetInformation>>,
     ) -> Self {
         self.asset_information_list = input;
         self
     }
     /// <p>The ID of the previous line item.</p>
-    pub fn previous_line_item_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.previous_line_item_id = Some(input.into());
+    pub fn previous_line_item_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.previous_line_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the previous line item.</p>
     pub fn set_previous_line_item_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.previous_line_item_id = input;
         self
     }
     /// <p>The ID of the previous order.</p>
-    pub fn previous_order_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.previous_order_id = Some(input.into());
+    pub fn previous_order_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.previous_order_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the previous order.</p>
     pub fn set_previous_order_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.previous_order_id = input;
         self

@@ -2,31 +2,31 @@
 
 /// Audio Normalization Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioNormalizationSettings {
     /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
     #[doc(hidden)]
-    pub algorithm: std::option::Option<crate::types::AudioNormalizationAlgorithm>,
+    pub algorithm: ::std::option::Option<crate::types::AudioNormalizationAlgorithm>,
     /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
     #[doc(hidden)]
-    pub algorithm_control: std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
+    pub algorithm_control: ::std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
     /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
     #[doc(hidden)]
-    pub target_lkfs: std::option::Option<f64>,
+    pub target_lkfs: ::std::option::Option<f64>,
 }
 impl AudioNormalizationSettings {
     /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
-    pub fn algorithm(&self) -> std::option::Option<&crate::types::AudioNormalizationAlgorithm> {
+    pub fn algorithm(&self) -> ::std::option::Option<&crate::types::AudioNormalizationAlgorithm> {
         self.algorithm.as_ref()
     }
     /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
     pub fn algorithm_control(
         &self,
-    ) -> std::option::Option<&crate::types::AudioNormalizationAlgorithmControl> {
+    ) -> ::std::option::Option<&crate::types::AudioNormalizationAlgorithmControl> {
         self.algorithm_control.as_ref()
     }
     /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
-    pub fn target_lkfs(&self) -> std::option::Option<f64> {
+    pub fn target_lkfs(&self) -> ::std::option::Option<f64> {
         self.target_lkfs
     }
 }
@@ -39,23 +39,25 @@ impl AudioNormalizationSettings {
 
 /// A builder for [`AudioNormalizationSettings`](crate::types::AudioNormalizationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioNormalizationSettingsBuilder {
-    pub(crate) algorithm: std::option::Option<crate::types::AudioNormalizationAlgorithm>,
+    pub(crate) algorithm: ::std::option::Option<crate::types::AudioNormalizationAlgorithm>,
     pub(crate) algorithm_control:
-        std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
-    pub(crate) target_lkfs: std::option::Option<f64>,
+        ::std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
+    pub(crate) target_lkfs: ::std::option::Option<f64>,
 }
 impl AudioNormalizationSettingsBuilder {
     /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
     pub fn algorithm(mut self, input: crate::types::AudioNormalizationAlgorithm) -> Self {
-        self.algorithm = Some(input);
+        self.algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
     pub fn set_algorithm(
         mut self,
-        input: std::option::Option<crate::types::AudioNormalizationAlgorithm>,
+        input: ::std::option::Option<crate::types::AudioNormalizationAlgorithm>,
     ) -> Self {
         self.algorithm = input;
         self
@@ -65,24 +67,24 @@ impl AudioNormalizationSettingsBuilder {
         mut self,
         input: crate::types::AudioNormalizationAlgorithmControl,
     ) -> Self {
-        self.algorithm_control = Some(input);
+        self.algorithm_control = ::std::option::Option::Some(input);
         self
     }
     /// When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.
     pub fn set_algorithm_control(
         mut self,
-        input: std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
+        input: ::std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
     ) -> Self {
         self.algorithm_control = input;
         self
     }
     /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
     pub fn target_lkfs(mut self, input: f64) -> Self {
-        self.target_lkfs = Some(input);
+        self.target_lkfs = ::std::option::Option::Some(input);
         self
     }
     /// Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.
-    pub fn set_target_lkfs(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_target_lkfs(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_lkfs = input;
         self
     }

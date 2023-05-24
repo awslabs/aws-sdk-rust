@@ -2,43 +2,43 @@
 
 /// <p>A prepared SQL statement for use with Athena.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreparedStatement {
     /// <p>The name of the prepared statement.</p>
     #[doc(hidden)]
-    pub statement_name: std::option::Option<std::string::String>,
+    pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The query string for the prepared statement.</p>
     #[doc(hidden)]
-    pub query_statement: std::option::Option<std::string::String>,
+    pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
     #[doc(hidden)]
-    pub work_group_name: std::option::Option<std::string::String>,
+    pub work_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the prepared statement.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The last modified time of the prepared statement.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PreparedStatement {
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(&self) -> std::option::Option<&str> {
+    pub fn statement_name(&self) -> ::std::option::Option<&str> {
         self.statement_name.as_deref()
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn query_statement(&self) -> std::option::Option<&str> {
+    pub fn query_statement(&self) -> ::std::option::Option<&str> {
         self.query_statement.as_deref()
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-    pub fn work_group_name(&self) -> std::option::Option<&str> {
+    pub fn work_group_name(&self) -> ::std::option::Option<&str> {
         self.work_group_name.as_deref()
     }
     /// <p>The description of the prepared statement.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -51,64 +51,84 @@ impl PreparedStatement {
 
 /// A builder for [`PreparedStatement`](crate::types::PreparedStatement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PreparedStatementBuilder {
-    pub(crate) statement_name: std::option::Option<std::string::String>,
-    pub(crate) query_statement: std::option::Option<std::string::String>,
-    pub(crate) work_group_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) statement_name: ::std::option::Option<::std::string::String>,
+    pub(crate) query_statement: ::std::option::Option<::std::string::String>,
+    pub(crate) work_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PreparedStatementBuilder {
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.statement_name = Some(input.into());
+    pub fn statement_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the prepared statement.</p>
-    pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_statement_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.statement_name = input;
         self
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_statement = Some(input.into());
+    pub fn query_statement(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.query_statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn set_query_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_statement(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.query_statement = input;
         self
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-    pub fn work_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.work_group_name = Some(input.into());
+    pub fn work_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.work_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-    pub fn set_work_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_work_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.work_group_name = input;
         self
     }
     /// <p>The description of the prepared statement.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the prepared statement.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last modified time of the prepared statement.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self

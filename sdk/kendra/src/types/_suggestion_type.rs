@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SuggestionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SuggestionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SuggestionType {
+impl ::std::convert::From<&str> for SuggestionType {
     fn from(s: &str) -> Self {
         match s {
             "DOCUMENT_ATTRIBUTES" => SuggestionType::DocumentAttributes,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SuggestionType {
         }
     }
 }
-impl std::str::FromStr for SuggestionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SuggestionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SuggestionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SuggestionType::from(s))
     }
 }
 impl SuggestionType {
@@ -86,7 +86,7 @@ impl SuggestionType {
         &["DOCUMENT_ATTRIBUTES", "QUERY"]
     }
 }
-impl AsRef<str> for SuggestionType {
+impl ::std::convert::AsRef<str> for SuggestionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

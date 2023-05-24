@@ -2,15 +2,15 @@
 
 /// <p>The forwarding configuration for a given property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ForwardingConfigState>,
+    pub state: ::std::option::Option<crate::types::ForwardingConfigState>,
 }
 impl ForwardingConfig {
     /// <p>The forwarding state for the given property. </p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ForwardingConfigState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ForwardingConfigState> {
         self.state.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ForwardingConfig {
 
 /// A builder for [`ForwardingConfig`](crate::types::ForwardingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForwardingConfigBuilder {
-    pub(crate) state: std::option::Option<crate::types::ForwardingConfigState>,
+    pub(crate) state: ::std::option::Option<crate::types::ForwardingConfigState>,
 }
 impl ForwardingConfigBuilder {
     /// <p>The forwarding state for the given property. </p>
     pub fn state(mut self, input: crate::types::ForwardingConfigState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The forwarding state for the given property. </p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::ForwardingConfigState>,
+        input: ::std::option::Option<crate::types::ForwardingConfigState>,
     ) -> Self {
         self.state = input;
         self

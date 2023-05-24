@@ -2,7 +2,7 @@
 
 /// <p>Contains information that defines how the CodeBuild build project reports the build status to the source provider. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildStatusConfig {
     /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
@@ -20,7 +20,7 @@ pub struct BuildStatusConfig {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub context: std::option::Option<std::string::String>,
+    pub context: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
     /// <dl>
     /// <dt>
@@ -37,7 +37,7 @@ pub struct BuildStatusConfig {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub target_url: std::option::Option<std::string::String>,
+    pub target_url: ::std::option::Option<::std::string::String>,
 }
 impl BuildStatusConfig {
     /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
@@ -55,7 +55,7 @@ impl BuildStatusConfig {
     /// <p>This parameter is used for the <code>context</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    pub fn context(&self) -> std::option::Option<&str> {
+    pub fn context(&self) -> ::std::option::Option<&str> {
         self.context.as_deref()
     }
     /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
@@ -73,7 +73,7 @@ impl BuildStatusConfig {
     /// <p>This parameter is used for the <code>target_url</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    pub fn target_url(&self) -> std::option::Option<&str> {
+    pub fn target_url(&self) -> ::std::option::Option<&str> {
         self.target_url.as_deref()
     }
 }
@@ -86,10 +86,12 @@ impl BuildStatusConfig {
 
 /// A builder for [`BuildStatusConfig`](crate::types::BuildStatusConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BuildStatusConfigBuilder {
-    pub(crate) context: std::option::Option<std::string::String>,
-    pub(crate) target_url: std::option::Option<std::string::String>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
+    pub(crate) target_url: ::std::option::Option<::std::string::String>,
 }
 impl BuildStatusConfigBuilder {
     /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
@@ -107,8 +109,8 @@ impl BuildStatusConfigBuilder {
     /// <p>This parameter is used for the <code>context</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
-        self.context = Some(input.into());
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
@@ -126,7 +128,7 @@ impl BuildStatusConfigBuilder {
     /// <p>This parameter is used for the <code>context</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context = input;
         self
     }
@@ -145,8 +147,8 @@ impl BuildStatusConfigBuilder {
     /// <p>This parameter is used for the <code>target_url</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    pub fn target_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_url = Some(input.into());
+    pub fn target_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The usage of this parameter depends on the source provider.</p>
@@ -164,7 +166,7 @@ impl BuildStatusConfigBuilder {
     /// <p>This parameter is used for the <code>target_url</code> parameter in the GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
     /// </dd>
     /// </dl>
-    pub fn set_target_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_url = input;
         self
     }

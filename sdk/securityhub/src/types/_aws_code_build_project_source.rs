@@ -2,7 +2,7 @@
 
 /// <p>Information about the build input source code for this build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectSource {
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
@@ -15,7 +15,7 @@ pub struct AwsCodeBuildProjectSource {
     /// <li> <p> <code>S3</code> - The source code is in an S3 input bucket. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
     /// <ul>
@@ -30,7 +30,7 @@ pub struct AwsCodeBuildProjectSource {
     /// <li> <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Git clone depth for the build project.</p>
     #[doc(hidden)]
     pub git_clone_depth: i32,
@@ -49,7 +49,7 @@ impl AwsCodeBuildProjectSource {
     /// <li> <p> <code>NO_SOURCE</code> - The project does not have input source code.</p> </li>
     /// <li> <p> <code>S3</code> - The source code is in an S3 input bucket. </p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>Information about the location of the source code to be built.</p>
@@ -65,7 +65,7 @@ impl AwsCodeBuildProjectSource {
     /// <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p> </li>
     /// <li> <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file. </p> </li>
     /// </ul>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>Information about the Git clone depth for the build project.</p>
@@ -86,12 +86,14 @@ impl AwsCodeBuildProjectSource {
 
 /// A builder for [`AwsCodeBuildProjectSource`](crate::types::AwsCodeBuildProjectSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCodeBuildProjectSourceBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) git_clone_depth: std::option::Option<i32>,
-    pub(crate) insecure_ssl: std::option::Option<bool>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) git_clone_depth: ::std::option::Option<i32>,
+    pub(crate) insecure_ssl: ::std::option::Option<bool>,
 }
 impl AwsCodeBuildProjectSourceBuilder {
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
@@ -104,8 +106,8 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <li> <p> <code>NO_SOURCE</code> - The project does not have input source code.</p> </li>
     /// <li> <p> <code>S3</code> - The source code is in an S3 input bucket. </p> </li>
     /// </ul>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
@@ -118,7 +120,7 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <li> <p> <code>NO_SOURCE</code> - The project does not have input source code.</p> </li>
     /// <li> <p> <code>S3</code> - The source code is in an S3 input bucket. </p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
@@ -135,8 +137,8 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p> </li>
     /// <li> <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file. </p> </li>
     /// </ul>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the location of the source code to be built.</p>
@@ -152,27 +154,27 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p> </li>
     /// <li> <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file. </p> </li>
     /// </ul>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>Information about the Git clone depth for the build project.</p>
     pub fn git_clone_depth(mut self, input: i32) -> Self {
-        self.git_clone_depth = Some(input);
+        self.git_clone_depth = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Git clone depth for the build project.</p>
-    pub fn set_git_clone_depth(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_git_clone_depth(mut self, input: ::std::option::Option<i32>) -> Self {
         self.git_clone_depth = input;
         self
     }
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
     pub fn insecure_ssl(mut self, input: bool) -> Self {
-        self.insecure_ssl = Some(input);
+        self.insecure_ssl = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to ignore SSL warnings while connecting to the project source code.</p>
-    pub fn set_insecure_ssl(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_insecure_ssl(mut self, input: ::std::option::Option<bool>) -> Self {
         self.insecure_ssl = input;
         self
     }

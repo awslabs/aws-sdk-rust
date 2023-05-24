@@ -2,29 +2,30 @@
 
 /// <p>Contains the result of a successful invocation of the <code>DescribeReservedDBInstances</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved DB instances.</p>
     #[doc(hidden)]
-    pub reserved_db_instances: std::option::Option<std::vec::Vec<crate::types::ReservedDbInstance>>,
+    pub reserved_db_instances:
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of reserved DB instances.</p>
     pub fn reserved_db_instances(
         &self,
-    ) -> std::option::Option<&[crate::types::ReservedDbInstance]> {
+    ) -> ::std::option::Option<&[crate::types::ReservedDbInstance]> {
         self.reserved_db_instances.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedDbInstancesOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedDbInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,21 +39,23 @@ impl DescribeReservedDbInstancesOutput {
 
 /// A builder for [`DescribeReservedDbInstancesOutput`](crate::operation::describe_reserved_db_instances::DescribeReservedDbInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedDbInstancesOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_db_instances:
-        std::option::Option<std::vec::Vec<crate::types::ReservedDbInstance>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedDbInstancesOutputBuilder {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -64,13 +67,13 @@ impl DescribeReservedDbInstancesOutputBuilder {
     pub fn reserved_db_instances(mut self, input: crate::types::ReservedDbInstance) -> Self {
         let mut v = self.reserved_db_instances.unwrap_or_default();
         v.push(input);
-        self.reserved_db_instances = Some(v);
+        self.reserved_db_instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of reserved DB instances.</p>
     pub fn set_reserved_db_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedDbInstance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedDbInstance>>,
     ) -> Self {
         self.reserved_db_instances = input;
         self

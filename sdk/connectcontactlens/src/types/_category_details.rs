@@ -2,15 +2,15 @@
 
 /// <p>Provides information about the category rule that was matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
     #[doc(hidden)]
-    pub points_of_interest: std::option::Option<std::vec::Vec<crate::types::PointOfInterest>>,
+    pub points_of_interest: ::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>>,
 }
 impl CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
-    pub fn points_of_interest(&self) -> std::option::Option<&[crate::types::PointOfInterest]> {
+    pub fn points_of_interest(&self) -> ::std::option::Option<&[crate::types::PointOfInterest]> {
         self.points_of_interest.as_deref()
     }
 }
@@ -23,10 +23,12 @@ impl CategoryDetails {
 
 /// A builder for [`CategoryDetails`](crate::types::CategoryDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CategoryDetailsBuilder {
     pub(crate) points_of_interest:
-        std::option::Option<std::vec::Vec<crate::types::PointOfInterest>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>>,
 }
 impl CategoryDetailsBuilder {
     /// Appends an item to `points_of_interest`.
@@ -37,13 +39,13 @@ impl CategoryDetailsBuilder {
     pub fn points_of_interest(mut self, input: crate::types::PointOfInterest) -> Self {
         let mut v = self.points_of_interest.unwrap_or_default();
         v.push(input);
-        self.points_of_interest = Some(v);
+        self.points_of_interest = ::std::option::Option::Some(v);
         self
     }
     /// <p>The section of audio where the category rule was detected.</p>
     pub fn set_points_of_interest(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PointOfInterest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PointOfInterest>>,
     ) -> Self {
         self.points_of_interest = input;
         self

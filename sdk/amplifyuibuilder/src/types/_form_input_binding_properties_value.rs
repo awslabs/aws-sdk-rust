@@ -2,25 +2,25 @@
 
 /// <p>Represents the data binding configuration for a form's input fields at runtime.You can use <code>FormInputBindingPropertiesValue</code> to add exposed properties to a form to allow different values to be entered when a form is reused in different places in an app.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormInputBindingPropertiesValue {
     /// <p>The property type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties to customize with data at runtime.</p>
     #[doc(hidden)]
     pub binding_properties:
-        std::option::Option<crate::types::FormInputBindingPropertiesValueProperties>,
+        ::std::option::Option<crate::types::FormInputBindingPropertiesValueProperties>,
 }
 impl FormInputBindingPropertiesValue {
     /// <p>The property type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>Describes the properties to customize with data at runtime.</p>
     pub fn binding_properties(
         &self,
-    ) -> std::option::Option<&crate::types::FormInputBindingPropertiesValueProperties> {
+    ) -> ::std::option::Option<&crate::types::FormInputBindingPropertiesValueProperties> {
         self.binding_properties.as_ref()
     }
 }
@@ -33,20 +33,22 @@ impl FormInputBindingPropertiesValue {
 
 /// A builder for [`FormInputBindingPropertiesValue`](crate::types::FormInputBindingPropertiesValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FormInputBindingPropertiesValueBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) binding_properties:
-        std::option::Option<crate::types::FormInputBindingPropertiesValueProperties>,
+        ::std::option::Option<crate::types::FormInputBindingPropertiesValueProperties>,
 }
 impl FormInputBindingPropertiesValueBuilder {
     /// <p>The property type.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property type.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
@@ -55,13 +57,13 @@ impl FormInputBindingPropertiesValueBuilder {
         mut self,
         input: crate::types::FormInputBindingPropertiesValueProperties,
     ) -> Self {
-        self.binding_properties = Some(input);
+        self.binding_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the properties to customize with data at runtime.</p>
     pub fn set_binding_properties(
         mut self,
-        input: std::option::Option<crate::types::FormInputBindingPropertiesValueProperties>,
+        input: ::std::option::Option<crate::types::FormInputBindingPropertiesValueProperties>,
     ) -> Self {
         self.binding_properties = input;
         self

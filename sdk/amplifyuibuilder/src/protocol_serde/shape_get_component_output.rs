@@ -2,7 +2,7 @@
 pub(crate) fn de_component_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::Component>,
+    ::std::option::Option<crate::types::Component>,
     crate::operation::get_component::GetComponentError,
 > {
     (!body.is_empty())

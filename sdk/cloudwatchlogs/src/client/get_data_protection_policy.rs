@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataProtectionPolicy`](crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_identifier(impl Into<String>)`](crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder::set_log_group_identifier): <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
+    ///   - [`log_group_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyFluentBuilder::set_log_group_identifier): <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
     /// - On success, responds with [`GetDataProtectionPolicyOutput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput) with field(s):
     ///   - [`log_group_identifier(Option<String>)`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput::log_group_identifier): <p>The log group name or ARN that you specified in your request.</p>
     ///   - [`policy_document(Option<String>)`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyOutput::policy_document): <p>The data protection policy document for this log group.</p>

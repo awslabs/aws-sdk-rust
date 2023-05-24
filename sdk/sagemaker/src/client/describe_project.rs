@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProject`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_name(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_project_name): <p>The name of the project to describe.</p>
+    ///   - [`project_name(impl ::std::convert::Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_project_name): <p>The name of the project to describe.</p>
     /// - On success, responds with [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput) with field(s):
     ///   - [`project_arn(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the project.</p>
     ///   - [`project_name(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::project_name): <p>The name of the project.</p>

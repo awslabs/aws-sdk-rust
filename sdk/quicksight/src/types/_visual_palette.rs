@@ -2,22 +2,22 @@
 
 /// <p>The visual display options for the visual palette.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualPalette {
     /// <p>The chart color options for the visual palette.</p>
     #[doc(hidden)]
-    pub chart_color: std::option::Option<std::string::String>,
+    pub chart_color: ::std::option::Option<::std::string::String>,
     /// <p>The color map options for the visual palette.</p>
     #[doc(hidden)]
-    pub color_map: std::option::Option<std::vec::Vec<crate::types::DataPathColor>>,
+    pub color_map: ::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>>,
 }
 impl VisualPalette {
     /// <p>The chart color options for the visual palette.</p>
-    pub fn chart_color(&self) -> std::option::Option<&str> {
+    pub fn chart_color(&self) -> ::std::option::Option<&str> {
         self.chart_color.as_deref()
     }
     /// <p>The color map options for the visual palette.</p>
-    pub fn color_map(&self) -> std::option::Option<&[crate::types::DataPathColor]> {
+    pub fn color_map(&self) -> ::std::option::Option<&[crate::types::DataPathColor]> {
         self.color_map.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl VisualPalette {
 
 /// A builder for [`VisualPalette`](crate::types::VisualPalette).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VisualPaletteBuilder {
-    pub(crate) chart_color: std::option::Option<std::string::String>,
-    pub(crate) color_map: std::option::Option<std::vec::Vec<crate::types::DataPathColor>>,
+    pub(crate) chart_color: ::std::option::Option<::std::string::String>,
+    pub(crate) color_map: ::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>>,
 }
 impl VisualPaletteBuilder {
     /// <p>The chart color options for the visual palette.</p>
-    pub fn chart_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.chart_color = Some(input.into());
+    pub fn chart_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.chart_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The chart color options for the visual palette.</p>
-    pub fn set_chart_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_chart_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chart_color = input;
         self
     }
@@ -54,13 +56,13 @@ impl VisualPaletteBuilder {
     pub fn color_map(mut self, input: crate::types::DataPathColor) -> Self {
         let mut v = self.color_map.unwrap_or_default();
         v.push(input);
-        self.color_map = Some(v);
+        self.color_map = ::std::option::Option::Some(v);
         self
     }
     /// <p>The color map options for the visual palette.</p>
     pub fn set_color_map(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataPathColor>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataPathColor>>,
     ) -> Self {
         self.color_map = input;
         self

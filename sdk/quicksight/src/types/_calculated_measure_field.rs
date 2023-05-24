@@ -2,27 +2,27 @@
 
 /// <p>The table calculation measure field for pivot tables.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculatedMeasureField {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The expression in the table calculation.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
 }
 impl CalculatedMeasureField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The expression in the table calculation.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for CalculatedMeasureField {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CalculatedMeasureField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedMeasureField");
         formatter.field("field_id", &self.field_id);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl CalculatedMeasureField {
 
 /// A builder for [`CalculatedMeasureField`](crate::types::CalculatedMeasureField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CalculatedMeasureFieldBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) expression: std::option::Option<std::string::String>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
 }
 impl CalculatedMeasureFieldBuilder {
     /// <p>The custom field ID.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom field ID.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The expression in the table calculation.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression in the table calculation.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
@@ -72,8 +72,8 @@ impl CalculatedMeasureFieldBuilder {
         }
     }
 }
-impl std::fmt::Debug for CalculatedMeasureFieldBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CalculatedMeasureFieldBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedMeasureFieldBuilder");
         formatter.field("field_id", &self.field_id);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");

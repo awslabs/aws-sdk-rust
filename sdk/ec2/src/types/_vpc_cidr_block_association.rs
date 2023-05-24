@@ -2,29 +2,29 @@
 
 /// <p>Describes an IPv4 CIDR block associated with a VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcCidrBlockAssociation {
     /// <p>The association ID for the IPv4 CIDR block.</p>
     #[doc(hidden)]
-    pub association_id: std::option::Option<std::string::String>,
+    pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 CIDR block.</p>
     #[doc(hidden)]
-    pub cidr_block: std::option::Option<std::string::String>,
+    pub cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the state of the CIDR block.</p>
     #[doc(hidden)]
-    pub cidr_block_state: std::option::Option<crate::types::VpcCidrBlockState>,
+    pub cidr_block_state: ::std::option::Option<crate::types::VpcCidrBlockState>,
 }
 impl VpcCidrBlockAssociation {
     /// <p>The association ID for the IPv4 CIDR block.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>The IPv4 CIDR block.</p>
-    pub fn cidr_block(&self) -> std::option::Option<&str> {
+    pub fn cidr_block(&self) -> ::std::option::Option<&str> {
         self.cidr_block.as_deref()
     }
     /// <p>Information about the state of the CIDR block.</p>
-    pub fn cidr_block_state(&self) -> std::option::Option<&crate::types::VpcCidrBlockState> {
+    pub fn cidr_block_state(&self) -> ::std::option::Option<&crate::types::VpcCidrBlockState> {
         self.cidr_block_state.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl VpcCidrBlockAssociation {
 
 /// A builder for [`VpcCidrBlockAssociation`](crate::types::VpcCidrBlockAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcCidrBlockAssociationBuilder {
-    pub(crate) association_id: std::option::Option<std::string::String>,
-    pub(crate) cidr_block: std::option::Option<std::string::String>,
-    pub(crate) cidr_block_state: std::option::Option<crate::types::VpcCidrBlockState>,
+    pub(crate) association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) cidr_block_state: ::std::option::Option<crate::types::VpcCidrBlockState>,
 }
 impl VpcCidrBlockAssociationBuilder {
     /// <p>The association ID for the IPv4 CIDR block.</p>
-    pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.association_id = Some(input.into());
+    pub fn association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The association ID for the IPv4 CIDR block.</p>
-    pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_association_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.association_id = input;
         self
     }
     /// <p>The IPv4 CIDR block.</p>
-    pub fn cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cidr_block = Some(input.into());
+    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR block.</p>
-    pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_block = input;
         self
     }
     /// <p>Information about the state of the CIDR block.</p>
     pub fn cidr_block_state(mut self, input: crate::types::VpcCidrBlockState) -> Self {
-        self.cidr_block_state = Some(input);
+        self.cidr_block_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the state of the CIDR block.</p>
     pub fn set_cidr_block_state(
         mut self,
-        input: std::option::Option<crate::types::VpcCidrBlockState>,
+        input: ::std::option::Option<crate::types::VpcCidrBlockState>,
     ) -> Self {
         self.cidr_block_state = input;
         self

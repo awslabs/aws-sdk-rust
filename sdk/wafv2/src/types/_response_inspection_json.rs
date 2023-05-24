@@ -4,35 +4,35 @@
 /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseInspectionJson {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Identifier": [ "/login/success" ]</code> </p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted as a successful login, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
     #[doc(hidden)]
-    pub success_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub success_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a failed login, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
     #[doc(hidden)]
-    pub failure_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub failure_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResponseInspectionJson {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Identifier": [ "/login/success" ]</code> </p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted as a successful login, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
-    pub fn success_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn success_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.success_values.as_deref()
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a failed login, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
-    pub fn failure_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failure_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.failure_values.as_deref()
     }
 }
@@ -45,22 +45,24 @@ impl ResponseInspectionJson {
 
 /// A builder for [`ResponseInspectionJson`](crate::types::ResponseInspectionJson).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseInspectionJsonBuilder {
-    pub(crate) identifier: std::option::Option<std::string::String>,
-    pub(crate) success_values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) failure_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) success_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) failure_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResponseInspectionJsonBuilder {
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Identifier": [ "/login/success" ]</code> </p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the value to match against in the JSON. The identifier must be an exact match, including case.</p>
     /// <p>JSON example: <code>"Identifier": [ "/login/success" ]</code> </p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
@@ -70,17 +72,20 @@ impl ResponseInspectionJsonBuilder {
     ///
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted as a successful login, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
-    pub fn success_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn success_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.success_values.unwrap_or_default();
         v.push(input.into());
-        self.success_values = Some(v);
+        self.success_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a successful login attempt. To be counted as a successful login, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> </p>
     pub fn set_success_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.success_values = input;
         self
@@ -91,17 +96,20 @@ impl ResponseInspectionJsonBuilder {
     ///
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a failed login, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
-    pub fn failure_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn failure_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.failure_values.unwrap_or_default();
         v.push(input.into());
-        self.failure_values = Some(v);
+        self.failure_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Values for the specified identifier in the response JSON that indicate a failed login attempt. To be counted as a failed login, the value must be an exact match, including case. Each value must be unique among the success and failure values. </p>
     /// <p>JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> </p>
     pub fn set_failure_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.failure_values = input;
         self

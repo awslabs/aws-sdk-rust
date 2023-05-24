@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_traffic_policies_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_traffic_policies::ListTrafficPoliciesOutput,
@@ -15,7 +15,7 @@ pub fn de_list_traffic_policies_http_error(
         _response_body,
     )
     .map_err(crate::operation::list_traffic_policies::ListTrafficPoliciesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -53,7 +53,7 @@ pub fn de_list_traffic_policies_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_traffic_policies_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_traffic_policies::ListTrafficPoliciesOutput,
@@ -68,7 +68,7 @@ pub fn de_list_traffic_policies_http_response_with_props(
         )
         .map_err(crate::operation::list_traffic_policies::ListTrafficPoliciesError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -80,9 +80,9 @@ pub fn de_list_traffic_policies(
     mut builder: crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder,
 ) -> Result<
     crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -90,7 +90,7 @@ pub fn de_list_traffic_policies(
     let start_el = decoder.start_el();
     if !start_el.matches("ListTrafficPoliciesResponse") {
         return Err(
-                                aws_smithy_xml::decode::XmlDecodeError::custom(
+                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
                                     format!("encountered invalid XML root: expected ListTrafficPoliciesResponse but got {:?}. This is likely a bug in the SDK.", start_el)
                                 )
                             );
@@ -100,8 +100,8 @@ pub fn de_list_traffic_policies(
             s if s.matches("TrafficPolicyIdMarker") /* TrafficPolicyIdMarker com.amazonaws.route53.synthetic#ListTrafficPoliciesOutput$TrafficPolicyIdMarker */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -124,10 +124,10 @@ pub fn de_list_traffic_policies(
                 let var_3 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
                         }
                         ?
                     )
@@ -139,10 +139,10 @@ pub fn de_list_traffic_policies(
                 let var_4 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `smithy.api#Integer`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `smithy.api#Integer`)"))
                         }
                         ?
                     )

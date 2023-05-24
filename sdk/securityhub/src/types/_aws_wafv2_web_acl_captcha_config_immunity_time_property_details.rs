@@ -2,7 +2,7 @@
 
 /// <p> Used for CAPTCHA and challenge token settings. Determines how long a CAPTCHA or challenge timestamp remains valid after WAF updates it for a successful CAPTCHA or challenge response. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
     /// <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is considered valid by WAF. </p>
     #[doc(hidden)]
@@ -24,18 +24,20 @@ impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails {
 
 /// A builder for [`AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails`](crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetailsBuilder {
-    pub(crate) immunity_time: std::option::Option<i64>,
+    pub(crate) immunity_time: ::std::option::Option<i64>,
 }
 impl AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetailsBuilder {
     /// <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is considered valid by WAF. </p>
     pub fn immunity_time(mut self, input: i64) -> Self {
-        self.immunity_time = Some(input);
+        self.immunity_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is considered valid by WAF. </p>
-    pub fn set_immunity_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_immunity_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.immunity_time = input;
         self
     }

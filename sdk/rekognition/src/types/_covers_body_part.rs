@@ -2,18 +2,18 @@
 
 /// <p>Information about an item of Personal Protective Equipment covering a corresponding body part. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoversBodyPart {
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
     #[doc(hidden)]
     pub value: bool,
 }
 impl CoversBodyPart {
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
@@ -30,29 +30,31 @@ impl CoversBodyPart {
 
 /// A builder for [`CoversBodyPart`](crate::types::CoversBodyPart).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoversBodyPartBuilder {
-    pub(crate) confidence: std::option::Option<f32>,
-    pub(crate) value: std::option::Option<bool>,
+    pub(crate) confidence: ::std::option::Option<f32>,
+    pub(crate) value: ::std::option::Option<bool>,
 }
 impl CoversBodyPartBuilder {
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence that Amazon Rekognition has in the value of <code>Value</code>.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
     pub fn value(mut self, input: bool) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if the PPE covers the corresponding body part, otherwise false.</p>
-    pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.value = input;
         self
     }

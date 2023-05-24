@@ -2,14 +2,14 @@
 
 /// <p> Provides details for an Amazon Elastic Inference accelerator. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
     #[doc(hidden)]
     pub count: i32,
     /// <p> The type of Elastic Inference accelerator. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
@@ -17,7 +17,7 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
         self.count
     }
     /// <p> The type of Elastic Inference accelerator. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -32,29 +32,31 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p> The type of Elastic Inference accelerator. </p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of Elastic Inference accelerator. </p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

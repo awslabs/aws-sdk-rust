@@ -2,36 +2,36 @@
 
 /// <p>Contains the submission time of a single allocation request for a capacity reservation and the most recent status of the attempted allocation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityAllocation {
     /// <p>The status of the capacity allocation.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CapacityAllocationStatus>,
+    pub status: ::std::option::Option<crate::types::CapacityAllocationStatus>,
     /// <p>The status message of the capacity allocation.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time when the capacity allocation was requested.</p>
     #[doc(hidden)]
-    pub request_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the capacity allocation request was completed.</p>
     #[doc(hidden)]
-    pub request_completion_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub request_completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CapacityAllocation {
     /// <p>The status of the capacity allocation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CapacityAllocationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CapacityAllocationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message of the capacity allocation.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The time when the capacity allocation was requested.</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn request_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>The time when the capacity allocation request was completed.</p>
-    pub fn request_completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn request_completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.request_completion_time.as_ref()
     }
 }
@@ -44,59 +44,67 @@ impl CapacityAllocation {
 
 /// A builder for [`CapacityAllocation`](crate::types::CapacityAllocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityAllocationBuilder {
-    pub(crate) status: std::option::Option<crate::types::CapacityAllocationStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) request_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) request_completion_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::CapacityAllocationStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) request_completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CapacityAllocationBuilder {
     /// <p>The status of the capacity allocation.</p>
     pub fn status(mut self, input: crate::types::CapacityAllocationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the capacity allocation.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CapacityAllocationStatus>,
+        input: ::std::option::Option<crate::types::CapacityAllocationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The status message of the capacity allocation.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message of the capacity allocation.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The time when the capacity allocation was requested.</p>
-    pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.request_time = Some(input);
+    pub fn request_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.request_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the capacity allocation was requested.</p>
     pub fn set_request_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.request_time = input;
         self
     }
     /// <p>The time when the capacity allocation request was completed.</p>
-    pub fn request_completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.request_completion_time = Some(input);
+    pub fn request_completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.request_completion_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the capacity allocation request was completed.</p>
     pub fn set_request_completion_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.request_completion_time = input;
         self

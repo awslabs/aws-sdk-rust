@@ -2,29 +2,30 @@
 
 /// <p>Configurations for sending notifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfig {
     /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes notifications about command status changes to this topic.</p>
     #[doc(hidden)]
-    pub notification_arn: std::option::Option<std::string::String>,
+    pub notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>The different events for which you can receive notifications. To learn more about these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
-    pub notification_events: std::option::Option<std::vec::Vec<crate::types::NotificationEvent>>,
+    pub notification_events:
+        ::std::option::Option<::std::vec::Vec<crate::types::NotificationEvent>>,
     /// <p>The type of notification.</p>
     /// <ul>
     /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
     /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub notification_type: std::option::Option<crate::types::NotificationType>,
+    pub notification_type: ::std::option::Option<crate::types::NotificationType>,
 }
 impl NotificationConfig {
     /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes notifications about command status changes to this topic.</p>
-    pub fn notification_arn(&self) -> std::option::Option<&str> {
+    pub fn notification_arn(&self) -> ::std::option::Option<&str> {
         self.notification_arn.as_deref()
     }
     /// <p>The different events for which you can receive notifications. To learn more about these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn notification_events(&self) -> std::option::Option<&[crate::types::NotificationEvent]> {
+    pub fn notification_events(&self) -> ::std::option::Option<&[crate::types::NotificationEvent]> {
         self.notification_events.as_deref()
     }
     /// <p>The type of notification.</p>
@@ -32,7 +33,7 @@ impl NotificationConfig {
     /// <li> <p> <code>Command</code>: Receive notification when the status of a command changes.</p> </li>
     /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
     /// </ul>
-    pub fn notification_type(&self) -> std::option::Option<&crate::types::NotificationType> {
+    pub fn notification_type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
         self.notification_type.as_ref()
     }
 }
@@ -45,21 +46,29 @@ impl NotificationConfig {
 
 /// A builder for [`NotificationConfig`](crate::types::NotificationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationConfigBuilder {
-    pub(crate) notification_arn: std::option::Option<std::string::String>,
+    pub(crate) notification_arn: ::std::option::Option<::std::string::String>,
     pub(crate) notification_events:
-        std::option::Option<std::vec::Vec<crate::types::NotificationEvent>>,
-    pub(crate) notification_type: std::option::Option<crate::types::NotificationType>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NotificationEvent>>,
+    pub(crate) notification_type: ::std::option::Option<crate::types::NotificationType>,
 }
 impl NotificationConfigBuilder {
     /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes notifications about command status changes to this topic.</p>
-    pub fn notification_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notification_arn = Some(input.into());
+    pub fn notification_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.notification_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes notifications about command status changes to this topic.</p>
-    pub fn set_notification_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notification_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.notification_arn = input;
         self
     }
@@ -71,13 +80,13 @@ impl NotificationConfigBuilder {
     pub fn notification_events(mut self, input: crate::types::NotificationEvent) -> Self {
         let mut v = self.notification_events.unwrap_or_default();
         v.push(input);
-        self.notification_events = Some(v);
+        self.notification_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>The different events for which you can receive notifications. To learn more about these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_notification_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NotificationEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationEvent>>,
     ) -> Self {
         self.notification_events = input;
         self
@@ -88,7 +97,7 @@ impl NotificationConfigBuilder {
     /// <li> <p> <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification on a per-node basis when the status of a command changes. </p> </li>
     /// </ul>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
-        self.notification_type = Some(input);
+        self.notification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of notification.</p>
@@ -98,7 +107,7 @@ impl NotificationConfigBuilder {
     /// </ul>
     pub fn set_notification_type(
         mut self,
-        input: std::option::Option<crate::types::NotificationType>,
+        input: ::std::option::Option<crate::types::NotificationType>,
     ) -> Self {
         self.notification_type = input;
         self

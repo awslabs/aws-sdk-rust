@@ -2,22 +2,22 @@
 
 /// <p>The information for opted out numbers that meet a specified criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptedOutFilter {
     /// <p>The name of the attribute to filter on.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::OptedOutFilterName>,
+    pub name: ::std::option::Option<crate::types::OptedOutFilterName>,
     /// <p>An array of values to filter for.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OptedOutFilter {
     /// <p>The name of the attribute to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::OptedOutFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::OptedOutFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of values to filter for.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl OptedOutFilter {
 
 /// A builder for [`OptedOutFilter`](crate::types::OptedOutFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OptedOutFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::OptedOutFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<crate::types::OptedOutFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OptedOutFilterBuilder {
     /// <p>The name of the attribute to filter on.</p>
     pub fn name(mut self, input: crate::types::OptedOutFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the attribute to filter on.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::OptedOutFilterName>,
+        input: ::std::option::Option<crate::types::OptedOutFilterName>,
     ) -> Self {
         self.name = input;
         self
@@ -54,16 +56,16 @@ impl OptedOutFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>An array of values to filter for.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of values to filter for.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

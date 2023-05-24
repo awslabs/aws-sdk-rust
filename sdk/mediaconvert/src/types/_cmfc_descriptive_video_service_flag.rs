@@ -38,13 +38,13 @@
 /// Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see the Apple documentation.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmfcDescriptiveVideoServiceFlag {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmfcDescriptiveVideoServiceFlag {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmfcDescriptiveVideoServiceFlag {
+impl ::std::convert::From<&str> for CmfcDescriptiveVideoServiceFlag {
     fn from(s: &str) -> Self {
         match s {
             "DONT_FLAG" => CmfcDescriptiveVideoServiceFlag::DontFlag,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmfcDescriptiveVideoServiceFlag {
         }
     }
 }
-impl std::str::FromStr for CmfcDescriptiveVideoServiceFlag {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmfcDescriptiveVideoServiceFlag {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmfcDescriptiveVideoServiceFlag::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmfcDescriptiveVideoServiceFlag::from(s))
     }
 }
 impl CmfcDescriptiveVideoServiceFlag {
@@ -86,7 +86,7 @@ impl CmfcDescriptiveVideoServiceFlag {
         &["DONT_FLAG", "FLAG"]
     }
 }
-impl AsRef<str> for CmfcDescriptiveVideoServiceFlag {
+impl ::std::convert::AsRef<str> for CmfcDescriptiveVideoServiceFlag {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

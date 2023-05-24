@@ -2,31 +2,31 @@
 
 /// <p>Describes an association between a subnet and an IPv6 CIDR block.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetIpv6CidrBlockAssociation {
     /// <p>The ID of the association.</p>
     #[doc(hidden)]
-    pub association_id: std::option::Option<std::string::String>,
+    pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 CIDR block.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block: std::option::Option<std::string::String>,
+    pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The state of the CIDR block.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_state: std::option::Option<crate::types::SubnetCidrBlockState>,
+    pub ipv6_cidr_block_state: ::std::option::Option<crate::types::SubnetCidrBlockState>,
 }
 impl SubnetIpv6CidrBlockAssociation {
     /// <p>The ID of the association.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>The IPv6 CIDR block.</p>
-    pub fn ipv6_cidr_block(&self) -> std::option::Option<&str> {
+    pub fn ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
         self.ipv6_cidr_block.as_deref()
     }
     /// <p>The state of the CIDR block.</p>
     pub fn ipv6_cidr_block_state(
         &self,
-    ) -> std::option::Option<&crate::types::SubnetCidrBlockState> {
+    ) -> ::std::option::Option<&crate::types::SubnetCidrBlockState> {
         self.ipv6_cidr_block_state.as_ref()
     }
 }
@@ -39,42 +39,56 @@ impl SubnetIpv6CidrBlockAssociation {
 
 /// A builder for [`SubnetIpv6CidrBlockAssociation`](crate::types::SubnetIpv6CidrBlockAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubnetIpv6CidrBlockAssociationBuilder {
-    pub(crate) association_id: std::option::Option<std::string::String>,
-    pub(crate) ipv6_cidr_block: std::option::Option<std::string::String>,
-    pub(crate) ipv6_cidr_block_state: std::option::Option<crate::types::SubnetCidrBlockState>,
+    pub(crate) association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_cidr_block_state: ::std::option::Option<crate::types::SubnetCidrBlockState>,
 }
 impl SubnetIpv6CidrBlockAssociationBuilder {
     /// <p>The ID of the association.</p>
-    pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.association_id = Some(input.into());
+    pub fn association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the association.</p>
-    pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_association_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.association_id = input;
         self
     }
     /// <p>The IPv6 CIDR block.</p>
-    pub fn ipv6_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipv6_cidr_block = Some(input.into());
+    pub fn ipv6_cidr_block(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR block.</p>
-    pub fn set_ipv6_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv6_cidr_block(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ipv6_cidr_block = input;
         self
     }
     /// <p>The state of the CIDR block.</p>
     pub fn ipv6_cidr_block_state(mut self, input: crate::types::SubnetCidrBlockState) -> Self {
-        self.ipv6_cidr_block_state = Some(input);
+        self.ipv6_cidr_block_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the CIDR block.</p>
     pub fn set_ipv6_cidr_block_state(
         mut self,
-        input: std::option::Option<crate::types::SubnetCidrBlockState>,
+        input: ::std::option::Option<crate::types::SubnetCidrBlockState>,
     ) -> Self {
         self.ipv6_cidr_block_state = input;
         self

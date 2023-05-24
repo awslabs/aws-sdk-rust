@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CapacitySizeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CapacitySizeType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CapacitySizeType {
+impl ::std::convert::From<&str> for CapacitySizeType {
     fn from(s: &str) -> Self {
         match s {
             "CAPACITY_PERCENT" => CapacitySizeType::CapacityPercent,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CapacitySizeType {
         }
     }
 }
-impl std::str::FromStr for CapacitySizeType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CapacitySizeType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CapacitySizeType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CapacitySizeType::from(s))
     }
 }
 impl CapacitySizeType {
@@ -86,7 +86,7 @@ impl CapacitySizeType {
         &["CAPACITY_PERCENT", "INSTANCE_COUNT"]
     }
 }
-impl AsRef<str> for CapacitySizeType {
+impl ::std::convert::AsRef<str> for CapacitySizeType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

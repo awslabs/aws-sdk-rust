@@ -2,15 +2,15 @@
 
 /// <p>Request to disassociate the operations role from an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateEnvironmentOperationsRoleInput {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
 }
@@ -23,24 +23,32 @@ impl DisassociateEnvironmentOperationsRoleInput {
 
 /// A builder for [`DisassociateEnvironmentOperationsRoleInput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisassociateEnvironmentOperationsRoleInputBuilder {
-    pub(crate) environment_name: std::option::Option<std::string::String>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateEnvironmentOperationsRoleInputBuilder {
     /// <p>The name of the environment from which to disassociate the operations role.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment from which to disassociate the operations role.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DisassociateEnvironmentOperationsRoleInput`](crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::disassociate_environment_operations_role::DisassociateEnvironmentOperationsRoleInput {
                 environment_name: self.environment_name
                 ,

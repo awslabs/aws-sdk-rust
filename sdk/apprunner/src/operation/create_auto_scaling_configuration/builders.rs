@@ -9,47 +9,50 @@ pub use crate::operation::create_auto_scaling_configuration::_create_auto_scalin
 /// <p>Create multiple revisions of a configuration by calling this action multiple times using the same <code>AutoScalingConfigurationName</code>. The call returns incremental <code>AutoScalingConfigurationRevision</code> values. When you create a service and configure an auto scaling configuration resource, the service uses the latest active revision of the auto scaling configuration by default. You can optionally configure the service to use a specific revision.</p>
 /// <p>Configure a higher <code>MinSize</code> to increase the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost.</p>
 /// <p>Configure a lower <code>MaxSize</code> to control your cost. The tradeoff is lower responsiveness during peak demand.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAutoScalingConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationInputBuilder,
 }
 impl CreateAutoScalingConfigurationFluentBuilder {
     /// Creates a new `CreateAutoScalingConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -60,7 +63,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError>>
                          {
         self.send_middleware().await
     }
@@ -70,7 +73,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     /// </note>
     pub fn auto_scaling_configuration_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.auto_scaling_configuration_name(input.into());
         self
@@ -81,7 +84,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     /// </note>
     pub fn set_auto_scaling_configuration_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_auto_scaling_configuration_name(input);
         self
@@ -94,7 +97,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     }
     /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
     /// <p>Default: <code>100</code> </p>
-    pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_concurrency(input);
         self
     }
@@ -108,7 +111,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
     /// <p>Default: <code>1</code> </p>
-    pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_size(input);
         self
     }
@@ -120,7 +123,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     }
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     /// <p>Default: <code>25</code> </p>
-    pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_size(input);
         self
     }
@@ -136,7 +139,7 @@ impl CreateAutoScalingConfigurationFluentBuilder {
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

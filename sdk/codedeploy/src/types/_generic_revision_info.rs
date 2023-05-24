@@ -2,43 +2,43 @@
 
 /// <p>Information about an application revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenericRevisionInfo {
     /// <p>A comment about the revision.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The deployment groups for which this is the current target revision.</p>
     #[doc(hidden)]
-    pub deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub deployment_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When the revision was first used by CodeDeploy.</p>
     #[doc(hidden)]
-    pub first_used_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub first_used_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the revision was last used by CodeDeploy.</p>
     #[doc(hidden)]
-    pub last_used_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_used_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the revision was registered with CodeDeploy.</p>
     #[doc(hidden)]
-    pub register_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub register_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GenericRevisionInfo {
     /// <p>A comment about the revision.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The deployment groups for which this is the current target revision.</p>
-    pub fn deployment_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn deployment_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.deployment_groups.as_deref()
     }
     /// <p>When the revision was first used by CodeDeploy.</p>
-    pub fn first_used_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn first_used_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.first_used_time.as_ref()
     }
     /// <p>When the revision was last used by CodeDeploy.</p>
-    pub fn last_used_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_used_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_used_time.as_ref()
     }
     /// <p>When the revision was registered with CodeDeploy.</p>
-    pub fn register_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn register_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.register_time.as_ref()
     }
 }
@@ -51,22 +51,24 @@ impl GenericRevisionInfo {
 
 /// A builder for [`GenericRevisionInfo`](crate::types::GenericRevisionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GenericRevisionInfoBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) deployment_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) first_used_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_used_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) register_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) first_used_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_used_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) register_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GenericRevisionInfoBuilder {
     /// <p>A comment about the revision.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A comment about the revision.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -75,55 +77,58 @@ impl GenericRevisionInfoBuilder {
     /// To override the contents of this collection use [`set_deployment_groups`](Self::set_deployment_groups).
     ///
     /// <p>The deployment groups for which this is the current target revision.</p>
-    pub fn deployment_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn deployment_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.deployment_groups.unwrap_or_default();
         v.push(input.into());
-        self.deployment_groups = Some(v);
+        self.deployment_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The deployment groups for which this is the current target revision.</p>
     pub fn set_deployment_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.deployment_groups = input;
         self
     }
     /// <p>When the revision was first used by CodeDeploy.</p>
-    pub fn first_used_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.first_used_time = Some(input);
+    pub fn first_used_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.first_used_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the revision was first used by CodeDeploy.</p>
     pub fn set_first_used_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.first_used_time = input;
         self
     }
     /// <p>When the revision was last used by CodeDeploy.</p>
-    pub fn last_used_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_used_time = Some(input);
+    pub fn last_used_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_used_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the revision was last used by CodeDeploy.</p>
     pub fn set_last_used_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_used_time = input;
         self
     }
     /// <p>When the revision was registered with CodeDeploy.</p>
-    pub fn register_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.register_time = Some(input);
+    pub fn register_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.register_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the revision was registered with CodeDeploy.</p>
     pub fn set_register_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.register_time = input;
         self

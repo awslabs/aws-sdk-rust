@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LoadBalancerStateEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum LoadBalancerStateEnum {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LoadBalancerStateEnum {
+impl ::std::convert::From<&str> for LoadBalancerStateEnum {
     fn from(s: &str) -> Self {
         match s {
             "active" => LoadBalancerStateEnum::Active,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for LoadBalancerStateEnum {
         }
     }
 }
-impl std::str::FromStr for LoadBalancerStateEnum {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LoadBalancerStateEnum {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoadBalancerStateEnum::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LoadBalancerStateEnum::from(s))
     }
 }
 impl LoadBalancerStateEnum {
@@ -96,7 +96,7 @@ impl LoadBalancerStateEnum {
         &["active", "active_impaired", "failed", "provisioning"]
     }
 }
-impl AsRef<str> for LoadBalancerStateEnum {
+impl ::std::convert::AsRef<str> for LoadBalancerStateEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

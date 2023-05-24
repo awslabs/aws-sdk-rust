@@ -2,43 +2,43 @@
 
 /// <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleMetadata {
     /// <p>The ID of the rule.</p>
     #[doc(hidden)]
-    pub rule_id: std::option::Option<std::string::String>,
+    pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
-    pub rule_name: std::option::Option<std::string::String>,
+    pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>A short description of the rule.</p>
     #[doc(hidden)]
-    pub short_description: std::option::Option<std::string::String>,
+    pub short_description: ::std::option::Option<::std::string::String>,
     /// <p>A long description of the rule.</p>
     #[doc(hidden)]
-    pub long_description: std::option::Option<std::string::String>,
+    pub long_description: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are associated with the rule.</p>
     #[doc(hidden)]
-    pub rule_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub rule_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleMetadata {
     /// <p>The ID of the rule.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
         self.rule_id.as_deref()
     }
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>A short description of the rule.</p>
-    pub fn short_description(&self) -> std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<&str> {
         self.short_description.as_deref()
     }
     /// <p>A long description of the rule.</p>
-    pub fn long_description(&self) -> std::option::Option<&str> {
+    pub fn long_description(&self) -> ::std::option::Option<&str> {
         self.long_description.as_deref()
     }
     /// <p>Tags that are associated with the rule.</p>
-    pub fn rule_tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.rule_tags.as_deref()
     }
 }
@@ -51,55 +51,66 @@ impl RuleMetadata {
 
 /// A builder for [`RuleMetadata`](crate::types::RuleMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleMetadataBuilder {
-    pub(crate) rule_id: std::option::Option<std::string::String>,
-    pub(crate) rule_name: std::option::Option<std::string::String>,
-    pub(crate) short_description: std::option::Option<std::string::String>,
-    pub(crate) long_description: std::option::Option<std::string::String>,
-    pub(crate) rule_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) short_description: ::std::option::Option<::std::string::String>,
+    pub(crate) long_description: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleMetadataBuilder {
     /// <p>The ID of the rule.</p>
-    pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_id = Some(input.into());
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the rule.</p>
-    pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
     }
     /// <p>The name of the rule.</p>
-    pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_name = Some(input.into());
+    pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule.</p>
-    pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
     }
     /// <p>A short description of the rule.</p>
-    pub fn short_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.short_description = Some(input.into());
+    pub fn short_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.short_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short description of the rule.</p>
     pub fn set_short_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.short_description = input;
         self
     }
     /// <p>A long description of the rule.</p>
-    pub fn long_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.long_description = Some(input.into());
+    pub fn long_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.long_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A long description of the rule.</p>
-    pub fn set_long_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_long_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.long_description = input;
         self
     }
@@ -108,16 +119,16 @@ impl RuleMetadataBuilder {
     /// To override the contents of this collection use [`set_rule_tags`](Self::set_rule_tags).
     ///
     /// <p>Tags that are associated with the rule.</p>
-    pub fn rule_tags(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rule_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rule_tags.unwrap_or_default();
         v.push(input.into());
-        self.rule_tags = Some(v);
+        self.rule_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Tags that are associated with the rule.</p>
     pub fn set_rule_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.rule_tags = input;
         self

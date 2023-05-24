@@ -2,25 +2,25 @@
 
 /// <p>The information for an opted out number in an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptedOutNumberInformation {
     /// <p>The phone number that is opted out.</p>
     #[doc(hidden)]
-    pub opted_out_number: std::option::Option<std::string::String>,
+    pub opted_out_number: ::std::option::Option<::std::string::String>,
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     #[doc(hidden)]
-    pub opted_out_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub opted_out_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is set to true if it was the end recipient that opted out.</p>
     #[doc(hidden)]
     pub end_user_opted_out: bool,
 }
 impl OptedOutNumberInformation {
     /// <p>The phone number that is opted out.</p>
-    pub fn opted_out_number(&self) -> std::option::Option<&str> {
+    pub fn opted_out_number(&self) -> ::std::option::Option<&str> {
         self.opted_out_number.as_deref()
     }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn opted_out_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn opted_out_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.opted_out_timestamp.as_ref()
     }
     /// <p>This is set to true if it was the end recipient that opted out.</p>
@@ -37,43 +37,51 @@ impl OptedOutNumberInformation {
 
 /// A builder for [`OptedOutNumberInformation`](crate::types::OptedOutNumberInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OptedOutNumberInformationBuilder {
-    pub(crate) opted_out_number: std::option::Option<std::string::String>,
-    pub(crate) opted_out_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_user_opted_out: std::option::Option<bool>,
+    pub(crate) opted_out_number: ::std::option::Option<::std::string::String>,
+    pub(crate) opted_out_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_user_opted_out: ::std::option::Option<bool>,
 }
 impl OptedOutNumberInformationBuilder {
     /// <p>The phone number that is opted out.</p>
-    pub fn opted_out_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.opted_out_number = Some(input.into());
+    pub fn opted_out_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.opted_out_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number that is opted out.</p>
-    pub fn set_opted_out_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_opted_out_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.opted_out_number = input;
         self
     }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn opted_out_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.opted_out_timestamp = Some(input);
+    pub fn opted_out_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.opted_out_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the op tout occurred, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_opted_out_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.opted_out_timestamp = input;
         self
     }
     /// <p>This is set to true if it was the end recipient that opted out.</p>
     pub fn end_user_opted_out(mut self, input: bool) -> Self {
-        self.end_user_opted_out = Some(input);
+        self.end_user_opted_out = ::std::option::Option::Some(input);
         self
     }
     /// <p>This is set to true if it was the end recipient that opted out.</p>
-    pub fn set_end_user_opted_out(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_end_user_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
         self.end_user_opted_out = input;
         self
     }

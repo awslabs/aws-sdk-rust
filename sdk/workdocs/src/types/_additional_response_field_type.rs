@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AdditionalResponseFieldType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum AdditionalResponseFieldType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AdditionalResponseFieldType {
+impl ::std::convert::From<&str> for AdditionalResponseFieldType {
     fn from(s: &str) -> Self {
         match s {
             "WEBURL" => AdditionalResponseFieldType::Weburl,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for AdditionalResponseFieldType {
         }
     }
 }
-impl std::str::FromStr for AdditionalResponseFieldType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AdditionalResponseFieldType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdditionalResponseFieldType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AdditionalResponseFieldType::from(s))
     }
 }
 impl AdditionalResponseFieldType {
@@ -81,7 +81,7 @@ impl AdditionalResponseFieldType {
         &["WEBURL"]
     }
 }
-impl AsRef<str> for AdditionalResponseFieldType {
+impl ::std::convert::AsRef<str> for AdditionalResponseFieldType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeTcpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl VirtualNodeTcpConnectionPool {
 
 /// A builder for [`VirtualNodeTcpConnectionPool`](crate::types::VirtualNodeTcpConnectionPool).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualNodeTcpConnectionPoolBuilder {
-    pub(crate) max_connections: std::option::Option<i32>,
+    pub(crate) max_connections: ::std::option::Option<i32>,
 }
 impl VirtualNodeTcpConnectionPoolBuilder {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn max_connections(mut self, input: i32) -> Self {
-        self.max_connections = Some(input);
+        self.max_connections = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
-    pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_connections = input;
         self
     }

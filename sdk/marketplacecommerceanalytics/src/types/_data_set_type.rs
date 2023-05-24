@@ -61,13 +61,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DataSetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -123,7 +123,7 @@ pub enum DataSetType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DataSetType {
+impl ::std::convert::From<&str> for DataSetType {
     fn from(s: &str) -> Self {
         match s {
             "customer_profile_by_geography" => DataSetType::CustomerProfileByGeography,
@@ -185,11 +185,11 @@ impl std::convert::From<&str> for DataSetType {
         }
     }
 }
-impl std::str::FromStr for DataSetType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DataSetType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataSetType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DataSetType::from(s))
     }
 }
 impl DataSetType {
@@ -285,7 +285,7 @@ impl DataSetType {
         ]
     }
 }
-impl AsRef<str> for DataSetType {
+impl ::std::convert::AsRef<str> for DataSetType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,15 +2,15 @@
 
 /// <p>Describes the monitoring of an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Monitoring {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::MonitoringState>,
+    pub state: ::std::option::Option<crate::types::MonitoringState>,
 }
 impl Monitoring {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::MonitoringState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::MonitoringState> {
         self.state.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl Monitoring {
 
 /// A builder for [`Monitoring`](crate::types::Monitoring).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringBuilder {
-    pub(crate) state: std::option::Option<crate::types::MonitoringState>,
+    pub(crate) state: ::std::option::Option<crate::types::MonitoringState>,
 }
 impl MonitoringBuilder {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn state(mut self, input: crate::types::MonitoringState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::MonitoringState>) -> Self {
+    pub fn set_state(
+        mut self,
+        input: ::std::option::Option<crate::types::MonitoringState>,
+    ) -> Self {
         self.state = input;
         self
     }

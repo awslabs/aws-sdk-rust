@@ -2,15 +2,15 @@
 
 /// <p>An Availability Zone for the automatic scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
     /// <p>The name of the Availability Zone.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -25,18 +25,20 @@ impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails {
 
 /// A builder for [`AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails`](crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsBuilder {
     /// <p>The name of the Availability Zone.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

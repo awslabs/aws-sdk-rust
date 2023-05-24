@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EarthObservationJobStatus {
     /// COMPLETED
@@ -72,7 +72,7 @@ pub enum EarthObservationJobStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EarthObservationJobStatus {
+impl ::std::convert::From<&str> for EarthObservationJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => EarthObservationJobStatus::Completed,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for EarthObservationJobStatus {
         }
     }
 }
-impl std::str::FromStr for EarthObservationJobStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EarthObservationJobStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EarthObservationJobStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EarthObservationJobStatus::from(s))
     }
 }
 impl EarthObservationJobStatus {
@@ -125,7 +125,7 @@ impl EarthObservationJobStatus {
         ]
     }
 }
-impl AsRef<str> for EarthObservationJobStatus {
+impl ::std::convert::AsRef<str> for EarthObservationJobStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

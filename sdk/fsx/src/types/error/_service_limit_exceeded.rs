@@ -2,48 +2,48 @@
 
 /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceLimitExceeded {
     /// <p>Enumeration of the service limit that was exceeded. </p>
     #[doc(hidden)]
-    pub limit: std::option::Option<crate::types::ServiceLimit>,
+    pub limit: ::std::option::Option<crate::types::ServiceLimit>,
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub message: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceLimitExceeded {
     /// <p>Enumeration of the service limit that was exceeded. </p>
-    pub fn limit(&self) -> std::option::Option<&crate::types::ServiceLimit> {
+    pub fn limit(&self) -> ::std::option::Option<&crate::types::ServiceLimit> {
         self.limit.as_ref()
     }
 }
 impl ServiceLimitExceeded {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceLimitExceeded {
+impl ::std::fmt::Display for ServiceLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceLimitExceeded")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "ServiceLimitExceeded")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceLimitExceeded {}
-impl aws_http::request_id::RequestId for crate::types::error::ServiceLimitExceeded {
+impl ::std::error::Error for ServiceLimitExceeded {}
+impl ::aws_http::request_id::RequestId for crate::types::error::ServiceLimitExceeded {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceLimitExceeded {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,35 +56,37 @@ impl ServiceLimitExceeded {
 
 /// A builder for [`ServiceLimitExceeded`](crate::types::error::ServiceLimitExceeded).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceLimitExceededBuilder {
-    pub(crate) limit: std::option::Option<crate::types::ServiceLimit>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) limit: ::std::option::Option<crate::types::ServiceLimit>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceLimitExceededBuilder {
     /// <p>Enumeration of the service limit that was exceeded. </p>
     pub fn limit(mut self, input: crate::types::ServiceLimit) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enumeration of the service limit that was exceeded. </p>
-    pub fn set_limit(mut self, input: std::option::Option<crate::types::ServiceLimit>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<crate::types::ServiceLimit>) -> Self {
         self.limit = input;
         self
     }
     /// <p>A detailed error message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed error message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -92,7 +94,7 @@ impl ServiceLimitExceededBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

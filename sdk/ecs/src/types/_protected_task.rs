@@ -2,21 +2,21 @@
 
 /// <p>An object representing the protection status details for a task. You can set the protection status with the <code>UpdateTaskProtection</code> API and get the status of tasks with the <code>GetTaskProtection</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedTask {
     /// <p>The task ARN.</p>
     #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
+    pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
     #[doc(hidden)]
     pub protection_enabled: bool,
     /// <p>The epoch time when protection for the task will expire.</p>
     #[doc(hidden)]
-    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProtectedTask {
     /// <p>The task ARN.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
     /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
@@ -24,7 +24,7 @@ impl ProtectedTask {
         self.protection_enabled
     }
     /// <p>The epoch time when protection for the task will expire.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl ProtectedTask {
 
 /// A builder for [`ProtectedTask`](crate::types::ProtectedTask).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtectedTaskBuilder {
-    pub(crate) task_arn: std::option::Option<std::string::String>,
-    pub(crate) protection_enabled: std::option::Option<bool>,
-    pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) task_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) protection_enabled: ::std::option::Option<bool>,
+    pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProtectedTaskBuilder {
     /// <p>The task ARN.</p>
-    pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_arn = Some(input.into());
+    pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The task ARN.</p>
-    pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
     }
     /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
     pub fn protection_enabled(mut self, input: bool) -> Self {
-        self.protection_enabled = Some(input);
+        self.protection_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.</p>
-    pub fn set_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.protection_enabled = input;
         self
     }
     /// <p>The epoch time when protection for the task will expire.</p>
-    pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.expiration_date = Some(input);
+    pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expiration_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The epoch time when protection for the task will expire.</p>
     pub fn set_expiration_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.expiration_date = input;
         self

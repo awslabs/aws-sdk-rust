@@ -2,22 +2,22 @@
 
 /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemWindowsConfiguration {
     /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>
     #[doc(hidden)]
-    pub skip_final_backup: std::option::Option<bool>,
+    pub skip_final_backup: ::std::option::Option<bool>,
     /// <p>A set of tags for your final backup.</p>
     #[doc(hidden)]
-    pub final_backup_tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteFileSystemWindowsConfiguration {
     /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>
-    pub fn skip_final_backup(&self) -> std::option::Option<bool> {
+    pub fn skip_final_backup(&self) -> ::std::option::Option<bool> {
         self.skip_final_backup
     }
     /// <p>A set of tags for your final backup.</p>
-    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn final_backup_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.final_backup_tags.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl DeleteFileSystemWindowsConfiguration {
 
 /// A builder for [`DeleteFileSystemWindowsConfiguration`](crate::types::DeleteFileSystemWindowsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFileSystemWindowsConfigurationBuilder {
-    pub(crate) skip_final_backup: std::option::Option<bool>,
-    pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) skip_final_backup: ::std::option::Option<bool>,
+    pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteFileSystemWindowsConfigurationBuilder {
     /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>
     pub fn skip_final_backup(mut self, input: bool) -> Self {
-        self.skip_final_backup = Some(input);
+        self.skip_final_backup = ::std::option::Option::Some(input);
         self
     }
     /// <p>By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code> operation is invoked. Doing this helps protect you from data loss, and we highly recommend taking the final backup. If you want to skip this backup, use this flag to do so.</p>
-    pub fn set_skip_final_backup(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_final_backup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_final_backup = input;
         self
     }
@@ -54,13 +56,13 @@ impl DeleteFileSystemWindowsConfigurationBuilder {
     pub fn final_backup_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.final_backup_tags.unwrap_or_default();
         v.push(input);
-        self.final_backup_tags = Some(v);
+        self.final_backup_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A set of tags for your final backup.</p>
     pub fn set_final_backup_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.final_backup_tags = input;
         self

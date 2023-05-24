@@ -4,22 +4,22 @@
 /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>errorStack</code> and <code>errorTypes</code> response. This field will not be returned for earlier Greengrass nucleus versions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EffectiveDeploymentStatusDetails {
     /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
     #[doc(hidden)]
-    pub error_stack: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub error_stack: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
     #[doc(hidden)]
-    pub error_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub error_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EffectiveDeploymentStatusDetails {
     /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
-    pub fn error_stack(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn error_stack(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.error_stack.as_deref()
     }
     /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
-    pub fn error_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn error_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.error_types.as_deref()
     }
 }
@@ -32,10 +32,12 @@ impl EffectiveDeploymentStatusDetails {
 
 /// A builder for [`EffectiveDeploymentStatusDetails`](crate::types::EffectiveDeploymentStatusDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EffectiveDeploymentStatusDetailsBuilder {
-    pub(crate) error_stack: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) error_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) error_stack: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) error_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EffectiveDeploymentStatusDetailsBuilder {
     /// Appends an item to `error_stack`.
@@ -43,16 +45,16 @@ impl EffectiveDeploymentStatusDetailsBuilder {
     /// To override the contents of this collection use [`set_error_stack`](Self::set_error_stack).
     ///
     /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
-    pub fn error_stack(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn error_stack(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.error_stack.unwrap_or_default();
         v.push(input.into());
-        self.error_stack = Some(v);
+        self.error_stack = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains an ordered list of short error codes that range from the most generic error to the most specific one. The error codes describe the reason for failure whenever the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will be an empty list if there is no error.</p>
     pub fn set_error_stack(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.error_stack = input;
         self
@@ -62,16 +64,16 @@ impl EffectiveDeploymentStatusDetailsBuilder {
     /// To override the contents of this collection use [`set_error_types`](Self::set_error_types).
     ///
     /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
-    pub fn error_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn error_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.error_types.unwrap_or_default();
         v.push(input.into());
-        self.error_types = Some(v);
+        self.error_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains tags which describe the error. You can use the error types to classify errors to assist with remediating the failure. The response will be an empty list if there is no error.</p>
     pub fn set_error_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.error_types = input;
         self

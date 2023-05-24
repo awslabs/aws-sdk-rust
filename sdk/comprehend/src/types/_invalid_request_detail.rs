@@ -8,15 +8,15 @@
 /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidRequestDetail {
     /// <p>Reason code is <code>INVALID_DOCUMENT</code>.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::InvalidRequestDetailReason>,
+    pub reason: ::std::option::Option<crate::types::InvalidRequestDetailReason>,
 }
 impl InvalidRequestDetail {
     /// <p>Reason code is <code>INVALID_DOCUMENT</code>.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::InvalidRequestDetailReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::InvalidRequestDetailReason> {
         self.reason.as_ref()
     }
 }
@@ -29,20 +29,22 @@ impl InvalidRequestDetail {
 
 /// A builder for [`InvalidRequestDetail`](crate::types::InvalidRequestDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidRequestDetailBuilder {
-    pub(crate) reason: std::option::Option<crate::types::InvalidRequestDetailReason>,
+    pub(crate) reason: ::std::option::Option<crate::types::InvalidRequestDetailReason>,
 }
 impl InvalidRequestDetailBuilder {
     /// <p>Reason code is <code>INVALID_DOCUMENT</code>.</p>
     pub fn reason(mut self, input: crate::types::InvalidRequestDetailReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reason code is <code>INVALID_DOCUMENT</code>.</p>
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::InvalidRequestDetailReason>,
+        input: ::std::option::Option<crate::types::InvalidRequestDetailReason>,
     ) -> Self {
         self.reason = input;
         self

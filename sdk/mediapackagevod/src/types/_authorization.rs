@@ -2,22 +2,22 @@
 
 /// CDN Authorization credentials
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Authorization {
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
     #[doc(hidden)]
-    pub cdn_identifier_secret: std::option::Option<std::string::String>,
+    pub cdn_identifier_secret: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
     #[doc(hidden)]
-    pub secrets_role_arn: std::option::Option<std::string::String>,
+    pub secrets_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl Authorization {
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
-    pub fn cdn_identifier_secret(&self) -> std::option::Option<&str> {
+    pub fn cdn_identifier_secret(&self) -> ::std::option::Option<&str> {
         self.cdn_identifier_secret.as_deref()
     }
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-    pub fn secrets_role_arn(&self) -> std::option::Option<&str> {
+    pub fn secrets_role_arn(&self) -> ::std::option::Option<&str> {
         self.secrets_role_arn.as_deref()
     }
 }
@@ -30,32 +30,43 @@ impl Authorization {
 
 /// A builder for [`Authorization`](crate::types::Authorization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthorizationBuilder {
-    pub(crate) cdn_identifier_secret: std::option::Option<std::string::String>,
-    pub(crate) secrets_role_arn: std::option::Option<std::string::String>,
+    pub(crate) cdn_identifier_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) secrets_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AuthorizationBuilder {
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
-    pub fn cdn_identifier_secret(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cdn_identifier_secret = Some(input.into());
+    pub fn cdn_identifier_secret(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cdn_identifier_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is used for CDN authorization.
     pub fn set_cdn_identifier_secret(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cdn_identifier_secret = input;
         self
     }
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-    pub fn secrets_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secrets_role_arn = Some(input.into());
+    pub fn secrets_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secrets_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
-    pub fn set_secrets_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secrets_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.secrets_role_arn = input;
         self
     }

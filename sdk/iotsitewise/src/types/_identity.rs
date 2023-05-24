@@ -4,36 +4,36 @@
 /// <p>Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM Identity Center identity IDs in the URL of user and group pages in the <a href="https://console.aws.amazon.com/singlesignon">IAM Identity Center console</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Identity {
     /// <p>An IAM Identity Center user identity.</p>
     #[doc(hidden)]
-    pub user: std::option::Option<crate::types::UserIdentity>,
+    pub user: ::std::option::Option<crate::types::UserIdentity>,
     /// <p>An IAM Identity Center group identity.</p>
     #[doc(hidden)]
-    pub group: std::option::Option<crate::types::GroupIdentity>,
+    pub group: ::std::option::Option<crate::types::GroupIdentity>,
     /// <p>An IAM user identity.</p>
     #[doc(hidden)]
-    pub iam_user: std::option::Option<crate::types::IamUserIdentity>,
+    pub iam_user: ::std::option::Option<crate::types::IamUserIdentity>,
     /// <p>An IAM role identity.</p>
     #[doc(hidden)]
-    pub iam_role: std::option::Option<crate::types::IamRoleIdentity>,
+    pub iam_role: ::std::option::Option<crate::types::IamRoleIdentity>,
 }
 impl Identity {
     /// <p>An IAM Identity Center user identity.</p>
-    pub fn user(&self) -> std::option::Option<&crate::types::UserIdentity> {
+    pub fn user(&self) -> ::std::option::Option<&crate::types::UserIdentity> {
         self.user.as_ref()
     }
     /// <p>An IAM Identity Center group identity.</p>
-    pub fn group(&self) -> std::option::Option<&crate::types::GroupIdentity> {
+    pub fn group(&self) -> ::std::option::Option<&crate::types::GroupIdentity> {
         self.group.as_ref()
     }
     /// <p>An IAM user identity.</p>
-    pub fn iam_user(&self) -> std::option::Option<&crate::types::IamUserIdentity> {
+    pub fn iam_user(&self) -> ::std::option::Option<&crate::types::IamUserIdentity> {
         self.iam_user.as_ref()
     }
     /// <p>An IAM role identity.</p>
-    pub fn iam_role(&self) -> std::option::Option<&crate::types::IamRoleIdentity> {
+    pub fn iam_role(&self) -> ::std::option::Option<&crate::types::IamRoleIdentity> {
         self.iam_role.as_ref()
     }
 }
@@ -46,56 +46,58 @@ impl Identity {
 
 /// A builder for [`Identity`](crate::types::Identity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IdentityBuilder {
-    pub(crate) user: std::option::Option<crate::types::UserIdentity>,
-    pub(crate) group: std::option::Option<crate::types::GroupIdentity>,
-    pub(crate) iam_user: std::option::Option<crate::types::IamUserIdentity>,
-    pub(crate) iam_role: std::option::Option<crate::types::IamRoleIdentity>,
+    pub(crate) user: ::std::option::Option<crate::types::UserIdentity>,
+    pub(crate) group: ::std::option::Option<crate::types::GroupIdentity>,
+    pub(crate) iam_user: ::std::option::Option<crate::types::IamUserIdentity>,
+    pub(crate) iam_role: ::std::option::Option<crate::types::IamRoleIdentity>,
 }
 impl IdentityBuilder {
     /// <p>An IAM Identity Center user identity.</p>
     pub fn user(mut self, input: crate::types::UserIdentity) -> Self {
-        self.user = Some(input);
+        self.user = ::std::option::Option::Some(input);
         self
     }
     /// <p>An IAM Identity Center user identity.</p>
-    pub fn set_user(mut self, input: std::option::Option<crate::types::UserIdentity>) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserIdentity>) -> Self {
         self.user = input;
         self
     }
     /// <p>An IAM Identity Center group identity.</p>
     pub fn group(mut self, input: crate::types::GroupIdentity) -> Self {
-        self.group = Some(input);
+        self.group = ::std::option::Option::Some(input);
         self
     }
     /// <p>An IAM Identity Center group identity.</p>
-    pub fn set_group(mut self, input: std::option::Option<crate::types::GroupIdentity>) -> Self {
+    pub fn set_group(mut self, input: ::std::option::Option<crate::types::GroupIdentity>) -> Self {
         self.group = input;
         self
     }
     /// <p>An IAM user identity.</p>
     pub fn iam_user(mut self, input: crate::types::IamUserIdentity) -> Self {
-        self.iam_user = Some(input);
+        self.iam_user = ::std::option::Option::Some(input);
         self
     }
     /// <p>An IAM user identity.</p>
     pub fn set_iam_user(
         mut self,
-        input: std::option::Option<crate::types::IamUserIdentity>,
+        input: ::std::option::Option<crate::types::IamUserIdentity>,
     ) -> Self {
         self.iam_user = input;
         self
     }
     /// <p>An IAM role identity.</p>
     pub fn iam_role(mut self, input: crate::types::IamRoleIdentity) -> Self {
-        self.iam_role = Some(input);
+        self.iam_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>An IAM role identity.</p>
     pub fn set_iam_role(
         mut self,
-        input: std::option::Option<crate::types::IamRoleIdentity>,
+        input: ::std::option::Option<crate::types::IamRoleIdentity>,
     ) -> Self {
         self.iam_role = input;
         self

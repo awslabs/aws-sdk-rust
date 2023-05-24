@@ -2,47 +2,47 @@
 
 /// <p>Contains the additional parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionAuthRequestParameters {
     /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
     #[doc(hidden)]
     pub basic_auth_parameters:
-        std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>,
+        ::std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>,
     /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
     #[doc(hidden)]
     pub o_auth_parameters:
-        std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
+        ::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
     /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
     #[doc(hidden)]
     pub api_key_auth_parameters:
-        std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
+        ::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
     #[doc(hidden)]
-    pub invocation_http_parameters: std::option::Option<crate::types::ConnectionHttpParameters>,
+    pub invocation_http_parameters: ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
 impl UpdateConnectionAuthRequestParameters {
     /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
     pub fn basic_auth_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateConnectionBasicAuthRequestParameters> {
+    ) -> ::std::option::Option<&crate::types::UpdateConnectionBasicAuthRequestParameters> {
         self.basic_auth_parameters.as_ref()
     }
     /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
     pub fn o_auth_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateConnectionOAuthRequestParameters> {
+    ) -> ::std::option::Option<&crate::types::UpdateConnectionOAuthRequestParameters> {
         self.o_auth_parameters.as_ref()
     }
     /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
     pub fn api_key_auth_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateConnectionApiKeyAuthRequestParameters> {
+    ) -> ::std::option::Option<&crate::types::UpdateConnectionApiKeyAuthRequestParameters> {
         self.api_key_auth_parameters.as_ref()
     }
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
     pub fn invocation_http_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::ConnectionHttpParameters> {
+    ) -> ::std::option::Option<&crate::types::ConnectionHttpParameters> {
         self.invocation_http_parameters.as_ref()
     }
 }
@@ -55,16 +55,18 @@ impl UpdateConnectionAuthRequestParameters {
 
 /// A builder for [`UpdateConnectionAuthRequestParameters`](crate::types::UpdateConnectionAuthRequestParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateConnectionAuthRequestParametersBuilder {
     pub(crate) basic_auth_parameters:
-        std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>,
+        ::std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>,
     pub(crate) o_auth_parameters:
-        std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
+        ::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
     pub(crate) api_key_auth_parameters:
-        std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
+        ::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
     pub(crate) invocation_http_parameters:
-        std::option::Option<crate::types::ConnectionHttpParameters>,
+        ::std::option::Option<crate::types::ConnectionHttpParameters>,
 }
 impl UpdateConnectionAuthRequestParametersBuilder {
     /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
@@ -72,13 +74,13 @@ impl UpdateConnectionAuthRequestParametersBuilder {
         mut self,
         input: crate::types::UpdateConnectionBasicAuthRequestParameters,
     ) -> Self {
-        self.basic_auth_parameters = Some(input);
+        self.basic_auth_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
     pub fn set_basic_auth_parameters(
         mut self,
-        input: std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>,
+        input: ::std::option::Option<crate::types::UpdateConnectionBasicAuthRequestParameters>,
     ) -> Self {
         self.basic_auth_parameters = input;
         self
@@ -88,13 +90,13 @@ impl UpdateConnectionAuthRequestParametersBuilder {
         mut self,
         input: crate::types::UpdateConnectionOAuthRequestParameters,
     ) -> Self {
-        self.o_auth_parameters = Some(input);
+        self.o_auth_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
     pub fn set_o_auth_parameters(
         mut self,
-        input: std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
+        input: ::std::option::Option<crate::types::UpdateConnectionOAuthRequestParameters>,
     ) -> Self {
         self.o_auth_parameters = input;
         self
@@ -104,13 +106,13 @@ impl UpdateConnectionAuthRequestParametersBuilder {
         mut self,
         input: crate::types::UpdateConnectionApiKeyAuthRequestParameters,
     ) -> Self {
-        self.api_key_auth_parameters = Some(input);
+        self.api_key_auth_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
     pub fn set_api_key_auth_parameters(
         mut self,
-        input: std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
+        input: ::std::option::Option<crate::types::UpdateConnectionApiKeyAuthRequestParameters>,
     ) -> Self {
         self.api_key_auth_parameters = input;
         self
@@ -120,13 +122,13 @@ impl UpdateConnectionAuthRequestParametersBuilder {
         mut self,
         input: crate::types::ConnectionHttpParameters,
     ) -> Self {
-        self.invocation_http_parameters = Some(input);
+        self.invocation_http_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
     pub fn set_invocation_http_parameters(
         mut self,
-        input: std::option::Option<crate::types::ConnectionHttpParameters>,
+        input: ::std::option::Option<crate::types::ConnectionHttpParameters>,
     ) -> Self {
         self.invocation_http_parameters = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and authoritative record of the events related to all tasks and events in the life of the workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistoryOutput {
     /// <p>The list of history events.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::HistoryEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
-    pub next_page_token: std::option::Option<std::string::String>,
+    pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkflowExecutionHistoryOutput {
     /// <p>The list of history events.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::HistoryEvent]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::HistoryEvent]> {
         self.events.as_deref()
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetWorkflowExecutionHistoryOutput {
+impl ::aws_http::request_id::RequestId for GetWorkflowExecutionHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl GetWorkflowExecutionHistoryOutput {
 
 /// A builder for [`GetWorkflowExecutionHistoryOutput`](crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetWorkflowExecutionHistoryOutputBuilder {
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::HistoryEvent>>,
-    pub(crate) next_page_token: std::option::Option<std::string::String>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
+    pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkflowExecutionHistoryOutputBuilder {
@@ -53,26 +55,32 @@ impl GetWorkflowExecutionHistoryOutputBuilder {
     pub fn events(mut self, input: crate::types::HistoryEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of history events.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HistoryEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoryEvent>>,
     ) -> Self {
         self.events = input;
         self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_page_token = Some(input.into());
+    pub fn next_page_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_page_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.next_page_token = input;
         self
     }

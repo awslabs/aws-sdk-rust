@@ -2,15 +2,15 @@
 
 /// <p>A structure that holds information regarding a detected signature on a page.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedSignature {
     /// <p>The page a detected signature was found on.</p>
     #[doc(hidden)]
-    pub page: std::option::Option<i32>,
+    pub page: ::std::option::Option<i32>,
 }
 impl DetectedSignature {
     /// <p>The page a detected signature was found on.</p>
-    pub fn page(&self) -> std::option::Option<i32> {
+    pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
 }
@@ -23,18 +23,20 @@ impl DetectedSignature {
 
 /// A builder for [`DetectedSignature`](crate::types::DetectedSignature).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectedSignatureBuilder {
-    pub(crate) page: std::option::Option<i32>,
+    pub(crate) page: ::std::option::Option<i32>,
 }
 impl DetectedSignatureBuilder {
     /// <p>The page a detected signature was found on.</p>
     pub fn page(mut self, input: i32) -> Self {
-        self.page = Some(input);
+        self.page = ::std::option::Option::Some(input);
         self
     }
     /// <p>The page a detected signature was found on.</p>
-    pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page = input;
         self
     }

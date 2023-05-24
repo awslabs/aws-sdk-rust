@@ -2,15 +2,15 @@
 
 /// <p>Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these target groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupsConfig {
     /// <p>One or more target groups.</p>
     #[doc(hidden)]
-    pub target_groups: std::option::Option<std::vec::Vec<crate::types::TargetGroup>>,
+    pub target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
 }
 impl TargetGroupsConfig {
     /// <p>One or more target groups.</p>
-    pub fn target_groups(&self) -> std::option::Option<&[crate::types::TargetGroup]> {
+    pub fn target_groups(&self) -> ::std::option::Option<&[crate::types::TargetGroup]> {
         self.target_groups.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl TargetGroupsConfig {
 
 /// A builder for [`TargetGroupsConfig`](crate::types::TargetGroupsConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetGroupsConfigBuilder {
-    pub(crate) target_groups: std::option::Option<std::vec::Vec<crate::types::TargetGroup>>,
+    pub(crate) target_groups: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
 }
 impl TargetGroupsConfigBuilder {
     /// Appends an item to `target_groups`.
@@ -36,13 +38,13 @@ impl TargetGroupsConfigBuilder {
     pub fn target_groups(mut self, input: crate::types::TargetGroup) -> Self {
         let mut v = self.target_groups.unwrap_or_default();
         v.push(input);
-        self.target_groups = Some(v);
+        self.target_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more target groups.</p>
     pub fn set_target_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroup>>,
     ) -> Self {
         self.target_groups = input;
         self

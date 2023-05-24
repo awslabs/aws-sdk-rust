@@ -2,25 +2,25 @@
 
 /// <p>A request to change the DKIM attributes for an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEmailIdentityDkimSigningAttributesInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
-    pub email_identity: std::option::Option<std::string::String>,
+    pub email_identity: ::std::option::Option<::std::string::String>,
     /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
     /// <ul>
     /// <li> <p> <code>AWS_SES</code> – Configure DKIM for the identity by using <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p> </li>
     /// <li> <p> <code>EXTERNAL</code> – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub signing_attributes_origin: std::option::Option<crate::types::DkimSigningAttributesOrigin>,
+    pub signing_attributes_origin: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
     /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     #[doc(hidden)]
-    pub signing_attributes: std::option::Option<crate::types::DkimSigningAttributes>,
+    pub signing_attributes: ::std::option::Option<crate::types::DkimSigningAttributes>,
 }
 impl PutEmailIdentityDkimSigningAttributesInput {
     /// <p>The email identity.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> ::std::option::Option<&str> {
         self.email_identity.as_deref()
     }
     /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
@@ -30,11 +30,13 @@ impl PutEmailIdentityDkimSigningAttributesInput {
     /// </ul>
     pub fn signing_attributes_origin(
         &self,
-    ) -> std::option::Option<&crate::types::DkimSigningAttributesOrigin> {
+    ) -> ::std::option::Option<&crate::types::DkimSigningAttributesOrigin> {
         self.signing_attributes_origin.as_ref()
     }
     /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
-    pub fn signing_attributes(&self) -> std::option::Option<&crate::types::DkimSigningAttributes> {
+    pub fn signing_attributes(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DkimSigningAttributes> {
         self.signing_attributes.as_ref()
     }
 }
@@ -47,21 +49,29 @@ impl PutEmailIdentityDkimSigningAttributesInput {
 
 /// A builder for [`PutEmailIdentityDkimSigningAttributesInput`](crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutEmailIdentityDkimSigningAttributesInputBuilder {
-    pub(crate) email_identity: std::option::Option<std::string::String>,
+    pub(crate) email_identity: ::std::option::Option<::std::string::String>,
     pub(crate) signing_attributes_origin:
-        std::option::Option<crate::types::DkimSigningAttributesOrigin>,
-    pub(crate) signing_attributes: std::option::Option<crate::types::DkimSigningAttributes>,
+        ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
+    pub(crate) signing_attributes: ::std::option::Option<crate::types::DkimSigningAttributes>,
 }
 impl PutEmailIdentityDkimSigningAttributesInputBuilder {
     /// <p>The email identity.</p>
-    pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_identity = Some(input.into());
+    pub fn email_identity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email identity.</p>
-    pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_identity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_identity = input;
         self
     }
@@ -74,7 +84,7 @@ impl PutEmailIdentityDkimSigningAttributesInputBuilder {
         mut self,
         input: crate::types::DkimSigningAttributesOrigin,
     ) -> Self {
-        self.signing_attributes_origin = Some(input);
+        self.signing_attributes_origin = ::std::option::Option::Some(input);
         self
     }
     /// <p>The method to use to configure DKIM for the identity. There are the following possible values:</p>
@@ -84,27 +94,27 @@ impl PutEmailIdentityDkimSigningAttributesInputBuilder {
     /// </ul>
     pub fn set_signing_attributes_origin(
         mut self,
-        input: std::option::Option<crate::types::DkimSigningAttributesOrigin>,
+        input: ::std::option::Option<crate::types::DkimSigningAttributesOrigin>,
     ) -> Self {
         self.signing_attributes_origin = input;
         self
     }
     /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     pub fn signing_attributes(mut self, input: crate::types::DkimSigningAttributes) -> Self {
-        self.signing_attributes = Some(input);
+        self.signing_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
     pub fn set_signing_attributes(
         mut self,
-        input: std::option::Option<crate::types::DkimSigningAttributes>,
+        input: ::std::option::Option<crate::types::DkimSigningAttributes>,
     ) -> Self {
         self.signing_attributes = input;
         self
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityDkimSigningAttributesInput`](crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesInput).
-    pub fn build(self) -> Result<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesInput {
                 email_identity: self.email_identity
                 ,

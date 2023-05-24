@@ -7,47 +7,50 @@ pub use crate::operation::get_lambda_function_recommendations::_get_lambda_funct
 ///
 /// <p>Returns Lambda function recommendations.</p>
 /// <p>Compute Optimizer generates recommendations for functions that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsInputBuilder,
 }
 impl GetLambdaFunctionRecommendationsFluentBuilder {
     /// Creates a new `GetLambdaFunctionRecommendations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput, aws_smithy_http::result::SdkError<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,7 +61,7 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput, aws_smithy_http::result::SdkError<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendationsError>>
                          {
         self.send_middleware().await
     }
@@ -74,7 +77,10 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     ///
     /// <p>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</p>
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn function_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn function_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.function_arns(input.into());
         self
     }
@@ -82,7 +88,7 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     /// <p>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN without a function version suffix, Compute Optimizer will return recommendations for the latest (<code>$LATEST</code>) version of the function. If you specify a qualified ARN with a version suffix, Compute Optimizer will return recommendations for the specified function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using versions</a> in the <i>Lambda Developer Guide</i>.</p>
     pub fn set_function_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_function_arns(input);
         self
@@ -94,7 +100,7 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return function recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return function recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
@@ -103,7 +109,7 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     /// <p>Only one account ID can be specified per request.</p>
     pub fn set_account_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
@@ -120,18 +126,20 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     /// <p>An array of objects to specify a filter that returns a more specific list of function recommendations.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to advance to the next page of function recommendations.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -143,7 +151,7 @@ impl GetLambdaFunctionRecommendationsFluentBuilder {
     }
     /// <p>The maximum number of function recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

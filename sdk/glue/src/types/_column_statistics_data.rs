@@ -2,83 +2,83 @@
 
 /// <p>Contains the individual types of column statistics data. Only one data object should be set and indicated by the <code>Type</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnStatisticsData {
     /// <p>The type of column statistics data.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ColumnStatisticsType>,
+    pub r#type: ::std::option::Option<crate::types::ColumnStatisticsType>,
     /// <p>Boolean column statistics data.</p>
     #[doc(hidden)]
     pub boolean_column_statistics_data:
-        std::option::Option<crate::types::BooleanColumnStatisticsData>,
+        ::std::option::Option<crate::types::BooleanColumnStatisticsData>,
     /// <p>Date column statistics data.</p>
     #[doc(hidden)]
-    pub date_column_statistics_data: std::option::Option<crate::types::DateColumnStatisticsData>,
+    pub date_column_statistics_data: ::std::option::Option<crate::types::DateColumnStatisticsData>,
     /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     #[doc(hidden)]
     pub decimal_column_statistics_data:
-        std::option::Option<crate::types::DecimalColumnStatisticsData>,
+        ::std::option::Option<crate::types::DecimalColumnStatisticsData>,
     /// <p>Double column statistics data.</p>
     #[doc(hidden)]
     pub double_column_statistics_data:
-        std::option::Option<crate::types::DoubleColumnStatisticsData>,
+        ::std::option::Option<crate::types::DoubleColumnStatisticsData>,
     /// <p>Long column statistics data.</p>
     #[doc(hidden)]
-    pub long_column_statistics_data: std::option::Option<crate::types::LongColumnStatisticsData>,
+    pub long_column_statistics_data: ::std::option::Option<crate::types::LongColumnStatisticsData>,
     /// <p>String column statistics data.</p>
     #[doc(hidden)]
     pub string_column_statistics_data:
-        std::option::Option<crate::types::StringColumnStatisticsData>,
+        ::std::option::Option<crate::types::StringColumnStatisticsData>,
     /// <p>Binary column statistics data.</p>
     #[doc(hidden)]
     pub binary_column_statistics_data:
-        std::option::Option<crate::types::BinaryColumnStatisticsData>,
+        ::std::option::Option<crate::types::BinaryColumnStatisticsData>,
 }
 impl ColumnStatisticsData {
     /// <p>The type of column statistics data.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ColumnStatisticsType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ColumnStatisticsType> {
         self.r#type.as_ref()
     }
     /// <p>Boolean column statistics data.</p>
     pub fn boolean_column_statistics_data(
         &self,
-    ) -> std::option::Option<&crate::types::BooleanColumnStatisticsData> {
+    ) -> ::std::option::Option<&crate::types::BooleanColumnStatisticsData> {
         self.boolean_column_statistics_data.as_ref()
     }
     /// <p>Date column statistics data.</p>
     pub fn date_column_statistics_data(
         &self,
-    ) -> std::option::Option<&crate::types::DateColumnStatisticsData> {
+    ) -> ::std::option::Option<&crate::types::DateColumnStatisticsData> {
         self.date_column_statistics_data.as_ref()
     }
     /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn decimal_column_statistics_data(
         &self,
-    ) -> std::option::Option<&crate::types::DecimalColumnStatisticsData> {
+    ) -> ::std::option::Option<&crate::types::DecimalColumnStatisticsData> {
         self.decimal_column_statistics_data.as_ref()
     }
     /// <p>Double column statistics data.</p>
     pub fn double_column_statistics_data(
         &self,
-    ) -> std::option::Option<&crate::types::DoubleColumnStatisticsData> {
+    ) -> ::std::option::Option<&crate::types::DoubleColumnStatisticsData> {
         self.double_column_statistics_data.as_ref()
     }
     /// <p>Long column statistics data.</p>
     pub fn long_column_statistics_data(
         &self,
-    ) -> std::option::Option<&crate::types::LongColumnStatisticsData> {
+    ) -> ::std::option::Option<&crate::types::LongColumnStatisticsData> {
         self.long_column_statistics_data.as_ref()
     }
     /// <p>String column statistics data.</p>
     pub fn string_column_statistics_data(
         &self,
-    ) -> std::option::Option<&crate::types::StringColumnStatisticsData> {
+    ) -> ::std::option::Option<&crate::types::StringColumnStatisticsData> {
         self.string_column_statistics_data.as_ref()
     }
     /// <p>Binary column statistics data.</p>
     pub fn binary_column_statistics_data(
         &self,
-    ) -> std::option::Option<&crate::types::BinaryColumnStatisticsData> {
+    ) -> ::std::option::Option<&crate::types::BinaryColumnStatisticsData> {
         self.binary_column_statistics_data.as_ref()
     }
 }
@@ -91,34 +91,36 @@ impl ColumnStatisticsData {
 
 /// A builder for [`ColumnStatisticsData`](crate::types::ColumnStatisticsData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnStatisticsDataBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ColumnStatisticsType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ColumnStatisticsType>,
     pub(crate) boolean_column_statistics_data:
-        std::option::Option<crate::types::BooleanColumnStatisticsData>,
+        ::std::option::Option<crate::types::BooleanColumnStatisticsData>,
     pub(crate) date_column_statistics_data:
-        std::option::Option<crate::types::DateColumnStatisticsData>,
+        ::std::option::Option<crate::types::DateColumnStatisticsData>,
     pub(crate) decimal_column_statistics_data:
-        std::option::Option<crate::types::DecimalColumnStatisticsData>,
+        ::std::option::Option<crate::types::DecimalColumnStatisticsData>,
     pub(crate) double_column_statistics_data:
-        std::option::Option<crate::types::DoubleColumnStatisticsData>,
+        ::std::option::Option<crate::types::DoubleColumnStatisticsData>,
     pub(crate) long_column_statistics_data:
-        std::option::Option<crate::types::LongColumnStatisticsData>,
+        ::std::option::Option<crate::types::LongColumnStatisticsData>,
     pub(crate) string_column_statistics_data:
-        std::option::Option<crate::types::StringColumnStatisticsData>,
+        ::std::option::Option<crate::types::StringColumnStatisticsData>,
     pub(crate) binary_column_statistics_data:
-        std::option::Option<crate::types::BinaryColumnStatisticsData>,
+        ::std::option::Option<crate::types::BinaryColumnStatisticsData>,
 }
 impl ColumnStatisticsDataBuilder {
     /// <p>The type of column statistics data.</p>
     pub fn r#type(mut self, input: crate::types::ColumnStatisticsType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of column statistics data.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ColumnStatisticsType>,
+        input: ::std::option::Option<crate::types::ColumnStatisticsType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -128,13 +130,13 @@ impl ColumnStatisticsDataBuilder {
         mut self,
         input: crate::types::BooleanColumnStatisticsData,
     ) -> Self {
-        self.boolean_column_statistics_data = Some(input);
+        self.boolean_column_statistics_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean column statistics data.</p>
     pub fn set_boolean_column_statistics_data(
         mut self,
-        input: std::option::Option<crate::types::BooleanColumnStatisticsData>,
+        input: ::std::option::Option<crate::types::BooleanColumnStatisticsData>,
     ) -> Self {
         self.boolean_column_statistics_data = input;
         self
@@ -144,13 +146,13 @@ impl ColumnStatisticsDataBuilder {
         mut self,
         input: crate::types::DateColumnStatisticsData,
     ) -> Self {
-        self.date_column_statistics_data = Some(input);
+        self.date_column_statistics_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Date column statistics data.</p>
     pub fn set_date_column_statistics_data(
         mut self,
-        input: std::option::Option<crate::types::DateColumnStatisticsData>,
+        input: ::std::option::Option<crate::types::DateColumnStatisticsData>,
     ) -> Self {
         self.date_column_statistics_data = input;
         self
@@ -160,13 +162,13 @@ impl ColumnStatisticsDataBuilder {
         mut self,
         input: crate::types::DecimalColumnStatisticsData,
     ) -> Self {
-        self.decimal_column_statistics_data = Some(input);
+        self.decimal_column_statistics_data = ::std::option::Option::Some(input);
         self
     }
     /// <p> Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's complement representations of the decimal's unscaled value. </p>
     pub fn set_decimal_column_statistics_data(
         mut self,
-        input: std::option::Option<crate::types::DecimalColumnStatisticsData>,
+        input: ::std::option::Option<crate::types::DecimalColumnStatisticsData>,
     ) -> Self {
         self.decimal_column_statistics_data = input;
         self
@@ -176,13 +178,13 @@ impl ColumnStatisticsDataBuilder {
         mut self,
         input: crate::types::DoubleColumnStatisticsData,
     ) -> Self {
-        self.double_column_statistics_data = Some(input);
+        self.double_column_statistics_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Double column statistics data.</p>
     pub fn set_double_column_statistics_data(
         mut self,
-        input: std::option::Option<crate::types::DoubleColumnStatisticsData>,
+        input: ::std::option::Option<crate::types::DoubleColumnStatisticsData>,
     ) -> Self {
         self.double_column_statistics_data = input;
         self
@@ -192,13 +194,13 @@ impl ColumnStatisticsDataBuilder {
         mut self,
         input: crate::types::LongColumnStatisticsData,
     ) -> Self {
-        self.long_column_statistics_data = Some(input);
+        self.long_column_statistics_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Long column statistics data.</p>
     pub fn set_long_column_statistics_data(
         mut self,
-        input: std::option::Option<crate::types::LongColumnStatisticsData>,
+        input: ::std::option::Option<crate::types::LongColumnStatisticsData>,
     ) -> Self {
         self.long_column_statistics_data = input;
         self
@@ -208,13 +210,13 @@ impl ColumnStatisticsDataBuilder {
         mut self,
         input: crate::types::StringColumnStatisticsData,
     ) -> Self {
-        self.string_column_statistics_data = Some(input);
+        self.string_column_statistics_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>String column statistics data.</p>
     pub fn set_string_column_statistics_data(
         mut self,
-        input: std::option::Option<crate::types::StringColumnStatisticsData>,
+        input: ::std::option::Option<crate::types::StringColumnStatisticsData>,
     ) -> Self {
         self.string_column_statistics_data = input;
         self
@@ -224,13 +226,13 @@ impl ColumnStatisticsDataBuilder {
         mut self,
         input: crate::types::BinaryColumnStatisticsData,
     ) -> Self {
-        self.binary_column_statistics_data = Some(input);
+        self.binary_column_statistics_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Binary column statistics data.</p>
     pub fn set_binary_column_statistics_data(
         mut self,
-        input: std::option::Option<crate::types::BinaryColumnStatisticsData>,
+        input: ::std::option::Option<crate::types::BinaryColumnStatisticsData>,
     ) -> Self {
         self.binary_column_statistics_data = input;
         self

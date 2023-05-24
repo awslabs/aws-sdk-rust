@@ -2,17 +2,17 @@
 
 /// <p>Contains information about the configuration of a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeDeploymentConfig {
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
     #[doc(hidden)]
-    pub failure_handling_policy: std::option::Option<crate::types::FailureHandlingPolicy>,
+    pub failure_handling_policy: ::std::option::Option<crate::types::FailureHandlingPolicy>,
 }
 impl EdgeDeploymentConfig {
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
     pub fn failure_handling_policy(
         &self,
-    ) -> std::option::Option<&crate::types::FailureHandlingPolicy> {
+    ) -> ::std::option::Option<&crate::types::FailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl EdgeDeploymentConfig {
 
 /// A builder for [`EdgeDeploymentConfig`](crate::types::EdgeDeploymentConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdgeDeploymentConfigBuilder {
-    pub(crate) failure_handling_policy: std::option::Option<crate::types::FailureHandlingPolicy>,
+    pub(crate) failure_handling_policy: ::std::option::Option<crate::types::FailureHandlingPolicy>,
 }
 impl EdgeDeploymentConfigBuilder {
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
     pub fn failure_handling_policy(mut self, input: crate::types::FailureHandlingPolicy) -> Self {
-        self.failure_handling_policy = Some(input);
+        self.failure_handling_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
     pub fn set_failure_handling_policy(
         mut self,
-        input: std::option::Option<crate::types::FailureHandlingPolicy>,
+        input: ::std::option::Option<crate::types::FailureHandlingPolicy>,
     ) -> Self {
         self.failure_handling_policy = input;
         self

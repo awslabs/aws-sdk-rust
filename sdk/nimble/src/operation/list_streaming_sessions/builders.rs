@@ -6,29 +6,29 @@ pub use crate::operation::list_streaming_sessions::_list_streaming_sessions_inpu
 /// Fluent builder constructing a request to `ListStreamingSessions`.
 ///
 /// <p>Lists the streaming sessions in a studio.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStreamingSessionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder,
 }
 impl ListStreamingSessionsFluentBuilder {
     /// Creates a new `ListStreamingSessions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_streaming_sessions::ListStreamingSessions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_streaming_sessions::ListStreamingSessionsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListStreamingSessionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_streaming_sessions::ListStreamingSessionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_streaming_sessions::ListStreamingSessionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListStreamingSessionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_streaming_sessions::ListStreamingSessionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_streaming_sessions::ListStreamingSessionsError,
         >,
     > {
@@ -92,52 +95,52 @@ impl ListStreamingSessionsFluentBuilder {
         )
     }
     /// <p>Filters the request to streaming sessions created by the given user.</p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.created_by(input.into());
         self
     }
     /// <p>Filters the request to streaming sessions created by the given user.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_created_by(input);
         self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
     /// <p>Filters the request to streaming session owned by the given user</p>
-    pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owned_by(input.into());
         self
     }
     /// <p>Filters the request to streaming session owned by the given user</p>
-    pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owned_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owned_by(input);
         self
     }
     /// <p>Filters the request to only the provided session IDs.</p>
-    pub fn session_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn session_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_ids(input.into());
         self
     }
     /// <p>Filters the request to only the provided session IDs.</p>
-    pub fn set_session_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_ids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_ids(input);
         self
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
         self
     }
     /// <p>The studio ID. </p>
-    pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
     }

@@ -2,24 +2,24 @@
 
 /// <p>Determines the border options for a table visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalTableBorderOptions {
     /// <p>Determines the options for uniform border.</p>
     #[doc(hidden)]
-    pub uniform_border: std::option::Option<crate::types::TableBorderOptions>,
+    pub uniform_border: ::std::option::Option<crate::types::TableBorderOptions>,
     /// <p>Determines the options for side specific border.</p>
     #[doc(hidden)]
-    pub side_specific_border: std::option::Option<crate::types::TableSideBorderOptions>,
+    pub side_specific_border: ::std::option::Option<crate::types::TableSideBorderOptions>,
 }
 impl GlobalTableBorderOptions {
     /// <p>Determines the options for uniform border.</p>
-    pub fn uniform_border(&self) -> std::option::Option<&crate::types::TableBorderOptions> {
+    pub fn uniform_border(&self) -> ::std::option::Option<&crate::types::TableBorderOptions> {
         self.uniform_border.as_ref()
     }
     /// <p>Determines the options for side specific border.</p>
     pub fn side_specific_border(
         &self,
-    ) -> std::option::Option<&crate::types::TableSideBorderOptions> {
+    ) -> ::std::option::Option<&crate::types::TableSideBorderOptions> {
         self.side_specific_border.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl GlobalTableBorderOptions {
 
 /// A builder for [`GlobalTableBorderOptions`](crate::types::GlobalTableBorderOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalTableBorderOptionsBuilder {
-    pub(crate) uniform_border: std::option::Option<crate::types::TableBorderOptions>,
-    pub(crate) side_specific_border: std::option::Option<crate::types::TableSideBorderOptions>,
+    pub(crate) uniform_border: ::std::option::Option<crate::types::TableBorderOptions>,
+    pub(crate) side_specific_border: ::std::option::Option<crate::types::TableSideBorderOptions>,
 }
 impl GlobalTableBorderOptionsBuilder {
     /// <p>Determines the options for uniform border.</p>
     pub fn uniform_border(mut self, input: crate::types::TableBorderOptions) -> Self {
-        self.uniform_border = Some(input);
+        self.uniform_border = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the options for uniform border.</p>
     pub fn set_uniform_border(
         mut self,
-        input: std::option::Option<crate::types::TableBorderOptions>,
+        input: ::std::option::Option<crate::types::TableBorderOptions>,
     ) -> Self {
         self.uniform_border = input;
         self
     }
     /// <p>Determines the options for side specific border.</p>
     pub fn side_specific_border(mut self, input: crate::types::TableSideBorderOptions) -> Self {
-        self.side_specific_border = Some(input);
+        self.side_specific_border = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the options for side specific border.</p>
     pub fn set_side_specific_border(
         mut self,
-        input: std::option::Option<crate::types::TableSideBorderOptions>,
+        input: ::std::option::Option<crate::types::TableSideBorderOptions>,
     ) -> Self {
         self.side_specific_border = input;
         self

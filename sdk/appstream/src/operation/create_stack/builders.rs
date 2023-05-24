@@ -6,56 +6,59 @@ pub use crate::operation::create_stack::_create_stack_input::CreateStackInputBui
 /// Fluent builder constructing a request to `CreateStack`.
 ///
 /// <p>Creates a stack to start streaming applications to users. A stack consists of an associated fleet, user access policies, and storage configurations. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStackFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_stack::builders::CreateStackInputBuilder,
 }
 impl CreateStackFluentBuilder {
     /// Creates a new `CreateStack`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_stack::CreateStack,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_stack::CreateStackError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stack::CreateStackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_stack::CreateStackOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_stack::CreateStackError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stack::CreateStackError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreateStackFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_stack::CreateStackOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_stack::CreateStackError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stack::CreateStackError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the stack.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the stack.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The description to display.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description to display.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The stack name to display.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
     /// <p>The stack name to display.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
@@ -116,28 +119,28 @@ impl CreateStackFluentBuilder {
     /// <p>The storage connectors to enable.</p>
     pub fn set_storage_connectors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StorageConnector>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
     ) -> Self {
         self.inner = self.inner.set_storage_connectors(input);
         self
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
-    pub fn redirect_url(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn redirect_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.redirect_url(input.into());
         self
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
-    pub fn set_redirect_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_redirect_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_redirect_url(input);
         self
     }
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    pub fn feedback_url(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn feedback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feedback_url(input.into());
         self
     }
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    pub fn set_feedback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_feedback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feedback_url(input);
         self
     }
@@ -153,7 +156,7 @@ impl CreateStackFluentBuilder {
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>
     pub fn set_user_settings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UserSetting>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
     ) -> Self {
         self.inner = self.inner.set_user_settings(input);
         self
@@ -166,7 +169,7 @@ impl CreateStackFluentBuilder {
     /// <p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>
     pub fn set_application_settings(
         mut self,
-        input: std::option::Option<crate::types::ApplicationSettings>,
+        input: ::std::option::Option<crate::types::ApplicationSettings>,
     ) -> Self {
         self.inner = self.inner.set_application_settings(input);
         self
@@ -182,8 +185,8 @@ impl CreateStackFluentBuilder {
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -195,8 +198,8 @@ impl CreateStackFluentBuilder {
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -214,7 +217,7 @@ impl CreateStackFluentBuilder {
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.</p>
     pub fn set_access_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccessEndpoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     ) -> Self {
         self.inner = self.inner.set_access_endpoints(input);
         self
@@ -224,14 +227,17 @@ impl CreateStackFluentBuilder {
     /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
     ///
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
-    pub fn embed_host_domains(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn embed_host_domains(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.embed_host_domains(input.into());
         self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions. </p>
     pub fn set_embed_host_domains(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_embed_host_domains(input);
         self
@@ -247,7 +253,7 @@ impl CreateStackFluentBuilder {
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub fn set_streaming_experience_settings(
         mut self,
-        input: std::option::Option<crate::types::StreamingExperienceSettings>,
+        input: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     ) -> Self {
         self.inner = self.inner.set_streaming_experience_settings(input);
         self

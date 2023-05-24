@@ -2,7 +2,7 @@
 pub(crate) fn de_template_versions_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::TemplateVersionsResponse>,
+    ::std::option::Option<crate::types::TemplateVersionsResponse>,
     crate::operation::list_template_versions::ListTemplateVersionsError,
 > {
     (!body.is_empty()).then(||{

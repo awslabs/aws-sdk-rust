@@ -2,11 +2,11 @@
 
 /// <p>Information about the results from running a series of test cases during the run of a build project. The test cases are specified in the buildspec for the build project using one or more paths to the test case files. You can specify any type of tests you want, such as unit tests, integration tests, and functional tests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Report {
     /// <p> The ARN of the report run. </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the report that was run.</p>
     /// <dl>
     /// <dt>
@@ -23,41 +23,41 @@ pub struct Report {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ReportType>,
+    pub r#type: ::std::option::Option<crate::types::ReportType>,
     /// <p> The name of the report that was run. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the report group associated with this report. </p>
     #[doc(hidden)]
-    pub report_group_arn: std::option::Option<std::string::String>,
+    pub report_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the build run that generated this report. </p>
     #[doc(hidden)]
-    pub execution_id: std::option::Option<std::string::String>,
+    pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of this report. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReportStatusType>,
+    pub status: ::std::option::Option<crate::types::ReportStatusType>,
     /// <p> The date and time this report run occurred. </p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An expired report is not available to view in CodeBuild. </p>
     #[doc(hidden)]
-    pub expired: std::option::Option<aws_smithy_types::DateTime>,
+    pub expired: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Information about where the raw data used to generate this report was exported. </p>
     #[doc(hidden)]
-    pub export_config: std::option::Option<crate::types::ReportExportConfig>,
+    pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     /// <p> A boolean that specifies if this report run is truncated. The list of test cases is truncated after the maximum number of test cases is reached. </p>
     #[doc(hidden)]
-    pub truncated: std::option::Option<bool>,
+    pub truncated: ::std::option::Option<bool>,
     /// <p> A <code>TestReportSummary</code> object that contains information about this test report. </p>
     #[doc(hidden)]
-    pub test_summary: std::option::Option<crate::types::TestReportSummary>,
+    pub test_summary: ::std::option::Option<crate::types::TestReportSummary>,
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
     #[doc(hidden)]
-    pub code_coverage_summary: std::option::Option<crate::types::CodeCoverageReportSummary>,
+    pub code_coverage_summary: ::std::option::Option<crate::types::CodeCoverageReportSummary>,
 }
 impl Report {
     /// <p> The ARN of the report run. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type of the report that was run.</p>
@@ -75,49 +75,49 @@ impl Report {
     /// <p>A test report.</p>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ReportType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ReportType> {
         self.r#type.as_ref()
     }
     /// <p> The name of the report that was run. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The ARN of the report group associated with this report. </p>
-    pub fn report_group_arn(&self) -> std::option::Option<&str> {
+    pub fn report_group_arn(&self) -> ::std::option::Option<&str> {
         self.report_group_arn.as_deref()
     }
     /// <p> The ARN of the build run that generated this report. </p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<&str> {
         self.execution_id.as_deref()
     }
     /// <p> The status of this report. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReportStatusType> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReportStatusType> {
         self.status.as_ref()
     }
     /// <p> The date and time this report run occurred. </p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An expired report is not available to view in CodeBuild. </p>
-    pub fn expired(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expired(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expired.as_ref()
     }
     /// <p> Information about where the raw data used to generate this report was exported. </p>
-    pub fn export_config(&self) -> std::option::Option<&crate::types::ReportExportConfig> {
+    pub fn export_config(&self) -> ::std::option::Option<&crate::types::ReportExportConfig> {
         self.export_config.as_ref()
     }
     /// <p> A boolean that specifies if this report run is truncated. The list of test cases is truncated after the maximum number of test cases is reached. </p>
-    pub fn truncated(&self) -> std::option::Option<bool> {
+    pub fn truncated(&self) -> ::std::option::Option<bool> {
         self.truncated
     }
     /// <p> A <code>TestReportSummary</code> object that contains information about this test report. </p>
-    pub fn test_summary(&self) -> std::option::Option<&crate::types::TestReportSummary> {
+    pub fn test_summary(&self) -> ::std::option::Option<&crate::types::TestReportSummary> {
         self.test_summary.as_ref()
     }
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
     pub fn code_coverage_summary(
         &self,
-    ) -> std::option::Option<&crate::types::CodeCoverageReportSummary> {
+    ) -> ::std::option::Option<&crate::types::CodeCoverageReportSummary> {
         self.code_coverage_summary.as_ref()
     }
 }
@@ -130,29 +130,32 @@ impl Report {
 
 /// A builder for [`Report`](crate::types::Report).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ReportType>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) report_group_arn: std::option::Option<std::string::String>,
-    pub(crate) execution_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ReportStatusType>,
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) expired: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) export_config: std::option::Option<crate::types::ReportExportConfig>,
-    pub(crate) truncated: std::option::Option<bool>,
-    pub(crate) test_summary: std::option::Option<crate::types::TestReportSummary>,
-    pub(crate) code_coverage_summary: std::option::Option<crate::types::CodeCoverageReportSummary>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ReportType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) report_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ReportStatusType>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) expired: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) export_config: ::std::option::Option<crate::types::ReportExportConfig>,
+    pub(crate) truncated: ::std::option::Option<bool>,
+    pub(crate) test_summary: ::std::option::Option<crate::types::TestReportSummary>,
+    pub(crate) code_coverage_summary:
+        ::std::option::Option<crate::types::CodeCoverageReportSummary>,
 }
 impl ReportBuilder {
     /// <p> The ARN of the report run. </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the report run. </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -172,7 +175,7 @@ impl ReportBuilder {
     /// </dd>
     /// </dl>
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the report that was run.</p>
@@ -190,118 +193,130 @@ impl ReportBuilder {
     /// <p>A test report.</p>
     /// </dd>
     /// </dl>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ReportType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ReportType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p> The name of the report that was run. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the report that was run. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The ARN of the report group associated with this report. </p>
-    pub fn report_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.report_group_arn = Some(input.into());
+    pub fn report_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.report_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the report group associated with this report. </p>
-    pub fn set_report_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_report_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.report_group_arn = input;
         self
     }
     /// <p> The ARN of the build run that generated this report. </p>
-    pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_id = Some(input.into());
+    pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the build run that generated this report. </p>
-    pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
     }
     /// <p> The status of this report. </p>
     pub fn status(mut self, input: crate::types::ReportStatusType) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of this report. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ReportStatusType>,
+        input: ::std::option::Option<crate::types::ReportStatusType>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> The date and time this report run occurred. </p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date and time this report run occurred. </p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An expired report is not available to view in CodeBuild. </p>
-    pub fn expired(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.expired = Some(input);
+    pub fn expired(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expired = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An expired report is not available to view in CodeBuild. </p>
-    pub fn set_expired(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_expired(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.expired = input;
         self
     }
     /// <p> Information about where the raw data used to generate this report was exported. </p>
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
-        self.export_config = Some(input);
+        self.export_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about where the raw data used to generate this report was exported. </p>
     pub fn set_export_config(
         mut self,
-        input: std::option::Option<crate::types::ReportExportConfig>,
+        input: ::std::option::Option<crate::types::ReportExportConfig>,
     ) -> Self {
         self.export_config = input;
         self
     }
     /// <p> A boolean that specifies if this report run is truncated. The list of test cases is truncated after the maximum number of test cases is reached. </p>
     pub fn truncated(mut self, input: bool) -> Self {
-        self.truncated = Some(input);
+        self.truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p> A boolean that specifies if this report run is truncated. The list of test cases is truncated after the maximum number of test cases is reached. </p>
-    pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.truncated = input;
         self
     }
     /// <p> A <code>TestReportSummary</code> object that contains information about this test report. </p>
     pub fn test_summary(mut self, input: crate::types::TestReportSummary) -> Self {
-        self.test_summary = Some(input);
+        self.test_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>TestReportSummary</code> object that contains information about this test report. </p>
     pub fn set_test_summary(
         mut self,
-        input: std::option::Option<crate::types::TestReportSummary>,
+        input: ::std::option::Option<crate::types::TestReportSummary>,
     ) -> Self {
         self.test_summary = input;
         self
     }
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
     pub fn code_coverage_summary(mut self, input: crate::types::CodeCoverageReportSummary) -> Self {
-        self.code_coverage_summary = Some(input);
+        self.code_coverage_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.</p>
     pub fn set_code_coverage_summary(
         mut self,
-        input: std::option::Option<crate::types::CodeCoverageReportSummary>,
+        input: ::std::option::Option<crate::types::CodeCoverageReportSummary>,
     ) -> Self {
         self.code_coverage_summary = input;
         self

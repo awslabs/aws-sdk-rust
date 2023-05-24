@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AdditionalResultAttributeValueType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum AdditionalResultAttributeValueType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AdditionalResultAttributeValueType {
+impl ::std::convert::From<&str> for AdditionalResultAttributeValueType {
     fn from(s: &str) -> Self {
         match s {
             "TEXT_WITH_HIGHLIGHTS_VALUE" => {
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for AdditionalResultAttributeValueType {
         }
     }
 }
-impl std::str::FromStr for AdditionalResultAttributeValueType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AdditionalResultAttributeValueType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdditionalResultAttributeValueType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AdditionalResultAttributeValueType::from(s))
     }
 }
 impl AdditionalResultAttributeValueType {
@@ -85,7 +85,7 @@ impl AdditionalResultAttributeValueType {
         &["TEXT_WITH_HIGHLIGHTS_VALUE"]
     }
 }
-impl AsRef<str> for AdditionalResultAttributeValueType {
+impl ::std::convert::AsRef<str> for AdditionalResultAttributeValueType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

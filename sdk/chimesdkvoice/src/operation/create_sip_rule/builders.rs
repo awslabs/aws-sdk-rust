@@ -6,56 +6,59 @@ pub use crate::operation::create_sip_rule::_create_sip_rule_input::CreateSipRule
 /// Fluent builder constructing a request to `CreateSipRule`.
 ///
 /// <p>Creates a SIP rule, which can be used to run a SIP media application as a target for a specific trigger type. For more information about SIP rules, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSipRuleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_sip_rule::builders::CreateSipRuleInputBuilder,
 }
 impl CreateSipRuleFluentBuilder {
     /// Creates a new `CreateSipRule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_sip_rule::CreateSipRule,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_sip_rule::CreateSipRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_rule::CreateSipRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_sip_rule::CreateSipRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_sip_rule::CreateSipRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_rule::CreateSipRuleError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl CreateSipRuleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_sip_rule::CreateSipRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_sip_rule::CreateSipRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_sip_rule::CreateSipRuleError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the SIP rule.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the SIP rule.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -92,18 +95,24 @@ impl CreateSipRuleFluentBuilder {
     /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
     pub fn set_trigger_type(
         mut self,
-        input: std::option::Option<crate::types::SipRuleTriggerType>,
+        input: ::std::option::Option<crate::types::SipRuleTriggerType>,
     ) -> Self {
         self.inner = self.inner.set_trigger_type(input);
         self
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of a Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
-    pub fn trigger_value(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn trigger_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.trigger_value(input.into());
         self
     }
     /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of a Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
-    pub fn set_trigger_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trigger_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_trigger_value(input);
         self
     }
@@ -113,7 +122,7 @@ impl CreateSipRuleFluentBuilder {
         self
     }
     /// <p>Disables or enables a SIP rule. You must disable SIP rules before you can delete them.</p>
-    pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disabled(input);
         self
     }
@@ -129,7 +138,7 @@ impl CreateSipRuleFluentBuilder {
     /// <p>List of SIP media applications, with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
     pub fn set_target_applications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SipRuleTargetApplication>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SipRuleTargetApplication>>,
     ) -> Self {
         self.inner = self.inner.set_target_applications(input);
         self

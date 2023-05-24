@@ -2,15 +2,15 @@
 
 /// <p>The unique entry identifier for the custom vocabulary items.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomVocabularyEntryId {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
     #[doc(hidden)]
-    pub item_id: std::option::Option<std::string::String>,
+    pub item_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomVocabularyEntryId {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
-    pub fn item_id(&self) -> std::option::Option<&str> {
+    pub fn item_id(&self) -> ::std::option::Option<&str> {
         self.item_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl CustomVocabularyEntryId {
 
 /// A builder for [`CustomVocabularyEntryId`](crate::types::CustomVocabularyEntryId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomVocabularyEntryIdBuilder {
-    pub(crate) item_id: std::option::Option<std::string::String>,
+    pub(crate) item_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomVocabularyEntryIdBuilder {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
-    pub fn item_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.item_id = Some(input.into());
+    pub fn item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique item identifier for the custom vocabulary items.</p>
-    pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.item_id = input;
         self
     }

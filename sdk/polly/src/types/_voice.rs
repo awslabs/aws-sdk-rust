@@ -2,59 +2,62 @@
 
 /// <p>Description of the voice.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Voice {
     /// <p>Gender of the voice.</p>
     #[doc(hidden)]
-    pub gender: std::option::Option<crate::types::Gender>,
+    pub gender: ::std::option::Option<crate::types::Gender>,
     /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<crate::types::VoiceId>,
+    pub id: ::std::option::Option<crate::types::VoiceId>,
     /// <p>Language code of the voice.</p>
     #[doc(hidden)]
-    pub language_code: std::option::Option<crate::types::LanguageCode>,
+    pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Human readable name of the language in English.</p>
     #[doc(hidden)]
-    pub language_name: std::option::Option<std::string::String>,
+    pub language_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     #[doc(hidden)]
-    pub additional_language_codes: std::option::Option<std::vec::Vec<crate::types::LanguageCode>>,
+    pub additional_language_codes:
+        ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
     #[doc(hidden)]
-    pub supported_engines: std::option::Option<std::vec::Vec<crate::types::Engine>>,
+    pub supported_engines: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>,
 }
 impl Voice {
     /// <p>Gender of the voice.</p>
-    pub fn gender(&self) -> std::option::Option<&crate::types::Gender> {
+    pub fn gender(&self) -> ::std::option::Option<&crate::types::Gender> {
         self.gender.as_ref()
     }
     /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
-    pub fn id(&self) -> std::option::Option<&crate::types::VoiceId> {
+    pub fn id(&self) -> ::std::option::Option<&crate::types::VoiceId> {
         self.id.as_ref()
     }
     /// <p>Language code of the voice.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Human readable name of the language in English.</p>
-    pub fn language_name(&self) -> std::option::Option<&str> {
+    pub fn language_name(&self) -> ::std::option::Option<&str> {
         self.language_name.as_deref()
     }
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
-    pub fn additional_language_codes(&self) -> std::option::Option<&[crate::types::LanguageCode]> {
+    pub fn additional_language_codes(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::LanguageCode]> {
         self.additional_language_codes.as_deref()
     }
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
-    pub fn supported_engines(&self) -> std::option::Option<&[crate::types::Engine]> {
+    pub fn supported_engines(&self) -> ::std::option::Option<&[crate::types::Engine]> {
         self.supported_engines.as_deref()
     }
 }
@@ -67,68 +70,76 @@ impl Voice {
 
 /// A builder for [`Voice`](crate::types::Voice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VoiceBuilder {
-    pub(crate) gender: std::option::Option<crate::types::Gender>,
-    pub(crate) id: std::option::Option<crate::types::VoiceId>,
-    pub(crate) language_code: std::option::Option<crate::types::LanguageCode>,
-    pub(crate) language_name: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) gender: ::std::option::Option<crate::types::Gender>,
+    pub(crate) id: ::std::option::Option<crate::types::VoiceId>,
+    pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
+    pub(crate) language_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) additional_language_codes:
-        std::option::Option<std::vec::Vec<crate::types::LanguageCode>>,
-    pub(crate) supported_engines: std::option::Option<std::vec::Vec<crate::types::Engine>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
+    pub(crate) supported_engines: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>,
 }
 impl VoiceBuilder {
     /// <p>Gender of the voice.</p>
     pub fn gender(mut self, input: crate::types::Gender) -> Self {
-        self.gender = Some(input);
+        self.gender = ::std::option::Option::Some(input);
         self
     }
     /// <p>Gender of the voice.</p>
-    pub fn set_gender(mut self, input: std::option::Option<crate::types::Gender>) -> Self {
+    pub fn set_gender(mut self, input: ::std::option::Option<crate::types::Gender>) -> Self {
         self.gender = input;
         self
     }
     /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
     pub fn id(mut self, input: crate::types::VoiceId) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>
-    pub fn set_id(mut self, input: std::option::Option<crate::types::VoiceId>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.id = input;
         self
     }
     /// <p>Language code of the voice.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
-        self.language_code = Some(input);
+        self.language_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Language code of the voice.</p>
     pub fn set_language_code(
         mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
+        input: ::std::option::Option<crate::types::LanguageCode>,
     ) -> Self {
         self.language_code = input;
         self
     }
     /// <p>Human readable name of the language in English.</p>
-    pub fn language_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language_name = Some(input.into());
+    pub fn language_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Human readable name of the language in English.</p>
-    pub fn set_language_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.language_name = input;
         self
     }
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -141,14 +152,14 @@ impl VoiceBuilder {
     pub fn additional_language_codes(mut self, input: crate::types::LanguageCode) -> Self {
         let mut v = self.additional_language_codes.unwrap_or_default();
         v.push(input);
-        self.additional_language_codes = Some(v);
+        self.additional_language_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional codes for languages available for the specified voice in addition to its default language. </p>
     /// <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>
     pub fn set_additional_language_codes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LanguageCode>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     ) -> Self {
         self.additional_language_codes = input;
         self
@@ -161,13 +172,13 @@ impl VoiceBuilder {
     pub fn supported_engines(mut self, input: crate::types::Engine) -> Self {
         let mut v = self.supported_engines.unwrap_or_default();
         v.push(input);
-        self.supported_engines = Some(v);
+        self.supported_engines = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>
     pub fn set_supported_engines(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Engine>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Engine>>,
     ) -> Self {
         self.supported_engines = input;
         self

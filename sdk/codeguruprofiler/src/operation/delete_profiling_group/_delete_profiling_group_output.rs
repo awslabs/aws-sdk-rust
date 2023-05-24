@@ -2,11 +2,11 @@
 
 /// <p>The structure representing the deleteProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProfilingGroupOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteProfilingGroupOutput {
+impl ::aws_http::request_id::RequestId for DeleteProfilingGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteProfilingGroupOutput {
 
 /// A builder for [`DeleteProfilingGroupOutput`](crate::operation::delete_profiling_group::DeleteProfilingGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteProfilingGroupOutputBuilder {
     _request_id: Option<String>,
 }

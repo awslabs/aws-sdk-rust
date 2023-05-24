@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FraudDetectionDecision {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum FraudDetectionDecision {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FraudDetectionDecision {
+impl ::std::convert::From<&str> for FraudDetectionDecision {
     fn from(s: &str) -> Self {
         match s {
             "HIGH_RISK" => FraudDetectionDecision::HighRisk,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for FraudDetectionDecision {
         }
     }
 }
-impl std::str::FromStr for FraudDetectionDecision {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FraudDetectionDecision {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FraudDetectionDecision::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FraudDetectionDecision::from(s))
     }
 }
 impl FraudDetectionDecision {
@@ -91,7 +91,7 @@ impl FraudDetectionDecision {
         &["HIGH_RISK", "LOW_RISK", "NOT_ENOUGH_SPEECH"]
     }
 }
-impl AsRef<str> for FraudDetectionDecision {
+impl ::std::convert::AsRef<str> for FraudDetectionDecision {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

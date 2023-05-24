@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SheetControlDateTimePickerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SheetControlDateTimePickerType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SheetControlDateTimePickerType {
+impl ::std::convert::From<&str> for SheetControlDateTimePickerType {
     fn from(s: &str) -> Self {
         match s {
             "DATE_RANGE" => SheetControlDateTimePickerType::DateRange,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SheetControlDateTimePickerType {
         }
     }
 }
-impl std::str::FromStr for SheetControlDateTimePickerType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SheetControlDateTimePickerType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SheetControlDateTimePickerType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SheetControlDateTimePickerType::from(s))
     }
 }
 impl SheetControlDateTimePickerType {
@@ -86,7 +86,7 @@ impl SheetControlDateTimePickerType {
         &["DATE_RANGE", "SINGLE_VALUED"]
     }
 }
-impl AsRef<str> for SheetControlDateTimePickerType {
+impl ::std::convert::AsRef<str> for SheetControlDateTimePickerType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

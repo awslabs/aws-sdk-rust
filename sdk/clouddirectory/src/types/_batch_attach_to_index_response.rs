@@ -2,15 +2,15 @@
 
 /// <p>Represents the output of a <code>AttachToIndex</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     #[doc(hidden)]
-    pub attached_object_identifier: std::option::Option<std::string::String>,
+    pub attached_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn attached_object_identifier(&self) -> ::std::option::Option<&str> {
         self.attached_object_identifier.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl BatchAttachToIndexResponse {
 
 /// A builder for [`BatchAttachToIndexResponse`](crate::types::BatchAttachToIndexResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchAttachToIndexResponseBuilder {
-    pub(crate) attached_object_identifier: std::option::Option<std::string::String>,
+    pub(crate) attached_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl BatchAttachToIndexResponseBuilder {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn attached_object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attached_object_identifier = Some(input.into());
+    pub fn attached_object_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attached_object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     pub fn set_attached_object_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.attached_object_identifier = input;
         self

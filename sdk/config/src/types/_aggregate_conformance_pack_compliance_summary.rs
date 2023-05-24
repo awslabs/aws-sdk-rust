@@ -2,25 +2,25 @@
 
 /// <p>Provides a summary of compliance based on either account ID or region. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceSummary {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
     #[doc(hidden)]
     pub compliance_summary:
-        std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
+        ::std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl AggregateConformancePackComplianceSummary {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
     pub fn compliance_summary(
         &self,
-    ) -> std::option::Option<&crate::types::AggregateConformancePackComplianceCount> {
+    ) -> ::std::option::Option<&crate::types::AggregateConformancePackComplianceCount> {
         self.compliance_summary.as_ref()
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
 }
@@ -33,11 +33,13 @@ impl AggregateConformancePackComplianceSummary {
 
 /// A builder for [`AggregateConformancePackComplianceSummary`](crate::types::AggregateConformancePackComplianceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregateConformancePackComplianceSummaryBuilder {
     pub(crate) compliance_summary:
-        std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
-    pub(crate) group_name: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
 impl AggregateConformancePackComplianceSummaryBuilder {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
@@ -45,24 +47,24 @@ impl AggregateConformancePackComplianceSummaryBuilder {
         mut self,
         input: crate::types::AggregateConformancePackComplianceCount,
     ) -> Self {
-        self.compliance_summary = Some(input);
+        self.compliance_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
     pub fn set_compliance_summary(
         mut self,
-        input: std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
+        input: ::std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
     ) -> Self {
         self.compliance_summary = input;
         self
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }

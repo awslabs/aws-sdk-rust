@@ -2,36 +2,36 @@
 
 /// <p>The subtype containing details about the Codestar connection <code>Type</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeStarParameters {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
     #[doc(hidden)]
-    pub connection_arn: std::option::Option<std::string::String>,
+    pub connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
     #[doc(hidden)]
-    pub repository: std::option::Option<std::string::String>,
+    pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The specific branch where the artifact resides. </p>
     #[doc(hidden)]
-    pub branch: std::option::Option<std::string::String>,
+    pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
     #[doc(hidden)]
-    pub artifact_path: std::option::Option<std::string::String>,
+    pub artifact_path: ::std::option::Option<::std::string::String>,
 }
 impl CodeStarParameters {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p>The specific branch where the artifact resides. </p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<&str> {
         self.branch.as_deref()
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    pub fn artifact_path(&self) -> std::option::Option<&str> {
+    pub fn artifact_path(&self) -> ::std::option::Option<&str> {
         self.artifact_path.as_deref()
     }
 }
@@ -44,51 +44,65 @@ impl CodeStarParameters {
 
 /// A builder for [`CodeStarParameters`](crate::types::CodeStarParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeStarParametersBuilder {
-    pub(crate) connection_arn: std::option::Option<std::string::String>,
-    pub(crate) repository: std::option::Option<std::string::String>,
-    pub(crate) branch: std::option::Option<std::string::String>,
-    pub(crate) artifact_path: std::option::Option<std::string::String>,
+    pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) repository: ::std::option::Option<::std::string::String>,
+    pub(crate) branch: ::std::option::Option<::std::string::String>,
+    pub(crate) artifact_path: ::std::option::Option<::std::string::String>,
 }
 impl CodeStarParametersBuilder {
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_arn = Some(input.into());
+    pub fn connection_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CodeStar ARN, which is the connection between Service Catalog and the external repository.</p>
-    pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_arn = input;
         self
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
-    pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository = Some(input.into());
+    pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.repository = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific repository where the product’s artifact-to-be-synced resides, formatted as "Account/Repo." </p>
-    pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
     /// <p>The specific branch where the artifact resides. </p>
-    pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
-        self.branch = Some(input.into());
+    pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.branch = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific branch where the artifact resides. </p>
-    pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    pub fn artifact_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.artifact_path = Some(input.into());
+    pub fn artifact_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.artifact_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute path wehre the artifact resides within the repo and branch, formatted as "folder/file.json." </p>
-    pub fn set_artifact_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_artifact_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.artifact_path = input;
         self
     }

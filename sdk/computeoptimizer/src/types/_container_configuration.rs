@@ -2,31 +2,31 @@
 
 /// <p> Describes the container configurations within the tasks of your Amazon ECS service. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerConfiguration {
     /// <p> The name of the container. </p>
     #[doc(hidden)]
-    pub container_name: std::option::Option<std::string::String>,
+    pub container_name: ::std::option::Option<::std::string::String>,
     /// <p> The memory size configurations for the container. </p>
     #[doc(hidden)]
-    pub memory_size_configuration: std::option::Option<crate::types::MemorySizeConfiguration>,
+    pub memory_size_configuration: ::std::option::Option<crate::types::MemorySizeConfiguration>,
     /// <p> The number of CPU units reserved for the container. </p>
     #[doc(hidden)]
-    pub cpu: std::option::Option<i32>,
+    pub cpu: ::std::option::Option<i32>,
 }
 impl ContainerConfiguration {
     /// <p> The name of the container. </p>
-    pub fn container_name(&self) -> std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
     /// <p> The memory size configurations for the container. </p>
     pub fn memory_size_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::MemorySizeConfiguration> {
+    ) -> ::std::option::Option<&crate::types::MemorySizeConfiguration> {
         self.memory_size_configuration.as_ref()
     }
     /// <p> The number of CPU units reserved for the container. </p>
-    pub fn cpu(&self) -> std::option::Option<i32> {
+    pub fn cpu(&self) -> ::std::option::Option<i32> {
         self.cpu
     }
 }
@@ -39,21 +39,29 @@ impl ContainerConfiguration {
 
 /// A builder for [`ContainerConfiguration`](crate::types::ContainerConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerConfigurationBuilder {
-    pub(crate) container_name: std::option::Option<std::string::String>,
+    pub(crate) container_name: ::std::option::Option<::std::string::String>,
     pub(crate) memory_size_configuration:
-        std::option::Option<crate::types::MemorySizeConfiguration>,
-    pub(crate) cpu: std::option::Option<i32>,
+        ::std::option::Option<crate::types::MemorySizeConfiguration>,
+    pub(crate) cpu: ::std::option::Option<i32>,
 }
 impl ContainerConfigurationBuilder {
     /// <p> The name of the container. </p>
-    pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_name = Some(input.into());
+    pub fn container_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the container. </p>
-    pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.container_name = input;
         self
     }
@@ -62,24 +70,24 @@ impl ContainerConfigurationBuilder {
         mut self,
         input: crate::types::MemorySizeConfiguration,
     ) -> Self {
-        self.memory_size_configuration = Some(input);
+        self.memory_size_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> The memory size configurations for the container. </p>
     pub fn set_memory_size_configuration(
         mut self,
-        input: std::option::Option<crate::types::MemorySizeConfiguration>,
+        input: ::std::option::Option<crate::types::MemorySizeConfiguration>,
     ) -> Self {
         self.memory_size_configuration = input;
         self
     }
     /// <p> The number of CPU units reserved for the container. </p>
     pub fn cpu(mut self, input: i32) -> Self {
-        self.cpu = Some(input);
+        self.cpu = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of CPU units reserved for the container. </p>
-    pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cpu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu = input;
         self
     }

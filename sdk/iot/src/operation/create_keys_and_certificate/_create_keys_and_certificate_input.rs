@@ -3,15 +3,15 @@
 /// <p>The input for the CreateKeysAndCertificate operation.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateKeysAndCertificateRequest</a> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateKeysAndCertificateInput {
     /// <p>Specifies whether the certificate is active.</p>
     #[doc(hidden)]
-    pub set_as_active: std::option::Option<bool>,
+    pub set_as_active: ::std::option::Option<bool>,
 }
 impl CreateKeysAndCertificateInput {
     /// <p>Specifies whether the certificate is active.</p>
-    pub fn set_as_active(&self) -> std::option::Option<bool> {
+    pub fn set_as_active(&self) -> ::std::option::Option<bool> {
         self.set_as_active
     }
 }
@@ -26,29 +26,31 @@ impl CreateKeysAndCertificateInput {
 
 /// A builder for [`CreateKeysAndCertificateInput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateKeysAndCertificateInputBuilder {
-    pub(crate) set_as_active: std::option::Option<bool>,
+    pub(crate) set_as_active: ::std::option::Option<bool>,
 }
 impl CreateKeysAndCertificateInputBuilder {
     /// <p>Specifies whether the certificate is active.</p>
     pub fn set_as_active(mut self, input: bool) -> Self {
-        self.set_as_active = Some(input);
+        self.set_as_active = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the certificate is active.</p>
-    pub fn set_set_as_active(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.set_as_active = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateKeysAndCertificateInput`](crate::operation::create_keys_and_certificate::CreateKeysAndCertificateInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_keys_and_certificate::CreateKeysAndCertificateInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_keys_and_certificate::CreateKeysAndCertificateInput {
                 set_as_active: self.set_as_active,
             },

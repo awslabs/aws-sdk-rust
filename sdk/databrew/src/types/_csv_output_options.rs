@@ -2,15 +2,15 @@
 
 /// <p>Represents a set of options that define how DataBrew will write a comma-separated value (CSV) file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CsvOutputOptions {
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
     #[doc(hidden)]
-    pub delimiter: std::option::Option<std::string::String>,
+    pub delimiter: ::std::option::Option<::std::string::String>,
 }
 impl CsvOutputOptions {
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl CsvOutputOptions {
 
 /// A builder for [`CsvOutputOptions`](crate::types::CsvOutputOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CsvOutputOptionsBuilder {
-    pub(crate) delimiter: std::option::Option<std::string::String>,
+    pub(crate) delimiter: ::std::option::Option<::std::string::String>,
 }
 impl CsvOutputOptionsBuilder {
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
-    pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delimiter = Some(input.into());
+    pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
-    pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
     }

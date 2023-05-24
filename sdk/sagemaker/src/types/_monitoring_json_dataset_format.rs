@@ -2,7 +2,7 @@
 
 /// <p>Represents the JSON dataset format used when running a monitoring job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringJsonDatasetFormat {
     /// <p>Indicates if the file should be read as a json object per line. </p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl MonitoringJsonDatasetFormat {
 
 /// A builder for [`MonitoringJsonDatasetFormat`](crate::types::MonitoringJsonDatasetFormat).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringJsonDatasetFormatBuilder {
-    pub(crate) line: std::option::Option<bool>,
+    pub(crate) line: ::std::option::Option<bool>,
 }
 impl MonitoringJsonDatasetFormatBuilder {
     /// <p>Indicates if the file should be read as a json object per line. </p>
     pub fn line(mut self, input: bool) -> Self {
-        self.line = Some(input);
+        self.line = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if the file should be read as a json object per line. </p>
-    pub fn set_line(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_line(mut self, input: ::std::option::Option<bool>) -> Self {
         self.line = input;
         self
     }

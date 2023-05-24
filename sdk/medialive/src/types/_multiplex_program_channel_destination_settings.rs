@@ -2,22 +2,22 @@
 
 /// Multiplex Program Input Destination Settings for outputting a Channel to a Multiplex
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramChannelDestinationSettings {
     /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
     #[doc(hidden)]
-    pub multiplex_id: std::option::Option<std::string::String>,
+    pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The program name of the Multiplex program that the encoder is providing output to.
     #[doc(hidden)]
-    pub program_name: std::option::Option<std::string::String>,
+    pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramChannelDestinationSettings {
     /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
-    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
         self.multiplex_id.as_deref()
     }
     /// The program name of the Multiplex program that the encoder is providing output to.
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> ::std::option::Option<&str> {
         self.program_name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl MultiplexProgramChannelDestinationSettings {
 
 /// A builder for [`MultiplexProgramChannelDestinationSettings`](crate::types::MultiplexProgramChannelDestinationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiplexProgramChannelDestinationSettingsBuilder {
-    pub(crate) multiplex_id: std::option::Option<std::string::String>,
-    pub(crate) program_name: std::option::Option<std::string::String>,
+    pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
+    pub(crate) program_name: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramChannelDestinationSettingsBuilder {
     /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
-    pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.multiplex_id = Some(input.into());
+    pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multiplex_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the Multiplex that the encoder is providing output to. You do not need to specify the individual inputs to the Multiplex; MediaLive will handle the connection of the two MediaLive pipelines to the two Multiplex instances. The Multiplex must be in the same region as the Channel.
-    pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multiplex_id = input;
         self
     }
     /// The program name of the Multiplex program that the encoder is providing output to.
-    pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.program_name = Some(input.into());
+    pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.program_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The program name of the Multiplex program that the encoder is providing output to.
-    pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
     }

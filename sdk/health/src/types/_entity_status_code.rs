@@ -39,13 +39,13 @@
 /// _Note: `EntityStatusCode::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EntityStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EntityStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EntityStatusCode {
+impl ::std::convert::From<&str> for EntityStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "IMPAIRED" => EntityStatusCode::Impaired,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EntityStatusCode {
         }
     }
 }
-impl std::str::FromStr for EntityStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EntityStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntityStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EntityStatusCode::from(s))
     }
 }
 impl EntityStatusCode {
@@ -91,7 +91,7 @@ impl EntityStatusCode {
         &["IMPAIRED", "UNIMPAIRED", "UNKNOWN"]
     }
 }
-impl AsRef<str> for EntityStatusCode {
+impl ::std::convert::AsRef<str> for EntityStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -6,56 +6,63 @@ pub use crate::operation::create_api_cache::_create_api_cache_input::CreateApiCa
 /// Fluent builder constructing a request to `CreateApiCache`.
 ///
 /// <p>Creates a cache for the GraphQL API.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApiCacheFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_api_cache::builders::CreateApiCacheInputBuilder,
 }
 impl CreateApiCacheFluentBuilder {
     /// Creates a new `CreateApiCache`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_api_cache::CreateApiCache,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_api_cache::CreateApiCacheError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_api_cache::CreateApiCacheError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_api_cache::CreateApiCacheOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_api_cache::CreateApiCacheError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_api_cache::CreateApiCacheError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +75,21 @@ impl CreateApiCacheFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_api_cache::CreateApiCacheOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_api_cache::CreateApiCacheError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_api_cache::CreateApiCacheError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The GraphQL API ID.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
         self
     }
     /// <p>The GraphQL API ID.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self
     }
@@ -92,7 +101,7 @@ impl CreateApiCacheFluentBuilder {
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
-    pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_ttl(input);
         self
     }
@@ -102,7 +111,7 @@ impl CreateApiCacheFluentBuilder {
         self
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
-    pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_transit_encryption_enabled(input);
         self
     }
@@ -112,7 +121,7 @@ impl CreateApiCacheFluentBuilder {
         self
     }
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
-    pub fn set_at_rest_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_at_rest_encryption_enabled(input);
         self
     }
@@ -132,7 +141,7 @@ impl CreateApiCacheFluentBuilder {
     /// </ul>
     pub fn set_api_caching_behavior(
         mut self,
-        input: std::option::Option<crate::types::ApiCachingBehavior>,
+        input: ::std::option::Option<crate::types::ApiCachingBehavior>,
     ) -> Self {
         self.inner = self.inner.set_api_caching_behavior(input);
         self
@@ -185,7 +194,7 @@ impl CreateApiCacheFluentBuilder {
     /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ApiCacheType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApiCacheType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateChannel`](crate::operation::create_channel::builders::CreateChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`description(impl Into<String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::set_description): A short text description of the Channel.
-    ///   - [`id(impl Into<String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::set_id): The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::set_description): A short text description of the Channel.
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::set_id): The ID of the Channel. The ID must be unique within the region and it cannot be changed after a Channel is created.
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_channel::builders::CreateChannelFluentBuilder::set_tags): A collection of tags associated with a resource
     /// - On success, responds with [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_channel::CreateChannelOutput::arn): The Amazon Resource Name (ARN) assigned to the Channel.

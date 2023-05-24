@@ -2,11 +2,11 @@
 
 /// <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventStream {
     /// <p>The unique identifier for the application to publish event data for.</p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream to publish event data to.</p>
     /// <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>
     /// region
@@ -23,23 +23,23 @@ pub struct EventStream {
     /// stream_name
     /// </replaceable> </p>
     #[doc(hidden)]
-    pub destination_stream_arn: std::option::Option<std::string::String>,
+    pub destination_stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     #[doc(hidden)]
-    pub external_id: std::option::Option<std::string::String>,
+    pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<std::string::String>,
+    pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The IAM user who last modified the event stream.</p>
     #[doc(hidden)]
-    pub last_updated_by: std::option::Option<std::string::String>,
+    pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventStream {
     /// <p>The unique identifier for the application to publish event data for.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream to publish event data to.</p>
@@ -57,23 +57,23 @@ impl EventStream {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
-    pub fn destination_stream_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_stream_arn(&self) -> ::std::option::Option<&str> {
         self.destination_stream_arn.as_deref()
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The IAM user who last modified the event stream.</p>
-    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
         self.last_updated_by.as_deref()
     }
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -86,23 +86,31 @@ impl EventStream {
 
 /// A builder for [`EventStream`](crate::types::EventStream).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventStreamBuilder {
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) destination_stream_arn: std::option::Option<std::string::String>,
-    pub(crate) external_id: std::option::Option<std::string::String>,
-    pub(crate) last_modified_date: std::option::Option<std::string::String>,
-    pub(crate) last_updated_by: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl EventStreamBuilder {
     /// <p>The unique identifier for the application to publish event data for.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application to publish event data for.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
@@ -121,8 +129,11 @@ impl EventStreamBuilder {
     /// </replaceable>:deliverystream/<replaceable>
     /// stream_name
     /// </replaceable> </p>
-    pub fn destination_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_stream_arn = Some(input.into());
+    pub fn destination_stream_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream to publish event data to.</p>
@@ -142,51 +153,60 @@ impl EventStreamBuilder {
     /// </replaceable> </p>
     pub fn set_destination_stream_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_stream_arn = input;
         self
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_id = Some(input.into());
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
     }
     /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
-    pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_modified_date = Some(input.into());
+    pub fn last_modified_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
     pub fn set_last_modified_date(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_modified_date = input;
         self
     }
     /// <p>The IAM user who last modified the event stream.</p>
-    pub fn last_updated_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_by = Some(input.into());
+    pub fn last_updated_by(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM user who last modified the event stream.</p>
-    pub fn set_last_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_updated_by(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_updated_by = input;
         self
     }
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

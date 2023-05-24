@@ -2,7 +2,7 @@
 
 /// <p>Configuration information for the chat participant role.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum UpdateParticipantRoleConfigChannelInfo {
     /// <p>Configuration information for the chat participant role.</p>
     Chat(crate::types::ChatParticipantRoleConfig),
@@ -20,11 +20,13 @@ impl UpdateParticipantRoleConfigChannelInfo {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Chat`](crate::types::UpdateParticipantRoleConfigChannelInfo::Chat), extracting the inner [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_chat(&self) -> std::result::Result<&crate::types::ChatParticipantRoleConfig, &Self> {
+    pub fn as_chat(
+        &self,
+    ) -> ::std::result::Result<&crate::types::ChatParticipantRoleConfig, &Self> {
         if let UpdateParticipantRoleConfigChannelInfo::Chat(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Chat`](crate::types::UpdateParticipantRoleConfigChannelInfo::Chat).

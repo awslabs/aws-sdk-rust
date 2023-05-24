@@ -2,40 +2,40 @@
 
 /// <p>A single modification to the configuration section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionModification {
     /// <p>The name of the section to be modified.</p>
     #[doc(hidden)]
-    pub section: std::option::Option<std::string::String>,
+    pub section: ::std::option::Option<::std::string::String>,
     /// <p>The path within the section content to be modified.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
     #[doc(hidden)]
-    pub operation: std::option::Option<crate::types::Operation>,
+    pub operation: ::std::option::Option<crate::types::Operation>,
     /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
     #[doc(hidden)]
-    pub value: std::option::Option<aws_smithy_types::Document>,
+    pub value: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl SectionModification {
     /// <p>The name of the section to be modified.</p>
-    pub fn section(&self) -> std::option::Option<&str> {
+    pub fn section(&self) -> ::std::option::Option<&str> {
         self.section.as_deref()
     }
     /// <p>The path within the section content to be modified.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
-    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
+    pub fn operation(&self) -> ::std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
     /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
-    pub fn value(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn value(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.value.as_ref()
     }
 }
@@ -48,55 +48,57 @@ impl SectionModification {
 
 /// A builder for [`SectionModification`](crate::types::SectionModification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SectionModificationBuilder {
-    pub(crate) section: std::option::Option<std::string::String>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) operation: std::option::Option<crate::types::Operation>,
-    pub(crate) value: std::option::Option<aws_smithy_types::Document>,
+    pub(crate) section: ::std::option::Option<::std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) operation: ::std::option::Option<crate::types::Operation>,
+    pub(crate) value: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl SectionModificationBuilder {
     /// <p>The name of the section to be modified.</p>
-    pub fn section(mut self, input: impl Into<std::string::String>) -> Self {
-        self.section = Some(input.into());
+    pub fn section(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.section = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the section to be modified.</p>
-    pub fn set_section(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_section(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.section = input;
         self
     }
     /// <p>The path within the section content to be modified.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path within the section content to be modified.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
     /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
-        self.operation = Some(input);
+        self.operation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
-    pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
         self.operation = input;
         self
     }
     /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
-    pub fn value(mut self, input: aws_smithy_types::Document) -> Self {
-        self.value = Some(input);
+    pub fn value(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
-    pub fn set_value(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.value = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>Contact information that the SRT can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmergencyContact {
     /// <p>The email address for the contact.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The phone number for the contact.</p>
     #[doc(hidden)]
-    pub phone_number: std::option::Option<std::string::String>,
+    pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>Additional notes regarding the contact. </p>
     #[doc(hidden)]
-    pub contact_notes: std::option::Option<std::string::String>,
+    pub contact_notes: ::std::option::Option<::std::string::String>,
 }
 impl EmergencyContact {
     /// <p>The email address for the contact.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p>The phone number for the contact.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
     /// <p>Additional notes regarding the contact. </p>
-    pub fn contact_notes(&self) -> std::option::Option<&str> {
+    pub fn contact_notes(&self) -> ::std::option::Option<&str> {
         self.contact_notes.as_deref()
     }
 }
@@ -37,40 +37,54 @@ impl EmergencyContact {
 
 /// A builder for [`EmergencyContact`](crate::types::EmergencyContact).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmergencyContactBuilder {
-    pub(crate) email_address: std::option::Option<std::string::String>,
-    pub(crate) phone_number: std::option::Option<std::string::String>,
-    pub(crate) contact_notes: std::option::Option<std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_notes: ::std::option::Option<::std::string::String>,
 }
 impl EmergencyContactBuilder {
     /// <p>The email address for the contact.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address for the contact.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
     /// <p>The phone number for the contact.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number = Some(input.into());
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number for the contact.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
     /// <p>Additional notes regarding the contact. </p>
-    pub fn contact_notes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_notes = Some(input.into());
+    pub fn contact_notes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.contact_notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional notes regarding the contact. </p>
-    pub fn set_contact_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_notes(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.contact_notes = input;
         self
     }

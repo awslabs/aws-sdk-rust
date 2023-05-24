@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateEmailIdentity`](crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`email_identity(impl Into<String>)`](crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder::email_identity) / [`set_email_identity(Option<String>)`](crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder::set_email_identity): <p>The email address or domain that you want to verify.</p>
+    ///   - [`email_identity(impl ::std::convert::Into<String>)`](crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder::email_identity) / [`set_email_identity(Option<String>)`](crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder::set_email_identity): <p>The email address or domain that you want to verify.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_email_identity::builders::CreateEmailIdentityFluentBuilder::set_tags): <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
     /// - On success, responds with [`CreateEmailIdentityOutput`](crate::operation::create_email_identity::CreateEmailIdentityOutput) with field(s):
     ///   - [`identity_type(Option<IdentityType>)`](crate::operation::create_email_identity::CreateEmailIdentityOutput::identity_type): <p>The email identity type.</p>

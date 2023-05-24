@@ -2,25 +2,25 @@
 
 /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
     #[doc(hidden)]
-    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of one or more security groups IDs in your VPC.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     #[doc(hidden)]
     pub assign_public_ip: bool,
 }
 impl VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
@@ -37,11 +37,13 @@ impl VpcConfig {
 
 /// A builder for [`VpcConfig`](crate::types::VpcConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcConfigBuilder {
-    pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) assign_public_ip: std::option::Option<bool>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assign_public_ip: ::std::option::Option<bool>,
 }
 impl VpcConfigBuilder {
     /// Appends an item to `subnets`.
@@ -49,16 +51,16 @@ impl VpcConfigBuilder {
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input.into());
-        self.subnets = Some(v);
+        self.subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of one or more subnet IDs in your VPC.</p>
     pub fn set_subnets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subnets = input;
         self
@@ -68,27 +70,30 @@ impl VpcConfigBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn assign_public_ip(mut self, input: bool) -> Self {
-        self.assign_public_ip = Some(input);
+        self.assign_public_ip = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
-    pub fn set_assign_public_ip(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_assign_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.assign_public_ip = input;
         self
     }

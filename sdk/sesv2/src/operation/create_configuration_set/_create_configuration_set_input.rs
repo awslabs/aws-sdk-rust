@@ -2,64 +2,64 @@
 
 /// <p>A request to create a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetInput {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
     #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
     #[doc(hidden)]
-    pub tracking_options: std::option::Option<crate::types::TrackingOptions>,
+    pub tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
     #[doc(hidden)]
-    pub delivery_options: std::option::Option<crate::types::DeliveryOptions>,
+    pub delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
     #[doc(hidden)]
-    pub reputation_options: std::option::Option<crate::types::ReputationOptions>,
+    pub reputation_options: ::std::option::Option<crate::types::ReputationOptions>,
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
     #[doc(hidden)]
-    pub sending_options: std::option::Option<crate::types::SendingOptions>,
+    pub sending_options: ::std::option::Option<crate::types::SendingOptions>,
     /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
     #[doc(hidden)]
-    pub suppression_options: std::option::Option<crate::types::SuppressionOptions>,
+    pub suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
     #[doc(hidden)]
-    pub vdm_options: std::option::Option<crate::types::VdmOptions>,
+    pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
 }
 impl CreateConfigurationSetInput {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    pub fn tracking_options(&self) -> std::option::Option<&crate::types::TrackingOptions> {
+    pub fn tracking_options(&self) -> ::std::option::Option<&crate::types::TrackingOptions> {
         self.tracking_options.as_ref()
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    pub fn delivery_options(&self) -> std::option::Option<&crate::types::DeliveryOptions> {
+    pub fn delivery_options(&self) -> ::std::option::Option<&crate::types::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
-    pub fn reputation_options(&self) -> std::option::Option<&crate::types::ReputationOptions> {
+    pub fn reputation_options(&self) -> ::std::option::Option<&crate::types::ReputationOptions> {
         self.reputation_options.as_ref()
     }
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
-    pub fn sending_options(&self) -> std::option::Option<&crate::types::SendingOptions> {
+    pub fn sending_options(&self) -> ::std::option::Option<&crate::types::SendingOptions> {
         self.sending_options.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
-    pub fn suppression_options(&self) -> std::option::Option<&crate::types::SuppressionOptions> {
+    pub fn suppression_options(&self) -> ::std::option::Option<&crate::types::SuppressionOptions> {
         self.suppression_options.as_ref()
     }
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
-    pub fn vdm_options(&self) -> std::option::Option<&crate::types::VdmOptions> {
+    pub fn vdm_options(&self) -> ::std::option::Option<&crate::types::VdmOptions> {
         self.vdm_options.as_ref()
     }
 }
@@ -74,79 +74,84 @@ impl CreateConfigurationSetInput {
 
 /// A builder for [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateConfigurationSetInputBuilder {
-    pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-    pub(crate) tracking_options: std::option::Option<crate::types::TrackingOptions>,
-    pub(crate) delivery_options: std::option::Option<crate::types::DeliveryOptions>,
-    pub(crate) reputation_options: std::option::Option<crate::types::ReputationOptions>,
-    pub(crate) sending_options: std::option::Option<crate::types::SendingOptions>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) suppression_options: std::option::Option<crate::types::SuppressionOptions>,
-    pub(crate) vdm_options: std::option::Option<crate::types::VdmOptions>,
+    pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
+    pub(crate) delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
+    pub(crate) reputation_options: ::std::option::Option<crate::types::ReputationOptions>,
+    pub(crate) sending_options: ::std::option::Option<crate::types::SendingOptions>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
+    pub(crate) vdm_options: ::std::option::Option<crate::types::VdmOptions>,
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_set_name = Some(input.into());
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_set_name = input;
         self
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
     pub fn tracking_options(mut self, input: crate::types::TrackingOptions) -> Self {
-        self.tracking_options = Some(input);
+        self.tracking_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
     pub fn set_tracking_options(
         mut self,
-        input: std::option::Option<crate::types::TrackingOptions>,
+        input: ::std::option::Option<crate::types::TrackingOptions>,
     ) -> Self {
         self.tracking_options = input;
         self
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
     pub fn delivery_options(mut self, input: crate::types::DeliveryOptions) -> Self {
-        self.delivery_options = Some(input);
+        self.delivery_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
     pub fn set_delivery_options(
         mut self,
-        input: std::option::Option<crate::types::DeliveryOptions>,
+        input: ::std::option::Option<crate::types::DeliveryOptions>,
     ) -> Self {
         self.delivery_options = input;
         self
     }
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
     pub fn reputation_options(mut self, input: crate::types::ReputationOptions) -> Self {
-        self.reputation_options = Some(input);
+        self.reputation_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.</p>
     pub fn set_reputation_options(
         mut self,
-        input: std::option::Option<crate::types::ReputationOptions>,
+        input: ::std::option::Option<crate::types::ReputationOptions>,
     ) -> Self {
         self.reputation_options = input;
         self
     }
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
     pub fn sending_options(mut self, input: crate::types::SendingOptions) -> Self {
-        self.sending_options = Some(input);
+        self.sending_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that defines whether or not Amazon SES can send email that you send using the configuration set.</p>
     pub fn set_sending_options(
         mut self,
-        input: std::option::Option<crate::types::SendingOptions>,
+        input: ::std::option::Option<crate::types::SendingOptions>,
     ) -> Self {
         self.sending_options = input;
         self
@@ -159,48 +164,51 @@ impl CreateConfigurationSetInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that define the tags (keys and values) to associate with the configuration set.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
     pub fn suppression_options(mut self, input: crate::types::SuppressionOptions) -> Self {
-        self.suppression_options = Some(input);
+        self.suppression_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the suppression list preferences for your account.</p>
     pub fn set_suppression_options(
         mut self,
-        input: std::option::Option<crate::types::SuppressionOptions>,
+        input: ::std::option::Option<crate::types::SuppressionOptions>,
     ) -> Self {
         self.suppression_options = input;
         self
     }
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
     pub fn vdm_options(mut self, input: crate::types::VdmOptions) -> Self {
-        self.vdm_options = Some(input);
+        self.vdm_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
-    pub fn set_vdm_options(mut self, input: std::option::Option<crate::types::VdmOptions>) -> Self {
+    pub fn set_vdm_options(
+        mut self,
+        input: ::std::option::Option<crate::types::VdmOptions>,
+    ) -> Self {
         self.vdm_options = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_configuration_set::CreateConfigurationSetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_configuration_set::CreateConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name,
                 tracking_options: self.tracking_options,

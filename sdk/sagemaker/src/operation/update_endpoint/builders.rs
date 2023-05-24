@@ -10,56 +10,59 @@ pub use crate::operation::update_endpoint::_update_endpoint_input::UpdateEndpoin
 /// <p>You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
 /// <p>If you delete the <code>EndpointConfig</code> of an endpoint that is active or being created or updated you may lose visibility into the instance type the endpoint is using. The endpoint must be deleted in order to stop incurring charges.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEndpointFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder,
 }
 impl UpdateEndpointFluentBuilder {
     /// Creates a new `UpdateEndpoint`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_endpoint::UpdateEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,40 @@ impl UpdateEndpointFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the endpoint whose configuration you want to update.</p>
-    pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn endpoint_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
         self
     }
     /// <p>The name of the endpoint whose configuration you want to update.</p>
-    pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_endpoint_name(input);
         self
     }
     /// <p>The name of the new endpoint configuration.</p>
-    pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn endpoint_config_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.endpoint_config_name(input.into());
         self
     }
     /// <p>The name of the new endpoint configuration.</p>
     pub fn set_endpoint_config_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_config_name(input);
         self
@@ -107,7 +119,7 @@ impl UpdateEndpointFluentBuilder {
         self
     }
     /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
-    pub fn set_retain_all_variant_properties(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_retain_all_variant_properties(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain_all_variant_properties(input);
         self
     }
@@ -126,7 +138,7 @@ impl UpdateEndpointFluentBuilder {
     /// <p>When you are updating endpoint resources with <code>RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeRetainedVariantProperties</code>, no variant properties are overridden. </p>
     pub fn set_exclude_retained_variant_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VariantProperty>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VariantProperty>>,
     ) -> Self {
         self.inner = self.inner.set_exclude_retained_variant_properties(input);
         self
@@ -139,7 +151,7 @@ impl UpdateEndpointFluentBuilder {
     /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
     pub fn set_deployment_config(
         mut self,
-        input: std::option::Option<crate::types::DeploymentConfig>,
+        input: ::std::option::Option<crate::types::DeploymentConfig>,
     ) -> Self {
         self.inner = self.inner.set_deployment_config(input);
         self
@@ -150,7 +162,7 @@ impl UpdateEndpointFluentBuilder {
         self
     }
     /// <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
-    pub fn set_retain_deployment_config(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_retain_deployment_config(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_retain_deployment_config(input);
         self
     }

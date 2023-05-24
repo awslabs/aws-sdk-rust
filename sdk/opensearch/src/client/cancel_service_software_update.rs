@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelServiceSoftwareUpdate`](crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateFluentBuilder::set_domain_name): <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateFluentBuilder::set_domain_name): <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
     /// - On success, responds with [`CancelServiceSoftwareUpdateOutput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput) with field(s):
     ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateOutput::service_software_options): <p>Container for the state of your domain relative to the latest service software.</p>
     /// - On failure, responds with [`SdkError<CancelServiceSoftwareUpdateError>`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateError)

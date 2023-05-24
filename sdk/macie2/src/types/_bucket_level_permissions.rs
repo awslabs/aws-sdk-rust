@@ -2,29 +2,29 @@
 
 /// <p>Provides information about the bucket-level permissions settings for an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketLevelPermissions {
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
     #[doc(hidden)]
-    pub access_control_list: std::option::Option<crate::types::AccessControlList>,
+    pub access_control_list: ::std::option::Option<crate::types::AccessControlList>,
     /// <p>The block public access settings for the bucket.</p>
     #[doc(hidden)]
-    pub block_public_access: std::option::Option<crate::types::BlockPublicAccess>,
+    pub block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
     #[doc(hidden)]
-    pub bucket_policy: std::option::Option<crate::types::BucketPolicy>,
+    pub bucket_policy: ::std::option::Option<crate::types::BucketPolicy>,
 }
 impl BucketLevelPermissions {
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
-    pub fn access_control_list(&self) -> std::option::Option<&crate::types::AccessControlList> {
+    pub fn access_control_list(&self) -> ::std::option::Option<&crate::types::AccessControlList> {
         self.access_control_list.as_ref()
     }
     /// <p>The block public access settings for the bucket.</p>
-    pub fn block_public_access(&self) -> std::option::Option<&crate::types::BlockPublicAccess> {
+    pub fn block_public_access(&self) -> ::std::option::Option<&crate::types::BlockPublicAccess> {
         self.block_public_access.as_ref()
     }
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
-    pub fn bucket_policy(&self) -> std::option::Option<&crate::types::BucketPolicy> {
+    pub fn bucket_policy(&self) -> ::std::option::Option<&crate::types::BucketPolicy> {
         self.bucket_policy.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl BucketLevelPermissions {
 
 /// A builder for [`BucketLevelPermissions`](crate::types::BucketLevelPermissions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BucketLevelPermissionsBuilder {
-    pub(crate) access_control_list: std::option::Option<crate::types::AccessControlList>,
-    pub(crate) block_public_access: std::option::Option<crate::types::BlockPublicAccess>,
-    pub(crate) bucket_policy: std::option::Option<crate::types::BucketPolicy>,
+    pub(crate) access_control_list: ::std::option::Option<crate::types::AccessControlList>,
+    pub(crate) block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
+    pub(crate) bucket_policy: ::std::option::Option<crate::types::BucketPolicy>,
 }
 impl BucketLevelPermissionsBuilder {
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
     pub fn access_control_list(mut self, input: crate::types::AccessControlList) -> Self {
-        self.access_control_list = Some(input);
+        self.access_control_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
     pub fn set_access_control_list(
         mut self,
-        input: std::option::Option<crate::types::AccessControlList>,
+        input: ::std::option::Option<crate::types::AccessControlList>,
     ) -> Self {
         self.access_control_list = input;
         self
     }
     /// <p>The block public access settings for the bucket.</p>
     pub fn block_public_access(mut self, input: crate::types::BlockPublicAccess) -> Self {
-        self.block_public_access = Some(input);
+        self.block_public_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>The block public access settings for the bucket.</p>
     pub fn set_block_public_access(
         mut self,
-        input: std::option::Option<crate::types::BlockPublicAccess>,
+        input: ::std::option::Option<crate::types::BlockPublicAccess>,
     ) -> Self {
         self.block_public_access = input;
         self
     }
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
     pub fn bucket_policy(mut self, input: crate::types::BucketPolicy) -> Self {
-        self.bucket_policy = Some(input);
+        self.bucket_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
     pub fn set_bucket_policy(
         mut self,
-        input: std::option::Option<crate::types::BucketPolicy>,
+        input: ::std::option::Option<crate::types::BucketPolicy>,
     ) -> Self {
         self.bucket_policy = input;
         self

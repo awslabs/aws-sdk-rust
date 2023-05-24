@@ -2,173 +2,181 @@
 
 /// <p>The properties of a trial component as returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponent {
     /// <p>The name of the trial component.</p>
     #[doc(hidden)]
-    pub trial_component_name: std::option::Option<std::string::String>,
+    pub trial_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     #[doc(hidden)]
-    pub trial_component_arn: std::option::Option<std::string::String>,
+    pub trial_component_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) and job type of the source of the component.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::TrialComponentSource>,
+    pub source: ::std::option::Option<crate::types::TrialComponentSource>,
     /// <p>The status of the trial component.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::TrialComponentStatus>,
+    pub status: ::std::option::Option<crate::types::TrialComponentStatus>,
     /// <p>When the component started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the component ended.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the component was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who created the trial component.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<crate::types::UserContext>,
+    pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the component was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
-    pub last_modified_by: std::option::Option<crate::types::UserContext>,
+    pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The hyperparameters of the component.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::TrialComponentParameterValue>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TrialComponentParameterValue,
+        >,
     >,
     /// <p>The input artifacts of the component.</p>
     #[doc(hidden)]
-    pub input_artifacts: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
+    pub input_artifacts: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
     >,
     /// <p>The output artifacts of the component.</p>
     #[doc(hidden)]
-    pub output_artifacts: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
+    pub output_artifacts: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
     >,
     /// <p>The metrics for the component.</p>
     #[doc(hidden)]
-    pub metrics: std::option::Option<std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
+    pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     #[doc(hidden)]
-    pub metadata_properties: std::option::Option<crate::types::MetadataProperties>,
+    pub metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
     /// <p>Details of the source of the component.</p>
     #[doc(hidden)]
-    pub source_detail: std::option::Option<crate::types::TrialComponentSourceDetail>,
+    pub source_detail: ::std::option::Option<crate::types::TrialComponentSourceDetail>,
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
     #[doc(hidden)]
-    pub lineage_group_arn: std::option::Option<std::string::String>,
+    pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that are associated with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of the parents of the component. A parent is a trial the component is associated with and the experiment the trial is part of. A component might not have any parents.</p>
     #[doc(hidden)]
-    pub parents: std::option::Option<std::vec::Vec<crate::types::Parent>>,
+    pub parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
     /// <p>The name of the experiment run.</p>
     #[doc(hidden)]
-    pub run_name: std::option::Option<std::string::String>,
+    pub run_name: ::std::option::Option<::std::string::String>,
 }
 impl TrialComponent {
     /// <p>The name of the trial component.</p>
-    pub fn trial_component_name(&self) -> std::option::Option<&str> {
+    pub fn trial_component_name(&self) -> ::std::option::Option<&str> {
         self.trial_component_name.as_deref()
     }
     /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+    pub fn trial_component_arn(&self) -> ::std::option::Option<&str> {
         self.trial_component_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of the component.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::TrialComponentSource> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::TrialComponentSource> {
         self.source.as_ref()
     }
     /// <p>The status of the trial component.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TrialComponentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::TrialComponentStatus> {
         self.status.as_ref()
     }
     /// <p>When the component started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>When the component ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>When the component was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Who created the trial component.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>When the component was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>The hyperparameters of the component.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::TrialComponentParameterValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TrialComponentParameterValue,
+        >,
     > {
         self.parameters.as_ref()
     }
     /// <p>The input artifacts of the component.</p>
     pub fn input_artifacts(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
     > {
         self.input_artifacts.as_ref()
     }
     /// <p>The output artifacts of the component.</p>
     pub fn output_artifacts(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
     > {
         self.output_artifacts.as_ref()
     }
     /// <p>The metrics for the component.</p>
-    pub fn metrics(&self) -> std::option::Option<&[crate::types::TrialComponentMetricSummary]> {
+    pub fn metrics(&self) -> ::std::option::Option<&[crate::types::TrialComponentMetricSummary]> {
         self.metrics.as_deref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn metadata_properties(&self) -> std::option::Option<&crate::types::MetadataProperties> {
+    pub fn metadata_properties(&self) -> ::std::option::Option<&crate::types::MetadataProperties> {
         self.metadata_properties.as_ref()
     }
     /// <p>Details of the source of the component.</p>
-    pub fn source_detail(&self) -> std::option::Option<&crate::types::TrialComponentSourceDetail> {
+    pub fn source_detail(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TrialComponentSourceDetail> {
         self.source_detail.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
-    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+    pub fn lineage_group_arn(&self) -> ::std::option::Option<&str> {
         self.lineage_group_arn.as_deref()
     }
     /// <p>The list of tags that are associated with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>An array of the parents of the component. A parent is a trial the component is associated with and the experiment the trial is part of. A component might not have any parents.</p>
-    pub fn parents(&self) -> std::option::Option<&[crate::types::Parent]> {
+    pub fn parents(&self) -> ::std::option::Option<&[crate::types::Parent]> {
         self.parents.as_deref()
     }
     /// <p>The name of the experiment run.</p>
-    pub fn run_name(&self) -> std::option::Option<&str> {
+    pub fn run_name(&self) -> ::std::option::Option<&str> {
         self.run_name.as_deref()
     }
 }
@@ -181,168 +189,185 @@ impl TrialComponent {
 
 /// A builder for [`TrialComponent`](crate::types::TrialComponent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrialComponentBuilder {
-    pub(crate) trial_component_name: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) trial_component_arn: std::option::Option<std::string::String>,
-    pub(crate) source: std::option::Option<crate::types::TrialComponentSource>,
-    pub(crate) status: std::option::Option<crate::types::TrialComponentStatus>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::TrialComponentParameterValue>,
+    pub(crate) trial_component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) trial_component_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source: ::std::option::Option<crate::types::TrialComponentSource>,
+    pub(crate) status: ::std::option::Option<crate::types::TrialComponentStatus>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::TrialComponentParameterValue,
+        >,
     >,
-    pub(crate) input_artifacts: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
+    pub(crate) input_artifacts: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
     >,
-    pub(crate) output_artifacts: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
+    pub(crate) output_artifacts: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::TrialComponentArtifact>,
     >,
     pub(crate) metrics:
-        std::option::Option<std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
-    pub(crate) metadata_properties: std::option::Option<crate::types::MetadataProperties>,
-    pub(crate) source_detail: std::option::Option<crate::types::TrialComponentSourceDetail>,
-    pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) parents: std::option::Option<std::vec::Vec<crate::types::Parent>>,
-    pub(crate) run_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
+    pub(crate) metadata_properties: ::std::option::Option<crate::types::MetadataProperties>,
+    pub(crate) source_detail: ::std::option::Option<crate::types::TrialComponentSourceDetail>,
+    pub(crate) lineage_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) parents: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
+    pub(crate) run_name: ::std::option::Option<::std::string::String>,
 }
 impl TrialComponentBuilder {
     /// <p>The name of the trial component.</p>
-    pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trial_component_name = Some(input.into());
+    pub fn trial_component_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.trial_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the trial component.</p>
     pub fn set_trial_component_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.trial_component_name = input;
         self
     }
     /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component as displayed. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trial_component_arn = Some(input.into());
+    pub fn trial_component_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.trial_component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     pub fn set_trial_component_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.trial_component_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of the component.</p>
     pub fn source(mut self, input: crate::types::TrialComponentSource) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) and job type of the source of the component.</p>
     pub fn set_source(
         mut self,
-        input: std::option::Option<crate::types::TrialComponentSource>,
+        input: ::std::option::Option<crate::types::TrialComponentSource>,
     ) -> Self {
         self.source = input;
         self
     }
     /// <p>The status of the trial component.</p>
     pub fn status(mut self, input: crate::types::TrialComponentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the trial component.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::TrialComponentStatus>,
+        input: ::std::option::Option<crate::types::TrialComponentStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>When the component started.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the component started.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>When the component ended.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the component ended.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>When the component was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the component was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Who created the trial component.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
-        self.created_by = Some(input);
+        self.created_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Who created the trial component.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
+    pub fn set_created_by(
+        mut self,
+        input: ::std::option::Option<crate::types::UserContext>,
+    ) -> Self {
         self.created_by = input;
         self
     }
     /// <p>When the component was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the component was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
-        self.last_modified_by = Some(input);
+        self.last_modified_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_last_modified_by(
         mut self,
-        input: std::option::Option<crate::types::UserContext>,
+        input: ::std::option::Option<crate::types::UserContext>,
     ) -> Self {
         self.last_modified_by = input;
         self
@@ -354,20 +379,20 @@ impl TrialComponentBuilder {
     /// <p>The hyperparameters of the component.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::TrialComponentParameterValue,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The hyperparameters of the component.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::TrialComponentParameterValue,
             >,
         >,
@@ -382,19 +407,22 @@ impl TrialComponentBuilder {
     /// <p>The input artifacts of the component.</p>
     pub fn input_artifacts(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::TrialComponentArtifact,
     ) -> Self {
         let mut hash_map = self.input_artifacts.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.input_artifacts = Some(hash_map);
+        self.input_artifacts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The input artifacts of the component.</p>
     pub fn set_input_artifacts(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                crate::types::TrialComponentArtifact,
+            >,
         >,
     ) -> Self {
         self.input_artifacts = input;
@@ -407,19 +435,22 @@ impl TrialComponentBuilder {
     /// <p>The output artifacts of the component.</p>
     pub fn output_artifacts(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::TrialComponentArtifact,
     ) -> Self {
         let mut hash_map = self.output_artifacts.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.output_artifacts = Some(hash_map);
+        self.output_artifacts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The output artifacts of the component.</p>
     pub fn set_output_artifacts(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                crate::types::TrialComponentArtifact,
+            >,
         >,
     ) -> Self {
         self.output_artifacts = input;
@@ -433,52 +464,55 @@ impl TrialComponentBuilder {
     pub fn metrics(mut self, input: crate::types::TrialComponentMetricSummary) -> Self {
         let mut v = self.metrics.unwrap_or_default();
         v.push(input);
-        self.metrics = Some(v);
+        self.metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>The metrics for the component.</p>
     pub fn set_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TrialComponentMetricSummary>>,
     ) -> Self {
         self.metrics = input;
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
-        self.metadata_properties = Some(input);
+        self.metadata_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn set_metadata_properties(
         mut self,
-        input: std::option::Option<crate::types::MetadataProperties>,
+        input: ::std::option::Option<crate::types::MetadataProperties>,
     ) -> Self {
         self.metadata_properties = input;
         self
     }
     /// <p>Details of the source of the component.</p>
     pub fn source_detail(mut self, input: crate::types::TrialComponentSourceDetail) -> Self {
-        self.source_detail = Some(input);
+        self.source_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details of the source of the component.</p>
     pub fn set_source_detail(
         mut self,
-        input: std::option::Option<crate::types::TrialComponentSourceDetail>,
+        input: ::std::option::Option<crate::types::TrialComponentSourceDetail>,
     ) -> Self {
         self.source_detail = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
-    pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lineage_group_arn = Some(input.into());
+    pub fn lineage_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lineage_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
     pub fn set_lineage_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lineage_group_arn = input;
         self
@@ -491,13 +525,13 @@ impl TrialComponentBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of tags that are associated with the component. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -510,24 +544,24 @@ impl TrialComponentBuilder {
     pub fn parents(mut self, input: crate::types::Parent) -> Self {
         let mut v = self.parents.unwrap_or_default();
         v.push(input);
-        self.parents = Some(v);
+        self.parents = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of the parents of the component. A parent is a trial the component is associated with and the experiment the trial is part of. A component might not have any parents.</p>
     pub fn set_parents(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Parent>>,
     ) -> Self {
         self.parents = input;
         self
     }
     /// <p>The name of the experiment run.</p>
-    pub fn run_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.run_name = Some(input.into());
+    pub fn run_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.run_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment run.</p>
-    pub fn set_run_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_run_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_name = input;
         self
     }

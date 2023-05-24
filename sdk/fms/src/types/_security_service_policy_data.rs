@@ -2,11 +2,11 @@
 
 /// <p>Details about the security service that is being used to protect the resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityServicePolicyData {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SecurityServiceType>,
+    pub r#type: ::std::option::Option<crate::types::SecurityServiceType>,
     /// <p>Details about the service that are specific to the service type, in JSON format. </p>
     /// <ul>
     /// <li> <p>Example: <code>DNS_FIREWALL</code> </p> <p> <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code> </p> <note>
@@ -39,14 +39,14 @@ pub struct SecurityServicePolicyData {
     /// <li> <p>Example: <code>WAF Classic</code> </p> <p> <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub managed_service_data: std::option::Option<std::string::String>,
+    pub managed_service_data: ::std::option::Option<::std::string::String>,
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
     #[doc(hidden)]
-    pub policy_option: std::option::Option<crate::types::PolicyOption>,
+    pub policy_option: ::std::option::Option<crate::types::PolicyOption>,
 }
 impl SecurityServicePolicyData {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SecurityServiceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityServiceType> {
         self.r#type.as_ref()
     }
     /// <p>Details about the service that are specific to the service type, in JSON format. </p>
@@ -80,11 +80,11 @@ impl SecurityServicePolicyData {
     /// <li> <p>Example: <code>WAFV2</code> - Logging configurations </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null, \"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\": {\"versionEnabled\":null,\"version\":null,\"vendorName\":\"AWS\", \"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\"} ,\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[], \"sampledRequestsEnabled\":true}],\"postProcessRuleGroups\":[], \"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\" :null,\"customResponse\":null,\"overrideCustomerWebACLAssociation\" :false,\"loggingConfiguration\":{\"logDestinationConfigs\": [\"arn:aws:s3:::aws-waf-logs-example-bucket\"] ,\"redactedFields\":[],\"loggingFilterConfigs\":{\"defaultBehavior\":\"KEEP\", \"filters\":[{\"behavior\":\"KEEP\",\"requirement\":\"MEETS_ALL\", \"conditions\":[{\"actionCondition\":\"CAPTCHA\"},{\"actionCondition\": \"CHALLENGE\"}, {\"actionCondition\":\"EXCLUDED_AS_COUNT\"}]}]}},\"sampledRequestsEnabledForDefaultActions\":true}"</code> </p> <p>Firewall Manager supports Amazon Kinesis Data Firehose and Amazon S3 as the <code>logDestinationConfigs</code> in your <code>loggingConfiguration</code>. For information about WAF logging configurations, see <a href="https://docs.aws.amazon.com/waf/latest/APIReference/API_LoggingConfiguration.html">LoggingConfiguration</a> in the <i>WAF API Reference</i> </p> <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>. Optionally provide as many as 20 <code>redactedFields</code>. The <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p> </li>
     /// <li> <p>Example: <code>WAF Classic</code> </p> <p> <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code> </p> </li>
     /// </ul>
-    pub fn managed_service_data(&self) -> std::option::Option<&str> {
+    pub fn managed_service_data(&self) -> ::std::option::Option<&str> {
         self.managed_service_data.as_deref()
     }
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
-    pub fn policy_option(&self) -> std::option::Option<&crate::types::PolicyOption> {
+    pub fn policy_option(&self) -> ::std::option::Option<&crate::types::PolicyOption> {
         self.policy_option.as_ref()
     }
 }
@@ -97,22 +97,24 @@ impl SecurityServicePolicyData {
 
 /// A builder for [`SecurityServicePolicyData`](crate::types::SecurityServicePolicyData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SecurityServicePolicyDataBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::SecurityServiceType>,
-    pub(crate) managed_service_data: std::option::Option<std::string::String>,
-    pub(crate) policy_option: std::option::Option<crate::types::PolicyOption>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SecurityServiceType>,
+    pub(crate) managed_service_data: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_option: ::std::option::Option<crate::types::PolicyOption>,
 }
 impl SecurityServicePolicyDataBuilder {
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
     pub fn r#type(mut self, input: crate::types::SecurityServiceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The service that the policy is using to protect the resources. This specifies the type of policy that is created, either an WAF policy, a Shield Advanced policy, or a security group policy. For security group policies, Firewall Manager supports one security group for each common policy and for each content audit policy. This is an adjustable limit that you can increase by contacting Amazon Web Services Support.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::SecurityServiceType>,
+        input: ::std::option::Option<crate::types::SecurityServiceType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -148,8 +150,11 @@ impl SecurityServicePolicyDataBuilder {
     /// <li> <p>Example: <code>WAFV2</code> - Logging configurations </p> <p> <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null, \"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\": {\"versionEnabled\":null,\"version\":null,\"vendorName\":\"AWS\", \"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\"} ,\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[], \"sampledRequestsEnabled\":true}],\"postProcessRuleGroups\":[], \"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\" :null,\"customResponse\":null,\"overrideCustomerWebACLAssociation\" :false,\"loggingConfiguration\":{\"logDestinationConfigs\": [\"arn:aws:s3:::aws-waf-logs-example-bucket\"] ,\"redactedFields\":[],\"loggingFilterConfigs\":{\"defaultBehavior\":\"KEEP\", \"filters\":[{\"behavior\":\"KEEP\",\"requirement\":\"MEETS_ALL\", \"conditions\":[{\"actionCondition\":\"CAPTCHA\"},{\"actionCondition\": \"CHALLENGE\"}, {\"actionCondition\":\"EXCLUDED_AS_COUNT\"}]}]}},\"sampledRequestsEnabledForDefaultActions\":true}"</code> </p> <p>Firewall Manager supports Amazon Kinesis Data Firehose and Amazon S3 as the <code>logDestinationConfigs</code> in your <code>loggingConfiguration</code>. For information about WAF logging configurations, see <a href="https://docs.aws.amazon.com/waf/latest/APIReference/API_LoggingConfiguration.html">LoggingConfiguration</a> in the <i>WAF API Reference</i> </p> <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>. Optionally provide as many as 20 <code>redactedFields</code>. The <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p> </li>
     /// <li> <p>Example: <code>WAF Classic</code> </p> <p> <code>"{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code> </p> </li>
     /// </ul>
-    pub fn managed_service_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.managed_service_data = Some(input.into());
+    pub fn managed_service_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.managed_service_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about the service that are specific to the service type, in JSON format. </p>
@@ -185,20 +190,20 @@ impl SecurityServicePolicyDataBuilder {
     /// </ul>
     pub fn set_managed_service_data(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.managed_service_data = input;
         self
     }
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
     pub fn policy_option(mut self, input: crate::types::PolicyOption) -> Self {
-        self.policy_option = Some(input);
+        self.policy_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the Network Firewall firewall policy options to configure a centralized deployment model.</p>
     pub fn set_policy_option(
         mut self,
-        input: std::option::Option<crate::types::PolicyOption>,
+        input: ::std::option::Option<crate::types::PolicyOption>,
     ) -> Self {
         self.policy_option = input;
         self

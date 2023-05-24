@@ -2,7 +2,7 @@
 
 /// <p>Identifies a specific batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum BatchJobIdentifier {
     /// <p>Specifies a file associated with a specific batch job.</p>
     FileBatchJobIdentifier(crate::types::FileBatchJobIdentifier),
@@ -23,11 +23,11 @@ impl BatchJobIdentifier {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file_batch_job_identifier(
         &self,
-    ) -> std::result::Result<&crate::types::FileBatchJobIdentifier, &Self> {
+    ) -> ::std::result::Result<&crate::types::FileBatchJobIdentifier, &Self> {
         if let BatchJobIdentifier::FileBatchJobIdentifier(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`FileBatchJobIdentifier`](crate::types::BatchJobIdentifier::FileBatchJobIdentifier).
@@ -38,11 +38,11 @@ impl BatchJobIdentifier {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_script_batch_job_identifier(
         &self,
-    ) -> std::result::Result<&crate::types::ScriptBatchJobIdentifier, &Self> {
+    ) -> ::std::result::Result<&crate::types::ScriptBatchJobIdentifier, &Self> {
         if let BatchJobIdentifier::ScriptBatchJobIdentifier(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ScriptBatchJobIdentifier`](crate::types::BatchJobIdentifier::ScriptBatchJobIdentifier).

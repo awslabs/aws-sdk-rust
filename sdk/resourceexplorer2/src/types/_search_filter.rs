@@ -2,20 +2,20 @@
 
 /// <p>A search filter defines which resources can be part of a search query result set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchFilter {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
     #[doc(hidden)]
-    pub filter_string: std::option::Option<std::string::String>,
+    pub filter_string: ::std::option::Option<::std::string::String>,
 }
 impl SearchFilter {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-    pub fn filter_string(&self) -> std::option::Option<&str> {
+    pub fn filter_string(&self) -> ::std::option::Option<&str> {
         self.filter_string.as_deref()
     }
 }
-impl std::fmt::Debug for SearchFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SearchFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchFilter");
         formatter.field("filter_string", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,24 @@ impl SearchFilter {
 
 /// A builder for [`SearchFilter`](crate::types::SearchFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SearchFilterBuilder {
-    pub(crate) filter_string: std::option::Option<std::string::String>,
+    pub(crate) filter_string: ::std::option::Option<::std::string::String>,
 }
 impl SearchFilterBuilder {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-    pub fn filter_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filter_string = Some(input.into());
+    pub fn filter_string(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.filter_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-    pub fn set_filter_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_string(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.filter_string = input;
         self
     }
@@ -52,8 +58,8 @@ impl SearchFilterBuilder {
         }
     }
 }
-impl std::fmt::Debug for SearchFilterBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SearchFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchFilterBuilder");
         formatter.field("filter_string", &"*** Sensitive Data Redacted ***");
         formatter.finish()

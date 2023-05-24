@@ -3,18 +3,18 @@
 /// <p>The field wells of the visual.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComboChartFieldWells {
     /// <p>The aggregated field wells of a combo chart. Combo charts only have aggregated field wells. Columns in a combo chart are aggregated by category.</p>
     #[doc(hidden)]
     pub combo_chart_aggregated_field_wells:
-        std::option::Option<crate::types::ComboChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::ComboChartAggregatedFieldWells>,
 }
 impl ComboChartFieldWells {
     /// <p>The aggregated field wells of a combo chart. Combo charts only have aggregated field wells. Columns in a combo chart are aggregated by category.</p>
     pub fn combo_chart_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::ComboChartAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::ComboChartAggregatedFieldWells> {
         self.combo_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl ComboChartFieldWells {
 
 /// A builder for [`ComboChartFieldWells`](crate::types::ComboChartFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComboChartFieldWellsBuilder {
     pub(crate) combo_chart_aggregated_field_wells:
-        std::option::Option<crate::types::ComboChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::ComboChartAggregatedFieldWells>,
 }
 impl ComboChartFieldWellsBuilder {
     /// <p>The aggregated field wells of a combo chart. Combo charts only have aggregated field wells. Columns in a combo chart are aggregated by category.</p>
@@ -38,13 +40,13 @@ impl ComboChartFieldWellsBuilder {
         mut self,
         input: crate::types::ComboChartAggregatedFieldWells,
     ) -> Self {
-        self.combo_chart_aggregated_field_wells = Some(input);
+        self.combo_chart_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a combo chart. Combo charts only have aggregated field wells. Columns in a combo chart are aggregated by category.</p>
     pub fn set_combo_chart_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::ComboChartAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::ComboChartAggregatedFieldWells>,
     ) -> Self {
         self.combo_chart_aggregated_field_wells = input;
         self

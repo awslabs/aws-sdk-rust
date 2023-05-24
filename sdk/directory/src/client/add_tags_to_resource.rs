@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddTagsToResource`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_resource_id): <p>Identifier (ID) for the directory to which to add the tag.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_resource_id): <p>Identifier (ID) for the directory to which to add the tag.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_tags): <p>The tags to be assigned to the directory.</p>
     /// - On success, responds with [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput)
     /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::operation::add_tags_to_resource::AddTagsToResourceError)

@@ -2,22 +2,22 @@
 
 /// <p>Information about this specific recommendation, such as the timestamp for when Amazon Web Services made a specific recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationPurchaseRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
-    pub recommendation_id: std::option::Option<std::string::String>,
+    pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
     #[doc(hidden)]
-    pub generation_timestamp: std::option::Option<std::string::String>,
+    pub generation_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl ReservationPurchaseRecommendationMetadata {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn generation_timestamp(&self) -> std::option::Option<&str> {
+    pub fn generation_timestamp(&self) -> ::std::option::Option<&str> {
         self.generation_timestamp.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl ReservationPurchaseRecommendationMetadata {
 
 /// A builder for [`ReservationPurchaseRecommendationMetadata`](crate::types::ReservationPurchaseRecommendationMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReservationPurchaseRecommendationMetadataBuilder {
-    pub(crate) recommendation_id: std::option::Option<std::string::String>,
-    pub(crate) generation_timestamp: std::option::Option<std::string::String>,
+    pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) generation_timestamp: ::std::option::Option<::std::string::String>,
 }
 impl ReservationPurchaseRecommendationMetadataBuilder {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recommendation_id = Some(input.into());
+    pub fn recommendation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for this specific recommendation.</p>
     pub fn set_recommendation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recommendation_id = input;
         self
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
-    pub fn generation_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.generation_timestamp = Some(input.into());
+    pub fn generation_timestamp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.generation_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
     pub fn set_generation_timestamp(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.generation_timestamp = input;
         self

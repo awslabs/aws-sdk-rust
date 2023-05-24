@@ -38,13 +38,13 @@
 /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsClientCache {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsClientCache {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsClientCache {
+impl ::std::convert::From<&str> for HlsClientCache {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => HlsClientCache::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsClientCache {
         }
     }
 }
-impl std::str::FromStr for HlsClientCache {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsClientCache {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsClientCache::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsClientCache::from(s))
     }
 }
 impl HlsClientCache {
@@ -86,7 +86,7 @@ impl HlsClientCache {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for HlsClientCache {
+impl ::std::convert::AsRef<str> for HlsClientCache {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

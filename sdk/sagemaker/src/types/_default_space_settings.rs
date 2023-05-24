@@ -2,40 +2,40 @@
 
 /// <p>A collection of settings that apply to spaces created in the Domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultSpaceSettings {
     /// <p>The ARN of the execution role for the space.</p>
     #[doc(hidden)]
-    pub execution_role: std::option::Option<std::string::String>,
+    pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The JupyterServer app settings.</p>
     #[doc(hidden)]
-    pub jupyter_server_app_settings: std::option::Option<crate::types::JupyterServerAppSettings>,
+    pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     /// <p>The KernelGateway app settings.</p>
     #[doc(hidden)]
-    pub kernel_gateway_app_settings: std::option::Option<crate::types::KernelGatewayAppSettings>,
+    pub kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
 }
 impl DefaultSpaceSettings {
     /// <p>The ARN of the execution role for the space.</p>
-    pub fn execution_role(&self) -> std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The JupyterServer app settings.</p>
     pub fn jupyter_server_app_settings(
         &self,
-    ) -> std::option::Option<&crate::types::JupyterServerAppSettings> {
+    ) -> ::std::option::Option<&crate::types::JupyterServerAppSettings> {
         self.jupyter_server_app_settings.as_ref()
     }
     /// <p>The KernelGateway app settings.</p>
     pub fn kernel_gateway_app_settings(
         &self,
-    ) -> std::option::Option<&crate::types::KernelGatewayAppSettings> {
+    ) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
 }
@@ -48,23 +48,31 @@ impl DefaultSpaceSettings {
 
 /// A builder for [`DefaultSpaceSettings`](crate::types::DefaultSpaceSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefaultSpaceSettingsBuilder {
-    pub(crate) execution_role: std::option::Option<std::string::String>,
-    pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) jupyter_server_app_settings:
-        std::option::Option<crate::types::JupyterServerAppSettings>,
+        ::std::option::Option<crate::types::JupyterServerAppSettings>,
     pub(crate) kernel_gateway_app_settings:
-        std::option::Option<crate::types::KernelGatewayAppSettings>,
+        ::std::option::Option<crate::types::KernelGatewayAppSettings>,
 }
 impl DefaultSpaceSettingsBuilder {
     /// <p>The ARN of the execution role for the space.</p>
-    pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_role = Some(input.into());
+    pub fn execution_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the execution role for the space.</p>
-    pub fn set_execution_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_role(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.execution_role = input;
         self
     }
@@ -73,16 +81,19 @@ impl DefaultSpaceSettingsBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
-    pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_groups = input;
         self
@@ -92,13 +103,13 @@ impl DefaultSpaceSettingsBuilder {
         mut self,
         input: crate::types::JupyterServerAppSettings,
     ) -> Self {
-        self.jupyter_server_app_settings = Some(input);
+        self.jupyter_server_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The JupyterServer app settings.</p>
     pub fn set_jupyter_server_app_settings(
         mut self,
-        input: std::option::Option<crate::types::JupyterServerAppSettings>,
+        input: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     ) -> Self {
         self.jupyter_server_app_settings = input;
         self
@@ -108,13 +119,13 @@ impl DefaultSpaceSettingsBuilder {
         mut self,
         input: crate::types::KernelGatewayAppSettings,
     ) -> Self {
-        self.kernel_gateway_app_settings = Some(input);
+        self.kernel_gateway_app_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The KernelGateway app settings.</p>
     pub fn set_kernel_gateway_app_settings(
         mut self,
-        input: std::option::Option<crate::types::KernelGatewayAppSettings>,
+        input: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
     ) -> Self {
         self.kernel_gateway_app_settings = input;
         self

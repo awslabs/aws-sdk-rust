@@ -8,47 +8,50 @@ pub use crate::operation::describe_reserved_instances_offerings::_describe_reser
 /// <p>Describes Reserved Instance offerings that are available for purchase. With Reserved Instances, you purchase the right to launch instances for a period of time. During that time period, you do not receive insufficient capacity errors, and you pay a lower usage rate than the rate charged for On-Demand instances for the actual time used.</p>
 /// <p>If you have listed your own Reserved Instances for sale in the Reserved Instance Marketplace, they will be excluded from these results. This is to ensure that you do not purchase your own Reserved Instances.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder,
 }
 impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// Creates a new `DescribeReservedInstancesOfferings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,7 +62,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError>>
                          {
         self.send_middleware().await
     }
@@ -70,14 +73,17 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
@@ -116,7 +122,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -127,7 +133,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
-    pub fn set_include_marketplace(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_marketplace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_marketplace(input);
         self
     }
@@ -139,7 +145,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::InstanceType>,
+        input: ::std::option::Option<crate::types::InstanceType>,
     ) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
@@ -152,7 +158,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     }
     /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 94608000 (3 years)</p>
-    pub fn set_max_duration(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_max_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_max_duration(input);
         self
     }
@@ -164,7 +170,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     }
     /// <p>The maximum number of instances to filter when searching for offerings.</p>
     /// <p>Default: 20</p>
-    pub fn set_max_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_instance_count(input);
         self
     }
@@ -176,7 +182,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     }
     /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
     /// <p>Default: 2592000 (1 month)</p>
-    pub fn set_min_duration(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_min_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_min_duration(input);
         self
     }
@@ -188,7 +194,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
     pub fn set_offering_class(
         mut self,
-        input: std::option::Option<crate::types::OfferingClassType>,
+        input: ::std::option::Option<crate::types::OfferingClassType>,
     ) -> Self {
         self.inner = self.inner.set_offering_class(input);
         self
@@ -201,7 +207,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
     pub fn set_product_description(
         mut self,
-        input: std::option::Option<crate::types::RiProductDescription>,
+        input: ::std::option::Option<crate::types::RiProductDescription>,
     ) -> Self {
         self.inner = self.inner.set_product_description(input);
         self
@@ -213,7 +219,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <p>One or more Reserved Instances offering IDs.</p>
     pub fn reserved_instances_offering_ids(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.reserved_instances_offering_ids(input.into());
         self
@@ -221,7 +227,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <p>One or more Reserved Instances offering IDs.</p>
     pub fn set_reserved_instances_offering_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_offering_ids(input);
         self
@@ -232,7 +238,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -248,7 +254,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <p>Default: <code>default</code> </p>
     pub fn set_instance_tenancy(
         mut self,
-        input: std::option::Option<crate::types::Tenancy>,
+        input: ::std::option::Option<crate::types::Tenancy>,
     ) -> Self {
         self.inner = self.inner.set_instance_tenancy(input);
         self
@@ -261,17 +267,17 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
     /// <p>Default: 100</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -283,7 +289,7 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
     pub fn set_offering_type(
         mut self,
-        input: std::option::Option<crate::types::OfferingTypeValues>,
+        input: ::std::option::Option<crate::types::OfferingTypeValues>,
     ) -> Self {
         self.inner = self.inner.set_offering_type(input);
         self

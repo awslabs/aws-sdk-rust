@@ -2,14 +2,14 @@
 
 /// <p>The request is invalid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::InvalidRequestReason>,
+    pub reason: ::std::option::Option<crate::types::InvalidRequestReason>,
     /// <p>Provides additional detail about why the request failed:</p>
     /// <ul>
     /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
@@ -18,12 +18,12 @@ pub struct InvalidRequestException {
     /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub detail: std::option::Option<crate::types::InvalidRequestDetail>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub detail: ::std::option::Option<crate::types::InvalidRequestDetail>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn reason(&self) -> std::option::Option<&crate::types::InvalidRequestReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::InvalidRequestReason> {
         self.reason.as_ref()
     }
     /// <p>Provides additional detail about why the request failed:</p>
@@ -33,36 +33,36 @@ impl InvalidRequestException {
     /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
     /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
     /// </ul>
-    pub fn detail(&self) -> std::option::Option<&crate::types::InvalidRequestDetail> {
+    pub fn detail(&self) -> ::std::option::Option<&crate::types::InvalidRequestDetail> {
         self.detail.as_ref()
     }
 }
 impl InvalidRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidRequestException {
+impl ::std::fmt::Display for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidRequestException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "InvalidRequestException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidRequestException {}
-impl aws_http::request_id::RequestId for crate::types::error::InvalidRequestException {
+impl ::std::error::Error for InvalidRequestException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidRequestException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRequestException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRequestException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -75,33 +75,35 @@ impl InvalidRequestException {
 
 /// A builder for [`InvalidRequestException`](crate::types::error::InvalidRequestException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidRequestExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::InvalidRequestReason>,
-    pub(crate) detail: std::option::Option<crate::types::InvalidRequestDetail>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::InvalidRequestReason>,
+    pub(crate) detail: ::std::option::Option<crate::types::InvalidRequestDetail>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidRequestExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(mut self, input: crate::types::InvalidRequestReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::InvalidRequestReason>,
+        input: ::std::option::Option<crate::types::InvalidRequestReason>,
     ) -> Self {
         self.reason = input;
         self
@@ -114,7 +116,7 @@ impl InvalidRequestExceptionBuilder {
     /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
     /// </ul>
     pub fn detail(mut self, input: crate::types::InvalidRequestDetail) -> Self {
-        self.detail = Some(input);
+        self.detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides additional detail about why the request failed:</p>
@@ -126,13 +128,13 @@ impl InvalidRequestExceptionBuilder {
     /// </ul>
     pub fn set_detail(
         mut self,
-        input: std::option::Option<crate::types::InvalidRequestDetail>,
+        input: ::std::option::Option<crate::types::InvalidRequestDetail>,
     ) -> Self {
         self.detail = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -140,7 +142,7 @@ impl InvalidRequestExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

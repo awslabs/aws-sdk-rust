@@ -2,136 +2,136 @@
 
 /// <p>Information about a target group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroup {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
-    pub target_group_arn: std::option::Option<std::string::String>,
+    pub target_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target group.</p>
     #[doc(hidden)]
-    pub target_group_name: std::option::Option<std::string::String>,
+    pub target_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use for routing traffic to the targets.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::ProtocolEnum>,
+    pub protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>The ID of the VPC for the targets.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     #[doc(hidden)]
-    pub health_check_protocol: std::option::Option<crate::types::ProtocolEnum>,
+    pub health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
     /// <p>The port to use to connect with the target.</p>
     #[doc(hidden)]
-    pub health_check_port: std::option::Option<std::string::String>,
+    pub health_check_port: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
     #[doc(hidden)]
-    pub health_check_enabled: std::option::Option<bool>,
+    pub health_check_enabled: ::std::option::Option<bool>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
     #[doc(hidden)]
-    pub health_check_interval_seconds: std::option::Option<i32>,
+    pub health_check_interval_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     #[doc(hidden)]
-    pub health_check_timeout_seconds: std::option::Option<i32>,
+    pub health_check_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     #[doc(hidden)]
-    pub healthy_threshold_count: std::option::Option<i32>,
+    pub healthy_threshold_count: ::std::option::Option<i32>,
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
     #[doc(hidden)]
-    pub unhealthy_threshold_count: std::option::Option<i32>,
+    pub unhealthy_threshold_count: ::std::option::Option<i32>,
     /// <p>The destination for health checks on the targets.</p>
     #[doc(hidden)]
-    pub health_check_path: std::option::Option<std::string::String>,
+    pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     #[doc(hidden)]
-    pub matcher: std::option::Option<crate::types::Matcher>,
+    pub matcher: ::std::option::Option<crate::types::Matcher>,
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
     #[doc(hidden)]
-    pub load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
     #[doc(hidden)]
-    pub target_type: std::option::Option<crate::types::TargetTypeEnum>,
+    pub target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
     #[doc(hidden)]
-    pub protocol_version: std::option::Option<std::string::String>,
+    pub protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     #[doc(hidden)]
-    pub ip_address_type: std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
+    pub ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
 }
 impl TargetGroup {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> ::std::option::Option<&str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The name of the target group.</p>
-    pub fn target_group_name(&self) -> std::option::Option<&str> {
+    pub fn target_group_name(&self) -> ::std::option::Option<&str> {
         self.target_group_name.as_deref()
     }
     /// <p>The protocol to use for routing traffic to the targets.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::ProtocolEnum> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
         self.protocol.as_ref()
     }
     /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The ID of the VPC for the targets.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn health_check_protocol(&self) -> std::option::Option<&crate::types::ProtocolEnum> {
+    pub fn health_check_protocol(&self) -> ::std::option::Option<&crate::types::ProtocolEnum> {
         self.health_check_protocol.as_ref()
     }
     /// <p>The port to use to connect with the target.</p>
-    pub fn health_check_port(&self) -> std::option::Option<&str> {
+    pub fn health_check_port(&self) -> ::std::option::Option<&str> {
         self.health_check_port.as_deref()
     }
     /// <p>Indicates whether health checks are enabled.</p>
-    pub fn health_check_enabled(&self) -> std::option::Option<bool> {
+    pub fn health_check_enabled(&self) -> ::std::option::Option<bool> {
         self.health_check_enabled
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
-    pub fn health_check_interval_seconds(&self) -> std::option::Option<i32> {
+    pub fn health_check_interval_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_interval_seconds
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
-    pub fn health_check_timeout_seconds(&self) -> std::option::Option<i32> {
+    pub fn health_check_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_timeout_seconds
     }
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
-    pub fn healthy_threshold_count(&self) -> std::option::Option<i32> {
+    pub fn healthy_threshold_count(&self) -> ::std::option::Option<i32> {
         self.healthy_threshold_count
     }
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
-    pub fn unhealthy_threshold_count(&self) -> std::option::Option<i32> {
+    pub fn unhealthy_threshold_count(&self) -> ::std::option::Option<i32> {
         self.unhealthy_threshold_count
     }
     /// <p>The destination for health checks on the targets.</p>
-    pub fn health_check_path(&self) -> std::option::Option<&str> {
+    pub fn health_check_path(&self) -> ::std::option::Option<&str> {
         self.health_check_path.as_deref()
     }
     /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-    pub fn matcher(&self) -> std::option::Option<&crate::types::Matcher> {
+    pub fn matcher(&self) -> ::std::option::Option<&crate::types::Matcher> {
         self.matcher.as_ref()
     }
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
-    pub fn load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn load_balancer_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.load_balancer_arns.as_deref()
     }
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::types::TargetTypeEnum> {
+    pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetTypeEnum> {
         self.target_type.as_ref()
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
-    pub fn protocol_version(&self) -> std::option::Option<&str> {
+    pub fn protocol_version(&self) -> ::std::option::Option<&str> {
         self.protocol_version.as_deref()
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn ip_address_type(
         &self,
-    ) -> std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
+    ) -> ::std::option::Option<&crate::types::TargetGroupIpAddressTypeEnum> {
         self.ip_address_type.as_ref()
     }
 }
@@ -144,177 +144,197 @@ impl TargetGroup {
 
 /// A builder for [`TargetGroup`](crate::types::TargetGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetGroupBuilder {
-    pub(crate) target_group_arn: std::option::Option<std::string::String>,
-    pub(crate) target_group_name: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<crate::types::ProtocolEnum>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) health_check_protocol: std::option::Option<crate::types::ProtocolEnum>,
-    pub(crate) health_check_port: std::option::Option<std::string::String>,
-    pub(crate) health_check_enabled: std::option::Option<bool>,
-    pub(crate) health_check_interval_seconds: std::option::Option<i32>,
-    pub(crate) health_check_timeout_seconds: std::option::Option<i32>,
-    pub(crate) healthy_threshold_count: std::option::Option<i32>,
-    pub(crate) unhealthy_threshold_count: std::option::Option<i32>,
-    pub(crate) health_check_path: std::option::Option<std::string::String>,
-    pub(crate) matcher: std::option::Option<crate::types::Matcher>,
-    pub(crate) load_balancer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) target_type: std::option::Option<crate::types::TargetTypeEnum>,
-    pub(crate) protocol_version: std::option::Option<std::string::String>,
-    pub(crate) ip_address_type: std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
+    pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) target_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<crate::types::ProtocolEnum>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) health_check_protocol: ::std::option::Option<crate::types::ProtocolEnum>,
+    pub(crate) health_check_port: ::std::option::Option<::std::string::String>,
+    pub(crate) health_check_enabled: ::std::option::Option<bool>,
+    pub(crate) health_check_interval_seconds: ::std::option::Option<i32>,
+    pub(crate) health_check_timeout_seconds: ::std::option::Option<i32>,
+    pub(crate) healthy_threshold_count: ::std::option::Option<i32>,
+    pub(crate) unhealthy_threshold_count: ::std::option::Option<i32>,
+    pub(crate) health_check_path: ::std::option::Option<::std::string::String>,
+    pub(crate) matcher: ::std::option::Option<crate::types::Matcher>,
+    pub(crate) load_balancer_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_type: ::std::option::Option<crate::types::TargetTypeEnum>,
+    pub(crate) protocol_version: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
 }
 impl TargetGroupBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_group_arn = Some(input.into());
+    pub fn target_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_group_arn = input;
         self
     }
     /// <p>The name of the target group.</p>
-    pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_group_name = Some(input.into());
+    pub fn target_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target group.</p>
     pub fn set_target_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_group_name = input;
         self
     }
     /// <p>The protocol to use for routing traffic to the targets.</p>
     pub fn protocol(mut self, input: crate::types::ProtocolEnum) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protocol to use for routing traffic to the targets.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::ProtocolEnum>) -> Self {
+    pub fn set_protocol(
+        mut self,
+        input: ::std::option::Option<crate::types::ProtocolEnum>,
+    ) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port on which the targets are listening. Not used if the target is a Lambda function.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The ID of the VPC for the targets.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC for the targets.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     pub fn health_check_protocol(mut self, input: crate::types::ProtocolEnum) -> Self {
-        self.health_check_protocol = Some(input);
+        self.health_check_protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     pub fn set_health_check_protocol(
         mut self,
-        input: std::option::Option<crate::types::ProtocolEnum>,
+        input: ::std::option::Option<crate::types::ProtocolEnum>,
     ) -> Self {
         self.health_check_protocol = input;
         self
     }
     /// <p>The port to use to connect with the target.</p>
-    pub fn health_check_port(mut self, input: impl Into<std::string::String>) -> Self {
-        self.health_check_port = Some(input.into());
+    pub fn health_check_port(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.health_check_port = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port to use to connect with the target.</p>
     pub fn set_health_check_port(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.health_check_port = input;
         self
     }
     /// <p>Indicates whether health checks are enabled.</p>
     pub fn health_check_enabled(mut self, input: bool) -> Self {
-        self.health_check_enabled = Some(input);
+        self.health_check_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether health checks are enabled.</p>
-    pub fn set_health_check_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_health_check_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.health_check_enabled = input;
         self
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
     pub fn health_check_interval_seconds(mut self, input: i32) -> Self {
-        self.health_check_interval_seconds = Some(input);
+        self.health_check_interval_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
-    pub fn set_health_check_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_health_check_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_interval_seconds = input;
         self
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn health_check_timeout_seconds(mut self, input: i32) -> Self {
-        self.health_check_timeout_seconds = Some(input);
+        self.health_check_timeout_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
-    pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_health_check_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_timeout_seconds = input;
         self
     }
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
     pub fn healthy_threshold_count(mut self, input: i32) -> Self {
-        self.healthy_threshold_count = Some(input);
+        self.healthy_threshold_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
-    pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_healthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_threshold_count = input;
         self
     }
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
     pub fn unhealthy_threshold_count(mut self, input: i32) -> Self {
-        self.unhealthy_threshold_count = Some(input);
+        self.unhealthy_threshold_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
-    pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unhealthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unhealthy_threshold_count = input;
         self
     }
     /// <p>The destination for health checks on the targets.</p>
-    pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.health_check_path = Some(input.into());
+    pub fn health_check_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination for health checks on the targets.</p>
     pub fn set_health_check_path(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.health_check_path = input;
         self
     }
     /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
     pub fn matcher(mut self, input: crate::types::Matcher) -> Self {
-        self.matcher = Some(input);
+        self.matcher = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
-    pub fn set_matcher(mut self, input: std::option::Option<crate::types::Matcher>) -> Self {
+    pub fn set_matcher(mut self, input: ::std::option::Option<crate::types::Matcher>) -> Self {
         self.matcher = input;
         self
     }
@@ -323,52 +343,61 @@ impl TargetGroupBuilder {
     /// To override the contents of this collection use [`set_load_balancer_arns`](Self::set_load_balancer_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
-    pub fn load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn load_balancer_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.load_balancer_arns.unwrap_or_default();
         v.push(input.into());
-        self.load_balancer_arns = Some(v);
+        self.load_balancer_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
     pub fn set_load_balancer_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.load_balancer_arns = input;
         self
     }
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
     pub fn target_type(mut self, input: crate::types::TargetTypeEnum) -> Self {
-        self.target_type = Some(input);
+        self.target_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of target that you must specify when registering targets with this target group. The possible values are <code>instance</code> (register targets by instance ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register a single Lambda function as a target), or <code>alb</code> (register a single Application Load Balancer as a target).</p>
     pub fn set_target_type(
         mut self,
-        input: std::option::Option<crate::types::TargetTypeEnum>,
+        input: ::std::option::Option<crate::types::TargetTypeEnum>,
     ) -> Self {
         self.target_type = input;
         self
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
-    pub fn protocol_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protocol_version = Some(input.into());
+    pub fn protocol_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.protocol_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
-    pub fn set_protocol_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.protocol_version = input;
         self
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::TargetGroupIpAddressTypeEnum) -> Self {
-        self.ip_address_type = Some(input);
+        self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn set_ip_address_type(
         mut self,
-        input: std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
+        input: ::std::option::Option<crate::types::TargetGroupIpAddressTypeEnum>,
     ) -> Self {
         self.ip_address_type = input;
         self

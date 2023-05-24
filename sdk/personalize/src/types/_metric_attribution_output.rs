@@ -2,22 +2,22 @@
 
 /// <p>The output configuration details for a metric attribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricAttributionOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
-    pub s3_data_destination: std::option::Option<crate::types::S3DataConfig>,
+    pub s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MetricAttributionOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_destination(&self) -> std::option::Option<&crate::types::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> ::std::option::Option<&crate::types::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl MetricAttributionOutput {
 
 /// A builder for [`MetricAttributionOutput`](crate::types::MetricAttributionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricAttributionOutputBuilder {
-    pub(crate) s3_data_destination: std::option::Option<crate::types::S3DataConfig>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) s3_data_destination: ::std::option::Option<crate::types::S3DataConfig>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MetricAttributionOutputBuilder {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn s3_data_destination(mut self, input: crate::types::S3DataConfig) -> Self {
-        self.s3_data_destination = Some(input);
+        self.s3_data_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn set_s3_data_destination(
         mut self,
-        input: std::option::Option<crate::types::S3DataConfig>,
+        input: ::std::option::Option<crate::types::S3DataConfig>,
     ) -> Self {
         self.s3_data_destination = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

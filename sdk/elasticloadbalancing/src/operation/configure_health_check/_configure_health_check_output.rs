@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of ConfigureHealthCheck.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureHealthCheckOutput {
     /// <p>The updated health check.</p>
     #[doc(hidden)]
-    pub health_check: std::option::Option<crate::types::HealthCheck>,
+    pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     _request_id: Option<String>,
 }
 impl ConfigureHealthCheckOutput {
     /// <p>The updated health check.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::types::HealthCheck> {
+    pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheck> {
         self.health_check.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ConfigureHealthCheckOutput {
+impl ::aws_http::request_id::RequestId for ConfigureHealthCheckOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl ConfigureHealthCheckOutput {
 
 /// A builder for [`ConfigureHealthCheckOutput`](crate::operation::configure_health_check::ConfigureHealthCheckOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigureHealthCheckOutputBuilder {
-    pub(crate) health_check: std::option::Option<crate::types::HealthCheck>,
+    pub(crate) health_check: ::std::option::Option<crate::types::HealthCheck>,
     _request_id: Option<String>,
 }
 impl ConfigureHealthCheckOutputBuilder {
     /// <p>The updated health check.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
-        self.health_check = Some(input);
+        self.health_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>The updated health check.</p>
     pub fn set_health_check(
         mut self,
-        input: std::option::Option<crate::types::HealthCheck>,
+        input: ::std::option::Option<crate::types::HealthCheck>,
     ) -> Self {
         self.health_check = input;
         self

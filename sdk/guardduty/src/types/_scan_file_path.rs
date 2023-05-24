@@ -2,36 +2,36 @@
 
 /// <p>Contains details of infected file including name, file path and hash.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanFilePath {
     /// <p>The file path of the infected file.</p>
     #[doc(hidden)]
-    pub file_path: std::option::Option<std::string::String>,
+    pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume Arn details of the infected file.</p>
     #[doc(hidden)]
-    pub volume_arn: std::option::Option<std::string::String>,
+    pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hash value of the infected file.</p>
     #[doc(hidden)]
-    pub hash: std::option::Option<std::string::String>,
+    pub hash: ::std::option::Option<::std::string::String>,
     /// <p>File name of the infected file.</p>
     #[doc(hidden)]
-    pub file_name: std::option::Option<std::string::String>,
+    pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl ScanFilePath {
     /// <p>The file path of the infected file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
     /// <p>EBS volume Arn details of the infected file.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
     /// <p>The hash value of the infected file.</p>
-    pub fn hash(&self) -> std::option::Option<&str> {
+    pub fn hash(&self) -> ::std::option::Option<&str> {
         self.hash.as_deref()
     }
     /// <p>File name of the infected file.</p>
-    pub fn file_name(&self) -> std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl ScanFilePath {
 
 /// A builder for [`ScanFilePath`](crate::types::ScanFilePath).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScanFilePathBuilder {
-    pub(crate) file_path: std::option::Option<std::string::String>,
-    pub(crate) volume_arn: std::option::Option<std::string::String>,
-    pub(crate) hash: std::option::Option<std::string::String>,
-    pub(crate) file_name: std::option::Option<std::string::String>,
+    pub(crate) file_path: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) hash: ::std::option::Option<::std::string::String>,
+    pub(crate) file_name: ::std::option::Option<::std::string::String>,
 }
 impl ScanFilePathBuilder {
     /// <p>The file path of the infected file.</p>
-    pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_path = Some(input.into());
+    pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file path of the infected file.</p>
-    pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
     }
     /// <p>EBS volume Arn details of the infected file.</p>
-    pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_arn = Some(input.into());
+    pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>EBS volume Arn details of the infected file.</p>
-    pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }
     /// <p>The hash value of the infected file.</p>
-    pub fn hash(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hash = Some(input.into());
+    pub fn hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hash value of the infected file.</p>
-    pub fn set_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hash = input;
         self
     }
     /// <p>File name of the infected file.</p>
-    pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_name = Some(input.into());
+    pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>File name of the infected file.</p>
-    pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
     }

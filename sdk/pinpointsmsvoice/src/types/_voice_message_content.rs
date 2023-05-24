@@ -2,31 +2,31 @@
 
 /// An object that contains a voice message and information about the recipient that you want to send it to.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceMessageContent {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     #[doc(hidden)]
-    pub call_instructions_message: std::option::Option<crate::types::CallInstructionsMessageType>,
+    pub call_instructions_message: ::std::option::Option<crate::types::CallInstructionsMessageType>,
     /// An object that defines a message that contains unformatted text.
     #[doc(hidden)]
-    pub plain_text_message: std::option::Option<crate::types::PlainTextMessageType>,
+    pub plain_text_message: ::std::option::Option<crate::types::PlainTextMessageType>,
     /// An object that defines a message that contains SSML-formatted text.
     #[doc(hidden)]
-    pub ssml_message: std::option::Option<crate::types::SsmlMessageType>,
+    pub ssml_message: ::std::option::Option<crate::types::SsmlMessageType>,
 }
 impl VoiceMessageContent {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     pub fn call_instructions_message(
         &self,
-    ) -> std::option::Option<&crate::types::CallInstructionsMessageType> {
+    ) -> ::std::option::Option<&crate::types::CallInstructionsMessageType> {
         self.call_instructions_message.as_ref()
     }
     /// An object that defines a message that contains unformatted text.
-    pub fn plain_text_message(&self) -> std::option::Option<&crate::types::PlainTextMessageType> {
+    pub fn plain_text_message(&self) -> ::std::option::Option<&crate::types::PlainTextMessageType> {
         self.plain_text_message.as_ref()
     }
     /// An object that defines a message that contains SSML-formatted text.
-    pub fn ssml_message(&self) -> std::option::Option<&crate::types::SsmlMessageType> {
+    pub fn ssml_message(&self) -> ::std::option::Option<&crate::types::SsmlMessageType> {
         self.ssml_message.as_ref()
     }
 }
@@ -39,12 +39,14 @@ impl VoiceMessageContent {
 
 /// A builder for [`VoiceMessageContent`](crate::types::VoiceMessageContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VoiceMessageContentBuilder {
     pub(crate) call_instructions_message:
-        std::option::Option<crate::types::CallInstructionsMessageType>,
-    pub(crate) plain_text_message: std::option::Option<crate::types::PlainTextMessageType>,
-    pub(crate) ssml_message: std::option::Option<crate::types::SsmlMessageType>,
+        ::std::option::Option<crate::types::CallInstructionsMessageType>,
+    pub(crate) plain_text_message: ::std::option::Option<crate::types::PlainTextMessageType>,
+    pub(crate) ssml_message: ::std::option::Option<crate::types::SsmlMessageType>,
 }
 impl VoiceMessageContentBuilder {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
@@ -52,39 +54,39 @@ impl VoiceMessageContentBuilder {
         mut self,
         input: crate::types::CallInstructionsMessageType,
     ) -> Self {
-        self.call_instructions_message = Some(input);
+        self.call_instructions_message = ::std::option::Option::Some(input);
         self
     }
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     pub fn set_call_instructions_message(
         mut self,
-        input: std::option::Option<crate::types::CallInstructionsMessageType>,
+        input: ::std::option::Option<crate::types::CallInstructionsMessageType>,
     ) -> Self {
         self.call_instructions_message = input;
         self
     }
     /// An object that defines a message that contains unformatted text.
     pub fn plain_text_message(mut self, input: crate::types::PlainTextMessageType) -> Self {
-        self.plain_text_message = Some(input);
+        self.plain_text_message = ::std::option::Option::Some(input);
         self
     }
     /// An object that defines a message that contains unformatted text.
     pub fn set_plain_text_message(
         mut self,
-        input: std::option::Option<crate::types::PlainTextMessageType>,
+        input: ::std::option::Option<crate::types::PlainTextMessageType>,
     ) -> Self {
         self.plain_text_message = input;
         self
     }
     /// An object that defines a message that contains SSML-formatted text.
     pub fn ssml_message(mut self, input: crate::types::SsmlMessageType) -> Self {
-        self.ssml_message = Some(input);
+        self.ssml_message = ::std::option::Option::Some(input);
         self
     }
     /// An object that defines a message that contains SSML-formatted text.
     pub fn set_ssml_message(
         mut self,
-        input: std::option::Option<crate::types::SsmlMessageType>,
+        input: ::std::option::Option<crate::types::SsmlMessageType>,
     ) -> Self {
         self.ssml_message = input;
         self

@@ -2,43 +2,43 @@
 
 /// <p>The acceptance of a EULA, required to use Amazon-provided streaming images.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EulaAcceptance {
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
     #[doc(hidden)]
-    pub accepted_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub accepted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the person who accepted the EULA.</p>
     #[doc(hidden)]
-    pub accepted_by: std::option::Option<std::string::String>,
+    pub accepted_by: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the acceptee.</p>
     #[doc(hidden)]
-    pub acceptee_id: std::option::Option<std::string::String>,
+    pub acceptee_id: ::std::option::Option<::std::string::String>,
     /// <p>The EULA acceptance ID.</p>
     #[doc(hidden)]
-    pub eula_acceptance_id: std::option::Option<std::string::String>,
+    pub eula_acceptance_id: ::std::option::Option<::std::string::String>,
     /// <p>The EULA ID.</p>
     #[doc(hidden)]
-    pub eula_id: std::option::Option<std::string::String>,
+    pub eula_id: ::std::option::Option<::std::string::String>,
 }
 impl EulaAcceptance {
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
-    pub fn accepted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn accepted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.accepted_at.as_ref()
     }
     /// <p>The ID of the person who accepted the EULA.</p>
-    pub fn accepted_by(&self) -> std::option::Option<&str> {
+    pub fn accepted_by(&self) -> ::std::option::Option<&str> {
         self.accepted_by.as_deref()
     }
     /// <p>The ID of the acceptee.</p>
-    pub fn acceptee_id(&self) -> std::option::Option<&str> {
+    pub fn acceptee_id(&self) -> ::std::option::Option<&str> {
         self.acceptee_id.as_deref()
     }
     /// <p>The EULA acceptance ID.</p>
-    pub fn eula_acceptance_id(&self) -> std::option::Option<&str> {
+    pub fn eula_acceptance_id(&self) -> ::std::option::Option<&str> {
         self.eula_acceptance_id.as_deref()
     }
     /// <p>The EULA ID.</p>
-    pub fn eula_id(&self) -> std::option::Option<&str> {
+    pub fn eula_id(&self) -> ::std::option::Option<&str> {
         self.eula_id.as_deref()
     }
 }
@@ -51,68 +51,73 @@ impl EulaAcceptance {
 
 /// A builder for [`EulaAcceptance`](crate::types::EulaAcceptance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EulaAcceptanceBuilder {
-    pub(crate) accepted_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) accepted_by: std::option::Option<std::string::String>,
-    pub(crate) acceptee_id: std::option::Option<std::string::String>,
-    pub(crate) eula_acceptance_id: std::option::Option<std::string::String>,
-    pub(crate) eula_id: std::option::Option<std::string::String>,
+    pub(crate) accepted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) accepted_by: ::std::option::Option<::std::string::String>,
+    pub(crate) acceptee_id: ::std::option::Option<::std::string::String>,
+    pub(crate) eula_acceptance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) eula_id: ::std::option::Option<::std::string::String>,
 }
 impl EulaAcceptanceBuilder {
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
-    pub fn accepted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.accepted_at = Some(input);
+    pub fn accepted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.accepted_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
     pub fn set_accepted_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.accepted_at = input;
         self
     }
     /// <p>The ID of the person who accepted the EULA.</p>
-    pub fn accepted_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.accepted_by = Some(input.into());
+    pub fn accepted_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.accepted_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the person who accepted the EULA.</p>
-    pub fn set_accepted_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accepted_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accepted_by = input;
         self
     }
     /// <p>The ID of the acceptee.</p>
-    pub fn acceptee_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.acceptee_id = Some(input.into());
+    pub fn acceptee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.acceptee_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the acceptee.</p>
-    pub fn set_acceptee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_acceptee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acceptee_id = input;
         self
     }
     /// <p>The EULA acceptance ID.</p>
-    pub fn eula_acceptance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.eula_acceptance_id = Some(input.into());
+    pub fn eula_acceptance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.eula_acceptance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EULA acceptance ID.</p>
     pub fn set_eula_acceptance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.eula_acceptance_id = input;
         self
     }
     /// <p>The EULA ID.</p>
-    pub fn eula_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.eula_id = Some(input.into());
+    pub fn eula_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.eula_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EULA ID.</p>
-    pub fn set_eula_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_eula_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eula_id = input;
         self
     }

@@ -4,29 +4,29 @@
 /// <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p>
 /// <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionExpression {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub condition: std::option::Option<std::string::String>,
+    pub condition: ::std::option::Option<::std::string::String>,
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>A column to apply this condition to.</p>
     #[doc(hidden)]
-    pub target_column: std::option::Option<std::string::String>,
+    pub target_column: ::std::option::Option<::std::string::String>,
 }
 impl ConditionExpression {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn condition(&self) -> std::option::Option<&str> {
+    pub fn condition(&self) -> ::std::option::Option<&str> {
         self.condition.as_deref()
     }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>A column to apply this condition to.</p>
-    pub fn target_column(&self) -> std::option::Option<&str> {
+    pub fn target_column(&self) -> ::std::option::Option<&str> {
         self.target_column.as_deref()
     }
 }
@@ -39,40 +39,48 @@ impl ConditionExpression {
 
 /// A builder for [`ConditionExpression`](crate::types::ConditionExpression).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionExpressionBuilder {
-    pub(crate) condition: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) target_column: std::option::Option<std::string::String>,
+    pub(crate) condition: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) target_column: ::std::option::Option<::std::string::String>,
 }
 impl ConditionExpressionBuilder {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn condition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.condition = Some(input.into());
+    pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.condition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
     }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>A column to apply this condition to.</p>
-    pub fn target_column(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_column = Some(input.into());
+    pub fn target_column(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_column = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A column to apply this condition to.</p>
-    pub fn set_target_column(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_column(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_column = input;
         self
     }

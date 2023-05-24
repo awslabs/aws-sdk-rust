@@ -2,7 +2,7 @@
 pub(crate) fn de_application_settings_resource_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ApplicationSettingsResource>,
+    ::std::option::Option<crate::types::ApplicationSettingsResource>,
     crate::operation::get_application_settings::GetApplicationSettingsError,
 > {
     (!body.is_empty()).then(||{

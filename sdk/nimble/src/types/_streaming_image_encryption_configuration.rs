@@ -2,24 +2,24 @@
 
 /// <p>Specifies how a streaming image is encrypted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingImageEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     #[doc(hidden)]
-    pub key_arn: std::option::Option<std::string::String>,
+    pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     #[doc(hidden)]
-    pub key_type: std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>,
+    pub key_type: ::std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>,
 }
 impl StreamingImageEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
-    pub fn key_arn(&self) -> std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<&str> {
         self.key_arn.as_deref()
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub fn key_type(
         &self,
-    ) -> std::option::Option<&crate::types::StreamingImageEncryptionConfigurationKeyType> {
+    ) -> ::std::option::Option<&crate::types::StreamingImageEncryptionConfigurationKeyType> {
         self.key_type.as_ref()
     }
 }
@@ -32,20 +32,22 @@ impl StreamingImageEncryptionConfiguration {
 
 /// A builder for [`StreamingImageEncryptionConfiguration`](crate::types::StreamingImageEncryptionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamingImageEncryptionConfigurationBuilder {
-    pub(crate) key_arn: std::option::Option<std::string::String>,
+    pub(crate) key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) key_type:
-        std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>,
+        ::std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>,
 }
 impl StreamingImageEncryptionConfigurationBuilder {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
-    pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_arn = Some(input.into());
+    pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
-    pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
     }
@@ -54,13 +56,13 @@ impl StreamingImageEncryptionConfigurationBuilder {
         mut self,
         input: crate::types::StreamingImageEncryptionConfigurationKeyType,
     ) -> Self {
-        self.key_type = Some(input);
+        self.key_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub fn set_key_type(
         mut self,
-        input: std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>,
+        input: ::std::option::Option<crate::types::StreamingImageEncryptionConfigurationKeyType>,
     ) -> Self {
         self.key_type = input;
         self

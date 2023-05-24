@@ -2,29 +2,29 @@
 
 /// <p>Data replication initiation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataReplicationInitiation {
     /// <p>Request to query data initiation start date and time.</p>
     #[doc(hidden)]
-    pub start_date_time: std::option::Option<std::string::String>,
+    pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Request to query next data initiation date and time.</p>
     #[doc(hidden)]
-    pub next_attempt_date_time: std::option::Option<std::string::String>,
+    pub next_attempt_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Request to query data initiation steps.</p>
     #[doc(hidden)]
-    pub steps: std::option::Option<std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
+    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
 }
 impl DataReplicationInitiation {
     /// <p>Request to query data initiation start date and time.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&str> {
+    pub fn start_date_time(&self) -> ::std::option::Option<&str> {
         self.start_date_time.as_deref()
     }
     /// <p>Request to query next data initiation date and time.</p>
-    pub fn next_attempt_date_time(&self) -> std::option::Option<&str> {
+    pub fn next_attempt_date_time(&self) -> ::std::option::Option<&str> {
         self.next_attempt_date_time.as_deref()
     }
     /// <p>Request to query data initiation steps.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::types::DataReplicationInitiationStep]> {
+    pub fn steps(&self) -> ::std::option::Option<&[crate::types::DataReplicationInitiationStep]> {
         self.steps.as_deref()
     }
 }
@@ -37,33 +37,44 @@ impl DataReplicationInitiation {
 
 /// A builder for [`DataReplicationInitiation`](crate::types::DataReplicationInitiation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataReplicationInitiationBuilder {
-    pub(crate) start_date_time: std::option::Option<std::string::String>,
-    pub(crate) next_attempt_date_time: std::option::Option<std::string::String>,
+    pub(crate) start_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) next_attempt_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) steps:
-        std::option::Option<std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
 }
 impl DataReplicationInitiationBuilder {
     /// <p>Request to query data initiation start date and time.</p>
-    pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_date_time = Some(input.into());
+    pub fn start_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.start_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request to query data initiation start date and time.</p>
-    pub fn set_start_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.start_date_time = input;
         self
     }
     /// <p>Request to query next data initiation date and time.</p>
-    pub fn next_attempt_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_attempt_date_time = Some(input.into());
+    pub fn next_attempt_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_attempt_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request to query next data initiation date and time.</p>
     pub fn set_next_attempt_date_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.next_attempt_date_time = input;
         self
@@ -76,13 +87,13 @@ impl DataReplicationInitiationBuilder {
     pub fn steps(mut self, input: crate::types::DataReplicationInitiationStep) -> Self {
         let mut v = self.steps.unwrap_or_default();
         v.push(input);
-        self.steps = Some(v);
+        self.steps = ::std::option::Option::Some(v);
         self
     }
     /// <p>Request to query data initiation steps.</p>
     pub fn set_steps(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataReplicationInitiationStep>>,
     ) -> Self {
         self.steps = input;
         self

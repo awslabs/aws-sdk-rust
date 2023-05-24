@@ -2,15 +2,15 @@
 
 /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
+    pub code: ::std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
 }
 impl AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::AccessPreviewStatusReasonCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::AccessPreviewStatusReasonCode> {
         self.code.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AccessPreviewStatusReason {
 
 /// A builder for [`AccessPreviewStatusReason`](crate::types::AccessPreviewStatusReason).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessPreviewStatusReasonBuilder {
-    pub(crate) code: std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
+    pub(crate) code: ::std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
 }
 impl AccessPreviewStatusReasonBuilder {
     /// <p>The reason code for the current status of the access preview.</p>
     pub fn code(mut self, input: crate::types::AccessPreviewStatusReasonCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason code for the current status of the access preview.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
+        input: ::std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
     ) -> Self {
         self.code = input;
         self

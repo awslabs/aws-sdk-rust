@@ -2,25 +2,25 @@
 
 /// <p>Describes the configuration of the Microsoft Active Directory (AD) directory to which the Amazon FSx for ONTAP storage virtual machine (SVM) is joined. Pleae note, account credentials are not returned in the response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the Active Directory computer object that is joined to your SVM.</p>
     #[doc(hidden)]
-    pub net_bios_name: std::option::Option<std::string::String>,
+    pub net_bios_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     #[doc(hidden)]
     pub self_managed_active_directory_configuration:
-        std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
+        ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
 }
 impl SvmActiveDirectoryConfiguration {
     /// <p>The NetBIOS name of the Active Directory computer object that is joined to your SVM.</p>
-    pub fn net_bios_name(&self) -> std::option::Option<&str> {
+    pub fn net_bios_name(&self) -> ::std::option::Option<&str> {
         self.net_bios_name.as_deref()
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     pub fn self_managed_active_directory_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SelfManagedActiveDirectoryAttributes> {
+    ) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryAttributes> {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
@@ -33,20 +33,28 @@ impl SvmActiveDirectoryConfiguration {
 
 /// A builder for [`SvmActiveDirectoryConfiguration`](crate::types::SvmActiveDirectoryConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SvmActiveDirectoryConfigurationBuilder {
-    pub(crate) net_bios_name: std::option::Option<std::string::String>,
+    pub(crate) net_bios_name: ::std::option::Option<::std::string::String>,
     pub(crate) self_managed_active_directory_configuration:
-        std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
+        ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
 }
 impl SvmActiveDirectoryConfigurationBuilder {
     /// <p>The NetBIOS name of the Active Directory computer object that is joined to your SVM.</p>
-    pub fn net_bios_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.net_bios_name = Some(input.into());
+    pub fn net_bios_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.net_bios_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The NetBIOS name of the Active Directory computer object that is joined to your SVM.</p>
-    pub fn set_net_bios_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_net_bios_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.net_bios_name = input;
         self
     }
@@ -55,13 +63,13 @@ impl SvmActiveDirectoryConfigurationBuilder {
         mut self,
         input: crate::types::SelfManagedActiveDirectoryAttributes,
     ) -> Self {
-        self.self_managed_active_directory_configuration = Some(input);
+        self.self_managed_active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the self-managed Microsoft Active Directory (AD) directory to which the Windows File Server or ONTAP storage virtual machine (SVM) instance is joined.</p>
     pub fn set_self_managed_active_directory_configuration(
         mut self,
-        input: std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
+        input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryAttributes>,
     ) -> Self {
         self.self_managed_active_directory_configuration = input;
         self

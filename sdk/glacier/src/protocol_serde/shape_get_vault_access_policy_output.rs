@@ -2,7 +2,7 @@
 pub(crate) fn de_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::VaultAccessPolicy>,
+    ::std::option::Option<crate::types::VaultAccessPolicy>,
     crate::operation::get_vault_access_policy::GetVaultAccessPolicyError,
 > {
     (!body.is_empty())

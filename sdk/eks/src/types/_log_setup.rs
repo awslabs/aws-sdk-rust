@@ -2,22 +2,22 @@
 
 /// <p>An object representing the enabled or disabled Kubernetes control plane logs for your cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogSetup {
     /// <p>The available cluster control plane log types.</p>
     #[doc(hidden)]
-    pub types: std::option::Option<std::vec::Vec<crate::types::LogType>>,
+    pub types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl LogSetup {
     /// <p>The available cluster control plane log types.</p>
-    pub fn types(&self) -> std::option::Option<&[crate::types::LogType]> {
+    pub fn types(&self) -> ::std::option::Option<&[crate::types::LogType]> {
         self.types.as_deref()
     }
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -30,10 +30,12 @@ impl LogSetup {
 
 /// A builder for [`LogSetup`](crate::types::LogSetup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogSetupBuilder {
-    pub(crate) types: std::option::Option<std::vec::Vec<crate::types::LogType>>,
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl LogSetupBuilder {
     /// Appends an item to `types`.
@@ -44,24 +46,24 @@ impl LogSetupBuilder {
     pub fn types(mut self, input: crate::types::LogType) -> Self {
         let mut v = self.types.unwrap_or_default();
         v.push(input);
-        self.types = Some(v);
+        self.types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The available cluster control plane log types.</p>
     pub fn set_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
     ) -> Self {
         self.types = input;
         self
     }
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

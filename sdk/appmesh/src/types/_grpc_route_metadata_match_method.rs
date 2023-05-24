@@ -2,18 +2,18 @@
 
 /// <p>An object that represents the match method. Specify one of the match values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum GrpcRouteMetadataMatchMethod {
     /// <p>The value sent by the client must match the specified value exactly.</p>
-    Exact(std::string::String),
+    Exact(::std::string::String),
     /// <p>The value sent by the client must begin with the specified characters.</p>
-    Prefix(std::string::String),
+    Prefix(::std::string::String),
     /// <p>An object that represents the range of values to match on.</p>
     Range(crate::types::MatchRange),
     /// <p>The value sent by the client must include the specified characters.</p>
-    Regex(std::string::String),
+    Regex(::std::string::String),
     /// <p>The value sent by the client must end with the specified characters.</p>
-    Suffix(std::string::String),
+    Suffix(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -25,26 +25,26 @@ pub enum GrpcRouteMetadataMatchMethod {
     Unknown,
 }
 impl GrpcRouteMetadataMatchMethod {
-    /// Tries to convert the enum instance into [`Exact`](crate::types::GrpcRouteMetadataMatchMethod::Exact), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Exact`](crate::types::GrpcRouteMetadataMatchMethod::Exact), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_exact(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Exact(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Exact`](crate::types::GrpcRouteMetadataMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::GrpcRouteMetadataMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Prefix`](crate::types::GrpcRouteMetadataMatchMethod::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Prefix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::types::GrpcRouteMetadataMatchMethod::Prefix).
@@ -53,37 +53,37 @@ impl GrpcRouteMetadataMatchMethod {
     }
     /// Tries to convert the enum instance into [`Range`](crate::types::GrpcRouteMetadataMatchMethod::Range), extracting the inner [`MatchRange`](crate::types::MatchRange).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_range(&self) -> std::result::Result<&crate::types::MatchRange, &Self> {
+    pub fn as_range(&self) -> ::std::result::Result<&crate::types::MatchRange, &Self> {
         if let GrpcRouteMetadataMatchMethod::Range(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Range`](crate::types::GrpcRouteMetadataMatchMethod::Range).
     pub fn is_range(&self) -> bool {
         self.as_range().is_ok()
     }
-    /// Tries to convert the enum instance into [`Regex`](crate::types::GrpcRouteMetadataMatchMethod::Regex), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Regex`](crate::types::GrpcRouteMetadataMatchMethod::Regex), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_regex(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Regex(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Regex`](crate::types::GrpcRouteMetadataMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
         self.as_regex().is_ok()
     }
-    /// Tries to convert the enum instance into [`Suffix`](crate::types::GrpcRouteMetadataMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Suffix`](crate::types::GrpcRouteMetadataMatchMethod::Suffix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_suffix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Suffix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Suffix`](crate::types::GrpcRouteMetadataMatchMethod::Suffix).

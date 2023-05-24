@@ -2,15 +2,15 @@
 
 /// <p>Describes the Amazon Elastic Compute Cloud instance and related resources to be created using the <code>create cloud formation stack</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEntry {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
     #[doc(hidden)]
-    pub source_name: std::option::Option<std::string::String>,
+    pub source_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
     /// <p>The following configuration options are available:</p>
     /// <ul>
@@ -22,24 +22,24 @@ pub struct InstanceEntry {
     /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect to your instance, that configuration is not carried over to your new Amazon EC2 instance.</p>
     /// </note>
     #[doc(hidden)]
-    pub port_info_source: std::option::Option<crate::types::PortInfoSourceType>,
+    pub port_info_source: ::std::option::Option<crate::types::PortInfoSourceType>,
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub user_data: std::option::Option<std::string::String>,
+    pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl InstanceEntry {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
-    pub fn source_name(&self) -> std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<&str> {
         self.source_name.as_deref()
     }
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
@@ -52,17 +52,17 @@ impl InstanceEntry {
     /// </ul> <note>
     /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect to your instance, that configuration is not carried over to your new Amazon EC2 instance.</p>
     /// </note>
-    pub fn port_info_source(&self) -> std::option::Option<&crate::types::PortInfoSourceType> {
+    pub fn port_info_source(&self) -> ::std::option::Option<&crate::types::PortInfoSourceType> {
         self.port_info_source.as_ref()
     }
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
     /// </note>
-    pub fn user_data(&self) -> std::option::Option<&str> {
+    pub fn user_data(&self) -> ::std::option::Option<&str> {
         self.user_data.as_deref()
     }
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
 }
@@ -75,34 +75,42 @@ impl InstanceEntry {
 
 /// A builder for [`InstanceEntry`](crate::types::InstanceEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceEntryBuilder {
-    pub(crate) source_name: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) port_info_source: std::option::Option<crate::types::PortInfoSourceType>,
-    pub(crate) user_data: std::option::Option<std::string::String>,
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
+    pub(crate) source_name: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) port_info_source: ::std::option::Option<crate::types::PortInfoSourceType>,
+    pub(crate) user_data: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl InstanceEntryBuilder {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
-    pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_name = Some(input.into());
+    pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
-    pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
     }
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
@@ -117,7 +125,7 @@ impl InstanceEntryBuilder {
     /// <p>If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code> on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect to your instance, that configuration is not carried over to your new Amazon EC2 instance.</p>
     /// </note>
     pub fn port_info_source(mut self, input: crate::types::PortInfoSourceType) -> Self {
-        self.port_info_source = Some(input);
+        self.port_info_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
@@ -132,7 +140,7 @@ impl InstanceEntryBuilder {
     /// </note>
     pub fn set_port_info_source(
         mut self,
-        input: std::option::Option<crate::types::PortInfoSourceType>,
+        input: ::std::option::Option<crate::types::PortInfoSourceType>,
     ) -> Self {
         self.port_info_source = input;
         self
@@ -140,26 +148,29 @@ impl InstanceEntryBuilder {
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
     /// </note>
-    pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_data = Some(input.into());
+    pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A launch script you can create that configures a server with additional user data. For example, you might want to run <code>apt-get -y update</code>.</p> <note>
     /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>.</p>
     /// </note>
-    pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
     }
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the new Amazon EC2 instance.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self

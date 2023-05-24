@@ -2,15 +2,15 @@
 
 /// <p>Indicates the CloudWatch math expression that provides the time series the anomaly detector uses as input. The designated math expression must return a single time series.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricMathAnomalyDetector {
     /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
     #[doc(hidden)]
-    pub metric_data_queries: std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>,
+    pub metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
 }
 impl MetricMathAnomalyDetector {
     /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
-    pub fn metric_data_queries(&self) -> std::option::Option<&[crate::types::MetricDataQuery]> {
+    pub fn metric_data_queries(&self) -> ::std::option::Option<&[crate::types::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
     }
 }
@@ -23,10 +23,12 @@ impl MetricMathAnomalyDetector {
 
 /// A builder for [`MetricMathAnomalyDetector`](crate::types::MetricMathAnomalyDetector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricMathAnomalyDetectorBuilder {
     pub(crate) metric_data_queries:
-        std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
 }
 impl MetricMathAnomalyDetectorBuilder {
     /// Appends an item to `metric_data_queries`.
@@ -37,13 +39,13 @@ impl MetricMathAnomalyDetectorBuilder {
     pub fn metric_data_queries(mut self, input: crate::types::MetricDataQuery) -> Self {
         let mut v = self.metric_data_queries.unwrap_or_default();
         v.push(input);
-        self.metric_data_queries = Some(v);
+        self.metric_data_queries = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of metric data query structures that enables you to create an anomaly detector based on the result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single time series.</p>
     pub fn set_metric_data_queries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     ) -> Self {
         self.metric_data_queries = input;
         self

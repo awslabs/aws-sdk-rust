@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ExportFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum ExportFilterName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ExportFilterName {
+impl ::std::convert::From<&str> for ExportFilterName {
     fn from(s: &str) -> Self {
         match s {
             "ExportResourceType" => ExportFilterName::ExportResourceType,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for ExportFilterName {
         }
     }
 }
-impl std::str::FromStr for ExportFilterName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ExportFilterName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExportFilterName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ExportFilterName::from(s))
     }
 }
 impl ExportFilterName {
@@ -81,7 +81,7 @@ impl ExportFilterName {
         &["ExportResourceType"]
     }
 }
-impl AsRef<str> for ExportFilterName {
+impl ::std::convert::AsRef<str> for ExportFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

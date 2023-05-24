@@ -2,26 +2,26 @@
 
 /// <p>The container for the metadata for the ClarifyCheck step. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/build-and-manage-steps.html#step-type-clarify-check">ClarifyCheck step</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClarifyCheckStepMetadata {
     /// <p>The type of the Clarify Check step</p>
     #[doc(hidden)]
-    pub check_type: std::option::Option<std::string::String>,
+    pub check_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
     #[doc(hidden)]
-    pub baseline_used_for_drift_check_constraints: std::option::Option<std::string::String>,
+    pub baseline_used_for_drift_check_constraints: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
     #[doc(hidden)]
-    pub calculated_baseline_constraints: std::option::Option<std::string::String>,
+    pub calculated_baseline_constraints: ::std::option::Option<::std::string::String>,
     /// <p>The model package group name.</p>
     #[doc(hidden)]
-    pub model_package_group_name: std::option::Option<std::string::String>,
+    pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
     #[doc(hidden)]
-    pub violation_report: std::option::Option<std::string::String>,
+    pub violation_report: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
     #[doc(hidden)]
-    pub check_job_arn: std::option::Option<std::string::String>,
+    pub check_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
     #[doc(hidden)]
     pub skip_check: bool,
@@ -31,27 +31,27 @@ pub struct ClarifyCheckStepMetadata {
 }
 impl ClarifyCheckStepMetadata {
     /// <p>The type of the Clarify Check step</p>
-    pub fn check_type(&self) -> std::option::Option<&str> {
+    pub fn check_type(&self) -> ::std::option::Option<&str> {
         self.check_type.as_deref()
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
-    pub fn baseline_used_for_drift_check_constraints(&self) -> std::option::Option<&str> {
+    pub fn baseline_used_for_drift_check_constraints(&self) -> ::std::option::Option<&str> {
         self.baseline_used_for_drift_check_constraints.as_deref()
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
-    pub fn calculated_baseline_constraints(&self) -> std::option::Option<&str> {
+    pub fn calculated_baseline_constraints(&self) -> ::std::option::Option<&str> {
         self.calculated_baseline_constraints.as_deref()
     }
     /// <p>The model package group name.</p>
-    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
         self.model_package_group_name.as_deref()
     }
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
-    pub fn violation_report(&self) -> std::option::Option<&str> {
+    pub fn violation_report(&self) -> ::std::option::Option<&str> {
         self.violation_report.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
-    pub fn check_job_arn(&self) -> std::option::Option<&str> {
+    pub fn check_job_arn(&self) -> ::std::option::Option<&str> {
         self.check_job_arn.as_deref()
     }
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
@@ -72,40 +72,43 @@ impl ClarifyCheckStepMetadata {
 
 /// A builder for [`ClarifyCheckStepMetadata`](crate::types::ClarifyCheckStepMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClarifyCheckStepMetadataBuilder {
-    pub(crate) check_type: std::option::Option<std::string::String>,
-    pub(crate) baseline_used_for_drift_check_constraints: std::option::Option<std::string::String>,
-    pub(crate) calculated_baseline_constraints: std::option::Option<std::string::String>,
-    pub(crate) model_package_group_name: std::option::Option<std::string::String>,
-    pub(crate) violation_report: std::option::Option<std::string::String>,
-    pub(crate) check_job_arn: std::option::Option<std::string::String>,
-    pub(crate) skip_check: std::option::Option<bool>,
-    pub(crate) register_new_baseline: std::option::Option<bool>,
+    pub(crate) check_type: ::std::option::Option<::std::string::String>,
+    pub(crate) baseline_used_for_drift_check_constraints:
+        ::std::option::Option<::std::string::String>,
+    pub(crate) calculated_baseline_constraints: ::std::option::Option<::std::string::String>,
+    pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) violation_report: ::std::option::Option<::std::string::String>,
+    pub(crate) check_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) skip_check: ::std::option::Option<bool>,
+    pub(crate) register_new_baseline: ::std::option::Option<bool>,
 }
 impl ClarifyCheckStepMetadataBuilder {
     /// <p>The type of the Clarify Check step</p>
-    pub fn check_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.check_type = Some(input.into());
+    pub fn check_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.check_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the Clarify Check step</p>
-    pub fn set_check_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_check_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.check_type = input;
         self
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
     pub fn baseline_used_for_drift_check_constraints(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.baseline_used_for_drift_check_constraints = Some(input.into());
+        self.baseline_used_for_drift_check_constraints = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI of baseline constraints file to be used for the drift check.</p>
     pub fn set_baseline_used_for_drift_check_constraints(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.baseline_used_for_drift_check_constraints = input;
         self
@@ -113,69 +116,84 @@ impl ClarifyCheckStepMetadataBuilder {
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
     pub fn calculated_baseline_constraints(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.calculated_baseline_constraints = Some(input.into());
+        self.calculated_baseline_constraints = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI of the newly calculated baseline constraints file.</p>
     pub fn set_calculated_baseline_constraints(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.calculated_baseline_constraints = input;
         self
     }
     /// <p>The model package group name.</p>
-    pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_package_group_name = Some(input.into());
+    pub fn model_package_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model package group name.</p>
     pub fn set_model_package_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_package_group_name = input;
         self
     }
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
-    pub fn violation_report(mut self, input: impl Into<std::string::String>) -> Self {
-        self.violation_report = Some(input.into());
+    pub fn violation_report(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.violation_report = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 URI of the violation report if violations are detected.</p>
-    pub fn set_violation_report(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_violation_report(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.violation_report = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
-    pub fn check_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.check_job_arn = Some(input.into());
+    pub fn check_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.check_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the check processing job that was run by this step's execution.</p>
-    pub fn set_check_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_check_job_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.check_job_arn = input;
         self
     }
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
     pub fn skip_check(mut self, input: bool) -> Self {
-        self.skip_check = Some(input);
+        self.skip_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>This flag indicates if the drift check against the previous baseline will be skipped or not. If it is set to <code>False</code>, the previous baseline of the configured check type must be available.</p>
-    pub fn set_skip_check(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_check = input;
         self
     }
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property. </p>
     pub fn register_new_baseline(mut self, input: bool) -> Self {
-        self.register_new_baseline = Some(input);
+        self.register_new_baseline = ::std::option::Option::Some(input);
         self
     }
     /// <p>This flag indicates if a newly calculated baseline can be accessed through step properties <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>. If it is set to <code>False</code>, the previous baseline of the configured check type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code> property. </p>
-    pub fn set_register_new_baseline(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_register_new_baseline(mut self, input: ::std::option::Option<bool>) -> Self {
         self.register_new_baseline = input;
         self
     }

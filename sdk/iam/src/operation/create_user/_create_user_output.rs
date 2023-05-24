@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreateUser</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserOutput {
     /// <p>A structure with details about the new IAM user.</p>
     #[doc(hidden)]
-    pub user: std::option::Option<crate::types::User>,
+    pub user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,
 }
 impl CreateUserOutput {
     /// <p>A structure with details about the new IAM user.</p>
-    pub fn user(&self) -> std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
         self.user.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateUserOutput {
+impl ::aws_http::request_id::RequestId for CreateUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateUserOutput {
 
 /// A builder for [`CreateUserOutput`](crate::operation::create_user::CreateUserOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateUserOutputBuilder {
-    pub(crate) user: std::option::Option<crate::types::User>,
+    pub(crate) user: ::std::option::Option<crate::types::User>,
     _request_id: Option<String>,
 }
 impl CreateUserOutputBuilder {
     /// <p>A structure with details about the new IAM user.</p>
     pub fn user(mut self, input: crate::types::User) -> Self {
-        self.user = Some(input);
+        self.user = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure with details about the new IAM user.</p>
-    pub fn set_user(mut self, input: std::option::Option<crate::types::User>) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
         self.user = input;
         self
     }

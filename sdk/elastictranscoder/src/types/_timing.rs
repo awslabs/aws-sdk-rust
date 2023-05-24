@@ -2,29 +2,29 @@
 
 /// <p>Details about the timing of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Timing {
     /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
     #[doc(hidden)]
-    pub submit_time_millis: std::option::Option<i64>,
+    pub submit_time_millis: ::std::option::Option<i64>,
     /// <p>The time the job began transcoding, in epoch milliseconds.</p>
     #[doc(hidden)]
-    pub start_time_millis: std::option::Option<i64>,
+    pub start_time_millis: ::std::option::Option<i64>,
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
     #[doc(hidden)]
-    pub finish_time_millis: std::option::Option<i64>,
+    pub finish_time_millis: ::std::option::Option<i64>,
 }
 impl Timing {
     /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
-    pub fn submit_time_millis(&self) -> std::option::Option<i64> {
+    pub fn submit_time_millis(&self) -> ::std::option::Option<i64> {
         self.submit_time_millis
     }
     /// <p>The time the job began transcoding, in epoch milliseconds.</p>
-    pub fn start_time_millis(&self) -> std::option::Option<i64> {
+    pub fn start_time_millis(&self) -> ::std::option::Option<i64> {
         self.start_time_millis
     }
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
-    pub fn finish_time_millis(&self) -> std::option::Option<i64> {
+    pub fn finish_time_millis(&self) -> ::std::option::Option<i64> {
         self.finish_time_millis
     }
 }
@@ -37,40 +37,42 @@ impl Timing {
 
 /// A builder for [`Timing`](crate::types::Timing).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimingBuilder {
-    pub(crate) submit_time_millis: std::option::Option<i64>,
-    pub(crate) start_time_millis: std::option::Option<i64>,
-    pub(crate) finish_time_millis: std::option::Option<i64>,
+    pub(crate) submit_time_millis: ::std::option::Option<i64>,
+    pub(crate) start_time_millis: ::std::option::Option<i64>,
+    pub(crate) finish_time_millis: ::std::option::Option<i64>,
 }
 impl TimingBuilder {
     /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
     pub fn submit_time_millis(mut self, input: i64) -> Self {
-        self.submit_time_millis = Some(input);
+        self.submit_time_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
-    pub fn set_submit_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_submit_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.submit_time_millis = input;
         self
     }
     /// <p>The time the job began transcoding, in epoch milliseconds.</p>
     pub fn start_time_millis(mut self, input: i64) -> Self {
-        self.start_time_millis = Some(input);
+        self.start_time_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the job began transcoding, in epoch milliseconds.</p>
-    pub fn set_start_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time_millis = input;
         self
     }
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
     pub fn finish_time_millis(mut self, input: i64) -> Self {
-        self.finish_time_millis = Some(input);
+        self.finish_time_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
-    pub fn set_finish_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_finish_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.finish_time_millis = input;
         self
     }

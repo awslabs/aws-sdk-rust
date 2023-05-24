@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a delete repository operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRepositoryOutput {
     /// <p>The ID of the repository that was deleted.</p>
     #[doc(hidden)]
-    pub repository_id: std::option::Option<std::string::String>,
+    pub repository_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteRepositoryOutput {
     /// <p>The ID of the repository that was deleted.</p>
-    pub fn repository_id(&self) -> std::option::Option<&str> {
+    pub fn repository_id(&self) -> ::std::option::Option<&str> {
         self.repository_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteRepositoryOutput {
+impl ::aws_http::request_id::RequestId for DeleteRepositoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,27 @@ impl DeleteRepositoryOutput {
 
 /// A builder for [`DeleteRepositoryOutput`](crate::operation::delete_repository::DeleteRepositoryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteRepositoryOutputBuilder {
-    pub(crate) repository_id: std::option::Option<std::string::String>,
+    pub(crate) repository_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteRepositoryOutputBuilder {
     /// <p>The ID of the repository that was deleted.</p>
-    pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_id = Some(input.into());
+    pub fn repository_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the repository that was deleted.</p>
-    pub fn set_repository_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_id = input;
         self
     }

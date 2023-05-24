@@ -3,15 +3,15 @@
 /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>
 /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
     #[doc(hidden)]
-    pub bucket_access_role_arn: std::option::Option<std::string::String>,
+    pub bucket_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Config {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
-    pub fn bucket_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.bucket_access_role_arn.as_deref()
     }
 }
@@ -24,20 +24,25 @@ impl S3Config {
 
 /// A builder for [`S3Config`](crate::types::S3Config).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ConfigBuilder {
-    pub(crate) bucket_access_role_arn: std::option::Option<std::string::String>,
+    pub(crate) bucket_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigBuilder {
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
-    pub fn bucket_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_access_role_arn = Some(input.into());
+    pub fn bucket_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bucket_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role for accessing the S3 bucket. </p>
     pub fn set_bucket_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.bucket_access_role_arn = input;
         self

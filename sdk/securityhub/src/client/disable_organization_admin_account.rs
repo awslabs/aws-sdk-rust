@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableOrganizationAdminAccount`](crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`admin_account_id(impl Into<String>)`](crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::set_admin_account_id): <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    ///   - [`admin_account_id(impl ::std::convert::Into<String>)`](crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::admin_account_id) / [`set_admin_account_id(Option<String>)`](crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder::set_admin_account_id): <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
     /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountOutput)
     /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError)
     pub fn disable_organization_admin_account(&self) -> crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountFluentBuilder{

@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIdentityPolicyOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteIdentityPolicyOutput {
+impl ::aws_http::request_id::RequestId for DeleteIdentityPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteIdentityPolicyOutput {
 
 /// A builder for [`DeleteIdentityPolicyOutput`](crate::operation::delete_identity_policy::DeleteIdentityPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteIdentityPolicyOutputBuilder {
     _request_id: Option<String>,
 }

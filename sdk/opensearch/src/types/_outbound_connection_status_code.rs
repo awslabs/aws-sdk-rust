@@ -46,13 +46,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OutboundConnectionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -78,7 +78,7 @@ pub enum OutboundConnectionStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OutboundConnectionStatusCode {
+impl ::std::convert::From<&str> for OutboundConnectionStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => OutboundConnectionStatusCode::Active,
@@ -97,11 +97,11 @@ impl std::convert::From<&str> for OutboundConnectionStatusCode {
         }
     }
 }
-impl std::str::FromStr for OutboundConnectionStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OutboundConnectionStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OutboundConnectionStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OutboundConnectionStatusCode::from(s))
     }
 }
 impl OutboundConnectionStatusCode {
@@ -137,7 +137,7 @@ impl OutboundConnectionStatusCode {
         ]
     }
 }
-impl AsRef<str> for OutboundConnectionStatusCode {
+impl ::std::convert::AsRef<str> for OutboundConnectionStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

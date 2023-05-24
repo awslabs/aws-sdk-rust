@@ -2,22 +2,22 @@
 
 /// <p>Describes a data processing configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingConfiguration {
     /// <p>Enables or disables data processing.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The data processors.</p>
     #[doc(hidden)]
-    pub processors: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+    pub processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
 }
 impl ProcessingConfiguration {
     /// <p>Enables or disables data processing.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The data processors.</p>
-    pub fn processors(&self) -> std::option::Option<&[crate::types::Processor]> {
+    pub fn processors(&self) -> ::std::option::Option<&[crate::types::Processor]> {
         self.processors.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ProcessingConfiguration {
 
 /// A builder for [`ProcessingConfiguration`](crate::types::ProcessingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProcessingConfigurationBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) processors: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
 }
 impl ProcessingConfigurationBuilder {
     /// <p>Enables or disables data processing.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables or disables data processing.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
@@ -54,13 +56,13 @@ impl ProcessingConfigurationBuilder {
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         let mut v = self.processors.unwrap_or_default();
         v.push(input);
-        self.processors = Some(v);
+        self.processors = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data processors.</p>
     pub fn set_processors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
     ) -> Self {
         self.processors = input;
         self

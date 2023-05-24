@@ -2,15 +2,15 @@
 
 /// <p>Specifies an AWS Lambda function to manage alarm notifications. You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationTargetActions {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     #[doc(hidden)]
-    pub lambda_action: std::option::Option<crate::types::LambdaAction>,
+    pub lambda_action: ::std::option::Option<crate::types::LambdaAction>,
 }
 impl NotificationTargetActions {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    pub fn lambda_action(&self) -> std::option::Option<&crate::types::LambdaAction> {
+    pub fn lambda_action(&self) -> ::std::option::Option<&crate::types::LambdaAction> {
         self.lambda_action.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl NotificationTargetActions {
 
 /// A builder for [`NotificationTargetActions`](crate::types::NotificationTargetActions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationTargetActionsBuilder {
-    pub(crate) lambda_action: std::option::Option<crate::types::LambdaAction>,
+    pub(crate) lambda_action: ::std::option::Option<crate::types::LambdaAction>,
 }
 impl NotificationTargetActionsBuilder {
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn lambda_action(mut self, input: crate::types::LambdaAction) -> Self {
-        self.lambda_action = Some(input);
+        self.lambda_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn set_lambda_action(
         mut self,
-        input: std::option::Option<crate::types::LambdaAction>,
+        input: ::std::option::Option<crate::types::LambdaAction>,
     ) -> Self {
         self.lambda_action = input;
         self

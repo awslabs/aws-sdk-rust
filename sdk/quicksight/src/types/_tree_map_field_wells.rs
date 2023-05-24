@@ -3,18 +3,18 @@
 /// <p>The field wells of a tree map.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreeMapFieldWells {
     /// <p>The aggregated field wells of a tree map.</p>
     #[doc(hidden)]
     pub tree_map_aggregated_field_wells:
-        std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
+        ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
 }
 impl TreeMapFieldWells {
     /// <p>The aggregated field wells of a tree map.</p>
     pub fn tree_map_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::TreeMapAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::TreeMapAggregatedFieldWells> {
         self.tree_map_aggregated_field_wells.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl TreeMapFieldWells {
 
 /// A builder for [`TreeMapFieldWells`](crate::types::TreeMapFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TreeMapFieldWellsBuilder {
     pub(crate) tree_map_aggregated_field_wells:
-        std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
+        ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
 }
 impl TreeMapFieldWellsBuilder {
     /// <p>The aggregated field wells of a tree map.</p>
@@ -38,13 +40,13 @@ impl TreeMapFieldWellsBuilder {
         mut self,
         input: crate::types::TreeMapAggregatedFieldWells,
     ) -> Self {
-        self.tree_map_aggregated_field_wells = Some(input);
+        self.tree_map_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a tree map.</p>
     pub fn set_tree_map_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::TreeMapAggregatedFieldWells>,
     ) -> Self {
         self.tree_map_aggregated_field_wells = input;
         self

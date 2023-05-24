@@ -2,33 +2,35 @@
 
 /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
     #[doc(hidden)]
-    pub token_url: std::option::Option<std::string::String>,
+    pub token_url: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
     #[doc(hidden)]
-    pub o_auth2_grant_type: std::option::Option<crate::types::OAuth2GrantType>,
+    pub o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     #[doc(hidden)]
-    pub token_url_custom_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub token_url_custom_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl OAuth2Properties {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
-    pub fn token_url(&self) -> std::option::Option<&str> {
+    pub fn token_url(&self) -> ::std::option::Option<&str> {
         self.token_url.as_deref()
     }
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
-    pub fn o_auth2_grant_type(&self) -> std::option::Option<&crate::types::OAuth2GrantType> {
+    pub fn o_auth2_grant_type(&self) -> ::std::option::Option<&crate::types::OAuth2GrantType> {
         self.o_auth2_grant_type.as_ref()
     }
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     pub fn token_url_custom_properties(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.token_url_custom_properties.as_ref()
     }
 }
@@ -41,33 +43,36 @@ impl OAuth2Properties {
 
 /// A builder for [`OAuth2Properties`](crate::types::OAuth2Properties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OAuth2PropertiesBuilder {
-    pub(crate) token_url: std::option::Option<std::string::String>,
-    pub(crate) o_auth2_grant_type: std::option::Option<crate::types::OAuth2GrantType>,
-    pub(crate) token_url_custom_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) token_url: ::std::option::Option<::std::string::String>,
+    pub(crate) o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
+    pub(crate) token_url_custom_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl OAuth2PropertiesBuilder {
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
-    pub fn token_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.token_url = Some(input.into());
+    pub fn token_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.token_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token URL required for OAuth 2.0 authentication.</p>
-    pub fn set_token_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_url = input;
         self
     }
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
     pub fn o_auth2_grant_type(mut self, input: crate::types::OAuth2GrantType) -> Self {
-        self.o_auth2_grant_type = Some(input);
+        self.o_auth2_grant_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The OAuth 2.0 grant type used by connector for OAuth 2.0 authentication.</p>
     pub fn set_o_auth2_grant_type(
         mut self,
-        input: std::option::Option<crate::types::OAuth2GrantType>,
+        input: ::std::option::Option<crate::types::OAuth2GrantType>,
     ) -> Self {
         self.o_auth2_grant_type = input;
         self
@@ -79,19 +84,19 @@ impl OAuth2PropertiesBuilder {
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     pub fn token_url_custom_properties(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.token_url_custom_properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.token_url_custom_properties = Some(hash_map);
+        self.token_url_custom_properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Associates your token URL with a map of properties that you define. Use this parameter to provide any additional details that the connector requires to authenticate your request.</p>
     pub fn set_token_url_custom_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.token_url_custom_properties = input;

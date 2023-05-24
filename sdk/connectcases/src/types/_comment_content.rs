@@ -2,22 +2,22 @@
 
 /// <p>Represents the content of a <code>Comment</code> to be returned to agents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommentContent {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
     #[doc(hidden)]
-    pub body: std::option::Option<std::string::String>,
+    pub body: ::std::option::Option<::std::string::String>,
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<crate::types::CommentBodyTextType>,
+    pub content_type: ::std::option::Option<crate::types::CommentBodyTextType>,
 }
 impl CommentContent {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<&str> {
         self.body.as_deref()
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::CommentBodyTextType> {
+    pub fn content_type(&self) -> ::std::option::Option<&crate::types::CommentBodyTextType> {
         self.content_type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl CommentContent {
 
 /// A builder for [`CommentContent`](crate::types::CommentContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommentContentBuilder {
-    pub(crate) body: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<crate::types::CommentBodyTextType>,
+    pub(crate) body: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<crate::types::CommentBodyTextType>,
 }
 impl CommentContentBuilder {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
-    pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.body = Some(input.into());
+    pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
-    pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     pub fn content_type(mut self, input: crate::types::CommentBodyTextType) -> Self {
-        self.content_type = Some(input);
+        self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::CommentBodyTextType>,
+        input: ::std::option::Option<crate::types::CommentBodyTextType>,
     ) -> Self {
         self.content_type = input;
         self

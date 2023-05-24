@@ -7,29 +7,29 @@ pub use crate::operation::delete_ota_update::_delete_ota_update_input::DeleteOta
 ///
 /// <p>Delete an OTA update.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOTAUpdateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_ota_update::builders::DeleteOtaUpdateInputBuilder,
 }
 impl DeleteOTAUpdateFluentBuilder {
     /// Creates a new `DeleteOTAUpdate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_ota_update::DeleteOTAUpdate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_ota_update::DeleteOTAUpdateError,
         >,
     > {
@@ -37,30 +37,33 @@ impl DeleteOTAUpdateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_ota_update::DeleteOtaUpdateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_ota_update::DeleteOTAUpdateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,27 @@ impl DeleteOTAUpdateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_ota_update::DeleteOtaUpdateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_ota_update::DeleteOTAUpdateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the OTA update to delete.</p>
-    pub fn ota_update_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ota_update_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ota_update_id(input.into());
         self
     }
     /// <p>The ID of the OTA update to delete.</p>
-    pub fn set_ota_update_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ota_update_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ota_update_id(input);
         self
     }
@@ -97,7 +106,7 @@ impl DeleteOTAUpdateFluentBuilder {
         self
     }
     /// <p>When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</p>
-    pub fn set_delete_stream(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_stream(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_stream(input);
         self
     }
@@ -107,7 +116,7 @@ impl DeleteOTAUpdateFluentBuilder {
         self
     }
     /// <p>When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</p>
-    pub fn set_force_delete_aws_job(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force_delete_aws_job(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete_aws_job(input);
         self
     }

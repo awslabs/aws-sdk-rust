@@ -2,66 +2,66 @@
 
 /// <p>Describes the document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentMetadata {
     /// <p>The ID of the document.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the creator.</p>
     #[doc(hidden)]
-    pub creator_id: std::option::Option<std::string::String>,
+    pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the parent folder.</p>
     #[doc(hidden)]
-    pub parent_folder_id: std::option::Option<std::string::String>,
+    pub parent_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the document was created.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the document was updated.</p>
     #[doc(hidden)]
-    pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest version of the document.</p>
     #[doc(hidden)]
-    pub latest_version_metadata: std::option::Option<crate::types::DocumentVersionMetadata>,
+    pub latest_version_metadata: ::std::option::Option<crate::types::DocumentVersionMetadata>,
     /// <p>The resource state.</p>
     #[doc(hidden)]
-    pub resource_state: std::option::Option<crate::types::ResourceStateType>,
+    pub resource_state: ::std::option::Option<crate::types::ResourceStateType>,
     /// <p>List of labels on the document.</p>
     #[doc(hidden)]
-    pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DocumentMetadata {
     /// <p>The ID of the document.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ID of the creator.</p>
-    pub fn creator_id(&self) -> std::option::Option<&str> {
+    pub fn creator_id(&self) -> ::std::option::Option<&str> {
         self.creator_id.as_deref()
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
+    pub fn parent_folder_id(&self) -> ::std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
     /// <p>The time when the document was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the document was updated.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The latest version of the document.</p>
     pub fn latest_version_metadata(
         &self,
-    ) -> std::option::Option<&crate::types::DocumentVersionMetadata> {
+    ) -> ::std::option::Option<&crate::types::DocumentVersionMetadata> {
         self.latest_version_metadata.as_ref()
     }
     /// <p>The resource state.</p>
-    pub fn resource_state(&self) -> std::option::Option<&crate::types::ResourceStateType> {
+    pub fn resource_state(&self) -> ::std::option::Option<&crate::types::ResourceStateType> {
         self.resource_state.as_ref()
     }
     /// <p>List of labels on the document.</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.labels.as_deref()
     }
 }
@@ -74,96 +74,105 @@ impl DocumentMetadata {
 
 /// A builder for [`DocumentMetadata`](crate::types::DocumentMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentMetadataBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) creator_id: std::option::Option<std::string::String>,
-    pub(crate) parent_folder_id: std::option::Option<std::string::String>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) latest_version_metadata: std::option::Option<crate::types::DocumentVersionMetadata>,
-    pub(crate) resource_state: std::option::Option<crate::types::ResourceStateType>,
-    pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) creator_id: ::std::option::Option<::std::string::String>,
+    pub(crate) parent_folder_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) latest_version_metadata:
+        ::std::option::Option<crate::types::DocumentVersionMetadata>,
+    pub(crate) resource_state: ::std::option::Option<crate::types::ResourceStateType>,
+    pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DocumentMetadataBuilder {
     /// <p>The ID of the document.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the document.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ID of the creator.</p>
-    pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creator_id = Some(input.into());
+    pub fn creator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.creator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the creator.</p>
-    pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_id = input;
         self
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parent_folder_id = Some(input.into());
+    pub fn parent_folder_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parent_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn set_parent_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_folder_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parent_folder_id = input;
         self
     }
     /// <p>The time when the document was created.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the document was created.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The time when the document was updated.</p>
-    pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified_timestamp = Some(input);
+    pub fn modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the document was updated.</p>
     pub fn set_modified_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.modified_timestamp = input;
         self
     }
     /// <p>The latest version of the document.</p>
     pub fn latest_version_metadata(mut self, input: crate::types::DocumentVersionMetadata) -> Self {
-        self.latest_version_metadata = Some(input);
+        self.latest_version_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latest version of the document.</p>
     pub fn set_latest_version_metadata(
         mut self,
-        input: std::option::Option<crate::types::DocumentVersionMetadata>,
+        input: ::std::option::Option<crate::types::DocumentVersionMetadata>,
     ) -> Self {
         self.latest_version_metadata = input;
         self
     }
     /// <p>The resource state.</p>
     pub fn resource_state(mut self, input: crate::types::ResourceStateType) -> Self {
-        self.resource_state = Some(input);
+        self.resource_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource state.</p>
     pub fn set_resource_state(
         mut self,
-        input: std::option::Option<crate::types::ResourceStateType>,
+        input: ::std::option::Option<crate::types::ResourceStateType>,
     ) -> Self {
         self.resource_state = input;
         self
@@ -173,16 +182,16 @@ impl DocumentMetadataBuilder {
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
     /// <p>List of labels on the document.</p>
-    pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
         v.push(input.into());
-        self.labels = Some(v);
+        self.labels = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of labels on the document.</p>
     pub fn set_labels(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.labels = input;
         self

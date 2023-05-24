@@ -6,29 +6,29 @@ pub use crate::operation::revoke_permissions::_revoke_permissions_input::RevokeP
 /// Fluent builder constructing a request to `RevokePermissions`.
 ///
 /// <p>Revokes permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokePermissionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::revoke_permissions::builders::RevokePermissionsInputBuilder,
 }
 impl RevokePermissionsFluentBuilder {
     /// Creates a new `RevokePermissions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::revoke_permissions::RevokePermissions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::revoke_permissions::RevokePermissionsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RevokePermissionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::revoke_permissions::RevokePermissionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::revoke_permissions::RevokePermissionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl RevokePermissionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::revoke_permissions::RevokePermissionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::revoke_permissions::RevokePermissionsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
         self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
@@ -98,7 +101,7 @@ impl RevokePermissionsFluentBuilder {
     /// <p>The principal to be revoked permissions on the resource.</p>
     pub fn set_principal(
         mut self,
-        input: std::option::Option<crate::types::DataLakePrincipal>,
+        input: ::std::option::Option<crate::types::DataLakePrincipal>,
     ) -> Self {
         self.inner = self.inner.set_principal(input);
         self
@@ -109,7 +112,7 @@ impl RevokePermissionsFluentBuilder {
         self
     }
     /// <p>The resource to which permissions are to be revoked.</p>
-    pub fn set_resource(mut self, input: std::option::Option<crate::types::Resource>) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
@@ -125,7 +128,7 @@ impl RevokePermissionsFluentBuilder {
     /// <p>The permissions revoked to the principal on the resource. For information about permissions, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
     pub fn set_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Permission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     ) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
@@ -142,7 +145,7 @@ impl RevokePermissionsFluentBuilder {
     /// <p>Indicates a list of permissions for which to revoke the grant option allowing the principal to pass permissions to other principals.</p>
     pub fn set_permissions_with_grant_option(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Permission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     ) -> Self {
         self.inner = self.inner.set_permissions_with_grant_option(input);
         self

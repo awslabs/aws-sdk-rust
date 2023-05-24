@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CommentVisibilityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CommentVisibilityType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CommentVisibilityType {
+impl ::std::convert::From<&str> for CommentVisibilityType {
     fn from(s: &str) -> Self {
         match s {
             "PRIVATE" => CommentVisibilityType::Private,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CommentVisibilityType {
         }
     }
 }
-impl std::str::FromStr for CommentVisibilityType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CommentVisibilityType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CommentVisibilityType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CommentVisibilityType::from(s))
     }
 }
 impl CommentVisibilityType {
@@ -86,7 +86,7 @@ impl CommentVisibilityType {
         &["PRIVATE", "PUBLIC"]
     }
 }
-impl AsRef<str> for CommentVisibilityType {
+impl ::std::convert::AsRef<str> for CommentVisibilityType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

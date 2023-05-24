@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSchedule`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder::set_name): <p>The name of the schedule to retrieve.</p>
-    ///   - [`group_name(impl Into<String>)`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder::set_group_name): <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder::set_name): <p>The name of the schedule to retrieve.</p>
+    ///   - [`group_name(impl ::std::convert::Into<String>)`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_schedule::builders::GetScheduleFluentBuilder::set_group_name): <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
     /// - On success, responds with [`GetScheduleOutput`](crate::operation::get_schedule::GetScheduleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_schedule::GetScheduleOutput::arn): <p>The Amazon Resource Name (ARN) of the schedule.</p>
     ///   - [`group_name(Option<String>)`](crate::operation::get_schedule::GetScheduleOutput::group_name): <p>The name of the schedule group associated with this schedule.</p>

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInstanceHealth`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`load_balancer_name(impl Into<String>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::set_load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`load_balancer_name(impl ::std::convert::Into<String>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::load_balancer_name) / [`set_load_balancer_name(Option<String>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::set_load_balancer_name): <p>The name of the load balancer.</p>
     ///   - [`instances(Vec<Instance>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::instances) / [`set_instances(Option<Vec<Instance>>)`](crate::operation::describe_instance_health::builders::DescribeInstanceHealthFluentBuilder::set_instances): <p>The IDs of the instances.</p>
     /// - On success, responds with [`DescribeInstanceHealthOutput`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput) with field(s):
     ///   - [`instance_states(Option<Vec<InstanceState>>)`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput::instance_states): <p>Information about the health of the instances.</p>

@@ -2,22 +2,22 @@
 
 /// <p>The policies enabled for a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListenerDescription {
     /// <p>The listener.</p>
     #[doc(hidden)]
-    pub listener: std::option::Option<crate::types::Listener>,
+    pub listener: ::std::option::Option<crate::types::Listener>,
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
     #[doc(hidden)]
-    pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListenerDescription {
     /// <p>The listener.</p>
-    pub fn listener(&self) -> std::option::Option<&crate::types::Listener> {
+    pub fn listener(&self) -> ::std::option::Option<&crate::types::Listener> {
         self.listener.as_ref()
     }
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
-    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.policy_names.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ListenerDescription {
 
 /// A builder for [`ListenerDescription`](crate::types::ListenerDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListenerDescriptionBuilder {
-    pub(crate) listener: std::option::Option<crate::types::Listener>,
-    pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) listener: ::std::option::Option<crate::types::Listener>,
+    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListenerDescriptionBuilder {
     /// <p>The listener.</p>
     pub fn listener(mut self, input: crate::types::Listener) -> Self {
-        self.listener = Some(input);
+        self.listener = ::std::option::Option::Some(input);
         self
     }
     /// <p>The listener.</p>
-    pub fn set_listener(mut self, input: std::option::Option<crate::types::Listener>) -> Self {
+    pub fn set_listener(mut self, input: ::std::option::Option<crate::types::Listener>) -> Self {
         self.listener = input;
         self
     }
@@ -51,16 +53,16 @@ impl ListenerDescriptionBuilder {
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
     ///
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
-    pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
         v.push(input.into());
-        self.policy_names = Some(v);
+        self.policy_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The policies. If there are no policies enabled, the list is empty.</p>
     pub fn set_policy_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.policy_names = input;
         self

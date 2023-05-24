@@ -2,7 +2,7 @@
 
 /// <p>The parameters that define or describe the historical data that your auto-adjusting budget is based on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoricalOptions {
     /// <p>The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code> granularity of the budget:</p>
     /// <ul>
@@ -12,12 +12,12 @@ pub struct HistoricalOptions {
     /// <li> <p>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub budget_adjustment_period: std::option::Option<i32>,
+    pub budget_adjustment_period: ::std::option::Option<i32>,
     /// <p>The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code> are included in the calculation of your current <code>BudgetLimit</code>. If the first budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that budget period isn’t included in the average that determines your budget limit. </p>
     /// <p>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters, but your account had no cost data in the first quarter, then only the last three quarters are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code> returns <code>3</code>. </p>
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
     #[doc(hidden)]
-    pub look_back_available_periods: std::option::Option<i32>,
+    pub look_back_available_periods: ::std::option::Option<i32>,
 }
 impl HistoricalOptions {
     /// <p>The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code> granularity of the budget:</p>
@@ -27,13 +27,13 @@ impl HistoricalOptions {
     /// <li> <p>For the <code>QUARTERLY</code> granularity, the maximum value is <code>4</code>.</p> </li>
     /// <li> <p>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</p> </li>
     /// </ul>
-    pub fn budget_adjustment_period(&self) -> std::option::Option<i32> {
+    pub fn budget_adjustment_period(&self) -> ::std::option::Option<i32> {
         self.budget_adjustment_period
     }
     /// <p>The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code> are included in the calculation of your current <code>BudgetLimit</code>. If the first budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that budget period isn’t included in the average that determines your budget limit. </p>
     /// <p>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters, but your account had no cost data in the first quarter, then only the last three quarters are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code> returns <code>3</code>. </p>
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
-    pub fn look_back_available_periods(&self) -> std::option::Option<i32> {
+    pub fn look_back_available_periods(&self) -> ::std::option::Option<i32> {
         self.look_back_available_periods
     }
 }
@@ -46,10 +46,12 @@ impl HistoricalOptions {
 
 /// A builder for [`HistoricalOptions`](crate::types::HistoricalOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HistoricalOptionsBuilder {
-    pub(crate) budget_adjustment_period: std::option::Option<i32>,
-    pub(crate) look_back_available_periods: std::option::Option<i32>,
+    pub(crate) budget_adjustment_period: ::std::option::Option<i32>,
+    pub(crate) look_back_available_periods: ::std::option::Option<i32>,
 }
 impl HistoricalOptionsBuilder {
     /// <p>The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code> granularity of the budget:</p>
@@ -60,7 +62,7 @@ impl HistoricalOptionsBuilder {
     /// <li> <p>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</p> </li>
     /// </ul>
     pub fn budget_adjustment_period(mut self, input: i32) -> Self {
-        self.budget_adjustment_period = Some(input);
+        self.budget_adjustment_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of budget periods included in the moving-average calculation that determines your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code> granularity of the budget:</p>
@@ -70,7 +72,7 @@ impl HistoricalOptionsBuilder {
     /// <li> <p>For the <code>QUARTERLY</code> granularity, the maximum value is <code>4</code>.</p> </li>
     /// <li> <p>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</p> </li>
     /// </ul>
-    pub fn set_budget_adjustment_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_budget_adjustment_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.budget_adjustment_period = input;
         self
     }
@@ -78,13 +80,13 @@ impl HistoricalOptionsBuilder {
     /// <p>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters, but your account had no cost data in the first quarter, then only the last three quarters are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code> returns <code>3</code>. </p>
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
     pub fn look_back_available_periods(mut self, input: i32) -> Self {
-        self.look_back_available_periods = Some(input);
+        self.look_back_available_periods = ::std::option::Option::Some(input);
         self
     }
     /// <p>The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code> are included in the calculation of your current <code>BudgetLimit</code>. If the first budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that budget period isn’t included in the average that determines your budget limit. </p>
     /// <p>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters, but your account had no cost data in the first quarter, then only the last three quarters are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code> returns <code>3</code>. </p>
     /// <p>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</p>
-    pub fn set_look_back_available_periods(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_look_back_available_periods(mut self, input: ::std::option::Option<i32>) -> Self {
         self.look_back_available_periods = input;
         self
     }

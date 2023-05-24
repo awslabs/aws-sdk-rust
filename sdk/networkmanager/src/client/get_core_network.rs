@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCoreNetwork`](crate::operation::get_core_network::builders::GetCoreNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`core_network_id(impl Into<String>)`](crate::operation::get_core_network::builders::GetCoreNetworkFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::get_core_network::builders::GetCoreNetworkFluentBuilder::set_core_network_id): <p>The ID of a core network.</p>
+    ///   - [`core_network_id(impl ::std::convert::Into<String>)`](crate::operation::get_core_network::builders::GetCoreNetworkFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::get_core_network::builders::GetCoreNetworkFluentBuilder::set_core_network_id): <p>The ID of a core network.</p>
     /// - On success, responds with [`GetCoreNetworkOutput`](crate::operation::get_core_network::GetCoreNetworkOutput) with field(s):
     ///   - [`core_network(Option<CoreNetwork>)`](crate::operation::get_core_network::GetCoreNetworkOutput::core_network): <p>Details about a core network.</p>
     /// - On failure, responds with [`SdkError<GetCoreNetworkError>`](crate::operation::get_core_network::GetCoreNetworkError)

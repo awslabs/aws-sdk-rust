@@ -2,11 +2,11 @@
 
 /// <p> Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsTaskSet {
     /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
     #[doc(hidden)]
-    pub identifer: std::option::Option<std::string::String>,
+    pub identifer: ::std::option::Option<::std::string::String>,
     /// <p> The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated task set is created, CodeDeploy shifts traffic to the new task set. </p>
     #[doc(hidden)]
     pub desired_count: i64,
@@ -23,20 +23,20 @@ pub struct EcsTaskSet {
     /// <li> <p> <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p> The percentage of traffic served by this task set. </p>
     #[doc(hidden)]
     pub traffic_weight: f64,
     /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
     #[doc(hidden)]
-    pub target_group: std::option::Option<crate::types::TargetGroupInfo>,
+    pub target_group: ::std::option::Option<crate::types::TargetGroupInfo>,
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
     #[doc(hidden)]
-    pub task_set_label: std::option::Option<crate::types::TargetLabel>,
+    pub task_set_label: ::std::option::Option<crate::types::TargetLabel>,
 }
 impl EcsTaskSet {
     /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
-    pub fn identifer(&self) -> std::option::Option<&str> {
+    pub fn identifer(&self) -> ::std::option::Option<&str> {
         self.identifer.as_deref()
     }
     /// <p> The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated task set is created, CodeDeploy shifts traffic to the new task set. </p>
@@ -57,7 +57,7 @@ impl EcsTaskSet {
     /// <li> <p> <code>ACTIVE</code>: Indicates the task set is not serving production traffic. </p> </li>
     /// <li> <p> <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group. </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p> The percentage of traffic served by this task set. </p>
@@ -65,11 +65,11 @@ impl EcsTaskSet {
         self.traffic_weight
     }
     /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
-    pub fn target_group(&self) -> std::option::Option<&crate::types::TargetGroupInfo> {
+    pub fn target_group(&self) -> ::std::option::Option<&crate::types::TargetGroupInfo> {
         self.target_group.as_ref()
     }
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
-    pub fn task_set_label(&self) -> std::option::Option<&crate::types::TargetLabel> {
+    pub fn task_set_label(&self) -> ::std::option::Option<&crate::types::TargetLabel> {
         self.task_set_label.as_ref()
     }
 }
@@ -82,55 +82,57 @@ impl EcsTaskSet {
 
 /// A builder for [`EcsTaskSet`](crate::types::EcsTaskSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcsTaskSetBuilder {
-    pub(crate) identifer: std::option::Option<std::string::String>,
-    pub(crate) desired_count: std::option::Option<i64>,
-    pub(crate) pending_count: std::option::Option<i64>,
-    pub(crate) running_count: std::option::Option<i64>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) traffic_weight: std::option::Option<f64>,
-    pub(crate) target_group: std::option::Option<crate::types::TargetGroupInfo>,
-    pub(crate) task_set_label: std::option::Option<crate::types::TargetLabel>,
+    pub(crate) identifer: ::std::option::Option<::std::string::String>,
+    pub(crate) desired_count: ::std::option::Option<i64>,
+    pub(crate) pending_count: ::std::option::Option<i64>,
+    pub(crate) running_count: ::std::option::Option<i64>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) traffic_weight: ::std::option::Option<f64>,
+    pub(crate) target_group: ::std::option::Option<crate::types::TargetGroupInfo>,
+    pub(crate) task_set_label: ::std::option::Option<crate::types::TargetLabel>,
 }
 impl EcsTaskSetBuilder {
     /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
-    pub fn identifer(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifer = Some(input.into());
+    pub fn identifer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A unique ID of an <code>ECSTaskSet</code>. </p>
-    pub fn set_identifer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifer = input;
         self
     }
     /// <p> The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated task set is created, CodeDeploy shifts traffic to the new task set. </p>
     pub fn desired_count(mut self, input: i64) -> Self {
-        self.desired_count = Some(input);
+        self.desired_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated task set is created, CodeDeploy shifts traffic to the new task set. </p>
-    pub fn set_desired_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_desired_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.desired_count = input;
         self
     }
     /// <p> The number of tasks in the task set that are in the <code>PENDING</code> status during an Amazon ECS deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the <code>STOPPED</code> state. </p>
     pub fn pending_count(mut self, input: i64) -> Self {
-        self.pending_count = Some(input);
+        self.pending_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of tasks in the task set that are in the <code>PENDING</code> status during an Amazon ECS deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status when it launches for the first time, or when it is restarted after being in the <code>STOPPED</code> state. </p>
-    pub fn set_pending_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_pending_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.pending_count = input;
         self
     }
     /// <p> The number of tasks in the task set that are in the <code>RUNNING</code> status during an Amazon ECS deployment. A task in the <code>RUNNING</code> state is running and ready for use. </p>
     pub fn running_count(mut self, input: i64) -> Self {
-        self.running_count = Some(input);
+        self.running_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of tasks in the task set that are in the <code>RUNNING</code> status during an Amazon ECS deployment. A task in the <code>RUNNING</code> state is running and ready for use. </p>
-    pub fn set_running_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_running_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.running_count = input;
         self
     }
@@ -140,8 +142,8 @@ impl EcsTaskSetBuilder {
     /// <li> <p> <code>ACTIVE</code>: Indicates the task set is not serving production traffic. </p> </li>
     /// <li> <p> <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group. </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The status of the task set. There are three valid task set statuses: </p>
@@ -150,42 +152,42 @@ impl EcsTaskSetBuilder {
     /// <li> <p> <code>ACTIVE</code>: Indicates the task set is not serving production traffic. </p> </li>
     /// <li> <p> <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group. </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p> The percentage of traffic served by this task set. </p>
     pub fn traffic_weight(mut self, input: f64) -> Self {
-        self.traffic_weight = Some(input);
+        self.traffic_weight = ::std::option::Option::Some(input);
         self
     }
     /// <p> The percentage of traffic served by this task set. </p>
-    pub fn set_traffic_weight(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_traffic_weight(mut self, input: ::std::option::Option<f64>) -> Self {
         self.traffic_weight = input;
         self
     }
     /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
     pub fn target_group(mut self, input: crate::types::TargetGroupInfo) -> Self {
-        self.target_group = Some(input);
+        self.target_group = ::std::option::Option::Some(input);
         self
     }
     /// <p> The target group associated with the task set. The target group is used by CodeDeploy to manage traffic to a task set. </p>
     pub fn set_target_group(
         mut self,
-        input: std::option::Option<crate::types::TargetGroupInfo>,
+        input: ::std::option::Option<crate::types::TargetGroupInfo>,
     ) -> Self {
         self.target_group = input;
         self
     }
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
     pub fn task_set_label(mut self, input: crate::types::TargetLabel) -> Self {
-        self.task_set_label = Some(input);
+        self.task_set_label = ::std::option::Option::Some(input);
         self
     }
     /// <p> A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). </p>
     pub fn set_task_set_label(
         mut self,
-        input: std::option::Option<crate::types::TargetLabel>,
+        input: ::std::option::Option<crate::types::TargetLabel>,
     ) -> Self {
         self.task_set_label = input;
         self

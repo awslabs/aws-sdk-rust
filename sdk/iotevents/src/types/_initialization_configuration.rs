@@ -2,15 +2,15 @@
 
 /// <p>Specifies the default alarm state. The configuration applies to all alarms that were created based on this alarm model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitializationConfiguration {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub disabled_on_initialization: std::option::Option<bool>,
+    pub disabled_on_initialization: ::std::option::Option<bool>,
 }
 impl InitializationConfiguration {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
-    pub fn disabled_on_initialization(&self) -> std::option::Option<bool> {
+    pub fn disabled_on_initialization(&self) -> ::std::option::Option<bool> {
         self.disabled_on_initialization
     }
 }
@@ -23,18 +23,20 @@ impl InitializationConfiguration {
 
 /// A builder for [`InitializationConfiguration`](crate::types::InitializationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InitializationConfigurationBuilder {
-    pub(crate) disabled_on_initialization: std::option::Option<bool>,
+    pub(crate) disabled_on_initialization: ::std::option::Option<bool>,
 }
 impl InitializationConfigurationBuilder {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
     pub fn disabled_on_initialization(mut self, input: bool) -> Self {
-        self.disabled_on_initialization = Some(input);
+        self.disabled_on_initialization = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all alarm instances created based on the alarm model are activated. The default value is <code>TRUE</code>.</p>
-    pub fn set_disabled_on_initialization(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disabled_on_initialization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled_on_initialization = input;
         self
     }

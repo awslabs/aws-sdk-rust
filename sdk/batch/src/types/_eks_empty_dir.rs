@@ -2,7 +2,7 @@
 
 /// <p>Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. An <code>emptyDir</code> volume is first created when a pod is assigned to a node. It exists as long as that pod is running on that node. The <code>emptyDir</code> volume is initially empty. All containers in the pod can read and write the files in the <code>emptyDir</code> volume. However, the <code>emptyDir</code> volume can be mounted at the same or different paths in each container. When a pod is removed from a node for any reason, the data in the <code>emptyDir</code> is deleted permanently. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksEmptyDir {
     /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
     /// <dl>
@@ -20,10 +20,10 @@ pub struct EksEmptyDir {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub medium: std::option::Option<std::string::String>,
+    pub medium: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
     #[doc(hidden)]
-    pub size_limit: std::option::Option<std::string::String>,
+    pub size_limit: ::std::option::Option<::std::string::String>,
 }
 impl EksEmptyDir {
     /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
@@ -41,11 +41,11 @@ impl EksEmptyDir {
     /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
     /// </dd>
     /// </dl>
-    pub fn medium(&self) -> std::option::Option<&str> {
+    pub fn medium(&self) -> ::std::option::Option<&str> {
         self.medium.as_deref()
     }
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
-    pub fn size_limit(&self) -> std::option::Option<&str> {
+    pub fn size_limit(&self) -> ::std::option::Option<&str> {
         self.size_limit.as_deref()
     }
 }
@@ -58,10 +58,12 @@ impl EksEmptyDir {
 
 /// A builder for [`EksEmptyDir`](crate::types::EksEmptyDir).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EksEmptyDirBuilder {
-    pub(crate) medium: std::option::Option<std::string::String>,
-    pub(crate) size_limit: std::option::Option<std::string::String>,
+    pub(crate) medium: ::std::option::Option<::std::string::String>,
+    pub(crate) size_limit: ::std::option::Option<::std::string::String>,
 }
 impl EksEmptyDirBuilder {
     /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
@@ -79,8 +81,8 @@ impl EksEmptyDirBuilder {
     /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
     /// </dd>
     /// </dl>
-    pub fn medium(mut self, input: impl Into<std::string::String>) -> Self {
-        self.medium = Some(input.into());
+    pub fn medium(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.medium = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The medium to store the volume. The default value is an empty string, which uses the storage of the node.</p>
@@ -98,17 +100,17 @@ impl EksEmptyDirBuilder {
     /// <p>Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of the volume are lost when the node reboots, and any storage on the volume counts against the container's memory limit.</p>
     /// </dd>
     /// </dl>
-    pub fn set_medium(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_medium(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.medium = input;
         self
     }
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
-    pub fn size_limit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.size_limit = Some(input.into());
+    pub fn size_limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.size_limit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum size of the volume. By default, there's no maximum size defined.</p>
-    pub fn set_size_limit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_size_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.size_limit = input;
         self
     }

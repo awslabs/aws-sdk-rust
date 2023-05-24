@@ -2,89 +2,91 @@
 
 /// <p>An object that contains response data from a property definition request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyDefinitionResponse {
     /// <p>An object that contains information about the data type.</p>
     #[doc(hidden)]
-    pub data_type: std::option::Option<crate::types::DataType>,
+    pub data_type: ::std::option::Option<crate::types::DataType>,
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
     #[doc(hidden)]
-    pub is_time_series: std::option::Option<bool>,
+    pub is_time_series: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
     #[doc(hidden)]
-    pub is_required_in_entity: std::option::Option<bool>,
+    pub is_required_in_entity: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
     #[doc(hidden)]
-    pub is_external_id: std::option::Option<bool>,
+    pub is_external_id: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
     #[doc(hidden)]
-    pub is_stored_externally: std::option::Option<bool>,
+    pub is_stored_externally: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
     #[doc(hidden)]
-    pub is_imported: std::option::Option<bool>,
+    pub is_imported: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
     #[doc(hidden)]
-    pub is_final: std::option::Option<bool>,
+    pub is_final: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
     #[doc(hidden)]
-    pub is_inherited: std::option::Option<bool>,
+    pub is_inherited: ::std::option::Option<bool>,
     /// <p>An object that contains the default value.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<crate::types::DataValue>,
+    pub default_value: ::std::option::Option<crate::types::DataValue>,
     /// <p>A mapping that specifies configuration information about the property.</p>
     #[doc(hidden)]
-    pub configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub configuration: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A friendly name for the property.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl PropertyDefinitionResponse {
     /// <p>An object that contains information about the data type.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::types::DataType> {
+    pub fn data_type(&self) -> ::std::option::Option<&crate::types::DataType> {
         self.data_type.as_ref()
     }
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
-    pub fn is_time_series(&self) -> std::option::Option<bool> {
+    pub fn is_time_series(&self) -> ::std::option::Option<bool> {
         self.is_time_series
     }
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
-    pub fn is_required_in_entity(&self) -> std::option::Option<bool> {
+    pub fn is_required_in_entity(&self) -> ::std::option::Option<bool> {
         self.is_required_in_entity
     }
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
-    pub fn is_external_id(&self) -> std::option::Option<bool> {
+    pub fn is_external_id(&self) -> ::std::option::Option<bool> {
         self.is_external_id
     }
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
-    pub fn is_stored_externally(&self) -> std::option::Option<bool> {
+    pub fn is_stored_externally(&self) -> ::std::option::Option<bool> {
         self.is_stored_externally
     }
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
-    pub fn is_imported(&self) -> std::option::Option<bool> {
+    pub fn is_imported(&self) -> ::std::option::Option<bool> {
         self.is_imported
     }
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
-    pub fn is_final(&self) -> std::option::Option<bool> {
+    pub fn is_final(&self) -> ::std::option::Option<bool> {
         self.is_final
     }
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
-    pub fn is_inherited(&self) -> std::option::Option<bool> {
+    pub fn is_inherited(&self) -> ::std::option::Option<bool> {
         self.is_inherited
     }
     /// <p>An object that contains the default value.</p>
-    pub fn default_value(&self) -> std::option::Option<&crate::types::DataValue> {
+    pub fn default_value(&self) -> ::std::option::Option<&crate::types::DataValue> {
         self.default_value.as_ref()
     }
     /// <p>A mapping that specifies configuration information about the property.</p>
     pub fn configuration(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.configuration.as_ref()
     }
     /// <p>A friendly name for the property.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
 }
@@ -97,111 +99,114 @@ impl PropertyDefinitionResponse {
 
 /// A builder for [`PropertyDefinitionResponse`](crate::types::PropertyDefinitionResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PropertyDefinitionResponseBuilder {
-    pub(crate) data_type: std::option::Option<crate::types::DataType>,
-    pub(crate) is_time_series: std::option::Option<bool>,
-    pub(crate) is_required_in_entity: std::option::Option<bool>,
-    pub(crate) is_external_id: std::option::Option<bool>,
-    pub(crate) is_stored_externally: std::option::Option<bool>,
-    pub(crate) is_imported: std::option::Option<bool>,
-    pub(crate) is_final: std::option::Option<bool>,
-    pub(crate) is_inherited: std::option::Option<bool>,
-    pub(crate) default_value: std::option::Option<crate::types::DataValue>,
-    pub(crate) configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
+    pub(crate) data_type: ::std::option::Option<crate::types::DataType>,
+    pub(crate) is_time_series: ::std::option::Option<bool>,
+    pub(crate) is_required_in_entity: ::std::option::Option<bool>,
+    pub(crate) is_external_id: ::std::option::Option<bool>,
+    pub(crate) is_stored_externally: ::std::option::Option<bool>,
+    pub(crate) is_imported: ::std::option::Option<bool>,
+    pub(crate) is_final: ::std::option::Option<bool>,
+    pub(crate) is_inherited: ::std::option::Option<bool>,
+    pub(crate) default_value: ::std::option::Option<crate::types::DataValue>,
+    pub(crate) configuration: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl PropertyDefinitionResponseBuilder {
     /// <p>An object that contains information about the data type.</p>
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
-        self.data_type = Some(input);
+        self.data_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the data type.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<crate::types::DataType>) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::DataType>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
     pub fn is_time_series(mut self, input: bool) -> Self {
-        self.is_time_series = Some(input);
+        self.is_time_series = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether the property consists of time series data.</p>
-    pub fn set_is_time_series(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_time_series(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_time_series = input;
         self
     }
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
     pub fn is_required_in_entity(mut self, input: bool) -> Self {
-        self.is_required_in_entity = Some(input);
+        self.is_required_in_entity = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether the property is required in an entity.</p>
-    pub fn set_is_required_in_entity(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_required_in_entity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_required_in_entity = input;
         self
     }
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
     pub fn is_external_id(mut self, input: bool) -> Self {
-        self.is_external_id = Some(input);
+        self.is_external_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether the property ID comes from an external data store.</p>
-    pub fn set_is_external_id(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_external_id(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_external_id = input;
         self
     }
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
     pub fn is_stored_externally(mut self, input: bool) -> Self {
-        self.is_stored_externally = Some(input);
+        self.is_stored_externally = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether the property is stored externally.</p>
-    pub fn set_is_stored_externally(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_stored_externally(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_stored_externally = input;
         self
     }
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
     pub fn is_imported(mut self, input: bool) -> Self {
-        self.is_imported = Some(input);
+        self.is_imported = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether the property definition is imported from an external data store.</p>
-    pub fn set_is_imported(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_imported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_imported = input;
         self
     }
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
     pub fn is_final(mut self, input: bool) -> Self {
-        self.is_final = Some(input);
+        self.is_final = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether the property definition can be updated.</p>
-    pub fn set_is_final(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_final(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_final = input;
         self
     }
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
     pub fn is_inherited(mut self, input: bool) -> Self {
-        self.is_inherited = Some(input);
+        self.is_inherited = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether the property definition is inherited from a parent entity.</p>
-    pub fn set_is_inherited(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_inherited(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_inherited = input;
         self
     }
     /// <p>An object that contains the default value.</p>
     pub fn default_value(mut self, input: crate::types::DataValue) -> Self {
-        self.default_value = Some(input);
+        self.default_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the default value.</p>
     pub fn set_default_value(
         mut self,
-        input: std::option::Option<crate::types::DataValue>,
+        input: ::std::option::Option<crate::types::DataValue>,
     ) -> Self {
         self.default_value = input;
         self
@@ -213,31 +218,31 @@ impl PropertyDefinitionResponseBuilder {
     /// <p>A mapping that specifies configuration information about the property.</p>
     pub fn configuration(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.configuration = Some(hash_map);
+        self.configuration = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A mapping that specifies configuration information about the property.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.configuration = input;
         self
     }
     /// <p>A friendly name for the property.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A friendly name for the property.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }

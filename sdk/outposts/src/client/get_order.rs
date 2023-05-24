@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOrder`](crate::operation::get_order::builders::GetOrderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`order_id(impl Into<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::order_id) / [`set_order_id(Option<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::set_order_id): <p>The ID of the order.</p>
+    ///   - [`order_id(impl ::std::convert::Into<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::order_id) / [`set_order_id(Option<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::set_order_id): <p>The ID of the order.</p>
     /// - On success, responds with [`GetOrderOutput`](crate::operation::get_order::GetOrderOutput) with field(s):
     ///   - [`order(Option<Order>)`](crate::operation::get_order::GetOrderOutput::order): <p>Information about an order.</p>
     /// - On failure, responds with [`SdkError<GetOrderError>`](crate::operation::get_order::GetOrderError)

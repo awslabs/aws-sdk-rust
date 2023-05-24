@@ -2,7 +2,7 @@
 
 /// <p>Describes the location of the error in a code sample.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeErrorLocation {
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl CodeErrorLocation {
 
 /// A builder for [`CodeErrorLocation`](crate::types::CodeErrorLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeErrorLocationBuilder {
-    pub(crate) line: std::option::Option<i32>,
-    pub(crate) column: std::option::Option<i32>,
-    pub(crate) span: std::option::Option<i32>,
+    pub(crate) line: ::std::option::Option<i32>,
+    pub(crate) column: ::std::option::Option<i32>,
+    pub(crate) span: ::std::option::Option<i32>,
 }
 impl CodeErrorLocationBuilder {
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
     pub fn line(mut self, input: i32) -> Self {
-        self.line = Some(input);
+        self.line = ::std::option::Option::Some(input);
         self
     }
     /// <p>The line number in the code. Defaults to <code>0</code> if unknown.</p>
-    pub fn set_line(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_line(mut self, input: ::std::option::Option<i32>) -> Self {
         self.line = input;
         self
     }
     /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
     pub fn column(mut self, input: i32) -> Self {
-        self.column = Some(input);
+        self.column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column number in the code. Defaults to <code>0</code> if unknown.</p>
-    pub fn set_column(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column = input;
         self
     }
     /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
     pub fn span(mut self, input: i32) -> Self {
-        self.span = Some(input);
+        self.span = ::std::option::Option::Some(input);
         self
     }
     /// <p>The span/length of the error. Defaults to <code>-1</code> if unknown.</p>
-    pub fn set_span(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_span(mut self, input: ::std::option::Option<i32>) -> Self {
         self.span = input;
         self
     }

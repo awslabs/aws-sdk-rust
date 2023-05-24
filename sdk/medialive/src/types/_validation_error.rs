@@ -2,22 +2,22 @@
 
 /// Placeholder documentation for ValidationError
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationError {
     /// Path to the source of the error.
     #[doc(hidden)]
-    pub element_path: std::option::Option<std::string::String>,
+    pub element_path: ::std::option::Option<::std::string::String>,
     /// The error message.
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ValidationError {
     /// Path to the source of the error.
-    pub fn element_path(&self) -> std::option::Option<&str> {
+    pub fn element_path(&self) -> ::std::option::Option<&str> {
         self.element_path.as_deref()
     }
     /// The error message.
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl ValidationError {
 
 /// A builder for [`ValidationError`](crate::types::ValidationError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValidationErrorBuilder {
-    pub(crate) element_path: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) element_path: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl ValidationErrorBuilder {
     /// Path to the source of the error.
-    pub fn element_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.element_path = Some(input.into());
+    pub fn element_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.element_path = ::std::option::Option::Some(input.into());
         self
     }
     /// Path to the source of the error.
-    pub fn set_element_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_element_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.element_path = input;
         self
     }
     /// The error message.
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// The error message.
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

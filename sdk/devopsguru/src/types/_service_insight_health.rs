@@ -2,7 +2,7 @@
 
 /// <p>Contains the number of open proactive and reactive insights in an analyzed Amazon Web Services service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceInsightHealth {
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl ServiceInsightHealth {
 
 /// A builder for [`ServiceInsightHealth`](crate::types::ServiceInsightHealth).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceInsightHealthBuilder {
-    pub(crate) open_proactive_insights: std::option::Option<i32>,
-    pub(crate) open_reactive_insights: std::option::Option<i32>,
+    pub(crate) open_proactive_insights: ::std::option::Option<i32>,
+    pub(crate) open_reactive_insights: ::std::option::Option<i32>,
 }
 impl ServiceInsightHealthBuilder {
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
     pub fn open_proactive_insights(mut self, input: i32) -> Self {
-        self.open_proactive_insights = Some(input);
+        self.open_proactive_insights = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of open proactive insights in the Amazon Web Services service</p>
-    pub fn set_open_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_open_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_proactive_insights = input;
         self
     }
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
     pub fn open_reactive_insights(mut self, input: i32) -> Self {
-        self.open_reactive_insights = Some(input);
+        self.open_reactive_insights = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of open reactive insights in the Amazon Web Services service</p>
-    pub fn set_open_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_open_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_reactive_insights = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Specifies a request to start a new session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
     #[doc(hidden)]
-    pub ledger_name: std::option::Option<std::string::String>,
+    pub ledger_name: ::std::option::Option<::std::string::String>,
 }
 impl StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
-    pub fn ledger_name(&self) -> std::option::Option<&str> {
+    pub fn ledger_name(&self) -> ::std::option::Option<&str> {
         self.ledger_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl StartSessionRequest {
 
 /// A builder for [`StartSessionRequest`](crate::types::StartSessionRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartSessionRequestBuilder {
-    pub(crate) ledger_name: std::option::Option<std::string::String>,
+    pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
 }
 impl StartSessionRequestBuilder {
     /// <p>The name of the ledger to start a new session against.</p>
-    pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ledger_name = Some(input.into());
+    pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ledger_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ledger to start a new session against.</p>
-    pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ledger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ledger_name = input;
         self
     }

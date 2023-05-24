@@ -2,22 +2,22 @@
 
 /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunnelChartAggregatedFieldWells {
     /// <p>The category field wells of a funnel chart. Values are grouped by category fields.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field wells of a funnel chart. Values are aggregated based on categories.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl FunnelChartAggregatedFieldWells {
     /// <p>The category field wells of a funnel chart. Values are grouped by category fields.</p>
-    pub fn category(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.category.as_deref()
     }
     /// <p>The value field wells of a funnel chart. Values are aggregated based on categories.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
         self.values.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl FunnelChartAggregatedFieldWells {
 
 /// A builder for [`FunnelChartAggregatedFieldWells`](crate::types::FunnelChartAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FunnelChartAggregatedFieldWellsBuilder {
-    pub(crate) category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl FunnelChartAggregatedFieldWellsBuilder {
     /// Appends an item to `category`.
@@ -44,13 +46,13 @@ impl FunnelChartAggregatedFieldWellsBuilder {
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.category.unwrap_or_default();
         v.push(input);
-        self.category = Some(v);
+        self.category = ::std::option::Option::Some(v);
         self
     }
     /// <p>The category field wells of a funnel chart. Values are grouped by category fields.</p>
     pub fn set_category(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.category = input;
         self
@@ -63,13 +65,13 @@ impl FunnelChartAggregatedFieldWellsBuilder {
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value field wells of a funnel chart. Values are aggregated based on categories.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     ) -> Self {
         self.values = input;
         self

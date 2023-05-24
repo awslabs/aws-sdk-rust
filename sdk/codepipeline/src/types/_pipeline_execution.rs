@@ -2,17 +2,17 @@
 
 /// <p>Represents information about an execution of a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineExecution {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
     #[doc(hidden)]
-    pub pipeline_name: std::option::Option<std::string::String>,
+    pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
     #[doc(hidden)]
-    pub pipeline_version: std::option::Option<i32>,
+    pub pipeline_version: ::std::option::Option<i32>,
     /// <p>The ID of the pipeline execution.</p>
     #[doc(hidden)]
-    pub pipeline_execution_id: std::option::Option<std::string::String>,
+    pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the pipeline execution.</p>
     /// <ul>
     /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li>
@@ -24,25 +24,25 @@ pub struct PipelineExecution {
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PipelineExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     /// <p>A summary that contains a description of the pipeline execution status.</p>
     #[doc(hidden)]
-    pub status_summary: std::option::Option<std::string::String>,
+    pub status_summary: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
     #[doc(hidden)]
-    pub artifact_revisions: std::option::Option<std::vec::Vec<crate::types::ArtifactRevision>>,
+    pub artifact_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
 }
 impl PipelineExecution {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
-    pub fn pipeline_version(&self) -> std::option::Option<i32> {
+    pub fn pipeline_version(&self) -> ::std::option::Option<i32> {
         self.pipeline_version
     }
     /// <p>The ID of the pipeline execution.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>The status of the pipeline execution.</p>
@@ -55,15 +55,15 @@ impl PipelineExecution {
     /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::PipelineExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>A summary that contains a description of the pipeline execution status.</p>
-    pub fn status_summary(&self) -> std::option::Option<&str> {
+    pub fn status_summary(&self) -> ::std::option::Option<&str> {
         self.status_summary.as_deref()
     }
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-    pub fn artifact_revisions(&self) -> std::option::Option<&[crate::types::ArtifactRevision]> {
+    pub fn artifact_revisions(&self) -> ::std::option::Option<&[crate::types::ArtifactRevision]> {
         self.artifact_revisions.as_deref()
     }
 }
@@ -76,46 +76,57 @@ impl PipelineExecution {
 
 /// A builder for [`PipelineExecution`](crate::types::PipelineExecution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineExecutionBuilder {
-    pub(crate) pipeline_name: std::option::Option<std::string::String>,
-    pub(crate) pipeline_version: std::option::Option<i32>,
-    pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::PipelineExecutionStatus>,
-    pub(crate) status_summary: std::option::Option<std::string::String>,
+    pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_version: ::std::option::Option<i32>,
+    pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
+    pub(crate) status_summary: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_revisions:
-        std::option::Option<std::vec::Vec<crate::types::ArtifactRevision>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
 }
 impl PipelineExecutionBuilder {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
-    pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_name = Some(input.into());
+    pub fn pipeline_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
-    pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pipeline_name = input;
         self
     }
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
     pub fn pipeline_version(mut self, input: i32) -> Self {
-        self.pipeline_version = Some(input);
+        self.pipeline_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
-    pub fn set_pipeline_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pipeline_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pipeline_version = input;
         self
     }
     /// <p>The ID of the pipeline execution.</p>
-    pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_execution_id = Some(input.into());
+    pub fn pipeline_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pipeline execution.</p>
     pub fn set_pipeline_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_execution_id = input;
         self
@@ -131,7 +142,7 @@ impl PipelineExecutionBuilder {
     /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::PipelineExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the pipeline execution.</p>
@@ -146,18 +157,24 @@ impl PipelineExecutionBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PipelineExecutionStatus>,
+        input: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A summary that contains a description of the pipeline execution status.</p>
-    pub fn status_summary(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_summary = Some(input.into());
+    pub fn status_summary(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A summary that contains a description of the pipeline execution status.</p>
-    pub fn set_status_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_summary(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_summary = input;
         self
     }
@@ -169,13 +186,13 @@ impl PipelineExecutionBuilder {
     pub fn artifact_revisions(mut self, input: crate::types::ArtifactRevision) -> Self {
         let mut v = self.artifact_revisions.unwrap_or_default();
         v.push(input);
-        self.artifact_revisions = Some(v);
+        self.artifact_revisions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
     pub fn set_artifact_revisions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ArtifactRevision>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
     ) -> Self {
         self.artifact_revisions = input;
         self

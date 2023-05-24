@@ -39,13 +39,13 @@
 /// <p>The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and <code>PRIVATE</code> for private APIs.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EndpointType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EndpointType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EndpointType {
+impl ::std::convert::From<&str> for EndpointType {
     fn from(s: &str) -> Self {
         match s {
             "EDGE" => EndpointType::Edge,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EndpointType {
         }
     }
 }
-impl std::str::FromStr for EndpointType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EndpointType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EndpointType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EndpointType::from(s))
     }
 }
 impl EndpointType {
@@ -91,7 +91,7 @@ impl EndpointType {
         &["EDGE", "PRIVATE", "REGIONAL"]
     }
 }
-impl AsRef<str> for EndpointType {
+impl ::std::convert::AsRef<str> for EndpointType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

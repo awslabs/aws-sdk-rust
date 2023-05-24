@@ -2,29 +2,29 @@
 
 /// <p>The configuration for the artifacts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactsConfiguration {
     /// <p>The configuration for the audio artifacts.</p>
     #[doc(hidden)]
-    pub audio: std::option::Option<crate::types::AudioArtifactsConfiguration>,
+    pub audio: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
     /// <p>The configuration for the video artifacts.</p>
     #[doc(hidden)]
-    pub video: std::option::Option<crate::types::VideoArtifactsConfiguration>,
+    pub video: ::std::option::Option<crate::types::VideoArtifactsConfiguration>,
     /// <p>The configuration for the content artifacts.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<crate::types::ContentArtifactsConfiguration>,
+    pub content: ::std::option::Option<crate::types::ContentArtifactsConfiguration>,
 }
 impl ArtifactsConfiguration {
     /// <p>The configuration for the audio artifacts.</p>
-    pub fn audio(&self) -> std::option::Option<&crate::types::AudioArtifactsConfiguration> {
+    pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioArtifactsConfiguration> {
         self.audio.as_ref()
     }
     /// <p>The configuration for the video artifacts.</p>
-    pub fn video(&self) -> std::option::Option<&crate::types::VideoArtifactsConfiguration> {
+    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoArtifactsConfiguration> {
         self.video.as_ref()
     }
     /// <p>The configuration for the content artifacts.</p>
-    pub fn content(&self) -> std::option::Option<&crate::types::ContentArtifactsConfiguration> {
+    pub fn content(&self) -> ::std::option::Option<&crate::types::ContentArtifactsConfiguration> {
         self.content.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl ArtifactsConfiguration {
 
 /// A builder for [`ArtifactsConfiguration`](crate::types::ArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArtifactsConfigurationBuilder {
-    pub(crate) audio: std::option::Option<crate::types::AudioArtifactsConfiguration>,
-    pub(crate) video: std::option::Option<crate::types::VideoArtifactsConfiguration>,
-    pub(crate) content: std::option::Option<crate::types::ContentArtifactsConfiguration>,
+    pub(crate) audio: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
+    pub(crate) video: ::std::option::Option<crate::types::VideoArtifactsConfiguration>,
+    pub(crate) content: ::std::option::Option<crate::types::ContentArtifactsConfiguration>,
 }
 impl ArtifactsConfigurationBuilder {
     /// <p>The configuration for the audio artifacts.</p>
     pub fn audio(mut self, input: crate::types::AudioArtifactsConfiguration) -> Self {
-        self.audio = Some(input);
+        self.audio = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the audio artifacts.</p>
     pub fn set_audio(
         mut self,
-        input: std::option::Option<crate::types::AudioArtifactsConfiguration>,
+        input: ::std::option::Option<crate::types::AudioArtifactsConfiguration>,
     ) -> Self {
         self.audio = input;
         self
     }
     /// <p>The configuration for the video artifacts.</p>
     pub fn video(mut self, input: crate::types::VideoArtifactsConfiguration) -> Self {
-        self.video = Some(input);
+        self.video = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the video artifacts.</p>
     pub fn set_video(
         mut self,
-        input: std::option::Option<crate::types::VideoArtifactsConfiguration>,
+        input: ::std::option::Option<crate::types::VideoArtifactsConfiguration>,
     ) -> Self {
         self.video = input;
         self
     }
     /// <p>The configuration for the content artifacts.</p>
     pub fn content(mut self, input: crate::types::ContentArtifactsConfiguration) -> Self {
-        self.content = Some(input);
+        self.content = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the content artifacts.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<crate::types::ContentArtifactsConfiguration>,
+        input: ::std::option::Option<crate::types::ContentArtifactsConfiguration>,
     ) -> Self {
         self.content = input;
         self

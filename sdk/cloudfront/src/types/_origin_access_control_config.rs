@@ -2,17 +2,17 @@
 
 /// <p>A CloudFront origin access control configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginAccessControlConfig {
     /// <p>A name to identify the origin access control.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the origin access control.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     #[doc(hidden)]
-    pub signing_protocol: std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
+    pub signing_protocol: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
     /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>This field can have one of the following values:</p>
     /// <ul>
@@ -21,25 +21,25 @@ pub struct OriginAccessControlConfig {
     /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, then CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, then CloudFront doesn't sign the origin request and instead passes along the <code>Authorization</code> header from the viewer request. <b>WARNING: To pass along the <code>Authorization</code> header from the viewer request, you <i>must</i> add the <code>Authorization</code> header to a <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">cache policy</a> for all cache behaviors that use origins associated with this origin access control.</b> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub signing_behavior: std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
+    pub signing_behavior: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     /// <p>The type of origin that this origin access control is for.</p>
     #[doc(hidden)]
     pub origin_access_control_origin_type:
-        std::option::Option<crate::types::OriginAccessControlOriginTypes>,
+        ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlConfig {
     /// <p>A name to identify the origin access control.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the origin access control.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     pub fn signing_protocol(
         &self,
-    ) -> std::option::Option<&crate::types::OriginAccessControlSigningProtocols> {
+    ) -> ::std::option::Option<&crate::types::OriginAccessControlSigningProtocols> {
         self.signing_protocol.as_ref()
     }
     /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -51,13 +51,13 @@ impl OriginAccessControlConfig {
     /// </ul>
     pub fn signing_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::OriginAccessControlSigningBehaviors> {
+    ) -> ::std::option::Option<&crate::types::OriginAccessControlSigningBehaviors> {
         self.signing_behavior.as_ref()
     }
     /// <p>The type of origin that this origin access control is for.</p>
     pub fn origin_access_control_origin_type(
         &self,
-    ) -> std::option::Option<&crate::types::OriginAccessControlOriginTypes> {
+    ) -> ::std::option::Option<&crate::types::OriginAccessControlOriginTypes> {
         self.origin_access_control_origin_type.as_ref()
     }
 }
@@ -70,35 +70,37 @@ impl OriginAccessControlConfig {
 
 /// A builder for [`OriginAccessControlConfig`](crate::types::OriginAccessControlConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginAccessControlConfigBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) signing_protocol:
-        std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
+        ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
     pub(crate) signing_behavior:
-        std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
+        ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     pub(crate) origin_access_control_origin_type:
-        std::option::Option<crate::types::OriginAccessControlOriginTypes>,
+        ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlConfigBuilder {
     /// <p>A name to identify the origin access control.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name to identify the origin access control.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description of the origin access control.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the origin access control.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -107,13 +109,13 @@ impl OriginAccessControlConfigBuilder {
         mut self,
         input: crate::types::OriginAccessControlSigningProtocols,
     ) -> Self {
-        self.signing_protocol = Some(input);
+        self.signing_protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     pub fn set_signing_protocol(
         mut self,
-        input: std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
+        input: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
     ) -> Self {
         self.signing_protocol = input;
         self
@@ -129,7 +131,7 @@ impl OriginAccessControlConfigBuilder {
         mut self,
         input: crate::types::OriginAccessControlSigningBehaviors,
     ) -> Self {
-        self.signing_behavior = Some(input);
+        self.signing_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -141,7 +143,7 @@ impl OriginAccessControlConfigBuilder {
     /// </ul>
     pub fn set_signing_behavior(
         mut self,
-        input: std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
+        input: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     ) -> Self {
         self.signing_behavior = input;
         self
@@ -151,13 +153,13 @@ impl OriginAccessControlConfigBuilder {
         mut self,
         input: crate::types::OriginAccessControlOriginTypes,
     ) -> Self {
-        self.origin_access_control_origin_type = Some(input);
+        self.origin_access_control_origin_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of origin that this origin access control is for.</p>
     pub fn set_origin_access_control_origin_type(
         mut self,
-        input: std::option::Option<crate::types::OriginAccessControlOriginTypes>,
+        input: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
     ) -> Self {
         self.origin_access_control_origin_type = input;
         self

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetCapacityUnitType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TargetCapacityUnitType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetCapacityUnitType {
+impl ::std::convert::From<&str> for TargetCapacityUnitType {
     fn from(s: &str) -> Self {
         match s {
             "memory-mib" => TargetCapacityUnitType::MemoryMib,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for TargetCapacityUnitType {
         }
     }
 }
-impl std::str::FromStr for TargetCapacityUnitType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetCapacityUnitType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetCapacityUnitType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetCapacityUnitType::from(s))
     }
 }
 impl TargetCapacityUnitType {
@@ -91,7 +91,7 @@ impl TargetCapacityUnitType {
         &["memory-mib", "units", "vcpu"]
     }
 }
-impl AsRef<str> for TargetCapacityUnitType {
+impl ::std::convert::AsRef<str> for TargetCapacityUnitType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

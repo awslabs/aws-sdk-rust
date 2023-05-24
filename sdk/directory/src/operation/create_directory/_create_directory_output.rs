@@ -2,20 +2,20 @@
 
 /// <p>Contains the results of the <code>CreateDirectory</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDirectoryOutput {
     /// <p>The identifier of the directory that was created.</p>
     #[doc(hidden)]
-    pub directory_id: std::option::Option<std::string::String>,
+    pub directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDirectoryOutput {
     /// <p>The identifier of the directory that was created.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateDirectoryOutput {
+impl ::aws_http::request_id::RequestId for CreateDirectoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateDirectoryOutput {
 
 /// A builder for [`CreateDirectoryOutput`](crate::operation::create_directory::CreateDirectoryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDirectoryOutputBuilder {
-    pub(crate) directory_id: std::option::Option<std::string::String>,
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDirectoryOutputBuilder {
     /// <p>The identifier of the directory that was created.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_id = Some(input.into());
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the directory that was created.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }

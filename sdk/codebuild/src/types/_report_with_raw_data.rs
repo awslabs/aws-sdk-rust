@@ -2,22 +2,22 @@
 
 /// <p>Contains the unmodified data for the report. For more information, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportWithRawData {
     /// <p>The ARN of the report.</p>
     #[doc(hidden)]
-    pub report_arn: std::option::Option<std::string::String>,
+    pub report_arn: ::std::option::Option<::std::string::String>,
     /// <p>The value of the requested data field from the report.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<std::string::String>,
+    pub data: ::std::option::Option<::std::string::String>,
 }
 impl ReportWithRawData {
     /// <p>The ARN of the report.</p>
-    pub fn report_arn(&self) -> std::option::Option<&str> {
+    pub fn report_arn(&self) -> ::std::option::Option<&str> {
         self.report_arn.as_deref()
     }
     /// <p>The value of the requested data field from the report.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ReportWithRawData {
 
 /// A builder for [`ReportWithRawData`](crate::types::ReportWithRawData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportWithRawDataBuilder {
-    pub(crate) report_arn: std::option::Option<std::string::String>,
-    pub(crate) data: std::option::Option<std::string::String>,
+    pub(crate) report_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) data: ::std::option::Option<::std::string::String>,
 }
 impl ReportWithRawDataBuilder {
     /// <p>The ARN of the report.</p>
-    pub fn report_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.report_arn = Some(input.into());
+    pub fn report_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.report_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the report.</p>
-    pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_report_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_arn = input;
         self
     }
     /// <p>The value of the requested data field from the report.</p>
-    pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data = Some(input.into());
+    pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the requested data field from the report.</p>
-    pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }

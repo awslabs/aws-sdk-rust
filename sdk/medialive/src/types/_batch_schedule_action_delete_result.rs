@@ -2,15 +2,15 @@
 
 /// List of actions that have been deleted from the schedule.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchScheduleActionDeleteResult {
     /// List of actions that have been deleted from the schedule.
     #[doc(hidden)]
-    pub schedule_actions: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
+    pub schedule_actions: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionDeleteResult {
     /// List of actions that have been deleted from the schedule.
-    pub fn schedule_actions(&self) -> std::option::Option<&[crate::types::ScheduleAction]> {
+    pub fn schedule_actions(&self) -> ::std::option::Option<&[crate::types::ScheduleAction]> {
         self.schedule_actions.as_deref()
     }
 }
@@ -23,9 +23,12 @@ impl BatchScheduleActionDeleteResult {
 
 /// A builder for [`BatchScheduleActionDeleteResult`](crate::types::BatchScheduleActionDeleteResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchScheduleActionDeleteResultBuilder {
-    pub(crate) schedule_actions: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
+    pub(crate) schedule_actions:
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionDeleteResultBuilder {
     /// Appends an item to `schedule_actions`.
@@ -36,13 +39,13 @@ impl BatchScheduleActionDeleteResultBuilder {
     pub fn schedule_actions(mut self, input: crate::types::ScheduleAction) -> Self {
         let mut v = self.schedule_actions.unwrap_or_default();
         v.push(input);
-        self.schedule_actions = Some(v);
+        self.schedule_actions = ::std::option::Option::Some(v);
         self
     }
     /// List of actions that have been deleted from the schedule.
     pub fn set_schedule_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>>,
     ) -> Self {
         self.schedule_actions = input;
         self

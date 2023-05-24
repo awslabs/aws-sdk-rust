@@ -2,36 +2,36 @@
 
 /// <p>An array of requested updates to the enablement status of controls in specified standards. The objects in the array include a security control ID, the Amazon Resource Name (ARN) of the standard, the requested enablement status, and the reason for updating the enablement status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsControlAssociationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
     #[doc(hidden)]
-    pub standards_arn: std::option::Option<std::string::String>,
+    pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
     #[doc(hidden)]
-    pub security_control_id: std::option::Option<std::string::String>,
+    pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The desired enablement status of the control in the standard.</p>
     #[doc(hidden)]
-    pub association_status: std::option::Option<crate::types::AssociationStatus>,
+    pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>The reason for updating the control's enablement status in the standard.</p>
     #[doc(hidden)]
-    pub updated_reason: std::option::Option<std::string::String>,
+    pub updated_reason: ::std::option::Option<::std::string::String>,
 }
 impl StandardsControlAssociationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
-    pub fn standards_arn(&self) -> std::option::Option<&str> {
+    pub fn standards_arn(&self) -> ::std::option::Option<&str> {
         self.standards_arn.as_deref()
     }
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
-    pub fn security_control_id(&self) -> std::option::Option<&str> {
+    pub fn security_control_id(&self) -> ::std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
     /// <p>The desired enablement status of the control in the standard.</p>
-    pub fn association_status(&self) -> std::option::Option<&crate::types::AssociationStatus> {
+    pub fn association_status(&self) -> ::std::option::Option<&crate::types::AssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>The reason for updating the control's enablement status in the standard.</p>
-    pub fn updated_reason(&self) -> std::option::Option<&str> {
+    pub fn updated_reason(&self) -> ::std::option::Option<&str> {
         self.updated_reason.as_deref()
     }
 }
@@ -44,57 +44,74 @@ impl StandardsControlAssociationUpdate {
 
 /// A builder for [`StandardsControlAssociationUpdate`](crate::types::StandardsControlAssociationUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StandardsControlAssociationUpdateBuilder {
-    pub(crate) standards_arn: std::option::Option<std::string::String>,
-    pub(crate) security_control_id: std::option::Option<std::string::String>,
-    pub(crate) association_status: std::option::Option<crate::types::AssociationStatus>,
-    pub(crate) updated_reason: std::option::Option<std::string::String>,
+    pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
+    pub(crate) association_status: ::std::option::Option<crate::types::AssociationStatus>,
+    pub(crate) updated_reason: ::std::option::Option<::std::string::String>,
 }
 impl StandardsControlAssociationUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
-    pub fn standards_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.standards_arn = Some(input.into());
+    pub fn standards_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.standards_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the standard in which you want to update the control's enablement status.</p>
-    pub fn set_standards_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_standards_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.standards_arn = input;
         self
     }
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
-    pub fn security_control_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_control_id = Some(input.into());
+    pub fn security_control_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the security control whose enablement status you want to update.</p>
     pub fn set_security_control_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_control_id = input;
         self
     }
     /// <p>The desired enablement status of the control in the standard.</p>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
-        self.association_status = Some(input);
+        self.association_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired enablement status of the control in the standard.</p>
     pub fn set_association_status(
         mut self,
-        input: std::option::Option<crate::types::AssociationStatus>,
+        input: ::std::option::Option<crate::types::AssociationStatus>,
     ) -> Self {
         self.association_status = input;
         self
     }
     /// <p>The reason for updating the control's enablement status in the standard.</p>
-    pub fn updated_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_reason = Some(input.into());
+    pub fn updated_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.updated_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for updating the control's enablement status in the standard.</p>
-    pub fn set_updated_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.updated_reason = input;
         self
     }

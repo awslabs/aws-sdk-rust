@@ -2,15 +2,15 @@
 
 /// Information about a resource definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDefinitionVersion {
     /// A list of resources.
     #[doc(hidden)]
-    pub resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
 }
 impl ResourceDefinitionVersion {
     /// A list of resources.
-    pub fn resources(&self) -> std::option::Option<&[crate::types::Resource]> {
+    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
         self.resources.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ResourceDefinitionVersion {
 
 /// A builder for [`ResourceDefinitionVersion`](crate::types::ResourceDefinitionVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceDefinitionVersionBuilder {
-    pub(crate) resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
 }
 impl ResourceDefinitionVersionBuilder {
     /// Appends an item to `resources`.
@@ -36,13 +38,13 @@ impl ResourceDefinitionVersionBuilder {
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
-        self.resources = Some(v);
+        self.resources = ::std::option::Option::Some(v);
         self
     }
     /// A list of resources.
     pub fn set_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     ) -> Self {
         self.resources = input;
         self

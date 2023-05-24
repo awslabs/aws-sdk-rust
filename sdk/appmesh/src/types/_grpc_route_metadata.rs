@@ -2,29 +2,29 @@
 
 /// <p>An object that represents the match metadata for the route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcRouteMetadata {
     /// <p>The name of the route.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     #[doc(hidden)]
-    pub invert: std::option::Option<bool>,
+    pub invert: ::std::option::Option<bool>,
     /// <p>An object that represents the data to match from the request.</p>
     #[doc(hidden)]
-    pub r#match: std::option::Option<crate::types::GrpcRouteMetadataMatchMethod>,
+    pub r#match: ::std::option::Option<crate::types::GrpcRouteMetadataMatchMethod>,
 }
 impl GrpcRouteMetadata {
     /// <p>The name of the route.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
-    pub fn invert(&self) -> std::option::Option<bool> {
+    pub fn invert(&self) -> ::std::option::Option<bool> {
         self.invert
     }
     /// <p>An object that represents the data to match from the request.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::GrpcRouteMetadataMatchMethod> {
+    pub fn r#match(&self) -> ::std::option::Option<&crate::types::GrpcRouteMetadataMatchMethod> {
         self.r#match.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl GrpcRouteMetadata {
 
 /// A builder for [`GrpcRouteMetadata`](crate::types::GrpcRouteMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GrpcRouteMetadataBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) invert: std::option::Option<bool>,
-    pub(crate) r#match: std::option::Option<crate::types::GrpcRouteMetadataMatchMethod>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) invert: ::std::option::Option<bool>,
+    pub(crate) r#match: ::std::option::Option<crate::types::GrpcRouteMetadataMatchMethod>,
 }
 impl GrpcRouteMetadataBuilder {
     /// <p>The name of the route.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the route.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn invert(mut self, input: bool) -> Self {
-        self.invert = Some(input);
+        self.invert = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
-    pub fn set_invert(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_invert(mut self, input: ::std::option::Option<bool>) -> Self {
         self.invert = input;
         self
     }
     /// <p>An object that represents the data to match from the request.</p>
     pub fn r#match(mut self, input: crate::types::GrpcRouteMetadataMatchMethod) -> Self {
-        self.r#match = Some(input);
+        self.r#match = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the data to match from the request.</p>
     pub fn set_match(
         mut self,
-        input: std::option::Option<crate::types::GrpcRouteMetadataMatchMethod>,
+        input: ::std::option::Option<crate::types::GrpcRouteMetadataMatchMethod>,
     ) -> Self {
         self.r#match = input;
         self

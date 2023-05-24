@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateUserSettings`](crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_arn(impl Into<String>)`](crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_user_settings::builders::DisassociateUserSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
     /// - On success, responds with [`DisassociateUserSettingsOutput`](crate::operation::disassociate_user_settings::DisassociateUserSettingsOutput)
     /// - On failure, responds with [`SdkError<DisassociateUserSettingsError>`](crate::operation::disassociate_user_settings::DisassociateUserSettingsError)
     pub fn disassociate_user_settings(

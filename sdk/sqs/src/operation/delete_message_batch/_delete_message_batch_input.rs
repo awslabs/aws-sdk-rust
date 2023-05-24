@@ -2,24 +2,27 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
-    pub queue_url: std::option::Option<std::string::String>,
+    pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of receipt handles for the messages to be deleted.</p>
     #[doc(hidden)]
-    pub entries: std::option::Option<std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
+    pub entries:
+        ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
 }
 impl DeleteMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
     /// <p>A list of receipt handles for the messages to be deleted.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::types::DeleteMessageBatchRequestEntry]> {
+    pub fn entries(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::DeleteMessageBatchRequestEntry]> {
         self.entries.as_deref()
     }
 }
@@ -33,22 +36,24 @@ impl DeleteMessageBatchInput {
 
 /// A builder for [`DeleteMessageBatchInput`](crate::operation::delete_message_batch::DeleteMessageBatchInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteMessageBatchInputBuilder {
-    pub(crate) queue_url: std::option::Option<std::string::String>,
+    pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) entries:
-        std::option::Option<std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
 }
 impl DeleteMessageBatchInputBuilder {
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_url = Some(input.into());
+    pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_url = input;
         self
     }
@@ -60,13 +65,13 @@ impl DeleteMessageBatchInputBuilder {
     pub fn entries(mut self, input: crate::types::DeleteMessageBatchRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
-        self.entries = Some(v);
+        self.entries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of receipt handles for the messages to be deleted.</p>
     pub fn set_entries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMessageBatchRequestEntry>>,
     ) -> Self {
         self.entries = input;
         self
@@ -74,11 +79,11 @@ impl DeleteMessageBatchInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMessageBatchInput`](crate::operation::delete_message_batch::DeleteMessageBatchInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_message_batch::DeleteMessageBatchInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_message_batch::DeleteMessageBatchInput {
                 queue_url: self.queue_url,
                 entries: self.entries,

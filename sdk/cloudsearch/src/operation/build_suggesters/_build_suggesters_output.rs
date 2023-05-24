@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>BuildSuggester</code> request. Contains a list of the fields used for suggestions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildSuggestersOutput {
     /// <p>A list of field names.</p>
     #[doc(hidden)]
-    pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BuildSuggestersOutput {
     /// <p>A list of field names.</p>
-    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.field_names.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BuildSuggestersOutput {
+impl ::aws_http::request_id::RequestId for BuildSuggestersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl BuildSuggestersOutput {
 
 /// A builder for [`BuildSuggestersOutput`](crate::operation::build_suggesters::BuildSuggestersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BuildSuggestersOutputBuilder {
-    pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BuildSuggestersOutputBuilder {
@@ -40,16 +42,16 @@ impl BuildSuggestersOutputBuilder {
     /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
     ///
     /// <p>A list of field names.</p>
-    pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn field_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.field_names.unwrap_or_default();
         v.push(input.into());
-        self.field_names = Some(v);
+        self.field_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of field names.</p>
     pub fn set_field_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.field_names = input;
         self

@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableRestoreStatusOutput {
     /// <p>A list of status details for one or more table restore requests.</p>
     #[doc(hidden)]
     pub table_restore_status_details:
-        std::option::Option<std::vec::Vec<crate::types::TableRestoreStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTableRestoreStatusOutput {
     /// <p>A list of status details for one or more table restore requests.</p>
     pub fn table_restore_status_details(
         &self,
-    ) -> std::option::Option<&[crate::types::TableRestoreStatus]> {
+    ) -> ::std::option::Option<&[crate::types::TableRestoreStatus]> {
         self.table_restore_status_details.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTableRestoreStatusOutput {
+impl ::aws_http::request_id::RequestId for DescribeTableRestoreStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl DescribeTableRestoreStatusOutput {
 
 /// A builder for [`DescribeTableRestoreStatusOutput`](crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTableRestoreStatusOutputBuilder {
     pub(crate) table_restore_status_details:
-        std::option::Option<std::vec::Vec<crate::types::TableRestoreStatus>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTableRestoreStatusOutputBuilder {
@@ -55,24 +57,24 @@ impl DescribeTableRestoreStatusOutputBuilder {
     pub fn table_restore_status_details(mut self, input: crate::types::TableRestoreStatus) -> Self {
         let mut v = self.table_restore_status_details.unwrap_or_default();
         v.push(input);
-        self.table_restore_status_details = Some(v);
+        self.table_restore_status_details = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of status details for one or more table restore requests.</p>
     pub fn set_table_restore_status_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TableRestoreStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>>,
     ) -> Self {
         self.table_restore_status_details = input;
         self
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

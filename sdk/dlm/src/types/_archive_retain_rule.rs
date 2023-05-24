@@ -2,17 +2,17 @@
 
 /// <p> <b>[Snapshot policies only]</b> Specifies information about the archive storage tier retention period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveRetainRule {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
     #[doc(hidden)]
-    pub retention_archive_tier: std::option::Option<crate::types::RetentionArchiveTier>,
+    pub retention_archive_tier: ::std::option::Option<crate::types::RetentionArchiveTier>,
 }
 impl ArchiveRetainRule {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
     pub fn retention_archive_tier(
         &self,
-    ) -> std::option::Option<&crate::types::RetentionArchiveTier> {
+    ) -> ::std::option::Option<&crate::types::RetentionArchiveTier> {
         self.retention_archive_tier.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ArchiveRetainRule {
 
 /// A builder for [`ArchiveRetainRule`](crate::types::ArchiveRetainRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArchiveRetainRuleBuilder {
-    pub(crate) retention_archive_tier: std::option::Option<crate::types::RetentionArchiveTier>,
+    pub(crate) retention_archive_tier: ::std::option::Option<crate::types::RetentionArchiveTier>,
 }
 impl ArchiveRetainRuleBuilder {
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
     pub fn retention_archive_tier(mut self, input: crate::types::RetentionArchiveTier) -> Self {
-        self.retention_archive_tier = Some(input);
+        self.retention_archive_tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about retention period in the Amazon EBS Snapshots Archive. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>.</p>
     pub fn set_retention_archive_tier(
         mut self,
-        input: std::option::Option<crate::types::RetentionArchiveTier>,
+        input: ::std::option::Option<crate::types::RetentionArchiveTier>,
     ) -> Self {
         self.retention_archive_tier = input;
         self

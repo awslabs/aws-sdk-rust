@@ -2,19 +2,19 @@
 
 /// <p>Parameters required for transcoding audio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioParameters {
     /// <p>The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.</p>
     #[doc(hidden)]
-    pub codec: std::option::Option<std::string::String>,
+    pub codec: ::std::option::Option<::std::string::String>,
     /// <p>The sample rate of the audio stream in the output file, in Hertz. Valid values include:</p>
     /// <p> <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>, <code>96000</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.</p>
     #[doc(hidden)]
-    pub sample_rate: std::option::Option<std::string::String>,
+    pub sample_rate: ::std::option::Option<::std::string::String>,
     /// <p>The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320, inclusive.</p>
     #[doc(hidden)]
-    pub bit_rate: std::option::Option<std::string::String>,
+    pub bit_rate: ::std::option::Option<::std::string::String>,
     /// <p>The number of audio channels in the output file. The following values are valid:</p>
     /// <p> <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code> </p>
     /// <p>One channel carries the information played by a single speaker. For example, a stereo track with two channels sends one channel to the left speaker, and the other channel to the right speaker. The output channels are organized into tracks. If you want Elastic Transcoder to automatically detect the number of audio channels in the input file and use that value for the output file, select <code>auto</code>.</p>
@@ -27,7 +27,7 @@ pub struct AudioParameters {
     /// </ul>
     /// <p> For more information about how Elastic Transcoder organizes channels and tracks, see <code>Audio:AudioPackingMode</code>.</p>
     #[doc(hidden)]
-    pub channels: std::option::Option<std::string::String>,
+    pub channels: ::std::option::Option<::std::string::String>,
     /// <p>The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number of channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and their relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses <code>SingleTrack</code>.</p>
     /// <p>The following values are valid:</p>
     /// <p> <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and <code>OneChannelPerTrackWithMosTo8Tracks</code> </p>
@@ -71,26 +71,26 @@ pub struct AudioParameters {
     /// <li> <p> <code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub audio_packing_mode: std::option::Option<std::string::String>,
+    pub audio_packing_mode: ::std::option::Option<::std::string::String>,
     /// <p>If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile to use. Valid values include:</p>
     /// <p> <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.</p>
     #[doc(hidden)]
-    pub codec_options: std::option::Option<crate::types::AudioCodecOptions>,
+    pub codec_options: ::std::option::Option<crate::types::AudioCodecOptions>,
 }
 impl AudioParameters {
     /// <p>The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.</p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> ::std::option::Option<&str> {
         self.codec.as_deref()
     }
     /// <p>The sample rate of the audio stream in the output file, in Hertz. Valid values include:</p>
     /// <p> <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>, <code>96000</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.</p>
-    pub fn sample_rate(&self) -> std::option::Option<&str> {
+    pub fn sample_rate(&self) -> ::std::option::Option<&str> {
         self.sample_rate.as_deref()
     }
     /// <p>The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320, inclusive.</p>
-    pub fn bit_rate(&self) -> std::option::Option<&str> {
+    pub fn bit_rate(&self) -> ::std::option::Option<&str> {
         self.bit_rate.as_deref()
     }
     /// <p>The number of audio channels in the output file. The following values are valid:</p>
@@ -104,7 +104,7 @@ impl AudioParameters {
     /// <li> <p> <code>2</code> <b> channels specified, with any input:</b> Two identical mono channels or stereo. For more information about tracks, see <code>Audio:AudioPackingMode.</code> </p> </li>
     /// </ul>
     /// <p> For more information about how Elastic Transcoder organizes channels and tracks, see <code>Audio:AudioPackingMode</code>.</p>
-    pub fn channels(&self) -> std::option::Option<&str> {
+    pub fn channels(&self) -> ::std::option::Option<&str> {
         self.channels.as_deref()
     }
     /// <p>The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number of channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and their relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses <code>SingleTrack</code>.</p>
@@ -149,13 +149,13 @@ impl AudioParameters {
     /// <li> <p> <code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven MOS tracks</p> </li>
     /// <li> <p> <code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
     /// </ul>
-    pub fn audio_packing_mode(&self) -> std::option::Option<&str> {
+    pub fn audio_packing_mode(&self) -> ::std::option::Option<&str> {
         self.audio_packing_mode.as_deref()
     }
     /// <p>If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile to use. Valid values include:</p>
     /// <p> <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.</p>
-    pub fn codec_options(&self) -> std::option::Option<&crate::types::AudioCodecOptions> {
+    pub fn codec_options(&self) -> ::std::option::Option<&crate::types::AudioCodecOptions> {
         self.codec_options.as_ref()
     }
 }
@@ -168,47 +168,49 @@ impl AudioParameters {
 
 /// A builder for [`AudioParameters`](crate::types::AudioParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioParametersBuilder {
-    pub(crate) codec: std::option::Option<std::string::String>,
-    pub(crate) sample_rate: std::option::Option<std::string::String>,
-    pub(crate) bit_rate: std::option::Option<std::string::String>,
-    pub(crate) channels: std::option::Option<std::string::String>,
-    pub(crate) audio_packing_mode: std::option::Option<std::string::String>,
-    pub(crate) codec_options: std::option::Option<crate::types::AudioCodecOptions>,
+    pub(crate) codec: ::std::option::Option<::std::string::String>,
+    pub(crate) sample_rate: ::std::option::Option<::std::string::String>,
+    pub(crate) bit_rate: ::std::option::Option<::std::string::String>,
+    pub(crate) channels: ::std::option::Option<::std::string::String>,
+    pub(crate) audio_packing_mode: ::std::option::Option<::std::string::String>,
+    pub(crate) codec_options: ::std::option::Option<crate::types::AudioCodecOptions>,
 }
 impl AudioParametersBuilder {
     /// <p>The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.</p>
-    pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
-        self.codec = Some(input.into());
+    pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.codec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio codec for the output file. Valid values include <code>aac</code>, <code>flac</code>, <code>mp2</code>, <code>mp3</code>, <code>pcm</code>, and <code>vorbis</code>.</p>
-    pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.codec = input;
         self
     }
     /// <p>The sample rate of the audio stream in the output file, in Hertz. Valid values include:</p>
     /// <p> <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>, <code>96000</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.</p>
-    pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sample_rate = Some(input.into());
+    pub fn sample_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sample_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sample rate of the audio stream in the output file, in Hertz. Valid values include:</p>
     /// <p> <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>, <code>96000</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder automatically detects the sample rate.</p>
-    pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sample_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_rate = input;
         self
     }
     /// <p>The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320, inclusive.</p>
-    pub fn bit_rate(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bit_rate = Some(input.into());
+    pub fn bit_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bit_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bit rate of the audio stream in the output file, in kilobits/second. Enter an integer between 64 and 320, inclusive.</p>
-    pub fn set_bit_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bit_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bit_rate = input;
         self
     }
@@ -223,8 +225,8 @@ impl AudioParametersBuilder {
     /// <li> <p> <code>2</code> <b> channels specified, with any input:</b> Two identical mono channels or stereo. For more information about tracks, see <code>Audio:AudioPackingMode.</code> </p> </li>
     /// </ul>
     /// <p> For more information about how Elastic Transcoder organizes channels and tracks, see <code>Audio:AudioPackingMode</code>.</p>
-    pub fn channels(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channels = Some(input.into());
+    pub fn channels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channels = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of audio channels in the output file. The following values are valid:</p>
@@ -238,7 +240,7 @@ impl AudioParametersBuilder {
     /// <li> <p> <code>2</code> <b> channels specified, with any input:</b> Two identical mono channels or stereo. For more information about tracks, see <code>Audio:AudioPackingMode.</code> </p> </li>
     /// </ul>
     /// <p> For more information about how Elastic Transcoder organizes channels and tracks, see <code>Audio:AudioPackingMode</code>.</p>
-    pub fn set_channels(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channels = input;
         self
     }
@@ -284,8 +286,11 @@ impl AudioParametersBuilder {
     /// <li> <p> <code>auto </code> <b>channels with one track with one channel:</b> One track with one channel, plus seven MOS tracks</p> </li>
     /// <li> <p> <code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight tracks with one channel each, plus MOS tracks until there are eight tracks in all</p> </li>
     /// </ul>
-    pub fn audio_packing_mode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.audio_packing_mode = Some(input.into());
+    pub fn audio_packing_mode(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.audio_packing_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The method of organizing audio channels and tracks. Use <code>Audio:Channels</code> to specify the number of channels in your output, and <code>Audio:AudioPackingMode</code> to specify the number of tracks and their relation to the channels. If you do not specify an <code>Audio:AudioPackingMode</code>, Elastic Transcoder uses <code>SingleTrack</code>.</p>
@@ -332,7 +337,7 @@ impl AudioParametersBuilder {
     /// </ul>
     pub fn set_audio_packing_mode(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.audio_packing_mode = input;
         self
@@ -341,7 +346,7 @@ impl AudioParametersBuilder {
     /// <p> <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.</p>
     pub fn codec_options(mut self, input: crate::types::AudioCodecOptions) -> Self {
-        self.codec_options = Some(input);
+        self.codec_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>If you specified <code>AAC</code> for <code>Audio:Codec</code>, this is the <code>AAC</code> compression profile to use. Valid values include:</p>
@@ -349,7 +354,7 @@ impl AudioParametersBuilder {
     /// <p>If you specify <code>auto</code>, Elastic Transcoder chooses a profile based on the bit rate of the output file.</p>
     pub fn set_codec_options(
         mut self,
-        input: std::option::Option<crate::types::AudioCodecOptions>,
+        input: ::std::option::Option<crate::types::AudioCodecOptions>,
     ) -> Self {
         self.codec_options = input;
         self

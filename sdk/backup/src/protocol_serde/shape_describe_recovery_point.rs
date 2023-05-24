@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_recovery_point_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_recovery_point::DescribeRecoveryPointOutput,
@@ -15,7 +15,7 @@ pub fn de_describe_recovery_point_http_error(
         _response_body,
     )
     .map_err(crate::operation::describe_recovery_point::DescribeRecoveryPointError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code =
         match generic.code() {
@@ -100,7 +100,7 @@ pub fn de_describe_recovery_point_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_recovery_point_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_recovery_point::DescribeRecoveryPointOutput,
@@ -117,7 +117,7 @@ pub fn de_describe_recovery_point_http_response_with_props(
             crate::operation::describe_recovery_point::DescribeRecoveryPointError::unhandled,
         )?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -128,21 +128,21 @@ pub(crate) fn de_describe_recovery_point(
     mut builder: crate::operation::describe_recovery_point::builders::DescribeRecoveryPointOutputBuilder,
 ) -> Result<
     crate::operation::describe_recovery_point::builders::DescribeRecoveryPointOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "BackupSizeInBytes" => {
                         builder = builder.set_backup_size_in_bytes(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i64::try_from)
@@ -151,7 +151,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "BackupVaultArn" => {
                         builder = builder.set_backup_vault_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -160,7 +160,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "BackupVaultName" => {
                         builder = builder.set_backup_vault_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -174,15 +174,15 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "CompletionDate" => {
                         builder = builder.set_completion_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "CompositeMemberIdentifier" => {
                         builder = builder.set_composite_member_identifier(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -196,15 +196,15 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "CreationDate" => {
                         builder = builder.set_creation_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "EncryptionKeyArn" => {
                         builder = builder.set_encryption_key_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -213,7 +213,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "IamRoleArn" => {
                         builder = builder.set_iam_role_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -222,23 +222,23 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "IsEncrypted" => {
                         builder = builder.set_is_encrypted(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
                     }
                     "IsParent" => {
                         builder = builder.set_is_parent(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
                     }
                     "LastRestoreTime" => {
                         builder = builder.set_last_restore_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
@@ -249,7 +249,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "ParentRecoveryPointArn" => {
                         builder = builder.set_parent_recovery_point_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -258,7 +258,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "RecoveryPointArn" => {
                         builder = builder.set_recovery_point_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -267,7 +267,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "ResourceArn" => {
                         builder = builder.set_resource_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -276,7 +276,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "ResourceName" => {
                         builder = builder.set_resource_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -285,7 +285,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "ResourceType" => {
                         builder = builder.set_resource_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -294,7 +294,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "SourceBackupVaultArn" => {
                         builder = builder.set_source_backup_vault_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -303,7 +303,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "Status" => {
                         builder = builder.set_status(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -315,7 +315,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "StatusMessage" => {
                         builder = builder.set_status_message(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -324,7 +324,7 @@ pub(crate) fn de_describe_recovery_point(
                     }
                     "StorageClass" => {
                         builder = builder.set_storage_class(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -334,12 +334,12 @@ pub(crate) fn de_describe_recovery_point(
                             .transpose()?,
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -349,7 +349,7 @@ pub(crate) fn de_describe_recovery_point(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

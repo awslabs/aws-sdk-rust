@@ -2,22 +2,22 @@
 
 /// <p>Information regarding a detected signature on a page.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignatureDetection {
     /// <p>The confidence, from 0 to 100, in the predicted values for a detected signature.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     #[doc(hidden)]
-    pub geometry: std::option::Option<crate::types::Geometry>,
+    pub geometry: ::std::option::Option<crate::types::Geometry>,
 }
 impl SignatureDetection {
     /// <p>The confidence, from 0 to 100, in the predicted values for a detected signature.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
         self.geometry.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl SignatureDetection {
 
 /// A builder for [`SignatureDetection`](crate::types::SignatureDetection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SignatureDetectionBuilder {
-    pub(crate) confidence: std::option::Option<f32>,
-    pub(crate) geometry: std::option::Option<crate::types::Geometry>,
+    pub(crate) confidence: ::std::option::Option<f32>,
+    pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,
 }
 impl SignatureDetectionBuilder {
     /// <p>The confidence, from 0 to 100, in the predicted values for a detected signature.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence, from 0 to 100, in the predicted values for a detected signature.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
-        self.geometry = Some(input);
+        self.geometry = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    pub fn set_geometry(mut self, input: std::option::Option<crate::types::Geometry>) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
         self.geometry = input;
         self
     }

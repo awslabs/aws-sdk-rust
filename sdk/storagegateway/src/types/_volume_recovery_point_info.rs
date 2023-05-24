@@ -2,11 +2,11 @@
 
 /// <p>Describes a storage volume recovery point object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
     #[doc(hidden)]
-    pub volume_arn: std::option::Option<std::string::String>,
+    pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume in bytes.</p>
     #[doc(hidden)]
     pub volume_size_in_bytes: i64,
@@ -17,11 +17,11 @@ pub struct VolumeRecoveryPointInfo {
     pub volume_usage_in_bytes: i64,
     /// <p>The time the recovery point was taken.</p>
     #[doc(hidden)]
-    pub volume_recovery_point_time: std::option::Option<std::string::String>,
+    pub volume_recovery_point_time: ::std::option::Option<::std::string::String>,
 }
 impl VolumeRecoveryPointInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
     /// <p>The size of the volume in bytes.</p>
@@ -35,7 +35,7 @@ impl VolumeRecoveryPointInfo {
         self.volume_usage_in_bytes
     }
     /// <p>The time the recovery point was taken.</p>
-    pub fn volume_recovery_point_time(&self) -> std::option::Option<&str> {
+    pub fn volume_recovery_point_time(&self) -> ::std::option::Option<&str> {
         self.volume_recovery_point_time.as_deref()
     }
 }
@@ -48,31 +48,33 @@ impl VolumeRecoveryPointInfo {
 
 /// A builder for [`VolumeRecoveryPointInfo`](crate::types::VolumeRecoveryPointInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeRecoveryPointInfoBuilder {
-    pub(crate) volume_arn: std::option::Option<std::string::String>,
-    pub(crate) volume_size_in_bytes: std::option::Option<i64>,
-    pub(crate) volume_usage_in_bytes: std::option::Option<i64>,
-    pub(crate) volume_recovery_point_time: std::option::Option<std::string::String>,
+    pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) volume_usage_in_bytes: ::std::option::Option<i64>,
+    pub(crate) volume_recovery_point_time: ::std::option::Option<::std::string::String>,
 }
 impl VolumeRecoveryPointInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
-    pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_arn = Some(input.into());
+    pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume target.</p>
-    pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }
     /// <p>The size of the volume in bytes.</p>
     pub fn volume_size_in_bytes(mut self, input: i64) -> Self {
-        self.volume_size_in_bytes = Some(input);
+        self.volume_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the volume in bytes.</p>
-    pub fn set_volume_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_volume_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.volume_size_in_bytes = input;
         self
     }
@@ -80,25 +82,28 @@ impl VolumeRecoveryPointInfoBuilder {
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
     pub fn volume_usage_in_bytes(mut self, input: i64) -> Self {
-        self.volume_usage_in_bytes = Some(input);
+        self.volume_usage_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the data stored on the volume in bytes.</p> <note>
     /// <p>This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.</p>
     /// </note>
-    pub fn set_volume_usage_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_volume_usage_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.volume_usage_in_bytes = input;
         self
     }
     /// <p>The time the recovery point was taken.</p>
-    pub fn volume_recovery_point_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_recovery_point_time = Some(input.into());
+    pub fn volume_recovery_point_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.volume_recovery_point_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time the recovery point was taken.</p>
     pub fn set_volume_recovery_point_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.volume_recovery_point_time = input;
         self

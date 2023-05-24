@@ -2,28 +2,28 @@
 
 /// <p>The filter operation that filters data included in a visual or in an entire sheet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionFilterOperation {
     /// <p>The configuration that chooses the fields to be filtered.</p>
     #[doc(hidden)]
     pub selected_fields_configuration:
-        std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
+        ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
     #[doc(hidden)]
     pub target_visuals_configuration:
-        std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
+        ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
 }
 impl CustomActionFilterOperation {
     /// <p>The configuration that chooses the fields to be filtered.</p>
     pub fn selected_fields_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::FilterOperationSelectedFieldsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::FilterOperationSelectedFieldsConfiguration> {
         self.selected_fields_configuration.as_ref()
     }
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
     pub fn target_visuals_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::FilterOperationTargetVisualsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::FilterOperationTargetVisualsConfiguration> {
         self.target_visuals_configuration.as_ref()
     }
 }
@@ -36,12 +36,14 @@ impl CustomActionFilterOperation {
 
 /// A builder for [`CustomActionFilterOperation`](crate::types::CustomActionFilterOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomActionFilterOperationBuilder {
     pub(crate) selected_fields_configuration:
-        std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
+        ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
     pub(crate) target_visuals_configuration:
-        std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
+        ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
 }
 impl CustomActionFilterOperationBuilder {
     /// <p>The configuration that chooses the fields to be filtered.</p>
@@ -49,13 +51,13 @@ impl CustomActionFilterOperationBuilder {
         mut self,
         input: crate::types::FilterOperationSelectedFieldsConfiguration,
     ) -> Self {
-        self.selected_fields_configuration = Some(input);
+        self.selected_fields_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that chooses the fields to be filtered.</p>
     pub fn set_selected_fields_configuration(
         mut self,
-        input: std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
+        input: ::std::option::Option<crate::types::FilterOperationSelectedFieldsConfiguration>,
     ) -> Self {
         self.selected_fields_configuration = input;
         self
@@ -65,13 +67,13 @@ impl CustomActionFilterOperationBuilder {
         mut self,
         input: crate::types::FilterOperationTargetVisualsConfiguration,
     ) -> Self {
-        self.target_visuals_configuration = Some(input);
+        self.target_visuals_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that chooses the target visuals to be filtered.</p>
     pub fn set_target_visuals_configuration(
         mut self,
-        input: std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
+        input: ::std::option::Option<crate::types::FilterOperationTargetVisualsConfiguration>,
     ) -> Self {
         self.target_visuals_configuration = input;
         self

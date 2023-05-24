@@ -2,31 +2,31 @@
 
 /// <p>Describes the public endpoint configuration of a deployment of an Amazon Lightsail container service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServiceEndpoint {
     /// <p>The name of the container entry of the deployment that the endpoint configuration applies to.</p>
     #[doc(hidden)]
-    pub container_name: std::option::Option<std::string::String>,
+    pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The port of the specified container to which traffic is forwarded to.</p>
     #[doc(hidden)]
-    pub container_port: std::option::Option<i32>,
+    pub container_port: ::std::option::Option<i32>,
     /// <p>An object that describes the health check configuration of the container.</p>
     #[doc(hidden)]
-    pub health_check: std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
+    pub health_check: ::std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
 }
 impl ContainerServiceEndpoint {
     /// <p>The name of the container entry of the deployment that the endpoint configuration applies to.</p>
-    pub fn container_name(&self) -> std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
     /// <p>The port of the specified container to which traffic is forwarded to.</p>
-    pub fn container_port(&self) -> std::option::Option<i32> {
+    pub fn container_port(&self) -> ::std::option::Option<i32> {
         self.container_port
     }
     /// <p>An object that describes the health check configuration of the container.</p>
     pub fn health_check(
         &self,
-    ) -> std::option::Option<&crate::types::ContainerServiceHealthCheckConfig> {
+    ) -> ::std::option::Option<&crate::types::ContainerServiceHealthCheckConfig> {
         self.health_check.as_ref()
     }
 }
@@ -39,42 +39,50 @@ impl ContainerServiceEndpoint {
 
 /// A builder for [`ContainerServiceEndpoint`](crate::types::ContainerServiceEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerServiceEndpointBuilder {
-    pub(crate) container_name: std::option::Option<std::string::String>,
-    pub(crate) container_port: std::option::Option<i32>,
-    pub(crate) health_check: std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
+    pub(crate) container_name: ::std::option::Option<::std::string::String>,
+    pub(crate) container_port: ::std::option::Option<i32>,
+    pub(crate) health_check: ::std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
 }
 impl ContainerServiceEndpointBuilder {
     /// <p>The name of the container entry of the deployment that the endpoint configuration applies to.</p>
-    pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_name = Some(input.into());
+    pub fn container_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container entry of the deployment that the endpoint configuration applies to.</p>
-    pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.container_name = input;
         self
     }
     /// <p>The port of the specified container to which traffic is forwarded to.</p>
     pub fn container_port(mut self, input: i32) -> Self {
-        self.container_port = Some(input);
+        self.container_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port of the specified container to which traffic is forwarded to.</p>
-    pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_container_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.container_port = input;
         self
     }
     /// <p>An object that describes the health check configuration of the container.</p>
     pub fn health_check(mut self, input: crate::types::ContainerServiceHealthCheckConfig) -> Self {
-        self.health_check = Some(input);
+        self.health_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the health check configuration of the container.</p>
     pub fn set_health_check(
         mut self,
-        input: std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
+        input: ::std::option::Option<crate::types::ContainerServiceHealthCheckConfig>,
     ) -> Self {
         self.health_check = input;
         self

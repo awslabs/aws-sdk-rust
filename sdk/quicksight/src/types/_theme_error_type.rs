@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ThemeErrorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum ThemeErrorType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ThemeErrorType {
+impl ::std::convert::From<&str> for ThemeErrorType {
     fn from(s: &str) -> Self {
         match s {
             "INTERNAL_FAILURE" => ThemeErrorType::InternalFailure,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for ThemeErrorType {
         }
     }
 }
-impl std::str::FromStr for ThemeErrorType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ThemeErrorType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThemeErrorType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ThemeErrorType::from(s))
     }
 }
 impl ThemeErrorType {
@@ -81,7 +81,7 @@ impl ThemeErrorType {
         &["INTERNAL_FAILURE"]
     }
 }
-impl AsRef<str> for ThemeErrorType {
+impl ::std::convert::AsRef<str> for ThemeErrorType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

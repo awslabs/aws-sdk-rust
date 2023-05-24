@@ -2,7 +2,7 @@
 
 /// <p>Contains detailed information about your streaming session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum MedicalTranscriptResultStream {
     /// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p>
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
@@ -23,11 +23,11 @@ impl MedicalTranscriptResultStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_event(
         &self,
-    ) -> std::result::Result<&crate::types::MedicalTranscriptEvent, &Self> {
+    ) -> ::std::result::Result<&crate::types::MedicalTranscriptEvent, &Self> {
         if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::types::MedicalTranscriptResultStream::TranscriptEvent).

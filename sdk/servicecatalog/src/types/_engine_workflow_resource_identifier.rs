@@ -2,15 +2,15 @@
 
 /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineWorkflowResourceIdentifier {
     /// <p> The unique key-value pair for a tag that identifies provisioned product resources. </p>
     #[doc(hidden)]
-    pub unique_tag: std::option::Option<crate::types::UniqueTagResourceIdentifier>,
+    pub unique_tag: ::std::option::Option<crate::types::UniqueTagResourceIdentifier>,
 }
 impl EngineWorkflowResourceIdentifier {
     /// <p> The unique key-value pair for a tag that identifies provisioned product resources. </p>
-    pub fn unique_tag(&self) -> std::option::Option<&crate::types::UniqueTagResourceIdentifier> {
+    pub fn unique_tag(&self) -> ::std::option::Option<&crate::types::UniqueTagResourceIdentifier> {
         self.unique_tag.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl EngineWorkflowResourceIdentifier {
 
 /// A builder for [`EngineWorkflowResourceIdentifier`](crate::types::EngineWorkflowResourceIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EngineWorkflowResourceIdentifierBuilder {
-    pub(crate) unique_tag: std::option::Option<crate::types::UniqueTagResourceIdentifier>,
+    pub(crate) unique_tag: ::std::option::Option<crate::types::UniqueTagResourceIdentifier>,
 }
 impl EngineWorkflowResourceIdentifierBuilder {
     /// <p> The unique key-value pair for a tag that identifies provisioned product resources. </p>
     pub fn unique_tag(mut self, input: crate::types::UniqueTagResourceIdentifier) -> Self {
-        self.unique_tag = Some(input);
+        self.unique_tag = ::std::option::Option::Some(input);
         self
     }
     /// <p> The unique key-value pair for a tag that identifies provisioned product resources. </p>
     pub fn set_unique_tag(
         mut self,
-        input: std::option::Option<crate::types::UniqueTagResourceIdentifier>,
+        input: ::std::option::Option<crate::types::UniqueTagResourceIdentifier>,
     ) -> Self {
         self.unique_tag = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::get_event_prediction::_get_event_prediction_input::Get
 /// Fluent builder constructing a request to `GetEventPrediction`.
 ///
 /// <p>Evaluates an event against a detector version. If a version ID is not provided, the detector’s (<code>ACTIVE</code>) version is used.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEventPredictionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder,
 }
 impl GetEventPredictionFluentBuilder {
     /// Creates a new `GetEventPrediction`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_event_prediction::GetEventPrediction,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_event_prediction::GetEventPredictionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetEventPredictionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_event_prediction::GetEventPredictionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_event_prediction::GetEventPredictionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,54 +75,63 @@ impl GetEventPredictionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_event_prediction::GetEventPredictionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_event_prediction::GetEventPredictionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The detector ID.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
     /// <p>The detector ID.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn detector_version_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.detector_version_id(input.into());
         self
     }
     /// <p>The detector version ID.</p>
     pub fn set_detector_version_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
     /// <p>The unique ID used to identify the event.</p>
-    pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
         self
     }
     /// <p>The unique ID used to identify the event.</p>
-    pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
-    pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The event type associated with the detector specified for the prediction.</p>
-    pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -135,18 +147,24 @@ impl GetEventPredictionFluentBuilder {
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
     pub fn set_entities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Entity>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     ) -> Self {
         self.inner = self.inner.set_entities(input);
         self
     }
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn event_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_timestamp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_timestamp(input.into());
         self
     }
     /// <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
-    pub fn set_event_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_timestamp(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_event_timestamp(input);
         self
     }
@@ -164,8 +182,8 @@ impl GetEventPredictionFluentBuilder {
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
     pub fn event_variables(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.event_variables(k.into(), v.into());
         self
@@ -180,8 +198,8 @@ impl GetEventPredictionFluentBuilder {
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
     pub fn set_event_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_event_variables(input);
@@ -194,7 +212,7 @@ impl GetEventPredictionFluentBuilder {
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
     pub fn external_model_endpoint_data_blobs(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ModelEndpointDataBlob,
     ) -> Self {
         self.inner = self.inner.external_model_endpoint_data_blobs(k.into(), v);
@@ -203,8 +221,8 @@ impl GetEventPredictionFluentBuilder {
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
     pub fn set_external_model_endpoint_data_blobs(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ModelEndpointDataBlob>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ModelEndpointDataBlob>,
         >,
     ) -> Self {
         self.inner = self.inner.set_external_model_endpoint_data_blobs(input);

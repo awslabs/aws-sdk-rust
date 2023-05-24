@@ -2,22 +2,22 @@
 
 /// <p>Specifies the conditions to evaluate for an activity in a journey, and how to evaluate those conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>The conditions to evaluate for the activity.</p>
     #[doc(hidden)]
-    pub conditions: std::option::Option<std::vec::Vec<crate::types::SimpleCondition>>,
+    pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::SimpleCondition>>,
     /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::Operator>,
+    pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl Condition {
     /// <p>The conditions to evaluate for the activity.</p>
-    pub fn conditions(&self) -> std::option::Option<&[crate::types::SimpleCondition]> {
+    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::SimpleCondition]> {
         self.conditions.as_deref()
     }
     /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::Operator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
         self.operator.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl Condition {
 
 /// A builder for [`Condition`](crate::types::Condition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionBuilder {
-    pub(crate) conditions: std::option::Option<std::vec::Vec<crate::types::SimpleCondition>>,
-    pub(crate) operator: std::option::Option<crate::types::Operator>,
+    pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::SimpleCondition>>,
+    pub(crate) operator: ::std::option::Option<crate::types::Operator>,
 }
 impl ConditionBuilder {
     /// Appends an item to `conditions`.
@@ -44,24 +46,24 @@ impl ConditionBuilder {
     pub fn conditions(mut self, input: crate::types::SimpleCondition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
         v.push(input);
-        self.conditions = Some(v);
+        self.conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The conditions to evaluate for the activity.</p>
     pub fn set_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SimpleCondition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SimpleCondition>>,
     ) -> Self {
         self.conditions = input;
         self
     }
     /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
-    pub fn set_operator(mut self, input: std::option::Option<crate::types::Operator>) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.operator = input;
         self
     }

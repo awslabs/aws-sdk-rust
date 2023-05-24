@@ -2,22 +2,22 @@
 
 /// <p>VectorEnrichmentJob error details in response from GetVectorEnrichmentJob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VectorEnrichmentJobErrorDetails {
     /// <p>The type of error generated during the Vector Enrichment job.</p>
     #[doc(hidden)]
-    pub error_type: std::option::Option<crate::types::VectorEnrichmentJobErrorType>,
+    pub error_type: ::std::option::Option<crate::types::VectorEnrichmentJobErrorType>,
     /// <p>A message that you define and then is processed and rendered by the Vector Enrichment job when the error occurs.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl VectorEnrichmentJobErrorDetails {
     /// <p>The type of error generated during the Vector Enrichment job.</p>
-    pub fn error_type(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobErrorType> {
+    pub fn error_type(&self) -> ::std::option::Option<&crate::types::VectorEnrichmentJobErrorType> {
         self.error_type.as_ref()
     }
     /// <p>A message that you define and then is processed and rendered by the Vector Enrichment job when the error occurs.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl VectorEnrichmentJobErrorDetails {
 
 /// A builder for [`VectorEnrichmentJobErrorDetails`](crate::types::VectorEnrichmentJobErrorDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VectorEnrichmentJobErrorDetailsBuilder {
-    pub(crate) error_type: std::option::Option<crate::types::VectorEnrichmentJobErrorType>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) error_type: ::std::option::Option<crate::types::VectorEnrichmentJobErrorType>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl VectorEnrichmentJobErrorDetailsBuilder {
     /// <p>The type of error generated during the Vector Enrichment job.</p>
     pub fn error_type(mut self, input: crate::types::VectorEnrichmentJobErrorType) -> Self {
-        self.error_type = Some(input);
+        self.error_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of error generated during the Vector Enrichment job.</p>
     pub fn set_error_type(
         mut self,
-        input: std::option::Option<crate::types::VectorEnrichmentJobErrorType>,
+        input: ::std::option::Option<crate::types::VectorEnrichmentJobErrorType>,
     ) -> Self {
         self.error_type = input;
         self
     }
     /// <p>A message that you define and then is processed and rendered by the Vector Enrichment job when the error occurs.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that you define and then is processed and rendered by the Vector Enrichment job when the error occurs.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

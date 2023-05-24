@@ -2,29 +2,29 @@
 
 /// <p>nformation about the filter used to narrow the results returned in a list of projects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectListFilter {
     /// <p>A key that can be used to sort results.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::FilterKey>,
+    pub key: ::std::option::Option<crate::types::FilterKey>,
     /// <p>The value of the key.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator used to compare the fields.</p>
     #[doc(hidden)]
-    pub comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
 impl ProjectListFilter {
     /// <p>A key that can be used to sort results.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::FilterKey> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::FilterKey> {
         self.key.as_ref()
     }
     /// <p>The value of the key.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator used to compare the fields.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
 }
@@ -37,20 +37,22 @@ impl ProjectListFilter {
 
 /// A builder for [`ProjectListFilter`](crate::types::ProjectListFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectListFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::FilterKey>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
+    pub(crate) key: ::std::option::Option<crate::types::FilterKey>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
 impl ProjectListFilterBuilder {
     /// <p>A key that can be used to sort results.</p>
     pub fn key(mut self, input: crate::types::FilterKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>A key that can be used to sort results.</p>
-    pub fn set_key(mut self, input: std::option::Option<crate::types::FilterKey>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::FilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -59,29 +61,29 @@ impl ProjectListFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The value of the key.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value of the key.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>The operator used to compare the fields.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
-        self.comparison_operator = Some(input);
+        self.comparison_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator used to compare the fields.</p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<crate::types::ComparisonOperator>,
+        input: ::std::option::Option<crate::types::ComparisonOperator>,
     ) -> Self {
         self.comparison_operator = input;
         self

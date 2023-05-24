@@ -38,13 +38,13 @@
 /// Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AlphaBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AlphaBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AlphaBehavior {
+impl ::std::convert::From<&str> for AlphaBehavior {
     fn from(s: &str) -> Self {
         match s {
             "DISCARD" => AlphaBehavior::Discard,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AlphaBehavior {
         }
     }
 }
-impl std::str::FromStr for AlphaBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AlphaBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlphaBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AlphaBehavior::from(s))
     }
 }
 impl AlphaBehavior {
@@ -86,7 +86,7 @@ impl AlphaBehavior {
         &["DISCARD", "REMAP_TO_LUMA"]
     }
 }
-impl AsRef<str> for AlphaBehavior {
+impl ::std::convert::AsRef<str> for AlphaBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

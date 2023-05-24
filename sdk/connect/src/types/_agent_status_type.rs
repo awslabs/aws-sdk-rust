@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AgentStatusType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AgentStatusType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AgentStatusType {
+impl ::std::convert::From<&str> for AgentStatusType {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM" => AgentStatusType::Custom,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AgentStatusType {
         }
     }
 }
-impl std::str::FromStr for AgentStatusType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AgentStatusType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AgentStatusType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AgentStatusType::from(s))
     }
 }
 impl AgentStatusType {
@@ -91,7 +91,7 @@ impl AgentStatusType {
         &["CUSTOM", "OFFLINE", "ROUTABLE"]
     }
 }
-impl AsRef<str> for AgentStatusType {
+impl ::std::convert::AsRef<str> for AgentStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

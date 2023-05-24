@@ -2,15 +2,15 @@
 
 /// <p>Wireless metadata that is to be sent to multicast group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MulticastWirelessMetadata {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
     #[doc(hidden)]
-    pub lo_ra_wan: std::option::Option<crate::types::LoRaWanMulticastMetadata>,
+    pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastMetadata>,
 }
 impl MulticastWirelessMetadata {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanMulticastMetadata> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanMulticastMetadata> {
         self.lo_ra_wan.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MulticastWirelessMetadata {
 
 /// A builder for [`MulticastWirelessMetadata`](crate::types::MulticastWirelessMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MulticastWirelessMetadataBuilder {
-    pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanMulticastMetadata>,
+    pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanMulticastMetadata>,
 }
 impl MulticastWirelessMetadataBuilder {
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanMulticastMetadata) -> Self {
-        self.lo_ra_wan = Some(input);
+        self.lo_ra_wan = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metadata information of the LoRaWAN multicast group.</p>
     pub fn set_lo_ra_wan(
         mut self,
-        input: std::option::Option<crate::types::LoRaWanMulticastMetadata>,
+        input: ::std::option::Option<crate::types::LoRaWanMulticastMetadata>,
     ) -> Self {
         self.lo_ra_wan = input;
         self

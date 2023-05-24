@@ -2,27 +2,27 @@
 
 /// <p>Contains the output of PutScalingPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     #[doc(hidden)]
-    pub policy_arn: std::option::Option<std::string::String>,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
     #[doc(hidden)]
-    pub alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     _request_id: Option<String>,
 }
 impl PutScalingPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    pub fn alarms(&self) -> std::option::Option<&[crate::types::Alarm]> {
+    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
         self.alarms.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PutScalingPolicyOutput {
+impl ::aws_http::request_id::RequestId for PutScalingPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,20 +37,22 @@ impl PutScalingPolicyOutput {
 
 /// A builder for [`PutScalingPolicyOutput`](crate::operation::put_scaling_policy::PutScalingPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutScalingPolicyOutputBuilder {
-    pub(crate) policy_arn: std::option::Option<std::string::String>,
-    pub(crate) alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     _request_id: Option<String>,
 }
 impl PutScalingPolicyOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_arn = Some(input.into());
+    pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }
@@ -62,13 +64,13 @@ impl PutScalingPolicyOutputBuilder {
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
         v.push(input);
-        self.alarms = Some(v);
+        self.alarms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
     pub fn set_alarms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     ) -> Self {
         self.alarms = input;
         self

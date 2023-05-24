@@ -2,22 +2,22 @@
 
 /// <p>The summary information for the data catalog, which includes its name and type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCatalogSummary {
     /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
     #[doc(hidden)]
-    pub catalog_name: std::option::Option<std::string::String>,
+    pub catalog_name: ::std::option::Option<::std::string::String>,
     /// <p>The data catalog type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DataCatalogType>,
+    pub r#type: ::std::option::Option<crate::types::DataCatalogType>,
 }
 impl DataCatalogSummary {
     /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
-    pub fn catalog_name(&self) -> std::option::Option<&str> {
+    pub fn catalog_name(&self) -> ::std::option::Option<&str> {
         self.catalog_name.as_deref()
     }
     /// <p>The data catalog type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DataCatalogType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataCatalogType> {
         self.r#type.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl DataCatalogSummary {
 
 /// A builder for [`DataCatalogSummary`](crate::types::DataCatalogSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataCatalogSummaryBuilder {
-    pub(crate) catalog_name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::DataCatalogType>,
+    pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DataCatalogType>,
 }
 impl DataCatalogSummaryBuilder {
     /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
-    pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog_name = Some(input.into());
+    pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data catalog. The catalog name is unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>
-    pub fn set_catalog_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_name = input;
         self
     }
     /// <p>The data catalog type.</p>
     pub fn r#type(mut self, input: crate::types::DataCatalogType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data catalog type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DataCatalogType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataCatalogType>) -> Self {
         self.r#type = input;
         self
     }

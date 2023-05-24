@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreateGroup</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupOutput {
     /// <p>A structure containing details about the new group.</p>
     #[doc(hidden)]
-    pub group: std::option::Option<crate::types::Group>,
+    pub group: ::std::option::Option<crate::types::Group>,
     _request_id: Option<String>,
 }
 impl CreateGroupOutput {
     /// <p>A structure containing details about the new group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::types::Group> {
+    pub fn group(&self) -> ::std::option::Option<&crate::types::Group> {
         self.group.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateGroupOutput {
+impl ::aws_http::request_id::RequestId for CreateGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateGroupOutput {
 
 /// A builder for [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateGroupOutputBuilder {
-    pub(crate) group: std::option::Option<crate::types::Group>,
+    pub(crate) group: ::std::option::Option<crate::types::Group>,
     _request_id: Option<String>,
 }
 impl CreateGroupOutputBuilder {
     /// <p>A structure containing details about the new group.</p>
     pub fn group(mut self, input: crate::types::Group) -> Self {
-        self.group = Some(input);
+        self.group = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the new group.</p>
-    pub fn set_group(mut self, input: std::option::Option<crate::types::Group>) -> Self {
+    pub fn set_group(mut self, input: ::std::option::Option<crate::types::Group>) -> Self {
         self.group = input;
         self
     }

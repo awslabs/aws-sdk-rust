@@ -2,15 +2,15 @@
 
 /// <p>(Amazon SQS only) The scaling configuration for the event source. To remove the configuration, pass an empty value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingConfig {
     /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
     #[doc(hidden)]
-    pub maximum_concurrency: std::option::Option<i32>,
+    pub maximum_concurrency: ::std::option::Option<i32>,
 }
 impl ScalingConfig {
     /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
-    pub fn maximum_concurrency(&self) -> std::option::Option<i32> {
+    pub fn maximum_concurrency(&self) -> ::std::option::Option<i32> {
         self.maximum_concurrency
     }
 }
@@ -23,18 +23,20 @@ impl ScalingConfig {
 
 /// A builder for [`ScalingConfig`](crate::types::ScalingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingConfigBuilder {
-    pub(crate) maximum_concurrency: std::option::Option<i32>,
+    pub(crate) maximum_concurrency: ::std::option::Option<i32>,
 }
 impl ScalingConfigBuilder {
     /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
     pub fn maximum_concurrency(mut self, input: i32) -> Self {
-        self.maximum_concurrency = Some(input);
+        self.maximum_concurrency = ::std::option::Option::Some(input);
         self
     }
     /// <p>Limits the number of concurrent instances that the Amazon SQS event source can invoke.</p>
-    pub fn set_maximum_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_concurrency = input;
         self
     }

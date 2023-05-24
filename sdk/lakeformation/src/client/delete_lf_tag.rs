@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLFTag`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_id(impl Into<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    ///   - [`tag_key(impl Into<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::tag_key) / [`set_tag_key(Option<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::set_tag_key): <p>The key-name for the LF-tag to delete.</p>
+    ///   - [`catalog_id(impl ::std::convert::Into<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::set_catalog_id): <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
+    ///   - [`tag_key(impl ::std::convert::Into<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::tag_key) / [`set_tag_key(Option<String>)`](crate::operation::delete_lf_tag::builders::DeleteLFTagFluentBuilder::set_tag_key): <p>The key-name for the LF-tag to delete.</p>
     /// - On success, responds with [`DeleteLfTagOutput`](crate::operation::delete_lf_tag::DeleteLfTagOutput)
     /// - On failure, responds with [`SdkError<DeleteLFTagError>`](crate::operation::delete_lf_tag::DeleteLFTagError)
     pub fn delete_lf_tag(

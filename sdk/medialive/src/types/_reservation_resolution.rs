@@ -40,13 +40,13 @@
 /// Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080 lines, UHD is greater than 1080 lines
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReservationResolution {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ReservationResolution {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReservationResolution {
+impl ::std::convert::From<&str> for ReservationResolution {
     fn from(s: &str) -> Self {
         match s {
             "FHD" => ReservationResolution::Fhd,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ReservationResolution {
         }
     }
 }
-impl std::str::FromStr for ReservationResolution {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReservationResolution {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservationResolution::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReservationResolution::from(s))
     }
 }
 impl ReservationResolution {
@@ -96,7 +96,7 @@ impl ReservationResolution {
         &["FHD", "HD", "SD", "UHD"]
     }
 }
-impl AsRef<str> for ReservationResolution {
+impl ::std::convert::AsRef<str> for ReservationResolution {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -4,35 +4,35 @@
 /// <p>Availability in Internet Monitor represents the estimated percentage of traffic that is not seeing an availability drop. For example, an availability score of 99% for an end user and service location pair is equivalent to 1% of the traffic experiencing an availability drop for that pair.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Internet Monitor calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityMeasurement {
     /// <p>Experience scores, or health scores are calculated for different geographic and network provider combinations (that is, different granularities) and also summed into global scores. If you view performance or availability scores without filtering for any specific geography or service provider, Amazon CloudWatch Internet Monitor provides global health scores.</p>
     /// <p>The Amazon CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes detailed information about how Internet Monitor calculates health scores, including performance and availability scores, and when it creates and resolves health events. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Amazon Web Services calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     #[doc(hidden)]
-    pub experience_score: std::option::Option<f64>,
+    pub experience_score: ::std::option::Option<f64>,
     /// <p>The percentage of impact caused by a health event for total traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
     #[doc(hidden)]
-    pub percent_of_total_traffic_impacted: std::option::Option<f64>,
+    pub percent_of_total_traffic_impacted: ::std::option::Option<f64>,
     /// <p>The percentage of impact caused by a health event for client location traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
     #[doc(hidden)]
-    pub percent_of_client_location_impacted: std::option::Option<f64>,
+    pub percent_of_client_location_impacted: ::std::option::Option<f64>,
 }
 impl AvailabilityMeasurement {
     /// <p>Experience scores, or health scores are calculated for different geographic and network provider combinations (that is, different granularities) and also summed into global scores. If you view performance or availability scores without filtering for any specific geography or service provider, Amazon CloudWatch Internet Monitor provides global health scores.</p>
     /// <p>The Amazon CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes detailed information about how Internet Monitor calculates health scores, including performance and availability scores, and when it creates and resolves health events. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Amazon Web Services calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn experience_score(&self) -> std::option::Option<f64> {
+    pub fn experience_score(&self) -> ::std::option::Option<f64> {
         self.experience_score
     }
     /// <p>The percentage of impact caused by a health event for total traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
-    pub fn percent_of_total_traffic_impacted(&self) -> std::option::Option<f64> {
+    pub fn percent_of_total_traffic_impacted(&self) -> ::std::option::Option<f64> {
         self.percent_of_total_traffic_impacted
     }
     /// <p>The percentage of impact caused by a health event for client location traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
-    pub fn percent_of_client_location_impacted(&self) -> std::option::Option<f64> {
+    pub fn percent_of_client_location_impacted(&self) -> ::std::option::Option<f64> {
         self.percent_of_client_location_impacted
     }
 }
@@ -45,36 +45,38 @@ impl AvailabilityMeasurement {
 
 /// A builder for [`AvailabilityMeasurement`](crate::types::AvailabilityMeasurement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AvailabilityMeasurementBuilder {
-    pub(crate) experience_score: std::option::Option<f64>,
-    pub(crate) percent_of_total_traffic_impacted: std::option::Option<f64>,
-    pub(crate) percent_of_client_location_impacted: std::option::Option<f64>,
+    pub(crate) experience_score: ::std::option::Option<f64>,
+    pub(crate) percent_of_total_traffic_impacted: ::std::option::Option<f64>,
+    pub(crate) percent_of_client_location_impacted: ::std::option::Option<f64>,
 }
 impl AvailabilityMeasurementBuilder {
     /// <p>Experience scores, or health scores are calculated for different geographic and network provider combinations (that is, different granularities) and also summed into global scores. If you view performance or availability scores without filtering for any specific geography or service provider, Amazon CloudWatch Internet Monitor provides global health scores.</p>
     /// <p>The Amazon CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes detailed information about how Internet Monitor calculates health scores, including performance and availability scores, and when it creates and resolves health events. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Amazon Web Services calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn experience_score(mut self, input: f64) -> Self {
-        self.experience_score = Some(input);
+        self.experience_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>Experience scores, or health scores are calculated for different geographic and network provider combinations (that is, different granularities) and also summed into global scores. If you view performance or availability scores without filtering for any specific geography or service provider, Amazon CloudWatch Internet Monitor provides global health scores.</p>
     /// <p>The Amazon CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes detailed information about how Internet Monitor calculates health scores, including performance and availability scores, and when it creates and resolves health events. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How Amazon Web Services calculates performance and availability scores</a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn set_experience_score(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_experience_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.experience_score = input;
         self
     }
     /// <p>The percentage of impact caused by a health event for total traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
     pub fn percent_of_total_traffic_impacted(mut self, input: f64) -> Self {
-        self.percent_of_total_traffic_impacted = Some(input);
+        self.percent_of_total_traffic_impacted = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of impact caused by a health event for total traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
     pub fn set_percent_of_total_traffic_impacted(
         mut self,
-        input: std::option::Option<f64>,
+        input: ::std::option::Option<f64>,
     ) -> Self {
         self.percent_of_total_traffic_impacted = input;
         self
@@ -82,14 +84,14 @@ impl AvailabilityMeasurementBuilder {
     /// <p>The percentage of impact caused by a health event for client location traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
     pub fn percent_of_client_location_impacted(mut self, input: f64) -> Self {
-        self.percent_of_client_location_impacted = Some(input);
+        self.percent_of_client_location_impacted = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of impact caused by a health event for client location traffic globally.</p>
     /// <p>For information about how Internet Monitor calculates impact, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.</p>
     pub fn set_percent_of_client_location_impacted(
         mut self,
-        input: std::option::Option<f64>,
+        input: ::std::option::Option<f64>,
     ) -> Self {
         self.percent_of_client_location_impacted = input;
         self

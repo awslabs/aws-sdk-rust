@@ -16,29 +16,29 @@
 /// <li> <p> <b>FAILED_DEPROVISION </b> — The request to deprovision the address range from Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact Amazon Web Services support.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
     #[doc(hidden)]
-    pub cidr: std::option::Option<std::string::String>,
+    pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The state of the address pool.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ByoipCidrState>,
+    pub state: ::std::option::Option<crate::types::ByoipCidrState>,
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::ByoipCidrEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>,
 }
 impl ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
     /// <p>The state of the address pool.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ByoipCidrState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ByoipCidrState> {
         self.state.as_ref()
     }
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::ByoipCidrEvent]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::ByoipCidrEvent]> {
         self.events.as_deref()
     }
 }
@@ -51,30 +51,32 @@ impl ByoipCidr {
 
 /// A builder for [`ByoipCidr`](crate::types::ByoipCidr).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ByoipCidrBuilder {
-    pub(crate) cidr: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::ByoipCidrState>,
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::ByoipCidrEvent>>,
+    pub(crate) cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ByoipCidrState>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>,
 }
 impl ByoipCidrBuilder {
     /// <p>The address range, in CIDR notation.</p>
-    pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cidr = Some(input.into());
+    pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The address range, in CIDR notation.</p>
-    pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }
     /// <p>The state of the address pool.</p>
     pub fn state(mut self, input: crate::types::ByoipCidrState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the address pool.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ByoipCidrState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ByoipCidrState>) -> Self {
         self.state = input;
         self
     }
@@ -86,13 +88,13 @@ impl ByoipCidrBuilder {
     pub fn events(mut self, input: crate::types::ByoipCidrEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>A history of status changes for an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ByoipCidrEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ByoipCidrEvent>>,
     ) -> Self {
         self.events = input;
         self

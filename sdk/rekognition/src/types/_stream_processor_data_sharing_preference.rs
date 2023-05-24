@@ -2,7 +2,7 @@
 
 /// <p> Allows you to opt in or opt out to share data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessorDataSharingPreference {
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl StreamProcessorDataSharingPreference {
 
 /// A builder for [`StreamProcessorDataSharingPreference`](crate::types::StreamProcessorDataSharingPreference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamProcessorDataSharingPreferenceBuilder {
-    pub(crate) opt_in: std::option::Option<bool>,
+    pub(crate) opt_in: ::std::option::Option<bool>,
 }
 impl StreamProcessorDataSharingPreferenceBuilder {
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
     pub fn opt_in(mut self, input: bool) -> Self {
-        self.opt_in = Some(input);
+        self.opt_in = ::std::option::Option::Some(input);
         self
     }
     /// <p> If this option is set to true, you choose to share data with Rekognition to improve model performance. </p>
-    pub fn set_opt_in(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_opt_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.opt_in = input;
         self
     }

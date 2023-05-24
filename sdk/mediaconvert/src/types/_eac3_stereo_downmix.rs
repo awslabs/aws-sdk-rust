@@ -40,13 +40,13 @@
 /// Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Eac3StereoDownmix {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum Eac3StereoDownmix {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Eac3StereoDownmix {
+impl ::std::convert::From<&str> for Eac3StereoDownmix {
     fn from(s: &str) -> Self {
         match s {
             "DPL2" => Eac3StereoDownmix::Dpl2,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for Eac3StereoDownmix {
         }
     }
 }
-impl std::str::FromStr for Eac3StereoDownmix {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Eac3StereoDownmix {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Eac3StereoDownmix::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Eac3StereoDownmix::from(s))
     }
 }
 impl Eac3StereoDownmix {
@@ -96,7 +96,7 @@ impl Eac3StereoDownmix {
         &["DPL2", "LO_RO", "LT_RT", "NOT_INDICATED"]
     }
 }
-impl AsRef<str> for Eac3StereoDownmix {
+impl ::std::convert::AsRef<str> for Eac3StereoDownmix {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

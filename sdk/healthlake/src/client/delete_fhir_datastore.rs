@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFHIRDatastore`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`datastore_id(impl Into<String>)`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::set_datastore_id): <p> The AWS-generated ID for the Data Store to be deleted.</p>
+    ///   - [`datastore_id(impl ::std::convert::Into<String>)`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::datastore_id) / [`set_datastore_id(Option<String>)`](crate::operation::delete_fhir_datastore::builders::DeleteFHIRDatastoreFluentBuilder::set_datastore_id): <p> The AWS-generated ID for the Data Store to be deleted.</p>
     /// - On success, responds with [`DeleteFhirDatastoreOutput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput) with field(s):
     ///   - [`datastore_id(Option<String>)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_id): <p>The AWS-generated ID for the Data Store to be deleted.</p>
     ///   - [`datastore_arn(Option<String>)`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreOutput::datastore_arn): <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</p>

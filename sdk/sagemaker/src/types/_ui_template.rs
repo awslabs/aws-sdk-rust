@@ -2,15 +2,15 @@
 
 /// <p>The Liquid template for the worker user interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UiTemplate {
     /// <p>The content of the Liquid template for the worker user interface.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
 }
 impl UiTemplate {
     /// <p>The content of the Liquid template for the worker user interface.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl UiTemplate {
 
 /// A builder for [`UiTemplate`](crate::types::UiTemplate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UiTemplateBuilder {
-    pub(crate) content: std::option::Option<std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
 }
 impl UiTemplateBuilder {
     /// <p>The content of the Liquid template for the worker user interface.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the Liquid template for the worker user interface.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }

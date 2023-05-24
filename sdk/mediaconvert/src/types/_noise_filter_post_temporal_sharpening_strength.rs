@@ -39,13 +39,13 @@
 /// Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NoiseFilterPostTemporalSharpeningStrength {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum NoiseFilterPostTemporalSharpeningStrength {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NoiseFilterPostTemporalSharpeningStrength {
+impl ::std::convert::From<&str> for NoiseFilterPostTemporalSharpeningStrength {
     fn from(s: &str) -> Self {
         match s {
             "HIGH" => NoiseFilterPostTemporalSharpeningStrength::High,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for NoiseFilterPostTemporalSharpeningStrength {
         }
     }
 }
-impl std::str::FromStr for NoiseFilterPostTemporalSharpeningStrength {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NoiseFilterPostTemporalSharpeningStrength {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NoiseFilterPostTemporalSharpeningStrength::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NoiseFilterPostTemporalSharpeningStrength::from(s))
     }
 }
 impl NoiseFilterPostTemporalSharpeningStrength {
@@ -91,7 +91,7 @@ impl NoiseFilterPostTemporalSharpeningStrength {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
-impl AsRef<str> for NoiseFilterPostTemporalSharpeningStrength {
+impl ::std::convert::AsRef<str> for NoiseFilterPostTemporalSharpeningStrength {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

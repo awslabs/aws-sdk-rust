@@ -2,24 +2,24 @@
 
 /// <p>An object that contains details about the data source of the import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDataSource {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
     #[doc(hidden)]
-    pub s3_url: std::option::Option<std::string::String>,
+    pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>The data format of the import job's data source.</p>
     #[doc(hidden)]
-    pub data_format: std::option::Option<crate::types::DataFormat>,
+    pub data_format: ::std::option::Option<crate::types::DataFormat>,
 }
 impl ImportDataSource {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
-    pub fn s3_url(&self) -> std::option::Option<&str> {
+    pub fn s3_url(&self) -> ::std::option::Option<&str> {
         self.s3_url.as_deref()
     }
     /// <p>The data format of the import job's data source.</p>
-    pub fn data_format(&self) -> std::option::Option<&crate::types::DataFormat> {
+    pub fn data_format(&self) -> ::std::option::Option<&crate::types::DataFormat> {
         self.data_format.as_ref()
     }
 }
@@ -32,31 +32,36 @@ impl ImportDataSource {
 
 /// A builder for [`ImportDataSource`](crate::types::ImportDataSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportDataSourceBuilder {
-    pub(crate) s3_url: std::option::Option<std::string::String>,
-    pub(crate) data_format: std::option::Option<crate::types::DataFormat>,
+    pub(crate) s3_url: ::std::option::Option<::std::string::String>,
+    pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
 }
 impl ImportDataSourceBuilder {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
-    pub fn s3_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_url = Some(input.into());
+    pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
-    pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_url = input;
         self
     }
     /// <p>The data format of the import job's data source.</p>
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
-        self.data_format = Some(input);
+        self.data_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data format of the import job's data source.</p>
-    pub fn set_data_format(mut self, input: std::option::Option<crate::types::DataFormat>) -> Self {
+    pub fn set_data_format(
+        mut self,
+        input: ::std::option::Option<crate::types::DataFormat>,
+    ) -> Self {
         self.data_format = input;
         self
     }

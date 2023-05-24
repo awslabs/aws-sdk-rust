@@ -16,17 +16,17 @@
 /// <p>You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action.</p>
 /// <p>To update the <code>deliveryFrequency</code> with which Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigSnapshotDeliveryProperties {
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
     #[doc(hidden)]
-    pub delivery_frequency: std::option::Option<crate::types::MaximumExecutionFrequency>,
+    pub delivery_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
 }
 impl ConfigSnapshotDeliveryProperties {
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
     pub fn delivery_frequency(
         &self,
-    ) -> std::option::Option<&crate::types::MaximumExecutionFrequency> {
+    ) -> ::std::option::Option<&crate::types::MaximumExecutionFrequency> {
         self.delivery_frequency.as_ref()
     }
 }
@@ -39,20 +39,22 @@ impl ConfigSnapshotDeliveryProperties {
 
 /// A builder for [`ConfigSnapshotDeliveryProperties`](crate::types::ConfigSnapshotDeliveryProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigSnapshotDeliveryPropertiesBuilder {
-    pub(crate) delivery_frequency: std::option::Option<crate::types::MaximumExecutionFrequency>,
+    pub(crate) delivery_frequency: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
 }
 impl ConfigSnapshotDeliveryPropertiesBuilder {
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
     pub fn delivery_frequency(mut self, input: crate::types::MaximumExecutionFrequency) -> Self {
-        self.delivery_frequency = Some(input);
+        self.delivery_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The frequency with which Config delivers configuration snapshots.</p>
     pub fn set_delivery_frequency(
         mut self,
-        input: std::option::Option<crate::types::MaximumExecutionFrequency>,
+        input: ::std::option::Option<crate::types::MaximumExecutionFrequency>,
     ) -> Self {
         self.delivery_frequency = input;
         self

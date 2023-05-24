@@ -2,15 +2,15 @@
 
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     #[doc(hidden)]
-    pub idle: std::option::Option<crate::types::Duration>,
+    pub idle: ::std::option::Option<crate::types::Duration>,
 }
 impl TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
-    pub fn idle(&self) -> std::option::Option<&crate::types::Duration> {
+    pub fn idle(&self) -> ::std::option::Option<&crate::types::Duration> {
         self.idle.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl TcpTimeout {
 
 /// A builder for [`TcpTimeout`](crate::types::TcpTimeout).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TcpTimeoutBuilder {
-    pub(crate) idle: std::option::Option<crate::types::Duration>,
+    pub(crate) idle: ::std::option::Option<crate::types::Duration>,
 }
 impl TcpTimeoutBuilder {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     pub fn idle(mut self, input: crate::types::Duration) -> Self {
-        self.idle = Some(input);
+        self.idle = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
-    pub fn set_idle(mut self, input: std::option::Option<crate::types::Duration>) -> Self {
+    pub fn set_idle(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
         self.idle = input;
         self
     }

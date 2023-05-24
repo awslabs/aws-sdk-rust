@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBranch`](crate::operation::get_branch::builders::GetBranchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`repository_name(impl Into<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::set_repository_name): <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
-    ///   - [`branch_name(impl Into<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::set_branch_name): <p>The name of the branch for which you want to retrieve information.</p>
+    ///   - [`repository_name(impl ::std::convert::Into<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::repository_name) / [`set_repository_name(Option<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::set_repository_name): <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
+    ///   - [`branch_name(impl ::std::convert::Into<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::branch_name) / [`set_branch_name(Option<String>)`](crate::operation::get_branch::builders::GetBranchFluentBuilder::set_branch_name): <p>The name of the branch for which you want to retrieve information.</p>
     /// - On success, responds with [`GetBranchOutput`](crate::operation::get_branch::GetBranchOutput) with field(s):
     ///   - [`branch(Option<BranchInfo>)`](crate::operation::get_branch::GetBranchOutput::branch): <p>The name of the branch.</p>
     /// - On failure, responds with [`SdkError<GetBranchError>`](crate::operation::get_branch::GetBranchError)

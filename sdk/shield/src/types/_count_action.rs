@@ -4,7 +4,7 @@
 /// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
 /// <p>JSON specification: <code>"Count": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CountAction {}
 impl CountAction {
     /// Creates a new builder-style object to manufacture [`CountAction`](crate::types::CountAction).
@@ -15,7 +15,9 @@ impl CountAction {
 
 /// A builder for [`CountAction`](crate::types::CountAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CountActionBuilder {}
 impl CountActionBuilder {
     /// Consumes the builder and constructs a [`CountAction`](crate::types::CountAction).

@@ -2,20 +2,20 @@
 
 /// Placeholder documentation for UpdateMultiplexProgramResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMultiplexProgramOutput {
     /// The updated multiplex program.
     #[doc(hidden)]
-    pub multiplex_program: std::option::Option<crate::types::MultiplexProgram>,
+    pub multiplex_program: ::std::option::Option<crate::types::MultiplexProgram>,
     _request_id: Option<String>,
 }
 impl UpdateMultiplexProgramOutput {
     /// The updated multiplex program.
-    pub fn multiplex_program(&self) -> std::option::Option<&crate::types::MultiplexProgram> {
+    pub fn multiplex_program(&self) -> ::std::option::Option<&crate::types::MultiplexProgram> {
         self.multiplex_program.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateMultiplexProgramOutput {
+impl ::aws_http::request_id::RequestId for UpdateMultiplexProgramOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl UpdateMultiplexProgramOutput {
 
 /// A builder for [`UpdateMultiplexProgramOutput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateMultiplexProgramOutputBuilder {
-    pub(crate) multiplex_program: std::option::Option<crate::types::MultiplexProgram>,
+    pub(crate) multiplex_program: ::std::option::Option<crate::types::MultiplexProgram>,
     _request_id: Option<String>,
 }
 impl UpdateMultiplexProgramOutputBuilder {
     /// The updated multiplex program.
     pub fn multiplex_program(mut self, input: crate::types::MultiplexProgram) -> Self {
-        self.multiplex_program = Some(input);
+        self.multiplex_program = ::std::option::Option::Some(input);
         self
     }
     /// The updated multiplex program.
     pub fn set_multiplex_program(
         mut self,
-        input: std::option::Option<crate::types::MultiplexProgram>,
+        input: ::std::option::Option<crate::types::MultiplexProgram>,
     ) -> Self {
         self.multiplex_program = input;
         self

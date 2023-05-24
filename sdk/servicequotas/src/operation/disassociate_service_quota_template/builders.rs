@@ -6,47 +6,50 @@ pub use crate::operation::disassociate_service_quota_template::_disassociate_ser
 /// Fluent builder constructing a request to `DisassociateServiceQuotaTemplate`.
 ///
 /// <p>Disables your quota request template. After a template is disabled, the quota increase requests in the template are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota increase requests.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateServiceQuotaTemplateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateInputBuilder,
 }
 impl DisassociateServiceQuotaTemplateFluentBuilder {
     /// Creates a new `DisassociateServiceQuotaTemplate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl DisassociateServiceQuotaTemplateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError>>
                          {
         self.send_middleware().await
     }

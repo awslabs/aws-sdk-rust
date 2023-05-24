@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LustreAccessAuditLogLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum LustreAccessAuditLogLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LustreAccessAuditLogLevel {
+impl ::std::convert::From<&str> for LustreAccessAuditLogLevel {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => LustreAccessAuditLogLevel::Disabled,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for LustreAccessAuditLogLevel {
         }
     }
 }
-impl std::str::FromStr for LustreAccessAuditLogLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LustreAccessAuditLogLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LustreAccessAuditLogLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LustreAccessAuditLogLevel::from(s))
     }
 }
 impl LustreAccessAuditLogLevel {
@@ -96,7 +96,7 @@ impl LustreAccessAuditLogLevel {
         &["DISABLED", "ERROR_ONLY", "WARN_ERROR", "WARN_ONLY"]
     }
 }
-impl AsRef<str> for LustreAccessAuditLogLevel {
+impl ::std::convert::AsRef<str> for LustreAccessAuditLogLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

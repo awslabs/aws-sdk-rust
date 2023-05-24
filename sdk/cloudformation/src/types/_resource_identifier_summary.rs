@@ -2,29 +2,29 @@
 
 /// <p>Describes the target resources of a specific type in your import template (for example, all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during the import to identify resources of that type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceIdentifierSummary {
     /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
     #[doc(hidden)]
-    pub logical_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub logical_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
     #[doc(hidden)]
-    pub resource_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResourceIdentifierSummary {
     /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
-    pub fn logical_resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn logical_resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.logical_resource_ids.as_deref()
     }
     /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
-    pub fn resource_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_identifiers.as_deref()
     }
 }
@@ -37,20 +37,28 @@ impl ResourceIdentifierSummary {
 
 /// A builder for [`ResourceIdentifierSummary`](crate::types::ResourceIdentifierSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceIdentifierSummaryBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) logical_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) resource_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) logical_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResourceIdentifierSummaryBuilder {
     /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
@@ -59,16 +67,19 @@ impl ResourceIdentifierSummaryBuilder {
     /// To override the contents of this collection use [`set_logical_resource_ids`](Self::set_logical_resource_ids).
     ///
     /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
-    pub fn logical_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn logical_resource_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.logical_resource_ids.unwrap_or_default();
         v.push(input.into());
-        self.logical_resource_ids = Some(v);
+        self.logical_resource_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The logical IDs of the target resources of the specified <code>ResourceType</code>, as defined in the import template.</p>
     pub fn set_logical_resource_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.logical_resource_ids = input;
         self
@@ -78,16 +89,19 @@ impl ResourceIdentifierSummaryBuilder {
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
     /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
-    pub fn resource_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_identifiers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
         v.push(input.into());
-        self.resource_identifiers = Some(v);
+        self.resource_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The resource properties you can provide during the import to identify your target resources. For example, <code>BucketName</code> is a possible identifier property for <code>AWS::S3::Bucket</code> resources.</p>
     pub fn set_resource_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_identifiers = input;
         self

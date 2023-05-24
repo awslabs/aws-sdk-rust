@@ -3,11 +3,11 @@ pub(crate) mod shape_accept_domain_transfer_from_another_aws_account;
 
 pub fn parse_http_error_metadata(
     _response_status: u16,
-    response_headers: &http::HeaderMap,
+    response_headers: &::http::HeaderMap,
     response_body: &[u8],
 ) -> Result<
-    aws_smithy_types::error::metadata::Builder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_types::error::metadata::Builder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }

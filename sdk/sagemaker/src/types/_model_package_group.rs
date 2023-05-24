@@ -2,23 +2,23 @@
 
 /// <p>A group of versioned models in the model registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageGroup {
     /// <p>The name of the model group.</p>
     #[doc(hidden)]
-    pub model_package_group_name: std::option::Option<std::string::String>,
+    pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
     #[doc(hidden)]
-    pub model_package_group_arn: std::option::Option<std::string::String>,
+    pub model_package_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description for the model group.</p>
     #[doc(hidden)]
-    pub model_package_group_description: std::option::Option<std::string::String>,
+    pub model_package_group_description: ::std::option::Option<::std::string::String>,
     /// <p>The time that the model group was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<crate::types::UserContext>,
+    pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The status of the model group. This can be one of the following values.</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> - The model group is pending being created.</p> </li>
@@ -29,30 +29,30 @@ pub struct ModelPackageGroup {
     /// <li> <p> <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub model_package_group_status: std::option::Option<crate::types::ModelPackageGroupStatus>,
+    pub model_package_group_status: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ModelPackageGroup {
     /// <p>The name of the model group.</p>
-    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
         self.model_package_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn model_package_group_arn(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_arn(&self) -> ::std::option::Option<&str> {
         self.model_package_group_arn.as_deref()
     }
     /// <p>The description for the model group.</p>
-    pub fn model_package_group_description(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_description(&self) -> ::std::option::Option<&str> {
         self.model_package_group_description.as_deref()
     }
     /// <p>The time that the model group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
@@ -66,11 +66,11 @@ impl ModelPackageGroup {
     /// </ul>
     pub fn model_package_group_status(
         &self,
-    ) -> std::option::Option<&crate::types::ModelPackageGroupStatus> {
+    ) -> ::std::option::Option<&crate::types::ModelPackageGroupStatus> {
         self.model_package_group_status.as_ref()
     }
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -83,40 +83,48 @@ impl ModelPackageGroup {
 
 /// A builder for [`ModelPackageGroup`](crate::types::ModelPackageGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelPackageGroupBuilder {
-    pub(crate) model_package_group_name: std::option::Option<std::string::String>,
-    pub(crate) model_package_group_arn: std::option::Option<std::string::String>,
-    pub(crate) model_package_group_description: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<crate::types::UserContext>,
+    pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_package_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) model_package_group_description: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) model_package_group_status:
-        std::option::Option<crate::types::ModelPackageGroupStatus>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::ModelPackageGroupStatus>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ModelPackageGroupBuilder {
     /// <p>The name of the model group.</p>
-    pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_package_group_name = Some(input.into());
+    pub fn model_package_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model group.</p>
     pub fn set_model_package_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_package_group_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn model_package_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_package_group_arn = Some(input.into());
+    pub fn model_package_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_package_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
     pub fn set_model_package_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_package_group_arn = input;
         self
@@ -124,39 +132,42 @@ impl ModelPackageGroupBuilder {
     /// <p>The description for the model group.</p>
     pub fn model_package_group_description(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.model_package_group_description = Some(input.into());
+        self.model_package_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the model group.</p>
     pub fn set_model_package_group_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_package_group_description = input;
         self
     }
     /// <p>The time that the model group was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the model group was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
-        self.created_by = Some(input);
+        self.created_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
+    pub fn set_created_by(
+        mut self,
+        input: ::std::option::Option<crate::types::UserContext>,
+    ) -> Self {
         self.created_by = input;
         self
     }
@@ -173,7 +184,7 @@ impl ModelPackageGroupBuilder {
         mut self,
         input: crate::types::ModelPackageGroupStatus,
     ) -> Self {
-        self.model_package_group_status = Some(input);
+        self.model_package_group_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the model group. This can be one of the following values.</p>
@@ -187,7 +198,7 @@ impl ModelPackageGroupBuilder {
     /// </ul>
     pub fn set_model_package_group_status(
         mut self,
-        input: std::option::Option<crate::types::ModelPackageGroupStatus>,
+        input: ::std::option::Option<crate::types::ModelPackageGroupStatus>,
     ) -> Self {
         self.model_package_group_status = input;
         self
@@ -200,13 +211,13 @@ impl ModelPackageGroupBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the tags associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

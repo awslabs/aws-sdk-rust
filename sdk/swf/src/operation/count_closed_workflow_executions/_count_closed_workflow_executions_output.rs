@@ -2,7 +2,7 @@
 
 /// <p>Contains the count of workflow executions returned from <code>CountOpenWorkflowExecutions</code> or <code>CountClosedWorkflowExecutions</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CountClosedWorkflowExecutionsOutput {
     /// <p>The number of workflow executions.</p>
     #[doc(hidden)]
@@ -22,7 +22,7 @@ impl CountClosedWorkflowExecutionsOutput {
         self.truncated
     }
 }
-impl aws_http::request_id::RequestId for CountClosedWorkflowExecutionsOutput {
+impl ::aws_http::request_id::RequestId for CountClosedWorkflowExecutionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl CountClosedWorkflowExecutionsOutput {
 
 /// A builder for [`CountClosedWorkflowExecutionsOutput`](crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CountClosedWorkflowExecutionsOutputBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) truncated: std::option::Option<bool>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) truncated: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CountClosedWorkflowExecutionsOutputBuilder {
     /// <p>The number of workflow executions.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of workflow executions.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
     pub fn truncated(mut self, input: bool) -> Self {
-        self.truncated = Some(input);
+        self.truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
-    pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.truncated = input;
         self
     }

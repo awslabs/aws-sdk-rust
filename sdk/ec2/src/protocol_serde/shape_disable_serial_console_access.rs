@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_serial_console_access_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput,
@@ -17,7 +17,7 @@ pub fn de_disable_serial_console_access_http_error(
     .map_err(
         crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(
         crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError::generic(
@@ -29,7 +29,7 @@ pub fn de_disable_serial_console_access_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disable_serial_console_access_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput,
@@ -40,22 +40,22 @@ pub fn de_disable_serial_console_access_http_response_with_props(
         let mut output = crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder::default();
         output = crate::protocol_serde::shape_disable_serial_console_access::de_disable_serial_console_access(_response_body, output).map_err(crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_disable_serial_console_access(inp: &[u8], mut builder: crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder) -> Result<crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_disable_serial_console_access(inp: &[u8], mut builder: crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder) -> Result<crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DisableSerialConsoleAccessResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DisableSerialConsoleAccessResponse got {:?}",
             start_el
         )));
@@ -66,10 +66,10 @@ pub fn de_disable_serial_console_access(inp: &[u8], mut builder: crate::operatio
                 let var_1 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
                         }
                         ?
                     )

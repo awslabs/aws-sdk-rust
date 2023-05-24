@@ -2,29 +2,31 @@
 
 /// <p>A port scan that was part of the port probe. For each scan, PortProbeDetails provides information about the local IP address and port that were scanned, and the remote IP address that the scan originated from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortProbeDetail {
     /// <p>Provides information about the port that was scanned.</p>
     #[doc(hidden)]
-    pub local_port_details: std::option::Option<crate::types::ActionLocalPortDetails>,
+    pub local_port_details: ::std::option::Option<crate::types::ActionLocalPortDetails>,
     /// <p>Provides information about the IP address where the scanned port is located.</p>
     #[doc(hidden)]
-    pub local_ip_details: std::option::Option<crate::types::ActionLocalIpDetails>,
+    pub local_ip_details: ::std::option::Option<crate::types::ActionLocalIpDetails>,
     /// <p>Provides information about the remote IP address that performed the scan.</p>
     #[doc(hidden)]
-    pub remote_ip_details: std::option::Option<crate::types::ActionRemoteIpDetails>,
+    pub remote_ip_details: ::std::option::Option<crate::types::ActionRemoteIpDetails>,
 }
 impl PortProbeDetail {
     /// <p>Provides information about the port that was scanned.</p>
-    pub fn local_port_details(&self) -> std::option::Option<&crate::types::ActionLocalPortDetails> {
+    pub fn local_port_details(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ActionLocalPortDetails> {
         self.local_port_details.as_ref()
     }
     /// <p>Provides information about the IP address where the scanned port is located.</p>
-    pub fn local_ip_details(&self) -> std::option::Option<&crate::types::ActionLocalIpDetails> {
+    pub fn local_ip_details(&self) -> ::std::option::Option<&crate::types::ActionLocalIpDetails> {
         self.local_ip_details.as_ref()
     }
     /// <p>Provides information about the remote IP address that performed the scan.</p>
-    pub fn remote_ip_details(&self) -> std::option::Option<&crate::types::ActionRemoteIpDetails> {
+    pub fn remote_ip_details(&self) -> ::std::option::Option<&crate::types::ActionRemoteIpDetails> {
         self.remote_ip_details.as_ref()
     }
 }
@@ -37,48 +39,50 @@ impl PortProbeDetail {
 
 /// A builder for [`PortProbeDetail`](crate::types::PortProbeDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortProbeDetailBuilder {
-    pub(crate) local_port_details: std::option::Option<crate::types::ActionLocalPortDetails>,
-    pub(crate) local_ip_details: std::option::Option<crate::types::ActionLocalIpDetails>,
-    pub(crate) remote_ip_details: std::option::Option<crate::types::ActionRemoteIpDetails>,
+    pub(crate) local_port_details: ::std::option::Option<crate::types::ActionLocalPortDetails>,
+    pub(crate) local_ip_details: ::std::option::Option<crate::types::ActionLocalIpDetails>,
+    pub(crate) remote_ip_details: ::std::option::Option<crate::types::ActionRemoteIpDetails>,
 }
 impl PortProbeDetailBuilder {
     /// <p>Provides information about the port that was scanned.</p>
     pub fn local_port_details(mut self, input: crate::types::ActionLocalPortDetails) -> Self {
-        self.local_port_details = Some(input);
+        self.local_port_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the port that was scanned.</p>
     pub fn set_local_port_details(
         mut self,
-        input: std::option::Option<crate::types::ActionLocalPortDetails>,
+        input: ::std::option::Option<crate::types::ActionLocalPortDetails>,
     ) -> Self {
         self.local_port_details = input;
         self
     }
     /// <p>Provides information about the IP address where the scanned port is located.</p>
     pub fn local_ip_details(mut self, input: crate::types::ActionLocalIpDetails) -> Self {
-        self.local_ip_details = Some(input);
+        self.local_ip_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the IP address where the scanned port is located.</p>
     pub fn set_local_ip_details(
         mut self,
-        input: std::option::Option<crate::types::ActionLocalIpDetails>,
+        input: ::std::option::Option<crate::types::ActionLocalIpDetails>,
     ) -> Self {
         self.local_ip_details = input;
         self
     }
     /// <p>Provides information about the remote IP address that performed the scan.</p>
     pub fn remote_ip_details(mut self, input: crate::types::ActionRemoteIpDetails) -> Self {
-        self.remote_ip_details = Some(input);
+        self.remote_ip_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the remote IP address that performed the scan.</p>
     pub fn set_remote_ip_details(
         mut self,
-        input: std::option::Option<crate::types::ActionRemoteIpDetails>,
+        input: ::std::option::Option<crate::types::ActionRemoteIpDetails>,
     ) -> Self {
         self.remote_ip_details = input;
         self

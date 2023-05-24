@@ -2,41 +2,41 @@
 
 /// <p>The result message containing information about the managed action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplyEnvironmentManagedActionOutput {
     /// <p>The action ID of the managed action.</p>
     #[doc(hidden)]
-    pub action_id: std::option::Option<std::string::String>,
+    pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the managed action.</p>
     #[doc(hidden)]
-    pub action_description: std::option::Option<std::string::String>,
+    pub action_description: ::std::option::Option<::std::string::String>,
     /// <p>The type of managed action.</p>
     #[doc(hidden)]
-    pub action_type: std::option::Option<crate::types::ActionType>,
+    pub action_type: ::std::option::Option<crate::types::ActionType>,
     /// <p>The status of the managed action.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ApplyEnvironmentManagedActionOutput {
     /// <p>The action ID of the managed action.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<&str> {
         self.action_id.as_deref()
     }
     /// <p>A description of the managed action.</p>
-    pub fn action_description(&self) -> std::option::Option<&str> {
+    pub fn action_description(&self) -> ::std::option::Option<&str> {
         self.action_description.as_deref()
     }
     /// <p>The type of managed action.</p>
-    pub fn action_type(&self) -> std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> ::std::option::Option<&crate::types::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>The status of the managed action.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ApplyEnvironmentManagedActionOutput {
+impl ::aws_http::request_id::RequestId for ApplyEnvironmentManagedActionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -50,55 +50,63 @@ impl ApplyEnvironmentManagedActionOutput {
 
 /// A builder for [`ApplyEnvironmentManagedActionOutput`](crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplyEnvironmentManagedActionOutputBuilder {
-    pub(crate) action_id: std::option::Option<std::string::String>,
-    pub(crate) action_description: std::option::Option<std::string::String>,
-    pub(crate) action_type: std::option::Option<crate::types::ActionType>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) action_id: ::std::option::Option<::std::string::String>,
+    pub(crate) action_description: ::std::option::Option<::std::string::String>,
+    pub(crate) action_type: ::std::option::Option<crate::types::ActionType>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ApplyEnvironmentManagedActionOutputBuilder {
     /// <p>The action ID of the managed action.</p>
-    pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_id = Some(input.into());
+    pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action ID of the managed action.</p>
-    pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
     }
     /// <p>A description of the managed action.</p>
-    pub fn action_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_description = Some(input.into());
+    pub fn action_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.action_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the managed action.</p>
     pub fn set_action_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.action_description = input;
         self
     }
     /// <p>The type of managed action.</p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
-        self.action_type = Some(input);
+        self.action_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of managed action.</p>
-    pub fn set_action_type(mut self, input: std::option::Option<crate::types::ActionType>) -> Self {
+    pub fn set_action_type(
+        mut self,
+        input: ::std::option::Option<crate::types::ActionType>,
+    ) -> Self {
         self.action_type = input;
         self
     }
     /// <p>The status of the managed action.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the managed action.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

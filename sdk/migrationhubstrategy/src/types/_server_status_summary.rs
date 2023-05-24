@@ -2,24 +2,24 @@
 
 /// <p>The status summary of the server analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerStatusSummary {
     /// <p>The status of the run time.</p>
     #[doc(hidden)]
-    pub run_time_assessment_status: std::option::Option<crate::types::RunTimeAssessmentStatus>,
+    pub run_time_assessment_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
 }
 impl ServerStatusSummary {
     /// <p>The status of the run time.</p>
     pub fn run_time_assessment_status(
         &self,
-    ) -> std::option::Option<&crate::types::RunTimeAssessmentStatus> {
+    ) -> ::std::option::Option<&crate::types::RunTimeAssessmentStatus> {
         self.run_time_assessment_status.as_ref()
     }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -32,11 +32,13 @@ impl ServerStatusSummary {
 
 /// A builder for [`ServerStatusSummary`](crate::types::ServerStatusSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerStatusSummaryBuilder {
     pub(crate) run_time_assessment_status:
-        std::option::Option<crate::types::RunTimeAssessmentStatus>,
-    pub(crate) count: std::option::Option<i32>,
+        ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl ServerStatusSummaryBuilder {
     /// <p>The status of the run time.</p>
@@ -44,24 +46,24 @@ impl ServerStatusSummaryBuilder {
         mut self,
         input: crate::types::RunTimeAssessmentStatus,
     ) -> Self {
-        self.run_time_assessment_status = Some(input);
+        self.run_time_assessment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the run time.</p>
     pub fn set_run_time_assessment_status(
         mut self,
-        input: std::option::Option<crate::types::RunTimeAssessmentStatus>,
+        input: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     ) -> Self {
         self.run_time_assessment_status = input;
         self
     }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of servers successfully analyzed, partially successful or failed analysis.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

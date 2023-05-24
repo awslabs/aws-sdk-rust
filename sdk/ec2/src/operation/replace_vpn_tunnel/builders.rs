@@ -6,29 +6,29 @@ pub use crate::operation::replace_vpn_tunnel::_replace_vpn_tunnel_input::Replace
 /// Fluent builder constructing a request to `ReplaceVpnTunnel`.
 ///
 /// <p>Trigger replacement of specified VPN tunnel.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplaceVpnTunnelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder,
 }
 impl ReplaceVpnTunnelFluentBuilder {
     /// Creates a new `ReplaceVpnTunnel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::replace_vpn_tunnel::ReplaceVpnTunnel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ReplaceVpnTunnelFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,36 +75,42 @@ impl ReplaceVpnTunnelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpn_connection_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.vpn_connection_id(input.into());
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
     pub fn set_vpn_connection_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_vpn_connection_id(input);
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
-    pub fn vpn_tunnel_outside_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpn_tunnel_outside_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.vpn_tunnel_outside_ip_address(input.into());
         self
     }
     /// <p>The external IP address of the VPN tunnel.</p>
     pub fn set_vpn_tunnel_outside_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_vpn_tunnel_outside_ip_address(input);
         self
@@ -112,7 +121,7 @@ impl ReplaceVpnTunnelFluentBuilder {
         self
     }
     /// <p>Trigger pending tunnel endpoint maintenance.</p>
-    pub fn set_apply_pending_maintenance(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_apply_pending_maintenance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_pending_maintenance(input);
         self
     }
@@ -122,7 +131,7 @@ impl ReplaceVpnTunnelFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }

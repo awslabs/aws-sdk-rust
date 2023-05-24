@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SelectionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SelectionStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SelectionStatus {
+impl ::std::convert::From<&str> for SelectionStatus {
     fn from(s: &str) -> Self {
         match s {
             "NOT_SELECTED" => SelectionStatus::NotSelected,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SelectionStatus {
         }
     }
 }
-impl std::str::FromStr for SelectionStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SelectionStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SelectionStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SelectionStatus::from(s))
     }
 }
 impl SelectionStatus {
@@ -86,7 +86,7 @@ impl SelectionStatus {
         &["NOT_SELECTED", "SELECTED"]
     }
 }
-impl AsRef<str> for SelectionStatus {
+impl ::std::convert::AsRef<str> for SelectionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

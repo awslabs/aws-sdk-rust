@@ -15,56 +15,59 @@ pub use crate::operation::update_table::_update_table_input::UpdateTableInputBui
 /// <li> <p>Create a new global secondary index on the table. After the index begins backfilling, you can use <code>UpdateTable</code> to perform other operations.</p> </li>
 /// </ul>
 /// <p> <code>UpdateTable</code> is an asynchronous operation; while it is executing, the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request. When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is complete.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_table::builders::UpdateTableInputBuilder,
 }
 impl UpdateTableFluentBuilder {
     /// Creates a new `UpdateTable`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_table::UpdateTable,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_table::UpdateTableOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,9 +80,9 @@ impl UpdateTableFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_table::UpdateTableOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_table::UpdateTableError>,
     > {
         self.send_middleware().await
     }
@@ -95,18 +98,18 @@ impl UpdateTableFluentBuilder {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
     pub fn set_attribute_definitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     ) -> Self {
         self.inner = self.inner.set_attribute_definitions(input);
         self
     }
     /// <p>The name of the table to be updated.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
     /// <p>The name of the table to be updated.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
@@ -126,7 +129,7 @@ impl UpdateTableFluentBuilder {
     /// </ul>
     pub fn set_billing_mode(
         mut self,
-        input: std::option::Option<crate::types::BillingMode>,
+        input: ::std::option::Option<crate::types::BillingMode>,
     ) -> Self {
         self.inner = self.inner.set_billing_mode(input);
         self
@@ -139,7 +142,7 @@ impl UpdateTableFluentBuilder {
     /// <p>The new provisioned throughput settings for the specified table or index.</p>
     pub fn set_provisioned_throughput(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedThroughput>,
+        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
     ) -> Self {
         self.inner = self.inner.set_provisioned_throughput(input);
         self
@@ -173,7 +176,7 @@ impl UpdateTableFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
     pub fn set_global_secondary_index_updates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>>,
     ) -> Self {
         self.inner = self.inner.set_global_secondary_index_updates(input);
         self
@@ -190,7 +193,7 @@ impl UpdateTableFluentBuilder {
     /// </note>
     pub fn set_stream_specification(
         mut self,
-        input: std::option::Option<crate::types::StreamSpecification>,
+        input: ::std::option::Option<crate::types::StreamSpecification>,
     ) -> Self {
         self.inner = self.inner.set_stream_specification(input);
         self
@@ -203,7 +206,7 @@ impl UpdateTableFluentBuilder {
     /// <p>The new server-side encryption settings for the specified table.</p>
     pub fn set_sse_specification(
         mut self,
-        input: std::option::Option<crate::types::SseSpecification>,
+        input: ::std::option::Option<crate::types::SseSpecification>,
     ) -> Self {
         self.inner = self.inner.set_sse_specification(input);
         self
@@ -224,7 +227,7 @@ impl UpdateTableFluentBuilder {
     /// </note>
     pub fn set_replica_updates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
     ) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
@@ -235,7 +238,10 @@ impl UpdateTableFluentBuilder {
         self
     }
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-    pub fn set_table_class(mut self, input: std::option::Option<crate::types::TableClass>) -> Self {
+    pub fn set_table_class(
+        mut self,
+        input: ::std::option::Option<crate::types::TableClass>,
+    ) -> Self {
         self.inner = self.inner.set_table_class(input);
         self
     }
@@ -245,7 +251,7 @@ impl UpdateTableFluentBuilder {
         self
     }
     /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
-    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection_enabled(input);
         self
     }

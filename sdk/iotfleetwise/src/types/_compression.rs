@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Compression {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Compression {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Compression {
+impl ::std::convert::From<&str> for Compression {
     fn from(s: &str) -> Self {
         match s {
             "OFF" => Compression::Off,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for Compression {
         }
     }
 }
-impl std::str::FromStr for Compression {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Compression {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Compression::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Compression::from(s))
     }
 }
 impl Compression {
@@ -84,7 +84,7 @@ impl Compression {
         &["OFF", "SNAPPY"]
     }
 }
-impl AsRef<str> for Compression {
+impl ::std::convert::AsRef<str> for Compression {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

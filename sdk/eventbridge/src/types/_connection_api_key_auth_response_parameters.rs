@@ -2,15 +2,15 @@
 
 /// <p>Contains the authorization parameters for the connection if API Key is specified as the authorization type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionApiKeyAuthResponseParameters {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
     #[doc(hidden)]
-    pub api_key_name: std::option::Option<std::string::String>,
+    pub api_key_name: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionApiKeyAuthResponseParameters {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
-    pub fn api_key_name(&self) -> std::option::Option<&str> {
+    pub fn api_key_name(&self) -> ::std::option::Option<&str> {
         self.api_key_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ConnectionApiKeyAuthResponseParameters {
 
 /// A builder for [`ConnectionApiKeyAuthResponseParameters`](crate::types::ConnectionApiKeyAuthResponseParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectionApiKeyAuthResponseParametersBuilder {
-    pub(crate) api_key_name: std::option::Option<std::string::String>,
+    pub(crate) api_key_name: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionApiKeyAuthResponseParametersBuilder {
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
-    pub fn api_key_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_key_name = Some(input.into());
+    pub fn api_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
-    pub fn set_api_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_name = input;
         self
     }

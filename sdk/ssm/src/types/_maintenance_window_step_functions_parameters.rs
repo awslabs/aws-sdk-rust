@@ -7,27 +7,27 @@
 /// <p>For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowStepFunctionsParameters {
     /// <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
     #[doc(hidden)]
-    pub input: std::option::Option<std::string::String>,
+    pub input: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceWindowStepFunctionsParameters {
     /// <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
     /// <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for MaintenanceWindowStepFunctionsParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MaintenanceWindowStepFunctionsParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowStepFunctionsParameters");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
@@ -43,29 +43,29 @@ impl MaintenanceWindowStepFunctionsParameters {
 
 /// A builder for [`MaintenanceWindowStepFunctionsParameters`](crate::types::MaintenanceWindowStepFunctionsParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MaintenanceWindowStepFunctionsParametersBuilder {
-    pub(crate) input: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) input: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceWindowStepFunctionsParametersBuilder {
     /// <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
-    pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input = Some(input.into());
+    pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
-    pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
     }
     /// <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -77,8 +77,8 @@ impl MaintenanceWindowStepFunctionsParametersBuilder {
         }
     }
 }
-impl std::fmt::Debug for MaintenanceWindowStepFunctionsParametersBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MaintenanceWindowStepFunctionsParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowStepFunctionsParametersBuilder");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);

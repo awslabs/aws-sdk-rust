@@ -2,50 +2,50 @@
 
 /// <p>Describes a partner integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartnerIntegrationInfo {
     /// <p>The name of the database that receives data from a partner.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the partner.</p>
     #[doc(hidden)]
-    pub partner_name: std::option::Option<std::string::String>,
+    pub partner_name: ::std::option::Option<::std::string::String>,
     /// <p>The partner integration status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PartnerIntegrationStatus>,
+    pub status: ::std::option::Option<crate::types::PartnerIntegrationStatus>,
     /// <p>The status message provided by the partner.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date (UTC) that the partner integration was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PartnerIntegrationInfo {
     /// <p>The name of the database that receives data from a partner.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partner.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> ::std::option::Option<&str> {
         self.partner_name.as_deref()
     }
     /// <p>The partner integration status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PartnerIntegrationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PartnerIntegrationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The date (UTC) that the partner integration was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -58,81 +58,95 @@ impl PartnerIntegrationInfo {
 
 /// A builder for [`PartnerIntegrationInfo`](crate::types::PartnerIntegrationInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartnerIntegrationInfoBuilder {
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) partner_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::PartnerIntegrationStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) partner_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::PartnerIntegrationStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PartnerIntegrationInfoBuilder {
     /// <p>The name of the database that receives data from a partner.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database that receives data from a partner.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
     /// <p>The name of the partner.</p>
-    pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.partner_name = Some(input.into());
+    pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.partner_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the partner.</p>
-    pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_name = input;
         self
     }
     /// <p>The partner integration status.</p>
     pub fn status(mut self, input: crate::types::PartnerIntegrationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The partner integration status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PartnerIntegrationStatus>,
+        input: ::std::option::Option<crate::types::PartnerIntegrationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message provided by the partner.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The date (UTC) that the partner integration was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date (UTC) that the partner integration was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date (UTC) that the partner integration status was last updated by the partner.</p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self

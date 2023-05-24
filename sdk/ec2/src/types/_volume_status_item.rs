@@ -2,60 +2,60 @@
 
 /// <p>Describes the volume status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusItem {
     /// <p>The details of the operation.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::VolumeStatusAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>>,
     /// <p>The Availability Zone of the volume.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     #[doc(hidden)]
-    pub outpost_arn: std::option::Option<std::string::String>,
+    pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of events associated with the volume.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::VolumeStatusEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>>,
     /// <p>The volume ID.</p>
     #[doc(hidden)]
-    pub volume_id: std::option::Option<std::string::String>,
+    pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume status.</p>
     #[doc(hidden)]
-    pub volume_status: std::option::Option<crate::types::VolumeStatusInfo>,
+    pub volume_status: ::std::option::Option<crate::types::VolumeStatusInfo>,
     /// <p>Information about the instances to which the volume is attached.</p>
     #[doc(hidden)]
     pub attachment_statuses:
-        std::option::Option<std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
 }
 impl VolumeStatusItem {
     /// <p>The details of the operation.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::VolumeStatusAction]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VolumeStatusAction]> {
         self.actions.as_deref()
     }
     /// <p>The Availability Zone of the volume.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
     /// <p>A list of events associated with the volume.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::VolumeStatusEvent]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::VolumeStatusEvent]> {
         self.events.as_deref()
     }
     /// <p>The volume ID.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
     /// <p>The volume status.</p>
-    pub fn volume_status(&self) -> std::option::Option<&crate::types::VolumeStatusInfo> {
+    pub fn volume_status(&self) -> ::std::option::Option<&crate::types::VolumeStatusInfo> {
         self.volume_status.as_ref()
     }
     /// <p>Information about the instances to which the volume is attached.</p>
     pub fn attachment_statuses(
         &self,
-    ) -> std::option::Option<&[crate::types::VolumeStatusAttachmentStatus]> {
+    ) -> ::std::option::Option<&[crate::types::VolumeStatusAttachmentStatus]> {
         self.attachment_statuses.as_deref()
     }
 }
@@ -68,16 +68,18 @@ impl VolumeStatusItem {
 
 /// A builder for [`VolumeStatusItem`](crate::types::VolumeStatusItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeStatusItemBuilder {
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::VolumeStatusAction>>,
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
-    pub(crate) outpost_arn: std::option::Option<std::string::String>,
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::VolumeStatusEvent>>,
-    pub(crate) volume_id: std::option::Option<std::string::String>,
-    pub(crate) volume_status: std::option::Option<crate::types::VolumeStatusInfo>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>>,
+    pub(crate) volume_id: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_status: ::std::option::Option<crate::types::VolumeStatusInfo>,
     pub(crate) attachment_statuses:
-        std::option::Option<std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
 }
 impl VolumeStatusItemBuilder {
     /// Appends an item to `actions`.
@@ -88,37 +90,40 @@ impl VolumeStatusItemBuilder {
     pub fn actions(mut self, input: crate::types::VolumeStatusAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The details of the operation.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeStatusAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAction>>,
     ) -> Self {
         self.actions = input;
         self
     }
     /// <p>The Availability Zone of the volume.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the volume.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_arn = Some(input.into());
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
@@ -130,36 +135,36 @@ impl VolumeStatusItemBuilder {
     pub fn events(mut self, input: crate::types::VolumeStatusEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of events associated with the volume.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeStatusEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusEvent>>,
     ) -> Self {
         self.events = input;
         self
     }
     /// <p>The volume ID.</p>
-    pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_id = Some(input.into());
+    pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume ID.</p>
-    pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
     }
     /// <p>The volume status.</p>
     pub fn volume_status(mut self, input: crate::types::VolumeStatusInfo) -> Self {
-        self.volume_status = Some(input);
+        self.volume_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The volume status.</p>
     pub fn set_volume_status(
         mut self,
-        input: std::option::Option<crate::types::VolumeStatusInfo>,
+        input: ::std::option::Option<crate::types::VolumeStatusInfo>,
     ) -> Self {
         self.volume_status = input;
         self
@@ -175,13 +180,13 @@ impl VolumeStatusItemBuilder {
     ) -> Self {
         let mut v = self.attachment_statuses.unwrap_or_default();
         v.push(input);
-        self.attachment_statuses = Some(v);
+        self.attachment_statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the instances to which the volume is attached.</p>
     pub fn set_attachment_statuses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusAttachmentStatus>>,
     ) -> Self {
         self.attachment_statuses = input;
         self

@@ -2,64 +2,64 @@
 
 /// <p>An object that represents a virtual gateway returned by a list operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayRef {
     /// <p>The name of the service mesh that the resource resides in.</p>
     #[doc(hidden)]
-    pub mesh_name: std::option::Option<std::string::String>,
+    pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
-    pub virtual_gateway_name: std::option::Option<std::string::String>,
+    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     #[doc(hidden)]
-    pub mesh_owner: std::option::Option<std::string::String>,
+    pub mesh_owner: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     #[doc(hidden)]
-    pub resource_owner: std::option::Option<std::string::String>,
+    pub resource_owner: ::std::option::Option<::std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<i64>,
+    pub version: ::std::option::Option<i64>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VirtualGatewayRef {
     /// <p>The name of the service mesh that the resource resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> ::std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
-    pub fn version(&self) -> std::option::Option<i64> {
+    pub fn version(&self) -> ::std::option::Option<i64> {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -72,103 +72,114 @@ impl VirtualGatewayRef {
 
 /// A builder for [`VirtualGatewayRef`](crate::types::VirtualGatewayRef).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewayRefBuilder {
-    pub(crate) mesh_name: std::option::Option<std::string::String>,
-    pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
-    pub(crate) mesh_owner: std::option::Option<std::string::String>,
-    pub(crate) resource_owner: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<i64>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
+    pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,
+    pub(crate) mesh_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<i64>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VirtualGatewayRefBuilder {
     /// <p>The name of the service mesh that the resource resides in.</p>
-    pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mesh_name = Some(input.into());
+    pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mesh_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service mesh that the resource resides in.</p>
-    pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_name = input;
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_gateway_name = Some(input.into());
+    pub fn virtual_gateway_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
     pub fn set_virtual_gateway_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_gateway_name = input;
         self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mesh_owner = Some(input.into());
+    pub fn mesh_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mesh_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mesh_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_owner = input;
         self
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_owner = Some(input.into());
+    pub fn resource_owner(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_owner(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_owner = input;
         self
     }
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
     pub fn version(mut self, input: i64) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
-    pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self

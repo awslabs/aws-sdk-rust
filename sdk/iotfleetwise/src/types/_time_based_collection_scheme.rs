@@ -2,15 +2,15 @@
 
 /// <p>Information about a collection scheme that uses a time period to decide how often to collect data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedCollectionScheme {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     #[doc(hidden)]
-    pub period_ms: std::option::Option<i64>,
+    pub period_ms: ::std::option::Option<i64>,
 }
 impl TimeBasedCollectionScheme {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
-    pub fn period_ms(&self) -> std::option::Option<i64> {
+    pub fn period_ms(&self) -> ::std::option::Option<i64> {
         self.period_ms
     }
 }
@@ -23,18 +23,20 @@ impl TimeBasedCollectionScheme {
 
 /// A builder for [`TimeBasedCollectionScheme`](crate::types::TimeBasedCollectionScheme).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeBasedCollectionSchemeBuilder {
-    pub(crate) period_ms: std::option::Option<i64>,
+    pub(crate) period_ms: ::std::option::Option<i64>,
 }
 impl TimeBasedCollectionSchemeBuilder {
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
     pub fn period_ms(mut self, input: i64) -> Self {
-        self.period_ms = Some(input);
+        self.period_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period (in milliseconds) to decide how often to collect data. For example, if the time period is <code>60000</code>, the Edge Agent software collects data once every minute.</p>
-    pub fn set_period_ms(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_period_ms(mut self, input: ::std::option::Option<i64>) -> Self {
         self.period_ms = input;
         self
     }

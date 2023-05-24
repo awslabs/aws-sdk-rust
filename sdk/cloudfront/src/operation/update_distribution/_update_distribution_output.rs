@@ -2,27 +2,27 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDistributionOutput {
     /// <p>The distribution's information.</p>
     #[doc(hidden)]
-    pub distribution: std::option::Option<crate::types::Distribution>,
+    pub distribution: ::std::option::Option<crate::types::Distribution>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     #[doc(hidden)]
-    pub e_tag: std::option::Option<std::string::String>,
+    pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDistributionOutput {
     /// <p>The distribution's information.</p>
-    pub fn distribution(&self) -> std::option::Option<&crate::types::Distribution> {
+    pub fn distribution(&self) -> ::std::option::Option<&crate::types::Distribution> {
         self.distribution.as_ref()
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateDistributionOutput {
+impl ::aws_http::request_id::RequestId for UpdateDistributionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,33 +37,35 @@ impl UpdateDistributionOutput {
 
 /// A builder for [`UpdateDistributionOutput`](crate::operation::update_distribution::UpdateDistributionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDistributionOutputBuilder {
-    pub(crate) distribution: std::option::Option<crate::types::Distribution>,
-    pub(crate) e_tag: std::option::Option<std::string::String>,
+    pub(crate) distribution: ::std::option::Option<crate::types::Distribution>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDistributionOutputBuilder {
     /// <p>The distribution's information.</p>
     pub fn distribution(mut self, input: crate::types::Distribution) -> Self {
-        self.distribution = Some(input);
+        self.distribution = ::std::option::Option::Some(input);
         self
     }
     /// <p>The distribution's information.</p>
     pub fn set_distribution(
         mut self,
-        input: std::option::Option<crate::types::Distribution>,
+        input: ::std::option::Option<crate::types::Distribution>,
     ) -> Self {
         self.distribution = input;
         self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.e_tag = Some(input.into());
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }

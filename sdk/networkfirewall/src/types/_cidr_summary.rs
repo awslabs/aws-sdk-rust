@@ -2,34 +2,34 @@
 
 /// <p>Summarizes the CIDR blocks used by the IP set references in a firewall. Network Firewall calculates the number of CIDRs by taking an aggregated count of all CIDRs used by the IP sets you are referencing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrSummary {
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
     #[doc(hidden)]
-    pub available_cidr_count: std::option::Option<i32>,
+    pub available_cidr_count: ::std::option::Option<i32>,
     /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
     #[doc(hidden)]
-    pub utilized_cidr_count: std::option::Option<i32>,
+    pub utilized_cidr_count: ::std::option::Option<i32>,
     /// <p>The list of the IP set references used by a firewall.</p>
     #[doc(hidden)]
-    pub ip_set_references: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::IpSetMetadata>,
+    pub ip_set_references: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
     >,
 }
 impl CidrSummary {
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
-    pub fn available_cidr_count(&self) -> std::option::Option<i32> {
+    pub fn available_cidr_count(&self) -> ::std::option::Option<i32> {
         self.available_cidr_count
     }
     /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
-    pub fn utilized_cidr_count(&self) -> std::option::Option<i32> {
+    pub fn utilized_cidr_count(&self) -> ::std::option::Option<i32> {
         self.utilized_cidr_count
     }
     /// <p>The list of the IP set references used by a firewall.</p>
     pub fn ip_set_references(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::IpSetMetadata>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
     > {
         self.ip_set_references.as_ref()
     }
@@ -43,32 +43,34 @@ impl CidrSummary {
 
 /// A builder for [`CidrSummary`](crate::types::CidrSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CidrSummaryBuilder {
-    pub(crate) available_cidr_count: std::option::Option<i32>,
-    pub(crate) utilized_cidr_count: std::option::Option<i32>,
-    pub(crate) ip_set_references: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::IpSetMetadata>,
+    pub(crate) available_cidr_count: ::std::option::Option<i32>,
+    pub(crate) utilized_cidr_count: ::std::option::Option<i32>,
+    pub(crate) ip_set_references: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
     >,
 }
 impl CidrSummaryBuilder {
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
     pub fn available_cidr_count(mut self, input: i32) -> Self {
-        self.available_cidr_count = Some(input);
+        self.available_cidr_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of CIDR blocks available for use by the IP set references in a firewall.</p>
-    pub fn set_available_cidr_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_available_cidr_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available_cidr_count = input;
         self
     }
     /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
     pub fn utilized_cidr_count(mut self, input: i32) -> Self {
-        self.utilized_cidr_count = Some(input);
+        self.utilized_cidr_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
-    pub fn set_utilized_cidr_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_utilized_cidr_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.utilized_cidr_count = input;
         self
     }
@@ -79,19 +81,19 @@ impl CidrSummaryBuilder {
     /// <p>The list of the IP set references used by a firewall.</p>
     pub fn ip_set_references(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::IpSetMetadata,
     ) -> Self {
         let mut hash_map = self.ip_set_references.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.ip_set_references = Some(hash_map);
+        self.ip_set_references = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of the IP set references used by a firewall.</p>
     pub fn set_ip_set_references(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::IpSetMetadata>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::IpSetMetadata>,
         >,
     ) -> Self {
         self.ip_set_references = input;

@@ -6,47 +6,50 @@ pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_dr
 /// Fluent builder constructing a request to `RemoveDraftAppVersionResourceMappings`.
 ///
 /// <p>Removes resource mappings from a draft application version.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveDraftAppVersionResourceMappingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsInputBuilder,
 }
 impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// Creates a new `RemoveDraftAppVersionResourceMappings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappings, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput, aws_smithy_http::result::SdkError<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,17 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput, aws_smithy_http::result::SdkError<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError>>
                          {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
     }
@@ -76,14 +79,17 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_names`](Self::set_resource_names).
     ///
     /// <p>The names of the resources you want to remove from the resource mappings.</p>
-    pub fn resource_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_names(input.into());
         self
     }
     /// <p>The names of the resources you want to remove from the resource mappings.</p>
     pub fn set_resource_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_resource_names(input);
         self
@@ -93,14 +99,17 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// To override the contents of this collection use [`set_logical_stack_names`](Self::set_logical_stack_names).
     ///
     /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
-    pub fn logical_stack_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn logical_stack_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.logical_stack_names(input.into());
         self
     }
     /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
     pub fn set_logical_stack_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_logical_stack_names(input);
         self
@@ -110,14 +119,17 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// To override the contents of this collection use [`set_app_registry_app_names`](Self::set_app_registry_app_names).
     ///
     /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
-    pub fn app_registry_app_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_registry_app_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.app_registry_app_names(input.into());
         self
     }
     /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
     pub fn set_app_registry_app_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_app_registry_app_names(input);
         self
@@ -127,14 +139,17 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_group_names`](Self::set_resource_group_names).
     ///
     /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
-    pub fn resource_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_group_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_group_names(input.into());
         self
     }
     /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
     pub fn set_resource_group_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_resource_group_names(input);
         self
@@ -144,14 +159,17 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// To override the contents of this collection use [`set_terraform_source_names`](Self::set_terraform_source_names).
     ///
     /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
-    pub fn terraform_source_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn terraform_source_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.terraform_source_names(input.into());
         self
     }
     /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
     pub fn set_terraform_source_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_terraform_source_names(input);
         self
@@ -163,7 +181,10 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
-    pub fn eks_source_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn eks_source_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.eks_source_names(input.into());
         self
     }
@@ -172,7 +193,7 @@ impl RemoveDraftAppVersionResourceMappingsFluentBuilder {
     /// </note>
     pub fn set_eks_source_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_eks_source_names(input);
         self

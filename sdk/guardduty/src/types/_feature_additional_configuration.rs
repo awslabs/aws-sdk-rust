@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FeatureAdditionalConfiguration {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum FeatureAdditionalConfiguration {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FeatureAdditionalConfiguration {
+impl ::std::convert::From<&str> for FeatureAdditionalConfiguration {
     fn from(s: &str) -> Self {
         match s {
             "EKS_ADDON_MANAGEMENT" => FeatureAdditionalConfiguration::EksAddonManagement,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for FeatureAdditionalConfiguration {
         }
     }
 }
-impl std::str::FromStr for FeatureAdditionalConfiguration {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FeatureAdditionalConfiguration {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FeatureAdditionalConfiguration::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FeatureAdditionalConfiguration::from(s))
     }
 }
 impl FeatureAdditionalConfiguration {
@@ -81,7 +81,7 @@ impl FeatureAdditionalConfiguration {
         &["EKS_ADDON_MANAGEMENT"]
     }
 }
-impl AsRef<str> for FeatureAdditionalConfiguration {
+impl ::std::convert::AsRef<str> for FeatureAdditionalConfiguration {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

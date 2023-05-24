@@ -2,45 +2,45 @@
 
 /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypeConfigurationIdentifier {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region.</p>
     #[doc(hidden)]
-    pub type_arn: std::option::Option<std::string::String>,
+    pub type_arn: ::std::option::Option<::std::string::String>,
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
     #[doc(hidden)]
-    pub type_configuration_alias: std::option::Option<std::string::String>,
+    pub type_configuration_alias: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and region.</p>
     #[doc(hidden)]
-    pub type_configuration_arn: std::option::Option<std::string::String>,
+    pub type_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of extension.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ThirdPartyType>,
+    pub r#type: ::std::option::Option<crate::types::ThirdPartyType>,
     /// <p>The name of the extension type to which this configuration applies.</p>
     #[doc(hidden)]
-    pub type_name: std::option::Option<std::string::String>,
+    pub type_name: ::std::option::Option<::std::string::String>,
 }
 impl TypeConfigurationIdentifier {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region.</p>
-    pub fn type_arn(&self) -> std::option::Option<&str> {
+    pub fn type_arn(&self) -> ::std::option::Option<&str> {
         self.type_arn.as_deref()
     }
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
-    pub fn type_configuration_alias(&self) -> std::option::Option<&str> {
+    pub fn type_configuration_alias(&self) -> ::std::option::Option<&str> {
         self.type_configuration_alias.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and region.</p>
-    pub fn type_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn type_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.type_configuration_arn.as_deref()
     }
     /// <p>The type of extension.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ThirdPartyType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThirdPartyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the extension type to which this configuration applies.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
 }
@@ -53,70 +53,78 @@ impl TypeConfigurationIdentifier {
 
 /// A builder for [`TypeConfigurationIdentifier`](crate::types::TypeConfigurationIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TypeConfigurationIdentifierBuilder {
-    pub(crate) type_arn: std::option::Option<std::string::String>,
-    pub(crate) type_configuration_alias: std::option::Option<std::string::String>,
-    pub(crate) type_configuration_arn: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ThirdPartyType>,
-    pub(crate) type_name: std::option::Option<std::string::String>,
+    pub(crate) type_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) type_configuration_alias: ::std::option::Option<::std::string::String>,
+    pub(crate) type_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ThirdPartyType>,
+    pub(crate) type_name: ::std::option::Option<::std::string::String>,
 }
 impl TypeConfigurationIdentifierBuilder {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region.</p>
-    pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.type_arn = Some(input.into());
+    pub fn type_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.type_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
     /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region.</p>
-    pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_arn = input;
         self
     }
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
-    pub fn type_configuration_alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.type_configuration_alias = Some(input.into());
+    pub fn type_configuration_alias(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.type_configuration_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias specified for this configuration, if one was specified when the configuration was set.</p>
     pub fn set_type_configuration_alias(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.type_configuration_alias = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and region.</p>
-    pub fn type_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.type_configuration_arn = Some(input.into());
+    pub fn type_configuration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.type_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the configuration, in this account and region.</p>
     pub fn set_type_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.type_configuration_arn = input;
         self
     }
     /// <p>The type of extension.</p>
     pub fn r#type(mut self, input: crate::types::ThirdPartyType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of extension.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ThirdPartyType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThirdPartyType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The name of the extension type to which this configuration applies.</p>
-    pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.type_name = Some(input.into());
+    pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the extension type to which this configuration applies.</p>
-    pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }

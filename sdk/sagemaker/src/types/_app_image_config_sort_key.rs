@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AppImageConfigSortKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AppImageConfigSortKey {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AppImageConfigSortKey {
+impl ::std::convert::From<&str> for AppImageConfigSortKey {
     fn from(s: &str) -> Self {
         match s {
             "CreationTime" => AppImageConfigSortKey::CreationTime,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AppImageConfigSortKey {
         }
     }
 }
-impl std::str::FromStr for AppImageConfigSortKey {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AppImageConfigSortKey {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppImageConfigSortKey::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AppImageConfigSortKey::from(s))
     }
 }
 impl AppImageConfigSortKey {
@@ -91,7 +91,7 @@ impl AppImageConfigSortKey {
         &["CreationTime", "LastModifiedTime", "Name"]
     }
 }
-impl AsRef<str> for AppImageConfigSortKey {
+impl ::std::convert::AsRef<str> for AppImageConfigSortKey {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

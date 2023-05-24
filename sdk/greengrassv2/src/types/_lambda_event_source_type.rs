@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LambdaEventSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum LambdaEventSourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LambdaEventSourceType {
+impl ::std::convert::From<&str> for LambdaEventSourceType {
     fn from(s: &str) -> Self {
         match s {
             "IOT_CORE" => LambdaEventSourceType::IotCore,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for LambdaEventSourceType {
         }
     }
 }
-impl std::str::FromStr for LambdaEventSourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LambdaEventSourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LambdaEventSourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LambdaEventSourceType::from(s))
     }
 }
 impl LambdaEventSourceType {
@@ -86,7 +86,7 @@ impl LambdaEventSourceType {
         &["IOT_CORE", "PUB_SUB"]
     }
 }
-impl AsRef<str> for LambdaEventSourceType {
+impl ::std::convert::AsRef<str> for LambdaEventSourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

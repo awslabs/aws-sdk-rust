@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GroupResources`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group(impl Into<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::set_group): <p>The name or the ARN of the resource group to add resources to.</p>
+    ///   - [`group(impl ::std::convert::Into<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::set_group): <p>The name or the ARN of the resource group to add resources to.</p>
     ///   - [`resource_arns(Vec<String>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::operation::group_resources::builders::GroupResourcesFluentBuilder::set_resource_arns): <p>The list of ARNs of the resources to be added to the group. </p>
     /// - On success, responds with [`GroupResourcesOutput`](crate::operation::group_resources::GroupResourcesOutput) with field(s):
     ///   - [`succeeded(Option<Vec<String>>)`](crate::operation::group_resources::GroupResourcesOutput::succeeded): <p>A list of ARNs of the resources that this operation successfully added to the group.</p>

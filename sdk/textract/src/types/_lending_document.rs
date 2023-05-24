@@ -2,22 +2,25 @@
 
 /// <p>Holds the structured data returned by AnalyzeDocument for lending documents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingDocument {
     /// <p>An array of LendingField objects.</p>
     #[doc(hidden)]
-    pub lending_fields: std::option::Option<std::vec::Vec<crate::types::LendingField>>,
+    pub lending_fields: ::std::option::Option<::std::vec::Vec<crate::types::LendingField>>,
     /// <p>A list of signatures detected in a lending document.</p>
     #[doc(hidden)]
-    pub signature_detections: std::option::Option<std::vec::Vec<crate::types::SignatureDetection>>,
+    pub signature_detections:
+        ::std::option::Option<::std::vec::Vec<crate::types::SignatureDetection>>,
 }
 impl LendingDocument {
     /// <p>An array of LendingField objects.</p>
-    pub fn lending_fields(&self) -> std::option::Option<&[crate::types::LendingField]> {
+    pub fn lending_fields(&self) -> ::std::option::Option<&[crate::types::LendingField]> {
         self.lending_fields.as_deref()
     }
     /// <p>A list of signatures detected in a lending document.</p>
-    pub fn signature_detections(&self) -> std::option::Option<&[crate::types::SignatureDetection]> {
+    pub fn signature_detections(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::SignatureDetection]> {
         self.signature_detections.as_deref()
     }
 }
@@ -30,11 +33,13 @@ impl LendingDocument {
 
 /// A builder for [`LendingDocument`](crate::types::LendingDocument).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LendingDocumentBuilder {
-    pub(crate) lending_fields: std::option::Option<std::vec::Vec<crate::types::LendingField>>,
+    pub(crate) lending_fields: ::std::option::Option<::std::vec::Vec<crate::types::LendingField>>,
     pub(crate) signature_detections:
-        std::option::Option<std::vec::Vec<crate::types::SignatureDetection>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SignatureDetection>>,
 }
 impl LendingDocumentBuilder {
     /// Appends an item to `lending_fields`.
@@ -45,13 +50,13 @@ impl LendingDocumentBuilder {
     pub fn lending_fields(mut self, input: crate::types::LendingField) -> Self {
         let mut v = self.lending_fields.unwrap_or_default();
         v.push(input);
-        self.lending_fields = Some(v);
+        self.lending_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of LendingField objects.</p>
     pub fn set_lending_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LendingField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LendingField>>,
     ) -> Self {
         self.lending_fields = input;
         self
@@ -64,13 +69,13 @@ impl LendingDocumentBuilder {
     pub fn signature_detections(mut self, input: crate::types::SignatureDetection) -> Self {
         let mut v = self.signature_detections.unwrap_or_default();
         v.push(input);
-        self.signature_detections = Some(v);
+        self.signature_detections = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of signatures detected in a lending document.</p>
     pub fn set_signature_detections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SignatureDetection>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SignatureDetection>>,
     ) -> Self {
         self.signature_detections = input;
         self

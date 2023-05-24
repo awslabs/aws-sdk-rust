@@ -2,36 +2,36 @@
 
 /// <p>The forecast that's created for your query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastResult {
     /// <p>The period of time that the forecast covers.</p>
     #[doc(hidden)]
-    pub time_period: std::option::Option<crate::types::DateInterval>,
+    pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The mean value of the forecast.</p>
     #[doc(hidden)]
-    pub mean_value: std::option::Option<std::string::String>,
+    pub mean_value: ::std::option::Option<::std::string::String>,
     /// <p>The lower limit for the prediction interval. </p>
     #[doc(hidden)]
-    pub prediction_interval_lower_bound: std::option::Option<std::string::String>,
+    pub prediction_interval_lower_bound: ::std::option::Option<::std::string::String>,
     /// <p>The upper limit for the prediction interval. </p>
     #[doc(hidden)]
-    pub prediction_interval_upper_bound: std::option::Option<std::string::String>,
+    pub prediction_interval_upper_bound: ::std::option::Option<::std::string::String>,
 }
 impl ForecastResult {
     /// <p>The period of time that the forecast covers.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The mean value of the forecast.</p>
-    pub fn mean_value(&self) -> std::option::Option<&str> {
+    pub fn mean_value(&self) -> ::std::option::Option<&str> {
         self.mean_value.as_deref()
     }
     /// <p>The lower limit for the prediction interval. </p>
-    pub fn prediction_interval_lower_bound(&self) -> std::option::Option<&str> {
+    pub fn prediction_interval_lower_bound(&self) -> ::std::option::Option<&str> {
         self.prediction_interval_lower_bound.as_deref()
     }
     /// <p>The upper limit for the prediction interval. </p>
-    pub fn prediction_interval_upper_bound(&self) -> std::option::Option<&str> {
+    pub fn prediction_interval_upper_bound(&self) -> ::std::option::Option<&str> {
         self.prediction_interval_upper_bound.as_deref()
     }
 }
@@ -44,49 +44,51 @@ impl ForecastResult {
 
 /// A builder for [`ForecastResult`](crate::types::ForecastResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForecastResultBuilder {
-    pub(crate) time_period: std::option::Option<crate::types::DateInterval>,
-    pub(crate) mean_value: std::option::Option<std::string::String>,
-    pub(crate) prediction_interval_lower_bound: std::option::Option<std::string::String>,
-    pub(crate) prediction_interval_upper_bound: std::option::Option<std::string::String>,
+    pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
+    pub(crate) mean_value: ::std::option::Option<::std::string::String>,
+    pub(crate) prediction_interval_lower_bound: ::std::option::Option<::std::string::String>,
+    pub(crate) prediction_interval_upper_bound: ::std::option::Option<::std::string::String>,
 }
 impl ForecastResultBuilder {
     /// <p>The period of time that the forecast covers.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
-        self.time_period = Some(input);
+        self.time_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period of time that the forecast covers.</p>
     pub fn set_time_period(
         mut self,
-        input: std::option::Option<crate::types::DateInterval>,
+        input: ::std::option::Option<crate::types::DateInterval>,
     ) -> Self {
         self.time_period = input;
         self
     }
     /// <p>The mean value of the forecast.</p>
-    pub fn mean_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mean_value = Some(input.into());
+    pub fn mean_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mean_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The mean value of the forecast.</p>
-    pub fn set_mean_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mean_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mean_value = input;
         self
     }
     /// <p>The lower limit for the prediction interval. </p>
     pub fn prediction_interval_lower_bound(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.prediction_interval_lower_bound = Some(input.into());
+        self.prediction_interval_lower_bound = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The lower limit for the prediction interval. </p>
     pub fn set_prediction_interval_lower_bound(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.prediction_interval_lower_bound = input;
         self
@@ -94,15 +96,15 @@ impl ForecastResultBuilder {
     /// <p>The upper limit for the prediction interval. </p>
     pub fn prediction_interval_upper_bound(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.prediction_interval_upper_bound = Some(input.into());
+        self.prediction_interval_upper_bound = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upper limit for the prediction interval. </p>
     pub fn set_prediction_interval_upper_bound(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.prediction_interval_upper_bound = input;
         self

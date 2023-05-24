@@ -2,14 +2,14 @@
 
 /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectConnectGatewayAssociation {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_id: std::option::Option<std::string::String>,
+    pub direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
+    pub direct_connect_gateway_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association. The following are the possible values:</p>
     /// <ul>
     /// <li> <p> <code>associating</code>: The initial state after calling <code>CreateDirectConnectGatewayAssociation</code>.</p> </li>
@@ -19,37 +19,38 @@ pub struct DirectConnectGatewayAssociation {
     /// <li> <p> <code>updating</code>: The CIDR blocks for the virtual private gateway or transit gateway are currently being updated. This could be new CIDR blocks added or current CIDR blocks removed.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub association_state: std::option::Option<crate::types::DirectConnectGatewayAssociationState>,
+    pub association_state:
+        ::std::option::Option<crate::types::DirectConnectGatewayAssociationState>,
     /// <p>The error message if the state of an object failed to advance.</p>
     #[doc(hidden)]
-    pub state_change_error: std::option::Option<std::string::String>,
+    pub state_change_error: ::std::option::Option<::std::string::String>,
     /// <p>Information about the associated gateway.</p>
     #[doc(hidden)]
-    pub associated_gateway: std::option::Option<crate::types::AssociatedGateway>,
+    pub associated_gateway: ::std::option::Option<crate::types::AssociatedGateway>,
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
-    pub association_id: std::option::Option<std::string::String>,
+    pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
     #[doc(hidden)]
     pub allowed_prefixes_to_direct_connect_gateway:
-        std::option::Option<std::vec::Vec<crate::types::RouteFilterPrefix>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     #[doc(hidden)]
-    pub virtual_gateway_id: std::option::Option<std::string::String>,
+    pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
     #[doc(hidden)]
-    pub virtual_gateway_region: std::option::Option<std::string::String>,
+    pub virtual_gateway_region: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
     #[doc(hidden)]
-    pub virtual_gateway_owner_account: std::option::Option<std::string::String>,
+    pub virtual_gateway_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl DirectConnectGatewayAssociation {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> ::std::option::Option<&str> {
         self.direct_connect_gateway_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
-    pub fn direct_connect_gateway_owner_account(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_owner_account(&self) -> ::std::option::Option<&str> {
         self.direct_connect_gateway_owner_account.as_deref()
     }
     /// <p>The state of the association. The following are the possible values:</p>
@@ -62,37 +63,37 @@ impl DirectConnectGatewayAssociation {
     /// </ul>
     pub fn association_state(
         &self,
-    ) -> std::option::Option<&crate::types::DirectConnectGatewayAssociationState> {
+    ) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociationState> {
         self.association_state.as_ref()
     }
     /// <p>The error message if the state of an object failed to advance.</p>
-    pub fn state_change_error(&self) -> std::option::Option<&str> {
+    pub fn state_change_error(&self) -> ::std::option::Option<&str> {
         self.state_change_error.as_deref()
     }
     /// <p>Information about the associated gateway.</p>
-    pub fn associated_gateway(&self) -> std::option::Option<&crate::types::AssociatedGateway> {
+    pub fn associated_gateway(&self) -> ::std::option::Option<&crate::types::AssociatedGateway> {
         self.associated_gateway.as_ref()
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
     pub fn allowed_prefixes_to_direct_connect_gateway(
         &self,
-    ) -> std::option::Option<&[crate::types::RouteFilterPrefix]> {
+    ) -> ::std::option::Option<&[crate::types::RouteFilterPrefix]> {
         self.allowed_prefixes_to_direct_connect_gateway.as_deref()
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> ::std::option::Option<&str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
-    pub fn virtual_gateway_region(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_region(&self) -> ::std::option::Option<&str> {
         self.virtual_gateway_region.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
-    pub fn virtual_gateway_owner_account(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_owner_account(&self) -> ::std::option::Option<&str> {
         self.virtual_gateway_owner_account.as_deref()
     }
 }
@@ -105,31 +106,36 @@ impl DirectConnectGatewayAssociation {
 
 /// A builder for [`DirectConnectGatewayAssociation`](crate::types::DirectConnectGatewayAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DirectConnectGatewayAssociationBuilder {
-    pub(crate) direct_connect_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) direct_connect_gateway_owner_account: std::option::Option<std::string::String>,
+    pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) direct_connect_gateway_owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) association_state:
-        std::option::Option<crate::types::DirectConnectGatewayAssociationState>,
-    pub(crate) state_change_error: std::option::Option<std::string::String>,
-    pub(crate) associated_gateway: std::option::Option<crate::types::AssociatedGateway>,
-    pub(crate) association_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::DirectConnectGatewayAssociationState>,
+    pub(crate) state_change_error: ::std::option::Option<::std::string::String>,
+    pub(crate) associated_gateway: ::std::option::Option<crate::types::AssociatedGateway>,
+    pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_prefixes_to_direct_connect_gateway:
-        std::option::Option<std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) virtual_gateway_region: std::option::Option<std::string::String>,
-    pub(crate) virtual_gateway_owner_account: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
+    pub(crate) virtual_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) virtual_gateway_region: ::std::option::Option<::std::string::String>,
+    pub(crate) virtual_gateway_owner_account: ::std::option::Option<::std::string::String>,
 }
 impl DirectConnectGatewayAssociationBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.direct_connect_gateway_id = Some(input.into());
+    pub fn direct_connect_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.direct_connect_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn set_direct_connect_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.direct_connect_gateway_id = input;
         self
@@ -137,15 +143,15 @@ impl DirectConnectGatewayAssociationBuilder {
     /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
     pub fn direct_connect_gateway_owner_account(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.direct_connect_gateway_owner_account = Some(input.into());
+        self.direct_connect_gateway_owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the associated gateway.</p>
     pub fn set_direct_connect_gateway_owner_account(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.direct_connect_gateway_owner_account = input;
         self
@@ -162,7 +168,7 @@ impl DirectConnectGatewayAssociationBuilder {
         mut self,
         input: crate::types::DirectConnectGatewayAssociationState,
     ) -> Self {
-        self.association_state = Some(input);
+        self.association_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the association. The following are the possible values:</p>
@@ -175,44 +181,53 @@ impl DirectConnectGatewayAssociationBuilder {
     /// </ul>
     pub fn set_association_state(
         mut self,
-        input: std::option::Option<crate::types::DirectConnectGatewayAssociationState>,
+        input: ::std::option::Option<crate::types::DirectConnectGatewayAssociationState>,
     ) -> Self {
         self.association_state = input;
         self
     }
     /// <p>The error message if the state of an object failed to advance.</p>
-    pub fn state_change_error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_change_error = Some(input.into());
+    pub fn state_change_error(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_change_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message if the state of an object failed to advance.</p>
     pub fn set_state_change_error(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.state_change_error = input;
         self
     }
     /// <p>Information about the associated gateway.</p>
     pub fn associated_gateway(mut self, input: crate::types::AssociatedGateway) -> Self {
-        self.associated_gateway = Some(input);
+        self.associated_gateway = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the associated gateway.</p>
     pub fn set_associated_gateway(
         mut self,
-        input: std::option::Option<crate::types::AssociatedGateway>,
+        input: ::std::option::Option<crate::types::AssociatedGateway>,
     ) -> Self {
         self.associated_gateway = input;
         self
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.association_id = Some(input.into());
+    pub fn association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_association_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.association_id = input;
         self
     }
@@ -229,52 +244,61 @@ impl DirectConnectGatewayAssociationBuilder {
             .allowed_prefixes_to_direct_connect_gateway
             .unwrap_or_default();
         v.push(input);
-        self.allowed_prefixes_to_direct_connect_gateway = Some(v);
+        self.allowed_prefixes_to_direct_connect_gateway = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
     pub fn set_allowed_prefixes_to_direct_connect_gateway(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RouteFilterPrefix>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
     ) -> Self {
         self.allowed_prefixes_to_direct_connect_gateway = input;
         self
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
-    pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_gateway_id = Some(input.into());
+    pub fn virtual_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub fn set_virtual_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_gateway_id = input;
         self
     }
     /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
-    pub fn virtual_gateway_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_gateway_region = Some(input.into());
+    pub fn virtual_gateway_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region where the virtual private gateway is located.</p>
     pub fn set_virtual_gateway_region(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_gateway_region = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
-    pub fn virtual_gateway_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_gateway_owner_account = Some(input.into());
+    pub fn virtual_gateway_owner_account(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway.</p>
     pub fn set_virtual_gateway_owner_account(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_gateway_owner_account = input;
         self

@@ -2,26 +2,28 @@
 
 /// <p>A function's environment variable settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionEnvironment {
     /// <p>Environment variable key-value pairs.</p>
     #[doc(hidden)]
-    pub variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
+    pub error: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
 }
 impl AwsLambdaFunctionEnvironment {
     /// <p>Environment variable key-value pairs.</p>
     pub fn variables(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.variables.as_ref()
     }
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::AwsLambdaFunctionEnvironmentError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::AwsLambdaFunctionEnvironmentError> {
         self.error.as_ref()
     }
 }
@@ -34,11 +36,14 @@ impl AwsLambdaFunctionEnvironment {
 
 /// A builder for [`AwsLambdaFunctionEnvironment`](crate::types::AwsLambdaFunctionEnvironment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsLambdaFunctionEnvironmentBuilder {
-    pub(crate) variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) error: std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
+    pub(crate) variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) error: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
 }
 impl AwsLambdaFunctionEnvironmentBuilder {
     /// Adds a key-value pair to `variables`.
@@ -48,19 +53,19 @@ impl AwsLambdaFunctionEnvironmentBuilder {
     /// <p>Environment variable key-value pairs.</p>
     pub fn variables(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.variables = Some(hash_map);
+        self.variables = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Environment variable key-value pairs.</p>
     pub fn set_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.variables = input;
@@ -68,13 +73,13 @@ impl AwsLambdaFunctionEnvironmentBuilder {
     }
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
     pub fn error(mut self, input: crate::types::AwsLambdaFunctionEnvironmentError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>AwsLambdaFunctionEnvironmentError</code> object.</p>
     pub fn set_error(
         mut self,
-        input: std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
+        input: ::std::option::Option<crate::types::AwsLambdaFunctionEnvironmentError>,
     ) -> Self {
         self.error = input;
         self

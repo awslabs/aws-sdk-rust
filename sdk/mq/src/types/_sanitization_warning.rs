@@ -2,29 +2,29 @@
 
 /// <p>Returns information about the XML element or attribute that was sanitized in the configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SanitizationWarning {
     /// <p>The name of the XML attribute that has been sanitized.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the XML element that has been sanitized.</p>
     #[doc(hidden)]
-    pub element_name: std::option::Option<std::string::String>,
+    pub element_name: ::std::option::Option<::std::string::String>,
     /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::SanitizationWarningReason>,
+    pub reason: ::std::option::Option<crate::types::SanitizationWarningReason>,
 }
 impl SanitizationWarning {
     /// <p>The name of the XML attribute that has been sanitized.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The name of the XML element that has been sanitized.</p>
-    pub fn element_name(&self) -> std::option::Option<&str> {
+    pub fn element_name(&self) -> ::std::option::Option<&str> {
         self.element_name.as_deref()
     }
     /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::SanitizationWarningReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::SanitizationWarningReason> {
         self.reason.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl SanitizationWarning {
 
 /// A builder for [`SanitizationWarning`](crate::types::SanitizationWarning).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SanitizationWarningBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) element_name: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::SanitizationWarningReason>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) element_name: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::SanitizationWarningReason>,
 }
 impl SanitizationWarningBuilder {
     /// <p>The name of the XML attribute that has been sanitized.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the XML attribute that has been sanitized.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The name of the XML element that has been sanitized.</p>
-    pub fn element_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.element_name = Some(input.into());
+    pub fn element_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.element_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the XML element that has been sanitized.</p>
-    pub fn set_element_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_element_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.element_name = input;
         self
     }
     /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
     pub fn reason(mut self, input: crate::types::SanitizationWarningReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>Required. The reason for which the XML elements or attributes were sanitized.</p>
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::SanitizationWarningReason>,
+        input: ::std::option::Option<crate::types::SanitizationWarningReason>,
     ) -> Self {
         self.reason = input;
         self

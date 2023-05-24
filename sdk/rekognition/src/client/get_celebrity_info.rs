@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCelebrityInfo`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::set_id): <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_celebrity_info::builders::GetCelebrityInfoFluentBuilder::set_id): <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
     /// - On success, responds with [`GetCelebrityInfoOutput`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput) with field(s):
     ///   - [`urls(Option<Vec<String>>)`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput::urls): <p>An array of URLs pointing to additional celebrity information. </p>
     ///   - [`name(Option<String>)`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput::name): <p>The name of the celebrity.</p>

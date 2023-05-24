@@ -2,29 +2,29 @@
 
 /// <p>Describes a server in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerShortInfoResponse {
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
-    pub server_id: std::option::Option<std::string::String>,
+    pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
-    pub ip_address: std::option::Option<std::string::String>,
+    pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
-    pub server_name: std::option::Option<std::string::String>,
+    pub server_name: ::std::option::Option<::std::string::String>,
 }
 impl ServerShortInfoResponse {
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ServerShortInfoResponse {
 
 /// A builder for [`ServerShortInfoResponse`](crate::types::ServerShortInfoResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerShortInfoResponseBuilder {
-    pub(crate) server_id: std::option::Option<std::string::String>,
-    pub(crate) ip_address: std::option::Option<std::string::String>,
-    pub(crate) server_name: std::option::Option<std::string::String>,
+    pub(crate) server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) server_name: ::std::option::Option<::std::string::String>,
 }
 impl ServerShortInfoResponseBuilder {
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
-    pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_id = Some(input.into());
+    pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a server in a Fleet Advisor collector inventory.</p>
-    pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
     }
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
-    pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_address = Some(input.into());
+    pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of a server in a Fleet Advisor collector inventory.</p>
-    pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
-    pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_name = Some(input.into());
+    pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name address of a server in a Fleet Advisor collector inventory.</p>
-    pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }

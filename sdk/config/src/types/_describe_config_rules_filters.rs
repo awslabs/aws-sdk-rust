@@ -2,15 +2,15 @@
 
 /// <p>Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html"> <b>Evaluation Mode</b> </a> in the Config Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigRulesFilters {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     #[doc(hidden)]
-    pub evaluation_mode: std::option::Option<crate::types::EvaluationMode>,
+    pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
 impl DescribeConfigRulesFilters {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    pub fn evaluation_mode(&self) -> std::option::Option<&crate::types::EvaluationMode> {
+    pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DescribeConfigRulesFilters {
 
 /// A builder for [`DescribeConfigRulesFilters`](crate::types::DescribeConfigRulesFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeConfigRulesFiltersBuilder {
-    pub(crate) evaluation_mode: std::option::Option<crate::types::EvaluationMode>,
+    pub(crate) evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
 impl DescribeConfigRulesFiltersBuilder {
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
-        self.evaluation_mode = Some(input);
+        self.evaluation_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn set_evaluation_mode(
         mut self,
-        input: std::option::Option<crate::types::EvaluationMode>,
+        input: ::std::option::Option<crate::types::EvaluationMode>,
     ) -> Self {
         self.evaluation_mode = input;
         self

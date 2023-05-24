@@ -2,29 +2,29 @@
 
 /// <p>Text config for Message Header.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessageHeaderConfig {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     #[doc(hidden)]
-    pub alignment: std::option::Option<crate::types::Alignment>,
+    pub alignment: ::std::option::Option<crate::types::Alignment>,
     /// <p>Message Header.</p>
     #[doc(hidden)]
-    pub header: std::option::Option<std::string::String>,
+    pub header: ::std::option::Option<::std::string::String>,
     /// <p>The text color.</p>
     #[doc(hidden)]
-    pub text_color: std::option::Option<std::string::String>,
+    pub text_color: ::std::option::Option<::std::string::String>,
 }
 impl InAppMessageHeaderConfig {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-    pub fn alignment(&self) -> std::option::Option<&crate::types::Alignment> {
+    pub fn alignment(&self) -> ::std::option::Option<&crate::types::Alignment> {
         self.alignment.as_ref()
     }
     /// <p>Message Header.</p>
-    pub fn header(&self) -> std::option::Option<&str> {
+    pub fn header(&self) -> ::std::option::Option<&str> {
         self.header.as_deref()
     }
     /// <p>The text color.</p>
-    pub fn text_color(&self) -> std::option::Option<&str> {
+    pub fn text_color(&self) -> ::std::option::Option<&str> {
         self.text_color.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl InAppMessageHeaderConfig {
 
 /// A builder for [`InAppMessageHeaderConfig`](crate::types::InAppMessageHeaderConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InAppMessageHeaderConfigBuilder {
-    pub(crate) alignment: std::option::Option<crate::types::Alignment>,
-    pub(crate) header: std::option::Option<std::string::String>,
-    pub(crate) text_color: std::option::Option<std::string::String>,
+    pub(crate) alignment: ::std::option::Option<crate::types::Alignment>,
+    pub(crate) header: ::std::option::Option<::std::string::String>,
+    pub(crate) text_color: ::std::option::Option<::std::string::String>,
 }
 impl InAppMessageHeaderConfigBuilder {
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
     pub fn alignment(mut self, input: crate::types::Alignment) -> Self {
-        self.alignment = Some(input);
+        self.alignment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
-    pub fn set_alignment(mut self, input: std::option::Option<crate::types::Alignment>) -> Self {
+    pub fn set_alignment(mut self, input: ::std::option::Option<crate::types::Alignment>) -> Self {
         self.alignment = input;
         self
     }
     /// <p>Message Header.</p>
-    pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header = Some(input.into());
+    pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Message Header.</p>
-    pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header = input;
         self
     }
     /// <p>The text color.</p>
-    pub fn text_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text_color = Some(input.into());
+    pub fn text_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text color.</p>
-    pub fn set_text_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text_color = input;
         self
     }

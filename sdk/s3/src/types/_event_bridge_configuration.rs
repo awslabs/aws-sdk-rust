@@ -2,7 +2,7 @@
 
 /// <p>A container for specifying the configuration for Amazon EventBridge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBridgeConfiguration {}
 impl EventBridgeConfiguration {
     /// Creates a new builder-style object to manufacture [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).
@@ -13,7 +13,9 @@ impl EventBridgeConfiguration {
 
 /// A builder for [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventBridgeConfigurationBuilder {}
 impl EventBridgeConfigurationBuilder {
     /// Consumes the builder and constructs a [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).

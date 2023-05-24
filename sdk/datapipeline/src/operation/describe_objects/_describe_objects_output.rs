@@ -2,14 +2,14 @@
 
 /// <p>Contains the output of DescribeObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
     #[doc(hidden)]
-    pub pipeline_objects: std::option::Option<std::vec::Vec<crate::types::PipelineObject>>,
+    pub pipeline_objects: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether there are more results to return.</p>
     #[doc(hidden)]
     pub has_more_results: bool,
@@ -17,11 +17,11 @@ pub struct DescribeObjectsOutput {
 }
 impl DescribeObjectsOutput {
     /// <p>An array of object definitions.</p>
-    pub fn pipeline_objects(&self) -> std::option::Option<&[crate::types::PipelineObject]> {
+    pub fn pipeline_objects(&self) -> ::std::option::Option<&[crate::types::PipelineObject]> {
         self.pipeline_objects.as_deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Indicates whether there are more results to return.</p>
@@ -29,7 +29,7 @@ impl DescribeObjectsOutput {
         self.has_more_results
     }
 }
-impl aws_http::request_id::RequestId for DescribeObjectsOutput {
+impl ::aws_http::request_id::RequestId for DescribeObjectsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,11 +43,14 @@ impl DescribeObjectsOutput {
 
 /// A builder for [`DescribeObjectsOutput`](crate::operation::describe_objects::DescribeObjectsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeObjectsOutputBuilder {
-    pub(crate) pipeline_objects: std::option::Option<std::vec::Vec<crate::types::PipelineObject>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) has_more_results: std::option::Option<bool>,
+    pub(crate) pipeline_objects:
+        ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) has_more_results: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeObjectsOutputBuilder {
@@ -59,34 +62,34 @@ impl DescribeObjectsOutputBuilder {
     pub fn pipeline_objects(mut self, input: crate::types::PipelineObject) -> Self {
         let mut v = self.pipeline_objects.unwrap_or_default();
         v.push(input);
-        self.pipeline_objects = Some(v);
+        self.pipeline_objects = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of object definitions.</p>
     pub fn set_pipeline_objects(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PipelineObject>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     ) -> Self {
         self.pipeline_objects = input;
         self
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>Indicates whether there are more results to return.</p>
     pub fn has_more_results(mut self, input: bool) -> Self {
-        self.has_more_results = Some(input);
+        self.has_more_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether there are more results to return.</p>
-    pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_more_results(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_results = input;
         self
     }

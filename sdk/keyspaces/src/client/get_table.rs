@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTable`](crate::operation::get_table::builders::GetTableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::operation::get_table::builders::GetTableFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::get_table::builders::GetTableFluentBuilder::set_keyspace_name): <p>The name of the keyspace that the table is stored in.</p>
-    ///   - [`table_name(impl Into<String>)`](crate::operation::get_table::builders::GetTableFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::get_table::builders::GetTableFluentBuilder::set_table_name): <p>The name of the table.</p>
+    ///   - [`keyspace_name(impl ::std::convert::Into<String>)`](crate::operation::get_table::builders::GetTableFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::get_table::builders::GetTableFluentBuilder::set_keyspace_name): <p>The name of the keyspace that the table is stored in.</p>
+    ///   - [`table_name(impl ::std::convert::Into<String>)`](crate::operation::get_table::builders::GetTableFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::get_table::builders::GetTableFluentBuilder::set_table_name): <p>The name of the table.</p>
     /// - On success, responds with [`GetTableOutput`](crate::operation::get_table::GetTableOutput) with field(s):
     ///   - [`keyspace_name(Option<String>)`](crate::operation::get_table::GetTableOutput::keyspace_name): <p>The name of the keyspace that the specified table is stored in.</p>
     ///   - [`table_name(Option<String>)`](crate::operation::get_table::GetTableOutput::table_name): <p>The name of the specified table.</p>

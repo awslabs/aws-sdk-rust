@@ -2,11 +2,11 @@
 
 /// <p>Contains information about the domain names that you want ACM to use to send you emails that enable you to validate domain ownership.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainValidationOption {
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
     /// <ul>
     /// <li> <p>admin@example.com</p> </li>
@@ -16,11 +16,11 @@ pub struct DomainValidationOption {
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub validation_domain: std::option::Option<std::string::String>,
+    pub validation_domain: ::std::option::Option<::std::string::String>,
 }
 impl DomainValidationOption {
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
@@ -31,7 +31,7 @@ impl DomainValidationOption {
     /// <li> <p>postmaster@example.com</p> </li>
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
-    pub fn validation_domain(&self) -> std::option::Option<&str> {
+    pub fn validation_domain(&self) -> ::std::option::Option<&str> {
         self.validation_domain.as_deref()
     }
 }
@@ -44,19 +44,21 @@ impl DomainValidationOption {
 
 /// A builder for [`DomainValidationOption`](crate::types::DomainValidationOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainValidationOptionBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) validation_domain: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) validation_domain: ::std::option::Option<::std::string::String>,
 }
 impl DomainValidationOptionBuilder {
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
@@ -68,8 +70,11 @@ impl DomainValidationOptionBuilder {
     /// <li> <p>postmaster@example.com</p> </li>
     /// <li> <p>webmaster@example.com</p> </li>
     /// </ul>
-    pub fn validation_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.validation_domain = Some(input.into());
+    pub fn validation_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.validation_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p>
@@ -82,7 +87,7 @@ impl DomainValidationOptionBuilder {
     /// </ul>
     pub fn set_validation_domain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.validation_domain = input;
         self

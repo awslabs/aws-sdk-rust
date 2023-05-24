@@ -2,41 +2,41 @@
 
 /// <p>This is a RasterDataCollectionQueryInput containing AreaOfInterest, Time Range filter and Property filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RasterDataCollectionQueryWithBandFilterInput {
     /// <p>The TimeRange Filter used in the search query.</p>
     #[doc(hidden)]
-    pub time_range_filter: std::option::Option<crate::types::TimeRangeFilterInput>,
+    pub time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterInput>,
     /// <p>The Area of interest to be used in the search query.</p>
     #[doc(hidden)]
-    pub area_of_interest: std::option::Option<crate::types::AreaOfInterest>,
+    pub area_of_interest: ::std::option::Option<crate::types::AreaOfInterest>,
     /// <p>The Property Filters used in the search query.</p>
     #[doc(hidden)]
-    pub property_filters: std::option::Option<crate::types::PropertyFilters>,
+    pub property_filters: ::std::option::Option<crate::types::PropertyFilters>,
     /// <p>The list of Bands to be displayed in the result for each item.</p>
     #[doc(hidden)]
-    pub band_filter: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub band_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RasterDataCollectionQueryWithBandFilterInput {
     /// <p>The TimeRange Filter used in the search query.</p>
-    pub fn time_range_filter(&self) -> std::option::Option<&crate::types::TimeRangeFilterInput> {
+    pub fn time_range_filter(&self) -> ::std::option::Option<&crate::types::TimeRangeFilterInput> {
         self.time_range_filter.as_ref()
     }
     /// <p>The Area of interest to be used in the search query.</p>
-    pub fn area_of_interest(&self) -> std::option::Option<&crate::types::AreaOfInterest> {
+    pub fn area_of_interest(&self) -> ::std::option::Option<&crate::types::AreaOfInterest> {
         self.area_of_interest.as_ref()
     }
     /// <p>The Property Filters used in the search query.</p>
-    pub fn property_filters(&self) -> std::option::Option<&crate::types::PropertyFilters> {
+    pub fn property_filters(&self) -> ::std::option::Option<&crate::types::PropertyFilters> {
         self.property_filters.as_ref()
     }
     /// <p>The list of Bands to be displayed in the result for each item.</p>
-    pub fn band_filter(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn band_filter(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.band_filter.as_deref()
     }
 }
-impl std::fmt::Debug for RasterDataCollectionQueryWithBandFilterInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RasterDataCollectionQueryWithBandFilterInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RasterDataCollectionQueryWithBandFilterInput");
         formatter.field("time_range_filter", &"*** Sensitive Data Redacted ***");
         formatter.field("area_of_interest", &self.area_of_interest);
@@ -55,49 +55,49 @@ impl RasterDataCollectionQueryWithBandFilterInput {
 
 /// A builder for [`RasterDataCollectionQueryWithBandFilterInput`](crate::types::RasterDataCollectionQueryWithBandFilterInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RasterDataCollectionQueryWithBandFilterInputBuilder {
-    pub(crate) time_range_filter: std::option::Option<crate::types::TimeRangeFilterInput>,
-    pub(crate) area_of_interest: std::option::Option<crate::types::AreaOfInterest>,
-    pub(crate) property_filters: std::option::Option<crate::types::PropertyFilters>,
-    pub(crate) band_filter: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) time_range_filter: ::std::option::Option<crate::types::TimeRangeFilterInput>,
+    pub(crate) area_of_interest: ::std::option::Option<crate::types::AreaOfInterest>,
+    pub(crate) property_filters: ::std::option::Option<crate::types::PropertyFilters>,
+    pub(crate) band_filter: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RasterDataCollectionQueryWithBandFilterInputBuilder {
     /// <p>The TimeRange Filter used in the search query.</p>
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeFilterInput) -> Self {
-        self.time_range_filter = Some(input);
+        self.time_range_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The TimeRange Filter used in the search query.</p>
     pub fn set_time_range_filter(
         mut self,
-        input: std::option::Option<crate::types::TimeRangeFilterInput>,
+        input: ::std::option::Option<crate::types::TimeRangeFilterInput>,
     ) -> Self {
         self.time_range_filter = input;
         self
     }
     /// <p>The Area of interest to be used in the search query.</p>
     pub fn area_of_interest(mut self, input: crate::types::AreaOfInterest) -> Self {
-        self.area_of_interest = Some(input);
+        self.area_of_interest = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Area of interest to be used in the search query.</p>
     pub fn set_area_of_interest(
         mut self,
-        input: std::option::Option<crate::types::AreaOfInterest>,
+        input: ::std::option::Option<crate::types::AreaOfInterest>,
     ) -> Self {
         self.area_of_interest = input;
         self
     }
     /// <p>The Property Filters used in the search query.</p>
     pub fn property_filters(mut self, input: crate::types::PropertyFilters) -> Self {
-        self.property_filters = Some(input);
+        self.property_filters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Property Filters used in the search query.</p>
     pub fn set_property_filters(
         mut self,
-        input: std::option::Option<crate::types::PropertyFilters>,
+        input: ::std::option::Option<crate::types::PropertyFilters>,
     ) -> Self {
         self.property_filters = input;
         self
@@ -107,16 +107,16 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
     /// To override the contents of this collection use [`set_band_filter`](Self::set_band_filter).
     ///
     /// <p>The list of Bands to be displayed in the result for each item.</p>
-    pub fn band_filter(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn band_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.band_filter.unwrap_or_default();
         v.push(input.into());
-        self.band_filter = Some(v);
+        self.band_filter = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of Bands to be displayed in the result for each item.</p>
     pub fn set_band_filter(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.band_filter = input;
         self
@@ -131,8 +131,8 @@ impl RasterDataCollectionQueryWithBandFilterInputBuilder {
         }
     }
 }
-impl std::fmt::Debug for RasterDataCollectionQueryWithBandFilterInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RasterDataCollectionQueryWithBandFilterInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RasterDataCollectionQueryWithBandFilterInputBuilder");
         formatter.field("time_range_filter", &"*** Sensitive Data Redacted ***");
         formatter.field("area_of_interest", &self.area_of_interest);

@@ -2,22 +2,22 @@
 
 /// <p>A type of analysis rule that enables row-level analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRuleList {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and another members' configured tables.</p>
     #[doc(hidden)]
-    pub join_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Columns that can be listed in the output.</p>
     #[doc(hidden)]
-    pub list_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub list_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnalysisRuleList {
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and another members' configured tables.</p>
-    pub fn join_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn join_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.join_columns.as_deref()
     }
     /// <p>Columns that can be listed in the output.</p>
-    pub fn list_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn list_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.list_columns.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl AnalysisRuleList {
 
 /// A builder for [`AnalysisRuleList`](crate::types::AnalysisRuleList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnalysisRuleListBuilder {
-    pub(crate) join_columns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) list_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) join_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) list_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AnalysisRuleListBuilder {
     /// Appends an item to `join_columns`.
@@ -41,16 +43,16 @@ impl AnalysisRuleListBuilder {
     /// To override the contents of this collection use [`set_join_columns`](Self::set_join_columns).
     ///
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and another members' configured tables.</p>
-    pub fn join_columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn join_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.join_columns.unwrap_or_default();
         v.push(input.into());
-        self.join_columns = Some(v);
+        self.join_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Columns that can be used to join a configured table with the table of the member who can query and another members' configured tables.</p>
     pub fn set_join_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.join_columns = input;
         self
@@ -60,16 +62,16 @@ impl AnalysisRuleListBuilder {
     /// To override the contents of this collection use [`set_list_columns`](Self::set_list_columns).
     ///
     /// <p>Columns that can be listed in the output.</p>
-    pub fn list_columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn list_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.list_columns.unwrap_or_default();
         v.push(input.into());
-        self.list_columns = Some(v);
+        self.list_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Columns that can be listed in the output.</p>
     pub fn set_list_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.list_columns = input;
         self

@@ -2,29 +2,29 @@
 
 /// Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BulkDeployment {
     /// The ARN of the bulk deployment.
     #[doc(hidden)]
-    pub bulk_deployment_arn: std::option::Option<std::string::String>,
+    pub bulk_deployment_arn: ::std::option::Option<::std::string::String>,
     /// The ID of the bulk deployment.
     #[doc(hidden)]
-    pub bulk_deployment_id: std::option::Option<std::string::String>,
+    pub bulk_deployment_id: ::std::option::Option<::std::string::String>,
     /// The time, in ISO format, when the deployment was created.
     #[doc(hidden)]
-    pub created_at: std::option::Option<std::string::String>,
+    pub created_at: ::std::option::Option<::std::string::String>,
 }
 impl BulkDeployment {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(&self) -> std::option::Option<&str> {
+    pub fn bulk_deployment_arn(&self) -> ::std::option::Option<&str> {
         self.bulk_deployment_arn.as_deref()
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(&self) -> std::option::Option<&str> {
+    pub fn bulk_deployment_id(&self) -> ::std::option::Option<&str> {
         self.bulk_deployment_id.as_deref()
     }
     /// The time, in ISO format, when the deployment was created.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<&str> {
         self.created_at.as_deref()
     }
 }
@@ -37,46 +37,54 @@ impl BulkDeployment {
 
 /// A builder for [`BulkDeployment`](crate::types::BulkDeployment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BulkDeploymentBuilder {
-    pub(crate) bulk_deployment_arn: std::option::Option<std::string::String>,
-    pub(crate) bulk_deployment_id: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<std::string::String>,
+    pub(crate) bulk_deployment_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) bulk_deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::std::string::String>,
 }
 impl BulkDeploymentBuilder {
     /// The ARN of the bulk deployment.
-    pub fn bulk_deployment_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bulk_deployment_arn = Some(input.into());
+    pub fn bulk_deployment_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bulk_deployment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the bulk deployment.
     pub fn set_bulk_deployment_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.bulk_deployment_arn = input;
         self
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bulk_deployment_id = Some(input.into());
+    pub fn bulk_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bulk_deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the bulk deployment.
     pub fn set_bulk_deployment_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.bulk_deployment_id = input;
         self
     }
     /// The time, in ISO format, when the deployment was created.
-    pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_at = Some(input.into());
+    pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_at = ::std::option::Option::Some(input.into());
         self
     }
     /// The time, in ISO format, when the deployment was created.
-    pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
     }

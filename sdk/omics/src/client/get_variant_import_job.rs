@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVariantImportJob`](crate::operation::get_variant_import_job::builders::GetVariantImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_variant_import_job::builders::GetVariantImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_variant_import_job::builders::GetVariantImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::get_variant_import_job::builders::GetVariantImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_variant_import_job::builders::GetVariantImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
     /// - On success, responds with [`GetVariantImportJobOutput`](crate::operation::get_variant_import_job::GetVariantImportJobOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_variant_import_job::GetVariantImportJobOutput::id): <p>The job's ID.</p>
     ///   - [`destination_name(Option<String>)`](crate::operation::get_variant_import_job::GetVariantImportJobOutput::destination_name): <p>The job's destination variant store.</p>

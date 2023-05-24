@@ -2,43 +2,43 @@
 
 /// <p>This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSummary {
     /// <p>The type of the change.</p>
     #[doc(hidden)]
-    pub change_type: std::option::Option<std::string::String>,
+    pub change_type: ::std::option::Option<::std::string::String>,
     /// <p>The entity to be changed.</p>
     #[doc(hidden)]
-    pub entity: std::option::Option<crate::types::Entity>,
+    pub entity: ::std::option::Option<crate::types::Entity>,
     /// <p>This object contains details specific to the change type of the requested change.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::string::String>,
+    pub details: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
     #[doc(hidden)]
-    pub error_detail_list: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
+    pub error_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// <p>Optional name for the change.</p>
     #[doc(hidden)]
-    pub change_name: std::option::Option<std::string::String>,
+    pub change_name: ::std::option::Option<::std::string::String>,
 }
 impl ChangeSummary {
     /// <p>The type of the change.</p>
-    pub fn change_type(&self) -> std::option::Option<&str> {
+    pub fn change_type(&self) -> ::std::option::Option<&str> {
         self.change_type.as_deref()
     }
     /// <p>The entity to be changed.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::types::Entity> {
+    pub fn entity(&self) -> ::std::option::Option<&crate::types::Entity> {
         self.entity.as_ref()
     }
     /// <p>This object contains details specific to the change type of the requested change.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
-    pub fn error_detail_list(&self) -> std::option::Option<&[crate::types::ErrorDetail]> {
+    pub fn error_detail_list(&self) -> ::std::option::Option<&[crate::types::ErrorDetail]> {
         self.error_detail_list.as_deref()
     }
     /// <p>Optional name for the change.</p>
-    pub fn change_name(&self) -> std::option::Option<&str> {
+    pub fn change_name(&self) -> ::std::option::Option<&str> {
         self.change_name.as_deref()
     }
 }
@@ -51,42 +51,44 @@ impl ChangeSummary {
 
 /// A builder for [`ChangeSummary`](crate::types::ChangeSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeSummaryBuilder {
-    pub(crate) change_type: std::option::Option<std::string::String>,
-    pub(crate) entity: std::option::Option<crate::types::Entity>,
-    pub(crate) details: std::option::Option<std::string::String>,
-    pub(crate) error_detail_list: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
-    pub(crate) change_name: std::option::Option<std::string::String>,
+    pub(crate) change_type: ::std::option::Option<::std::string::String>,
+    pub(crate) entity: ::std::option::Option<crate::types::Entity>,
+    pub(crate) details: ::std::option::Option<::std::string::String>,
+    pub(crate) error_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
+    pub(crate) change_name: ::std::option::Option<::std::string::String>,
 }
 impl ChangeSummaryBuilder {
     /// <p>The type of the change.</p>
-    pub fn change_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_type = Some(input.into());
+    pub fn change_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.change_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the change.</p>
-    pub fn set_change_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_type = input;
         self
     }
     /// <p>The entity to be changed.</p>
     pub fn entity(mut self, input: crate::types::Entity) -> Self {
-        self.entity = Some(input);
+        self.entity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The entity to be changed.</p>
-    pub fn set_entity(mut self, input: std::option::Option<crate::types::Entity>) -> Self {
+    pub fn set_entity(mut self, input: ::std::option::Option<crate::types::Entity>) -> Self {
         self.entity = input;
         self
     }
     /// <p>This object contains details specific to the change type of the requested change.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.details = Some(input.into());
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This object contains details specific to the change type of the requested change.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
     }
@@ -98,24 +100,24 @@ impl ChangeSummaryBuilder {
     pub fn error_detail_list(mut self, input: crate::types::ErrorDetail) -> Self {
         let mut v = self.error_detail_list.unwrap_or_default();
         v.push(input);
-        self.error_detail_list = Some(v);
+        self.error_detail_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
     pub fn set_error_detail_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     ) -> Self {
         self.error_detail_list = input;
         self
     }
     /// <p>Optional name for the change.</p>
-    pub fn change_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_name = Some(input.into());
+    pub fn change_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.change_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional name for the change.</p>
-    pub fn set_change_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_name = input;
         self
     }

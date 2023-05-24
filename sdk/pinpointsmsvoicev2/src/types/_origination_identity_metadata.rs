@@ -2,36 +2,36 @@
 
 /// <p>The metadata for an origination identity associated with a pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginationIdentityMetadata {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
     #[doc(hidden)]
-    pub origination_identity_arn: std::option::Option<std::string::String>,
+    pub origination_identity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the origination identity.</p>
     #[doc(hidden)]
-    pub origination_identity: std::option::Option<std::string::String>,
+    pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     #[doc(hidden)]
-    pub iso_country_code: std::option::Option<std::string::String>,
+    pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
     #[doc(hidden)]
-    pub number_capabilities: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+    pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
 }
 impl OriginationIdentityMetadata {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-    pub fn origination_identity_arn(&self) -> std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> ::std::option::Option<&str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The unique identifier of the origination identity.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
         self.origination_identity.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
-    pub fn number_capabilities(&self) -> std::option::Option<&[crate::types::NumberCapability]> {
+    pub fn number_capabilities(&self) -> ::std::option::Option<&[crate::types::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
 }
@@ -44,48 +44,62 @@ impl OriginationIdentityMetadata {
 
 /// A builder for [`OriginationIdentityMetadata`](crate::types::OriginationIdentityMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginationIdentityMetadataBuilder {
-    pub(crate) origination_identity_arn: std::option::Option<std::string::String>,
-    pub(crate) origination_identity: std::option::Option<std::string::String>,
-    pub(crate) iso_country_code: std::option::Option<std::string::String>,
+    pub(crate) origination_identity_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) origination_identity: ::std::option::Option<::std::string::String>,
+    pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
     pub(crate) number_capabilities:
-        std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
 }
 impl OriginationIdentityMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
-    pub fn origination_identity_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.origination_identity_arn = Some(input.into());
+    pub fn origination_identity_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.origination_identity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) associated with the origination identity.</p>
     pub fn set_origination_identity_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.origination_identity_arn = input;
         self
     }
     /// <p>The unique identifier of the origination identity.</p>
-    pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.origination_identity = Some(input.into());
+    pub fn origination_identity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.origination_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the origination identity.</p>
     pub fn set_origination_identity(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.origination_identity = input;
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iso_country_code = Some(input.into());
+    pub fn iso_country_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iso_country_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.iso_country_code = input;
         self
     }
@@ -97,13 +111,13 @@ impl OriginationIdentityMetadataBuilder {
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         let mut v = self.number_capabilities.unwrap_or_default();
         v.push(input);
-        self.number_capabilities = Some(v);
+        self.number_capabilities = ::std::option::Option::Some(v);
         self
     }
     /// <p>Describes if the origination identity can be used for text messages, voice calls or both.</p>
     pub fn set_number_capabilities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     ) -> Self {
         self.number_capabilities = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlexibleTimeWindow {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::FlexibleTimeWindowMode>,
+    pub mode: ::std::option::Option<crate::types::FlexibleTimeWindowMode>,
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     #[doc(hidden)]
-    pub maximum_window_in_minutes: std::option::Option<i32>,
+    pub maximum_window_in_minutes: ::std::option::Option<i32>,
 }
 impl FlexibleTimeWindow {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::FlexibleTimeWindowMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::FlexibleTimeWindowMode> {
         self.mode.as_ref()
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
-    pub fn maximum_window_in_minutes(&self) -> std::option::Option<i32> {
+    pub fn maximum_window_in_minutes(&self) -> ::std::option::Option<i32> {
         self.maximum_window_in_minutes
     }
 }
@@ -30,32 +30,34 @@ impl FlexibleTimeWindow {
 
 /// A builder for [`FlexibleTimeWindow`](crate::types::FlexibleTimeWindow).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FlexibleTimeWindowBuilder {
-    pub(crate) mode: std::option::Option<crate::types::FlexibleTimeWindowMode>,
-    pub(crate) maximum_window_in_minutes: std::option::Option<i32>,
+    pub(crate) mode: ::std::option::Option<crate::types::FlexibleTimeWindowMode>,
+    pub(crate) maximum_window_in_minutes: ::std::option::Option<i32>,
 }
 impl FlexibleTimeWindowBuilder {
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
     pub fn mode(mut self, input: crate::types::FlexibleTimeWindowMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether the schedule is invoked within a flexible time window.</p>
     pub fn set_mode(
         mut self,
-        input: std::option::Option<crate::types::FlexibleTimeWindowMode>,
+        input: ::std::option::Option<crate::types::FlexibleTimeWindowMode>,
     ) -> Self {
         self.mode = input;
         self
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
     pub fn maximum_window_in_minutes(mut self, input: i32) -> Self {
-        self.maximum_window_in_minutes = Some(input);
+        self.maximum_window_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum time window during which a schedule can be invoked.</p>
-    pub fn set_maximum_window_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_window_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_window_in_minutes = input;
         self
     }

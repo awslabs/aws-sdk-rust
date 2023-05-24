@@ -2,36 +2,36 @@
 
 /// <p>A response that contains the results of a finding aggregation by AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmiAggregationResponse {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
     #[doc(hidden)]
-    pub ami: std::option::Option<std::string::String>,
+    pub ami: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID for the AMI.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
     #[doc(hidden)]
-    pub severity_counts: std::option::Option<crate::types::SeverityCounts>,
+    pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
     #[doc(hidden)]
-    pub affected_instances: std::option::Option<i64>,
+    pub affected_instances: ::std::option::Option<i64>,
 }
 impl AmiAggregationResponse {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
-    pub fn ami(&self) -> std::option::Option<&str> {
+    pub fn ami(&self) -> ::std::option::Option<&str> {
         self.ami.as_deref()
     }
     /// <p>The Amazon Web Services account ID for the AMI.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
-    pub fn affected_instances(&self) -> std::option::Option<i64> {
+    pub fn affected_instances(&self) -> ::std::option::Option<i64> {
         self.affected_instances
     }
 }
@@ -44,54 +44,56 @@ impl AmiAggregationResponse {
 
 /// A builder for [`AmiAggregationResponse`](crate::types::AmiAggregationResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AmiAggregationResponseBuilder {
-    pub(crate) ami: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) severity_counts: std::option::Option<crate::types::SeverityCounts>,
-    pub(crate) affected_instances: std::option::Option<i64>,
+    pub(crate) ami: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
+    pub(crate) affected_instances: ::std::option::Option<i64>,
 }
 impl AmiAggregationResponseBuilder {
     /// <p>The ID of the AMI that findings were aggregated for.</p>
-    pub fn ami(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ami = Some(input.into());
+    pub fn ami(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ami = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AMI that findings were aggregated for.</p>
-    pub fn set_ami(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ami(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami = input;
         self
     }
     /// <p>The Amazon Web Services account ID for the AMI.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID for the AMI.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
-        self.severity_counts = Some(input);
+        self.severity_counts = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn set_severity_counts(
         mut self,
-        input: std::option::Option<crate::types::SeverityCounts>,
+        input: ::std::option::Option<crate::types::SeverityCounts>,
     ) -> Self {
         self.severity_counts = input;
         self
     }
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
     pub fn affected_instances(mut self, input: i64) -> Self {
-        self.affected_instances = Some(input);
+        self.affected_instances = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IDs of Amazon EC2 instances using this AMI.</p>
-    pub fn set_affected_instances(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_affected_instances(mut self, input: ::std::option::Option<i64>) -> Self {
         self.affected_instances = input;
         self
     }

@@ -2,11 +2,11 @@
 
 /// <p>The output for the <code>DeleteChangeSet</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChangeSetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteChangeSetOutput {
+impl ::aws_http::request_id::RequestId for DeleteChangeSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteChangeSetOutput {
 
 /// A builder for [`DeleteChangeSetOutput`](crate::operation::delete_change_set::DeleteChangeSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteChangeSetOutputBuilder {
     _request_id: Option<String>,
 }

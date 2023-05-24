@@ -4,67 +4,67 @@
 /// <p>To specify a cross-Region copy action for event-based polices, use <code>CrossRegionCopyAction</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossRegionCopyRule {
     /// <note>
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
     /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     /// </note>
     #[doc(hidden)]
-    pub target_region: std::option::Option<std::string::String>,
+    pub target_region: ::std::option::Option<::std::string::String>,
     /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
     /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<std::string::String>,
+    pub target: ::std::option::Option<::std::string::String>,
     /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
     #[doc(hidden)]
-    pub encrypted: std::option::Option<bool>,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
     #[doc(hidden)]
-    pub cmk_arn: std::option::Option<std::string::String>,
+    pub cmk_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.</p>
     #[doc(hidden)]
-    pub copy_tags: std::option::Option<bool>,
+    pub copy_tags: ::std::option::Option<bool>,
     /// <p>The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the destination Region.</p>
     #[doc(hidden)]
-    pub retain_rule: std::option::Option<crate::types::CrossRegionCopyRetainRule>,
+    pub retain_rule: ::std::option::Option<crate::types::CrossRegionCopyRetainRule>,
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
     #[doc(hidden)]
-    pub deprecate_rule: std::option::Option<crate::types::CrossRegionCopyDeprecateRule>,
+    pub deprecate_rule: ::std::option::Option<crate::types::CrossRegionCopyDeprecateRule>,
 }
 impl CrossRegionCopyRule {
     /// <note>
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
     /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     /// </note>
-    pub fn target_region(&self) -> std::option::Option<&str> {
+    pub fn target_region(&self) -> ::std::option::Option<&str> {
         self.target_region.as_deref()
     }
     /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
     /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
     /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
-    pub fn encrypted(&self) -> std::option::Option<bool> {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
-    pub fn cmk_arn(&self) -> std::option::Option<&str> {
+    pub fn cmk_arn(&self) -> ::std::option::Option<&str> {
         self.cmk_arn.as_deref()
     }
     /// <p>Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.</p>
-    pub fn copy_tags(&self) -> std::option::Option<bool> {
+    pub fn copy_tags(&self) -> ::std::option::Option<bool> {
         self.copy_tags
     }
     /// <p>The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the destination Region.</p>
-    pub fn retain_rule(&self) -> std::option::Option<&crate::types::CrossRegionCopyRetainRule> {
+    pub fn retain_rule(&self) -> ::std::option::Option<&crate::types::CrossRegionCopyRetainRule> {
         self.retain_rule.as_ref()
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
     pub fn deprecate_rule(
         &self,
-    ) -> std::option::Option<&crate::types::CrossRegionCopyDeprecateRule> {
+    ) -> ::std::option::Option<&crate::types::CrossRegionCopyDeprecateRule> {
         self.deprecate_rule.as_ref()
     }
 }
@@ -77,97 +77,105 @@ impl CrossRegionCopyRule {
 
 /// A builder for [`CrossRegionCopyRule`](crate::types::CrossRegionCopyRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CrossRegionCopyRuleBuilder {
-    pub(crate) target_region: std::option::Option<std::string::String>,
-    pub(crate) target: std::option::Option<std::string::String>,
-    pub(crate) encrypted: std::option::Option<bool>,
-    pub(crate) cmk_arn: std::option::Option<std::string::String>,
-    pub(crate) copy_tags: std::option::Option<bool>,
-    pub(crate) retain_rule: std::option::Option<crate::types::CrossRegionCopyRetainRule>,
-    pub(crate) deprecate_rule: std::option::Option<crate::types::CrossRegionCopyDeprecateRule>,
+    pub(crate) target_region: ::std::option::Option<::std::string::String>,
+    pub(crate) target: ::std::option::Option<::std::string::String>,
+    pub(crate) encrypted: ::std::option::Option<bool>,
+    pub(crate) cmk_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) copy_tags: ::std::option::Option<bool>,
+    pub(crate) retain_rule: ::std::option::Option<crate::types::CrossRegionCopyRetainRule>,
+    pub(crate) deprecate_rule: ::std::option::Option<crate::types::CrossRegionCopyDeprecateRule>,
 }
 impl CrossRegionCopyRuleBuilder {
     /// <note>
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
     /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     /// </note>
-    pub fn target_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_region = Some(input.into());
+    pub fn target_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <note>
     /// <p>Avoid using this parameter when creating new policies. Instead, use <b>Target</b> to specify a target Region or a target Outpost for snapshot copies.</p>
     /// <p>For policies created before the <b>Target</b> parameter was introduced, this parameter indicates the target Region for snapshot copies.</p>
     /// </note>
-    pub fn set_target_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_region(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_region = input;
         self
     }
     /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
     /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
-    pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target = Some(input.into());
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target Region or the Amazon Resource Name (ARN) of the target Outpost for the snapshot copies.</p>
     /// <p>Use this parameter instead of <b>TargetRegion</b>. Do not specify both.</p>
-    pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
     /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
-        self.encrypted = Some(input);
+        self.encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Copies of encrypted snapshots are encrypted, even if this parameter is false or if encryption by default is not enabled.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
-    pub fn cmk_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cmk_arn = Some(input.into());
+    pub fn cmk_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cmk_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use for EBS encryption. If this parameter is not specified, the default KMS key for the account is used.</p>
-    pub fn set_cmk_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cmk_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cmk_arn = input;
         self
     }
     /// <p>Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
-        self.copy_tags = Some(input);
+        self.copy_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to copy all user-defined tags from the source snapshot or AMI to the cross-Region copy.</p>
-    pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_copy_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags = input;
         self
     }
     /// <p>The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the destination Region.</p>
     pub fn retain_rule(mut self, input: crate::types::CrossRegionCopyRetainRule) -> Self {
-        self.retain_rule = Some(input);
+        self.retain_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The retention rule that indicates how long the cross-Region snapshot or AMI copies are to be retained in the destination Region.</p>
     pub fn set_retain_rule(
         mut self,
-        input: std::option::Option<crate::types::CrossRegionCopyRetainRule>,
+        input: ::std::option::Option<crate::types::CrossRegionCopyRetainRule>,
     ) -> Self {
         self.retain_rule = input;
         self
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
     pub fn deprecate_rule(mut self, input: crate::types::CrossRegionCopyDeprecateRule) -> Self {
-        self.deprecate_rule = Some(input);
+        self.deprecate_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p> <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.</p>
     pub fn set_deprecate_rule(
         mut self,
-        input: std::option::Option<crate::types::CrossRegionCopyDeprecateRule>,
+        input: ::std::option::Option<crate::types::CrossRegionCopyDeprecateRule>,
     ) -> Self {
         self.deprecate_rule = input;
         self

@@ -2,28 +2,28 @@
 
 /// <p>Provides information that you can use to highlight a search result so that your users can quickly identify terms in the response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Highlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
     #[doc(hidden)]
     pub top_answer: bool,
     /// <p>The highlight type. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::HighlightType>,
+    pub r#type: ::std::option::Option<crate::types::HighlightType>,
 }
 impl Highlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
@@ -31,7 +31,7 @@ impl Highlight {
         self.top_answer
     }
     /// <p>The highlight type. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::HighlightType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HighlightType> {
         self.r#type.as_ref()
     }
 }
@@ -44,51 +44,53 @@ impl Highlight {
 
 /// A builder for [`Highlight`](crate::types::Highlight).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HighlightBuilder {
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
-    pub(crate) top_answer: std::option::Option<bool>,
-    pub(crate) r#type: std::option::Option<crate::types::HighlightType>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
+    pub(crate) top_answer: ::std::option::Option<bool>,
+    pub(crate) r#type: ::std::option::Option<crate::types::HighlightType>,
 }
 impl HighlightBuilder {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based location in the response string where the highlight starts.</p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
     pub fn top_answer(mut self, input: bool) -> Self {
-        self.top_answer = Some(input);
+        self.top_answer = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the response is the best response. True if this is the best response; otherwise, false.</p>
-    pub fn set_top_answer(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_top_answer(mut self, input: ::std::option::Option<bool>) -> Self {
         self.top_answer = input;
         self
     }
     /// <p>The highlight type. </p>
     pub fn r#type(mut self, input: crate::types::HighlightType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The highlight type. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::HighlightType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::HighlightType>) -> Self {
         self.r#type = input;
         self
     }

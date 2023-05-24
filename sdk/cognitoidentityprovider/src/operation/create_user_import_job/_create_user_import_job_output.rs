@@ -2,20 +2,20 @@
 
 /// <p>Represents the response from the server to the request to create the user import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
     #[doc(hidden)]
-    pub user_import_job: std::option::Option<crate::types::UserImportJobType>,
+    pub user_import_job: ::std::option::Option<crate::types::UserImportJobType>,
     _request_id: Option<String>,
 }
 impl CreateUserImportJobOutput {
     /// <p>The job object that represents the user import job.</p>
-    pub fn user_import_job(&self) -> std::option::Option<&crate::types::UserImportJobType> {
+    pub fn user_import_job(&self) -> ::std::option::Option<&crate::types::UserImportJobType> {
         self.user_import_job.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateUserImportJobOutput {
+impl ::aws_http::request_id::RequestId for CreateUserImportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl CreateUserImportJobOutput {
 
 /// A builder for [`CreateUserImportJobOutput`](crate::operation::create_user_import_job::CreateUserImportJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateUserImportJobOutputBuilder {
-    pub(crate) user_import_job: std::option::Option<crate::types::UserImportJobType>,
+    pub(crate) user_import_job: ::std::option::Option<crate::types::UserImportJobType>,
     _request_id: Option<String>,
 }
 impl CreateUserImportJobOutputBuilder {
     /// <p>The job object that represents the user import job.</p>
     pub fn user_import_job(mut self, input: crate::types::UserImportJobType) -> Self {
-        self.user_import_job = Some(input);
+        self.user_import_job = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job object that represents the user import job.</p>
     pub fn set_user_import_job(
         mut self,
-        input: std::option::Option<crate::types::UserImportJobType>,
+        input: ::std::option::Option<crate::types::UserImportJobType>,
     ) -> Self {
         self.user_import_job = input;
         self

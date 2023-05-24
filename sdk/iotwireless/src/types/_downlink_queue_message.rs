@@ -2,36 +2,36 @@
 
 /// <p>The message in the downlink queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DownlinkQueueMessage {
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     #[doc(hidden)]
-    pub transmit_mode: std::option::Option<i32>,
+    pub transmit_mode: ::std::option::Option<i32>,
     /// <p>The time at which Iot Wireless received the downlink message.</p>
     #[doc(hidden)]
-    pub received_at: std::option::Option<std::string::String>,
+    pub received_at: ::std::option::Option<::std::string::String>,
     /// <p>LoRaWAN router info.</p>
     #[doc(hidden)]
-    pub lo_ra_wan: std::option::Option<crate::types::LoRaWanSendDataToDevice>,
+    pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
 }
 impl DownlinkQueueMessage {
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
-    pub fn transmit_mode(&self) -> std::option::Option<i32> {
+    pub fn transmit_mode(&self) -> ::std::option::Option<i32> {
         self.transmit_mode
     }
     /// <p>The time at which Iot Wireless received the downlink message.</p>
-    pub fn received_at(&self) -> std::option::Option<&str> {
+    pub fn received_at(&self) -> ::std::option::Option<&str> {
         self.received_at.as_deref()
     }
     /// <p>LoRaWAN router info.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanSendDataToDevice> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanSendDataToDevice> {
         self.lo_ra_wan.as_ref()
     }
 }
@@ -44,53 +44,55 @@ impl DownlinkQueueMessage {
 
 /// A builder for [`DownlinkQueueMessage`](crate::types::DownlinkQueueMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DownlinkQueueMessageBuilder {
-    pub(crate) message_id: std::option::Option<std::string::String>,
-    pub(crate) transmit_mode: std::option::Option<i32>,
-    pub(crate) received_at: std::option::Option<std::string::String>,
-    pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanSendDataToDevice>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transmit_mode: ::std::option::Option<i32>,
+    pub(crate) received_at: ::std::option::Option<::std::string::String>,
+    pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
 }
 impl DownlinkQueueMessageBuilder {
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The message ID assigned by IoT Wireless to each downlink message, which helps identify the message.</p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
     pub fn transmit_mode(mut self, input: i32) -> Self {
-        self.transmit_mode = Some(input);
+        self.transmit_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The transmit mode to use for sending data to the wireless device. This can be <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).</p>
-    pub fn set_transmit_mode(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_transmit_mode(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transmit_mode = input;
         self
     }
     /// <p>The time at which Iot Wireless received the downlink message.</p>
-    pub fn received_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.received_at = Some(input.into());
+    pub fn received_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.received_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time at which Iot Wireless received the downlink message.</p>
-    pub fn set_received_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_received_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.received_at = input;
         self
     }
     /// <p>LoRaWAN router info.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanSendDataToDevice) -> Self {
-        self.lo_ra_wan = Some(input);
+        self.lo_ra_wan = ::std::option::Option::Some(input);
         self
     }
     /// <p>LoRaWAN router info.</p>
     pub fn set_lo_ra_wan(
         mut self,
-        input: std::option::Option<crate::types::LoRaWanSendDataToDevice>,
+        input: ::std::option::Option<crate::types::LoRaWanSendDataToDevice>,
     ) -> Self {
         self.lo_ra_wan = input;
         self

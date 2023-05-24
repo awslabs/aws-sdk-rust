@@ -2,27 +2,27 @@
 
 /// <p>The output for <code>ListStacks</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStacksOutput {
     /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
     #[doc(hidden)]
-    pub stack_summaries: std::option::Option<std::vec::Vec<crate::types::StackSummary>>,
+    pub stack_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSummary>>,
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStacksOutput {
     /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
-    pub fn stack_summaries(&self) -> std::option::Option<&[crate::types::StackSummary]> {
+    pub fn stack_summaries(&self) -> ::std::option::Option<&[crate::types::StackSummary]> {
         self.stack_summaries.as_deref()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListStacksOutput {
+impl ::aws_http::request_id::RequestId for ListStacksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListStacksOutput {
 
 /// A builder for [`ListStacksOutput`](crate::operation::list_stacks::ListStacksOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListStacksOutputBuilder {
-    pub(crate) stack_summaries: std::option::Option<std::vec::Vec<crate::types::StackSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) stack_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StackSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStacksOutputBuilder {
@@ -51,24 +53,24 @@ impl ListStacksOutputBuilder {
     pub fn stack_summaries(mut self, input: crate::types::StackSummary) -> Self {
         let mut v = self.stack_summaries.unwrap_or_default();
         v.push(input);
-        self.stack_summaries = Some(v);
+        self.stack_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>StackSummary</code> structures containing information about the specified stacks.</p>
     pub fn set_stack_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StackSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StackSummary>>,
     ) -> Self {
         self.stack_summaries = input;
         self
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of stacks. If no additional page exists, this value is null.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

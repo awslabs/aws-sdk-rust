@@ -2,29 +2,29 @@
 
 /// <p>An object that contains information about a blacklisting event that impacts one of the dedicated IP addresses that is associated with your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
     #[doc(hidden)]
-    pub rbl_name: std::option::Option<std::string::String>,
+    pub rbl_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
     #[doc(hidden)]
-    pub listing_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub listing_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
-    pub fn rbl_name(&self) -> std::option::Option<&str> {
+    pub fn rbl_name(&self) -> ::std::option::Option<&str> {
         self.rbl_name.as_deref()
     }
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub fn listing_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn listing_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.listing_time.as_ref()
     }
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl BlacklistEntry {
 
 /// A builder for [`BlacklistEntry`](crate::types::BlacklistEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlacklistEntryBuilder {
-    pub(crate) rbl_name: std::option::Option<std::string::String>,
-    pub(crate) listing_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) rbl_name: ::std::option::Option<::std::string::String>,
+    pub(crate) listing_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl BlacklistEntryBuilder {
     /// <p>The name of the blacklist that the IP address appears on.</p>
-    pub fn rbl_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rbl_name = Some(input.into());
+    pub fn rbl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rbl_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the blacklist that the IP address appears on.</p>
-    pub fn set_rbl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rbl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rbl_name = input;
         self
     }
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub fn listing_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.listing_time = Some(input);
+    pub fn listing_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.listing_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
     pub fn set_listing_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.listing_time = input;
         self
     }
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

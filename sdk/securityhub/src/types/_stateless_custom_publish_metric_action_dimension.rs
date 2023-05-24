@@ -2,15 +2,15 @@
 
 /// <p>Defines a CloudWatch dimension value to publish.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessCustomPublishMetricActionDimension {
     /// <p>The value to use for the custom metric dimension.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl StatelessCustomPublishMetricActionDimension {
     /// <p>The value to use for the custom metric dimension.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl StatelessCustomPublishMetricActionDimension {
 
 /// A builder for [`StatelessCustomPublishMetricActionDimension`](crate::types::StatelessCustomPublishMetricActionDimension).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatelessCustomPublishMetricActionDimensionBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl StatelessCustomPublishMetricActionDimensionBuilder {
     /// <p>The value to use for the custom metric dimension.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to use for the custom metric dimension.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

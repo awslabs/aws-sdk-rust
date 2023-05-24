@@ -2,22 +2,22 @@
 
 /// <p>Describes a list of filters for choosing a subset of dimension values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricSetDimensionFilter {
     /// <p>The dimension that you want to filter on.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of filters that you are applying.</p>
     #[doc(hidden)]
-    pub filter_list: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl MetricSetDimensionFilter {
     /// <p>The dimension that you want to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The list of filters that you are applying.</p>
-    pub fn filter_list(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filter_list(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filter_list.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl MetricSetDimensionFilter {
 
 /// A builder for [`MetricSetDimensionFilter`](crate::types::MetricSetDimensionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricSetDimensionFilterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) filter_list: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
 }
 impl MetricSetDimensionFilterBuilder {
     /// <p>The dimension that you want to filter on.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dimension that you want to filter on.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -54,13 +56,13 @@ impl MetricSetDimensionFilterBuilder {
     pub fn filter_list(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filter_list.unwrap_or_default();
         v.push(input);
-        self.filter_list = Some(v);
+        self.filter_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of filters that you are applying.</p>
     pub fn set_filter_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filter_list = input;
         self

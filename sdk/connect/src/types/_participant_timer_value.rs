@@ -3,7 +3,7 @@
 /// <p>The value of the timer. Either the timer action (<code>Unset</code> to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
 /// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ParticipantTimerValue {
     /// <p>The timer action. Currently only one value is allowed: <code>Unset</code>. It deletes a timer.</p>
     ParticipantTimerAction(crate::types::ParticipantTimerAction),
@@ -24,11 +24,11 @@ impl ParticipantTimerValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_participant_timer_action(
         &self,
-    ) -> std::result::Result<&crate::types::ParticipantTimerAction, &Self> {
+    ) -> ::std::result::Result<&crate::types::ParticipantTimerAction, &Self> {
         if let ParticipantTimerValue::ParticipantTimerAction(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ParticipantTimerAction`](crate::types::ParticipantTimerValue::ParticipantTimerAction).
@@ -37,11 +37,11 @@ impl ParticipantTimerValue {
     }
     /// Tries to convert the enum instance into [`ParticipantTimerDurationInMinutes`](crate::types::ParticipantTimerValue::ParticipantTimerDurationInMinutes), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_participant_timer_duration_in_minutes(&self) -> std::result::Result<&i32, &Self> {
+    pub fn as_participant_timer_duration_in_minutes(&self) -> ::std::result::Result<&i32, &Self> {
         if let ParticipantTimerValue::ParticipantTimerDurationInMinutes(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ParticipantTimerDurationInMinutes`](crate::types::ParticipantTimerValue::ParticipantTimerDurationInMinutes).

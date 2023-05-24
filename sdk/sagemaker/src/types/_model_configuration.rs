@@ -2,32 +2,32 @@
 
 /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelConfiguration {
     /// <p>The inference specification name in the model package version.</p>
     #[doc(hidden)]
-    pub inference_specification_name: std::option::Option<std::string::String>,
+    pub inference_specification_name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
     #[doc(hidden)]
     pub environment_parameters:
-        std::option::Option<std::vec::Vec<crate::types::EnvironmentParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
     #[doc(hidden)]
-    pub compilation_job_name: std::option::Option<std::string::String>,
+    pub compilation_job_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelConfiguration {
     /// <p>The inference specification name in the model package version.</p>
-    pub fn inference_specification_name(&self) -> std::option::Option<&str> {
+    pub fn inference_specification_name(&self) -> ::std::option::Option<&str> {
         self.inference_specification_name.as_deref()
     }
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
     pub fn environment_parameters(
         &self,
-    ) -> std::option::Option<&[crate::types::EnvironmentParameter]> {
+    ) -> ::std::option::Option<&[crate::types::EnvironmentParameter]> {
         self.environment_parameters.as_deref()
     }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
-    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
+    pub fn compilation_job_name(&self) -> ::std::option::Option<&str> {
         self.compilation_job_name.as_deref()
     }
 }
@@ -40,23 +40,28 @@ impl ModelConfiguration {
 
 /// A builder for [`ModelConfiguration`](crate::types::ModelConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelConfigurationBuilder {
-    pub(crate) inference_specification_name: std::option::Option<std::string::String>,
+    pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_parameters:
-        std::option::Option<std::vec::Vec<crate::types::EnvironmentParameter>>,
-    pub(crate) compilation_job_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
+    pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelConfigurationBuilder {
     /// <p>The inference specification name in the model package version.</p>
-    pub fn inference_specification_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inference_specification_name = Some(input.into());
+    pub fn inference_specification_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inference_specification_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inference specification name in the model package version.</p>
     pub fn set_inference_specification_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inference_specification_name = input;
         self
@@ -69,26 +74,29 @@ impl ModelConfigurationBuilder {
     pub fn environment_parameters(mut self, input: crate::types::EnvironmentParameter) -> Self {
         let mut v = self.environment_parameters.unwrap_or_default();
         v.push(input);
-        self.environment_parameters = Some(v);
+        self.environment_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Defines the environment parameters that includes key, value types, and values.</p>
     pub fn set_environment_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
     ) -> Self {
         self.environment_parameters = input;
         self
     }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
-    pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compilation_job_name = Some(input.into());
+    pub fn compilation_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the compilation job used to create the recommended model artifacts.</p>
     pub fn set_compilation_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.compilation_job_name = input;
         self

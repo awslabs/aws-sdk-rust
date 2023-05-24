@@ -2,22 +2,22 @@
 
 /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
     #[doc(hidden)]
-    pub topic_arn: std::option::Option<std::string::String>,
+    pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
     #[doc(hidden)]
-    pub topic_status: std::option::Option<std::string::String>,
+    pub topic_status: ::std::option::Option<::std::string::String>,
 }
 impl NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
-    pub fn topic_status(&self) -> std::option::Option<&str> {
+    pub fn topic_status(&self) -> ::std::option::Option<&str> {
         self.topic_status.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl NotificationConfiguration {
 
 /// A builder for [`NotificationConfiguration`](crate::types::NotificationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationConfigurationBuilder {
-    pub(crate) topic_arn: std::option::Option<std::string::String>,
-    pub(crate) topic_status: std::option::Option<std::string::String>,
+    pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_status: ::std::option::Option<::std::string::String>,
 }
 impl NotificationConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
-    pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_arn = Some(input.into());
+    pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
-    pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
     }
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
-    pub fn topic_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_status = Some(input.into());
+    pub fn topic_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
-    pub fn set_topic_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_status = input;
         self
     }

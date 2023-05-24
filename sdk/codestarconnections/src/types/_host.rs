@@ -4,57 +4,57 @@
 /// <p>A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Host {
     /// <p>The name of the host.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
     #[doc(hidden)]
-    pub host_arn: std::option::Option<std::string::String>,
+    pub host_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     #[doc(hidden)]
-    pub provider_type: std::option::Option<crate::types::ProviderType>,
+    pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
     #[doc(hidden)]
-    pub provider_endpoint: std::option::Option<std::string::String>,
+    pub provider_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration provisioned for the host.</p>
     #[doc(hidden)]
-    pub vpc_configuration: std::option::Option<crate::types::VpcConfiguration>,
+    pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The status description for the host.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl Host {
     /// <p>The name of the host.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
-    pub fn host_arn(&self) -> std::option::Option<&str> {
+    pub fn host_arn(&self) -> ::std::option::Option<&str> {
         self.host_arn.as_deref()
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
-    pub fn provider_endpoint(&self) -> std::option::Option<&str> {
+    pub fn provider_endpoint(&self) -> ::std::option::Option<&str> {
         self.provider_endpoint.as_deref()
     }
     /// <p>The VPC configuration provisioned for the host.</p>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The status description for the host.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -67,93 +67,104 @@ impl Host {
 
 /// A builder for [`Host`](crate::types::Host).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HostBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) host_arn: std::option::Option<std::string::String>,
-    pub(crate) provider_type: std::option::Option<crate::types::ProviderType>,
-    pub(crate) provider_endpoint: std::option::Option<std::string::String>,
-    pub(crate) vpc_configuration: std::option::Option<crate::types::VpcConfiguration>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) host_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
+    pub(crate) provider_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl HostBuilder {
     /// <p>The name of the host.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the host.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
-    pub fn host_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host_arn = Some(input.into());
+    pub fn host_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the host.</p>
-    pub fn set_host_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_arn = input;
         self
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
-        self.provider_type = Some(input);
+        self.provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn set_provider_type(
         mut self,
-        input: std::option::Option<crate::types::ProviderType>,
+        input: ::std::option::Option<crate::types::ProviderType>,
     ) -> Self {
         self.provider_type = input;
         self
     }
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
-    pub fn provider_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provider_endpoint = Some(input.into());
+    pub fn provider_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provider_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
     pub fn set_provider_endpoint(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provider_endpoint = input;
         self
     }
     /// <p>The VPC configuration provisioned for the host.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
-        self.vpc_configuration = Some(input);
+        self.vpc_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC configuration provisioned for the host.</p>
     pub fn set_vpc_configuration(
         mut self,
-        input: std::option::Option<crate::types::VpcConfiguration>,
+        input: ::std::option::Option<crate::types::VpcConfiguration>,
     ) -> Self {
         self.vpc_configuration = input;
         self
     }
     /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status description for the host.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status description for the host.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

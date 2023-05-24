@@ -2,22 +2,22 @@
 
 /// <p>Result message containing a list of environment resource descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesOutput {
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     #[doc(hidden)]
-    pub environment_resources: std::option::Option<crate::types::EnvironmentResourceDescription>,
+    pub environment_resources: ::std::option::Option<crate::types::EnvironmentResourceDescription>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentResourcesOutput {
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub fn environment_resources(
         &self,
-    ) -> std::option::Option<&crate::types::EnvironmentResourceDescription> {
+    ) -> ::std::option::Option<&crate::types::EnvironmentResourceDescription> {
         self.environment_resources.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEnvironmentResourcesOutput {
+impl ::aws_http::request_id::RequestId for DescribeEnvironmentResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,10 +31,12 @@ impl DescribeEnvironmentResourcesOutput {
 
 /// A builder for [`DescribeEnvironmentResourcesOutput`](crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEnvironmentResourcesOutputBuilder {
     pub(crate) environment_resources:
-        std::option::Option<crate::types::EnvironmentResourceDescription>,
+        ::std::option::Option<crate::types::EnvironmentResourceDescription>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentResourcesOutputBuilder {
@@ -43,13 +45,13 @@ impl DescribeEnvironmentResourcesOutputBuilder {
         mut self,
         input: crate::types::EnvironmentResourceDescription,
     ) -> Self {
-        self.environment_resources = Some(input);
+        self.environment_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub fn set_environment_resources(
         mut self,
-        input: std::option::Option<crate::types::EnvironmentResourceDescription>,
+        input: ::std::option::Option<crate::types::EnvironmentResourceDescription>,
     ) -> Self {
         self.environment_resources = input;
         self

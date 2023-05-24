@@ -2,7 +2,7 @@
 
 /// <p>The list of types of related items and their parameters to use for filtering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RelatedItemTypeFilter {
     /// <p>A filter for related items of type <code>Comment</code>.</p>
     Comment(crate::types::CommentFilter),
@@ -21,11 +21,11 @@ pub enum RelatedItemTypeFilter {
 impl RelatedItemTypeFilter {
     /// Tries to convert the enum instance into [`Comment`](crate::types::RelatedItemTypeFilter::Comment), extracting the inner [`CommentFilter`](crate::types::CommentFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_comment(&self) -> std::result::Result<&crate::types::CommentFilter, &Self> {
+    pub fn as_comment(&self) -> ::std::result::Result<&crate::types::CommentFilter, &Self> {
         if let RelatedItemTypeFilter::Comment(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Comment`](crate::types::RelatedItemTypeFilter::Comment).
@@ -34,11 +34,11 @@ impl RelatedItemTypeFilter {
     }
     /// Tries to convert the enum instance into [`Contact`](crate::types::RelatedItemTypeFilter::Contact), extracting the inner [`ContactFilter`](crate::types::ContactFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_contact(&self) -> std::result::Result<&crate::types::ContactFilter, &Self> {
+    pub fn as_contact(&self) -> ::std::result::Result<&crate::types::ContactFilter, &Self> {
         if let RelatedItemTypeFilter::Contact(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemTypeFilter::Contact).

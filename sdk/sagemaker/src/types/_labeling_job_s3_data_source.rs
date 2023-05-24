@@ -2,7 +2,7 @@
 
 /// <p>The Amazon S3 location of the input data objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobS3DataSource {
     /// <p>The Amazon S3 location of the manifest file that describes the input data objects. </p>
     /// <p>The input manifest file referenced in <code>ManifestS3Uri</code> must contain one of the following keys: <code>source-ref</code> or <code>source</code>. The value of the keys are interpreted as follows:</p>
@@ -12,7 +12,7 @@ pub struct LabelingJobS3DataSource {
     /// </ul>
     /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
     #[doc(hidden)]
-    pub manifest_s3_uri: std::option::Option<std::string::String>,
+    pub manifest_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl LabelingJobS3DataSource {
     /// <p>The Amazon S3 location of the manifest file that describes the input data objects. </p>
@@ -22,7 +22,7 @@ impl LabelingJobS3DataSource {
     /// <li> <p> <code>source</code>: The source of the object is the value. Use this value when the object is a text value.</p> </li>
     /// </ul>
     /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
-    pub fn manifest_s3_uri(&self) -> std::option::Option<&str> {
+    pub fn manifest_s3_uri(&self) -> ::std::option::Option<&str> {
         self.manifest_s3_uri.as_deref()
     }
 }
@@ -35,9 +35,11 @@ impl LabelingJobS3DataSource {
 
 /// A builder for [`LabelingJobS3DataSource`](crate::types::LabelingJobS3DataSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelingJobS3DataSourceBuilder {
-    pub(crate) manifest_s3_uri: std::option::Option<std::string::String>,
+    pub(crate) manifest_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl LabelingJobS3DataSourceBuilder {
     /// <p>The Amazon S3 location of the manifest file that describes the input data objects. </p>
@@ -47,8 +49,11 @@ impl LabelingJobS3DataSourceBuilder {
     /// <li> <p> <code>source</code>: The source of the object is the value. Use this value when the object is a text value.</p> </li>
     /// </ul>
     /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
-    pub fn manifest_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.manifest_s3_uri = Some(input.into());
+    pub fn manifest_s3_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.manifest_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location of the manifest file that describes the input data objects. </p>
@@ -58,7 +63,10 @@ impl LabelingJobS3DataSourceBuilder {
     /// <li> <p> <code>source</code>: The source of the object is the value. Use this value when the object is a text value.</p> </li>
     /// </ul>
     /// <p>If you are a new user of Ground Truth, it is recommended you review <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-input-data-input-manifest.html">Use an Input Manifest File </a> in the Amazon SageMaker Developer Guide to learn how to create an input manifest file.</p>
-    pub fn set_manifest_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_manifest_s3_uri(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.manifest_s3_uri = input;
         self
     }

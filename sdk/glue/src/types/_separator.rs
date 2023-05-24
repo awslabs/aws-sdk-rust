@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Separator {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum Separator {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Separator {
+impl ::std::convert::From<&str> for Separator {
     fn from(s: &str) -> Self {
         match s {
             "comma" => Separator::Comma,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for Separator {
         }
     }
 }
-impl std::str::FromStr for Separator {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Separator {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Separator::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Separator::from(s))
     }
 }
 impl Separator {
@@ -99,7 +99,7 @@ impl Separator {
         &["comma", "ctrla", "pipe", "semicolon", "tab"]
     }
 }
-impl AsRef<str> for Separator {
+impl ::std::convert::AsRef<str> for Separator {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

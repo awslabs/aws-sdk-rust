@@ -2,29 +2,29 @@
 
 /// Provides a summary of a gateway, including its name, ARN, and status.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedGateway {
     /// The Amazon Resource Name (ARN) of the gateway.
     #[doc(hidden)]
-    pub gateway_arn: std::option::Option<std::string::String>,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub gateway_state: std::option::Option<crate::types::GatewayState>,
+    pub gateway_state: ::std::option::Option<crate::types::GatewayState>,
     /// The name of the gateway.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl ListedGateway {
     /// The Amazon Resource Name (ARN) of the gateway.
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn gateway_state(&self) -> std::option::Option<&crate::types::GatewayState> {
+    pub fn gateway_state(&self) -> ::std::option::Option<&crate::types::GatewayState> {
         self.gateway_state.as_ref()
     }
     /// The name of the gateway.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl ListedGateway {
 
 /// A builder for [`ListedGateway`](crate::types::ListedGateway).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListedGatewayBuilder {
-    pub(crate) gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) gateway_state: std::option::Option<crate::types::GatewayState>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_state: ::std::option::Option<crate::types::GatewayState>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl ListedGatewayBuilder {
     /// The Amazon Resource Name (ARN) of the gateway.
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_arn = Some(input.into());
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the gateway.
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn gateway_state(mut self, input: crate::types::GatewayState) -> Self {
-        self.gateway_state = Some(input);
+        self.gateway_state = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_gateway_state(
         mut self,
-        input: std::option::Option<crate::types::GatewayState>,
+        input: ::std::option::Option<crate::types::GatewayState>,
     ) -> Self {
         self.gateway_state = input;
         self
     }
     /// The name of the gateway.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the gateway.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

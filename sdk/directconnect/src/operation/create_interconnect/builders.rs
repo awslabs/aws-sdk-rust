@@ -11,29 +11,29 @@ pub use crate::operation::create_interconnect::_create_interconnect_input::Creat
 /// <p>For each end customer, the Direct Connect Partner provisions a connection on their interconnect by calling <code>AllocateHostedConnection</code>. The end customer can then connect to Amazon Web Services resources by creating a virtual interface on their connection, using the VLAN assigned to them by the Direct Connect Partner.</p> <note>
 /// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInterconnectFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder,
 }
 impl CreateInterconnectFluentBuilder {
     /// Creates a new `CreateInterconnect`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_interconnect::CreateInterconnect,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_interconnect::CreateInterconnectError,
         >,
     > {
@@ -41,30 +41,33 @@ impl CreateInterconnectFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_interconnect::CreateInterconnectOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_interconnect::CreateInterconnectError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,54 +80,57 @@ impl CreateInterconnectFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_interconnect::CreateInterconnectOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_interconnect::CreateInterconnectError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the interconnect.</p>
-    pub fn interconnect_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn interconnect_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.interconnect_name(input.into());
         self
     }
     /// <p>The name of the interconnect.</p>
     pub fn set_interconnect_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_interconnect_name(input);
         self
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
-    pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bandwidth(input.into());
         self
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
-    pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bandwidth(input);
         self
     }
     /// <p>The location of the interconnect.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
         self
     }
     /// <p>The location of the interconnect.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lag_id(input.into());
         self
     }
     /// <p>The ID of the LAG.</p>
-    pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lag_id(input);
         self
     }
@@ -140,18 +146,24 @@ impl CreateInterconnectFluentBuilder {
     /// <p>The tags to associate with the interconnect.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provider_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }

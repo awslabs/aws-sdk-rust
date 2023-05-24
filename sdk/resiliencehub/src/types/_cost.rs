@@ -2,17 +2,17 @@
 
 /// <p>Defines a cost object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cost {
     /// <p>The cost amount.</p>
     #[doc(hidden)]
     pub amount: f64,
     /// <p>The cost currency, for example <code>USD</code>.</p>
     #[doc(hidden)]
-    pub currency: std::option::Option<std::string::String>,
+    pub currency: ::std::option::Option<::std::string::String>,
     /// <p>The cost frequency.</p>
     #[doc(hidden)]
-    pub frequency: std::option::Option<crate::types::CostFrequency>,
+    pub frequency: ::std::option::Option<crate::types::CostFrequency>,
 }
 impl Cost {
     /// <p>The cost amount.</p>
@@ -20,11 +20,11 @@ impl Cost {
         self.amount
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    pub fn currency(&self) -> std::option::Option<&str> {
+    pub fn currency(&self) -> ::std::option::Option<&str> {
         self.currency.as_deref()
     }
     /// <p>The cost frequency.</p>
-    pub fn frequency(&self) -> std::option::Option<&crate::types::CostFrequency> {
+    pub fn frequency(&self) -> ::std::option::Option<&crate::types::CostFrequency> {
         self.frequency.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl Cost {
 
 /// A builder for [`Cost`](crate::types::Cost).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CostBuilder {
-    pub(crate) amount: std::option::Option<f64>,
-    pub(crate) currency: std::option::Option<std::string::String>,
-    pub(crate) frequency: std::option::Option<crate::types::CostFrequency>,
+    pub(crate) amount: ::std::option::Option<f64>,
+    pub(crate) currency: ::std::option::Option<::std::string::String>,
+    pub(crate) frequency: ::std::option::Option<crate::types::CostFrequency>,
 }
 impl CostBuilder {
     /// <p>The cost amount.</p>
     pub fn amount(mut self, input: f64) -> Self {
-        self.amount = Some(input);
+        self.amount = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cost amount.</p>
-    pub fn set_amount(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_amount(mut self, input: ::std::option::Option<f64>) -> Self {
         self.amount = input;
         self
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
-        self.currency = Some(input.into());
+    pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.currency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cost currency, for example <code>USD</code>.</p>
-    pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency = input;
         self
     }
     /// <p>The cost frequency.</p>
     pub fn frequency(mut self, input: crate::types::CostFrequency) -> Self {
-        self.frequency = Some(input);
+        self.frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cost frequency.</p>
     pub fn set_frequency(
         mut self,
-        input: std::option::Option<crate::types::CostFrequency>,
+        input: ::std::option::Option<crate::types::CostFrequency>,
     ) -> Self {
         self.frequency = input;
         self

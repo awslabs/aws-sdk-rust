@@ -2,7 +2,7 @@
 
 /// <p>Object that describes the frequency bandwidth. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrequencyBandwidth {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct FrequencyBandwidth {
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
     /// <p>Frequency bandwidth units.</p>
     #[doc(hidden)]
-    pub units: std::option::Option<crate::types::BandwidthUnits>,
+    pub units: ::std::option::Option<crate::types::BandwidthUnits>,
 }
 impl FrequencyBandwidth {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
@@ -23,11 +23,11 @@ impl FrequencyBandwidth {
     /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
     /// <p>Frequency bandwidth units.</p>
-    pub fn units(&self) -> std::option::Option<&crate::types::BandwidthUnits> {
+    pub fn units(&self) -> ::std::option::Option<&crate::types::BandwidthUnits> {
         self.units.as_ref()
     }
 }
@@ -40,10 +40,12 @@ impl FrequencyBandwidth {
 
 /// A builder for [`FrequencyBandwidth`](crate::types::FrequencyBandwidth).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FrequencyBandwidthBuilder {
-    pub(crate) value: std::option::Option<f64>,
-    pub(crate) units: std::option::Option<crate::types::BandwidthUnits>,
+    pub(crate) value: ::std::option::Option<f64>,
+    pub(crate) units: ::std::option::Option<crate::types::BandwidthUnits>,
 }
 impl FrequencyBandwidthBuilder {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
@@ -53,7 +55,7 @@ impl FrequencyBandwidthBuilder {
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
@@ -62,17 +64,17 @@ impl FrequencyBandwidthBuilder {
     /// <li> <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// <li> <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p> </li>
     /// </ul>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }
     /// <p>Frequency bandwidth units.</p>
     pub fn units(mut self, input: crate::types::BandwidthUnits) -> Self {
-        self.units = Some(input);
+        self.units = ::std::option::Option::Some(input);
         self
     }
     /// <p>Frequency bandwidth units.</p>
-    pub fn set_units(mut self, input: std::option::Option<crate::types::BandwidthUnits>) -> Self {
+    pub fn set_units(mut self, input: ::std::option::Option<crate::types::BandwidthUnits>) -> Self {
         self.units = input;
         self
     }

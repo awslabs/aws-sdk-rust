@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopEngagement`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`engagement_id(impl Into<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::engagement_id) / [`set_engagement_id(Option<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::set_engagement_id): <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    ///   - [`reason(impl Into<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::set_reason): <p>The reason that you're stopping the engagement.</p>
+    ///   - [`engagement_id(impl ::std::convert::Into<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::engagement_id) / [`set_engagement_id(Option<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::set_engagement_id): <p>The Amazon Resource Name (ARN) of the engagement.</p>
+    ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::stop_engagement::builders::StopEngagementFluentBuilder::set_reason): <p>The reason that you're stopping the engagement.</p>
     /// - On success, responds with [`StopEngagementOutput`](crate::operation::stop_engagement::StopEngagementOutput)
     /// - On failure, responds with [`SdkError<StopEngagementError>`](crate::operation::stop_engagement::StopEngagementError)
     pub fn stop_engagement(

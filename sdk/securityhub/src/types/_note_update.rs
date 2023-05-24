@@ -2,22 +2,22 @@
 
 /// <p>The updated note.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoteUpdate {
     /// <p>The updated note text.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>The principal that updated the note.</p>
     #[doc(hidden)]
-    pub updated_by: std::option::Option<std::string::String>,
+    pub updated_by: ::std::option::Option<::std::string::String>,
 }
 impl NoteUpdate {
     /// <p>The updated note text.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The principal that updated the note.</p>
-    pub fn updated_by(&self) -> std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl NoteUpdate {
 
 /// A builder for [`NoteUpdate`](crate::types::NoteUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NoteUpdateBuilder {
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) updated_by: std::option::Option<std::string::String>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
 }
 impl NoteUpdateBuilder {
     /// <p>The updated note text.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The updated note text.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p>The principal that updated the note.</p>
-    pub fn updated_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_by = Some(input.into());
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal that updated the note.</p>
-    pub fn set_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
     }

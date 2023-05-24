@@ -2,27 +2,27 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInvalidationOutput {
     /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The invalidation's information.</p>
     #[doc(hidden)]
-    pub invalidation: std::option::Option<crate::types::Invalidation>,
+    pub invalidation: ::std::option::Option<crate::types::Invalidation>,
     _request_id: Option<String>,
 }
 impl CreateInvalidationOutput {
     /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The invalidation's information.</p>
-    pub fn invalidation(&self) -> std::option::Option<&crate::types::Invalidation> {
+    pub fn invalidation(&self) -> ::std::option::Option<&crate::types::Invalidation> {
         self.invalidation.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateInvalidationOutput {
+impl ::aws_http::request_id::RequestId for CreateInvalidationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,32 +37,34 @@ impl CreateInvalidationOutput {
 
 /// A builder for [`CreateInvalidationOutput`](crate::operation::create_invalidation::CreateInvalidationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateInvalidationOutputBuilder {
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) invalidation: std::option::Option<crate::types::Invalidation>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) invalidation: ::std::option::Option<crate::types::Invalidation>,
     _request_id: Option<String>,
 }
 impl CreateInvalidationOutputBuilder {
     /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The invalidation's information.</p>
     pub fn invalidation(mut self, input: crate::types::Invalidation) -> Self {
-        self.invalidation = Some(input);
+        self.invalidation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The invalidation's information.</p>
     pub fn set_invalidation(
         mut self,
-        input: std::option::Option<crate::types::Invalidation>,
+        input: ::std::option::Option<crate::types::Invalidation>,
     ) -> Self {
         self.invalidation = input;
         self

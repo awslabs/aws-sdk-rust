@@ -2,7 +2,7 @@
 
 /// <p>Settings for a store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum StoreOptions {
     /// <p>File settings for a TSV store.</p>
     TsvStoreOptions(crate::types::TsvStoreOptions),
@@ -22,11 +22,11 @@ impl StoreOptions {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tsv_store_options(
         &self,
-    ) -> std::result::Result<&crate::types::TsvStoreOptions, &Self> {
+    ) -> ::std::result::Result<&crate::types::TsvStoreOptions, &Self> {
         if let StoreOptions::TsvStoreOptions(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TsvStoreOptions`](crate::types::StoreOptions::TsvStoreOptions).

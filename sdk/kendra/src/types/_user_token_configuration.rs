@@ -2,27 +2,28 @@
 
 /// <p>Provides the configuration information for a token.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserTokenConfiguration {
     /// <p>Information about the JWT token type configuration.</p>
     #[doc(hidden)]
-    pub jwt_token_type_configuration: std::option::Option<crate::types::JwtTokenTypeConfiguration>,
+    pub jwt_token_type_configuration:
+        ::std::option::Option<crate::types::JwtTokenTypeConfiguration>,
     /// <p>Information about the JSON token type configuration.</p>
     #[doc(hidden)]
     pub json_token_type_configuration:
-        std::option::Option<crate::types::JsonTokenTypeConfiguration>,
+        ::std::option::Option<crate::types::JsonTokenTypeConfiguration>,
 }
 impl UserTokenConfiguration {
     /// <p>Information about the JWT token type configuration.</p>
     pub fn jwt_token_type_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::JwtTokenTypeConfiguration> {
+    ) -> ::std::option::Option<&crate::types::JwtTokenTypeConfiguration> {
         self.jwt_token_type_configuration.as_ref()
     }
     /// <p>Information about the JSON token type configuration.</p>
     pub fn json_token_type_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::JsonTokenTypeConfiguration> {
+    ) -> ::std::option::Option<&crate::types::JsonTokenTypeConfiguration> {
         self.json_token_type_configuration.as_ref()
     }
 }
@@ -35,12 +36,14 @@ impl UserTokenConfiguration {
 
 /// A builder for [`UserTokenConfiguration`](crate::types::UserTokenConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserTokenConfigurationBuilder {
     pub(crate) jwt_token_type_configuration:
-        std::option::Option<crate::types::JwtTokenTypeConfiguration>,
+        ::std::option::Option<crate::types::JwtTokenTypeConfiguration>,
     pub(crate) json_token_type_configuration:
-        std::option::Option<crate::types::JsonTokenTypeConfiguration>,
+        ::std::option::Option<crate::types::JsonTokenTypeConfiguration>,
 }
 impl UserTokenConfigurationBuilder {
     /// <p>Information about the JWT token type configuration.</p>
@@ -48,13 +51,13 @@ impl UserTokenConfigurationBuilder {
         mut self,
         input: crate::types::JwtTokenTypeConfiguration,
     ) -> Self {
-        self.jwt_token_type_configuration = Some(input);
+        self.jwt_token_type_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the JWT token type configuration.</p>
     pub fn set_jwt_token_type_configuration(
         mut self,
-        input: std::option::Option<crate::types::JwtTokenTypeConfiguration>,
+        input: ::std::option::Option<crate::types::JwtTokenTypeConfiguration>,
     ) -> Self {
         self.jwt_token_type_configuration = input;
         self
@@ -64,13 +67,13 @@ impl UserTokenConfigurationBuilder {
         mut self,
         input: crate::types::JsonTokenTypeConfiguration,
     ) -> Self {
-        self.json_token_type_configuration = Some(input);
+        self.json_token_type_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the JSON token type configuration.</p>
     pub fn set_json_token_type_configuration(
         mut self,
-        input: std::option::Option<crate::types::JsonTokenTypeConfiguration>,
+        input: ::std::option::Option<crate::types::JsonTokenTypeConfiguration>,
     ) -> Self {
         self.json_token_type_configuration = input;
         self

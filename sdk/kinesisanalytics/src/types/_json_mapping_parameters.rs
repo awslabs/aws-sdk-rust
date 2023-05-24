@@ -2,15 +2,15 @@
 
 /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonMappingParameters {
     /// <p>Path to the top-level parent that contains the records.</p>
     #[doc(hidden)]
-    pub record_row_path: std::option::Option<std::string::String>,
+    pub record_row_path: ::std::option::Option<::std::string::String>,
 }
 impl JsonMappingParameters {
     /// <p>Path to the top-level parent that contains the records.</p>
-    pub fn record_row_path(&self) -> std::option::Option<&str> {
+    pub fn record_row_path(&self) -> ::std::option::Option<&str> {
         self.record_row_path.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl JsonMappingParameters {
 
 /// A builder for [`JsonMappingParameters`](crate::types::JsonMappingParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JsonMappingParametersBuilder {
-    pub(crate) record_row_path: std::option::Option<std::string::String>,
+    pub(crate) record_row_path: ::std::option::Option<::std::string::String>,
 }
 impl JsonMappingParametersBuilder {
     /// <p>Path to the top-level parent that contains the records.</p>
-    pub fn record_row_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.record_row_path = Some(input.into());
+    pub fn record_row_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.record_row_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Path to the top-level parent that contains the records.</p>
-    pub fn set_record_row_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_row_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.record_row_path = input;
         self
     }

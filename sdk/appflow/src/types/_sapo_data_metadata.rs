@@ -2,7 +2,7 @@
 
 /// <p> The connector metadata specific to SAPOData. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SapoDataMetadata {}
 impl SapoDataMetadata {
     /// Creates a new builder-style object to manufacture [`SapoDataMetadata`](crate::types::SapoDataMetadata).
@@ -13,7 +13,9 @@ impl SapoDataMetadata {
 
 /// A builder for [`SapoDataMetadata`](crate::types::SapoDataMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SapoDataMetadataBuilder {}
 impl SapoDataMetadataBuilder {
     /// Consumes the builder and constructs a [`SapoDataMetadata`](crate::types::SapoDataMetadata).

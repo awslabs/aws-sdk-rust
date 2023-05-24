@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`VerifyOTPMessage`](crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder::set_application_id): <p>The unique ID of your Amazon Pinpoint application.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder::set_application_id): <p>The unique ID of your Amazon Pinpoint application.</p>
     ///   - [`verify_otp_message_request_parameters(VerifyOtpMessageRequestParameters)`](crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder::verify_otp_message_request_parameters) / [`set_verify_otp_message_request_parameters(Option<VerifyOtpMessageRequestParameters>)`](crate::operation::verify_otp_message::builders::VerifyOTPMessageFluentBuilder::set_verify_otp_message_request_parameters): <p>Verify OTP message request.</p>
     /// - On success, responds with [`VerifyOtpMessageOutput`](crate::operation::verify_otp_message::VerifyOtpMessageOutput) with field(s):
     ///   - [`verification_response(Option<VerificationResponse>)`](crate::operation::verify_otp_message::VerifyOtpMessageOutput::verification_response): <p>Verify OTP Message Response.</p>

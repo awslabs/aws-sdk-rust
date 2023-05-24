@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateApplication`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::set_name): <p>Application name.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::set_description): <p>Application description.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::set_name): <p>Application name.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_application::builders::UpdateApplicationFluentBuilder::set_description): <p>Application description.</p>
     /// - On success, responds with [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::update_application::UpdateApplicationOutput::application_id): <p>Application ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_application::UpdateApplicationOutput::arn): <p>Application ARN.</p>

@@ -2,114 +2,114 @@
 
 /// <p>The record of the incident that's created when an incident occurs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncidentRecord {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The title of the incident.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
     #[doc(hidden)]
-    pub summary: std::option::Option<std::string::String>,
+    pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the incident.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::IncidentRecordStatus>,
+    pub status: ::std::option::Option<crate::types::IncidentRecordStatus>,
     /// <p>The impact of the incident on customers and applications.</p>
     #[doc(hidden)]
-    pub impact: std::option::Option<i32>,
+    pub impact: ::std::option::Option<i32>,
     /// <p>The time that Incident Manager created the incident record.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
     #[doc(hidden)]
-    pub resolved_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub resolved_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the incident was most recently modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who modified the incident most recently.</p>
     #[doc(hidden)]
-    pub last_modified_by: std::option::Option<std::string::String>,
+    pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
     #[doc(hidden)]
     pub automation_executions:
-        std::option::Option<std::vec::Vec<crate::types::AutomationExecution>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecution>>,
     /// <p>Details about the action that started the incident.</p>
     #[doc(hidden)]
-    pub incident_record_source: std::option::Option<crate::types::IncidentRecordSource>,
+    pub incident_record_source: ::std::option::Option<crate::types::IncidentRecordSource>,
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
     #[doc(hidden)]
-    pub dedupe_string: std::option::Option<std::string::String>,
+    pub dedupe_string: ::std::option::Option<::std::string::String>,
     /// <p>The chat channel used for collaboration during an incident.</p>
     #[doc(hidden)]
-    pub chat_channel: std::option::Option<crate::types::ChatChannel>,
+    pub chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     #[doc(hidden)]
     pub notification_targets:
-        std::option::Option<std::vec::Vec<crate::types::NotificationTargetItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
 }
 impl IncidentRecord {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The title of the incident.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
     }
     /// <p>The current status of the incident.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::IncidentRecordStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::IncidentRecordStatus> {
         self.status.as_ref()
     }
     /// <p>The impact of the incident on customers and applications.</p>
-    pub fn impact(&self) -> std::option::Option<i32> {
+    pub fn impact(&self) -> ::std::option::Option<i32> {
         self.impact
     }
     /// <p>The time that Incident Manager created the incident record.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
-    pub fn resolved_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn resolved_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.resolved_time.as_ref()
     }
     /// <p>The time at which the incident was most recently modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Who modified the incident most recently.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
     pub fn automation_executions(
         &self,
-    ) -> std::option::Option<&[crate::types::AutomationExecution]> {
+    ) -> ::std::option::Option<&[crate::types::AutomationExecution]> {
         self.automation_executions.as_deref()
     }
     /// <p>Details about the action that started the incident.</p>
     pub fn incident_record_source(
         &self,
-    ) -> std::option::Option<&crate::types::IncidentRecordSource> {
+    ) -> ::std::option::Option<&crate::types::IncidentRecordSource> {
         self.incident_record_source.as_ref()
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn dedupe_string(&self) -> std::option::Option<&str> {
+    pub fn dedupe_string(&self) -> ::std::option::Option<&str> {
         self.dedupe_string.as_deref()
     }
     /// <p>The chat channel used for collaboration during an incident.</p>
-    pub fn chat_channel(&self) -> std::option::Option<&crate::types::ChatChannel> {
+    pub fn chat_channel(&self) -> ::std::option::Option<&crate::types::ChatChannel> {
         self.chat_channel.as_ref()
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub fn notification_targets(
         &self,
-    ) -> std::option::Option<&[crate::types::NotificationTargetItem]> {
+    ) -> ::std::option::Option<&[crate::types::NotificationTargetItem]> {
         self.notification_targets.as_deref()
     }
 }
@@ -122,125 +122,133 @@ impl IncidentRecord {
 
 /// A builder for [`IncidentRecord`](crate::types::IncidentRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IncidentRecordBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) summary: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::IncidentRecordStatus>,
-    pub(crate) impact: std::option::Option<i32>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) resolved_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_by: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) summary: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::IncidentRecordStatus>,
+    pub(crate) impact: ::std::option::Option<i32>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) resolved_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) automation_executions:
-        std::option::Option<std::vec::Vec<crate::types::AutomationExecution>>,
-    pub(crate) incident_record_source: std::option::Option<crate::types::IncidentRecordSource>,
-    pub(crate) dedupe_string: std::option::Option<std::string::String>,
-    pub(crate) chat_channel: std::option::Option<crate::types::ChatChannel>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecution>>,
+    pub(crate) incident_record_source: ::std::option::Option<crate::types::IncidentRecordSource>,
+    pub(crate) dedupe_string: ::std::option::Option<::std::string::String>,
+    pub(crate) chat_channel: ::std::option::Option<crate::types::ChatChannel>,
     pub(crate) notification_targets:
-        std::option::Option<std::vec::Vec<crate::types::NotificationTargetItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
 }
 impl IncidentRecordBuilder {
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident record.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The title of the incident.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the incident.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
-    pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
-        self.summary = Some(input.into());
+    pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The summary of the incident. The summary is a brief synopsis of what occurred, what's currently happening, and context of the incident.</p>
-    pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
     }
     /// <p>The current status of the incident.</p>
     pub fn status(mut self, input: crate::types::IncidentRecordStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the incident.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::IncidentRecordStatus>,
+        input: ::std::option::Option<crate::types::IncidentRecordStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The impact of the incident on customers and applications.</p>
     pub fn impact(mut self, input: i32) -> Self {
-        self.impact = Some(input);
+        self.impact = ::std::option::Option::Some(input);
         self
     }
     /// <p>The impact of the incident on customers and applications.</p>
-    pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_impact(mut self, input: ::std::option::Option<i32>) -> Self {
         self.impact = input;
         self
     }
     /// <p>The time that Incident Manager created the incident record.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that Incident Manager created the incident record.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
-    pub fn resolved_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.resolved_time = Some(input);
+    pub fn resolved_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.resolved_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the incident was resolved. This appears as a timeline event.</p>
     pub fn set_resolved_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.resolved_time = input;
         self
     }
     /// <p>The time at which the incident was most recently modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the incident was most recently modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>Who modified the incident most recently.</p>
-    pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_modified_by = Some(input.into());
+    pub fn last_modified_by(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Who modified the incident most recently.</p>
-    pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_modified_by(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_modified_by = input;
         self
     }
@@ -252,49 +260,55 @@ impl IncidentRecordBuilder {
     pub fn automation_executions(mut self, input: crate::types::AutomationExecution) -> Self {
         let mut v = self.automation_executions.unwrap_or_default();
         v.push(input);
-        self.automation_executions = Some(v);
+        self.automation_executions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The runbook, or automation document, that's run at the beginning of the incident.</p>
     pub fn set_automation_executions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AutomationExecution>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AutomationExecution>>,
     ) -> Self {
         self.automation_executions = input;
         self
     }
     /// <p>Details about the action that started the incident.</p>
     pub fn incident_record_source(mut self, input: crate::types::IncidentRecordSource) -> Self {
-        self.incident_record_source = Some(input);
+        self.incident_record_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the action that started the incident.</p>
     pub fn set_incident_record_source(
         mut self,
-        input: std::option::Option<crate::types::IncidentRecordSource>,
+        input: ::std::option::Option<crate::types::IncidentRecordSource>,
     ) -> Self {
         self.incident_record_source = input;
         self
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn dedupe_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dedupe_string = Some(input.into());
+    pub fn dedupe_string(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dedupe_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
-    pub fn set_dedupe_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dedupe_string(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dedupe_string = input;
         self
     }
     /// <p>The chat channel used for collaboration during an incident.</p>
     pub fn chat_channel(mut self, input: crate::types::ChatChannel) -> Self {
-        self.chat_channel = Some(input);
+        self.chat_channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>The chat channel used for collaboration during an incident.</p>
     pub fn set_chat_channel(
         mut self,
-        input: std::option::Option<crate::types::ChatChannel>,
+        input: ::std::option::Option<crate::types::ChatChannel>,
     ) -> Self {
         self.chat_channel = input;
         self
@@ -307,13 +321,13 @@ impl IncidentRecordBuilder {
     pub fn notification_targets(mut self, input: crate::types::NotificationTargetItem) -> Self {
         let mut v = self.notification_targets.unwrap_or_default();
         v.push(input);
-        self.notification_targets = Some(v);
+        self.notification_targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub fn set_notification_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NotificationTargetItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationTargetItem>>,
     ) -> Self {
         self.notification_targets = input;
         self

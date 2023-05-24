@@ -2,15 +2,15 @@
 
 /// <p>Information about the build environment for this build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectEnvironment {
     /// <p>The certificate to use with this build project.</p>
     #[doc(hidden)]
-    pub certificate: std::option::Option<std::string::String>,
+    pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>A set of environment variables to make available to builds for the build project.</p>
     #[doc(hidden)]
-    pub environment_variables: std::option::Option<
-        std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
+    pub environment_variables: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
     >,
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
     #[doc(hidden)]
@@ -23,28 +23,28 @@ pub struct AwsCodeBuildProjectEnvironment {
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     #[doc(hidden)]
-    pub image_pull_credentials_type: std::option::Option<std::string::String>,
+    pub image_pull_credentials_type: ::std::option::Option<::std::string::String>,
     /// <p>The credentials for access to a private registry.</p>
     #[doc(hidden)]
     pub registry_credential:
-        std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
+        ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
     /// <p>The type of build environment to use for related builds.</p>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe (Frankfurt).</p>
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectEnvironment {
     /// <p>The certificate to use with this build project.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<&str> {
         self.certificate.as_deref()
     }
     /// <p>A set of environment variables to make available to builds for the build project.</p>
     pub fn environment_variables(
         &self,
-    ) -> std::option::Option<
+    ) -> ::std::option::Option<
         &[crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails],
     > {
         self.environment_variables.as_deref()
@@ -60,13 +60,14 @@ impl AwsCodeBuildProjectEnvironment {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
-    pub fn image_pull_credentials_type(&self) -> std::option::Option<&str> {
+    pub fn image_pull_credentials_type(&self) -> ::std::option::Option<&str> {
         self.image_pull_credentials_type.as_deref()
     }
     /// <p>The credentials for access to a private registry.</p>
     pub fn registry_credential(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential> {
+    ) -> ::std::option::Option<&crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>
+    {
         self.registry_credential.as_ref()
     }
     /// <p>The type of build environment to use for related builds.</p>
@@ -74,7 +75,7 @@ impl AwsCodeBuildProjectEnvironment {
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -87,26 +88,28 @@ impl AwsCodeBuildProjectEnvironment {
 
 /// A builder for [`AwsCodeBuildProjectEnvironment`](crate::types::AwsCodeBuildProjectEnvironment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCodeBuildProjectEnvironmentBuilder {
-    pub(crate) certificate: std::option::Option<std::string::String>,
-    pub(crate) environment_variables: std::option::Option<
-        std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
+    pub(crate) certificate: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_variables: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
     >,
-    pub(crate) privileged_mode: std::option::Option<bool>,
-    pub(crate) image_pull_credentials_type: std::option::Option<std::string::String>,
+    pub(crate) privileged_mode: ::std::option::Option<bool>,
+    pub(crate) image_pull_credentials_type: ::std::option::Option<::std::string::String>,
     pub(crate) registry_credential:
-        std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The certificate to use with this build project.</p>
-    pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate = Some(input.into());
+    pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate to use with this build project.</p>
-    pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate = input;
         self
     }
@@ -121,14 +124,16 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     ) -> Self {
         let mut v = self.environment_variables.unwrap_or_default();
         v.push(input);
-        self.environment_variables = Some(v);
+        self.environment_variables = ::std::option::Option::Some(v);
         self
     }
     /// <p>A set of environment variables to make available to builds for the build project.</p>
     pub fn set_environment_variables(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<
+                crate::types::AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails,
+            >,
         >,
     ) -> Self {
         self.environment_variables = input;
@@ -136,11 +141,11 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     }
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
     pub fn privileged_mode(mut self, input: bool) -> Self {
-        self.privileged_mode = Some(input);
+        self.privileged_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to allow the Docker daemon to run inside a Docker container. Set to <code>true</code> if the build project is used to build Docker images.</p>
-    pub fn set_privileged_mode(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_privileged_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privileged_mode = input;
         self
     }
@@ -151,8 +156,11 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <li> <p> <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p> </li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
-    pub fn image_pull_credentials_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_pull_credentials_type = Some(input.into());
+    pub fn image_pull_credentials_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.image_pull_credentials_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
@@ -164,7 +172,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn set_image_pull_credentials_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.image_pull_credentials_type = input;
         self
@@ -174,13 +182,15 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
         mut self,
         input: crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential,
     ) -> Self {
-        self.registry_credential = Some(input);
+        self.registry_credential = ::std::option::Option::Some(input);
         self
     }
     /// <p>The credentials for access to a private registry.</p>
     pub fn set_registry_credential(
         mut self,
-        input: std::option::Option<crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential>,
+        input: ::std::option::Option<
+            crate::types::AwsCodeBuildProjectEnvironmentRegistryCredential,
+        >,
     ) -> Self {
         self.registry_credential = input;
         self
@@ -190,8 +200,8 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of build environment to use for related builds.</p>
@@ -199,7 +209,7 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p>
     /// <p>Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> | <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

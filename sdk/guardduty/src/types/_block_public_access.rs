@@ -2,7 +2,7 @@
 
 /// <p>Contains information on how the bucker owner's S3 Block Public Access settings are being applied to the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">S3 Block Public Access</a> for more information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockPublicAccess {
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
     #[doc(hidden)]
@@ -44,51 +44,53 @@ impl BlockPublicAccess {
 
 /// A builder for [`BlockPublicAccess`](crate::types::BlockPublicAccess).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlockPublicAccessBuilder {
-    pub(crate) ignore_public_acls: std::option::Option<bool>,
-    pub(crate) restrict_public_buckets: std::option::Option<bool>,
-    pub(crate) block_public_acls: std::option::Option<bool>,
-    pub(crate) block_public_policy: std::option::Option<bool>,
+    pub(crate) ignore_public_acls: ::std::option::Option<bool>,
+    pub(crate) restrict_public_buckets: ::std::option::Option<bool>,
+    pub(crate) block_public_acls: ::std::option::Option<bool>,
+    pub(crate) block_public_policy: ::std::option::Option<bool>,
 }
 impl BlockPublicAccessBuilder {
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
     pub fn ignore_public_acls(mut self, input: bool) -> Self {
-        self.ignore_public_acls = Some(input);
+        self.ignore_public_acls = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>IgnorePublicAcls</code>.</p>
-    pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ignore_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_public_acls = input;
         self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
     pub fn restrict_public_buckets(mut self, input: bool) -> Self {
-        self.restrict_public_buckets = Some(input);
+        self.restrict_public_buckets = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>RestrictPublicBuckets</code>.</p>
-    pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_restrict_public_buckets(mut self, input: ::std::option::Option<bool>) -> Self {
         self.restrict_public_buckets = input;
         self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
     pub fn block_public_acls(mut self, input: bool) -> Self {
-        self.block_public_acls = Some(input);
+        self.block_public_acls = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicAcls</code>.</p>
-    pub fn set_block_public_acls(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_block_public_acls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.block_public_acls = input;
         self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
     pub fn block_public_policy(mut self, input: bool) -> Self {
-        self.block_public_policy = Some(input);
+        self.block_public_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if S3 Block Public Access is set to <code>BlockPublicPolicy</code>.</p>
-    pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_block_public_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.block_public_policy = input;
         self
     }

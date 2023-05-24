@@ -2,29 +2,30 @@
 
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBClusterBacktracks</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClusterBacktracksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Contains a list of backtracks for the user.</p>
     #[doc(hidden)]
-    pub db_cluster_backtracks: std::option::Option<std::vec::Vec<crate::types::DbClusterBacktrack>>,
+    pub db_cluster_backtracks:
+        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterBacktracksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Contains a list of backtracks for the user.</p>
     pub fn db_cluster_backtracks(
         &self,
-    ) -> std::option::Option<&[crate::types::DbClusterBacktrack]> {
+    ) -> ::std::option::Option<&[crate::types::DbClusterBacktrack]> {
         self.db_cluster_backtracks.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDbClusterBacktracksOutput {
+impl ::aws_http::request_id::RequestId for DescribeDbClusterBacktracksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,21 +39,23 @@ impl DescribeDbClusterBacktracksOutput {
 
 /// A builder for [`DescribeDbClusterBacktracksOutput`](crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbClusterBacktracksOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_backtracks:
-        std::option::Option<std::vec::Vec<crate::types::DbClusterBacktrack>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterBacktracksOutputBuilder {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -64,13 +67,13 @@ impl DescribeDbClusterBacktracksOutputBuilder {
     pub fn db_cluster_backtracks(mut self, input: crate::types::DbClusterBacktrack) -> Self {
         let mut v = self.db_cluster_backtracks.unwrap_or_default();
         v.push(input);
-        self.db_cluster_backtracks = Some(v);
+        self.db_cluster_backtracks = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains a list of backtracks for the user.</p>
     pub fn set_db_cluster_backtracks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbClusterBacktrack>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterBacktrack>>,
     ) -> Self {
         self.db_cluster_backtracks = input;
         self

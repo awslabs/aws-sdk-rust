@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSubscriptionDefinition`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subscription_definition_id(impl Into<String>)`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::subscription_definition_id) / [`set_subscription_definition_id(Option<String>)`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::set_subscription_definition_id): The ID of the subscription definition.
+    ///   - [`subscription_definition_id(impl ::std::convert::Into<String>)`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::subscription_definition_id) / [`set_subscription_definition_id(Option<String>)`](crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionFluentBuilder::set_subscription_definition_id): The ID of the subscription definition.
     /// - On success, responds with [`GetSubscriptionDefinitionOutput`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.

@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetPlatformArch {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum TargetPlatformArch {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetPlatformArch {
+impl ::std::convert::From<&str> for TargetPlatformArch {
     fn from(s: &str) -> Self {
         match s {
             "ARM64" => TargetPlatformArch::Arm64,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for TargetPlatformArch {
         }
     }
 }
-impl std::str::FromStr for TargetPlatformArch {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetPlatformArch {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetPlatformArch::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetPlatformArch::from(s))
     }
 }
 impl TargetPlatformArch {
@@ -101,7 +101,7 @@ impl TargetPlatformArch {
         &["ARM64", "ARM_EABI", "ARM_EABIHF", "X86", "X86_64"]
     }
 }
-impl AsRef<str> for TargetPlatformArch {
+impl ::std::convert::AsRef<str> for TargetPlatformArch {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

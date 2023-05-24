@@ -7,29 +7,29 @@
 /// <li> <p> <b>type</b> - A string value indicating the communication type that the aforementioned rules apply to. At the moment the type value can assume one of 3 values at the moment <code>chat</code>, <code>web</code> and <code>call</code>. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommunicationTypeOptions {
     /// <p> A string value indicating the communication type. At the moment the type value can assume one of 3 values at the moment chat, web and call. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p> A JSON-formatted list containing time ranges when support is available. </p>
     #[doc(hidden)]
-    pub supported_hours: std::option::Option<std::vec::Vec<crate::types::SupportedHour>>,
+    pub supported_hours: ::std::option::Option<::std::vec::Vec<crate::types::SupportedHour>>,
     /// <p> A JSON-formatted list containing date and time ranges for periods without support </p>
     #[doc(hidden)]
-    pub dates_without_support: std::option::Option<std::vec::Vec<crate::types::DateInterval>>,
+    pub dates_without_support: ::std::option::Option<::std::vec::Vec<crate::types::DateInterval>>,
 }
 impl CommunicationTypeOptions {
     /// <p> A string value indicating the communication type. At the moment the type value can assume one of 3 values at the moment chat, web and call. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p> A JSON-formatted list containing time ranges when support is available. </p>
-    pub fn supported_hours(&self) -> std::option::Option<&[crate::types::SupportedHour]> {
+    pub fn supported_hours(&self) -> ::std::option::Option<&[crate::types::SupportedHour]> {
         self.supported_hours.as_deref()
     }
     /// <p> A JSON-formatted list containing date and time ranges for periods without support </p>
-    pub fn dates_without_support(&self) -> std::option::Option<&[crate::types::DateInterval]> {
+    pub fn dates_without_support(&self) -> ::std::option::Option<&[crate::types::DateInterval]> {
         self.dates_without_support.as_deref()
     }
 }
@@ -42,21 +42,23 @@ impl CommunicationTypeOptions {
 
 /// A builder for [`CommunicationTypeOptions`](crate::types::CommunicationTypeOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommunicationTypeOptionsBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) supported_hours: std::option::Option<std::vec::Vec<crate::types::SupportedHour>>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) supported_hours: ::std::option::Option<::std::vec::Vec<crate::types::SupportedHour>>,
     pub(crate) dates_without_support:
-        std::option::Option<std::vec::Vec<crate::types::DateInterval>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DateInterval>>,
 }
 impl CommunicationTypeOptionsBuilder {
     /// <p> A string value indicating the communication type. At the moment the type value can assume one of 3 values at the moment chat, web and call. </p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A string value indicating the communication type. At the moment the type value can assume one of 3 values at the moment chat, web and call. </p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
@@ -68,13 +70,13 @@ impl CommunicationTypeOptionsBuilder {
     pub fn supported_hours(mut self, input: crate::types::SupportedHour) -> Self {
         let mut v = self.supported_hours.unwrap_or_default();
         v.push(input);
-        self.supported_hours = Some(v);
+        self.supported_hours = ::std::option::Option::Some(v);
         self
     }
     /// <p> A JSON-formatted list containing time ranges when support is available. </p>
     pub fn set_supported_hours(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SupportedHour>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedHour>>,
     ) -> Self {
         self.supported_hours = input;
         self
@@ -87,13 +89,13 @@ impl CommunicationTypeOptionsBuilder {
     pub fn dates_without_support(mut self, input: crate::types::DateInterval) -> Self {
         let mut v = self.dates_without_support.unwrap_or_default();
         v.push(input);
-        self.dates_without_support = Some(v);
+        self.dates_without_support = ::std::option::Option::Some(v);
         self
     }
     /// <p> A JSON-formatted list containing date and time ranges for periods without support </p>
     pub fn set_dates_without_support(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DateInterval>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DateInterval>>,
     ) -> Self {
         self.dates_without_support = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Specifies the status and settings of the SMS channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsChannelRequest {
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
     #[doc(hidden)]
-    pub sender_id: std::option::Option<std::string::String>,
+    pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
     #[doc(hidden)]
-    pub short_code: std::option::Option<std::string::String>,
+    pub short_code: ::std::option::Option<::std::string::String>,
 }
 impl SmsChannelRequest {
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<&str> {
         self.sender_id.as_deref()
     }
     /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
-    pub fn short_code(&self) -> std::option::Option<&str> {
+    pub fn short_code(&self) -> ::std::option::Option<&str> {
         self.short_code.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl SmsChannelRequest {
 
 /// A builder for [`SmsChannelRequest`](crate::types::SmsChannelRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SmsChannelRequestBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) sender_id: std::option::Option<std::string::String>,
-    pub(crate) short_code: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) sender_id: ::std::option::Option<::std::string::String>,
+    pub(crate) short_code: ::std::option::Option<::std::string::String>,
 }
 impl SmsChannelRequestBuilder {
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
-    pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sender_id = Some(input.into());
+    pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sender_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
-    pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
     }
     /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
-    pub fn short_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.short_code = Some(input.into());
+    pub fn short_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.short_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
-    pub fn set_short_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_short_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_code = input;
         self
     }

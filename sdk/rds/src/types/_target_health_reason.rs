@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetHealthReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum TargetHealthReason {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetHealthReason {
+impl ::std::convert::From<&str> for TargetHealthReason {
     fn from(s: &str) -> Self {
         match s {
             "AUTH_FAILURE" => TargetHealthReason::AuthFailure,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for TargetHealthReason {
         }
     }
 }
-impl std::str::FromStr for TargetHealthReason {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetHealthReason {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetHealthReason::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetHealthReason::from(s))
     }
 }
 impl TargetHealthReason {
@@ -107,7 +107,7 @@ impl TargetHealthReason {
         ]
     }
 }
-impl AsRef<str> for TargetHealthReason {
+impl ::std::convert::AsRef<str> for TargetHealthReason {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

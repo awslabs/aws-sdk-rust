@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeviceProfile`](crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder::set_id): <p>The ID of the resource to get.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_device_profile::builders::GetDeviceProfileFluentBuilder::set_id): <p>The ID of the resource to get.</p>
     /// - On success, responds with [`GetDeviceProfileOutput`](crate::operation::get_device_profile::GetDeviceProfileOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_device_profile::GetDeviceProfileOutput::arn): <p>The Amazon Resource Name of the resource.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_device_profile::GetDeviceProfileOutput::name): <p>The name of the resource.</p>

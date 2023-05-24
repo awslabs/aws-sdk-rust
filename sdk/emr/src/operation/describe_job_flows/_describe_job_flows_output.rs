@@ -2,20 +2,20 @@
 
 /// <p> The output for the <code>DescribeJobFlows</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobFlowsOutput {
     /// <p>A list of job flows matching the parameters supplied.</p>
     #[doc(hidden)]
-    pub job_flows: std::option::Option<std::vec::Vec<crate::types::JobFlowDetail>>,
+    pub job_flows: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeJobFlowsOutput {
     /// <p>A list of job flows matching the parameters supplied.</p>
-    pub fn job_flows(&self) -> std::option::Option<&[crate::types::JobFlowDetail]> {
+    pub fn job_flows(&self) -> ::std::option::Option<&[crate::types::JobFlowDetail]> {
         self.job_flows.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeJobFlowsOutput {
+impl ::aws_http::request_id::RequestId for DescribeJobFlowsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl DescribeJobFlowsOutput {
 
 /// A builder for [`DescribeJobFlowsOutput`](crate::operation::describe_job_flows::DescribeJobFlowsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeJobFlowsOutputBuilder {
-    pub(crate) job_flows: std::option::Option<std::vec::Vec<crate::types::JobFlowDetail>>,
+    pub(crate) job_flows: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
     _request_id: Option<String>,
 }
 impl DescribeJobFlowsOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeJobFlowsOutputBuilder {
     pub fn job_flows(mut self, input: crate::types::JobFlowDetail) -> Self {
         let mut v = self.job_flows.unwrap_or_default();
         v.push(input);
-        self.job_flows = Some(v);
+        self.job_flows = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of job flows matching the parameters supplied.</p>
     pub fn set_job_flows(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobFlowDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::JobFlowDetail>>,
     ) -> Self {
         self.job_flows = input;
         self

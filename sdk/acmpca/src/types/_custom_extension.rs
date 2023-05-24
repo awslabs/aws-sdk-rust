@@ -4,35 +4,35 @@
 /// <p>Specifies the X.509 extension information for a certificate.</p>
 /// <p>Extensions present in <code>CustomExtensions</code> follow the <code>ApiPassthrough</code> <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">template rules</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomExtension {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     #[doc(hidden)]
-    pub object_identifier: std::option::Option<std::string::String>,
+    pub object_identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
     #[doc(hidden)]
-    pub critical: std::option::Option<bool>,
+    pub critical: ::std::option::Option<bool>,
 }
 impl CustomExtension {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
         self.object_identifier.as_deref()
     }
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
-    pub fn critical(&self) -> std::option::Option<bool> {
+    pub fn critical(&self) -> ::std::option::Option<bool> {
         self.critical
     }
 }
@@ -45,49 +45,54 @@ impl CustomExtension {
 
 /// A builder for [`CustomExtension`](crate::types::CustomExtension).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomExtensionBuilder {
-    pub(crate) object_identifier: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) critical: std::option::Option<bool>,
+    pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) critical: ::std::option::Option<bool>,
 }
 impl CustomExtensionBuilder {
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
-    pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_identifier = Some(input.into());
+    pub fn object_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
     /// <p>Specifies the object identifier (OID) of the X.509 extension. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn set_object_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.object_identifier = input;
         self
     }
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
     /// <p>Specifies the base64-encoded value of the X.509 extension.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
     pub fn critical(mut self, input: bool) -> Self {
-        self.critical = Some(input);
+        self.critical = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
     /// <p>Specifies the critical flag of the X.509 extension.</p>
-    pub fn set_critical(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_critical(mut self, input: ::std::option::Option<bool>) -> Self {
         self.critical = input;
         self
     }

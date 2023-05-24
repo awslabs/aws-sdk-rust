@@ -2,7 +2,7 @@
 
 /// <p>Represents the input of a <code>BatchWriteItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchWriteItemInput {
     /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
     /// <ul>
@@ -16,8 +16,11 @@ pub struct BatchWriteItemInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub request_items: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::WriteRequest>>,
+    pub request_items: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::WriteRequest>,
+        >,
     >,
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
     /// <ul>
@@ -26,11 +29,11 @@ pub struct BatchWriteItemInput {
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub return_consumed_capacity: std::option::Option<crate::types::ReturnConsumedCapacity>,
+    pub return_consumed_capacity: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     #[doc(hidden)]
     pub return_item_collection_metrics:
-        std::option::Option<crate::types::ReturnItemCollectionMetrics>,
+        ::std::option::Option<crate::types::ReturnItemCollectionMetrics>,
 }
 impl BatchWriteItemInput {
     /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
@@ -46,8 +49,11 @@ impl BatchWriteItemInput {
     /// </ul>
     pub fn request_items(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::WriteRequest>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::WriteRequest>,
+        >,
     > {
         self.request_items.as_ref()
     }
@@ -59,13 +65,13 @@ impl BatchWriteItemInput {
     /// </ul>
     pub fn return_consumed_capacity(
         &self,
-    ) -> std::option::Option<&crate::types::ReturnConsumedCapacity> {
+    ) -> ::std::option::Option<&crate::types::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub fn return_item_collection_metrics(
         &self,
-    ) -> std::option::Option<&crate::types::ReturnItemCollectionMetrics> {
+    ) -> ::std::option::Option<&crate::types::ReturnItemCollectionMetrics> {
         self.return_item_collection_metrics.as_ref()
     }
 }
@@ -78,14 +84,20 @@ impl BatchWriteItemInput {
 
 /// A builder for [`BatchWriteItemInput`](crate::operation::batch_write_item::BatchWriteItemInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchWriteItemInputBuilder {
-    pub(crate) request_items: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::WriteRequest>>,
+    pub(crate) request_items: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::WriteRequest>,
+        >,
     >,
-    pub(crate) return_consumed_capacity: std::option::Option<crate::types::ReturnConsumedCapacity>,
+    pub(crate) return_consumed_capacity:
+        ::std::option::Option<crate::types::ReturnConsumedCapacity>,
     pub(crate) return_item_collection_metrics:
-        std::option::Option<crate::types::ReturnItemCollectionMetrics>,
+        ::std::option::Option<crate::types::ReturnItemCollectionMetrics>,
 }
 impl BatchWriteItemInputBuilder {
     /// Adds a key-value pair to `request_items`.
@@ -105,12 +117,12 @@ impl BatchWriteItemInputBuilder {
     /// </ul>
     pub fn request_items(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<crate::types::WriteRequest>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<crate::types::WriteRequest>,
     ) -> Self {
         let mut hash_map = self.request_items.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.request_items = Some(hash_map);
+        self.request_items = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of one or more table names and, for each table, a list of operations to be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:</p>
@@ -126,10 +138,10 @@ impl BatchWriteItemInputBuilder {
     /// </ul>
     pub fn set_request_items(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::types::WriteRequest>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<crate::types::WriteRequest>,
             >,
         >,
     ) -> Self {
@@ -143,7 +155,7 @@ impl BatchWriteItemInputBuilder {
     /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(mut self, input: crate::types::ReturnConsumedCapacity) -> Self {
-        self.return_consumed_capacity = Some(input);
+        self.return_consumed_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
@@ -154,7 +166,7 @@ impl BatchWriteItemInputBuilder {
     /// </ul>
     pub fn set_return_consumed_capacity(
         mut self,
-        input: std::option::Option<crate::types::ReturnConsumedCapacity>,
+        input: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
     ) -> Self {
         self.return_consumed_capacity = input;
         self
@@ -164,13 +176,13 @@ impl BatchWriteItemInputBuilder {
         mut self,
         input: crate::types::ReturnItemCollectionMetrics,
     ) -> Self {
-        self.return_item_collection_metrics = Some(input);
+        self.return_item_collection_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
     pub fn set_return_item_collection_metrics(
         mut self,
-        input: std::option::Option<crate::types::ReturnItemCollectionMetrics>,
+        input: ::std::option::Option<crate::types::ReturnItemCollectionMetrics>,
     ) -> Self {
         self.return_item_collection_metrics = input;
         self
@@ -178,11 +190,11 @@ impl BatchWriteItemInputBuilder {
     /// Consumes the builder and constructs a [`BatchWriteItemInput`](crate::operation::batch_write_item::BatchWriteItemInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_write_item::BatchWriteItemInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::batch_write_item::BatchWriteItemInput {
+        ::std::result::Result::Ok(crate::operation::batch_write_item::BatchWriteItemInput {
             request_items: self.request_items,
             return_consumed_capacity: self.return_consumed_capacity,
             return_item_collection_metrics: self.return_item_collection_metrics,

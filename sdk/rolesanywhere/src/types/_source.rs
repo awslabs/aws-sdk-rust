@@ -2,22 +2,22 @@
 
 /// <p>The trust anchor type and its related certificate data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Source {
     /// <p>The type of the trust anchor. </p>
     #[doc(hidden)]
-    pub source_type: std::option::Option<crate::types::TrustAnchorType>,
+    pub source_type: ::std::option::Option<crate::types::TrustAnchorType>,
     /// <p>The data field of the trust anchor depending on its type. </p>
     #[doc(hidden)]
-    pub source_data: std::option::Option<crate::types::SourceData>,
+    pub source_data: ::std::option::Option<crate::types::SourceData>,
 }
 impl Source {
     /// <p>The type of the trust anchor. </p>
-    pub fn source_type(&self) -> std::option::Option<&crate::types::TrustAnchorType> {
+    pub fn source_type(&self) -> ::std::option::Option<&crate::types::TrustAnchorType> {
         self.source_type.as_ref()
     }
     /// <p>The data field of the trust anchor depending on its type. </p>
-    pub fn source_data(&self) -> std::option::Option<&crate::types::SourceData> {
+    pub fn source_data(&self) -> ::std::option::Option<&crate::types::SourceData> {
         self.source_data.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl Source {
 
 /// A builder for [`Source`](crate::types::Source).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceBuilder {
-    pub(crate) source_type: std::option::Option<crate::types::TrustAnchorType>,
-    pub(crate) source_data: std::option::Option<crate::types::SourceData>,
+    pub(crate) source_type: ::std::option::Option<crate::types::TrustAnchorType>,
+    pub(crate) source_data: ::std::option::Option<crate::types::SourceData>,
 }
 impl SourceBuilder {
     /// <p>The type of the trust anchor. </p>
     pub fn source_type(mut self, input: crate::types::TrustAnchorType) -> Self {
-        self.source_type = Some(input);
+        self.source_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the trust anchor. </p>
     pub fn set_source_type(
         mut self,
-        input: std::option::Option<crate::types::TrustAnchorType>,
+        input: ::std::option::Option<crate::types::TrustAnchorType>,
     ) -> Self {
         self.source_type = input;
         self
     }
     /// <p>The data field of the trust anchor depending on its type. </p>
     pub fn source_data(mut self, input: crate::types::SourceData) -> Self {
-        self.source_data = Some(input);
+        self.source_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data field of the trust anchor depending on its type. </p>
-    pub fn set_source_data(mut self, input: std::option::Option<crate::types::SourceData>) -> Self {
+    pub fn set_source_data(
+        mut self,
+        input: ::std::option::Option<crate::types::SourceData>,
+    ) -> Self {
         self.source_data = input;
         self
     }

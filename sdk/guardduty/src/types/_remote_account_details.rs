@@ -2,18 +2,18 @@
 
 /// <p>Contains details about the remote Amazon Web Services account that made the API call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoteAccountDetails {
     /// <p>The Amazon Web Services account ID of the remote API caller.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>
     #[doc(hidden)]
     pub affiliated: bool,
 }
 impl RemoteAccountDetails {
     /// <p>The Amazon Web Services account ID of the remote API caller.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>
@@ -30,29 +30,31 @@ impl RemoteAccountDetails {
 
 /// A builder for [`RemoteAccountDetails`](crate::types::RemoteAccountDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemoteAccountDetailsBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) affiliated: std::option::Option<bool>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) affiliated: ::std::option::Option<bool>,
 }
 impl RemoteAccountDetailsBuilder {
     /// <p>The Amazon Web Services account ID of the remote API caller.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the remote API caller.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>
     pub fn affiliated(mut self, input: bool) -> Self {
-        self.affiliated = Some(input);
+        self.affiliated = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>
-    pub fn set_affiliated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_affiliated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.affiliated = input;
         self
     }

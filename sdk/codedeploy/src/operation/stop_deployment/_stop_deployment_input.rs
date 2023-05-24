@@ -2,22 +2,22 @@
 
 /// <p> Represents the input of a <code>StopDeployment</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDeploymentInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
-    pub deployment_id: std::option::Option<std::string::String>,
+    pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
     #[doc(hidden)]
-    pub auto_rollback_enabled: std::option::Option<bool>,
+    pub auto_rollback_enabled: ::std::option::Option<bool>,
 }
 impl StopDeploymentInput {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
-    pub fn auto_rollback_enabled(&self) -> std::option::Option<bool> {
+    pub fn auto_rollback_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_rollback_enabled
     }
 }
@@ -30,40 +30,48 @@ impl StopDeploymentInput {
 
 /// A builder for [`StopDeploymentInput`](crate::operation::stop_deployment::StopDeploymentInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopDeploymentInputBuilder {
-    pub(crate) deployment_id: std::option::Option<std::string::String>,
-    pub(crate) auto_rollback_enabled: std::option::Option<bool>,
+    pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_rollback_enabled: ::std::option::Option<bool>,
 }
 impl StopDeploymentInputBuilder {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_id = Some(input.into());
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of a deployment. </p>
-    pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deployment_id = input;
         self
     }
     /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
     pub fn auto_rollback_enabled(mut self, input: bool) -> Self {
-        self.auto_rollback_enabled = Some(input);
+        self.auto_rollback_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
-    pub fn set_auto_rollback_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_rollback_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_rollback_enabled = input;
         self
     }
     /// Consumes the builder and constructs a [`StopDeploymentInput`](crate::operation::stop_deployment::StopDeploymentInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_deployment::StopDeploymentInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::stop_deployment::StopDeploymentInput {
+        ::std::result::Result::Ok(crate::operation::stop_deployment::StopDeploymentInput {
             deployment_id: self.deployment_id,
             auto_rollback_enabled: self.auto_rollback_enabled,
         })

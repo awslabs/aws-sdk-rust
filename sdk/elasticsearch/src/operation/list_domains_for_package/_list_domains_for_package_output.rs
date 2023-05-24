@@ -2,30 +2,30 @@
 
 /// <p> Container for response parameters to <code> <code>ListDomainsForPackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsForPackageOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     #[doc(hidden)]
     pub domain_package_details_list:
-        std::option::Option<std::vec::Vec<crate::types::DomainPackageDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDomainsForPackageOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     pub fn domain_package_details_list(
         &self,
-    ) -> std::option::Option<&[crate::types::DomainPackageDetails]> {
+    ) -> ::std::option::Option<&[crate::types::DomainPackageDetails]> {
         self.domain_package_details_list.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDomainsForPackageOutput {
+impl ::aws_http::request_id::RequestId for ListDomainsForPackageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl ListDomainsForPackageOutput {
 
 /// A builder for [`ListDomainsForPackageOutput`](crate::operation::list_domains_for_package::ListDomainsForPackageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDomainsForPackageOutputBuilder {
     pub(crate) domain_package_details_list:
-        std::option::Option<std::vec::Vec<crate::types::DomainPackageDetails>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDomainsForPackageOutputBuilder {
@@ -60,24 +62,24 @@ impl ListDomainsForPackageOutputBuilder {
     ) -> Self {
         let mut v = self.domain_package_details_list.unwrap_or_default();
         v.push(input);
-        self.domain_package_details_list = Some(v);
+        self.domain_package_details_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     pub fn set_domain_package_details_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainPackageDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     ) -> Self {
         self.domain_package_details_list = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

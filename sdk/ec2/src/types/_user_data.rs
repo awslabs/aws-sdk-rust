@@ -2,20 +2,20 @@
 
 /// <p>Describes the user data for an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserData {
     /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<std::string::String>,
+    pub data: ::std::option::Option<::std::string::String>,
 }
 impl UserData {
     /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
 }
-impl std::fmt::Debug for UserData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserData");
         formatter.field("data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,18 @@ impl UserData {
 
 /// A builder for [`UserData`](crate::types::UserData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserDataBuilder {
-    pub(crate) data: std::option::Option<std::string::String>,
+    pub(crate) data: ::std::option::Option<::std::string::String>,
 }
 impl UserDataBuilder {
     /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
-    pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data = Some(input.into());
+    pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user data. If you are using an Amazon Web Services SDK or command line tool, Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.</p>
-    pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }
@@ -50,8 +50,8 @@ impl UserDataBuilder {
         crate::types::UserData { data: self.data }
     }
 }
-impl std::fmt::Debug for UserDataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserDataBuilder");
         formatter.field("data", &"*** Sensitive Data Redacted ***");
         formatter.finish()

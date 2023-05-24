@@ -7,29 +7,29 @@ pub use crate::operation::batch_delete_document::_batch_delete_document_input::B
 ///
 /// <p>Removes one or more documents from an index. The documents must have been added with the <code>BatchPutDocument</code> API.</p>
 /// <p>The documents are deleted asynchronously. You can see the progress of the deletion by using Amazon Web Services CloudWatch. Any error messages related to the processing of the batch are sent to you CloudWatch log.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteDocumentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder,
 }
 impl BatchDeleteDocumentFluentBuilder {
     /// Creates a new `BatchDeleteDocument`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::batch_delete_document::BatchDeleteDocument,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_delete_document::BatchDeleteDocumentError,
         >,
     > {
@@ -37,30 +37,33 @@ impl BatchDeleteDocumentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_delete_document::BatchDeleteDocumentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_delete_document::BatchDeleteDocumentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl BatchDeleteDocumentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_delete_document::BatchDeleteDocumentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_delete_document::BatchDeleteDocumentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the index that contains the documents to delete.</p>
-    pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
     /// <p>The identifier of the index that contains the documents to delete.</p>
-    pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
@@ -96,14 +99,17 @@ impl BatchDeleteDocumentFluentBuilder {
     /// To override the contents of this collection use [`set_document_id_list`](Self::set_document_id_list).
     ///
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn document_id_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn document_id_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.document_id_list(input.into());
         self
     }
     /// <p>One or more identifiers for documents to delete from the index.</p>
     pub fn set_document_id_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_document_id_list(input);
         self
@@ -119,7 +125,7 @@ impl BatchDeleteDocumentFluentBuilder {
     /// <p>Maps a particular data source sync job to a particular data source.</p>
     pub fn set_data_source_sync_job_metric_target(
         mut self,
-        input: std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
+        input: ::std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
     ) -> Self {
         self.inner = self.inner.set_data_source_sync_job_metric_target(input);
         self

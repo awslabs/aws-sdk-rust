@@ -2,7 +2,7 @@
 
 /// <p> The properties that can be applied to a field when the connector is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceFieldProperties {
     /// <p> Indicates whether the field can be returned in a search result. </p>
     #[doc(hidden)]
@@ -37,42 +37,44 @@ impl SourceFieldProperties {
 
 /// A builder for [`SourceFieldProperties`](crate::types::SourceFieldProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceFieldPropertiesBuilder {
-    pub(crate) is_retrievable: std::option::Option<bool>,
-    pub(crate) is_queryable: std::option::Option<bool>,
-    pub(crate) is_timestamp_field_for_incremental_queries: std::option::Option<bool>,
+    pub(crate) is_retrievable: ::std::option::Option<bool>,
+    pub(crate) is_queryable: ::std::option::Option<bool>,
+    pub(crate) is_timestamp_field_for_incremental_queries: ::std::option::Option<bool>,
 }
 impl SourceFieldPropertiesBuilder {
     /// <p> Indicates whether the field can be returned in a search result. </p>
     pub fn is_retrievable(mut self, input: bool) -> Self {
-        self.is_retrievable = Some(input);
+        self.is_retrievable = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether the field can be returned in a search result. </p>
-    pub fn set_is_retrievable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_retrievable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_retrievable = input;
         self
     }
     /// <p> Indicates if the field can be queried. </p>
     pub fn is_queryable(mut self, input: bool) -> Self {
-        self.is_queryable = Some(input);
+        self.is_queryable = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates if the field can be queried. </p>
-    pub fn set_is_queryable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_queryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_queryable = input;
         self
     }
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
     pub fn is_timestamp_field_for_incremental_queries(mut self, input: bool) -> Self {
-        self.is_timestamp_field_for_incremental_queries = Some(input);
+        self.is_timestamp_field_for_incremental_queries = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if this timestamp field can be used for incremental queries.</p>
     pub fn set_is_timestamp_field_for_incremental_queries(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.is_timestamp_field_for_incremental_queries = input;
         self

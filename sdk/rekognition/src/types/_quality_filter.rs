@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum QualityFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum QualityFilter {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for QualityFilter {
+impl ::std::convert::From<&str> for QualityFilter {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => QualityFilter::Auto,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for QualityFilter {
         }
     }
 }
-impl std::str::FromStr for QualityFilter {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for QualityFilter {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QualityFilter::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(QualityFilter::from(s))
     }
 }
 impl QualityFilter {
@@ -101,7 +101,7 @@ impl QualityFilter {
         &["AUTO", "HIGH", "LOW", "MEDIUM", "NONE"]
     }
 }
-impl AsRef<str> for QualityFilter {
+impl ::std::convert::AsRef<str> for QualityFilter {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,29 +2,29 @@
 
 /// <p>Contains information about a client authentication method for a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientAuthenticationSettingInfo {
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ClientAuthenticationType>,
+    pub r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
     /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ClientAuthenticationStatus>,
+    pub status: ::std::option::Option<crate::types::ClientAuthenticationStatus>,
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClientAuthenticationSettingInfo {
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ClientAuthenticationType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
     /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ClientAuthenticationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl ClientAuthenticationSettingInfo {
 
 /// A builder for [`ClientAuthenticationSettingInfo`](crate::types::ClientAuthenticationSettingInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientAuthenticationSettingInfoBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ClientAuthenticationType>,
-    pub(crate) status: std::option::Option<crate::types::ClientAuthenticationStatus>,
-    pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ClientAuthenticationType>,
+    pub(crate) status: ::std::option::Option<crate::types::ClientAuthenticationStatus>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClientAuthenticationSettingInfoBuilder {
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of client authentication for the specified directory. If no type is specified, a list of all client authentication types that are supported for the directory is retrieved. </p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ClientAuthenticationType>,
+        input: ::std::option::Option<crate::types::ClientAuthenticationType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
     pub fn status(mut self, input: crate::types::ClientAuthenticationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the client authentication type is enabled or disabled for the specified directory.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ClientAuthenticationStatus>,
+        input: ::std::option::Option<crate::types::ClientAuthenticationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
-    pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date_time = Some(input);
+    pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the status of the client authentication type was last updated.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date_time = input;
         self

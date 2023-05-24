@@ -2,38 +2,38 @@
 
 /// <p>Specifies the categorical, continuous, and integer hyperparameters, and their ranges of tunable values. The range of tunable values determines which values that a hyperparameter tuning job can choose for the specified hyperparameter. This object is part of the <code>HyperParameterTuningJobConfig</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterRanges {
     /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
     #[doc(hidden)]
     pub categorical_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::types::CategoricalParameterRange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
     /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
     #[doc(hidden)]
     pub continuous_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::types::ContinuousParameterRange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>,
     /// <p>Specifies the tunable range for each integer hyperparameter.</p>
     #[doc(hidden)]
     pub integer_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::types::IntegerParameterRange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>>,
 }
 impl ParameterRanges {
     /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
     pub fn categorical_parameter_ranges(
         &self,
-    ) -> std::option::Option<&[crate::types::CategoricalParameterRange]> {
+    ) -> ::std::option::Option<&[crate::types::CategoricalParameterRange]> {
         self.categorical_parameter_ranges.as_deref()
     }
     /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
     pub fn continuous_parameter_ranges(
         &self,
-    ) -> std::option::Option<&[crate::types::ContinuousParameterRange]> {
+    ) -> ::std::option::Option<&[crate::types::ContinuousParameterRange]> {
         self.continuous_parameter_ranges.as_deref()
     }
     /// <p>Specifies the tunable range for each integer hyperparameter.</p>
     pub fn integer_parameter_ranges(
         &self,
-    ) -> std::option::Option<&[crate::types::IntegerParameterRange]> {
+    ) -> ::std::option::Option<&[crate::types::IntegerParameterRange]> {
         self.integer_parameter_ranges.as_deref()
     }
 }
@@ -46,14 +46,16 @@ impl ParameterRanges {
 
 /// A builder for [`ParameterRanges`](crate::types::ParameterRanges).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterRangesBuilder {
     pub(crate) categorical_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::types::CategoricalParameterRange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
     pub(crate) continuous_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::types::ContinuousParameterRange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>,
     pub(crate) integer_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::types::IntegerParameterRange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>>,
 }
 impl ParameterRangesBuilder {
     /// Appends an item to `categorical_parameter_ranges`.
@@ -67,13 +69,13 @@ impl ParameterRangesBuilder {
     ) -> Self {
         let mut v = self.categorical_parameter_ranges.unwrap_or_default();
         v.push(input);
-        self.categorical_parameter_ranges = Some(v);
+        self.categorical_parameter_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the tunable range for each categorical hyperparameter.</p>
     pub fn set_categorical_parameter_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CategoricalParameterRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CategoricalParameterRange>>,
     ) -> Self {
         self.categorical_parameter_ranges = input;
         self
@@ -89,13 +91,13 @@ impl ParameterRangesBuilder {
     ) -> Self {
         let mut v = self.continuous_parameter_ranges.unwrap_or_default();
         v.push(input);
-        self.continuous_parameter_ranges = Some(v);
+        self.continuous_parameter_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the tunable range for each continuous hyperparameter.</p>
     pub fn set_continuous_parameter_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContinuousParameterRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContinuousParameterRange>>,
     ) -> Self {
         self.continuous_parameter_ranges = input;
         self
@@ -108,13 +110,13 @@ impl ParameterRangesBuilder {
     pub fn integer_parameter_ranges(mut self, input: crate::types::IntegerParameterRange) -> Self {
         let mut v = self.integer_parameter_ranges.unwrap_or_default();
         v.push(input);
-        self.integer_parameter_ranges = Some(v);
+        self.integer_parameter_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the tunable range for each integer hyperparameter.</p>
     pub fn set_integer_parameter_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IntegerParameterRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameterRange>>,
     ) -> Self {
         self.integer_parameter_ranges = input;
         self

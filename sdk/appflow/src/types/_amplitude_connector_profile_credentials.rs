@@ -2,27 +2,27 @@
 
 /// <p> The connector-specific credentials required when using Amplitude. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AmplitudeConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     #[doc(hidden)]
-    pub api_key: std::option::Option<std::string::String>,
+    pub api_key: ::std::option::Option<::std::string::String>,
     /// <p> The Secret Access Key portion of the credentials. </p>
     #[doc(hidden)]
-    pub secret_key: std::option::Option<std::string::String>,
+    pub secret_key: ::std::option::Option<::std::string::String>,
 }
 impl AmplitudeConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub fn api_key(&self) -> std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<&str> {
         self.api_key.as_deref()
     }
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn secret_key(&self) -> std::option::Option<&str> {
+    pub fn secret_key(&self) -> ::std::option::Option<&str> {
         self.secret_key.as_deref()
     }
 }
-impl std::fmt::Debug for AmplitudeConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AmplitudeConnectorProfileCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AmplitudeConnectorProfileCredentials");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl AmplitudeConnectorProfileCredentials {
 
 /// A builder for [`AmplitudeConnectorProfileCredentials`](crate::types::AmplitudeConnectorProfileCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AmplitudeConnectorProfileCredentialsBuilder {
-    pub(crate) api_key: std::option::Option<std::string::String>,
-    pub(crate) secret_key: std::option::Option<std::string::String>,
+    pub(crate) api_key: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_key: ::std::option::Option<::std::string::String>,
 }
 impl AmplitudeConnectorProfileCredentialsBuilder {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_key = Some(input.into());
+    pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key = input;
         self
     }
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_key = Some(input.into());
+    pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Secret Access Key portion of the credentials. </p>
-    pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_key = input;
         self
     }
@@ -72,8 +72,8 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for AmplitudeConnectorProfileCredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AmplitudeConnectorProfileCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AmplitudeConnectorProfileCredentialsBuilder");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");

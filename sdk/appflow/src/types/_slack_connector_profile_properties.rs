@@ -2,15 +2,15 @@
 
 /// <p> The connector-specific profile properties required when using Slack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
     #[doc(hidden)]
-    pub instance_url: std::option::Option<std::string::String>,
+    pub instance_url: ::std::option::Option<::std::string::String>,
 }
 impl SlackConnectorProfileProperties {
     /// <p> The location of the Slack resource. </p>
-    pub fn instance_url(&self) -> std::option::Option<&str> {
+    pub fn instance_url(&self) -> ::std::option::Option<&str> {
         self.instance_url.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl SlackConnectorProfileProperties {
 
 /// A builder for [`SlackConnectorProfileProperties`](crate::types::SlackConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlackConnectorProfilePropertiesBuilder {
-    pub(crate) instance_url: std::option::Option<std::string::String>,
+    pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }
 impl SlackConnectorProfilePropertiesBuilder {
     /// <p> The location of the Slack resource. </p>
-    pub fn instance_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_url = Some(input.into());
+    pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The location of the Slack resource. </p>
-    pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_url = input;
         self
     }

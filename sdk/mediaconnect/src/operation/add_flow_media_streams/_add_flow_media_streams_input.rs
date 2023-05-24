@@ -2,22 +2,22 @@
 
 /// A request to add media streams to the flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowMediaStreamsInput {
     /// The Amazon Resource Name (ARN) of the flow.
     #[doc(hidden)]
-    pub flow_arn: std::option::Option<std::string::String>,
+    pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The media streams that you want to add to the flow.
     #[doc(hidden)]
-    pub media_streams: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>,
+    pub media_streams: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
 }
 impl AddFlowMediaStreamsInput {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that you want to add to the flow.
-    pub fn media_streams(&self) -> std::option::Option<&[crate::types::AddMediaStreamRequest]> {
+    pub fn media_streams(&self) -> ::std::option::Option<&[crate::types::AddMediaStreamRequest]> {
         self.media_streams.as_deref()
     }
 }
@@ -32,20 +32,22 @@ impl AddFlowMediaStreamsInput {
 
 /// A builder for [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddFlowMediaStreamsInputBuilder {
-    pub(crate) flow_arn: std::option::Option<std::string::String>,
+    pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_streams:
-        std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
 }
 impl AddFlowMediaStreamsInputBuilder {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_arn = Some(input.into());
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
@@ -57,13 +59,13 @@ impl AddFlowMediaStreamsInputBuilder {
     pub fn media_streams(mut self, input: crate::types::AddMediaStreamRequest) -> Self {
         let mut v = self.media_streams.unwrap_or_default();
         v.push(input);
-        self.media_streams = Some(v);
+        self.media_streams = ::std::option::Option::Some(v);
         self
     }
     /// The media streams that you want to add to the flow.
     pub fn set_media_streams(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>,
     ) -> Self {
         self.media_streams = input;
         self
@@ -71,11 +73,11 @@ impl AddFlowMediaStreamsInputBuilder {
     /// Consumes the builder and constructs a [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput {
                 flow_arn: self.flow_arn,
                 media_streams: self.media_streams,

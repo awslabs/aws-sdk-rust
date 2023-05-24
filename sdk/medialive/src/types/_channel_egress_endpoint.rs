@@ -2,15 +2,15 @@
 
 /// Placeholder documentation for ChannelEgressEndpoint
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelEgressEndpoint {
     /// Public IP of where a channel's output comes from
     #[doc(hidden)]
-    pub source_ip: std::option::Option<std::string::String>,
+    pub source_ip: ::std::option::Option<::std::string::String>,
 }
 impl ChannelEgressEndpoint {
     /// Public IP of where a channel's output comes from
-    pub fn source_ip(&self) -> std::option::Option<&str> {
+    pub fn source_ip(&self) -> ::std::option::Option<&str> {
         self.source_ip.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ChannelEgressEndpoint {
 
 /// A builder for [`ChannelEgressEndpoint`](crate::types::ChannelEgressEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelEgressEndpointBuilder {
-    pub(crate) source_ip: std::option::Option<std::string::String>,
+    pub(crate) source_ip: ::std::option::Option<::std::string::String>,
 }
 impl ChannelEgressEndpointBuilder {
     /// Public IP of where a channel's output comes from
-    pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_ip = Some(input.into());
+    pub fn source_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// Public IP of where a channel's output comes from
-    pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_ip = input;
         self
     }

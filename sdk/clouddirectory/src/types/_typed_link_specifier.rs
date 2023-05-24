@@ -2,41 +2,41 @@
 
 /// <p>Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <code>AttachTypedLink</code> API returns a typed link specifier while the <code>DetachTypedLink</code> API accepts one as input. Similarly, the <code>ListIncomingTypedLinks</code> and <code>ListOutgoingTypedLinks</code> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkSpecifier {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     #[doc(hidden)]
-    pub typed_link_facet: std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
+    pub typed_link_facet: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     /// <p>Identifies the source object that the typed link will attach to.</p>
     #[doc(hidden)]
-    pub source_object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub source_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Identifies the target object that the typed link will attach to.</p>
     #[doc(hidden)]
-    pub target_object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub target_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Identifies the attribute value to update.</p>
     #[doc(hidden)]
     pub identity_attribute_values:
-        std::option::Option<std::vec::Vec<crate::types::AttributeNameAndValue>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
 }
 impl TypedLinkSpecifier {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn typed_link_facet(
         &self,
-    ) -> std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
+    ) -> ::std::option::Option<&crate::types::TypedLinkSchemaAndFacetName> {
         self.typed_link_facet.as_ref()
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
-    pub fn source_object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn source_object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.source_object_reference.as_ref()
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
-    pub fn target_object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.target_object_reference.as_ref()
     }
     /// <p>Identifies the attribute value to update.</p>
     pub fn identity_attribute_values(
         &self,
-    ) -> std::option::Option<&[crate::types::AttributeNameAndValue]> {
+    ) -> ::std::option::Option<&[crate::types::AttributeNameAndValue]> {
         self.identity_attribute_values.as_deref()
     }
 }
@@ -49,50 +49,52 @@ impl TypedLinkSpecifier {
 
 /// A builder for [`TypedLinkSpecifier`](crate::types::TypedLinkSpecifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TypedLinkSpecifierBuilder {
-    pub(crate) typed_link_facet: std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
-    pub(crate) source_object_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) target_object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub(crate) typed_link_facet: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
+    pub(crate) source_object_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) target_object_reference: ::std::option::Option<crate::types::ObjectReference>,
     pub(crate) identity_attribute_values:
-        std::option::Option<std::vec::Vec<crate::types::AttributeNameAndValue>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
 }
 impl TypedLinkSpecifierBuilder {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn typed_link_facet(mut self, input: crate::types::TypedLinkSchemaAndFacetName) -> Self {
-        self.typed_link_facet = Some(input);
+        self.typed_link_facet = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     pub fn set_typed_link_facet(
         mut self,
-        input: std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
+        input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     ) -> Self {
         self.typed_link_facet = input;
         self
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn source_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.source_object_reference = Some(input);
+        self.source_object_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
     pub fn set_source_object_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.source_object_reference = input;
         self
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn target_object_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.target_object_reference = Some(input);
+        self.target_object_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
     pub fn set_target_object_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.target_object_reference = input;
         self
@@ -105,13 +107,13 @@ impl TypedLinkSpecifierBuilder {
     pub fn identity_attribute_values(mut self, input: crate::types::AttributeNameAndValue) -> Self {
         let mut v = self.identity_attribute_values.unwrap_or_default();
         v.push(input);
-        self.identity_attribute_values = Some(v);
+        self.identity_attribute_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Identifies the attribute value to update.</p>
     pub fn set_identity_attribute_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeNameAndValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeNameAndValue>>,
     ) -> Self {
         self.identity_attribute_values = input;
         self

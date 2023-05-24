@@ -2,29 +2,29 @@
 
 /// <p>An object that represents the image tag details for an image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageTagDetail {
     /// <p>The tag that's associated with the image.</p>
     #[doc(hidden)]
-    pub image_tag: std::option::Option<std::string::String>,
+    pub image_tag: ::std::option::Option<::std::string::String>,
     /// <p>The time stamp that indicates when the image tag was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that describes the details of an image.</p>
     #[doc(hidden)]
-    pub image_detail: std::option::Option<crate::types::ReferencedImageDetail>,
+    pub image_detail: ::std::option::Option<crate::types::ReferencedImageDetail>,
 }
 impl ImageTagDetail {
     /// <p>The tag that's associated with the image.</p>
-    pub fn image_tag(&self) -> std::option::Option<&str> {
+    pub fn image_tag(&self) -> ::std::option::Option<&str> {
         self.image_tag.as_deref()
     }
     /// <p>The time stamp that indicates when the image tag was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that describes the details of an image.</p>
-    pub fn image_detail(&self) -> std::option::Option<&crate::types::ReferencedImageDetail> {
+    pub fn image_detail(&self) -> ::std::option::Option<&crate::types::ReferencedImageDetail> {
         self.image_detail.as_ref()
     }
 }
@@ -37,45 +37,47 @@ impl ImageTagDetail {
 
 /// A builder for [`ImageTagDetail`](crate::types::ImageTagDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageTagDetailBuilder {
-    pub(crate) image_tag: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) image_detail: std::option::Option<crate::types::ReferencedImageDetail>,
+    pub(crate) image_tag: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) image_detail: ::std::option::Option<crate::types::ReferencedImageDetail>,
 }
 impl ImageTagDetailBuilder {
     /// <p>The tag that's associated with the image.</p>
-    pub fn image_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_tag = Some(input.into());
+    pub fn image_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag that's associated with the image.</p>
-    pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_tag = input;
         self
     }
     /// <p>The time stamp that indicates when the image tag was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time stamp that indicates when the image tag was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>An object that describes the details of an image.</p>
     pub fn image_detail(mut self, input: crate::types::ReferencedImageDetail) -> Self {
-        self.image_detail = Some(input);
+        self.image_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the details of an image.</p>
     pub fn set_image_detail(
         mut self,
-        input: std::option::Option<crate::types::ReferencedImageDetail>,
+        input: ::std::option::Option<crate::types::ReferencedImageDetail>,
     ) -> Self {
         self.image_detail = input;
         self

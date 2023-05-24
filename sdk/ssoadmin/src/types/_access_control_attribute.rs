@@ -2,22 +2,22 @@
 
 /// <p>These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlAttribute {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::AccessControlAttributeValue>,
+    pub value: ::std::option::Option<crate::types::AccessControlAttributeValue>,
 }
 impl AccessControlAttribute {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::AccessControlAttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::AccessControlAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl AccessControlAttribute {
 
 /// A builder for [`AccessControlAttribute`](crate::types::AccessControlAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessControlAttributeBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<crate::types::AccessControlAttributeValue>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<crate::types::AccessControlAttributeValue>,
 }
 impl AccessControlAttributeBuilder {
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute associated with your identities in your identity source. This is used to map a specified attribute in your identity source with an attribute in IAM Identity Center.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub fn value(mut self, input: crate::types::AccessControlAttributeValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value used for mapping a specified attribute to an identity source.</p>
     pub fn set_value(
         mut self,
-        input: std::option::Option<crate::types::AccessControlAttributeValue>,
+        input: ::std::option::Option<crate::types::AccessControlAttributeValue>,
     ) -> Self {
         self.value = input;
         self

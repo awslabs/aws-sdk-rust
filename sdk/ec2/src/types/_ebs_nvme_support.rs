@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EbsNvmeSupport {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EbsNvmeSupport {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EbsNvmeSupport {
+impl ::std::convert::From<&str> for EbsNvmeSupport {
     fn from(s: &str) -> Self {
         match s {
             "required" => EbsNvmeSupport::Required,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EbsNvmeSupport {
         }
     }
 }
-impl std::str::FromStr for EbsNvmeSupport {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EbsNvmeSupport {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EbsNvmeSupport::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EbsNvmeSupport::from(s))
     }
 }
 impl EbsNvmeSupport {
@@ -91,7 +91,7 @@ impl EbsNvmeSupport {
         &["required", "supported", "unsupported"]
     }
 }
-impl AsRef<str> for EbsNvmeSupport {
+impl ::std::convert::AsRef<str> for EbsNvmeSupport {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

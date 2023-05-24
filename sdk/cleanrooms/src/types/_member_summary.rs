@@ -2,64 +2,64 @@
 
 /// <p>The member object listed by the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberSummary {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::MemberStatus>,
+    pub status: ::std::option::Option<crate::types::MemberStatus>,
     /// <p>The member's display name.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The abilities granted to the collaboration member.</p>
     #[doc(hidden)]
-    pub abilities: std::option::Option<std::vec::Vec<crate::types::MemberAbility>>,
+    pub abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     /// <p>The time when the member was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the member metadata was last updated.</p>
     #[doc(hidden)]
-    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unique ID for the member's associated membership, if present.</p>
     #[doc(hidden)]
-    pub membership_id: std::option::Option<std::string::String>,
+    pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the member's associated membership, if present.</p>
     #[doc(hidden)]
-    pub membership_arn: std::option::Option<std::string::String>,
+    pub membership_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemberSummary {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MemberStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::MemberStatus> {
         self.status.as_ref()
     }
     /// <p>The member's display name.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The abilities granted to the collaboration member.</p>
-    pub fn abilities(&self) -> std::option::Option<&[crate::types::MemberAbility]> {
+    pub fn abilities(&self) -> ::std::option::Option<&[crate::types::MemberAbility]> {
         self.abilities.as_deref()
     }
     /// <p>The time when the member was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the member metadata was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The unique ID for the member's associated membership, if present.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> ::std::option::Option<&str> {
         self.membership_id.as_deref()
     }
     /// <p>The unique ARN for the member's associated membership, if present.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> ::std::option::Option<&str> {
         self.membership_arn.as_deref()
     }
 }
@@ -72,45 +72,47 @@ impl MemberSummary {
 
 /// A builder for [`MemberSummary`](crate::types::MemberSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberSummaryBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::MemberStatus>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) abilities: std::option::Option<std::vec::Vec<crate::types::MemberAbility>>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) membership_id: std::option::Option<std::string::String>,
-    pub(crate) membership_arn: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::MemberStatus>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) membership_id: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemberSummaryBuilder {
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier used to reference members of the collaboration. Currently only supports AWS Account ID.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
     pub fn status(mut self, input: crate::types::MemberStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the member. Valid values are `INVITED`, `ACTIVE`, `LEFT`, and `REMOVED`.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MemberStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MemberStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The member's display name.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The member's display name.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
@@ -122,60 +124,72 @@ impl MemberSummaryBuilder {
     pub fn abilities(mut self, input: crate::types::MemberAbility) -> Self {
         let mut v = self.abilities.unwrap_or_default();
         v.push(input);
-        self.abilities = Some(v);
+        self.abilities = ::std::option::Option::Some(v);
         self
     }
     /// <p>The abilities granted to the collaboration member.</p>
     pub fn set_abilities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MemberAbility>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     ) -> Self {
         self.abilities = input;
         self
     }
     /// <p>The time when the member was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the member was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The time the member metadata was last updated.</p>
-    pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_time = Some(input);
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the member metadata was last updated.</p>
     pub fn set_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_time = input;
         self
     }
     /// <p>The unique ID for the member's associated membership, if present.</p>
-    pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.membership_id = Some(input.into());
+    pub fn membership_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.membership_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the member's associated membership, if present.</p>
-    pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_membership_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.membership_id = input;
         self
     }
     /// <p>The unique ARN for the member's associated membership, if present.</p>
-    pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.membership_arn = Some(input.into());
+    pub fn membership_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.membership_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the member's associated membership, if present.</p>
-    pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_membership_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.membership_arn = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Ingress address of AgentEndpoint with a port range and an optional mtu.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RangedConnectionDetails {
     /// <p>A ranged socket address.</p>
     #[doc(hidden)]
-    pub socket_address: std::option::Option<crate::types::RangedSocketAddress>,
+    pub socket_address: ::std::option::Option<crate::types::RangedSocketAddress>,
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     #[doc(hidden)]
-    pub mtu: std::option::Option<i32>,
+    pub mtu: ::std::option::Option<i32>,
 }
 impl RangedConnectionDetails {
     /// <p>A ranged socket address.</p>
-    pub fn socket_address(&self) -> std::option::Option<&crate::types::RangedSocketAddress> {
+    pub fn socket_address(&self) -> ::std::option::Option<&crate::types::RangedSocketAddress> {
         self.socket_address.as_ref()
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-    pub fn mtu(&self) -> std::option::Option<i32> {
+    pub fn mtu(&self) -> ::std::option::Option<i32> {
         self.mtu
     }
 }
@@ -30,32 +30,34 @@ impl RangedConnectionDetails {
 
 /// A builder for [`RangedConnectionDetails`](crate::types::RangedConnectionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RangedConnectionDetailsBuilder {
-    pub(crate) socket_address: std::option::Option<crate::types::RangedSocketAddress>,
-    pub(crate) mtu: std::option::Option<i32>,
+    pub(crate) socket_address: ::std::option::Option<crate::types::RangedSocketAddress>,
+    pub(crate) mtu: ::std::option::Option<i32>,
 }
 impl RangedConnectionDetailsBuilder {
     /// <p>A ranged socket address.</p>
     pub fn socket_address(mut self, input: crate::types::RangedSocketAddress) -> Self {
-        self.socket_address = Some(input);
+        self.socket_address = ::std::option::Option::Some(input);
         self
     }
     /// <p>A ranged socket address.</p>
     pub fn set_socket_address(
         mut self,
-        input: std::option::Option<crate::types::RangedSocketAddress>,
+        input: ::std::option::Option<crate::types::RangedSocketAddress>,
     ) -> Self {
         self.socket_address = input;
         self
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     pub fn mtu(mut self, input: i32) -> Self {
-        self.mtu = Some(input);
+        self.mtu = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
-    pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_mtu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mtu = input;
         self
     }

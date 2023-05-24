@@ -2,27 +2,27 @@
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
     #[doc(hidden)]
-    pub initiator_name: std::option::Option<std::string::String>,
+    pub initiator_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(&self) -> std::option::Option<&str> {
+    pub fn initiator_name(&self) -> ::std::option::Option<&str> {
         self.initiator_name.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteChapCredentialsOutput {
+impl ::aws_http::request_id::RequestId for DeleteChapCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,30 +38,38 @@ impl DeleteChapCredentialsOutput {
 
 /// A builder for [`DeleteChapCredentialsOutput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteChapCredentialsOutputBuilder {
-    pub(crate) target_arn: std::option::Option<std::string::String>,
-    pub(crate) initiator_name: std::option::Option<std::string::String>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) initiator_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteChapCredentialsOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.initiator_name = Some(input.into());
+    pub fn initiator_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.initiator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn set_initiator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_initiator_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.initiator_name = input;
         self
     }

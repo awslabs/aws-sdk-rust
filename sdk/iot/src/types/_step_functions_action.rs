@@ -2,29 +2,29 @@
 
 /// <p>Starts execution of a Step Functions state machine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepFunctionsAction {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
     #[doc(hidden)]
-    pub execution_name_prefix: std::option::Option<std::string::String>,
+    pub execution_name_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
     #[doc(hidden)]
-    pub state_machine_name: std::option::Option<std::string::String>,
+    pub state_machine_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StepFunctionsAction {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
-    pub fn execution_name_prefix(&self) -> std::option::Option<&str> {
+    pub fn execution_name_prefix(&self) -> ::std::option::Option<&str> {
         self.execution_name_prefix.as_deref()
     }
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
-    pub fn state_machine_name(&self) -> std::option::Option<&str> {
+    pub fn state_machine_name(&self) -> ::std::option::Option<&str> {
         self.state_machine_name.as_deref()
     }
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -37,46 +37,54 @@ impl StepFunctionsAction {
 
 /// A builder for [`StepFunctionsAction`](crate::types::StepFunctionsAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StepFunctionsActionBuilder {
-    pub(crate) execution_name_prefix: std::option::Option<std::string::String>,
-    pub(crate) state_machine_name: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) execution_name_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) state_machine_name: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StepFunctionsActionBuilder {
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
-    pub fn execution_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_name_prefix = Some(input.into());
+    pub fn execution_name_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_name_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</p>
     pub fn set_execution_name_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.execution_name_prefix = input;
         self
     }
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
-    pub fn state_machine_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_machine_name = Some(input.into());
+    pub fn state_machine_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_machine_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Step Functions state machine whose execution will be started.</p>
     pub fn set_state_machine_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.state_machine_name = input;
         self
     }
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that grants IoT permission to start execution of a state machine ("Action":"states:StartExecution").</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

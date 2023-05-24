@@ -2,27 +2,27 @@
 
 /// <p>DescribeTapeArchivesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTapeArchivesOutput {
     /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
     #[doc(hidden)]
-    pub tape_archives: std::option::Option<std::vec::Vec<crate::types::TapeArchive>>,
+    pub tape_archives: ::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>>,
     /// <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTapeArchivesOutput {
     /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
-    pub fn tape_archives(&self) -> std::option::Option<&[crate::types::TapeArchive]> {
+    pub fn tape_archives(&self) -> ::std::option::Option<&[crate::types::TapeArchive]> {
         self.tape_archives.as_deref()
     }
     /// <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTapeArchivesOutput {
+impl ::aws_http::request_id::RequestId for DescribeTapeArchivesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl DescribeTapeArchivesOutput {
 
 /// A builder for [`DescribeTapeArchivesOutput`](crate::operation::describe_tape_archives::DescribeTapeArchivesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTapeArchivesOutputBuilder {
-    pub(crate) tape_archives: std::option::Option<std::vec::Vec<crate::types::TapeArchive>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) tape_archives: ::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTapeArchivesOutputBuilder {
@@ -52,24 +54,24 @@ impl DescribeTapeArchivesOutputBuilder {
     pub fn tape_archives(mut self, input: crate::types::TapeArchive) -> Self {
         let mut v = self.tape_archives.unwrap_or_default();
         v.push(input);
-        self.tape_archives = Some(v);
+        self.tape_archives = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
     pub fn set_tape_archives(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TapeArchive>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TapeArchive>>,
     ) -> Self {
         self.tape_archives = input;
         self
     }
     /// <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

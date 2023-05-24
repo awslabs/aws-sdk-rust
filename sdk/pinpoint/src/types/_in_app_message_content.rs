@@ -2,50 +2,50 @@
 
 /// <p>The configuration for the message content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessageContent {
     /// <p>The background color for the message.</p>
     #[doc(hidden)]
-    pub background_color: std::option::Option<std::string::String>,
+    pub background_color: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the message body.</p>
     #[doc(hidden)]
-    pub body_config: std::option::Option<crate::types::InAppMessageBodyConfig>,
+    pub body_config: ::std::option::Option<crate::types::InAppMessageBodyConfig>,
     /// <p>The configuration for the message header.</p>
     #[doc(hidden)]
-    pub header_config: std::option::Option<crate::types::InAppMessageHeaderConfig>,
+    pub header_config: ::std::option::Option<crate::types::InAppMessageHeaderConfig>,
     /// <p>The image url for the background of message.</p>
     #[doc(hidden)]
-    pub image_url: std::option::Option<std::string::String>,
+    pub image_url: ::std::option::Option<::std::string::String>,
     /// <p>The first button inside the message.</p>
     #[doc(hidden)]
-    pub primary_btn: std::option::Option<crate::types::InAppMessageButton>,
+    pub primary_btn: ::std::option::Option<crate::types::InAppMessageButton>,
     /// <p>The second button inside message.</p>
     #[doc(hidden)]
-    pub secondary_btn: std::option::Option<crate::types::InAppMessageButton>,
+    pub secondary_btn: ::std::option::Option<crate::types::InAppMessageButton>,
 }
 impl InAppMessageContent {
     /// <p>The background color for the message.</p>
-    pub fn background_color(&self) -> std::option::Option<&str> {
+    pub fn background_color(&self) -> ::std::option::Option<&str> {
         self.background_color.as_deref()
     }
     /// <p>The configuration for the message body.</p>
-    pub fn body_config(&self) -> std::option::Option<&crate::types::InAppMessageBodyConfig> {
+    pub fn body_config(&self) -> ::std::option::Option<&crate::types::InAppMessageBodyConfig> {
         self.body_config.as_ref()
     }
     /// <p>The configuration for the message header.</p>
-    pub fn header_config(&self) -> std::option::Option<&crate::types::InAppMessageHeaderConfig> {
+    pub fn header_config(&self) -> ::std::option::Option<&crate::types::InAppMessageHeaderConfig> {
         self.header_config.as_ref()
     }
     /// <p>The image url for the background of message.</p>
-    pub fn image_url(&self) -> std::option::Option<&str> {
+    pub fn image_url(&self) -> ::std::option::Option<&str> {
         self.image_url.as_deref()
     }
     /// <p>The first button inside the message.</p>
-    pub fn primary_btn(&self) -> std::option::Option<&crate::types::InAppMessageButton> {
+    pub fn primary_btn(&self) -> ::std::option::Option<&crate::types::InAppMessageButton> {
         self.primary_btn.as_ref()
     }
     /// <p>The second button inside message.</p>
-    pub fn secondary_btn(&self) -> std::option::Option<&crate::types::InAppMessageButton> {
+    pub fn secondary_btn(&self) -> ::std::option::Option<&crate::types::InAppMessageButton> {
         self.secondary_btn.as_ref()
     }
 }
@@ -58,84 +58,92 @@ impl InAppMessageContent {
 
 /// A builder for [`InAppMessageContent`](crate::types::InAppMessageContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InAppMessageContentBuilder {
-    pub(crate) background_color: std::option::Option<std::string::String>,
-    pub(crate) body_config: std::option::Option<crate::types::InAppMessageBodyConfig>,
-    pub(crate) header_config: std::option::Option<crate::types::InAppMessageHeaderConfig>,
-    pub(crate) image_url: std::option::Option<std::string::String>,
-    pub(crate) primary_btn: std::option::Option<crate::types::InAppMessageButton>,
-    pub(crate) secondary_btn: std::option::Option<crate::types::InAppMessageButton>,
+    pub(crate) background_color: ::std::option::Option<::std::string::String>,
+    pub(crate) body_config: ::std::option::Option<crate::types::InAppMessageBodyConfig>,
+    pub(crate) header_config: ::std::option::Option<crate::types::InAppMessageHeaderConfig>,
+    pub(crate) image_url: ::std::option::Option<::std::string::String>,
+    pub(crate) primary_btn: ::std::option::Option<crate::types::InAppMessageButton>,
+    pub(crate) secondary_btn: ::std::option::Option<crate::types::InAppMessageButton>,
 }
 impl InAppMessageContentBuilder {
     /// <p>The background color for the message.</p>
-    pub fn background_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.background_color = Some(input.into());
+    pub fn background_color(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.background_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The background color for the message.</p>
-    pub fn set_background_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_background_color(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.background_color = input;
         self
     }
     /// <p>The configuration for the message body.</p>
     pub fn body_config(mut self, input: crate::types::InAppMessageBodyConfig) -> Self {
-        self.body_config = Some(input);
+        self.body_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the message body.</p>
     pub fn set_body_config(
         mut self,
-        input: std::option::Option<crate::types::InAppMessageBodyConfig>,
+        input: ::std::option::Option<crate::types::InAppMessageBodyConfig>,
     ) -> Self {
         self.body_config = input;
         self
     }
     /// <p>The configuration for the message header.</p>
     pub fn header_config(mut self, input: crate::types::InAppMessageHeaderConfig) -> Self {
-        self.header_config = Some(input);
+        self.header_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the message header.</p>
     pub fn set_header_config(
         mut self,
-        input: std::option::Option<crate::types::InAppMessageHeaderConfig>,
+        input: ::std::option::Option<crate::types::InAppMessageHeaderConfig>,
     ) -> Self {
         self.header_config = input;
         self
     }
     /// <p>The image url for the background of message.</p>
-    pub fn image_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_url = Some(input.into());
+    pub fn image_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image url for the background of message.</p>
-    pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_url = input;
         self
     }
     /// <p>The first button inside the message.</p>
     pub fn primary_btn(mut self, input: crate::types::InAppMessageButton) -> Self {
-        self.primary_btn = Some(input);
+        self.primary_btn = ::std::option::Option::Some(input);
         self
     }
     /// <p>The first button inside the message.</p>
     pub fn set_primary_btn(
         mut self,
-        input: std::option::Option<crate::types::InAppMessageButton>,
+        input: ::std::option::Option<crate::types::InAppMessageButton>,
     ) -> Self {
         self.primary_btn = input;
         self
     }
     /// <p>The second button inside message.</p>
     pub fn secondary_btn(mut self, input: crate::types::InAppMessageButton) -> Self {
-        self.secondary_btn = Some(input);
+        self.secondary_btn = ::std::option::Option::Some(input);
         self
     }
     /// <p>The second button inside message.</p>
     pub fn set_secondary_btn(
         mut self,
-        input: std::option::Option<crate::types::InAppMessageButton>,
+        input: ::std::option::Option<crate::types::InAppMessageButton>,
     ) -> Self {
         self.secondary_btn = input;
         self

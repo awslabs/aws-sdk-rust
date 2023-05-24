@@ -2,36 +2,36 @@
 
 /// <p>A structure for returning a resource policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GluePolicy {
     /// <p>Contains the requested policy document, in JSON format.</p>
     #[doc(hidden)]
-    pub policy_in_json: std::option::Option<std::string::String>,
+    pub policy_in_json: ::std::option::Option<::std::string::String>,
     /// <p>Contains the hash value associated with this policy.</p>
     #[doc(hidden)]
-    pub policy_hash: std::option::Option<std::string::String>,
+    pub policy_hash: ::std::option::Option<::std::string::String>,
     /// <p>The date and time at which the policy was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the policy was last updated.</p>
     #[doc(hidden)]
-    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GluePolicy {
     /// <p>Contains the requested policy document, in JSON format.</p>
-    pub fn policy_in_json(&self) -> std::option::Option<&str> {
+    pub fn policy_in_json(&self) -> ::std::option::Option<&str> {
         self.policy_in_json.as_deref()
     }
     /// <p>Contains the hash value associated with this policy.</p>
-    pub fn policy_hash(&self) -> std::option::Option<&str> {
+    pub fn policy_hash(&self) -> ::std::option::Option<&str> {
         self.policy_hash.as_deref()
     }
     /// <p>The date and time at which the policy was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The date and time at which the policy was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -44,56 +44,64 @@ impl GluePolicy {
 
 /// A builder for [`GluePolicy`](crate::types::GluePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GluePolicyBuilder {
-    pub(crate) policy_in_json: std::option::Option<std::string::String>,
-    pub(crate) policy_hash: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) policy_in_json: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GluePolicyBuilder {
     /// <p>Contains the requested policy document, in JSON format.</p>
-    pub fn policy_in_json(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_in_json = Some(input.into());
+    pub fn policy_in_json(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_in_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the requested policy document, in JSON format.</p>
-    pub fn set_policy_in_json(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_in_json(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_in_json = input;
         self
     }
     /// <p>Contains the hash value associated with this policy.</p>
-    pub fn policy_hash(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_hash = Some(input.into());
+    pub fn policy_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the hash value associated with this policy.</p>
-    pub fn set_policy_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_hash = input;
         self
     }
     /// <p>The date and time at which the policy was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time at which the policy was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The date and time at which the policy was last updated.</p>
-    pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_time = Some(input);
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time at which the policy was last updated.</p>
     pub fn set_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_time = input;
         self

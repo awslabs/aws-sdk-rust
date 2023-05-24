@@ -2,47 +2,47 @@
 
 /// <p>Detailed information about an entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EntityRecognizerMetadata {
     /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
     #[doc(hidden)]
-    pub number_of_trained_documents: std::option::Option<i32>,
+    pub number_of_trained_documents: ::std::option::Option<i32>,
     /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
     #[doc(hidden)]
-    pub number_of_test_documents: std::option::Option<i32>,
+    pub number_of_test_documents: ::std::option::Option<i32>,
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
     #[doc(hidden)]
-    pub evaluation_metrics: std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
+    pub evaluation_metrics: ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
     /// <p>Entity types from the metadata of an entity recognizer.</p>
     #[doc(hidden)]
-    pub entity_types: std::option::Option<
-        std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
+    pub entity_types: ::std::option::Option<
+        ::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
     >,
 }
 impl EntityRecognizerMetadata {
     /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
-    pub fn number_of_trained_documents(&self) -> std::option::Option<i32> {
+    pub fn number_of_trained_documents(&self) -> ::std::option::Option<i32> {
         self.number_of_trained_documents
     }
     /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
-    pub fn number_of_test_documents(&self) -> std::option::Option<i32> {
+    pub fn number_of_test_documents(&self) -> ::std::option::Option<i32> {
         self.number_of_test_documents
     }
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
     pub fn evaluation_metrics(
         &self,
-    ) -> std::option::Option<&crate::types::EntityRecognizerEvaluationMetrics> {
+    ) -> ::std::option::Option<&crate::types::EntityRecognizerEvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
     /// <p>Entity types from the metadata of an entity recognizer.</p>
     pub fn entity_types(
         &self,
-    ) -> std::option::Option<&[crate::types::EntityRecognizerMetadataEntityTypesListItem]> {
+    ) -> ::std::option::Option<&[crate::types::EntityRecognizerMetadataEntityTypesListItem]> {
         self.entity_types.as_deref()
     }
 }
-impl std::fmt::Debug for EntityRecognizerMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EntityRecognizerMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerMetadata");
         formatter.field(
             "number_of_trained_documents",
@@ -66,34 +66,34 @@ impl EntityRecognizerMetadata {
 
 /// A builder for [`EntityRecognizerMetadata`](crate::types::EntityRecognizerMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct EntityRecognizerMetadataBuilder {
-    pub(crate) number_of_trained_documents: std::option::Option<i32>,
-    pub(crate) number_of_test_documents: std::option::Option<i32>,
+    pub(crate) number_of_trained_documents: ::std::option::Option<i32>,
+    pub(crate) number_of_test_documents: ::std::option::Option<i32>,
     pub(crate) evaluation_metrics:
-        std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
-    pub(crate) entity_types: std::option::Option<
-        std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
+        ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
+    pub(crate) entity_types: ::std::option::Option<
+        ::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
     >,
 }
 impl EntityRecognizerMetadataBuilder {
     /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
     pub fn number_of_trained_documents(mut self, input: i32) -> Self {
-        self.number_of_trained_documents = Some(input);
+        self.number_of_trained_documents = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of documents in the input data that were used to train the entity recognizer. Typically this is 80 to 90 percent of the input documents.</p>
-    pub fn set_number_of_trained_documents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_trained_documents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_trained_documents = input;
         self
     }
     /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
     pub fn number_of_test_documents(mut self, input: i32) -> Self {
-        self.number_of_test_documents = Some(input);
+        self.number_of_test_documents = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of documents in the input data that were used to test the entity recognizer. Typically this is 10 to 20 percent of the input documents.</p>
-    pub fn set_number_of_test_documents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_test_documents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_test_documents = input;
         self
     }
@@ -102,13 +102,13 @@ impl EntityRecognizerMetadataBuilder {
         mut self,
         input: crate::types::EntityRecognizerEvaluationMetrics,
     ) -> Self {
-        self.evaluation_metrics = Some(input);
+        self.evaluation_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detailed information about the accuracy of an entity recognizer.</p>
     pub fn set_evaluation_metrics(
         mut self,
-        input: std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
+        input: ::std::option::Option<crate::types::EntityRecognizerEvaluationMetrics>,
     ) -> Self {
         self.evaluation_metrics = input;
         self
@@ -124,14 +124,14 @@ impl EntityRecognizerMetadataBuilder {
     ) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
         v.push(input);
-        self.entity_types = Some(v);
+        self.entity_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Entity types from the metadata of an entity recognizer.</p>
     pub fn set_entity_types(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::EntityRecognizerMetadataEntityTypesListItem>,
         >,
     ) -> Self {
         self.entity_types = input;
@@ -147,8 +147,8 @@ impl EntityRecognizerMetadataBuilder {
         }
     }
 }
-impl std::fmt::Debug for EntityRecognizerMetadataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EntityRecognizerMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EntityRecognizerMetadataBuilder");
         formatter.field(
             "number_of_trained_documents",

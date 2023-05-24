@@ -2,36 +2,36 @@
 
 /// <p>A structure that defines one treatment in an experiment. A treatment is a variation of the feature that you are including in the experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TreatmentConfig {
     /// <p>A name for this treatment.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for this treatment.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The feature that this experiment is testing.</p>
     #[doc(hidden)]
-    pub feature: std::option::Option<std::string::String>,
+    pub feature: ::std::option::Option<::std::string::String>,
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
     #[doc(hidden)]
-    pub variation: std::option::Option<std::string::String>,
+    pub variation: ::std::option::Option<::std::string::String>,
 }
 impl TreatmentConfig {
     /// <p>A name for this treatment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for this treatment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The feature that this experiment is testing.</p>
-    pub fn feature(&self) -> std::option::Option<&str> {
+    pub fn feature(&self) -> ::std::option::Option<&str> {
         self.feature.as_deref()
     }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
-    pub fn variation(&self) -> std::option::Option<&str> {
+    pub fn variation(&self) -> ::std::option::Option<&str> {
         self.variation.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl TreatmentConfig {
 
 /// A builder for [`TreatmentConfig`](crate::types::TreatmentConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TreatmentConfigBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) feature: std::option::Option<std::string::String>,
-    pub(crate) variation: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) feature: ::std::option::Option<::std::string::String>,
+    pub(crate) variation: ::std::option::Option<::std::string::String>,
 }
 impl TreatmentConfigBuilder {
     /// <p>A name for this treatment.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for this treatment.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description for this treatment.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for this treatment.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The feature that this experiment is testing.</p>
-    pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature = Some(input.into());
+    pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.feature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The feature that this experiment is testing.</p>
-    pub fn set_feature(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature = input;
         self
     }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
-    pub fn variation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.variation = Some(input.into());
+    pub fn variation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.variation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the variation to use as this treatment in the experiment.</p>
-    pub fn set_variation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_variation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variation = input;
         self
     }

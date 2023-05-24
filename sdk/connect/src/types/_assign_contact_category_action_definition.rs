@@ -3,7 +3,7 @@
 /// <p>This action must be set if <code>TriggerEventSource</code> is one of the following values: <code>OnPostCallAnalysisAvailable</code> | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>. Contact is categorized using the rule name.</p>
 /// <p> <code>RuleName</code> is used as <code>ContactCategory</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssignContactCategoryActionDefinition {}
 impl AssignContactCategoryActionDefinition {
     /// Creates a new builder-style object to manufacture [`AssignContactCategoryActionDefinition`](crate::types::AssignContactCategoryActionDefinition).
@@ -14,7 +14,9 @@ impl AssignContactCategoryActionDefinition {
 
 /// A builder for [`AssignContactCategoryActionDefinition`](crate::types::AssignContactCategoryActionDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssignContactCategoryActionDefinitionBuilder {}
 impl AssignContactCategoryActionDefinitionBuilder {
     /// Consumes the builder and constructs a [`AssignContactCategoryActionDefinition`](crate::types::AssignContactCategoryActionDefinition).

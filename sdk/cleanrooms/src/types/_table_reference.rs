@@ -2,7 +2,7 @@
 
 /// <p>A pointer to the dataset that underlies this table. Currently, this can only be an AWS Glue table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum TableReference {
     /// <p>If present, a reference to the AWS Glue table referred to by this table reference.</p>
     Glue(crate::types::GlueTableReference),
@@ -20,11 +20,11 @@ impl TableReference {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Glue`](crate::types::TableReference::Glue), extracting the inner [`GlueTableReference`](crate::types::GlueTableReference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_glue(&self) -> std::result::Result<&crate::types::GlueTableReference, &Self> {
+    pub fn as_glue(&self) -> ::std::result::Result<&crate::types::GlueTableReference, &Self> {
         if let TableReference::Glue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Glue`](crate::types::TableReference::Glue).

@@ -39,13 +39,13 @@
 /// <p>The severity of a finding, ranging from LOW, for least severe, to HIGH, for most severe. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DataIdentifierSeverity {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DataIdentifierSeverity {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DataIdentifierSeverity {
+impl ::std::convert::From<&str> for DataIdentifierSeverity {
     fn from(s: &str) -> Self {
         match s {
             "HIGH" => DataIdentifierSeverity::High,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DataIdentifierSeverity {
         }
     }
 }
-impl std::str::FromStr for DataIdentifierSeverity {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DataIdentifierSeverity {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataIdentifierSeverity::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DataIdentifierSeverity::from(s))
     }
 }
 impl DataIdentifierSeverity {
@@ -91,7 +91,7 @@ impl DataIdentifierSeverity {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
-impl AsRef<str> for DataIdentifierSeverity {
+impl ::std::convert::AsRef<str> for DataIdentifierSeverity {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

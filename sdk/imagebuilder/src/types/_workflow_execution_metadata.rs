@@ -2,23 +2,23 @@
 
 /// <p>Metadata that includes details and status from this runtime instance of the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
     #[doc(hidden)]
-    pub workflow_build_version_arn: std::option::Option<std::string::String>,
+    pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier that Image Builder assigns to keep track of runtime resources each time it runs a workflow.</p>
     #[doc(hidden)]
-    pub workflow_execution_id: std::option::Option<std::string::String>,
+    pub workflow_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates what type of workflow that Image Builder ran for this runtime instance of the workflow.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::WorkflowType>,
+    pub r#type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The current runtime status for this workflow.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WorkflowExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
     /// <p>The runtime output message from the workflow, if applicable.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
     #[doc(hidden)]
     pub total_step_count: i32,
@@ -33,30 +33,30 @@ pub struct WorkflowExecutionMetadata {
     pub total_steps_skipped: i32,
     /// <p>The timestamp when the runtime instance of this workflow started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<std::string::String>,
+    pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when this runtime instance of the workflow finished.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<std::string::String>,
+    pub end_time: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
-    pub fn workflow_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.workflow_build_version_arn.as_deref()
     }
     /// <p>Unique identifier that Image Builder assigns to keep track of runtime resources each time it runs a workflow.</p>
-    pub fn workflow_execution_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_execution_id(&self) -> ::std::option::Option<&str> {
         self.workflow_execution_id.as_deref()
     }
     /// <p>Indicates what type of workflow that Image Builder ran for this runtime instance of the workflow.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::WorkflowType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
     /// <p>The current runtime status for this workflow.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::WorkflowExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The runtime output message from the workflow, if applicable.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
@@ -76,11 +76,11 @@ impl WorkflowExecutionMetadata {
         self.total_steps_skipped
     }
     /// <p>The timestamp when the runtime instance of this workflow started.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p>The timestamp when this runtime instance of the workflow finished.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
 }
@@ -93,137 +93,145 @@ impl WorkflowExecutionMetadata {
 
 /// A builder for [`WorkflowExecutionMetadata`](crate::types::WorkflowExecutionMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkflowExecutionMetadataBuilder {
-    pub(crate) workflow_build_version_arn: std::option::Option<std::string::String>,
-    pub(crate) workflow_execution_id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::WorkflowType>,
-    pub(crate) status: std::option::Option<crate::types::WorkflowExecutionStatus>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) total_step_count: std::option::Option<i32>,
-    pub(crate) total_steps_succeeded: std::option::Option<i32>,
-    pub(crate) total_steps_failed: std::option::Option<i32>,
-    pub(crate) total_steps_skipped: std::option::Option<i32>,
-    pub(crate) start_time: std::option::Option<std::string::String>,
-    pub(crate) end_time: std::option::Option<std::string::String>,
+    pub(crate) workflow_build_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) workflow_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::WorkflowType>,
+    pub(crate) status: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) total_step_count: ::std::option::Option<i32>,
+    pub(crate) total_steps_succeeded: ::std::option::Option<i32>,
+    pub(crate) total_steps_failed: ::std::option::Option<i32>,
+    pub(crate) total_steps_skipped: ::std::option::Option<i32>,
+    pub(crate) start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) end_time: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
-    pub fn workflow_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workflow_build_version_arn = Some(input.into());
+    pub fn workflow_build_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
     pub fn set_workflow_build_version_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
     /// <p>Unique identifier that Image Builder assigns to keep track of runtime resources each time it runs a workflow.</p>
-    pub fn workflow_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workflow_execution_id = Some(input.into());
+    pub fn workflow_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.workflow_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier that Image Builder assigns to keep track of runtime resources each time it runs a workflow.</p>
     pub fn set_workflow_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.workflow_execution_id = input;
         self
     }
     /// <p>Indicates what type of workflow that Image Builder ran for this runtime instance of the workflow.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates what type of workflow that Image Builder ran for this runtime instance of the workflow.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::WorkflowType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The current runtime status for this workflow.</p>
     pub fn status(mut self, input: crate::types::WorkflowExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current runtime status for this workflow.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionStatus>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The runtime output message from the workflow, if applicable.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The runtime output message from the workflow, if applicable.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
     pub fn total_step_count(mut self, input: i32) -> Self {
-        self.total_step_count = Some(input);
+        self.total_step_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
-    pub fn set_total_step_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_step_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_step_count = input;
         self
     }
     /// <p>A runtime count for the number of steps in the workflow that ran successfully.</p>
     pub fn total_steps_succeeded(mut self, input: i32) -> Self {
-        self.total_steps_succeeded = Some(input);
+        self.total_steps_succeeded = ::std::option::Option::Some(input);
         self
     }
     /// <p>A runtime count for the number of steps in the workflow that ran successfully.</p>
-    pub fn set_total_steps_succeeded(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_steps_succeeded(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_steps_succeeded = input;
         self
     }
     /// <p>A runtime count for the number of steps in the workflow that failed.</p>
     pub fn total_steps_failed(mut self, input: i32) -> Self {
-        self.total_steps_failed = Some(input);
+        self.total_steps_failed = ::std::option::Option::Some(input);
         self
     }
     /// <p>A runtime count for the number of steps in the workflow that failed.</p>
-    pub fn set_total_steps_failed(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_steps_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_steps_failed = input;
         self
     }
     /// <p>A runtime count for the number of steps in the workflow that were skipped.</p>
     pub fn total_steps_skipped(mut self, input: i32) -> Self {
-        self.total_steps_skipped = Some(input);
+        self.total_steps_skipped = ::std::option::Option::Some(input);
         self
     }
     /// <p>A runtime count for the number of steps in the workflow that were skipped.</p>
-    pub fn set_total_steps_skipped(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_steps_skipped(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_steps_skipped = input;
         self
     }
     /// <p>The timestamp when the runtime instance of this workflow started.</p>
-    pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_time = Some(input.into());
+    pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp when the runtime instance of this workflow started.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The timestamp when this runtime instance of the workflow finished.</p>
-    pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_time = Some(input.into());
+    pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp when this runtime instance of the workflow finished.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// An object that contains information about an event destination.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsOutput {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     #[doc(hidden)]
-    pub event_destinations: std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
+    pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     _request_id: Option<String>,
 }
 impl GetConfigurationSetEventDestinationsOutput {
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    pub fn event_destinations(&self) -> std::option::Option<&[crate::types::EventDestination]> {
+    pub fn event_destinations(&self) -> ::std::option::Option<&[crate::types::EventDestination]> {
         self.event_destinations.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetConfigurationSetEventDestinationsOutput {
+impl ::aws_http::request_id::RequestId for GetConfigurationSetEventDestinationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,10 +29,12 @@ impl GetConfigurationSetEventDestinationsOutput {
 
 /// A builder for [`GetConfigurationSetEventDestinationsOutput`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetConfigurationSetEventDestinationsOutputBuilder {
     pub(crate) event_destinations:
-        std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     _request_id: Option<String>,
 }
 impl GetConfigurationSetEventDestinationsOutputBuilder {
@@ -44,13 +46,13 @@ impl GetConfigurationSetEventDestinationsOutputBuilder {
     pub fn event_destinations(mut self, input: crate::types::EventDestination) -> Self {
         let mut v = self.event_destinations.unwrap_or_default();
         v.push(input);
-        self.event_destinations = Some(v);
+        self.event_destinations = ::std::option::Option::Some(v);
         self
     }
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
     pub fn set_event_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     ) -> Self {
         self.event_destinations = input;
         self

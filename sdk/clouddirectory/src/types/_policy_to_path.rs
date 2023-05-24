@@ -2,22 +2,22 @@
 
 /// <p>Used when a regular object exists in a <code>Directory</code> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>List of policy objects.</p>
     #[doc(hidden)]
-    pub policies: std::option::Option<std::vec::Vec<crate::types::PolicyAttachment>>,
+    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>,
 }
 impl PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>List of policy objects.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::types::PolicyAttachment]> {
+    pub fn policies(&self) -> ::std::option::Option<&[crate::types::PolicyAttachment]> {
         self.policies.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl PolicyToPath {
 
 /// A builder for [`PolicyToPath`](crate::types::PolicyToPath).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyToPathBuilder {
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) policies: std::option::Option<std::vec::Vec<crate::types::PolicyAttachment>>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>,
 }
 impl PolicyToPathBuilder {
     /// <p>The path that is referenced from the root.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path that is referenced from the root.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
@@ -54,13 +56,13 @@ impl PolicyToPathBuilder {
     pub fn policies(mut self, input: crate::types::PolicyAttachment) -> Self {
         let mut v = self.policies.unwrap_or_default();
         v.push(input);
-        self.policies = Some(v);
+        self.policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of policy objects.</p>
     pub fn set_policies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyAttachment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttachment>>,
     ) -> Self {
         self.policies = input;
         self

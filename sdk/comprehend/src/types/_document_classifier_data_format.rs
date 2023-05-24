@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DocumentClassifierDataFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DocumentClassifierDataFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DocumentClassifierDataFormat {
+impl ::std::convert::From<&str> for DocumentClassifierDataFormat {
     fn from(s: &str) -> Self {
         match s {
             "AUGMENTED_MANIFEST" => DocumentClassifierDataFormat::AugmentedManifest,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DocumentClassifierDataFormat {
         }
     }
 }
-impl std::str::FromStr for DocumentClassifierDataFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DocumentClassifierDataFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DocumentClassifierDataFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DocumentClassifierDataFormat::from(s))
     }
 }
 impl DocumentClassifierDataFormat {
@@ -86,7 +86,7 @@ impl DocumentClassifierDataFormat {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
 }
-impl AsRef<str> for DocumentClassifierDataFormat {
+impl ::std::convert::AsRef<str> for DocumentClassifierDataFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

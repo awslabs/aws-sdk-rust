@@ -2,11 +2,11 @@
 
 /// <p> Response of DeleteNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNotificationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteNotificationOutput {
+impl ::aws_http::request_id::RequestId for DeleteNotificationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteNotificationOutput {
 
 /// A builder for [`DeleteNotificationOutput`](crate::operation::delete_notification::DeleteNotificationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteNotificationOutputBuilder {
     _request_id: Option<String>,
 }

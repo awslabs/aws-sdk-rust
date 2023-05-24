@@ -2,36 +2,36 @@
 
 /// <p>Describes an orderable cluster option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderableClusterOption {
     /// <p>The version of the orderable cluster.</p>
     #[doc(hidden)]
-    pub cluster_version: std::option::Option<std::string::String>,
+    pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The cluster type, for example <code>multi-node</code>. </p>
     #[doc(hidden)]
-    pub cluster_type: std::option::Option<std::string::String>,
+    pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the orderable cluster.</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of availability zones for the orderable cluster.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl OrderableClusterOption {
     /// <p>The version of the orderable cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> ::std::option::Option<&str> {
         self.cluster_version.as_deref()
     }
     /// <p>The cluster type, for example <code>multi-node</code>. </p>
-    pub fn cluster_type(&self) -> std::option::Option<&str> {
+    pub fn cluster_type(&self) -> ::std::option::Option<&str> {
         self.cluster_type.as_deref()
     }
     /// <p>The node type for the orderable cluster.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>A list of availability zones for the orderable cluster.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[crate::types::AvailabilityZone]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
         self.availability_zones.as_deref()
     }
 }
@@ -44,42 +44,50 @@ impl OrderableClusterOption {
 
 /// A builder for [`OrderableClusterOption`](crate::types::OrderableClusterOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrderableClusterOptionBuilder {
-    pub(crate) cluster_version: std::option::Option<std::string::String>,
-    pub(crate) cluster_type: std::option::Option<std::string::String>,
-    pub(crate) node_type: std::option::Option<std::string::String>,
+    pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_type: ::std::option::Option<::std::string::String>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones:
-        std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl OrderableClusterOptionBuilder {
     /// <p>The version of the orderable cluster.</p>
-    pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_version = Some(input.into());
+    pub fn cluster_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the orderable cluster.</p>
-    pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cluster_version = input;
         self
     }
     /// <p>The cluster type, for example <code>multi-node</code>. </p>
-    pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_type = Some(input.into());
+    pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster type, for example <code>multi-node</code>. </p>
-    pub fn set_cluster_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type = input;
         self
     }
     /// <p>The node type for the orderable cluster.</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node type for the orderable cluster.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
@@ -91,13 +99,13 @@ impl OrderableClusterOptionBuilder {
     pub fn availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input);
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of availability zones for the orderable cluster.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     ) -> Self {
         self.availability_zones = input;
         self

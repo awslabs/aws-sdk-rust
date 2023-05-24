@@ -5,29 +5,29 @@
 /// <p>If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code> does not exist, attempts to mount the file system using the access point will fail.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreationInfo {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
     #[doc(hidden)]
-    pub owner_uid: std::option::Option<i64>,
+    pub owner_uid: ::std::option::Option<i64>,
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
     #[doc(hidden)]
-    pub owner_gid: std::option::Option<i64>,
+    pub owner_gid: ::std::option::Option<i64>,
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
     #[doc(hidden)]
-    pub permissions: std::option::Option<std::string::String>,
+    pub permissions: ::std::option::Option<::std::string::String>,
 }
 impl CreationInfo {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    pub fn owner_uid(&self) -> std::option::Option<i64> {
+    pub fn owner_uid(&self) -> ::std::option::Option<i64> {
         self.owner_uid
     }
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    pub fn owner_gid(&self) -> std::option::Option<i64> {
+    pub fn owner_gid(&self) -> ::std::option::Option<i64> {
         self.owner_gid
     }
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
-    pub fn permissions(&self) -> std::option::Option<&str> {
+    pub fn permissions(&self) -> ::std::option::Option<&str> {
         self.permissions.as_deref()
     }
 }
@@ -40,40 +40,42 @@ impl CreationInfo {
 
 /// A builder for [`CreationInfo`](crate::types::CreationInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreationInfoBuilder {
-    pub(crate) owner_uid: std::option::Option<i64>,
-    pub(crate) owner_gid: std::option::Option<i64>,
-    pub(crate) permissions: std::option::Option<std::string::String>,
+    pub(crate) owner_uid: ::std::option::Option<i64>,
+    pub(crate) owner_gid: ::std::option::Option<i64>,
+    pub(crate) permissions: ::std::option::Option<::std::string::String>,
 }
 impl CreationInfoBuilder {
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
     pub fn owner_uid(mut self, input: i64) -> Self {
-        self.owner_uid = Some(input);
+        self.owner_uid = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    pub fn set_owner_uid(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_owner_uid(mut self, input: ::std::option::Option<i64>) -> Self {
         self.owner_uid = input;
         self
     }
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
     pub fn owner_gid(mut self, input: i64) -> Self {
-        self.owner_gid = Some(input);
+        self.owner_gid = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values from 0 to 2^32 (4294967295).</p>
-    pub fn set_owner_gid(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_owner_gid(mut self, input: ::std::option::Option<i64>) -> Self {
         self.owner_gid = input;
         self
     }
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
-    pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
-        self.permissions = Some(input.into());
+    pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.permissions = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the format of an octal number representing the file's mode bits.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permissions = input;
         self
     }

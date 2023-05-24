@@ -2,43 +2,44 @@
 
 /// <p>Provides details of the current status of the invoked remediation action for that resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationExecutionStatus {
     /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
     #[doc(hidden)]
-    pub resource_key: std::option::Option<crate::types::ResourceKey>,
+    pub resource_key: ::std::option::Option<crate::types::ResourceKey>,
     /// <p>ENUM of the values.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::RemediationExecutionState>,
+    pub state: ::std::option::Option<crate::types::RemediationExecutionState>,
     /// <p>Details of every step.</p>
     #[doc(hidden)]
-    pub step_details: std::option::Option<std::vec::Vec<crate::types::RemediationExecutionStep>>,
+    pub step_details:
+        ::std::option::Option<::std::vec::Vec<crate::types::RemediationExecutionStep>>,
     /// <p>Start time when the remediation was executed.</p>
     #[doc(hidden)]
-    pub invocation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the remediation execution was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RemediationExecutionStatus {
     /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
-    pub fn resource_key(&self) -> std::option::Option<&crate::types::ResourceKey> {
+    pub fn resource_key(&self) -> ::std::option::Option<&crate::types::ResourceKey> {
         self.resource_key.as_ref()
     }
     /// <p>ENUM of the values.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::RemediationExecutionState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::RemediationExecutionState> {
         self.state.as_ref()
     }
     /// <p>Details of every step.</p>
-    pub fn step_details(&self) -> std::option::Option<&[crate::types::RemediationExecutionStep]> {
+    pub fn step_details(&self) -> ::std::option::Option<&[crate::types::RemediationExecutionStep]> {
         self.step_details.as_deref()
     }
     /// <p>Start time when the remediation was executed.</p>
-    pub fn invocation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn invocation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.invocation_time.as_ref()
     }
     /// <p>The time when the remediation execution was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -51,38 +52,40 @@ impl RemediationExecutionStatus {
 
 /// A builder for [`RemediationExecutionStatus`](crate::types::RemediationExecutionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemediationExecutionStatusBuilder {
-    pub(crate) resource_key: std::option::Option<crate::types::ResourceKey>,
-    pub(crate) state: std::option::Option<crate::types::RemediationExecutionState>,
+    pub(crate) resource_key: ::std::option::Option<crate::types::ResourceKey>,
+    pub(crate) state: ::std::option::Option<crate::types::RemediationExecutionState>,
     pub(crate) step_details:
-        std::option::Option<std::vec::Vec<crate::types::RemediationExecutionStep>>,
-    pub(crate) invocation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RemediationExecutionStep>>,
+    pub(crate) invocation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RemediationExecutionStatusBuilder {
     /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
     pub fn resource_key(mut self, input: crate::types::ResourceKey) -> Self {
-        self.resource_key = Some(input);
+        self.resource_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details that identify a resource within Config, including the resource type and resource ID.</p>
     pub fn set_resource_key(
         mut self,
-        input: std::option::Option<crate::types::ResourceKey>,
+        input: ::std::option::Option<crate::types::ResourceKey>,
     ) -> Self {
         self.resource_key = input;
         self
     }
     /// <p>ENUM of the values.</p>
     pub fn state(mut self, input: crate::types::RemediationExecutionState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>ENUM of the values.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::RemediationExecutionState>,
+        input: ::std::option::Option<crate::types::RemediationExecutionState>,
     ) -> Self {
         self.state = input;
         self
@@ -95,39 +98,39 @@ impl RemediationExecutionStatusBuilder {
     pub fn step_details(mut self, input: crate::types::RemediationExecutionStep) -> Self {
         let mut v = self.step_details.unwrap_or_default();
         v.push(input);
-        self.step_details = Some(v);
+        self.step_details = ::std::option::Option::Some(v);
         self
     }
     /// <p>Details of every step.</p>
     pub fn set_step_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RemediationExecutionStep>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RemediationExecutionStep>>,
     ) -> Self {
         self.step_details = input;
         self
     }
     /// <p>Start time when the remediation was executed.</p>
-    pub fn invocation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.invocation_time = Some(input);
+    pub fn invocation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.invocation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Start time when the remediation was executed.</p>
     pub fn set_invocation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.invocation_time = input;
         self
     }
     /// <p>The time when the remediation execution was last updated.</p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the remediation execution was last updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self

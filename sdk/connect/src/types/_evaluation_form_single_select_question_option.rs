@@ -2,14 +2,14 @@
 
 /// <p>Information about the automation configuration in single select questions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionOption {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
     #[doc(hidden)]
-    pub ref_id: std::option::Option<std::string::String>,
+    pub ref_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the answer option.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>The score assigned to the answer option.</p>
     #[doc(hidden)]
     pub score: i32,
@@ -19,11 +19,11 @@ pub struct EvaluationFormSingleSelectQuestionOption {
 }
 impl EvaluationFormSingleSelectQuestionOption {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
-    pub fn ref_id(&self) -> std::option::Option<&str> {
+    pub fn ref_id(&self) -> ::std::option::Option<&str> {
         self.ref_id.as_deref()
     }
     /// <p>The title of the answer option.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The score assigned to the answer option.</p>
@@ -44,51 +44,53 @@ impl EvaluationFormSingleSelectQuestionOption {
 
 /// A builder for [`EvaluationFormSingleSelectQuestionOption`](crate::types::EvaluationFormSingleSelectQuestionOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationFormSingleSelectQuestionOptionBuilder {
-    pub(crate) ref_id: std::option::Option<std::string::String>,
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) score: std::option::Option<i32>,
-    pub(crate) automatic_fail: std::option::Option<bool>,
+    pub(crate) ref_id: ::std::option::Option<::std::string::String>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) score: ::std::option::Option<i32>,
+    pub(crate) automatic_fail: ::std::option::Option<bool>,
 }
 impl EvaluationFormSingleSelectQuestionOptionBuilder {
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
-    pub fn ref_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ref_id = Some(input.into());
+    pub fn ref_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ref_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the answer option. An identifier must be unique within the question.</p>
-    pub fn set_ref_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ref_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ref_id = input;
         self
     }
     /// <p>The title of the answer option.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the answer option.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p>The score assigned to the answer option.</p>
     pub fn score(mut self, input: i32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The score assigned to the answer option.</p>
-    pub fn set_score(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<i32>) -> Self {
         self.score = input;
         self
     }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub fn automatic_fail(mut self, input: bool) -> Self {
-        self.automatic_fail = Some(input);
+        self.automatic_fail = ::std::option::Option::Some(input);
         self
     }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
-    pub fn set_automatic_fail(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_fail = input;
         self
     }

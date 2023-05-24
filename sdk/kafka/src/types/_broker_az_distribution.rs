@@ -38,13 +38,13 @@
 /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BrokerAzDistribution {
     #[allow(missing_docs)] // documentation missing in model
@@ -52,7 +52,7 @@ pub enum BrokerAzDistribution {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BrokerAzDistribution {
+impl ::std::convert::From<&str> for BrokerAzDistribution {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => BrokerAzDistribution::Default,
@@ -62,11 +62,11 @@ impl std::convert::From<&str> for BrokerAzDistribution {
         }
     }
 }
-impl std::str::FromStr for BrokerAzDistribution {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BrokerAzDistribution {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BrokerAzDistribution::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BrokerAzDistribution::from(s))
     }
 }
 impl BrokerAzDistribution {
@@ -82,7 +82,7 @@ impl BrokerAzDistribution {
         &["DEFAULT"]
     }
 }
-impl AsRef<str> for BrokerAzDistribution {
+impl ::std::convert::AsRef<str> for BrokerAzDistribution {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

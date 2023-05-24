@@ -2,36 +2,36 @@
 
 /// The settings for a PUSH type input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDestination {
     /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
     #[doc(hidden)]
-    pub ip: std::option::Option<std::string::String>,
+    pub ip: ::std::option::Option<::std::string::String>,
     /// The port number for the input.
     #[doc(hidden)]
-    pub port: std::option::Option<std::string::String>,
+    pub port: ::std::option::Option<::std::string::String>,
     /// This represents the endpoint that the customer stream will be pushed to.
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// The properties for a VPC type input destination.
     #[doc(hidden)]
-    pub vpc: std::option::Option<crate::types::InputDestinationVpc>,
+    pub vpc: ::std::option::Option<crate::types::InputDestinationVpc>,
 }
 impl InputDestination {
     /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> ::std::option::Option<&str> {
         self.ip.as_deref()
     }
     /// The port number for the input.
-    pub fn port(&self) -> std::option::Option<&str> {
+    pub fn port(&self) -> ::std::option::Option<&str> {
         self.port.as_deref()
     }
     /// This represents the endpoint that the customer stream will be pushed to.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// The properties for a VPC type input destination.
-    pub fn vpc(&self) -> std::option::Option<&crate::types::InputDestinationVpc> {
+    pub fn vpc(&self) -> ::std::option::Option<&crate::types::InputDestinationVpc> {
         self.vpc.as_ref()
     }
 }
@@ -44,53 +44,55 @@ impl InputDestination {
 
 /// A builder for [`InputDestination`](crate::types::InputDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputDestinationBuilder {
-    pub(crate) ip: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) vpc: std::option::Option<crate::types::InputDestinationVpc>,
+    pub(crate) ip: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc: ::std::option::Option<crate::types::InputDestinationVpc>,
 }
 impl InputDestinationBuilder {
     /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
-    pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip = Some(input.into());
+    pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip = ::std::option::Option::Some(input.into());
         self
     }
     /// The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
-    pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip = input;
         self
     }
     /// The port number for the input.
-    pub fn port(mut self, input: impl Into<std::string::String>) -> Self {
-        self.port = Some(input.into());
+    pub fn port(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.port = ::std::option::Option::Some(input.into());
         self
     }
     /// The port number for the input.
-    pub fn set_port(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.port = input;
         self
     }
     /// This represents the endpoint that the customer stream will be pushed to.
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// This represents the endpoint that the customer stream will be pushed to.
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// The properties for a VPC type input destination.
     pub fn vpc(mut self, input: crate::types::InputDestinationVpc) -> Self {
-        self.vpc = Some(input);
+        self.vpc = ::std::option::Option::Some(input);
         self
     }
     /// The properties for a VPC type input destination.
     pub fn set_vpc(
         mut self,
-        input: std::option::Option<crate::types::InputDestinationVpc>,
+        input: ::std::option::Option<crate::types::InputDestinationVpc>,
     ) -> Self {
         self.vpc = input;
         self

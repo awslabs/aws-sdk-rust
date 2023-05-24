@@ -2,7 +2,7 @@
 
 /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
     /// <p> The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder {
-    pub(crate) max: std::option::Option<f64>,
-    pub(crate) min: std::option::Option<f64>,
+    pub(crate) max: ::std::option::Option<f64>,
+    pub(crate) min: ::std::option::Option<f64>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsBuilder {
     /// <p> The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
     pub fn max(mut self, input: f64) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p> The maximum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
-    pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
     }
     /// <p> The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
     pub fn min(mut self, input: f64) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p> The minimum amount of memory per vCPU, in GiB. If this parameter is omitted, there's no maximum limit. </p>
-    pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min = input;
         self
     }

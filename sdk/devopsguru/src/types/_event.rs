@@ -2,64 +2,64 @@
 
 /// <p> An Amazon Web Services resource event. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
-    pub resource_collection: std::option::Option<crate::types::ResourceCollection>,
+    pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     /// <p> The ID of the event. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
     #[doc(hidden)]
-    pub time: std::option::Option<aws_smithy_types::DateTime>,
+    pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The Amazon Web Services source that emitted the event. </p>
     #[doc(hidden)]
-    pub event_source: std::option::Option<std::string::String>,
+    pub event_source: ::std::option::Option<::std::string::String>,
     /// <p> The name of the event. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<crate::types::EventDataSource>,
+    pub data_source: ::std::option::Option<crate::types::EventDataSource>,
     /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
     #[doc(hidden)]
-    pub event_class: std::option::Option<crate::types::EventClass>,
+    pub event_class: ::std::option::Option<crate::types::EventClass>,
     /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
     #[doc(hidden)]
-    pub resources: std::option::Option<std::vec::Vec<crate::types::EventResource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::EventResource>>,
 }
 impl Event {
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resource_collection(&self) -> std::option::Option<&crate::types::ResourceCollection> {
+    pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
     /// <p> The ID of the event. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
-    pub fn time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p> The Amazon Web Services source that emitted the event. </p>
-    pub fn event_source(&self) -> std::option::Option<&str> {
+    pub fn event_source(&self) -> ::std::option::Option<&str> {
         self.event_source.as_deref()
     }
     /// <p> The name of the event. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::EventDataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<&crate::types::EventDataSource> {
         self.data_source.as_ref()
     }
     /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
-    pub fn event_class(&self) -> std::option::Option<&crate::types::EventClass> {
+    pub fn event_class(&self) -> ::std::option::Option<&crate::types::EventClass> {
         self.event_class.as_ref()
     }
     /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
-    pub fn resources(&self) -> std::option::Option<&[crate::types::EventResource]> {
+    pub fn resources(&self) -> ::std::option::Option<&[crate::types::EventResource]> {
         self.resources.as_deref()
     }
 }
@@ -72,91 +72,96 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventBuilder {
-    pub(crate) resource_collection: std::option::Option<crate::types::ResourceCollection>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) event_source: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) data_source: std::option::Option<crate::types::EventDataSource>,
-    pub(crate) event_class: std::option::Option<crate::types::EventClass>,
-    pub(crate) resources: std::option::Option<std::vec::Vec<crate::types::EventResource>>,
+    pub(crate) resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) event_source: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source: ::std::option::Option<crate::types::EventDataSource>,
+    pub(crate) event_class: ::std::option::Option<crate::types::EventClass>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::EventResource>>,
 }
 impl EventBuilder {
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
-        self.resource_collection = Some(input);
+        self.resource_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn set_resource_collection(
         mut self,
-        input: std::option::Option<crate::types::ResourceCollection>,
+        input: ::std::option::Option<crate::types::ResourceCollection>,
     ) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p> The ID of the event. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the event. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
-    pub fn time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.time = Some(input);
+    pub fn time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.time = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
-    pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time = input;
         self
     }
     /// <p> The Amazon Web Services source that emitted the event. </p>
-    pub fn event_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_source = Some(input.into());
+    pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services source that emitted the event. </p>
-    pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source = input;
         self
     }
     /// <p> The name of the event. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the event. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
     pub fn data_source(mut self, input: crate::types::EventDataSource) -> Self {
-        self.data_source = Some(input);
+        self.data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event. </p>
     pub fn set_data_source(
         mut self,
-        input: std::option::Option<crate::types::EventDataSource>,
+        input: ::std::option::Option<crate::types::EventDataSource>,
     ) -> Self {
         self.data_source = input;
         self
     }
     /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
     pub fn event_class(mut self, input: crate::types::EventClass) -> Self {
-        self.event_class = Some(input);
+        self.event_class = ::std::option::Option::Some(input);
         self
     }
     /// <p> The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change. </p>
-    pub fn set_event_class(mut self, input: std::option::Option<crate::types::EventClass>) -> Self {
+    pub fn set_event_class(
+        mut self,
+        input: ::std::option::Option<crate::types::EventClass>,
+    ) -> Self {
         self.event_class = input;
         self
     }
@@ -168,13 +173,13 @@ impl EventBuilder {
     pub fn resources(mut self, input: crate::types::EventResource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
-        self.resources = Some(v);
+        self.resources = ::std::option::Option::Some(v);
         self
     }
     /// <p> An <code>EventResource</code> object that contains information about the resource that emitted the event. </p>
     pub fn set_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventResource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventResource>>,
     ) -> Self {
         self.resources = input;
         self

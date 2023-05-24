@@ -2,52 +2,52 @@
 
 /// <p>The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> for <code>organizations.amazonaws.com</code> permission so that Organizations can create the required service-linked role. You don't have that permission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDeniedForDependencyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::AccessDeniedForDependencyExceptionReason>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub reason: ::std::option::Option<crate::types::AccessDeniedForDependencyExceptionReason>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AccessDeniedForDependencyException {
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(
         &self,
-    ) -> std::option::Option<&crate::types::AccessDeniedForDependencyExceptionReason> {
+    ) -> ::std::option::Option<&crate::types::AccessDeniedForDependencyExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl AccessDeniedForDependencyException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AccessDeniedForDependencyException {
+impl ::std::fmt::Display for AccessDeniedForDependencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedForDependencyException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "AccessDeniedForDependencyException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for AccessDeniedForDependencyException {}
-impl aws_http::request_id::RequestId for crate::types::error::AccessDeniedForDependencyException {
+impl ::std::error::Error for AccessDeniedForDependencyException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::AccessDeniedForDependencyException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
     for AccessDeniedForDependencyException
 {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -60,38 +60,41 @@ impl AccessDeniedForDependencyException {
 
 /// A builder for [`AccessDeniedForDependencyException`](crate::types::error::AccessDeniedForDependencyException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessDeniedForDependencyExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::AccessDeniedForDependencyExceptionReason>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason:
+        ::std::option::Option<crate::types::AccessDeniedForDependencyExceptionReason>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl AccessDeniedForDependencyExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(mut self, input: crate::types::AccessDeniedForDependencyExceptionReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::AccessDeniedForDependencyExceptionReason>,
+        input: ::std::option::Option<crate::types::AccessDeniedForDependencyExceptionReason>,
     ) -> Self {
         self.reason = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -99,7 +102,7 @@ impl AccessDeniedForDependencyExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

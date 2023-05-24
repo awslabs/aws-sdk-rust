@@ -2,49 +2,51 @@
 
 /// <p>Specifies a Delta Lake data source stored in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DeltaSource {
     /// <p>The name of the Delta Lake source.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Amazon S3 paths to read from.</p>
     #[doc(hidden)]
-    pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies additional connection options.</p>
     #[doc(hidden)]
-    pub additional_delta_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_delta_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Specifies additional options for the connector.</p>
     #[doc(hidden)]
-    pub additional_options: std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
+    pub additional_options: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     /// <p>Specifies the data schema for the Delta Lake source.</p>
     #[doc(hidden)]
-    pub output_schemas: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
+    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3DeltaSource {
     /// <p>The name of the Delta Lake source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.paths.as_deref()
     }
     /// <p>Specifies additional connection options.</p>
     pub fn additional_delta_options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.additional_delta_options.as_ref()
     }
     /// <p>Specifies additional options for the connector.</p>
     pub fn additional_options(
         &self,
-    ) -> std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
+    ) -> ::std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the data schema for the Delta Lake source.</p>
-    pub fn output_schemas(&self) -> std::option::Option<&[crate::types::GlueSchema]> {
+    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
         self.output_schemas.as_deref()
     }
 }
@@ -57,24 +59,27 @@ impl S3DeltaSource {
 
 /// A builder for [`S3DeltaSource`](crate::types::S3DeltaSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3DeltaSourceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) paths: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) additional_delta_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) additional_delta_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     pub(crate) additional_options:
-        std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
-    pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
+        ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3DeltaSourceBuilder {
     /// <p>The name of the Delta Lake source.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Delta Lake source.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -83,16 +88,16 @@ impl S3DeltaSourceBuilder {
     /// To override the contents of this collection use [`set_paths`](Self::set_paths).
     ///
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.paths.unwrap_or_default();
         v.push(input.into());
-        self.paths = Some(v);
+        self.paths = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
     pub fn set_paths(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.paths = input;
         self
@@ -104,19 +109,19 @@ impl S3DeltaSourceBuilder {
     /// <p>Specifies additional connection options.</p>
     pub fn additional_delta_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.additional_delta_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.additional_delta_options = Some(hash_map);
+        self.additional_delta_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Specifies additional connection options.</p>
     pub fn set_additional_delta_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.additional_delta_options = input;
@@ -127,13 +132,13 @@ impl S3DeltaSourceBuilder {
         mut self,
         input: crate::types::S3DirectSourceAdditionalOptions,
     ) -> Self {
-        self.additional_options = Some(input);
+        self.additional_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies additional options for the connector.</p>
     pub fn set_additional_options(
         mut self,
-        input: std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
+        input: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     ) -> Self {
         self.additional_options = input;
         self
@@ -146,13 +151,13 @@ impl S3DeltaSourceBuilder {
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
         v.push(input);
-        self.output_schemas = Some(v);
+        self.output_schemas = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the data schema for the Delta Lake source.</p>
     pub fn set_output_schemas(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
     ) -> Self {
         self.output_schemas = input;
         self

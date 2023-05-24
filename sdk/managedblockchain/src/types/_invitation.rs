@@ -3,17 +3,17 @@
 /// <p>An invitation to an Amazon Web Services account to create a member and join the network.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Invitation {
     /// <p>The unique identifier for the invitation.</p>
     #[doc(hidden)]
-    pub invitation_id: std::option::Option<std::string::String>,
+    pub invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the invitation was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
     #[doc(hidden)]
-    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the invitation:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> - The invitee hasn't created a member to join the network, and the invitation hasn't yet expired.</p> </li>
@@ -23,25 +23,25 @@ pub struct Invitation {
     /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::InvitationStatus>,
+    pub status: ::std::option::Option<crate::types::InvitationStatus>,
     /// <p>A summary of network configuration properties.</p>
     #[doc(hidden)]
-    pub network_summary: std::option::Option<crate::types::NetworkSummary>,
+    pub network_summary: ::std::option::Option<crate::types::NetworkSummary>,
     /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Invitation {
     /// <p>The unique identifier for the invitation.</p>
-    pub fn invitation_id(&self) -> std::option::Option<&str> {
+    pub fn invitation_id(&self) -> ::std::option::Option<&str> {
         self.invitation_id.as_deref()
     }
     /// <p>The date and time that the invitation was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The status of the invitation:</p>
@@ -52,15 +52,15 @@ impl Invitation {
     /// <li> <p> <code>REJECTED</code> - The invitee rejected the invitation.</p> </li>
     /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::InvitationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::InvitationStatus> {
         self.status.as_ref()
     }
     /// <p>A summary of network configuration properties.</p>
-    pub fn network_summary(&self) -> std::option::Option<&crate::types::NetworkSummary> {
+    pub fn network_summary(&self) -> ::std::option::Option<&crate::types::NetworkSummary> {
         self.network_summary.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -73,48 +73,56 @@ impl Invitation {
 
 /// A builder for [`Invitation`](crate::types::Invitation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvitationBuilder {
-    pub(crate) invitation_id: std::option::Option<std::string::String>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::InvitationStatus>,
-    pub(crate) network_summary: std::option::Option<crate::types::NetworkSummary>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::InvitationStatus>,
+    pub(crate) network_summary: ::std::option::Option<crate::types::NetworkSummary>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl InvitationBuilder {
     /// <p>The unique identifier for the invitation.</p>
-    pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.invitation_id = Some(input.into());
+    pub fn invitation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the invitation.</p>
-    pub fn set_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_invitation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.invitation_id = input;
         self
     }
     /// <p>The date and time that the invitation was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the invitation was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
-    pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.expiration_date = Some(input);
+    pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expiration_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the invitation expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, the invitee can no longer create a member and join the network using this <code>InvitationId</code>.</p>
     pub fn set_expiration_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.expiration_date = input;
         self
@@ -128,7 +136,7 @@ impl InvitationBuilder {
     /// <li> <p> <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation before the <code>ExpirationDate</code>.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::InvitationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the invitation:</p>
@@ -141,31 +149,31 @@ impl InvitationBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::InvitationStatus>,
+        input: ::std::option::Option<crate::types::InvitationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A summary of network configuration properties.</p>
     pub fn network_summary(mut self, input: crate::types::NetworkSummary) -> Self {
-        self.network_summary = Some(input);
+        self.network_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>A summary of network configuration properties.</p>
     pub fn set_network_summary(
         mut self,
-        input: std::option::Option<crate::types::NetworkSummary>,
+        input: ::std::option::Option<crate::types::NetworkSummary>,
     ) -> Self {
         self.network_summary = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

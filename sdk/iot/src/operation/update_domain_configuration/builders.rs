@@ -7,29 +7,29 @@ pub use crate::operation::update_domain_configuration::_update_domain_configurat
 ///
 /// <p>Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDomainConfiguration</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationInputBuilder,
 }
 impl UpdateDomainConfigurationFluentBuilder {
     /// Creates a new `UpdateDomainConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_domain_configuration::UpdateDomainConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_configuration::UpdateDomainConfigurationError,
         >,
     > {
@@ -37,30 +37,33 @@ impl UpdateDomainConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_configuration::UpdateDomainConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,23 +76,26 @@ impl UpdateDomainConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_configuration::UpdateDomainConfigurationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the domain configuration to be updated.</p>
-    pub fn domain_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_configuration_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.domain_configuration_name(input.into());
         self
     }
     /// <p>The name of the domain configuration to be updated.</p>
     pub fn set_domain_configuration_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_domain_configuration_name(input);
         self
@@ -102,7 +108,7 @@ impl UpdateDomainConfigurationFluentBuilder {
     /// <p>An object that specifies the authorization service for a domain.</p>
     pub fn set_authorizer_config(
         mut self,
-        input: std::option::Option<crate::types::AuthorizerConfig>,
+        input: ::std::option::Option<crate::types::AuthorizerConfig>,
     ) -> Self {
         self.inner = self.inner.set_authorizer_config(input);
         self
@@ -118,7 +124,7 @@ impl UpdateDomainConfigurationFluentBuilder {
     /// <p>The status to which the domain configuration should be updated.</p>
     pub fn set_domain_configuration_status(
         mut self,
-        input: std::option::Option<crate::types::DomainConfigurationStatus>,
+        input: ::std::option::Option<crate::types::DomainConfigurationStatus>,
     ) -> Self {
         self.inner = self.inner.set_domain_configuration_status(input);
         self
@@ -129,7 +135,7 @@ impl UpdateDomainConfigurationFluentBuilder {
         self
     }
     /// <p>Removes the authorization configuration from a domain.</p>
-    pub fn set_remove_authorizer_config(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_remove_authorizer_config(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_authorizer_config(input);
         self
     }
@@ -139,7 +145,7 @@ impl UpdateDomainConfigurationFluentBuilder {
         self
     }
     /// <p>An object that specifies the TLS configuration for a domain.</p>
-    pub fn set_tls_config(mut self, input: std::option::Option<crate::types::TlsConfig>) -> Self {
+    pub fn set_tls_config(mut self, input: ::std::option::Option<crate::types::TlsConfig>) -> Self {
         self.inner = self.inner.set_tls_config(input);
         self
     }

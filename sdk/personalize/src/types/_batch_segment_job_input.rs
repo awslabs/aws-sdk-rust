@@ -2,15 +2,15 @@
 
 /// <p>The input configuration of a batch segment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchSegmentJobInput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
-    pub s3_data_source: std::option::Option<crate::types::S3DataConfig>,
+    pub s3_data_source: ::std::option::Option<crate::types::S3DataConfig>,
 }
 impl BatchSegmentJobInput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::types::S3DataConfig> {
+    pub fn s3_data_source(&self) -> ::std::option::Option<&crate::types::S3DataConfig> {
         self.s3_data_source.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BatchSegmentJobInput {
 
 /// A builder for [`BatchSegmentJobInput`](crate::types::BatchSegmentJobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchSegmentJobInputBuilder {
-    pub(crate) s3_data_source: std::option::Option<crate::types::S3DataConfig>,
+    pub(crate) s3_data_source: ::std::option::Option<crate::types::S3DataConfig>,
 }
 impl BatchSegmentJobInputBuilder {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn s3_data_source(mut self, input: crate::types::S3DataConfig) -> Self {
-        self.s3_data_source = Some(input);
+        self.s3_data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     pub fn set_s3_data_source(
         mut self,
-        input: std::option::Option<crate::types::S3DataConfig>,
+        input: ::std::option::Option<crate::types::S3DataConfig>,
     ) -> Self {
         self.s3_data_source = input;
         self

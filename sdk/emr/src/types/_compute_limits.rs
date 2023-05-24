@@ -2,43 +2,43 @@
 
 /// <p> The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity of a cluster can not be above or below these limits. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeLimits {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
     #[doc(hidden)]
-    pub unit_type: std::option::Option<crate::types::ComputeLimitsUnitType>,
+    pub unit_type: ::std::option::Option<crate::types::ComputeLimitsUnitType>,
     /// <p> The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
     #[doc(hidden)]
-    pub minimum_capacity_units: std::option::Option<i32>,
+    pub minimum_capacity_units: ::std::option::Option<i32>,
     /// <p> The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
     #[doc(hidden)]
-    pub maximum_capacity_units: std::option::Option<i32>,
+    pub maximum_capacity_units: ::std::option::Option<i32>,
     /// <p> The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
     #[doc(hidden)]
-    pub maximum_on_demand_capacity_units: std::option::Option<i32>,
+    pub maximum_on_demand_capacity_units: ::std::option::Option<i32>,
     /// <p> The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
     #[doc(hidden)]
-    pub maximum_core_capacity_units: std::option::Option<i32>,
+    pub maximum_core_capacity_units: ::std::option::Option<i32>,
 }
 impl ComputeLimits {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
-    pub fn unit_type(&self) -> std::option::Option<&crate::types::ComputeLimitsUnitType> {
+    pub fn unit_type(&self) -> ::std::option::Option<&crate::types::ComputeLimitsUnitType> {
         self.unit_type.as_ref()
     }
     /// <p> The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
-    pub fn minimum_capacity_units(&self) -> std::option::Option<i32> {
+    pub fn minimum_capacity_units(&self) -> ::std::option::Option<i32> {
         self.minimum_capacity_units
     }
     /// <p> The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
-    pub fn maximum_capacity_units(&self) -> std::option::Option<i32> {
+    pub fn maximum_capacity_units(&self) -> ::std::option::Option<i32> {
         self.maximum_capacity_units
     }
     /// <p> The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
-    pub fn maximum_on_demand_capacity_units(&self) -> std::option::Option<i32> {
+    pub fn maximum_on_demand_capacity_units(&self) -> ::std::option::Option<i32> {
         self.maximum_on_demand_capacity_units
     }
     /// <p> The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
-    pub fn maximum_core_capacity_units(&self) -> std::option::Option<i32> {
+    pub fn maximum_core_capacity_units(&self) -> ::std::option::Option<i32> {
         self.maximum_core_capacity_units
     }
 }
@@ -51,65 +51,70 @@ impl ComputeLimits {
 
 /// A builder for [`ComputeLimits`](crate::types::ComputeLimits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComputeLimitsBuilder {
-    pub(crate) unit_type: std::option::Option<crate::types::ComputeLimitsUnitType>,
-    pub(crate) minimum_capacity_units: std::option::Option<i32>,
-    pub(crate) maximum_capacity_units: std::option::Option<i32>,
-    pub(crate) maximum_on_demand_capacity_units: std::option::Option<i32>,
-    pub(crate) maximum_core_capacity_units: std::option::Option<i32>,
+    pub(crate) unit_type: ::std::option::Option<crate::types::ComputeLimitsUnitType>,
+    pub(crate) minimum_capacity_units: ::std::option::Option<i32>,
+    pub(crate) maximum_capacity_units: ::std::option::Option<i32>,
+    pub(crate) maximum_on_demand_capacity_units: ::std::option::Option<i32>,
+    pub(crate) maximum_core_capacity_units: ::std::option::Option<i32>,
 }
 impl ComputeLimitsBuilder {
     /// <p> The unit type used for specifying a managed scaling policy. </p>
     pub fn unit_type(mut self, input: crate::types::ComputeLimitsUnitType) -> Self {
-        self.unit_type = Some(input);
+        self.unit_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The unit type used for specifying a managed scaling policy. </p>
     pub fn set_unit_type(
         mut self,
-        input: std::option::Option<crate::types::ComputeLimitsUnitType>,
+        input: ::std::option::Option<crate::types::ComputeLimitsUnitType>,
     ) -> Self {
         self.unit_type = input;
         self
     }
     /// <p> The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
     pub fn minimum_capacity_units(mut self, input: i32) -> Self {
-        self.minimum_capacity_units = Some(input);
+        self.minimum_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p> The lower boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
-    pub fn set_minimum_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minimum_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_capacity_units = input;
         self
     }
     /// <p> The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
     pub fn maximum_capacity_units(mut self, input: i32) -> Self {
-        self.maximum_capacity_units = Some(input);
+        self.maximum_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p> The upper boundary of Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. Managed scaling activities are not allowed beyond this boundary. The limit only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
-    pub fn set_maximum_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_capacity_units = input;
         self
     }
     /// <p> The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
     pub fn maximum_on_demand_capacity_units(mut self, input: i32) -> Self {
-        self.maximum_on_demand_capacity_units = Some(input);
+        self.maximum_on_demand_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p> The upper boundary of On-Demand Amazon EC2 units. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The On-Demand units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between On-Demand and Spot Instances. </p>
-    pub fn set_maximum_on_demand_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_on_demand_capacity_units(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.maximum_on_demand_capacity_units = input;
         self
     }
     /// <p> The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
     pub fn maximum_core_capacity_units(mut self, input: i32) -> Self {
-        self.maximum_core_capacity_units = Some(input);
+        self.maximum_core_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p> The upper boundary of Amazon EC2 units for core node type in a cluster. It is measured through vCPU cores or instances for instance groups and measured through units for instance fleets. The core units are not allowed to scale beyond this boundary. The parameter is used to split capacity allocation between core and task nodes. </p>
-    pub fn set_maximum_core_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_core_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_core_capacity_units = input;
         self
     }

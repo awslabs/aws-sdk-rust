@@ -6,29 +6,29 @@ pub use crate::operation::create_location_hdfs::_create_location_hdfs_input::Cre
 /// Fluent builder constructing a request to `CreateLocationHdfs`.
 ///
 /// <p>Creates an endpoint for a Hadoop Distributed File System (HDFS). </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationHdfsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_location_hdfs::builders::CreateLocationHdfsInputBuilder,
 }
 impl CreateLocationHdfsFluentBuilder {
     /// Creates a new `CreateLocationHdfs`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_location_hdfs::CreateLocationHdfs,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_location_hdfs::CreateLocationHdfsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateLocationHdfsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_location_hdfs::CreateLocationHdfsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_location_hdfs::CreateLocationHdfsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl CreateLocationHdfsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_location_hdfs::CreateLocationHdfsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_location_hdfs::CreateLocationHdfsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
-    pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
-    pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
     }
@@ -102,7 +105,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
     pub fn set_name_nodes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HdfsNameNode>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
     ) -> Self {
         self.inner = self.inner.set_name_nodes(input);
         self
@@ -113,7 +116,7 @@ impl CreateLocationHdfsFluentBuilder {
         self
     }
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
-    pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_block_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_block_size(input);
         self
     }
@@ -123,19 +126,22 @@ impl CreateLocationHdfsFluentBuilder {
         self
     }
     /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
-    pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_replication_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replication_factor(input);
         self
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_provider_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.kms_key_provider_uri(input.into());
         self
     }
     /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
     pub fn set_kms_key_provider_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_kms_key_provider_uri(input);
         self
@@ -148,7 +154,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
     pub fn set_qop_configuration(
         mut self,
-        input: std::option::Option<crate::types::QopConfiguration>,
+        input: ::std::option::Option<crate::types::QopConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_qop_configuration(input);
         self
@@ -161,7 +167,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// <p>The type of authentication used to determine the identity of the user. </p>
     pub fn set_authentication_type(
         mut self,
-        input: std::option::Option<crate::types::HdfsAuthenticationType>,
+        input: ::std::option::Option<crate::types::HdfsAuthenticationType>,
     ) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
@@ -169,21 +175,24 @@ impl CreateLocationHdfsFluentBuilder {
     /// <p>The user name used to identify the client on the host operating system. </p> <note>
     /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
-    pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn simple_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.simple_user(input.into());
         self
     }
     /// <p>The user name used to identify the client on the host operating system. </p> <note>
     /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
-    pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_simple_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_simple_user(input);
         self
     }
     /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
-    pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kerberos_principal(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.kerberos_principal(input.into());
         self
     }
@@ -192,7 +201,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// </note>
     pub fn set_kerberos_principal(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_kerberos_principal(input);
         self
@@ -200,7 +209,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
     /// </note>
-    pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
+    pub fn kerberos_keytab(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.kerberos_keytab(input);
         self
     }
@@ -209,7 +218,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// </note>
     pub fn set_kerberos_keytab(
         mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
     ) -> Self {
         self.inner = self.inner.set_kerberos_keytab(input);
         self
@@ -217,7 +226,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
     /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
     /// </note>
-    pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
+    pub fn kerberos_krb5_conf(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.kerberos_krb5_conf(input);
         self
     }
@@ -226,7 +235,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// </note>
     pub fn set_kerberos_krb5_conf(
         mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
     ) -> Self {
         self.inner = self.inner.set_kerberos_krb5_conf(input);
         self
@@ -236,14 +245,14 @@ impl CreateLocationHdfsFluentBuilder {
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
-    pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
     pub fn set_agent_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
@@ -260,7 +269,7 @@ impl CreateLocationHdfsFluentBuilder {
     /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

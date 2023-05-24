@@ -2,26 +2,26 @@
 
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
     /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
     /// </note>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::LoggingFormat>,
+    pub format: ::std::option::Option<crate::types::LoggingFormat>,
 }
 impl FileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
     /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
     /// </note>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::LoggingFormat> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::LoggingFormat> {
         self.format.as_ref()
     }
 }
@@ -34,33 +34,35 @@ impl FileAccessLog {
 
 /// A builder for [`FileAccessLog`](crate::types::FileAccessLog).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileAccessLogBuilder {
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) format: std::option::Option<crate::types::LoggingFormat>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) format: ::std::option::Option<crate::types::LoggingFormat>,
 }
 impl FileAccessLogBuilder {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
     /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
     /// </note>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
     /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
     /// </note>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
     pub fn format(mut self, input: crate::types::LoggingFormat) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::LoggingFormat>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::LoggingFormat>) -> Self {
         self.format = input;
         self
     }

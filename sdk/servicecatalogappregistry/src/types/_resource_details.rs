@@ -2,15 +2,15 @@
 
 /// <p> The details related to the resource. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>The value of the tag.</p>
     #[doc(hidden)]
-    pub tag_value: std::option::Option<std::string::String>,
+    pub tag_value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDetails {
     /// <p>The value of the tag.</p>
-    pub fn tag_value(&self) -> std::option::Option<&str> {
+    pub fn tag_value(&self) -> ::std::option::Option<&str> {
         self.tag_value.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceDetailsBuilder {
-    pub(crate) tag_value: std::option::Option<std::string::String>,
+    pub(crate) tag_value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDetailsBuilder {
     /// <p>The value of the tag.</p>
-    pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_value = Some(input.into());
+    pub fn tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the tag.</p>
-    pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_value = input;
         self
     }

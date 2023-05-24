@@ -2,29 +2,29 @@
 
 /// <p>The location of the pipeline definition stored in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineDefinitionS3Location {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
     #[doc(hidden)]
-    pub object_key: std::option::Option<std::string::String>,
+    pub object_key: ::std::option::Option<::std::string::String>,
     /// <p>Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.</p>
     #[doc(hidden)]
-    pub version_id: std::option::Option<std::string::String>,
+    pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl PipelineDefinitionS3Location {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
-    pub fn object_key(&self) -> std::option::Option<&str> {
+    pub fn object_key(&self) -> ::std::option::Option<&str> {
         self.object_key.as_deref()
     }
     /// <p>Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl PipelineDefinitionS3Location {
 
 /// A builder for [`PipelineDefinitionS3Location`](crate::types::PipelineDefinitionS3Location).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineDefinitionS3LocationBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) object_key: std::option::Option<std::string::String>,
-    pub(crate) version_id: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) object_key: ::std::option::Option<::std::string::String>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
 }
 impl PipelineDefinitionS3LocationBuilder {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the S3 bucket.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
-    pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_key = Some(input.into());
+    pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object key (or key name) uniquely identifies the object in an S3 bucket. </p>
-    pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key = input;
         self
     }
     /// <p>Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.</p>
-    pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_id = Some(input.into());
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version Id of the pipeline definition file. If not specified, Amazon SageMaker will retrieve the latest version.</p>
-    pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }

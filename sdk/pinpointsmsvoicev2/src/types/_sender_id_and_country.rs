@@ -2,22 +2,22 @@
 
 /// <p> The alphanumeric sender ID in a specific country that you want to describe. For more information on sender IDs see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-sender-id.html">Requesting sender IDs for SMS messaging with Amazon Pinpoint </a> in the <i>Amazon Pinpoint User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SenderIdAndCountry {
     /// <p>The unique identifier of the sender.</p>
     #[doc(hidden)]
-    pub sender_id: std::option::Option<std::string::String>,
+    pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     #[doc(hidden)]
-    pub iso_country_code: std::option::Option<std::string::String>,
+    pub iso_country_code: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdAndCountry {
     /// <p>The unique identifier of the sender.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<&str> {
         self.sender_id.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl SenderIdAndCountry {
 
 /// A builder for [`SenderIdAndCountry`](crate::types::SenderIdAndCountry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SenderIdAndCountryBuilder {
-    pub(crate) sender_id: std::option::Option<std::string::String>,
-    pub(crate) iso_country_code: std::option::Option<std::string::String>,
+    pub(crate) sender_id: ::std::option::Option<::std::string::String>,
+    pub(crate) iso_country_code: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdAndCountryBuilder {
     /// <p>The unique identifier of the sender.</p>
-    pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sender_id = Some(input.into());
+    pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sender_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the sender.</p>
-    pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iso_country_code = Some(input.into());
+    pub fn iso_country_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iso_country_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.iso_country_code = input;
         self
     }

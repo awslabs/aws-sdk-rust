@@ -2,7 +2,7 @@
 pub(crate) fn de_entity_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::Theme>,
+    ::std::option::Option<crate::types::Theme>,
     crate::operation::update_theme::UpdateThemeError,
 > {
     (!body.is_empty())

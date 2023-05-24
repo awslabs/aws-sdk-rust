@@ -2,36 +2,36 @@
 
 /// <p>Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallBlackHoleRouteDetectedViolation {
     /// <p>The subnet that has an inactive state.</p>
     #[doc(hidden)]
-    pub violation_target: std::option::Option<std::string::String>,
+    pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>Information about the route table ID.</p>
     #[doc(hidden)]
-    pub route_table_id: std::option::Option<std::string::String>,
+    pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC ID.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the route or routes that are in violation.</p>
     #[doc(hidden)]
-    pub violating_routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
+    pub violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
 }
 impl NetworkFirewallBlackHoleRouteDetectedViolation {
     /// <p>The subnet that has an inactive state.</p>
-    pub fn violation_target(&self) -> std::option::Option<&str> {
+    pub fn violation_target(&self) -> ::std::option::Option<&str> {
         self.violation_target.as_deref()
     }
     /// <p>Information about the route table ID.</p>
-    pub fn route_table_id(&self) -> std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
     /// <p>Information about the VPC ID.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>Information about the route or routes that are in violation.</p>
-    pub fn violating_routes(&self) -> std::option::Option<&[crate::types::Route]> {
+    pub fn violating_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
         self.violating_routes.as_deref()
     }
 }
@@ -45,41 +45,55 @@ impl NetworkFirewallBlackHoleRouteDetectedViolation {
 
 /// A builder for [`NetworkFirewallBlackHoleRouteDetectedViolation`](crate::types::NetworkFirewallBlackHoleRouteDetectedViolation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkFirewallBlackHoleRouteDetectedViolationBuilder {
-    pub(crate) violation_target: std::option::Option<std::string::String>,
-    pub(crate) route_table_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) violating_routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
+    pub(crate) violation_target: ::std::option::Option<::std::string::String>,
+    pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
 }
 impl NetworkFirewallBlackHoleRouteDetectedViolationBuilder {
     /// <p>The subnet that has an inactive state.</p>
-    pub fn violation_target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.violation_target = Some(input.into());
+    pub fn violation_target(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subnet that has an inactive state.</p>
-    pub fn set_violation_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_violation_target(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.violation_target = input;
         self
     }
     /// <p>Information about the route table ID.</p>
-    pub fn route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.route_table_id = Some(input.into());
+    pub fn route_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the route table ID.</p>
-    pub fn set_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_route_table_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.route_table_id = input;
         self
     }
     /// <p>Information about the VPC ID.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the VPC ID.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
@@ -91,13 +105,13 @@ impl NetworkFirewallBlackHoleRouteDetectedViolationBuilder {
     pub fn violating_routes(mut self, input: crate::types::Route) -> Self {
         let mut v = self.violating_routes.unwrap_or_default();
         v.push(input);
-        self.violating_routes = Some(v);
+        self.violating_routes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the route or routes that are in violation.</p>
     pub fn set_violating_routes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Route>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     ) -> Self {
         self.violating_routes = input;
         self

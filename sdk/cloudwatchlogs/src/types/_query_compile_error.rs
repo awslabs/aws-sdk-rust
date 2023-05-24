@@ -2,22 +2,22 @@
 
 /// <p>Reserved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryCompileError {
     /// <p>Reserved.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::QueryCompileErrorLocation>,
+    pub location: ::std::option::Option<crate::types::QueryCompileErrorLocation>,
     /// <p>Reserved.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl QueryCompileError {
     /// <p>Reserved.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::QueryCompileErrorLocation> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::QueryCompileErrorLocation> {
         self.location.as_ref()
     }
     /// <p>Reserved.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl QueryCompileError {
 
 /// A builder for [`QueryCompileError`](crate::types::QueryCompileError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryCompileErrorBuilder {
-    pub(crate) location: std::option::Option<crate::types::QueryCompileErrorLocation>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) location: ::std::option::Option<crate::types::QueryCompileErrorLocation>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl QueryCompileErrorBuilder {
     /// <p>Reserved.</p>
     pub fn location(mut self, input: crate::types::QueryCompileErrorLocation) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reserved.</p>
     pub fn set_location(
         mut self,
-        input: std::option::Option<crate::types::QueryCompileErrorLocation>,
+        input: ::std::option::Option<crate::types::QueryCompileErrorLocation>,
     ) -> Self {
         self.location = input;
         self
     }
     /// <p>Reserved.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

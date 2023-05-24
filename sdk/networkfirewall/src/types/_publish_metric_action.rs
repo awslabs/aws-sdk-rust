@@ -2,15 +2,15 @@
 
 /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. This setting defines a CloudWatch dimension value to be published.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishMetricAction {
     /// <p></p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
 }
 impl PublishMetricAction {
     /// <p></p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::types::Dimension]> {
+    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
         self.dimensions.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl PublishMetricAction {
 
 /// A builder for [`PublishMetricAction`](crate::types::PublishMetricAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PublishMetricActionBuilder {
-    pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
 }
 impl PublishMetricActionBuilder {
     /// Appends an item to `dimensions`.
@@ -36,13 +38,13 @@ impl PublishMetricActionBuilder {
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
         v.push(input);
-        self.dimensions = Some(v);
+        self.dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p></p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     ) -> Self {
         self.dimensions = input;
         self

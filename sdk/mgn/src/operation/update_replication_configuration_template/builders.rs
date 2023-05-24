@@ -6,47 +6,50 @@ pub use crate::operation::update_replication_configuration_template::_update_rep
 /// Fluent builder constructing a request to `UpdateReplicationConfigurationTemplate`.
 ///
 /// <p>Updates multiple ReplicationConfigurationTemplates by ID.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateReplicationConfigurationTemplateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_replication_configuration_template::builders::UpdateReplicationConfigurationTemplateInputBuilder,
 }
 impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// Creates a new `UpdateReplicationConfigurationTemplate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplate, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,14 +60,14 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError>>
                          {
         self.send_middleware().await
     }
     /// <p>Update replication configuration template template ID request.</p>
     pub fn replication_configuration_template_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -74,30 +77,33 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template template ID request.</p>
     pub fn set_replication_configuration_template_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_replication_configuration_template_id(input);
         self
     }
     /// <p>Update replication configuration template ARN request.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
     /// <p>Update replication configuration template ARN request.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
     /// <p>Update replication configuration template Staging Area subnet ID request.</p>
-    pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn staging_area_subnet_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.staging_area_subnet_id(input.into());
         self
     }
     /// <p>Update replication configuration template Staging Area subnet ID request.</p>
     pub fn set_staging_area_subnet_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_staging_area_subnet_id(input);
         self
@@ -110,7 +116,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
     pub fn set_associate_default_security_group(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_associate_default_security_group(input);
         self
@@ -122,7 +128,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
     pub fn replication_servers_security_groups_i_ds(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -132,7 +138,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
     pub fn set_replication_servers_security_groups_i_ds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self
             .inner
@@ -142,7 +148,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template Replication Server instance type request.</p>
     pub fn replication_server_instance_type(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.replication_server_instance_type(input.into());
         self
@@ -150,7 +156,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template Replication Server instance type request.</p>
     pub fn set_replication_server_instance_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_replication_server_instance_type(input);
         self
@@ -163,7 +169,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template use dedicated Replication Server request.</p>
     pub fn set_use_dedicated_replication_server(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_use_dedicated_replication_server(input);
         self
@@ -179,7 +185,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template use default large Staging Disk type request.</p>
     pub fn set_default_large_staging_disk_type(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
         >,
     ) -> Self {
@@ -197,20 +203,23 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template EBS encryption request.</p>
     pub fn set_ebs_encryption(
         mut self,
-        input: std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
+        input: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     ) -> Self {
         self.inner = self.inner.set_ebs_encryption(input);
         self
     }
     /// <p>Update replication configuration template EBS encryption key ARN request.</p>
-    pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ebs_encryption_key_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ebs_encryption_key_arn(input.into());
         self
     }
     /// <p>Update replication configuration template EBS encryption key ARN request.</p>
     pub fn set_ebs_encryption_key_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_ebs_encryption_key_arn(input);
         self
@@ -221,7 +230,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
         self
     }
     /// <p>Update replication configuration template bandwidth throttling request.</p>
-    pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bandwidth_throttling(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_bandwidth_throttling(input);
         self
     }
@@ -236,7 +245,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template data plane routing request.</p>
     pub fn set_data_plane_routing(
         mut self,
-        input: std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
+        input: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     ) -> Self {
         self.inner = self.inner.set_data_plane_routing(input);
         self
@@ -247,7 +256,7 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
         self
     }
     /// <p>Update replication configuration template create Public IP request.</p>
-    pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_create_public_ip(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_create_public_ip(input);
         self
     }
@@ -258,8 +267,8 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template Staging Area Tags request.</p>
     pub fn staging_area_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.staging_area_tags(k.into(), v.into());
         self
@@ -267,8 +276,8 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     /// <p>Update replication configuration template Staging Area Tags request.</p>
     pub fn set_staging_area_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_staging_area_tags(input);

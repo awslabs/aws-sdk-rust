@@ -2,22 +2,22 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Grant {
     /// <p></p>
     #[doc(hidden)]
-    pub grantee: std::option::Option<crate::types::S3Grantee>,
+    pub grantee: ::std::option::Option<crate::types::S3Grantee>,
     /// <p></p>
     #[doc(hidden)]
-    pub permission: std::option::Option<crate::types::S3Permission>,
+    pub permission: ::std::option::Option<crate::types::S3Permission>,
 }
 impl S3Grant {
     /// <p></p>
-    pub fn grantee(&self) -> std::option::Option<&crate::types::S3Grantee> {
+    pub fn grantee(&self) -> ::std::option::Option<&crate::types::S3Grantee> {
         self.grantee.as_ref()
     }
     /// <p></p>
-    pub fn permission(&self) -> std::option::Option<&crate::types::S3Permission> {
+    pub fn permission(&self) -> ::std::option::Option<&crate::types::S3Permission> {
         self.permission.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl S3Grant {
 
 /// A builder for [`S3Grant`](crate::types::S3Grant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3GrantBuilder {
-    pub(crate) grantee: std::option::Option<crate::types::S3Grantee>,
-    pub(crate) permission: std::option::Option<crate::types::S3Permission>,
+    pub(crate) grantee: ::std::option::Option<crate::types::S3Grantee>,
+    pub(crate) permission: ::std::option::Option<crate::types::S3Permission>,
 }
 impl S3GrantBuilder {
     /// <p></p>
     pub fn grantee(mut self, input: crate::types::S3Grantee) -> Self {
-        self.grantee = Some(input);
+        self.grantee = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_grantee(mut self, input: std::option::Option<crate::types::S3Grantee>) -> Self {
+    pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::S3Grantee>) -> Self {
         self.grantee = input;
         self
     }
     /// <p></p>
     pub fn permission(mut self, input: crate::types::S3Permission) -> Self {
-        self.permission = Some(input);
+        self.permission = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
     pub fn set_permission(
         mut self,
-        input: std::option::Option<crate::types::S3Permission>,
+        input: ::std::option::Option<crate::types::S3Permission>,
     ) -> Self {
         self.permission = input;
         self

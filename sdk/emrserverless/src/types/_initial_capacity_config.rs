@@ -2,14 +2,14 @@
 
 /// <p>The initial capacity configuration per worker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitialCapacityConfig {
     /// <p>The number of workers in the initial capacity configuration.</p>
     #[doc(hidden)]
     pub worker_count: i64,
     /// <p>The resource configuration of the initial capacity configuration.</p>
     #[doc(hidden)]
-    pub worker_configuration: std::option::Option<crate::types::WorkerResourceConfig>,
+    pub worker_configuration: ::std::option::Option<crate::types::WorkerResourceConfig>,
 }
 impl InitialCapacityConfig {
     /// <p>The number of workers in the initial capacity configuration.</p>
@@ -17,7 +17,9 @@ impl InitialCapacityConfig {
         self.worker_count
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
-    pub fn worker_configuration(&self) -> std::option::Option<&crate::types::WorkerResourceConfig> {
+    pub fn worker_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::WorkerResourceConfig> {
         self.worker_configuration.as_ref()
     }
 }
@@ -30,31 +32,33 @@ impl InitialCapacityConfig {
 
 /// A builder for [`InitialCapacityConfig`](crate::types::InitialCapacityConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InitialCapacityConfigBuilder {
-    pub(crate) worker_count: std::option::Option<i64>,
-    pub(crate) worker_configuration: std::option::Option<crate::types::WorkerResourceConfig>,
+    pub(crate) worker_count: ::std::option::Option<i64>,
+    pub(crate) worker_configuration: ::std::option::Option<crate::types::WorkerResourceConfig>,
 }
 impl InitialCapacityConfigBuilder {
     /// <p>The number of workers in the initial capacity configuration.</p>
     pub fn worker_count(mut self, input: i64) -> Self {
-        self.worker_count = Some(input);
+        self.worker_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of workers in the initial capacity configuration.</p>
-    pub fn set_worker_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_worker_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.worker_count = input;
         self
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
     pub fn worker_configuration(mut self, input: crate::types::WorkerResourceConfig) -> Self {
-        self.worker_configuration = Some(input);
+        self.worker_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
     pub fn set_worker_configuration(
         mut self,
-        input: std::option::Option<crate::types::WorkerResourceConfig>,
+        input: ::std::option::Option<crate::types::WorkerResourceConfig>,
     ) -> Self {
         self.worker_configuration = input;
         self

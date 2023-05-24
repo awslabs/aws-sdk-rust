@@ -2,17 +2,17 @@
 
 /// <p>An object representing the gateway route host name to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteHostnameRewrite {
     /// <p>The default target host name to write to.</p>
     #[doc(hidden)]
-    pub default_target_hostname: std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
+    pub default_target_hostname: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
 }
 impl GatewayRouteHostnameRewrite {
     /// <p>The default target host name to write to.</p>
     pub fn default_target_hostname(
         &self,
-    ) -> std::option::Option<&crate::types::DefaultGatewayRouteRewrite> {
+    ) -> ::std::option::Option<&crate::types::DefaultGatewayRouteRewrite> {
         self.default_target_hostname.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl GatewayRouteHostnameRewrite {
 
 /// A builder for [`GatewayRouteHostnameRewrite`](crate::types::GatewayRouteHostnameRewrite).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GatewayRouteHostnameRewriteBuilder {
     pub(crate) default_target_hostname:
-        std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
+        ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
 }
 impl GatewayRouteHostnameRewriteBuilder {
     /// <p>The default target host name to write to.</p>
@@ -36,13 +38,13 @@ impl GatewayRouteHostnameRewriteBuilder {
         mut self,
         input: crate::types::DefaultGatewayRouteRewrite,
     ) -> Self {
-        self.default_target_hostname = Some(input);
+        self.default_target_hostname = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default target host name to write to.</p>
     pub fn set_default_target_hostname(
         mut self,
-        input: std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
+        input: ::std::option::Option<crate::types::DefaultGatewayRouteRewrite>,
     ) -> Self {
         self.default_target_hostname = input;
         self

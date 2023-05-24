@@ -3,33 +3,33 @@
 /// <p>Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms">Transforms</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transform {
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The list of variables used in the expression.</p>
     #[doc(hidden)]
-    pub variables: std::option::Option<std::vec::Vec<crate::types::ExpressionVariable>>,
+    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     #[doc(hidden)]
-    pub processing_config: std::option::Option<crate::types::TransformProcessingConfig>,
+    pub processing_config: ::std::option::Option<crate::types::TransformProcessingConfig>,
 }
 impl Transform {
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>The list of variables used in the expression.</p>
-    pub fn variables(&self) -> std::option::Option<&[crate::types::ExpressionVariable]> {
+    pub fn variables(&self) -> ::std::option::Option<&[crate::types::ExpressionVariable]> {
         self.variables.as_deref()
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub fn processing_config(
         &self,
-    ) -> std::option::Option<&crate::types::TransformProcessingConfig> {
+    ) -> ::std::option::Option<&crate::types::TransformProcessingConfig> {
         self.processing_config.as_ref()
     }
 }
@@ -42,22 +42,24 @@ impl Transform {
 
 /// A builder for [`Transform`](crate::types::Transform).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransformBuilder {
-    pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) variables: std::option::Option<std::vec::Vec<crate::types::ExpressionVariable>>,
-    pub(crate) processing_config: std::option::Option<crate::types::TransformProcessingConfig>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
+    pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
+    pub(crate) processing_config: ::std::option::Option<crate::types::TransformProcessingConfig>,
 }
 impl TransformBuilder {
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The mathematical expression that defines the transformation function. You can specify up to 10 variables per expression. You can specify up to 10 functions per expression. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
@@ -69,26 +71,26 @@ impl TransformBuilder {
     pub fn variables(mut self, input: crate::types::ExpressionVariable) -> Self {
         let mut v = self.variables.unwrap_or_default();
         v.push(input);
-        self.variables = Some(v);
+        self.variables = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of variables used in the expression.</p>
     pub fn set_variables(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExpressionVariable>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionVariable>>,
     ) -> Self {
         self.variables = input;
         self
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub fn processing_config(mut self, input: crate::types::TransformProcessingConfig) -> Self {
-        self.processing_config = Some(input);
+        self.processing_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.</p>
     pub fn set_processing_config(
         mut self,
-        input: std::option::Option<crate::types::TransformProcessingConfig>,
+        input: ::std::option::Option<crate::types::TransformProcessingConfig>,
     ) -> Self {
         self.processing_config = input;
         self

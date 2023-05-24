@@ -2,17 +2,17 @@
 
 /// <p>Represents a scalable resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPlanResource {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
-    pub scaling_plan_name: std::option::Option<std::string::String>,
+    pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan.</p>
     #[doc(hidden)]
-    pub scaling_plan_version: std::option::Option<i64>,
+    pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>The namespace of the AWS service.</p>
     #[doc(hidden)]
-    pub service_namespace: std::option::Option<crate::types::ServiceNamespace>,
+    pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li> <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li>
@@ -23,7 +23,7 @@ pub struct ScalingPlanResource {
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension for the resource.</p>
     /// <ul>
     /// <li> <p> <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p> </li>
@@ -36,10 +36,10 @@ pub struct ScalingPlanResource {
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
+    pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The scaling policies.</p>
     #[doc(hidden)]
-    pub scaling_policies: std::option::Option<std::vec::Vec<crate::types::ScalingPolicy>>,
+    pub scaling_policies: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
     /// <p>The scaling status of the resource.</p>
     /// <ul>
     /// <li> <p> <code>Active</code> - The scaling configuration is active.</p> </li>
@@ -47,22 +47,22 @@ pub struct ScalingPlanResource {
     /// <li> <p> <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being created or deleted or the scaling configuration could not be fully applied. Check the status message for more information.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scaling_status_code: std::option::Option<crate::types::ScalingStatusCode>,
+    pub scaling_status_code: ::std::option::Option<crate::types::ScalingStatusCode>,
     /// <p>A simple message about the current scaling status of the resource.</p>
     #[doc(hidden)]
-    pub scaling_status_message: std::option::Option<std::string::String>,
+    pub scaling_status_message: ::std::option::Option<::std::string::String>,
 }
 impl ScalingPlanResource {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+    pub fn scaling_plan_name(&self) -> ::std::option::Option<&str> {
         self.scaling_plan_name.as_deref()
     }
     /// <p>The version number of the scaling plan.</p>
-    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+    pub fn scaling_plan_version(&self) -> ::std::option::Option<i64> {
         self.scaling_plan_version
     }
     /// <p>The namespace of the AWS service.</p>
-    pub fn service_namespace(&self) -> std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
@@ -74,7 +74,7 @@ impl ScalingPlanResource {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension for the resource.</p>
@@ -88,11 +88,11 @@ impl ScalingPlanResource {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The scaling policies.</p>
-    pub fn scaling_policies(&self) -> std::option::Option<&[crate::types::ScalingPolicy]> {
+    pub fn scaling_policies(&self) -> ::std::option::Option<&[crate::types::ScalingPolicy]> {
         self.scaling_policies.as_deref()
     }
     /// <p>The scaling status of the resource.</p>
@@ -101,11 +101,11 @@ impl ScalingPlanResource {
     /// <li> <p> <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the scaling configuration could not be applied. Check the status message for more information.</p> </li>
     /// <li> <p> <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being created or deleted or the scaling configuration could not be fully applied. Check the status message for more information.</p> </li>
     /// </ul>
-    pub fn scaling_status_code(&self) -> std::option::Option<&crate::types::ScalingStatusCode> {
+    pub fn scaling_status_code(&self) -> ::std::option::Option<&crate::types::ScalingStatusCode> {
         self.scaling_status_code.as_ref()
     }
     /// <p>A simple message about the current scaling status of the resource.</p>
-    pub fn scaling_status_message(&self) -> std::option::Option<&str> {
+    pub fn scaling_status_message(&self) -> ::std::option::Option<&str> {
         self.scaling_status_message.as_deref()
     }
 }
@@ -118,50 +118,56 @@ impl ScalingPlanResource {
 
 /// A builder for [`ScalingPlanResource`](crate::types::ScalingPlanResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingPlanResourceBuilder {
-    pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
-    pub(crate) scaling_plan_version: std::option::Option<i64>,
-    pub(crate) service_namespace: std::option::Option<crate::types::ServiceNamespace>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
-    pub(crate) scaling_policies: std::option::Option<std::vec::Vec<crate::types::ScalingPolicy>>,
-    pub(crate) scaling_status_code: std::option::Option<crate::types::ScalingStatusCode>,
-    pub(crate) scaling_status_message: std::option::Option<std::string::String>,
+    pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
+    pub(crate) scaling_plan_version: ::std::option::Option<i64>,
+    pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
+    pub(crate) scaling_policies:
+        ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
+    pub(crate) scaling_status_code: ::std::option::Option<crate::types::ScalingStatusCode>,
+    pub(crate) scaling_status_message: ::std::option::Option<::std::string::String>,
 }
 impl ScalingPlanResourceBuilder {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scaling_plan_name = Some(input.into());
+    pub fn scaling_plan_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
     pub fn set_scaling_plan_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.scaling_plan_name = input;
         self
     }
     /// <p>The version number of the scaling plan.</p>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
-        self.scaling_plan_version = Some(input);
+        self.scaling_plan_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number of the scaling plan.</p>
-    pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scaling_plan_version = input;
         self
     }
     /// <p>The namespace of the AWS service.</p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
-        self.service_namespace = Some(input);
+        self.service_namespace = ::std::option::Option::Some(input);
         self
     }
     /// <p>The namespace of the AWS service.</p>
     pub fn set_service_namespace(
         mut self,
-        input: std::option::Option<crate::types::ServiceNamespace>,
+        input: ::std::option::Option<crate::types::ServiceNamespace>,
     ) -> Self {
         self.service_namespace = input;
         self
@@ -175,8 +181,8 @@ impl ScalingPlanResourceBuilder {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
@@ -188,7 +194,7 @@ impl ScalingPlanResourceBuilder {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -204,7 +210,7 @@ impl ScalingPlanResourceBuilder {
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
-        self.scalable_dimension = Some(input);
+        self.scalable_dimension = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scalable dimension for the resource.</p>
@@ -220,7 +226,7 @@ impl ScalingPlanResourceBuilder {
     /// </ul>
     pub fn set_scalable_dimension(
         mut self,
-        input: std::option::Option<crate::types::ScalableDimension>,
+        input: ::std::option::Option<crate::types::ScalableDimension>,
     ) -> Self {
         self.scalable_dimension = input;
         self
@@ -233,13 +239,13 @@ impl ScalingPlanResourceBuilder {
     pub fn scaling_policies(mut self, input: crate::types::ScalingPolicy) -> Self {
         let mut v = self.scaling_policies.unwrap_or_default();
         v.push(input);
-        self.scaling_policies = Some(v);
+        self.scaling_policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>The scaling policies.</p>
     pub fn set_scaling_policies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScalingPolicy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingPolicy>>,
     ) -> Self {
         self.scaling_policies = input;
         self
@@ -251,7 +257,7 @@ impl ScalingPlanResourceBuilder {
     /// <li> <p> <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being created or deleted or the scaling configuration could not be fully applied. Check the status message for more information.</p> </li>
     /// </ul>
     pub fn scaling_status_code(mut self, input: crate::types::ScalingStatusCode) -> Self {
-        self.scaling_status_code = Some(input);
+        self.scaling_status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scaling status of the resource.</p>
@@ -262,20 +268,23 @@ impl ScalingPlanResourceBuilder {
     /// </ul>
     pub fn set_scaling_status_code(
         mut self,
-        input: std::option::Option<crate::types::ScalingStatusCode>,
+        input: ::std::option::Option<crate::types::ScalingStatusCode>,
     ) -> Self {
         self.scaling_status_code = input;
         self
     }
     /// <p>A simple message about the current scaling status of the resource.</p>
-    pub fn scaling_status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scaling_status_message = Some(input.into());
+    pub fn scaling_status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.scaling_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A simple message about the current scaling status of the resource.</p>
     pub fn set_scaling_status_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.scaling_status_message = input;
         self

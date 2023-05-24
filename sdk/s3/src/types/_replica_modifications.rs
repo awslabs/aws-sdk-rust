@@ -4,15 +4,15 @@
 /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaModifications {
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReplicaModificationsStatus>,
+    pub status: ::std::option::Option<crate::types::ReplicaModificationsStatus>,
 }
 impl ReplicaModifications {
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReplicaModificationsStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicaModificationsStatus> {
         self.status.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ReplicaModifications {
 
 /// A builder for [`ReplicaModifications`](crate::types::ReplicaModifications).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicaModificationsBuilder {
-    pub(crate) status: std::option::Option<crate::types::ReplicaModificationsStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::ReplicaModificationsStatus>,
 }
 impl ReplicaModificationsBuilder {
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
     pub fn status(mut self, input: crate::types::ReplicaModificationsStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ReplicaModificationsStatus>,
+        input: ::std::option::Option<crate::types::ReplicaModificationsStatus>,
     ) -> Self {
         self.status = input;
         self

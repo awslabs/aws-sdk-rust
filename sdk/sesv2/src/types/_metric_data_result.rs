@@ -2,29 +2,29 @@
 
 /// <p>The result of a single metric data query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDataResult {
     /// <p>The query identifier.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A list of timestamps for the metric data results.</p>
     #[doc(hidden)]
-    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<i64>>,
+    pub values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl MetricDataResult {
     /// <p>The query identifier.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A list of timestamps for the metric data results.</p>
-    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+    pub fn timestamps(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
-    pub fn values(&self) -> std::option::Option<&[i64]> {
+    pub fn values(&self) -> ::std::option::Option<&[i64]> {
         self.values.as_deref()
     }
 }
@@ -37,20 +37,22 @@ impl MetricDataResult {
 
 /// A builder for [`MetricDataResult`](crate::types::MetricDataResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricDataResultBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<i64>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl MetricDataResultBuilder {
     /// <p>The query identifier.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query identifier.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -59,16 +61,16 @@ impl MetricDataResultBuilder {
     /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
     ///
     /// <p>A list of timestamps for the metric data results.</p>
-    pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn timestamps(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
         v.push(input);
-        self.timestamps = Some(v);
+        self.timestamps = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of timestamps for the metric data results.</p>
     pub fn set_timestamps(
         mut self,
-        input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     ) -> Self {
         self.timestamps = input;
         self
@@ -81,11 +83,11 @@ impl MetricDataResultBuilder {
     pub fn values(mut self, input: i64) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values (cumulative / sum) for the metric data results.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<i64>>) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
         self.values = input;
         self
     }

@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_usage_limit_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_usage_limit::CreateUsageLimitOutput,
@@ -15,7 +15,7 @@ pub fn de_create_usage_limit_http_error(
         _response_body,
     )
     .map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -147,7 +147,7 @@ pub fn de_create_usage_limit_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_usage_limit_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_usage_limit::CreateUsageLimitOutput,
@@ -164,7 +164,7 @@ pub fn de_create_usage_limit_http_response_with_props(
         )
         .map_err(crate::operation::create_usage_limit::CreateUsageLimitError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -176,16 +176,16 @@ pub fn de_create_usage_limit(
     mut builder: crate::operation::create_usage_limit::builders::CreateUsageLimitOutputBuilder,
 ) -> Result<
     crate::operation::create_usage_limit::builders::CreateUsageLimitOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateUsageLimitResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateUsageLimitResponse got {:?}",
             start_el
         )));
@@ -193,7 +193,7 @@ pub fn de_create_usage_limit(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateUsageLimitResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected CreateUsageLimitResult got {:?}",
                 start_el
             )));
@@ -203,8 +203,8 @@ pub fn de_create_usage_limit(
             s if s.matches("UsageLimitId") /* UsageLimitId com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$UsageLimitId */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -216,8 +216,8 @@ pub fn de_create_usage_limit(
             s if s.matches("ClusterIdentifier") /* ClusterIdentifier com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$ClusterIdentifier */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -229,9 +229,9 @@ pub fn de_create_usage_limit(
             s if s.matches("FeatureType") /* FeatureType com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$FeatureType */ =>  {
                 let var_3 =
                     Some(
-                        Result::<crate::types::UsageLimitFeatureType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::UsageLimitFeatureType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::UsageLimitFeatureType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -243,9 +243,9 @@ pub fn de_create_usage_limit(
             s if s.matches("LimitType") /* LimitType com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$LimitType */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::types::UsageLimitLimitType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::UsageLimitLimitType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::UsageLimitLimitType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -258,10 +258,10 @@ pub fn de_create_usage_limit(
                 let var_5 =
                     Some(
                          {
-                            <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.redshift#Long`)"))
                         }
                         ?
                     )
@@ -272,9 +272,9 @@ pub fn de_create_usage_limit(
             s if s.matches("Period") /* Period com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$Period */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::types::UsageLimitPeriod, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::UsageLimitPeriod, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::UsageLimitPeriod::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -286,9 +286,9 @@ pub fn de_create_usage_limit(
             s if s.matches("BreachAction") /* BreachAction com.amazonaws.redshift.synthetic#CreateUsageLimitOutput$BreachAction */ =>  {
                 let var_7 =
                     Some(
-                        Result::<crate::types::UsageLimitBreachAction, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::UsageLimitBreachAction, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::UsageLimitBreachAction::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -311,7 +311,7 @@ pub fn de_create_usage_limit(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected CreateUsageLimitResult tag",
         ));
     };

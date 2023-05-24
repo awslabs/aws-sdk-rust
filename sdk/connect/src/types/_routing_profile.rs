@@ -2,82 +2,84 @@
 
 /// <p>Contains information about a routing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfile {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing profile.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     #[doc(hidden)]
-    pub routing_profile_arn: std::option::Option<std::string::String>,
+    pub routing_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the routing profile.</p>
     #[doc(hidden)]
-    pub routing_profile_id: std::option::Option<std::string::String>,
+    pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the routing profile.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     #[doc(hidden)]
-    pub media_concurrencies: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
+    pub media_concurrencies: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
     #[doc(hidden)]
-    pub default_outbound_queue_id: std::option::Option<std::string::String>,
+    pub default_outbound_queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The number of associated queues in routing profile.</p>
     #[doc(hidden)]
-    pub number_of_associated_queues: std::option::Option<i64>,
+    pub number_of_associated_queues: ::std::option::Option<i64>,
     /// <p>The number of associated users in routing profile.</p>
     #[doc(hidden)]
-    pub number_of_associated_users: std::option::Option<i64>,
+    pub number_of_associated_users: ::std::option::Option<i64>,
 }
 impl RoutingProfile {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The name of the routing profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn routing_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn routing_profile_arn(&self) -> ::std::option::Option<&str> {
         self.routing_profile_arn.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> ::std::option::Option<&str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The description of the routing profile.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn media_concurrencies(&self) -> std::option::Option<&[crate::types::MediaConcurrency]> {
+    pub fn media_concurrencies(&self) -> ::std::option::Option<&[crate::types::MediaConcurrency]> {
         self.media_concurrencies.as_deref()
     }
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
-    pub fn default_outbound_queue_id(&self) -> std::option::Option<&str> {
+    pub fn default_outbound_queue_id(&self) -> ::std::option::Option<&str> {
         self.default_outbound_queue_id.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>The number of associated queues in routing profile.</p>
-    pub fn number_of_associated_queues(&self) -> std::option::Option<i64> {
+    pub fn number_of_associated_queues(&self) -> ::std::option::Option<i64> {
         self.number_of_associated_queues
     }
     /// <p>The number of associated users in routing profile.</p>
-    pub fn number_of_associated_users(&self) -> std::option::Option<i64> {
+    pub fn number_of_associated_users(&self) -> ::std::option::Option<i64> {
         self.number_of_associated_users
     }
 }
@@ -90,75 +92,84 @@ impl RoutingProfile {
 
 /// A builder for [`RoutingProfile`](crate::types::RoutingProfile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoutingProfileBuilder {
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) routing_profile_arn: std::option::Option<std::string::String>,
-    pub(crate) routing_profile_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) media_concurrencies:
-        std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
-    pub(crate) default_outbound_queue_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) number_of_associated_queues: std::option::Option<i64>,
-    pub(crate) number_of_associated_users: std::option::Option<i64>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
+    pub(crate) default_outbound_queue_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) number_of_associated_queues: ::std::option::Option<i64>,
+    pub(crate) number_of_associated_users: ::std::option::Option<i64>,
 }
 impl RoutingProfileBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The name of the routing profile.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the routing profile.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
-    pub fn routing_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.routing_profile_arn = Some(input.into());
+    pub fn routing_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.routing_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing profile.</p>
     pub fn set_routing_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.routing_profile_arn = input;
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.routing_profile_id = Some(input.into());
+    pub fn routing_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.routing_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn set_routing_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.routing_profile_id = input;
         self
     }
     /// <p>The description of the routing profile.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the routing profile.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -170,26 +181,29 @@ impl RoutingProfileBuilder {
     pub fn media_concurrencies(mut self, input: crate::types::MediaConcurrency) -> Self {
         let mut v = self.media_concurrencies.unwrap_or_default();
         v.push(input);
-        self.media_concurrencies = Some(v);
+        self.media_concurrencies = ::std::option::Option::Some(v);
         self
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn set_media_concurrencies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConcurrency>>,
     ) -> Self {
         self.media_concurrencies = input;
         self
     }
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
-    pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_outbound_queue_id = Some(input.into());
+    pub fn default_outbound_queue_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_outbound_queue_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the default outbound queue for this routing profile.</p>
     pub fn set_default_outbound_queue_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.default_outbound_queue_id = input;
         self
@@ -201,19 +215,19 @@ impl RoutingProfileBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -221,21 +235,21 @@ impl RoutingProfileBuilder {
     }
     /// <p>The number of associated queues in routing profile.</p>
     pub fn number_of_associated_queues(mut self, input: i64) -> Self {
-        self.number_of_associated_queues = Some(input);
+        self.number_of_associated_queues = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of associated queues in routing profile.</p>
-    pub fn set_number_of_associated_queues(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_associated_queues(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_associated_queues = input;
         self
     }
     /// <p>The number of associated users in routing profile.</p>
     pub fn number_of_associated_users(mut self, input: i64) -> Self {
-        self.number_of_associated_users = Some(input);
+        self.number_of_associated_users = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of associated users in routing profile.</p>
-    pub fn set_number_of_associated_users(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_associated_users(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_associated_users = input;
         self
     }

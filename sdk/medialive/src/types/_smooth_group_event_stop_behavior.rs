@@ -38,13 +38,13 @@
 /// Smooth Group Event Stop Behavior
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SmoothGroupEventStopBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SmoothGroupEventStopBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SmoothGroupEventStopBehavior {
+impl ::std::convert::From<&str> for SmoothGroupEventStopBehavior {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => SmoothGroupEventStopBehavior::None,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SmoothGroupEventStopBehavior {
         }
     }
 }
-impl std::str::FromStr for SmoothGroupEventStopBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SmoothGroupEventStopBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SmoothGroupEventStopBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SmoothGroupEventStopBehavior::from(s))
     }
 }
 impl SmoothGroupEventStopBehavior {
@@ -86,7 +86,7 @@ impl SmoothGroupEventStopBehavior {
         &["NONE", "SEND_EOS"]
     }
 }
-impl AsRef<str> for SmoothGroupEventStopBehavior {
+impl ::std::convert::AsRef<str> for SmoothGroupEventStopBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

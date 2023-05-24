@@ -2,64 +2,66 @@
 
 /// <p>VOD source configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VodSource {
     /// <p>The ARN for the VOD source.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp that indicates when the VOD source was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The HTTP package configurations for the VOD source.</p>
     #[doc(hidden)]
     pub http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The timestamp that indicates when the VOD source was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the source location that the VOD source is associated with.</p>
     #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
+    pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The name of the VOD source.</p>
     #[doc(hidden)]
-    pub vod_source_name: std::option::Option<std::string::String>,
+    pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl VodSource {
     /// <p>The ARN for the VOD source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The HTTP package configurations for the VOD source.</p>
     pub fn http_package_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::HttpPackageConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::HttpPackageConfiguration]> {
         self.http_package_configurations.as_deref()
     }
     /// <p>The timestamp that indicates when the VOD source was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The name of the source location that the VOD source is associated with.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
         self.vod_source_name.as_deref()
     }
 }
@@ -72,38 +74,41 @@ impl VodSource {
 
 /// A builder for [`VodSource`](crate::types::VodSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VodSourceBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) http_package_configurations:
-        std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) source_location_name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) vod_source_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl VodSourceBuilder {
     /// <p>The ARN for the VOD source.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the VOD source.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp that indicates when the VOD source was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
@@ -119,39 +124,42 @@ impl VodSourceBuilder {
     ) -> Self {
         let mut v = self.http_package_configurations.unwrap_or_default();
         v.push(input);
-        self.http_package_configurations = Some(v);
+        self.http_package_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The HTTP package configurations for the VOD source.</p>
     pub fn set_http_package_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     ) -> Self {
         self.http_package_configurations = input;
         self
     }
     /// <p>The timestamp that indicates when the VOD source was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp that indicates when the VOD source was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>The name of the source location that the VOD source is associated with.</p>
-    pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_location_name = Some(input.into());
+    pub fn source_location_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location that the VOD source is associated with.</p>
     pub fn set_source_location_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_location_name = input;
         self
@@ -163,31 +171,37 @@ impl VodSourceBuilder {
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vod_source_name = Some(input.into());
+    pub fn vod_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vod_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the VOD source.</p>
-    pub fn set_vod_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vod_source_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vod_source_name = input;
         self
     }

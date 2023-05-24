@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeClusterV2`](crate::operation::describe_cluster_v2::builders::DescribeClusterV2FluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::describe_cluster_v2::builders::DescribeClusterV2FluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::describe_cluster_v2::builders::DescribeClusterV2FluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`cluster_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_cluster_v2::builders::DescribeClusterV2FluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::describe_cluster_v2::builders::DescribeClusterV2FluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     /// - On success, responds with [`DescribeClusterV2Output`](crate::operation::describe_cluster_v2::DescribeClusterV2Output) with field(s):
     ///   - [`cluster_info(Option<Cluster>)`](crate::operation::describe_cluster_v2::DescribeClusterV2Output::cluster_info): <p>The cluster information.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterV2Error>`](crate::operation::describe_cluster_v2::DescribeClusterV2Error)

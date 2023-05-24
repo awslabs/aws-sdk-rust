@@ -2,7 +2,7 @@
 
 /// <p>An object that represents the provider for a virtual service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualServiceProvider {
     /// <p>The virtual node associated with a virtual service.</p>
     VirtualNode(crate::types::VirtualNodeServiceProvider),
@@ -23,11 +23,11 @@ impl VirtualServiceProvider {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_virtual_node(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualNodeServiceProvider, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualNodeServiceProvider, &Self> {
         if let VirtualServiceProvider::VirtualNode(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`VirtualNode`](crate::types::VirtualServiceProvider::VirtualNode).
@@ -38,11 +38,11 @@ impl VirtualServiceProvider {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_virtual_router(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualRouterServiceProvider, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualRouterServiceProvider, &Self> {
         if let VirtualServiceProvider::VirtualRouter(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`VirtualRouter`](crate::types::VirtualServiceProvider::VirtualRouter).

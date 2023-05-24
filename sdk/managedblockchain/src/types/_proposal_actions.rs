@@ -3,22 +3,22 @@
 /// <p> The actions to carry out if a proposal is <code>APPROVED</code>. </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProposalActions {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
     #[doc(hidden)]
-    pub invitations: std::option::Option<std::vec::Vec<crate::types::InviteAction>>,
+    pub invitations: ::std::option::Option<::std::vec::Vec<crate::types::InviteAction>>,
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
     #[doc(hidden)]
-    pub removals: std::option::Option<std::vec::Vec<crate::types::RemoveAction>>,
+    pub removals: ::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>>,
 }
 impl ProposalActions {
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
-    pub fn invitations(&self) -> std::option::Option<&[crate::types::InviteAction]> {
+    pub fn invitations(&self) -> ::std::option::Option<&[crate::types::InviteAction]> {
         self.invitations.as_deref()
     }
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
-    pub fn removals(&self) -> std::option::Option<&[crate::types::RemoveAction]> {
+    pub fn removals(&self) -> ::std::option::Option<&[crate::types::RemoveAction]> {
         self.removals.as_deref()
     }
 }
@@ -31,10 +31,12 @@ impl ProposalActions {
 
 /// A builder for [`ProposalActions`](crate::types::ProposalActions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProposalActionsBuilder {
-    pub(crate) invitations: std::option::Option<std::vec::Vec<crate::types::InviteAction>>,
-    pub(crate) removals: std::option::Option<std::vec::Vec<crate::types::RemoveAction>>,
+    pub(crate) invitations: ::std::option::Option<::std::vec::Vec<crate::types::InviteAction>>,
+    pub(crate) removals: ::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>>,
 }
 impl ProposalActionsBuilder {
     /// Appends an item to `invitations`.
@@ -45,13 +47,13 @@ impl ProposalActionsBuilder {
     pub fn invitations(mut self, input: crate::types::InviteAction) -> Self {
         let mut v = self.invitations.unwrap_or_default();
         v.push(input);
-        self.invitations = Some(v);
+        self.invitations = ::std::option::Option::Some(v);
         self
     }
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon Web Services account to create a member and join the network. </p>
     pub fn set_invitations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InviteAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InviteAction>>,
     ) -> Self {
         self.invitations = input;
         self
@@ -64,13 +66,13 @@ impl ProposalActionsBuilder {
     pub fn removals(mut self, input: crate::types::RemoveAction) -> Self {
         let mut v = self.removals.unwrap_or_default();
         v.push(input);
-        self.removals = Some(v);
+        self.removals = ::std::option::Option::Some(v);
         self
     }
     /// <p> The actions to perform for an <code>APPROVED</code> proposal to remove a member from the network, which deletes the member and all associated member resources from the network. </p>
     pub fn set_removals(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RemoveAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RemoveAction>>,
     ) -> Self {
         self.removals = input;
         self

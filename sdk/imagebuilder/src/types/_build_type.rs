@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BuildType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BuildType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BuildType {
+impl ::std::convert::From<&str> for BuildType {
     fn from(s: &str) -> Self {
         match s {
             "IMPORT" => BuildType::Import,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for BuildType {
         }
     }
 }
-impl std::str::FromStr for BuildType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BuildType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BuildType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BuildType::from(s))
     }
 }
 impl BuildType {
@@ -89,7 +89,7 @@ impl BuildType {
         &["IMPORT", "SCHEDULED", "USER_INITIATED"]
     }
 }
-impl AsRef<str> for BuildType {
+impl ::std::convert::AsRef<str> for BuildType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

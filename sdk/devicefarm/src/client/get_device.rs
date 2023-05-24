@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDevice`](crate::operation::get_device::builders::GetDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_arn): <p>The device type's ARN.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_arn): <p>The device type's ARN.</p>
     /// - On success, responds with [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput) with field(s):
     ///   - [`device(Option<Device>)`](crate::operation::get_device::GetDeviceOutput::device): <p>An object that contains information about the requested device.</p>
     /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::operation::get_device::GetDeviceError)

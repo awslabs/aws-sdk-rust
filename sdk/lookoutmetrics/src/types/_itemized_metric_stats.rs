@@ -2,18 +2,18 @@
 
 /// <p>Aggregated statistics about a measure affected by an anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemizedMetricStats {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of times that the measure appears.</p>
     #[doc(hidden)]
     pub occurrence_count: i32,
 }
 impl ItemizedMetricStats {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The number of times that the measure appears.</p>
@@ -30,29 +30,31 @@ impl ItemizedMetricStats {
 
 /// A builder for [`ItemizedMetricStats`](crate::types::ItemizedMetricStats).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ItemizedMetricStatsBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) occurrence_count: std::option::Option<i32>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) occurrence_count: ::std::option::Option<i32>,
 }
 impl ItemizedMetricStatsBuilder {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the measure.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The number of times that the measure appears.</p>
     pub fn occurrence_count(mut self, input: i32) -> Self {
-        self.occurrence_count = Some(input);
+        self.occurrence_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of times that the measure appears.</p>
-    pub fn set_occurrence_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_occurrence_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.occurrence_count = input;
         self
     }

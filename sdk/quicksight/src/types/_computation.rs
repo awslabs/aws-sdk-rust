@@ -3,88 +3,90 @@
 /// <p>The computation union that is used in an insight visual.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Computation {
     /// <p>The top ranked and bottom ranked computation configuration.</p>
     #[doc(hidden)]
-    pub top_bottom_ranked: std::option::Option<crate::types::TopBottomRankedComputation>,
+    pub top_bottom_ranked: ::std::option::Option<crate::types::TopBottomRankedComputation>,
     /// <p>The top movers and bottom movers computation configuration.</p>
     #[doc(hidden)]
-    pub top_bottom_movers: std::option::Option<crate::types::TopBottomMoversComputation>,
+    pub top_bottom_movers: ::std::option::Option<crate::types::TopBottomMoversComputation>,
     /// <p>The total aggregation computation configuration.</p>
     #[doc(hidden)]
-    pub total_aggregation: std::option::Option<crate::types::TotalAggregationComputation>,
+    pub total_aggregation: ::std::option::Option<crate::types::TotalAggregationComputation>,
     /// <p>The maximum and minimum computation configuration.</p>
     #[doc(hidden)]
-    pub maximum_minimum: std::option::Option<crate::types::MaximumMinimumComputation>,
+    pub maximum_minimum: ::std::option::Option<crate::types::MaximumMinimumComputation>,
     /// <p>The metric comparison computation configuration.</p>
     #[doc(hidden)]
-    pub metric_comparison: std::option::Option<crate::types::MetricComparisonComputation>,
+    pub metric_comparison: ::std::option::Option<crate::types::MetricComparisonComputation>,
     /// <p>The period over period computation configuration.</p>
     #[doc(hidden)]
-    pub period_over_period: std::option::Option<crate::types::PeriodOverPeriodComputation>,
+    pub period_over_period: ::std::option::Option<crate::types::PeriodOverPeriodComputation>,
     /// <p>The period to <code>DataSetIdentifier</code> computation configuration.</p>
     #[doc(hidden)]
-    pub period_to_date: std::option::Option<crate::types::PeriodToDateComputation>,
+    pub period_to_date: ::std::option::Option<crate::types::PeriodToDateComputation>,
     /// <p>The growth rate computation configuration.</p>
     #[doc(hidden)]
-    pub growth_rate: std::option::Option<crate::types::GrowthRateComputation>,
+    pub growth_rate: ::std::option::Option<crate::types::GrowthRateComputation>,
     /// <p>The unique values computation configuration.</p>
     #[doc(hidden)]
-    pub unique_values: std::option::Option<crate::types::UniqueValuesComputation>,
+    pub unique_values: ::std::option::Option<crate::types::UniqueValuesComputation>,
     /// <p>The forecast computation configuration.</p>
     #[doc(hidden)]
-    pub forecast: std::option::Option<crate::types::ForecastComputation>,
+    pub forecast: ::std::option::Option<crate::types::ForecastComputation>,
 }
 impl Computation {
     /// <p>The top ranked and bottom ranked computation configuration.</p>
     pub fn top_bottom_ranked(
         &self,
-    ) -> std::option::Option<&crate::types::TopBottomRankedComputation> {
+    ) -> ::std::option::Option<&crate::types::TopBottomRankedComputation> {
         self.top_bottom_ranked.as_ref()
     }
     /// <p>The top movers and bottom movers computation configuration.</p>
     pub fn top_bottom_movers(
         &self,
-    ) -> std::option::Option<&crate::types::TopBottomMoversComputation> {
+    ) -> ::std::option::Option<&crate::types::TopBottomMoversComputation> {
         self.top_bottom_movers.as_ref()
     }
     /// <p>The total aggregation computation configuration.</p>
     pub fn total_aggregation(
         &self,
-    ) -> std::option::Option<&crate::types::TotalAggregationComputation> {
+    ) -> ::std::option::Option<&crate::types::TotalAggregationComputation> {
         self.total_aggregation.as_ref()
     }
     /// <p>The maximum and minimum computation configuration.</p>
-    pub fn maximum_minimum(&self) -> std::option::Option<&crate::types::MaximumMinimumComputation> {
+    pub fn maximum_minimum(
+        &self,
+    ) -> ::std::option::Option<&crate::types::MaximumMinimumComputation> {
         self.maximum_minimum.as_ref()
     }
     /// <p>The metric comparison computation configuration.</p>
     pub fn metric_comparison(
         &self,
-    ) -> std::option::Option<&crate::types::MetricComparisonComputation> {
+    ) -> ::std::option::Option<&crate::types::MetricComparisonComputation> {
         self.metric_comparison.as_ref()
     }
     /// <p>The period over period computation configuration.</p>
     pub fn period_over_period(
         &self,
-    ) -> std::option::Option<&crate::types::PeriodOverPeriodComputation> {
+    ) -> ::std::option::Option<&crate::types::PeriodOverPeriodComputation> {
         self.period_over_period.as_ref()
     }
     /// <p>The period to <code>DataSetIdentifier</code> computation configuration.</p>
-    pub fn period_to_date(&self) -> std::option::Option<&crate::types::PeriodToDateComputation> {
+    pub fn period_to_date(&self) -> ::std::option::Option<&crate::types::PeriodToDateComputation> {
         self.period_to_date.as_ref()
     }
     /// <p>The growth rate computation configuration.</p>
-    pub fn growth_rate(&self) -> std::option::Option<&crate::types::GrowthRateComputation> {
+    pub fn growth_rate(&self) -> ::std::option::Option<&crate::types::GrowthRateComputation> {
         self.growth_rate.as_ref()
     }
     /// <p>The unique values computation configuration.</p>
-    pub fn unique_values(&self) -> std::option::Option<&crate::types::UniqueValuesComputation> {
+    pub fn unique_values(&self) -> ::std::option::Option<&crate::types::UniqueValuesComputation> {
         self.unique_values.as_ref()
     }
     /// <p>The forecast computation configuration.</p>
-    pub fn forecast(&self) -> std::option::Option<&crate::types::ForecastComputation> {
+    pub fn forecast(&self) -> ::std::option::Option<&crate::types::ForecastComputation> {
         self.forecast.as_ref()
     }
 }
@@ -97,146 +99,148 @@ impl Computation {
 
 /// A builder for [`Computation`](crate::types::Computation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComputationBuilder {
-    pub(crate) top_bottom_ranked: std::option::Option<crate::types::TopBottomRankedComputation>,
-    pub(crate) top_bottom_movers: std::option::Option<crate::types::TopBottomMoversComputation>,
-    pub(crate) total_aggregation: std::option::Option<crate::types::TotalAggregationComputation>,
-    pub(crate) maximum_minimum: std::option::Option<crate::types::MaximumMinimumComputation>,
-    pub(crate) metric_comparison: std::option::Option<crate::types::MetricComparisonComputation>,
-    pub(crate) period_over_period: std::option::Option<crate::types::PeriodOverPeriodComputation>,
-    pub(crate) period_to_date: std::option::Option<crate::types::PeriodToDateComputation>,
-    pub(crate) growth_rate: std::option::Option<crate::types::GrowthRateComputation>,
-    pub(crate) unique_values: std::option::Option<crate::types::UniqueValuesComputation>,
-    pub(crate) forecast: std::option::Option<crate::types::ForecastComputation>,
+    pub(crate) top_bottom_ranked: ::std::option::Option<crate::types::TopBottomRankedComputation>,
+    pub(crate) top_bottom_movers: ::std::option::Option<crate::types::TopBottomMoversComputation>,
+    pub(crate) total_aggregation: ::std::option::Option<crate::types::TotalAggregationComputation>,
+    pub(crate) maximum_minimum: ::std::option::Option<crate::types::MaximumMinimumComputation>,
+    pub(crate) metric_comparison: ::std::option::Option<crate::types::MetricComparisonComputation>,
+    pub(crate) period_over_period: ::std::option::Option<crate::types::PeriodOverPeriodComputation>,
+    pub(crate) period_to_date: ::std::option::Option<crate::types::PeriodToDateComputation>,
+    pub(crate) growth_rate: ::std::option::Option<crate::types::GrowthRateComputation>,
+    pub(crate) unique_values: ::std::option::Option<crate::types::UniqueValuesComputation>,
+    pub(crate) forecast: ::std::option::Option<crate::types::ForecastComputation>,
 }
 impl ComputationBuilder {
     /// <p>The top ranked and bottom ranked computation configuration.</p>
     pub fn top_bottom_ranked(mut self, input: crate::types::TopBottomRankedComputation) -> Self {
-        self.top_bottom_ranked = Some(input);
+        self.top_bottom_ranked = ::std::option::Option::Some(input);
         self
     }
     /// <p>The top ranked and bottom ranked computation configuration.</p>
     pub fn set_top_bottom_ranked(
         mut self,
-        input: std::option::Option<crate::types::TopBottomRankedComputation>,
+        input: ::std::option::Option<crate::types::TopBottomRankedComputation>,
     ) -> Self {
         self.top_bottom_ranked = input;
         self
     }
     /// <p>The top movers and bottom movers computation configuration.</p>
     pub fn top_bottom_movers(mut self, input: crate::types::TopBottomMoversComputation) -> Self {
-        self.top_bottom_movers = Some(input);
+        self.top_bottom_movers = ::std::option::Option::Some(input);
         self
     }
     /// <p>The top movers and bottom movers computation configuration.</p>
     pub fn set_top_bottom_movers(
         mut self,
-        input: std::option::Option<crate::types::TopBottomMoversComputation>,
+        input: ::std::option::Option<crate::types::TopBottomMoversComputation>,
     ) -> Self {
         self.top_bottom_movers = input;
         self
     }
     /// <p>The total aggregation computation configuration.</p>
     pub fn total_aggregation(mut self, input: crate::types::TotalAggregationComputation) -> Self {
-        self.total_aggregation = Some(input);
+        self.total_aggregation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total aggregation computation configuration.</p>
     pub fn set_total_aggregation(
         mut self,
-        input: std::option::Option<crate::types::TotalAggregationComputation>,
+        input: ::std::option::Option<crate::types::TotalAggregationComputation>,
     ) -> Self {
         self.total_aggregation = input;
         self
     }
     /// <p>The maximum and minimum computation configuration.</p>
     pub fn maximum_minimum(mut self, input: crate::types::MaximumMinimumComputation) -> Self {
-        self.maximum_minimum = Some(input);
+        self.maximum_minimum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum and minimum computation configuration.</p>
     pub fn set_maximum_minimum(
         mut self,
-        input: std::option::Option<crate::types::MaximumMinimumComputation>,
+        input: ::std::option::Option<crate::types::MaximumMinimumComputation>,
     ) -> Self {
         self.maximum_minimum = input;
         self
     }
     /// <p>The metric comparison computation configuration.</p>
     pub fn metric_comparison(mut self, input: crate::types::MetricComparisonComputation) -> Self {
-        self.metric_comparison = Some(input);
+        self.metric_comparison = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metric comparison computation configuration.</p>
     pub fn set_metric_comparison(
         mut self,
-        input: std::option::Option<crate::types::MetricComparisonComputation>,
+        input: ::std::option::Option<crate::types::MetricComparisonComputation>,
     ) -> Self {
         self.metric_comparison = input;
         self
     }
     /// <p>The period over period computation configuration.</p>
     pub fn period_over_period(mut self, input: crate::types::PeriodOverPeriodComputation) -> Self {
-        self.period_over_period = Some(input);
+        self.period_over_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period over period computation configuration.</p>
     pub fn set_period_over_period(
         mut self,
-        input: std::option::Option<crate::types::PeriodOverPeriodComputation>,
+        input: ::std::option::Option<crate::types::PeriodOverPeriodComputation>,
     ) -> Self {
         self.period_over_period = input;
         self
     }
     /// <p>The period to <code>DataSetIdentifier</code> computation configuration.</p>
     pub fn period_to_date(mut self, input: crate::types::PeriodToDateComputation) -> Self {
-        self.period_to_date = Some(input);
+        self.period_to_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period to <code>DataSetIdentifier</code> computation configuration.</p>
     pub fn set_period_to_date(
         mut self,
-        input: std::option::Option<crate::types::PeriodToDateComputation>,
+        input: ::std::option::Option<crate::types::PeriodToDateComputation>,
     ) -> Self {
         self.period_to_date = input;
         self
     }
     /// <p>The growth rate computation configuration.</p>
     pub fn growth_rate(mut self, input: crate::types::GrowthRateComputation) -> Self {
-        self.growth_rate = Some(input);
+        self.growth_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The growth rate computation configuration.</p>
     pub fn set_growth_rate(
         mut self,
-        input: std::option::Option<crate::types::GrowthRateComputation>,
+        input: ::std::option::Option<crate::types::GrowthRateComputation>,
     ) -> Self {
         self.growth_rate = input;
         self
     }
     /// <p>The unique values computation configuration.</p>
     pub fn unique_values(mut self, input: crate::types::UniqueValuesComputation) -> Self {
-        self.unique_values = Some(input);
+        self.unique_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unique values computation configuration.</p>
     pub fn set_unique_values(
         mut self,
-        input: std::option::Option<crate::types::UniqueValuesComputation>,
+        input: ::std::option::Option<crate::types::UniqueValuesComputation>,
     ) -> Self {
         self.unique_values = input;
         self
     }
     /// <p>The forecast computation configuration.</p>
     pub fn forecast(mut self, input: crate::types::ForecastComputation) -> Self {
-        self.forecast = Some(input);
+        self.forecast = ::std::option::Option::Some(input);
         self
     }
     /// <p>The forecast computation configuration.</p>
     pub fn set_forecast(
         mut self,
-        input: std::option::Option<crate::types::ForecastComputation>,
+        input: ::std::option::Option<crate::types::ForecastComputation>,
     ) -> Self {
         self.forecast = input;
         self

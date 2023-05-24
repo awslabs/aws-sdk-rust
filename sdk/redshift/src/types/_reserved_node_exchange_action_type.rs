@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReservedNodeExchangeActionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ReservedNodeExchangeActionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReservedNodeExchangeActionType {
+impl ::std::convert::From<&str> for ReservedNodeExchangeActionType {
     fn from(s: &str) -> Self {
         match s {
             "resize-cluster" => ReservedNodeExchangeActionType::ResizeCluster,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ReservedNodeExchangeActionType {
         }
     }
 }
-impl std::str::FromStr for ReservedNodeExchangeActionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReservedNodeExchangeActionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservedNodeExchangeActionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReservedNodeExchangeActionType::from(s))
     }
 }
 impl ReservedNodeExchangeActionType {
@@ -86,7 +86,7 @@ impl ReservedNodeExchangeActionType {
         &["resize-cluster", "restore-cluster"]
     }
 }
-impl AsRef<str> for ReservedNodeExchangeActionType {
+impl ::std::convert::AsRef<str> for ReservedNodeExchangeActionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

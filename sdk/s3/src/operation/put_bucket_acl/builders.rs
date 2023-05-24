@@ -95,56 +95,59 @@ pub use crate::operation::put_bucket_acl::_put_bucket_acl_input::PutBucketAclInp
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a> </p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketAclFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_bucket_acl::builders::PutBucketAclInputBuilder,
 }
 impl PutBucketAclFluentBuilder {
     /// Creates a new `PutBucketAcl`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_bucket_acl::PutBucketAcl,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_bucket_acl::PutBucketAclError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_acl::PutBucketAclError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_bucket_acl::PutBucketAclOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_bucket_acl::PutBucketAclError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_acl::PutBucketAclError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -157,9 +160,9 @@ impl PutBucketAclFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_bucket_acl::PutBucketAclOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_bucket_acl::PutBucketAclError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_acl::PutBucketAclError>,
     > {
         self.send_middleware().await
     }
@@ -169,7 +172,7 @@ impl PutBucketAclFluentBuilder {
         self
     }
     /// <p>The canned ACL to apply to the bucket.</p>
-    pub fn set_acl(mut self, input: std::option::Option<crate::types::BucketCannedAcl>) -> Self {
+    pub fn set_acl(mut self, input: ::std::option::Option<crate::types::BucketCannedAcl>) -> Self {
         self.inner = self.inner.set_acl(input);
         self
     }
@@ -181,30 +184,30 @@ impl PutBucketAclFluentBuilder {
     /// <p>Contains the elements that set the ACL permissions for an object per grantee.</p>
     pub fn set_access_control_policy(
         mut self,
-        input: std::option::Option<crate::types::AccessControlPolicy>,
+        input: ::std::option::Option<crate::types::AccessControlPolicy>,
     ) -> Self {
         self.inner = self.inner.set_access_control_policy(input);
         self
     }
     /// <p>The bucket to which to apply the ACL.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
         self
     }
     /// <p>The bucket to which to apply the ACL.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
         self
     }
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-    pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn content_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_md5(input.into());
         self
     }
     /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-    pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_md5(input);
         self
     }
@@ -218,75 +221,93 @@ impl PutBucketAclFluentBuilder {
     /// <p>If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code> parameter.</p>
     pub fn set_checksum_algorithm(
         mut self,
-        input: std::option::Option<crate::types::ChecksumAlgorithm>,
+        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     ) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
-    pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_full_control(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.grant_full_control(input.into());
         self
     }
     /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub fn set_grant_full_control(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_grant_full_control(input);
         self
     }
     /// <p>Allows grantee to list the objects in the bucket.</p>
-    pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_read(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_read(input.into());
         self
     }
     /// <p>Allows grantee to list the objects in the bucket.</p>
-    pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_read(input);
         self
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
-    pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_read_acp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.grant_read_acp(input.into());
         self
     }
     /// <p>Allows grantee to read the bucket ACL.</p>
-    pub fn set_grant_read_acp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_read_acp(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_grant_read_acp(input);
         self
     }
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-    pub fn grant_write(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_write(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_write(input.into());
         self
     }
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
-    pub fn set_grant_write(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_write(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_write(input);
         self
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_write_acp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.grant_write_acp(input.into());
         self
     }
     /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
-    pub fn set_grant_write_acp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_write_acp(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_grant_write_acp(input);
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn expected_bucket_owner(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.expected_bucket_owner(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self

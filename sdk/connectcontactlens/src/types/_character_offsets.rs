@@ -2,7 +2,7 @@
 
 /// <p>For characters that were detected as issues, where they occur in the transcript.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CharacterOffsets {
     /// <p>The beginning of the issue.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl CharacterOffsets {
 
 /// A builder for [`CharacterOffsets`](crate::types::CharacterOffsets).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CharacterOffsetsBuilder {
-    pub(crate) begin_offset_char: std::option::Option<i32>,
-    pub(crate) end_offset_char: std::option::Option<i32>,
+    pub(crate) begin_offset_char: ::std::option::Option<i32>,
+    pub(crate) end_offset_char: ::std::option::Option<i32>,
 }
 impl CharacterOffsetsBuilder {
     /// <p>The beginning of the issue.</p>
     pub fn begin_offset_char(mut self, input: i32) -> Self {
-        self.begin_offset_char = Some(input);
+        self.begin_offset_char = ::std::option::Option::Some(input);
         self
     }
     /// <p>The beginning of the issue.</p>
-    pub fn set_begin_offset_char(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset_char(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset_char = input;
         self
     }
     /// <p>The end of the issue.</p>
     pub fn end_offset_char(mut self, input: i32) -> Self {
-        self.end_offset_char = Some(input);
+        self.end_offset_char = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end of the issue.</p>
-    pub fn set_end_offset_char(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset_char(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset_char = input;
         self
     }

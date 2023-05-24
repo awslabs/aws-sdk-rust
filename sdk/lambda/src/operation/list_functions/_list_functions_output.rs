@@ -2,27 +2,27 @@
 
 /// <p>A list of Lambda functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFunctionsOutput {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of Lambda functions.</p>
     #[doc(hidden)]
-    pub functions: std::option::Option<std::vec::Vec<crate::types::FunctionConfiguration>>,
+    pub functions: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListFunctionsOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of Lambda functions.</p>
-    pub fn functions(&self) -> std::option::Option<&[crate::types::FunctionConfiguration]> {
+    pub fn functions(&self) -> ::std::option::Option<&[crate::types::FunctionConfiguration]> {
         self.functions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListFunctionsOutput {
+impl ::aws_http::request_id::RequestId for ListFunctionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,20 +36,23 @@ impl ListFunctionsOutput {
 
 /// A builder for [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListFunctionsOutputBuilder {
-    pub(crate) next_marker: std::option::Option<std::string::String>,
-    pub(crate) functions: std::option::Option<std::vec::Vec<crate::types::FunctionConfiguration>>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
+    pub(crate) functions:
+        ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListFunctionsOutputBuilder {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }
@@ -61,13 +64,13 @@ impl ListFunctionsOutputBuilder {
     pub fn functions(mut self, input: crate::types::FunctionConfiguration) -> Self {
         let mut v = self.functions.unwrap_or_default();
         v.push(input);
-        self.functions = Some(v);
+        self.functions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Lambda functions.</p>
     pub fn set_functions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FunctionConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionConfiguration>>,
     ) -> Self {
         self.functions = input;
         self

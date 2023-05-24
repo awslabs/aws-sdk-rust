@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGroup`](crate::operation::get_group::builders::GetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_identifier(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_identifier) / [`set_group_identifier(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_identifier): <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
+    ///   - [`group_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_identifier) / [`set_group_identifier(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_identifier): <p>Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.</p>
     /// - On success, responds with [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::operation::get_group::GetGroupOutput::group): <p>A structure that contains information about the group.</p>
     /// - On failure, responds with [`SdkError<GetGroupError>`](crate::operation::get_group::GetGroupError)

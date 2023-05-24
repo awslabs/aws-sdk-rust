@@ -6,30 +6,30 @@ pub use crate::operation::replace_network_acl_entry::_replace_network_acl_entry_
 /// Fluent builder constructing a request to `ReplaceNetworkAclEntry`.
 ///
 /// <p>Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReplaceNetworkAclEntryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::replace_network_acl_entry::builders::ReplaceNetworkAclEntryInputBuilder,
 }
 impl ReplaceNetworkAclEntryFluentBuilder {
     /// Creates a new `ReplaceNetworkAclEntry`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntry,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError,
         >,
     > {
@@ -37,30 +37,33 @@ impl ReplaceNetworkAclEntryFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl ReplaceNetworkAclEntryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
-    pub fn cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr_block(input.into());
         self
     }
     /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).</p>
-    pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr_block(input);
         self
     }
@@ -97,7 +100,7 @@ impl ReplaceNetworkAclEntryFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -109,7 +112,7 @@ impl ReplaceNetworkAclEntryFluentBuilder {
     }
     /// <p>Indicates whether to replace the egress rule.</p>
     /// <p>Default: If no value is specified, we replace the ingress rule.</p>
-    pub fn set_egress(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_egress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_egress(input);
         self
     }
@@ -121,28 +124,40 @@ impl ReplaceNetworkAclEntryFluentBuilder {
     /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
     pub fn set_icmp_type_code(
         mut self,
-        input: std::option::Option<crate::types::IcmpTypeCode>,
+        input: ::std::option::Option<crate::types::IcmpTypeCode>,
     ) -> Self {
         self.inner = self.inner.set_icmp_type_code(input);
         self
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
-    pub fn ipv6_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ipv6_cidr_block(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ipv6_cidr_block(input.into());
         self
     }
     /// <p>The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).</p>
-    pub fn set_ipv6_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv6_cidr_block(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ipv6_cidr_block(input);
         self
     }
     /// <p>The ID of the ACL.</p>
-    pub fn network_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_acl_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.network_acl_id(input.into());
         self
     }
     /// <p>The ID of the ACL.</p>
-    pub fn set_network_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_acl_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_network_acl_id(input);
         self
     }
@@ -152,17 +167,17 @@ impl ReplaceNetworkAclEntryFluentBuilder {
         self
     }
     /// <p>TCP or UDP protocols: The range of ports the rule applies to. Required if specifying protocol 6 (TCP) or 17 (UDP).</p>
-    pub fn set_port_range(mut self, input: std::option::Option<crate::types::PortRange>) -> Self {
+    pub fn set_port_range(mut self, input: ::std::option::Option<crate::types::PortRange>) -> Self {
         self.inner = self.inner.set_port_range(input);
         self
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protocol(input.into());
         self
     }
     /// <p>The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
@@ -172,7 +187,10 @@ impl ReplaceNetworkAclEntryFluentBuilder {
         self
     }
     /// <p>Indicates whether to allow or deny the traffic that matches the rule.</p>
-    pub fn set_rule_action(mut self, input: std::option::Option<crate::types::RuleAction>) -> Self {
+    pub fn set_rule_action(
+        mut self,
+        input: ::std::option::Option<crate::types::RuleAction>,
+    ) -> Self {
         self.inner = self.inner.set_rule_action(input);
         self
     }
@@ -182,7 +200,7 @@ impl ReplaceNetworkAclEntryFluentBuilder {
         self
     }
     /// <p>The rule number of the entry to replace.</p>
-    pub fn set_rule_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rule_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_rule_number(input);
         self
     }

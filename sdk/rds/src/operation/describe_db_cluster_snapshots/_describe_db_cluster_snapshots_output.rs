@@ -2,27 +2,30 @@
 
 /// <p>Provides a list of DB cluster snapshots for the user as the result of a call to the <code>DescribeDBClusterSnapshots</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClusterSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::types::DbClusterSnapshot>>,
+    pub db_cluster_snapshots:
+        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
-    pub fn db_cluster_snapshots(&self) -> std::option::Option<&[crate::types::DbClusterSnapshot]> {
+    pub fn db_cluster_snapshots(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::DbClusterSnapshot]> {
         self.db_cluster_snapshots.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDbClusterSnapshotsOutput {
+impl ::aws_http::request_id::RequestId for DescribeDbClusterSnapshotsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,21 +39,23 @@ impl DescribeDbClusterSnapshotsOutput {
 
 /// A builder for [`DescribeDbClusterSnapshotsOutput`](crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbClusterSnapshotsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_snapshots:
-        std::option::Option<std::vec::Vec<crate::types::DbClusterSnapshot>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterSnapshotsOutputBuilder {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -62,13 +67,13 @@ impl DescribeDbClusterSnapshotsOutputBuilder {
     pub fn db_cluster_snapshots(mut self, input: crate::types::DbClusterSnapshot) -> Self {
         let mut v = self.db_cluster_snapshots.unwrap_or_default();
         v.push(input);
-        self.db_cluster_snapshots = Some(v);
+        self.db_cluster_snapshots = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
     pub fn set_db_cluster_snapshots(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbClusterSnapshot>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshot>>,
     ) -> Self {
         self.db_cluster_snapshots = input;
         self

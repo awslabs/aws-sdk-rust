@@ -2,29 +2,29 @@
 
 /// <p>Errors that occurred during the portfolio share operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShareError {
     /// <p>List of accounts impacted by the error.</p>
     #[doc(hidden)]
-    pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information about the error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Error type that happened when processing the operation.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<std::string::String>,
+    pub error: ::std::option::Option<::std::string::String>,
 }
 impl ShareError {
     /// <p>List of accounts impacted by the error.</p>
-    pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.accounts.as_deref()
     }
     /// <p>Information about the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Error type that happened when processing the operation.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl ShareError {
 
 /// A builder for [`ShareError`](crate::types::ShareError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShareErrorBuilder {
-    pub(crate) accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) error: std::option::Option<std::string::String>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) error: ::std::option::Option<::std::string::String>,
 }
 impl ShareErrorBuilder {
     /// Appends an item to `accounts`.
@@ -49,37 +51,37 @@ impl ShareErrorBuilder {
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
     /// <p>List of accounts impacted by the error.</p>
-    pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
         v.push(input.into());
-        self.accounts = Some(v);
+        self.accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of accounts impacted by the error.</p>
     pub fn set_accounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.accounts = input;
         self
     }
     /// <p>Information about the error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Error type that happened when processing the operation.</p>
-    pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error = Some(input.into());
+    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error type that happened when processing the operation.</p>
-    pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>This data type is used in the <code>AssessmentRunFilter</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampRange {
     /// <p>The minimum value of the timestamp range.</p>
     #[doc(hidden)]
-    pub begin_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub begin_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum value of the timestamp range.</p>
     #[doc(hidden)]
-    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimestampRange {
     /// <p>The minimum value of the timestamp range.</p>
-    pub fn begin_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn begin_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.begin_date.as_ref()
     }
     /// <p>The maximum value of the timestamp range.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl TimestampRange {
 
 /// A builder for [`TimestampRange`](crate::types::TimestampRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimestampRangeBuilder {
-    pub(crate) begin_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) begin_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimestampRangeBuilder {
     /// <p>The minimum value of the timestamp range.</p>
-    pub fn begin_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.begin_date = Some(input);
+    pub fn begin_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.begin_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value of the timestamp range.</p>
     pub fn set_begin_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.begin_date = input;
         self
     }
     /// <p>The maximum value of the timestamp range.</p>
-    pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_date = Some(input);
+    pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value of the timestamp range.</p>
-    pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_date(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_date = input;
         self
     }

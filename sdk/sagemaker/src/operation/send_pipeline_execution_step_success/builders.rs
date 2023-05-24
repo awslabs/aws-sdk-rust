@@ -6,47 +6,50 @@ pub use crate::operation::send_pipeline_execution_step_success::_send_pipeline_e
 /// Fluent builder constructing a request to `SendPipelineExecutionStepSuccess`.
 ///
 /// <p>Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendPipelineExecutionStepSuccessFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessInputBuilder,
 }
 impl SendPipelineExecutionStepSuccessFluentBuilder {
     /// Creates a new `SendPipelineExecutionStepSuccess`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccess, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccess, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput, aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,23 @@ impl SendPipelineExecutionStepSuccessFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput, aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError>>
                          {
         self.send_middleware().await
     }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn callback_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn callback_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.callback_token(input.into());
         self
     }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn set_callback_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_callback_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_callback_token(input);
         self
     }
@@ -83,20 +92,23 @@ impl SendPipelineExecutionStepSuccessFluentBuilder {
     /// <p>A list of the output parameters of the callback step.</p>
     pub fn set_output_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
     ) -> Self {
         self.inner = self.inner.set_output_parameters(input);
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self

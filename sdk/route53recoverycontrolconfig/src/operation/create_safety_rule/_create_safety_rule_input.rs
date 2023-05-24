@@ -2,40 +2,42 @@
 
 /// <p>The request body that you include when you create a safety rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSafetyRuleInput {
     /// <p>The assertion rule requested.</p>
     #[doc(hidden)]
-    pub assertion_rule: std::option::Option<crate::types::NewAssertionRule>,
+    pub assertion_rule: ::std::option::Option<crate::types::NewAssertionRule>,
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The gating rule requested.</p>
     #[doc(hidden)]
-    pub gating_rule: std::option::Option<crate::types::NewGatingRule>,
+    pub gating_rule: ::std::option::Option<crate::types::NewGatingRule>,
     /// <p>The tags associated with the safety rule.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateSafetyRuleInput {
     /// <p>The assertion rule requested.</p>
-    pub fn assertion_rule(&self) -> std::option::Option<&crate::types::NewAssertionRule> {
+    pub fn assertion_rule(&self) -> ::std::option::Option<&crate::types::NewAssertionRule> {
         self.assertion_rule.as_ref()
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The gating rule requested.</p>
-    pub fn gating_rule(&self) -> std::option::Option<&crate::types::NewGatingRule> {
+    pub fn gating_rule(&self) -> ::std::option::Option<&crate::types::NewGatingRule> {
         self.gating_rule.as_ref()
     }
     /// <p>The tags associated with the safety rule.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -49,47 +51,50 @@ impl CreateSafetyRuleInput {
 
 /// A builder for [`CreateSafetyRuleInput`](crate::operation::create_safety_rule::CreateSafetyRuleInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateSafetyRuleInputBuilder {
-    pub(crate) assertion_rule: std::option::Option<crate::types::NewAssertionRule>,
-    pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) gating_rule: std::option::Option<crate::types::NewGatingRule>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) assertion_rule: ::std::option::Option<crate::types::NewAssertionRule>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) gating_rule: ::std::option::Option<crate::types::NewGatingRule>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateSafetyRuleInputBuilder {
     /// <p>The assertion rule requested.</p>
     pub fn assertion_rule(mut self, input: crate::types::NewAssertionRule) -> Self {
-        self.assertion_rule = Some(input);
+        self.assertion_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The assertion rule requested.</p>
     pub fn set_assertion_rule(
         mut self,
-        input: std::option::Option<crate::types::NewAssertionRule>,
+        input: ::std::option::Option<crate::types::NewAssertionRule>,
     ) -> Self {
         self.assertion_rule = input;
         self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
     /// <p>The gating rule requested.</p>
     pub fn gating_rule(mut self, input: crate::types::NewGatingRule) -> Self {
-        self.gating_rule = Some(input);
+        self.gating_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The gating rule requested.</p>
     pub fn set_gating_rule(
         mut self,
-        input: std::option::Option<crate::types::NewGatingRule>,
+        input: ::std::option::Option<crate::types::NewGatingRule>,
     ) -> Self {
         self.gating_rule = input;
         self
@@ -101,19 +106,19 @@ impl CreateSafetyRuleInputBuilder {
     /// <p>The tags associated with the safety rule.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags associated with the safety rule.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -122,11 +127,11 @@ impl CreateSafetyRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateSafetyRuleInput`](crate::operation::create_safety_rule::CreateSafetyRuleInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_safety_rule::CreateSafetyRuleInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_safety_rule::CreateSafetyRuleInput {
                 assertion_rule: self.assertion_rule,
                 client_token: self.client_token,

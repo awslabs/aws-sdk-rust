@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BalancingStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BalancingStrategy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BalancingStrategy {
+impl ::std::convert::From<&str> for BalancingStrategy {
     fn from(s: &str) -> Self {
         match s {
             "ON_DEMAND_ONLY" => BalancingStrategy::OnDemandOnly,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for BalancingStrategy {
         }
     }
 }
-impl std::str::FromStr for BalancingStrategy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BalancingStrategy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BalancingStrategy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BalancingStrategy::from(s))
     }
 }
 impl BalancingStrategy {
@@ -91,7 +91,7 @@ impl BalancingStrategy {
         &["ON_DEMAND_ONLY", "SPOT_ONLY", "SPOT_PREFERRED"]
     }
 }
-impl AsRef<str> for BalancingStrategy {
+impl ::std::convert::AsRef<str> for BalancingStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

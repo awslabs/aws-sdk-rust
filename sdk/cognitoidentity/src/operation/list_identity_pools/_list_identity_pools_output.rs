@@ -2,30 +2,30 @@
 
 /// <p>The result of a successful ListIdentityPools action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityPoolsOutput {
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
     #[doc(hidden)]
     pub identity_pools:
-        std::option::Option<std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
     /// <p>A pagination token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIdentityPoolsOutput {
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
     pub fn identity_pools(
         &self,
-    ) -> std::option::Option<&[crate::types::IdentityPoolShortDescription]> {
+    ) -> ::std::option::Option<&[crate::types::IdentityPoolShortDescription]> {
         self.identity_pools.as_deref()
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListIdentityPoolsOutput {
+impl ::aws_http::request_id::RequestId for ListIdentityPoolsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,11 +40,13 @@ impl ListIdentityPoolsOutput {
 
 /// A builder for [`ListIdentityPoolsOutput`](crate::operation::list_identity_pools::ListIdentityPoolsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListIdentityPoolsOutputBuilder {
     pub(crate) identity_pools:
-        std::option::Option<std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIdentityPoolsOutputBuilder {
@@ -56,24 +58,24 @@ impl ListIdentityPoolsOutputBuilder {
     pub fn identity_pools(mut self, input: crate::types::IdentityPoolShortDescription) -> Self {
         let mut v = self.identity_pools.unwrap_or_default();
         v.push(input);
-        self.identity_pools = Some(v);
+        self.identity_pools = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
     pub fn set_identity_pools(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IdentityPoolShortDescription>>,
     ) -> Self {
         self.identity_pools = input;
         self
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

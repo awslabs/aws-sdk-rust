@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DbProxyEndpointStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum DbProxyEndpointStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DbProxyEndpointStatus {
+impl ::std::convert::From<&str> for DbProxyEndpointStatus {
     fn from(s: &str) -> Self {
         match s {
             "available" => DbProxyEndpointStatus::Available,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for DbProxyEndpointStatus {
         }
     }
 }
-impl std::str::FromStr for DbProxyEndpointStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DbProxyEndpointStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DbProxyEndpointStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DbProxyEndpointStatus::from(s))
     }
 }
 impl DbProxyEndpointStatus {
@@ -113,7 +113,7 @@ impl DbProxyEndpointStatus {
         ]
     }
 }
-impl AsRef<str> for DbProxyEndpointStatus {
+impl ::std::convert::AsRef<str> for DbProxyEndpointStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

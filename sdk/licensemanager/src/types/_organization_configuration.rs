@@ -2,7 +2,7 @@
 
 /// <p>Configuration information for Organizations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationConfiguration {
     /// <p>Enables Organizations integration.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl OrganizationConfiguration {
 
 /// A builder for [`OrganizationConfiguration`](crate::types::OrganizationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationConfigurationBuilder {
-    pub(crate) enable_integration: std::option::Option<bool>,
+    pub(crate) enable_integration: ::std::option::Option<bool>,
 }
 impl OrganizationConfigurationBuilder {
     /// <p>Enables Organizations integration.</p>
     pub fn enable_integration(mut self, input: bool) -> Self {
-        self.enable_integration = Some(input);
+        self.enable_integration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables Organizations integration.</p>
-    pub fn set_enable_integration(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_integration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_integration = input;
         self
     }

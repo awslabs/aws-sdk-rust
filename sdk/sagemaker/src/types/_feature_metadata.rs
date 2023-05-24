@@ -2,64 +2,64 @@
 
 /// <p>The metadata for a feature. It can either be metadata that you specify, or metadata that is updated automatically.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureMetadata {
     /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
     #[doc(hidden)]
-    pub feature_group_arn: std::option::Option<std::string::String>,
+    pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature group containing the feature.</p>
     #[doc(hidden)]
-    pub feature_group_name: std::option::Option<std::string::String>,
+    pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of feature.</p>
     #[doc(hidden)]
-    pub feature_name: std::option::Option<std::string::String>,
+    pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the feature.</p>
     #[doc(hidden)]
-    pub feature_type: std::option::Option<crate::types::FeatureType>,
+    pub feature_type: ::std::option::Option<crate::types::FeatureType>,
     /// <p>A timestamp indicating when the feature was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp indicating when the feature was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An optional description that you specify to better describe the feature.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
 }
 impl FeatureMetadata {
     /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
-    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
+    pub fn feature_group_arn(&self) -> ::std::option::Option<&str> {
         self.feature_group_arn.as_deref()
     }
     /// <p>The name of the feature group containing the feature.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The name of feature.</p>
-    pub fn feature_name(&self) -> std::option::Option<&str> {
+    pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
     /// <p>The data type of the feature.</p>
-    pub fn feature_type(&self) -> std::option::Option<&crate::types::FeatureType> {
+    pub fn feature_type(&self) -> ::std::option::Option<&crate::types::FeatureType> {
         self.feature_type.as_ref()
     }
     /// <p>A timestamp indicating when the feature was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp indicating when the feature was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>An optional description that you specify to better describe the feature.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::FeatureParameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::FeatureParameter]> {
         self.parameters.as_deref()
     }
 }
@@ -72,100 +72,108 @@ impl FeatureMetadata {
 
 /// A builder for [`FeatureMetadata`](crate::types::FeatureMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FeatureMetadataBuilder {
-    pub(crate) feature_group_arn: std::option::Option<std::string::String>,
-    pub(crate) feature_group_name: std::option::Option<std::string::String>,
-    pub(crate) feature_name: std::option::Option<std::string::String>,
-    pub(crate) feature_type: std::option::Option<crate::types::FeatureType>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>,
+    pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) feature_name: ::std::option::Option<::std::string::String>,
+    pub(crate) feature_type: ::std::option::Option<crate::types::FeatureType>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
 }
 impl FeatureMetadataBuilder {
     /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
-    pub fn feature_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature_group_arn = Some(input.into());
+    pub fn feature_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the feature group.</p>
     pub fn set_feature_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.feature_group_arn = input;
         self
     }
     /// <p>The name of the feature group containing the feature.</p>
-    pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature_group_name = Some(input.into());
+    pub fn feature_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature group containing the feature.</p>
     pub fn set_feature_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.feature_group_name = input;
         self
     }
     /// <p>The name of feature.</p>
-    pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature_name = Some(input.into());
+    pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.feature_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of feature.</p>
-    pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
     }
     /// <p>The data type of the feature.</p>
     pub fn feature_type(mut self, input: crate::types::FeatureType) -> Self {
-        self.feature_type = Some(input);
+        self.feature_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the feature.</p>
     pub fn set_feature_type(
         mut self,
-        input: std::option::Option<crate::types::FeatureType>,
+        input: ::std::option::Option<crate::types::FeatureType>,
     ) -> Self {
         self.feature_type = input;
         self
     }
     /// <p>A timestamp indicating when the feature was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp indicating when the feature was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>A timestamp indicating when the feature was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp indicating when the feature was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>An optional description that you specify to better describe the feature.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional description that you specify to better describe the feature.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -177,13 +185,13 @@ impl FeatureMetadataBuilder {
     pub fn parameters(mut self, input: crate::types::FeatureParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
-        self.parameters = Some(v);
+        self.parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Optional key-value pairs that you specify to better describe the feature.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureParameter>>,
     ) -> Self {
         self.parameters = input;
         self

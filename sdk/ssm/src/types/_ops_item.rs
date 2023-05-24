@@ -3,11 +3,11 @@
 /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational work items (OpsItems) impacting the performance and health of their Amazon Web Services resources. OpsCenter is integrated with Amazon EventBridge and Amazon CloudWatch. This means you can configure these services to automatically create an OpsItem in OpsCenter when a CloudWatch alarm enters the ALARM state or when EventBridge processes an event from any Amazon Web Services service that publishes events. Configuring Amazon CloudWatch alarms and EventBridge events to automatically create OpsItems allows you to quickly diagnose and remediate issues with Amazon Web Services resources from a single console.</p>
 /// <p>To help you diagnose issues, each OpsItem includes contextually relevant information such as the name and ID of the Amazon Web Services resource that generated the OpsItem, alarm or event details, alarm history, and an alarm timeline graph. For the Amazon Web Services resource, OpsCenter aggregates information from Config, CloudTrail logs, and EventBridge, so you don't have to navigate across multiple console pages during your investigation. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsItem {
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<std::string::String>,
+    pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
     /// <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li>
@@ -15,77 +15,77 @@ pub struct OpsItem {
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub ops_item_type: std::option::Option<std::string::String>,
+    pub ops_item_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the OpsItem was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The OpsItem description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
     #[doc(hidden)]
-    pub last_modified_by: std::option::Option<std::string::String>,
+    pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the OpsItem was last updated.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
     #[doc(hidden)]
-    pub notifications: std::option::Option<std::vec::Vec<crate::types::OpsItemNotification>>,
+    pub notifications: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     #[doc(hidden)]
-    pub priority: std::option::Option<i32>,
+    pub priority: ::std::option::Option<i32>,
     /// <p>One or more OpsItems that share something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
     #[doc(hidden)]
-    pub related_ops_items: std::option::Option<std::vec::Vec<crate::types::RelatedOpsItem>>,
+    pub related_ops_items: ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OpsItemStatus>,
+    pub status: ::std::option::Option<crate::types::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
     #[doc(hidden)]
-    pub ops_item_id: std::option::Option<std::string::String>,
+    pub ops_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of this OpsItem. Each time the OpsItem is edited the version number increments by one.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<std::string::String>,
+    pub source: ::std::option::Option<::std::string::String>,
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
-    pub operational_data: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
+    pub operational_data: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
     >,
     /// <p>An OpsItem category. Category options include: Availability, Cost, Performance, Recovery, Security.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::string::String>,
+    pub category: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
     #[doc(hidden)]
-    pub severity: std::option::Option<std::string::String>,
+    pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     #[doc(hidden)]
-    pub actual_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub actual_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     #[doc(hidden)]
-    pub actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub actual_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     #[doc(hidden)]
-    pub planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub planned_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     #[doc(hidden)]
-    pub planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub planned_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
-    pub ops_item_arn: std::option::Option<std::string::String>,
+    pub ops_item_arn: ::std::option::Option<::std::string::String>,
 }
 impl OpsItem {
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
@@ -94,55 +94,55 @@ impl OpsItem {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    pub fn ops_item_type(&self) -> std::option::Option<&str> {
+    pub fn ops_item_type(&self) -> ::std::option::Option<&str> {
         self.ops_item_type.as_deref()
     }
     /// <p>The date and time the OpsItem was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The OpsItem description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time the OpsItem was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn notifications(&self) -> std::option::Option<&[crate::types::OpsItemNotification]> {
+    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::OpsItemNotification]> {
         self.notifications.as_deref()
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-    pub fn priority(&self) -> std::option::Option<i32> {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn related_ops_items(&self) -> std::option::Option<&[crate::types::RelatedOpsItem]> {
+    pub fn related_ops_items(&self) -> ::std::option::Option<&[crate::types::RelatedOpsItem]> {
         self.related_ops_items.as_deref()
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OpsItemStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OpsItemStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the OpsItem.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> ::std::option::Option<&str> {
         self.ops_item_id.as_deref()
     }
     /// <p>The version of this OpsItem. Each time the OpsItem is edited the version number increments by one.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
@@ -152,37 +152,37 @@ impl OpsItem {
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn operational_data(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
     > {
         self.operational_data.as_ref()
     }
     /// <p>An OpsItem category. Category options include: Availability, Cost, Performance, Recovery, Security.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<&str> {
         self.category.as_deref()
     }
     /// <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> ::std::option::Option<&str> {
         self.severity.as_deref()
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn actual_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn actual_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.actual_start_time.as_ref()
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn actual_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn actual_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.actual_end_time.as_ref()
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn planned_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn planned_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.planned_start_time.as_ref()
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn planned_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.planned_end_time.as_ref()
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
+    pub fn ops_item_arn(&self) -> ::std::option::Option<&str> {
         self.ops_item_arn.as_deref()
     }
 }
@@ -195,41 +195,45 @@ impl OpsItem {
 
 /// A builder for [`OpsItem`](crate::types::OpsItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpsItemBuilder {
-    pub(crate) created_by: std::option::Option<std::string::String>,
-    pub(crate) ops_item_type: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) last_modified_by: std::option::Option<std::string::String>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) notifications: std::option::Option<std::vec::Vec<crate::types::OpsItemNotification>>,
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) related_ops_items: std::option::Option<std::vec::Vec<crate::types::RelatedOpsItem>>,
-    pub(crate) status: std::option::Option<crate::types::OpsItemStatus>,
-    pub(crate) ops_item_id: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) source: std::option::Option<std::string::String>,
-    pub(crate) operational_data: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) ops_item_type: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) notifications:
+        ::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) related_ops_items:
+        ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>,
+    pub(crate) status: ::std::option::Option<crate::types::OpsItemStatus>,
+    pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) source: ::std::option::Option<::std::string::String>,
+    pub(crate) operational_data: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
     >,
-    pub(crate) category: std::option::Option<std::string::String>,
-    pub(crate) severity: std::option::Option<std::string::String>,
-    pub(crate) actual_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) actual_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) planned_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) planned_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) ops_item_arn: std::option::Option<std::string::String>,
+    pub(crate) category: ::std::option::Option<::std::string::String>,
+    pub(crate) severity: ::std::option::Option<::std::string::String>,
+    pub(crate) actual_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) actual_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) planned_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) planned_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ops_item_arn: ::std::option::Option<::std::string::String>,
 }
 impl OpsItemBuilder {
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by = Some(input.into());
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
@@ -239,8 +243,11 @@ impl OpsItemBuilder {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ops_item_type = Some(input.into());
+    pub fn ops_item_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ops_item_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
@@ -249,52 +256,61 @@ impl OpsItemBuilder {
     /// <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li>
     /// <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li>
     /// </ul>
-    pub fn set_ops_item_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ops_item_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ops_item_type = input;
         self
     }
     /// <p>The date and time the OpsItem was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the OpsItem was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The OpsItem description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OpsItem description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
-    pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_modified_by = Some(input.into());
+    pub fn last_modified_by(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
-    pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_modified_by(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_modified_by = input;
         self
     }
     /// <p>The date and time the OpsItem was last updated.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the OpsItem was last updated.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
@@ -307,24 +323,24 @@ impl OpsItemBuilder {
     pub fn notifications(mut self, input: crate::types::OpsItemNotification) -> Self {
         let mut v = self.notifications.unwrap_or_default();
         v.push(input);
-        self.notifications = Some(v);
+        self.notifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where notifications are sent when this OpsItem is edited or changed.</p>
     pub fn set_notifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsItemNotification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>>,
     ) -> Self {
         self.notifications = input;
         self
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
@@ -336,64 +352,64 @@ impl OpsItemBuilder {
     pub fn related_ops_items(mut self, input: crate::types::RelatedOpsItem) -> Self {
         let mut v = self.related_ops_items.unwrap_or_default();
         v.push(input);
-        self.related_ops_items = Some(v);
+        self.related_ops_items = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
     pub fn set_related_ops_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RelatedOpsItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>,
     ) -> Self {
         self.related_ops_items = input;
         self
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn status(mut self, input: crate::types::OpsItemStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OpsItemStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OpsItemStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The ID of the OpsItem.</p>
-    pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ops_item_id = Some(input.into());
+    pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ops_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the OpsItem.</p>
-    pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_id = input;
         self
     }
     /// <p>The version of this OpsItem. Each time the OpsItem is edited the version number increments by one.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of this OpsItem. Each time the OpsItem is edited the version number increments by one.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.</p>
-    pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source = Some(input.into());
+    pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.</p>
-    pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
@@ -408,12 +424,12 @@ impl OpsItemBuilder {
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn operational_data(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::OpsItemDataValue,
     ) -> Self {
         let mut hash_map = self.operational_data.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.operational_data = Some(hash_map);
+        self.operational_data = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
@@ -423,92 +439,92 @@ impl OpsItemBuilder {
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_operational_data(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
         >,
     ) -> Self {
         self.operational_data = input;
         self
     }
     /// <p>An OpsItem category. Category options include: Availability, Cost, Performance, Recovery, Security.</p>
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
-        self.category = Some(input.into());
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An OpsItem category. Category options include: Availability, Cost, Performance, Recovery, Security.</p>
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
     }
     /// <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
-    pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.severity = Some(input.into());
+    pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.severity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
-    pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity = input;
         self
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn actual_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.actual_start_time = Some(input);
+    pub fn actual_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.actual_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn set_actual_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.actual_start_time = input;
         self
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn actual_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.actual_end_time = Some(input);
+    pub fn actual_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.actual_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn set_actual_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.actual_end_time = input;
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn planned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.planned_start_time = Some(input);
+    pub fn planned_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.planned_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn set_planned_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.planned_start_time = input;
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn planned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.planned_end_time = Some(input);
+    pub fn planned_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.planned_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn set_planned_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.planned_end_time = input;
         self
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ops_item_arn = Some(input.into());
+    pub fn ops_item_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ops_item_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ops_item_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_arn = input;
         self
     }

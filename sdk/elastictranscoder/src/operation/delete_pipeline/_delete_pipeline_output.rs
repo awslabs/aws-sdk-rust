@@ -2,11 +2,11 @@
 
 /// <p>The <code>DeletePipelineResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePipelineOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeletePipelineOutput {
+impl ::aws_http::request_id::RequestId for DeletePipelineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeletePipelineOutput {
 
 /// A builder for [`DeletePipelineOutput`](crate::operation::delete_pipeline::DeletePipelineOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeletePipelineOutputBuilder {
     _request_id: Option<String>,
 }

@@ -8,29 +8,29 @@ pub use crate::operation::register_on_premises_instance::_register_on_premises_i
 /// <p>Registers an on-premises instance.</p> <note>
 /// <p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use both.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterOnPremisesInstanceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder,
 }
 impl RegisterOnPremisesInstanceFluentBuilder {
     /// Creates a new `RegisterOnPremisesInstance`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_on_premises_instance::RegisterOnPremisesInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError,
         >,
     > {
@@ -38,30 +38,33 @@ impl RegisterOnPremisesInstanceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,41 +77,53 @@ impl RegisterOnPremisesInstanceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the on-premises instance to register.</p>
-    pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_name(input.into());
         self
     }
     /// <p>The name of the on-premises instance to register.</p>
-    pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_instance_name(input);
         self
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-    pub fn iam_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn iam_session_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.iam_session_arn(input.into());
         self
     }
     /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-    pub fn set_iam_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_session_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_iam_session_arn(input);
         self
     }
     /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
-    pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_user_arn(input.into());
         self
     }
     /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
-    pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_user_arn(input);
         self
     }

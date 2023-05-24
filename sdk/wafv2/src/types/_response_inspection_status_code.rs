@@ -4,26 +4,26 @@
 /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseInspectionStatusCode {
     /// <p>Status codes in the response that indicate a successful login attempt. To be counted as a successful login, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code> </p>
     #[doc(hidden)]
-    pub success_codes: std::option::Option<std::vec::Vec<i32>>,
+    pub success_codes: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code> </p>
     #[doc(hidden)]
-    pub failure_codes: std::option::Option<std::vec::Vec<i32>>,
+    pub failure_codes: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl ResponseInspectionStatusCode {
     /// <p>Status codes in the response that indicate a successful login attempt. To be counted as a successful login, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code> </p>
-    pub fn success_codes(&self) -> std::option::Option<&[i32]> {
+    pub fn success_codes(&self) -> ::std::option::Option<&[i32]> {
         self.success_codes.as_deref()
     }
     /// <p>Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code> </p>
-    pub fn failure_codes(&self) -> std::option::Option<&[i32]> {
+    pub fn failure_codes(&self) -> ::std::option::Option<&[i32]> {
         self.failure_codes.as_deref()
     }
 }
@@ -36,10 +36,12 @@ impl ResponseInspectionStatusCode {
 
 /// A builder for [`ResponseInspectionStatusCode`](crate::types::ResponseInspectionStatusCode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseInspectionStatusCodeBuilder {
-    pub(crate) success_codes: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) failure_codes: std::option::Option<std::vec::Vec<i32>>,
+    pub(crate) success_codes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) failure_codes: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl ResponseInspectionStatusCodeBuilder {
     /// Appends an item to `success_codes`.
@@ -51,12 +53,12 @@ impl ResponseInspectionStatusCodeBuilder {
     pub fn success_codes(mut self, input: i32) -> Self {
         let mut v = self.success_codes.unwrap_or_default();
         v.push(input);
-        self.success_codes = Some(v);
+        self.success_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Status codes in the response that indicate a successful login attempt. To be counted as a successful login, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"SuccessCodes": [ 200, 201 ]</code> </p>
-    pub fn set_success_codes(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_success_codes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.success_codes = input;
         self
     }
@@ -69,12 +71,12 @@ impl ResponseInspectionStatusCodeBuilder {
     pub fn failure_codes(mut self, input: i32) -> Self {
         let mut v = self.failure_codes.unwrap_or_default();
         v.push(input);
-        self.failure_codes = Some(v);
+        self.failure_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Status codes in the response that indicate a failed login attempt. To be counted as a failed login, the response status code must match one of these. Each code must be unique among the success and failure status codes. </p>
     /// <p>JSON example: <code>"FailureCodes": [ 400, 404 ]</code> </p>
-    pub fn set_failure_codes(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_failure_codes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.failure_codes = input;
         self
     }

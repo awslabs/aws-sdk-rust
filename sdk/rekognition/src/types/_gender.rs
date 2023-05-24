@@ -5,22 +5,22 @@
 /// <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p>
 /// <p>We don't recommend using gender binary predictions to make decisions that impact an individual's rights, privacy, or access to services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Gender {
     /// <p>The predicted gender of the face.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::GenderType>,
+    pub value: ::std::option::Option<crate::types::GenderType>,
     /// <p>Level of confidence in the prediction.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
 }
 impl Gender {
     /// <p>The predicted gender of the face.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::GenderType> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::GenderType> {
         self.value.as_ref()
     }
     /// <p>Level of confidence in the prediction.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
 }
@@ -33,29 +33,31 @@ impl Gender {
 
 /// A builder for [`Gender`](crate::types::Gender).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GenderBuilder {
-    pub(crate) value: std::option::Option<crate::types::GenderType>,
-    pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) value: ::std::option::Option<crate::types::GenderType>,
+    pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl GenderBuilder {
     /// <p>The predicted gender of the face.</p>
     pub fn value(mut self, input: crate::types::GenderType) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The predicted gender of the face.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::GenderType>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::GenderType>) -> Self {
         self.value = input;
         self
     }
     /// <p>Level of confidence in the prediction.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Level of confidence in the prediction.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }

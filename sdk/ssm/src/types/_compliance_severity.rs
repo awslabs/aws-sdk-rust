@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ComplianceSeverity {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum ComplianceSeverity {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ComplianceSeverity {
+impl ::std::convert::From<&str> for ComplianceSeverity {
     fn from(s: &str) -> Self {
         match s {
             "CRITICAL" => ComplianceSeverity::Critical,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for ComplianceSeverity {
         }
     }
 }
-impl std::str::FromStr for ComplianceSeverity {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ComplianceSeverity {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComplianceSeverity::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ComplianceSeverity::from(s))
     }
 }
 impl ComplianceSeverity {
@@ -113,7 +113,7 @@ impl ComplianceSeverity {
         ]
     }
 }
-impl AsRef<str> for ComplianceSeverity {
+impl ::std::convert::AsRef<str> for ComplianceSeverity {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

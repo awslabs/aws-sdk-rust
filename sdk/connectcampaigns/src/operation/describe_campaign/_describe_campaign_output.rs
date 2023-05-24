@@ -2,20 +2,20 @@
 
 /// DescribeCampaignResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCampaignOutput {
     /// An Amazon Connect campaign.
     #[doc(hidden)]
-    pub campaign: std::option::Option<crate::types::Campaign>,
+    pub campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,
 }
 impl DescribeCampaignOutput {
     /// An Amazon Connect campaign.
-    pub fn campaign(&self) -> std::option::Option<&crate::types::Campaign> {
+    pub fn campaign(&self) -> ::std::option::Option<&crate::types::Campaign> {
         self.campaign.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCampaignOutput {
+impl ::aws_http::request_id::RequestId for DescribeCampaignOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl DescribeCampaignOutput {
 
 /// A builder for [`DescribeCampaignOutput`](crate::operation::describe_campaign::DescribeCampaignOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCampaignOutputBuilder {
-    pub(crate) campaign: std::option::Option<crate::types::Campaign>,
+    pub(crate) campaign: ::std::option::Option<crate::types::Campaign>,
     _request_id: Option<String>,
 }
 impl DescribeCampaignOutputBuilder {
     /// An Amazon Connect campaign.
     pub fn campaign(mut self, input: crate::types::Campaign) -> Self {
-        self.campaign = Some(input);
+        self.campaign = ::std::option::Option::Some(input);
         self
     }
     /// An Amazon Connect campaign.
-    pub fn set_campaign(mut self, input: std::option::Option<crate::types::Campaign>) -> Self {
+    pub fn set_campaign(mut self, input: ::std::option::Option<crate::types::Campaign>) -> Self {
         self.campaign = input;
         self
     }

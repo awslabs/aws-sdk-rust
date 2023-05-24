@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum RecommendationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RecommendationType {
+impl ::std::convert::From<&str> for RecommendationType {
     fn from(s: &str) -> Self {
         match s {
             "BIMI" => RecommendationType::Bimi,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for RecommendationType {
         }
     }
 }
-impl std::str::FromStr for RecommendationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RecommendationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RecommendationType::from(s))
     }
 }
 impl RecommendationType {
@@ -96,7 +96,7 @@ impl RecommendationType {
         &["BIMI", "DKIM", "DMARC", "SPF"]
     }
 }
-impl AsRef<str> for RecommendationType {
+impl ::std::convert::AsRef<str> for RecommendationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

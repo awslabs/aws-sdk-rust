@@ -2,111 +2,111 @@
 
 /// <p>Describes a stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stack {
     /// <p>The ARN of the stack.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description to display.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The stack name to display.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the stack was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The storage connectors to enable.</p>
     #[doc(hidden)]
-    pub storage_connectors: std::option::Option<std::vec::Vec<crate::types::StorageConnector>>,
+    pub storage_connectors: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
     #[doc(hidden)]
-    pub redirect_url: std::option::Option<std::string::String>,
+    pub redirect_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
     #[doc(hidden)]
-    pub feedback_url: std::option::Option<std::string::String>,
+    pub feedback_url: ::std::option::Option<::std::string::String>,
     /// <p>The errors for the stack.</p>
     #[doc(hidden)]
-    pub stack_errors: std::option::Option<std::vec::Vec<crate::types::StackError>>,
+    pub stack_errors: ::std::option::Option<::std::vec::Vec<crate::types::StackError>>,
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
     #[doc(hidden)]
-    pub user_settings: std::option::Option<std::vec::Vec<crate::types::UserSetting>>,
+    pub user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
     /// <p>The persistent application settings for users of the stack.</p>
     #[doc(hidden)]
-    pub application_settings: std::option::Option<crate::types::ApplicationSettingsResponse>,
+    pub application_settings: ::std::option::Option<crate::types::ApplicationSettingsResponse>,
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
     #[doc(hidden)]
-    pub access_endpoints: std::option::Option<std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
     #[doc(hidden)]
-    pub embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     #[doc(hidden)]
     pub streaming_experience_settings:
-        std::option::Option<crate::types::StreamingExperienceSettings>,
+        ::std::option::Option<crate::types::StreamingExperienceSettings>,
 }
 impl Stack {
     /// <p>The ARN of the stack.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the stack.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The stack name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The time the stack was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The storage connectors to enable.</p>
-    pub fn storage_connectors(&self) -> std::option::Option<&[crate::types::StorageConnector]> {
+    pub fn storage_connectors(&self) -> ::std::option::Option<&[crate::types::StorageConnector]> {
         self.storage_connectors.as_deref()
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
-    pub fn redirect_url(&self) -> std::option::Option<&str> {
+    pub fn redirect_url(&self) -> ::std::option::Option<&str> {
         self.redirect_url.as_deref()
     }
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    pub fn feedback_url(&self) -> std::option::Option<&str> {
+    pub fn feedback_url(&self) -> ::std::option::Option<&str> {
         self.feedback_url.as_deref()
     }
     /// <p>The errors for the stack.</p>
-    pub fn stack_errors(&self) -> std::option::Option<&[crate::types::StackError]> {
+    pub fn stack_errors(&self) -> ::std::option::Option<&[crate::types::StackError]> {
         self.stack_errors.as_deref()
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
-    pub fn user_settings(&self) -> std::option::Option<&[crate::types::UserSetting]> {
+    pub fn user_settings(&self) -> ::std::option::Option<&[crate::types::UserSetting]> {
         self.user_settings.as_deref()
     }
     /// <p>The persistent application settings for users of the stack.</p>
     pub fn application_settings(
         &self,
-    ) -> std::option::Option<&crate::types::ApplicationSettingsResponse> {
+    ) -> ::std::option::Option<&crate::types::ApplicationSettingsResponse> {
         self.application_settings.as_ref()
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
-    pub fn access_endpoints(&self) -> std::option::Option<&[crate::types::AccessEndpoint]> {
+    pub fn access_endpoints(&self) -> ::std::option::Option<&[crate::types::AccessEndpoint]> {
         self.access_endpoints.as_deref()
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    pub fn embed_host_domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn embed_host_domains(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.embed_host_domains.as_deref()
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub fn streaming_experience_settings(
         &self,
-    ) -> std::option::Option<&crate::types::StreamingExperienceSettings> {
+    ) -> ::std::option::Option<&crate::types::StreamingExperienceSettings> {
         self.streaming_experience_settings.as_ref()
     }
 }
@@ -119,75 +119,79 @@ impl Stack {
 
 /// A builder for [`Stack`](crate::types::Stack).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_connectors:
-        std::option::Option<std::vec::Vec<crate::types::StorageConnector>>,
-    pub(crate) redirect_url: std::option::Option<std::string::String>,
-    pub(crate) feedback_url: std::option::Option<std::string::String>,
-    pub(crate) stack_errors: std::option::Option<std::vec::Vec<crate::types::StackError>>,
-    pub(crate) user_settings: std::option::Option<std::vec::Vec<crate::types::UserSetting>>,
-    pub(crate) application_settings: std::option::Option<crate::types::ApplicationSettingsResponse>,
-    pub(crate) access_endpoints: std::option::Option<std::vec::Vec<crate::types::AccessEndpoint>>,
-    pub(crate) embed_host_domains: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
+    pub(crate) redirect_url: ::std::option::Option<::std::string::String>,
+    pub(crate) feedback_url: ::std::option::Option<::std::string::String>,
+    pub(crate) stack_errors: ::std::option::Option<::std::vec::Vec<crate::types::StackError>>,
+    pub(crate) user_settings: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
+    pub(crate) application_settings:
+        ::std::option::Option<crate::types::ApplicationSettingsResponse>,
+    pub(crate) access_endpoints:
+        ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) streaming_experience_settings:
-        std::option::Option<crate::types::StreamingExperienceSettings>,
+        ::std::option::Option<crate::types::StreamingExperienceSettings>,
 }
 impl StackBuilder {
     /// <p>The ARN of the stack.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the stack.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the stack.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stack.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description to display.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description to display.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The stack name to display.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stack name to display.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>The time the stack was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the stack was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
@@ -200,34 +204,34 @@ impl StackBuilder {
     pub fn storage_connectors(mut self, input: crate::types::StorageConnector) -> Self {
         let mut v = self.storage_connectors.unwrap_or_default();
         v.push(input);
-        self.storage_connectors = Some(v);
+        self.storage_connectors = ::std::option::Option::Some(v);
         self
     }
     /// <p>The storage connectors to enable.</p>
     pub fn set_storage_connectors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StorageConnector>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageConnector>>,
     ) -> Self {
         self.storage_connectors = input;
         self
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
-    pub fn redirect_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.redirect_url = Some(input.into());
+    pub fn redirect_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.redirect_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL that users are redirected to after their streaming session ends.</p>
-    pub fn set_redirect_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_redirect_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.redirect_url = input;
         self
     }
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    pub fn feedback_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feedback_url = Some(input.into());
+    pub fn feedback_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.feedback_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>
-    pub fn set_feedback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_feedback_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feedback_url = input;
         self
     }
@@ -239,13 +243,13 @@ impl StackBuilder {
     pub fn stack_errors(mut self, input: crate::types::StackError) -> Self {
         let mut v = self.stack_errors.unwrap_or_default();
         v.push(input);
-        self.stack_errors = Some(v);
+        self.stack_errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>The errors for the stack.</p>
     pub fn set_stack_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StackError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StackError>>,
     ) -> Self {
         self.stack_errors = input;
         self
@@ -258,13 +262,13 @@ impl StackBuilder {
     pub fn user_settings(mut self, input: crate::types::UserSetting) -> Self {
         let mut v = self.user_settings.unwrap_or_default();
         v.push(input);
-        self.user_settings = Some(v);
+        self.user_settings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>
     pub fn set_user_settings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UserSetting>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UserSetting>>,
     ) -> Self {
         self.user_settings = input;
         self
@@ -274,13 +278,13 @@ impl StackBuilder {
         mut self,
         input: crate::types::ApplicationSettingsResponse,
     ) -> Self {
-        self.application_settings = Some(input);
+        self.application_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The persistent application settings for users of the stack.</p>
     pub fn set_application_settings(
         mut self,
-        input: std::option::Option<crate::types::ApplicationSettingsResponse>,
+        input: ::std::option::Option<crate::types::ApplicationSettingsResponse>,
     ) -> Self {
         self.application_settings = input;
         self
@@ -293,13 +297,13 @@ impl StackBuilder {
     pub fn access_endpoints(mut self, input: crate::types::AccessEndpoint) -> Self {
         let mut v = self.access_endpoints.unwrap_or_default();
         v.push(input);
-        self.access_endpoints = Some(v);
+        self.access_endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. </p>
     pub fn set_access_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccessEndpoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     ) -> Self {
         self.access_endpoints = input;
         self
@@ -309,16 +313,19 @@ impl StackBuilder {
     /// To override the contents of this collection use [`set_embed_host_domains`](Self::set_embed_host_domains).
     ///
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
-    pub fn embed_host_domains(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn embed_host_domains(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.embed_host_domains.unwrap_or_default();
         v.push(input.into());
-        self.embed_host_domains = Some(v);
+        self.embed_host_domains = ::std::option::Option::Some(v);
         self
     }
     /// <p>The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.</p>
     pub fn set_embed_host_domains(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.embed_host_domains = input;
         self
@@ -328,13 +335,13 @@ impl StackBuilder {
         mut self,
         input: crate::types::StreamingExperienceSettings,
     ) -> Self {
-        self.streaming_experience_settings = Some(input);
+        self.streaming_experience_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub fn set_streaming_experience_settings(
         mut self,
-        input: std::option::Option<crate::types::StreamingExperienceSettings>,
+        input: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     ) -> Self {
         self.streaming_experience_settings = input;
         self

@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_metric_stream_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_metric_stream::GetMetricStreamOutput,
@@ -15,7 +15,7 @@ pub fn de_get_metric_stream_http_error(
         _response_body,
     )
     .map_err(crate::operation::get_metric_stream::GetMetricStreamError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -115,7 +115,7 @@ pub fn de_get_metric_stream_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_metric_stream_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_metric_stream::GetMetricStreamOutput,
@@ -131,7 +131,7 @@ pub fn de_get_metric_stream_http_response_with_props(
         )
         .map_err(crate::operation::get_metric_stream::GetMetricStreamError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -143,16 +143,16 @@ pub fn de_get_metric_stream(
     mut builder: crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder,
 ) -> Result<
     crate::operation::get_metric_stream::builders::GetMetricStreamOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetMetricStreamResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetMetricStreamResponse got {:?}",
             start_el
         )));
@@ -160,7 +160,7 @@ pub fn de_get_metric_stream(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetMetricStreamResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected GetMetricStreamResult got {:?}",
                 start_el
             )));
@@ -170,8 +170,8 @@ pub fn de_get_metric_stream(
             s if s.matches("Arn") /* Arn com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$Arn */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -183,8 +183,8 @@ pub fn de_get_metric_stream(
             s if s.matches("Name") /* Name com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$Name */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -216,8 +216,8 @@ pub fn de_get_metric_stream(
             s if s.matches("FirehoseArn") /* FirehoseArn com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$FirehoseArn */ =>  {
                 let var_5 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -229,8 +229,8 @@ pub fn de_get_metric_stream(
             s if s.matches("RoleArn") /* RoleArn com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$RoleArn */ =>  {
                 let var_6 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -242,8 +242,8 @@ pub fn de_get_metric_stream(
             s if s.matches("State") /* State com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$State */ =>  {
                 let var_7 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -255,11 +255,11 @@ pub fn de_get_metric_stream(
             s if s.matches("CreationDate") /* CreationDate com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$CreationDate */ =>  {
                 let var_8 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
                         ?
                     )
                 ;
@@ -269,11 +269,11 @@ pub fn de_get_metric_stream(
             s if s.matches("LastUpdateDate") /* LastUpdateDate com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$LastUpdateDate */ =>  {
                 let var_9 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
                         ?
                     )
                 ;
@@ -283,9 +283,9 @@ pub fn de_get_metric_stream(
             s if s.matches("OutputFormat") /* OutputFormat com.amazonaws.cloudwatch.synthetic#GetMetricStreamOutput$OutputFormat */ =>  {
                 let var_10 =
                     Some(
-                        Result::<crate::types::MetricStreamOutputFormat, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::MetricStreamOutputFormat, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::MetricStreamOutputFormat::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -308,10 +308,10 @@ pub fn de_get_metric_stream(
                 let var_12 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudwatch#IncludeLinkedAccountsMetrics`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudwatch#IncludeLinkedAccountsMetrics`)"))
                         }
                         ?
                     )
@@ -323,7 +323,7 @@ pub fn de_get_metric_stream(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected GetMetricStreamResult tag",
         ));
     };

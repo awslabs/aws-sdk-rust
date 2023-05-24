@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SavingsPlansDataType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum SavingsPlansDataType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SavingsPlansDataType {
+impl ::std::convert::From<&str> for SavingsPlansDataType {
     fn from(s: &str) -> Self {
         match s {
             "AMORTIZED_COMMITMENT" => SavingsPlansDataType::AmortizedCommitment,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for SavingsPlansDataType {
         }
     }
 }
-impl std::str::FromStr for SavingsPlansDataType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SavingsPlansDataType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlansDataType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SavingsPlansDataType::from(s))
     }
 }
 impl SavingsPlansDataType {
@@ -101,7 +101,7 @@ impl SavingsPlansDataType {
         ]
     }
 }
-impl AsRef<str> for SavingsPlansDataType {
+impl ::std::convert::AsRef<str> for SavingsPlansDataType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

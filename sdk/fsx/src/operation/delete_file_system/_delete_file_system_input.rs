@@ -2,52 +2,52 @@
 
 /// <p>The request object for <code>DeleteFileSystem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileSystemInput {
     /// <p>The ID of the file system that you want to delete.</p>
     #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
+    pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
+    pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
     #[doc(hidden)]
     pub windows_configuration:
-        std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
+        ::std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
     /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     #[doc(hidden)]
     pub lustre_configuration:
-        std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
+        ::std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
     /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
     #[doc(hidden)]
     pub open_zfs_configuration:
-        std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
+        ::std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
 }
 impl DeleteFileSystemInput {
     /// <p>The ID of the file system that you want to delete.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn windows_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DeleteFileSystemWindowsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DeleteFileSystemWindowsConfiguration> {
         self.windows_configuration.as_ref()
     }
     /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn lustre_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DeleteFileSystemLustreConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DeleteFileSystemLustreConfiguration> {
         self.lustre_configuration.as_ref()
     }
     /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn open_zfs_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DeleteFileSystemOpenZfsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DeleteFileSystemOpenZfsConfiguration> {
         self.open_zfs_configuration.as_ref()
     }
 }
@@ -61,37 +61,48 @@ impl DeleteFileSystemInput {
 
 /// A builder for [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFileSystemInputBuilder {
-    pub(crate) file_system_id: std::option::Option<std::string::String>,
-    pub(crate) client_request_token: std::option::Option<std::string::String>,
+    pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) windows_configuration:
-        std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
+        ::std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
     pub(crate) lustre_configuration:
-        std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
+        ::std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
     pub(crate) open_zfs_configuration:
-        std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
+        ::std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
 }
 impl DeleteFileSystemInputBuilder {
     /// <p>The ID of the file system that you want to delete.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_id = Some(input.into());
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system that you want to delete.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_id = input;
         self
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_request_token = Some(input.into());
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent deletion. This token is automatically filled on your behalf when using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_request_token = input;
         self
@@ -101,13 +112,13 @@ impl DeleteFileSystemInputBuilder {
         mut self,
         input: crate::types::DeleteFileSystemWindowsConfiguration,
     ) -> Self {
-        self.windows_configuration = Some(input);
+        self.windows_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_windows_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
+        input: ::std::option::Option<crate::types::DeleteFileSystemWindowsConfiguration>,
     ) -> Self {
         self.windows_configuration = input;
         self
@@ -117,13 +128,13 @@ impl DeleteFileSystemInputBuilder {
         mut self,
         input: crate::types::DeleteFileSystemLustreConfiguration,
     ) -> Self {
-        self.lustre_configuration = Some(input);
+        self.lustre_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration object for the Amazon FSx for Lustre file system being deleted in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_lustre_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
+        input: ::std::option::Option<crate::types::DeleteFileSystemLustreConfiguration>,
     ) -> Self {
         self.lustre_configuration = input;
         self
@@ -133,13 +144,13 @@ impl DeleteFileSystemInputBuilder {
         mut self,
         input: crate::types::DeleteFileSystemOpenZfsConfiguration,
     ) -> Self {
-        self.open_zfs_configuration = Some(input);
+        self.open_zfs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.</p>
     pub fn set_open_zfs_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
+        input: ::std::option::Option<crate::types::DeleteFileSystemOpenZfsConfiguration>,
     ) -> Self {
         self.open_zfs_configuration = input;
         self
@@ -147,11 +158,11 @@ impl DeleteFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_file_system::DeleteFileSystemInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_file_system::DeleteFileSystemInput {
                 file_system_id: self.file_system_id,
                 client_request_token: self.client_request_token,

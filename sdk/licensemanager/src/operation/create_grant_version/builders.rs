@@ -6,29 +6,29 @@ pub use crate::operation::create_grant_version::_create_grant_version_input::Cre
 /// Fluent builder constructing a request to `CreateGrantVersion`.
 ///
 /// <p>Creates a new version of the specified grant. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted licenses in License Manager</a> in the <i>License Manager User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGrantVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_grant_version::builders::CreateGrantVersionInputBuilder,
 }
 impl CreateGrantVersionFluentBuilder {
     /// Creates a new `CreateGrantVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_grant_version::CreateGrantVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_grant_version::CreateGrantVersionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateGrantVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_grant_version::CreateGrantVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_grant_version::CreateGrantVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,41 @@ impl CreateGrantVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_grant_version::CreateGrantVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_grant_version::CreateGrantVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn grant_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
-    pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_arn(input);
         self
     }
     /// <p>Grant name.</p>
-    pub fn grant_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_name(input.into());
         self
     }
     /// <p>Grant name.</p>
-    pub fn set_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_name(input);
         self
     }
@@ -122,7 +125,7 @@ impl CreateGrantVersionFluentBuilder {
     /// <p>Allowed operations for the grant.</p>
     pub fn set_allowed_operations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AllowedOperation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AllowedOperation>>,
     ) -> Self {
         self.inner = self.inner.set_allowed_operations(input);
         self
@@ -133,27 +136,39 @@ impl CreateGrantVersionFluentBuilder {
         self
     }
     /// <p>Grant status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::GrantStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::GrantStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>Grant status reason.</p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.status_reason(input.into());
         self
     }
     /// <p>Grant status reason.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_status_reason(input);
         self
     }
     /// <p>Current version of the grant.</p>
-    pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
     /// <p>Current version of the grant.</p>
-    pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }
@@ -163,7 +178,7 @@ impl CreateGrantVersionFluentBuilder {
         self
     }
     /// <p>The options specified for the grant.</p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::Options>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }

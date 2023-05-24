@@ -2,27 +2,27 @@
 
 /// <p> Response of DescribeBudgets </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetsOutput {
     /// <p>A list of budgets.</p>
     #[doc(hidden)]
-    pub budgets: std::option::Option<std::vec::Vec<crate::types::Budget>>,
+    pub budgets: ::std::option::Option<::std::vec::Vec<crate::types::Budget>>,
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBudgetsOutput {
     /// <p>A list of budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<&[crate::types::Budget]> {
+    pub fn budgets(&self) -> ::std::option::Option<&[crate::types::Budget]> {
         self.budgets.as_deref()
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeBudgetsOutput {
+impl ::aws_http::request_id::RequestId for DescribeBudgetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl DescribeBudgetsOutput {
 
 /// A builder for [`DescribeBudgetsOutput`](crate::operation::describe_budgets::DescribeBudgetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeBudgetsOutputBuilder {
-    pub(crate) budgets: std::option::Option<std::vec::Vec<crate::types::Budget>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) budgets: ::std::option::Option<::std::vec::Vec<crate::types::Budget>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBudgetsOutputBuilder {
@@ -51,24 +53,24 @@ impl DescribeBudgetsOutputBuilder {
     pub fn budgets(mut self, input: crate::types::Budget) -> Self {
         let mut v = self.budgets.unwrap_or_default();
         v.push(input);
-        self.budgets = Some(v);
+        self.budgets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of budgets.</p>
     pub fn set_budgets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Budget>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Budget>>,
     ) -> Self {
         self.budgets = input;
         self
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

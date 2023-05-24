@@ -2,22 +2,22 @@
 
 /// <p>Status of the VPC options for a specified domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcDerivedInfoStatus {
     /// <p>The VPC options for the specified domain.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<crate::types::VpcDerivedInfo>,
+    pub options: ::std::option::Option<crate::types::VpcDerivedInfo>,
     /// <p>The status of the VPC options for the specified domain.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl VpcDerivedInfoStatus {
     /// <p>The VPC options for the specified domain.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::VpcDerivedInfo> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::VpcDerivedInfo> {
         self.options.as_ref()
     }
     /// <p>The status of the VPC options for the specified domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl VpcDerivedInfoStatus {
 
 /// A builder for [`VpcDerivedInfoStatus`](crate::types::VpcDerivedInfoStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcDerivedInfoStatusBuilder {
-    pub(crate) options: std::option::Option<crate::types::VpcDerivedInfo>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<crate::types::VpcDerivedInfo>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl VpcDerivedInfoStatusBuilder {
     /// <p>The VPC options for the specified domain.</p>
     pub fn options(mut self, input: crate::types::VpcDerivedInfo) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC options for the specified domain.</p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::VpcDerivedInfo>) -> Self {
+    pub fn set_options(
+        mut self,
+        input: ::std::option::Option<crate::types::VpcDerivedInfo>,
+    ) -> Self {
         self.options = input;
         self
     }
     /// <p>The status of the VPC options for the specified domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the VPC options for the specified domain.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

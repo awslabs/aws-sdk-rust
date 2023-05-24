@@ -7,29 +7,29 @@ pub use crate::operation::get_player_connection_status::_get_player_connection_s
 ///
 /// <p>Gets the status of a player's connection to the game runtime.</p>
 /// <p> It's possible for a single player to have multiple connections to the game runtime. If a player is not connected, this operation returns an empty list. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlayerConnectionStatusFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_player_connection_status::builders::GetPlayerConnectionStatusInputBuilder,
 }
 impl GetPlayerConnectionStatusFluentBuilder {
     /// Creates a new `GetPlayerConnectionStatus`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_player_connection_status::GetPlayerConnectionStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
         >,
     > {
@@ -37,30 +37,33 @@ impl GetPlayerConnectionStatusFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,41 +76,41 @@ impl GetPlayerConnectionStatusFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_player_connection_status::GetPlayerConnectionStatusOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_player_connection_status::GetPlayerConnectionStatusError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier representing a player.</p>
-    pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.player_id(input.into());
         self
     }
     /// <p>The unique identifier representing a player.</p>
-    pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_player_id(input);
         self
     }
     /// <p>The name of the game.</p>
-    pub fn game_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn game_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_name(input.into());
         self
     }
     /// <p>The name of the game.</p>
-    pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_game_name(input);
         self
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
         self
     }
     /// <p>The name of the stage.</p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
     }

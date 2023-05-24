@@ -2,104 +2,104 @@
 
 /// <p>An answer of the question.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Answer {
     /// <p>The ID of the question.</p>
     #[doc(hidden)]
-    pub question_id: std::option::Option<std::string::String>,
+    pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     #[doc(hidden)]
-    pub pillar_id: std::option::Option<std::string::String>,
+    pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the question.</p>
     #[doc(hidden)]
-    pub question_title: std::option::Option<std::string::String>,
+    pub question_title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the question.</p>
     #[doc(hidden)]
-    pub question_description: std::option::Option<std::string::String>,
+    pub question_description: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
     #[doc(hidden)]
-    pub improvement_plan_url: std::option::Option<std::string::String>,
+    pub improvement_plan_url: ::std::option::Option<::std::string::String>,
     /// <p>The helpful resource URL.</p>
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
     #[doc(hidden)]
-    pub helpful_resource_url: std::option::Option<std::string::String>,
+    pub helpful_resource_url: ::std::option::Option<::std::string::String>,
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     #[doc(hidden)]
-    pub helpful_resource_display_text: std::option::Option<std::string::String>,
+    pub helpful_resource_display_text: ::std::option::Option<::std::string::String>,
     /// <p>List of choices available for a question.</p>
     #[doc(hidden)]
-    pub choices: std::option::Option<std::vec::Vec<crate::types::Choice>>,
+    pub choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
     #[doc(hidden)]
-    pub selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of selected choices to a question in your workload.</p>
     #[doc(hidden)]
-    pub choice_answers: std::option::Option<std::vec::Vec<crate::types::ChoiceAnswer>>,
+    pub choice_answers: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>>,
     /// <p>Defines whether this question is applicable to a lens review.</p>
     #[doc(hidden)]
     pub is_applicable: bool,
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     #[doc(hidden)]
-    pub risk: std::option::Option<crate::types::Risk>,
+    pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The notes associated with the workload.</p>
     #[doc(hidden)]
-    pub notes: std::option::Option<std::string::String>,
+    pub notes: ::std::option::Option<::std::string::String>,
     /// <p>The reason why the question is not applicable to your workload.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::AnswerReason>,
+    pub reason: ::std::option::Option<crate::types::AnswerReason>,
 }
 impl Answer {
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<&str> {
         self.question_id.as_deref()
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(&self) -> std::option::Option<&str> {
+    pub fn question_title(&self) -> ::std::option::Option<&str> {
         self.question_title.as_deref()
     }
     /// <p>The description of the question.</p>
-    pub fn question_description(&self) -> std::option::Option<&str> {
+    pub fn question_description(&self) -> ::std::option::Option<&str> {
         self.question_description.as_deref()
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    pub fn improvement_plan_url(&self) -> std::option::Option<&str> {
+    pub fn improvement_plan_url(&self) -> ::std::option::Option<&str> {
         self.improvement_plan_url.as_deref()
     }
     /// <p>The helpful resource URL.</p>
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-    pub fn helpful_resource_url(&self) -> std::option::Option<&str> {
+    pub fn helpful_resource_url(&self) -> ::std::option::Option<&str> {
         self.helpful_resource_url.as_deref()
     }
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
-    pub fn helpful_resource_display_text(&self) -> std::option::Option<&str> {
+    pub fn helpful_resource_display_text(&self) -> ::std::option::Option<&str> {
         self.helpful_resource_display_text.as_deref()
     }
     /// <p>List of choices available for a question.</p>
-    pub fn choices(&self) -> std::option::Option<&[crate::types::Choice]> {
+    pub fn choices(&self) -> ::std::option::Option<&[crate::types::Choice]> {
         self.choices.as_deref()
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn selected_choices(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.selected_choices.as_deref()
     }
     /// <p>A list of selected choices to a question in your workload.</p>
-    pub fn choice_answers(&self) -> std::option::Option<&[crate::types::ChoiceAnswer]> {
+    pub fn choice_answers(&self) -> ::std::option::Option<&[crate::types::ChoiceAnswer]> {
         self.choice_answers.as_deref()
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
@@ -107,15 +107,15 @@ impl Answer {
         self.is_applicable
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    pub fn risk(&self) -> std::option::Option<&crate::types::Risk> {
+    pub fn risk(&self) -> ::std::option::Option<&crate::types::Risk> {
         self.risk.as_ref()
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn notes(&self) -> std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
     /// <p>The reason why the question is not applicable to your workload.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::AnswerReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::AnswerReason> {
         self.reason.as_ref()
     }
 }
@@ -128,65 +128,76 @@ impl Answer {
 
 /// A builder for [`Answer`](crate::types::Answer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnswerBuilder {
-    pub(crate) question_id: std::option::Option<std::string::String>,
-    pub(crate) pillar_id: std::option::Option<std::string::String>,
-    pub(crate) question_title: std::option::Option<std::string::String>,
-    pub(crate) question_description: std::option::Option<std::string::String>,
-    pub(crate) improvement_plan_url: std::option::Option<std::string::String>,
-    pub(crate) helpful_resource_url: std::option::Option<std::string::String>,
-    pub(crate) helpful_resource_display_text: std::option::Option<std::string::String>,
-    pub(crate) choices: std::option::Option<std::vec::Vec<crate::types::Choice>>,
-    pub(crate) selected_choices: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) choice_answers: std::option::Option<std::vec::Vec<crate::types::ChoiceAnswer>>,
-    pub(crate) is_applicable: std::option::Option<bool>,
-    pub(crate) risk: std::option::Option<crate::types::Risk>,
-    pub(crate) notes: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::AnswerReason>,
+    pub(crate) question_id: ::std::option::Option<::std::string::String>,
+    pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
+    pub(crate) question_title: ::std::option::Option<::std::string::String>,
+    pub(crate) question_description: ::std::option::Option<::std::string::String>,
+    pub(crate) improvement_plan_url: ::std::option::Option<::std::string::String>,
+    pub(crate) helpful_resource_url: ::std::option::Option<::std::string::String>,
+    pub(crate) helpful_resource_display_text: ::std::option::Option<::std::string::String>,
+    pub(crate) choices: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
+    pub(crate) selected_choices: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) choice_answers: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>>,
+    pub(crate) is_applicable: ::std::option::Option<bool>,
+    pub(crate) risk: ::std::option::Option<crate::types::Risk>,
+    pub(crate) notes: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::AnswerReason>,
 }
 impl AnswerBuilder {
     /// <p>The ID of the question.</p>
-    pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.question_id = Some(input.into());
+    pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.question_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the question.</p>
-    pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_id = input;
         self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pillar_id = Some(input.into());
+    pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pillar_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_id = input;
         self
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.question_title = Some(input.into());
+    pub fn question_title(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.question_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the question.</p>
-    pub fn set_question_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_question_title(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.question_title = input;
         self
     }
     /// <p>The description of the question.</p>
-    pub fn question_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.question_description = Some(input.into());
+    pub fn question_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.question_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the question.</p>
     pub fn set_question_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.question_description = input;
         self
@@ -194,8 +205,11 @@ impl AnswerBuilder {
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
     /// <p>This value does not apply to custom lenses.</p>
-    pub fn improvement_plan_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.improvement_plan_url = Some(input.into());
+    pub fn improvement_plan_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.improvement_plan_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
@@ -203,7 +217,7 @@ impl AnswerBuilder {
     /// <p>This value does not apply to custom lenses.</p>
     pub fn set_improvement_plan_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.improvement_plan_url = input;
         self
@@ -211,8 +225,11 @@ impl AnswerBuilder {
     /// <p>The helpful resource URL.</p>
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-    pub fn helpful_resource_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.helpful_resource_url = Some(input.into());
+    pub fn helpful_resource_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.helpful_resource_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The helpful resource URL.</p>
@@ -220,22 +237,25 @@ impl AnswerBuilder {
     /// <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
     pub fn set_helpful_resource_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.helpful_resource_url = input;
         self
     }
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
-    pub fn helpful_resource_display_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.helpful_resource_display_text = Some(input.into());
+    pub fn helpful_resource_display_text(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.helpful_resource_display_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The helpful resource text to be displayed for a custom lens.</p>
     /// <p>This field does not apply to Amazon Web Services official lenses.</p>
     pub fn set_helpful_resource_display_text(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.helpful_resource_display_text = input;
         self
@@ -248,13 +268,13 @@ impl AnswerBuilder {
     pub fn choices(mut self, input: crate::types::Choice) -> Self {
         let mut v = self.choices.unwrap_or_default();
         v.push(input);
-        self.choices = Some(v);
+        self.choices = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of choices available for a question.</p>
     pub fn set_choices(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Choice>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Choice>>,
     ) -> Self {
         self.choices = input;
         self
@@ -265,17 +285,20 @@ impl AnswerBuilder {
     ///
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn selected_choices(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.selected_choices.unwrap_or_default();
         v.push(input.into());
-        self.selected_choices = Some(v);
+        self.selected_choices = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
     pub fn set_selected_choices(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.selected_choices = input;
         self
@@ -288,54 +311,54 @@ impl AnswerBuilder {
     pub fn choice_answers(mut self, input: crate::types::ChoiceAnswer) -> Self {
         let mut v = self.choice_answers.unwrap_or_default();
         v.push(input);
-        self.choice_answers = Some(v);
+        self.choice_answers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of selected choices to a question in your workload.</p>
     pub fn set_choice_answers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ChoiceAnswer>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceAnswer>>,
     ) -> Self {
         self.choice_answers = input;
         self
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
     pub fn is_applicable(mut self, input: bool) -> Self {
-        self.is_applicable = Some(input);
+        self.is_applicable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    pub fn set_is_applicable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_applicable = input;
         self
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
     pub fn risk(mut self, input: crate::types::Risk) -> Self {
-        self.risk = Some(input);
+        self.risk = ::std::option::Option::Some(input);
         self
     }
     /// <p>The risk for a given workload, lens review, pillar, or question.</p>
-    pub fn set_risk(mut self, input: std::option::Option<crate::types::Risk>) -> Self {
+    pub fn set_risk(mut self, input: ::std::option::Option<crate::types::Risk>) -> Self {
         self.risk = input;
         self
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notes = Some(input.into());
+    pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }
     /// <p>The reason why the question is not applicable to your workload.</p>
     pub fn reason(mut self, input: crate::types::AnswerReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason why the question is not applicable to your workload.</p>
-    pub fn set_reason(mut self, input: std::option::Option<crate::types::AnswerReason>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
         self.reason = input;
         self
     }

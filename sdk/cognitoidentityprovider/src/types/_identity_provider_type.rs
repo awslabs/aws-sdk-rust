@@ -2,17 +2,17 @@
 
 /// <p>A container for information about an IdP.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderType {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The IdP name.</p>
     #[doc(hidden)]
-    pub provider_name: std::option::Option<std::string::String>,
+    pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The IdP type.</p>
     #[doc(hidden)]
-    pub provider_type: std::option::Option<crate::types::IdentityProviderTypeType>,
+    pub provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
     /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
     /// <ul>
     /// <li> <p>For Google and Login with Amazon:</p>
@@ -62,33 +62,35 @@ pub struct IdentityProviderType {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub provider_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub provider_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     #[doc(hidden)]
-    pub attribute_mapping:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attribute_mapping: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A list of IdP identifiers.</p>
     #[doc(hidden)]
-    pub idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date the IdP was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the IdP was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IdentityProviderType {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<&str> {
         self.provider_name.as_deref()
     }
     /// <p>The IdP type.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::types::IdentityProviderTypeType> {
+    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
     /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
@@ -141,27 +143,29 @@ impl IdentityProviderType {
     /// </ul>
     pub fn provider_details(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.provider_details.as_ref()
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub fn attribute_mapping(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.attribute_mapping.as_ref()
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn idp_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.idp_identifiers.as_deref()
     }
     /// <p>The date the IdP was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the IdP was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -174,49 +178,59 @@ impl IdentityProviderType {
 
 /// A builder for [`IdentityProviderType`](crate::types::IdentityProviderType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IdentityProviderTypeBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) provider_name: std::option::Option<std::string::String>,
-    pub(crate) provider_type: std::option::Option<crate::types::IdentityProviderTypeType>,
-    pub(crate) provider_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) attribute_mapping:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_name: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
+    pub(crate) provider_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) attribute_mapping: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IdentityProviderTypeBuilder {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provider_name = Some(input.into());
+    pub fn provider_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IdP name.</p>
-    pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.provider_name = input;
         self
     }
     /// <p>The IdP type.</p>
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
-        self.provider_type = Some(input);
+        self.provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IdP type.</p>
     pub fn set_provider_type(
         mut self,
-        input: std::option::Option<crate::types::IdentityProviderTypeType>,
+        input: ::std::option::Option<crate::types::IdentityProviderTypeType>,
     ) -> Self {
         self.provider_type = input;
         self
@@ -275,12 +289,12 @@ impl IdentityProviderTypeBuilder {
     /// </ul>
     pub fn provider_details(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.provider_details.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.provider_details = Some(hash_map);
+        self.provider_details = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
@@ -333,8 +347,8 @@ impl IdentityProviderTypeBuilder {
     /// </ul>
     pub fn set_provider_details(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.provider_details = input;
@@ -347,19 +361,19 @@ impl IdentityProviderTypeBuilder {
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub fn attribute_mapping(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.attribute_mapping.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.attribute_mapping = Some(hash_map);
+        self.attribute_mapping = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub fn set_attribute_mapping(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.attribute_mapping = input;
@@ -370,42 +384,45 @@ impl IdentityProviderTypeBuilder {
     /// To override the contents of this collection use [`set_idp_identifiers`](Self::set_idp_identifiers).
     ///
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idp_identifiers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.idp_identifiers.unwrap_or_default();
         v.push(input.into());
-        self.idp_identifiers = Some(v);
+        self.idp_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IdP identifiers.</p>
     pub fn set_idp_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.idp_identifiers = input;
         self
     }
     /// <p>The date the IdP was last modified.</p>
-    pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_date = Some(input);
+    pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the IdP was last modified.</p>
     pub fn set_last_modified_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_date = input;
         self
     }
     /// <p>The date the IdP was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the IdP was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self

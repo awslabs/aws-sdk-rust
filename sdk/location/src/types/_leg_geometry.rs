@@ -2,7 +2,7 @@
 
 /// <p>Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LegGeometry {
     /// <p>An ordered list of positions used to plot a route on a map. </p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
@@ -10,7 +10,7 @@ pub struct LegGeometry {
     /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+    pub line_string: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
 }
 impl LegGeometry {
     /// <p>An ordered list of positions used to plot a route on a map. </p>
@@ -18,7 +18,7 @@ impl LegGeometry {
     /// <ul>
     /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
     /// </ul>
-    pub fn line_string(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
+    pub fn line_string(&self) -> ::std::option::Option<&[::std::vec::Vec<f64>]> {
         self.line_string.as_deref()
     }
 }
@@ -31,9 +31,11 @@ impl LegGeometry {
 
 /// A builder for [`LegGeometry`](crate::types::LegGeometry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LegGeometryBuilder {
-    pub(crate) line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+    pub(crate) line_string: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
 }
 impl LegGeometryBuilder {
     /// Appends an item to `line_string`.
@@ -45,10 +47,10 @@ impl LegGeometryBuilder {
     /// <ul>
     /// <li> <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code> </p> </li>
     /// </ul>
-    pub fn line_string(mut self, input: std::vec::Vec<f64>) -> Self {
+    pub fn line_string(mut self, input: ::std::vec::Vec<f64>) -> Self {
         let mut v = self.line_string.unwrap_or_default();
         v.push(input);
-        self.line_string = Some(v);
+        self.line_string = ::std::option::Option::Some(v);
         self
     }
     /// <p>An ordered list of positions used to plot a route on a map. </p>
@@ -58,7 +60,7 @@ impl LegGeometryBuilder {
     /// </ul>
     pub fn set_line_string(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
     ) -> Self {
         self.line_string = input;
         self

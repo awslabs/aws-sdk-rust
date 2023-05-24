@@ -2,22 +2,22 @@
 
 /// <p>The <code>DatasetTrigger</code> that specifies when the dataset is automatically updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetTrigger {
     /// <p>The Schedule when the trigger is initiated.</p>
     #[doc(hidden)]
-    pub schedule: std::option::Option<crate::types::Schedule>,
+    pub schedule: ::std::option::Option<crate::types::Schedule>,
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
     #[doc(hidden)]
-    pub dataset: std::option::Option<crate::types::TriggeringDataset>,
+    pub dataset: ::std::option::Option<crate::types::TriggeringDataset>,
 }
 impl DatasetTrigger {
     /// <p>The Schedule when the trigger is initiated.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::types::Schedule> {
+    pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
-    pub fn dataset(&self) -> std::option::Option<&crate::types::TriggeringDataset> {
+    pub fn dataset(&self) -> ::std::option::Option<&crate::types::TriggeringDataset> {
         self.dataset.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl DatasetTrigger {
 
 /// A builder for [`DatasetTrigger`](crate::types::DatasetTrigger).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetTriggerBuilder {
-    pub(crate) schedule: std::option::Option<crate::types::Schedule>,
-    pub(crate) dataset: std::option::Option<crate::types::TriggeringDataset>,
+    pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
+    pub(crate) dataset: ::std::option::Option<crate::types::TriggeringDataset>,
 }
 impl DatasetTriggerBuilder {
     /// <p>The Schedule when the trigger is initiated.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
-        self.schedule = Some(input);
+        self.schedule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Schedule when the trigger is initiated.</p>
-    pub fn set_schedule(mut self, input: std::option::Option<crate::types::Schedule>) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
         self.schedule = input;
         self
     }
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
     pub fn dataset(mut self, input: crate::types::TriggeringDataset) -> Self {
-        self.dataset = Some(input);
+        self.dataset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dataset whose content creation triggers the creation of this dataset's contents.</p>
     pub fn set_dataset(
         mut self,
-        input: std::option::Option<crate::types::TriggeringDataset>,
+        input: ::std::option::Option<crate::types::TriggeringDataset>,
     ) -> Self {
         self.dataset = input;
         self

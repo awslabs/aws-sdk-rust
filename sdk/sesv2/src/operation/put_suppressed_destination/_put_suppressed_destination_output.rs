@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSuppressedDestinationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutSuppressedDestinationOutput {
+impl ::aws_http::request_id::RequestId for PutSuppressedDestinationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl PutSuppressedDestinationOutput {
 
 /// A builder for [`PutSuppressedDestinationOutput`](crate::operation::put_suppressed_destination::PutSuppressedDestinationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutSuppressedDestinationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,14 +2,14 @@
 
 /// <p>Information about an order.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Order {
     /// <p> The ID of the Outpost in the order. </p>
     #[doc(hidden)]
-    pub outpost_id: std::option::Option<std::string::String>,
+    pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the order.</p>
     #[doc(hidden)]
-    pub order_id: std::option::Option<std::string::String>,
+    pub order_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the order.</p>
     /// <ul>
     /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
@@ -21,33 +21,33 @@ pub struct Order {
     /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OrderStatus>,
+    pub status: ::std::option::Option<crate::types::OrderStatus>,
     /// <p>The line items for the order</p>
     #[doc(hidden)]
-    pub line_items: std::option::Option<std::vec::Vec<crate::types::LineItem>>,
+    pub line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItem>>,
     /// <p>The payment option for the order.</p>
     #[doc(hidden)]
-    pub payment_option: std::option::Option<crate::types::PaymentOption>,
+    pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     /// <p>The submission date for the order.</p>
     #[doc(hidden)]
-    pub order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub order_submission_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The fulfillment date of the order.</p>
     #[doc(hidden)]
-    pub order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub order_fulfilled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The payment term.</p>
     #[doc(hidden)]
-    pub payment_term: std::option::Option<crate::types::PaymentTerm>,
+    pub payment_term: ::std::option::Option<crate::types::PaymentTerm>,
     /// <p>The type of order.</p>
     #[doc(hidden)]
-    pub order_type: std::option::Option<crate::types::OrderType>,
+    pub order_type: ::std::option::Option<crate::types::OrderType>,
 }
 impl Order {
     /// <p> The ID of the Outpost in the order. </p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
     /// <p>The ID of the order.</p>
-    pub fn order_id(&self) -> std::option::Option<&str> {
+    pub fn order_id(&self) -> ::std::option::Option<&str> {
         self.order_id.as_deref()
     }
     /// <p>The status of the order.</p>
@@ -60,31 +60,31 @@ impl Order {
     /// </ul> <note>
     /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
-    pub fn status(&self) -> std::option::Option<&crate::types::OrderStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OrderStatus> {
         self.status.as_ref()
     }
     /// <p>The line items for the order</p>
-    pub fn line_items(&self) -> std::option::Option<&[crate::types::LineItem]> {
+    pub fn line_items(&self) -> ::std::option::Option<&[crate::types::LineItem]> {
         self.line_items.as_deref()
     }
     /// <p>The payment option for the order.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::types::PaymentOption> {
+    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The submission date for the order.</p>
-    pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn order_submission_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.order_submission_date.as_ref()
     }
     /// <p>The fulfillment date of the order.</p>
-    pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn order_fulfilled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
     }
     /// <p>The payment term.</p>
-    pub fn payment_term(&self) -> std::option::Option<&crate::types::PaymentTerm> {
+    pub fn payment_term(&self) -> ::std::option::Option<&crate::types::PaymentTerm> {
         self.payment_term.as_ref()
     }
     /// <p>The type of order.</p>
-    pub fn order_type(&self) -> std::option::Option<&crate::types::OrderType> {
+    pub fn order_type(&self) -> ::std::option::Option<&crate::types::OrderType> {
         self.order_type.as_ref()
     }
 }
@@ -97,36 +97,38 @@ impl Order {
 
 /// A builder for [`Order`](crate::types::Order).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrderBuilder {
-    pub(crate) outpost_id: std::option::Option<std::string::String>,
-    pub(crate) order_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::OrderStatus>,
-    pub(crate) line_items: std::option::Option<std::vec::Vec<crate::types::LineItem>>,
-    pub(crate) payment_option: std::option::Option<crate::types::PaymentOption>,
-    pub(crate) order_submission_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) order_fulfilled_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) payment_term: std::option::Option<crate::types::PaymentTerm>,
-    pub(crate) order_type: std::option::Option<crate::types::OrderType>,
+    pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
+    pub(crate) order_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::OrderStatus>,
+    pub(crate) line_items: ::std::option::Option<::std::vec::Vec<crate::types::LineItem>>,
+    pub(crate) payment_option: ::std::option::Option<crate::types::PaymentOption>,
+    pub(crate) order_submission_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) order_fulfilled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) payment_term: ::std::option::Option<crate::types::PaymentTerm>,
+    pub(crate) order_type: ::std::option::Option<crate::types::OrderType>,
 }
 impl OrderBuilder {
     /// <p> The ID of the Outpost in the order. </p>
-    pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_id = Some(input.into());
+    pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Outpost in the order. </p>
-    pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }
     /// <p>The ID of the order.</p>
-    pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.order_id = Some(input.into());
+    pub fn order_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.order_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the order.</p>
-    pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_order_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.order_id = input;
         self
     }
@@ -141,7 +143,7 @@ impl OrderBuilder {
     /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
     pub fn status(mut self, input: crate::types::OrderStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the order.</p>
@@ -154,7 +156,7 @@ impl OrderBuilder {
     /// </ul> <note>
     /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
     /// </note>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OrderStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrderStatus>) -> Self {
         self.status = input;
         self
     }
@@ -166,76 +168,76 @@ impl OrderBuilder {
     pub fn line_items(mut self, input: crate::types::LineItem) -> Self {
         let mut v = self.line_items.unwrap_or_default();
         v.push(input);
-        self.line_items = Some(v);
+        self.line_items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The line items for the order</p>
     pub fn set_line_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LineItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LineItem>>,
     ) -> Self {
         self.line_items = input;
         self
     }
     /// <p>The payment option for the order.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
-        self.payment_option = Some(input);
+        self.payment_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The payment option for the order.</p>
     pub fn set_payment_option(
         mut self,
-        input: std::option::Option<crate::types::PaymentOption>,
+        input: ::std::option::Option<crate::types::PaymentOption>,
     ) -> Self {
         self.payment_option = input;
         self
     }
     /// <p>The submission date for the order.</p>
-    pub fn order_submission_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.order_submission_date = Some(input);
+    pub fn order_submission_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.order_submission_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The submission date for the order.</p>
     pub fn set_order_submission_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.order_submission_date = input;
         self
     }
     /// <p>The fulfillment date of the order.</p>
-    pub fn order_fulfilled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.order_fulfilled_date = Some(input);
+    pub fn order_fulfilled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.order_fulfilled_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The fulfillment date of the order.</p>
     pub fn set_order_fulfilled_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.order_fulfilled_date = input;
         self
     }
     /// <p>The payment term.</p>
     pub fn payment_term(mut self, input: crate::types::PaymentTerm) -> Self {
-        self.payment_term = Some(input);
+        self.payment_term = ::std::option::Option::Some(input);
         self
     }
     /// <p>The payment term.</p>
     pub fn set_payment_term(
         mut self,
-        input: std::option::Option<crate::types::PaymentTerm>,
+        input: ::std::option::Option<crate::types::PaymentTerm>,
     ) -> Self {
         self.payment_term = input;
         self
     }
     /// <p>The type of order.</p>
     pub fn order_type(mut self, input: crate::types::OrderType) -> Self {
-        self.order_type = Some(input);
+        self.order_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of order.</p>
-    pub fn set_order_type(mut self, input: std::option::Option<crate::types::OrderType>) -> Self {
+    pub fn set_order_type(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.order_type = input;
         self
     }

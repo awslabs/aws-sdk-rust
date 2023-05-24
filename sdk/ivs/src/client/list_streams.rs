@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`filter_by(StreamFilters)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::filter_by) / [`set_filter_by(Option<StreamFilters>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_filter_by): <p>Filters the stream list to match the specified criterion.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_next_token): <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_next_token): <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     ///   - [`max_results(i32)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_streams::builders::ListStreamsFluentBuilder::set_max_results): <p>Maximum number of streams to return. Default: 100.</p>
     /// - On success, responds with [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput) with field(s):
     ///   - [`streams(Option<Vec<StreamSummary>>)`](crate::operation::list_streams::ListStreamsOutput::streams): <p>List of streams.</p>

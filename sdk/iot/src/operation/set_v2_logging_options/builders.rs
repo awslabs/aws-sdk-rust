@@ -7,29 +7,29 @@ pub use crate::operation::set_v2_logging_options::_set_v2_logging_options_input:
 ///
 /// <p>Sets the logging options for the V2 logging service.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingOptions</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetV2LoggingOptionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder,
 }
 impl SetV2LoggingOptionsFluentBuilder {
     /// Creates a new `SetV2LoggingOptions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::set_v2_logging_options::SetV2LoggingOptions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_v2_logging_options::SetV2LoggingOptionsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl SetV2LoggingOptionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_v2_logging_options::SetV2LoggingOptionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl SetV2LoggingOptionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_v2_logging_options::SetV2LoggingOptionsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -99,7 +102,7 @@ impl SetV2LoggingOptionsFluentBuilder {
     /// <p>The default logging level.</p>
     pub fn set_default_log_level(
         mut self,
-        input: std::option::Option<crate::types::LogLevel>,
+        input: ::std::option::Option<crate::types::LogLevel>,
     ) -> Self {
         self.inner = self.inner.set_default_log_level(input);
         self
@@ -110,7 +113,7 @@ impl SetV2LoggingOptionsFluentBuilder {
         self
     }
     /// <p>If true all logs are disabled. The default is false.</p>
-    pub fn set_disable_all_logs(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_all_logs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disable_all_logs(input);
         self
     }

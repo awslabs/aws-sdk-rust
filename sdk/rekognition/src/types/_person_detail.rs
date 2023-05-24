@@ -2,17 +2,17 @@
 
 /// <p>Details about a person detected in a video analysis request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PersonDetail {
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
     #[doc(hidden)]
     pub index: i64,
     /// <p>Bounding box around the detected person.</p>
     #[doc(hidden)]
-    pub bounding_box: std::option::Option<crate::types::BoundingBox>,
+    pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Face details for the detected person.</p>
     #[doc(hidden)]
-    pub face: std::option::Option<crate::types::FaceDetail>,
+    pub face: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl PersonDetail {
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
@@ -20,11 +20,11 @@ impl PersonDetail {
         self.index
     }
     /// <p>Bounding box around the detected person.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Face details for the detected person.</p>
-    pub fn face(&self) -> std::option::Option<&crate::types::FaceDetail> {
+    pub fn face(&self) -> ::std::option::Option<&crate::types::FaceDetail> {
         self.face.as_ref()
     }
 }
@@ -37,43 +37,45 @@ impl PersonDetail {
 
 /// A builder for [`PersonDetail`](crate::types::PersonDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PersonDetailBuilder {
-    pub(crate) index: std::option::Option<i64>,
-    pub(crate) bounding_box: std::option::Option<crate::types::BoundingBox>,
-    pub(crate) face: std::option::Option<crate::types::FaceDetail>,
+    pub(crate) index: ::std::option::Option<i64>,
+    pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
+    pub(crate) face: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl PersonDetailBuilder {
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
     pub fn index(mut self, input: i64) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
-    pub fn set_index(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<i64>) -> Self {
         self.index = input;
         self
     }
     /// <p>Bounding box around the detected person.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
-        self.bounding_box = Some(input);
+        self.bounding_box = ::std::option::Option::Some(input);
         self
     }
     /// <p>Bounding box around the detected person.</p>
     pub fn set_bounding_box(
         mut self,
-        input: std::option::Option<crate::types::BoundingBox>,
+        input: ::std::option::Option<crate::types::BoundingBox>,
     ) -> Self {
         self.bounding_box = input;
         self
     }
     /// <p>Face details for the detected person.</p>
     pub fn face(mut self, input: crate::types::FaceDetail) -> Self {
-        self.face = Some(input);
+        self.face = ::std::option::Option::Some(input);
         self
     }
     /// <p>Face details for the detected person.</p>
-    pub fn set_face(mut self, input: std::option::Option<crate::types::FaceDetail>) -> Self {
+    pub fn set_face(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face = input;
         self
     }

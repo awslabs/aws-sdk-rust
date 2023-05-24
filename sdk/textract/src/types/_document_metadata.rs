@@ -2,15 +2,15 @@
 
 /// <p>Information about the input document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentMetadata {
     /// <p>The number of pages that are detected in the document.</p>
     #[doc(hidden)]
-    pub pages: std::option::Option<i32>,
+    pub pages: ::std::option::Option<i32>,
 }
 impl DocumentMetadata {
     /// <p>The number of pages that are detected in the document.</p>
-    pub fn pages(&self) -> std::option::Option<i32> {
+    pub fn pages(&self) -> ::std::option::Option<i32> {
         self.pages
     }
 }
@@ -23,18 +23,20 @@ impl DocumentMetadata {
 
 /// A builder for [`DocumentMetadata`](crate::types::DocumentMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentMetadataBuilder {
-    pub(crate) pages: std::option::Option<i32>,
+    pub(crate) pages: ::std::option::Option<i32>,
 }
 impl DocumentMetadataBuilder {
     /// <p>The number of pages that are detected in the document.</p>
     pub fn pages(mut self, input: i32) -> Self {
-        self.pages = Some(input);
+        self.pages = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of pages that are detected in the document.</p>
-    pub fn set_pages(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pages(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pages = input;
         self
     }

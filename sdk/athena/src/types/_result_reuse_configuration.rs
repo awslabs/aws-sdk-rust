@@ -2,18 +2,18 @@
 
 /// <p>Specifies the query result reuse behavior for the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultReuseConfiguration {
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
     #[doc(hidden)]
     pub result_reuse_by_age_configuration:
-        std::option::Option<crate::types::ResultReuseByAgeConfiguration>,
+        ::std::option::Option<crate::types::ResultReuseByAgeConfiguration>,
 }
 impl ResultReuseConfiguration {
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
     pub fn result_reuse_by_age_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ResultReuseByAgeConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ResultReuseByAgeConfiguration> {
         self.result_reuse_by_age_configuration.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl ResultReuseConfiguration {
 
 /// A builder for [`ResultReuseConfiguration`](crate::types::ResultReuseConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResultReuseConfigurationBuilder {
     pub(crate) result_reuse_by_age_configuration:
-        std::option::Option<crate::types::ResultReuseByAgeConfiguration>,
+        ::std::option::Option<crate::types::ResultReuseByAgeConfiguration>,
 }
 impl ResultReuseConfigurationBuilder {
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
@@ -37,13 +39,13 @@ impl ResultReuseConfigurationBuilder {
         mut self,
         input: crate::types::ResultReuseByAgeConfiguration,
     ) -> Self {
-        self.result_reuse_by_age_configuration = Some(input);
+        self.result_reuse_by_age_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
     pub fn set_result_reuse_by_age_configuration(
         mut self,
-        input: std::option::Option<crate::types::ResultReuseByAgeConfiguration>,
+        input: ::std::option::Option<crate::types::ResultReuseByAgeConfiguration>,
     ) -> Self {
         self.result_reuse_by_age_configuration = input;
         self

@@ -2,27 +2,27 @@
 
 /// <p>Information about connection details for a Dev Environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DevEnvironmentAccessDetails {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
     #[doc(hidden)]
-    pub stream_url: std::option::Option<std::string::String>,
+    pub stream_url: ::std::option::Option<::std::string::String>,
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
     #[doc(hidden)]
-    pub token_value: std::option::Option<std::string::String>,
+    pub token_value: ::std::option::Option<::std::string::String>,
 }
 impl DevEnvironmentAccessDetails {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    pub fn stream_url(&self) -> std::option::Option<&str> {
+    pub fn stream_url(&self) -> ::std::option::Option<&str> {
         self.stream_url.as_deref()
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    pub fn token_value(&self) -> std::option::Option<&str> {
+    pub fn token_value(&self) -> ::std::option::Option<&str> {
         self.token_value.as_deref()
     }
 }
-impl std::fmt::Debug for DevEnvironmentAccessDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DevEnvironmentAccessDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DevEnvironmentAccessDetails");
         formatter.field("stream_url", &"*** Sensitive Data Redacted ***");
         formatter.field("token_value", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl DevEnvironmentAccessDetails {
 
 /// A builder for [`DevEnvironmentAccessDetails`](crate::types::DevEnvironmentAccessDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DevEnvironmentAccessDetailsBuilder {
-    pub(crate) stream_url: std::option::Option<std::string::String>,
-    pub(crate) token_value: std::option::Option<std::string::String>,
+    pub(crate) stream_url: ::std::option::Option<::std::string::String>,
+    pub(crate) token_value: ::std::option::Option<::std::string::String>,
 }
 impl DevEnvironmentAccessDetailsBuilder {
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    pub fn stream_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_url = Some(input.into());
+    pub fn stream_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL used to send commands to and from the Dev Environment.</p>
-    pub fn set_stream_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_url = input;
         self
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    pub fn token_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.token_value = Some(input.into());
+    pub fn token_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.token_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An encrypted token value that contains session and caller information used to authenticate the connection.</p>
-    pub fn set_token_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token_value = input;
         self
     }
@@ -72,8 +72,8 @@ impl DevEnvironmentAccessDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for DevEnvironmentAccessDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DevEnvironmentAccessDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DevEnvironmentAccessDetailsBuilder");
         formatter.field("stream_url", &"*** Sensitive Data Redacted ***");
         formatter.field("token_value", &"*** Sensitive Data Redacted ***");

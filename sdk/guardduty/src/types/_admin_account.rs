@@ -2,22 +2,22 @@
 
 /// <p>The account within the organization specified as the GuardDuty delegated administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminAccount {
     /// <p>The Amazon Web Services account ID for the account.</p>
     #[doc(hidden)]
-    pub admin_account_id: std::option::Option<std::string::String>,
+    pub admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
     #[doc(hidden)]
-    pub admin_status: std::option::Option<crate::types::AdminStatus>,
+    pub admin_status: ::std::option::Option<crate::types::AdminStatus>,
 }
 impl AdminAccount {
     /// <p>The Amazon Web Services account ID for the account.</p>
-    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+    pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
     /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
-    pub fn admin_status(&self) -> std::option::Option<&crate::types::AdminStatus> {
+    pub fn admin_status(&self) -> ::std::option::Option<&crate::types::AdminStatus> {
         self.admin_status.as_ref()
     }
 }
@@ -30,31 +30,39 @@ impl AdminAccount {
 
 /// A builder for [`AdminAccount`](crate::types::AdminAccount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminAccountBuilder {
-    pub(crate) admin_account_id: std::option::Option<std::string::String>,
-    pub(crate) admin_status: std::option::Option<crate::types::AdminStatus>,
+    pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) admin_status: ::std::option::Option<crate::types::AdminStatus>,
 }
 impl AdminAccountBuilder {
     /// <p>The Amazon Web Services account ID for the account.</p>
-    pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.admin_account_id = Some(input.into());
+    pub fn admin_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID for the account.</p>
-    pub fn set_admin_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_admin_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.admin_account_id = input;
         self
     }
     /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
     pub fn admin_status(mut self, input: crate::types::AdminStatus) -> Self {
-        self.admin_status = Some(input);
+        self.admin_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the account is enabled as the delegated administrator.</p>
     pub fn set_admin_status(
         mut self,
-        input: std::option::Option<crate::types::AdminStatus>,
+        input: ::std::option::Option<crate::types::AdminStatus>,
     ) -> Self {
         self.admin_status = input;
         self

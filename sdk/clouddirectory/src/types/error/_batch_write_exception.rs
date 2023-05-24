@@ -2,18 +2,18 @@
 
 /// <p>A <code>BatchWrite</code> exception has occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchWriteException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub index: i32,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::BatchWriteExceptionType>,
+    pub r#type: ::std::option::Option<crate::types::BatchWriteExceptionType>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub message: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl BatchWriteException {
     #[allow(missing_docs)] // documentation missing in model
@@ -21,36 +21,36 @@ impl BatchWriteException {
         self.index
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn r#type(&self) -> std::option::Option<&crate::types::BatchWriteExceptionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BatchWriteExceptionType> {
         self.r#type.as_ref()
     }
 }
 impl BatchWriteException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for BatchWriteException {
+impl ::std::fmt::Display for BatchWriteException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "BatchWriteException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "BatchWriteException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for BatchWriteException {}
-impl aws_http::request_id::RequestId for crate::types::error::BatchWriteException {
+impl ::std::error::Error for BatchWriteException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::BatchWriteException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchWriteException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchWriteException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -63,49 +63,51 @@ impl BatchWriteException {
 
 /// A builder for [`BatchWriteException`](crate::types::error::BatchWriteException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchWriteExceptionBuilder {
-    pub(crate) index: std::option::Option<i32>,
-    pub(crate) r#type: std::option::Option<crate::types::BatchWriteExceptionType>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) index: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::BatchWriteExceptionType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl BatchWriteExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
     pub fn index(mut self, input: i32) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(mut self, input: crate::types::BatchWriteExceptionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::BatchWriteExceptionType>,
+        input: ::std::option::Option<crate::types::BatchWriteExceptionType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -113,7 +115,7 @@ impl BatchWriteExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

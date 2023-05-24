@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ChangeSetState {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum ChangeSetState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ChangeSetState {
+impl ::std::convert::From<&str> for ChangeSetState {
     fn from(s: &str) -> Self {
         match s {
             "EXECUTING" => ChangeSetState::Executing,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for ChangeSetState {
         }
     }
 }
-impl std::str::FromStr for ChangeSetState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ChangeSetState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeSetState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ChangeSetState::from(s))
     }
 }
 impl ChangeSetState {
@@ -113,7 +113,7 @@ impl ChangeSetState {
         ]
     }
 }
-impl AsRef<str> for ChangeSetState {
+impl ::std::convert::AsRef<str> for ChangeSetState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

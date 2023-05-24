@@ -2,49 +2,49 @@
 
 /// <p>The share invitation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShareInvitation {
     /// <p>The ID assigned to the share invitation.</p>
     #[doc(hidden)]
-    pub share_invitation_id: std::option::Option<std::string::String>,
+    pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the share invitation.</p>
     #[doc(hidden)]
-    pub share_resource_type: std::option::Option<crate::types::ShareResourceType>,
+    pub share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
-    pub lens_alias: std::option::Option<std::string::String>,
+    pub lens_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the lens.</p>
     #[doc(hidden)]
-    pub lens_arn: std::option::Option<std::string::String>,
+    pub lens_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitation {
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
+    pub fn share_invitation_id(&self) -> ::std::option::Option<&str> {
         self.share_invitation_id.as_deref()
     }
     /// <p>The resource type of the share invitation.</p>
-    pub fn share_resource_type(&self) -> std::option::Option<&crate::types::ShareResourceType> {
+    pub fn share_resource_type(&self) -> ::std::option::Option<&crate::types::ShareResourceType> {
         self.share_resource_type.as_ref()
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<&str> {
+    pub fn lens_alias(&self) -> ::std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
 }
@@ -57,48 +57,53 @@ impl ShareInvitation {
 
 /// A builder for [`ShareInvitation`](crate::types::ShareInvitation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShareInvitationBuilder {
-    pub(crate) share_invitation_id: std::option::Option<std::string::String>,
-    pub(crate) share_resource_type: std::option::Option<crate::types::ShareResourceType>,
-    pub(crate) workload_id: std::option::Option<std::string::String>,
-    pub(crate) lens_alias: std::option::Option<std::string::String>,
-    pub(crate) lens_arn: std::option::Option<std::string::String>,
+    pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) lens_alias: ::std::option::Option<::std::string::String>,
+    pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationBuilder {
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.share_invitation_id = Some(input.into());
+    pub fn share_invitation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.share_invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
     pub fn set_share_invitation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.share_invitation_id = input;
         self
     }
     /// <p>The resource type of the share invitation.</p>
     pub fn share_resource_type(mut self, input: crate::types::ShareResourceType) -> Self {
-        self.share_resource_type = Some(input);
+        self.share_resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type of the share invitation.</p>
     pub fn set_share_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ShareResourceType>,
+        input: ::std::option::Option<crate::types::ShareResourceType>,
     ) -> Self {
         self.share_resource_type = input;
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
@@ -106,25 +111,25 @@ impl ShareInvitationBuilder {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lens_alias = Some(input.into());
+    pub fn lens_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lens_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias of the lens.</p>
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_alias = input;
         self
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lens_arn = Some(input.into());
+    pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lens_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the lens.</p>
-    pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_arn = input;
         self
     }

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RateBasedStatementAggregateKeyType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum RateBasedStatementAggregateKeyType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RateBasedStatementAggregateKeyType {
+impl ::std::convert::From<&str> for RateBasedStatementAggregateKeyType {
     fn from(s: &str) -> Self {
         match s {
             "CONSTANT" => RateBasedStatementAggregateKeyType::Constant,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for RateBasedStatementAggregateKeyType {
         }
     }
 }
-impl std::str::FromStr for RateBasedStatementAggregateKeyType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RateBasedStatementAggregateKeyType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RateBasedStatementAggregateKeyType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RateBasedStatementAggregateKeyType::from(s))
     }
 }
 impl RateBasedStatementAggregateKeyType {
@@ -96,7 +96,7 @@ impl RateBasedStatementAggregateKeyType {
         &["CONSTANT", "CUSTOM_KEYS", "FORWARDED_IP", "IP"]
     }
 }
-impl AsRef<str> for RateBasedStatementAggregateKeyType {
+impl ::std::convert::AsRef<str> for RateBasedStatementAggregateKeyType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,15 +2,15 @@
 
 /// <p> Entity that comprises information on operating modes in data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StatisticalIssueStatus>,
+    pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
 }
 impl MultipleOperatingModes {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StatisticalIssueStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StatisticalIssueStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MultipleOperatingModes {
 
 /// A builder for [`MultipleOperatingModes`](crate::types::MultipleOperatingModes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultipleOperatingModesBuilder {
-    pub(crate) status: std::option::Option<crate::types::StatisticalIssueStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
 }
 impl MultipleOperatingModesBuilder {
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
     pub fn status(mut self, input: crate::types::StatisticalIssueStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether there is a potential data issue related to having multiple operating modes. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::StatisticalIssueStatus>,
+        input: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     ) -> Self {
         self.status = input;
         self

@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>GetApplication</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationOutput {
     /// <p>Information about the application.</p>
     #[doc(hidden)]
-    pub application: std::option::Option<crate::types::ApplicationInfo>,
+    pub application: ::std::option::Option<crate::types::ApplicationInfo>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
     /// <p>Information about the application.</p>
-    pub fn application(&self) -> std::option::Option<&crate::types::ApplicationInfo> {
+    pub fn application(&self) -> ::std::option::Option<&crate::types::ApplicationInfo> {
         self.application.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetApplicationOutput {
+impl ::aws_http::request_id::RequestId for GetApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl GetApplicationOutput {
 
 /// A builder for [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetApplicationOutputBuilder {
-    pub(crate) application: std::option::Option<crate::types::ApplicationInfo>,
+    pub(crate) application: ::std::option::Option<crate::types::ApplicationInfo>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
     /// <p>Information about the application.</p>
     pub fn application(mut self, input: crate::types::ApplicationInfo) -> Self {
-        self.application = Some(input);
+        self.application = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the application.</p>
     pub fn set_application(
         mut self,
-        input: std::option::Option<crate::types::ApplicationInfo>,
+        input: ::std::option::Option<crate::types::ApplicationInfo>,
     ) -> Self {
         self.application = input;
         self

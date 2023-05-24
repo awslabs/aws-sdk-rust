@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFunction`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::set_api_id): <p>The GraphQL API ID.</p>
-    ///   - [`function_id(impl Into<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::function_id) / [`set_function_id(Option<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::set_function_id): <p>The <code>Function</code> ID.</p>
+    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::set_api_id): <p>The GraphQL API ID.</p>
+    ///   - [`function_id(impl ::std::convert::Into<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::function_id) / [`set_function_id(Option<String>)`](crate::operation::delete_function::builders::DeleteFunctionFluentBuilder::set_function_id): <p>The <code>Function</code> ID.</p>
     /// - On success, responds with [`DeleteFunctionOutput`](crate::operation::delete_function::DeleteFunctionOutput)
     /// - On failure, responds with [`SdkError<DeleteFunctionError>`](crate::operation::delete_function::DeleteFunctionError)
     pub fn delete_function(

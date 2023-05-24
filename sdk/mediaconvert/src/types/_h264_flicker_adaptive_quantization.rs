@@ -38,13 +38,13 @@
 /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264FlickerAdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum H264FlickerAdaptiveQuantization {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264FlickerAdaptiveQuantization {
+impl ::std::convert::From<&str> for H264FlickerAdaptiveQuantization {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => H264FlickerAdaptiveQuantization::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for H264FlickerAdaptiveQuantization {
         }
     }
 }
-impl std::str::FromStr for H264FlickerAdaptiveQuantization {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264FlickerAdaptiveQuantization {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264FlickerAdaptiveQuantization::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264FlickerAdaptiveQuantization::from(s))
     }
 }
 impl H264FlickerAdaptiveQuantization {
@@ -86,7 +86,7 @@ impl H264FlickerAdaptiveQuantization {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for H264FlickerAdaptiveQuantization {
+impl ::std::convert::AsRef<str> for H264FlickerAdaptiveQuantization {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

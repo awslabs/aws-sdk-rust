@@ -2,11 +2,11 @@
 
 /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::BatchResourceRequirementType>,
+    pub r#type: ::std::option::Option<crate::types::BatchResourceRequirementType>,
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
     /// <dl>
     /// <dt>
@@ -166,11 +166,11 @@ pub struct BatchResourceRequirement {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl BatchResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::BatchResourceRequirementType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BatchResourceRequirementType> {
         self.r#type.as_ref()
     }
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
@@ -331,7 +331,7 @@ impl BatchResourceRequirement {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -344,21 +344,23 @@ impl BatchResourceRequirement {
 
 /// A builder for [`BatchResourceRequirement`](crate::types::BatchResourceRequirement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchResourceRequirementBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::BatchResourceRequirementType>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::BatchResourceRequirementType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl BatchResourceRequirementBuilder {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn r#type(mut self, input: crate::types::BatchResourceRequirementType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::BatchResourceRequirementType>,
+        input: ::std::option::Option<crate::types::BatchResourceRequirementType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -521,8 +523,8 @@ impl BatchResourceRequirementBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
@@ -683,7 +685,7 @@ impl BatchResourceRequirementBuilder {
     /// </dl>
     /// </dd>
     /// </dl>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

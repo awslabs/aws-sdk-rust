@@ -2,31 +2,31 @@
 
 /// <p>Uniquely identifies an evaluation result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResultIdentifier {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
     #[doc(hidden)]
-    pub evaluation_result_qualifier: std::option::Option<crate::types::EvaluationResultQualifier>,
+    pub evaluation_result_qualifier: ::std::option::Option<crate::types::EvaluationResultQualifier>,
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
     #[doc(hidden)]
-    pub ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A Unique ID for an evaluation result.</p>
     #[doc(hidden)]
-    pub resource_evaluation_id: std::option::Option<std::string::String>,
+    pub resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationResultIdentifier {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
     pub fn evaluation_result_qualifier(
         &self,
-    ) -> std::option::Option<&crate::types::EvaluationResultQualifier> {
+    ) -> ::std::option::Option<&crate::types::EvaluationResultQualifier> {
         self.evaluation_result_qualifier.as_ref()
     }
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
-    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ordering_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
     }
     /// <p>A Unique ID for an evaluation result.</p>
-    pub fn resource_evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn resource_evaluation_id(&self) -> ::std::option::Option<&str> {
         self.resource_evaluation_id.as_deref()
     }
 }
@@ -39,12 +39,14 @@ impl EvaluationResultIdentifier {
 
 /// A builder for [`EvaluationResultIdentifier`](crate::types::EvaluationResultIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationResultIdentifierBuilder {
     pub(crate) evaluation_result_qualifier:
-        std::option::Option<crate::types::EvaluationResultQualifier>,
-    pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) resource_evaluation_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::EvaluationResultQualifier>,
+    pub(crate) ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) resource_evaluation_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationResultIdentifierBuilder {
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
@@ -52,39 +54,42 @@ impl EvaluationResultIdentifierBuilder {
         mut self,
         input: crate::types::EvaluationResultQualifier,
     ) -> Self {
-        self.evaluation_result_qualifier = Some(input);
+        self.evaluation_result_qualifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies an Config rule used to evaluate an Amazon Web Services resource, and provides the type and ID of the evaluated resource.</p>
     pub fn set_evaluation_result_qualifier(
         mut self,
-        input: std::option::Option<crate::types::EvaluationResultQualifier>,
+        input: ::std::option::Option<crate::types::EvaluationResultQualifier>,
     ) -> Self {
         self.evaluation_result_qualifier = input;
         self
     }
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
-    pub fn ordering_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.ordering_timestamp = Some(input);
+    pub fn ordering_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.ordering_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the event that triggered the evaluation of your Amazon Web Services resources. The time can indicate when Config delivered a configuration item change notification, or it can indicate when Config delivered the configuration snapshot, depending on which event triggered the evaluation.</p>
     pub fn set_ordering_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.ordering_timestamp = input;
         self
     }
     /// <p>A Unique ID for an evaluation result.</p>
-    pub fn resource_evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_evaluation_id = Some(input.into());
+    pub fn resource_evaluation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Unique ID for an evaluation result.</p>
     pub fn set_resource_evaluation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_evaluation_id = input;
         self

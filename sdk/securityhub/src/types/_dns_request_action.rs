@@ -2,25 +2,25 @@
 
 /// <p>Provided if <code>ActionType</code> is <code>DNS_REQUEST</code>. It provides details about the DNS request that was detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRequestAction {
     /// <p>The DNS domain that is associated with the DNS request.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The protocol that was used for the DNS request.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<std::string::String>,
+    pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DNS request was blocked.</p>
     #[doc(hidden)]
     pub blocked: bool,
 }
 impl DnsRequestAction {
     /// <p>The DNS domain that is associated with the DNS request.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The protocol that was used for the DNS request.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>Indicates whether the DNS request was blocked.</p>
@@ -37,40 +37,42 @@ impl DnsRequestAction {
 
 /// A builder for [`DnsRequestAction`](crate::types::DnsRequestAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsRequestActionBuilder {
-    pub(crate) domain: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<std::string::String>,
-    pub(crate) blocked: std::option::Option<bool>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<::std::string::String>,
+    pub(crate) blocked: ::std::option::Option<bool>,
 }
 impl DnsRequestActionBuilder {
     /// <p>The DNS domain that is associated with the DNS request.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS domain that is associated with the DNS request.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
     /// <p>The protocol that was used for the DNS request.</p>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protocol = Some(input.into());
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol that was used for the DNS request.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>Indicates whether the DNS request was blocked.</p>
     pub fn blocked(mut self, input: bool) -> Self {
-        self.blocked = Some(input);
+        self.blocked = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the DNS request was blocked.</p>
-    pub fn set_blocked(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_blocked(mut self, input: ::std::option::Option<bool>) -> Self {
         self.blocked = input;
         self
     }

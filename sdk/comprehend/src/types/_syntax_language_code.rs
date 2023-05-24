@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SyntaxLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum SyntaxLanguageCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SyntaxLanguageCode {
+impl ::std::convert::From<&str> for SyntaxLanguageCode {
     fn from(s: &str) -> Self {
         match s {
             "de" => SyntaxLanguageCode::De,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for SyntaxLanguageCode {
         }
     }
 }
-impl std::str::FromStr for SyntaxLanguageCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SyntaxLanguageCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SyntaxLanguageCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SyntaxLanguageCode::from(s))
     }
 }
 impl SyntaxLanguageCode {
@@ -106,7 +106,7 @@ impl SyntaxLanguageCode {
         &["de", "en", "es", "fr", "it", "pt"]
     }
 }
-impl AsRef<str> for SyntaxLanguageCode {
+impl ::std::convert::AsRef<str> for SyntaxLanguageCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

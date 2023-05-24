@@ -2,43 +2,43 @@
 
 /// <p>A snapshot of a Source Server used during recovery.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoverySnapshot {
     /// <p>The ID of the Recovery Snapshot.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
     #[doc(hidden)]
-    pub source_server_id: std::option::Option<std::string::String>,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
     #[doc(hidden)]
-    pub expected_timestamp: std::option::Option<std::string::String>,
+    pub expected_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The actual timestamp that the snapshot was taken.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<std::string::String>,
+    pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>A list of EBS snapshots.</p>
     #[doc(hidden)]
-    pub ebs_snapshots: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ebs_snapshots: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RecoverySnapshot {
     /// <p>The ID of the Recovery Snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
-    pub fn expected_timestamp(&self) -> std::option::Option<&str> {
+    pub fn expected_timestamp(&self) -> ::std::option::Option<&str> {
         self.expected_timestamp.as_deref()
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<&str> {
         self.timestamp.as_deref()
     }
     /// <p>A list of EBS snapshots.</p>
-    pub fn ebs_snapshots(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ebs_snapshots(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ebs_snapshots.as_deref()
     }
 }
@@ -51,55 +51,66 @@ impl RecoverySnapshot {
 
 /// A builder for [`RecoverySnapshot`](crate::types::RecoverySnapshot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecoverySnapshotBuilder {
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
-    pub(crate) source_server_id: std::option::Option<std::string::String>,
-    pub(crate) expected_timestamp: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<std::string::String>,
-    pub(crate) ebs_snapshots: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) expected_timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_snapshots: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RecoverySnapshotBuilder {
     /// <p>The ID of the Recovery Snapshot.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Recovery Snapshot.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
-    pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_server_id = Some(input.into());
+    pub fn source_server_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Source Server that the snapshot was taken for.</p>
-    pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_server_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_server_id = input;
         self
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
-    pub fn expected_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expected_timestamp = Some(input.into());
+    pub fn expected_timestamp(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.expected_timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp of when we expect the snapshot to be taken.</p>
     pub fn set_expected_timestamp(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.expected_timestamp = input;
         self
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
-    pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestamp = Some(input.into());
+    pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The actual timestamp that the snapshot was taken.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
     }
@@ -108,16 +119,19 @@ impl RecoverySnapshotBuilder {
     /// To override the contents of this collection use [`set_ebs_snapshots`](Self::set_ebs_snapshots).
     ///
     /// <p>A list of EBS snapshots.</p>
-    pub fn ebs_snapshots(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ebs_snapshots(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.ebs_snapshots.unwrap_or_default();
         v.push(input.into());
-        self.ebs_snapshots = Some(v);
+        self.ebs_snapshots = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of EBS snapshots.</p>
     pub fn set_ebs_snapshots(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ebs_snapshots = input;
         self

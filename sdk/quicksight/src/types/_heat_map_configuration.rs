@@ -2,68 +2,68 @@
 
 /// <p>The configuration of a heat map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeatMapConfiguration {
     /// <p>The field wells of the visual.</p>
     #[doc(hidden)]
-    pub field_wells: std::option::Option<crate::types::HeatMapFieldWells>,
+    pub field_wells: ::std::option::Option<crate::types::HeatMapFieldWells>,
     /// <p>The sort configuration of a heat map.</p>
     #[doc(hidden)]
-    pub sort_configuration: std::option::Option<crate::types::HeatMapSortConfiguration>,
+    pub sort_configuration: ::std::option::Option<crate::types::HeatMapSortConfiguration>,
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
     #[doc(hidden)]
-    pub row_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub row_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The label options of the column that is displayed in a heat map.</p>
     #[doc(hidden)]
-    pub column_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub column_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
     #[doc(hidden)]
-    pub color_scale: std::option::Option<crate::types::ColorScale>,
+    pub color_scale: ::std::option::Option<crate::types::ColorScale>,
     /// <p>The legend display setup of the visual.</p>
     #[doc(hidden)]
-    pub legend: std::option::Option<crate::types::LegendOptions>,
+    pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The options that determine if visual data labels are displayed.</p>
     #[doc(hidden)]
-    pub data_labels: std::option::Option<crate::types::DataLabelOptions>,
+    pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip display setup of the visual.</p>
     #[doc(hidden)]
-    pub tooltip: std::option::Option<crate::types::TooltipOptions>,
+    pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
 }
 impl HeatMapConfiguration {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> std::option::Option<&crate::types::HeatMapFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::HeatMapFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a heat map.</p>
     pub fn sort_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::HeatMapSortConfiguration> {
+    ) -> ::std::option::Option<&crate::types::HeatMapSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
-    pub fn row_label_options(&self) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn row_label_options(&self) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.row_label_options.as_ref()
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
     pub fn column_label_options(
         &self,
-    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.column_label_options.as_ref()
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
-    pub fn color_scale(&self) -> std::option::Option<&crate::types::ColorScale> {
+    pub fn color_scale(&self) -> ::std::option::Option<&crate::types::ColorScale> {
         self.color_scale.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn data_labels(&self) -> std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> ::std::option::Option<&crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn tooltip(&self) -> std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
 }
@@ -76,110 +76,118 @@ impl HeatMapConfiguration {
 
 /// A builder for [`HeatMapConfiguration`](crate::types::HeatMapConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HeatMapConfigurationBuilder {
-    pub(crate) field_wells: std::option::Option<crate::types::HeatMapFieldWells>,
-    pub(crate) sort_configuration: std::option::Option<crate::types::HeatMapSortConfiguration>,
-    pub(crate) row_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    pub(crate) column_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    pub(crate) color_scale: std::option::Option<crate::types::ColorScale>,
-    pub(crate) legend: std::option::Option<crate::types::LegendOptions>,
-    pub(crate) data_labels: std::option::Option<crate::types::DataLabelOptions>,
-    pub(crate) tooltip: std::option::Option<crate::types::TooltipOptions>,
+    pub(crate) field_wells: ::std::option::Option<crate::types::HeatMapFieldWells>,
+    pub(crate) sort_configuration: ::std::option::Option<crate::types::HeatMapSortConfiguration>,
+    pub(crate) row_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) column_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) color_scale: ::std::option::Option<crate::types::ColorScale>,
+    pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
+    pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
+    pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
 }
 impl HeatMapConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
     pub fn field_wells(mut self, input: crate::types::HeatMapFieldWells) -> Self {
-        self.field_wells = Some(input);
+        self.field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field wells of the visual.</p>
     pub fn set_field_wells(
         mut self,
-        input: std::option::Option<crate::types::HeatMapFieldWells>,
+        input: ::std::option::Option<crate::types::HeatMapFieldWells>,
     ) -> Self {
         self.field_wells = input;
         self
     }
     /// <p>The sort configuration of a heat map.</p>
     pub fn sort_configuration(mut self, input: crate::types::HeatMapSortConfiguration) -> Self {
-        self.sort_configuration = Some(input);
+        self.sort_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort configuration of a heat map.</p>
     pub fn set_sort_configuration(
         mut self,
-        input: std::option::Option<crate::types::HeatMapSortConfiguration>,
+        input: ::std::option::Option<crate::types::HeatMapSortConfiguration>,
     ) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
     pub fn row_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
-        self.row_label_options = Some(input);
+        self.row_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The label options of the row that is displayed in a <code>heat map</code>.</p>
     pub fn set_row_label_options(
         mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     ) -> Self {
         self.row_label_options = input;
         self
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
     pub fn column_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
-        self.column_label_options = Some(input);
+        self.column_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The label options of the column that is displayed in a heat map.</p>
     pub fn set_column_label_options(
         mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     ) -> Self {
         self.column_label_options = input;
         self
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
     pub fn color_scale(mut self, input: crate::types::ColorScale) -> Self {
-        self.color_scale = Some(input);
+        self.color_scale = ::std::option::Option::Some(input);
         self
     }
     /// <p>The color options (gradient color, point of divergence) in a heat map.</p>
-    pub fn set_color_scale(mut self, input: std::option::Option<crate::types::ColorScale>) -> Self {
+    pub fn set_color_scale(
+        mut self,
+        input: ::std::option::Option<crate::types::ColorScale>,
+    ) -> Self {
         self.color_scale = input;
         self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
-        self.legend = Some(input);
+        self.legend = ::std::option::Option::Some(input);
         self
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn set_legend(mut self, input: std::option::Option<crate::types::LegendOptions>) -> Self {
+    pub fn set_legend(mut self, input: ::std::option::Option<crate::types::LegendOptions>) -> Self {
         self.legend = input;
         self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
     pub fn data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
-        self.data_labels = Some(input);
+        self.data_labels = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
     pub fn set_data_labels(
         mut self,
-        input: std::option::Option<crate::types::DataLabelOptions>,
+        input: ::std::option::Option<crate::types::DataLabelOptions>,
     ) -> Self {
         self.data_labels = input;
         self
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn tooltip(mut self, input: crate::types::TooltipOptions) -> Self {
-        self.tooltip = Some(input);
+        self.tooltip = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn set_tooltip(mut self, input: std::option::Option<crate::types::TooltipOptions>) -> Self {
+    pub fn set_tooltip(
+        mut self,
+        input: ::std::option::Option<crate::types::TooltipOptions>,
+    ) -> Self {
         self.tooltip = input;
         self
     }

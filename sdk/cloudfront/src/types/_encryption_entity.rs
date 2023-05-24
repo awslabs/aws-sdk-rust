@@ -2,29 +2,29 @@
 
 /// <p>Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionEntity {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
     #[doc(hidden)]
-    pub public_key_id: std::option::Option<std::string::String>,
+    pub public_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
     #[doc(hidden)]
-    pub provider_id: std::option::Option<std::string::String>,
+    pub provider_id: ::std::option::Option<::std::string::String>,
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
     #[doc(hidden)]
-    pub field_patterns: std::option::Option<crate::types::FieldPatterns>,
+    pub field_patterns: ::std::option::Option<crate::types::FieldPatterns>,
 }
 impl EncryptionEntity {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
-    pub fn public_key_id(&self) -> std::option::Option<&str> {
+    pub fn public_key_id(&self) -> ::std::option::Option<&str> {
         self.public_key_id.as_deref()
     }
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
-    pub fn provider_id(&self) -> std::option::Option<&str> {
+    pub fn provider_id(&self) -> ::std::option::Option<&str> {
         self.provider_id.as_deref()
     }
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
-    pub fn field_patterns(&self) -> std::option::Option<&crate::types::FieldPatterns> {
+    pub fn field_patterns(&self) -> ::std::option::Option<&crate::types::FieldPatterns> {
         self.field_patterns.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl EncryptionEntity {
 
 /// A builder for [`EncryptionEntity`](crate::types::EncryptionEntity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EncryptionEntityBuilder {
-    pub(crate) public_key_id: std::option::Option<std::string::String>,
-    pub(crate) provider_id: std::option::Option<std::string::String>,
-    pub(crate) field_patterns: std::option::Option<crate::types::FieldPatterns>,
+    pub(crate) public_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_id: ::std::option::Option<::std::string::String>,
+    pub(crate) field_patterns: ::std::option::Option<crate::types::FieldPatterns>,
 }
 impl EncryptionEntityBuilder {
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
-    pub fn public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_key_id = Some(input.into());
+    pub fn public_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.public_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns.</p>
-    pub fn set_public_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.public_key_id = input;
         self
     }
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
-    pub fn provider_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provider_id = Some(input.into());
+    pub fn provider_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.</p>
-    pub fn set_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_id = input;
         self
     }
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
     pub fn field_patterns(mut self, input: crate::types::FieldPatterns) -> Self {
-        self.field_patterns = Some(input);
+        self.field_patterns = ::std::option::Option::Some(input);
         self
     }
     /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive.</p>
     pub fn set_field_patterns(
         mut self,
-        input: std::option::Option<crate::types::FieldPatterns>,
+        input: ::std::option::Option<crate::types::FieldPatterns>,
     ) -> Self {
         self.field_patterns = input;
         self

@@ -12,29 +12,29 @@ pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_inpu
 /// <li> <p>Each network interface has a unique ID.</p> </li>
 /// <li> <p>The signal decoders are specified in the model manifest.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDecoderManifestFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_decoder_manifest::builders::CreateDecoderManifestInputBuilder,
 }
 impl CreateDecoderManifestFluentBuilder {
     /// Creates a new `CreateDecoderManifest`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_decoder_manifest::CreateDecoderManifest,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_decoder_manifest::CreateDecoderManifestError,
         >,
     > {
@@ -42,30 +42,33 @@ impl CreateDecoderManifestFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_decoder_manifest::CreateDecoderManifestOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_decoder_manifest::CreateDecoderManifestError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,43 +81,46 @@ impl CreateDecoderManifestFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_decoder_manifest::CreateDecoderManifestOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_decoder_manifest::CreateDecoderManifestError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p> The unique name of the decoder manifest to create.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p> The unique name of the decoder manifest to create.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p> A brief description of the decoder manifest. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p> A brief description of the decoder manifest. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
-    pub fn model_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn model_manifest_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.model_manifest_arn(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the vehicle model (model manifest). </p>
     pub fn set_model_manifest_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_model_manifest_arn(input);
         self
@@ -131,7 +137,7 @@ impl CreateDecoderManifestFluentBuilder {
     /// <p> A list of information about signal decoders. </p>
     pub fn set_signal_decoders(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SignalDecoder>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SignalDecoder>>,
     ) -> Self {
         self.inner = self.inner.set_signal_decoders(input);
         self
@@ -148,7 +154,7 @@ impl CreateDecoderManifestFluentBuilder {
     /// <p> A list of information about available network interfaces. </p>
     pub fn set_network_interfaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     ) -> Self {
         self.inner = self.inner.set_network_interfaces(input);
         self
@@ -165,7 +171,7 @@ impl CreateDecoderManifestFluentBuilder {
     /// <p>Metadata that can be used to manage the decoder manifest.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
     pub fn delete_application(

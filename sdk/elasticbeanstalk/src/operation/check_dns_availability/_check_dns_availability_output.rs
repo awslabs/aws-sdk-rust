@@ -2,7 +2,7 @@
 
 /// <p>Indicates if the specified CNAME is available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckDnsAvailabilityOutput {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
@@ -10,10 +10,10 @@ pub struct CheckDnsAvailabilityOutput {
     /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub available: std::option::Option<bool>,
+    pub available: ::std::option::Option<bool>,
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     #[doc(hidden)]
-    pub fully_qualified_cname: std::option::Option<std::string::String>,
+    pub fully_qualified_cname: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CheckDnsAvailabilityOutput {
@@ -22,15 +22,15 @@ impl CheckDnsAvailabilityOutput {
     /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
     /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
     /// </ul>
-    pub fn available(&self) -> std::option::Option<bool> {
+    pub fn available(&self) -> ::std::option::Option<bool> {
         self.available
     }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
-    pub fn fully_qualified_cname(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_cname(&self) -> ::std::option::Option<&str> {
         self.fully_qualified_cname.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CheckDnsAvailabilityOutput {
+impl ::aws_http::request_id::RequestId for CheckDnsAvailabilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,10 +45,12 @@ impl CheckDnsAvailabilityOutput {
 
 /// A builder for [`CheckDnsAvailabilityOutput`](crate::operation::check_dns_availability::CheckDnsAvailabilityOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CheckDnsAvailabilityOutputBuilder {
-    pub(crate) available: std::option::Option<bool>,
-    pub(crate) fully_qualified_cname: std::option::Option<std::string::String>,
+    pub(crate) available: ::std::option::Option<bool>,
+    pub(crate) fully_qualified_cname: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CheckDnsAvailabilityOutputBuilder {
@@ -58,7 +60,7 @@ impl CheckDnsAvailabilityOutputBuilder {
     /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
     /// </ul>
     pub fn available(mut self, input: bool) -> Self {
-        self.available = Some(input);
+        self.available = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if the specified CNAME is available:</p>
@@ -66,19 +68,22 @@ impl CheckDnsAvailabilityOutputBuilder {
     /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
     /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
     /// </ul>
-    pub fn set_available(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.available = input;
         self
     }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
-    pub fn fully_qualified_cname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fully_qualified_cname = Some(input.into());
+    pub fn fully_qualified_cname(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.fully_qualified_cname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     pub fn set_fully_qualified_cname(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.fully_qualified_cname = input;
         self

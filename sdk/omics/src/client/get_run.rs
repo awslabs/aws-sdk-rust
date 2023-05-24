@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRun`](crate::operation::get_run::builders::GetRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_id): <p>The run's ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_id): <p>The run's ID.</p>
     ///   - [`export(Vec<RunExport>)`](crate::operation::get_run::builders::GetRunFluentBuilder::export) / [`set_export(Option<Vec<RunExport>>)`](crate::operation::get_run::builders::GetRunFluentBuilder::set_export): <p>The run's export format.</p>
     /// - On success, responds with [`GetRunOutput`](crate::operation::get_run::GetRunOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_run::GetRunOutput::arn): <p>The run's ARN.</p>

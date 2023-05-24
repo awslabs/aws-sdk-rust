@@ -2,23 +2,23 @@
 
 /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeReview {
     /// <p>The name of the code review.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
-    pub code_review_arn: std::option::Option<std::string::String>,
+    pub code_review_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<std::string::String>,
+    pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
     #[doc(hidden)]
-    pub provider_type: std::option::Option<crate::types::ProviderType>,
+    pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The valid code review states are:</p>
     /// <ul>
     /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
@@ -27,57 +27,57 @@ pub struct CodeReview {
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::JobState>,
+    pub state: ::std::option::Option<crate::types::JobState>,
     /// <p>The reason for the state of the code review.</p>
     #[doc(hidden)]
-    pub state_reason: std::option::Option<std::string::String>,
+    pub state_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
     #[doc(hidden)]
-    pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of code review.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::Type>,
+    pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The pull request ID for the code review.</p>
     #[doc(hidden)]
-    pub pull_request_id: std::option::Option<std::string::String>,
+    pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the source code for the code review.</p>
     #[doc(hidden)]
-    pub source_code_type: std::option::Option<crate::types::SourceCodeType>,
+    pub source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
     #[doc(hidden)]
-    pub association_arn: std::option::Option<std::string::String>,
+    pub association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The statistics from the code review.</p>
     #[doc(hidden)]
-    pub metrics: std::option::Option<crate::types::Metrics>,
+    pub metrics: ::std::option::Option<crate::types::Metrics>,
     /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     #[doc(hidden)]
-    pub analysis_types: std::option::Option<std::vec::Vec<crate::types::AnalysisType>>,
+    pub analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>,
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
     #[doc(hidden)]
-    pub config_file_state: std::option::Option<crate::types::ConfigFileState>,
+    pub config_file_state: ::std::option::Option<crate::types::ConfigFileState>,
 }
 impl CodeReview {
     /// <p>The name of the code review.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> ::std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The valid code review states are:</p>
@@ -87,47 +87,47 @@ impl CodeReview {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::types::JobState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::JobState> {
         self.state.as_ref()
     }
     /// <p>The reason for the state of the code review.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> ::std::option::Option<&str> {
         self.state_reason.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>The type of code review.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The type of the source code for the code review.</p>
-    pub fn source_code_type(&self) -> std::option::Option<&crate::types::SourceCodeType> {
+    pub fn source_code_type(&self) -> ::std::option::Option<&crate::types::SourceCodeType> {
         self.source_code_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn association_arn(&self) -> std::option::Option<&str> {
+    pub fn association_arn(&self) -> ::std::option::Option<&str> {
         self.association_arn.as_deref()
     }
     /// <p>The statistics from the code review.</p>
-    pub fn metrics(&self) -> std::option::Option<&crate::types::Metrics> {
+    pub fn metrics(&self) -> ::std::option::Option<&crate::types::Metrics> {
         self.metrics.as_ref()
     }
     /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
-    pub fn analysis_types(&self) -> std::option::Option<&[crate::types::AnalysisType]> {
+    pub fn analysis_types(&self) -> ::std::option::Option<&[crate::types::AnalysisType]> {
         self.analysis_types.as_deref()
     }
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
-    pub fn config_file_state(&self) -> std::option::Option<&crate::types::ConfigFileState> {
+    pub fn config_file_state(&self) -> ::std::option::Option<&crate::types::ConfigFileState> {
         self.config_file_state.as_ref()
     }
 }
@@ -140,75 +140,89 @@ impl CodeReview {
 
 /// A builder for [`CodeReview`](crate::types::CodeReview).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeReviewBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) code_review_arn: std::option::Option<std::string::String>,
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) owner: std::option::Option<std::string::String>,
-    pub(crate) provider_type: std::option::Option<crate::types::ProviderType>,
-    pub(crate) state: std::option::Option<crate::types::JobState>,
-    pub(crate) state_reason: std::option::Option<std::string::String>,
-    pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) r#type: std::option::Option<crate::types::Type>,
-    pub(crate) pull_request_id: std::option::Option<std::string::String>,
-    pub(crate) source_code_type: std::option::Option<crate::types::SourceCodeType>,
-    pub(crate) association_arn: std::option::Option<std::string::String>,
-    pub(crate) metrics: std::option::Option<crate::types::Metrics>,
-    pub(crate) analysis_types: std::option::Option<std::vec::Vec<crate::types::AnalysisType>>,
-    pub(crate) config_file_state: std::option::Option<crate::types::ConfigFileState>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
+    pub(crate) state: ::std::option::Option<crate::types::JobState>,
+    pub(crate) state_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<crate::types::Type>,
+    pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
+    pub(crate) association_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics: ::std::option::Option<crate::types::Metrics>,
+    pub(crate) analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>,
+    pub(crate) config_file_state: ::std::option::Option<crate::types::ConfigFileState>,
 }
 impl CodeReviewBuilder {
     /// <p>The name of the code review.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the code review.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code_review_arn = Some(input.into());
+    pub fn code_review_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code_review_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.code_review_arn = input;
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner = Some(input.into());
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
     /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
-        self.provider_type = Some(input);
+        self.provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of repository that contains the reviewed code (for example, GitHub or Bitbucket).</p>
     pub fn set_provider_type(
         mut self,
-        input: std::option::Option<crate::types::ProviderType>,
+        input: ::std::option::Option<crate::types::ProviderType>,
     ) -> Self {
         self.provider_type = input;
         self
@@ -221,7 +235,7 @@ impl CodeReviewBuilder {
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::JobState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The valid code review states are:</p>
@@ -231,96 +245,108 @@ impl CodeReviewBuilder {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::JobState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The reason for the state of the code review.</p>
-    pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_reason = Some(input.into());
+    pub fn state_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the state of the code review.</p>
-    pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_reason = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time_stamp = Some(input);
+    pub fn created_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time_stamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
     pub fn set_created_time_stamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time_stamp = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time_stamp = Some(input);
+    pub fn last_updated_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time_stamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
     pub fn set_last_updated_time_stamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time_stamp = input;
         self
     }
     /// <p>The type of code review.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of code review.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pull_request_id = Some(input.into());
+    pub fn pull_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pull_request_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pull_request_id = input;
         self
     }
     /// <p>The type of the source code for the code review.</p>
     pub fn source_code_type(mut self, input: crate::types::SourceCodeType) -> Self {
-        self.source_code_type = Some(input);
+        self.source_code_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the source code for the code review.</p>
     pub fn set_source_code_type(
         mut self,
-        input: std::option::Option<crate::types::SourceCodeType>,
+        input: ::std::option::Option<crate::types::SourceCodeType>,
     ) -> Self {
         self.source_code_type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn association_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.association_arn = Some(input.into());
+    pub fn association_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
-    pub fn set_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_association_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.association_arn = input;
         self
     }
     /// <p>The statistics from the code review.</p>
     pub fn metrics(mut self, input: crate::types::Metrics) -> Self {
-        self.metrics = Some(input);
+        self.metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistics from the code review.</p>
-    pub fn set_metrics(mut self, input: std::option::Option<crate::types::Metrics>) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::Metrics>) -> Self {
         self.metrics = input;
         self
     }
@@ -332,26 +358,26 @@ impl CodeReviewBuilder {
     pub fn analysis_types(mut self, input: crate::types::AnalysisType) -> Self {
         let mut v = self.analysis_types.unwrap_or_default();
         v.push(input);
-        self.analysis_types = Some(v);
+        self.analysis_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.</p>
     pub fn set_analysis_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnalysisType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisType>>,
     ) -> Self {
         self.analysis_types = input;
         self
     }
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
     pub fn config_file_state(mut self, input: crate::types::ConfigFileState) -> Self {
-        self.config_file_state = Some(input);
+        self.config_file_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.</p>
     pub fn set_config_file_state(
         mut self,
-        input: std::option::Option<crate::types::ConfigFileState>,
+        input: ::std::option::Option<crate::types::ConfigFileState>,
     ) -> Self {
         self.config_file_state = input;
         self

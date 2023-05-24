@@ -2,15 +2,15 @@
 
 /// <p>An entry for a prefix list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemovePrefixListEntry {
     /// <p>The CIDR block.</p>
     #[doc(hidden)]
-    pub cidr: std::option::Option<std::string::String>,
+    pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl RemovePrefixListEntry {
     /// <p>The CIDR block.</p>
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl RemovePrefixListEntry {
 
 /// A builder for [`RemovePrefixListEntry`](crate::types::RemovePrefixListEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemovePrefixListEntryBuilder {
-    pub(crate) cidr: std::option::Option<std::string::String>,
+    pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }
 impl RemovePrefixListEntryBuilder {
     /// <p>The CIDR block.</p>
-    pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cidr = Some(input.into());
+    pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR block.</p>
-    pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }

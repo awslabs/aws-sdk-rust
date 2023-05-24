@@ -2,45 +2,45 @@
 
 /// <p>A member of a Global datastore. It contains the Replication Group Id, the Amazon region and the role of the replication group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalReplicationGroupMember {
     /// <p>The replication group id of the Global datastore member.</p>
     #[doc(hidden)]
-    pub replication_group_id: std::option::Option<std::string::String>,
+    pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon region of the Global datastore member.</p>
     #[doc(hidden)]
-    pub replication_group_region: std::option::Option<std::string::String>,
+    pub replication_group_region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the role of the replication group, primary or secondary.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<std::string::String>,
+    pub role: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether automatic failover is enabled for the replication group.</p>
     #[doc(hidden)]
-    pub automatic_failover: std::option::Option<crate::types::AutomaticFailoverStatus>,
+    pub automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
     /// <p>The status of the membership of the replication group.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl GlobalReplicationGroupMember {
     /// <p>The replication group id of the Global datastore member.</p>
-    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
         self.replication_group_id.as_deref()
     }
     /// <p>The Amazon region of the Global datastore member.</p>
-    pub fn replication_group_region(&self) -> std::option::Option<&str> {
+    pub fn replication_group_region(&self) -> ::std::option::Option<&str> {
         self.replication_group_region.as_deref()
     }
     /// <p>Indicates the role of the replication group, primary or secondary.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
     /// <p>Indicates whether automatic failover is enabled for the replication group.</p>
     pub fn automatic_failover(
         &self,
-    ) -> std::option::Option<&crate::types::AutomaticFailoverStatus> {
+    ) -> ::std::option::Option<&crate::types::AutomaticFailoverStatus> {
         self.automatic_failover.as_ref()
     }
     /// <p>The status of the membership of the replication group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -53,71 +53,79 @@ impl GlobalReplicationGroupMember {
 
 /// A builder for [`GlobalReplicationGroupMember`](crate::types::GlobalReplicationGroupMember).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalReplicationGroupMemberBuilder {
-    pub(crate) replication_group_id: std::option::Option<std::string::String>,
-    pub(crate) replication_group_region: std::option::Option<std::string::String>,
-    pub(crate) role: std::option::Option<std::string::String>,
-    pub(crate) automatic_failover: std::option::Option<crate::types::AutomaticFailoverStatus>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_group_region: ::std::option::Option<::std::string::String>,
+    pub(crate) role: ::std::option::Option<::std::string::String>,
+    pub(crate) automatic_failover: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl GlobalReplicationGroupMemberBuilder {
     /// <p>The replication group id of the Global datastore member.</p>
-    pub fn replication_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_group_id = Some(input.into());
+    pub fn replication_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replication group id of the Global datastore member.</p>
     pub fn set_replication_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_group_id = input;
         self
     }
     /// <p>The Amazon region of the Global datastore member.</p>
-    pub fn replication_group_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_group_region = Some(input.into());
+    pub fn replication_group_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_group_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon region of the Global datastore member.</p>
     pub fn set_replication_group_region(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_group_region = input;
         self
     }
     /// <p>Indicates the role of the replication group, primary or secondary.</p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role = Some(input.into());
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the role of the replication group, primary or secondary.</p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }
     /// <p>Indicates whether automatic failover is enabled for the replication group.</p>
     pub fn automatic_failover(mut self, input: crate::types::AutomaticFailoverStatus) -> Self {
-        self.automatic_failover = Some(input);
+        self.automatic_failover = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether automatic failover is enabled for the replication group.</p>
     pub fn set_automatic_failover(
         mut self,
-        input: std::option::Option<crate::types::AutomaticFailoverStatus>,
+        input: ::std::option::Option<crate::types::AutomaticFailoverStatus>,
     ) -> Self {
         self.automatic_failover = input;
         self
     }
     /// <p>The status of the membership of the replication group.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the membership of the replication group.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

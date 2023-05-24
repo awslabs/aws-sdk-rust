@@ -2,29 +2,29 @@
 
 /// <p>Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceMinutes {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     #[doc(hidden)]
-    pub total: std::option::Option<f64>,
+    pub total: ::std::option::Option<f64>,
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     #[doc(hidden)]
-    pub metered: std::option::Option<f64>,
+    pub metered: ::std::option::Option<f64>,
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     #[doc(hidden)]
-    pub unmetered: std::option::Option<f64>,
+    pub unmetered: ::std::option::Option<f64>,
 }
 impl DeviceMinutes {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
-    pub fn total(&self) -> std::option::Option<f64> {
+    pub fn total(&self) -> ::std::option::Option<f64> {
         self.total
     }
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
-    pub fn metered(&self) -> std::option::Option<f64> {
+    pub fn metered(&self) -> ::std::option::Option<f64> {
         self.metered
     }
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
-    pub fn unmetered(&self) -> std::option::Option<f64> {
+    pub fn unmetered(&self) -> ::std::option::Option<f64> {
         self.unmetered
     }
 }
@@ -37,40 +37,42 @@ impl DeviceMinutes {
 
 /// A builder for [`DeviceMinutes`](crate::types::DeviceMinutes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceMinutesBuilder {
-    pub(crate) total: std::option::Option<f64>,
-    pub(crate) metered: std::option::Option<f64>,
-    pub(crate) unmetered: std::option::Option<f64>,
+    pub(crate) total: ::std::option::Option<f64>,
+    pub(crate) metered: ::std::option::Option<f64>,
+    pub(crate) unmetered: ::std::option::Option<f64>,
 }
 impl DeviceMinutesBuilder {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     pub fn total(mut self, input: f64) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
-    pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total = input;
         self
     }
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     pub fn metered(mut self, input: f64) -> Self {
-        self.metered = Some(input);
+        self.metered = ::std::option::Option::Some(input);
         self
     }
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
-    pub fn set_metered(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_metered(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metered = input;
         self
     }
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub fn unmetered(mut self, input: f64) -> Self {
-        self.unmetered = Some(input);
+        self.unmetered = ::std::option::Option::Some(input);
         self
     }
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
-    pub fn set_unmetered(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_unmetered(mut self, input: ::std::option::Option<f64>) -> Self {
         self.unmetered = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponentSourceDetail {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     #[doc(hidden)]
-    pub source_arn: std::option::Option<std::string::String>,
+    pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about a training job that's the source of a trial component.</p>
     #[doc(hidden)]
-    pub training_job: std::option::Option<crate::types::TrainingJob>,
+    pub training_job: ::std::option::Option<crate::types::TrainingJob>,
     /// <p>Information about a processing job that's the source of a trial component.</p>
     #[doc(hidden)]
-    pub processing_job: std::option::Option<crate::types::ProcessingJob>,
+    pub processing_job: ::std::option::Option<crate::types::ProcessingJob>,
     /// <p>Information about a transform job that's the source of a trial component.</p>
     #[doc(hidden)]
-    pub transform_job: std::option::Option<crate::types::TransformJob>,
+    pub transform_job: ::std::option::Option<crate::types::TransformJob>,
 }
 impl TrialComponentSourceDetail {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
     /// <p>Information about a training job that's the source of a trial component.</p>
-    pub fn training_job(&self) -> std::option::Option<&crate::types::TrainingJob> {
+    pub fn training_job(&self) -> ::std::option::Option<&crate::types::TrainingJob> {
         self.training_job.as_ref()
     }
     /// <p>Information about a processing job that's the source of a trial component.</p>
-    pub fn processing_job(&self) -> std::option::Option<&crate::types::ProcessingJob> {
+    pub fn processing_job(&self) -> ::std::option::Option<&crate::types::ProcessingJob> {
         self.processing_job.as_ref()
     }
     /// <p>Information about a transform job that's the source of a trial component.</p>
-    pub fn transform_job(&self) -> std::option::Option<&crate::types::TransformJob> {
+    pub fn transform_job(&self) -> ::std::option::Option<&crate::types::TransformJob> {
         self.transform_job.as_ref()
     }
 }
@@ -44,59 +44,61 @@ impl TrialComponentSourceDetail {
 
 /// A builder for [`TrialComponentSourceDetail`](crate::types::TrialComponentSourceDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrialComponentSourceDetailBuilder {
-    pub(crate) source_arn: std::option::Option<std::string::String>,
-    pub(crate) training_job: std::option::Option<crate::types::TrainingJob>,
-    pub(crate) processing_job: std::option::Option<crate::types::ProcessingJob>,
-    pub(crate) transform_job: std::option::Option<crate::types::TransformJob>,
+    pub(crate) source_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) training_job: ::std::option::Option<crate::types::TrainingJob>,
+    pub(crate) processing_job: ::std::option::Option<crate::types::ProcessingJob>,
+    pub(crate) transform_job: ::std::option::Option<crate::types::TransformJob>,
 }
 impl TrialComponentSourceDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_arn = Some(input.into());
+    pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
     }
     /// <p>Information about a training job that's the source of a trial component.</p>
     pub fn training_job(mut self, input: crate::types::TrainingJob) -> Self {
-        self.training_job = Some(input);
+        self.training_job = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a training job that's the source of a trial component.</p>
     pub fn set_training_job(
         mut self,
-        input: std::option::Option<crate::types::TrainingJob>,
+        input: ::std::option::Option<crate::types::TrainingJob>,
     ) -> Self {
         self.training_job = input;
         self
     }
     /// <p>Information about a processing job that's the source of a trial component.</p>
     pub fn processing_job(mut self, input: crate::types::ProcessingJob) -> Self {
-        self.processing_job = Some(input);
+        self.processing_job = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a processing job that's the source of a trial component.</p>
     pub fn set_processing_job(
         mut self,
-        input: std::option::Option<crate::types::ProcessingJob>,
+        input: ::std::option::Option<crate::types::ProcessingJob>,
     ) -> Self {
         self.processing_job = input;
         self
     }
     /// <p>Information about a transform job that's the source of a trial component.</p>
     pub fn transform_job(mut self, input: crate::types::TransformJob) -> Self {
-        self.transform_job = Some(input);
+        self.transform_job = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a transform job that's the source of a trial component.</p>
     pub fn set_transform_job(
         mut self,
-        input: std::option::Option<crate::types::TransformJob>,
+        input: ::std::option::Option<crate::types::TransformJob>,
     ) -> Self {
         self.transform_job = input;
         self

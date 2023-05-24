@@ -2,27 +2,27 @@
 
 /// <p>The identifier of an ApiKey used in a UsagePlan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportApiKeysOutput {
     /// <p>A list of all the ApiKey identifiers.</p>
     #[doc(hidden)]
-    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of warning messages.</p>
     #[doc(hidden)]
-    pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ImportApiKeysOutput {
     /// <p>A list of all the ApiKey identifiers.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>A list of warning messages.</p>
-    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn warnings(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.warnings.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ImportApiKeysOutput {
+impl ::aws_http::request_id::RequestId for ImportApiKeysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ImportApiKeysOutput {
 
 /// A builder for [`ImportApiKeysOutput`](crate::operation::import_api_keys::ImportApiKeysOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportApiKeysOutputBuilder {
-    pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ImportApiKeysOutputBuilder {
@@ -48,16 +50,16 @@ impl ImportApiKeysOutputBuilder {
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).
     ///
     /// <p>A list of all the ApiKey identifiers.</p>
-    pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
         v.push(input.into());
-        self.ids = Some(v);
+        self.ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of all the ApiKey identifiers.</p>
     pub fn set_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ids = input;
         self
@@ -67,16 +69,16 @@ impl ImportApiKeysOutputBuilder {
     /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
     ///
     /// <p>A list of warning messages.</p>
-    pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.warnings.unwrap_or_default();
         v.push(input.into());
-        self.warnings = Some(v);
+        self.warnings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of warning messages.</p>
     pub fn set_warnings(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.warnings = input;
         self

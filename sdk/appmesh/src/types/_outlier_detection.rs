@@ -2,36 +2,36 @@
 
 /// <p>An object that represents the outlier detection for a virtual node's listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutlierDetection {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     #[doc(hidden)]
-    pub max_server_errors: std::option::Option<i64>,
+    pub max_server_errors: ::std::option::Option<i64>,
     /// <p>The time interval between ejection sweep analysis.</p>
     #[doc(hidden)]
-    pub interval: std::option::Option<crate::types::Duration>,
+    pub interval: ::std::option::Option<crate::types::Duration>,
     /// <p>The base amount of time for which a host is ejected.</p>
     #[doc(hidden)]
-    pub base_ejection_duration: std::option::Option<crate::types::Duration>,
+    pub base_ejection_duration: ::std::option::Option<crate::types::Duration>,
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
     #[doc(hidden)]
-    pub max_ejection_percent: std::option::Option<i32>,
+    pub max_ejection_percent: ::std::option::Option<i32>,
 }
 impl OutlierDetection {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
-    pub fn max_server_errors(&self) -> std::option::Option<i64> {
+    pub fn max_server_errors(&self) -> ::std::option::Option<i64> {
         self.max_server_errors
     }
     /// <p>The time interval between ejection sweep analysis.</p>
-    pub fn interval(&self) -> std::option::Option<&crate::types::Duration> {
+    pub fn interval(&self) -> ::std::option::Option<&crate::types::Duration> {
         self.interval.as_ref()
     }
     /// <p>The base amount of time for which a host is ejected.</p>
-    pub fn base_ejection_duration(&self) -> std::option::Option<&crate::types::Duration> {
+    pub fn base_ejection_duration(&self) -> ::std::option::Option<&crate::types::Duration> {
         self.base_ejection_duration.as_ref()
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
-    pub fn max_ejection_percent(&self) -> std::option::Option<i32> {
+    pub fn max_ejection_percent(&self) -> ::std::option::Option<i32> {
         self.max_ejection_percent
     }
 }
@@ -44,54 +44,56 @@ impl OutlierDetection {
 
 /// A builder for [`OutlierDetection`](crate::types::OutlierDetection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutlierDetectionBuilder {
-    pub(crate) max_server_errors: std::option::Option<i64>,
-    pub(crate) interval: std::option::Option<crate::types::Duration>,
-    pub(crate) base_ejection_duration: std::option::Option<crate::types::Duration>,
-    pub(crate) max_ejection_percent: std::option::Option<i32>,
+    pub(crate) max_server_errors: ::std::option::Option<i64>,
+    pub(crate) interval: ::std::option::Option<crate::types::Duration>,
+    pub(crate) base_ejection_duration: ::std::option::Option<crate::types::Duration>,
+    pub(crate) max_ejection_percent: ::std::option::Option<i32>,
 }
 impl OutlierDetectionBuilder {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     pub fn max_server_errors(mut self, input: i64) -> Self {
-        self.max_server_errors = Some(input);
+        self.max_server_errors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
-    pub fn set_max_server_errors(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_max_server_errors(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_server_errors = input;
         self
     }
     /// <p>The time interval between ejection sweep analysis.</p>
     pub fn interval(mut self, input: crate::types::Duration) -> Self {
-        self.interval = Some(input);
+        self.interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time interval between ejection sweep analysis.</p>
-    pub fn set_interval(mut self, input: std::option::Option<crate::types::Duration>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
         self.interval = input;
         self
     }
     /// <p>The base amount of time for which a host is ejected.</p>
     pub fn base_ejection_duration(mut self, input: crate::types::Duration) -> Self {
-        self.base_ejection_duration = Some(input);
+        self.base_ejection_duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The base amount of time for which a host is ejected.</p>
     pub fn set_base_ejection_duration(
         mut self,
-        input: std::option::Option<crate::types::Duration>,
+        input: ::std::option::Option<crate::types::Duration>,
     ) -> Self {
         self.base_ejection_duration = input;
         self
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
     pub fn max_ejection_percent(mut self, input: i32) -> Self {
-        self.max_ejection_percent = Some(input);
+        self.max_ejection_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
-    pub fn set_max_ejection_percent(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_ejection_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_ejection_percent = input;
         self
     }

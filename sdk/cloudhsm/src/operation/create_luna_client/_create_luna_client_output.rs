@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of the <code>CreateLunaClient</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLunaClientOutput {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
-    pub client_arn: std::option::Option<std::string::String>,
+    pub client_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLunaClientOutput {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(&self) -> std::option::Option<&str> {
+    pub fn client_arn(&self) -> ::std::option::Option<&str> {
         self.client_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateLunaClientOutput {
+impl ::aws_http::request_id::RequestId for CreateLunaClientOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl CreateLunaClientOutput {
 
 /// A builder for [`CreateLunaClientOutput`](crate::operation::create_luna_client::CreateLunaClientOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateLunaClientOutputBuilder {
-    pub(crate) client_arn: std::option::Option<std::string::String>,
+    pub(crate) client_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLunaClientOutputBuilder {
     /// <p>The ARN of the client.</p>
-    pub fn client_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_arn = Some(input.into());
+    pub fn client_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the client.</p>
-    pub fn set_client_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_arn = input;
         self
     }

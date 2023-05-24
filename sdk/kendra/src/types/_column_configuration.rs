@@ -2,46 +2,46 @@
 
 /// <p>Provides information about how Amazon Kendra should use the columns of a database in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnConfiguration {
     /// <p>The column that provides the document's identifier.</p>
     #[doc(hidden)]
-    pub document_id_column_name: std::option::Option<std::string::String>,
+    pub document_id_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The column that contains the contents of the document.</p>
     #[doc(hidden)]
-    pub document_data_column_name: std::option::Option<std::string::String>,
+    pub document_data_column_name: ::std::option::Option<::std::string::String>,
     /// <p>The column that contains the title of the document.</p>
     #[doc(hidden)]
-    pub document_title_column_name: std::option::Option<std::string::String>,
+    pub document_title_column_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
     #[doc(hidden)]
     pub field_mappings:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
     #[doc(hidden)]
-    pub change_detecting_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub change_detecting_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ColumnConfiguration {
     /// <p>The column that provides the document's identifier.</p>
-    pub fn document_id_column_name(&self) -> std::option::Option<&str> {
+    pub fn document_id_column_name(&self) -> ::std::option::Option<&str> {
         self.document_id_column_name.as_deref()
     }
     /// <p>The column that contains the contents of the document.</p>
-    pub fn document_data_column_name(&self) -> std::option::Option<&str> {
+    pub fn document_data_column_name(&self) -> ::std::option::Option<&str> {
         self.document_data_column_name.as_deref()
     }
     /// <p>The column that contains the title of the document.</p>
-    pub fn document_title_column_name(&self) -> std::option::Option<&str> {
+    pub fn document_title_column_name(&self) -> ::std::option::Option<&str> {
         self.document_title_column_name.as_deref()
     }
     /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
     pub fn field_mappings(
         &self,
-    ) -> std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
+    ) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
     }
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
-    pub fn change_detecting_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn change_detecting_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.change_detecting_columns.as_deref()
     }
 }
@@ -54,51 +54,63 @@ impl ColumnConfiguration {
 
 /// A builder for [`ColumnConfiguration`](crate::types::ColumnConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnConfigurationBuilder {
-    pub(crate) document_id_column_name: std::option::Option<std::string::String>,
-    pub(crate) document_data_column_name: std::option::Option<std::string::String>,
-    pub(crate) document_title_column_name: std::option::Option<std::string::String>,
+    pub(crate) document_id_column_name: ::std::option::Option<::std::string::String>,
+    pub(crate) document_data_column_name: ::std::option::Option<::std::string::String>,
+    pub(crate) document_title_column_name: ::std::option::Option<::std::string::String>,
     pub(crate) field_mappings:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    pub(crate) change_detecting_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) change_detecting_columns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ColumnConfigurationBuilder {
     /// <p>The column that provides the document's identifier.</p>
-    pub fn document_id_column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_id_column_name = Some(input.into());
+    pub fn document_id_column_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_id_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The column that provides the document's identifier.</p>
     pub fn set_document_id_column_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.document_id_column_name = input;
         self
     }
     /// <p>The column that contains the contents of the document.</p>
-    pub fn document_data_column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_data_column_name = Some(input.into());
+    pub fn document_data_column_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_data_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The column that contains the contents of the document.</p>
     pub fn set_document_data_column_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.document_data_column_name = input;
         self
     }
     /// <p>The column that contains the title of the document.</p>
-    pub fn document_title_column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_title_column_name = Some(input.into());
+    pub fn document_title_column_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_title_column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The column that contains the title of the document.</p>
     pub fn set_document_title_column_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.document_title_column_name = input;
         self
@@ -111,13 +123,13 @@ impl ColumnConfigurationBuilder {
     pub fn field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.field_mappings.unwrap_or_default();
         v.push(input);
-        self.field_mappings = Some(v);
+        self.field_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that map database column names to the corresponding fields in an index. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
     pub fn set_field_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     ) -> Self {
         self.field_mappings = input;
         self
@@ -127,16 +139,19 @@ impl ColumnConfigurationBuilder {
     /// To override the contents of this collection use [`set_change_detecting_columns`](Self::set_change_detecting_columns).
     ///
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
-    pub fn change_detecting_columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn change_detecting_columns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.change_detecting_columns.unwrap_or_default();
         v.push(input.into());
-        self.change_detecting_columns = Some(v);
+        self.change_detecting_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>One to five columns that indicate when a document in the database has changed.</p>
     pub fn set_change_detecting_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.change_detecting_columns = input;
         self

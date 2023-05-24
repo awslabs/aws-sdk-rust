@@ -2,11 +2,11 @@
 
 /// <p>Represents a scalable target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalableTarget {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     #[doc(hidden)]
-    pub service_namespace: std::option::Option<crate::types::ServiceNamespace>,
+    pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li> <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p> </li>
@@ -28,7 +28,7 @@ pub struct ScalableTarget {
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p> </li>
@@ -54,29 +54,29 @@ pub struct ScalableTarget {
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
+    pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
     #[doc(hidden)]
-    pub min_capacity: std::option::Option<i32>,
+    pub min_capacity: ::std::option::Option<i32>,
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
     #[doc(hidden)]
-    pub max_capacity: std::option::Option<i32>,
+    pub max_capacity: ::std::option::Option<i32>,
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for when the scalable target was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     #[doc(hidden)]
-    pub suspended_state: std::option::Option<crate::types::SuspendedState>,
+    pub suspended_state: ::std::option::Option<crate::types::SuspendedState>,
     /// <p>The ARN of the scalable target.</p>
     #[doc(hidden)]
-    pub scalable_target_arn: std::option::Option<std::string::String>,
+    pub scalable_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl ScalableTarget {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn service_namespace(&self) -> std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
@@ -99,7 +99,7 @@ impl ScalableTarget {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -126,31 +126,31 @@ impl ScalableTarget {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
-    pub fn min_capacity(&self) -> std::option::Option<i32> {
+    pub fn min_capacity(&self) -> ::std::option::Option<i32> {
         self.min_capacity
     }
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
-    pub fn max_capacity(&self) -> std::option::Option<i32> {
+    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
-    pub fn suspended_state(&self) -> std::option::Option<&crate::types::SuspendedState> {
+    pub fn suspended_state(&self) -> ::std::option::Option<&crate::types::SuspendedState> {
         self.suspended_state.as_ref()
     }
     /// <p>The ARN of the scalable target.</p>
-    pub fn scalable_target_arn(&self) -> std::option::Option<&str> {
+    pub fn scalable_target_arn(&self) -> ::std::option::Option<&str> {
         self.scalable_target_arn.as_deref()
     }
 }
@@ -163,28 +163,30 @@ impl ScalableTarget {
 
 /// A builder for [`ScalableTarget`](crate::types::ScalableTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalableTargetBuilder {
-    pub(crate) service_namespace: std::option::Option<crate::types::ServiceNamespace>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
-    pub(crate) min_capacity: std::option::Option<i32>,
-    pub(crate) max_capacity: std::option::Option<i32>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) suspended_state: std::option::Option<crate::types::SuspendedState>,
-    pub(crate) scalable_target_arn: std::option::Option<std::string::String>,
+    pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
+    pub(crate) min_capacity: ::std::option::Option<i32>,
+    pub(crate) max_capacity: ::std::option::Option<i32>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) suspended_state: ::std::option::Option<crate::types::SuspendedState>,
+    pub(crate) scalable_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl ScalableTargetBuilder {
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
-        self.service_namespace = Some(input);
+        self.service_namespace = ::std::option::Option::Some(input);
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn set_service_namespace(
         mut self,
-        input: std::option::Option<crate::types::ServiceNamespace>,
+        input: ::std::option::Option<crate::types::ServiceNamespace>,
     ) -> Self {
         self.service_namespace = input;
         self
@@ -209,8 +211,8 @@ impl ScalableTargetBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
@@ -233,7 +235,7 @@ impl ScalableTargetBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -262,7 +264,7 @@ impl ScalableTargetBuilder {
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
-        self.scalable_dimension = Some(input);
+        self.scalable_dimension = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -291,76 +293,79 @@ impl ScalableTargetBuilder {
     /// </ul>
     pub fn set_scalable_dimension(
         mut self,
-        input: std::option::Option<crate::types::ScalableDimension>,
+        input: ::std::option::Option<crate::types::ScalableDimension>,
     ) -> Self {
         self.scalable_dimension = input;
         self
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
     pub fn min_capacity(mut self, input: i32) -> Self {
-        self.min_capacity = Some(input);
+        self.min_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value to scale to in response to a scale-in activity.</p>
-    pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_capacity = input;
         self
     }
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
     pub fn max_capacity(mut self, input: i32) -> Self {
-        self.max_capacity = Some(input);
+        self.max_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value to scale to in response to a scale-out activity.</p>
-    pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_capacity = input;
         self
     }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for when the scalable target was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub fn suspended_state(mut self, input: crate::types::SuspendedState) -> Self {
-        self.suspended_state = Some(input);
+        self.suspended_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.</p>
     pub fn set_suspended_state(
         mut self,
-        input: std::option::Option<crate::types::SuspendedState>,
+        input: ::std::option::Option<crate::types::SuspendedState>,
     ) -> Self {
         self.suspended_state = input;
         self
     }
     /// <p>The ARN of the scalable target.</p>
-    pub fn scalable_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scalable_target_arn = Some(input.into());
+    pub fn scalable_target_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.scalable_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the scalable target.</p>
     pub fn set_scalable_target_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.scalable_target_arn = input;
         self

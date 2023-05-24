@@ -2,27 +2,27 @@
 
 /// <p>Contains the <code>UsageRecords</code> processed by <code>BatchMeterUsage</code> and any records that have failed due to transient error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     #[doc(hidden)]
-    pub results: std::option::Option<std::vec::Vec<crate::types::UsageRecordResult>>,
+    pub results: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>,
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
     #[doc(hidden)]
-    pub unprocessed_records: std::option::Option<std::vec::Vec<crate::types::UsageRecord>>,
+    pub unprocessed_records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     _request_id: Option<String>,
 }
 impl BatchMeterUsageOutput {
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::types::UsageRecordResult]> {
+    pub fn results(&self) -> ::std::option::Option<&[crate::types::UsageRecordResult]> {
         self.results.as_deref()
     }
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
-    pub fn unprocessed_records(&self) -> std::option::Option<&[crate::types::UsageRecord]> {
+    pub fn unprocessed_records(&self) -> ::std::option::Option<&[crate::types::UsageRecord]> {
         self.unprocessed_records.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchMeterUsageOutput {
+impl ::aws_http::request_id::RequestId for BatchMeterUsageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,13 @@ impl BatchMeterUsageOutput {
 
 /// A builder for [`BatchMeterUsageOutput`](crate::operation::batch_meter_usage::BatchMeterUsageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchMeterUsageOutputBuilder {
-    pub(crate) results: std::option::Option<std::vec::Vec<crate::types::UsageRecordResult>>,
-    pub(crate) unprocessed_records: std::option::Option<std::vec::Vec<crate::types::UsageRecord>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>,
+    pub(crate) unprocessed_records:
+        ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     _request_id: Option<String>,
 }
 impl BatchMeterUsageOutputBuilder {
@@ -52,13 +55,13 @@ impl BatchMeterUsageOutputBuilder {
     pub fn results(mut self, input: crate::types::UsageRecordResult) -> Self {
         let mut v = self.results.unwrap_or_default();
         v.push(input);
-        self.results = Some(v);
+        self.results = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     pub fn set_results(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UsageRecordResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>,
     ) -> Self {
         self.results = input;
         self
@@ -71,13 +74,13 @@ impl BatchMeterUsageOutputBuilder {
     pub fn unprocessed_records(mut self, input: crate::types::UsageRecord) -> Self {
         let mut v = self.unprocessed_records.unwrap_or_default();
         v.push(input);
-        self.unprocessed_records = Some(v);
+        self.unprocessed_records = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
     pub fn set_unprocessed_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UsageRecord>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     ) -> Self {
         self.unprocessed_records = input;
         self

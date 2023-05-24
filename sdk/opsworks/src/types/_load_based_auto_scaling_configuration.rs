@@ -2,36 +2,36 @@
 
 /// <p>Describes a layer's load-based auto scaling configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBasedAutoScalingConfiguration {
     /// <p>The layer ID.</p>
     #[doc(hidden)]
-    pub layer_id: std::option::Option<std::string::String>,
+    pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
     #[doc(hidden)]
-    pub enable: std::option::Option<bool>,
+    pub enable: ::std::option::Option<bool>,
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
     #[doc(hidden)]
-    pub up_scaling: std::option::Option<crate::types::AutoScalingThresholds>,
+    pub up_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
     #[doc(hidden)]
-    pub down_scaling: std::option::Option<crate::types::AutoScalingThresholds>,
+    pub down_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
 }
 impl LoadBasedAutoScalingConfiguration {
     /// <p>The layer ID.</p>
-    pub fn layer_id(&self) -> std::option::Option<&str> {
+    pub fn layer_id(&self) -> ::std::option::Option<&str> {
         self.layer_id.as_deref()
     }
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
-    pub fn enable(&self) -> std::option::Option<bool> {
+    pub fn enable(&self) -> ::std::option::Option<bool> {
         self.enable
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
-    pub fn up_scaling(&self) -> std::option::Option<&crate::types::AutoScalingThresholds> {
+    pub fn up_scaling(&self) -> ::std::option::Option<&crate::types::AutoScalingThresholds> {
         self.up_scaling.as_ref()
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
-    pub fn down_scaling(&self) -> std::option::Option<&crate::types::AutoScalingThresholds> {
+    pub fn down_scaling(&self) -> ::std::option::Option<&crate::types::AutoScalingThresholds> {
         self.down_scaling.as_ref()
     }
 }
@@ -44,56 +44,58 @@ impl LoadBasedAutoScalingConfiguration {
 
 /// A builder for [`LoadBasedAutoScalingConfiguration`](crate::types::LoadBasedAutoScalingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoadBasedAutoScalingConfigurationBuilder {
-    pub(crate) layer_id: std::option::Option<std::string::String>,
-    pub(crate) enable: std::option::Option<bool>,
-    pub(crate) up_scaling: std::option::Option<crate::types::AutoScalingThresholds>,
-    pub(crate) down_scaling: std::option::Option<crate::types::AutoScalingThresholds>,
+    pub(crate) layer_id: ::std::option::Option<::std::string::String>,
+    pub(crate) enable: ::std::option::Option<bool>,
+    pub(crate) up_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
+    pub(crate) down_scaling: ::std::option::Option<crate::types::AutoScalingThresholds>,
 }
 impl LoadBasedAutoScalingConfigurationBuilder {
     /// <p>The layer ID.</p>
-    pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.layer_id = Some(input.into());
+    pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.layer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The layer ID.</p>
-    pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_id = input;
         self
     }
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
     pub fn enable(mut self, input: bool) -> Self {
-        self.enable = Some(input);
+        self.enable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether load-based auto scaling is enabled for the layer.</p>
-    pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
     pub fn up_scaling(mut self, input: crate::types::AutoScalingThresholds) -> Self {
-        self.up_scaling = Some(input);
+        self.up_scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and when AWS OpsWorks Stacks increases the number of instances.</p>
     pub fn set_up_scaling(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingThresholds>,
+        input: ::std::option::Option<crate::types::AutoScalingThresholds>,
     ) -> Self {
         self.up_scaling = input;
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
     pub fn down_scaling(mut self, input: crate::types::AutoScalingThresholds) -> Self {
-        self.down_scaling = Some(input);
+        self.down_scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and when AWS OpsWorks Stacks reduces the number of instances.</p>
     pub fn set_down_scaling(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingThresholds>,
+        input: ::std::option::Option<crate::types::AutoScalingThresholds>,
     ) -> Self {
         self.down_scaling = input;
         self

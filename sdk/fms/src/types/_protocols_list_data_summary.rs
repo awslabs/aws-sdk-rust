@@ -2,36 +2,36 @@
 
 /// <p>Details of the Firewall Manager protocols list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtocolsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
     #[doc(hidden)]
-    pub list_arn: std::option::Option<std::string::String>,
+    pub list_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the specified protocols list.</p>
     #[doc(hidden)]
-    pub list_id: std::option::Option<std::string::String>,
+    pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified protocols list.</p>
     #[doc(hidden)]
-    pub list_name: std::option::Option<std::string::String>,
+    pub list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     #[doc(hidden)]
-    pub protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProtocolsListDataSummary {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    pub fn list_arn(&self) -> std::option::Option<&str> {
+    pub fn list_arn(&self) -> ::std::option::Option<&str> {
         self.list_arn.as_deref()
     }
     /// <p>The ID of the specified protocols list.</p>
-    pub fn list_id(&self) -> std::option::Option<&str> {
+    pub fn list_id(&self) -> ::std::option::Option<&str> {
         self.list_id.as_deref()
     }
     /// <p>The name of the specified protocols list.</p>
-    pub fn list_name(&self) -> std::option::Option<&str> {
+    pub fn list_name(&self) -> ::std::option::Option<&str> {
         self.list_name.as_deref()
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn protocols_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn protocols_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.protocols_list.as_deref()
     }
 }
@@ -44,41 +44,43 @@ impl ProtocolsListDataSummary {
 
 /// A builder for [`ProtocolsListDataSummary`](crate::types::ProtocolsListDataSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtocolsListDataSummaryBuilder {
-    pub(crate) list_arn: std::option::Option<std::string::String>,
-    pub(crate) list_id: std::option::Option<std::string::String>,
-    pub(crate) list_name: std::option::Option<std::string::String>,
-    pub(crate) protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) list_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) list_id: ::std::option::Option<::std::string::String>,
+    pub(crate) list_name: ::std::option::Option<::std::string::String>,
+    pub(crate) protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProtocolsListDataSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    pub fn list_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.list_arn = Some(input.into());
+    pub fn list_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.list_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
-    pub fn set_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_list_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_arn = input;
         self
     }
     /// <p>The ID of the specified protocols list.</p>
-    pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.list_id = Some(input.into());
+    pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the specified protocols list.</p>
-    pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_id = input;
         self
     }
     /// <p>The name of the specified protocols list.</p>
-    pub fn list_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.list_name = Some(input.into());
+    pub fn list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the specified protocols list.</p>
-    pub fn set_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_name = input;
         self
     }
@@ -87,16 +89,19 @@ impl ProtocolsListDataSummaryBuilder {
     /// To override the contents of this collection use [`set_protocols_list`](Self::set_protocols_list).
     ///
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn protocols_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn protocols_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.protocols_list.unwrap_or_default();
         v.push(input.into());
-        self.protocols_list = Some(v);
+        self.protocols_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     pub fn set_protocols_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.protocols_list = input;
         self

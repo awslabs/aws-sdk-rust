@@ -2,11 +2,11 @@
 
 /// <p>Contains the output of DeactivatePipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeactivatePipelineOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeactivatePipelineOutput {
+impl ::aws_http::request_id::RequestId for DeactivatePipelineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeactivatePipelineOutput {
 
 /// A builder for [`DeactivatePipelineOutput`](crate::operation::deactivate_pipeline::DeactivatePipelineOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeactivatePipelineOutputBuilder {
     _request_id: Option<String>,
 }

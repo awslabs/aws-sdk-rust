@@ -41,13 +41,13 @@
 /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Mpeg2InterlaceMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum Mpeg2InterlaceMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Mpeg2InterlaceMode {
+impl ::std::convert::From<&str> for Mpeg2InterlaceMode {
     fn from(s: &str) -> Self {
         match s {
             "BOTTOM_FIELD" => Mpeg2InterlaceMode::BottomField,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for Mpeg2InterlaceMode {
         }
     }
 }
-impl std::str::FromStr for Mpeg2InterlaceMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Mpeg2InterlaceMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mpeg2InterlaceMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Mpeg2InterlaceMode::from(s))
     }
 }
 impl Mpeg2InterlaceMode {
@@ -107,7 +107,7 @@ impl Mpeg2InterlaceMode {
         ]
     }
 }
-impl AsRef<str> for Mpeg2InterlaceMode {
+impl ::std::convert::AsRef<str> for Mpeg2InterlaceMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

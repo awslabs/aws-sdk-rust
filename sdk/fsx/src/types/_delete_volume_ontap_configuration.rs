@@ -2,22 +2,22 @@
 
 /// <p>Use to specify skipping a final backup, or to add tags to a final backup.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVolumeOntapConfiguration {
     /// <p>Set to true if you want to skip taking a final backup of the volume you are deleting.</p>
     #[doc(hidden)]
-    pub skip_final_backup: std::option::Option<bool>,
+    pub skip_final_backup: ::std::option::Option<bool>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     #[doc(hidden)]
-    pub final_backup_tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteVolumeOntapConfiguration {
     /// <p>Set to true if you want to skip taking a final backup of the volume you are deleting.</p>
-    pub fn skip_final_backup(&self) -> std::option::Option<bool> {
+    pub fn skip_final_backup(&self) -> ::std::option::Option<bool> {
         self.skip_final_backup
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn final_backup_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn final_backup_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.final_backup_tags.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl DeleteVolumeOntapConfiguration {
 
 /// A builder for [`DeleteVolumeOntapConfiguration`](crate::types::DeleteVolumeOntapConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteVolumeOntapConfigurationBuilder {
-    pub(crate) skip_final_backup: std::option::Option<bool>,
-    pub(crate) final_backup_tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) skip_final_backup: ::std::option::Option<bool>,
+    pub(crate) final_backup_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DeleteVolumeOntapConfigurationBuilder {
     /// <p>Set to true if you want to skip taking a final backup of the volume you are deleting.</p>
     pub fn skip_final_backup(mut self, input: bool) -> Self {
-        self.skip_final_backup = Some(input);
+        self.skip_final_backup = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to true if you want to skip taking a final backup of the volume you are deleting.</p>
-    pub fn set_skip_final_backup(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_final_backup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_final_backup = input;
         self
     }
@@ -54,13 +56,13 @@ impl DeleteVolumeOntapConfigurationBuilder {
     pub fn final_backup_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.final_backup_tags.unwrap_or_default();
         v.push(input);
-        self.final_backup_tags = Some(v);
+        self.final_backup_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn set_final_backup_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.final_backup_tags = input;
         self

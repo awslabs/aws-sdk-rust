@@ -2,41 +2,41 @@
 
 /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Input {
     /// <p>The Amazon S3 location where the data is stored.</p>
     #[doc(hidden)]
-    pub s3_input_definition: std::option::Option<crate::types::S3Location>,
+    pub s3_input_definition: ::std::option::Option<crate::types::S3Location>,
     /// <p>The Glue Data Catalog parameters for the data.</p>
     #[doc(hidden)]
     pub data_catalog_input_definition:
-        std::option::Option<crate::types::DataCatalogInputDefinition>,
+        ::std::option::Option<crate::types::DataCatalogInputDefinition>,
     /// <p>Connection information for dataset input files stored in a database.</p>
     #[doc(hidden)]
-    pub database_input_definition: std::option::Option<crate::types::DatabaseInputDefinition>,
+    pub database_input_definition: ::std::option::Option<crate::types::DatabaseInputDefinition>,
     /// <p>Contains additional resource information needed for specific datasets.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<crate::types::Metadata>,
+    pub metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl Input {
     /// <p>The Amazon S3 location where the data is stored.</p>
-    pub fn s3_input_definition(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3_input_definition(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.s3_input_definition.as_ref()
     }
     /// <p>The Glue Data Catalog parameters for the data.</p>
     pub fn data_catalog_input_definition(
         &self,
-    ) -> std::option::Option<&crate::types::DataCatalogInputDefinition> {
+    ) -> ::std::option::Option<&crate::types::DataCatalogInputDefinition> {
         self.data_catalog_input_definition.as_ref()
     }
     /// <p>Connection information for dataset input files stored in a database.</p>
     pub fn database_input_definition(
         &self,
-    ) -> std::option::Option<&crate::types::DatabaseInputDefinition> {
+    ) -> ::std::option::Option<&crate::types::DatabaseInputDefinition> {
         self.database_input_definition.as_ref()
     }
     /// <p>Contains additional resource information needed for specific datasets.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::Metadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
         self.metadata.as_ref()
     }
 }
@@ -49,25 +49,27 @@ impl Input {
 
 /// A builder for [`Input`](crate::types::Input).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputBuilder {
-    pub(crate) s3_input_definition: std::option::Option<crate::types::S3Location>,
+    pub(crate) s3_input_definition: ::std::option::Option<crate::types::S3Location>,
     pub(crate) data_catalog_input_definition:
-        std::option::Option<crate::types::DataCatalogInputDefinition>,
+        ::std::option::Option<crate::types::DataCatalogInputDefinition>,
     pub(crate) database_input_definition:
-        std::option::Option<crate::types::DatabaseInputDefinition>,
-    pub(crate) metadata: std::option::Option<crate::types::Metadata>,
+        ::std::option::Option<crate::types::DatabaseInputDefinition>,
+    pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
 }
 impl InputBuilder {
     /// <p>The Amazon S3 location where the data is stored.</p>
     pub fn s3_input_definition(mut self, input: crate::types::S3Location) -> Self {
-        self.s3_input_definition = Some(input);
+        self.s3_input_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 location where the data is stored.</p>
     pub fn set_s3_input_definition(
         mut self,
-        input: std::option::Option<crate::types::S3Location>,
+        input: ::std::option::Option<crate::types::S3Location>,
     ) -> Self {
         self.s3_input_definition = input;
         self
@@ -77,13 +79,13 @@ impl InputBuilder {
         mut self,
         input: crate::types::DataCatalogInputDefinition,
     ) -> Self {
-        self.data_catalog_input_definition = Some(input);
+        self.data_catalog_input_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Glue Data Catalog parameters for the data.</p>
     pub fn set_data_catalog_input_definition(
         mut self,
-        input: std::option::Option<crate::types::DataCatalogInputDefinition>,
+        input: ::std::option::Option<crate::types::DataCatalogInputDefinition>,
     ) -> Self {
         self.data_catalog_input_definition = input;
         self
@@ -93,24 +95,24 @@ impl InputBuilder {
         mut self,
         input: crate::types::DatabaseInputDefinition,
     ) -> Self {
-        self.database_input_definition = Some(input);
+        self.database_input_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Connection information for dataset input files stored in a database.</p>
     pub fn set_database_input_definition(
         mut self,
-        input: std::option::Option<crate::types::DatabaseInputDefinition>,
+        input: ::std::option::Option<crate::types::DatabaseInputDefinition>,
     ) -> Self {
         self.database_input_definition = input;
         self
     }
     /// <p>Contains additional resource information needed for specific datasets.</p>
     pub fn metadata(mut self, input: crate::types::Metadata) -> Self {
-        self.metadata = Some(input);
+        self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains additional resource information needed for specific datasets.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<crate::types::Metadata>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::Metadata>) -> Self {
         self.metadata = input;
         self
     }

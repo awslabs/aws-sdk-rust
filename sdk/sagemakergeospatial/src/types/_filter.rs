@@ -2,36 +2,36 @@
 
 /// <p>The structure representing the filters supported by a RasterDataCollection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the filter being used.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The minimum value of the filter.</p>
     #[doc(hidden)]
-    pub minimum: std::option::Option<f32>,
+    pub minimum: ::std::option::Option<f32>,
     /// <p>The maximum value of the filter.</p>
     #[doc(hidden)]
-    pub maximum: std::option::Option<f32>,
+    pub maximum: ::std::option::Option<f32>,
 }
 impl Filter {
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the filter being used.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The minimum value of the filter.</p>
-    pub fn minimum(&self) -> std::option::Option<f32> {
+    pub fn minimum(&self) -> ::std::option::Option<f32> {
         self.minimum
     }
     /// <p>The maximum value of the filter.</p>
-    pub fn maximum(&self) -> std::option::Option<f32> {
+    pub fn maximum(&self) -> ::std::option::Option<f32> {
         self.maximum
     }
 }
@@ -44,51 +44,53 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) minimum: std::option::Option<f32>,
-    pub(crate) maximum: std::option::Option<f32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) minimum: ::std::option::Option<f32>,
+    pub(crate) maximum: ::std::option::Option<f32>,
 }
 impl FilterBuilder {
     /// <p>The name of the filter.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type of the filter being used.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the filter being used.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The minimum value of the filter.</p>
     pub fn minimum(mut self, input: f32) -> Self {
-        self.minimum = Some(input);
+        self.minimum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value of the filter.</p>
-    pub fn set_minimum(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_minimum(mut self, input: ::std::option::Option<f32>) -> Self {
         self.minimum = input;
         self
     }
     /// <p>The maximum value of the filter.</p>
     pub fn maximum(mut self, input: f32) -> Self {
-        self.maximum = Some(input);
+        self.maximum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value of the filter.</p>
-    pub fn set_maximum(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_maximum(mut self, input: ::std::option::Option<f32>) -> Self {
         self.maximum = input;
         self
     }

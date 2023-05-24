@@ -2,77 +2,81 @@
 
 /// <p>vCenter client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VcenterClient {
     /// <p>ID of vCenter client.</p>
     #[doc(hidden)]
-    pub vcenter_client_id: std::option::Option<std::string::String>,
+    pub vcenter_client_id: ::std::option::Option<::std::string::String>,
     /// <p>Arn of vCenter client.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Hostname of vCenter client .</p>
     #[doc(hidden)]
-    pub hostname: std::option::Option<std::string::String>,
+    pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>Vcenter UUID of vCenter client.</p>
     #[doc(hidden)]
-    pub vcenter_uuid: std::option::Option<std::string::String>,
+    pub vcenter_uuid: ::std::option::Option<::std::string::String>,
     /// <p>Datacenter name of vCenter client.</p>
     #[doc(hidden)]
-    pub datacenter_name: std::option::Option<std::string::String>,
+    pub datacenter_name: ::std::option::Option<::std::string::String>,
     /// <p>Last seen time of vCenter client.</p>
     #[doc(hidden)]
-    pub last_seen_datetime: std::option::Option<std::string::String>,
+    pub last_seen_datetime: ::std::option::Option<::std::string::String>,
     /// <p>Tags for Source Server of vCenter client.</p>
     #[doc(hidden)]
-    pub source_server_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub source_server_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Tags for vCenter client.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl VcenterClient {
     /// <p>ID of vCenter client.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> ::std::option::Option<&str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Arn of vCenter client.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Hostname of vCenter client .</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>Vcenter UUID of vCenter client.</p>
-    pub fn vcenter_uuid(&self) -> std::option::Option<&str> {
+    pub fn vcenter_uuid(&self) -> ::std::option::Option<&str> {
         self.vcenter_uuid.as_deref()
     }
     /// <p>Datacenter name of vCenter client.</p>
-    pub fn datacenter_name(&self) -> std::option::Option<&str> {
+    pub fn datacenter_name(&self) -> ::std::option::Option<&str> {
         self.datacenter_name.as_deref()
     }
     /// <p>Last seen time of vCenter client.</p>
-    pub fn last_seen_datetime(&self) -> std::option::Option<&str> {
+    pub fn last_seen_datetime(&self) -> ::std::option::Option<&str> {
         self.last_seen_datetime.as_deref()
     }
     /// <p>Tags for Source Server of vCenter client.</p>
     pub fn source_server_tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.source_server_tags.as_ref()
     }
     /// <p>Tags for vCenter client.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for VcenterClient {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for VcenterClient {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VcenterClient");
         formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.field("arn", &self.arn);
@@ -94,82 +98,96 @@ impl VcenterClient {
 
 /// A builder for [`VcenterClient`](crate::types::VcenterClient).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct VcenterClientBuilder {
-    pub(crate) vcenter_client_id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) hostname: std::option::Option<std::string::String>,
-    pub(crate) vcenter_uuid: std::option::Option<std::string::String>,
-    pub(crate) datacenter_name: std::option::Option<std::string::String>,
-    pub(crate) last_seen_datetime: std::option::Option<std::string::String>,
-    pub(crate) source_server_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) vcenter_client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) vcenter_uuid: ::std::option::Option<::std::string::String>,
+    pub(crate) datacenter_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_seen_datetime: ::std::option::Option<::std::string::String>,
+    pub(crate) source_server_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl VcenterClientBuilder {
     /// <p>ID of vCenter client.</p>
-    pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vcenter_client_id = Some(input.into());
+    pub fn vcenter_client_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vcenter_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of vCenter client.</p>
     pub fn set_vcenter_client_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vcenter_client_id = input;
         self
     }
     /// <p>Arn of vCenter client.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Arn of vCenter client.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>Hostname of vCenter client .</p>
-    pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hostname = Some(input.into());
+    pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Hostname of vCenter client .</p>
-    pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
     /// <p>Vcenter UUID of vCenter client.</p>
-    pub fn vcenter_uuid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vcenter_uuid = Some(input.into());
+    pub fn vcenter_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vcenter_uuid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Vcenter UUID of vCenter client.</p>
-    pub fn set_vcenter_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vcenter_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vcenter_uuid = input;
         self
     }
     /// <p>Datacenter name of vCenter client.</p>
-    pub fn datacenter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.datacenter_name = Some(input.into());
+    pub fn datacenter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.datacenter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Datacenter name of vCenter client.</p>
-    pub fn set_datacenter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_datacenter_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.datacenter_name = input;
         self
     }
     /// <p>Last seen time of vCenter client.</p>
-    pub fn last_seen_datetime(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_seen_datetime = Some(input.into());
+    pub fn last_seen_datetime(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_seen_datetime = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Last seen time of vCenter client.</p>
     pub fn set_last_seen_datetime(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_seen_datetime = input;
         self
@@ -181,19 +199,19 @@ impl VcenterClientBuilder {
     /// <p>Tags for Source Server of vCenter client.</p>
     pub fn source_server_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.source_server_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.source_server_tags = Some(hash_map);
+        self.source_server_tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags for Source Server of vCenter client.</p>
     pub fn set_source_server_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.source_server_tags = input;
@@ -206,19 +224,19 @@ impl VcenterClientBuilder {
     /// <p>Tags for vCenter client.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags for vCenter client.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -238,8 +256,8 @@ impl VcenterClientBuilder {
         }
     }
 }
-impl std::fmt::Debug for VcenterClientBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for VcenterClientBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VcenterClientBuilder");
         formatter.field("vcenter_client_id", &self.vcenter_client_id);
         formatter.field("arn", &self.arn);

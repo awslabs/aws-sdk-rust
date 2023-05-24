@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResponsePlan`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_response_plan::builders::GetResponsePlanFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the response plan.</p>
     /// - On success, responds with [`GetResponsePlanOutput`](crate::operation::get_response_plan::GetResponsePlanOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_response_plan::GetResponsePlanOutput::arn): <p>The ARN of the response plan.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_response_plan::GetResponsePlanOutput::name): <p>The short format name of the response plan. The name can't contain spaces.</p>

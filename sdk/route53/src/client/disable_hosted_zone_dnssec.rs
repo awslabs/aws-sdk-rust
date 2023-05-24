@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableHostedZoneDNSSEC`](crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDNSSECFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hosted_zone_id(impl Into<String>)`](crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDNSSECFluentBuilder::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDNSSECFluentBuilder::set_hosted_zone_id): <p>A unique string used to identify a hosted zone.</p>
+    ///   - [`hosted_zone_id(impl ::std::convert::Into<String>)`](crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDNSSECFluentBuilder::hosted_zone_id) / [`set_hosted_zone_id(Option<String>)`](crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDNSSECFluentBuilder::set_hosted_zone_id): <p>A unique string used to identify a hosted zone.</p>
     /// - On success, responds with [`DisableHostedZoneDnssecOutput`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput) with field(s):
     ///   - [`change_info(Option<ChangeInfo>)`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput::change_info): <p>A complex type that describes change information about changes made to your hosted zone.</p>
     /// - On failure, responds with [`SdkError<DisableHostedZoneDNSSECError>`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError)

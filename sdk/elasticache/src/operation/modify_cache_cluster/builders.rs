@@ -6,29 +6,29 @@ pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_input::Mod
 /// Fluent builder constructing a request to `ModifyCacheCluster`.
 ///
 /// <p>Modifies the settings for a cluster. You can use this operation to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCacheClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::modify_cache_cluster::builders::ModifyCacheClusterInputBuilder,
 }
 impl ModifyCacheClusterFluentBuilder {
     /// Creates a new `ModifyCacheCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_cache_cluster::ModifyCacheCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_cache_cluster::ModifyCacheClusterError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ModifyCacheClusterFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_cache_cluster::ModifyCacheClusterOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_cache_cluster::ModifyCacheClusterError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl ModifyCacheClusterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_cache_cluster::ModifyCacheClusterOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_cache_cluster::ModifyCacheClusterError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The cluster identifier. This value is stored as a lowercase string.</p>
-    pub fn cache_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_cluster_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_cluster_id(input.into());
         self
     }
     /// <p>The cluster identifier. This value is stored as a lowercase string.</p>
-    pub fn set_cache_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cache_cluster_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cache_cluster_id(input);
         self
     }
@@ -106,7 +115,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
     /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
     /// </note>
-    pub fn set_num_cache_nodes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_num_cache_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_cache_nodes(input);
         self
     }
@@ -116,7 +125,10 @@ impl ModifyCacheClusterFluentBuilder {
     ///
     /// <p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.</p>
     /// <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
-    pub fn cache_node_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_node_ids_to_remove(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_node_ids_to_remove(input.into());
         self
     }
@@ -124,7 +136,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
     pub fn set_cache_node_ids_to_remove(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_cache_node_ids_to_remove(input);
         self
@@ -145,7 +157,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
     /// <p>Only newly created nodes are located in different Availability Zones. </p>
     /// </note>
-    pub fn set_az_mode(mut self, input: std::option::Option<crate::types::AzMode>) -> Self {
+    pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::AzMode>) -> Self {
         self.inner = self.inner.set_az_mode(input);
         self
     }
@@ -195,7 +207,10 @@ impl ModifyCacheClusterFluentBuilder {
     /// </important> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn new_availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn new_availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.new_availability_zones(input.into());
         self
     }
@@ -243,7 +258,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// </ul>
     pub fn set_new_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_new_availability_zones(input);
         self
@@ -255,7 +270,10 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>A list of cache security group names to authorize on this cluster. This change is asynchronously applied as soon as possible.</p>
     /// <p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
-    pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_security_group_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_security_group_names(input.into());
         self
     }
@@ -264,7 +282,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
     pub fn set_cache_security_group_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_cache_security_group_names(input);
         self
@@ -275,7 +293,10 @@ impl ModifyCacheClusterFluentBuilder {
     ///
     /// <p>Specifies the VPC Security Groups associated with the cluster.</p>
     /// <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
@@ -283,7 +304,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
@@ -300,7 +321,10 @@ impl ModifyCacheClusterFluentBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -318,7 +342,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn set_preferred_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
@@ -326,7 +350,10 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
     /// </note>
-    pub fn notification_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notification_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.notification_topic_arn(input.into());
         self
     }
@@ -335,27 +362,33 @@ impl ModifyCacheClusterFluentBuilder {
     /// </note>
     pub fn set_notification_topic_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_notification_topic_arn(input);
         self
     }
     /// <p>The name of the cache parameter group to apply to this cluster. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
-    pub fn cache_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cache parameter group to apply to this cluster. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
     pub fn set_cache_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }
     /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>.</p>
     /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
-    pub fn notification_topic_status(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notification_topic_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.notification_topic_status(input.into());
         self
     }
@@ -363,7 +396,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
     pub fn set_notification_topic_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_notification_topic_status(input);
         self
@@ -384,19 +417,25 @@ impl ModifyCacheClusterFluentBuilder {
     /// </important>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -406,7 +445,7 @@ impl ModifyCacheClusterFluentBuilder {
         self
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
@@ -420,27 +459,39 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <note>
     /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
     /// </note>
-    pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_snapshot_retention_limit(input);
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
-    pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.snapshot_window(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
-    pub fn set_snapshot_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_window(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_window(input);
         self
     }
     /// <p>A valid cache node type that you want to scale this cluster up to.</p>
-    pub fn cache_node_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_node_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_node_type(input.into());
         self
     }
     /// <p>A valid cache node type that you want to scale this cluster up to.</p>
-    pub fn set_cache_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cache_node_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cache_node_type(input);
         self
     }
@@ -451,7 +502,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
     /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
-    pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auth_token(input.into());
         self
     }
@@ -462,7 +513,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
     /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
-    pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auth_token(input);
         self
     }
@@ -487,7 +538,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
     pub fn set_auth_token_update_strategy(
         mut self,
-        input: std::option::Option<crate::types::AuthTokenUpdateStrategyType>,
+        input: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>,
     ) -> Self {
         self.inner = self.inner.set_auth_token_update_strategy(input);
         self
@@ -507,7 +558,9 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>Specifies the destination, format and type of the logs.</p>
     pub fn set_log_delivery_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_log_delivery_configurations(input);
         self
@@ -520,7 +573,7 @@ impl ModifyCacheClusterFluentBuilder {
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(
         mut self,
-        input: std::option::Option<crate::types::IpDiscovery>,
+        input: ::std::option::Option<crate::types::IpDiscovery>,
     ) -> Self {
         self.inner = self.inner.set_ip_discovery(input);
         self

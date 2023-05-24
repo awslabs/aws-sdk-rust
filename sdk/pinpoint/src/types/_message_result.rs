@@ -2,7 +2,7 @@
 
 /// <p>Provides information about the results of sending a message directly to an endpoint address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageResult {
     /// <p>The delivery status of the message. Possible values are:</p>
     /// <ul>
@@ -16,19 +16,19 @@ pub struct MessageResult {
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
     #[doc(hidden)]
-    pub delivery_status: std::option::Option<crate::types::DeliveryStatus>,
+    pub delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
     /// <p>The unique identifier for the message that was sent.</p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The downstream service status code for delivering the message.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<i32>,
+    pub status_code: ::std::option::Option<i32>,
     /// <p>The status message for delivering the message.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
     #[doc(hidden)]
-    pub updated_token: std::option::Option<std::string::String>,
+    pub updated_token: ::std::option::Option<::std::string::String>,
 }
 impl MessageResult {
     /// <p>The delivery status of the message. Possible values are:</p>
@@ -42,23 +42,23 @@ impl MessageResult {
     /// <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li>
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
-    pub fn delivery_status(&self) -> std::option::Option<&crate::types::DeliveryStatus> {
+    pub fn delivery_status(&self) -> ::std::option::Option<&crate::types::DeliveryStatus> {
         self.delivery_status.as_ref()
     }
     /// <p>The unique identifier for the message that was sent.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>The downstream service status code for delivering the message.</p>
-    pub fn status_code(&self) -> std::option::Option<i32> {
+    pub fn status_code(&self) -> ::std::option::Option<i32> {
         self.status_code
     }
     /// <p>The status message for delivering the message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
-    pub fn updated_token(&self) -> std::option::Option<&str> {
+    pub fn updated_token(&self) -> ::std::option::Option<&str> {
         self.updated_token.as_deref()
     }
 }
@@ -71,13 +71,15 @@ impl MessageResult {
 
 /// A builder for [`MessageResult`](crate::types::MessageResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MessageResultBuilder {
-    pub(crate) delivery_status: std::option::Option<crate::types::DeliveryStatus>,
-    pub(crate) message_id: std::option::Option<std::string::String>,
-    pub(crate) status_code: std::option::Option<i32>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) updated_token: std::option::Option<std::string::String>,
+    pub(crate) delivery_status: ::std::option::Option<crate::types::DeliveryStatus>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status_code: ::std::option::Option<i32>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_token: ::std::option::Option<::std::string::String>,
 }
 impl MessageResultBuilder {
     /// <p>The delivery status of the message. Possible values are:</p>
@@ -92,7 +94,7 @@ impl MessageResultBuilder {
     /// <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li>
     /// </ul>
     pub fn delivery_status(mut self, input: crate::types::DeliveryStatus) -> Self {
-        self.delivery_status = Some(input);
+        self.delivery_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The delivery status of the message. Possible values are:</p>
@@ -108,48 +110,60 @@ impl MessageResultBuilder {
     /// </ul>
     pub fn set_delivery_status(
         mut self,
-        input: std::option::Option<crate::types::DeliveryStatus>,
+        input: ::std::option::Option<crate::types::DeliveryStatus>,
     ) -> Self {
         self.delivery_status = input;
         self
     }
     /// <p>The unique identifier for the message that was sent.</p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the message that was sent.</p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
     /// <p>The downstream service status code for delivering the message.</p>
     pub fn status_code(mut self, input: i32) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The downstream service status code for delivering the message.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>The status message for delivering the message.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for delivering the message.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
-    pub fn updated_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_token = Some(input.into());
+    pub fn updated_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.updated_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
-    pub fn set_updated_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.updated_token = input;
         self
     }

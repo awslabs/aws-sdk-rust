@@ -6,29 +6,29 @@ pub use crate::operation::list_fhir_datastores::_list_fhir_datastores_input::Lis
 /// Fluent builder constructing a request to `ListFHIRDatastores`.
 ///
 /// <p>Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store status.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFHIRDatastoresFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_fhir_datastores::builders::ListFhirDatastoresInputBuilder,
 }
 impl ListFHIRDatastoresFluentBuilder {
     /// Creates a new `ListFHIRDatastores`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_fhir_datastores::ListFHIRDatastores,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListFHIRDatastoresFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_fhir_datastores::ListFhirDatastoresOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListFHIRDatastoresFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_fhir_datastores::ListFhirDatastoresOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
         >,
     > {
@@ -97,17 +100,20 @@ impl ListFHIRDatastoresFluentBuilder {
         self
     }
     /// <p>Lists all filters associated with a FHIR Data Store request.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::DatastoreFilter>) -> Self {
+    pub fn set_filter(
+        mut self,
+        input: ::std::option::Option<crate::types::DatastoreFilter>,
+    ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>Fetches the next page of Data Stores when results are paginated.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Fetches the next page of Data Stores when results are paginated.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -117,7 +123,7 @@ impl ListFHIRDatastoresFluentBuilder {
         self
     }
     /// <p>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

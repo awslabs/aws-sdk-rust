@@ -4,15 +4,15 @@
 /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessControlTranslation {
     /// <p>Specifies the replica ownership.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<crate::types::OwnerOverride>,
+    pub owner: ::std::option::Option<crate::types::OwnerOverride>,
 }
 impl AccessControlTranslation {
     /// <p>Specifies the replica ownership.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::types::OwnerOverride> {
+    pub fn owner(&self) -> ::std::option::Option<&crate::types::OwnerOverride> {
         self.owner.as_ref()
     }
 }
@@ -25,18 +25,20 @@ impl AccessControlTranslation {
 
 /// A builder for [`AccessControlTranslation`](crate::types::AccessControlTranslation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessControlTranslationBuilder {
-    pub(crate) owner: std::option::Option<crate::types::OwnerOverride>,
+    pub(crate) owner: ::std::option::Option<crate::types::OwnerOverride>,
 }
 impl AccessControlTranslationBuilder {
     /// <p>Specifies the replica ownership.</p>
     pub fn owner(mut self, input: crate::types::OwnerOverride) -> Self {
-        self.owner = Some(input);
+        self.owner = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the replica ownership.</p>
-    pub fn set_owner(mut self, input: std::option::Option<crate::types::OwnerOverride>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::OwnerOverride>) -> Self {
         self.owner = input;
         self
     }

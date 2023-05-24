@@ -2,12 +2,12 @@
 
 /// <p>Use the AttributeValueList to filter by string or integer values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AttributeValueList {
     /// <p>The list of integer values that the filter matches.</p>
-    IntegerValues(std::vec::Vec<i32>),
+    IntegerValues(::std::vec::Vec<i32>),
     /// <p>The list of string values that the filter matches.</p>
-    StringValues(std::vec::Vec<std::string::String>),
+    StringValues(::std::vec::Vec<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,28 +19,28 @@ pub enum AttributeValueList {
     Unknown,
 }
 impl AttributeValueList {
-    /// Tries to convert the enum instance into [`IntegerValues`](crate::types::AttributeValueList::IntegerValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Tries to convert the enum instance into [`IntegerValues`](crate::types::AttributeValueList::IntegerValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_integer_values(&self) -> std::result::Result<&std::vec::Vec<i32>, &Self> {
+    pub fn as_integer_values(&self) -> ::std::result::Result<&::std::vec::Vec<i32>, &Self> {
         if let AttributeValueList::IntegerValues(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`IntegerValues`](crate::types::AttributeValueList::IntegerValues).
     pub fn is_integer_values(&self) -> bool {
         self.as_integer_values().is_ok()
     }
-    /// Tries to convert the enum instance into [`StringValues`](crate::types::AttributeValueList::StringValues), extracting the inner [`Vec`](std::vec::Vec).
+    /// Tries to convert the enum instance into [`StringValues`](crate::types::AttributeValueList::StringValues), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_values(
         &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+    ) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
         if let AttributeValueList::StringValues(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StringValues`](crate::types::AttributeValueList::StringValues).

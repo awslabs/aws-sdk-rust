@@ -2,37 +2,43 @@
 
 /// <p>Represents a request to list the existing recommendations for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationsInput {
     /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
     #[doc(hidden)]
-    pub filter: std::option::Option<
-        std::collections::HashMap<crate::types::ListRecommendationsFilterKey, std::string::String>,
+    pub filter: ::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ListRecommendationsFilterKey,
+            ::std::string::String,
+        >,
     >,
     /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
     #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    pub page_size: ::std::option::Option<i32>,
 }
 impl ListRecommendationsInput {
     /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
     pub fn filter(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::ListRecommendationsFilterKey, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            crate::types::ListRecommendationsFilterKey,
+            ::std::string::String,
+        >,
     > {
         self.filter.as_ref()
     }
     /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
-    pub fn page_size(&self) -> std::option::Option<i32> {
+    pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
 }
@@ -46,13 +52,18 @@ impl ListRecommendationsInput {
 
 /// A builder for [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListRecommendationsInputBuilder {
-    pub(crate) filter: std::option::Option<
-        std::collections::HashMap<crate::types::ListRecommendationsFilterKey, std::string::String>,
+    pub(crate) filter: ::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ListRecommendationsFilterKey,
+            ::std::string::String,
+        >,
     >,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) page_size: std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) page_size: ::std::option::Option<i32>,
 }
 impl ListRecommendationsInputBuilder {
     /// Adds a key-value pair to `filter`.
@@ -63,20 +74,20 @@ impl ListRecommendationsInputBuilder {
     pub fn filter(
         mut self,
         k: crate::types::ListRecommendationsFilterKey,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.filter = Some(hash_map);
+        self.filter = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of <code>STATUS</code> and <code>IMPACT</code> or <code>STATUS</code> and <code>TYPE</code> </p>
     pub fn set_filter(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::ListRecommendationsFilterKey,
-                std::string::String,
+                ::std::string::String,
             >,
         >,
     ) -> Self {
@@ -84,35 +95,35 @@ impl ListRecommendationsInputBuilder {
         self
     }
     /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token returned from a previous call to <code>ListRecommendations</code> to indicate the position in the list of recommendations.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
     pub fn page_size(mut self, input: i32) -> Self {
-        self.page_size = Some(input);
+        self.page_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of results to show in a single call to <code>ListRecommendations</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     /// <p>The value you specify has to be at least 1, and can be no more than 100.</p>
-    pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
     }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_recommendations::ListRecommendationsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::list_recommendations::ListRecommendationsInput {
                 filter: self.filter,
                 next_token: self.next_token,

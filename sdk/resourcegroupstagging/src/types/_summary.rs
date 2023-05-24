@@ -2,46 +2,46 @@
 
 /// <p>A count of noncompliant resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Summary {
     /// <p>The timestamp that shows when this summary was generated in this Region. </p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<std::string::String>,
+    pub last_updated: ::std::option::Option<::std::string::String>,
     /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
     #[doc(hidden)]
-    pub target_id: std::option::Option<std::string::String>,
+    pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
     #[doc(hidden)]
-    pub target_id_type: std::option::Option<crate::types::TargetIdType>,
+    pub target_id_type: ::std::option::Option<crate::types::TargetIdType>,
     /// <p>The Amazon Web Services Region that the summary applies to.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services resource type.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The count of noncompliant resources.</p>
     #[doc(hidden)]
     pub non_compliant_resources: i64,
 }
 impl Summary {
     /// <p>The timestamp that shows when this summary was generated in this Region. </p>
-    pub fn last_updated(&self) -> std::option::Option<&str> {
+    pub fn last_updated(&self) -> ::std::option::Option<&str> {
         self.last_updated.as_deref()
     }
     /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> ::std::option::Option<&str> {
         self.target_id.as_deref()
     }
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
-    pub fn target_id_type(&self) -> std::option::Option<&crate::types::TargetIdType> {
+    pub fn target_id_type(&self) -> ::std::option::Option<&crate::types::TargetIdType> {
         self.target_id_type.as_ref()
     }
     /// <p>The Amazon Web Services Region that the summary applies to.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The Amazon Web Services resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The count of noncompliant resources.</p>
@@ -58,76 +58,84 @@ impl Summary {
 
 /// A builder for [`Summary`](crate::types::Summary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SummaryBuilder {
-    pub(crate) last_updated: std::option::Option<std::string::String>,
-    pub(crate) target_id: std::option::Option<std::string::String>,
-    pub(crate) target_id_type: std::option::Option<crate::types::TargetIdType>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) non_compliant_resources: std::option::Option<i64>,
+    pub(crate) last_updated: ::std::option::Option<::std::string::String>,
+    pub(crate) target_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_id_type: ::std::option::Option<crate::types::TargetIdType>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) non_compliant_resources: ::std::option::Option<i64>,
 }
 impl SummaryBuilder {
     /// <p>The timestamp that shows when this summary was generated in this Region. </p>
-    pub fn last_updated(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated = Some(input.into());
+    pub fn last_updated(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_updated = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp that shows when this summary was generated in this Region. </p>
-    pub fn set_last_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_updated(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated = input;
         self
     }
     /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
-    pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_id = Some(input.into());
+    pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account identifier or the root identifier of the organization. If you don't know the root ID, you can call the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
-    pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_id = input;
         self
     }
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
     pub fn target_id_type(mut self, input: crate::types::TargetIdType) -> Self {
-        self.target_id_type = Some(input);
+        self.target_id_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the target is an account, an OU, or the organization root.</p>
     pub fn set_target_id_type(
         mut self,
-        input: std::option::Option<crate::types::TargetIdType>,
+        input: ::std::option::Option<crate::types::TargetIdType>,
     ) -> Self {
         self.target_id_type = input;
         self
     }
     /// <p>The Amazon Web Services Region that the summary applies to.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region that the summary applies to.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The Amazon Web Services resource type.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services resource type.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The count of noncompliant resources.</p>
     pub fn non_compliant_resources(mut self, input: i64) -> Self {
-        self.non_compliant_resources = Some(input);
+        self.non_compliant_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The count of noncompliant resources.</p>
-    pub fn set_non_compliant_resources(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_non_compliant_resources(mut self, input: ::std::option::Option<i64>) -> Self {
         self.non_compliant_resources = input;
         self
     }

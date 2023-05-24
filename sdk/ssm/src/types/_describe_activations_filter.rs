@@ -2,22 +2,24 @@
 
 /// <p>Filter for the DescribeActivation API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeActivationsFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
-    pub filter_key: std::option::Option<crate::types::DescribeActivationsFilterKeys>,
+    pub filter_key: ::std::option::Option<crate::types::DescribeActivationsFilterKeys>,
     /// <p>The filter values.</p>
     #[doc(hidden)]
-    pub filter_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeActivationsFilter {
     /// <p>The name of the filter.</p>
-    pub fn filter_key(&self) -> std::option::Option<&crate::types::DescribeActivationsFilterKeys> {
+    pub fn filter_key(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DescribeActivationsFilterKeys> {
         self.filter_key.as_ref()
     }
     /// <p>The filter values.</p>
-    pub fn filter_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn filter_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.filter_values.as_deref()
     }
 }
@@ -30,21 +32,23 @@ impl DescribeActivationsFilter {
 
 /// A builder for [`DescribeActivationsFilter`](crate::types::DescribeActivationsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeActivationsFilterBuilder {
-    pub(crate) filter_key: std::option::Option<crate::types::DescribeActivationsFilterKeys>,
-    pub(crate) filter_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) filter_key: ::std::option::Option<crate::types::DescribeActivationsFilterKeys>,
+    pub(crate) filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeActivationsFilterBuilder {
     /// <p>The name of the filter.</p>
     pub fn filter_key(mut self, input: crate::types::DescribeActivationsFilterKeys) -> Self {
-        self.filter_key = Some(input);
+        self.filter_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the filter.</p>
     pub fn set_filter_key(
         mut self,
-        input: std::option::Option<crate::types::DescribeActivationsFilterKeys>,
+        input: ::std::option::Option<crate::types::DescribeActivationsFilterKeys>,
     ) -> Self {
         self.filter_key = input;
         self
@@ -54,16 +58,19 @@ impl DescribeActivationsFilterBuilder {
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
     ///
     /// <p>The filter values.</p>
-    pub fn filter_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
         v.push(input.into());
-        self.filter_values = Some(v);
+        self.filter_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The filter values.</p>
     pub fn set_filter_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.filter_values = input;
         self

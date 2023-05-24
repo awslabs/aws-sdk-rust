@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeRaidArrays</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRaidArraysOutput {
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
     #[doc(hidden)]
-    pub raid_arrays: std::option::Option<std::vec::Vec<crate::types::RaidArray>>,
+    pub raid_arrays: ::std::option::Option<::std::vec::Vec<crate::types::RaidArray>>,
     _request_id: Option<String>,
 }
 impl DescribeRaidArraysOutput {
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
-    pub fn raid_arrays(&self) -> std::option::Option<&[crate::types::RaidArray]> {
+    pub fn raid_arrays(&self) -> ::std::option::Option<&[crate::types::RaidArray]> {
         self.raid_arrays.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeRaidArraysOutput {
+impl ::aws_http::request_id::RequestId for DescribeRaidArraysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl DescribeRaidArraysOutput {
 
 /// A builder for [`DescribeRaidArraysOutput`](crate::operation::describe_raid_arrays::DescribeRaidArraysOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeRaidArraysOutputBuilder {
-    pub(crate) raid_arrays: std::option::Option<std::vec::Vec<crate::types::RaidArray>>,
+    pub(crate) raid_arrays: ::std::option::Option<::std::vec::Vec<crate::types::RaidArray>>,
     _request_id: Option<String>,
 }
 impl DescribeRaidArraysOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeRaidArraysOutputBuilder {
     pub fn raid_arrays(mut self, input: crate::types::RaidArray) -> Self {
         let mut v = self.raid_arrays.unwrap_or_default();
         v.push(input);
-        self.raid_arrays = Some(v);
+        self.raid_arrays = ::std::option::Option::Some(v);
         self
     }
     /// <p>A <code>RaidArrays</code> object that describes the specified RAID arrays.</p>
     pub fn set_raid_arrays(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RaidArray>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RaidArray>>,
     ) -> Self {
         self.raid_arrays = input;
         self

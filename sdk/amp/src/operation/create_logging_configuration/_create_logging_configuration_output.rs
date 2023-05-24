@@ -2,20 +2,20 @@
 
 /// Represents the output of a CreateLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::LoggingConfigurationStatus>,
+    pub status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     _request_id: Option<String>,
 }
 impl CreateLoggingConfigurationOutput {
     /// The status of the logging configuration.
-    pub fn status(&self) -> std::option::Option<&crate::types::LoggingConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::LoggingConfigurationStatus> {
         self.status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateLoggingConfigurationOutput {
+impl ::aws_http::request_id::RequestId for CreateLoggingConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl CreateLoggingConfigurationOutput {
 
 /// A builder for [`CreateLoggingConfigurationOutput`](crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateLoggingConfigurationOutputBuilder {
-    pub(crate) status: std::option::Option<crate::types::LoggingConfigurationStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     _request_id: Option<String>,
 }
 impl CreateLoggingConfigurationOutputBuilder {
     /// The status of the logging configuration.
     pub fn status(mut self, input: crate::types::LoggingConfigurationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// The status of the logging configuration.
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::LoggingConfigurationStatus>,
+        input: ::std::option::Option<crate::types::LoggingConfigurationStatus>,
     ) -> Self {
         self.status = input;
         self

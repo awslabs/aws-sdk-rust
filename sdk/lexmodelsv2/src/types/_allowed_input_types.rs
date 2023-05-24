@@ -2,22 +2,22 @@
 
 /// <p>Specifies the allowed input types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowedInputTypes {
     /// <p>Indicates whether audio input is allowed.</p>
     #[doc(hidden)]
-    pub allow_audio_input: std::option::Option<bool>,
+    pub allow_audio_input: ::std::option::Option<bool>,
     /// <p>Indicates whether DTMF input is allowed.</p>
     #[doc(hidden)]
-    pub allow_dtmf_input: std::option::Option<bool>,
+    pub allow_dtmf_input: ::std::option::Option<bool>,
 }
 impl AllowedInputTypes {
     /// <p>Indicates whether audio input is allowed.</p>
-    pub fn allow_audio_input(&self) -> std::option::Option<bool> {
+    pub fn allow_audio_input(&self) -> ::std::option::Option<bool> {
         self.allow_audio_input
     }
     /// <p>Indicates whether DTMF input is allowed.</p>
-    pub fn allow_dtmf_input(&self) -> std::option::Option<bool> {
+    pub fn allow_dtmf_input(&self) -> ::std::option::Option<bool> {
         self.allow_dtmf_input
     }
 }
@@ -30,29 +30,31 @@ impl AllowedInputTypes {
 
 /// A builder for [`AllowedInputTypes`](crate::types::AllowedInputTypes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllowedInputTypesBuilder {
-    pub(crate) allow_audio_input: std::option::Option<bool>,
-    pub(crate) allow_dtmf_input: std::option::Option<bool>,
+    pub(crate) allow_audio_input: ::std::option::Option<bool>,
+    pub(crate) allow_dtmf_input: ::std::option::Option<bool>,
 }
 impl AllowedInputTypesBuilder {
     /// <p>Indicates whether audio input is allowed.</p>
     pub fn allow_audio_input(mut self, input: bool) -> Self {
-        self.allow_audio_input = Some(input);
+        self.allow_audio_input = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether audio input is allowed.</p>
-    pub fn set_allow_audio_input(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_audio_input(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_audio_input = input;
         self
     }
     /// <p>Indicates whether DTMF input is allowed.</p>
     pub fn allow_dtmf_input(mut self, input: bool) -> Self {
-        self.allow_dtmf_input = Some(input);
+        self.allow_dtmf_input = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether DTMF input is allowed.</p>
-    pub fn set_allow_dtmf_input(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_dtmf_input(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_dtmf_input = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>An object containing additional settings for your VDM configuration as applicable to the Guardian.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GuardianOptions {
     /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
     /// <ul>
@@ -10,7 +10,7 @@ pub struct GuardianOptions {
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the configuration set.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub optimized_shared_delivery: std::option::Option<crate::types::FeatureStatus>,
+    pub optimized_shared_delivery: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl GuardianOptions {
     /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
@@ -18,7 +18,7 @@ impl GuardianOptions {
     /// <li> <p> <code>ENABLED</code> – Amazon SES enables optimized shared delivery for the configuration set.</p> </li>
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the configuration set.</p> </li>
     /// </ul>
-    pub fn optimized_shared_delivery(&self) -> std::option::Option<&crate::types::FeatureStatus> {
+    pub fn optimized_shared_delivery(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.optimized_shared_delivery.as_ref()
     }
 }
@@ -31,9 +31,11 @@ impl GuardianOptions {
 
 /// A builder for [`GuardianOptions`](crate::types::GuardianOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GuardianOptionsBuilder {
-    pub(crate) optimized_shared_delivery: std::option::Option<crate::types::FeatureStatus>,
+    pub(crate) optimized_shared_delivery: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl GuardianOptionsBuilder {
     /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
@@ -42,7 +44,7 @@ impl GuardianOptionsBuilder {
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the configuration set.</p> </li>
     /// </ul>
     pub fn optimized_shared_delivery(mut self, input: crate::types::FeatureStatus) -> Self {
-        self.optimized_shared_delivery = Some(input);
+        self.optimized_shared_delivery = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the status of your VDM optimized shared delivery. Can be one of the following:</p>
@@ -52,7 +54,7 @@ impl GuardianOptionsBuilder {
     /// </ul>
     pub fn set_optimized_shared_delivery(
         mut self,
-        input: std::option::Option<crate::types::FeatureStatus>,
+        input: ::std::option::Option<crate::types::FeatureStatus>,
     ) -> Self {
         self.optimized_shared_delivery = input;
         self

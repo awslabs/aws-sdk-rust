@@ -2,7 +2,7 @@
 
 /// <p>Details about the configuration for node-to-node encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainNodeToNodeEncryptionOptions {
     /// <p>Whether node-to-node encryption is enabled.</p>
     #[doc(hidden)]
@@ -24,18 +24,20 @@ impl AwsElasticsearchDomainNodeToNodeEncryptionOptions {
 
 /// A builder for [`AwsElasticsearchDomainNodeToNodeEncryptionOptions`](crate::types::AwsElasticsearchDomainNodeToNodeEncryptionOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl AwsElasticsearchDomainNodeToNodeEncryptionOptionsBuilder {
     /// <p>Whether node-to-node encryption is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether node-to-node encryption is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

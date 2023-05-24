@@ -2,42 +2,42 @@
 
 /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeTargetRedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
     #[doc(hidden)]
-    pub secret_manager_arn: std::option::Option<std::string::String>,
+    pub secret_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
     #[doc(hidden)]
-    pub database: std::option::Option<std::string::String>,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     #[doc(hidden)]
-    pub db_user: std::option::Option<std::string::String>,
+    pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     #[doc(hidden)]
-    pub statement_name: std::option::Option<std::string::String>,
+    pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     #[doc(hidden)]
     pub with_event: bool,
     /// <p>The SQL statement text to run.</p>
     #[doc(hidden)]
-    pub sqls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PipeTargetRedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
-    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> ::std::option::Option<&str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> ::std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn statement_name(&self) -> std::option::Option<&str> {
+    pub fn statement_name(&self) -> ::std::option::Option<&str> {
         self.statement_name.as_deref()
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
@@ -45,12 +45,12 @@ impl PipeTargetRedshiftDataParameters {
         self.with_event
     }
     /// <p>The SQL statement text to run.</p>
-    pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sqls(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.sqls.as_deref()
     }
 }
-impl std::fmt::Debug for PipeTargetRedshiftDataParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PipeTargetRedshiftDataParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetRedshiftDataParameters");
         formatter.field("secret_manager_arn", &self.secret_manager_arn);
         formatter.field("database", &"*** Sensitive Data Redacted ***");
@@ -70,66 +70,75 @@ impl PipeTargetRedshiftDataParameters {
 
 /// A builder for [`PipeTargetRedshiftDataParameters`](crate::types::PipeTargetRedshiftDataParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PipeTargetRedshiftDataParametersBuilder {
-    pub(crate) secret_manager_arn: std::option::Option<std::string::String>,
-    pub(crate) database: std::option::Option<std::string::String>,
-    pub(crate) db_user: std::option::Option<std::string::String>,
-    pub(crate) statement_name: std::option::Option<std::string::String>,
-    pub(crate) with_event: std::option::Option<bool>,
-    pub(crate) sqls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) secret_manager_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) db_user: ::std::option::Option<::std::string::String>,
+    pub(crate) statement_name: ::std::option::Option<::std::string::String>,
+    pub(crate) with_event: ::std::option::Option<bool>,
+    pub(crate) sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PipeTargetRedshiftDataParametersBuilder {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
-    pub fn secret_manager_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_manager_arn = Some(input.into());
+    pub fn secret_manager_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secret_manager_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
     pub fn set_secret_manager_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secret_manager_arn = input;
         self
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database = Some(input.into());
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
-    pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_user = Some(input.into());
+    pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
-    pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_user = input;
         self
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.statement_name = Some(input.into());
+    pub fn statement_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_statement_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.statement_name = input;
         self
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub fn with_event(mut self, input: bool) -> Self {
-        self.with_event = Some(input);
+        self.with_event = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
-    pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_with_event(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_event = input;
         self
     }
@@ -138,16 +147,16 @@ impl PipeTargetRedshiftDataParametersBuilder {
     /// To override the contents of this collection use [`set_sqls`](Self::set_sqls).
     ///
     /// <p>The SQL statement text to run.</p>
-    pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sqls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sqls.unwrap_or_default();
         v.push(input.into());
-        self.sqls = Some(v);
+        self.sqls = ::std::option::Option::Some(v);
         self
     }
     /// <p>The SQL statement text to run.</p>
     pub fn set_sqls(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.sqls = input;
         self
@@ -164,8 +173,8 @@ impl PipeTargetRedshiftDataParametersBuilder {
         }
     }
 }
-impl std::fmt::Debug for PipeTargetRedshiftDataParametersBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PipeTargetRedshiftDataParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetRedshiftDataParametersBuilder");
         formatter.field("secret_manager_arn", &self.secret_manager_arn);
         formatter.field("database", &"*** Sensitive Data Redacted ***");

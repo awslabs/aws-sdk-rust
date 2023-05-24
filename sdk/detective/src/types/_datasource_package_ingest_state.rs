@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DatasourcePackageIngestState {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DatasourcePackageIngestState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DatasourcePackageIngestState {
+impl ::std::convert::From<&str> for DatasourcePackageIngestState {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => DatasourcePackageIngestState::Disabled,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DatasourcePackageIngestState {
         }
     }
 }
-impl std::str::FromStr for DatasourcePackageIngestState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DatasourcePackageIngestState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatasourcePackageIngestState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DatasourcePackageIngestState::from(s))
     }
 }
 impl DatasourcePackageIngestState {
@@ -91,7 +91,7 @@ impl DatasourcePackageIngestState {
         &["DISABLED", "STARTED", "STOPPED"]
     }
 }
-impl AsRef<str> for DatasourcePackageIngestState {
+impl ::std::convert::AsRef<str> for DatasourcePackageIngestState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

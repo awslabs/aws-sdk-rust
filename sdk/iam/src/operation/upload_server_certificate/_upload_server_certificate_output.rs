@@ -2,29 +2,29 @@
 
 /// <p>Contains the response to a successful <code>UploadServerCertificate</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadServerCertificateOutput {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
     #[doc(hidden)]
-    pub server_certificate_metadata: std::option::Option<crate::types::ServerCertificateMetadata>,
+    pub server_certificate_metadata: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl UploadServerCertificateOutput {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
     pub fn server_certificate_metadata(
         &self,
-    ) -> std::option::Option<&crate::types::ServerCertificateMetadata> {
+    ) -> ::std::option::Option<&crate::types::ServerCertificateMetadata> {
         self.server_certificate_metadata.as_ref()
     }
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UploadServerCertificateOutput {
+impl ::aws_http::request_id::RequestId for UploadServerCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,11 +40,13 @@ impl UploadServerCertificateOutput {
 
 /// A builder for [`UploadServerCertificateOutput`](crate::operation::upload_server_certificate::UploadServerCertificateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UploadServerCertificateOutputBuilder {
     pub(crate) server_certificate_metadata:
-        std::option::Option<crate::types::ServerCertificateMetadata>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::ServerCertificateMetadata>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl UploadServerCertificateOutputBuilder {
@@ -53,13 +55,13 @@ impl UploadServerCertificateOutputBuilder {
         mut self,
         input: crate::types::ServerCertificateMetadata,
     ) -> Self {
-        self.server_certificate_metadata = Some(input);
+        self.server_certificate_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
     pub fn set_server_certificate_metadata(
         mut self,
-        input: std::option::Option<crate::types::ServerCertificateMetadata>,
+        input: ::std::option::Option<crate::types::ServerCertificateMetadata>,
     ) -> Self {
         self.server_certificate_metadata = input;
         self
@@ -72,13 +74,13 @@ impl UploadServerCertificateOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

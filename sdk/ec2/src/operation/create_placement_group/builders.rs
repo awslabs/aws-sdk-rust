@@ -8,29 +8,29 @@ pub use crate::operation::create_placement_group::_create_placement_group_input:
 /// <p>Creates a placement group in which to launch instances. The strategy of the placement group determines how the instances are organized within the group. </p>
 /// <p>A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances on distinct hardware. A <code>partition</code> placement group places groups of instances in different partitions, where instances in one partition do not share the same hardware with instances in another partition.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePlacementGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder,
 }
 impl CreatePlacementGroupFluentBuilder {
     /// Creates a new `CreatePlacementGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_placement_group::CreatePlacementGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_placement_group::CreatePlacementGroupError,
         >,
     > {
@@ -38,30 +38,33 @@ impl CreatePlacementGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_placement_group::CreatePlacementGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_placement_group::CreatePlacementGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,9 +77,9 @@ impl CreatePlacementGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_placement_group::CreatePlacementGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_placement_group::CreatePlacementGroupError,
         >,
     > {
@@ -88,19 +91,19 @@ impl CreatePlacementGroupFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
     /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
     /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
     }
@@ -112,7 +115,7 @@ impl CreatePlacementGroupFluentBuilder {
     /// <p>The placement strategy.</p>
     pub fn set_strategy(
         mut self,
-        input: std::option::Option<crate::types::PlacementStrategy>,
+        input: ::std::option::Option<crate::types::PlacementStrategy>,
     ) -> Self {
         self.inner = self.inner.set_strategy(input);
         self
@@ -123,7 +126,7 @@ impl CreatePlacementGroupFluentBuilder {
         self
     }
     /// <p>The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.</p>
-    pub fn set_partition_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_partition_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_partition_count(input);
         self
     }
@@ -139,7 +142,7 @@ impl CreatePlacementGroupFluentBuilder {
     /// <p>The tags to apply to the new placement group.</p>
     pub fn set_tag_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
@@ -160,7 +163,7 @@ impl CreatePlacementGroupFluentBuilder {
     /// </ul>
     pub fn set_spread_level(
         mut self,
-        input: std::option::Option<crate::types::SpreadLevel>,
+        input: ::std::option::Option<crate::types::SpreadLevel>,
     ) -> Self {
         self.inner = self.inner.set_spread_level(input);
         self

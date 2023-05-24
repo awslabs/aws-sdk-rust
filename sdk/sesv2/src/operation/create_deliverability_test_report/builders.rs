@@ -6,47 +6,50 @@ pub use crate::operation::create_deliverability_test_report::_create_deliverabil
 /// Fluent builder constructing a request to `CreateDeliverabilityTestReport`.
 ///
 /// <p>Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon SES then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportInputBuilder,
 }
 impl CreateDeliverabilityTestReportFluentBuilder {
     /// Creates a new `CreateDeliverabilityTestReport`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReport, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReport, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput, aws_smithy_http::result::SdkError<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,29 +60,32 @@ impl CreateDeliverabilityTestReportFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput, aws_smithy_http::result::SdkError<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError>>
                          {
         self.send_middleware().await
     }
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn report_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.report_name(input.into());
         self
     }
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_report_name(input);
         self
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn from_email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.from_email_address(input.into());
         self
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
     pub fn set_from_email_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_from_email_address(input);
         self
@@ -90,7 +96,7 @@ impl CreateDeliverabilityTestReportFluentBuilder {
         self
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    pub fn set_content(mut self, input: std::option::Option<crate::types::EmailContent>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
@@ -106,7 +112,7 @@ impl CreateDeliverabilityTestReportFluentBuilder {
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

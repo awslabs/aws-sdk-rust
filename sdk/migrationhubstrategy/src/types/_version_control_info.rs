@@ -2,22 +2,22 @@
 
 /// <p>Details about the version control configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionControlInfo {
     /// <p>The type of version control.</p>
     #[doc(hidden)]
-    pub version_control_type: std::option::Option<crate::types::VersionControlType>,
+    pub version_control_type: ::std::option::Option<crate::types::VersionControlType>,
     /// <p>The time when the version control system was last configured.</p>
     #[doc(hidden)]
-    pub version_control_configuration_time_stamp: std::option::Option<std::string::String>,
+    pub version_control_configuration_time_stamp: ::std::option::Option<::std::string::String>,
 }
 impl VersionControlInfo {
     /// <p>The type of version control.</p>
-    pub fn version_control_type(&self) -> std::option::Option<&crate::types::VersionControlType> {
+    pub fn version_control_type(&self) -> ::std::option::Option<&crate::types::VersionControlType> {
         self.version_control_type.as_ref()
     }
     /// <p>The time when the version control system was last configured.</p>
-    pub fn version_control_configuration_time_stamp(&self) -> std::option::Option<&str> {
+    pub fn version_control_configuration_time_stamp(&self) -> ::std::option::Option<&str> {
         self.version_control_configuration_time_stamp.as_deref()
     }
 }
@@ -30,21 +30,24 @@ impl VersionControlInfo {
 
 /// A builder for [`VersionControlInfo`](crate::types::VersionControlInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VersionControlInfoBuilder {
-    pub(crate) version_control_type: std::option::Option<crate::types::VersionControlType>,
-    pub(crate) version_control_configuration_time_stamp: std::option::Option<std::string::String>,
+    pub(crate) version_control_type: ::std::option::Option<crate::types::VersionControlType>,
+    pub(crate) version_control_configuration_time_stamp:
+        ::std::option::Option<::std::string::String>,
 }
 impl VersionControlInfoBuilder {
     /// <p>The type of version control.</p>
     pub fn version_control_type(mut self, input: crate::types::VersionControlType) -> Self {
-        self.version_control_type = Some(input);
+        self.version_control_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of version control.</p>
     pub fn set_version_control_type(
         mut self,
-        input: std::option::Option<crate::types::VersionControlType>,
+        input: ::std::option::Option<crate::types::VersionControlType>,
     ) -> Self {
         self.version_control_type = input;
         self
@@ -52,15 +55,15 @@ impl VersionControlInfoBuilder {
     /// <p>The time when the version control system was last configured.</p>
     pub fn version_control_configuration_time_stamp(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.version_control_configuration_time_stamp = Some(input.into());
+        self.version_control_configuration_time_stamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the version control system was last configured.</p>
     pub fn set_version_control_configuration_time_stamp(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.version_control_configuration_time_stamp = input;
         self

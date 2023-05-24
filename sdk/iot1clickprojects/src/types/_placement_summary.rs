@@ -2,36 +2,36 @@
 
 /// <p>An object providing summary information for a particular placement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementSummary {
     /// <p>The name of the project containing the placement.</p>
     #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement being summarized.</p>
     #[doc(hidden)]
-    pub placement_name: std::option::Option<std::string::String>,
+    pub placement_name: ::std::option::Option<::std::string::String>,
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
     #[doc(hidden)]
-    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     #[doc(hidden)]
-    pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PlacementSummary {
     /// <p>The name of the project containing the placement.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>The name of the placement being summarized.</p>
-    pub fn placement_name(&self) -> std::option::Option<&str> {
+    pub fn placement_name(&self) -> ::std::option::Option<&str> {
         self.placement_name.as_deref()
     }
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
 }
@@ -44,56 +44,64 @@ impl PlacementSummary {
 
 /// A builder for [`PlacementSummary`](crate::types::PlacementSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlacementSummaryBuilder {
-    pub(crate) project_name: std::option::Option<std::string::String>,
-    pub(crate) placement_name: std::option::Option<std::string::String>,
-    pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) project_name: ::std::option::Option<::std::string::String>,
+    pub(crate) placement_name: ::std::option::Option<::std::string::String>,
+    pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PlacementSummaryBuilder {
     /// <p>The name of the project containing the placement.</p>
-    pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_name = Some(input.into());
+    pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the project containing the placement.</p>
-    pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
     }
     /// <p>The name of the placement being summarized.</p>
-    pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.placement_name = Some(input.into());
+    pub fn placement_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.placement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement being summarized.</p>
-    pub fn set_placement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_placement_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.placement_name = input;
         self
     }
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
-    pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_date = Some(input);
+    pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the placement was originally created, in UNIX epoch time format.</p>
     pub fn set_created_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_date = input;
         self
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_date = Some(input);
+    pub fn updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn set_updated_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_date = input;
         self

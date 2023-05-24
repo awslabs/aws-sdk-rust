@@ -2,20 +2,20 @@
 
 /// <p>StartTaskExecutionResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTaskExecutionOutput {
     /// <p>The ARN of the running task execution.</p>
     #[doc(hidden)]
-    pub task_execution_arn: std::option::Option<std::string::String>,
+    pub task_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartTaskExecutionOutput {
     /// <p>The ARN of the running task execution.</p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for StartTaskExecutionOutput {
+impl ::aws_http::request_id::RequestId for StartTaskExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,26 @@ impl StartTaskExecutionOutput {
 
 /// A builder for [`StartTaskExecutionOutput`](crate::operation::start_task_execution::StartTaskExecutionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartTaskExecutionOutputBuilder {
-    pub(crate) task_execution_arn: std::option::Option<std::string::String>,
+    pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartTaskExecutionOutputBuilder {
     /// <p>The ARN of the running task execution.</p>
-    pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_execution_arn = Some(input.into());
+    pub fn task_execution_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the running task execution.</p>
     pub fn set_task_execution_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.task_execution_arn = input;
         self

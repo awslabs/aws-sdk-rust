@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRole`](crate::operation::get_role::builders::GetRoleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`role_name(impl Into<String>)`](crate::operation::get_role::builders::GetRoleFluentBuilder::role_name) / [`set_role_name(Option<String>)`](crate::operation::get_role::builders::GetRoleFluentBuilder::set_role_name): <p>The name of the IAM role to get information about.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
+    ///   - [`role_name(impl ::std::convert::Into<String>)`](crate::operation::get_role::builders::GetRoleFluentBuilder::role_name) / [`set_role_name(Option<String>)`](crate::operation::get_role::builders::GetRoleFluentBuilder::set_role_name): <p>The name of the IAM role to get information about.</p>  <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     /// - On success, responds with [`GetRoleOutput`](crate::operation::get_role::GetRoleOutput) with field(s):
     ///   - [`role(Option<Role>)`](crate::operation::get_role::GetRoleOutput::role): <p>A structure containing details about the IAM role.</p>
     /// - On failure, responds with [`SdkError<GetRoleError>`](crate::operation::get_role::GetRoleError)

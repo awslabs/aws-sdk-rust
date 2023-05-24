@@ -2,7 +2,7 @@
 
 /// <p>The desired start time for an <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak maintenance window</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WindowStartTime {
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl WindowStartTime {
 
 /// A builder for [`WindowStartTime`](crate::types::WindowStartTime).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WindowStartTimeBuilder {
-    pub(crate) hours: std::option::Option<i64>,
-    pub(crate) minutes: std::option::Option<i64>,
+    pub(crate) hours: ::std::option::Option<i64>,
+    pub(crate) minutes: ::std::option::Option<i64>,
 }
 impl WindowStartTimeBuilder {
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
     pub fn hours(mut self, input: i64) -> Self {
-        self.hours = Some(input);
+        self.hours = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time. For example, <code>17</code> refers to 5:00 P.M. UTC.</p>
-    pub fn set_hours(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_hours(mut self, input: ::std::option::Option<i64>) -> Self {
         self.hours = input;
         self
     }
     /// <p>The start minute of the window, in UTC.</p>
     pub fn minutes(mut self, input: i64) -> Self {
-        self.minutes = Some(input);
+        self.minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start minute of the window, in UTC.</p>
-    pub fn set_minutes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.minutes = input;
         self
     }

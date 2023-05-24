@@ -2,33 +2,33 @@
 
 /// GetCampaignStateBatchResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignStateBatchOutput {
     /// List of successful response of campaign state
     #[doc(hidden)]
     pub successful_requests:
-        std::option::Option<std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
     /// List of failed requests of campaign state
     #[doc(hidden)]
     pub failed_requests:
-        std::option::Option<std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
     _request_id: Option<String>,
 }
 impl GetCampaignStateBatchOutput {
     /// List of successful response of campaign state
     pub fn successful_requests(
         &self,
-    ) -> std::option::Option<&[crate::types::SuccessfulCampaignStateResponse]> {
+    ) -> ::std::option::Option<&[crate::types::SuccessfulCampaignStateResponse]> {
         self.successful_requests.as_deref()
     }
     /// List of failed requests of campaign state
     pub fn failed_requests(
         &self,
-    ) -> std::option::Option<&[crate::types::FailedCampaignStateResponse]> {
+    ) -> ::std::option::Option<&[crate::types::FailedCampaignStateResponse]> {
         self.failed_requests.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetCampaignStateBatchOutput {
+impl ::aws_http::request_id::RequestId for GetCampaignStateBatchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -44,12 +44,14 @@ impl GetCampaignStateBatchOutput {
 
 /// A builder for [`GetCampaignStateBatchOutput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCampaignStateBatchOutputBuilder {
     pub(crate) successful_requests:
-        std::option::Option<std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
     pub(crate) failed_requests:
-        std::option::Option<std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
     _request_id: Option<String>,
 }
 impl GetCampaignStateBatchOutputBuilder {
@@ -64,13 +66,15 @@ impl GetCampaignStateBatchOutputBuilder {
     ) -> Self {
         let mut v = self.successful_requests.unwrap_or_default();
         v.push(input);
-        self.successful_requests = Some(v);
+        self.successful_requests = ::std::option::Option::Some(v);
         self
     }
     /// List of successful response of campaign state
     pub fn set_successful_requests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::SuccessfulCampaignStateResponse>,
+        >,
     ) -> Self {
         self.successful_requests = input;
         self
@@ -83,13 +87,13 @@ impl GetCampaignStateBatchOutputBuilder {
     pub fn failed_requests(mut self, input: crate::types::FailedCampaignStateResponse) -> Self {
         let mut v = self.failed_requests.unwrap_or_default();
         v.push(input);
-        self.failed_requests = Some(v);
+        self.failed_requests = ::std::option::Option::Some(v);
         self
     }
     /// List of failed requests of campaign state
     pub fn set_failed_requests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FailedCampaignStateResponse>>,
     ) -> Self {
         self.failed_requests = input;
         self

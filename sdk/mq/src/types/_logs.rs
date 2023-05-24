@@ -2,22 +2,22 @@
 
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Logs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
-    pub audit: std::option::Option<bool>,
+    pub audit: ::std::option::Option<bool>,
     /// <p>Enables general logging.</p>
     #[doc(hidden)]
-    pub general: std::option::Option<bool>,
+    pub general: ::std::option::Option<bool>,
 }
 impl Logs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
-    pub fn audit(&self) -> std::option::Option<bool> {
+    pub fn audit(&self) -> ::std::option::Option<bool> {
         self.audit
     }
     /// <p>Enables general logging.</p>
-    pub fn general(&self) -> std::option::Option<bool> {
+    pub fn general(&self) -> ::std::option::Option<bool> {
         self.general
     }
 }
@@ -30,29 +30,31 @@ impl Logs {
 
 /// A builder for [`Logs`](crate::types::Logs).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogsBuilder {
-    pub(crate) audit: std::option::Option<bool>,
-    pub(crate) general: std::option::Option<bool>,
+    pub(crate) audit: ::std::option::Option<bool>,
+    pub(crate) general: ::std::option::Option<bool>,
 }
 impl LogsBuilder {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     pub fn audit(mut self, input: bool) -> Self {
-        self.audit = Some(input);
+        self.audit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
-    pub fn set_audit(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_audit(mut self, input: ::std::option::Option<bool>) -> Self {
         self.audit = input;
         self
     }
     /// <p>Enables general logging.</p>
     pub fn general(mut self, input: bool) -> Self {
-        self.general = Some(input);
+        self.general = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables general logging.</p>
-    pub fn set_general(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_general(mut self, input: ::std::option::Option<bool>) -> Self {
         self.general = input;
         self
     }

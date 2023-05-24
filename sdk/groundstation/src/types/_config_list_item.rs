@@ -2,36 +2,36 @@
 
 /// <p>An item in a list of <code>Config</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigListItem {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub config_id: std::option::Option<std::string::String>,
+    pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub config_type: std::option::Option<crate::types::ConfigCapabilityType>,
+    pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
     /// <p>ARN of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub config_arn: std::option::Option<std::string::String>,
+    pub config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl ConfigListItem {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> ::std::option::Option<&str> {
         self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<&crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>ARN of a <code>Config</code>.</p>
-    pub fn config_arn(&self) -> std::option::Option<&str> {
+    pub fn config_arn(&self) -> ::std::option::Option<&str> {
         self.config_arn.as_deref()
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -44,54 +44,56 @@ impl ConfigListItem {
 
 /// A builder for [`ConfigListItem`](crate::types::ConfigListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigListItemBuilder {
-    pub(crate) config_id: std::option::Option<std::string::String>,
-    pub(crate) config_type: std::option::Option<crate::types::ConfigCapabilityType>,
-    pub(crate) config_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) config_id: ::std::option::Option<::std::string::String>,
+    pub(crate) config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
+    pub(crate) config_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl ConfigListItemBuilder {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.config_id = Some(input.into());
+    pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.config_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_id = input;
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
-        self.config_type = Some(input);
+        self.config_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn set_config_type(
         mut self,
-        input: std::option::Option<crate::types::ConfigCapabilityType>,
+        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
     ) -> Self {
         self.config_type = input;
         self
     }
     /// <p>ARN of a <code>Config</code>.</p>
-    pub fn config_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.config_arn = Some(input.into());
+    pub fn config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a <code>Config</code>.</p>
-    pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_arn = input;
         self
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

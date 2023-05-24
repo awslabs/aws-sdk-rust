@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This output is deprecated, use GetAdministratorAccountResponse instead")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMasterAccountOutput {
     /// <p>The administrator account details.</p>
     #[doc(hidden)]
-    pub master: std::option::Option<crate::types::Master>,
+    pub master: ::std::option::Option<crate::types::Master>,
     _request_id: Option<String>,
 }
 impl GetMasterAccountOutput {
     /// <p>The administrator account details.</p>
-    pub fn master(&self) -> std::option::Option<&crate::types::Master> {
+    pub fn master(&self) -> ::std::option::Option<&crate::types::Master> {
         self.master.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetMasterAccountOutput {
+impl ::aws_http::request_id::RequestId for GetMasterAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl GetMasterAccountOutput {
 
 /// A builder for [`GetMasterAccountOutput`](crate::operation::get_master_account::GetMasterAccountOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetMasterAccountOutputBuilder {
-    pub(crate) master: std::option::Option<crate::types::Master>,
+    pub(crate) master: ::std::option::Option<crate::types::Master>,
     _request_id: Option<String>,
 }
 impl GetMasterAccountOutputBuilder {
     /// <p>The administrator account details.</p>
     pub fn master(mut self, input: crate::types::Master) -> Self {
-        self.master = Some(input);
+        self.master = ::std::option::Option::Some(input);
         self
     }
     /// <p>The administrator account details.</p>
-    pub fn set_master(mut self, input: std::option::Option<crate::types::Master>) -> Self {
+    pub fn set_master(mut self, input: ::std::option::Option<crate::types::Master>) -> Self {
         self.master = input;
         self
     }

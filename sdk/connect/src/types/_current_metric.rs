@@ -2,22 +2,22 @@
 
 /// <p>Contains information about a real-time metric. For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CurrentMetric {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::CurrentMetricName>,
+    pub name: ::std::option::Option<crate::types::CurrentMetricName>,
     /// <p>The unit for the metric.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::Unit>,
+    pub unit: ::std::option::Option<crate::types::Unit>,
 }
 impl CurrentMetric {
     /// <p>The name of the metric.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::CurrentMetricName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::CurrentMetricName> {
         self.name.as_ref()
     }
     /// <p>The unit for the metric.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::Unit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
         self.unit.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl CurrentMetric {
 
 /// A builder for [`CurrentMetric`](crate::types::CurrentMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CurrentMetricBuilder {
-    pub(crate) name: std::option::Option<crate::types::CurrentMetricName>,
-    pub(crate) unit: std::option::Option<crate::types::Unit>,
+    pub(crate) name: ::std::option::Option<crate::types::CurrentMetricName>,
+    pub(crate) unit: ::std::option::Option<crate::types::Unit>,
 }
 impl CurrentMetricBuilder {
     /// <p>The name of the metric.</p>
     pub fn name(mut self, input: crate::types::CurrentMetricName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::CurrentMetricName>) -> Self {
+    pub fn set_name(
+        mut self,
+        input: ::std::option::Option<crate::types::CurrentMetricName>,
+    ) -> Self {
         self.name = input;
         self
     }
     /// <p>The unit for the metric.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit for the metric.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::Unit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
         self.unit = input;
         self
     }

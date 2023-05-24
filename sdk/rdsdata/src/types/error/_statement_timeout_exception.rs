@@ -2,15 +2,15 @@
 
 /// <p>The execution of the SQL statement timed out.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatementTimeoutException {
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The database connection ID that executed the SQL statement.</p>
     #[doc(hidden)]
     pub db_connection_id: i64,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl StatementTimeoutException {
     /// <p>The database connection ID that executed the SQL statement.</p>
@@ -20,30 +20,30 @@ impl StatementTimeoutException {
 }
 impl StatementTimeoutException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for StatementTimeoutException {
+impl ::std::fmt::Display for StatementTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "StatementTimeoutException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "StatementTimeoutException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for StatementTimeoutException {}
-impl aws_http::request_id::RequestId for crate::types::error::StatementTimeoutException {
+impl ::std::error::Error for StatementTimeoutException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::StatementTimeoutException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StatementTimeoutException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StatementTimeoutException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,35 +56,37 @@ impl StatementTimeoutException {
 
 /// A builder for [`StatementTimeoutException`](crate::types::error::StatementTimeoutException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatementTimeoutExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) db_connection_id: std::option::Option<i64>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) db_connection_id: ::std::option::Option<i64>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl StatementTimeoutExceptionBuilder {
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The database connection ID that executed the SQL statement.</p>
     pub fn db_connection_id(mut self, input: i64) -> Self {
-        self.db_connection_id = Some(input);
+        self.db_connection_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The database connection ID that executed the SQL statement.</p>
-    pub fn set_db_connection_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_db_connection_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.db_connection_id = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -92,7 +94,7 @@ impl StatementTimeoutExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

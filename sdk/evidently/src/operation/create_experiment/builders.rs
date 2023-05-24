@@ -9,29 +9,29 @@ pub use crate::operation::create_experiment::_create_experiment_input::CreateExp
 /// <p>An experiment helps you make feature design decisions based on evidence and data. An experiment can test as many as five variations at once. Evidently collects experiment data and analyzes it by statistical methods, and provides clear recommendations about which variations perform better.</p>
 /// <p>You can optionally specify a <code>segment</code> to have the experiment consider only certain audience types in the experiment, such as using only user sessions from a certain location or who use a certain internet browser.</p>
 /// <p>Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExperimentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_experiment::builders::CreateExperimentInputBuilder,
 }
 impl CreateExperimentFluentBuilder {
     /// Creates a new `CreateExperiment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_experiment::CreateExperiment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_experiment::CreateExperimentError,
         >,
     > {
@@ -39,30 +39,33 @@ impl CreateExperimentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_experiment::CreateExperimentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_experiment::CreateExperimentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,41 +78,41 @@ impl CreateExperimentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_experiment::CreateExperimentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_experiment::CreateExperimentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
-    pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
         self
     }
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
-    pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project(input);
         self
     }
     /// <p>A name for the new experiment.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A name for the new experiment.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>An optional description of the experiment.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>An optional description of the experiment.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -125,7 +128,7 @@ impl CreateExperimentFluentBuilder {
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
     pub fn set_treatments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TreatmentConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
     ) -> Self {
         self.inner = self.inner.set_treatments(input);
         self
@@ -142,20 +145,23 @@ impl CreateExperimentFluentBuilder {
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub fn set_metric_goals(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricGoalConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
     ) -> Self {
         self.inner = self.inner.set_metric_goals(input);
         self
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn randomization_salt(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.randomization_salt(input.into());
         self
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn set_randomization_salt(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_randomization_salt(input);
         self
@@ -168,7 +174,7 @@ impl CreateExperimentFluentBuilder {
     }
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
     /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
-    pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_sampling_rate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_sampling_rate(input);
         self
     }
@@ -180,18 +186,18 @@ impl CreateExperimentFluentBuilder {
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. tThe "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn set_online_ab_config(
         mut self,
-        input: std::option::Option<crate::types::OnlineAbConfig>,
+        input: ::std::option::Option<crate::types::OnlineAbConfig>,
     ) -> Self {
         self.inner = self.inner.set_online_ab_config(input);
         self
     }
     /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
-    pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.segment(input.into());
         self
     }
     /// <p>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment.</p>
-    pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_segment(input);
         self
     }
@@ -206,8 +212,8 @@ impl CreateExperimentFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -219,8 +225,8 @@ impl CreateExperimentFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

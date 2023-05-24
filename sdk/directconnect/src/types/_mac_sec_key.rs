@@ -2,14 +2,14 @@
 
 /// <p>Information about the MAC Security (MACsec) secret key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MacSecKey {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
     #[doc(hidden)]
-    pub secret_arn: std::option::Option<std::string::String>,
+    pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
     #[doc(hidden)]
-    pub ckn: std::option::Option<std::string::String>,
+    pub ckn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
     /// <p>The possible values are:</p>
     /// <ul>
@@ -19,18 +19,18 @@ pub struct MacSecKey {
     /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<std::string::String>,
+    pub state: ::std::option::Option<::std::string::String>,
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
     #[doc(hidden)]
-    pub start_on: std::option::Option<std::string::String>,
+    pub start_on: ::std::option::Option<::std::string::String>,
 }
 impl MacSecKey {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
-    pub fn ckn(&self) -> std::option::Option<&str> {
+    pub fn ckn(&self) -> ::std::option::Option<&str> {
         self.ckn.as_deref()
     }
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
@@ -41,11 +41,11 @@ impl MacSecKey {
     /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
     /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
-    pub fn start_on(&self) -> std::option::Option<&str> {
+    pub fn start_on(&self) -> ::std::option::Option<&str> {
         self.start_on.as_deref()
     }
 }
@@ -58,31 +58,33 @@ impl MacSecKey {
 
 /// A builder for [`MacSecKey`](crate::types::MacSecKey).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MacSecKeyBuilder {
-    pub(crate) secret_arn: std::option::Option<std::string::String>,
-    pub(crate) ckn: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<std::string::String>,
-    pub(crate) start_on: std::option::Option<std::string::String>,
+    pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ckn: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) start_on: ::std::option::Option<::std::string::String>,
 }
 impl MacSecKeyBuilder {
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-    pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_arn = Some(input.into());
+    pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-    pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
-    pub fn ckn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ckn = Some(input.into());
+    pub fn ckn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ckn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Connection Key Name (CKN) for the MAC Security secret key.</p>
-    pub fn set_ckn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ckn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ckn = input;
         self
     }
@@ -94,8 +96,8 @@ impl MacSecKeyBuilder {
     /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
     /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
     /// </ul>
-    pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state = Some(input.into());
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the MAC Security (MACsec) secret key.</p>
@@ -106,17 +108,17 @@ impl MacSecKeyBuilder {
     /// <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li>
     /// <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
     }
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
-    pub fn start_on(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_on = Some(input.into());
+    pub fn start_on(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_on = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>
-    pub fn set_start_on(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_on(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_on = input;
         self
     }

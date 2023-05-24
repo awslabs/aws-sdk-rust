@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEndpointConfig`](crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_config_name(impl Into<String>)`](crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigFluentBuilder::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigFluentBuilder::set_endpoint_config_name): <p>The name of the endpoint configuration that you want to delete.</p>
+    ///   - [`endpoint_config_name(impl ::std::convert::Into<String>)`](crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigFluentBuilder::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::operation::delete_endpoint_config::builders::DeleteEndpointConfigFluentBuilder::set_endpoint_config_name): <p>The name of the endpoint configuration that you want to delete.</p>
     /// - On success, responds with [`DeleteEndpointConfigOutput`](crate::operation::delete_endpoint_config::DeleteEndpointConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteEndpointConfigError>`](crate::operation::delete_endpoint_config::DeleteEndpointConfigError)
     pub fn delete_endpoint_config(

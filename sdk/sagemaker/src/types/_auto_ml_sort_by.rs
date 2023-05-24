@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AutoMlSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AutoMlSortBy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AutoMlSortBy {
+impl ::std::convert::From<&str> for AutoMlSortBy {
     fn from(s: &str) -> Self {
         match s {
             "CreationTime" => AutoMlSortBy::CreationTime,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AutoMlSortBy {
         }
     }
 }
-impl std::str::FromStr for AutoMlSortBy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AutoMlSortBy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoMlSortBy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AutoMlSortBy::from(s))
     }
 }
 impl AutoMlSortBy {
@@ -91,7 +91,7 @@ impl AutoMlSortBy {
         &["CreationTime", "Name", "Status"]
     }
 }
-impl AsRef<str> for AutoMlSortBy {
+impl ::std::convert::AsRef<str> for AutoMlSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

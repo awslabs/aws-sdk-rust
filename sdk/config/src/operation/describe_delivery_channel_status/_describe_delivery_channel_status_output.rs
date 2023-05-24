@@ -2,23 +2,23 @@
 
 /// <p>The output for the <code>DescribeDeliveryChannelStatus</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryChannelStatusOutput {
     /// <p>A list that contains the status of a specified delivery channel.</p>
     #[doc(hidden)]
     pub delivery_channels_status:
-        std::option::Option<std::vec::Vec<crate::types::DeliveryChannelStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannelStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeDeliveryChannelStatusOutput {
     /// <p>A list that contains the status of a specified delivery channel.</p>
     pub fn delivery_channels_status(
         &self,
-    ) -> std::option::Option<&[crate::types::DeliveryChannelStatus]> {
+    ) -> ::std::option::Option<&[crate::types::DeliveryChannelStatus]> {
         self.delivery_channels_status.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDeliveryChannelStatusOutput {
+impl ::aws_http::request_id::RequestId for DescribeDeliveryChannelStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeDeliveryChannelStatusOutput {
 
 /// A builder for [`DescribeDeliveryChannelStatusOutput`](crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDeliveryChannelStatusOutputBuilder {
     pub(crate) delivery_channels_status:
-        std::option::Option<std::vec::Vec<crate::types::DeliveryChannelStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannelStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeDeliveryChannelStatusOutputBuilder {
@@ -47,13 +49,13 @@ impl DescribeDeliveryChannelStatusOutputBuilder {
     pub fn delivery_channels_status(mut self, input: crate::types::DeliveryChannelStatus) -> Self {
         let mut v = self.delivery_channels_status.unwrap_or_default();
         v.push(input);
-        self.delivery_channels_status = Some(v);
+        self.delivery_channels_status = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains the status of a specified delivery channel.</p>
     pub fn set_delivery_channels_status(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeliveryChannelStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannelStatus>>,
     ) -> Self {
         self.delivery_channels_status = input;
         self

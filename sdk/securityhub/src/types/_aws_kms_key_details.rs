@@ -2,21 +2,21 @@
 
 /// <p>Contains metadata about an KMS key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsKmsKeyDetails {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
     #[doc(hidden)]
-    pub aws_account_id: std::option::Option<std::string::String>,
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the KMS key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub creation_date: f64,
     /// <p>The globally unique identifier for the KMS key.</p>
     #[doc(hidden)]
-    pub key_id: std::option::Option<std::string::String>,
+    pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
     #[doc(hidden)]
-    pub key_manager: std::option::Option<std::string::String>,
+    pub key_manager: ::std::option::Option<::std::string::String>,
     /// <p>The state of the KMS key. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>Disabled</code> </p> </li>
@@ -26,23 +26,23 @@ pub struct AwsKmsKeyDetails {
     /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub key_state: std::option::Option<std::string::String>,
+    pub key_state: ::std::option::Option<::std::string::String>,
     /// <p>The source of the KMS key material.</p>
     /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
     /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management infrastructure or the KMS key lacks key material.</p>
     /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
     #[doc(hidden)]
-    pub origin: std::option::Option<std::string::String>,
+    pub origin: ::std::option::Option<::std::string::String>,
     /// <p>A description of the KMS key.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the key has key rotation enabled.</p>
     #[doc(hidden)]
     pub key_rotation_status: bool,
 }
 impl AwsKmsKeyDetails {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>Indicates when the KMS key was created.</p>
@@ -51,11 +51,11 @@ impl AwsKmsKeyDetails {
         self.creation_date
     }
     /// <p>The globally unique identifier for the KMS key.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
-    pub fn key_manager(&self) -> std::option::Option<&str> {
+    pub fn key_manager(&self) -> ::std::option::Option<&str> {
         self.key_manager.as_deref()
     }
     /// <p>The state of the KMS key. Valid values are as follows:</p>
@@ -66,18 +66,18 @@ impl AwsKmsKeyDetails {
     /// <li> <p> <code>PendingImport</code> </p> </li>
     /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
-    pub fn key_state(&self) -> std::option::Option<&str> {
+    pub fn key_state(&self) -> ::std::option::Option<&str> {
         self.key_state.as_deref()
     }
     /// <p>The source of the KMS key material.</p>
     /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
     /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management infrastructure or the KMS key lacks key material.</p>
     /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
-    pub fn origin(&self) -> std::option::Option<&str> {
+    pub fn origin(&self) -> ::std::option::Option<&str> {
         self.origin.as_deref()
     }
     /// <p>A description of the KMS key.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Whether the key has key rotation enabled.</p>
@@ -94,57 +94,65 @@ impl AwsKmsKeyDetails {
 
 /// A builder for [`AwsKmsKeyDetails`](crate::types::AwsKmsKeyDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsKmsKeyDetailsBuilder {
-    pub(crate) aws_account_id: std::option::Option<std::string::String>,
-    pub(crate) creation_date: std::option::Option<f64>,
-    pub(crate) key_id: std::option::Option<std::string::String>,
-    pub(crate) key_manager: std::option::Option<std::string::String>,
-    pub(crate) key_state: std::option::Option<std::string::String>,
-    pub(crate) origin: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) key_rotation_status: std::option::Option<bool>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<f64>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_manager: ::std::option::Option<::std::string::String>,
+    pub(crate) key_state: ::std::option::Option<::std::string::String>,
+    pub(crate) origin: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) key_rotation_status: ::std::option::Option<bool>,
 }
 impl AwsKmsKeyDetailsBuilder {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_account_id = Some(input.into());
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_account_id = input;
         self
     }
     /// <p>Indicates when the KMS key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn creation_date(mut self, input: f64) -> Self {
-        self.creation_date = Some(input);
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates when the KMS key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_creation_date(mut self, input: ::std::option::Option<f64>) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The globally unique identifier for the KMS key.</p>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_id = Some(input.into());
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the KMS key.</p>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
-    pub fn key_manager(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_manager = Some(input.into());
+    pub fn key_manager(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_manager = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
-    pub fn set_key_manager(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_manager(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_manager = input;
         self
     }
@@ -156,8 +164,8 @@ impl AwsKmsKeyDetailsBuilder {
     /// <li> <p> <code>PendingImport</code> </p> </li>
     /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
-    pub fn key_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_state = Some(input.into());
+    pub fn key_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the KMS key. Valid values are as follows:</p>
@@ -168,7 +176,7 @@ impl AwsKmsKeyDetailsBuilder {
     /// <li> <p> <code>PendingImport</code> </p> </li>
     /// <li> <p> <code>Unavailable</code> </p> </li>
     /// </ul>
-    pub fn set_key_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_state = input;
         self
     }
@@ -176,35 +184,35 @@ impl AwsKmsKeyDetailsBuilder {
     /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
     /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management infrastructure or the KMS key lacks key material.</p>
     /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
-    pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
-        self.origin = Some(input.into());
+    pub fn origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the KMS key material.</p>
     /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
     /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management infrastructure or the KMS key lacks key material.</p>
     /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
-    pub fn set_origin(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin = input;
         self
     }
     /// <p>A description of the KMS key.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the KMS key.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Whether the key has key rotation enabled.</p>
     pub fn key_rotation_status(mut self, input: bool) -> Self {
-        self.key_rotation_status = Some(input);
+        self.key_rotation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the key has key rotation enabled.</p>
-    pub fn set_key_rotation_status(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_key_rotation_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.key_rotation_status = input;
         self
     }

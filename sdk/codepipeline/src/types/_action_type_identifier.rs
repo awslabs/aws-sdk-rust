@@ -2,7 +2,7 @@
 
 /// <p>Specifies the category, owner, provider, and version of the action type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeIdentifier {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
     /// <ul>
@@ -14,16 +14,16 @@ pub struct ActionTypeIdentifier {
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::ActionCategory>,
+    pub category: ::std::option::Option<crate::types::ActionCategory>,
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<std::string::String>,
+    pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
     #[doc(hidden)]
-    pub provider: std::option::Option<std::string::String>,
+    pub provider: ::std::option::Option<::std::string::String>,
     /// <p>A string that describes the action type version.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl ActionTypeIdentifier {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
@@ -35,19 +35,19 @@ impl ActionTypeIdentifier {
     /// <li> <p> <code>Approval</code> </p> </li>
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
-    pub fn category(&self) -> std::option::Option<&crate::types::ActionCategory> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::ActionCategory> {
         self.category.as_ref()
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    pub fn provider(&self) -> std::option::Option<&str> {
+    pub fn provider(&self) -> ::std::option::Option<&str> {
         self.provider.as_deref()
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -60,12 +60,14 @@ impl ActionTypeIdentifier {
 
 /// A builder for [`ActionTypeIdentifier`](crate::types::ActionTypeIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionTypeIdentifierBuilder {
-    pub(crate) category: std::option::Option<crate::types::ActionCategory>,
-    pub(crate) owner: std::option::Option<std::string::String>,
-    pub(crate) provider: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
+    pub(crate) category: ::std::option::Option<crate::types::ActionCategory>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) provider: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl ActionTypeIdentifierBuilder {
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
@@ -78,7 +80,7 @@ impl ActionTypeIdentifierBuilder {
     /// <li> <p> <code>Invoke</code> </p> </li>
     /// </ul>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
@@ -92,38 +94,38 @@ impl ActionTypeIdentifierBuilder {
     /// </ul>
     pub fn set_category(
         mut self,
-        input: std::option::Option<crate::types::ActionCategory>,
+        input: ::std::option::Option<crate::types::ActionCategory>,
     ) -> Self {
         self.category = input;
         self
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner = Some(input.into());
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provider = Some(input.into());
+    pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider = input;
         self
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }

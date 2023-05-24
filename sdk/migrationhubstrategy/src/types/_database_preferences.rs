@@ -2,28 +2,28 @@
 
 /// <p> Preferences on managing your databases on AWS. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabasePreferences {
     /// <p> Specifies whether you're interested in self-managed databases or databases managed by AWS. </p>
     #[doc(hidden)]
     pub database_management_preference:
-        std::option::Option<crate::types::DatabaseManagementPreference>,
+        ::std::option::Option<crate::types::DatabaseManagementPreference>,
     /// <p> Specifies your preferred migration path. </p>
     #[doc(hidden)]
     pub database_migration_preference:
-        std::option::Option<crate::types::DatabaseMigrationPreference>,
+        ::std::option::Option<crate::types::DatabaseMigrationPreference>,
 }
 impl DatabasePreferences {
     /// <p> Specifies whether you're interested in self-managed databases or databases managed by AWS. </p>
     pub fn database_management_preference(
         &self,
-    ) -> std::option::Option<&crate::types::DatabaseManagementPreference> {
+    ) -> ::std::option::Option<&crate::types::DatabaseManagementPreference> {
         self.database_management_preference.as_ref()
     }
     /// <p> Specifies your preferred migration path. </p>
     pub fn database_migration_preference(
         &self,
-    ) -> std::option::Option<&crate::types::DatabaseMigrationPreference> {
+    ) -> ::std::option::Option<&crate::types::DatabaseMigrationPreference> {
         self.database_migration_preference.as_ref()
     }
 }
@@ -36,12 +36,14 @@ impl DatabasePreferences {
 
 /// A builder for [`DatabasePreferences`](crate::types::DatabasePreferences).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatabasePreferencesBuilder {
     pub(crate) database_management_preference:
-        std::option::Option<crate::types::DatabaseManagementPreference>,
+        ::std::option::Option<crate::types::DatabaseManagementPreference>,
     pub(crate) database_migration_preference:
-        std::option::Option<crate::types::DatabaseMigrationPreference>,
+        ::std::option::Option<crate::types::DatabaseMigrationPreference>,
 }
 impl DatabasePreferencesBuilder {
     /// <p> Specifies whether you're interested in self-managed databases or databases managed by AWS. </p>
@@ -49,13 +51,13 @@ impl DatabasePreferencesBuilder {
         mut self,
         input: crate::types::DatabaseManagementPreference,
     ) -> Self {
-        self.database_management_preference = Some(input);
+        self.database_management_preference = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies whether you're interested in self-managed databases or databases managed by AWS. </p>
     pub fn set_database_management_preference(
         mut self,
-        input: std::option::Option<crate::types::DatabaseManagementPreference>,
+        input: ::std::option::Option<crate::types::DatabaseManagementPreference>,
     ) -> Self {
         self.database_management_preference = input;
         self
@@ -65,13 +67,13 @@ impl DatabasePreferencesBuilder {
         mut self,
         input: crate::types::DatabaseMigrationPreference,
     ) -> Self {
-        self.database_migration_preference = Some(input);
+        self.database_migration_preference = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies your preferred migration path. </p>
     pub fn set_database_migration_preference(
         mut self,
-        input: std::option::Option<crate::types::DatabaseMigrationPreference>,
+        input: ::std::option::Option<crate::types::DatabaseMigrationPreference>,
     ) -> Self {
         self.database_migration_preference = input;
         self

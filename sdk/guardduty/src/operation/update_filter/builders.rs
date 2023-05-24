@@ -6,56 +6,59 @@ pub use crate::operation::update_filter::_update_filter_input::UpdateFilterInput
 /// Fluent builder constructing a request to `UpdateFilter`.
 ///
 /// <p>Updates the filter specified by the filter name.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFilterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_filter::builders::UpdateFilterInputBuilder,
 }
 impl UpdateFilterFluentBuilder {
     /// Creates a new `UpdateFilter`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_filter::UpdateFilter,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_filter::UpdateFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_filter::UpdateFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_filter::UpdateFilterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_filter::UpdateFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_filter::UpdateFilterError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl UpdateFilterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_filter::UpdateFilterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_filter::UpdateFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_filter::UpdateFilterError>,
     > {
         self.send_middleware().await
     }
     /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
     /// <p>The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_name(input.into());
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name(input);
         self
     }
     /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -110,7 +113,7 @@ impl UpdateFilterFluentBuilder {
         self
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::FilterAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FilterAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -120,7 +123,7 @@ impl UpdateFilterFluentBuilder {
         self
     }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
-    pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_rank(input);
         self
     }
@@ -132,7 +135,7 @@ impl UpdateFilterFluentBuilder {
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     pub fn set_finding_criteria(
         mut self,
-        input: std::option::Option<crate::types::FindingCriteria>,
+        input: ::std::option::Option<crate::types::FindingCriteria>,
     ) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self

@@ -7,56 +7,59 @@ pub use crate::operation::test_dns_answer::_test_dns_answer_input::TestDnsAnswer
 ///
 /// <p>Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p>
 /// <p>This call only supports querying public hosted zones.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestDNSAnswerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::test_dns_answer::builders::TestDnsAnswerInputBuilder,
 }
 impl TestDNSAnswerFluentBuilder {
     /// Creates a new `TestDNSAnswer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::test_dns_answer::TestDNSAnswer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::test_dns_answer::TestDNSAnswerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_dns_answer::TestDNSAnswerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::test_dns_answer::TestDnsAnswerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::test_dns_answer::TestDNSAnswerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_dns_answer::TestDNSAnswerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,35 @@ impl TestDNSAnswerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::test_dns_answer::TestDnsAnswerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::test_dns_answer::TestDNSAnswerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_dns_answer::TestDNSAnswerError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
-    pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
-    pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
     /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
-    pub fn record_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn record_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_name(input.into());
         self
     }
     /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
-    pub fn set_record_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_record_name(input);
         self
     }
@@ -101,29 +110,32 @@ impl TestDNSAnswerFluentBuilder {
         self
     }
     /// <p>The type of the resource record set.</p>
-    pub fn set_record_type(mut self, input: std::option::Option<crate::types::RrType>) -> Self {
+    pub fn set_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.inner = self.inner.set_record_type(input);
         self
     }
     /// <p>If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region (<code>us-east-1</code>).</p>
-    pub fn resolver_ip(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resolver_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resolver_ip(input.into());
         self
     }
     /// <p>If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region (<code>us-east-1</code>).</p>
-    pub fn set_resolver_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resolver_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resolver_ip(input);
         self
     }
     /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
-    pub fn edns0_client_subnet_ip(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn edns0_client_subnet_ip(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.edns0_client_subnet_ip(input.into());
         self
     }
     /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
     pub fn set_edns0_client_subnet_ip(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_edns0_client_subnet_ip(input);
         self
@@ -134,7 +146,10 @@ impl TestDNSAnswerFluentBuilder {
     /// <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li>
     /// <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li>
     /// </ul>
-    pub fn edns0_client_subnet_mask(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn edns0_client_subnet_mask(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.edns0_client_subnet_mask(input.into());
         self
     }
@@ -146,7 +161,7 @@ impl TestDNSAnswerFluentBuilder {
     /// </ul>
     pub fn set_edns0_client_subnet_mask(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_edns0_client_subnet_mask(input);
         self

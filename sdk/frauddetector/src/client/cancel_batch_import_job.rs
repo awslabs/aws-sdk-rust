@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelBatchImportJob`](crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobFluentBuilder::set_job_id): <p> The ID of an in-progress batch import job to cancel. </p>  <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobFluentBuilder::set_job_id): <p> The ID of an in-progress batch import job to cancel. </p>  <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
     /// - On success, responds with [`CancelBatchImportJobOutput`](crate::operation::cancel_batch_import_job::CancelBatchImportJobOutput)
     /// - On failure, responds with [`SdkError<CancelBatchImportJobError>`](crate::operation::cancel_batch_import_job::CancelBatchImportJobError)
     pub fn cancel_batch_import_job(

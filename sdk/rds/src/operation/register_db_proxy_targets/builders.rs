@@ -6,30 +6,30 @@ pub use crate::operation::register_db_proxy_targets::_register_db_proxy_targets_
 /// Fluent builder constructing a request to `RegisterDBProxyTargets`.
 ///
 /// <p>Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterDBProxyTargetsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsInputBuilder,
 }
 impl RegisterDBProxyTargetsFluentBuilder {
     /// Creates a new `RegisterDBProxyTargets`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_db_proxy_targets::RegisterDBProxyTargets,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl RegisterDBProxyTargetsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,33 +76,42 @@ impl RegisterDBProxyTargetsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-    pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_proxy_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());
         self
     }
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-    pub fn set_db_proxy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_proxy_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_proxy_name(input);
         self
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-    pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_group_name(input.into());
         self
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
     pub fn set_target_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_target_group_name(input);
         self
@@ -109,14 +121,17 @@ impl RegisterDBProxyTargetsFluentBuilder {
     /// To override the contents of this collection use [`set_db_instance_identifiers`](Self::set_db_instance_identifiers).
     ///
     /// <p>One or more DB instance identifiers.</p>
-    pub fn db_instance_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_instance_identifiers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_instance_identifiers(input.into());
         self
     }
     /// <p>One or more DB instance identifiers.</p>
     pub fn set_db_instance_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_db_instance_identifiers(input);
         self
@@ -126,14 +141,17 @@ impl RegisterDBProxyTargetsFluentBuilder {
     /// To override the contents of this collection use [`set_db_cluster_identifiers`](Self::set_db_cluster_identifiers).
     ///
     /// <p>One or more DB cluster identifiers.</p>
-    pub fn db_cluster_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_identifiers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_cluster_identifiers(input.into());
         self
     }
     /// <p>One or more DB cluster identifiers.</p>
     pub fn set_db_cluster_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifiers(input);
         self

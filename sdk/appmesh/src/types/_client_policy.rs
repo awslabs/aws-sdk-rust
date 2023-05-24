@@ -2,15 +2,15 @@
 
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     #[doc(hidden)]
-    pub tls: std::option::Option<crate::types::ClientPolicyTls>,
+    pub tls: ::std::option::Option<crate::types::ClientPolicyTls>,
 }
 impl ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-    pub fn tls(&self) -> std::option::Option<&crate::types::ClientPolicyTls> {
+    pub fn tls(&self) -> ::std::option::Option<&crate::types::ClientPolicyTls> {
         self.tls.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl ClientPolicy {
 
 /// A builder for [`ClientPolicy`](crate::types::ClientPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientPolicyBuilder {
-    pub(crate) tls: std::option::Option<crate::types::ClientPolicyTls>,
+    pub(crate) tls: ::std::option::Option<crate::types::ClientPolicyTls>,
 }
 impl ClientPolicyBuilder {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     pub fn tls(mut self, input: crate::types::ClientPolicyTls) -> Self {
-        self.tls = Some(input);
+        self.tls = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-    pub fn set_tls(mut self, input: std::option::Option<crate::types::ClientPolicyTls>) -> Self {
+    pub fn set_tls(mut self, input: ::std::option::Option<crate::types::ClientPolicyTls>) -> Self {
         self.tls = input;
         self
     }

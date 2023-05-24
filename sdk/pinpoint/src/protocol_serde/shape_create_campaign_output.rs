@@ -2,7 +2,7 @@
 pub(crate) fn de_campaign_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::CampaignResponse>,
+    ::std::option::Option<crate::types::CampaignResponse>,
     crate::operation::create_campaign::CreateCampaignError,
 > {
     (!body.is_empty())

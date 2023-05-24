@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`force(RebootInputDeviceForce)`](crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::force) / [`set_force(Option<RebootInputDeviceForce>)`](crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::set_force): Force a reboot of an input device. If the device is streaming, it will stop streaming and begin rebooting within a few seconds of sending the command. If the device was streaming prior to the reboot, the device will resume streaming when the reboot completes.
-    ///   - [`input_device_id(impl Into<String>)`](crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::set_input_device_id): The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    ///   - [`input_device_id(impl ::std::convert::Into<String>)`](crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::reboot_input_device::builders::RebootInputDeviceFluentBuilder::set_input_device_id): The unique ID of the input device to reboot. For example, hd-123456789abcdef.
     /// - On success, responds with [`RebootInputDeviceOutput`](crate::operation::reboot_input_device::RebootInputDeviceOutput)
     /// - On failure, responds with [`SdkError<RebootInputDeviceError>`](crate::operation::reboot_input_device::RebootInputDeviceError)
     pub fn reboot_input_device(

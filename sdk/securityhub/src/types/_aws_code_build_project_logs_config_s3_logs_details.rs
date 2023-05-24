@@ -2,17 +2,17 @@
 
 /// <p>Information about logs built to an S3 bucket for a build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectLogsConfigS3LogsDetails {
     /// <p>Whether to disable encryption of the S3 build log output.</p>
     #[doc(hidden)]
     pub encryption_disabled: bool,
     /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the S3 build logs.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
     /// <p>Whether to disable encryption of the S3 build log output.</p>
@@ -20,11 +20,11 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
         self.encryption_disabled
     }
     /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The current status of the S3 build logs.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl AwsCodeBuildProjectLogsConfigS3LogsDetails {
 
 /// A builder for [`AwsCodeBuildProjectLogsConfigS3LogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigS3LogsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCodeBuildProjectLogsConfigS3LogsDetailsBuilder {
-    pub(crate) encryption_disabled: std::option::Option<bool>,
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) encryption_disabled: ::std::option::Option<bool>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectLogsConfigS3LogsDetailsBuilder {
     /// <p>Whether to disable encryption of the S3 build log output.</p>
     pub fn encryption_disabled(mut self, input: bool) -> Self {
-        self.encryption_disabled = Some(input);
+        self.encryption_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to disable encryption of the S3 build log output.</p>
-    pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_disabled = input;
         self
     }
     /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The current status of the S3 build logs.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the S3 build logs.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

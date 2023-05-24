@@ -6,29 +6,29 @@ pub use crate::operation::update_domain_name::_update_domain_name_input::UpdateD
 /// Fluent builder constructing a request to `UpdateDomainName`.
 ///
 /// <p>Updates a domain name.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainNameFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_domain_name::builders::UpdateDomainNameInputBuilder,
 }
 impl UpdateDomainNameFluentBuilder {
     /// Creates a new `UpdateDomainName`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_domain_name::UpdateDomainName,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_name::UpdateDomainNameError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateDomainNameFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_name::UpdateDomainNameOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_name::UpdateDomainNameError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl UpdateDomainNameFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_name::UpdateDomainNameOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_name::UpdateDomainNameError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The domain name.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>The domain name.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
@@ -105,7 +108,7 @@ impl UpdateDomainNameFluentBuilder {
     /// <p>The domain name configurations.</p>
     pub fn set_domain_name_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainNameConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainNameConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_domain_name_configurations(input);
         self
@@ -121,7 +124,7 @@ impl UpdateDomainNameFluentBuilder {
     /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
     pub fn set_mutual_tls_authentication(
         mut self,
-        input: std::option::Option<crate::types::MutualTlsAuthenticationInput>,
+        input: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
     ) -> Self {
         self.inner = self.inner.set_mutual_tls_authentication(input);
         self

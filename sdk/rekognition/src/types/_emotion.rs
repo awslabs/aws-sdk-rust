@@ -2,22 +2,22 @@
 
 /// <p>The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Emotion {
     /// <p>Type of emotion detected.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EmotionName>,
+    pub r#type: ::std::option::Option<crate::types::EmotionName>,
     /// <p>Level of confidence in the determination.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
 }
 impl Emotion {
     /// <p>Type of emotion detected.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EmotionName> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EmotionName> {
         self.r#type.as_ref()
     }
     /// <p>Level of confidence in the determination.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
 }
@@ -30,29 +30,31 @@ impl Emotion {
 
 /// A builder for [`Emotion`](crate::types::Emotion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmotionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::EmotionName>,
-    pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EmotionName>,
+    pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl EmotionBuilder {
     /// <p>Type of emotion detected.</p>
     pub fn r#type(mut self, input: crate::types::EmotionName) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of emotion detected.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::EmotionName>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EmotionName>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Level of confidence in the determination.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }

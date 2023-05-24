@@ -2,11 +2,11 @@
 
 /// <p> Response of DeleteBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBudgetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteBudgetOutput {
+impl ::aws_http::request_id::RequestId for DeleteBudgetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteBudgetOutput {
 
 /// A builder for [`DeleteBudgetOutput`](crate::operation::delete_budget::DeleteBudgetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteBudgetOutputBuilder {
     _request_id: Option<String>,
 }

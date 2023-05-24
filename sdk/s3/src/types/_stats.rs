@@ -2,7 +2,7 @@
 
 /// <p>Container for the stats details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stats {
     /// <p>The total number of object bytes scanned.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl Stats {
 
 /// A builder for [`Stats`](crate::types::Stats).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatsBuilder {
-    pub(crate) bytes_scanned: std::option::Option<i64>,
-    pub(crate) bytes_processed: std::option::Option<i64>,
-    pub(crate) bytes_returned: std::option::Option<i64>,
+    pub(crate) bytes_scanned: ::std::option::Option<i64>,
+    pub(crate) bytes_processed: ::std::option::Option<i64>,
+    pub(crate) bytes_returned: ::std::option::Option<i64>,
 }
 impl StatsBuilder {
     /// <p>The total number of object bytes scanned.</p>
     pub fn bytes_scanned(mut self, input: i64) -> Self {
-        self.bytes_scanned = Some(input);
+        self.bytes_scanned = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of object bytes scanned.</p>
-    pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_scanned = input;
         self
     }
     /// <p>The total number of uncompressed object bytes processed.</p>
     pub fn bytes_processed(mut self, input: i64) -> Self {
-        self.bytes_processed = Some(input);
+        self.bytes_processed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of uncompressed object bytes processed.</p>
-    pub fn set_bytes_processed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_processed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_processed = input;
         self
     }
     /// <p>The total number of bytes of records payload data returned.</p>
     pub fn bytes_returned(mut self, input: i64) -> Self {
-        self.bytes_returned = Some(input);
+        self.bytes_returned = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of bytes of records payload data returned.</p>
-    pub fn set_bytes_returned(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_returned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_returned = input;
         self
     }

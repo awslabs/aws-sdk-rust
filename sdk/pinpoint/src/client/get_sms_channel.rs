@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSmsChannel`](crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_sms_channel::builders::GetSmsChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetSmsChannelOutput`](crate::operation::get_sms_channel::GetSmsChannelOutput) with field(s):
     ///   - [`sms_channel_response(Option<SmsChannelResponse>)`](crate::operation::get_sms_channel::GetSmsChannelOutput::sms_channel_response): <p>Provides information about the status and settings of the SMS channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetSmsChannelError>`](crate::operation::get_sms_channel::GetSmsChannelError)

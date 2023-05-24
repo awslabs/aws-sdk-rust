@@ -2,24 +2,24 @@
 
 /// <p>An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html">Schema</a> object contains an array of <code>SchemaAttribute</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaAttribute {
     /// <p>The name of the dataset field.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the field.</p>
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
     #[doc(hidden)]
-    pub attribute_type: std::option::Option<crate::types::AttributeType>,
+    pub attribute_type: ::std::option::Option<crate::types::AttributeType>,
 }
 impl SchemaAttribute {
     /// <p>The name of the dataset field.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The data type of the field.</p>
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
-    pub fn attribute_type(&self) -> std::option::Option<&crate::types::AttributeType> {
+    pub fn attribute_type(&self) -> ::std::option::Option<&crate::types::AttributeType> {
         self.attribute_type.as_ref()
     }
 }
@@ -32,33 +32,41 @@ impl SchemaAttribute {
 
 /// A builder for [`SchemaAttribute`](crate::types::SchemaAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SchemaAttributeBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) attribute_type: std::option::Option<crate::types::AttributeType>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_type: ::std::option::Option<crate::types::AttributeType>,
 }
 impl SchemaAttributeBuilder {
     /// <p>The name of the dataset field.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset field.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The data type of the field.</p>
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
     pub fn attribute_type(mut self, input: crate::types::AttributeType) -> Self {
-        self.attribute_type = Some(input);
+        self.attribute_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the field.</p>
     /// <p>For a related time series dataset, other than date, item_id, and forecast dimensions attributes, all attributes should be of numerical type (integer/float).</p>
     pub fn set_attribute_type(
         mut self,
-        input: std::option::Option<crate::types::AttributeType>,
+        input: ::std::option::Option<crate::types::AttributeType>,
     ) -> Self {
         self.attribute_type = input;
         self

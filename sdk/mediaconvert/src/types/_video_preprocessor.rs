@@ -2,64 +2,66 @@
 
 /// Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output individually. These features are disabled by default.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoPreprocessor {
     /// Use these settings to convert the color space or to modify properties such as hue and contrast for this output. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
     #[doc(hidden)]
-    pub color_corrector: std::option::Option<crate::types::ColorCorrector>,
+    pub color_corrector: ::std::option::Option<crate::types::ColorCorrector>,
     /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
     #[doc(hidden)]
-    pub deinterlacer: std::option::Option<crate::types::Deinterlacer>,
+    pub deinterlacer: ::std::option::Option<crate::types::Deinterlacer>,
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
     #[doc(hidden)]
-    pub dolby_vision: std::option::Option<crate::types::DolbyVision>,
+    pub dolby_vision: ::std::option::Option<crate::types::DolbyVision>,
     /// Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
     #[doc(hidden)]
-    pub hdr10_plus: std::option::Option<crate::types::Hdr10Plus>,
+    pub hdr10_plus: ::std::option::Option<crate::types::Hdr10Plus>,
     /// Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
     #[doc(hidden)]
-    pub image_inserter: std::option::Option<crate::types::ImageInserter>,
+    pub image_inserter: ::std::option::Option<crate::types::ImageInserter>,
     /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
     #[doc(hidden)]
-    pub noise_reducer: std::option::Option<crate::types::NoiseReducer>,
+    pub noise_reducer: ::std::option::Option<crate::types::NoiseReducer>,
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
     #[doc(hidden)]
-    pub partner_watermarking: std::option::Option<crate::types::PartnerWatermarking>,
+    pub partner_watermarking: ::std::option::Option<crate::types::PartnerWatermarking>,
     /// Settings for burning the output timecode and specified prefix into the output.
     #[doc(hidden)]
-    pub timecode_burnin: std::option::Option<crate::types::TimecodeBurnin>,
+    pub timecode_burnin: ::std::option::Option<crate::types::TimecodeBurnin>,
 }
 impl VideoPreprocessor {
     /// Use these settings to convert the color space or to modify properties such as hue and contrast for this output. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
-    pub fn color_corrector(&self) -> std::option::Option<&crate::types::ColorCorrector> {
+    pub fn color_corrector(&self) -> ::std::option::Option<&crate::types::ColorCorrector> {
         self.color_corrector.as_ref()
     }
     /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
-    pub fn deinterlacer(&self) -> std::option::Option<&crate::types::Deinterlacer> {
+    pub fn deinterlacer(&self) -> ::std::option::Option<&crate::types::Deinterlacer> {
         self.deinterlacer.as_ref()
     }
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
-    pub fn dolby_vision(&self) -> std::option::Option<&crate::types::DolbyVision> {
+    pub fn dolby_vision(&self) -> ::std::option::Option<&crate::types::DolbyVision> {
         self.dolby_vision.as_ref()
     }
     /// Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
-    pub fn hdr10_plus(&self) -> std::option::Option<&crate::types::Hdr10Plus> {
+    pub fn hdr10_plus(&self) -> ::std::option::Option<&crate::types::Hdr10Plus> {
         self.hdr10_plus.as_ref()
     }
     /// Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
-    pub fn image_inserter(&self) -> std::option::Option<&crate::types::ImageInserter> {
+    pub fn image_inserter(&self) -> ::std::option::Option<&crate::types::ImageInserter> {
         self.image_inserter.as_ref()
     }
     /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
-    pub fn noise_reducer(&self) -> std::option::Option<&crate::types::NoiseReducer> {
+    pub fn noise_reducer(&self) -> ::std::option::Option<&crate::types::NoiseReducer> {
         self.noise_reducer.as_ref()
     }
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
-    pub fn partner_watermarking(&self) -> std::option::Option<&crate::types::PartnerWatermarking> {
+    pub fn partner_watermarking(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PartnerWatermarking> {
         self.partner_watermarking.as_ref()
     }
     /// Settings for burning the output timecode and specified prefix into the output.
-    pub fn timecode_burnin(&self) -> std::option::Option<&crate::types::TimecodeBurnin> {
+    pub fn timecode_burnin(&self) -> ::std::option::Option<&crate::types::TimecodeBurnin> {
         self.timecode_burnin.as_ref()
     }
 }
@@ -72,115 +74,117 @@ impl VideoPreprocessor {
 
 /// A builder for [`VideoPreprocessor`](crate::types::VideoPreprocessor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoPreprocessorBuilder {
-    pub(crate) color_corrector: std::option::Option<crate::types::ColorCorrector>,
-    pub(crate) deinterlacer: std::option::Option<crate::types::Deinterlacer>,
-    pub(crate) dolby_vision: std::option::Option<crate::types::DolbyVision>,
-    pub(crate) hdr10_plus: std::option::Option<crate::types::Hdr10Plus>,
-    pub(crate) image_inserter: std::option::Option<crate::types::ImageInserter>,
-    pub(crate) noise_reducer: std::option::Option<crate::types::NoiseReducer>,
-    pub(crate) partner_watermarking: std::option::Option<crate::types::PartnerWatermarking>,
-    pub(crate) timecode_burnin: std::option::Option<crate::types::TimecodeBurnin>,
+    pub(crate) color_corrector: ::std::option::Option<crate::types::ColorCorrector>,
+    pub(crate) deinterlacer: ::std::option::Option<crate::types::Deinterlacer>,
+    pub(crate) dolby_vision: ::std::option::Option<crate::types::DolbyVision>,
+    pub(crate) hdr10_plus: ::std::option::Option<crate::types::Hdr10Plus>,
+    pub(crate) image_inserter: ::std::option::Option<crate::types::ImageInserter>,
+    pub(crate) noise_reducer: ::std::option::Option<crate::types::NoiseReducer>,
+    pub(crate) partner_watermarking: ::std::option::Option<crate::types::PartnerWatermarking>,
+    pub(crate) timecode_burnin: ::std::option::Option<crate::types::TimecodeBurnin>,
 }
 impl VideoPreprocessorBuilder {
     /// Use these settings to convert the color space or to modify properties such as hue and contrast for this output. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
     pub fn color_corrector(mut self, input: crate::types::ColorCorrector) -> Self {
-        self.color_corrector = Some(input);
+        self.color_corrector = ::std::option::Option::Some(input);
         self
     }
     /// Use these settings to convert the color space or to modify properties such as hue and contrast for this output. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
     pub fn set_color_corrector(
         mut self,
-        input: std::option::Option<crate::types::ColorCorrector>,
+        input: ::std::option::Option<crate::types::ColorCorrector>,
     ) -> Self {
         self.color_corrector = input;
         self
     }
     /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
     pub fn deinterlacer(mut self, input: crate::types::Deinterlacer) -> Self {
-        self.deinterlacer = Some(input);
+        self.deinterlacer = ::std::option::Option::Some(input);
         self
     }
     /// Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
     pub fn set_deinterlacer(
         mut self,
-        input: std::option::Option<crate::types::Deinterlacer>,
+        input: ::std::option::Option<crate::types::Deinterlacer>,
     ) -> Self {
         self.deinterlacer = input;
         self
     }
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
     pub fn dolby_vision(mut self, input: crate::types::DolbyVision) -> Self {
-        self.dolby_vision = Some(input);
+        self.dolby_vision = ::std::option::Option::Some(input);
         self
     }
     /// Enable Dolby Vision feature to produce Dolby Vision compatible video output.
     pub fn set_dolby_vision(
         mut self,
-        input: std::option::Option<crate::types::DolbyVision>,
+        input: ::std::option::Option<crate::types::DolbyVision>,
     ) -> Self {
         self.dolby_vision = input;
         self
     }
     /// Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
     pub fn hdr10_plus(mut self, input: crate::types::Hdr10Plus) -> Self {
-        self.hdr10_plus = Some(input);
+        self.hdr10_plus = ::std::option::Option::Some(input);
         self
     }
     /// Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
-    pub fn set_hdr10_plus(mut self, input: std::option::Option<crate::types::Hdr10Plus>) -> Self {
+    pub fn set_hdr10_plus(mut self, input: ::std::option::Option<crate::types::Hdr10Plus>) -> Self {
         self.hdr10_plus = input;
         self
     }
     /// Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
     pub fn image_inserter(mut self, input: crate::types::ImageInserter) -> Self {
-        self.image_inserter = Some(input);
+        self.image_inserter = ::std::option::Option::Some(input);
         self
     }
     /// Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable this feature for each output individually. This setting is disabled by default.
     pub fn set_image_inserter(
         mut self,
-        input: std::option::Option<crate::types::ImageInserter>,
+        input: ::std::option::Option<crate::types::ImageInserter>,
     ) -> Self {
         self.image_inserter = input;
         self
     }
     /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
     pub fn noise_reducer(mut self, input: crate::types::NoiseReducer) -> Self {
-        self.noise_reducer = Some(input);
+        self.noise_reducer = ::std::option::Option::Some(input);
         self
     }
     /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
     pub fn set_noise_reducer(
         mut self,
-        input: std::option::Option<crate::types::NoiseReducer>,
+        input: ::std::option::Option<crate::types::NoiseReducer>,
     ) -> Self {
         self.noise_reducer = input;
         self
     }
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
     pub fn partner_watermarking(mut self, input: crate::types::PartnerWatermarking) -> Self {
-        self.partner_watermarking = Some(input);
+        self.partner_watermarking = ::std::option::Option::Some(input);
         self
     }
     /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
     pub fn set_partner_watermarking(
         mut self,
-        input: std::option::Option<crate::types::PartnerWatermarking>,
+        input: ::std::option::Option<crate::types::PartnerWatermarking>,
     ) -> Self {
         self.partner_watermarking = input;
         self
     }
     /// Settings for burning the output timecode and specified prefix into the output.
     pub fn timecode_burnin(mut self, input: crate::types::TimecodeBurnin) -> Self {
-        self.timecode_burnin = Some(input);
+        self.timecode_burnin = ::std::option::Option::Some(input);
         self
     }
     /// Settings for burning the output timecode and specified prefix into the output.
     pub fn set_timecode_burnin(
         mut self,
-        input: std::option::Option<crate::types::TimecodeBurnin>,
+        input: ::std::option::Option<crate::types::TimecodeBurnin>,
     ) -> Self {
         self.timecode_burnin = input;
         self

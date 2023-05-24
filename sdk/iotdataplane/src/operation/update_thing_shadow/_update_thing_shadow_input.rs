@@ -2,29 +2,29 @@
 
 /// <p>The input for the UpdateThingShadow operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingShadowInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the shadow.</p>
     #[doc(hidden)]
-    pub shadow_name: std::option::Option<std::string::String>,
+    pub shadow_name: ::std::option::Option<::std::string::String>,
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
-    pub payload: std::option::Option<aws_smithy_types::Blob>,
+    pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl UpdateThingShadowInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The name of the shadow.</p>
-    pub fn shadow_name(&self) -> std::option::Option<&str> {
+    pub fn shadow_name(&self) -> ::std::option::Option<&str> {
         self.shadow_name.as_deref()
     }
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
@@ -38,51 +38,53 @@ impl UpdateThingShadowInput {
 
 /// A builder for [`UpdateThingShadowInput`](crate::operation::update_thing_shadow::UpdateThingShadowInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateThingShadowInputBuilder {
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) shadow_name: std::option::Option<std::string::String>,
-    pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) shadow_name: ::std::option::Option<::std::string::String>,
+    pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl UpdateThingShadowInputBuilder {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// <p>The name of the shadow.</p>
-    pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.shadow_name = Some(input.into());
+    pub fn shadow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.shadow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the shadow.</p>
-    pub fn set_shadow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shadow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shadow_name = input;
         self
     }
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.payload = Some(input);
+    pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state information, in JSON format.</p>
-    pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateThingShadowInput`](crate::operation::update_thing_shadow::UpdateThingShadowInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_thing_shadow::UpdateThingShadowInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_thing_shadow::UpdateThingShadowInput {
                 thing_name: self.thing_name,
                 shadow_name: self.shadow_name,

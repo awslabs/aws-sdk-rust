@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ResponseContentType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ResponseContentType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ResponseContentType {
+impl ::std::convert::From<&str> for ResponseContentType {
     fn from(s: &str) -> Self {
         match s {
             "APPLICATION_JSON" => ResponseContentType::ApplicationJson,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ResponseContentType {
         }
     }
 }
-impl std::str::FromStr for ResponseContentType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ResponseContentType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResponseContentType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ResponseContentType::from(s))
     }
 }
 impl ResponseContentType {
@@ -91,7 +91,7 @@ impl ResponseContentType {
         &["APPLICATION_JSON", "TEXT_HTML", "TEXT_PLAIN"]
     }
 }
-impl AsRef<str> for ResponseContentType {
+impl ::std::convert::AsRef<str> for ResponseContentType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

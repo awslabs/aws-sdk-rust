@@ -2,7 +2,7 @@
 
 /// <p>The request parameters to get cluster credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClusterCredentialsInput {
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p>
@@ -15,7 +15,7 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_user: std::option::Option<std::string::String>,
+    pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -26,18 +26,18 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_name: std::option::Option<std::string::String>,
+    pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
     #[doc(hidden)]
-    pub cluster_identifier: std::option::Option<std::string::String>,
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Constraint: minimum 900, maximum 3600.</p>
     /// <p>Default: 900</p>
     #[doc(hidden)]
-    pub duration_seconds: std::option::Option<i32>,
+    pub duration_seconds: ::std::option::Option<i32>,
     /// <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
     #[doc(hidden)]
-    pub auto_create: std::option::Option<bool>,
+    pub auto_create: ::std::option::Option<bool>,
     /// <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>
     /// <p>Database group name constraints</p>
     /// <ul>
@@ -48,7 +48,7 @@ pub struct GetClusterCredentialsInput {
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub db_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetClusterCredentialsInput {
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
@@ -61,7 +61,7 @@ impl GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> ::std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>
@@ -73,21 +73,21 @@ impl GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn db_name(&self) -> std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Constraint: minimum 900, maximum 3600.</p>
     /// <p>Default: 900</p>
-    pub fn duration_seconds(&self) -> std::option::Option<i32> {
+    pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
     /// <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
-    pub fn auto_create(&self) -> std::option::Option<bool> {
+    pub fn auto_create(&self) -> ::std::option::Option<bool> {
         self.auto_create
     }
     /// <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>
@@ -99,7 +99,7 @@ impl GetClusterCredentialsInput {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn db_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn db_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.db_groups.as_deref()
     }
 }
@@ -114,14 +114,16 @@ impl GetClusterCredentialsInput {
 
 /// A builder for [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetClusterCredentialsInputBuilder {
-    pub(crate) db_user: std::option::Option<std::string::String>,
-    pub(crate) db_name: std::option::Option<std::string::String>,
-    pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) duration_seconds: std::option::Option<i32>,
-    pub(crate) auto_create: std::option::Option<bool>,
-    pub(crate) db_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) db_user: ::std::option::Option<::std::string::String>,
+    pub(crate) db_name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) auto_create: ::std::option::Option<bool>,
+    pub(crate) db_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetClusterCredentialsInputBuilder {
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
@@ -134,8 +136,8 @@ impl GetClusterCredentialsInputBuilder {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_user = Some(input.into());
+    pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
@@ -148,7 +150,7 @@ impl GetClusterCredentialsInputBuilder {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_user = input;
         self
     }
@@ -161,8 +163,8 @@ impl GetClusterCredentialsInputBuilder {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_name = Some(input.into());
+    pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>
@@ -174,19 +176,22 @@ impl GetClusterCredentialsInputBuilder {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_identifier = Some(input.into());
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_identifier = input;
         self
@@ -195,23 +200,23 @@ impl GetClusterCredentialsInputBuilder {
     /// <p>Constraint: minimum 900, maximum 3600.</p>
     /// <p>Default: 900</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
-        self.duration_seconds = Some(input);
+        self.duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Constraint: minimum 900, maximum 3600.</p>
     /// <p>Default: 900</p>
-    pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
     }
     /// <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
     pub fn auto_create(mut self, input: bool) -> Self {
-        self.auto_create = Some(input);
+        self.auto_create = ::std::option::Option::Some(input);
         self
     }
     /// <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
-    pub fn set_auto_create(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_create(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_create = input;
         self
     }
@@ -228,10 +233,10 @@ impl GetClusterCredentialsInputBuilder {
     /// <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>
     /// <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>
     /// </ul>
-    pub fn db_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.db_groups.unwrap_or_default();
         v.push(input.into());
-        self.db_groups = Some(v);
+        self.db_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>
@@ -245,7 +250,7 @@ impl GetClusterCredentialsInputBuilder {
     /// </ul>
     pub fn set_db_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.db_groups = input;
         self
@@ -253,11 +258,11 @@ impl GetClusterCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_cluster_credentials::GetClusterCredentialsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_cluster_credentials::GetClusterCredentialsInput {
                 db_user: self.db_user,
                 db_name: self.db_name,

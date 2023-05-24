@@ -2,22 +2,22 @@
 
 /// <p>Describes a resource group to which a Capacity Reservation has been added.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservationGroup {
     /// <p>The ARN of the resource group.</p>
     #[doc(hidden)]
-    pub group_arn: std::option::Option<std::string::String>,
+    pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationGroup {
     /// <p>The ARN of the resource group.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> ::std::option::Option<&str> {
         self.group_arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl CapacityReservationGroup {
 
 /// A builder for [`CapacityReservationGroup`](crate::types::CapacityReservationGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityReservationGroupBuilder {
-    pub(crate) group_arn: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
+    pub(crate) group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationGroupBuilder {
     /// <p>The ARN of the resource group.</p>
-    pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_arn = Some(input.into());
+    pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource group.</p>
-    pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>A batch job identifier in which the batch job to run is identified by the file name and the relative path to the file name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileBatchJobIdentifier {
     /// <p>The file name for the batch job identifier.</p>
     #[doc(hidden)]
-    pub file_name: std::option::Option<std::string::String>,
+    pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>The relative path to the file name for the batch job identifier.</p>
     #[doc(hidden)]
-    pub folder_path: std::option::Option<std::string::String>,
+    pub folder_path: ::std::option::Option<::std::string::String>,
 }
 impl FileBatchJobIdentifier {
     /// <p>The file name for the batch job identifier.</p>
-    pub fn file_name(&self) -> std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
     }
     /// <p>The relative path to the file name for the batch job identifier.</p>
-    pub fn folder_path(&self) -> std::option::Option<&str> {
+    pub fn folder_path(&self) -> ::std::option::Option<&str> {
         self.folder_path.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl FileBatchJobIdentifier {
 
 /// A builder for [`FileBatchJobIdentifier`](crate::types::FileBatchJobIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileBatchJobIdentifierBuilder {
-    pub(crate) file_name: std::option::Option<std::string::String>,
-    pub(crate) folder_path: std::option::Option<std::string::String>,
+    pub(crate) file_name: ::std::option::Option<::std::string::String>,
+    pub(crate) folder_path: ::std::option::Option<::std::string::String>,
 }
 impl FileBatchJobIdentifierBuilder {
     /// <p>The file name for the batch job identifier.</p>
-    pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_name = Some(input.into());
+    pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file name for the batch job identifier.</p>
-    pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
     }
     /// <p>The relative path to the file name for the batch job identifier.</p>
-    pub fn folder_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.folder_path = Some(input.into());
+    pub fn folder_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.folder_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative path to the file name for the batch job identifier.</p>
-    pub fn set_folder_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_folder_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.folder_path = input;
         self
     }

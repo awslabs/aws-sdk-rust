@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDatasetGroup`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_group_arn(impl Into<String>)`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    ///   - [`dataset_group_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::dataset_group_arn) / [`set_dataset_group_arn(Option<String>)`](crate::operation::describe_dataset_group::builders::DescribeDatasetGroupFluentBuilder::set_dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     /// - On success, responds with [`DescribeDatasetGroupOutput`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput) with field(s):
     ///   - [`dataset_group_name(Option<String>)`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput::dataset_group_name): <p>The name of the dataset group.</p>
     ///   - [`dataset_group_arn(Option<String>)`](crate::operation::describe_dataset_group::DescribeDatasetGroupOutput::dataset_group_arn): <p>The ARN of the dataset group.</p>

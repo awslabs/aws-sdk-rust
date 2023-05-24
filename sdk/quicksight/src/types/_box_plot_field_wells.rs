@@ -3,18 +3,18 @@
 /// <p>The field wells of a <code>BoxPlotVisual</code>.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotFieldWells {
     /// <p>The aggregated field wells of a box plot.</p>
     #[doc(hidden)]
     pub box_plot_aggregated_field_wells:
-        std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
+        ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
 }
 impl BoxPlotFieldWells {
     /// <p>The aggregated field wells of a box plot.</p>
     pub fn box_plot_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::BoxPlotAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::BoxPlotAggregatedFieldWells> {
         self.box_plot_aggregated_field_wells.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl BoxPlotFieldWells {
 
 /// A builder for [`BoxPlotFieldWells`](crate::types::BoxPlotFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BoxPlotFieldWellsBuilder {
     pub(crate) box_plot_aggregated_field_wells:
-        std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
+        ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
 }
 impl BoxPlotFieldWellsBuilder {
     /// <p>The aggregated field wells of a box plot.</p>
@@ -38,13 +40,13 @@ impl BoxPlotFieldWellsBuilder {
         mut self,
         input: crate::types::BoxPlotAggregatedFieldWells,
     ) -> Self {
-        self.box_plot_aggregated_field_wells = Some(input);
+        self.box_plot_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a box plot.</p>
     pub fn set_box_plot_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::BoxPlotAggregatedFieldWells>,
     ) -> Self {
         self.box_plot_aggregated_field_wells = input;
         self

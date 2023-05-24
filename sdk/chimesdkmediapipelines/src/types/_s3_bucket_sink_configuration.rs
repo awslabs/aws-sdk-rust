@@ -2,20 +2,20 @@
 
 /// <p>The configuration settings for the S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct S3BucketSinkConfiguration {
     /// <p>The destination URL of the S3 bucket.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<std::string::String>,
+    pub destination: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketSinkConfiguration {
     /// <p>The destination URL of the S3 bucket.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
 }
-impl std::fmt::Debug for S3BucketSinkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for S3BucketSinkConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("S3BucketSinkConfiguration");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,18 @@ impl S3BucketSinkConfiguration {
 
 /// A builder for [`S3BucketSinkConfiguration`](crate::types::S3BucketSinkConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct S3BucketSinkConfigurationBuilder {
-    pub(crate) destination: std::option::Option<std::string::String>,
+    pub(crate) destination: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketSinkConfigurationBuilder {
     /// <p>The destination URL of the S3 bucket.</p>
-    pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination = Some(input.into());
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination URL of the S3 bucket.</p>
-    pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }
@@ -52,8 +52,8 @@ impl S3BucketSinkConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for S3BucketSinkConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for S3BucketSinkConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("S3BucketSinkConfigurationBuilder");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.finish()

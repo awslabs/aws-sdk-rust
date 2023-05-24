@@ -2,22 +2,22 @@
 
 /// <p> A representation of the charge details that are associated with a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
-    pub percentage_value: std::option::Option<f64>,
+    pub percentage_value: ::std::option::Option<f64>,
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
     #[doc(hidden)]
-    pub associated_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    pub fn percentage_value(&self) -> std::option::Option<f64> {
+    pub fn percentage_value(&self) -> ::std::option::Option<f64> {
         self.percentage_value
     }
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
-    pub fn associated_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn associated_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.associated_values.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl CustomLineItemPercentageChargeDetails {
 
 /// A builder for [`CustomLineItemPercentageChargeDetails`](crate::types::CustomLineItemPercentageChargeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomLineItemPercentageChargeDetailsBuilder {
-    pub(crate) percentage_value: std::option::Option<f64>,
-    pub(crate) associated_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) percentage_value: ::std::option::Option<f64>,
+    pub(crate) associated_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomLineItemPercentageChargeDetailsBuilder {
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     pub fn percentage_value(mut self, input: f64) -> Self {
-        self.percentage_value = Some(input);
+        self.percentage_value = ::std::option::Option::Some(input);
         self
     }
     /// <p> The custom line item's percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    pub fn set_percentage_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_percentage_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percentage_value = input;
         self
     }
@@ -51,16 +53,19 @@ impl CustomLineItemPercentageChargeDetailsBuilder {
     /// To override the contents of this collection use [`set_associated_values`](Self::set_associated_values).
     ///
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
-    pub fn associated_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn associated_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.associated_values.unwrap_or_default();
         v.push(input.into());
-        self.associated_values = Some(v);
+        self.associated_values = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of resource ARNs to associate to the percentage custom line item. </p>
     pub fn set_associated_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.associated_values = input;
         self

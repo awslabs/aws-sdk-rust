@@ -2,23 +2,23 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceSummaryByResourceTypeOutput {
     /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
     #[doc(hidden)]
     pub compliance_summaries_by_resource_type:
-        std::option::Option<std::vec::Vec<crate::types::ComplianceSummaryByResourceType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryByResourceType>>,
     _request_id: Option<String>,
 }
 impl GetComplianceSummaryByResourceTypeOutput {
     /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
     pub fn compliance_summaries_by_resource_type(
         &self,
-    ) -> std::option::Option<&[crate::types::ComplianceSummaryByResourceType]> {
+    ) -> ::std::option::Option<&[crate::types::ComplianceSummaryByResourceType]> {
         self.compliance_summaries_by_resource_type.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetComplianceSummaryByResourceTypeOutput {
+impl ::aws_http::request_id::RequestId for GetComplianceSummaryByResourceTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl GetComplianceSummaryByResourceTypeOutput {
 
 /// A builder for [`GetComplianceSummaryByResourceTypeOutput`](crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetComplianceSummaryByResourceTypeOutputBuilder {
     pub(crate) compliance_summaries_by_resource_type:
-        std::option::Option<std::vec::Vec<crate::types::ComplianceSummaryByResourceType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceSummaryByResourceType>>,
     _request_id: Option<String>,
 }
 impl GetComplianceSummaryByResourceTypeOutputBuilder {
@@ -52,13 +54,15 @@ impl GetComplianceSummaryByResourceTypeOutputBuilder {
             .compliance_summaries_by_resource_type
             .unwrap_or_default();
         v.push(input);
-        self.compliance_summaries_by_resource_type = Some(v);
+        self.compliance_summaries_by_resource_type = ::std::option::Option::Some(v);
         self
     }
     /// <p>The number of resources that are compliant and the number that are noncompliant. If one or more resource types were provided with the request, the numbers are returned for each resource type. The maximum number returned is 100.</p>
     pub fn set_compliance_summaries_by_resource_type(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComplianceSummaryByResourceType>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ComplianceSummaryByResourceType>,
+        >,
     ) -> Self {
         self.compliance_summaries_by_resource_type = input;
         self

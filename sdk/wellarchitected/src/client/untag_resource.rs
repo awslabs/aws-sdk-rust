@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workload_arn(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::workload_arn) / [`set_workload_arn(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_workload_arn): <p>The ARN for the workload.</p>
+    ///   - [`workload_arn(impl ::std::convert::Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::workload_arn) / [`set_workload_arn(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_workload_arn): <p>The ARN for the workload.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys): <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)

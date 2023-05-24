@@ -9,29 +9,29 @@ pub use crate::operation::update_game_session::_update_game_session_input::Updat
 /// <p>To update a game session, specify the game session ID and the values you want to change. </p>
 /// <p>If successful, the updated <code>GameSession</code> object is returned. </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGameSessionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder,
 }
 impl UpdateGameSessionFluentBuilder {
     /// Creates a new `UpdateGameSession`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_game_session::UpdateGameSession,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_game_session::UpdateGameSessionError,
         >,
     > {
@@ -39,30 +39,33 @@ impl UpdateGameSessionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_game_session::UpdateGameSessionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_game_session::UpdateGameSessionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,21 +78,27 @@ impl UpdateGameSessionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_game_session::UpdateGameSessionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_game_session::UpdateGameSessionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A unique identifier for the game session to update. </p>
-    pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn game_session_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
     /// <p>A unique identifier for the game session to update. </p>
-    pub fn set_game_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_session_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
@@ -99,17 +108,17 @@ impl UpdateGameSessionFluentBuilder {
         self
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-    pub fn set_maximum_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_player_session_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_player_session_count(input);
         self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -124,7 +133,7 @@ impl UpdateGameSessionFluentBuilder {
     /// <p>A policy that determines whether the game session is accepting new players.</p>
     pub fn set_player_session_creation_policy(
         mut self,
-        input: std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+        input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     ) -> Self {
         self.inner = self.inner.set_player_session_creation_policy(input);
         self
@@ -145,7 +154,7 @@ impl UpdateGameSessionFluentBuilder {
     /// </ul>
     pub fn set_protection_policy(
         mut self,
-        input: std::option::Option<crate::types::ProtectionPolicy>,
+        input: ::std::option::Option<crate::types::ProtectionPolicy>,
     ) -> Self {
         self.inner = self.inner.set_protection_policy(input);
         self

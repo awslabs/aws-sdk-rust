@@ -2,29 +2,29 @@
 
 /// <p>Configuration values that override the container image Dockerfile settings. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image settings</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageConfig {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
     #[doc(hidden)]
-    pub entry_point: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the working directory.</p>
     #[doc(hidden)]
-    pub working_directory: std::option::Option<std::string::String>,
+    pub working_directory: ::std::option::Option<::std::string::String>,
 }
 impl ImageConfig {
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    pub fn entry_point(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn entry_point(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.entry_point.as_deref()
     }
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.command.as_deref()
     }
     /// <p>Specifies the working directory.</p>
-    pub fn working_directory(&self) -> std::option::Option<&str> {
+    pub fn working_directory(&self) -> ::std::option::Option<&str> {
         self.working_directory.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl ImageConfig {
 
 /// A builder for [`ImageConfig`](crate::types::ImageConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageConfigBuilder {
-    pub(crate) entry_point: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) working_directory: std::option::Option<std::string::String>,
+    pub(crate) entry_point: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) working_directory: ::std::option::Option<::std::string::String>,
 }
 impl ImageConfigBuilder {
     /// Appends an item to `entry_point`.
@@ -49,16 +51,16 @@ impl ImageConfigBuilder {
     /// To override the contents of this collection use [`set_entry_point`](Self::set_entry_point).
     ///
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
-    pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.entry_point.unwrap_or_default();
         v.push(input.into());
-        self.entry_point = Some(v);
+        self.entry_point = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the entry point to their application, which is typically the location of the runtime executable.</p>
     pub fn set_entry_point(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.entry_point = input;
         self
@@ -68,29 +70,32 @@ impl ImageConfigBuilder {
     /// To override the contents of this collection use [`set_command`](Self::set_command).
     ///
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
         v.push(input.into());
-        self.command = Some(v);
+        self.command = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
     pub fn set_command(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.command = input;
         self
     }
     /// <p>Specifies the working directory.</p>
-    pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
-        self.working_directory = Some(input.into());
+    pub fn working_directory(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the working directory.</p>
     pub fn set_working_directory(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.working_directory = input;
         self

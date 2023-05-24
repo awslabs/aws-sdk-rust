@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDomainName`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::set_domain_name): <p>The name of the DomainName resource to be changed.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::set_domain_name): <p>The name of the DomainName resource to be changed.</p>
     ///   - [`patch_operations(Vec<PatchOperation>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::patch_operations) / [`set_patch_operations(Option<Vec<PatchOperation>>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::set_patch_operations): <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     /// - On success, responds with [`UpdateDomainNameOutput`](crate::operation::update_domain_name::UpdateDomainNameOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::update_domain_name::UpdateDomainNameOutput::domain_name): <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>

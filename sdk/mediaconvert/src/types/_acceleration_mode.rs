@@ -39,13 +39,13 @@
 /// Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AccelerationMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AccelerationMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AccelerationMode {
+impl ::std::convert::From<&str> for AccelerationMode {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AccelerationMode::Disabled,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AccelerationMode {
         }
     }
 }
-impl std::str::FromStr for AccelerationMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AccelerationMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccelerationMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AccelerationMode::from(s))
     }
 }
 impl AccelerationMode {
@@ -91,7 +91,7 @@ impl AccelerationMode {
         &["DISABLED", "ENABLED", "PREFERRED"]
     }
 }
-impl AsRef<str> for AccelerationMode {
+impl ::std::convert::AsRef<str> for AccelerationMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

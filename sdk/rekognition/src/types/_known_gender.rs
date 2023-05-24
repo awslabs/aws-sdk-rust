@@ -2,15 +2,15 @@
 
 /// <p>The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KnownGender {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::KnownGenderType>,
+    pub r#type: ::std::option::Option<crate::types::KnownGenderType>,
 }
 impl KnownGender {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::KnownGenderType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::KnownGenderType> {
         self.r#type.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl KnownGender {
 
 /// A builder for [`KnownGender`](crate::types::KnownGender).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KnownGenderBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::KnownGenderType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::KnownGenderType>,
 }
 impl KnownGenderBuilder {
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
     pub fn r#type(mut self, input: crate::types::KnownGenderType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>A string value of the KnownGender info about the Celebrity.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::KnownGenderType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::KnownGenderType>) -> Self {
         self.r#type = input;
         self
     }

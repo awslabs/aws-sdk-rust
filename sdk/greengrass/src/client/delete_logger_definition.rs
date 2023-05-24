@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLoggerDefinition`](crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`logger_definition_id(impl Into<String>)`](crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder::logger_definition_id) / [`set_logger_definition_id(Option<String>)`](crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder::set_logger_definition_id): The ID of the logger definition.
+    ///   - [`logger_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder::logger_definition_id) / [`set_logger_definition_id(Option<String>)`](crate::operation::delete_logger_definition::builders::DeleteLoggerDefinitionFluentBuilder::set_logger_definition_id): The ID of the logger definition.
     /// - On success, responds with [`DeleteLoggerDefinitionOutput`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteLoggerDefinitionError>`](crate::operation::delete_logger_definition::DeleteLoggerDefinitionError)
     pub fn delete_logger_definition(

@@ -2,51 +2,55 @@
 
 /// <p>Describes an action for an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentTemplateAction {
     /// <p>The ID of the action.</p>
     #[doc(hidden)]
-    pub action_id: std::option::Option<std::string::String>,
+    pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the action.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the action.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The targets for the action.</p>
     #[doc(hidden)]
-    pub targets:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub targets: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The name of the action that must be completed before the current action starts.</p>
     #[doc(hidden)]
-    pub start_after: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub start_after: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ExperimentTemplateAction {
     /// <p>The ID of the action.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> ::std::option::Option<&str> {
         self.action_id.as_deref()
     }
     /// <p>A description for the action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The parameters for the action.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
     /// <p>The targets for the action.</p>
     pub fn targets(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.targets.as_ref()
     }
     /// <p>The name of the action that must be completed before the current action starts.</p>
-    pub fn start_after(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn start_after(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.start_after.as_deref()
     }
 }
@@ -59,34 +63,38 @@ impl ExperimentTemplateAction {
 
 /// A builder for [`ExperimentTemplateAction`](crate::types::ExperimentTemplateAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperimentTemplateActionBuilder {
-    pub(crate) action_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) targets:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) start_after: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) action_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) targets: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) start_after: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ExperimentTemplateActionBuilder {
     /// <p>The ID of the action.</p>
-    pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_id = Some(input.into());
+    pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the action.</p>
-    pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_id = input;
         self
     }
     /// <p>A description for the action.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the action.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -97,19 +105,19 @@ impl ExperimentTemplateActionBuilder {
     /// <p>The parameters for the action.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The parameters for the action.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;
@@ -122,19 +130,19 @@ impl ExperimentTemplateActionBuilder {
     /// <p>The targets for the action.</p>
     pub fn targets(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.targets.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.targets = Some(hash_map);
+        self.targets = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The targets for the action.</p>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.targets = input;
@@ -145,16 +153,16 @@ impl ExperimentTemplateActionBuilder {
     /// To override the contents of this collection use [`set_start_after`](Self::set_start_after).
     ///
     /// <p>The name of the action that must be completed before the current action starts.</p>
-    pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn start_after(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.start_after.unwrap_or_default();
         v.push(input.into());
-        self.start_after = Some(v);
+        self.start_after = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of the action that must be completed before the current action starts.</p>
     pub fn set_start_after(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.start_after = input;
         self

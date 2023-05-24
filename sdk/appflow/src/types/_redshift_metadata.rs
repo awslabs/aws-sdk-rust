@@ -2,7 +2,7 @@
 
 /// <p> The connector metadata specific to Amazon Redshift. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftMetadata {}
 impl RedshiftMetadata {
     /// Creates a new builder-style object to manufacture [`RedshiftMetadata`](crate::types::RedshiftMetadata).
@@ -13,7 +13,9 @@ impl RedshiftMetadata {
 
 /// A builder for [`RedshiftMetadata`](crate::types::RedshiftMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RedshiftMetadataBuilder {}
 impl RedshiftMetadataBuilder {
     /// Consumes the builder and constructs a [`RedshiftMetadata`](crate::types::RedshiftMetadata).

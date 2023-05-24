@@ -2,29 +2,29 @@
 
 /// <p> Information about EC2 capacity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2Capacity {
     /// <p> The family of the EC2 capacity. </p>
     #[doc(hidden)]
-    pub family: std::option::Option<std::string::String>,
+    pub family: ::std::option::Option<::std::string::String>,
     /// <p> The maximum size of the EC2 capacity. </p>
     #[doc(hidden)]
-    pub max_size: std::option::Option<std::string::String>,
+    pub max_size: ::std::option::Option<::std::string::String>,
     /// <p> The quantity of the EC2 capacity. </p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<std::string::String>,
+    pub quantity: ::std::option::Option<::std::string::String>,
 }
 impl Ec2Capacity {
     /// <p> The family of the EC2 capacity. </p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<&str> {
         self.family.as_deref()
     }
     /// <p> The maximum size of the EC2 capacity. </p>
-    pub fn max_size(&self) -> std::option::Option<&str> {
+    pub fn max_size(&self) -> ::std::option::Option<&str> {
         self.max_size.as_deref()
     }
     /// <p> The quantity of the EC2 capacity. </p>
-    pub fn quantity(&self) -> std::option::Option<&str> {
+    pub fn quantity(&self) -> ::std::option::Option<&str> {
         self.quantity.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl Ec2Capacity {
 
 /// A builder for [`Ec2Capacity`](crate::types::Ec2Capacity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ec2CapacityBuilder {
-    pub(crate) family: std::option::Option<std::string::String>,
-    pub(crate) max_size: std::option::Option<std::string::String>,
-    pub(crate) quantity: std::option::Option<std::string::String>,
+    pub(crate) family: ::std::option::Option<::std::string::String>,
+    pub(crate) max_size: ::std::option::Option<::std::string::String>,
+    pub(crate) quantity: ::std::option::Option<::std::string::String>,
 }
 impl Ec2CapacityBuilder {
     /// <p> The family of the EC2 capacity. </p>
-    pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.family = Some(input.into());
+    pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The family of the EC2 capacity. </p>
-    pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.family = input;
         self
     }
     /// <p> The maximum size of the EC2 capacity. </p>
-    pub fn max_size(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_size = Some(input.into());
+    pub fn max_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_size = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The maximum size of the EC2 capacity. </p>
-    pub fn set_max_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_size = input;
         self
     }
     /// <p> The quantity of the EC2 capacity. </p>
-    pub fn quantity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.quantity = Some(input.into());
+    pub fn quantity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quantity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The quantity of the EC2 capacity. </p>
-    pub fn set_quantity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantity = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Specifies the error message and type, for an error that occurs during the execution of the workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionError {
     /// <p>Specifies the error type.</p>
     /// <ul>
@@ -18,10 +18,10 @@ pub struct ExecutionError {
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ExecutionErrorType>,
+    pub r#type: ::std::option::Option<crate::types::ExecutionErrorType>,
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionError {
     /// <p>Specifies the error type.</p>
@@ -37,11 +37,11 @@ impl ExecutionError {
     /// </note> </li>
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ExecutionErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ExecutionErrorType> {
         self.r#type.as_ref()
     }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -54,10 +54,12 @@ impl ExecutionError {
 
 /// A builder for [`ExecutionError`](crate::types::ExecutionError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutionErrorBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ExecutionErrorType>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ExecutionErrorType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionErrorBuilder {
     /// <p>Specifies the error type.</p>
@@ -74,7 +76,7 @@ impl ExecutionErrorBuilder {
     /// <li> <p> <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one workflow per second.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ExecutionErrorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the error type.</p>
@@ -92,18 +94,18 @@ impl ExecutionErrorBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ExecutionErrorType>,
+        input: ::std::option::Option<crate::types::ExecutionErrorType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the descriptive message that corresponds to the <code>ErrorType</code>.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

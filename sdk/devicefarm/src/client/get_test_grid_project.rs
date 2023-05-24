@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTestGridProject`](crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_arn(impl Into<String>)`](crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder::project_arn) / [`set_project_arn(Option<String>)`](crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder::set_project_arn): <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
+    ///   - [`project_arn(impl ::std::convert::Into<String>)`](crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder::project_arn) / [`set_project_arn(Option<String>)`](crate::operation::get_test_grid_project::builders::GetTestGridProjectFluentBuilder::set_project_arn): <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     /// - On success, responds with [`GetTestGridProjectOutput`](crate::operation::get_test_grid_project::GetTestGridProjectOutput) with field(s):
     ///   - [`test_grid_project(Option<TestGridProject>)`](crate::operation::get_test_grid_project::GetTestGridProjectOutput::test_grid_project): <p>A <code>TestGridProject</code>.</p>
     /// - On failure, responds with [`SdkError<GetTestGridProjectError>`](crate::operation::get_test_grid_project::GetTestGridProjectError)

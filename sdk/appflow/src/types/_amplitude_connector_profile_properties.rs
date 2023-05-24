@@ -2,7 +2,7 @@
 
 /// <p> The connector-specific profile properties required when using Amplitude. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmplitudeConnectorProfileProperties {}
 impl AmplitudeConnectorProfileProperties {
     /// Creates a new builder-style object to manufacture [`AmplitudeConnectorProfileProperties`](crate::types::AmplitudeConnectorProfileProperties).
@@ -13,7 +13,9 @@ impl AmplitudeConnectorProfileProperties {
 
 /// A builder for [`AmplitudeConnectorProfileProperties`](crate::types::AmplitudeConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AmplitudeConnectorProfilePropertiesBuilder {}
 impl AmplitudeConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`AmplitudeConnectorProfileProperties`](crate::types::AmplitudeConnectorProfileProperties).

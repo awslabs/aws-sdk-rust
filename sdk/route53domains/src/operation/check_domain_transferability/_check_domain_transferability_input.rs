@@ -2,7 +2,7 @@
 
 /// <p>The CheckDomainTransferability request contains the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CheckDomainTransferabilityInput {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
@@ -13,10 +13,10 @@ pub struct CheckDomainTransferabilityInput {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
     #[doc(hidden)]
-    pub auth_code: std::option::Option<std::string::String>,
+    pub auth_code: ::std::option::Option<::std::string::String>,
 }
 impl CheckDomainTransferabilityInput {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -27,16 +27,16 @@ impl CheckDomainTransferabilityInput {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
-    pub fn auth_code(&self) -> std::option::Option<&str> {
+    pub fn auth_code(&self) -> ::std::option::Option<&str> {
         self.auth_code.as_deref()
     }
 }
-impl std::fmt::Debug for CheckDomainTransferabilityInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CheckDomainTransferabilityInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CheckDomainTransferabilityInput");
         formatter.field("domain_name", &self.domain_name);
         formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
@@ -52,10 +52,10 @@ impl CheckDomainTransferabilityInput {
 
 /// A builder for [`CheckDomainTransferabilityInput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CheckDomainTransferabilityInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) auth_code: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) auth_code: ::std::option::Option<::std::string::String>,
 }
 impl CheckDomainTransferabilityInputBuilder {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -66,8 +66,8 @@ impl CheckDomainTransferabilityInputBuilder {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -78,28 +78,28 @@ impl CheckDomainTransferabilityInputBuilder {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
-    pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auth_code = Some(input.into());
+    pub fn auth_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.auth_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
-    pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_code = input;
         self
     }
     /// Consumes the builder and constructs a [`CheckDomainTransferabilityInput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::check_domain_transferability::CheckDomainTransferabilityInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::check_domain_transferability::CheckDomainTransferabilityInput {
                 domain_name: self.domain_name,
                 auth_code: self.auth_code,
@@ -107,8 +107,8 @@ impl CheckDomainTransferabilityInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for CheckDomainTransferabilityInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CheckDomainTransferabilityInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CheckDomainTransferabilityInputBuilder");
         formatter.field("domain_name", &self.domain_name);
         formatter.field("auth_code", &"*** Sensitive Data Redacted ***");

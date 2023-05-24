@@ -2,11 +2,11 @@
 
 /// <p>The output for the DeleteRegistrationCode operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRegistrationCodeOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteRegistrationCodeOutput {
+impl ::aws_http::request_id::RequestId for DeleteRegistrationCodeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl DeleteRegistrationCodeOutput {
 
 /// A builder for [`DeleteRegistrationCodeOutput`](crate::operation::delete_registration_code::DeleteRegistrationCodeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteRegistrationCodeOutputBuilder {
     _request_id: Option<String>,
 }

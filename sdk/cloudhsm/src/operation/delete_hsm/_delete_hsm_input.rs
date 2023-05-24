@@ -2,15 +2,15 @@
 
 /// <p>Contains the inputs for the <code>DeleteHsm</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHsmInput {
     /// <p>The ARN of the HSM to delete.</p>
     #[doc(hidden)]
-    pub hsm_arn: std::option::Option<std::string::String>,
+    pub hsm_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHsmInput {
     /// <p>The ARN of the HSM to delete.</p>
-    pub fn hsm_arn(&self) -> std::option::Option<&str> {
+    pub fn hsm_arn(&self) -> ::std::option::Option<&str> {
         self.hsm_arn.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl DeleteHsmInput {
 
 /// A builder for [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteHsmInputBuilder {
-    pub(crate) hsm_arn: std::option::Option<std::string::String>,
+    pub(crate) hsm_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHsmInputBuilder {
     /// <p>The ARN of the HSM to delete.</p>
-    pub fn hsm_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hsm_arn = Some(input.into());
+    pub fn hsm_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hsm_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the HSM to delete.</p>
-    pub fn set_hsm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hsm_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_arn = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_hsm::DeleteHsmInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_hsm::DeleteHsmInput {
+        ::std::result::Result::Ok(crate::operation::delete_hsm::DeleteHsmInput {
             hsm_arn: self.hsm_arn,
         })
     }

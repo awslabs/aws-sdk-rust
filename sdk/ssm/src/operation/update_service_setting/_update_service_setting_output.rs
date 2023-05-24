@@ -2,11 +2,11 @@
 
 /// <p>The result body of the UpdateServiceSetting API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServiceSettingOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UpdateServiceSettingOutput {
+impl ::aws_http::request_id::RequestId for UpdateServiceSettingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl UpdateServiceSettingOutput {
 
 /// A builder for [`UpdateServiceSettingOutput`](crate::operation::update_service_setting::UpdateServiceSettingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateServiceSettingOutputBuilder {
     _request_id: Option<String>,
 }

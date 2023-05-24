@@ -2,20 +2,20 @@
 
 /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelsResponse {
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
     #[doc(hidden)]
-    pub channels: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ChannelResponse>,
+    pub channels: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ChannelResponse>,
     >,
 }
 impl ChannelsResponse {
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
     pub fn channels(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::ChannelResponse>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::ChannelResponse>,
     > {
         self.channels.as_ref()
     }
@@ -29,10 +29,12 @@ impl ChannelsResponse {
 
 /// A builder for [`ChannelsResponse`](crate::types::ChannelsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelsResponseBuilder {
-    pub(crate) channels: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ChannelResponse>,
+    pub(crate) channels: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::ChannelResponse>,
     >,
 }
 impl ChannelsResponseBuilder {
@@ -43,19 +45,19 @@ impl ChannelsResponseBuilder {
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
     pub fn channels(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ChannelResponse,
     ) -> Self {
         let mut hash_map = self.channels.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.channels = Some(hash_map);
+        self.channels = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
     pub fn set_channels(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ChannelResponse>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ChannelResponse>,
         >,
     ) -> Self {
         self.channels = input;

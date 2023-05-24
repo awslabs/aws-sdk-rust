@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResumeSession`](crate::operation::resume_session::builders::ResumeSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`session_id(impl Into<String>)`](crate::operation::resume_session::builders::ResumeSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::resume_session::builders::ResumeSessionFluentBuilder::set_session_id): <p>The ID of the disconnected session to resume.</p>
+    ///   - [`session_id(impl ::std::convert::Into<String>)`](crate::operation::resume_session::builders::ResumeSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::resume_session::builders::ResumeSessionFluentBuilder::set_session_id): <p>The ID of the disconnected session to resume.</p>
     /// - On success, responds with [`ResumeSessionOutput`](crate::operation::resume_session::ResumeSessionOutput) with field(s):
     ///   - [`session_id(Option<String>)`](crate::operation::resume_session::ResumeSessionOutput::session_id): <p>The ID of the session.</p>
     ///   - [`token_value(Option<String>)`](crate::operation::resume_session::ResumeSessionOutput::token_value): <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>

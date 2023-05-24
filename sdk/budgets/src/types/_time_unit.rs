@@ -40,13 +40,13 @@
 /// <p> The time unit of the budget, such as MONTHLY or QUARTERLY.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TimeUnit {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum TimeUnit {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TimeUnit {
+impl ::std::convert::From<&str> for TimeUnit {
     fn from(s: &str) -> Self {
         match s {
             "ANNUALLY" => TimeUnit::Annually,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for TimeUnit {
         }
     }
 }
-impl std::str::FromStr for TimeUnit {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TimeUnit {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimeUnit::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TimeUnit::from(s))
     }
 }
 impl TimeUnit {
@@ -94,7 +94,7 @@ impl TimeUnit {
         &["ANNUALLY", "DAILY", "MONTHLY", "QUARTERLY"]
     }
 }
-impl AsRef<str> for TimeUnit {
+impl ::std::convert::AsRef<str> for TimeUnit {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

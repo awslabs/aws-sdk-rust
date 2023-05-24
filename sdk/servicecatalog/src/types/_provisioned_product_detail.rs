@@ -2,20 +2,20 @@
 
 /// <p>Information about a provisioned product.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedProductDetail {
     /// <p>The user-friendly name of the provisioned product.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the provisioned product.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the provisioned product.</p>
     /// <ul>
     /// <li> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent operation succeeded and completed.</p> </li>
@@ -25,19 +25,19 @@ pub struct ProvisionedProductDetail {
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ProvisionedProductStatus>,
+    pub status: ::std::option::Option<crate::types::ProvisionedProductStatus>,
     /// <p>The current status message of the provisioned product.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The UTC time stamp of the creation time.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     #[doc(hidden)]
-    pub idempotency_token: std::option::Option<std::string::String>,
+    pub idempotency_token: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
     #[doc(hidden)]
-    pub last_record_id: std::option::Option<std::string::String>,
+    pub last_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
     /// <ul>
     /// <li> <p> ProvisionedProduct </p> </li>
@@ -46,7 +46,7 @@ pub struct ProvisionedProductDetail {
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub last_provisioning_record_id: std::option::Option<std::string::String>,
+    pub last_provisioning_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
     /// <ul>
     /// <li> <p> ProvisionedProduct </p> </li>
@@ -55,32 +55,32 @@ pub struct ProvisionedProductDetail {
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub last_successful_provisioning_record_id: std::option::Option<std::string::String>,
+    pub last_successful_provisioning_record_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     #[doc(hidden)]
-    pub product_id: std::option::Option<std::string::String>,
+    pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_id: std::option::Option<std::string::String>,
+    pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
     #[doc(hidden)]
-    pub launch_role_arn: std::option::Option<std::string::String>,
+    pub launch_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedProductDetail {
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the provisioned product.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The current status of the provisioned product.</p>
@@ -91,23 +91,23 @@ impl ProvisionedProductDetail {
     /// <li> <p> <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack.</p> </li>
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::ProvisionedProductStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisionedProductStatus> {
         self.status.as_ref()
     }
     /// <p>The current status message of the provisioned product.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
-    pub fn last_record_id(&self) -> std::option::Option<&str> {
+    pub fn last_record_id(&self) -> ::std::option::Option<&str> {
         self.last_record_id.as_deref()
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
@@ -117,7 +117,7 @@ impl ProvisionedProductDetail {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn last_provisioning_record_id(&self) -> std::option::Option<&str> {
+    pub fn last_provisioning_record_id(&self) -> ::std::option::Option<&str> {
         self.last_provisioning_record_id.as_deref()
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
@@ -127,19 +127,19 @@ impl ProvisionedProductDetail {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn last_successful_provisioning_record_id(&self) -> std::option::Option<&str> {
+    pub fn last_successful_provisioning_record_id(&self) -> ::std::option::Option<&str> {
         self.last_successful_provisioning_record_id.as_deref()
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub fn product_id(&self) -> std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    pub fn launch_role_arn(&self) -> std::option::Option<&str> {
+    pub fn launch_role_arn(&self) -> ::std::option::Option<&str> {
         self.launch_role_arn.as_deref()
     }
 }
@@ -152,61 +152,63 @@ impl ProvisionedProductDetail {
 
 /// A builder for [`ProvisionedProductDetail`](crate::types::ProvisionedProductDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisionedProductDetailBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ProvisionedProductStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) idempotency_token: std::option::Option<std::string::String>,
-    pub(crate) last_record_id: std::option::Option<std::string::String>,
-    pub(crate) last_provisioning_record_id: std::option::Option<std::string::String>,
-    pub(crate) last_successful_provisioning_record_id: std::option::Option<std::string::String>,
-    pub(crate) product_id: std::option::Option<std::string::String>,
-    pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
-    pub(crate) launch_role_arn: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ProvisionedProductStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
+    pub(crate) last_record_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_provisioning_record_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_successful_provisioning_record_id: ::std::option::Option<::std::string::String>,
+    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedProductDetailBuilder {
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ARN of the provisioned product.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the provisioned product.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -219,7 +221,7 @@ impl ProvisionedProductDetailBuilder {
     /// <li> <p> <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product, but resources have not yet been created. After reviewing the list of resources to be created, execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ProvisionedProductStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the provisioned product.</p>
@@ -232,54 +234,69 @@ impl ProvisionedProductDetailBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedProductStatus>,
+        input: ::std::option::Option<crate::types::ProvisionedProductStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The current status message of the provisioned product.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status message of the provisioned product.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.idempotency_token = Some(input.into());
+    pub fn idempotency_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.idempotency_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn set_idempotency_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.idempotency_token = input;
         self
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
-    pub fn last_record_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_record_id = Some(input.into());
+    pub fn last_record_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_record_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The record identifier of the last request performed on this provisioned product.</p>
-    pub fn set_last_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_record_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_record_id = input;
         self
     }
@@ -290,8 +307,11 @@ impl ProvisionedProductDetailBuilder {
     /// <li> <p> ExecuteProvisionedProductPlan </p> </li>
     /// <li> <p> TerminateProvisionedProduct </p> </li>
     /// </ul>
-    pub fn last_provisioning_record_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_provisioning_record_id = Some(input.into());
+    pub fn last_provisioning_record_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_provisioning_record_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The record identifier of the last request performed on this provisioned product of the following types:</p>
@@ -303,7 +323,7 @@ impl ProvisionedProductDetailBuilder {
     /// </ul>
     pub fn set_last_provisioning_record_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_provisioning_record_id = input;
         self
@@ -317,9 +337,9 @@ impl ProvisionedProductDetailBuilder {
     /// </ul>
     pub fn last_successful_provisioning_record_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.last_successful_provisioning_record_id = Some(input.into());
+        self.last_successful_provisioning_record_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The record identifier of the last successful request performed on this provisioned product of the following types:</p>
@@ -331,41 +351,50 @@ impl ProvisionedProductDetailBuilder {
     /// </ul>
     pub fn set_last_successful_provisioning_record_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_successful_provisioning_record_id = input;
         self
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_id = Some(input.into());
+    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provisioning_artifact_id = Some(input.into());
+    pub fn provisioning_artifact_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn set_provisioning_artifact_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    pub fn launch_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_role_arn = Some(input.into());
+    pub fn launch_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.launch_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    pub fn set_launch_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.launch_role_arn = input;
         self
     }

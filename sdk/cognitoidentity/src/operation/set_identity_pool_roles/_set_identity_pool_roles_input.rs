@@ -2,40 +2,42 @@
 
 /// <p>Input to the <code>SetIdentityPoolRoles</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     #[doc(hidden)]
-    pub roles:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub roles: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     #[doc(hidden)]
-    pub role_mappings: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::RoleMapping>,
+    pub role_mappings: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
     >,
 }
 impl SetIdentityPoolRolesInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     pub fn roles(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.roles.as_ref()
     }
     /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub fn role_mappings(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::RoleMapping>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
     > {
         self.role_mappings.as_ref()
     }
@@ -50,23 +52,32 @@ impl SetIdentityPoolRolesInput {
 
 /// A builder for [`SetIdentityPoolRolesInput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetIdentityPoolRolesInputBuilder {
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-    pub(crate) roles:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) role_mappings: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::RoleMapping>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) roles: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) role_mappings: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
     >,
 }
 impl SetIdentityPoolRolesInputBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -77,19 +88,19 @@ impl SetIdentityPoolRolesInputBuilder {
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     pub fn roles(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.roles.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.roles = Some(hash_map);
+        self.roles = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
     pub fn set_roles(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.roles = input;
@@ -103,20 +114,20 @@ impl SetIdentityPoolRolesInputBuilder {
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub fn role_mappings(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::RoleMapping,
     ) -> Self {
         let mut hash_map = self.role_mappings.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.role_mappings = Some(hash_map);
+        self.role_mappings = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub fn set_role_mappings(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::RoleMapping>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>,
         >,
     ) -> Self {
         self.role_mappings = input;
@@ -125,11 +136,11 @@ impl SetIdentityPoolRolesInputBuilder {
     /// Consumes the builder and constructs a [`SetIdentityPoolRolesInput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput {
                 identity_pool_id: self.identity_pool_id,
                 roles: self.roles,

@@ -14,56 +14,59 @@ pub use crate::operation::create_function::_create_function_input::CreateFunctio
 /// <p>You can use code signing if your deployment package is a .zip file archive. To enable code signing for this function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with <code>UpdateFunctionCode</code>, Lambda checks that the code package has a valid signature from a trusted publisher. The code-signing configuration includes set of signing profiles, which define the trusted publishers for this function.</p>
 /// <p>If another Amazon Web Services account or an Amazon Web Service invokes your function, use <code>AddPermission</code> to grant permission by creating a resource-based Identity and Access Management (IAM) policy. You can grant permissions at the function level, on a version, or on an alias.</p>
 /// <p>To invoke your function directly, use <code>Invoke</code>. To invoke your function in response to events in other Amazon Web Services, create an event source mapping (<code>CreateEventSourceMapping</code>), or configure a function trigger in the other service. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Lambda functions</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFunctionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_function::builders::CreateFunctionInputBuilder,
 }
 impl CreateFunctionFluentBuilder {
     /// Creates a new `CreateFunction`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_function::CreateFunction,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_function::CreateFunctionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,9 +79,9 @@ impl CreateFunctionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_function::CreateFunctionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_function::CreateFunctionError>,
     > {
         self.send_middleware().await
     }
@@ -90,7 +93,10 @@ impl CreateFunctionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn function_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -102,7 +108,10 @@ impl CreateFunctionFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -114,27 +123,27 @@ impl CreateFunctionFluentBuilder {
     }
     /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn set_runtime(mut self, input: std::option::Option<crate::types::Runtime>) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
         self.inner = self.inner.set_runtime(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role(input);
         self
     }
     /// <p>The name of the method within your code that Lambda calls to run your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.</p>
-    pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn handler(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.handler(input.into());
         self
     }
     /// <p>The name of the method within your code that Lambda calls to run your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.</p>
-    pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_handler(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_handler(input);
         self
     }
@@ -144,17 +153,17 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The code for the function.</p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::FunctionCode>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::FunctionCode>) -> Self {
         self.inner = self.inner.set_code(input);
         self
     }
     /// <p>A description of the function.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the function.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -164,7 +173,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout(input);
         self
     }
@@ -174,7 +183,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
-    pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_memory_size(input);
         self
     }
@@ -184,7 +193,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>Set to true to publish the first version of the function during creation.</p>
-    pub fn set_publish(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_publish(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publish(input);
         self
     }
@@ -194,7 +203,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
-    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
     }
@@ -206,7 +215,7 @@ impl CreateFunctionFluentBuilder {
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for .zip file archive.</p>
     pub fn set_package_type(
         mut self,
-        input: std::option::Option<crate::types::PackageType>,
+        input: ::std::option::Option<crate::types::PackageType>,
     ) -> Self {
         self.inner = self.inner.set_package_type(input);
         self
@@ -219,7 +228,7 @@ impl CreateFunctionFluentBuilder {
     /// <p>A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.</p>
     pub fn set_dead_letter_config(
         mut self,
-        input: std::option::Option<crate::types::DeadLetterConfig>,
+        input: ::std::option::Option<crate::types::DeadLetterConfig>,
     ) -> Self {
         self.inner = self.inner.set_dead_letter_config(input);
         self
@@ -232,18 +241,18 @@ impl CreateFunctionFluentBuilder {
     /// <p>Environment variables that are accessible from function code during execution.</p>
     pub fn set_environment(
         mut self,
-        input: std::option::Option<crate::types::Environment>,
+        input: ::std::option::Option<crate::types::Environment>,
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
         self
     }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
     }
@@ -255,7 +264,7 @@ impl CreateFunctionFluentBuilder {
     /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
     pub fn set_tracing_config(
         mut self,
-        input: std::option::Option<crate::types::TracingConfig>,
+        input: ::std::option::Option<crate::types::TracingConfig>,
     ) -> Self {
         self.inner = self.inner.set_tracing_config(input);
         self
@@ -267,8 +276,8 @@ impl CreateFunctionFluentBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -276,8 +285,8 @@ impl CreateFunctionFluentBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -288,14 +297,14 @@ impl CreateFunctionFluentBuilder {
     /// To override the contents of this collection use [`set_layers`](Self::set_layers).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-    pub fn layers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn layers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layers(input.into());
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     pub fn set_layers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_layers(input);
         self
@@ -312,7 +321,7 @@ impl CreateFunctionFluentBuilder {
     /// <p>Connection settings for an Amazon EFS file system.</p>
     pub fn set_file_system_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FileSystemConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
     ) -> Self {
         self.inner = self.inner.set_file_system_configs(input);
         self
@@ -325,20 +334,23 @@ impl CreateFunctionFluentBuilder {
     /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub fn set_image_config(
         mut self,
-        input: std::option::Option<crate::types::ImageConfig>,
+        input: ::std::option::Option<crate::types::ImageConfig>,
     ) -> Self {
         self.inner = self.inner.set_image_config(input);
         self
     }
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
-    pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn code_signing_config_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.code_signing_config_arn(input.into());
         self
     }
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
     pub fn set_code_signing_config_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_code_signing_config_arn(input);
         self
@@ -355,7 +367,7 @@ impl CreateFunctionFluentBuilder {
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub fn set_architectures(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Architecture>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     ) -> Self {
         self.inner = self.inner.set_architectures(input);
         self
@@ -368,7 +380,7 @@ impl CreateFunctionFluentBuilder {
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn set_ephemeral_storage(
         mut self,
-        input: std::option::Option<crate::types::EphemeralStorage>,
+        input: ::std::option::Option<crate::types::EphemeralStorage>,
     ) -> Self {
         self.inner = self.inner.set_ephemeral_storage(input);
         self
@@ -379,7 +391,7 @@ impl CreateFunctionFluentBuilder {
         self
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
-    pub fn set_snap_start(mut self, input: std::option::Option<crate::types::SnapStart>) -> Self {
+    pub fn set_snap_start(mut self, input: ::std::option::Option<crate::types::SnapStart>) -> Self {
         self.inner = self.inner.set_snap_start(input);
         self
     }

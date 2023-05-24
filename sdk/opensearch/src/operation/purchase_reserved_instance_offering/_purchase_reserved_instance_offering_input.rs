@@ -2,29 +2,29 @@
 
 /// <p>Container for request parameters to the <code>PurchaseReservedInstanceOffering</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedInstanceOfferingInput {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     #[doc(hidden)]
-    pub reserved_instance_offering_id: std::option::Option<std::string::String>,
+    pub reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
     /// <p>A customer-specified identifier to track this reservation.</p>
     #[doc(hidden)]
-    pub reservation_name: std::option::Option<std::string::String>,
+    pub reservation_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of OpenSearch instances to reserve.</p>
     #[doc(hidden)]
-    pub instance_count: std::option::Option<i32>,
+    pub instance_count: ::std::option::Option<i32>,
 }
 impl PurchaseReservedInstanceOfferingInput {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn reserved_instance_offering_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instance_offering_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instance_offering_id.as_deref()
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_name(&self) -> std::option::Option<&str> {
+    pub fn reservation_name(&self) -> ::std::option::Option<&str> {
         self.reservation_name.as_deref()
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
-    pub fn instance_count(&self) -> std::option::Option<i32> {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
 }
@@ -37,49 +37,60 @@ impl PurchaseReservedInstanceOfferingInput {
 
 /// A builder for [`PurchaseReservedInstanceOfferingInput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PurchaseReservedInstanceOfferingInputBuilder {
-    pub(crate) reserved_instance_offering_id: std::option::Option<std::string::String>,
-    pub(crate) reservation_name: std::option::Option<std::string::String>,
-    pub(crate) instance_count: std::option::Option<i32>,
+    pub(crate) reserved_instance_offering_id: ::std::option::Option<::std::string::String>,
+    pub(crate) reservation_name: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_count: ::std::option::Option<i32>,
 }
 impl PurchaseReservedInstanceOfferingInputBuilder {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn reserved_instance_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reserved_instance_offering_id = Some(input.into());
+    pub fn reserved_instance_offering_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reserved_instance_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     pub fn set_reserved_instance_offering_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_instance_offering_id = input;
         self
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reservation_name = Some(input.into());
+    pub fn reservation_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn set_reservation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reservation_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.reservation_name = input;
         self
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
-        self.instance_count = Some(input);
+        self.instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
     /// Consumes the builder and constructs a [`PurchaseReservedInstanceOfferingInput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput).
-    pub fn build(self) -> Result<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput {
                 reserved_instance_offering_id: self.reserved_instance_offering_id
                 ,

@@ -2,27 +2,27 @@
 
 /// <p>The configuration for a call analytics task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaInsightsConfiguration {
     /// <p>Denotes the configration as enabled or disabled.</p>
     #[doc(hidden)]
-    pub disabled: std::option::Option<bool>,
+    pub disabled: ::std::option::Option<bool>,
     /// <p>The configuration's ARN.</p>
     #[doc(hidden)]
-    pub configuration_arn: std::option::Option<std::string::String>,
+    pub configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaInsightsConfiguration {
     /// <p>Denotes the configration as enabled or disabled.</p>
-    pub fn disabled(&self) -> std::option::Option<bool> {
+    pub fn disabled(&self) -> ::std::option::Option<bool> {
         self.disabled
     }
     /// <p>The configuration's ARN.</p>
-    pub fn configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_arn(&self) -> ::std::option::Option<&str> {
         self.configuration_arn.as_deref()
     }
 }
-impl std::fmt::Debug for MediaInsightsConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MediaInsightsConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaInsightsConfiguration");
         formatter.field("disabled", &self.disabled);
         formatter.field("configuration_arn", &"*** Sensitive Data Redacted ***");
@@ -38,31 +38,34 @@ impl MediaInsightsConfiguration {
 
 /// A builder for [`MediaInsightsConfiguration`](crate::types::MediaInsightsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MediaInsightsConfigurationBuilder {
-    pub(crate) disabled: std::option::Option<bool>,
-    pub(crate) configuration_arn: std::option::Option<std::string::String>,
+    pub(crate) disabled: ::std::option::Option<bool>,
+    pub(crate) configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaInsightsConfigurationBuilder {
     /// <p>Denotes the configration as enabled or disabled.</p>
     pub fn disabled(mut self, input: bool) -> Self {
-        self.disabled = Some(input);
+        self.disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Denotes the configration as enabled or disabled.</p>
-    pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
     }
     /// <p>The configuration's ARN.</p>
-    pub fn configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_arn = Some(input.into());
+    pub fn configuration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration's ARN.</p>
     pub fn set_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_arn = input;
         self
@@ -75,8 +78,8 @@ impl MediaInsightsConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for MediaInsightsConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MediaInsightsConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaInsightsConfigurationBuilder");
         formatter.field("disabled", &self.disabled);
         formatter.field("configuration_arn", &"*** Sensitive Data Redacted ***");

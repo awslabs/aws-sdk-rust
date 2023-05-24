@@ -2,22 +2,22 @@
 
 /// <p>The structure representing the EoCloudCover filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EoCloudCoverInput {
     /// <p>Lower bound for EoCloudCover.</p>
     #[doc(hidden)]
-    pub lower_bound: std::option::Option<f32>,
+    pub lower_bound: ::std::option::Option<f32>,
     /// <p>Upper bound for EoCloudCover.</p>
     #[doc(hidden)]
-    pub upper_bound: std::option::Option<f32>,
+    pub upper_bound: ::std::option::Option<f32>,
 }
 impl EoCloudCoverInput {
     /// <p>Lower bound for EoCloudCover.</p>
-    pub fn lower_bound(&self) -> std::option::Option<f32> {
+    pub fn lower_bound(&self) -> ::std::option::Option<f32> {
         self.lower_bound
     }
     /// <p>Upper bound for EoCloudCover.</p>
-    pub fn upper_bound(&self) -> std::option::Option<f32> {
+    pub fn upper_bound(&self) -> ::std::option::Option<f32> {
         self.upper_bound
     }
 }
@@ -30,29 +30,31 @@ impl EoCloudCoverInput {
 
 /// A builder for [`EoCloudCoverInput`](crate::types::EoCloudCoverInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EoCloudCoverInputBuilder {
-    pub(crate) lower_bound: std::option::Option<f32>,
-    pub(crate) upper_bound: std::option::Option<f32>,
+    pub(crate) lower_bound: ::std::option::Option<f32>,
+    pub(crate) upper_bound: ::std::option::Option<f32>,
 }
 impl EoCloudCoverInputBuilder {
     /// <p>Lower bound for EoCloudCover.</p>
     pub fn lower_bound(mut self, input: f32) -> Self {
-        self.lower_bound = Some(input);
+        self.lower_bound = ::std::option::Option::Some(input);
         self
     }
     /// <p>Lower bound for EoCloudCover.</p>
-    pub fn set_lower_bound(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
         self.lower_bound = input;
         self
     }
     /// <p>Upper bound for EoCloudCover.</p>
     pub fn upper_bound(mut self, input: f32) -> Self {
-        self.upper_bound = Some(input);
+        self.upper_bound = ::std::option::Option::Some(input);
         self
     }
     /// <p>Upper bound for EoCloudCover.</p>
-    pub fn set_upper_bound(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
         self.upper_bound = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>Job log.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobLog {
     /// <p>Job log event date and time.</p>
     #[doc(hidden)]
-    pub log_date_time: std::option::Option<std::string::String>,
+    pub log_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Job log event.</p>
     #[doc(hidden)]
-    pub event: std::option::Option<crate::types::JobLogEvent>,
+    pub event: ::std::option::Option<crate::types::JobLogEvent>,
     /// <p>Job event data</p>
     #[doc(hidden)]
-    pub event_data: std::option::Option<crate::types::JobLogEventData>,
+    pub event_data: ::std::option::Option<crate::types::JobLogEventData>,
 }
 impl JobLog {
     /// <p>Job log event date and time.</p>
-    pub fn log_date_time(&self) -> std::option::Option<&str> {
+    pub fn log_date_time(&self) -> ::std::option::Option<&str> {
         self.log_date_time.as_deref()
     }
     /// <p>Job log event.</p>
-    pub fn event(&self) -> std::option::Option<&crate::types::JobLogEvent> {
+    pub fn event(&self) -> ::std::option::Option<&crate::types::JobLogEvent> {
         self.event.as_ref()
     }
     /// <p>Job event data</p>
-    pub fn event_data(&self) -> std::option::Option<&crate::types::JobLogEventData> {
+    pub fn event_data(&self) -> ::std::option::Option<&crate::types::JobLogEventData> {
         self.event_data.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl JobLog {
 
 /// A builder for [`JobLog`](crate::types::JobLog).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobLogBuilder {
-    pub(crate) log_date_time: std::option::Option<std::string::String>,
-    pub(crate) event: std::option::Option<crate::types::JobLogEvent>,
-    pub(crate) event_data: std::option::Option<crate::types::JobLogEventData>,
+    pub(crate) log_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) event: ::std::option::Option<crate::types::JobLogEvent>,
+    pub(crate) event_data: ::std::option::Option<crate::types::JobLogEventData>,
 }
 impl JobLogBuilder {
     /// <p>Job log event date and time.</p>
-    pub fn log_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_date_time = Some(input.into());
+    pub fn log_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Job log event date and time.</p>
-    pub fn set_log_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_date_time = input;
         self
     }
     /// <p>Job log event.</p>
     pub fn event(mut self, input: crate::types::JobLogEvent) -> Self {
-        self.event = Some(input);
+        self.event = ::std::option::Option::Some(input);
         self
     }
     /// <p>Job log event.</p>
-    pub fn set_event(mut self, input: std::option::Option<crate::types::JobLogEvent>) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::JobLogEvent>) -> Self {
         self.event = input;
         self
     }
     /// <p>Job event data</p>
     pub fn event_data(mut self, input: crate::types::JobLogEventData) -> Self {
-        self.event_data = Some(input);
+        self.event_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Job event data</p>
     pub fn set_event_data(
         mut self,
-        input: std::option::Option<crate::types::JobLogEventData>,
+        input: ::std::option::Option<crate::types::JobLogEventData>,
     ) -> Self {
         self.event_data = input;
         self

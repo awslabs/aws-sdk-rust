@@ -2,22 +2,22 @@
 
 /// <p>Describes the Amazon CloudWatch logs configuration for a layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogsConfiguration {
     /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>A list of configuration options for CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub log_streams: std::option::Option<std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,
+    pub log_streams: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,
 }
 impl CloudWatchLogsConfiguration {
     /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>A list of configuration options for CloudWatch Logs.</p>
-    pub fn log_streams(&self) -> std::option::Option<&[crate::types::CloudWatchLogsLogStream]> {
+    pub fn log_streams(&self) -> ::std::option::Option<&[crate::types::CloudWatchLogsLogStream]> {
         self.log_streams.as_deref()
     }
 }
@@ -30,20 +30,22 @@ impl CloudWatchLogsConfiguration {
 
 /// A builder for [`CloudWatchLogsConfiguration`](crate::types::CloudWatchLogsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchLogsConfigurationBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) log_streams:
-        std::option::Option<std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,
 }
 impl CloudWatchLogsConfigurationBuilder {
     /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether CloudWatch Logs is enabled for a layer.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
@@ -55,13 +57,13 @@ impl CloudWatchLogsConfigurationBuilder {
     pub fn log_streams(mut self, input: crate::types::CloudWatchLogsLogStream) -> Self {
         let mut v = self.log_streams.unwrap_or_default();
         v.push(input);
-        self.log_streams = Some(v);
+        self.log_streams = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of configuration options for CloudWatch Logs.</p>
     pub fn set_log_streams(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLogsLogStream>>,
     ) -> Self {
         self.log_streams = input;
         self

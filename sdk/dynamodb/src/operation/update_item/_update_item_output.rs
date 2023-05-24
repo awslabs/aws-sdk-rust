@@ -2,17 +2,17 @@
 
 /// <p>Represents the output of an <code>UpdateItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateItemOutput {
     /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p>
     /// <p>The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    pub attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
     /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub consumed_capacity: std::option::Option<crate::types::ConsumedCapacity>,
+    pub consumed_capacity: ::std::option::Option<crate::types::ConsumedCapacity>,
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
     /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
     /// <ul>
@@ -20,7 +20,7 @@ pub struct UpdateItemOutput {
     /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub item_collection_metrics: std::option::Option<crate::types::ItemCollectionMetrics>,
+    pub item_collection_metrics: ::std::option::Option<crate::types::ItemCollectionMetrics>,
     _request_id: Option<String>,
 }
 impl UpdateItemOutput {
@@ -28,13 +28,13 @@ impl UpdateItemOutput {
     /// <p>The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
     pub fn attributes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     > {
         self.attributes.as_ref()
     }
     /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::types::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> ::std::option::Option<&crate::types::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
@@ -45,11 +45,11 @@ impl UpdateItemOutput {
     /// </ul>
     pub fn item_collection_metrics(
         &self,
-    ) -> std::option::Option<&crate::types::ItemCollectionMetrics> {
+    ) -> ::std::option::Option<&crate::types::ItemCollectionMetrics> {
         self.item_collection_metrics.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateItemOutput {
+impl ::aws_http::request_id::RequestId for UpdateItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -63,13 +63,15 @@ impl UpdateItemOutput {
 
 /// A builder for [`UpdateItemOutput`](crate::operation::update_item::UpdateItemOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateItemOutputBuilder {
-    pub(crate) attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    pub(crate) attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
-    pub(crate) consumed_capacity: std::option::Option<crate::types::ConsumedCapacity>,
-    pub(crate) item_collection_metrics: std::option::Option<crate::types::ItemCollectionMetrics>,
+    pub(crate) consumed_capacity: ::std::option::Option<crate::types::ConsumedCapacity>,
+    pub(crate) item_collection_metrics: ::std::option::Option<crate::types::ItemCollectionMetrics>,
     _request_id: Option<String>,
 }
 impl UpdateItemOutputBuilder {
@@ -81,20 +83,20 @@ impl UpdateItemOutputBuilder {
     /// <p>The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
     pub fn attributes(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::AttributeValue,
     ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.attributes = Some(hash_map);
+        self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by the <code>ReturnValues</code> parameter.</p>
     /// <p>The <code>Attributes</code> map is only present if the update was successful and <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element represents one attribute.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
         >,
     ) -> Self {
         self.attributes = input;
@@ -102,13 +104,13 @@ impl UpdateItemOutputBuilder {
     }
     /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn consumed_capacity(mut self, input: crate::types::ConsumedCapacity) -> Self {
-        self.consumed_capacity = Some(input);
+        self.consumed_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The capacity units consumed by the <code>UpdateItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_consumed_capacity(
         mut self,
-        input: std::option::Option<crate::types::ConsumedCapacity>,
+        input: ::std::option::Option<crate::types::ConsumedCapacity>,
     ) -> Self {
         self.consumed_capacity = input;
         self
@@ -120,7 +122,7 @@ impl UpdateItemOutputBuilder {
     /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     pub fn item_collection_metrics(mut self, input: crate::types::ItemCollectionMetrics) -> Self {
-        self.item_collection_metrics = Some(input);
+        self.item_collection_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about item collections, if any, that were affected by the <code>UpdateItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
@@ -131,7 +133,7 @@ impl UpdateItemOutputBuilder {
     /// </ul>
     pub fn set_item_collection_metrics(
         mut self,
-        input: std::option::Option<crate::types::ItemCollectionMetrics>,
+        input: ::std::option::Option<crate::types::ItemCollectionMetrics>,
     ) -> Self {
         self.item_collection_metrics = input;
         self

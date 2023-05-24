@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopContinuousExport`](crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`export_id(impl Into<String>)`](crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder::set_export_id): <p>The unique ID assigned to this export.</p>
+    ///   - [`export_id(impl ::std::convert::Into<String>)`](crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::stop_continuous_export::builders::StopContinuousExportFluentBuilder::set_export_id): <p>The unique ID assigned to this export.</p>
     /// - On success, responds with [`StopContinuousExportOutput`](crate::operation::stop_continuous_export::StopContinuousExportOutput) with field(s):
     ///   - [`start_time(Option<DateTime>)`](crate::operation::stop_continuous_export::StopContinuousExportOutput::start_time): <p>Timestamp that represents when this continuous export started collecting data.</p>
     ///   - [`stop_time(Option<DateTime>)`](crate::operation::stop_continuous_export::StopContinuousExportOutput::stop_time): <p>Timestamp that represents when this continuous export was stopped.</p>

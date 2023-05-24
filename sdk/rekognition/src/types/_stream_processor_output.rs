@@ -2,22 +2,22 @@
 
 /// <p>Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessorOutput {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
     #[doc(hidden)]
-    pub kinesis_data_stream: std::option::Option<crate::types::KinesisDataStream>,
+    pub kinesis_data_stream: ::std::option::Option<crate::types::KinesisDataStream>,
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
     #[doc(hidden)]
-    pub s3_destination: std::option::Option<crate::types::S3Destination>,
+    pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl StreamProcessorOutput {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
-    pub fn kinesis_data_stream(&self) -> std::option::Option<&crate::types::KinesisDataStream> {
+    pub fn kinesis_data_stream(&self) -> ::std::option::Option<&crate::types::KinesisDataStream> {
         self.kinesis_data_stream.as_ref()
     }
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
-    pub fn s3_destination(&self) -> std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl StreamProcessorOutput {
 
 /// A builder for [`StreamProcessorOutput`](crate::types::StreamProcessorOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamProcessorOutputBuilder {
-    pub(crate) kinesis_data_stream: std::option::Option<crate::types::KinesisDataStream>,
-    pub(crate) s3_destination: std::option::Option<crate::types::S3Destination>,
+    pub(crate) kinesis_data_stream: ::std::option::Option<crate::types::KinesisDataStream>,
+    pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl StreamProcessorOutputBuilder {
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
     pub fn kinesis_data_stream(mut self, input: crate::types::KinesisDataStream) -> Self {
-        self.kinesis_data_stream = Some(input);
+        self.kinesis_data_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results.</p>
     pub fn set_kinesis_data_stream(
         mut self,
-        input: std::option::Option<crate::types::KinesisDataStream>,
+        input: ::std::option::Option<crate::types::KinesisDataStream>,
     ) -> Self {
         self.kinesis_data_stream = input;
         self
     }
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
-        self.s3_destination = Some(input);
+        self.s3_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. </p>
     pub fn set_s3_destination(
         mut self,
-        input: std::option::Option<crate::types::S3Destination>,
+        input: ::std::option::Option<crate::types::S3Destination>,
     ) -> Self {
         self.s3_destination = input;
         self

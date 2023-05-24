@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateMemberSession`](crate::operation::update_member_session::builders::UpdateMemberSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_member_session::builders::UpdateMemberSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_member_session::builders::UpdateMemberSessionFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::update_member_session::builders::UpdateMemberSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_member_session::builders::UpdateMemberSessionFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     ///   - [`status(MacieStatus)`](crate::operation::update_member_session::builders::UpdateMemberSessionFluentBuilder::status) / [`set_status(Option<MacieStatus>)`](crate::operation::update_member_session::builders::UpdateMemberSessionFluentBuilder::set_status): <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     /// - On success, responds with [`UpdateMemberSessionOutput`](crate::operation::update_member_session::UpdateMemberSessionOutput)
     /// - On failure, responds with [`SdkError<UpdateMemberSessionError>`](crate::operation::update_member_session::UpdateMemberSessionError)

@@ -2,15 +2,15 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
     #[doc(hidden)]
-    pub mount_target_id: std::option::Option<std::string::String>,
+    pub mount_target_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-    pub fn mount_target_id(&self) -> std::option::Option<&str> {
+    pub fn mount_target_id(&self) -> ::std::option::Option<&str> {
         self.mount_target_id.as_deref()
     }
 }
@@ -23,24 +23,32 @@ impl DescribeMountTargetSecurityGroupsInput {
 
 /// A builder for [`DescribeMountTargetSecurityGroupsInput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeMountTargetSecurityGroupsInputBuilder {
-    pub(crate) mount_target_id: std::option::Option<std::string::String>,
+    pub(crate) mount_target_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMountTargetSecurityGroupsInputBuilder {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-    pub fn mount_target_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mount_target_id = Some(input.into());
+    pub fn mount_target_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.mount_target_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-    pub fn set_mount_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mount_target_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.mount_target_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeMountTargetSecurityGroupsInput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput).
-    pub fn build(self) -> Result<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput {
                 mount_target_id: self.mount_target_id
                 ,

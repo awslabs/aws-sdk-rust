@@ -2,7 +2,7 @@
 
 /// <p>Defines the resource configuration for the data model in your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceConfig {}
 impl ResourceConfig {
     /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::types::ResourceConfig).
@@ -13,7 +13,9 @@ impl ResourceConfig {
 
 /// A builder for [`ResourceConfig`](crate::types::ResourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceConfigBuilder {}
 impl ResourceConfigBuilder {
     /// Consumes the builder and constructs a [`ResourceConfig`](crate::types::ResourceConfig).

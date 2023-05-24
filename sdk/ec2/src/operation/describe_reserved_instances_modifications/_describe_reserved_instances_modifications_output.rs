@@ -2,30 +2,30 @@
 
 /// <p>Contains the output of DescribeReservedInstancesModifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesModificationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Reserved Instance modification information.</p>
     #[doc(hidden)]
     pub reserved_instances_modifications:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstancesModification>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesModificationsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The Reserved Instance modification information.</p>
     pub fn reserved_instances_modifications(
         &self,
-    ) -> std::option::Option<&[crate::types::ReservedInstancesModification]> {
+    ) -> ::std::option::Option<&[crate::types::ReservedInstancesModification]> {
         self.reserved_instances_modifications.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedInstancesModificationsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedInstancesModificationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeReservedInstancesModificationsOutput {
 
 /// A builder for [`DescribeReservedInstancesModificationsOutput`](crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedInstancesModificationsOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_instances_modifications:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstancesModification>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesModificationsOutputBuilder {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -68,13 +70,13 @@ impl DescribeReservedInstancesModificationsOutputBuilder {
     ) -> Self {
         let mut v = self.reserved_instances_modifications.unwrap_or_default();
         v.push(input);
-        self.reserved_instances_modifications = Some(v);
+        self.reserved_instances_modifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Reserved Instance modification information.</p>
     pub fn set_reserved_instances_modifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesModification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesModification>>,
     ) -> Self {
         self.reserved_instances_modifications = input;
         self

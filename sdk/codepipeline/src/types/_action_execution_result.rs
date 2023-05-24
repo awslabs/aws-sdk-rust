@@ -2,29 +2,29 @@
 
 /// <p>Execution result information, such as the external execution ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionExecutionResult {
     /// <p>The action provider's external ID for the action execution.</p>
     #[doc(hidden)]
-    pub external_execution_id: std::option::Option<std::string::String>,
+    pub external_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The action provider's summary for the action execution.</p>
     #[doc(hidden)]
-    pub external_execution_summary: std::option::Option<std::string::String>,
+    pub external_execution_summary: ::std::option::Option<::std::string::String>,
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
     #[doc(hidden)]
-    pub external_execution_url: std::option::Option<std::string::String>,
+    pub external_execution_url: ::std::option::Option<::std::string::String>,
 }
 impl ActionExecutionResult {
     /// <p>The action provider's external ID for the action execution.</p>
-    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+    pub fn external_execution_id(&self) -> ::std::option::Option<&str> {
         self.external_execution_id.as_deref()
     }
     /// <p>The action provider's summary for the action execution.</p>
-    pub fn external_execution_summary(&self) -> std::option::Option<&str> {
+    pub fn external_execution_summary(&self) -> ::std::option::Option<&str> {
         self.external_execution_summary.as_deref()
     }
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
-    pub fn external_execution_url(&self) -> std::option::Option<&str> {
+    pub fn external_execution_url(&self) -> ::std::option::Option<&str> {
         self.external_execution_url.as_deref()
     }
 }
@@ -37,48 +37,59 @@ impl ActionExecutionResult {
 
 /// A builder for [`ActionExecutionResult`](crate::types::ActionExecutionResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionExecutionResultBuilder {
-    pub(crate) external_execution_id: std::option::Option<std::string::String>,
-    pub(crate) external_execution_summary: std::option::Option<std::string::String>,
-    pub(crate) external_execution_url: std::option::Option<std::string::String>,
+    pub(crate) external_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) external_execution_summary: ::std::option::Option<::std::string::String>,
+    pub(crate) external_execution_url: ::std::option::Option<::std::string::String>,
 }
 impl ActionExecutionResultBuilder {
     /// <p>The action provider's external ID for the action execution.</p>
-    pub fn external_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_execution_id = Some(input.into());
+    pub fn external_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.external_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action provider's external ID for the action execution.</p>
     pub fn set_external_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.external_execution_id = input;
         self
     }
     /// <p>The action provider's summary for the action execution.</p>
-    pub fn external_execution_summary(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_execution_summary = Some(input.into());
+    pub fn external_execution_summary(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.external_execution_summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action provider's summary for the action execution.</p>
     pub fn set_external_execution_summary(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.external_execution_summary = input;
         self
     }
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
-    pub fn external_execution_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_execution_url = Some(input.into());
+    pub fn external_execution_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.external_execution_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
     pub fn set_external_execution_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.external_execution_url = input;
         self

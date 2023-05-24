@@ -2,27 +2,27 @@
 
 /// Placeholder documentation for ListInputsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInputsOutput {
     /// Placeholder documentation for __listOfInput
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<crate::types::Input>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     /// Placeholder documentation for __string
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInputsOutput {
     /// Placeholder documentation for __listOfInput
-    pub fn inputs(&self) -> std::option::Option<&[crate::types::Input]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[crate::types::Input]> {
         self.inputs.as_deref()
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListInputsOutput {
+impl ::aws_http::request_id::RequestId for ListInputsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListInputsOutput {
 
 /// A builder for [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListInputsOutputBuilder {
-    pub(crate) inputs: std::option::Option<std::vec::Vec<crate::types::Input>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInputsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListInputsOutputBuilder {
     pub fn inputs(mut self, input: crate::types::Input) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input);
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// Placeholder documentation for __listOfInput
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Input>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     ) -> Self {
         self.inputs = input;
         self
     }
     /// Placeholder documentation for __string
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// Placeholder documentation for __string
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

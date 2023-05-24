@@ -2,15 +2,15 @@
 
 /// <p>Contains information about a detector's configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyDetectorConfigSummary {
     /// <p>The interval at which the detector analyzes its source data.</p>
     #[doc(hidden)]
-    pub anomaly_detector_frequency: std::option::Option<crate::types::Frequency>,
+    pub anomaly_detector_frequency: ::std::option::Option<crate::types::Frequency>,
 }
 impl AnomalyDetectorConfigSummary {
     /// <p>The interval at which the detector analyzes its source data.</p>
-    pub fn anomaly_detector_frequency(&self) -> std::option::Option<&crate::types::Frequency> {
+    pub fn anomaly_detector_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
         self.anomaly_detector_frequency.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AnomalyDetectorConfigSummary {
 
 /// A builder for [`AnomalyDetectorConfigSummary`](crate::types::AnomalyDetectorConfigSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnomalyDetectorConfigSummaryBuilder {
-    pub(crate) anomaly_detector_frequency: std::option::Option<crate::types::Frequency>,
+    pub(crate) anomaly_detector_frequency: ::std::option::Option<crate::types::Frequency>,
 }
 impl AnomalyDetectorConfigSummaryBuilder {
     /// <p>The interval at which the detector analyzes its source data.</p>
     pub fn anomaly_detector_frequency(mut self, input: crate::types::Frequency) -> Self {
-        self.anomaly_detector_frequency = Some(input);
+        self.anomaly_detector_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The interval at which the detector analyzes its source data.</p>
     pub fn set_anomaly_detector_frequency(
         mut self,
-        input: std::option::Option<crate::types::Frequency>,
+        input: ::std::option::Option<crate::types::Frequency>,
     ) -> Self {
         self.anomaly_detector_frequency = input;
         self

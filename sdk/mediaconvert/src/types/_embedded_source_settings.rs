@@ -2,38 +2,40 @@
 
 /// Settings for embedded captions Source
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmbeddedSourceSettings {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     #[doc(hidden)]
-    pub convert608_to708: std::option::Option<crate::types::EmbeddedConvert608To708>,
+    pub convert608_to708: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     #[doc(hidden)]
-    pub source608_channel_number: std::option::Option<i32>,
+    pub source608_channel_number: ::std::option::Option<i32>,
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
     #[doc(hidden)]
-    pub source608_track_number: std::option::Option<i32>,
+    pub source608_track_number: ::std::option::Option<i32>,
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     #[doc(hidden)]
-    pub terminate_captions: std::option::Option<crate::types::EmbeddedTerminateCaptions>,
+    pub terminate_captions: ::std::option::Option<crate::types::EmbeddedTerminateCaptions>,
 }
 impl EmbeddedSourceSettings {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
-    pub fn convert608_to708(&self) -> std::option::Option<&crate::types::EmbeddedConvert608To708> {
+    pub fn convert608_to708(
+        &self,
+    ) -> ::std::option::Option<&crate::types::EmbeddedConvert608To708> {
         self.convert608_to708.as_ref()
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-    pub fn source608_channel_number(&self) -> std::option::Option<i32> {
+    pub fn source608_channel_number(&self) -> ::std::option::Option<i32> {
         self.source608_channel_number
     }
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
-    pub fn source608_track_number(&self) -> std::option::Option<i32> {
+    pub fn source608_track_number(&self) -> ::std::option::Option<i32> {
         self.source608_track_number
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub fn terminate_captions(
         &self,
-    ) -> std::option::Option<&crate::types::EmbeddedTerminateCaptions> {
+    ) -> ::std::option::Option<&crate::types::EmbeddedTerminateCaptions> {
         self.terminate_captions.as_ref()
     }
 }
@@ -46,56 +48,58 @@ impl EmbeddedSourceSettings {
 
 /// A builder for [`EmbeddedSourceSettings`](crate::types::EmbeddedSourceSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmbeddedSourceSettingsBuilder {
-    pub(crate) convert608_to708: std::option::Option<crate::types::EmbeddedConvert608To708>,
-    pub(crate) source608_channel_number: std::option::Option<i32>,
-    pub(crate) source608_track_number: std::option::Option<i32>,
-    pub(crate) terminate_captions: std::option::Option<crate::types::EmbeddedTerminateCaptions>,
+    pub(crate) convert608_to708: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
+    pub(crate) source608_channel_number: ::std::option::Option<i32>,
+    pub(crate) source608_track_number: ::std::option::Option<i32>,
+    pub(crate) terminate_captions: ::std::option::Option<crate::types::EmbeddedTerminateCaptions>,
 }
 impl EmbeddedSourceSettingsBuilder {
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn convert608_to708(mut self, input: crate::types::EmbeddedConvert608To708) -> Self {
-        self.convert608_to708 = Some(input);
+        self.convert608_to708 = ::std::option::Option::Some(input);
         self
     }
     /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
     pub fn set_convert608_to708(
         mut self,
-        input: std::option::Option<crate::types::EmbeddedConvert608To708>,
+        input: ::std::option::Option<crate::types::EmbeddedConvert608To708>,
     ) -> Self {
         self.convert608_to708 = input;
         self
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     pub fn source608_channel_number(mut self, input: i32) -> Self {
-        self.source608_channel_number = Some(input);
+        self.source608_channel_number = ::std::option::Option::Some(input);
         self
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-    pub fn set_source608_channel_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_source608_channel_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.source608_channel_number = input;
         self
     }
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
     pub fn source608_track_number(mut self, input: i32) -> Self {
-        self.source608_track_number = Some(input);
+        self.source608_track_number = ::std::option::Option::Some(input);
         self
     }
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
-    pub fn set_source608_track_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_source608_track_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.source608_track_number = input;
         self
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub fn terminate_captions(mut self, input: crate::types::EmbeddedTerminateCaptions) -> Self {
-        self.terminate_captions = Some(input);
+        self.terminate_captions = ::std::option::Option::Some(input);
         self
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     pub fn set_terminate_captions(
         mut self,
-        input: std::option::Option<crate::types::EmbeddedTerminateCaptions>,
+        input: ::std::option::Option<crate::types::EmbeddedTerminateCaptions>,
     ) -> Self {
         self.terminate_captions = input;
         self

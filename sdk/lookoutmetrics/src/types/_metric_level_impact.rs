@@ -2,21 +2,21 @@
 
 /// <p>Details about a measure affected by an anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricLevelImpact {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of anomalous metrics for the measure.</p>
     #[doc(hidden)]
     pub num_time_series: i32,
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     #[doc(hidden)]
-    pub contribution_matrix: std::option::Option<crate::types::ContributionMatrix>,
+    pub contribution_matrix: ::std::option::Option<crate::types::ContributionMatrix>,
 }
 impl MetricLevelImpact {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The number of anomalous metrics for the measure.</p>
@@ -24,7 +24,7 @@ impl MetricLevelImpact {
         self.num_time_series
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
-    pub fn contribution_matrix(&self) -> std::option::Option<&crate::types::ContributionMatrix> {
+    pub fn contribution_matrix(&self) -> ::std::option::Option<&crate::types::ContributionMatrix> {
         self.contribution_matrix.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl MetricLevelImpact {
 
 /// A builder for [`MetricLevelImpact`](crate::types::MetricLevelImpact).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricLevelImpactBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) num_time_series: std::option::Option<i32>,
-    pub(crate) contribution_matrix: std::option::Option<crate::types::ContributionMatrix>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) num_time_series: ::std::option::Option<i32>,
+    pub(crate) contribution_matrix: ::std::option::Option<crate::types::ContributionMatrix>,
 }
 impl MetricLevelImpactBuilder {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the measure.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The number of anomalous metrics for the measure.</p>
     pub fn num_time_series(mut self, input: i32) -> Self {
-        self.num_time_series = Some(input);
+        self.num_time_series = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of anomalous metrics for the measure.</p>
-    pub fn set_num_time_series(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_num_time_series(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_time_series = input;
         self
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     pub fn contribution_matrix(mut self, input: crate::types::ContributionMatrix) -> Self {
-        self.contribution_matrix = Some(input);
+        self.contribution_matrix = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the dimensions that contributed to the anomaly.</p>
     pub fn set_contribution_matrix(
         mut self,
-        input: std::option::Option<crate::types::ContributionMatrix>,
+        input: ::std::option::Option<crate::types::ContributionMatrix>,
     ) -> Self {
         self.contribution_matrix = input;
         self

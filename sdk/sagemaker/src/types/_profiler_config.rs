@@ -2,36 +2,38 @@
 
 /// <p>Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProfilerConfig {
     /// <p>Path to Amazon S3 storage location for system and framework metrics.</p>
     #[doc(hidden)]
-    pub s3_output_path: std::option::Option<std::string::String>,
+    pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>A time interval for capturing system metrics in milliseconds. Available values are 100, 200, 500, 1000 (1 second), 5000 (5 seconds), and 60000 (1 minute) milliseconds. The default value is 500 milliseconds.</p>
     #[doc(hidden)]
-    pub profiling_interval_in_milliseconds: std::option::Option<i64>,
+    pub profiling_interval_in_milliseconds: ::std::option::Option<i64>,
     /// <p>Configuration information for capturing framework metrics. Available key strings for different profiling options are <code>DetailedProfilingConfig</code>, <code>PythonProfilingConfig</code>, and <code>DataLoaderProfilingConfig</code>. The following codes are configuration structures for the <code>ProfilingParameters</code> parameter. To learn more about how to configure the <code>ProfilingParameters</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>. </p>
     #[doc(hidden)]
-    pub profiling_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub profiling_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it off, set to <code>True</code>.</p>
     #[doc(hidden)]
     pub disable_profiler: bool,
 }
 impl ProfilerConfig {
     /// <p>Path to Amazon S3 storage location for system and framework metrics.</p>
-    pub fn s3_output_path(&self) -> std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
     /// <p>A time interval for capturing system metrics in milliseconds. Available values are 100, 200, 500, 1000 (1 second), 5000 (5 seconds), and 60000 (1 minute) milliseconds. The default value is 500 milliseconds.</p>
-    pub fn profiling_interval_in_milliseconds(&self) -> std::option::Option<i64> {
+    pub fn profiling_interval_in_milliseconds(&self) -> ::std::option::Option<i64> {
         self.profiling_interval_in_milliseconds
     }
     /// <p>Configuration information for capturing framework metrics. Available key strings for different profiling options are <code>DetailedProfilingConfig</code>, <code>PythonProfilingConfig</code>, and <code>DataLoaderProfilingConfig</code>. The following codes are configuration structures for the <code>ProfilingParameters</code> parameter. To learn more about how to configure the <code>ProfilingParameters</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>. </p>
     pub fn profiling_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.profiling_parameters.as_ref()
     }
     /// <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it off, set to <code>True</code>.</p>
@@ -48,34 +50,43 @@ impl ProfilerConfig {
 
 /// A builder for [`ProfilerConfig`](crate::types::ProfilerConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProfilerConfigBuilder {
-    pub(crate) s3_output_path: std::option::Option<std::string::String>,
-    pub(crate) profiling_interval_in_milliseconds: std::option::Option<i64>,
-    pub(crate) profiling_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) disable_profiler: std::option::Option<bool>,
+    pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
+    pub(crate) profiling_interval_in_milliseconds: ::std::option::Option<i64>,
+    pub(crate) profiling_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) disable_profiler: ::std::option::Option<bool>,
 }
 impl ProfilerConfigBuilder {
     /// <p>Path to Amazon S3 storage location for system and framework metrics.</p>
-    pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_output_path = Some(input.into());
+    pub fn s3_output_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Path to Amazon S3 storage location for system and framework metrics.</p>
-    pub fn set_s3_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_output_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_output_path = input;
         self
     }
     /// <p>A time interval for capturing system metrics in milliseconds. Available values are 100, 200, 500, 1000 (1 second), 5000 (5 seconds), and 60000 (1 minute) milliseconds. The default value is 500 milliseconds.</p>
     pub fn profiling_interval_in_milliseconds(mut self, input: i64) -> Self {
-        self.profiling_interval_in_milliseconds = Some(input);
+        self.profiling_interval_in_milliseconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>A time interval for capturing system metrics in milliseconds. Available values are 100, 200, 500, 1000 (1 second), 5000 (5 seconds), and 60000 (1 minute) milliseconds. The default value is 500 milliseconds.</p>
     pub fn set_profiling_interval_in_milliseconds(
         mut self,
-        input: std::option::Option<i64>,
+        input: ::std::option::Option<i64>,
     ) -> Self {
         self.profiling_interval_in_milliseconds = input;
         self
@@ -87,19 +98,19 @@ impl ProfilerConfigBuilder {
     /// <p>Configuration information for capturing framework metrics. Available key strings for different profiling options are <code>DetailedProfilingConfig</code>, <code>PythonProfilingConfig</code>, and <code>DataLoaderProfilingConfig</code>. The following codes are configuration structures for the <code>ProfilingParameters</code> parameter. To learn more about how to configure the <code>ProfilingParameters</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>. </p>
     pub fn profiling_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.profiling_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.profiling_parameters = Some(hash_map);
+        self.profiling_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Configuration information for capturing framework metrics. Available key strings for different profiling options are <code>DetailedProfilingConfig</code>, <code>PythonProfilingConfig</code>, and <code>DataLoaderProfilingConfig</code>. The following codes are configuration structures for the <code>ProfilingParameters</code> parameter. To learn more about how to configure the <code>ProfilingParameters</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>. </p>
     pub fn set_profiling_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.profiling_parameters = input;
@@ -107,11 +118,11 @@ impl ProfilerConfigBuilder {
     }
     /// <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it off, set to <code>True</code>.</p>
     pub fn disable_profiler(mut self, input: bool) -> Self {
-        self.disable_profiler = Some(input);
+        self.disable_profiler = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it off, set to <code>True</code>.</p>
-    pub fn set_disable_profiler(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_profiler(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_profiler = input;
         self
     }

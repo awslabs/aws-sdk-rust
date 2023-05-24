@@ -2,43 +2,43 @@
 
 /// <p>Contains information about a hierarchy structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HierarchyStructure {
     /// <p>Information about level one.</p>
     #[doc(hidden)]
-    pub level_one: std::option::Option<crate::types::HierarchyLevel>,
+    pub level_one: ::std::option::Option<crate::types::HierarchyLevel>,
     /// <p>Information about level two.</p>
     #[doc(hidden)]
-    pub level_two: std::option::Option<crate::types::HierarchyLevel>,
+    pub level_two: ::std::option::Option<crate::types::HierarchyLevel>,
     /// <p>Information about level three.</p>
     #[doc(hidden)]
-    pub level_three: std::option::Option<crate::types::HierarchyLevel>,
+    pub level_three: ::std::option::Option<crate::types::HierarchyLevel>,
     /// <p>Information about level four.</p>
     #[doc(hidden)]
-    pub level_four: std::option::Option<crate::types::HierarchyLevel>,
+    pub level_four: ::std::option::Option<crate::types::HierarchyLevel>,
     /// <p>Information about level five.</p>
     #[doc(hidden)]
-    pub level_five: std::option::Option<crate::types::HierarchyLevel>,
+    pub level_five: ::std::option::Option<crate::types::HierarchyLevel>,
 }
 impl HierarchyStructure {
     /// <p>Information about level one.</p>
-    pub fn level_one(&self) -> std::option::Option<&crate::types::HierarchyLevel> {
+    pub fn level_one(&self) -> ::std::option::Option<&crate::types::HierarchyLevel> {
         self.level_one.as_ref()
     }
     /// <p>Information about level two.</p>
-    pub fn level_two(&self) -> std::option::Option<&crate::types::HierarchyLevel> {
+    pub fn level_two(&self) -> ::std::option::Option<&crate::types::HierarchyLevel> {
         self.level_two.as_ref()
     }
     /// <p>Information about level three.</p>
-    pub fn level_three(&self) -> std::option::Option<&crate::types::HierarchyLevel> {
+    pub fn level_three(&self) -> ::std::option::Option<&crate::types::HierarchyLevel> {
         self.level_three.as_ref()
     }
     /// <p>Information about level four.</p>
-    pub fn level_four(&self) -> std::option::Option<&crate::types::HierarchyLevel> {
+    pub fn level_four(&self) -> ::std::option::Option<&crate::types::HierarchyLevel> {
         self.level_four.as_ref()
     }
     /// <p>Information about level five.</p>
-    pub fn level_five(&self) -> std::option::Option<&crate::types::HierarchyLevel> {
+    pub fn level_five(&self) -> ::std::option::Option<&crate::types::HierarchyLevel> {
         self.level_five.as_ref()
     }
 }
@@ -51,76 +51,78 @@ impl HierarchyStructure {
 
 /// A builder for [`HierarchyStructure`](crate::types::HierarchyStructure).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HierarchyStructureBuilder {
-    pub(crate) level_one: std::option::Option<crate::types::HierarchyLevel>,
-    pub(crate) level_two: std::option::Option<crate::types::HierarchyLevel>,
-    pub(crate) level_three: std::option::Option<crate::types::HierarchyLevel>,
-    pub(crate) level_four: std::option::Option<crate::types::HierarchyLevel>,
-    pub(crate) level_five: std::option::Option<crate::types::HierarchyLevel>,
+    pub(crate) level_one: ::std::option::Option<crate::types::HierarchyLevel>,
+    pub(crate) level_two: ::std::option::Option<crate::types::HierarchyLevel>,
+    pub(crate) level_three: ::std::option::Option<crate::types::HierarchyLevel>,
+    pub(crate) level_four: ::std::option::Option<crate::types::HierarchyLevel>,
+    pub(crate) level_five: ::std::option::Option<crate::types::HierarchyLevel>,
 }
 impl HierarchyStructureBuilder {
     /// <p>Information about level one.</p>
     pub fn level_one(mut self, input: crate::types::HierarchyLevel) -> Self {
-        self.level_one = Some(input);
+        self.level_one = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about level one.</p>
     pub fn set_level_one(
         mut self,
-        input: std::option::Option<crate::types::HierarchyLevel>,
+        input: ::std::option::Option<crate::types::HierarchyLevel>,
     ) -> Self {
         self.level_one = input;
         self
     }
     /// <p>Information about level two.</p>
     pub fn level_two(mut self, input: crate::types::HierarchyLevel) -> Self {
-        self.level_two = Some(input);
+        self.level_two = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about level two.</p>
     pub fn set_level_two(
         mut self,
-        input: std::option::Option<crate::types::HierarchyLevel>,
+        input: ::std::option::Option<crate::types::HierarchyLevel>,
     ) -> Self {
         self.level_two = input;
         self
     }
     /// <p>Information about level three.</p>
     pub fn level_three(mut self, input: crate::types::HierarchyLevel) -> Self {
-        self.level_three = Some(input);
+        self.level_three = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about level three.</p>
     pub fn set_level_three(
         mut self,
-        input: std::option::Option<crate::types::HierarchyLevel>,
+        input: ::std::option::Option<crate::types::HierarchyLevel>,
     ) -> Self {
         self.level_three = input;
         self
     }
     /// <p>Information about level four.</p>
     pub fn level_four(mut self, input: crate::types::HierarchyLevel) -> Self {
-        self.level_four = Some(input);
+        self.level_four = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about level four.</p>
     pub fn set_level_four(
         mut self,
-        input: std::option::Option<crate::types::HierarchyLevel>,
+        input: ::std::option::Option<crate::types::HierarchyLevel>,
     ) -> Self {
         self.level_four = input;
         self
     }
     /// <p>Information about level five.</p>
     pub fn level_five(mut self, input: crate::types::HierarchyLevel) -> Self {
-        self.level_five = Some(input);
+        self.level_five = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about level five.</p>
     pub fn set_level_five(
         mut self,
-        input: std::option::Option<crate::types::HierarchyLevel>,
+        input: ::std::option::Option<crate::types::HierarchyLevel>,
     ) -> Self {
         self.level_five = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>Source server post migration custom action filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceServerActionsRequestFilters {
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
     #[doc(hidden)]
-    pub action_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub action_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SourceServerActionsRequestFilters {
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    pub fn action_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn action_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.action_i_ds.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl SourceServerActionsRequestFilters {
 
 /// A builder for [`SourceServerActionsRequestFilters`](crate::types::SourceServerActionsRequestFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceServerActionsRequestFiltersBuilder {
-    pub(crate) action_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) action_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SourceServerActionsRequestFiltersBuilder {
     /// Appends an item to `action_i_ds`.
@@ -33,16 +35,16 @@ impl SourceServerActionsRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_action_i_ds`](Self::set_action_i_ds).
     ///
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    pub fn action_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn action_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action_i_ds.unwrap_or_default();
         v.push(input.into());
-        self.action_i_ds = Some(v);
+        self.action_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
     pub fn set_action_i_ds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.action_i_ds = input;
         self

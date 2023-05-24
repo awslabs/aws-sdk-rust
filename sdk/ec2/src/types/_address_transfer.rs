@@ -2,56 +2,56 @@
 
 /// <p>Details on the Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddressTransfer {
     /// <p>The Elastic IP address being transferred.</p>
     #[doc(hidden)]
-    pub public_ip: std::option::Option<std::string::String>,
+    pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The allocation ID of an Elastic IP address.</p>
     #[doc(hidden)]
-    pub allocation_id: std::option::Option<std::string::String>,
+    pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
     #[doc(hidden)]
-    pub transfer_account_id: std::option::Option<std::string::String>,
+    pub transfer_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the Elastic IP address transfer expired. When the source account starts the transfer, the transfer account has seven hours to allocate the Elastic IP address to complete the transfer, or the Elastic IP address will return to its original owner.</p>
     #[doc(hidden)]
-    pub transfer_offer_expiration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub transfer_offer_expiration_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the Elastic IP address transfer was accepted.</p>
     #[doc(hidden)]
-    pub transfer_offer_accepted_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub transfer_offer_accepted_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Elastic IP address transfer status.</p>
     #[doc(hidden)]
-    pub address_transfer_status: std::option::Option<crate::types::AddressTransferStatus>,
+    pub address_transfer_status: ::std::option::Option<crate::types::AddressTransferStatus>,
 }
 impl AddressTransfer {
     /// <p>The Elastic IP address being transferred.</p>
-    pub fn public_ip(&self) -> std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(&self) -> std::option::Option<&str> {
+    pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn transfer_account_id(&self) -> std::option::Option<&str> {
+    pub fn transfer_account_id(&self) -> ::std::option::Option<&str> {
         self.transfer_account_id.as_deref()
     }
     /// <p>The timestamp when the Elastic IP address transfer expired. When the source account starts the transfer, the transfer account has seven hours to allocate the Elastic IP address to complete the transfer, or the Elastic IP address will return to its original owner.</p>
     pub fn transfer_offer_expiration_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.transfer_offer_expiration_timestamp.as_ref()
     }
     /// <p>The timestamp when the Elastic IP address transfer was accepted.</p>
     pub fn transfer_offer_accepted_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.transfer_offer_accepted_timestamp.as_ref()
     }
     /// <p>The Elastic IP address transfer status.</p>
     pub fn address_transfer_status(
         &self,
-    ) -> std::option::Option<&crate::types::AddressTransferStatus> {
+    ) -> ::std::option::Option<&crate::types::AddressTransferStatus> {
         self.address_transfer_status.as_ref()
     }
 }
@@ -64,45 +64,58 @@ impl AddressTransfer {
 
 /// A builder for [`AddressTransfer`](crate::types::AddressTransfer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddressTransferBuilder {
-    pub(crate) public_ip: std::option::Option<std::string::String>,
-    pub(crate) allocation_id: std::option::Option<std::string::String>,
-    pub(crate) transfer_account_id: std::option::Option<std::string::String>,
-    pub(crate) transfer_offer_expiration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) transfer_offer_accepted_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) address_transfer_status: std::option::Option<crate::types::AddressTransferStatus>,
+    pub(crate) public_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transfer_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transfer_offer_expiration_timestamp:
+        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) transfer_offer_accepted_timestamp:
+        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) address_transfer_status: ::std::option::Option<crate::types::AddressTransferStatus>,
 }
 impl AddressTransferBuilder {
     /// <p>The Elastic IP address being transferred.</p>
-    pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_ip = Some(input.into());
+    pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elastic IP address being transferred.</p>
-    pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.allocation_id = Some(input.into());
+    pub fn allocation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
-    pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_allocation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.allocation_id = input;
         self
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
-    pub fn transfer_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transfer_account_id = Some(input.into());
+    pub fn transfer_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transfer_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the account that you want to transfer the Elastic IP address to.</p>
     pub fn set_transfer_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transfer_account_id = input;
         self
@@ -110,41 +123,44 @@ impl AddressTransferBuilder {
     /// <p>The timestamp when the Elastic IP address transfer expired. When the source account starts the transfer, the transfer account has seven hours to allocate the Elastic IP address to complete the transfer, or the Elastic IP address will return to its original owner.</p>
     pub fn transfer_offer_expiration_timestamp(
         mut self,
-        input: aws_smithy_types::DateTime,
+        input: ::aws_smithy_types::DateTime,
     ) -> Self {
-        self.transfer_offer_expiration_timestamp = Some(input);
+        self.transfer_offer_expiration_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the Elastic IP address transfer expired. When the source account starts the transfer, the transfer account has seven hours to allocate the Elastic IP address to complete the transfer, or the Elastic IP address will return to its original owner.</p>
     pub fn set_transfer_offer_expiration_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.transfer_offer_expiration_timestamp = input;
         self
     }
     /// <p>The timestamp when the Elastic IP address transfer was accepted.</p>
-    pub fn transfer_offer_accepted_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.transfer_offer_accepted_timestamp = Some(input);
+    pub fn transfer_offer_accepted_timestamp(
+        mut self,
+        input: ::aws_smithy_types::DateTime,
+    ) -> Self {
+        self.transfer_offer_accepted_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the Elastic IP address transfer was accepted.</p>
     pub fn set_transfer_offer_accepted_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.transfer_offer_accepted_timestamp = input;
         self
     }
     /// <p>The Elastic IP address transfer status.</p>
     pub fn address_transfer_status(mut self, input: crate::types::AddressTransferStatus) -> Self {
-        self.address_transfer_status = Some(input);
+        self.address_transfer_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Elastic IP address transfer status.</p>
     pub fn set_address_transfer_status(
         mut self,
-        input: std::option::Option<crate::types::AddressTransferStatus>,
+        input: ::std::option::Option<crate::types::AddressTransferStatus>,
     ) -> Self {
         self.address_transfer_status = input;
         self

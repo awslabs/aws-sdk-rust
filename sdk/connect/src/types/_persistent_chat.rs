@@ -2,7 +2,7 @@
 
 /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PersistentChat {
     /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct PersistentChat {
     /// </ul>
     /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
     #[doc(hidden)]
-    pub rehydration_type: std::option::Option<crate::types::RehydrationType>,
+    pub rehydration_type: ::std::option::Option<crate::types::RehydrationType>,
     /// <p>The contactId from which a persistent chat session must be started.</p>
     #[doc(hidden)]
-    pub source_contact_id: std::option::Option<std::string::String>,
+    pub source_contact_id: ::std::option::Option<::std::string::String>,
 }
 impl PersistentChat {
     /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
@@ -23,11 +23,11 @@ impl PersistentChat {
     /// <li> <p> <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified in the <code>sourceContactId</code> field. </p> </li>
     /// </ul>
     /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
-    pub fn rehydration_type(&self) -> std::option::Option<&crate::types::RehydrationType> {
+    pub fn rehydration_type(&self) -> ::std::option::Option<&crate::types::RehydrationType> {
         self.rehydration_type.as_ref()
     }
     /// <p>The contactId from which a persistent chat session must be started.</p>
-    pub fn source_contact_id(&self) -> std::option::Option<&str> {
+    pub fn source_contact_id(&self) -> ::std::option::Option<&str> {
         self.source_contact_id.as_deref()
     }
 }
@@ -40,10 +40,12 @@ impl PersistentChat {
 
 /// A builder for [`PersistentChat`](crate::types::PersistentChat).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PersistentChatBuilder {
-    pub(crate) rehydration_type: std::option::Option<crate::types::RehydrationType>,
-    pub(crate) source_contact_id: std::option::Option<std::string::String>,
+    pub(crate) rehydration_type: ::std::option::Option<crate::types::RehydrationType>,
+    pub(crate) source_contact_id: ::std::option::Option<::std::string::String>,
 }
 impl PersistentChatBuilder {
     /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
@@ -53,7 +55,7 @@ impl PersistentChatBuilder {
     /// </ul>
     /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
     pub fn rehydration_type(mut self, input: crate::types::RehydrationType) -> Self {
-        self.rehydration_type = Some(input);
+        self.rehydration_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The contactId that is used for rehydration depends on the rehydration type. RehydrationType is required for persistent chat. </p>
@@ -64,20 +66,23 @@ impl PersistentChatBuilder {
     /// <p>The actual contactId used for rehydration is provided in the response of this API. </p>
     pub fn set_rehydration_type(
         mut self,
-        input: std::option::Option<crate::types::RehydrationType>,
+        input: ::std::option::Option<crate::types::RehydrationType>,
     ) -> Self {
         self.rehydration_type = input;
         self
     }
     /// <p>The contactId from which a persistent chat session must be started.</p>
-    pub fn source_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_contact_id = Some(input.into());
+    pub fn source_contact_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contactId from which a persistent chat session must be started.</p>
     pub fn set_source_contact_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_contact_id = input;
         self

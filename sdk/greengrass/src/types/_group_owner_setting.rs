@@ -2,22 +2,22 @@
 
 /// Group owner related settings for local resources.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupOwnerSetting {
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
     #[doc(hidden)]
-    pub auto_add_group_owner: std::option::Option<bool>,
+    pub auto_add_group_owner: ::std::option::Option<bool>,
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
     #[doc(hidden)]
-    pub group_owner: std::option::Option<std::string::String>,
+    pub group_owner: ::std::option::Option<::std::string::String>,
 }
 impl GroupOwnerSetting {
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
-    pub fn auto_add_group_owner(&self) -> std::option::Option<bool> {
+    pub fn auto_add_group_owner(&self) -> ::std::option::Option<bool> {
         self.auto_add_group_owner
     }
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
-    pub fn group_owner(&self) -> std::option::Option<&str> {
+    pub fn group_owner(&self) -> ::std::option::Option<&str> {
         self.group_owner.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl GroupOwnerSetting {
 
 /// A builder for [`GroupOwnerSetting`](crate::types::GroupOwnerSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupOwnerSettingBuilder {
-    pub(crate) auto_add_group_owner: std::option::Option<bool>,
-    pub(crate) group_owner: std::option::Option<std::string::String>,
+    pub(crate) auto_add_group_owner: ::std::option::Option<bool>,
+    pub(crate) group_owner: ::std::option::Option<::std::string::String>,
 }
 impl GroupOwnerSettingBuilder {
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
     pub fn auto_add_group_owner(mut self, input: bool) -> Self {
-        self.auto_add_group_owner = Some(input);
+        self.auto_add_group_owner = ::std::option::Option::Some(input);
         self
     }
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
-    pub fn set_auto_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_add_group_owner(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_add_group_owner = input;
         self
     }
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
-    pub fn group_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_owner = Some(input.into());
+    pub fn group_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
-    pub fn set_group_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_owner = input;
         self
     }

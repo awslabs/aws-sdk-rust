@@ -2,11 +2,11 @@
 
 /// <p>Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResult {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     #[doc(hidden)]
-    pub compliance_status: std::option::Option<crate::types::PolicyComplianceStatusType>,
+    pub compliance_status: ::std::option::Option<crate::types::PolicyComplianceStatusType>,
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
     #[doc(hidden)]
     pub violator_count: i64,
@@ -18,7 +18,7 @@ impl EvaluationResult {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     pub fn compliance_status(
         &self,
-    ) -> std::option::Option<&crate::types::PolicyComplianceStatusType> {
+    ) -> ::std::option::Option<&crate::types::PolicyComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
@@ -39,43 +39,45 @@ impl EvaluationResult {
 
 /// A builder for [`EvaluationResult`](crate::types::EvaluationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationResultBuilder {
-    pub(crate) compliance_status: std::option::Option<crate::types::PolicyComplianceStatusType>,
-    pub(crate) violator_count: std::option::Option<i64>,
-    pub(crate) evaluation_limit_exceeded: std::option::Option<bool>,
+    pub(crate) compliance_status: ::std::option::Option<crate::types::PolicyComplianceStatusType>,
+    pub(crate) violator_count: ::std::option::Option<i64>,
+    pub(crate) evaluation_limit_exceeded: ::std::option::Option<bool>,
 }
 impl EvaluationResultBuilder {
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     pub fn compliance_status(mut self, input: crate::types::PolicyComplianceStatusType) -> Self {
-        self.compliance_status = Some(input);
+        self.compliance_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes an Amazon Web Services account's compliance with the Firewall Manager policy.</p>
     pub fn set_compliance_status(
         mut self,
-        input: std::option::Option<crate::types::PolicyComplianceStatusType>,
+        input: ::std::option::Option<crate::types::PolicyComplianceStatusType>,
     ) -> Self {
         self.compliance_status = input;
         self
     }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
     pub fn violator_count(mut self, input: i64) -> Self {
-        self.violator_count = Some(input);
+        self.violator_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of resources that are noncompliant with the specified policy. For WAF and Shield Advanced policies, a resource is considered noncompliant if it is not associated with the policy. For security group policies, a resource is considered noncompliant if it doesn't comply with the rules of the policy and remediation is disabled or not possible.</p>
-    pub fn set_violator_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_violator_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.violator_count = input;
         self
     }
     /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
     pub fn evaluation_limit_exceeded(mut self, input: bool) -> Self {
-        self.evaluation_limit_exceeded = Some(input);
+        self.evaluation_limit_exceeded = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates that over 100 resources are noncompliant with the Firewall Manager policy.</p>
-    pub fn set_evaluation_limit_exceeded(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_evaluation_limit_exceeded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.evaluation_limit_exceeded = input;
         self
     }

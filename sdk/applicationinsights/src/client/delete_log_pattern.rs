@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLogPattern`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_group_name(impl Into<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::set_resource_group_name): <p>The name of the resource group.</p>
-    ///   - [`pattern_set_name(impl Into<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::pattern_set_name) / [`set_pattern_set_name(Option<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::set_pattern_set_name): <p>The name of the log pattern set.</p>
-    ///   - [`pattern_name(impl Into<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::pattern_name) / [`set_pattern_name(Option<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::set_pattern_name): <p>The name of the log pattern.</p>
+    ///   - [`resource_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::resource_group_name) / [`set_resource_group_name(Option<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::set_resource_group_name): <p>The name of the resource group.</p>
+    ///   - [`pattern_set_name(impl ::std::convert::Into<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::pattern_set_name) / [`set_pattern_set_name(Option<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::set_pattern_set_name): <p>The name of the log pattern set.</p>
+    ///   - [`pattern_name(impl ::std::convert::Into<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::pattern_name) / [`set_pattern_name(Option<String>)`](crate::operation::delete_log_pattern::builders::DeleteLogPatternFluentBuilder::set_pattern_name): <p>The name of the log pattern.</p>
     /// - On success, responds with [`DeleteLogPatternOutput`](crate::operation::delete_log_pattern::DeleteLogPatternOutput)
     /// - On failure, responds with [`SdkError<DeleteLogPatternError>`](crate::operation::delete_log_pattern::DeleteLogPatternError)
     pub fn delete_log_pattern(

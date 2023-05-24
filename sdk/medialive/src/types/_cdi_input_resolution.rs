@@ -40,13 +40,13 @@
 /// Maximum CDI input resolution; SD is 480i and 576i up to 30 frames-per-second (fps), HD is 720p up to 60 fps / 1080i up to 30 fps, FHD is 1080p up to 60 fps, UHD is 2160p up to 60 fps
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CdiInputResolution {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum CdiInputResolution {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CdiInputResolution {
+impl ::std::convert::From<&str> for CdiInputResolution {
     fn from(s: &str) -> Self {
         match s {
             "FHD" => CdiInputResolution::Fhd,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for CdiInputResolution {
         }
     }
 }
-impl std::str::FromStr for CdiInputResolution {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CdiInputResolution {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CdiInputResolution::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CdiInputResolution::from(s))
     }
 }
 impl CdiInputResolution {
@@ -96,7 +96,7 @@ impl CdiInputResolution {
         &["FHD", "HD", "SD", "UHD"]
     }
 }
-impl AsRef<str> for CdiInputResolution {
+impl ::std::convert::AsRef<str> for CdiInputResolution {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

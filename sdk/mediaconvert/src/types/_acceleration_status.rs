@@ -40,13 +40,13 @@
 /// Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AccelerationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AccelerationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AccelerationStatus {
+impl ::std::convert::From<&str> for AccelerationStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACCELERATED" => AccelerationStatus::Accelerated,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AccelerationStatus {
         }
     }
 }
-impl std::str::FromStr for AccelerationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AccelerationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccelerationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AccelerationStatus::from(s))
     }
 }
 impl AccelerationStatus {
@@ -101,7 +101,7 @@ impl AccelerationStatus {
         ]
     }
 }
-impl AsRef<str> for AccelerationStatus {
+impl ::std::convert::AsRef<str> for AccelerationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,15 +2,15 @@
 
 /// <p>The reason for the current status of a standard subscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandardsStatusReason {
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
     #[doc(hidden)]
-    pub status_reason_code: std::option::Option<crate::types::StatusReasonCode>,
+    pub status_reason_code: ::std::option::Option<crate::types::StatusReasonCode>,
 }
 impl StandardsStatusReason {
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
-    pub fn status_reason_code(&self) -> std::option::Option<&crate::types::StatusReasonCode> {
+    pub fn status_reason_code(&self) -> ::std::option::Option<&crate::types::StatusReasonCode> {
         self.status_reason_code.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl StandardsStatusReason {
 
 /// A builder for [`StandardsStatusReason`](crate::types::StandardsStatusReason).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StandardsStatusReasonBuilder {
-    pub(crate) status_reason_code: std::option::Option<crate::types::StatusReasonCode>,
+    pub(crate) status_reason_code: ::std::option::Option<crate::types::StatusReasonCode>,
 }
 impl StandardsStatusReasonBuilder {
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
     pub fn status_reason_code(mut self, input: crate::types::StatusReasonCode) -> Self {
-        self.status_reason_code = Some(input);
+        self.status_reason_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason code that represents the reason for the current status of a standard subscription.</p>
     pub fn set_status_reason_code(
         mut self,
-        input: std::option::Option<crate::types::StatusReasonCode>,
+        input: ::std::option::Option<crate::types::StatusReasonCode>,
     ) -> Self {
         self.status_reason_code = input;
         self

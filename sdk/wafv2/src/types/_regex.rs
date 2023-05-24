@@ -2,15 +2,15 @@
 
 /// <p>A single regular expression. This is used in a <code>RegexPatternSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Regex {
     /// <p>The string representing the regular expression.</p>
     #[doc(hidden)]
-    pub regex_string: std::option::Option<std::string::String>,
+    pub regex_string: ::std::option::Option<::std::string::String>,
 }
 impl Regex {
     /// <p>The string representing the regular expression.</p>
-    pub fn regex_string(&self) -> std::option::Option<&str> {
+    pub fn regex_string(&self) -> ::std::option::Option<&str> {
         self.regex_string.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Regex {
 
 /// A builder for [`Regex`](crate::types::Regex).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegexBuilder {
-    pub(crate) regex_string: std::option::Option<std::string::String>,
+    pub(crate) regex_string: ::std::option::Option<::std::string::String>,
 }
 impl RegexBuilder {
     /// <p>The string representing the regular expression.</p>
-    pub fn regex_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.regex_string = Some(input.into());
+    pub fn regex_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.regex_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string representing the regular expression.</p>
-    pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_regex_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_string = input;
         self
     }

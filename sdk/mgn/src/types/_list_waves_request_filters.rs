@@ -2,22 +2,22 @@
 
 /// <p>Waves list filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWavesRequestFilters {
     /// <p>Filter waves list by wave ID.</p>
     #[doc(hidden)]
-    pub wave_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub wave_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter waves list by archival status.</p>
     #[doc(hidden)]
-    pub is_archived: std::option::Option<bool>,
+    pub is_archived: ::std::option::Option<bool>,
 }
 impl ListWavesRequestFilters {
     /// <p>Filter waves list by wave ID.</p>
-    pub fn wave_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wave_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.wave_i_ds.as_deref()
     }
     /// <p>Filter waves list by archival status.</p>
-    pub fn is_archived(&self) -> std::option::Option<bool> {
+    pub fn is_archived(&self) -> ::std::option::Option<bool> {
         self.is_archived
     }
 }
@@ -30,10 +30,12 @@ impl ListWavesRequestFilters {
 
 /// A builder for [`ListWavesRequestFilters`](crate::types::ListWavesRequestFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListWavesRequestFiltersBuilder {
-    pub(crate) wave_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) is_archived: std::option::Option<bool>,
+    pub(crate) wave_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) is_archived: ::std::option::Option<bool>,
 }
 impl ListWavesRequestFiltersBuilder {
     /// Appends an item to `wave_i_ds`.
@@ -41,27 +43,27 @@ impl ListWavesRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_wave_i_ds`](Self::set_wave_i_ds).
     ///
     /// <p>Filter waves list by wave ID.</p>
-    pub fn wave_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn wave_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.wave_i_ds.unwrap_or_default();
         v.push(input.into());
-        self.wave_i_ds = Some(v);
+        self.wave_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filter waves list by wave ID.</p>
     pub fn set_wave_i_ds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.wave_i_ds = input;
         self
     }
     /// <p>Filter waves list by archival status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
-        self.is_archived = Some(input);
+        self.is_archived = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter waves list by archival status.</p>
-    pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_archived = input;
         self
     }

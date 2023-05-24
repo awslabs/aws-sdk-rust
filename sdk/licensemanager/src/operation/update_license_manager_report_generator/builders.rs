@@ -7,47 +7,50 @@ pub use crate::operation::update_license_manager_report_generator::_update_licen
 ///
 /// <p>Updates a report generator.</p>
 /// <p>After you make changes to a report generator, it starts generating new reports within 60 minutes of being updated.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGeneratorFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorInputBuilder,
 }
 impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     /// Creates a new `UpdateLicenseManagerReportGenerator`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGenerator, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGenerator, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput, aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,14 +61,14 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput, aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError>>
                          {
         self.send_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
     pub fn license_manager_report_generator_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -75,20 +78,23 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
     pub fn set_license_manager_report_generator_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_license_manager_report_generator_arn(input);
         self
     }
     /// <p>Name of the report generator.</p>
-    pub fn report_generator_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn report_generator_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.report_generator_name(input.into());
         self
     }
     /// <p>Name of the report generator.</p>
     pub fn set_report_generator_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_report_generator_name(input);
         self
@@ -113,7 +119,7 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReportType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReportType>>,
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
@@ -126,7 +132,7 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     /// <p>The report context.</p>
     pub fn set_report_context(
         mut self,
-        input: std::option::Option<crate::types::ReportContext>,
+        input: ::std::option::Option<crate::types::ReportContext>,
     ) -> Self {
         self.inner = self.inner.set_report_context(input);
         self
@@ -139,28 +145,28 @@ impl UpdateLicenseManagerReportGeneratorFluentBuilder {
     /// <p>Frequency by which reports are generated.</p>
     pub fn set_report_frequency(
         mut self,
-        input: std::option::Option<crate::types::ReportFrequency>,
+        input: ::std::option::Option<crate::types::ReportFrequency>,
     ) -> Self {
         self.inner = self.inner.set_report_frequency(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>Description of the report generator.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>Description of the report generator.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }

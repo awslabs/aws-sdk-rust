@@ -10,29 +10,29 @@
 /// <li> <p>INTERNAL_SERVER_ERROR - The request encountered a service issue. Try the API request again.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorsListItem {
     /// <p>Page number where the error occurred.</p>
     #[doc(hidden)]
-    pub page: std::option::Option<i32>,
+    pub page: ::std::option::Option<i32>,
     /// <p>Error code for the cause of the error.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::PageBasedErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::PageBasedErrorCode>,
     /// <p>Text message explaining the reason for the error.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorsListItem {
     /// <p>Page number where the error occurred.</p>
-    pub fn page(&self) -> std::option::Option<i32> {
+    pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
     /// <p>Error code for the cause of the error.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::PageBasedErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::PageBasedErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>Text message explaining the reason for the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -45,43 +45,51 @@ impl ErrorsListItem {
 
 /// A builder for [`ErrorsListItem`](crate::types::ErrorsListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ErrorsListItemBuilder {
-    pub(crate) page: std::option::Option<i32>,
-    pub(crate) error_code: std::option::Option<crate::types::PageBasedErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) page: ::std::option::Option<i32>,
+    pub(crate) error_code: ::std::option::Option<crate::types::PageBasedErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorsListItemBuilder {
     /// <p>Page number where the error occurred.</p>
     pub fn page(mut self, input: i32) -> Self {
-        self.page = Some(input);
+        self.page = ::std::option::Option::Some(input);
         self
     }
     /// <p>Page number where the error occurred.</p>
-    pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page = input;
         self
     }
     /// <p>Error code for the cause of the error.</p>
     pub fn error_code(mut self, input: crate::types::PageBasedErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Error code for the cause of the error.</p>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::PageBasedErrorCode>,
+        input: ::std::option::Option<crate::types::PageBasedErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p>Text message explaining the reason for the error.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text message explaining the reason for the error.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

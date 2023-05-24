@@ -2,18 +2,18 @@
 
 /// Motion Graphics Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MotionGraphicsSettings {
     /// Html Motion Graphics Settings
     #[doc(hidden)]
     pub html_motion_graphics_settings:
-        std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
+        ::std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
 }
 impl MotionGraphicsSettings {
     /// Html Motion Graphics Settings
     pub fn html_motion_graphics_settings(
         &self,
-    ) -> std::option::Option<&crate::types::HtmlMotionGraphicsSettings> {
+    ) -> ::std::option::Option<&crate::types::HtmlMotionGraphicsSettings> {
         self.html_motion_graphics_settings.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl MotionGraphicsSettings {
 
 /// A builder for [`MotionGraphicsSettings`](crate::types::MotionGraphicsSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MotionGraphicsSettingsBuilder {
     pub(crate) html_motion_graphics_settings:
-        std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
+        ::std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
 }
 impl MotionGraphicsSettingsBuilder {
     /// Html Motion Graphics Settings
@@ -37,13 +39,13 @@ impl MotionGraphicsSettingsBuilder {
         mut self,
         input: crate::types::HtmlMotionGraphicsSettings,
     ) -> Self {
-        self.html_motion_graphics_settings = Some(input);
+        self.html_motion_graphics_settings = ::std::option::Option::Some(input);
         self
     }
     /// Html Motion Graphics Settings
     pub fn set_html_motion_graphics_settings(
         mut self,
-        input: std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
+        input: ::std::option::Option<crate::types::HtmlMotionGraphicsSettings>,
     ) -> Self {
         self.html_motion_graphics_settings = input;
         self

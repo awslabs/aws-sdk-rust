@@ -2,29 +2,29 @@
 
 /// <p> A representation of a resource association for a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The ARN of the associated resource. </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     #[doc(hidden)]
-    pub relationship: std::option::Option<crate::types::CustomLineItemRelationship>,
+    pub relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
     /// <p>The end billing period of the associated resource.</p>
     #[doc(hidden)]
-    pub end_billing_period: std::option::Option<std::string::String>,
+    pub end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl ListResourcesAssociatedToCustomLineItemResponseElement {
     /// <p> The ARN of the associated resource. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn relationship(&self) -> std::option::Option<&crate::types::CustomLineItemRelationship> {
+    pub fn relationship(&self) -> ::std::option::Option<&crate::types::CustomLineItemRelationship> {
         self.relationship.as_ref()
     }
     /// <p>The end billing period of the associated resource.</p>
-    pub fn end_billing_period(&self) -> std::option::Option<&str> {
+    pub fn end_billing_period(&self) -> ::std::option::Option<&str> {
         self.end_billing_period.as_deref()
     }
 }
@@ -38,45 +38,50 @@ impl ListResourcesAssociatedToCustomLineItemResponseElement {
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemResponseElement`](crate::types::ListResourcesAssociatedToCustomLineItemResponseElement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) relationship: std::option::Option<crate::types::CustomLineItemRelationship>,
-    pub(crate) end_billing_period: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
+    pub(crate) end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl ListResourcesAssociatedToCustomLineItemResponseElementBuilder {
     /// <p> The ARN of the associated resource. </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the associated resource. </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     pub fn relationship(mut self, input: crate::types::CustomLineItemRelationship) -> Self {
-        self.relationship = Some(input);
+        self.relationship = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     pub fn set_relationship(
         mut self,
-        input: std::option::Option<crate::types::CustomLineItemRelationship>,
+        input: ::std::option::Option<crate::types::CustomLineItemRelationship>,
     ) -> Self {
         self.relationship = input;
         self
     }
     /// <p>The end billing period of the associated resource.</p>
-    pub fn end_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_billing_period = Some(input.into());
+    pub fn end_billing_period(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.end_billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end billing period of the associated resource.</p>
     pub fn set_end_billing_period(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.end_billing_period = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterHealth {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
     #[doc(hidden)]
-    pub issues: std::option::Option<std::vec::Vec<crate::types::ClusterIssue>>,
+    pub issues: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>,
 }
 impl ClusterHealth {
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
-    pub fn issues(&self) -> std::option::Option<&[crate::types::ClusterIssue]> {
+    pub fn issues(&self) -> ::std::option::Option<&[crate::types::ClusterIssue]> {
         self.issues.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ClusterHealth {
 
 /// A builder for [`ClusterHealth`](crate::types::ClusterHealth).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterHealthBuilder {
-    pub(crate) issues: std::option::Option<std::vec::Vec<crate::types::ClusterIssue>>,
+    pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>,
 }
 impl ClusterHealthBuilder {
     /// Appends an item to `issues`.
@@ -36,13 +38,13 @@ impl ClusterHealthBuilder {
     pub fn issues(mut self, input: crate::types::ClusterIssue) -> Self {
         let mut v = self.issues.unwrap_or_default();
         v.push(input);
-        self.issues = Some(v);
+        self.issues = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object representing the health issues of your local Amazon EKS cluster on an Amazon Web Services Outpost.</p>
     pub fn set_issues(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClusterIssue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterIssue>>,
     ) -> Self {
         self.issues = input;
         self

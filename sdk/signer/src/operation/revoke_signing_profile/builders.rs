@@ -6,29 +6,29 @@ pub use crate::operation::revoke_signing_profile::_revoke_signing_profile_input:
 /// Fluent builder constructing a request to `RevokeSigningProfile`.
 ///
 /// <p>Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing profile after an effective start date are no longer valid.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeSigningProfileFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::revoke_signing_profile::builders::RevokeSigningProfileInputBuilder,
 }
 impl RevokeSigningProfileFluentBuilder {
     /// Creates a new `RevokeSigningProfile`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::revoke_signing_profile::RevokeSigningProfile,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::revoke_signing_profile::RevokeSigningProfileError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RevokeSigningProfileFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::revoke_signing_profile::RevokeSigningProfileOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::revoke_signing_profile::RevokeSigningProfileError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,53 +75,59 @@ impl RevokeSigningProfileFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::revoke_signing_profile::RevokeSigningProfileOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::revoke_signing_profile::RevokeSigningProfileError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the signing profile to be revoked.</p>
-    pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_name(input.into());
         self
     }
     /// <p>The name of the signing profile to be revoked.</p>
-    pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_name(input);
         self
     }
     /// <p>The version of the signing profile to be revoked.</p>
-    pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn profile_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.profile_version(input.into());
         self
     }
     /// <p>The version of the signing profile to be revoked.</p>
-    pub fn set_profile_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_profile_version(input);
         self
     }
     /// <p>The reason for revoking a signing profile.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
         self
     }
     /// <p>The reason for revoking a signing profile.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }
     /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
-    pub fn effective_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn effective_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.effective_time(input);
         self
     }
     /// <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
     pub fn set_effective_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_effective_time(input);
         self

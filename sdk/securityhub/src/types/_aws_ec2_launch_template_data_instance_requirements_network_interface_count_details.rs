@@ -2,7 +2,7 @@
 
 /// <p> The minimum and maximum number of network interfaces to be attached to an Amazon EC2 instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
     /// <p> The maximum number of network interfaces. </p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder {
-    pub(crate) max: std::option::Option<i32>,
-    pub(crate) min: std::option::Option<i32>,
+    pub(crate) max: ::std::option::Option<i32>,
+    pub(crate) min: ::std::option::Option<i32>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder {
     /// <p> The maximum number of network interfaces. </p>
     pub fn max(mut self, input: i32) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p> The maximum number of network interfaces. </p>
-    pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
     }
     /// <p> The minimum number of network interfaces. </p>
     pub fn min(mut self, input: i32) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p> The minimum number of network interfaces. </p>
-    pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
     }

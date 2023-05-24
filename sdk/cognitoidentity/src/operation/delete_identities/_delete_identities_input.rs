@@ -2,15 +2,15 @@
 
 /// <p>Input to the <code>DeleteIdentities</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
     #[doc(hidden)]
-    pub identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub identity_ids_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteIdentitiesInput {
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn identity_ids_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn identity_ids_to_delete(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.identity_ids_to_delete.as_deref()
     }
 }
@@ -24,9 +24,12 @@ impl DeleteIdentitiesInput {
 
 /// A builder for [`DeleteIdentitiesInput`](crate::operation::delete_identities::DeleteIdentitiesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteIdentitiesInputBuilder {
-    pub(crate) identity_ids_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) identity_ids_to_delete:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeleteIdentitiesInputBuilder {
     /// Appends an item to `identity_ids_to_delete`.
@@ -34,16 +37,19 @@ impl DeleteIdentitiesInputBuilder {
     /// To override the contents of this collection use [`set_identity_ids_to_delete`](Self::set_identity_ids_to_delete).
     ///
     /// <p>A list of 1-60 identities that you want to delete.</p>
-    pub fn identity_ids_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn identity_ids_to_delete(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.identity_ids_to_delete.unwrap_or_default();
         v.push(input.into());
-        self.identity_ids_to_delete = Some(v);
+        self.identity_ids_to_delete = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of 1-60 identities that you want to delete.</p>
     pub fn set_identity_ids_to_delete(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.identity_ids_to_delete = input;
         self
@@ -51,11 +57,11 @@ impl DeleteIdentitiesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentitiesInput`](crate::operation::delete_identities::DeleteIdentitiesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_identities::DeleteIdentitiesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_identities::DeleteIdentitiesInput {
+        ::std::result::Result::Ok(crate::operation::delete_identities::DeleteIdentitiesInput {
             identity_ids_to_delete: self.identity_ids_to_delete,
         })
     }

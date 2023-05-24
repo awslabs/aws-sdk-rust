@@ -2,29 +2,29 @@
 
 /// <p>Describes a cluster version, including the parameter group family and description of the version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterVersion {
     /// <p>The version number used by the cluster.</p>
     #[doc(hidden)]
-    pub cluster_version: std::option::Option<std::string::String>,
+    pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster parameter group family for the cluster.</p>
     #[doc(hidden)]
-    pub cluster_parameter_group_family: std::option::Option<std::string::String>,
+    pub cluster_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The description of the cluster version.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl ClusterVersion {
     /// <p>The version number used by the cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> ::std::option::Option<&str> {
         self.cluster_version.as_deref()
     }
     /// <p>The name of the cluster parameter group family for the cluster.</p>
-    pub fn cluster_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn cluster_parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.cluster_parameter_group_family.as_deref()
     }
     /// <p>The description of the cluster version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -37,43 +37,54 @@ impl ClusterVersion {
 
 /// A builder for [`ClusterVersion`](crate::types::ClusterVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterVersionBuilder {
-    pub(crate) cluster_version: std::option::Option<std::string::String>,
-    pub(crate) cluster_parameter_group_family: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_parameter_group_family: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl ClusterVersionBuilder {
     /// <p>The version number used by the cluster.</p>
-    pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_version = Some(input.into());
+    pub fn cluster_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number used by the cluster.</p>
-    pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cluster_version = input;
         self
     }
     /// <p>The name of the cluster parameter group family for the cluster.</p>
-    pub fn cluster_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_parameter_group_family = Some(input.into());
+    pub fn cluster_parameter_group_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group family for the cluster.</p>
     pub fn set_cluster_parameter_group_family(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_parameter_group_family = input;
         self
     }
     /// <p>The description of the cluster version.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the cluster version.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

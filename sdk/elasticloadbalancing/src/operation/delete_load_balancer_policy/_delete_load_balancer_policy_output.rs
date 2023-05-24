@@ -2,11 +2,11 @@
 
 /// <p>Contains the output of DeleteLoadBalancerPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicyOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteLoadBalancerPolicyOutput {
+impl ::aws_http::request_id::RequestId for DeleteLoadBalancerPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteLoadBalancerPolicyOutput {
 
 /// A builder for [`DeleteLoadBalancerPolicyOutput`](crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteLoadBalancerPolicyOutputBuilder {
     _request_id: Option<String>,
 }

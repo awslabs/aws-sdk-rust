@@ -2,29 +2,29 @@
 
 /// <p>Input for Update Workload Share</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkloadShareInput {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
-    pub share_id: std::option::Option<std::string::String>,
+    pub share_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>Permission granted on a workload share.</p>
     #[doc(hidden)]
-    pub permission_type: std::option::Option<crate::types::PermissionType>,
+    pub permission_type: ::std::option::Option<crate::types::PermissionType>,
 }
 impl UpdateWorkloadShareInput {
     /// <p>The ID associated with the workload share.</p>
-    pub fn share_id(&self) -> std::option::Option<&str> {
+    pub fn share_id(&self) -> ::std::option::Option<&str> {
         self.share_id.as_deref()
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>Permission granted on a workload share.</p>
-    pub fn permission_type(&self) -> std::option::Option<&crate::types::PermissionType> {
+    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
 }
@@ -39,42 +39,44 @@ impl UpdateWorkloadShareInput {
 
 /// A builder for [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateWorkloadShareInputBuilder {
-    pub(crate) share_id: std::option::Option<std::string::String>,
-    pub(crate) workload_id: std::option::Option<std::string::String>,
-    pub(crate) permission_type: std::option::Option<crate::types::PermissionType>,
+    pub(crate) share_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_type: ::std::option::Option<crate::types::PermissionType>,
 }
 impl UpdateWorkloadShareInputBuilder {
     /// <p>The ID associated with the workload share.</p>
-    pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.share_id = Some(input.into());
+    pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.share_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID associated with the workload share.</p>
-    pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
     /// <p>Permission granted on a workload share.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
-        self.permission_type = Some(input);
+        self.permission_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Permission granted on a workload share.</p>
     pub fn set_permission_type(
         mut self,
-        input: std::option::Option<crate::types::PermissionType>,
+        input: ::std::option::Option<crate::types::PermissionType>,
     ) -> Self {
         self.permission_type = input;
         self
@@ -82,11 +84,11 @@ impl UpdateWorkloadShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkloadShareInput`](crate::operation::update_workload_share::UpdateWorkloadShareInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_workload_share::UpdateWorkloadShareInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_workload_share::UpdateWorkloadShareInput {
                 share_id: self.share_id,
                 workload_id: self.workload_id,

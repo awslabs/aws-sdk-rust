@@ -2,15 +2,15 @@
 
 /// <p>Contains the configuration information of an acknowledge action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     #[doc(hidden)]
-    pub note: std::option::Option<std::string::String>,
+    pub note: ::std::option::Option<::std::string::String>,
 }
 impl AcknowledgeActionConfiguration {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> ::std::option::Option<&str> {
         self.note.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AcknowledgeActionConfiguration {
 
 /// A builder for [`AcknowledgeActionConfiguration`](crate::types::AcknowledgeActionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AcknowledgeActionConfigurationBuilder {
-    pub(crate) note: std::option::Option<std::string::String>,
+    pub(crate) note: ::std::option::Option<::std::string::String>,
 }
 impl AcknowledgeActionConfigurationBuilder {
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
-    pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
-        self.note = Some(input.into());
+    pub fn note(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.note = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
-    pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.note = input;
         self
     }

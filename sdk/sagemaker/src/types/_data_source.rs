@@ -2,24 +2,24 @@
 
 /// <p>Describes the location of the channel data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSource {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
     #[doc(hidden)]
-    pub s3_data_source: std::option::Option<crate::types::S3DataSource>,
+    pub s3_data_source: ::std::option::Option<crate::types::S3DataSource>,
     /// <p>The file system that is associated with a channel.</p>
     #[doc(hidden)]
-    pub file_system_data_source: std::option::Option<crate::types::FileSystemDataSource>,
+    pub file_system_data_source: ::std::option::Option<crate::types::FileSystemDataSource>,
 }
 impl DataSource {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::types::S3DataSource> {
+    pub fn s3_data_source(&self) -> ::std::option::Option<&crate::types::S3DataSource> {
         self.s3_data_source.as_ref()
     }
     /// <p>The file system that is associated with a channel.</p>
     pub fn file_system_data_source(
         &self,
-    ) -> std::option::Option<&crate::types::FileSystemDataSource> {
+    ) -> ::std::option::Option<&crate::types::FileSystemDataSource> {
         self.file_system_data_source.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl DataSource {
 
 /// A builder for [`DataSource`](crate::types::DataSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSourceBuilder {
-    pub(crate) s3_data_source: std::option::Option<crate::types::S3DataSource>,
-    pub(crate) file_system_data_source: std::option::Option<crate::types::FileSystemDataSource>,
+    pub(crate) s3_data_source: ::std::option::Option<crate::types::S3DataSource>,
+    pub(crate) file_system_data_source: ::std::option::Option<crate::types::FileSystemDataSource>,
 }
 impl DataSourceBuilder {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
     pub fn s3_data_source(mut self, input: crate::types::S3DataSource) -> Self {
-        self.s3_data_source = Some(input);
+        self.s3_data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 location of the data source that is associated with a channel.</p>
     pub fn set_s3_data_source(
         mut self,
-        input: std::option::Option<crate::types::S3DataSource>,
+        input: ::std::option::Option<crate::types::S3DataSource>,
     ) -> Self {
         self.s3_data_source = input;
         self
     }
     /// <p>The file system that is associated with a channel.</p>
     pub fn file_system_data_source(mut self, input: crate::types::FileSystemDataSource) -> Self {
-        self.file_system_data_source = Some(input);
+        self.file_system_data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file system that is associated with a channel.</p>
     pub fn set_file_system_data_source(
         mut self,
-        input: std::option::Option<crate::types::FileSystemDataSource>,
+        input: ::std::option::Option<crate::types::FileSystemDataSource>,
     ) -> Self {
         self.file_system_data_source = input;
         self

@@ -2,18 +2,18 @@
 
 /// <p>Represents a summary of a Method resource, given a particular date and time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MethodSnapshot {
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     #[doc(hidden)]
-    pub authorization_type: std::option::Option<std::string::String>,
+    pub authorization_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the method requires a valid ApiKey.</p>
     #[doc(hidden)]
     pub api_key_required: bool,
 }
 impl MethodSnapshot {
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-    pub fn authorization_type(&self) -> std::option::Option<&str> {
+    pub fn authorization_type(&self) -> ::std::option::Option<&str> {
         self.authorization_type.as_deref()
     }
     /// <p>Specifies whether the method requires a valid ApiKey.</p>
@@ -30,32 +30,37 @@ impl MethodSnapshot {
 
 /// A builder for [`MethodSnapshot`](crate::types::MethodSnapshot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MethodSnapshotBuilder {
-    pub(crate) authorization_type: std::option::Option<std::string::String>,
-    pub(crate) api_key_required: std::option::Option<bool>,
+    pub(crate) authorization_type: ::std::option::Option<::std::string::String>,
+    pub(crate) api_key_required: ::std::option::Option<bool>,
 }
 impl MethodSnapshotBuilder {
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-    pub fn authorization_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.authorization_type = Some(input.into());
+    pub fn authorization_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.authorization_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     pub fn set_authorization_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.authorization_type = input;
         self
     }
     /// <p>Specifies whether the method requires a valid ApiKey.</p>
     pub fn api_key_required(mut self, input: bool) -> Self {
-        self.api_key_required = Some(input);
+        self.api_key_required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the method requires a valid ApiKey.</p>
-    pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_api_key_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.api_key_required = input;
         self
     }

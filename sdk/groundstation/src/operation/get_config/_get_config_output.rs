@@ -2,59 +2,61 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub config_id: std::option::Option<std::string::String>,
+    pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a <code>Config</code> </p>
     #[doc(hidden)]
-    pub config_arn: std::option::Option<std::string::String>,
+    pub config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub config_type: std::option::Option<crate::types::ConfigCapabilityType>,
+    pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
     /// <p>Data elements in a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub config_data: std::option::Option<crate::types::ConfigTypeData>,
+    pub config_data: ::std::option::Option<crate::types::ConfigTypeData>,
     /// <p>Tags assigned to a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl GetConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> ::std::option::Option<&str> {
         self.config_id.as_deref()
     }
     /// <p>ARN of a <code>Config</code> </p>
-    pub fn config_arn(&self) -> std::option::Option<&str> {
+    pub fn config_arn(&self) -> ::std::option::Option<&str> {
         self.config_arn.as_deref()
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<&crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>Data elements in a <code>Config</code>.</p>
-    pub fn config_data(&self) -> std::option::Option<&crate::types::ConfigTypeData> {
+    pub fn config_data(&self) -> ::std::option::Option<&crate::types::ConfigTypeData> {
         self.config_data.as_ref()
     }
     /// <p>Tags assigned to a <code>Config</code>.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetConfigOutput {
+impl ::aws_http::request_id::RequestId for GetConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -68,70 +70,73 @@ impl GetConfigOutput {
 
 /// A builder for [`GetConfigOutput`](crate::operation::get_config::GetConfigOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetConfigOutputBuilder {
-    pub(crate) config_id: std::option::Option<std::string::String>,
-    pub(crate) config_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) config_type: std::option::Option<crate::types::ConfigCapabilityType>,
-    pub(crate) config_data: std::option::Option<crate::types::ConfigTypeData>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) config_id: ::std::option::Option<::std::string::String>,
+    pub(crate) config_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
+    pub(crate) config_data: ::std::option::Option<crate::types::ConfigTypeData>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl GetConfigOutputBuilder {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.config_id = Some(input.into());
+    pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.config_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_id = input;
         self
     }
     /// <p>ARN of a <code>Config</code> </p>
-    pub fn config_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.config_arn = Some(input.into());
+    pub fn config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a <code>Config</code> </p>
-    pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_arn = input;
         self
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
-        self.config_type = Some(input);
+        self.config_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn set_config_type(
         mut self,
-        input: std::option::Option<crate::types::ConfigCapabilityType>,
+        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
     ) -> Self {
         self.config_type = input;
         self
     }
     /// <p>Data elements in a <code>Config</code>.</p>
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
-        self.config_data = Some(input);
+        self.config_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Data elements in a <code>Config</code>.</p>
     pub fn set_config_data(
         mut self,
-        input: std::option::Option<crate::types::ConfigTypeData>,
+        input: ::std::option::Option<crate::types::ConfigTypeData>,
     ) -> Self {
         self.config_data = input;
         self
@@ -143,19 +148,19 @@ impl GetConfigOutputBuilder {
     /// <p>Tags assigned to a <code>Config</code>.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags assigned to a <code>Config</code>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

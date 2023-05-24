@@ -2,68 +2,68 @@
 
 /// <p>The details of gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayDetails {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub gateway_arn: std::option::Option<std::string::String>,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the gateway.</p>
     #[doc(hidden)]
-    pub gateway_display_name: std::option::Option<std::string::String>,
+    pub gateway_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the gateway type.</p>
     #[doc(hidden)]
-    pub gateway_type: std::option::Option<crate::types::GatewayType>,
+    pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>The hypervisor ID of the gateway.</p>
     #[doc(hidden)]
-    pub hypervisor_id: std::option::Option<std::string::String>,
+    pub hypervisor_id: ::std::option::Option<::std::string::String>,
     /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
     #[doc(hidden)]
-    pub last_seen_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_seen_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
     #[doc(hidden)]
-    pub maintenance_start_time: std::option::Option<crate::types::MaintenanceStartTime>,
+    pub maintenance_start_time: ::std::option::Option<crate::types::MaintenanceStartTime>,
     /// <p>Details showing the next update availability time of the gateway.</p>
     #[doc(hidden)]
-    pub next_update_availability_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub next_update_availability_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
     #[doc(hidden)]
-    pub vpc_endpoint: std::option::Option<std::string::String>,
+    pub vpc_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl GatewayDetails {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The display name of the gateway.</p>
-    pub fn gateway_display_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_display_name(&self) -> ::std::option::Option<&str> {
         self.gateway_display_name.as_deref()
     }
     /// <p>The type of the gateway type.</p>
-    pub fn gateway_type(&self) -> std::option::Option<&crate::types::GatewayType> {
+    pub fn gateway_type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
         self.gateway_type.as_ref()
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn hypervisor_id(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_id(&self) -> ::std::option::Option<&str> {
         self.hypervisor_id.as_deref()
     }
     /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
-    pub fn last_seen_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_seen_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_seen_time.as_ref()
     }
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
     pub fn maintenance_start_time(
         &self,
-    ) -> std::option::Option<&crate::types::MaintenanceStartTime> {
+    ) -> ::std::option::Option<&crate::types::MaintenanceStartTime> {
         self.maintenance_start_time.as_ref()
     }
     /// <p>Details showing the next update availability time of the gateway.</p>
     pub fn next_update_availability_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.next_update_availability_time.as_ref()
     }
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint.as_deref()
     }
 }
@@ -76,110 +76,121 @@ impl GatewayDetails {
 
 /// A builder for [`GatewayDetails`](crate::types::GatewayDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GatewayDetailsBuilder {
-    pub(crate) gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) gateway_display_name: std::option::Option<std::string::String>,
-    pub(crate) gateway_type: std::option::Option<crate::types::GatewayType>,
-    pub(crate) hypervisor_id: std::option::Option<std::string::String>,
-    pub(crate) last_seen_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) maintenance_start_time: std::option::Option<crate::types::MaintenanceStartTime>,
-    pub(crate) next_update_availability_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) vpc_endpoint: std::option::Option<std::string::String>,
+    pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_type: ::std::option::Option<crate::types::GatewayType>,
+    pub(crate) hypervisor_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_seen_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) maintenance_start_time: ::std::option::Option<crate::types::MaintenanceStartTime>,
+    pub(crate) next_update_availability_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) vpc_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl GatewayDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_arn = Some(input.into());
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
     /// <p>The display name of the gateway.</p>
-    pub fn gateway_display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_display_name = Some(input.into());
+    pub fn gateway_display_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.gateway_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the gateway.</p>
     pub fn set_gateway_display_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.gateway_display_name = input;
         self
     }
     /// <p>The type of the gateway type.</p>
     pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
-        self.gateway_type = Some(input);
+        self.gateway_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the gateway type.</p>
     pub fn set_gateway_type(
         mut self,
-        input: std::option::Option<crate::types::GatewayType>,
+        input: ::std::option::Option<crate::types::GatewayType>,
     ) -> Self {
         self.gateway_type = input;
         self
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn hypervisor_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hypervisor_id = Some(input.into());
+    pub fn hypervisor_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hypervisor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hypervisor ID of the gateway.</p>
-    pub fn set_hypervisor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hypervisor_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hypervisor_id = input;
         self
     }
     /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
-    pub fn last_seen_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_seen_time = Some(input);
+    pub fn last_seen_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_seen_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details showing the last time Backup gateway communicated with the cloud, in Unix format and UTC time.</p>
     pub fn set_last_seen_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_seen_time = input;
         self
     }
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
     pub fn maintenance_start_time(mut self, input: crate::types::MaintenanceStartTime) -> Self {
-        self.maintenance_start_time = Some(input);
+        self.maintenance_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.</p>
     pub fn set_maintenance_start_time(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceStartTime>,
+        input: ::std::option::Option<crate::types::MaintenanceStartTime>,
     ) -> Self {
         self.maintenance_start_time = input;
         self
     }
     /// <p>Details showing the next update availability time of the gateway.</p>
-    pub fn next_update_availability_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.next_update_availability_time = Some(input);
+    pub fn next_update_availability_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.next_update_availability_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details showing the next update availability time of the gateway.</p>
     pub fn set_next_update_availability_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.next_update_availability_time = input;
         self
     }
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
-    pub fn vpc_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint = Some(input.into());
+    pub fn vpc_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
-    pub fn set_vpc_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint = input;
         self
     }

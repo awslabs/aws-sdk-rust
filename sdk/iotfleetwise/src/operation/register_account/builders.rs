@@ -8,56 +8,63 @@ pub use crate::operation::register_account::_register_account_input::RegisterAcc
 /// <p>Registers your Amazon Web Services account, IAM, and Amazon Timestream resources so Amazon Web Services IoT FleetWise can transfer your vehicle data to the Amazon Web Services Cloud. For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/setting-up.html">Setting up Amazon Web Services IoT FleetWise</a>. </p> <note>
 /// <p>An Amazon Web Services account is <b>not</b> the same thing as a "user account". An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html#intro-identity-users">Amazon Web Services user</a> is an identity that you create using Identity and Access Management (IAM) and takes the form of either an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html">IAM user</a> or an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM role, both with credentials</a>. A single Amazon Web Services account can, and typically does, contain many users and roles.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterAccountFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::register_account::builders::RegisterAccountInputBuilder,
 }
 impl RegisterAccountFluentBuilder {
     /// Creates a new `RegisterAccount`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_account::RegisterAccount,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_account::RegisterAccountError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_account::RegisterAccountOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_account::RegisterAccountError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +77,11 @@ impl RegisterAccountFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_account::RegisterAccountOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_account::RegisterAccountError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_account::RegisterAccountError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -84,7 +93,7 @@ impl RegisterAccountFluentBuilder {
     /// <p>The registered Amazon Timestream resources that Amazon Web Services IoT FleetWise edge agent software can transfer your vehicle data to.</p>
     pub fn set_timestream_resources(
         mut self,
-        input: std::option::Option<crate::types::TimestreamResources>,
+        input: ::std::option::Option<crate::types::TimestreamResources>,
     ) -> Self {
         self.inner = self.inner.set_timestream_resources(input);
         self
@@ -99,7 +108,7 @@ impl RegisterAccountFluentBuilder {
     #[deprecated(note = "iamResources is no longer used or needed as input")]
     pub fn set_iam_resources(
         mut self,
-        input: std::option::Option<crate::types::IamResources>,
+        input: ::std::option::Option<crate::types::IamResources>,
     ) -> Self {
         self.inner = self.inner.set_iam_resources(input);
         self

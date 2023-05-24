@@ -12,56 +12,59 @@ pub use crate::operation::generate_random::_generate_random_input::GenerateRando
 /// <p>For more information about entropy and random number generation, see <a href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key Management Service Cryptographic Details</a>.</p>
 /// <p> <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use any account-specific resources, such as KMS keys.</p>
 /// <p> <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a> (IAM policy)</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateRandomFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::generate_random::builders::GenerateRandomInputBuilder,
 }
 impl GenerateRandomFluentBuilder {
     /// Creates a new `GenerateRandom`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::generate_random::GenerateRandom,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::generate_random::GenerateRandomError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_random::GenerateRandomError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::generate_random::GenerateRandomOutput,
-        aws_smithy_http::result::SdkError<crate::operation::generate_random::GenerateRandomError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_random::GenerateRandomError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,9 +77,9 @@ impl GenerateRandomFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::generate_random::GenerateRandomOutput,
-        aws_smithy_http::result::SdkError<crate::operation::generate_random::GenerateRandomError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::generate_random::GenerateRandomError>,
     > {
         self.send_middleware().await
     }
@@ -86,13 +89,16 @@ impl GenerateRandomFluentBuilder {
         self
     }
     /// <p>The length of the random byte string. This parameter is required.</p>
-    pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_bytes(input);
         self
     }
     /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>External key store IDs are not valid for this parameter. If you specify the ID of an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.</p>
-    pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_key_store_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.custom_key_store_id(input.into());
         self
     }
@@ -100,7 +106,7 @@ impl GenerateRandomFluentBuilder {
     /// <p>External key store IDs are not valid for this parameter. If you specify the ID of an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.</p>
     pub fn set_custom_key_store_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_custom_key_store_id(input);
         self
@@ -119,7 +125,7 @@ impl GenerateRandomFluentBuilder {
     /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_recipient(
         mut self,
-        input: std::option::Option<crate::types::RecipientInfo>,
+        input: ::std::option::Option<crate::types::RecipientInfo>,
     ) -> Self {
         self.inner = self.inner.set_recipient(input);
         self

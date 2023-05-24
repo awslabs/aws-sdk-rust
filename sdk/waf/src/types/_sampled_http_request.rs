@@ -6,27 +6,27 @@
 /// </note>
 /// <p>The response from a <code>GetSampledRequests</code> request includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code> object for each web request that is returned by <code>GetSampledRequests</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SampledHttpRequest {
     /// <p>A complex type that contains detailed information about the request.</p>
     #[doc(hidden)]
-    pub request: std::option::Option<crate::types::HttpRequest>,
+    pub request: ::std::option::Option<crate::types::HttpRequest>,
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
     #[doc(hidden)]
     pub weight: i64,
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<std::string::String>,
+    pub action: ::std::option::Option<::std::string::String>,
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
     #[doc(hidden)]
-    pub rule_within_rule_group: std::option::Option<std::string::String>,
+    pub rule_within_rule_group: ::std::option::Option<::std::string::String>,
 }
 impl SampledHttpRequest {
     /// <p>A complex type that contains detailed information about the request.</p>
-    pub fn request(&self) -> std::option::Option<&crate::types::HttpRequest> {
+    pub fn request(&self) -> ::std::option::Option<&crate::types::HttpRequest> {
         self.request.as_ref()
     }
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
@@ -34,15 +34,15 @@ impl SampledHttpRequest {
         self.weight
     }
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
-    pub fn rule_within_rule_group(&self) -> std::option::Option<&str> {
+    pub fn rule_within_rule_group(&self) -> ::std::option::Option<&str> {
         self.rule_within_rule_group.as_deref()
     }
 }
@@ -55,64 +55,72 @@ impl SampledHttpRequest {
 
 /// A builder for [`SampledHttpRequest`](crate::types::SampledHttpRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SampledHttpRequestBuilder {
-    pub(crate) request: std::option::Option<crate::types::HttpRequest>,
-    pub(crate) weight: std::option::Option<i64>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) action: std::option::Option<std::string::String>,
-    pub(crate) rule_within_rule_group: std::option::Option<std::string::String>,
+    pub(crate) request: ::std::option::Option<crate::types::HttpRequest>,
+    pub(crate) weight: ::std::option::Option<i64>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) action: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_within_rule_group: ::std::option::Option<::std::string::String>,
 }
 impl SampledHttpRequestBuilder {
     /// <p>A complex type that contains detailed information about the request.</p>
     pub fn request(mut self, input: crate::types::HttpRequest) -> Self {
-        self.request = Some(input);
+        self.request = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains detailed information about the request.</p>
-    pub fn set_request(mut self, input: std::option::Option<crate::types::HttpRequest>) -> Self {
+    pub fn set_request(mut self, input: ::std::option::Option<crate::types::HttpRequest>) -> Self {
         self.request = input;
         self
     }
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
     pub fn weight(mut self, input: i64) -> Self {
-        self.weight = Some(input);
+        self.weight = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
-    pub fn set_weight(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_weight(mut self, input: ::std::option::Option<i64>) -> Self {
         self.weight = input;
         self
     }
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action = Some(input.into());
+    pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
-    pub fn rule_within_rule_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_within_rule_group = Some(input.into());
+    pub fn rule_within_rule_group(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_within_rule_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
     pub fn set_rule_within_rule_group(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.rule_within_rule_group = input;
         self

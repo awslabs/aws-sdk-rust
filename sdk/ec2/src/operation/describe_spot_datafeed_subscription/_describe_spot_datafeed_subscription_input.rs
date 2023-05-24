@@ -2,15 +2,15 @@
 
 /// <p>Contains the parameters for DescribeSpotDatafeedSubscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpotDatafeedSubscriptionInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeSpotDatafeedSubscriptionInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -23,24 +23,26 @@ impl DescribeSpotDatafeedSubscriptionInput {
 
 /// A builder for [`DescribeSpotDatafeedSubscriptionInput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeSpotDatafeedSubscriptionInputBuilder {
-    pub(crate) dry_run: std::option::Option<bool>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeSpotDatafeedSubscriptionInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeSpotDatafeedSubscriptionInput`](crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionInput {
                 dry_run: self.dry_run
                 ,

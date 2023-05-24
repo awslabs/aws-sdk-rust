@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCacheSubnetGroup`](crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cache_subnet_group_name(impl Into<String>)`](crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupFluentBuilder::cache_subnet_group_name) / [`set_cache_subnet_group_name(Option<String>)`](crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupFluentBuilder::set_cache_subnet_group_name): <p>The name of the cache subnet group to delete.</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    ///   - [`cache_subnet_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupFluentBuilder::cache_subnet_group_name) / [`set_cache_subnet_group_name(Option<String>)`](crate::operation::delete_cache_subnet_group::builders::DeleteCacheSubnetGroupFluentBuilder::set_cache_subnet_group_name): <p>The name of the cache subnet group to delete.</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
     /// - On success, responds with [`DeleteCacheSubnetGroupOutput`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteCacheSubnetGroupError>`](crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupError)
     pub fn delete_cache_subnet_group(

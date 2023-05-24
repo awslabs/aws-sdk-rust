@@ -2,44 +2,44 @@
 
 /// <p>Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowStep {
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
     #[doc(hidden)]
-    pub flow_name: std::option::Option<std::string::String>,
+    pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
-    pub execution_message: std::option::Option<std::string::String>,
+    pub execution_message: ::std::option::Option<::std::string::String>,
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
     pub records_processed: i64,
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
-    pub batch_records_start_time: std::option::Option<std::string::String>,
+    pub batch_records_start_time: ::std::option::Option<::std::string::String>,
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
-    pub batch_records_end_time: std::option::Option<std::string::String>,
+    pub batch_records_end_time: ::std::option::Option<::std::string::String>,
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppflowIntegrationWorkflowStep {
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
-    pub fn flow_name(&self) -> std::option::Option<&str> {
+    pub fn flow_name(&self) -> ::std::option::Option<&str> {
         self.flow_name.as_deref()
     }
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn execution_message(&self) -> std::option::Option<&str> {
+    pub fn execution_message(&self) -> ::std::option::Option<&str> {
         self.execution_message.as_deref()
     }
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
@@ -47,19 +47,19 @@ impl AppflowIntegrationWorkflowStep {
         self.records_processed
     }
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn batch_records_start_time(&self) -> std::option::Option<&str> {
+    pub fn batch_records_start_time(&self) -> ::std::option::Option<&str> {
         self.batch_records_start_time.as_deref()
     }
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn batch_records_end_time(&self) -> std::option::Option<&str> {
+    pub fn batch_records_end_time(&self) -> ::std::option::Option<&str> {
         self.batch_records_end_time.as_deref()
     }
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -72,109 +72,120 @@ impl AppflowIntegrationWorkflowStep {
 
 /// A builder for [`AppflowIntegrationWorkflowStep`](crate::types::AppflowIntegrationWorkflowStep).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppflowIntegrationWorkflowStepBuilder {
-    pub(crate) flow_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::Status>,
-    pub(crate) execution_message: std::option::Option<std::string::String>,
-    pub(crate) records_processed: std::option::Option<i64>,
-    pub(crate) batch_records_start_time: std::option::Option<std::string::String>,
-    pub(crate) batch_records_end_time: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) flow_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) execution_message: ::std::option::Option<::std::string::String>,
+    pub(crate) records_processed: ::std::option::Option<i64>,
+    pub(crate) batch_records_start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_records_end_time: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppflowIntegrationWorkflowStepBuilder {
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
-    pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_name = Some(input.into());
+    pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code> workflow type creates an appflow flow during workflow step execution on the customers behalf.</p>
-    pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
     }
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn execution_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_message = Some(input.into());
+    pub fn execution_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_execution_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.execution_message = input;
         self
     }
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn records_processed(mut self, input: i64) -> Self {
-        self.records_processed = Some(input);
+        self.records_processed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn set_records_processed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_records_processed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.records_processed = input;
         self
     }
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn batch_records_start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.batch_records_start_time = Some(input.into());
+    pub fn batch_records_start_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.batch_records_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_batch_records_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.batch_records_start_time = input;
         self
     }
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn batch_records_end_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.batch_records_end_time = Some(input.into());
+    pub fn batch_records_end_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.batch_records_end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_batch_records_end_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.batch_records_end_time = input;
         self
     }
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self

@@ -2,57 +2,57 @@
 
 /// <p>A node instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInstance {
     /// <p>The instance's ID.</p>
     #[doc(hidden)]
-    pub node_instance_id: std::option::Option<std::string::String>,
+    pub node_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The node's ID.</p>
     #[doc(hidden)]
-    pub node_id: std::option::Option<std::string::String>,
+    pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance's package name.</p>
     #[doc(hidden)]
-    pub package_name: std::option::Option<std::string::String>,
+    pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance's package version.</p>
     #[doc(hidden)]
-    pub package_version: std::option::Option<std::string::String>,
+    pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The instance's package patch version.</p>
     #[doc(hidden)]
-    pub package_patch_version: std::option::Option<std::string::String>,
+    pub package_patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The instance's name.</p>
     #[doc(hidden)]
-    pub node_name: std::option::Option<std::string::String>,
+    pub node_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance's current status.</p>
     #[doc(hidden)]
-    pub current_status: std::option::Option<crate::types::NodeInstanceStatus>,
+    pub current_status: ::std::option::Option<crate::types::NodeInstanceStatus>,
 }
 impl NodeInstance {
     /// <p>The instance's ID.</p>
-    pub fn node_instance_id(&self) -> std::option::Option<&str> {
+    pub fn node_instance_id(&self) -> ::std::option::Option<&str> {
         self.node_instance_id.as_deref()
     }
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> std::option::Option<&str> {
+    pub fn node_id(&self) -> ::std::option::Option<&str> {
         self.node_id.as_deref()
     }
     /// <p>The instance's package name.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
     /// <p>The instance's package version.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p>The instance's package patch version.</p>
-    pub fn package_patch_version(&self) -> std::option::Option<&str> {
+    pub fn package_patch_version(&self) -> ::std::option::Option<&str> {
         self.package_patch_version.as_deref()
     }
     /// <p>The instance's name.</p>
-    pub fn node_name(&self) -> std::option::Option<&str> {
+    pub fn node_name(&self) -> ::std::option::Option<&str> {
         self.node_name.as_deref()
     }
     /// <p>The instance's current status.</p>
-    pub fn current_status(&self) -> std::option::Option<&crate::types::NodeInstanceStatus> {
+    pub fn current_status(&self) -> ::std::option::Option<&crate::types::NodeInstanceStatus> {
         self.current_status.as_ref()
     }
 }
@@ -65,89 +65,106 @@ impl NodeInstance {
 
 /// A builder for [`NodeInstance`](crate::types::NodeInstance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeInstanceBuilder {
-    pub(crate) node_instance_id: std::option::Option<std::string::String>,
-    pub(crate) node_id: std::option::Option<std::string::String>,
-    pub(crate) package_name: std::option::Option<std::string::String>,
-    pub(crate) package_version: std::option::Option<std::string::String>,
-    pub(crate) package_patch_version: std::option::Option<std::string::String>,
-    pub(crate) node_name: std::option::Option<std::string::String>,
-    pub(crate) current_status: std::option::Option<crate::types::NodeInstanceStatus>,
+    pub(crate) node_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) node_id: ::std::option::Option<::std::string::String>,
+    pub(crate) package_name: ::std::option::Option<::std::string::String>,
+    pub(crate) package_version: ::std::option::Option<::std::string::String>,
+    pub(crate) package_patch_version: ::std::option::Option<::std::string::String>,
+    pub(crate) node_name: ::std::option::Option<::std::string::String>,
+    pub(crate) current_status: ::std::option::Option<crate::types::NodeInstanceStatus>,
 }
 impl NodeInstanceBuilder {
     /// <p>The instance's ID.</p>
-    pub fn node_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_instance_id = Some(input.into());
+    pub fn node_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.node_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance's ID.</p>
-    pub fn set_node_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_instance_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.node_instance_id = input;
         self
     }
     /// <p>The node's ID.</p>
-    pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_id = Some(input.into());
+    pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node's ID.</p>
-    pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_id = input;
         self
     }
     /// <p>The instance's package name.</p>
-    pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_name = Some(input.into());
+    pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance's package name.</p>
-    pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
     /// <p>The instance's package version.</p>
-    pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_version = Some(input.into());
+    pub fn package_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance's package version.</p>
-    pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.package_version = input;
         self
     }
     /// <p>The instance's package patch version.</p>
-    pub fn package_patch_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_patch_version = Some(input.into());
+    pub fn package_patch_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.package_patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance's package patch version.</p>
     pub fn set_package_patch_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.package_patch_version = input;
         self
     }
     /// <p>The instance's name.</p>
-    pub fn node_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_name = Some(input.into());
+    pub fn node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance's name.</p>
-    pub fn set_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_name = input;
         self
     }
     /// <p>The instance's current status.</p>
     pub fn current_status(mut self, input: crate::types::NodeInstanceStatus) -> Self {
-        self.current_status = Some(input);
+        self.current_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance's current status.</p>
     pub fn set_current_status(
         mut self,
-        input: std::option::Option<crate::types::NodeInstanceStatus>,
+        input: ::std::option::Option<crate::types::NodeInstanceStatus>,
     ) -> Self {
         self.current_status = input;
         self

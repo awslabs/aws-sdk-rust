@@ -2,20 +2,20 @@
 
 /// <p> The result structure for the generate access logs request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
     #[doc(hidden)]
-    pub log_url: std::option::Option<std::string::String>,
+    pub log_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
-    pub fn log_url(&self) -> std::option::Option<&str> {
+    pub fn log_url(&self) -> ::std::option::Option<&str> {
         self.log_url.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GenerateAccessLogsOutput {
+impl ::aws_http::request_id::RequestId for GenerateAccessLogsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl GenerateAccessLogsOutput {
 
 /// A builder for [`GenerateAccessLogsOutput`](crate::operation::generate_access_logs::GenerateAccessLogsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GenerateAccessLogsOutputBuilder {
-    pub(crate) log_url: std::option::Option<std::string::String>,
+    pub(crate) log_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateAccessLogsOutputBuilder {
     /// <p> The pre-signed URL for the requested access logs. </p>
-    pub fn log_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_url = Some(input.into());
+    pub fn log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The pre-signed URL for the requested access logs. </p>
-    pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_url = input;
         self
     }

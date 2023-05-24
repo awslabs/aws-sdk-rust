@@ -2,15 +2,15 @@
 
 /// <p>The routing configuration of the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingConfig {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     #[doc(hidden)]
-    pub failover_config: std::option::Option<crate::types::FailoverConfig>,
+    pub failover_config: ::std::option::Option<crate::types::FailoverConfig>,
 }
 impl RoutingConfig {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
-    pub fn failover_config(&self) -> std::option::Option<&crate::types::FailoverConfig> {
+    pub fn failover_config(&self) -> ::std::option::Option<&crate::types::FailoverConfig> {
         self.failover_config.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl RoutingConfig {
 
 /// A builder for [`RoutingConfig`](crate::types::RoutingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoutingConfigBuilder {
-    pub(crate) failover_config: std::option::Option<crate::types::FailoverConfig>,
+    pub(crate) failover_config: ::std::option::Option<crate::types::FailoverConfig>,
 }
 impl RoutingConfigBuilder {
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     pub fn failover_config(mut self, input: crate::types::FailoverConfig) -> Self {
-        self.failover_config = Some(input);
+        self.failover_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
     pub fn set_failover_config(
         mut self,
-        input: std::option::Option<crate::types::FailoverConfig>,
+        input: ::std::option::Option<crate::types::FailoverConfig>,
     ) -> Self {
         self.failover_config = input;
         self

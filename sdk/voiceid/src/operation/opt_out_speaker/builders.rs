@@ -6,56 +6,59 @@ pub use crate::operation::opt_out_speaker::_opt_out_speaker_input::OptOutSpeaker
 /// Fluent builder constructing a request to `OptOutSpeaker`.
 ///
 /// <p>Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in Voice ID. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct OptOutSpeakerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::opt_out_speaker::builders::OptOutSpeakerInputBuilder,
 }
 impl OptOutSpeakerFluentBuilder {
     /// Creates a new `OptOutSpeaker`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::opt_out_speaker::OptOutSpeaker,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::opt_out_speaker::OptOutSpeakerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_out_speaker::OptOutSpeakerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::opt_out_speaker::OptOutSpeakerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::opt_out_speaker::OptOutSpeakerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_out_speaker::OptOutSpeakerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl OptOutSpeakerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::opt_out_speaker::OptOutSpeakerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::opt_out_speaker::OptOutSpeakerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::opt_out_speaker::OptOutSpeakerError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
     /// <p>The identifier of the speaker you want opted-out.</p>
-    pub fn speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn speaker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.speaker_id(input.into());
         self
     }
     /// <p>The identifier of the speaker you want opted-out.</p>
-    pub fn set_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_speaker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_speaker_id(input);
         self
     }

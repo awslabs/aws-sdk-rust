@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopMultiplex`](crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`multiplex_id(impl Into<String>)`](crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder::set_multiplex_id): The ID of the multiplex.
+    ///   - [`multiplex_id(impl ::std::convert::Into<String>)`](crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder::multiplex_id) / [`set_multiplex_id(Option<String>)`](crate::operation::stop_multiplex::builders::StopMultiplexFluentBuilder::set_multiplex_id): The ID of the multiplex.
     /// - On success, responds with [`StopMultiplexOutput`](crate::operation::stop_multiplex::StopMultiplexOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::stop_multiplex::StopMultiplexOutput::arn): The unique arn of the multiplex.
     ///   - [`availability_zones(Option<Vec<String>>)`](crate::operation::stop_multiplex::StopMultiplexOutput::availability_zones): A list of availability zones for the multiplex.

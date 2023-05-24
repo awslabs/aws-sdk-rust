@@ -11,56 +11,59 @@ pub use crate::operation::send_email::_send_email_input::SendEmailInputBuilder;
 /// <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of email, you have to specify all of the message headers, as well as the message body. You can use this message type to send messages that contain attachments. The message that you specify has to be a valid MIME message.</p> </li>
 /// <li> <p> <b>Templated</b> – A message that contains personalization tags. When you send this type of email, Amazon SES API v2 automatically replaces the tags with values that you specify.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendEmailFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::send_email::builders::SendEmailInputBuilder,
 }
 impl SendEmailFluentBuilder {
     /// Creates a new `SendEmail`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_email::SendEmail,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_email::SendEmailOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,24 @@ impl SendEmailFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_email::SendEmailOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
     > {
         self.send_middleware().await
     }
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn from_email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.from_email_address(input.into());
         self
     }
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub fn set_from_email_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_from_email_address(input);
         self
@@ -98,7 +104,7 @@ impl SendEmailFluentBuilder {
     /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
     pub fn from_email_address_identity_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.from_email_address_identity_arn(input.into());
         self
@@ -109,7 +115,7 @@ impl SendEmailFluentBuilder {
     /// <p>For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.</p>
     pub fn set_from_email_address_identity_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_from_email_address_identity_arn(input);
         self
@@ -122,7 +128,7 @@ impl SendEmailFluentBuilder {
     /// <p>An object that contains the recipients of the email message.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::Destination>,
+        input: ::std::option::Option<crate::types::Destination>,
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
@@ -132,14 +138,17 @@ impl SendEmailFluentBuilder {
     /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
     ///
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reply_to_addresses(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.reply_to_addresses(input.into());
         self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
     pub fn set_reply_to_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_reply_to_addresses(input);
         self
@@ -147,7 +156,7 @@ impl SendEmailFluentBuilder {
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     pub fn feedback_forwarding_email_address(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.feedback_forwarding_email_address(input.into());
         self
@@ -155,7 +164,7 @@ impl SendEmailFluentBuilder {
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     pub fn set_feedback_forwarding_email_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_feedback_forwarding_email_address(input);
         self
@@ -165,7 +174,7 @@ impl SendEmailFluentBuilder {
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn feedback_forwarding_email_address_identity_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -177,7 +186,7 @@ impl SendEmailFluentBuilder {
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub fn set_feedback_forwarding_email_address_identity_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -190,7 +199,7 @@ impl SendEmailFluentBuilder {
         self
     }
     /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
-    pub fn set_content(mut self, input: std::option::Option<crate::types::EmailContent>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
@@ -206,20 +215,23 @@ impl SendEmailFluentBuilder {
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
     pub fn set_email_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MessageTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     ) -> Self {
         self.inner = self.inner.set_email_tags(input);
         self
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
@@ -232,7 +244,7 @@ impl SendEmailFluentBuilder {
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub fn set_list_management_options(
         mut self,
-        input: std::option::Option<crate::types::ListManagementOptions>,
+        input: ::std::option::Option<crate::types::ListManagementOptions>,
     ) -> Self {
         self.inner = self.inner.set_list_management_options(input);
         self

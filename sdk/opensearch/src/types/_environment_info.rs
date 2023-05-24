@@ -2,18 +2,18 @@
 
 /// <p>Information about the active domain environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentInfo {
     /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     #[doc(hidden)]
     pub availability_zone_information:
-        std::option::Option<std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
 }
 impl EnvironmentInfo {
     /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     pub fn availability_zone_information(
         &self,
-    ) -> std::option::Option<&[crate::types::AvailabilityZoneInfo]> {
+    ) -> ::std::option::Option<&[crate::types::AvailabilityZoneInfo]> {
         self.availability_zone_information.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl EnvironmentInfo {
 
 /// A builder for [`EnvironmentInfo`](crate::types::EnvironmentInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnvironmentInfoBuilder {
     pub(crate) availability_zone_information:
-        std::option::Option<std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
 }
 impl EnvironmentInfoBuilder {
     /// Appends an item to `availability_zone_information`.
@@ -43,13 +45,13 @@ impl EnvironmentInfoBuilder {
     ) -> Self {
         let mut v = self.availability_zone_information.unwrap_or_default();
         v.push(input);
-        self.availability_zone_information = Some(v);
+        self.availability_zone_information = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of <code>AvailabilityZoneInfo</code> for the domain.</p>
     pub fn set_availability_zone_information(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneInfo>>,
     ) -> Self {
         self.availability_zone_information = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::update_storage_virtual_machine::_update_storage_virtua
 /// Fluent builder constructing a request to `UpdateStorageVirtualMachine`.
 ///
 /// <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStorageVirtualMachineFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineInputBuilder,
 }
 impl UpdateStorageVirtualMachineFluentBuilder {
     /// Creates a new `UpdateStorageVirtualMachine`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachine,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateStorageVirtualMachineFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl UpdateStorageVirtualMachineFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineError,
         >,
     > {
@@ -91,46 +94,55 @@ impl UpdateStorageVirtualMachineFluentBuilder {
     /// <p>Updates the Microsoft Active Directory (AD) configuration for an SVM that is joined to an AD.</p>
     pub fn set_active_directory_configuration(
         mut self,
-        input: std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
+        input: ::std::option::Option<crate::types::UpdateSvmActiveDirectoryConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_active_directory_configuration(input);
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
-    pub fn storage_virtual_machine_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn storage_virtual_machine_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.storage_virtual_machine_id(input.into());
         self
     }
     /// <p>The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.</p>
     pub fn set_storage_virtual_machine_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_storage_virtual_machine_id(input);
         self
     }
     /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
-    pub fn svm_admin_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn svm_admin_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.svm_admin_password(input.into());
         self
     }
     /// <p>Enter a new SvmAdminPassword if you are updating it.</p>
     pub fn set_svm_admin_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_svm_admin_password(input);
         self

@@ -2,7 +2,7 @@
 pub(crate) fn de_number_validate_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::NumberValidateResponse>,
+    ::std::option::Option<crate::types::NumberValidateResponse>,
     crate::operation::phone_number_validate::PhoneNumberValidateError,
 > {
     (!body.is_empty()).then(||{

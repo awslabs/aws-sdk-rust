@@ -6,47 +6,50 @@ pub use crate::operation::delete_application_from_environment::_delete_applicati
 /// Fluent builder constructing a request to `DeleteApplicationFromEnvironment`.
 ///
 /// <p>Deletes a specific application from the specific runtime environment where it was previously deployed. You cannot delete a runtime environment using DeleteEnvironment if any application has ever been deployed to it. This API removes the association of the application with the runtime environment so you can delete the environment smoothly.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationFromEnvironmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentInputBuilder,
 }
 impl DeleteApplicationFromEnvironmentFluentBuilder {
     /// Creates a new `DeleteApplicationFromEnvironment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironment, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput, aws_smithy_http::result::SdkError<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,27 +60,39 @@ impl DeleteApplicationFromEnvironmentFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput, aws_smithy_http::result::SdkError<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentError>>
                          {
         self.send_middleware().await
     }
     /// <p>The unique identifier of the application you want to delete.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier of the application you want to delete.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
-    pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn environment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
-    pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }

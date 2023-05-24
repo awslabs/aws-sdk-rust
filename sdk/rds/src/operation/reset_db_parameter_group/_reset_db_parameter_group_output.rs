@@ -2,20 +2,20 @@
 
 /// <p>Contains the result of a successful invocation of the <code>ModifyDBParameterGroup</code> or <code>ResetDBParameterGroup</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
     #[doc(hidden)]
-    pub db_parameter_group_name: std::option::Option<std::string::String>,
+    pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ResetDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
-    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ResetDbParameterGroupOutput {
+impl ::aws_http::request_id::RequestId for ResetDbParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,26 @@ impl ResetDbParameterGroupOutput {
 
 /// A builder for [`ResetDbParameterGroupOutput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResetDbParameterGroupOutputBuilder {
-    pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
+    pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ResetDbParameterGroupOutputBuilder {
     /// <p>The name of the DB parameter group.</p>
-    pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_parameter_group_name = Some(input.into());
+    pub fn db_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB parameter group.</p>
     pub fn set_db_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_parameter_group_name = input;
         self

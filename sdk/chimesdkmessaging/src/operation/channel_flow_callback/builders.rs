@@ -12,29 +12,29 @@ pub use crate::operation::channel_flow_callback::_channel_flow_callback_input::C
 /// <li> <p>Deny a message</p> </li>
 /// <li> <p>Make no changes to the message</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChannelFlowCallbackFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::channel_flow_callback::builders::ChannelFlowCallbackInputBuilder,
 }
 impl ChannelFlowCallbackFluentBuilder {
     /// Creates a new `ChannelFlowCallback`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::channel_flow_callback::ChannelFlowCallback,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::channel_flow_callback::ChannelFlowCallbackError,
         >,
     > {
@@ -42,30 +42,33 @@ impl ChannelFlowCallbackFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::channel_flow_callback::ChannelFlowCallbackOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::channel_flow_callback::ChannelFlowCallbackError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,31 +81,31 @@ impl ChannelFlowCallbackFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::channel_flow_callback::ChannelFlowCallbackOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::channel_flow_callback::ChannelFlowCallbackError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
-    pub fn callback_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn callback_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.callback_id(input.into());
         self
     }
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
-    pub fn set_callback_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_callback_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_callback_id(input);
         self
     }
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
         self
     }
     /// <p>The ARN of the channel.</p>
-    pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
@@ -112,7 +115,7 @@ impl ChannelFlowCallbackFluentBuilder {
         self
     }
     /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
-    pub fn set_delete_resource(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_resource(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_resource(input);
         self
     }
@@ -124,7 +127,7 @@ impl ChannelFlowCallbackFluentBuilder {
     /// <p>Stores information about the processed message.</p>
     pub fn set_channel_message(
         mut self,
-        input: std::option::Option<crate::types::ChannelMessageCallback>,
+        input: ::std::option::Option<crate::types::ChannelMessageCallback>,
     ) -> Self {
         self.inner = self.inner.set_channel_message(input);
         self

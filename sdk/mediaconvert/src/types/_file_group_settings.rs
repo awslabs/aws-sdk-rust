@@ -2,22 +2,24 @@
 
 /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileGroupSettings {
     /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
     #[doc(hidden)]
-    pub destination: std::option::Option<std::string::String>,
+    pub destination: ::std::option::Option<::std::string::String>,
     /// Settings associated with the destination. Will vary based on the type of destination
     #[doc(hidden)]
-    pub destination_settings: std::option::Option<crate::types::DestinationSettings>,
+    pub destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
 }
 impl FileGroupSettings {
     /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn destination_settings(&self) -> std::option::Option<&crate::types::DestinationSettings> {
+    pub fn destination_settings(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DestinationSettings> {
         self.destination_settings.as_ref()
     }
 }
@@ -30,31 +32,33 @@ impl FileGroupSettings {
 
 /// A builder for [`FileGroupSettings`](crate::types::FileGroupSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileGroupSettingsBuilder {
-    pub(crate) destination: std::option::Option<std::string::String>,
-    pub(crate) destination_settings: std::option::Option<crate::types::DestinationSettings>,
+    pub(crate) destination: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_settings: ::std::option::Option<crate::types::DestinationSettings>,
 }
 impl FileGroupSettingsBuilder {
     /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
-    pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination = Some(input.into());
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination = ::std::option::Option::Some(input.into());
         self
     }
     /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
-    pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
     pub fn destination_settings(mut self, input: crate::types::DestinationSettings) -> Self {
-        self.destination_settings = Some(input);
+        self.destination_settings = ::std::option::Option::Some(input);
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
     pub fn set_destination_settings(
         mut self,
-        input: std::option::Option<crate::types::DestinationSettings>,
+        input: ::std::option::Option<crate::types::DestinationSettings>,
     ) -> Self {
         self.destination_settings = input;
         self

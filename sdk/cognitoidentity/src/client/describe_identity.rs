@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIdentity`](crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_id(impl Into<String>)`](crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder::identity_id) / [`set_identity_id(Option<String>)`](crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
+    ///   - [`identity_id(impl ::std::convert::Into<String>)`](crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder::identity_id) / [`set_identity_id(Option<String>)`](crate::operation::describe_identity::builders::DescribeIdentityFluentBuilder::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
     /// - On success, responds with [`DescribeIdentityOutput`](crate::operation::describe_identity::DescribeIdentityOutput) with field(s):
     ///   - [`identity_id(Option<String>)`](crate::operation::describe_identity::DescribeIdentityOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
     ///   - [`logins(Option<Vec<String>>)`](crate::operation::describe_identity::DescribeIdentityOutput::logins): <p>The provider names.</p>

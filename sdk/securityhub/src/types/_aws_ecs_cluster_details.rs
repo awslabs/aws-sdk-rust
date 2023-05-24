@@ -2,32 +2,32 @@
 
 /// <p>Provides details about an Amazon ECS cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterDetails {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code> </a> API operation. </p>
     #[doc(hidden)]
     pub active_services_count: i32,
     /// <p>The short name of one or more capacity providers to associate with the cluster.</p>
     #[doc(hidden)]
-    pub capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The setting to use to create the cluster. Specifically used to configure whether to enable CloudWatch Container Insights for the cluster.</p>
     #[doc(hidden)]
     pub cluster_settings:
-        std::option::Option<std::vec::Vec<crate::types::AwsEcsClusterClusterSettingsDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsClusterClusterSettingsDetails>>,
     /// <p>The run command configuration for the cluster.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::AwsEcsClusterConfigurationDetails>,
+    pub configuration: ::std::option::Option<crate::types::AwsEcsClusterConfigurationDetails>,
     /// <p>The default capacity provider strategy for the cluster. The default capacity provider strategy is used when services or tasks are run without a specified launch type or capacity provider strategy.</p>
     #[doc(hidden)]
-    pub default_capacity_provider_strategy: std::option::Option<
-        std::vec::Vec<crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails>,
+    pub default_capacity_provider_strategy: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails>,
     >,
     /// <p>A name that you use to identify your cluster. </p>
     #[doc(hidden)]
-    pub cluster_name: std::option::Option<std::string::String>,
+    pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. </p>
     #[doc(hidden)]
     pub registered_container_instances_count: i32,
@@ -36,11 +36,11 @@ pub struct AwsEcsClusterDetails {
     pub running_tasks_count: i32,
     /// <p>The status of the cluster. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterDetails {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code> </a> API operation. </p>
@@ -48,30 +48,30 @@ impl AwsEcsClusterDetails {
         self.active_services_count
     }
     /// <p>The short name of one or more capacity providers to associate with the cluster.</p>
-    pub fn capacity_providers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn capacity_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.capacity_providers.as_deref()
     }
     /// <p>The setting to use to create the cluster. Specifically used to configure whether to enable CloudWatch Container Insights for the cluster.</p>
     pub fn cluster_settings(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsEcsClusterClusterSettingsDetails]> {
+    ) -> ::std::option::Option<&[crate::types::AwsEcsClusterClusterSettingsDetails]> {
         self.cluster_settings.as_deref()
     }
     /// <p>The run command configuration for the cluster.</p>
     pub fn configuration(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEcsClusterConfigurationDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEcsClusterConfigurationDetails> {
         self.configuration.as_ref()
     }
     /// <p>The default capacity provider strategy for the cluster. The default capacity provider strategy is used when services or tasks are run without a specified launch type or capacity provider strategy.</p>
     pub fn default_capacity_provider_strategy(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails]>
+    ) -> ::std::option::Option<&[crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails]>
     {
         self.default_capacity_provider_strategy.as_deref()
     }
     /// <p>A name that you use to identify your cluster. </p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. </p>
@@ -83,7 +83,7 @@ impl AwsEcsClusterDetails {
         self.running_tasks_count
     }
     /// <p>The status of the cluster. </p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -96,40 +96,43 @@ impl AwsEcsClusterDetails {
 
 /// A builder for [`AwsEcsClusterDetails`](crate::types::AwsEcsClusterDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsClusterDetailsBuilder {
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) active_services_count: std::option::Option<i32>,
-    pub(crate) capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) active_services_count: ::std::option::Option<i32>,
+    pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cluster_settings:
-        std::option::Option<std::vec::Vec<crate::types::AwsEcsClusterClusterSettingsDetails>>,
-    pub(crate) configuration: std::option::Option<crate::types::AwsEcsClusterConfigurationDetails>,
-    pub(crate) default_capacity_provider_strategy: std::option::Option<
-        std::vec::Vec<crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsClusterClusterSettingsDetails>>,
+    pub(crate) configuration:
+        ::std::option::Option<crate::types::AwsEcsClusterConfigurationDetails>,
+    pub(crate) default_capacity_provider_strategy: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails>,
     >,
-    pub(crate) cluster_name: std::option::Option<std::string::String>,
-    pub(crate) registered_container_instances_count: std::option::Option<i32>,
-    pub(crate) running_tasks_count: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
+    pub(crate) registered_container_instances_count: ::std::option::Option<i32>,
+    pub(crate) running_tasks_count: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code> </a> API operation. </p>
     pub fn active_services_count(mut self, input: i32) -> Self {
-        self.active_services_count = Some(input);
+        self.active_services_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of services that are running on the cluster in an <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html"> <code>ListServices</code> </a> API operation. </p>
-    pub fn set_active_services_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_active_services_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_services_count = input;
         self
     }
@@ -138,16 +141,19 @@ impl AwsEcsClusterDetailsBuilder {
     /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
     ///
     /// <p>The short name of one or more capacity providers to associate with the cluster.</p>
-    pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn capacity_providers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.capacity_providers.unwrap_or_default();
         v.push(input.into());
-        self.capacity_providers = Some(v);
+        self.capacity_providers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The short name of one or more capacity providers to associate with the cluster.</p>
     pub fn set_capacity_providers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.capacity_providers = input;
         self
@@ -163,14 +169,14 @@ impl AwsEcsClusterDetailsBuilder {
     ) -> Self {
         let mut v = self.cluster_settings.unwrap_or_default();
         v.push(input);
-        self.cluster_settings = Some(v);
+        self.cluster_settings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The setting to use to create the cluster. Specifically used to configure whether to enable CloudWatch Container Insights for the cluster.</p>
     pub fn set_cluster_settings(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsEcsClusterClusterSettingsDetails>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsEcsClusterClusterSettingsDetails>,
         >,
     ) -> Self {
         self.cluster_settings = input;
@@ -178,13 +184,13 @@ impl AwsEcsClusterDetailsBuilder {
     }
     /// <p>The run command configuration for the cluster.</p>
     pub fn configuration(mut self, input: crate::types::AwsEcsClusterConfigurationDetails) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The run command configuration for the cluster.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::AwsEcsClusterConfigurationDetails>,
+        input: ::std::option::Option<crate::types::AwsEcsClusterConfigurationDetails>,
     ) -> Self {
         self.configuration = input;
         self
@@ -200,59 +206,59 @@ impl AwsEcsClusterDetailsBuilder {
     ) -> Self {
         let mut v = self.default_capacity_provider_strategy.unwrap_or_default();
         v.push(input);
-        self.default_capacity_provider_strategy = Some(v);
+        self.default_capacity_provider_strategy = ::std::option::Option::Some(v);
         self
     }
     /// <p>The default capacity provider strategy for the cluster. The default capacity provider strategy is used when services or tasks are run without a specified launch type or capacity provider strategy.</p>
     pub fn set_default_capacity_provider_strategy(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails>,
         >,
     ) -> Self {
         self.default_capacity_provider_strategy = input;
         self
     }
     /// <p>A name that you use to identify your cluster. </p>
-    pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_name = Some(input.into());
+    pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name that you use to identify your cluster. </p>
-    pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. </p>
     pub fn registered_container_instances_count(mut self, input: i32) -> Self {
-        self.registered_container_instances_count = Some(input);
+        self.registered_container_instances_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of container instances registered into the cluster. This includes container instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. </p>
     pub fn set_registered_container_instances_count(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.registered_container_instances_count = input;
         self
     }
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state. </p>
     pub fn running_tasks_count(mut self, input: i32) -> Self {
-        self.running_tasks_count = Some(input);
+        self.running_tasks_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of tasks in the cluster that are in the <code>RUNNING</code> state. </p>
-    pub fn set_running_tasks_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_running_tasks_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_tasks_count = input;
         self
     }
     /// <p>The status of the cluster. </p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the cluster. </p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

@@ -38,13 +38,13 @@
 /// Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsIFrameOnlyManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsIFrameOnlyManifest {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsIFrameOnlyManifest {
+impl ::std::convert::From<&str> for HlsIFrameOnlyManifest {
     fn from(s: &str) -> Self {
         match s {
             "EXCLUDE" => HlsIFrameOnlyManifest::Exclude,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsIFrameOnlyManifest {
         }
     }
 }
-impl std::str::FromStr for HlsIFrameOnlyManifest {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsIFrameOnlyManifest {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsIFrameOnlyManifest::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsIFrameOnlyManifest::from(s))
     }
 }
 impl HlsIFrameOnlyManifest {
@@ -86,7 +86,7 @@ impl HlsIFrameOnlyManifest {
         &["EXCLUDE", "INCLUDE"]
     }
 }
-impl AsRef<str> for HlsIFrameOnlyManifest {
+impl ::std::convert::AsRef<str> for HlsIFrameOnlyManifest {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

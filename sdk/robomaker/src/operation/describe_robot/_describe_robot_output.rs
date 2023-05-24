@@ -4,87 +4,89 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRobotOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the robot.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
-    pub fleet_arn: std::option::Option<std::string::String>,
+    pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the fleet.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::RobotStatus>,
+    pub status: ::std::option::Option<crate::types::RobotStatus>,
     /// <p>The Greengrass group id.</p>
     #[doc(hidden)]
-    pub greengrass_group_id: std::option::Option<std::string::String>,
+    pub greengrass_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The target architecture of the robot application.</p>
     #[doc(hidden)]
-    pub architecture: std::option::Option<crate::types::Architecture>,
+    pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     #[doc(hidden)]
-    pub last_deployment_job: std::option::Option<std::string::String>,
+    pub last_deployment_job: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last deployment job.</p>
     #[doc(hidden)]
-    pub last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified robot.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeRobotOutput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the robot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The status of the fleet.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::RobotStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::RobotStatus> {
         self.status.as_ref()
     }
     /// <p>The Greengrass group id.</p>
-    pub fn greengrass_group_id(&self) -> std::option::Option<&str> {
+    pub fn greengrass_group_id(&self) -> ::std::option::Option<&str> {
         self.greengrass_group_id.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The target architecture of the robot application.</p>
-    pub fn architecture(&self) -> std::option::Option<&crate::types::Architecture> {
+    pub fn architecture(&self) -> ::std::option::Option<&crate::types::Architecture> {
         self.architecture.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(&self) -> std::option::Option<&str> {
+    pub fn last_deployment_job(&self) -> ::std::option::Option<&str> {
         self.last_deployment_job.as_deref()
     }
     /// <p>The time of the last deployment job.</p>
-    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
     }
     /// <p>The list of all tags added to the specified robot.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeRobotOutput {
+impl ::aws_http::request_id::RequestId for DescribeRobotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -98,123 +100,132 @@ impl DescribeRobotOutput {
 
 /// A builder for [`DescribeRobotOutput`](crate::operation::describe_robot::DescribeRobotOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeRobotOutputBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) fleet_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::RobotStatus>,
-    pub(crate) greengrass_group_id: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) architecture: std::option::Option<crate::types::Architecture>,
-    pub(crate) last_deployment_job: std::option::Option<std::string::String>,
-    pub(crate) last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::RobotStatus>,
+    pub(crate) greengrass_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) architecture: ::std::option::Option<crate::types::Architecture>,
+    pub(crate) last_deployment_job: ::std::option::Option<::std::string::String>,
+    pub(crate) last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeRobotOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the robot.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the robot.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet_arn = Some(input.into());
+    pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
     }
     /// <p>The status of the fleet.</p>
     pub fn status(mut self, input: crate::types::RobotStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the fleet.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::RobotStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RobotStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The Greengrass group id.</p>
-    pub fn greengrass_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.greengrass_group_id = Some(input.into());
+    pub fn greengrass_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.greengrass_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Greengrass group id.</p>
     pub fn set_greengrass_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.greengrass_group_id = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The target architecture of the robot application.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
-        self.architecture = Some(input);
+        self.architecture = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target architecture of the robot application.</p>
     pub fn set_architecture(
         mut self,
-        input: std::option::Option<crate::types::Architecture>,
+        input: ::std::option::Option<crate::types::Architecture>,
     ) -> Self {
         self.architecture = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_deployment_job = Some(input.into());
+    pub fn last_deployment_job(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_deployment_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     pub fn set_last_deployment_job(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_deployment_job = input;
         self
     }
     /// <p>The time of the last deployment job.</p>
-    pub fn last_deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_deployment_time = Some(input);
+    pub fn last_deployment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_deployment_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the last deployment job.</p>
     pub fn set_last_deployment_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_deployment_time = input;
         self
@@ -226,19 +237,19 @@ impl DescribeRobotOutputBuilder {
     /// <p>The list of all tags added to the specified robot.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of all tags added to the specified robot.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

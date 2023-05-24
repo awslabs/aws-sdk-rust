@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeServer`](crate::operation::describe_server::builders::DescribeServerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl Into<String>)`](crate::operation::describe_server::builders::DescribeServerFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::describe_server::builders::DescribeServerFluentBuilder::set_server_id): <p>A system-assigned unique identifier for a server.</p>
+    ///   - [`server_id(impl ::std::convert::Into<String>)`](crate::operation::describe_server::builders::DescribeServerFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::describe_server::builders::DescribeServerFluentBuilder::set_server_id): <p>A system-assigned unique identifier for a server.</p>
     /// - On success, responds with [`DescribeServerOutput`](crate::operation::describe_server::DescribeServerOutput) with field(s):
     ///   - [`server(Option<DescribedServer>)`](crate::operation::describe_server::DescribeServerOutput::server): <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
     /// - On failure, responds with [`SdkError<DescribeServerError>`](crate::operation::describe_server::DescribeServerError)

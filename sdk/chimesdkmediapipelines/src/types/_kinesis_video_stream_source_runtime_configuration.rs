@@ -2,33 +2,33 @@
 
 /// <p>The runtime configuration settings for the Kinesis video stream source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamSourceRuntimeConfiguration {
     /// <p>The streams in the source runtime configuration of a Kinesis video stream.</p>
     #[doc(hidden)]
-    pub streams: std::option::Option<std::vec::Vec<crate::types::StreamConfiguration>>,
+    pub streams: ::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>>,
     /// <p>Specifies the encoding of your input audio. Supported format: PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub media_encoding: std::option::Option<crate::types::MediaEncoding>,
+    pub media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     /// <p>Valid Range: Minimum value of 8000. Maximum value of 48000.</p>
     #[doc(hidden)]
-    pub media_sample_rate: std::option::Option<i32>,
+    pub media_sample_rate: ::std::option::Option<i32>,
 }
 impl KinesisVideoStreamSourceRuntimeConfiguration {
     /// <p>The streams in the source runtime configuration of a Kinesis video stream.</p>
-    pub fn streams(&self) -> std::option::Option<&[crate::types::StreamConfiguration]> {
+    pub fn streams(&self) -> ::std::option::Option<&[crate::types::StreamConfiguration]> {
         self.streams.as_deref()
     }
     /// <p>Specifies the encoding of your input audio. Supported format: PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
-    pub fn media_encoding(&self) -> std::option::Option<&crate::types::MediaEncoding> {
+    pub fn media_encoding(&self) -> ::std::option::Option<&crate::types::MediaEncoding> {
         self.media_encoding.as_ref()
     }
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     /// <p>Valid Range: Minimum value of 8000. Maximum value of 48000.</p>
-    pub fn media_sample_rate(&self) -> std::option::Option<i32> {
+    pub fn media_sample_rate(&self) -> ::std::option::Option<i32> {
         self.media_sample_rate
     }
 }
@@ -42,11 +42,13 @@ impl KinesisVideoStreamSourceRuntimeConfiguration {
 
 /// A builder for [`KinesisVideoStreamSourceRuntimeConfiguration`](crate::types::KinesisVideoStreamSourceRuntimeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisVideoStreamSourceRuntimeConfigurationBuilder {
-    pub(crate) streams: std::option::Option<std::vec::Vec<crate::types::StreamConfiguration>>,
-    pub(crate) media_encoding: std::option::Option<crate::types::MediaEncoding>,
-    pub(crate) media_sample_rate: std::option::Option<i32>,
+    pub(crate) streams: ::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>>,
+    pub(crate) media_encoding: ::std::option::Option<crate::types::MediaEncoding>,
+    pub(crate) media_sample_rate: ::std::option::Option<i32>,
 }
 impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     /// Appends an item to `streams`.
@@ -57,13 +59,13 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     pub fn streams(mut self, input: crate::types::StreamConfiguration) -> Self {
         let mut v = self.streams.unwrap_or_default();
         v.push(input);
-        self.streams = Some(v);
+        self.streams = ::std::option::Option::Some(v);
         self
     }
     /// <p>The streams in the source runtime configuration of a Kinesis video stream.</p>
     pub fn set_streams(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StreamConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamConfiguration>>,
     ) -> Self {
         self.streams = input;
         self
@@ -71,14 +73,14 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     /// <p>Specifies the encoding of your input audio. Supported format: PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
     pub fn media_encoding(mut self, input: crate::types::MediaEncoding) -> Self {
-        self.media_encoding = Some(input);
+        self.media_encoding = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the encoding of your input audio. Supported format: PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
     pub fn set_media_encoding(
         mut self,
-        input: std::option::Option<crate::types::MediaEncoding>,
+        input: ::std::option::Option<crate::types::MediaEncoding>,
     ) -> Self {
         self.media_encoding = input;
         self
@@ -86,12 +88,12 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     /// <p>Valid Range: Minimum value of 8000. Maximum value of 48000.</p>
     pub fn media_sample_rate(mut self, input: i32) -> Self {
-        self.media_sample_rate = Some(input);
+        self.media_sample_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sample rate of the input audio (in hertz). Low-quality audio, such as telephone audio, is typically around 8,000 Hz. High-quality audio typically ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
     /// <p>Valid Range: Minimum value of 8000. Maximum value of 48000.</p>
-    pub fn set_media_sample_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_media_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate = input;
         self
     }

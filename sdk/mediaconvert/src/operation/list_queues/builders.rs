@@ -6,56 +6,59 @@ pub use crate::operation::list_queues::_list_queues_input::ListQueuesInputBuilde
 /// Fluent builder constructing a request to `ListQueues`.
 ///
 /// Retrieve a JSON array of up to twenty of your queues. This will return the queues themselves, not just a list of them. To retrieve the next twenty queues, use the nextToken string returned with the array.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListQueuesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_queues::builders::ListQueuesInputBuilder,
 }
 impl ListQueuesFluentBuilder {
     /// Creates a new `ListQueues`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_queues::ListQueues,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_queues::ListQueuesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListQueuesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_queues::ListQueuesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
     > {
         self.send_middleware().await
     }
@@ -86,7 +89,7 @@ impl ListQueuesFluentBuilder {
         self
     }
     /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
-    pub fn set_list_by(mut self, input: std::option::Option<crate::types::QueueListBy>) -> Self {
+    pub fn set_list_by(mut self, input: ::std::option::Option<crate::types::QueueListBy>) -> Self {
         self.inner = self.inner.set_list_by(input);
         self
     }
@@ -96,17 +99,17 @@ impl ListQueuesFluentBuilder {
         self
     }
     /// Optional. Number of queues, up to twenty, that will be returned at one time.
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of queues.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -116,7 +119,7 @@ impl ListQueuesFluentBuilder {
         self
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-    pub fn set_order(mut self, input: std::option::Option<crate::types::Order>) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::Order>) -> Self {
         self.inner = self.inner.set_order(input);
         self
     }

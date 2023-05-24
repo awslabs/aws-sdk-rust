@@ -3,18 +3,18 @@
 /// <p>The configuration for applying a filter to specific sheets or visuals. You can apply this filter to multiple visuals that are on one sheet or to all visuals on a sheet.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectedSheetsFilterScopeConfiguration {
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
     #[doc(hidden)]
     pub sheet_visual_scoping_configurations:
-        std::option::Option<std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
 }
 impl SelectedSheetsFilterScopeConfiguration {
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
     pub fn sheet_visual_scoping_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::SheetVisualScopingConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::SheetVisualScopingConfiguration]> {
         self.sheet_visual_scoping_configurations.as_deref()
     }
 }
@@ -27,10 +27,12 @@ impl SelectedSheetsFilterScopeConfiguration {
 
 /// A builder for [`SelectedSheetsFilterScopeConfiguration`](crate::types::SelectedSheetsFilterScopeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SelectedSheetsFilterScopeConfigurationBuilder {
     pub(crate) sheet_visual_scoping_configurations:
-        std::option::Option<std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
 }
 impl SelectedSheetsFilterScopeConfigurationBuilder {
     /// Appends an item to `sheet_visual_scoping_configurations`.
@@ -44,13 +46,15 @@ impl SelectedSheetsFilterScopeConfigurationBuilder {
     ) -> Self {
         let mut v = self.sheet_visual_scoping_configurations.unwrap_or_default();
         v.push(input);
-        self.sheet_visual_scoping_configurations = Some(v);
+        self.sheet_visual_scoping_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.</p>
     pub fn set_sheet_visual_scoping_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SheetVisualScopingConfiguration>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::SheetVisualScopingConfiguration>,
+        >,
     ) -> Self {
         self.sheet_visual_scoping_configurations = input;
         self

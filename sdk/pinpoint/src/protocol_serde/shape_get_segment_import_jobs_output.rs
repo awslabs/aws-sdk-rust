@@ -2,7 +2,7 @@
 pub(crate) fn de_import_jobs_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ImportJobsResponse>,
+    ::std::option::Option<crate::types::ImportJobsResponse>,
     crate::operation::get_segment_import_jobs::GetSegmentImportJobsError,
 > {
     (!body.is_empty())

@@ -2,120 +2,120 @@
 
 /// <p>Information about a network resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResource {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     #[doc(hidden)]
-    pub network_resource_arn: std::option::Option<std::string::String>,
+    pub network_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the network resource.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the network resource.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::NetworkResourceType>,
+    pub r#type: ::std::option::Option<crate::types::NetworkResourceType>,
     /// <p>The status of the network resource.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::NetworkResourceStatus>,
+    pub status: ::std::option::Option<crate::types::NetworkResourceStatus>,
     /// <p>The status reason of the network resource.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The vendor of the network resource.</p>
     #[doc(hidden)]
-    pub vendor: std::option::Option<std::string::String>,
+    pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The model of the network resource.</p>
     #[doc(hidden)]
-    pub model: std::option::Option<std::string::String>,
+    pub model: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the network resource.</p>
     #[doc(hidden)]
-    pub serial_number: std::option::Option<std::string::String>,
+    pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The health of the network resource.</p>
     #[doc(hidden)]
-    pub health: std::option::Option<crate::types::HealthStatus>,
+    pub health: ::std::option::Option<crate::types::HealthStatus>,
     /// <p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>
     #[doc(hidden)]
-    pub network_arn: std::option::Option<std::string::String>,
+    pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
     #[doc(hidden)]
-    pub network_site_arn: std::option::Option<std::string::String>,
+    pub network_site_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>
     #[doc(hidden)]
-    pub order_arn: std::option::Option<std::string::String>,
+    pub order_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes of the network resource.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
     /// <p>The position of the network resource.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<crate::types::Position>,
+    pub position: ::std::option::Option<crate::types::Position>,
     /// <p>The creation time of the network resource.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about a request to return the network resource.</p>
     #[doc(hidden)]
-    pub return_information: std::option::Option<crate::types::ReturnInformation>,
+    pub return_information: ::std::option::Option<crate::types::ReturnInformation>,
 }
 impl NetworkResource {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(&self) -> std::option::Option<&str> {
+    pub fn network_resource_arn(&self) -> ::std::option::Option<&str> {
         self.network_resource_arn.as_deref()
     }
     /// <p>The description of the network resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of the network resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::NetworkResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NetworkResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the network resource.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::NetworkResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::NetworkResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The status reason of the network resource.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The vendor of the network resource.</p>
-    pub fn vendor(&self) -> std::option::Option<&str> {
+    pub fn vendor(&self) -> ::std::option::Option<&str> {
         self.vendor.as_deref()
     }
     /// <p>The model of the network resource.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<&str> {
         self.model.as_deref()
     }
     /// <p>The serial number of the network resource.</p>
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<&str> {
         self.serial_number.as_deref()
     }
     /// <p>The health of the network resource.</p>
-    pub fn health(&self) -> std::option::Option<&crate::types::HealthStatus> {
+    pub fn health(&self) -> ::std::option::Option<&crate::types::HealthStatus> {
         self.health.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>
-    pub fn network_arn(&self) -> std::option::Option<&str> {
+    pub fn network_arn(&self) -> ::std::option::Option<&str> {
         self.network_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
-    pub fn network_site_arn(&self) -> std::option::Option<&str> {
+    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
         self.network_site_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>
-    pub fn order_arn(&self) -> std::option::Option<&str> {
+    pub fn order_arn(&self) -> ::std::option::Option<&str> {
         self.order_arn.as_deref()
     }
     /// <p>The attributes of the network resource.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::NameValuePair]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::NameValuePair]> {
         self.attributes.as_deref()
     }
     /// <p>The position of the network resource.</p>
-    pub fn position(&self) -> std::option::Option<&crate::types::Position> {
+    pub fn position(&self) -> ::std::option::Option<&crate::types::Position> {
         self.position.as_ref()
     }
     /// <p>The creation time of the network resource.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Information about a request to return the network resource.</p>
-    pub fn return_information(&self) -> std::option::Option<&crate::types::ReturnInformation> {
+    pub fn return_information(&self) -> ::std::option::Option<&crate::types::ReturnInformation> {
         self.return_information.as_ref()
     }
 }
@@ -128,152 +128,175 @@ impl NetworkResource {
 
 /// A builder for [`NetworkResource`](crate::types::NetworkResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkResourceBuilder {
-    pub(crate) network_resource_arn: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::NetworkResourceType>,
-    pub(crate) status: std::option::Option<crate::types::NetworkResourceStatus>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
-    pub(crate) vendor: std::option::Option<std::string::String>,
-    pub(crate) model: std::option::Option<std::string::String>,
-    pub(crate) serial_number: std::option::Option<std::string::String>,
-    pub(crate) health: std::option::Option<crate::types::HealthStatus>,
-    pub(crate) network_arn: std::option::Option<std::string::String>,
-    pub(crate) network_site_arn: std::option::Option<std::string::String>,
-    pub(crate) order_arn: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
-    pub(crate) position: std::option::Option<crate::types::Position>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) return_information: std::option::Option<crate::types::ReturnInformation>,
+    pub(crate) network_resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NetworkResourceType>,
+    pub(crate) status: ::std::option::Option<crate::types::NetworkResourceStatus>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) vendor: ::std::option::Option<::std::string::String>,
+    pub(crate) model: ::std::option::Option<::std::string::String>,
+    pub(crate) serial_number: ::std::option::Option<::std::string::String>,
+    pub(crate) health: ::std::option::Option<crate::types::HealthStatus>,
+    pub(crate) network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) network_site_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) order_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
+    pub(crate) position: ::std::option::Option<crate::types::Position>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) return_information: ::std::option::Option<crate::types::ReturnInformation>,
 }
 impl NetworkResourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_resource_arn = Some(input.into());
+    pub fn network_resource_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub fn set_network_resource_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_resource_arn = input;
         self
     }
     /// <p>The description of the network resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the network resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The type of the network resource.</p>
     pub fn r#type(mut self, input: crate::types::NetworkResourceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the network resource.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::NetworkResourceType>,
+        input: ::std::option::Option<crate::types::NetworkResourceType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The status of the network resource.</p>
     pub fn status(mut self, input: crate::types::NetworkResourceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the network resource.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::NetworkResourceStatus>,
+        input: ::std::option::Option<crate::types::NetworkResourceStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The status reason of the network resource.</p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status reason of the network resource.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }
     /// <p>The vendor of the network resource.</p>
-    pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vendor = Some(input.into());
+    pub fn vendor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vendor = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The vendor of the network resource.</p>
-    pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor = input;
         self
     }
     /// <p>The model of the network resource.</p>
-    pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model = Some(input.into());
+    pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model of the network resource.</p>
-    pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
     }
     /// <p>The serial number of the network resource.</p>
-    pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.serial_number = Some(input.into());
+    pub fn serial_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of the network resource.</p>
-    pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_serial_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.serial_number = input;
         self
     }
     /// <p>The health of the network resource.</p>
     pub fn health(mut self, input: crate::types::HealthStatus) -> Self {
-        self.health = Some(input);
+        self.health = ::std::option::Option::Some(input);
         self
     }
     /// <p>The health of the network resource.</p>
-    pub fn set_health(mut self, input: std::option::Option<crate::types::HealthStatus>) -> Self {
+    pub fn set_health(mut self, input: ::std::option::Option<crate::types::HealthStatus>) -> Self {
         self.health = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>
-    pub fn network_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_arn = Some(input.into());
+    pub fn network_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>
-    pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
-    pub fn network_site_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_site_arn = Some(input.into());
+    pub fn network_site_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_site_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
-    pub fn set_network_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_site_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.network_site_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>
-    pub fn order_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.order_arn = Some(input.into());
+    pub fn order_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.order_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>
-    pub fn set_order_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_order_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.order_arn = input;
         self
     }
@@ -285,49 +308,49 @@ impl NetworkResourceBuilder {
     pub fn attributes(mut self, input: crate::types::NameValuePair) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The attributes of the network resource.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The position of the network resource.</p>
     pub fn position(mut self, input: crate::types::Position) -> Self {
-        self.position = Some(input);
+        self.position = ::std::option::Option::Some(input);
         self
     }
     /// <p>The position of the network resource.</p>
-    pub fn set_position(mut self, input: std::option::Option<crate::types::Position>) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<crate::types::Position>) -> Self {
         self.position = input;
         self
     }
     /// <p>The creation time of the network resource.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation time of the network resource.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>Information about a request to return the network resource.</p>
     pub fn return_information(mut self, input: crate::types::ReturnInformation) -> Self {
-        self.return_information = Some(input);
+        self.return_information = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a request to return the network resource.</p>
     pub fn set_return_information(
         mut self,
-        input: std::option::Option<crate::types::ReturnInformation>,
+        input: ::std::option::Option<crate::types::ReturnInformation>,
     ) -> Self {
         self.return_information = input;
         self

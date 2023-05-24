@@ -43,13 +43,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Metric {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum Metric {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Metric {
+impl ::std::convert::From<&str> for Metric {
     fn from(s: &str) -> Self {
         match s {
             "AMORTIZED_COST" => Metric::AmortizedCost,
@@ -83,11 +83,11 @@ impl std::convert::From<&str> for Metric {
         }
     }
 }
-impl std::str::FromStr for Metric {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Metric {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Metric::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Metric::from(s))
     }
 }
 impl Metric {
@@ -117,7 +117,7 @@ impl Metric {
         ]
     }
 }
-impl AsRef<str> for Metric {
+impl ::std::convert::AsRef<str> for Metric {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

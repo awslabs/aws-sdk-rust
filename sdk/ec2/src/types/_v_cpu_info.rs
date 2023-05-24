@@ -2,43 +2,43 @@
 
 /// <p>Describes the vCPU configurations for the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VCpuInfo {
     /// <p>The default number of vCPUs for the instance type.</p>
     #[doc(hidden)]
-    pub default_v_cpus: std::option::Option<i32>,
+    pub default_v_cpus: ::std::option::Option<i32>,
     /// <p>The default number of cores for the instance type.</p>
     #[doc(hidden)]
-    pub default_cores: std::option::Option<i32>,
+    pub default_cores: ::std::option::Option<i32>,
     /// <p>The default number of threads per core for the instance type.</p>
     #[doc(hidden)]
-    pub default_threads_per_core: std::option::Option<i32>,
+    pub default_threads_per_core: ::std::option::Option<i32>,
     /// <p>The valid number of cores that can be configured for the instance type.</p>
     #[doc(hidden)]
-    pub valid_cores: std::option::Option<std::vec::Vec<i32>>,
+    pub valid_cores: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The valid number of threads per core that can be configured for the instance type.</p>
     #[doc(hidden)]
-    pub valid_threads_per_core: std::option::Option<std::vec::Vec<i32>>,
+    pub valid_threads_per_core: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl VCpuInfo {
     /// <p>The default number of vCPUs for the instance type.</p>
-    pub fn default_v_cpus(&self) -> std::option::Option<i32> {
+    pub fn default_v_cpus(&self) -> ::std::option::Option<i32> {
         self.default_v_cpus
     }
     /// <p>The default number of cores for the instance type.</p>
-    pub fn default_cores(&self) -> std::option::Option<i32> {
+    pub fn default_cores(&self) -> ::std::option::Option<i32> {
         self.default_cores
     }
     /// <p>The default number of threads per core for the instance type.</p>
-    pub fn default_threads_per_core(&self) -> std::option::Option<i32> {
+    pub fn default_threads_per_core(&self) -> ::std::option::Option<i32> {
         self.default_threads_per_core
     }
     /// <p>The valid number of cores that can be configured for the instance type.</p>
-    pub fn valid_cores(&self) -> std::option::Option<&[i32]> {
+    pub fn valid_cores(&self) -> ::std::option::Option<&[i32]> {
         self.valid_cores.as_deref()
     }
     /// <p>The valid number of threads per core that can be configured for the instance type.</p>
-    pub fn valid_threads_per_core(&self) -> std::option::Option<&[i32]> {
+    pub fn valid_threads_per_core(&self) -> ::std::option::Option<&[i32]> {
         self.valid_threads_per_core.as_deref()
     }
 }
@@ -51,42 +51,44 @@ impl VCpuInfo {
 
 /// A builder for [`VCpuInfo`](crate::types::VCpuInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VCpuInfoBuilder {
-    pub(crate) default_v_cpus: std::option::Option<i32>,
-    pub(crate) default_cores: std::option::Option<i32>,
-    pub(crate) default_threads_per_core: std::option::Option<i32>,
-    pub(crate) valid_cores: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) valid_threads_per_core: std::option::Option<std::vec::Vec<i32>>,
+    pub(crate) default_v_cpus: ::std::option::Option<i32>,
+    pub(crate) default_cores: ::std::option::Option<i32>,
+    pub(crate) default_threads_per_core: ::std::option::Option<i32>,
+    pub(crate) valid_cores: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) valid_threads_per_core: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl VCpuInfoBuilder {
     /// <p>The default number of vCPUs for the instance type.</p>
     pub fn default_v_cpus(mut self, input: i32) -> Self {
-        self.default_v_cpus = Some(input);
+        self.default_v_cpus = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default number of vCPUs for the instance type.</p>
-    pub fn set_default_v_cpus(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_default_v_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_v_cpus = input;
         self
     }
     /// <p>The default number of cores for the instance type.</p>
     pub fn default_cores(mut self, input: i32) -> Self {
-        self.default_cores = Some(input);
+        self.default_cores = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default number of cores for the instance type.</p>
-    pub fn set_default_cores(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_default_cores(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_cores = input;
         self
     }
     /// <p>The default number of threads per core for the instance type.</p>
     pub fn default_threads_per_core(mut self, input: i32) -> Self {
-        self.default_threads_per_core = Some(input);
+        self.default_threads_per_core = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default number of threads per core for the instance type.</p>
-    pub fn set_default_threads_per_core(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_default_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_threads_per_core = input;
         self
     }
@@ -98,11 +100,11 @@ impl VCpuInfoBuilder {
     pub fn valid_cores(mut self, input: i32) -> Self {
         let mut v = self.valid_cores.unwrap_or_default();
         v.push(input);
-        self.valid_cores = Some(v);
+        self.valid_cores = ::std::option::Option::Some(v);
         self
     }
     /// <p>The valid number of cores that can be configured for the instance type.</p>
-    pub fn set_valid_cores(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_valid_cores(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.valid_cores = input;
         self
     }
@@ -114,13 +116,13 @@ impl VCpuInfoBuilder {
     pub fn valid_threads_per_core(mut self, input: i32) -> Self {
         let mut v = self.valid_threads_per_core.unwrap_or_default();
         v.push(input);
-        self.valid_threads_per_core = Some(v);
+        self.valid_threads_per_core = ::std::option::Option::Some(v);
         self
     }
     /// <p>The valid number of threads per core that can be configured for the instance type.</p>
     pub fn set_valid_threads_per_core(
         mut self,
-        input: std::option::Option<std::vec::Vec<i32>>,
+        input: ::std::option::Option<::std::vec::Vec<i32>>,
     ) -> Self {
         self.valid_threads_per_core = input;
         self

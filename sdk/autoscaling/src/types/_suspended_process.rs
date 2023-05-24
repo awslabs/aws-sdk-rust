@@ -3,22 +3,22 @@
 /// <p>Describes an auto scaling process that has been suspended.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuspendedProcess {
     /// <p>The name of the suspended process.</p>
     #[doc(hidden)]
-    pub process_name: std::option::Option<std::string::String>,
+    pub process_name: ::std::option::Option<::std::string::String>,
     /// <p>The reason that the process was suspended.</p>
     #[doc(hidden)]
-    pub suspension_reason: std::option::Option<std::string::String>,
+    pub suspension_reason: ::std::option::Option<::std::string::String>,
 }
 impl SuspendedProcess {
     /// <p>The name of the suspended process.</p>
-    pub fn process_name(&self) -> std::option::Option<&str> {
+    pub fn process_name(&self) -> ::std::option::Option<&str> {
         self.process_name.as_deref()
     }
     /// <p>The reason that the process was suspended.</p>
-    pub fn suspension_reason(&self) -> std::option::Option<&str> {
+    pub fn suspension_reason(&self) -> ::std::option::Option<&str> {
         self.suspension_reason.as_deref()
     }
 }
@@ -31,31 +31,36 @@ impl SuspendedProcess {
 
 /// A builder for [`SuspendedProcess`](crate::types::SuspendedProcess).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuspendedProcessBuilder {
-    pub(crate) process_name: std::option::Option<std::string::String>,
-    pub(crate) suspension_reason: std::option::Option<std::string::String>,
+    pub(crate) process_name: ::std::option::Option<::std::string::String>,
+    pub(crate) suspension_reason: ::std::option::Option<::std::string::String>,
 }
 impl SuspendedProcessBuilder {
     /// <p>The name of the suspended process.</p>
-    pub fn process_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.process_name = Some(input.into());
+    pub fn process_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.process_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the suspended process.</p>
-    pub fn set_process_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_process_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.process_name = input;
         self
     }
     /// <p>The reason that the process was suspended.</p>
-    pub fn suspension_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.suspension_reason = Some(input.into());
+    pub fn suspension_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.suspension_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that the process was suspended.</p>
     pub fn set_suspension_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.suspension_reason = input;
         self

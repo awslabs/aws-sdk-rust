@@ -2,15 +2,15 @@
 
 /// <p>An object representing the health status of the node group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodegroupHealth {
     /// <p>Any issues that are associated with the node group. </p>
     #[doc(hidden)]
-    pub issues: std::option::Option<std::vec::Vec<crate::types::Issue>>,
+    pub issues: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>,
 }
 impl NodegroupHealth {
     /// <p>Any issues that are associated with the node group. </p>
-    pub fn issues(&self) -> std::option::Option<&[crate::types::Issue]> {
+    pub fn issues(&self) -> ::std::option::Option<&[crate::types::Issue]> {
         self.issues.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl NodegroupHealth {
 
 /// A builder for [`NodegroupHealth`](crate::types::NodegroupHealth).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodegroupHealthBuilder {
-    pub(crate) issues: std::option::Option<std::vec::Vec<crate::types::Issue>>,
+    pub(crate) issues: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>,
 }
 impl NodegroupHealthBuilder {
     /// Appends an item to `issues`.
@@ -36,13 +38,13 @@ impl NodegroupHealthBuilder {
     pub fn issues(mut self, input: crate::types::Issue) -> Self {
         let mut v = self.issues.unwrap_or_default();
         v.push(input);
-        self.issues = Some(v);
+        self.issues = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any issues that are associated with the node group. </p>
     pub fn set_issues(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Issue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Issue>>,
     ) -> Self {
         self.issues = input;
         self

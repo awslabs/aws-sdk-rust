@@ -2,22 +2,22 @@
 
 /// <p>Specifies the redirect behavior and when a redirect is applied. For more information about routing rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects">Configuring advanced conditional redirects</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingRule {
     /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
     #[doc(hidden)]
-    pub condition: std::option::Option<crate::types::Condition>,
+    pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
     #[doc(hidden)]
-    pub redirect: std::option::Option<crate::types::Redirect>,
+    pub redirect: ::std::option::Option<crate::types::Redirect>,
 }
 impl RoutingRule {
     /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::types::Condition> {
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
         self.condition.as_ref()
     }
     /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
-    pub fn redirect(&self) -> std::option::Option<&crate::types::Redirect> {
+    pub fn redirect(&self) -> ::std::option::Option<&crate::types::Redirect> {
         self.redirect.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl RoutingRule {
 
 /// A builder for [`RoutingRule`](crate::types::RoutingRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoutingRuleBuilder {
-    pub(crate) condition: std::option::Option<crate::types::Condition>,
-    pub(crate) redirect: std::option::Option<crate::types::Redirect>,
+    pub(crate) condition: ::std::option::Option<crate::types::Condition>,
+    pub(crate) redirect: ::std::option::Option<crate::types::Redirect>,
 }
 impl RoutingRuleBuilder {
     /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
-        self.condition = Some(input);
+        self.condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might process the error.</p>
-    pub fn set_condition(mut self, input: std::option::Option<crate::types::Condition>) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
         self.condition = input;
         self
     }
     /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
     pub fn redirect(mut self, input: crate::types::Redirect) -> Self {
-        self.redirect = Some(input);
+        self.redirect = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.</p>
-    pub fn set_redirect(mut self, input: std::option::Option<crate::types::Redirect>) -> Self {
+    pub fn set_redirect(mut self, input: ::std::option::Option<crate::types::Redirect>) -> Self {
         self.redirect = input;
         self
     }

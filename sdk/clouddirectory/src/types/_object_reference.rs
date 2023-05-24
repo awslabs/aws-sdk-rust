@@ -2,7 +2,7 @@
 
 /// <p>The reference that identifies an object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectReference {
     /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct ObjectReference {
     /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub selector: std::option::Option<std::string::String>,
+    pub selector: ::std::option::Option<::std::string::String>,
 }
 impl ObjectReference {
     /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
@@ -20,7 +20,7 @@ impl ObjectReference {
     /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
     /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
     /// </ul>
-    pub fn selector(&self) -> std::option::Option<&str> {
+    pub fn selector(&self) -> ::std::option::Option<&str> {
         self.selector.as_deref()
     }
 }
@@ -33,9 +33,11 @@ impl ObjectReference {
 
 /// A builder for [`ObjectReference`](crate::types::ObjectReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObjectReferenceBuilder {
-    pub(crate) selector: std::option::Option<std::string::String>,
+    pub(crate) selector: ::std::option::Option<::std::string::String>,
 }
 impl ObjectReferenceBuilder {
     /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
@@ -44,8 +46,8 @@ impl ObjectReferenceBuilder {
     /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
     /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
     /// </ul>
-    pub fn selector(mut self, input: impl Into<std::string::String>) -> Self {
-        self.selector = Some(input.into());
+    pub fn selector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.selector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
@@ -54,7 +56,7 @@ impl ObjectReferenceBuilder {
     /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
     /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
     /// </ul>
-    pub fn set_selector(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_selector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selector = input;
         self
     }

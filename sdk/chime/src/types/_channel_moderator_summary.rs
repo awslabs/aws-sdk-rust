@@ -2,15 +2,15 @@
 
 /// <p>Summary of the details of a <code>ChannelModerator</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
     #[doc(hidden)]
-    pub moderator: std::option::Option<crate::types::Identity>,
+    pub moderator: ::std::option::Option<crate::types::Identity>,
 }
 impl ChannelModeratorSummary {
     /// <p>The data for a moderator.</p>
-    pub fn moderator(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn moderator(&self) -> ::std::option::Option<&crate::types::Identity> {
         self.moderator.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl ChannelModeratorSummary {
 
 /// A builder for [`ChannelModeratorSummary`](crate::types::ChannelModeratorSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelModeratorSummaryBuilder {
-    pub(crate) moderator: std::option::Option<crate::types::Identity>,
+    pub(crate) moderator: ::std::option::Option<crate::types::Identity>,
 }
 impl ChannelModeratorSummaryBuilder {
     /// <p>The data for a moderator.</p>
     pub fn moderator(mut self, input: crate::types::Identity) -> Self {
-        self.moderator = Some(input);
+        self.moderator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data for a moderator.</p>
-    pub fn set_moderator(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
+    pub fn set_moderator(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.moderator = input;
         self
     }

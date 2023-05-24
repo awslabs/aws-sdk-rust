@@ -2,7 +2,7 @@
 
 /// <p>Details about the related item you're adding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RelatedItemsUpdate {
     /// <p>Details about the related item you're adding.</p>
     ItemToAdd(crate::types::RelatedItem),
@@ -21,11 +21,11 @@ pub enum RelatedItemsUpdate {
 impl RelatedItemsUpdate {
     /// Tries to convert the enum instance into [`ItemToAdd`](crate::types::RelatedItemsUpdate::ItemToAdd), extracting the inner [`RelatedItem`](crate::types::RelatedItem).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_item_to_add(&self) -> std::result::Result<&crate::types::RelatedItem, &Self> {
+    pub fn as_item_to_add(&self) -> ::std::result::Result<&crate::types::RelatedItem, &Self> {
         if let RelatedItemsUpdate::ItemToAdd(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ItemToAdd`](crate::types::RelatedItemsUpdate::ItemToAdd).
@@ -34,11 +34,11 @@ impl RelatedItemsUpdate {
     }
     /// Tries to convert the enum instance into [`ItemToRemove`](crate::types::RelatedItemsUpdate::ItemToRemove), extracting the inner [`ItemIdentifier`](crate::types::ItemIdentifier).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_item_to_remove(&self) -> std::result::Result<&crate::types::ItemIdentifier, &Self> {
+    pub fn as_item_to_remove(&self) -> ::std::result::Result<&crate::types::ItemIdentifier, &Self> {
         if let RelatedItemsUpdate::ItemToRemove(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ItemToRemove`](crate::types::RelatedItemsUpdate::ItemToRemove).

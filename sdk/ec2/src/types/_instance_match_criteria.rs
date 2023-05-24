@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InstanceMatchCriteria {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum InstanceMatchCriteria {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InstanceMatchCriteria {
+impl ::std::convert::From<&str> for InstanceMatchCriteria {
     fn from(s: &str) -> Self {
         match s {
             "open" => InstanceMatchCriteria::Open,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for InstanceMatchCriteria {
         }
     }
 }
-impl std::str::FromStr for InstanceMatchCriteria {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InstanceMatchCriteria {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceMatchCriteria::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InstanceMatchCriteria::from(s))
     }
 }
 impl InstanceMatchCriteria {
@@ -86,7 +86,7 @@ impl InstanceMatchCriteria {
         &["open", "targeted"]
     }
 }
-impl AsRef<str> for InstanceMatchCriteria {
+impl ::std::convert::AsRef<str> for InstanceMatchCriteria {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,47 +2,49 @@
 
 /// <p>Information about a compliance item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceItemEntry {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     #[doc(hidden)]
-    pub severity: std::option::Option<crate::types::ComplianceSeverity>,
+    pub severity: ::std::option::Option<crate::types::ComplianceSeverity>,
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ComplianceStatus>,
+    pub status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     #[doc(hidden)]
-    pub details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ComplianceItemEntry {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::types::ComplianceSeverity> {
+    pub fn severity(&self) -> ::std::option::Option<&crate::types::ComplianceSeverity> {
         self.severity.as_ref()
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ComplianceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
         self.status.as_ref()
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     pub fn details(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.details.as_ref()
     }
 }
@@ -55,58 +57,61 @@ impl ComplianceItemEntry {
 
 /// A builder for [`ComplianceItemEntry`](crate::types::ComplianceItemEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComplianceItemEntryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) severity: std::option::Option<crate::types::ComplianceSeverity>,
-    pub(crate) status: std::option::Option<crate::types::ComplianceStatus>,
-    pub(crate) details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) severity: ::std::option::Option<crate::types::ComplianceSeverity>,
+    pub(crate) status: ::std::option::Option<crate::types::ComplianceStatus>,
+    pub(crate) details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ComplianceItemEntryBuilder {
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The compliance item ID. For example, if the compliance item is a Windows patch, the ID could be the number of the KB article.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the title of the KB article for the patch; for example: Security Update for Active Directory Federation Services. </p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     pub fn severity(mut self, input: crate::types::ComplianceSeverity) -> Self {
-        self.severity = Some(input);
+        self.severity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low, Informational, Unspecified.</p>
     pub fn set_severity(
         mut self,
-        input: std::option::Option<crate::types::ComplianceSeverity>,
+        input: ::std::option::Option<crate::types::ComplianceSeverity>,
     ) -> Self {
         self.severity = input;
         self
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ComplianceStatus>,
+        input: ::std::option::Option<crate::types::ComplianceStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -118,19 +123,19 @@ impl ComplianceItemEntryBuilder {
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     pub fn details(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.details.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.details = Some(hash_map);
+        self.details = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A "Key": "Value" tag combination for the compliance item.</p>
     pub fn set_details(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.details = input;

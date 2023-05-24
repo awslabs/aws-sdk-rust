@@ -2,15 +2,15 @@
 
 /// <p>Details about an antenna demod decode <code>Config</code> used in a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntennaDemodDecodeDetails {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
     #[doc(hidden)]
-    pub output_node: std::option::Option<std::string::String>,
+    pub output_node: ::std::option::Option<::std::string::String>,
 }
 impl AntennaDemodDecodeDetails {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
-    pub fn output_node(&self) -> std::option::Option<&str> {
+    pub fn output_node(&self) -> ::std::option::Option<&str> {
         self.output_node.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AntennaDemodDecodeDetails {
 
 /// A builder for [`AntennaDemodDecodeDetails`](crate::types::AntennaDemodDecodeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AntennaDemodDecodeDetailsBuilder {
-    pub(crate) output_node: std::option::Option<std::string::String>,
+    pub(crate) output_node: ::std::option::Option<::std::string::String>,
 }
 impl AntennaDemodDecodeDetailsBuilder {
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
-    pub fn output_node(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_node = Some(input.into());
+    pub fn output_node(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output_node = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of an antenna demod decode output node used in a contact.</p>
-    pub fn set_output_node(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_node(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_node = input;
         self
     }

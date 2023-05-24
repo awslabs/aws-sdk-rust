@@ -2,17 +2,17 @@
 
 /// <p>Contains other options for the certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateOptions {
     /// <p>Whether to add the certificate to a transparency log.</p>
     /// <p>Valid values: <code>DISABLED</code> | <code>ENABLED</code> </p>
     #[doc(hidden)]
-    pub certificate_transparency_logging_preference: std::option::Option<std::string::String>,
+    pub certificate_transparency_logging_preference: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateOptions {
     /// <p>Whether to add the certificate to a transparency log.</p>
     /// <p>Valid values: <code>DISABLED</code> | <code>ENABLED</code> </p>
-    pub fn certificate_transparency_logging_preference(&self) -> std::option::Option<&str> {
+    pub fn certificate_transparency_logging_preference(&self) -> ::std::option::Option<&str> {
         self.certificate_transparency_logging_preference.as_deref()
     }
 }
@@ -25,26 +25,29 @@ impl AwsCertificateManagerCertificateOptions {
 
 /// A builder for [`AwsCertificateManagerCertificateOptions`](crate::types::AwsCertificateManagerCertificateOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCertificateManagerCertificateOptionsBuilder {
     pub(crate) certificate_transparency_logging_preference:
-        std::option::Option<std::string::String>,
+        ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateOptionsBuilder {
     /// <p>Whether to add the certificate to a transparency log.</p>
     /// <p>Valid values: <code>DISABLED</code> | <code>ENABLED</code> </p>
     pub fn certificate_transparency_logging_preference(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.certificate_transparency_logging_preference = Some(input.into());
+        self.certificate_transparency_logging_preference =
+            ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether to add the certificate to a transparency log.</p>
     /// <p>Valid values: <code>DISABLED</code> | <code>ENABLED</code> </p>
     pub fn set_certificate_transparency_logging_preference(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.certificate_transparency_logging_preference = input;
         self

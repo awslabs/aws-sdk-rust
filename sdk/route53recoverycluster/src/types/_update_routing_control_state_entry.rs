@@ -2,22 +2,24 @@
 
 /// <p>A routing control state entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStateEntry {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
     #[doc(hidden)]
-    pub routing_control_arn: std::option::Option<std::string::String>,
+    pub routing_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The routing control state in a set of routing control state entries.</p>
     #[doc(hidden)]
-    pub routing_control_state: std::option::Option<crate::types::RoutingControlState>,
+    pub routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
 }
 impl UpdateRoutingControlStateEntry {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> ::std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
     /// <p>The routing control state in a set of routing control state entries.</p>
-    pub fn routing_control_state(&self) -> std::option::Option<&crate::types::RoutingControlState> {
+    pub fn routing_control_state(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RoutingControlState> {
         self.routing_control_state.as_ref()
     }
 }
@@ -30,34 +32,39 @@ impl UpdateRoutingControlStateEntry {
 
 /// A builder for [`UpdateRoutingControlStateEntry`](crate::types::UpdateRoutingControlStateEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateRoutingControlStateEntryBuilder {
-    pub(crate) routing_control_arn: std::option::Option<std::string::String>,
-    pub(crate) routing_control_state: std::option::Option<crate::types::RoutingControlState>,
+    pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_control_state: ::std::option::Option<crate::types::RoutingControlState>,
 }
 impl UpdateRoutingControlStateEntryBuilder {
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-    pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.routing_control_arn = Some(input.into());
+    pub fn routing_control_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
     pub fn set_routing_control_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.routing_control_arn = input;
         self
     }
     /// <p>The routing control state in a set of routing control state entries.</p>
     pub fn routing_control_state(mut self, input: crate::types::RoutingControlState) -> Self {
-        self.routing_control_state = Some(input);
+        self.routing_control_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The routing control state in a set of routing control state entries.</p>
     pub fn set_routing_control_state(
         mut self,
-        input: std::option::Option<crate::types::RoutingControlState>,
+        input: ::std::option::Option<crate::types::RoutingControlState>,
     ) -> Self {
         self.routing_control_state = input;
         self

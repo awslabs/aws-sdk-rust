@@ -6,56 +6,59 @@ pub use crate::operation::update_dataset::_update_dataset_input::UpdateDatasetIn
 /// Fluent builder constructing a request to `UpdateDataset`.
 ///
 /// <p>Modifies the definition of an existing DataBrew dataset.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDatasetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_dataset::builders::UpdateDatasetInputBuilder,
 }
 impl UpdateDatasetFluentBuilder {
     /// Creates a new `UpdateDataset`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_dataset::UpdateDataset,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_dataset::UpdateDatasetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl UpdateDatasetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_dataset::UpdateDatasetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_dataset::UpdateDatasetError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the dataset to be updated.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the dataset to be updated.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -90,7 +93,7 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::InputFormat>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
@@ -102,7 +105,7 @@ impl UpdateDatasetFluentBuilder {
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn set_format_options(
         mut self,
-        input: std::option::Option<crate::types::FormatOptions>,
+        input: ::std::option::Option<crate::types::FormatOptions>,
     ) -> Self {
         self.inner = self.inner.set_format_options(input);
         self
@@ -113,7 +116,7 @@ impl UpdateDatasetFluentBuilder {
         self
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
-    pub fn set_input(mut self, input: std::option::Option<crate::types::Input>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
         self.inner = self.inner.set_input(input);
         self
     }
@@ -125,7 +128,7 @@ impl UpdateDatasetFluentBuilder {
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn set_path_options(
         mut self,
-        input: std::option::Option<crate::types::PathOptions>,
+        input: ::std::option::Option<crate::types::PathOptions>,
     ) -> Self {
         self.inner = self.inner.set_path_options(input);
         self

@@ -2,36 +2,36 @@
 
 /// <p>Provides information about an WAF web access control list (web ACL).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafWebAclDetails {
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
     #[doc(hidden)]
-    pub default_action: std::option::Option<std::string::String>,
+    pub default_action: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::AwsWafWebAclRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>,
     /// <p>A unique identifier for a web ACL.</p>
     #[doc(hidden)]
-    pub web_acl_id: std::option::Option<std::string::String>,
+    pub web_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafWebAclDetails {
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
-    pub fn default_action(&self) -> std::option::Option<&str> {
+    pub fn default_action(&self) -> ::std::option::Option<&str> {
         self.default_action.as_deref()
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::AwsWafWebAclRule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::AwsWafWebAclRule]> {
         self.rules.as_deref()
     }
     /// <p>A unique identifier for a web ACL.</p>
-    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+    pub fn web_acl_id(&self) -> ::std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
 }
@@ -44,31 +44,39 @@ impl AwsWafWebAclDetails {
 
 /// A builder for [`AwsWafWebAclDetails`](crate::types::AwsWafWebAclDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafWebAclDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) default_action: std::option::Option<std::string::String>,
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::AwsWafWebAclRule>>,
-    pub(crate) web_acl_id: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) default_action: ::std::option::Option<::std::string::String>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>,
+    pub(crate) web_acl_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafWebAclDetailsBuilder {
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A friendly name or description of the web ACL. You can't change the name of a web ACL after you create it.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
-    pub fn default_action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_action = Some(input.into());
+    pub fn default_action(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action to perform if none of the rules contained in the web ACL match.</p>
-    pub fn set_default_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_action(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_action = input;
         self
     }
@@ -80,24 +88,24 @@ impl AwsWafWebAclDetailsBuilder {
     pub fn rules(mut self, input: crate::types::AwsWafWebAclRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array that contains the action for each rule in a web ACL, the priority of the rule, and the ID of the rule.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsWafWebAclRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafWebAclRule>>,
     ) -> Self {
         self.rules = input;
         self
     }
     /// <p>A unique identifier for a web ACL.</p>
-    pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.web_acl_id = Some(input.into());
+    pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.web_acl_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a web ACL.</p>
-    pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.web_acl_id = input;
         self
     }

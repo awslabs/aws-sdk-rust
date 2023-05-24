@@ -2,22 +2,22 @@
 
 /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanFuotaTaskGetInfo {
     /// <p>The frequency band (RFRegion) value.</p>
     #[doc(hidden)]
-    pub rf_region: std::option::Option<std::string::String>,
+    pub rf_region: ::std::option::Option<::std::string::String>,
     /// <p>Start time of a FUOTA task.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LoRaWanFuotaTaskGetInfo {
     /// <p>The frequency band (RFRegion) value.</p>
-    pub fn rf_region(&self) -> std::option::Option<&str> {
+    pub fn rf_region(&self) -> ::std::option::Option<&str> {
         self.rf_region.as_deref()
     }
     /// <p>Start time of a FUOTA task.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl LoRaWanFuotaTaskGetInfo {
 
 /// A builder for [`LoRaWanFuotaTaskGetInfo`](crate::types::LoRaWanFuotaTaskGetInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanFuotaTaskGetInfoBuilder {
-    pub(crate) rf_region: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) rf_region: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LoRaWanFuotaTaskGetInfoBuilder {
     /// <p>The frequency band (RFRegion) value.</p>
-    pub fn rf_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rf_region = Some(input.into());
+    pub fn rf_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rf_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frequency band (RFRegion) value.</p>
-    pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rf_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rf_region = input;
         self
     }
     /// <p>Start time of a FUOTA task.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Start time of a FUOTA task.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self

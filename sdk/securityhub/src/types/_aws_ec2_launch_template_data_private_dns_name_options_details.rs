@@ -2,7 +2,7 @@
 
 /// <p> Describes the options for Amazon EC2 instance hostnames. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. </p>
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
     pub enable_resource_name_dns_a_record: bool,
     /// <p> The type of hostname for EC2 instances. </p>
     #[doc(hidden)]
-    pub hostname_type: std::option::Option<std::string::String>,
+    pub hostname_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. </p>
@@ -24,7 +24,7 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
         self.enable_resource_name_dns_a_record
     }
     /// <p> The type of hostname for EC2 instances. </p>
-    pub fn hostname_type(&self) -> std::option::Option<&str> {
+    pub fn hostname_type(&self) -> ::std::option::Option<&str> {
         self.hostname_type.as_deref()
     }
 }
@@ -39,46 +39,54 @@ impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsBuilder {
-    pub(crate) enable_resource_name_dns_aaaa_record: std::option::Option<bool>,
-    pub(crate) enable_resource_name_dns_a_record: std::option::Option<bool>,
-    pub(crate) hostname_type: std::option::Option<std::string::String>,
+    pub(crate) enable_resource_name_dns_aaaa_record: ::std::option::Option<bool>,
+    pub(crate) enable_resource_name_dns_a_record: ::std::option::Option<bool>,
+    pub(crate) hostname_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsBuilder {
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. </p>
     pub fn enable_resource_name_dns_aaaa_record(mut self, input: bool) -> Self {
-        self.enable_resource_name_dns_aaaa_record = Some(input);
+        self.enable_resource_name_dns_aaaa_record = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records. </p>
     pub fn set_enable_resource_name_dns_aaaa_record(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.enable_resource_name_dns_aaaa_record = input;
         self
     }
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS A records. </p>
     pub fn enable_resource_name_dns_a_record(mut self, input: bool) -> Self {
-        self.enable_resource_name_dns_a_record = Some(input);
+        self.enable_resource_name_dns_a_record = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether to respond to DNS queries for instance hostnames with DNS A records. </p>
     pub fn set_enable_resource_name_dns_a_record(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.enable_resource_name_dns_a_record = input;
         self
     }
     /// <p> The type of hostname for EC2 instances. </p>
-    pub fn hostname_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hostname_type = Some(input.into());
+    pub fn hostname_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hostname_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of hostname for EC2 instances. </p>
-    pub fn set_hostname_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hostname_type = input;
         self
     }

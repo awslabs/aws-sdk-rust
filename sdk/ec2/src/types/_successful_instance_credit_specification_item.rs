@@ -2,15 +2,15 @@
 
 /// <p>Describes the burstable performance instance whose credit option for CPU usage was successfully modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuccessfulInstanceCreditSpecificationItem {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl SuccessfulInstanceCreditSpecificationItem {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl SuccessfulInstanceCreditSpecificationItem {
 
 /// A builder for [`SuccessfulInstanceCreditSpecificationItem`](crate::types::SuccessfulInstanceCreditSpecificationItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuccessfulInstanceCreditSpecificationItemBuilder {
-    pub(crate) instance_id: std::option::Option<std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl SuccessfulInstanceCreditSpecificationItemBuilder {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }

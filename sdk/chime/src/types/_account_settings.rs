@@ -2,22 +2,22 @@
 
 /// <p>Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
     #[doc(hidden)]
-    pub disable_remote_control: std::option::Option<bool>,
+    pub disable_remote_control: ::std::option::Option<bool>,
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
     #[doc(hidden)]
-    pub enable_dial_out: std::option::Option<bool>,
+    pub enable_dial_out: ::std::option::Option<bool>,
 }
 impl AccountSettings {
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
-    pub fn disable_remote_control(&self) -> std::option::Option<bool> {
+    pub fn disable_remote_control(&self) -> ::std::option::Option<bool> {
         self.disable_remote_control
     }
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
-    pub fn enable_dial_out(&self) -> std::option::Option<bool> {
+    pub fn enable_dial_out(&self) -> ::std::option::Option<bool> {
         self.enable_dial_out
     }
 }
@@ -30,29 +30,31 @@ impl AccountSettings {
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountSettingsBuilder {
-    pub(crate) disable_remote_control: std::option::Option<bool>,
-    pub(crate) enable_dial_out: std::option::Option<bool>,
+    pub(crate) disable_remote_control: ::std::option::Option<bool>,
+    pub(crate) enable_dial_out: ::std::option::Option<bool>,
 }
 impl AccountSettingsBuilder {
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
     pub fn disable_remote_control(mut self, input: bool) -> Self {
-        self.disable_remote_control = Some(input);
+        self.disable_remote_control = ::std::option::Option::Some(input);
         self
     }
     /// <p>Setting that stops or starts remote control of shared screens during meetings.</p>
-    pub fn set_disable_remote_control(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_remote_control(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_remote_control = input;
         self
     }
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
     pub fn enable_dial_out(mut self, input: bool) -> Self {
-        self.enable_dial_out = Some(input);
+        self.enable_dial_out = ::std::option::Option::Some(input);
         self
     }
     /// <p>Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting without the Amazon Chime App</a>.</p>
-    pub fn set_enable_dial_out(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_dial_out(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_dial_out = input;
         self
     }

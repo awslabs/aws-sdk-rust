@@ -128,13 +128,13 @@
 /// <p>Specifies the encoding of the log file so that the file can be read correctly. The default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code> can be used here.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CloudWatchLogsEncoding {
     #[allow(missing_docs)] // documentation missing in model
@@ -324,7 +324,7 @@ pub enum CloudWatchLogsEncoding {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CloudWatchLogsEncoding {
+impl ::std::convert::From<&str> for CloudWatchLogsEncoding {
     fn from(s: &str) -> Self {
         match s {
             "ascii" => CloudWatchLogsEncoding::Ascii,
@@ -425,11 +425,11 @@ impl std::convert::From<&str> for CloudWatchLogsEncoding {
         }
     }
 }
-impl std::str::FromStr for CloudWatchLogsEncoding {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CloudWatchLogsEncoding {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchLogsEncoding::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CloudWatchLogsEncoding::from(s))
     }
 }
 impl CloudWatchLogsEncoding {
@@ -629,7 +629,7 @@ impl CloudWatchLogsEncoding {
         ]
     }
 }
-impl AsRef<str> for CloudWatchLogsEncoding {
+impl ::std::convert::AsRef<str> for CloudWatchLogsEncoding {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

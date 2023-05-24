@@ -2,36 +2,36 @@
 
 /// <p>Contains details about a state entered during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StateEnteredEventDetails {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     #[doc(hidden)]
-    pub input: std::option::Option<std::string::String>,
+    pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
     #[doc(hidden)]
-    pub input_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl StateEnteredEventDetails {
     /// <p>The name of the state.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn input_details(
         &self,
-    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
 }
-impl std::fmt::Debug for StateEnteredEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StateEnteredEventDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StateEnteredEventDetails");
         formatter.field("name", &self.name);
         formatter.field("input", &"*** Sensitive Data Redacted ***");
@@ -48,42 +48,42 @@ impl StateEnteredEventDetails {
 
 /// A builder for [`StateEnteredEventDetails`](crate::types::StateEnteredEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StateEnteredEventDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) input: std::option::Option<std::string::String>,
-    pub(crate) input_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) input: ::std::option::Option<::std::string::String>,
+    pub(crate) input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl StateEnteredEventDetailsBuilder {
     /// <p>The name of the state.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the state.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input = Some(input.into());
+    pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn input_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
-        self.input_details = Some(input);
+        self.input_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn set_input_details(
         mut self,
-        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     ) -> Self {
         self.input_details = input;
         self
@@ -97,8 +97,8 @@ impl StateEnteredEventDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for StateEnteredEventDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StateEnteredEventDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StateEnteredEventDetailsBuilder");
         formatter.field("name", &self.name);
         formatter.field("input", &"*** Sensitive Data Redacted ***");

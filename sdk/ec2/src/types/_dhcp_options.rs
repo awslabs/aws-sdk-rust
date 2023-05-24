@@ -2,36 +2,37 @@
 
 /// <p>Describes a set of DHCP options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DhcpOptions {
     /// <p>One or more DHCP options in the set.</p>
     #[doc(hidden)]
-    pub dhcp_configurations: std::option::Option<std::vec::Vec<crate::types::DhcpConfiguration>>,
+    pub dhcp_configurations:
+        ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
     /// <p>The ID of the set of DHCP options.</p>
     #[doc(hidden)]
-    pub dhcp_options_id: std::option::Option<std::string::String>,
+    pub dhcp_options_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the DHCP options set.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DhcpOptions {
     /// <p>One or more DHCP options in the set.</p>
-    pub fn dhcp_configurations(&self) -> std::option::Option<&[crate::types::DhcpConfiguration]> {
+    pub fn dhcp_configurations(&self) -> ::std::option::Option<&[crate::types::DhcpConfiguration]> {
         self.dhcp_configurations.as_deref()
     }
     /// <p>The ID of the set of DHCP options.</p>
-    pub fn dhcp_options_id(&self) -> std::option::Option<&str> {
+    pub fn dhcp_options_id(&self) -> ::std::option::Option<&str> {
         self.dhcp_options_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>Any tags assigned to the DHCP options set.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,13 +45,15 @@ impl DhcpOptions {
 
 /// A builder for [`DhcpOptions`](crate::types::DhcpOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DhcpOptionsBuilder {
     pub(crate) dhcp_configurations:
-        std::option::Option<std::vec::Vec<crate::types::DhcpConfiguration>>,
-    pub(crate) dhcp_options_id: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
+    pub(crate) dhcp_options_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DhcpOptionsBuilder {
     /// Appends an item to `dhcp_configurations`.
@@ -61,34 +64,40 @@ impl DhcpOptionsBuilder {
     pub fn dhcp_configurations(mut self, input: crate::types::DhcpConfiguration) -> Self {
         let mut v = self.dhcp_configurations.unwrap_or_default();
         v.push(input);
-        self.dhcp_configurations = Some(v);
+        self.dhcp_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more DHCP options in the set.</p>
     pub fn set_dhcp_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DhcpConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DhcpConfiguration>>,
     ) -> Self {
         self.dhcp_configurations = input;
         self
     }
     /// <p>The ID of the set of DHCP options.</p>
-    pub fn dhcp_options_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dhcp_options_id = Some(input.into());
+    pub fn dhcp_options_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dhcp_options_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the set of DHCP options.</p>
-    pub fn set_dhcp_options_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dhcp_options_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dhcp_options_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
@@ -100,13 +109,13 @@ impl DhcpOptionsBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the DHCP options set.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

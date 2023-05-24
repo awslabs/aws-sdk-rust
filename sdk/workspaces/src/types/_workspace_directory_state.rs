@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WorkspaceDirectoryState {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum WorkspaceDirectoryState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WorkspaceDirectoryState {
+impl ::std::convert::From<&str> for WorkspaceDirectoryState {
     fn from(s: &str) -> Self {
         match s {
             "DEREGISTERED" => WorkspaceDirectoryState::Deregistered,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for WorkspaceDirectoryState {
         }
     }
 }
-impl std::str::FromStr for WorkspaceDirectoryState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WorkspaceDirectoryState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkspaceDirectoryState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WorkspaceDirectoryState::from(s))
     }
 }
 impl WorkspaceDirectoryState {
@@ -107,7 +107,7 @@ impl WorkspaceDirectoryState {
         ]
     }
 }
-impl AsRef<str> for WorkspaceDirectoryState {
+impl ::std::convert::AsRef<str> for WorkspaceDirectoryState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

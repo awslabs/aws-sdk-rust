@@ -2,7 +2,7 @@
 pub(crate) fn de_virtual_router_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::VirtualRouterData>,
+    ::std::option::Option<crate::types::VirtualRouterData>,
     crate::operation::describe_virtual_router::DescribeVirtualRouterError,
 > {
     (!body.is_empty())

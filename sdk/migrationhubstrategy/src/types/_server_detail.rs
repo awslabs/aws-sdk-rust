@@ -2,116 +2,116 @@
 
 /// <p> Detailed information about a server. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerDetail {
     /// <p> The server ID. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the server. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> A set of recommendations. </p>
     #[doc(hidden)]
-    pub recommendation_set: std::option::Option<crate::types::RecommendationSet>,
+    pub recommendation_set: ::std::option::Option<crate::types::RecommendationSet>,
     /// <p> The status of assessment for the server. </p>
     #[doc(hidden)]
-    pub data_collection_status: std::option::Option<crate::types::RunTimeAssessmentStatus>,
+    pub data_collection_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p> A list of anti-pattern severity summaries. </p>
     #[doc(hidden)]
     pub list_antipattern_severity_summary:
-        std::option::Option<std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
     /// <p> System information about the server. </p>
     #[doc(hidden)]
-    pub system_info: std::option::Option<crate::types::SystemInfo>,
+    pub system_info: ::std::option::Option<crate::types::SystemInfo>,
     /// <p> A list of strategy summaries. </p>
     #[doc(hidden)]
     pub application_component_strategy_summary:
-        std::option::Option<std::vec::Vec<crate::types::StrategySummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
     #[doc(hidden)]
-    pub antipattern_report_s3_object: std::option::Option<crate::types::S3Object>,
+    pub antipattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p> The status of the anti-pattern report generation. </p>
     #[doc(hidden)]
-    pub antipattern_report_status: std::option::Option<crate::types::AntipatternReportStatus>,
+    pub antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
     /// <p> A message about the status of the anti-pattern report generation. </p>
     #[doc(hidden)]
-    pub antipattern_report_status_message: std::option::Option<std::string::String>,
+    pub antipattern_report_status_message: ::std::option::Option<::std::string::String>,
     /// <p> The type of server. </p>
     #[doc(hidden)]
-    pub server_type: std::option::Option<std::string::String>,
+    pub server_type: ::std::option::Option<::std::string::String>,
     /// <p> The timestamp of when the server was assessed. </p>
     #[doc(hidden)]
-    pub last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_analyzed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error in server analysis.</p>
     #[doc(hidden)]
-    pub server_error: std::option::Option<crate::types::ServerError>,
+    pub server_error: ::std::option::Option<crate::types::ServerError>,
 }
 impl ServerDetail {
     /// <p> The server ID. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The name of the server. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> A set of recommendations. </p>
-    pub fn recommendation_set(&self) -> std::option::Option<&crate::types::RecommendationSet> {
+    pub fn recommendation_set(&self) -> ::std::option::Option<&crate::types::RecommendationSet> {
         self.recommendation_set.as_ref()
     }
     /// <p> The status of assessment for the server. </p>
     pub fn data_collection_status(
         &self,
-    ) -> std::option::Option<&crate::types::RunTimeAssessmentStatus> {
+    ) -> ::std::option::Option<&crate::types::RunTimeAssessmentStatus> {
         self.data_collection_status.as_ref()
     }
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p> A list of anti-pattern severity summaries. </p>
     pub fn list_antipattern_severity_summary(
         &self,
-    ) -> std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
+    ) -> ::std::option::Option<&[crate::types::AntipatternSeveritySummary]> {
         self.list_antipattern_severity_summary.as_deref()
     }
     /// <p> System information about the server. </p>
-    pub fn system_info(&self) -> std::option::Option<&crate::types::SystemInfo> {
+    pub fn system_info(&self) -> ::std::option::Option<&crate::types::SystemInfo> {
         self.system_info.as_ref()
     }
     /// <p> A list of strategy summaries. </p>
     pub fn application_component_strategy_summary(
         &self,
-    ) -> std::option::Option<&[crate::types::StrategySummary]> {
+    ) -> ::std::option::Option<&[crate::types::StrategySummary]> {
         self.application_component_strategy_summary.as_deref()
     }
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
-    pub fn antipattern_report_s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn antipattern_report_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.antipattern_report_s3_object.as_ref()
     }
     /// <p> The status of the anti-pattern report generation. </p>
     pub fn antipattern_report_status(
         &self,
-    ) -> std::option::Option<&crate::types::AntipatternReportStatus> {
+    ) -> ::std::option::Option<&crate::types::AntipatternReportStatus> {
         self.antipattern_report_status.as_ref()
     }
     /// <p> A message about the status of the anti-pattern report generation. </p>
-    pub fn antipattern_report_status_message(&self) -> std::option::Option<&str> {
+    pub fn antipattern_report_status_message(&self) -> ::std::option::Option<&str> {
         self.antipattern_report_status_message.as_deref()
     }
     /// <p> The type of server. </p>
-    pub fn server_type(&self) -> std::option::Option<&str> {
+    pub fn server_type(&self) -> ::std::option::Option<&str> {
         self.server_type.as_deref()
     }
     /// <p> The timestamp of when the server was assessed. </p>
-    pub fn last_analyzed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_analyzed_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_analyzed_timestamp.as_ref()
     }
     /// <p>The error in server analysis.</p>
-    pub fn server_error(&self) -> std::option::Option<&crate::types::ServerError> {
+    pub fn server_error(&self) -> ::std::option::Option<&crate::types::ServerError> {
         self.server_error.as_ref()
     }
 }
@@ -124,80 +124,88 @@ impl ServerDetail {
 
 /// A builder for [`ServerDetail`](crate::types::ServerDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerDetailBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) recommendation_set: std::option::Option<crate::types::RecommendationSet>,
-    pub(crate) data_collection_status: std::option::Option<crate::types::RunTimeAssessmentStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) recommendation_set: ::std::option::Option<crate::types::RecommendationSet>,
+    pub(crate) data_collection_status: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) list_antipattern_severity_summary:
-        std::option::Option<std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
-    pub(crate) system_info: std::option::Option<crate::types::SystemInfo>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+    pub(crate) system_info: ::std::option::Option<crate::types::SystemInfo>,
     pub(crate) application_component_strategy_summary:
-        std::option::Option<std::vec::Vec<crate::types::StrategySummary>>,
-    pub(crate) antipattern_report_s3_object: std::option::Option<crate::types::S3Object>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
+    pub(crate) antipattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     pub(crate) antipattern_report_status:
-        std::option::Option<crate::types::AntipatternReportStatus>,
-    pub(crate) antipattern_report_status_message: std::option::Option<std::string::String>,
-    pub(crate) server_type: std::option::Option<std::string::String>,
-    pub(crate) last_analyzed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) server_error: std::option::Option<crate::types::ServerError>,
+        ::std::option::Option<crate::types::AntipatternReportStatus>,
+    pub(crate) antipattern_report_status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) server_type: ::std::option::Option<::std::string::String>,
+    pub(crate) last_analyzed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) server_error: ::std::option::Option<crate::types::ServerError>,
 }
 impl ServerDetailBuilder {
     /// <p> The server ID. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The server ID. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> The name of the server. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the server. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> A set of recommendations. </p>
     pub fn recommendation_set(mut self, input: crate::types::RecommendationSet) -> Self {
-        self.recommendation_set = Some(input);
+        self.recommendation_set = ::std::option::Option::Some(input);
         self
     }
     /// <p> A set of recommendations. </p>
     pub fn set_recommendation_set(
         mut self,
-        input: std::option::Option<crate::types::RecommendationSet>,
+        input: ::std::option::Option<crate::types::RecommendationSet>,
     ) -> Self {
         self.recommendation_set = input;
         self
     }
     /// <p> The status of assessment for the server. </p>
     pub fn data_collection_status(mut self, input: crate::types::RunTimeAssessmentStatus) -> Self {
-        self.data_collection_status = Some(input);
+        self.data_collection_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of assessment for the server. </p>
     pub fn set_data_collection_status(
         mut self,
-        input: std::option::Option<crate::types::RunTimeAssessmentStatus>,
+        input: ::std::option::Option<crate::types::RunTimeAssessmentStatus>,
     ) -> Self {
         self.data_collection_status = input;
         self
     }
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message about the status of data collection, which contains detailed descriptions of any error messages. </p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
@@ -212,24 +220,27 @@ impl ServerDetailBuilder {
     ) -> Self {
         let mut v = self.list_antipattern_severity_summary.unwrap_or_default();
         v.push(input);
-        self.list_antipattern_severity_summary = Some(v);
+        self.list_antipattern_severity_summary = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of anti-pattern severity summaries. </p>
     pub fn set_list_antipattern_severity_summary(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AntipatternSeveritySummary>>,
     ) -> Self {
         self.list_antipattern_severity_summary = input;
         self
     }
     /// <p> System information about the server. </p>
     pub fn system_info(mut self, input: crate::types::SystemInfo) -> Self {
-        self.system_info = Some(input);
+        self.system_info = ::std::option::Option::Some(input);
         self
     }
     /// <p> System information about the server. </p>
-    pub fn set_system_info(mut self, input: std::option::Option<crate::types::SystemInfo>) -> Self {
+    pub fn set_system_info(
+        mut self,
+        input: ::std::option::Option<crate::types::SystemInfo>,
+    ) -> Self {
         self.system_info = input;
         self
     }
@@ -246,26 +257,26 @@ impl ServerDetailBuilder {
             .application_component_strategy_summary
             .unwrap_or_default();
         v.push(input);
-        self.application_component_strategy_summary = Some(v);
+        self.application_component_strategy_summary = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of strategy summaries. </p>
     pub fn set_application_component_strategy_summary(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StrategySummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StrategySummary>>,
     ) -> Self {
         self.application_component_strategy_summary = input;
         self
     }
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
     pub fn antipattern_report_s3_object(mut self, input: crate::types::S3Object) -> Self {
-        self.antipattern_report_s3_object = Some(input);
+        self.antipattern_report_s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p> The S3 bucket name and Amazon S3 key name for anti-pattern report. </p>
     pub fn set_antipattern_report_s3_object(
         mut self,
-        input: std::option::Option<crate::types::S3Object>,
+        input: ::std::option::Option<crate::types::S3Object>,
     ) -> Self {
         self.antipattern_report_s3_object = input;
         self
@@ -275,13 +286,13 @@ impl ServerDetailBuilder {
         mut self,
         input: crate::types::AntipatternReportStatus,
     ) -> Self {
-        self.antipattern_report_status = Some(input);
+        self.antipattern_report_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the anti-pattern report generation. </p>
     pub fn set_antipattern_report_status(
         mut self,
-        input: std::option::Option<crate::types::AntipatternReportStatus>,
+        input: ::std::option::Option<crate::types::AntipatternReportStatus>,
     ) -> Self {
         self.antipattern_report_status = input;
         self
@@ -289,51 +300,51 @@ impl ServerDetailBuilder {
     /// <p> A message about the status of the anti-pattern report generation. </p>
     pub fn antipattern_report_status_message(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.antipattern_report_status_message = Some(input.into());
+        self.antipattern_report_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message about the status of the anti-pattern report generation. </p>
     pub fn set_antipattern_report_status_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.antipattern_report_status_message = input;
         self
     }
     /// <p> The type of server. </p>
-    pub fn server_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_type = Some(input.into());
+    pub fn server_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of server. </p>
-    pub fn set_server_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_type = input;
         self
     }
     /// <p> The timestamp of when the server was assessed. </p>
-    pub fn last_analyzed_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_analyzed_timestamp = Some(input);
+    pub fn last_analyzed_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_analyzed_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p> The timestamp of when the server was assessed. </p>
     pub fn set_last_analyzed_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_analyzed_timestamp = input;
         self
     }
     /// <p>The error in server analysis.</p>
     pub fn server_error(mut self, input: crate::types::ServerError) -> Self {
-        self.server_error = Some(input);
+        self.server_error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error in server analysis.</p>
     pub fn set_server_error(
         mut self,
-        input: std::option::Option<crate::types::ServerError>,
+        input: ::std::option::Option<crate::types::ServerError>,
     ) -> Self {
         self.server_error = input;
         self

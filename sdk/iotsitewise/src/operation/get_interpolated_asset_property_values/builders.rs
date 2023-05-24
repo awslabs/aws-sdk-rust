@@ -12,47 +12,50 @@ pub use crate::operation::get_interpolated_asset_property_values::_get_interpola
 /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
 /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInterpolatedAssetPropertyValuesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesInputBuilder,
 }
 impl GetInterpolatedAssetPropertyValuesFluentBuilder {
     /// Creates a new `GetInterpolatedAssetPropertyValues`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValues, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValues, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput, aws_smithy_http::result::SdkError<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -63,7 +66,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput, aws_smithy_http::result::SdkError<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError>>
                          {
         self.send_middleware().await
     }
@@ -74,32 +77,38 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
         crate::operation::get_interpolated_asset_property_values::paginator::GetInterpolatedAssetPropertyValuesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());
         self
     }
     /// <p>The ID of the asset.</p>
-    pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_id(input);
         self
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_id(input.into());
         self
     }
     /// <p>The ID of the asset property.</p>
-    pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_id(input);
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn property_alias(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.property_alias(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_property_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_property_alias(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_property_alias(input);
         self
     }
@@ -109,7 +118,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
         self
     }
     /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
-    pub fn set_start_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_start_time_in_seconds(input);
         self
     }
@@ -119,7 +128,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
         self
     }
     /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
-    pub fn set_start_time_offset_in_nanos(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_time_offset_in_nanos(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_start_time_offset_in_nanos(input);
         self
     }
@@ -129,7 +138,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
         self
     }
     /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
-    pub fn set_end_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_end_time_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_end_time_in_seconds(input);
         self
     }
@@ -139,7 +148,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
         self
     }
     /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
-    pub fn set_end_time_offset_in_nanos(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_time_offset_in_nanos(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_end_time_offset_in_nanos(input);
         self
     }
@@ -149,7 +158,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
         self
     }
     /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
-    pub fn set_quality(mut self, input: std::option::Option<crate::types::Quality>) -> Self {
+    pub fn set_quality(mut self, input: ::std::option::Option<crate::types::Quality>) -> Self {
         self.inner = self.inner.set_quality(input);
         self
     }
@@ -159,17 +168,17 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
         self
     }
     /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
-    pub fn set_interval_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_interval_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_interval_in_seconds(input);
         self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -179,7 +188,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -189,7 +198,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
     /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
     /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
     /// </ul>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
         self
     }
@@ -199,7 +208,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
     /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
     /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -221,7 +230,7 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder {
     /// </ul>
     /// </note>
     /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
-    pub fn set_interval_window_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_interval_window_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_interval_window_in_seconds(input);
         self
     }

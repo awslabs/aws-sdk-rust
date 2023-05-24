@@ -2,18 +2,18 @@
 
 /// <p>The parameters for using a SageMaker pipeline as a target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeTargetSageMakerPipelineParameters {
     /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_parameter_list:
-        std::option::Option<std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
 }
 impl PipeTargetSageMakerPipelineParameters {
     /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
     pub fn pipeline_parameter_list(
         &self,
-    ) -> std::option::Option<&[crate::types::SageMakerPipelineParameter]> {
+    ) -> ::std::option::Option<&[crate::types::SageMakerPipelineParameter]> {
         self.pipeline_parameter_list.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl PipeTargetSageMakerPipelineParameters {
 
 /// A builder for [`PipeTargetSageMakerPipelineParameters`](crate::types::PipeTargetSageMakerPipelineParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipeTargetSageMakerPipelineParametersBuilder {
     pub(crate) pipeline_parameter_list:
-        std::option::Option<std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
 }
 impl PipeTargetSageMakerPipelineParametersBuilder {
     /// Appends an item to `pipeline_parameter_list`.
@@ -43,13 +45,13 @@ impl PipeTargetSageMakerPipelineParametersBuilder {
     ) -> Self {
         let mut v = self.pipeline_parameter_list.unwrap_or_default();
         v.push(input);
-        self.pipeline_parameter_list = Some(v);
+        self.pipeline_parameter_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
     pub fn set_pipeline_parameter_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerPipelineParameter>>,
     ) -> Self {
         self.pipeline_parameter_list = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Describes a product code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductCode {
     /// <p>The product code.</p>
     #[doc(hidden)]
-    pub product_code_id: std::option::Option<std::string::String>,
+    pub product_code_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of product code.</p>
     #[doc(hidden)]
-    pub product_code_type: std::option::Option<crate::types::ProductCodeValues>,
+    pub product_code_type: ::std::option::Option<crate::types::ProductCodeValues>,
 }
 impl ProductCode {
     /// <p>The product code.</p>
-    pub fn product_code_id(&self) -> std::option::Option<&str> {
+    pub fn product_code_id(&self) -> ::std::option::Option<&str> {
         self.product_code_id.as_deref()
     }
     /// <p>The type of product code.</p>
-    pub fn product_code_type(&self) -> std::option::Option<&crate::types::ProductCodeValues> {
+    pub fn product_code_type(&self) -> ::std::option::Option<&crate::types::ProductCodeValues> {
         self.product_code_type.as_ref()
     }
 }
@@ -30,31 +30,39 @@ impl ProductCode {
 
 /// A builder for [`ProductCode`](crate::types::ProductCode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductCodeBuilder {
-    pub(crate) product_code_id: std::option::Option<std::string::String>,
-    pub(crate) product_code_type: std::option::Option<crate::types::ProductCodeValues>,
+    pub(crate) product_code_id: ::std::option::Option<::std::string::String>,
+    pub(crate) product_code_type: ::std::option::Option<crate::types::ProductCodeValues>,
 }
 impl ProductCodeBuilder {
     /// <p>The product code.</p>
-    pub fn product_code_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_code_id = Some(input.into());
+    pub fn product_code_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.product_code_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product code.</p>
-    pub fn set_product_code_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_code_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.product_code_id = input;
         self
     }
     /// <p>The type of product code.</p>
     pub fn product_code_type(mut self, input: crate::types::ProductCodeValues) -> Self {
-        self.product_code_type = Some(input);
+        self.product_code_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of product code.</p>
     pub fn set_product_code_type(
         mut self,
-        input: std::option::Option<crate::types::ProductCodeValues>,
+        input: ::std::option::Option<crate::types::ProductCodeValues>,
     ) -> Self {
         self.product_code_type = input;
         self

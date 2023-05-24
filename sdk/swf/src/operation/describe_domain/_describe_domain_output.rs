@@ -2,27 +2,27 @@
 
 /// <p>Contains details of a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainOutput {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
     #[doc(hidden)]
-    pub domain_info: std::option::Option<crate::types::DomainInfo>,
+    pub domain_info: ::std::option::Option<crate::types::DomainInfo>,
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::DomainConfiguration>,
+    pub configuration: ::std::option::Option<crate::types::DomainConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeDomainOutput {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
-    pub fn domain_info(&self) -> std::option::Option<&crate::types::DomainInfo> {
+    pub fn domain_info(&self) -> ::std::option::Option<&crate::types::DomainInfo> {
         self.domain_info.as_ref()
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::DomainConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::DomainConfiguration> {
         self.configuration.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDomainOutput {
+impl ::aws_http::request_id::RequestId for DescribeDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,32 +36,37 @@ impl DescribeDomainOutput {
 
 /// A builder for [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDomainOutputBuilder {
-    pub(crate) domain_info: std::option::Option<crate::types::DomainInfo>,
-    pub(crate) configuration: std::option::Option<crate::types::DomainConfiguration>,
+    pub(crate) domain_info: ::std::option::Option<crate::types::DomainInfo>,
+    pub(crate) configuration: ::std::option::Option<crate::types::DomainConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeDomainOutputBuilder {
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
     pub fn domain_info(mut self, input: crate::types::DomainInfo) -> Self {
-        self.domain_info = Some(input);
+        self.domain_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>The basic information about a domain, such as its name, status, and description.</p>
-    pub fn set_domain_info(mut self, input: std::option::Option<crate::types::DomainInfo>) -> Self {
+    pub fn set_domain_info(
+        mut self,
+        input: ::std::option::Option<crate::types::DomainInfo>,
+    ) -> Self {
         self.domain_info = input;
         self
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     pub fn configuration(mut self, input: crate::types::DomainConfiguration) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::DomainConfiguration>,
+        input: ::std::option::Option<crate::types::DomainConfiguration>,
     ) -> Self {
         self.configuration = input;
         self

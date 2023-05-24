@@ -2,20 +2,20 @@
 
 /// Response to a successful DescribeIdentityPoolUsage request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityPoolUsageOutput {
     /// Information about the usage of the identity pool.
     #[doc(hidden)]
-    pub identity_pool_usage: std::option::Option<crate::types::IdentityPoolUsage>,
+    pub identity_pool_usage: ::std::option::Option<crate::types::IdentityPoolUsage>,
     _request_id: Option<String>,
 }
 impl DescribeIdentityPoolUsageOutput {
     /// Information about the usage of the identity pool.
-    pub fn identity_pool_usage(&self) -> std::option::Option<&crate::types::IdentityPoolUsage> {
+    pub fn identity_pool_usage(&self) -> ::std::option::Option<&crate::types::IdentityPoolUsage> {
         self.identity_pool_usage.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeIdentityPoolUsageOutput {
+impl ::aws_http::request_id::RequestId for DescribeIdentityPoolUsageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DescribeIdentityPoolUsageOutput {
 
 /// A builder for [`DescribeIdentityPoolUsageOutput`](crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeIdentityPoolUsageOutputBuilder {
-    pub(crate) identity_pool_usage: std::option::Option<crate::types::IdentityPoolUsage>,
+    pub(crate) identity_pool_usage: ::std::option::Option<crate::types::IdentityPoolUsage>,
     _request_id: Option<String>,
 }
 impl DescribeIdentityPoolUsageOutputBuilder {
     /// Information about the usage of the identity pool.
     pub fn identity_pool_usage(mut self, input: crate::types::IdentityPoolUsage) -> Self {
-        self.identity_pool_usage = Some(input);
+        self.identity_pool_usage = ::std::option::Option::Some(input);
         self
     }
     /// Information about the usage of the identity pool.
     pub fn set_identity_pool_usage(
         mut self,
-        input: std::option::Option<crate::types::IdentityPoolUsage>,
+        input: ::std::option::Option<crate::types::IdentityPoolUsage>,
     ) -> Self {
         self.identity_pool_usage = input;
         self

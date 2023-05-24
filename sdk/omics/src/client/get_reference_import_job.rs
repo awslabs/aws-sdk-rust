@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReferenceImportJob`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::set_id): <p>The job's ID.</p>
-    ///   - [`reference_store_id(impl Into<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::set_reference_store_id): <p>The job's reference store ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::set_id): <p>The job's ID.</p>
+    ///   - [`reference_store_id(impl ::std::convert::Into<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobFluentBuilder::set_reference_store_id): <p>The job's reference store ID.</p>
     /// - On success, responds with [`GetReferenceImportJobOutput`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::id): <p>The job's ID.</p>
     ///   - [`reference_store_id(Option<String>)`](crate::operation::get_reference_import_job::GetReferenceImportJobOutput::reference_store_id): <p>The job's reference store ID.</p>

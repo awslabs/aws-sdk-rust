@@ -2,7 +2,7 @@
 
 /// <p>Contains no configuration parameters because the DELETE Object tagging (<code>DeleteObjectTagging</code>) API operation accepts only the bucket name and key name as parameters, which are defined in the job's manifest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DeleteObjectTaggingOperation {}
 impl S3DeleteObjectTaggingOperation {
     /// Creates a new builder-style object to manufacture [`S3DeleteObjectTaggingOperation`](crate::types::S3DeleteObjectTaggingOperation).
@@ -13,7 +13,9 @@ impl S3DeleteObjectTaggingOperation {
 
 /// A builder for [`S3DeleteObjectTaggingOperation`](crate::types::S3DeleteObjectTaggingOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3DeleteObjectTaggingOperationBuilder {}
 impl S3DeleteObjectTaggingOperationBuilder {
     /// Consumes the builder and constructs a [`S3DeleteObjectTaggingOperation`](crate::types::S3DeleteObjectTaggingOperation).

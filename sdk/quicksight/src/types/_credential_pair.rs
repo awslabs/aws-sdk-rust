@@ -2,32 +2,32 @@
 
 /// <p>The combination of user name and password that are used as credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CredentialPair {
     /// <p>User name.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>Password.</p>
     #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    pub password: ::std::option::Option<::std::string::String>,
     /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
     #[doc(hidden)]
     pub alternate_data_source_parameters:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceParameters>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
 }
 impl CredentialPair {
     /// <p>User name.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>Password.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
     pub fn alternate_data_source_parameters(
         &self,
-    ) -> std::option::Option<&[crate::types::DataSourceParameters]> {
+    ) -> ::std::option::Option<&[crate::types::DataSourceParameters]> {
         self.alternate_data_source_parameters.as_deref()
     }
 }
@@ -40,31 +40,33 @@ impl CredentialPair {
 
 /// A builder for [`CredentialPair`](crate::types::CredentialPair).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CredentialPairBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) password: std::option::Option<std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) alternate_data_source_parameters:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceParameters>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
 }
 impl CredentialPairBuilder {
     /// <p>User name.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User name.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>Password.</p>
-    pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password = Some(input.into());
+    pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Password.</p>
-    pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
@@ -79,13 +81,13 @@ impl CredentialPairBuilder {
     ) -> Self {
         let mut v = self.alternate_data_source_parameters.unwrap_or_default();
         v.push(input);
-        self.alternate_data_source_parameters = Some(v);
+        self.alternate_data_source_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A set of alternate data source parameters that you want to share for these credentials. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the new data source with the existing credentials. If the <code>AlternateDataSourceParameters</code> list is null, the <code>DataSourceParameters</code> originally used with these <code>Credentials</code> is automatically allowed.</p>
     pub fn set_alternate_data_source_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSourceParameters>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceParameters>>,
     ) -> Self {
         self.alternate_data_source_parameters = input;
         self

@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a get suite request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuiteOutput {
     /// <p>A collection of one or more tests.</p>
     #[doc(hidden)]
-    pub suite: std::option::Option<crate::types::Suite>,
+    pub suite: ::std::option::Option<crate::types::Suite>,
     _request_id: Option<String>,
 }
 impl GetSuiteOutput {
     /// <p>A collection of one or more tests.</p>
-    pub fn suite(&self) -> std::option::Option<&crate::types::Suite> {
+    pub fn suite(&self) -> ::std::option::Option<&crate::types::Suite> {
         self.suite.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetSuiteOutput {
+impl ::aws_http::request_id::RequestId for GetSuiteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetSuiteOutput {
 
 /// A builder for [`GetSuiteOutput`](crate::operation::get_suite::GetSuiteOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSuiteOutputBuilder {
-    pub(crate) suite: std::option::Option<crate::types::Suite>,
+    pub(crate) suite: ::std::option::Option<crate::types::Suite>,
     _request_id: Option<String>,
 }
 impl GetSuiteOutputBuilder {
     /// <p>A collection of one or more tests.</p>
     pub fn suite(mut self, input: crate::types::Suite) -> Self {
-        self.suite = Some(input);
+        self.suite = ::std::option::Option::Some(input);
         self
     }
     /// <p>A collection of one or more tests.</p>
-    pub fn set_suite(mut self, input: std::option::Option<crate::types::Suite>) -> Self {
+    pub fn set_suite(mut self, input: ::std::option::Option<crate::types::Suite>) -> Self {
         self.suite = input;
         self
     }

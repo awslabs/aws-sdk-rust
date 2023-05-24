@@ -2,27 +2,27 @@
 
 /// <p> The result of the <code>RunJobFlow</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunJobFlowOutput {
     /// <p>A unique identifier for the job flow.</p>
     #[doc(hidden)]
-    pub job_flow_id: std::option::Option<std::string::String>,
+    pub job_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RunJobFlowOutput {
     /// <p>A unique identifier for the job flow.</p>
-    pub fn job_flow_id(&self) -> std::option::Option<&str> {
+    pub fn job_flow_id(&self) -> ::std::option::Option<&str> {
         self.job_flow_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RunJobFlowOutput {
+impl ::aws_http::request_id::RequestId for RunJobFlowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl RunJobFlowOutput {
 
 /// A builder for [`RunJobFlowOutput`](crate::operation::run_job_flow::RunJobFlowOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RunJobFlowOutputBuilder {
-    pub(crate) job_flow_id: std::option::Option<std::string::String>,
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
+    pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RunJobFlowOutputBuilder {
     /// <p>A unique identifier for the job flow.</p>
-    pub fn job_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_flow_id = Some(input.into());
+    pub fn job_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the job flow.</p>
-    pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_flow_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }

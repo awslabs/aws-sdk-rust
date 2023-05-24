@@ -2,22 +2,22 @@
 
 /// <p>A detected JSON format descriptor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedJsonFormatDescriptor {
     /// <p>The format's file compression.</p>
     #[doc(hidden)]
-    pub file_compression: std::option::Option<crate::types::DetectedField>,
+    pub file_compression: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's character set.</p>
     #[doc(hidden)]
-    pub charset: std::option::Option<crate::types::DetectedField>,
+    pub charset: ::std::option::Option<crate::types::DetectedField>,
 }
 impl DetectedJsonFormatDescriptor {
     /// <p>The format's file compression.</p>
-    pub fn file_compression(&self) -> std::option::Option<&crate::types::DetectedField> {
+    pub fn file_compression(&self) -> ::std::option::Option<&crate::types::DetectedField> {
         self.file_compression.as_ref()
     }
     /// <p>The format's character set.</p>
-    pub fn charset(&self) -> std::option::Option<&crate::types::DetectedField> {
+    pub fn charset(&self) -> ::std::option::Option<&crate::types::DetectedField> {
         self.charset.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl DetectedJsonFormatDescriptor {
 
 /// A builder for [`DetectedJsonFormatDescriptor`](crate::types::DetectedJsonFormatDescriptor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectedJsonFormatDescriptorBuilder {
-    pub(crate) file_compression: std::option::Option<crate::types::DetectedField>,
-    pub(crate) charset: std::option::Option<crate::types::DetectedField>,
+    pub(crate) file_compression: ::std::option::Option<crate::types::DetectedField>,
+    pub(crate) charset: ::std::option::Option<crate::types::DetectedField>,
 }
 impl DetectedJsonFormatDescriptorBuilder {
     /// <p>The format's file compression.</p>
     pub fn file_compression(mut self, input: crate::types::DetectedField) -> Self {
-        self.file_compression = Some(input);
+        self.file_compression = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format's file compression.</p>
     pub fn set_file_compression(
         mut self,
-        input: std::option::Option<crate::types::DetectedField>,
+        input: ::std::option::Option<crate::types::DetectedField>,
     ) -> Self {
         self.file_compression = input;
         self
     }
     /// <p>The format's character set.</p>
     pub fn charset(mut self, input: crate::types::DetectedField) -> Self {
-        self.charset = Some(input);
+        self.charset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format's character set.</p>
-    pub fn set_charset(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
+    pub fn set_charset(
+        mut self,
+        input: ::std::option::Option<crate::types::DetectedField>,
+    ) -> Self {
         self.charset = input;
         self
     }

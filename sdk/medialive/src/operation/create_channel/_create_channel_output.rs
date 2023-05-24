@@ -2,20 +2,20 @@
 
 /// Placeholder documentation for CreateChannelResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChannelOutput {
     /// Placeholder documentation for Channel
     #[doc(hidden)]
-    pub channel: std::option::Option<crate::types::Channel>,
+    pub channel: ::std::option::Option<crate::types::Channel>,
     _request_id: Option<String>,
 }
 impl CreateChannelOutput {
     /// Placeholder documentation for Channel
-    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateChannelOutput {
+impl ::aws_http::request_id::RequestId for CreateChannelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateChannelOutput {
 
 /// A builder for [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateChannelOutputBuilder {
-    pub(crate) channel: std::option::Option<crate::types::Channel>,
+    pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     _request_id: Option<String>,
 }
 impl CreateChannelOutputBuilder {
     /// Placeholder documentation for Channel
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
-        self.channel = Some(input);
+        self.channel = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for Channel
-    pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
+    pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }

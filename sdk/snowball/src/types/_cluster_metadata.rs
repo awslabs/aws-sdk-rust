@@ -2,40 +2,40 @@
 
 /// <p>Contains metadata about a specific cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
     #[doc(hidden)]
-    pub cluster_id: std::option::Option<std::string::String>,
+    pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The optional description of the cluster.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the cluster.</p>
     #[doc(hidden)]
-    pub cluster_state: std::option::Option<crate::types::ClusterState>,
+    pub cluster_state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     #[doc(hidden)]
-    pub job_type: std::option::Option<crate::types::JobType>,
+    pub job_type: ::std::option::Option<crate::types::JobType>,
     /// <p>The type of Snowcone device to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     #[doc(hidden)]
-    pub snowball_type: std::option::Option<crate::types::SnowballType>,
+    pub snowball_type: ::std::option::Option<crate::types::SnowballType>,
     /// <p>The creation date for this cluster.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     #[doc(hidden)]
-    pub resources: std::option::Option<crate::types::JobResource>,
+    pub resources: ::std::option::Option<crate::types::JobResource>,
     /// <p>The automatically generated ID for a specific address.</p>
     #[doc(hidden)]
-    pub address_id: std::option::Option<std::string::String>,
+    pub address_id: ::std::option::Option<::std::string::String>,
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
     /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
@@ -44,62 +44,62 @@ pub struct ClusterMetadata {
     /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub shipping_option: std::option::Option<crate::types::ShippingOption>,
+    pub shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     #[doc(hidden)]
-    pub notification: std::option::Option<crate::types::Notification>,
+    pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
     #[doc(hidden)]
-    pub forwarding_address_id: std::option::Option<std::string::String>,
+    pub forwarding_address_id: ::std::option::Option<::std::string::String>,
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub tax_documents: std::option::Option<crate::types::TaxDocuments>,
+    pub tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
     #[doc(hidden)]
     pub on_device_service_configuration:
-        std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+        ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
 }
 impl ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The optional description of the cluster.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The current status of the cluster.</p>
-    pub fn cluster_state(&self) -> std::option::Option<&crate::types::ClusterState> {
+    pub fn cluster_state(&self) -> ::std::option::Option<&crate::types::ClusterState> {
         self.cluster_state.as_ref()
     }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
         self.job_type.as_ref()
     }
     /// <p>The type of Snowcone device to use for this cluster. </p> <note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::types::SnowballType> {
+    pub fn snowball_type(&self) -> ::std::option::Option<&crate::types::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn resources(&self) -> std::option::Option<&crate::types::JobResource> {
+    pub fn resources(&self) -> ::std::option::Option<&crate::types::JobResource> {
         self.resources.as_ref()
     }
     /// <p>The automatically generated ID for a specific address.</p>
-    pub fn address_id(&self) -> std::option::Option<&str> {
+    pub fn address_id(&self) -> ::std::option::Option<&str> {
         self.address_id.as_deref()
     }
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
@@ -109,25 +109,25 @@ impl ClusterMetadata {
     /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
     /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::types::ShippingOption> {
+    pub fn shipping_option(&self) -> ::std::option::Option<&crate::types::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    pub fn notification(&self) -> std::option::Option<&crate::types::Notification> {
+    pub fn notification(&self) -> ::std::option::Option<&crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
+    pub fn forwarding_address_id(&self) -> ::std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn tax_documents(&self) -> std::option::Option<&crate::types::TaxDocuments> {
+    pub fn tax_documents(&self) -> ::std::option::Option<&crate::types::TaxDocuments> {
         self.tax_documents.as_ref()
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
     pub fn on_device_service_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
 }
@@ -140,86 +140,88 @@ impl ClusterMetadata {
 
 /// A builder for [`ClusterMetadata`](crate::types::ClusterMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterMetadataBuilder {
-    pub(crate) cluster_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) cluster_state: std::option::Option<crate::types::ClusterState>,
-    pub(crate) job_type: std::option::Option<crate::types::JobType>,
-    pub(crate) snowball_type: std::option::Option<crate::types::SnowballType>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) resources: std::option::Option<crate::types::JobResource>,
-    pub(crate) address_id: std::option::Option<std::string::String>,
-    pub(crate) shipping_option: std::option::Option<crate::types::ShippingOption>,
-    pub(crate) notification: std::option::Option<crate::types::Notification>,
-    pub(crate) forwarding_address_id: std::option::Option<std::string::String>,
-    pub(crate) tax_documents: std::option::Option<crate::types::TaxDocuments>,
+    pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_state: ::std::option::Option<crate::types::ClusterState>,
+    pub(crate) job_type: ::std::option::Option<crate::types::JobType>,
+    pub(crate) snowball_type: ::std::option::Option<crate::types::SnowballType>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) resources: ::std::option::Option<crate::types::JobResource>,
+    pub(crate) address_id: ::std::option::Option<::std::string::String>,
+    pub(crate) shipping_option: ::std::option::Option<crate::types::ShippingOption>,
+    pub(crate) notification: ::std::option::Option<crate::types::Notification>,
+    pub(crate) forwarding_address_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tax_documents: ::std::option::Option<crate::types::TaxDocuments>,
     pub(crate) on_device_service_configuration:
-        std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+        ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
 }
 impl ClusterMetadataBuilder {
     /// <p>The automatically generated ID for a cluster.</p>
-    pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_id = Some(input.into());
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The automatically generated ID for a cluster.</p>
-    pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
     }
     /// <p>The optional description of the cluster.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional description of the cluster.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The current status of the cluster.</p>
     pub fn cluster_state(mut self, input: crate::types::ClusterState) -> Self {
-        self.cluster_state = Some(input);
+        self.cluster_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the cluster.</p>
     pub fn set_cluster_state(
         mut self,
-        input: std::option::Option<crate::types::ClusterState>,
+        input: ::std::option::Option<crate::types::ClusterState>,
     ) -> Self {
         self.cluster_state = input;
         self
     }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
-        self.job_type = Some(input);
+        self.job_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
-    pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.job_type = input;
         self
     }
@@ -227,7 +229,7 @@ impl ClusterMetadataBuilder {
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     pub fn snowball_type(mut self, input: crate::types::SnowballType) -> Self {
-        self.snowball_type = Some(input);
+        self.snowball_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of Snowcone device to use for this cluster. </p> <note>
@@ -235,41 +237,44 @@ impl ClusterMetadataBuilder {
     /// </note>
     pub fn set_snowball_type(
         mut self,
-        input: std::option::Option<crate::types::SnowballType>,
+        input: ::std::option::Option<crate::types::SnowballType>,
     ) -> Self {
         self.snowball_type = input;
         self
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation date for this cluster.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub fn resources(mut self, input: crate::types::JobResource) -> Self {
-        self.resources = Some(input);
+        self.resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn set_resources(mut self, input: std::option::Option<crate::types::JobResource>) -> Self {
+    pub fn set_resources(
+        mut self,
+        input: ::std::option::Option<crate::types::JobResource>,
+    ) -> Self {
         self.resources = input;
         self
     }
     /// <p>The automatically generated ID for a specific address.</p>
-    pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.address_id = Some(input.into());
+    pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.address_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The automatically generated ID for a specific address.</p>
-    pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address_id = input;
         self
     }
@@ -281,7 +286,7 @@ impl ClusterMetadataBuilder {
     /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
-        self.shipping_option = Some(input);
+        self.shipping_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
@@ -293,46 +298,49 @@ impl ClusterMetadataBuilder {
     /// </ul>
     pub fn set_shipping_option(
         mut self,
-        input: std::option::Option<crate::types::ShippingOption>,
+        input: ::std::option::Option<crate::types::ShippingOption>,
     ) -> Self {
         self.shipping_option = input;
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
-        self.notification = Some(input);
+        self.notification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     pub fn set_notification(
         mut self,
-        input: std::option::Option<crate::types::Notification>,
+        input: ::std::option::Option<crate::types::Notification>,
     ) -> Self {
         self.notification = input;
         self
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.forwarding_address_id = Some(input.into());
+    pub fn forwarding_address_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.forwarding_address_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
     pub fn set_forwarding_address_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.forwarding_address_id = input;
         self
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn tax_documents(mut self, input: crate::types::TaxDocuments) -> Self {
-        self.tax_documents = Some(input);
+        self.tax_documents = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn set_tax_documents(
         mut self,
-        input: std::option::Option<crate::types::TaxDocuments>,
+        input: ::std::option::Option<crate::types::TaxDocuments>,
     ) -> Self {
         self.tax_documents = input;
         self
@@ -342,13 +350,13 @@ impl ClusterMetadataBuilder {
         mut self,
         input: crate::types::OnDeviceServiceConfiguration,
     ) -> Self {
-        self.on_device_service_configuration = Some(input);
+        self.on_device_service_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
     pub fn set_on_device_service_configuration(
         mut self,
-        input: std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+        input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
     ) -> Self {
         self.on_device_service_configuration = input;
         self

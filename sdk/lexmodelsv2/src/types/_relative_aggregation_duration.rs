@@ -8,11 +8,11 @@
 /// <li> <p> <b>Weeks</b> - You can see statistics for one or two weeks. Statistics are refreshed every 12 hours for one week time windows, and once per day for two week time windows.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelativeAggregationDuration {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
     #[doc(hidden)]
-    pub time_dimension: std::option::Option<crate::types::TimeDimension>,
+    pub time_dimension: ::std::option::Option<crate::types::TimeDimension>,
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
     /// <li> <p> <code>Hours</code> - 1/3/6/12/24</p> </li>
@@ -24,7 +24,7 @@ pub struct RelativeAggregationDuration {
 }
 impl RelativeAggregationDuration {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
-    pub fn time_dimension(&self) -> std::option::Option<&crate::types::TimeDimension> {
+    pub fn time_dimension(&self) -> ::std::option::Option<&crate::types::TimeDimension> {
         self.time_dimension.as_ref()
     }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
@@ -46,21 +46,23 @@ impl RelativeAggregationDuration {
 
 /// A builder for [`RelativeAggregationDuration`](crate::types::RelativeAggregationDuration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelativeAggregationDurationBuilder {
-    pub(crate) time_dimension: std::option::Option<crate::types::TimeDimension>,
-    pub(crate) time_value: std::option::Option<i32>,
+    pub(crate) time_dimension: ::std::option::Option<crate::types::TimeDimension>,
+    pub(crate) time_value: ::std::option::Option<i32>,
 }
 impl RelativeAggregationDurationBuilder {
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
     pub fn time_dimension(mut self, input: crate::types::TimeDimension) -> Self {
-        self.time_dimension = Some(input);
+        self.time_dimension = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of time period that the <code>timeValue</code> field represents. </p>
     pub fn set_time_dimension(
         mut self,
-        input: std::option::Option<crate::types::TimeDimension>,
+        input: ::std::option::Option<crate::types::TimeDimension>,
     ) -> Self {
         self.time_dimension = input;
         self
@@ -72,7 +74,7 @@ impl RelativeAggregationDurationBuilder {
     /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
     /// </ul>
     pub fn time_value(mut self, input: i32) -> Self {
-        self.time_value = Some(input);
+        self.time_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
@@ -81,7 +83,7 @@ impl RelativeAggregationDurationBuilder {
     /// <li> <p> <code>Days</code> - 3</p> </li>
     /// <li> <p> <code>Weeks</code> - 1/2</p> </li>
     /// </ul>
-    pub fn set_time_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_time_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_value = input;
         self
     }

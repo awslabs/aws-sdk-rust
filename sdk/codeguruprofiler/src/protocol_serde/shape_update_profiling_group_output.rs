@@ -2,7 +2,7 @@
 pub(crate) fn de_profiling_group_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ProfilingGroupDescription>,
+    ::std::option::Option<crate::types::ProfilingGroupDescription>,
     crate::operation::update_profiling_group::UpdateProfilingGroupError,
 > {
     (!body.is_empty()).then(||{

@@ -2,83 +2,83 @@
 
 /// <p>The details of the rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RuleDetail {
     /// <p>The rule ID.</p>
     #[doc(hidden)]
-    pub rule_id: std::option::Option<std::string::String>,
+    pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The detector for which the rule is associated.</p>
     #[doc(hidden)]
-    pub detector_id: std::option::Option<std::string::String>,
+    pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The rule version.</p>
     #[doc(hidden)]
-    pub rule_version: std::option::Option<std::string::String>,
+    pub rule_version: ::std::option::Option<::std::string::String>,
     /// <p>The rule expression.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The rule language.</p>
     #[doc(hidden)]
-    pub language: std::option::Option<crate::types::Language>,
+    pub language: ::std::option::Option<crate::types::Language>,
     /// <p>The rule outcomes.</p>
     #[doc(hidden)]
-    pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Timestamp of the last time the rule was updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<std::string::String>,
+    pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the rule was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<std::string::String>,
+    pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The rule ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RuleDetail {
     /// <p>The rule ID.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
         self.rule_id.as_deref()
     }
     /// <p>The rule description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The detector for which the rule is associated.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The rule version.</p>
-    pub fn rule_version(&self) -> std::option::Option<&str> {
+    pub fn rule_version(&self) -> ::std::option::Option<&str> {
         self.rule_version.as_deref()
     }
     /// <p>The rule expression.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>The rule language.</p>
-    pub fn language(&self) -> std::option::Option<&crate::types::Language> {
+    pub fn language(&self) -> ::std::option::Option<&crate::types::Language> {
         self.language.as_ref()
     }
     /// <p>The rule outcomes.</p>
-    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.outcomes.as_deref()
     }
     /// <p>Timestamp of the last time the rule was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The timestamp of when the rule was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>The rule ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for RuleDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RuleDetail {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RuleDetail");
         formatter.field("rule_id", &self.rule_id);
         formatter.field("description", &self.description);
@@ -102,77 +102,77 @@ impl RuleDetail {
 
 /// A builder for [`RuleDetail`](crate::types::RuleDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RuleDetailBuilder {
-    pub(crate) rule_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) detector_id: std::option::Option<std::string::String>,
-    pub(crate) rule_version: std::option::Option<std::string::String>,
-    pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) language: std::option::Option<crate::types::Language>,
-    pub(crate) outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) last_updated_time: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) detector_id: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_version: ::std::option::Option<::std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
+    pub(crate) language: ::std::option::Option<crate::types::Language>,
+    pub(crate) outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl RuleDetailBuilder {
     /// <p>The rule ID.</p>
-    pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_id = Some(input.into());
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule ID.</p>
-    pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
     }
     /// <p>The rule description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The detector for which the rule is associated.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detector_id = Some(input.into());
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector for which the rule is associated.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
     /// <p>The rule version.</p>
-    pub fn rule_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_version = Some(input.into());
+    pub fn rule_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule version.</p>
-    pub fn set_rule_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_version = input;
         self
     }
     /// <p>The rule expression.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule expression.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
     /// <p>The rule language.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
-        self.language = Some(input);
+        self.language = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rule language.</p>
-    pub fn set_language(mut self, input: std::option::Option<crate::types::Language>) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
         self.language = input;
         self
     }
@@ -181,50 +181,53 @@ impl RuleDetailBuilder {
     /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
     ///
     /// <p>The rule outcomes.</p>
-    pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn outcomes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
         v.push(input.into());
-        self.outcomes = Some(v);
+        self.outcomes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rule outcomes.</p>
     pub fn set_outcomes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.outcomes = input;
         self
     }
     /// <p>Timestamp of the last time the rule was updated.</p>
-    pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_time = Some(input.into());
+    pub fn last_updated_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of the last time the rule was updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>The timestamp of when the rule was created.</p>
-    pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_time = Some(input.into());
+    pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp of when the rule was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The rule ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -244,8 +247,8 @@ impl RuleDetailBuilder {
         }
     }
 }
-impl std::fmt::Debug for RuleDetailBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RuleDetailBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RuleDetailBuilder");
         formatter.field("rule_id", &self.rule_id);
         formatter.field("description", &self.description);

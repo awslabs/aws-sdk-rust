@@ -2,11 +2,11 @@
 
 /// <p>An empty element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrafficPolicyOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteTrafficPolicyOutput {
+impl ::aws_http::request_id::RequestId for DeleteTrafficPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl DeleteTrafficPolicyOutput {
 
 /// A builder for [`DeleteTrafficPolicyOutput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteTrafficPolicyOutputBuilder {
     _request_id: Option<String>,
 }

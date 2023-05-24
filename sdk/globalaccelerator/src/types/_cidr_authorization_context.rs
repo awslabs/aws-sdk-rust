@@ -3,22 +3,22 @@
 /// <p>Provides authorization for Amazon to bring a specific IP address range to a specific Amazon Web Services account using bring your own IP addresses (BYOIP). </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The signed authorization message for the prefix and account.</p>
     #[doc(hidden)]
-    pub signature: std::option::Option<std::string::String>,
+    pub signature: ::std::option::Option<::std::string::String>,
 }
 impl CidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> ::std::option::Option<&str> {
         self.signature.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl CidrAuthorizationContext {
 
 /// A builder for [`CidrAuthorizationContext`](crate::types::CidrAuthorizationContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CidrAuthorizationContextBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) signature: std::option::Option<std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) signature: ::std::option::Option<::std::string::String>,
 }
 impl CidrAuthorizationContextBuilder {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
-        self.signature = Some(input.into());
+    pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature = input;
         self
     }

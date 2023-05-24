@@ -2,24 +2,24 @@
 
 /// The Renewal settings for Reservations
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewalSettings {
     /// Automatic renewal status for the reservation
     #[doc(hidden)]
-    pub automatic_renewal: std::option::Option<crate::types::ReservationAutomaticRenewal>,
+    pub automatic_renewal: ::std::option::Option<crate::types::ReservationAutomaticRenewal>,
     /// Count for the reservation renewal
     #[doc(hidden)]
-    pub renewal_count: std::option::Option<i32>,
+    pub renewal_count: ::std::option::Option<i32>,
 }
 impl RenewalSettings {
     /// Automatic renewal status for the reservation
     pub fn automatic_renewal(
         &self,
-    ) -> std::option::Option<&crate::types::ReservationAutomaticRenewal> {
+    ) -> ::std::option::Option<&crate::types::ReservationAutomaticRenewal> {
         self.automatic_renewal.as_ref()
     }
     /// Count for the reservation renewal
-    pub fn renewal_count(&self) -> std::option::Option<i32> {
+    pub fn renewal_count(&self) -> ::std::option::Option<i32> {
         self.renewal_count
     }
 }
@@ -32,32 +32,34 @@ impl RenewalSettings {
 
 /// A builder for [`RenewalSettings`](crate::types::RenewalSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RenewalSettingsBuilder {
-    pub(crate) automatic_renewal: std::option::Option<crate::types::ReservationAutomaticRenewal>,
-    pub(crate) renewal_count: std::option::Option<i32>,
+    pub(crate) automatic_renewal: ::std::option::Option<crate::types::ReservationAutomaticRenewal>,
+    pub(crate) renewal_count: ::std::option::Option<i32>,
 }
 impl RenewalSettingsBuilder {
     /// Automatic renewal status for the reservation
     pub fn automatic_renewal(mut self, input: crate::types::ReservationAutomaticRenewal) -> Self {
-        self.automatic_renewal = Some(input);
+        self.automatic_renewal = ::std::option::Option::Some(input);
         self
     }
     /// Automatic renewal status for the reservation
     pub fn set_automatic_renewal(
         mut self,
-        input: std::option::Option<crate::types::ReservationAutomaticRenewal>,
+        input: ::std::option::Option<crate::types::ReservationAutomaticRenewal>,
     ) -> Self {
         self.automatic_renewal = input;
         self
     }
     /// Count for the reservation renewal
     pub fn renewal_count(mut self, input: i32) -> Self {
-        self.renewal_count = Some(input);
+        self.renewal_count = ::std::option::Option::Some(input);
         self
     }
     /// Count for the reservation renewal
-    pub fn set_renewal_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_renewal_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.renewal_count = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>The image scanning configuration for a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryImageScanningConfigurationDetails {
     /// <p>Whether to scan images after they are pushed to a repository.</p>
     #[doc(hidden)]
@@ -24,18 +24,20 @@ impl AwsEcrRepositoryImageScanningConfigurationDetails {
 
 /// A builder for [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::types::AwsEcrRepositoryImageScanningConfigurationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
-    pub(crate) scan_on_push: std::option::Option<bool>,
+    pub(crate) scan_on_push: ::std::option::Option<bool>,
 }
 impl AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
     /// <p>Whether to scan images after they are pushed to a repository.</p>
     pub fn scan_on_push(mut self, input: bool) -> Self {
-        self.scan_on_push = Some(input);
+        self.scan_on_push = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to scan images after they are pushed to a repository.</p>
-    pub fn set_scan_on_push(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_scan_on_push(mut self, input: ::std::option::Option<bool>) -> Self {
         self.scan_on_push = input;
         self
     }

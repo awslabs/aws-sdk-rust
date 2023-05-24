@@ -2,18 +2,18 @@
 
 /// <p>The information needed to configure a delta time session window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LateDataRuleConfiguration {
     /// <p>The information needed to configure a delta time session window.</p>
     #[doc(hidden)]
     pub delta_time_session_window_configuration:
-        std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
+        ::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
 }
 impl LateDataRuleConfiguration {
     /// <p>The information needed to configure a delta time session window.</p>
     pub fn delta_time_session_window_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DeltaTimeSessionWindowConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DeltaTimeSessionWindowConfiguration> {
         self.delta_time_session_window_configuration.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl LateDataRuleConfiguration {
 
 /// A builder for [`LateDataRuleConfiguration`](crate::types::LateDataRuleConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LateDataRuleConfigurationBuilder {
     pub(crate) delta_time_session_window_configuration:
-        std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
+        ::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
 }
 impl LateDataRuleConfigurationBuilder {
     /// <p>The information needed to configure a delta time session window.</p>
@@ -37,13 +39,13 @@ impl LateDataRuleConfigurationBuilder {
         mut self,
         input: crate::types::DeltaTimeSessionWindowConfiguration,
     ) -> Self {
-        self.delta_time_session_window_configuration = Some(input);
+        self.delta_time_session_window_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The information needed to configure a delta time session window.</p>
     pub fn set_delta_time_session_window_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
+        input: ::std::option::Option<crate::types::DeltaTimeSessionWindowConfiguration>,
     ) -> Self {
         self.delta_time_session_window_configuration = input;
         self

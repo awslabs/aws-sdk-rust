@@ -2,69 +2,69 @@
 
 /// <p>The layer part size is not valid, or the first byte specified is not consecutive to the last byte of a previous layer part upload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidLayerPartException {
     /// <p>The registry ID associated with the exception.</p>
     #[doc(hidden)]
-    pub registry_id: std::option::Option<std::string::String>,
+    pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository name associated with the exception.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The upload ID associated with the exception.</p>
     #[doc(hidden)]
-    pub upload_id: std::option::Option<std::string::String>,
+    pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
     #[doc(hidden)]
-    pub last_valid_byte_received: std::option::Option<i64>,
+    pub last_valid_byte_received: ::std::option::Option<i64>,
     /// <p>The error message associated with the exception.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub message: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidLayerPartException {
     /// <p>The registry ID associated with the exception.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The repository name associated with the exception.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The upload ID associated with the exception.</p>
-    pub fn upload_id(&self) -> std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
-    pub fn last_valid_byte_received(&self) -> std::option::Option<i64> {
+    pub fn last_valid_byte_received(&self) -> ::std::option::Option<i64> {
         self.last_valid_byte_received
     }
 }
 impl InvalidLayerPartException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidLayerPartException {
+impl ::std::fmt::Display for InvalidLayerPartException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidLayerPartException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "InvalidLayerPartException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidLayerPartException {}
-impl aws_http::request_id::RequestId for crate::types::error::InvalidLayerPartException {
+impl ::std::error::Error for InvalidLayerPartException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidLayerPartException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLayerPartException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLayerPartException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -77,68 +77,76 @@ impl InvalidLayerPartException {
 
 /// A builder for [`InvalidLayerPartException`](crate::types::error::InvalidLayerPartException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidLayerPartExceptionBuilder {
-    pub(crate) registry_id: std::option::Option<std::string::String>,
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) upload_id: std::option::Option<std::string::String>,
-    pub(crate) last_valid_byte_received: std::option::Option<i64>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) registry_id: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) upload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_valid_byte_received: ::std::option::Option<i64>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidLayerPartExceptionBuilder {
     /// <p>The registry ID associated with the exception.</p>
-    pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registry_id = Some(input.into());
+    pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.registry_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The registry ID associated with the exception.</p>
-    pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
     }
     /// <p>The repository name associated with the exception.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name associated with the exception.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The upload ID associated with the exception.</p>
-    pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.upload_id = Some(input.into());
+    pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upload ID associated with the exception.</p>
-    pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
     }
     /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
     pub fn last_valid_byte_received(mut self, input: i64) -> Self {
-        self.last_valid_byte_received = Some(input);
+        self.last_valid_byte_received = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last valid byte received from the layer part upload that is associated with the exception.</p>
-    pub fn set_last_valid_byte_received(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_valid_byte_received(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_valid_byte_received = input;
         self
     }
     /// <p>The error message associated with the exception.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message associated with the exception.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -146,7 +154,7 @@ impl InvalidLayerPartExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

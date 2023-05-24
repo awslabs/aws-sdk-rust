@@ -2,24 +2,24 @@
 
 /// <p>The input configuration of the recommendation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     #[doc(hidden)]
-    pub model_package_version_arn: std::option::Option<std::string::String>,
+    pub model_package_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
     #[doc(hidden)]
-    pub job_duration_in_seconds: std::option::Option<i32>,
+    pub job_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>Specifies the traffic pattern of the job.</p>
     #[doc(hidden)]
-    pub traffic_pattern: std::option::Option<crate::types::TrafficPattern>,
+    pub traffic_pattern: ::std::option::Option<crate::types::TrafficPattern>,
     /// <p>Defines the resource limit of the job.</p>
     #[doc(hidden)]
-    pub resource_limit: std::option::Option<crate::types::RecommendationJobResourceLimit>,
+    pub resource_limit: ::std::option::Option<crate::types::RecommendationJobResourceLimit>,
     /// <p>Specifies the endpoint configuration to use for a job.</p>
     #[doc(hidden)]
     pub endpoint_configurations:
-        std::option::Option<std::vec::Vec<crate::types::EndpointInputConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EndpointInputConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
     /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
@@ -49,43 +49,43 @@ pub struct RecommendationJobInputConfig {
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     #[doc(hidden)]
-    pub volume_kms_key_id: std::option::Option<std::string::String>,
+    pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies mandatory fields for running an Inference Recommender job. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package.</p>
     #[doc(hidden)]
-    pub container_config: std::option::Option<crate::types::RecommendationJobContainerConfig>,
+    pub container_config: ::std::option::Option<crate::types::RecommendationJobContainerConfig>,
     /// <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
     #[doc(hidden)]
-    pub endpoints: std::option::Option<std::vec::Vec<crate::types::EndpointInfo>>,
+    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EndpointInfo>>,
     /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
     #[doc(hidden)]
-    pub vpc_config: std::option::Option<crate::types::RecommendationJobVpcConfig>,
+    pub vpc_config: ::std::option::Option<crate::types::RecommendationJobVpcConfig>,
     /// <p>The name of the created model.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
-    pub fn model_package_version_arn(&self) -> std::option::Option<&str> {
+    pub fn model_package_version_arn(&self) -> ::std::option::Option<&str> {
         self.model_package_version_arn.as_deref()
     }
     /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
-    pub fn job_duration_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn job_duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.job_duration_in_seconds
     }
     /// <p>Specifies the traffic pattern of the job.</p>
-    pub fn traffic_pattern(&self) -> std::option::Option<&crate::types::TrafficPattern> {
+    pub fn traffic_pattern(&self) -> ::std::option::Option<&crate::types::TrafficPattern> {
         self.traffic_pattern.as_ref()
     }
     /// <p>Defines the resource limit of the job.</p>
     pub fn resource_limit(
         &self,
-    ) -> std::option::Option<&crate::types::RecommendationJobResourceLimit> {
+    ) -> ::std::option::Option<&crate::types::RecommendationJobResourceLimit> {
         self.resource_limit.as_ref()
     }
     /// <p>Specifies the endpoint configuration to use for a job.</p>
     pub fn endpoint_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::EndpointInputConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::EndpointInputConfiguration]> {
         self.endpoint_configurations.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
@@ -116,25 +116,25 @@ impl RecommendationJobInputConfig {
     /// </region></code> </p> </li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
-    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>Specifies mandatory fields for running an Inference Recommender job. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package.</p>
     pub fn container_config(
         &self,
-    ) -> std::option::Option<&crate::types::RecommendationJobContainerConfig> {
+    ) -> ::std::option::Option<&crate::types::RecommendationJobContainerConfig> {
         self.container_config.as_ref()
     }
     /// <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::types::EndpointInfo]> {
+    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::EndpointInfo]> {
         self.endpoints.as_deref()
     }
     /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::RecommendationJobVpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobVpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>The name of the created model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
 }
@@ -147,67 +147,72 @@ impl RecommendationJobInputConfig {
 
 /// A builder for [`RecommendationJobInputConfig`](crate::types::RecommendationJobInputConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationJobInputConfigBuilder {
-    pub(crate) model_package_version_arn: std::option::Option<std::string::String>,
-    pub(crate) job_duration_in_seconds: std::option::Option<i32>,
-    pub(crate) traffic_pattern: std::option::Option<crate::types::TrafficPattern>,
-    pub(crate) resource_limit: std::option::Option<crate::types::RecommendationJobResourceLimit>,
+    pub(crate) model_package_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) job_duration_in_seconds: ::std::option::Option<i32>,
+    pub(crate) traffic_pattern: ::std::option::Option<crate::types::TrafficPattern>,
+    pub(crate) resource_limit: ::std::option::Option<crate::types::RecommendationJobResourceLimit>,
     pub(crate) endpoint_configurations:
-        std::option::Option<std::vec::Vec<crate::types::EndpointInputConfiguration>>,
-    pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EndpointInputConfiguration>>,
+    pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) container_config:
-        std::option::Option<crate::types::RecommendationJobContainerConfig>,
-    pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::types::EndpointInfo>>,
-    pub(crate) vpc_config: std::option::Option<crate::types::RecommendationJobVpcConfig>,
-    pub(crate) model_name: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::RecommendationJobContainerConfig>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EndpointInfo>>,
+    pub(crate) vpc_config: ::std::option::Option<crate::types::RecommendationJobVpcConfig>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationJobInputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
-    pub fn model_package_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_package_version_arn = Some(input.into());
+    pub fn model_package_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_package_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     pub fn set_model_package_version_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_package_version_arn = input;
         self
     }
     /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
     pub fn job_duration_in_seconds(mut self, input: i32) -> Self {
-        self.job_duration_in_seconds = Some(input);
+        self.job_duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the maximum duration of the job, in seconds.&gt;</p>
-    pub fn set_job_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_job_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.job_duration_in_seconds = input;
         self
     }
     /// <p>Specifies the traffic pattern of the job.</p>
     pub fn traffic_pattern(mut self, input: crate::types::TrafficPattern) -> Self {
-        self.traffic_pattern = Some(input);
+        self.traffic_pattern = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the traffic pattern of the job.</p>
     pub fn set_traffic_pattern(
         mut self,
-        input: std::option::Option<crate::types::TrafficPattern>,
+        input: ::std::option::Option<crate::types::TrafficPattern>,
     ) -> Self {
         self.traffic_pattern = input;
         self
     }
     /// <p>Defines the resource limit of the job.</p>
     pub fn resource_limit(mut self, input: crate::types::RecommendationJobResourceLimit) -> Self {
-        self.resource_limit = Some(input);
+        self.resource_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the resource limit of the job.</p>
     pub fn set_resource_limit(
         mut self,
-        input: std::option::Option<crate::types::RecommendationJobResourceLimit>,
+        input: ::std::option::Option<crate::types::RecommendationJobResourceLimit>,
     ) -> Self {
         self.resource_limit = input;
         self
@@ -223,13 +228,13 @@ impl RecommendationJobInputConfigBuilder {
     ) -> Self {
         let mut v = self.endpoint_configurations.unwrap_or_default();
         v.push(input);
-        self.endpoint_configurations = Some(v);
+        self.endpoint_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the endpoint configuration to use for a job.</p>
     pub fn set_endpoint_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointInputConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointInputConfiguration>>,
     ) -> Self {
         self.endpoint_configurations = input;
         self
@@ -262,8 +267,11 @@ impl RecommendationJobInputConfigBuilder {
     /// </region></code> </p> </li>
     /// </ul>
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
-    pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_kms_key_id = Some(input.into());
+    pub fn volume_kms_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint. This key will be passed to SageMaker Hosting for endpoint creation. </p>
@@ -296,7 +304,7 @@ impl RecommendationJobInputConfigBuilder {
     /// <p>For more information about key identifiers, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">Key identifiers (KeyID)</a> in the Amazon Web Services Key Management Service (Amazon Web Services KMS) documentation.</p>
     pub fn set_volume_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.volume_kms_key_id = input;
         self
@@ -306,13 +314,13 @@ impl RecommendationJobInputConfigBuilder {
         mut self,
         input: crate::types::RecommendationJobContainerConfig,
     ) -> Self {
-        self.container_config = Some(input);
+        self.container_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies mandatory fields for running an Inference Recommender job. The fields specified in <code>ContainerConfig</code> override the corresponding fields in the model package.</p>
     pub fn set_container_config(
         mut self,
-        input: std::option::Option<crate::types::RecommendationJobContainerConfig>,
+        input: ::std::option::Option<crate::types::RecommendationJobContainerConfig>,
     ) -> Self {
         self.container_config = input;
         self
@@ -325,37 +333,37 @@ impl RecommendationJobInputConfigBuilder {
     pub fn endpoints(mut self, input: crate::types::EndpointInfo) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
         v.push(input);
-        self.endpoints = Some(v);
+        self.endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
     pub fn set_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointInfo>>,
     ) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
     pub fn vpc_config(mut self, input: crate::types::RecommendationJobVpcConfig) -> Self {
-        self.vpc_config = Some(input);
+        self.vpc_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
     pub fn set_vpc_config(
         mut self,
-        input: std::option::Option<crate::types::RecommendationJobVpcConfig>,
+        input: ::std::option::Option<crate::types::RecommendationJobVpcConfig>,
     ) -> Self {
         self.vpc_config = input;
         self
     }
     /// <p>The name of the created model.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the created model.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }

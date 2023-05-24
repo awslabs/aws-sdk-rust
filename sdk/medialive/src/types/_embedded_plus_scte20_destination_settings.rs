@@ -2,7 +2,7 @@
 
 /// Embedded Plus Scte20 Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmbeddedPlusScte20DestinationSettings {}
 impl EmbeddedPlusScte20DestinationSettings {
     /// Creates a new builder-style object to manufacture [`EmbeddedPlusScte20DestinationSettings`](crate::types::EmbeddedPlusScte20DestinationSettings).
@@ -13,7 +13,9 @@ impl EmbeddedPlusScte20DestinationSettings {
 
 /// A builder for [`EmbeddedPlusScte20DestinationSettings`](crate::types::EmbeddedPlusScte20DestinationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmbeddedPlusScte20DestinationSettingsBuilder {}
 impl EmbeddedPlusScte20DestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`EmbeddedPlusScte20DestinationSettings`](crate::types::EmbeddedPlusScte20DestinationSettings).

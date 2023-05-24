@@ -6,31 +6,31 @@
 /// </note>
 /// <p>A complex type that contains <code>SizeConstraint</code> objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code> contains more than one <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SizeConstraintSet {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     #[doc(hidden)]
-    pub size_constraint_set_id: std::option::Option<std::string::String>,
+    pub size_constraint_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
     #[doc(hidden)]
-    pub size_constraints: std::option::Option<std::vec::Vec<crate::types::SizeConstraint>>,
+    pub size_constraints: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraint>>,
 }
 impl SizeConstraintSet {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
+    pub fn size_constraint_set_id(&self) -> ::std::option::Option<&str> {
         self.size_constraint_set_id.as_deref()
     }
     /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
-    pub fn size_constraints(&self) -> std::option::Option<&[crate::types::SizeConstraint]> {
+    pub fn size_constraints(&self) -> ::std::option::Option<&[crate::types::SizeConstraint]> {
         self.size_constraints.as_deref()
     }
 }
@@ -43,35 +43,41 @@ impl SizeConstraintSet {
 
 /// A builder for [`SizeConstraintSet`](crate::types::SizeConstraintSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SizeConstraintSetBuilder {
-    pub(crate) size_constraint_set_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) size_constraints: std::option::Option<std::vec::Vec<crate::types::SizeConstraint>>,
+    pub(crate) size_constraint_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) size_constraints:
+        ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraint>>,
 }
 impl SizeConstraintSetBuilder {
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.size_constraint_set_id = Some(input.into());
+    pub fn size_constraint_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.size_constraint_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn set_size_constraint_set_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.size_constraint_set_id = input;
         self
     }
     /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -83,13 +89,13 @@ impl SizeConstraintSetBuilder {
     pub fn size_constraints(mut self, input: crate::types::SizeConstraint) -> Self {
         let mut v = self.size_constraints.unwrap_or_default();
         v.push(input);
-        self.size_constraints = Some(v);
+        self.size_constraints = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
     pub fn set_size_constraints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SizeConstraint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SizeConstraint>>,
     ) -> Self {
         self.size_constraints = input;
         self

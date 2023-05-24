@@ -2,29 +2,29 @@
 
 /// <p>A question difference return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuestionDifference {
     /// <p>The ID of the question.</p>
     #[doc(hidden)]
-    pub question_id: std::option::Option<std::string::String>,
+    pub question_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the question.</p>
     #[doc(hidden)]
-    pub question_title: std::option::Option<std::string::String>,
+    pub question_title: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the type of change to the question.</p>
     #[doc(hidden)]
-    pub difference_status: std::option::Option<crate::types::DifferenceStatus>,
+    pub difference_status: ::std::option::Option<crate::types::DifferenceStatus>,
 }
 impl QuestionDifference {
     /// <p>The ID of the question.</p>
-    pub fn question_id(&self) -> std::option::Option<&str> {
+    pub fn question_id(&self) -> ::std::option::Option<&str> {
         self.question_id.as_deref()
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(&self) -> std::option::Option<&str> {
+    pub fn question_title(&self) -> ::std::option::Option<&str> {
         self.question_title.as_deref()
     }
     /// <p>Indicates the type of change to the question.</p>
-    pub fn difference_status(&self) -> std::option::Option<&crate::types::DifferenceStatus> {
+    pub fn difference_status(&self) -> ::std::option::Option<&crate::types::DifferenceStatus> {
         self.difference_status.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl QuestionDifference {
 
 /// A builder for [`QuestionDifference`](crate::types::QuestionDifference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QuestionDifferenceBuilder {
-    pub(crate) question_id: std::option::Option<std::string::String>,
-    pub(crate) question_title: std::option::Option<std::string::String>,
-    pub(crate) difference_status: std::option::Option<crate::types::DifferenceStatus>,
+    pub(crate) question_id: ::std::option::Option<::std::string::String>,
+    pub(crate) question_title: ::std::option::Option<::std::string::String>,
+    pub(crate) difference_status: ::std::option::Option<crate::types::DifferenceStatus>,
 }
 impl QuestionDifferenceBuilder {
     /// <p>The ID of the question.</p>
-    pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.question_id = Some(input.into());
+    pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.question_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the question.</p>
-    pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.question_id = input;
         self
     }
     /// <p>The title of the question.</p>
-    pub fn question_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.question_title = Some(input.into());
+    pub fn question_title(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.question_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the question.</p>
-    pub fn set_question_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_question_title(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.question_title = input;
         self
     }
     /// <p>Indicates the type of change to the question.</p>
     pub fn difference_status(mut self, input: crate::types::DifferenceStatus) -> Self {
-        self.difference_status = Some(input);
+        self.difference_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the type of change to the question.</p>
     pub fn set_difference_status(
         mut self,
-        input: std::option::Option<crate::types::DifferenceStatus>,
+        input: ::std::option::Option<crate::types::DifferenceStatus>,
     ) -> Self {
         self.difference_status = input;
         self

@@ -38,13 +38,13 @@
 /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M3u8AudioDuration {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M3u8AudioDuration {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M3u8AudioDuration {
+impl ::std::convert::From<&str> for M3u8AudioDuration {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT_CODEC_DURATION" => M3u8AudioDuration::DefaultCodecDuration,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M3u8AudioDuration {
         }
     }
 }
-impl std::str::FromStr for M3u8AudioDuration {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M3u8AudioDuration {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M3u8AudioDuration::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M3u8AudioDuration::from(s))
     }
 }
 impl M3u8AudioDuration {
@@ -86,7 +86,7 @@ impl M3u8AudioDuration {
         &["DEFAULT_CODEC_DURATION", "MATCH_VIDEO_DURATION"]
     }
 }
-impl AsRef<str> for M3u8AudioDuration {
+impl ::std::convert::AsRef<str> for M3u8AudioDuration {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

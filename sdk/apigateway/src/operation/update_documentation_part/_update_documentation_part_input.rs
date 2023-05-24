@@ -2,29 +2,29 @@
 
 /// <p>Updates an existing documentation part of a given API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the to-be-updated documentation part.</p>
     #[doc(hidden)]
-    pub documentation_part_id: std::option::Option<std::string::String>,
+    pub documentation_part_id: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     #[doc(hidden)]
-    pub patch_operations: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+    pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The identifier of the to-be-updated documentation part.</p>
-    pub fn documentation_part_id(&self) -> std::option::Option<&str> {
+    pub fn documentation_part_id(&self) -> ::std::option::Option<&str> {
         self.documentation_part_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> std::option::Option<&[crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
@@ -39,32 +39,38 @@ impl UpdateDocumentationPartInput {
 
 /// A builder for [`UpdateDocumentationPartInput`](crate::operation::update_documentation_part::UpdateDocumentationPartInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDocumentationPartInputBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) documentation_part_id: std::option::Option<std::string::String>,
-    pub(crate) patch_operations: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) documentation_part_id: ::std::option::Option<::std::string::String>,
+    pub(crate) patch_operations:
+        ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateDocumentationPartInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The identifier of the to-be-updated documentation part.</p>
-    pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.documentation_part_id = Some(input.into());
+    pub fn documentation_part_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.documentation_part_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the to-be-updated documentation part.</p>
     pub fn set_documentation_part_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.documentation_part_id = input;
         self
@@ -77,13 +83,13 @@ impl UpdateDocumentationPartInputBuilder {
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
         v.push(input);
-        self.patch_operations = Some(v);
+        self.patch_operations = ::std::option::Option::Some(v);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn set_patch_operations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
     ) -> Self {
         self.patch_operations = input;
         self
@@ -91,11 +97,11 @@ impl UpdateDocumentationPartInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDocumentationPartInput`](crate::operation::update_documentation_part::UpdateDocumentationPartInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_documentation_part::UpdateDocumentationPartInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_documentation_part::UpdateDocumentationPartInput {
                 rest_api_id: self.rest_api_id,
                 documentation_part_id: self.documentation_part_id,

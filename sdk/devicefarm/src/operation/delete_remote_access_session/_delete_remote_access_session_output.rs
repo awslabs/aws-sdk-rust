@@ -2,11 +2,11 @@
 
 /// <p>The response from the server when a request is made to delete the remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRemoteAccessSessionOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteRemoteAccessSessionOutput {
+impl ::aws_http::request_id::RequestId for DeleteRemoteAccessSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteRemoteAccessSessionOutput {
 
 /// A builder for [`DeleteRemoteAccessSessionOutput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteRemoteAccessSessionOutputBuilder {
     _request_id: Option<String>,
 }

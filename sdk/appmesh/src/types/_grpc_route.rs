@@ -2,36 +2,36 @@
 
 /// <p>An object that represents a gRPC route type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::GrpcRouteAction>,
+    pub action: ::std::option::Option<crate::types::GrpcRouteAction>,
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
-    pub r#match: std::option::Option<crate::types::GrpcRouteMatch>,
+    pub r#match: ::std::option::Option<crate::types::GrpcRouteMatch>,
     /// <p>An object that represents a retry policy.</p>
     #[doc(hidden)]
-    pub retry_policy: std::option::Option<crate::types::GrpcRetryPolicy>,
+    pub retry_policy: ::std::option::Option<crate::types::GrpcRetryPolicy>,
     /// <p>An object that represents types of timeouts. </p>
     #[doc(hidden)]
-    pub timeout: std::option::Option<crate::types::GrpcTimeout>,
+    pub timeout: ::std::option::Option<crate::types::GrpcTimeout>,
 }
 impl GrpcRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::GrpcRouteAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::GrpcRouteAction> {
         self.action.as_ref()
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::GrpcRouteMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<&crate::types::GrpcRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents a retry policy.</p>
-    pub fn retry_policy(&self) -> std::option::Option<&crate::types::GrpcRetryPolicy> {
+    pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::GrpcRetryPolicy> {
         self.retry_policy.as_ref()
     }
     /// <p>An object that represents types of timeouts. </p>
-    pub fn timeout(&self) -> std::option::Option<&crate::types::GrpcTimeout> {
+    pub fn timeout(&self) -> ::std::option::Option<&crate::types::GrpcTimeout> {
         self.timeout.as_ref()
     }
 }
@@ -44,54 +44,59 @@ impl GrpcRoute {
 
 /// A builder for [`GrpcRoute`](crate::types::GrpcRoute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GrpcRouteBuilder {
-    pub(crate) action: std::option::Option<crate::types::GrpcRouteAction>,
-    pub(crate) r#match: std::option::Option<crate::types::GrpcRouteMatch>,
-    pub(crate) retry_policy: std::option::Option<crate::types::GrpcRetryPolicy>,
-    pub(crate) timeout: std::option::Option<crate::types::GrpcTimeout>,
+    pub(crate) action: ::std::option::Option<crate::types::GrpcRouteAction>,
+    pub(crate) r#match: ::std::option::Option<crate::types::GrpcRouteMatch>,
+    pub(crate) retry_policy: ::std::option::Option<crate::types::GrpcRetryPolicy>,
+    pub(crate) timeout: ::std::option::Option<crate::types::GrpcTimeout>,
 }
 impl GrpcRouteBuilder {
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn action(mut self, input: crate::types::GrpcRouteAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::GrpcRouteAction>) -> Self {
+    pub fn set_action(
+        mut self,
+        input: ::std::option::Option<crate::types::GrpcRouteAction>,
+    ) -> Self {
         self.action = input;
         self
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn r#match(mut self, input: crate::types::GrpcRouteMatch) -> Self {
-        self.r#match = Some(input);
+        self.r#match = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn set_match(mut self, input: std::option::Option<crate::types::GrpcRouteMatch>) -> Self {
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::GrpcRouteMatch>) -> Self {
         self.r#match = input;
         self
     }
     /// <p>An object that represents a retry policy.</p>
     pub fn retry_policy(mut self, input: crate::types::GrpcRetryPolicy) -> Self {
-        self.retry_policy = Some(input);
+        self.retry_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents a retry policy.</p>
     pub fn set_retry_policy(
         mut self,
-        input: std::option::Option<crate::types::GrpcRetryPolicy>,
+        input: ::std::option::Option<crate::types::GrpcRetryPolicy>,
     ) -> Self {
         self.retry_policy = input;
         self
     }
     /// <p>An object that represents types of timeouts. </p>
     pub fn timeout(mut self, input: crate::types::GrpcTimeout) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents types of timeouts. </p>
-    pub fn set_timeout(mut self, input: std::option::Option<crate::types::GrpcTimeout>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::GrpcTimeout>) -> Self {
         self.timeout = input;
         self
     }

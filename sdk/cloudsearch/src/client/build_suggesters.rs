@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BuildSuggesters`](crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::build_suggesters::builders::BuildSuggestersFluentBuilder::set_domain_name): <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     /// - On success, responds with [`BuildSuggestersOutput`](crate::operation::build_suggesters::BuildSuggestersOutput) with field(s):
     ///   - [`field_names(Option<Vec<String>>)`](crate::operation::build_suggesters::BuildSuggestersOutput::field_names): <p>A list of field names.</p>
     /// - On failure, responds with [`SdkError<BuildSuggestersError>`](crate::operation::build_suggesters::BuildSuggestersError)

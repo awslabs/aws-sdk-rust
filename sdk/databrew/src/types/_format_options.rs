@@ -2,29 +2,29 @@
 
 /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormatOptions {
     /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
     #[doc(hidden)]
-    pub json: std::option::Option<crate::types::JsonOptions>,
+    pub json: ::std::option::Option<crate::types::JsonOptions>,
     /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
     #[doc(hidden)]
-    pub excel: std::option::Option<crate::types::ExcelOptions>,
+    pub excel: ::std::option::Option<crate::types::ExcelOptions>,
     /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
     #[doc(hidden)]
-    pub csv: std::option::Option<crate::types::CsvOptions>,
+    pub csv: ::std::option::Option<crate::types::CsvOptions>,
 }
 impl FormatOptions {
     /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
-    pub fn json(&self) -> std::option::Option<&crate::types::JsonOptions> {
+    pub fn json(&self) -> ::std::option::Option<&crate::types::JsonOptions> {
         self.json.as_ref()
     }
     /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
-    pub fn excel(&self) -> std::option::Option<&crate::types::ExcelOptions> {
+    pub fn excel(&self) -> ::std::option::Option<&crate::types::ExcelOptions> {
         self.excel.as_ref()
     }
     /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::types::CsvOptions> {
+    pub fn csv(&self) -> ::std::option::Option<&crate::types::CsvOptions> {
         self.csv.as_ref()
     }
 }
@@ -37,40 +37,42 @@ impl FormatOptions {
 
 /// A builder for [`FormatOptions`](crate::types::FormatOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FormatOptionsBuilder {
-    pub(crate) json: std::option::Option<crate::types::JsonOptions>,
-    pub(crate) excel: std::option::Option<crate::types::ExcelOptions>,
-    pub(crate) csv: std::option::Option<crate::types::CsvOptions>,
+    pub(crate) json: ::std::option::Option<crate::types::JsonOptions>,
+    pub(crate) excel: ::std::option::Option<crate::types::ExcelOptions>,
+    pub(crate) csv: ::std::option::Option<crate::types::CsvOptions>,
 }
 impl FormatOptionsBuilder {
     /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
     pub fn json(mut self, input: crate::types::JsonOptions) -> Self {
-        self.json = Some(input);
+        self.json = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
-    pub fn set_json(mut self, input: std::option::Option<crate::types::JsonOptions>) -> Self {
+    pub fn set_json(mut self, input: ::std::option::Option<crate::types::JsonOptions>) -> Self {
         self.json = input;
         self
     }
     /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
     pub fn excel(mut self, input: crate::types::ExcelOptions) -> Self {
-        self.excel = Some(input);
+        self.excel = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
-    pub fn set_excel(mut self, input: std::option::Option<crate::types::ExcelOptions>) -> Self {
+    pub fn set_excel(mut self, input: ::std::option::Option<crate::types::ExcelOptions>) -> Self {
         self.excel = input;
         self
     }
     /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
     pub fn csv(mut self, input: crate::types::CsvOptions) -> Self {
-        self.csv = Some(input);
+        self.csv = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
-    pub fn set_csv(mut self, input: std::option::Option<crate::types::CsvOptions>) -> Self {
+    pub fn set_csv(mut self, input: ::std::option::Option<crate::types::CsvOptions>) -> Self {
         self.csv = input;
         self
     }

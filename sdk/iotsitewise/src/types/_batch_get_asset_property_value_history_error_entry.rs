@@ -2,31 +2,31 @@
 
 /// <p>A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
     /// <p>The associated error message.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
-    pub entry_id: std::option::Option<std::string::String>,
+    pub entry_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntry {
     /// <p>The error code.</p>
     pub fn error_code(
         &self,
-    ) -> std::option::Option<&crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
+    ) -> ::std::option::Option<&crate::types::BatchGetAssetPropertyValueHistoryErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> ::std::option::Option<&str> {
         self.entry_id.as_deref()
     }
 }
@@ -39,12 +39,14 @@ impl BatchGetAssetPropertyValueHistoryErrorEntry {
 
 /// A builder for [`BatchGetAssetPropertyValueHistoryErrorEntry`](crate::types::BatchGetAssetPropertyValueHistoryErrorEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     pub(crate) error_code:
-        std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) entry_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) entry_id: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     /// <p>The error code.</p>
@@ -52,34 +54,40 @@ impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
         mut self,
         input: crate::types::BatchGetAssetPropertyValueHistoryErrorCode,
     ) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
+        input: ::std::option::Option<crate::types::BatchGetAssetPropertyValueHistoryErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The associated error message.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated error message.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entry_id = Some(input.into());
+    pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entry_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the entry.</p>
-    pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_id = input;
         self
     }

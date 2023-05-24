@@ -2,7 +2,7 @@
 pub(crate) fn de_apns_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ApnsChannelResponse>,
+    ::std::option::Option<crate::types::ApnsChannelResponse>,
     crate::operation::update_apns_channel::UpdateApnsChannelError,
 > {
     (!body.is_empty())

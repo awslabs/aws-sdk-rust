@@ -41,13 +41,13 @@
 /// Specify the strength of the Bandwidth reduction filter. For most workflows, we recommend that you choose Auto to reduce the bandwidth of your output with little to no perceptual decrease in video quality. For high quality and high bitrate outputs, choose Low. For the most bandwidth reduction, choose High. We recommend that you choose High for low bitrate outputs. Note that High may incur a slight increase in the softness of your output.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BandwidthReductionFilterStrength {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum BandwidthReductionFilterStrength {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BandwidthReductionFilterStrength {
+impl ::std::convert::From<&str> for BandwidthReductionFilterStrength {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => BandwidthReductionFilterStrength::Auto,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for BandwidthReductionFilterStrength {
         }
     }
 }
-impl std::str::FromStr for BandwidthReductionFilterStrength {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BandwidthReductionFilterStrength {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BandwidthReductionFilterStrength::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BandwidthReductionFilterStrength::from(s))
     }
 }
 impl BandwidthReductionFilterStrength {
@@ -101,7 +101,7 @@ impl BandwidthReductionFilterStrength {
         &["AUTO", "HIGH", "LOW", "MEDIUM", "OFF"]
     }
 }
-impl AsRef<str> for BandwidthReductionFilterStrength {
+impl ::std::convert::AsRef<str> for BandwidthReductionFilterStrength {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,50 +2,50 @@
 
 /// <p>The forecast properties setup of a forecast in the line chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedForecastProperties {
     /// <p>The periods forward setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub periods_forward: std::option::Option<i32>,
+    pub periods_forward: ::std::option::Option<i32>,
     /// <p>The periods backward setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub periods_backward: std::option::Option<i32>,
+    pub periods_backward: ::std::option::Option<i32>,
     /// <p>The upper boundary setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub upper_boundary: std::option::Option<f64>,
+    pub upper_boundary: ::std::option::Option<f64>,
     /// <p>The lower boundary setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub lower_boundary: std::option::Option<f64>,
+    pub lower_boundary: ::std::option::Option<f64>,
     /// <p>The prediction interval setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub prediction_interval: std::option::Option<i32>,
+    pub prediction_interval: ::std::option::Option<i32>,
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
     /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub seasonality: std::option::Option<i32>,
+    pub seasonality: ::std::option::Option<i32>,
 }
 impl TimeBasedForecastProperties {
     /// <p>The periods forward setup of a forecast computation.</p>
-    pub fn periods_forward(&self) -> std::option::Option<i32> {
+    pub fn periods_forward(&self) -> ::std::option::Option<i32> {
         self.periods_forward
     }
     /// <p>The periods backward setup of a forecast computation.</p>
-    pub fn periods_backward(&self) -> std::option::Option<i32> {
+    pub fn periods_backward(&self) -> ::std::option::Option<i32> {
         self.periods_backward
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
-    pub fn upper_boundary(&self) -> std::option::Option<f64> {
+    pub fn upper_boundary(&self) -> ::std::option::Option<f64> {
         self.upper_boundary
     }
     /// <p>The lower boundary setup of a forecast computation.</p>
-    pub fn lower_boundary(&self) -> std::option::Option<f64> {
+    pub fn lower_boundary(&self) -> ::std::option::Option<f64> {
         self.lower_boundary
     }
     /// <p>The prediction interval setup of a forecast computation.</p>
-    pub fn prediction_interval(&self) -> std::option::Option<i32> {
+    pub fn prediction_interval(&self) -> ::std::option::Option<i32> {
         self.prediction_interval
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
@@ -53,7 +53,7 @@ impl TimeBasedForecastProperties {
     /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
     /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
-    pub fn seasonality(&self) -> std::option::Option<i32> {
+    pub fn seasonality(&self) -> ::std::option::Option<i32> {
         self.seasonality
     }
 }
@@ -66,63 +66,65 @@ impl TimeBasedForecastProperties {
 
 /// A builder for [`TimeBasedForecastProperties`](crate::types::TimeBasedForecastProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeBasedForecastPropertiesBuilder {
-    pub(crate) periods_forward: std::option::Option<i32>,
-    pub(crate) periods_backward: std::option::Option<i32>,
-    pub(crate) upper_boundary: std::option::Option<f64>,
-    pub(crate) lower_boundary: std::option::Option<f64>,
-    pub(crate) prediction_interval: std::option::Option<i32>,
-    pub(crate) seasonality: std::option::Option<i32>,
+    pub(crate) periods_forward: ::std::option::Option<i32>,
+    pub(crate) periods_backward: ::std::option::Option<i32>,
+    pub(crate) upper_boundary: ::std::option::Option<f64>,
+    pub(crate) lower_boundary: ::std::option::Option<f64>,
+    pub(crate) prediction_interval: ::std::option::Option<i32>,
+    pub(crate) seasonality: ::std::option::Option<i32>,
 }
 impl TimeBasedForecastPropertiesBuilder {
     /// <p>The periods forward setup of a forecast computation.</p>
     pub fn periods_forward(mut self, input: i32) -> Self {
-        self.periods_forward = Some(input);
+        self.periods_forward = ::std::option::Option::Some(input);
         self
     }
     /// <p>The periods forward setup of a forecast computation.</p>
-    pub fn set_periods_forward(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_periods_forward(mut self, input: ::std::option::Option<i32>) -> Self {
         self.periods_forward = input;
         self
     }
     /// <p>The periods backward setup of a forecast computation.</p>
     pub fn periods_backward(mut self, input: i32) -> Self {
-        self.periods_backward = Some(input);
+        self.periods_backward = ::std::option::Option::Some(input);
         self
     }
     /// <p>The periods backward setup of a forecast computation.</p>
-    pub fn set_periods_backward(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_periods_backward(mut self, input: ::std::option::Option<i32>) -> Self {
         self.periods_backward = input;
         self
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
     pub fn upper_boundary(mut self, input: f64) -> Self {
-        self.upper_boundary = Some(input);
+        self.upper_boundary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
-    pub fn set_upper_boundary(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_upper_boundary(mut self, input: ::std::option::Option<f64>) -> Self {
         self.upper_boundary = input;
         self
     }
     /// <p>The lower boundary setup of a forecast computation.</p>
     pub fn lower_boundary(mut self, input: f64) -> Self {
-        self.lower_boundary = Some(input);
+        self.lower_boundary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lower boundary setup of a forecast computation.</p>
-    pub fn set_lower_boundary(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lower_boundary(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lower_boundary = input;
         self
     }
     /// <p>The prediction interval setup of a forecast computation.</p>
     pub fn prediction_interval(mut self, input: i32) -> Self {
-        self.prediction_interval = Some(input);
+        self.prediction_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The prediction interval setup of a forecast computation.</p>
-    pub fn set_prediction_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_prediction_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.prediction_interval = input;
         self
     }
@@ -132,7 +134,7 @@ impl TimeBasedForecastPropertiesBuilder {
     /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
     pub fn seasonality(mut self, input: i32) -> Self {
-        self.seasonality = Some(input);
+        self.seasonality = ::std::option::Option::Some(input);
         self
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
@@ -140,7 +142,7 @@ impl TimeBasedForecastPropertiesBuilder {
     /// <li> <p> <code>NULL</code>: The input is set to <code>NULL</code>.</p> </li>
     /// <li> <p> <code>NON_NULL</code>: The input is set to a custom value.</p> </li>
     /// </ul>
-    pub fn set_seasonality(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_seasonality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seasonality = input;
         self
     }

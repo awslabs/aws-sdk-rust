@@ -2,15 +2,15 @@
 
 /// <p>The display options for margins around the outside edge of sheets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarginStyle {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
     #[doc(hidden)]
-    pub show: std::option::Option<bool>,
+    pub show: ::std::option::Option<bool>,
 }
 impl MarginStyle {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
-    pub fn show(&self) -> std::option::Option<bool> {
+    pub fn show(&self) -> ::std::option::Option<bool> {
         self.show
     }
 }
@@ -23,18 +23,20 @@ impl MarginStyle {
 
 /// A builder for [`MarginStyle`](crate::types::MarginStyle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MarginStyleBuilder {
-    pub(crate) show: std::option::Option<bool>,
+    pub(crate) show: ::std::option::Option<bool>,
 }
 impl MarginStyleBuilder {
     /// <p>This Boolean value controls whether to display sheet margins.</p>
     pub fn show(mut self, input: bool) -> Self {
-        self.show = Some(input);
+        self.show = ::std::option::Option::Some(input);
         self
     }
     /// <p>This Boolean value controls whether to display sheet margins.</p>
-    pub fn set_show(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_show(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show = input;
         self
     }

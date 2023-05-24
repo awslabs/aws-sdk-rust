@@ -2,31 +2,31 @@
 
 /// <p>Contains information about a stage in an edge deployment plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentStage {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
-    pub stage_name: std::option::Option<std::string::String>,
+    pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of the devices in the stage.</p>
     #[doc(hidden)]
-    pub device_selection_config: std::option::Option<crate::types::DeviceSelectionConfig>,
+    pub device_selection_config: ::std::option::Option<crate::types::DeviceSelectionConfig>,
     /// <p>Configuration of the deployment details.</p>
     #[doc(hidden)]
-    pub deployment_config: std::option::Option<crate::types::EdgeDeploymentConfig>,
+    pub deployment_config: ::std::option::Option<crate::types::EdgeDeploymentConfig>,
 }
 impl DeploymentStage {
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<&str> {
         self.stage_name.as_deref()
     }
     /// <p>Configuration of the devices in the stage.</p>
     pub fn device_selection_config(
         &self,
-    ) -> std::option::Option<&crate::types::DeviceSelectionConfig> {
+    ) -> ::std::option::Option<&crate::types::DeviceSelectionConfig> {
         self.device_selection_config.as_ref()
     }
     /// <p>Configuration of the deployment details.</p>
-    pub fn deployment_config(&self) -> std::option::Option<&crate::types::EdgeDeploymentConfig> {
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::EdgeDeploymentConfig> {
         self.deployment_config.as_ref()
     }
 }
@@ -39,45 +39,47 @@ impl DeploymentStage {
 
 /// A builder for [`DeploymentStage`](crate::types::DeploymentStage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentStageBuilder {
-    pub(crate) stage_name: std::option::Option<std::string::String>,
-    pub(crate) device_selection_config: std::option::Option<crate::types::DeviceSelectionConfig>,
-    pub(crate) deployment_config: std::option::Option<crate::types::EdgeDeploymentConfig>,
+    pub(crate) stage_name: ::std::option::Option<::std::string::String>,
+    pub(crate) device_selection_config: ::std::option::Option<crate::types::DeviceSelectionConfig>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::EdgeDeploymentConfig>,
 }
 impl DeploymentStageBuilder {
     /// <p>The name of the stage.</p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage_name = Some(input.into());
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stage.</p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
     }
     /// <p>Configuration of the devices in the stage.</p>
     pub fn device_selection_config(mut self, input: crate::types::DeviceSelectionConfig) -> Self {
-        self.device_selection_config = Some(input);
+        self.device_selection_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of the devices in the stage.</p>
     pub fn set_device_selection_config(
         mut self,
-        input: std::option::Option<crate::types::DeviceSelectionConfig>,
+        input: ::std::option::Option<crate::types::DeviceSelectionConfig>,
     ) -> Self {
         self.device_selection_config = input;
         self
     }
     /// <p>Configuration of the deployment details.</p>
     pub fn deployment_config(mut self, input: crate::types::EdgeDeploymentConfig) -> Self {
-        self.deployment_config = Some(input);
+        self.deployment_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of the deployment details.</p>
     pub fn set_deployment_config(
         mut self,
-        input: std::option::Option<crate::types::EdgeDeploymentConfig>,
+        input: ::std::option::Option<crate::types::EdgeDeploymentConfig>,
     ) -> Self {
         self.deployment_config = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::update_geofence_collection::_update_geofence_collectio
 /// Fluent builder constructing a request to `UpdateGeofenceCollection`.
 ///
 /// <p>Updates the specified properties of a given geofence collection.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGeofenceCollectionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionInputBuilder,
 }
 impl UpdateGeofenceCollectionFluentBuilder {
     /// Creates a new `UpdateGeofenceCollection`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_geofence_collection::UpdateGeofenceCollection,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateGeofenceCollectionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl UpdateGeofenceCollectionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_geofence_collection::UpdateGeofenceCollectionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the geofence collection to update.</p>
-    pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn collection_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
     /// <p>The name of the geofence collection to update.</p>
-    pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_collection_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }
@@ -106,14 +115,17 @@ impl UpdateGeofenceCollectionFluentBuilder {
     )]
     pub fn set_pricing_plan(
         mut self,
-        input: std::option::Option<crate::types::PricingPlan>,
+        input: ::std::option::Option<crate::types::PricingPlan>,
     ) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pricing_plan_data_source(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.pricing_plan_data_source(input.into());
         self
     }
@@ -121,18 +133,18 @@ impl UpdateGeofenceCollectionFluentBuilder {
     #[deprecated(note = "Deprecated. No longer allowed.", since = "2022-02-01")]
     pub fn set_pricing_plan_data_source(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_pricing_plan_data_source(input);
         self
     }
     /// <p>Updates the description for the geofence collection.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>Updates the description for the geofence collection.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }

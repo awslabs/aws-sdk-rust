@@ -6,56 +6,59 @@ pub use crate::operation::list_layers::_list_layers_input::ListLayersInputBuilde
 /// Fluent builder constructing a request to `ListLayers`.
 ///
 /// <p>Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda layers</a> and shows information about the latest version of each. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only layers that indicate that they're compatible with that runtime. Specify a compatible architecture to include only layers that are compatible with that <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLayersFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_layers::builders::ListLayersInputBuilder,
 }
 impl ListLayersFluentBuilder {
     /// Creates a new `ListLayers`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_layers::ListLayers,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_layers::ListLayersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListLayersFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_layers::ListLayersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_layers::ListLayersError>,
     > {
         self.send_middleware().await
     }
@@ -88,18 +91,18 @@ impl ListLayersFluentBuilder {
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     pub fn set_compatible_runtime(
         mut self,
-        input: std::option::Option<crate::types::Runtime>,
+        input: ::std::option::Option<crate::types::Runtime>,
     ) -> Self {
         self.inner = self.inner.set_compatible_runtime(input);
         self
     }
     /// <p>A pagination token returned by a previous call.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>A pagination token returned by a previous call.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
@@ -109,7 +112,7 @@ impl ListLayersFluentBuilder {
         self
     }
     /// <p>The maximum number of layers to return.</p>
-    pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
     }
@@ -121,7 +124,7 @@ impl ListLayersFluentBuilder {
     /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn set_compatible_architecture(
         mut self,
-        input: std::option::Option<crate::types::Architecture>,
+        input: ::std::option::Option<crate::types::Architecture>,
     ) -> Self {
         self.inner = self.inner.set_compatible_architecture(input);
         self

@@ -2,22 +2,22 @@
 
 /// <p>Contains information about a batch update partition error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdatePartitionFailureEntry {
     /// <p>A list of values defining the partitions.</p>
     #[doc(hidden)]
-    pub partition_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The details about the batch update partition error.</p>
     #[doc(hidden)]
-    pub error_detail: std::option::Option<crate::types::ErrorDetail>,
+    pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl BatchUpdatePartitionFailureEntry {
     /// <p>A list of values defining the partitions.</p>
-    pub fn partition_value_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_value_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.partition_value_list.as_deref()
     }
     /// <p>The details about the batch update partition error.</p>
-    pub fn error_detail(&self) -> std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error_detail(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
         self.error_detail.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl BatchUpdatePartitionFailureEntry {
 
 /// A builder for [`BatchUpdatePartitionFailureEntry`](crate::types::BatchUpdatePartitionFailureEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchUpdatePartitionFailureEntryBuilder {
-    pub(crate) partition_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) error_detail: std::option::Option<crate::types::ErrorDetail>,
+    pub(crate) partition_value_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl BatchUpdatePartitionFailureEntryBuilder {
     /// Appends an item to `partition_value_list`.
@@ -41,29 +43,32 @@ impl BatchUpdatePartitionFailureEntryBuilder {
     /// To override the contents of this collection use [`set_partition_value_list`](Self::set_partition_value_list).
     ///
     /// <p>A list of values defining the partitions.</p>
-    pub fn partition_value_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn partition_value_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.partition_value_list.unwrap_or_default();
         v.push(input.into());
-        self.partition_value_list = Some(v);
+        self.partition_value_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values defining the partitions.</p>
     pub fn set_partition_value_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.partition_value_list = input;
         self
     }
     /// <p>The details about the batch update partition error.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
-        self.error_detail = Some(input);
+        self.error_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details about the batch update partition error.</p>
     pub fn set_error_detail(
         mut self,
-        input: std::option::Option<crate::types::ErrorDetail>,
+        input: ::std::option::Option<crate::types::ErrorDetail>,
     ) -> Self {
         self.error_detail = input;
         self

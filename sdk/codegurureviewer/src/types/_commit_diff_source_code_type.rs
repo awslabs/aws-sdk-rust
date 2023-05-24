@@ -2,29 +2,29 @@
 
 /// <p>A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitDiffSourceCodeType {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
     #[doc(hidden)]
-    pub source_commit: std::option::Option<std::string::String>,
+    pub source_commit: ::std::option::Option<::std::string::String>,
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
     #[doc(hidden)]
-    pub destination_commit: std::option::Option<std::string::String>,
+    pub destination_commit: ::std::option::Option<::std::string::String>,
     /// <p>The SHA of the merge base of a commit.</p>
     #[doc(hidden)]
-    pub merge_base_commit: std::option::Option<std::string::String>,
+    pub merge_base_commit: ::std::option::Option<::std::string::String>,
 }
 impl CommitDiffSourceCodeType {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn source_commit(&self) -> std::option::Option<&str> {
+    pub fn source_commit(&self) -> ::std::option::Option<&str> {
         self.source_commit.as_deref()
     }
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn destination_commit(&self) -> std::option::Option<&str> {
+    pub fn destination_commit(&self) -> ::std::option::Option<&str> {
         self.destination_commit.as_deref()
     }
     /// <p>The SHA of the merge base of a commit.</p>
-    pub fn merge_base_commit(&self) -> std::option::Option<&str> {
+    pub fn merge_base_commit(&self) -> ::std::option::Option<&str> {
         self.merge_base_commit.as_deref()
     }
 }
@@ -37,45 +37,59 @@ impl CommitDiffSourceCodeType {
 
 /// A builder for [`CommitDiffSourceCodeType`](crate::types::CommitDiffSourceCodeType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommitDiffSourceCodeTypeBuilder {
-    pub(crate) source_commit: std::option::Option<std::string::String>,
-    pub(crate) destination_commit: std::option::Option<std::string::String>,
-    pub(crate) merge_base_commit: std::option::Option<std::string::String>,
+    pub(crate) source_commit: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_commit: ::std::option::Option<::std::string::String>,
+    pub(crate) merge_base_commit: ::std::option::Option<::std::string::String>,
 }
 impl CommitDiffSourceCodeTypeBuilder {
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn source_commit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_commit = Some(input.into());
+    pub fn source_commit(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_commit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn set_source_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_commit(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_commit = input;
         self
     }
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
-    pub fn destination_commit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_commit = Some(input.into());
+    pub fn destination_commit(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_commit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.</p>
     pub fn set_destination_commit(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_commit = input;
         self
     }
     /// <p>The SHA of the merge base of a commit.</p>
-    pub fn merge_base_commit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.merge_base_commit = Some(input.into());
+    pub fn merge_base_commit(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.merge_base_commit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA of the merge base of a commit.</p>
     pub fn set_merge_base_commit(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.merge_base_commit = input;
         self

@@ -2,42 +2,42 @@
 
 /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSpec {
     /// <p>The ARN of the SageMaker image that the image version belongs to.</p>
     #[doc(hidden)]
-    pub sage_maker_image_arn: std::option::Option<std::string::String>,
+    pub sage_maker_image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image version created on the instance.</p>
     #[doc(hidden)]
-    pub sage_maker_image_version_arn: std::option::Option<std::string::String>,
+    pub sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The instance type that the image version runs on.</p> <note>
     /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::AppInstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::AppInstanceType>,
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     #[doc(hidden)]
-    pub lifecycle_config_arn: std::option::Option<std::string::String>,
+    pub lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSpec {
     /// <p>The ARN of the SageMaker image that the image version belongs to.</p>
-    pub fn sage_maker_image_arn(&self) -> std::option::Option<&str> {
+    pub fn sage_maker_image_arn(&self) -> ::std::option::Option<&str> {
         self.sage_maker_image_arn.as_deref()
     }
     /// <p>The ARN of the image version created on the instance.</p>
-    pub fn sage_maker_image_version_arn(&self) -> std::option::Option<&str> {
+    pub fn sage_maker_image_version_arn(&self) -> ::std::option::Option<&str> {
         self.sage_maker_image_version_arn.as_deref()
     }
     /// <p>The instance type that the image version runs on.</p> <note>
     /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::AppInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::AppInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
-    pub fn lifecycle_config_arn(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_config_arn(&self) -> ::std::option::Option<&str> {
         self.lifecycle_config_arn.as_deref()
     }
 }
@@ -50,36 +50,44 @@ impl ResourceSpec {
 
 /// A builder for [`ResourceSpec`](crate::types::ResourceSpec).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceSpecBuilder {
-    pub(crate) sage_maker_image_arn: std::option::Option<std::string::String>,
-    pub(crate) sage_maker_image_version_arn: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<crate::types::AppInstanceType>,
-    pub(crate) lifecycle_config_arn: std::option::Option<std::string::String>,
+    pub(crate) sage_maker_image_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::AppInstanceType>,
+    pub(crate) lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSpecBuilder {
     /// <p>The ARN of the SageMaker image that the image version belongs to.</p>
-    pub fn sage_maker_image_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sage_maker_image_arn = Some(input.into());
+    pub fn sage_maker_image_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sage_maker_image_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SageMaker image that the image version belongs to.</p>
     pub fn set_sage_maker_image_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sage_maker_image_arn = input;
         self
     }
     /// <p>The ARN of the image version created on the instance.</p>
-    pub fn sage_maker_image_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sage_maker_image_version_arn = Some(input.into());
+    pub fn sage_maker_image_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sage_maker_image_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the image version created on the instance.</p>
     pub fn set_sage_maker_image_version_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sage_maker_image_version_arn = input;
         self
@@ -89,7 +97,7 @@ impl ResourceSpecBuilder {
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
     /// </note>
     pub fn instance_type(mut self, input: crate::types::AppInstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance type that the image version runs on.</p> <note>
@@ -98,20 +106,23 @@ impl ResourceSpecBuilder {
     /// </note>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::AppInstanceType>,
+        input: ::std::option::Option<crate::types::AppInstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
-    pub fn lifecycle_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lifecycle_config_arn = Some(input.into());
+    pub fn lifecycle_config_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lifecycle_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to the Resource.</p>
     pub fn set_lifecycle_config_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lifecycle_config_arn = input;
         self

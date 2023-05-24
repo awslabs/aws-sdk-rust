@@ -2,15 +2,15 @@
 
 /// <p>The version of a bot used for a bot locale.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
     #[doc(hidden)]
-    pub source_bot_version: std::option::Option<std::string::String>,
+    pub source_bot_version: ::std::option::Option<::std::string::String>,
 }
 impl BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn source_bot_version(&self) -> std::option::Option<&str> {
+    pub fn source_bot_version(&self) -> ::std::option::Option<&str> {
         self.source_bot_version.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl BotVersionLocaleDetails {
 
 /// A builder for [`BotVersionLocaleDetails`](crate::types::BotVersionLocaleDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BotVersionLocaleDetailsBuilder {
-    pub(crate) source_bot_version: std::option::Option<std::string::String>,
+    pub(crate) source_bot_version: ::std::option::Option<::std::string::String>,
 }
 impl BotVersionLocaleDetailsBuilder {
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn source_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_bot_version = Some(input.into());
+    pub fn source_bot_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of a bot used for a bot locale.</p>
     pub fn set_source_bot_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_bot_version = input;
         self

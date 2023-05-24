@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a get branch operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBranchOutput {
     /// <p>The name of the branch.</p>
     #[doc(hidden)]
-    pub branch: std::option::Option<crate::types::BranchInfo>,
+    pub branch: ::std::option::Option<crate::types::BranchInfo>,
     _request_id: Option<String>,
 }
 impl GetBranchOutput {
     /// <p>The name of the branch.</p>
-    pub fn branch(&self) -> std::option::Option<&crate::types::BranchInfo> {
+    pub fn branch(&self) -> ::std::option::Option<&crate::types::BranchInfo> {
         self.branch.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetBranchOutput {
+impl ::aws_http::request_id::RequestId for GetBranchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetBranchOutput {
 
 /// A builder for [`GetBranchOutput`](crate::operation::get_branch::GetBranchOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetBranchOutputBuilder {
-    pub(crate) branch: std::option::Option<crate::types::BranchInfo>,
+    pub(crate) branch: ::std::option::Option<crate::types::BranchInfo>,
     _request_id: Option<String>,
 }
 impl GetBranchOutputBuilder {
     /// <p>The name of the branch.</p>
     pub fn branch(mut self, input: crate::types::BranchInfo) -> Self {
-        self.branch = Some(input);
+        self.branch = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the branch.</p>
-    pub fn set_branch(mut self, input: std::option::Option<crate::types::BranchInfo>) -> Self {
+    pub fn set_branch(mut self, input: ::std::option::Option<crate::types::BranchInfo>) -> Self {
         self.branch = input;
         self
     }

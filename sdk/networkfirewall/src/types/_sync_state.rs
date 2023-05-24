@@ -8,27 +8,27 @@
 /// </ul>
 /// <p>When you update a firewall, for example to add a subnet association or change a rule group in the firewall policy, the affected sync states reflect out-of-sync or not ready status until the changes are complete. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncState {
     /// <p>The attachment status of the firewall's association with a single VPC subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic. This is part of the <code>FirewallStatus</code>.</p>
     #[doc(hidden)]
-    pub attachment: std::option::Option<crate::types::Attachment>,
+    pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of the <code>FirewallStatus</code>.</p>
     #[doc(hidden)]
-    pub config: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::PerObjectStatus>,
+    pub config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>,
     >,
 }
 impl SyncState {
     /// <p>The attachment status of the firewall's association with a single VPC subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic. This is part of the <code>FirewallStatus</code>.</p>
-    pub fn attachment(&self) -> std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
         self.attachment.as_ref()
     }
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of the <code>FirewallStatus</code>.</p>
     pub fn config(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::PerObjectStatus>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>,
     > {
         self.config.as_ref()
     }
@@ -42,21 +42,26 @@ impl SyncState {
 
 /// A builder for [`SyncState`](crate::types::SyncState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SyncStateBuilder {
-    pub(crate) attachment: std::option::Option<crate::types::Attachment>,
-    pub(crate) config: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::PerObjectStatus>,
+    pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
+    pub(crate) config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>,
     >,
 }
 impl SyncStateBuilder {
     /// <p>The attachment status of the firewall's association with a single VPC subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic. This is part of the <code>FirewallStatus</code>.</p>
     pub fn attachment(mut self, input: crate::types::Attachment) -> Self {
-        self.attachment = Some(input);
+        self.attachment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attachment status of the firewall's association with a single VPC subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic. This is part of the <code>FirewallStatus</code>.</p>
-    pub fn set_attachment(mut self, input: std::option::Option<crate::types::Attachment>) -> Self {
+    pub fn set_attachment(
+        mut self,
+        input: ::std::option::Option<crate::types::Attachment>,
+    ) -> Self {
         self.attachment = input;
         self
     }
@@ -67,19 +72,19 @@ impl SyncStateBuilder {
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of the <code>FirewallStatus</code>.</p>
     pub fn config(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::PerObjectStatus,
     ) -> Self {
         let mut hash_map = self.config.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.config = Some(hash_map);
+        self.config = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic. This is part of the <code>FirewallStatus</code>.</p>
     pub fn set_config(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::PerObjectStatus>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>,
         >,
     ) -> Self {
         self.config = input;

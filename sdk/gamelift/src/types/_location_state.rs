@@ -11,22 +11,22 @@
 /// <li> <p> <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not created. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationState {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The life-cycle status of a fleet location. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::FleetStatus>,
+    pub status: ::std::option::Option<crate::types::FleetStatus>,
 }
 impl LocationState {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The life-cycle status of a fleet location. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::FleetStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::FleetStatus> {
         self.status.as_ref()
     }
 }
@@ -39,29 +39,31 @@ impl LocationState {
 
 /// A builder for [`LocationState`](crate::types::LocationState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocationStateBuilder {
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::FleetStatus>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::FleetStatus>,
 }
 impl LocationStateBuilder {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The life-cycle status of a fleet location. </p>
     pub fn status(mut self, input: crate::types::FleetStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The life-cycle status of a fleet location. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::FleetStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
         self.status = input;
         self
     }

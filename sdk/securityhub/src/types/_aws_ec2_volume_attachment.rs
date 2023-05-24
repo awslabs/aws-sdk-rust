@@ -2,17 +2,17 @@
 
 /// <p>An attachment to an Amazon EC2 volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VolumeAttachment {
     /// <p>The datetime when the attachment initiated.</p>
     #[doc(hidden)]
-    pub attach_time: std::option::Option<std::string::String>,
+    pub attach_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
     #[doc(hidden)]
     pub delete_on_termination: bool,
     /// <p>The identifier of the EC2 instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>attaching</code> </p> </li>
@@ -22,11 +22,11 @@ pub struct AwsEc2VolumeAttachment {
     /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VolumeAttachment {
     /// <p>The datetime when the attachment initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&str> {
+    pub fn attach_time(&self) -> ::std::option::Option<&str> {
         self.attach_time.as_deref()
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
@@ -34,7 +34,7 @@ impl AwsEc2VolumeAttachment {
         self.delete_on_termination
     }
     /// <p>The identifier of the EC2 instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
@@ -45,7 +45,7 @@ impl AwsEc2VolumeAttachment {
     /// <li> <p> <code>detaching</code> </p> </li>
     /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -58,41 +58,43 @@ impl AwsEc2VolumeAttachment {
 
 /// A builder for [`AwsEc2VolumeAttachment`](crate::types::AwsEc2VolumeAttachment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2VolumeAttachmentBuilder {
-    pub(crate) attach_time: std::option::Option<std::string::String>,
-    pub(crate) delete_on_termination: std::option::Option<bool>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) attach_time: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_on_termination: ::std::option::Option<bool>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VolumeAttachmentBuilder {
     /// <p>The datetime when the attachment initiated.</p>
-    pub fn attach_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attach_time = Some(input.into());
+    pub fn attach_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attach_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The datetime when the attachment initiated.</p>
-    pub fn set_attach_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attach_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attach_time = input;
         self
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
-        self.delete_on_termination = Some(input);
+        self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the EBS volume is deleted when the EC2 instance is terminated.</p>
-    pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
     /// <p>The identifier of the EC2 instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the EC2 instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
@@ -104,8 +106,8 @@ impl AwsEc2VolumeAttachmentBuilder {
     /// <li> <p> <code>detaching</code> </p> </li>
     /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attachment state of the volume. Valid values are as follows:</p>
@@ -116,7 +118,7 @@ impl AwsEc2VolumeAttachmentBuilder {
     /// <li> <p> <code>detaching</code> </p> </li>
     /// <li> <p> <code>detached</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

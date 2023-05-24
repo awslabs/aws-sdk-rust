@@ -2,50 +2,50 @@
 
 /// <p>Default button configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultButtonConfiguration {
     /// <p>The background color of the button.</p>
     #[doc(hidden)]
-    pub background_color: std::option::Option<std::string::String>,
+    pub background_color: ::std::option::Option<::std::string::String>,
     /// <p>The border radius of the button.</p>
     #[doc(hidden)]
-    pub border_radius: std::option::Option<i32>,
+    pub border_radius: ::std::option::Option<i32>,
     /// <p>Action triggered by the button.</p>
     #[doc(hidden)]
-    pub button_action: std::option::Option<crate::types::ButtonAction>,
+    pub button_action: ::std::option::Option<crate::types::ButtonAction>,
     /// <p>Button destination.</p>
     #[doc(hidden)]
-    pub link: std::option::Option<std::string::String>,
+    pub link: ::std::option::Option<::std::string::String>,
     /// <p>Button text.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>The text color of the button.</p>
     #[doc(hidden)]
-    pub text_color: std::option::Option<std::string::String>,
+    pub text_color: ::std::option::Option<::std::string::String>,
 }
 impl DefaultButtonConfiguration {
     /// <p>The background color of the button.</p>
-    pub fn background_color(&self) -> std::option::Option<&str> {
+    pub fn background_color(&self) -> ::std::option::Option<&str> {
         self.background_color.as_deref()
     }
     /// <p>The border radius of the button.</p>
-    pub fn border_radius(&self) -> std::option::Option<i32> {
+    pub fn border_radius(&self) -> ::std::option::Option<i32> {
         self.border_radius
     }
     /// <p>Action triggered by the button.</p>
-    pub fn button_action(&self) -> std::option::Option<&crate::types::ButtonAction> {
+    pub fn button_action(&self) -> ::std::option::Option<&crate::types::ButtonAction> {
         self.button_action.as_ref()
     }
     /// <p>Button destination.</p>
-    pub fn link(&self) -> std::option::Option<&str> {
+    pub fn link(&self) -> ::std::option::Option<&str> {
         self.link.as_deref()
     }
     /// <p>Button text.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The text color of the button.</p>
-    pub fn text_color(&self) -> std::option::Option<&str> {
+    pub fn text_color(&self) -> ::std::option::Option<&str> {
         self.text_color.as_deref()
     }
 }
@@ -58,76 +58,84 @@ impl DefaultButtonConfiguration {
 
 /// A builder for [`DefaultButtonConfiguration`](crate::types::DefaultButtonConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefaultButtonConfigurationBuilder {
-    pub(crate) background_color: std::option::Option<std::string::String>,
-    pub(crate) border_radius: std::option::Option<i32>,
-    pub(crate) button_action: std::option::Option<crate::types::ButtonAction>,
-    pub(crate) link: std::option::Option<std::string::String>,
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) text_color: std::option::Option<std::string::String>,
+    pub(crate) background_color: ::std::option::Option<::std::string::String>,
+    pub(crate) border_radius: ::std::option::Option<i32>,
+    pub(crate) button_action: ::std::option::Option<crate::types::ButtonAction>,
+    pub(crate) link: ::std::option::Option<::std::string::String>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) text_color: ::std::option::Option<::std::string::String>,
 }
 impl DefaultButtonConfigurationBuilder {
     /// <p>The background color of the button.</p>
-    pub fn background_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.background_color = Some(input.into());
+    pub fn background_color(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.background_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The background color of the button.</p>
-    pub fn set_background_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_background_color(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.background_color = input;
         self
     }
     /// <p>The border radius of the button.</p>
     pub fn border_radius(mut self, input: i32) -> Self {
-        self.border_radius = Some(input);
+        self.border_radius = ::std::option::Option::Some(input);
         self
     }
     /// <p>The border radius of the button.</p>
-    pub fn set_border_radius(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_border_radius(mut self, input: ::std::option::Option<i32>) -> Self {
         self.border_radius = input;
         self
     }
     /// <p>Action triggered by the button.</p>
     pub fn button_action(mut self, input: crate::types::ButtonAction) -> Self {
-        self.button_action = Some(input);
+        self.button_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Action triggered by the button.</p>
     pub fn set_button_action(
         mut self,
-        input: std::option::Option<crate::types::ButtonAction>,
+        input: ::std::option::Option<crate::types::ButtonAction>,
     ) -> Self {
         self.button_action = input;
         self
     }
     /// <p>Button destination.</p>
-    pub fn link(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link = Some(input.into());
+    pub fn link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Button destination.</p>
-    pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link = input;
         self
     }
     /// <p>Button text.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Button text.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p>The text color of the button.</p>
-    pub fn text_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text_color = Some(input.into());
+    pub fn text_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text color of the button.</p>
-    pub fn set_text_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text_color = input;
         self
     }

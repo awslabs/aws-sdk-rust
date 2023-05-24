@@ -2,77 +2,79 @@
 
 /// <p>Contains information about a queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Queue {
     /// <p>The name of the queue.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the queue.</p>
     #[doc(hidden)]
-    pub queue_arn: std::option::Option<std::string::String>,
+    pub queue_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the queue.</p>
     #[doc(hidden)]
-    pub queue_id: std::option::Option<std::string::String>,
+    pub queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the queue.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     #[doc(hidden)]
-    pub outbound_caller_config: std::option::Option<crate::types::OutboundCallerConfig>,
+    pub outbound_caller_config: ::std::option::Option<crate::types::OutboundCallerConfig>,
     /// <p>The identifier for the hours of operation.</p>
     #[doc(hidden)]
-    pub hours_of_operation_id: std::option::Option<std::string::String>,
+    pub hours_of_operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     #[doc(hidden)]
-    pub max_contacts: std::option::Option<i32>,
+    pub max_contacts: ::std::option::Option<i32>,
     /// <p>The status of the queue.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::QueueStatus>,
+    pub status: ::std::option::Option<crate::types::QueueStatus>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl Queue {
     /// <p>The name of the queue.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the queue.</p>
-    pub fn queue_arn(&self) -> std::option::Option<&str> {
+    pub fn queue_arn(&self) -> ::std::option::Option<&str> {
         self.queue_arn.as_deref()
     }
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> std::option::Option<&str> {
+    pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
     /// <p>The description of the queue.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub fn outbound_caller_config(
         &self,
-    ) -> std::option::Option<&crate::types::OutboundCallerConfig> {
+    ) -> ::std::option::Option<&crate::types::OutboundCallerConfig> {
         self.outbound_caller_config.as_ref()
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+    pub fn hours_of_operation_id(&self) -> ::std::option::Option<&str> {
         self.hours_of_operation_id.as_deref()
     }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-    pub fn max_contacts(&self) -> std::option::Option<i32> {
+    pub fn max_contacts(&self) -> ::std::option::Option<i32> {
         self.max_contacts
     }
     /// <p>The status of the queue.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::QueueStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::QueueStatus> {
         self.status.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -85,103 +87,109 @@ impl Queue {
 
 /// A builder for [`Queue`](crate::types::Queue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueueBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) queue_arn: std::option::Option<std::string::String>,
-    pub(crate) queue_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) outbound_caller_config: std::option::Option<crate::types::OutboundCallerConfig>,
-    pub(crate) hours_of_operation_id: std::option::Option<std::string::String>,
-    pub(crate) max_contacts: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::QueueStatus>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) queue_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) queue_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) outbound_caller_config: ::std::option::Option<crate::types::OutboundCallerConfig>,
+    pub(crate) hours_of_operation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) max_contacts: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::QueueStatus>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl QueueBuilder {
     /// <p>The name of the queue.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the queue.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the queue.</p>
-    pub fn queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_arn = Some(input.into());
+    pub fn queue_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the queue.</p>
-    pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_arn = input;
         self
     }
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_id = Some(input.into());
+    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the queue.</p>
-    pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
     /// <p>The description of the queue.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the queue.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub fn outbound_caller_config(mut self, input: crate::types::OutboundCallerConfig) -> Self {
-        self.outbound_caller_config = Some(input);
+        self.outbound_caller_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
     pub fn set_outbound_caller_config(
         mut self,
-        input: std::option::Option<crate::types::OutboundCallerConfig>,
+        input: ::std::option::Option<crate::types::OutboundCallerConfig>,
     ) -> Self {
         self.outbound_caller_config = input;
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hours_of_operation_id = Some(input.into());
+    pub fn hours_of_operation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hours_of_operation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn set_hours_of_operation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.hours_of_operation_id = input;
         self
     }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
     pub fn max_contacts(mut self, input: i32) -> Self {
-        self.max_contacts = Some(input);
+        self.max_contacts = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-    pub fn set_max_contacts(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_contacts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_contacts = input;
         self
     }
     /// <p>The status of the queue.</p>
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the queue.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::QueueStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.status = input;
         self
     }
@@ -192,19 +200,19 @@ impl QueueBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

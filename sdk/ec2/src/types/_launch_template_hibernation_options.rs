@@ -2,15 +2,15 @@
 
 /// <p>Indicates whether an instance is configured for hibernation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateHibernationOptions {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
     #[doc(hidden)]
-    pub configured: std::option::Option<bool>,
+    pub configured: ::std::option::Option<bool>,
 }
 impl LaunchTemplateHibernationOptions {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
-    pub fn configured(&self) -> std::option::Option<bool> {
+    pub fn configured(&self) -> ::std::option::Option<bool> {
         self.configured
     }
 }
@@ -23,18 +23,20 @@ impl LaunchTemplateHibernationOptions {
 
 /// A builder for [`LaunchTemplateHibernationOptions`](crate::types::LaunchTemplateHibernationOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchTemplateHibernationOptionsBuilder {
-    pub(crate) configured: std::option::Option<bool>,
+    pub(crate) configured: ::std::option::Option<bool>,
 }
 impl LaunchTemplateHibernationOptionsBuilder {
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
     pub fn configured(mut self, input: bool) -> Self {
-        self.configured = Some(input);
+        self.configured = ::std::option::Option::Some(input);
         self
     }
     /// <p>If this parameter is set to <code>true</code>, the instance is enabled for hibernation; otherwise, it is not enabled for hibernation.</p>
-    pub fn set_configured(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_configured(mut self, input: ::std::option::Option<bool>) -> Self {
         self.configured = input;
         self
     }

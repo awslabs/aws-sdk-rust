@@ -2,15 +2,15 @@
 
 /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccelerationSettings {
     /// Specify the conditions when the service will run your job with accelerated transcoding.
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::AccelerationMode>,
+    pub mode: ::std::option::Option<crate::types::AccelerationMode>,
 }
 impl AccelerationSettings {
     /// Specify the conditions when the service will run your job with accelerated transcoding.
-    pub fn mode(&self) -> std::option::Option<&crate::types::AccelerationMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::AccelerationMode> {
         self.mode.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl AccelerationSettings {
 
 /// A builder for [`AccelerationSettings`](crate::types::AccelerationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccelerationSettingsBuilder {
-    pub(crate) mode: std::option::Option<crate::types::AccelerationMode>,
+    pub(crate) mode: ::std::option::Option<crate::types::AccelerationMode>,
 }
 impl AccelerationSettingsBuilder {
     /// Specify the conditions when the service will run your job with accelerated transcoding.
     pub fn mode(mut self, input: crate::types::AccelerationMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// Specify the conditions when the service will run your job with accelerated transcoding.
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::AccelerationMode>) -> Self {
+    pub fn set_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::AccelerationMode>,
+    ) -> Self {
         self.mode = input;
         self
     }

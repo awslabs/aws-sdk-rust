@@ -2,15 +2,15 @@
 
 /// <p>The audio artifact concatenation configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::AudioArtifactsConcatenationState>,
+    pub state: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>,
 }
 impl AudioConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::AudioArtifactsConcatenationState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::AudioArtifactsConcatenationState> {
         self.state.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AudioConcatenationConfiguration {
 
 /// A builder for [`AudioConcatenationConfiguration`](crate::types::AudioConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioConcatenationConfigurationBuilder {
-    pub(crate) state: std::option::Option<crate::types::AudioArtifactsConcatenationState>,
+    pub(crate) state: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>,
 }
 impl AudioConcatenationConfigurationBuilder {
     /// <p>Enables or disables the configuration object.</p>
     pub fn state(mut self, input: crate::types::AudioArtifactsConcatenationState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::AudioArtifactsConcatenationState>,
+        input: ::std::option::Option<crate::types::AudioArtifactsConcatenationState>,
     ) -> Self {
         self.state = input;
         self

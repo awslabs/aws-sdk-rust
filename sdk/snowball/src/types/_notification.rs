@@ -3,15 +3,15 @@
 /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p>
 /// <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Notification {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
     #[doc(hidden)]
-    pub sns_topic_arn: std::option::Option<std::string::String>,
+    pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of job states that will trigger a notification for this job.</p>
     #[doc(hidden)]
-    pub job_states_to_notify: std::option::Option<std::vec::Vec<crate::types::JobState>>,
+    pub job_states_to_notify: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
     /// <p>Any change in job state will trigger a notification for this job.</p>
     #[doc(hidden)]
     pub notify_all: bool,
@@ -19,11 +19,11 @@ pub struct Notification {
 impl Notification {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
-    pub fn job_states_to_notify(&self) -> std::option::Option<&[crate::types::JobState]> {
+    pub fn job_states_to_notify(&self) -> ::std::option::Option<&[crate::types::JobState]> {
         self.job_states_to_notify.as_deref()
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
@@ -40,22 +40,30 @@ impl Notification {
 
 /// A builder for [`Notification`](crate::types::Notification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationBuilder {
-    pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-    pub(crate) job_states_to_notify: std::option::Option<std::vec::Vec<crate::types::JobState>>,
-    pub(crate) notify_all: std::option::Option<bool>,
+    pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) job_states_to_notify: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
+    pub(crate) notify_all: ::std::option::Option<bool>,
 }
 impl NotificationBuilder {
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-    pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sns_topic_arn = Some(input.into());
+    pub fn sns_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new SNS <code>TopicArn</code> that you want to associate with this job. You can create Amazon Resource Names (ARNs) for topics by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_CreateTopic.html">CreateTopic</a> Amazon SNS API action.</p>
     /// <p>You can subscribe email addresses to an Amazon SNS topic through the Amazon Web Services Management Console, or by using the <a href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a> Amazon Simple Notification Service (Amazon SNS) API action.</p>
-    pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sns_topic_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -67,24 +75,24 @@ impl NotificationBuilder {
     pub fn job_states_to_notify(mut self, input: crate::types::JobState) -> Self {
         let mut v = self.job_states_to_notify.unwrap_or_default();
         v.push(input);
-        self.job_states_to_notify = Some(v);
+        self.job_states_to_notify = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of job states that will trigger a notification for this job.</p>
     pub fn set_job_states_to_notify(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobState>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::JobState>>,
     ) -> Self {
         self.job_states_to_notify = input;
         self
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
     pub fn notify_all(mut self, input: bool) -> Self {
-        self.notify_all = Some(input);
+        self.notify_all = ::std::option::Option::Some(input);
         self
     }
     /// <p>Any change in job state will trigger a notification for this job.</p>
-    pub fn set_notify_all(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_notify_all(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notify_all = input;
         self
     }

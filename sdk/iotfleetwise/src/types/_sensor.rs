@@ -4,57 +4,57 @@
 /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sensor {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
     #[doc(hidden)]
-    pub fully_qualified_name: std::option::Option<std::string::String>,
+    pub fully_qualified_name: ::std::option::Option<::std::string::String>,
     /// <p>The specified data type of the sensor. </p>
     #[doc(hidden)]
-    pub data_type: std::option::Option<crate::types::NodeDataType>,
+    pub data_type: ::std::option::Option<crate::types::NodeDataType>,
     /// <p>A brief description of a sensor.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<std::string::String>,
+    pub unit: ::std::option::Option<::std::string::String>,
     /// <p>A list of possible values a sensor can take.</p>
     #[doc(hidden)]
-    pub allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The specified possible minimum value of the sensor.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<f64>,
+    pub min: ::std::option::Option<f64>,
     /// <p>The specified possible maximum value of the sensor.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<f64>,
+    pub max: ::std::option::Option<f64>,
 }
 impl Sensor {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
-    pub fn fully_qualified_name(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_name(&self) -> ::std::option::Option<&str> {
         self.fully_qualified_name.as_deref()
     }
     /// <p>The specified data type of the sensor. </p>
-    pub fn data_type(&self) -> std::option::Option<&crate::types::NodeDataType> {
+    pub fn data_type(&self) -> ::std::option::Option<&crate::types::NodeDataType> {
         self.data_type.as_ref()
     }
     /// <p>A brief description of a sensor.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
     /// <p>A list of possible values a sensor can take.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allowed_values.as_deref()
     }
     /// <p>The specified possible minimum value of the sensor.</p>
-    pub fn min(&self) -> std::option::Option<f64> {
+    pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
     }
     /// <p>The specified possible maximum value of the sensor.</p>
-    pub fn max(&self) -> std::option::Option<f64> {
+    pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
     }
 }
@@ -67,57 +67,65 @@ impl Sensor {
 
 /// A builder for [`Sensor`](crate::types::Sensor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SensorBuilder {
-    pub(crate) fully_qualified_name: std::option::Option<std::string::String>,
-    pub(crate) data_type: std::option::Option<crate::types::NodeDataType>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) unit: std::option::Option<std::string::String>,
-    pub(crate) allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) min: std::option::Option<f64>,
-    pub(crate) max: std::option::Option<f64>,
+    pub(crate) fully_qualified_name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_type: ::std::option::Option<crate::types::NodeDataType>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) unit: ::std::option::Option<::std::string::String>,
+    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) min: ::std::option::Option<f64>,
+    pub(crate) max: ::std::option::Option<f64>,
 }
 impl SensorBuilder {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
-    pub fn fully_qualified_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fully_qualified_name = Some(input.into());
+    pub fn fully_qualified_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.fully_qualified_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
     pub fn set_fully_qualified_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.fully_qualified_name = input;
         self
     }
     /// <p>The specified data type of the sensor. </p>
     pub fn data_type(mut self, input: crate::types::NodeDataType) -> Self {
-        self.data_type = Some(input);
+        self.data_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specified data type of the sensor. </p>
-    pub fn set_data_type(mut self, input: std::option::Option<crate::types::NodeDataType>) -> Self {
+    pub fn set_data_type(
+        mut self,
+        input: ::std::option::Option<crate::types::NodeDataType>,
+    ) -> Self {
         self.data_type = input;
         self
     }
     /// <p>A brief description of a sensor.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of a sensor.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
-    pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit = Some(input.into());
+    pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The scientific unit of measurement for data collected by the sensor.</p>
-    pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
     }
@@ -126,37 +134,40 @@ impl SensorBuilder {
     /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
     ///
     /// <p>A list of possible values a sensor can take.</p>
-    pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn allowed_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
         v.push(input.into());
-        self.allowed_values = Some(v);
+        self.allowed_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of possible values a sensor can take.</p>
     pub fn set_allowed_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.allowed_values = input;
         self
     }
     /// <p>The specified possible minimum value of the sensor.</p>
     pub fn min(mut self, input: f64) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specified possible minimum value of the sensor.</p>
-    pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min = input;
         self
     }
     /// <p>The specified possible maximum value of the sensor.</p>
     pub fn max(mut self, input: f64) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specified possible maximum value of the sensor.</p>
-    pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
     }

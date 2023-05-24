@@ -2,15 +2,15 @@
 
 /// <p> The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a consolidated family. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountGrouping {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
     #[doc(hidden)]
-    pub linked_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub linked_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AccountGrouping {
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
-    pub fn linked_account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn linked_account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.linked_account_ids.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl AccountGrouping {
 
 /// A builder for [`AccountGrouping`](crate::types::AccountGrouping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountGroupingBuilder {
-    pub(crate) linked_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) linked_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AccountGroupingBuilder {
     /// Appends an item to `linked_account_ids`.
@@ -33,16 +35,19 @@ impl AccountGroupingBuilder {
     /// To override the contents of this collection use [`set_linked_account_ids`](Self::set_linked_account_ids).
     ///
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
-    pub fn linked_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn linked_account_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.linked_account_ids.unwrap_or_default();
         v.push(input.into());
-        self.linked_account_ids = Some(v);
+        self.linked_account_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p> The account IDs that make up the billing group. Account IDs must be a part of the consolidated billing family, and not associated with another billing group. </p>
     pub fn set_linked_account_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.linked_account_ids = input;
         self

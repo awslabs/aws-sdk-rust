@@ -2,43 +2,43 @@
 
 /// The network settings for the input device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDeviceNetworkSettings {
     /// The DNS addresses of the input device.
     #[doc(hidden)]
-    pub dns_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub dns_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The network gateway IP address.
     #[doc(hidden)]
-    pub gateway: std::option::Option<std::string::String>,
+    pub gateway: ::std::option::Option<::std::string::String>,
     /// The IP address of the input device.
     #[doc(hidden)]
-    pub ip_address: std::option::Option<std::string::String>,
+    pub ip_address: ::std::option::Option<::std::string::String>,
     /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
     #[doc(hidden)]
-    pub ip_scheme: std::option::Option<crate::types::InputDeviceIpScheme>,
+    pub ip_scheme: ::std::option::Option<crate::types::InputDeviceIpScheme>,
     /// The subnet mask of the input device.
     #[doc(hidden)]
-    pub subnet_mask: std::option::Option<std::string::String>,
+    pub subnet_mask: ::std::option::Option<::std::string::String>,
 }
 impl InputDeviceNetworkSettings {
     /// The DNS addresses of the input device.
-    pub fn dns_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dns_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.dns_addresses.as_deref()
     }
     /// The network gateway IP address.
-    pub fn gateway(&self) -> std::option::Option<&str> {
+    pub fn gateway(&self) -> ::std::option::Option<&str> {
         self.gateway.as_deref()
     }
     /// The IP address of the input device.
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
-    pub fn ip_scheme(&self) -> std::option::Option<&crate::types::InputDeviceIpScheme> {
+    pub fn ip_scheme(&self) -> ::std::option::Option<&crate::types::InputDeviceIpScheme> {
         self.ip_scheme.as_ref()
     }
     /// The subnet mask of the input device.
-    pub fn subnet_mask(&self) -> std::option::Option<&str> {
+    pub fn subnet_mask(&self) -> ::std::option::Option<&str> {
         self.subnet_mask.as_deref()
     }
 }
@@ -51,13 +51,15 @@ impl InputDeviceNetworkSettings {
 
 /// A builder for [`InputDeviceNetworkSettings`](crate::types::InputDeviceNetworkSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputDeviceNetworkSettingsBuilder {
-    pub(crate) dns_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) gateway: std::option::Option<std::string::String>,
-    pub(crate) ip_address: std::option::Option<std::string::String>,
-    pub(crate) ip_scheme: std::option::Option<crate::types::InputDeviceIpScheme>,
-    pub(crate) subnet_mask: std::option::Option<std::string::String>,
+    pub(crate) dns_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) gateway: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_scheme: ::std::option::Option<crate::types::InputDeviceIpScheme>,
+    pub(crate) subnet_mask: ::std::option::Option<::std::string::String>,
 }
 impl InputDeviceNetworkSettingsBuilder {
     /// Appends an item to `dns_addresses`.
@@ -65,60 +67,63 @@ impl InputDeviceNetworkSettingsBuilder {
     /// To override the contents of this collection use [`set_dns_addresses`](Self::set_dns_addresses).
     ///
     /// The DNS addresses of the input device.
-    pub fn dns_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dns_addresses(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.dns_addresses.unwrap_or_default();
         v.push(input.into());
-        self.dns_addresses = Some(v);
+        self.dns_addresses = ::std::option::Option::Some(v);
         self
     }
     /// The DNS addresses of the input device.
     pub fn set_dns_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.dns_addresses = input;
         self
     }
     /// The network gateway IP address.
-    pub fn gateway(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway = Some(input.into());
+    pub fn gateway(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway = ::std::option::Option::Some(input.into());
         self
     }
     /// The network gateway IP address.
-    pub fn set_gateway(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway = input;
         self
     }
     /// The IP address of the input device.
-    pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_address = Some(input.into());
+    pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// The IP address of the input device.
-    pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
     /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
     pub fn ip_scheme(mut self, input: crate::types::InputDeviceIpScheme) -> Self {
-        self.ip_scheme = Some(input);
+        self.ip_scheme = ::std::option::Option::Some(input);
         self
     }
     /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
     pub fn set_ip_scheme(
         mut self,
-        input: std::option::Option<crate::types::InputDeviceIpScheme>,
+        input: ::std::option::Option<crate::types::InputDeviceIpScheme>,
     ) -> Self {
         self.ip_scheme = input;
         self
     }
     /// The subnet mask of the input device.
-    pub fn subnet_mask(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_mask = Some(input.into());
+    pub fn subnet_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_mask = ::std::option::Option::Some(input.into());
         self
     }
     /// The subnet mask of the input device.
-    pub fn set_subnet_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_mask = input;
         self
     }

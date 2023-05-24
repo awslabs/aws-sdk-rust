@@ -2,22 +2,22 @@
 
 /// <p>Shows the group that a certain key belongs to. This helps differentiate between names and addresses for different organizations, that can be hard to determine via JSON response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpenseGroupProperty {
     /// <p>Informs you on whether the expense group is a name or an address.</p>
     #[doc(hidden)]
-    pub types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl ExpenseGroupProperty {
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.types.as_deref()
     }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl ExpenseGroupProperty {
 
 /// A builder for [`ExpenseGroupProperty`](crate::types::ExpenseGroupProperty).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExpenseGroupPropertyBuilder {
-    pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) id: std::option::Option<std::string::String>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl ExpenseGroupPropertyBuilder {
     /// Appends an item to `types`.
@@ -41,27 +43,27 @@ impl ExpenseGroupPropertyBuilder {
     /// To override the contents of this collection use [`set_types`](Self::set_types).
     ///
     /// <p>Informs you on whether the expense group is a name or an address.</p>
-    pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
         v.push(input.into());
-        self.types = Some(v);
+        self.types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Informs you on whether the expense group is a name or an address.</p>
     pub fn set_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.types = input;
         self
     }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides a group Id number, which will be the same for each in the group.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }

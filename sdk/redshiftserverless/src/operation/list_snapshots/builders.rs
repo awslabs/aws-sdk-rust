@@ -6,56 +6,59 @@ pub use crate::operation::list_snapshots::_list_snapshots_input::ListSnapshotsIn
 /// Fluent builder constructing a request to `ListSnapshots`.
 ///
 /// <p>Returns a list of snapshots.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSnapshotsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_snapshots::builders::ListSnapshotsInputBuilder,
 }
 impl ListSnapshotsFluentBuilder {
     /// Creates a new `ListSnapshots`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_snapshots::ListSnapshots,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_snapshots::ListSnapshotsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListSnapshotsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_snapshots::ListSnapshotsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError>,
     > {
         self.send_middleware().await
     }
@@ -86,12 +89,12 @@ impl ListSnapshotsFluentBuilder {
         )
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -101,60 +104,81 @@ impl ListSnapshotsFluentBuilder {
         self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The namespace from which to list all snapshots.</p>
-    pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.namespace_name(input.into());
         self
     }
     /// <p>The namespace from which to list all snapshots.</p>
-    pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_namespace_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
-    pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.namespace_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</p>
-    pub fn set_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_namespace_arn(input);
         self
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
-    pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn owner_account(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.owner_account(input.into());
         self
     }
     /// <p>The owner Amazon Web Services account of the snapshot.</p>
-    pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_account(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_owner_account(input);
         self
     }
     /// <p>The time when the creation of the snapshot was initiated.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The time when the creation of the snapshot was initiated.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>The timestamp showing when the snapshot creation finished.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>The timestamp showing when the snapshot creation finished.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

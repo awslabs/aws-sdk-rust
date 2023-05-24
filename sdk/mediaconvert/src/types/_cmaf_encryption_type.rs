@@ -38,13 +38,13 @@
 /// Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmafEncryptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmafEncryptionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmafEncryptionType {
+impl ::std::convert::From<&str> for CmafEncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "AES_CTR" => CmafEncryptionType::AesCtr,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmafEncryptionType {
         }
     }
 }
-impl std::str::FromStr for CmafEncryptionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmafEncryptionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafEncryptionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmafEncryptionType::from(s))
     }
 }
 impl CmafEncryptionType {
@@ -86,7 +86,7 @@ impl CmafEncryptionType {
         &["AES_CTR", "SAMPLE_AES"]
     }
 }
-impl AsRef<str> for CmafEncryptionType {
+impl ::std::convert::AsRef<str> for CmafEncryptionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

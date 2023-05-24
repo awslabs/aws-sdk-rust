@@ -2,22 +2,23 @@
 
 /// <p> The Account Takeover Insights (ATI) model training metric details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AtiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
     #[doc(hidden)]
-    pub metric_data_points: std::option::Option<std::vec::Vec<crate::types::AtiMetricDataPoint>>,
+    pub metric_data_points:
+        ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
     /// <p> The model's overall performance scores. </p>
     #[doc(hidden)]
-    pub model_performance: std::option::Option<crate::types::AtiModelPerformance>,
+    pub model_performance: ::std::option::Option<crate::types::AtiModelPerformance>,
 }
 impl AtiTrainingMetricsValue {
     /// <p> The model's performance metrics data points. </p>
-    pub fn metric_data_points(&self) -> std::option::Option<&[crate::types::AtiMetricDataPoint]> {
+    pub fn metric_data_points(&self) -> ::std::option::Option<&[crate::types::AtiMetricDataPoint]> {
         self.metric_data_points.as_deref()
     }
     /// <p> The model's overall performance scores. </p>
-    pub fn model_performance(&self) -> std::option::Option<&crate::types::AtiModelPerformance> {
+    pub fn model_performance(&self) -> ::std::option::Option<&crate::types::AtiModelPerformance> {
         self.model_performance.as_ref()
     }
 }
@@ -30,11 +31,13 @@ impl AtiTrainingMetricsValue {
 
 /// A builder for [`AtiTrainingMetricsValue`](crate::types::AtiTrainingMetricsValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AtiTrainingMetricsValueBuilder {
     pub(crate) metric_data_points:
-        std::option::Option<std::vec::Vec<crate::types::AtiMetricDataPoint>>,
-    pub(crate) model_performance: std::option::Option<crate::types::AtiModelPerformance>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
+    pub(crate) model_performance: ::std::option::Option<crate::types::AtiModelPerformance>,
 }
 impl AtiTrainingMetricsValueBuilder {
     /// Appends an item to `metric_data_points`.
@@ -45,26 +48,26 @@ impl AtiTrainingMetricsValueBuilder {
     pub fn metric_data_points(mut self, input: crate::types::AtiMetricDataPoint) -> Self {
         let mut v = self.metric_data_points.unwrap_or_default();
         v.push(input);
-        self.metric_data_points = Some(v);
+        self.metric_data_points = ::std::option::Option::Some(v);
         self
     }
     /// <p> The model's performance metrics data points. </p>
     pub fn set_metric_data_points(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AtiMetricDataPoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AtiMetricDataPoint>>,
     ) -> Self {
         self.metric_data_points = input;
         self
     }
     /// <p> The model's overall performance scores. </p>
     pub fn model_performance(mut self, input: crate::types::AtiModelPerformance) -> Self {
-        self.model_performance = Some(input);
+        self.model_performance = ::std::option::Option::Some(input);
         self
     }
     /// <p> The model's overall performance scores. </p>
     pub fn set_model_performance(
         mut self,
-        input: std::option::Option<crate::types::AtiModelPerformance>,
+        input: ::std::option::Option<crate::types::AtiModelPerformance>,
     ) -> Self {
         self.model_performance = input;
         self

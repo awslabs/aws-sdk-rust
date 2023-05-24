@@ -2,17 +2,17 @@
 
 /// Failover Condition settings. There can be multiple failover conditions inside AutomaticInputFailoverSettings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverCondition {
     /// Failover condition type-specific settings.
     #[doc(hidden)]
-    pub failover_condition_settings: std::option::Option<crate::types::FailoverConditionSettings>,
+    pub failover_condition_settings: ::std::option::Option<crate::types::FailoverConditionSettings>,
 }
 impl FailoverCondition {
     /// Failover condition type-specific settings.
     pub fn failover_condition_settings(
         &self,
-    ) -> std::option::Option<&crate::types::FailoverConditionSettings> {
+    ) -> ::std::option::Option<&crate::types::FailoverConditionSettings> {
         self.failover_condition_settings.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl FailoverCondition {
 
 /// A builder for [`FailoverCondition`](crate::types::FailoverCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailoverConditionBuilder {
     pub(crate) failover_condition_settings:
-        std::option::Option<crate::types::FailoverConditionSettings>,
+        ::std::option::Option<crate::types::FailoverConditionSettings>,
 }
 impl FailoverConditionBuilder {
     /// Failover condition type-specific settings.
@@ -36,13 +38,13 @@ impl FailoverConditionBuilder {
         mut self,
         input: crate::types::FailoverConditionSettings,
     ) -> Self {
-        self.failover_condition_settings = Some(input);
+        self.failover_condition_settings = ::std::option::Option::Some(input);
         self
     }
     /// Failover condition type-specific settings.
     pub fn set_failover_condition_settings(
         mut self,
-        input: std::option::Option<crate::types::FailoverConditionSettings>,
+        input: ::std::option::Option<crate::types::FailoverConditionSettings>,
     ) -> Self {
         self.failover_condition_settings = input;
         self

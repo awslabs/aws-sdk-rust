@@ -2,71 +2,71 @@
 
 /// <p>Describes a database bundle. A bundle describes the performance specifications of the database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseBundle {
     /// <p>The ID for the database bundle.</p>
     #[doc(hidden)]
-    pub bundle_id: std::option::Option<std::string::String>,
+    pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for the database bundle.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The cost of the database bundle in US currency.</p>
     #[doc(hidden)]
-    pub price: std::option::Option<f32>,
+    pub price: ::std::option::Option<f32>,
     /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
     #[doc(hidden)]
-    pub ram_size_in_gb: std::option::Option<f32>,
+    pub ram_size_in_gb: ::std::option::Option<f32>,
     /// <p>The size of the disk for the database bundle.</p>
     #[doc(hidden)]
-    pub disk_size_in_gb: std::option::Option<i32>,
+    pub disk_size_in_gb: ::std::option::Option<i32>,
     /// <p>The data transfer rate per month in GB for the database bundle.</p>
     #[doc(hidden)]
-    pub transfer_per_month_in_gb: std::option::Option<i32>,
+    pub transfer_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
     #[doc(hidden)]
-    pub cpu_count: std::option::Option<i32>,
+    pub cpu_count: ::std::option::Option<i32>,
     /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
     #[doc(hidden)]
-    pub is_encrypted: std::option::Option<bool>,
+    pub is_encrypted: ::std::option::Option<bool>,
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
     #[doc(hidden)]
-    pub is_active: std::option::Option<bool>,
+    pub is_active: ::std::option::Option<bool>,
 }
 impl RelationalDatabaseBundle {
     /// <p>The ID for the database bundle.</p>
-    pub fn bundle_id(&self) -> std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
     /// <p>The name for the database bundle.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The cost of the database bundle in US currency.</p>
-    pub fn price(&self) -> std::option::Option<f32> {
+    pub fn price(&self) -> ::std::option::Option<f32> {
         self.price
     }
     /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
-    pub fn ram_size_in_gb(&self) -> std::option::Option<f32> {
+    pub fn ram_size_in_gb(&self) -> ::std::option::Option<f32> {
         self.ram_size_in_gb
     }
     /// <p>The size of the disk for the database bundle.</p>
-    pub fn disk_size_in_gb(&self) -> std::option::Option<i32> {
+    pub fn disk_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.disk_size_in_gb
     }
     /// <p>The data transfer rate per month in GB for the database bundle.</p>
-    pub fn transfer_per_month_in_gb(&self) -> std::option::Option<i32> {
+    pub fn transfer_per_month_in_gb(&self) -> ::std::option::Option<i32> {
         self.transfer_per_month_in_gb
     }
     /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
-    pub fn cpu_count(&self) -> std::option::Option<i32> {
+    pub fn cpu_count(&self) -> ::std::option::Option<i32> {
         self.cpu_count
     }
     /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
-    pub fn is_encrypted(&self) -> std::option::Option<bool> {
+    pub fn is_encrypted(&self) -> ::std::option::Option<bool> {
         self.is_encrypted
     }
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
-    pub fn is_active(&self) -> std::option::Option<bool> {
+    pub fn is_active(&self) -> ::std::option::Option<bool> {
         self.is_active
     }
 }
@@ -79,106 +79,108 @@ impl RelationalDatabaseBundle {
 
 /// A builder for [`RelationalDatabaseBundle`](crate::types::RelationalDatabaseBundle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelationalDatabaseBundleBuilder {
-    pub(crate) bundle_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) price: std::option::Option<f32>,
-    pub(crate) ram_size_in_gb: std::option::Option<f32>,
-    pub(crate) disk_size_in_gb: std::option::Option<i32>,
-    pub(crate) transfer_per_month_in_gb: std::option::Option<i32>,
-    pub(crate) cpu_count: std::option::Option<i32>,
-    pub(crate) is_encrypted: std::option::Option<bool>,
-    pub(crate) is_active: std::option::Option<bool>,
+    pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) price: ::std::option::Option<f32>,
+    pub(crate) ram_size_in_gb: ::std::option::Option<f32>,
+    pub(crate) disk_size_in_gb: ::std::option::Option<i32>,
+    pub(crate) transfer_per_month_in_gb: ::std::option::Option<i32>,
+    pub(crate) cpu_count: ::std::option::Option<i32>,
+    pub(crate) is_encrypted: ::std::option::Option<bool>,
+    pub(crate) is_active: ::std::option::Option<bool>,
 }
 impl RelationalDatabaseBundleBuilder {
     /// <p>The ID for the database bundle.</p>
-    pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bundle_id = Some(input.into());
+    pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bundle_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the database bundle.</p>
-    pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
     }
     /// <p>The name for the database bundle.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the database bundle.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The cost of the database bundle in US currency.</p>
     pub fn price(mut self, input: f32) -> Self {
-        self.price = Some(input);
+        self.price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cost of the database bundle in US currency.</p>
-    pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_price(mut self, input: ::std::option::Option<f32>) -> Self {
         self.price = input;
         self
     }
     /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
     pub fn ram_size_in_gb(mut self, input: f32) -> Self {
-        self.ram_size_in_gb = Some(input);
+        self.ram_size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.</p>
-    pub fn set_ram_size_in_gb(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
         self.ram_size_in_gb = input;
         self
     }
     /// <p>The size of the disk for the database bundle.</p>
     pub fn disk_size_in_gb(mut self, input: i32) -> Self {
-        self.disk_size_in_gb = Some(input);
+        self.disk_size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the disk for the database bundle.</p>
-    pub fn set_disk_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_disk_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.disk_size_in_gb = input;
         self
     }
     /// <p>The data transfer rate per month in GB for the database bundle.</p>
     pub fn transfer_per_month_in_gb(mut self, input: i32) -> Self {
-        self.transfer_per_month_in_gb = Some(input);
+        self.transfer_per_month_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data transfer rate per month in GB for the database bundle.</p>
-    pub fn set_transfer_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_transfer_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transfer_per_month_in_gb = input;
         self
     }
     /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
     pub fn cpu_count(mut self, input: i32) -> Self {
-        self.cpu_count = Some(input);
+        self.cpu_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
-    pub fn set_cpu_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu_count = input;
         self
     }
     /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
     pub fn is_encrypted(mut self, input: bool) -> Self {
-        self.is_encrypted = Some(input);
+        self.is_encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether the database bundle is encrypted.</p>
-    pub fn set_is_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_encrypted = input;
         self
     }
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
     pub fn is_active(mut self, input: bool) -> Self {
-        self.is_active = Some(input);
+        self.is_active = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether the database bundle is active.</p>
-    pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
     }

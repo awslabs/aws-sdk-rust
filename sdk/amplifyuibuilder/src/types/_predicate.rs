@@ -2,50 +2,50 @@
 
 /// <p>Stores information for generating Amplify DataStore queries. Use a <code>Predicate</code> to retrieve a subset of the data in a collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Predicate {
     /// <p>A list of predicates to combine logically.</p>
     #[doc(hidden)]
-    pub or: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
+    pub or: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     /// <p>A list of predicates to combine logically.</p>
     #[doc(hidden)]
-    pub and: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
+    pub and: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     /// <p>The field to query.</p>
     #[doc(hidden)]
-    pub field: std::option::Option<std::string::String>,
+    pub field: ::std::option::Option<::std::string::String>,
     /// <p>The operator to use to perform the evaluation.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<std::string::String>,
+    pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The value to use when performing the evaluation.</p>
     #[doc(hidden)]
-    pub operand: std::option::Option<std::string::String>,
+    pub operand: ::std::option::Option<::std::string::String>,
     /// <p>The type of value to use when performing the evaluation.</p>
     #[doc(hidden)]
-    pub operand_type: std::option::Option<std::string::String>,
+    pub operand_type: ::std::option::Option<::std::string::String>,
 }
 impl Predicate {
     /// <p>A list of predicates to combine logically.</p>
-    pub fn or(&self) -> std::option::Option<&[crate::types::Predicate]> {
+    pub fn or(&self) -> ::std::option::Option<&[crate::types::Predicate]> {
         self.or.as_deref()
     }
     /// <p>A list of predicates to combine logically.</p>
-    pub fn and(&self) -> std::option::Option<&[crate::types::Predicate]> {
+    pub fn and(&self) -> ::std::option::Option<&[crate::types::Predicate]> {
         self.and.as_deref()
     }
     /// <p>The field to query.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<&str> {
         self.field.as_deref()
     }
     /// <p>The operator to use to perform the evaluation.</p>
-    pub fn operator(&self) -> std::option::Option<&str> {
+    pub fn operator(&self) -> ::std::option::Option<&str> {
         self.operator.as_deref()
     }
     /// <p>The value to use when performing the evaluation.</p>
-    pub fn operand(&self) -> std::option::Option<&str> {
+    pub fn operand(&self) -> ::std::option::Option<&str> {
         self.operand.as_deref()
     }
     /// <p>The type of value to use when performing the evaluation.</p>
-    pub fn operand_type(&self) -> std::option::Option<&str> {
+    pub fn operand_type(&self) -> ::std::option::Option<&str> {
         self.operand_type.as_deref()
     }
 }
@@ -58,14 +58,16 @@ impl Predicate {
 
 /// A builder for [`Predicate`](crate::types::Predicate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PredicateBuilder {
-    pub(crate) or: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
-    pub(crate) and: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
-    pub(crate) field: std::option::Option<std::string::String>,
-    pub(crate) operator: std::option::Option<std::string::String>,
-    pub(crate) operand: std::option::Option<std::string::String>,
-    pub(crate) operand_type: std::option::Option<std::string::String>,
+    pub(crate) or: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
+    pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
+    pub(crate) field: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<::std::string::String>,
+    pub(crate) operand: ::std::option::Option<::std::string::String>,
+    pub(crate) operand_type: ::std::option::Option<::std::string::String>,
 }
 impl PredicateBuilder {
     /// Appends an item to `or`.
@@ -76,13 +78,13 @@ impl PredicateBuilder {
     pub fn or(mut self, input: crate::types::Predicate) -> Self {
         let mut v = self.or.unwrap_or_default();
         v.push(input);
-        self.or = Some(v);
+        self.or = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of predicates to combine logically.</p>
     pub fn set_or(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     ) -> Self {
         self.or = input;
         self
@@ -95,54 +97,54 @@ impl PredicateBuilder {
     pub fn and(mut self, input: crate::types::Predicate) -> Self {
         let mut v = self.and.unwrap_or_default();
         v.push(input);
-        self.and = Some(v);
+        self.and = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of predicates to combine logically.</p>
     pub fn set_and(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Predicate>>,
     ) -> Self {
         self.and = input;
         self
     }
     /// <p>The field to query.</p>
-    pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field = Some(input.into());
+    pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field to query.</p>
-    pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
     }
     /// <p>The operator to use to perform the evaluation.</p>
-    pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operator = Some(input.into());
+    pub fn operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operator to use to perform the evaluation.</p>
-    pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operator = input;
         self
     }
     /// <p>The value to use when performing the evaluation.</p>
-    pub fn operand(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operand = Some(input.into());
+    pub fn operand(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operand = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to use when performing the evaluation.</p>
-    pub fn set_operand(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operand(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operand = input;
         self
     }
     /// <p>The type of value to use when performing the evaluation.</p>
-    pub fn operand_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operand_type = Some(input.into());
+    pub fn operand_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operand_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of value to use when performing the evaluation.</p>
-    pub fn set_operand_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operand_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operand_type = input;
         self
     }

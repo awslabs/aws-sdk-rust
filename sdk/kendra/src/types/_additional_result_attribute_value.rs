@@ -2,17 +2,17 @@
 
 /// <p>An attribute returned with a document from a search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalResultAttributeValue {
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
     #[doc(hidden)]
-    pub text_with_highlights_value: std::option::Option<crate::types::TextWithHighlights>,
+    pub text_with_highlights_value: ::std::option::Option<crate::types::TextWithHighlights>,
 }
 impl AdditionalResultAttributeValue {
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
     pub fn text_with_highlights_value(
         &self,
-    ) -> std::option::Option<&crate::types::TextWithHighlights> {
+    ) -> ::std::option::Option<&crate::types::TextWithHighlights> {
         self.text_with_highlights_value.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl AdditionalResultAttributeValue {
 
 /// A builder for [`AdditionalResultAttributeValue`](crate::types::AdditionalResultAttributeValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdditionalResultAttributeValueBuilder {
-    pub(crate) text_with_highlights_value: std::option::Option<crate::types::TextWithHighlights>,
+    pub(crate) text_with_highlights_value: ::std::option::Option<crate::types::TextWithHighlights>,
 }
 impl AdditionalResultAttributeValueBuilder {
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
     pub fn text_with_highlights_value(mut self, input: crate::types::TextWithHighlights) -> Self {
-        self.text_with_highlights_value = Some(input);
+        self.text_with_highlights_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The text associated with the attribute and information about the highlight to apply to the text.</p>
     pub fn set_text_with_highlights_value(
         mut self,
-        input: std::option::Option<crate::types::TextWithHighlights>,
+        input: ::std::option::Option<crate::types::TextWithHighlights>,
     ) -> Self {
         self.text_with_highlights_value = input;
         self

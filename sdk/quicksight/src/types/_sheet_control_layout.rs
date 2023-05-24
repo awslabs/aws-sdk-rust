@@ -2,17 +2,17 @@
 
 /// <p>A grid layout to define the placement of sheet control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetControlLayout {
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::SheetControlLayoutConfiguration>,
+    pub configuration: ::std::option::Option<crate::types::SheetControlLayoutConfiguration>,
 }
 impl SheetControlLayout {
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
     pub fn configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SheetControlLayoutConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SheetControlLayoutConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl SheetControlLayout {
 
 /// A builder for [`SheetControlLayout`](crate::types::SheetControlLayout).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SheetControlLayoutBuilder {
-    pub(crate) configuration: std::option::Option<crate::types::SheetControlLayoutConfiguration>,
+    pub(crate) configuration: ::std::option::Option<crate::types::SheetControlLayoutConfiguration>,
 }
 impl SheetControlLayoutBuilder {
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
     pub fn configuration(mut self, input: crate::types::SheetControlLayoutConfiguration) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::SheetControlLayoutConfiguration>,
+        input: ::std::option::Option<crate::types::SheetControlLayoutConfiguration>,
     ) -> Self {
         self.configuration = input;
         self

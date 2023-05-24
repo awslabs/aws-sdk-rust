@@ -7,47 +7,50 @@ pub use crate::operation::add_application_reference_data_source::_add_applicatio
 ///
 /// <p>Adds a reference data source to an existing SQL-based Kinesis Data Analytics application.</p>
 /// <p>Kinesis Data Analytics reads reference data (that is, an Amazon S3 object) and creates an in-application table within your application. In the request, you provide the source (S3 bucket name and object key name), name of the in-application table to create, and the necessary mapping information that describes how data in an Amazon S3 object maps to columns in the resulting in-application table.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddApplicationReferenceDataSourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::add_application_reference_data_source::builders::AddApplicationReferenceDataSourceInputBuilder,
 }
 impl AddApplicationReferenceDataSourceFluentBuilder {
     /// Creates a new `AddApplicationReferenceDataSource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSource, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSource, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput, aws_smithy_http::result::SdkError<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,17 +61,23 @@ impl AddApplicationReferenceDataSourceFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput, aws_smithy_http::result::SdkError<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name of an existing application.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of an existing application.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -78,7 +87,7 @@ impl AddApplicationReferenceDataSourceFluentBuilder {
         self
     }
     /// <p>The version of the application for which you are adding the reference data source. You can use the <code>DescribeApplication</code> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-    pub fn set_current_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_current_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_current_application_version_id(input);
         self
     }
@@ -90,7 +99,7 @@ impl AddApplicationReferenceDataSourceFluentBuilder {
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. </p>
     pub fn set_reference_data_source(
         mut self,
-        input: std::option::Option<crate::types::ReferenceDataSource>,
+        input: ::std::option::Option<crate::types::ReferenceDataSource>,
     ) -> Self {
         self.inner = self.inner.set_reference_data_source(input);
         self

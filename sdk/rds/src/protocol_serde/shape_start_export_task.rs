@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_export_task_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::start_export_task::StartExportTaskOutput,
@@ -15,7 +15,7 @@ pub fn de_start_export_task_http_error(
         _response_body,
     )
     .map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -195,7 +195,7 @@ pub fn de_start_export_task_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_export_task_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::start_export_task::StartExportTaskOutput,
@@ -211,7 +211,7 @@ pub fn de_start_export_task_http_response_with_props(
         )
         .map_err(crate::operation::start_export_task::StartExportTaskError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -223,16 +223,16 @@ pub fn de_start_export_task(
     mut builder: crate::operation::start_export_task::builders::StartExportTaskOutputBuilder,
 ) -> Result<
     crate::operation::start_export_task::builders::StartExportTaskOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("StartExportTaskResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected StartExportTaskResponse got {:?}",
             start_el
         )));
@@ -240,7 +240,7 @@ pub fn de_start_export_task(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("StartExportTaskResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected StartExportTaskResult got {:?}",
                 start_el
             )));
@@ -250,8 +250,8 @@ pub fn de_start_export_task(
             s if s.matches("ExportTaskIdentifier") /* ExportTaskIdentifier com.amazonaws.rds.synthetic#StartExportTaskOutput$ExportTaskIdentifier */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -263,8 +263,8 @@ pub fn de_start_export_task(
             s if s.matches("SourceArn") /* SourceArn com.amazonaws.rds.synthetic#StartExportTaskOutput$SourceArn */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -286,11 +286,11 @@ pub fn de_start_export_task(
             s if s.matches("SnapshotTime") /* SnapshotTime com.amazonaws.rds.synthetic#StartExportTaskOutput$SnapshotTime */ =>  {
                 let var_4 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
@@ -300,11 +300,11 @@ pub fn de_start_export_task(
             s if s.matches("TaskStartTime") /* TaskStartTime com.amazonaws.rds.synthetic#StartExportTaskOutput$TaskStartTime */ =>  {
                 let var_5 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
@@ -314,11 +314,11 @@ pub fn de_start_export_task(
             s if s.matches("TaskEndTime") /* TaskEndTime com.amazonaws.rds.synthetic#StartExportTaskOutput$TaskEndTime */ =>  {
                 let var_6 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
                         ?
                     )
                 ;
@@ -328,8 +328,8 @@ pub fn de_start_export_task(
             s if s.matches("S3Bucket") /* S3Bucket com.amazonaws.rds.synthetic#StartExportTaskOutput$S3Bucket */ =>  {
                 let var_7 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -341,8 +341,8 @@ pub fn de_start_export_task(
             s if s.matches("S3Prefix") /* S3Prefix com.amazonaws.rds.synthetic#StartExportTaskOutput$S3Prefix */ =>  {
                 let var_8 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -354,8 +354,8 @@ pub fn de_start_export_task(
             s if s.matches("IamRoleArn") /* IamRoleArn com.amazonaws.rds.synthetic#StartExportTaskOutput$IamRoleArn */ =>  {
                 let var_9 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -367,8 +367,8 @@ pub fn de_start_export_task(
             s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds.synthetic#StartExportTaskOutput$KmsKeyId */ =>  {
                 let var_10 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -380,8 +380,8 @@ pub fn de_start_export_task(
             s if s.matches("Status") /* Status com.amazonaws.rds.synthetic#StartExportTaskOutput$Status */ =>  {
                 let var_11 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -394,10 +394,10 @@ pub fn de_start_export_task(
                 let var_12 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
                         }
                         ?
                     )
@@ -409,10 +409,10 @@ pub fn de_start_export_task(
                 let var_13 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
                         }
                         ?
                     )
@@ -423,8 +423,8 @@ pub fn de_start_export_task(
             s if s.matches("FailureCause") /* FailureCause com.amazonaws.rds.synthetic#StartExportTaskOutput$FailureCause */ =>  {
                 let var_14 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -436,8 +436,8 @@ pub fn de_start_export_task(
             s if s.matches("WarningMessage") /* WarningMessage com.amazonaws.rds.synthetic#StartExportTaskOutput$WarningMessage */ =>  {
                 let var_15 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -449,9 +449,9 @@ pub fn de_start_export_task(
             s if s.matches("SourceType") /* SourceType com.amazonaws.rds.synthetic#StartExportTaskOutput$SourceType */ =>  {
                 let var_16 =
                     Some(
-                        Result::<crate::types::ExportSourceType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::ExportSourceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ExportSourceType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -464,7 +464,7 @@ pub fn de_start_export_task(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected StartExportTaskResult tag",
         ));
     };

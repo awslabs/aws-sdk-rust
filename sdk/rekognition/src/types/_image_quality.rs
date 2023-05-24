@@ -2,22 +2,22 @@
 
 /// <p>Identifies face image brightness and sharpness. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageQuality {
     /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
     #[doc(hidden)]
-    pub brightness: std::option::Option<f32>,
+    pub brightness: ::std::option::Option<f32>,
     /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
     #[doc(hidden)]
-    pub sharpness: std::option::Option<f32>,
+    pub sharpness: ::std::option::Option<f32>,
 }
 impl ImageQuality {
     /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
-    pub fn brightness(&self) -> std::option::Option<f32> {
+    pub fn brightness(&self) -> ::std::option::Option<f32> {
         self.brightness
     }
     /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
-    pub fn sharpness(&self) -> std::option::Option<f32> {
+    pub fn sharpness(&self) -> ::std::option::Option<f32> {
         self.sharpness
     }
 }
@@ -30,29 +30,31 @@ impl ImageQuality {
 
 /// A builder for [`ImageQuality`](crate::types::ImageQuality).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageQualityBuilder {
-    pub(crate) brightness: std::option::Option<f32>,
-    pub(crate) sharpness: std::option::Option<f32>,
+    pub(crate) brightness: ::std::option::Option<f32>,
+    pub(crate) sharpness: ::std::option::Option<f32>,
 }
 impl ImageQualityBuilder {
     /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
     pub fn brightness(mut self, input: f32) -> Self {
-        self.brightness = Some(input);
+        self.brightness = ::std::option::Option::Some(input);
         self
     }
     /// <p>Value representing brightness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a brighter face image.</p>
-    pub fn set_brightness(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_brightness(mut self, input: ::std::option::Option<f32>) -> Self {
         self.brightness = input;
         self
     }
     /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
     pub fn sharpness(mut self, input: f32) -> Self {
-        self.sharpness = Some(input);
+        self.sharpness = ::std::option::Option::Some(input);
         self
     }
     /// <p>Value representing sharpness of the face. The service returns a value between 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
-    pub fn set_sharpness(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_sharpness(mut self, input: ::std::option::Option<f32>) -> Self {
         self.sharpness = input;
         self
     }

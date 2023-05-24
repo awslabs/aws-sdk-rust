@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplicationVersion`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::set_application_id): <p>The unique identifier of the application.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::set_application_id): <p>The unique identifier of the application.</p>
     ///   - [`application_version(i32)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::application_version) / [`set_application_version(Option<i32>)`](crate::operation::get_application_version::builders::GetApplicationVersionFluentBuilder::set_application_version): <p>The specific version of the application.</p>
     /// - On success, responds with [`GetApplicationVersionOutput`](crate::operation::get_application_version::GetApplicationVersionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_application_version::GetApplicationVersionOutput::name): <p>The name of the application version.</p>

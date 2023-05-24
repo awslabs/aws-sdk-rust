@@ -2,11 +2,11 @@
 
 /// <p>You can configure Amazon Redshift to copy snapshots for a cluster to another Amazon Web Services Region. This parameter provides information about a cross-Region snapshot copy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterClusterSnapshotCopyStatus {
     /// <p>The destination Region that snapshots are automatically copied to when cross-Region snapshot copy is enabled.</p>
     #[doc(hidden)]
-    pub destination_region: std::option::Option<std::string::String>,
+    pub destination_region: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that manual snapshots are retained in the destination Region after they are copied from a source Region.</p>
     /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
@@ -17,11 +17,11 @@ pub struct AwsRedshiftClusterClusterSnapshotCopyStatus {
     pub retention_period: i32,
     /// <p>The name of the snapshot copy grant.</p>
     #[doc(hidden)]
-    pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
+    pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterClusterSnapshotCopyStatus {
     /// <p>The destination Region that snapshots are automatically copied to when cross-Region snapshot copy is enabled.</p>
-    pub fn destination_region(&self) -> std::option::Option<&str> {
+    pub fn destination_region(&self) -> ::std::option::Option<&str> {
         self.destination_region.as_deref()
     }
     /// <p>The number of days that manual snapshots are retained in the destination Region after they are copied from a source Region.</p>
@@ -35,7 +35,7 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatus {
         self.retention_period
     }
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<&str> {
         self.snapshot_copy_grant_name.as_deref()
     }
 }
@@ -48,23 +48,28 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatus {
 
 /// A builder for [`AwsRedshiftClusterClusterSnapshotCopyStatus`](crate::types::AwsRedshiftClusterClusterSnapshotCopyStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRedshiftClusterClusterSnapshotCopyStatusBuilder {
-    pub(crate) destination_region: std::option::Option<std::string::String>,
-    pub(crate) manual_snapshot_retention_period: std::option::Option<i32>,
-    pub(crate) retention_period: std::option::Option<i32>,
-    pub(crate) snapshot_copy_grant_name: std::option::Option<std::string::String>,
+    pub(crate) destination_region: ::std::option::Option<::std::string::String>,
+    pub(crate) manual_snapshot_retention_period: ::std::option::Option<i32>,
+    pub(crate) retention_period: ::std::option::Option<i32>,
+    pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterClusterSnapshotCopyStatusBuilder {
     /// <p>The destination Region that snapshots are automatically copied to when cross-Region snapshot copy is enabled.</p>
-    pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_region = Some(input.into());
+    pub fn destination_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination Region that snapshots are automatically copied to when cross-Region snapshot copy is enabled.</p>
     pub fn set_destination_region(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_region = input;
         self
@@ -73,35 +78,41 @@ impl AwsRedshiftClusterClusterSnapshotCopyStatusBuilder {
     /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
-        self.manual_snapshot_retention_period = Some(input);
+        self.manual_snapshot_retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days that manual snapshots are retained in the destination Region after they are copied from a source Region.</p>
     /// <p>If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.</p>
     /// <p>Valid values: Either <code>-1</code> or an integer between 1 and 3,653</p>
-    pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_manual_snapshot_retention_period(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.manual_snapshot_retention_period = input;
         self
     }
     /// <p>The number of days to retain automated snapshots in the destination Region after they are copied from a source Region.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
-        self.retention_period = Some(input);
+        self.retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain automated snapshots in the destination Region after they are copied from a source Region.</p>
-    pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
     }
     /// <p>The name of the snapshot copy grant.</p>
-    pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_copy_grant_name = Some(input.into());
+    pub fn snapshot_copy_grant_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot copy grant.</p>
     pub fn set_snapshot_copy_grant_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.snapshot_copy_grant_name = input;
         self

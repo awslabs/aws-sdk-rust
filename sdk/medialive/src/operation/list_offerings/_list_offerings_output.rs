@@ -2,27 +2,27 @@
 
 /// Placeholder documentation for ListOfferingsResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOfferingsOutput {
     /// Token to retrieve the next page of results
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// List of offerings
     #[doc(hidden)]
-    pub offerings: std::option::Option<std::vec::Vec<crate::types::Offering>>,
+    pub offerings: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>,
     _request_id: Option<String>,
 }
 impl ListOfferingsOutput {
     /// Token to retrieve the next page of results
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// List of offerings
-    pub fn offerings(&self) -> std::option::Option<&[crate::types::Offering]> {
+    pub fn offerings(&self) -> ::std::option::Option<&[crate::types::Offering]> {
         self.offerings.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListOfferingsOutput {
+impl ::aws_http::request_id::RequestId for ListOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,20 +36,22 @@ impl ListOfferingsOutput {
 
 /// A builder for [`ListOfferingsOutput`](crate::operation::list_offerings::ListOfferingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListOfferingsOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) offerings: std::option::Option<std::vec::Vec<crate::types::Offering>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) offerings: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>,
     _request_id: Option<String>,
 }
 impl ListOfferingsOutputBuilder {
     /// Token to retrieve the next page of results
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// Token to retrieve the next page of results
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -61,13 +63,13 @@ impl ListOfferingsOutputBuilder {
     pub fn offerings(mut self, input: crate::types::Offering) -> Self {
         let mut v = self.offerings.unwrap_or_default();
         v.push(input);
-        self.offerings = Some(v);
+        self.offerings = ::std::option::Option::Some(v);
         self
     }
     /// List of offerings
     pub fn set_offerings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Offering>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>,
     ) -> Self {
         self.offerings = input;
         self

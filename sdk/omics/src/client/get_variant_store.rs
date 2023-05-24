@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVariantStore`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::set_name): <p>The store's name.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_variant_store::builders::GetVariantStoreFluentBuilder::set_name): <p>The store's name.</p>
     /// - On success, responds with [`GetVariantStoreOutput`](crate::operation::get_variant_store::GetVariantStoreOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_variant_store::GetVariantStoreOutput::id): <p>The store's ID.</p>
     ///   - [`reference(Option<ReferenceItem>)`](crate::operation::get_variant_store::GetVariantStoreOutput::reference): <p>The store's genome reference.</p>

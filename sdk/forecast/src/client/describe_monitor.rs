@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMonitor`](crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monitor_arn(impl Into<String>)`](crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder::monitor_arn) / [`set_monitor_arn(Option<String>)`](crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder::set_monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
+    ///   - [`monitor_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder::monitor_arn) / [`set_monitor_arn(Option<String>)`](crate::operation::describe_monitor::builders::DescribeMonitorFluentBuilder::set_monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource to describe.</p>
     /// - On success, responds with [`DescribeMonitorOutput`](crate::operation::describe_monitor::DescribeMonitorOutput) with field(s):
     ///   - [`monitor_name(Option<String>)`](crate::operation::describe_monitor::DescribeMonitorOutput::monitor_name): <p>The name of the monitor.</p>
     ///   - [`monitor_arn(Option<String>)`](crate::operation::describe_monitor::DescribeMonitorOutput::monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>

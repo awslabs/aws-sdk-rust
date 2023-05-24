@@ -2,50 +2,52 @@
 
 /// <p>An object that represents a listener for a virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Listener {
     /// <p>The port mapping information for the listener.</p>
     #[doc(hidden)]
-    pub port_mapping: std::option::Option<crate::types::PortMapping>,
+    pub port_mapping: ::std::option::Option<crate::types::PortMapping>,
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
     #[doc(hidden)]
-    pub tls: std::option::Option<crate::types::ListenerTls>,
+    pub tls: ::std::option::Option<crate::types::ListenerTls>,
     /// <p>The health check information for the listener.</p>
     #[doc(hidden)]
-    pub health_check: std::option::Option<crate::types::HealthCheckPolicy>,
+    pub health_check: ::std::option::Option<crate::types::HealthCheckPolicy>,
     /// <p>An object that represents timeouts for different protocols.</p>
     #[doc(hidden)]
-    pub timeout: std::option::Option<crate::types::ListenerTimeout>,
+    pub timeout: ::std::option::Option<crate::types::ListenerTimeout>,
     /// <p>The outlier detection information for the listener.</p>
     #[doc(hidden)]
-    pub outlier_detection: std::option::Option<crate::types::OutlierDetection>,
+    pub outlier_detection: ::std::option::Option<crate::types::OutlierDetection>,
     /// <p>The connection pool information for the listener.</p>
     #[doc(hidden)]
-    pub connection_pool: std::option::Option<crate::types::VirtualNodeConnectionPool>,
+    pub connection_pool: ::std::option::Option<crate::types::VirtualNodeConnectionPool>,
 }
 impl Listener {
     /// <p>The port mapping information for the listener.</p>
-    pub fn port_mapping(&self) -> std::option::Option<&crate::types::PortMapping> {
+    pub fn port_mapping(&self) -> ::std::option::Option<&crate::types::PortMapping> {
         self.port_mapping.as_ref()
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
-    pub fn tls(&self) -> std::option::Option<&crate::types::ListenerTls> {
+    pub fn tls(&self) -> ::std::option::Option<&crate::types::ListenerTls> {
         self.tls.as_ref()
     }
     /// <p>The health check information for the listener.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::types::HealthCheckPolicy> {
+    pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheckPolicy> {
         self.health_check.as_ref()
     }
     /// <p>An object that represents timeouts for different protocols.</p>
-    pub fn timeout(&self) -> std::option::Option<&crate::types::ListenerTimeout> {
+    pub fn timeout(&self) -> ::std::option::Option<&crate::types::ListenerTimeout> {
         self.timeout.as_ref()
     }
     /// <p>The outlier detection information for the listener.</p>
-    pub fn outlier_detection(&self) -> std::option::Option<&crate::types::OutlierDetection> {
+    pub fn outlier_detection(&self) -> ::std::option::Option<&crate::types::OutlierDetection> {
         self.outlier_detection.as_ref()
     }
     /// <p>The connection pool information for the listener.</p>
-    pub fn connection_pool(&self) -> std::option::Option<&crate::types::VirtualNodeConnectionPool> {
+    pub fn connection_pool(
+        &self,
+    ) -> ::std::option::Option<&crate::types::VirtualNodeConnectionPool> {
         self.connection_pool.as_ref()
     }
 }
@@ -58,87 +60,89 @@ impl Listener {
 
 /// A builder for [`Listener`](crate::types::Listener).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListenerBuilder {
-    pub(crate) port_mapping: std::option::Option<crate::types::PortMapping>,
-    pub(crate) tls: std::option::Option<crate::types::ListenerTls>,
-    pub(crate) health_check: std::option::Option<crate::types::HealthCheckPolicy>,
-    pub(crate) timeout: std::option::Option<crate::types::ListenerTimeout>,
-    pub(crate) outlier_detection: std::option::Option<crate::types::OutlierDetection>,
-    pub(crate) connection_pool: std::option::Option<crate::types::VirtualNodeConnectionPool>,
+    pub(crate) port_mapping: ::std::option::Option<crate::types::PortMapping>,
+    pub(crate) tls: ::std::option::Option<crate::types::ListenerTls>,
+    pub(crate) health_check: ::std::option::Option<crate::types::HealthCheckPolicy>,
+    pub(crate) timeout: ::std::option::Option<crate::types::ListenerTimeout>,
+    pub(crate) outlier_detection: ::std::option::Option<crate::types::OutlierDetection>,
+    pub(crate) connection_pool: ::std::option::Option<crate::types::VirtualNodeConnectionPool>,
 }
 impl ListenerBuilder {
     /// <p>The port mapping information for the listener.</p>
     pub fn port_mapping(mut self, input: crate::types::PortMapping) -> Self {
-        self.port_mapping = Some(input);
+        self.port_mapping = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port mapping information for the listener.</p>
     pub fn set_port_mapping(
         mut self,
-        input: std::option::Option<crate::types::PortMapping>,
+        input: ::std::option::Option<crate::types::PortMapping>,
     ) -> Self {
         self.port_mapping = input;
         self
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
     pub fn tls(mut self, input: crate::types::ListenerTls) -> Self {
-        self.tls = Some(input);
+        self.tls = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
-    pub fn set_tls(mut self, input: std::option::Option<crate::types::ListenerTls>) -> Self {
+    pub fn set_tls(mut self, input: ::std::option::Option<crate::types::ListenerTls>) -> Self {
         self.tls = input;
         self
     }
     /// <p>The health check information for the listener.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheckPolicy) -> Self {
-        self.health_check = Some(input);
+        self.health_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>The health check information for the listener.</p>
     pub fn set_health_check(
         mut self,
-        input: std::option::Option<crate::types::HealthCheckPolicy>,
+        input: ::std::option::Option<crate::types::HealthCheckPolicy>,
     ) -> Self {
         self.health_check = input;
         self
     }
     /// <p>An object that represents timeouts for different protocols.</p>
     pub fn timeout(mut self, input: crate::types::ListenerTimeout) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents timeouts for different protocols.</p>
     pub fn set_timeout(
         mut self,
-        input: std::option::Option<crate::types::ListenerTimeout>,
+        input: ::std::option::Option<crate::types::ListenerTimeout>,
     ) -> Self {
         self.timeout = input;
         self
     }
     /// <p>The outlier detection information for the listener.</p>
     pub fn outlier_detection(mut self, input: crate::types::OutlierDetection) -> Self {
-        self.outlier_detection = Some(input);
+        self.outlier_detection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The outlier detection information for the listener.</p>
     pub fn set_outlier_detection(
         mut self,
-        input: std::option::Option<crate::types::OutlierDetection>,
+        input: ::std::option::Option<crate::types::OutlierDetection>,
     ) -> Self {
         self.outlier_detection = input;
         self
     }
     /// <p>The connection pool information for the listener.</p>
     pub fn connection_pool(mut self, input: crate::types::VirtualNodeConnectionPool) -> Self {
-        self.connection_pool = Some(input);
+        self.connection_pool = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connection pool information for the listener.</p>
     pub fn set_connection_pool(
         mut self,
-        input: std::option::Option<crate::types::VirtualNodeConnectionPool>,
+        input: ::std::option::Option<crate::types::VirtualNodeConnectionPool>,
     ) -> Self {
         self.connection_pool = input;
         self

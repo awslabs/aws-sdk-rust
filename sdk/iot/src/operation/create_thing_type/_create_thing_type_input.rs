@@ -2,29 +2,31 @@
 
 /// <p>The input for the CreateThingType operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThingTypeInput {
     /// <p>The name of the thing type.</p>
     #[doc(hidden)]
-    pub thing_type_name: std::option::Option<std::string::String>,
+    pub thing_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     #[doc(hidden)]
-    pub thing_type_properties: std::option::Option<crate::types::ThingTypeProperties>,
+    pub thing_type_properties: ::std::option::Option<crate::types::ThingTypeProperties>,
     /// <p>Metadata which can be used to manage the thing type.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateThingTypeInput {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> ::std::option::Option<&str> {
         self.thing_type_name.as_deref()
     }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
-    pub fn thing_type_properties(&self) -> std::option::Option<&crate::types::ThingTypeProperties> {
+    pub fn thing_type_properties(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
     /// <p>Metadata which can be used to manage the thing type.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -37,32 +39,40 @@ impl CreateThingTypeInput {
 
 /// A builder for [`CreateThingTypeInput`](crate::operation::create_thing_type::CreateThingTypeInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateThingTypeInputBuilder {
-    pub(crate) thing_type_name: std::option::Option<std::string::String>,
-    pub(crate) thing_type_properties: std::option::Option<crate::types::ThingTypeProperties>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) thing_type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_type_properties: ::std::option::Option<crate::types::ThingTypeProperties>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateThingTypeInputBuilder {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_type_name = Some(input.into());
+    pub fn thing_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.thing_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing type.</p>
-    pub fn set_thing_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.thing_type_name = input;
         self
     }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub fn thing_type_properties(mut self, input: crate::types::ThingTypeProperties) -> Self {
-        self.thing_type_properties = Some(input);
+        self.thing_type_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub fn set_thing_type_properties(
         mut self,
-        input: std::option::Option<crate::types::ThingTypeProperties>,
+        input: ::std::option::Option<crate::types::ThingTypeProperties>,
     ) -> Self {
         self.thing_type_properties = input;
         self
@@ -75,13 +85,13 @@ impl CreateThingTypeInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Metadata which can be used to manage the thing type.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -89,11 +99,11 @@ impl CreateThingTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateThingTypeInput`](crate::operation::create_thing_type::CreateThingTypeInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_thing_type::CreateThingTypeInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_thing_type::CreateThingTypeInput {
+        ::std::result::Result::Ok(crate::operation::create_thing_type::CreateThingTypeInput {
             thing_type_name: self.thing_type_name,
             thing_type_properties: self.thing_type_properties,
             tags: self.tags,

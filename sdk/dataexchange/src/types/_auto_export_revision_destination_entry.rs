@@ -2,22 +2,22 @@
 
 /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoExportRevisionDestinationEntry {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     #[doc(hidden)]
-    pub key_pattern: std::option::Option<std::string::String>,
+    pub key_pattern: ::std::option::Option<::std::string::String>,
 }
 impl AutoExportRevisionDestinationEntry {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
-    pub fn key_pattern(&self) -> std::option::Option<&str> {
+    pub fn key_pattern(&self) -> ::std::option::Option<&str> {
         self.key_pattern.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AutoExportRevisionDestinationEntry {
 
 /// A builder for [`AutoExportRevisionDestinationEntry`](crate::types::AutoExportRevisionDestinationEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoExportRevisionDestinationEntryBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) key_pattern: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) key_pattern: ::std::option::Option<::std::string::String>,
 }
 impl AutoExportRevisionDestinationEntryBuilder {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
-    pub fn key_pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_pattern = Some(input.into());
+    pub fn key_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
-    pub fn set_key_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pattern = input;
         self
     }

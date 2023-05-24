@@ -2,15 +2,15 @@
 
 /// <p>A structure containing information about an undetected signature on a page where it was expected but not found.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UndetectedSignature {
     /// <p>The page where a signature was expected but not found.</p>
     #[doc(hidden)]
-    pub page: std::option::Option<i32>,
+    pub page: ::std::option::Option<i32>,
 }
 impl UndetectedSignature {
     /// <p>The page where a signature was expected but not found.</p>
-    pub fn page(&self) -> std::option::Option<i32> {
+    pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
 }
@@ -23,18 +23,20 @@ impl UndetectedSignature {
 
 /// A builder for [`UndetectedSignature`](crate::types::UndetectedSignature).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UndetectedSignatureBuilder {
-    pub(crate) page: std::option::Option<i32>,
+    pub(crate) page: ::std::option::Option<i32>,
 }
 impl UndetectedSignatureBuilder {
     /// <p>The page where a signature was expected but not found.</p>
     pub fn page(mut self, input: i32) -> Self {
-        self.page = Some(input);
+        self.page = ::std::option::Option::Some(input);
         self
     }
     /// <p>The page where a signature was expected but not found.</p>
-    pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page = input;
         self
     }

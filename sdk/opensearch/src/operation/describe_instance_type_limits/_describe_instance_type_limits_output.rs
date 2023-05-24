@@ -2,24 +2,26 @@
 
 /// <p>Container for the parameters received from the <code>DescribeInstanceTypeLimits</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceTypeLimitsOutput {
     /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
     #[doc(hidden)]
-    pub limits_by_role:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::types::Limits>>,
+    pub limits_by_role: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeInstanceTypeLimitsOutput {
     /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
     pub fn limits_by_role(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Limits>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::Limits>,
+    > {
         self.limits_by_role.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeInstanceTypeLimitsOutput {
+impl ::aws_http::request_id::RequestId for DescribeInstanceTypeLimitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,10 +35,13 @@ impl DescribeInstanceTypeLimitsOutput {
 
 /// A builder for [`DescribeInstanceTypeLimitsOutput`](crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeInstanceTypeLimitsOutputBuilder {
-    pub(crate) limits_by_role:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::types::Limits>>,
+    pub(crate) limits_by_role: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeInstanceTypeLimitsOutputBuilder {
@@ -47,19 +52,19 @@ impl DescribeInstanceTypeLimitsOutputBuilder {
     /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
     pub fn limits_by_role(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::Limits,
     ) -> Self {
         let mut hash_map = self.limits_by_role.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.limits_by_role = Some(hash_map);
+        self.limits_by_role = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code> refers to dedicated master nodes.</p>
     pub fn set_limits_by_role(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Limits>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Limits>,
         >,
     ) -> Self {
         self.limits_by_role = input;

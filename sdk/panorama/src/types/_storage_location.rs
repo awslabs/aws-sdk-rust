@@ -2,43 +2,43 @@
 
 /// <p>A storage location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageLocation {
     /// <p>The location's bucket.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The location's repo prefix.</p>
     #[doc(hidden)]
-    pub repo_prefix_location: std::option::Option<std::string::String>,
+    pub repo_prefix_location: ::std::option::Option<::std::string::String>,
     /// <p>The location's generated prefix.</p>
     #[doc(hidden)]
-    pub generated_prefix_location: std::option::Option<std::string::String>,
+    pub generated_prefix_location: ::std::option::Option<::std::string::String>,
     /// <p>The location's binary prefix.</p>
     #[doc(hidden)]
-    pub binary_prefix_location: std::option::Option<std::string::String>,
+    pub binary_prefix_location: ::std::option::Option<::std::string::String>,
     /// <p>The location's manifest prefix.</p>
     #[doc(hidden)]
-    pub manifest_prefix_location: std::option::Option<std::string::String>,
+    pub manifest_prefix_location: ::std::option::Option<::std::string::String>,
 }
 impl StorageLocation {
     /// <p>The location's bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The location's repo prefix.</p>
-    pub fn repo_prefix_location(&self) -> std::option::Option<&str> {
+    pub fn repo_prefix_location(&self) -> ::std::option::Option<&str> {
         self.repo_prefix_location.as_deref()
     }
     /// <p>The location's generated prefix.</p>
-    pub fn generated_prefix_location(&self) -> std::option::Option<&str> {
+    pub fn generated_prefix_location(&self) -> ::std::option::Option<&str> {
         self.generated_prefix_location.as_deref()
     }
     /// <p>The location's binary prefix.</p>
-    pub fn binary_prefix_location(&self) -> std::option::Option<&str> {
+    pub fn binary_prefix_location(&self) -> ::std::option::Option<&str> {
         self.binary_prefix_location.as_deref()
     }
     /// <p>The location's manifest prefix.</p>
-    pub fn manifest_prefix_location(&self) -> std::option::Option<&str> {
+    pub fn manifest_prefix_location(&self) -> ::std::option::Option<&str> {
         self.manifest_prefix_location.as_deref()
     }
 }
@@ -51,73 +51,87 @@ impl StorageLocation {
 
 /// A builder for [`StorageLocation`](crate::types::StorageLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StorageLocationBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) repo_prefix_location: std::option::Option<std::string::String>,
-    pub(crate) generated_prefix_location: std::option::Option<std::string::String>,
-    pub(crate) binary_prefix_location: std::option::Option<std::string::String>,
-    pub(crate) manifest_prefix_location: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) repo_prefix_location: ::std::option::Option<::std::string::String>,
+    pub(crate) generated_prefix_location: ::std::option::Option<::std::string::String>,
+    pub(crate) binary_prefix_location: ::std::option::Option<::std::string::String>,
+    pub(crate) manifest_prefix_location: ::std::option::Option<::std::string::String>,
 }
 impl StorageLocationBuilder {
     /// <p>The location's bucket.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location's bucket.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The location's repo prefix.</p>
-    pub fn repo_prefix_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repo_prefix_location = Some(input.into());
+    pub fn repo_prefix_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repo_prefix_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location's repo prefix.</p>
     pub fn set_repo_prefix_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.repo_prefix_location = input;
         self
     }
     /// <p>The location's generated prefix.</p>
-    pub fn generated_prefix_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.generated_prefix_location = Some(input.into());
+    pub fn generated_prefix_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.generated_prefix_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location's generated prefix.</p>
     pub fn set_generated_prefix_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.generated_prefix_location = input;
         self
     }
     /// <p>The location's binary prefix.</p>
-    pub fn binary_prefix_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.binary_prefix_location = Some(input.into());
+    pub fn binary_prefix_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.binary_prefix_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location's binary prefix.</p>
     pub fn set_binary_prefix_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.binary_prefix_location = input;
         self
     }
     /// <p>The location's manifest prefix.</p>
-    pub fn manifest_prefix_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.manifest_prefix_location = Some(input.into());
+    pub fn manifest_prefix_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.manifest_prefix_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location's manifest prefix.</p>
     pub fn set_manifest_prefix_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.manifest_prefix_location = input;
         self

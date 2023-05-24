@@ -2,22 +2,22 @@
 
 /// <p>Provides error information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p>Error cause.</p>
     #[doc(hidden)]
-    pub cause: std::option::Option<std::string::String>,
+    pub cause: ::std::option::Option<::std::string::String>,
     /// <p>Error details.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::string::String>,
+    pub details: ::std::option::Option<::std::string::String>,
 }
 impl ErrorInfo {
     /// <p>Error cause.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<&str> {
         self.cause.as_deref()
     }
     /// <p>Error details.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ErrorInfo {
 
 /// A builder for [`ErrorInfo`](crate::types::ErrorInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ErrorInfoBuilder {
-    pub(crate) cause: std::option::Option<std::string::String>,
-    pub(crate) details: std::option::Option<std::string::String>,
+    pub(crate) cause: ::std::option::Option<::std::string::String>,
+    pub(crate) details: ::std::option::Option<::std::string::String>,
 }
 impl ErrorInfoBuilder {
     /// <p>Error cause.</p>
-    pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cause = Some(input.into());
+    pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cause = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error cause.</p>
-    pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cause = input;
         self
     }
     /// <p>Error details.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.details = Some(input.into());
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error details.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
     }

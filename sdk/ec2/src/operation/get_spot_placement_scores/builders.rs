@@ -8,30 +8,30 @@ pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_
 /// <p>Calculates the Spot placement score for a Region or Availability Zone based on the specified target capacity and compute requirements.</p>
 /// <p>You can specify your compute requirements either by using <code>InstanceRequirementsWithMetadata</code> and letting Amazon EC2 choose the optimal instance types to fulfill your Spot request, or you can specify the instance types by using <code>InstanceTypes</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the Amazon EC2 User Guide.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSpotPlacementScoresFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder,
 }
 impl GetSpotPlacementScoresFluentBuilder {
     /// Creates a new `GetSpotPlacementScores`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_spot_placement_scores::GetSpotPlacementScores,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError,
         >,
     > {
@@ -39,30 +39,33 @@ impl GetSpotPlacementScoresFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl GetSpotPlacementScoresFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError,
         >,
     > {
@@ -101,7 +104,10 @@ impl GetSpotPlacementScoresFluentBuilder {
     ///
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low. </p>
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
-    pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_types(input.into());
         self
     }
@@ -109,7 +115,7 @@ impl GetSpotPlacementScoresFluentBuilder {
     /// <p>If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.</p>
     pub fn set_instance_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
@@ -120,7 +126,7 @@ impl GetSpotPlacementScoresFluentBuilder {
         self
     }
     /// <p>The target capacity.</p>
-    pub fn set_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_target_capacity(input);
         self
     }
@@ -137,7 +143,7 @@ impl GetSpotPlacementScoresFluentBuilder {
     /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub fn set_target_capacity_unit_type(
         mut self,
-        input: std::option::Option<crate::types::TargetCapacityUnitType>,
+        input: ::std::option::Option<crate::types::TargetCapacityUnitType>,
     ) -> Self {
         self.inner = self.inner.set_target_capacity_unit_type(input);
         self
@@ -150,7 +156,7 @@ impl GetSpotPlacementScoresFluentBuilder {
     }
     /// <p>Specify <code>true</code> so that the response returns a list of scored Availability Zones. Otherwise, the response returns a list of scored Regions.</p>
     /// <p>A list of scored Availability Zones is useful if you want to launch all of your Spot capacity into a single Availability Zone.</p>
-    pub fn set_single_availability_zone(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_single_availability_zone(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_single_availability_zone(input);
         self
     }
@@ -159,14 +165,14 @@ impl GetSpotPlacementScoresFluentBuilder {
     /// To override the contents of this collection use [`set_region_names`](Self::set_region_names).
     ///
     /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
-    pub fn region_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn region_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region_names(input.into());
         self
     }
     /// <p>The Regions used to narrow down the list of Regions to be scored. Enter the Region code, for example, <code>us-east-1</code>.</p>
     pub fn set_region_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_region_names(input);
         self
@@ -184,7 +190,7 @@ impl GetSpotPlacementScoresFluentBuilder {
     /// <p>If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.</p>
     pub fn set_instance_requirements_with_metadata(
         mut self,
-        input: std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest>,
+        input: ::std::option::Option<crate::types::InstanceRequirementsWithMetadataRequest>,
     ) -> Self {
         self.inner = self.inner.set_instance_requirements_with_metadata(input);
         self
@@ -195,7 +201,7 @@ impl GetSpotPlacementScoresFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -205,17 +211,17 @@ impl GetSpotPlacementScoresFluentBuilder {
         self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

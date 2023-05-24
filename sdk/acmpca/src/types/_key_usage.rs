@@ -2,7 +2,7 @@
 
 /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyUsage {
     /// <p> Key can be used for digital signing.</p>
     #[doc(hidden)]
@@ -79,106 +79,108 @@ impl KeyUsage {
 
 /// A builder for [`KeyUsage`](crate::types::KeyUsage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KeyUsageBuilder {
-    pub(crate) digital_signature: std::option::Option<bool>,
-    pub(crate) non_repudiation: std::option::Option<bool>,
-    pub(crate) key_encipherment: std::option::Option<bool>,
-    pub(crate) data_encipherment: std::option::Option<bool>,
-    pub(crate) key_agreement: std::option::Option<bool>,
-    pub(crate) key_cert_sign: std::option::Option<bool>,
-    pub(crate) crl_sign: std::option::Option<bool>,
-    pub(crate) encipher_only: std::option::Option<bool>,
-    pub(crate) decipher_only: std::option::Option<bool>,
+    pub(crate) digital_signature: ::std::option::Option<bool>,
+    pub(crate) non_repudiation: ::std::option::Option<bool>,
+    pub(crate) key_encipherment: ::std::option::Option<bool>,
+    pub(crate) data_encipherment: ::std::option::Option<bool>,
+    pub(crate) key_agreement: ::std::option::Option<bool>,
+    pub(crate) key_cert_sign: ::std::option::Option<bool>,
+    pub(crate) crl_sign: ::std::option::Option<bool>,
+    pub(crate) encipher_only: ::std::option::Option<bool>,
+    pub(crate) decipher_only: ::std::option::Option<bool>,
 }
 impl KeyUsageBuilder {
     /// <p> Key can be used for digital signing.</p>
     pub fn digital_signature(mut self, input: bool) -> Self {
-        self.digital_signature = Some(input);
+        self.digital_signature = ::std::option::Option::Some(input);
         self
     }
     /// <p> Key can be used for digital signing.</p>
-    pub fn set_digital_signature(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_digital_signature(mut self, input: ::std::option::Option<bool>) -> Self {
         self.digital_signature = input;
         self
     }
     /// <p>Key can be used for non-repudiation.</p>
     pub fn non_repudiation(mut self, input: bool) -> Self {
-        self.non_repudiation = Some(input);
+        self.non_repudiation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key can be used for non-repudiation.</p>
-    pub fn set_non_repudiation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_non_repudiation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.non_repudiation = input;
         self
     }
     /// <p>Key can be used to encipher data.</p>
     pub fn key_encipherment(mut self, input: bool) -> Self {
-        self.key_encipherment = Some(input);
+        self.key_encipherment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key can be used to encipher data.</p>
-    pub fn set_key_encipherment(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_key_encipherment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.key_encipherment = input;
         self
     }
     /// <p>Key can be used to decipher data.</p>
     pub fn data_encipherment(mut self, input: bool) -> Self {
-        self.data_encipherment = Some(input);
+        self.data_encipherment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key can be used to decipher data.</p>
-    pub fn set_data_encipherment(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_data_encipherment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.data_encipherment = input;
         self
     }
     /// <p>Key can be used in a key-agreement protocol.</p>
     pub fn key_agreement(mut self, input: bool) -> Self {
-        self.key_agreement = Some(input);
+        self.key_agreement = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key can be used in a key-agreement protocol.</p>
-    pub fn set_key_agreement(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_key_agreement(mut self, input: ::std::option::Option<bool>) -> Self {
         self.key_agreement = input;
         self
     }
     /// <p>Key can be used to sign certificates.</p>
     pub fn key_cert_sign(mut self, input: bool) -> Self {
-        self.key_cert_sign = Some(input);
+        self.key_cert_sign = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key can be used to sign certificates.</p>
-    pub fn set_key_cert_sign(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_key_cert_sign(mut self, input: ::std::option::Option<bool>) -> Self {
         self.key_cert_sign = input;
         self
     }
     /// <p>Key can be used to sign CRLs.</p>
     pub fn crl_sign(mut self, input: bool) -> Self {
-        self.crl_sign = Some(input);
+        self.crl_sign = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key can be used to sign CRLs.</p>
-    pub fn set_crl_sign(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_crl_sign(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crl_sign = input;
         self
     }
     /// <p>Key can be used only to encipher data.</p>
     pub fn encipher_only(mut self, input: bool) -> Self {
-        self.encipher_only = Some(input);
+        self.encipher_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key can be used only to encipher data.</p>
-    pub fn set_encipher_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encipher_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encipher_only = input;
         self
     }
     /// <p>Key can be used only to decipher data.</p>
     pub fn decipher_only(mut self, input: bool) -> Self {
-        self.decipher_only = Some(input);
+        self.decipher_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key can be used only to decipher data.</p>
-    pub fn set_decipher_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_decipher_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.decipher_only = input;
         self
     }

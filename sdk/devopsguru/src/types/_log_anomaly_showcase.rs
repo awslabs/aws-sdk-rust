@@ -2,15 +2,15 @@
 
 /// <p> A cluster of similar anomalous log events found within a log group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogAnomalyShowcase {
     /// <p> A list of anomalous log events that may be related. </p>
     #[doc(hidden)]
-    pub log_anomaly_classes: std::option::Option<std::vec::Vec<crate::types::LogAnomalyClass>>,
+    pub log_anomaly_classes: ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyClass>>,
 }
 impl LogAnomalyShowcase {
     /// <p> A list of anomalous log events that may be related. </p>
-    pub fn log_anomaly_classes(&self) -> std::option::Option<&[crate::types::LogAnomalyClass]> {
+    pub fn log_anomaly_classes(&self) -> ::std::option::Option<&[crate::types::LogAnomalyClass]> {
         self.log_anomaly_classes.as_deref()
     }
 }
@@ -23,10 +23,12 @@ impl LogAnomalyShowcase {
 
 /// A builder for [`LogAnomalyShowcase`](crate::types::LogAnomalyShowcase).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogAnomalyShowcaseBuilder {
     pub(crate) log_anomaly_classes:
-        std::option::Option<std::vec::Vec<crate::types::LogAnomalyClass>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyClass>>,
 }
 impl LogAnomalyShowcaseBuilder {
     /// Appends an item to `log_anomaly_classes`.
@@ -37,13 +39,13 @@ impl LogAnomalyShowcaseBuilder {
     pub fn log_anomaly_classes(mut self, input: crate::types::LogAnomalyClass) -> Self {
         let mut v = self.log_anomaly_classes.unwrap_or_default();
         v.push(input);
-        self.log_anomaly_classes = Some(v);
+        self.log_anomaly_classes = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of anomalous log events that may be related. </p>
     pub fn set_log_anomaly_classes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogAnomalyClass>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyClass>>,
     ) -> Self {
         self.log_anomaly_classes = input;
         self

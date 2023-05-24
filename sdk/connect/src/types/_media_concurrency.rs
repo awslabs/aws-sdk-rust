@@ -2,11 +2,11 @@
 
 /// <p>Contains information about which channels are supported, and how many contacts an agent can have on a channel simultaneously.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     #[doc(hidden)]
-    pub channel: std::option::Option<crate::types::Channel>,
+    pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
@@ -15,11 +15,11 @@ pub struct MediaConcurrency {
     pub concurrency: i32,
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     #[doc(hidden)]
-    pub cross_channel_behavior: std::option::Option<crate::types::CrossChannelBehavior>,
+    pub cross_channel_behavior: ::std::option::Option<crate::types::CrossChannelBehavior>,
 }
 impl MediaConcurrency {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
@@ -32,7 +32,7 @@ impl MediaConcurrency {
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     pub fn cross_channel_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::CrossChannelBehavior> {
+    ) -> ::std::option::Option<&crate::types::CrossChannelBehavior> {
         self.cross_channel_behavior.as_ref()
     }
 }
@@ -45,20 +45,22 @@ impl MediaConcurrency {
 
 /// A builder for [`MediaConcurrency`](crate::types::MediaConcurrency).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MediaConcurrencyBuilder {
-    pub(crate) channel: std::option::Option<crate::types::Channel>,
-    pub(crate) concurrency: std::option::Option<i32>,
-    pub(crate) cross_channel_behavior: std::option::Option<crate::types::CrossChannelBehavior>,
+    pub(crate) channel: ::std::option::Option<crate::types::Channel>,
+    pub(crate) concurrency: ::std::option::Option<i32>,
+    pub(crate) cross_channel_behavior: ::std::option::Option<crate::types::CrossChannelBehavior>,
 }
 impl MediaConcurrencyBuilder {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
-        self.channel = Some(input);
+        self.channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-    pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
+    pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }
@@ -67,26 +69,26 @@ impl MediaConcurrencyBuilder {
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
     pub fn concurrency(mut self, input: i32) -> Self {
-        self.concurrency = Some(input);
+        self.concurrency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of contacts an agent can have on a channel simultaneously.</p>
     /// <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.</p>
     /// <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.</p>
     /// <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.</p>
-    pub fn set_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.concurrency = input;
         self
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     pub fn cross_channel_behavior(mut self, input: crate::types::CrossChannelBehavior) -> Self {
-        self.cross_channel_behavior = Some(input);
+        self.cross_channel_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For example, this allows you to offer an agent a different contact from another channel when they are currently working with a contact from a Voice channel.</p>
     pub fn set_cross_channel_behavior(
         mut self,
-        input: std::option::Option<crate::types::CrossChannelBehavior>,
+        input: ::std::option::Option<crate::types::CrossChannelBehavior>,
     ) -> Self {
         self.cross_channel_behavior = input;
         self

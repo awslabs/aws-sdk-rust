@@ -2,25 +2,25 @@
 
 /// <p>Change the size of some instance groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstanceGroupsInput {
     /// <p>The ID of the cluster to which the instance group belongs.</p>
     #[doc(hidden)]
-    pub cluster_id: std::option::Option<std::string::String>,
+    pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>Instance groups to change.</p>
     #[doc(hidden)]
     pub instance_groups:
-        std::option::Option<std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
 }
 impl ModifyInstanceGroupsInput {
     /// <p>The ID of the cluster to which the instance group belongs.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>Instance groups to change.</p>
     pub fn instance_groups(
         &self,
-    ) -> std::option::Option<&[crate::types::InstanceGroupModifyConfig]> {
+    ) -> ::std::option::Option<&[crate::types::InstanceGroupModifyConfig]> {
         self.instance_groups.as_deref()
     }
 }
@@ -34,20 +34,22 @@ impl ModifyInstanceGroupsInput {
 
 /// A builder for [`ModifyInstanceGroupsInput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyInstanceGroupsInputBuilder {
-    pub(crate) cluster_id: std::option::Option<std::string::String>,
+    pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_groups:
-        std::option::Option<std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
 }
 impl ModifyInstanceGroupsInputBuilder {
     /// <p>The ID of the cluster to which the instance group belongs.</p>
-    pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_id = Some(input.into());
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the cluster to which the instance group belongs.</p>
-    pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
     }
@@ -59,13 +61,13 @@ impl ModifyInstanceGroupsInputBuilder {
     pub fn instance_groups(mut self, input: crate::types::InstanceGroupModifyConfig) -> Self {
         let mut v = self.instance_groups.unwrap_or_default();
         v.push(input);
-        self.instance_groups = Some(v);
+        self.instance_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Instance groups to change.</p>
     pub fn set_instance_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
     ) -> Self {
         self.instance_groups = input;
         self
@@ -73,11 +75,11 @@ impl ModifyInstanceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ModifyInstanceGroupsInput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_instance_groups::ModifyInstanceGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::modify_instance_groups::ModifyInstanceGroupsInput {
                 cluster_id: self.cluster_id,
                 instance_groups: self.instance_groups,

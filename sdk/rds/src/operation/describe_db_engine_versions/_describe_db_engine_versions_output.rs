@@ -2,27 +2,27 @@
 
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBEngineVersions</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbEngineVersionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DBEngineVersion</code> elements.</p>
     #[doc(hidden)]
-    pub db_engine_versions: std::option::Option<std::vec::Vec<crate::types::DbEngineVersion>>,
+    pub db_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeDbEngineVersionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBEngineVersion</code> elements.</p>
-    pub fn db_engine_versions(&self) -> std::option::Option<&[crate::types::DbEngineVersion]> {
+    pub fn db_engine_versions(&self) -> ::std::option::Option<&[crate::types::DbEngineVersion]> {
         self.db_engine_versions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDbEngineVersionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeDbEngineVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,21 +36,23 @@ impl DescribeDbEngineVersionsOutput {
 
 /// A builder for [`DescribeDbEngineVersionsOutput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbEngineVersionsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_engine_versions:
-        std::option::Option<std::vec::Vec<crate::types::DbEngineVersion>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeDbEngineVersionsOutputBuilder {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -62,13 +64,13 @@ impl DescribeDbEngineVersionsOutputBuilder {
     pub fn db_engine_versions(mut self, input: crate::types::DbEngineVersion) -> Self {
         let mut v = self.db_engine_versions.unwrap_or_default();
         v.push(input);
-        self.db_engine_versions = Some(v);
+        self.db_engine_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>DBEngineVersion</code> elements.</p>
     pub fn set_db_engine_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbEngineVersion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbEngineVersion>>,
     ) -> Self {
         self.db_engine_versions = input;
         self

@@ -2,11 +2,11 @@
 
 /// <p>An IAM role that is associated with the Amazon RDS DB cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbClusterAssociatedRole {
     /// <p>The ARN of the IAM role.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> </p> </li>
@@ -14,11 +14,11 @@ pub struct AwsRdsDbClusterAssociatedRole {
     /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbClusterAssociatedRole {
     /// <p>The ARN of the IAM role.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
@@ -27,7 +27,7 @@ impl AwsRdsDbClusterAssociatedRole {
     /// <li> <p> <code>INVALID</code> </p> </li>
     /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -40,19 +40,21 @@ impl AwsRdsDbClusterAssociatedRole {
 
 /// A builder for [`AwsRdsDbClusterAssociatedRole`](crate::types::AwsRdsDbClusterAssociatedRole).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRdsDbClusterAssociatedRoleBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbClusterAssociatedRoleBuilder {
     /// <p>The ARN of the IAM role.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
@@ -62,8 +64,8 @@ impl AwsRdsDbClusterAssociatedRoleBuilder {
     /// <li> <p> <code>INVALID</code> </p> </li>
     /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the association between the IAM role and the DB cluster. Valid values are as follows:</p>
@@ -72,7 +74,7 @@ impl AwsRdsDbClusterAssociatedRoleBuilder {
     /// <li> <p> <code>INVALID</code> </p> </li>
     /// <li> <p> <code>PENDING</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

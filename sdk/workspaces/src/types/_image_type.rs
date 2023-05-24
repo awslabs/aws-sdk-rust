@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ImageType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ImageType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ImageType {
+impl ::std::convert::From<&str> for ImageType {
     fn from(s: &str) -> Self {
         match s {
             "OWNED" => ImageType::Owned,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for ImageType {
         }
     }
 }
-impl std::str::FromStr for ImageType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ImageType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ImageType::from(s))
     }
 }
 impl ImageType {
@@ -84,7 +84,7 @@ impl ImageType {
         &["OWNED", "SHARED"]
     }
 }
-impl AsRef<str> for ImageType {
+impl ::std::convert::AsRef<str> for ImageType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

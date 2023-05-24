@@ -2,27 +2,27 @@
 
 /// <p>ListLocationsResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLocationsOutput {
     /// <p>An array that contains a list of locations.</p>
     #[doc(hidden)]
-    pub locations: std::option::Option<std::vec::Vec<crate::types::LocationListEntry>>,
+    pub locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLocationsOutput {
     /// <p>An array that contains a list of locations.</p>
-    pub fn locations(&self) -> std::option::Option<&[crate::types::LocationListEntry]> {
+    pub fn locations(&self) -> ::std::option::Option<&[crate::types::LocationListEntry]> {
         self.locations.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListLocationsOutput {
+impl ::aws_http::request_id::RequestId for ListLocationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListLocationsOutput {
 
 /// A builder for [`ListLocationsOutput`](crate::operation::list_locations::ListLocationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListLocationsOutputBuilder {
-    pub(crate) locations: std::option::Option<std::vec::Vec<crate::types::LocationListEntry>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) locations: ::std::option::Option<::std::vec::Vec<crate::types::LocationListEntry>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLocationsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListLocationsOutputBuilder {
     pub fn locations(mut self, input: crate::types::LocationListEntry) -> Self {
         let mut v = self.locations.unwrap_or_default();
         v.push(input);
-        self.locations = Some(v);
+        self.locations = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array that contains a list of locations.</p>
     pub fn set_locations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LocationListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationListEntry>>,
     ) -> Self {
         self.locations = input;
         self
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

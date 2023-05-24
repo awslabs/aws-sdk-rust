@@ -41,13 +41,13 @@
 /// State of a campaign
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CampaignState {
     /// Campaign is in failed state
@@ -63,7 +63,7 @@ pub enum CampaignState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CampaignState {
+impl ::std::convert::From<&str> for CampaignState {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => CampaignState::Failed,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for CampaignState {
         }
     }
 }
-impl std::str::FromStr for CampaignState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CampaignState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CampaignState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CampaignState::from(s))
     }
 }
 impl CampaignState {
@@ -101,7 +101,7 @@ impl CampaignState {
         &["Failed", "Initialized", "Paused", "Running", "Stopped"]
     }
 }
-impl AsRef<str> for CampaignState {
+impl ::std::convert::AsRef<str> for CampaignState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

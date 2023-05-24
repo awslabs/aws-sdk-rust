@@ -2,22 +2,22 @@
 
 /// <p>A structure that can contain a value in multiple encoding formats.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValueHolder {
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
     #[doc(hidden)]
-    pub ion_binary: std::option::Option<aws_smithy_types::Blob>,
+    pub ion_binary: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
     #[doc(hidden)]
-    pub ion_text: std::option::Option<std::string::String>,
+    pub ion_text: ::std::option::Option<::std::string::String>,
 }
 impl ValueHolder {
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn ion_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn ion_binary(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.ion_binary.as_ref()
     }
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn ion_text(&self) -> std::option::Option<&str> {
+    pub fn ion_text(&self) -> ::std::option::Option<&str> {
         self.ion_text.as_deref()
     }
 }
@@ -30,29 +30,34 @@ impl ValueHolder {
 
 /// A builder for [`ValueHolder`](crate::types::ValueHolder).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValueHolderBuilder {
-    pub(crate) ion_binary: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) ion_text: std::option::Option<std::string::String>,
+    pub(crate) ion_binary: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) ion_text: ::std::option::Option<::std::string::String>,
 }
 impl ValueHolderBuilder {
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn ion_binary(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.ion_binary = Some(input);
+    pub fn ion_binary(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.ion_binary = ::std::option::Option::Some(input);
         self
     }
     /// <p>An Amazon Ion binary value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn set_ion_binary(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_ion_binary(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
+    ) -> Self {
         self.ion_binary = input;
         self
     }
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn ion_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ion_text = Some(input.into());
+    pub fn ion_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ion_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.</p>
-    pub fn set_ion_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ion_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ion_text = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>The response to a request to list the distributions that are associated with a specified WAF web ACL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDistributionsByWebAclIdOutput {
     /// <p>The <code>DistributionList</code> type.</p>
     #[doc(hidden)]
-    pub distribution_list: std::option::Option<crate::types::DistributionList>,
+    pub distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,
 }
 impl ListDistributionsByWebAclIdOutput {
     /// <p>The <code>DistributionList</code> type.</p>
-    pub fn distribution_list(&self) -> std::option::Option<&crate::types::DistributionList> {
+    pub fn distribution_list(&self) -> ::std::option::Option<&crate::types::DistributionList> {
         self.distribution_list.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ListDistributionsByWebAclIdOutput {
+impl ::aws_http::request_id::RequestId for ListDistributionsByWebAclIdOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl ListDistributionsByWebAclIdOutput {
 
 /// A builder for [`ListDistributionsByWebAclIdOutput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDistributionsByWebAclIdOutputBuilder {
-    pub(crate) distribution_list: std::option::Option<crate::types::DistributionList>,
+    pub(crate) distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,
 }
 impl ListDistributionsByWebAclIdOutputBuilder {
     /// <p>The <code>DistributionList</code> type.</p>
     pub fn distribution_list(mut self, input: crate::types::DistributionList) -> Self {
-        self.distribution_list = Some(input);
+        self.distribution_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>DistributionList</code> type.</p>
     pub fn set_distribution_list(
         mut self,
-        input: std::option::Option<crate::types::DistributionList>,
+        input: ::std::option::Option<crate::types::DistributionList>,
     ) -> Self {
         self.distribution_list = input;
         self

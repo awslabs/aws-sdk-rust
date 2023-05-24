@@ -2,14 +2,14 @@
 
 /// <p>A descriptor for a partition index in a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionIndexDescriptor {
     /// <p>The name of the partition index.</p>
     #[doc(hidden)]
-    pub index_name: std::option::Option<std::string::String>,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
     #[doc(hidden)]
-    pub keys: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>The status of the partition index. </p>
     /// <p>The possible statuses are:</p>
     /// <ul>
@@ -19,18 +19,18 @@ pub struct PartitionIndexDescriptor {
     /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub index_status: std::option::Option<crate::types::PartitionIndexStatus>,
+    pub index_status: ::std::option::Option<crate::types::PartitionIndexStatus>,
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
     #[doc(hidden)]
-    pub backfill_errors: std::option::Option<std::vec::Vec<crate::types::BackfillError>>,
+    pub backfill_errors: ::std::option::Option<::std::vec::Vec<crate::types::BackfillError>>,
 }
 impl PartitionIndexDescriptor {
     /// <p>The name of the partition index.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
-    pub fn keys(&self) -> std::option::Option<&[crate::types::KeySchemaElement]> {
+    pub fn keys(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
         self.keys.as_deref()
     }
     /// <p>The status of the partition index. </p>
@@ -41,11 +41,11 @@ impl PartitionIndexDescriptor {
     /// <li> <p>FAILED: The index creation fails. </p> </li>
     /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
-    pub fn index_status(&self) -> std::option::Option<&crate::types::PartitionIndexStatus> {
+    pub fn index_status(&self) -> ::std::option::Option<&crate::types::PartitionIndexStatus> {
         self.index_status.as_ref()
     }
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
-    pub fn backfill_errors(&self) -> std::option::Option<&[crate::types::BackfillError]> {
+    pub fn backfill_errors(&self) -> ::std::option::Option<&[crate::types::BackfillError]> {
         self.backfill_errors.as_deref()
     }
 }
@@ -58,21 +58,23 @@ impl PartitionIndexDescriptor {
 
 /// A builder for [`PartitionIndexDescriptor`](crate::types::PartitionIndexDescriptor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartitionIndexDescriptorBuilder {
-    pub(crate) index_name: std::option::Option<std::string::String>,
-    pub(crate) keys: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
-    pub(crate) index_status: std::option::Option<crate::types::PartitionIndexStatus>,
-    pub(crate) backfill_errors: std::option::Option<std::vec::Vec<crate::types::BackfillError>>,
+    pub(crate) index_name: ::std::option::Option<::std::string::String>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub(crate) index_status: ::std::option::Option<crate::types::PartitionIndexStatus>,
+    pub(crate) backfill_errors: ::std::option::Option<::std::vec::Vec<crate::types::BackfillError>>,
 }
 impl PartitionIndexDescriptorBuilder {
     /// <p>The name of the partition index.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_name = Some(input.into());
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the partition index.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
@@ -84,13 +86,13 @@ impl PartitionIndexDescriptorBuilder {
     pub fn keys(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.keys.unwrap_or_default();
         v.push(input);
-        self.keys = Some(v);
+        self.keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
     pub fn set_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     ) -> Self {
         self.keys = input;
         self
@@ -104,7 +106,7 @@ impl PartitionIndexDescriptorBuilder {
     /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
     pub fn index_status(mut self, input: crate::types::PartitionIndexStatus) -> Self {
-        self.index_status = Some(input);
+        self.index_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the partition index. </p>
@@ -117,7 +119,7 @@ impl PartitionIndexDescriptorBuilder {
     /// </ul>
     pub fn set_index_status(
         mut self,
-        input: std::option::Option<crate::types::PartitionIndexStatus>,
+        input: ::std::option::Option<crate::types::PartitionIndexStatus>,
     ) -> Self {
         self.index_status = input;
         self
@@ -130,13 +132,13 @@ impl PartitionIndexDescriptorBuilder {
     pub fn backfill_errors(mut self, input: crate::types::BackfillError) -> Self {
         let mut v = self.backfill_errors.unwrap_or_default();
         v.push(input);
-        self.backfill_errors = Some(v);
+        self.backfill_errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
     pub fn set_backfill_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BackfillError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BackfillError>>,
     ) -> Self {
         self.backfill_errors = input;
         self

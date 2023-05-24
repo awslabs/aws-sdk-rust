@@ -2,15 +2,15 @@
 
 /// <p>Information about an IPv4 prefix.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceIpv4Prefix {
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
     #[doc(hidden)]
-    pub ipv4_prefix: std::option::Option<std::string::String>,
+    pub ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
 impl InstanceIpv4Prefix {
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
-    pub fn ipv4_prefix(&self) -> std::option::Option<&str> {
+    pub fn ipv4_prefix(&self) -> ::std::option::Option<&str> {
         self.ipv4_prefix.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl InstanceIpv4Prefix {
 
 /// A builder for [`InstanceIpv4Prefix`](crate::types::InstanceIpv4Prefix).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceIpv4PrefixBuilder {
-    pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
+    pub(crate) ipv4_prefix: ::std::option::Option<::std::string::String>,
 }
 impl InstanceIpv4PrefixBuilder {
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
-    pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipv4_prefix = Some(input.into());
+    pub fn ipv4_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv4_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface.</p>
-    pub fn set_ipv4_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv4_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv4_prefix = input;
         self
     }

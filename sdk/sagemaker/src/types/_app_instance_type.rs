@@ -96,13 +96,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AppInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -228,7 +228,7 @@ pub enum AppInstanceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AppInstanceType {
+impl ::std::convert::From<&str> for AppInstanceType {
     fn from(s: &str) -> Self {
         match s {
             "ml.c5.12xlarge" => AppInstanceType::MlC512Xlarge,
@@ -297,11 +297,11 @@ impl std::convert::From<&str> for AppInstanceType {
         }
     }
 }
-impl std::str::FromStr for AppInstanceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AppInstanceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppInstanceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AppInstanceType::from(s))
     }
 }
 impl AppInstanceType {
@@ -437,7 +437,7 @@ impl AppInstanceType {
         ]
     }
 }
-impl AsRef<str> for AppInstanceType {
+impl ::std::convert::AsRef<str> for AppInstanceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

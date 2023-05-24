@@ -2,15 +2,15 @@
 
 /// <p>The map style options of the geospatial map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialMapStyleOptions {
     /// <p>The base map style of the geospatial map.</p>
     #[doc(hidden)]
-    pub base_map_style: std::option::Option<crate::types::BaseMapStyleType>,
+    pub base_map_style: ::std::option::Option<crate::types::BaseMapStyleType>,
 }
 impl GeospatialMapStyleOptions {
     /// <p>The base map style of the geospatial map.</p>
-    pub fn base_map_style(&self) -> std::option::Option<&crate::types::BaseMapStyleType> {
+    pub fn base_map_style(&self) -> ::std::option::Option<&crate::types::BaseMapStyleType> {
         self.base_map_style.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl GeospatialMapStyleOptions {
 
 /// A builder for [`GeospatialMapStyleOptions`](crate::types::GeospatialMapStyleOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GeospatialMapStyleOptionsBuilder {
-    pub(crate) base_map_style: std::option::Option<crate::types::BaseMapStyleType>,
+    pub(crate) base_map_style: ::std::option::Option<crate::types::BaseMapStyleType>,
 }
 impl GeospatialMapStyleOptionsBuilder {
     /// <p>The base map style of the geospatial map.</p>
     pub fn base_map_style(mut self, input: crate::types::BaseMapStyleType) -> Self {
-        self.base_map_style = Some(input);
+        self.base_map_style = ::std::option::Option::Some(input);
         self
     }
     /// <p>The base map style of the geospatial map.</p>
     pub fn set_base_map_style(
         mut self,
-        input: std::option::Option<crate::types::BaseMapStyleType>,
+        input: ::std::option::Option<crate::types::BaseMapStyleType>,
     ) -> Self {
         self.base_map_style = input;
         self

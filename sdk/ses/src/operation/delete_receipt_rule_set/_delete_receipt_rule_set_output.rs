@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReceiptRuleSetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteReceiptRuleSetOutput {
+impl ::aws_http::request_id::RequestId for DeleteReceiptRuleSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl DeleteReceiptRuleSetOutput {
 
 /// A builder for [`DeleteReceiptRuleSetOutput`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteReceiptRuleSetOutputBuilder {
     _request_id: Option<String>,
 }

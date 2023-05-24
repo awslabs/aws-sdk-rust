@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOriginAccessControlConfig`](crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigFluentBuilder::set_id): <p>The unique identifier of the origin access control.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_origin_access_control_config::builders::GetOriginAccessControlConfigFluentBuilder::set_id): <p>The unique identifier of the origin access control.</p>
     /// - On success, responds with [`GetOriginAccessControlConfigOutput`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigOutput) with field(s):
     ///   - [`origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigOutput::origin_access_control_config): <p>Contains an origin access control configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_origin_access_control_config::GetOriginAccessControlConfigOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>

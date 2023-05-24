@@ -2,40 +2,42 @@
 
 /// <p>Information about the task assigned to one or many devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskSummary {
     /// <p>The task ID.</p>
     #[doc(hidden)]
-    pub task_id: std::option::Option<std::string::String>,
+    pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
+    pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the task assigned to one or many devices.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::TaskState>,
+    pub state: ::std::option::Option<crate::types::TaskState>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl TaskSummary {
     /// <p>The task ID.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
     /// <p>The state of the task assigned to one or many devices.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::TaskState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::TaskState> {
         self.state.as_ref()
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -48,42 +50,45 @@ impl TaskSummary {
 
 /// A builder for [`TaskSummary`](crate::types::TaskSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaskSummaryBuilder {
-    pub(crate) task_id: std::option::Option<std::string::String>,
-    pub(crate) task_arn: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::TaskState>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) task_id: ::std::option::Option<::std::string::String>,
+    pub(crate) task_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::TaskState>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl TaskSummaryBuilder {
     /// <p>The task ID.</p>
-    pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_id = Some(input.into());
+    pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The task ID.</p>
-    pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_arn = Some(input.into());
+    pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
     }
     /// <p>The state of the task assigned to one or many devices.</p>
     pub fn state(mut self, input: crate::types::TaskState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the task assigned to one or many devices.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::TaskState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TaskState>) -> Self {
         self.state = input;
         self
     }
@@ -94,19 +99,19 @@ impl TaskSummaryBuilder {
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

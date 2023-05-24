@@ -2,18 +2,18 @@
 
 /// <p>The configuration object of the Amazon Chime SDK meeting concatenation for a specified media pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChimeSdkMeetingConcatenationConfiguration {
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting concatenation.</p>
     #[doc(hidden)]
     pub artifacts_configuration:
-        std::option::Option<crate::types::ArtifactsConcatenationConfiguration>,
+        ::std::option::Option<crate::types::ArtifactsConcatenationConfiguration>,
 }
 impl ChimeSdkMeetingConcatenationConfiguration {
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting concatenation.</p>
     pub fn artifacts_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ArtifactsConcatenationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ArtifactsConcatenationConfiguration> {
         self.artifacts_configuration.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl ChimeSdkMeetingConcatenationConfiguration {
 
 /// A builder for [`ChimeSdkMeetingConcatenationConfiguration`](crate::types::ChimeSdkMeetingConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChimeSdkMeetingConcatenationConfigurationBuilder {
     pub(crate) artifacts_configuration:
-        std::option::Option<crate::types::ArtifactsConcatenationConfiguration>,
+        ::std::option::Option<crate::types::ArtifactsConcatenationConfiguration>,
 }
 impl ChimeSdkMeetingConcatenationConfigurationBuilder {
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting concatenation.</p>
@@ -37,13 +39,13 @@ impl ChimeSdkMeetingConcatenationConfigurationBuilder {
         mut self,
         input: crate::types::ArtifactsConcatenationConfiguration,
     ) -> Self {
-        self.artifacts_configuration = Some(input);
+        self.artifacts_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting concatenation.</p>
     pub fn set_artifacts_configuration(
         mut self,
-        input: std::option::Option<crate::types::ArtifactsConcatenationConfiguration>,
+        input: ::std::option::Option<crate::types::ArtifactsConcatenationConfiguration>,
     ) -> Self {
         self.artifacts_configuration = input;
         self

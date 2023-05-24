@@ -39,13 +39,13 @@
 /// Rtmp Caption Data
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RtmpCaptionData {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum RtmpCaptionData {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RtmpCaptionData {
+impl ::std::convert::From<&str> for RtmpCaptionData {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => RtmpCaptionData::All,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for RtmpCaptionData {
         }
     }
 }
-impl std::str::FromStr for RtmpCaptionData {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RtmpCaptionData {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RtmpCaptionData::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RtmpCaptionData::from(s))
     }
 }
 impl RtmpCaptionData {
@@ -91,7 +91,7 @@ impl RtmpCaptionData {
         &["ALL", "FIELD1_608", "FIELD1_AND_FIELD2_608"]
     }
 }
-impl AsRef<str> for RtmpCaptionData {
+impl ::std::convert::AsRef<str> for RtmpCaptionData {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

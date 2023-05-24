@@ -2,22 +2,22 @@
 
 /// <p>Describes how to sort the data that you bind to a component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortProperty {
     /// <p>The field to perform the sort on.</p>
     #[doc(hidden)]
-    pub field: std::option::Option<std::string::String>,
+    pub field: ::std::option::Option<::std::string::String>,
     /// <p>The direction of the sort, either ascending or descending.</p>
     #[doc(hidden)]
-    pub direction: std::option::Option<crate::types::SortDirection>,
+    pub direction: ::std::option::Option<crate::types::SortDirection>,
 }
 impl SortProperty {
     /// <p>The field to perform the sort on.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<&str> {
         self.field.as_deref()
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
-    pub fn direction(&self) -> std::option::Option<&crate::types::SortDirection> {
+    pub fn direction(&self) -> ::std::option::Option<&crate::types::SortDirection> {
         self.direction.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl SortProperty {
 
 /// A builder for [`SortProperty`](crate::types::SortProperty).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SortPropertyBuilder {
-    pub(crate) field: std::option::Option<std::string::String>,
-    pub(crate) direction: std::option::Option<crate::types::SortDirection>,
+    pub(crate) field: ::std::option::Option<::std::string::String>,
+    pub(crate) direction: ::std::option::Option<crate::types::SortDirection>,
 }
 impl SortPropertyBuilder {
     /// <p>The field to perform the sort on.</p>
-    pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field = Some(input.into());
+    pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field to perform the sort on.</p>
-    pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
     pub fn direction(mut self, input: crate::types::SortDirection) -> Self {
-        self.direction = Some(input);
+        self.direction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
     pub fn set_direction(
         mut self,
-        input: std::option::Option<crate::types::SortDirection>,
+        input: ::std::option::Option<crate::types::SortDirection>,
     ) -> Self {
         self.direction = input;
         self

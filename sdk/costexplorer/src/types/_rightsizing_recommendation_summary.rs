@@ -2,36 +2,36 @@
 
 /// <p>The summary of rightsizing recommendations </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RightsizingRecommendationSummary {
     /// <p>The total number of instance recommendations.</p>
     #[doc(hidden)]
-    pub total_recommendation_count: std::option::Option<std::string::String>,
+    pub total_recommendation_count: ::std::option::Option<::std::string::String>,
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
     #[doc(hidden)]
-    pub estimated_total_monthly_savings_amount: std::option::Option<std::string::String>,
+    pub estimated_total_monthly_savings_amount: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
     #[doc(hidden)]
-    pub savings_currency_code: std::option::Option<std::string::String>,
+    pub savings_currency_code: ::std::option::Option<::std::string::String>,
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
     #[doc(hidden)]
-    pub savings_percentage: std::option::Option<std::string::String>,
+    pub savings_percentage: ::std::option::Option<::std::string::String>,
 }
 impl RightsizingRecommendationSummary {
     /// <p>The total number of instance recommendations.</p>
-    pub fn total_recommendation_count(&self) -> std::option::Option<&str> {
+    pub fn total_recommendation_count(&self) -> ::std::option::Option<&str> {
         self.total_recommendation_count.as_deref()
     }
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
-    pub fn estimated_total_monthly_savings_amount(&self) -> std::option::Option<&str> {
+    pub fn estimated_total_monthly_savings_amount(&self) -> ::std::option::Option<&str> {
         self.estimated_total_monthly_savings_amount.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
-    pub fn savings_currency_code(&self) -> std::option::Option<&str> {
+    pub fn savings_currency_code(&self) -> ::std::option::Option<&str> {
         self.savings_currency_code.as_deref()
     }
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
-    pub fn savings_percentage(&self) -> std::option::Option<&str> {
+    pub fn savings_percentage(&self) -> ::std::option::Option<&str> {
         self.savings_percentage.as_deref()
     }
 }
@@ -44,23 +44,28 @@ impl RightsizingRecommendationSummary {
 
 /// A builder for [`RightsizingRecommendationSummary`](crate::types::RightsizingRecommendationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RightsizingRecommendationSummaryBuilder {
-    pub(crate) total_recommendation_count: std::option::Option<std::string::String>,
-    pub(crate) estimated_total_monthly_savings_amount: std::option::Option<std::string::String>,
-    pub(crate) savings_currency_code: std::option::Option<std::string::String>,
-    pub(crate) savings_percentage: std::option::Option<std::string::String>,
+    pub(crate) total_recommendation_count: ::std::option::Option<::std::string::String>,
+    pub(crate) estimated_total_monthly_savings_amount: ::std::option::Option<::std::string::String>,
+    pub(crate) savings_currency_code: ::std::option::Option<::std::string::String>,
+    pub(crate) savings_percentage: ::std::option::Option<::std::string::String>,
 }
 impl RightsizingRecommendationSummaryBuilder {
     /// <p>The total number of instance recommendations.</p>
-    pub fn total_recommendation_count(mut self, input: impl Into<std::string::String>) -> Self {
-        self.total_recommendation_count = Some(input.into());
+    pub fn total_recommendation_count(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.total_recommendation_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The total number of instance recommendations.</p>
     pub fn set_total_recommendation_count(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.total_recommendation_count = input;
         self
@@ -68,41 +73,47 @@ impl RightsizingRecommendationSummaryBuilder {
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
     pub fn estimated_total_monthly_savings_amount(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.estimated_total_monthly_savings_amount = Some(input.into());
+        self.estimated_total_monthly_savings_amount = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
     pub fn set_estimated_total_monthly_savings_amount(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.estimated_total_monthly_savings_amount = input;
         self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
-    pub fn savings_currency_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.savings_currency_code = Some(input.into());
+    pub fn savings_currency_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.savings_currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
     pub fn set_savings_currency_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.savings_currency_code = input;
         self
     }
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
-    pub fn savings_percentage(mut self, input: impl Into<std::string::String>) -> Self {
-        self.savings_percentage = Some(input.into());
+    pub fn savings_percentage(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.savings_percentage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The savings percentage based on the recommended modifications. It's relative to the total On-Demand costs that are associated with these instances.</p>
     pub fn set_savings_percentage(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.savings_percentage = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p> Entity that comprises information on sensors that have shorter date range. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensorsWithShortDateRange {
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
     #[doc(hidden)]
-    pub affected_sensor_count: std::option::Option<i32>,
+    pub affected_sensor_count: ::std::option::Option<i32>,
 }
 impl SensorsWithShortDateRange {
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
-    pub fn affected_sensor_count(&self) -> std::option::Option<i32> {
+    pub fn affected_sensor_count(&self) -> ::std::option::Option<i32> {
         self.affected_sensor_count
     }
 }
@@ -23,18 +23,20 @@ impl SensorsWithShortDateRange {
 
 /// A builder for [`SensorsWithShortDateRange`](crate::types::SensorsWithShortDateRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SensorsWithShortDateRangeBuilder {
-    pub(crate) affected_sensor_count: std::option::Option<i32>,
+    pub(crate) affected_sensor_count: ::std::option::Option<i32>,
 }
 impl SensorsWithShortDateRangeBuilder {
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
     pub fn affected_sensor_count(mut self, input: i32) -> Self {
-        self.affected_sensor_count = Some(input);
+        self.affected_sensor_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
-    pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_affected_sensor_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.affected_sensor_count = input;
         self
     }

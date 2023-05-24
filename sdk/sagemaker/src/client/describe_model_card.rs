@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeModelCard`](crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`model_card_name(impl Into<String>)`](crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder::model_card_name) / [`set_model_card_name(Option<String>)`](crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder::set_model_card_name): <p>The name of the model card to describe.</p>
+    ///   - [`model_card_name(impl ::std::convert::Into<String>)`](crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder::model_card_name) / [`set_model_card_name(Option<String>)`](crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder::set_model_card_name): <p>The name of the model card to describe.</p>
     ///   - [`model_card_version(i32)`](crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder::model_card_version) / [`set_model_card_version(Option<i32>)`](crate::operation::describe_model_card::builders::DescribeModelCardFluentBuilder::set_model_card_version): <p>The version of the model card to describe. If a version is not provided, then the latest version of the model card is described.</p>
     /// - On success, responds with [`DescribeModelCardOutput`](crate::operation::describe_model_card::DescribeModelCardOutput) with field(s):
     ///   - [`model_card_arn(Option<String>)`](crate::operation::describe_model_card::DescribeModelCardOutput::model_card_arn): <p>The Amazon Resource Name (ARN) of the model card.</p>

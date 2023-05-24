@@ -2,12 +2,12 @@
 
 /// <p>Specifies the default server-side encryption configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerSideEncryptionRule {
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
     #[doc(hidden)]
     pub apply_server_side_encryption_by_default:
-        std::option::Option<crate::types::ServerSideEncryptionByDefault>,
+        ::std::option::Option<crate::types::ServerSideEncryptionByDefault>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
@@ -17,7 +17,7 @@ impl ServerSideEncryptionRule {
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
     pub fn apply_server_side_encryption_by_default(
         &self,
-    ) -> std::option::Option<&crate::types::ServerSideEncryptionByDefault> {
+    ) -> ::std::option::Option<&crate::types::ServerSideEncryptionByDefault> {
         self.apply_server_side_encryption_by_default.as_ref()
     }
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
@@ -35,11 +35,13 @@ impl ServerSideEncryptionRule {
 
 /// A builder for [`ServerSideEncryptionRule`](crate::types::ServerSideEncryptionRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerSideEncryptionRuleBuilder {
     pub(crate) apply_server_side_encryption_by_default:
-        std::option::Option<crate::types::ServerSideEncryptionByDefault>,
-    pub(crate) bucket_key_enabled: std::option::Option<bool>,
+        ::std::option::Option<crate::types::ServerSideEncryptionByDefault>,
+    pub(crate) bucket_key_enabled: ::std::option::Option<bool>,
 }
 impl ServerSideEncryptionRuleBuilder {
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
@@ -47,13 +49,13 @@ impl ServerSideEncryptionRuleBuilder {
         mut self,
         input: crate::types::ServerSideEncryptionByDefault,
     ) -> Self {
-        self.apply_server_side_encryption_by_default = Some(input);
+        self.apply_server_side_encryption_by_default = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
     pub fn set_apply_server_side_encryption_by_default(
         mut self,
-        input: std::option::Option<crate::types::ServerSideEncryptionByDefault>,
+        input: ::std::option::Option<crate::types::ServerSideEncryptionByDefault>,
     ) -> Self {
         self.apply_server_side_encryption_by_default = input;
         self
@@ -61,12 +63,12 @@ impl ServerSideEncryptionRuleBuilder {
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
-        self.bucket_key_enabled = Some(input);
+        self.bucket_key_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_bucket_key_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bucket_key_enabled = input;
         self
     }

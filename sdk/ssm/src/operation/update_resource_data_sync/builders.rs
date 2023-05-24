@@ -8,30 +8,30 @@ pub use crate::operation::update_resource_data_sync::_update_resource_data_sync_
 /// <p>Update a resource data sync. After you create a resource data sync for a Region, you can't change the account options for that sync. For example, if you create a sync in the us-east-2 (Ohio) Region and you choose the <code>Include only the current account</code> option, you can't edit that sync later and choose the <code>Include all accounts from my Organizations configuration</code> option. Instead, you must delete the first resource data sync, and create a new one.</p> <note>
 /// <p>This API operation only supports a resource data sync that was created with a SyncFromSource <code>SyncType</code>.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResourceDataSyncFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::update_resource_data_sync::builders::UpdateResourceDataSyncInputBuilder,
 }
 impl UpdateResourceDataSyncFluentBuilder {
     /// Creates a new `UpdateResourceDataSync`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_resource_data_sync::UpdateResourceDataSync,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_resource_data_sync::UpdateResourceDataSyncError,
         >,
     > {
@@ -39,30 +39,33 @@ impl UpdateResourceDataSyncFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_resource_data_sync::UpdateResourceDataSyncError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,31 +78,31 @@ impl UpdateResourceDataSyncFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_resource_data_sync::UpdateResourceDataSyncError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the resource data sync you want to update.</p>
-    pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_name(input.into());
         self
     }
     /// <p>The name of the resource data sync you want to update.</p>
-    pub fn set_sync_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sync_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_name(input);
         self
     }
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
-    pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_type(input.into());
         self
     }
     /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
-    pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_type(input);
         self
     }
@@ -111,7 +114,7 @@ impl UpdateResourceDataSyncFluentBuilder {
     /// <p>Specify information about the data sources to synchronize.</p>
     pub fn set_sync_source(
         mut self,
-        input: std::option::Option<crate::types::ResourceDataSyncSource>,
+        input: ::std::option::Option<crate::types::ResourceDataSyncSource>,
     ) -> Self {
         self.inner = self.inner.set_sync_source(input);
         self

@@ -2,22 +2,22 @@
 
 /// <p>Information about an integrated development environment (IDE) used in a Dev Environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ide {
     /// <p>A link to the IDE runtime image.</p>
     #[doc(hidden)]
-    pub runtime: std::option::Option<std::string::String>,
+    pub runtime: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IDE.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl Ide {
     /// <p>A link to the IDE runtime image.</p>
-    pub fn runtime(&self) -> std::option::Option<&str> {
+    pub fn runtime(&self) -> ::std::option::Option<&str> {
         self.runtime.as_deref()
     }
     /// <p>The name of the IDE.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Ide {
 
 /// A builder for [`Ide`](crate::types::Ide).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IdeBuilder {
-    pub(crate) runtime: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) runtime: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl IdeBuilder {
     /// <p>A link to the IDE runtime image.</p>
-    pub fn runtime(mut self, input: impl Into<std::string::String>) -> Self {
-        self.runtime = Some(input.into());
+    pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.runtime = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to the IDE runtime image.</p>
-    pub fn set_runtime(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime = input;
         self
     }
     /// <p>The name of the IDE.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IDE.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DatabaseOutputMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum DatabaseOutputMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DatabaseOutputMode {
+impl ::std::convert::From<&str> for DatabaseOutputMode {
     fn from(s: &str) -> Self {
         match s {
             "NEW_TABLE" => DatabaseOutputMode::NewTable,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for DatabaseOutputMode {
         }
     }
 }
-impl std::str::FromStr for DatabaseOutputMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DatabaseOutputMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatabaseOutputMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DatabaseOutputMode::from(s))
     }
 }
 impl DatabaseOutputMode {
@@ -81,7 +81,7 @@ impl DatabaseOutputMode {
         &["NEW_TABLE"]
     }
 }
-impl AsRef<str> for DatabaseOutputMode {
+impl ::std::convert::AsRef<str> for DatabaseOutputMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

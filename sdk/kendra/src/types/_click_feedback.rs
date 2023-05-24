@@ -2,22 +2,22 @@
 
 /// <p>Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> API to provide click information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClickFeedback {
     /// <p>The identifier of the search result that was clicked.</p>
     #[doc(hidden)]
-    pub result_id: std::option::Option<std::string::String>,
+    pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp when the result was clicked.</p>
     #[doc(hidden)]
-    pub click_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub click_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClickFeedback {
     /// <p>The identifier of the search result that was clicked.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> ::std::option::Option<&str> {
         self.result_id.as_deref()
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
-    pub fn click_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn click_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.click_time.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ClickFeedback {
 
 /// A builder for [`ClickFeedback`](crate::types::ClickFeedback).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClickFeedbackBuilder {
-    pub(crate) result_id: std::option::Option<std::string::String>,
-    pub(crate) click_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) result_id: ::std::option::Option<::std::string::String>,
+    pub(crate) click_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClickFeedbackBuilder {
     /// <p>The identifier of the search result that was clicked.</p>
-    pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.result_id = Some(input.into());
+    pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.result_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the search result that was clicked.</p>
-    pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_id = input;
         self
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
-    pub fn click_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.click_time = Some(input);
+    pub fn click_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.click_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp when the result was clicked.</p>
     pub fn set_click_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.click_time = input;
         self

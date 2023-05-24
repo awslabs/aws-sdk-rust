@@ -2,69 +2,69 @@
 
 /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidParameterException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
     #[doc(hidden)]
-    pub cluster_name: std::option::Option<std::string::String>,
+    pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     #[doc(hidden)]
-    pub nodegroup_name: std::option::Option<std::string::String>,
+    pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The Fargate profile associated with the exception.</p>
     #[doc(hidden)]
-    pub fargate_profile_name: std::option::Option<std::string::String>,
+    pub fargate_profile_name: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub addon_name: std::option::Option<std::string::String>,
+    pub addon_name: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub message: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidParameterException {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
-    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
+    pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
     /// <p>The Fargate profile associated with the exception.</p>
-    pub fn fargate_profile_name(&self) -> std::option::Option<&str> {
+    pub fn fargate_profile_name(&self) -> ::std::option::Option<&str> {
         self.fargate_profile_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn addon_name(&self) -> std::option::Option<&str> {
+    pub fn addon_name(&self) -> ::std::option::Option<&str> {
         self.addon_name.as_deref()
     }
 }
 impl InvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidParameterException {
+impl ::std::fmt::Display for InvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "InvalidParameterException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidParameterException {}
-impl aws_http::request_id::RequestId for crate::types::error::InvalidParameterException {
+impl ::std::error::Error for InvalidParameterException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidParameterException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidParameterException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -77,71 +77,82 @@ impl InvalidParameterException {
 
 /// A builder for [`InvalidParameterException`](crate::types::error::InvalidParameterException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidParameterExceptionBuilder {
-    pub(crate) cluster_name: std::option::Option<std::string::String>,
-    pub(crate) nodegroup_name: std::option::Option<std::string::String>,
-    pub(crate) fargate_profile_name: std::option::Option<std::string::String>,
-    pub(crate) addon_name: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
+    pub(crate) nodegroup_name: ::std::option::Option<::std::string::String>,
+    pub(crate) fargate_profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) addon_name: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidParameterExceptionBuilder {
     /// <p>The Amazon EKS cluster associated with the exception.</p>
-    pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_name = Some(input.into());
+    pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EKS cluster associated with the exception.</p>
-    pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
-    pub fn nodegroup_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nodegroup_name = Some(input.into());
+    pub fn nodegroup_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.nodegroup_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
-    pub fn set_nodegroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nodegroup_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.nodegroup_name = input;
         self
     }
     /// <p>The Fargate profile associated with the exception.</p>
-    pub fn fargate_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fargate_profile_name = Some(input.into());
+    pub fn fargate_profile_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.fargate_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Fargate profile associated with the exception.</p>
     pub fn set_fargate_profile_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.fargate_profile_name = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.addon_name = Some(input.into());
+    pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.addon_name = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_name = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -149,7 +160,7 @@ impl InvalidParameterExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

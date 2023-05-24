@@ -21,29 +21,29 @@ pub use crate::operation::count_closed_workflow_executions::_count_closed_workfl
 /// </ul> </li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CountClosedWorkflowExecutionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::count_closed_workflow_executions::builders::CountClosedWorkflowExecutionsInputBuilder,
 }
 impl CountClosedWorkflowExecutionsFluentBuilder {
     /// Creates a new `CountClosedWorkflowExecutions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsError,
         >,
     > {
@@ -51,30 +51,33 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -87,21 +90,21 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the domain containing the workflow executions to count.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
     /// <p>The name of the domain containing the workflow executions to count.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
@@ -117,7 +120,7 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
     /// </note>
     pub fn set_start_time_filter(
         mut self,
-        input: std::option::Option<crate::types::ExecutionTimeFilter>,
+        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
     ) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
@@ -134,7 +137,7 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
     /// </note>
     pub fn set_close_time_filter(
         mut self,
-        input: std::option::Option<crate::types::ExecutionTimeFilter>,
+        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
     ) -> Self {
         self.inner = self.inner.set_close_time_filter(input);
         self
@@ -151,7 +154,7 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
     /// </note>
     pub fn set_execution_filter(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionFilter>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
     ) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self
@@ -168,7 +171,7 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
     /// </note>
     pub fn set_type_filter(
         mut self,
-        input: std::option::Option<crate::types::WorkflowTypeFilter>,
+        input: ::std::option::Option<crate::types::WorkflowTypeFilter>,
     ) -> Self {
         self.inner = self.inner.set_type_filter(input);
         self
@@ -183,7 +186,7 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
     /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
     /// <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_tag_filter(mut self, input: std::option::Option<crate::types::TagFilter>) -> Self {
+    pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
         self.inner = self.inner.set_tag_filter(input);
         self
     }
@@ -199,7 +202,7 @@ impl CountClosedWorkflowExecutionsFluentBuilder {
     /// </note>
     pub fn set_close_status_filter(
         mut self,
-        input: std::option::Option<crate::types::CloseStatusFilter>,
+        input: ::std::option::Option<crate::types::CloseStatusFilter>,
     ) -> Self {
         self.inner = self.inner.set_close_status_filter(input);
         self

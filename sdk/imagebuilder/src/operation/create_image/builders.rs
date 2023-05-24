@@ -6,56 +6,59 @@ pub use crate::operation::create_image::_create_image_input::CreateImageInputBui
 /// Fluent builder constructing a request to `CreateImage`.
 ///
 /// <p>Creates a new image. This request will create a new image along with all of the configured output resources defined in the distribution configuration. You must specify exactly one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_image::builders::CreateImageInputBuilder,
 }
 impl CreateImageFluentBuilder {
     /// Creates a new `CreateImage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_image::CreateImage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_image::CreateImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,44 +71,56 @@ impl CreateImageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_image::CreateImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
-    pub fn image_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_recipe_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.image_recipe_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
-    pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_recipe_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_image_recipe_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
-    pub fn container_recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn container_recipe_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.container_recipe_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
     pub fn set_container_recipe_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
-    pub fn distribution_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn distribution_configuration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.distribution_configuration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
     pub fn set_distribution_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_distribution_configuration_arn(input);
         self
@@ -113,7 +128,7 @@ impl CreateImageFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
     pub fn infrastructure_configuration_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.infrastructure_configuration_arn(input.into());
         self
@@ -121,7 +136,7 @@ impl CreateImageFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
     pub fn set_infrastructure_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_infrastructure_configuration_arn(input);
         self
@@ -137,7 +152,7 @@ impl CreateImageFluentBuilder {
     /// <p>The image tests configuration of the image.</p>
     pub fn set_image_tests_configuration(
         mut self,
-        input: std::option::Option<crate::types::ImageTestsConfiguration>,
+        input: ::std::option::Option<crate::types::ImageTestsConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_image_tests_configuration(input);
         self
@@ -148,7 +163,10 @@ impl CreateImageFluentBuilder {
         self
     }
     /// <p>Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
-    pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enhanced_image_metadata_enabled(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.inner = self.inner.set_enhanced_image_metadata_enabled(input);
         self
     }
@@ -159,8 +177,8 @@ impl CreateImageFluentBuilder {
     /// <p>The tags of the image.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -168,20 +186,20 @@ impl CreateImageFluentBuilder {
     /// <p>The tags of the image.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -196,7 +214,7 @@ impl CreateImageFluentBuilder {
     /// <p>Contains settings for vulnerability scans.</p>
     pub fn set_image_scanning_configuration(
         mut self,
-        input: std::option::Option<crate::types::ImageScanningConfiguration>,
+        input: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self

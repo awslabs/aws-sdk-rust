@@ -2,62 +2,64 @@
 
 /// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunInProgressException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
     #[doc(hidden)]
-    pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     #[doc(hidden)]
-    pub assessment_run_arns_truncated: std::option::Option<bool>,
+    pub assessment_run_arns_truncated: ::std::option::Option<bool>,
     /// <p>You can immediately retry your request.</p>
     #[doc(hidden)]
-    pub can_retry: std::option::Option<bool>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub can_retry: ::std::option::Option<bool>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AssessmentRunInProgressException {
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn assessment_run_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.assessment_run_arns.as_deref()
     }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
-    pub fn assessment_run_arns_truncated(&self) -> std::option::Option<bool> {
+    pub fn assessment_run_arns_truncated(&self) -> ::std::option::Option<bool> {
         self.assessment_run_arns_truncated
     }
     /// <p>You can immediately retry your request.</p>
-    pub fn can_retry(&self) -> std::option::Option<bool> {
+    pub fn can_retry(&self) -> ::std::option::Option<bool> {
         self.can_retry
     }
 }
 impl AssessmentRunInProgressException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AssessmentRunInProgressException {
+impl ::std::fmt::Display for AssessmentRunInProgressException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AssessmentRunInProgressException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "AssessmentRunInProgressException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for AssessmentRunInProgressException {}
-impl aws_http::request_id::RequestId for crate::types::error::AssessmentRunInProgressException {
+impl ::std::error::Error for AssessmentRunInProgressException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::AssessmentRunInProgressException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AssessmentRunInProgressException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for AssessmentRunInProgressException
+{
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -70,22 +72,24 @@ impl AssessmentRunInProgressException {
 
 /// A builder for [`AssessmentRunInProgressException`](crate::types::error::AssessmentRunInProgressException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssessmentRunInProgressExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) assessment_run_arns_truncated: std::option::Option<bool>,
-    pub(crate) can_retry: std::option::Option<bool>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_run_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) assessment_run_arns_truncated: ::std::option::Option<bool>,
+    pub(crate) can_retry: ::std::option::Option<bool>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl AssessmentRunInProgressExceptionBuilder {
     /// <p>Details of the exception error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details of the exception error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -94,42 +98,45 @@ impl AssessmentRunInProgressExceptionBuilder {
     /// To override the contents of this collection use [`set_assessment_run_arns`](Self::set_assessment_run_arns).
     ///
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
-    pub fn assessment_run_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn assessment_run_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.assessment_run_arns.unwrap_or_default();
         v.push(input.into());
-        self.assessment_run_arns = Some(v);
+        self.assessment_run_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
     pub fn set_assessment_run_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.assessment_run_arns = input;
         self
     }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     pub fn assessment_run_arns_truncated(mut self, input: bool) -> Self {
-        self.assessment_run_arns_truncated = Some(input);
+        self.assessment_run_arns_truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
-    pub fn set_assessment_run_arns_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_assessment_run_arns_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.assessment_run_arns_truncated = input;
         self
     }
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(mut self, input: bool) -> Self {
-        self.can_retry = Some(input);
+        self.can_retry = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can immediately retry your request.</p>
-    pub fn set_can_retry(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_retry = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -137,7 +144,7 @@ impl AssessmentRunInProgressExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

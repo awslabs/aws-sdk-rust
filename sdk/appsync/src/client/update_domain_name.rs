@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDomainName`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::set_domain_name): <p>The domain name.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::set_description): <p>A description of the <code>DomainName</code>.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::set_domain_name): <p>The domain name.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_domain_name::builders::UpdateDomainNameFluentBuilder::set_description): <p>A description of the <code>DomainName</code>.</p>
     /// - On success, responds with [`UpdateDomainNameOutput`](crate::operation::update_domain_name::UpdateDomainNameOutput) with field(s):
     ///   - [`domain_name_config(Option<DomainNameConfig>)`](crate::operation::update_domain_name::UpdateDomainNameOutput::domain_name_config): <p>The configuration for the <code>DomainName</code>.</p>
     /// - On failure, responds with [`SdkError<UpdateDomainNameError>`](crate::operation::update_domain_name::UpdateDomainNameError)

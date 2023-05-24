@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ActivateAnomalyDetector`](crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The ARN of the anomaly detector.</p>
+    ///   - [`anomaly_detector_arn(impl ::std::convert::Into<String>)`](crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::activate_anomaly_detector::builders::ActivateAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The ARN of the anomaly detector.</p>
     /// - On success, responds with [`ActivateAnomalyDetectorOutput`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorOutput)
     /// - On failure, responds with [`SdkError<ActivateAnomalyDetectorError>`](crate::operation::activate_anomaly_detector::ActivateAnomalyDetectorError)
     pub fn activate_anomaly_detector(

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SuggesterFuzzyMatching {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum SuggesterFuzzyMatching {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SuggesterFuzzyMatching {
+impl ::std::convert::From<&str> for SuggesterFuzzyMatching {
     fn from(s: &str) -> Self {
         match s {
             "high" => SuggesterFuzzyMatching::High,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for SuggesterFuzzyMatching {
         }
     }
 }
-impl std::str::FromStr for SuggesterFuzzyMatching {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SuggesterFuzzyMatching {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SuggesterFuzzyMatching::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SuggesterFuzzyMatching::from(s))
     }
 }
 impl SuggesterFuzzyMatching {
@@ -91,7 +91,7 @@ impl SuggesterFuzzyMatching {
         &["high", "low", "none"]
     }
 }
-impl AsRef<str> for SuggesterFuzzyMatching {
+impl ::std::convert::AsRef<str> for SuggesterFuzzyMatching {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

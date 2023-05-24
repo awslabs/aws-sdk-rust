@@ -2,22 +2,22 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     #[doc(hidden)]
-    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
 }
@@ -31,31 +31,39 @@ impl DeleteApplicationInput {
 
 /// A builder for [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteApplicationInputBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationInputBuilder {
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
-    pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_timestamp = Some(input);
+    pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn set_create_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_timestamp = input;
         self
@@ -63,11 +71,11 @@ impl DeleteApplicationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_application::DeleteApplicationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_application::DeleteApplicationInput {
                 application_name: self.application_name,
                 create_timestamp: self.create_timestamp,

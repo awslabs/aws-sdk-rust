@@ -2,7 +2,7 @@
 
 /// <p>Status information about an activity task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordActivityTaskHeartbeatOutput {
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ impl RecordActivityTaskHeartbeatOutput {
         self.cancel_requested
     }
 }
-impl aws_http::request_id::RequestId for RecordActivityTaskHeartbeatOutput {
+impl ::aws_http::request_id::RequestId for RecordActivityTaskHeartbeatOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl RecordActivityTaskHeartbeatOutput {
 
 /// A builder for [`RecordActivityTaskHeartbeatOutput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordActivityTaskHeartbeatOutputBuilder {
-    pub(crate) cancel_requested: std::option::Option<bool>,
+    pub(crate) cancel_requested: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl RecordActivityTaskHeartbeatOutputBuilder {
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
     pub fn cancel_requested(mut self, input: bool) -> Self {
-        self.cancel_requested = Some(input);
+        self.cancel_requested = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
-    pub fn set_cancel_requested(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cancel_requested(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cancel_requested = input;
         self
     }

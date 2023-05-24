@@ -2,22 +2,23 @@
 
 /// <p>Describes an availability zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the availability zone.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub supported_platforms: std::option::Option<std::vec::Vec<crate::types::SupportedPlatform>>,
+    pub supported_platforms:
+        ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
 }
 impl AvailabilityZone {
     /// <p>The name of the availability zone.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p></p>
-    pub fn supported_platforms(&self) -> std::option::Option<&[crate::types::SupportedPlatform]> {
+    pub fn supported_platforms(&self) -> ::std::option::Option<&[crate::types::SupportedPlatform]> {
         self.supported_platforms.as_deref()
     }
 }
@@ -30,20 +31,22 @@ impl AvailabilityZone {
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AvailabilityZoneBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) supported_platforms:
-        std::option::Option<std::vec::Vec<crate::types::SupportedPlatform>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
 }
 impl AvailabilityZoneBuilder {
     /// <p>The name of the availability zone.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the availability zone.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -55,13 +58,13 @@ impl AvailabilityZoneBuilder {
     pub fn supported_platforms(mut self, input: crate::types::SupportedPlatform) -> Self {
         let mut v = self.supported_platforms.unwrap_or_default();
         v.push(input);
-        self.supported_platforms = Some(v);
+        self.supported_platforms = ::std::option::Option::Some(v);
         self
     }
     /// <p></p>
     pub fn set_supported_platforms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SupportedPlatform>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedPlatform>>,
     ) -> Self {
         self.supported_platforms = input;
         self

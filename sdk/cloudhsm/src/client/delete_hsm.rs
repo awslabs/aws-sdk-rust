@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteHsm`](crate::operation::delete_hsm::builders::DeleteHsmFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hsm_arn(impl Into<String>)`](crate::operation::delete_hsm::builders::DeleteHsmFluentBuilder::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::operation::delete_hsm::builders::DeleteHsmFluentBuilder::set_hsm_arn): <p>The ARN of the HSM to delete.</p>
+    ///   - [`hsm_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_hsm::builders::DeleteHsmFluentBuilder::hsm_arn) / [`set_hsm_arn(Option<String>)`](crate::operation::delete_hsm::builders::DeleteHsmFluentBuilder::set_hsm_arn): <p>The ARN of the HSM to delete.</p>
     /// - On success, responds with [`DeleteHsmOutput`](crate::operation::delete_hsm::DeleteHsmOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::delete_hsm::DeleteHsmOutput::status): <p>The status of the operation.</p>
     /// - On failure, responds with [`SdkError<DeleteHsmError>`](crate::operation::delete_hsm::DeleteHsmError)

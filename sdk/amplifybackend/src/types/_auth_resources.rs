@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AuthResources {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AuthResources {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AuthResources {
+impl ::std::convert::From<&str> for AuthResources {
     fn from(s: &str) -> Self {
         match s {
             "IDENTITY_POOL_AND_USER_POOL" => AuthResources::IdentityPoolAndUserPool,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AuthResources {
         }
     }
 }
-impl std::str::FromStr for AuthResources {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AuthResources {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthResources::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AuthResources::from(s))
     }
 }
 impl AuthResources {
@@ -86,7 +86,7 @@ impl AuthResources {
         &["IDENTITY_POOL_AND_USER_POOL", "USER_POOL_ONLY"]
     }
 }
-impl AsRef<str> for AuthResources {
+impl ::std::convert::AsRef<str> for AuthResources {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

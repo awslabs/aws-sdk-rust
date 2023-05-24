@@ -38,13 +38,13 @@
 /// Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Av1BitDepth {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Av1BitDepth {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Av1BitDepth {
+impl ::std::convert::From<&str> for Av1BitDepth {
     fn from(s: &str) -> Self {
         match s {
             "BIT_10" => Av1BitDepth::Bit10,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for Av1BitDepth {
         }
     }
 }
-impl std::str::FromStr for Av1BitDepth {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Av1BitDepth {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Av1BitDepth::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Av1BitDepth::from(s))
     }
 }
 impl Av1BitDepth {
@@ -84,7 +84,7 @@ impl Av1BitDepth {
         &["BIT_10", "BIT_8"]
     }
 }
-impl AsRef<str> for Av1BitDepth {
+impl ::std::convert::AsRef<str> for Av1BitDepth {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

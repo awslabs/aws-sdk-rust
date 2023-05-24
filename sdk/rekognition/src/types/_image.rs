@@ -8,22 +8,22 @@
 /// <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>
 /// <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
     #[doc(hidden)]
-    pub bytes: std::option::Option<aws_smithy_types::Blob>,
+    pub bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the image source.</p>
     #[doc(hidden)]
-    pub s3_object: std::option::Option<crate::types::S3Object>,
+    pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl Image {
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
-    pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn bytes(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.bytes.as_ref()
     }
     /// <p>Identifies an S3 object as the image source.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -36,29 +36,31 @@ impl Image {
 
 /// A builder for [`Image`](crate::types::Image).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageBuilder {
-    pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) s3_object: std::option::Option<crate::types::S3Object>,
+    pub(crate) bytes: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl ImageBuilder {
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
-    pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.bytes = Some(input);
+    pub fn bytes(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code> is 4MB. </p>
-    pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_bytes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.bytes = input;
         self
     }
     /// <p>Identifies an S3 object as the image source.</p>
     pub fn s3_object(mut self, input: crate::types::S3Object) -> Self {
-        self.s3_object = Some(input);
+        self.s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies an S3 object as the image source.</p>
-    pub fn set_s3_object(mut self, input: std::option::Option<crate::types::S3Object>) -> Self {
+    pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.s3_object = input;
         self
     }

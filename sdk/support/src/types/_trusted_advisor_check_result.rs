@@ -2,58 +2,58 @@
 
 /// <p>The results of a Trusted Advisor check returned by <code>DescribeTrustedAdvisorCheckResult</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckResult {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
-    pub check_id: std::option::Option<std::string::String>,
+    pub check_id: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last refresh of the check.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<std::string::String>,
+    pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     #[doc(hidden)]
-    pub resources_summary: std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
+    pub resources_summary: ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     #[doc(hidden)]
     pub category_specific_summary:
-        std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
+        ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
     /// <p>The details about each resource listed in the check result.</p>
     #[doc(hidden)]
     pub flagged_resources:
-        std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorResourceDetail>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorResourceDetail>>,
 }
 impl TrustedAdvisorCheckResult {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(&self) -> std::option::Option<&str> {
+    pub fn check_id(&self) -> ::std::option::Option<&str> {
         self.check_id.as_deref()
     }
     /// <p>The time of the last refresh of the check.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<&str> {
         self.timestamp.as_deref()
     }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub fn resources_summary(
         &self,
-    ) -> std::option::Option<&crate::types::TrustedAdvisorResourcesSummary> {
+    ) -> ::std::option::Option<&crate::types::TrustedAdvisorResourcesSummary> {
         self.resources_summary.as_ref()
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub fn category_specific_summary(
         &self,
-    ) -> std::option::Option<&crate::types::TrustedAdvisorCategorySpecificSummary> {
+    ) -> ::std::option::Option<&crate::types::TrustedAdvisorCategorySpecificSummary> {
         self.category_specific_summary.as_ref()
     }
     /// <p>The details about each resource listed in the check result.</p>
     pub fn flagged_resources(
         &self,
-    ) -> std::option::Option<&[crate::types::TrustedAdvisorResourceDetail]> {
+    ) -> ::std::option::Option<&[crate::types::TrustedAdvisorResourceDetail]> {
         self.flagged_resources.as_deref()
     }
 }
@@ -66,45 +66,48 @@ impl TrustedAdvisorCheckResult {
 
 /// A builder for [`TrustedAdvisorCheckResult`](crate::types::TrustedAdvisorCheckResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrustedAdvisorCheckResultBuilder {
-    pub(crate) check_id: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) resources_summary: std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
+    pub(crate) check_id: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) resources_summary:
+        ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
     pub(crate) category_specific_summary:
-        std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
+        ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
     pub(crate) flagged_resources:
-        std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorResourceDetail>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorResourceDetail>>,
 }
 impl TrustedAdvisorCheckResultBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.check_id = Some(input.into());
+    pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.check_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.check_id = input;
         self
     }
     /// <p>The time of the last refresh of the check.</p>
-    pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestamp = Some(input.into());
+    pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time of the last refresh of the check.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
@@ -113,13 +116,13 @@ impl TrustedAdvisorCheckResultBuilder {
         mut self,
         input: crate::types::TrustedAdvisorResourcesSummary,
     ) -> Self {
-        self.resources_summary = Some(input);
+        self.resources_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub fn set_resources_summary(
         mut self,
-        input: std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
+        input: ::std::option::Option<crate::types::TrustedAdvisorResourcesSummary>,
     ) -> Self {
         self.resources_summary = input;
         self
@@ -129,13 +132,13 @@ impl TrustedAdvisorCheckResultBuilder {
         mut self,
         input: crate::types::TrustedAdvisorCategorySpecificSummary,
     ) -> Self {
-        self.category_specific_summary = Some(input);
+        self.category_specific_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub fn set_category_specific_summary(
         mut self,
-        input: std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
+        input: ::std::option::Option<crate::types::TrustedAdvisorCategorySpecificSummary>,
     ) -> Self {
         self.category_specific_summary = input;
         self
@@ -148,13 +151,13 @@ impl TrustedAdvisorCheckResultBuilder {
     pub fn flagged_resources(mut self, input: crate::types::TrustedAdvisorResourceDetail) -> Self {
         let mut v = self.flagged_resources.unwrap_or_default();
         v.push(input);
-        self.flagged_resources = Some(v);
+        self.flagged_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>The details about each resource listed in the check result.</p>
     pub fn set_flagged_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorResourceDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorResourceDetail>>,
     ) -> Self {
         self.flagged_resources = input;
         self

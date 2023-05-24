@@ -2,17 +2,17 @@
 
 /// <p>Specifies an integer hyperparameter and it's range of tunable values. This object is part of the <code>ParameterRanges</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum tunable value of the hyperparameter.</p>
     #[doc(hidden)]
-    pub max_value: std::option::Option<i32>,
+    pub max_value: ::std::option::Option<i32>,
     /// <p>The minimum tunable value of the hyperparameter.</p>
     #[doc(hidden)]
-    pub min_value: std::option::Option<i32>,
+    pub min_value: ::std::option::Option<i32>,
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
     /// <dl>
     /// <dt>
@@ -44,19 +44,19 @@ pub struct IntegerParameterRange {
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     #[doc(hidden)]
-    pub scaling_type: std::option::Option<crate::types::ScalingType>,
+    pub scaling_type: ::std::option::Option<crate::types::ScalingType>,
 }
 impl IntegerParameterRange {
     /// <p>The name of the hyperparameter to tune.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The maximum tunable value of the hyperparameter.</p>
-    pub fn max_value(&self) -> std::option::Option<i32> {
+    pub fn max_value(&self) -> ::std::option::Option<i32> {
         self.max_value
     }
     /// <p>The minimum tunable value of the hyperparameter.</p>
-    pub fn min_value(&self) -> std::option::Option<i32> {
+    pub fn min_value(&self) -> ::std::option::Option<i32> {
         self.min_value
     }
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
@@ -89,7 +89,7 @@ impl IntegerParameterRange {
     /// </dd>
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
-    pub fn scaling_type(&self) -> std::option::Option<&crate::types::ScalingType> {
+    pub fn scaling_type(&self) -> ::std::option::Option<&crate::types::ScalingType> {
         self.scaling_type.as_ref()
     }
 }
@@ -102,41 +102,43 @@ impl IntegerParameterRange {
 
 /// A builder for [`IntegerParameterRange`](crate::types::IntegerParameterRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IntegerParameterRangeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) max_value: std::option::Option<i32>,
-    pub(crate) min_value: std::option::Option<i32>,
-    pub(crate) scaling_type: std::option::Option<crate::types::ScalingType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) max_value: ::std::option::Option<i32>,
+    pub(crate) min_value: ::std::option::Option<i32>,
+    pub(crate) scaling_type: ::std::option::Option<crate::types::ScalingType>,
 }
 impl IntegerParameterRangeBuilder {
     /// <p>The name of the hyperparameter to tune.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hyperparameter to tune.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The maximum tunable value of the hyperparameter.</p>
     pub fn max_value(mut self, input: i32) -> Self {
-        self.max_value = Some(input);
+        self.max_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum tunable value of the hyperparameter.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_value = input;
         self
     }
     /// <p>The minimum tunable value of the hyperparameter.</p>
     pub fn min_value(mut self, input: i32) -> Self {
-        self.min_value = Some(input);
+        self.min_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum tunable value of the hyperparameter.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_value = input;
         self
     }
@@ -171,7 +173,7 @@ impl IntegerParameterRangeBuilder {
     /// </dl>
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub fn scaling_type(mut self, input: crate::types::ScalingType) -> Self {
-        self.scaling_type = Some(input);
+        self.scaling_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. Valid values:</p>
@@ -206,7 +208,7 @@ impl IntegerParameterRangeBuilder {
     /// <p>For information about choosing a hyperparameter scale, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     pub fn set_scaling_type(
         mut self,
-        input: std::option::Option<crate::types::ScalingType>,
+        input: ::std::option::Option<crate::types::ScalingType>,
     ) -> Self {
         self.scaling_type = input;
         self

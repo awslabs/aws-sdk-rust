@@ -2,7 +2,7 @@
 
 /// <p> List of limits that are specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> . </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalLimit {
     /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct AdditionalLimit {
     /// </ul>
     /// <p></p>
     #[doc(hidden)]
-    pub limit_name: std::option::Option<std::string::String>,
+    pub limit_name: ::std::option::Option<::std::string::String>,
     /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
     #[doc(hidden)]
-    pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdditionalLimit {
     /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
@@ -23,11 +23,11 @@ impl AdditionalLimit {
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
     /// </ul>
     /// <p></p>
-    pub fn limit_name(&self) -> std::option::Option<&str> {
+    pub fn limit_name(&self) -> ::std::option::Option<&str> {
         self.limit_name.as_deref()
     }
     /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
-    pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn limit_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.limit_values.as_deref()
     }
 }
@@ -40,10 +40,12 @@ impl AdditionalLimit {
 
 /// A builder for [`AdditionalLimit`](crate::types::AdditionalLimit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdditionalLimitBuilder {
-    pub(crate) limit_name: std::option::Option<std::string::String>,
-    pub(crate) limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) limit_name: ::std::option::Option<::std::string::String>,
+    pub(crate) limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdditionalLimitBuilder {
     /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
@@ -52,8 +54,8 @@ impl AdditionalLimitBuilder {
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
     /// </ul>
     /// <p></p>
-    pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.limit_name = Some(input.into());
+    pub fn limit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.limit_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <code>InstanceRole</code> </code> etc. <br><br> Attributes and their details: <br><br> </p>
@@ -62,7 +64,7 @@ impl AdditionalLimitBuilder {
     /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <code>ESPartitionInstanceType</code> </code> upto which you don't need any master nodes to govern them.
     /// </ul>
     /// <p></p>
-    pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_limit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_name = input;
         self
     }
@@ -71,16 +73,16 @@ impl AdditionalLimitBuilder {
     /// To override the contents of this collection use [`set_limit_values`](Self::set_limit_values).
     ///
     /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
-    pub fn limit_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn limit_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.limit_values.unwrap_or_default();
         v.push(input.into());
-        self.limit_values = Some(v);
+        self.limit_values = ::std::option::Option::Some(v);
         self
     }
     /// <p> Value for given <code> <code>AdditionalLimit$LimitName</code> </code> . </p>
     pub fn set_limit_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.limit_values = input;
         self

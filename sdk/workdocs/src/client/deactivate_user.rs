@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeactivateUser`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_id(impl Into<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::set_user_id): <p>The ID of the user.</p>
-    ///   - [`authentication_token(impl Into<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
+    ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::set_user_id): <p>The ID of the user.</p>
+    ///   - [`authentication_token(impl ::std::convert::Into<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::authentication_token) / [`set_authentication_token(Option<String>)`](crate::operation::deactivate_user::builders::DeactivateUserFluentBuilder::set_authentication_token): <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     /// - On success, responds with [`DeactivateUserOutput`](crate::operation::deactivate_user::DeactivateUserOutput)
     /// - On failure, responds with [`SdkError<DeactivateUserError>`](crate::operation::deactivate_user::DeactivateUserError)
     pub fn deactivate_user(

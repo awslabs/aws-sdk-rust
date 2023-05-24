@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MdnSigningAlg {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum MdnSigningAlg {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MdnSigningAlg {
+impl ::std::convert::From<&str> for MdnSigningAlg {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => MdnSigningAlg::Default,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for MdnSigningAlg {
         }
     }
 }
-impl std::str::FromStr for MdnSigningAlg {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MdnSigningAlg {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MdnSigningAlg::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MdnSigningAlg::from(s))
     }
 }
 impl MdnSigningAlg {
@@ -106,7 +106,7 @@ impl MdnSigningAlg {
         &["DEFAULT", "NONE", "SHA1", "SHA256", "SHA384", "SHA512"]
     }
 }
-impl AsRef<str> for MdnSigningAlg {
+impl ::std::convert::AsRef<str> for MdnSigningAlg {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,24 +2,24 @@
 
 /// <p>Specifies the method and snapshot to use when restarting an application using previously saved application state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationRestoreConfiguration {
     /// <p>Specifies how the application should be restored.</p>
     #[doc(hidden)]
-    pub application_restore_type: std::option::Option<crate::types::ApplicationRestoreType>,
+    pub application_restore_type: ::std::option::Option<crate::types::ApplicationRestoreType>,
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
     #[doc(hidden)]
-    pub snapshot_name: std::option::Option<std::string::String>,
+    pub snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationRestoreConfiguration {
     /// <p>Specifies how the application should be restored.</p>
     pub fn application_restore_type(
         &self,
-    ) -> std::option::Option<&crate::types::ApplicationRestoreType> {
+    ) -> ::std::option::Option<&crate::types::ApplicationRestoreType> {
         self.application_restore_type.as_ref()
     }
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
 }
@@ -32,32 +32,41 @@ impl ApplicationRestoreConfiguration {
 
 /// A builder for [`ApplicationRestoreConfiguration`](crate::types::ApplicationRestoreConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationRestoreConfigurationBuilder {
-    pub(crate) application_restore_type: std::option::Option<crate::types::ApplicationRestoreType>,
-    pub(crate) snapshot_name: std::option::Option<std::string::String>,
+    pub(crate) application_restore_type:
+        ::std::option::Option<crate::types::ApplicationRestoreType>,
+    pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationRestoreConfigurationBuilder {
     /// <p>Specifies how the application should be restored.</p>
     pub fn application_restore_type(mut self, input: crate::types::ApplicationRestoreType) -> Self {
-        self.application_restore_type = Some(input);
+        self.application_restore_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how the application should be restored.</p>
     pub fn set_application_restore_type(
         mut self,
-        input: std::option::Option<crate::types::ApplicationRestoreType>,
+        input: ::std::option::Option<crate::types::ApplicationRestoreType>,
     ) -> Self {
         self.application_restore_type = input;
         self
     }
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
-    pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_name = Some(input.into());
+    pub fn snapshot_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
-    pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.snapshot_name = input;
         self
     }

@@ -2,23 +2,23 @@
 
 /// <p>Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTimeBasedAutoScalingOutput {
     /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     #[doc(hidden)]
     pub time_based_auto_scaling_configurations:
-        std::option::Option<std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeTimeBasedAutoScalingOutput {
     /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     pub fn time_based_auto_scaling_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::TimeBasedAutoScalingConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::TimeBasedAutoScalingConfiguration]> {
         self.time_based_auto_scaling_configurations.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTimeBasedAutoScalingOutput {
+impl ::aws_http::request_id::RequestId for DescribeTimeBasedAutoScalingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeTimeBasedAutoScalingOutput {
 
 /// A builder for [`DescribeTimeBasedAutoScalingOutput`](crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTimeBasedAutoScalingOutputBuilder {
     pub(crate) time_based_auto_scaling_configurations:
-        std::option::Option<std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>>,
     _request_id: Option<String>,
 }
 impl DescribeTimeBasedAutoScalingOutputBuilder {
@@ -52,13 +54,15 @@ impl DescribeTimeBasedAutoScalingOutputBuilder {
             .time_based_auto_scaling_configurations
             .unwrap_or_default();
         v.push(input);
-        self.time_based_auto_scaling_configurations = Some(v);
+        self.time_based_auto_scaling_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the configuration for the specified instances.</p>
     pub fn set_time_based_auto_scaling_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::TimeBasedAutoScalingConfiguration>,
+        >,
     ) -> Self {
         self.time_based_auto_scaling_configurations = input;
         self

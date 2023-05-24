@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HypervisorState {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum HypervisorState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HypervisorState {
+impl ::std::convert::From<&str> for HypervisorState {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => HypervisorState::Error,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for HypervisorState {
         }
     }
 }
-impl std::str::FromStr for HypervisorState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HypervisorState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HypervisorState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HypervisorState::from(s))
     }
 }
 impl HypervisorState {
@@ -96,7 +96,7 @@ impl HypervisorState {
         &["ERROR", "OFFLINE", "ONLINE", "PENDING"]
     }
 }
-impl AsRef<str> for HypervisorState {
+impl ::std::convert::AsRef<str> for HypervisorState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

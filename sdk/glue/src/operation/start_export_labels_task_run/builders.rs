@@ -6,29 +6,29 @@ pub use crate::operation::start_export_labels_task_run::_start_export_labels_tas
 /// Fluent builder constructing a request to `StartExportLabelsTaskRun`.
 ///
 /// <p>Begins an asynchronous task to export all labeled data for a particular transform. This task is the only label-related API call that is not part of the typical active learning workflow. You typically use <code>StartExportLabelsTaskRun</code> when you want to work with all of your existing labels at the same time, such as when you want to remove or change labels that were previously submitted as truth. This API operation accepts the <code>TransformId</code> whose labels you want to export and an Amazon Simple Storage Service (Amazon S3) path to export the labels to. The operation returns a <code>TaskRunId</code>. You can check on the status of your task run by calling the <code>GetMLTaskRun</code> API.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartExportLabelsTaskRunFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_export_labels_task_run::builders::StartExportLabelsTaskRunInputBuilder,
 }
 impl StartExportLabelsTaskRunFluentBuilder {
     /// Creates a new `StartExportLabelsTaskRun`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_export_labels_task_run::StartExportLabelsTaskRun,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError,
         >,
     > {
@@ -36,30 +36,33 @@ impl StartExportLabelsTaskRunFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,37 @@ impl StartExportLabelsTaskRunFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.transform_id(input.into());
         self
     }
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_transform_id(input);
         self
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
-    pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn output_s3_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.output_s3_path(input.into());
         self
     }
     /// <p>The Amazon S3 path where you export the labels.</p>
-    pub fn set_output_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_s3_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_output_s3_path(input);
         self
     }

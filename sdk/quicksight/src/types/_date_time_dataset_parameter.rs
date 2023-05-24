@@ -2,45 +2,45 @@
 
 /// <p>A date time parameter for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeDatasetParameter {
     /// <p>An identifier for the parameter that is created in the dataset.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the date time parameter that is created in the dataset.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
     #[doc(hidden)]
-    pub value_type: std::option::Option<crate::types::DatasetParameterValueType>,
+    pub value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
     /// <p>The time granularity of the date time parameter.</p>
     #[doc(hidden)]
-    pub time_granularity: std::option::Option<crate::types::TimeGranularity>,
+    pub time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
     #[doc(hidden)]
-    pub default_values: std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
+    pub default_values: ::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
 }
 impl DateTimeDatasetParameter {
     /// <p>An identifier for the parameter that is created in the dataset.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the date time parameter that is created in the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
-    pub fn value_type(&self) -> std::option::Option<&crate::types::DatasetParameterValueType> {
+    pub fn value_type(&self) -> ::std::option::Option<&crate::types::DatasetParameterValueType> {
         self.value_type.as_ref()
     }
     /// <p>The time granularity of the date time parameter.</p>
-    pub fn time_granularity(&self) -> std::option::Option<&crate::types::TimeGranularity> {
+    pub fn time_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
     }
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
     pub fn default_values(
         &self,
-    ) -> std::option::Option<&crate::types::DateTimeDatasetParameterDefaultValues> {
+    ) -> ::std::option::Option<&crate::types::DateTimeDatasetParameterDefaultValues> {
         self.default_values.as_ref()
     }
 }
@@ -53,58 +53,60 @@ impl DateTimeDatasetParameter {
 
 /// A builder for [`DateTimeDatasetParameter`](crate::types::DateTimeDatasetParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DateTimeDatasetParameterBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value_type: std::option::Option<crate::types::DatasetParameterValueType>,
-    pub(crate) time_granularity: std::option::Option<crate::types::TimeGranularity>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value_type: ::std::option::Option<crate::types::DatasetParameterValueType>,
+    pub(crate) time_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     pub(crate) default_values:
-        std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
+        ::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
 }
 impl DateTimeDatasetParameterBuilder {
     /// <p>An identifier for the parameter that is created in the dataset.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for the parameter that is created in the dataset.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the date time parameter that is created in the dataset.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the date time parameter that is created in the dataset.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
     pub fn value_type(mut self, input: crate::types::DatasetParameterValueType) -> Self {
-        self.value_type = Some(input);
+        self.value_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value type of the dataset parameter. Valid values are <code>single value</code> or <code>multi value</code>.</p>
     pub fn set_value_type(
         mut self,
-        input: std::option::Option<crate::types::DatasetParameterValueType>,
+        input: ::std::option::Option<crate::types::DatasetParameterValueType>,
     ) -> Self {
         self.value_type = input;
         self
     }
     /// <p>The time granularity of the date time parameter.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
-        self.time_granularity = Some(input);
+        self.time_granularity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time granularity of the date time parameter.</p>
     pub fn set_time_granularity(
         mut self,
-        input: std::option::Option<crate::types::TimeGranularity>,
+        input: ::std::option::Option<crate::types::TimeGranularity>,
     ) -> Self {
         self.time_granularity = input;
         self
@@ -114,13 +116,13 @@ impl DateTimeDatasetParameterBuilder {
         mut self,
         input: crate::types::DateTimeDatasetParameterDefaultValues,
     ) -> Self {
-        self.default_values = Some(input);
+        self.default_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of default values for a given date time parameter. This structure only accepts static values.</p>
     pub fn set_default_values(
         mut self,
-        input: std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
+        input: ::std::option::Option<crate::types::DateTimeDatasetParameterDefaultValues>,
     ) -> Self {
         self.default_values = input;
         self

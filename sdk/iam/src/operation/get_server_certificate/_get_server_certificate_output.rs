@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>GetServerCertificate</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServerCertificateOutput {
     /// <p>A structure containing details about the server certificate.</p>
     #[doc(hidden)]
-    pub server_certificate: std::option::Option<crate::types::ServerCertificate>,
+    pub server_certificate: ::std::option::Option<crate::types::ServerCertificate>,
     _request_id: Option<String>,
 }
 impl GetServerCertificateOutput {
     /// <p>A structure containing details about the server certificate.</p>
-    pub fn server_certificate(&self) -> std::option::Option<&crate::types::ServerCertificate> {
+    pub fn server_certificate(&self) -> ::std::option::Option<&crate::types::ServerCertificate> {
         self.server_certificate.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetServerCertificateOutput {
+impl ::aws_http::request_id::RequestId for GetServerCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl GetServerCertificateOutput {
 
 /// A builder for [`GetServerCertificateOutput`](crate::operation::get_server_certificate::GetServerCertificateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetServerCertificateOutputBuilder {
-    pub(crate) server_certificate: std::option::Option<crate::types::ServerCertificate>,
+    pub(crate) server_certificate: ::std::option::Option<crate::types::ServerCertificate>,
     _request_id: Option<String>,
 }
 impl GetServerCertificateOutputBuilder {
     /// <p>A structure containing details about the server certificate.</p>
     pub fn server_certificate(mut self, input: crate::types::ServerCertificate) -> Self {
-        self.server_certificate = Some(input);
+        self.server_certificate = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the server certificate.</p>
     pub fn set_server_certificate(
         mut self,
-        input: std::option::Option<crate::types::ServerCertificate>,
+        input: ::std::option::Option<crate::types::ServerCertificate>,
     ) -> Self {
         self.server_certificate = input;
         self

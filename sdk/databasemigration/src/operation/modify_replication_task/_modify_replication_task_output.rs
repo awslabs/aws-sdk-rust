@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationTaskOutput {
     /// <p>The replication task that was modified.</p>
     #[doc(hidden)]
-    pub replication_task: std::option::Option<crate::types::ReplicationTask>,
+    pub replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
 }
 impl ModifyReplicationTaskOutput {
     /// <p>The replication task that was modified.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::types::ReplicationTask> {
+    pub fn replication_task(&self) -> ::std::option::Option<&crate::types::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ModifyReplicationTaskOutput {
+impl ::aws_http::request_id::RequestId for ModifyReplicationTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl ModifyReplicationTaskOutput {
 
 /// A builder for [`ModifyReplicationTaskOutput`](crate::operation::modify_replication_task::ModifyReplicationTaskOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyReplicationTaskOutputBuilder {
-    pub(crate) replication_task: std::option::Option<crate::types::ReplicationTask>,
+    pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
 }
 impl ModifyReplicationTaskOutputBuilder {
     /// <p>The replication task that was modified.</p>
     pub fn replication_task(mut self, input: crate::types::ReplicationTask) -> Self {
-        self.replication_task = Some(input);
+        self.replication_task = ::std::option::Option::Some(input);
         self
     }
     /// <p>The replication task that was modified.</p>
     pub fn set_replication_task(
         mut self,
-        input: std::option::Option<crate::types::ReplicationTask>,
+        input: ::std::option::Option<crate::types::ReplicationTask>,
     ) -> Self {
         self.replication_task = input;
         self

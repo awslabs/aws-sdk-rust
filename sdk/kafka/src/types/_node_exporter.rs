@@ -2,15 +2,15 @@
 
 /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeExporter {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     #[doc(hidden)]
-    pub enabled_in_broker: std::option::Option<bool>,
+    pub enabled_in_broker: ::std::option::Option<bool>,
 }
 impl NodeExporter {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
-    pub fn enabled_in_broker(&self) -> std::option::Option<bool> {
+    pub fn enabled_in_broker(&self) -> ::std::option::Option<bool> {
         self.enabled_in_broker
     }
 }
@@ -23,18 +23,20 @@ impl NodeExporter {
 
 /// A builder for [`NodeExporter`](crate::types::NodeExporter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeExporterBuilder {
-    pub(crate) enabled_in_broker: std::option::Option<bool>,
+    pub(crate) enabled_in_broker: ::std::option::Option<bool>,
 }
 impl NodeExporterBuilder {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     pub fn enabled_in_broker(mut self, input: bool) -> Self {
-        self.enabled_in_broker = Some(input);
+        self.enabled_in_broker = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
-    pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled_in_broker(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled_in_broker = input;
         self
     }

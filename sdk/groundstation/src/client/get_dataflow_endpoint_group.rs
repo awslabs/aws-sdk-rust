@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataflowEndpointGroup`](crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataflow_endpoint_group_id(impl Into<String>)`](crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupFluentBuilder::dataflow_endpoint_group_id) / [`set_dataflow_endpoint_group_id(Option<String>)`](crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupFluentBuilder::set_dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
+    ///   - [`dataflow_endpoint_group_id(impl ::std::convert::Into<String>)`](crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupFluentBuilder::dataflow_endpoint_group_id) / [`set_dataflow_endpoint_group_id(Option<String>)`](crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupFluentBuilder::set_dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On success, responds with [`GetDataflowEndpointGroupOutput`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput) with field(s):
     ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     ///   - [`dataflow_endpoint_group_arn(Option<String>)`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupOutput::dataflow_endpoint_group_arn): <p>ARN of a dataflow endpoint group.</p>

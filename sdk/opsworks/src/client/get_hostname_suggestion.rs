@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetHostnameSuggestion`](crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`layer_id(impl Into<String>)`](crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder::layer_id) / [`set_layer_id(Option<String>)`](crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder::set_layer_id): <p>The layer ID.</p>
+    ///   - [`layer_id(impl ::std::convert::Into<String>)`](crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder::layer_id) / [`set_layer_id(Option<String>)`](crate::operation::get_hostname_suggestion::builders::GetHostnameSuggestionFluentBuilder::set_layer_id): <p>The layer ID.</p>
     /// - On success, responds with [`GetHostnameSuggestionOutput`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput) with field(s):
     ///   - [`layer_id(Option<String>)`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput::layer_id): <p>The layer ID.</p>
     ///   - [`hostname(Option<String>)`](crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput::hostname): <p>The generated host name.</p>

@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a <code>GetPipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     #[doc(hidden)]
-    pub pipeline: std::option::Option<crate::types::PipelineDeclaration>,
+    pub pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<crate::types::PipelineMetadata>,
+    pub metadata: ::std::option::Option<crate::types::PipelineMetadata>,
     _request_id: Option<String>,
 }
 impl GetPipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::types::PipelineDeclaration> {
+    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::PipelineMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::PipelineMetadata> {
         self.metadata.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetPipelineOutput {
+impl ::aws_http::request_id::RequestId for GetPipelineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,35 +36,37 @@ impl GetPipelineOutput {
 
 /// A builder for [`GetPipelineOutput`](crate::operation::get_pipeline::GetPipelineOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPipelineOutputBuilder {
-    pub(crate) pipeline: std::option::Option<crate::types::PipelineDeclaration>,
-    pub(crate) metadata: std::option::Option<crate::types::PipelineMetadata>,
+    pub(crate) pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
+    pub(crate) metadata: ::std::option::Option<crate::types::PipelineMetadata>,
     _request_id: Option<String>,
 }
 impl GetPipelineOutputBuilder {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
-        self.pipeline = Some(input);
+        self.pipeline = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn set_pipeline(
         mut self,
-        input: std::option::Option<crate::types::PipelineDeclaration>,
+        input: ::std::option::Option<crate::types::PipelineDeclaration>,
     ) -> Self {
         self.pipeline = input;
         self
     }
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     pub fn metadata(mut self, input: crate::types::PipelineMetadata) -> Self {
-        self.metadata = Some(input);
+        self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<crate::types::PipelineMetadata>,
+        input: ::std::option::Option<crate::types::PipelineMetadata>,
     ) -> Self {
         self.metadata = input;
         self

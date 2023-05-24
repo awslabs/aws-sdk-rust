@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateConnectivityInfo`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::set_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    ///   - [`thing_name(impl ::std::convert::Into<String>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::set_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
     ///   - [`connectivity_info(Vec<ConnectivityInfo>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::connectivity_info) / [`set_connectivity_info(Option<Vec<ConnectivityInfo>>)`](crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoFluentBuilder::set_connectivity_info): <p>The connectivity information for the core device.</p>
     /// - On success, responds with [`UpdateConnectivityInfoOutput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput) with field(s):
     ///   - [`version(Option<String>)`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput::version): <p>The new version of the connectivity information for the core device.</p>

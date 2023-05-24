@@ -4,7 +4,7 @@
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"All": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct All {}
 impl All {
     /// Creates a new builder-style object to manufacture [`All`](crate::types::All).
@@ -15,7 +15,9 @@ impl All {
 
 /// A builder for [`All`](crate::types::All).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllBuilder {}
 impl AllBuilder {
     /// Consumes the builder and constructs a [`All`](crate::types::All).

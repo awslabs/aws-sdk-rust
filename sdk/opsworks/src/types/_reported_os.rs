@@ -2,29 +2,29 @@
 
 /// <p>A registered instance's reported operating system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportedOs {
     /// <p>The operating system family.</p>
     #[doc(hidden)]
-    pub family: std::option::Option<std::string::String>,
+    pub family: ::std::option::Option<::std::string::String>,
     /// <p>The operating system name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The operating system version.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl ReportedOs {
     /// <p>The operating system family.</p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<&str> {
         self.family.as_deref()
     }
     /// <p>The operating system name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The operating system version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ReportedOs {
 
 /// A builder for [`ReportedOs`](crate::types::ReportedOs).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportedOsBuilder {
-    pub(crate) family: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
+    pub(crate) family: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl ReportedOsBuilder {
     /// <p>The operating system family.</p>
-    pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.family = Some(input.into());
+    pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system family.</p>
-    pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.family = input;
         self
     }
     /// <p>The operating system name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The operating system version.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system version.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>Records an error that occurred when attempting to stop a specified job run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStopJobRunError {
     /// <p>The name of the job definition that is used in the job run in question.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>JobRunId</code> of the job run in question.</p>
     #[doc(hidden)]
-    pub job_run_id: std::option::Option<std::string::String>,
+    pub job_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies details about the error that was encountered.</p>
     #[doc(hidden)]
-    pub error_detail: std::option::Option<crate::types::ErrorDetail>,
+    pub error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl BatchStopJobRunError {
     /// <p>The name of the job definition that is used in the job run in question.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The <code>JobRunId</code> of the job run in question.</p>
-    pub fn job_run_id(&self) -> std::option::Option<&str> {
+    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
         self.job_run_id.as_deref()
     }
     /// <p>Specifies details about the error that was encountered.</p>
-    pub fn error_detail(&self) -> std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error_detail(&self) -> ::std::option::Option<&crate::types::ErrorDetail> {
         self.error_detail.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl BatchStopJobRunError {
 
 /// A builder for [`BatchStopJobRunError`](crate::types::BatchStopJobRunError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchStopJobRunErrorBuilder {
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) job_run_id: std::option::Option<std::string::String>,
-    pub(crate) error_detail: std::option::Option<crate::types::ErrorDetail>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_detail: ::std::option::Option<crate::types::ErrorDetail>,
 }
 impl BatchStopJobRunErrorBuilder {
     /// <p>The name of the job definition that is used in the job run in question.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the job definition that is used in the job run in question.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p>The <code>JobRunId</code> of the job run in question.</p>
-    pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_run_id = Some(input.into());
+    pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>JobRunId</code> of the job run in question.</p>
-    pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_run_id = input;
         self
     }
     /// <p>Specifies details about the error that was encountered.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
-        self.error_detail = Some(input);
+        self.error_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies details about the error that was encountered.</p>
     pub fn set_error_detail(
         mut self,
-        input: std::option::Option<crate::types::ErrorDetail>,
+        input: ::std::option::Option<crate::types::ErrorDetail>,
     ) -> Self {
         self.error_detail = input;
         self

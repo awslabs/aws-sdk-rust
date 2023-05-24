@@ -2,29 +2,29 @@
 
 /// <p>Used as the request parameter in the <code>ListAssessmentTemplates</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTemplateFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
     #[doc(hidden)]
-    pub name_pattern: std::option::Option<std::string::String>,
+    pub name_pattern: ::std::option::Option<::std::string::String>,
     /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
     #[doc(hidden)]
-    pub duration_range: std::option::Option<crate::types::DurationRange>,
+    pub duration_range: ::std::option::Option<crate::types::DurationRange>,
     /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
     #[doc(hidden)]
-    pub rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssessmentTemplateFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn name_pattern(&self) -> std::option::Option<&str> {
+    pub fn name_pattern(&self) -> ::std::option::Option<&str> {
         self.name_pattern.as_deref()
     }
     /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn duration_range(&self) -> std::option::Option<&crate::types::DurationRange> {
+    pub fn duration_range(&self) -> ::std::option::Option<&crate::types::DurationRange> {
         self.duration_range.as_ref()
     }
     /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rules_package_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.rules_package_arns.as_deref()
     }
 }
@@ -37,32 +37,34 @@ impl AssessmentTemplateFilter {
 
 /// A builder for [`AssessmentTemplateFilter`](crate::types::AssessmentTemplateFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssessmentTemplateFilterBuilder {
-    pub(crate) name_pattern: std::option::Option<std::string::String>,
-    pub(crate) duration_range: std::option::Option<crate::types::DurationRange>,
-    pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name_pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) duration_range: ::std::option::Option<crate::types::DurationRange>,
+    pub(crate) rules_package_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssessmentTemplateFilterBuilder {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn name_pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name_pattern = Some(input.into());
+    pub fn name_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn set_name_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_pattern = input;
         self
     }
     /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
     pub fn duration_range(mut self, input: crate::types::DurationRange) -> Self {
-        self.duration_range = Some(input);
+        self.duration_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
     pub fn set_duration_range(
         mut self,
-        input: std::option::Option<crate::types::DurationRange>,
+        input: ::std::option::Option<crate::types::DurationRange>,
     ) -> Self {
         self.duration_range = input;
         self
@@ -72,16 +74,19 @@ impl AssessmentTemplateFilterBuilder {
     /// To override the contents of this collection use [`set_rules_package_arns`](Self::set_rules_package_arns).
     ///
     /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rules_package_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.rules_package_arns.unwrap_or_default();
         v.push(input.into());
-        self.rules_package_arns = Some(v);
+        self.rules_package_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
     pub fn set_rules_package_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.rules_package_arns = input;
         self

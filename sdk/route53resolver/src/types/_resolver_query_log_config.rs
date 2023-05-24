@@ -2,14 +2,14 @@
 
 /// <p>In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverQueryLogConfig.html">CreateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverQueryLogConfig.html">DeleteResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfig.html">GetResolverQueryLogConfig</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigs.html">ListResolverQueryLogConfigs</a> request, a complex type that contains settings for one query logging configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverQueryLogConfig {
     /// <p>The ID for the query logging configuration.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code>: Resolver is creating the query logging configuration.</p> </li>
@@ -22,36 +22,36 @@ pub struct ResolverQueryLogConfig {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
+    pub status: ::std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
     /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     #[doc(hidden)]
-    pub share_status: std::option::Option<crate::types::ShareStatus>,
+    pub share_status: ::std::option::Option<crate::types::ShareStatus>,
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
     #[doc(hidden)]
     pub association_count: i32,
     /// <p>The ARN for the query logging configuration.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the query logging configuration. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
-    pub destination_arn: std::option::Option<std::string::String>,
+    pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request that created the query logging configuration. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
     #[doc(hidden)]
-    pub creator_request_id: std::option::Option<std::string::String>,
+    pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<std::string::String>,
+    pub creation_time: ::std::option::Option<::std::string::String>,
 }
 impl ResolverQueryLogConfig {
     /// <p>The ID for the query logging configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
@@ -65,11 +65,11 @@ impl ResolverQueryLogConfig {
     /// <li> <p>Permissions don't allow sending logs to the destination.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResolverQueryLogConfigStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ResolverQueryLogConfigStatus> {
         self.status.as_ref()
     }
     /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
-    pub fn share_status(&self) -> std::option::Option<&crate::types::ShareStatus> {
+    pub fn share_status(&self) -> ::std::option::Option<&crate::types::ShareStatus> {
         self.share_status.as_ref()
     }
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
@@ -77,23 +77,23 @@ impl ResolverQueryLogConfig {
         self.association_count
     }
     /// <p>The ARN for the query logging configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the query logging configuration. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
     /// <p>A unique string that identifies the request that created the query logging configuration. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
 }
@@ -106,37 +106,39 @@ impl ResolverQueryLogConfig {
 
 /// A builder for [`ResolverQueryLogConfig`](crate::types::ResolverQueryLogConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResolverQueryLogConfigBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
-    pub(crate) share_status: std::option::Option<crate::types::ShareStatus>,
-    pub(crate) association_count: std::option::Option<i32>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) destination_arn: std::option::Option<std::string::String>,
-    pub(crate) creator_request_id: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
+    pub(crate) share_status: ::std::option::Option<crate::types::ShareStatus>,
+    pub(crate) association_count: ::std::option::Option<i32>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::std::string::String>,
 }
 impl ResolverQueryLogConfigBuilder {
     /// <p>The ID for the query logging configuration.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the query logging configuration.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
@@ -152,7 +154,7 @@ impl ResolverQueryLogConfigBuilder {
     /// </ul> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ResolverQueryLogConfigStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
@@ -168,84 +170,99 @@ impl ResolverQueryLogConfigBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
+        input: ::std::option::Option<crate::types::ResolverQueryLogConfigStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub fn share_status(mut self, input: crate::types::ShareStatus) -> Self {
-        self.share_status = Some(input);
+        self.share_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub fn set_share_status(
         mut self,
-        input: std::option::Option<crate::types::ShareStatus>,
+        input: ::std::option::Option<crate::types::ShareStatus>,
     ) -> Self {
         self.share_status = input;
         self
     }
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
     pub fn association_count(mut self, input: i32) -> Self {
-        self.association_count = Some(input);
+        self.association_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
-    pub fn set_association_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_association_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.association_count = input;
         self
     }
     /// <p>The ARN for the query logging configuration.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the query logging configuration.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the query logging configuration. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the query logging configuration. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
-    pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_arn = Some(input.into());
+    pub fn destination_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource that you want Resolver to send query logs: an Amazon S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream.</p>
-    pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_arn = input;
         self
     }
     /// <p>A unique string that identifies the request that created the query logging configuration. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creator_request_id = Some(input.into());
+    pub fn creator_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request that created the query logging configuration. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
     pub fn set_creator_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.creator_request_id = input;
         self
     }
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_time = Some(input.into());
+    pub fn creation_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the query logging configuration was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_time = input;
         self
     }

@@ -2,24 +2,26 @@
 
 /// <p>Provides information about the rules attached to the rule group. These rules identify the web requests that you want to allow, block, or count. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRuleGroupRulesDetails {
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
+    pub action: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
     #[doc(hidden)]
     pub priority: i32,
     /// <p>The rule ID for a rule. </p>
     #[doc(hidden)]
-    pub rule_id: std::option::Option<std::string::String>,
+    pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of rule. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRuleGroupRulesDetails {
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
-    pub fn action(&self) -> std::option::Option<&crate::types::AwsWafRuleGroupRulesActionDetails> {
+    pub fn action(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsWafRuleGroupRulesActionDetails> {
         self.action.as_ref()
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
@@ -27,11 +29,11 @@ impl AwsWafRuleGroupRulesDetails {
         self.priority
     }
     /// <p>The rule ID for a rule. </p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
         self.rule_id.as_deref()
     }
     /// <p>The type of rule. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -44,54 +46,56 @@ impl AwsWafRuleGroupRulesDetails {
 
 /// A builder for [`AwsWafRuleGroupRulesDetails`](crate::types::AwsWafRuleGroupRulesDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafRuleGroupRulesDetailsBuilder {
-    pub(crate) action: std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) rule_id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) action: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRuleGroupRulesDetailsBuilder {
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
     pub fn action(mut self, input: crate::types::AwsWafRuleGroupRulesActionDetails) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
     pub fn set_action(
         mut self,
-        input: std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
+        input: ::std::option::Option<crate::types::AwsWafRuleGroupRulesActionDetails>,
     ) -> Self {
         self.action = input;
         self
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>If you define more than one rule in a web ACL, WAF evaluates each request against the rules in order based on the value of <code>Priority</code>.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
     /// <p>The rule ID for a rule. </p>
-    pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_id = Some(input.into());
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule ID for a rule. </p>
-    pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
     }
     /// <p>The type of rule. </p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of rule. </p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

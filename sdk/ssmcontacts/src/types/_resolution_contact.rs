@@ -3,29 +3,29 @@
 /// <p>Information about the engagement resolution steps. The resolution starts from the first contact, which can be an escalation plan, then resolves to an on-call rotation, and finally to a personal contact.</p>
 /// <p>The <code>ResolutionContact</code> structure describes the information for each node or step in that process. It contains information about different contact types, such as the escalation, rotation, and personal contacts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolutionContact {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
     #[doc(hidden)]
-    pub contact_arn: std::option::Option<std::string::String>,
+    pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of contact for a resolution step.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ContactType>,
+    pub r#type: ::std::option::Option<crate::types::ContactType>,
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
     #[doc(hidden)]
-    pub stage_index: std::option::Option<i32>,
+    pub stage_index: ::std::option::Option<i32>,
 }
 impl ResolutionContact {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
     /// <p>The type of contact for a resolution step.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ContactType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContactType> {
         self.r#type.as_ref()
     }
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
-    pub fn stage_index(&self) -> std::option::Option<i32> {
+    pub fn stage_index(&self) -> ::std::option::Option<i32> {
         self.stage_index
     }
 }
@@ -38,40 +38,42 @@ impl ResolutionContact {
 
 /// A builder for [`ResolutionContact`](crate::types::ResolutionContact).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResolutionContactBuilder {
-    pub(crate) contact_arn: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ContactType>,
-    pub(crate) stage_index: std::option::Option<i32>,
+    pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ContactType>,
+    pub(crate) stage_index: ::std::option::Option<i32>,
 }
 impl ResolutionContactBuilder {
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
-    pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_arn = Some(input.into());
+    pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a contact in the engagement resolution process. </p>
-    pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_arn = input;
         self
     }
     /// <p>The type of contact for a resolution step.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of contact for a resolution step.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ContactType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
     pub fn stage_index(mut self, input: i32) -> Self {
-        self.stage_index = Some(input);
+        self.stage_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The stage in the escalation plan that resolves to this contact.</p>
-    pub fn set_stage_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_stage_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stage_index = input;
         self
     }

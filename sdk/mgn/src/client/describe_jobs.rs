@@ -6,7 +6,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`filters(DescribeJobsRequestFilters)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::filters) / [`set_filters(Option<DescribeJobsRequestFilters>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_filters): <p>Request to describe Job log filters.</p>
     ///   - [`max_results(i32)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_max_results): <p>Request to describe job log items by max results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_next_token): <p>Request to describe job log items by next token.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_jobs::builders::DescribeJobsFluentBuilder::set_next_token): <p>Request to describe job log items by next token.</p>
     /// - On success, responds with [`DescribeJobsOutput`](crate::operation::describe_jobs::DescribeJobsOutput) with field(s):
     ///   - [`items(Option<Vec<Job>>)`](crate::operation::describe_jobs::DescribeJobsOutput::items): <p>Request to describe Job log items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::describe_jobs::DescribeJobsOutput::next_token): <p>Request to describe Job response by next token.</p>

@@ -7,11 +7,11 @@
 /// <li> <p>An existing global secondary index to be removed from an existing table.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalSecondaryIndexUpdate {
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
     #[doc(hidden)]
-    pub update: std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
+    pub update: ::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
     /// <li> <p> <code>IndexName </code> </p> </li>
@@ -21,14 +21,14 @@ pub struct GlobalSecondaryIndexUpdate {
     /// <li> <p> <code>ProvisionedThroughput </code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub create: std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,
+    pub create: ::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,
     /// <p>The name of an existing global secondary index to be removed.</p>
     #[doc(hidden)]
-    pub delete: std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>,
+    pub delete: ::std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>,
 }
 impl GlobalSecondaryIndexUpdate {
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
-    pub fn update(&self) -> std::option::Option<&crate::types::UpdateGlobalSecondaryIndexAction> {
+    pub fn update(&self) -> ::std::option::Option<&crate::types::UpdateGlobalSecondaryIndexAction> {
         self.update.as_ref()
     }
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
@@ -39,11 +39,11 @@ impl GlobalSecondaryIndexUpdate {
     /// <li> <p> <code>Projection </code> </p> </li>
     /// <li> <p> <code>ProvisionedThroughput </code> </p> </li>
     /// </ul>
-    pub fn create(&self) -> std::option::Option<&crate::types::CreateGlobalSecondaryIndexAction> {
+    pub fn create(&self) -> ::std::option::Option<&crate::types::CreateGlobalSecondaryIndexAction> {
         self.create.as_ref()
     }
     /// <p>The name of an existing global secondary index to be removed.</p>
-    pub fn delete(&self) -> std::option::Option<&crate::types::DeleteGlobalSecondaryIndexAction> {
+    pub fn delete(&self) -> ::std::option::Option<&crate::types::DeleteGlobalSecondaryIndexAction> {
         self.delete.as_ref()
     }
 }
@@ -56,22 +56,24 @@ impl GlobalSecondaryIndexUpdate {
 
 /// A builder for [`GlobalSecondaryIndexUpdate`](crate::types::GlobalSecondaryIndexUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalSecondaryIndexUpdateBuilder {
-    pub(crate) update: std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
-    pub(crate) create: std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,
-    pub(crate) delete: std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>,
+    pub(crate) update: ::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
+    pub(crate) create: ::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,
+    pub(crate) delete: ::std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>,
 }
 impl GlobalSecondaryIndexUpdateBuilder {
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
     pub fn update(mut self, input: crate::types::UpdateGlobalSecondaryIndexAction) -> Self {
-        self.update = Some(input);
+        self.update = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of an existing global secondary index, along with new provisioned throughput settings to be applied to that index.</p>
     pub fn set_update(
         mut self,
-        input: std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
+        input: ::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
     ) -> Self {
         self.update = input;
         self
@@ -85,7 +87,7 @@ impl GlobalSecondaryIndexUpdateBuilder {
     /// <li> <p> <code>ProvisionedThroughput </code> </p> </li>
     /// </ul>
     pub fn create(mut self, input: crate::types::CreateGlobalSecondaryIndexAction) -> Self {
-        self.create = Some(input);
+        self.create = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
@@ -98,20 +100,20 @@ impl GlobalSecondaryIndexUpdateBuilder {
     /// </ul>
     pub fn set_create(
         mut self,
-        input: std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,
+        input: ::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,
     ) -> Self {
         self.create = input;
         self
     }
     /// <p>The name of an existing global secondary index to be removed.</p>
     pub fn delete(mut self, input: crate::types::DeleteGlobalSecondaryIndexAction) -> Self {
-        self.delete = Some(input);
+        self.delete = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of an existing global secondary index to be removed.</p>
     pub fn set_delete(
         mut self,
-        input: std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>,
+        input: ::std::option::Option<crate::types::DeleteGlobalSecondaryIndexAction>,
     ) -> Self {
         self.delete = input;
         self

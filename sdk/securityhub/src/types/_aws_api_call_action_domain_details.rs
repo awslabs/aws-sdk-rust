@@ -2,15 +2,15 @@
 
 /// <p>Provided if <code>CallerType</code> is <code>domain</code>. It provides information about the DNS domain that issued the API call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiCallActionDomainDetails {
     /// <p>The name of the DNS domain that issued the API call.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiCallActionDomainDetails {
     /// <p>The name of the DNS domain that issued the API call.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AwsApiCallActionDomainDetails {
 
 /// A builder for [`AwsApiCallActionDomainDetails`](crate::types::AwsApiCallActionDomainDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsApiCallActionDomainDetailsBuilder {
-    pub(crate) domain: std::option::Option<std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiCallActionDomainDetailsBuilder {
     /// <p>The name of the DNS domain that issued the API call.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DNS domain that issued the API call.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }

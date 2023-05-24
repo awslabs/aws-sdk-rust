@@ -2,50 +2,50 @@
 
 /// <p> Filters you can use to specify which events are returned when <code>ListEvents</code> is called. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventsFilters {
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
     #[doc(hidden)]
-    pub insight_id: std::option::Option<std::string::String>,
+    pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p> A time range during which you want the filtered events to have occurred. </p>
     #[doc(hidden)]
-    pub event_time_range: std::option::Option<crate::types::EventTimeRange>,
+    pub event_time_range: ::std::option::Option<crate::types::EventTimeRange>,
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
     #[doc(hidden)]
-    pub event_class: std::option::Option<crate::types::EventClass>,
+    pub event_class: ::std::option::Option<crate::types::EventClass>,
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
     #[doc(hidden)]
-    pub event_source: std::option::Option<std::string::String>,
+    pub event_source: ::std::option::Option<::std::string::String>,
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<crate::types::EventDataSource>,
+    pub data_source: ::std::option::Option<crate::types::EventDataSource>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
-    pub resource_collection: std::option::Option<crate::types::ResourceCollection>,
+    pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
 }
 impl ListEventsFilters {
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
-    pub fn insight_id(&self) -> std::option::Option<&str> {
+    pub fn insight_id(&self) -> ::std::option::Option<&str> {
         self.insight_id.as_deref()
     }
     /// <p> A time range during which you want the filtered events to have occurred. </p>
-    pub fn event_time_range(&self) -> std::option::Option<&crate::types::EventTimeRange> {
+    pub fn event_time_range(&self) -> ::std::option::Option<&crate::types::EventTimeRange> {
         self.event_time_range.as_ref()
     }
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
-    pub fn event_class(&self) -> std::option::Option<&crate::types::EventClass> {
+    pub fn event_class(&self) -> ::std::option::Option<&crate::types::EventClass> {
         self.event_class.as_ref()
     }
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
-    pub fn event_source(&self) -> std::option::Option<&str> {
+    pub fn event_source(&self) -> ::std::option::Option<&str> {
         self.event_source.as_deref()
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::EventDataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<&crate::types::EventDataSource> {
         self.data_source.as_ref()
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resource_collection(&self) -> std::option::Option<&crate::types::ResourceCollection> {
+    pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
 }
@@ -58,81 +58,86 @@ impl ListEventsFilters {
 
 /// A builder for [`ListEventsFilters`](crate::types::ListEventsFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListEventsFiltersBuilder {
-    pub(crate) insight_id: std::option::Option<std::string::String>,
-    pub(crate) event_time_range: std::option::Option<crate::types::EventTimeRange>,
-    pub(crate) event_class: std::option::Option<crate::types::EventClass>,
-    pub(crate) event_source: std::option::Option<std::string::String>,
-    pub(crate) data_source: std::option::Option<crate::types::EventDataSource>,
-    pub(crate) resource_collection: std::option::Option<crate::types::ResourceCollection>,
+    pub(crate) insight_id: ::std::option::Option<::std::string::String>,
+    pub(crate) event_time_range: ::std::option::Option<crate::types::EventTimeRange>,
+    pub(crate) event_class: ::std::option::Option<crate::types::EventClass>,
+    pub(crate) event_source: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source: ::std::option::Option<crate::types::EventDataSource>,
+    pub(crate) resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
 }
 impl ListEventsFiltersBuilder {
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
-    pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.insight_id = Some(input.into());
+    pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
-    pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
     /// <p> A time range during which you want the filtered events to have occurred. </p>
     pub fn event_time_range(mut self, input: crate::types::EventTimeRange) -> Self {
-        self.event_time_range = Some(input);
+        self.event_time_range = ::std::option::Option::Some(input);
         self
     }
     /// <p> A time range during which you want the filtered events to have occurred. </p>
     pub fn set_event_time_range(
         mut self,
-        input: std::option::Option<crate::types::EventTimeRange>,
+        input: ::std::option::Option<crate::types::EventTimeRange>,
     ) -> Self {
         self.event_time_range = input;
         self
     }
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
     pub fn event_class(mut self, input: crate::types::EventClass) -> Self {
-        self.event_class = Some(input);
+        self.event_class = ::std::option::Option::Some(input);
         self
     }
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
-    pub fn set_event_class(mut self, input: std::option::Option<crate::types::EventClass>) -> Self {
+    pub fn set_event_class(
+        mut self,
+        input: ::std::option::Option<crate::types::EventClass>,
+    ) -> Self {
         self.event_class = input;
         self
     }
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
-    pub fn event_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_source = Some(input.into());
+    pub fn event_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
-    pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_source = input;
         self
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
     pub fn data_source(mut self, input: crate::types::EventDataSource) -> Self {
-        self.data_source = Some(input);
+        self.data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
     pub fn set_data_source(
         mut self,
-        input: std::option::Option<crate::types::EventDataSource>,
+        input: ::std::option::Option<crate::types::EventDataSource>,
     ) -> Self {
         self.data_source = input;
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
-        self.resource_collection = Some(input);
+        self.resource_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn set_resource_collection(
         mut self,
-        input: std::option::Option<crate::types::ResourceCollection>,
+        input: ::std::option::Option<crate::types::ResourceCollection>,
     ) -> Self {
         self.resource_collection = input;
         self

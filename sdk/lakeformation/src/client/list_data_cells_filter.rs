@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`table(TableResource)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::table) / [`set_table(Option<TableResource>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::set_table): <p>A table in the Glue Data Catalog.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation call.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation call.</p>
     ///   - [`max_results(i32)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_data_cells_filter::builders::ListDataCellsFilterFluentBuilder::set_max_results): <p>The maximum size of the response.</p>
     /// - On success, responds with [`ListDataCellsFilterOutput`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput) with field(s):
     ///   - [`data_cells_filters(Option<Vec<DataCellsFilter>>)`](crate::operation::list_data_cells_filter::ListDataCellsFilterOutput::data_cells_filters): <p>A list of <code>DataCellFilter</code> structures.</p>

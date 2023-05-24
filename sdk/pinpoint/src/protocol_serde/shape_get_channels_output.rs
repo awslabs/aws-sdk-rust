@@ -2,7 +2,7 @@
 pub(crate) fn de_channels_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ChannelsResponse>,
+    ::std::option::Option<crate::types::ChannelsResponse>,
     crate::operation::get_channels::GetChannelsError,
 > {
     (!body.is_empty())

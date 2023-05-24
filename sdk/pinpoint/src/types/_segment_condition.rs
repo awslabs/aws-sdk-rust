@@ -2,15 +2,15 @@
 
 /// <p>Specifies a segment to associate with an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentCondition {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
     #[doc(hidden)]
-    pub segment_id: std::option::Option<std::string::String>,
+    pub segment_id: ::std::option::Option<::std::string::String>,
 }
 impl SegmentCondition {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
-    pub fn segment_id(&self) -> std::option::Option<&str> {
+    pub fn segment_id(&self) -> ::std::option::Option<&str> {
         self.segment_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl SegmentCondition {
 
 /// A builder for [`SegmentCondition`](crate::types::SegmentCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SegmentConditionBuilder {
-    pub(crate) segment_id: std::option::Option<std::string::String>,
+    pub(crate) segment_id: ::std::option::Option<::std::string::String>,
 }
 impl SegmentConditionBuilder {
     /// <p>The unique identifier for the segment to associate with the activity.</p>
-    pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.segment_id = Some(input.into());
+    pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the segment to associate with the activity.</p>
-    pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_segment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_id = input;
         self
     }

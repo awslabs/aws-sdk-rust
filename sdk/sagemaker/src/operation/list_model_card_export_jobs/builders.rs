@@ -6,29 +6,29 @@ pub use crate::operation::list_model_card_export_jobs::_list_model_card_export_j
 /// Fluent builder constructing a request to `ListModelCardExportJobs`.
 ///
 /// <p>List the export jobs for the Amazon SageMaker Model Card.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListModelCardExportJobsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsInputBuilder,
 }
 impl ListModelCardExportJobsFluentBuilder {
     /// Creates a new `ListModelCardExportJobs`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_model_card_export_jobs::ListModelCardExportJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_model_card_export_jobs::ListModelCardExportJobsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListModelCardExportJobsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_model_card_export_jobs::ListModelCardExportJobsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListModelCardExportJobsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_model_card_export_jobs::ListModelCardExportJobsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_model_card_export_jobs::ListModelCardExportJobsError,
         >,
     > {
@@ -90,12 +93,18 @@ impl ListModelCardExportJobsFluentBuilder {
         crate::operation::list_model_card_export_jobs::paginator::ListModelCardExportJobsPaginator::new(self.handle, self.inner)
     }
     /// <p>List export jobs for the model card with the specified name.</p>
-    pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn model_card_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.model_card_name(input.into());
         self
     }
     /// <p>List export jobs for the model card with the specified name.</p>
-    pub fn set_model_card_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_card_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_model_card_name(input);
         self
     }
@@ -105,32 +114,32 @@ impl ListModelCardExportJobsFluentBuilder {
         self
     }
     /// <p>List export jobs for the model card with the specified version.</p>
-    pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_model_card_version(input);
         self
     }
     /// <p>Only list model card export jobs that were created after the time specified.</p>
-    pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>Only list model card export jobs that were created after the time specified.</p>
     pub fn set_creation_time_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
     /// <p>Only list model card export jobs that were created before the time specified.</p>
-    pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
         self
     }
     /// <p>Only list model card export jobs that were created before the time specified.</p>
     pub fn set_creation_time_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
@@ -138,7 +147,7 @@ impl ListModelCardExportJobsFluentBuilder {
     /// <p>Only list model card export jobs with names that contain the specified string.</p>
     pub fn model_card_export_job_name_contains(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.model_card_export_job_name_contains(input.into());
         self
@@ -146,7 +155,7 @@ impl ListModelCardExportJobsFluentBuilder {
     /// <p>Only list model card export jobs with names that contain the specified string.</p>
     pub fn set_model_card_export_job_name_contains(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_model_card_export_job_name_contains(input);
         self
@@ -159,7 +168,7 @@ impl ListModelCardExportJobsFluentBuilder {
     /// <p>Only list model card export jobs with the specified status.</p>
     pub fn set_status_equals(
         mut self,
-        input: std::option::Option<crate::types::ModelCardExportJobStatus>,
+        input: ::std::option::Option<crate::types::ModelCardExportJobStatus>,
     ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
@@ -172,7 +181,7 @@ impl ListModelCardExportJobsFluentBuilder {
     /// <p>Sort model card export jobs by either name or creation time. Sorts by creation time by default.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::ModelCardExportJobSortBy>,
+        input: ::std::option::Option<crate::types::ModelCardExportJobSortBy>,
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
@@ -185,18 +194,18 @@ impl ListModelCardExportJobsFluentBuilder {
     /// <p>Sort model card export jobs by ascending or descending order.</p>
     pub fn set_sort_order(
         mut self,
-        input: std::option::Option<crate::types::ModelCardExportJobSortOrder>,
+        input: ::std::option::Option<crate::types::ModelCardExportJobSortOrder>,
     ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
     /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the response to a previous <code>ListModelCardExportJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model card export jobs, use the token in the next request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -206,7 +215,7 @@ impl ListModelCardExportJobsFluentBuilder {
         self
     }
     /// <p>The maximum number of model card export jobs to list.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

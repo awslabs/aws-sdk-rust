@@ -2,19 +2,19 @@
 
 /// <p>The notification configuration for the S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfiguration {
     /// <p>Configurations for S3 bucket notifications.</p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<
-        std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
+    pub configurations: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
     >,
 }
 impl AwsS3BucketNotificationConfiguration {
     /// <p>Configurations for S3 bucket notifications.</p>
     pub fn configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsS3BucketNotificationConfigurationDetail]> {
+    ) -> ::std::option::Option<&[crate::types::AwsS3BucketNotificationConfigurationDetail]> {
         self.configurations.as_deref()
     }
 }
@@ -27,10 +27,12 @@ impl AwsS3BucketNotificationConfiguration {
 
 /// A builder for [`AwsS3BucketNotificationConfiguration`](crate::types::AwsS3BucketNotificationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsS3BucketNotificationConfigurationBuilder {
-    pub(crate) configurations: std::option::Option<
-        std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
+    pub(crate) configurations: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
     >,
 }
 impl AwsS3BucketNotificationConfigurationBuilder {
@@ -45,14 +47,14 @@ impl AwsS3BucketNotificationConfigurationBuilder {
     ) -> Self {
         let mut v = self.configurations.unwrap_or_default();
         v.push(input);
-        self.configurations = Some(v);
+        self.configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Configurations for S3 bucket notifications.</p>
     pub fn set_configurations(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
         >,
     ) -> Self {
         self.configurations = input;

@@ -2,29 +2,29 @@
 
 /// <p>Summary information about the DataIntegration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataIntegrationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DataIntegration.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the data source.</p>
     #[doc(hidden)]
-    pub source_uri: std::option::Option<std::string::String>,
+    pub source_uri: ::std::option::Option<::std::string::String>,
 }
 impl DataIntegrationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the DataIntegration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The URI of the data source.</p>
-    pub fn source_uri(&self) -> std::option::Option<&str> {
+    pub fn source_uri(&self) -> ::std::option::Option<&str> {
         self.source_uri.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl DataIntegrationSummary {
 
 /// A builder for [`DataIntegrationSummary`](crate::types::DataIntegrationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataIntegrationSummaryBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) source_uri: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_uri: ::std::option::Option<::std::string::String>,
 }
 impl DataIntegrationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the DataIntegration.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DataIntegration.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The URI of the data source.</p>
-    pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_uri = Some(input.into());
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the data source.</p>
-    pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_uri = input;
         self
     }

@@ -2,21 +2,21 @@
 
 /// <p>Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentConfigurationStatus {
     /// <p>The agent/connector ID.</p>
     #[doc(hidden)]
-    pub agent_id: std::option::Option<std::string::String>,
+    pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>
     #[doc(hidden)]
     pub operation_succeeded: bool,
     /// <p>A description of the operation performed.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl AgentConfigurationStatus {
     /// <p>The agent/connector ID.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<&str> {
         self.agent_id.as_deref()
     }
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>
@@ -24,7 +24,7 @@ impl AgentConfigurationStatus {
         self.operation_succeeded
     }
     /// <p>A description of the operation performed.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl AgentConfigurationStatus {
 
 /// A builder for [`AgentConfigurationStatus`](crate::types::AgentConfigurationStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentConfigurationStatusBuilder {
-    pub(crate) agent_id: std::option::Option<std::string::String>,
-    pub(crate) operation_succeeded: std::option::Option<bool>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) operation_succeeded: ::std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl AgentConfigurationStatusBuilder {
     /// <p>The agent/connector ID.</p>
-    pub fn agent_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.agent_id = Some(input.into());
+    pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The agent/connector ID.</p>
-    pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_id = input;
         self
     }
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>
     pub fn operation_succeeded(mut self, input: bool) -> Self {
-        self.operation_succeeded = Some(input);
+        self.operation_succeeded = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>
-    pub fn set_operation_succeeded(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_operation_succeeded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.operation_succeeded = input;
         self
     }
     /// <p>A description of the operation performed.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the operation performed.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

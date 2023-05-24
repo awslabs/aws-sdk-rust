@@ -2,15 +2,15 @@
 
 /// <p>An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedOpsItem {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
     #[doc(hidden)]
-    pub ops_item_id: std::option::Option<std::string::String>,
+    pub ops_item_id: ::std::option::Option<::std::string::String>,
 }
 impl RelatedOpsItem {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> ::std::option::Option<&str> {
         self.ops_item_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl RelatedOpsItem {
 
 /// A builder for [`RelatedOpsItem`](crate::types::RelatedOpsItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelatedOpsItemBuilder {
-    pub(crate) ops_item_id: std::option::Option<std::string::String>,
+    pub(crate) ops_item_id: ::std::option::Option<::std::string::String>,
 }
 impl RelatedOpsItemBuilder {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
-    pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ops_item_id = Some(input.into());
+    pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ops_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
-    pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_id = input;
         self
     }

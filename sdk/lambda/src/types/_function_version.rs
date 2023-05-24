@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FunctionVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum FunctionVersion {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FunctionVersion {
+impl ::std::convert::From<&str> for FunctionVersion {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => FunctionVersion::All,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for FunctionVersion {
         }
     }
 }
-impl std::str::FromStr for FunctionVersion {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FunctionVersion {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FunctionVersion::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FunctionVersion::from(s))
     }
 }
 impl FunctionVersion {
@@ -81,7 +81,7 @@ impl FunctionVersion {
         &["ALL"]
     }
 }
-impl AsRef<str> for FunctionVersion {
+impl ::std::convert::AsRef<str> for FunctionVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

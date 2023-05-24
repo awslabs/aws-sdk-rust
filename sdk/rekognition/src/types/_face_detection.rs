@@ -2,14 +2,14 @@
 
 /// <p>Information about a face detected in a video analysis request and the time the face was detected in the video. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaceDetection {
     /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>The face properties for the detected face.</p>
     #[doc(hidden)]
-    pub face: std::option::Option<crate::types::FaceDetail>,
+    pub face: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl FaceDetection {
     /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
@@ -17,7 +17,7 @@ impl FaceDetection {
         self.timestamp
     }
     /// <p>The face properties for the detected face.</p>
-    pub fn face(&self) -> std::option::Option<&crate::types::FaceDetail> {
+    pub fn face(&self) -> ::std::option::Option<&crate::types::FaceDetail> {
         self.face.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl FaceDetection {
 
 /// A builder for [`FaceDetection`](crate::types::FaceDetection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FaceDetectionBuilder {
-    pub(crate) timestamp: std::option::Option<i64>,
-    pub(crate) face: std::option::Option<crate::types::FaceDetail>,
+    pub(crate) timestamp: ::std::option::Option<i64>,
+    pub(crate) face: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl FaceDetectionBuilder {
     /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
     pub fn timestamp(mut self, input: i64) -> Self {
-        self.timestamp = Some(input);
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time, in milliseconds from the start of the video, that the face was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the face first appears.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The face properties for the detected face.</p>
     pub fn face(mut self, input: crate::types::FaceDetail) -> Self {
-        self.face = Some(input);
+        self.face = ::std::option::Option::Some(input);
         self
     }
     /// <p>The face properties for the detected face.</p>
-    pub fn set_face(mut self, input: std::option::Option<crate::types::FaceDetail>) -> Self {
+    pub fn set_face(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOptionGroupInput {
     /// <p>Specifies the name of the option group to be created.</p>
     /// <p>Constraints:</p>
@@ -13,7 +13,7 @@ pub struct CreateOptionGroupInput {
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
     #[doc(hidden)]
-    pub option_group_name: std::option::Option<std::string::String>,
+    pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the engine that this option group should be associated with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -30,16 +30,16 @@ pub struct CreateOptionGroupInput {
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub engine_name: std::option::Option<std::string::String>,
+    pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
     #[doc(hidden)]
-    pub major_engine_version: std::option::Option<std::string::String>,
+    pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the option group.</p>
     #[doc(hidden)]
-    pub option_group_description: std::option::Option<std::string::String>,
+    pub option_group_description: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the option group.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOptionGroupInput {
     /// <p>Specifies the name of the option group to be created.</p>
@@ -50,7 +50,7 @@ impl CreateOptionGroupInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn option_group_name(&self) -> std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
     /// <p>Specifies the name of the engine that this option group should be associated with.</p>
@@ -68,19 +68,19 @@ impl CreateOptionGroupInput {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn engine_name(&self) -> std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<&str> {
         self.engine_name.as_deref()
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The description of the option group.</p>
-    pub fn option_group_description(&self) -> std::option::Option<&str> {
+    pub fn option_group_description(&self) -> ::std::option::Option<&str> {
         self.option_group_description.as_deref()
     }
     /// <p>Tags to assign to the option group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -94,13 +94,15 @@ impl CreateOptionGroupInput {
 
 /// A builder for [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateOptionGroupInputBuilder {
-    pub(crate) option_group_name: std::option::Option<std::string::String>,
-    pub(crate) engine_name: std::option::Option<std::string::String>,
-    pub(crate) major_engine_version: std::option::Option<std::string::String>,
-    pub(crate) option_group_description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_name: ::std::option::Option<::std::string::String>,
+    pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) option_group_description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateOptionGroupInputBuilder {
     /// <p>Specifies the name of the option group to be created.</p>
@@ -111,8 +113,11 @@ impl CreateOptionGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
-    pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_group_name = Some(input.into());
+    pub fn option_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the option group to be created.</p>
@@ -125,7 +130,7 @@ impl CreateOptionGroupInputBuilder {
     /// <p>Example: <code>myoptiongroup</code> </p>
     pub fn set_option_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.option_group_name = input;
         self
@@ -145,8 +150,8 @@ impl CreateOptionGroupInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_name = Some(input.into());
+    pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the engine that this option group should be associated with.</p>
@@ -164,32 +169,38 @@ impl CreateOptionGroupInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
         self
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-    pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.major_engine_version = Some(input.into());
+    pub fn major_engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.major_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
     pub fn set_major_engine_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.major_engine_version = input;
         self
     }
     /// <p>The description of the option group.</p>
-    pub fn option_group_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_group_description = Some(input.into());
+    pub fn option_group_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.option_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the option group.</p>
     pub fn set_option_group_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.option_group_description = input;
         self
@@ -202,13 +213,13 @@ impl CreateOptionGroupInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Tags to assign to the option group.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -216,11 +227,11 @@ impl CreateOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_option_group::CreateOptionGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_option_group::CreateOptionGroupInput {
                 option_group_name: self.option_group_name,
                 engine_name: self.engine_name,

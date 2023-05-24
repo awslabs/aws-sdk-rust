@@ -2,27 +2,27 @@
 
 /// <p>List export response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExportsOutput {
     /// <p>List export response items.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::ExportTask>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>,
     /// <p>List export response next token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListExportsOutput {
     /// <p>List export response items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::ExportTask]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ExportTask]> {
         self.items.as_deref()
     }
     /// <p>List export response next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListExportsOutput {
+impl ::aws_http::request_id::RequestId for ListExportsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListExportsOutput {
 
 /// A builder for [`ListExportsOutput`](crate::operation::list_exports::ListExportsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListExportsOutputBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::ExportTask>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListExportsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListExportsOutputBuilder {
     pub fn items(mut self, input: crate::types::ExportTask) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>List export response items.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExportTask>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportTask>>,
     ) -> Self {
         self.items = input;
         self
     }
     /// <p>List export response next token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>List export response next token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

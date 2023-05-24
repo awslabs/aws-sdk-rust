@@ -2,15 +2,15 @@
 
 /// <p> Information about the position of the asset in a rack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetLocation {
     /// <p> The position of an asset in a rack measured in rack units. </p>
     #[doc(hidden)]
-    pub rack_elevation: std::option::Option<f32>,
+    pub rack_elevation: ::std::option::Option<f32>,
 }
 impl AssetLocation {
     /// <p> The position of an asset in a rack measured in rack units. </p>
-    pub fn rack_elevation(&self) -> std::option::Option<f32> {
+    pub fn rack_elevation(&self) -> ::std::option::Option<f32> {
         self.rack_elevation
     }
 }
@@ -23,18 +23,20 @@ impl AssetLocation {
 
 /// A builder for [`AssetLocation`](crate::types::AssetLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssetLocationBuilder {
-    pub(crate) rack_elevation: std::option::Option<f32>,
+    pub(crate) rack_elevation: ::std::option::Option<f32>,
 }
 impl AssetLocationBuilder {
     /// <p> The position of an asset in a rack measured in rack units. </p>
     pub fn rack_elevation(mut self, input: f32) -> Self {
-        self.rack_elevation = Some(input);
+        self.rack_elevation = ::std::option::Option::Some(input);
         self
     }
     /// <p> The position of an asset in a rack measured in rack units. </p>
-    pub fn set_rack_elevation(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_rack_elevation(mut self, input: ::std::option::Option<f32>) -> Self {
         self.rack_elevation = input;
         self
     }

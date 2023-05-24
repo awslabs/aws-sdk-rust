@@ -2,22 +2,22 @@
 
 /// <p>Details of the S3 bucket that report generator reports are published to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
     /// <p>Name of the S3 bucket reports are published to.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Prefix of the S3 bucket reports are published to.</p>
     #[doc(hidden)]
-    pub key_prefix: std::option::Option<std::string::String>,
+    pub key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {
     /// <p>Name of the S3 bucket reports are published to.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Prefix of the S3 bucket reports are published to.</p>
-    pub fn key_prefix(&self) -> std::option::Option<&str> {
+    pub fn key_prefix(&self) -> ::std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl S3Location {
 
 /// A builder for [`S3Location`](crate::types::S3Location).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3LocationBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) key_prefix: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3LocationBuilder {
     /// <p>Name of the S3 bucket reports are published to.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the S3 bucket reports are published to.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>Prefix of the S3 bucket reports are published to.</p>
-    pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_prefix = Some(input.into());
+    pub fn key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Prefix of the S3 bucket reports are published to.</p>
-    pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_prefix = input;
         self
     }

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub struct PositionFiltering(String);
 impl PositionFiltering {
@@ -21,9 +21,9 @@ impl PositionFiltering {
         &["AccuracyBased", "DistanceBased", "TimeBased"]
     }
 }
-impl<T> std::convert::From<T> for PositionFiltering
+impl<T> ::std::convert::From<T> for PositionFiltering
 where
-    T: std::convert::AsRef<str>,
+    T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         PositionFiltering(s.as_ref().to_owned())

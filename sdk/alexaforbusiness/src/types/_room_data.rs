@@ -2,50 +2,50 @@
 
 /// <p>The data of a room.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoomData {
     /// <p>The ARN of a room.</p>
     #[doc(hidden)]
-    pub room_arn: std::option::Option<std::string::String>,
+    pub room_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a room.</p>
     #[doc(hidden)]
-    pub room_name: std::option::Option<std::string::String>,
+    pub room_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of a room.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The provider calendar ARN of a room.</p>
     #[doc(hidden)]
-    pub provider_calendar_id: std::option::Option<std::string::String>,
+    pub provider_calendar_id: ::std::option::Option<::std::string::String>,
     /// <p>The profile ARN of a room.</p>
     #[doc(hidden)]
-    pub profile_arn: std::option::Option<std::string::String>,
+    pub profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The profile name of a room.</p>
     #[doc(hidden)]
-    pub profile_name: std::option::Option<std::string::String>,
+    pub profile_name: ::std::option::Option<::std::string::String>,
 }
 impl RoomData {
     /// <p>The ARN of a room.</p>
-    pub fn room_arn(&self) -> std::option::Option<&str> {
+    pub fn room_arn(&self) -> ::std::option::Option<&str> {
         self.room_arn.as_deref()
     }
     /// <p>The name of a room.</p>
-    pub fn room_name(&self) -> std::option::Option<&str> {
+    pub fn room_name(&self) -> ::std::option::Option<&str> {
         self.room_name.as_deref()
     }
     /// <p>The description of a room.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The provider calendar ARN of a room.</p>
-    pub fn provider_calendar_id(&self) -> std::option::Option<&str> {
+    pub fn provider_calendar_id(&self) -> ::std::option::Option<&str> {
         self.provider_calendar_id.as_deref()
     }
     /// <p>The profile ARN of a room.</p>
-    pub fn profile_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_arn(&self) -> ::std::option::Option<&str> {
         self.profile_arn.as_deref()
     }
     /// <p>The profile name of a room.</p>
-    pub fn profile_name(&self) -> std::option::Option<&str> {
+    pub fn profile_name(&self) -> ::std::option::Option<&str> {
         self.profile_name.as_deref()
     }
 }
@@ -58,76 +58,81 @@ impl RoomData {
 
 /// A builder for [`RoomData`](crate::types::RoomData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoomDataBuilder {
-    pub(crate) room_arn: std::option::Option<std::string::String>,
-    pub(crate) room_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) provider_calendar_id: std::option::Option<std::string::String>,
-    pub(crate) profile_arn: std::option::Option<std::string::String>,
-    pub(crate) profile_name: std::option::Option<std::string::String>,
+    pub(crate) room_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) room_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_calendar_id: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_name: ::std::option::Option<::std::string::String>,
 }
 impl RoomDataBuilder {
     /// <p>The ARN of a room.</p>
-    pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.room_arn = Some(input.into());
+    pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.room_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a room.</p>
-    pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_arn = input;
         self
     }
     /// <p>The name of a room.</p>
-    pub fn room_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.room_name = Some(input.into());
+    pub fn room_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.room_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a room.</p>
-    pub fn set_room_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_room_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.room_name = input;
         self
     }
     /// <p>The description of a room.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of a room.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The provider calendar ARN of a room.</p>
-    pub fn provider_calendar_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provider_calendar_id = Some(input.into());
+    pub fn provider_calendar_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provider_calendar_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provider calendar ARN of a room.</p>
     pub fn set_provider_calendar_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provider_calendar_id = input;
         self
     }
     /// <p>The profile ARN of a room.</p>
-    pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.profile_arn = Some(input.into());
+    pub fn profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile ARN of a room.</p>
-    pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_arn = input;
         self
     }
     /// <p>The profile name of a room.</p>
-    pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.profile_name = Some(input.into());
+    pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The profile name of a room.</p>
-    pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_name = input;
         self
     }

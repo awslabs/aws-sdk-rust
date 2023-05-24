@@ -2,43 +2,43 @@
 
 /// <p>A Device Defender security profile behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Behavior {
     /// <p>The name you've given to the behavior.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>What is measured by the behavior.</p>
     #[doc(hidden)]
-    pub metric: std::option::Option<std::string::String>,
+    pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     #[doc(hidden)]
-    pub metric_dimension: std::option::Option<crate::types::MetricDimension>,
+    pub metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
     #[doc(hidden)]
-    pub criteria: std::option::Option<crate::types::BehaviorCriteria>,
+    pub criteria: ::std::option::Option<crate::types::BehaviorCriteria>,
     /// <p> Suppresses alerts. </p>
     #[doc(hidden)]
-    pub suppress_alerts: std::option::Option<bool>,
+    pub suppress_alerts: ::std::option::Option<bool>,
 }
 impl Behavior {
     /// <p>The name you've given to the behavior.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>What is measured by the behavior.</p>
-    pub fn metric(&self) -> std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<&str> {
         self.metric.as_deref()
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
-    pub fn metric_dimension(&self) -> std::option::Option<&crate::types::MetricDimension> {
+    pub fn metric_dimension(&self) -> ::std::option::Option<&crate::types::MetricDimension> {
         self.metric_dimension.as_ref()
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
-    pub fn criteria(&self) -> std::option::Option<&crate::types::BehaviorCriteria> {
+    pub fn criteria(&self) -> ::std::option::Option<&crate::types::BehaviorCriteria> {
         self.criteria.as_ref()
     }
     /// <p> Suppresses alerts. </p>
-    pub fn suppress_alerts(&self) -> std::option::Option<bool> {
+    pub fn suppress_alerts(&self) -> ::std::option::Option<bool> {
         self.suppress_alerts
     }
 }
@@ -51,68 +51,70 @@ impl Behavior {
 
 /// A builder for [`Behavior`](crate::types::Behavior).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BehaviorBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) metric: std::option::Option<std::string::String>,
-    pub(crate) metric_dimension: std::option::Option<crate::types::MetricDimension>,
-    pub(crate) criteria: std::option::Option<crate::types::BehaviorCriteria>,
-    pub(crate) suppress_alerts: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) metric: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
+    pub(crate) criteria: ::std::option::Option<crate::types::BehaviorCriteria>,
+    pub(crate) suppress_alerts: ::std::option::Option<bool>,
 }
 impl BehaviorBuilder {
     /// <p>The name you've given to the behavior.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name you've given to the behavior.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>What is measured by the behavior.</p>
-    pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric = Some(input.into());
+    pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>What is measured by the behavior.</p>
-    pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric = input;
         self
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     pub fn metric_dimension(mut self, input: crate::types::MetricDimension) -> Self {
-        self.metric_dimension = Some(input);
+        self.metric_dimension = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     pub fn set_metric_dimension(
         mut self,
-        input: std::option::Option<crate::types::MetricDimension>,
+        input: ::std::option::Option<crate::types::MetricDimension>,
     ) -> Self {
         self.metric_dimension = input;
         self
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
     pub fn criteria(mut self, input: crate::types::BehaviorCriteria) -> Self {
-        self.criteria = Some(input);
+        self.criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
     pub fn set_criteria(
         mut self,
-        input: std::option::Option<crate::types::BehaviorCriteria>,
+        input: ::std::option::Option<crate::types::BehaviorCriteria>,
     ) -> Self {
         self.criteria = input;
         self
     }
     /// <p> Suppresses alerts. </p>
     pub fn suppress_alerts(mut self, input: bool) -> Self {
-        self.suppress_alerts = Some(input);
+        self.suppress_alerts = ::std::option::Option::Some(input);
         self
     }
     /// <p> Suppresses alerts. </p>
-    pub fn set_suppress_alerts(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_suppress_alerts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suppress_alerts = input;
         self
     }

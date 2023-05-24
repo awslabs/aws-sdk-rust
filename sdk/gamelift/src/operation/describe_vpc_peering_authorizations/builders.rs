@@ -8,47 +8,50 @@ pub use crate::operation::describe_vpc_peering_authorizations::_describe_vpc_pee
 /// <p>Retrieves valid VPC peering authorizations that are pending for the Amazon Web Services account. This operation returns all VPC peering authorizations and requests for peering. This includes those initiated and received by this account. </p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVpcPeeringAuthorizationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsInputBuilder,
 }
 impl DescribeVpcPeeringAuthorizationsFluentBuilder {
     /// Creates a new `DescribeVpcPeeringAuthorizations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizations, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,7 +62,7 @@ impl DescribeVpcPeeringAuthorizationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError>>
                          {
         self.send_middleware().await
     }

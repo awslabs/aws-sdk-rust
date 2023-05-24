@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSpace`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::set_domain_id): <p>The ID of the associated Domain.</p>
-    ///   - [`space_name(impl Into<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::set_space_name): <p>The name of the space.</p>
+    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::set_domain_id): <p>The ID of the associated Domain.</p>
+    ///   - [`space_name(impl ::std::convert::Into<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::set_space_name): <p>The name of the space.</p>
     /// - On success, responds with [`DescribeSpaceOutput`](crate::operation::describe_space::DescribeSpaceOutput) with field(s):
     ///   - [`domain_id(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::domain_id): <p>The ID of the associated Domain.</p>
     ///   - [`space_arn(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::space_arn): <p>The space's Amazon Resource Name (ARN).</p>

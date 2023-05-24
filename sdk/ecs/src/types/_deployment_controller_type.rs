@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeploymentControllerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DeploymentControllerType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeploymentControllerType {
+impl ::std::convert::From<&str> for DeploymentControllerType {
     fn from(s: &str) -> Self {
         match s {
             "CODE_DEPLOY" => DeploymentControllerType::CodeDeploy,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DeploymentControllerType {
         }
     }
 }
-impl std::str::FromStr for DeploymentControllerType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeploymentControllerType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentControllerType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeploymentControllerType::from(s))
     }
 }
 impl DeploymentControllerType {
@@ -91,7 +91,7 @@ impl DeploymentControllerType {
         &["CODE_DEPLOY", "ECS", "EXTERNAL"]
     }
 }
-impl AsRef<str> for DeploymentControllerType {
+impl ::std::convert::AsRef<str> for DeploymentControllerType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

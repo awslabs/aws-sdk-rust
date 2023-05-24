@@ -2,81 +2,81 @@
 
 /// <p>Contains information about the elastic network interface of the EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>A list of IPv6 addresses for the EC2 instance.</p>
     #[doc(hidden)]
-    pub ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
-    pub network_interface_id: std::option::Option<std::string::String>,
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS name of the EC2 instance.</p>
     #[doc(hidden)]
-    pub private_dns_name: std::option::Option<std::string::String>,
+    pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address of the EC2 instance.</p>
     #[doc(hidden)]
-    pub private_ip_address: std::option::Option<std::string::String>,
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Other private IP address information of the EC2 instance.</p>
     #[doc(hidden)]
     pub private_ip_addresses:
-        std::option::Option<std::vec::Vec<crate::types::PrivateIpAddressDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressDetails>>,
     /// <p>The public DNS name of the EC2 instance.</p>
     #[doc(hidden)]
-    pub public_dns_name: std::option::Option<std::string::String>,
+    pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The public IP address of the EC2 instance.</p>
     #[doc(hidden)]
-    pub public_ip: std::option::Option<std::string::String>,
+    pub public_ip: ::std::option::Option<::std::string::String>,
     /// <p>The security groups associated with the EC2 instance.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
     /// <p>The subnet ID of the EC2 instance.</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the EC2 instance.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterface {
     /// <p>A list of IPv6 addresses for the EC2 instance.</p>
-    pub fn ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ipv6_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ipv6_addresses.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The private DNS name of the EC2 instance.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private IP address of the EC2 instance.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
     /// <p>Other private IP address information of the EC2 instance.</p>
     pub fn private_ip_addresses(
         &self,
-    ) -> std::option::Option<&[crate::types::PrivateIpAddressDetails]> {
+    ) -> ::std::option::Option<&[crate::types::PrivateIpAddressDetails]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>The public DNS name of the EC2 instance.</p>
-    pub fn public_dns_name(&self) -> std::option::Option<&str> {
+    pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
         self.public_dns_name.as_deref()
     }
     /// <p>The public IP address of the EC2 instance.</p>
-    pub fn public_ip(&self) -> std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
     /// <p>The security groups associated with the EC2 instance.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::types::SecurityGroup]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroup]> {
         self.security_groups.as_deref()
     }
     /// <p>The subnet ID of the EC2 instance.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The VPC ID of the EC2 instance.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
@@ -89,19 +89,21 @@ impl NetworkInterface {
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkInterfaceBuilder {
-    pub(crate) ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) network_interface_id: std::option::Option<std::string::String>,
-    pub(crate) private_dns_name: std::option::Option<std::string::String>,
-    pub(crate) private_ip_address: std::option::Option<std::string::String>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_addresses:
-        std::option::Option<std::vec::Vec<crate::types::PrivateIpAddressDetails>>,
-    pub(crate) public_dns_name: std::option::Option<std::string::String>,
-    pub(crate) public_ip: std::option::Option<std::string::String>,
-    pub(crate) security_groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressDetails>>,
+    pub(crate) public_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfaceBuilder {
     /// Appends an item to `ipv6_addresses`.
@@ -109,52 +111,67 @@ impl NetworkInterfaceBuilder {
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
     ///
     /// <p>A list of IPv6 addresses for the EC2 instance.</p>
-    pub fn ipv6_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ipv6_addresses(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
         v.push(input.into());
-        self.ipv6_addresses = Some(v);
+        self.ipv6_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IPv6 addresses for the EC2 instance.</p>
     pub fn set_ipv6_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ipv6_addresses = input;
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_interface_id = Some(input.into());
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_interface_id = input;
         self
     }
     /// <p>The private DNS name of the EC2 instance.</p>
-    pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_dns_name = Some(input.into());
+    pub fn private_dns_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private DNS name of the EC2 instance.</p>
-    pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_dns_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.private_dns_name = input;
         self
     }
     /// <p>The private IP address of the EC2 instance.</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_ip_address = Some(input.into());
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address of the EC2 instance.</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_ip_address = input;
         self
@@ -167,34 +184,40 @@ impl NetworkInterfaceBuilder {
     pub fn private_ip_addresses(mut self, input: crate::types::PrivateIpAddressDetails) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
         v.push(input);
-        self.private_ip_addresses = Some(v);
+        self.private_ip_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>Other private IP address information of the EC2 instance.</p>
     pub fn set_private_ip_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PrivateIpAddressDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressDetails>>,
     ) -> Self {
         self.private_ip_addresses = input;
         self
     }
     /// <p>The public DNS name of the EC2 instance.</p>
-    pub fn public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_dns_name = Some(input.into());
+    pub fn public_dns_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public DNS name of the EC2 instance.</p>
-    pub fn set_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_dns_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.public_dns_name = input;
         self
     }
     /// <p>The public IP address of the EC2 instance.</p>
-    pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_ip = Some(input.into());
+    pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IP address of the EC2 instance.</p>
-    pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
     }
@@ -206,34 +229,34 @@ impl NetworkInterfaceBuilder {
     pub fn security_groups(mut self, input: crate::types::SecurityGroup) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups associated with the EC2 instance.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
     ) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The subnet ID of the EC2 instance.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subnet ID of the EC2 instance.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
     /// <p>The VPC ID of the EC2 instance.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC ID of the EC2 instance.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }

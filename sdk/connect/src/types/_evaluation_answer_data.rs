@@ -2,14 +2,14 @@
 
 /// <p>Information about answer data for a contact evaluation. Answer data must be either string, numeric, or not applicable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationAnswerData {
     /// <p>The flag to mark the question as not applicable.</p>
     NotApplicable(bool),
     /// <p>The numeric value for an answer in a contact evaluation.</p>
     NumericValue(f64),
     /// <p>The string value for an answer in a contact evaluation.</p>
-    StringValue(std::string::String),
+    StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,11 +23,11 @@ pub enum EvaluationAnswerData {
 impl EvaluationAnswerData {
     /// Tries to convert the enum instance into [`NotApplicable`](crate::types::EvaluationAnswerData::NotApplicable), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_not_applicable(&self) -> std::result::Result<&bool, &Self> {
+    pub fn as_not_applicable(&self) -> ::std::result::Result<&bool, &Self> {
         if let EvaluationAnswerData::NotApplicable(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`NotApplicable`](crate::types::EvaluationAnswerData::NotApplicable).
@@ -36,24 +36,24 @@ impl EvaluationAnswerData {
     }
     /// Tries to convert the enum instance into [`NumericValue`](crate::types::EvaluationAnswerData::NumericValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_numeric_value(&self) -> std::result::Result<&f64, &Self> {
+    pub fn as_numeric_value(&self) -> ::std::result::Result<&f64, &Self> {
         if let EvaluationAnswerData::NumericValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`NumericValue`](crate::types::EvaluationAnswerData::NumericValue).
     pub fn is_numeric_value(&self) -> bool {
         self.as_numeric_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`StringValue`](crate::types::EvaluationAnswerData::StringValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`StringValue`](crate::types::EvaluationAnswerData::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let EvaluationAnswerData::StringValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::types::EvaluationAnswerData::StringValue).

@@ -2,36 +2,36 @@
 
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the Lambda function that is being called.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<std::string::String>,
+    pub target: ::std::option::Option<::std::string::String>,
     /// <p>Timeout, in seconds, for the step.</p>
     #[doc(hidden)]
-    pub timeout_seconds: std::option::Option<i32>,
+    pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
     /// <ul>
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub source_file_location: std::option::Option<std::string::String>,
+    pub source_file_location: ::std::option::Option<::std::string::String>,
 }
 impl CustomStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN for the Lambda function that is being called.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
     /// <p>Timeout, in seconds, for the step.</p>
-    pub fn timeout_seconds(&self) -> std::option::Option<i32> {
+    pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
@@ -39,7 +39,7 @@ impl CustomStepDetails {
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    pub fn source_file_location(&self) -> std::option::Option<&str> {
+    pub fn source_file_location(&self) -> ::std::option::Option<&str> {
         self.source_file_location.as_deref()
     }
 }
@@ -52,41 +52,43 @@ impl CustomStepDetails {
 
 /// A builder for [`CustomStepDetails`](crate::types::CustomStepDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomStepDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) target: std::option::Option<std::string::String>,
-    pub(crate) timeout_seconds: std::option::Option<i32>,
-    pub(crate) source_file_location: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) target: ::std::option::Option<::std::string::String>,
+    pub(crate) timeout_seconds: ::std::option::Option<i32>,
+    pub(crate) source_file_location: ::std::option::Option<::std::string::String>,
 }
 impl CustomStepDetailsBuilder {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ARN for the Lambda function that is being called.</p>
-    pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target = Some(input.into());
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the Lambda function that is being called.</p>
-    pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
     /// <p>Timeout, in seconds, for the step.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
-        self.timeout_seconds = Some(input);
+        self.timeout_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timeout, in seconds, for the step.</p>
-    pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_seconds = input;
         self
     }
@@ -95,8 +97,11 @@ impl CustomStepDetailsBuilder {
     /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
     /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_file_location = Some(input.into());
+    pub fn source_file_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_file_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
@@ -106,7 +111,7 @@ impl CustomStepDetailsBuilder {
     /// </ul>
     pub fn set_source_file_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_file_location = input;
         self

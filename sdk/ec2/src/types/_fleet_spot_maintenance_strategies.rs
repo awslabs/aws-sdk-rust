@@ -2,17 +2,17 @@
 
 /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetSpotMaintenanceStrategies {
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
     #[doc(hidden)]
-    pub capacity_rebalance: std::option::Option<crate::types::FleetSpotCapacityRebalance>,
+    pub capacity_rebalance: ::std::option::Option<crate::types::FleetSpotCapacityRebalance>,
 }
 impl FleetSpotMaintenanceStrategies {
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
     pub fn capacity_rebalance(
         &self,
-    ) -> std::option::Option<&crate::types::FleetSpotCapacityRebalance> {
+    ) -> ::std::option::Option<&crate::types::FleetSpotCapacityRebalance> {
         self.capacity_rebalance.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl FleetSpotMaintenanceStrategies {
 
 /// A builder for [`FleetSpotMaintenanceStrategies`](crate::types::FleetSpotMaintenanceStrategies).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FleetSpotMaintenanceStrategiesBuilder {
-    pub(crate) capacity_rebalance: std::option::Option<crate::types::FleetSpotCapacityRebalance>,
+    pub(crate) capacity_rebalance: ::std::option::Option<crate::types::FleetSpotCapacityRebalance>,
 }
 impl FleetSpotMaintenanceStrategiesBuilder {
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
     pub fn capacity_rebalance(mut self, input: crate::types::FleetSpotCapacityRebalance) -> Self {
-        self.capacity_rebalance = Some(input);
+        self.capacity_rebalance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
     pub fn set_capacity_rebalance(
         mut self,
-        input: std::option::Option<crate::types::FleetSpotCapacityRebalance>,
+        input: ::std::option::Option<crate::types::FleetSpotCapacityRebalance>,
     ) -> Self {
         self.capacity_rebalance = input;
         self

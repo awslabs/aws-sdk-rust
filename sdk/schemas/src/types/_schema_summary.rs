@@ -2,47 +2,49 @@
 
 /// <p>A summary of schema details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaSummary {
     /// <p>The date and time that schema was modified.</p>
     #[doc(hidden)]
-    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the schema.</p>
     #[doc(hidden)]
-    pub schema_arn: std::option::Option<std::string::String>,
+    pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
-    pub schema_name: std::option::Option<std::string::String>,
+    pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags associated with the schema.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The number of versions available for the schema.</p>
     #[doc(hidden)]
-    pub version_count: std::option::Option<i64>,
+    pub version_count: ::std::option::Option<i64>,
 }
 impl SchemaSummary {
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>Tags associated with the schema.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>The number of versions available for the schema.</p>
-    pub fn version_count(&self) -> std::option::Option<i64> {
+    pub fn version_count(&self) -> ::std::option::Option<i64> {
         self.version_count
     }
 }
@@ -55,46 +57,49 @@ impl SchemaSummary {
 
 /// A builder for [`SchemaSummary`](crate::types::SchemaSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SchemaSummaryBuilder {
-    pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) schema_arn: std::option::Option<std::string::String>,
-    pub(crate) schema_name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) version_count: std::option::Option<i64>,
+    pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) version_count: ::std::option::Option<i64>,
 }
 impl SchemaSummaryBuilder {
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified = Some(input);
+    pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that schema was modified.</p>
     pub fn set_last_modified(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified = input;
         self
     }
     /// <p>The ARN of the schema.</p>
-    pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_arn = Some(input.into());
+    pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the schema.</p>
-    pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_name = Some(input.into());
+    pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the schema.</p>
-    pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
     }
@@ -105,19 +110,19 @@ impl SchemaSummaryBuilder {
     /// <p>Tags associated with the schema.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Tags associated with the schema.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -125,11 +130,11 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The number of versions available for the schema.</p>
     pub fn version_count(mut self, input: i64) -> Self {
-        self.version_count = Some(input);
+        self.version_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of versions available for the schema.</p>
-    pub fn set_version_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_count = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Options associated with your audio codec.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioCodecOptions {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
     /// <p>Specify the AAC profile for the output file. Elastic Transcoder supports the following profiles:</p>
@@ -16,23 +16,23 @@ pub struct AudioCodecOptions {
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>
     /// </note>
     #[doc(hidden)]
-    pub profile: std::option::Option<std::string::String>,
+    pub profile: ::std::option::Option<::std::string::String>,
     /// <p>You can only choose an audio bit depth when you specify <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>The bit depth of a sample is how many bits of information are included in the audio samples. The higher the bit depth, the better the audio, but the larger the file.</p>
     /// <p>Valid values are <code>16</code> and <code>24</code>.</p>
     /// <p>The most common bit depth is <code>24</code>.</p>
     #[doc(hidden)]
-    pub bit_depth: std::option::Option<std::string::String>,
+    pub bit_depth: ::std::option::Option<::std::string::String>,
     /// <p>You can only choose an audio bit order when you specify <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>The order the bits of a PCM sample are stored in.</p>
     /// <p>The supported value is <code>LittleEndian</code>.</p>
     #[doc(hidden)]
-    pub bit_order: std::option::Option<std::string::String>,
+    pub bit_order: ::std::option::Option<::std::string::String>,
     /// <p>You can only choose whether an audio sample is signed when you specify <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>Whether audio samples are represented with negative and positive numbers (signed) or only positive numbers (unsigned).</p>
     /// <p>The supported value is <code>Signed</code>.</p>
     #[doc(hidden)]
-    pub signed: std::option::Option<std::string::String>,
+    pub signed: ::std::option::Option<::std::string::String>,
 }
 impl AudioCodecOptions {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
@@ -46,26 +46,26 @@ impl AudioCodecOptions {
     /// <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note>
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>
     /// </note>
-    pub fn profile(&self) -> std::option::Option<&str> {
+    pub fn profile(&self) -> ::std::option::Option<&str> {
         self.profile.as_deref()
     }
     /// <p>You can only choose an audio bit depth when you specify <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>The bit depth of a sample is how many bits of information are included in the audio samples. The higher the bit depth, the better the audio, but the larger the file.</p>
     /// <p>Valid values are <code>16</code> and <code>24</code>.</p>
     /// <p>The most common bit depth is <code>24</code>.</p>
-    pub fn bit_depth(&self) -> std::option::Option<&str> {
+    pub fn bit_depth(&self) -> ::std::option::Option<&str> {
         self.bit_depth.as_deref()
     }
     /// <p>You can only choose an audio bit order when you specify <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>The order the bits of a PCM sample are stored in.</p>
     /// <p>The supported value is <code>LittleEndian</code>.</p>
-    pub fn bit_order(&self) -> std::option::Option<&str> {
+    pub fn bit_order(&self) -> ::std::option::Option<&str> {
         self.bit_order.as_deref()
     }
     /// <p>You can only choose whether an audio sample is signed when you specify <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>Whether audio samples are represented with negative and positive numbers (signed) or only positive numbers (unsigned).</p>
     /// <p>The supported value is <code>Signed</code>.</p>
-    pub fn signed(&self) -> std::option::Option<&str> {
+    pub fn signed(&self) -> ::std::option::Option<&str> {
         self.signed.as_deref()
     }
 }
@@ -78,12 +78,14 @@ impl AudioCodecOptions {
 
 /// A builder for [`AudioCodecOptions`](crate::types::AudioCodecOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioCodecOptionsBuilder {
-    pub(crate) profile: std::option::Option<std::string::String>,
-    pub(crate) bit_depth: std::option::Option<std::string::String>,
-    pub(crate) bit_order: std::option::Option<std::string::String>,
-    pub(crate) signed: std::option::Option<std::string::String>,
+    pub(crate) profile: ::std::option::Option<::std::string::String>,
+    pub(crate) bit_depth: ::std::option::Option<::std::string::String>,
+    pub(crate) bit_order: ::std::option::Option<::std::string::String>,
+    pub(crate) signed: ::std::option::Option<::std::string::String>,
 }
 impl AudioCodecOptionsBuilder {
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
@@ -97,8 +99,8 @@ impl AudioCodecOptionsBuilder {
     /// <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note>
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>
     /// </note>
-    pub fn profile(mut self, input: impl Into<std::string::String>) -> Self {
-        self.profile = Some(input.into());
+    pub fn profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can only choose an audio profile when you specify AAC for the value of Audio:Codec.</p>
@@ -112,7 +114,7 @@ impl AudioCodecOptionsBuilder {
     /// <p>All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.</p> <note>
     /// <p>If you created any presets before AAC profiles were added, Elastic Transcoder automatically updated your presets to use AAC-LC. You can change the value as required.</p>
     /// </note>
-    pub fn set_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile = input;
         self
     }
@@ -120,43 +122,43 @@ impl AudioCodecOptionsBuilder {
     /// <p>The bit depth of a sample is how many bits of information are included in the audio samples. The higher the bit depth, the better the audio, but the larger the file.</p>
     /// <p>Valid values are <code>16</code> and <code>24</code>.</p>
     /// <p>The most common bit depth is <code>24</code>.</p>
-    pub fn bit_depth(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bit_depth = Some(input.into());
+    pub fn bit_depth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bit_depth = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can only choose an audio bit depth when you specify <code>flac</code> or <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>The bit depth of a sample is how many bits of information are included in the audio samples. The higher the bit depth, the better the audio, but the larger the file.</p>
     /// <p>Valid values are <code>16</code> and <code>24</code>.</p>
     /// <p>The most common bit depth is <code>24</code>.</p>
-    pub fn set_bit_depth(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bit_depth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bit_depth = input;
         self
     }
     /// <p>You can only choose an audio bit order when you specify <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>The order the bits of a PCM sample are stored in.</p>
     /// <p>The supported value is <code>LittleEndian</code>.</p>
-    pub fn bit_order(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bit_order = Some(input.into());
+    pub fn bit_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bit_order = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can only choose an audio bit order when you specify <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>The order the bits of a PCM sample are stored in.</p>
     /// <p>The supported value is <code>LittleEndian</code>.</p>
-    pub fn set_bit_order(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bit_order(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bit_order = input;
         self
     }
     /// <p>You can only choose whether an audio sample is signed when you specify <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>Whether audio samples are represented with negative and positive numbers (signed) or only positive numbers (unsigned).</p>
     /// <p>The supported value is <code>Signed</code>.</p>
-    pub fn signed(mut self, input: impl Into<std::string::String>) -> Self {
-        self.signed = Some(input.into());
+    pub fn signed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signed = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can only choose whether an audio sample is signed when you specify <code>pcm</code> for the value of Audio:Codec.</p>
     /// <p>Whether audio samples are represented with negative and positive numbers (signed) or only positive numbers (unsigned).</p>
     /// <p>The supported value is <code>Signed</code>.</p>
-    pub fn set_signed(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_signed(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signed = input;
         self
     }

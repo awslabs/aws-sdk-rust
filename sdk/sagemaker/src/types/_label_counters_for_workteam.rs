@@ -2,7 +2,7 @@
 
 /// <p>Provides counts for human-labeled tasks in the labeling job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelCountersForWorkteam {
     /// <p>The total number of data objects labeled by a human worker.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl LabelCountersForWorkteam {
 
 /// A builder for [`LabelCountersForWorkteam`](crate::types::LabelCountersForWorkteam).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelCountersForWorkteamBuilder {
-    pub(crate) human_labeled: std::option::Option<i32>,
-    pub(crate) pending_human: std::option::Option<i32>,
-    pub(crate) total: std::option::Option<i32>,
+    pub(crate) human_labeled: ::std::option::Option<i32>,
+    pub(crate) pending_human: ::std::option::Option<i32>,
+    pub(crate) total: ::std::option::Option<i32>,
 }
 impl LabelCountersForWorkteamBuilder {
     /// <p>The total number of data objects labeled by a human worker.</p>
     pub fn human_labeled(mut self, input: i32) -> Self {
-        self.human_labeled = Some(input);
+        self.human_labeled = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of data objects labeled by a human worker.</p>
-    pub fn set_human_labeled(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_human_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.human_labeled = input;
         self
     }
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
     pub fn pending_human(mut self, input: i32) -> Self {
-        self.pending_human = Some(input);
+        self.pending_human = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
-    pub fn set_pending_human(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pending_human(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pending_human = input;
         self
     }
     /// <p>The total number of tasks in the labeling job.</p>
     pub fn total(mut self, input: i32) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of tasks in the labeling job.</p>
-    pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total = input;
         self
     }

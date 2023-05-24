@@ -2,15 +2,15 @@
 
 /// <p>Summary of the details of an <code>AppInstanceAdmin</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppInstanceAdminSummary {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
     #[doc(hidden)]
-    pub admin: std::option::Option<crate::types::Identity>,
+    pub admin: ::std::option::Option<crate::types::Identity>,
 }
 impl AppInstanceAdminSummary {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
-    pub fn admin(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn admin(&self) -> ::std::option::Option<&crate::types::Identity> {
         self.admin.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl AppInstanceAdminSummary {
 
 /// A builder for [`AppInstanceAdminSummary`](crate::types::AppInstanceAdminSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppInstanceAdminSummaryBuilder {
-    pub(crate) admin: std::option::Option<crate::types::Identity>,
+    pub(crate) admin: ::std::option::Option<crate::types::Identity>,
 }
 impl AppInstanceAdminSummaryBuilder {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
     pub fn admin(mut self, input: crate::types::Identity) -> Self {
-        self.admin = Some(input);
+        self.admin = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
-    pub fn set_admin(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
+    pub fn set_admin(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.admin = input;
         self
     }

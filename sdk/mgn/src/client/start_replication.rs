@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartReplication`](crate::operation::start_replication::builders::StartReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::set_source_server_id): <p>ID of source server on which to start replication.</p>
+    ///   - [`source_server_id(impl ::std::convert::Into<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::start_replication::builders::StartReplicationFluentBuilder::set_source_server_id): <p>ID of source server on which to start replication.</p>
     /// - On success, responds with [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::start_replication::StartReplicationOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::start_replication::StartReplicationOutput::arn): <p>Source server ARN.</p>

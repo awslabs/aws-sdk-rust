@@ -6,56 +6,63 @@ pub use crate::operation::list_connections::_list_connections_input::ListConnect
 /// Fluent builder constructing a request to `ListConnections`.
 ///
 /// <p>Lists the connections associated with your account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConnectionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_connections::builders::ListConnectionsInputBuilder,
 }
 impl ListConnectionsFluentBuilder {
     /// Creates a new `ListConnections`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_connections::ListConnections,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_connections::ListConnectionsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_connections::ListConnectionsError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_connections::ListConnectionsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_connections::ListConnectionsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_connections::ListConnectionsError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +75,11 @@ impl ListConnectionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_connections::ListConnectionsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_connections::ListConnectionsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_connections::ListConnectionsError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -93,18 +102,24 @@ impl ListConnectionsFluentBuilder {
     /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
     pub fn set_provider_type_filter(
         mut self,
-        input: std::option::Option<crate::types::ProviderType>,
+        input: ::std::option::Option<crate::types::ProviderType>,
     ) -> Self {
         self.inner = self.inner.set_provider_type_filter(input);
         self
     }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
-    pub fn host_arn_filter(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn host_arn_filter(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.host_arn_filter(input.into());
         self
     }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
-    pub fn set_host_arn_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_arn_filter(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_host_arn_filter(input);
         self
     }
@@ -114,17 +129,17 @@ impl ListConnectionsFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

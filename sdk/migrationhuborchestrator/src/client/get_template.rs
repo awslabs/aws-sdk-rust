@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTemplate`](crate::operation::get_template::builders::GetTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_id): <p>The ID of the template.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_id): <p>The ID of the template.</p>
     /// - On success, responds with [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_template::GetTemplateOutput::id): <p>The ID of the template.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_template::GetTemplateOutput::name): <p>The name of the template.</p>

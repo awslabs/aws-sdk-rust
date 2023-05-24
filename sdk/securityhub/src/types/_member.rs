@@ -2,22 +2,22 @@
 
 /// <p>The details about a member account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the member account.</p>
     #[doc(hidden)]
-    pub email: std::option::Option<std::string::String>,
+    pub email: ::std::option::Option<::std::string::String>,
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     #[doc(hidden)]
-    pub master_id: std::option::Option<std::string::String>,
+    pub master_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[doc(hidden)]
-    pub administrator_id: std::option::Option<std::string::String>,
+    pub administrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the relationship between the member account and its administrator account. </p>
     /// <p>The status can have one of the following values:</p>
     /// <ul>
@@ -30,31 +30,31 @@ pub struct Member {
     /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub member_status: std::option::Option<std::string::String>,
+    pub member_status: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
     #[doc(hidden)]
-    pub invited_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub invited_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for the date and time when the member account was updated.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The email address of the member account.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
-    pub fn master_id(&self) -> std::option::Option<&str> {
+    pub fn master_id(&self) -> ::std::option::Option<&str> {
         self.master_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
-    pub fn administrator_id(&self) -> std::option::Option<&str> {
+    pub fn administrator_id(&self) -> ::std::option::Option<&str> {
         self.administrator_id.as_deref()
     }
     /// <p>The status of the relationship between the member account and its administrator account. </p>
@@ -68,15 +68,15 @@ impl Member {
     /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
     /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
     /// </ul>
-    pub fn member_status(&self) -> std::option::Option<&str> {
+    pub fn member_status(&self) -> ::std::option::Option<&str> {
         self.member_status.as_deref()
     }
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
-    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn invited_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>The timestamp for the date and time when the member account was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -89,58 +89,66 @@ impl Member {
 
 /// A builder for [`Member`](crate::types::Member).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) email: std::option::Option<std::string::String>,
-    pub(crate) master_id: std::option::Option<std::string::String>,
-    pub(crate) administrator_id: std::option::Option<std::string::String>,
-    pub(crate) member_status: std::option::Option<std::string::String>,
-    pub(crate) invited_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) email: ::std::option::Option<::std::string::String>,
+    pub(crate) master_id: ::std::option::Option<::std::string::String>,
+    pub(crate) administrator_id: ::std::option::Option<::std::string::String>,
+    pub(crate) member_status: ::std::option::Option<::std::string::String>,
+    pub(crate) invited_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MemberBuilder {
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The email address of the member account.</p>
-    pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email = Some(input.into());
+    pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the member account.</p>
-    pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
-    pub fn master_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_id = Some(input.into());
+    pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
-    pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_id = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
-    pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.administrator_id = Some(input.into());
+    pub fn administrator_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.administrator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
-    pub fn set_administrator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_administrator_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.administrator_id = input;
         self
     }
@@ -155,8 +163,11 @@ impl MemberBuilder {
     /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
     /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
     /// </ul>
-    pub fn member_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_status = Some(input.into());
+    pub fn member_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.member_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the relationship between the member account and its administrator account. </p>
@@ -170,32 +181,35 @@ impl MemberBuilder {
     /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
     /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
     /// </ul>
-    pub fn set_member_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.member_status = input;
         self
     }
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
-    pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.invited_at = Some(input);
+    pub fn invited_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.invited_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
     pub fn set_invited_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.invited_at = input;
         self
     }
     /// <p>The timestamp for the date and time when the member account was updated.</p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for the date and time when the member account was updated.</p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self

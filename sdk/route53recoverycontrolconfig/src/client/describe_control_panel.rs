@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeControlPanel`](crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`control_panel_arn(impl Into<String>)`](crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder::control_panel_arn) / [`set_control_panel_arn(Option<String>)`](crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder::set_control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    ///   - [`control_panel_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder::control_panel_arn) / [`set_control_panel_arn(Option<String>)`](crate::operation::describe_control_panel::builders::DescribeControlPanelFluentBuilder::set_control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel.</p>
     /// - On success, responds with [`DescribeControlPanelOutput`](crate::operation::describe_control_panel::DescribeControlPanelOutput) with field(s):
     ///   - [`control_panel(Option<ControlPanel>)`](crate::operation::describe_control_panel::DescribeControlPanelOutput::control_panel): <p>Information about the control panel.</p>
     /// - On failure, responds with [`SdkError<DescribeControlPanelError>`](crate::operation::describe_control_panel::DescribeControlPanelError)

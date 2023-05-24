@@ -2,43 +2,43 @@
 
 /// <p>An impersonation role for the given WorkMail organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpersonationRole {
     /// <p>The identifier of the impersonation role.</p>
     #[doc(hidden)]
-    pub impersonation_role_id: std::option::Option<std::string::String>,
+    pub impersonation_role_id: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The impersonation role type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ImpersonationRoleType>,
+    pub r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
     /// <p>The date when the impersonation role was created.</p>
     #[doc(hidden)]
-    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
+    pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the impersonation role was last modified.</p>
     #[doc(hidden)]
-    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImpersonationRole {
     /// <p>The identifier of the impersonation role.</p>
-    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
+    pub fn impersonation_role_id(&self) -> ::std::option::Option<&str> {
         self.impersonation_role_id.as_deref()
     }
     /// <p>The impersonation role name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The impersonation role type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ImpersonationRoleType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImpersonationRoleType> {
         self.r#type.as_ref()
     }
     /// <p>The date when the impersonation role was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date when the impersonation role was last modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
@@ -51,73 +51,78 @@ impl ImpersonationRole {
 
 /// A builder for [`ImpersonationRole`](crate::types::ImpersonationRole).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImpersonationRoleBuilder {
-    pub(crate) impersonation_role_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ImpersonationRoleType>,
-    pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) impersonation_role_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ImpersonationRoleType>,
+    pub(crate) date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImpersonationRoleBuilder {
     /// <p>The identifier of the impersonation role.</p>
-    pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.impersonation_role_id = Some(input.into());
+    pub fn impersonation_role_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.impersonation_role_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the impersonation role.</p>
     pub fn set_impersonation_role_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.impersonation_role_id = input;
         self
     }
     /// <p>The impersonation role name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The impersonation role name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The impersonation role type.</p>
     pub fn r#type(mut self, input: crate::types::ImpersonationRoleType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The impersonation role type.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ImpersonationRoleType>,
+        input: ::std::option::Option<crate::types::ImpersonationRoleType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The date when the impersonation role was created.</p>
-    pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.date_created = Some(input);
+    pub fn date_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.date_created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the impersonation role was created.</p>
     pub fn set_date_created(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.date_created = input;
         self
     }
     /// <p>The date when the impersonation role was last modified.</p>
-    pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.date_modified = Some(input);
+    pub fn date_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.date_modified = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the impersonation role was last modified.</p>
     pub fn set_date_modified(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.date_modified = input;
         self

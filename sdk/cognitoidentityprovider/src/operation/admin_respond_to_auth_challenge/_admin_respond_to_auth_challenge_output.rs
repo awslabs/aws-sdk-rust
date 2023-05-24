@@ -2,47 +2,49 @@
 
 /// <p>Responds to the authentication challenge, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminRespondToAuthChallengeOutput {
     /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     #[doc(hidden)]
-    pub challenge_name: std::option::Option<crate::types::ChallengeNameType>,
+    pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     #[doc(hidden)]
-    pub session: std::option::Option<std::string::String>,
+    pub session: ::std::option::Option<::std::string::String>,
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     #[doc(hidden)]
-    pub challenge_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub challenge_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The result returned by the server in response to the authentication request.</p>
     #[doc(hidden)]
-    pub authentication_result: std::option::Option<crate::types::AuthenticationResultType>,
+    pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
 impl AdminRespondToAuthChallengeOutput {
     /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
-    pub fn challenge_name(&self) -> std::option::Option<&crate::types::ChallengeNameType> {
+    pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn session(&self) -> std::option::Option<&str> {
+    pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     pub fn challenge_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.challenge_parameters.as_ref()
     }
     /// <p>The result returned by the server in response to the authentication request.</p>
     pub fn authentication_result(
         &self,
-    ) -> std::option::Option<&crate::types::AuthenticationResultType> {
+    ) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for AdminRespondToAuthChallengeOutput {
+impl ::aws_http::request_id::RequestId for AdminRespondToAuthChallengeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -56,36 +58,39 @@ impl AdminRespondToAuthChallengeOutput {
 
 /// A builder for [`AdminRespondToAuthChallengeOutput`](crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminRespondToAuthChallengeOutputBuilder {
-    pub(crate) challenge_name: std::option::Option<crate::types::ChallengeNameType>,
-    pub(crate) session: std::option::Option<std::string::String>,
-    pub(crate) challenge_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) authentication_result: std::option::Option<crate::types::AuthenticationResultType>,
+    pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
+    pub(crate) session: ::std::option::Option<::std::string::String>,
+    pub(crate) challenge_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
 impl AdminRespondToAuthChallengeOutputBuilder {
     /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
-        self.challenge_name = Some(input);
+        self.challenge_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the challenge. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     pub fn set_challenge_name(
         mut self,
-        input: std::option::Option<crate::types::ChallengeNameType>,
+        input: ::std::option::Option<crate::types::ChallengeNameType>,
     ) -> Self {
         self.challenge_name = input;
         self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session = Some(input.into());
+    pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
@@ -96,19 +101,19 @@ impl AdminRespondToAuthChallengeOutputBuilder {
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     pub fn challenge_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.challenge_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.challenge_parameters = Some(hash_map);
+        self.challenge_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The challenge parameters. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
     pub fn set_challenge_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.challenge_parameters = input;
@@ -116,13 +121,13 @@ impl AdminRespondToAuthChallengeOutputBuilder {
     }
     /// <p>The result returned by the server in response to the authentication request.</p>
     pub fn authentication_result(mut self, input: crate::types::AuthenticationResultType) -> Self {
-        self.authentication_result = Some(input);
+        self.authentication_result = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result returned by the server in response to the authentication request.</p>
     pub fn set_authentication_result(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationResultType>,
+        input: ::std::option::Option<crate::types::AuthenticationResultType>,
     ) -> Self {
         self.authentication_result = input;
         self

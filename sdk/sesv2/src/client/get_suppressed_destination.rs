@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSuppressedDestination`](crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`email_address(impl Into<String>)`](crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationFluentBuilder::set_email_address): <p>The email address that's on the account suppression list.</p>
+    ///   - [`email_address(impl ::std::convert::Into<String>)`](crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationFluentBuilder::email_address) / [`set_email_address(Option<String>)`](crate::operation::get_suppressed_destination::builders::GetSuppressedDestinationFluentBuilder::set_email_address): <p>The email address that's on the account suppression list.</p>
     /// - On success, responds with [`GetSuppressedDestinationOutput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput) with field(s):
     ///   - [`suppressed_destination(Option<SuppressedDestination>)`](crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput::suppressed_destination): <p>An object containing information about the suppressed email address.</p>
     /// - On failure, responds with [`SdkError<GetSuppressedDestinationError>`](crate::operation::get_suppressed_destination::GetSuppressedDestinationError)

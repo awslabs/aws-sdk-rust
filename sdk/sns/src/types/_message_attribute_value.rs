@@ -3,29 +3,29 @@
 /// <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p>
 /// <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Amazon SNS message attributes</a> and <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the <i>Amazon SNS Developer Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageAttributeValue {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     #[doc(hidden)]
-    pub data_type: std::option::Option<std::string::String>,
+    pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     #[doc(hidden)]
-    pub string_value: std::option::Option<std::string::String>,
+    pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     #[doc(hidden)]
-    pub binary_value: std::option::Option<aws_smithy_types::Blob>,
+    pub binary_value: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl MessageAttributeValue {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
-    pub fn data_type(&self) -> std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<&str> {
         self.data_type.as_deref()
     }
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
+    pub fn string_value(&self) -> ::std::option::Option<&str> {
         self.string_value.as_deref()
     }
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
-    pub fn binary_value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn binary_value(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.binary_value.as_ref()
     }
 }
@@ -38,40 +38,45 @@ impl MessageAttributeValue {
 
 /// A builder for [`MessageAttributeValue`](crate::types::MessageAttributeValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MessageAttributeValueBuilder {
-    pub(crate) data_type: std::option::Option<std::string::String>,
-    pub(crate) string_value: std::option::Option<std::string::String>,
-    pub(crate) binary_value: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) data_type: ::std::option::Option<::std::string::String>,
+    pub(crate) string_value: ::std::option::Option<::std::string::String>,
+    pub(crate) binary_value: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl MessageAttributeValueBuilder {
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
-    pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_type = Some(input.into());
+    pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
-    pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.string_value = Some(input.into());
+    pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.string_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
-    pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.string_value = input;
         self
     }
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
-    pub fn binary_value(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.binary_value = Some(input);
+    pub fn binary_value(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.binary_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
-    pub fn set_binary_value(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_binary_value(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
+    ) -> Self {
         self.binary_value = input;
         self
     }

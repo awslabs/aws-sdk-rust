@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagMeeting`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`meeting_id(impl ::std::convert::Into<String>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_meeting::builders::TagMeetingFluentBuilder::set_tags): <p>The tag key-value pairs.</p>
     /// - On success, responds with [`TagMeetingOutput`](crate::operation::tag_meeting::TagMeetingOutput)
     /// - On failure, responds with [`SdkError<TagMeetingError>`](crate::operation::tag_meeting::TagMeetingError)

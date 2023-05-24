@@ -2,11 +2,11 @@
 
 /// <p>The details of the user account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
     /// <p>The unique identifier for the user.</p>
     #[doc(hidden)]
-    pub user_id: std::option::Option<std::string::String>,
+    pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the user account. </p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
@@ -14,33 +14,33 @@ pub struct User {
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::UserStatus>,
+    pub status: ::std::option::Option<crate::types::UserStatus>,
     /// <p>The first name of the user.</p>
     #[doc(hidden)]
-    pub first_name: std::option::Option<std::string::String>,
+    pub first_name: ::std::option::Option<::std::string::String>,
     /// <p> The last name of the user.</p>
     #[doc(hidden)]
-    pub last_name: std::option::Option<std::string::String>,
+    pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::UserType>,
+    pub r#type: ::std::option::Option<crate::types::UserType>,
     /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub api_access: std::option::Option<crate::types::ApiAccess>,
+    pub api_access: ::std::option::Option<crate::types::ApiAccess>,
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
     #[doc(hidden)]
-    pub api_access_principal_arn: std::option::Option<std::string::String>,
+    pub api_access_principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     #[doc(hidden)]
     pub create_time: i64,
@@ -59,7 +59,7 @@ pub struct User {
 }
 impl User {
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The current status of the user account. </p>
@@ -68,19 +68,19 @@ impl User {
     /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::UserStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::UserStatus> {
         self.status.as_ref()
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
     /// <p> The last name of the user.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
     /// <p>The email address of the user. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p> Indicates the type of user.</p>
@@ -88,7 +88,7 @@ impl User {
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::UserType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserType> {
         self.r#type.as_ref()
     }
     /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
@@ -96,11 +96,11 @@ impl User {
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
-    pub fn api_access(&self) -> std::option::Option<&crate::types::ApiAccess> {
+    pub fn api_access(&self) -> ::std::option::Option<&crate::types::ApiAccess> {
         self.api_access.as_ref()
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
-    pub fn api_access_principal_arn(&self) -> std::option::Option<&str> {
+    pub fn api_access_principal_arn(&self) -> ::std::option::Option<&str> {
         self.api_access_principal_arn.as_deref()
     }
     /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
@@ -124,8 +124,8 @@ impl User {
         self.last_login_time
     }
 }
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for User {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("user_id", &self.user_id);
         formatter.field("status", &self.status);
@@ -152,30 +152,30 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserBuilder {
-    pub(crate) user_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::UserStatus>,
-    pub(crate) first_name: std::option::Option<std::string::String>,
-    pub(crate) last_name: std::option::Option<std::string::String>,
-    pub(crate) email_address: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::UserType>,
-    pub(crate) api_access: std::option::Option<crate::types::ApiAccess>,
-    pub(crate) api_access_principal_arn: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<i64>,
-    pub(crate) last_enabled_time: std::option::Option<i64>,
-    pub(crate) last_disabled_time: std::option::Option<i64>,
-    pub(crate) last_modified_time: std::option::Option<i64>,
-    pub(crate) last_login_time: std::option::Option<i64>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::UserStatus>,
+    pub(crate) first_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_name: ::std::option::Option<::std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::UserType>,
+    pub(crate) api_access: ::std::option::Option<crate::types::ApiAccess>,
+    pub(crate) api_access_principal_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<i64>,
+    pub(crate) last_enabled_time: ::std::option::Option<i64>,
+    pub(crate) last_disabled_time: ::std::option::Option<i64>,
+    pub(crate) last_modified_time: ::std::option::Option<i64>,
+    pub(crate) last_login_time: ::std::option::Option<i64>,
 }
 impl UserBuilder {
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_id = Some(input.into());
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the user.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
@@ -186,7 +186,7 @@ impl UserBuilder {
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::UserStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the user account. </p>
@@ -195,37 +195,43 @@ impl UserBuilder {
     /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::UserStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.first_name = Some(input.into());
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.first_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first name of the user.</p>
-    pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
     }
     /// <p> The last name of the user.</p>
-    pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_name = Some(input.into());
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The last name of the user.</p>
-    pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
     /// <p>The email address of the user. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the user. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
@@ -235,7 +241,7 @@ impl UserBuilder {
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the type of user.</p>
@@ -243,7 +249,7 @@ impl UserBuilder {
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.r#type = input;
         self
     }
@@ -253,7 +259,7 @@ impl UserBuilder {
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
     pub fn api_access(mut self, input: crate::types::ApiAccess) -> Self {
-        self.api_access = Some(input);
+        self.api_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p>
@@ -261,70 +267,73 @@ impl UserBuilder {
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li>
     /// </ul>
-    pub fn set_api_access(mut self, input: std::option::Option<crate::types::ApiAccess>) -> Self {
+    pub fn set_api_access(mut self, input: ::std::option::Option<crate::types::ApiAccess>) -> Self {
         self.api_access = input;
         self
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
-    pub fn api_access_principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_access_principal_arn = Some(input.into());
+    pub fn api_access_principal_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_access_principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.</p>
     pub fn set_api_access_principal_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.api_access_principal_arn = input;
         self
     }
     /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
     pub fn create_time(mut self, input: i64) -> Self {
-        self.create_time = Some(input);
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>
-    pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.create_time = input;
         self
     }
     /// <p> Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds. </p>
     pub fn last_enabled_time(mut self, input: i64) -> Self {
-        self.last_enabled_time = Some(input);
+        self.last_enabled_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds. </p>
-    pub fn set_last_enabled_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_enabled_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_enabled_time = input;
         self
     }
     /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
     pub fn last_disabled_time(mut self, input: i64) -> Self {
-        self.last_disabled_time = Some(input);
+        self.last_disabled_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>
-    pub fn set_last_disabled_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_disabled_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_disabled_time = input;
         self
     }
     /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
-        self.last_modified_time = Some(input);
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds. </p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds. </p>
     pub fn last_login_time(mut self, input: i64) -> Self {
-        self.last_login_time = Some(input);
+        self.last_login_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds. </p>
-    pub fn set_last_login_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_login_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_login_time = input;
         self
     }
@@ -347,8 +356,8 @@ impl UserBuilder {
         }
     }
 }
-impl std::fmt::Debug for UserBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserBuilder");
         formatter.field("user_id", &self.user_id);
         formatter.field("status", &self.status);

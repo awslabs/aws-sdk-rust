@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeAgentVersions</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAgentVersionsOutput {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
     #[doc(hidden)]
-    pub agent_versions: std::option::Option<std::vec::Vec<crate::types::AgentVersion>>,
+    pub agent_versions: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeAgentVersionsOutput {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-    pub fn agent_versions(&self) -> std::option::Option<&[crate::types::AgentVersion]> {
+    pub fn agent_versions(&self) -> ::std::option::Option<&[crate::types::AgentVersion]> {
         self.agent_versions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeAgentVersionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeAgentVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeAgentVersionsOutput {
 
 /// A builder for [`DescribeAgentVersionsOutput`](crate::operation::describe_agent_versions::DescribeAgentVersionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeAgentVersionsOutputBuilder {
-    pub(crate) agent_versions: std::option::Option<std::vec::Vec<crate::types::AgentVersion>>,
+    pub(crate) agent_versions: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeAgentVersionsOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeAgentVersionsOutputBuilder {
     pub fn agent_versions(mut self, input: crate::types::AgentVersion) -> Self {
         let mut v = self.agent_versions.unwrap_or_default();
         v.push(input);
-        self.agent_versions = Some(v);
+        self.agent_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
     pub fn set_agent_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AgentVersion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentVersion>>,
     ) -> Self {
         self.agent_versions = input;
         self

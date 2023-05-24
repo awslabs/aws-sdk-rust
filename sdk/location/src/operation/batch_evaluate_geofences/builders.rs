@@ -17,29 +17,29 @@ pub use crate::operation::batch_evaluate_geofences::_batch_evaluate_geofences_in
 /// </note> <note>
 /// <p>The <code>DeviceID</code> is used as a string to represent the device. You do not need to have a <code>Tracker</code> associated with the <code>DeviceID</code>.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchEvaluateGeofencesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::batch_evaluate_geofences::builders::BatchEvaluateGeofencesInputBuilder,
 }
 impl BatchEvaluateGeofencesFluentBuilder {
     /// Creates a new `BatchEvaluateGeofences`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofences,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
         >,
     > {
@@ -47,30 +47,33 @@ impl BatchEvaluateGeofencesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -83,21 +86,27 @@ impl BatchEvaluateGeofencesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn collection_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.collection_name(input.into());
         self
     }
     /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_collection_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_collection_name(input);
         self
     }
@@ -113,7 +122,7 @@ impl BatchEvaluateGeofencesFluentBuilder {
     /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
     pub fn set_device_position_updates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DevicePositionUpdate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePositionUpdate>>,
     ) -> Self {
         self.inner = self.inner.set_device_position_updates(input);
         self

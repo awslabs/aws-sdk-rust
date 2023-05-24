@@ -2,36 +2,36 @@
 
 /// <p>Metadata information about a contact evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     #[doc(hidden)]
-    pub contact_id: std::option::Option<std::string::String>,
+    pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     #[doc(hidden)]
-    pub evaluator_arn: std::option::Option<std::string::String>,
+    pub evaluator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the agent who performed the contact.</p>
     #[doc(hidden)]
-    pub contact_agent_id: std::option::Option<std::string::String>,
+    pub contact_agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The overall score of the contact evaluation.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<crate::types::EvaluationScore>,
+    pub score: ::std::option::Option<crate::types::EvaluationScore>,
 }
 impl EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(&self) -> std::option::Option<&str> {
+    pub fn evaluator_arn(&self) -> ::std::option::Option<&str> {
         self.evaluator_arn.as_deref()
     }
     /// <p>The identifier of the agent who performed the contact.</p>
-    pub fn contact_agent_id(&self) -> std::option::Option<&str> {
+    pub fn contact_agent_id(&self) -> ::std::option::Option<&str> {
         self.contact_agent_id.as_deref()
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn score(&self) -> std::option::Option<&crate::types::EvaluationScore> {
+    pub fn score(&self) -> ::std::option::Option<&crate::types::EvaluationScore> {
         self.score.as_ref()
     }
 }
@@ -44,51 +44,68 @@ impl EvaluationMetadata {
 
 /// A builder for [`EvaluationMetadata`](crate::types::EvaluationMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationMetadataBuilder {
-    pub(crate) contact_id: std::option::Option<std::string::String>,
-    pub(crate) evaluator_arn: std::option::Option<std::string::String>,
-    pub(crate) contact_agent_id: std::option::Option<std::string::String>,
-    pub(crate) score: std::option::Option<crate::types::EvaluationScore>,
+    pub(crate) contact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluator_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) score: ::std::option::Option<crate::types::EvaluationScore>,
 }
 impl EvaluationMetadataBuilder {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_id = Some(input.into());
+    pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluator_arn = Some(input.into());
+    pub fn evaluator_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn set_evaluator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_evaluator_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.evaluator_arn = input;
         self
     }
     /// <p>The identifier of the agent who performed the contact.</p>
-    pub fn contact_agent_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_agent_id = Some(input.into());
+    pub fn contact_agent_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.contact_agent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the agent who performed the contact.</p>
-    pub fn set_contact_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_agent_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.contact_agent_id = input;
         self
     }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(mut self, input: crate::types::EvaluationScore) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn set_score(mut self, input: std::option::Option<crate::types::EvaluationScore>) -> Self {
+    pub fn set_score(
+        mut self,
+        input: ::std::option::Option<crate::types::EvaluationScore>,
+    ) -> Self {
         self.score = input;
         self
     }

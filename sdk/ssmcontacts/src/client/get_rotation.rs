@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRotation`](crate::operation::get_rotation::builders::GetRotationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rotation_id(impl Into<String>)`](crate::operation::get_rotation::builders::GetRotationFluentBuilder::rotation_id) / [`set_rotation_id(Option<String>)`](crate::operation::get_rotation::builders::GetRotationFluentBuilder::set_rotation_id): <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
+    ///   - [`rotation_id(impl ::std::convert::Into<String>)`](crate::operation::get_rotation::builders::GetRotationFluentBuilder::rotation_id) / [`set_rotation_id(Option<String>)`](crate::operation::get_rotation::builders::GetRotationFluentBuilder::set_rotation_id): <p>The Amazon Resource Name (ARN) of the on-call rotation to retrieve information about.</p>
     /// - On success, responds with [`GetRotationOutput`](crate::operation::get_rotation::GetRotationOutput) with field(s):
     ///   - [`rotation_arn(Option<String>)`](crate::operation::get_rotation::GetRotationOutput::rotation_arn): <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_rotation::GetRotationOutput::name): <p>The name of the on-call rotation.</p>

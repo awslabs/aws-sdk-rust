@@ -2,25 +2,25 @@
 
 /// <p>A structure that contains the settings for a keyword match task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeywordMatchConfiguration {
     /// <p>The name of the keyword match rule.</p>
     #[doc(hidden)]
-    pub rule_name: std::option::Option<std::string::String>,
+    pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The keywords or phrases that you want to match.</p>
     #[doc(hidden)]
-    pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
     #[doc(hidden)]
     pub negate: bool,
 }
 impl KeywordMatchConfiguration {
     /// <p>The name of the keyword match rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>The keywords or phrases that you want to match.</p>
-    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.keywords.as_deref()
     }
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
@@ -37,20 +37,22 @@ impl KeywordMatchConfiguration {
 
 /// A builder for [`KeywordMatchConfiguration`](crate::types::KeywordMatchConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KeywordMatchConfigurationBuilder {
-    pub(crate) rule_name: std::option::Option<std::string::String>,
-    pub(crate) keywords: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) negate: std::option::Option<bool>,
+    pub(crate) rule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) negate: ::std::option::Option<bool>,
 }
 impl KeywordMatchConfigurationBuilder {
     /// <p>The name of the keyword match rule.</p>
-    pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_name = Some(input.into());
+    pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyword match rule.</p>
-    pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
     }
@@ -59,27 +61,27 @@ impl KeywordMatchConfigurationBuilder {
     /// To override the contents of this collection use [`set_keywords`](Self::set_keywords).
     ///
     /// <p>The keywords or phrases that you want to match.</p>
-    pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn keywords(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keywords.unwrap_or_default();
         v.push(input.into());
-        self.keywords = Some(v);
+        self.keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>The keywords or phrases that you want to match.</p>
     pub fn set_keywords(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.keywords = input;
         self
     }
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
     pub fn negate(mut self, input: bool) -> Self {
-        self.negate = Some(input);
+        self.negate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>, the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.</p>
-    pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negate = input;
         self
     }

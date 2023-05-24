@@ -2,22 +2,22 @@
 
 /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsVolumesResult {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DataSourceStatus>,
+    pub status: ::std::option::Option<crate::types::DataSourceStatus>,
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
 }
 impl EbsVolumesResult {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl EbsVolumesResult {
 
 /// A builder for [`EbsVolumesResult`](crate::types::EbsVolumesResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EbsVolumesResultBuilder {
-    pub(crate) status: std::option::Option<crate::types::DataSourceStatus>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl EbsVolumesResultBuilder {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DataSourceStatus>,
+        input: ::std::option::Option<crate::types::DataSourceStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }

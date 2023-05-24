@@ -2,29 +2,29 @@
 
 /// <p>Information about a change to a resource attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceChangeDetail {
     /// <p>Information about the resource attribute to be modified.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<crate::types::ResourceTargetDefinition>,
+    pub target: ::std::option::Option<crate::types::ResourceTargetDefinition>,
     /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
     #[doc(hidden)]
-    pub evaluation: std::option::Option<crate::types::EvaluationType>,
+    pub evaluation: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>The ID of the entity that caused the change.</p>
     #[doc(hidden)]
-    pub causing_entity: std::option::Option<std::string::String>,
+    pub causing_entity: ::std::option::Option<::std::string::String>,
 }
 impl ResourceChangeDetail {
     /// <p>Information about the resource attribute to be modified.</p>
-    pub fn target(&self) -> std::option::Option<&crate::types::ResourceTargetDefinition> {
+    pub fn target(&self) -> ::std::option::Option<&crate::types::ResourceTargetDefinition> {
         self.target.as_ref()
     }
     /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
-    pub fn evaluation(&self) -> std::option::Option<&crate::types::EvaluationType> {
+    pub fn evaluation(&self) -> ::std::option::Option<&crate::types::EvaluationType> {
         self.evaluation.as_ref()
     }
     /// <p>The ID of the entity that caused the change.</p>
-    pub fn causing_entity(&self) -> std::option::Option<&str> {
+    pub fn causing_entity(&self) -> ::std::option::Option<&str> {
         self.causing_entity.as_deref()
     }
 }
@@ -37,46 +37,54 @@ impl ResourceChangeDetail {
 
 /// A builder for [`ResourceChangeDetail`](crate::types::ResourceChangeDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceChangeDetailBuilder {
-    pub(crate) target: std::option::Option<crate::types::ResourceTargetDefinition>,
-    pub(crate) evaluation: std::option::Option<crate::types::EvaluationType>,
-    pub(crate) causing_entity: std::option::Option<std::string::String>,
+    pub(crate) target: ::std::option::Option<crate::types::ResourceTargetDefinition>,
+    pub(crate) evaluation: ::std::option::Option<crate::types::EvaluationType>,
+    pub(crate) causing_entity: ::std::option::Option<::std::string::String>,
 }
 impl ResourceChangeDetailBuilder {
     /// <p>Information about the resource attribute to be modified.</p>
     pub fn target(mut self, input: crate::types::ResourceTargetDefinition) -> Self {
-        self.target = Some(input);
+        self.target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the resource attribute to be modified.</p>
     pub fn set_target(
         mut self,
-        input: std::option::Option<crate::types::ResourceTargetDefinition>,
+        input: ::std::option::Option<crate::types::ResourceTargetDefinition>,
     ) -> Self {
         self.target = input;
         self
     }
     /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
     pub fn evaluation(mut self, input: crate::types::EvaluationType) -> Self {
-        self.evaluation = Some(input);
+        self.evaluation = ::std::option::Option::Some(input);
         self
     }
     /// <p>For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic evaluations, the value might change, and any new value will be determined when the plan is updated.</p>
     pub fn set_evaluation(
         mut self,
-        input: std::option::Option<crate::types::EvaluationType>,
+        input: ::std::option::Option<crate::types::EvaluationType>,
     ) -> Self {
         self.evaluation = input;
         self
     }
     /// <p>The ID of the entity that caused the change.</p>
-    pub fn causing_entity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.causing_entity = Some(input.into());
+    pub fn causing_entity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.causing_entity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the entity that caused the change.</p>
-    pub fn set_causing_entity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_causing_entity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.causing_entity = input;
         self
     }

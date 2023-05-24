@@ -2,36 +2,36 @@
 
 /// <p>Contains information about which resources to include or exclude from a backup plan using their tags. Conditions are case sensitive.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Conditions {
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
     #[doc(hidden)]
-    pub string_equals: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+    pub string_equals: ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
     #[doc(hidden)]
-    pub string_not_equals: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+    pub string_not_equals: ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     /// <p>Filters the values of your tagged resources for matching tag values with the use of a wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the tag value "production".</p>
     #[doc(hidden)]
-    pub string_like: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+    pub string_like: ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     /// <p>Filters the values of your tagged resources for non-matching tag values with the use of a wildcard character (*) anywhere in the string.</p>
     #[doc(hidden)]
-    pub string_not_like: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+    pub string_not_like: ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
 }
 impl Conditions {
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
-    pub fn string_equals(&self) -> std::option::Option<&[crate::types::ConditionParameter]> {
+    pub fn string_equals(&self) -> ::std::option::Option<&[crate::types::ConditionParameter]> {
         self.string_equals.as_deref()
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
-    pub fn string_not_equals(&self) -> std::option::Option<&[crate::types::ConditionParameter]> {
+    pub fn string_not_equals(&self) -> ::std::option::Option<&[crate::types::ConditionParameter]> {
         self.string_not_equals.as_deref()
     }
     /// <p>Filters the values of your tagged resources for matching tag values with the use of a wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the tag value "production".</p>
-    pub fn string_like(&self) -> std::option::Option<&[crate::types::ConditionParameter]> {
+    pub fn string_like(&self) -> ::std::option::Option<&[crate::types::ConditionParameter]> {
         self.string_like.as_deref()
     }
     /// <p>Filters the values of your tagged resources for non-matching tag values with the use of a wildcard character (*) anywhere in the string.</p>
-    pub fn string_not_like(&self) -> std::option::Option<&[crate::types::ConditionParameter]> {
+    pub fn string_not_like(&self) -> ::std::option::Option<&[crate::types::ConditionParameter]> {
         self.string_not_like.as_deref()
     }
 }
@@ -44,14 +44,18 @@ impl Conditions {
 
 /// A builder for [`Conditions`](crate::types::Conditions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionsBuilder {
-    pub(crate) string_equals: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+    pub(crate) string_equals:
+        ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     pub(crate) string_not_equals:
-        std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
-    pub(crate) string_like: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
+    pub(crate) string_like:
+        ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     pub(crate) string_not_like:
-        std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
 }
 impl ConditionsBuilder {
     /// Appends an item to `string_equals`.
@@ -62,13 +66,13 @@ impl ConditionsBuilder {
     pub fn string_equals(mut self, input: crate::types::ConditionParameter) -> Self {
         let mut v = self.string_equals.unwrap_or_default();
         v.push(input);
-        self.string_equals = Some(v);
+        self.string_equals = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called "exact matching."</p>
     pub fn set_string_equals(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     ) -> Self {
         self.string_equals = input;
         self
@@ -81,13 +85,13 @@ impl ConditionsBuilder {
     pub fn string_not_equals(mut self, input: crate::types::ConditionParameter) -> Self {
         let mut v = self.string_not_equals.unwrap_or_default();
         v.push(input);
-        self.string_not_equals = Some(v);
+        self.string_not_equals = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the values of your tagged resources for only those resources that you tagged that do not have the same value. Also called "negated matching."</p>
     pub fn set_string_not_equals(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     ) -> Self {
         self.string_not_equals = input;
         self
@@ -100,13 +104,13 @@ impl ConditionsBuilder {
     pub fn string_like(mut self, input: crate::types::ConditionParameter) -> Self {
         let mut v = self.string_like.unwrap_or_default();
         v.push(input);
-        self.string_like = Some(v);
+        self.string_like = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the values of your tagged resources for matching tag values with the use of a wildcard character (*) anywhere in the string. For example, "prod*" or "*rod*" matches the tag value "production".</p>
     pub fn set_string_like(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     ) -> Self {
         self.string_like = input;
         self
@@ -119,13 +123,13 @@ impl ConditionsBuilder {
     pub fn string_not_like(mut self, input: crate::types::ConditionParameter) -> Self {
         let mut v = self.string_not_like.unwrap_or_default();
         v.push(input);
-        self.string_not_like = Some(v);
+        self.string_not_like = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the values of your tagged resources for non-matching tag values with the use of a wildcard character (*) anywhere in the string.</p>
     pub fn set_string_not_like(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConditionParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConditionParameter>>,
     ) -> Self {
         self.string_not_like = input;
         self

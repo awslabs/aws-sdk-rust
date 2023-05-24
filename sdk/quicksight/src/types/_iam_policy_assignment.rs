@@ -2,56 +2,56 @@
 
 /// <p>An Identity and Access Management (IAM) policy assignment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamPolicyAssignment {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub aws_account_id: std::option::Option<std::string::String>,
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Assignment ID.</p>
     #[doc(hidden)]
-    pub assignment_id: std::option::Option<std::string::String>,
+    pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p>Assignment name.</p>
     #[doc(hidden)]
-    pub assignment_name: std::option::Option<std::string::String>,
+    pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
     #[doc(hidden)]
-    pub policy_arn: std::option::Option<std::string::String>,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Identities.</p>
     #[doc(hidden)]
-    pub identities: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub identities: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
     /// <p>Assignment status.</p>
     #[doc(hidden)]
-    pub assignment_status: std::option::Option<crate::types::AssignmentStatus>,
+    pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
 }
 impl IamPolicyAssignment {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>Assignment ID.</p>
-    pub fn assignment_id(&self) -> std::option::Option<&str> {
+    pub fn assignment_id(&self) -> ::std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
     /// <p>Assignment name.</p>
-    pub fn assignment_name(&self) -> std::option::Option<&str> {
+    pub fn assignment_name(&self) -> ::std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>Identities.</p>
     pub fn identities(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     > {
         self.identities.as_ref()
     }
     /// <p>Assignment status.</p>
-    pub fn assignment_status(&self) -> std::option::Option<&crate::types::AssignmentStatus> {
+    pub fn assignment_status(&self) -> ::std::option::Option<&crate::types::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
 }
@@ -64,55 +64,75 @@ impl IamPolicyAssignment {
 
 /// A builder for [`IamPolicyAssignment`](crate::types::IamPolicyAssignment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IamPolicyAssignmentBuilder {
-    pub(crate) aws_account_id: std::option::Option<std::string::String>,
-    pub(crate) assignment_id: std::option::Option<std::string::String>,
-    pub(crate) assignment_name: std::option::Option<std::string::String>,
-    pub(crate) policy_arn: std::option::Option<std::string::String>,
-    pub(crate) identities: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) assignment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identities: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
-    pub(crate) assignment_status: std::option::Option<crate::types::AssignmentStatus>,
+    pub(crate) assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
 }
 impl IamPolicyAssignmentBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_account_id = Some(input.into());
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_account_id = input;
         self
     }
     /// <p>Assignment ID.</p>
-    pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assignment_id = Some(input.into());
+    pub fn assignment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Assignment ID.</p>
-    pub fn set_assignment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assignment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assignment_id = input;
         self
     }
     /// <p>Assignment name.</p>
-    pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assignment_name = Some(input.into());
+    pub fn assignment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assignment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Assignment name.</p>
-    pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assignment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assignment_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
-    pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_arn = Some(input.into());
+    pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM policy.</p>
-    pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }
@@ -123,19 +143,22 @@ impl IamPolicyAssignmentBuilder {
     /// <p>Identities.</p>
     pub fn identities(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.identities.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.identities = Some(hash_map);
+        self.identities = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Identities.</p>
     pub fn set_identities(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.identities = input;
@@ -143,13 +166,13 @@ impl IamPolicyAssignmentBuilder {
     }
     /// <p>Assignment status.</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
-        self.assignment_status = Some(input);
+        self.assignment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Assignment status.</p>
     pub fn set_assignment_status(
         mut self,
-        input: std::option::Option<crate::types::AssignmentStatus>,
+        input: ::std::option::Option<crate::types::AssignmentStatus>,
     ) -> Self {
         self.assignment_status = input;
         self

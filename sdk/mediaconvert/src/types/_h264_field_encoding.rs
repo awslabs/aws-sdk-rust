@@ -39,13 +39,13 @@
 /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264FieldEncoding {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum H264FieldEncoding {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264FieldEncoding {
+impl ::std::convert::From<&str> for H264FieldEncoding {
     fn from(s: &str) -> Self {
         match s {
             "FORCE_FIELD" => H264FieldEncoding::ForceField,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for H264FieldEncoding {
         }
     }
 }
-impl std::str::FromStr for H264FieldEncoding {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264FieldEncoding {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264FieldEncoding::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264FieldEncoding::from(s))
     }
 }
 impl H264FieldEncoding {
@@ -91,7 +91,7 @@ impl H264FieldEncoding {
         &["FORCE_FIELD", "MBAFF", "PAFF"]
     }
 }
-impl AsRef<str> for H264FieldEncoding {
+impl ::std::convert::AsRef<str> for H264FieldEncoding {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

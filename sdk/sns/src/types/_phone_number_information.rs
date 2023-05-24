@@ -2,50 +2,50 @@
 
 /// <p>A list of phone numbers and their metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberInformation {
     /// <p>The date and time when the phone number was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The phone number.</p>
     #[doc(hidden)]
-    pub phone_number: std::option::Option<std::string::String>,
+    pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The status of the phone number.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
     #[doc(hidden)]
-    pub iso2_country_code: std::option::Option<std::string::String>,
+    pub iso2_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The list of supported routes.</p>
     #[doc(hidden)]
-    pub route_type: std::option::Option<crate::types::RouteType>,
+    pub route_type: ::std::option::Option<crate::types::RouteType>,
     /// <p>The capabilities of each phone number.</p>
     #[doc(hidden)]
-    pub number_capabilities: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+    pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
 }
 impl PhoneNumberInformation {
     /// <p>The date and time when the phone number was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The phone number.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
     /// <p>The status of the phone number.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
-    pub fn iso2_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso2_country_code(&self) -> ::std::option::Option<&str> {
         self.iso2_country_code.as_deref()
     }
     /// <p>The list of supported routes.</p>
-    pub fn route_type(&self) -> std::option::Option<&crate::types::RouteType> {
+    pub fn route_type(&self) -> ::std::option::Option<&crate::types::RouteType> {
         self.route_type.as_ref()
     }
     /// <p>The capabilities of each phone number.</p>
-    pub fn number_capabilities(&self) -> std::option::Option<&[crate::types::NumberCapability]> {
+    pub fn number_capabilities(&self) -> ::std::option::Option<&[crate::types::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
 }
@@ -58,70 +58,75 @@ impl PhoneNumberInformation {
 
 /// A builder for [`PhoneNumberInformation`](crate::types::PhoneNumberInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PhoneNumberInformationBuilder {
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) phone_number: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) iso2_country_code: std::option::Option<std::string::String>,
-    pub(crate) route_type: std::option::Option<crate::types::RouteType>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) iso2_country_code: ::std::option::Option<::std::string::String>,
+    pub(crate) route_type: ::std::option::Option<crate::types::RouteType>,
     pub(crate) number_capabilities:
-        std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
 }
 impl PhoneNumberInformationBuilder {
     /// <p>The date and time when the phone number was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the phone number was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The phone number.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number = Some(input.into());
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
     /// <p>The status of the phone number.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the phone number.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
-    pub fn iso2_country_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iso2_country_code = Some(input.into());
+    pub fn iso2_country_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.iso2_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code for the country or region, in ISO 3166-1 alpha-2 format.</p>
     pub fn set_iso2_country_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.iso2_country_code = input;
         self
     }
     /// <p>The list of supported routes.</p>
     pub fn route_type(mut self, input: crate::types::RouteType) -> Self {
-        self.route_type = Some(input);
+        self.route_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The list of supported routes.</p>
-    pub fn set_route_type(mut self, input: std::option::Option<crate::types::RouteType>) -> Self {
+    pub fn set_route_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
         self.route_type = input;
         self
     }
@@ -133,13 +138,13 @@ impl PhoneNumberInformationBuilder {
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         let mut v = self.number_capabilities.unwrap_or_default();
         v.push(input);
-        self.number_capabilities = Some(v);
+        self.number_capabilities = ::std::option::Option::Some(v);
         self
     }
     /// <p>The capabilities of each phone number.</p>
     pub fn set_number_capabilities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     ) -> Self {
         self.number_capabilities = input;
         self

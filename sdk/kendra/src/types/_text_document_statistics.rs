@@ -2,7 +2,7 @@
 
 /// <p>Provides information about text documents indexed in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextDocumentStatistics {
     /// <p>The number of text documents indexed.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl TextDocumentStatistics {
 
 /// A builder for [`TextDocumentStatistics`](crate::types::TextDocumentStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TextDocumentStatisticsBuilder {
-    pub(crate) indexed_text_documents_count: std::option::Option<i32>,
-    pub(crate) indexed_text_bytes: std::option::Option<i64>,
+    pub(crate) indexed_text_documents_count: ::std::option::Option<i32>,
+    pub(crate) indexed_text_bytes: ::std::option::Option<i64>,
 }
 impl TextDocumentStatisticsBuilder {
     /// <p>The number of text documents indexed.</p>
     pub fn indexed_text_documents_count(mut self, input: i32) -> Self {
-        self.indexed_text_documents_count = Some(input);
+        self.indexed_text_documents_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of text documents indexed.</p>
-    pub fn set_indexed_text_documents_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_indexed_text_documents_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.indexed_text_documents_count = input;
         self
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
     pub fn indexed_text_bytes(mut self, input: i64) -> Self {
-        self.indexed_text_bytes = Some(input);
+        self.indexed_text_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total size, in bytes, of the indexed documents.</p>
-    pub fn set_indexed_text_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_indexed_text_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.indexed_text_bytes = input;
         self
     }

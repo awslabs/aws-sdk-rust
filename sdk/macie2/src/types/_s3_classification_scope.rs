@@ -2,15 +2,15 @@
 
 /// <p>Specifies the S3 buckets that are excluded from automated sensitive data discovery for an Amazon Macie account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ClassificationScope {
     /// <p>The S3 buckets that are excluded.</p>
     #[doc(hidden)]
-    pub excludes: std::option::Option<crate::types::S3ClassificationScopeExclusion>,
+    pub excludes: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>,
 }
 impl S3ClassificationScope {
     /// <p>The S3 buckets that are excluded.</p>
-    pub fn excludes(&self) -> std::option::Option<&crate::types::S3ClassificationScopeExclusion> {
+    pub fn excludes(&self) -> ::std::option::Option<&crate::types::S3ClassificationScopeExclusion> {
         self.excludes.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl S3ClassificationScope {
 
 /// A builder for [`S3ClassificationScope`](crate::types::S3ClassificationScope).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ClassificationScopeBuilder {
-    pub(crate) excludes: std::option::Option<crate::types::S3ClassificationScopeExclusion>,
+    pub(crate) excludes: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>,
 }
 impl S3ClassificationScopeBuilder {
     /// <p>The S3 buckets that are excluded.</p>
     pub fn excludes(mut self, input: crate::types::S3ClassificationScopeExclusion) -> Self {
-        self.excludes = Some(input);
+        self.excludes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 buckets that are excluded.</p>
     pub fn set_excludes(
         mut self,
-        input: std::option::Option<crate::types::S3ClassificationScopeExclusion>,
+        input: ::std::option::Option<crate::types::S3ClassificationScopeExclusion>,
     ) -> Self {
         self.excludes = input;
         self

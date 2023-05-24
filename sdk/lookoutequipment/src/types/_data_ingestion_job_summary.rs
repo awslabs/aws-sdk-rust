@@ -2,46 +2,46 @@
 
 /// <p>Provides information about a specified data ingestion job, including dataset information, data ingestion configuration, and status. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataIngestionJobSummary {
     /// <p>Indicates the job ID of the data ingestion job. </p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset used for the data ingestion job. </p>
     #[doc(hidden)]
-    pub dataset_name: std::option::Option<std::string::String>,
+    pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
     #[doc(hidden)]
-    pub dataset_arn: std::option::Option<std::string::String>,
+    pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
     #[doc(hidden)]
     pub ingestion_input_configuration:
-        std::option::Option<crate::types::IngestionInputConfiguration>,
+        ::std::option::Option<crate::types::IngestionInputConfiguration>,
     /// <p>Indicates the status of the data ingestion job. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::IngestionJobStatus>,
+    pub status: ::std::option::Option<crate::types::IngestionJobStatus>,
 }
 impl DataIngestionJobSummary {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the dataset used for the data ingestion job. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
     pub fn ingestion_input_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::IngestionInputConfiguration> {
+    ) -> ::std::option::Option<&crate::types::IngestionInputConfiguration> {
         self.ingestion_input_configuration.as_ref()
     }
     /// <p>Indicates the status of the data ingestion job. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::IngestionJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionJobStatus> {
         self.status.as_ref()
     }
 }
@@ -54,43 +54,45 @@ impl DataIngestionJobSummary {
 
 /// A builder for [`DataIngestionJobSummary`](crate::types::DataIngestionJobSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataIngestionJobSummaryBuilder {
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) dataset_name: std::option::Option<std::string::String>,
-    pub(crate) dataset_arn: std::option::Option<std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ingestion_input_configuration:
-        std::option::Option<crate::types::IngestionInputConfiguration>,
-    pub(crate) status: std::option::Option<crate::types::IngestionJobStatus>,
+        ::std::option::Option<crate::types::IngestionInputConfiguration>,
+    pub(crate) status: ::std::option::Option<crate::types::IngestionJobStatus>,
 }
 impl DataIngestionJobSummaryBuilder {
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the job ID of the data ingestion job. </p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>The name of the dataset used for the data ingestion job. </p>
-    pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_name = Some(input.into());
+    pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset used for the data ingestion job. </p>
-    pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
-    pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_arn = Some(input.into());
+    pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset used in the data ingestion job. </p>
-    pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
     }
@@ -99,26 +101,26 @@ impl DataIngestionJobSummaryBuilder {
         mut self,
         input: crate::types::IngestionInputConfiguration,
     ) -> Self {
-        self.ingestion_input_configuration = Some(input);
+        self.ingestion_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies information for the input data for the data inference job, including data Amazon S3 location parameters. </p>
     pub fn set_ingestion_input_configuration(
         mut self,
-        input: std::option::Option<crate::types::IngestionInputConfiguration>,
+        input: ::std::option::Option<crate::types::IngestionInputConfiguration>,
     ) -> Self {
         self.ingestion_input_configuration = input;
         self
     }
     /// <p>Indicates the status of the data ingestion job. </p>
     pub fn status(mut self, input: crate::types::IngestionJobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the status of the data ingestion job. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::IngestionJobStatus>,
+        input: ::std::option::Option<crate::types::IngestionJobStatus>,
     ) -> Self {
         self.status = input;
         self

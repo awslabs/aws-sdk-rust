@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MergeOptionTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum MergeOptionTypeEnum {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MergeOptionTypeEnum {
+impl ::std::convert::From<&str> for MergeOptionTypeEnum {
     fn from(s: &str) -> Self {
         match s {
             "FAST_FORWARD_MERGE" => MergeOptionTypeEnum::FastForwardMerge,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for MergeOptionTypeEnum {
         }
     }
 }
-impl std::str::FromStr for MergeOptionTypeEnum {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MergeOptionTypeEnum {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MergeOptionTypeEnum::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MergeOptionTypeEnum::from(s))
     }
 }
 impl MergeOptionTypeEnum {
@@ -91,7 +91,7 @@ impl MergeOptionTypeEnum {
         &["FAST_FORWARD_MERGE", "SQUASH_MERGE", "THREE_WAY_MERGE"]
     }
 }
-impl AsRef<str> for MergeOptionTypeEnum {
+impl ::std::convert::AsRef<str> for MergeOptionTypeEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,11 +2,11 @@
 
 /// <p> Response of CreateSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSubscriberOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateSubscriberOutput {
+impl ::aws_http::request_id::RequestId for CreateSubscriberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl CreateSubscriberOutput {
 
 /// A builder for [`CreateSubscriberOutput`](crate::operation::create_subscriber::CreateSubscriberOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateSubscriberOutputBuilder {
     _request_id: Option<String>,
 }

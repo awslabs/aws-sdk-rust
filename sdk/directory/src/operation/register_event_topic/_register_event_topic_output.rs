@@ -2,11 +2,11 @@
 
 /// <p>The result of a RegisterEventTopic request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterEventTopicOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for RegisterEventTopicOutput {
+impl ::aws_http::request_id::RequestId for RegisterEventTopicOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl RegisterEventTopicOutput {
 
 /// A builder for [`RegisterEventTopicOutput`](crate::operation::register_event_topic::RegisterEventTopicOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterEventTopicOutputBuilder {
     _request_id: Option<String>,
 }

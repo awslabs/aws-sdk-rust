@@ -38,13 +38,13 @@
 /// <p>The minimum required TLS version.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TlsSecurityPolicy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum TlsSecurityPolicy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TlsSecurityPolicy {
+impl ::std::convert::From<&str> for TlsSecurityPolicy {
     fn from(s: &str) -> Self {
         match s {
             "Policy-Min-TLS-1-0-2019-07" => TlsSecurityPolicy::PolicyMinTls10201907,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for TlsSecurityPolicy {
         }
     }
 }
-impl std::str::FromStr for TlsSecurityPolicy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TlsSecurityPolicy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TlsSecurityPolicy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TlsSecurityPolicy::from(s))
     }
 }
 impl TlsSecurityPolicy {
@@ -86,7 +86,7 @@ impl TlsSecurityPolicy {
         &["Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"]
     }
 }
-impl AsRef<str> for TlsSecurityPolicy {
+impl ::std::convert::AsRef<str> for TlsSecurityPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

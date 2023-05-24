@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVirtualCluster`](crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder::set_id): <p>The ID of the virtual cluster that will be deleted.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterFluentBuilder::set_id): <p>The ID of the virtual cluster that will be deleted.</p>
     /// - On success, responds with [`DeleteVirtualClusterOutput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput::id): <p>This output contains the ID of the virtual cluster that will be deleted. </p>
     /// - On failure, responds with [`SdkError<DeleteVirtualClusterError>`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterError)

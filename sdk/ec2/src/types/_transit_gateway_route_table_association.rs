@@ -2,38 +2,38 @@
 
 /// <p>Describes an association between a route table and a resource attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTableAssociation {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
-    pub transit_gateway_attachment_id: std::option::Option<std::string::String>,
+    pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     /// <p>The state of the association.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::TransitGatewayAssociationState>,
+    pub state: ::std::option::Option<crate::types::TransitGatewayAssociationState>,
 }
 impl TransitGatewayRouteTableAssociation {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn resource_type(
         &self,
-    ) -> std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
+    ) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The state of the association.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::TransitGatewayAssociationState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayAssociationState> {
         self.state.as_ref()
     }
 }
@@ -46,35 +46,40 @@ impl TransitGatewayRouteTableAssociation {
 
 /// A builder for [`TransitGatewayRouteTableAssociation`](crate::types::TransitGatewayRouteTableAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransitGatewayRouteTableAssociationBuilder {
-    pub(crate) transit_gateway_attachment_id: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
+    pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type:
-        std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
-    pub(crate) state: std::option::Option<crate::types::TransitGatewayAssociationState>,
+        ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
+    pub(crate) state: ::std::option::Option<crate::types::TransitGatewayAssociationState>,
 }
 impl TransitGatewayRouteTableAssociationBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = Some(input.into());
+    pub fn transit_gateway_attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_transit_gateway_attachment_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -83,26 +88,26 @@ impl TransitGatewayRouteTableAssociationBuilder {
         mut self,
         input: crate::types::TransitGatewayAttachmentResourceType,
     ) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
+        input: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The state of the association.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayAssociationState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the association.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::TransitGatewayAssociationState>,
+        input: ::std::option::Option<crate::types::TransitGatewayAssociationState>,
     ) -> Self {
         self.state = input;
         self

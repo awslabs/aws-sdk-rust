@@ -6,29 +6,29 @@ pub use crate::operation::create_remote_access_session::_create_remote_access_se
 /// Fluent builder constructing a request to `CreateRemoteAccessSession`.
 ///
 /// <p>Specifies and starts a remote access session.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_remote_access_session::builders::CreateRemoteAccessSessionInputBuilder,
 }
 impl CreateRemoteAccessSessionFluentBuilder {
     /// Creates a new `CreateRemoteAccessSession`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_remote_access_session::CreateRemoteAccessSession,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_remote_access_session::CreateRemoteAccessSessionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateRemoteAccessSessionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_remote_access_session::CreateRemoteAccessSessionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_remote_access_session::CreateRemoteAccessSessionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,53 +75,59 @@ impl CreateRemoteAccessSessionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_remote_access_session::CreateRemoteAccessSessionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_remote_access_session::CreateRemoteAccessSessionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
-    pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
-    pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_arn(input);
         self
     }
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
-    pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_arn(input.into());
         self
     }
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
-    pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
-    pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
-    pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_arn(input);
         self
     }
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ssh_public_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ssh_public_key(input.into());
         self
     }
     /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ssh_public_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ssh_public_key(input);
         self
     }
@@ -130,7 +139,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
     }
     /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_remote_debug_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remote_debug_enabled(input);
         self
     }
@@ -140,42 +149,45 @@ impl CreateRemoteAccessSessionFluentBuilder {
         self
     }
     /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
-    pub fn set_remote_record_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_remote_record_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remote_record_enabled(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
-    pub fn remote_record_app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn remote_record_app_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.remote_record_app_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
     pub fn set_remote_record_app_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_remote_record_app_arn(input);
         self
     }
     /// <p>The name of the remote access session to create.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the remote access session to create.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
     /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
     /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
@@ -190,7 +202,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
     /// <p>The configuration information for the remote access session request.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>,
+        input: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
@@ -213,7 +225,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
     /// </ul>
     pub fn set_interaction_mode(
         mut self,
-        input: std::option::Option<crate::types::InteractionMode>,
+        input: ::std::option::Option<crate::types::InteractionMode>,
     ) -> Self {
         self.inner = self.inner.set_interaction_mode(input);
         self
@@ -226,7 +238,7 @@ impl CreateRemoteAccessSessionFluentBuilder {
     }
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
     /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you modify my app?</a> </p>
-    pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_app_resign(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_app_resign(input);
         self
     }

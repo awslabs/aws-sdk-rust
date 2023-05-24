@@ -2,34 +2,34 @@
 
 /// <p>The phone number ID, product type, or calling name fields to update, used with the <code>BatchUpdatePhoneNumber</code> and <code>UpdatePhoneNumber</code> actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePhoneNumberRequestItem {
     /// <p>The phone number ID to update.</p>
     #[doc(hidden)]
-    pub phone_number_id: std::option::Option<std::string::String>,
+    pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>The product type to update.</p>
     #[doc(hidden)]
-    pub product_type: std::option::Option<crate::types::PhoneNumberProductType>,
+    pub product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
     /// <p>The outbound calling name to update.</p>
     #[doc(hidden)]
-    pub calling_name: std::option::Option<std::string::String>,
+    pub calling_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePhoneNumberRequestItem {
     /// <p>The phone number ID to update.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The product type to update.</p>
-    pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> ::std::option::Option<&crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     /// <p>The outbound calling name to update.</p>
-    pub fn calling_name(&self) -> std::option::Option<&str> {
+    pub fn calling_name(&self) -> ::std::option::Option<&str> {
         self.calling_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePhoneNumberRequestItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdatePhoneNumberRequestItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberRequestItem");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
         formatter.field("product_type", &self.product_type);
@@ -46,43 +46,49 @@ impl UpdatePhoneNumberRequestItem {
 
 /// A builder for [`UpdatePhoneNumberRequestItem`](crate::types::UpdatePhoneNumberRequestItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdatePhoneNumberRequestItemBuilder {
-    pub(crate) phone_number_id: std::option::Option<std::string::String>,
-    pub(crate) product_type: std::option::Option<crate::types::PhoneNumberProductType>,
-    pub(crate) calling_name: std::option::Option<std::string::String>,
+    pub(crate) phone_number_id: ::std::option::Option<::std::string::String>,
+    pub(crate) product_type: ::std::option::Option<crate::types::PhoneNumberProductType>,
+    pub(crate) calling_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePhoneNumberRequestItemBuilder {
     /// <p>The phone number ID to update.</p>
-    pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number_id = Some(input.into());
+    pub fn phone_number_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number ID to update.</p>
-    pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.phone_number_id = input;
         self
     }
     /// <p>The product type to update.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
-        self.product_type = Some(input);
+        self.product_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The product type to update.</p>
     pub fn set_product_type(
         mut self,
-        input: std::option::Option<crate::types::PhoneNumberProductType>,
+        input: ::std::option::Option<crate::types::PhoneNumberProductType>,
     ) -> Self {
         self.product_type = input;
         self
     }
     /// <p>The outbound calling name to update.</p>
-    pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.calling_name = Some(input.into());
+    pub fn calling_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.calling_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outbound calling name to update.</p>
-    pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_calling_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calling_name = input;
         self
     }
@@ -95,8 +101,8 @@ impl UpdatePhoneNumberRequestItemBuilder {
         }
     }
 }
-impl std::fmt::Debug for UpdatePhoneNumberRequestItemBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdatePhoneNumberRequestItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberRequestItemBuilder");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
         formatter.field("product_type", &self.product_type);

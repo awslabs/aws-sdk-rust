@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`FlushApiCache`](crate::operation::flush_api_cache::builders::FlushApiCacheFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::flush_api_cache::builders::FlushApiCacheFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::flush_api_cache::builders::FlushApiCacheFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::flush_api_cache::builders::FlushApiCacheFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::flush_api_cache::builders::FlushApiCacheFluentBuilder::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`FlushApiCacheOutput`](crate::operation::flush_api_cache::FlushApiCacheOutput)
     /// - On failure, responds with [`SdkError<FlushApiCacheError>`](crate::operation::flush_api_cache::FlushApiCacheError)
     pub fn flush_api_cache(

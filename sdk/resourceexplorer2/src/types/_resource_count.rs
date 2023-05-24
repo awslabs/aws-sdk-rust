@@ -3,22 +3,22 @@
 /// <p>Information about the number of results that match the query. At this time, Amazon Web Services Resource Explorer doesn't count more than 1,000 matches for any query. This structure provides information about whether the query exceeded this limit.</p>
 /// <p>This field is included in every page when you paginate the results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceCount {
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
     #[doc(hidden)]
-    pub total_resources: std::option::Option<i64>,
+    pub total_resources: ::std::option::Option<i64>,
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
     /// <ul>
     /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
     /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub complete: std::option::Option<bool>,
+    pub complete: ::std::option::Option<bool>,
 }
 impl ResourceCount {
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
-    pub fn total_resources(&self) -> std::option::Option<i64> {
+    pub fn total_resources(&self) -> ::std::option::Option<i64> {
         self.total_resources
     }
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
@@ -26,7 +26,7 @@ impl ResourceCount {
     /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
     /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
     /// </ul>
-    pub fn complete(&self) -> std::option::Option<bool> {
+    pub fn complete(&self) -> ::std::option::Option<bool> {
         self.complete
     }
 }
@@ -39,19 +39,21 @@ impl ResourceCount {
 
 /// A builder for [`ResourceCount`](crate::types::ResourceCount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceCountBuilder {
-    pub(crate) total_resources: std::option::Option<i64>,
-    pub(crate) complete: std::option::Option<bool>,
+    pub(crate) total_resources: ::std::option::Option<i64>,
+    pub(crate) complete: ::std::option::Option<bool>,
 }
 impl ResourceCountBuilder {
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
     pub fn total_resources(mut self, input: i64) -> Self {
-        self.total_resources = Some(input);
+        self.total_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of resources that match the search query. This value can't exceed 1,000. If there are more than 1,000 resources that match the query, then only 1,000 are counted and the <code>Complete</code> field is set to false. We recommend that you refine your query to return a smaller number of results.</p>
-    pub fn set_total_resources(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_resources(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_resources = input;
         self
     }
@@ -61,7 +63,7 @@ impl ResourceCountBuilder {
     /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
     /// </ul>
     pub fn complete(mut self, input: bool) -> Self {
-        self.complete = Some(input);
+        self.complete = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
@@ -69,7 +71,7 @@ impl ResourceCountBuilder {
     /// <li> <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p> </li>
     /// <li> <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p> </li>
     /// </ul>
-    pub fn set_complete(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_complete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.complete = input;
         self
     }

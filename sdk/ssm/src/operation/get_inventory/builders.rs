@@ -6,56 +6,59 @@ pub use crate::operation::get_inventory::_get_inventory_input::GetInventoryInput
 /// Fluent builder constructing a request to `GetInventory`.
 ///
 /// <p>Query inventory information. This includes managed node status, such as <code>Stopped</code> or <code>Terminated</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInventoryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_inventory::builders::GetInventoryInputBuilder,
 }
 impl GetInventoryFluentBuilder {
     /// Creates a new `GetInventory`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_inventory::GetInventory,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_inventory::GetInventoryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl GetInventoryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_inventory::GetInventoryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
     > {
         self.send_middleware().await
     }
@@ -97,7 +100,7 @@ impl GetInventoryFluentBuilder {
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InventoryFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryFilter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -114,7 +117,7 @@ impl GetInventoryFluentBuilder {
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
     pub fn set_aggregators(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InventoryAggregator>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InventoryAggregator>>,
     ) -> Self {
         self.inner = self.inner.set_aggregators(input);
         self
@@ -131,18 +134,18 @@ impl GetInventoryFluentBuilder {
     /// <p>The list of inventory item types to return.</p>
     pub fn set_result_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResultAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResultAttribute>>,
     ) -> Self {
         self.inner = self.inner.set_result_attributes(input);
         self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -152,7 +155,7 @@ impl GetInventoryFluentBuilder {
         self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

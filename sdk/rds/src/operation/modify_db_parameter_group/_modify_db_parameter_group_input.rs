@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
     /// <p>Constraints:</p>
@@ -10,7 +10,7 @@ pub struct ModifyDbParameterGroupInput {
     /// <li> <p>If supplied, must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_parameter_group_name: std::option::Option<std::string::String>,
+    pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of parameter names, values, and the application methods for the parameter update. At least one parameter name, value, and application method must be supplied; later arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
     /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p>
     /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
@@ -20,7 +20,7 @@ pub struct ModifyDbParameterGroupInput {
     /// </note>
     /// <p>For more information on modifying DB parameters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ModifyDbParameterGroupInput {
     /// <p>The name of the DB parameter group.</p>
@@ -28,7 +28,7 @@ impl ModifyDbParameterGroupInput {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>An array of parameter names, values, and the application methods for the parameter update. At least one parameter name, value, and application method must be supplied; later arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
@@ -39,7 +39,7 @@ impl ModifyDbParameterGroupInput {
     /// <p>You can't use <code>pending-reboot</code> with dynamic parameters on RDS for SQL Server DB instances. Use <code>immediate</code>.</p>
     /// </note>
     /// <p>For more information on modifying DB parameters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
 }
@@ -54,10 +54,12 @@ impl ModifyDbParameterGroupInput {
 
 /// A builder for [`ModifyDbParameterGroupInput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyDbParameterGroupInputBuilder {
-    pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl ModifyDbParameterGroupInputBuilder {
     /// <p>The name of the DB parameter group.</p>
@@ -65,8 +67,11 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match the name of an existing <code>DBParameterGroup</code>.</p> </li>
     /// </ul>
-    pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_parameter_group_name = Some(input.into());
+    pub fn db_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB parameter group.</p>
@@ -76,7 +81,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// </ul>
     pub fn set_db_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_parameter_group_name = input;
         self
@@ -96,7 +101,7 @@ impl ModifyDbParameterGroupInputBuilder {
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
-        self.parameters = Some(v);
+        self.parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of parameter names, values, and the application methods for the parameter update. At least one parameter name, value, and application method must be supplied; later arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>
@@ -109,7 +114,7 @@ impl ModifyDbParameterGroupInputBuilder {
     /// <p>For more information on modifying DB parameters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html">Working with DB parameter groups</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     ) -> Self {
         self.parameters = input;
         self
@@ -117,11 +122,11 @@ impl ModifyDbParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbParameterGroupInput`](crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput {
                 db_parameter_group_name: self.db_parameter_group_name,
                 parameters: self.parameters,

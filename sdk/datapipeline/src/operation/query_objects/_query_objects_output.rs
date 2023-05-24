@@ -2,14 +2,14 @@
 
 /// <p>Contains the output of QueryObjects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
     #[doc(hidden)]
-    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     #[doc(hidden)]
     pub has_more_results: bool,
@@ -17,11 +17,11 @@ pub struct QueryObjectsOutput {
 }
 impl QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
@@ -29,7 +29,7 @@ impl QueryObjectsOutput {
         self.has_more_results
     }
 }
-impl aws_http::request_id::RequestId for QueryObjectsOutput {
+impl ::aws_http::request_id::RequestId for QueryObjectsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,11 +43,13 @@ impl QueryObjectsOutput {
 
 /// A builder for [`QueryObjectsOutput`](crate::operation::query_objects::QueryObjectsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryObjectsOutputBuilder {
-    pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) has_more_results: std::option::Option<bool>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) has_more_results: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl QueryObjectsOutputBuilder {
@@ -56,37 +58,37 @@ impl QueryObjectsOutputBuilder {
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).
     ///
     /// <p>The identifiers that match the query selectors.</p>
-    pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
         v.push(input.into());
-        self.ids = Some(v);
+        self.ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers that match the query selectors.</p>
     pub fn set_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ids = input;
         self
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub fn has_more_results(mut self, input: bool) -> Self {
-        self.has_more_results = Some(input);
+        self.has_more_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
-    pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_more_results(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_results = input;
         self
     }

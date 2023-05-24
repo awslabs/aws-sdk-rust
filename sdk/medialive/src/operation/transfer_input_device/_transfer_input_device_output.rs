@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for TransferInputDeviceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransferInputDeviceOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for TransferInputDeviceOutput {
+impl ::aws_http::request_id::RequestId for TransferInputDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl TransferInputDeviceOutput {
 
 /// A builder for [`TransferInputDeviceOutput`](crate::operation::transfer_input_device::TransferInputDeviceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransferInputDeviceOutputBuilder {
     _request_id: Option<String>,
 }

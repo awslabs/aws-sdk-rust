@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ScheduleAt {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ScheduleAt {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ScheduleAt {
+impl ::std::convert::From<&str> for ScheduleAt {
     fn from(s: &str) -> Self {
         match s {
             "NOW" => ScheduleAt::Now,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for ScheduleAt {
         }
     }
 }
-impl std::str::FromStr for ScheduleAt {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ScheduleAt {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduleAt::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ScheduleAt::from(s))
     }
 }
 impl ScheduleAt {
@@ -89,7 +89,7 @@ impl ScheduleAt {
         &["NOW", "OFF_PEAK_WINDOW", "TIMESTAMP"]
     }
 }
-impl AsRef<str> for ScheduleAt {
+impl ::std::convert::AsRef<str> for ScheduleAt {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

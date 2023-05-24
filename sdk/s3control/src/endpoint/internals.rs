@@ -10,7 +10,7 @@ pub(super) fn resolve_endpoint(
     _params: &crate::endpoint::Params,
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
-) -> aws_smithy_http::endpoint::Result {
+) -> ::aws_smithy_http::endpoint::Result {
     #[allow(unused_variables)]
     let region = &_params.region;
     #[allow(unused_variables)]
@@ -45,16 +45,20 @@ pub(super) fn resolve_endpoint(
                         partition_resolver.resolve_partition(region, _diagnostic_collector)
                     {
                         if (*use_dual_stack) == (true) {
-                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "S3 Snow does not support Dual-stack".to_string(),
-                            ));
+                            return Err(
+                                ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "S3 Snow does not support Dual-stack".to_string(),
+                                ),
+                            );
                         }
                         if (*use_fips) == (true) {
-                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "S3 Snow does not support FIPS".to_string(),
-                            ));
+                            return Err(
+                                ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "S3 Snow does not support FIPS".to_string(),
+                                ),
+                            );
                         }
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 #[allow(clippy::needless_borrow)]
@@ -66,10 +70,10 @@ pub(super) fn resolve_endpoint(
                             })
                             .property(
                                 "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<
                                         String,
-                                        aws_smithy_types::Document,
+                                        ::aws_smithy_types::Document,
                                     >::new();
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -83,7 +87,7 @@ pub(super) fn resolve_endpoint(
                             )
                             .build());
                     }
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "A valid partition could not be determined".to_string(),
                     ));
                 }
@@ -97,7 +101,7 @@ pub(super) fn resolve_endpoint(
             {
                 if (*use_fips) == (true) {
                     if (partition_result.name()) == ("aws-cn") {
-                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Partition does not support FIPS".to_string(),
                         ));
                     }
@@ -106,9 +110,11 @@ pub(super) fn resolve_endpoint(
                 if let Some(requires_account_id) = requires_account_id {
                     if (*requires_account_id) == (true) {
                         if !(account_id.is_some()) {
-                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "AccountId is required but not set".to_string(),
-                            ));
+                            return Err(
+                                ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "AccountId is required but not set".to_string(),
+                                ),
+                            );
                         }
                     }
                 }
@@ -119,7 +125,7 @@ pub(super) fn resolve_endpoint(
                         false,
                         _diagnostic_collector,
                     )) {
-                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "AccountId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
                         ));
                     }
@@ -129,7 +135,7 @@ pub(super) fn resolve_endpoint(
                     false,
                     _diagnostic_collector,
                 )) {
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "OutpostId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
                     ));
                 }
@@ -139,7 +145,7 @@ pub(super) fn resolve_endpoint(
                     _diagnostic_collector,
                 ) {
                     if (*use_dual_stack) == (true) {
-                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid configuration: Outposts do not support dual-stack".to_string(),
                         ));
                     }
@@ -150,7 +156,7 @@ pub(super) fn resolve_endpoint(
                             endpoint,
                             _diagnostic_collector,
                         ) {
-                            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
                                     #[allow(clippy::needless_borrow)]
@@ -164,10 +170,10 @@ pub(super) fn resolve_endpoint(
                                 })
                                 .property(
                                     "authSchemes",
-                                    vec![aws_smithy_types::Document::from({
-                                        let mut out = std::collections::HashMap::<
+                                    vec![::aws_smithy_types::Document::from({
+                                        let mut out = ::std::collections::HashMap::<
                                             String,
-                                            aws_smithy_types::Document,
+                                            ::aws_smithy_types::Document,
                                         >::new(
                                         );
                                         out.insert(
@@ -190,7 +196,7 @@ pub(super) fn resolve_endpoint(
                         }
                     }
                     if (*use_fips) == (true) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://s3-outposts-fips.");
@@ -203,10 +209,10 @@ pub(super) fn resolve_endpoint(
                             })
                             .property(
                                 "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<
                                         String,
-                                        aws_smithy_types::Document,
+                                        ::aws_smithy_types::Document,
                                     >::new();
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -223,7 +229,7 @@ pub(super) fn resolve_endpoint(
                             )
                             .build());
                     }
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();
                             out.push_str("https://s3-outposts.");
@@ -236,10 +242,10 @@ pub(super) fn resolve_endpoint(
                         })
                         .property(
                             "authSchemes",
-                            vec![aws_smithy_types::Document::from({
-                                let mut out = std::collections::HashMap::<
+                            vec![::aws_smithy_types::Document::from({
+                                let mut out = ::std::collections::HashMap::<
                                     String,
-                                    aws_smithy_types::Document,
+                                    ::aws_smithy_types::Document,
                                 >::new();
                                 out.insert("disableDoubleEncoding".to_string(), true.into());
                                 out.insert("name".to_string(), "sigv4".to_string().into());
@@ -253,11 +259,11 @@ pub(super) fn resolve_endpoint(
                         )
                         .build());
                 }
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                     "Invalid region: region was not a valid DNS name.".to_string(),
                 ));
             }
-            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "A valid partition could not be determined".to_string(),
             ));
         }
@@ -272,7 +278,7 @@ pub(super) fn resolve_endpoint(
                     if !((arn_type) == ("")) {
                         if (access_point_arn.service()) == ("s3-outposts") {
                             if (*use_dual_stack) == (true) {
-                                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Outpost Access Points do not support dual-stack"
+                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Outpost Access Points do not support dual-stack"
 .to_string()));
                             }
                             #[allow(unused_variables)]
@@ -287,7 +293,7 @@ pub(super) fn resolve_endpoint(
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
                                             if !((access_point_arn.region()) == (region)) {
-                                                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid configuration: region from ARN `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&access_point_arn.region());
@@ -321,7 +327,7 @@ out }));
 ,false, _diagnostic_collector) {
                                 #[allow(unused_variables)]
 if let Some(account_id) = account_id { if !((account_id) == (access_point_arn.account_id())) {
-                                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid ARN: the accountId specified in the ARN (`");
 #[allow(clippy::needless_borrow)]
 out.push_str(&access_point_arn.account_id());
@@ -337,7 +343,7 @@ if let Some(outpost_type) = access_point_arn.resource_id()
 if let Some(access_point_name) = access_point_arn.resource_id()
 .get(3).cloned() { if (outpost_type) == ("accesspoint") {
                                 if (*use_fips) == (true) {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://s3-outposts-fips.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&access_point_arn.region());
@@ -348,8 +354,8 @@ out })
 .header("x-amz-account-id", access_point_arn.account_id()
 .to_owned())
 .header("x-amz-outpost-id", outpost_id.to_owned())
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+.property("authSchemes", vec![::aws_smithy_types::Document::from( {
+    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
     out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
@@ -363,7 +369,7 @@ out })
                             }
 #[allow(unused_variables)]
 if let Some(endpoint) = endpoint { #[allow(unused_variables)]
-if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 #[allow(clippy::needless_borrow)]
 out.push_str(&url.scheme());
 out.push_str("://");
@@ -375,8 +381,8 @@ out })
 .header("x-amz-account-id", access_point_arn.account_id()
 .to_owned())
 .header("x-amz-outpost-id", outpost_id.to_owned())
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+.property("authSchemes", vec![::aws_smithy_types::Document::from( {
+    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
     out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
@@ -387,7 +393,7 @@ out })
     out
 }),])
 .build()); } }
-return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://s3-outposts.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&access_point_arn.region());
@@ -398,8 +404,8 @@ out })
 .header("x-amz-account-id", access_point_arn.account_id()
 .to_owned())
 .header("x-amz-outpost-id", outpost_id.to_owned())
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+.property("authSchemes", vec![::aws_smithy_types::Document::from( {
+    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
     out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
@@ -411,35 +417,35 @@ out })
 }),])
 .build());
                             }
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Expected an outpost type `accesspoint`, found `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&outpost_type);
 out.push('`');
 out })); }
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: expected an access point name"
+return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: expected an access point name"
 .to_string())); }
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: Expected a 4-component resource"
+return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: Expected a 4-component resource"
 .to_string()));
                             }
-                                                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&access_point_arn.account_id());
 out.push('`');
 out }));
                                                     }
-                                                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: missing account ID"
+                                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: missing account ID"
 .to_string()));
                                                 }
-                                                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid region in ARN: `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&access_point_arn.region());
 out.push_str("` (invalid DNS name)");
 out }));
                                             }
-                                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Client was configured for partition `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.name());
@@ -449,7 +455,7 @@ out.push_str(&arn_partition.name());
 out.push('`');
 out }));
                                         }
-                                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Could not load partition for ARN region `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&access_point_arn.region());
@@ -457,13 +463,13 @@ out.push('`');
 out }));
                                     }
                                     return Err(
-                                        aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                        ::aws_smithy_http::endpoint::ResolveEndpointError::message(
                                             "A valid partition could not be determined".to_string(),
                                         ),
                                     );
                                 }
                                 return Err(
-                                    aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                    ::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                         let mut out = String::new();
                                         out.push_str("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `");
                                         #[allow(clippy::needless_borrow)]
@@ -473,12 +479,14 @@ out }));
                                     }),
                                 );
                             }
-                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "Invalid ARN: The Outpost Id was not set".to_string(),
-                            ));
+                            return Err(
+                                ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "Invalid ARN: The Outpost Id was not set".to_string(),
+                                ),
+                            );
                         }
                         #[allow(unreachable_code)]
-                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             format!(
                                 "No rules matched these parameters. This is a bug. {:?}",
                                 _params
@@ -486,7 +494,7 @@ out }));
                         ));
                     }
                 }
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                     "Invalid ARN: No ARN type specified".to_string(),
                 ));
             }
@@ -502,7 +510,7 @@ out }));
                     if !((arn_type) == ("")) {
                         if (bucket_arn.service()) == ("s3-outposts") {
                             if (*use_dual_stack) == (true) {
-                                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Outpost buckets do not support dual-stack"
+                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid configuration: Outpost buckets do not support dual-stack"
 .to_string()));
                             }
                             #[allow(unused_variables)]
@@ -516,7 +524,7 @@ out }));
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
                                             if !((bucket_arn.region()) == (region)) {
-                                                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid configuration: region from ARN `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&bucket_arn.region());
@@ -550,7 +558,7 @@ out }));
 ,false, _diagnostic_collector) {
                                 #[allow(unused_variables)]
 if let Some(account_id) = account_id { if !((account_id) == (bucket_arn.account_id())) {
-                                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid ARN: the accountId specified in the ARN (`");
 #[allow(clippy::needless_borrow)]
 out.push_str(&bucket_arn.account_id());
@@ -566,7 +574,7 @@ if let Some(outpost_type) = bucket_arn.resource_id()
 if let Some(bucket_name) = bucket_arn.resource_id()
 .get(3).cloned() { if (outpost_type) == ("bucket") {
                                 if (*use_fips) == (true) {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://s3-outposts-fips.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&bucket_arn.region());
@@ -577,8 +585,8 @@ out })
 .header("x-amz-account-id", bucket_arn.account_id()
 .to_owned())
 .header("x-amz-outpost-id", outpost_id.to_owned())
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+.property("authSchemes", vec![::aws_smithy_types::Document::from( {
+    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
     out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
@@ -592,7 +600,7 @@ out })
                             }
 #[allow(unused_variables)]
 if let Some(endpoint) = endpoint { #[allow(unused_variables)]
-if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) { return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 #[allow(clippy::needless_borrow)]
 out.push_str(&url.scheme());
 out.push_str("://");
@@ -604,8 +612,8 @@ out })
 .header("x-amz-account-id", bucket_arn.account_id()
 .to_owned())
 .header("x-amz-outpost-id", outpost_id.to_owned())
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+.property("authSchemes", vec![::aws_smithy_types::Document::from( {
+    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
     out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
@@ -616,7 +624,7 @@ out })
     out
 }),])
 .build()); } }
-return Ok(aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
+return Ok(::aws_smithy_types::endpoint::Endpoint::builder().url({ let mut out = String::new();
 out.push_str("https://s3-outposts.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&bucket_arn.region());
@@ -627,8 +635,8 @@ out })
 .header("x-amz-account-id", bucket_arn.account_id()
 .to_owned())
 .header("x-amz-outpost-id", outpost_id.to_owned())
-.property("authSchemes", vec![aws_smithy_types::Document::from( {
-    let mut out = std::collections::HashMap::<String, aws_smithy_types::Document>::new();
+.property("authSchemes", vec![::aws_smithy_types::Document::from( {
+    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
     out.insert("disableDoubleEncoding".to_string(), true.into());
     out.insert("name".to_string(), "sigv4"
     .to_string().into());
@@ -640,35 +648,35 @@ out })
 }),])
 .build());
                             }
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid ARN: Expected an outpost type `bucket`, found `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&outpost_type);
 out.push('`');
 out })); }
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: expected a bucket name"
+return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: expected a bucket name"
 .to_string())); }
-return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: Expected a 4-component resource"
+return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: Expected a 4-component resource"
 .to_string()));
                             }
-                                                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&bucket_arn.account_id());
 out.push('`');
 out }));
                                                     }
-                                                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: missing account ID"
+                                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid ARN: missing account ID"
 .to_string()));
                                                 }
-                                                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Invalid region in ARN: `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&bucket_arn.region());
 out.push_str("` (invalid DNS name)");
 out }));
                                             }
-                                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
+                                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({ let mut out = String::new();
 out.push_str("Client was configured for partition `");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.name());
@@ -678,24 +686,26 @@ out.push_str(&arn_partition.name());
 out.push('`');
 out }));
                                         }
-                                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("A valid partition could not be determined"
+                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("A valid partition could not be determined"
 .to_string()));
                                     }
                                     return Err(
-                                        aws_smithy_http::endpoint::ResolveEndpointError::message({
-                                            let mut out = String::new();
-                                            out.push_str(
-                                                "Could not load partition for ARN region `",
-                                            );
-                                            #[allow(clippy::needless_borrow)]
-                                            out.push_str(&bucket_arn.region());
-                                            out.push('`');
-                                            out
-                                        }),
+                                        ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                            {
+                                                let mut out = String::new();
+                                                out.push_str(
+                                                    "Could not load partition for ARN region `",
+                                                );
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&bucket_arn.region());
+                                                out.push('`');
+                                                out
+                                            },
+                                        ),
                                     );
                                 }
                                 return Err(
-                                    aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                    ::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                         let mut out = String::new();
                                         out.push_str("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `");
                                         #[allow(clippy::needless_borrow)]
@@ -705,12 +715,14 @@ out }));
                                     }),
                                 );
                             }
-                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "Invalid ARN: The Outpost Id was not set".to_string(),
-                            ));
+                            return Err(
+                                ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "Invalid ARN: The Outpost Id was not set".to_string(),
+                                ),
+                            );
                         }
                         #[allow(unreachable_code)]
-                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             format!(
                                 "No rules matched these parameters. This is a bug. {:?}",
                                 _params
@@ -718,7 +730,7 @@ out }));
                         ));
                     }
                 }
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                     "Invalid ARN: No ARN type specified".to_string(),
                 ));
             }
@@ -730,7 +742,7 @@ out }));
             if crate::endpoint_lib::host::is_valid_host_label(region, true, _diagnostic_collector) {
                 if (*use_fips) == (true) {
                     if (partition_result.name()) == ("aws-cn") {
-                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Partition does not support FIPS".to_string(),
                         ));
                     }
@@ -739,9 +751,11 @@ out }));
                 if let Some(requires_account_id) = requires_account_id {
                     if (*requires_account_id) == (true) {
                         if !(account_id.is_some()) {
-                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "AccountId is required but not set".to_string(),
-                            ));
+                            return Err(
+                                ::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "AccountId is required but not set".to_string(),
+                                ),
+                            );
                         }
                     }
                 }
@@ -752,7 +766,7 @@ out }));
                         false,
                         _diagnostic_collector,
                     )) {
-                        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "AccountId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
                         ));
                     }
@@ -764,7 +778,7 @@ out }));
                         crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
                     {
                         if (*use_dual_stack) == (true) {
-                            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: Dualstack and custom endpoint are not supported"
+                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("Invalid Configuration: Dualstack and custom endpoint are not supported"
 .to_string()));
                         }
                         #[allow(unused_variables)]
@@ -772,7 +786,7 @@ out }));
                             if (*requires_account_id) == (true) {
                                 #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
-                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
                                             let mut out = String::new();
                                             #[allow(clippy::needless_borrow)]
@@ -789,10 +803,10 @@ out }));
                                         })
                                         .property(
                                             "authSchemes",
-                                            vec![aws_smithy_types::Document::from({
-                                                let mut out = std::collections::HashMap::<
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<
                                                     String,
-                                                    aws_smithy_types::Document,
+                                                    ::aws_smithy_types::Document,
                                                 >::new(
                                                 );
                                                 out.insert(
@@ -818,7 +832,7 @@ out }));
                                 }
                             }
                         }
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 #[allow(clippy::needless_borrow)]
@@ -832,10 +846,10 @@ out }));
                             })
                             .property(
                                 "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<
                                         String,
-                                        aws_smithy_types::Document,
+                                        ::aws_smithy_types::Document,
                                     >::new();
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -857,7 +871,7 @@ out }));
                             if (*requires_account_id) == (true) {
                                 #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
-                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
                                             let mut out = String::new();
                                             out.push_str("https://");
@@ -873,10 +887,10 @@ out }));
                                         })
                                         .property(
                                             "authSchemes",
-                                            vec![aws_smithy_types::Document::from({
-                                                let mut out = std::collections::HashMap::<
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<
                                                     String,
-                                                    aws_smithy_types::Document,
+                                                    ::aws_smithy_types::Document,
                                                 >::new(
                                                 );
                                                 out.insert(
@@ -906,7 +920,7 @@ out }));
                 }
                 if (*use_fips) == (true) {
                     if (*use_dual_stack) == (true) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://s3-control-fips.dualstack.");
@@ -919,10 +933,10 @@ out }));
                             })
                             .property(
                                 "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<
                                         String,
-                                        aws_smithy_types::Document,
+                                        ::aws_smithy_types::Document,
                                     >::new();
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -944,7 +958,7 @@ out }));
                             if (*requires_account_id) == (true) {
                                 #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
-                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
                                             let mut out = String::new();
                                             out.push_str("https://");
@@ -960,10 +974,10 @@ out }));
                                         })
                                         .property(
                                             "authSchemes",
-                                            vec![aws_smithy_types::Document::from({
-                                                let mut out = std::collections::HashMap::<
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<
                                                     String,
-                                                    aws_smithy_types::Document,
+                                                    ::aws_smithy_types::Document,
                                                 >::new(
                                                 );
                                                 out.insert(
@@ -993,7 +1007,7 @@ out }));
                 }
                 if (*use_fips) == (true) {
                     if (*use_dual_stack) == (false) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://s3-control-fips.");
@@ -1006,10 +1020,10 @@ out }));
                             })
                             .property(
                                 "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<
                                         String,
-                                        aws_smithy_types::Document,
+                                        ::aws_smithy_types::Document,
                                     >::new();
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1031,7 +1045,7 @@ out }));
                             if (*requires_account_id) == (true) {
                                 #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
-                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
                                             let mut out = String::new();
                                             out.push_str("https://");
@@ -1047,10 +1061,10 @@ out }));
                                         })
                                         .property(
                                             "authSchemes",
-                                            vec![aws_smithy_types::Document::from({
-                                                let mut out = std::collections::HashMap::<
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<
                                                     String,
-                                                    aws_smithy_types::Document,
+                                                    ::aws_smithy_types::Document,
                                                 >::new(
                                                 );
                                                 out.insert(
@@ -1080,7 +1094,7 @@ out }));
                 }
                 if (*use_fips) == (false) {
                     if (*use_dual_stack) == (true) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://s3-control.dualstack.");
@@ -1093,10 +1107,10 @@ out }));
                             })
                             .property(
                                 "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<
                                         String,
-                                        aws_smithy_types::Document,
+                                        ::aws_smithy_types::Document,
                                     >::new();
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1118,7 +1132,7 @@ out }));
                             if (*requires_account_id) == (true) {
                                 #[allow(unused_variables)]
                                 if let Some(account_id) = account_id {
-                                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
                                             let mut out = String::new();
                                             out.push_str("https://");
@@ -1134,10 +1148,10 @@ out }));
                                         })
                                         .property(
                                             "authSchemes",
-                                            vec![aws_smithy_types::Document::from({
-                                                let mut out = std::collections::HashMap::<
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<
                                                     String,
-                                                    aws_smithy_types::Document,
+                                                    ::aws_smithy_types::Document,
                                                 >::new(
                                                 );
                                                 out.insert(
@@ -1167,7 +1181,7 @@ out }));
                 }
                 if (*use_fips) == (false) {
                     if (*use_dual_stack) == (false) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://s3-control.");
@@ -1180,10 +1194,10 @@ out }));
                             })
                             .property(
                                 "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<
                                         String,
-                                        aws_smithy_types::Document,
+                                        ::aws_smithy_types::Document,
                                     >::new();
                                     out.insert("disableDoubleEncoding".to_string(), true.into());
                                     out.insert("name".to_string(), "sigv4".to_string().into());
@@ -1199,22 +1213,22 @@ out }));
                     }
                 }
                 #[allow(unreachable_code)]
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                     format!(
                         "No rules matched these parameters. This is a bug. {:?}",
                         _params
                     ),
                 ));
             }
-            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "Invalid region: region was not a valid DNS name.".to_string(),
             ));
         }
-        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
             "A valid partition could not be determined".to_string(),
         ));
     }
-    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
         "Region must be set".to_string(),
     ));
 }

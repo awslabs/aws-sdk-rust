@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StageTransitionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum StageTransitionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StageTransitionType {
+impl ::std::convert::From<&str> for StageTransitionType {
     fn from(s: &str) -> Self {
         match s {
             "Inbound" => StageTransitionType::Inbound,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for StageTransitionType {
         }
     }
 }
-impl std::str::FromStr for StageTransitionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StageTransitionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StageTransitionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StageTransitionType::from(s))
     }
 }
 impl StageTransitionType {
@@ -86,7 +86,7 @@ impl StageTransitionType {
         &["Inbound", "Outbound"]
     }
 }
-impl AsRef<str> for StageTransitionType {
+impl ::std::convert::AsRef<str> for StageTransitionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

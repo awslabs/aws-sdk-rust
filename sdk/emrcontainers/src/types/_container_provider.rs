@@ -2,29 +2,29 @@
 
 /// <p>The information about the container provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerProvider {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ContainerProviderType>,
+    pub r#type: ::std::option::Option<crate::types::ContainerProviderType>,
     /// <p>The ID of the container cluster.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The information about the container cluster.</p>
     #[doc(hidden)]
-    pub info: std::option::Option<crate::types::ContainerInfo>,
+    pub info: ::std::option::Option<crate::types::ContainerInfo>,
 }
 impl ContainerProvider {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ContainerProviderType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContainerProviderType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the container cluster.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The information about the container cluster.</p>
-    pub fn info(&self) -> std::option::Option<&crate::types::ContainerInfo> {
+    pub fn info(&self) -> ::std::option::Option<&crate::types::ContainerInfo> {
         self.info.as_ref()
     }
 }
@@ -37,43 +37,45 @@ impl ContainerProvider {
 
 /// A builder for [`ContainerProvider`](crate::types::ContainerProvider).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerProviderBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ContainerProviderType>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) info: std::option::Option<crate::types::ContainerInfo>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ContainerProviderType>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) info: ::std::option::Option<crate::types::ContainerInfo>,
 }
 impl ContainerProviderBuilder {
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     pub fn r#type(mut self, input: crate::types::ContainerProviderType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the container provider. Amazon EKS is the only supported type as of now.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ContainerProviderType>,
+        input: ::std::option::Option<crate::types::ContainerProviderType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The ID of the container cluster.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the container cluster.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The information about the container cluster.</p>
     pub fn info(mut self, input: crate::types::ContainerInfo) -> Self {
-        self.info = Some(input);
+        self.info = ::std::option::Option::Some(input);
         self
     }
     /// <p>The information about the container cluster.</p>
-    pub fn set_info(mut self, input: std::option::Option<crate::types::ContainerInfo>) -> Self {
+    pub fn set_info(mut self, input: ::std::option::Option<crate::types::ContainerInfo>) -> Self {
         self.info = input;
         self
     }

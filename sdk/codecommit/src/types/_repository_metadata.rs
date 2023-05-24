@@ -2,78 +2,78 @@
 
 /// <p>Information about a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the repository.</p>
     #[doc(hidden)]
-    pub repository_id: std::option::Option<std::string::String>,
+    pub repository_id: ::std::option::Option<::std::string::String>,
     /// <p>The repository's name.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>A comment or description about the repository.</p>
     #[doc(hidden)]
-    pub repository_description: std::option::Option<std::string::String>,
+    pub repository_description: ::std::option::Option<::std::string::String>,
     /// <p>The repository's default branch name.</p>
     #[doc(hidden)]
-    pub default_branch: std::option::Option<std::string::String>,
+    pub default_branch: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the repository was created, in timestamp format.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
     #[doc(hidden)]
-    pub clone_url_http: std::option::Option<std::string::String>,
+    pub clone_url_http: ::std::option::Option<::std::string::String>,
     /// <p>The URL to use for cloning the repository over SSH.</p>
     #[doc(hidden)]
-    pub clone_url_ssh: std::option::Option<std::string::String>,
+    pub clone_url_ssh: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryMetadata {
     /// <p>The ID of the AWS account associated with the repository.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the repository.</p>
-    pub fn repository_id(&self) -> std::option::Option<&str> {
+    pub fn repository_id(&self) -> ::std::option::Option<&str> {
         self.repository_id.as_deref()
     }
     /// <p>The repository's name.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>A comment or description about the repository.</p>
-    pub fn repository_description(&self) -> std::option::Option<&str> {
+    pub fn repository_description(&self) -> ::std::option::Option<&str> {
         self.repository_description.as_deref()
     }
     /// <p>The repository's default branch name.</p>
-    pub fn default_branch(&self) -> std::option::Option<&str> {
+    pub fn default_branch(&self) -> ::std::option::Option<&str> {
         self.default_branch.as_deref()
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
-    pub fn clone_url_http(&self) -> std::option::Option<&str> {
+    pub fn clone_url_http(&self) -> ::std::option::Option<&str> {
         self.clone_url_http.as_deref()
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
-    pub fn clone_url_ssh(&self) -> std::option::Option<&str> {
+    pub fn clone_url_ssh(&self) -> ::std::option::Option<&str> {
         self.clone_url_ssh.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -86,126 +86,161 @@ impl RepositoryMetadata {
 
 /// A builder for [`RepositoryMetadata`](crate::types::RepositoryMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositoryMetadataBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) repository_id: std::option::Option<std::string::String>,
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) repository_description: std::option::Option<std::string::String>,
-    pub(crate) default_branch: std::option::Option<std::string::String>,
-    pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) clone_url_http: std::option::Option<std::string::String>,
-    pub(crate) clone_url_ssh: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_id: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_description: ::std::option::Option<::std::string::String>,
+    pub(crate) default_branch: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) clone_url_http: ::std::option::Option<::std::string::String>,
+    pub(crate) clone_url_ssh: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryMetadataBuilder {
     /// <p>The ID of the AWS account associated with the repository.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AWS account associated with the repository.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The ID of the repository.</p>
-    pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_id = Some(input.into());
+    pub fn repository_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the repository.</p>
-    pub fn set_repository_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_id = input;
         self
     }
     /// <p>The repository's name.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository's name.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>A comment or description about the repository.</p>
-    pub fn repository_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_description = Some(input.into());
+    pub fn repository_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A comment or description about the repository.</p>
     pub fn set_repository_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.repository_description = input;
         self
     }
     /// <p>The repository's default branch name.</p>
-    pub fn default_branch(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_branch = Some(input.into());
+    pub fn default_branch(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_branch = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository's default branch name.</p>
-    pub fn set_default_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_branch(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_branch = input;
         self
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_date = Some(input);
+    pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
     pub fn set_last_modified_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_date = input;
         self
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the repository was created, in timestamp format.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
-    pub fn clone_url_http(mut self, input: impl Into<std::string::String>) -> Self {
-        self.clone_url_http = Some(input.into());
+    pub fn clone_url_http(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.clone_url_http = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
-    pub fn set_clone_url_http(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_clone_url_http(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.clone_url_http = input;
         self
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
-    pub fn clone_url_ssh(mut self, input: impl Into<std::string::String>) -> Self {
-        self.clone_url_ssh = Some(input.into());
+    pub fn clone_url_ssh(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.clone_url_ssh = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to use for cloning the repository over SSH.</p>
-    pub fn set_clone_url_ssh(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_clone_url_ssh(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.clone_url_ssh = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

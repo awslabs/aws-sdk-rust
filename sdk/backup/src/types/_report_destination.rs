@@ -2,22 +2,22 @@
 
 /// <p>Contains information from your report job about your report destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportDestination {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
     #[doc(hidden)]
-    pub s3_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub s3_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportDestination {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    pub fn s3_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn s3_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.s3_keys.as_deref()
     }
 }
@@ -30,19 +30,27 @@ impl ReportDestination {
 
 /// A builder for [`ReportDestination`](crate::types::ReportDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportDestinationBuilder {
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) s3_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportDestinationBuilder {
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
@@ -51,16 +59,16 @@ impl ReportDestinationBuilder {
     /// To override the contents of this collection use [`set_s3_keys`](Self::set_s3_keys).
     ///
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
-    pub fn s3_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn s3_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.s3_keys.unwrap_or_default();
         v.push(input.into());
-        self.s3_keys = Some(v);
+        self.s3_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
     pub fn set_s3_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.s3_keys = input;
         self

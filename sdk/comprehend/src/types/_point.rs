@@ -3,22 +3,22 @@
 /// <p>The X and Y coordinates of a point on a document page.</p>
 /// <p>For additional information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/API_Point.html">Point</a> in the Amazon Textract API reference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Point {
     /// <p>The value of the X coordinate for a point on a polygon</p>
     #[doc(hidden)]
-    pub x: std::option::Option<f32>,
+    pub x: ::std::option::Option<f32>,
     /// <p>The value of the Y coordinate for a point on a polygon</p>
     #[doc(hidden)]
-    pub y: std::option::Option<f32>,
+    pub y: ::std::option::Option<f32>,
 }
 impl Point {
     /// <p>The value of the X coordinate for a point on a polygon</p>
-    pub fn x(&self) -> std::option::Option<f32> {
+    pub fn x(&self) -> ::std::option::Option<f32> {
         self.x
     }
     /// <p>The value of the Y coordinate for a point on a polygon</p>
-    pub fn y(&self) -> std::option::Option<f32> {
+    pub fn y(&self) -> ::std::option::Option<f32> {
         self.y
     }
 }
@@ -31,29 +31,31 @@ impl Point {
 
 /// A builder for [`Point`](crate::types::Point).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PointBuilder {
-    pub(crate) x: std::option::Option<f32>,
-    pub(crate) y: std::option::Option<f32>,
+    pub(crate) x: ::std::option::Option<f32>,
+    pub(crate) y: ::std::option::Option<f32>,
 }
 impl PointBuilder {
     /// <p>The value of the X coordinate for a point on a polygon</p>
     pub fn x(mut self, input: f32) -> Self {
-        self.x = Some(input);
+        self.x = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the X coordinate for a point on a polygon</p>
-    pub fn set_x(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_x(mut self, input: ::std::option::Option<f32>) -> Self {
         self.x = input;
         self
     }
     /// <p>The value of the Y coordinate for a point on a polygon</p>
     pub fn y(mut self, input: f32) -> Self {
-        self.y = Some(input);
+        self.y = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the Y coordinate for a point on a polygon</p>
-    pub fn set_y(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_y(mut self, input: ::std::option::Option<f32>) -> Self {
         self.y = input;
         self
     }

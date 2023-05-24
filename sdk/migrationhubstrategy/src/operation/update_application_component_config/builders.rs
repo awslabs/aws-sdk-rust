@@ -6,47 +6,50 @@ pub use crate::operation::update_application_component_config::_update_applicati
 /// Fluent builder constructing a request to `UpdateApplicationComponentConfig`.
 ///
 /// <p> Updates the configuration of an application component. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationComponentConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigInputBuilder,
 }
 impl UpdateApplicationComponentConfigFluentBuilder {
     /// Creates a new `UpdateApplicationComponentConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_application_component_config::UpdateApplicationComponentConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_application_component_config::UpdateApplicationComponentConfigError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_application_component_config::UpdateApplicationComponentConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_application_component_config::UpdateApplicationComponentConfigError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_application_component_config::UpdateApplicationComponentConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_application_component_config::UpdateApplicationComponentConfigError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_application_component_config::UpdateApplicationComponentConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_component_config::UpdateApplicationComponentConfigError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,19 +60,22 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_application_component_config::UpdateApplicationComponentConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_application_component_config::UpdateApplicationComponentConfigError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_application_component_config::UpdateApplicationComponentConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_component_config::UpdateApplicationComponentConfigError>>
                          {
         self.send_middleware().await
     }
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    pub fn application_component_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_component_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_component_id(input.into());
         self
     }
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
     pub fn set_application_component_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_application_component_id(input);
         self
@@ -82,7 +88,7 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn set_inclusion_status(
         mut self,
-        input: std::option::Option<crate::types::InclusionStatus>,
+        input: ::std::option::Option<crate::types::InclusionStatus>,
     ) -> Self {
         self.inner = self.inner.set_inclusion_status(input);
         self
@@ -95,7 +101,7 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
     pub fn set_strategy_option(
         mut self,
-        input: std::option::Option<crate::types::StrategyOption>,
+        input: ::std::option::Option<crate::types::StrategyOption>,
     ) -> Self {
         self.inner = self.inner.set_strategy_option(input);
         self
@@ -112,20 +118,23 @@ impl UpdateApplicationComponentConfigFluentBuilder {
     /// <p> The list of source code configurations to update for the application component. </p>
     pub fn set_source_code_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SourceCode>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceCode>>,
     ) -> Self {
         self.inner = self.inner.set_source_code_list(input);
         self
     }
     /// <p> Database credentials. </p>
-    pub fn secrets_manager_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn secrets_manager_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.secrets_manager_key(input.into());
         self
     }
     /// <p> Database credentials. </p>
     pub fn set_secrets_manager_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_secrets_manager_key(input);
         self
@@ -136,7 +145,7 @@ impl UpdateApplicationComponentConfigFluentBuilder {
         self
     }
     /// <p>Update the configuration request of an application component. If it is set to true, the source code and/or database credentials are updated. If it is set to false, the source code and/or database credentials are updated and an analysis is initiated.</p>
-    pub fn set_configure_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_configure_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_configure_only(input);
         self
     }
@@ -146,7 +155,7 @@ impl UpdateApplicationComponentConfigFluentBuilder {
         self
     }
     /// <p>The type of known component.</p>
-    pub fn set_app_type(mut self, input: std::option::Option<crate::types::AppType>) -> Self {
+    pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.inner = self.inner.set_app_type(input);
         self
     }

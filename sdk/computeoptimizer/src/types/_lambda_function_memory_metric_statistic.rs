@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LambdaFunctionMemoryMetricStatistic {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum LambdaFunctionMemoryMetricStatistic {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LambdaFunctionMemoryMetricStatistic {
+impl ::std::convert::From<&str> for LambdaFunctionMemoryMetricStatistic {
     fn from(s: &str) -> Self {
         match s {
             "Expected" => LambdaFunctionMemoryMetricStatistic::Expected,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for LambdaFunctionMemoryMetricStatistic {
         }
     }
 }
-impl std::str::FromStr for LambdaFunctionMemoryMetricStatistic {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LambdaFunctionMemoryMetricStatistic {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LambdaFunctionMemoryMetricStatistic::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LambdaFunctionMemoryMetricStatistic::from(s))
     }
 }
 impl LambdaFunctionMemoryMetricStatistic {
@@ -91,7 +91,7 @@ impl LambdaFunctionMemoryMetricStatistic {
         &["Expected", "LowerBound", "UpperBound"]
     }
 }
-impl AsRef<str> for LambdaFunctionMemoryMetricStatistic {
+impl ::std::convert::AsRef<str> for LambdaFunctionMemoryMetricStatistic {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,50 +2,50 @@
 
 /// <p>Contains details about a Lambda function scheduled during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LambdaFunctionScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
     #[doc(hidden)]
-    pub resource: std::option::Option<std::string::String>,
+    pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     #[doc(hidden)]
-    pub input: std::option::Option<std::string::String>,
+    pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about input for an execution history event.</p>
     #[doc(hidden)]
-    pub input_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     /// <p>The maximum allowed duration of the Lambda function.</p>
     #[doc(hidden)]
-    pub timeout_in_seconds: std::option::Option<i64>,
+    pub timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The credentials that Step Functions uses for the task.</p>
     #[doc(hidden)]
-    pub task_credentials: std::option::Option<crate::types::TaskCredentials>,
+    pub task_credentials: ::std::option::Option<crate::types::TaskCredentials>,
 }
 impl LambdaFunctionScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
     /// <p>Contains details about input for an execution history event.</p>
     pub fn input_details(
         &self,
-    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The maximum allowed duration of the Lambda function.</p>
-    pub fn timeout_in_seconds(&self) -> std::option::Option<i64> {
+    pub fn timeout_in_seconds(&self) -> ::std::option::Option<i64> {
         self.timeout_in_seconds
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
-    pub fn task_credentials(&self) -> std::option::Option<&crate::types::TaskCredentials> {
+    pub fn task_credentials(&self) -> ::std::option::Option<&crate::types::TaskCredentials> {
         self.task_credentials.as_ref()
     }
 }
-impl std::fmt::Debug for LambdaFunctionScheduledEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for LambdaFunctionScheduledEventDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionScheduledEventDetails");
         formatter.field("resource", &self.resource);
         formatter.field("input", &"*** Sensitive Data Redacted ***");
@@ -64,67 +64,67 @@ impl LambdaFunctionScheduledEventDetails {
 
 /// A builder for [`LambdaFunctionScheduledEventDetails`](crate::types::LambdaFunctionScheduledEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct LambdaFunctionScheduledEventDetailsBuilder {
-    pub(crate) resource: std::option::Option<std::string::String>,
-    pub(crate) input: std::option::Option<std::string::String>,
-    pub(crate) input_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    pub(crate) timeout_in_seconds: std::option::Option<i64>,
-    pub(crate) task_credentials: std::option::Option<crate::types::TaskCredentials>,
+    pub(crate) resource: ::std::option::Option<::std::string::String>,
+    pub(crate) input: ::std::option::Option<::std::string::String>,
+    pub(crate) input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub(crate) timeout_in_seconds: ::std::option::Option<i64>,
+    pub(crate) task_credentials: ::std::option::Option<crate::types::TaskCredentials>,
 }
 impl LambdaFunctionScheduledEventDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
-    pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource = Some(input.into());
+    pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
-    pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
     }
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input = Some(input.into());
+    pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
     }
     /// <p>Contains details about input for an execution history event.</p>
     pub fn input_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
-        self.input_details = Some(input);
+        self.input_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about input for an execution history event.</p>
     pub fn set_input_details(
         mut self,
-        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     ) -> Self {
         self.input_details = input;
         self
     }
     /// <p>The maximum allowed duration of the Lambda function.</p>
     pub fn timeout_in_seconds(mut self, input: i64) -> Self {
-        self.timeout_in_seconds = Some(input);
+        self.timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum allowed duration of the Lambda function.</p>
-    pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timeout_in_seconds = input;
         self
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
     pub fn task_credentials(mut self, input: crate::types::TaskCredentials) -> Self {
-        self.task_credentials = Some(input);
+        self.task_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
     pub fn set_task_credentials(
         mut self,
-        input: std::option::Option<crate::types::TaskCredentials>,
+        input: ::std::option::Option<crate::types::TaskCredentials>,
     ) -> Self {
         self.task_credentials = input;
         self
@@ -140,8 +140,8 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for LambdaFunctionScheduledEventDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for LambdaFunctionScheduledEventDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionScheduledEventDetailsBuilder");
         formatter.field("resource", &self.resource);
         formatter.field("input", &"*** Sensitive Data Redacted ***");

@@ -3,30 +3,30 @@ pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_private_ip_a
     'a,
     I,
 >(
-    tokens: &mut std::iter::Peekable<I>,
+    tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<
     Option<
-        std::vec::Vec<
+        ::std::vec::Vec<
             crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
         >,
     >,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
     I: Iterator<
         Item = Result<
-            aws_smithy_json::deserialize::Token<'a>,
-            aws_smithy_json::deserialize::error::DeserializeError,
+            ::aws_smithy_json::deserialize::Token<'a>,
+            ::aws_smithy_json::deserialize::error::DeserializeError,
         >,
     >,
 {
     match tokens.next().transpose()? {
-        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
-        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+        Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(::aws_smithy_json::deserialize::Token::StartArray { .. }) => {
             let mut items = Vec::new();
             loop {
                 match tokens.peek() {
-                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                    Some(Ok(::aws_smithy_json::deserialize::Token::EndArray { .. })) => {
                         tokens.next().transpose().unwrap();
                         break;
                     }
@@ -43,7 +43,7 @@ where
             Ok(Some(items))
         }
         _ => Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start array or null",
             ),
         ),

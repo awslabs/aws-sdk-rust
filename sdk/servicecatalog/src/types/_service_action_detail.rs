@@ -2,29 +2,35 @@
 
 /// <p>An object containing detailed information about the self-service action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceActionDetail {
     /// <p>Summary information about the self-service action.</p>
     #[doc(hidden)]
-    pub service_action_summary: std::option::Option<crate::types::ServiceActionSummary>,
+    pub service_action_summary: ::std::option::Option<crate::types::ServiceActionSummary>,
     /// <p>A map that defines the self-service action.</p>
     #[doc(hidden)]
-    pub definition: std::option::Option<
-        std::collections::HashMap<crate::types::ServiceActionDefinitionKey, std::string::String>,
+    pub definition: ::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ServiceActionDefinitionKey,
+            ::std::string::String,
+        >,
     >,
 }
 impl ServiceActionDetail {
     /// <p>Summary information about the self-service action.</p>
     pub fn service_action_summary(
         &self,
-    ) -> std::option::Option<&crate::types::ServiceActionSummary> {
+    ) -> ::std::option::Option<&crate::types::ServiceActionSummary> {
         self.service_action_summary.as_ref()
     }
     /// <p>A map that defines the self-service action.</p>
     pub fn definition(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::ServiceActionDefinitionKey, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            crate::types::ServiceActionDefinitionKey,
+            ::std::string::String,
+        >,
     > {
         self.definition.as_ref()
     }
@@ -38,23 +44,28 @@ impl ServiceActionDetail {
 
 /// A builder for [`ServiceActionDetail`](crate::types::ServiceActionDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceActionDetailBuilder {
-    pub(crate) service_action_summary: std::option::Option<crate::types::ServiceActionSummary>,
-    pub(crate) definition: std::option::Option<
-        std::collections::HashMap<crate::types::ServiceActionDefinitionKey, std::string::String>,
+    pub(crate) service_action_summary: ::std::option::Option<crate::types::ServiceActionSummary>,
+    pub(crate) definition: ::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::ServiceActionDefinitionKey,
+            ::std::string::String,
+        >,
     >,
 }
 impl ServiceActionDetailBuilder {
     /// <p>Summary information about the self-service action.</p>
     pub fn service_action_summary(mut self, input: crate::types::ServiceActionSummary) -> Self {
-        self.service_action_summary = Some(input);
+        self.service_action_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary information about the self-service action.</p>
     pub fn set_service_action_summary(
         mut self,
-        input: std::option::Option<crate::types::ServiceActionSummary>,
+        input: ::std::option::Option<crate::types::ServiceActionSummary>,
     ) -> Self {
         self.service_action_summary = input;
         self
@@ -67,20 +78,20 @@ impl ServiceActionDetailBuilder {
     pub fn definition(
         mut self,
         k: crate::types::ServiceActionDefinitionKey,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.definition.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.definition = Some(hash_map);
+        self.definition = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that defines the self-service action.</p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::ServiceActionDefinitionKey,
-                std::string::String,
+                ::std::string::String,
             >,
         >,
     ) -> Self {

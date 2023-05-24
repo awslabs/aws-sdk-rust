@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PermissionGroupMembershipStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum PermissionGroupMembershipStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PermissionGroupMembershipStatus {
+impl ::std::convert::From<&str> for PermissionGroupMembershipStatus {
     fn from(s: &str) -> Self {
         match s {
             "ADDITION_IN_PROGRESS" => PermissionGroupMembershipStatus::AdditionInProgress,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for PermissionGroupMembershipStatus {
         }
     }
 }
-impl std::str::FromStr for PermissionGroupMembershipStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PermissionGroupMembershipStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PermissionGroupMembershipStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PermissionGroupMembershipStatus::from(s))
     }
 }
 impl PermissionGroupMembershipStatus {
@@ -95,7 +95,7 @@ impl PermissionGroupMembershipStatus {
         ]
     }
 }
-impl AsRef<str> for PermissionGroupMembershipStatus {
+impl ::std::convert::AsRef<str> for PermissionGroupMembershipStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

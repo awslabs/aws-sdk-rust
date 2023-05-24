@@ -2,29 +2,29 @@
 
 /// <p>Specifies configuration properties for a Find Matches task run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindMatchesTaskRunProperties {
     /// <p>The job ID for the Find Matches task run.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The name assigned to the job for the Find Matches task run.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job run ID for the Find Matches task run.</p>
     #[doc(hidden)]
-    pub job_run_id: std::option::Option<std::string::String>,
+    pub job_run_id: ::std::option::Option<::std::string::String>,
 }
 impl FindMatchesTaskRunProperties {
     /// <p>The job ID for the Find Matches task run.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The name assigned to the job for the Find Matches task run.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The job run ID for the Find Matches task run.</p>
-    pub fn job_run_id(&self) -> std::option::Option<&str> {
+    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
         self.job_run_id.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl FindMatchesTaskRunProperties {
 
 /// A builder for [`FindMatchesTaskRunProperties`](crate::types::FindMatchesTaskRunProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindMatchesTaskRunPropertiesBuilder {
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) job_run_id: std::option::Option<std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_run_id: ::std::option::Option<::std::string::String>,
 }
 impl FindMatchesTaskRunPropertiesBuilder {
     /// <p>The job ID for the Find Matches task run.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job ID for the Find Matches task run.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>The name assigned to the job for the Find Matches task run.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name assigned to the job for the Find Matches task run.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p>The job run ID for the Find Matches task run.</p>
-    pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_run_id = Some(input.into());
+    pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job run ID for the Find Matches task run.</p>
-    pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_run_id = input;
         self
     }

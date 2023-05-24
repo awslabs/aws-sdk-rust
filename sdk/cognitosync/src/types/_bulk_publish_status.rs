@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BulkPublishStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum BulkPublishStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BulkPublishStatus {
+impl ::std::convert::From<&str> for BulkPublishStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => BulkPublishStatus::Failed,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for BulkPublishStatus {
         }
     }
 }
-impl std::str::FromStr for BulkPublishStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BulkPublishStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BulkPublishStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BulkPublishStatus::from(s))
     }
 }
 impl BulkPublishStatus {
@@ -96,7 +96,7 @@ impl BulkPublishStatus {
         &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
     }
 }
-impl AsRef<str> for BulkPublishStatus {
+impl ::std::convert::AsRef<str> for BulkPublishStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,18 +2,18 @@
 
 /// <p>Filtering information for the notifications. The filtering is based on Amazon S3 key names.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfigurationFilter {
     /// <p>Details for an Amazon S3 filter.</p>
     #[doc(hidden)]
     pub s3_key_filter:
-        std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
+        ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
 }
 impl AwsS3BucketNotificationConfigurationFilter {
     /// <p>Details for an Amazon S3 filter.</p>
     pub fn s3_key_filter(
         &self,
-    ) -> std::option::Option<&crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter> {
+    ) -> ::std::option::Option<&crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter> {
         self.s3_key_filter.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl AwsS3BucketNotificationConfigurationFilter {
 
 /// A builder for [`AwsS3BucketNotificationConfigurationFilter`](crate::types::AwsS3BucketNotificationConfigurationFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsS3BucketNotificationConfigurationFilterBuilder {
     pub(crate) s3_key_filter:
-        std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
+        ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
 }
 impl AwsS3BucketNotificationConfigurationFilterBuilder {
     /// <p>Details for an Amazon S3 filter.</p>
@@ -37,13 +39,13 @@ impl AwsS3BucketNotificationConfigurationFilterBuilder {
         mut self,
         input: crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter,
     ) -> Self {
-        self.s3_key_filter = Some(input);
+        self.s3_key_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for an Amazon S3 filter.</p>
     pub fn set_s3_key_filter(
         mut self,
-        input: std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
+        input: ::std::option::Option<crate::types::AwsS3BucketNotificationConfigurationS3KeyFilter>,
     ) -> Self {
         self.s3_key_filter = input;
         self

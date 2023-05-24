@@ -2,22 +2,22 @@
 
 /// <p>A complex type that contains information about the resource record sets that Amazon Route 53 created based on a specified traffic policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
     #[doc(hidden)]
-    pub traffic_policy_instance: std::option::Option<crate::types::TrafficPolicyInstance>,
+    pub traffic_policy_instance: ::std::option::Option<crate::types::TrafficPolicyInstance>,
     _request_id: Option<String>,
 }
 impl UpdateTrafficPolicyInstanceOutput {
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
     pub fn traffic_policy_instance(
         &self,
-    ) -> std::option::Option<&crate::types::TrafficPolicyInstance> {
+    ) -> ::std::option::Option<&crate::types::TrafficPolicyInstance> {
         self.traffic_policy_instance.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateTrafficPolicyInstanceOutput {
+impl ::aws_http::request_id::RequestId for UpdateTrafficPolicyInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl UpdateTrafficPolicyInstanceOutput {
 
 /// A builder for [`UpdateTrafficPolicyInstanceOutput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateTrafficPolicyInstanceOutputBuilder {
-    pub(crate) traffic_policy_instance: std::option::Option<crate::types::TrafficPolicyInstance>,
+    pub(crate) traffic_policy_instance: ::std::option::Option<crate::types::TrafficPolicyInstance>,
     _request_id: Option<String>,
 }
 impl UpdateTrafficPolicyInstanceOutputBuilder {
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
     pub fn traffic_policy_instance(mut self, input: crate::types::TrafficPolicyInstance) -> Self {
-        self.traffic_policy_instance = Some(input);
+        self.traffic_policy_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
     pub fn set_traffic_policy_instance(
         mut self,
-        input: std::option::Option<crate::types::TrafficPolicyInstance>,
+        input: ::std::option::Option<crate::types::TrafficPolicyInstance>,
     ) -> Self {
         self.traffic_policy_instance = input;
         self

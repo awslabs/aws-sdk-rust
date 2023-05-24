@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a get device pool request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePoolOutput {
     /// <p>An object that contains information about the requested device pool.</p>
     #[doc(hidden)]
-    pub device_pool: std::option::Option<crate::types::DevicePool>,
+    pub device_pool: ::std::option::Option<crate::types::DevicePool>,
     _request_id: Option<String>,
 }
 impl GetDevicePoolOutput {
     /// <p>An object that contains information about the requested device pool.</p>
-    pub fn device_pool(&self) -> std::option::Option<&crate::types::DevicePool> {
+    pub fn device_pool(&self) -> ::std::option::Option<&crate::types::DevicePool> {
         self.device_pool.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDevicePoolOutput {
+impl ::aws_http::request_id::RequestId for GetDevicePoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl GetDevicePoolOutput {
 
 /// A builder for [`GetDevicePoolOutput`](crate::operation::get_device_pool::GetDevicePoolOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDevicePoolOutputBuilder {
-    pub(crate) device_pool: std::option::Option<crate::types::DevicePool>,
+    pub(crate) device_pool: ::std::option::Option<crate::types::DevicePool>,
     _request_id: Option<String>,
 }
 impl GetDevicePoolOutputBuilder {
     /// <p>An object that contains information about the requested device pool.</p>
     pub fn device_pool(mut self, input: crate::types::DevicePool) -> Self {
-        self.device_pool = Some(input);
+        self.device_pool = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the requested device pool.</p>
-    pub fn set_device_pool(mut self, input: std::option::Option<crate::types::DevicePool>) -> Self {
+    pub fn set_device_pool(
+        mut self,
+        input: ::std::option::Option<crate::types::DevicePool>,
+    ) -> Self {
         self.device_pool = input;
         self
     }

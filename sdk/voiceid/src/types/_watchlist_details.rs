@@ -2,15 +2,15 @@
 
 /// <p>Details of the watchlists in a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WatchlistDetails {
     /// <p>The identifier of the default watchlist.</p>
     #[doc(hidden)]
-    pub default_watchlist_id: std::option::Option<std::string::String>,
+    pub default_watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl WatchlistDetails {
     /// <p>The identifier of the default watchlist.</p>
-    pub fn default_watchlist_id(&self) -> std::option::Option<&str> {
+    pub fn default_watchlist_id(&self) -> ::std::option::Option<&str> {
         self.default_watchlist_id.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl WatchlistDetails {
 
 /// A builder for [`WatchlistDetails`](crate::types::WatchlistDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WatchlistDetailsBuilder {
-    pub(crate) default_watchlist_id: std::option::Option<std::string::String>,
+    pub(crate) default_watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl WatchlistDetailsBuilder {
     /// <p>The identifier of the default watchlist.</p>
-    pub fn default_watchlist_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_watchlist_id = Some(input.into());
+    pub fn default_watchlist_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_watchlist_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the default watchlist.</p>
     pub fn set_default_watchlist_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.default_watchlist_id = input;
         self

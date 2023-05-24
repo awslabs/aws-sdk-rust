@@ -2,22 +2,22 @@
 
 /// <p>Contains information about an event source for an Lambda function. The event source defines the topics on which this Lambda function subscribes to receive messages that run the function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaEventSource {
     /// <p>The topic to which to subscribe to receive event messages.</p>
     #[doc(hidden)]
-    pub topic: std::option::Option<std::string::String>,
+    pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The type of event source. Choose from the following options:</p>
     /// <ul>
     /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::LambdaEventSourceType>,
+    pub r#type: ::std::option::Option<crate::types::LambdaEventSourceType>,
 }
 impl LambdaEventSource {
     /// <p>The topic to which to subscribe to receive event messages.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<&str> {
         self.topic.as_deref()
     }
     /// <p>The type of event source. Choose from the following options:</p>
@@ -25,7 +25,7 @@ impl LambdaEventSource {
     /// <li> <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::LambdaEventSourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LambdaEventSourceType> {
         self.r#type.as_ref()
     }
 }
@@ -38,19 +38,21 @@ impl LambdaEventSource {
 
 /// A builder for [`LambdaEventSource`](crate::types::LambdaEventSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaEventSourceBuilder {
-    pub(crate) topic: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::LambdaEventSourceType>,
+    pub(crate) topic: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::LambdaEventSourceType>,
 }
 impl LambdaEventSourceBuilder {
     /// <p>The topic to which to subscribe to receive event messages.</p>
-    pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic = Some(input.into());
+    pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The topic to which to subscribe to receive event messages.</p>
-    pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic = input;
         self
     }
@@ -60,7 +62,7 @@ impl LambdaEventSourceBuilder {
     /// <li> <p> <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source topic.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::LambdaEventSourceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of event source. Choose from the following options:</p>
@@ -70,7 +72,7 @@ impl LambdaEventSourceBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::LambdaEventSourceType>,
+        input: ::std::option::Option<crate::types::LambdaEventSourceType>,
     ) -> Self {
         self.r#type = input;
         self

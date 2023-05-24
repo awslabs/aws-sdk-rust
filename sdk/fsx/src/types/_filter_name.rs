@@ -43,13 +43,13 @@
 /// <p>The name for a filter.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum FilterName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FilterName {
+impl ::std::convert::From<&str> for FilterName {
     fn from(s: &str) -> Self {
         match s {
             "backup-type" => FilterName::BackupType,
@@ -83,11 +83,11 @@ impl std::convert::From<&str> for FilterName {
         }
     }
 }
-impl std::str::FromStr for FilterName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FilterName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FilterName::from(s))
     }
 }
 impl FilterName {
@@ -117,7 +117,7 @@ impl FilterName {
         ]
     }
 }
-impl AsRef<str> for FilterName {
+impl ::std::convert::AsRef<str> for FilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

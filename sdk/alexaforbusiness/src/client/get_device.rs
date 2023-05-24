@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDevice`](crate::operation::get_device::builders::GetDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_arn(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_device_arn): <p>The ARN of the device for which to request details. Required.</p>
+    ///   - [`device_arn(impl ::std::convert::Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_device_arn): <p>The ARN of the device for which to request details. Required.</p>
     /// - On success, responds with [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput) with field(s):
     ///   - [`device(Option<Device>)`](crate::operation::get_device::GetDeviceOutput::device): <p>The details of the device requested. Required.</p>
     /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::operation::get_device::GetDeviceError)

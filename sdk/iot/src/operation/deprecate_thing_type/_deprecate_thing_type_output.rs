@@ -2,11 +2,11 @@
 
 /// <p>The output for the DeprecateThingType operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeprecateThingTypeOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeprecateThingTypeOutput {
+impl ::aws_http::request_id::RequestId for DeprecateThingTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeprecateThingTypeOutput {
 
 /// A builder for [`DeprecateThingTypeOutput`](crate::operation::deprecate_thing_type::DeprecateThingTypeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeprecateThingTypeOutputBuilder {
     _request_id: Option<String>,
 }

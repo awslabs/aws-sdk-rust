@@ -2,25 +2,25 @@
 
 /// <p>The source type and media pipeline configuration settings in a configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConcatenationSource {
     /// <p>The type of concatenation source in a configuration object.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ConcatenationSourceType>,
+    pub r#type: ::std::option::Option<crate::types::ConcatenationSourceType>,
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     #[doc(hidden)]
     pub media_capture_pipeline_source_configuration:
-        std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
+        ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
 }
 impl ConcatenationSource {
     /// <p>The type of concatenation source in a configuration object.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ConcatenationSourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConcatenationSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     pub fn media_capture_pipeline_source_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::MediaCapturePipelineSourceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::MediaCapturePipelineSourceConfiguration> {
         self.media_capture_pipeline_source_configuration.as_ref()
     }
 }
@@ -33,22 +33,24 @@ impl ConcatenationSource {
 
 /// A builder for [`ConcatenationSource`](crate::types::ConcatenationSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConcatenationSourceBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ConcatenationSourceType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ConcatenationSourceType>,
     pub(crate) media_capture_pipeline_source_configuration:
-        std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
+        ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
 }
 impl ConcatenationSourceBuilder {
     /// <p>The type of concatenation source in a configuration object.</p>
     pub fn r#type(mut self, input: crate::types::ConcatenationSourceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of concatenation source in a configuration object.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ConcatenationSourceType>,
+        input: ::std::option::Option<crate::types::ConcatenationSourceType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -58,13 +60,13 @@ impl ConcatenationSourceBuilder {
         mut self,
         input: crate::types::MediaCapturePipelineSourceConfiguration,
     ) -> Self {
-        self.media_capture_pipeline_source_configuration = Some(input);
+        self.media_capture_pipeline_source_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The concatenation settings for the media pipeline in a configuration object.</p>
     pub fn set_media_capture_pipeline_source_configuration(
         mut self,
-        input: std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
+        input: ::std::option::Option<crate::types::MediaCapturePipelineSourceConfiguration>,
     ) -> Self {
         self.media_capture_pipeline_source_configuration = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ModifyWorkspaceState`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
+    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
     ///   - [`workspace_state(TargetWorkspaceState)`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::workspace_state) / [`set_workspace_state(Option<TargetWorkspaceState>)`](crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateFluentBuilder::set_workspace_state): <p>The WorkSpace state.</p>
     /// - On success, responds with [`ModifyWorkspaceStateOutput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateOutput)
     /// - On failure, responds with [`SdkError<ModifyWorkspaceStateError>`](crate::operation::modify_workspace_state::ModifyWorkspaceStateError)

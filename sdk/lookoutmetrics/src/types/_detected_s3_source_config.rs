@@ -2,17 +2,17 @@
 
 /// <p>An inferred source configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedS3SourceConfig {
     /// <p>The source's file format descriptor.</p>
     #[doc(hidden)]
-    pub file_format_descriptor: std::option::Option<crate::types::DetectedFileFormatDescriptor>,
+    pub file_format_descriptor: ::std::option::Option<crate::types::DetectedFileFormatDescriptor>,
 }
 impl DetectedS3SourceConfig {
     /// <p>The source's file format descriptor.</p>
     pub fn file_format_descriptor(
         &self,
-    ) -> std::option::Option<&crate::types::DetectedFileFormatDescriptor> {
+    ) -> ::std::option::Option<&crate::types::DetectedFileFormatDescriptor> {
         self.file_format_descriptor.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl DetectedS3SourceConfig {
 
 /// A builder for [`DetectedS3SourceConfig`](crate::types::DetectedS3SourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectedS3SourceConfigBuilder {
     pub(crate) file_format_descriptor:
-        std::option::Option<crate::types::DetectedFileFormatDescriptor>,
+        ::std::option::Option<crate::types::DetectedFileFormatDescriptor>,
 }
 impl DetectedS3SourceConfigBuilder {
     /// <p>The source's file format descriptor.</p>
@@ -36,13 +38,13 @@ impl DetectedS3SourceConfigBuilder {
         mut self,
         input: crate::types::DetectedFileFormatDescriptor,
     ) -> Self {
-        self.file_format_descriptor = Some(input);
+        self.file_format_descriptor = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source's file format descriptor.</p>
     pub fn set_file_format_descriptor(
         mut self,
-        input: std::option::Option<crate::types::DetectedFileFormatDescriptor>,
+        input: ::std::option::Option<crate::types::DetectedFileFormatDescriptor>,
     ) -> Self {
         self.file_format_descriptor = input;
         self

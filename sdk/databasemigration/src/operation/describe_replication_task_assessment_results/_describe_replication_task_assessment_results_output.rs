@@ -2,37 +2,37 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentResultsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p> The task assessment report. </p>
     #[doc(hidden)]
     pub replication_task_assessment_results:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentResultsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p> The task assessment report. </p>
     pub fn replication_task_assessment_results(
         &self,
-    ) -> std::option::Option<&[crate::types::ReplicationTaskAssessmentResult]> {
+    ) -> ::std::option::Option<&[crate::types::ReplicationTaskAssessmentResult]> {
         self.replication_task_assessment_results.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReplicationTaskAssessmentResultsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReplicationTaskAssessmentResultsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -46,32 +46,34 @@ impl DescribeReplicationTaskAssessmentResultsOutput {
 
 /// A builder for [`DescribeReplicationTaskAssessmentResultsOutput`](crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReplicationTaskAssessmentResultsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) replication_task_assessment_results:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
@@ -86,13 +88,15 @@ impl DescribeReplicationTaskAssessmentResultsOutputBuilder {
     ) -> Self {
         let mut v = self.replication_task_assessment_results.unwrap_or_default();
         v.push(input);
-        self.replication_task_assessment_results = Some(v);
+        self.replication_task_assessment_results = ::std::option::Option::Some(v);
         self
     }
     /// <p> The task assessment report. </p>
     pub fn set_replication_task_assessment_results(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ReplicationTaskAssessmentResult>,
+        >,
     ) -> Self {
         self.replication_task_assessment_results = input;
         self

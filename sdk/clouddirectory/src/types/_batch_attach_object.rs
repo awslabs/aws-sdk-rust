@@ -2,29 +2,29 @@
 
 /// <p>Represents the output of an <code>AttachObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAttachObject {
     /// <p>The parent object reference.</p>
     #[doc(hidden)]
-    pub parent_reference: std::option::Option<crate::types::ObjectReference>,
+    pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The child object reference that is to be attached to the object.</p>
     #[doc(hidden)]
-    pub child_reference: std::option::Option<crate::types::ObjectReference>,
+    pub child_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of the link.</p>
     #[doc(hidden)]
-    pub link_name: std::option::Option<std::string::String>,
+    pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchAttachObject {
     /// <p>The parent object reference.</p>
-    pub fn parent_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The child object reference that is to be attached to the object.</p>
-    pub fn child_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn child_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.child_reference.as_ref()
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<&str> {
         self.link_name.as_deref()
     }
 }
@@ -37,46 +37,48 @@ impl BatchAttachObject {
 
 /// A builder for [`BatchAttachObject`](crate::types::BatchAttachObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchAttachObjectBuilder {
-    pub(crate) parent_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) child_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) link_name: std::option::Option<std::string::String>,
+    pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) child_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) link_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchAttachObjectBuilder {
     /// <p>The parent object reference.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.parent_reference = Some(input);
+        self.parent_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parent object reference.</p>
     pub fn set_parent_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.parent_reference = input;
         self
     }
     /// <p>The child object reference that is to be attached to the object.</p>
     pub fn child_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.child_reference = Some(input);
+        self.child_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The child object reference that is to be attached to the object.</p>
     pub fn set_child_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.child_reference = input;
         self
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link_name = Some(input.into());
+    pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the link.</p>
-    pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
     }

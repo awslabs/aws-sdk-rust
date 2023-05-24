@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum KeyStorageSecurityStandard {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum KeyStorageSecurityStandard {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for KeyStorageSecurityStandard {
+impl ::std::convert::From<&str> for KeyStorageSecurityStandard {
     fn from(s: &str) -> Self {
         match s {
             "FIPS_140_2_LEVEL_2_OR_HIGHER" => KeyStorageSecurityStandard::Fips1402Level2OrHigher,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for KeyStorageSecurityStandard {
         }
     }
 }
-impl std::str::FromStr for KeyStorageSecurityStandard {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for KeyStorageSecurityStandard {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyStorageSecurityStandard::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(KeyStorageSecurityStandard::from(s))
     }
 }
 impl KeyStorageSecurityStandard {
@@ -89,7 +89,7 @@ impl KeyStorageSecurityStandard {
         ]
     }
 }
-impl AsRef<str> for KeyStorageSecurityStandard {
+impl ::std::convert::AsRef<str> for KeyStorageSecurityStandard {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

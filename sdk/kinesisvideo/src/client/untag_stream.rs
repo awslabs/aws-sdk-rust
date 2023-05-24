@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagStream`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stream_arn(impl Into<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
-    ///   - [`stream_name(impl Into<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::set_stream_name): <p>The name of the stream that you want to remove tags from.</p>
+    ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
+    ///   - [`stream_name(impl ::std::convert::Into<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::set_stream_name): <p>The name of the stream that you want to remove tags from.</p>
     ///   - [`tag_key_list(Vec<String>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::tag_key_list) / [`set_tag_key_list(Option<Vec<String>>)`](crate::operation::untag_stream::builders::UntagStreamFluentBuilder::set_tag_key_list): <p>A list of the keys of the tags that you want to remove.</p>
     /// - On success, responds with [`UntagStreamOutput`](crate::operation::untag_stream::UntagStreamOutput)
     /// - On failure, responds with [`SdkError<UntagStreamError>`](crate::operation::untag_stream::UntagStreamError)

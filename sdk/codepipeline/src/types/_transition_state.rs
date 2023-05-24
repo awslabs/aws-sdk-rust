@@ -2,20 +2,20 @@
 
 /// <p>Represents information about the state of transitions between one stage and another stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitionState {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     #[doc(hidden)]
     pub enabled: bool,
     /// <p>The ID of the user who last changed the transition state.</p>
     #[doc(hidden)]
-    pub last_changed_by: std::option::Option<std::string::String>,
+    pub last_changed_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the transition state was last changed.</p>
     #[doc(hidden)]
-    pub last_changed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
     #[doc(hidden)]
-    pub disabled_reason: std::option::Option<std::string::String>,
+    pub disabled_reason: ::std::option::Option<::std::string::String>,
 }
 impl TransitionState {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
@@ -23,15 +23,15 @@ impl TransitionState {
         self.enabled
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn last_changed_by(&self) -> std::option::Option<&str> {
+    pub fn last_changed_by(&self) -> ::std::option::Option<&str> {
         self.last_changed_by.as_deref()
     }
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub fn last_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_changed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_changed_at.as_ref()
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn disabled_reason(&self) -> std::option::Option<&str> {
+    pub fn disabled_reason(&self) -> ::std::option::Option<&str> {
         self.disabled_reason.as_deref()
     }
 }
@@ -44,54 +44,68 @@ impl TransitionState {
 
 /// A builder for [`TransitionState`](crate::types::TransitionState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransitionStateBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) last_changed_by: std::option::Option<std::string::String>,
-    pub(crate) last_changed_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) disabled_reason: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) last_changed_by: ::std::option::Option<::std::string::String>,
+    pub(crate) last_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) disabled_reason: ::std::option::Option<::std::string::String>,
 }
 impl TransitionStateBuilder {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn last_changed_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_changed_by = Some(input.into());
+    pub fn last_changed_by(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_changed_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn set_last_changed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_changed_by(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_changed_by = input;
         self
     }
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub fn last_changed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_changed_at = Some(input);
+    pub fn last_changed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_changed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the transition state was last changed.</p>
     pub fn set_last_changed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_changed_at = input;
         self
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn disabled_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disabled_reason = Some(input.into());
+    pub fn disabled_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disabled_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn set_disabled_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_disabled_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.disabled_reason = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Contains configuration details for protected query output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProtectedQueryOutputConfiguration {
     /// <p>Required configuration for a protected query with an `S3` output type.</p>
     S3(crate::types::ProtectedQueryS3OutputConfiguration),
@@ -22,11 +22,11 @@ impl ProtectedQueryOutputConfiguration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(
         &self,
-    ) -> std::result::Result<&crate::types::ProtectedQueryS3OutputConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::ProtectedQueryS3OutputConfiguration, &Self> {
         if let ProtectedQueryOutputConfiguration::S3(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3`](crate::types::ProtectedQueryOutputConfiguration::S3).

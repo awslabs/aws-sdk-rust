@@ -2,14 +2,14 @@
 
 /// <p>Information about the versioning of dataset contents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersioningConfiguration {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     #[doc(hidden)]
     pub unlimited: bool,
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     #[doc(hidden)]
-    pub max_versions: std::option::Option<i32>,
+    pub max_versions: ::std::option::Option<i32>,
 }
 impl VersioningConfiguration {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
@@ -17,7 +17,7 @@ impl VersioningConfiguration {
         self.unlimited
     }
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
-    pub fn max_versions(&self) -> std::option::Option<i32> {
+    pub fn max_versions(&self) -> ::std::option::Option<i32> {
         self.max_versions
     }
 }
@@ -30,29 +30,31 @@ impl VersioningConfiguration {
 
 /// A builder for [`VersioningConfiguration`](crate::types::VersioningConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VersioningConfigurationBuilder {
-    pub(crate) unlimited: std::option::Option<bool>,
-    pub(crate) max_versions: std::option::Option<i32>,
+    pub(crate) unlimited: ::std::option::Option<bool>,
+    pub(crate) max_versions: ::std::option::Option<i32>,
 }
 impl VersioningConfigurationBuilder {
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
     pub fn unlimited(mut self, input: bool) -> Self {
-        self.unlimited = Some(input);
+        self.unlimited = ::std::option::Option::Some(input);
         self
     }
     /// <p>If true, unlimited versions of dataset contents are kept.</p>
-    pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_unlimited(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unlimited = input;
         self
     }
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
     pub fn max_versions(mut self, input: i32) -> Self {
-        self.max_versions = Some(input);
+        self.max_versions = ::std::option::Option::Some(input);
         self
     }
     /// <p>How many versions of dataset contents are kept. The <code>unlimited</code> parameter must be <code>false</code>.</p>
-    pub fn set_max_versions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_versions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_versions = input;
         self
     }

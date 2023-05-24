@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RejectEnvironmentAccountConnection`](crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder::set_id): <p>The ID of the environment account connection to reject.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionFluentBuilder::set_id): <p>The ID of the environment account connection to reject.</p>
     /// - On success, responds with [`RejectEnvironmentAccountConnectionOutput`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionOutput) with field(s):
     ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment connection account detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<RejectEnvironmentAccountConnectionError>`](crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionError)

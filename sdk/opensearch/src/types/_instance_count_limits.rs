@@ -2,7 +2,7 @@
 
 /// <p>Limits on the number of instances that can be created in OpenSearch Service for a given instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceCountLimits {
     /// <p>The maximum allowed number of instances.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl InstanceCountLimits {
 
 /// A builder for [`InstanceCountLimits`](crate::types::InstanceCountLimits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceCountLimitsBuilder {
-    pub(crate) minimum_instance_count: std::option::Option<i32>,
-    pub(crate) maximum_instance_count: std::option::Option<i32>,
+    pub(crate) minimum_instance_count: ::std::option::Option<i32>,
+    pub(crate) maximum_instance_count: ::std::option::Option<i32>,
 }
 impl InstanceCountLimitsBuilder {
     /// <p>The maximum allowed number of instances.</p>
     pub fn minimum_instance_count(mut self, input: i32) -> Self {
-        self.minimum_instance_count = Some(input);
+        self.minimum_instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum allowed number of instances.</p>
-    pub fn set_minimum_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minimum_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_instance_count = input;
         self
     }
     /// <p>The minimum allowed number of instances.</p>
     pub fn maximum_instance_count(mut self, input: i32) -> Self {
-        self.maximum_instance_count = Some(input);
+        self.maximum_instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum allowed number of instances.</p>
-    pub fn set_maximum_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_instance_count = input;
         self
     }

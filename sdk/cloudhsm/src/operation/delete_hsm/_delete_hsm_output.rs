@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of the <code>DeleteHsm</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHsmOutput {
     /// <p>The status of the operation.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteHsmOutput {
     /// <p>The status of the operation.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteHsmOutput {
+impl ::aws_http::request_id::RequestId for DeleteHsmOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DeleteHsmOutput {
 
 /// A builder for [`DeleteHsmOutput`](crate::operation::delete_hsm::DeleteHsmOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteHsmOutputBuilder {
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteHsmOutputBuilder {
     /// <p>The status of the operation.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the operation.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

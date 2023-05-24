@@ -38,13 +38,13 @@
 /// Use Rate control mode (Mpeg2RateControlMode) to specify whether the bitrate is variable (vbr) or constant (cbr).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Mpeg2RateControlMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Mpeg2RateControlMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Mpeg2RateControlMode {
+impl ::std::convert::From<&str> for Mpeg2RateControlMode {
     fn from(s: &str) -> Self {
         match s {
             "CBR" => Mpeg2RateControlMode::Cbr,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Mpeg2RateControlMode {
         }
     }
 }
-impl std::str::FromStr for Mpeg2RateControlMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Mpeg2RateControlMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mpeg2RateControlMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Mpeg2RateControlMode::from(s))
     }
 }
 impl Mpeg2RateControlMode {
@@ -86,7 +86,7 @@ impl Mpeg2RateControlMode {
         &["CBR", "VBR"]
     }
 }
-impl AsRef<str> for Mpeg2RateControlMode {
+impl ::std::convert::AsRef<str> for Mpeg2RateControlMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

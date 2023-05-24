@@ -2,14 +2,14 @@
 
 /// <p>Information about the configuration of an EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendServerDescription {
     /// <p>The port on which the EC2 instance is listening.</p>
     #[doc(hidden)]
     pub instance_port: i32,
     /// <p>The names of the policies enabled for the EC2 instance.</p>
     #[doc(hidden)]
-    pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BackendServerDescription {
     /// <p>The port on which the EC2 instance is listening.</p>
@@ -17,7 +17,7 @@ impl BackendServerDescription {
         self.instance_port
     }
     /// <p>The names of the policies enabled for the EC2 instance.</p>
-    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.policy_names.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl BackendServerDescription {
 
 /// A builder for [`BackendServerDescription`](crate::types::BackendServerDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackendServerDescriptionBuilder {
-    pub(crate) instance_port: std::option::Option<i32>,
-    pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) instance_port: ::std::option::Option<i32>,
+    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BackendServerDescriptionBuilder {
     /// <p>The port on which the EC2 instance is listening.</p>
     pub fn instance_port(mut self, input: i32) -> Self {
-        self.instance_port = Some(input);
+        self.instance_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port on which the EC2 instance is listening.</p>
-    pub fn set_instance_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_port = input;
         self
     }
@@ -51,16 +53,16 @@ impl BackendServerDescriptionBuilder {
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
     ///
     /// <p>The names of the policies enabled for the EC2 instance.</p>
-    pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
         v.push(input.into());
-        self.policy_names = Some(v);
+        self.policy_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the policies enabled for the EC2 instance.</p>
     pub fn set_policy_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.policy_names = input;
         self

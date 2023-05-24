@@ -2,22 +2,22 @@
 
 /// <p>The output of the DescribeCertificate operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCertificateOutput {
     /// <p>The description of the certificate.</p>
     #[doc(hidden)]
-    pub certificate_description: std::option::Option<crate::types::CertificateDescription>,
+    pub certificate_description: ::std::option::Option<crate::types::CertificateDescription>,
     _request_id: Option<String>,
 }
 impl DescribeCertificateOutput {
     /// <p>The description of the certificate.</p>
     pub fn certificate_description(
         &self,
-    ) -> std::option::Option<&crate::types::CertificateDescription> {
+    ) -> ::std::option::Option<&crate::types::CertificateDescription> {
         self.certificate_description.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCertificateOutput {
+impl ::aws_http::request_id::RequestId for DescribeCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,21 +33,23 @@ impl DescribeCertificateOutput {
 
 /// A builder for [`DescribeCertificateOutput`](crate::operation::describe_certificate::DescribeCertificateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCertificateOutputBuilder {
-    pub(crate) certificate_description: std::option::Option<crate::types::CertificateDescription>,
+    pub(crate) certificate_description: ::std::option::Option<crate::types::CertificateDescription>,
     _request_id: Option<String>,
 }
 impl DescribeCertificateOutputBuilder {
     /// <p>The description of the certificate.</p>
     pub fn certificate_description(mut self, input: crate::types::CertificateDescription) -> Self {
-        self.certificate_description = Some(input);
+        self.certificate_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of the certificate.</p>
     pub fn set_certificate_description(
         mut self,
-        input: std::option::Option<crate::types::CertificateDescription>,
+        input: ::std::option::Option<crate::types::CertificateDescription>,
     ) -> Self {
         self.certificate_description = input;
         self

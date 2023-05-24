@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationFsxWindows`](crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
+    ///   - [`location_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
     /// - On success, responds with [`DescribeLocationFsxWindowsOutput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput::location_uri): <p>The URL of the FSx for Windows File Server location that was described.</p>

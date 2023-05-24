@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeviceFleetReport`](crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder::set_device_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`device_fleet_name(impl ::std::convert::Into<String>)`](crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportFluentBuilder::set_device_fleet_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`GetDeviceFleetReportOutput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput) with field(s):
     ///   - [`device_fleet_arn(Option<String>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::device_fleet_arn): <p>The Amazon Resource Name (ARN) of the device.</p>
     ///   - [`device_fleet_name(Option<String>)`](crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput::device_fleet_name): <p>The name of the fleet.</p>

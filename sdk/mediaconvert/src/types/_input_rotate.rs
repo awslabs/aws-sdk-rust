@@ -41,13 +41,13 @@
 /// Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InputRotate {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum InputRotate {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InputRotate {
+impl ::std::convert::From<&str> for InputRotate {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => InputRotate::Auto,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for InputRotate {
         }
     }
 }
-impl std::str::FromStr for InputRotate {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InputRotate {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InputRotate::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InputRotate::from(s))
     }
 }
 impl InputRotate {
@@ -105,7 +105,7 @@ impl InputRotate {
         ]
     }
 }
-impl AsRef<str> for InputRotate {
+impl ::std::convert::AsRef<str> for InputRotate {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

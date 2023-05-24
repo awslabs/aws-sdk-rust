@@ -30,9 +30,9 @@ Then in code, a client can be created with the following:
 ```rust,no_run
 use aws_sdk_ram as ram;
 
-#[tokio::main]
+#[::tokio::main]
 async fn main() -> Result<(), ram::Error> {
-    let config = aws_config::load_from_env().await;
+    let config = ::aws_config::load_from_env().await;
     let client = ram::Client::new(&config);
 
     // ... make some calls with the client

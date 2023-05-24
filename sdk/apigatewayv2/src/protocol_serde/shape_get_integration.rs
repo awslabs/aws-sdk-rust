@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_integration_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_integration::GetIntegrationOutput,
@@ -15,7 +15,7 @@ pub fn de_get_integration_http_error(
         _response_body,
     )
     .map_err(crate::operation::get_integration::GetIntegrationError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -67,7 +67,7 @@ pub fn de_get_integration_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_integration_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_integration::GetIntegrationOutput,
@@ -83,7 +83,7 @@ pub fn de_get_integration_http_response_with_props(
         )
         .map_err(crate::operation::get_integration::GetIntegrationError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -94,28 +94,28 @@ pub(crate) fn de_get_integration(
     mut builder: crate::operation::get_integration::builders::GetIntegrationOutputBuilder,
 ) -> Result<
     crate::operation::get_integration::builders::GetIntegrationOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "apiGatewayManaged" => {
                         builder = builder.set_api_gateway_managed(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
                     }
                     "connectionId" => {
                         builder = builder.set_connection_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -124,7 +124,7 @@ pub(crate) fn de_get_integration(
                     }
                     "connectionType" => {
                         builder = builder.set_connection_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -136,7 +136,7 @@ pub(crate) fn de_get_integration(
                     }
                     "contentHandlingStrategy" => {
                         builder = builder.set_content_handling_strategy(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -149,7 +149,7 @@ pub(crate) fn de_get_integration(
                     }
                     "credentialsArn" => {
                         builder = builder.set_credentials_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -158,7 +158,7 @@ pub(crate) fn de_get_integration(
                     }
                     "description" => {
                         builder = builder.set_description(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -167,7 +167,7 @@ pub(crate) fn de_get_integration(
                     }
                     "integrationId" => {
                         builder = builder.set_integration_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -176,7 +176,7 @@ pub(crate) fn de_get_integration(
                     }
                     "integrationMethod" => {
                         builder = builder.set_integration_method(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -185,7 +185,7 @@ pub(crate) fn de_get_integration(
                     }
                     "integrationResponseSelectionExpression" => {
                         builder = builder.set_integration_response_selection_expression(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -194,7 +194,7 @@ pub(crate) fn de_get_integration(
                     }
                     "integrationSubtype" => {
                         builder = builder.set_integration_subtype(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -203,7 +203,7 @@ pub(crate) fn de_get_integration(
                     }
                     "integrationType" => {
                         builder = builder.set_integration_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -215,7 +215,7 @@ pub(crate) fn de_get_integration(
                     }
                     "integrationUri" => {
                         builder = builder.set_integration_uri(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -224,7 +224,7 @@ pub(crate) fn de_get_integration(
                     }
                     "passthroughBehavior" => {
                         builder = builder.set_passthrough_behavior(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -236,7 +236,7 @@ pub(crate) fn de_get_integration(
                     }
                     "payloadFormatVersion" => {
                         builder = builder.set_payload_format_version(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -260,7 +260,7 @@ pub(crate) fn de_get_integration(
                     }
                     "templateSelectionExpression" => {
                         builder = builder.set_template_selection_expression(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -269,7 +269,7 @@ pub(crate) fn de_get_integration(
                     }
                     "timeoutInMillis" => {
                         builder = builder.set_timeout_in_millis(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -281,12 +281,12 @@ pub(crate) fn de_get_integration(
                             crate::protocol_serde::shape_tls_config::de_tls_config(tokens)?,
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -296,7 +296,7 @@ pub(crate) fn de_get_integration(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

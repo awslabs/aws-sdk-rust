@@ -2,36 +2,36 @@
 
 /// <p>Describes an association status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationStatus {
     /// <p>The date when the status changed.</p>
     #[doc(hidden)]
-    pub date: std::option::Option<aws_smithy_types::DateTime>,
+    pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::AssociationStatusName>,
+    pub name: ::std::option::Option<crate::types::AssociationStatusName>,
     /// <p>The reason for the status.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined string.</p>
     #[doc(hidden)]
-    pub additional_info: std::option::Option<std::string::String>,
+    pub additional_info: ::std::option::Option<::std::string::String>,
 }
 impl AssociationStatus {
     /// <p>The date when the status changed.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The status.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::AssociationStatusName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::AssociationStatusName> {
         self.name.as_ref()
     }
     /// <p>The reason for the status.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>A user-defined string.</p>
-    pub fn additional_info(&self) -> std::option::Option<&str> {
+    pub fn additional_info(&self) -> ::std::option::Option<&str> {
         self.additional_info.as_deref()
     }
 }
@@ -44,54 +44,62 @@ impl AssociationStatus {
 
 /// A builder for [`AssociationStatus`](crate::types::AssociationStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociationStatusBuilder {
-    pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) name: std::option::Option<crate::types::AssociationStatusName>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) additional_info: std::option::Option<std::string::String>,
+    pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<crate::types::AssociationStatusName>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_info: ::std::option::Option<::std::string::String>,
 }
 impl AssociationStatusBuilder {
     /// <p>The date when the status changed.</p>
-    pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.date = Some(input);
+    pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the status changed.</p>
-    pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date = input;
         self
     }
     /// <p>The status.</p>
     pub fn name(mut self, input: crate::types::AssociationStatusName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::AssociationStatusName>,
+        input: ::std::option::Option<crate::types::AssociationStatusName>,
     ) -> Self {
         self.name = input;
         self
     }
     /// <p>The reason for the status.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the status.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>A user-defined string.</p>
-    pub fn additional_info(mut self, input: impl Into<std::string::String>) -> Self {
-        self.additional_info = Some(input.into());
+    pub fn additional_info(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.additional_info = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-defined string.</p>
-    pub fn set_additional_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_additional_info(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.additional_info = input;
         self
     }

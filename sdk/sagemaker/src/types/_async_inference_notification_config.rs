@@ -2,28 +2,28 @@
 
 /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
     #[doc(hidden)]
-    pub success_topic: std::option::Option<std::string::String>,
+    pub success_topic: ::std::option::Option<::std::string::String>,
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
     #[doc(hidden)]
-    pub error_topic: std::option::Option<std::string::String>,
+    pub error_topic: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
     /// <p>The inference response is included only if the response size is less than or equal to 128 KB.</p>
     /// </note>
     #[doc(hidden)]
     pub include_inference_response_in:
-        std::option::Option<std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
 }
 impl AsyncInferenceNotificationConfig {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
-    pub fn success_topic(&self) -> std::option::Option<&str> {
+    pub fn success_topic(&self) -> ::std::option::Option<&str> {
         self.success_topic.as_deref()
     }
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
-    pub fn error_topic(&self) -> std::option::Option<&str> {
+    pub fn error_topic(&self) -> ::std::option::Option<&str> {
         self.error_topic.as_deref()
     }
     /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
@@ -31,7 +31,7 @@ impl AsyncInferenceNotificationConfig {
     /// </note>
     pub fn include_inference_response_in(
         &self,
-    ) -> std::option::Option<&[crate::types::AsyncNotificationTopicTypes]> {
+    ) -> ::std::option::Option<&[crate::types::AsyncNotificationTopicTypes]> {
         self.include_inference_response_in.as_deref()
     }
 }
@@ -44,31 +44,39 @@ impl AsyncInferenceNotificationConfig {
 
 /// A builder for [`AsyncInferenceNotificationConfig`](crate::types::AsyncInferenceNotificationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AsyncInferenceNotificationConfigBuilder {
-    pub(crate) success_topic: std::option::Option<std::string::String>,
-    pub(crate) error_topic: std::option::Option<std::string::String>,
+    pub(crate) success_topic: ::std::option::Option<::std::string::String>,
+    pub(crate) error_topic: ::std::option::Option<::std::string::String>,
     pub(crate) include_inference_response_in:
-        std::option::Option<std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
 }
 impl AsyncInferenceNotificationConfigBuilder {
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
-    pub fn success_topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.success_topic = Some(input.into());
+    pub fn success_topic(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.success_topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon SNS topic to post a notification to when inference completes successfully. If no topic is provided, no notification is sent on success.</p>
-    pub fn set_success_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_success_topic(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.success_topic = input;
         self
     }
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
-    pub fn error_topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_topic = Some(input.into());
+    pub fn error_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon SNS topic to post a notification to when inference fails. If no topic is provided, no notification is sent on failure.</p>
-    pub fn set_error_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_topic = input;
         self
     }
@@ -85,7 +93,7 @@ impl AsyncInferenceNotificationConfigBuilder {
     ) -> Self {
         let mut v = self.include_inference_response_in.unwrap_or_default();
         v.push(input);
-        self.include_inference_response_in = Some(v);
+        self.include_inference_response_in = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon SNS topics where you want the inference response to be included.</p> <note>
@@ -93,7 +101,7 @@ impl AsyncInferenceNotificationConfigBuilder {
     /// </note>
     pub fn set_include_inference_response_in(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AsyncNotificationTopicTypes>>,
     ) -> Self {
         self.include_inference_response_in = input;
         self

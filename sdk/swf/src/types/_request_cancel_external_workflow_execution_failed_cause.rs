@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RequestCancelExternalWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum RequestCancelExternalWorkflowExecutionFailedCause {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RequestCancelExternalWorkflowExecutionFailedCause {
+impl ::std::convert::From<&str> for RequestCancelExternalWorkflowExecutionFailedCause {
     fn from(s: &str) -> Self {
         match s {
                         "OPERATION_NOT_PERMITTED" => RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted,
@@ -67,11 +67,11 @@ other => RequestCancelExternalWorkflowExecutionFailedCause::Unknown(crate::primi
                     }
     }
 }
-impl std::str::FromStr for RequestCancelExternalWorkflowExecutionFailedCause {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RequestCancelExternalWorkflowExecutionFailedCause {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequestCancelExternalWorkflowExecutionFailedCause::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RequestCancelExternalWorkflowExecutionFailedCause::from(s))
     }
 }
 impl RequestCancelExternalWorkflowExecutionFailedCause {
@@ -93,7 +93,7 @@ impl RequestCancelExternalWorkflowExecutionFailedCause {
         ]
     }
 }
-impl AsRef<str> for RequestCancelExternalWorkflowExecutionFailedCause {
+impl ::std::convert::AsRef<str> for RequestCancelExternalWorkflowExecutionFailedCause {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

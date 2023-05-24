@@ -2,11 +2,11 @@
 
 /// <p> The connector-specific profile properties required when using Salesforce. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
     #[doc(hidden)]
-    pub instance_url: std::option::Option<std::string::String>,
+    pub instance_url: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     #[doc(hidden)]
     pub is_sandbox_environment: bool,
@@ -46,7 +46,7 @@ pub struct SalesforceConnectorProfileProperties {
 }
 impl SalesforceConnectorProfileProperties {
     /// <p> The location of the Salesforce resource. </p>
-    pub fn instance_url(&self) -> std::option::Option<&str> {
+    pub fn instance_url(&self) -> ::std::option::Option<&str> {
         self.instance_url.as_deref()
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
@@ -97,30 +97,32 @@ impl SalesforceConnectorProfileProperties {
 
 /// A builder for [`SalesforceConnectorProfileProperties`](crate::types::SalesforceConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SalesforceConnectorProfilePropertiesBuilder {
-    pub(crate) instance_url: std::option::Option<std::string::String>,
-    pub(crate) is_sandbox_environment: std::option::Option<bool>,
-    pub(crate) use_private_link_for_metadata_and_authorization: std::option::Option<bool>,
+    pub(crate) instance_url: ::std::option::Option<::std::string::String>,
+    pub(crate) is_sandbox_environment: ::std::option::Option<bool>,
+    pub(crate) use_private_link_for_metadata_and_authorization: ::std::option::Option<bool>,
 }
 impl SalesforceConnectorProfilePropertiesBuilder {
     /// <p> The location of the Salesforce resource. </p>
-    pub fn instance_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_url = Some(input.into());
+    pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The location of the Salesforce resource. </p>
-    pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_url = input;
         self
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
     pub fn is_sandbox_environment(mut self, input: bool) -> Self {
-        self.is_sandbox_environment = Some(input);
+        self.is_sandbox_environment = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether the connector profile applies to a sandbox or production environment. </p>
-    pub fn set_is_sandbox_environment(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_sandbox_environment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_sandbox_environment = input;
         self
     }
@@ -156,7 +158,7 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// </dd>
     /// </dl>
     pub fn use_private_link_for_metadata_and_authorization(mut self, input: bool) -> Self {
-        self.use_private_link_for_metadata_and_authorization = Some(input);
+        self.use_private_link_for_metadata_and_authorization = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p>
@@ -192,7 +194,7 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// </dl>
     pub fn set_use_private_link_for_metadata_and_authorization(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.use_private_link_for_metadata_and_authorization = input;
         self

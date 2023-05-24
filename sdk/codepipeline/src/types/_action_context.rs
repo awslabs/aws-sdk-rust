@@ -2,22 +2,22 @@
 
 /// <p>Represents the context of an action in the stage of a pipeline to a job worker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionContext {
     /// <p>The name of the action in the context of a job.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
     #[doc(hidden)]
-    pub action_execution_id: std::option::Option<std::string::String>,
+    pub action_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionContext {
     /// <p>The name of the action in the context of a job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
-    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+    pub fn action_execution_id(&self) -> ::std::option::Option<&str> {
         self.action_execution_id.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl ActionContext {
 
 /// A builder for [`ActionContext`](crate::types::ActionContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionContextBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) action_execution_id: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) action_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl ActionContextBuilder {
     /// <p>The name of the action in the context of a job.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the action in the context of a job.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
-    pub fn action_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_execution_id = Some(input.into());
+    pub fn action_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.action_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
     pub fn set_action_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.action_execution_id = input;
         self

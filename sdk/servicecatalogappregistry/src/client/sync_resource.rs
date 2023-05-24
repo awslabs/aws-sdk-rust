@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`resource_type(ResourceType)`](crate::operation::sync_resource::builders::SyncResourceFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::sync_resource::builders::SyncResourceFluentBuilder::set_resource_type): <p>The type of resource of which the application will be associated.</p>
-    ///   - [`resource(impl Into<String>)`](crate::operation::sync_resource::builders::SyncResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::sync_resource::builders::SyncResourceFluentBuilder::set_resource): <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
+    ///   - [`resource(impl ::std::convert::Into<String>)`](crate::operation::sync_resource::builders::SyncResourceFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::sync_resource::builders::SyncResourceFluentBuilder::set_resource): <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
     /// - On success, responds with [`SyncResourceOutput`](crate::operation::sync_resource::SyncResourceOutput) with field(s):
     ///   - [`application_arn(Option<String>)`](crate::operation::sync_resource::SyncResourceOutput::application_arn): <p>The Amazon resource name (ARN) that specifies the application.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::sync_resource::SyncResourceOutput::resource_arn): <p>The Amazon resource name (ARN) that specifies the resource.</p>

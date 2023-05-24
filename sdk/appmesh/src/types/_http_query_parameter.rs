@@ -2,22 +2,22 @@
 
 /// <p>An object that represents the query parameter in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The query parameter to match on.</p>
     #[doc(hidden)]
-    pub r#match: std::option::Option<crate::types::QueryParameterMatch>,
+    pub r#match: ::std::option::Option<crate::types::QueryParameterMatch>,
 }
 impl HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The query parameter to match on.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::QueryParameterMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<&crate::types::QueryParameterMatch> {
         self.r#match.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl HttpQueryParameter {
 
 /// A builder for [`HttpQueryParameter`](crate::types::HttpQueryParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpQueryParameterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#match: std::option::Option<crate::types::QueryParameterMatch>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#match: ::std::option::Option<crate::types::QueryParameterMatch>,
 }
 impl HttpQueryParameterBuilder {
     /// <p>A name for the query parameter that will be matched on.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the query parameter that will be matched on.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The query parameter to match on.</p>
     pub fn r#match(mut self, input: crate::types::QueryParameterMatch) -> Self {
-        self.r#match = Some(input);
+        self.r#match = ::std::option::Option::Some(input);
         self
     }
     /// <p>The query parameter to match on.</p>
     pub fn set_match(
         mut self,
-        input: std::option::Option<crate::types::QueryParameterMatch>,
+        input: ::std::option::Option<crate::types::QueryParameterMatch>,
     ) -> Self {
         self.r#match = input;
         self

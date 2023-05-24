@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnarchiveWave`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
+    ///   - [`wave_id(impl ::std::convert::Into<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::unarchive_wave::builders::UnarchiveWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
     /// - On success, responds with [`UnarchiveWaveOutput`](crate::operation::unarchive_wave::UnarchiveWaveOutput) with field(s):
     ///   - [`wave_id(Option<String>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::wave_id): <p>Wave ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::unarchive_wave::UnarchiveWaveOutput::arn): <p>Wave ARN.</p>

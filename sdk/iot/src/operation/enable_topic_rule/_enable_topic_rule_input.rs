@@ -2,15 +2,15 @@
 
 /// <p>The input for the EnableTopicRuleRequest operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableTopicRuleInput {
     /// <p>The name of the topic rule to enable.</p>
     #[doc(hidden)]
-    pub rule_name: std::option::Option<std::string::String>,
+    pub rule_name: ::std::option::Option<::std::string::String>,
 }
 impl EnableTopicRuleInput {
     /// <p>The name of the topic rule to enable.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<&str> {
         self.rule_name.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl EnableTopicRuleInput {
 
 /// A builder for [`EnableTopicRuleInput`](crate::operation::enable_topic_rule::EnableTopicRuleInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnableTopicRuleInputBuilder {
-    pub(crate) rule_name: std::option::Option<std::string::String>,
+    pub(crate) rule_name: ::std::option::Option<::std::string::String>,
 }
 impl EnableTopicRuleInputBuilder {
     /// <p>The name of the topic rule to enable.</p>
-    pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_name = Some(input.into());
+    pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the topic rule to enable.</p>
-    pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
     }
     /// Consumes the builder and constructs a [`EnableTopicRuleInput`](crate::operation::enable_topic_rule::EnableTopicRuleInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::enable_topic_rule::EnableTopicRuleInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::enable_topic_rule::EnableTopicRuleInput {
+        ::std::result::Result::Ok(crate::operation::enable_topic_rule::EnableTopicRuleInput {
             rule_name: self.rule_name,
         })
     }

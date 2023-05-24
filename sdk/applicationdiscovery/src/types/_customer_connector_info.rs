@@ -2,7 +2,7 @@
 
 /// <p>Inventory data for installed discovery connectors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerConnectorInfo {
     /// <p>Number of active discovery connectors.</p>
     #[doc(hidden)]
@@ -65,84 +65,86 @@ impl CustomerConnectorInfo {
 
 /// A builder for [`CustomerConnectorInfo`](crate::types::CustomerConnectorInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomerConnectorInfoBuilder {
-    pub(crate) active_connectors: std::option::Option<i32>,
-    pub(crate) healthy_connectors: std::option::Option<i32>,
-    pub(crate) black_listed_connectors: std::option::Option<i32>,
-    pub(crate) shutdown_connectors: std::option::Option<i32>,
-    pub(crate) unhealthy_connectors: std::option::Option<i32>,
-    pub(crate) total_connectors: std::option::Option<i32>,
-    pub(crate) unknown_connectors: std::option::Option<i32>,
+    pub(crate) active_connectors: ::std::option::Option<i32>,
+    pub(crate) healthy_connectors: ::std::option::Option<i32>,
+    pub(crate) black_listed_connectors: ::std::option::Option<i32>,
+    pub(crate) shutdown_connectors: ::std::option::Option<i32>,
+    pub(crate) unhealthy_connectors: ::std::option::Option<i32>,
+    pub(crate) total_connectors: ::std::option::Option<i32>,
+    pub(crate) unknown_connectors: ::std::option::Option<i32>,
 }
 impl CustomerConnectorInfoBuilder {
     /// <p>Number of active discovery connectors.</p>
     pub fn active_connectors(mut self, input: i32) -> Self {
-        self.active_connectors = Some(input);
+        self.active_connectors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of active discovery connectors.</p>
-    pub fn set_active_connectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_active_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_connectors = input;
         self
     }
     /// <p>Number of healthy discovery connectors.</p>
     pub fn healthy_connectors(mut self, input: i32) -> Self {
-        self.healthy_connectors = Some(input);
+        self.healthy_connectors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of healthy discovery connectors.</p>
-    pub fn set_healthy_connectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_healthy_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_connectors = input;
         self
     }
     /// <p>Number of blacklisted discovery connectors.</p>
     pub fn black_listed_connectors(mut self, input: i32) -> Self {
-        self.black_listed_connectors = Some(input);
+        self.black_listed_connectors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of blacklisted discovery connectors.</p>
-    pub fn set_black_listed_connectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_black_listed_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.black_listed_connectors = input;
         self
     }
     /// <p>Number of discovery connectors with status SHUTDOWN,</p>
     pub fn shutdown_connectors(mut self, input: i32) -> Self {
-        self.shutdown_connectors = Some(input);
+        self.shutdown_connectors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of discovery connectors with status SHUTDOWN,</p>
-    pub fn set_shutdown_connectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_shutdown_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shutdown_connectors = input;
         self
     }
     /// <p>Number of unhealthy discovery connectors.</p>
     pub fn unhealthy_connectors(mut self, input: i32) -> Self {
-        self.unhealthy_connectors = Some(input);
+        self.unhealthy_connectors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of unhealthy discovery connectors.</p>
-    pub fn set_unhealthy_connectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unhealthy_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unhealthy_connectors = input;
         self
     }
     /// <p>Total number of discovery connectors.</p>
     pub fn total_connectors(mut self, input: i32) -> Self {
-        self.total_connectors = Some(input);
+        self.total_connectors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of discovery connectors.</p>
-    pub fn set_total_connectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_connectors = input;
         self
     }
     /// <p>Number of unknown discovery connectors.</p>
     pub fn unknown_connectors(mut self, input: i32) -> Self {
-        self.unknown_connectors = Some(input);
+        self.unknown_connectors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of unknown discovery connectors.</p>
-    pub fn set_unknown_connectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unknown_connectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown_connectors = input;
         self
     }

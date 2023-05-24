@@ -2,7 +2,7 @@
 
 /// <p>Confirms the device response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmDeviceOutput {
     /// <p>Indicates whether the user confirmation must confirm the device response.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ impl ConfirmDeviceOutput {
         self.user_confirmation_necessary
     }
 }
-impl aws_http::request_id::RequestId for ConfirmDeviceOutput {
+impl ::aws_http::request_id::RequestId for ConfirmDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl ConfirmDeviceOutput {
 
 /// A builder for [`ConfirmDeviceOutput`](crate::operation::confirm_device::ConfirmDeviceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfirmDeviceOutputBuilder {
-    pub(crate) user_confirmation_necessary: std::option::Option<bool>,
+    pub(crate) user_confirmation_necessary: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ConfirmDeviceOutputBuilder {
     /// <p>Indicates whether the user confirmation must confirm the device response.</p>
     pub fn user_confirmation_necessary(mut self, input: bool) -> Self {
-        self.user_confirmation_necessary = Some(input);
+        self.user_confirmation_necessary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the user confirmation must confirm the device response.</p>
-    pub fn set_user_confirmation_necessary(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_user_confirmation_necessary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_confirmation_necessary = input;
         self
     }

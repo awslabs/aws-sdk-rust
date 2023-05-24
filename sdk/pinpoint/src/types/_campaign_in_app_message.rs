@@ -2,40 +2,42 @@
 
 /// <p>In-app message configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignInAppMessage {
     /// <p>The message body of the notification, the email body or the text message.</p>
     #[doc(hidden)]
-    pub body: std::option::Option<std::string::String>,
+    pub body: ::std::option::Option<::std::string::String>,
     /// <p>In-app message content.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     /// <p>Custom config to be sent to client.</p>
     #[doc(hidden)]
-    pub custom_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub custom_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>In-app message layout.</p>
     #[doc(hidden)]
-    pub layout: std::option::Option<crate::types::Layout>,
+    pub layout: ::std::option::Option<crate::types::Layout>,
 }
 impl CampaignInAppMessage {
     /// <p>The message body of the notification, the email body or the text message.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> ::std::option::Option<&str> {
         self.body.as_deref()
     }
     /// <p>In-app message content.</p>
-    pub fn content(&self) -> std::option::Option<&[crate::types::InAppMessageContent]> {
+    pub fn content(&self) -> ::std::option::Option<&[crate::types::InAppMessageContent]> {
         self.content.as_deref()
     }
     /// <p>Custom config to be sent to client.</p>
     pub fn custom_config(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.custom_config.as_ref()
     }
     /// <p>In-app message layout.</p>
-    pub fn layout(&self) -> std::option::Option<&crate::types::Layout> {
+    pub fn layout(&self) -> ::std::option::Option<&crate::types::Layout> {
         self.layout.as_ref()
     }
 }
@@ -48,22 +50,25 @@ impl CampaignInAppMessage {
 
 /// A builder for [`CampaignInAppMessage`](crate::types::CampaignInAppMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CampaignInAppMessageBuilder {
-    pub(crate) body: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
-    pub(crate) custom_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) layout: std::option::Option<crate::types::Layout>,
+    pub(crate) body: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub(crate) custom_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) layout: ::std::option::Option<crate::types::Layout>,
 }
 impl CampaignInAppMessageBuilder {
     /// <p>The message body of the notification, the email body or the text message.</p>
-    pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.body = Some(input.into());
+    pub fn body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message body of the notification, the email body or the text message.</p>
-    pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.body = input;
         self
     }
@@ -75,13 +80,13 @@ impl CampaignInAppMessageBuilder {
     pub fn content(mut self, input: crate::types::InAppMessageContent) -> Self {
         let mut v = self.content.unwrap_or_default();
         v.push(input);
-        self.content = Some(v);
+        self.content = ::std::option::Option::Some(v);
         self
     }
     /// <p>In-app message content.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     ) -> Self {
         self.content = input;
         self
@@ -93,19 +98,19 @@ impl CampaignInAppMessageBuilder {
     /// <p>Custom config to be sent to client.</p>
     pub fn custom_config(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.custom_config.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.custom_config = Some(hash_map);
+        self.custom_config = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Custom config to be sent to client.</p>
     pub fn set_custom_config(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.custom_config = input;
@@ -113,11 +118,11 @@ impl CampaignInAppMessageBuilder {
     }
     /// <p>In-app message layout.</p>
     pub fn layout(mut self, input: crate::types::Layout) -> Self {
-        self.layout = Some(input);
+        self.layout = ::std::option::Option::Some(input);
         self
     }
     /// <p>In-app message layout.</p>
-    pub fn set_layout(mut self, input: std::option::Option<crate::types::Layout>) -> Self {
+    pub fn set_layout(mut self, input: ::std::option::Option<crate::types::Layout>) -> Self {
         self.layout = input;
         self
     }

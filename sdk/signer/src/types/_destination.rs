@@ -2,15 +2,15 @@
 
 /// <p>Points to an <code>S3Destination</code> object that contains information about your S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>The <code>S3Destination</code> object.</p>
     #[doc(hidden)]
-    pub s3: std::option::Option<crate::types::S3Destination>,
+    pub s3: ::std::option::Option<crate::types::S3Destination>,
 }
 impl Destination {
     /// <p>The <code>S3Destination</code> object.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::types::S3Destination> {
+    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3Destination> {
         self.s3.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationBuilder {
-    pub(crate) s3: std::option::Option<crate::types::S3Destination>,
+    pub(crate) s3: ::std::option::Option<crate::types::S3Destination>,
 }
 impl DestinationBuilder {
     /// <p>The <code>S3Destination</code> object.</p>
     pub fn s3(mut self, input: crate::types::S3Destination) -> Self {
-        self.s3 = Some(input);
+        self.s3 = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>S3Destination</code> object.</p>
-    pub fn set_s3(mut self, input: std::option::Option<crate::types::S3Destination>) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3Destination>) -> Self {
         self.s3 = input;
         self
     }

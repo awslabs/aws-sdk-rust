@@ -11,56 +11,59 @@ pub use crate::operation::delete_alarms::_delete_alarms_input::DeleteAlarmsInput
 /// <p>To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to change the <code>AlarmRule</code> of one of the alarms to <code>false</code>. </p>
 /// <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path. </p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAlarmsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_alarms::builders::DeleteAlarmsInputBuilder,
 }
 impl DeleteAlarmsFluentBuilder {
     /// Creates a new `DeleteAlarms`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_alarms::DeleteAlarms,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_alarms::DeleteAlarmsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_alarms::DeleteAlarmsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_alarms::DeleteAlarmsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_alarms::DeleteAlarmsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_alarms::DeleteAlarmsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl DeleteAlarmsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_alarms::DeleteAlarmsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_alarms::DeleteAlarmsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_alarms::DeleteAlarmsError>,
     > {
         self.send_middleware().await
     }
@@ -84,14 +87,14 @@ impl DeleteAlarmsFluentBuilder {
     /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
     ///
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
-    pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarm_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_names(input.into());
         self
     }
     /// <p>The alarms to be deleted. Do not enclose the alarm names in quote marks.</p>
     pub fn set_alarm_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_alarm_names(input);
         self

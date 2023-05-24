@@ -6,29 +6,29 @@ pub use crate::operation::update_access_policy::_update_access_policy_input::Upd
 /// Fluent builder constructing a request to `UpdateAccessPolicy`.
 ///
 /// <p>Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or project resource.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccessPolicyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder,
 }
 impl UpdateAccessPolicyFluentBuilder {
     /// Creates a new `UpdateAccessPolicy`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_access_policy::UpdateAccessPolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_access_policy::UpdateAccessPolicyError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateAccessPolicyFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_access_policy::UpdateAccessPolicyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_access_policy::UpdateAccessPolicyError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl UpdateAccessPolicyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_access_policy::UpdateAccessPolicyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_access_policy::UpdateAccessPolicyError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_policy_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.access_policy_id(input.into());
         self
     }
     /// <p>The ID of the access policy.</p>
-    pub fn set_access_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_policy_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_access_policy_id(input);
         self
     }
@@ -98,7 +107,7 @@ impl UpdateAccessPolicyFluentBuilder {
     /// <p>The identity for this access policy. Choose an IAM Identity Center user, an IAM Identity Center group, or an IAM user.</p>
     pub fn set_access_policy_identity(
         mut self,
-        input: std::option::Option<crate::types::Identity>,
+        input: ::std::option::Option<crate::types::Identity>,
     ) -> Self {
         self.inner = self.inner.set_access_policy_identity(input);
         self
@@ -111,7 +120,7 @@ impl UpdateAccessPolicyFluentBuilder {
     /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
     pub fn set_access_policy_resource(
         mut self,
-        input: std::option::Option<crate::types::Resource>,
+        input: ::std::option::Option<crate::types::Resource>,
     ) -> Self {
         self.inner = self.inner.set_access_policy_resource(input);
         self
@@ -124,18 +133,18 @@ impl UpdateAccessPolicyFluentBuilder {
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub fn set_access_policy_permission(
         mut self,
-        input: std::option::Option<crate::types::Permission>,
+        input: ::std::option::Option<crate::types::Permission>,
     ) -> Self {
         self.inner = self.inner.set_access_policy_permission(input);
         self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

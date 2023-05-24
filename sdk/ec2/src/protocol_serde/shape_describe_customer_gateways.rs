@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_customer_gateways_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput,
@@ -17,7 +17,7 @@ pub fn de_describe_customer_gateways_http_error(
     .map_err(
         crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(
         crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError::generic(
@@ -29,7 +29,7 @@ pub fn de_describe_customer_gateways_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_customer_gateways_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput,
@@ -40,7 +40,7 @@ pub fn de_describe_customer_gateways_http_response_with_props(
         let mut output = crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder::default();
         output = crate::protocol_serde::shape_describe_customer_gateways::de_describe_customer_gateways(_response_body, output).map_err(crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -52,16 +52,16 @@ pub fn de_describe_customer_gateways(
     mut builder: crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder,
 ) -> Result<
     crate::operation::describe_customer_gateways::builders::DescribeCustomerGatewaysOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeCustomerGatewaysResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeCustomerGatewaysResponse got {:?}",
             start_el
         )));

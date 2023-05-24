@@ -2,7 +2,7 @@
 
 /// <p>An object containing additional settings for your VDM configuration as applicable to the Dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardOptions {
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
     /// <ul>
@@ -10,7 +10,7 @@ pub struct DashboardOptions {
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub engagement_metrics: std::option::Option<crate::types::FeatureStatus>,
+    pub engagement_metrics: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl DashboardOptions {
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
@@ -18,7 +18,7 @@ impl DashboardOptions {
     /// <li> <p> <code>ENABLED</code> – Amazon SES enables engagement metrics for the configuration set.</p> </li>
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
     /// </ul>
-    pub fn engagement_metrics(&self) -> std::option::Option<&crate::types::FeatureStatus> {
+    pub fn engagement_metrics(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.engagement_metrics.as_ref()
     }
 }
@@ -31,9 +31,11 @@ impl DashboardOptions {
 
 /// A builder for [`DashboardOptions`](crate::types::DashboardOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DashboardOptionsBuilder {
-    pub(crate) engagement_metrics: std::option::Option<crate::types::FeatureStatus>,
+    pub(crate) engagement_metrics: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl DashboardOptionsBuilder {
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
@@ -42,7 +44,7 @@ impl DashboardOptionsBuilder {
     /// <li> <p> <code>DISABLED</code> – Amazon SES disables engagement metrics for the configuration set.</p> </li>
     /// </ul>
     pub fn engagement_metrics(mut self, input: crate::types::FeatureStatus) -> Self {
-        self.engagement_metrics = Some(input);
+        self.engagement_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the status of your VDM engagement metrics collection. Can be one of the following:</p>
@@ -52,7 +54,7 @@ impl DashboardOptionsBuilder {
     /// </ul>
     pub fn set_engagement_metrics(
         mut self,
-        input: std::option::Option<crate::types::FeatureStatus>,
+        input: ::std::option::Option<crate::types::FeatureStatus>,
     ) -> Self {
         self.engagement_metrics = input;
         self

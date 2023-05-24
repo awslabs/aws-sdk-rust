@@ -2,27 +2,27 @@
 
 /// <p>The output from the ListThingPrincipals operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListThingPrincipalsOutput {
     /// <p>The principals associated with the thing.</p>
     #[doc(hidden)]
-    pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListThingPrincipalsOutput {
     /// <p>The principals associated with the thing.</p>
-    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.principals.as_deref()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListThingPrincipalsOutput {
+impl ::aws_http::request_id::RequestId for ListThingPrincipalsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ListThingPrincipalsOutput {
 
 /// A builder for [`ListThingPrincipalsOutput`](crate::operation::list_thing_principals::ListThingPrincipalsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListThingPrincipalsOutputBuilder {
-    pub(crate) principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListThingPrincipalsOutputBuilder {
@@ -50,27 +52,27 @@ impl ListThingPrincipalsOutputBuilder {
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
     ///
     /// <p>The principals associated with the thing.</p>
-    pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
         v.push(input.into());
-        self.principals = Some(v);
+        self.principals = ::std::option::Option::Some(v);
         self
     }
     /// <p>The principals associated with the thing.</p>
     pub fn set_principals(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.principals = input;
         self
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

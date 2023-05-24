@@ -2,7 +2,7 @@
 
 /// <p>The output data configuration that was supplied when the export job was created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum OutputDataConfig {
     /// <p> The output data configuration that was supplied when the export job was created. </p>
     S3Configuration(crate::types::S3Configuration),
@@ -22,11 +22,11 @@ impl OutputDataConfig {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_configuration(
         &self,
-    ) -> std::result::Result<&crate::types::S3Configuration, &Self> {
+    ) -> ::std::result::Result<&crate::types::S3Configuration, &Self> {
         if let OutputDataConfig::S3Configuration(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3Configuration`](crate::types::OutputDataConfig::S3Configuration).

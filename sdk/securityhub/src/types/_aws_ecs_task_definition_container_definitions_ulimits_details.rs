@@ -2,7 +2,7 @@
 
 /// <p>A ulimit to set in the container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <p>The hard limit for the ulimit type.</p>
     #[doc(hidden)]
@@ -26,7 +26,7 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The soft limit for the ulimit type.</p>
     #[doc(hidden)]
     pub soft_limit: i32,
@@ -54,7 +54,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
     /// <li> <p> <code>sigpending</code> </p> </li>
     /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The soft limit for the ulimit type.</p>
@@ -72,20 +72,22 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
-    pub(crate) hard_limit: std::option::Option<i32>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) soft_limit: std::option::Option<i32>,
+    pub(crate) hard_limit: ::std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) soft_limit: ::std::option::Option<i32>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     /// <p>The hard limit for the ulimit type.</p>
     pub fn hard_limit(mut self, input: i32) -> Self {
-        self.hard_limit = Some(input);
+        self.hard_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hard limit for the ulimit type.</p>
-    pub fn set_hard_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_hard_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hard_limit = input;
         self
     }
@@ -107,8 +109,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     /// <li> <p> <code>sigpending</code> </p> </li>
     /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the ulimit. Valid values are as follows:</p>
@@ -129,17 +131,17 @@ impl AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsBuilder {
     /// <li> <p> <code>sigpending</code> </p> </li>
     /// <li> <p> <code>stack</code> </p> </li>
     /// </ul>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The soft limit for the ulimit type.</p>
     pub fn soft_limit(mut self, input: i32) -> Self {
-        self.soft_limit = Some(input);
+        self.soft_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The soft limit for the ulimit type.</p>
-    pub fn set_soft_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_soft_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.soft_limit = input;
         self
     }

@@ -2,23 +2,23 @@
 
 /// The response for StartInstanceOnboardingJob API.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInstanceOnboardingJobOutput {
     /// Instance onboarding job status object
     #[doc(hidden)]
     pub connect_instance_onboarding_job_status:
-        std::option::Option<crate::types::InstanceOnboardingJobStatus>,
+        ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
     _request_id: Option<String>,
 }
 impl StartInstanceOnboardingJobOutput {
     /// Instance onboarding job status object
     pub fn connect_instance_onboarding_job_status(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceOnboardingJobStatus> {
+    ) -> ::std::option::Option<&crate::types::InstanceOnboardingJobStatus> {
         self.connect_instance_onboarding_job_status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for StartInstanceOnboardingJobOutput {
+impl ::aws_http::request_id::RequestId for StartInstanceOnboardingJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl StartInstanceOnboardingJobOutput {
 
 /// A builder for [`StartInstanceOnboardingJobOutput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartInstanceOnboardingJobOutputBuilder {
     pub(crate) connect_instance_onboarding_job_status:
-        std::option::Option<crate::types::InstanceOnboardingJobStatus>,
+        ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
     _request_id: Option<String>,
 }
 impl StartInstanceOnboardingJobOutputBuilder {
@@ -44,13 +46,13 @@ impl StartInstanceOnboardingJobOutputBuilder {
         mut self,
         input: crate::types::InstanceOnboardingJobStatus,
     ) -> Self {
-        self.connect_instance_onboarding_job_status = Some(input);
+        self.connect_instance_onboarding_job_status = ::std::option::Option::Some(input);
         self
     }
     /// Instance onboarding job status object
     pub fn set_connect_instance_onboarding_job_status(
         mut self,
-        input: std::option::Option<crate::types::InstanceOnboardingJobStatus>,
+        input: ::std::option::Option<crate::types::InstanceOnboardingJobStatus>,
     ) -> Self {
         self.connect_instance_onboarding_job_status = input;
         self

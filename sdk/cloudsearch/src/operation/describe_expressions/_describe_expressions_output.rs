@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DescribeExpressions</code> request. Contains the expressions configured for the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
     #[doc(hidden)]
-    pub expressions: std::option::Option<std::vec::Vec<crate::types::ExpressionStatus>>,
+    pub expressions: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeExpressionsOutput {
     /// <p>The expressions configured for the domain.</p>
-    pub fn expressions(&self) -> std::option::Option<&[crate::types::ExpressionStatus]> {
+    pub fn expressions(&self) -> ::std::option::Option<&[crate::types::ExpressionStatus]> {
         self.expressions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeExpressionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeExpressionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeExpressionsOutput {
 
 /// A builder for [`DescribeExpressionsOutput`](crate::operation::describe_expressions::DescribeExpressionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeExpressionsOutputBuilder {
-    pub(crate) expressions: std::option::Option<std::vec::Vec<crate::types::ExpressionStatus>>,
+    pub(crate) expressions: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeExpressionsOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeExpressionsOutputBuilder {
     pub fn expressions(mut self, input: crate::types::ExpressionStatus) -> Self {
         let mut v = self.expressions.unwrap_or_default();
         v.push(input);
-        self.expressions = Some(v);
+        self.expressions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The expressions configured for the domain.</p>
     pub fn set_expressions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExpressionStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExpressionStatus>>,
     ) -> Self {
         self.expressions = input;
         self

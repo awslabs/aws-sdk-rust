@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWorkspace`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_description): <p>The description of the workspace.</p>
-    ///   - [`role(impl Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::role) / [`set_role(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_role): <p>The ARN of the execution role associated with the workspace.</p>
+    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_description): <p>The description of the workspace.</p>
+    ///   - [`role(impl ::std::convert::Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::role) / [`set_role(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_role): <p>The ARN of the execution role associated with the workspace.</p>
     /// - On success, responds with [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput) with field(s):
     ///   - [`update_date_time(Option<DateTime>)`](crate::operation::update_workspace::UpdateWorkspaceOutput::update_date_time): <p>The date and time of the current update.</p>
     /// - On failure, responds with [`SdkError<UpdateWorkspaceError>`](crate::operation::update_workspace::UpdateWorkspaceError)

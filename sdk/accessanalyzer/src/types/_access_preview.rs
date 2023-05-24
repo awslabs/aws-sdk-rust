@@ -2,22 +2,22 @@
 
 /// <p>Contains information about an access preview.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPreview {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
     #[doc(hidden)]
-    pub analyzer_arn: std::option::Option<std::string::String>,
+    pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Configuration>,
+    pub configurations: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
     >,
     /// <p>The time at which the access preview was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the access preview.</p>
     /// <ul>
     /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
@@ -25,31 +25,31 @@ pub struct AccessPreview {
     /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AccessPreviewStatus>,
+    pub status: ::std::option::Option<crate::types::AccessPreviewStatus>,
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<crate::types::AccessPreviewStatusReason>,
+    pub status_reason: ::std::option::Option<crate::types::AccessPreviewStatusReason>,
 }
 impl AccessPreview {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
     pub fn configurations(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::Configuration>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
     > {
         self.configurations.as_ref()
     }
     /// <p>The time at which the access preview was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the access preview.</p>
@@ -58,12 +58,12 @@ impl AccessPreview {
     /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
     /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::AccessPreviewStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AccessPreviewStatus> {
         self.status.as_ref()
     }
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
-    pub fn status_reason(&self) -> std::option::Option<&crate::types::AccessPreviewStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
     }
 }
@@ -76,35 +76,37 @@ impl AccessPreview {
 
 /// A builder for [`AccessPreview`](crate::types::AccessPreview).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessPreviewBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) analyzer_arn: std::option::Option<std::string::String>,
-    pub(crate) configurations: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Configuration>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) analyzer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) configurations: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
     >,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::AccessPreviewStatus>,
-    pub(crate) status_reason: std::option::Option<crate::types::AccessPreviewStatusReason>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::AccessPreviewStatus>,
+    pub(crate) status_reason: ::std::option::Option<crate::types::AccessPreviewStatusReason>,
 }
 impl AccessPreviewBuilder {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the access preview.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
-    pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.analyzer_arn = Some(input.into());
+    pub fn analyzer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.analyzer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
-    pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_analyzer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analyzer_arn = input;
         self
     }
@@ -115,33 +117,33 @@ impl AccessPreviewBuilder {
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
     pub fn configurations(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::Configuration,
     ) -> Self {
         let mut hash_map = self.configurations.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.configurations = Some(hash_map);
+        self.configurations = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
     pub fn set_configurations(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Configuration>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Configuration>,
         >,
     ) -> Self {
         self.configurations = input;
         self
     }
     /// <p>The time at which the access preview was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the access preview was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
@@ -153,7 +155,7 @@ impl AccessPreviewBuilder {
     /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AccessPreviewStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the access preview.</p>
@@ -164,7 +166,7 @@ impl AccessPreviewBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AccessPreviewStatus>,
+        input: ::std::option::Option<crate::types::AccessPreviewStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -172,14 +174,14 @@ impl AccessPreviewBuilder {
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     pub fn status_reason(mut self, input: crate::types::AccessPreviewStatusReason) -> Self {
-        self.status_reason = Some(input);
+        self.status_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides more details about the current status of the access preview.</p>
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     pub fn set_status_reason(
         mut self,
-        input: std::option::Option<crate::types::AccessPreviewStatusReason>,
+        input: ::std::option::Option<crate::types::AccessPreviewStatusReason>,
     ) -> Self {
         self.status_reason = input;
         self

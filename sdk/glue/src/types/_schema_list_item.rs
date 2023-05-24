@@ -2,57 +2,57 @@
 
 /// <p>An object that contains minimal details for a schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaListItem {
     /// <p>the name of the registry where the schema resides.</p>
     #[doc(hidden)]
-    pub registry_name: std::option::Option<std::string::String>,
+    pub registry_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
-    pub schema_name: std::option::Option<std::string::String>,
+    pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
     #[doc(hidden)]
-    pub schema_arn: std::option::Option<std::string::String>,
+    pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description for the schema.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the schema.</p>
     #[doc(hidden)]
-    pub schema_status: std::option::Option<crate::types::SchemaStatus>,
+    pub schema_status: ::std::option::Option<crate::types::SchemaStatus>,
     /// <p>The date and time that a schema was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<std::string::String>,
+    pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a schema was updated.</p>
     #[doc(hidden)]
-    pub updated_time: std::option::Option<std::string::String>,
+    pub updated_time: ::std::option::Option<::std::string::String>,
 }
 impl SchemaListItem {
     /// <p>the name of the registry where the schema resides.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> ::std::option::Option<&str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>A description for the schema.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The status of the schema.</p>
-    pub fn schema_status(&self) -> std::option::Option<&crate::types::SchemaStatus> {
+    pub fn schema_status(&self) -> ::std::option::Option<&crate::types::SchemaStatus> {
         self.schema_status.as_ref()
     }
     /// <p>The date and time that a schema was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>The date and time that a schema was updated.</p>
-    pub fn updated_time(&self) -> std::option::Option<&str> {
+    pub fn updated_time(&self) -> ::std::option::Option<&str> {
         self.updated_time.as_deref()
     }
 }
@@ -65,87 +65,95 @@ impl SchemaListItem {
 
 /// A builder for [`SchemaListItem`](crate::types::SchemaListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SchemaListItemBuilder {
-    pub(crate) registry_name: std::option::Option<std::string::String>,
-    pub(crate) schema_name: std::option::Option<std::string::String>,
-    pub(crate) schema_arn: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) schema_status: std::option::Option<crate::types::SchemaStatus>,
-    pub(crate) created_time: std::option::Option<std::string::String>,
-    pub(crate) updated_time: std::option::Option<std::string::String>,
+    pub(crate) registry_name: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_name: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_status: ::std::option::Option<crate::types::SchemaStatus>,
+    pub(crate) created_time: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_time: ::std::option::Option<::std::string::String>,
 }
 impl SchemaListItemBuilder {
     /// <p>the name of the registry where the schema resides.</p>
-    pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registry_name = Some(input.into());
+    pub fn registry_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.registry_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>the name of the registry where the schema resides.</p>
-    pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registry_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.registry_name = input;
         self
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_name = Some(input.into());
+    pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the schema.</p>
-    pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
-    pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_arn = Some(input.into());
+    pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the schema.</p>
-    pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
     }
     /// <p>A description for the schema.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the schema.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The status of the schema.</p>
     pub fn schema_status(mut self, input: crate::types::SchemaStatus) -> Self {
-        self.schema_status = Some(input);
+        self.schema_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the schema.</p>
     pub fn set_schema_status(
         mut self,
-        input: std::option::Option<crate::types::SchemaStatus>,
+        input: ::std::option::Option<crate::types::SchemaStatus>,
     ) -> Self {
         self.schema_status = input;
         self
     }
     /// <p>The date and time that a schema was created.</p>
-    pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_time = Some(input.into());
+    pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that a schema was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The date and time that a schema was updated.</p>
-    pub fn updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_time = Some(input.into());
+    pub fn updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that a schema was updated.</p>
-    pub fn set_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_time = input;
         self
     }

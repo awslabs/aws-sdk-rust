@@ -2,15 +2,15 @@
 
 /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointsResponse {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
     #[doc(hidden)]
-    pub item: std::option::Option<std::vec::Vec<crate::types::EndpointResponse>>,
+    pub item: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>,
 }
 impl EndpointsResponse {
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
-    pub fn item(&self) -> std::option::Option<&[crate::types::EndpointResponse]> {
+    pub fn item(&self) -> ::std::option::Option<&[crate::types::EndpointResponse]> {
         self.item.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl EndpointsResponse {
 
 /// A builder for [`EndpointsResponse`](crate::types::EndpointsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointsResponseBuilder {
-    pub(crate) item: std::option::Option<std::vec::Vec<crate::types::EndpointResponse>>,
+    pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>,
 }
 impl EndpointsResponseBuilder {
     /// Appends an item to `item`.
@@ -36,13 +38,13 @@ impl EndpointsResponseBuilder {
     pub fn item(mut self, input: crate::types::EndpointResponse) -> Self {
         let mut v = self.item.unwrap_or_default();
         v.push(input);
-        self.item = Some(v);
+        self.item = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
     pub fn set_item(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointResponse>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointResponse>>,
     ) -> Self {
         self.item = input;
         self

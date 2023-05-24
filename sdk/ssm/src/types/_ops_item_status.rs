@@ -55,13 +55,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OpsItemStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -105,7 +105,7 @@ pub enum OpsItemStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OpsItemStatus {
+impl ::std::convert::From<&str> for OpsItemStatus {
     fn from(s: &str) -> Self {
         match s {
             "Approved" => OpsItemStatus::Approved,
@@ -133,11 +133,11 @@ impl std::convert::From<&str> for OpsItemStatus {
         }
     }
 }
-impl std::str::FromStr for OpsItemStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OpsItemStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OpsItemStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OpsItemStatus::from(s))
     }
 }
 impl OpsItemStatus {
@@ -191,7 +191,7 @@ impl OpsItemStatus {
         ]
     }
 }
-impl AsRef<str> for OpsItemStatus {
+impl ::std::convert::AsRef<str> for OpsItemStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

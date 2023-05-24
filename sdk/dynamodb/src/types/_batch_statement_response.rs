@@ -2,34 +2,34 @@
 
 /// <p> A PartiQL batch statement response.. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchStatementResponse {
     /// <p> The error associated with a failed PartiQL batch statement. </p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::BatchStatementError>,
+    pub error: ::std::option::Option<crate::types::BatchStatementError>,
     /// <p> The table name associated with a failed PartiQL batch statement. </p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
     #[doc(hidden)]
-    pub item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    pub item: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
 }
 impl BatchStatementResponse {
     /// <p> The error associated with a failed PartiQL batch statement. </p>
-    pub fn error(&self) -> std::option::Option<&crate::types::BatchStatementError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::BatchStatementError> {
         self.error.as_ref()
     }
     /// <p> The table name associated with a failed PartiQL batch statement. </p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
     pub fn item(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     > {
         self.item.as_ref()
     }
@@ -43,35 +43,37 @@ impl BatchStatementResponse {
 
 /// A builder for [`BatchStatementResponse`](crate::types::BatchStatementResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchStatementResponseBuilder {
-    pub(crate) error: std::option::Option<crate::types::BatchStatementError>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    pub(crate) error: ::std::option::Option<crate::types::BatchStatementError>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) item: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
 }
 impl BatchStatementResponseBuilder {
     /// <p> The error associated with a failed PartiQL batch statement. </p>
     pub fn error(mut self, input: crate::types::BatchStatementError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p> The error associated with a failed PartiQL batch statement. </p>
     pub fn set_error(
         mut self,
-        input: std::option::Option<crate::types::BatchStatementError>,
+        input: ::std::option::Option<crate::types::BatchStatementError>,
     ) -> Self {
         self.error = input;
         self
     }
     /// <p> The table name associated with a failed PartiQL batch statement. </p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The table name associated with a failed PartiQL batch statement. </p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
@@ -82,19 +84,19 @@ impl BatchStatementResponseBuilder {
     /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
     pub fn item(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::AttributeValue,
     ) -> Self {
         let mut hash_map = self.item.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.item = Some(hash_map);
+        self.item = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> A DynamoDB item associated with a BatchStatementResponse </p>
     pub fn set_item(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
         >,
     ) -> Self {
         self.item = input;

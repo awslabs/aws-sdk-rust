@@ -2,22 +2,22 @@
 
 /// <p>Describes the members of a VPC security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcSecurityGroupMembership {
     /// <p>The unique identifier of the VPC security group.</p>
     #[doc(hidden)]
-    pub vpc_security_group_id: std::option::Option<std::string::String>,
+    pub vpc_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the VPC security group.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl VpcSecurityGroupMembership {
     /// <p>The unique identifier of the VPC security group.</p>
-    pub fn vpc_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_security_group_id(&self) -> ::std::option::Option<&str> {
         self.vpc_security_group_id.as_deref()
     }
     /// <p>The status of the VPC security group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl VpcSecurityGroupMembership {
 
 /// A builder for [`VpcSecurityGroupMembership`](crate::types::VpcSecurityGroupMembership).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcSecurityGroupMembershipBuilder {
-    pub(crate) vpc_security_group_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) vpc_security_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl VpcSecurityGroupMembershipBuilder {
     /// <p>The unique identifier of the VPC security group.</p>
-    pub fn vpc_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_security_group_id = Some(input.into());
+    pub fn vpc_security_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the VPC security group.</p>
     pub fn set_vpc_security_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpc_security_group_id = input;
         self
     }
     /// <p>The status of the VPC security group.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the VPC security group.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

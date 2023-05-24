@@ -2,59 +2,59 @@
 
 /// <p>Details about an Amazon Athena datasource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AthenaSourceConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The database's name.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The database's data catalog.</p>
     #[doc(hidden)]
-    pub data_catalog: std::option::Option<std::string::String>,
+    pub data_catalog: ::std::option::Option<::std::string::String>,
     /// <p>The database's table name.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The database's work group name.</p>
     #[doc(hidden)]
-    pub work_group_name: std::option::Option<std::string::String>,
+    pub work_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The database's results path.</p>
     #[doc(hidden)]
-    pub s3_results_path: std::option::Option<std::string::String>,
+    pub s3_results_path: ::std::option::Option<::std::string::String>,
     /// <p>Settings for backtest mode.</p>
     #[doc(hidden)]
-    pub back_test_configuration: std::option::Option<crate::types::BackTestConfiguration>,
+    pub back_test_configuration: ::std::option::Option<crate::types::BackTestConfiguration>,
 }
 impl AthenaSourceConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The database's name.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The database's data catalog.</p>
-    pub fn data_catalog(&self) -> std::option::Option<&str> {
+    pub fn data_catalog(&self) -> ::std::option::Option<&str> {
         self.data_catalog.as_deref()
     }
     /// <p>The database's table name.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The database's work group name.</p>
-    pub fn work_group_name(&self) -> std::option::Option<&str> {
+    pub fn work_group_name(&self) -> ::std::option::Option<&str> {
         self.work_group_name.as_deref()
     }
     /// <p>The database's results path.</p>
-    pub fn s3_results_path(&self) -> std::option::Option<&str> {
+    pub fn s3_results_path(&self) -> ::std::option::Option<&str> {
         self.s3_results_path.as_deref()
     }
     /// <p>Settings for backtest mode.</p>
     pub fn back_test_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::BackTestConfiguration> {
+    ) -> ::std::option::Option<&crate::types::BackTestConfiguration> {
         self.back_test_configuration.as_ref()
     }
 }
@@ -67,86 +67,106 @@ impl AthenaSourceConfig {
 
 /// A builder for [`AthenaSourceConfig`](crate::types::AthenaSourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AthenaSourceConfigBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) data_catalog: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) work_group_name: std::option::Option<std::string::String>,
-    pub(crate) s3_results_path: std::option::Option<std::string::String>,
-    pub(crate) back_test_configuration: std::option::Option<crate::types::BackTestConfiguration>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_catalog: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) work_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_results_path: ::std::option::Option<::std::string::String>,
+    pub(crate) back_test_configuration: ::std::option::Option<crate::types::BackTestConfiguration>,
 }
 impl AthenaSourceConfigBuilder {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the data.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The database's name.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database's name.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
     /// <p>The database's data catalog.</p>
-    pub fn data_catalog(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_catalog = Some(input.into());
+    pub fn data_catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_catalog = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database's data catalog.</p>
-    pub fn set_data_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_catalog = input;
         self
     }
     /// <p>The database's table name.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database's table name.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>The database's work group name.</p>
-    pub fn work_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.work_group_name = Some(input.into());
+    pub fn work_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.work_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database's work group name.</p>
-    pub fn set_work_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_work_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.work_group_name = input;
         self
     }
     /// <p>The database's results path.</p>
-    pub fn s3_results_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_results_path = Some(input.into());
+    pub fn s3_results_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_results_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database's results path.</p>
-    pub fn set_s3_results_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_results_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_results_path = input;
         self
     }
     /// <p>Settings for backtest mode.</p>
     pub fn back_test_configuration(mut self, input: crate::types::BackTestConfiguration) -> Self {
-        self.back_test_configuration = Some(input);
+        self.back_test_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings for backtest mode.</p>
     pub fn set_back_test_configuration(
         mut self,
-        input: std::option::Option<crate::types::BackTestConfiguration>,
+        input: ::std::option::Option<crate::types::BackTestConfiguration>,
     ) -> Self {
         self.back_test_configuration = input;
         self

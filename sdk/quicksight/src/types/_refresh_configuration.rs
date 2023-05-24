@@ -2,15 +2,15 @@
 
 /// <p>The refresh configuration of a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshConfiguration {
     /// <p>The incremental refresh for the dataset.</p>
     #[doc(hidden)]
-    pub incremental_refresh: std::option::Option<crate::types::IncrementalRefresh>,
+    pub incremental_refresh: ::std::option::Option<crate::types::IncrementalRefresh>,
 }
 impl RefreshConfiguration {
     /// <p>The incremental refresh for the dataset.</p>
-    pub fn incremental_refresh(&self) -> std::option::Option<&crate::types::IncrementalRefresh> {
+    pub fn incremental_refresh(&self) -> ::std::option::Option<&crate::types::IncrementalRefresh> {
         self.incremental_refresh.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl RefreshConfiguration {
 
 /// A builder for [`RefreshConfiguration`](crate::types::RefreshConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RefreshConfigurationBuilder {
-    pub(crate) incremental_refresh: std::option::Option<crate::types::IncrementalRefresh>,
+    pub(crate) incremental_refresh: ::std::option::Option<crate::types::IncrementalRefresh>,
 }
 impl RefreshConfigurationBuilder {
     /// <p>The incremental refresh for the dataset.</p>
     pub fn incremental_refresh(mut self, input: crate::types::IncrementalRefresh) -> Self {
-        self.incremental_refresh = Some(input);
+        self.incremental_refresh = ::std::option::Option::Some(input);
         self
     }
     /// <p>The incremental refresh for the dataset.</p>
     pub fn set_incremental_refresh(
         mut self,
-        input: std::option::Option<crate::types::IncrementalRefresh>,
+        input: ::std::option::Option<crate::types::IncrementalRefresh>,
     ) -> Self {
         self.incremental_refresh = input;
         self

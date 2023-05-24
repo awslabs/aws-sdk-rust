@@ -2,18 +2,18 @@
 
 /// <p>The current configuration of all Kubernetes data sources for the organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationKubernetesConfigurationResult {
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
     #[doc(hidden)]
     pub audit_logs:
-        std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult>,
+        ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult>,
 }
 impl OrganizationKubernetesConfigurationResult {
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
     pub fn audit_logs(
         &self,
-    ) -> std::option::Option<&crate::types::OrganizationKubernetesAuditLogsConfigurationResult>
+    ) -> ::std::option::Option<&crate::types::OrganizationKubernetesAuditLogsConfigurationResult>
     {
         self.audit_logs.as_ref()
     }
@@ -27,10 +27,12 @@ impl OrganizationKubernetesConfigurationResult {
 
 /// A builder for [`OrganizationKubernetesConfigurationResult`](crate::types::OrganizationKubernetesConfigurationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationKubernetesConfigurationResultBuilder {
     pub(crate) audit_logs:
-        std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult>,
+        ::std::option::Option<crate::types::OrganizationKubernetesAuditLogsConfigurationResult>,
 }
 impl OrganizationKubernetesConfigurationResultBuilder {
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
@@ -38,13 +40,13 @@ impl OrganizationKubernetesConfigurationResultBuilder {
         mut self,
         input: crate::types::OrganizationKubernetesAuditLogsConfigurationResult,
     ) -> Self {
-        self.audit_logs = Some(input);
+        self.audit_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current configuration of Kubernetes audit logs as a data source for the organization.</p>
     pub fn set_audit_logs(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::OrganizationKubernetesAuditLogsConfigurationResult,
         >,
     ) -> Self {

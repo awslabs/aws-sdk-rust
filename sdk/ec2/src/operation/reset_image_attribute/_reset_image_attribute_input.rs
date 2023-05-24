@@ -2,29 +2,29 @@
 
 /// <p>Contains the parameters for ResetImageAttribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetImageAttributeInput {
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<crate::types::ResetImageAttributeName>,
+    pub attribute: ::std::option::Option<crate::types::ResetImageAttributeName>,
     /// <p>The ID of the AMI.</p>
     #[doc(hidden)]
-    pub image_id: std::option::Option<std::string::String>,
+    pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl ResetImageAttributeInput {
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::ResetImageAttributeName> {
+    pub fn attribute(&self) -> ::std::option::Option<&crate::types::ResetImageAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -39,54 +39,56 @@ impl ResetImageAttributeInput {
 
 /// A builder for [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResetImageAttributeInputBuilder {
-    pub(crate) attribute: std::option::Option<crate::types::ResetImageAttributeName>,
-    pub(crate) image_id: std::option::Option<std::string::String>,
-    pub(crate) dry_run: std::option::Option<bool>,
+    pub(crate) attribute: ::std::option::Option<crate::types::ResetImageAttributeName>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ResetImageAttributeInputBuilder {
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
     pub fn attribute(mut self, input: crate::types::ResetImageAttributeName) -> Self {
-        self.attribute = Some(input);
+        self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::ResetImageAttributeName>,
+        input: ::std::option::Option<crate::types::ResetImageAttributeName>,
     ) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_id = Some(input.into());
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AMI.</p>
-    pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
     /// Consumes the builder and constructs a [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::reset_image_attribute::ResetImageAttributeInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::reset_image_attribute::ResetImageAttributeInput {
                 attribute: self.attribute,
                 image_id: self.image_id,

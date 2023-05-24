@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RenewOffering`](crate::operation::renew_offering::builders::RenewOfferingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`offering_id(impl Into<String>)`](crate::operation::renew_offering::builders::RenewOfferingFluentBuilder::offering_id) / [`set_offering_id(Option<String>)`](crate::operation::renew_offering::builders::RenewOfferingFluentBuilder::set_offering_id): <p>The ID of a request to renew an offering.</p>
+    ///   - [`offering_id(impl ::std::convert::Into<String>)`](crate::operation::renew_offering::builders::RenewOfferingFluentBuilder::offering_id) / [`set_offering_id(Option<String>)`](crate::operation::renew_offering::builders::RenewOfferingFluentBuilder::set_offering_id): <p>The ID of a request to renew an offering.</p>
     ///   - [`quantity(i32)`](crate::operation::renew_offering::builders::RenewOfferingFluentBuilder::quantity) / [`set_quantity(Option<i32>)`](crate::operation::renew_offering::builders::RenewOfferingFluentBuilder::set_quantity): <p>The quantity requested in an offering renewal.</p>
     /// - On success, responds with [`RenewOfferingOutput`](crate::operation::renew_offering::RenewOfferingOutput) with field(s):
     ///   - [`offering_transaction(Option<OfferingTransaction>)`](crate::operation::renew_offering::RenewOfferingOutput::offering_transaction): <p>Represents the status of the offering transaction for the renewal.</p>

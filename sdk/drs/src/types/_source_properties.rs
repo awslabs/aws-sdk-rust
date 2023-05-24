@@ -2,59 +2,61 @@
 
 /// <p>Properties of the Source Server machine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceProperties {
     /// <p>The date and time the Source Properties were last updated on.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<std::string::String>,
+    pub last_updated_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
     #[doc(hidden)]
-    pub recommended_instance_type: std::option::Option<std::string::String>,
+    pub recommended_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Hints used to uniquely identify a machine.</p>
     #[doc(hidden)]
-    pub identification_hints: std::option::Option<crate::types::IdentificationHints>,
+    pub identification_hints: ::std::option::Option<crate::types::IdentificationHints>,
     /// <p>An array of network interfaces.</p>
     #[doc(hidden)]
-    pub network_interfaces: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>An array of disks.</p>
     #[doc(hidden)]
-    pub disks: std::option::Option<std::vec::Vec<crate::types::Disk>>,
+    pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     /// <p>An array of CPUs.</p>
     #[doc(hidden)]
-    pub cpus: std::option::Option<std::vec::Vec<crate::types::Cpu>>,
+    pub cpus: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
     /// <p>The amount of RAM in bytes.</p>
     #[doc(hidden)]
     pub ram_bytes: i64,
     /// <p>Operating system.</p>
     #[doc(hidden)]
-    pub os: std::option::Option<crate::types::Os>,
+    pub os: ::std::option::Option<crate::types::Os>,
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
     #[doc(hidden)]
-    pub supports_nitro_instances: std::option::Option<bool>,
+    pub supports_nitro_instances: ::std::option::Option<bool>,
 }
 impl SourceProperties {
     /// <p>The date and time the Source Properties were last updated on.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_date_time.as_deref()
     }
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
-    pub fn recommended_instance_type(&self) -> std::option::Option<&str> {
+    pub fn recommended_instance_type(&self) -> ::std::option::Option<&str> {
         self.recommended_instance_type.as_deref()
     }
     /// <p>Hints used to uniquely identify a machine.</p>
-    pub fn identification_hints(&self) -> std::option::Option<&crate::types::IdentificationHints> {
+    pub fn identification_hints(
+        &self,
+    ) -> ::std::option::Option<&crate::types::IdentificationHints> {
         self.identification_hints.as_ref()
     }
     /// <p>An array of network interfaces.</p>
-    pub fn network_interfaces(&self) -> std::option::Option<&[crate::types::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>An array of disks.</p>
-    pub fn disks(&self) -> std::option::Option<&[crate::types::Disk]> {
+    pub fn disks(&self) -> ::std::option::Option<&[crate::types::Disk]> {
         self.disks.as_deref()
     }
     /// <p>An array of CPUs.</p>
-    pub fn cpus(&self) -> std::option::Option<&[crate::types::Cpu]> {
+    pub fn cpus(&self) -> ::std::option::Option<&[crate::types::Cpu]> {
         self.cpus.as_deref()
     }
     /// <p>The amount of RAM in bytes.</p>
@@ -62,11 +64,11 @@ impl SourceProperties {
         self.ram_bytes
     }
     /// <p>Operating system.</p>
-    pub fn os(&self) -> std::option::Option<&crate::types::Os> {
+    pub fn os(&self) -> ::std::option::Option<&crate::types::Os> {
         self.os.as_ref()
     }
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
-    pub fn supports_nitro_instances(&self) -> std::option::Option<bool> {
+    pub fn supports_nitro_instances(&self) -> ::std::option::Option<bool> {
         self.supports_nitro_instances
     }
 }
@@ -79,55 +81,63 @@ impl SourceProperties {
 
 /// A builder for [`SourceProperties`](crate::types::SourceProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourcePropertiesBuilder {
-    pub(crate) last_updated_date_time: std::option::Option<std::string::String>,
-    pub(crate) recommended_instance_type: std::option::Option<std::string::String>,
-    pub(crate) identification_hints: std::option::Option<crate::types::IdentificationHints>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) recommended_instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) identification_hints: ::std::option::Option<crate::types::IdentificationHints>,
     pub(crate) network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
-    pub(crate) disks: std::option::Option<std::vec::Vec<crate::types::Disk>>,
-    pub(crate) cpus: std::option::Option<std::vec::Vec<crate::types::Cpu>>,
-    pub(crate) ram_bytes: std::option::Option<i64>,
-    pub(crate) os: std::option::Option<crate::types::Os>,
-    pub(crate) supports_nitro_instances: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
+    pub(crate) cpus: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
+    pub(crate) ram_bytes: ::std::option::Option<i64>,
+    pub(crate) os: ::std::option::Option<crate::types::Os>,
+    pub(crate) supports_nitro_instances: ::std::option::Option<bool>,
 }
 impl SourcePropertiesBuilder {
     /// <p>The date and time the Source Properties were last updated on.</p>
-    pub fn last_updated_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_date_time = Some(input.into());
+    pub fn last_updated_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the Source Properties were last updated on.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
-    pub fn recommended_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recommended_instance_type = Some(input.into());
+    pub fn recommended_instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recommended_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
     pub fn set_recommended_instance_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recommended_instance_type = input;
         self
     }
     /// <p>Hints used to uniquely identify a machine.</p>
     pub fn identification_hints(mut self, input: crate::types::IdentificationHints) -> Self {
-        self.identification_hints = Some(input);
+        self.identification_hints = ::std::option::Option::Some(input);
         self
     }
     /// <p>Hints used to uniquely identify a machine.</p>
     pub fn set_identification_hints(
         mut self,
-        input: std::option::Option<crate::types::IdentificationHints>,
+        input: ::std::option::Option<crate::types::IdentificationHints>,
     ) -> Self {
         self.identification_hints = input;
         self
@@ -140,13 +150,13 @@ impl SourcePropertiesBuilder {
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
-        self.network_interfaces = Some(v);
+        self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of network interfaces.</p>
     pub fn set_network_interfaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     ) -> Self {
         self.network_interfaces = input;
         self
@@ -159,13 +169,13 @@ impl SourcePropertiesBuilder {
     pub fn disks(mut self, input: crate::types::Disk) -> Self {
         let mut v = self.disks.unwrap_or_default();
         v.push(input);
-        self.disks = Some(v);
+        self.disks = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of disks.</p>
     pub fn set_disks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Disk>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     ) -> Self {
         self.disks = input;
         self
@@ -178,44 +188,44 @@ impl SourcePropertiesBuilder {
     pub fn cpus(mut self, input: crate::types::Cpu) -> Self {
         let mut v = self.cpus.unwrap_or_default();
         v.push(input);
-        self.cpus = Some(v);
+        self.cpus = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of CPUs.</p>
     pub fn set_cpus(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Cpu>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Cpu>>,
     ) -> Self {
         self.cpus = input;
         self
     }
     /// <p>The amount of RAM in bytes.</p>
     pub fn ram_bytes(mut self, input: i64) -> Self {
-        self.ram_bytes = Some(input);
+        self.ram_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of RAM in bytes.</p>
-    pub fn set_ram_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ram_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ram_bytes = input;
         self
     }
     /// <p>Operating system.</p>
     pub fn os(mut self, input: crate::types::Os) -> Self {
-        self.os = Some(input);
+        self.os = ::std::option::Option::Some(input);
         self
     }
     /// <p>Operating system.</p>
-    pub fn set_os(mut self, input: std::option::Option<crate::types::Os>) -> Self {
+    pub fn set_os(mut self, input: ::std::option::Option<crate::types::Os>) -> Self {
         self.os = input;
         self
     }
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
     pub fn supports_nitro_instances(mut self, input: bool) -> Self {
-        self.supports_nitro_instances = Some(input);
+        self.supports_nitro_instances = ::std::option::Option::Some(input);
         self
     }
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
-    pub fn set_supports_nitro_instances(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_supports_nitro_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_nitro_instances = input;
         self
     }

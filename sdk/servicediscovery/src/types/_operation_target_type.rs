@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OperationTargetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum OperationTargetType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OperationTargetType {
+impl ::std::convert::From<&str> for OperationTargetType {
     fn from(s: &str) -> Self {
         match s {
             "INSTANCE" => OperationTargetType::Instance,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for OperationTargetType {
         }
     }
 }
-impl std::str::FromStr for OperationTargetType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OperationTargetType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OperationTargetType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OperationTargetType::from(s))
     }
 }
 impl OperationTargetType {
@@ -91,7 +91,7 @@ impl OperationTargetType {
         &["INSTANCE", "NAMESPACE", "SERVICE"]
     }
 }
-impl AsRef<str> for OperationTargetType {
+impl ::std::convert::AsRef<str> for OperationTargetType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

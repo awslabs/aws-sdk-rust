@@ -4,11 +4,11 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelDeploymentJobOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CancelDeploymentJobOutput {
+impl ::aws_http::request_id::RequestId for CancelDeploymentJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -24,7 +24,9 @@ impl CancelDeploymentJobOutput {
 
 /// A builder for [`CancelDeploymentJobOutput`](crate::operation::cancel_deployment_job::CancelDeploymentJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelDeploymentJobOutputBuilder {
     _request_id: Option<String>,
 }

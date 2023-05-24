@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeRdsDbInstances</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRdsDbInstancesOutput {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     #[doc(hidden)]
-    pub rds_db_instances: std::option::Option<std::vec::Vec<crate::types::RdsDbInstance>>,
+    pub rds_db_instances: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeRdsDbInstancesOutput {
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
-    pub fn rds_db_instances(&self) -> std::option::Option<&[crate::types::RdsDbInstance]> {
+    pub fn rds_db_instances(&self) -> ::std::option::Option<&[crate::types::RdsDbInstance]> {
         self.rds_db_instances.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeRdsDbInstancesOutput {
+impl ::aws_http::request_id::RequestId for DescribeRdsDbInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,12 @@ impl DescribeRdsDbInstancesOutput {
 
 /// A builder for [`DescribeRdsDbInstancesOutput`](crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeRdsDbInstancesOutputBuilder {
-    pub(crate) rds_db_instances: std::option::Option<std::vec::Vec<crate::types::RdsDbInstance>>,
+    pub(crate) rds_db_instances:
+        ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeRdsDbInstancesOutputBuilder {
@@ -45,13 +48,13 @@ impl DescribeRdsDbInstancesOutputBuilder {
     pub fn rds_db_instances(mut self, input: crate::types::RdsDbInstance) -> Self {
         let mut v = self.rds_db_instances.unwrap_or_default();
         v.push(input);
-        self.rds_db_instances = Some(v);
+        self.rds_db_instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>An a array of <code>RdsDbInstance</code> objects that describe the instances.</p>
     pub fn set_rds_db_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RdsDbInstance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RdsDbInstance>>,
     ) -> Self {
         self.rds_db_instances = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Nested block contained within a block.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChildBlock {
     /// <p>Unique identifier for the child block.</p>
     #[doc(hidden)]
-    pub child_block_id: std::option::Option<std::string::String>,
+    pub child_block_id: ::std::option::Option<::std::string::String>,
     /// <p>Offset of the start of the child block within its parent block.</p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p>Offset of the end of the child block within its parent block.</p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
 }
 impl ChildBlock {
     /// <p>Unique identifier for the child block.</p>
-    pub fn child_block_id(&self) -> std::option::Option<&str> {
+    pub fn child_block_id(&self) -> ::std::option::Option<&str> {
         self.child_block_id.as_deref()
     }
     /// <p>Offset of the start of the child block within its parent block.</p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p>Offset of the end of the child block within its parent block.</p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
 }
@@ -37,40 +37,48 @@ impl ChildBlock {
 
 /// A builder for [`ChildBlock`](crate::types::ChildBlock).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChildBlockBuilder {
-    pub(crate) child_block_id: std::option::Option<std::string::String>,
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
+    pub(crate) child_block_id: ::std::option::Option<::std::string::String>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
 }
 impl ChildBlockBuilder {
     /// <p>Unique identifier for the child block.</p>
-    pub fn child_block_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.child_block_id = Some(input.into());
+    pub fn child_block_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.child_block_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the child block.</p>
-    pub fn set_child_block_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_child_block_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.child_block_id = input;
         self
     }
     /// <p>Offset of the start of the child block within its parent block.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Offset of the start of the child block within its parent block.</p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p>Offset of the end of the child block within its parent block.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Offset of the end of the child block within its parent block.</p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }

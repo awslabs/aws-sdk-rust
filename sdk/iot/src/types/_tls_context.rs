@@ -2,15 +2,15 @@
 
 /// <p>Specifies the TLS context to use for the test authorizer request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsContext {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
     #[doc(hidden)]
-    pub server_name: std::option::Option<std::string::String>,
+    pub server_name: ::std::option::Option<::std::string::String>,
 }
 impl TlsContext {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl TlsContext {
 
 /// A builder for [`TlsContext`](crate::types::TlsContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TlsContextBuilder {
-    pub(crate) server_name: std::option::Option<std::string::String>,
+    pub(crate) server_name: ::std::option::Option<::std::string::String>,
 }
 impl TlsContextBuilder {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
-    pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_name = Some(input.into());
+    pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
-    pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }

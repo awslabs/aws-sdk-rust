@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AttachmentStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AttachmentStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AttachmentStatus {
+impl ::std::convert::From<&str> for AttachmentStatus {
     fn from(s: &str) -> Self {
         match s {
             "attached" => AttachmentStatus::Attached,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AttachmentStatus {
         }
     }
 }
-impl std::str::FromStr for AttachmentStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AttachmentStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttachmentStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AttachmentStatus::from(s))
     }
 }
 impl AttachmentStatus {
@@ -96,7 +96,7 @@ impl AttachmentStatus {
         &["attached", "attaching", "detached", "detaching"]
     }
 }
-impl AsRef<str> for AttachmentStatus {
+impl ::std::convert::AsRef<str> for AttachmentStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

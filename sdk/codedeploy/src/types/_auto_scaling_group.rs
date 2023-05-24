@@ -2,22 +2,22 @@
 
 /// <p>Information about an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroup {
     /// <p>The Auto Scaling group name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>An Auto Scaling lifecycle event hook name.</p>
     #[doc(hidden)]
-    pub hook: std::option::Option<std::string::String>,
+    pub hook: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingGroup {
     /// <p>The Auto Scaling group name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An Auto Scaling lifecycle event hook name.</p>
-    pub fn hook(&self) -> std::option::Option<&str> {
+    pub fn hook(&self) -> ::std::option::Option<&str> {
         self.hook.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AutoScalingGroup {
 
 /// A builder for [`AutoScalingGroup`](crate::types::AutoScalingGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingGroupBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) hook: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) hook: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingGroupBuilder {
     /// <p>The Auto Scaling group name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Auto Scaling group name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>An Auto Scaling lifecycle event hook name.</p>
-    pub fn hook(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hook = Some(input.into());
+    pub fn hook(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hook = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Auto Scaling lifecycle event hook name.</p>
-    pub fn set_hook(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hook(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hook = input;
         self
     }

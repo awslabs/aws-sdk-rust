@@ -2,27 +2,27 @@
 
 /// <p>A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
     #[doc(hidden)]
-    pub hosted_zone_id: std::option::Option<std::string::String>,
+    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
     #[doc(hidden)]
-    pub vpc: std::option::Option<crate::types::Vpc>,
+    pub vpc: ::std::option::Option<crate::types::Vpc>,
     _request_id: Option<String>,
 }
 impl CreateVpcAssociationAuthorizationOutput {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
-    pub fn vpc(&self) -> std::option::Option<&crate::types::Vpc> {
+    pub fn vpc(&self) -> ::std::option::Option<&crate::types::Vpc> {
         self.vpc.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateVpcAssociationAuthorizationOutput {
+impl ::aws_http::request_id::RequestId for CreateVpcAssociationAuthorizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,38 @@ impl CreateVpcAssociationAuthorizationOutput {
 
 /// A builder for [`CreateVpcAssociationAuthorizationOutput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVpcAssociationAuthorizationOutputBuilder {
-    pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-    pub(crate) vpc: std::option::Option<crate::types::Vpc>,
+    pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,
     _request_id: Option<String>,
 }
 impl CreateVpcAssociationAuthorizationOutputBuilder {
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
-    pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hosted_zone_id = Some(input.into());
+    pub fn hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
-    pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hosted_zone_id = input;
         self
     }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
-        self.vpc = Some(input);
+        self.vpc = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC that you authorized associating with a hosted zone.</p>
-    pub fn set_vpc(mut self, input: std::option::Option<crate::types::Vpc>) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
         self.vpc = input;
         self
     }

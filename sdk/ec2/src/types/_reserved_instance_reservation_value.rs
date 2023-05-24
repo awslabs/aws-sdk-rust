@@ -2,22 +2,22 @@
 
 /// <p>The total value of the Convertible Reserved Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstanceReservationValue {
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
     #[doc(hidden)]
-    pub reservation_value: std::option::Option<crate::types::ReservationValue>,
+    pub reservation_value: ::std::option::Option<crate::types::ReservationValue>,
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
     #[doc(hidden)]
-    pub reserved_instance_id: std::option::Option<std::string::String>,
+    pub reserved_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ReservedInstanceReservationValue {
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn reservation_value(&self) -> std::option::Option<&crate::types::ReservationValue> {
+    pub fn reservation_value(&self) -> ::std::option::Option<&crate::types::ReservationValue> {
         self.reservation_value.as_ref()
     }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn reserved_instance_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instance_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instance_id.as_deref()
     }
 }
@@ -30,34 +30,39 @@ impl ReservedInstanceReservationValue {
 
 /// A builder for [`ReservedInstanceReservationValue`](crate::types::ReservedInstanceReservationValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReservedInstanceReservationValueBuilder {
-    pub(crate) reservation_value: std::option::Option<crate::types::ReservationValue>,
-    pub(crate) reserved_instance_id: std::option::Option<std::string::String>,
+    pub(crate) reservation_value: ::std::option::Option<crate::types::ReservationValue>,
+    pub(crate) reserved_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl ReservedInstanceReservationValueBuilder {
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
     pub fn reservation_value(mut self, input: crate::types::ReservationValue) -> Self {
-        self.reservation_value = Some(input);
+        self.reservation_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total value of the Convertible Reserved Instance that you are exchanging.</p>
     pub fn set_reservation_value(
         mut self,
-        input: std::option::Option<crate::types::ReservationValue>,
+        input: ::std::option::Option<crate::types::ReservationValue>,
     ) -> Self {
         self.reservation_value = input;
         self
     }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
-    pub fn reserved_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reserved_instance_id = Some(input.into());
+    pub fn reserved_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reserved_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Convertible Reserved Instance that you are exchanging.</p>
     pub fn set_reserved_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_instance_id = input;
         self

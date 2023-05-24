@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AccessDeniedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum AccessDeniedErrorCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AccessDeniedErrorCode {
+impl ::std::convert::From<&str> for AccessDeniedErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED_TO_ASSESSMENT_RUN" => AccessDeniedErrorCode::AccessDeniedToAssessmentRun,
@@ -93,11 +93,11 @@ impl std::convert::From<&str> for AccessDeniedErrorCode {
         }
     }
 }
-impl std::str::FromStr for AccessDeniedErrorCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AccessDeniedErrorCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessDeniedErrorCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AccessDeniedErrorCode::from(s))
     }
 }
 impl AccessDeniedErrorCode {
@@ -133,7 +133,7 @@ impl AccessDeniedErrorCode {
         ]
     }
 }
-impl AsRef<str> for AccessDeniedErrorCode {
+impl ::std::convert::AsRef<str> for AccessDeniedErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

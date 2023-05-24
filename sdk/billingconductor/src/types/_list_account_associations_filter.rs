@@ -5,33 +5,33 @@
 /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
 /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
     #[doc(hidden)]
-    pub association: std::option::Option<std::string::String>,
+    pub association: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account ID to filter on. </p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
     #[doc(hidden)]
-    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListAccountAssociationsFilter {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
-    pub fn association(&self) -> std::option::Option<&str> {
+    pub fn association(&self) -> ::std::option::Option<&str> {
         self.association.as_deref()
     }
     /// <p> The Amazon Web Services account ID to filter on. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.account_ids.as_deref()
     }
 }
@@ -44,34 +44,36 @@ impl ListAccountAssociationsFilter {
 
 /// A builder for [`ListAccountAssociationsFilter`](crate::types::ListAccountAssociationsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListAccountAssociationsFilterBuilder {
-    pub(crate) association: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) association: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListAccountAssociationsFilterBuilder {
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
-    pub fn association(mut self, input: impl Into<std::string::String>) -> Self {
-        self.association = Some(input.into());
+    pub fn association(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.association = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <code>MONITORED</code>: linked accounts that are associated to billing groups.</p>
     /// <p> <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</p>
     /// <p> <code>Billing Group Arn</code>: linked accounts that are associated to the provided Billing Group Arn. </p>
-    pub fn set_association(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_association(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.association = input;
         self
     }
     /// <p> The Amazon Web Services account ID to filter on. </p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account ID to filter on. </p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
@@ -80,16 +82,16 @@ impl ListAccountAssociationsFilterBuilder {
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
     /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
-    pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
-        self.account_ids = Some(v);
+        self.account_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of Amazon Web Services IDs to retrieve their associated billing group for a given time range. </p>
     pub fn set_account_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.account_ids = input;
         self

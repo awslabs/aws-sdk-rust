@@ -2,50 +2,52 @@
 
 /// <p>The word cloud options for a word cloud visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WordCloudOptions {
     /// <p>The word orientation options (horizontal, horizontal_and_vertical) for the words in a word cloud.</p>
     #[doc(hidden)]
-    pub word_orientation: std::option::Option<crate::types::WordCloudWordOrientation>,
+    pub word_orientation: ::std::option::Option<crate::types::WordCloudWordOrientation>,
     /// <p>The word scaling options (emphasize, normal) for the words in a word cloud.</p>
     #[doc(hidden)]
-    pub word_scaling: std::option::Option<crate::types::WordCloudWordScaling>,
+    pub word_scaling: ::std::option::Option<crate::types::WordCloudWordScaling>,
     /// <p>The cloud layout options (fluid, normal) of a word cloud.</p>
     #[doc(hidden)]
-    pub cloud_layout: std::option::Option<crate::types::WordCloudCloudLayout>,
+    pub cloud_layout: ::std::option::Option<crate::types::WordCloudCloudLayout>,
     /// <p>The word casing options (lower_case, existing_case) for the words in a word cloud.</p>
     #[doc(hidden)]
-    pub word_casing: std::option::Option<crate::types::WordCloudWordCasing>,
+    pub word_casing: ::std::option::Option<crate::types::WordCloudWordCasing>,
     /// <p>The word padding options (none, small, medium, large) for the words in a word cloud.</p>
     #[doc(hidden)]
-    pub word_padding: std::option::Option<crate::types::WordCloudWordPadding>,
+    pub word_padding: ::std::option::Option<crate::types::WordCloudWordPadding>,
     /// <p>The length limit of each word from 1-100.</p>
     #[doc(hidden)]
-    pub maximum_string_length: std::option::Option<i32>,
+    pub maximum_string_length: ::std::option::Option<i32>,
 }
 impl WordCloudOptions {
     /// <p>The word orientation options (horizontal, horizontal_and_vertical) for the words in a word cloud.</p>
-    pub fn word_orientation(&self) -> std::option::Option<&crate::types::WordCloudWordOrientation> {
+    pub fn word_orientation(
+        &self,
+    ) -> ::std::option::Option<&crate::types::WordCloudWordOrientation> {
         self.word_orientation.as_ref()
     }
     /// <p>The word scaling options (emphasize, normal) for the words in a word cloud.</p>
-    pub fn word_scaling(&self) -> std::option::Option<&crate::types::WordCloudWordScaling> {
+    pub fn word_scaling(&self) -> ::std::option::Option<&crate::types::WordCloudWordScaling> {
         self.word_scaling.as_ref()
     }
     /// <p>The cloud layout options (fluid, normal) of a word cloud.</p>
-    pub fn cloud_layout(&self) -> std::option::Option<&crate::types::WordCloudCloudLayout> {
+    pub fn cloud_layout(&self) -> ::std::option::Option<&crate::types::WordCloudCloudLayout> {
         self.cloud_layout.as_ref()
     }
     /// <p>The word casing options (lower_case, existing_case) for the words in a word cloud.</p>
-    pub fn word_casing(&self) -> std::option::Option<&crate::types::WordCloudWordCasing> {
+    pub fn word_casing(&self) -> ::std::option::Option<&crate::types::WordCloudWordCasing> {
         self.word_casing.as_ref()
     }
     /// <p>The word padding options (none, small, medium, large) for the words in a word cloud.</p>
-    pub fn word_padding(&self) -> std::option::Option<&crate::types::WordCloudWordPadding> {
+    pub fn word_padding(&self) -> ::std::option::Option<&crate::types::WordCloudWordPadding> {
         self.word_padding.as_ref()
     }
     /// <p>The length limit of each word from 1-100.</p>
-    pub fn maximum_string_length(&self) -> std::option::Option<i32> {
+    pub fn maximum_string_length(&self) -> ::std::option::Option<i32> {
         self.maximum_string_length
     }
 }
@@ -58,88 +60,90 @@ impl WordCloudOptions {
 
 /// A builder for [`WordCloudOptions`](crate::types::WordCloudOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WordCloudOptionsBuilder {
-    pub(crate) word_orientation: std::option::Option<crate::types::WordCloudWordOrientation>,
-    pub(crate) word_scaling: std::option::Option<crate::types::WordCloudWordScaling>,
-    pub(crate) cloud_layout: std::option::Option<crate::types::WordCloudCloudLayout>,
-    pub(crate) word_casing: std::option::Option<crate::types::WordCloudWordCasing>,
-    pub(crate) word_padding: std::option::Option<crate::types::WordCloudWordPadding>,
-    pub(crate) maximum_string_length: std::option::Option<i32>,
+    pub(crate) word_orientation: ::std::option::Option<crate::types::WordCloudWordOrientation>,
+    pub(crate) word_scaling: ::std::option::Option<crate::types::WordCloudWordScaling>,
+    pub(crate) cloud_layout: ::std::option::Option<crate::types::WordCloudCloudLayout>,
+    pub(crate) word_casing: ::std::option::Option<crate::types::WordCloudWordCasing>,
+    pub(crate) word_padding: ::std::option::Option<crate::types::WordCloudWordPadding>,
+    pub(crate) maximum_string_length: ::std::option::Option<i32>,
 }
 impl WordCloudOptionsBuilder {
     /// <p>The word orientation options (horizontal, horizontal_and_vertical) for the words in a word cloud.</p>
     pub fn word_orientation(mut self, input: crate::types::WordCloudWordOrientation) -> Self {
-        self.word_orientation = Some(input);
+        self.word_orientation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The word orientation options (horizontal, horizontal_and_vertical) for the words in a word cloud.</p>
     pub fn set_word_orientation(
         mut self,
-        input: std::option::Option<crate::types::WordCloudWordOrientation>,
+        input: ::std::option::Option<crate::types::WordCloudWordOrientation>,
     ) -> Self {
         self.word_orientation = input;
         self
     }
     /// <p>The word scaling options (emphasize, normal) for the words in a word cloud.</p>
     pub fn word_scaling(mut self, input: crate::types::WordCloudWordScaling) -> Self {
-        self.word_scaling = Some(input);
+        self.word_scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>The word scaling options (emphasize, normal) for the words in a word cloud.</p>
     pub fn set_word_scaling(
         mut self,
-        input: std::option::Option<crate::types::WordCloudWordScaling>,
+        input: ::std::option::Option<crate::types::WordCloudWordScaling>,
     ) -> Self {
         self.word_scaling = input;
         self
     }
     /// <p>The cloud layout options (fluid, normal) of a word cloud.</p>
     pub fn cloud_layout(mut self, input: crate::types::WordCloudCloudLayout) -> Self {
-        self.cloud_layout = Some(input);
+        self.cloud_layout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cloud layout options (fluid, normal) of a word cloud.</p>
     pub fn set_cloud_layout(
         mut self,
-        input: std::option::Option<crate::types::WordCloudCloudLayout>,
+        input: ::std::option::Option<crate::types::WordCloudCloudLayout>,
     ) -> Self {
         self.cloud_layout = input;
         self
     }
     /// <p>The word casing options (lower_case, existing_case) for the words in a word cloud.</p>
     pub fn word_casing(mut self, input: crate::types::WordCloudWordCasing) -> Self {
-        self.word_casing = Some(input);
+        self.word_casing = ::std::option::Option::Some(input);
         self
     }
     /// <p>The word casing options (lower_case, existing_case) for the words in a word cloud.</p>
     pub fn set_word_casing(
         mut self,
-        input: std::option::Option<crate::types::WordCloudWordCasing>,
+        input: ::std::option::Option<crate::types::WordCloudWordCasing>,
     ) -> Self {
         self.word_casing = input;
         self
     }
     /// <p>The word padding options (none, small, medium, large) for the words in a word cloud.</p>
     pub fn word_padding(mut self, input: crate::types::WordCloudWordPadding) -> Self {
-        self.word_padding = Some(input);
+        self.word_padding = ::std::option::Option::Some(input);
         self
     }
     /// <p>The word padding options (none, small, medium, large) for the words in a word cloud.</p>
     pub fn set_word_padding(
         mut self,
-        input: std::option::Option<crate::types::WordCloudWordPadding>,
+        input: ::std::option::Option<crate::types::WordCloudWordPadding>,
     ) -> Self {
         self.word_padding = input;
         self
     }
     /// <p>The length limit of each word from 1-100.</p>
     pub fn maximum_string_length(mut self, input: i32) -> Self {
-        self.maximum_string_length = Some(input);
+        self.maximum_string_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The length limit of each word from 1-100.</p>
-    pub fn set_maximum_string_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_string_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_string_length = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Boolean filter for querying findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BooleanFilter {
     /// <p>The value of the boolean.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl BooleanFilter {
 
 /// A builder for [`BooleanFilter`](crate::types::BooleanFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BooleanFilterBuilder {
-    pub(crate) value: std::option::Option<bool>,
+    pub(crate) value: ::std::option::Option<bool>,
 }
 impl BooleanFilterBuilder {
     /// <p>The value of the boolean.</p>
     pub fn value(mut self, input: bool) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the boolean.</p>
-    pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.value = input;
         self
     }

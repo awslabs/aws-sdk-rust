@@ -2,15 +2,15 @@
 
 /// <p>A set of criteria that CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, CloudFormation returns only the <code>AllowedValues</code> property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterConstraints {
     /// <p>A list of values that are permitted for a parameter.</p>
     #[doc(hidden)]
-    pub allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ParameterConstraints {
     /// <p>A list of values that are permitted for a parameter.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allowed_values.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ParameterConstraints {
 
 /// A builder for [`ParameterConstraints`](crate::types::ParameterConstraints).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterConstraintsBuilder {
-    pub(crate) allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ParameterConstraintsBuilder {
     /// Appends an item to `allowed_values`.
@@ -33,16 +35,19 @@ impl ParameterConstraintsBuilder {
     /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
     ///
     /// <p>A list of values that are permitted for a parameter.</p>
-    pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn allowed_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
         v.push(input.into());
-        self.allowed_values = Some(v);
+        self.allowed_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values that are permitted for a parameter.</p>
     pub fn set_allowed_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.allowed_values = input;
         self

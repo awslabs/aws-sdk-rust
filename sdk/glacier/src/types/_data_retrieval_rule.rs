@@ -2,26 +2,26 @@
 
 /// <p>Data retrieval policy rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataRetrievalRule {
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
     #[doc(hidden)]
-    pub strategy: std::option::Option<std::string::String>,
+    pub strategy: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     #[doc(hidden)]
-    pub bytes_per_hour: std::option::Option<i64>,
+    pub bytes_per_hour: ::std::option::Option<i64>,
 }
 impl DataRetrievalRule {
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
-    pub fn strategy(&self) -> std::option::Option<&str> {
+    pub fn strategy(&self) -> ::std::option::Option<&str> {
         self.strategy.as_deref()
     }
     /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
-    pub fn bytes_per_hour(&self) -> std::option::Option<i64> {
+    pub fn bytes_per_hour(&self) -> ::std::option::Option<i64> {
         self.bytes_per_hour
     }
 }
@@ -34,33 +34,35 @@ impl DataRetrievalRule {
 
 /// A builder for [`DataRetrievalRule`](crate::types::DataRetrievalRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataRetrievalRuleBuilder {
-    pub(crate) strategy: std::option::Option<std::string::String>,
-    pub(crate) bytes_per_hour: std::option::Option<i64>,
+    pub(crate) strategy: ::std::option::Option<::std::string::String>,
+    pub(crate) bytes_per_hour: ::std::option::Option<i64>,
 }
 impl DataRetrievalRuleBuilder {
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
-    pub fn strategy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.strategy = Some(input.into());
+    pub fn strategy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.strategy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of data retrieval policy to set.</p>
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
-    pub fn set_strategy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.strategy = input;
         self
     }
     /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     pub fn bytes_per_hour(mut self, input: i64) -> Self {
-        self.bytes_per_hour = Some(input);
+        self.bytes_per_hour = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
-    pub fn set_bytes_per_hour(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_per_hour(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_per_hour = input;
         self
     }

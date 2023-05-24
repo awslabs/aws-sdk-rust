@@ -2,24 +2,24 @@
 
 /// <p>Information about the status of a read replica.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbStatusInfo {
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
     #[doc(hidden)]
-    pub status_type: std::option::Option<std::string::String>,
+    pub status_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether the read replica instance is operating normally.</p>
     #[doc(hidden)]
     pub normal: bool,
     /// <p>The status of the read replica instance.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbStatusInfo {
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
-    pub fn status_type(&self) -> std::option::Option<&str> {
+    pub fn status_type(&self) -> ::std::option::Option<&str> {
         self.status_type.as_deref()
     }
     /// <p>Whether the read replica instance is operating normally.</p>
@@ -27,11 +27,11 @@ impl AwsRdsDbStatusInfo {
         self.normal
     }
     /// <p>The status of the read replica instance.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl AwsRdsDbStatusInfo {
 
 /// A builder for [`AwsRdsDbStatusInfo`](crate::types::AwsRdsDbStatusInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRdsDbStatusInfoBuilder {
-    pub(crate) status_type: std::option::Option<std::string::String>,
-    pub(crate) normal: std::option::Option<bool>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) status_type: ::std::option::Option<::std::string::String>,
+    pub(crate) normal: ::std::option::Option<bool>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbStatusInfoBuilder {
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
-    pub fn status_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_type = Some(input.into());
+    pub fn status_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of status. For a read replica, the status type is read replication.</p>
-    pub fn set_status_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_type = input;
         self
     }
     /// <p>Whether the read replica instance is operating normally.</p>
     pub fn normal(mut self, input: bool) -> Self {
-        self.normal = Some(input);
+        self.normal = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the read replica instance is operating normally.</p>
-    pub fn set_normal(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_normal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.normal = input;
         self
     }
     /// <p>The status of the read replica instance.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the read replica instance.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the read replica is currently in an error state, provides the error details.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

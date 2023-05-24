@@ -6,56 +6,63 @@ pub use crate::operation::delete_bot_alias::_delete_bot_alias_input::DeleteBotAl
 /// Fluent builder constructing a request to `DeleteBotAlias`.
 ///
 /// <p>Deletes the specified bot alias.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBotAliasFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_bot_alias::builders::DeleteBotAliasInputBuilder,
 }
 impl DeleteBotAliasFluentBuilder {
     /// Creates a new `DeleteBotAlias`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_bot_alias::DeleteBotAlias,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_bot_alias::DeleteBotAliasError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_alias::DeleteBotAliasError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_bot_alias::DeleteBotAliasOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_bot_alias::DeleteBotAliasError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_alias::DeleteBotAliasError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +75,31 @@ impl DeleteBotAliasFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_bot_alias::DeleteBotAliasOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_bot_alias::DeleteBotAliasError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_alias::DeleteBotAliasError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier of the bot alias to delete.</p>
-    pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias_id(input.into());
         self
     }
     /// <p>The unique identifier of the bot alias to delete.</p>
-    pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_alias_id(input);
         self
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
-    pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
         self
     }
     /// <p>The unique identifier of the bot associated with the alias to delete.</p>
-    pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
     }
@@ -100,7 +109,7 @@ impl DeleteBotAliasFluentBuilder {
         self
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</p>
-    pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_resource_in_use_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_resource_in_use_check(input);
         self
     }

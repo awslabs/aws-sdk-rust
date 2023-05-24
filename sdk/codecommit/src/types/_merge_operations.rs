@@ -2,22 +2,22 @@
 
 /// <p>Information about the file operation conflicts in a merge operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MergeOperations {
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::ChangeTypeEnum>,
+    pub source: ::std::option::Option<crate::types::ChangeTypeEnum>,
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::ChangeTypeEnum>,
+    pub destination: ::std::option::Option<crate::types::ChangeTypeEnum>,
 }
 impl MergeOperations {
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::ChangeTypeEnum> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::ChangeTypeEnum> {
         self.source.as_ref()
     }
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::ChangeTypeEnum> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::ChangeTypeEnum> {
         self.destination.as_ref()
     }
 }
@@ -30,31 +30,36 @@ impl MergeOperations {
 
 /// A builder for [`MergeOperations`](crate::types::MergeOperations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MergeOperationsBuilder {
-    pub(crate) source: std::option::Option<crate::types::ChangeTypeEnum>,
-    pub(crate) destination: std::option::Option<crate::types::ChangeTypeEnum>,
+    pub(crate) source: ::std::option::Option<crate::types::ChangeTypeEnum>,
+    pub(crate) destination: ::std::option::Option<crate::types::ChangeTypeEnum>,
 }
 impl MergeOperationsBuilder {
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
     pub fn source(mut self, input: crate::types::ChangeTypeEnum) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull request.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::ChangeTypeEnum>) -> Self {
+    pub fn set_source(
+        mut self,
+        input: ::std::option::Option<crate::types::ChangeTypeEnum>,
+    ) -> Self {
         self.source = input;
         self
     }
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: crate::types::ChangeTypeEnum) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operation on a file in the destination of a merge or pull request.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::ChangeTypeEnum>,
+        input: ::std::option::Option<crate::types::ChangeTypeEnum>,
     ) -> Self {
         self.destination = input;
         self

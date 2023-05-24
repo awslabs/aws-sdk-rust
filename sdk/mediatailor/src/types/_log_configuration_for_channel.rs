@@ -2,15 +2,15 @@
 
 /// <p>The log configuration for the channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogConfigurationForChannel {
     /// <p>The log types.</p>
     #[doc(hidden)]
-    pub log_types: std::option::Option<std::vec::Vec<crate::types::LogType>>,
+    pub log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
 }
 impl LogConfigurationForChannel {
     /// <p>The log types.</p>
-    pub fn log_types(&self) -> std::option::Option<&[crate::types::LogType]> {
+    pub fn log_types(&self) -> ::std::option::Option<&[crate::types::LogType]> {
         self.log_types.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl LogConfigurationForChannel {
 
 /// A builder for [`LogConfigurationForChannel`](crate::types::LogConfigurationForChannel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogConfigurationForChannelBuilder {
-    pub(crate) log_types: std::option::Option<std::vec::Vec<crate::types::LogType>>,
+    pub(crate) log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
 }
 impl LogConfigurationForChannelBuilder {
     /// Appends an item to `log_types`.
@@ -36,13 +38,13 @@ impl LogConfigurationForChannelBuilder {
     pub fn log_types(mut self, input: crate::types::LogType) -> Self {
         let mut v = self.log_types.unwrap_or_default();
         v.push(input);
-        self.log_types = Some(v);
+        self.log_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The log types.</p>
     pub fn set_log_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
     ) -> Self {
         self.log_types = input;
         self

@@ -2,36 +2,36 @@
 
 /// <p>The Amazon Web Services Threat Intel Group (ATIG) details for a specific vulnerability.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AtigData {
     /// <p>The date and time this vulnerability was first observed.</p>
     #[doc(hidden)]
-    pub first_seen: std::option::Option<aws_smithy_types::DateTime>,
+    pub first_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time this vulnerability was last observed.</p>
     #[doc(hidden)]
-    pub last_seen: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The commercial sectors this vulnerability targets.</p>
     #[doc(hidden)]
-    pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>
     #[doc(hidden)]
-    pub ttps: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ttps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AtigData {
     /// <p>The date and time this vulnerability was first observed.</p>
-    pub fn first_seen(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn first_seen(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.first_seen.as_ref()
     }
     /// <p>The date and time this vulnerability was last observed.</p>
-    pub fn last_seen(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_seen(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_seen.as_ref()
     }
     /// <p>The commercial sectors this vulnerability targets.</p>
-    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.targets.as_deref()
     }
     /// <p>The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>
-    pub fn ttps(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ttps(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ttps.as_deref()
     }
 }
@@ -44,34 +44,39 @@ impl AtigData {
 
 /// A builder for [`AtigData`](crate::types::AtigData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AtigDataBuilder {
-    pub(crate) first_seen: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_seen: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ttps: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) first_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_seen: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ttps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AtigDataBuilder {
     /// <p>The date and time this vulnerability was first observed.</p>
-    pub fn first_seen(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.first_seen = Some(input);
+    pub fn first_seen(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.first_seen = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time this vulnerability was first observed.</p>
     pub fn set_first_seen(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.first_seen = input;
         self
     }
     /// <p>The date and time this vulnerability was last observed.</p>
-    pub fn last_seen(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_seen = Some(input);
+    pub fn last_seen(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_seen = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time this vulnerability was last observed.</p>
-    pub fn set_last_seen(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_seen(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.last_seen = input;
         self
     }
@@ -80,16 +85,16 @@ impl AtigDataBuilder {
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
     /// <p>The commercial sectors this vulnerability targets.</p>
-    pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input.into());
-        self.targets = Some(v);
+        self.targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The commercial sectors this vulnerability targets.</p>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.targets = input;
         self
@@ -99,16 +104,16 @@ impl AtigDataBuilder {
     /// To override the contents of this collection use [`set_ttps`](Self::set_ttps).
     ///
     /// <p>The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>
-    pub fn ttps(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ttps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ttps.unwrap_or_default();
         v.push(input.into());
-        self.ttps = Some(v);
+        self.ttps = ::std::option::Option::Some(v);
         self
     }
     /// <p>The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.</p>
     pub fn set_ttps(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ttps = input;
         self

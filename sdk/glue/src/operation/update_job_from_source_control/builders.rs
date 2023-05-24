@@ -7,29 +7,29 @@ pub use crate::operation::update_job_from_source_control::_update_job_from_sourc
 ///
 /// <p>Synchronizes a job from the source control repository. This operation takes the job artifacts that are located in the remote repository and updates the Glue internal stores with these artifacts.</p>
 /// <p>This API supports optional parameters which take in the repository information.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateJobFromSourceControlFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_job_from_source_control::builders::UpdateJobFromSourceControlInputBuilder,
 }
 impl UpdateJobFromSourceControlFluentBuilder {
     /// Creates a new `UpdateJobFromSourceControl`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_job_from_source_control::UpdateJobFromSourceControl,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_job_from_source_control::UpdateJobFromSourceControlError,
         >,
     > {
@@ -37,30 +37,33 @@ impl UpdateJobFromSourceControlFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_job_from_source_control::UpdateJobFromSourceControlError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl UpdateJobFromSourceControlFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_job_from_source_control::UpdateJobFromSourceControlError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
     /// <p>The name of the Glue job to be synchronized to or from the remote repository.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
@@ -99,58 +102,70 @@ impl UpdateJobFromSourceControlFluentBuilder {
     /// <p>The provider for the remote repository.</p>
     pub fn set_provider(
         mut self,
-        input: std::option::Option<crate::types::SourceControlProvider>,
+        input: ::std::option::Option<crate::types::SourceControlProvider>,
     ) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
     /// <p>The name of the remote repository that contains the job artifacts.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the remote repository that contains the job artifacts.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
-    pub fn repository_owner(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn repository_owner(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.repository_owner(input.into());
         self
     }
     /// <p>The owner of the remote repository that contains the job artifacts.</p>
-    pub fn set_repository_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_owner(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_repository_owner(input);
         self
     }
     /// <p>An optional branch in the remote repository.</p>
-    pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch_name(input.into());
         self
     }
     /// <p>An optional branch in the remote repository.</p>
-    pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch_name(input);
         self
     }
     /// <p>An optional folder in the remote repository.</p>
-    pub fn folder(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn folder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder(input.into());
         self
     }
     /// <p>An optional folder in the remote repository.</p>
-    pub fn set_folder(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_folder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_folder(input);
         self
     }
     /// <p>A commit ID for a commit in the remote repository.</p>
-    pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.commit_id(input.into());
         self
     }
     /// <p>A commit ID for a commit in the remote repository.</p>
-    pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_commit_id(input);
         self
     }
@@ -162,18 +177,18 @@ impl UpdateJobFromSourceControlFluentBuilder {
     /// <p>The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.</p>
     pub fn set_auth_strategy(
         mut self,
-        input: std::option::Option<crate::types::SourceControlAuthStrategy>,
+        input: ::std::option::Option<crate::types::SourceControlAuthStrategy>,
     ) -> Self {
         self.inner = self.inner.set_auth_strategy(input);
         self
     }
     /// <p>The value of the authorization token.</p>
-    pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auth_token(input.into());
         self
     }
     /// <p>The value of the authorization token.</p>
-    pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auth_token(input);
         self
     }

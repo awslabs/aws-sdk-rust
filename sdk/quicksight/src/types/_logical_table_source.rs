@@ -2,29 +2,29 @@
 
 /// <p>Information about the source of a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogicalTableSource {
     /// <p>Specifies the result of a join of two logical tables.</p>
     #[doc(hidden)]
-    pub join_instruction: std::option::Option<crate::types::JoinInstruction>,
+    pub join_instruction: ::std::option::Option<crate::types::JoinInstruction>,
     /// <p>Physical table ID.</p>
     #[doc(hidden)]
-    pub physical_table_id: std::option::Option<std::string::String>,
+    pub physical_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
     #[doc(hidden)]
-    pub data_set_arn: std::option::Option<std::string::String>,
+    pub data_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl LogicalTableSource {
     /// <p>Specifies the result of a join of two logical tables.</p>
-    pub fn join_instruction(&self) -> std::option::Option<&crate::types::JoinInstruction> {
+    pub fn join_instruction(&self) -> ::std::option::Option<&crate::types::JoinInstruction> {
         self.join_instruction.as_ref()
     }
     /// <p>Physical table ID.</p>
-    pub fn physical_table_id(&self) -> std::option::Option<&str> {
+    pub fn physical_table_id(&self) -> ::std::option::Option<&str> {
         self.physical_table_id.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
-    pub fn data_set_arn(&self) -> std::option::Option<&str> {
+    pub fn data_set_arn(&self) -> ::std::option::Option<&str> {
         self.data_set_arn.as_deref()
     }
 }
@@ -37,46 +37,51 @@ impl LogicalTableSource {
 
 /// A builder for [`LogicalTableSource`](crate::types::LogicalTableSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogicalTableSourceBuilder {
-    pub(crate) join_instruction: std::option::Option<crate::types::JoinInstruction>,
-    pub(crate) physical_table_id: std::option::Option<std::string::String>,
-    pub(crate) data_set_arn: std::option::Option<std::string::String>,
+    pub(crate) join_instruction: ::std::option::Option<crate::types::JoinInstruction>,
+    pub(crate) physical_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl LogicalTableSourceBuilder {
     /// <p>Specifies the result of a join of two logical tables.</p>
     pub fn join_instruction(mut self, input: crate::types::JoinInstruction) -> Self {
-        self.join_instruction = Some(input);
+        self.join_instruction = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the result of a join of two logical tables.</p>
     pub fn set_join_instruction(
         mut self,
-        input: std::option::Option<crate::types::JoinInstruction>,
+        input: ::std::option::Option<crate::types::JoinInstruction>,
     ) -> Self {
         self.join_instruction = input;
         self
     }
     /// <p>Physical table ID.</p>
-    pub fn physical_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.physical_table_id = Some(input.into());
+    pub fn physical_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.physical_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Physical table ID.</p>
     pub fn set_physical_table_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.physical_table_id = input;
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
-    pub fn data_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_arn = Some(input.into());
+    pub fn data_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the parent dataset.</p>
-    pub fn set_data_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_arn = input;
         self
     }

@@ -6,30 +6,30 @@ pub use crate::operation::put_inbound_dmarc_settings::_put_inbound_dmarc_setting
 /// Fluent builder constructing a request to `PutInboundDmarcSettings`.
 ///
 /// <p>Enables or disables a DMARC policy for a given organization.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutInboundDmarcSettingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsInputBuilder,
 }
 impl PutInboundDmarcSettingsFluentBuilder {
     /// Creates a new `PutInboundDmarcSettings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PutInboundDmarcSettingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,27 @@ impl PutInboundDmarcSettingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
-    pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn organization_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
-    pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_organization_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -97,7 +106,7 @@ impl PutInboundDmarcSettingsFluentBuilder {
         self
     }
     /// <p>Enforces or suspends a policy after it's applied.</p>
-    pub fn set_enforced(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enforced(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enforced(input);
         self
     }

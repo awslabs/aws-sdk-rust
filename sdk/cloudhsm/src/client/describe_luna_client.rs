@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLunaClient`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_arn(impl Into<String>)`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::client_arn) / [`set_client_arn(Option<String>)`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::set_client_arn): <p>The ARN of the client.</p>
-    ///   - [`certificate_fingerprint(impl Into<String>)`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::certificate_fingerprint) / [`set_certificate_fingerprint(Option<String>)`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::set_certificate_fingerprint): <p>The certificate fingerprint.</p>
+    ///   - [`client_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::client_arn) / [`set_client_arn(Option<String>)`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::set_client_arn): <p>The ARN of the client.</p>
+    ///   - [`certificate_fingerprint(impl ::std::convert::Into<String>)`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::certificate_fingerprint) / [`set_certificate_fingerprint(Option<String>)`](crate::operation::describe_luna_client::builders::DescribeLunaClientFluentBuilder::set_certificate_fingerprint): <p>The certificate fingerprint.</p>
     /// - On success, responds with [`DescribeLunaClientOutput`](crate::operation::describe_luna_client::DescribeLunaClientOutput) with field(s):
     ///   - [`client_arn(Option<String>)`](crate::operation::describe_luna_client::DescribeLunaClientOutput::client_arn): <p>The ARN of the client.</p>
     ///   - [`certificate(Option<String>)`](crate::operation::describe_luna_client::DescribeLunaClientOutput::certificate): <p>The certificate installed on the HSMs used by this client.</p>

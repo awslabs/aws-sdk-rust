@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder::set_max_results): <p>The maximum number of results to return at once.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder::set_next_token): <p>A token used to get the next set of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsFluentBuilder::set_next_token): <p>A token used to get the next set of results.</p>
     /// - On success, responds with [`ListSuiteDefinitionsOutput`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput) with field(s):
     ///   - [`suite_definition_information_list(Option<Vec<SuiteDefinitionInformation>>)`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput::suite_definition_information_list): <p>An array of objects that provide summaries of information about the suite definitions in the list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput::next_token): <p>A token used to get the next set of results.</p>

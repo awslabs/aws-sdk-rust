@@ -2,15 +2,15 @@
 
 /// <p>Configuration settings for the handling of the stateful rule groups in a Network Firewall firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub rule_order: std::option::Option<crate::types::RuleOrder>,
+    pub rule_order: ::std::option::Option<crate::types::RuleOrder>,
 }
 impl StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn rule_order(&self) -> std::option::Option<&crate::types::RuleOrder> {
+    pub fn rule_order(&self) -> ::std::option::Option<&crate::types::RuleOrder> {
         self.rule_order.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl StatefulEngineOptions {
 
 /// A builder for [`StatefulEngineOptions`](crate::types::StatefulEngineOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatefulEngineOptionsBuilder {
-    pub(crate) rule_order: std::option::Option<crate::types::RuleOrder>,
+    pub(crate) rule_order: ::std::option::Option<crate::types::RuleOrder>,
 }
 impl StatefulEngineOptionsBuilder {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn rule_order(mut self, input: crate::types::RuleOrder) -> Self {
-        self.rule_order = Some(input);
+        self.rule_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn set_rule_order(mut self, input: std::option::Option<crate::types::RuleOrder>) -> Self {
+    pub fn set_rule_order(mut self, input: ::std::option::Option<crate::types::RuleOrder>) -> Self {
         self.rule_order = input;
         self
     }

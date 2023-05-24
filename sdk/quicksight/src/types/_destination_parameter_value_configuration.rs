@@ -3,47 +3,47 @@
 /// <p>The configuration of destination parameter values.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationParameterValueConfiguration {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
     #[doc(hidden)]
-    pub custom_values_configuration: std::option::Option<crate::types::CustomValuesConfiguration>,
+    pub custom_values_configuration: ::std::option::Option<crate::types::CustomValuesConfiguration>,
     /// <p>The configuration that selects all options.</p>
     #[doc(hidden)]
-    pub select_all_value_options: std::option::Option<crate::types::SelectAllValueOptions>,
+    pub select_all_value_options: ::std::option::Option<crate::types::SelectAllValueOptions>,
     /// <p>The source parameter name of the destination parameter.</p>
     #[doc(hidden)]
-    pub source_parameter_name: std::option::Option<std::string::String>,
+    pub source_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The source field ID of the destination parameter.</p>
     #[doc(hidden)]
-    pub source_field: std::option::Option<std::string::String>,
+    pub source_field: ::std::option::Option<::std::string::String>,
     /// <p>A column of a data set.</p>
     #[doc(hidden)]
-    pub source_column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub source_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl DestinationParameterValueConfiguration {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
     pub fn custom_values_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::CustomValuesConfiguration> {
+    ) -> ::std::option::Option<&crate::types::CustomValuesConfiguration> {
         self.custom_values_configuration.as_ref()
     }
     /// <p>The configuration that selects all options.</p>
     pub fn select_all_value_options(
         &self,
-    ) -> std::option::Option<&crate::types::SelectAllValueOptions> {
+    ) -> ::std::option::Option<&crate::types::SelectAllValueOptions> {
         self.select_all_value_options.as_ref()
     }
     /// <p>The source parameter name of the destination parameter.</p>
-    pub fn source_parameter_name(&self) -> std::option::Option<&str> {
+    pub fn source_parameter_name(&self) -> ::std::option::Option<&str> {
         self.source_parameter_name.as_deref()
     }
     /// <p>The source field ID of the destination parameter.</p>
-    pub fn source_field(&self) -> std::option::Option<&str> {
+    pub fn source_field(&self) -> ::std::option::Option<&str> {
         self.source_field.as_deref()
     }
     /// <p>A column of a data set.</p>
-    pub fn source_column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn source_column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.source_column.as_ref()
     }
 }
@@ -56,14 +56,16 @@ impl DestinationParameterValueConfiguration {
 
 /// A builder for [`DestinationParameterValueConfiguration`](crate::types::DestinationParameterValueConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationParameterValueConfigurationBuilder {
     pub(crate) custom_values_configuration:
-        std::option::Option<crate::types::CustomValuesConfiguration>,
-    pub(crate) select_all_value_options: std::option::Option<crate::types::SelectAllValueOptions>,
-    pub(crate) source_parameter_name: std::option::Option<std::string::String>,
-    pub(crate) source_field: std::option::Option<std::string::String>,
-    pub(crate) source_column: std::option::Option<crate::types::ColumnIdentifier>,
+        ::std::option::Option<crate::types::CustomValuesConfiguration>,
+    pub(crate) select_all_value_options: ::std::option::Option<crate::types::SelectAllValueOptions>,
+    pub(crate) source_parameter_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_field: ::std::option::Option<::std::string::String>,
+    pub(crate) source_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl DestinationParameterValueConfigurationBuilder {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
@@ -71,62 +73,65 @@ impl DestinationParameterValueConfigurationBuilder {
         mut self,
         input: crate::types::CustomValuesConfiguration,
     ) -> Self {
-        self.custom_values_configuration = Some(input);
+        self.custom_values_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
     pub fn set_custom_values_configuration(
         mut self,
-        input: std::option::Option<crate::types::CustomValuesConfiguration>,
+        input: ::std::option::Option<crate::types::CustomValuesConfiguration>,
     ) -> Self {
         self.custom_values_configuration = input;
         self
     }
     /// <p>The configuration that selects all options.</p>
     pub fn select_all_value_options(mut self, input: crate::types::SelectAllValueOptions) -> Self {
-        self.select_all_value_options = Some(input);
+        self.select_all_value_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that selects all options.</p>
     pub fn set_select_all_value_options(
         mut self,
-        input: std::option::Option<crate::types::SelectAllValueOptions>,
+        input: ::std::option::Option<crate::types::SelectAllValueOptions>,
     ) -> Self {
         self.select_all_value_options = input;
         self
     }
     /// <p>The source parameter name of the destination parameter.</p>
-    pub fn source_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_parameter_name = Some(input.into());
+    pub fn source_parameter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source parameter name of the destination parameter.</p>
     pub fn set_source_parameter_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_parameter_name = input;
         self
     }
     /// <p>The source field ID of the destination parameter.</p>
-    pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_field = Some(input.into());
+    pub fn source_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source field ID of the destination parameter.</p>
-    pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_field = input;
         self
     }
     /// <p>A column of a data set.</p>
     pub fn source_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.source_column = Some(input);
+        self.source_column = ::std::option::Option::Some(input);
         self
     }
     /// <p>A column of a data set.</p>
     pub fn set_source_column(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.source_column = input;
         self

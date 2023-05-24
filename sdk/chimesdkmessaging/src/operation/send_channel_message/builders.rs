@@ -9,29 +9,29 @@ pub use crate::operation::send_channel_message::_send_channel_message_input::Sen
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendChannelMessageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::send_channel_message::builders::SendChannelMessageInputBuilder,
 }
 impl SendChannelMessageFluentBuilder {
     /// Creates a new `SendChannelMessage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_channel_message::SendChannelMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_channel_message::SendChannelMessageError,
         >,
     > {
@@ -39,30 +39,33 @@ impl SendChannelMessageFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_channel_message::SendChannelMessageOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_channel_message::SendChannelMessageError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,31 +78,31 @@ impl SendChannelMessageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_channel_message::SendChannelMessageOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_channel_message::SendChannelMessageError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
         self
     }
     /// <p>The ARN of the channel.</p>
-    pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
     /// <p>The content of the message.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
     /// <p>The content of the message.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
@@ -111,7 +114,7 @@ impl SendChannelMessageFluentBuilder {
     /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ChannelMessageType>,
+        input: ::std::option::Option<crate::types::ChannelMessageType>,
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
@@ -124,41 +127,44 @@ impl SendChannelMessageFluentBuilder {
     /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
     pub fn set_persistence(
         mut self,
-        input: std::option::Option<crate::types::ChannelMessagePersistenceType>,
+        input: ::std::option::Option<crate::types::ChannelMessagePersistenceType>,
     ) -> Self {
         self.inner = self.inner.set_persistence(input);
         self
     }
     /// <p>The optional metadata for each message.</p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
         self
     }
     /// <p>The optional metadata for each message.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The <code>Idempotency</code> token for each client request.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
     }
@@ -170,7 +176,7 @@ impl SendChannelMessageFluentBuilder {
     /// <p>The push notification configuration of the message.</p>
     pub fn set_push_notification(
         mut self,
-        input: std::option::Option<crate::types::PushNotificationConfiguration>,
+        input: ::std::option::Option<crate::types::PushNotificationConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_push_notification(input);
         self
@@ -182,7 +188,7 @@ impl SendChannelMessageFluentBuilder {
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
     pub fn message_attributes(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::MessageAttributeValue,
     ) -> Self {
         self.inner = self.inner.message_attributes(k.into(), v);
@@ -191,30 +197,36 @@ impl SendChannelMessageFluentBuilder {
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
     pub fn set_message_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
         >,
     ) -> Self {
         self.inner = self.inner.set_message_attributes(input);
         self
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sub_channel_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
     /// <p>The ID of the SubChannel in the request.</p>
-    pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sub_channel_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
     /// <p>The content type of the channel message.</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
         self
     }
     /// <p>The content type of the channel message.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
     }

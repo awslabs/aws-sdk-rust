@@ -2,27 +2,27 @@
 
 /// <p>The output of the ListCertificatesByCA operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCertificatesByCaOutput {
     /// <p>The device certificates signed by the specified CA certificate.</p>
     #[doc(hidden)]
-    pub certificates: std::option::Option<std::vec::Vec<crate::types::Certificate>>,
+    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCertificatesByCaOutput {
     /// <p>The device certificates signed by the specified CA certificate.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::types::Certificate]> {
+    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::Certificate]> {
         self.certificates.as_deref()
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListCertificatesByCaOutput {
+impl ::aws_http::request_id::RequestId for ListCertificatesByCaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ListCertificatesByCaOutput {
 
 /// A builder for [`ListCertificatesByCaOutput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListCertificatesByCaOutputBuilder {
-    pub(crate) certificates: std::option::Option<std::vec::Vec<crate::types::Certificate>>,
-    pub(crate) next_marker: std::option::Option<std::string::String>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCertificatesByCaOutputBuilder {
@@ -53,24 +55,24 @@ impl ListCertificatesByCaOutputBuilder {
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
         v.push(input);
-        self.certificates = Some(v);
+        self.certificates = ::std::option::Option::Some(v);
         self
     }
     /// <p>The device certificates signed by the specified CA certificate.</p>
     pub fn set_certificates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Certificate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     ) -> Self {
         self.certificates = input;
         self
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }

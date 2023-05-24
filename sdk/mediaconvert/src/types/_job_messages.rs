@@ -2,22 +2,22 @@
 
 /// Provides messages from the service about jobs that you have already successfully submitted.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobMessages {
     /// List of messages that are informational only and don't indicate a problem with your job.
     #[doc(hidden)]
-    pub info: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// List of messages that warn about conditions that might cause your job not to run or to fail.
     #[doc(hidden)]
-    pub warning: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub warning: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl JobMessages {
     /// List of messages that are informational only and don't indicate a problem with your job.
-    pub fn info(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn info(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.info.as_deref()
     }
     /// List of messages that warn about conditions that might cause your job not to run or to fail.
-    pub fn warning(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn warning(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.warning.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl JobMessages {
 
 /// A builder for [`JobMessages`](crate::types::JobMessages).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobMessagesBuilder {
-    pub(crate) info: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) warning: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) warning: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl JobMessagesBuilder {
     /// Appends an item to `info`.
@@ -41,16 +43,16 @@ impl JobMessagesBuilder {
     /// To override the contents of this collection use [`set_info`](Self::set_info).
     ///
     /// List of messages that are informational only and don't indicate a problem with your job.
-    pub fn info(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.info.unwrap_or_default();
         v.push(input.into());
-        self.info = Some(v);
+        self.info = ::std::option::Option::Some(v);
         self
     }
     /// List of messages that are informational only and don't indicate a problem with your job.
     pub fn set_info(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.info = input;
         self
@@ -60,16 +62,16 @@ impl JobMessagesBuilder {
     /// To override the contents of this collection use [`set_warning`](Self::set_warning).
     ///
     /// List of messages that warn about conditions that might cause your job not to run or to fail.
-    pub fn warning(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn warning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.warning.unwrap_or_default();
         v.push(input.into());
-        self.warning = Some(v);
+        self.warning = ::std::option::Option::Some(v);
         self
     }
     /// List of messages that warn about conditions that might cause your job not to run or to fail.
     pub fn set_warning(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.warning = input;
         self

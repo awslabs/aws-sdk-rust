@@ -2,36 +2,36 @@
 
 /// <p>This structure contains information about when the canary was created and modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanaryTimeline {
     /// <p>The date and time the canary was created.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the canary was most recently modified.</p>
     #[doc(hidden)]
-    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the canary's most recent run started.</p>
     #[doc(hidden)]
-    pub last_started: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the canary's most recent run ended.</p>
     #[doc(hidden)]
-    pub last_stopped: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CanaryTimeline {
     /// <p>The date and time the canary was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the canary was most recently modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The date and time that the canary's most recent run started.</p>
-    pub fn last_started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_started.as_ref()
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
-    pub fn last_stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_stopped(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_stopped.as_ref()
     }
 }
@@ -44,59 +44,64 @@ impl CanaryTimeline {
 
 /// A builder for [`CanaryTimeline`](crate::types::CanaryTimeline).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CanaryTimelineBuilder {
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_started: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_stopped: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_started: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_stopped: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CanaryTimelineBuilder {
     /// <p>The date and time the canary was created.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the canary was created.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
     /// <p>The date and time the canary was most recently modified.</p>
-    pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified = Some(input);
+    pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the canary was most recently modified.</p>
     pub fn set_last_modified(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified = input;
         self
     }
     /// <p>The date and time that the canary's most recent run started.</p>
-    pub fn last_started(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_started = Some(input);
+    pub fn last_started(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_started = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the canary's most recent run started.</p>
     pub fn set_last_started(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_started = input;
         self
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
-    pub fn last_stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_stopped = Some(input);
+    pub fn last_stopped(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_stopped = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
     pub fn set_last_stopped(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_stopped = input;
         self

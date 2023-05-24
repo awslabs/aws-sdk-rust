@@ -2,14 +2,14 @@
 
 /// <p>An object that filters items in a list of entities.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ListEntitiesFilter {
     /// <p>The ID of the component type in the entities in the list.</p>
-    ComponentTypeId(std::string::String),
+    ComponentTypeId(::std::string::String),
     /// <p>The external-Id property of a component. The external-Id property is the primary key of an external storage system.</p>
-    ExternalId(std::string::String),
+    ExternalId(::std::string::String),
     /// <p>The parent of the entities in the list.</p>
-    ParentEntityId(std::string::String),
+    ParentEntityId(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -21,39 +21,39 @@ pub enum ListEntitiesFilter {
     Unknown,
 }
 impl ListEntitiesFilter {
-    /// Tries to convert the enum instance into [`ComponentTypeId`](crate::types::ListEntitiesFilter::ComponentTypeId), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`ComponentTypeId`](crate::types::ListEntitiesFilter::ComponentTypeId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_component_type_id(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_component_type_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ListEntitiesFilter::ComponentTypeId(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ComponentTypeId`](crate::types::ListEntitiesFilter::ComponentTypeId).
     pub fn is_component_type_id(&self) -> bool {
         self.as_component_type_id().is_ok()
     }
-    /// Tries to convert the enum instance into [`ExternalId`](crate::types::ListEntitiesFilter::ExternalId), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`ExternalId`](crate::types::ListEntitiesFilter::ExternalId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_external_id(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_external_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ListEntitiesFilter::ExternalId(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ExternalId`](crate::types::ListEntitiesFilter::ExternalId).
     pub fn is_external_id(&self) -> bool {
         self.as_external_id().is_ok()
     }
-    /// Tries to convert the enum instance into [`ParentEntityId`](crate::types::ListEntitiesFilter::ParentEntityId), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`ParentEntityId`](crate::types::ListEntitiesFilter::ParentEntityId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_parent_entity_id(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_parent_entity_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ListEntitiesFilter::ParentEntityId(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ParentEntityId`](crate::types::ListEntitiesFilter::ParentEntityId).

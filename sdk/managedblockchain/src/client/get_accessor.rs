@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccessor`](crate::operation::get_accessor::builders::GetAccessorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`accessor_id(impl Into<String>)`](crate::operation::get_accessor::builders::GetAccessorFluentBuilder::accessor_id) / [`set_accessor_id(Option<String>)`](crate::operation::get_accessor::builders::GetAccessorFluentBuilder::set_accessor_id): <p>The unique identifier of the accessor.</p>
+    ///   - [`accessor_id(impl ::std::convert::Into<String>)`](crate::operation::get_accessor::builders::GetAccessorFluentBuilder::accessor_id) / [`set_accessor_id(Option<String>)`](crate::operation::get_accessor::builders::GetAccessorFluentBuilder::set_accessor_id): <p>The unique identifier of the accessor.</p>
     /// - On success, responds with [`GetAccessorOutput`](crate::operation::get_accessor::GetAccessorOutput) with field(s):
     ///   - [`accessor(Option<Accessor>)`](crate::operation::get_accessor::GetAccessorOutput::accessor): <p>The properties of the accessor.</p>
     /// - On failure, responds with [`SdkError<GetAccessorError>`](crate::operation::get_accessor::GetAccessorError)

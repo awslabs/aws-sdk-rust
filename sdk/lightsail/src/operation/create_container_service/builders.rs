@@ -7,29 +7,29 @@ pub use crate::operation::create_container_service::_create_container_service_in
 ///
 /// <p>Creates an Amazon Lightsail container service.</p>
 /// <p>A Lightsail container service is a compute resource to which you can deploy containers. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-services">Container services in Amazon Lightsail</a> in the <i>Lightsail Dev Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContainerServiceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_container_service::builders::CreateContainerServiceInputBuilder,
 }
 impl CreateContainerServiceFluentBuilder {
     /// Creates a new `CreateContainerService`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_container_service::CreateContainerService,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_container_service::CreateContainerServiceError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateContainerServiceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_container_service::CreateContainerServiceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_container_service::CreateContainerServiceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl CreateContainerServiceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_container_service::CreateContainerServiceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_container_service::CreateContainerServiceError,
         >,
     > {
@@ -99,7 +102,7 @@ impl CreateContainerServiceFluentBuilder {
     /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
     /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
     /// </ul>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
         self
     }
@@ -121,7 +124,7 @@ impl CreateContainerServiceFluentBuilder {
     /// <li> <p>Must contain only alphanumeric characters and hyphens.</p> </li>
     /// <li> <p>A hyphen (-) can separate words but cannot be at the start or end of the name.</p> </li>
     /// </ul>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
     }
@@ -137,7 +140,7 @@ impl CreateContainerServiceFluentBuilder {
     /// <p>Use the <code>GetContainerServicePowers</code> action to get a list of power options that you can specify using this parameter, and their base monthly cost.</p>
     pub fn set_power(
         mut self,
-        input: std::option::Option<crate::types::ContainerServicePowerName>,
+        input: ::std::option::Option<crate::types::ContainerServicePowerName>,
     ) -> Self {
         self.inner = self.inner.set_power(input);
         self
@@ -150,7 +153,7 @@ impl CreateContainerServiceFluentBuilder {
     }
     /// <p>The scale specification for the container service.</p>
     /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
-    pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scale(input);
         self
     }
@@ -170,7 +173,7 @@ impl CreateContainerServiceFluentBuilder {
     /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -187,8 +190,8 @@ impl CreateContainerServiceFluentBuilder {
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     pub fn public_domain_names(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.public_domain_names(k.into(), v);
         self
@@ -201,8 +204,11 @@ impl CreateContainerServiceFluentBuilder {
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     pub fn set_public_domain_names(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_public_domain_names(input);
@@ -218,7 +224,7 @@ impl CreateContainerServiceFluentBuilder {
     /// <p>A deployment specifies the containers that will be launched on the container service and their settings, such as the ports to open, the environment variables to apply, and the launch command to run. It also specifies the container that will serve as the public endpoint of the deployment and its settings, such as the HTTP or HTTPS port to use, and the health check configuration.</p>
     pub fn set_deployment(
         mut self,
-        input: std::option::Option<crate::types::ContainerServiceDeploymentRequest>,
+        input: ::std::option::Option<crate::types::ContainerServiceDeploymentRequest>,
     ) -> Self {
         self.inner = self.inner.set_deployment(input);
         self
@@ -236,7 +242,7 @@ impl CreateContainerServiceFluentBuilder {
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     pub fn set_private_registry_access(
         mut self,
-        input: std::option::Option<crate::types::PrivateRegistryAccessRequest>,
+        input: ::std::option::Option<crate::types::PrivateRegistryAccessRequest>,
     ) -> Self {
         self.inner = self.inner.set_private_registry_access(input);
         self

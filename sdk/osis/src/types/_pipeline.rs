@@ -2,14 +2,14 @@
 
 /// <p>Information about an existing OpenSearch Ingestion pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Pipeline {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_name: std::option::Option<std::string::String>,
+    pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_arn: std::option::Option<std::string::String>,
+    pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     #[doc(hidden)]
     pub min_units: i32,
@@ -18,36 +18,36 @@ pub struct Pipeline {
     pub max_units: i32,
     /// <p>The current status of the pipeline.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PipelineStatus>,
+    pub status: ::std::option::Option<crate::types::PipelineStatus>,
     /// <p>The reason for the current status of the pipeline.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<crate::types::PipelineStatusReason>,
+    pub status_reason: ::std::option::Option<crate::types::PipelineStatusReason>,
     /// <p>The Data Prepper pipeline configuration in YAML format.</p>
     #[doc(hidden)]
-    pub pipeline_configuration_body: std::option::Option<std::string::String>,
+    pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the pipeline was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the pipeline was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
     #[doc(hidden)]
-    pub ingest_endpoint_urls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ingest_endpoint_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Key-value pairs that represent log publishing settings.</p>
     #[doc(hidden)]
-    pub log_publishing_options: std::option::Option<crate::types::LogPublishingOptions>,
+    pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
     #[doc(hidden)]
-    pub vpc_endpoints: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>,
+    pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
 }
 impl Pipeline {
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
@@ -59,37 +59,37 @@ impl Pipeline {
         self.max_units
     }
     /// <p>The current status of the pipeline.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PipelineStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PipelineStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the current status of the pipeline.</p>
-    pub fn status_reason(&self) -> std::option::Option<&crate::types::PipelineStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::PipelineStatusReason> {
         self.status_reason.as_ref()
     }
     /// <p>The Data Prepper pipeline configuration in YAML format.</p>
-    pub fn pipeline_configuration_body(&self) -> std::option::Option<&str> {
+    pub fn pipeline_configuration_body(&self) -> ::std::option::Option<&str> {
         self.pipeline_configuration_body.as_deref()
     }
     /// <p>The date and time when the pipeline was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the pipeline was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
-    pub fn ingest_endpoint_urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ingest_endpoint_urls(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ingest_endpoint_urls.as_deref()
     }
     /// <p>Key-value pairs that represent log publishing settings.</p>
     pub fn log_publishing_options(
         &self,
-    ) -> std::option::Option<&crate::types::LogPublishingOptions> {
+    ) -> ::std::option::Option<&crate::types::LogPublishingOptions> {
         self.log_publishing_options.as_ref()
     }
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
-    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::types::VpcEndpoint]> {
+    pub fn vpc_endpoints(&self) -> ::std::option::Option<&[crate::types::VpcEndpoint]> {
         self.vpc_endpoints.as_deref()
     }
 }
@@ -102,120 +102,134 @@ impl Pipeline {
 
 /// A builder for [`Pipeline`](crate::types::Pipeline).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineBuilder {
-    pub(crate) pipeline_name: std::option::Option<std::string::String>,
-    pub(crate) pipeline_arn: std::option::Option<std::string::String>,
-    pub(crate) min_units: std::option::Option<i32>,
-    pub(crate) max_units: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::PipelineStatus>,
-    pub(crate) status_reason: std::option::Option<crate::types::PipelineStatusReason>,
-    pub(crate) pipeline_configuration_body: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) ingest_endpoint_urls: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) log_publishing_options: std::option::Option<crate::types::LogPublishingOptions>,
-    pub(crate) vpc_endpoints: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>,
+    pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) min_units: ::std::option::Option<i32>,
+    pub(crate) max_units: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::PipelineStatus>,
+    pub(crate) status_reason: ::std::option::Option<crate::types::PipelineStatusReason>,
+    pub(crate) pipeline_configuration_body: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ingest_endpoint_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
+    pub(crate) vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
 }
 impl PipelineBuilder {
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_name = Some(input.into());
+    pub fn pipeline_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pipeline_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_arn = Some(input.into());
+    pub fn pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn set_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_arn = input;
         self
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn min_units(mut self, input: i32) -> Self {
-        self.min_units = Some(input);
+        self.min_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
-    pub fn set_min_units(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_units = input;
         self
     }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
     pub fn max_units(mut self, input: i32) -> Self {
-        self.max_units = Some(input);
+        self.max_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum pipeline capacity, in Ingestion Compute Units (ICUs).</p>
-    pub fn set_max_units(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_units = input;
         self
     }
     /// <p>The current status of the pipeline.</p>
     pub fn status(mut self, input: crate::types::PipelineStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the pipeline.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::PipelineStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::PipelineStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The reason for the current status of the pipeline.</p>
     pub fn status_reason(mut self, input: crate::types::PipelineStatusReason) -> Self {
-        self.status_reason = Some(input);
+        self.status_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason for the current status of the pipeline.</p>
     pub fn set_status_reason(
         mut self,
-        input: std::option::Option<crate::types::PipelineStatusReason>,
+        input: ::std::option::Option<crate::types::PipelineStatusReason>,
     ) -> Self {
         self.status_reason = input;
         self
     }
     /// <p>The Data Prepper pipeline configuration in YAML format.</p>
-    pub fn pipeline_configuration_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_configuration_body = Some(input.into());
+    pub fn pipeline_configuration_body(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_configuration_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Data Prepper pipeline configuration in YAML format.</p>
     pub fn set_pipeline_configuration_body(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_configuration_body = input;
         self
     }
     /// <p>The date and time when the pipeline was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the pipeline was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The date and time when the pipeline was last updated.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the pipeline was last updated.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self
@@ -225,29 +239,32 @@ impl PipelineBuilder {
     /// To override the contents of this collection use [`set_ingest_endpoint_urls`](Self::set_ingest_endpoint_urls).
     ///
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
-    pub fn ingest_endpoint_urls(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ingest_endpoint_urls(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.ingest_endpoint_urls.unwrap_or_default();
         v.push(input.into());
-        self.ingest_endpoint_urls = Some(v);
+        self.ingest_endpoint_urls = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ingestion endpoints for the pipeline, which you can send data to.</p>
     pub fn set_ingest_endpoint_urls(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ingest_endpoint_urls = input;
         self
     }
     /// <p>Key-value pairs that represent log publishing settings.</p>
     pub fn log_publishing_options(mut self, input: crate::types::LogPublishingOptions) -> Self {
-        self.log_publishing_options = Some(input);
+        self.log_publishing_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key-value pairs that represent log publishing settings.</p>
     pub fn set_log_publishing_options(
         mut self,
-        input: std::option::Option<crate::types::LogPublishingOptions>,
+        input: ::std::option::Option<crate::types::LogPublishingOptions>,
     ) -> Self {
         self.log_publishing_options = input;
         self
@@ -260,13 +277,13 @@ impl PipelineBuilder {
     pub fn vpc_endpoints(mut self, input: crate::types::VpcEndpoint) -> Self {
         let mut v = self.vpc_endpoints.unwrap_or_default();
         v.push(input);
-        self.vpc_endpoints = Some(v);
+        self.vpc_endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
     pub fn set_vpc_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
     ) -> Self {
         self.vpc_endpoints = input;
         self

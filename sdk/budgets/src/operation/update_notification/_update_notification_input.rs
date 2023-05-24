@@ -2,36 +2,36 @@
 
 /// <p> Request of UpdateNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the budget whose notification you want to update.</p>
     #[doc(hidden)]
-    pub budget_name: std::option::Option<std::string::String>,
+    pub budget_name: ::std::option::Option<::std::string::String>,
     /// <p>The previous notification that is associated with a budget.</p>
     #[doc(hidden)]
-    pub old_notification: std::option::Option<crate::types::Notification>,
+    pub old_notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The updated notification to be associated with a budget.</p>
     #[doc(hidden)]
-    pub new_notification: std::option::Option<crate::types::Notification>,
+    pub new_notification: ::std::option::Option<crate::types::Notification>,
 }
 impl UpdateNotificationInput {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the budget whose notification you want to update.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
     /// <p>The previous notification that is associated with a budget.</p>
-    pub fn old_notification(&self) -> std::option::Option<&crate::types::Notification> {
+    pub fn old_notification(&self) -> ::std::option::Option<&crate::types::Notification> {
         self.old_notification.as_ref()
     }
     /// <p>The updated notification to be associated with a budget.</p>
-    pub fn new_notification(&self) -> std::option::Option<&crate::types::Notification> {
+    pub fn new_notification(&self) -> ::std::option::Option<&crate::types::Notification> {
         self.new_notification.as_ref()
     }
 }
@@ -45,56 +45,58 @@ impl UpdateNotificationInput {
 
 /// A builder for [`UpdateNotificationInput`](crate::operation::update_notification::UpdateNotificationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateNotificationInputBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) budget_name: std::option::Option<std::string::String>,
-    pub(crate) old_notification: std::option::Option<crate::types::Notification>,
-    pub(crate) new_notification: std::option::Option<crate::types::Notification>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) budget_name: ::std::option::Option<::std::string::String>,
+    pub(crate) old_notification: ::std::option::Option<crate::types::Notification>,
+    pub(crate) new_notification: ::std::option::Option<crate::types::Notification>,
 }
 impl UpdateNotificationInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The name of the budget whose notification you want to update.</p>
-    pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.budget_name = Some(input.into());
+    pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the budget whose notification you want to update.</p>
-    pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }
     /// <p>The previous notification that is associated with a budget.</p>
     pub fn old_notification(mut self, input: crate::types::Notification) -> Self {
-        self.old_notification = Some(input);
+        self.old_notification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The previous notification that is associated with a budget.</p>
     pub fn set_old_notification(
         mut self,
-        input: std::option::Option<crate::types::Notification>,
+        input: ::std::option::Option<crate::types::Notification>,
     ) -> Self {
         self.old_notification = input;
         self
     }
     /// <p>The updated notification to be associated with a budget.</p>
     pub fn new_notification(mut self, input: crate::types::Notification) -> Self {
-        self.new_notification = Some(input);
+        self.new_notification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The updated notification to be associated with a budget.</p>
     pub fn set_new_notification(
         mut self,
-        input: std::option::Option<crate::types::Notification>,
+        input: ::std::option::Option<crate::types::Notification>,
     ) -> Self {
         self.new_notification = input;
         self
@@ -102,11 +104,11 @@ impl UpdateNotificationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNotificationInput`](crate::operation::update_notification::UpdateNotificationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_notification::UpdateNotificationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_notification::UpdateNotificationInput {
                 account_id: self.account_id,
                 budget_name: self.budget_name,

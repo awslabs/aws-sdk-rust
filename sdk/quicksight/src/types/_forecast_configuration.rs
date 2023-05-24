@@ -2,24 +2,24 @@
 
 /// <p>The forecast configuration that is used in a line chart's display properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastConfiguration {
     /// <p>The forecast properties setup of a forecast in the line chart.</p>
     #[doc(hidden)]
-    pub forecast_properties: std::option::Option<crate::types::TimeBasedForecastProperties>,
+    pub forecast_properties: ::std::option::Option<crate::types::TimeBasedForecastProperties>,
     /// <p>The forecast scenario of a forecast in the line chart.</p>
     #[doc(hidden)]
-    pub scenario: std::option::Option<crate::types::ForecastScenario>,
+    pub scenario: ::std::option::Option<crate::types::ForecastScenario>,
 }
 impl ForecastConfiguration {
     /// <p>The forecast properties setup of a forecast in the line chart.</p>
     pub fn forecast_properties(
         &self,
-    ) -> std::option::Option<&crate::types::TimeBasedForecastProperties> {
+    ) -> ::std::option::Option<&crate::types::TimeBasedForecastProperties> {
         self.forecast_properties.as_ref()
     }
     /// <p>The forecast scenario of a forecast in the line chart.</p>
-    pub fn scenario(&self) -> std::option::Option<&crate::types::ForecastScenario> {
+    pub fn scenario(&self) -> ::std::option::Option<&crate::types::ForecastScenario> {
         self.scenario.as_ref()
     }
 }
@@ -32,34 +32,37 @@ impl ForecastConfiguration {
 
 /// A builder for [`ForecastConfiguration`](crate::types::ForecastConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForecastConfigurationBuilder {
-    pub(crate) forecast_properties: std::option::Option<crate::types::TimeBasedForecastProperties>,
-    pub(crate) scenario: std::option::Option<crate::types::ForecastScenario>,
+    pub(crate) forecast_properties:
+        ::std::option::Option<crate::types::TimeBasedForecastProperties>,
+    pub(crate) scenario: ::std::option::Option<crate::types::ForecastScenario>,
 }
 impl ForecastConfigurationBuilder {
     /// <p>The forecast properties setup of a forecast in the line chart.</p>
     pub fn forecast_properties(mut self, input: crate::types::TimeBasedForecastProperties) -> Self {
-        self.forecast_properties = Some(input);
+        self.forecast_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The forecast properties setup of a forecast in the line chart.</p>
     pub fn set_forecast_properties(
         mut self,
-        input: std::option::Option<crate::types::TimeBasedForecastProperties>,
+        input: ::std::option::Option<crate::types::TimeBasedForecastProperties>,
     ) -> Self {
         self.forecast_properties = input;
         self
     }
     /// <p>The forecast scenario of a forecast in the line chart.</p>
     pub fn scenario(mut self, input: crate::types::ForecastScenario) -> Self {
-        self.scenario = Some(input);
+        self.scenario = ::std::option::Option::Some(input);
         self
     }
     /// <p>The forecast scenario of a forecast in the line chart.</p>
     pub fn set_scenario(
         mut self,
-        input: std::option::Option<crate::types::ForecastScenario>,
+        input: ::std::option::Option<crate::types::ForecastScenario>,
     ) -> Self {
         self.scenario = input;
         self

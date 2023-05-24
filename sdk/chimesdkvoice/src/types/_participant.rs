@@ -2,27 +2,27 @@
 
 /// <p>The phone number and proxy phone number for a participant in an Amazon Chime SDK Voice Connector proxy session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Participant {
     /// <p>The participant's phone number.</p>
     #[doc(hidden)]
-    pub phone_number: std::option::Option<std::string::String>,
+    pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The participant's proxy phone number.</p>
     #[doc(hidden)]
-    pub proxy_phone_number: std::option::Option<std::string::String>,
+    pub proxy_phone_number: ::std::option::Option<::std::string::String>,
 }
 impl Participant {
     /// <p>The participant's phone number.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
     /// <p>The participant's proxy phone number.</p>
-    pub fn proxy_phone_number(&self) -> std::option::Option<&str> {
+    pub fn proxy_phone_number(&self) -> ::std::option::Option<&str> {
         self.proxy_phone_number.as_deref()
     }
 }
-impl std::fmt::Debug for Participant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Participant {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Participant");
         formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("proxy_phone_number", &"*** Sensitive Data Redacted ***");
@@ -38,31 +38,34 @@ impl Participant {
 
 /// A builder for [`Participant`](crate::types::Participant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ParticipantBuilder {
-    pub(crate) phone_number: std::option::Option<std::string::String>,
-    pub(crate) proxy_phone_number: std::option::Option<std::string::String>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) proxy_phone_number: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantBuilder {
     /// <p>The participant's phone number.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number = Some(input.into());
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The participant's phone number.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
     /// <p>The participant's proxy phone number.</p>
-    pub fn proxy_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.proxy_phone_number = Some(input.into());
+    pub fn proxy_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.proxy_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The participant's proxy phone number.</p>
     pub fn set_proxy_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.proxy_phone_number = input;
         self
@@ -75,8 +78,8 @@ impl ParticipantBuilder {
         }
     }
 }
-impl std::fmt::Debug for ParticipantBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ParticipantBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ParticipantBuilder");
         formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("proxy_phone_number", &"*** Sensitive Data Redacted ***");

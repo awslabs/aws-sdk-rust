@@ -3,22 +3,22 @@
 /// <p>A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses.</p>
 /// <p>For information about setting up IP address filters, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReceiptIpFilter {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<crate::types::ReceiptFilterPolicy>,
+    pub policy: ::std::option::Option<crate::types::ReceiptFilterPolicy>,
     /// <p>A single IP address or a range of IP addresses that you want to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
     #[doc(hidden)]
-    pub cidr: std::option::Option<std::string::String>,
+    pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl ReceiptIpFilter {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::types::ReceiptFilterPolicy> {
+    pub fn policy(&self) -> ::std::option::Option<&crate::types::ReceiptFilterPolicy> {
         self.policy.as_ref()
     }
     /// <p>A single IP address or a range of IP addresses that you want to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
 }
@@ -31,32 +31,34 @@ impl ReceiptIpFilter {
 
 /// A builder for [`ReceiptIpFilter`](crate::types::ReceiptIpFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReceiptIpFilterBuilder {
-    pub(crate) policy: std::option::Option<crate::types::ReceiptFilterPolicy>,
-    pub(crate) cidr: std::option::Option<std::string::String>,
+    pub(crate) policy: ::std::option::Option<crate::types::ReceiptFilterPolicy>,
+    pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }
 impl ReceiptIpFilterBuilder {
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
     pub fn policy(mut self, input: crate::types::ReceiptFilterPolicy) -> Self {
-        self.policy = Some(input);
+        self.policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to block or allow incoming mail from the specified IP addresses.</p>
     pub fn set_policy(
         mut self,
-        input: std::option::Option<crate::types::ReceiptFilterPolicy>,
+        input: ::std::option::Option<crate::types::ReceiptFilterPolicy>,
     ) -> Self {
         self.policy = input;
         self
     }
     /// <p>A single IP address or a range of IP addresses that you want to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
-    pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cidr = Some(input.into());
+    pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single IP address or a range of IP addresses that you want to block or allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example of a single email address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For more information about CIDR notation, see <a href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
-    pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }

@@ -2,30 +2,30 @@
 
 /// <p>Container for response parameters to the <code><code>ListVpcEndpoints</code></code> operation. Returns a list containing summarized details of the VPC endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsOutput {
     /// <p>Information about each endpoint.</p>
     #[doc(hidden)]
     pub vpc_endpoint_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::VpcEndpointSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVpcEndpointsOutput {
     /// <p>Information about each endpoint.</p>
     pub fn vpc_endpoint_summary_list(
         &self,
-    ) -> std::option::Option<&[crate::types::VpcEndpointSummary]> {
+    ) -> ::std::option::Option<&[crate::types::VpcEndpointSummary]> {
         self.vpc_endpoint_summary_list.as_deref()
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListVpcEndpointsOutput {
+impl ::aws_http::request_id::RequestId for ListVpcEndpointsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,11 +40,13 @@ impl ListVpcEndpointsOutput {
 
 /// A builder for [`ListVpcEndpointsOutput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListVpcEndpointsOutputBuilder {
     pub(crate) vpc_endpoint_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::VpcEndpointSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVpcEndpointsOutputBuilder {
@@ -56,24 +58,24 @@ impl ListVpcEndpointsOutputBuilder {
     pub fn vpc_endpoint_summary_list(mut self, input: crate::types::VpcEndpointSummary) -> Self {
         let mut v = self.vpc_endpoint_summary_list.unwrap_or_default();
         v.push(input);
-        self.vpc_endpoint_summary_list = Some(v);
+        self.vpc_endpoint_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about each endpoint.</p>
     pub fn set_vpc_endpoint_summary_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcEndpointSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
     ) -> Self {
         self.vpc_endpoint_summary_list = input;
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetDefaultAuthorizer`](crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`authorizer_name(impl Into<String>)`](crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder::set_authorizer_name): <p>The authorizer name.</p>
+    ///   - [`authorizer_name(impl ::std::convert::Into<String>)`](crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder::authorizer_name) / [`set_authorizer_name(Option<String>)`](crate::operation::set_default_authorizer::builders::SetDefaultAuthorizerFluentBuilder::set_authorizer_name): <p>The authorizer name.</p>
     /// - On success, responds with [`SetDefaultAuthorizerOutput`](crate::operation::set_default_authorizer::SetDefaultAuthorizerOutput) with field(s):
     ///   - [`authorizer_name(Option<String>)`](crate::operation::set_default_authorizer::SetDefaultAuthorizerOutput::authorizer_name): <p>The authorizer name.</p>
     ///   - [`authorizer_arn(Option<String>)`](crate::operation::set_default_authorizer::SetDefaultAuthorizerOutput::authorizer_arn): <p>The authorizer ARN.</p>

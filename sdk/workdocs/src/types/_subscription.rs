@@ -2,29 +2,29 @@
 
 /// <p>Describes a subscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The ID of the subscription.</p>
     #[doc(hidden)]
-    pub subscription_id: std::option::Option<std::string::String>,
+    pub subscription_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the subscription.</p>
     #[doc(hidden)]
-    pub end_point: std::option::Option<std::string::String>,
+    pub end_point: ::std::option::Option<::std::string::String>,
     /// <p>The protocol of the subscription.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::SubscriptionProtocolType>,
+    pub protocol: ::std::option::Option<crate::types::SubscriptionProtocolType>,
 }
 impl Subscription {
     /// <p>The ID of the subscription.</p>
-    pub fn subscription_id(&self) -> std::option::Option<&str> {
+    pub fn subscription_id(&self) -> ::std::option::Option<&str> {
         self.subscription_id.as_deref()
     }
     /// <p>The endpoint of the subscription.</p>
-    pub fn end_point(&self) -> std::option::Option<&str> {
+    pub fn end_point(&self) -> ::std::option::Option<&str> {
         self.end_point.as_deref()
     }
     /// <p>The protocol of the subscription.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::SubscriptionProtocolType> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::SubscriptionProtocolType> {
         self.protocol.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl Subscription {
 
 /// A builder for [`Subscription`](crate::types::Subscription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubscriptionBuilder {
-    pub(crate) subscription_id: std::option::Option<std::string::String>,
-    pub(crate) end_point: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<crate::types::SubscriptionProtocolType>,
+    pub(crate) subscription_id: ::std::option::Option<::std::string::String>,
+    pub(crate) end_point: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<crate::types::SubscriptionProtocolType>,
 }
 impl SubscriptionBuilder {
     /// <p>The ID of the subscription.</p>
-    pub fn subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_id = Some(input.into());
+    pub fn subscription_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subscription.</p>
-    pub fn set_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subscription_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.subscription_id = input;
         self
     }
     /// <p>The endpoint of the subscription.</p>
-    pub fn end_point(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_point = Some(input.into());
+    pub fn end_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_point = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the subscription.</p>
-    pub fn set_end_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_point = input;
         self
     }
     /// <p>The protocol of the subscription.</p>
     pub fn protocol(mut self, input: crate::types::SubscriptionProtocolType) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protocol of the subscription.</p>
     pub fn set_protocol(
         mut self,
-        input: std::option::Option<crate::types::SubscriptionProtocolType>,
+        input: ::std::option::Option<crate::types::SubscriptionProtocolType>,
     ) -> Self {
         self.protocol = input;
         self

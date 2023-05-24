@@ -2,22 +2,22 @@
 
 /// <p>The channel-specific configurations for the journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyChannelSettings {
     /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
     #[doc(hidden)]
-    pub connect_campaign_arn: std::option::Option<std::string::String>,
+    pub connect_campaign_arn: ::std::option::Option<::std::string::String>,
     /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
     #[doc(hidden)]
-    pub connect_campaign_execution_role_arn: std::option::Option<std::string::String>,
+    pub connect_campaign_execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl JourneyChannelSettings {
     /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
-    pub fn connect_campaign_arn(&self) -> std::option::Option<&str> {
+    pub fn connect_campaign_arn(&self) -> ::std::option::Option<&str> {
         self.connect_campaign_arn.as_deref()
     }
     /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
-    pub fn connect_campaign_execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn connect_campaign_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.connect_campaign_execution_role_arn.as_deref()
     }
 }
@@ -30,21 +30,26 @@ impl JourneyChannelSettings {
 
 /// A builder for [`JourneyChannelSettings`](crate::types::JourneyChannelSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JourneyChannelSettingsBuilder {
-    pub(crate) connect_campaign_arn: std::option::Option<std::string::String>,
-    pub(crate) connect_campaign_execution_role_arn: std::option::Option<std::string::String>,
+    pub(crate) connect_campaign_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) connect_campaign_execution_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl JourneyChannelSettingsBuilder {
     /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
-    pub fn connect_campaign_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connect_campaign_arn = Some(input.into());
+    pub fn connect_campaign_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connect_campaign_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
     pub fn set_connect_campaign_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connect_campaign_arn = input;
         self
@@ -52,15 +57,15 @@ impl JourneyChannelSettingsBuilder {
     /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
     pub fn connect_campaign_execution_role_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.connect_campaign_execution_role_arn = Some(input.into());
+        self.connect_campaign_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
     pub fn set_connect_campaign_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connect_campaign_execution_role_arn = input;
         self

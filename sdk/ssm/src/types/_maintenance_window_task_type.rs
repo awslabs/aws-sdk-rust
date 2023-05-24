@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MaintenanceWindowTaskType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum MaintenanceWindowTaskType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MaintenanceWindowTaskType {
+impl ::std::convert::From<&str> for MaintenanceWindowTaskType {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATION" => MaintenanceWindowTaskType::Automation,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for MaintenanceWindowTaskType {
         }
     }
 }
-impl std::str::FromStr for MaintenanceWindowTaskType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MaintenanceWindowTaskType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MaintenanceWindowTaskType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MaintenanceWindowTaskType::from(s))
     }
 }
 impl MaintenanceWindowTaskType {
@@ -96,7 +96,7 @@ impl MaintenanceWindowTaskType {
         &["AUTOMATION", "LAMBDA", "RUN_COMMAND", "STEP_FUNCTIONS"]
     }
 }
-impl AsRef<str> for MaintenanceWindowTaskType {
+impl ::std::convert::AsRef<str> for MaintenanceWindowTaskType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

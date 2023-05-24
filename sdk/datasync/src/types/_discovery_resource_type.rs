@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DiscoveryResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DiscoveryResourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DiscoveryResourceType {
+impl ::std::convert::From<&str> for DiscoveryResourceType {
     fn from(s: &str) -> Self {
         match s {
             "CLUSTER" => DiscoveryResourceType::Cluster,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DiscoveryResourceType {
         }
     }
 }
-impl std::str::FromStr for DiscoveryResourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DiscoveryResourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DiscoveryResourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DiscoveryResourceType::from(s))
     }
 }
 impl DiscoveryResourceType {
@@ -91,7 +91,7 @@ impl DiscoveryResourceType {
         &["CLUSTER", "SVM", "VOLUME"]
     }
 }
-impl AsRef<str> for DiscoveryResourceType {
+impl ::std::convert::AsRef<str> for DiscoveryResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

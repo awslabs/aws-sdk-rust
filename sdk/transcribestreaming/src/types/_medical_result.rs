@@ -3,11 +3,11 @@
 /// <p>The <code>Result</code> associated with a <code></code>.</p>
 /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalResult {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
     #[doc(hidden)]
-    pub result_id: std::option::Option<std::string::String>,
+    pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     #[doc(hidden)]
     pub start_time: f64,
@@ -20,14 +20,14 @@ pub struct MedicalResult {
     pub is_partial: bool,
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
     #[doc(hidden)]
-    pub alternatives: std::option::Option<std::vec::Vec<crate::types::MedicalAlternative>>,
+    pub alternatives: ::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>>,
     /// <p>Indicates the channel identified for the <code>Result</code>.</p>
     #[doc(hidden)]
-    pub channel_id: std::option::Option<std::string::String>,
+    pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl MedicalResult {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> ::std::option::Option<&str> {
         self.result_id.as_deref()
     }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
@@ -44,11 +44,11 @@ impl MedicalResult {
         self.is_partial
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
-    pub fn alternatives(&self) -> std::option::Option<&[crate::types::MedicalAlternative]> {
+    pub fn alternatives(&self) -> ::std::option::Option<&[crate::types::MedicalAlternative]> {
         self.alternatives.as_deref()
     }
     /// <p>Indicates the channel identified for the <code>Result</code>.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<&str> {
         self.channel_id.as_deref()
     }
 }
@@ -61,55 +61,58 @@ impl MedicalResult {
 
 /// A builder for [`MedicalResult`](crate::types::MedicalResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MedicalResultBuilder {
-    pub(crate) result_id: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<f64>,
-    pub(crate) end_time: std::option::Option<f64>,
-    pub(crate) is_partial: std::option::Option<bool>,
-    pub(crate) alternatives: std::option::Option<std::vec::Vec<crate::types::MedicalAlternative>>,
-    pub(crate) channel_id: std::option::Option<std::string::String>,
+    pub(crate) result_id: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<f64>,
+    pub(crate) end_time: ::std::option::Option<f64>,
+    pub(crate) is_partial: ::std::option::Option<bool>,
+    pub(crate) alternatives:
+        ::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>>,
+    pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }
 impl MedicalResultBuilder {
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
-    pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.result_id = Some(input.into());
+    pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.result_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides a unique identifier for the <code>Result</code>.</p>
-    pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_id = input;
         self
     }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
     pub fn start_time(mut self, input: f64) -> Self {
-        self.start_time = Some(input);
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time, in milliseconds, of the <code>Result</code>.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
     pub fn end_time(mut self, input: f64) -> Self {
-        self.end_time = Some(input);
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end time, in milliseconds, of the <code>Result</code>.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>Indicates if the segment is complete.</p>
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
     pub fn is_partial(mut self, input: bool) -> Self {
-        self.is_partial = Some(input);
+        self.is_partial = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if the segment is complete.</p>
     /// <p>If <code>IsPartial</code> is <code>true</code>, the segment is not complete. If <code>IsPartial</code> is <code>false</code>, the segment is complete.</p>
-    pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_partial(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_partial = input;
         self
     }
@@ -121,24 +124,24 @@ impl MedicalResultBuilder {
     pub fn alternatives(mut self, input: crate::types::MedicalAlternative) -> Self {
         let mut v = self.alternatives.unwrap_or_default();
         v.push(input);
-        self.alternatives = Some(v);
+        self.alternatives = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
     pub fn set_alternatives(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MedicalAlternative>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalAlternative>>,
     ) -> Self {
         self.alternatives = input;
         self
     }
     /// <p>Indicates the channel identified for the <code>Result</code>.</p>
-    pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_id = Some(input.into());
+    pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the channel identified for the <code>Result</code>.</p>
-    pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
     }

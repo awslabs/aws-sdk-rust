@@ -2,22 +2,22 @@
 
 /// <p>Additional run options you can specify for an evaluation run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityEvaluationRunAdditionalRunOptions {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
     #[doc(hidden)]
-    pub cloud_watch_metrics_enabled: std::option::Option<bool>,
+    pub cloud_watch_metrics_enabled: ::std::option::Option<bool>,
     /// <p>Prefix for Amazon S3 to store results.</p>
     #[doc(hidden)]
-    pub results_s3_prefix: std::option::Option<std::string::String>,
+    pub results_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityEvaluationRunAdditionalRunOptions {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
-    pub fn cloud_watch_metrics_enabled(&self) -> std::option::Option<bool> {
+    pub fn cloud_watch_metrics_enabled(&self) -> ::std::option::Option<bool> {
         self.cloud_watch_metrics_enabled
     }
     /// <p>Prefix for Amazon S3 to store results.</p>
-    pub fn results_s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn results_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.results_s3_prefix.as_deref()
     }
 }
@@ -31,31 +31,36 @@ impl DataQualityEvaluationRunAdditionalRunOptions {
 
 /// A builder for [`DataQualityEvaluationRunAdditionalRunOptions`](crate::types::DataQualityEvaluationRunAdditionalRunOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataQualityEvaluationRunAdditionalRunOptionsBuilder {
-    pub(crate) cloud_watch_metrics_enabled: std::option::Option<bool>,
-    pub(crate) results_s3_prefix: std::option::Option<std::string::String>,
+    pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,
+    pub(crate) results_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
     pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
-        self.cloud_watch_metrics_enabled = Some(input);
+        self.cloud_watch_metrics_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not to enable CloudWatch metrics.</p>
-    pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cloud_watch_metrics_enabled = input;
         self
     }
     /// <p>Prefix for Amazon S3 to store results.</p>
-    pub fn results_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.results_s3_prefix = Some(input.into());
+    pub fn results_s3_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.results_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Prefix for Amazon S3 to store results.</p>
     pub fn set_results_s3_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.results_s3_prefix = input;
         self

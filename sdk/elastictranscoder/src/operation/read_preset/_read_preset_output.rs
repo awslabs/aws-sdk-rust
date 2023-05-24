@@ -2,20 +2,20 @@
 
 /// <p>The <code>ReadPresetResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
     #[doc(hidden)]
-    pub preset: std::option::Option<crate::types::Preset>,
+    pub preset: ::std::option::Option<crate::types::Preset>,
     _request_id: Option<String>,
 }
 impl ReadPresetOutput {
     /// <p>A section of the response body that provides information about the preset.</p>
-    pub fn preset(&self) -> std::option::Option<&crate::types::Preset> {
+    pub fn preset(&self) -> ::std::option::Option<&crate::types::Preset> {
         self.preset.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ReadPresetOutput {
+impl ::aws_http::request_id::RequestId for ReadPresetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl ReadPresetOutput {
 
 /// A builder for [`ReadPresetOutput`](crate::operation::read_preset::ReadPresetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReadPresetOutputBuilder {
-    pub(crate) preset: std::option::Option<crate::types::Preset>,
+    pub(crate) preset: ::std::option::Option<crate::types::Preset>,
     _request_id: Option<String>,
 }
 impl ReadPresetOutputBuilder {
     /// <p>A section of the response body that provides information about the preset.</p>
     pub fn preset(mut self, input: crate::types::Preset) -> Self {
-        self.preset = Some(input);
+        self.preset = ::std::option::Option::Some(input);
         self
     }
     /// <p>A section of the response body that provides information about the preset.</p>
-    pub fn set_preset(mut self, input: std::option::Option<crate::types::Preset>) -> Self {
+    pub fn set_preset(mut self, input: ::std::option::Option<crate::types::Preset>) -> Self {
         self.preset = input;
         self
     }

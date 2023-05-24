@@ -2,14 +2,14 @@
 
 /// <p>Details about the configuration for encryption at rest for the OpenSearch domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
     /// <p>Whether encryption at rest is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
     /// <p>The KMS key ID.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
     /// <p>Whether encryption at rest is enabled.</p>
@@ -17,7 +17,7 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
         self.enabled
     }
     /// <p>The KMS key ID.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -32,29 +32,31 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
 
 /// A builder for [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
     /// <p>Whether encryption at rest is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether encryption at rest is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The KMS key ID.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key ID.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }

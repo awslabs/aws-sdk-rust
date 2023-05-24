@@ -6,56 +6,59 @@ pub use crate::operation::update_storage::_update_storage_input::UpdateStorageIn
 /// Fluent builder constructing a request to `UpdateStorage`.
 ///
 /// Updates cluster broker volume size (or) sets cluster storage mode to TIERED.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStorageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_storage::builders::UpdateStorageInputBuilder,
 }
 impl UpdateStorageFluentBuilder {
     /// Creates a new `UpdateStorage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_storage::UpdateStorage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_storage::UpdateStorageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_storage::UpdateStorageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_storage::UpdateStorageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_storage::UpdateStorageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_storage::UpdateStorageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,35 @@ impl UpdateStorageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_storage::UpdateStorageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_storage::UpdateStorageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_storage::UpdateStorageError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn current_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.current_version(input.into());
         self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_current_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
@@ -102,7 +111,7 @@ impl UpdateStorageFluentBuilder {
     /// <p>EBS volume provisioned throughput information.</p>
     pub fn set_provisioned_throughput(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedThroughput>,
+        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
     ) -> Self {
         self.inner = self.inner.set_provisioned_throughput(input);
         self
@@ -115,7 +124,7 @@ impl UpdateStorageFluentBuilder {
     /// <p>Controls storage mode for supported storage tiers.</p>
     pub fn set_storage_mode(
         mut self,
-        input: std::option::Option<crate::types::StorageMode>,
+        input: ::std::option::Option<crate::types::StorageMode>,
     ) -> Self {
         self.inner = self.inner.set_storage_mode(input);
         self
@@ -126,7 +135,7 @@ impl UpdateStorageFluentBuilder {
         self
     }
     /// <p>size of the EBS volume to update.</p>
-    pub fn set_volume_size_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_volume_size_gb(input);
         self
     }

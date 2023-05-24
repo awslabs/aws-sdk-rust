@@ -2,20 +2,20 @@
 
 /// <p>RetrieveTapeArchiveOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetrieveTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
     #[doc(hidden)]
-    pub tape_arn: std::option::Option<std::string::String>,
+    pub tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetrieveTapeArchiveOutput {
     /// <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
-    pub fn tape_arn(&self) -> std::option::Option<&str> {
+    pub fn tape_arn(&self) -> ::std::option::Option<&str> {
         self.tape_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RetrieveTapeArchiveOutput {
+impl ::aws_http::request_id::RequestId for RetrieveTapeArchiveOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,21 @@ impl RetrieveTapeArchiveOutput {
 
 /// A builder for [`RetrieveTapeArchiveOutput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetrieveTapeArchiveOutputBuilder {
-    pub(crate) tape_arn: std::option::Option<std::string::String>,
+    pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetrieveTapeArchiveOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
-    pub fn tape_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tape_arn = Some(input.into());
+    pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tape_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
-    pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tape_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_arn = input;
         self
     }

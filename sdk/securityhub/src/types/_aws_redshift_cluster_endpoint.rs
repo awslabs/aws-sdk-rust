@@ -2,18 +2,18 @@
 
 /// <p>The connection endpoint for an Amazon Redshift cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterEndpoint {
     /// <p>The DNS address of the cluster.</p>
     #[doc(hidden)]
-    pub address: std::option::Option<std::string::String>,
+    pub address: ::std::option::Option<::std::string::String>,
     /// <p>The port that the database engine listens on.</p>
     #[doc(hidden)]
     pub port: i32,
 }
 impl AwsRedshiftClusterEndpoint {
     /// <p>The DNS address of the cluster.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The port that the database engine listens on.</p>
@@ -30,29 +30,31 @@ impl AwsRedshiftClusterEndpoint {
 
 /// A builder for [`AwsRedshiftClusterEndpoint`](crate::types::AwsRedshiftClusterEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRedshiftClusterEndpointBuilder {
-    pub(crate) address: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
+    pub(crate) address: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
 }
 impl AwsRedshiftClusterEndpointBuilder {
     /// <p>The DNS address of the cluster.</p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.address = Some(input.into());
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS address of the cluster.</p>
-    pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
     }
     /// <p>The port that the database engine listens on.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port that the database engine listens on.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }

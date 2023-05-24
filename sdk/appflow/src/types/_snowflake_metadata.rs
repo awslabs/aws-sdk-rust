@@ -2,15 +2,15 @@
 
 /// <p> The connector metadata specific to Snowflake. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeMetadata {
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
     #[doc(hidden)]
-    pub supported_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub supported_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnowflakeMetadata {
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
-    pub fn supported_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_regions.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl SnowflakeMetadata {
 
 /// A builder for [`SnowflakeMetadata`](crate::types::SnowflakeMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnowflakeMetadataBuilder {
-    pub(crate) supported_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) supported_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SnowflakeMetadataBuilder {
     /// Appends an item to `supported_regions`.
@@ -33,16 +35,19 @@ impl SnowflakeMetadataBuilder {
     /// To override the contents of this collection use [`set_supported_regions`](Self::set_supported_regions).
     ///
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
-    pub fn supported_regions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn supported_regions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.supported_regions.unwrap_or_default();
         v.push(input.into());
-        self.supported_regions = Some(v);
+        self.supported_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p> Specifies the supported Amazon Web Services Regions when using Snowflake. </p>
     pub fn set_supported_regions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.supported_regions = input;
         self

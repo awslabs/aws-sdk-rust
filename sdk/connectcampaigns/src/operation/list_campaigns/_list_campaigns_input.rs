@@ -2,29 +2,29 @@
 
 /// ListCampaignsRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCampaignsInput {
     /// The maximum number of results to return per page.
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
     /// The token for the next set of results.
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// Filter model by type
     #[doc(hidden)]
-    pub filters: std::option::Option<crate::types::CampaignFilters>,
+    pub filters: ::std::option::Option<crate::types::CampaignFilters>,
 }
 impl ListCampaignsInput {
     /// The maximum number of results to return per page.
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// The token for the next set of results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// Filter model by type
-    pub fn filters(&self) -> std::option::Option<&crate::types::CampaignFilters> {
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::CampaignFilters> {
         self.filters.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl ListCampaignsInput {
 
 /// A builder for [`ListCampaignsInput`](crate::operation::list_campaigns::ListCampaignsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListCampaignsInputBuilder {
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<crate::types::CampaignFilters>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<crate::types::CampaignFilters>,
 }
 impl ListCampaignsInputBuilder {
     /// The maximum number of results to return per page.
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// The maximum number of results to return per page.
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// The token for the next set of results.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// The token for the next set of results.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Filter model by type
     pub fn filters(mut self, input: crate::types::CampaignFilters) -> Self {
-        self.filters = Some(input);
+        self.filters = ::std::option::Option::Some(input);
         self
     }
     /// Filter model by type
     pub fn set_filters(
         mut self,
-        input: std::option::Option<crate::types::CampaignFilters>,
+        input: ::std::option::Option<crate::types::CampaignFilters>,
     ) -> Self {
         self.filters = input;
         self
@@ -80,11 +82,11 @@ impl ListCampaignsInputBuilder {
     /// Consumes the builder and constructs a [`ListCampaignsInput`](crate::operation::list_campaigns::ListCampaignsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_campaigns::ListCampaignsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_campaigns::ListCampaignsInput {
+        ::std::result::Result::Ok(crate::operation::list_campaigns::ListCampaignsInput {
             max_results: self.max_results,
             next_token: self.next_token,
             filters: self.filters,

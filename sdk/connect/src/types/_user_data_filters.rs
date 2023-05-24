@@ -2,43 +2,43 @@
 
 /// <p>A filter for the user data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDataFilters {
     /// <p>A list of up to 100 queues or ARNs.</p>
     #[doc(hidden)]
-    pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     #[doc(hidden)]
-    pub contact_filter: std::option::Option<crate::types::ContactFilter>,
+    pub contact_filter: ::std::option::Option<crate::types::ContactFilter>,
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
     #[doc(hidden)]
-    pub routing_profiles: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of up to 100 agent IDs or ARNs.</p>
     #[doc(hidden)]
-    pub agents: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub agents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A UserHierarchyGroup ID or ARN.</p>
     #[doc(hidden)]
-    pub user_hierarchy_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub user_hierarchy_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UserDataFilters {
     /// <p>A list of up to 100 queues or ARNs.</p>
-    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queues(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.queues.as_deref()
     }
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
-    pub fn contact_filter(&self) -> std::option::Option<&crate::types::ContactFilter> {
+    pub fn contact_filter(&self) -> ::std::option::Option<&crate::types::ContactFilter> {
         self.contact_filter.as_ref()
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn routing_profiles(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn routing_profiles(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.routing_profiles.as_deref()
     }
     /// <p>A list of up to 100 agent IDs or ARNs.</p>
-    pub fn agents(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agents(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.agents.as_deref()
     }
     /// <p>A UserHierarchyGroup ID or ARN.</p>
-    pub fn user_hierarchy_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_hierarchy_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.user_hierarchy_groups.as_deref()
     }
 }
@@ -51,13 +51,15 @@ impl UserDataFilters {
 
 /// A builder for [`UserDataFilters`](crate::types::UserDataFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserDataFiltersBuilder {
-    pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) contact_filter: std::option::Option<crate::types::ContactFilter>,
-    pub(crate) routing_profiles: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) agents: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) user_hierarchy_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) contact_filter: ::std::option::Option<crate::types::ContactFilter>,
+    pub(crate) routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) agents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user_hierarchy_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UserDataFiltersBuilder {
     /// Appends an item to `queues`.
@@ -65,29 +67,29 @@ impl UserDataFiltersBuilder {
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
     ///
     /// <p>A list of up to 100 queues or ARNs.</p>
-    pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn queues(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.queues.unwrap_or_default();
         v.push(input.into());
-        self.queues = Some(v);
+        self.queues = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 100 queues or ARNs.</p>
     pub fn set_queues(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.queues = input;
         self
     }
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn contact_filter(mut self, input: crate::types::ContactFilter) -> Self {
-        self.contact_filter = Some(input);
+        self.contact_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>A filter for the user data based on the contact information that is associated to the user. It contains a list of contact states. </p>
     pub fn set_contact_filter(
         mut self,
-        input: std::option::Option<crate::types::ContactFilter>,
+        input: ::std::option::Option<crate::types::ContactFilter>,
     ) -> Self {
         self.contact_filter = input;
         self
@@ -97,16 +99,19 @@ impl UserDataFiltersBuilder {
     /// To override the contents of this collection use [`set_routing_profiles`](Self::set_routing_profiles).
     ///
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn routing_profiles(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn routing_profiles(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.routing_profiles.unwrap_or_default();
         v.push(input.into());
-        self.routing_profiles = Some(v);
+        self.routing_profiles = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
     pub fn set_routing_profiles(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.routing_profiles = input;
         self
@@ -116,16 +121,16 @@ impl UserDataFiltersBuilder {
     /// To override the contents of this collection use [`set_agents`](Self::set_agents).
     ///
     /// <p>A list of up to 100 agent IDs or ARNs.</p>
-    pub fn agents(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn agents(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agents.unwrap_or_default();
         v.push(input.into());
-        self.agents = Some(v);
+        self.agents = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 100 agent IDs or ARNs.</p>
     pub fn set_agents(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.agents = input;
         self
@@ -135,16 +140,19 @@ impl UserDataFiltersBuilder {
     /// To override the contents of this collection use [`set_user_hierarchy_groups`](Self::set_user_hierarchy_groups).
     ///
     /// <p>A UserHierarchyGroup ID or ARN.</p>
-    pub fn user_hierarchy_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_hierarchy_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.user_hierarchy_groups.unwrap_or_default();
         v.push(input.into());
-        self.user_hierarchy_groups = Some(v);
+        self.user_hierarchy_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A UserHierarchyGroup ID or ARN.</p>
     pub fn set_user_hierarchy_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.user_hierarchy_groups = input;
         self

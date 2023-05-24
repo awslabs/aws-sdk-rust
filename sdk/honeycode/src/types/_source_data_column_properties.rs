@@ -2,7 +2,7 @@
 
 /// <p>An object that contains the properties for importing data to a specific column in a table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceDataColumnProperties {
     /// <p>The index of the column in the input file.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl SourceDataColumnProperties {
 
 /// A builder for [`SourceDataColumnProperties`](crate::types::SourceDataColumnProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceDataColumnPropertiesBuilder {
-    pub(crate) column_index: std::option::Option<i32>,
+    pub(crate) column_index: ::std::option::Option<i32>,
 }
 impl SourceDataColumnPropertiesBuilder {
     /// <p>The index of the column in the input file.</p>
     pub fn column_index(mut self, input: i32) -> Self {
-        self.column_index = Some(input);
+        self.column_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index of the column in the input file.</p>
-    pub fn set_column_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_column_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column_index = input;
         self
     }

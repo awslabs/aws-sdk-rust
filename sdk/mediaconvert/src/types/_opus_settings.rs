@@ -2,29 +2,29 @@
 
 /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value OPUS.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpusSettings {
     /// Optional. Specify the average bitrate in bits per second. Valid values are multiples of 8000, from 32000 through 192000. The default value is 96000, which we recommend for quality and bandwidth.
     #[doc(hidden)]
-    pub bitrate: std::option::Option<i32>,
+    pub bitrate: ::std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
     #[doc(hidden)]
-    pub channels: std::option::Option<i32>,
+    pub channels: ::std::option::Option<i32>,
     /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     #[doc(hidden)]
-    pub sample_rate: std::option::Option<i32>,
+    pub sample_rate: ::std::option::Option<i32>,
 }
 impl OpusSettings {
     /// Optional. Specify the average bitrate in bits per second. Valid values are multiples of 8000, from 32000 through 192000. The default value is 96000, which we recommend for quality and bandwidth.
-    pub fn bitrate(&self) -> std::option::Option<i32> {
+    pub fn bitrate(&self) -> ::std::option::Option<i32> {
         self.bitrate
     }
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
-    pub fn channels(&self) -> std::option::Option<i32> {
+    pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
     /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
-    pub fn sample_rate(&self) -> std::option::Option<i32> {
+    pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
     }
 }
@@ -37,40 +37,42 @@ impl OpusSettings {
 
 /// A builder for [`OpusSettings`](crate::types::OpusSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpusSettingsBuilder {
-    pub(crate) bitrate: std::option::Option<i32>,
-    pub(crate) channels: std::option::Option<i32>,
-    pub(crate) sample_rate: std::option::Option<i32>,
+    pub(crate) bitrate: ::std::option::Option<i32>,
+    pub(crate) channels: ::std::option::Option<i32>,
+    pub(crate) sample_rate: ::std::option::Option<i32>,
 }
 impl OpusSettingsBuilder {
     /// Optional. Specify the average bitrate in bits per second. Valid values are multiples of 8000, from 32000 through 192000. The default value is 96000, which we recommend for quality and bandwidth.
     pub fn bitrate(mut self, input: i32) -> Self {
-        self.bitrate = Some(input);
+        self.bitrate = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Specify the average bitrate in bits per second. Valid values are multiples of 8000, from 32000 through 192000. The default value is 96000, which we recommend for quality and bandwidth.
-    pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bitrate = input;
         self
     }
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
     pub fn channels(mut self, input: i32) -> Self {
-        self.channels = Some(input);
+        self.channels = ::std::option::Option::Some(input);
         self
     }
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
-    pub fn set_channels(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels = input;
         self
     }
     /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
     pub fn sample_rate(mut self, input: i32) -> Self {
-        self.sample_rate = Some(input);
+        self.sample_rate = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
-    pub fn set_sample_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
     }

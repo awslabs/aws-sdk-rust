@@ -7,29 +7,29 @@ pub use crate::operation::update_call_analytics_category::_update_call_analytics
 ///
 /// <p>Updates the specified Call Analytics category with new rules. Note that the <code>UpdateCallAnalyticsCategory</code> operation overwrites all existing rules contained in the specified category. You cannot append additional rules onto an existing category.</p>
 /// <p>To create a new category, see .</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCallAnalyticsCategoryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_call_analytics_category::builders::UpdateCallAnalyticsCategoryInputBuilder,
 }
 impl UpdateCallAnalyticsCategoryFluentBuilder {
     /// Creates a new `UpdateCallAnalyticsCategory`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategory,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
         >,
     > {
@@ -37,30 +37,33 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,27 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
-    pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn category_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.category_name(input.into());
         self
     }
     /// <p>The name of the Call Analytics category you want to update. Category names are case sensitive.</p>
-    pub fn set_category_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_category_name(input);
         self
     }
@@ -103,7 +112,7 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
     /// <p>The rules used for the updated Call Analytics category. The rules you provide in this field replace the ones that are currently being used in the specified category.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
@@ -114,7 +123,7 @@ impl UpdateCallAnalyticsCategoryFluentBuilder {
         self
     }
     /// <p>Choose whether you want to update a real-time or a post-call category. The input type you specify must match the input type specified when the category was created. For example, if you created a category with the <code>POST_CALL</code> input type, you must use <code>POST_CALL</code> as the input type when updating this category.</p>
-    pub fn set_input_type(mut self, input: std::option::Option<crate::types::InputType>) -> Self {
+    pub fn set_input_type(mut self, input: ::std::option::Option<crate::types::InputType>) -> Self {
         self.inner = self.inner.set_input_type(input);
         self
     }

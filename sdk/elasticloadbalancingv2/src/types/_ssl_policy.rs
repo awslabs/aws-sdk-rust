@@ -2,36 +2,37 @@
 
 /// <p>Information about a policy used for SSL negotiation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SslPolicy {
     /// <p>The protocols.</p>
     #[doc(hidden)]
-    pub ssl_protocols: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ssl_protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ciphers.</p>
     #[doc(hidden)]
-    pub ciphers: std::option::Option<std::vec::Vec<crate::types::Cipher>>,
+    pub ciphers: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>,
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The supported load balancers. </p>
     #[doc(hidden)]
-    pub supported_load_balancer_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub supported_load_balancer_types:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SslPolicy {
     /// <p>The protocols.</p>
-    pub fn ssl_protocols(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ssl_protocols(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ssl_protocols.as_deref()
     }
     /// <p>The ciphers.</p>
-    pub fn ciphers(&self) -> std::option::Option<&[crate::types::Cipher]> {
+    pub fn ciphers(&self) -> ::std::option::Option<&[crate::types::Cipher]> {
         self.ciphers.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The supported load balancers. </p>
-    pub fn supported_load_balancer_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_load_balancer_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_load_balancer_types.as_deref()
     }
 }
@@ -44,13 +45,15 @@ impl SslPolicy {
 
 /// A builder for [`SslPolicy`](crate::types::SslPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SslPolicyBuilder {
-    pub(crate) ssl_protocols: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ciphers: std::option::Option<std::vec::Vec<crate::types::Cipher>>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) ssl_protocols: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ciphers: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) supported_load_balancer_types:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SslPolicyBuilder {
     /// Appends an item to `ssl_protocols`.
@@ -58,16 +61,19 @@ impl SslPolicyBuilder {
     /// To override the contents of this collection use [`set_ssl_protocols`](Self::set_ssl_protocols).
     ///
     /// <p>The protocols.</p>
-    pub fn ssl_protocols(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ssl_protocols(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.ssl_protocols.unwrap_or_default();
         v.push(input.into());
-        self.ssl_protocols = Some(v);
+        self.ssl_protocols = ::std::option::Option::Some(v);
         self
     }
     /// <p>The protocols.</p>
     pub fn set_ssl_protocols(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ssl_protocols = input;
         self
@@ -80,24 +86,24 @@ impl SslPolicyBuilder {
     pub fn ciphers(mut self, input: crate::types::Cipher) -> Self {
         let mut v = self.ciphers.unwrap_or_default();
         v.push(input);
-        self.ciphers = Some(v);
+        self.ciphers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ciphers.</p>
     pub fn set_ciphers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Cipher>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Cipher>>,
     ) -> Self {
         self.ciphers = input;
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -106,16 +112,19 @@ impl SslPolicyBuilder {
     /// To override the contents of this collection use [`set_supported_load_balancer_types`](Self::set_supported_load_balancer_types).
     ///
     /// <p> The supported load balancers. </p>
-    pub fn supported_load_balancer_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn supported_load_balancer_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.supported_load_balancer_types.unwrap_or_default();
         v.push(input.into());
-        self.supported_load_balancer_types = Some(v);
+        self.supported_load_balancer_types = ::std::option::Option::Some(v);
         self
     }
     /// <p> The supported load balancers. </p>
     pub fn set_supported_load_balancer_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.supported_load_balancer_types = input;
         self

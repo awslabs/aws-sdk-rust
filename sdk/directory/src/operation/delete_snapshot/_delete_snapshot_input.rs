@@ -2,15 +2,15 @@
 
 /// <p>Contains the inputs for the <code>DeleteSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotInput {
     /// <p>The identifier of the directory snapshot to be deleted.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotInput {
     /// <p>The identifier of the directory snapshot to be deleted.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl DeleteSnapshotInput {
 
 /// A builder for [`DeleteSnapshotInput`](crate::operation::delete_snapshot::DeleteSnapshotInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteSnapshotInputBuilder {
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotInputBuilder {
     /// <p>The identifier of the directory snapshot to be deleted.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the directory snapshot to be deleted.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteSnapshotInput`](crate::operation::delete_snapshot::DeleteSnapshotInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_snapshot::DeleteSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_snapshot::DeleteSnapshotInput {
+        ::std::result::Result::Ok(crate::operation::delete_snapshot::DeleteSnapshotInput {
             snapshot_id: self.snapshot_id,
         })
     }

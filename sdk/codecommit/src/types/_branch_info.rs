@@ -2,22 +2,22 @@
 
 /// <p>Returns information about a branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BranchInfo {
     /// <p>The name of the branch.</p>
     #[doc(hidden)]
-    pub branch_name: std::option::Option<std::string::String>,
+    pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last commit made to the branch.</p>
     #[doc(hidden)]
-    pub commit_id: std::option::Option<std::string::String>,
+    pub commit_id: ::std::option::Option<::std::string::String>,
 }
 impl BranchInfo {
     /// <p>The name of the branch.</p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<&str> {
         self.branch_name.as_deref()
     }
     /// <p>The ID of the last commit made to the branch.</p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> ::std::option::Option<&str> {
         self.commit_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl BranchInfo {
 
 /// A builder for [`BranchInfo`](crate::types::BranchInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BranchInfoBuilder {
-    pub(crate) branch_name: std::option::Option<std::string::String>,
-    pub(crate) commit_id: std::option::Option<std::string::String>,
+    pub(crate) branch_name: ::std::option::Option<::std::string::String>,
+    pub(crate) commit_id: ::std::option::Option<::std::string::String>,
 }
 impl BranchInfoBuilder {
     /// <p>The name of the branch.</p>
-    pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.branch_name = Some(input.into());
+    pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the branch.</p>
-    pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
     }
     /// <p>The ID of the last commit made to the branch.</p>
-    pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.commit_id = Some(input.into());
+    pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the last commit made to the branch.</p>
-    pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
     }

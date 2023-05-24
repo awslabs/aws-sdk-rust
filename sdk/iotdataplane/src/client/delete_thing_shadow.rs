@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteThingShadow`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(impl Into<String>)`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::shadow_name) / [`set_shadow_name(Option<String>)`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::set_shadow_name): <p>The name of the shadow.</p>
+    ///   - [`thing_name(impl ::std::convert::Into<String>)`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::set_thing_name): <p>The name of the thing.</p>
+    ///   - [`shadow_name(impl ::std::convert::Into<String>)`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::shadow_name) / [`set_shadow_name(Option<String>)`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowFluentBuilder::set_shadow_name): <p>The name of the shadow.</p>
     /// - On success, responds with [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput) with field(s):
     ///   - [`payload(Option<Blob>)`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput::payload): <p>The state information, in JSON format.</p>
     /// - On failure, responds with [`SdkError<DeleteThingShadowError>`](crate::operation::delete_thing_shadow::DeleteThingShadowError)

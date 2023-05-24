@@ -2,34 +2,35 @@
 
 /// <p>A tuple that provides information about an error that caused a cluster to terminate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorDetail {
     /// <p>The name or code associated with the error.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>A list of key value pairs that provides contextual information about why an error occured.</p>
     #[doc(hidden)]
-    pub error_data: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub error_data: ::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
     /// <p>A message that describes the error.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDetail {
     /// <p>The name or code associated with the error.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>A list of key value pairs that provides contextual information about why an error occured.</p>
     pub fn error_data(
         &self,
-    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
-    {
+    ) -> ::std::option::Option<
+        &[::std::collections::HashMap<::std::string::String, ::std::string::String>],
+    > {
         self.error_data.as_deref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -42,22 +43,24 @@ impl ErrorDetail {
 
 /// A builder for [`ErrorDetail`](crate::types::ErrorDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ErrorDetailBuilder {
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_data: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_data: ::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorDetailBuilder {
     /// <p>The name or code associated with the error.</p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or code associated with the error.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
@@ -68,30 +71,38 @@ impl ErrorDetailBuilder {
     /// <p>A list of key value pairs that provides contextual information about why an error occured.</p>
     pub fn error_data(
         mut self,
-        input: std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     ) -> Self {
         let mut v = self.error_data.unwrap_or_default();
         v.push(input);
-        self.error_data = Some(v);
+        self.error_data = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of key value pairs that provides contextual information about why an error occured.</p>
     pub fn set_error_data(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<
+                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.error_data = input;
         self
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that describes the error.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

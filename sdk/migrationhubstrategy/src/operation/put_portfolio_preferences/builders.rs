@@ -6,30 +6,30 @@ pub use crate::operation::put_portfolio_preferences::_put_portfolio_preferences_
 /// Fluent builder constructing a request to `PutPortfolioPreferences`.
 ///
 /// <p> Saves the specified migration and modernization preferences. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPortfolioPreferencesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::put_portfolio_preferences::builders::PutPortfolioPreferencesInputBuilder,
 }
 impl PutPortfolioPreferencesFluentBuilder {
     /// Creates a new `PutPortfolioPreferences`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_portfolio_preferences::PutPortfolioPreferences,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PutPortfolioPreferencesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl PutPortfolioPreferencesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_portfolio_preferences::PutPortfolioPreferencesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_portfolio_preferences::PutPortfolioPreferencesError,
         >,
     > {
@@ -92,7 +95,7 @@ impl PutPortfolioPreferencesFluentBuilder {
     /// <p> The rank of the business goals based on priority. </p>
     pub fn set_prioritize_business_goals(
         mut self,
-        input: std::option::Option<crate::types::PrioritizeBusinessGoals>,
+        input: ::std::option::Option<crate::types::PrioritizeBusinessGoals>,
     ) -> Self {
         self.inner = self.inner.set_prioritize_business_goals(input);
         self
@@ -105,7 +108,7 @@ impl PutPortfolioPreferencesFluentBuilder {
     /// <p> The transformation preferences for non-database applications. </p>
     pub fn set_application_preferences(
         mut self,
-        input: std::option::Option<crate::types::ApplicationPreferences>,
+        input: ::std::option::Option<crate::types::ApplicationPreferences>,
     ) -> Self {
         self.inner = self.inner.set_application_preferences(input);
         self
@@ -118,7 +121,7 @@ impl PutPortfolioPreferencesFluentBuilder {
     /// <p> The transformation preferences for database applications. </p>
     pub fn set_database_preferences(
         mut self,
-        input: std::option::Option<crate::types::DatabasePreferences>,
+        input: ::std::option::Option<crate::types::DatabasePreferences>,
     ) -> Self {
         self.inner = self.inner.set_database_preferences(input);
         self
@@ -131,7 +134,7 @@ impl PutPortfolioPreferencesFluentBuilder {
     /// <p>The classification for application component types.</p>
     pub fn set_application_mode(
         mut self,
-        input: std::option::Option<crate::types::ApplicationMode>,
+        input: ::std::option::Option<crate::types::ApplicationMode>,
     ) -> Self {
         self.inner = self.inner.set_application_mode(input);
         self

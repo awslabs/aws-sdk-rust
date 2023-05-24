@@ -2,24 +2,24 @@
 
 /// <p>The target capacity for the connector. The capacity can be auto scaled or provisioned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityUpdate {
     /// <p>The target auto scaling setting.</p>
     #[doc(hidden)]
-    pub auto_scaling: std::option::Option<crate::types::AutoScalingUpdate>,
+    pub auto_scaling: ::std::option::Option<crate::types::AutoScalingUpdate>,
     /// <p>The target settings for provisioned capacity.</p>
     #[doc(hidden)]
-    pub provisioned_capacity: std::option::Option<crate::types::ProvisionedCapacityUpdate>,
+    pub provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacityUpdate>,
 }
 impl CapacityUpdate {
     /// <p>The target auto scaling setting.</p>
-    pub fn auto_scaling(&self) -> std::option::Option<&crate::types::AutoScalingUpdate> {
+    pub fn auto_scaling(&self) -> ::std::option::Option<&crate::types::AutoScalingUpdate> {
         self.auto_scaling.as_ref()
     }
     /// <p>The target settings for provisioned capacity.</p>
     pub fn provisioned_capacity(
         &self,
-    ) -> std::option::Option<&crate::types::ProvisionedCapacityUpdate> {
+    ) -> ::std::option::Option<&crate::types::ProvisionedCapacityUpdate> {
         self.provisioned_capacity.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl CapacityUpdate {
 
 /// A builder for [`CapacityUpdate`](crate::types::CapacityUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityUpdateBuilder {
-    pub(crate) auto_scaling: std::option::Option<crate::types::AutoScalingUpdate>,
-    pub(crate) provisioned_capacity: std::option::Option<crate::types::ProvisionedCapacityUpdate>,
+    pub(crate) auto_scaling: ::std::option::Option<crate::types::AutoScalingUpdate>,
+    pub(crate) provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacityUpdate>,
 }
 impl CapacityUpdateBuilder {
     /// <p>The target auto scaling setting.</p>
     pub fn auto_scaling(mut self, input: crate::types::AutoScalingUpdate) -> Self {
-        self.auto_scaling = Some(input);
+        self.auto_scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target auto scaling setting.</p>
     pub fn set_auto_scaling(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingUpdate>,
+        input: ::std::option::Option<crate::types::AutoScalingUpdate>,
     ) -> Self {
         self.auto_scaling = input;
         self
     }
     /// <p>The target settings for provisioned capacity.</p>
     pub fn provisioned_capacity(mut self, input: crate::types::ProvisionedCapacityUpdate) -> Self {
-        self.provisioned_capacity = Some(input);
+        self.provisioned_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target settings for provisioned capacity.</p>
     pub fn set_provisioned_capacity(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedCapacityUpdate>,
+        input: ::std::option::Option<crate::types::ProvisionedCapacityUpdate>,
     ) -> Self {
         self.provisioned_capacity = input;
         self

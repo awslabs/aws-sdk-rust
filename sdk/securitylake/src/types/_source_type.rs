@@ -2,12 +2,12 @@
 
 /// <p>The supported source types from which logs and events are collected in Amazon Security Lake. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SourceType {
     /// <p>Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. </p>
     AwsSourceType(crate::types::AwsLogSourceType),
     /// <p>Amazon Security Lake supports custom source types. For a detailed list, see the Amazon Security Lake User Guide.</p>
-    CustomSourceType(std::string::String),
+    CustomSourceType(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,24 +23,24 @@ impl SourceType {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_source_type(
         &self,
-    ) -> std::result::Result<&crate::types::AwsLogSourceType, &Self> {
+    ) -> ::std::result::Result<&crate::types::AwsLogSourceType, &Self> {
         if let SourceType::AwsSourceType(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AwsSourceType`](crate::types::SourceType::AwsSourceType).
     pub fn is_aws_source_type(&self) -> bool {
         self.as_aws_source_type().is_ok()
     }
-    /// Tries to convert the enum instance into [`CustomSourceType`](crate::types::SourceType::CustomSourceType), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`CustomSourceType`](crate::types::SourceType::CustomSourceType), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_custom_source_type(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_custom_source_type(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SourceType::CustomSourceType(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CustomSourceType`](crate::types::SourceType::CustomSourceType).

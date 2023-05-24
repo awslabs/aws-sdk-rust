@@ -2,45 +2,45 @@
 
 /// <p>This structure defines a metric that is being used to evaluate the variations during a launch or experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDefinition {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
     #[doc(hidden)]
-    pub entity_id_key: std::option::Option<std::string::String>,
+    pub entity_id_key: ::std::option::Option<::std::string::String>,
     /// <p>The value that is tracked to produce the metric.</p>
     #[doc(hidden)]
-    pub value_key: std::option::Option<std::string::String>,
+    pub value_key: ::std::option::Option<::std::string::String>,
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
     #[doc(hidden)]
-    pub event_pattern: std::option::Option<std::string::String>,
+    pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The label for the units that the metric is measuring.</p>
     #[doc(hidden)]
-    pub unit_label: std::option::Option<std::string::String>,
+    pub unit_label: ::std::option::Option<::std::string::String>,
 }
 impl MetricDefinition {
     /// <p>The name of the metric.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
-    pub fn entity_id_key(&self) -> std::option::Option<&str> {
+    pub fn entity_id_key(&self) -> ::std::option::Option<&str> {
         self.entity_id_key.as_deref()
     }
     /// <p>The value that is tracked to produce the metric.</p>
-    pub fn value_key(&self) -> std::option::Option<&str> {
+    pub fn value_key(&self) -> ::std::option::Option<&str> {
         self.value_key.as_deref()
     }
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
-    pub fn event_pattern(&self) -> std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
     /// <p>The label for the units that the metric is measuring.</p>
-    pub fn unit_label(&self) -> std::option::Option<&str> {
+    pub fn unit_label(&self) -> ::std::option::Option<&str> {
         self.unit_label.as_deref()
     }
 }
@@ -53,64 +53,78 @@ impl MetricDefinition {
 
 /// A builder for [`MetricDefinition`](crate::types::MetricDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricDefinitionBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) entity_id_key: std::option::Option<std::string::String>,
-    pub(crate) value_key: std::option::Option<std::string::String>,
-    pub(crate) event_pattern: std::option::Option<std::string::String>,
-    pub(crate) unit_label: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) entity_id_key: ::std::option::Option<::std::string::String>,
+    pub(crate) value_key: ::std::option::Option<::std::string::String>,
+    pub(crate) event_pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) unit_label: ::std::option::Option<::std::string::String>,
 }
 impl MetricDefinitionBuilder {
     /// <p>The name of the metric.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
-    pub fn entity_id_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entity_id_key = Some(input.into());
+    pub fn entity_id_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.entity_id_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The entity, such as a user or session, that does an action that causes a metric value to be recorded.</p>
-    pub fn set_entity_id_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entity_id_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.entity_id_key = input;
         self
     }
     /// <p>The value that is tracked to produce the metric.</p>
-    pub fn value_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value_key = Some(input.into());
+    pub fn value_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that is tracked to produce the metric.</p>
-    pub fn set_value_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_key = input;
         self
     }
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
-    pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_pattern = Some(input.into());
+    pub fn event_pattern(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EventBridge event pattern that defines how the metric is recorded.</p>
     /// <p>For more information about EventBridge event patterns, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon EventBridge event patterns</a>.</p>
-    pub fn set_event_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_pattern(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.event_pattern = input;
         self
     }
     /// <p>The label for the units that the metric is measuring.</p>
-    pub fn unit_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit_label = Some(input.into());
+    pub fn unit_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label for the units that the metric is measuring.</p>
-    pub fn set_unit_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_label = input;
         self
     }

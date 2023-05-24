@@ -2,11 +2,11 @@
 
 /// <p>Represents the result of a delete run request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRunOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteRunOutput {
+impl ::aws_http::request_id::RequestId for DeleteRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteRunOutput {
 
 /// A builder for [`DeleteRunOutput`](crate::operation::delete_run::DeleteRunOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteRunOutputBuilder {
     _request_id: Option<String>,
 }

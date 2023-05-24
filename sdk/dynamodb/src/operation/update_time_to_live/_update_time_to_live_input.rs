@@ -2,24 +2,24 @@
 
 /// <p>Represents the input of an <code>UpdateTimeToLive</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTimeToLiveInput {
     /// <p>The name of the table to be configured.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
     #[doc(hidden)]
-    pub time_to_live_specification: std::option::Option<crate::types::TimeToLiveSpecification>,
+    pub time_to_live_specification: ::std::option::Option<crate::types::TimeToLiveSpecification>,
 }
 impl UpdateTimeToLiveInput {
     /// <p>The name of the table to be configured.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
     pub fn time_to_live_specification(
         &self,
-    ) -> std::option::Option<&crate::types::TimeToLiveSpecification> {
+    ) -> ::std::option::Option<&crate::types::TimeToLiveSpecification> {
         self.time_to_live_specification.as_ref()
     }
 }
@@ -33,20 +33,22 @@ impl UpdateTimeToLiveInput {
 
 /// A builder for [`UpdateTimeToLiveInput`](crate::operation::update_time_to_live::UpdateTimeToLiveInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateTimeToLiveInputBuilder {
-    pub(crate) table_name: std::option::Option<std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) time_to_live_specification:
-        std::option::Option<crate::types::TimeToLiveSpecification>,
+        ::std::option::Option<crate::types::TimeToLiveSpecification>,
 }
 impl UpdateTimeToLiveInputBuilder {
     /// <p>The name of the table to be configured.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table to be configured.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
@@ -55,13 +57,13 @@ impl UpdateTimeToLiveInputBuilder {
         mut self,
         input: crate::types::TimeToLiveSpecification,
     ) -> Self {
-        self.time_to_live_specification = Some(input);
+        self.time_to_live_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
     pub fn set_time_to_live_specification(
         mut self,
-        input: std::option::Option<crate::types::TimeToLiveSpecification>,
+        input: ::std::option::Option<crate::types::TimeToLiveSpecification>,
     ) -> Self {
         self.time_to_live_specification = input;
         self
@@ -69,11 +71,11 @@ impl UpdateTimeToLiveInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTimeToLiveInput`](crate::operation::update_time_to_live::UpdateTimeToLiveInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_time_to_live::UpdateTimeToLiveInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_time_to_live::UpdateTimeToLiveInput {
                 table_name: self.table_name,
                 time_to_live_specification: self.time_to_live_specification,

@@ -2,22 +2,22 @@
 
 /// <p>Container for the parameters to the <code><code>DefineIndexField</code></code> operation. Specifies the name of the domain you want to update and the index field configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefineIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The index field and field options you want to configure. </p>
     #[doc(hidden)]
-    pub index_field: std::option::Option<crate::types::IndexField>,
+    pub index_field: ::std::option::Option<crate::types::IndexField>,
 }
 impl DefineIndexFieldInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The index field and field options you want to configure. </p>
-    pub fn index_field(&self) -> std::option::Option<&crate::types::IndexField> {
+    pub fn index_field(&self) -> ::std::option::Option<&crate::types::IndexField> {
         self.index_field.as_ref()
     }
 }
@@ -31,40 +31,45 @@ impl DefineIndexFieldInput {
 
 /// A builder for [`DefineIndexFieldInput`](crate::operation::define_index_field::DefineIndexFieldInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefineIndexFieldInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) index_field: std::option::Option<crate::types::IndexField>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) index_field: ::std::option::Option<crate::types::IndexField>,
 }
 impl DefineIndexFieldInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The index field and field options you want to configure. </p>
     pub fn index_field(mut self, input: crate::types::IndexField) -> Self {
-        self.index_field = Some(input);
+        self.index_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index field and field options you want to configure. </p>
-    pub fn set_index_field(mut self, input: std::option::Option<crate::types::IndexField>) -> Self {
+    pub fn set_index_field(
+        mut self,
+        input: ::std::option::Option<crate::types::IndexField>,
+    ) -> Self {
         self.index_field = input;
         self
     }
     /// Consumes the builder and constructs a [`DefineIndexFieldInput`](crate::operation::define_index_field::DefineIndexFieldInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::define_index_field::DefineIndexFieldInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::define_index_field::DefineIndexFieldInput {
                 domain_name: self.domain_name,
                 index_field: self.index_field,

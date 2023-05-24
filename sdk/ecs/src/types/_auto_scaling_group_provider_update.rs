@@ -2,11 +2,11 @@
 
 /// <p>The details of the Auto Scaling group capacity provider to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroupProviderUpdate {
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     #[doc(hidden)]
-    pub managed_scaling: std::option::Option<crate::types::ManagedScaling>,
+    pub managed_scaling: ::std::option::Option<crate::types::ManagedScaling>,
     /// <p>The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines whether the Auto Scaling group has managed termination protection.</p> <important>
     /// <p>When using managed termination protection, managed scaling must also be used otherwise managed termination protection doesn't work.</p>
     /// </important>
@@ -14,11 +14,11 @@ pub struct AutoScalingGroupProviderUpdate {
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
     #[doc(hidden)]
     pub managed_termination_protection:
-        std::option::Option<crate::types::ManagedTerminationProtection>,
+        ::std::option::Option<crate::types::ManagedTerminationProtection>,
 }
 impl AutoScalingGroupProviderUpdate {
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
-    pub fn managed_scaling(&self) -> std::option::Option<&crate::types::ManagedScaling> {
+    pub fn managed_scaling(&self) -> ::std::option::Option<&crate::types::ManagedScaling> {
         self.managed_scaling.as_ref()
     }
     /// <p>The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines whether the Auto Scaling group has managed termination protection.</p> <important>
@@ -28,7 +28,7 @@ impl AutoScalingGroupProviderUpdate {
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
     pub fn managed_termination_protection(
         &self,
-    ) -> std::option::Option<&crate::types::ManagedTerminationProtection> {
+    ) -> ::std::option::Option<&crate::types::ManagedTerminationProtection> {
         self.managed_termination_protection.as_ref()
     }
 }
@@ -41,22 +41,24 @@ impl AutoScalingGroupProviderUpdate {
 
 /// A builder for [`AutoScalingGroupProviderUpdate`](crate::types::AutoScalingGroupProviderUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingGroupProviderUpdateBuilder {
-    pub(crate) managed_scaling: std::option::Option<crate::types::ManagedScaling>,
+    pub(crate) managed_scaling: ::std::option::Option<crate::types::ManagedScaling>,
     pub(crate) managed_termination_protection:
-        std::option::Option<crate::types::ManagedTerminationProtection>,
+        ::std::option::Option<crate::types::ManagedTerminationProtection>,
 }
 impl AutoScalingGroupProviderUpdateBuilder {
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     pub fn managed_scaling(mut self, input: crate::types::ManagedScaling) -> Self {
-        self.managed_scaling = Some(input);
+        self.managed_scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>The managed scaling settings for the Auto Scaling group capacity provider.</p>
     pub fn set_managed_scaling(
         mut self,
-        input: std::option::Option<crate::types::ManagedScaling>,
+        input: ::std::option::Option<crate::types::ManagedScaling>,
     ) -> Self {
         self.managed_scaling = input;
         self
@@ -70,7 +72,7 @@ impl AutoScalingGroupProviderUpdateBuilder {
         mut self,
         input: crate::types::ManagedTerminationProtection,
     ) -> Self {
-        self.managed_termination_protection = Some(input);
+        self.managed_termination_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The managed termination protection setting to use for the Auto Scaling group capacity provider. This determines whether the Auto Scaling group has managed termination protection.</p> <important>
@@ -80,7 +82,7 @@ impl AutoScalingGroupProviderUpdateBuilder {
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
     pub fn set_managed_termination_protection(
         mut self,
-        input: std::option::Option<crate::types::ManagedTerminationProtection>,
+        input: ::std::option::Option<crate::types::ManagedTerminationProtection>,
     ) -> Self {
         self.managed_termination_protection = input;
         self

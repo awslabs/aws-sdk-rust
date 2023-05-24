@@ -2,14 +2,14 @@
 
 /// <p>For <code>NetworkConnectionAction</code> and <code>PortProbeDetails</code>, <code>LocalPortDetails</code> provides information about the local port that was involved in the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionLocalPortDetails {
     /// <p>The number of the port.</p>
     #[doc(hidden)]
     pub port: i32,
     /// <p>The port name of the local connection.</p>
     #[doc(hidden)]
-    pub port_name: std::option::Option<std::string::String>,
+    pub port_name: ::std::option::Option<::std::string::String>,
 }
 impl ActionLocalPortDetails {
     /// <p>The number of the port.</p>
@@ -17,7 +17,7 @@ impl ActionLocalPortDetails {
         self.port
     }
     /// <p>The port name of the local connection.</p>
-    pub fn port_name(&self) -> std::option::Option<&str> {
+    pub fn port_name(&self) -> ::std::option::Option<&str> {
         self.port_name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ActionLocalPortDetails {
 
 /// A builder for [`ActionLocalPortDetails`](crate::types::ActionLocalPortDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionLocalPortDetailsBuilder {
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) port_name: std::option::Option<std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) port_name: ::std::option::Option<::std::string::String>,
 }
 impl ActionLocalPortDetailsBuilder {
     /// <p>The number of the port.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of the port.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The port name of the local connection.</p>
-    pub fn port_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.port_name = Some(input.into());
+    pub fn port_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.port_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port name of the local connection.</p>
-    pub fn set_port_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_port_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.port_name = input;
         self
     }

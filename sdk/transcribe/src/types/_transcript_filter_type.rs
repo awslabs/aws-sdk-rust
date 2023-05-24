@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TranscriptFilterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum TranscriptFilterType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TranscriptFilterType {
+impl ::std::convert::From<&str> for TranscriptFilterType {
     fn from(s: &str) -> Self {
         match s {
             "EXACT" => TranscriptFilterType::Exact,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for TranscriptFilterType {
         }
     }
 }
-impl std::str::FromStr for TranscriptFilterType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TranscriptFilterType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TranscriptFilterType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TranscriptFilterType::from(s))
     }
 }
 impl TranscriptFilterType {
@@ -81,7 +81,7 @@ impl TranscriptFilterType {
         &["EXACT"]
     }
 }
-impl AsRef<str> for TranscriptFilterType {
+impl ::std::convert::AsRef<str> for TranscriptFilterType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

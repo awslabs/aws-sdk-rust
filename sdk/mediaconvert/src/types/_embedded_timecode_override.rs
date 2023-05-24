@@ -38,13 +38,13 @@
 /// Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override blank, or set to None (NONE), when your input does not contain MDPM timecode.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EmbeddedTimecodeOverride {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum EmbeddedTimecodeOverride {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EmbeddedTimecodeOverride {
+impl ::std::convert::From<&str> for EmbeddedTimecodeOverride {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => EmbeddedTimecodeOverride::None,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for EmbeddedTimecodeOverride {
         }
     }
 }
-impl std::str::FromStr for EmbeddedTimecodeOverride {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EmbeddedTimecodeOverride {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EmbeddedTimecodeOverride::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EmbeddedTimecodeOverride::from(s))
     }
 }
 impl EmbeddedTimecodeOverride {
@@ -86,7 +86,7 @@ impl EmbeddedTimecodeOverride {
         &["NONE", "USE_MDPM"]
     }
 }
-impl AsRef<str> for EmbeddedTimecodeOverride {
+impl ::std::convert::AsRef<str> for EmbeddedTimecodeOverride {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

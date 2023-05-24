@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::set_name): <p>The name.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::set_next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::set_name): <p>The name.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::set_next_token): <p>The next token for the subsequent request.</p>
     ///   - [`max_results(i32)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::get_event_types::builders::GetEventTypesFluentBuilder::set_max_results): <p>The maximum number of objects to return for the request.</p>
     /// - On success, responds with [`GetEventTypesOutput`](crate::operation::get_event_types::GetEventTypesOutput) with field(s):
     ///   - [`event_types(Option<Vec<EventType>>)`](crate::operation::get_event_types::GetEventTypesOutput::event_types): <p>An array of event types.</p>

@@ -2,22 +2,22 @@
 
 /// <p>The summary of devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSummary {
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the device.</p>
     #[doc(hidden)]
-    pub device_status: std::option::Option<crate::types::DeviceStatus>,
+    pub device_status: ::std::option::Option<crate::types::DeviceStatus>,
 }
 impl DeviceSummary {
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The status of the device.</p>
-    pub fn device_status(&self) -> std::option::Option<&crate::types::DeviceStatus> {
+    pub fn device_status(&self) -> ::std::option::Option<&crate::types::DeviceStatus> {
         self.device_status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl DeviceSummary {
 
 /// A builder for [`DeviceSummary`](crate::types::DeviceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceSummaryBuilder {
-    pub(crate) device_id: std::option::Option<std::string::String>,
-    pub(crate) device_status: std::option::Option<crate::types::DeviceStatus>,
+    pub(crate) device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) device_status: ::std::option::Option<crate::types::DeviceStatus>,
 }
 impl DeviceSummaryBuilder {
     /// <p>The ID of the device.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_id = Some(input.into());
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
     }
     /// <p>The status of the device.</p>
     pub fn device_status(mut self, input: crate::types::DeviceStatus) -> Self {
-        self.device_status = Some(input);
+        self.device_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the device.</p>
     pub fn set_device_status(
         mut self,
-        input: std::option::Option<crate::types::DeviceStatus>,
+        input: ::std::option::Option<crate::types::DeviceStatus>,
     ) -> Self {
         self.device_status = input;
         self

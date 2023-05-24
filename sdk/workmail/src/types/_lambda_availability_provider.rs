@@ -2,15 +2,15 @@
 
 /// <p>Describes a Lambda based availability provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
     #[doc(hidden)]
-    pub lambda_arn: std::option::Option<std::string::String>,
+    pub lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaAvailabilityProvider {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl LambdaAvailabilityProvider {
 
 /// A builder for [`LambdaAvailabilityProvider`](crate::types::LambdaAvailabilityProvider).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaAvailabilityProviderBuilder {
-    pub(crate) lambda_arn: std::option::Option<std::string::String>,
+    pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl LambdaAvailabilityProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_arn = Some(input.into());
+    pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda that acts as the availability provider.</p>
-    pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_arn = input;
         self
     }

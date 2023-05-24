@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ClientAuthenticationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ClientAuthenticationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ClientAuthenticationStatus {
+impl ::std::convert::From<&str> for ClientAuthenticationStatus {
     fn from(s: &str) -> Self {
         match s {
             "Disabled" => ClientAuthenticationStatus::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ClientAuthenticationStatus {
         }
     }
 }
-impl std::str::FromStr for ClientAuthenticationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ClientAuthenticationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClientAuthenticationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ClientAuthenticationStatus::from(s))
     }
 }
 impl ClientAuthenticationStatus {
@@ -86,7 +86,7 @@ impl ClientAuthenticationStatus {
         &["Disabled", "Enabled"]
     }
 }
-impl AsRef<str> for ClientAuthenticationStatus {
+impl ::std::convert::AsRef<str> for ClientAuthenticationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

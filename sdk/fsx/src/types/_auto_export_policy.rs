@@ -3,7 +3,7 @@
 /// <p>Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx for Lustre automatically exports the defined changes asynchronously once your application finishes modifying the file.</p>
 /// <p>The <code>AutoExportPolicy</code> is only supported on Amazon FSx for Lustre file systems with a data repository association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoExportPolicy {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct AutoExportPolicy {
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl AutoExportPolicy {
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
@@ -23,7 +23,7 @@ impl AutoExportPolicy {
     /// <li> <p> <code>DELETED</code> - Files and directories are automatically deleted on the data repository when they are deleted on the file system.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::EventType]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::EventType]> {
         self.events.as_deref()
     }
 }
@@ -36,9 +36,11 @@ impl AutoExportPolicy {
 
 /// A builder for [`AutoExportPolicy`](crate::types::AutoExportPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoExportPolicyBuilder {
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl AutoExportPolicyBuilder {
     /// Appends an item to `events`.
@@ -55,7 +57,7 @@ impl AutoExportPolicyBuilder {
     pub fn events(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>The <code>AutoExportPolicy</code> can have the following event values:</p>
@@ -67,7 +69,7 @@ impl AutoExportPolicyBuilder {
     /// <p>You can define any combination of event types for your <code>AutoExportPolicy</code>.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     ) -> Self {
         self.events = input;
         self

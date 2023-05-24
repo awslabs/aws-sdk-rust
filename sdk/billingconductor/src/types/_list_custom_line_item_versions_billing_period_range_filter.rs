@@ -2,22 +2,22 @@
 
 /// <p>A billing period filter that specifies the custom line item versions to retrieve.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsBillingPeriodRangeFilter {
     /// <p>The inclusive start billing period that defines a billing period range where a custom line item version is applied.</p>
     #[doc(hidden)]
-    pub start_billing_period: std::option::Option<std::string::String>,
+    pub start_billing_period: ::std::option::Option<::std::string::String>,
     /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
     #[doc(hidden)]
-    pub end_billing_period: std::option::Option<std::string::String>,
+    pub end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl ListCustomLineItemVersionsBillingPeriodRangeFilter {
     /// <p>The inclusive start billing period that defines a billing period range where a custom line item version is applied.</p>
-    pub fn start_billing_period(&self) -> std::option::Option<&str> {
+    pub fn start_billing_period(&self) -> ::std::option::Option<&str> {
         self.start_billing_period.as_deref()
     }
     /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
-    pub fn end_billing_period(&self) -> std::option::Option<&str> {
+    pub fn end_billing_period(&self) -> ::std::option::Option<&str> {
         self.end_billing_period.as_deref()
     }
 }
@@ -31,34 +31,42 @@ impl ListCustomLineItemVersionsBillingPeriodRangeFilter {
 
 /// A builder for [`ListCustomLineItemVersionsBillingPeriodRangeFilter`](crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
-    pub(crate) start_billing_period: std::option::Option<std::string::String>,
-    pub(crate) end_billing_period: std::option::Option<std::string::String>,
+    pub(crate) start_billing_period: ::std::option::Option<::std::string::String>,
+    pub(crate) end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl ListCustomLineItemVersionsBillingPeriodRangeFilterBuilder {
     /// <p>The inclusive start billing period that defines a billing period range where a custom line item version is applied.</p>
-    pub fn start_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_billing_period = Some(input.into());
+    pub fn start_billing_period(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.start_billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inclusive start billing period that defines a billing period range where a custom line item version is applied.</p>
     pub fn set_start_billing_period(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.start_billing_period = input;
         self
     }
     /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
-    pub fn end_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_billing_period = Some(input.into());
+    pub fn end_billing_period(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.end_billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The exclusive end billing period that defines a billing period range where a custom line item version is applied.</p>
     pub fn set_end_billing_period(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.end_billing_period = input;
         self

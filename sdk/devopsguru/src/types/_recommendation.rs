@@ -2,63 +2,63 @@
 
 /// <p> Recommendation information to help you remediate detected anomalous behavior that generated an insight. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommendation {
     /// <p> A description of the problem. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> A hyperlink to information to help you address the problem. </p>
     #[doc(hidden)]
-    pub link: std::option::Option<std::string::String>,
+    pub link: ::std::option::Option<::std::string::String>,
     /// <p> The name of the recommendation. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The reason DevOps Guru flagged the anomalous behavior as a problem. </p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
     #[doc(hidden)]
     pub related_events:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
     #[doc(hidden)]
     pub related_anomalies:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
     /// <p>The category type of the recommendation.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::string::String>,
+    pub category: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {
     /// <p> A description of the problem. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A hyperlink to information to help you address the problem. </p>
-    pub fn link(&self) -> std::option::Option<&str> {
+    pub fn link(&self) -> ::std::option::Option<&str> {
         self.link.as_deref()
     }
     /// <p> The name of the recommendation. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The reason DevOps Guru flagged the anomalous behavior as a problem. </p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
     pub fn related_events(
         &self,
-    ) -> std::option::Option<&[crate::types::RecommendationRelatedEvent]> {
+    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedEvent]> {
         self.related_events.as_deref()
     }
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
     pub fn related_anomalies(
         &self,
-    ) -> std::option::Option<&[crate::types::RecommendationRelatedAnomaly]> {
+    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomaly]> {
         self.related_anomalies.as_deref()
     }
     /// <p>The category type of the recommendation.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<&str> {
         self.category.as_deref()
     }
 }
@@ -71,56 +71,58 @@ impl Recommendation {
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) link: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) link: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) related_events:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
     pub(crate) related_anomalies:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
-    pub(crate) category: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
+    pub(crate) category: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationBuilder {
     /// <p> A description of the problem. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A description of the problem. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> A hyperlink to information to help you address the problem. </p>
-    pub fn link(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link = Some(input.into());
+    pub fn link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A hyperlink to information to help you address the problem. </p>
-    pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link = input;
         self
     }
     /// <p> The name of the recommendation. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the recommendation. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The reason DevOps Guru flagged the anomalous behavior as a problem. </p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason DevOps Guru flagged the anomalous behavior as a problem. </p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
@@ -132,13 +134,13 @@ impl RecommendationBuilder {
     pub fn related_events(mut self, input: crate::types::RecommendationRelatedEvent) -> Self {
         let mut v = self.related_events.unwrap_or_default();
         v.push(input);
-        self.related_events = Some(v);
+        self.related_events = ::std::option::Option::Some(v);
         self
     }
     /// <p> Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue. </p>
     pub fn set_related_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedEvent>>,
     ) -> Self {
         self.related_events = input;
         self
@@ -151,24 +153,24 @@ impl RecommendationBuilder {
     pub fn related_anomalies(mut self, input: crate::types::RecommendationRelatedAnomaly) -> Self {
         let mut v = self.related_anomalies.unwrap_or_default();
         v.push(input);
-        self.related_anomalies = Some(v);
+        self.related_anomalies = ::std::option::Option::Some(v);
         self
     }
     /// <p> Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue. </p>
     pub fn set_related_anomalies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomaly>>,
     ) -> Self {
         self.related_anomalies = input;
         self
     }
     /// <p>The category type of the recommendation.</p>
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
-        self.category = Some(input.into());
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category type of the recommendation.</p>
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUserAccessLoggingSettings`](crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_access_logging_settings_arn(impl Into<String>)`](crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsFluentBuilder::user_access_logging_settings_arn) / [`set_user_access_logging_settings_arn(Option<String>)`](crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsFluentBuilder::set_user_access_logging_settings_arn): <p>The ARN of the user access logging settings.</p>
+    ///   - [`user_access_logging_settings_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsFluentBuilder::user_access_logging_settings_arn) / [`set_user_access_logging_settings_arn(Option<String>)`](crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsFluentBuilder::set_user_access_logging_settings_arn): <p>The ARN of the user access logging settings.</p>
     /// - On success, responds with [`DeleteUserAccessLoggingSettingsOutput`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsOutput)
     /// - On failure, responds with [`SdkError<DeleteUserAccessLoggingSettingsError>`](crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsError)
     pub fn delete_user_access_logging_settings(&self) -> crate::operation::delete_user_access_logging_settings::builders::DeleteUserAccessLoggingSettingsFluentBuilder{

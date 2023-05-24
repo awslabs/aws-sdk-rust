@@ -23,7 +23,7 @@ impl ListJournalS3ExportsForLedgerPaginator {
     ///
     /// _Note: this method will override any previously set value for `max_results`_
     pub fn page_size(mut self, limit: i32) -> Self {
-        self.builder.max_results = Some(limit);
+        self.builder.max_results = ::std::option::Option::Some(limit);
         self
     }
 
@@ -42,21 +42,21 @@ impl ListJournalS3ExportsForLedgerPaginator {
     /// Create the pagination stream
     ///
     /// _Note:_ No requests will be dispatched until the stream is used (eg. with [`.next().await`](tokio_stream::StreamExt::next)).
-                pub fn send(self) -> impl tokio_stream::Stream<Item = std::result::Result<crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerOutput, aws_smithy_http::result::SdkError<crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerError>>> + Unpin
+                pub fn send(self) -> impl ::tokio_stream::Stream<Item = ::std::result::Result<crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerError>>> + ::std::marker::Unpin
                  {
         // Move individual fields out of self for the borrow checker
         let builder = self.builder;
         let handle = self.handle;
-        aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
-            Box::pin(async move {
+        ::aws_smithy_async::future::fn_stream::FnStream::new(move |tx| {
+            ::std::boxed::Box::pin(async move {
                 // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
                 let mut input = match builder
                     .build()
-                    .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                    .map_err(::aws_smithy_http::result::SdkError::construction_failure)
                 {
-                    Ok(input) => input,
-                    Err(e) => {
-                        let _ = tx.send(Err(e)).await;
+                    ::std::result::Result::Ok(input) => input,
+                    ::std::result::Result::Err(e) => {
+                        let _ = tx.send(::std::result::Result::Err(e)).await;
                         return;
                     }
                 };
@@ -64,18 +64,18 @@ impl ListJournalS3ExportsForLedgerPaginator {
                     let op = match input
                         .make_operation(&handle.conf)
                         .await
-                        .map_err(aws_smithy_http::result::SdkError::construction_failure)
+                        .map_err(::aws_smithy_http::result::SdkError::construction_failure)
                     {
-                        Ok(op) => op,
-                        Err(e) => {
-                            let _ = tx.send(Err(e)).await;
+                        ::std::result::Result::Ok(op) => op,
+                        ::std::result::Result::Err(e) => {
+                            let _ = tx.send(::std::result::Result::Err(e)).await;
                             return;
                         }
                     };
                     let resp = handle.client.call(op).await;
                     // If the input member is None or it was an error
                     let done = match resp {
-                        Ok(ref resp) => {
+                        ::std::result::Result::Ok(ref resp) => {
                             let new_token = crate::lens::reflens_list_journal_s3_exports_for_ledger_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
@@ -88,7 +88,7 @@ impl ListJournalS3ExportsForLedgerPaginator {
                                 is_empty
                             }
                         }
-                        Err(_) => true,
+                        ::std::result::Result::Err(_) => true,
                     };
                     if tx.send(resp).await.is_err() {
                         // receiving end was dropped

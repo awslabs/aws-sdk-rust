@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheckCount</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub health_check_count: std::option::Option<i64>,
+    pub health_check_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
-    pub fn health_check_count(&self) -> std::option::Option<i64> {
+    pub fn health_check_count(&self) -> ::std::option::Option<i64> {
         self.health_check_count
     }
 }
-impl aws_http::request_id::RequestId for GetHealthCheckCountOutput {
+impl ::aws_http::request_id::RequestId for GetHealthCheckCountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl GetHealthCheckCountOutput {
 
 /// A builder for [`GetHealthCheckCountOutput`](crate::operation::get_health_check_count::GetHealthCheckCountOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetHealthCheckCountOutputBuilder {
-    pub(crate) health_check_count: std::option::Option<i64>,
+    pub(crate) health_check_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckCountOutputBuilder {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
     pub fn health_check_count(mut self, input: i64) -> Self {
-        self.health_check_count = Some(input);
+        self.health_check_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
-    pub fn set_health_check_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_health_check_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.health_check_count = input;
         self
     }

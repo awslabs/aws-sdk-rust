@@ -2,17 +2,17 @@
 
 /// <p>Contains the configuration parameters for a PUT Object ACL operation. S3 Batch Operations passes every object to the underlying <code>PutObjectAcl</code> API operation. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PutObjectAcl</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SetObjectAclOperation {
     /// <p></p>
     #[doc(hidden)]
-    pub access_control_policy: std::option::Option<crate::types::S3AccessControlPolicy>,
+    pub access_control_policy: ::std::option::Option<crate::types::S3AccessControlPolicy>,
 }
 impl S3SetObjectAclOperation {
     /// <p></p>
     pub fn access_control_policy(
         &self,
-    ) -> std::option::Option<&crate::types::S3AccessControlPolicy> {
+    ) -> ::std::option::Option<&crate::types::S3AccessControlPolicy> {
         self.access_control_policy.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl S3SetObjectAclOperation {
 
 /// A builder for [`S3SetObjectAclOperation`](crate::types::S3SetObjectAclOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3SetObjectAclOperationBuilder {
-    pub(crate) access_control_policy: std::option::Option<crate::types::S3AccessControlPolicy>,
+    pub(crate) access_control_policy: ::std::option::Option<crate::types::S3AccessControlPolicy>,
 }
 impl S3SetObjectAclOperationBuilder {
     /// <p></p>
     pub fn access_control_policy(mut self, input: crate::types::S3AccessControlPolicy) -> Self {
-        self.access_control_policy = Some(input);
+        self.access_control_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
     pub fn set_access_control_policy(
         mut self,
-        input: std::option::Option<crate::types::S3AccessControlPolicy>,
+        input: ::std::option::Option<crate::types::S3AccessControlPolicy>,
     ) -> Self {
         self.access_control_policy = input;
         self

@@ -2,61 +2,63 @@
 
 /// <p>A response that contains the results of a finding aggregation by Amazon EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceAggregationResponse {
     /// <p>The Amazon EC2 instance ID.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
     #[doc(hidden)]
-    pub ami: std::option::Option<std::string::String>,
+    pub ami: ::std::option::Option<::std::string::String>,
     /// <p>The operating system of the Amazon EC2 instance.</p>
     #[doc(hidden)]
-    pub operating_system: std::option::Option<std::string::String>,
+    pub operating_system: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the instance.</p>
     #[doc(hidden)]
-    pub instance_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub instance_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
     #[doc(hidden)]
-    pub severity_counts: std::option::Option<crate::types::SeverityCounts>,
+    pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
     /// <p>The number of network findings for the Amazon EC2 instance.</p>
     #[doc(hidden)]
-    pub network_findings: std::option::Option<i64>,
+    pub network_findings: ::std::option::Option<i64>,
 }
 impl Ec2InstanceAggregationResponse {
     /// <p>The Amazon EC2 instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
-    pub fn ami(&self) -> std::option::Option<&str> {
+    pub fn ami(&self) -> ::std::option::Option<&str> {
         self.ami.as_deref()
     }
     /// <p>The operating system of the Amazon EC2 instance.</p>
-    pub fn operating_system(&self) -> std::option::Option<&str> {
+    pub fn operating_system(&self) -> ::std::option::Option<&str> {
         self.operating_system.as_deref()
     }
     /// <p>The tags attached to the instance.</p>
     pub fn instance_tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.instance_tags.as_ref()
     }
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
     /// <p>The number of network findings for the Amazon EC2 instance.</p>
-    pub fn network_findings(&self) -> std::option::Option<i64> {
+    pub fn network_findings(&self) -> ::std::option::Option<i64> {
         self.network_findings
     }
 }
@@ -69,45 +71,54 @@ impl Ec2InstanceAggregationResponse {
 
 /// A builder for [`Ec2InstanceAggregationResponse`](crate::types::Ec2InstanceAggregationResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ec2InstanceAggregationResponseBuilder {
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) ami: std::option::Option<std::string::String>,
-    pub(crate) operating_system: std::option::Option<std::string::String>,
-    pub(crate) instance_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) severity_counts: std::option::Option<crate::types::SeverityCounts>,
-    pub(crate) network_findings: std::option::Option<i64>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ami: ::std::option::Option<::std::string::String>,
+    pub(crate) operating_system: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
+    pub(crate) network_findings: ::std::option::Option<i64>,
 }
 impl Ec2InstanceAggregationResponseBuilder {
     /// <p>The Amazon EC2 instance ID.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance ID.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
-    pub fn ami(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ami = Some(input.into());
+    pub fn ami(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ami = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Machine Image (AMI) of the Amazon EC2 instance.</p>
-    pub fn set_ami(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ami(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami = input;
         self
     }
     /// <p>The operating system of the Amazon EC2 instance.</p>
-    pub fn operating_system(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operating_system = Some(input.into());
+    pub fn operating_system(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.operating_system = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system of the Amazon EC2 instance.</p>
-    pub fn set_operating_system(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operating_system(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.operating_system = input;
         self
     }
@@ -118,54 +129,54 @@ impl Ec2InstanceAggregationResponseBuilder {
     /// <p>The tags attached to the instance.</p>
     pub fn instance_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.instance_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.instance_tags = Some(hash_map);
+        self.instance_tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags attached to the instance.</p>
     pub fn set_instance_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.instance_tags = input;
         self
     }
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account for the Amazon EC2 instance.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
-        self.severity_counts = Some(input);
+        self.severity_counts = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn set_severity_counts(
         mut self,
-        input: std::option::Option<crate::types::SeverityCounts>,
+        input: ::std::option::Option<crate::types::SeverityCounts>,
     ) -> Self {
         self.severity_counts = input;
         self
     }
     /// <p>The number of network findings for the Amazon EC2 instance.</p>
     pub fn network_findings(mut self, input: i64) -> Self {
-        self.network_findings = Some(input);
+        self.network_findings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of network findings for the Amazon EC2 instance.</p>
-    pub fn set_network_findings(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_network_findings(mut self, input: ::std::option::Option<i64>) -> Self {
         self.network_findings = input;
         self
     }

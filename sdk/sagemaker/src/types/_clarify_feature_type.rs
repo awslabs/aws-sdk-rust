@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ClarifyFeatureType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ClarifyFeatureType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ClarifyFeatureType {
+impl ::std::convert::From<&str> for ClarifyFeatureType {
     fn from(s: &str) -> Self {
         match s {
             "categorical" => ClarifyFeatureType::Categorical,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ClarifyFeatureType {
         }
     }
 }
-impl std::str::FromStr for ClarifyFeatureType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ClarifyFeatureType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClarifyFeatureType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ClarifyFeatureType::from(s))
     }
 }
 impl ClarifyFeatureType {
@@ -91,7 +91,7 @@ impl ClarifyFeatureType {
         &["categorical", "numerical", "text"]
     }
 }
-impl AsRef<str> for ClarifyFeatureType {
+impl ::std::convert::AsRef<str> for ClarifyFeatureType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

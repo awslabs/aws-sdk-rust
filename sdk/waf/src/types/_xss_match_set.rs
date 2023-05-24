@@ -6,31 +6,31 @@
 /// </note>
 /// <p>A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct XssMatchSet {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     #[doc(hidden)]
-    pub xss_match_set_id: std::option::Option<std::string::String>,
+    pub xss_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
     #[doc(hidden)]
-    pub xss_match_tuples: std::option::Option<std::vec::Vec<crate::types::XssMatchTuple>>,
+    pub xss_match_tuples: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchTuple>>,
 }
 impl XssMatchSet {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn xss_match_set_id(&self) -> ::std::option::Option<&str> {
         self.xss_match_set_id.as_deref()
     }
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-    pub fn xss_match_tuples(&self) -> std::option::Option<&[crate::types::XssMatchTuple]> {
+    pub fn xss_match_tuples(&self) -> ::std::option::Option<&[crate::types::XssMatchTuple]> {
         self.xss_match_tuples.as_deref()
     }
 }
@@ -43,32 +43,41 @@ impl XssMatchSet {
 
 /// A builder for [`XssMatchSet`](crate::types::XssMatchSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct XssMatchSetBuilder {
-    pub(crate) xss_match_set_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) xss_match_tuples: std::option::Option<std::vec::Vec<crate::types::XssMatchTuple>>,
+    pub(crate) xss_match_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) xss_match_tuples:
+        ::std::option::Option<::std::vec::Vec<crate::types::XssMatchTuple>>,
 }
 impl XssMatchSetBuilder {
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.xss_match_set_id = Some(input.into());
+    pub fn xss_match_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.xss_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn set_xss_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_xss_match_set_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.xss_match_set_id = input;
         self
     }
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -80,13 +89,13 @@ impl XssMatchSetBuilder {
     pub fn xss_match_tuples(mut self, input: crate::types::XssMatchTuple) -> Self {
         let mut v = self.xss_match_tuples.unwrap_or_default();
         v.push(input);
-        self.xss_match_tuples = Some(v);
+        self.xss_match_tuples = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
     pub fn set_xss_match_tuples(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::XssMatchTuple>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchTuple>>,
     ) -> Self {
         self.xss_match_tuples = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>This data type is used in the <code>AssessmentTemplateFilter</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DurationRange {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl DurationRange {
 
 /// A builder for [`DurationRange`](crate::types::DurationRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DurationRangeBuilder {
-    pub(crate) min_seconds: std::option::Option<i32>,
-    pub(crate) max_seconds: std::option::Option<i32>,
+    pub(crate) min_seconds: ::std::option::Option<i32>,
+    pub(crate) max_seconds: ::std::option::Option<i32>,
 }
 impl DurationRangeBuilder {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     pub fn min_seconds(mut self, input: i32) -> Self {
-        self.min_seconds = Some(input);
+        self.min_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
-    pub fn set_min_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_seconds = input;
         self
     }
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
     pub fn max_seconds(mut self, input: i32) -> Self {
-        self.max_seconds = Some(input);
+        self.max_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
-    pub fn set_max_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_seconds = input;
         self
     }

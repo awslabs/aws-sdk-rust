@@ -2,7 +2,7 @@
 
 /// <p>Contains the output of ReportTaskProgress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportTaskProgressOutput {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ impl ReportTaskProgressOutput {
         self.canceled
     }
 }
-impl aws_http::request_id::RequestId for ReportTaskProgressOutput {
+impl ::aws_http::request_id::RequestId for ReportTaskProgressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl ReportTaskProgressOutput {
 
 /// A builder for [`ReportTaskProgressOutput`](crate::operation::report_task_progress::ReportTaskProgressOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportTaskProgressOutputBuilder {
-    pub(crate) canceled: std::option::Option<bool>,
+    pub(crate) canceled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ReportTaskProgressOutputBuilder {
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
     pub fn canceled(mut self, input: bool) -> Self {
-        self.canceled = Some(input);
+        self.canceled = ::std::option::Option::Some(input);
         self
     }
     /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <code>SetTaskStatus</code> for canceled tasks.</p>
-    pub fn set_canceled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_canceled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.canceled = input;
         self
     }

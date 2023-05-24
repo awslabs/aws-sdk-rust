@@ -2,40 +2,42 @@
 
 /// <p>Container for the request parameters to the <code>UpgradeDomain</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeDomainInput {
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
     #[doc(hidden)]
-    pub target_version: std::option::Option<std::string::String>,
+    pub target_version: ::std::option::Option<::std::string::String>,
     /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
     #[doc(hidden)]
-    pub perform_check_only: std::option::Option<bool>,
+    pub perform_check_only: ::std::option::Option<bool>,
     /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
     #[doc(hidden)]
-    pub advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub advanced_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl UpgradeDomainInput {
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
-    pub fn target_version(&self) -> std::option::Option<&str> {
+    pub fn target_version(&self) -> ::std::option::Option<&str> {
         self.target_version.as_deref()
     }
     /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
-    pub fn perform_check_only(&self) -> std::option::Option<bool> {
+    pub fn perform_check_only(&self) -> ::std::option::Option<bool> {
         self.perform_check_only
     }
     /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
     pub fn advanced_options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.advanced_options.as_ref()
     }
 }
@@ -48,42 +50,51 @@ impl UpgradeDomainInput {
 
 /// A builder for [`UpgradeDomainInput`](crate::operation::upgrade_domain::UpgradeDomainInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpgradeDomainInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) target_version: std::option::Option<std::string::String>,
-    pub(crate) perform_check_only: std::option::Option<bool>,
-    pub(crate) advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) target_version: ::std::option::Option<::std::string::String>,
+    pub(crate) perform_check_only: ::std::option::Option<bool>,
+    pub(crate) advanced_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl UpgradeDomainInputBuilder {
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
-    pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_version = Some(input.into());
+    pub fn target_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
-    pub fn set_target_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_version = input;
         self
     }
     /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
-        self.perform_check_only = Some(input);
+        self.perform_check_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
-    pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_check_only = input;
         self
     }
@@ -94,19 +105,19 @@ impl UpgradeDomainInputBuilder {
     /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
     pub fn advanced_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.advanced_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.advanced_options = Some(hash_map);
+        self.advanced_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
     pub fn set_advanced_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.advanced_options = input;
@@ -115,11 +126,11 @@ impl UpgradeDomainInputBuilder {
     /// Consumes the builder and constructs a [`UpgradeDomainInput`](crate::operation::upgrade_domain::UpgradeDomainInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::upgrade_domain::UpgradeDomainInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::upgrade_domain::UpgradeDomainInput {
+        ::std::result::Result::Ok(crate::operation::upgrade_domain::UpgradeDomainInput {
             domain_name: self.domain_name,
             target_version: self.target_version,
             perform_check_only: self.perform_check_only,

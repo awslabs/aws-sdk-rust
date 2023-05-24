@@ -2,7 +2,7 @@
 
 /// <p>Information about the deployment status of the instances in the deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentOverview {
     /// <p>The number of instances in the deployment in a pending state.</p>
     #[doc(hidden)]
@@ -58,73 +58,75 @@ impl DeploymentOverview {
 
 /// A builder for [`DeploymentOverview`](crate::types::DeploymentOverview).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentOverviewBuilder {
-    pub(crate) pending: std::option::Option<i64>,
-    pub(crate) in_progress: std::option::Option<i64>,
-    pub(crate) succeeded: std::option::Option<i64>,
-    pub(crate) failed: std::option::Option<i64>,
-    pub(crate) skipped: std::option::Option<i64>,
-    pub(crate) ready: std::option::Option<i64>,
+    pub(crate) pending: ::std::option::Option<i64>,
+    pub(crate) in_progress: ::std::option::Option<i64>,
+    pub(crate) succeeded: ::std::option::Option<i64>,
+    pub(crate) failed: ::std::option::Option<i64>,
+    pub(crate) skipped: ::std::option::Option<i64>,
+    pub(crate) ready: ::std::option::Option<i64>,
 }
 impl DeploymentOverviewBuilder {
     /// <p>The number of instances in the deployment in a pending state.</p>
     pub fn pending(mut self, input: i64) -> Self {
-        self.pending = Some(input);
+        self.pending = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the deployment in a pending state.</p>
-    pub fn set_pending(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_pending(mut self, input: ::std::option::Option<i64>) -> Self {
         self.pending = input;
         self
     }
     /// <p>The number of instances in which the deployment is in progress.</p>
     pub fn in_progress(mut self, input: i64) -> Self {
-        self.in_progress = Some(input);
+        self.in_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in which the deployment is in progress.</p>
-    pub fn set_in_progress(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_in_progress(mut self, input: ::std::option::Option<i64>) -> Self {
         self.in_progress = input;
         self
     }
     /// <p>The number of instances in the deployment to which revisions have been successfully deployed.</p>
     pub fn succeeded(mut self, input: i64) -> Self {
-        self.succeeded = Some(input);
+        self.succeeded = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the deployment to which revisions have been successfully deployed.</p>
-    pub fn set_succeeded(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_succeeded(mut self, input: ::std::option::Option<i64>) -> Self {
         self.succeeded = input;
         self
     }
     /// <p>The number of instances in the deployment in a failed state.</p>
     pub fn failed(mut self, input: i64) -> Self {
-        self.failed = Some(input);
+        self.failed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the deployment in a failed state.</p>
-    pub fn set_failed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_failed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failed = input;
         self
     }
     /// <p>The number of instances in the deployment in a skipped state.</p>
     pub fn skipped(mut self, input: i64) -> Self {
-        self.skipped = Some(input);
+        self.skipped = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the deployment in a skipped state.</p>
-    pub fn set_skipped(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_skipped(mut self, input: ::std::option::Option<i64>) -> Self {
         self.skipped = input;
         self
     }
     /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
     pub fn ready(mut self, input: i64) -> Self {
-        self.ready = Some(input);
+        self.ready = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in a replacement environment ready to receive traffic in a blue/green deployment.</p>
-    pub fn set_ready(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ready(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ready = input;
         self
     }

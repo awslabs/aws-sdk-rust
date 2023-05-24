@@ -2,47 +2,49 @@
 
 /// <p>Configuration information for a deployment launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentLaunchConfig {
     /// <p>The package name.</p>
     #[doc(hidden)]
-    pub package_name: std::option::Option<std::string::String>,
+    pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
     #[doc(hidden)]
-    pub pre_launch_file: std::option::Option<std::string::String>,
+    pub pre_launch_file: ::std::option::Option<::std::string::String>,
     /// <p>The launch file name.</p>
     #[doc(hidden)]
-    pub launch_file: std::option::Option<std::string::String>,
+    pub launch_file: ::std::option::Option<::std::string::String>,
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
     #[doc(hidden)]
-    pub post_launch_file: std::option::Option<std::string::String>,
+    pub post_launch_file: ::std::option::Option<::std::string::String>,
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl DeploymentLaunchConfig {
     /// <p>The package name.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
-    pub fn pre_launch_file(&self) -> std::option::Option<&str> {
+    pub fn pre_launch_file(&self) -> ::std::option::Option<&str> {
         self.pre_launch_file.as_deref()
     }
     /// <p>The launch file name.</p>
-    pub fn launch_file(&self) -> std::option::Option<&str> {
+    pub fn launch_file(&self) -> ::std::option::Option<&str> {
         self.launch_file.as_deref()
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
-    pub fn post_launch_file(&self) -> std::option::Option<&str> {
+    pub fn post_launch_file(&self) -> ::std::option::Option<&str> {
         self.post_launch_file.as_deref()
     }
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
     pub fn environment_variables(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.environment_variables.as_ref()
     }
 }
@@ -55,53 +57,68 @@ impl DeploymentLaunchConfig {
 
 /// A builder for [`DeploymentLaunchConfig`](crate::types::DeploymentLaunchConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentLaunchConfigBuilder {
-    pub(crate) package_name: std::option::Option<std::string::String>,
-    pub(crate) pre_launch_file: std::option::Option<std::string::String>,
-    pub(crate) launch_file: std::option::Option<std::string::String>,
-    pub(crate) post_launch_file: std::option::Option<std::string::String>,
-    pub(crate) environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) package_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pre_launch_file: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_file: ::std::option::Option<::std::string::String>,
+    pub(crate) post_launch_file: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl DeploymentLaunchConfigBuilder {
     /// <p>The package name.</p>
-    pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_name = Some(input.into());
+    pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package name.</p>
-    pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
-    pub fn pre_launch_file(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pre_launch_file = Some(input.into());
+    pub fn pre_launch_file(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pre_launch_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment pre-launch file. This file will be executed prior to the launch file.</p>
-    pub fn set_pre_launch_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pre_launch_file(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pre_launch_file = input;
         self
     }
     /// <p>The launch file name.</p>
-    pub fn launch_file(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_file = Some(input.into());
+    pub fn launch_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.launch_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The launch file name.</p>
-    pub fn set_launch_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_file = input;
         self
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
-    pub fn post_launch_file(mut self, input: impl Into<std::string::String>) -> Self {
-        self.post_launch_file = Some(input.into());
+    pub fn post_launch_file(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.post_launch_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment post-launch file. This file will be executed after the launch file.</p>
-    pub fn set_post_launch_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_post_launch_file(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.post_launch_file = input;
         self
     }
@@ -112,19 +129,19 @@ impl DeploymentLaunchConfigBuilder {
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
     pub fn environment_variables(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.environment_variables = Some(hash_map);
+        self.environment_variables = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An array of key/value pairs specifying environment variables for the robot application</p>
     pub fn set_environment_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.environment_variables = input;

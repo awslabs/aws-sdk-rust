@@ -2,14 +2,14 @@
 
 /// <p>The output from the GetRetainedMessage operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRetainedMessageOutput {
     /// <p>The topic name to which the retained message was published.</p>
     #[doc(hidden)]
-    pub topic: std::option::Option<std::string::String>,
+    pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The Base64-encoded message payload of the retained message body.</p>
     #[doc(hidden)]
-    pub payload: std::option::Option<aws_smithy_types::Blob>,
+    pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     #[doc(hidden)]
     pub qos: i32,
@@ -20,16 +20,16 @@ pub struct GetRetainedMessageOutput {
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     #[doc(hidden)]
-    pub user_properties: std::option::Option<aws_smithy_types::Blob>,
+    pub user_properties: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl GetRetainedMessageOutput {
     /// <p>The topic name to which the retained message was published.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<&str> {
         self.topic.as_deref()
     }
     /// <p>The Base64-encoded message payload of the retained message body.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
@@ -43,11 +43,11 @@ impl GetRetainedMessageOutput {
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn user_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn user_properties(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.user_properties.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetRetainedMessageOutput {
+impl ::aws_http::request_id::RequestId for GetRetainedMessageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -62,61 +62,63 @@ impl GetRetainedMessageOutput {
 
 /// A builder for [`GetRetainedMessageOutput`](crate::operation::get_retained_message::GetRetainedMessageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRetainedMessageOutputBuilder {
-    pub(crate) topic: std::option::Option<std::string::String>,
-    pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) qos: std::option::Option<i32>,
-    pub(crate) last_modified_time: std::option::Option<i64>,
-    pub(crate) user_properties: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) topic: ::std::option::Option<::std::string::String>,
+    pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) qos: ::std::option::Option<i32>,
+    pub(crate) last_modified_time: ::std::option::Option<i64>,
+    pub(crate) user_properties: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl GetRetainedMessageOutputBuilder {
     /// <p>The topic name to which the retained message was published.</p>
-    pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic = Some(input.into());
+    pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The topic name to which the retained message was published.</p>
-    pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic = input;
         self
     }
     /// <p>The Base64-encoded message payload of the retained message body.</p>
-    pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.payload = Some(input);
+    pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Base64-encoded message payload of the retained message body.</p>
-    pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     pub fn qos(mut self, input: i32) -> Self {
-        self.qos = Some(input);
+        self.qos = ::std::option::Option::Some(input);
         self
     }
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
-    pub fn set_qos(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_qos(mut self, input: ::std::option::Option<i32>) -> Self {
         self.qos = input;
         self
     }
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
-        self.last_modified_time = Some(input);
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string that represents two user properties. Note that it will be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn user_properties(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.user_properties = Some(input);
+    pub fn user_properties(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.user_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't include any user properties.</p>
@@ -124,7 +126,7 @@ impl GetRetainedMessageOutputBuilder {
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     pub fn set_user_properties(
         mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
     ) -> Self {
         self.user_properties = input;
         self

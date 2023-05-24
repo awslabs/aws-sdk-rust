@@ -2,22 +2,22 @@
 
 /// <p>The range of timestamps for which to return fragments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
     #[doc(hidden)]
-    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
     #[doc(hidden)]
-    pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl TimestampRange {
 
 /// A builder for [`TimestampRange`](crate::types::TimestampRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimestampRangeBuilder {
-    pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TimestampRangeBuilder {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
-    pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_timestamp = Some(input);
+    pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting timestamp in the range of timestamps for which to return fragments.</p>
     pub fn set_start_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_timestamp = input;
         self
     }
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
-    pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_timestamp = Some(input);
+    pub fn end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ending timestamp in the range of timestamps for which to return fragments.</p>
     pub fn set_end_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.end_timestamp = input;
         self

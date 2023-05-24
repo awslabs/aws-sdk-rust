@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InventoryQueryOperatorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum InventoryQueryOperatorType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InventoryQueryOperatorType {
+impl ::std::convert::From<&str> for InventoryQueryOperatorType {
     fn from(s: &str) -> Self {
         match s {
             "BeginWith" => InventoryQueryOperatorType::BeginWith,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for InventoryQueryOperatorType {
         }
     }
 }
-impl std::str::FromStr for InventoryQueryOperatorType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InventoryQueryOperatorType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InventoryQueryOperatorType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InventoryQueryOperatorType::from(s))
     }
 }
 impl InventoryQueryOperatorType {
@@ -113,7 +113,7 @@ impl InventoryQueryOperatorType {
         ]
     }
 }
-impl AsRef<str> for InventoryQueryOperatorType {
+impl ::std::convert::AsRef<str> for InventoryQueryOperatorType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

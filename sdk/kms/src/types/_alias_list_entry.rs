@@ -2,43 +2,43 @@
 
 /// <p>Contains information about an alias.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AliasListEntry {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
     #[doc(hidden)]
-    pub alias_name: std::option::Option<std::string::String>,
+    pub alias_name: ::std::option::Option<::std::string::String>,
     /// <p>String that contains the key ARN.</p>
     #[doc(hidden)]
-    pub alias_arn: std::option::Option<std::string::String>,
+    pub alias_arn: ::std::option::Option<::std::string::String>,
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
     #[doc(hidden)]
-    pub target_key_id: std::option::Option<std::string::String>,
+    pub target_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
     #[doc(hidden)]
-    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AliasListEntry {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> ::std::option::Option<&str> {
         self.alias_name.as_deref()
     }
     /// <p>String that contains the key ARN.</p>
-    pub fn alias_arn(&self) -> std::option::Option<&str> {
+    pub fn alias_arn(&self) -> ::std::option::Option<&str> {
         self.alias_arn.as_deref()
     }
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
-    pub fn target_key_id(&self) -> std::option::Option<&str> {
+    pub fn target_key_id(&self) -> ::std::option::Option<&str> {
         self.target_key_id.as_deref()
     }
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
 }
@@ -51,67 +51,75 @@ impl AliasListEntry {
 
 /// A builder for [`AliasListEntry`](crate::types::AliasListEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AliasListEntryBuilder {
-    pub(crate) alias_name: std::option::Option<std::string::String>,
-    pub(crate) alias_arn: std::option::Option<std::string::String>,
-    pub(crate) target_key_id: std::option::Option<std::string::String>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) alias_name: ::std::option::Option<::std::string::String>,
+    pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) target_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AliasListEntryBuilder {
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
-    pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alias_name = Some(input.into());
+    pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
-    pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_name = input;
         self
     }
     /// <p>String that contains the key ARN.</p>
-    pub fn alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alias_arn = Some(input.into());
+    pub fn alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that contains the key ARN.</p>
-    pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias_arn = input;
         self
     }
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
-    pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_key_id = Some(input.into());
+    pub fn target_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
-    pub fn set_target_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_key_id = input;
         self
     }
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
-    pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date = Some(input);
+    pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
     pub fn set_last_updated_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date = input;
         self

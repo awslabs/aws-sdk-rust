@@ -2,7 +2,7 @@
 pub(crate) fn de_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<std::string::String>,
+    ::std::option::Option<::std::string::String>,
     crate::operation::send_api_asset::SendApiAssetError,
 > {
     (!body.is_empty())
@@ -15,12 +15,14 @@ pub(crate) fn de_body_payload(
 }
 
 pub(crate) fn de_response_headers_prefix_header(
-    header_map: &http::HeaderMap,
+    header_map: &::http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    aws_smithy_http::header::ParseError,
+    ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    ::aws_smithy_http::header::ParseError,
 > {
-    let headers = aws_smithy_http::header::headers_for_prefix(header_map, "");
+    let headers = ::aws_smithy_http::header::headers_for_prefix(header_map, "");
     let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
                             let values = header_map.get_all(header_name);
                             crate::protocol_serde::shape_send_api_asset_output::de_response_headers_inner(values.iter()).map(|v| (key.to_string(), v.expect(
@@ -31,7 +33,7 @@ pub(crate) fn de_response_headers_prefix_header(
 }
 
 pub fn de_response_headers_inner(
-    headers: http::header::ValueIter<http::HeaderValue>,
-) -> std::result::Result<Option<std::string::String>, aws_smithy_http::header::ParseError> {
-    aws_smithy_http::header::one_or_none(headers)
+    headers: ::http::header::ValueIter<http::HeaderValue>,
+) -> std::result::Result<Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    ::aws_smithy_http::header::one_or_none(headers)
 }

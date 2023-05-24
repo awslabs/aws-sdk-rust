@@ -42,13 +42,13 @@
 /// <p>The broker's status.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BrokerState {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum BrokerState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BrokerState {
+impl ::std::convert::From<&str> for BrokerState {
     fn from(s: &str) -> Self {
         match s {
             "CREATION_FAILED" => BrokerState::CreationFailed,
@@ -79,11 +79,11 @@ impl std::convert::From<&str> for BrokerState {
         }
     }
 }
-impl std::str::FromStr for BrokerState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BrokerState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BrokerState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BrokerState::from(s))
     }
 }
 impl BrokerState {
@@ -111,7 +111,7 @@ impl BrokerState {
         ]
     }
 }
-impl AsRef<str> for BrokerState {
+impl ::std::convert::AsRef<str> for BrokerState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

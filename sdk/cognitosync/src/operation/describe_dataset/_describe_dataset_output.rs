@@ -2,20 +2,20 @@
 
 /// Response to a successful DescribeDataset request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDatasetOutput {
     /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     #[doc(hidden)]
-    pub dataset: std::option::Option<crate::types::Dataset>,
+    pub dataset: ::std::option::Option<crate::types::Dataset>,
     _request_id: Option<String>,
 }
 impl DescribeDatasetOutput {
     /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    pub fn dataset(&self) -> std::option::Option<&crate::types::Dataset> {
+    pub fn dataset(&self) -> ::std::option::Option<&crate::types::Dataset> {
         self.dataset.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDatasetOutput {
+impl ::aws_http::request_id::RequestId for DescribeDatasetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DescribeDatasetOutput {
 
 /// A builder for [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDatasetOutputBuilder {
-    pub(crate) dataset: std::option::Option<crate::types::Dataset>,
+    pub(crate) dataset: ::std::option::Option<crate::types::Dataset>,
     _request_id: Option<String>,
 }
 impl DescribeDatasetOutputBuilder {
     /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     pub fn dataset(mut self, input: crate::types::Dataset) -> Self {
-        self.dataset = Some(input);
+        self.dataset = ::std::option::Option::Some(input);
         self
     }
     /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    pub fn set_dataset(mut self, input: std::option::Option<crate::types::Dataset>) -> Self {
+    pub fn set_dataset(mut self, input: ::std::option::Option<crate::types::Dataset>) -> Self {
         self.dataset = input;
         self
     }

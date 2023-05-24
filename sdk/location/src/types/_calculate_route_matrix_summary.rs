@@ -2,7 +2,7 @@
 
 /// <p>A summary of the calculated route matrix.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculateRouteMatrixSummary {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
@@ -12,16 +12,16 @@ pub struct CalculateRouteMatrixSummary {
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<std::string::String>,
+    pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
     #[doc(hidden)]
-    pub route_count: std::option::Option<i32>,
+    pub route_count: ::std::option::Option<i32>,
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
     #[doc(hidden)]
-    pub error_count: std::option::Option<i32>,
+    pub error_count: ::std::option::Option<i32>,
     /// <p>The unit of measurement for route distances.</p>
     #[doc(hidden)]
-    pub distance_unit: std::option::Option<crate::types::DistanceUnit>,
+    pub distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
 }
 impl CalculateRouteMatrixSummary {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
@@ -31,19 +31,19 @@ impl CalculateRouteMatrixSummary {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> ::std::option::Option<&str> {
         self.data_source.as_deref()
     }
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
-    pub fn route_count(&self) -> std::option::Option<i32> {
+    pub fn route_count(&self) -> ::std::option::Option<i32> {
         self.route_count
     }
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
-    pub fn error_count(&self) -> std::option::Option<i32> {
+    pub fn error_count(&self) -> ::std::option::Option<i32> {
         self.error_count
     }
     /// <p>The unit of measurement for route distances.</p>
-    pub fn distance_unit(&self) -> std::option::Option<&crate::types::DistanceUnit> {
+    pub fn distance_unit(&self) -> ::std::option::Option<&crate::types::DistanceUnit> {
         self.distance_unit.as_ref()
     }
 }
@@ -56,12 +56,14 @@ impl CalculateRouteMatrixSummary {
 
 /// A builder for [`CalculateRouteMatrixSummary`](crate::types::CalculateRouteMatrixSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CalculateRouteMatrixSummaryBuilder {
-    pub(crate) data_source: std::option::Option<std::string::String>,
-    pub(crate) route_count: std::option::Option<i32>,
-    pub(crate) error_count: std::option::Option<i32>,
-    pub(crate) distance_unit: std::option::Option<crate::types::DistanceUnit>,
+    pub(crate) data_source: ::std::option::Option<::std::string::String>,
+    pub(crate) route_count: ::std::option::Option<i32>,
+    pub(crate) error_count: ::std::option::Option<i32>,
+    pub(crate) distance_unit: ::std::option::Option<crate::types::DistanceUnit>,
 }
 impl CalculateRouteMatrixSummaryBuilder {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
@@ -71,8 +73,8 @@ impl CalculateRouteMatrixSummaryBuilder {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source = Some(input.into());
+    pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
@@ -82,39 +84,39 @@ impl CalculateRouteMatrixSummaryBuilder {
     /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
     }
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
     pub fn route_count(mut self, input: i32) -> Self {
-        self.route_count = Some(input);
+        self.route_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code> multiplied by the number of <code>DestinationPositions</code>.</p>
-    pub fn set_route_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_route_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.route_count = input;
         self
     }
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
     pub fn error_count(mut self, input: i32) -> Self {
-        self.error_count = Some(input);
+        self.error_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The count of error results in the route matrix. If this number is 0, all routes were calculated successfully.</p>
-    pub fn set_error_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_error_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.error_count = input;
         self
     }
     /// <p>The unit of measurement for route distances.</p>
     pub fn distance_unit(mut self, input: crate::types::DistanceUnit) -> Self {
-        self.distance_unit = Some(input);
+        self.distance_unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit of measurement for route distances.</p>
     pub fn set_distance_unit(
         mut self,
-        input: std::option::Option<crate::types::DistanceUnit>,
+        input: ::std::option::Option<crate::types::DistanceUnit>,
     ) -> Self {
         self.distance_unit = input;
         self

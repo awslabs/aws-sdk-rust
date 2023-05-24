@@ -2,22 +2,22 @@
 
 /// <p>Details about the origin restrictions set on the package. The package origin restrictions determine how new versions of a package can be added to a specific repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageOriginRestrictions {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     #[doc(hidden)]
-    pub publish: std::option::Option<crate::types::AllowPublish>,
+    pub publish: ::std::option::Option<crate::types::AllowPublish>,
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
     #[doc(hidden)]
-    pub upstream: std::option::Option<crate::types::AllowUpstream>,
+    pub upstream: ::std::option::Option<crate::types::AllowUpstream>,
 }
 impl PackageOriginRestrictions {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
-    pub fn publish(&self) -> std::option::Option<&crate::types::AllowPublish> {
+    pub fn publish(&self) -> ::std::option::Option<&crate::types::AllowPublish> {
         self.publish.as_ref()
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
-    pub fn upstream(&self) -> std::option::Option<&crate::types::AllowUpstream> {
+    pub fn upstream(&self) -> ::std::option::Option<&crate::types::AllowUpstream> {
         self.upstream.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl PackageOriginRestrictions {
 
 /// A builder for [`PackageOriginRestrictions`](crate::types::PackageOriginRestrictions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PackageOriginRestrictionsBuilder {
-    pub(crate) publish: std::option::Option<crate::types::AllowPublish>,
-    pub(crate) upstream: std::option::Option<crate::types::AllowUpstream>,
+    pub(crate) publish: ::std::option::Option<crate::types::AllowPublish>,
+    pub(crate) upstream: ::std::option::Option<crate::types::AllowUpstream>,
 }
 impl PackageOriginRestrictionsBuilder {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     pub fn publish(mut self, input: crate::types::AllowPublish) -> Self {
-        self.publish = Some(input);
+        self.publish = ::std::option::Option::Some(input);
         self
     }
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
-    pub fn set_publish(mut self, input: std::option::Option<crate::types::AllowPublish>) -> Self {
+    pub fn set_publish(mut self, input: ::std::option::Option<crate::types::AllowPublish>) -> Self {
         self.publish = input;
         self
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
     pub fn upstream(mut self, input: crate::types::AllowUpstream) -> Self {
-        self.upstream = Some(input);
+        self.upstream = ::std::option::Option::Some(input);
         self
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
-    pub fn set_upstream(mut self, input: std::option::Option<crate::types::AllowUpstream>) -> Self {
+    pub fn set_upstream(
+        mut self,
+        input: ::std::option::Option<crate::types::AllowUpstream>,
+    ) -> Self {
         self.upstream = input;
         self
     }

@@ -2,18 +2,18 @@
 
 /// <p>An ordered list of actions you can take to remediate a violation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationActionWithOrder {
     /// <p>Information about an action you can take to remediate a violation.</p>
     #[doc(hidden)]
-    pub remediation_action: std::option::Option<crate::types::RemediationAction>,
+    pub remediation_action: ::std::option::Option<crate::types::RemediationAction>,
     /// <p>The order of the remediation actions in the list.</p>
     #[doc(hidden)]
     pub order: i32,
 }
 impl RemediationActionWithOrder {
     /// <p>Information about an action you can take to remediate a violation.</p>
-    pub fn remediation_action(&self) -> std::option::Option<&crate::types::RemediationAction> {
+    pub fn remediation_action(&self) -> ::std::option::Option<&crate::types::RemediationAction> {
         self.remediation_action.as_ref()
     }
     /// <p>The order of the remediation actions in the list.</p>
@@ -30,32 +30,34 @@ impl RemediationActionWithOrder {
 
 /// A builder for [`RemediationActionWithOrder`](crate::types::RemediationActionWithOrder).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemediationActionWithOrderBuilder {
-    pub(crate) remediation_action: std::option::Option<crate::types::RemediationAction>,
-    pub(crate) order: std::option::Option<i32>,
+    pub(crate) remediation_action: ::std::option::Option<crate::types::RemediationAction>,
+    pub(crate) order: ::std::option::Option<i32>,
 }
 impl RemediationActionWithOrderBuilder {
     /// <p>Information about an action you can take to remediate a violation.</p>
     pub fn remediation_action(mut self, input: crate::types::RemediationAction) -> Self {
-        self.remediation_action = Some(input);
+        self.remediation_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about an action you can take to remediate a violation.</p>
     pub fn set_remediation_action(
         mut self,
-        input: std::option::Option<crate::types::RemediationAction>,
+        input: ::std::option::Option<crate::types::RemediationAction>,
     ) -> Self {
         self.remediation_action = input;
         self
     }
     /// <p>The order of the remediation actions in the list.</p>
     pub fn order(mut self, input: i32) -> Self {
-        self.order = Some(input);
+        self.order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order of the remediation actions in the list.</p>
-    pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.order = input;
         self
     }

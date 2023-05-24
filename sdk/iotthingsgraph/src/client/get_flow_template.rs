@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFlowTemplate`](crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder::set_id): <p>The ID of the workflow.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder::set_id): <p>The ID of the workflow.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     ///   - [`revision_number(i64)`](crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder::revision_number) / [`set_revision_number(Option<i64>)`](crate::operation::get_flow_template::builders::GetFlowTemplateFluentBuilder::set_revision_number): <p>The number of the workflow revision to retrieve.</p>
     /// - On success, responds with [`GetFlowTemplateOutput`](crate::operation::get_flow_template::GetFlowTemplateOutput) with field(s):
     ///   - [`description(Option<FlowTemplateDescription>)`](crate::operation::get_flow_template::GetFlowTemplateOutput::description): <p>The object that describes the specified workflow.</p>

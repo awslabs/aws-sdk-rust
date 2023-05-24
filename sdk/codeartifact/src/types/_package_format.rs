@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PackageFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum PackageFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PackageFormat {
+impl ::std::convert::From<&str> for PackageFormat {
     fn from(s: &str) -> Self {
         match s {
             "generic" => PackageFormat::Generic,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for PackageFormat {
         }
     }
 }
-impl std::str::FromStr for PackageFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PackageFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PackageFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PackageFormat::from(s))
     }
 }
 impl PackageFormat {
@@ -101,7 +101,7 @@ impl PackageFormat {
         &["generic", "maven", "npm", "nuget", "pypi"]
     }
 }
-impl AsRef<str> for PackageFormat {
+impl ::std::convert::AsRef<str> for PackageFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

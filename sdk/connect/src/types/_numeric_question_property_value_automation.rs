@@ -8,17 +8,17 @@
 /// <li> <p> <code>NUMBER_OF_INTERRUPTIONS</code> has a minimum value of 0 and maximum value of 1000.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericQuestionPropertyValueAutomation {
     /// <p>The property label of the automation.</p>
     #[doc(hidden)]
-    pub label: std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
+    pub label: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
 }
 impl NumericQuestionPropertyValueAutomation {
     /// <p>The property label of the automation.</p>
     pub fn label(
         &self,
-    ) -> std::option::Option<&crate::types::NumericQuestionPropertyAutomationLabel> {
+    ) -> ::std::option::Option<&crate::types::NumericQuestionPropertyAutomationLabel> {
         self.label.as_ref()
     }
 }
@@ -31,20 +31,22 @@ impl NumericQuestionPropertyValueAutomation {
 
 /// A builder for [`NumericQuestionPropertyValueAutomation`](crate::types::NumericQuestionPropertyValueAutomation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NumericQuestionPropertyValueAutomationBuilder {
-    pub(crate) label: std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
+    pub(crate) label: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
 }
 impl NumericQuestionPropertyValueAutomationBuilder {
     /// <p>The property label of the automation.</p>
     pub fn label(mut self, input: crate::types::NumericQuestionPropertyAutomationLabel) -> Self {
-        self.label = Some(input);
+        self.label = ::std::option::Option::Some(input);
         self
     }
     /// <p>The property label of the automation.</p>
     pub fn set_label(
         mut self,
-        input: std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
+        input: ::std::option::Option<crate::types::NumericQuestionPropertyAutomationLabel>,
     ) -> Self {
         self.label = input;
         self

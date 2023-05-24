@@ -2,29 +2,29 @@
 
 /// <p>The CPU options for the instance. Both the core count and threads per core must be specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CpuOptionsRequest {
     /// <p>The number of CPU cores for the instance.</p>
     #[doc(hidden)]
-    pub core_count: std::option::Option<i32>,
+    pub core_count: ::std::option::Option<i32>,
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     #[doc(hidden)]
-    pub threads_per_core: std::option::Option<i32>,
+    pub threads_per_core: ::std::option::Option<i32>,
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
     #[doc(hidden)]
-    pub amd_sev_snp: std::option::Option<crate::types::AmdSevSnpSpecification>,
+    pub amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
 impl CpuOptionsRequest {
     /// <p>The number of CPU cores for the instance.</p>
-    pub fn core_count(&self) -> std::option::Option<i32> {
+    pub fn core_count(&self) -> ::std::option::Option<i32> {
         self.core_count
     }
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
-    pub fn threads_per_core(&self) -> std::option::Option<i32> {
+    pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
     }
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
-    pub fn amd_sev_snp(&self) -> std::option::Option<&crate::types::AmdSevSnpSpecification> {
+    pub fn amd_sev_snp(&self) -> ::std::option::Option<&crate::types::AmdSevSnpSpecification> {
         self.amd_sev_snp.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl CpuOptionsRequest {
 
 /// A builder for [`CpuOptionsRequest`](crate::types::CpuOptionsRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CpuOptionsRequestBuilder {
-    pub(crate) core_count: std::option::Option<i32>,
-    pub(crate) threads_per_core: std::option::Option<i32>,
-    pub(crate) amd_sev_snp: std::option::Option<crate::types::AmdSevSnpSpecification>,
+    pub(crate) core_count: ::std::option::Option<i32>,
+    pub(crate) threads_per_core: ::std::option::Option<i32>,
+    pub(crate) amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
 impl CpuOptionsRequestBuilder {
     /// <p>The number of CPU cores for the instance.</p>
     pub fn core_count(mut self, input: i32) -> Self {
-        self.core_count = Some(input);
+        self.core_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of CPU cores for the instance.</p>
-    pub fn set_core_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_core_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.core_count = input;
         self
     }
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     pub fn threads_per_core(mut self, input: i32) -> Self {
-        self.threads_per_core = Some(input);
+        self.threads_per_core = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
-    pub fn set_threads_per_core(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_threads_per_core(mut self, input: ::std::option::Option<i32>) -> Self {
         self.threads_per_core = input;
         self
     }
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
     pub fn amd_sev_snp(mut self, input: crate::types::AmdSevSnpSpecification) -> Self {
-        self.amd_sev_snp = Some(input);
+        self.amd_sev_snp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
     pub fn set_amd_sev_snp(
         mut self,
-        input: std::option::Option<crate::types::AmdSevSnpSpecification>,
+        input: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
     ) -> Self {
         self.amd_sev_snp = input;
         self

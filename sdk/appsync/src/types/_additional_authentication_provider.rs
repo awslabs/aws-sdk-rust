@@ -2,40 +2,40 @@
 
 /// <p>Describes an additional authentication provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalAuthenticationProvider {
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     #[doc(hidden)]
-    pub authentication_type: std::option::Option<crate::types::AuthenticationType>,
+    pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The OIDC configuration.</p>
     #[doc(hidden)]
-    pub open_id_connect_config: std::option::Option<crate::types::OpenIdConnectConfig>,
+    pub open_id_connect_config: ::std::option::Option<crate::types::OpenIdConnectConfig>,
     /// <p>The Amazon Cognito user pool configuration.</p>
     #[doc(hidden)]
-    pub user_pool_config: std::option::Option<crate::types::CognitoUserPoolConfig>,
+    pub user_pool_config: ::std::option::Option<crate::types::CognitoUserPoolConfig>,
     /// <p>Configuration for Lambda function authorization.</p>
     #[doc(hidden)]
-    pub lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    pub lambda_authorizer_config: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
 }
 impl AdditionalAuthenticationProvider {
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The OIDC configuration.</p>
     pub fn open_id_connect_config(
         &self,
-    ) -> std::option::Option<&crate::types::OpenIdConnectConfig> {
+    ) -> ::std::option::Option<&crate::types::OpenIdConnectConfig> {
         self.open_id_connect_config.as_ref()
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
-    pub fn user_pool_config(&self) -> std::option::Option<&crate::types::CognitoUserPoolConfig> {
+    pub fn user_pool_config(&self) -> ::std::option::Option<&crate::types::CognitoUserPoolConfig> {
         self.user_pool_config.as_ref()
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaAuthorizerConfig> {
+    ) -> ::std::option::Option<&crate::types::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
     }
 }
@@ -48,62 +48,65 @@ impl AdditionalAuthenticationProvider {
 
 /// A builder for [`AdditionalAuthenticationProvider`](crate::types::AdditionalAuthenticationProvider).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdditionalAuthenticationProviderBuilder {
-    pub(crate) authentication_type: std::option::Option<crate::types::AuthenticationType>,
-    pub(crate) open_id_connect_config: std::option::Option<crate::types::OpenIdConnectConfig>,
-    pub(crate) user_pool_config: std::option::Option<crate::types::CognitoUserPoolConfig>,
-    pub(crate) lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) open_id_connect_config: ::std::option::Option<crate::types::OpenIdConnectConfig>,
+    pub(crate) user_pool_config: ::std::option::Option<crate::types::CognitoUserPoolConfig>,
+    pub(crate) lambda_authorizer_config:
+        ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
 }
 impl AdditionalAuthenticationProviderBuilder {
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
-        self.authentication_type = Some(input);
+        self.authentication_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authentication type: API key, Identity and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools, or Lambda.</p>
     pub fn set_authentication_type(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationType>,
+        input: ::std::option::Option<crate::types::AuthenticationType>,
     ) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The OIDC configuration.</p>
     pub fn open_id_connect_config(mut self, input: crate::types::OpenIdConnectConfig) -> Self {
-        self.open_id_connect_config = Some(input);
+        self.open_id_connect_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The OIDC configuration.</p>
     pub fn set_open_id_connect_config(
         mut self,
-        input: std::option::Option<crate::types::OpenIdConnectConfig>,
+        input: ::std::option::Option<crate::types::OpenIdConnectConfig>,
     ) -> Self {
         self.open_id_connect_config = input;
         self
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub fn user_pool_config(mut self, input: crate::types::CognitoUserPoolConfig) -> Self {
-        self.user_pool_config = Some(input);
+        self.user_pool_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub fn set_user_pool_config(
         mut self,
-        input: std::option::Option<crate::types::CognitoUserPoolConfig>,
+        input: ::std::option::Option<crate::types::CognitoUserPoolConfig>,
     ) -> Self {
         self.user_pool_config = input;
         self
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(mut self, input: crate::types::LambdaAuthorizerConfig) -> Self {
-        self.lambda_authorizer_config = Some(input);
+        self.lambda_authorizer_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn set_lambda_authorizer_config(
         mut self,
-        input: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+        input: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
     ) -> Self {
         self.lambda_authorizer_config = input;
         self

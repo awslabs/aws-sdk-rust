@@ -2,22 +2,22 @@
 
 /// <p>Describes a range of ports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The first port in the range.</p>
     #[doc(hidden)]
-    pub from: std::option::Option<i32>,
+    pub from: ::std::option::Option<i32>,
     /// <p>The last port in the range.</p>
     #[doc(hidden)]
-    pub to: std::option::Option<i32>,
+    pub to: ::std::option::Option<i32>,
 }
 impl PortRange {
     /// <p>The first port in the range.</p>
-    pub fn from(&self) -> std::option::Option<i32> {
+    pub fn from(&self) -> ::std::option::Option<i32> {
         self.from
     }
     /// <p>The last port in the range.</p>
-    pub fn to(&self) -> std::option::Option<i32> {
+    pub fn to(&self) -> ::std::option::Option<i32> {
         self.to
     }
 }
@@ -30,29 +30,31 @@ impl PortRange {
 
 /// A builder for [`PortRange`](crate::types::PortRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortRangeBuilder {
-    pub(crate) from: std::option::Option<i32>,
-    pub(crate) to: std::option::Option<i32>,
+    pub(crate) from: ::std::option::Option<i32>,
+    pub(crate) to: ::std::option::Option<i32>,
 }
 impl PortRangeBuilder {
     /// <p>The first port in the range.</p>
     pub fn from(mut self, input: i32) -> Self {
-        self.from = Some(input);
+        self.from = ::std::option::Option::Some(input);
         self
     }
     /// <p>The first port in the range.</p>
-    pub fn set_from(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_from(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from = input;
         self
     }
     /// <p>The last port in the range.</p>
     pub fn to(mut self, input: i32) -> Self {
-        self.to = Some(input);
+        self.to = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last port in the range.</p>
-    pub fn set_to(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_to(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to = input;
         self
     }

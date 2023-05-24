@@ -7,29 +7,29 @@ pub use crate::operation::start_network_resource_update::_start_network_resource
 ///
 /// <p>Starts an update of the specified network resource.</p>
 /// <p>After you submit a request to replace or return a network resource, the status of the network resource is <code>CREATING_SHIPPING_LABEL</code>. The shipping label is available when the status of the network resource is <code>PENDING_RETURN</code>. After the network resource is successfully returned, its status is <code>DELETED</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartNetworkResourceUpdateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder,
 }
 impl StartNetworkResourceUpdateFluentBuilder {
     /// Creates a new `StartNetworkResourceUpdate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_network_resource_update::StartNetworkResourceUpdate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
         >,
     > {
@@ -37,30 +37,33 @@ impl StartNetworkResourceUpdateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,23 +76,26 @@ impl StartNetworkResourceUpdateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_network_resource_update::StartNetworkResourceUpdateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_network_resource_update::StartNetworkResourceUpdateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_resource_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.network_resource_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     pub fn set_network_resource_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_network_resource_arn(input);
         self
@@ -108,7 +114,10 @@ impl StartNetworkResourceUpdateFluentBuilder {
     /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
     /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// </ul>
-    pub fn set_update_type(mut self, input: std::option::Option<crate::types::UpdateType>) -> Self {
+    pub fn set_update_type(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdateType>,
+    ) -> Self {
         self.inner = self.inner.set_update_type(input);
         self
     }
@@ -120,18 +129,24 @@ impl StartNetworkResourceUpdateFluentBuilder {
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
     pub fn set_shipping_address(
         mut self,
-        input: std::option::Option<crate::types::Address>,
+        input: ::std::option::Option<crate::types::Address>,
     ) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
-    pub fn return_reason(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn return_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.return_reason(input.into());
         self
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
-    pub fn set_return_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_return_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_return_reason(input);
         self
     }

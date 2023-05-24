@@ -2,29 +2,29 @@
 
 /// <p>A list of environment parameters suggested by the Amazon SageMaker Inference Recommender.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentParameter {
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
     #[doc(hidden)]
-    pub value_type: std::option::Option<std::string::String>,
+    pub value_type: ::std::option::Option<::std::string::String>,
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentParameter {
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn value_type(&self) -> std::option::Option<&str> {
+    pub fn value_type(&self) -> ::std::option::Option<&str> {
         self.value_type.as_deref()
     }
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl EnvironmentParameter {
 
 /// A builder for [`EnvironmentParameter`](crate::types::EnvironmentParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnvironmentParameterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value_type: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value_type: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentParameterBuilder {
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The environment key suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn value_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value_type = Some(input.into());
+    pub fn value_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value type suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn set_value_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_type = input;
         self
     }
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value suggested by the Amazon SageMaker Inference Recommender.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

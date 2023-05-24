@@ -2,29 +2,29 @@
 
 /// <p>S3 bucket source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketSource {
     /// <p>S3 bucket source s3 bucket.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>S3 bucket source s3 key.</p>
     #[doc(hidden)]
-    pub s3_key: std::option::Option<std::string::String>,
+    pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>S3 bucket source s3 bucket owner.</p>
     #[doc(hidden)]
-    pub s3_bucket_owner: std::option::Option<std::string::String>,
+    pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketSource {
     /// <p>S3 bucket source s3 bucket.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>S3 bucket source s3 key.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<&str> {
         self.s3_key.as_deref()
     }
     /// <p>S3 bucket source s3 bucket owner.</p>
-    pub fn s3_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_owner.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl S3BucketSource {
 
 /// A builder for [`S3BucketSource`](crate::types::S3BucketSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3BucketSourceBuilder {
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) s3_key: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket_owner: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_key: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketSourceBuilder {
     /// <p>S3 bucket source s3 bucket.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>S3 bucket source s3 bucket.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>S3 bucket source s3 key.</p>
-    pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_key = Some(input.into());
+    pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>S3 bucket source s3 key.</p>
-    pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
     }
     /// <p>S3 bucket source s3 bucket owner.</p>
-    pub fn s3_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_owner = Some(input.into());
+    pub fn s3_bucket_owner(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>S3 bucket source s3 bucket owner.</p>
-    pub fn set_s3_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_owner(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_owner = input;
         self
     }

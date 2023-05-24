@@ -2,34 +2,34 @@
 
 /// <p>Output from an AddInstanceGroups call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddInstanceGroupsOutput {
     /// <p>The job flow ID in which the instance groups are added.</p>
     #[doc(hidden)]
-    pub job_flow_id: std::option::Option<std::string::String>,
+    pub job_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>Instance group IDs of the newly created instance groups.</p>
     #[doc(hidden)]
-    pub instance_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instance_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name of the cluster.</p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AddInstanceGroupsOutput {
     /// <p>The job flow ID in which the instance groups are added.</p>
-    pub fn job_flow_id(&self) -> std::option::Option<&str> {
+    pub fn job_flow_id(&self) -> ::std::option::Option<&str> {
         self.job_flow_id.as_deref()
     }
     /// <p>Instance group IDs of the newly created instance groups.</p>
-    pub fn instance_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_group_ids.as_deref()
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for AddInstanceGroupsOutput {
+impl ::aws_http::request_id::RequestId for AddInstanceGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -44,21 +44,23 @@ impl AddInstanceGroupsOutput {
 
 /// A builder for [`AddInstanceGroupsOutput`](crate::operation::add_instance_groups::AddInstanceGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddInstanceGroupsOutputBuilder {
-    pub(crate) job_flow_id: std::option::Option<std::string::String>,
-    pub(crate) instance_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
+    pub(crate) job_flow_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl AddInstanceGroupsOutputBuilder {
     /// <p>The job flow ID in which the instance groups are added.</p>
-    pub fn job_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_flow_id = Some(input.into());
+    pub fn job_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job flow ID in which the instance groups are added.</p>
-    pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_flow_id = input;
         self
     }
@@ -67,27 +69,30 @@ impl AddInstanceGroupsOutputBuilder {
     /// To override the contents of this collection use [`set_instance_group_ids`](Self::set_instance_group_ids).
     ///
     /// <p>Instance group IDs of the newly created instance groups.</p>
-    pub fn instance_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.instance_group_ids.unwrap_or_default();
         v.push(input.into());
-        self.instance_group_ids = Some(v);
+        self.instance_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Instance group IDs of the newly created instance groups.</p>
     pub fn set_instance_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instance_group_ids = input;
         self
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }

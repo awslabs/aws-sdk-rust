@@ -2,37 +2,37 @@
 
 /// <p>The configuration for a Directory Service for Microsoft Active Directory studio resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActiveDirectoryConfiguration {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
     #[doc(hidden)]
     pub computer_attributes:
-        std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
     #[doc(hidden)]
-    pub directory_id: std::option::Option<std::string::String>,
+    pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
     #[doc(hidden)]
-    pub organizational_unit_distinguished_name: std::option::Option<std::string::String>,
+    pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
 }
 impl ActiveDirectoryConfiguration {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
     pub fn computer_attributes(
         &self,
-    ) -> std::option::Option<&[crate::types::ActiveDirectoryComputerAttribute]> {
+    ) -> ::std::option::Option<&[crate::types::ActiveDirectoryComputerAttribute]> {
         self.computer_attributes.as_deref()
     }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
-    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+    pub fn organizational_unit_distinguished_name(&self) -> ::std::option::Option<&str> {
         self.organizational_unit_distinguished_name.as_deref()
     }
 }
-impl std::fmt::Debug for ActiveDirectoryConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ActiveDirectoryConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActiveDirectoryConfiguration");
         formatter.field("computer_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("directory_id", &self.directory_id);
@@ -52,12 +52,12 @@ impl ActiveDirectoryConfiguration {
 
 /// A builder for [`ActiveDirectoryConfiguration`](crate::types::ActiveDirectoryConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ActiveDirectoryConfigurationBuilder {
     pub(crate) computer_attributes:
-        std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
-    pub(crate) directory_id: std::option::Option<std::string::String>,
-    pub(crate) organizational_unit_distinguished_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
 }
 impl ActiveDirectoryConfigurationBuilder {
     /// Appends an item to `computer_attributes`.
@@ -71,39 +71,41 @@ impl ActiveDirectoryConfigurationBuilder {
     ) -> Self {
         let mut v = self.computer_attributes.unwrap_or_default();
         v.push(input);
-        self.computer_attributes = Some(v);
+        self.computer_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
     pub fn set_computer_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>,
+        >,
     ) -> Self {
         self.computer_attributes = input;
         self
     }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_id = Some(input.into());
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
     /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
     pub fn organizational_unit_distinguished_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.organizational_unit_distinguished_name = Some(input.into());
+        self.organizational_unit_distinguished_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
     pub fn set_organizational_unit_distinguished_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.organizational_unit_distinguished_name = input;
         self
@@ -117,8 +119,8 @@ impl ActiveDirectoryConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for ActiveDirectoryConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ActiveDirectoryConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActiveDirectoryConfigurationBuilder");
         formatter.field("computer_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("directory_id", &self.directory_id);

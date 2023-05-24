@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TrustAnchorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TrustAnchorType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TrustAnchorType {
+impl ::std::convert::From<&str> for TrustAnchorType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_ACM_PCA" => TrustAnchorType::AwsAcmPca,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for TrustAnchorType {
         }
     }
 }
-impl std::str::FromStr for TrustAnchorType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TrustAnchorType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrustAnchorType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TrustAnchorType::from(s))
     }
 }
 impl TrustAnchorType {
@@ -95,7 +95,7 @@ impl TrustAnchorType {
         ]
     }
 }
-impl AsRef<str> for TrustAnchorType {
+impl ::std::convert::AsRef<str> for TrustAnchorType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

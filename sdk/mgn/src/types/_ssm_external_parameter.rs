@@ -2,10 +2,10 @@
 
 /// <p>AWS Systems Manager Document external parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SsmExternalParameter {
     /// <p>AWS Systems Manager Document external parameters dynamic path.</p>
-    DynamicPath(std::string::String),
+    DynamicPath(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum SsmExternalParameter {
 }
 impl SsmExternalParameter {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`DynamicPath`](crate::types::SsmExternalParameter::DynamicPath), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`DynamicPath`](crate::types::SsmExternalParameter::DynamicPath), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_dynamic_path(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_dynamic_path(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SsmExternalParameter::DynamicPath(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DynamicPath`](crate::types::SsmExternalParameter::DynamicPath).

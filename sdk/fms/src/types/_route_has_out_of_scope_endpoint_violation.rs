@@ -2,92 +2,92 @@
 
 /// <p>Contains details about the route endpoint that violates the policy scope.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteHasOutOfScopeEndpointViolation {
     /// <p>The ID of the subnet associated with the route that violates the policy scope.</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC ID of the route that violates the policy scope.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route table.</p>
     #[doc(hidden)]
-    pub route_table_id: std::option::Option<std::string::String>,
+    pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of routes that violate the route table.</p>
     #[doc(hidden)]
-    pub violating_routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
+    pub violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>The subnet's Availability Zone.</p>
     #[doc(hidden)]
-    pub subnet_availability_zone: std::option::Option<std::string::String>,
+    pub subnet_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet's Availability Zone.</p>
     #[doc(hidden)]
-    pub subnet_availability_zone_id: std::option::Option<std::string::String>,
+    pub subnet_availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The route table associated with the current firewall subnet.</p>
     #[doc(hidden)]
-    pub current_firewall_subnet_route_table: std::option::Option<std::string::String>,
+    pub current_firewall_subnet_route_table: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the firewall subnet.</p>
     #[doc(hidden)]
-    pub firewall_subnet_id: std::option::Option<std::string::String>,
+    pub firewall_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of firewall subnet routes.</p>
     #[doc(hidden)]
-    pub firewall_subnet_routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
+    pub firewall_subnet_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>The ID of the Internet Gateway.</p>
     #[doc(hidden)]
-    pub internet_gateway_id: std::option::Option<std::string::String>,
+    pub internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The current route table associated with the Internet Gateway.</p>
     #[doc(hidden)]
-    pub current_internet_gateway_route_table: std::option::Option<std::string::String>,
+    pub current_internet_gateway_route_table: ::std::option::Option<::std::string::String>,
     /// <p>The routes in the route table associated with the Internet Gateway.</p>
     #[doc(hidden)]
-    pub internet_gateway_routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
+    pub internet_gateway_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
 }
 impl RouteHasOutOfScopeEndpointViolation {
     /// <p>The ID of the subnet associated with the route that violates the policy scope.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The VPC ID of the route that violates the policy scope.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
     /// <p>The list of routes that violate the route table.</p>
-    pub fn violating_routes(&self) -> std::option::Option<&[crate::types::Route]> {
+    pub fn violating_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
         self.violating_routes.as_deref()
     }
     /// <p>The subnet's Availability Zone.</p>
-    pub fn subnet_availability_zone(&self) -> std::option::Option<&str> {
+    pub fn subnet_availability_zone(&self) -> ::std::option::Option<&str> {
         self.subnet_availability_zone.as_deref()
     }
     /// <p>The ID of the subnet's Availability Zone.</p>
-    pub fn subnet_availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.subnet_availability_zone_id.as_deref()
     }
     /// <p>The route table associated with the current firewall subnet.</p>
-    pub fn current_firewall_subnet_route_table(&self) -> std::option::Option<&str> {
+    pub fn current_firewall_subnet_route_table(&self) -> ::std::option::Option<&str> {
         self.current_firewall_subnet_route_table.as_deref()
     }
     /// <p>The ID of the firewall subnet.</p>
-    pub fn firewall_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn firewall_subnet_id(&self) -> ::std::option::Option<&str> {
         self.firewall_subnet_id.as_deref()
     }
     /// <p>The list of firewall subnet routes.</p>
-    pub fn firewall_subnet_routes(&self) -> std::option::Option<&[crate::types::Route]> {
+    pub fn firewall_subnet_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
         self.firewall_subnet_routes.as_deref()
     }
     /// <p>The ID of the Internet Gateway.</p>
-    pub fn internet_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn internet_gateway_id(&self) -> ::std::option::Option<&str> {
         self.internet_gateway_id.as_deref()
     }
     /// <p>The current route table associated with the Internet Gateway.</p>
-    pub fn current_internet_gateway_route_table(&self) -> std::option::Option<&str> {
+    pub fn current_internet_gateway_route_table(&self) -> ::std::option::Option<&str> {
         self.current_internet_gateway_route_table.as_deref()
     }
     /// <p>The routes in the route table associated with the Internet Gateway.</p>
-    pub fn internet_gateway_routes(&self) -> std::option::Option<&[crate::types::Route]> {
+    pub fn internet_gateway_routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
         self.internet_gateway_routes.as_deref()
     }
 }
@@ -100,49 +100,57 @@ impl RouteHasOutOfScopeEndpointViolation {
 
 /// A builder for [`RouteHasOutOfScopeEndpointViolation`](crate::types::RouteHasOutOfScopeEndpointViolation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RouteHasOutOfScopeEndpointViolationBuilder {
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) route_table_id: std::option::Option<std::string::String>,
-    pub(crate) violating_routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
-    pub(crate) subnet_availability_zone: std::option::Option<std::string::String>,
-    pub(crate) subnet_availability_zone_id: std::option::Option<std::string::String>,
-    pub(crate) current_firewall_subnet_route_table: std::option::Option<std::string::String>,
-    pub(crate) firewall_subnet_id: std::option::Option<std::string::String>,
-    pub(crate) firewall_subnet_routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
-    pub(crate) internet_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) current_internet_gateway_route_table: std::option::Option<std::string::String>,
-    pub(crate) internet_gateway_routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) violating_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
+    pub(crate) subnet_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_availability_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) current_firewall_subnet_route_table: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_subnet_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
+    pub(crate) internet_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) current_internet_gateway_route_table: ::std::option::Option<::std::string::String>,
+    pub(crate) internet_gateway_routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
 }
 impl RouteHasOutOfScopeEndpointViolationBuilder {
     /// <p>The ID of the subnet associated with the route that violates the policy scope.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet associated with the route that violates the policy scope.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
     /// <p>The VPC ID of the route that violates the policy scope.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC ID of the route that violates the policy scope.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.route_table_id = Some(input.into());
+    pub fn route_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_route_table_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.route_table_id = input;
         self
     }
@@ -154,39 +162,45 @@ impl RouteHasOutOfScopeEndpointViolationBuilder {
     pub fn violating_routes(mut self, input: crate::types::Route) -> Self {
         let mut v = self.violating_routes.unwrap_or_default();
         v.push(input);
-        self.violating_routes = Some(v);
+        self.violating_routes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of routes that violate the route table.</p>
     pub fn set_violating_routes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Route>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     ) -> Self {
         self.violating_routes = input;
         self
     }
     /// <p>The subnet's Availability Zone.</p>
-    pub fn subnet_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_availability_zone = Some(input.into());
+    pub fn subnet_availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subnet_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subnet's Availability Zone.</p>
     pub fn set_subnet_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subnet_availability_zone = input;
         self
     }
     /// <p>The ID of the subnet's Availability Zone.</p>
-    pub fn subnet_availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_availability_zone_id = Some(input.into());
+    pub fn subnet_availability_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subnet_availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet's Availability Zone.</p>
     pub fn set_subnet_availability_zone_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subnet_availability_zone_id = input;
         self
@@ -194,28 +208,31 @@ impl RouteHasOutOfScopeEndpointViolationBuilder {
     /// <p>The route table associated with the current firewall subnet.</p>
     pub fn current_firewall_subnet_route_table(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.current_firewall_subnet_route_table = Some(input.into());
+        self.current_firewall_subnet_route_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route table associated with the current firewall subnet.</p>
     pub fn set_current_firewall_subnet_route_table(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.current_firewall_subnet_route_table = input;
         self
     }
     /// <p>The ID of the firewall subnet.</p>
-    pub fn firewall_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.firewall_subnet_id = Some(input.into());
+    pub fn firewall_subnet_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.firewall_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the firewall subnet.</p>
     pub fn set_firewall_subnet_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.firewall_subnet_id = input;
         self
@@ -228,26 +245,29 @@ impl RouteHasOutOfScopeEndpointViolationBuilder {
     pub fn firewall_subnet_routes(mut self, input: crate::types::Route) -> Self {
         let mut v = self.firewall_subnet_routes.unwrap_or_default();
         v.push(input);
-        self.firewall_subnet_routes = Some(v);
+        self.firewall_subnet_routes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of firewall subnet routes.</p>
     pub fn set_firewall_subnet_routes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Route>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     ) -> Self {
         self.firewall_subnet_routes = input;
         self
     }
     /// <p>The ID of the Internet Gateway.</p>
-    pub fn internet_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.internet_gateway_id = Some(input.into());
+    pub fn internet_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Internet Gateway.</p>
     pub fn set_internet_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.internet_gateway_id = input;
         self
@@ -255,15 +275,15 @@ impl RouteHasOutOfScopeEndpointViolationBuilder {
     /// <p>The current route table associated with the Internet Gateway.</p>
     pub fn current_internet_gateway_route_table(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.current_internet_gateway_route_table = Some(input.into());
+        self.current_internet_gateway_route_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current route table associated with the Internet Gateway.</p>
     pub fn set_current_internet_gateway_route_table(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.current_internet_gateway_route_table = input;
         self
@@ -276,13 +296,13 @@ impl RouteHasOutOfScopeEndpointViolationBuilder {
     pub fn internet_gateway_routes(mut self, input: crate::types::Route) -> Self {
         let mut v = self.internet_gateway_routes.unwrap_or_default();
         v.push(input);
-        self.internet_gateway_routes = Some(v);
+        self.internet_gateway_routes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The routes in the route table associated with the Internet Gateway.</p>
     pub fn set_internet_gateway_routes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Route>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     ) -> Self {
         self.internet_gateway_routes = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSiteAddress`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`site_id(impl Into<String>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`site_id(impl ::std::convert::Into<String>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::site_id) / [`set_site_id(Option<String>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::set_site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
     ///   - [`address_type(AddressType)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::address_type) / [`set_address_type(Option<AddressType>)`](crate::operation::get_site_address::builders::GetSiteAddressFluentBuilder::set_address_type): <p>The type of the address you request. </p>
     /// - On success, responds with [`GetSiteAddressOutput`](crate::operation::get_site_address::GetSiteAddressOutput) with field(s):
     ///   - [`site_id(Option<String>)`](crate::operation::get_site_address::GetSiteAddressOutput::site_id): <p>The ID of the site.</p>

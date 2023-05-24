@@ -2,52 +2,52 @@
 
 /// <p>Requested display language code is not supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsupportedDisplayLanguageCodeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Language code passed in with the request.</p>
     #[doc(hidden)]
-    pub display_language_code: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub display_language_code: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl UnsupportedDisplayLanguageCodeException {
     /// <p>Language code passed in with the request.</p>
-    pub fn display_language_code(&self) -> std::option::Option<&str> {
+    pub fn display_language_code(&self) -> ::std::option::Option<&str> {
         self.display_language_code.as_deref()
     }
 }
 impl UnsupportedDisplayLanguageCodeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for UnsupportedDisplayLanguageCodeException {
+impl ::std::fmt::Display for UnsupportedDisplayLanguageCodeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "UnsupportedDisplayLanguageCodeException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "UnsupportedDisplayLanguageCodeException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for UnsupportedDisplayLanguageCodeException {}
-impl aws_http::request_id::RequestId
+impl ::std::error::Error for UnsupportedDisplayLanguageCodeException {}
+impl ::aws_http::request_id::RequestId
     for crate::types::error::UnsupportedDisplayLanguageCodeException
 {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
     for UnsupportedDisplayLanguageCodeException
 {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -61,38 +61,43 @@ impl UnsupportedDisplayLanguageCodeException {
 
 /// A builder for [`UnsupportedDisplayLanguageCodeException`](crate::types::error::UnsupportedDisplayLanguageCodeException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnsupportedDisplayLanguageCodeExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) display_language_code: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) display_language_code: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl UnsupportedDisplayLanguageCodeExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Language code passed in with the request.</p>
-    pub fn display_language_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_language_code = Some(input.into());
+    pub fn display_language_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.display_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Language code passed in with the request.</p>
     pub fn set_display_language_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.display_language_code = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -100,7 +105,7 @@ impl UnsupportedDisplayLanguageCodeExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

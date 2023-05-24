@@ -2,31 +2,31 @@
 
 /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAccountStatus {
     /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The account name given to the account when it was created.</p>
     #[doc(hidden)]
-    pub account_name: std::option::Option<std::string::String>,
+    pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::CreateAccountState>,
+    pub state: ::std::option::Option<crate::types::CreateAccountState>,
     /// <p>The date and time that the request was made for the account creation.</p>
     #[doc(hidden)]
-    pub requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub requested_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the account was created and the request completed.</p>
     #[doc(hidden)]
-    pub completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub completed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
     #[doc(hidden)]
-    pub gov_cloud_account_id: std::option::Option<std::string::String>,
+    pub gov_cloud_account_id: ::std::option::Option<::std::string::String>,
     /// <p>If the request failed, a description of the reason for the failure.</p>
     /// <ul>
     /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
@@ -45,37 +45,37 @@ pub struct CreateAccountStatus {
     /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<crate::types::CreateAccountFailureReason>,
+    pub failure_reason: ::std::option::Option<crate::types::CreateAccountFailureReason>,
 }
 impl CreateAccountStatus {
     /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The account name given to the account when it was created.</p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
     /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::CreateAccountState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::CreateAccountState> {
         self.state.as_ref()
     }
     /// <p>The date and time that the request was made for the account creation.</p>
-    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn requested_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.requested_timestamp.as_ref()
     }
     /// <p>The date and time that the account was created and the request completed.</p>
-    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed_timestamp.as_ref()
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
-    pub fn gov_cloud_account_id(&self) -> std::option::Option<&str> {
+    pub fn gov_cloud_account_id(&self) -> ::std::option::Option<&str> {
         self.gov_cloud_account_id.as_deref()
     }
     /// <p>If the request failed, a description of the reason for the failure.</p>
@@ -95,12 +95,14 @@ impl CreateAccountStatus {
     /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
     /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
-    pub fn failure_reason(&self) -> std::option::Option<&crate::types::CreateAccountFailureReason> {
+    pub fn failure_reason(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CreateAccountFailureReason> {
         self.failure_reason.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAccountStatus {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CreateAccountStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccountStatus");
         formatter.field("id", &self.id);
         formatter.field("account_name", &"*** Sensitive Data Redacted ***");
@@ -122,100 +124,103 @@ impl CreateAccountStatus {
 
 /// A builder for [`CreateAccountStatus`](crate::types::CreateAccountStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CreateAccountStatusBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) account_name: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::CreateAccountState>,
-    pub(crate) requested_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) gov_cloud_account_id: std::option::Option<std::string::String>,
-    pub(crate) failure_reason: std::option::Option<crate::types::CreateAccountFailureReason>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::CreateAccountState>,
+    pub(crate) requested_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) completed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) gov_cloud_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_reason: ::std::option::Option<crate::types::CreateAccountFailureReason>,
 }
 impl CreateAccountStatusBuilder {
     /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The account name given to the account when it was created.</p>
-    pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_name = Some(input.into());
+    pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account name given to the account when it was created.</p>
-    pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
     /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
     pub fn state(mut self, input: crate::types::CreateAccountState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::CreateAccountState>,
+        input: ::std::option::Option<crate::types::CreateAccountState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The date and time that the request was made for the account creation.</p>
-    pub fn requested_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.requested_timestamp = Some(input);
+    pub fn requested_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.requested_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the request was made for the account creation.</p>
     pub fn set_requested_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.requested_timestamp = input;
         self
     }
     /// <p>The date and time that the account was created and the request completed.</p>
-    pub fn completed_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.completed_timestamp = Some(input);
+    pub fn completed_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completed_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the account was created and the request completed.</p>
     pub fn set_completed_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.completed_timestamp = input;
         self
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
-    pub fn gov_cloud_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gov_cloud_account_id = Some(input.into());
+    pub fn gov_cloud_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.gov_cloud_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
     pub fn set_gov_cloud_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.gov_cloud_account_id = input;
         self
@@ -238,7 +243,7 @@ impl CreateAccountStatusBuilder {
     /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
     /// </ul>
     pub fn failure_reason(mut self, input: crate::types::CreateAccountFailureReason) -> Self {
-        self.failure_reason = Some(input);
+        self.failure_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the request failed, a description of the reason for the failure.</p>
@@ -260,7 +265,7 @@ impl CreateAccountStatusBuilder {
     /// </ul>
     pub fn set_failure_reason(
         mut self,
-        input: std::option::Option<crate::types::CreateAccountFailureReason>,
+        input: ::std::option::Option<crate::types::CreateAccountFailureReason>,
     ) -> Self {
         self.failure_reason = input;
         self
@@ -279,8 +284,8 @@ impl CreateAccountStatusBuilder {
         }
     }
 }
-impl std::fmt::Debug for CreateAccountStatusBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CreateAccountStatusBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccountStatusBuilder");
         formatter.field("id", &self.id);
         formatter.field("account_name", &"*** Sensitive Data Redacted ***");

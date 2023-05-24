@@ -2,22 +2,22 @@
 
 /// <p>Describes the properties of the certificate-based authentication you want to use with your WorkSpaces.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateBasedAuthProperties {
     /// <p>The status of the certificate-based authentication properties.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
+    pub status: ::std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
     #[doc(hidden)]
-    pub certificate_authority_arn: std::option::Option<std::string::String>,
+    pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
 impl CertificateBasedAuthProperties {
     /// <p>The status of the certificate-based authentication properties.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CertificateBasedAuthStatusEnum> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateBasedAuthStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
-    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
 }
@@ -30,34 +30,39 @@ impl CertificateBasedAuthProperties {
 
 /// A builder for [`CertificateBasedAuthProperties`](crate::types::CertificateBasedAuthProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CertificateBasedAuthPropertiesBuilder {
-    pub(crate) status: std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
-    pub(crate) certificate_authority_arn: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
+    pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
 }
 impl CertificateBasedAuthPropertiesBuilder {
     /// <p>The status of the certificate-based authentication properties.</p>
     pub fn status(mut self, input: crate::types::CertificateBasedAuthStatusEnum) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the certificate-based authentication properties.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
+        input: ::std::option::Option<crate::types::CertificateBasedAuthStatusEnum>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
-    pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_authority_arn = Some(input.into());
+    pub fn certificate_authority_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_authority_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager Private CA resource.</p>
     pub fn set_certificate_authority_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.certificate_authority_arn = input;
         self

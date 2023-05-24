@@ -2,78 +2,78 @@
 
 /// <p>Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionExecutionDetail {
     /// <p>The pipeline execution ID for the action execution.</p>
     #[doc(hidden)]
-    pub pipeline_execution_id: std::option::Option<std::string::String>,
+    pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The action execution ID.</p>
     #[doc(hidden)]
-    pub action_execution_id: std::option::Option<std::string::String>,
+    pub action_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the pipeline where the action was run.</p>
     #[doc(hidden)]
-    pub pipeline_version: std::option::Option<i32>,
+    pub pipeline_version: ::std::option::Option<i32>,
     /// <p>The name of the stage that contains the action.</p>
     #[doc(hidden)]
-    pub stage_name: std::option::Option<std::string::String>,
+    pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action.</p>
     #[doc(hidden)]
-    pub action_name: std::option::Option<std::string::String>,
+    pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the action execution.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last update time of the action execution.</p>
     #[doc(hidden)]
-    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ActionExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::ActionExecutionStatus>,
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
     #[doc(hidden)]
-    pub input: std::option::Option<crate::types::ActionExecutionInput>,
+    pub input: ::std::option::Option<crate::types::ActionExecutionInput>,
     /// <p>Output details for the action execution, such as the action execution result.</p>
     #[doc(hidden)]
-    pub output: std::option::Option<crate::types::ActionExecutionOutput>,
+    pub output: ::std::option::Option<crate::types::ActionExecutionOutput>,
 }
 impl ActionExecutionDetail {
     /// <p>The pipeline execution ID for the action execution.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>The action execution ID.</p>
-    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+    pub fn action_execution_id(&self) -> ::std::option::Option<&str> {
         self.action_execution_id.as_deref()
     }
     /// <p>The version of the pipeline where the action was run.</p>
-    pub fn pipeline_version(&self) -> std::option::Option<i32> {
+    pub fn pipeline_version(&self) -> ::std::option::Option<i32> {
         self.pipeline_version
     }
     /// <p>The name of the stage that contains the action.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<&str> {
         self.stage_name.as_deref()
     }
     /// <p>The name of the action.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>The start time of the action execution.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The last update time of the action execution.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ActionExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ActionExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
-    pub fn input(&self) -> std::option::Option<&crate::types::ActionExecutionInput> {
+    pub fn input(&self) -> ::std::option::Option<&crate::types::ActionExecutionInput> {
         self.input.as_ref()
     }
     /// <p>Output details for the action execution, such as the action execution result.</p>
-    pub fn output(&self) -> std::option::Option<&crate::types::ActionExecutionOutput> {
+    pub fn output(&self) -> ::std::option::Option<&crate::types::ActionExecutionOutput> {
         self.output.as_ref()
     }
 }
@@ -86,137 +86,145 @@ impl ActionExecutionDetail {
 
 /// A builder for [`ActionExecutionDetail`](crate::types::ActionExecutionDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionExecutionDetailBuilder {
-    pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
-    pub(crate) action_execution_id: std::option::Option<std::string::String>,
-    pub(crate) pipeline_version: std::option::Option<i32>,
-    pub(crate) stage_name: std::option::Option<std::string::String>,
-    pub(crate) action_name: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::ActionExecutionStatus>,
-    pub(crate) input: std::option::Option<crate::types::ActionExecutionInput>,
-    pub(crate) output: std::option::Option<crate::types::ActionExecutionOutput>,
+    pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) action_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_version: ::std::option::Option<i32>,
+    pub(crate) stage_name: ::std::option::Option<::std::string::String>,
+    pub(crate) action_name: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::ActionExecutionStatus>,
+    pub(crate) input: ::std::option::Option<crate::types::ActionExecutionInput>,
+    pub(crate) output: ::std::option::Option<crate::types::ActionExecutionOutput>,
 }
 impl ActionExecutionDetailBuilder {
     /// <p>The pipeline execution ID for the action execution.</p>
-    pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_execution_id = Some(input.into());
+    pub fn pipeline_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pipeline execution ID for the action execution.</p>
     pub fn set_pipeline_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_execution_id = input;
         self
     }
     /// <p>The action execution ID.</p>
-    pub fn action_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_execution_id = Some(input.into());
+    pub fn action_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.action_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action execution ID.</p>
     pub fn set_action_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.action_execution_id = input;
         self
     }
     /// <p>The version of the pipeline where the action was run.</p>
     pub fn pipeline_version(mut self, input: i32) -> Self {
-        self.pipeline_version = Some(input);
+        self.pipeline_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version of the pipeline where the action was run.</p>
-    pub fn set_pipeline_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pipeline_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pipeline_version = input;
         self
     }
     /// <p>The name of the stage that contains the action.</p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage_name = Some(input.into());
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stage that contains the action.</p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
     }
     /// <p>The name of the action.</p>
-    pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_name = Some(input.into());
+    pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the action.</p>
-    pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
     }
     /// <p>The start time of the action execution.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time of the action execution.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The last update time of the action execution.</p>
-    pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_update_time = Some(input);
+    pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last update time of the action execution.</p>
     pub fn set_last_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_update_time = input;
         self
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
     pub fn status(mut self, input: crate::types::ActionExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ActionExecutionStatus>,
+        input: ::std::option::Option<crate::types::ActionExecutionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
     pub fn input(mut self, input: crate::types::ActionExecutionInput) -> Self {
-        self.input = Some(input);
+        self.input = ::std::option::Option::Some(input);
         self
     }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
     pub fn set_input(
         mut self,
-        input: std::option::Option<crate::types::ActionExecutionInput>,
+        input: ::std::option::Option<crate::types::ActionExecutionInput>,
     ) -> Self {
         self.input = input;
         self
     }
     /// <p>Output details for the action execution, such as the action execution result.</p>
     pub fn output(mut self, input: crate::types::ActionExecutionOutput) -> Self {
-        self.output = Some(input);
+        self.output = ::std::option::Option::Some(input);
         self
     }
     /// <p>Output details for the action execution, such as the action execution result.</p>
     pub fn set_output(
         mut self,
-        input: std::option::Option<crate::types::ActionExecutionOutput>,
+        input: ::std::option::Option<crate::types::ActionExecutionOutput>,
     ) -> Self {
         self.output = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>Includes all client authentication information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerlessClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
     #[doc(hidden)]
-    pub sasl: std::option::Option<crate::types::ServerlessSasl>,
+    pub sasl: ::std::option::Option<crate::types::ServerlessSasl>,
 }
 impl ServerlessClientAuthentication {
     /// <p>Details for ClientAuthentication using SASL.</p>
-    pub fn sasl(&self) -> std::option::Option<&crate::types::ServerlessSasl> {
+    pub fn sasl(&self) -> ::std::option::Option<&crate::types::ServerlessSasl> {
         self.sasl.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl ServerlessClientAuthentication {
 
 /// A builder for [`ServerlessClientAuthentication`](crate::types::ServerlessClientAuthentication).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerlessClientAuthenticationBuilder {
-    pub(crate) sasl: std::option::Option<crate::types::ServerlessSasl>,
+    pub(crate) sasl: ::std::option::Option<crate::types::ServerlessSasl>,
 }
 impl ServerlessClientAuthenticationBuilder {
     /// <p>Details for ClientAuthentication using SASL.</p>
     pub fn sasl(mut self, input: crate::types::ServerlessSasl) -> Self {
-        self.sasl = Some(input);
+        self.sasl = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for ClientAuthentication using SASL.</p>
-    pub fn set_sasl(mut self, input: std::option::Option<crate::types::ServerlessSasl>) -> Self {
+    pub fn set_sasl(mut self, input: ::std::option::Option<crate::types::ServerlessSasl>) -> Self {
         self.sasl = input;
         self
     }

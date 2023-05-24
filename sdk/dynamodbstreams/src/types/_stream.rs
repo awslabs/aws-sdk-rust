@@ -2,14 +2,14 @@
 
 /// <p>Represents all of the data describing a particular stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stream {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
-    pub stream_arn: std::option::Option<std::string::String>,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The DynamoDB table with which the stream is associated.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
@@ -18,15 +18,15 @@ pub struct Stream {
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stream_label: std::option::Option<std::string::String>,
+    pub stream_label: ::std::option::Option<::std::string::String>,
 }
 impl Stream {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
@@ -36,7 +36,7 @@ impl Stream {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
-    pub fn stream_label(&self) -> std::option::Option<&str> {
+    pub fn stream_label(&self) -> ::std::option::Option<&str> {
         self.stream_label.as_deref()
     }
 }
@@ -49,30 +49,32 @@ impl Stream {
 
 /// A builder for [`Stream`](crate::types::Stream).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamBuilder {
-    pub(crate) stream_arn: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) stream_label: std::option::Option<std::string::String>,
+    pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_label: ::std::option::Option<::std::string::String>,
 }
 impl StreamBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_arn = Some(input.into());
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
@@ -83,8 +85,8 @@ impl StreamBuilder {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
-    pub fn stream_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_label = Some(input.into());
+    pub fn stream_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
@@ -94,7 +96,7 @@ impl StreamBuilder {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
-    pub fn set_stream_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_label = input;
         self
     }

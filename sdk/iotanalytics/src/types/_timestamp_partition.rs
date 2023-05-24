@@ -2,22 +2,22 @@
 
 /// <p> A partition dimension defined by a timestamp attribute. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampPartition {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     #[doc(hidden)]
-    pub timestamp_format: std::option::Option<std::string::String>,
+    pub timestamp_format: ::std::option::Option<::std::string::String>,
 }
 impl TimestampPartition {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+    pub fn timestamp_format(&self) -> ::std::option::Option<&str> {
         self.timestamp_format.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl TimestampPartition {
 
 /// A builder for [`TimestampPartition`](crate::types::TimestampPartition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimestampPartitionBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) timestamp_format: std::option::Option<std::string::String>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp_format: ::std::option::Option<::std::string::String>,
 }
 impl TimestampPartitionBuilder {
     /// <p> The attribute name of the partition defined by a timestamp. </p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The attribute name of the partition defined by a timestamp. </p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestamp_format = Some(input.into());
+    pub fn timestamp_format(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timestamp_format(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.timestamp_format = input;
         self
     }

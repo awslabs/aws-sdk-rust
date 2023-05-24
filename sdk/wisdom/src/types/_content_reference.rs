@@ -2,36 +2,36 @@
 
 /// <p>Reference information about the content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentReference {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     #[doc(hidden)]
-    pub knowledge_base_arn: std::option::Option<std::string::String>,
+    pub knowledge_base_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the knowledge base.</p>
     #[doc(hidden)]
-    pub knowledge_base_id: std::option::Option<std::string::String>,
+    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
     #[doc(hidden)]
-    pub content_arn: std::option::Option<std::string::String>,
+    pub content_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content.</p>
     #[doc(hidden)]
-    pub content_id: std::option::Option<std::string::String>,
+    pub content_id: ::std::option::Option<::std::string::String>,
 }
 impl ContentReference {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_arn(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_arn.as_deref()
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn content_arn(&self) -> std::option::Option<&str> {
+    pub fn content_arn(&self) -> ::std::option::Option<&str> {
         self.content_arn.as_deref()
     }
     /// <p>The identifier of the content.</p>
-    pub fn content_id(&self) -> std::option::Option<&str> {
+    pub fn content_id(&self) -> ::std::option::Option<&str> {
         self.content_id.as_deref()
     }
 }
@@ -44,57 +44,65 @@ impl ContentReference {
 
 /// A builder for [`ContentReference`](crate::types::ContentReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContentReferenceBuilder {
-    pub(crate) knowledge_base_arn: std::option::Option<std::string::String>,
-    pub(crate) knowledge_base_id: std::option::Option<std::string::String>,
-    pub(crate) content_arn: std::option::Option<std::string::String>,
-    pub(crate) content_id: std::option::Option<std::string::String>,
+    pub(crate) knowledge_base_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
+    pub(crate) content_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) content_id: ::std::option::Option<::std::string::String>,
 }
 impl ContentReferenceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
-    pub fn knowledge_base_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.knowledge_base_arn = Some(input.into());
+    pub fn knowledge_base_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.knowledge_base_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
     pub fn set_knowledge_base_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.knowledge_base_arn = input;
         self
     }
     /// <p>The identifier of the knowledge base.</p>
-    pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.knowledge_base_id = Some(input.into());
+    pub fn knowledge_base_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the knowledge base.</p>
     pub fn set_knowledge_base_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.knowledge_base_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn content_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_arn = Some(input.into());
+    pub fn content_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the content.</p>
-    pub fn set_content_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_arn = input;
         self
     }
     /// <p>The identifier of the content.</p>
-    pub fn content_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_id = Some(input.into());
+    pub fn content_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the content.</p>
-    pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_id = input;
         self
     }

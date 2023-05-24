@@ -2,7 +2,7 @@
 
 /// <p>Contains the result of the analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisResult {
     /// <p>The type of the analysis result. Analyses fall into the following types based on the validators used to generate the analysis result:</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct AnalysisResult {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The severity level of the analysis result. Based on the severity level, analysis results fall into three general categories:</p>
     /// <ul>
     /// <li> <p> <code>INFO</code> - An information result tells you about a significant field in your detector model. This type of result usually doesn't require immediate action.</p> </li>
@@ -24,13 +24,13 @@ pub struct AnalysisResult {
     /// <li> <p> <code>ERROR</code> - An error result notifies you about a problem found in your detector model. You must fix all errors before you can publish your detector model.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub level: std::option::Option<crate::types::AnalysisResultLevel>,
+    pub level: ::std::option::Option<crate::types::AnalysisResultLevel>,
     /// <p>Contains additional information about the analysis result.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
     #[doc(hidden)]
-    pub locations: std::option::Option<std::vec::Vec<crate::types::AnalysisResultLocation>>,
+    pub locations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>>,
 }
 impl AnalysisResult {
     /// <p>The type of the analysis result. Analyses fall into the following types based on the validators used to generate the analysis result:</p>
@@ -44,7 +44,7 @@ impl AnalysisResult {
     /// <li> <p> <code>referenced-resource</code> - Resources that the detector model uses must be available.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The severity level of the analysis result. Based on the severity level, analysis results fall into three general categories:</p>
@@ -53,15 +53,15 @@ impl AnalysisResult {
     /// <li> <p> <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your detector model. We recommend that you review warnings and take necessary actions before you use your detector model in production environments. Otherwise, the detector model might not work as expected.</p> </li>
     /// <li> <p> <code>ERROR</code> - An error result notifies you about a problem found in your detector model. You must fix all errors before you can publish your detector model.</p> </li>
     /// </ul>
-    pub fn level(&self) -> std::option::Option<&crate::types::AnalysisResultLevel> {
+    pub fn level(&self) -> ::std::option::Option<&crate::types::AnalysisResultLevel> {
         self.level.as_ref()
     }
     /// <p>Contains additional information about the analysis result.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
-    pub fn locations(&self) -> std::option::Option<&[crate::types::AnalysisResultLocation]> {
+    pub fn locations(&self) -> ::std::option::Option<&[crate::types::AnalysisResultLocation]> {
         self.locations.as_deref()
     }
 }
@@ -74,12 +74,15 @@ impl AnalysisResult {
 
 /// A builder for [`AnalysisResult`](crate::types::AnalysisResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnalysisResultBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) level: std::option::Option<crate::types::AnalysisResultLevel>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) locations: std::option::Option<std::vec::Vec<crate::types::AnalysisResultLocation>>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) level: ::std::option::Option<crate::types::AnalysisResultLevel>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) locations:
+        ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>>,
 }
 impl AnalysisResultBuilder {
     /// <p>The type of the analysis result. Analyses fall into the following types based on the validators used to generate the analysis result:</p>
@@ -93,8 +96,8 @@ impl AnalysisResultBuilder {
     /// <li> <p> <code>referenced-resource</code> - Resources that the detector model uses must be available.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the analysis result. Analyses fall into the following types based on the validators used to generate the analysis result:</p>
@@ -108,7 +111,7 @@ impl AnalysisResultBuilder {
     /// <li> <p> <code>referenced-resource</code> - Resources that the detector model uses must be available.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
@@ -119,7 +122,7 @@ impl AnalysisResultBuilder {
     /// <li> <p> <code>ERROR</code> - An error result notifies you about a problem found in your detector model. You must fix all errors before you can publish your detector model.</p> </li>
     /// </ul>
     pub fn level(mut self, input: crate::types::AnalysisResultLevel) -> Self {
-        self.level = Some(input);
+        self.level = ::std::option::Option::Some(input);
         self
     }
     /// <p>The severity level of the analysis result. Based on the severity level, analysis results fall into three general categories:</p>
@@ -130,18 +133,18 @@ impl AnalysisResultBuilder {
     /// </ul>
     pub fn set_level(
         mut self,
-        input: std::option::Option<crate::types::AnalysisResultLevel>,
+        input: ::std::option::Option<crate::types::AnalysisResultLevel>,
     ) -> Self {
         self.level = input;
         self
     }
     /// <p>Contains additional information about the analysis result.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains additional information about the analysis result.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -153,13 +156,13 @@ impl AnalysisResultBuilder {
     pub fn locations(mut self, input: crate::types::AnalysisResultLocation) -> Self {
         let mut v = self.locations.unwrap_or_default();
         v.push(input);
-        self.locations = Some(v);
+        self.locations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains one or more locations that you can use to locate the fields in your detector model that the analysis result references.</p>
     pub fn set_locations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnalysisResultLocation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResultLocation>>,
     ) -> Self {
         self.locations = input;
         self

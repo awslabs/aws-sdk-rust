@@ -2,33 +2,36 @@
 
 /// <p>The number of Config rules or Amazon Web Services resources that are compliant and noncompliant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceSummary {
     /// <p>The number of Config rules or Amazon Web Services resources that are compliant, up to a maximum of 25 for rules and 100 for resources.</p>
     #[doc(hidden)]
-    pub compliant_resource_count: std::option::Option<crate::types::ComplianceContributorCount>,
+    pub compliant_resource_count: ::std::option::Option<crate::types::ComplianceContributorCount>,
     /// <p>The number of Config rules or Amazon Web Services resources that are noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
     #[doc(hidden)]
-    pub non_compliant_resource_count: std::option::Option<crate::types::ComplianceContributorCount>,
+    pub non_compliant_resource_count:
+        ::std::option::Option<crate::types::ComplianceContributorCount>,
     /// <p>The time that Config created the compliance summary.</p>
     #[doc(hidden)]
-    pub compliance_summary_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub compliance_summary_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ComplianceSummary {
     /// <p>The number of Config rules or Amazon Web Services resources that are compliant, up to a maximum of 25 for rules and 100 for resources.</p>
     pub fn compliant_resource_count(
         &self,
-    ) -> std::option::Option<&crate::types::ComplianceContributorCount> {
+    ) -> ::std::option::Option<&crate::types::ComplianceContributorCount> {
         self.compliant_resource_count.as_ref()
     }
     /// <p>The number of Config rules or Amazon Web Services resources that are noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
     pub fn non_compliant_resource_count(
         &self,
-    ) -> std::option::Option<&crate::types::ComplianceContributorCount> {
+    ) -> ::std::option::Option<&crate::types::ComplianceContributorCount> {
         self.non_compliant_resource_count.as_ref()
     }
     /// <p>The time that Config created the compliance summary.</p>
-    pub fn compliance_summary_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn compliance_summary_timestamp(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.compliance_summary_timestamp.as_ref()
     }
 }
@@ -41,13 +44,15 @@ impl ComplianceSummary {
 
 /// A builder for [`ComplianceSummary`](crate::types::ComplianceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComplianceSummaryBuilder {
     pub(crate) compliant_resource_count:
-        std::option::Option<crate::types::ComplianceContributorCount>,
+        ::std::option::Option<crate::types::ComplianceContributorCount>,
     pub(crate) non_compliant_resource_count:
-        std::option::Option<crate::types::ComplianceContributorCount>,
-    pub(crate) compliance_summary_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<crate::types::ComplianceContributorCount>,
+    pub(crate) compliance_summary_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ComplianceSummaryBuilder {
     /// <p>The number of Config rules or Amazon Web Services resources that are compliant, up to a maximum of 25 for rules and 100 for resources.</p>
@@ -55,13 +60,13 @@ impl ComplianceSummaryBuilder {
         mut self,
         input: crate::types::ComplianceContributorCount,
     ) -> Self {
-        self.compliant_resource_count = Some(input);
+        self.compliant_resource_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Config rules or Amazon Web Services resources that are compliant, up to a maximum of 25 for rules and 100 for resources.</p>
     pub fn set_compliant_resource_count(
         mut self,
-        input: std::option::Option<crate::types::ComplianceContributorCount>,
+        input: ::std::option::Option<crate::types::ComplianceContributorCount>,
     ) -> Self {
         self.compliant_resource_count = input;
         self
@@ -71,26 +76,26 @@ impl ComplianceSummaryBuilder {
         mut self,
         input: crate::types::ComplianceContributorCount,
     ) -> Self {
-        self.non_compliant_resource_count = Some(input);
+        self.non_compliant_resource_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Config rules or Amazon Web Services resources that are noncompliant, up to a maximum of 25 for rules and 100 for resources.</p>
     pub fn set_non_compliant_resource_count(
         mut self,
-        input: std::option::Option<crate::types::ComplianceContributorCount>,
+        input: ::std::option::Option<crate::types::ComplianceContributorCount>,
     ) -> Self {
         self.non_compliant_resource_count = input;
         self
     }
     /// <p>The time that Config created the compliance summary.</p>
-    pub fn compliance_summary_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.compliance_summary_timestamp = Some(input);
+    pub fn compliance_summary_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.compliance_summary_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that Config created the compliance summary.</p>
     pub fn set_compliance_summary_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.compliance_summary_timestamp = input;
         self

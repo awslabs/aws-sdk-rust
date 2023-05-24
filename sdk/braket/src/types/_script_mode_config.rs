@@ -2,29 +2,29 @@
 
 /// <p>Contains information about the Python scripts used for entry and by an Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptModeConfig {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
     #[doc(hidden)]
-    pub entry_point: std::option::Option<std::string::String>,
+    pub entry_point: ::std::option::Option<::std::string::String>,
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
     #[doc(hidden)]
-    pub s3_uri: std::option::Option<std::string::String>,
+    pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
     #[doc(hidden)]
-    pub compression_type: std::option::Option<crate::types::CompressionType>,
+    pub compression_type: ::std::option::Option<crate::types::CompressionType>,
 }
 impl ScriptModeConfig {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
-    pub fn entry_point(&self) -> std::option::Option<&str> {
+    pub fn entry_point(&self) -> ::std::option::Option<&str> {
         self.entry_point.as_deref()
     }
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
-    pub fn compression_type(&self) -> std::option::Option<&crate::types::CompressionType> {
+    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl ScriptModeConfig {
 
 /// A builder for [`ScriptModeConfig`](crate::types::ScriptModeConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScriptModeConfigBuilder {
-    pub(crate) entry_point: std::option::Option<std::string::String>,
-    pub(crate) s3_uri: std::option::Option<std::string::String>,
-    pub(crate) compression_type: std::option::Option<crate::types::CompressionType>,
+    pub(crate) entry_point: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,
 }
 impl ScriptModeConfigBuilder {
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
-    pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entry_point = Some(input.into());
+    pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entry_point = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the Python script that serves as the entry point for an Amazon Braket job.</p>
-    pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entry_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_point = input;
         self
     }
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
-    pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_uri = Some(input.into());
+    pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI that specifies the S3 path to the Python script module that contains the training script used by an Amazon Braket job.</p>
-    pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
     }
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
-        self.compression_type = Some(input);
+        self.compression_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of compression used by the Python scripts for an Amazon Braket job.</p>
     pub fn set_compression_type(
         mut self,
-        input: std::option::Option<crate::types::CompressionType>,
+        input: ::std::option::Option<crate::types::CompressionType>,
     ) -> Self {
         self.compression_type = input;
         self

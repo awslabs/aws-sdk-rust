@@ -2,22 +2,22 @@
 
 /// <p>Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainJoinInfo {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
     #[doc(hidden)]
-    pub directory_name: std::option::Option<std::string::String>,
+    pub directory_name: ::std::option::Option<::std::string::String>,
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
     #[doc(hidden)]
-    pub organizational_unit_distinguished_name: std::option::Option<std::string::String>,
+    pub organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
 }
 impl DomainJoinInfo {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    pub fn directory_name(&self) -> std::option::Option<&str> {
+    pub fn directory_name(&self) -> ::std::option::Option<&str> {
         self.directory_name.as_deref()
     }
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
-    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+    pub fn organizational_unit_distinguished_name(&self) -> ::std::option::Option<&str> {
         self.organizational_unit_distinguished_name.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl DomainJoinInfo {
 
 /// A builder for [`DomainJoinInfo`](crate::types::DomainJoinInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainJoinInfoBuilder {
-    pub(crate) directory_name: std::option::Option<std::string::String>,
-    pub(crate) organizational_unit_distinguished_name: std::option::Option<std::string::String>,
+    pub(crate) directory_name: ::std::option::Option<::std::string::String>,
+    pub(crate) organizational_unit_distinguished_name: ::std::option::Option<::std::string::String>,
 }
 impl DomainJoinInfoBuilder {
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    pub fn directory_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_name = Some(input.into());
+    pub fn directory_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.directory_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified name of the directory (for example, corp.example.com).</p>
-    pub fn set_directory_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.directory_name = input;
         self
     }
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
     pub fn organizational_unit_distinguished_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.organizational_unit_distinguished_name = Some(input.into());
+        self.organizational_unit_distinguished_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The distinguished name of the organizational unit for computer accounts.</p>
     pub fn set_organizational_unit_distinguished_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.organizational_unit_distinguished_name = input;
         self

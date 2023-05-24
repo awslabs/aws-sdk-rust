@@ -2,7 +2,7 @@
 
 /// <p>Access configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessConfiguration {
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p>
     /// <p> <code>S3_SIGV4</code> - AWS Signature Version 4 authentication for Amazon S3 hosted virtual-style access. If your source location base URL is an Amazon S3 bucket, MediaTailor can use AWS Signature Version 4 (SigV4) authentication to access the bucket where your source content is stored. Your MediaTailor source location baseURL must follow the S3 virtual hosted-style request URL format. For example, https://bucket-name.s3.Region.amazonaws.com/key-name.</p>
@@ -11,11 +11,11 @@ pub struct AccessConfiguration {
     /// <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p>
     /// <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
     #[doc(hidden)]
-    pub access_type: std::option::Option<crate::types::AccessType>,
+    pub access_type: ::std::option::Option<crate::types::AccessType>,
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
     #[doc(hidden)]
     pub secrets_manager_access_token_configuration:
-        std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
+        ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
 }
 impl AccessConfiguration {
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p>
@@ -24,13 +24,13 @@ impl AccessConfiguration {
     /// <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p>
     /// <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p>
     /// <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
-    pub fn access_type(&self) -> std::option::Option<&crate::types::AccessType> {
+    pub fn access_type(&self) -> ::std::option::Option<&crate::types::AccessType> {
         self.access_type.as_ref()
     }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
     pub fn secrets_manager_access_token_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SecretsManagerAccessTokenConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SecretsManagerAccessTokenConfiguration> {
         self.secrets_manager_access_token_configuration.as_ref()
     }
 }
@@ -43,11 +43,13 @@ impl AccessConfiguration {
 
 /// A builder for [`AccessConfiguration`](crate::types::AccessConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessConfigurationBuilder {
-    pub(crate) access_type: std::option::Option<crate::types::AccessType>,
+    pub(crate) access_type: ::std::option::Option<crate::types::AccessType>,
     pub(crate) secrets_manager_access_token_configuration:
-        std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
+        ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
 }
 impl AccessConfigurationBuilder {
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p>
@@ -57,7 +59,7 @@ impl AccessConfigurationBuilder {
     /// <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p>
     /// <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
     pub fn access_type(mut self, input: crate::types::AccessType) -> Self {
-        self.access_type = Some(input);
+        self.access_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of authentication used to access content from <code>HttpConfiguration::BaseUrl</code> on your source location. Accepted value: <code>S3_SIGV4</code>.</p>
@@ -66,7 +68,10 @@ impl AccessConfigurationBuilder {
     /// <p>• You must allow MediaTailor to access your S3 bucket by granting mediatailor.amazonaws.com principal access in IAM. For information about configuring access in IAM, see Access management in the IAM User Guide.</p>
     /// <p>• The mediatailor.amazonaws.com service principal must have permissions to read all top level manifests referenced by the VodSource packaging configurations.</p>
     /// <p>• The caller of the API must have s3:GetObject IAM permissions to read all top level manifests referenced by your MediaTailor VodSource packaging configurations.</p>
-    pub fn set_access_type(mut self, input: std::option::Option<crate::types::AccessType>) -> Self {
+    pub fn set_access_type(
+        mut self,
+        input: ::std::option::Option<crate::types::AccessType>,
+    ) -> Self {
         self.access_type = input;
         self
     }
@@ -75,13 +80,13 @@ impl AccessConfigurationBuilder {
         mut self,
         input: crate::types::SecretsManagerAccessTokenConfiguration,
     ) -> Self {
-        self.secrets_manager_access_token_configuration = Some(input);
+        self.secrets_manager_access_token_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>AWS Secrets Manager access token configuration parameters.</p>
     pub fn set_secrets_manager_access_token_configuration(
         mut self,
-        input: std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
+        input: ::std::option::Option<crate::types::SecretsManagerAccessTokenConfiguration>,
     ) -> Self {
         self.secrets_manager_access_token_configuration = input;
         self

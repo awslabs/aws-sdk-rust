@@ -2,20 +2,20 @@
 
 /// <p>Gets the device response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceOutput {
     /// <p>The device.</p>
     #[doc(hidden)]
-    pub device: std::option::Option<crate::types::DeviceType>,
+    pub device: ::std::option::Option<crate::types::DeviceType>,
     _request_id: Option<String>,
 }
 impl GetDeviceOutput {
     /// <p>The device.</p>
-    pub fn device(&self) -> std::option::Option<&crate::types::DeviceType> {
+    pub fn device(&self) -> ::std::option::Option<&crate::types::DeviceType> {
         self.device.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDeviceOutput {
+impl ::aws_http::request_id::RequestId for GetDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetDeviceOutput {
 
 /// A builder for [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDeviceOutputBuilder {
-    pub(crate) device: std::option::Option<crate::types::DeviceType>,
+    pub(crate) device: ::std::option::Option<crate::types::DeviceType>,
     _request_id: Option<String>,
 }
 impl GetDeviceOutputBuilder {
     /// <p>The device.</p>
     pub fn device(mut self, input: crate::types::DeviceType) -> Self {
-        self.device = Some(input);
+        self.device = ::std::option::Option::Some(input);
         self
     }
     /// <p>The device.</p>
-    pub fn set_device(mut self, input: std::option::Option<crate::types::DeviceType>) -> Self {
+    pub fn set_device(mut self, input: ::std::option::Option<crate::types::DeviceType>) -> Self {
         self.device = input;
         self
     }

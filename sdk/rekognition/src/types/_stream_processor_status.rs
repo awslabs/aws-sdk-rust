@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StreamProcessorStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum StreamProcessorStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StreamProcessorStatus {
+impl ::std::convert::From<&str> for StreamProcessorStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => StreamProcessorStatus::Failed,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for StreamProcessorStatus {
         }
     }
 }
-impl std::str::FromStr for StreamProcessorStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StreamProcessorStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamProcessorStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StreamProcessorStatus::from(s))
     }
 }
 impl StreamProcessorStatus {
@@ -108,7 +108,7 @@ impl StreamProcessorStatus {
         ]
     }
 }
-impl AsRef<str> for StreamProcessorStatus {
+impl ::std::convert::AsRef<str> for StreamProcessorStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

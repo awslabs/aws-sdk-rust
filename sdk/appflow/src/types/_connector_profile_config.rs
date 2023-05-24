@@ -2,27 +2,28 @@
 
 /// <p> Defines the connector-specific configuration and credentials for the connector profile. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorProfileConfig {
     /// <p> The connector-specific properties of the profile configuration. </p>
     #[doc(hidden)]
-    pub connector_profile_properties: std::option::Option<crate::types::ConnectorProfileProperties>,
+    pub connector_profile_properties:
+        ::std::option::Option<crate::types::ConnectorProfileProperties>,
     /// <p> The connector-specific credentials required by each connector. </p>
     #[doc(hidden)]
     pub connector_profile_credentials:
-        std::option::Option<crate::types::ConnectorProfileCredentials>,
+        ::std::option::Option<crate::types::ConnectorProfileCredentials>,
 }
 impl ConnectorProfileConfig {
     /// <p> The connector-specific properties of the profile configuration. </p>
     pub fn connector_profile_properties(
         &self,
-    ) -> std::option::Option<&crate::types::ConnectorProfileProperties> {
+    ) -> ::std::option::Option<&crate::types::ConnectorProfileProperties> {
         self.connector_profile_properties.as_ref()
     }
     /// <p> The connector-specific credentials required by each connector. </p>
     pub fn connector_profile_credentials(
         &self,
-    ) -> std::option::Option<&crate::types::ConnectorProfileCredentials> {
+    ) -> ::std::option::Option<&crate::types::ConnectorProfileCredentials> {
         self.connector_profile_credentials.as_ref()
     }
 }
@@ -35,12 +36,14 @@ impl ConnectorProfileConfig {
 
 /// A builder for [`ConnectorProfileConfig`](crate::types::ConnectorProfileConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectorProfileConfigBuilder {
     pub(crate) connector_profile_properties:
-        std::option::Option<crate::types::ConnectorProfileProperties>,
+        ::std::option::Option<crate::types::ConnectorProfileProperties>,
     pub(crate) connector_profile_credentials:
-        std::option::Option<crate::types::ConnectorProfileCredentials>,
+        ::std::option::Option<crate::types::ConnectorProfileCredentials>,
 }
 impl ConnectorProfileConfigBuilder {
     /// <p> The connector-specific properties of the profile configuration. </p>
@@ -48,13 +51,13 @@ impl ConnectorProfileConfigBuilder {
         mut self,
         input: crate::types::ConnectorProfileProperties,
     ) -> Self {
-        self.connector_profile_properties = Some(input);
+        self.connector_profile_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p> The connector-specific properties of the profile configuration. </p>
     pub fn set_connector_profile_properties(
         mut self,
-        input: std::option::Option<crate::types::ConnectorProfileProperties>,
+        input: ::std::option::Option<crate::types::ConnectorProfileProperties>,
     ) -> Self {
         self.connector_profile_properties = input;
         self
@@ -64,13 +67,13 @@ impl ConnectorProfileConfigBuilder {
         mut self,
         input: crate::types::ConnectorProfileCredentials,
     ) -> Self {
-        self.connector_profile_credentials = Some(input);
+        self.connector_profile_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p> The connector-specific credentials required by each connector. </p>
     pub fn set_connector_profile_credentials(
         mut self,
-        input: std::option::Option<crate::types::ConnectorProfileCredentials>,
+        input: ::std::option::Option<crate::types::ConnectorProfileCredentials>,
     ) -> Self {
         self.connector_profile_credentials = input;
         self

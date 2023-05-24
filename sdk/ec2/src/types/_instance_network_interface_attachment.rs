@@ -2,50 +2,50 @@
 
 /// <p>Describes a network interface attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceNetworkInterfaceAttachment {
     /// <p>The time stamp when the attachment initiated.</p>
     #[doc(hidden)]
-    pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the network interface attachment.</p>
     #[doc(hidden)]
-    pub attachment_id: std::option::Option<std::string::String>,
+    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     #[doc(hidden)]
-    pub delete_on_termination: std::option::Option<bool>,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The index of the device on the instance for the network interface attachment.</p>
     #[doc(hidden)]
-    pub device_index: std::option::Option<i32>,
+    pub device_index: ::std::option::Option<i32>,
     /// <p>The attachment state.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AttachmentStatus>,
+    pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>The index of the network card.</p>
     #[doc(hidden)]
-    pub network_card_index: std::option::Option<i32>,
+    pub network_card_index: ::std::option::Option<i32>,
 }
 impl InstanceNetworkInterfaceAttachment {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn attach_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p>The index of the device on the instance for the network interface attachment.</p>
-    pub fn device_index(&self) -> std::option::Option<i32> {
+    pub fn device_index(&self) -> ::std::option::Option<i32> {
         self.device_index
     }
     /// <p>The attachment state.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AttachmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AttachmentStatus> {
         self.status.as_ref()
     }
     /// <p>The index of the network card.</p>
-    pub fn network_card_index(&self) -> std::option::Option<i32> {
+    pub fn network_card_index(&self) -> ::std::option::Option<i32> {
         self.network_card_index
     }
 }
@@ -58,79 +58,87 @@ impl InstanceNetworkInterfaceAttachment {
 
 /// A builder for [`InstanceNetworkInterfaceAttachment`](crate::types::InstanceNetworkInterfaceAttachment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceNetworkInterfaceAttachmentBuilder {
-    pub(crate) attach_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) attachment_id: std::option::Option<std::string::String>,
-    pub(crate) delete_on_termination: std::option::Option<bool>,
-    pub(crate) device_index: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::AttachmentStatus>,
-    pub(crate) network_card_index: std::option::Option<i32>,
+    pub(crate) attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_on_termination: ::std::option::Option<bool>,
+    pub(crate) device_index: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::AttachmentStatus>,
+    pub(crate) network_card_index: ::std::option::Option<i32>,
 }
 impl InstanceNetworkInterfaceAttachmentBuilder {
     /// <p>The time stamp when the attachment initiated.</p>
-    pub fn attach_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.attach_time = Some(input);
+    pub fn attach_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.attach_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time stamp when the attachment initiated.</p>
     pub fn set_attach_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.attach_time = input;
         self
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attachment_id = Some(input.into());
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attachment_id = input;
         self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
-        self.delete_on_termination = Some(input);
+        self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
     /// <p>The index of the device on the instance for the network interface attachment.</p>
     pub fn device_index(mut self, input: i32) -> Self {
-        self.device_index = Some(input);
+        self.device_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index of the device on the instance for the network interface attachment.</p>
-    pub fn set_device_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.device_index = input;
         self
     }
     /// <p>The attachment state.</p>
     pub fn status(mut self, input: crate::types::AttachmentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attachment state.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AttachmentStatus>,
+        input: ::std::option::Option<crate::types::AttachmentStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The index of the network card.</p>
     pub fn network_card_index(mut self, input: i32) -> Self {
-        self.network_card_index = Some(input);
+        self.network_card_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index of the network card.</p>
-    pub fn set_network_card_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_network_card_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_card_index = input;
         self
     }

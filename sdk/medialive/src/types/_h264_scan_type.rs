@@ -38,13 +38,13 @@
 /// H264 Scan Type
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264ScanType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum H264ScanType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264ScanType {
+impl ::std::convert::From<&str> for H264ScanType {
     fn from(s: &str) -> Self {
         match s {
             "INTERLACED" => H264ScanType::Interlaced,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for H264ScanType {
         }
     }
 }
-impl std::str::FromStr for H264ScanType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264ScanType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264ScanType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264ScanType::from(s))
     }
 }
 impl H264ScanType {
@@ -86,7 +86,7 @@ impl H264ScanType {
         &["INTERLACED", "PROGRESSIVE"]
     }
 }
-impl AsRef<str> for H264ScanType {
+impl ::std::convert::AsRef<str> for H264ScanType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

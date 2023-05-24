@@ -2,7 +2,7 @@
 
 /// <p>The FireLens configuration for the container. The configuration specifies and configures a log router for container logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
     /// <p>The options to use to configure the log router.</p>
     /// <p>The valid option keys are as follows:</p>
@@ -12,11 +12,12 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails 
     /// <li> <p> <code>config-file-value</code>. The value is either an S3 ARN or a file path.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
     /// <p>The options to use to configure the log router.</p>
@@ -28,12 +29,13 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
     /// </ul>
     pub fn options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.options.as_ref()
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -46,11 +48,14 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder {
-    pub(crate) options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder {
     /// Adds a key-value pair to `options`.
@@ -66,12 +71,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// </ul>
     pub fn options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.options = Some(hash_map);
+        self.options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The options to use to configure the log router.</p>
@@ -83,20 +88,20 @@ impl AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsBuilder
     /// </ul>
     pub fn set_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.options = input;
         self
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The log router to use. Valid values are <code>fluentbit</code> or <code>fluentd</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListInputs`](crate::operation::list_inputs::builders::ListInputsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_next_token): <p>The token that you can use to return the next set of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_next_token): <p>The token that you can use to return the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_inputs::builders::ListInputsFluentBuilder::set_max_results): <p>The maximum number of results to be returned per request.</p>
     /// - On success, responds with [`ListInputsOutput`](crate::operation::list_inputs::ListInputsOutput) with field(s):
     ///   - [`input_summaries(Option<Vec<InputSummary>>)`](crate::operation::list_inputs::ListInputsOutput::input_summaries): <p>Summary information about the inputs.</p>

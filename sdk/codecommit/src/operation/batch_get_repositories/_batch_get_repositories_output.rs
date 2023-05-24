@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a batch get repositories operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRepositoriesOutput {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
     #[doc(hidden)]
-    pub repositories: std::option::Option<std::vec::Vec<crate::types::RepositoryMetadata>>,
+    pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
     /// <p>Returns a list of repository names for which information could not be found.</p>
     #[doc(hidden)]
-    pub repositories_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub repositories_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetRepositoriesOutput {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
-    pub fn repositories(&self) -> std::option::Option<&[crate::types::RepositoryMetadata]> {
+    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::RepositoryMetadata]> {
         self.repositories.as_deref()
     }
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    pub fn repositories_not_found(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn repositories_not_found(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.repositories_not_found.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchGetRepositoriesOutput {
+impl ::aws_http::request_id::RequestId for BatchGetRepositoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,14 @@ impl BatchGetRepositoriesOutput {
 
 /// A builder for [`BatchGetRepositoriesOutput`](crate::operation::batch_get_repositories::BatchGetRepositoriesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetRepositoriesOutputBuilder {
-    pub(crate) repositories: std::option::Option<std::vec::Vec<crate::types::RepositoryMetadata>>,
-    pub(crate) repositories_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) repositories:
+        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
+    pub(crate) repositories_not_found:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl BatchGetRepositoriesOutputBuilder {
@@ -52,13 +56,13 @@ impl BatchGetRepositoriesOutputBuilder {
     pub fn repositories(mut self, input: crate::types::RepositoryMetadata) -> Self {
         let mut v = self.repositories.unwrap_or_default();
         v.push(input);
-        self.repositories = Some(v);
+        self.repositories = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
     pub fn set_repositories(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RepositoryMetadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
     ) -> Self {
         self.repositories = input;
         self
@@ -68,16 +72,19 @@ impl BatchGetRepositoriesOutputBuilder {
     /// To override the contents of this collection use [`set_repositories_not_found`](Self::set_repositories_not_found).
     ///
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    pub fn repositories_not_found(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn repositories_not_found(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.repositories_not_found.unwrap_or_default();
         v.push(input.into());
-        self.repositories_not_found = Some(v);
+        self.repositories_not_found = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a list of repository names for which information could not be found.</p>
     pub fn set_repositories_not_found(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.repositories_not_found = input;
         self

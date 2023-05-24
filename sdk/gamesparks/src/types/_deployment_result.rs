@@ -2,22 +2,22 @@
 
 /// <p>The result of the deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentResult {
     /// <p>The type of deployment result.</p>
     #[doc(hidden)]
-    pub result_code: std::option::Option<crate::types::ResultCode>,
+    pub result_code: ::std::option::Option<crate::types::ResultCode>,
     /// <p>Details about the deployment result.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentResult {
     /// <p>The type of deployment result.</p>
-    pub fn result_code(&self) -> std::option::Option<&crate::types::ResultCode> {
+    pub fn result_code(&self) -> ::std::option::Option<&crate::types::ResultCode> {
         self.result_code.as_ref()
     }
     /// <p>Details about the deployment result.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,29 +30,34 @@ impl DeploymentResult {
 
 /// A builder for [`DeploymentResult`](crate::types::DeploymentResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentResultBuilder {
-    pub(crate) result_code: std::option::Option<crate::types::ResultCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) result_code: ::std::option::Option<crate::types::ResultCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentResultBuilder {
     /// <p>The type of deployment result.</p>
     pub fn result_code(mut self, input: crate::types::ResultCode) -> Self {
-        self.result_code = Some(input);
+        self.result_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of deployment result.</p>
-    pub fn set_result_code(mut self, input: std::option::Option<crate::types::ResultCode>) -> Self {
+    pub fn set_result_code(
+        mut self,
+        input: ::std::option::Option<crate::types::ResultCode>,
+    ) -> Self {
         self.result_code = input;
         self
     }
     /// <p>Details about the deployment result.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about the deployment result.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

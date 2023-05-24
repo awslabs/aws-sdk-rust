@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataflowEndpointGroupsOutput {
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of dataflow endpoint groups.</p>
     #[doc(hidden)]
     pub dataflow_endpoint_group_list:
-        std::option::Option<std::vec::Vec<crate::types::DataflowEndpointListItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataflowEndpointListItem>>,
     _request_id: Option<String>,
 }
 impl ListDataflowEndpointGroupsOutput {
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A list of dataflow endpoint groups.</p>
     pub fn dataflow_endpoint_group_list(
         &self,
-    ) -> std::option::Option<&[crate::types::DataflowEndpointListItem]> {
+    ) -> ::std::option::Option<&[crate::types::DataflowEndpointListItem]> {
         self.dataflow_endpoint_group_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDataflowEndpointGroupsOutput {
+impl ::aws_http::request_id::RequestId for ListDataflowEndpointGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl ListDataflowEndpointGroupsOutput {
 
 /// A builder for [`ListDataflowEndpointGroupsOutput`](crate::operation::list_dataflow_endpoint_groups::ListDataflowEndpointGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDataflowEndpointGroupsOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) dataflow_endpoint_group_list:
-        std::option::Option<std::vec::Vec<crate::types::DataflowEndpointListItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataflowEndpointListItem>>,
     _request_id: Option<String>,
 }
 impl ListDataflowEndpointGroupsOutputBuilder {
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -68,13 +70,13 @@ impl ListDataflowEndpointGroupsOutputBuilder {
     ) -> Self {
         let mut v = self.dataflow_endpoint_group_list.unwrap_or_default();
         v.push(input);
-        self.dataflow_endpoint_group_list = Some(v);
+        self.dataflow_endpoint_group_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of dataflow endpoint groups.</p>
     pub fn set_dataflow_endpoint_group_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataflowEndpointListItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataflowEndpointListItem>>,
     ) -> Self {
         self.dataflow_endpoint_group_list = input;
         self

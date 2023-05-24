@@ -2,22 +2,22 @@
 
 /// <p>A field and direction for ordered output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrderByElement {
     /// <p>The field on which to order.</p>
     #[doc(hidden)]
-    pub field_name: std::option::Option<std::string::String>,
+    pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>Ordering direction.</p>
     #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::types::OrderString>,
+    pub sort_order: ::std::option::Option<crate::types::OrderString>,
 }
 impl OrderByElement {
     /// <p>The field on which to order.</p>
-    pub fn field_name(&self) -> std::option::Option<&str> {
+    pub fn field_name(&self) -> ::std::option::Option<&str> {
         self.field_name.as_deref()
     }
     /// <p>Ordering direction.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::OrderString> {
+    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::OrderString> {
         self.sort_order.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl OrderByElement {
 
 /// A builder for [`OrderByElement`](crate::types::OrderByElement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrderByElementBuilder {
-    pub(crate) field_name: std::option::Option<std::string::String>,
-    pub(crate) sort_order: std::option::Option<crate::types::OrderString>,
+    pub(crate) field_name: ::std::option::Option<::std::string::String>,
+    pub(crate) sort_order: ::std::option::Option<crate::types::OrderString>,
 }
 impl OrderByElementBuilder {
     /// <p>The field on which to order.</p>
-    pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_name = Some(input.into());
+    pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field on which to order.</p>
-    pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_name = input;
         self
     }
     /// <p>Ordering direction.</p>
     pub fn sort_order(mut self, input: crate::types::OrderString) -> Self {
-        self.sort_order = Some(input);
+        self.sort_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>Ordering direction.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::OrderString>) -> Self {
+    pub fn set_sort_order(
+        mut self,
+        input: ::std::option::Option<crate::types::OrderString>,
+    ) -> Self {
         self.sort_order = input;
         self
     }

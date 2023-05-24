@@ -2,14 +2,14 @@
 
 /// <p>Describes information about the health of the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceHealthSummary {
     /// <p>The name of the Lightsail instance for which you are requesting health check data.</p>
     #[doc(hidden)]
-    pub instance_name: std::option::Option<std::string::String>,
+    pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the overall instance health. Valid values are below.</p>
     #[doc(hidden)]
-    pub instance_health: std::option::Option<crate::types::InstanceHealthState>,
+    pub instance_health: ::std::option::Option<crate::types::InstanceHealthState>,
     /// <p>More information about the instance health. If the <code>instanceHealth</code> is <code>healthy</code>, then an <code>instanceHealthReason</code> value is not provided.</p>
     /// <p>If <b> <code>instanceHealth</code> </b> is <code>initial</code>, the <b> <code>instanceHealthReason</code> </b> value can be one of the following:</p>
     /// <ul>
@@ -35,15 +35,15 @@ pub struct InstanceHealthSummary {
     /// <li> <p> <b> <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub instance_health_reason: std::option::Option<crate::types::InstanceHealthReason>,
+    pub instance_health_reason: ::std::option::Option<crate::types::InstanceHealthReason>,
 }
 impl InstanceHealthSummary {
     /// <p>The name of the Lightsail instance for which you are requesting health check data.</p>
-    pub fn instance_name(&self) -> std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<&str> {
         self.instance_name.as_deref()
     }
     /// <p>Describes the overall instance health. Valid values are below.</p>
-    pub fn instance_health(&self) -> std::option::Option<&crate::types::InstanceHealthState> {
+    pub fn instance_health(&self) -> ::std::option::Option<&crate::types::InstanceHealthState> {
         self.instance_health.as_ref()
     }
     /// <p>More information about the instance health. If the <code>instanceHealth</code> is <code>healthy</code>, then an <code>instanceHealthReason</code> value is not provided.</p>
@@ -72,7 +72,7 @@ impl InstanceHealthSummary {
     /// </ul>
     pub fn instance_health_reason(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceHealthReason> {
+    ) -> ::std::option::Option<&crate::types::InstanceHealthReason> {
         self.instance_health_reason.as_ref()
     }
 }
@@ -85,32 +85,40 @@ impl InstanceHealthSummary {
 
 /// A builder for [`InstanceHealthSummary`](crate::types::InstanceHealthSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceHealthSummaryBuilder {
-    pub(crate) instance_name: std::option::Option<std::string::String>,
-    pub(crate) instance_health: std::option::Option<crate::types::InstanceHealthState>,
-    pub(crate) instance_health_reason: std::option::Option<crate::types::InstanceHealthReason>,
+    pub(crate) instance_name: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_health: ::std::option::Option<crate::types::InstanceHealthState>,
+    pub(crate) instance_health_reason: ::std::option::Option<crate::types::InstanceHealthReason>,
 }
 impl InstanceHealthSummaryBuilder {
     /// <p>The name of the Lightsail instance for which you are requesting health check data.</p>
-    pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_name = Some(input.into());
+    pub fn instance_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Lightsail instance for which you are requesting health check data.</p>
-    pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_name = input;
         self
     }
     /// <p>Describes the overall instance health. Valid values are below.</p>
     pub fn instance_health(mut self, input: crate::types::InstanceHealthState) -> Self {
-        self.instance_health = Some(input);
+        self.instance_health = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the overall instance health. Valid values are below.</p>
     pub fn set_instance_health(
         mut self,
-        input: std::option::Option<crate::types::InstanceHealthState>,
+        input: ::std::option::Option<crate::types::InstanceHealthState>,
     ) -> Self {
         self.instance_health = input;
         self
@@ -140,7 +148,7 @@ impl InstanceHealthSummaryBuilder {
     /// <li> <p> <b> <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in the process of being deregistered and the deregistration delay period has not expired.</p> </li>
     /// </ul>
     pub fn instance_health_reason(mut self, input: crate::types::InstanceHealthReason) -> Self {
-        self.instance_health_reason = Some(input);
+        self.instance_health_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>More information about the instance health. If the <code>instanceHealth</code> is <code>healthy</code>, then an <code>instanceHealthReason</code> value is not provided.</p>
@@ -169,7 +177,7 @@ impl InstanceHealthSummaryBuilder {
     /// </ul>
     pub fn set_instance_health_reason(
         mut self,
-        input: std::option::Option<crate::types::InstanceHealthReason>,
+        input: ::std::option::Option<crate::types::InstanceHealthReason>,
     ) -> Self {
         self.instance_health_reason = input;
         self

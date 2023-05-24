@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreateRole</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRoleOutput {
     /// <p>A structure containing details about the new role.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<crate::types::Role>,
+    pub role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,
 }
 impl CreateRoleOutput {
     /// <p>A structure containing details about the new role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::types::Role> {
+    pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
         self.role.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateRoleOutput {
+impl ::aws_http::request_id::RequestId for CreateRoleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateRoleOutput {
 
 /// A builder for [`CreateRoleOutput`](crate::operation::create_role::CreateRoleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateRoleOutputBuilder {
-    pub(crate) role: std::option::Option<crate::types::Role>,
+    pub(crate) role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,
 }
 impl CreateRoleOutputBuilder {
     /// <p>A structure containing details about the new role.</p>
     pub fn role(mut self, input: crate::types::Role) -> Self {
-        self.role = Some(input);
+        self.role = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the new role.</p>
-    pub fn set_role(mut self, input: std::option::Option<crate::types::Role>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.role = input;
         self
     }

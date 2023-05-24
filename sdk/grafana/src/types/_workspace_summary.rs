@@ -2,97 +2,99 @@
 
 /// <p>A structure that contains some information about one workspace in the account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The customer-entered description of the workspace.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<std::string::String>,
+    pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Grafana version that the workspace is running.</p>
     #[doc(hidden)]
-    pub grafana_version: std::option::Option<std::string::String>,
+    pub grafana_version: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the workspace.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date that the workspace was modified.</p>
     #[doc(hidden)]
-    pub modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the workspace.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
     #[doc(hidden)]
     pub notification_destinations:
-        std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
     /// <p>The current status of the workspace.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WorkspaceStatus>,
+    pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     #[doc(hidden)]
-    pub authentication: std::option::Option<crate::types::AuthenticationSummary>,
+    pub authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The customer-entered description of the workspace.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The Grafana version that the workspace is running.</p>
-    pub fn grafana_version(&self) -> std::option::Option<&str> {
+    pub fn grafana_version(&self) -> ::std::option::Option<&str> {
         self.grafana_version.as_deref()
     }
     /// <p>The unique ID of the workspace.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified.as_ref()
     }
     /// <p>The name of the workspace.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
     pub fn notification_destinations(
         &self,
-    ) -> std::option::Option<&[crate::types::NotificationDestinationType]> {
+    ) -> ::std::option::Option<&[crate::types::NotificationDestinationType]> {
         self.notification_destinations.as_deref()
     }
     /// <p>The current status of the workspace.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::WorkspaceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
-    pub fn authentication(&self) -> std::option::Option<&crate::types::AuthenticationSummary> {
+    pub fn authentication(&self) -> ::std::option::Option<&crate::types::AuthenticationSummary> {
         self.authentication.as_ref()
     }
     /// <p>The list of tags associated with the workspace.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for WorkspaceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for WorkspaceSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceSummary");
         formatter.field("created", &self.created);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -117,90 +119,103 @@ impl WorkspaceSummary {
 
 /// A builder for [`WorkspaceSummary`](crate::types::WorkspaceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct WorkspaceSummaryBuilder {
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) endpoint: std::option::Option<std::string::String>,
-    pub(crate) grafana_version: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) modified: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) grafana_version: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) notification_destinations:
-        std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
-    pub(crate) status: std::option::Option<crate::types::WorkspaceStatus>,
-    pub(crate) authentication: std::option::Option<crate::types::AuthenticationSummary>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
+    pub(crate) status: ::std::option::Option<crate::types::WorkspaceStatus>,
+    pub(crate) authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl WorkspaceSummaryBuilder {
     /// <p>The date that the workspace was created.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date that the workspace was created.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
     /// <p>The customer-entered description of the workspace.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-entered description of the workspace.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint = Some(input.into());
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL endpoint to use to access the Grafana console in the workspace.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
     /// <p>The Grafana version that the workspace is running.</p>
-    pub fn grafana_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.grafana_version = Some(input.into());
+    pub fn grafana_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.grafana_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Grafana version that the workspace is running.</p>
-    pub fn set_grafana_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grafana_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.grafana_version = input;
         self
     }
     /// <p>The unique ID of the workspace.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the workspace.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified = Some(input);
+    pub fn modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified = ::std::option::Option::Some(input);
         self
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn set_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_modified(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.modified = input;
         self
     }
     /// <p>The name of the workspace.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workspace.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -215,36 +230,39 @@ impl WorkspaceSummaryBuilder {
     ) -> Self {
         let mut v = self.notification_destinations.unwrap_or_default();
         v.push(input);
-        self.notification_destinations = Some(v);
+        self.notification_destinations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, which allows Amazon Managed Grafana to use these channels.</p>
     pub fn set_notification_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationDestinationType>>,
     ) -> Self {
         self.notification_destinations = input;
         self
     }
     /// <p>The current status of the workspace.</p>
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the workspace.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::WorkspaceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkspaceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub fn authentication(mut self, input: crate::types::AuthenticationSummary) -> Self {
-        self.authentication = Some(input);
+        self.authentication = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing information about the authentication methods used in the workspace.</p>
     pub fn set_authentication(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationSummary>,
+        input: ::std::option::Option<crate::types::AuthenticationSummary>,
     ) -> Self {
         self.authentication = input;
         self
@@ -256,19 +274,19 @@ impl WorkspaceSummaryBuilder {
     /// <p>The list of tags associated with the workspace.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tags associated with the workspace.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -291,8 +309,8 @@ impl WorkspaceSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for WorkspaceSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for WorkspaceSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceSummaryBuilder");
         formatter.field("created", &self.created);
         formatter.field("description", &"*** Sensitive Data Redacted ***");

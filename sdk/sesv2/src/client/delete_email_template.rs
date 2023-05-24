@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEmailTemplate`](crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder::set_template_name): <p>The name of the template to be deleted.</p>
+    ///   - [`template_name(impl ::std::convert::Into<String>)`](crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::delete_email_template::builders::DeleteEmailTemplateFluentBuilder::set_template_name): <p>The name of the template to be deleted.</p>
     /// - On success, responds with [`DeleteEmailTemplateOutput`](crate::operation::delete_email_template::DeleteEmailTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteEmailTemplateError>`](crate::operation::delete_email_template::DeleteEmailTemplateError)
     pub fn delete_email_template(

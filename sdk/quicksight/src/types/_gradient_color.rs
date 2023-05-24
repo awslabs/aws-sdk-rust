@@ -2,15 +2,15 @@
 
 /// <p>Determines the gradient color settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GradientColor {
     /// <p>The list of gradient color stops.</p>
     #[doc(hidden)]
-    pub stops: std::option::Option<std::vec::Vec<crate::types::GradientStop>>,
+    pub stops: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>,
 }
 impl GradientColor {
     /// <p>The list of gradient color stops.</p>
-    pub fn stops(&self) -> std::option::Option<&[crate::types::GradientStop]> {
+    pub fn stops(&self) -> ::std::option::Option<&[crate::types::GradientStop]> {
         self.stops.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl GradientColor {
 
 /// A builder for [`GradientColor`](crate::types::GradientColor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GradientColorBuilder {
-    pub(crate) stops: std::option::Option<std::vec::Vec<crate::types::GradientStop>>,
+    pub(crate) stops: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>,
 }
 impl GradientColorBuilder {
     /// Appends an item to `stops`.
@@ -36,13 +38,13 @@ impl GradientColorBuilder {
     pub fn stops(mut self, input: crate::types::GradientStop) -> Self {
         let mut v = self.stops.unwrap_or_default();
         v.push(input);
-        self.stops = Some(v);
+        self.stops = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of gradient color stops.</p>
     pub fn set_stops(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GradientStop>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GradientStop>>,
     ) -> Self {
         self.stops = input;
         self

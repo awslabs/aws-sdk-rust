@@ -14,29 +14,29 @@ pub use crate::operation::admin_create_user::_admin_create_user_input::AdminCrea
 /// <p>Alternatively, you can call <code>AdminCreateUser</code> with <code>SUPPRESS</code> for the <code>MessageAction</code> parameter, and Amazon Cognito won't send any email. </p>
 /// <p>In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their password.</p>
 /// <p> <code>AdminCreateUser</code> requires developer credentials.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AdminCreateUserFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::admin_create_user::builders::AdminCreateUserInputBuilder,
 }
 impl AdminCreateUserFluentBuilder {
     /// Creates a new `AdminCreateUser`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::admin_create_user::AdminCreateUser,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::admin_create_user::AdminCreateUserError,
         >,
     > {
@@ -44,30 +44,33 @@ impl AdminCreateUserFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::admin_create_user::AdminCreateUserOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::admin_create_user::AdminCreateUserError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -80,31 +83,31 @@ impl AdminCreateUserFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::admin_create_user::AdminCreateUserOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::admin_create_user::AdminCreateUserError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The user pool ID for the user pool where the user will be created.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
     /// <p>The user pool ID for the user pool where the user will be created.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
     /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username can't be changed.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
         self
     }
     /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string between 1 and 128 characters. After the user is created, the username can't be changed.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
     }
@@ -134,7 +137,7 @@ impl AdminCreateUserFluentBuilder {
     /// </ul>
     pub fn set_user_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     ) -> Self {
         self.inner = self.inner.set_user_attributes(input);
         self
@@ -155,7 +158,7 @@ impl AdminCreateUserFluentBuilder {
     /// <p>The user's validation data isn't persisted.</p>
     pub fn set_validation_data(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     ) -> Self {
         self.inner = self.inner.set_validation_data(input);
         self
@@ -164,7 +167,10 @@ impl AdminCreateUserFluentBuilder {
     /// <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.</p>
     /// <p>This parameter isn't required. If you don't specify a value, Amazon Cognito generates one for you.</p>
     /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
-    pub fn temporary_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn temporary_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.temporary_password(input.into());
         self
     }
@@ -174,7 +180,7 @@ impl AdminCreateUserFluentBuilder {
     /// <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
     pub fn set_temporary_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_temporary_password(input);
         self
@@ -189,7 +195,7 @@ impl AdminCreateUserFluentBuilder {
     /// <p>This parameter is used only if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
     /// <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p>
     /// <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>
-    pub fn set_force_alias_creation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force_alias_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_alias_creation(input);
         self
     }
@@ -201,7 +207,7 @@ impl AdminCreateUserFluentBuilder {
     /// <p>Set to <code>RESEND</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>SUPPRESS</code> to suppress sending the message. You can specify only one value.</p>
     pub fn set_message_action(
         mut self,
-        input: std::option::Option<crate::types::MessageActionType>,
+        input: ::std::option::Option<crate::types::MessageActionType>,
     ) -> Self {
         self.inner = self.inner.set_message_action(input);
         self
@@ -218,7 +224,7 @@ impl AdminCreateUserFluentBuilder {
     /// <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. You can specify more than one value.</p>
     pub fn set_desired_delivery_mediums(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeliveryMediumType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryMediumType>>,
     ) -> Self {
         self.inner = self.inner.set_desired_delivery_mediums(input);
         self
@@ -239,8 +245,8 @@ impl AdminCreateUserFluentBuilder {
     /// </note>
     pub fn client_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.client_metadata(k.into(), v.into());
         self
@@ -257,8 +263,8 @@ impl AdminCreateUserFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);

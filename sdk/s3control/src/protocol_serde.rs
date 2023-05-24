@@ -3,9 +3,10 @@ pub(crate) mod shape_create_access_point;
 
 pub fn parse_http_error_metadata(
     _response_status: u16,
-    _response_headers: &http::HeaderMap,
+    _response_headers: &::http::HeaderMap,
     response_body: &[u8],
-) -> Result<aws_smithy_types::error::metadata::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     crate::rest_xml_wrapped_errors::parse_error_metadata(response_body)
 }
 
@@ -13,7 +14,7 @@ pub(crate) mod shape_create_access_point_for_object_lambda;
 
 pub(crate) mod shape_create_bucket;
 
-pub fn rest_xml_unset_payload() -> std::vec::Vec<u8> {
+pub fn rest_xml_unset_payload() -> ::std::vec::Vec<u8> {
     Vec::new()
 }
 

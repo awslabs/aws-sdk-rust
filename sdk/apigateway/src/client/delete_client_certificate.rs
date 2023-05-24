@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteClientCertificate`](crate::operation::delete_client_certificate::builders::DeleteClientCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`client_certificate_id(impl Into<String>)`](crate::operation::delete_client_certificate::builders::DeleteClientCertificateFluentBuilder::client_certificate_id) / [`set_client_certificate_id(Option<String>)`](crate::operation::delete_client_certificate::builders::DeleteClientCertificateFluentBuilder::set_client_certificate_id): <p>The identifier of the ClientCertificate resource to be deleted.</p>
+    ///   - [`client_certificate_id(impl ::std::convert::Into<String>)`](crate::operation::delete_client_certificate::builders::DeleteClientCertificateFluentBuilder::client_certificate_id) / [`set_client_certificate_id(Option<String>)`](crate::operation::delete_client_certificate::builders::DeleteClientCertificateFluentBuilder::set_client_certificate_id): <p>The identifier of the ClientCertificate resource to be deleted.</p>
     /// - On success, responds with [`DeleteClientCertificateOutput`](crate::operation::delete_client_certificate::DeleteClientCertificateOutput)
     /// - On failure, responds with [`SdkError<DeleteClientCertificateError>`](crate::operation::delete_client_certificate::DeleteClientCertificateError)
     pub fn delete_client_certificate(

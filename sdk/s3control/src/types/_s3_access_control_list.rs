@@ -2,22 +2,22 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3AccessControlList {
     /// <p></p>
     #[doc(hidden)]
-    pub owner: std::option::Option<crate::types::S3ObjectOwner>,
+    pub owner: ::std::option::Option<crate::types::S3ObjectOwner>,
     /// <p></p>
     #[doc(hidden)]
-    pub grants: std::option::Option<std::vec::Vec<crate::types::S3Grant>>,
+    pub grants: ::std::option::Option<::std::vec::Vec<crate::types::S3Grant>>,
 }
 impl S3AccessControlList {
     /// <p></p>
-    pub fn owner(&self) -> std::option::Option<&crate::types::S3ObjectOwner> {
+    pub fn owner(&self) -> ::std::option::Option<&crate::types::S3ObjectOwner> {
         self.owner.as_ref()
     }
     /// <p></p>
-    pub fn grants(&self) -> std::option::Option<&[crate::types::S3Grant]> {
+    pub fn grants(&self) -> ::std::option::Option<&[crate::types::S3Grant]> {
         self.grants.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl S3AccessControlList {
 
 /// A builder for [`S3AccessControlList`](crate::types::S3AccessControlList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3AccessControlListBuilder {
-    pub(crate) owner: std::option::Option<crate::types::S3ObjectOwner>,
-    pub(crate) grants: std::option::Option<std::vec::Vec<crate::types::S3Grant>>,
+    pub(crate) owner: ::std::option::Option<crate::types::S3ObjectOwner>,
+    pub(crate) grants: ::std::option::Option<::std::vec::Vec<crate::types::S3Grant>>,
 }
 impl S3AccessControlListBuilder {
     /// <p></p>
     pub fn owner(mut self, input: crate::types::S3ObjectOwner) -> Self {
-        self.owner = Some(input);
+        self.owner = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_owner(mut self, input: std::option::Option<crate::types::S3ObjectOwner>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::S3ObjectOwner>) -> Self {
         self.owner = input;
         self
     }
@@ -54,13 +56,13 @@ impl S3AccessControlListBuilder {
     pub fn grants(mut self, input: crate::types::S3Grant) -> Self {
         let mut v = self.grants.unwrap_or_default();
         v.push(input);
-        self.grants = Some(v);
+        self.grants = ::std::option::Option::Some(v);
         self
     }
     /// <p></p>
     pub fn set_grants(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::S3Grant>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Grant>>,
     ) -> Self {
         self.grants = input;
         self

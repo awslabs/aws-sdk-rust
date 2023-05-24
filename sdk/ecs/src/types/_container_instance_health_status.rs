@@ -2,22 +2,22 @@
 
 /// <p>An object representing the health status of the container instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerInstanceHealthStatus {
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
     #[doc(hidden)]
-    pub overall_status: std::option::Option<crate::types::InstanceHealthCheckState>,
+    pub overall_status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
     /// <p>An array of objects representing the details of the container instance health status.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
+    pub details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
 }
 impl ContainerInstanceHealthStatus {
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
-    pub fn overall_status(&self) -> std::option::Option<&crate::types::InstanceHealthCheckState> {
+    pub fn overall_status(&self) -> ::std::option::Option<&crate::types::InstanceHealthCheckState> {
         self.overall_status.as_ref()
     }
     /// <p>An array of objects representing the details of the container instance health status.</p>
-    pub fn details(&self) -> std::option::Option<&[crate::types::InstanceHealthCheckResult]> {
+    pub fn details(&self) -> ::std::option::Option<&[crate::types::InstanceHealthCheckResult]> {
         self.details.as_deref()
     }
 }
@@ -30,21 +30,24 @@ impl ContainerInstanceHealthStatus {
 
 /// A builder for [`ContainerInstanceHealthStatus`](crate::types::ContainerInstanceHealthStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerInstanceHealthStatusBuilder {
-    pub(crate) overall_status: std::option::Option<crate::types::InstanceHealthCheckState>,
-    pub(crate) details: std::option::Option<std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
+    pub(crate) overall_status: ::std::option::Option<crate::types::InstanceHealthCheckState>,
+    pub(crate) details:
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
 }
 impl ContainerInstanceHealthStatusBuilder {
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
     pub fn overall_status(mut self, input: crate::types::InstanceHealthCheckState) -> Self {
-        self.overall_status = Some(input);
+        self.overall_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The overall health status of the container instance. This is an aggregate status of all container instance health checks.</p>
     pub fn set_overall_status(
         mut self,
-        input: std::option::Option<crate::types::InstanceHealthCheckState>,
+        input: ::std::option::Option<crate::types::InstanceHealthCheckState>,
     ) -> Self {
         self.overall_status = input;
         self
@@ -57,13 +60,13 @@ impl ContainerInstanceHealthStatusBuilder {
     pub fn details(mut self, input: crate::types::InstanceHealthCheckResult) -> Self {
         let mut v = self.details.unwrap_or_default();
         v.push(input);
-        self.details = Some(v);
+        self.details = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects representing the details of the container instance health status.</p>
     pub fn set_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceHealthCheckResult>>,
     ) -> Self {
         self.details = input;
         self

@@ -2,38 +2,38 @@
 
 /// <p>Information about a Savings Plan offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParentSavingsPlanOffering {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
-    pub offering_id: std::option::Option<std::string::String>,
+    pub offering_id: ::std::option::Option<::std::string::String>,
     /// <p>The payment option.</p>
     #[doc(hidden)]
-    pub payment_option: std::option::Option<crate::types::SavingsPlanPaymentOption>,
+    pub payment_option: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
     /// <p>The plan type.</p>
     #[doc(hidden)]
-    pub plan_type: std::option::Option<crate::types::SavingsPlanType>,
+    pub plan_type: ::std::option::Option<crate::types::SavingsPlanType>,
     /// <p>The duration, in seconds.</p>
     #[doc(hidden)]
     pub duration_seconds: i64,
     /// <p>The currency.</p>
     #[doc(hidden)]
-    pub currency: std::option::Option<crate::types::CurrencyCode>,
+    pub currency: ::std::option::Option<crate::types::CurrencyCode>,
     /// <p>The description.</p>
     #[doc(hidden)]
-    pub plan_description: std::option::Option<std::string::String>,
+    pub plan_description: ::std::option::Option<::std::string::String>,
 }
 impl ParentSavingsPlanOffering {
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<&str> {
         self.offering_id.as_deref()
     }
     /// <p>The payment option.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::types::SavingsPlanPaymentOption> {
+    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::SavingsPlanPaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The plan type.</p>
-    pub fn plan_type(&self) -> std::option::Option<&crate::types::SavingsPlanType> {
+    pub fn plan_type(&self) -> ::std::option::Option<&crate::types::SavingsPlanType> {
         self.plan_type.as_ref()
     }
     /// <p>The duration, in seconds.</p>
@@ -41,11 +41,11 @@ impl ParentSavingsPlanOffering {
         self.duration_seconds
     }
     /// <p>The currency.</p>
-    pub fn currency(&self) -> std::option::Option<&crate::types::CurrencyCode> {
+    pub fn currency(&self) -> ::std::option::Option<&crate::types::CurrencyCode> {
         self.currency.as_ref()
     }
     /// <p>The description.</p>
-    pub fn plan_description(&self) -> std::option::Option<&str> {
+    pub fn plan_description(&self) -> ::std::option::Option<&str> {
         self.plan_description.as_deref()
     }
 }
@@ -58,79 +58,90 @@ impl ParentSavingsPlanOffering {
 
 /// A builder for [`ParentSavingsPlanOffering`](crate::types::ParentSavingsPlanOffering).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParentSavingsPlanOfferingBuilder {
-    pub(crate) offering_id: std::option::Option<std::string::String>,
-    pub(crate) payment_option: std::option::Option<crate::types::SavingsPlanPaymentOption>,
-    pub(crate) plan_type: std::option::Option<crate::types::SavingsPlanType>,
-    pub(crate) duration_seconds: std::option::Option<i64>,
-    pub(crate) currency: std::option::Option<crate::types::CurrencyCode>,
-    pub(crate) plan_description: std::option::Option<std::string::String>,
+    pub(crate) offering_id: ::std::option::Option<::std::string::String>,
+    pub(crate) payment_option: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
+    pub(crate) plan_type: ::std::option::Option<crate::types::SavingsPlanType>,
+    pub(crate) duration_seconds: ::std::option::Option<i64>,
+    pub(crate) currency: ::std::option::Option<crate::types::CurrencyCode>,
+    pub(crate) plan_description: ::std::option::Option<::std::string::String>,
 }
 impl ParentSavingsPlanOfferingBuilder {
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.offering_id = Some(input.into());
+    pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the offering.</p>
-    pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
     }
     /// <p>The payment option.</p>
     pub fn payment_option(mut self, input: crate::types::SavingsPlanPaymentOption) -> Self {
-        self.payment_option = Some(input);
+        self.payment_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The payment option.</p>
     pub fn set_payment_option(
         mut self,
-        input: std::option::Option<crate::types::SavingsPlanPaymentOption>,
+        input: ::std::option::Option<crate::types::SavingsPlanPaymentOption>,
     ) -> Self {
         self.payment_option = input;
         self
     }
     /// <p>The plan type.</p>
     pub fn plan_type(mut self, input: crate::types::SavingsPlanType) -> Self {
-        self.plan_type = Some(input);
+        self.plan_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The plan type.</p>
     pub fn set_plan_type(
         mut self,
-        input: std::option::Option<crate::types::SavingsPlanType>,
+        input: ::std::option::Option<crate::types::SavingsPlanType>,
     ) -> Self {
         self.plan_type = input;
         self
     }
     /// <p>The duration, in seconds.</p>
     pub fn duration_seconds(mut self, input: i64) -> Self {
-        self.duration_seconds = Some(input);
+        self.duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration, in seconds.</p>
-    pub fn set_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_seconds = input;
         self
     }
     /// <p>The currency.</p>
     pub fn currency(mut self, input: crate::types::CurrencyCode) -> Self {
-        self.currency = Some(input);
+        self.currency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The currency.</p>
-    pub fn set_currency(mut self, input: std::option::Option<crate::types::CurrencyCode>) -> Self {
+    pub fn set_currency(
+        mut self,
+        input: ::std::option::Option<crate::types::CurrencyCode>,
+    ) -> Self {
         self.currency = input;
         self
     }
     /// <p>The description.</p>
-    pub fn plan_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.plan_description = Some(input.into());
+    pub fn plan_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.plan_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description.</p>
-    pub fn set_plan_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_plan_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.plan_description = input;
         self
     }

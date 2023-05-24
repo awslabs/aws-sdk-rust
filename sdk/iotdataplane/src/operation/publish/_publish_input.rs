@@ -2,92 +2,92 @@
 
 /// <p>The input for the Publish operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishInput {
     /// <p>The name of the MQTT topic.</p>
     #[doc(hidden)]
-    pub topic: std::option::Option<std::string::String>,
+    pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
     #[doc(hidden)]
-    pub qos: std::option::Option<i32>,
+    pub qos: ::std::option::Option<i32>,
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default value: <code>false</code> </p>
     #[doc(hidden)]
-    pub retain: std::option::Option<bool>,
+    pub retain: ::std::option::Option<bool>,
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
     #[doc(hidden)]
-    pub payload: std::option::Option<aws_smithy_types::Blob>,
+    pub payload: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
     #[doc(hidden)]
-    pub user_properties: std::option::Option<std::string::String>,
+    pub user_properties: ::std::option::Option<::std::string::String>,
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
     #[doc(hidden)]
-    pub payload_format_indicator: std::option::Option<crate::types::PayloadFormatIndicator>,
+    pub payload_format_indicator: ::std::option::Option<crate::types::PayloadFormatIndicator>,
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
     #[doc(hidden)]
-    pub response_topic: std::option::Option<std::string::String>,
+    pub response_topic: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
     #[doc(hidden)]
-    pub correlation_data: std::option::Option<std::string::String>,
+    pub correlation_data: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
     #[doc(hidden)]
-    pub message_expiry: std::option::Option<i64>,
+    pub message_expiry: ::std::option::Option<i64>,
 }
 impl PublishInput {
     /// <p>The name of the MQTT topic.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<&str> {
         self.topic.as_deref()
     }
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
-    pub fn qos(&self) -> std::option::Option<i32> {
+    pub fn qos(&self) -> ::std::option::Option<i32> {
         self.qos
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default value: <code>false</code> </p>
-    pub fn retain(&self) -> std::option::Option<bool> {
+    pub fn retain(&self) -> ::std::option::Option<bool> {
         self.retain
     }
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn user_properties(&self) -> std::option::Option<&str> {
+    pub fn user_properties(&self) -> ::std::option::Option<&str> {
         self.user_properties.as_deref()
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
     pub fn payload_format_indicator(
         &self,
-    ) -> std::option::Option<&crate::types::PayloadFormatIndicator> {
+    ) -> ::std::option::Option<&crate::types::PayloadFormatIndicator> {
         self.payload_format_indicator.as_ref()
     }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn response_topic(&self) -> std::option::Option<&str> {
+    pub fn response_topic(&self) -> ::std::option::Option<&str> {
         self.response_topic.as_deref()
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn correlation_data(&self) -> std::option::Option<&str> {
+    pub fn correlation_data(&self) -> ::std::option::Option<&str> {
         self.correlation_data.as_deref()
     }
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
-    pub fn message_expiry(&self) -> std::option::Option<i64> {
+    pub fn message_expiry(&self) -> ::std::option::Option<i64> {
         self.message_expiry
     }
 }
@@ -100,37 +100,40 @@ impl PublishInput {
 
 /// A builder for [`PublishInput`](crate::operation::publish::PublishInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PublishInputBuilder {
-    pub(crate) topic: std::option::Option<std::string::String>,
-    pub(crate) qos: std::option::Option<i32>,
-    pub(crate) retain: std::option::Option<bool>,
-    pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) user_properties: std::option::Option<std::string::String>,
-    pub(crate) payload_format_indicator: std::option::Option<crate::types::PayloadFormatIndicator>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) response_topic: std::option::Option<std::string::String>,
-    pub(crate) correlation_data: std::option::Option<std::string::String>,
-    pub(crate) message_expiry: std::option::Option<i64>,
+    pub(crate) topic: ::std::option::Option<::std::string::String>,
+    pub(crate) qos: ::std::option::Option<i32>,
+    pub(crate) retain: ::std::option::Option<bool>,
+    pub(crate) payload: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) user_properties: ::std::option::Option<::std::string::String>,
+    pub(crate) payload_format_indicator:
+        ::std::option::Option<crate::types::PayloadFormatIndicator>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) response_topic: ::std::option::Option<::std::string::String>,
+    pub(crate) correlation_data: ::std::option::Option<::std::string::String>,
+    pub(crate) message_expiry: ::std::option::Option<i64>,
 }
 impl PublishInputBuilder {
     /// <p>The name of the MQTT topic.</p>
-    pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic = Some(input.into());
+    pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the MQTT topic.</p>
-    pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic = input;
         self
     }
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
     pub fn qos(mut self, input: i32) -> Self {
-        self.qos = Some(input);
+        self.qos = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
-    pub fn set_qos(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_qos(mut self, input: ::std::option::Option<i32>) -> Self {
         self.qos = input;
         self
     }
@@ -139,104 +142,122 @@ impl PublishInputBuilder {
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default value: <code>false</code> </p>
     pub fn retain(mut self, input: bool) -> Self {
-        self.retain = Some(input);
+        self.retain = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default value: <code>false</code> </p>
-    pub fn set_retain(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_retain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retain = input;
         self
     }
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-    pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.payload = Some(input);
+    pub fn payload(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
     /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-    pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.payload = input;
         self
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn user_properties(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_properties = Some(input.into());
+    pub fn user_properties(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.user_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>
     /// <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>
     /// <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    pub fn set_user_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_properties(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.user_properties = input;
         self
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
     pub fn payload_format_indicator(mut self, input: crate::types::PayloadFormatIndicator) -> Self {
-        self.payload_format_indicator = Some(input);
+        self.payload_format_indicator = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
     pub fn set_payload_format_indicator(
         mut self,
-        input: std::option::Option<crate::types::PayloadFormatIndicator>,
+        input: ::std::option::Option<crate::types::PayloadFormatIndicator>,
     ) -> Self {
         self.payload_format_indicator = input;
         self
     }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn response_topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.response_topic = Some(input.into());
+    pub fn response_topic(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.response_topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    pub fn set_response_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_response_topic(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.response_topic = input;
         self
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn correlation_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.correlation_data = Some(input.into());
+    pub fn correlation_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.correlation_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    pub fn set_correlation_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_correlation_data(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.correlation_data = input;
         self
     }
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
     pub fn message_expiry(mut self, input: i64) -> Self {
-        self.message_expiry = Some(input);
+        self.message_expiry = ::std::option::Option::Some(input);
         self
     }
     /// <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
-    pub fn set_message_expiry(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_message_expiry(mut self, input: ::std::option::Option<i64>) -> Self {
         self.message_expiry = input;
         self
     }
     /// Consumes the builder and constructs a [`PublishInput`](crate::operation::publish::PublishInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::publish::PublishInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::publish::PublishInput {
+        ::std::result::Result::Ok(crate::operation::publish::PublishInput {
             topic: self.topic,
             qos: self.qos,
             retain: self.retain,

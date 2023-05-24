@@ -2,14 +2,14 @@
 
 /// <p>A schedule for a model monitoring job. For information about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringSchedule {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     #[doc(hidden)]
-    pub monitoring_schedule_arn: std::option::Option<std::string::String>,
+    pub monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the monitoring schedule.</p>
     #[doc(hidden)]
-    pub monitoring_schedule_name: std::option::Option<std::string::String>,
+    pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> - The schedule is pending being created.</p> </li>
@@ -18,40 +18,40 @@ pub struct MonitoringSchedule {
     /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub monitoring_schedule_status: std::option::Option<crate::types::ScheduleStatus>,
+    pub monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
     /// <p>The type of the monitoring job definition to schedule.</p>
     #[doc(hidden)]
-    pub monitoring_type: std::option::Option<crate::types::MonitoringType>,
+    pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
     /// <p>If the monitoring schedule failed, the reason it failed.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The time that the monitoring schedule was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the monitoring schedule was changed.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
     #[doc(hidden)]
-    pub monitoring_schedule_config: std::option::Option<crate::types::MonitoringScheduleConfig>,
+    pub monitoring_schedule_config: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
     /// <p>The endpoint that hosts the model being monitored.</p>
     #[doc(hidden)]
-    pub endpoint_name: std::option::Option<std::string::String>,
+    pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>Summary of information about the last monitoring job to run.</p>
     #[doc(hidden)]
     pub last_monitoring_execution_summary:
-        std::option::Option<crate::types::MonitoringExecutionSummary>,
+        ::std::option::Option<crate::types::MonitoringExecutionSummary>,
     /// <p>A list of the tags associated with the monitoring schedlue. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MonitoringSchedule {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
+    pub fn monitoring_schedule_arn(&self) -> ::std::option::Option<&str> {
         self.monitoring_schedule_arn.as_deref()
     }
     /// <p>The name of the monitoring schedule.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<&str> {
         self.monitoring_schedule_name.as_deref()
     }
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
@@ -61,43 +61,45 @@ impl MonitoringSchedule {
     /// <li> <p> <code>SCHEDULED</code> - The schedule was successfully created.</p> </li>
     /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
-    pub fn monitoring_schedule_status(&self) -> std::option::Option<&crate::types::ScheduleStatus> {
+    pub fn monitoring_schedule_status(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ScheduleStatus> {
         self.monitoring_schedule_status.as_ref()
     }
     /// <p>The type of the monitoring job definition to schedule.</p>
-    pub fn monitoring_type(&self) -> std::option::Option<&crate::types::MonitoringType> {
+    pub fn monitoring_type(&self) -> ::std::option::Option<&crate::types::MonitoringType> {
         self.monitoring_type.as_ref()
     }
     /// <p>If the monitoring schedule failed, the reason it failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The time that the monitoring schedule was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the monitoring schedule was changed.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
     pub fn monitoring_schedule_config(
         &self,
-    ) -> std::option::Option<&crate::types::MonitoringScheduleConfig> {
+    ) -> ::std::option::Option<&crate::types::MonitoringScheduleConfig> {
         self.monitoring_schedule_config.as_ref()
     }
     /// <p>The endpoint that hosts the model being monitored.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
     /// <p>Summary of information about the last monitoring job to run.</p>
     pub fn last_monitoring_execution_summary(
         &self,
-    ) -> std::option::Option<&crate::types::MonitoringExecutionSummary> {
+    ) -> ::std::option::Option<&crate::types::MonitoringExecutionSummary> {
         self.last_monitoring_execution_summary.as_ref()
     }
     /// <p>A list of the tags associated with the monitoring schedlue. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -110,45 +112,53 @@ impl MonitoringSchedule {
 
 /// A builder for [`MonitoringSchedule`](crate::types::MonitoringSchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringScheduleBuilder {
-    pub(crate) monitoring_schedule_arn: std::option::Option<std::string::String>,
-    pub(crate) monitoring_schedule_name: std::option::Option<std::string::String>,
-    pub(crate) monitoring_schedule_status: std::option::Option<crate::types::ScheduleStatus>,
-    pub(crate) monitoring_type: std::option::Option<crate::types::MonitoringType>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
+    pub(crate) monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) monitoring_schedule_config:
-        std::option::Option<crate::types::MonitoringScheduleConfig>,
-    pub(crate) endpoint_name: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::MonitoringScheduleConfig>,
+    pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_monitoring_execution_summary:
-        std::option::Option<crate::types::MonitoringExecutionSummary>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::MonitoringExecutionSummary>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MonitoringScheduleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.monitoring_schedule_arn = Some(input.into());
+    pub fn monitoring_schedule_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     pub fn set_monitoring_schedule_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.monitoring_schedule_arn = input;
         self
     }
     /// <p>The name of the monitoring schedule.</p>
-    pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.monitoring_schedule_name = Some(input.into());
+    pub fn monitoring_schedule_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the monitoring schedule.</p>
     pub fn set_monitoring_schedule_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.monitoring_schedule_name = input;
         self
@@ -161,7 +171,7 @@ impl MonitoringScheduleBuilder {
     /// <li> <p> <code>STOPPED</code> - The schedule was stopped.</p> </li>
     /// </ul>
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
-        self.monitoring_schedule_status = Some(input);
+        self.monitoring_schedule_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the monitoring schedule. This can be one of the following values.</p>
@@ -173,56 +183,62 @@ impl MonitoringScheduleBuilder {
     /// </ul>
     pub fn set_monitoring_schedule_status(
         mut self,
-        input: std::option::Option<crate::types::ScheduleStatus>,
+        input: ::std::option::Option<crate::types::ScheduleStatus>,
     ) -> Self {
         self.monitoring_schedule_status = input;
         self
     }
     /// <p>The type of the monitoring job definition to schedule.</p>
     pub fn monitoring_type(mut self, input: crate::types::MonitoringType) -> Self {
-        self.monitoring_type = Some(input);
+        self.monitoring_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the monitoring job definition to schedule.</p>
     pub fn set_monitoring_type(
         mut self,
-        input: std::option::Option<crate::types::MonitoringType>,
+        input: ::std::option::Option<crate::types::MonitoringType>,
     ) -> Self {
         self.monitoring_type = input;
         self
     }
     /// <p>If the monitoring schedule failed, the reason it failed.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the monitoring schedule failed, the reason it failed.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }
     /// <p>The time that the monitoring schedule was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the monitoring schedule was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last time the monitoring schedule was changed.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time the monitoring schedule was changed.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
@@ -232,24 +248,30 @@ impl MonitoringScheduleBuilder {
         mut self,
         input: crate::types::MonitoringScheduleConfig,
     ) -> Self {
-        self.monitoring_schedule_config = Some(input);
+        self.monitoring_schedule_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
     pub fn set_monitoring_schedule_config(
         mut self,
-        input: std::option::Option<crate::types::MonitoringScheduleConfig>,
+        input: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
     ) -> Self {
         self.monitoring_schedule_config = input;
         self
     }
     /// <p>The endpoint that hosts the model being monitored.</p>
-    pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_name = Some(input.into());
+    pub fn endpoint_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint that hosts the model being monitored.</p>
-    pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -258,13 +280,13 @@ impl MonitoringScheduleBuilder {
         mut self,
         input: crate::types::MonitoringExecutionSummary,
     ) -> Self {
-        self.last_monitoring_execution_summary = Some(input);
+        self.last_monitoring_execution_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary of information about the last monitoring job to run.</p>
     pub fn set_last_monitoring_execution_summary(
         mut self,
-        input: std::option::Option<crate::types::MonitoringExecutionSummary>,
+        input: ::std::option::Option<crate::types::MonitoringExecutionSummary>,
     ) -> Self {
         self.last_monitoring_execution_summary = input;
         self
@@ -277,13 +299,13 @@ impl MonitoringScheduleBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the tags associated with the monitoring schedlue. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

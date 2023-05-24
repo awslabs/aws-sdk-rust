@@ -2,18 +2,18 @@
 
 /// <p>Updates the Microsoft Active Directory (AD) configuration of an SVM joined to an AD. Please note, account credentials are not returned in the response payload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSvmActiveDirectoryConfiguration {
     /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.</p>
     #[doc(hidden)]
     pub self_managed_active_directory_configuration:
-        std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
+        ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
 }
 impl UpdateSvmActiveDirectoryConfiguration {
     /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.</p>
     pub fn self_managed_active_directory_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
+    ) -> ::std::option::Option<&crate::types::SelfManagedActiveDirectoryConfigurationUpdates> {
         self.self_managed_active_directory_configuration.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl UpdateSvmActiveDirectoryConfiguration {
 
 /// A builder for [`UpdateSvmActiveDirectoryConfiguration`](crate::types::UpdateSvmActiveDirectoryConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateSvmActiveDirectoryConfigurationBuilder {
     pub(crate) self_managed_active_directory_configuration:
-        std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
+        ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
 }
 impl UpdateSvmActiveDirectoryConfigurationBuilder {
     /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.</p>
@@ -37,13 +39,13 @@ impl UpdateSvmActiveDirectoryConfigurationBuilder {
         mut self,
         input: crate::types::SelfManagedActiveDirectoryConfigurationUpdates,
     ) -> Self {
-        self.self_managed_active_directory_configuration = Some(input);
+        self.self_managed_active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that Amazon FSx uses to join the Windows File Server instance to a self-managed Microsoft Active Directory (AD) directory.</p>
     pub fn set_self_managed_active_directory_configuration(
         mut self,
-        input: std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
+        input: ::std::option::Option<crate::types::SelfManagedActiveDirectoryConfigurationUpdates>,
     ) -> Self {
         self.self_managed_active_directory_configuration = input;
         self

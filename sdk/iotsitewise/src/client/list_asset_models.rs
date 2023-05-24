@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::set_next_token): <p>The token to be used for the next set of paginated results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::set_next_token): <p>The token to be used for the next set of paginated results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_asset_models::builders::ListAssetModelsFluentBuilder::set_max_results): <p>The maximum number of results to return for each paginated request.</p>  <p>Default: 50</p>
     /// - On success, responds with [`ListAssetModelsOutput`](crate::operation::list_asset_models::ListAssetModelsOutput) with field(s):
     ///   - [`asset_model_summaries(Option<Vec<AssetModelSummary>>)`](crate::operation::list_asset_models::ListAssetModelsOutput::asset_model_summaries): <p>A list that summarizes each asset model.</p>

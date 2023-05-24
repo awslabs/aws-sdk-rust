@@ -2,30 +2,30 @@
 
 /// <p>Input for List Share Invitations</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListShareInvitationsOutput {
     /// <p>List of share invitation summaries in a workload.</p>
     #[doc(hidden)]
     pub share_invitation_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ShareInvitationSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
     /// <p>The token to use to retrieve the next set of results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListShareInvitationsOutput {
     /// <p>List of share invitation summaries in a workload.</p>
     pub fn share_invitation_summaries(
         &self,
-    ) -> std::option::Option<&[crate::types::ShareInvitationSummary]> {
+    ) -> ::std::option::Option<&[crate::types::ShareInvitationSummary]> {
         self.share_invitation_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListShareInvitationsOutput {
+impl ::aws_http::request_id::RequestId for ListShareInvitationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,11 +40,13 @@ impl ListShareInvitationsOutput {
 
 /// A builder for [`ListShareInvitationsOutput`](crate::operation::list_share_invitations::ListShareInvitationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListShareInvitationsOutputBuilder {
     pub(crate) share_invitation_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ShareInvitationSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListShareInvitationsOutputBuilder {
@@ -59,24 +61,24 @@ impl ListShareInvitationsOutputBuilder {
     ) -> Self {
         let mut v = self.share_invitation_summaries.unwrap_or_default();
         v.push(input);
-        self.share_invitation_summaries = Some(v);
+        self.share_invitation_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of share invitation summaries in a workload.</p>
     pub fn set_share_invitation_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ShareInvitationSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ShareInvitationSummary>>,
     ) -> Self {
         self.share_invitation_summaries = input;
         self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

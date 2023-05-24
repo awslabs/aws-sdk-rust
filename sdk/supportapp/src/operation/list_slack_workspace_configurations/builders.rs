@@ -6,47 +6,50 @@ pub use crate::operation::list_slack_workspace_configurations::_list_slack_works
 /// Fluent builder constructing a request to `ListSlackWorkspaceConfigurations`.
 ///
 /// <p>Lists the Slack workspace configurations for an Amazon Web Services account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSlackWorkspaceConfigurationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_slack_workspace_configurations::builders::ListSlackWorkspaceConfigurationsInputBuilder,
 }
 impl ListSlackWorkspaceConfigurationsFluentBuilder {
     /// Creates a new `ListSlackWorkspaceConfigurations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput, aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl ListSlackWorkspaceConfigurationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput, aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_slack_workspace_configurations::ListSlackWorkspaceConfigurationsError>>
                          {
         self.send_middleware().await
     }
@@ -68,12 +71,12 @@ impl ListSlackWorkspaceConfigurationsFluentBuilder {
         crate::operation::list_slack_workspace_configurations::paginator::ListSlackWorkspaceConfigurationsPaginator::new(self.handle, self.inner)
     }
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDistributionsOutput {
     /// <p>The <code>DistributionList</code> type.</p>
     #[doc(hidden)]
-    pub distribution_list: std::option::Option<crate::types::DistributionList>,
+    pub distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,
 }
 impl ListDistributionsOutput {
     /// <p>The <code>DistributionList</code> type.</p>
-    pub fn distribution_list(&self) -> std::option::Option<&crate::types::DistributionList> {
+    pub fn distribution_list(&self) -> ::std::option::Option<&crate::types::DistributionList> {
         self.distribution_list.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ListDistributionsOutput {
+impl ::aws_http::request_id::RequestId for ListDistributionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl ListDistributionsOutput {
 
 /// A builder for [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDistributionsOutputBuilder {
-    pub(crate) distribution_list: std::option::Option<crate::types::DistributionList>,
+    pub(crate) distribution_list: ::std::option::Option<crate::types::DistributionList>,
     _request_id: Option<String>,
 }
 impl ListDistributionsOutputBuilder {
     /// <p>The <code>DistributionList</code> type.</p>
     pub fn distribution_list(mut self, input: crate::types::DistributionList) -> Self {
-        self.distribution_list = Some(input);
+        self.distribution_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>DistributionList</code> type.</p>
     pub fn set_distribution_list(
         mut self,
-        input: std::option::Option<crate::types::DistributionList>,
+        input: ::std::option::Option<crate::types::DistributionList>,
     ) -> Self {
         self.distribution_list = input;
         self

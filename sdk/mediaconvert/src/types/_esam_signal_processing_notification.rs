@@ -2,15 +2,15 @@
 
 /// ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EsamSignalProcessingNotification {
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
     #[doc(hidden)]
-    pub scc_xml: std::option::Option<std::string::String>,
+    pub scc_xml: ::std::option::Option<::std::string::String>,
 }
 impl EsamSignalProcessingNotification {
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
-    pub fn scc_xml(&self) -> std::option::Option<&str> {
+    pub fn scc_xml(&self) -> ::std::option::Option<&str> {
         self.scc_xml.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl EsamSignalProcessingNotification {
 
 /// A builder for [`EsamSignalProcessingNotification`](crate::types::EsamSignalProcessingNotification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EsamSignalProcessingNotificationBuilder {
-    pub(crate) scc_xml: std::option::Option<std::string::String>,
+    pub(crate) scc_xml: ::std::option::Option<::std::string::String>,
 }
 impl EsamSignalProcessingNotificationBuilder {
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
-    pub fn scc_xml(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scc_xml = Some(input.into());
+    pub fn scc_xml(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scc_xml = ::std::option::Option::Some(input.into());
         self
     }
     /// Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the signal processing instructions in the message that you supply. Provide your ESAM SignalProcessingNotification XML document inside your JSON job settings. For your MPEG2-TS file outputs, if you want the service to place SCTE-35 markers at the insertion points you specify in the XML document, you must also enable SCTE-35 ESAM (scte35Esam). Note that you can either specify an ESAM XML document or enable SCTE-35 passthrough. You can't do both.
-    pub fn set_scc_xml(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scc_xml(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scc_xml = input;
         self
     }

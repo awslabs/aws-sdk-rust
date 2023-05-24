@@ -2,20 +2,20 @@
 
 /// <p>The result of a DescribeEventTopic request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventTopicsOutput {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     #[doc(hidden)]
-    pub event_topics: std::option::Option<std::vec::Vec<crate::types::EventTopic>>,
+    pub event_topics: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
     _request_id: Option<String>,
 }
 impl DescribeEventTopicsOutput {
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
-    pub fn event_topics(&self) -> std::option::Option<&[crate::types::EventTopic]> {
+    pub fn event_topics(&self) -> ::std::option::Option<&[crate::types::EventTopic]> {
         self.event_topics.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEventTopicsOutput {
+impl ::aws_http::request_id::RequestId for DescribeEventTopicsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeEventTopicsOutput {
 
 /// A builder for [`DescribeEventTopicsOutput`](crate::operation::describe_event_topics::DescribeEventTopicsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEventTopicsOutputBuilder {
-    pub(crate) event_topics: std::option::Option<std::vec::Vec<crate::types::EventTopic>>,
+    pub(crate) event_topics: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
     _request_id: Option<String>,
 }
 impl DescribeEventTopicsOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeEventTopicsOutputBuilder {
     pub fn event_topics(mut self, input: crate::types::EventTopic) -> Self {
         let mut v = self.event_topics.unwrap_or_default();
         v.push(input);
-        self.event_topics = Some(v);
+        self.event_topics = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory ID.</p>
     pub fn set_event_topics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventTopic>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventTopic>>,
     ) -> Self {
         self.event_topics = input;
         self

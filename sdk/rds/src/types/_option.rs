@@ -2,14 +2,14 @@
 
 /// <p>Option details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Option {
     /// <p>The name of the option.</p>
     #[doc(hidden)]
-    pub option_name: std::option::Option<std::string::String>,
+    pub option_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the option.</p>
     #[doc(hidden)]
-    pub option_description: std::option::Option<std::string::String>,
+    pub option_description: ::std::option::Option<::std::string::String>,
     /// <p>Indicate if this option is persistent.</p>
     #[doc(hidden)]
     pub persistent: bool,
@@ -18,29 +18,29 @@ pub struct Option {
     pub permanent: bool,
     /// <p>If required, the port configured for this option to use.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>The version of the option.</p>
     #[doc(hidden)]
-    pub option_version: std::option::Option<std::string::String>,
+    pub option_version: ::std::option::Option<::std::string::String>,
     /// <p>The option settings for this option.</p>
     #[doc(hidden)]
-    pub option_settings: std::option::Option<std::vec::Vec<crate::types::OptionSetting>>,
+    pub option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>,
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
     #[doc(hidden)]
     pub db_security_group_memberships:
-        std::option::Option<std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
     #[doc(hidden)]
     pub vpc_security_group_memberships:
-        std::option::Option<std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
 }
 impl Option {
     /// <p>The name of the option.</p>
-    pub fn option_name(&self) -> std::option::Option<&str> {
+    pub fn option_name(&self) -> ::std::option::Option<&str> {
         self.option_name.as_deref()
     }
     /// <p>The description of the option.</p>
-    pub fn option_description(&self) -> std::option::Option<&str> {
+    pub fn option_description(&self) -> ::std::option::Option<&str> {
         self.option_description.as_deref()
     }
     /// <p>Indicate if this option is persistent.</p>
@@ -52,27 +52,27 @@ impl Option {
         self.permanent
     }
     /// <p>If required, the port configured for this option to use.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The version of the option.</p>
-    pub fn option_version(&self) -> std::option::Option<&str> {
+    pub fn option_version(&self) -> ::std::option::Option<&str> {
         self.option_version.as_deref()
     }
     /// <p>The option settings for this option.</p>
-    pub fn option_settings(&self) -> std::option::Option<&[crate::types::OptionSetting]> {
+    pub fn option_settings(&self) -> ::std::option::Option<&[crate::types::OptionSetting]> {
         self.option_settings.as_deref()
     }
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
     pub fn db_security_group_memberships(
         &self,
-    ) -> std::option::Option<&[crate::types::DbSecurityGroupMembership]> {
+    ) -> ::std::option::Option<&[crate::types::DbSecurityGroupMembership]> {
         self.db_security_group_memberships.as_deref()
     }
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
     pub fn vpc_security_group_memberships(
         &self,
-    ) -> std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
+    ) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
         self.vpc_security_group_memberships.as_deref()
     }
 }
@@ -85,81 +85,92 @@ impl Option {
 
 /// A builder for [`Option`](crate::types::Option).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OptionBuilder {
-    pub(crate) option_name: std::option::Option<std::string::String>,
-    pub(crate) option_description: std::option::Option<std::string::String>,
-    pub(crate) persistent: std::option::Option<bool>,
-    pub(crate) permanent: std::option::Option<bool>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) option_version: std::option::Option<std::string::String>,
-    pub(crate) option_settings: std::option::Option<std::vec::Vec<crate::types::OptionSetting>>,
+    pub(crate) option_name: ::std::option::Option<::std::string::String>,
+    pub(crate) option_description: ::std::option::Option<::std::string::String>,
+    pub(crate) persistent: ::std::option::Option<bool>,
+    pub(crate) permanent: ::std::option::Option<bool>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) option_version: ::std::option::Option<::std::string::String>,
+    pub(crate) option_settings: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>,
     pub(crate) db_security_group_memberships:
-        std::option::Option<std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     pub(crate) vpc_security_group_memberships:
-        std::option::Option<std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
 }
 impl OptionBuilder {
     /// <p>The name of the option.</p>
-    pub fn option_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_name = Some(input.into());
+    pub fn option_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.option_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the option.</p>
-    pub fn set_option_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_option_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.option_name = input;
         self
     }
     /// <p>The description of the option.</p>
-    pub fn option_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_description = Some(input.into());
+    pub fn option_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.option_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the option.</p>
     pub fn set_option_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.option_description = input;
         self
     }
     /// <p>Indicate if this option is persistent.</p>
     pub fn persistent(mut self, input: bool) -> Self {
-        self.persistent = Some(input);
+        self.persistent = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicate if this option is persistent.</p>
-    pub fn set_persistent(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_persistent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.persistent = input;
         self
     }
     /// <p>Indicate if this option is permanent.</p>
     pub fn permanent(mut self, input: bool) -> Self {
-        self.permanent = Some(input);
+        self.permanent = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicate if this option is permanent.</p>
-    pub fn set_permanent(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_permanent(mut self, input: ::std::option::Option<bool>) -> Self {
         self.permanent = input;
         self
     }
     /// <p>If required, the port configured for this option to use.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>If required, the port configured for this option to use.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The version of the option.</p>
-    pub fn option_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_version = Some(input.into());
+    pub fn option_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.option_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the option.</p>
-    pub fn set_option_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_option_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.option_version = input;
         self
     }
@@ -171,13 +182,13 @@ impl OptionBuilder {
     pub fn option_settings(mut self, input: crate::types::OptionSetting) -> Self {
         let mut v = self.option_settings.unwrap_or_default();
         v.push(input);
-        self.option_settings = Some(v);
+        self.option_settings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The option settings for this option.</p>
     pub fn set_option_settings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OptionSetting>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSetting>>,
     ) -> Self {
         self.option_settings = input;
         self
@@ -193,13 +204,13 @@ impl OptionBuilder {
     ) -> Self {
         let mut v = self.db_security_group_memberships.unwrap_or_default();
         v.push(input);
-        self.db_security_group_memberships = Some(v);
+        self.db_security_group_memberships = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the option requires access to a port, then this DB security group allows access to the port.</p>
     pub fn set_db_security_group_memberships(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbSecurityGroupMembership>>,
     ) -> Self {
         self.db_security_group_memberships = input;
         self
@@ -215,13 +226,13 @@ impl OptionBuilder {
     ) -> Self {
         let mut v = self.vpc_security_group_memberships.unwrap_or_default();
         v.push(input);
-        self.vpc_security_group_memberships = Some(v);
+        self.vpc_security_group_memberships = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the option requires access to a port, then this VPC security group allows access to the port.</p>
     pub fn set_vpc_security_group_memberships(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     ) -> Self {
         self.vpc_security_group_memberships = input;
         self

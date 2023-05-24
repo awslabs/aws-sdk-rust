@@ -8,56 +8,59 @@ pub use crate::operation::execute_command::_execute_command_input::ExecuteComman
 /// <p>Runs a command remotely on a container within a task.</p>
 /// <p>If you use a condition key in your IAM policy to refine the conditions for the policy statement, for example limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code> when there is a mismatch between the condition key value and the corresponding parameter value.</p>
 /// <p>For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteCommandFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::execute_command::builders::ExecuteCommandInputBuilder,
 }
 impl ExecuteCommandFluentBuilder {
     /// Creates a new `ExecuteCommand`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::execute_command::ExecuteCommand,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::execute_command::ExecuteCommandError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_command::ExecuteCommandError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::execute_command::ExecuteCommandOutput,
-        aws_smithy_http::result::SdkError<crate::operation::execute_command::ExecuteCommandError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_command::ExecuteCommandError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,39 +73,39 @@ impl ExecuteCommandFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::execute_command::ExecuteCommandOutput,
-        aws_smithy_http::result::SdkError<crate::operation::execute_command::ExecuteCommandError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::execute_command::ExecuteCommandError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or short name of the cluster the task is running in. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
     }
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
-    pub fn container(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container(input.into());
         self
     }
     /// <p>The name of the container to execute the command on. A container name only needs to be specified for tasks containing multiple containers.</p>
-    pub fn set_container(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container(input);
         self
     }
     /// <p>The command to run on the container.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.command(input.into());
         self
     }
     /// <p>The command to run on the container.</p>
-    pub fn set_command(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_command(input);
         self
     }
@@ -112,17 +115,17 @@ impl ExecuteCommandFluentBuilder {
         self
     }
     /// <p>Use this flag to run your command in interactive mode.</p>
-    pub fn set_interactive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_interactive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_interactive(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
-    pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the task the container is part of.</p>
-    pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task(input);
         self
     }

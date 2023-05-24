@@ -2,7 +2,7 @@
 
 /// <p>The password data for the Windows Server-based instance, including the ciphertext and the key pair name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PasswordData {
     /// <p>The encrypted password. Ciphertext will be an empty string if access to your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p> <note>
     /// <p>If you use the default key pair (<code>LightsailDefaultKeyPair</code>), the decrypted password will be available in the password field.</p>
@@ -10,11 +10,11 @@ pub struct PasswordData {
     /// <p>If you change the Administrator password on the instance, Lightsail will continue to return the original ciphertext value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
     /// </note>
     #[doc(hidden)]
-    pub ciphertext: std::option::Option<std::string::String>,
+    pub ciphertext: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair that you used when creating your instance. If no key pair name was specified when creating the instance, Lightsail uses the default key pair (<code>LightsailDefaultKeyPair</code>).</p>
     /// <p>If you are using a custom key pair, you need to use your own means of decrypting your password using the <code>ciphertext</code>. Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.</p>
     #[doc(hidden)]
-    pub key_pair_name: std::option::Option<std::string::String>,
+    pub key_pair_name: ::std::option::Option<::std::string::String>,
 }
 impl PasswordData {
     /// <p>The encrypted password. Ciphertext will be an empty string if access to your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p> <note>
@@ -22,12 +22,12 @@ impl PasswordData {
     /// <p>If you are using a custom key pair, you need to use your own means of decryption.</p>
     /// <p>If you change the Administrator password on the instance, Lightsail will continue to return the original ciphertext value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
     /// </note>
-    pub fn ciphertext(&self) -> std::option::Option<&str> {
+    pub fn ciphertext(&self) -> ::std::option::Option<&str> {
         self.ciphertext.as_deref()
     }
     /// <p>The name of the key pair that you used when creating your instance. If no key pair name was specified when creating the instance, Lightsail uses the default key pair (<code>LightsailDefaultKeyPair</code>).</p>
     /// <p>If you are using a custom key pair, you need to use your own means of decrypting your password using the <code>ciphertext</code>. Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.</p>
-    pub fn key_pair_name(&self) -> std::option::Option<&str> {
+    pub fn key_pair_name(&self) -> ::std::option::Option<&str> {
         self.key_pair_name.as_deref()
     }
 }
@@ -40,10 +40,12 @@ impl PasswordData {
 
 /// A builder for [`PasswordData`](crate::types::PasswordData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PasswordDataBuilder {
-    pub(crate) ciphertext: std::option::Option<std::string::String>,
-    pub(crate) key_pair_name: std::option::Option<std::string::String>,
+    pub(crate) ciphertext: ::std::option::Option<::std::string::String>,
+    pub(crate) key_pair_name: ::std::option::Option<::std::string::String>,
 }
 impl PasswordDataBuilder {
     /// <p>The encrypted password. Ciphertext will be an empty string if access to your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p> <note>
@@ -51,8 +53,8 @@ impl PasswordDataBuilder {
     /// <p>If you are using a custom key pair, you need to use your own means of decryption.</p>
     /// <p>If you change the Administrator password on the instance, Lightsail will continue to return the original ciphertext value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
     /// </note>
-    pub fn ciphertext(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ciphertext = Some(input.into());
+    pub fn ciphertext(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ciphertext = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encrypted password. Ciphertext will be an empty string if access to your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p> <note>
@@ -60,19 +62,25 @@ impl PasswordDataBuilder {
     /// <p>If you are using a custom key pair, you need to use your own means of decryption.</p>
     /// <p>If you change the Administrator password on the instance, Lightsail will continue to return the original ciphertext value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
     /// </note>
-    pub fn set_ciphertext(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ciphertext(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ciphertext = input;
         self
     }
     /// <p>The name of the key pair that you used when creating your instance. If no key pair name was specified when creating the instance, Lightsail uses the default key pair (<code>LightsailDefaultKeyPair</code>).</p>
     /// <p>If you are using a custom key pair, you need to use your own means of decrypting your password using the <code>ciphertext</code>. Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.</p>
-    pub fn key_pair_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_pair_name = Some(input.into());
+    pub fn key_pair_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.key_pair_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the key pair that you used when creating your instance. If no key pair name was specified when creating the instance, Lightsail uses the default key pair (<code>LightsailDefaultKeyPair</code>).</p>
     /// <p>If you are using a custom key pair, you need to use your own means of decrypting your password using the <code>ciphertext</code>. Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.</p>
-    pub fn set_key_pair_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_pair_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.key_pair_name = input;
         self
     }

@@ -2,7 +2,7 @@
 pub(crate) fn de_export_jobs_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ExportJobsResponse>,
+    ::std::option::Option<crate::types::ExportJobsResponse>,
     crate::operation::get_segment_export_jobs::GetSegmentExportJobsError,
 > {
     (!body.is_empty())

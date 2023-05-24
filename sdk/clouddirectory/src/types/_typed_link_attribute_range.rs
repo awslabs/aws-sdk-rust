@@ -2,22 +2,22 @@
 
 /// <p>Identifies the range of attributes that are used by a specified filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkAttributeRange {
     /// <p>The unique name of the typed link attribute.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The range of attribute values that are being selected.</p>
     #[doc(hidden)]
-    pub range: std::option::Option<crate::types::TypedAttributeValueRange>,
+    pub range: ::std::option::Option<crate::types::TypedAttributeValueRange>,
 }
 impl TypedLinkAttributeRange {
     /// <p>The unique name of the typed link attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The range of attribute values that are being selected.</p>
-    pub fn range(&self) -> std::option::Option<&crate::types::TypedAttributeValueRange> {
+    pub fn range(&self) -> ::std::option::Option<&crate::types::TypedAttributeValueRange> {
         self.range.as_ref()
     }
 }
@@ -30,31 +30,39 @@ impl TypedLinkAttributeRange {
 
 /// A builder for [`TypedLinkAttributeRange`](crate::types::TypedLinkAttributeRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TypedLinkAttributeRangeBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) range: std::option::Option<crate::types::TypedAttributeValueRange>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) range: ::std::option::Option<crate::types::TypedAttributeValueRange>,
 }
 impl TypedLinkAttributeRangeBuilder {
     /// <p>The unique name of the typed link attribute.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the typed link attribute.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The range of attribute values that are being selected.</p>
     pub fn range(mut self, input: crate::types::TypedAttributeValueRange) -> Self {
-        self.range = Some(input);
+        self.range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The range of attribute values that are being selected.</p>
     pub fn set_range(
         mut self,
-        input: std::option::Option<crate::types::TypedAttributeValueRange>,
+        input: ::std::option::Option<crate::types::TypedAttributeValueRange>,
     ) -> Self {
         self.range = input;
         self

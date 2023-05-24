@@ -9,31 +9,32 @@
 /// </ul>
 /// <p>CloudFront sends a request when it can't find an object in its cache that matches the request. If you want to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the origin request policy was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The origin request policy configuration.</p>
     #[doc(hidden)]
-    pub origin_request_policy_config: std::option::Option<crate::types::OriginRequestPolicyConfig>,
+    pub origin_request_policy_config:
+        ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
 }
 impl OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The date and time when the origin request policy was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The origin request policy configuration.</p>
     pub fn origin_request_policy_config(
         &self,
-    ) -> std::option::Option<&crate::types::OriginRequestPolicyConfig> {
+    ) -> ::std::option::Option<&crate::types::OriginRequestPolicyConfig> {
         self.origin_request_policy_config.as_ref()
     }
 }
@@ -46,33 +47,35 @@ impl OriginRequestPolicy {
 
 /// A builder for [`OriginRequestPolicy`](crate::types::OriginRequestPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginRequestPolicyBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) origin_request_policy_config:
-        std::option::Option<crate::types::OriginRequestPolicyConfig>,
+        ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
 }
 impl OriginRequestPolicyBuilder {
     /// <p>The unique identifier for the origin request policy.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the origin request policy.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The date and time when the origin request policy was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the origin request policy was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
@@ -82,13 +85,13 @@ impl OriginRequestPolicyBuilder {
         mut self,
         input: crate::types::OriginRequestPolicyConfig,
     ) -> Self {
-        self.origin_request_policy_config = Some(input);
+        self.origin_request_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The origin request policy configuration.</p>
     pub fn set_origin_request_policy_config(
         mut self,
-        input: std::option::Option<crate::types::OriginRequestPolicyConfig>,
+        input: ::std::option::Option<crate::types::OriginRequestPolicyConfig>,
     ) -> Self {
         self.origin_request_policy_config = input;
         self

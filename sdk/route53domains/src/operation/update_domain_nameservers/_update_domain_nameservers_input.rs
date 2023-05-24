@@ -3,36 +3,36 @@
 /// <p>Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p>
 /// <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDomainNameserversInput {
     /// <p>The name of the domain that you want to change name servers for.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
     #[doc(hidden)]
-    pub fi_auth_key: std::option::Option<std::string::String>,
+    pub fi_auth_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of new name servers for the domain.</p>
     #[doc(hidden)]
-    pub nameservers: std::option::Option<std::vec::Vec<crate::types::Nameserver>>,
+    pub nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
 }
 impl UpdateDomainNameserversInput {
     /// <p>The name of the domain that you want to change name servers for.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
-    pub fn fi_auth_key(&self) -> std::option::Option<&str> {
+    pub fn fi_auth_key(&self) -> ::std::option::Option<&str> {
         self.fi_auth_key.as_deref()
     }
     /// <p>A list of new name servers for the domain.</p>
-    pub fn nameservers(&self) -> std::option::Option<&[crate::types::Nameserver]> {
+    pub fn nameservers(&self) -> ::std::option::Option<&[crate::types::Nameserver]> {
         self.nameservers.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateDomainNameserversInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateDomainNameserversInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainNameserversInput");
         formatter.field("domain_name", &self.domain_name);
         formatter.field("fi_auth_key", &"*** Sensitive Data Redacted ***");
@@ -51,32 +51,32 @@ impl UpdateDomainNameserversInput {
 
 /// A builder for [`UpdateDomainNameserversInput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateDomainNameserversInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) fi_auth_key: std::option::Option<std::string::String>,
-    pub(crate) nameservers: std::option::Option<std::vec::Vec<crate::types::Nameserver>>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) fi_auth_key: ::std::option::Option<::std::string::String>,
+    pub(crate) nameservers: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
 }
 impl UpdateDomainNameserversInputBuilder {
     /// <p>The name of the domain that you want to change name servers for.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain that you want to change name servers for.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
-    pub fn fi_auth_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fi_auth_key = Some(input.into());
+    pub fn fi_auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fi_auth_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorization key for .fi domains</p>
     #[deprecated]
-    pub fn set_fi_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fi_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fi_auth_key = input;
         self
     }
@@ -88,13 +88,13 @@ impl UpdateDomainNameserversInputBuilder {
     pub fn nameservers(mut self, input: crate::types::Nameserver) -> Self {
         let mut v = self.nameservers.unwrap_or_default();
         v.push(input);
-        self.nameservers = Some(v);
+        self.nameservers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of new name servers for the domain.</p>
     pub fn set_nameservers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Nameserver>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
     ) -> Self {
         self.nameservers = input;
         self
@@ -102,11 +102,11 @@ impl UpdateDomainNameserversInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainNameserversInput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_nameservers::UpdateDomainNameserversInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_domain_nameservers::UpdateDomainNameserversInput {
                 domain_name: self.domain_name,
                 fi_auth_key: self.fi_auth_key,
@@ -115,8 +115,8 @@ impl UpdateDomainNameserversInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for UpdateDomainNameserversInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateDomainNameserversInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDomainNameserversInputBuilder");
         formatter.field("domain_name", &self.domain_name);
         formatter.field("fi_auth_key", &"*** Sensitive Data Redacted ***");

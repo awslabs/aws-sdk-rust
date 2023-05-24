@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LimitExceededErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum LimitExceededErrorCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LimitExceededErrorCode {
+impl ::std::convert::From<&str> for LimitExceededErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ASSESSMENT_RUN_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentRunLimitExceeded,
@@ -83,11 +83,11 @@ impl std::convert::From<&str> for LimitExceededErrorCode {
         }
     }
 }
-impl std::str::FromStr for LimitExceededErrorCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LimitExceededErrorCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LimitExceededErrorCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LimitExceededErrorCode::from(s))
     }
 }
 impl LimitExceededErrorCode {
@@ -119,7 +119,7 @@ impl LimitExceededErrorCode {
         ]
     }
 }
-impl AsRef<str> for LimitExceededErrorCode {
+impl ::std::convert::AsRef<str> for LimitExceededErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

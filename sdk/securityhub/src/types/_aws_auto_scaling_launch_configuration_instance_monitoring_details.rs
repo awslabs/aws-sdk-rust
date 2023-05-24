@@ -2,7 +2,7 @@
 
 /// <p>Information about the type of monitoring for instances in the group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
@@ -27,20 +27,22 @@ impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails {
 
 /// A builder for [`AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails`](crate::types::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsBuilder {
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>If set to <code>true</code>, then instances in the group launch with detailed monitoring.</p>
     /// <p>If set to <code>false</code>, then instances in the group launch with basic monitoring.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

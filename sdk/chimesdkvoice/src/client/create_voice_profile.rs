@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateVoiceProfile`](crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`speaker_search_task_id(impl Into<String>)`](crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder::speaker_search_task_id) / [`set_speaker_search_task_id(Option<String>)`](crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder::set_speaker_search_task_id): <p>The ID of the speaker search task.</p>
+    ///   - [`speaker_search_task_id(impl ::std::convert::Into<String>)`](crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder::speaker_search_task_id) / [`set_speaker_search_task_id(Option<String>)`](crate::operation::create_voice_profile::builders::CreateVoiceProfileFluentBuilder::set_speaker_search_task_id): <p>The ID of the speaker search task.</p>
     /// - On success, responds with [`CreateVoiceProfileOutput`](crate::operation::create_voice_profile::CreateVoiceProfileOutput) with field(s):
     ///   - [`voice_profile(Option<VoiceProfile>)`](crate::operation::create_voice_profile::CreateVoiceProfileOutput::voice_profile): <p>The requested voice profile.</p>
     /// - On failure, responds with [`SdkError<CreateVoiceProfileError>`](crate::operation::create_voice_profile::CreateVoiceProfileError)

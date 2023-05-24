@@ -2,40 +2,40 @@
 
 /// <p>Provides aggregated statistical data for sensitive data discovery metrics that apply to S3 buckets. Each field contains aggregated data for all the buckets that have a sensitivity score (sensitivityScore) of a specified value or within a specified range (BucketStatisticsBySensitivity). If automated sensitive data discovery is currently disabled for your account, the value for each field is 0.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitivityAggregations {
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     #[doc(hidden)]
-    pub classifiable_size_in_bytes: std::option::Option<i64>,
+    pub classifiable_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     #[doc(hidden)]
-    pub publicly_accessible_count: std::option::Option<i64>,
+    pub publicly_accessible_count: ::std::option::Option<i64>,
     /// <p>The total number of buckets.</p>
     #[doc(hidden)]
-    pub total_count: std::option::Option<i64>,
+    pub total_count: ::std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     #[doc(hidden)]
-    pub total_size_in_bytes: std::option::Option<i64>,
+    pub total_size_in_bytes: ::std::option::Option<i64>,
 }
 impl SensitivityAggregations {
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
-    pub fn classifiable_size_in_bytes(&self) -> std::option::Option<i64> {
+    pub fn classifiable_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.classifiable_size_in_bytes
     }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
-    pub fn publicly_accessible_count(&self) -> std::option::Option<i64> {
+    pub fn publicly_accessible_count(&self) -> ::std::option::Option<i64> {
         self.publicly_accessible_count
     }
     /// <p>The total number of buckets.</p>
-    pub fn total_count(&self) -> std::option::Option<i64> {
+    pub fn total_count(&self) -> ::std::option::Option<i64> {
         self.total_count
     }
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
-    pub fn total_size_in_bytes(&self) -> std::option::Option<i64> {
+    pub fn total_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.total_size_in_bytes
     }
 }
@@ -48,55 +48,57 @@ impl SensitivityAggregations {
 
 /// A builder for [`SensitivityAggregations`](crate::types::SensitivityAggregations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SensitivityAggregationsBuilder {
-    pub(crate) classifiable_size_in_bytes: std::option::Option<i64>,
-    pub(crate) publicly_accessible_count: std::option::Option<i64>,
-    pub(crate) total_count: std::option::Option<i64>,
-    pub(crate) total_size_in_bytes: std::option::Option<i64>,
+    pub(crate) classifiable_size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) publicly_accessible_count: ::std::option::Option<i64>,
+    pub(crate) total_count: ::std::option::Option<i64>,
+    pub(crate) total_size_in_bytes: ::std::option::Option<i64>,
 }
 impl SensitivityAggregationsBuilder {
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     pub fn classifiable_size_in_bytes(mut self, input: i64) -> Self {
-        self.classifiable_size_in_bytes = Some(input);
+        self.classifiable_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
-    pub fn set_classifiable_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_classifiable_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.classifiable_size_in_bytes = input;
         self
     }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     pub fn publicly_accessible_count(mut self, input: i64) -> Self {
-        self.publicly_accessible_count = Some(input);
+        self.publicly_accessible_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
-    pub fn set_publicly_accessible_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_publicly_accessible_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.publicly_accessible_count = input;
         self
     }
     /// <p>The total number of buckets.</p>
     pub fn total_count(mut self, input: i64) -> Self {
-        self.total_count = Some(input);
+        self.total_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of buckets.</p>
-    pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
     }
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     pub fn total_size_in_bytes(mut self, input: i64) -> Self {
-        self.total_size_in_bytes = Some(input);
+        self.total_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
-    pub fn set_total_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_size_in_bytes = input;
         self
     }

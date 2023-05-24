@@ -2,62 +2,62 @@
 
 /// <p>Contains details about a task scheduled during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskScheduledEventDetails {
     /// <p>The service name of the resource in a task state.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The action of the resource called by a task state.</p>
     #[doc(hidden)]
-    pub resource: std::option::Option<std::string::String>,
+    pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The region of the scheduled task</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::string::String>,
+    pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed duration of the task.</p>
     #[doc(hidden)]
-    pub timeout_in_seconds: std::option::Option<i64>,
+    pub timeout_in_seconds: ::std::option::Option<i64>,
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
     #[doc(hidden)]
-    pub heartbeat_in_seconds: std::option::Option<i64>,
+    pub heartbeat_in_seconds: ::std::option::Option<i64>,
     /// <p>The credentials that Step Functions uses for the task.</p>
     #[doc(hidden)]
-    pub task_credentials: std::option::Option<crate::types::TaskCredentials>,
+    pub task_credentials: ::std::option::Option<crate::types::TaskCredentials>,
 }
 impl TaskScheduledEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>The region of the scheduled task</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn parameters(&self) -> std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<&str> {
         self.parameters.as_deref()
     }
     /// <p>The maximum allowed duration of the task.</p>
-    pub fn timeout_in_seconds(&self) -> std::option::Option<i64> {
+    pub fn timeout_in_seconds(&self) -> ::std::option::Option<i64> {
         self.timeout_in_seconds
     }
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
-    pub fn heartbeat_in_seconds(&self) -> std::option::Option<i64> {
+    pub fn heartbeat_in_seconds(&self) -> ::std::option::Option<i64> {
         self.heartbeat_in_seconds
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
-    pub fn task_credentials(&self) -> std::option::Option<&crate::types::TaskCredentials> {
+    pub fn task_credentials(&self) -> ::std::option::Option<&crate::types::TaskCredentials> {
         self.task_credentials.as_ref()
     }
 }
-impl std::fmt::Debug for TaskScheduledEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TaskScheduledEventDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TaskScheduledEventDetails");
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource", &self.resource);
@@ -78,86 +78,92 @@ impl TaskScheduledEventDetails {
 
 /// A builder for [`TaskScheduledEventDetails`](crate::types::TaskScheduledEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TaskScheduledEventDetailsBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) resource: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::string::String>,
-    pub(crate) timeout_in_seconds: std::option::Option<i64>,
-    pub(crate) heartbeat_in_seconds: std::option::Option<i64>,
-    pub(crate) task_credentials: std::option::Option<crate::types::TaskCredentials>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::string::String>,
+    pub(crate) timeout_in_seconds: ::std::option::Option<i64>,
+    pub(crate) heartbeat_in_seconds: ::std::option::Option<i64>,
+    pub(crate) task_credentials: ::std::option::Option<crate::types::TaskCredentials>,
 }
 impl TaskScheduledEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service name of the resource in a task state.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource = Some(input.into());
+    pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
     }
     /// <p>The region of the scheduled task</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The region of the scheduled task</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameters = Some(input.into());
+    pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The maximum allowed duration of the task.</p>
     pub fn timeout_in_seconds(mut self, input: i64) -> Self {
-        self.timeout_in_seconds = Some(input);
+        self.timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum allowed duration of the task.</p>
-    pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timeout_in_seconds = input;
         self
     }
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
     pub fn heartbeat_in_seconds(mut self, input: i64) -> Self {
-        self.heartbeat_in_seconds = Some(input);
+        self.heartbeat_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum allowed duration between two heartbeats for the task.</p>
-    pub fn set_heartbeat_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_heartbeat_in_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.heartbeat_in_seconds = input;
         self
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
     pub fn task_credentials(mut self, input: crate::types::TaskCredentials) -> Self {
-        self.task_credentials = Some(input);
+        self.task_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
     pub fn set_task_credentials(
         mut self,
-        input: std::option::Option<crate::types::TaskCredentials>,
+        input: ::std::option::Option<crate::types::TaskCredentials>,
     ) -> Self {
         self.task_credentials = input;
         self
@@ -175,8 +181,8 @@ impl TaskScheduledEventDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for TaskScheduledEventDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TaskScheduledEventDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TaskScheduledEventDetailsBuilder");
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource", &self.resource);

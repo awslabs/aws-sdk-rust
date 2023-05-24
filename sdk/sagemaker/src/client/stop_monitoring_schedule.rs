@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopMonitoringSchedule`](crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monitoring_schedule_name(impl Into<String>)`](crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder::set_monitoring_schedule_name): <p>The name of the schedule to stop.</p>
+    ///   - [`monitoring_schedule_name(impl ::std::convert::Into<String>)`](crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder::monitoring_schedule_name) / [`set_monitoring_schedule_name(Option<String>)`](crate::operation::stop_monitoring_schedule::builders::StopMonitoringScheduleFluentBuilder::set_monitoring_schedule_name): <p>The name of the schedule to stop.</p>
     /// - On success, responds with [`StopMonitoringScheduleOutput`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleOutput)
     /// - On failure, responds with [`SdkError<StopMonitoringScheduleError>`](crate::operation::stop_monitoring_schedule::StopMonitoringScheduleError)
     pub fn stop_monitoring_schedule(

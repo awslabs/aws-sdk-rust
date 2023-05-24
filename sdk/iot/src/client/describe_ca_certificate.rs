@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCACertificate`](crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`certificate_id(impl Into<String>)`](crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder::set_certificate_id): <p>The CA certificate identifier.</p>
+    ///   - [`certificate_id(impl ::std::convert::Into<String>)`](crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::describe_ca_certificate::builders::DescribeCACertificateFluentBuilder::set_certificate_id): <p>The CA certificate identifier.</p>
     /// - On success, responds with [`DescribeCaCertificateOutput`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput) with field(s):
     ///   - [`certificate_description(Option<CaCertificateDescription>)`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput::certificate_description): <p>The CA certificate description.</p>
     ///   - [`registration_config(Option<RegistrationConfig>)`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput::registration_config): <p>Information about the registration configuration.</p>

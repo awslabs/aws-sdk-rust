@@ -2,20 +2,20 @@
 
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDedicatedIpPoolOutput {
     /// <p>An object that contains information about a dedicated IP pool.</p>
     #[doc(hidden)]
-    pub dedicated_ip_pool: std::option::Option<crate::types::DedicatedIpPool>,
+    pub dedicated_ip_pool: ::std::option::Option<crate::types::DedicatedIpPool>,
     _request_id: Option<String>,
 }
 impl GetDedicatedIpPoolOutput {
     /// <p>An object that contains information about a dedicated IP pool.</p>
-    pub fn dedicated_ip_pool(&self) -> std::option::Option<&crate::types::DedicatedIpPool> {
+    pub fn dedicated_ip_pool(&self) -> ::std::option::Option<&crate::types::DedicatedIpPool> {
         self.dedicated_ip_pool.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDedicatedIpPoolOutput {
+impl ::aws_http::request_id::RequestId for GetDedicatedIpPoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl GetDedicatedIpPoolOutput {
 
 /// A builder for [`GetDedicatedIpPoolOutput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDedicatedIpPoolOutputBuilder {
-    pub(crate) dedicated_ip_pool: std::option::Option<crate::types::DedicatedIpPool>,
+    pub(crate) dedicated_ip_pool: ::std::option::Option<crate::types::DedicatedIpPool>,
     _request_id: Option<String>,
 }
 impl GetDedicatedIpPoolOutputBuilder {
     /// <p>An object that contains information about a dedicated IP pool.</p>
     pub fn dedicated_ip_pool(mut self, input: crate::types::DedicatedIpPool) -> Self {
-        self.dedicated_ip_pool = Some(input);
+        self.dedicated_ip_pool = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about a dedicated IP pool.</p>
     pub fn set_dedicated_ip_pool(
         mut self,
-        input: std::option::Option<crate::types::DedicatedIpPool>,
+        input: ::std::option::Option<crate::types::DedicatedIpPool>,
     ) -> Self {
         self.dedicated_ip_pool = input;
         self

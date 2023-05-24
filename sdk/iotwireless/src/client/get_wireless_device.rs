@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWirelessDevice`](crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::set_identifier): <p>The identifier of the wireless device to get.</p>
+    ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::set_identifier): <p>The identifier of the wireless device to get.</p>
     ///   - [`identifier_type(WirelessDeviceIdType)`](crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::identifier_type) / [`set_identifier_type(Option<WirelessDeviceIdType>)`](crate::operation::get_wireless_device::builders::GetWirelessDeviceFluentBuilder::set_identifier_type): <p>The type of identifier used in <code>identifier</code>.</p>
     /// - On success, responds with [`GetWirelessDeviceOutput`](crate::operation::get_wireless_device::GetWirelessDeviceOutput) with field(s):
     ///   - [`r#type(Option<WirelessDeviceType>)`](crate::operation::get_wireless_device::GetWirelessDeviceOutput::type): <p>The wireless device type.</p>

@@ -2,27 +2,27 @@
 
 /// <p>Input for Update Workload Share</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>A workload share return object.</p>
     #[doc(hidden)]
-    pub workload_share: std::option::Option<crate::types::WorkloadShare>,
+    pub workload_share: ::std::option::Option<crate::types::WorkloadShare>,
     _request_id: Option<String>,
 }
 impl UpdateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>A workload share return object.</p>
-    pub fn workload_share(&self) -> std::option::Option<&crate::types::WorkloadShare> {
+    pub fn workload_share(&self) -> ::std::option::Option<&crate::types::WorkloadShare> {
         self.workload_share.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateWorkloadShareOutput {
+impl ::aws_http::request_id::RequestId for UpdateWorkloadShareOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,32 +38,34 @@ impl UpdateWorkloadShareOutput {
 
 /// A builder for [`UpdateWorkloadShareOutput`](crate::operation::update_workload_share::UpdateWorkloadShareOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateWorkloadShareOutputBuilder {
-    pub(crate) workload_id: std::option::Option<std::string::String>,
-    pub(crate) workload_share: std::option::Option<crate::types::WorkloadShare>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workload_share: ::std::option::Option<crate::types::WorkloadShare>,
     _request_id: Option<String>,
 }
 impl UpdateWorkloadShareOutputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
     /// <p>A workload share return object.</p>
     pub fn workload_share(mut self, input: crate::types::WorkloadShare) -> Self {
-        self.workload_share = Some(input);
+        self.workload_share = ::std::option::Option::Some(input);
         self
     }
     /// <p>A workload share return object.</p>
     pub fn set_workload_share(
         mut self,
-        input: std::option::Option<crate::types::WorkloadShare>,
+        input: ::std::option::Option<crate::types::WorkloadShare>,
     ) -> Self {
         self.workload_share = input;
         self

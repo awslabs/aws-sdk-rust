@@ -2,17 +2,17 @@
 
 /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextLogDestination {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
     #[doc(hidden)]
-    pub cloud_watch: std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
+    pub cloud_watch: ::std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
 }
 impl TextLogDestination {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
     pub fn cloud_watch(
         &self,
-    ) -> std::option::Option<&crate::types::CloudWatchLogGroupLogDestination> {
+    ) -> ::std::option::Option<&crate::types::CloudWatchLogGroupLogDestination> {
         self.cloud_watch.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl TextLogDestination {
 
 /// A builder for [`TextLogDestination`](crate::types::TextLogDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TextLogDestinationBuilder {
-    pub(crate) cloud_watch: std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
+    pub(crate) cloud_watch: ::std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
 }
 impl TextLogDestinationBuilder {
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
     pub fn cloud_watch(mut self, input: crate::types::CloudWatchLogGroupLogDestination) -> Self {
-        self.cloud_watch = Some(input);
+        self.cloud_watch = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the Amazon CloudWatch Logs log group where text and metadata logs are delivered.</p>
     pub fn set_cloud_watch(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
+        input: ::std::option::Option<crate::types::CloudWatchLogGroupLogDestination>,
     ) -> Self {
         self.cloud_watch = input;
         self

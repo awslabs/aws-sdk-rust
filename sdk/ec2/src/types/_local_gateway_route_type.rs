@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LocalGatewayRouteType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum LocalGatewayRouteType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LocalGatewayRouteType {
+impl ::std::convert::From<&str> for LocalGatewayRouteType {
     fn from(s: &str) -> Self {
         match s {
             "propagated" => LocalGatewayRouteType::Propagated,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for LocalGatewayRouteType {
         }
     }
 }
-impl std::str::FromStr for LocalGatewayRouteType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LocalGatewayRouteType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LocalGatewayRouteType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LocalGatewayRouteType::from(s))
     }
 }
 impl LocalGatewayRouteType {
@@ -86,7 +86,7 @@ impl LocalGatewayRouteType {
         &["propagated", "static"]
     }
 }
-impl AsRef<str> for LocalGatewayRouteType {
+impl ::std::convert::AsRef<str> for LocalGatewayRouteType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

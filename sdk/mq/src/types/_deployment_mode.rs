@@ -39,13 +39,13 @@
 /// <p>The broker's deployment mode.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeploymentMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DeploymentMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeploymentMode {
+impl ::std::convert::From<&str> for DeploymentMode {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE_STANDBY_MULTI_AZ" => DeploymentMode::ActiveStandbyMultiAz,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DeploymentMode {
         }
     }
 }
-impl std::str::FromStr for DeploymentMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeploymentMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeploymentMode::from(s))
     }
 }
 impl DeploymentMode {
@@ -95,7 +95,7 @@ impl DeploymentMode {
         ]
     }
 }
-impl AsRef<str> for DeploymentMode {
+impl ::std::convert::AsRef<str> for DeploymentMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

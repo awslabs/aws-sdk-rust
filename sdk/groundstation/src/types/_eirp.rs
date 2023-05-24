@@ -2,22 +2,22 @@
 
 /// <p>Object that represents EIRP.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Eirp {
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
     /// <p>Units of an EIRP.</p>
     #[doc(hidden)]
-    pub units: std::option::Option<crate::types::EirpUnits>,
+    pub units: ::std::option::Option<crate::types::EirpUnits>,
 }
 impl Eirp {
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
     /// <p>Units of an EIRP.</p>
-    pub fn units(&self) -> std::option::Option<&crate::types::EirpUnits> {
+    pub fn units(&self) -> ::std::option::Option<&crate::types::EirpUnits> {
         self.units.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Eirp {
 
 /// A builder for [`Eirp`](crate::types::Eirp).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EirpBuilder {
-    pub(crate) value: std::option::Option<f64>,
-    pub(crate) units: std::option::Option<crate::types::EirpUnits>,
+    pub(crate) value: ::std::option::Option<f64>,
+    pub(crate) units: ::std::option::Option<crate::types::EirpUnits>,
 }
 impl EirpBuilder {
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }
     /// <p>Units of an EIRP.</p>
     pub fn units(mut self, input: crate::types::EirpUnits) -> Self {
-        self.units = Some(input);
+        self.units = ::std::option::Option::Some(input);
         self
     }
     /// <p>Units of an EIRP.</p>
-    pub fn set_units(mut self, input: std::option::Option<crate::types::EirpUnits>) -> Self {
+    pub fn set_units(mut self, input: ::std::option::Option<crate::types::EirpUnits>) -> Self {
         self.units = input;
         self
     }

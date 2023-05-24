@@ -2,27 +2,27 @@
 
 /// <p>The output for the <code>ListChangeSets</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChangeSetsOutput {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
     #[doc(hidden)]
-    pub summaries: std::option::Option<std::vec::Vec<crate::types::ChangeSetSummary>>,
+    pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListChangeSetsOutput {
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::types::ChangeSetSummary]> {
+    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::ChangeSetSummary]> {
         self.summaries.as_deref()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListChangeSetsOutput {
+impl ::aws_http::request_id::RequestId for ListChangeSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListChangeSetsOutput {
 
 /// A builder for [`ListChangeSetsOutput`](crate::operation::list_change_sets::ListChangeSetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListChangeSetsOutputBuilder {
-    pub(crate) summaries: std::option::Option<std::vec::Vec<crate::types::ChangeSetSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) summaries: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListChangeSetsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListChangeSetsOutputBuilder {
     pub fn summaries(mut self, input: crate::types::ChangeSetSummary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
         v.push(input);
-        self.summaries = Some(v);
+        self.summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ChangeSetSummary</code> structures that provides the ID and status of each change set for the specified stack.</p>
     pub fn set_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ChangeSetSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeSetSummary>>,
     ) -> Self {
         self.summaries = input;
         self
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of change sets. If there is no additional page, this value is <code>null</code>.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

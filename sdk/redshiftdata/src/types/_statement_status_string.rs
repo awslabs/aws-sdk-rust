@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StatementStatusString {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum StatementStatusString {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StatementStatusString {
+impl ::std::convert::From<&str> for StatementStatusString {
     fn from(s: &str) -> Self {
         match s {
             "ABORTED" => StatementStatusString::Aborted,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for StatementStatusString {
         }
     }
 }
-impl std::str::FromStr for StatementStatusString {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StatementStatusString {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StatementStatusString::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StatementStatusString::from(s))
     }
 }
 impl StatementStatusString {
@@ -113,7 +113,7 @@ impl StatementStatusString {
         ]
     }
 }
-impl AsRef<str> for StatementStatusString {
+impl ::std::convert::AsRef<str> for StatementStatusString {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

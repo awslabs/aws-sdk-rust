@@ -2,22 +2,22 @@
 
 /// <p>Contains the configuration information of a snooze action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnoozeActionConfiguration {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     #[doc(hidden)]
-    pub snooze_duration: std::option::Option<i32>,
+    pub snooze_duration: ::std::option::Option<i32>,
     /// <p>The note that you can leave when you snooze the alarm.</p>
     #[doc(hidden)]
-    pub note: std::option::Option<std::string::String>,
+    pub note: ::std::option::Option<::std::string::String>,
 }
 impl SnoozeActionConfiguration {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
-    pub fn snooze_duration(&self) -> std::option::Option<i32> {
+    pub fn snooze_duration(&self) -> ::std::option::Option<i32> {
         self.snooze_duration
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    pub fn note(&self) -> std::option::Option<&str> {
+    pub fn note(&self) -> ::std::option::Option<&str> {
         self.note.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SnoozeActionConfiguration {
 
 /// A builder for [`SnoozeActionConfiguration`](crate::types::SnoozeActionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnoozeActionConfigurationBuilder {
-    pub(crate) snooze_duration: std::option::Option<i32>,
-    pub(crate) note: std::option::Option<std::string::String>,
+    pub(crate) snooze_duration: ::std::option::Option<i32>,
+    pub(crate) note: ::std::option::Option<::std::string::String>,
 }
 impl SnoozeActionConfigurationBuilder {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     pub fn snooze_duration(mut self, input: i32) -> Self {
-        self.snooze_duration = Some(input);
+        self.snooze_duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
-    pub fn set_snooze_duration(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_snooze_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snooze_duration = input;
         self
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
-        self.note = Some(input.into());
+    pub fn note(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.note = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_note(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.note = input;
         self
     }

@@ -2,15 +2,18 @@
 
 /// <p>The data type for <code>AccountRecoverySetting</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountRecoverySettingType {
     /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
     #[doc(hidden)]
-    pub recovery_mechanisms: std::option::Option<std::vec::Vec<crate::types::RecoveryOptionType>>,
+    pub recovery_mechanisms:
+        ::std::option::Option<::std::vec::Vec<crate::types::RecoveryOptionType>>,
 }
 impl AccountRecoverySettingType {
     /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
-    pub fn recovery_mechanisms(&self) -> std::option::Option<&[crate::types::RecoveryOptionType]> {
+    pub fn recovery_mechanisms(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::RecoveryOptionType]> {
         self.recovery_mechanisms.as_deref()
     }
 }
@@ -23,10 +26,12 @@ impl AccountRecoverySettingType {
 
 /// A builder for [`AccountRecoverySettingType`](crate::types::AccountRecoverySettingType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountRecoverySettingTypeBuilder {
     pub(crate) recovery_mechanisms:
-        std::option::Option<std::vec::Vec<crate::types::RecoveryOptionType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecoveryOptionType>>,
 }
 impl AccountRecoverySettingTypeBuilder {
     /// Appends an item to `recovery_mechanisms`.
@@ -37,13 +42,13 @@ impl AccountRecoverySettingTypeBuilder {
     pub fn recovery_mechanisms(mut self, input: crate::types::RecoveryOptionType) -> Self {
         let mut v = self.recovery_mechanisms.unwrap_or_default();
         v.push(input);
-        self.recovery_mechanisms = Some(v);
+        self.recovery_mechanisms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of <code>RecoveryOptionTypes</code>.</p>
     pub fn set_recovery_mechanisms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecoveryOptionType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecoveryOptionType>>,
     ) -> Self {
         self.recovery_mechanisms = input;
         self

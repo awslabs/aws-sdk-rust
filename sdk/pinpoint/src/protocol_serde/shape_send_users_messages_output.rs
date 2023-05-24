@@ -2,7 +2,7 @@
 pub(crate) fn de_send_users_message_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::SendUsersMessageResponse>,
+    ::std::option::Option<crate::types::SendUsersMessageResponse>,
     crate::operation::send_users_messages::SendUsersMessagesError,
 > {
     (!body.is_empty()).then(||{

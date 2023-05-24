@@ -2,15 +2,15 @@
 
 /// <p>The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamRoleConfiguration {
     /// <p>The proposed trust policy for the IAM role.</p>
     #[doc(hidden)]
-    pub trust_policy: std::option::Option<std::string::String>,
+    pub trust_policy: ::std::option::Option<::std::string::String>,
 }
 impl IamRoleConfiguration {
     /// <p>The proposed trust policy for the IAM role.</p>
-    pub fn trust_policy(&self) -> std::option::Option<&str> {
+    pub fn trust_policy(&self) -> ::std::option::Option<&str> {
         self.trust_policy.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl IamRoleConfiguration {
 
 /// A builder for [`IamRoleConfiguration`](crate::types::IamRoleConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IamRoleConfigurationBuilder {
-    pub(crate) trust_policy: std::option::Option<std::string::String>,
+    pub(crate) trust_policy: ::std::option::Option<::std::string::String>,
 }
 impl IamRoleConfigurationBuilder {
     /// <p>The proposed trust policy for the IAM role.</p>
-    pub fn trust_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trust_policy = Some(input.into());
+    pub fn trust_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trust_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The proposed trust policy for the IAM role.</p>
-    pub fn set_trust_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_policy = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>The configuration for creating a new user profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminCreateUserConfigType {
     /// <p>Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code> if users can sign themselves up via an app.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ pub struct AdminCreateUserConfigType {
     /// <p>The message template to be used for the welcome message to new users.</p>
     /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
     #[doc(hidden)]
-    pub invite_message_template: std::option::Option<crate::types::MessageTemplateType>,
+    pub invite_message_template: ::std::option::Option<crate::types::MessageTemplateType>,
 }
 impl AdminCreateUserConfigType {
     /// <p>Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code> if users can sign themselves up via an app.</p>
@@ -32,7 +32,7 @@ impl AdminCreateUserConfigType {
     /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
     pub fn invite_message_template(
         &self,
-    ) -> std::option::Option<&crate::types::MessageTemplateType> {
+    ) -> ::std::option::Option<&crate::types::MessageTemplateType> {
         self.invite_message_template.as_ref()
     }
 }
@@ -45,20 +45,22 @@ impl AdminCreateUserConfigType {
 
 /// A builder for [`AdminCreateUserConfigType`](crate::types::AdminCreateUserConfigType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminCreateUserConfigTypeBuilder {
-    pub(crate) allow_admin_create_user_only: std::option::Option<bool>,
-    pub(crate) unused_account_validity_days: std::option::Option<i32>,
-    pub(crate) invite_message_template: std::option::Option<crate::types::MessageTemplateType>,
+    pub(crate) allow_admin_create_user_only: ::std::option::Option<bool>,
+    pub(crate) unused_account_validity_days: ::std::option::Option<i32>,
+    pub(crate) invite_message_template: ::std::option::Option<crate::types::MessageTemplateType>,
 }
 impl AdminCreateUserConfigTypeBuilder {
     /// <p>Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code> if users can sign themselves up via an app.</p>
     pub fn allow_admin_create_user_only(mut self, input: bool) -> Self {
-        self.allow_admin_create_user_only = Some(input);
+        self.allow_admin_create_user_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code> if users can sign themselves up via an app.</p>
-    pub fn set_allow_admin_create_user_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_admin_create_user_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_admin_create_user_only = input;
         self
     }
@@ -66,27 +68,27 @@ impl AdminCreateUserConfigTypeBuilder {
     /// <p>If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user pool.</p>
     /// </note>
     pub fn unused_account_validity_days(mut self, input: i32) -> Self {
-        self.unused_account_validity_days = Some(input);
+        self.unused_account_validity_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user account expiration limit, in days, after which a new account that hasn't signed in is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7. </p> <note>
     /// <p>If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter for that user pool.</p>
     /// </note>
-    pub fn set_unused_account_validity_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unused_account_validity_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unused_account_validity_days = input;
         self
     }
     /// <p>The message template to be used for the welcome message to new users.</p>
     /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
     pub fn invite_message_template(mut self, input: crate::types::MessageTemplateType) -> Self {
-        self.invite_message_template = Some(input);
+        self.invite_message_template = ::std::option::Option::Some(input);
         self
     }
     /// <p>The message template to be used for the welcome message to new users.</p>
     /// <p>See also <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a>.</p>
     pub fn set_invite_message_template(
         mut self,
-        input: std::option::Option<crate::types::MessageTemplateType>,
+        input: ::std::option::Option<crate::types::MessageTemplateType>,
     ) -> Self {
         self.invite_message_template = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>A <code>Call</code> instance for a SIP media application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SipMediaApplicationCall {
     /// <p>The call's transaction ID.</p>
     #[doc(hidden)]
-    pub transaction_id: std::option::Option<std::string::String>,
+    pub transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl SipMediaApplicationCall {
     /// <p>The call's transaction ID.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl SipMediaApplicationCall {
 
 /// A builder for [`SipMediaApplicationCall`](crate::types::SipMediaApplicationCall).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SipMediaApplicationCallBuilder {
-    pub(crate) transaction_id: std::option::Option<std::string::String>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
 }
 impl SipMediaApplicationCallBuilder {
     /// <p>The call's transaction ID.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transaction_id = Some(input.into());
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The call's transaction ID.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.transaction_id = input;
         self
     }

@@ -2,43 +2,43 @@
 
 /// <p>Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContextDataType {
     /// <p>The source IP address of your user's device.</p>
     #[doc(hidden)]
-    pub ip_address: std::option::Option<std::string::String>,
+    pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>Your server endpoint where this API is invoked.</p>
     #[doc(hidden)]
-    pub server_name: std::option::Option<std::string::String>,
+    pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Your server path where this API is invoked.</p>
     #[doc(hidden)]
-    pub server_path: std::option::Option<std::string::String>,
+    pub server_path: ::std::option::Option<::std::string::String>,
     /// <p>HttpHeaders received on your server in same order.</p>
     #[doc(hidden)]
-    pub http_headers: std::option::Option<std::vec::Vec<crate::types::HttpHeader>>,
+    pub http_headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
     #[doc(hidden)]
-    pub encoded_data: std::option::Option<std::string::String>,
+    pub encoded_data: ::std::option::Option<::std::string::String>,
 }
 impl ContextDataType {
     /// <p>The source IP address of your user's device.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p>Your server endpoint where this API is invoked.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
     /// <p>Your server path where this API is invoked.</p>
-    pub fn server_path(&self) -> std::option::Option<&str> {
+    pub fn server_path(&self) -> ::std::option::Option<&str> {
         self.server_path.as_deref()
     }
     /// <p>HttpHeaders received on your server in same order.</p>
-    pub fn http_headers(&self) -> std::option::Option<&[crate::types::HttpHeader]> {
+    pub fn http_headers(&self) -> ::std::option::Option<&[crate::types::HttpHeader]> {
         self.http_headers.as_deref()
     }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
-    pub fn encoded_data(&self) -> std::option::Option<&str> {
+    pub fn encoded_data(&self) -> ::std::option::Option<&str> {
         self.encoded_data.as_deref()
     }
 }
@@ -51,42 +51,44 @@ impl ContextDataType {
 
 /// A builder for [`ContextDataType`](crate::types::ContextDataType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContextDataTypeBuilder {
-    pub(crate) ip_address: std::option::Option<std::string::String>,
-    pub(crate) server_name: std::option::Option<std::string::String>,
-    pub(crate) server_path: std::option::Option<std::string::String>,
-    pub(crate) http_headers: std::option::Option<std::vec::Vec<crate::types::HttpHeader>>,
-    pub(crate) encoded_data: std::option::Option<std::string::String>,
+    pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) server_name: ::std::option::Option<::std::string::String>,
+    pub(crate) server_path: ::std::option::Option<::std::string::String>,
+    pub(crate) http_headers: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
+    pub(crate) encoded_data: ::std::option::Option<::std::string::String>,
 }
 impl ContextDataTypeBuilder {
     /// <p>The source IP address of your user's device.</p>
-    pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_address = Some(input.into());
+    pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source IP address of your user's device.</p>
-    pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
     /// <p>Your server endpoint where this API is invoked.</p>
-    pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_name = Some(input.into());
+    pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Your server endpoint where this API is invoked.</p>
-    pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
     /// <p>Your server path where this API is invoked.</p>
-    pub fn server_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_path = Some(input.into());
+    pub fn server_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Your server path where this API is invoked.</p>
-    pub fn set_server_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_path = input;
         self
     }
@@ -98,24 +100,24 @@ impl ContextDataTypeBuilder {
     pub fn http_headers(mut self, input: crate::types::HttpHeader) -> Self {
         let mut v = self.http_headers.unwrap_or_default();
         v.push(input);
-        self.http_headers = Some(v);
+        self.http_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>HttpHeaders received on your server in same order.</p>
     pub fn set_http_headers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HttpHeader>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpHeader>>,
     ) -> Self {
         self.http_headers = input;
         self
     }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
-    pub fn encoded_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.encoded_data = Some(input.into());
+    pub fn encoded_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encoded_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Encoded device-fingerprint details that your app collected with the Amazon Cognito context data collection library. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding user device and session data to API requests</a>.</p>
-    pub fn set_encoded_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encoded_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoded_data = input;
         self
     }

@@ -2,40 +2,40 @@
 
 /// <p>Information about the file that you're transcoding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobInput {
     /// <p> The name of the file to transcode. Elsewhere in the body of the JSON block is the the ID of the pipeline to use for processing the job. The <code>InputBucket</code> object in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the file from. </p>
     /// <p>If the file name includes a prefix, such as <code>cooking/lasagna.mpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The frame rate of the input file. If you want Elastic Transcoder to automatically detect the frame rate of the input file, specify <code>auto</code>. If you want to specify the frame rate for the input file, enter one of the following values: </p>
     /// <p> <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the frame rate.</p>
     #[doc(hidden)]
-    pub frame_rate: std::option::Option<std::string::String>,
+    pub frame_rate: ::std::option::Option<::std::string::String>,
     /// <p>This value must be <code>auto</code>, which causes Elastic Transcoder to automatically detect the resolution of the input file.</p>
     #[doc(hidden)]
-    pub resolution: std::option::Option<std::string::String>,
+    pub resolution: ::std::option::Option<::std::string::String>,
     /// <p> The aspect ratio of the input file. If you want Elastic Transcoder to automatically detect the aspect ratio of the input file, specify <code>auto</code>. If you want to specify the aspect ratio for the output file, enter one of the following values: </p>
     /// <p> <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p> If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the aspect ratio. </p>
     #[doc(hidden)]
-    pub aspect_ratio: std::option::Option<std::string::String>,
+    pub aspect_ratio: ::std::option::Option<::std::string::String>,
     /// <p>Whether the input file is interlaced. If you want Elastic Transcoder to automatically detect whether the input file is interlaced, specify <code>auto</code>. If you want to specify whether the input file is interlaced, enter one of the following values:</p>
     /// <p> <code>true</code>, <code>false</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of interlacing.</p>
     #[doc(hidden)]
-    pub interlaced: std::option::Option<std::string::String>,
+    pub interlaced: ::std::option::Option<::std::string::String>,
     /// <p>The container type for the input file. If you want Elastic Transcoder to automatically detect the container type of the input file, specify <code>auto</code>. If you want to specify the container type for the input file, enter one of the following values: </p>
     /// <p> <code>3gp</code>, <code>aac</code>, <code>asf</code>, <code>avi</code>, <code>divx</code>, <code>flv</code>, <code>m4a</code>, <code>mkv</code>, <code>mov</code>, <code>mp3</code>, <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>, <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>, <code>vob</code>, <code>wav</code>, <code>webm</code> </p>
     #[doc(hidden)]
-    pub container: std::option::Option<std::string::String>,
+    pub container: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.</p>
     #[doc(hidden)]
-    pub encryption: std::option::Option<crate::types::Encryption>,
+    pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// <p>Settings for clipping an input. Each input can have different clip settings.</p>
     #[doc(hidden)]
-    pub time_span: std::option::Option<crate::types::TimeSpan>,
+    pub time_span: ::std::option::Option<crate::types::TimeSpan>,
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
     /// <ul>
     /// <li> <p> <b>Embedded:</b> Embedded captions are included in the same file as the audio and video. Elastic Transcoder supports only one embedded caption per language, to a maximum of 300 embedded captions per file.</p> <p>Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code> </p> <p>Valid outputs include: <code>mov-text</code> </p> <p>Elastic Transcoder supports a maximum of one embedded format per output.</p> </li>
@@ -47,50 +47,50 @@ pub struct JobInput {
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
     #[doc(hidden)]
-    pub input_captions: std::option::Option<crate::types::InputCaptions>,
+    pub input_captions: ::std::option::Option<crate::types::InputCaptions>,
     /// <p>The detected properties of the input file.</p>
     #[doc(hidden)]
-    pub detected_properties: std::option::Option<crate::types::DetectedProperties>,
+    pub detected_properties: ::std::option::Option<crate::types::DetectedProperties>,
 }
 impl JobInput {
     /// <p> The name of the file to transcode. Elsewhere in the body of the JSON block is the the ID of the pipeline to use for processing the job. The <code>InputBucket</code> object in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the file from. </p>
     /// <p>If the file name includes a prefix, such as <code>cooking/lasagna.mpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The frame rate of the input file. If you want Elastic Transcoder to automatically detect the frame rate of the input file, specify <code>auto</code>. If you want to specify the frame rate for the input file, enter one of the following values: </p>
     /// <p> <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the frame rate.</p>
-    pub fn frame_rate(&self) -> std::option::Option<&str> {
+    pub fn frame_rate(&self) -> ::std::option::Option<&str> {
         self.frame_rate.as_deref()
     }
     /// <p>This value must be <code>auto</code>, which causes Elastic Transcoder to automatically detect the resolution of the input file.</p>
-    pub fn resolution(&self) -> std::option::Option<&str> {
+    pub fn resolution(&self) -> ::std::option::Option<&str> {
         self.resolution.as_deref()
     }
     /// <p> The aspect ratio of the input file. If you want Elastic Transcoder to automatically detect the aspect ratio of the input file, specify <code>auto</code>. If you want to specify the aspect ratio for the output file, enter one of the following values: </p>
     /// <p> <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p> If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the aspect ratio. </p>
-    pub fn aspect_ratio(&self) -> std::option::Option<&str> {
+    pub fn aspect_ratio(&self) -> ::std::option::Option<&str> {
         self.aspect_ratio.as_deref()
     }
     /// <p>Whether the input file is interlaced. If you want Elastic Transcoder to automatically detect whether the input file is interlaced, specify <code>auto</code>. If you want to specify whether the input file is interlaced, enter one of the following values:</p>
     /// <p> <code>true</code>, <code>false</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of interlacing.</p>
-    pub fn interlaced(&self) -> std::option::Option<&str> {
+    pub fn interlaced(&self) -> ::std::option::Option<&str> {
         self.interlaced.as_deref()
     }
     /// <p>The container type for the input file. If you want Elastic Transcoder to automatically detect the container type of the input file, specify <code>auto</code>. If you want to specify the container type for the input file, enter one of the following values: </p>
     /// <p> <code>3gp</code>, <code>aac</code>, <code>asf</code>, <code>avi</code>, <code>divx</code>, <code>flv</code>, <code>m4a</code>, <code>mkv</code>, <code>mov</code>, <code>mp3</code>, <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>, <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>, <code>vob</code>, <code>wav</code>, <code>webm</code> </p>
-    pub fn container(&self) -> std::option::Option<&str> {
+    pub fn container(&self) -> ::std::option::Option<&str> {
         self.container.as_deref()
     }
     /// <p>The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.</p>
-    pub fn encryption(&self) -> std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
         self.encryption.as_ref()
     }
     /// <p>Settings for clipping an input. Each input can have different clip settings.</p>
-    pub fn time_span(&self) -> std::option::Option<&crate::types::TimeSpan> {
+    pub fn time_span(&self) -> ::std::option::Option<&crate::types::TimeSpan> {
         self.time_span.as_ref()
     }
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
@@ -103,11 +103,11 @@ impl JobInput {
     /// <p>To remove captions or leave the captions empty, set <code>Captions</code> to null. To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null <code>CaptionSources</code> array.</p>
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
-    pub fn input_captions(&self) -> std::option::Option<&crate::types::InputCaptions> {
+    pub fn input_captions(&self) -> ::std::option::Option<&crate::types::InputCaptions> {
         self.input_captions.as_ref()
     }
     /// <p>The detected properties of the input file.</p>
-    pub fn detected_properties(&self) -> std::option::Option<&crate::types::DetectedProperties> {
+    pub fn detected_properties(&self) -> ::std::option::Option<&crate::types::DetectedProperties> {
         self.detected_properties.as_ref()
     }
 }
@@ -120,113 +120,118 @@ impl JobInput {
 
 /// A builder for [`JobInput`](crate::types::JobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobInputBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) frame_rate: std::option::Option<std::string::String>,
-    pub(crate) resolution: std::option::Option<std::string::String>,
-    pub(crate) aspect_ratio: std::option::Option<std::string::String>,
-    pub(crate) interlaced: std::option::Option<std::string::String>,
-    pub(crate) container: std::option::Option<std::string::String>,
-    pub(crate) encryption: std::option::Option<crate::types::Encryption>,
-    pub(crate) time_span: std::option::Option<crate::types::TimeSpan>,
-    pub(crate) input_captions: std::option::Option<crate::types::InputCaptions>,
-    pub(crate) detected_properties: std::option::Option<crate::types::DetectedProperties>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) frame_rate: ::std::option::Option<::std::string::String>,
+    pub(crate) resolution: ::std::option::Option<::std::string::String>,
+    pub(crate) aspect_ratio: ::std::option::Option<::std::string::String>,
+    pub(crate) interlaced: ::std::option::Option<::std::string::String>,
+    pub(crate) container: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption: ::std::option::Option<crate::types::Encryption>,
+    pub(crate) time_span: ::std::option::Option<crate::types::TimeSpan>,
+    pub(crate) input_captions: ::std::option::Option<crate::types::InputCaptions>,
+    pub(crate) detected_properties: ::std::option::Option<crate::types::DetectedProperties>,
 }
 impl JobInputBuilder {
     /// <p> The name of the file to transcode. Elsewhere in the body of the JSON block is the the ID of the pipeline to use for processing the job. The <code>InputBucket</code> object in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the file from. </p>
     /// <p>If the file name includes a prefix, such as <code>cooking/lasagna.mpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the file to transcode. Elsewhere in the body of the JSON block is the the ID of the pipeline to use for processing the job. The <code>InputBucket</code> object in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the file from. </p>
     /// <p>If the file name includes a prefix, such as <code>cooking/lasagna.mpg</code>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The frame rate of the input file. If you want Elastic Transcoder to automatically detect the frame rate of the input file, specify <code>auto</code>. If you want to specify the frame rate for the input file, enter one of the following values: </p>
     /// <p> <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the frame rate.</p>
-    pub fn frame_rate(mut self, input: impl Into<std::string::String>) -> Self {
-        self.frame_rate = Some(input.into());
+    pub fn frame_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.frame_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frame rate of the input file. If you want Elastic Transcoder to automatically detect the frame rate of the input file, specify <code>auto</code>. If you want to specify the frame rate for the input file, enter one of the following values: </p>
     /// <p> <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the frame rate.</p>
-    pub fn set_frame_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_frame_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.frame_rate = input;
         self
     }
     /// <p>This value must be <code>auto</code>, which causes Elastic Transcoder to automatically detect the resolution of the input file.</p>
-    pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resolution = Some(input.into());
+    pub fn resolution(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resolution = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This value must be <code>auto</code>, which causes Elastic Transcoder to automatically detect the resolution of the input file.</p>
-    pub fn set_resolution(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resolution(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution = input;
         self
     }
     /// <p> The aspect ratio of the input file. If you want Elastic Transcoder to automatically detect the aspect ratio of the input file, specify <code>auto</code>. If you want to specify the aspect ratio for the output file, enter one of the following values: </p>
     /// <p> <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p> If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the aspect ratio. </p>
-    pub fn aspect_ratio(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aspect_ratio = Some(input.into());
+    pub fn aspect_ratio(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aspect_ratio = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The aspect ratio of the input file. If you want Elastic Transcoder to automatically detect the aspect ratio of the input file, specify <code>auto</code>. If you want to specify the aspect ratio for the output file, enter one of the following values: </p>
     /// <p> <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p> If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of the aspect ratio. </p>
-    pub fn set_aspect_ratio(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aspect_ratio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aspect_ratio = input;
         self
     }
     /// <p>Whether the input file is interlaced. If you want Elastic Transcoder to automatically detect whether the input file is interlaced, specify <code>auto</code>. If you want to specify whether the input file is interlaced, enter one of the following values:</p>
     /// <p> <code>true</code>, <code>false</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of interlacing.</p>
-    pub fn interlaced(mut self, input: impl Into<std::string::String>) -> Self {
-        self.interlaced = Some(input.into());
+    pub fn interlaced(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.interlaced = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether the input file is interlaced. If you want Elastic Transcoder to automatically detect whether the input file is interlaced, specify <code>auto</code>. If you want to specify whether the input file is interlaced, enter one of the following values:</p>
     /// <p> <code>true</code>, <code>false</code> </p>
     /// <p>If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic detection of interlacing.</p>
-    pub fn set_interlaced(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_interlaced(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interlaced = input;
         self
     }
     /// <p>The container type for the input file. If you want Elastic Transcoder to automatically detect the container type of the input file, specify <code>auto</code>. If you want to specify the container type for the input file, enter one of the following values: </p>
     /// <p> <code>3gp</code>, <code>aac</code>, <code>asf</code>, <code>avi</code>, <code>divx</code>, <code>flv</code>, <code>m4a</code>, <code>mkv</code>, <code>mov</code>, <code>mp3</code>, <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>, <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>, <code>vob</code>, <code>wav</code>, <code>webm</code> </p>
-    pub fn container(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container = Some(input.into());
+    pub fn container(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.container = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The container type for the input file. If you want Elastic Transcoder to automatically detect the container type of the input file, specify <code>auto</code>. If you want to specify the container type for the input file, enter one of the following values: </p>
     /// <p> <code>3gp</code>, <code>aac</code>, <code>asf</code>, <code>avi</code>, <code>divx</code>, <code>flv</code>, <code>m4a</code>, <code>mkv</code>, <code>mov</code>, <code>mp3</code>, <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>, <code>mpeg-ts</code>, <code>mxf</code>, <code>ogg</code>, <code>vob</code>, <code>wav</code>, <code>webm</code> </p>
-    pub fn set_container(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container = input;
         self
     }
     /// <p>The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.</p>
     pub fn encryption(mut self, input: crate::types::Encryption) -> Self {
-        self.encryption = Some(input);
+        self.encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption settings, if any, that are used for decrypting your input files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file.</p>
-    pub fn set_encryption(mut self, input: std::option::Option<crate::types::Encryption>) -> Self {
+    pub fn set_encryption(
+        mut self,
+        input: ::std::option::Option<crate::types::Encryption>,
+    ) -> Self {
         self.encryption = input;
         self
     }
     /// <p>Settings for clipping an input. Each input can have different clip settings.</p>
     pub fn time_span(mut self, input: crate::types::TimeSpan) -> Self {
-        self.time_span = Some(input);
+        self.time_span = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings for clipping an input. Each input can have different clip settings.</p>
-    pub fn set_time_span(mut self, input: std::option::Option<crate::types::TimeSpan>) -> Self {
+    pub fn set_time_span(mut self, input: ::std::option::Option<crate::types::TimeSpan>) -> Self {
         self.time_span = input;
         self
     }
@@ -241,7 +246,7 @@ impl JobInputBuilder {
     /// <p>For more information on embedded files, see the Subtitles Wikipedia page.</p>
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
     pub fn input_captions(mut self, input: crate::types::InputCaptions) -> Self {
-        self.input_captions = Some(input);
+        self.input_captions = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can configure Elastic Transcoder to transcode captions, or subtitles, from one format to another. All captions must be in UTF-8. Elastic Transcoder supports two types of captions:</p>
@@ -256,20 +261,20 @@ impl JobInputBuilder {
     /// <p>For more information on sidecar files, see the Extensible Metadata Platform and Sidecar file Wikipedia pages.</p>
     pub fn set_input_captions(
         mut self,
-        input: std::option::Option<crate::types::InputCaptions>,
+        input: ::std::option::Option<crate::types::InputCaptions>,
     ) -> Self {
         self.input_captions = input;
         self
     }
     /// <p>The detected properties of the input file.</p>
     pub fn detected_properties(mut self, input: crate::types::DetectedProperties) -> Self {
-        self.detected_properties = Some(input);
+        self.detected_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The detected properties of the input file.</p>
     pub fn set_detected_properties(
         mut self,
-        input: std::option::Option<crate::types::DetectedProperties>,
+        input: ::std::option::Option<crate::types::DetectedProperties>,
     ) -> Self {
         self.detected_properties = input;
         self

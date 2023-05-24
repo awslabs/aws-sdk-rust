@@ -2,22 +2,24 @@
 
 /// <p>Describes the status of the Client VPN endpoint attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpnEndpointAttributeStatus {
     /// <p>The status code.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::ClientVpnEndpointAttributeStatusCode>,
+    pub code: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatusCode>,
     /// <p>The status message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnEndpointAttributeStatus {
     /// <p>The status code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::ClientVpnEndpointAttributeStatusCode> {
+    pub fn code(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ClientVpnEndpointAttributeStatusCode> {
         self.code.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +32,34 @@ impl ClientVpnEndpointAttributeStatus {
 
 /// A builder for [`ClientVpnEndpointAttributeStatus`](crate::types::ClientVpnEndpointAttributeStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientVpnEndpointAttributeStatusBuilder {
-    pub(crate) code: std::option::Option<crate::types::ClientVpnEndpointAttributeStatusCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatusCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnEndpointAttributeStatusBuilder {
     /// <p>The status code.</p>
     pub fn code(mut self, input: crate::types::ClientVpnEndpointAttributeStatusCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::ClientVpnEndpointAttributeStatusCode>,
+        input: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatusCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>The status message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

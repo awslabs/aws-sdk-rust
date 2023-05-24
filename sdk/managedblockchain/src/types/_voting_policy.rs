@@ -3,17 +3,17 @@
 /// <p> The voting rules for the network to decide if a proposal is accepted </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VotingPolicy {
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
     #[doc(hidden)]
-    pub approval_threshold_policy: std::option::Option<crate::types::ApprovalThresholdPolicy>,
+    pub approval_threshold_policy: ::std::option::Option<crate::types::ApprovalThresholdPolicy>,
 }
 impl VotingPolicy {
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
     pub fn approval_threshold_policy(
         &self,
-    ) -> std::option::Option<&crate::types::ApprovalThresholdPolicy> {
+    ) -> ::std::option::Option<&crate::types::ApprovalThresholdPolicy> {
         self.approval_threshold_policy.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl VotingPolicy {
 
 /// A builder for [`VotingPolicy`](crate::types::VotingPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VotingPolicyBuilder {
     pub(crate) approval_threshold_policy:
-        std::option::Option<crate::types::ApprovalThresholdPolicy>,
+        ::std::option::Option<crate::types::ApprovalThresholdPolicy>,
 }
 impl VotingPolicyBuilder {
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
@@ -37,13 +39,13 @@ impl VotingPolicyBuilder {
         mut self,
         input: crate::types::ApprovalThresholdPolicy,
     ) -> Self {
-        self.approval_threshold_policy = Some(input);
+        self.approval_threshold_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the rules for the network for voting on proposals, such as the percentage of <code>YES</code> votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.</p>
     pub fn set_approval_threshold_policy(
         mut self,
-        input: std::option::Option<crate::types::ApprovalThresholdPolicy>,
+        input: ::std::option::Option<crate::types::ApprovalThresholdPolicy>,
     ) -> Self {
         self.approval_threshold_policy = input;
         self

@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a list repositories operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRepositoriesOutput {
     /// <p>Lists the repositories called by the list repositories operation.</p>
     #[doc(hidden)]
-    pub repositories: std::option::Option<std::vec::Vec<crate::types::RepositoryNameIdPair>>,
+    pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>>,
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRepositoriesOutput {
     /// <p>Lists the repositories called by the list repositories operation.</p>
-    pub fn repositories(&self) -> std::option::Option<&[crate::types::RepositoryNameIdPair]> {
+    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::RepositoryNameIdPair]> {
         self.repositories.as_deref()
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListRepositoriesOutput {
+impl ::aws_http::request_id::RequestId for ListRepositoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,13 @@ impl ListRepositoriesOutput {
 
 /// A builder for [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListRepositoriesOutputBuilder {
-    pub(crate) repositories: std::option::Option<std::vec::Vec<crate::types::RepositoryNameIdPair>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) repositories:
+        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRepositoriesOutputBuilder {
@@ -52,24 +55,24 @@ impl ListRepositoriesOutputBuilder {
     pub fn repositories(mut self, input: crate::types::RepositoryNameIdPair) -> Self {
         let mut v = self.repositories.unwrap_or_default();
         v.push(input);
-        self.repositories = Some(v);
+        self.repositories = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lists the repositories called by the list repositories operation.</p>
     pub fn set_repositories(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RepositoryNameIdPair>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryNameIdPair>>,
     ) -> Self {
         self.repositories = input;
         self
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

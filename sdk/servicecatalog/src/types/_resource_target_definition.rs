@@ -2,29 +2,29 @@
 
 /// <p>Information about a change to a resource attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTargetDefinition {
     /// <p>The attribute to be changed.</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<crate::types::ResourceAttribute>,
+    pub attribute: ::std::option::Option<crate::types::ResourceAttribute>,
     /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
     #[doc(hidden)]
-    pub requires_recreation: std::option::Option<crate::types::RequiresRecreation>,
+    pub requires_recreation: ::std::option::Option<crate::types::RequiresRecreation>,
 }
 impl ResourceTargetDefinition {
     /// <p>The attribute to be changed.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::ResourceAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<&crate::types::ResourceAttribute> {
         self.attribute.as_ref()
     }
     /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
-    pub fn requires_recreation(&self) -> std::option::Option<&crate::types::RequiresRecreation> {
+    pub fn requires_recreation(&self) -> ::std::option::Option<&crate::types::RequiresRecreation> {
         self.requires_recreation.as_ref()
     }
 }
@@ -37,45 +37,47 @@ impl ResourceTargetDefinition {
 
 /// A builder for [`ResourceTargetDefinition`](crate::types::ResourceTargetDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceTargetDefinitionBuilder {
-    pub(crate) attribute: std::option::Option<crate::types::ResourceAttribute>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) requires_recreation: std::option::Option<crate::types::RequiresRecreation>,
+    pub(crate) attribute: ::std::option::Option<crate::types::ResourceAttribute>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) requires_recreation: ::std::option::Option<crate::types::RequiresRecreation>,
 }
 impl ResourceTargetDefinitionBuilder {
     /// <p>The attribute to be changed.</p>
     pub fn attribute(mut self, input: crate::types::ResourceAttribute) -> Self {
-        self.attribute = Some(input);
+        self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attribute to be changed.</p>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::ResourceAttribute>,
+        input: ::std::option::Option<crate::types::ResourceAttribute>,
     ) -> Self {
         self.attribute = input;
         self
     }
     /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the attribute is <code>Properties</code>, the value is the name of the property. Otherwise, the value is null.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
     pub fn requires_recreation(mut self, input: crate::types::RequiresRecreation) -> Self {
-        self.requires_recreation = Some(input);
+        self.requires_recreation = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to be re-created.</p>
     pub fn set_requires_recreation(
         mut self,
-        input: std::option::Option<crate::types::RequiresRecreation>,
+        input: ::std::option::Option<crate::types::RequiresRecreation>,
     ) -> Self {
         self.requires_recreation = input;
         self

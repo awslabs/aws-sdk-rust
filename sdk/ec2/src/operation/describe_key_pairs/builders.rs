@@ -7,29 +7,29 @@ pub use crate::operation::describe_key_pairs::_describe_key_pairs_input::Describ
 ///
 /// <p>Describes the specified key pairs or all of your key pairs.</p>
 /// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeKeyPairsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_key_pairs::builders::DescribeKeyPairsInputBuilder,
 }
 impl DescribeKeyPairsFluentBuilder {
     /// Creates a new `DescribeKeyPairs`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_key_pairs::DescribeKeyPairs,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_key_pairs::DescribeKeyPairsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl DescribeKeyPairsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_key_pairs::DescribeKeyPairsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_key_pairs::DescribeKeyPairsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl DescribeKeyPairsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_key_pairs::DescribeKeyPairsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_key_pairs::DescribeKeyPairsError,
         >,
     > {
@@ -119,7 +122,7 @@ impl DescribeKeyPairsFluentBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -130,7 +133,7 @@ impl DescribeKeyPairsFluentBuilder {
     ///
     /// <p>The key pair names.</p>
     /// <p>Default: Describes all of your key pairs.</p>
-    pub fn key_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_names(input.into());
         self
     }
@@ -138,7 +141,7 @@ impl DescribeKeyPairsFluentBuilder {
     /// <p>Default: Describes all of your key pairs.</p>
     pub fn set_key_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_key_names(input);
         self
@@ -148,14 +151,14 @@ impl DescribeKeyPairsFluentBuilder {
     /// To override the contents of this collection use [`set_key_pair_ids`](Self::set_key_pair_ids).
     ///
     /// <p>The IDs of the key pairs.</p>
-    pub fn key_pair_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_pair_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_pair_ids(input.into());
         self
     }
     /// <p>The IDs of the key pairs.</p>
     pub fn set_key_pair_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_key_pair_ids(input);
         self
@@ -166,7 +169,7 @@ impl DescribeKeyPairsFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -178,7 +181,7 @@ impl DescribeKeyPairsFluentBuilder {
     }
     /// <p>If <code>true</code>, the public key material is included in the response.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_include_public_key(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_public_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_public_key(input);
         self
     }

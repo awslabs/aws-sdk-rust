@@ -2,14 +2,14 @@
 
 /// <p>Request to create an ApiKey resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApiKeyInput {
     /// <p>The name of the ApiKey.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the ApiKey.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -18,25 +18,26 @@ pub struct CreateApiKeyInput {
     pub generate_distinct_id: bool,
     /// <p>Specifies a value of the API key.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
     #[doc(hidden)]
-    pub stage_keys: std::option::Option<std::vec::Vec<crate::types::StageKey>>,
+    pub stage_keys: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
     #[doc(hidden)]
-    pub customer_id: std::option::Option<std::string::String>,
+    pub customer_id: ::std::option::Option<::std::string::String>,
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateApiKeyInput {
     /// <p>The name of the ApiKey.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the ApiKey.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
@@ -48,22 +49,23 @@ impl CreateApiKeyInput {
         self.generate_distinct_id
     }
     /// <p>Specifies a value of the API key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
-    pub fn stage_keys(&self) -> std::option::Option<&[crate::types::StageKey]> {
+    pub fn stage_keys(&self) -> ::std::option::Option<&[crate::types::StageKey]> {
         self.stage_keys.as_deref()
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-    pub fn customer_id(&self) -> std::option::Option<&str> {
+    pub fn customer_id(&self) -> ::std::option::Option<&str> {
         self.customer_id.as_deref()
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -76,66 +78,69 @@ impl CreateApiKeyInput {
 
 /// A builder for [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateApiKeyInputBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) generate_distinct_id: std::option::Option<bool>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) stage_keys: std::option::Option<std::vec::Vec<crate::types::StageKey>>,
-    pub(crate) customer_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) generate_distinct_id: ::std::option::Option<bool>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) stage_keys: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
+    pub(crate) customer_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateApiKeyInputBuilder {
     /// <p>The name of the ApiKey.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ApiKey.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description of the ApiKey.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the ApiKey.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
     pub fn generate_distinct_id(mut self, input: bool) -> Self {
-        self.generate_distinct_id = Some(input);
+        self.generate_distinct_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
-    pub fn set_generate_distinct_id(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_generate_distinct_id(mut self, input: ::std::option::Option<bool>) -> Self {
         self.generate_distinct_id = input;
         self
     }
     /// <p>Specifies a value of the API key.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a value of the API key.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -147,24 +152,24 @@ impl CreateApiKeyInputBuilder {
     pub fn stage_keys(mut self, input: crate::types::StageKey) -> Self {
         let mut v = self.stage_keys.unwrap_or_default();
         v.push(input);
-        self.stage_keys = Some(v);
+        self.stage_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
     pub fn set_stage_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StageKey>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
     ) -> Self {
         self.stage_keys = input;
         self
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-    pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.customer_id = Some(input.into());
+    pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.customer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-    pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_id = input;
         self
     }
@@ -175,19 +180,19 @@ impl CreateApiKeyInputBuilder {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -196,11 +201,11 @@ impl CreateApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_api_key::CreateApiKeyInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_api_key::CreateApiKeyInput {
+        ::std::result::Result::Ok(crate::operation::create_api_key::CreateApiKeyInput {
             name: self.name,
             description: self.description,
             enabled: self.enabled.unwrap_or_default(),

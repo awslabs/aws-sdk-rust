@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CallingNameStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum CallingNameStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CallingNameStatus {
+impl ::std::convert::From<&str> for CallingNameStatus {
     fn from(s: &str) -> Self {
         match s {
             "Unassigned" => CallingNameStatus::Unassigned,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for CallingNameStatus {
         }
     }
 }
-impl std::str::FromStr for CallingNameStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CallingNameStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CallingNameStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CallingNameStatus::from(s))
     }
 }
 impl CallingNameStatus {
@@ -101,7 +101,7 @@ impl CallingNameStatus {
         ]
     }
 }
-impl AsRef<str> for CallingNameStatus {
+impl ::std::convert::AsRef<str> for CallingNameStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGcmChannel`](crate::operation::get_gcm_channel::builders::GetGcmChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_gcm_channel::builders::GetGcmChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_gcm_channel::builders::GetGcmChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_gcm_channel::builders::GetGcmChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_gcm_channel::builders::GetGcmChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetGcmChannelOutput`](crate::operation::get_gcm_channel::GetGcmChannelOutput) with field(s):
     ///   - [`gcm_channel_response(Option<GcmChannelResponse>)`](crate::operation::get_gcm_channel::GetGcmChannelOutput::gcm_channel_response): <p>Provides information about the status and settings of the GCM channel for an application. The GCM channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
     /// - On failure, responds with [`SdkError<GetGcmChannelError>`](crate::operation::get_gcm_channel::GetGcmChannelError)

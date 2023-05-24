@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateAssessmentStatus`](crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_id(impl Into<String>)`](crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder::assessment_id) / [`set_assessment_id(Option<String>)`](crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder::set_assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`assessment_id(impl ::std::convert::Into<String>)`](crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder::assessment_id) / [`set_assessment_id(Option<String>)`](crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder::set_assessment_id): <p> The unique identifier for the assessment. </p>
     ///   - [`status(AssessmentStatus)`](crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder::status) / [`set_status(Option<AssessmentStatus>)`](crate::operation::update_assessment_status::builders::UpdateAssessmentStatusFluentBuilder::set_status): <p> The current status of the assessment. </p>
     /// - On success, responds with [`UpdateAssessmentStatusOutput`](crate::operation::update_assessment_status::UpdateAssessmentStatusOutput) with field(s):
     ///   - [`assessment(Option<Assessment>)`](crate::operation::update_assessment_status::UpdateAssessmentStatusOutput::assessment): <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>

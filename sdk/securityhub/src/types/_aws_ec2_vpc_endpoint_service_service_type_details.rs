@@ -2,15 +2,15 @@
 
 /// <p>The service type information for a VPC endpoint service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VpcEndpointServiceServiceTypeDetails {
     /// <p>The type of service.</p>
     #[doc(hidden)]
-    pub service_type: std::option::Option<std::string::String>,
+    pub service_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpcEndpointServiceServiceTypeDetails {
     /// <p>The type of service.</p>
-    pub fn service_type(&self) -> std::option::Option<&str> {
+    pub fn service_type(&self) -> ::std::option::Option<&str> {
         self.service_type.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AwsEc2VpcEndpointServiceServiceTypeDetails {
 
 /// A builder for [`AwsEc2VpcEndpointServiceServiceTypeDetails`](crate::types::AwsEc2VpcEndpointServiceServiceTypeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2VpcEndpointServiceServiceTypeDetailsBuilder {
-    pub(crate) service_type: std::option::Option<std::string::String>,
+    pub(crate) service_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2VpcEndpointServiceServiceTypeDetailsBuilder {
     /// <p>The type of service.</p>
-    pub fn service_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_type = Some(input.into());
+    pub fn service_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of service.</p>
-    pub fn set_service_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_type = input;
         self
     }

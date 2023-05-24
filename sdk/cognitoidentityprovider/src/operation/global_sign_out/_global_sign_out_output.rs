@@ -2,11 +2,11 @@
 
 /// <p>The response to the request to sign out all devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalSignOutOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for GlobalSignOutOutput {
+impl ::aws_http::request_id::RequestId for GlobalSignOutOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl GlobalSignOutOutput {
 
 /// A builder for [`GlobalSignOutOutput`](crate::operation::global_sign_out::GlobalSignOutOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalSignOutOutputBuilder {
     _request_id: Option<String>,
 }

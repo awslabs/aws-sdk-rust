@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EnvironmentAccountConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EnvironmentAccountConnectionStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EnvironmentAccountConnectionStatus {
+impl ::std::convert::From<&str> for EnvironmentAccountConnectionStatus {
     fn from(s: &str) -> Self {
         match s {
             "CONNECTED" => EnvironmentAccountConnectionStatus::Connected,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EnvironmentAccountConnectionStatus {
         }
     }
 }
-impl std::str::FromStr for EnvironmentAccountConnectionStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EnvironmentAccountConnectionStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentAccountConnectionStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EnvironmentAccountConnectionStatus::from(s))
     }
 }
 impl EnvironmentAccountConnectionStatus {
@@ -91,7 +91,7 @@ impl EnvironmentAccountConnectionStatus {
         &["CONNECTED", "PENDING", "REJECTED"]
     }
 }
-impl AsRef<str> for EnvironmentAccountConnectionStatus {
+impl ::std::convert::AsRef<str> for EnvironmentAccountConnectionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

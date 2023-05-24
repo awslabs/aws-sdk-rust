@@ -2,30 +2,30 @@
 
 /// <p>Information about required authentication parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthParameter {
     /// <p>The authentication key required to authenticate with the connector.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this authentication parameter is required.</p>
     #[doc(hidden)]
     pub is_required: bool,
     /// <p>Label used for authentication parameter.</p>
     #[doc(hidden)]
-    pub label: std::option::Option<std::string::String>,
+    pub label: ::std::option::Option<::std::string::String>,
     /// <p>A description about the authentication parameter.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this authentication parameter is a sensitive field.</p>
     #[doc(hidden)]
     pub is_sensitive_field: bool,
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
     #[doc(hidden)]
-    pub connector_supplied_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub connector_supplied_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthParameter {
     /// <p>The authentication key required to authenticate with the connector.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Indicates whether this authentication parameter is required.</p>
@@ -33,11 +33,11 @@ impl AuthParameter {
         self.is_required
     }
     /// <p>Label used for authentication parameter.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
     /// <p>A description about the authentication parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether this authentication parameter is a sensitive field.</p>
@@ -45,7 +45,7 @@ impl AuthParameter {
         self.is_sensitive_field
     }
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn connector_supplied_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn connector_supplied_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.connector_supplied_values.as_deref()
     }
 }
@@ -58,63 +58,66 @@ impl AuthParameter {
 
 /// A builder for [`AuthParameter`](crate::types::AuthParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthParameterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) is_required: std::option::Option<bool>,
-    pub(crate) label: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) is_sensitive_field: std::option::Option<bool>,
-    pub(crate) connector_supplied_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) is_required: ::std::option::Option<bool>,
+    pub(crate) label: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) is_sensitive_field: ::std::option::Option<bool>,
+    pub(crate) connector_supplied_values:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AuthParameterBuilder {
     /// <p>The authentication key required to authenticate with the connector.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication key required to authenticate with the connector.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>Indicates whether this authentication parameter is required.</p>
     pub fn is_required(mut self, input: bool) -> Self {
-        self.is_required = Some(input);
+        self.is_required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this authentication parameter is required.</p>
-    pub fn set_is_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_required = input;
         self
     }
     /// <p>Label used for authentication parameter.</p>
-    pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label = Some(input.into());
+    pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Label used for authentication parameter.</p>
-    pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
     }
     /// <p>A description about the authentication parameter.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description about the authentication parameter.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Indicates whether this authentication parameter is a sensitive field.</p>
     pub fn is_sensitive_field(mut self, input: bool) -> Self {
-        self.is_sensitive_field = Some(input);
+        self.is_sensitive_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this authentication parameter is a sensitive field.</p>
-    pub fn set_is_sensitive_field(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_sensitive_field(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_sensitive_field = input;
         self
     }
@@ -123,16 +126,19 @@ impl AuthParameterBuilder {
     /// To override the contents of this collection use [`set_connector_supplied_values`](Self::set_connector_supplied_values).
     ///
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
-    pub fn connector_supplied_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connector_supplied_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.connector_supplied_values.unwrap_or_default();
         v.push(input.into());
-        self.connector_supplied_values = Some(v);
+        self.connector_supplied_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains default values for this authentication parameter that are supplied by the connector.</p>
     pub fn set_connector_supplied_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.connector_supplied_values = input;
         self

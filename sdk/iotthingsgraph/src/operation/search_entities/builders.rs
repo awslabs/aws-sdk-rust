@@ -7,56 +7,59 @@ pub use crate::operation::search_entities::_search_entities_input::SearchEntitie
 ///
 /// <p>Searches for entities of the specified type. You can search for entities in your namespace and the public namespace that you're tracking.</p>
 #[deprecated(note = "since: 2022-08-30")]
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchEntitiesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::search_entities::builders::SearchEntitiesInputBuilder,
 }
 impl SearchEntitiesFluentBuilder {
     /// Creates a new `SearchEntities`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::search_entities::SearchEntities,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::search_entities::SearchEntitiesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_entities::SearchEntitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search_entities::SearchEntitiesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search_entities::SearchEntitiesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_entities::SearchEntitiesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +72,9 @@ impl SearchEntitiesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search_entities::SearchEntitiesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search_entities::SearchEntitiesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_entities::SearchEntitiesError>,
     > {
         self.send_middleware().await
     }
@@ -98,7 +101,7 @@ impl SearchEntitiesFluentBuilder {
     /// <p>The entity types for which to search.</p>
     pub fn set_entity_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EntityType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityType>>,
     ) -> Self {
         self.inner = self.inner.set_entity_types(input);
         self
@@ -117,18 +120,18 @@ impl SearchEntitiesFluentBuilder {
     /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EntityFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityFilter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -138,7 +141,7 @@ impl SearchEntitiesFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return in the response.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -148,7 +151,7 @@ impl SearchEntitiesFluentBuilder {
         self
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
-    pub fn set_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_namespace_version(input);
         self
     }

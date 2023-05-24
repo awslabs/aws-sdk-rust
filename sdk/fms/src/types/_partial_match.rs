@@ -2,22 +2,22 @@
 
 /// <p>The reference rule that partially matches the <code>ViolationTarget</code> rule and violation reason.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartialMatch {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
     #[doc(hidden)]
-    pub reference: std::option::Option<std::string::String>,
+    pub reference: ::std::option::Option<::std::string::String>,
     /// <p>The violation reason.</p>
     #[doc(hidden)]
-    pub target_violation_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub target_violation_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PartialMatch {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
-    pub fn reference(&self) -> std::option::Option<&str> {
+    pub fn reference(&self) -> ::std::option::Option<&str> {
         self.reference.as_deref()
     }
     /// <p>The violation reason.</p>
-    pub fn target_violation_reasons(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_violation_reasons(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.target_violation_reasons.as_deref()
     }
 }
@@ -30,19 +30,22 @@ impl PartialMatch {
 
 /// A builder for [`PartialMatch`](crate::types::PartialMatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartialMatchBuilder {
-    pub(crate) reference: std::option::Option<std::string::String>,
-    pub(crate) target_violation_reasons: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) reference: ::std::option::Option<::std::string::String>,
+    pub(crate) target_violation_reasons:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PartialMatchBuilder {
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
-    pub fn reference(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reference = Some(input.into());
+    pub fn reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reference = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference rule from the primary security group of the Firewall Manager policy.</p>
-    pub fn set_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference = input;
         self
     }
@@ -51,16 +54,19 @@ impl PartialMatchBuilder {
     /// To override the contents of this collection use [`set_target_violation_reasons`](Self::set_target_violation_reasons).
     ///
     /// <p>The violation reason.</p>
-    pub fn target_violation_reasons(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_violation_reasons(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.target_violation_reasons.unwrap_or_default();
         v.push(input.into());
-        self.target_violation_reasons = Some(v);
+        self.target_violation_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>The violation reason.</p>
     pub fn set_target_violation_reasons(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.target_violation_reasons = input;
         self

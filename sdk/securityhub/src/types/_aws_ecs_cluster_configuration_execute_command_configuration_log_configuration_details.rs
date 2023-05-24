@@ -2,23 +2,23 @@
 
 /// <p>The log configuration for the results of the run command actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
     #[doc(hidden)]
     pub cloud_watch_encryption_enabled: bool,
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
     #[doc(hidden)]
-    pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
+    pub cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket to send logs to.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
     #[doc(hidden)]
     pub s3_encryption_enabled: bool,
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
     #[doc(hidden)]
-    pub s3_key_prefix: std::option::Option<std::string::String>,
+    pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails {
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
@@ -26,11 +26,11 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self.cloud_watch_encryption_enabled
     }
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
-    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_log_group_name(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_log_group_name.as_deref()
     }
     /// <p>The name of the S3 bucket to send logs to.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
@@ -38,7 +38,7 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
         self.s3_encryption_enabled
     }
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
 }
@@ -51,65 +51,85 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetail
 
 /// A builder for [`AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetailsBuilder {
-    pub(crate) cloud_watch_encryption_enabled: std::option::Option<bool>,
-    pub(crate) cloud_watch_log_group_name: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) s3_encryption_enabled: std::option::Option<bool>,
-    pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
+    pub(crate) cloud_watch_encryption_enabled: ::std::option::Option<bool>,
+    pub(crate) cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_encryption_enabled: ::std::option::Option<bool>,
+    pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetailsBuilder {
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
     pub fn cloud_watch_encryption_enabled(mut self, input: bool) -> Self {
-        self.cloud_watch_encryption_enabled = Some(input);
+        self.cloud_watch_encryption_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to enable encryption on the CloudWatch logs.</p>
-    pub fn set_cloud_watch_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cloud_watch_encryption_enabled(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.cloud_watch_encryption_enabled = input;
         self
     }
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
-    pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_log_group_name = Some(input.into());
+    pub fn cloud_watch_log_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudWatch log group to send the logs to.</p>
     pub fn set_cloud_watch_log_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_log_group_name = input;
         self
     }
     /// <p>The name of the S3 bucket to send logs to.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket to send logs to.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
     pub fn s3_encryption_enabled(mut self, input: bool) -> Self {
-        self.s3_encryption_enabled = Some(input);
+        self.s3_encryption_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to encrypt the logs that are sent to the S3 bucket.</p>
-    pub fn set_s3_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_s3_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.s3_encryption_enabled = input;
         self
     }
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
-    pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_key_prefix = Some(input.into());
+    pub fn s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the folder in the S3 bucket to send the logs to.</p>
-    pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_key_prefix = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>The message object that provides the message text and its type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Message {
     /// <p>The content type of the message string.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<crate::types::ContentType>,
+    pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>The text of the message.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     #[doc(hidden)]
-    pub group_number: std::option::Option<i32>,
+    pub group_number: ::std::option::Option<i32>,
 }
 impl Message {
     /// <p>The content type of the message string.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::ContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
         self.content_type.as_ref()
     }
     /// <p>The text of the message.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
-    pub fn group_number(&self) -> std::option::Option<i32> {
+    pub fn group_number(&self) -> ::std::option::Option<i32> {
         self.group_number
     }
 }
@@ -37,43 +37,45 @@ impl Message {
 
 /// A builder for [`Message`](crate::types::Message).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MessageBuilder {
-    pub(crate) content_type: std::option::Option<crate::types::ContentType>,
-    pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) group_number: std::option::Option<i32>,
+    pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) group_number: ::std::option::Option<i32>,
 }
 impl MessageBuilder {
     /// <p>The content type of the message string.</p>
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
-        self.content_type = Some(input);
+        self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The content type of the message string.</p>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::ContentType>,
+        input: ::std::option::Option<crate::types::ContentType>,
     ) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The text of the message.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the message.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
     pub fn group_number(mut self, input: i32) -> Self {
-        self.group_number = Some(input);
+        self.group_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>
-    pub fn set_group_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_group_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.group_number = input;
         self
     }

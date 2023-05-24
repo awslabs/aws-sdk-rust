@@ -2,15 +2,15 @@
 
 /// <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesAuditLogsConfigurationResult {
     /// <p>A value that describes whether Kubernetes audit logs are enabled as a data source.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DataSourceStatus>,
+    pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl KubernetesAuditLogsConfigurationResult {
     /// <p>A value that describes whether Kubernetes audit logs are enabled as a data source.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl KubernetesAuditLogsConfigurationResult {
 
 /// A builder for [`KubernetesAuditLogsConfigurationResult`](crate::types::KubernetesAuditLogsConfigurationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KubernetesAuditLogsConfigurationResultBuilder {
-    pub(crate) status: std::option::Option<crate::types::DataSourceStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl KubernetesAuditLogsConfigurationResultBuilder {
     /// <p>A value that describes whether Kubernetes audit logs are enabled as a data source.</p>
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that describes whether Kubernetes audit logs are enabled as a data source.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DataSourceStatus>,
+        input: ::std::option::Option<crate::types::DataSourceStatus>,
     ) -> Self {
         self.status = input;
         self

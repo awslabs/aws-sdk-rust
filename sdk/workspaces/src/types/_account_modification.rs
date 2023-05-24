@@ -2,56 +2,56 @@
 
 /// <p>Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountModification {
     /// <p>The state of the modification to the configuration of BYOL.</p>
     #[doc(hidden)]
     pub modification_state:
-        std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
+        ::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
     #[doc(hidden)]
     pub dedicated_tenancy_support:
-        std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
+        ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
     #[doc(hidden)]
-    pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
+    pub dedicated_tenancy_management_cidr_range: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl AccountModification {
     /// <p>The state of the modification to the configuration of BYOL.</p>
     pub fn modification_state(
         &self,
-    ) -> std::option::Option<&crate::types::DedicatedTenancyModificationStateEnum> {
+    ) -> ::std::option::Option<&crate::types::DedicatedTenancyModificationStateEnum> {
         self.modification_state.as_ref()
     }
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
     pub fn dedicated_tenancy_support(
         &self,
-    ) -> std::option::Option<&crate::types::DedicatedTenancySupportResultEnum> {
+    ) -> ::std::option::Option<&crate::types::DedicatedTenancySupportResultEnum> {
         self.dedicated_tenancy_support.as_ref()
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
-    pub fn dedicated_tenancy_management_cidr_range(&self) -> std::option::Option<&str> {
+    pub fn dedicated_tenancy_management_cidr_range(&self) -> ::std::option::Option<&str> {
         self.dedicated_tenancy_management_cidr_range.as_deref()
     }
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -64,16 +64,19 @@ impl AccountModification {
 
 /// A builder for [`AccountModification`](crate::types::AccountModification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountModificationBuilder {
     pub(crate) modification_state:
-        std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
+        ::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
     pub(crate) dedicated_tenancy_support:
-        std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
-    pub(crate) dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
+    pub(crate) dedicated_tenancy_management_cidr_range:
+        ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl AccountModificationBuilder {
     /// <p>The state of the modification to the configuration of BYOL.</p>
@@ -81,13 +84,13 @@ impl AccountModificationBuilder {
         mut self,
         input: crate::types::DedicatedTenancyModificationStateEnum,
     ) -> Self {
-        self.modification_state = Some(input);
+        self.modification_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the modification to the configuration of BYOL.</p>
     pub fn set_modification_state(
         mut self,
-        input: std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
+        input: ::std::option::Option<crate::types::DedicatedTenancyModificationStateEnum>,
     ) -> Self {
         self.modification_state = input;
         self
@@ -97,13 +100,13 @@ impl AccountModificationBuilder {
         mut self,
         input: crate::types::DedicatedTenancySupportResultEnum,
     ) -> Self {
-        self.dedicated_tenancy_support = Some(input);
+        self.dedicated_tenancy_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
     pub fn set_dedicated_tenancy_support(
         mut self,
-        input: std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
+        input: ::std::option::Option<crate::types::DedicatedTenancySupportResultEnum>,
     ) -> Self {
         self.dedicated_tenancy_support = input;
         self
@@ -111,49 +114,55 @@ impl AccountModificationBuilder {
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
     pub fn dedicated_tenancy_management_cidr_range(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.dedicated_tenancy_management_cidr_range = Some(input.into());
+        self.dedicated_tenancy_management_cidr_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network interface used for the account.</p>
     pub fn set_dedicated_tenancy_management_cidr_range(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dedicated_tenancy_management_cidr_range = input;
         self
     }
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be modified.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Describes a custom encryption key that App Runner uses to encrypt copies of the source repository and service logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfiguration {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
     #[doc(hidden)]
-    pub kms_key: std::option::Option<std::string::String>,
+    pub kms_key: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfiguration {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl EncryptionConfiguration {
 
 /// A builder for [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EncryptionConfigurationBuilder {
-    pub(crate) kms_key: std::option::Option<std::string::String>,
+    pub(crate) kms_key: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfigurationBuilder {
     /// <p>The ARN of the KMS key that's used for encryption.</p>
-    pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key = Some(input.into());
+    pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the KMS key that's used for encryption.</p>
-    pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }

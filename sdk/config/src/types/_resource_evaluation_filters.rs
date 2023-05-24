@@ -2,29 +2,29 @@
 
 /// <p>Returns details of a resource evaluation based on the selected filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceEvaluationFilters {
     /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
     #[doc(hidden)]
-    pub evaluation_mode: std::option::Option<crate::types::EvaluationMode>,
+    pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
     /// <p>Returns a <code>TimeWindow</code> object.</p>
     #[doc(hidden)]
-    pub time_window: std::option::Option<crate::types::TimeWindow>,
+    pub time_window: ::std::option::Option<crate::types::TimeWindow>,
     /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
     #[doc(hidden)]
-    pub evaluation_context_identifier: std::option::Option<std::string::String>,
+    pub evaluation_context_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResourceEvaluationFilters {
     /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
-    pub fn evaluation_mode(&self) -> std::option::Option<&crate::types::EvaluationMode> {
+    pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
     /// <p>Returns a <code>TimeWindow</code> object.</p>
-    pub fn time_window(&self) -> std::option::Option<&crate::types::TimeWindow> {
+    pub fn time_window(&self) -> ::std::option::Option<&crate::types::TimeWindow> {
         self.time_window.as_ref()
     }
     /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
-    pub fn evaluation_context_identifier(&self) -> std::option::Option<&str> {
+    pub fn evaluation_context_identifier(&self) -> ::std::option::Option<&str> {
         self.evaluation_context_identifier.as_deref()
     }
 }
@@ -37,45 +37,53 @@ impl ResourceEvaluationFilters {
 
 /// A builder for [`ResourceEvaluationFilters`](crate::types::ResourceEvaluationFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceEvaluationFiltersBuilder {
-    pub(crate) evaluation_mode: std::option::Option<crate::types::EvaluationMode>,
-    pub(crate) time_window: std::option::Option<crate::types::TimeWindow>,
-    pub(crate) evaluation_context_identifier: std::option::Option<std::string::String>,
+    pub(crate) evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
+    pub(crate) time_window: ::std::option::Option<crate::types::TimeWindow>,
+    pub(crate) evaluation_context_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResourceEvaluationFiltersBuilder {
     /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
-        self.evaluation_mode = Some(input);
+        self.evaluation_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filters all resource evaluations results based on an evaluation mode. the valid value for this API is <code>Proactive</code>.</p>
     pub fn set_evaluation_mode(
         mut self,
-        input: std::option::Option<crate::types::EvaluationMode>,
+        input: ::std::option::Option<crate::types::EvaluationMode>,
     ) -> Self {
         self.evaluation_mode = input;
         self
     }
     /// <p>Returns a <code>TimeWindow</code> object.</p>
     pub fn time_window(mut self, input: crate::types::TimeWindow) -> Self {
-        self.time_window = Some(input);
+        self.time_window = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns a <code>TimeWindow</code> object.</p>
-    pub fn set_time_window(mut self, input: std::option::Option<crate::types::TimeWindow>) -> Self {
+    pub fn set_time_window(
+        mut self,
+        input: ::std::option::Option<crate::types::TimeWindow>,
+    ) -> Self {
         self.time_window = input;
         self
     }
     /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
-    pub fn evaluation_context_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_context_identifier = Some(input.into());
+    pub fn evaluation_context_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_context_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters evaluations for a given infrastructure deployment. For example: CFN Stack.</p>
     pub fn set_evaluation_context_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.evaluation_context_identifier = input;
         self

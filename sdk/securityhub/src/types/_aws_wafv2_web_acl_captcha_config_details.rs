@@ -2,18 +2,18 @@
 
 /// <p> Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2WebAclCaptchaConfigDetails {
     /// <p> Determines how long a CAPTCHA timestamp in the token remains valid after the client successfully solves a CAPTCHA puzzle. </p>
     #[doc(hidden)]
     pub immunity_time_property:
-        std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails>,
+        ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails>,
 }
 impl AwsWafv2WebAclCaptchaConfigDetails {
     /// <p> Determines how long a CAPTCHA timestamp in the token remains valid after the client successfully solves a CAPTCHA puzzle. </p>
     pub fn immunity_time_property(
         &self,
-    ) -> std::option::Option<&crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails>
+    ) -> ::std::option::Option<&crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails>
     {
         self.immunity_time_property.as_ref()
     }
@@ -27,10 +27,12 @@ impl AwsWafv2WebAclCaptchaConfigDetails {
 
 /// A builder for [`AwsWafv2WebAclCaptchaConfigDetails`](crate::types::AwsWafv2WebAclCaptchaConfigDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafv2WebAclCaptchaConfigDetailsBuilder {
     pub(crate) immunity_time_property:
-        std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails>,
+        ::std::option::Option<crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails>,
 }
 impl AwsWafv2WebAclCaptchaConfigDetailsBuilder {
     /// <p> Determines how long a CAPTCHA timestamp in the token remains valid after the client successfully solves a CAPTCHA puzzle. </p>
@@ -38,13 +40,13 @@ impl AwsWafv2WebAclCaptchaConfigDetailsBuilder {
         mut self,
         input: crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails,
     ) -> Self {
-        self.immunity_time_property = Some(input);
+        self.immunity_time_property = ::std::option::Option::Some(input);
         self
     }
     /// <p> Determines how long a CAPTCHA timestamp in the token remains valid after the client successfully solves a CAPTCHA puzzle. </p>
     pub fn set_immunity_time_property(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails,
         >,
     ) -> Self {

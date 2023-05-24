@@ -19,29 +19,29 @@ pub use crate::operation::update_maintenance_window_task::_update_maintenance_wi
 /// <p>If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field isn't modified. If you set <code>Replace</code> to true, then all fields required by the <code>RegisterTaskWithMaintenanceWindow</code> operation are required for this request. Optional fields that aren't specified are set to null.</p> <important>
 /// <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowTaskFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_maintenance_window_task::builders::UpdateMaintenanceWindowTaskInputBuilder,
 }
 impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// Creates a new `UpdateMaintenanceWindowTask`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTask,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
         >,
     > {
@@ -49,30 +49,33 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -85,31 +88,37 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The maintenance window ID that contains the task to modify.</p>
-    pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
         self
     }
     /// <p>The maintenance window ID that contains the task to modify.</p>
-    pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_window_id(input);
         self
     }
     /// <p>The task ID to modify.</p>
-    pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn window_task_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.window_task_id(input.into());
         self
     }
     /// <p>The task ID to modify.</p>
-    pub fn set_window_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_window_task_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_window_task_id(input);
         self
     }
@@ -129,18 +138,18 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// </note>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
     /// <p>The task ARN to modify.</p>
-    pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task_arn(input.into());
         self
     }
     /// <p>The task ARN to modify.</p>
-    pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task_arn(input);
         self
     }
@@ -150,7 +159,10 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
-    pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
@@ -160,7 +172,10 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
     /// </ul>
-    pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
@@ -176,7 +191,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>Value: an array of strings, each string is between 1 and 255 characters</p>
     pub fn task_parameters(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::MaintenanceWindowTaskParameterValueExpression,
     ) -> Self {
         self.inner = self.inner.task_parameters(k.into(), v);
@@ -190,9 +205,9 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>Value: an array of strings, each string is between 1 and 255 characters</p>
     pub fn set_task_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::MaintenanceWindowTaskParameterValueExpression,
             >,
         >,
@@ -215,7 +230,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// </important>
     pub fn set_task_invocation_parameters(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
+        input: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
     ) -> Self {
         self.inner = self.inner.set_task_invocation_parameters(input);
         self
@@ -226,7 +241,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
         self
     }
     /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
@@ -234,7 +249,10 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn max_concurrency(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.max_concurrency(input.into());
         self
     }
@@ -242,7 +260,10 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    pub fn set_max_concurrency(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_concurrency(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_max_concurrency(input);
         self
     }
@@ -250,7 +271,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.max_errors(input.into());
         self
     }
@@ -258,7 +279,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>Although this element is listed as "Required: No", a value can be omitted only when you are registering or updating a <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless task</a> You must provide a value in all other cases.</p>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
     /// </note>
-    pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_max_errors(input);
         self
     }
@@ -274,28 +295,28 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// </note>
     pub fn set_logging_info(
         mut self,
-        input: std::option::Option<crate::types::LoggingInfo>,
+        input: ::std::option::Option<crate::types::LoggingInfo>,
     ) -> Self {
         self.inner = self.inner.set_logging_info(input);
         self
     }
     /// <p>The new task name to specify.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The new task name to specify.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The new task description to specify.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The new task description to specify.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -305,7 +326,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
         self
     }
     /// <p>If True, then all fields that are required by the <code>RegisterTaskWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
-    pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_replace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_replace(input);
         self
     }
@@ -336,7 +357,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// </ul>
     pub fn set_cutoff_behavior(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
+        input: ::std::option::Option<crate::types::MaintenanceWindowTaskCutoffBehavior>,
     ) -> Self {
         self.inner = self.inner.set_cutoff_behavior(input);
         self
@@ -349,7 +370,7 @@ impl UpdateMaintenanceWindowTaskFluentBuilder {
     /// <p>The CloudWatch alarm you want to apply to your maintenance window task.</p>
     pub fn set_alarm_configuration(
         mut self,
-        input: std::option::Option<crate::types::AlarmConfiguration>,
+        input: ::std::option::Option<crate::types::AlarmConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_alarm_configuration(input);
         self

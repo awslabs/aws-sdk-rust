@@ -2,22 +2,22 @@
 
 /// <p>Describes a time range, in ISO8601-UTC format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatetimeRange {
     /// <p>Start of the time range.</p>
     #[doc(hidden)]
-    pub begin: std::option::Option<std::string::String>,
+    pub begin: ::std::option::Option<::std::string::String>,
     /// <p>End of the time range.</p>
     #[doc(hidden)]
-    pub end: std::option::Option<std::string::String>,
+    pub end: ::std::option::Option<::std::string::String>,
 }
 impl DatetimeRange {
     /// <p>Start of the time range.</p>
-    pub fn begin(&self) -> std::option::Option<&str> {
+    pub fn begin(&self) -> ::std::option::Option<&str> {
         self.begin.as_deref()
     }
     /// <p>End of the time range.</p>
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> ::std::option::Option<&str> {
         self.end.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl DatetimeRange {
 
 /// A builder for [`DatetimeRange`](crate::types::DatetimeRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatetimeRangeBuilder {
-    pub(crate) begin: std::option::Option<std::string::String>,
-    pub(crate) end: std::option::Option<std::string::String>,
+    pub(crate) begin: ::std::option::Option<::std::string::String>,
+    pub(crate) end: ::std::option::Option<::std::string::String>,
 }
 impl DatetimeRangeBuilder {
     /// <p>Start of the time range.</p>
-    pub fn begin(mut self, input: impl Into<std::string::String>) -> Self {
-        self.begin = Some(input.into());
+    pub fn begin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.begin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Start of the time range.</p>
-    pub fn set_begin(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_begin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.begin = input;
         self
     }
     /// <p>End of the time range.</p>
-    pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end = Some(input.into());
+    pub fn end(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>End of the time range.</p>
-    pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end = input;
         self
     }

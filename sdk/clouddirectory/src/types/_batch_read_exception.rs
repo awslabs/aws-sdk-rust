@@ -2,22 +2,22 @@
 
 /// <p>The batch read exception structure, which contains the exception type and message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchReadException {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::BatchReadExceptionType>,
+    pub r#type: ::std::option::Option<crate::types::BatchReadExceptionType>,
     /// <p>An exception message that is associated with the failure.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl BatchReadException {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::BatchReadExceptionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BatchReadExceptionType> {
         self.r#type.as_ref()
     }
     /// <p>An exception message that is associated with the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl BatchReadException {
 
 /// A builder for [`BatchReadException`](crate::types::BatchReadException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchReadExceptionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::BatchReadExceptionType>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::BatchReadExceptionType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl BatchReadExceptionBuilder {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     pub fn r#type(mut self, input: crate::types::BatchReadExceptionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::BatchReadExceptionType>,
+        input: ::std::option::Option<crate::types::BatchReadExceptionType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>An exception message that is associated with the failure.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An exception message that is associated with the failure.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

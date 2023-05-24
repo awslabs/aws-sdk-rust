@@ -41,13 +41,13 @@
 /// provided, this defaults to the <code>INSERT</code> operation. </p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WriteOperationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,7 +61,7 @@ pub enum WriteOperationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WriteOperationType {
+impl ::std::convert::From<&str> for WriteOperationType {
     fn from(s: &str) -> Self {
         match s {
             "DELETE" => WriteOperationType::Delete,
@@ -74,11 +74,11 @@ impl std::convert::From<&str> for WriteOperationType {
         }
     }
 }
-impl std::str::FromStr for WriteOperationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WriteOperationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WriteOperationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WriteOperationType::from(s))
     }
 }
 impl WriteOperationType {
@@ -97,7 +97,7 @@ impl WriteOperationType {
         &["DELETE", "INSERT", "UPDATE", "UPSERT"]
     }
 }
-impl AsRef<str> for WriteOperationType {
+impl ::std::convert::AsRef<str> for WriteOperationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

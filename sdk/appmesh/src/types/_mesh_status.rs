@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the status of a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeshStatus {
     /// <p>The current mesh status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::MeshStatusCode>,
+    pub status: ::std::option::Option<crate::types::MeshStatusCode>,
 }
 impl MeshStatus {
     /// <p>The current mesh status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MeshStatusCode> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::MeshStatusCode> {
         self.status.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl MeshStatus {
 
 /// A builder for [`MeshStatus`](crate::types::MeshStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MeshStatusBuilder {
-    pub(crate) status: std::option::Option<crate::types::MeshStatusCode>,
+    pub(crate) status: ::std::option::Option<crate::types::MeshStatusCode>,
 }
 impl MeshStatusBuilder {
     /// <p>The current mesh status.</p>
     pub fn status(mut self, input: crate::types::MeshStatusCode) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current mesh status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MeshStatusCode>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::MeshStatusCode>,
+    ) -> Self {
         self.status = input;
         self
     }

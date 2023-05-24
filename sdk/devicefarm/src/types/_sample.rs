@@ -2,11 +2,11 @@
 
 /// <p>Represents a sample of performance data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sample {
     /// <p>The sample's ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The sample's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -29,14 +29,14 @@ pub struct Sample {
     /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SampleType>,
+    pub r#type: ::std::option::Option<crate::types::SampleType>,
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
 }
 impl Sample {
     /// <p>The sample's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The sample's type.</p>
@@ -60,11 +60,11 @@ impl Sample {
     /// <li> <p>TX</p> </li>
     /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SampleType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SampleType> {
         self.r#type.as_ref()
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
 }
@@ -77,20 +77,22 @@ impl Sample {
 
 /// A builder for [`Sample`](crate::types::Sample).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SampleBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::SampleType>,
-    pub(crate) url: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SampleType>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl SampleBuilder {
     /// <p>The sample's ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sample's ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -116,7 +118,7 @@ impl SampleBuilder {
     /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SampleType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sample's type.</p>
@@ -140,17 +142,17 @@ impl SampleBuilder {
     /// <li> <p>TX</p> </li>
     /// <li> <p>TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by app process.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::SampleType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SampleType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }

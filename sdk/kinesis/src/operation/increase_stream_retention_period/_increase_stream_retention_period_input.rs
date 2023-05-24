@@ -2,29 +2,29 @@
 
 /// <p>Represents the input for <code>IncreaseStreamRetentionPeriod</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncreaseStreamRetentionPeriodInput {
     /// <p>The name of the stream to modify.</p>
     #[doc(hidden)]
-    pub stream_name: std::option::Option<std::string::String>,
+    pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
     #[doc(hidden)]
-    pub retention_period_hours: std::option::Option<i32>,
+    pub retention_period_hours: ::std::option::Option<i32>,
     /// <p>The ARN of the stream.</p>
     #[doc(hidden)]
-    pub stream_arn: std::option::Option<std::string::String>,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl IncreaseStreamRetentionPeriodInput {
     /// <p>The name of the stream to modify.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
-    pub fn retention_period_hours(&self) -> std::option::Option<i32> {
+    pub fn retention_period_hours(&self) -> ::std::option::Option<i32> {
         self.retention_period_hours
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
 }
@@ -37,51 +37,53 @@ impl IncreaseStreamRetentionPeriodInput {
 
 /// A builder for [`IncreaseStreamRetentionPeriodInput`](crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IncreaseStreamRetentionPeriodInputBuilder {
-    pub(crate) stream_name: std::option::Option<std::string::String>,
-    pub(crate) retention_period_hours: std::option::Option<i32>,
-    pub(crate) stream_arn: std::option::Option<std::string::String>,
+    pub(crate) stream_name: ::std::option::Option<::std::string::String>,
+    pub(crate) retention_period_hours: ::std::option::Option<i32>,
+    pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl IncreaseStreamRetentionPeriodInputBuilder {
     /// <p>The name of the stream to modify.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_name = Some(input.into());
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stream to modify.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
     }
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
     pub fn retention_period_hours(mut self, input: i32) -> Self {
-        self.retention_period_hours = Some(input);
+        self.retention_period_hours = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>
-    pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_period_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period_hours = input;
         self
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_arn = Some(input.into());
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
     /// Consumes the builder and constructs a [`IncreaseStreamRetentionPeriodInput`](crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodInput {
                 stream_name: self.stream_name
                 ,

@@ -2,27 +2,27 @@
 
 /// <p>Container for the response returned by the <code>DescribePackages</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackagesOutput {
     /// <p>Basic information about a package.</p>
     #[doc(hidden)]
-    pub package_details_list: std::option::Option<std::vec::Vec<crate::types::PackageDetails>>,
+    pub package_details_list: ::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribePackagesOutput {
     /// <p>Basic information about a package.</p>
-    pub fn package_details_list(&self) -> std::option::Option<&[crate::types::PackageDetails]> {
+    pub fn package_details_list(&self) -> ::std::option::Option<&[crate::types::PackageDetails]> {
         self.package_details_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribePackagesOutput {
+impl ::aws_http::request_id::RequestId for DescribePackagesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,11 +37,13 @@ impl DescribePackagesOutput {
 
 /// A builder for [`DescribePackagesOutput`](crate::operation::describe_packages::DescribePackagesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribePackagesOutputBuilder {
     pub(crate) package_details_list:
-        std::option::Option<std::vec::Vec<crate::types::PackageDetails>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribePackagesOutputBuilder {
@@ -53,24 +55,24 @@ impl DescribePackagesOutputBuilder {
     pub fn package_details_list(mut self, input: crate::types::PackageDetails) -> Self {
         let mut v = self.package_details_list.unwrap_or_default();
         v.push(input);
-        self.package_details_list = Some(v);
+        self.package_details_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Basic information about a package.</p>
     pub fn set_package_details_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PackageDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PackageDetails>>,
     ) -> Self {
         self.package_details_list = input;
         self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

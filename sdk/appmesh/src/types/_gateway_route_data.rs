@@ -2,50 +2,50 @@
 
 /// <p>An object that represents a gateway route returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
     #[doc(hidden)]
-    pub mesh_name: std::option::Option<std::string::String>,
+    pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the gateway route.</p>
     #[doc(hidden)]
-    pub gateway_route_name: std::option::Option<std::string::String>,
+    pub gateway_route_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual gateway that the gateway route is associated with.</p>
     #[doc(hidden)]
-    pub virtual_gateway_name: std::option::Option<std::string::String>,
+    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The specifications of the gateway route.</p>
     #[doc(hidden)]
-    pub spec: std::option::Option<crate::types::GatewayRouteSpec>,
+    pub spec: ::std::option::Option<crate::types::GatewayRouteSpec>,
     /// <p>An object that represents metadata for a resource.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<crate::types::ResourceMetadata>,
+    pub metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The status of the gateway route.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::GatewayRouteStatus>,
+    pub status: ::std::option::Option<crate::types::GatewayRouteStatus>,
 }
 impl GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the gateway route.</p>
-    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_route_name(&self) -> ::std::option::Option<&str> {
         self.gateway_route_name.as_deref()
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The specifications of the gateway route.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::types::GatewayRouteSpec> {
+    pub fn spec(&self) -> ::std::option::Option<&crate::types::GatewayRouteSpec> {
         self.spec.as_ref()
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::ResourceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The status of the gateway route.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::GatewayRouteStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::GatewayRouteStatus> {
         self.status.as_ref()
     }
 }
@@ -58,84 +58,95 @@ impl GatewayRouteData {
 
 /// A builder for [`GatewayRouteData`](crate::types::GatewayRouteData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GatewayRouteDataBuilder {
-    pub(crate) mesh_name: std::option::Option<std::string::String>,
-    pub(crate) gateway_route_name: std::option::Option<std::string::String>,
-    pub(crate) virtual_gateway_name: std::option::Option<std::string::String>,
-    pub(crate) spec: std::option::Option<crate::types::GatewayRouteSpec>,
-    pub(crate) metadata: std::option::Option<crate::types::ResourceMetadata>,
-    pub(crate) status: std::option::Option<crate::types::GatewayRouteStatus>,
+    pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_route_name: ::std::option::Option<::std::string::String>,
+    pub(crate) virtual_gateway_name: ::std::option::Option<::std::string::String>,
+    pub(crate) spec: ::std::option::Option<crate::types::GatewayRouteSpec>,
+    pub(crate) metadata: ::std::option::Option<crate::types::ResourceMetadata>,
+    pub(crate) status: ::std::option::Option<crate::types::GatewayRouteStatus>,
 }
 impl GatewayRouteDataBuilder {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mesh_name = Some(input.into());
+    pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mesh_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_name = input;
         self
     }
     /// <p>The name of the gateway route.</p>
-    pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_route_name = Some(input.into());
+    pub fn gateway_route_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.gateway_route_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the gateway route.</p>
     pub fn set_gateway_route_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.gateway_route_name = input;
         self
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_gateway_name = Some(input.into());
+    pub fn virtual_gateway_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
     pub fn set_virtual_gateway_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_gateway_name = input;
         self
     }
     /// <p>The specifications of the gateway route.</p>
     pub fn spec(mut self, input: crate::types::GatewayRouteSpec) -> Self {
-        self.spec = Some(input);
+        self.spec = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specifications of the gateway route.</p>
-    pub fn set_spec(mut self, input: std::option::Option<crate::types::GatewayRouteSpec>) -> Self {
+    pub fn set_spec(
+        mut self,
+        input: ::std::option::Option<crate::types::GatewayRouteSpec>,
+    ) -> Self {
         self.spec = input;
         self
     }
     /// <p>An object that represents metadata for a resource.</p>
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
-        self.metadata = Some(input);
+        self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents metadata for a resource.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<crate::types::ResourceMetadata>,
+        input: ::std::option::Option<crate::types::ResourceMetadata>,
     ) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The status of the gateway route.</p>
     pub fn status(mut self, input: crate::types::GatewayRouteStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the gateway route.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::GatewayRouteStatus>,
+        input: ::std::option::Option<crate::types::GatewayRouteStatus>,
     ) -> Self {
         self.status = input;
         self

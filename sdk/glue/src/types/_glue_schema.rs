@@ -2,15 +2,15 @@
 
 /// <p>Specifies a user-defined schema when a schema cannot be determined by Glue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueSchema {
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
     #[doc(hidden)]
-    pub columns: std::option::Option<std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
+    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
 }
 impl GlueSchema {
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
-    pub fn columns(&self) -> std::option::Option<&[crate::types::GlueStudioSchemaColumn]> {
+    pub fn columns(&self) -> ::std::option::Option<&[crate::types::GlueStudioSchemaColumn]> {
         self.columns.as_deref()
     }
 }
@@ -23,9 +23,12 @@ impl GlueSchema {
 
 /// A builder for [`GlueSchema`](crate::types::GlueSchema).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlueSchemaBuilder {
-    pub(crate) columns: std::option::Option<std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
+    pub(crate) columns:
+        ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
 }
 impl GlueSchemaBuilder {
     /// Appends an item to `columns`.
@@ -36,13 +39,13 @@ impl GlueSchemaBuilder {
     pub fn columns(mut self, input: crate::types::GlueStudioSchemaColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
         v.push(input);
-        self.columns = Some(v);
+        self.columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the column definitions that make up a Glue schema.</p>
     pub fn set_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueStudioSchemaColumn>>,
     ) -> Self {
         self.columns = input;
         self

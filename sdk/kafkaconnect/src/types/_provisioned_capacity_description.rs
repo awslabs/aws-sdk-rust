@@ -2,7 +2,7 @@
 
 /// <p>The description of a connector's provisioned capacity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedCapacityDescription {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl ProvisionedCapacityDescription {
 
 /// A builder for [`ProvisionedCapacityDescription`](crate::types::ProvisionedCapacityDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisionedCapacityDescriptionBuilder {
-    pub(crate) mcu_count: std::option::Option<i32>,
-    pub(crate) worker_count: std::option::Option<i32>,
+    pub(crate) mcu_count: ::std::option::Option<i32>,
+    pub(crate) worker_count: ::std::option::Option<i32>,
 }
 impl ProvisionedCapacityDescriptionBuilder {
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn mcu_count(mut self, input: i32) -> Self {
-        self.mcu_count = Some(input);
+        self.mcu_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
-    pub fn set_mcu_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_mcu_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mcu_count = input;
         self
     }
     /// <p>The number of workers that are allocated to the connector.</p>
     pub fn worker_count(mut self, input: i32) -> Self {
-        self.worker_count = Some(input);
+        self.worker_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of workers that are allocated to the connector.</p>
-    pub fn set_worker_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.worker_count = input;
         self
     }

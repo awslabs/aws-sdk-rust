@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutChunk`](crate::operation::put_chunk::builders::PutChunkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_job_id(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_backup_job_id): Backup job Id for the in-progress backup.
-    ///   - [`upload_id(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::upload_id) / [`set_upload_id(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_upload_id): Upload Id for the in-progress upload.
+    ///   - [`backup_job_id(impl ::std::convert::Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::backup_job_id) / [`set_backup_job_id(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_backup_job_id): Backup job Id for the in-progress backup.
+    ///   - [`upload_id(impl ::std::convert::Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::upload_id) / [`set_upload_id(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_upload_id): Upload Id for the in-progress upload.
     ///   - [`chunk_index(i64)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::chunk_index) / [`set_chunk_index(i64)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_chunk_index): Describes this chunk's position relative to the other chunks
     ///   - [`data(ByteStream)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::data) / [`set_data(ByteStream)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_data): Data to be uploaded
     ///   - [`length(i64)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::length) / [`set_length(i64)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_length): Data length
-    ///   - [`checksum(impl Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::checksum) / [`set_checksum(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_checksum): Data checksum
+    ///   - [`checksum(impl ::std::convert::Into<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::checksum) / [`set_checksum(Option<String>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_checksum): Data checksum
     ///   - [`checksum_algorithm(DataChecksumAlgorithm)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::checksum_algorithm) / [`set_checksum_algorithm(Option<DataChecksumAlgorithm>)`](crate::operation::put_chunk::builders::PutChunkFluentBuilder::set_checksum_algorithm): Checksum algorithm
     /// - On success, responds with [`PutChunkOutput`](crate::operation::put_chunk::PutChunkOutput) with field(s):
     ///   - [`chunk_checksum(Option<String>)`](crate::operation::put_chunk::PutChunkOutput::chunk_checksum): Chunk checksum

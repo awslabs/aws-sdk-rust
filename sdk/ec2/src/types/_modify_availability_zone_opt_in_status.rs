@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ModifyAvailabilityZoneOptInStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ModifyAvailabilityZoneOptInStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ModifyAvailabilityZoneOptInStatus {
+impl ::std::convert::From<&str> for ModifyAvailabilityZoneOptInStatus {
     fn from(s: &str) -> Self {
         match s {
             "not-opted-in" => ModifyAvailabilityZoneOptInStatus::NotOptedIn,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ModifyAvailabilityZoneOptInStatus {
         }
     }
 }
-impl std::str::FromStr for ModifyAvailabilityZoneOptInStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ModifyAvailabilityZoneOptInStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ModifyAvailabilityZoneOptInStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ModifyAvailabilityZoneOptInStatus::from(s))
     }
 }
 impl ModifyAvailabilityZoneOptInStatus {
@@ -86,7 +86,7 @@ impl ModifyAvailabilityZoneOptInStatus {
         &["not-opted-in", "opted-in"]
     }
 }
-impl AsRef<str> for ModifyAvailabilityZoneOptInStatus {
+impl ::std::convert::AsRef<str> for ModifyAvailabilityZoneOptInStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,29 +2,29 @@
 
 /// <p>Represents the input of a RegisterApplicationRevision operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterApplicationRevisionInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A comment about the revision.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the application revision to register, including type and location.</p>
     #[doc(hidden)]
-    pub revision: std::option::Option<crate::types::RevisionLocation>,
+    pub revision: ::std::option::Option<crate::types::RevisionLocation>,
 }
 impl RegisterApplicationRevisionInput {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>A comment about the revision.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Information about the application revision to register, including type and location.</p>
-    pub fn revision(&self) -> std::option::Option<&crate::types::RevisionLocation> {
+    pub fn revision(&self) -> ::std::option::Option<&crate::types::RevisionLocation> {
         self.revision.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl RegisterApplicationRevisionInput {
 
 /// A builder for [`RegisterApplicationRevisionInput`](crate::operation::register_application_revision::RegisterApplicationRevisionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterApplicationRevisionInputBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) revision: std::option::Option<crate::types::RevisionLocation>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<crate::types::RevisionLocation>,
 }
 impl RegisterApplicationRevisionInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>A comment about the revision.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A comment about the revision.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Information about the application revision to register, including type and location.</p>
     pub fn revision(mut self, input: crate::types::RevisionLocation) -> Self {
-        self.revision = Some(input);
+        self.revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the application revision to register, including type and location.</p>
     pub fn set_revision(
         mut self,
-        input: std::option::Option<crate::types::RevisionLocation>,
+        input: ::std::option::Option<crate::types::RevisionLocation>,
     ) -> Self {
         self.revision = input;
         self
@@ -80,11 +88,11 @@ impl RegisterApplicationRevisionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterApplicationRevisionInput`](crate::operation::register_application_revision::RegisterApplicationRevisionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::register_application_revision::RegisterApplicationRevisionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::register_application_revision::RegisterApplicationRevisionInput {
                 application_name: self.application_name,
                 description: self.description,

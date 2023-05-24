@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CachePolicyQueryStringBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum CachePolicyQueryStringBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CachePolicyQueryStringBehavior {
+impl ::std::convert::From<&str> for CachePolicyQueryStringBehavior {
     fn from(s: &str) -> Self {
         match s {
             "all" => CachePolicyQueryStringBehavior::All,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for CachePolicyQueryStringBehavior {
         }
     }
 }
-impl std::str::FromStr for CachePolicyQueryStringBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CachePolicyQueryStringBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CachePolicyQueryStringBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CachePolicyQueryStringBehavior::from(s))
     }
 }
 impl CachePolicyQueryStringBehavior {
@@ -96,7 +96,7 @@ impl CachePolicyQueryStringBehavior {
         &["all", "allExcept", "none", "whitelist"]
     }
 }
-impl AsRef<str> for CachePolicyQueryStringBehavior {
+impl ::std::convert::AsRef<str> for CachePolicyQueryStringBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

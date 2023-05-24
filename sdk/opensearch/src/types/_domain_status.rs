@@ -2,228 +2,232 @@
 
 /// <p>The current status of an OpenSearch Service domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainStatus {
     /// <p>Unique identifier for the domain.</p>
     #[doc(hidden)]
-    pub domain_id: std::option::Option<std::string::String>,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is still in progress.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<bool>,
+    pub created: ::std::option::Option<bool>,
     /// <p>Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.</p>
     #[doc(hidden)]
-    pub deleted: std::option::Option<bool>,
+    pub deleted: ::std::option::Option<bool>,
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<std::string::String>,
+    pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     #[doc(hidden)]
-    pub endpoints:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub endpoints: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
     #[doc(hidden)]
-    pub processing: std::option::Option<bool>,
+    pub processing: ::std::option::Option<bool>,
     /// <p>The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch Service is in the process of a version upgrade. False if the configuration is active.</p>
     #[doc(hidden)]
-    pub upgrade_processing: std::option::Option<bool>,
+    pub upgrade_processing: ::std::option::Option<bool>,
     /// <p>Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code> or <code>OpenSearch_X.Y</code>.</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Container for the cluster configuration of the domain.</p>
     #[doc(hidden)]
-    pub cluster_config: std::option::Option<crate::types::ClusterConfig>,
+    pub cluster_config: ::std::option::Option<crate::types::ClusterConfig>,
     /// <p>Container for EBS-based storage settings for the domain.</p>
     #[doc(hidden)]
-    pub ebs_options: std::option::Option<crate::types::EbsOptions>,
+    pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>
     #[doc(hidden)]
-    pub access_policies: std::option::Option<std::string::String>,
+    pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     #[doc(hidden)]
-    pub snapshot_options: std::option::Option<crate::types::SnapshotOptions>,
+    pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>The VPC configuration for the domain.</p>
     #[doc(hidden)]
-    pub vpc_options: std::option::Option<crate::types::VpcDerivedInfo>,
+    pub vpc_options: ::std::option::Option<crate::types::VpcDerivedInfo>,
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
     #[doc(hidden)]
-    pub cognito_options: std::option::Option<crate::types::CognitoOptions>,
+    pub cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p>Encryption at rest settings for the domain.</p>
     #[doc(hidden)]
-    pub encryption_at_rest_options: std::option::Option<crate::types::EncryptionAtRestOptions>,
+    pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
     #[doc(hidden)]
     pub node_to_node_encryption_options:
-        std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+        ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>Key-value pairs that specify advanced configuration options.</p>
     #[doc(hidden)]
-    pub advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub advanced_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Log publishing options for the domain.</p>
     #[doc(hidden)]
-    pub log_publishing_options: std::option::Option<
-        std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    pub log_publishing_options: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
     >,
     /// <p>The current status of the domain's service software.</p>
     #[doc(hidden)]
-    pub service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
+    pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     #[doc(hidden)]
-    pub domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptions>,
+    pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Settings for fine-grained access control.</p>
     #[doc(hidden)]
-    pub advanced_security_options: std::option::Option<crate::types::AdvancedSecurityOptions>,
+    pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     /// <p>Auto-Tune settings for the domain.</p>
     #[doc(hidden)]
-    pub auto_tune_options: std::option::Option<crate::types::AutoTuneOptionsOutput>,
+    pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
     /// <p>Information about a configuration change happening on the domain.</p>
     #[doc(hidden)]
-    pub change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
     #[doc(hidden)]
-    pub off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
+    pub off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     /// <p>Service software update options for the domain.</p>
     #[doc(hidden)]
-    pub software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl DomainStatus {
     /// <p>Unique identifier for the domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is still in progress.</p>
-    pub fn created(&self) -> std::option::Option<bool> {
+    pub fn created(&self) -> ::std::option::Option<bool> {
         self.created
     }
     /// <p>Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.</p>
-    pub fn deleted(&self) -> std::option::Option<bool> {
+    pub fn deleted(&self) -> ::std::option::Option<bool> {
         self.deleted
     }
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub fn endpoints(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.endpoints.as_ref()
     }
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
-    pub fn processing(&self) -> std::option::Option<bool> {
+    pub fn processing(&self) -> ::std::option::Option<bool> {
         self.processing
     }
     /// <p>The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch Service is in the process of a version upgrade. False if the configuration is active.</p>
-    pub fn upgrade_processing(&self) -> std::option::Option<bool> {
+    pub fn upgrade_processing(&self) -> ::std::option::Option<bool> {
         self.upgrade_processing
     }
     /// <p>Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code> or <code>OpenSearch_X.Y</code>.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>Container for the cluster configuration of the domain.</p>
-    pub fn cluster_config(&self) -> std::option::Option<&crate::types::ClusterConfig> {
+    pub fn cluster_config(&self) -> ::std::option::Option<&crate::types::ClusterConfig> {
         self.cluster_config.as_ref()
     }
     /// <p>Container for EBS-based storage settings for the domain.</p>
-    pub fn ebs_options(&self) -> std::option::Option<&crate::types::EbsOptions> {
+    pub fn ebs_options(&self) -> ::std::option::Option<&crate::types::EbsOptions> {
         self.ebs_options.as_ref()
     }
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>
-    pub fn access_policies(&self) -> std::option::Option<&str> {
+    pub fn access_policies(&self) -> ::std::option::Option<&str> {
         self.access_policies.as_deref()
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
-    pub fn snapshot_options(&self) -> std::option::Option<&crate::types::SnapshotOptions> {
+    pub fn snapshot_options(&self) -> ::std::option::Option<&crate::types::SnapshotOptions> {
         self.snapshot_options.as_ref()
     }
     /// <p>The VPC configuration for the domain.</p>
-    pub fn vpc_options(&self) -> std::option::Option<&crate::types::VpcDerivedInfo> {
+    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcDerivedInfo> {
         self.vpc_options.as_ref()
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
-    pub fn cognito_options(&self) -> std::option::Option<&crate::types::CognitoOptions> {
+    pub fn cognito_options(&self) -> ::std::option::Option<&crate::types::CognitoOptions> {
         self.cognito_options.as_ref()
     }
     /// <p>Encryption at rest settings for the domain.</p>
     pub fn encryption_at_rest_options(
         &self,
-    ) -> std::option::Option<&crate::types::EncryptionAtRestOptions> {
+    ) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
         self.encryption_at_rest_options.as_ref()
     }
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
     pub fn node_to_node_encryption_options(
         &self,
-    ) -> std::option::Option<&crate::types::NodeToNodeEncryptionOptions> {
+    ) -> ::std::option::Option<&crate::types::NodeToNodeEncryptionOptions> {
         self.node_to_node_encryption_options.as_ref()
     }
     /// <p>Key-value pairs that specify advanced configuration options.</p>
     pub fn advanced_options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.advanced_options.as_ref()
     }
     /// <p>Log publishing options for the domain.</p>
     pub fn log_publishing_options(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
     > {
         self.log_publishing_options.as_ref()
     }
     /// <p>The current status of the domain's service software.</p>
     pub fn service_software_options(
         &self,
-    ) -> std::option::Option<&crate::types::ServiceSoftwareOptions> {
+    ) -> ::std::option::Option<&crate::types::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn domain_endpoint_options(
         &self,
-    ) -> std::option::Option<&crate::types::DomainEndpointOptions> {
+    ) -> ::std::option::Option<&crate::types::DomainEndpointOptions> {
         self.domain_endpoint_options.as_ref()
     }
     /// <p>Settings for fine-grained access control.</p>
     pub fn advanced_security_options(
         &self,
-    ) -> std::option::Option<&crate::types::AdvancedSecurityOptions> {
+    ) -> ::std::option::Option<&crate::types::AdvancedSecurityOptions> {
         self.advanced_security_options.as_ref()
     }
     /// <p>Auto-Tune settings for the domain.</p>
-    pub fn auto_tune_options(&self) -> std::option::Option<&crate::types::AutoTuneOptionsOutput> {
+    pub fn auto_tune_options(&self) -> ::std::option::Option<&crate::types::AutoTuneOptionsOutput> {
         self.auto_tune_options.as_ref()
     }
     /// <p>Information about a configuration change happening on the domain.</p>
     pub fn change_progress_details(
         &self,
-    ) -> std::option::Option<&crate::types::ChangeProgressDetails> {
+    ) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
     /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
     pub fn off_peak_window_options(
         &self,
-    ) -> std::option::Option<&crate::types::OffPeakWindowOptions> {
+    ) -> ::std::option::Option<&crate::types::OffPeakWindowOptions> {
         self.off_peak_window_options.as_ref()
     }
     /// <p>Service software update options for the domain.</p>
     pub fn software_update_options(
         &self,
-    ) -> std::option::Option<&crate::types::SoftwareUpdateOptions> {
+    ) -> ::std::option::Option<&crate::types::SoftwareUpdateOptions> {
         self.software_update_options.as_ref()
     }
 }
@@ -236,101 +240,106 @@ impl DomainStatus {
 
 /// A builder for [`DomainStatus`](crate::types::DomainStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainStatusBuilder {
-    pub(crate) domain_id: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) created: std::option::Option<bool>,
-    pub(crate) deleted: std::option::Option<bool>,
-    pub(crate) endpoint: std::option::Option<std::string::String>,
-    pub(crate) endpoints:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) processing: std::option::Option<bool>,
-    pub(crate) upgrade_processing: std::option::Option<bool>,
-    pub(crate) engine_version: std::option::Option<std::string::String>,
-    pub(crate) cluster_config: std::option::Option<crate::types::ClusterConfig>,
-    pub(crate) ebs_options: std::option::Option<crate::types::EbsOptions>,
-    pub(crate) access_policies: std::option::Option<std::string::String>,
-    pub(crate) snapshot_options: std::option::Option<crate::types::SnapshotOptions>,
-    pub(crate) vpc_options: std::option::Option<crate::types::VpcDerivedInfo>,
-    pub(crate) cognito_options: std::option::Option<crate::types::CognitoOptions>,
-    pub(crate) encryption_at_rest_options:
-        std::option::Option<crate::types::EncryptionAtRestOptions>,
-    pub(crate) node_to_node_encryption_options:
-        std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
-    pub(crate) advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) log_publishing_options: std::option::Option<
-        std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    pub(crate) domain_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created: ::std::option::Option<bool>,
+    pub(crate) deleted: ::std::option::Option<bool>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoints: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
-    pub(crate) service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
-    pub(crate) domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptions>,
+    pub(crate) processing: ::std::option::Option<bool>,
+    pub(crate) upgrade_processing: ::std::option::Option<bool>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_config: ::std::option::Option<crate::types::ClusterConfig>,
+    pub(crate) ebs_options: ::std::option::Option<crate::types::EbsOptions>,
+    pub(crate) access_policies: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
+    pub(crate) vpc_options: ::std::option::Option<crate::types::VpcDerivedInfo>,
+    pub(crate) cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
+    pub(crate) encryption_at_rest_options:
+        ::std::option::Option<crate::types::EncryptionAtRestOptions>,
+    pub(crate) node_to_node_encryption_options:
+        ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+    pub(crate) advanced_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) log_publishing_options: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    >,
+    pub(crate) service_software_options:
+        ::std::option::Option<crate::types::ServiceSoftwareOptions>,
+    pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) advanced_security_options:
-        std::option::Option<crate::types::AdvancedSecurityOptions>,
-    pub(crate) auto_tune_options: std::option::Option<crate::types::AutoTuneOptionsOutput>,
-    pub(crate) change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
-    pub(crate) off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
-    pub(crate) software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
+        ::std::option::Option<crate::types::AdvancedSecurityOptions>,
+    pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
+    pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
+    pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
+    pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl DomainStatusBuilder {
     /// <p>Unique identifier for the domain.</p>
-    pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_id = Some(input.into());
+    pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the domain.</p>
-    pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
     /// <p>Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web Services Region.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is still in progress.</p>
     pub fn created(mut self, input: bool) -> Self {
-        self.created = Some(input);
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is still in progress.</p>
-    pub fn set_created(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_created(mut self, input: ::std::option::Option<bool>) -> Self {
         self.created = input;
         self
     }
     /// <p>Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.</p>
     pub fn deleted(mut self, input: bool) -> Self {
-        self.deleted = Some(input);
+        self.deleted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.</p>
-    pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deleted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deleted = input;
         self
     }
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint = Some(input.into());
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
@@ -341,19 +350,19 @@ impl DomainStatusBuilder {
     /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub fn endpoints(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.endpoints.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.endpoints = Some(hash_map);
+        self.endpoints = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub fn set_endpoints(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.endpoints = input;
@@ -361,102 +370,117 @@ impl DomainStatusBuilder {
     }
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
     pub fn processing(mut self, input: bool) -> Self {
-        self.processing = Some(input);
+        self.processing = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
-    pub fn set_processing(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_processing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.processing = input;
         self
     }
     /// <p>The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch Service is in the process of a version upgrade. False if the configuration is active.</p>
     pub fn upgrade_processing(mut self, input: bool) -> Self {
-        self.upgrade_processing = Some(input);
+        self.upgrade_processing = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch Service is in the process of a version upgrade. False if the configuration is active.</p>
-    pub fn set_upgrade_processing(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_upgrade_processing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.upgrade_processing = input;
         self
     }
     /// <p>Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code> or <code>OpenSearch_X.Y</code>.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code> or <code>OpenSearch_X.Y</code>.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>Container for the cluster configuration of the domain.</p>
     pub fn cluster_config(mut self, input: crate::types::ClusterConfig) -> Self {
-        self.cluster_config = Some(input);
+        self.cluster_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for the cluster configuration of the domain.</p>
     pub fn set_cluster_config(
         mut self,
-        input: std::option::Option<crate::types::ClusterConfig>,
+        input: ::std::option::Option<crate::types::ClusterConfig>,
     ) -> Self {
         self.cluster_config = input;
         self
     }
     /// <p>Container for EBS-based storage settings for the domain.</p>
     pub fn ebs_options(mut self, input: crate::types::EbsOptions) -> Self {
-        self.ebs_options = Some(input);
+        self.ebs_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for EBS-based storage settings for the domain.</p>
-    pub fn set_ebs_options(mut self, input: std::option::Option<crate::types::EbsOptions>) -> Self {
+    pub fn set_ebs_options(
+        mut self,
+        input: ::std::option::Option<crate::types::EbsOptions>,
+    ) -> Self {
         self.ebs_options = input;
         self
     }
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>
-    pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_policies = Some(input.into());
+    pub fn access_policies(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_policies = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identity and Access Management (IAM) policy document specifying the access policies for the domain.</p>
-    pub fn set_access_policies(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_policies(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_policies = input;
         self
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
-        self.snapshot_options = Some(input);
+        self.snapshot_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub fn set_snapshot_options(
         mut self,
-        input: std::option::Option<crate::types::SnapshotOptions>,
+        input: ::std::option::Option<crate::types::SnapshotOptions>,
     ) -> Self {
         self.snapshot_options = input;
         self
     }
     /// <p>The VPC configuration for the domain.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcDerivedInfo) -> Self {
-        self.vpc_options = Some(input);
+        self.vpc_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VPC configuration for the domain.</p>
     pub fn set_vpc_options(
         mut self,
-        input: std::option::Option<crate::types::VpcDerivedInfo>,
+        input: ::std::option::Option<crate::types::VpcDerivedInfo>,
     ) -> Self {
         self.vpc_options = input;
         self
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
     pub fn cognito_options(mut self, input: crate::types::CognitoOptions) -> Self {
-        self.cognito_options = Some(input);
+        self.cognito_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
     pub fn set_cognito_options(
         mut self,
-        input: std::option::Option<crate::types::CognitoOptions>,
+        input: ::std::option::Option<crate::types::CognitoOptions>,
     ) -> Self {
         self.cognito_options = input;
         self
@@ -466,13 +490,13 @@ impl DomainStatusBuilder {
         mut self,
         input: crate::types::EncryptionAtRestOptions,
     ) -> Self {
-        self.encryption_at_rest_options = Some(input);
+        self.encryption_at_rest_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Encryption at rest settings for the domain.</p>
     pub fn set_encryption_at_rest_options(
         mut self,
-        input: std::option::Option<crate::types::EncryptionAtRestOptions>,
+        input: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     ) -> Self {
         self.encryption_at_rest_options = input;
         self
@@ -482,13 +506,13 @@ impl DomainStatusBuilder {
         mut self,
         input: crate::types::NodeToNodeEncryptionOptions,
     ) -> Self {
-        self.node_to_node_encryption_options = Some(input);
+        self.node_to_node_encryption_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether node-to-node encryption is enabled or disabled.</p>
     pub fn set_node_to_node_encryption_options(
         mut self,
-        input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+        input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     ) -> Self {
         self.node_to_node_encryption_options = input;
         self
@@ -500,19 +524,19 @@ impl DomainStatusBuilder {
     /// <p>Key-value pairs that specify advanced configuration options.</p>
     pub fn advanced_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.advanced_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.advanced_options = Some(hash_map);
+        self.advanced_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Key-value pairs that specify advanced configuration options.</p>
     pub fn set_advanced_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.advanced_options = input;
@@ -530,14 +554,14 @@ impl DomainStatusBuilder {
     ) -> Self {
         let mut hash_map = self.log_publishing_options.unwrap_or_default();
         hash_map.insert(k, v);
-        self.log_publishing_options = Some(hash_map);
+        self.log_publishing_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Log publishing options for the domain.</p>
     pub fn set_log_publishing_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
         >,
     ) -> Self {
         self.log_publishing_options = input;
@@ -545,26 +569,26 @@ impl DomainStatusBuilder {
     }
     /// <p>The current status of the domain's service software.</p>
     pub fn service_software_options(mut self, input: crate::types::ServiceSoftwareOptions) -> Self {
-        self.service_software_options = Some(input);
+        self.service_software_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the domain's service software.</p>
     pub fn set_service_software_options(
         mut self,
-        input: std::option::Option<crate::types::ServiceSoftwareOptions>,
+        input: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     ) -> Self {
         self.service_software_options = input;
         self
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
-        self.domain_endpoint_options = Some(input);
+        self.domain_endpoint_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn set_domain_endpoint_options(
         mut self,
-        input: std::option::Option<crate::types::DomainEndpointOptions>,
+        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
     ) -> Self {
         self.domain_endpoint_options = input;
         self
@@ -574,65 +598,65 @@ impl DomainStatusBuilder {
         mut self,
         input: crate::types::AdvancedSecurityOptions,
     ) -> Self {
-        self.advanced_security_options = Some(input);
+        self.advanced_security_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings for fine-grained access control.</p>
     pub fn set_advanced_security_options(
         mut self,
-        input: std::option::Option<crate::types::AdvancedSecurityOptions>,
+        input: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     ) -> Self {
         self.advanced_security_options = input;
         self
     }
     /// <p>Auto-Tune settings for the domain.</p>
     pub fn auto_tune_options(mut self, input: crate::types::AutoTuneOptionsOutput) -> Self {
-        self.auto_tune_options = Some(input);
+        self.auto_tune_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Auto-Tune settings for the domain.</p>
     pub fn set_auto_tune_options(
         mut self,
-        input: std::option::Option<crate::types::AutoTuneOptionsOutput>,
+        input: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
     ) -> Self {
         self.auto_tune_options = input;
         self
     }
     /// <p>Information about a configuration change happening on the domain.</p>
     pub fn change_progress_details(mut self, input: crate::types::ChangeProgressDetails) -> Self {
-        self.change_progress_details = Some(input);
+        self.change_progress_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a configuration change happening on the domain.</p>
     pub fn set_change_progress_details(
         mut self,
-        input: std::option::Option<crate::types::ChangeProgressDetails>,
+        input: ::std::option::Option<crate::types::ChangeProgressDetails>,
     ) -> Self {
         self.change_progress_details = input;
         self
     }
     /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
     pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptions) -> Self {
-        self.off_peak_window_options = Some(input);
+        self.off_peak_window_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on the domain.</p>
     pub fn set_off_peak_window_options(
         mut self,
-        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+        input: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     ) -> Self {
         self.off_peak_window_options = input;
         self
     }
     /// <p>Service software update options for the domain.</p>
     pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptions) -> Self {
-        self.software_update_options = Some(input);
+        self.software_update_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Service software update options for the domain.</p>
     pub fn set_software_update_options(
         mut self,
-        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+        input: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     ) -> Self {
         self.software_update_options = input;
         self

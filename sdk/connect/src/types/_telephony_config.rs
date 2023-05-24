@@ -2,15 +2,15 @@
 
 /// <p>The distribution of traffic between the instance and its replicas.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelephonyConfig {
     /// <p>Information about traffic distributions.</p>
     #[doc(hidden)]
-    pub distributions: std::option::Option<std::vec::Vec<crate::types::Distribution>>,
+    pub distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
 }
 impl TelephonyConfig {
     /// <p>Information about traffic distributions.</p>
-    pub fn distributions(&self) -> std::option::Option<&[crate::types::Distribution]> {
+    pub fn distributions(&self) -> ::std::option::Option<&[crate::types::Distribution]> {
         self.distributions.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl TelephonyConfig {
 
 /// A builder for [`TelephonyConfig`](crate::types::TelephonyConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TelephonyConfigBuilder {
-    pub(crate) distributions: std::option::Option<std::vec::Vec<crate::types::Distribution>>,
+    pub(crate) distributions: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
 }
 impl TelephonyConfigBuilder {
     /// Appends an item to `distributions`.
@@ -36,13 +38,13 @@ impl TelephonyConfigBuilder {
     pub fn distributions(mut self, input: crate::types::Distribution) -> Self {
         let mut v = self.distributions.unwrap_or_default();
         v.push(input);
-        self.distributions = Some(v);
+        self.distributions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about traffic distributions.</p>
     pub fn set_distributions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Distribution>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Distribution>>,
     ) -> Self {
         self.distributions = input;
         self

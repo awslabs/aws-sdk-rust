@@ -2,22 +2,22 @@
 
 /// <p>Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ServerSideEncryptionTypes>,
+    pub r#type: ::std::option::Option<crate::types::ServerSideEncryptionTypes>,
 }
 impl ExportServerSideEncryption {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ServerSideEncryptionTypes> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ServerSideEncryptionTypes> {
         self.r#type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ExportServerSideEncryption {
 
 /// A builder for [`ExportServerSideEncryption`](crate::types::ExportServerSideEncryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportServerSideEncryptionBuilder {
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ServerSideEncryptionTypes>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ServerSideEncryptionTypes>,
 }
 impl ExportServerSideEncryptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms as an encryption type.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     pub fn r#type(mut self, input: crate::types::ServerSideEncryptionTypes) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of server side encryption used for encrypting the objects in Amazon S3.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ServerSideEncryptionTypes>,
+        input: ::std::option::Option<crate::types::ServerSideEncryptionTypes>,
     ) -> Self {
         self.r#type = input;
         self

@@ -2,11 +2,11 @@
 
 /// <p>Represents the response from the server for the request to add custom attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddCustomAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AddCustomAttributesOutput {
+impl ::aws_http::request_id::RequestId for AddCustomAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl AddCustomAttributesOutput {
 
 /// A builder for [`AddCustomAttributesOutput`](crate::operation::add_custom_attributes::AddCustomAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddCustomAttributesOutputBuilder {
     _request_id: Option<String>,
 }

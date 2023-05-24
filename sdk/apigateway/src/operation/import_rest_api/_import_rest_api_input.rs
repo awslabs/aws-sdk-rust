@@ -2,7 +2,7 @@
 
 /// <p>A POST request to import an API to API Gateway using an input of an API definition file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportRestApiInput {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     #[doc(hidden)]
@@ -14,11 +14,12 @@ pub struct ImportRestApiInput {
     /// <p>For example, the AWS CLI command to exclude documentation from the imported API is:</p>
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
     #[doc(hidden)]
-    pub body: std::option::Option<aws_smithy_types::Blob>,
+    pub body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportRestApiInput {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
@@ -33,12 +34,13 @@ impl ImportRestApiInput {
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
 }
@@ -51,21 +53,24 @@ impl ImportRestApiInput {
 
 /// A builder for [`ImportRestApiInput`](crate::operation::import_rest_api::ImportRestApiInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportRestApiInputBuilder {
-    pub(crate) fail_on_warnings: std::option::Option<bool>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) fail_on_warnings: ::std::option::Option<bool>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportRestApiInputBuilder {
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
     pub fn fail_on_warnings(mut self, input: bool) -> Self {
-        self.fail_on_warnings = Some(input);
+        self.fail_on_warnings = ::std::option::Option::Some(input);
         self
     }
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fail_on_warnings = input;
         self
     }
@@ -81,12 +86,12 @@ impl ImportRestApiInputBuilder {
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.</p>
@@ -97,31 +102,31 @@ impl ImportRestApiInputBuilder {
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-    pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.body = Some(input);
+    pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-    pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.body = input;
         self
     }
     /// Consumes the builder and constructs a [`ImportRestApiInput`](crate::operation::import_rest_api::ImportRestApiInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::import_rest_api::ImportRestApiInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::import_rest_api::ImportRestApiInput {
+        ::std::result::Result::Ok(crate::operation::import_rest_api::ImportRestApiInput {
             fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
             parameters: self.parameters,
             body: self.body,

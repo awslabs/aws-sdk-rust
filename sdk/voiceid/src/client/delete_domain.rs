@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDomain`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain_id): <p>The identifier of the domain you want to delete.</p>
+    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_domain::builders::DeleteDomainFluentBuilder::set_domain_id): <p>The identifier of the domain you want to delete.</p>
     /// - On success, responds with [`DeleteDomainOutput`](crate::operation::delete_domain::DeleteDomainOutput)
     /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::operation::delete_domain::DeleteDomainError)
     pub fn delete_domain(

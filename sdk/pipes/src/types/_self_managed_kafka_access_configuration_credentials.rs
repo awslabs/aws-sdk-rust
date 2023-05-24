@@ -2,16 +2,16 @@
 
 /// <p>The Secrets Manager secret that stores your stream credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SelfManagedKafkaAccessConfigurationCredentials {
     /// <p>The ARN of the Secrets Manager secret.</p>
-    BasicAuth(std::string::String),
+    BasicAuth(::std::string::String),
     /// <p>The ARN of the Secrets Manager secret.</p>
-    ClientCertificateTlsAuth(std::string::String),
+    ClientCertificateTlsAuth(::std::string::String),
     /// <p>The ARN of the Secrets Manager secret.</p>
-    SaslScram256Auth(std::string::String),
+    SaslScram256Auth(::std::string::String),
     /// <p>The ARN of the Secrets Manager secret.</p>
-    SaslScram512Auth(std::string::String),
+    SaslScram512Auth(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,55 +23,55 @@ pub enum SelfManagedKafkaAccessConfigurationCredentials {
     Unknown,
 }
 impl SelfManagedKafkaAccessConfigurationCredentials {
-    /// Tries to convert the enum instance into [`BasicAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::BasicAuth), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`BasicAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::BasicAuth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_basic_auth(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_basic_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SelfManagedKafkaAccessConfigurationCredentials::BasicAuth(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BasicAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::BasicAuth).
     pub fn is_basic_auth(&self) -> bool {
         self.as_basic_auth().is_ok()
     }
-    /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_client_certificate_tls_auth(
         &self,
-    ) -> std::result::Result<&std::string::String, &Self> {
+    ) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth(val) = &self
         {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ClientCertificateTlsAuth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth).
     pub fn is_client_certificate_tls_auth(&self) -> bool {
         self.as_client_certificate_tls_auth().is_ok()
     }
-    /// Tries to convert the enum instance into [`SaslScram256Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`SaslScram256Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sasl_scram256_auth(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_sasl_scram256_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SaslScram256Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth).
     pub fn is_sasl_scram256_auth(&self) -> bool {
         self.as_sasl_scram256_auth().is_ok()
     }
-    /// Tries to convert the enum instance into [`SaslScram512Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`SaslScram512Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sasl_scram512_auth(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_sasl_scram512_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SaslScram512Auth`](crate::types::SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth).

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DataCollectionType {
     /// PREMIUM
@@ -57,7 +57,7 @@ pub enum DataCollectionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DataCollectionType {
+impl ::std::convert::From<&str> for DataCollectionType {
     fn from(s: &str) -> Self {
         match s {
             "PREMIUM" => DataCollectionType::Premium,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DataCollectionType {
         }
     }
 }
-impl std::str::FromStr for DataCollectionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DataCollectionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataCollectionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DataCollectionType::from(s))
     }
 }
 impl DataCollectionType {
@@ -91,7 +91,7 @@ impl DataCollectionType {
         &["PREMIUM", "PUBLIC", "USER"]
     }
 }
-impl AsRef<str> for DataCollectionType {
+impl ::std::convert::AsRef<str> for DataCollectionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

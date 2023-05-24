@@ -2,29 +2,29 @@
 
 /// <p>Provides information about the category, types, and occurrences of sensitive data that produced a sensitive data finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SensitiveDataItem {
     /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::SensitiveDataItemCategory>,
+    pub category: ::std::option::Option<crate::types::SensitiveDataItemCategory>,
     /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
     #[doc(hidden)]
-    pub detections: std::option::Option<std::vec::Vec<crate::types::DefaultDetection>>,
+    pub detections: ::std::option::Option<::std::vec::Vec<crate::types::DefaultDetection>>,
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
     #[doc(hidden)]
-    pub total_count: std::option::Option<i64>,
+    pub total_count: ::std::option::Option<i64>,
 }
 impl SensitiveDataItem {
     /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
-    pub fn category(&self) -> std::option::Option<&crate::types::SensitiveDataItemCategory> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::SensitiveDataItemCategory> {
         self.category.as_ref()
     }
     /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
-    pub fn detections(&self) -> std::option::Option<&[crate::types::DefaultDetection]> {
+    pub fn detections(&self) -> ::std::option::Option<&[crate::types::DefaultDetection]> {
         self.detections.as_deref()
     }
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
-    pub fn total_count(&self) -> std::option::Option<i64> {
+    pub fn total_count(&self) -> ::std::option::Option<i64> {
         self.total_count
     }
 }
@@ -37,22 +37,24 @@ impl SensitiveDataItem {
 
 /// A builder for [`SensitiveDataItem`](crate::types::SensitiveDataItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SensitiveDataItemBuilder {
-    pub(crate) category: std::option::Option<crate::types::SensitiveDataItemCategory>,
-    pub(crate) detections: std::option::Option<std::vec::Vec<crate::types::DefaultDetection>>,
-    pub(crate) total_count: std::option::Option<i64>,
+    pub(crate) category: ::std::option::Option<crate::types::SensitiveDataItemCategory>,
+    pub(crate) detections: ::std::option::Option<::std::vec::Vec<crate::types::DefaultDetection>>,
+    pub(crate) total_count: ::std::option::Option<i64>,
 }
 impl SensitiveDataItemBuilder {
     /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     pub fn category(mut self, input: crate::types::SensitiveDataItemCategory) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
     pub fn set_category(
         mut self,
-        input: std::option::Option<crate::types::SensitiveDataItemCategory>,
+        input: ::std::option::Option<crate::types::SensitiveDataItemCategory>,
     ) -> Self {
         self.category = input;
         self
@@ -65,24 +67,24 @@ impl SensitiveDataItemBuilder {
     pub fn detections(mut self, input: crate::types::DefaultDetection) -> Self {
         let mut v = self.detections.unwrap_or_default();
         v.push(input);
-        self.detections = Some(v);
+        self.detections = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
     pub fn set_detections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DefaultDetection>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DefaultDetection>>,
     ) -> Self {
         self.detections = input;
         self
     }
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
     pub fn total_count(mut self, input: i64) -> Self {
-        self.total_count = Some(input);
+        self.total_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
-    pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
     }

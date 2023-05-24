@@ -2,22 +2,22 @@
 
 /// <p>Returns a list of VPC Ingress Connections based on the filter provided. It can return either <code>ServiceArn</code> or <code>VpcEndpointId</code>, or both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsFilter {
     /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
     #[doc(hidden)]
-    pub service_arn: std::option::Option<std::string::String>,
+    pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a VPC Endpoint to filter by. </p>
     #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ListVpcIngressConnectionsFilter {
     /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-    pub fn service_arn(&self) -> std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<&str> {
         self.service_arn.as_deref()
     }
     /// <p>The ID of a VPC Endpoint to filter by. </p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl ListVpcIngressConnectionsFilter {
 
 /// A builder for [`ListVpcIngressConnectionsFilter`](crate::types::ListVpcIngressConnectionsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListVpcIngressConnectionsFilterBuilder {
-    pub(crate) service_arn: std::option::Option<std::string::String>,
-    pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub(crate) service_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
 }
 impl ListVpcIngressConnectionsFilterBuilder {
     /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-    pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_arn = Some(input.into());
+    pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a service to filter by. </p>
-    pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
     }
     /// <p>The ID of a VPC Endpoint to filter by. </p>
-    pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_id = Some(input.into());
+    pub fn vpc_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a VPC Endpoint to filter by. </p>
-    pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vpc_endpoint_id = input;
         self
     }

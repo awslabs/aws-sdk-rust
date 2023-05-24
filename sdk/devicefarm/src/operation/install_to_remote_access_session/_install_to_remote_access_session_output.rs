@@ -2,20 +2,20 @@
 
 /// <p>Represents the response from the server after AWS Device Farm makes a request to install to a remote access session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstallToRemoteAccessSessionOutput {
     /// <p>An app to upload or that has been uploaded.</p>
     #[doc(hidden)]
-    pub app_upload: std::option::Option<crate::types::Upload>,
+    pub app_upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }
 impl InstallToRemoteAccessSessionOutput {
     /// <p>An app to upload or that has been uploaded.</p>
-    pub fn app_upload(&self) -> std::option::Option<&crate::types::Upload> {
+    pub fn app_upload(&self) -> ::std::option::Option<&crate::types::Upload> {
         self.app_upload.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for InstallToRemoteAccessSessionOutput {
+impl ::aws_http::request_id::RequestId for InstallToRemoteAccessSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl InstallToRemoteAccessSessionOutput {
 
 /// A builder for [`InstallToRemoteAccessSessionOutput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstallToRemoteAccessSessionOutputBuilder {
-    pub(crate) app_upload: std::option::Option<crate::types::Upload>,
+    pub(crate) app_upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }
 impl InstallToRemoteAccessSessionOutputBuilder {
     /// <p>An app to upload or that has been uploaded.</p>
     pub fn app_upload(mut self, input: crate::types::Upload) -> Self {
-        self.app_upload = Some(input);
+        self.app_upload = ::std::option::Option::Some(input);
         self
     }
     /// <p>An app to upload or that has been uploaded.</p>
-    pub fn set_app_upload(mut self, input: std::option::Option<crate::types::Upload>) -> Self {
+    pub fn set_app_upload(mut self, input: ::std::option::Option<crate::types::Upload>) -> Self {
         self.app_upload = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Specifies the conditions to evaluate for an event that applies to an activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventCondition {
     /// <p>The dimensions for the event filter to use for the activity.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<crate::types::EventDimensions>,
+    pub dimensions: ::std::option::Option<crate::types::EventDimensions>,
     /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
     #[doc(hidden)]
-    pub message_activity: std::option::Option<std::string::String>,
+    pub message_activity: ::std::option::Option<::std::string::String>,
 }
 impl EventCondition {
     /// <p>The dimensions for the event filter to use for the activity.</p>
-    pub fn dimensions(&self) -> std::option::Option<&crate::types::EventDimensions> {
+    pub fn dimensions(&self) -> ::std::option::Option<&crate::types::EventDimensions> {
         self.dimensions.as_ref()
     }
     /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
-    pub fn message_activity(&self) -> std::option::Option<&str> {
+    pub fn message_activity(&self) -> ::std::option::Option<&str> {
         self.message_activity.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl EventCondition {
 
 /// A builder for [`EventCondition`](crate::types::EventCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventConditionBuilder {
-    pub(crate) dimensions: std::option::Option<crate::types::EventDimensions>,
-    pub(crate) message_activity: std::option::Option<std::string::String>,
+    pub(crate) dimensions: ::std::option::Option<crate::types::EventDimensions>,
+    pub(crate) message_activity: ::std::option::Option<::std::string::String>,
 }
 impl EventConditionBuilder {
     /// <p>The dimensions for the event filter to use for the activity.</p>
     pub fn dimensions(mut self, input: crate::types::EventDimensions) -> Self {
-        self.dimensions = Some(input);
+        self.dimensions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dimensions for the event filter to use for the activity.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<crate::types::EventDimensions>,
+        input: ::std::option::Option<crate::types::EventDimensions>,
     ) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
-    pub fn message_activity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_activity = Some(input.into());
+    pub fn message_activity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.message_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
-    pub fn set_message_activity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_activity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.message_activity = input;
         self
     }

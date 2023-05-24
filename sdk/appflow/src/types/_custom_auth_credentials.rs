@@ -2,26 +2,28 @@
 
 /// <p>The custom credentials required for custom authentication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
     #[doc(hidden)]
-    pub custom_authentication_type: std::option::Option<std::string::String>,
+    pub custom_authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>A map that holds custom authentication credentials.</p>
     #[doc(hidden)]
-    pub credentials_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub credentials_map: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
-    pub fn custom_authentication_type(&self) -> std::option::Option<&str> {
+    pub fn custom_authentication_type(&self) -> ::std::option::Option<&str> {
         self.custom_authentication_type.as_deref()
     }
     /// <p>A map that holds custom authentication credentials.</p>
     pub fn credentials_map(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.credentials_map.as_ref()
     }
 }
@@ -34,22 +36,28 @@ impl CustomAuthCredentials {
 
 /// A builder for [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomAuthCredentialsBuilder {
-    pub(crate) custom_authentication_type: std::option::Option<std::string::String>,
-    pub(crate) credentials_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) custom_authentication_type: ::std::option::Option<::std::string::String>,
+    pub(crate) credentials_map: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CustomAuthCredentialsBuilder {
     /// <p>The custom authentication type that the connector uses.</p>
-    pub fn custom_authentication_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_authentication_type = Some(input.into());
+    pub fn custom_authentication_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_authentication_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom authentication type that the connector uses.</p>
     pub fn set_custom_authentication_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.custom_authentication_type = input;
         self
@@ -61,19 +69,19 @@ impl CustomAuthCredentialsBuilder {
     /// <p>A map that holds custom authentication credentials.</p>
     pub fn credentials_map(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.credentials_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.credentials_map = Some(hash_map);
+        self.credentials_map = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that holds custom authentication credentials.</p>
     pub fn set_credentials_map(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.credentials_map = input;

@@ -38,13 +38,13 @@
 /// There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ColorSpaceUsage {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ColorSpaceUsage {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ColorSpaceUsage {
+impl ::std::convert::From<&str> for ColorSpaceUsage {
     fn from(s: &str) -> Self {
         match s {
             "FALLBACK" => ColorSpaceUsage::Fallback,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ColorSpaceUsage {
         }
     }
 }
-impl std::str::FromStr for ColorSpaceUsage {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ColorSpaceUsage {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ColorSpaceUsage::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ColorSpaceUsage::from(s))
     }
 }
 impl ColorSpaceUsage {
@@ -86,7 +86,7 @@ impl ColorSpaceUsage {
         &["FALLBACK", "FORCE"]
     }
 }
-impl AsRef<str> for ColorSpaceUsage {
+impl ::std::convert::AsRef<str> for ColorSpaceUsage {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

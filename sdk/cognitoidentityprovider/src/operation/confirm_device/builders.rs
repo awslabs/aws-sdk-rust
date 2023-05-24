@@ -6,56 +6,59 @@ pub use crate::operation::confirm_device::_confirm_device_input::ConfirmDeviceIn
 /// Fluent builder constructing a request to `ConfirmDevice`.
 ///
 /// <p>Confirms tracking of the device. This API call is the call that begins device tracking.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfirmDeviceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder,
 }
 impl ConfirmDeviceFluentBuilder {
     /// Creates a new `ConfirmDevice`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::confirm_device::ConfirmDevice,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::confirm_device::ConfirmDeviceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl ConfirmDeviceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::confirm_device::ConfirmDeviceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>,
     > {
         self.send_middleware().await
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
         self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
     }
     /// <p>The device key.</p>
-    pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_key(input.into());
         self
     }
     /// <p>The device key.</p>
-    pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_key(input);
         self
     }
@@ -105,18 +108,18 @@ impl ConfirmDeviceFluentBuilder {
     /// <p>The configuration of the device secret verifier.</p>
     pub fn set_device_secret_verifier_config(
         mut self,
-        input: std::option::Option<crate::types::DeviceSecretVerifierConfigType>,
+        input: ::std::option::Option<crate::types::DeviceSecretVerifierConfigType>,
     ) -> Self {
         self.inner = self.inner.set_device_secret_verifier_config(input);
         self
     }
     /// <p>The device name.</p>
-    pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_name(input.into());
         self
     }
     /// <p>The device name.</p>
-    pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_name(input);
         self
     }

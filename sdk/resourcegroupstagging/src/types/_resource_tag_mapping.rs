@@ -2,29 +2,29 @@
 
 /// <p>A list of resource ARNs and the tags (keys and values) that are associated with each.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTagMapping {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
     #[doc(hidden)]
-    pub compliance_details: std::option::Option<crate::types::ComplianceDetails>,
+    pub compliance_details: ::std::option::Option<crate::types::ComplianceDetails>,
 }
 impl ResourceTagMapping {
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
-    pub fn compliance_details(&self) -> std::option::Option<&crate::types::ComplianceDetails> {
+    pub fn compliance_details(&self) -> ::std::option::Option<&crate::types::ComplianceDetails> {
         self.compliance_details.as_ref()
     }
 }
@@ -37,20 +37,22 @@ impl ResourceTagMapping {
 
 /// A builder for [`ResourceTagMapping`](crate::types::ResourceTagMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceTagMappingBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) compliance_details: std::option::Option<crate::types::ComplianceDetails>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) compliance_details: ::std::option::Option<crate::types::ComplianceDetails>,
 }
 impl ResourceTagMappingBuilder {
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
@@ -62,26 +64,26 @@ impl ResourceTagMappingBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags that have been applied to one or more Amazon Web Services resources.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
     pub fn compliance_details(mut self, input: crate::types::ComplianceDetails) -> Self {
-        self.compliance_details = Some(input);
+        self.compliance_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information that shows whether a resource is compliant with the effective tag policy, including details on any noncompliant tag keys.</p>
     pub fn set_compliance_details(
         mut self,
-        input: std::option::Option<crate::types::ComplianceDetails>,
+        input: ::std::option::Option<crate::types::ComplianceDetails>,
     ) -> Self {
         self.compliance_details = input;
         self

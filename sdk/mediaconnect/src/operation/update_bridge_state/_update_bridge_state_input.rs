@@ -2,22 +2,22 @@
 
 /// A request to update the bridge state.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeStateInput {
     /// The ARN of the bridge that you want to update.
     #[doc(hidden)]
-    pub bridge_arn: std::option::Option<std::string::String>,
+    pub bridge_arn: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub desired_state: std::option::Option<crate::types::DesiredState>,
+    pub desired_state: ::std::option::Option<crate::types::DesiredState>,
 }
 impl UpdateBridgeStateInput {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn desired_state(&self) -> std::option::Option<&crate::types::DesiredState> {
+    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::DesiredState> {
         self.desired_state.as_ref()
     }
 }
@@ -31,31 +31,33 @@ impl UpdateBridgeStateInput {
 
 /// A builder for [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateBridgeStateInputBuilder {
-    pub(crate) bridge_arn: std::option::Option<std::string::String>,
-    pub(crate) desired_state: std::option::Option<crate::types::DesiredState>,
+    pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) desired_state: ::std::option::Option<crate::types::DesiredState>,
 }
 impl UpdateBridgeStateInputBuilder {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bridge_arn = Some(input.into());
+    pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the bridge that you want to update.
-    pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
-        self.desired_state = Some(input);
+        self.desired_state = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_desired_state(
         mut self,
-        input: std::option::Option<crate::types::DesiredState>,
+        input: ::std::option::Option<crate::types::DesiredState>,
     ) -> Self {
         self.desired_state = input;
         self
@@ -63,11 +65,11 @@ impl UpdateBridgeStateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_bridge_state::UpdateBridgeStateInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_bridge_state::UpdateBridgeStateInput {
                 bridge_arn: self.bridge_arn,
                 desired_state: self.desired_state,

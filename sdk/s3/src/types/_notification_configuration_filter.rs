@@ -2,15 +2,15 @@
 
 /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfigurationFilter {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::S3KeyFilter>,
+    pub key: ::std::option::Option<crate::types::S3KeyFilter>,
 }
 impl NotificationConfigurationFilter {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::S3KeyFilter> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::S3KeyFilter> {
         self.key.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl NotificationConfigurationFilter {
 
 /// A builder for [`NotificationConfigurationFilter`](crate::types::NotificationConfigurationFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationConfigurationFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::S3KeyFilter>,
+    pub(crate) key: ::std::option::Option<crate::types::S3KeyFilter>,
 }
 impl NotificationConfigurationFilterBuilder {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
     pub fn key(mut self, input: crate::types::S3KeyFilter) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
-    pub fn set_key(mut self, input: std::option::Option<crate::types::S3KeyFilter>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::S3KeyFilter>) -> Self {
         self.key = input;
         self
     }

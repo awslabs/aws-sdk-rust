@@ -2,26 +2,26 @@
 
 /// <p>Describes a command.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Command {
     /// <p>The command ID.</p>
     #[doc(hidden)]
-    pub command_id: std::option::Option<std::string::String>,
+    pub command_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance where the command was executed.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The command deployment ID.</p>
     #[doc(hidden)]
-    pub deployment_id: std::option::Option<std::string::String>,
+    pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Date and time when the command was run.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<std::string::String>,
+    pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>Date and time when the command was acknowledged.</p>
     #[doc(hidden)]
-    pub acknowledged_at: std::option::Option<std::string::String>,
+    pub acknowledged_at: ::std::option::Option<::std::string::String>,
     /// <p>Date when the command completed.</p>
     #[doc(hidden)]
-    pub completed_at: std::option::Option<std::string::String>,
+    pub completed_at: ::std::option::Option<::std::string::String>,
     /// <p>The command status:</p>
     /// <ul>
     /// <li> <p>failed</p> </li>
@@ -30,13 +30,13 @@ pub struct Command {
     /// <li> <p>pending</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The command exit code.</p>
     #[doc(hidden)]
-    pub exit_code: std::option::Option<i32>,
+    pub exit_code: ::std::option::Option<i32>,
     /// <p>The URL of the command log.</p>
     #[doc(hidden)]
-    pub log_url: std::option::Option<std::string::String>,
+    pub log_url: ::std::option::Option<::std::string::String>,
     /// <p>The command type:</p>
     /// <ul>
     /// <li> <p> <code>configure</code> </p> </li>
@@ -53,31 +53,31 @@ pub struct Command {
     /// <li> <p> <code>update_dependencies</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl Command {
     /// <p>The command ID.</p>
-    pub fn command_id(&self) -> std::option::Option<&str> {
+    pub fn command_id(&self) -> ::std::option::Option<&str> {
         self.command_id.as_deref()
     }
     /// <p>The ID of the instance where the command was executed.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The command deployment ID.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p>Date and time when the command was run.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<&str> {
         self.created_at.as_deref()
     }
     /// <p>Date and time when the command was acknowledged.</p>
-    pub fn acknowledged_at(&self) -> std::option::Option<&str> {
+    pub fn acknowledged_at(&self) -> ::std::option::Option<&str> {
         self.acknowledged_at.as_deref()
     }
     /// <p>Date when the command completed.</p>
-    pub fn completed_at(&self) -> std::option::Option<&str> {
+    pub fn completed_at(&self) -> ::std::option::Option<&str> {
         self.completed_at.as_deref()
     }
     /// <p>The command status:</p>
@@ -87,15 +87,15 @@ impl Command {
     /// <li> <p>skipped</p> </li>
     /// <li> <p>pending</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The command exit code.</p>
-    pub fn exit_code(&self) -> std::option::Option<i32> {
+    pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
     }
     /// <p>The URL of the command log.</p>
-    pub fn log_url(&self) -> std::option::Option<&str> {
+    pub fn log_url(&self) -> ::std::option::Option<&str> {
         self.log_url.as_deref()
     }
     /// <p>The command type:</p>
@@ -113,7 +113,7 @@ impl Command {
     /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
     /// <li> <p> <code>update_dependencies</code> </p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -126,77 +126,91 @@ impl Command {
 
 /// A builder for [`Command`](crate::types::Command).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommandBuilder {
-    pub(crate) command_id: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) deployment_id: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<std::string::String>,
-    pub(crate) acknowledged_at: std::option::Option<std::string::String>,
-    pub(crate) completed_at: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) exit_code: std::option::Option<i32>,
-    pub(crate) log_url: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) command_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::std::string::String>,
+    pub(crate) acknowledged_at: ::std::option::Option<::std::string::String>,
+    pub(crate) completed_at: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) exit_code: ::std::option::Option<i32>,
+    pub(crate) log_url: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl CommandBuilder {
     /// <p>The command ID.</p>
-    pub fn command_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.command_id = Some(input.into());
+    pub fn command_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.command_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command ID.</p>
-    pub fn set_command_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_command_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.command_id = input;
         self
     }
     /// <p>The ID of the instance where the command was executed.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance where the command was executed.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The command deployment ID.</p>
-    pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_id = Some(input.into());
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command deployment ID.</p>
-    pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deployment_id = input;
         self
     }
     /// <p>Date and time when the command was run.</p>
-    pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_at = Some(input.into());
+    pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Date and time when the command was run.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
     }
     /// <p>Date and time when the command was acknowledged.</p>
-    pub fn acknowledged_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.acknowledged_at = Some(input.into());
+    pub fn acknowledged_at(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.acknowledged_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Date and time when the command was acknowledged.</p>
-    pub fn set_acknowledged_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_acknowledged_at(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.acknowledged_at = input;
         self
     }
     /// <p>Date when the command completed.</p>
-    pub fn completed_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.completed_at = Some(input.into());
+    pub fn completed_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.completed_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Date when the command completed.</p>
-    pub fn set_completed_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_completed_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completed_at = input;
         self
     }
@@ -207,8 +221,8 @@ impl CommandBuilder {
     /// <li> <p>skipped</p> </li>
     /// <li> <p>pending</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command status:</p>
@@ -218,27 +232,27 @@ impl CommandBuilder {
     /// <li> <p>skipped</p> </li>
     /// <li> <p>pending</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The command exit code.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
-        self.exit_code = Some(input);
+        self.exit_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The command exit code.</p>
-    pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.exit_code = input;
         self
     }
     /// <p>The URL of the command log.</p>
-    pub fn log_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_url = Some(input.into());
+    pub fn log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the command log.</p>
-    pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_url = input;
         self
     }
@@ -257,8 +271,8 @@ impl CommandBuilder {
     /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
     /// <li> <p> <code>update_dependencies</code> </p> </li>
     /// </ul>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command type:</p>
@@ -276,7 +290,7 @@ impl CommandBuilder {
     /// <li> <p> <code>update_custom_cookbooks</code> </p> </li>
     /// <li> <p> <code>update_dependencies</code> </p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

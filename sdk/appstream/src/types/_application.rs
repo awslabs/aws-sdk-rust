@@ -2,74 +2,75 @@
 
 /// <p>Describes an application in the application catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Application {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The application name to display.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the application icon. This URL might be time-limited.</p>
     #[doc(hidden)]
-    pub icon_url: std::option::Option<std::string::String>,
+    pub icon_url: ::std::option::Option<::std::string::String>,
     /// <p>The path to the application executable in the instance.</p>
     #[doc(hidden)]
-    pub launch_path: std::option::Option<std::string::String>,
+    pub launch_path: ::std::option::Option<::std::string::String>,
     /// <p>The arguments that are passed to the application at launch.</p>
     #[doc(hidden)]
-    pub launch_parameters: std::option::Option<std::string::String>,
+    pub launch_parameters: ::std::option::Option<::std::string::String>,
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
     #[doc(hidden)]
     pub enabled: bool,
     /// <p>Additional attributes that describe the application.</p>
     #[doc(hidden)]
-    pub metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The working directory for the application.</p>
     #[doc(hidden)]
-    pub working_directory: std::option::Option<std::string::String>,
+    pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the application.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The app block ARN of the application.</p>
     #[doc(hidden)]
-    pub app_block_arn: std::option::Option<std::string::String>,
+    pub app_block_arn: ::std::option::Option<::std::string::String>,
     /// <p>The S3 location of the application icon.</p>
     #[doc(hidden)]
-    pub icon_s3_location: std::option::Option<crate::types::S3Location>,
+    pub icon_s3_location: ::std::option::Option<crate::types::S3Location>,
     /// <p>The platforms on which the application can run.</p>
     #[doc(hidden)]
-    pub platforms: std::option::Option<std::vec::Vec<crate::types::PlatformType>>,
+    pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     /// <p>The instance families for the application.</p>
     #[doc(hidden)]
-    pub instance_families: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time at which the application was created within the app block.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Application {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The application name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The URL for the application icon. This URL might be time-limited.</p>
-    pub fn icon_url(&self) -> std::option::Option<&str> {
+    pub fn icon_url(&self) -> ::std::option::Option<&str> {
         self.icon_url.as_deref()
     }
     /// <p>The path to the application executable in the instance.</p>
-    pub fn launch_path(&self) -> std::option::Option<&str> {
+    pub fn launch_path(&self) -> ::std::option::Option<&str> {
         self.launch_path.as_deref()
     }
     /// <p>The arguments that are passed to the application at launch.</p>
-    pub fn launch_parameters(&self) -> std::option::Option<&str> {
+    pub fn launch_parameters(&self) -> ::std::option::Option<&str> {
         self.launch_parameters.as_deref()
     }
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
@@ -79,40 +80,41 @@ impl Application {
     /// <p>Additional attributes that describe the application.</p>
     pub fn metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.metadata.as_ref()
     }
     /// <p>The working directory for the application.</p>
-    pub fn working_directory(&self) -> std::option::Option<&str> {
+    pub fn working_directory(&self) -> ::std::option::Option<&str> {
         self.working_directory.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The app block ARN of the application.</p>
-    pub fn app_block_arn(&self) -> std::option::Option<&str> {
+    pub fn app_block_arn(&self) -> ::std::option::Option<&str> {
         self.app_block_arn.as_deref()
     }
     /// <p>The S3 location of the application icon.</p>
-    pub fn icon_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn icon_s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.icon_s3_location.as_ref()
     }
     /// <p>The platforms on which the application can run.</p>
-    pub fn platforms(&self) -> std::option::Option<&[crate::types::PlatformType]> {
+    pub fn platforms(&self) -> ::std::option::Option<&[crate::types::PlatformType]> {
         self.platforms.as_deref()
     }
     /// <p>The instance families for the application.</p>
-    pub fn instance_families(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_families(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_families.as_deref()
     }
     /// <p>The time at which the application was created within the app block.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -125,86 +127,92 @@ impl Application {
 
 /// A builder for [`Application`](crate::types::Application).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) icon_url: std::option::Option<std::string::String>,
-    pub(crate) launch_path: std::option::Option<std::string::String>,
-    pub(crate) launch_parameters: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) working_directory: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) app_block_arn: std::option::Option<std::string::String>,
-    pub(crate) icon_s3_location: std::option::Option<crate::types::S3Location>,
-    pub(crate) platforms: std::option::Option<std::vec::Vec<crate::types::PlatformType>>,
-    pub(crate) instance_families: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) icon_url: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_path: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_parameters: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) working_directory: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) app_block_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) icon_s3_location: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
+    pub(crate) instance_families: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ApplicationBuilder {
     /// <p>The name of the application.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The application name to display.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application name to display.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>The URL for the application icon. This URL might be time-limited.</p>
-    pub fn icon_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.icon_url = Some(input.into());
+    pub fn icon_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.icon_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the application icon. This URL might be time-limited.</p>
-    pub fn set_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_icon_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.icon_url = input;
         self
     }
     /// <p>The path to the application executable in the instance.</p>
-    pub fn launch_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_path = Some(input.into());
+    pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.launch_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the application executable in the instance.</p>
-    pub fn set_launch_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_path = input;
         self
     }
     /// <p>The arguments that are passed to the application at launch.</p>
-    pub fn launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_parameters = Some(input.into());
+    pub fn launch_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.launch_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The arguments that are passed to the application at launch.</p>
     pub fn set_launch_parameters(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.launch_parameters = input;
         self
     }
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>If there is a problem, the application can be disabled after image creation.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
@@ -215,76 +223,85 @@ impl ApplicationBuilder {
     /// <p>Additional attributes that describe the application.</p>
     pub fn metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.metadata = Some(hash_map);
+        self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Additional attributes that describe the application.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The working directory for the application.</p>
-    pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
-        self.working_directory = Some(input.into());
+    pub fn working_directory(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The working directory for the application.</p>
     pub fn set_working_directory(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.working_directory = input;
         self
     }
     /// <p>The description of the application.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the application.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The ARN of the application.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the application.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The app block ARN of the application.</p>
-    pub fn app_block_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_block_arn = Some(input.into());
+    pub fn app_block_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_block_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app block ARN of the application.</p>
-    pub fn set_app_block_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_block_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.app_block_arn = input;
         self
     }
     /// <p>The S3 location of the application icon.</p>
     pub fn icon_s3_location(mut self, input: crate::types::S3Location) -> Self {
-        self.icon_s3_location = Some(input);
+        self.icon_s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 location of the application icon.</p>
     pub fn set_icon_s3_location(
         mut self,
-        input: std::option::Option<crate::types::S3Location>,
+        input: ::std::option::Option<crate::types::S3Location>,
     ) -> Self {
         self.icon_s3_location = input;
         self
@@ -297,13 +314,13 @@ impl ApplicationBuilder {
     pub fn platforms(mut self, input: crate::types::PlatformType) -> Self {
         let mut v = self.platforms.unwrap_or_default();
         v.push(input);
-        self.platforms = Some(v);
+        self.platforms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The platforms on which the application can run.</p>
     pub fn set_platforms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlatformType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformType>>,
     ) -> Self {
         self.platforms = input;
         self
@@ -313,29 +330,32 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_instance_families`](Self::set_instance_families).
     ///
     /// <p>The instance families for the application.</p>
-    pub fn instance_families(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_families(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.instance_families.unwrap_or_default();
         v.push(input.into());
-        self.instance_families = Some(v);
+        self.instance_families = ::std::option::Option::Some(v);
         self
     }
     /// <p>The instance families for the application.</p>
     pub fn set_instance_families(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instance_families = input;
         self
     }
     /// <p>The time at which the application was created within the app block.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the application was created within the app block.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self

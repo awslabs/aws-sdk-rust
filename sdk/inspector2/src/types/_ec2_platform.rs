@@ -39,13 +39,13 @@
 /// _Note: `Ec2Platform::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Ec2Platform {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum Ec2Platform {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Ec2Platform {
+impl ::std::convert::From<&str> for Ec2Platform {
     fn from(s: &str) -> Self {
         match s {
             "LINUX" => Ec2Platform::Linux,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for Ec2Platform {
         }
     }
 }
-impl std::str::FromStr for Ec2Platform {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Ec2Platform {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Ec2Platform::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Ec2Platform::from(s))
     }
 }
 impl Ec2Platform {
@@ -89,7 +89,7 @@ impl Ec2Platform {
         &["LINUX", "UNKNOWN", "WINDOWS"]
     }
 }
-impl AsRef<str> for Ec2Platform {
+impl ::std::convert::AsRef<str> for Ec2Platform {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

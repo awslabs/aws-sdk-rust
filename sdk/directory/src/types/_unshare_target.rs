@@ -2,22 +2,22 @@
 
 /// <p>Identifier that contains details about the directory consumer account with whom the directory is being unshared.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnshareTarget {
     /// <p>Identifier of the directory consumer account.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::TargetType>,
+    pub r#type: ::std::option::Option<crate::types::TargetType>,
 }
 impl UnshareTarget {
     /// <p>Identifier of the directory consumer account.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TargetType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TargetType> {
         self.r#type.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl UnshareTarget {
 
 /// A builder for [`UnshareTarget`](crate::types::UnshareTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnshareTargetBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::TargetType>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TargetType>,
 }
 impl UnshareTargetBuilder {
     /// <p>Identifier of the directory consumer account.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the directory consumer account.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
     pub fn r#type(mut self, input: crate::types::TargetType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of identifier to be used in the <i>Id</i> field.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TargetType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TargetType>) -> Self {
         self.r#type = input;
         self
     }

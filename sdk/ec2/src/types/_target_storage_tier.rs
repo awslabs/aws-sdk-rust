@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetStorageTier {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum TargetStorageTier {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetStorageTier {
+impl ::std::convert::From<&str> for TargetStorageTier {
     fn from(s: &str) -> Self {
         match s {
             "archive" => TargetStorageTier::Archive,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for TargetStorageTier {
         }
     }
 }
-impl std::str::FromStr for TargetStorageTier {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetStorageTier {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetStorageTier::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetStorageTier::from(s))
     }
 }
 impl TargetStorageTier {
@@ -81,7 +81,7 @@ impl TargetStorageTier {
         &["archive"]
     }
 }
-impl AsRef<str> for TargetStorageTier {
+impl ::std::convert::AsRef<str> for TargetStorageTier {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

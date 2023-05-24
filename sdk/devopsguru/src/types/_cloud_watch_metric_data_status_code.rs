@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CloudWatchMetricDataStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum CloudWatchMetricDataStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CloudWatchMetricDataStatusCode {
+impl ::std::convert::From<&str> for CloudWatchMetricDataStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "Complete" => CloudWatchMetricDataStatusCode::Complete,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for CloudWatchMetricDataStatusCode {
         }
     }
 }
-impl std::str::FromStr for CloudWatchMetricDataStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CloudWatchMetricDataStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchMetricDataStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CloudWatchMetricDataStatusCode::from(s))
     }
 }
 impl CloudWatchMetricDataStatusCode {
@@ -91,7 +91,7 @@ impl CloudWatchMetricDataStatusCode {
         &["Complete", "InternalError", "PartialData"]
     }
 }
-impl AsRef<str> for CloudWatchMetricDataStatusCode {
+impl ::std::convert::AsRef<str> for CloudWatchMetricDataStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCallAnalyticsJob`](crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`call_analytics_job_name(impl Into<String>)`](crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobFluentBuilder::call_analytics_job_name) / [`set_call_analytics_job_name(Option<String>)`](crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobFluentBuilder::set_call_analytics_job_name): <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
+    ///   - [`call_analytics_job_name(impl ::std::convert::Into<String>)`](crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobFluentBuilder::call_analytics_job_name) / [`set_call_analytics_job_name(Option<String>)`](crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobFluentBuilder::set_call_analytics_job_name): <p>The name of the Call Analytics job you want information about. Job names are case sensitive.</p>
     /// - On success, responds with [`GetCallAnalyticsJobOutput`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobOutput) with field(s):
     ///   - [`call_analytics_job(Option<CallAnalyticsJob>)`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobOutput::call_analytics_job): <p>Provides detailed information about the specified Call Analytics job, including job status and, if applicable, failure reason.</p>
     /// - On failure, responds with [`SdkError<GetCallAnalyticsJobError>`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobError)

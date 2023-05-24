@@ -49,13 +49,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ScalingActivityStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,7 +87,7 @@ pub enum ScalingActivityStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ScalingActivityStatusCode {
+impl ::std::convert::From<&str> for ScalingActivityStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "Cancelled" => ScalingActivityStatusCode::Cancelled,
@@ -115,11 +115,11 @@ impl std::convert::From<&str> for ScalingActivityStatusCode {
         }
     }
 }
-impl std::str::FromStr for ScalingActivityStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ScalingActivityStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScalingActivityStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ScalingActivityStatusCode::from(s))
     }
 }
 impl ScalingActivityStatusCode {
@@ -167,7 +167,7 @@ impl ScalingActivityStatusCode {
         ]
     }
 }
-impl AsRef<str> for ScalingActivityStatusCode {
+impl ::std::convert::AsRef<str> for ScalingActivityStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

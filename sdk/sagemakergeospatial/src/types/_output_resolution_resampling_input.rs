@@ -2,15 +2,15 @@
 
 /// <p>OutputResolution Configuration indicating the target resolution for the output of Resampling operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputResolutionResamplingInput {
     /// <p>User Defined Resolution for the output of Resampling operation defined by value and unit.</p>
     #[doc(hidden)]
-    pub user_defined: std::option::Option<crate::types::UserDefined>,
+    pub user_defined: ::std::option::Option<crate::types::UserDefined>,
 }
 impl OutputResolutionResamplingInput {
     /// <p>User Defined Resolution for the output of Resampling operation defined by value and unit.</p>
-    pub fn user_defined(&self) -> std::option::Option<&crate::types::UserDefined> {
+    pub fn user_defined(&self) -> ::std::option::Option<&crate::types::UserDefined> {
         self.user_defined.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl OutputResolutionResamplingInput {
 
 /// A builder for [`OutputResolutionResamplingInput`](crate::types::OutputResolutionResamplingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputResolutionResamplingInputBuilder {
-    pub(crate) user_defined: std::option::Option<crate::types::UserDefined>,
+    pub(crate) user_defined: ::std::option::Option<crate::types::UserDefined>,
 }
 impl OutputResolutionResamplingInputBuilder {
     /// <p>User Defined Resolution for the output of Resampling operation defined by value and unit.</p>
     pub fn user_defined(mut self, input: crate::types::UserDefined) -> Self {
-        self.user_defined = Some(input);
+        self.user_defined = ::std::option::Option::Some(input);
         self
     }
     /// <p>User Defined Resolution for the output of Resampling operation defined by value and unit.</p>
     pub fn set_user_defined(
         mut self,
-        input: std::option::Option<crate::types::UserDefined>,
+        input: ::std::option::Option<crate::types::UserDefined>,
     ) -> Self {
         self.user_defined = input;
         self

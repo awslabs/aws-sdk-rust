@@ -2,22 +2,22 @@
 
 /// <p>A filter that uses both column-level and row-level filtering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnRowFilter {
     /// <p>A string containing the name of the column.</p>
     #[doc(hidden)]
-    pub column_name: std::option::Option<std::string::String>,
+    pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the row-level filter expression.</p>
     #[doc(hidden)]
-    pub row_filter_expression: std::option::Option<std::string::String>,
+    pub row_filter_expression: ::std::option::Option<::std::string::String>,
 }
 impl ColumnRowFilter {
     /// <p>A string containing the name of the column.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> ::std::option::Option<&str> {
         self.column_name.as_deref()
     }
     /// <p>A string containing the row-level filter expression.</p>
-    pub fn row_filter_expression(&self) -> std::option::Option<&str> {
+    pub fn row_filter_expression(&self) -> ::std::option::Option<&str> {
         self.row_filter_expression.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl ColumnRowFilter {
 
 /// A builder for [`ColumnRowFilter`](crate::types::ColumnRowFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnRowFilterBuilder {
-    pub(crate) column_name: std::option::Option<std::string::String>,
-    pub(crate) row_filter_expression: std::option::Option<std::string::String>,
+    pub(crate) column_name: ::std::option::Option<::std::string::String>,
+    pub(crate) row_filter_expression: ::std::option::Option<::std::string::String>,
 }
 impl ColumnRowFilterBuilder {
     /// <p>A string containing the name of the column.</p>
-    pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.column_name = Some(input.into());
+    pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing the name of the column.</p>
-    pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
     }
     /// <p>A string containing the row-level filter expression.</p>
-    pub fn row_filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.row_filter_expression = Some(input.into());
+    pub fn row_filter_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.row_filter_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing the row-level filter expression.</p>
     pub fn set_row_filter_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.row_filter_expression = input;
         self

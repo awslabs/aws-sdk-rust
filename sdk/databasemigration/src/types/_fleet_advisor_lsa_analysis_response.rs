@@ -2,22 +2,22 @@
 
 /// <p>Describes a large-scale assessment (LSA) analysis run by a Fleet Advisor collector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetAdvisorLsaAnalysisResponse {
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
     #[doc(hidden)]
-    pub lsa_analysis_id: std::option::Option<std::string::String>,
+    pub lsa_analysis_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl FleetAdvisorLsaAnalysisResponse {
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn lsa_analysis_id(&self) -> std::option::Option<&str> {
+    pub fn lsa_analysis_id(&self) -> ::std::option::Option<&str> {
         self.lsa_analysis_id.as_deref()
     }
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl FleetAdvisorLsaAnalysisResponse {
 
 /// A builder for [`FleetAdvisorLsaAnalysisResponse`](crate::types::FleetAdvisorLsaAnalysisResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FleetAdvisorLsaAnalysisResponseBuilder {
-    pub(crate) lsa_analysis_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) lsa_analysis_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl FleetAdvisorLsaAnalysisResponseBuilder {
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn lsa_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lsa_analysis_id = Some(input.into());
+    pub fn lsa_analysis_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lsa_analysis_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn set_lsa_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lsa_analysis_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.lsa_analysis_id = input;
         self
     }
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

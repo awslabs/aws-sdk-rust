@@ -2,7 +2,7 @@
 
 /// <p>Information about the option range used for scoring in numeric questions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormNumericQuestionOption {
     /// <p>The minimum answer value of the range option.</p>
     #[doc(hidden)]
@@ -44,51 +44,53 @@ impl EvaluationFormNumericQuestionOption {
 
 /// A builder for [`EvaluationFormNumericQuestionOption`](crate::types::EvaluationFormNumericQuestionOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationFormNumericQuestionOptionBuilder {
-    pub(crate) min_value: std::option::Option<i32>,
-    pub(crate) max_value: std::option::Option<i32>,
-    pub(crate) score: std::option::Option<i32>,
-    pub(crate) automatic_fail: std::option::Option<bool>,
+    pub(crate) min_value: ::std::option::Option<i32>,
+    pub(crate) max_value: ::std::option::Option<i32>,
+    pub(crate) score: ::std::option::Option<i32>,
+    pub(crate) automatic_fail: ::std::option::Option<bool>,
 }
 impl EvaluationFormNumericQuestionOptionBuilder {
     /// <p>The minimum answer value of the range option.</p>
     pub fn min_value(mut self, input: i32) -> Self {
-        self.min_value = Some(input);
+        self.min_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum answer value of the range option.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_value = input;
         self
     }
     /// <p>The maximum answer value of the range option.</p>
     pub fn max_value(mut self, input: i32) -> Self {
-        self.max_value = Some(input);
+        self.max_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum answer value of the range option.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_value = input;
         self
     }
     /// <p>The score assigned to answer values within the range option.</p>
     pub fn score(mut self, input: i32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The score assigned to answer values within the range option.</p>
-    pub fn set_score(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<i32>) -> Self {
         self.score = input;
         self
     }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
     pub fn automatic_fail(mut self, input: bool) -> Self {
-        self.automatic_fail = Some(input);
+        self.automatic_fail = ::std::option::Option::Some(input);
         self
     }
     /// <p>The flag to mark the option as automatic fail. If an automatic fail answer is provided, the overall evaluation gets a score of 0.</p>
-    pub fn set_automatic_fail(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_fail = input;
         self
     }

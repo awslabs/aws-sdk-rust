@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BackupStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BackupStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BackupStatus {
+impl ::std::convert::From<&str> for BackupStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => BackupStatus::Available,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for BackupStatus {
         }
     }
 }
-impl std::str::FromStr for BackupStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BackupStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BackupStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BackupStatus::from(s))
     }
 }
 impl BackupStatus {
@@ -91,7 +91,7 @@ impl BackupStatus {
         &["AVAILABLE", "CREATING", "DELETED"]
     }
 }
-impl AsRef<str> for BackupStatus {
+impl ::std::convert::AsRef<str> for BackupStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

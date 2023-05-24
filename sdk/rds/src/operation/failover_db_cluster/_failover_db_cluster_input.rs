@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailoverDbClusterInput {
     /// <p>A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -10,12 +10,12 @@ pub struct FailoverDbClusterInput {
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_cluster_identifier: std::option::Option<std::string::String>,
+    pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
     #[doc(hidden)]
-    pub target_db_instance_identifier: std::option::Option<std::string::String>,
+    pub target_db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl FailoverDbClusterInput {
     /// <p>A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
@@ -23,13 +23,13 @@ impl FailoverDbClusterInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
-    pub fn target_db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn target_db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.target_db_instance_identifier.as_deref()
     }
 }
@@ -43,10 +43,12 @@ impl FailoverDbClusterInput {
 
 /// A builder for [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailoverDbClusterInputBuilder {
-    pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) target_db_instance_identifier: std::option::Option<std::string::String>,
+    pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) target_db_instance_identifier: ::std::option::Option<::std::string::String>,
 }
 impl FailoverDbClusterInputBuilder {
     /// <p>A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
@@ -54,8 +56,11 @@ impl FailoverDbClusterInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_identifier = Some(input.into());
+    pub fn db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
@@ -65,7 +70,7 @@ impl FailoverDbClusterInputBuilder {
     /// </ul>
     pub fn set_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_identifier = input;
         self
@@ -73,8 +78,11 @@ impl FailoverDbClusterInputBuilder {
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
     /// <p>Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example <code>mydbcluster-replica1</code>.</p>
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
-    pub fn target_db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_db_instance_identifier = Some(input.into());
+    pub fn target_db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB instance to promote to the primary DB instance.</p>
@@ -82,7 +90,7 @@ impl FailoverDbClusterInputBuilder {
     /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
     pub fn set_target_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_db_instance_identifier = input;
         self
@@ -90,11 +98,11 @@ impl FailoverDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::failover_db_cluster::FailoverDbClusterInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::failover_db_cluster::FailoverDbClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 target_db_instance_identifier: self.target_db_instance_identifier,

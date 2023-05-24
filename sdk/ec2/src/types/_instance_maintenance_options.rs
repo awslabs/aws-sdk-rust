@@ -2,15 +2,15 @@
 
 /// <p>The maintenance options for the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceMaintenanceOptions {
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
     #[doc(hidden)]
-    pub auto_recovery: std::option::Option<crate::types::InstanceAutoRecoveryState>,
+    pub auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
 }
 impl InstanceMaintenanceOptions {
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
-    pub fn auto_recovery(&self) -> std::option::Option<&crate::types::InstanceAutoRecoveryState> {
+    pub fn auto_recovery(&self) -> ::std::option::Option<&crate::types::InstanceAutoRecoveryState> {
         self.auto_recovery.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl InstanceMaintenanceOptions {
 
 /// A builder for [`InstanceMaintenanceOptions`](crate::types::InstanceMaintenanceOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceMaintenanceOptionsBuilder {
-    pub(crate) auto_recovery: std::option::Option<crate::types::InstanceAutoRecoveryState>,
+    pub(crate) auto_recovery: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
 }
 impl InstanceMaintenanceOptionsBuilder {
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
     pub fn auto_recovery(mut self, input: crate::types::InstanceAutoRecoveryState) -> Self {
-        self.auto_recovery = Some(input);
+        self.auto_recovery = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information on the current automatic recovery behavior of your instance.</p>
     pub fn set_auto_recovery(
         mut self,
-        input: std::option::Option<crate::types::InstanceAutoRecoveryState>,
+        input: ::std::option::Option<crate::types::InstanceAutoRecoveryState>,
     ) -> Self {
         self.auto_recovery = input;
         self

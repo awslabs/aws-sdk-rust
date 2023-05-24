@@ -2,55 +2,55 @@
 
 /// <p>A complex type that contains the response to a <code>TestDNSAnswer</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestDnsAnswerOutput {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
     #[doc(hidden)]
-    pub nameserver: std::option::Option<std::string::String>,
+    pub nameserver: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource record set that you submitted a request for.</p>
     #[doc(hidden)]
-    pub record_name: std::option::Option<std::string::String>,
+    pub record_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource record set that you submitted a request for.</p>
     #[doc(hidden)]
-    pub record_type: std::option::Option<crate::types::RrType>,
+    pub record_type: ::std::option::Option<crate::types::RrType>,
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
     #[doc(hidden)]
-    pub record_data: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub record_data: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
     #[doc(hidden)]
-    pub response_code: std::option::Option<std::string::String>,
+    pub response_code: ::std::option::Option<::std::string::String>,
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<std::string::String>,
+    pub protocol: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl TestDnsAnswerOutput {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
-    pub fn nameserver(&self) -> std::option::Option<&str> {
+    pub fn nameserver(&self) -> ::std::option::Option<&str> {
         self.nameserver.as_deref()
     }
     /// <p>The name of the resource record set that you submitted a request for.</p>
-    pub fn record_name(&self) -> std::option::Option<&str> {
+    pub fn record_name(&self) -> ::std::option::Option<&str> {
         self.record_name.as_deref()
     }
     /// <p>The type of the resource record set that you submitted a request for.</p>
-    pub fn record_type(&self) -> std::option::Option<&crate::types::RrType> {
+    pub fn record_type(&self) -> ::std::option::Option<&crate::types::RrType> {
         self.record_type.as_ref()
     }
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    pub fn record_data(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn record_data(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.record_data.as_deref()
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
-    pub fn response_code(&self) -> std::option::Option<&str> {
+    pub fn response_code(&self) -> ::std::option::Option<&str> {
         self.response_code.as_deref()
     }
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for TestDnsAnswerOutput {
+impl ::aws_http::request_id::RequestId for TestDnsAnswerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -64,44 +64,46 @@ impl TestDnsAnswerOutput {
 
 /// A builder for [`TestDnsAnswerOutput`](crate::operation::test_dns_answer::TestDnsAnswerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestDnsAnswerOutputBuilder {
-    pub(crate) nameserver: std::option::Option<std::string::String>,
-    pub(crate) record_name: std::option::Option<std::string::String>,
-    pub(crate) record_type: std::option::Option<crate::types::RrType>,
-    pub(crate) record_data: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) response_code: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<std::string::String>,
+    pub(crate) nameserver: ::std::option::Option<::std::string::String>,
+    pub(crate) record_name: ::std::option::Option<::std::string::String>,
+    pub(crate) record_type: ::std::option::Option<crate::types::RrType>,
+    pub(crate) record_data: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) response_code: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl TestDnsAnswerOutputBuilder {
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
-    pub fn nameserver(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nameserver = Some(input.into());
+    pub fn nameserver(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.nameserver = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Route 53 name server used to respond to the request.</p>
-    pub fn set_nameserver(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nameserver(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nameserver = input;
         self
     }
     /// <p>The name of the resource record set that you submitted a request for.</p>
-    pub fn record_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.record_name = Some(input.into());
+    pub fn record_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.record_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource record set that you submitted a request for.</p>
-    pub fn set_record_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_name = input;
         self
     }
     /// <p>The type of the resource record set that you submitted a request for.</p>
     pub fn record_type(mut self, input: crate::types::RrType) -> Self {
-        self.record_type = Some(input);
+        self.record_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the resource record set that you submitted a request for.</p>
-    pub fn set_record_type(mut self, input: std::option::Option<crate::types::RrType>) -> Self {
+    pub fn set_record_type(mut self, input: ::std::option::Option<crate::types::RrType>) -> Self {
         self.record_type = input;
         self
     }
@@ -110,37 +112,43 @@ impl TestDnsAnswerOutputBuilder {
     /// To override the contents of this collection use [`set_record_data`](Self::set_record_data).
     ///
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
-    pub fn record_data(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn record_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.record_data.unwrap_or_default();
         v.push(input.into());
-        self.record_data = Some(v);
+        self.record_data = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
     pub fn set_record_data(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.record_data = input;
         self
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
-    pub fn response_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.response_code = Some(input.into());
+    pub fn response_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.response_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error. For a list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
-    pub fn set_response_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_response_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.response_code = input;
         self
     }
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protocol = Some(input.into());
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }

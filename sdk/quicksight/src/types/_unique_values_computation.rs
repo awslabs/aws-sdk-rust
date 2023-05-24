@@ -2,29 +2,29 @@
 
 /// <p>The unique values computation configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UniqueValuesComputation {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
-    pub computation_id: std::option::Option<std::string::String>,
+    pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The category field that is used in a computation.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::DimensionField>,
+    pub category: ::std::option::Option<crate::types::DimensionField>,
 }
 impl UniqueValuesComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> std::option::Option<&str> {
+    pub fn computation_id(&self) -> ::std::option::Option<&str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The category field that is used in a computation.</p>
-    pub fn category(&self) -> std::option::Option<&crate::types::DimensionField> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::DimensionField> {
         self.category.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl UniqueValuesComputation {
 
 /// A builder for [`UniqueValuesComputation`](crate::types::UniqueValuesComputation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UniqueValuesComputationBuilder {
-    pub(crate) computation_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) category: std::option::Option<crate::types::DimensionField>,
+    pub(crate) computation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<crate::types::DimensionField>,
 }
 impl UniqueValuesComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.computation_id = Some(input.into());
+    pub fn computation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_computation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.computation_id = input;
         self
     }
     /// <p>The name of a computation.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a computation.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn set_category(
         mut self,
-        input: std::option::Option<crate::types::DimensionField>,
+        input: ::std::option::Option<crate::types::DimensionField>,
     ) -> Self {
         self.category = input;
         self

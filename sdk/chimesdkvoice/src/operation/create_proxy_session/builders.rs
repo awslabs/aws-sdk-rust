@@ -6,29 +6,29 @@ pub use crate::operation::create_proxy_session::_create_proxy_session_input::Cre
 /// Fluent builder constructing a request to `CreateProxySession`.
 ///
 /// <p>Creates a proxy session for the specified Amazon Chime SDK Voice Connector for the specified participant phone numbers.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProxySessionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_proxy_session::builders::CreateProxySessionInputBuilder,
 }
 impl CreateProxySessionFluentBuilder {
     /// Creates a new `CreateProxySession`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_proxy_session::CreateProxySession,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_proxy_session::CreateProxySessionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateProxySessionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_proxy_session::CreateProxySessionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_proxy_session::CreateProxySessionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl CreateProxySessionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_proxy_session::CreateProxySessionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_proxy_session::CreateProxySessionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn voice_connector_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
@@ -98,25 +104,28 @@ impl CreateProxySessionFluentBuilder {
     /// To override the contents of this collection use [`set_participant_phone_numbers`](Self::set_participant_phone_numbers).
     ///
     /// <p>The participant phone numbers.</p>
-    pub fn participant_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn participant_phone_numbers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.participant_phone_numbers(input.into());
         self
     }
     /// <p>The participant phone numbers.</p>
     pub fn set_participant_phone_numbers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_participant_phone_numbers(input);
         self
     }
     /// <p>The name of the proxy session.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the proxy session.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -126,7 +135,7 @@ impl CreateProxySessionFluentBuilder {
         self
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
-    pub fn set_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_expiry_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiry_minutes(input);
         self
     }
@@ -142,7 +151,7 @@ impl CreateProxySessionFluentBuilder {
     /// <p>The proxy session's capabilities.</p>
     pub fn set_capabilities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Capability>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     ) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
@@ -158,7 +167,7 @@ impl CreateProxySessionFluentBuilder {
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
     pub fn set_number_selection_behavior(
         mut self,
-        input: std::option::Option<crate::types::NumberSelectionBehavior>,
+        input: ::std::option::Option<crate::types::NumberSelectionBehavior>,
     ) -> Self {
         self.inner = self.inner.set_number_selection_behavior(input);
         self
@@ -171,7 +180,7 @@ impl CreateProxySessionFluentBuilder {
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn set_geo_match_level(
         mut self,
-        input: std::option::Option<crate::types::GeoMatchLevel>,
+        input: ::std::option::Option<crate::types::GeoMatchLevel>,
     ) -> Self {
         self.inner = self.inner.set_geo_match_level(input);
         self
@@ -184,7 +193,7 @@ impl CreateProxySessionFluentBuilder {
     /// <p>The country and area code for the proxy phone number.</p>
     pub fn set_geo_match_params(
         mut self,
-        input: std::option::Option<crate::types::GeoMatchParams>,
+        input: ::std::option::Option<crate::types::GeoMatchParams>,
     ) -> Self {
         self.inner = self.inner.set_geo_match_params(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetExtension`](crate::operation::get_extension::builders::GetExtensionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`extension_identifier(impl Into<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_extension_identifier): <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
+    ///   - [`extension_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::extension_identifier) / [`set_extension_identifier(Option<String>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_extension_identifier): <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     ///   - [`version_number(i32)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::version_number) / [`set_version_number(Option<i32>)`](crate::operation::get_extension::builders::GetExtensionFluentBuilder::set_version_number): <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
     /// - On success, responds with [`GetExtensionOutput`](crate::operation::get_extension::GetExtensionOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_extension::GetExtensionOutput::id): <p>The system-generated ID of the extension.</p>

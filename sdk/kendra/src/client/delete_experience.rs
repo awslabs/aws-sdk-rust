@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteExperience`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::set_id): <p>The identifier of your Amazon Kendra experience you want to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::set_id): <p>The identifier of your Amazon Kendra experience you want to delete.</p>
+    ///   - [`index_id(impl ::std::convert::Into<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::delete_experience::builders::DeleteExperienceFluentBuilder::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
     /// - On success, responds with [`DeleteExperienceOutput`](crate::operation::delete_experience::DeleteExperienceOutput)
     /// - On failure, responds with [`SdkError<DeleteExperienceError>`](crate::operation::delete_experience::DeleteExperienceError)
     pub fn delete_experience(

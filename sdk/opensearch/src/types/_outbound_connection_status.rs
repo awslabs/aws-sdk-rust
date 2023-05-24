@@ -2,7 +2,7 @@
 
 /// <p>The status of an outbound cross-cluster connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutboundConnectionStatus {
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
     /// <ul>
@@ -18,10 +18,10 @@ pub struct OutboundConnectionStatus {
     /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::OutboundConnectionStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::OutboundConnectionStatusCode>,
     /// <p>Verbose information for the outbound connection.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl OutboundConnectionStatus {
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
@@ -37,11 +37,13 @@ impl OutboundConnectionStatus {
     /// <li> <p> <b>DELETING</b> - Outbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::OutboundConnectionStatusCode> {
+    pub fn status_code(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OutboundConnectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Verbose information for the outbound connection.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -54,10 +56,12 @@ impl OutboundConnectionStatus {
 
 /// A builder for [`OutboundConnectionStatus`](crate::types::OutboundConnectionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutboundConnectionStatusBuilder {
-    pub(crate) status_code: std::option::Option<crate::types::OutboundConnectionStatusCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) status_code: ::std::option::Option<crate::types::OutboundConnectionStatusCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl OutboundConnectionStatusBuilder {
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
@@ -74,7 +78,7 @@ impl OutboundConnectionStatusBuilder {
     /// <li> <p> <b>DELETED</b> - Outbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     pub fn status_code(mut self, input: crate::types::OutboundConnectionStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code for the outbound connection. Can be one of the following:</p>
@@ -92,18 +96,18 @@ impl OutboundConnectionStatusBuilder {
     /// </ul>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::OutboundConnectionStatusCode>,
+        input: ::std::option::Option<crate::types::OutboundConnectionStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p>Verbose information for the outbound connection.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Verbose information for the outbound connection.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

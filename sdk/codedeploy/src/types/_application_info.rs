@@ -2,38 +2,38 @@
 
 /// <p>Information about an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationInfo {
     /// <p>The application ID.</p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The application name.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the application was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
     #[doc(hidden)]
     pub linked_to_git_hub: bool,
     /// <p>The name for a connection to a GitHub account.</p>
     #[doc(hidden)]
-    pub git_hub_account_name: std::option::Option<std::string::String>,
+    pub git_hub_account_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
     #[doc(hidden)]
-    pub compute_platform: std::option::Option<crate::types::ComputePlatform>,
+    pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
 }
 impl ApplicationInfo {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The application name.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The time at which the application was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
@@ -41,11 +41,11 @@ impl ApplicationInfo {
         self.linked_to_git_hub
     }
     /// <p>The name for a connection to a GitHub account.</p>
-    pub fn git_hub_account_name(&self) -> std::option::Option<&str> {
+    pub fn git_hub_account_name(&self) -> ::std::option::Option<&str> {
         self.git_hub_account_name.as_deref()
     }
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
-    pub fn compute_platform(&self) -> std::option::Option<&crate::types::ComputePlatform> {
+    pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
 }
@@ -58,81 +58,98 @@ impl ApplicationInfo {
 
 /// A builder for [`ApplicationInfo`](crate::types::ApplicationInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationInfoBuilder {
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) linked_to_git_hub: std::option::Option<bool>,
-    pub(crate) git_hub_account_name: std::option::Option<std::string::String>,
-    pub(crate) compute_platform: std::option::Option<crate::types::ComputePlatform>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) linked_to_git_hub: ::std::option::Option<bool>,
+    pub(crate) git_hub_account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
 }
 impl ApplicationInfoBuilder {
     /// <p>The application ID.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application ID.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
     /// <p>The application name.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application name.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>The time at which the application was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the application was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
     pub fn linked_to_git_hub(mut self, input: bool) -> Self {
-        self.linked_to_git_hub = Some(input);
+        self.linked_to_git_hub = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if the user has authenticated with GitHub for the specified application. Otherwise, false.</p>
-    pub fn set_linked_to_git_hub(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_linked_to_git_hub(mut self, input: ::std::option::Option<bool>) -> Self {
         self.linked_to_git_hub = input;
         self
     }
     /// <p>The name for a connection to a GitHub account.</p>
-    pub fn git_hub_account_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.git_hub_account_name = Some(input.into());
+    pub fn git_hub_account_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.git_hub_account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for a connection to a GitHub account.</p>
     pub fn set_git_hub_account_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.git_hub_account_name = input;
         self
     }
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
     pub fn compute_platform(mut self, input: crate::types::ComputePlatform) -> Self {
-        self.compute_platform = Some(input);
+        self.compute_platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).</p>
     pub fn set_compute_platform(
         mut self,
-        input: std::option::Option<crate::types::ComputePlatform>,
+        input: ::std::option::Option<crate::types::ComputePlatform>,
     ) -> Self {
         self.compute_platform = input;
         self

@@ -2,50 +2,50 @@
 
 /// <p>The summary of the properties of a stage deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageDeploymentSummary {
     /// <p>The identifier of the deployment.</p>
     #[doc(hidden)]
-    pub deployment_id: std::option::Option<std::string::String>,
+    pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of action of the deployment.</p>
     #[doc(hidden)]
-    pub deployment_action: std::option::Option<crate::types::DeploymentAction>,
+    pub deployment_action: ::std::option::Option<crate::types::DeploymentAction>,
     /// <p>The state of the deployment.</p>
     #[doc(hidden)]
-    pub deployment_state: std::option::Option<crate::types::DeploymentState>,
+    pub deployment_state: ::std::option::Option<crate::types::DeploymentState>,
     /// <p>The timestamp of when the deployment was last updated.</p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The result of the deployment.</p>
     #[doc(hidden)]
-    pub deployment_result: std::option::Option<crate::types::DeploymentResult>,
+    pub deployment_result: ::std::option::Option<crate::types::DeploymentResult>,
 }
 impl StageDeploymentSummary {
     /// <p>The identifier of the deployment.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The type of action of the deployment.</p>
-    pub fn deployment_action(&self) -> std::option::Option<&crate::types::DeploymentAction> {
+    pub fn deployment_action(&self) -> ::std::option::Option<&crate::types::DeploymentAction> {
         self.deployment_action.as_ref()
     }
     /// <p>The state of the deployment.</p>
-    pub fn deployment_state(&self) -> std::option::Option<&crate::types::DeploymentState> {
+    pub fn deployment_state(&self) -> ::std::option::Option<&crate::types::DeploymentState> {
         self.deployment_state.as_ref()
     }
     /// <p>The timestamp of when the deployment was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The result of the deployment.</p>
-    pub fn deployment_result(&self) -> std::option::Option<&crate::types::DeploymentResult> {
+    pub fn deployment_result(&self) -> ::std::option::Option<&crate::types::DeploymentResult> {
         self.deployment_result.as_ref()
     }
 }
@@ -58,84 +58,92 @@ impl StageDeploymentSummary {
 
 /// A builder for [`StageDeploymentSummary`](crate::types::StageDeploymentSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StageDeploymentSummaryBuilder {
-    pub(crate) deployment_id: std::option::Option<std::string::String>,
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
-    pub(crate) deployment_action: std::option::Option<crate::types::DeploymentAction>,
-    pub(crate) deployment_state: std::option::Option<crate::types::DeploymentState>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) deployment_result: std::option::Option<crate::types::DeploymentResult>,
+    pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_action: ::std::option::Option<crate::types::DeploymentAction>,
+    pub(crate) deployment_state: ::std::option::Option<crate::types::DeploymentState>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) deployment_result: ::std::option::Option<crate::types::DeploymentResult>,
 }
 impl StageDeploymentSummaryBuilder {
     /// <p>The identifier of the deployment.</p>
-    pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_id = Some(input.into());
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the deployment.</p>
-    pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deployment_id = input;
         self
     }
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
     /// <p>The type of action of the deployment.</p>
     pub fn deployment_action(mut self, input: crate::types::DeploymentAction) -> Self {
-        self.deployment_action = Some(input);
+        self.deployment_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of action of the deployment.</p>
     pub fn set_deployment_action(
         mut self,
-        input: std::option::Option<crate::types::DeploymentAction>,
+        input: ::std::option::Option<crate::types::DeploymentAction>,
     ) -> Self {
         self.deployment_action = input;
         self
     }
     /// <p>The state of the deployment.</p>
     pub fn deployment_state(mut self, input: crate::types::DeploymentState) -> Self {
-        self.deployment_state = Some(input);
+        self.deployment_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the deployment.</p>
     pub fn set_deployment_state(
         mut self,
-        input: std::option::Option<crate::types::DeploymentState>,
+        input: ::std::option::Option<crate::types::DeploymentState>,
     ) -> Self {
         self.deployment_state = input;
         self
     }
     /// <p>The timestamp of when the deployment was last updated.</p>
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of when the deployment was last updated.</p>
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self
     }
     /// <p>The result of the deployment.</p>
     pub fn deployment_result(mut self, input: crate::types::DeploymentResult) -> Self {
-        self.deployment_result = Some(input);
+        self.deployment_result = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result of the deployment.</p>
     pub fn set_deployment_result(
         mut self,
-        input: std::option::Option<crate::types::DeploymentResult>,
+        input: ::std::option::Option<crate::types::DeploymentResult>,
     ) -> Self {
         self.deployment_result = input;
         self

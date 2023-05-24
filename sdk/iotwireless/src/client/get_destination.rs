@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDestination`](crate::operation::get_destination::builders::GetDestinationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_destination::builders::GetDestinationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_destination::builders::GetDestinationFluentBuilder::set_name): <p>The name of the resource to get.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_destination::builders::GetDestinationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_destination::builders::GetDestinationFluentBuilder::set_name): <p>The name of the resource to get.</p>
     /// - On success, responds with [`GetDestinationOutput`](crate::operation::get_destination::GetDestinationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_destination::GetDestinationOutput::arn): <p>The Amazon Resource Name of the resource.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_destination::GetDestinationOutput::name): <p>The name of the resource.</p>

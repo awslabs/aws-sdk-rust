@@ -2,43 +2,43 @@
 
 /// <p>Contains a complete view providing malware scan result details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanDetections {
     /// <p>Total number of scanned files.</p>
     #[doc(hidden)]
-    pub scanned_item_count: std::option::Option<crate::types::ScannedItemCount>,
+    pub scanned_item_count: ::std::option::Option<crate::types::ScannedItemCount>,
     /// <p>Total number of infected files.</p>
     #[doc(hidden)]
-    pub threats_detected_item_count: std::option::Option<crate::types::ThreatsDetectedItemCount>,
+    pub threats_detected_item_count: ::std::option::Option<crate::types::ThreatsDetectedItemCount>,
     /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
     #[doc(hidden)]
     pub highest_severity_threat_details:
-        std::option::Option<crate::types::HighestSeverityThreatDetails>,
+        ::std::option::Option<crate::types::HighestSeverityThreatDetails>,
     /// <p>Contains details about identified threats organized by threat name.</p>
     #[doc(hidden)]
-    pub threat_detected_by_name: std::option::Option<crate::types::ThreatDetectedByName>,
+    pub threat_detected_by_name: ::std::option::Option<crate::types::ThreatDetectedByName>,
 }
 impl ScanDetections {
     /// <p>Total number of scanned files.</p>
-    pub fn scanned_item_count(&self) -> std::option::Option<&crate::types::ScannedItemCount> {
+    pub fn scanned_item_count(&self) -> ::std::option::Option<&crate::types::ScannedItemCount> {
         self.scanned_item_count.as_ref()
     }
     /// <p>Total number of infected files.</p>
     pub fn threats_detected_item_count(
         &self,
-    ) -> std::option::Option<&crate::types::ThreatsDetectedItemCount> {
+    ) -> ::std::option::Option<&crate::types::ThreatsDetectedItemCount> {
         self.threats_detected_item_count.as_ref()
     }
     /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
     pub fn highest_severity_threat_details(
         &self,
-    ) -> std::option::Option<&crate::types::HighestSeverityThreatDetails> {
+    ) -> ::std::option::Option<&crate::types::HighestSeverityThreatDetails> {
         self.highest_severity_threat_details.as_ref()
     }
     /// <p>Contains details about identified threats organized by threat name.</p>
     pub fn threat_detected_by_name(
         &self,
-    ) -> std::option::Option<&crate::types::ThreatDetectedByName> {
+    ) -> ::std::option::Option<&crate::types::ThreatDetectedByName> {
         self.threat_detected_by_name.as_ref()
     }
 }
@@ -51,25 +51,27 @@ impl ScanDetections {
 
 /// A builder for [`ScanDetections`](crate::types::ScanDetections).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScanDetectionsBuilder {
-    pub(crate) scanned_item_count: std::option::Option<crate::types::ScannedItemCount>,
+    pub(crate) scanned_item_count: ::std::option::Option<crate::types::ScannedItemCount>,
     pub(crate) threats_detected_item_count:
-        std::option::Option<crate::types::ThreatsDetectedItemCount>,
+        ::std::option::Option<crate::types::ThreatsDetectedItemCount>,
     pub(crate) highest_severity_threat_details:
-        std::option::Option<crate::types::HighestSeverityThreatDetails>,
-    pub(crate) threat_detected_by_name: std::option::Option<crate::types::ThreatDetectedByName>,
+        ::std::option::Option<crate::types::HighestSeverityThreatDetails>,
+    pub(crate) threat_detected_by_name: ::std::option::Option<crate::types::ThreatDetectedByName>,
 }
 impl ScanDetectionsBuilder {
     /// <p>Total number of scanned files.</p>
     pub fn scanned_item_count(mut self, input: crate::types::ScannedItemCount) -> Self {
-        self.scanned_item_count = Some(input);
+        self.scanned_item_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of scanned files.</p>
     pub fn set_scanned_item_count(
         mut self,
-        input: std::option::Option<crate::types::ScannedItemCount>,
+        input: ::std::option::Option<crate::types::ScannedItemCount>,
     ) -> Self {
         self.scanned_item_count = input;
         self
@@ -79,13 +81,13 @@ impl ScanDetectionsBuilder {
         mut self,
         input: crate::types::ThreatsDetectedItemCount,
     ) -> Self {
-        self.threats_detected_item_count = Some(input);
+        self.threats_detected_item_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of infected files.</p>
     pub fn set_threats_detected_item_count(
         mut self,
-        input: std::option::Option<crate::types::ThreatsDetectedItemCount>,
+        input: ::std::option::Option<crate::types::ThreatsDetectedItemCount>,
     ) -> Self {
         self.threats_detected_item_count = input;
         self
@@ -95,26 +97,26 @@ impl ScanDetectionsBuilder {
         mut self,
         input: crate::types::HighestSeverityThreatDetails,
     ) -> Self {
-        self.highest_severity_threat_details = Some(input);
+        self.highest_severity_threat_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details of the highest severity threat detected during malware scan and number of infected files.</p>
     pub fn set_highest_severity_threat_details(
         mut self,
-        input: std::option::Option<crate::types::HighestSeverityThreatDetails>,
+        input: ::std::option::Option<crate::types::HighestSeverityThreatDetails>,
     ) -> Self {
         self.highest_severity_threat_details = input;
         self
     }
     /// <p>Contains details about identified threats organized by threat name.</p>
     pub fn threat_detected_by_name(mut self, input: crate::types::ThreatDetectedByName) -> Self {
-        self.threat_detected_by_name = Some(input);
+        self.threat_detected_by_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about identified threats organized by threat name.</p>
     pub fn set_threat_detected_by_name(
         mut self,
-        input: std::option::Option<crate::types::ThreatDetectedByName>,
+        input: ::std::option::Option<crate::types::ThreatDetectedByName>,
     ) -> Self {
         self.threat_detected_by_name = input;
         self

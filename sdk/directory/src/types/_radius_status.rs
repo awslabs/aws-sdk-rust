@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RadiusStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum RadiusStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RadiusStatus {
+impl ::std::convert::From<&str> for RadiusStatus {
     fn from(s: &str) -> Self {
         match s {
             "Completed" => RadiusStatus::Completed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for RadiusStatus {
         }
     }
 }
-impl std::str::FromStr for RadiusStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RadiusStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RadiusStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RadiusStatus::from(s))
     }
 }
 impl RadiusStatus {
@@ -91,7 +91,7 @@ impl RadiusStatus {
         &["Completed", "Creating", "Failed"]
     }
 }
-impl AsRef<str> for RadiusStatus {
+impl ::std::convert::AsRef<str> for RadiusStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

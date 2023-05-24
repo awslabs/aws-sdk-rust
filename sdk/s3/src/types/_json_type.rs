@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum JsonType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum JsonType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for JsonType {
+impl ::std::convert::From<&str> for JsonType {
     fn from(s: &str) -> Self {
         match s {
             "DOCUMENT" => JsonType::Document,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for JsonType {
         }
     }
 }
-impl std::str::FromStr for JsonType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for JsonType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JsonType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(JsonType::from(s))
     }
 }
 impl JsonType {
@@ -84,7 +84,7 @@ impl JsonType {
         &["DOCUMENT", "LINES"]
     }
 }
-impl AsRef<str> for JsonType {
+impl ::std::convert::AsRef<str> for JsonType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

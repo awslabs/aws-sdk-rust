@@ -2,15 +2,15 @@
 
 /// A list of schedule actions to delete.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchScheduleActionDeleteRequest {
     /// A list of schedule actions to delete.
     #[doc(hidden)]
-    pub action_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchScheduleActionDeleteRequest {
     /// A list of schedule actions to delete.
-    pub fn action_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn action_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.action_names.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl BatchScheduleActionDeleteRequest {
 
 /// A builder for [`BatchScheduleActionDeleteRequest`](crate::types::BatchScheduleActionDeleteRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchScheduleActionDeleteRequestBuilder {
-    pub(crate) action_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) action_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchScheduleActionDeleteRequestBuilder {
     /// Appends an item to `action_names`.
@@ -33,16 +35,16 @@ impl BatchScheduleActionDeleteRequestBuilder {
     /// To override the contents of this collection use [`set_action_names`](Self::set_action_names).
     ///
     /// A list of schedule actions to delete.
-    pub fn action_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn action_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.action_names.unwrap_or_default();
         v.push(input.into());
-        self.action_names = Some(v);
+        self.action_names = ::std::option::Option::Some(v);
         self
     }
     /// A list of schedule actions to delete.
     pub fn set_action_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.action_names = input;
         self

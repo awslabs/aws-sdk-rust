@@ -2,7 +2,7 @@
 
 /// <p>Export task summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTaskSummary {
     /// <p>Export task summary servers count.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl ExportTaskSummary {
 
 /// A builder for [`ExportTaskSummary`](crate::types::ExportTaskSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportTaskSummaryBuilder {
-    pub(crate) servers_count: std::option::Option<i64>,
-    pub(crate) applications_count: std::option::Option<i64>,
-    pub(crate) waves_count: std::option::Option<i64>,
+    pub(crate) servers_count: ::std::option::Option<i64>,
+    pub(crate) applications_count: ::std::option::Option<i64>,
+    pub(crate) waves_count: ::std::option::Option<i64>,
 }
 impl ExportTaskSummaryBuilder {
     /// <p>Export task summary servers count.</p>
     pub fn servers_count(mut self, input: i64) -> Self {
-        self.servers_count = Some(input);
+        self.servers_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Export task summary servers count.</p>
-    pub fn set_servers_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_servers_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.servers_count = input;
         self
     }
     /// <p>Export task summary applications count.</p>
     pub fn applications_count(mut self, input: i64) -> Self {
-        self.applications_count = Some(input);
+        self.applications_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Export task summary applications count.</p>
-    pub fn set_applications_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_applications_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.applications_count = input;
         self
     }
     /// <p>Export task summary waves count.</p>
     pub fn waves_count(mut self, input: i64) -> Self {
-        self.waves_count = Some(input);
+        self.waves_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Export task summary waves count.</p>
-    pub fn set_waves_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_waves_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.waves_count = input;
         self
     }

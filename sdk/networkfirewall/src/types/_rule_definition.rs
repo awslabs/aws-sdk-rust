@@ -2,11 +2,11 @@
 
 /// <p>The inspection criteria and action for a single stateless rule. Network Firewall inspects each packet for the specified matching criteria. When a packet matches the criteria, Network Firewall performs the rule's actions on the packet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleDefinition {
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
     #[doc(hidden)]
-    pub match_attributes: std::option::Option<crate::types::MatchAttributes>,
+    pub match_attributes: ::std::option::Option<crate::types::MatchAttributes>,
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action and you can add custom actions. </p> <note>
     /// <p>Network Firewall only forwards a packet for stateful rule inspection if you specify <code>aws:forward_to_sfe</code> for a rule that the packet matches, or if the packet doesn't match any stateless rule and you specify <code>aws:forward_to_sfe</code> for the <code>StatelessDefaultActions</code> setting for the <code>FirewallPolicy</code>.</p>
     /// </note>
@@ -19,11 +19,11 @@ pub struct RuleDefinition {
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>. </p>
     /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>. </p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleDefinition {
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
-    pub fn match_attributes(&self) -> std::option::Option<&crate::types::MatchAttributes> {
+    pub fn match_attributes(&self) -> ::std::option::Option<&crate::types::MatchAttributes> {
         self.match_attributes.as_ref()
     }
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action and you can add custom actions. </p> <note>
@@ -37,7 +37,7 @@ impl RuleDefinition {
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>. </p>
     /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>. </p>
-    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.actions.as_deref()
     }
 }
@@ -50,21 +50,23 @@ impl RuleDefinition {
 
 /// A builder for [`RuleDefinition`](crate::types::RuleDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleDefinitionBuilder {
-    pub(crate) match_attributes: std::option::Option<crate::types::MatchAttributes>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) match_attributes: ::std::option::Option<crate::types::MatchAttributes>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleDefinitionBuilder {
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
     pub fn match_attributes(mut self, input: crate::types::MatchAttributes) -> Self {
-        self.match_attributes = Some(input);
+        self.match_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
     pub fn set_match_attributes(
         mut self,
-        input: std::option::Option<crate::types::MatchAttributes>,
+        input: ::std::option::Option<crate::types::MatchAttributes>,
     ) -> Self {
         self.match_attributes = input;
         self
@@ -84,10 +86,10 @@ impl RuleDefinitionBuilder {
     /// </ul>
     /// <p>Additionally, you can specify a custom action. To do this, you define a custom action by name and type, then provide the name you've assigned to the action in this <code>Actions</code> setting. For information about the options, see <code>CustomAction</code>. </p>
     /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>. </p>
-    pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input.into());
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action and you can add custom actions. </p> <note>
@@ -103,7 +105,7 @@ impl RuleDefinitionBuilder {
     /// <p>To provide more than one action in this setting, separate the settings with a comma. For example, if you have a custom <code>PublishMetrics</code> action that you've named <code>MyMetricsAction</code>, then you could specify the standard action <code>aws:pass</code> and the custom action with <code>[“aws:pass”, “MyMetricsAction”]</code>. </p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.actions = input;
         self

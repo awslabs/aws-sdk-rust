@@ -2,14 +2,14 @@
 
 /// <p>Information about a request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordDetail {
     /// <p>The identifier of the record.</p>
     #[doc(hidden)]
-    pub record_id: std::option::Option<std::string::String>,
+    pub record_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
     #[doc(hidden)]
-    pub provisioned_product_name: std::option::Option<std::string::String>,
+    pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the provisioned product.</p>
     /// <ul>
     /// <li> <p> <code>CREATED</code> - The request was created but the operation has not started.</p> </li>
@@ -19,16 +19,16 @@ pub struct RecordDetail {
     /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::RecordStatus>,
+    pub status: ::std::option::Option<crate::types::RecordStatus>,
     /// <p>The UTC time stamp of the creation time.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the record was last updated.</p>
     #[doc(hidden)]
-    pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     #[doc(hidden)]
-    pub provisioned_product_type: std::option::Option<std::string::String>,
+    pub provisioned_product_type: ::std::option::Option<::std::string::String>,
     /// <p>The record type.</p>
     /// <ul>
     /// <li> <p> <code>PROVISION_PRODUCT</code> </p> </li>
@@ -36,36 +36,36 @@ pub struct RecordDetail {
     /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub record_type: std::option::Option<std::string::String>,
+    pub record_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
     #[doc(hidden)]
-    pub provisioned_product_id: std::option::Option<std::string::String>,
+    pub provisioned_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
     #[doc(hidden)]
-    pub product_id: std::option::Option<std::string::String>,
+    pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioning artifact.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_id: std::option::Option<std::string::String>,
+    pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The path identifier.</p>
     #[doc(hidden)]
-    pub path_id: std::option::Option<std::string::String>,
+    pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>The errors that occurred.</p>
     #[doc(hidden)]
-    pub record_errors: std::option::Option<std::vec::Vec<crate::types::RecordError>>,
+    pub record_errors: ::std::option::Option<::std::vec::Vec<crate::types::RecordError>>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub record_tags: std::option::Option<std::vec::Vec<crate::types::RecordTag>>,
+    pub record_tags: ::std::option::Option<::std::vec::Vec<crate::types::RecordTag>>,
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
     #[doc(hidden)]
-    pub launch_role_arn: std::option::Option<std::string::String>,
+    pub launch_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecordDetail {
     /// <p>The identifier of the record.</p>
-    pub fn record_id(&self) -> std::option::Option<&str> {
+    pub fn record_id(&self) -> ::std::option::Option<&str> {
         self.record_id.as_deref()
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
+    pub fn provisioned_product_name(&self) -> ::std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
     /// <p>The status of the provisioned product.</p>
@@ -76,19 +76,19 @@ impl RecordDetail {
     /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
     /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::RecordStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::RecordStatus> {
         self.status.as_ref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The time when the record was last updated.</p>
-    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    pub fn provisioned_product_type(&self) -> std::option::Option<&str> {
+    pub fn provisioned_product_type(&self) -> ::std::option::Option<&str> {
         self.provisioned_product_type.as_deref()
     }
     /// <p>The record type.</p>
@@ -97,35 +97,35 @@ impl RecordDetail {
     /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// </ul>
-    pub fn record_type(&self) -> std::option::Option<&str> {
+    pub fn record_type(&self) -> ::std::option::Option<&str> {
         self.record_type.as_deref()
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(&self) -> std::option::Option<&str> {
+    pub fn provisioned_product_id(&self) -> ::std::option::Option<&str> {
         self.provisioned_product_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The path identifier.</p>
-    pub fn path_id(&self) -> std::option::Option<&str> {
+    pub fn path_id(&self) -> ::std::option::Option<&str> {
         self.path_id.as_deref()
     }
     /// <p>The errors that occurred.</p>
-    pub fn record_errors(&self) -> std::option::Option<&[crate::types::RecordError]> {
+    pub fn record_errors(&self) -> ::std::option::Option<&[crate::types::RecordError]> {
         self.record_errors.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn record_tags(&self) -> std::option::Option<&[crate::types::RecordTag]> {
+    pub fn record_tags(&self) -> ::std::option::Option<&[crate::types::RecordTag]> {
         self.record_tags.as_deref()
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    pub fn launch_role_arn(&self) -> std::option::Option<&str> {
+    pub fn launch_role_arn(&self) -> ::std::option::Option<&str> {
         self.launch_role_arn.as_deref()
     }
 }
@@ -138,43 +138,48 @@ impl RecordDetail {
 
 /// A builder for [`RecordDetail`](crate::types::RecordDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordDetailBuilder {
-    pub(crate) record_id: std::option::Option<std::string::String>,
-    pub(crate) provisioned_product_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::RecordStatus>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) provisioned_product_type: std::option::Option<std::string::String>,
-    pub(crate) record_type: std::option::Option<std::string::String>,
-    pub(crate) provisioned_product_id: std::option::Option<std::string::String>,
-    pub(crate) product_id: std::option::Option<std::string::String>,
-    pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
-    pub(crate) path_id: std::option::Option<std::string::String>,
-    pub(crate) record_errors: std::option::Option<std::vec::Vec<crate::types::RecordError>>,
-    pub(crate) record_tags: std::option::Option<std::vec::Vec<crate::types::RecordTag>>,
-    pub(crate) launch_role_arn: std::option::Option<std::string::String>,
+    pub(crate) record_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provisioned_product_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::RecordStatus>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) provisioned_product_type: ::std::option::Option<::std::string::String>,
+    pub(crate) record_type: ::std::option::Option<::std::string::String>,
+    pub(crate) provisioned_product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) path_id: ::std::option::Option<::std::string::String>,
+    pub(crate) record_errors: ::std::option::Option<::std::vec::Vec<crate::types::RecordError>>,
+    pub(crate) record_tags: ::std::option::Option<::std::vec::Vec<crate::types::RecordTag>>,
+    pub(crate) launch_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecordDetailBuilder {
     /// <p>The identifier of the record.</p>
-    pub fn record_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.record_id = Some(input.into());
+    pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.record_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the record.</p>
-    pub fn set_record_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_id = input;
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provisioned_product_name = Some(input.into());
+    pub fn provisioned_product_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provisioned_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn set_provisioned_product_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provisioned_product_name = input;
         self
@@ -188,7 +193,7 @@ impl RecordDetailBuilder {
     /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::RecordStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the provisioned product.</p>
@@ -199,45 +204,48 @@ impl RecordDetailBuilder {
     /// <li> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> </li>
     /// <li> <p> <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::RecordStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecordStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The time when the record was last updated.</p>
-    pub fn updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_time = Some(input);
+    pub fn updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the record was last updated.</p>
     pub fn set_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_time = input;
         self
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
-    pub fn provisioned_product_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provisioned_product_type = Some(input.into());
+    pub fn provisioned_product_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provisioned_product_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
     pub fn set_provisioned_product_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provisioned_product_type = input;
         self
@@ -248,8 +256,8 @@ impl RecordDetailBuilder {
     /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// </ul>
-    pub fn record_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.record_type = Some(input.into());
+    pub fn record_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.record_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The record type.</p>
@@ -258,53 +266,59 @@ impl RecordDetailBuilder {
     /// <li> <p> <code>UPDATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// <li> <p> <code>TERMINATE_PROVISIONED_PRODUCT</code> </p> </li>
     /// </ul>
-    pub fn set_record_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_type = input;
         self
     }
     /// <p>The identifier of the provisioned product.</p>
-    pub fn provisioned_product_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provisioned_product_id = Some(input.into());
+    pub fn provisioned_product_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provisioned_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioned product.</p>
     pub fn set_provisioned_product_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provisioned_product_id = input;
         self
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_id = Some(input.into());
+    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product identifier.</p>
-    pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provisioning_artifact_id = Some(input.into());
+    pub fn provisioning_artifact_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
     /// <p>The path identifier.</p>
-    pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path_id = Some(input.into());
+    pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path identifier.</p>
-    pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_id = input;
         self
     }
@@ -316,13 +330,13 @@ impl RecordDetailBuilder {
     pub fn record_errors(mut self, input: crate::types::RecordError) -> Self {
         let mut v = self.record_errors.unwrap_or_default();
         v.push(input);
-        self.record_errors = Some(v);
+        self.record_errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>The errors that occurred.</p>
     pub fn set_record_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecordError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordError>>,
     ) -> Self {
         self.record_errors = input;
         self
@@ -335,24 +349,30 @@ impl RecordDetailBuilder {
     pub fn record_tags(mut self, input: crate::types::RecordTag) -> Self {
         let mut v = self.record_tags.unwrap_or_default();
         v.push(input);
-        self.record_tags = Some(v);
+        self.record_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more tags.</p>
     pub fn set_record_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecordTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecordTag>>,
     ) -> Self {
         self.record_tags = input;
         self
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    pub fn launch_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_role_arn = Some(input.into());
+    pub fn launch_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.launch_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the launch role associated with the provisioned product.</p>
-    pub fn set_launch_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.launch_role_arn = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Information about a subnet mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetMapping {
     /// <p>The ID of the subnet.</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     #[doc(hidden)]
-    pub allocation_id: std::option::Option<std::string::String>,
+    pub allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
     #[doc(hidden)]
-    pub private_i_pv4_address: std::option::Option<std::string::String>,
+    pub private_i_pv4_address: ::std::option::Option<::std::string::String>,
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     #[doc(hidden)]
-    pub i_pv6_address: std::option::Option<std::string::String>,
+    pub i_pv6_address: ::std::option::Option<::std::string::String>,
 }
 impl SubnetMapping {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
-    pub fn allocation_id(&self) -> std::option::Option<&str> {
+    pub fn allocation_id(&self) -> ::std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
-    pub fn private_i_pv4_address(&self) -> std::option::Option<&str> {
+    pub fn private_i_pv4_address(&self) -> ::std::option::Option<&str> {
         self.private_i_pv4_address.as_deref()
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
-    pub fn i_pv6_address(&self) -> std::option::Option<&str> {
+    pub fn i_pv6_address(&self) -> ::std::option::Option<&str> {
         self.i_pv6_address.as_deref()
     }
 }
@@ -44,54 +44,71 @@ impl SubnetMapping {
 
 /// A builder for [`SubnetMapping`](crate::types::SubnetMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubnetMappingBuilder {
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
-    pub(crate) allocation_id: std::option::Option<std::string::String>,
-    pub(crate) private_i_pv4_address: std::option::Option<std::string::String>,
-    pub(crate) i_pv6_address: std::option::Option<std::string::String>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) allocation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) private_i_pv4_address: ::std::option::Option<::std::string::String>,
+    pub(crate) i_pv6_address: ::std::option::Option<::std::string::String>,
 }
 impl SubnetMappingBuilder {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
-    pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.allocation_id = Some(input.into());
+    pub fn allocation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.allocation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
-    pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_allocation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.allocation_id = input;
         self
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
-    pub fn private_i_pv4_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_i_pv4_address = Some(input.into());
+    pub fn private_i_pv4_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_i_pv4_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
     pub fn set_private_i_pv4_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_i_pv4_address = input;
         self
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
-    pub fn i_pv6_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.i_pv6_address = Some(input.into());
+    pub fn i_pv6_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.i_pv6_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
-    pub fn set_i_pv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_i_pv6_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.i_pv6_address = input;
         self
     }

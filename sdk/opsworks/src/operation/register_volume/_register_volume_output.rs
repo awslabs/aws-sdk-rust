@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>RegisterVolume</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterVolumeOutput {
     /// <p>The volume ID.</p>
     #[doc(hidden)]
-    pub volume_id: std::option::Option<std::string::String>,
+    pub volume_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterVolumeOutput {
     /// <p>The volume ID.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RegisterVolumeOutput {
+impl ::aws_http::request_id::RequestId for RegisterVolumeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl RegisterVolumeOutput {
 
 /// A builder for [`RegisterVolumeOutput`](crate::operation::register_volume::RegisterVolumeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterVolumeOutputBuilder {
-    pub(crate) volume_id: std::option::Option<std::string::String>,
+    pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterVolumeOutputBuilder {
     /// <p>The volume ID.</p>
-    pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_id = Some(input.into());
+    pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume ID.</p>
-    pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
     }

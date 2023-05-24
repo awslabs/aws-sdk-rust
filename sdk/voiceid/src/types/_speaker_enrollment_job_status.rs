@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SpeakerEnrollmentJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum SpeakerEnrollmentJobStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SpeakerEnrollmentJobStatus {
+impl ::std::convert::From<&str> for SpeakerEnrollmentJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => SpeakerEnrollmentJobStatus::Completed,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for SpeakerEnrollmentJobStatus {
         }
     }
 }
-impl std::str::FromStr for SpeakerEnrollmentJobStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SpeakerEnrollmentJobStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpeakerEnrollmentJobStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SpeakerEnrollmentJobStatus::from(s))
     }
 }
 impl SpeakerEnrollmentJobStatus {
@@ -107,7 +107,7 @@ impl SpeakerEnrollmentJobStatus {
         ]
     }
 }
-impl AsRef<str> for SpeakerEnrollmentJobStatus {
+impl ::std::convert::AsRef<str> for SpeakerEnrollmentJobStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

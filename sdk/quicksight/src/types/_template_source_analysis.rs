@@ -2,22 +2,22 @@
 
 /// <p>The source analysis of the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateSourceAnalysis {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
     #[doc(hidden)]
-    pub data_set_references: std::option::Option<std::vec::Vec<crate::types::DataSetReference>>,
+    pub data_set_references: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
 }
 impl TemplateSourceAnalysis {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
-    pub fn data_set_references(&self) -> std::option::Option<&[crate::types::DataSetReference]> {
+    pub fn data_set_references(&self) -> ::std::option::Option<&[crate::types::DataSetReference]> {
         self.data_set_references.as_deref()
     }
 }
@@ -30,20 +30,22 @@ impl TemplateSourceAnalysis {
 
 /// A builder for [`TemplateSourceAnalysis`](crate::types::TemplateSourceAnalysis).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TemplateSourceAnalysisBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_references:
-        std::option::Option<std::vec::Vec<crate::types::DataSetReference>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
 }
 impl TemplateSourceAnalysisBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -55,13 +57,13 @@ impl TemplateSourceAnalysisBuilder {
     pub fn data_set_references(mut self, input: crate::types::DataSetReference) -> Self {
         let mut v = self.data_set_references.unwrap_or_default();
         v.push(input);
-        self.data_set_references = Some(v);
+        self.data_set_references = ::std::option::Option::Some(v);
         self
     }
     /// <p>A structure containing information about the dataset references used as placeholders in the template.</p>
     pub fn set_data_set_references(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSetReference>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
     ) -> Self {
         self.data_set_references = input;
         self

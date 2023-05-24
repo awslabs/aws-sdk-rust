@@ -10,22 +10,22 @@
 /// <output-file.mp3></output-file.mp3>
 /// </input-file></code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
     #[doc(hidden)]
-    pub locale: std::option::Option<crate::types::Locale>,
+    pub locale: ::std::option::Option<crate::types::Locale>,
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
 }
 impl Audio {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
 }
@@ -38,29 +38,31 @@ impl Audio {
 
 /// A builder for [`Audio`](crate::types::Audio).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioBuilder {
-    pub(crate) locale: std::option::Option<crate::types::Locale>,
-    pub(crate) location: std::option::Option<std::string::String>,
+    pub(crate) locale: ::std::option::Option<crate::types::Locale>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
 }
 impl AudioBuilder {
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
-        self.locale = Some(input);
+        self.locale = ::std::option::Option::Some(input);
         self
     }
     /// <p>The locale of the audio message. Currently, en-US is supported.</p>
-    pub fn set_locale(mut self, input: std::option::Option<crate::types::Locale>) -> Self {
+    pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.locale = input;
         self
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the audio file. Currently, S3 URLs are supported. Only S3 locations comprised of safe characters are valid. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#Safe%20Characters">Safe Characters</a>.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }

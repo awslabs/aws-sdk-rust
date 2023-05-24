@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of a <code>PollForThirdPartyJobs</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForThirdPartyJobsInput {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
-    pub action_type_id: std::option::Option<crate::types::ActionTypeId>,
+    pub action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     #[doc(hidden)]
-    pub max_batch_size: std::option::Option<i32>,
+    pub max_batch_size: ::std::option::Option<i32>,
 }
 impl PollForThirdPartyJobsInput {
     /// <p>Represents information about an action type.</p>
-    pub fn action_type_id(&self) -> std::option::Option<&crate::types::ActionTypeId> {
+    pub fn action_type_id(&self) -> ::std::option::Option<&crate::types::ActionTypeId> {
         self.action_type_id.as_ref()
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
-    pub fn max_batch_size(&self) -> std::option::Option<i32> {
+    pub fn max_batch_size(&self) -> ::std::option::Option<i32> {
         self.max_batch_size
     }
 }
@@ -32,43 +32,45 @@ impl PollForThirdPartyJobsInput {
 
 /// A builder for [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PollForThirdPartyJobsInputBuilder {
-    pub(crate) action_type_id: std::option::Option<crate::types::ActionTypeId>,
-    pub(crate) max_batch_size: std::option::Option<i32>,
+    pub(crate) action_type_id: ::std::option::Option<crate::types::ActionTypeId>,
+    pub(crate) max_batch_size: ::std::option::Option<i32>,
 }
 impl PollForThirdPartyJobsInputBuilder {
     /// <p>Represents information about an action type.</p>
     pub fn action_type_id(mut self, input: crate::types::ActionTypeId) -> Self {
-        self.action_type_id = Some(input);
+        self.action_type_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents information about an action type.</p>
     pub fn set_action_type_id(
         mut self,
-        input: std::option::Option<crate::types::ActionTypeId>,
+        input: ::std::option::Option<crate::types::ActionTypeId>,
     ) -> Self {
         self.action_type_id = input;
         self
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
-        self.max_batch_size = Some(input);
+        self.max_batch_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
-    pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_batch_size = input;
         self
     }
     /// Consumes the builder and constructs a [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput {
                 action_type_id: self.action_type_id,
                 max_batch_size: self.max_batch_size,

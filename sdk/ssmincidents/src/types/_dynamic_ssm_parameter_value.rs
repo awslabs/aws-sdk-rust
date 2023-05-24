@@ -2,7 +2,7 @@
 
 /// <p>The dynamic SSM parameter value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DynamicSsmParameterValue {
     /// <p>Variable dynamic parameters. A parameter value is determined when an incident is created.</p>
     Variable(crate::types::VariableType),
@@ -20,11 +20,11 @@ impl DynamicSsmParameterValue {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Variable`](crate::types::DynamicSsmParameterValue::Variable), extracting the inner [`VariableType`](crate::types::VariableType).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_variable(&self) -> std::result::Result<&crate::types::VariableType, &Self> {
+    pub fn as_variable(&self) -> ::std::result::Result<&crate::types::VariableType, &Self> {
         if let DynamicSsmParameterValue::Variable(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Variable`](crate::types::DynamicSsmParameterValue::Variable).

@@ -2,29 +2,29 @@
 
 /// <p>Information about the number of instances that can be launched onto the Dedicated Host.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.</p>
     #[doc(hidden)]
-    pub available_capacity: std::option::Option<i32>,
+    pub available_capacity: ::std::option::Option<i32>,
     /// <p>The instance type supported by the Dedicated Host.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
     #[doc(hidden)]
-    pub total_capacity: std::option::Option<i32>,
+    pub total_capacity: ::std::option::Option<i32>,
 }
 impl InstanceCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.</p>
-    pub fn available_capacity(&self) -> std::option::Option<i32> {
+    pub fn available_capacity(&self) -> ::std::option::Option<i32> {
         self.available_capacity
     }
     /// <p>The instance type supported by the Dedicated Host.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
-    pub fn total_capacity(&self) -> std::option::Option<i32> {
+    pub fn total_capacity(&self) -> ::std::option::Option<i32> {
         self.total_capacity
     }
 }
@@ -37,40 +37,48 @@ impl InstanceCapacity {
 
 /// A builder for [`InstanceCapacity`](crate::types::InstanceCapacity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceCapacityBuilder {
-    pub(crate) available_capacity: std::option::Option<i32>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) total_capacity: std::option::Option<i32>,
+    pub(crate) available_capacity: ::std::option::Option<i32>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) total_capacity: ::std::option::Option<i32>,
 }
 impl InstanceCapacityBuilder {
     /// <p>The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.</p>
     pub fn available_capacity(mut self, input: i32) -> Self {
-        self.available_capacity = Some(input);
+        self.available_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances that can be launched onto the Dedicated Host based on the host's available capacity.</p>
-    pub fn set_available_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_available_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available_capacity = input;
         self
     }
     /// <p>The instance type supported by the Dedicated Host.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type supported by the Dedicated Host.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
     pub fn total_capacity(mut self, input: i32) -> Self {
-        self.total_capacity = Some(input);
+        self.total_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of instances that can be launched onto the Dedicated Host if there are no instances running on it.</p>
-    pub fn set_total_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_capacity = input;
         self
     }

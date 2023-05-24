@@ -2,15 +2,15 @@
 
 /// <p>Information about the source streaming video. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamProcessorInput {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
     #[doc(hidden)]
-    pub kinesis_video_stream: std::option::Option<crate::types::KinesisVideoStream>,
+    pub kinesis_video_stream: ::std::option::Option<crate::types::KinesisVideoStream>,
 }
 impl StreamProcessorInput {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
-    pub fn kinesis_video_stream(&self) -> std::option::Option<&crate::types::KinesisVideoStream> {
+    pub fn kinesis_video_stream(&self) -> ::std::option::Option<&crate::types::KinesisVideoStream> {
         self.kinesis_video_stream.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl StreamProcessorInput {
 
 /// A builder for [`StreamProcessorInput`](crate::types::StreamProcessorInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamProcessorInputBuilder {
-    pub(crate) kinesis_video_stream: std::option::Option<crate::types::KinesisVideoStream>,
+    pub(crate) kinesis_video_stream: ::std::option::Option<crate::types::KinesisVideoStream>,
 }
 impl StreamProcessorInputBuilder {
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
     pub fn kinesis_video_stream(mut self, input: crate::types::KinesisVideoStream) -> Self {
-        self.kinesis_video_stream = Some(input);
+        self.kinesis_video_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Kinesis video stream input stream for the source streaming video.</p>
     pub fn set_kinesis_video_stream(
         mut self,
-        input: std::option::Option<crate::types::KinesisVideoStream>,
+        input: ::std::option::Option<crate::types::KinesisVideoStream>,
     ) -> Self {
         self.kinesis_video_stream = input;
         self

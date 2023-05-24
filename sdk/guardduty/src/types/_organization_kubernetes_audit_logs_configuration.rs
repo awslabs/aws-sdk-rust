@@ -2,7 +2,7 @@
 
 /// <p>Organization-wide Kubernetes audit logs configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationKubernetesAuditLogsConfiguration {
     /// <p>A value that contains information on whether Kubernetes audit logs should be enabled automatically as a data source for the organization.</p>
     #[doc(hidden)]
@@ -24,18 +24,20 @@ impl OrganizationKubernetesAuditLogsConfiguration {
 
 /// A builder for [`OrganizationKubernetesAuditLogsConfiguration`](crate::types::OrganizationKubernetesAuditLogsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationKubernetesAuditLogsConfigurationBuilder {
-    pub(crate) auto_enable: std::option::Option<bool>,
+    pub(crate) auto_enable: ::std::option::Option<bool>,
 }
 impl OrganizationKubernetesAuditLogsConfigurationBuilder {
     /// <p>A value that contains information on whether Kubernetes audit logs should be enabled automatically as a data source for the organization.</p>
     pub fn auto_enable(mut self, input: bool) -> Self {
-        self.auto_enable = Some(input);
+        self.auto_enable = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that contains information on whether Kubernetes audit logs should be enabled automatically as a data source for the organization.</p>
-    pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_enable = input;
         self
     }

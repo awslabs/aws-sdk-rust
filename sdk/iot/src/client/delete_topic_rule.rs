@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTopicRule`](crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_name(impl Into<String>)`](crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder::set_rule_name): <p>The name of the rule.</p>
+    ///   - [`rule_name(impl ::std::convert::Into<String>)`](crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder::rule_name) / [`set_rule_name(Option<String>)`](crate::operation::delete_topic_rule::builders::DeleteTopicRuleFluentBuilder::set_rule_name): <p>The name of the rule.</p>
     /// - On success, responds with [`DeleteTopicRuleOutput`](crate::operation::delete_topic_rule::DeleteTopicRuleOutput)
     /// - On failure, responds with [`SdkError<DeleteTopicRuleError>`](crate::operation::delete_topic_rule::DeleteTopicRuleError)
     pub fn delete_topic_rule(

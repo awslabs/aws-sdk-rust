@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLicenseUsage`](crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`license_arn(impl Into<String>)`](crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder::license_arn) / [`set_license_arn(Option<String>)`](crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
+    ///   - [`license_arn(impl ::std::convert::Into<String>)`](crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder::license_arn) / [`set_license_arn(Option<String>)`](crate::operation::get_license_usage::builders::GetLicenseUsageFluentBuilder::set_license_arn): <p>Amazon Resource Name (ARN) of the license.</p>
     /// - On success, responds with [`GetLicenseUsageOutput`](crate::operation::get_license_usage::GetLicenseUsageOutput) with field(s):
     ///   - [`license_usage(Option<LicenseUsage>)`](crate::operation::get_license_usage::GetLicenseUsageOutput::license_usage): <p>License usage details.</p>
     /// - On failure, responds with [`SdkError<GetLicenseUsageError>`](crate::operation::get_license_usage::GetLicenseUsageError)

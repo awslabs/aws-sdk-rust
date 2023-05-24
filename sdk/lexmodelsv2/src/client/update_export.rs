@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateExport`](crate::operation::update_export::builders::UpdateExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`export_id(impl Into<String>)`](crate::operation::update_export::builders::UpdateExportFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::update_export::builders::UpdateExportFluentBuilder::set_export_id): <p>The unique identifier Amazon Lex assigned to the export.</p>
-    ///   - [`file_password(impl Into<String>)`](crate::operation::update_export::builders::UpdateExportFluentBuilder::file_password) / [`set_file_password(Option<String>)`](crate::operation::update_export::builders::UpdateExportFluentBuilder::set_file_password): <p>The new password to use to encrypt the export zip archive.</p>
+    ///   - [`export_id(impl ::std::convert::Into<String>)`](crate::operation::update_export::builders::UpdateExportFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::update_export::builders::UpdateExportFluentBuilder::set_export_id): <p>The unique identifier Amazon Lex assigned to the export.</p>
+    ///   - [`file_password(impl ::std::convert::Into<String>)`](crate::operation::update_export::builders::UpdateExportFluentBuilder::file_password) / [`set_file_password(Option<String>)`](crate::operation::update_export::builders::UpdateExportFluentBuilder::set_file_password): <p>The new password to use to encrypt the export zip archive.</p>
     /// - On success, responds with [`UpdateExportOutput`](crate::operation::update_export::UpdateExportOutput) with field(s):
     ///   - [`export_id(Option<String>)`](crate::operation::update_export::UpdateExportOutput::export_id): <p>The unique identifier Amazon Lex assigned to the export.</p>
     ///   - [`resource_specification(Option<ExportResourceSpecification>)`](crate::operation::update_export::UpdateExportOutput::resource_specification): <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>

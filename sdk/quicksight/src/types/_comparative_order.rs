@@ -2,32 +2,32 @@
 
 /// <p>A structure that represents a comparative order.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComparativeOrder {
     /// <p>The ordering type for a column. Valid values for this structure are <code>GREATER_IS_BETTER</code>, <code>LESSER_IS_BETTER</code> and <code>SPECIFIED</code>.</p>
     #[doc(hidden)]
-    pub use_ordering: std::option::Option<crate::types::ColumnOrderingType>,
+    pub use_ordering: ::std::option::Option<crate::types::ColumnOrderingType>,
     /// <p>The list of columns to be used in the ordering.</p>
     #[doc(hidden)]
-    pub specifed_order: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub specifed_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The treat of undefined specified values. Valid values for this structure are <code>LEAST</code> and <code>MOST</code>.</p>
     #[doc(hidden)]
     pub treat_undefined_specified_values:
-        std::option::Option<crate::types::UndefinedSpecifiedValueType>,
+        ::std::option::Option<crate::types::UndefinedSpecifiedValueType>,
 }
 impl ComparativeOrder {
     /// <p>The ordering type for a column. Valid values for this structure are <code>GREATER_IS_BETTER</code>, <code>LESSER_IS_BETTER</code> and <code>SPECIFIED</code>.</p>
-    pub fn use_ordering(&self) -> std::option::Option<&crate::types::ColumnOrderingType> {
+    pub fn use_ordering(&self) -> ::std::option::Option<&crate::types::ColumnOrderingType> {
         self.use_ordering.as_ref()
     }
     /// <p>The list of columns to be used in the ordering.</p>
-    pub fn specifed_order(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn specifed_order(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.specifed_order.as_deref()
     }
     /// <p>The treat of undefined specified values. Valid values for this structure are <code>LEAST</code> and <code>MOST</code>.</p>
     pub fn treat_undefined_specified_values(
         &self,
-    ) -> std::option::Option<&crate::types::UndefinedSpecifiedValueType> {
+    ) -> ::std::option::Option<&crate::types::UndefinedSpecifiedValueType> {
         self.treat_undefined_specified_values.as_ref()
     }
 }
@@ -40,23 +40,25 @@ impl ComparativeOrder {
 
 /// A builder for [`ComparativeOrder`](crate::types::ComparativeOrder).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComparativeOrderBuilder {
-    pub(crate) use_ordering: std::option::Option<crate::types::ColumnOrderingType>,
-    pub(crate) specifed_order: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) use_ordering: ::std::option::Option<crate::types::ColumnOrderingType>,
+    pub(crate) specifed_order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) treat_undefined_specified_values:
-        std::option::Option<crate::types::UndefinedSpecifiedValueType>,
+        ::std::option::Option<crate::types::UndefinedSpecifiedValueType>,
 }
 impl ComparativeOrderBuilder {
     /// <p>The ordering type for a column. Valid values for this structure are <code>GREATER_IS_BETTER</code>, <code>LESSER_IS_BETTER</code> and <code>SPECIFIED</code>.</p>
     pub fn use_ordering(mut self, input: crate::types::ColumnOrderingType) -> Self {
-        self.use_ordering = Some(input);
+        self.use_ordering = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ordering type for a column. Valid values for this structure are <code>GREATER_IS_BETTER</code>, <code>LESSER_IS_BETTER</code> and <code>SPECIFIED</code>.</p>
     pub fn set_use_ordering(
         mut self,
-        input: std::option::Option<crate::types::ColumnOrderingType>,
+        input: ::std::option::Option<crate::types::ColumnOrderingType>,
     ) -> Self {
         self.use_ordering = input;
         self
@@ -66,16 +68,19 @@ impl ComparativeOrderBuilder {
     /// To override the contents of this collection use [`set_specifed_order`](Self::set_specifed_order).
     ///
     /// <p>The list of columns to be used in the ordering.</p>
-    pub fn specifed_order(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn specifed_order(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.specifed_order.unwrap_or_default();
         v.push(input.into());
-        self.specifed_order = Some(v);
+        self.specifed_order = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of columns to be used in the ordering.</p>
     pub fn set_specifed_order(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.specifed_order = input;
         self
@@ -85,13 +90,13 @@ impl ComparativeOrderBuilder {
         mut self,
         input: crate::types::UndefinedSpecifiedValueType,
     ) -> Self {
-        self.treat_undefined_specified_values = Some(input);
+        self.treat_undefined_specified_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>The treat of undefined specified values. Valid values for this structure are <code>LEAST</code> and <code>MOST</code>.</p>
     pub fn set_treat_undefined_specified_values(
         mut self,
-        input: std::option::Option<crate::types::UndefinedSpecifiedValueType>,
+        input: ::std::option::Option<crate::types::UndefinedSpecifiedValueType>,
     ) -> Self {
         self.treat_undefined_specified_values = input;
         self

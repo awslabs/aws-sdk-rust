@@ -2,43 +2,43 @@
 
 /// Runtime details of a pipeline when a channel is running.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineDetail {
     /// The name of the active input attachment currently being ingested by this pipeline.
     #[doc(hidden)]
-    pub active_input_attachment_name: std::option::Option<std::string::String>,
+    pub active_input_attachment_name: ::std::option::Option<::std::string::String>,
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
     #[doc(hidden)]
-    pub active_input_switch_action_name: std::option::Option<std::string::String>,
+    pub active_input_switch_action_name: ::std::option::Option<::std::string::String>,
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
     #[doc(hidden)]
-    pub active_motion_graphics_action_name: std::option::Option<std::string::String>,
+    pub active_motion_graphics_action_name: ::std::option::Option<::std::string::String>,
     /// The current URI being used for HTML5 motion graphics for this pipeline.
     #[doc(hidden)]
-    pub active_motion_graphics_uri: std::option::Option<std::string::String>,
+    pub active_motion_graphics_uri: ::std::option::Option<::std::string::String>,
     /// Pipeline ID
     #[doc(hidden)]
-    pub pipeline_id: std::option::Option<std::string::String>,
+    pub pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl PipelineDetail {
     /// The name of the active input attachment currently being ingested by this pipeline.
-    pub fn active_input_attachment_name(&self) -> std::option::Option<&str> {
+    pub fn active_input_attachment_name(&self) -> ::std::option::Option<&str> {
         self.active_input_attachment_name.as_deref()
     }
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
-    pub fn active_input_switch_action_name(&self) -> std::option::Option<&str> {
+    pub fn active_input_switch_action_name(&self) -> ::std::option::Option<&str> {
         self.active_input_switch_action_name.as_deref()
     }
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
-    pub fn active_motion_graphics_action_name(&self) -> std::option::Option<&str> {
+    pub fn active_motion_graphics_action_name(&self) -> ::std::option::Option<&str> {
         self.active_motion_graphics_action_name.as_deref()
     }
     /// The current URI being used for HTML5 motion graphics for this pipeline.
-    pub fn active_motion_graphics_uri(&self) -> std::option::Option<&str> {
+    pub fn active_motion_graphics_uri(&self) -> ::std::option::Option<&str> {
         self.active_motion_graphics_uri.as_deref()
     }
     /// Pipeline ID
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
 }
@@ -51,24 +51,29 @@ impl PipelineDetail {
 
 /// A builder for [`PipelineDetail`](crate::types::PipelineDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineDetailBuilder {
-    pub(crate) active_input_attachment_name: std::option::Option<std::string::String>,
-    pub(crate) active_input_switch_action_name: std::option::Option<std::string::String>,
-    pub(crate) active_motion_graphics_action_name: std::option::Option<std::string::String>,
-    pub(crate) active_motion_graphics_uri: std::option::Option<std::string::String>,
-    pub(crate) pipeline_id: std::option::Option<std::string::String>,
+    pub(crate) active_input_attachment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) active_input_switch_action_name: ::std::option::Option<::std::string::String>,
+    pub(crate) active_motion_graphics_action_name: ::std::option::Option<::std::string::String>,
+    pub(crate) active_motion_graphics_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl PipelineDetailBuilder {
     /// The name of the active input attachment currently being ingested by this pipeline.
-    pub fn active_input_attachment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.active_input_attachment_name = Some(input.into());
+    pub fn active_input_attachment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.active_input_attachment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the active input attachment currently being ingested by this pipeline.
     pub fn set_active_input_attachment_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.active_input_attachment_name = input;
         self
@@ -76,15 +81,15 @@ impl PipelineDetailBuilder {
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
     pub fn active_input_switch_action_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.active_input_switch_action_name = Some(input.into());
+        self.active_input_switch_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline.
     pub fn set_active_input_switch_action_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.active_input_switch_action_name = input;
         self
@@ -92,39 +97,42 @@ impl PipelineDetailBuilder {
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
     pub fn active_motion_graphics_action_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.active_motion_graphics_action_name = Some(input.into());
+        self.active_motion_graphics_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline.
     pub fn set_active_motion_graphics_action_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.active_motion_graphics_action_name = input;
         self
     }
     /// The current URI being used for HTML5 motion graphics for this pipeline.
-    pub fn active_motion_graphics_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.active_motion_graphics_uri = Some(input.into());
+    pub fn active_motion_graphics_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.active_motion_graphics_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// The current URI being used for HTML5 motion graphics for this pipeline.
     pub fn set_active_motion_graphics_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.active_motion_graphics_uri = input;
         self
     }
     /// Pipeline ID
-    pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_id = Some(input.into());
+    pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Pipeline ID
-    pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_id = input;
         self
     }

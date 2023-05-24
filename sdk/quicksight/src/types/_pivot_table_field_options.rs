@@ -2,28 +2,28 @@
 
 /// <p>The field options for a pivot table visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableFieldOptions {
     /// <p>The selected field options for the pivot table field options.</p>
     #[doc(hidden)]
     pub selected_field_options:
-        std::option::Option<std::vec::Vec<crate::types::PivotTableFieldOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>>,
     /// <p>The data path options for the pivot table field options.</p>
     #[doc(hidden)]
     pub data_path_options:
-        std::option::Option<std::vec::Vec<crate::types::PivotTableDataPathOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>>,
 }
 impl PivotTableFieldOptions {
     /// <p>The selected field options for the pivot table field options.</p>
     pub fn selected_field_options(
         &self,
-    ) -> std::option::Option<&[crate::types::PivotTableFieldOption]> {
+    ) -> ::std::option::Option<&[crate::types::PivotTableFieldOption]> {
         self.selected_field_options.as_deref()
     }
     /// <p>The data path options for the pivot table field options.</p>
     pub fn data_path_options(
         &self,
-    ) -> std::option::Option<&[crate::types::PivotTableDataPathOption]> {
+    ) -> ::std::option::Option<&[crate::types::PivotTableDataPathOption]> {
         self.data_path_options.as_deref()
     }
 }
@@ -36,12 +36,14 @@ impl PivotTableFieldOptions {
 
 /// A builder for [`PivotTableFieldOptions`](crate::types::PivotTableFieldOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PivotTableFieldOptionsBuilder {
     pub(crate) selected_field_options:
-        std::option::Option<std::vec::Vec<crate::types::PivotTableFieldOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>>,
     pub(crate) data_path_options:
-        std::option::Option<std::vec::Vec<crate::types::PivotTableDataPathOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>>,
 }
 impl PivotTableFieldOptionsBuilder {
     /// Appends an item to `selected_field_options`.
@@ -52,13 +54,13 @@ impl PivotTableFieldOptionsBuilder {
     pub fn selected_field_options(mut self, input: crate::types::PivotTableFieldOption) -> Self {
         let mut v = self.selected_field_options.unwrap_or_default();
         v.push(input);
-        self.selected_field_options = Some(v);
+        self.selected_field_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The selected field options for the pivot table field options.</p>
     pub fn set_selected_field_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PivotTableFieldOption>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableFieldOption>>,
     ) -> Self {
         self.selected_field_options = input;
         self
@@ -71,13 +73,13 @@ impl PivotTableFieldOptionsBuilder {
     pub fn data_path_options(mut self, input: crate::types::PivotTableDataPathOption) -> Self {
         let mut v = self.data_path_options.unwrap_or_default();
         v.push(input);
-        self.data_path_options = Some(v);
+        self.data_path_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data path options for the pivot table field options.</p>
     pub fn set_data_path_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PivotTableDataPathOption>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PivotTableDataPathOption>>,
     ) -> Self {
         self.data_path_options = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Provides the numerical and qualitative representations of a finding's severity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Severity {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
     #[doc(hidden)]
-    pub description: std::option::Option<crate::types::SeverityDescription>,
+    pub description: ::std::option::Option<crate::types::SeverityDescription>,
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
     #[doc(hidden)]
-    pub score: std::option::Option<i64>,
+    pub score: ::std::option::Option<i64>,
 }
 impl Severity {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
-    pub fn description(&self) -> std::option::Option<&crate::types::SeverityDescription> {
+    pub fn description(&self) -> ::std::option::Option<&crate::types::SeverityDescription> {
         self.description.as_ref()
     }
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
-    pub fn score(&self) -> std::option::Option<i64> {
+    pub fn score(&self) -> ::std::option::Option<i64> {
         self.score
     }
 }
@@ -30,32 +30,34 @@ impl Severity {
 
 /// A builder for [`Severity`](crate::types::Severity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SeverityBuilder {
-    pub(crate) description: std::option::Option<crate::types::SeverityDescription>,
-    pub(crate) score: std::option::Option<i64>,
+    pub(crate) description: ::std::option::Option<crate::types::SeverityDescription>,
+    pub(crate) score: ::std::option::Option<i64>,
 }
 impl SeverityBuilder {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
     pub fn description(mut self, input: crate::types::SeverityDescription) -> Self {
-        self.description = Some(input);
+        self.description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
     pub fn set_description(
         mut self,
-        input: std::option::Option<crate::types::SeverityDescription>,
+        input: ::std::option::Option<crate::types::SeverityDescription>,
     ) -> Self {
         self.description = input;
         self
     }
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
     pub fn score(mut self, input: i64) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
-    pub fn set_score(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<i64>) -> Self {
         self.score = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>The CheckDomainAvailability response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckDomainAvailabilityOutput {
     /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only domains designated as <code>AVAILABLE</code>.</p>
@@ -65,7 +65,7 @@ pub struct CheckDomainAvailabilityOutput {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub availability: std::option::Option<crate::types::DomainAvailability>,
+    pub availability: ::std::option::Option<crate::types::DomainAvailability>,
     _request_id: Option<String>,
 }
 impl CheckDomainAvailabilityOutput {
@@ -129,11 +129,11 @@ impl CheckDomainAvailabilityOutput {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
-    pub fn availability(&self) -> std::option::Option<&crate::types::DomainAvailability> {
+    pub fn availability(&self) -> ::std::option::Option<&crate::types::DomainAvailability> {
         self.availability.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CheckDomainAvailabilityOutput {
+impl ::aws_http::request_id::RequestId for CheckDomainAvailabilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -149,9 +149,11 @@ impl CheckDomainAvailabilityOutput {
 
 /// A builder for [`CheckDomainAvailabilityOutput`](crate::operation::check_domain_availability::CheckDomainAvailabilityOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CheckDomainAvailabilityOutputBuilder {
-    pub(crate) availability: std::option::Option<crate::types::DomainAvailability>,
+    pub(crate) availability: ::std::option::Option<crate::types::DomainAvailability>,
     _request_id: Option<String>,
 }
 impl CheckDomainAvailabilityOutputBuilder {
@@ -216,7 +218,7 @@ impl CheckDomainAvailabilityOutputBuilder {
     /// </dd>
     /// </dl>
     pub fn availability(mut self, input: crate::types::DomainAvailability) -> Self {
-        self.availability = Some(input);
+        self.availability = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the domain name is available for registering.</p> <note>
@@ -281,7 +283,7 @@ impl CheckDomainAvailabilityOutputBuilder {
     /// </dl>
     pub fn set_availability(
         mut self,
-        input: std::option::Option<crate::types::DomainAvailability>,
+        input: ::std::option::Option<crate::types::DomainAvailability>,
     ) -> Self {
         self.availability = input;
         self

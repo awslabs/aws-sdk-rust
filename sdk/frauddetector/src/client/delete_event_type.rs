@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventType`](crate::operation::delete_event_type::builders::DeleteEventTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_event_type::builders::DeleteEventTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_event_type::builders::DeleteEventTypeFluentBuilder::set_name): <p>The name of the event type to delete.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_event_type::builders::DeleteEventTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_event_type::builders::DeleteEventTypeFluentBuilder::set_name): <p>The name of the event type to delete.</p>
     /// - On success, responds with [`DeleteEventTypeOutput`](crate::operation::delete_event_type::DeleteEventTypeOutput)
     /// - On failure, responds with [`SdkError<DeleteEventTypeError>`](crate::operation::delete_event_type::DeleteEventTypeError)
     pub fn delete_event_type(

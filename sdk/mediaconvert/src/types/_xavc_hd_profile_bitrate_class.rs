@@ -39,13 +39,13 @@
 /// Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum XavcHdProfileBitrateClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum XavcHdProfileBitrateClass {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for XavcHdProfileBitrateClass {
+impl ::std::convert::From<&str> for XavcHdProfileBitrateClass {
     fn from(s: &str) -> Self {
         match s {
             "BITRATE_CLASS_25" => XavcHdProfileBitrateClass::BitrateClass25,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for XavcHdProfileBitrateClass {
         }
     }
 }
-impl std::str::FromStr for XavcHdProfileBitrateClass {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for XavcHdProfileBitrateClass {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XavcHdProfileBitrateClass::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(XavcHdProfileBitrateClass::from(s))
     }
 }
 impl XavcHdProfileBitrateClass {
@@ -91,7 +91,7 @@ impl XavcHdProfileBitrateClass {
         &["BITRATE_CLASS_25", "BITRATE_CLASS_35", "BITRATE_CLASS_50"]
     }
 }
-impl AsRef<str> for XavcHdProfileBitrateClass {
+impl ::std::convert::AsRef<str> for XavcHdProfileBitrateClass {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

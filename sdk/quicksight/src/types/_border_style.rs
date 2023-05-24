@@ -2,15 +2,15 @@
 
 /// <p>The display options for tile borders for visuals.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BorderStyle {
     /// <p>The option to enable display of borders for visuals.</p>
     #[doc(hidden)]
-    pub show: std::option::Option<bool>,
+    pub show: ::std::option::Option<bool>,
 }
 impl BorderStyle {
     /// <p>The option to enable display of borders for visuals.</p>
-    pub fn show(&self) -> std::option::Option<bool> {
+    pub fn show(&self) -> ::std::option::Option<bool> {
         self.show
     }
 }
@@ -23,18 +23,20 @@ impl BorderStyle {
 
 /// A builder for [`BorderStyle`](crate::types::BorderStyle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BorderStyleBuilder {
-    pub(crate) show: std::option::Option<bool>,
+    pub(crate) show: ::std::option::Option<bool>,
 }
 impl BorderStyleBuilder {
     /// <p>The option to enable display of borders for visuals.</p>
     pub fn show(mut self, input: bool) -> Self {
-        self.show = Some(input);
+        self.show = ::std::option::Option::Some(input);
         self
     }
     /// <p>The option to enable display of borders for visuals.</p>
-    pub fn set_show(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_show(mut self, input: ::std::option::Option<bool>) -> Self {
         self.show = input;
         self
     }

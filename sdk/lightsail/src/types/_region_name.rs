@@ -51,13 +51,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RegionName {
     #[allow(missing_docs)] // documentation missing in model
@@ -93,7 +93,7 @@ pub enum RegionName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RegionName {
+impl ::std::convert::From<&str> for RegionName {
     fn from(s: &str) -> Self {
         match s {
             "ap-northeast-1" => RegionName::ApNortheast1,
@@ -115,11 +115,11 @@ impl std::convert::From<&str> for RegionName {
         }
     }
 }
-impl std::str::FromStr for RegionName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RegionName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RegionName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RegionName::from(s))
     }
 }
 impl RegionName {
@@ -165,7 +165,7 @@ impl RegionName {
         ]
     }
 }
-impl AsRef<str> for RegionName {
+impl ::std::convert::AsRef<str> for RegionName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

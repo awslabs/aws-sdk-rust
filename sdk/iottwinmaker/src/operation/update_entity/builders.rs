@@ -6,56 +6,59 @@ pub use crate::operation::update_entity::_update_entity_input::UpdateEntityInput
 /// Fluent builder constructing a request to `UpdateEntity`.
 ///
 /// <p>Updates an entity.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEntityFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_entity::builders::UpdateEntityInputBuilder,
 }
 impl UpdateEntityFluentBuilder {
     /// Creates a new `UpdateEntity`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_entity::UpdateEntity,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_entity::UpdateEntityOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,49 +71,49 @@ impl UpdateEntityFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_entity::UpdateEntityOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_entity::UpdateEntityError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
         self
     }
     /// <p>The ID of the entity.</p>
-    pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
         self
     }
     /// <p>The name of the entity.</p>
-    pub fn entity_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn entity_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_name(input.into());
         self
     }
     /// <p>The name of the entity.</p>
-    pub fn set_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entity_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_name(input);
         self
     }
     /// <p>The description of the entity.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the entity.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -121,7 +124,7 @@ impl UpdateEntityFluentBuilder {
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn component_updates(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ComponentUpdateRequest,
     ) -> Self {
         self.inner = self.inner.component_updates(k.into(), v);
@@ -130,8 +133,11 @@ impl UpdateEntityFluentBuilder {
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn set_component_updates(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ComponentUpdateRequest>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                crate::types::ComponentUpdateRequest,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_component_updates(input);
@@ -145,7 +151,7 @@ impl UpdateEntityFluentBuilder {
     /// <p>An object that describes the update request for a parent entity.</p>
     pub fn set_parent_entity_update(
         mut self,
-        input: std::option::Option<crate::types::ParentEntityUpdateRequest>,
+        input: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
     ) -> Self {
         self.inner = self.inner.set_parent_entity_update(input);
         self

@@ -2,18 +2,18 @@
 
 /// <p>Contains details about an iteration of a Map state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapIterationEventDetails {
     /// <p>The name of the iteration’s parent Map state.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The index of the array belonging to the Map state iteration.</p>
     #[doc(hidden)]
     pub index: i32,
 }
 impl MapIterationEventDetails {
     /// <p>The name of the iteration’s parent Map state.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
@@ -30,29 +30,31 @@ impl MapIterationEventDetails {
 
 /// A builder for [`MapIterationEventDetails`](crate::types::MapIterationEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MapIterationEventDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) index: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) index: ::std::option::Option<i32>,
 }
 impl MapIterationEventDetailsBuilder {
     /// <p>The name of the iteration’s parent Map state.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the iteration’s parent Map state.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
     pub fn index(mut self, input: i32) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index of the array belonging to the Map state iteration.</p>
-    pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
     }

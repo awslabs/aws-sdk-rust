@@ -41,13 +41,13 @@
 /// Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your output.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeinterlaceAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum DeinterlaceAlgorithm {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeinterlaceAlgorithm {
+impl ::std::convert::From<&str> for DeinterlaceAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "BLEND" => DeinterlaceAlgorithm::Blend,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for DeinterlaceAlgorithm {
         }
     }
 }
-impl std::str::FromStr for DeinterlaceAlgorithm {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeinterlaceAlgorithm {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeinterlaceAlgorithm::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeinterlaceAlgorithm::from(s))
     }
 }
 impl DeinterlaceAlgorithm {
@@ -107,7 +107,7 @@ impl DeinterlaceAlgorithm {
         ]
     }
 }
-impl AsRef<str> for DeinterlaceAlgorithm {
+impl ::std::convert::AsRef<str> for DeinterlaceAlgorithm {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

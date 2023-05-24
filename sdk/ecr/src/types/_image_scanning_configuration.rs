@@ -2,7 +2,7 @@
 
 /// <p>The image scanning configuration for a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanningConfiguration {
     /// <p>The setting that determines whether images are scanned after being pushed to a repository. If set to <code>true</code>, images will be scanned after being pushed. If this parameter is not specified, it will default to <code>false</code> and images will not be scanned unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a> API.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl ImageScanningConfiguration {
 
 /// A builder for [`ImageScanningConfiguration`](crate::types::ImageScanningConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageScanningConfigurationBuilder {
-    pub(crate) scan_on_push: std::option::Option<bool>,
+    pub(crate) scan_on_push: ::std::option::Option<bool>,
 }
 impl ImageScanningConfigurationBuilder {
     /// <p>The setting that determines whether images are scanned after being pushed to a repository. If set to <code>true</code>, images will be scanned after being pushed. If this parameter is not specified, it will default to <code>false</code> and images will not be scanned unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a> API.</p>
     pub fn scan_on_push(mut self, input: bool) -> Self {
-        self.scan_on_push = Some(input);
+        self.scan_on_push = ::std::option::Option::Some(input);
         self
     }
     /// <p>The setting that determines whether images are scanned after being pushed to a repository. If set to <code>true</code>, images will be scanned after being pushed. If this parameter is not specified, it will default to <code>false</code> and images will not be scanned unless a scan is manually started with the <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a> API.</p>
-    pub fn set_scan_on_push(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_scan_on_push(mut self, input: ::std::option::Option<bool>) -> Self {
         self.scan_on_push = input;
         self
     }

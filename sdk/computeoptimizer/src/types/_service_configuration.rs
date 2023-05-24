@@ -2,18 +2,18 @@
 
 /// <p> The Amazon ECS service configurations used for recommendations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceConfiguration {
     /// <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
     #[doc(hidden)]
-    pub memory: std::option::Option<i32>,
+    pub memory: ::std::option::Option<i32>,
     /// <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
     #[doc(hidden)]
-    pub cpu: std::option::Option<i32>,
+    pub cpu: ::std::option::Option<i32>,
     /// <p> The container configurations within a task of an Amazon ECS service. </p>
     #[doc(hidden)]
     pub container_configurations:
-        std::option::Option<std::vec::Vec<crate::types::ContainerConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ContainerConfiguration>>,
     /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
     /// <p>The Auto Scaling configuration methods include:</p>
     /// <ul>
@@ -22,24 +22,24 @@ pub struct ServiceConfiguration {
     /// </ul>
     /// <p>For more information about step scaling and target scaling, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"> Step scaling policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
-    pub auto_scaling_configuration: std::option::Option<crate::types::AutoScalingConfiguration>,
+    pub auto_scaling_configuration: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     /// <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
     #[doc(hidden)]
-    pub task_definition_arn: std::option::Option<std::string::String>,
+    pub task_definition_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServiceConfiguration {
     /// <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
-    pub fn memory(&self) -> std::option::Option<i32> {
+    pub fn memory(&self) -> ::std::option::Option<i32> {
         self.memory
     }
     /// <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
-    pub fn cpu(&self) -> std::option::Option<i32> {
+    pub fn cpu(&self) -> ::std::option::Option<i32> {
         self.cpu
     }
     /// <p> The container configurations within a task of an Amazon ECS service. </p>
     pub fn container_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::ContainerConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::ContainerConfiguration]> {
         self.container_configurations.as_deref()
     }
     /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
@@ -51,11 +51,11 @@ impl ServiceConfiguration {
     /// <p>For more information about step scaling and target scaling, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"> Step scaling policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn auto_scaling_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::AutoScalingConfiguration> {
+    ) -> ::std::option::Option<&crate::types::AutoScalingConfiguration> {
         self.auto_scaling_configuration.as_ref()
     }
     /// <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
-    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+    pub fn task_definition_arn(&self) -> ::std::option::Option<&str> {
         self.task_definition_arn.as_deref()
     }
 }
@@ -68,34 +68,36 @@ impl ServiceConfiguration {
 
 /// A builder for [`ServiceConfiguration`](crate::types::ServiceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceConfigurationBuilder {
-    pub(crate) memory: std::option::Option<i32>,
-    pub(crate) cpu: std::option::Option<i32>,
+    pub(crate) memory: ::std::option::Option<i32>,
+    pub(crate) cpu: ::std::option::Option<i32>,
     pub(crate) container_configurations:
-        std::option::Option<std::vec::Vec<crate::types::ContainerConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ContainerConfiguration>>,
     pub(crate) auto_scaling_configuration:
-        std::option::Option<crate::types::AutoScalingConfiguration>,
-    pub(crate) task_definition_arn: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::AutoScalingConfiguration>,
+    pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServiceConfigurationBuilder {
     /// <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
     pub fn memory(mut self, input: i32) -> Self {
-        self.memory = Some(input);
+        self.memory = ::std::option::Option::Some(input);
         self
     }
     /// <p> The amount of memory used by the tasks in the Amazon ECS service. </p>
-    pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory = input;
         self
     }
     /// <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
     pub fn cpu(mut self, input: i32) -> Self {
-        self.cpu = Some(input);
+        self.cpu = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of CPU units used by the tasks in the Amazon ECS service. </p>
-    pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cpu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu = input;
         self
     }
@@ -107,13 +109,13 @@ impl ServiceConfigurationBuilder {
     pub fn container_configurations(mut self, input: crate::types::ContainerConfiguration) -> Self {
         let mut v = self.container_configurations.unwrap_or_default();
         v.push(input);
-        self.container_configurations = Some(v);
+        self.container_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p> The container configurations within a task of an Amazon ECS service. </p>
     pub fn set_container_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContainerConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerConfiguration>>,
     ) -> Self {
         self.container_configurations = input;
         self
@@ -129,7 +131,7 @@ impl ServiceConfigurationBuilder {
         mut self,
         input: crate::types::AutoScalingConfiguration,
     ) -> Self {
-        self.auto_scaling_configuration = Some(input);
+        self.auto_scaling_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p>
@@ -141,20 +143,23 @@ impl ServiceConfigurationBuilder {
     /// <p>For more information about step scaling and target scaling, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"> Step scaling policies for Application Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_auto_scaling_configuration(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingConfiguration>,
+        input: ::std::option::Option<crate::types::AutoScalingConfiguration>,
     ) -> Self {
         self.auto_scaling_configuration = input;
         self
     }
     /// <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
-    pub fn task_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_definition_arn = Some(input.into());
+    pub fn task_definition_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The task definition ARN used by the tasks in the Amazon ECS service. </p>
     pub fn set_task_definition_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.task_definition_arn = input;
         self

@@ -2,36 +2,36 @@
 
 /// <p>The evaluation metrics associated with the evaluated model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlywheelModelEvaluationMetrics {
     /// <p>The average F1 score from the evaluation metrics.</p>
     #[doc(hidden)]
-    pub average_f1_score: std::option::Option<f64>,
+    pub average_f1_score: ::std::option::Option<f64>,
     /// <p>Average precision metric for the model.</p>
     #[doc(hidden)]
-    pub average_precision: std::option::Option<f64>,
+    pub average_precision: ::std::option::Option<f64>,
     /// <p>Average recall metric for the model.</p>
     #[doc(hidden)]
-    pub average_recall: std::option::Option<f64>,
+    pub average_recall: ::std::option::Option<f64>,
     /// <p>Average accuracy metric for the model.</p>
     #[doc(hidden)]
-    pub average_accuracy: std::option::Option<f64>,
+    pub average_accuracy: ::std::option::Option<f64>,
 }
 impl FlywheelModelEvaluationMetrics {
     /// <p>The average F1 score from the evaluation metrics.</p>
-    pub fn average_f1_score(&self) -> std::option::Option<f64> {
+    pub fn average_f1_score(&self) -> ::std::option::Option<f64> {
         self.average_f1_score
     }
     /// <p>Average precision metric for the model.</p>
-    pub fn average_precision(&self) -> std::option::Option<f64> {
+    pub fn average_precision(&self) -> ::std::option::Option<f64> {
         self.average_precision
     }
     /// <p>Average recall metric for the model.</p>
-    pub fn average_recall(&self) -> std::option::Option<f64> {
+    pub fn average_recall(&self) -> ::std::option::Option<f64> {
         self.average_recall
     }
     /// <p>Average accuracy metric for the model.</p>
-    pub fn average_accuracy(&self) -> std::option::Option<f64> {
+    pub fn average_accuracy(&self) -> ::std::option::Option<f64> {
         self.average_accuracy
     }
 }
@@ -44,51 +44,53 @@ impl FlywheelModelEvaluationMetrics {
 
 /// A builder for [`FlywheelModelEvaluationMetrics`](crate::types::FlywheelModelEvaluationMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FlywheelModelEvaluationMetricsBuilder {
-    pub(crate) average_f1_score: std::option::Option<f64>,
-    pub(crate) average_precision: std::option::Option<f64>,
-    pub(crate) average_recall: std::option::Option<f64>,
-    pub(crate) average_accuracy: std::option::Option<f64>,
+    pub(crate) average_f1_score: ::std::option::Option<f64>,
+    pub(crate) average_precision: ::std::option::Option<f64>,
+    pub(crate) average_recall: ::std::option::Option<f64>,
+    pub(crate) average_accuracy: ::std::option::Option<f64>,
 }
 impl FlywheelModelEvaluationMetricsBuilder {
     /// <p>The average F1 score from the evaluation metrics.</p>
     pub fn average_f1_score(mut self, input: f64) -> Self {
-        self.average_f1_score = Some(input);
+        self.average_f1_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The average F1 score from the evaluation metrics.</p>
-    pub fn set_average_f1_score(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_average_f1_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average_f1_score = input;
         self
     }
     /// <p>Average precision metric for the model.</p>
     pub fn average_precision(mut self, input: f64) -> Self {
-        self.average_precision = Some(input);
+        self.average_precision = ::std::option::Option::Some(input);
         self
     }
     /// <p>Average precision metric for the model.</p>
-    pub fn set_average_precision(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_average_precision(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average_precision = input;
         self
     }
     /// <p>Average recall metric for the model.</p>
     pub fn average_recall(mut self, input: f64) -> Self {
-        self.average_recall = Some(input);
+        self.average_recall = ::std::option::Option::Some(input);
         self
     }
     /// <p>Average recall metric for the model.</p>
-    pub fn set_average_recall(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_average_recall(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average_recall = input;
         self
     }
     /// <p>Average accuracy metric for the model.</p>
     pub fn average_accuracy(mut self, input: f64) -> Self {
-        self.average_accuracy = Some(input);
+        self.average_accuracy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Average accuracy metric for the model.</p>
-    pub fn set_average_accuracy(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_average_accuracy(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average_accuracy = input;
         self
     }

@@ -2,14 +2,14 @@
 
 /// <p>A summary of resources that aren't compliant. The summary is organized according to resource type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NonCompliantSummary {
     /// <p>The total number of compliance items that aren't compliant.</p>
     #[doc(hidden)]
     pub non_compliant_count: i32,
     /// <p>A summary of the non-compliance severity by compliance type</p>
     #[doc(hidden)]
-    pub severity_summary: std::option::Option<crate::types::SeveritySummary>,
+    pub severity_summary: ::std::option::Option<crate::types::SeveritySummary>,
 }
 impl NonCompliantSummary {
     /// <p>The total number of compliance items that aren't compliant.</p>
@@ -17,7 +17,7 @@ impl NonCompliantSummary {
         self.non_compliant_count
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
-    pub fn severity_summary(&self) -> std::option::Option<&crate::types::SeveritySummary> {
+    pub fn severity_summary(&self) -> ::std::option::Option<&crate::types::SeveritySummary> {
         self.severity_summary.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl NonCompliantSummary {
 
 /// A builder for [`NonCompliantSummary`](crate::types::NonCompliantSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NonCompliantSummaryBuilder {
-    pub(crate) non_compliant_count: std::option::Option<i32>,
-    pub(crate) severity_summary: std::option::Option<crate::types::SeveritySummary>,
+    pub(crate) non_compliant_count: ::std::option::Option<i32>,
+    pub(crate) severity_summary: ::std::option::Option<crate::types::SeveritySummary>,
 }
 impl NonCompliantSummaryBuilder {
     /// <p>The total number of compliance items that aren't compliant.</p>
     pub fn non_compliant_count(mut self, input: i32) -> Self {
-        self.non_compliant_count = Some(input);
+        self.non_compliant_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of compliance items that aren't compliant.</p>
-    pub fn set_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_compliant_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_count = input;
         self
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
     pub fn severity_summary(mut self, input: crate::types::SeveritySummary) -> Self {
-        self.severity_summary = Some(input);
+        self.severity_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
     pub fn set_severity_summary(
         mut self,
-        input: std::option::Option<crate::types::SeveritySummary>,
+        input: ::std::option::Option<crate::types::SeveritySummary>,
     ) -> Self {
         self.severity_summary = input;
         self

@@ -2,31 +2,31 @@
 
 /// <p>The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code> and <code>MediaUriType</code>) to access the media files that are streamed to the camera.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MediaSourceConfig {
     /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
     #[doc(hidden)]
-    pub media_uri_secret_arn: std::option::Option<std::string::String>,
+    pub media_uri_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
     #[doc(hidden)]
-    pub media_uri_type: std::option::Option<crate::types::MediaUriType>,
+    pub media_uri_type: ::std::option::Option<crate::types::MediaUriType>,
 }
 impl MediaSourceConfig {
     /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
-    pub fn media_uri_secret_arn(&self) -> std::option::Option<&str> {
+    pub fn media_uri_secret_arn(&self) -> ::std::option::Option<&str> {
         self.media_uri_secret_arn.as_deref()
     }
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
-    pub fn media_uri_type(&self) -> std::option::Option<&crate::types::MediaUriType> {
+    pub fn media_uri_type(&self) -> ::std::option::Option<&crate::types::MediaUriType> {
         self.media_uri_type.as_ref()
     }
 }
-impl std::fmt::Debug for MediaSourceConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MediaSourceConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaSourceConfig");
         formatter.field("media_uri_secret_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("media_uri_type", &self.media_uri_type);
@@ -42,21 +42,24 @@ impl MediaSourceConfig {
 
 /// A builder for [`MediaSourceConfig`](crate::types::MediaSourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MediaSourceConfigBuilder {
-    pub(crate) media_uri_secret_arn: std::option::Option<std::string::String>,
-    pub(crate) media_uri_type: std::option::Option<crate::types::MediaUriType>,
+    pub(crate) media_uri_secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) media_uri_type: ::std::option::Option<crate::types::MediaUriType>,
 }
 impl MediaSourceConfigBuilder {
     /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
-    pub fn media_uri_secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.media_uri_secret_arn = Some(input.into());
+    pub fn media_uri_secret_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.media_uri_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Secrets Manager ARN for the username and password of the camera, or a local media file location.</p>
     pub fn set_media_uri_secret_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.media_uri_secret_arn = input;
         self
@@ -65,7 +68,7 @@ impl MediaSourceConfigBuilder {
     /// <p>Preview only supports the <code>RTSP_URI</code> media source URI format .</p>
     /// </note>
     pub fn media_uri_type(mut self, input: crate::types::MediaUriType) -> Self {
-        self.media_uri_type = Some(input);
+        self.media_uri_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be used to stream local media files.</p> <note>
@@ -73,7 +76,7 @@ impl MediaSourceConfigBuilder {
     /// </note>
     pub fn set_media_uri_type(
         mut self,
-        input: std::option::Option<crate::types::MediaUriType>,
+        input: ::std::option::Option<crate::types::MediaUriType>,
     ) -> Self {
         self.media_uri_type = input;
         self
@@ -86,8 +89,8 @@ impl MediaSourceConfigBuilder {
         }
     }
 }
-impl std::fmt::Debug for MediaSourceConfigBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MediaSourceConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MediaSourceConfigBuilder");
         formatter.field("media_uri_secret_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("media_uri_type", &self.media_uri_type);

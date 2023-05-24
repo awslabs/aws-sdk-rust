@@ -2,22 +2,22 @@
 
 /// <p>A skill parameter associated with a room.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     #[doc(hidden)]
-    pub parameter_key: std::option::Option<std::string::String>,
+    pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The parameter value of a room skill parameter.</p>
     #[doc(hidden)]
-    pub parameter_value: std::option::Option<std::string::String>,
+    pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn parameter_key(&self) -> std::option::Option<&str> {
+    pub fn parameter_key(&self) -> ::std::option::Option<&str> {
         self.parameter_key.as_deref()
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn parameter_value(&self) -> std::option::Option<&str> {
+    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl RoomSkillParameter {
 
 /// A builder for [`RoomSkillParameter`](crate::types::RoomSkillParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoomSkillParameterBuilder {
-    pub(crate) parameter_key: std::option::Option<std::string::String>,
-    pub(crate) parameter_value: std::option::Option<std::string::String>,
+    pub(crate) parameter_key: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl RoomSkillParameterBuilder {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_key = Some(input.into());
+    pub fn parameter_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_key = input;
         self
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_value = Some(input.into());
+    pub fn parameter_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_value = input;
         self
     }

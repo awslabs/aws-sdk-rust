@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupOptionsInput {
     /// <p>A required parameter. Options available for the given engine name are described.</p>
     /// <p>Valid Values:</p>
@@ -20,21 +20,21 @@ pub struct DescribeOptionGroupOptionsInput {
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub engine_name: std::option::Option<std::string::String>,
+    pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
     #[doc(hidden)]
-    pub major_engine_version: std::option::Option<std::string::String>,
+    pub major_engine_version: ::std::option::Option<::std::string::String>,
     /// <p>This parameter isn't currently supported.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
-    pub max_records: std::option::Option<i32>,
+    pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOptionGroupOptionsInput {
     /// <p>A required parameter. Options available for the given engine name are described.</p>
@@ -52,25 +52,25 @@ impl DescribeOptionGroupOptionsInput {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn engine_name(&self) -> std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<&str> {
         self.engine_name.as_deref()
     }
     /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
         self.major_engine_version.as_deref()
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    pub fn max_records(&self) -> std::option::Option<i32> {
+    pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
@@ -83,13 +83,15 @@ impl DescribeOptionGroupOptionsInput {
 
 /// A builder for [`DescribeOptionGroupOptionsInput`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOptionGroupOptionsInputBuilder {
-    pub(crate) engine_name: std::option::Option<std::string::String>,
-    pub(crate) major_engine_version: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    pub(crate) max_records: std::option::Option<i32>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) engine_name: ::std::option::Option<::std::string::String>,
+    pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) max_records: ::std::option::Option<i32>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOptionGroupOptionsInputBuilder {
     /// <p>A required parameter. Options available for the given engine name are described.</p>
@@ -107,8 +109,8 @@ impl DescribeOptionGroupOptionsInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_name = Some(input.into());
+    pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A required parameter. Options available for the given engine name are described.</p>
@@ -126,19 +128,22 @@ impl DescribeOptionGroupOptionsInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
         self
     }
     /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-    pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.major_engine_version = Some(input.into());
+    pub fn major_engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.major_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
     pub fn set_major_engine_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.major_engine_version = input;
         self
@@ -151,13 +156,13 @@ impl DescribeOptionGroupOptionsInputBuilder {
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>This parameter isn't currently supported.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filters = input;
         self
@@ -166,34 +171,34 @@ impl DescribeOptionGroupOptionsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
-        self.max_records = Some(input);
+        self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeOptionGroupOptionsInput`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput {
                 engine_name: self.engine_name,
                 major_engine_version: self.major_engine_version,

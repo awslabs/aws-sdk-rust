@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemovePermission`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`topic_arn(impl Into<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::topic_arn) / [`set_topic_arn(Option<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::set_topic_arn): <p>The ARN of the topic whose access control policy you wish to modify.</p>
-    ///   - [`label(impl Into<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::label) / [`set_label(Option<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::set_label): <p>The unique label of the statement you want to remove.</p>
+    ///   - [`topic_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::topic_arn) / [`set_topic_arn(Option<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::set_topic_arn): <p>The ARN of the topic whose access control policy you wish to modify.</p>
+    ///   - [`label(impl ::std::convert::Into<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::label) / [`set_label(Option<String>)`](crate::operation::remove_permission::builders::RemovePermissionFluentBuilder::set_label): <p>The unique label of the statement you want to remove.</p>
     /// - On success, responds with [`RemovePermissionOutput`](crate::operation::remove_permission::RemovePermissionOutput)
     /// - On failure, responds with [`SdkError<RemovePermissionError>`](crate::operation::remove_permission::RemovePermissionError)
     pub fn remove_permission(

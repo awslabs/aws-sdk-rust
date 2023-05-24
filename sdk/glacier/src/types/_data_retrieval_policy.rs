@@ -2,15 +2,15 @@
 
 /// <p>Data retrieval policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataRetrievalPolicy {
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::DataRetrievalRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>>,
 }
 impl DataRetrievalPolicy {
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::DataRetrievalRule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::DataRetrievalRule]> {
         self.rules.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl DataRetrievalPolicy {
 
 /// A builder for [`DataRetrievalPolicy`](crate::types::DataRetrievalPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataRetrievalPolicyBuilder {
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::DataRetrievalRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>>,
 }
 impl DataRetrievalPolicyBuilder {
     /// Appends an item to `rules`.
@@ -36,13 +38,13 @@ impl DataRetrievalPolicyBuilder {
     pub fn rules(mut self, input: crate::types::DataRetrievalRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataRetrievalRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataRetrievalRule>>,
     ) -> Self {
         self.rules = input;
         self

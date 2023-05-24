@@ -6,29 +6,29 @@ pub use crate::operation::modify_target_group::_modify_target_group_input::Modif
 /// Fluent builder constructing a request to `ModifyTargetGroup`.
 ///
 /// <p>Modifies the health checks used when evaluating the health state of the targets in the specified target group.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyTargetGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder,
 }
 impl ModifyTargetGroupFluentBuilder {
     /// Creates a new `ModifyTargetGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_target_group::ModifyTargetGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_target_group::ModifyTargetGroupError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ModifyTargetGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_target_group::ModifyTargetGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_target_group::ModifyTargetGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl ModifyTargetGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_target_group::ModifyTargetGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_target_group::ModifyTargetGroupError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_group_arn(input);
         self
     }
@@ -98,20 +107,23 @@ impl ModifyTargetGroupFluentBuilder {
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
     pub fn set_health_check_protocol(
         mut self,
-        input: std::option::Option<crate::types::ProtocolEnum>,
+        input: ::std::option::Option<crate::types::ProtocolEnum>,
     ) -> Self {
         self.inner = self.inner.set_health_check_protocol(input);
         self
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn health_check_port(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn health_check_port(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.health_check_port(input.into());
         self
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
     pub fn set_health_check_port(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_health_check_port(input);
         self
@@ -119,7 +131,10 @@ impl ModifyTargetGroupFluentBuilder {
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn health_check_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.health_check_path(input.into());
         self
     }
@@ -128,7 +143,7 @@ impl ModifyTargetGroupFluentBuilder {
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub fn set_health_check_path(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
@@ -139,7 +154,7 @@ impl ModifyTargetGroupFluentBuilder {
         self
     }
     /// <p>Indicates whether health checks are enabled.</p>
-    pub fn set_health_check_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_health_check_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_health_check_enabled(input);
         self
     }
@@ -149,7 +164,7 @@ impl ModifyTargetGroupFluentBuilder {
         self
     }
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.</p>
-    pub fn set_health_check_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_health_check_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_health_check_interval_seconds(input);
         self
     }
@@ -159,7 +174,7 @@ impl ModifyTargetGroupFluentBuilder {
         self
     }
     /// <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>
-    pub fn set_health_check_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_health_check_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_health_check_timeout_seconds(input);
         self
     }
@@ -169,7 +184,7 @@ impl ModifyTargetGroupFluentBuilder {
         self
     }
     /// <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
-    pub fn set_healthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_healthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_healthy_threshold_count(input);
         self
     }
@@ -179,7 +194,7 @@ impl ModifyTargetGroupFluentBuilder {
         self
     }
     /// <p>The number of consecutive health check failures required before considering the target unhealthy.</p>
-    pub fn set_unhealthy_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unhealthy_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_unhealthy_threshold_count(input);
         self
     }
@@ -189,7 +204,7 @@ impl ModifyTargetGroupFluentBuilder {
         self
     }
     /// <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.</p>
-    pub fn set_matcher(mut self, input: std::option::Option<crate::types::Matcher>) -> Self {
+    pub fn set_matcher(mut self, input: ::std::option::Option<crate::types::Matcher>) -> Self {
         self.inner = self.inner.set_matcher(input);
         self
     }

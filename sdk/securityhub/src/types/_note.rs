@@ -2,31 +2,31 @@
 
 /// <p>A user-defined note added to a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Note {
     /// <p>The text of a note.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>The principal that created a note.</p>
     #[doc(hidden)]
-    pub updated_by: std::option::Option<std::string::String>,
+    pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the note was updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<std::string::String>,
+    pub updated_at: ::std::option::Option<::std::string::String>,
 }
 impl Note {
     /// <p>The text of a note.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The principal that created a note.</p>
-    pub fn updated_by(&self) -> std::option::Option<&str> {
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
     /// <p>The timestamp of when the note was updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn updated_at(&self) -> std::option::Option<&str> {
+    pub fn updated_at(&self) -> ::std::option::Option<&str> {
         self.updated_at.as_deref()
     }
 }
@@ -39,42 +39,44 @@ impl Note {
 
 /// A builder for [`Note`](crate::types::Note).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NoteBuilder {
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) updated_by: std::option::Option<std::string::String>,
-    pub(crate) updated_at: std::option::Option<std::string::String>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_at: ::std::option::Option<::std::string::String>,
 }
 impl NoteBuilder {
     /// <p>The text of a note.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of a note.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p>The principal that created a note.</p>
-    pub fn updated_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_by = Some(input.into());
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal that created a note.</p>
-    pub fn set_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_by = input;
         self
     }
     /// <p>The timestamp of when the note was updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn updated_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_at = Some(input.into());
+    pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp of when the note was updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_at = input;
         self
     }

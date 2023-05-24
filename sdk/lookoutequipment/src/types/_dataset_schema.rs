@@ -2,15 +2,15 @@
 
 /// <p>Provides information about the data schema used with the given dataset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetSchema {
     /// <p> </p>
     #[doc(hidden)]
-    pub inline_data_schema: std::option::Option<std::string::String>,
+    pub inline_data_schema: ::std::option::Option<::std::string::String>,
 }
 impl DatasetSchema {
     /// <p> </p>
-    pub fn inline_data_schema(&self) -> std::option::Option<&str> {
+    pub fn inline_data_schema(&self) -> ::std::option::Option<&str> {
         self.inline_data_schema.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl DatasetSchema {
 
 /// A builder for [`DatasetSchema`](crate::types::DatasetSchema).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetSchemaBuilder {
-    pub(crate) inline_data_schema: std::option::Option<std::string::String>,
+    pub(crate) inline_data_schema: ::std::option::Option<::std::string::String>,
 }
 impl DatasetSchemaBuilder {
     /// <p> </p>
-    pub fn inline_data_schema(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inline_data_schema = Some(input.into());
+    pub fn inline_data_schema(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inline_data_schema = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> </p>
     pub fn set_inline_data_schema(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inline_data_schema = input;
         self

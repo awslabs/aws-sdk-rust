@@ -2,22 +2,22 @@
 
 /// <p>Array of the number of characters extracted from each page.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtractedCharactersListItem {
     /// <p>Page number.</p>
     #[doc(hidden)]
-    pub page: std::option::Option<i32>,
+    pub page: ::std::option::Option<i32>,
     /// <p>Number of characters extracted from each page.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
 }
 impl ExtractedCharactersListItem {
     /// <p>Page number.</p>
-    pub fn page(&self) -> std::option::Option<i32> {
+    pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
     /// <p>Number of characters extracted from each page.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -30,29 +30,31 @@ impl ExtractedCharactersListItem {
 
 /// A builder for [`ExtractedCharactersListItem`](crate::types::ExtractedCharactersListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExtractedCharactersListItemBuilder {
-    pub(crate) page: std::option::Option<i32>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) page: ::std::option::Option<i32>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl ExtractedCharactersListItemBuilder {
     /// <p>Page number.</p>
     pub fn page(mut self, input: i32) -> Self {
-        self.page = Some(input);
+        self.page = ::std::option::Option::Some(input);
         self
     }
     /// <p>Page number.</p>
-    pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page = input;
         self
     }
     /// <p>Number of characters extracted from each page.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of characters extracted from each page.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

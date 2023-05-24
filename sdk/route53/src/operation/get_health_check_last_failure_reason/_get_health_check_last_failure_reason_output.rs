@@ -2,23 +2,23 @@
 
 /// <p>A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     #[doc(hidden)]
     pub health_check_observations:
-        std::option::Option<std::vec::Vec<crate::types::HealthCheckObservation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckLastFailureReasonOutput {
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     pub fn health_check_observations(
         &self,
-    ) -> std::option::Option<&[crate::types::HealthCheckObservation]> {
+    ) -> ::std::option::Option<&[crate::types::HealthCheckObservation]> {
         self.health_check_observations.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetHealthCheckLastFailureReasonOutput {
+impl ::aws_http::request_id::RequestId for GetHealthCheckLastFailureReasonOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl GetHealthCheckLastFailureReasonOutput {
 
 /// A builder for [`GetHealthCheckLastFailureReasonOutput`](crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetHealthCheckLastFailureReasonOutputBuilder {
     pub(crate) health_check_observations:
-        std::option::Option<std::vec::Vec<crate::types::HealthCheckObservation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     _request_id: Option<String>,
 }
 impl GetHealthCheckLastFailureReasonOutputBuilder {
@@ -50,13 +52,13 @@ impl GetHealthCheckLastFailureReasonOutputBuilder {
     ) -> Self {
         let mut v = self.health_check_observations.unwrap_or_default();
         v.push(input);
-        self.health_check_observations = Some(v);
+        self.health_check_observations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
     pub fn set_health_check_observations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HealthCheckObservation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckObservation>>,
     ) -> Self {
         self.health_check_observations = input;
         self

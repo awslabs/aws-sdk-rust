@@ -2,22 +2,22 @@
 
 /// <p>An object that contains details about the status of Amazon Inspector deep inspection for a member account in your organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberAccountEc2DeepInspectionStatus {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
     #[doc(hidden)]
-    pub activate_deep_inspection: std::option::Option<bool>,
+    pub activate_deep_inspection: ::std::option::Option<bool>,
 }
 impl MemberAccountEc2DeepInspectionStatus {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
-    pub fn activate_deep_inspection(&self) -> std::option::Option<bool> {
+    pub fn activate_deep_inspection(&self) -> ::std::option::Option<bool> {
         self.activate_deep_inspection
     }
 }
@@ -30,29 +30,31 @@ impl MemberAccountEc2DeepInspectionStatus {
 
 /// A builder for [`MemberAccountEc2DeepInspectionStatus`](crate::types::MemberAccountEc2DeepInspectionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberAccountEc2DeepInspectionStatusBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) activate_deep_inspection: std::option::Option<bool>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) activate_deep_inspection: ::std::option::Option<bool>,
 }
 impl MemberAccountEc2DeepInspectionStatusBuilder {
     /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Amazon Web Services account of the organization member.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
     pub fn activate_deep_inspection(mut self, input: bool) -> Self {
-        self.activate_deep_inspection = Some(input);
+        self.activate_deep_inspection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.</p>
-    pub fn set_activate_deep_inspection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_activate_deep_inspection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.activate_deep_inspection = input;
         self
     }

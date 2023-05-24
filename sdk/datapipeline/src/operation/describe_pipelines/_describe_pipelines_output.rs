@@ -2,23 +2,23 @@
 
 /// <p>Contains the output of DescribePipelines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
     #[doc(hidden)]
     pub pipeline_description_list:
-        std::option::Option<std::vec::Vec<crate::types::PipelineDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
     _request_id: Option<String>,
 }
 impl DescribePipelinesOutput {
     /// <p>An array of descriptions for the specified pipelines.</p>
     pub fn pipeline_description_list(
         &self,
-    ) -> std::option::Option<&[crate::types::PipelineDescription]> {
+    ) -> ::std::option::Option<&[crate::types::PipelineDescription]> {
         self.pipeline_description_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribePipelinesOutput {
+impl ::aws_http::request_id::RequestId for DescribePipelinesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,10 +33,12 @@ impl DescribePipelinesOutput {
 
 /// A builder for [`DescribePipelinesOutput`](crate::operation::describe_pipelines::DescribePipelinesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribePipelinesOutputBuilder {
     pub(crate) pipeline_description_list:
-        std::option::Option<std::vec::Vec<crate::types::PipelineDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
     _request_id: Option<String>,
 }
 impl DescribePipelinesOutputBuilder {
@@ -48,13 +50,13 @@ impl DescribePipelinesOutputBuilder {
     pub fn pipeline_description_list(mut self, input: crate::types::PipelineDescription) -> Self {
         let mut v = self.pipeline_description_list.unwrap_or_default();
         v.push(input);
-        self.pipeline_description_list = Some(v);
+        self.pipeline_description_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of descriptions for the specified pipelines.</p>
     pub fn set_pipeline_description_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PipelineDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineDescription>>,
     ) -> Self {
         self.pipeline_description_list = input;
         self

@@ -3,22 +3,22 @@
 /// <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p>
 /// <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Segment {
     /// <p>The segment's ID.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The segment document.</p>
     #[doc(hidden)]
-    pub document: std::option::Option<std::string::String>,
+    pub document: ::std::option::Option<::std::string::String>,
 }
 impl Segment {
     /// <p>The segment's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The segment document.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> ::std::option::Option<&str> {
         self.document.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl Segment {
 
 /// A builder for [`Segment`](crate::types::Segment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SegmentBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) document: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) document: ::std::option::Option<::std::string::String>,
 }
 impl SegmentBuilder {
     /// <p>The segment's ID.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The segment's ID.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The segment document.</p>
-    pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document = Some(input.into());
+    pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The segment document.</p>
-    pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
     }

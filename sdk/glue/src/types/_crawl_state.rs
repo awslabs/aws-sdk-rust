@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CrawlState {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum CrawlState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CrawlState {
+impl ::std::convert::From<&str> for CrawlState {
     fn from(s: &str) -> Self {
         match s {
             "CANCELLED" => CrawlState::Cancelled,
@@ -79,11 +79,11 @@ impl std::convert::From<&str> for CrawlState {
         }
     }
 }
-impl std::str::FromStr for CrawlState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CrawlState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CrawlState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CrawlState::from(s))
     }
 }
 impl CrawlState {
@@ -111,7 +111,7 @@ impl CrawlState {
         ]
     }
 }
-impl AsRef<str> for CrawlState {
+impl ::std::convert::AsRef<str> for CrawlState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

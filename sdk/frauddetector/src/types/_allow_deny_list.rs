@@ -2,50 +2,50 @@
 
 /// <p> The metadata of a list. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowDenyList {
     /// <p> The name of the list. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the list. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The variable type of the list. </p>
     #[doc(hidden)]
-    pub variable_type: std::option::Option<std::string::String>,
+    pub variable_type: ::std::option::Option<::std::string::String>,
     /// <p> The time the list was created. </p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<std::string::String>,
+    pub created_time: ::std::option::Option<::std::string::String>,
     /// <p> The time the list was last updated. </p>
     #[doc(hidden)]
-    pub updated_time: std::option::Option<std::string::String>,
+    pub updated_time: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the list. </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl AllowDenyList {
     /// <p> The name of the list. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of the list. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The variable type of the list. </p>
-    pub fn variable_type(&self) -> std::option::Option<&str> {
+    pub fn variable_type(&self) -> ::std::option::Option<&str> {
         self.variable_type.as_deref()
     }
     /// <p> The time the list was created. </p>
-    pub fn created_time(&self) -> std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p> The time the list was last updated. </p>
-    pub fn updated_time(&self) -> std::option::Option<&str> {
+    pub fn updated_time(&self) -> ::std::option::Option<&str> {
         self.updated_time.as_deref()
     }
     /// <p> The ARN of the list. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -58,73 +58,81 @@ impl AllowDenyList {
 
 /// A builder for [`AllowDenyList`](crate::types::AllowDenyList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllowDenyListBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) variable_type: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<std::string::String>,
-    pub(crate) updated_time: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) variable_type: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl AllowDenyListBuilder {
     /// <p> The name of the list. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the list. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The description of the list. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of the list. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> The variable type of the list. </p>
-    pub fn variable_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.variable_type = Some(input.into());
+    pub fn variable_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.variable_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The variable type of the list. </p>
-    pub fn set_variable_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_variable_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.variable_type = input;
         self
     }
     /// <p> The time the list was created. </p>
-    pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_time = Some(input.into());
+    pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The time the list was created. </p>
-    pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
     /// <p> The time the list was last updated. </p>
-    pub fn updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_time = Some(input.into());
+    pub fn updated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The time the list was last updated. </p>
-    pub fn set_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_time = input;
         self
     }
     /// <p> The ARN of the list. </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the list. </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

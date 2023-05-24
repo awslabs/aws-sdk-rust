@@ -2,22 +2,22 @@
 
 /// <p>An object that contains attributes about a single row in a table</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableRow {
     /// <p>The id of the row in the table.</p>
     #[doc(hidden)]
-    pub row_id: std::option::Option<std::string::String>,
+    pub row_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
     #[doc(hidden)]
-    pub cells: std::option::Option<std::vec::Vec<crate::types::Cell>>,
+    pub cells: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
 }
 impl TableRow {
     /// <p>The id of the row in the table.</p>
-    pub fn row_id(&self) -> std::option::Option<&str> {
+    pub fn row_id(&self) -> ::std::option::Option<&str> {
         self.row_id.as_deref()
     }
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
-    pub fn cells(&self) -> std::option::Option<&[crate::types::Cell]> {
+    pub fn cells(&self) -> ::std::option::Option<&[crate::types::Cell]> {
         self.cells.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl TableRow {
 
 /// A builder for [`TableRow`](crate::types::TableRow).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableRowBuilder {
-    pub(crate) row_id: std::option::Option<std::string::String>,
-    pub(crate) cells: std::option::Option<std::vec::Vec<crate::types::Cell>>,
+    pub(crate) row_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cells: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
 }
 impl TableRowBuilder {
     /// <p>The id of the row in the table.</p>
-    pub fn row_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.row_id = Some(input.into());
+    pub fn row_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.row_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The id of the row in the table.</p>
-    pub fn set_row_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_row_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.row_id = input;
         self
     }
@@ -54,13 +56,13 @@ impl TableRowBuilder {
     pub fn cells(mut self, input: crate::types::Cell) -> Self {
         let mut v = self.cells.unwrap_or_default();
         v.push(input);
-        self.cells = Some(v);
+        self.cells = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cells in the table row. The cells appear in the same order as the columns of the table. </p>
     pub fn set_cells(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Cell>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Cell>>,
     ) -> Self {
         self.cells = input;
         self

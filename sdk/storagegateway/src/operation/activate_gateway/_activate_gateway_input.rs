@@ -11,78 +11,78 @@
 /// <li> <p> <code>ActivateGatewayInput$TapeDriveType</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateGatewayInput {
     /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
     #[doc(hidden)]
-    pub activation_key: std::option::Option<std::string::String>,
+    pub activation_key: ::std::option::Option<::std::string::String>,
     /// <p>The name you configured for your gateway.</p>
     #[doc(hidden)]
-    pub gateway_name: std::option::Option<std::string::String>,
+    pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
     #[doc(hidden)]
-    pub gateway_timezone: std::option::Option<std::string::String>,
+    pub gateway_timezone: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
     #[doc(hidden)]
-    pub gateway_region: std::option::Option<std::string::String>,
+    pub gateway_region: ::std::option::Option<::std::string::String>,
     /// <p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.</p>
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
     #[doc(hidden)]
-    pub gateway_type: std::option::Option<std::string::String>,
+    pub gateway_type: ::std::option::Option<::std::string::String>,
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
     #[doc(hidden)]
-    pub tape_drive_type: std::option::Option<std::string::String>,
+    pub tape_drive_type: ::std::option::Option<::std::string::String>,
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
     #[doc(hidden)]
-    pub medium_changer_type: std::option::Option<std::string::String>,
+    pub medium_changer_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ActivateGatewayInput {
     /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
-    pub fn activation_key(&self) -> std::option::Option<&str> {
+    pub fn activation_key(&self) -> ::std::option::Option<&str> {
         self.activation_key.as_deref()
     }
     /// <p>The name you configured for your gateway.</p>
-    pub fn gateway_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_name(&self) -> ::std::option::Option<&str> {
         self.gateway_name.as_deref()
     }
     /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
-    pub fn gateway_timezone(&self) -> std::option::Option<&str> {
+    pub fn gateway_timezone(&self) -> ::std::option::Option<&str> {
         self.gateway_timezone.as_deref()
     }
     /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn gateway_region(&self) -> std::option::Option<&str> {
+    pub fn gateway_region(&self) -> ::std::option::Option<&str> {
         self.gateway_region.as_deref()
     }
     /// <p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.</p>
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
-    pub fn gateway_type(&self) -> std::option::Option<&str> {
+    pub fn gateway_type(&self) -> ::std::option::Option<&str> {
         self.gateway_type.as_deref()
     }
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
-    pub fn tape_drive_type(&self) -> std::option::Option<&str> {
+    pub fn tape_drive_type(&self) -> ::std::option::Option<&str> {
         self.tape_drive_type.as_deref()
     }
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
-    pub fn medium_changer_type(&self) -> std::option::Option<&str> {
+    pub fn medium_changer_type(&self) -> ::std::option::Option<&str> {
         self.medium_changer_type.as_deref()
     }
     /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -95,97 +95,126 @@ impl ActivateGatewayInput {
 
 /// A builder for [`ActivateGatewayInput`](crate::operation::activate_gateway::ActivateGatewayInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActivateGatewayInputBuilder {
-    pub(crate) activation_key: std::option::Option<std::string::String>,
-    pub(crate) gateway_name: std::option::Option<std::string::String>,
-    pub(crate) gateway_timezone: std::option::Option<std::string::String>,
-    pub(crate) gateway_region: std::option::Option<std::string::String>,
-    pub(crate) gateway_type: std::option::Option<std::string::String>,
-    pub(crate) tape_drive_type: std::option::Option<std::string::String>,
-    pub(crate) medium_changer_type: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) activation_key: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_name: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_region: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_type: ::std::option::Option<::std::string::String>,
+    pub(crate) tape_drive_type: ::std::option::Option<::std::string::String>,
+    pub(crate) medium_changer_type: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ActivateGatewayInputBuilder {
     /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
-    pub fn activation_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.activation_key = Some(input.into());
+    pub fn activation_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.activation_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
-    pub fn set_activation_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_activation_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.activation_key = input;
         self
     }
     /// <p>The name you configured for your gateway.</p>
-    pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_name = Some(input.into());
+    pub fn gateway_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name you configured for your gateway.</p>
-    pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_name = input;
         self
     }
     /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
-    pub fn gateway_timezone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_timezone = Some(input.into());
+    pub fn gateway_timezone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.gateway_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
-    pub fn set_gateway_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_timezone(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.gateway_timezone = input;
         self
     }
     /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn gateway_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_region = Some(input.into());
+    pub fn gateway_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.gateway_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn set_gateway_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_region(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.gateway_region = input;
         self
     }
     /// <p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.</p>
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
-    pub fn gateway_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_type = Some(input.into());
+    pub fn gateway_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.</p>
     /// <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
-    pub fn set_gateway_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_type = input;
         self
     }
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
-    pub fn tape_drive_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tape_drive_type = Some(input.into());
+    pub fn tape_drive_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.tape_drive_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
-    pub fn set_tape_drive_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tape_drive_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.tape_drive_type = input;
         self
     }
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
-    pub fn medium_changer_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.medium_changer_type = Some(input.into());
+    pub fn medium_changer_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.medium_changer_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
     pub fn set_medium_changer_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.medium_changer_type = input;
         self
@@ -200,7 +229,7 @@ impl ActivateGatewayInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
@@ -208,7 +237,7 @@ impl ActivateGatewayInputBuilder {
     /// </note>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -216,11 +245,11 @@ impl ActivateGatewayInputBuilder {
     /// Consumes the builder and constructs a [`ActivateGatewayInput`](crate::operation::activate_gateway::ActivateGatewayInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::activate_gateway::ActivateGatewayInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::activate_gateway::ActivateGatewayInput {
+        ::std::result::Result::Ok(crate::operation::activate_gateway::ActivateGatewayInput {
             activation_key: self.activation_key,
             gateway_name: self.gateway_name,
             gateway_timezone: self.gateway_timezone,

@@ -2,20 +2,20 @@
 
 /// <p>Represents the response from the server to the request to create the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminCreateUserOutput {
     /// <p>The newly created user.</p>
     #[doc(hidden)]
-    pub user: std::option::Option<crate::types::UserType>,
+    pub user: ::std::option::Option<crate::types::UserType>,
     _request_id: Option<String>,
 }
 impl AdminCreateUserOutput {
     /// <p>The newly created user.</p>
-    pub fn user(&self) -> std::option::Option<&crate::types::UserType> {
+    pub fn user(&self) -> ::std::option::Option<&crate::types::UserType> {
         self.user.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for AdminCreateUserOutput {
+impl ::aws_http::request_id::RequestId for AdminCreateUserOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl AdminCreateUserOutput {
 
 /// A builder for [`AdminCreateUserOutput`](crate::operation::admin_create_user::AdminCreateUserOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminCreateUserOutputBuilder {
-    pub(crate) user: std::option::Option<crate::types::UserType>,
+    pub(crate) user: ::std::option::Option<crate::types::UserType>,
     _request_id: Option<String>,
 }
 impl AdminCreateUserOutputBuilder {
     /// <p>The newly created user.</p>
     pub fn user(mut self, input: crate::types::UserType) -> Self {
-        self.user = Some(input);
+        self.user = ::std::option::Option::Some(input);
         self
     }
     /// <p>The newly created user.</p>
-    pub fn set_user(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.user = input;
         self
     }

@@ -48,13 +48,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NamedFilterAggType {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,7 +84,7 @@ pub enum NamedFilterAggType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NamedFilterAggType {
+impl ::std::convert::From<&str> for NamedFilterAggType {
     fn from(s: &str) -> Self {
         match s {
             "AVERAGE" => NamedFilterAggType::Average,
@@ -105,11 +105,11 @@ impl std::convert::From<&str> for NamedFilterAggType {
         }
     }
 }
-impl std::str::FromStr for NamedFilterAggType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NamedFilterAggType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NamedFilterAggType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NamedFilterAggType::from(s))
     }
 }
 impl NamedFilterAggType {
@@ -149,7 +149,7 @@ impl NamedFilterAggType {
         ]
     }
 }
-impl AsRef<str> for NamedFilterAggType {
+impl ::std::convert::AsRef<str> for NamedFilterAggType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

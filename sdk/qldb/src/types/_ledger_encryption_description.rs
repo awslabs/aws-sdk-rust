@@ -3,11 +3,11 @@
 /// <p>Information about the encryption of data at rest in an Amazon QLDB ledger. This includes the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in the case of an error).</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LedgerEncryptionDescription {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
@@ -15,15 +15,15 @@ pub struct LedgerEncryptionDescription {
     /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub encryption_status: std::option::Option<crate::types::EncryptionStatus>,
+    pub encryption_status: ::std::option::Option<crate::types::EncryptionStatus>,
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     #[doc(hidden)]
-    pub inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub inaccessible_kms_key_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LedgerEncryptionDescription {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
@@ -32,14 +32,14 @@ impl LedgerEncryptionDescription {
     /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
     /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
-    pub fn encryption_status(&self) -> std::option::Option<&crate::types::EncryptionStatus> {
+    pub fn encryption_status(&self) -> ::std::option::Option<&crate::types::EncryptionStatus> {
         self.encryption_status.as_ref()
     }
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     pub fn inaccessible_kms_key_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.inaccessible_kms_key_date_time.as_ref()
     }
 }
@@ -52,20 +52,22 @@ impl LedgerEncryptionDescription {
 
 /// A builder for [`LedgerEncryptionDescription`](crate::types::LedgerEncryptionDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LedgerEncryptionDescriptionBuilder {
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    pub(crate) encryption_status: std::option::Option<crate::types::EncryptionStatus>,
-    pub(crate) inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_status: ::std::option::Option<crate::types::EncryptionStatus>,
+    pub(crate) inaccessible_kms_key_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LedgerEncryptionDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
@@ -76,7 +78,7 @@ impl LedgerEncryptionDescriptionBuilder {
     /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     pub fn encryption_status(mut self, input: crate::types::EncryptionStatus) -> Self {
-        self.encryption_status = Some(input);
+        self.encryption_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
@@ -87,22 +89,22 @@ impl LedgerEncryptionDescriptionBuilder {
     /// </ul>
     pub fn set_encryption_status(
         mut self,
-        input: std::option::Option<crate::types::EncryptionStatus>,
+        input: ::std::option::Option<crate::types::EncryptionStatus>,
     ) -> Self {
         self.encryption_status = input;
         self
     }
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
-    pub fn inaccessible_kms_key_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.inaccessible_kms_key_date_time = Some(input);
+    pub fn inaccessible_kms_key_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inaccessible_kms_key_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     pub fn set_inaccessible_kms_key_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inaccessible_kms_key_date_time = input;
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelJob`](crate::operation::cancel_job::builders::CancelJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::set_job_id): <p>The Batch job ID of the job to cancel.</p>
-    ///   - [`reason(impl Into<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::set_reason): <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::set_job_id): <p>The Batch job ID of the job to cancel.</p>
+    ///   - [`reason(impl ::std::convert::Into<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::reason) / [`set_reason(Option<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::set_reason): <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
     /// - On success, responds with [`CancelJobOutput`](crate::operation::cancel_job::CancelJobOutput)
     /// - On failure, responds with [`SdkError<CancelJobError>`](crate::operation::cancel_job::CancelJobError)
     pub fn cancel_job(&self) -> crate::operation::cancel_job::builders::CancelJobFluentBuilder {

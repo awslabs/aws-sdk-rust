@@ -2,70 +2,75 @@
 
 /// <p>Specifies a target that writes to a Hudi data source in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3HudiDirectTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     #[doc(hidden)]
-    pub compression: std::option::Option<crate::types::HudiTargetCompressionType>,
+    pub compression: ::std::option::Option<crate::types::HudiTargetCompressionType>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     #[doc(hidden)]
-    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub partition_keys:
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>Specifies the data output format for the target.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::TargetFormat>,
+    pub format: ::std::option::Option<crate::types::TargetFormat>,
     /// <p>Specifies additional connection options for the connector.</p>
     #[doc(hidden)]
-    pub additional_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     #[doc(hidden)]
-    pub schema_change_policy: std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3HudiDirectTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn compression(&self) -> std::option::Option<&crate::types::HudiTargetCompressionType> {
+    pub fn compression(&self) -> ::std::option::Option<&crate::types::HudiTargetCompressionType> {
         self.compression.as_ref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn partition_keys(
+        &self,
+    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.partition_keys.as_deref()
     }
     /// <p>Specifies the data output format for the target.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::TargetFormat> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::TargetFormat> {
         self.format.as_ref()
     }
     /// <p>Specifies additional connection options for the connector.</p>
     pub fn additional_options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.additional_options.as_ref()
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(
         &self,
-    ) -> std::option::Option<&crate::types::DirectSchemaChangePolicy> {
+    ) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
 }
@@ -78,27 +83,30 @@ impl S3HudiDirectTarget {
 
 /// A builder for [`S3HudiDirectTarget`](crate::types::S3HudiDirectTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3HudiDirectTargetBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) compression: std::option::Option<crate::types::HudiTargetCompressionType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) compression: ::std::option::Option<crate::types::HudiTargetCompressionType>,
     pub(crate) partition_keys:
-        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-    pub(crate) format: std::option::Option<crate::types::TargetFormat>,
-    pub(crate) additional_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) schema_change_policy: std::option::Option<crate::types::DirectSchemaChangePolicy>,
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) format: ::std::option::Option<crate::types::TargetFormat>,
+    pub(crate) additional_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3HudiDirectTargetBuilder {
     /// <p>The name of the data target.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data target.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -107,39 +115,39 @@ impl S3HudiDirectTargetBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input.into());
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inputs = input;
         self
     }
     /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 path of your Hudi data source to write to.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn compression(mut self, input: crate::types::HudiTargetCompressionType) -> Self {
-        self.compression = Some(input);
+        self.compression = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn set_compression(
         mut self,
-        input: std::option::Option<crate::types::HudiTargetCompressionType>,
+        input: ::std::option::Option<crate::types::HudiTargetCompressionType>,
     ) -> Self {
         self.compression = input;
         self
@@ -149,27 +157,27 @@ impl S3HudiDirectTargetBuilder {
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
     ///
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+    pub fn partition_keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
         v.push(input);
-        self.partition_keys = Some(v);
+        self.partition_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     pub fn set_partition_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.partition_keys = input;
         self
     }
     /// <p>Specifies the data output format for the target.</p>
     pub fn format(mut self, input: crate::types::TargetFormat) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the data output format for the target.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::TargetFormat>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::TargetFormat>) -> Self {
         self.format = input;
         self
     }
@@ -180,19 +188,19 @@ impl S3HudiDirectTargetBuilder {
     /// <p>Specifies additional connection options for the connector.</p>
     pub fn additional_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.additional_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.additional_options = Some(hash_map);
+        self.additional_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Specifies additional connection options for the connector.</p>
     pub fn set_additional_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.additional_options = input;
@@ -200,13 +208,13 @@ impl S3HudiDirectTargetBuilder {
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(mut self, input: crate::types::DirectSchemaChangePolicy) -> Self {
-        self.schema_change_policy = Some(input);
+        self.schema_change_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn set_schema_change_policy(
         mut self,
-        input: std::option::Option<crate::types::DirectSchemaChangePolicy>,
+        input: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
     ) -> Self {
         self.schema_change_policy = input;
         self

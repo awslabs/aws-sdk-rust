@@ -2,7 +2,7 @@
 
 /// <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlJobObjective {
     /// <p>The name of the objective metric used to measure the predictive quality of a machine learning system. During training, the model's parameters are updated iteratively to optimize its performance based on the feedback provided by the objective metric when evaluating the model on the validation dataset.</p>
     /// <p>For the list of all available metrics supported by Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot metrics</a>.</p>
@@ -13,7 +13,7 @@ pub struct AutoMlJobObjective {
     /// <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<crate::types::AutoMlMetricEnum>,
+    pub metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
 }
 impl AutoMlJobObjective {
     /// <p>The name of the objective metric used to measure the predictive quality of a machine learning system. During training, the model's parameters are updated iteratively to optimize its performance based on the feedback provided by the objective metric when evaluating the model on the validation dataset.</p>
@@ -24,7 +24,7 @@ impl AutoMlJobObjective {
     /// <li> <p> <code>F1</code>: for binary classification</p> </li>
     /// <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
     /// </ul>
-    pub fn metric_name(&self) -> std::option::Option<&crate::types::AutoMlMetricEnum> {
+    pub fn metric_name(&self) -> ::std::option::Option<&crate::types::AutoMlMetricEnum> {
         self.metric_name.as_ref()
     }
 }
@@ -37,9 +37,11 @@ impl AutoMlJobObjective {
 
 /// A builder for [`AutoMlJobObjective`](crate::types::AutoMlJobObjective).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoMlJobObjectiveBuilder {
-    pub(crate) metric_name: std::option::Option<crate::types::AutoMlMetricEnum>,
+    pub(crate) metric_name: ::std::option::Option<crate::types::AutoMlMetricEnum>,
 }
 impl AutoMlJobObjectiveBuilder {
     /// <p>The name of the objective metric used to measure the predictive quality of a machine learning system. During training, the model's parameters are updated iteratively to optimize its performance based on the feedback provided by the objective metric when evaluating the model on the validation dataset.</p>
@@ -51,7 +53,7 @@ impl AutoMlJobObjectiveBuilder {
     /// <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
     /// </ul>
     pub fn metric_name(mut self, input: crate::types::AutoMlMetricEnum) -> Self {
-        self.metric_name = Some(input);
+        self.metric_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the objective metric used to measure the predictive quality of a machine learning system. During training, the model's parameters are updated iteratively to optimize its performance based on the feedback provided by the objective metric when evaluating the model on the validation dataset.</p>
@@ -64,7 +66,7 @@ impl AutoMlJobObjectiveBuilder {
     /// </ul>
     pub fn set_metric_name(
         mut self,
-        input: std::option::Option<crate::types::AutoMlMetricEnum>,
+        input: ::std::option::Option<crate::types::AutoMlMetricEnum>,
     ) -> Self {
         self.metric_name = input;
         self

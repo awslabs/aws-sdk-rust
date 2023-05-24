@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteHost`](crate::operation::delete_host::builders::DeleteHostFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`host_arn(impl Into<String>)`](crate::operation::delete_host::builders::DeleteHostFluentBuilder::host_arn) / [`set_host_arn(Option<String>)`](crate::operation::delete_host::builders::DeleteHostFluentBuilder::set_host_arn): <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
+    ///   - [`host_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_host::builders::DeleteHostFluentBuilder::host_arn) / [`set_host_arn(Option<String>)`](crate::operation::delete_host::builders::DeleteHostFluentBuilder::set_host_arn): <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
     /// - On success, responds with [`DeleteHostOutput`](crate::operation::delete_host::DeleteHostOutput)
     /// - On failure, responds with [`SdkError<DeleteHostError>`](crate::operation::delete_host::DeleteHostError)
     pub fn delete_host(&self) -> crate::operation::delete_host::builders::DeleteHostFluentBuilder {

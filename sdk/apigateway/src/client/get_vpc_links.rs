@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`position(impl Into<String>)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::set_position): <p>The current pagination position in the paged result set.</p>
+    ///   - [`position(impl ::std::convert::Into<String>)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::position) / [`set_position(Option<String>)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::set_position): <p>The current pagination position in the paged result set.</p>
     ///   - [`limit(i32)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_vpc_links::builders::GetVpcLinksFluentBuilder::set_limit): <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     /// - On success, responds with [`GetVpcLinksOutput`](crate::operation::get_vpc_links::GetVpcLinksOutput) with field(s):
     ///   - [`items(Option<Vec<VpcLink>>)`](crate::operation::get_vpc_links::GetVpcLinksOutput::items): <p>The current page of elements from this collection.</p>

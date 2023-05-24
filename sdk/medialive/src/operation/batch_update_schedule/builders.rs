@@ -6,29 +6,29 @@ pub use crate::operation::batch_update_schedule::_batch_update_schedule_input::B
 /// Fluent builder constructing a request to `BatchUpdateSchedule`.
 ///
 /// Update a channel schedule
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateScheduleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::batch_update_schedule::builders::BatchUpdateScheduleInputBuilder,
 }
 impl BatchUpdateScheduleFluentBuilder {
     /// Creates a new `BatchUpdateSchedule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::batch_update_schedule::BatchUpdateSchedule,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_update_schedule::BatchUpdateScheduleError,
         >,
     > {
@@ -36,30 +36,33 @@ impl BatchUpdateScheduleFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_update_schedule::BatchUpdateScheduleOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_update_schedule::BatchUpdateScheduleError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl BatchUpdateScheduleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_update_schedule::BatchUpdateScheduleOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_update_schedule::BatchUpdateScheduleError,
         >,
     > {
         self.send_middleware().await
     }
     /// Id of the channel whose schedule is being updated.
-    pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());
         self
     }
     /// Id of the channel whose schedule is being updated.
-    pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_id(input);
         self
     }
@@ -98,7 +101,7 @@ impl BatchUpdateScheduleFluentBuilder {
     /// Schedule actions to create in the schedule.
     pub fn set_creates(
         mut self,
-        input: std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
+        input: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
     ) -> Self {
         self.inner = self.inner.set_creates(input);
         self
@@ -111,7 +114,7 @@ impl BatchUpdateScheduleFluentBuilder {
     /// Schedule actions to delete from the schedule.
     pub fn set_deletes(
         mut self,
-        input: std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
+        input: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
     ) -> Self {
         self.inner = self.inner.set_deletes(input);
         self

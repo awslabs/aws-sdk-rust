@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WorkerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum WorkerType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WorkerType {
+impl ::std::convert::From<&str> for WorkerType {
     fn from(s: &str) -> Self {
         match s {
             "G.025X" => WorkerType::G025X,
@@ -79,11 +79,11 @@ impl std::convert::From<&str> for WorkerType {
         }
     }
 }
-impl std::str::FromStr for WorkerType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WorkerType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkerType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WorkerType::from(s))
     }
 }
 impl WorkerType {
@@ -104,7 +104,7 @@ impl WorkerType {
         &["G.025X", "G.1X", "G.2X", "G.4X", "G.8X", "Standard"]
     }
 }
-impl AsRef<str> for WorkerType {
+impl ::std::convert::AsRef<str> for WorkerType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

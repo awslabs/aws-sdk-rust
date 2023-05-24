@@ -4,15 +4,15 @@
 /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailRecipients {
     /// <p>Specifies one or more recipients who receive the email.</p>
     #[doc(hidden)]
-    pub to: std::option::Option<std::vec::Vec<crate::types::RecipientDetail>>,
+    pub to: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
 }
 impl EmailRecipients {
     /// <p>Specifies one or more recipients who receive the email.</p>
-    pub fn to(&self) -> std::option::Option<&[crate::types::RecipientDetail]> {
+    pub fn to(&self) -> ::std::option::Option<&[crate::types::RecipientDetail]> {
         self.to.as_deref()
     }
 }
@@ -25,9 +25,11 @@ impl EmailRecipients {
 
 /// A builder for [`EmailRecipients`](crate::types::EmailRecipients).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmailRecipientsBuilder {
-    pub(crate) to: std::option::Option<std::vec::Vec<crate::types::RecipientDetail>>,
+    pub(crate) to: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
 }
 impl EmailRecipientsBuilder {
     /// Appends an item to `to`.
@@ -38,13 +40,13 @@ impl EmailRecipientsBuilder {
     pub fn to(mut self, input: crate::types::RecipientDetail) -> Self {
         let mut v = self.to.unwrap_or_default();
         v.push(input);
-        self.to = Some(v);
+        self.to = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies one or more recipients who receive the email.</p>
     pub fn set_to(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecipientDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
     ) -> Self {
         self.to = input;
         self

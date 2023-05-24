@@ -41,13 +41,13 @@
 /// <p>Represents an API method integration type.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum IntegrationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IntegrationType {
+impl ::std::convert::From<&str> for IntegrationType {
     fn from(s: &str) -> Self {
         match s {
             "AWS" => IntegrationType::Aws,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for IntegrationType {
         }
     }
 }
-impl std::str::FromStr for IntegrationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IntegrationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IntegrationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IntegrationType::from(s))
     }
 }
 impl IntegrationType {
@@ -101,7 +101,7 @@ impl IntegrationType {
         &["AWS", "AWS_PROXY", "HTTP", "HTTP_PROXY", "MOCK"]
     }
 }
-impl AsRef<str> for IntegrationType {
+impl ::std::convert::AsRef<str> for IntegrationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

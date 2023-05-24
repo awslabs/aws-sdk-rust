@@ -2,15 +2,15 @@
 
 /// <p>The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional). </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataDestination {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
     #[doc(hidden)]
-    pub s3_config: std::option::Option<crate::types::S3Config>,
+    pub s3_config: ::std::option::Option<crate::types::S3Config>,
 }
 impl DataDestination {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
-    pub fn s3_config(&self) -> std::option::Option<&crate::types::S3Config> {
+    pub fn s3_config(&self) -> ::std::option::Option<&crate::types::S3Config> {
         self.s3_config.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl DataDestination {
 
 /// A builder for [`DataDestination`](crate::types::DataDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataDestinationBuilder {
-    pub(crate) s3_config: std::option::Option<crate::types::S3Config>,
+    pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
 }
 impl DataDestinationBuilder {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
     pub fn s3_config(mut self, input: crate::types::S3Config) -> Self {
-        self.s3_config = Some(input);
+        self.s3_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket along with the credentials to access the bucket.</p>
-    pub fn set_s3_config(mut self, input: std::option::Option<crate::types::S3Config>) -> Self {
+    pub fn set_s3_config(mut self, input: ::std::option::Option<crate::types::S3Config>) -> Self {
         self.s3_config = input;
         self
     }

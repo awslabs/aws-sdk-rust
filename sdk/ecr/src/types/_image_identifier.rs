@@ -2,22 +2,22 @@
 
 /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageIdentifier {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     #[doc(hidden)]
-    pub image_digest: std::option::Option<std::string::String>,
+    pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The tag used for the image.</p>
     #[doc(hidden)]
-    pub image_tag: std::option::Option<std::string::String>,
+    pub image_tag: ::std::option::Option<::std::string::String>,
 }
 impl ImageIdentifier {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    pub fn image_digest(&self) -> std::option::Option<&str> {
+    pub fn image_digest(&self) -> ::std::option::Option<&str> {
         self.image_digest.as_deref()
     }
     /// <p>The tag used for the image.</p>
-    pub fn image_tag(&self) -> std::option::Option<&str> {
+    pub fn image_tag(&self) -> ::std::option::Option<&str> {
         self.image_tag.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ImageIdentifier {
 
 /// A builder for [`ImageIdentifier`](crate::types::ImageIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageIdentifierBuilder {
-    pub(crate) image_digest: std::option::Option<std::string::String>,
-    pub(crate) image_tag: std::option::Option<std::string::String>,
+    pub(crate) image_digest: ::std::option::Option<::std::string::String>,
+    pub(crate) image_tag: ::std::option::Option<::std::string::String>,
 }
 impl ImageIdentifierBuilder {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_digest = Some(input.into());
+    pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
     }
     /// <p>The tag used for the image.</p>
-    pub fn image_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_tag = Some(input.into());
+    pub fn image_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag used for the image.</p>
-    pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_tag = input;
         self
     }

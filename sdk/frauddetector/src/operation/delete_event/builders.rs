@@ -7,56 +7,59 @@ pub use crate::operation::delete_event::_delete_event_input::DeleteEventInputBui
 ///
 /// <p>Deletes the specified event.</p>
 /// <p>When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer stored in Amazon Fraud Detector.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_event::builders::DeleteEventInputBuilder,
 }
 impl DeleteEventFluentBuilder {
     /// Creates a new `DeleteEvent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_event::DeleteEvent,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_event::DeleteEventError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event::DeleteEventError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_event::DeleteEventOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_event::DeleteEventError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event::DeleteEventError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,35 @@ impl DeleteEventFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_event::DeleteEventOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_event::DeleteEventError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_event::DeleteEventError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the event to delete.</p>
-    pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_id(input.into());
         self
     }
     /// <p>The ID of the event to delete.</p>
-    pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_id(input);
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -101,7 +110,7 @@ impl DeleteEventFluentBuilder {
         self
     }
     /// <p>Specifies whether or not to delete any predictions associated with the event.</p>
-    pub fn set_delete_audit_history(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_audit_history(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_audit_history(input);
         self
     }

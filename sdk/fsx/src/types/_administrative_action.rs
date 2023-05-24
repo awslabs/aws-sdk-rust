@@ -2,7 +2,7 @@
 
 /// <p>Describes a specific Amazon FSx administrative action for the current Windows, Lustre, or OpenZFS file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdministrativeAction {
     /// <p>Describes the type of administrative action, as follows:</p>
     /// <ul>
@@ -20,13 +20,13 @@ pub struct AdministrativeAction {
     /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub administrative_action_type: std::option::Option<crate::types::AdministrativeActionType>,
+    pub administrative_action_type: ::std::option::Option<crate::types::AdministrativeActionType>,
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
     #[doc(hidden)]
-    pub progress_percent: std::option::Option<i32>,
+    pub progress_percent: ::std::option::Option<i32>,
     /// <p>The time that the administrative action request was received.</p>
     #[doc(hidden)]
-    pub request_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the status of the administrative action, as follows:</p>
     /// <ul>
     /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li>
@@ -36,19 +36,19 @@ pub struct AdministrativeAction {
     /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
     #[doc(hidden)]
-    pub target_file_system_values: std::option::Option<crate::types::FileSystem>,
+    pub target_file_system_values: ::std::option::Option<crate::types::FileSystem>,
     /// <p>Provides information about a failed administrative action.</p>
     #[doc(hidden)]
-    pub failure_details: std::option::Option<crate::types::AdministrativeActionFailureDetails>,
+    pub failure_details: ::std::option::Option<crate::types::AdministrativeActionFailureDetails>,
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
     #[doc(hidden)]
-    pub target_volume_values: std::option::Option<crate::types::Volume>,
+    pub target_volume_values: ::std::option::Option<crate::types::Volume>,
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
     #[doc(hidden)]
-    pub target_snapshot_values: std::option::Option<crate::types::Snapshot>,
+    pub target_snapshot_values: ::std::option::Option<crate::types::Snapshot>,
 }
 impl AdministrativeAction {
     /// <p>Describes the type of administrative action, as follows:</p>
@@ -68,15 +68,15 @@ impl AdministrativeAction {
     /// </ul>
     pub fn administrative_action_type(
         &self,
-    ) -> std::option::Option<&crate::types::AdministrativeActionType> {
+    ) -> ::std::option::Option<&crate::types::AdministrativeActionType> {
         self.administrative_action_type.as_ref()
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
-    pub fn progress_percent(&self) -> std::option::Option<i32> {
+    pub fn progress_percent(&self) -> ::std::option::Option<i32> {
         self.progress_percent
     }
     /// <p>The time that the administrative action request was received.</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn request_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
     /// <p>Describes the status of the administrative action, as follows:</p>
@@ -87,25 +87,25 @@ impl AdministrativeAction {
     /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li>
     /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-    pub fn target_file_system_values(&self) -> std::option::Option<&crate::types::FileSystem> {
+    pub fn target_file_system_values(&self) -> ::std::option::Option<&crate::types::FileSystem> {
         self.target_file_system_values.as_ref()
     }
     /// <p>Provides information about a failed administrative action.</p>
     pub fn failure_details(
         &self,
-    ) -> std::option::Option<&crate::types::AdministrativeActionFailureDetails> {
+    ) -> ::std::option::Option<&crate::types::AdministrativeActionFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
-    pub fn target_volume_values(&self) -> std::option::Option<&crate::types::Volume> {
+    pub fn target_volume_values(&self) -> ::std::option::Option<&crate::types::Volume> {
         self.target_volume_values.as_ref()
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
-    pub fn target_snapshot_values(&self) -> std::option::Option<&crate::types::Snapshot> {
+    pub fn target_snapshot_values(&self) -> ::std::option::Option<&crate::types::Snapshot> {
         self.target_snapshot_values.as_ref()
     }
 }
@@ -118,18 +118,20 @@ impl AdministrativeAction {
 
 /// A builder for [`AdministrativeAction`](crate::types::AdministrativeAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdministrativeActionBuilder {
     pub(crate) administrative_action_type:
-        std::option::Option<crate::types::AdministrativeActionType>,
-    pub(crate) progress_percent: std::option::Option<i32>,
-    pub(crate) request_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::Status>,
-    pub(crate) target_file_system_values: std::option::Option<crate::types::FileSystem>,
+        ::std::option::Option<crate::types::AdministrativeActionType>,
+    pub(crate) progress_percent: ::std::option::Option<i32>,
+    pub(crate) request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) target_file_system_values: ::std::option::Option<crate::types::FileSystem>,
     pub(crate) failure_details:
-        std::option::Option<crate::types::AdministrativeActionFailureDetails>,
-    pub(crate) target_volume_values: std::option::Option<crate::types::Volume>,
-    pub(crate) target_snapshot_values: std::option::Option<crate::types::Snapshot>,
+        ::std::option::Option<crate::types::AdministrativeActionFailureDetails>,
+    pub(crate) target_volume_values: ::std::option::Option<crate::types::Volume>,
+    pub(crate) target_snapshot_values: ::std::option::Option<crate::types::Snapshot>,
 }
 impl AdministrativeActionBuilder {
     /// <p>Describes the type of administrative action, as follows:</p>
@@ -151,7 +153,7 @@ impl AdministrativeActionBuilder {
         mut self,
         input: crate::types::AdministrativeActionType,
     ) -> Self {
-        self.administrative_action_type = Some(input);
+        self.administrative_action_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the type of administrative action, as follows:</p>
@@ -171,30 +173,30 @@ impl AdministrativeActionBuilder {
     /// </ul>
     pub fn set_administrative_action_type(
         mut self,
-        input: std::option::Option<crate::types::AdministrativeActionType>,
+        input: ::std::option::Option<crate::types::AdministrativeActionType>,
     ) -> Self {
         self.administrative_action_type = input;
         self
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
-        self.progress_percent = Some(input);
+        self.progress_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
-    pub fn set_progress_percent(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.progress_percent = input;
         self
     }
     /// <p>The time that the administrative action request was received.</p>
-    pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.request_time = Some(input);
+    pub fn request_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.request_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the administrative action request was received.</p>
     pub fn set_request_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.request_time = input;
         self
@@ -208,7 +210,7 @@ impl AdministrativeActionBuilder {
     /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the status of the administrative action, as follows:</p>
@@ -219,19 +221,19 @@ impl AdministrativeActionBuilder {
     /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li>
     /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
     pub fn target_file_system_values(mut self, input: crate::types::FileSystem) -> Self {
-        self.target_file_system_values = Some(input);
+        self.target_file_system_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
     pub fn set_target_file_system_values(
         mut self,
-        input: std::option::Option<crate::types::FileSystem>,
+        input: ::std::option::Option<crate::types::FileSystem>,
     ) -> Self {
         self.target_file_system_values = input;
         self
@@ -241,39 +243,39 @@ impl AdministrativeActionBuilder {
         mut self,
         input: crate::types::AdministrativeActionFailureDetails,
     ) -> Self {
-        self.failure_details = Some(input);
+        self.failure_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about a failed administrative action.</p>
     pub fn set_failure_details(
         mut self,
-        input: std::option::Option<crate::types::AdministrativeActionFailureDetails>,
+        input: ::std::option::Option<crate::types::AdministrativeActionFailureDetails>,
     ) -> Self {
         self.failure_details = input;
         self
     }
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
     pub fn target_volume_values(mut self, input: crate::types::Volume) -> Self {
-        self.target_volume_values = Some(input);
+        self.target_volume_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
     pub fn set_target_volume_values(
         mut self,
-        input: std::option::Option<crate::types::Volume>,
+        input: ::std::option::Option<crate::types::Volume>,
     ) -> Self {
         self.target_volume_values = input;
         self
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
     pub fn target_snapshot_values(mut self, input: crate::types::Snapshot) -> Self {
-        self.target_snapshot_values = Some(input);
+        self.target_snapshot_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
     pub fn set_target_snapshot_values(
         mut self,
-        input: std::option::Option<crate::types::Snapshot>,
+        input: ::std::option::Option<crate::types::Snapshot>,
     ) -> Self {
         self.target_snapshot_values = input;
         self

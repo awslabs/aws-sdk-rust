@@ -2,22 +2,22 @@
 
 /// <p>Information required to publish the Amazon SNS message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnsTopicPublishAction {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
     #[doc(hidden)]
-    pub payload: std::option::Option<crate::types::Payload>,
+    pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl SnsTopicPublishAction {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
-    pub fn payload(&self) -> std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl SnsTopicPublishAction {
 
 /// A builder for [`SnsTopicPublishAction`](crate::types::SnsTopicPublishAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnsTopicPublishActionBuilder {
-    pub(crate) target_arn: std::option::Option<std::string::String>,
-    pub(crate) payload: std::option::Option<crate::types::Payload>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) payload: ::std::option::Option<crate::types::Payload>,
 }
 impl SnsTopicPublishActionBuilder {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
-        self.payload = Some(input);
+        self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
-    pub fn set_payload(mut self, input: std::option::Option<crate::types::Payload>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
     }

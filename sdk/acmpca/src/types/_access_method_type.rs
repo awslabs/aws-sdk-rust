@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AccessMethodType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AccessMethodType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AccessMethodType {
+impl ::std::convert::From<&str> for AccessMethodType {
     fn from(s: &str) -> Self {
         match s {
             "CA_REPOSITORY" => AccessMethodType::CaRepository,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AccessMethodType {
         }
     }
 }
-impl std::str::FromStr for AccessMethodType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AccessMethodType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessMethodType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AccessMethodType::from(s))
     }
 }
 impl AccessMethodType {
@@ -95,7 +95,7 @@ impl AccessMethodType {
         ]
     }
 }
-impl AsRef<str> for AccessMethodType {
+impl ::std::convert::AsRef<str> for AccessMethodType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

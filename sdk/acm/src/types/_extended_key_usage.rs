@@ -2,11 +2,11 @@
 
 /// <p>The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtendedKeyUsage {
     /// <p>The name of an Extended Key Usage value.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::ExtendedKeyUsageName>,
+    pub name: ::std::option::Option<crate::types::ExtendedKeyUsageName>,
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
     /// <ul>
     /// <li> <p> <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code> </p> </li>
@@ -20,11 +20,11 @@ pub struct ExtendedKeyUsage {
     /// <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub oid: std::option::Option<std::string::String>,
+    pub oid: ::std::option::Option<::std::string::String>,
 }
 impl ExtendedKeyUsage {
     /// <p>The name of an Extended Key Usage value.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::ExtendedKeyUsageName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::ExtendedKeyUsageName> {
         self.name.as_ref()
     }
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
@@ -39,7 +39,7 @@ impl ExtendedKeyUsage {
     /// <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li>
     /// <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>
     /// </ul>
-    pub fn oid(&self) -> std::option::Option<&str> {
+    pub fn oid(&self) -> ::std::option::Option<&str> {
         self.oid.as_deref()
     }
 }
@@ -52,21 +52,23 @@ impl ExtendedKeyUsage {
 
 /// A builder for [`ExtendedKeyUsage`](crate::types::ExtendedKeyUsage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExtendedKeyUsageBuilder {
-    pub(crate) name: std::option::Option<crate::types::ExtendedKeyUsageName>,
-    pub(crate) oid: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<crate::types::ExtendedKeyUsageName>,
+    pub(crate) oid: ::std::option::Option<::std::string::String>,
 }
 impl ExtendedKeyUsageBuilder {
     /// <p>The name of an Extended Key Usage value.</p>
     pub fn name(mut self, input: crate::types::ExtendedKeyUsageName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of an Extended Key Usage value.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::ExtendedKeyUsageName>,
+        input: ::std::option::Option<crate::types::ExtendedKeyUsageName>,
     ) -> Self {
         self.name = input;
         self
@@ -83,8 +85,8 @@ impl ExtendedKeyUsageBuilder {
     /// <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li>
     /// <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>
     /// </ul>
-    pub fn oid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.oid = Some(input.into());
+    pub fn oid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.oid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
@@ -99,7 +101,7 @@ impl ExtendedKeyUsageBuilder {
     /// <li> <p> <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> </p> </li>
     /// <li> <p> <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> </p> </li>
     /// </ul>
-    pub fn set_oid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_oid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.oid = input;
         self
     }

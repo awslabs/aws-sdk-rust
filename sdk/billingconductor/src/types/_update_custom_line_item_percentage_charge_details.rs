@@ -2,15 +2,15 @@
 
 /// <p> A representation of the new charge details that are associated with a percentage custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
-    pub percentage_value: std::option::Option<f64>,
+    pub percentage_value: ::std::option::Option<f64>,
 }
 impl UpdateCustomLineItemPercentageChargeDetails {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    pub fn percentage_value(&self) -> std::option::Option<f64> {
+    pub fn percentage_value(&self) -> ::std::option::Option<f64> {
         self.percentage_value
     }
 }
@@ -23,18 +23,20 @@ impl UpdateCustomLineItemPercentageChargeDetails {
 
 /// A builder for [`UpdateCustomLineItemPercentageChargeDetails`](crate::types::UpdateCustomLineItemPercentageChargeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateCustomLineItemPercentageChargeDetailsBuilder {
-    pub(crate) percentage_value: std::option::Option<f64>,
+    pub(crate) percentage_value: ::std::option::Option<f64>,
 }
 impl UpdateCustomLineItemPercentageChargeDetailsBuilder {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     pub fn percentage_value(mut self, input: f64) -> Self {
-        self.percentage_value = Some(input);
+        self.percentage_value = ::std::option::Option::Some(input);
         self
     }
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
-    pub fn set_percentage_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_percentage_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percentage_value = input;
         self
     }

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StoreFormat {
     /// GFF3 Format
@@ -57,7 +57,7 @@ pub enum StoreFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StoreFormat {
+impl ::std::convert::From<&str> for StoreFormat {
     fn from(s: &str) -> Self {
         match s {
             "GFF" => StoreFormat::Gff,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for StoreFormat {
         }
     }
 }
-impl std::str::FromStr for StoreFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StoreFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StoreFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StoreFormat::from(s))
     }
 }
 impl StoreFormat {
@@ -89,7 +89,7 @@ impl StoreFormat {
         &["GFF", "TSV", "VCF"]
     }
 }
-impl AsRef<str> for StoreFormat {
+impl ::std::convert::AsRef<str> for StoreFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 pub(crate) fn de_verification_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::VerificationResponse>,
+    ::std::option::Option<crate::types::VerificationResponse>,
     crate::operation::verify_otp_message::VerifyOTPMessageError,
 > {
     (!body.is_empty())

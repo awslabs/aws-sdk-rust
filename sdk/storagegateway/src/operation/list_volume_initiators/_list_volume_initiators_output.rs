@@ -2,20 +2,20 @@
 
 /// <p>ListVolumeInitiatorsOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVolumeInitiatorsOutput {
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
     #[doc(hidden)]
-    pub initiators: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub initiators: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListVolumeInitiatorsOutput {
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
-    pub fn initiators(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn initiators(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.initiators.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListVolumeInitiatorsOutput {
+impl ::aws_http::request_id::RequestId for ListVolumeInitiatorsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl ListVolumeInitiatorsOutput {
 
 /// A builder for [`ListVolumeInitiatorsOutput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListVolumeInitiatorsOutputBuilder {
-    pub(crate) initiators: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) initiators: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListVolumeInitiatorsOutputBuilder {
@@ -41,16 +43,16 @@ impl ListVolumeInitiatorsOutputBuilder {
     /// To override the contents of this collection use [`set_initiators`](Self::set_initiators).
     ///
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
-    pub fn initiators(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn initiators(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.initiators.unwrap_or_default();
         v.push(input.into());
-        self.initiators = Some(v);
+        self.initiators = ::std::option::Option::Some(v);
         self
     }
     /// <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
     pub fn set_initiators(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.initiators = input;
         self

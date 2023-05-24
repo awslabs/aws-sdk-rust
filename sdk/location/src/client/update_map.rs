@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateMap`](crate::operation::update_map::builders::UpdateMapFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::map_name) / [`set_map_name(Option<String>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::set_map_name): <p>The name of the map resource to update.</p>
+    ///   - [`map_name(impl ::std::convert::Into<String>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::map_name) / [`set_map_name(Option<String>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::set_map_name): <p>The name of the map resource to update.</p>
     ///   - [`pricing_plan(PricingPlan)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::set_description): <p>Updates the description for the map resource.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_map::builders::UpdateMapFluentBuilder::set_description): <p>Updates the description for the map resource.</p>
     /// - On success, responds with [`UpdateMapOutput`](crate::operation::update_map::UpdateMapOutput) with field(s):
     ///   - [`map_name(Option<String>)`](crate::operation::update_map::UpdateMapOutput::map_name): <p>The name of the updated map resource.</p>
     ///   - [`map_arn(Option<String>)`](crate::operation::update_map::UpdateMapOutput::map_arn): <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>  </ul>

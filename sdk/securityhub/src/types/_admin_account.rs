@@ -2,22 +2,22 @@
 
 /// <p>Represents a Security Hub administrator account designated by an organization management account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminAccount {
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the Security Hub administrator account. Indicates whether the account is currently enabled as a Security Hub administrator.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AdminStatus>,
+    pub status: ::std::option::Option<crate::types::AdminStatus>,
 }
 impl AdminAccount {
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The current status of the Security Hub administrator account. Indicates whether the account is currently enabled as a Security Hub administrator.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AdminStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AdminStatus> {
         self.status.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl AdminAccount {
 
 /// A builder for [`AdminAccount`](crate::types::AdminAccount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminAccountBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::AdminStatus>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::AdminStatus>,
 }
 impl AdminAccountBuilder {
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The current status of the Security Hub administrator account. Indicates whether the account is currently enabled as a Security Hub administrator.</p>
     pub fn status(mut self, input: crate::types::AdminStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the Security Hub administrator account. Indicates whether the account is currently enabled as a Security Hub administrator.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AdminStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AdminStatus>) -> Self {
         self.status = input;
         self
     }

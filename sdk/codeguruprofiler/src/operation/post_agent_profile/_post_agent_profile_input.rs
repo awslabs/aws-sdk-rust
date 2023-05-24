@@ -2,36 +2,36 @@
 
 /// <p>The structure representing the postAgentProfileRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostAgentProfileInput {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
     #[doc(hidden)]
-    pub profiling_group_name: std::option::Option<std::string::String>,
+    pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The submitted profiling data. </p>
     #[doc(hidden)]
-    pub agent_profile: std::option::Option<aws_smithy_types::Blob>,
+    pub agent_profile: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
     #[doc(hidden)]
-    pub profile_token: std::option::Option<std::string::String>,
+    pub profile_token: ::std::option::Option<::std::string::String>,
     /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
     /// <ul>
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl PostAgentProfileInput {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> The submitted profiling data. </p>
-    pub fn agent_profile(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn agent_profile(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.agent_profile.as_ref()
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-    pub fn profile_token(&self) -> std::option::Option<&str> {
+    pub fn profile_token(&self) -> ::std::option::Option<&str> {
         self.profile_token.as_deref()
     }
     /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
@@ -39,7 +39,7 @@ impl PostAgentProfileInput {
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
 }
@@ -53,44 +53,58 @@ impl PostAgentProfileInput {
 
 /// A builder for [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PostAgentProfileInputBuilder {
-    pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-    pub(crate) agent_profile: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) profile_token: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
+    pub(crate) profiling_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_profile: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) profile_token: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
 }
 impl PostAgentProfileInputBuilder {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-    pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.profiling_group_name = Some(input.into());
+    pub fn profiling_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.profiling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
     pub fn set_profiling_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.profiling_group_name = input;
         self
     }
     /// <p> The submitted profiling data. </p>
-    pub fn agent_profile(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.agent_profile = Some(input);
+    pub fn agent_profile(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.agent_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p> The submitted profiling data. </p>
-    pub fn set_agent_profile(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_agent_profile(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
+    ) -> Self {
         self.agent_profile = input;
         self
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-    pub fn profile_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.profile_token = Some(input.into());
+    pub fn profile_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.profile_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-    pub fn set_profile_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.profile_token = input;
         self
     }
@@ -99,8 +113,8 @@ impl PostAgentProfileInputBuilder {
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
@@ -108,18 +122,18 @@ impl PostAgentProfileInputBuilder {
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// Consumes the builder and constructs a [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::post_agent_profile::PostAgentProfileInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::post_agent_profile::PostAgentProfileInput {
                 profiling_group_name: self.profiling_group_name,
                 agent_profile: self.agent_profile,

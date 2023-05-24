@@ -2,29 +2,29 @@
 
 /// <p>Metadata about a callback step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CallbackStepMetadata {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
     #[doc(hidden)]
-    pub callback_token: std::option::Option<std::string::String>,
+    pub callback_token: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon Simple Queue Service (Amazon SQS) queue used by the callback step.</p>
     #[doc(hidden)]
-    pub sqs_queue_url: std::option::Option<std::string::String>,
+    pub sqs_queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of the output parameters of the callback step.</p>
     #[doc(hidden)]
-    pub output_parameters: std::option::Option<std::vec::Vec<crate::types::OutputParameter>>,
+    pub output_parameters: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
 }
 impl CallbackStepMetadata {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn callback_token(&self) -> std::option::Option<&str> {
+    pub fn callback_token(&self) -> ::std::option::Option<&str> {
         self.callback_token.as_deref()
     }
     /// <p>The URL of the Amazon Simple Queue Service (Amazon SQS) queue used by the callback step.</p>
-    pub fn sqs_queue_url(&self) -> std::option::Option<&str> {
+    pub fn sqs_queue_url(&self) -> ::std::option::Option<&str> {
         self.sqs_queue_url.as_deref()
     }
     /// <p>A list of the output parameters of the callback step.</p>
-    pub fn output_parameters(&self) -> std::option::Option<&[crate::types::OutputParameter]> {
+    pub fn output_parameters(&self) -> ::std::option::Option<&[crate::types::OutputParameter]> {
         self.output_parameters.as_deref()
     }
 }
@@ -37,30 +37,45 @@ impl CallbackStepMetadata {
 
 /// A builder for [`CallbackStepMetadata`](crate::types::CallbackStepMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CallbackStepMetadataBuilder {
-    pub(crate) callback_token: std::option::Option<std::string::String>,
-    pub(crate) sqs_queue_url: std::option::Option<std::string::String>,
-    pub(crate) output_parameters: std::option::Option<std::vec::Vec<crate::types::OutputParameter>>,
+    pub(crate) callback_token: ::std::option::Option<::std::string::String>,
+    pub(crate) sqs_queue_url: ::std::option::Option<::std::string::String>,
+    pub(crate) output_parameters:
+        ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
 }
 impl CallbackStepMetadataBuilder {
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn callback_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.callback_token = Some(input.into());
+    pub fn callback_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.callback_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-    pub fn set_callback_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_callback_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.callback_token = input;
         self
     }
     /// <p>The URL of the Amazon Simple Queue Service (Amazon SQS) queue used by the callback step.</p>
-    pub fn sqs_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sqs_queue_url = Some(input.into());
+    pub fn sqs_queue_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sqs_queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon Simple Queue Service (Amazon SQS) queue used by the callback step.</p>
-    pub fn set_sqs_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sqs_queue_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sqs_queue_url = input;
         self
     }
@@ -72,13 +87,13 @@ impl CallbackStepMetadataBuilder {
     pub fn output_parameters(mut self, input: crate::types::OutputParameter) -> Self {
         let mut v = self.output_parameters.unwrap_or_default();
         v.push(input);
-        self.output_parameters = Some(v);
+        self.output_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the output parameters of the callback step.</p>
     pub fn set_output_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputParameter>>,
     ) -> Self {
         self.output_parameters = input;
         self

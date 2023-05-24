@@ -2,29 +2,29 @@
 
 /// <p>The function request body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionRequest {
     /// <p>The required properties of the function.</p>
     #[doc(hidden)]
-    pub required_properties: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub required_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The scope of the function.</p>
     #[doc(hidden)]
-    pub scope: std::option::Option<crate::types::Scope>,
+    pub scope: ::std::option::Option<crate::types::Scope>,
     /// <p>The data connector.</p>
     #[doc(hidden)]
-    pub implemented_by: std::option::Option<crate::types::DataConnector>,
+    pub implemented_by: ::std::option::Option<crate::types::DataConnector>,
 }
 impl FunctionRequest {
     /// <p>The required properties of the function.</p>
-    pub fn required_properties(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn required_properties(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.required_properties.as_deref()
     }
     /// <p>The scope of the function.</p>
-    pub fn scope(&self) -> std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>The data connector.</p>
-    pub fn implemented_by(&self) -> std::option::Option<&crate::types::DataConnector> {
+    pub fn implemented_by(&self) -> ::std::option::Option<&crate::types::DataConnector> {
         self.implemented_by.as_ref()
     }
 }
@@ -37,11 +37,13 @@ impl FunctionRequest {
 
 /// A builder for [`FunctionRequest`](crate::types::FunctionRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FunctionRequestBuilder {
-    pub(crate) required_properties: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) scope: std::option::Option<crate::types::Scope>,
-    pub(crate) implemented_by: std::option::Option<crate::types::DataConnector>,
+    pub(crate) required_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scope: ::std::option::Option<crate::types::Scope>,
+    pub(crate) implemented_by: ::std::option::Option<crate::types::DataConnector>,
 }
 impl FunctionRequestBuilder {
     /// Appends an item to `required_properties`.
@@ -49,39 +51,42 @@ impl FunctionRequestBuilder {
     /// To override the contents of this collection use [`set_required_properties`](Self::set_required_properties).
     ///
     /// <p>The required properties of the function.</p>
-    pub fn required_properties(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn required_properties(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.required_properties.unwrap_or_default();
         v.push(input.into());
-        self.required_properties = Some(v);
+        self.required_properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>The required properties of the function.</p>
     pub fn set_required_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.required_properties = input;
         self
     }
     /// <p>The scope of the function.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
-        self.scope = Some(input);
+        self.scope = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scope of the function.</p>
-    pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.scope = input;
         self
     }
     /// <p>The data connector.</p>
     pub fn implemented_by(mut self, input: crate::types::DataConnector) -> Self {
-        self.implemented_by = Some(input);
+        self.implemented_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data connector.</p>
     pub fn set_implemented_by(
         mut self,
-        input: std::option::Option<crate::types::DataConnector>,
+        input: ::std::option::Option<crate::types::DataConnector>,
     ) -> Self {
         self.implemented_by = input;
         self

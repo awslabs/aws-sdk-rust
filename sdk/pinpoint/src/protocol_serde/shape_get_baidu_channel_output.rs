@@ -2,7 +2,7 @@
 pub(crate) fn de_baidu_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::BaiduChannelResponse>,
+    ::std::option::Option<crate::types::BaiduChannelResponse>,
     crate::operation::get_baidu_channel::GetBaiduChannelError,
 > {
     (!body.is_empty())

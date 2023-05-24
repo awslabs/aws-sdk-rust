@@ -2,29 +2,33 @@
 
 /// List of actions to create and list of actions to delete.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateScheduleInput {
     /// Id of the channel whose schedule is being updated.
     #[doc(hidden)]
-    pub channel_id: std::option::Option<std::string::String>,
+    pub channel_id: ::std::option::Option<::std::string::String>,
     /// Schedule actions to create in the schedule.
     #[doc(hidden)]
-    pub creates: std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
+    pub creates: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
     /// Schedule actions to delete from the schedule.
     #[doc(hidden)]
-    pub deletes: std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
+    pub deletes: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
 }
 impl BatchUpdateScheduleInput {
     /// Id of the channel whose schedule is being updated.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<&str> {
         self.channel_id.as_deref()
     }
     /// Schedule actions to create in the schedule.
-    pub fn creates(&self) -> std::option::Option<&crate::types::BatchScheduleActionCreateRequest> {
+    pub fn creates(
+        &self,
+    ) -> ::std::option::Option<&crate::types::BatchScheduleActionCreateRequest> {
         self.creates.as_ref()
     }
     /// Schedule actions to delete from the schedule.
-    pub fn deletes(&self) -> std::option::Option<&crate::types::BatchScheduleActionDeleteRequest> {
+    pub fn deletes(
+        &self,
+    ) -> ::std::option::Option<&crate::types::BatchScheduleActionDeleteRequest> {
         self.deletes.as_ref()
     }
 }
@@ -39,45 +43,47 @@ impl BatchUpdateScheduleInput {
 
 /// A builder for [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchUpdateScheduleInputBuilder {
-    pub(crate) channel_id: std::option::Option<std::string::String>,
-    pub(crate) creates: std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
-    pub(crate) deletes: std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
+    pub(crate) channel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creates: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
+    pub(crate) deletes: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
 }
 impl BatchUpdateScheduleInputBuilder {
     /// Id of the channel whose schedule is being updated.
-    pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_id = Some(input.into());
+    pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Id of the channel whose schedule is being updated.
-    pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
     }
     /// Schedule actions to create in the schedule.
     pub fn creates(mut self, input: crate::types::BatchScheduleActionCreateRequest) -> Self {
-        self.creates = Some(input);
+        self.creates = ::std::option::Option::Some(input);
         self
     }
     /// Schedule actions to create in the schedule.
     pub fn set_creates(
         mut self,
-        input: std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
+        input: ::std::option::Option<crate::types::BatchScheduleActionCreateRequest>,
     ) -> Self {
         self.creates = input;
         self
     }
     /// Schedule actions to delete from the schedule.
     pub fn deletes(mut self, input: crate::types::BatchScheduleActionDeleteRequest) -> Self {
-        self.deletes = Some(input);
+        self.deletes = ::std::option::Option::Some(input);
         self
     }
     /// Schedule actions to delete from the schedule.
     pub fn set_deletes(
         mut self,
-        input: std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
+        input: ::std::option::Option<crate::types::BatchScheduleActionDeleteRequest>,
     ) -> Self {
         self.deletes = input;
         self
@@ -85,11 +91,11 @@ impl BatchUpdateScheduleInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_update_schedule::BatchUpdateScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::batch_update_schedule::BatchUpdateScheduleInput {
                 channel_id: self.channel_id,
                 creates: self.creates,

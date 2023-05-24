@@ -2,135 +2,135 @@
 
 /// <p>Specifies a command-separated value (CSV) data store stored in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3CsvSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Amazon S3 paths to read from.</p>
     #[doc(hidden)]
-    pub paths: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     #[doc(hidden)]
-    pub compression_type: std::option::Option<crate::types::CompressionType>,
+    pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
     #[doc(hidden)]
-    pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
     #[doc(hidden)]
-    pub group_size: std::option::Option<std::string::String>,
+    pub group_size: ::std::option::Option<::std::string::String>,
     /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
     #[doc(hidden)]
-    pub group_files: std::option::Option<std::string::String>,
+    pub group_files: ::std::option::Option<::std::string::String>,
     /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
     #[doc(hidden)]
-    pub recurse: std::option::Option<bool>,
+    pub recurse: ::std::option::Option<bool>,
     /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
     #[doc(hidden)]
-    pub max_band: std::option::Option<i32>,
+    pub max_band: ::std::option::Option<i32>,
     /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
     #[doc(hidden)]
-    pub max_files_in_band: std::option::Option<i32>,
+    pub max_files_in_band: ::std::option::Option<i32>,
     /// <p>Specifies additional connection options.</p>
     #[doc(hidden)]
-    pub additional_options: std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
+    pub additional_options: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
     #[doc(hidden)]
-    pub separator: std::option::Option<crate::types::Separator>,
+    pub separator: ::std::option::Option<crate::types::Separator>,
     /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
     #[doc(hidden)]
-    pub escaper: std::option::Option<std::string::String>,
+    pub escaper: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
     #[doc(hidden)]
-    pub quote_char: std::option::Option<crate::types::QuoteChar>,
+    pub quote_char: ::std::option::Option<crate::types::QuoteChar>,
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
     #[doc(hidden)]
-    pub multiline: std::option::Option<bool>,
+    pub multiline: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
     #[doc(hidden)]
-    pub with_header: std::option::Option<bool>,
+    pub with_header: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
     #[doc(hidden)]
-    pub write_header: std::option::Option<bool>,
+    pub write_header: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
     #[doc(hidden)]
-    pub skip_first: std::option::Option<bool>,
+    pub skip_first: ::std::option::Option<bool>,
     /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
     #[doc(hidden)]
     pub optimize_performance: bool,
     /// <p>Specifies the data schema for the S3 CSV source.</p>
     #[doc(hidden)]
-    pub output_schemas: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
+    pub output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3CsvSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn paths(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn paths(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.paths.as_deref()
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn compression_type(&self) -> std::option::Option<&crate::types::CompressionType> {
+    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
-    pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exclusions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.exclusions.as_deref()
     }
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
-    pub fn group_size(&self) -> std::option::Option<&str> {
+    pub fn group_size(&self) -> ::std::option::Option<&str> {
         self.group_size.as_deref()
     }
     /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
-    pub fn group_files(&self) -> std::option::Option<&str> {
+    pub fn group_files(&self) -> ::std::option::Option<&str> {
         self.group_files.as_deref()
     }
     /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
-    pub fn recurse(&self) -> std::option::Option<bool> {
+    pub fn recurse(&self) -> ::std::option::Option<bool> {
         self.recurse
     }
     /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
-    pub fn max_band(&self) -> std::option::Option<i32> {
+    pub fn max_band(&self) -> ::std::option::Option<i32> {
         self.max_band
     }
     /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
-    pub fn max_files_in_band(&self) -> std::option::Option<i32> {
+    pub fn max_files_in_band(&self) -> ::std::option::Option<i32> {
         self.max_files_in_band
     }
     /// <p>Specifies additional connection options.</p>
     pub fn additional_options(
         &self,
-    ) -> std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
+    ) -> ::std::option::Option<&crate::types::S3DirectSourceAdditionalOptions> {
         self.additional_options.as_ref()
     }
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
-    pub fn separator(&self) -> std::option::Option<&crate::types::Separator> {
+    pub fn separator(&self) -> ::std::option::Option<&crate::types::Separator> {
         self.separator.as_ref()
     }
     /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
-    pub fn escaper(&self) -> std::option::Option<&str> {
+    pub fn escaper(&self) -> ::std::option::Option<&str> {
         self.escaper.as_deref()
     }
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
-    pub fn quote_char(&self) -> std::option::Option<&crate::types::QuoteChar> {
+    pub fn quote_char(&self) -> ::std::option::Option<&crate::types::QuoteChar> {
         self.quote_char.as_ref()
     }
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
-    pub fn multiline(&self) -> std::option::Option<bool> {
+    pub fn multiline(&self) -> ::std::option::Option<bool> {
         self.multiline
     }
     /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
-    pub fn with_header(&self) -> std::option::Option<bool> {
+    pub fn with_header(&self) -> ::std::option::Option<bool> {
         self.with_header
     }
     /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
-    pub fn write_header(&self) -> std::option::Option<bool> {
+    pub fn write_header(&self) -> ::std::option::Option<bool> {
         self.write_header
     }
     /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
-    pub fn skip_first(&self) -> std::option::Option<bool> {
+    pub fn skip_first(&self) -> ::std::option::Option<bool> {
         self.skip_first
     }
     /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
@@ -138,7 +138,7 @@ impl S3CsvSource {
         self.optimize_performance
     }
     /// <p>Specifies the data schema for the S3 CSV source.</p>
-    pub fn output_schemas(&self) -> std::option::Option<&[crate::types::GlueSchema]> {
+    pub fn output_schemas(&self) -> ::std::option::Option<&[crate::types::GlueSchema]> {
         self.output_schemas.as_deref()
     }
 }
@@ -151,37 +151,39 @@ impl S3CsvSource {
 
 /// A builder for [`S3CsvSource`](crate::types::S3CsvSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3CsvSourceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) paths: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) compression_type: std::option::Option<crate::types::CompressionType>,
-    pub(crate) exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) group_size: std::option::Option<std::string::String>,
-    pub(crate) group_files: std::option::Option<std::string::String>,
-    pub(crate) recurse: std::option::Option<bool>,
-    pub(crate) max_band: std::option::Option<i32>,
-    pub(crate) max_files_in_band: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,
+    pub(crate) exclusions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) group_size: ::std::option::Option<::std::string::String>,
+    pub(crate) group_files: ::std::option::Option<::std::string::String>,
+    pub(crate) recurse: ::std::option::Option<bool>,
+    pub(crate) max_band: ::std::option::Option<i32>,
+    pub(crate) max_files_in_band: ::std::option::Option<i32>,
     pub(crate) additional_options:
-        std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
-    pub(crate) separator: std::option::Option<crate::types::Separator>,
-    pub(crate) escaper: std::option::Option<std::string::String>,
-    pub(crate) quote_char: std::option::Option<crate::types::QuoteChar>,
-    pub(crate) multiline: std::option::Option<bool>,
-    pub(crate) with_header: std::option::Option<bool>,
-    pub(crate) write_header: std::option::Option<bool>,
-    pub(crate) skip_first: std::option::Option<bool>,
-    pub(crate) optimize_performance: std::option::Option<bool>,
-    pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
+        ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
+    pub(crate) separator: ::std::option::Option<crate::types::Separator>,
+    pub(crate) escaper: ::std::option::Option<::std::string::String>,
+    pub(crate) quote_char: ::std::option::Option<crate::types::QuoteChar>,
+    pub(crate) multiline: ::std::option::Option<bool>,
+    pub(crate) with_header: ::std::option::Option<bool>,
+    pub(crate) write_header: ::std::option::Option<bool>,
+    pub(crate) skip_first: ::std::option::Option<bool>,
+    pub(crate) optimize_performance: ::std::option::Option<bool>,
+    pub(crate) output_schemas: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl S3CsvSourceBuilder {
     /// <p>The name of the data store.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data store.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -190,29 +192,29 @@ impl S3CsvSourceBuilder {
     /// To override the contents of this collection use [`set_paths`](Self::set_paths).
     ///
     /// <p>A list of the Amazon S3 paths to read from.</p>
-    pub fn paths(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.paths.unwrap_or_default();
         v.push(input.into());
-        self.paths = Some(v);
+        self.paths = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the Amazon S3 paths to read from.</p>
     pub fn set_paths(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.paths = input;
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
-        self.compression_type = Some(input);
+        self.compression_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn set_compression_type(
         mut self,
-        input: std::option::Option<crate::types::CompressionType>,
+        input: ::std::option::Option<crate::types::CompressionType>,
     ) -> Self {
         self.compression_type = input;
         self
@@ -222,67 +224,67 @@ impl S3CsvSourceBuilder {
     /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
     ///
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
-    pub fn exclusions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn exclusions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.exclusions.unwrap_or_default();
         v.push(input.into());
-        self.exclusions = Some(v);
+        self.exclusions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A string containing a JSON list of Unix-style glob patterns to exclude. For example, "[\"**.pdf\"]" excludes all PDF files. </p>
     pub fn set_exclusions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.exclusions = input;
         self
     }
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
-    pub fn group_size(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_size = Some(input.into());
+    pub fn group_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_size = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target group size in bytes. The default is computed based on the input data size and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code> must be set to <code>"inPartition"</code> for this to take effect.</p>
-    pub fn set_group_size(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_size = input;
         self
     }
     /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
-    pub fn group_files(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_files = Some(input.into());
+    pub fn group_files(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_files = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Grouping files is turned on by default when the input contains more than 50,000 files. To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition". To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.</p>
-    pub fn set_group_files(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_files(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_files = input;
         self
     }
     /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
     pub fn recurse(mut self, input: bool) -> Self {
-        self.recurse = Some(input);
+        self.recurse = ::std::option::Option::Some(input);
         self
     }
     /// <p>If set to true, recursively reads files in all subdirectories under the specified paths.</p>
-    pub fn set_recurse(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_recurse(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recurse = input;
         self
     }
     /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
     pub fn max_band(mut self, input: i32) -> Self {
-        self.max_band = Some(input);
+        self.max_band = ::std::option::Option::Some(input);
         self
     }
     /// <p>This option controls the duration in milliseconds after which the s3 listing is likely to be consistent. Files with modification timestamps falling within the last maxBand milliseconds are tracked specially when using JobBookmarks to account for Amazon S3 eventual consistency. Most users don't need to set this option. The default is 900000 milliseconds, or 15 minutes.</p>
-    pub fn set_max_band(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_band(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_band = input;
         self
     }
     /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
     pub fn max_files_in_band(mut self, input: i32) -> Self {
-        self.max_files_in_band = Some(input);
+        self.max_files_in_band = ::std::option::Option::Some(input);
         self
     }
     /// <p>This option specifies the maximum number of files to save from the last maxBand seconds. If this number is exceeded, extra files are skipped and only processed in the next job run.</p>
-    pub fn set_max_files_in_band(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_files_in_band(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_files_in_band = input;
         self
     }
@@ -291,94 +293,94 @@ impl S3CsvSourceBuilder {
         mut self,
         input: crate::types::S3DirectSourceAdditionalOptions,
     ) -> Self {
-        self.additional_options = Some(input);
+        self.additional_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies additional connection options.</p>
     pub fn set_additional_options(
         mut self,
-        input: std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
+        input: ::std::option::Option<crate::types::S3DirectSourceAdditionalOptions>,
     ) -> Self {
         self.additional_options = input;
         self
     }
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
     pub fn separator(mut self, input: crate::types::Separator) -> Self {
-        self.separator = Some(input);
+        self.separator = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the delimiter character. The default is a comma: ",", but any other character can be specified.</p>
-    pub fn set_separator(mut self, input: std::option::Option<crate::types::Separator>) -> Self {
+    pub fn set_separator(mut self, input: ::std::option::Option<crate::types::Separator>) -> Self {
         self.separator = input;
         self
     }
     /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
-    pub fn escaper(mut self, input: impl Into<std::string::String>) -> Self {
-        self.escaper = Some(input.into());
+    pub fn escaper(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.escaper = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a character to use for escaping. This option is used only when reading CSV files. The default value is <code>none</code>. If enabled, the character which immediately follows is used as-is, except for a small set of well-known escapes (<code>\n</code>, <code>\r</code>, <code>\t</code>, and <code>\0</code>).</p>
-    pub fn set_escaper(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_escaper(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.escaper = input;
         self
     }
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
     pub fn quote_char(mut self, input: crate::types::QuoteChar) -> Self {
-        self.quote_char = Some(input);
+        self.quote_char = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>. Set this to <code>-1</code> to turn off quoting entirely.</p>
-    pub fn set_quote_char(mut self, input: std::option::Option<crate::types::QuoteChar>) -> Self {
+    pub fn set_quote_char(mut self, input: ::std::option::Option<crate::types::QuoteChar>) -> Self {
         self.quote_char = input;
         self
     }
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
     pub fn multiline(mut self, input: bool) -> Self {
-        self.multiline = Some(input);
+        self.multiline = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether a single record can span multiple lines. This can occur when a field contains a quoted new-line character. You must set this option to True if any record spans multiple lines. The default value is <code>False</code>, which allows for more aggressive file-splitting during parsing.</p>
-    pub fn set_multiline(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_multiline(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multiline = input;
         self
     }
     /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
     pub fn with_header(mut self, input: bool) -> Self {
-        self.with_header = Some(input);
+        self.with_header = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether to treat the first line as a header. The default value is <code>False</code>.</p>
-    pub fn set_with_header(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_with_header(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_header = input;
         self
     }
     /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
     pub fn write_header(mut self, input: bool) -> Self {
-        self.write_header = Some(input);
+        self.write_header = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether to write the header to output. The default value is <code>True</code>. </p>
-    pub fn set_write_header(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_write_header(mut self, input: ::std::option::Option<bool>) -> Self {
         self.write_header = input;
         self
     }
     /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
     pub fn skip_first(mut self, input: bool) -> Self {
-        self.skip_first = Some(input);
+        self.skip_first = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether to skip the first data line. The default value is <code>False</code>.</p>
-    pub fn set_skip_first(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_first(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_first = input;
         self
     }
     /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
     pub fn optimize_performance(mut self, input: bool) -> Self {
-        self.optimize_performance = Some(input);
+        self.optimize_performance = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that specifies whether to use the advanced SIMD CSV reader along with Apache Arrow based columnar memory formats. Only available in Glue version 3.0.</p>
-    pub fn set_optimize_performance(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_optimize_performance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optimize_performance = input;
         self
     }
@@ -390,13 +392,13 @@ impl S3CsvSourceBuilder {
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
         v.push(input);
-        self.output_schemas = Some(v);
+        self.output_schemas = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the data schema for the S3 CSV source.</p>
     pub fn set_output_schemas(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlueSchema>>,
     ) -> Self {
         self.output_schemas = input;
         self

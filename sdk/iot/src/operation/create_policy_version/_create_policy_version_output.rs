@@ -2,17 +2,17 @@
 
 /// <p>The output of the CreatePolicyVersion operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePolicyVersionOutput {
     /// <p>The policy ARN.</p>
     #[doc(hidden)]
-    pub policy_arn: std::option::Option<std::string::String>,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
     #[doc(hidden)]
-    pub policy_document: std::option::Option<std::string::String>,
+    pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The policy version ID.</p>
     #[doc(hidden)]
-    pub policy_version_id: std::option::Option<std::string::String>,
+    pub policy_version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the policy version is the default.</p>
     #[doc(hidden)]
     pub is_default_version: bool,
@@ -20,15 +20,15 @@ pub struct CreatePolicyVersionOutput {
 }
 impl CreatePolicyVersionOutput {
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(&self) -> std::option::Option<&str> {
+    pub fn policy_version_id(&self) -> ::std::option::Option<&str> {
         self.policy_version_id.as_deref()
     }
     /// <p>Specifies whether the policy version is the default.</p>
@@ -36,7 +36,7 @@ impl CreatePolicyVersionOutput {
         self.is_default_version
     }
 }
-impl aws_http::request_id::RequestId for CreatePolicyVersionOutput {
+impl ::aws_http::request_id::RequestId for CreatePolicyVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -52,55 +52,66 @@ impl CreatePolicyVersionOutput {
 
 /// A builder for [`CreatePolicyVersionOutput`](crate::operation::create_policy_version::CreatePolicyVersionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePolicyVersionOutputBuilder {
-    pub(crate) policy_arn: std::option::Option<std::string::String>,
-    pub(crate) policy_document: std::option::Option<std::string::String>,
-    pub(crate) policy_version_id: std::option::Option<std::string::String>,
-    pub(crate) is_default_version: std::option::Option<bool>,
+    pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_document: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) is_default_version: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CreatePolicyVersionOutputBuilder {
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_arn = Some(input.into());
+    pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy ARN.</p>
-    pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_document = Some(input.into());
+    pub fn policy_document(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_document(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_document = input;
         self
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_version_id = Some(input.into());
+    pub fn policy_version_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy version ID.</p>
     pub fn set_policy_version_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.policy_version_id = input;
         self
     }
     /// <p>Specifies whether the policy version is the default.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
-        self.is_default_version = Some(input);
+        self.is_default_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the policy version is the default.</p>
-    pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_version = input;
         self
     }

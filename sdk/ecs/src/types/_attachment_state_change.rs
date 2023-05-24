@@ -2,22 +2,22 @@
 
 /// <p>An object representing a change in state for a task attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentStateChange {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
     #[doc(hidden)]
-    pub attachment_arn: std::option::Option<std::string::String>,
+    pub attachment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the attachment.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentStateChange {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
-    pub fn attachment_arn(&self) -> std::option::Option<&str> {
+    pub fn attachment_arn(&self) -> ::std::option::Option<&str> {
         self.attachment_arn.as_deref()
     }
     /// <p>The status of the attachment.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AttachmentStateChange {
 
 /// A builder for [`AttachmentStateChange`](crate::types::AttachmentStateChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttachmentStateChangeBuilder {
-    pub(crate) attachment_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) attachment_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentStateChangeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
-    pub fn attachment_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attachment_arn = Some(input.into());
+    pub fn attachment_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attachment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
-    pub fn set_attachment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attachment_arn = input;
         self
     }
     /// <p>The status of the attachment.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the attachment.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

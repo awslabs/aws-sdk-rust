@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Context {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum Context {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Context {
+impl ::std::convert::From<&str> for Context {
     fn from(s: &str) -> Self {
         match s {
             "COST_AND_USAGE" => Context::CostAndUsage,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for Context {
         }
     }
 }
-impl std::str::FromStr for Context {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Context {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Context::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Context::from(s))
     }
 }
 impl Context {
@@ -89,7 +89,7 @@ impl Context {
         &["COST_AND_USAGE", "RESERVATIONS", "SAVINGS_PLANS"]
     }
 }
-impl AsRef<str> for Context {
+impl ::std::convert::AsRef<str> for Context {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

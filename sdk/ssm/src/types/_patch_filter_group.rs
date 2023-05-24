@@ -2,15 +2,15 @@
 
 /// <p>A set of patch filters, typically used for approval rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchFilterGroup {
     /// <p>The set of patch filters that make up the group.</p>
     #[doc(hidden)]
-    pub patch_filters: std::option::Option<std::vec::Vec<crate::types::PatchFilter>>,
+    pub patch_filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
 }
 impl PatchFilterGroup {
     /// <p>The set of patch filters that make up the group.</p>
-    pub fn patch_filters(&self) -> std::option::Option<&[crate::types::PatchFilter]> {
+    pub fn patch_filters(&self) -> ::std::option::Option<&[crate::types::PatchFilter]> {
         self.patch_filters.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl PatchFilterGroup {
 
 /// A builder for [`PatchFilterGroup`](crate::types::PatchFilterGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PatchFilterGroupBuilder {
-    pub(crate) patch_filters: std::option::Option<std::vec::Vec<crate::types::PatchFilter>>,
+    pub(crate) patch_filters: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
 }
 impl PatchFilterGroupBuilder {
     /// Appends an item to `patch_filters`.
@@ -36,13 +38,13 @@ impl PatchFilterGroupBuilder {
     pub fn patch_filters(mut self, input: crate::types::PatchFilter) -> Self {
         let mut v = self.patch_filters.unwrap_or_default();
         v.push(input);
-        self.patch_filters = Some(v);
+        self.patch_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The set of patch filters that make up the group.</p>
     pub fn set_patch_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchFilter>>,
     ) -> Self {
         self.patch_filters = input;
         self

@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_groups::builders::GetGroupsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_groups::builders::GetGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_groups::builders::GetGroupsFluentBuilder::set_next_token): <p>Pagination token.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_groups::builders::GetGroupsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_groups::builders::GetGroupsFluentBuilder::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetGroupsOutput`](crate::operation::get_groups::GetGroupsOutput) with field(s):
     ///   - [`groups(Option<Vec<GroupSummary>>)`](crate::operation::get_groups::GetGroupsOutput::groups): <p>The collection of all active groups.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_groups::GetGroupsOutput::next_token): <p>Pagination token.</p>

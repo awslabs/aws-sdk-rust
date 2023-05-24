@@ -6,29 +6,29 @@ pub use crate::operation::delete_room_skill_parameter::_delete_room_skill_parame
 /// Fluent builder constructing a request to `DeleteRoomSkillParameter`.
 ///
 /// <p>Deletes room skill parameter details by room, skill, and parameter key ID.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRoomSkillParameterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_room_skill_parameter::builders::DeleteRoomSkillParameterInputBuilder,
 }
 impl DeleteRoomSkillParameterFluentBuilder {
     /// Creates a new `DeleteRoomSkillParameter`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameter,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DeleteRoomSkillParameterFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,47 @@ impl DeleteRoomSkillParameterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
-    pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
         self
     }
     /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
-    pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
     }
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
-    pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn skill_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.skill_id(input.into());
         self
     }
     /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
-    pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_skill_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_skill_id(input);
         self
     }
     /// <p>The room skill parameter key for which to remove details.</p>
-    pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn parameter_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.parameter_key(input.into());
         self
     }
     /// <p>The room skill parameter key for which to remove details.</p>
-    pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_parameter_key(input);
         self
     }

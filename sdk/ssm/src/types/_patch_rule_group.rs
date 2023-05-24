@@ -2,15 +2,15 @@
 
 /// <p>A set of rules defining the approval rules for a patch baseline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchRuleGroup {
     /// <p>The rules that make up the rule group.</p>
     #[doc(hidden)]
-    pub patch_rules: std::option::Option<std::vec::Vec<crate::types::PatchRule>>,
+    pub patch_rules: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>,
 }
 impl PatchRuleGroup {
     /// <p>The rules that make up the rule group.</p>
-    pub fn patch_rules(&self) -> std::option::Option<&[crate::types::PatchRule]> {
+    pub fn patch_rules(&self) -> ::std::option::Option<&[crate::types::PatchRule]> {
         self.patch_rules.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl PatchRuleGroup {
 
 /// A builder for [`PatchRuleGroup`](crate::types::PatchRuleGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PatchRuleGroupBuilder {
-    pub(crate) patch_rules: std::option::Option<std::vec::Vec<crate::types::PatchRule>>,
+    pub(crate) patch_rules: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>,
 }
 impl PatchRuleGroupBuilder {
     /// Appends an item to `patch_rules`.
@@ -36,13 +38,13 @@ impl PatchRuleGroupBuilder {
     pub fn patch_rules(mut self, input: crate::types::PatchRule) -> Self {
         let mut v = self.patch_rules.unwrap_or_default();
         v.push(input);
-        self.patch_rules = Some(v);
+        self.patch_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rules that make up the rule group.</p>
     pub fn set_patch_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchRule>>,
     ) -> Self {
         self.patch_rules = input;
         self

@@ -2,36 +2,36 @@
 
 /// <p>Credentials for the provided identity ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Credentials {
     /// <p>The Access Key portion of the credentials.</p>
     #[doc(hidden)]
-    pub access_key_id: std::option::Option<std::string::String>,
+    pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Secret Access Key portion of the credentials</p>
     #[doc(hidden)]
-    pub secret_key: std::option::Option<std::string::String>,
+    pub secret_key: ::std::option::Option<::std::string::String>,
     /// <p>The Session Token portion of the credentials</p>
     #[doc(hidden)]
-    pub session_token: std::option::Option<std::string::String>,
+    pub session_token: ::std::option::Option<::std::string::String>,
     /// <p>The date at which these credentials will expire.</p>
     #[doc(hidden)]
-    pub expiration: std::option::Option<aws_smithy_types::DateTime>,
+    pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Credentials {
     /// <p>The Access Key portion of the credentials.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p>The Secret Access Key portion of the credentials</p>
-    pub fn secret_key(&self) -> std::option::Option<&str> {
+    pub fn secret_key(&self) -> ::std::option::Option<&str> {
         self.secret_key.as_deref()
     }
     /// <p>The Session Token portion of the credentials</p>
-    pub fn session_token(&self) -> std::option::Option<&str> {
+    pub fn session_token(&self) -> ::std::option::Option<&str> {
         self.session_token.as_deref()
     }
     /// <p>The date at which these credentials will expire.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
@@ -44,53 +44,67 @@ impl Credentials {
 
 /// A builder for [`Credentials`](crate::types::Credentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CredentialsBuilder {
-    pub(crate) access_key_id: std::option::Option<std::string::String>,
-    pub(crate) secret_key: std::option::Option<std::string::String>,
-    pub(crate) session_token: std::option::Option<std::string::String>,
-    pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_key: ::std::option::Option<::std::string::String>,
+    pub(crate) session_token: ::std::option::Option<::std::string::String>,
+    pub(crate) expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CredentialsBuilder {
     /// <p>The Access Key portion of the credentials.</p>
-    pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_key_id = Some(input.into());
+    pub fn access_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Access Key portion of the credentials.</p>
-    pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_key_id = input;
         self
     }
     /// <p>The Secret Access Key portion of the credentials</p>
-    pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_key = Some(input.into());
+    pub fn secret_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Secret Access Key portion of the credentials</p>
-    pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_key = input;
         self
     }
     /// <p>The Session Token portion of the credentials</p>
-    pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_token = Some(input.into());
+    pub fn session_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.session_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Session Token portion of the credentials</p>
-    pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.session_token = input;
         self
     }
     /// <p>The date at which these credentials will expire.</p>
-    pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.expiration = Some(input);
+    pub fn expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expiration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date at which these credentials will expire.</p>
     pub fn set_expiration(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.expiration = input;
         self

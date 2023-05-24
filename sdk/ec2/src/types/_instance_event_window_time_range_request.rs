@@ -2,36 +2,36 @@
 
 /// <p>The start day and time and the end day and time of the time range, in UTC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindowTimeRangeRequest {
     /// <p>The day on which the time range begins.</p>
     #[doc(hidden)]
-    pub start_week_day: std::option::Option<crate::types::WeekDay>,
+    pub start_week_day: ::std::option::Option<crate::types::WeekDay>,
     /// <p>The hour when the time range begins.</p>
     #[doc(hidden)]
-    pub start_hour: std::option::Option<i32>,
+    pub start_hour: ::std::option::Option<i32>,
     /// <p>The day on which the time range ends.</p>
     #[doc(hidden)]
-    pub end_week_day: std::option::Option<crate::types::WeekDay>,
+    pub end_week_day: ::std::option::Option<crate::types::WeekDay>,
     /// <p>The hour when the time range ends.</p>
     #[doc(hidden)]
-    pub end_hour: std::option::Option<i32>,
+    pub end_hour: ::std::option::Option<i32>,
 }
 impl InstanceEventWindowTimeRangeRequest {
     /// <p>The day on which the time range begins.</p>
-    pub fn start_week_day(&self) -> std::option::Option<&crate::types::WeekDay> {
+    pub fn start_week_day(&self) -> ::std::option::Option<&crate::types::WeekDay> {
         self.start_week_day.as_ref()
     }
     /// <p>The hour when the time range begins.</p>
-    pub fn start_hour(&self) -> std::option::Option<i32> {
+    pub fn start_hour(&self) -> ::std::option::Option<i32> {
         self.start_hour
     }
     /// <p>The day on which the time range ends.</p>
-    pub fn end_week_day(&self) -> std::option::Option<&crate::types::WeekDay> {
+    pub fn end_week_day(&self) -> ::std::option::Option<&crate::types::WeekDay> {
         self.end_week_day.as_ref()
     }
     /// <p>The hour when the time range ends.</p>
-    pub fn end_hour(&self) -> std::option::Option<i32> {
+    pub fn end_hour(&self) -> ::std::option::Option<i32> {
         self.end_hour
     }
 }
@@ -44,51 +44,56 @@ impl InstanceEventWindowTimeRangeRequest {
 
 /// A builder for [`InstanceEventWindowTimeRangeRequest`](crate::types::InstanceEventWindowTimeRangeRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceEventWindowTimeRangeRequestBuilder {
-    pub(crate) start_week_day: std::option::Option<crate::types::WeekDay>,
-    pub(crate) start_hour: std::option::Option<i32>,
-    pub(crate) end_week_day: std::option::Option<crate::types::WeekDay>,
-    pub(crate) end_hour: std::option::Option<i32>,
+    pub(crate) start_week_day: ::std::option::Option<crate::types::WeekDay>,
+    pub(crate) start_hour: ::std::option::Option<i32>,
+    pub(crate) end_week_day: ::std::option::Option<crate::types::WeekDay>,
+    pub(crate) end_hour: ::std::option::Option<i32>,
 }
 impl InstanceEventWindowTimeRangeRequestBuilder {
     /// <p>The day on which the time range begins.</p>
     pub fn start_week_day(mut self, input: crate::types::WeekDay) -> Self {
-        self.start_week_day = Some(input);
+        self.start_week_day = ::std::option::Option::Some(input);
         self
     }
     /// <p>The day on which the time range begins.</p>
-    pub fn set_start_week_day(mut self, input: std::option::Option<crate::types::WeekDay>) -> Self {
+    pub fn set_start_week_day(
+        mut self,
+        input: ::std::option::Option<crate::types::WeekDay>,
+    ) -> Self {
         self.start_week_day = input;
         self
     }
     /// <p>The hour when the time range begins.</p>
     pub fn start_hour(mut self, input: i32) -> Self {
-        self.start_hour = Some(input);
+        self.start_hour = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hour when the time range begins.</p>
-    pub fn set_start_hour(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_hour = input;
         self
     }
     /// <p>The day on which the time range ends.</p>
     pub fn end_week_day(mut self, input: crate::types::WeekDay) -> Self {
-        self.end_week_day = Some(input);
+        self.end_week_day = ::std::option::Option::Some(input);
         self
     }
     /// <p>The day on which the time range ends.</p>
-    pub fn set_end_week_day(mut self, input: std::option::Option<crate::types::WeekDay>) -> Self {
+    pub fn set_end_week_day(mut self, input: ::std::option::Option<crate::types::WeekDay>) -> Self {
         self.end_week_day = input;
         self
     }
     /// <p>The hour when the time range ends.</p>
     pub fn end_hour(mut self, input: i32) -> Self {
-        self.end_hour = Some(input);
+        self.end_hour = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hour when the time range ends.</p>
-    pub fn set_end_hour(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_hour = input;
         self
     }

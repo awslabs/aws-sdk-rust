@@ -2,30 +2,30 @@
 
 /// <p>The response to a <code>ListSqlInjectionMatchSets</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSqlInjectionMatchSetsOutput {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
     pub sql_injection_match_sets:
-        std::option::Option<std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListSqlInjectionMatchSetsOutput {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
     pub fn sql_injection_match_sets(
         &self,
-    ) -> std::option::Option<&[crate::types::SqlInjectionMatchSetSummary]> {
+    ) -> ::std::option::Option<&[crate::types::SqlInjectionMatchSetSummary]> {
         self.sql_injection_match_sets.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListSqlInjectionMatchSetsOutput {
+impl ::aws_http::request_id::RequestId for ListSqlInjectionMatchSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl ListSqlInjectionMatchSetsOutput {
 
 /// A builder for [`ListSqlInjectionMatchSetsOutput`](crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSqlInjectionMatchSetsOutputBuilder {
-    pub(crate) next_marker: std::option::Option<std::string::String>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) sql_injection_match_sets:
-        std::option::Option<std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListSqlInjectionMatchSetsOutputBuilder {
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you have more <code>SqlInjectionMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>SqlInjectionMatchSet</code> objects, submit another <code>ListSqlInjectionMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }
@@ -68,13 +70,13 @@ impl ListSqlInjectionMatchSetsOutputBuilder {
     ) -> Self {
         let mut v = self.sql_injection_match_sets.unwrap_or_default();
         v.push(input);
-        self.sql_injection_match_sets = Some(v);
+        self.sql_injection_match_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>SqlInjectionMatchSetSummary</code> objects.</p>
     pub fn set_sql_injection_match_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SqlInjectionMatchSetSummary>>,
     ) -> Self {
         self.sql_injection_match_sets = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Describes the options for instance hostnames.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplatePrivateDnsNameOptions {
     /// <p>The type of hostname to assign to an instance.</p>
     #[doc(hidden)]
-    pub hostname_type: std::option::Option<crate::types::HostnameType>,
+    pub hostname_type: ::std::option::Option<crate::types::HostnameType>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
     #[doc(hidden)]
-    pub enable_resource_name_dns_a_record: std::option::Option<bool>,
+    pub enable_resource_name_dns_a_record: ::std::option::Option<bool>,
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
     #[doc(hidden)]
-    pub enable_resource_name_dns_aaaa_record: std::option::Option<bool>,
+    pub enable_resource_name_dns_aaaa_record: ::std::option::Option<bool>,
 }
 impl LaunchTemplatePrivateDnsNameOptions {
     /// <p>The type of hostname to assign to an instance.</p>
-    pub fn hostname_type(&self) -> std::option::Option<&crate::types::HostnameType> {
+    pub fn hostname_type(&self) -> ::std::option::Option<&crate::types::HostnameType> {
         self.hostname_type.as_ref()
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn enable_resource_name_dns_a_record(&self) -> std::option::Option<bool> {
+    pub fn enable_resource_name_dns_a_record(&self) -> ::std::option::Option<bool> {
         self.enable_resource_name_dns_a_record
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
-    pub fn enable_resource_name_dns_aaaa_record(&self) -> std::option::Option<bool> {
+    pub fn enable_resource_name_dns_aaaa_record(&self) -> ::std::option::Option<bool> {
         self.enable_resource_name_dns_aaaa_record
     }
 }
@@ -37,48 +37,50 @@ impl LaunchTemplatePrivateDnsNameOptions {
 
 /// A builder for [`LaunchTemplatePrivateDnsNameOptions`](crate::types::LaunchTemplatePrivateDnsNameOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchTemplatePrivateDnsNameOptionsBuilder {
-    pub(crate) hostname_type: std::option::Option<crate::types::HostnameType>,
-    pub(crate) enable_resource_name_dns_a_record: std::option::Option<bool>,
-    pub(crate) enable_resource_name_dns_aaaa_record: std::option::Option<bool>,
+    pub(crate) hostname_type: ::std::option::Option<crate::types::HostnameType>,
+    pub(crate) enable_resource_name_dns_a_record: ::std::option::Option<bool>,
+    pub(crate) enable_resource_name_dns_aaaa_record: ::std::option::Option<bool>,
 }
 impl LaunchTemplatePrivateDnsNameOptionsBuilder {
     /// <p>The type of hostname to assign to an instance.</p>
     pub fn hostname_type(mut self, input: crate::types::HostnameType) -> Self {
-        self.hostname_type = Some(input);
+        self.hostname_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of hostname to assign to an instance.</p>
     pub fn set_hostname_type(
         mut self,
-        input: std::option::Option<crate::types::HostnameType>,
+        input: ::std::option::Option<crate::types::HostnameType>,
     ) -> Self {
         self.hostname_type = input;
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
     pub fn enable_resource_name_dns_a_record(mut self, input: bool) -> Self {
-        self.enable_resource_name_dns_a_record = Some(input);
+        self.enable_resource_name_dns_a_record = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
     pub fn set_enable_resource_name_dns_a_record(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.enable_resource_name_dns_a_record = input;
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
     pub fn enable_resource_name_dns_aaaa_record(mut self, input: bool) -> Self {
-        self.enable_resource_name_dns_aaaa_record = Some(input);
+        self.enable_resource_name_dns_aaaa_record = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS AAAA records.</p>
     pub fn set_enable_resource_name_dns_aaaa_record(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.enable_resource_name_dns_aaaa_record = input;
         self

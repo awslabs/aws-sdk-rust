@@ -2,22 +2,22 @@
 
 /// <p>The rule that a simulated user matches.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MobileDeviceAccessMatchedRule {
     /// <p>Identifier of the rule that a simulated user matches.</p>
     #[doc(hidden)]
-    pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
+    pub mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a rule that a simulated user matches.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl MobileDeviceAccessMatchedRule {
     /// <p>Identifier of the rule that a simulated user matches.</p>
-    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+    pub fn mobile_device_access_rule_id(&self) -> ::std::option::Option<&str> {
         self.mobile_device_access_rule_id.as_deref()
     }
     /// <p>Name of a rule that a simulated user matches.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl MobileDeviceAccessMatchedRule {
 
 /// A builder for [`MobileDeviceAccessMatchedRule`](crate::types::MobileDeviceAccessMatchedRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MobileDeviceAccessMatchedRuleBuilder {
-    pub(crate) mobile_device_access_rule_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl MobileDeviceAccessMatchedRuleBuilder {
     /// <p>Identifier of the rule that a simulated user matches.</p>
-    pub fn mobile_device_access_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mobile_device_access_rule_id = Some(input.into());
+    pub fn mobile_device_access_rule_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.mobile_device_access_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the rule that a simulated user matches.</p>
     pub fn set_mobile_device_access_rule_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.mobile_device_access_rule_id = input;
         self
     }
     /// <p>Name of a rule that a simulated user matches.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a rule that a simulated user matches.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

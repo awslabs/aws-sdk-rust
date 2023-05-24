@@ -3,15 +3,15 @@
 /// <p>An S3 bucket where you want to store the results of this request.</p>
 /// <p>For the minimal permissions required to enable Amazon S3 output for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html">Creating associations</a> in the <i>Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAssociationOutputLocation {
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     #[doc(hidden)]
-    pub s3_location: std::option::Option<crate::types::S3OutputLocation>,
+    pub s3_location: ::std::option::Option<crate::types::S3OutputLocation>,
 }
 impl InstanceAssociationOutputLocation {
     /// <p>An S3 bucket where you want to store the results of this request.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3OutputLocation> {
+    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3OutputLocation> {
         self.s3_location.as_ref()
     }
 }
@@ -24,20 +24,22 @@ impl InstanceAssociationOutputLocation {
 
 /// A builder for [`InstanceAssociationOutputLocation`](crate::types::InstanceAssociationOutputLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceAssociationOutputLocationBuilder {
-    pub(crate) s3_location: std::option::Option<crate::types::S3OutputLocation>,
+    pub(crate) s3_location: ::std::option::Option<crate::types::S3OutputLocation>,
 }
 impl InstanceAssociationOutputLocationBuilder {
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub fn s3_location(mut self, input: crate::types::S3OutputLocation) -> Self {
-        self.s3_location = Some(input);
+        self.s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub fn set_s3_location(
         mut self,
-        input: std::option::Option<crate::types::S3OutputLocation>,
+        input: ::std::option::Option<crate::types::S3OutputLocation>,
     ) -> Self {
         self.s3_location = input;
         self

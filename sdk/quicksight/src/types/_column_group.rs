@@ -2,17 +2,17 @@
 
 /// <p>Groupings of columns that work together in certain Amazon QuickSight features. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnGroup {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     #[doc(hidden)]
-    pub geo_spatial_column_group: std::option::Option<crate::types::GeoSpatialColumnGroup>,
+    pub geo_spatial_column_group: ::std::option::Option<crate::types::GeoSpatialColumnGroup>,
 }
 impl ColumnGroup {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     pub fn geo_spatial_column_group(
         &self,
-    ) -> std::option::Option<&crate::types::GeoSpatialColumnGroup> {
+    ) -> ::std::option::Option<&crate::types::GeoSpatialColumnGroup> {
         self.geo_spatial_column_group.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ColumnGroup {
 
 /// A builder for [`ColumnGroup`](crate::types::ColumnGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnGroupBuilder {
-    pub(crate) geo_spatial_column_group: std::option::Option<crate::types::GeoSpatialColumnGroup>,
+    pub(crate) geo_spatial_column_group: ::std::option::Option<crate::types::GeoSpatialColumnGroup>,
 }
 impl ColumnGroupBuilder {
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     pub fn geo_spatial_column_group(mut self, input: crate::types::GeoSpatialColumnGroup) -> Self {
-        self.geo_spatial_column_group = Some(input);
+        self.geo_spatial_column_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Geospatial column group that denotes a hierarchy.</p>
     pub fn set_geo_spatial_column_group(
         mut self,
-        input: std::option::Option<crate::types::GeoSpatialColumnGroup>,
+        input: ::std::option::Option<crate::types::GeoSpatialColumnGroup>,
     ) -> Self {
         self.geo_spatial_column_group = input;
         self

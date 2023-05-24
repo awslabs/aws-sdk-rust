@@ -2,22 +2,22 @@
 
 /// <p>Override button configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverrideButtonConfiguration {
     /// <p>Action triggered by the button.</p>
     #[doc(hidden)]
-    pub button_action: std::option::Option<crate::types::ButtonAction>,
+    pub button_action: ::std::option::Option<crate::types::ButtonAction>,
     /// <p>Button destination.</p>
     #[doc(hidden)]
-    pub link: std::option::Option<std::string::String>,
+    pub link: ::std::option::Option<::std::string::String>,
 }
 impl OverrideButtonConfiguration {
     /// <p>Action triggered by the button.</p>
-    pub fn button_action(&self) -> std::option::Option<&crate::types::ButtonAction> {
+    pub fn button_action(&self) -> ::std::option::Option<&crate::types::ButtonAction> {
         self.button_action.as_ref()
     }
     /// <p>Button destination.</p>
-    pub fn link(&self) -> std::option::Option<&str> {
+    pub fn link(&self) -> ::std::option::Option<&str> {
         self.link.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl OverrideButtonConfiguration {
 
 /// A builder for [`OverrideButtonConfiguration`](crate::types::OverrideButtonConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OverrideButtonConfigurationBuilder {
-    pub(crate) button_action: std::option::Option<crate::types::ButtonAction>,
-    pub(crate) link: std::option::Option<std::string::String>,
+    pub(crate) button_action: ::std::option::Option<crate::types::ButtonAction>,
+    pub(crate) link: ::std::option::Option<::std::string::String>,
 }
 impl OverrideButtonConfigurationBuilder {
     /// <p>Action triggered by the button.</p>
     pub fn button_action(mut self, input: crate::types::ButtonAction) -> Self {
-        self.button_action = Some(input);
+        self.button_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Action triggered by the button.</p>
     pub fn set_button_action(
         mut self,
-        input: std::option::Option<crate::types::ButtonAction>,
+        input: ::std::option::Option<crate::types::ButtonAction>,
     ) -> Self {
         self.button_action = input;
         self
     }
     /// <p>Button destination.</p>
-    pub fn link(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link = Some(input.into());
+    pub fn link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Button destination.</p>
-    pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link = input;
         self
     }

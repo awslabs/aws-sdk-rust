@@ -3,15 +3,15 @@
 /// <p>An action to remove a member from a Managed Blockchain network as the result of a removal proposal that is <code>APPROVED</code>. The member and all associated resources are deleted from the network.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
     #[doc(hidden)]
-    pub member_id: std::option::Option<std::string::String>,
+    pub member_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveAction {
     /// <p>The unique identifier of the member to remove.</p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<&str> {
         self.member_id.as_deref()
     }
 }
@@ -24,18 +24,20 @@ impl RemoveAction {
 
 /// A builder for [`RemoveAction`](crate::types::RemoveAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemoveActionBuilder {
-    pub(crate) member_id: std::option::Option<std::string::String>,
+    pub(crate) member_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveActionBuilder {
     /// <p>The unique identifier of the member to remove.</p>
-    pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_id = Some(input.into());
+    pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the member to remove.</p>
-    pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
     }

@@ -81,13 +81,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
@@ -183,7 +183,7 @@ pub enum EntitySubType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EntitySubType {
+impl ::std::convert::From<&str> for EntitySubType {
     fn from(s: &str) -> Self {
         match s {
             "ACUITY" => EntitySubType::Acuity,
@@ -237,11 +237,11 @@ impl std::convert::From<&str> for EntitySubType {
         }
     }
 }
-impl std::str::FromStr for EntitySubType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EntitySubType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntitySubType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EntitySubType::from(s))
     }
 }
 impl EntitySubType {
@@ -347,7 +347,7 @@ impl EntitySubType {
         ]
     }
 }
-impl AsRef<str> for EntitySubType {
+impl ::std::convert::AsRef<str> for EntitySubType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

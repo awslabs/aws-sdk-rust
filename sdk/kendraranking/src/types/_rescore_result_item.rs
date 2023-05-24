@@ -2,22 +2,22 @@
 
 /// <p>A result item for a document with a new relevancy score.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RescoreResultItem {
     /// <p>The identifier of the document from the search service.</p>
     #[doc(hidden)]
-    pub document_id: std::option::Option<std::string::String>,
+    pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<f32>,
+    pub score: ::std::option::Option<f32>,
 }
 impl RescoreResultItem {
     /// <p>The identifier of the document from the search service.</p>
-    pub fn document_id(&self) -> std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<&str> {
         self.document_id.as_deref()
     }
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
-    pub fn score(&self) -> std::option::Option<f32> {
+    pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
 }
@@ -30,29 +30,31 @@ impl RescoreResultItem {
 
 /// A builder for [`RescoreResultItem`](crate::types::RescoreResultItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RescoreResultItemBuilder {
-    pub(crate) document_id: std::option::Option<std::string::String>,
-    pub(crate) score: std::option::Option<f32>,
+    pub(crate) document_id: ::std::option::Option<::std::string::String>,
+    pub(crate) score: ::std::option::Option<f32>,
 }
 impl RescoreResultItemBuilder {
     /// <p>The identifier of the document from the search service.</p>
-    pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_id = Some(input.into());
+    pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the document from the search service.</p>
-    pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
     }
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
     pub fn score(mut self, input: f32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The relevancy score or rank that Amazon Kendra Intelligent Ranking gives to the result.</p>
-    pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }

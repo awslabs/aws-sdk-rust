@@ -2,59 +2,61 @@
 
 /// <p>Contains the device position details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DevicePosition {
     /// <p>The device whose position you retrieved.</p>
     #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
-    pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
-    pub received_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub received_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last known device position.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<std::vec::Vec<f64>>,
+    pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The accuracy of the device position.</p>
     #[doc(hidden)]
-    pub accuracy: std::option::Option<crate::types::PositionalAccuracy>,
+    pub accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
     /// <p>The properties associated with the position.</p>
     #[doc(hidden)]
-    pub position_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub position_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl DevicePosition {
     /// <p>The device whose position you retrieved.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn received_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.received_time.as_ref()
     }
     /// <p>The last known device position.</p>
-    pub fn position(&self) -> std::option::Option<&[f64]> {
+    pub fn position(&self) -> ::std::option::Option<&[f64]> {
         self.position.as_deref()
     }
     /// <p>The accuracy of the device position.</p>
-    pub fn accuracy(&self) -> std::option::Option<&crate::types::PositionalAccuracy> {
+    pub fn accuracy(&self) -> ::std::option::Option<&crate::types::PositionalAccuracy> {
         self.accuracy.as_ref()
     }
     /// <p>The properties associated with the position.</p>
     pub fn position_properties(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.position_properties.as_ref()
     }
 }
-impl std::fmt::Debug for DevicePosition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DevicePosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DevicePosition");
         formatter.field("device_id", &self.device_id);
         formatter.field("sample_time", &self.sample_time);
@@ -74,49 +76,50 @@ impl DevicePosition {
 
 /// A builder for [`DevicePosition`](crate::types::DevicePosition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DevicePositionBuilder {
-    pub(crate) device_id: std::option::Option<std::string::String>,
-    pub(crate) sample_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) received_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
-    pub(crate) accuracy: std::option::Option<crate::types::PositionalAccuracy>,
-    pub(crate) position_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) received_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) accuracy: ::std::option::Option<crate::types::PositionalAccuracy>,
+    pub(crate) position_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl DevicePositionBuilder {
     /// <p>The device whose position you retrieved.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_id = Some(input.into());
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device whose position you retrieved.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.sample_time = Some(input);
+    pub fn sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.sample_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn set_sample_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.sample_time = input;
         self
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn received_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.received_time = Some(input);
+    pub fn received_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.received_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn set_received_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.received_time = input;
         self
@@ -129,23 +132,23 @@ impl DevicePositionBuilder {
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
-        self.position = Some(v);
+        self.position = ::std::option::Option::Some(v);
         self
     }
     /// <p>The last known device position.</p>
-    pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
     /// <p>The accuracy of the device position.</p>
     pub fn accuracy(mut self, input: crate::types::PositionalAccuracy) -> Self {
-        self.accuracy = Some(input);
+        self.accuracy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The accuracy of the device position.</p>
     pub fn set_accuracy(
         mut self,
-        input: std::option::Option<crate::types::PositionalAccuracy>,
+        input: ::std::option::Option<crate::types::PositionalAccuracy>,
     ) -> Self {
         self.accuracy = input;
         self
@@ -157,19 +160,19 @@ impl DevicePositionBuilder {
     /// <p>The properties associated with the position.</p>
     pub fn position_properties(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.position_properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.position_properties = Some(hash_map);
+        self.position_properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The properties associated with the position.</p>
     pub fn set_position_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.position_properties = input;
@@ -187,8 +190,8 @@ impl DevicePositionBuilder {
         }
     }
 }
-impl std::fmt::Debug for DevicePositionBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DevicePositionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DevicePositionBuilder");
         formatter.field("device_id", &self.device_id);
         formatter.field("sample_time", &self.sample_time);

@@ -2,22 +2,22 @@
 
 /// <p>Dataset reference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetReference {
     /// <p>Dataset placeholder.</p>
     #[doc(hidden)]
-    pub data_set_placeholder: std::option::Option<std::string::String>,
+    pub data_set_placeholder: ::std::option::Option<::std::string::String>,
     /// <p>Dataset Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
-    pub data_set_arn: std::option::Option<std::string::String>,
+    pub data_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSetReference {
     /// <p>Dataset placeholder.</p>
-    pub fn data_set_placeholder(&self) -> std::option::Option<&str> {
+    pub fn data_set_placeholder(&self) -> ::std::option::Option<&str> {
         self.data_set_placeholder.as_deref()
     }
     /// <p>Dataset Amazon Resource Name (ARN).</p>
-    pub fn data_set_arn(&self) -> std::option::Option<&str> {
+    pub fn data_set_arn(&self) -> ::std::option::Option<&str> {
         self.data_set_arn.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl DataSetReference {
 
 /// A builder for [`DataSetReference`](crate::types::DataSetReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSetReferenceBuilder {
-    pub(crate) data_set_placeholder: std::option::Option<std::string::String>,
-    pub(crate) data_set_arn: std::option::Option<std::string::String>,
+    pub(crate) data_set_placeholder: ::std::option::Option<::std::string::String>,
+    pub(crate) data_set_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSetReferenceBuilder {
     /// <p>Dataset placeholder.</p>
-    pub fn data_set_placeholder(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_placeholder = Some(input.into());
+    pub fn data_set_placeholder(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_set_placeholder = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Dataset placeholder.</p>
     pub fn set_data_set_placeholder(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_set_placeholder = input;
         self
     }
     /// <p>Dataset Amazon Resource Name (ARN).</p>
-    pub fn data_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_arn = Some(input.into());
+    pub fn data_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Dataset Amazon Resource Name (ARN).</p>
-    pub fn set_data_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_arn = input;
         self
     }

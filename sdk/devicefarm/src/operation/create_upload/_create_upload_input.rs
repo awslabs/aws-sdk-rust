@@ -2,14 +2,14 @@
 
 /// <p>Represents a request to the create upload operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUploadInput {
     /// <p>The ARN of the project for the upload.</p>
     #[doc(hidden)]
-    pub project_arn: std::option::Option<std::string::String>,
+    pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -48,18 +48,18 @@ pub struct CreateUploadInput {
     /// </ul>
     /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::UploadType>,
+    pub r#type: ::std::option::Option<crate::types::UploadType>,
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateUploadInput {
     /// <p>The ARN of the project for the upload.</p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<&str> {
         self.project_arn.as_deref()
     }
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The upload's upload type.</p>
@@ -99,11 +99,11 @@ impl CreateUploadInput {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::UploadType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UploadType> {
         self.r#type.as_ref()
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
 }
@@ -116,31 +116,33 @@ impl CreateUploadInput {
 
 /// A builder for [`CreateUploadInput`](crate::operation::create_upload::CreateUploadInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateUploadInputBuilder {
-    pub(crate) project_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::UploadType>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
+    pub(crate) project_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::UploadType>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateUploadInputBuilder {
     /// <p>The ARN of the project for the upload.</p>
-    pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_arn = Some(input.into());
+    pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the project for the upload.</p>
-    pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_arn = input;
         self
     }
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -182,7 +184,7 @@ impl CreateUploadInputBuilder {
     /// </ul>
     /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
     pub fn r#type(mut self, input: crate::types::UploadType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upload's upload type.</p>
@@ -222,28 +224,28 @@ impl CreateUploadInputBuilder {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::UploadType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::UploadType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateUploadInput`](crate::operation::create_upload::CreateUploadInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_upload::CreateUploadInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_upload::CreateUploadInput {
+        ::std::result::Result::Ok(crate::operation::create_upload::CreateUploadInput {
             project_arn: self.project_arn,
             name: self.name,
             r#type: self.r#type,

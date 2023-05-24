@@ -2,26 +2,26 @@
 
 /// <p>Reports progress on replacing instances in an Auto Scaling group that has a warm pool. This includes separate details for instances in the warm pool and instances in the Auto Scaling group (the live pool).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRefreshProgressDetails {
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
     #[doc(hidden)]
-    pub live_pool_progress: std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
+    pub live_pool_progress: ::std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
     #[doc(hidden)]
-    pub warm_pool_progress: std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,
+    pub warm_pool_progress: ::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,
 }
 impl InstanceRefreshProgressDetails {
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
     pub fn live_pool_progress(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceRefreshLivePoolProgress> {
+    ) -> ::std::option::Option<&crate::types::InstanceRefreshLivePoolProgress> {
         self.live_pool_progress.as_ref()
     }
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
     pub fn warm_pool_progress(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceRefreshWarmPoolProgress> {
+    ) -> ::std::option::Option<&crate::types::InstanceRefreshWarmPoolProgress> {
         self.warm_pool_progress.as_ref()
     }
 }
@@ -34,12 +34,14 @@ impl InstanceRefreshProgressDetails {
 
 /// A builder for [`InstanceRefreshProgressDetails`](crate::types::InstanceRefreshProgressDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceRefreshProgressDetailsBuilder {
     pub(crate) live_pool_progress:
-        std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
+        ::std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
     pub(crate) warm_pool_progress:
-        std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,
+        ::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,
 }
 impl InstanceRefreshProgressDetailsBuilder {
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
@@ -47,13 +49,13 @@ impl InstanceRefreshProgressDetailsBuilder {
         mut self,
         input: crate::types::InstanceRefreshLivePoolProgress,
     ) -> Self {
-        self.live_pool_progress = Some(input);
+        self.live_pool_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reports progress on replacing instances that are in the Auto Scaling group.</p>
     pub fn set_live_pool_progress(
         mut self,
-        input: std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
+        input: ::std::option::Option<crate::types::InstanceRefreshLivePoolProgress>,
     ) -> Self {
         self.live_pool_progress = input;
         self
@@ -63,13 +65,13 @@ impl InstanceRefreshProgressDetailsBuilder {
         mut self,
         input: crate::types::InstanceRefreshWarmPoolProgress,
     ) -> Self {
-        self.warm_pool_progress = Some(input);
+        self.warm_pool_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reports progress on replacing instances that are in the warm pool.</p>
     pub fn set_warm_pool_progress(
         mut self,
-        input: std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,
+        input: ::std::option::Option<crate::types::InstanceRefreshWarmPoolProgress>,
     ) -> Self {
         self.warm_pool_progress = input;
         self

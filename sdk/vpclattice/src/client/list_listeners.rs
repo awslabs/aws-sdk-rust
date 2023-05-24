@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_identifier(impl Into<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_service_identifier): <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    ///   - [`service_identifier(impl ::std::convert::Into<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_service_identifier): <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     ///   - [`max_results(i32)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_max_results): <p>The maximum number of results to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_next_token): <p>A pagination token for the next page of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_listeners::builders::ListListenersFluentBuilder::set_next_token): <p>A pagination token for the next page of results.</p>
     /// - On success, responds with [`ListListenersOutput`](crate::operation::list_listeners::ListListenersOutput) with field(s):
     ///   - [`items(Option<Vec<ListenerSummary>>)`](crate::operation::list_listeners::ListListenersOutput::items): <p>Information about the listeners.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_listeners::ListListenersOutput::next_token): <p>If there are additional results, a pagination token for the next page of results.</p>

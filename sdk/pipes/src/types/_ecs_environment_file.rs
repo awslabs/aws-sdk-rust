@@ -8,22 +8,22 @@
 /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsEnvironmentFile {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EcsEnvironmentFileType>,
+    pub r#type: ::std::option::Option<crate::types::EcsEnvironmentFileType>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl EcsEnvironmentFile {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EcsEnvironmentFileType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EcsEnvironmentFileType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -36,32 +36,34 @@ impl EcsEnvironmentFile {
 
 /// A builder for [`EcsEnvironmentFile`](crate::types::EcsEnvironmentFile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcsEnvironmentFileBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::EcsEnvironmentFileType>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EcsEnvironmentFileType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl EcsEnvironmentFileBuilder {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     pub fn r#type(mut self, input: crate::types::EcsEnvironmentFileType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::EcsEnvironmentFileType>,
+        input: ::std::option::Option<crate::types::EcsEnvironmentFileType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

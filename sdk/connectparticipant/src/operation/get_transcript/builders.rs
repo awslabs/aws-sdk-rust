@@ -9,56 +9,59 @@ pub use crate::operation::get_transcript::_get_transcript_input::GetTranscriptIn
 /// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTranscriptFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_transcript::builders::GetTranscriptInputBuilder,
 }
 impl GetTranscriptFluentBuilder {
     /// Creates a new `GetTranscript`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_transcript::GetTranscript,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_transcript::GetTranscriptOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,9 +74,9 @@ impl GetTranscriptFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_transcript::GetTranscriptOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_transcript::GetTranscriptError>,
     > {
         self.send_middleware().await
     }
@@ -89,12 +92,12 @@ impl GetTranscriptFluentBuilder {
         )
     }
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
-    pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
     /// <p>The contactId from the current contact chain for which transcript is needed.</p>
-    pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
@@ -104,17 +107,17 @@ impl GetTranscriptFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return in the page. Default: 10. </p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -126,7 +129,7 @@ impl GetTranscriptFluentBuilder {
     /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub fn set_scan_direction(
         mut self,
-        input: std::option::Option<crate::types::ScanDirection>,
+        input: ::std::option::Option<crate::types::ScanDirection>,
     ) -> Self {
         self.inner = self.inner.set_scan_direction(input);
         self
@@ -137,7 +140,7 @@ impl GetTranscriptFluentBuilder {
         self
     }
     /// <p>The sort order for the records. Default: DESCENDING.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortKey>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortKey>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -149,18 +152,24 @@ impl GetTranscriptFluentBuilder {
     /// <p>A filtering option for where to start.</p>
     pub fn set_start_position(
         mut self,
-        input: std::option::Option<crate::types::StartPosition>,
+        input: ::std::option::Option<crate::types::StartPosition>,
     ) -> Self {
         self.inner = self.inner.set_start_position(input);
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connection_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.connection_token(input.into());
         self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn set_connection_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connection_token(input);
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Logging configuration of the SIP media application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SipMediaApplicationLoggingConfiguration {
     /// <p>Enables application message logs for the SIP media application.</p>
     #[doc(hidden)]
-    pub enable_sip_media_application_message_logs: std::option::Option<bool>,
+    pub enable_sip_media_application_message_logs: ::std::option::Option<bool>,
 }
 impl SipMediaApplicationLoggingConfiguration {
     /// <p>Enables application message logs for the SIP media application.</p>
-    pub fn enable_sip_media_application_message_logs(&self) -> std::option::Option<bool> {
+    pub fn enable_sip_media_application_message_logs(&self) -> ::std::option::Option<bool> {
         self.enable_sip_media_application_message_logs
     }
 }
@@ -23,20 +23,22 @@ impl SipMediaApplicationLoggingConfiguration {
 
 /// A builder for [`SipMediaApplicationLoggingConfiguration`](crate::types::SipMediaApplicationLoggingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SipMediaApplicationLoggingConfigurationBuilder {
-    pub(crate) enable_sip_media_application_message_logs: std::option::Option<bool>,
+    pub(crate) enable_sip_media_application_message_logs: ::std::option::Option<bool>,
 }
 impl SipMediaApplicationLoggingConfigurationBuilder {
     /// <p>Enables application message logs for the SIP media application.</p>
     pub fn enable_sip_media_application_message_logs(mut self, input: bool) -> Self {
-        self.enable_sip_media_application_message_logs = Some(input);
+        self.enable_sip_media_application_message_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables application message logs for the SIP media application.</p>
     pub fn set_enable_sip_media_application_message_logs(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.enable_sip_media_application_message_logs = input;
         self

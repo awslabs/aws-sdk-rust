@@ -2,11 +2,11 @@
 
 /// <p>The response to the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UntagResourceOutput {
+impl ::aws_http::request_id::RequestId for UntagResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl UntagResourceOutput {
 
 /// A builder for [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UntagResourceOutputBuilder {
     _request_id: Option<String>,
 }

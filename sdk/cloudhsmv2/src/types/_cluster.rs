@@ -2,119 +2,121 @@
 
 /// <p>Contains information about an AWS CloudHSM cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The cluster's backup policy.</p>
     #[doc(hidden)]
-    pub backup_policy: std::option::Option<crate::types::BackupPolicy>,
+    pub backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
     /// <p>A policy that defines how the service retains backups.</p>
     #[doc(hidden)]
-    pub backup_retention_policy: std::option::Option<crate::types::BackupRetentionPolicy>,
+    pub backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     /// <p>The cluster's identifier (ID).</p>
     #[doc(hidden)]
-    pub cluster_id: std::option::Option<std::string::String>,
+    pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
     #[doc(hidden)]
-    pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains information about the HSMs in the cluster.</p>
     #[doc(hidden)]
-    pub hsms: std::option::Option<std::vec::Vec<crate::types::Hsm>>,
+    pub hsms: ::std::option::Option<::std::vec::Vec<crate::types::Hsm>>,
     /// <p>The type of HSM that the cluster contains.</p>
     #[doc(hidden)]
-    pub hsm_type: std::option::Option<std::string::String>,
+    pub hsm_type: ::std::option::Option<::std::string::String>,
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
     #[doc(hidden)]
-    pub pre_co_password: std::option::Option<std::string::String>,
+    pub pre_co_password: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the cluster's security group.</p>
     #[doc(hidden)]
-    pub security_group: std::option::Option<std::string::String>,
+    pub security_group: ::std::option::Option<::std::string::String>,
     /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
     #[doc(hidden)]
-    pub source_backup_id: std::option::Option<std::string::String>,
+    pub source_backup_id: ::std::option::Option<::std::string::String>,
     /// <p>The cluster's state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ClusterState>,
+    pub state: ::std::option::Option<crate::types::ClusterState>,
     /// <p>A description of the cluster's state.</p>
     #[doc(hidden)]
-    pub state_message: std::option::Option<std::string::String>,
+    pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
     #[doc(hidden)]
-    pub subnet_mapping:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub subnet_mapping: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
     #[doc(hidden)]
-    pub certificates: std::option::Option<crate::types::Certificates>,
+    pub certificates: ::std::option::Option<crate::types::Certificates>,
     /// <p>The list of tags for the cluster.</p>
     #[doc(hidden)]
-    pub tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Cluster {
     /// <p>The cluster's backup policy.</p>
-    pub fn backup_policy(&self) -> std::option::Option<&crate::types::BackupPolicy> {
+    pub fn backup_policy(&self) -> ::std::option::Option<&crate::types::BackupPolicy> {
         self.backup_policy.as_ref()
     }
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn backup_retention_policy(
         &self,
-    ) -> std::option::Option<&crate::types::BackupRetentionPolicy> {
+    ) -> ::std::option::Option<&crate::types::BackupRetentionPolicy> {
         self.backup_retention_policy.as_ref()
     }
     /// <p>The cluster's identifier (ID).</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>Contains information about the HSMs in the cluster.</p>
-    pub fn hsms(&self) -> std::option::Option<&[crate::types::Hsm]> {
+    pub fn hsms(&self) -> ::std::option::Option<&[crate::types::Hsm]> {
         self.hsms.as_deref()
     }
     /// <p>The type of HSM that the cluster contains.</p>
-    pub fn hsm_type(&self) -> std::option::Option<&str> {
+    pub fn hsm_type(&self) -> ::std::option::Option<&str> {
         self.hsm_type.as_deref()
     }
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
-    pub fn pre_co_password(&self) -> std::option::Option<&str> {
+    pub fn pre_co_password(&self) -> ::std::option::Option<&str> {
         self.pre_co_password.as_deref()
     }
     /// <p>The identifier (ID) of the cluster's security group.</p>
-    pub fn security_group(&self) -> std::option::Option<&str> {
+    pub fn security_group(&self) -> ::std::option::Option<&str> {
         self.security_group.as_deref()
     }
     /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
-    pub fn source_backup_id(&self) -> std::option::Option<&str> {
+    pub fn source_backup_id(&self) -> ::std::option::Option<&str> {
         self.source_backup_id.as_deref()
     }
     /// <p>The cluster's state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ClusterState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ClusterState> {
         self.state.as_ref()
     }
     /// <p>A description of the cluster's state.</p>
-    pub fn state_message(&self) -> std::option::Option<&str> {
+    pub fn state_message(&self) -> ::std::option::Option<&str> {
         self.state_message.as_deref()
     }
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
     pub fn subnet_mapping(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.subnet_mapping.as_ref()
     }
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
-    pub fn certificates(&self) -> std::option::Option<&crate::types::Certificates> {
+    pub fn certificates(&self) -> ::std::option::Option<&crate::types::Certificates> {
         self.certificates.as_ref()
     }
     /// <p>The list of tags for the cluster.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tag_list.as_deref()
     }
 }
@@ -127,71 +129,74 @@ impl Cluster {
 
 /// A builder for [`Cluster`](crate::types::Cluster).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterBuilder {
-    pub(crate) backup_policy: std::option::Option<crate::types::BackupPolicy>,
-    pub(crate) backup_retention_policy: std::option::Option<crate::types::BackupRetentionPolicy>,
-    pub(crate) cluster_id: std::option::Option<std::string::String>,
-    pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) hsms: std::option::Option<std::vec::Vec<crate::types::Hsm>>,
-    pub(crate) hsm_type: std::option::Option<std::string::String>,
-    pub(crate) pre_co_password: std::option::Option<std::string::String>,
-    pub(crate) security_group: std::option::Option<std::string::String>,
-    pub(crate) source_backup_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::ClusterState>,
-    pub(crate) state_message: std::option::Option<std::string::String>,
-    pub(crate) subnet_mapping:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) certificates: std::option::Option<crate::types::Certificates>,
-    pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) backup_policy: ::std::option::Option<crate::types::BackupPolicy>,
+    pub(crate) backup_retention_policy: ::std::option::Option<crate::types::BackupRetentionPolicy>,
+    pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) hsms: ::std::option::Option<::std::vec::Vec<crate::types::Hsm>>,
+    pub(crate) hsm_type: ::std::option::Option<::std::string::String>,
+    pub(crate) pre_co_password: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group: ::std::option::Option<::std::string::String>,
+    pub(crate) source_backup_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ClusterState>,
+    pub(crate) state_message: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_mapping: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) certificates: ::std::option::Option<crate::types::Certificates>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ClusterBuilder {
     /// <p>The cluster's backup policy.</p>
     pub fn backup_policy(mut self, input: crate::types::BackupPolicy) -> Self {
-        self.backup_policy = Some(input);
+        self.backup_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cluster's backup policy.</p>
     pub fn set_backup_policy(
         mut self,
-        input: std::option::Option<crate::types::BackupPolicy>,
+        input: ::std::option::Option<crate::types::BackupPolicy>,
     ) -> Self {
         self.backup_policy = input;
         self
     }
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn backup_retention_policy(mut self, input: crate::types::BackupRetentionPolicy) -> Self {
-        self.backup_retention_policy = Some(input);
+        self.backup_retention_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn set_backup_retention_policy(
         mut self,
-        input: std::option::Option<crate::types::BackupRetentionPolicy>,
+        input: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     ) -> Self {
         self.backup_retention_policy = input;
         self
     }
     /// <p>The cluster's identifier (ID).</p>
-    pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_id = Some(input.into());
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster's identifier (ID).</p>
-    pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
     }
     /// <p>The date and time when the cluster was created.</p>
-    pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_timestamp = Some(input);
+    pub fn create_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the cluster was created.</p>
     pub fn set_create_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_timestamp = input;
         self
@@ -204,74 +209,98 @@ impl ClusterBuilder {
     pub fn hsms(mut self, input: crate::types::Hsm) -> Self {
         let mut v = self.hsms.unwrap_or_default();
         v.push(input);
-        self.hsms = Some(v);
+        self.hsms = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains information about the HSMs in the cluster.</p>
     pub fn set_hsms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Hsm>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Hsm>>,
     ) -> Self {
         self.hsms = input;
         self
     }
     /// <p>The type of HSM that the cluster contains.</p>
-    pub fn hsm_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hsm_type = Some(input.into());
+    pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hsm_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of HSM that the cluster contains.</p>
-    pub fn set_hsm_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hsm_type = input;
         self
     }
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
-    pub fn pre_co_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pre_co_password = Some(input.into());
+    pub fn pre_co_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pre_co_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
-    pub fn set_pre_co_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pre_co_password(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pre_co_password = input;
         self
     }
     /// <p>The identifier (ID) of the cluster's security group.</p>
-    pub fn security_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_group = Some(input.into());
+    pub fn security_group(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (ID) of the cluster's security group.</p>
-    pub fn set_security_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_security_group(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.security_group = input;
         self
     }
     /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
-    pub fn source_backup_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_backup_id = Some(input.into());
+    pub fn source_backup_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_backup_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.</p>
-    pub fn set_source_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_backup_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_backup_id = input;
         self
     }
     /// <p>The cluster's state.</p>
     pub fn state(mut self, input: crate::types::ClusterState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cluster's state.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ClusterState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ClusterState>) -> Self {
         self.state = input;
         self
     }
     /// <p>A description of the cluster's state.</p>
-    pub fn state_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_message = Some(input.into());
+    pub fn state_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the cluster's state.</p>
-    pub fn set_state_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.state_message = input;
         self
     }
@@ -282,43 +311,43 @@ impl ClusterBuilder {
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
     pub fn subnet_mapping(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.subnet_mapping.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.subnet_mapping = Some(hash_map);
+        self.subnet_mapping = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
     pub fn set_subnet_mapping(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.subnet_mapping = input;
         self
     }
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
     pub fn certificates(mut self, input: crate::types::Certificates) -> Self {
-        self.certificates = Some(input);
+        self.certificates = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
     pub fn set_certificates(
         mut self,
-        input: std::option::Option<crate::types::Certificates>,
+        input: ::std::option::Option<crate::types::Certificates>,
     ) -> Self {
         self.certificates = input;
         self
@@ -331,13 +360,13 @@ impl ClusterBuilder {
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
-        self.tag_list = Some(v);
+        self.tag_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of tags for the cluster.</p>
     pub fn set_tag_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tag_list = input;
         self

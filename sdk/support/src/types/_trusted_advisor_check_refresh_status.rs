@@ -2,11 +2,11 @@
 
 /// <p>The refresh status of a Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckRefreshStatus {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
-    pub check_id: std::option::Option<std::string::String>,
+    pub check_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
     /// <ul>
     /// <li> <p> <code>none</code> - The check is not refreshed or the non-success status exceeds the timeout</p> </li>
@@ -16,14 +16,14 @@ pub struct TrustedAdvisorCheckRefreshStatus {
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
     #[doc(hidden)]
     pub millis_until_next_refreshable: i64,
 }
 impl TrustedAdvisorCheckRefreshStatus {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(&self) -> std::option::Option<&str> {
+    pub fn check_id(&self) -> ::std::option::Option<&str> {
         self.check_id.as_deref()
     }
     /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
@@ -34,7 +34,7 @@ impl TrustedAdvisorCheckRefreshStatus {
     /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
@@ -51,20 +51,22 @@ impl TrustedAdvisorCheckRefreshStatus {
 
 /// A builder for [`TrustedAdvisorCheckRefreshStatus`](crate::types::TrustedAdvisorCheckRefreshStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrustedAdvisorCheckRefreshStatusBuilder {
-    pub(crate) check_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) millis_until_next_refreshable: std::option::Option<i64>,
+    pub(crate) check_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) millis_until_next_refreshable: ::std::option::Option<i64>,
 }
 impl TrustedAdvisorCheckRefreshStatusBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.check_id = Some(input.into());
+    pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.check_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.check_id = input;
         self
     }
@@ -76,8 +78,8 @@ impl TrustedAdvisorCheckRefreshStatusBuilder {
     /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
@@ -88,17 +90,17 @@ impl TrustedAdvisorCheckRefreshStatusBuilder {
     /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
     /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
     pub fn millis_until_next_refreshable(mut self, input: i64) -> Self {
-        self.millis_until_next_refreshable = Some(input);
+        self.millis_until_next_refreshable = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
-    pub fn set_millis_until_next_refreshable(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_millis_until_next_refreshable(mut self, input: ::std::option::Option<i64>) -> Self {
         self.millis_until_next_refreshable = input;
         self
     }

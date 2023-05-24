@@ -9,29 +9,29 @@ pub use crate::operation::register_container_instance::_register_container_insta
 /// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
 /// </note>
 /// <p>Registers an EC2 instance into the specified cluster. This instance becomes available to place containers on.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterContainerInstanceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::register_container_instance::builders::RegisterContainerInstanceInputBuilder,
 }
 impl RegisterContainerInstanceFluentBuilder {
     /// Creates a new `RegisterContainerInstance`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_container_instance::RegisterContainerInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_container_instance::RegisterContainerInstanceError,
         >,
     > {
@@ -39,30 +39,33 @@ impl RegisterContainerInstanceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_container_instance::RegisterContainerInstanceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_container_instance::RegisterContainerInstanceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,33 +78,36 @@ impl RegisterContainerInstanceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_container_instance::RegisterContainerInstanceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_container_instance::RegisterContainerInstanceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
-    pub fn instance_identity_document(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_identity_document(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_identity_document(input.into());
         self
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
     pub fn set_instance_identity_document(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_instance_identity_document(input);
         self
@@ -109,7 +115,7 @@ impl RegisterContainerInstanceFluentBuilder {
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
     pub fn instance_identity_document_signature(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -119,7 +125,7 @@ impl RegisterContainerInstanceFluentBuilder {
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
     pub fn set_instance_identity_document_signature(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_instance_identity_document_signature(input);
         self
@@ -136,7 +142,7 @@ impl RegisterContainerInstanceFluentBuilder {
     /// <p>The resources available on the instance.</p>
     pub fn set_total_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     ) -> Self {
         self.inner = self.inner.set_total_resources(input);
         self
@@ -149,20 +155,23 @@ impl RegisterContainerInstanceFluentBuilder {
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
     pub fn set_version_info(
         mut self,
-        input: std::option::Option<crate::types::VersionInfo>,
+        input: ::std::option::Option<crate::types::VersionInfo>,
     ) -> Self {
         self.inner = self.inner.set_version_info(input);
         self
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
-    pub fn container_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn container_instance_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.container_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
     pub fn set_container_instance_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_container_instance_arn(input);
         self
@@ -179,7 +188,7 @@ impl RegisterContainerInstanceFluentBuilder {
     /// <p>The container instance attributes that this container instance supports.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
@@ -196,7 +205,7 @@ impl RegisterContainerInstanceFluentBuilder {
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
     pub fn set_platform_devices(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlatformDevice>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformDevice>>,
     ) -> Self {
         self.inner = self.inner.set_platform_devices(input);
         self
@@ -233,7 +242,7 @@ impl RegisterContainerInstanceFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

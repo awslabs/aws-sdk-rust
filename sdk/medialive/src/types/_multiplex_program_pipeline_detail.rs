@@ -2,22 +2,22 @@
 
 /// The current source for one of the pipelines in the multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramPipelineDetail {
     /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
     #[doc(hidden)]
-    pub active_channel_pipeline: std::option::Option<std::string::String>,
+    pub active_channel_pipeline: ::std::option::Option<::std::string::String>,
     /// Identifies a specific pipeline in the multiplex.
     #[doc(hidden)]
-    pub pipeline_id: std::option::Option<std::string::String>,
+    pub pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramPipelineDetail {
     /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
-    pub fn active_channel_pipeline(&self) -> std::option::Option<&str> {
+    pub fn active_channel_pipeline(&self) -> ::std::option::Option<&str> {
         self.active_channel_pipeline.as_deref()
     }
     /// Identifies a specific pipeline in the multiplex.
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl MultiplexProgramPipelineDetail {
 
 /// A builder for [`MultiplexProgramPipelineDetail`](crate::types::MultiplexProgramPipelineDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiplexProgramPipelineDetailBuilder {
-    pub(crate) active_channel_pipeline: std::option::Option<std::string::String>,
-    pub(crate) pipeline_id: std::option::Option<std::string::String>,
+    pub(crate) active_channel_pipeline: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexProgramPipelineDetailBuilder {
     /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
-    pub fn active_channel_pipeline(mut self, input: impl Into<std::string::String>) -> Self {
-        self.active_channel_pipeline = Some(input.into());
+    pub fn active_channel_pipeline(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.active_channel_pipeline = ::std::option::Option::Some(input.into());
         self
     }
     /// Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex.
     pub fn set_active_channel_pipeline(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.active_channel_pipeline = input;
         self
     }
     /// Identifies a specific pipeline in the multiplex.
-    pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_id = Some(input.into());
+    pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Identifies a specific pipeline in the multiplex.
-    pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_id = input;
         self
     }

@@ -3,22 +3,22 @@
 /// <p>Represents textual data, plus an optional character set specification.</p>
 /// <p>By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Content {
     /// <p>The textual data of the content.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<std::string::String>,
+    pub data: ::std::option::Option<::std::string::String>,
     /// <p>The character set of the content.</p>
     #[doc(hidden)]
-    pub charset: std::option::Option<std::string::String>,
+    pub charset: ::std::option::Option<::std::string::String>,
 }
 impl Content {
     /// <p>The textual data of the content.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
     /// <p>The character set of the content.</p>
-    pub fn charset(&self) -> std::option::Option<&str> {
+    pub fn charset(&self) -> ::std::option::Option<&str> {
         self.charset.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl Content {
 
 /// A builder for [`Content`](crate::types::Content).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContentBuilder {
-    pub(crate) data: std::option::Option<std::string::String>,
-    pub(crate) charset: std::option::Option<std::string::String>,
+    pub(crate) data: ::std::option::Option<::std::string::String>,
+    pub(crate) charset: ::std::option::Option<::std::string::String>,
 }
 impl ContentBuilder {
     /// <p>The textual data of the content.</p>
-    pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data = Some(input.into());
+    pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The textual data of the content.</p>
-    pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }
     /// <p>The character set of the content.</p>
-    pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
-        self.charset = Some(input.into());
+    pub fn charset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.charset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The character set of the content.</p>
-    pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charset = input;
         self
     }

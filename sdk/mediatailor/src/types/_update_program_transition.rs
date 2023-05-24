@@ -2,7 +2,7 @@
 
 /// <p>Program transition configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProgramTransition {
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl UpdateProgramTransition {
 
 /// A builder for [`UpdateProgramTransition`](crate::types::UpdateProgramTransition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateProgramTransitionBuilder {
-    pub(crate) scheduled_start_time_millis: std::option::Option<i64>,
-    pub(crate) duration_millis: std::option::Option<i64>,
+    pub(crate) scheduled_start_time_millis: ::std::option::Option<i64>,
+    pub(crate) duration_millis: ::std::option::Option<i64>,
 }
 impl UpdateProgramTransitionBuilder {
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
     pub fn scheduled_start_time_millis(mut self, input: i64) -> Self {
-        self.scheduled_start_time_millis = Some(input);
+        self.scheduled_start_time_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the program is scheduled to start, in epoch milliseconds.</p>
-    pub fn set_scheduled_start_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_scheduled_start_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scheduled_start_time_millis = input;
         self
     }
     /// <p>The duration of the live program in seconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
-        self.duration_millis = Some(input);
+        self.duration_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration of the live program in seconds.</p>
-    pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
     }

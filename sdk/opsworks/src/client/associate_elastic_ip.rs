@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateElasticIp`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`elastic_ip(impl Into<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::set_elastic_ip): <p>The Elastic IP address.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::set_instance_id): <p>The instance ID.</p>
+    ///   - [`elastic_ip(impl ::std::convert::Into<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::elastic_ip) / [`set_elastic_ip(Option<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::set_elastic_ip): <p>The Elastic IP address.</p>
+    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::associate_elastic_ip::builders::AssociateElasticIpFluentBuilder::set_instance_id): <p>The instance ID.</p>
     /// - On success, responds with [`AssociateElasticIpOutput`](crate::operation::associate_elastic_ip::AssociateElasticIpOutput)
     /// - On failure, responds with [`SdkError<AssociateElasticIpError>`](crate::operation::associate_elastic_ip::AssociateElasticIpError)
     pub fn associate_elastic_ip(

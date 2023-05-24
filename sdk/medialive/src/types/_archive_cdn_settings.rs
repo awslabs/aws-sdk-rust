@@ -2,15 +2,15 @@
 
 /// Archive Cdn Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveCdnSettings {
     /// Archive S3 Settings
     #[doc(hidden)]
-    pub archive_s3_settings: std::option::Option<crate::types::ArchiveS3Settings>,
+    pub archive_s3_settings: ::std::option::Option<crate::types::ArchiveS3Settings>,
 }
 impl ArchiveCdnSettings {
     /// Archive S3 Settings
-    pub fn archive_s3_settings(&self) -> std::option::Option<&crate::types::ArchiveS3Settings> {
+    pub fn archive_s3_settings(&self) -> ::std::option::Option<&crate::types::ArchiveS3Settings> {
         self.archive_s3_settings.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ArchiveCdnSettings {
 
 /// A builder for [`ArchiveCdnSettings`](crate::types::ArchiveCdnSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArchiveCdnSettingsBuilder {
-    pub(crate) archive_s3_settings: std::option::Option<crate::types::ArchiveS3Settings>,
+    pub(crate) archive_s3_settings: ::std::option::Option<crate::types::ArchiveS3Settings>,
 }
 impl ArchiveCdnSettingsBuilder {
     /// Archive S3 Settings
     pub fn archive_s3_settings(mut self, input: crate::types::ArchiveS3Settings) -> Self {
-        self.archive_s3_settings = Some(input);
+        self.archive_s3_settings = ::std::option::Option::Some(input);
         self
     }
     /// Archive S3 Settings
     pub fn set_archive_s3_settings(
         mut self,
-        input: std::option::Option<crate::types::ArchiveS3Settings>,
+        input: ::std::option::Option<crate::types::ArchiveS3Settings>,
     ) -> Self {
         self.archive_s3_settings = input;
         self

@@ -2,30 +2,30 @@
 
 /// Represents the output of a ListRuleGroupsNamespaces operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
     #[doc(hidden)]
     pub rule_groups_namespaces:
-        std::option::Option<std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
     /// Pagination token to use when requesting the next page in this list.
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
     pub fn rule_groups_namespaces(
         &self,
-    ) -> std::option::Option<&[crate::types::RuleGroupsNamespaceSummary]> {
+    ) -> ::std::option::Option<&[crate::types::RuleGroupsNamespaceSummary]> {
         self.rule_groups_namespaces.as_deref()
     }
     /// Pagination token to use when requesting the next page in this list.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListRuleGroupsNamespacesOutput {
+impl ::aws_http::request_id::RequestId for ListRuleGroupsNamespacesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl ListRuleGroupsNamespacesOutput {
 
 /// A builder for [`ListRuleGroupsNamespacesOutput`](crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListRuleGroupsNamespacesOutputBuilder {
     pub(crate) rule_groups_namespaces:
-        std::option::Option<std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRuleGroupsNamespacesOutputBuilder {
@@ -58,24 +60,24 @@ impl ListRuleGroupsNamespacesOutputBuilder {
     ) -> Self {
         let mut v = self.rule_groups_namespaces.unwrap_or_default();
         v.push(input);
-        self.rule_groups_namespaces = Some(v);
+        self.rule_groups_namespaces = ::std::option::Option::Some(v);
         self
     }
     /// The list of the selected rule groups namespaces.
     pub fn set_rule_groups_namespaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>>,
     ) -> Self {
         self.rule_groups_namespaces = input;
         self
     }
     /// Pagination token to use when requesting the next page in this list.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// Pagination token to use when requesting the next page in this list.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

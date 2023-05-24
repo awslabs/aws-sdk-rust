@@ -2,74 +2,74 @@
 
 /// <p>Contains the information for a run of a crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrawlerHistory {
     /// <p>A UUID identifier for each crawl.</p>
     #[doc(hidden)]
-    pub crawl_id: std::option::Option<std::string::String>,
+    pub crawl_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the crawl.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::CrawlerHistoryState>,
+    pub state: ::std::option::Option<crate::types::CrawlerHistoryState>,
     /// <p>The date and time on which the crawl started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time on which the crawl ended.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
     #[doc(hidden)]
-    pub summary: std::option::Option<std::string::String>,
+    pub summary: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, the error message associated with the crawl.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The log group associated with the crawl.</p>
     #[doc(hidden)]
-    pub log_group: std::option::Option<std::string::String>,
+    pub log_group: ::std::option::Option<::std::string::String>,
     /// <p>The log stream associated with the crawl.</p>
     #[doc(hidden)]
-    pub log_stream: std::option::Option<std::string::String>,
+    pub log_stream: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for a CloudWatch message about this crawl.</p>
     #[doc(hidden)]
-    pub message_prefix: std::option::Option<std::string::String>,
+    pub message_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
     #[doc(hidden)]
     pub dpu_hour: f64,
 }
 impl CrawlerHistory {
     /// <p>A UUID identifier for each crawl.</p>
-    pub fn crawl_id(&self) -> std::option::Option<&str> {
+    pub fn crawl_id(&self) -> ::std::option::Option<&str> {
         self.crawl_id.as_deref()
     }
     /// <p>The state of the crawl.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::CrawlerHistoryState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::CrawlerHistoryState> {
         self.state.as_ref()
     }
     /// <p>The date and time on which the crawl started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time on which the crawl ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
     }
     /// <p>If an error occurred, the error message associated with the crawl.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>The log group associated with the crawl.</p>
-    pub fn log_group(&self) -> std::option::Option<&str> {
+    pub fn log_group(&self) -> ::std::option::Option<&str> {
         self.log_group.as_deref()
     }
     /// <p>The log stream associated with the crawl.</p>
-    pub fn log_stream(&self) -> std::option::Option<&str> {
+    pub fn log_stream(&self) -> ::std::option::Option<&str> {
         self.log_stream.as_deref()
     }
     /// <p>The prefix for a CloudWatch message about this crawl.</p>
-    pub fn message_prefix(&self) -> std::option::Option<&str> {
+    pub fn message_prefix(&self) -> ::std::option::Option<&str> {
         self.message_prefix.as_deref()
     }
     /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
@@ -86,123 +86,140 @@ impl CrawlerHistory {
 
 /// A builder for [`CrawlerHistory`](crate::types::CrawlerHistory).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CrawlerHistoryBuilder {
-    pub(crate) crawl_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::CrawlerHistoryState>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) summary: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) log_group: std::option::Option<std::string::String>,
-    pub(crate) log_stream: std::option::Option<std::string::String>,
-    pub(crate) message_prefix: std::option::Option<std::string::String>,
-    pub(crate) dpu_hour: std::option::Option<f64>,
+    pub(crate) crawl_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::CrawlerHistoryState>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) summary: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) log_group: ::std::option::Option<::std::string::String>,
+    pub(crate) log_stream: ::std::option::Option<::std::string::String>,
+    pub(crate) message_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) dpu_hour: ::std::option::Option<f64>,
 }
 impl CrawlerHistoryBuilder {
     /// <p>A UUID identifier for each crawl.</p>
-    pub fn crawl_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.crawl_id = Some(input.into());
+    pub fn crawl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.crawl_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A UUID identifier for each crawl.</p>
-    pub fn set_crawl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_crawl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crawl_id = input;
         self
     }
     /// <p>The state of the crawl.</p>
     pub fn state(mut self, input: crate::types::CrawlerHistoryState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the crawl.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::CrawlerHistoryState>,
+        input: ::std::option::Option<crate::types::CrawlerHistoryState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The date and time on which the crawl started.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time on which the crawl started.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The date and time on which the crawl ended.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time on which the crawl ended.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
-    pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
-        self.summary = Some(input.into());
+    pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A run summary for the specific crawl in JSON. Contains the catalog tables and partitions that were added, updated, or deleted.</p>
-    pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
     }
     /// <p>If an error occurred, the error message associated with the crawl.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If an error occurred, the error message associated with the crawl.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p>The log group associated with the crawl.</p>
-    pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_group = Some(input.into());
+    pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The log group associated with the crawl.</p>
-    pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group = input;
         self
     }
     /// <p>The log stream associated with the crawl.</p>
-    pub fn log_stream(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_stream = Some(input.into());
+    pub fn log_stream(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The log stream associated with the crawl.</p>
-    pub fn set_log_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_stream(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_stream = input;
         self
     }
     /// <p>The prefix for a CloudWatch message about this crawl.</p>
-    pub fn message_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_prefix = Some(input.into());
+    pub fn message_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.message_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix for a CloudWatch message about this crawl.</p>
-    pub fn set_message_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.message_prefix = input;
         self
     }
     /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
     pub fn dpu_hour(mut self, input: f64) -> Self {
-        self.dpu_hour = Some(input);
+        self.dpu_hour = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of data processing units (DPU) used in hours for the crawl.</p>
-    pub fn set_dpu_hour(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_dpu_hour(mut self, input: ::std::option::Option<f64>) -> Self {
         self.dpu_hour = input;
         self
     }

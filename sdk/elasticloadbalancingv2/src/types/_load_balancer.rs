@@ -2,101 +2,101 @@
 
 /// <p>Information about a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancer {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_arn: std::option::Option<std::string::String>,
+    pub load_balancer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The public DNS name of the load balancer.</p>
     #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
+    pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
     #[doc(hidden)]
-    pub canonical_hosted_zone_id: std::option::Option<std::string::String>,
+    pub canonical_hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the load balancer was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     #[doc(hidden)]
-    pub scheme: std::option::Option<crate::types::LoadBalancerSchemeEnum>,
+    pub scheme: ::std::option::Option<crate::types::LoadBalancerSchemeEnum>,
     /// <p>The ID of the VPC for the load balancer.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the load balancer.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::LoadBalancerState>,
+    pub state: ::std::option::Option<crate::types::LoadBalancerState>,
     /// <p>The type of load balancer.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::LoadBalancerTypeEnum>,
+    pub r#type: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
     /// <p>The subnets for the load balancer.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>The IDs of the security groups for the load balancer.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     #[doc(hidden)]
-    pub ip_address_type: std::option::Option<crate::types::IpAddressType>,
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
     #[doc(hidden)]
-    pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
+    pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancer {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The public DNS name of the load balancer.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
-    pub fn canonical_hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn canonical_hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.canonical_hosted_zone_id.as_deref()
     }
     /// <p>The date and time the load balancer was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
-    pub fn scheme(&self) -> std::option::Option<&crate::types::LoadBalancerSchemeEnum> {
+    pub fn scheme(&self) -> ::std::option::Option<&crate::types::LoadBalancerSchemeEnum> {
         self.scheme.as_ref()
     }
     /// <p>The ID of the VPC for the load balancer.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The state of the load balancer.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::LoadBalancerState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::LoadBalancerState> {
         self.state.as_ref()
     }
     /// <p>The type of load balancer.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::LoadBalancerTypeEnum> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LoadBalancerTypeEnum> {
         self.r#type.as_ref()
     }
     /// <p>The subnets for the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[crate::types::AvailabilityZone]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
         self.availability_zones.as_deref()
     }
     /// <p>The IDs of the security groups for the load balancer.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
-    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
+    pub fn customer_owned_ipv4_pool(&self) -> ::std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
 }
@@ -109,82 +109,93 @@ impl LoadBalancer {
 
 /// A builder for [`LoadBalancer`](crate::types::LoadBalancer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoadBalancerBuilder {
-    pub(crate) load_balancer_arn: std::option::Option<std::string::String>,
-    pub(crate) dns_name: std::option::Option<std::string::String>,
-    pub(crate) canonical_hosted_zone_id: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) scheme: std::option::Option<crate::types::LoadBalancerSchemeEnum>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::LoadBalancerState>,
-    pub(crate) r#type: std::option::Option<crate::types::LoadBalancerTypeEnum>,
+    pub(crate) load_balancer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) canonical_hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) scheme: ::std::option::Option<crate::types::LoadBalancerSchemeEnum>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::LoadBalancerState>,
+    pub(crate) r#type: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
     pub(crate) availability_zones:
-        std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
-    pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ip_address_type: std::option::Option<crate::types::IpAddressType>,
-    pub(crate) customer_owned_ipv4_pool: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_arn = Some(input.into());
+    pub fn load_balancer_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn set_load_balancer_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_arn = input;
         self
     }
     /// <p>The public DNS name of the load balancer.</p>
-    pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dns_name = Some(input.into());
+    pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public DNS name of the load balancer.</p>
-    pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
-    pub fn canonical_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.canonical_hosted_zone_id = Some(input.into());
+    pub fn canonical_hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.canonical_hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Route 53 hosted zone associated with the load balancer.</p>
     pub fn set_canonical_hosted_zone_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.canonical_hosted_zone_id = input;
         self
     }
     /// <p>The date and time the load balancer was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the load balancer was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
@@ -192,50 +203,50 @@ impl LoadBalancerBuilder {
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     pub fn scheme(mut self, input: crate::types::LoadBalancerSchemeEnum) -> Self {
-        self.scheme = Some(input);
+        self.scheme = ::std::option::Option::Some(input);
         self
     }
     /// <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>
     /// <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>
     pub fn set_scheme(
         mut self,
-        input: std::option::Option<crate::types::LoadBalancerSchemeEnum>,
+        input: ::std::option::Option<crate::types::LoadBalancerSchemeEnum>,
     ) -> Self {
         self.scheme = input;
         self
     }
     /// <p>The ID of the VPC for the load balancer.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC for the load balancer.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The state of the load balancer.</p>
     pub fn state(mut self, input: crate::types::LoadBalancerState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the load balancer.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::LoadBalancerState>,
+        input: ::std::option::Option<crate::types::LoadBalancerState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The type of load balancer.</p>
     pub fn r#type(mut self, input: crate::types::LoadBalancerTypeEnum) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of load balancer.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::LoadBalancerTypeEnum>,
+        input: ::std::option::Option<crate::types::LoadBalancerTypeEnum>,
     ) -> Self {
         self.r#type = input;
         self
@@ -248,13 +259,13 @@ impl LoadBalancerBuilder {
     pub fn availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input);
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The subnets for the load balancer.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     ) -> Self {
         self.availability_zones = input;
         self
@@ -264,42 +275,48 @@ impl LoadBalancerBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups for the load balancer.</p>
-    pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups for the load balancer.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
-        self.ip_address_type = Some(input);
+        self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
     pub fn set_ip_address_type(
         mut self,
-        input: std::option::Option<crate::types::IpAddressType>,
+        input: ::std::option::Option<crate::types::IpAddressType>,
     ) -> Self {
         self.ip_address_type = input;
         self
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
-    pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
-        self.customer_owned_ipv4_pool = Some(input.into());
+    pub fn customer_owned_ipv4_pool(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.customer_owned_ipv4_pool = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool.</p>
     pub fn set_customer_owned_ipv4_pool(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.customer_owned_ipv4_pool = input;
         self

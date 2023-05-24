@@ -6,29 +6,29 @@ pub use crate::operation::create_api_destination::_create_api_destination_input:
 /// Fluent builder constructing a request to `CreateApiDestination`.
 ///
 /// <p>Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApiDestinationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_api_destination::builders::CreateApiDestinationInputBuilder,
 }
 impl CreateApiDestinationFluentBuilder {
     /// Creates a new `CreateApiDestination`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_api_destination::CreateApiDestination,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_api_destination::CreateApiDestinationError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateApiDestinationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_api_destination::CreateApiDestinationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_api_destination::CreateApiDestinationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,53 +75,62 @@ impl CreateApiDestinationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_api_destination::CreateApiDestinationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_api_destination::CreateApiDestinationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name for the API destination to create.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name for the API destination to create.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description for the API destination to create.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for the API destination to create.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
-    pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connection_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.connection_arn(input.into());
         self
     }
     /// <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
-    pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connection_arn(input);
         self
     }
     /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
-    pub fn invocation_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn invocation_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.invocation_endpoint(input.into());
         self
     }
     /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
     pub fn set_invocation_endpoint(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_invocation_endpoint(input);
         self
@@ -131,7 +143,7 @@ impl CreateApiDestinationFluentBuilder {
     /// <p>The method to use for the request to the HTTP invocation endpoint.</p>
     pub fn set_http_method(
         mut self,
-        input: std::option::Option<crate::types::ApiDestinationHttpMethod>,
+        input: ::std::option::Option<crate::types::ApiDestinationHttpMethod>,
     ) -> Self {
         self.inner = self.inner.set_http_method(input);
         self
@@ -142,7 +154,10 @@ impl CreateApiDestinationFluentBuilder {
         self
     }
     /// <p>The maximum number of requests per second to send to the HTTP invocation endpoint.</p>
-    pub fn set_invocation_rate_limit_per_second(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_invocation_rate_limit_per_second(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_invocation_rate_limit_per_second(input);
         self
     }

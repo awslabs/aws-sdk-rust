@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ImportSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum ImportSortAttribute {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ImportSortAttribute {
+impl ::std::convert::From<&str> for ImportSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "LastUpdatedDateTime" => ImportSortAttribute::LastUpdatedDateTime,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for ImportSortAttribute {
         }
     }
 }
-impl std::str::FromStr for ImportSortAttribute {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ImportSortAttribute {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportSortAttribute::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ImportSortAttribute::from(s))
     }
 }
 impl ImportSortAttribute {
@@ -81,7 +81,7 @@ impl ImportSortAttribute {
         &["LastUpdatedDateTime"]
     }
 }
-impl AsRef<str> for ImportSortAttribute {
+impl ::std::convert::AsRef<str> for ImportSortAttribute {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

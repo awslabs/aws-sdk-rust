@@ -2,17 +2,17 @@
 
 /// <p>Describes a recommendation option for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::AutoScalingGroupConfiguration>,
+    pub configuration: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
     #[doc(hidden)]
     pub projected_utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::UtilizationMetric>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     /// <p>The performance risk of the Auto Scaling group configuration recommendation.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
@@ -24,17 +24,17 @@ pub struct AutoScalingGroupRecommendationOption {
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     #[doc(hidden)]
-    pub savings_opportunity: std::option::Option<crate::types::SavingsOpportunity>,
+    pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     #[doc(hidden)]
-    pub migration_effort: std::option::Option<crate::types::MigrationEffort>,
+    pub migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
 }
 impl AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     pub fn configuration(
         &self,
-    ) -> std::option::Option<&crate::types::AutoScalingGroupConfiguration> {
+    ) -> ::std::option::Option<&crate::types::AutoScalingGroupConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
@@ -42,7 +42,7 @@ impl AutoScalingGroupRecommendationOption {
     /// </note>
     pub fn projected_utilization_metrics(
         &self,
-    ) -> std::option::Option<&[crate::types::UtilizationMetric]> {
+    ) -> ::std::option::Option<&[crate::types::UtilizationMetric]> {
         self.projected_utilization_metrics.as_deref()
     }
     /// <p>The performance risk of the Auto Scaling group configuration recommendation.</p>
@@ -57,12 +57,12 @@ impl AutoScalingGroupRecommendationOption {
         self.rank
     }
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn savings_opportunity(&self) -> std::option::Option<&crate::types::SavingsOpportunity> {
+    pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
-    pub fn migration_effort(&self) -> std::option::Option<&crate::types::MigrationEffort> {
+    pub fn migration_effort(&self) -> ::std::option::Option<&crate::types::MigrationEffort> {
         self.migration_effort.as_ref()
     }
 }
@@ -75,26 +75,28 @@ impl AutoScalingGroupRecommendationOption {
 
 /// A builder for [`AutoScalingGroupRecommendationOption`](crate::types::AutoScalingGroupRecommendationOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingGroupRecommendationOptionBuilder {
-    pub(crate) configuration: std::option::Option<crate::types::AutoScalingGroupConfiguration>,
+    pub(crate) configuration: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
     pub(crate) projected_utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::UtilizationMetric>>,
-    pub(crate) performance_risk: std::option::Option<f64>,
-    pub(crate) rank: std::option::Option<i32>,
-    pub(crate) savings_opportunity: std::option::Option<crate::types::SavingsOpportunity>,
-    pub(crate) migration_effort: std::option::Option<crate::types::MigrationEffort>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
+    pub(crate) performance_risk: ::std::option::Option<f64>,
+    pub(crate) rank: ::std::option::Option<i32>,
+    pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
+    pub(crate) migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
 }
 impl AutoScalingGroupRecommendationOptionBuilder {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     pub fn configuration(mut self, input: crate::types::AutoScalingGroupConfiguration) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingGroupConfiguration>,
+        input: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
     ) -> Self {
         self.configuration = input;
         self
@@ -109,7 +111,7 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     pub fn projected_utilization_metrics(mut self, input: crate::types::UtilizationMetric) -> Self {
         let mut v = self.projected_utilization_metrics.unwrap_or_default();
         v.push(input);
-        self.projected_utilization_metrics = Some(v);
+        self.projected_utilization_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
@@ -117,7 +119,7 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     /// </note>
     pub fn set_projected_utilization_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UtilizationMetric>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     ) -> Self {
         self.projected_utilization_metrics = input;
         self
@@ -126,37 +128,37 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
     pub fn performance_risk(mut self, input: f64) -> Self {
-        self.performance_risk = Some(input);
+        self.performance_risk = ::std::option::Option::Some(input);
         self
     }
     /// <p>The performance risk of the Auto Scaling group configuration recommendation.</p>
     /// <p>Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your workload. Compute Optimizer calculates an individual performance risk score for each specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum performance risk score across the analyzed resource specifications.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
-    pub fn set_performance_risk(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_performance_risk(mut self, input: ::std::option::Option<f64>) -> Self {
         self.performance_risk = input;
         self
     }
     /// <p>The rank of the Auto Scaling group recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(mut self, input: i32) -> Self {
-        self.rank = Some(input);
+        self.rank = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rank of the Auto Scaling group recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
-    pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rank = input;
         self
     }
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
-        self.savings_opportunity = Some(input);
+        self.savings_opportunity = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the savings opportunity for the Auto Scaling group recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn set_savings_opportunity(
         mut self,
-        input: std::option::Option<crate::types::SavingsOpportunity>,
+        input: ::std::option::Option<crate::types::SavingsOpportunity>,
     ) -> Self {
         self.savings_opportunity = input;
         self
@@ -164,14 +166,14 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub fn migration_effort(mut self, input: crate::types::MigrationEffort) -> Self {
-        self.migration_effort = Some(input);
+        self.migration_effort = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of effort required to migrate from the current instance type to the recommended instance type.</p>
     /// <p>For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred workload type and an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>Medium</code> if a workload type couldn't be inferred but an Amazon Web Services Graviton instance type is recommended. The migration effort is <code>VeryLow</code> if both the current and recommended instance types are of the same CPU architecture.</p>
     pub fn set_migration_effort(
         mut self,
-        input: std::option::Option<crate::types::MigrationEffort>,
+        input: ::std::option::Option<crate::types::MigrationEffort>,
     ) -> Self {
         self.migration_effort = input;
         self

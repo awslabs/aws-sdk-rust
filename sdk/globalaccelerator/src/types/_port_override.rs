@@ -3,22 +3,22 @@
 /// <p>Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortOverride {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
     #[doc(hidden)]
-    pub listener_port: std::option::Option<i32>,
+    pub listener_port: ::std::option::Option<i32>,
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
     #[doc(hidden)]
-    pub endpoint_port: std::option::Option<i32>,
+    pub endpoint_port: ::std::option::Option<i32>,
 }
 impl PortOverride {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
-    pub fn listener_port(&self) -> std::option::Option<i32> {
+    pub fn listener_port(&self) -> ::std::option::Option<i32> {
         self.listener_port
     }
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
-    pub fn endpoint_port(&self) -> std::option::Option<i32> {
+    pub fn endpoint_port(&self) -> ::std::option::Option<i32> {
         self.endpoint_port
     }
 }
@@ -31,29 +31,31 @@ impl PortOverride {
 
 /// A builder for [`PortOverride`](crate::types::PortOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortOverrideBuilder {
-    pub(crate) listener_port: std::option::Option<i32>,
-    pub(crate) endpoint_port: std::option::Option<i32>,
+    pub(crate) listener_port: ::std::option::Option<i32>,
+    pub(crate) endpoint_port: ::std::option::Option<i32>,
 }
 impl PortOverrideBuilder {
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
     pub fn listener_port(mut self, input: i32) -> Self {
-        self.listener_port = Some(input);
+        self.listener_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The listener port that you want to map to a specific endpoint port. This is the port that user traffic arrives to the Global Accelerator on.</p>
-    pub fn set_listener_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_listener_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.listener_port = input;
         self
     }
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
     pub fn endpoint_port(mut self, input: i32) -> Self {
-        self.endpoint_port = Some(input);
+        self.endpoint_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint port that you want a listener port to be mapped to. This is the port on the endpoint, such as the Application Load Balancer or Amazon EC2 instance.</p>
-    pub fn set_endpoint_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_endpoint_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.endpoint_port = input;
         self
     }

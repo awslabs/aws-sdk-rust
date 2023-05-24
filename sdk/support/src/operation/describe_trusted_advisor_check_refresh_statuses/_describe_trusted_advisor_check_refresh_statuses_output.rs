@@ -2,23 +2,23 @@
 
 /// <p>The statuses of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
     #[doc(hidden)]
     pub statuses:
-        std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
     pub fn statuses(
         &self,
-    ) -> std::option::Option<&[crate::types::TrustedAdvisorCheckRefreshStatus]> {
+    ) -> ::std::option::Option<&[crate::types::TrustedAdvisorCheckRefreshStatus]> {
         self.statuses.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckRefreshStatusesOutput {
+impl ::aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
 
 /// A builder for [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutputBuilder {
     pub(crate) statuses:
-        std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesOutputBuilder {
@@ -47,13 +49,15 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutputBuilder {
     pub fn statuses(mut self, input: crate::types::TrustedAdvisorCheckRefreshStatus) -> Self {
         let mut v = self.statuses.unwrap_or_default();
         v.push(input);
-        self.statuses = Some(v);
+        self.statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
     pub fn set_statuses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::TrustedAdvisorCheckRefreshStatus>,
+        >,
     ) -> Self {
         self.statuses = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>The result of a batch add facet to object operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAddFacetToObjectResponse {}
 impl BatchAddFacetToObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchAddFacetToObjectResponse`](crate::types::BatchAddFacetToObjectResponse).
@@ -13,7 +13,9 @@ impl BatchAddFacetToObjectResponse {
 
 /// A builder for [`BatchAddFacetToObjectResponse`](crate::types::BatchAddFacetToObjectResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchAddFacetToObjectResponseBuilder {}
 impl BatchAddFacetToObjectResponseBuilder {
     /// Consumes the builder and constructs a [`BatchAddFacetToObjectResponse`](crate::types::BatchAddFacetToObjectResponse).

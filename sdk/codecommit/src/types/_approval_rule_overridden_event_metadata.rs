@@ -2,22 +2,22 @@
 
 /// <p>Returns information about an override event for approval rules for a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApprovalRuleOverriddenEventMetadata {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
     #[doc(hidden)]
-    pub revision_id: std::option::Option<std::string::String>,
+    pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the override event.</p>
     #[doc(hidden)]
-    pub override_status: std::option::Option<crate::types::OverrideStatus>,
+    pub override_status: ::std::option::Option<crate::types::OverrideStatus>,
 }
 impl ApprovalRuleOverriddenEventMetadata {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
     /// <p>The status of the override event.</p>
-    pub fn override_status(&self) -> std::option::Option<&crate::types::OverrideStatus> {
+    pub fn override_status(&self) -> ::std::option::Option<&crate::types::OverrideStatus> {
         self.override_status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ApprovalRuleOverriddenEventMetadata {
 
 /// A builder for [`ApprovalRuleOverriddenEventMetadata`](crate::types::ApprovalRuleOverriddenEventMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApprovalRuleOverriddenEventMetadataBuilder {
-    pub(crate) revision_id: std::option::Option<std::string::String>,
-    pub(crate) override_status: std::option::Option<crate::types::OverrideStatus>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
+    pub(crate) override_status: ::std::option::Option<crate::types::OverrideStatus>,
 }
 impl ApprovalRuleOverriddenEventMetadataBuilder {
     /// <p>The revision ID of the pull request when the override event occurred.</p>
-    pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revision_id = Some(input.into());
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision ID of the pull request when the override event occurred.</p>
-    pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }
     /// <p>The status of the override event.</p>
     pub fn override_status(mut self, input: crate::types::OverrideStatus) -> Self {
-        self.override_status = Some(input);
+        self.override_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the override event.</p>
     pub fn set_override_status(
         mut self,
-        input: std::option::Option<crate::types::OverrideStatus>,
+        input: ::std::option::Option<crate::types::OverrideStatus>,
     ) -> Self {
         self.override_status = input;
         self

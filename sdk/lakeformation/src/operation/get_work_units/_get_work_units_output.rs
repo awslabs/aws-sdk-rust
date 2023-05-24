@@ -2,34 +2,34 @@
 
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkUnitsOutput {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the plan query operation.</p>
     #[doc(hidden)]
-    pub query_id: std::option::Option<std::string::String>,
+    pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
     #[doc(hidden)]
-    pub work_unit_ranges: std::option::Option<std::vec::Vec<crate::types::WorkUnitRange>>,
+    pub work_unit_ranges: ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>,
     _request_id: Option<String>,
 }
 impl GetWorkUnitsOutput {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the plan query operation.</p>
-    pub fn query_id(&self) -> std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
-    pub fn work_unit_ranges(&self) -> std::option::Option<&[crate::types::WorkUnitRange]> {
+    pub fn work_unit_ranges(&self) -> ::std::option::Option<&[crate::types::WorkUnitRange]> {
         self.work_unit_ranges.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetWorkUnitsOutput {
+impl ::aws_http::request_id::RequestId for GetWorkUnitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,31 +43,34 @@ impl GetWorkUnitsOutput {
 
 /// A builder for [`GetWorkUnitsOutput`](crate::operation::get_work_units::GetWorkUnitsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetWorkUnitsOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) query_id: std::option::Option<std::string::String>,
-    pub(crate) work_unit_ranges: std::option::Option<std::vec::Vec<crate::types::WorkUnitRange>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) query_id: ::std::option::Option<::std::string::String>,
+    pub(crate) work_unit_ranges:
+        ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>,
     _request_id: Option<String>,
 }
 impl GetWorkUnitsOutputBuilder {
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// <p>The ID of the plan query operation.</p>
-    pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_id = Some(input.into());
+    pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the plan query operation.</p>
-    pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
     }
@@ -79,13 +82,13 @@ impl GetWorkUnitsOutputBuilder {
     pub fn work_unit_ranges(mut self, input: crate::types::WorkUnitRange) -> Self {
         let mut v = self.work_unit_ranges.unwrap_or_default();
         v.push(input);
-        self.work_unit_ranges = Some(v);
+        self.work_unit_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit IDs for querying the execution service.</p>
     pub fn set_work_unit_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkUnitRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkUnitRange>>,
     ) -> Self {
         self.work_unit_ranges = input;
         self

@@ -2,36 +2,36 @@
 
 /// <p>A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers activity, how Amazon EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingRule {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The conditions that trigger an automatic scaling activity.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::ScalingAction>,
+    pub action: ::std::option::Option<crate::types::ScalingAction>,
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
     #[doc(hidden)]
-    pub trigger: std::option::Option<crate::types::ScalingTrigger>,
+    pub trigger: ::std::option::Option<crate::types::ScalingTrigger>,
 }
 impl ScalingRule {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The conditions that trigger an automatic scaling activity.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ScalingAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::ScalingAction> {
         self.action.as_ref()
     }
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
-    pub fn trigger(&self) -> std::option::Option<&crate::types::ScalingTrigger> {
+    pub fn trigger(&self) -> ::std::option::Option<&crate::types::ScalingTrigger> {
         self.trigger.as_ref()
     }
 }
@@ -44,51 +44,56 @@ impl ScalingRule {
 
 /// A builder for [`ScalingRule`](crate::types::ScalingRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingRuleBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) action: std::option::Option<crate::types::ScalingAction>,
-    pub(crate) trigger: std::option::Option<crate::types::ScalingTrigger>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) action: ::std::option::Option<crate::types::ScalingAction>,
+    pub(crate) trigger: ::std::option::Option<crate::types::ScalingTrigger>,
 }
 impl ScalingRuleBuilder {
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name used to identify an automatic scaling rule. Rule names must be unique within a scaling policy.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A friendly, more verbose description of the automatic scaling rule.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The conditions that trigger an automatic scaling activity.</p>
     pub fn action(mut self, input: crate::types::ScalingAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The conditions that trigger an automatic scaling activity.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::ScalingAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ScalingAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
     pub fn trigger(mut self, input: crate::types::ScalingTrigger) -> Self {
-        self.trigger = Some(input);
+        self.trigger = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CloudWatch alarm definition that determines when automatic scaling activity is triggered.</p>
-    pub fn set_trigger(mut self, input: std::option::Option<crate::types::ScalingTrigger>) -> Self {
+    pub fn set_trigger(
+        mut self,
+        input: ::std::option::Option<crate::types::ScalingTrigger>,
+    ) -> Self {
         self.trigger = input;
         self
     }

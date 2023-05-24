@@ -2,53 +2,55 @@
 
 /// <p>An element in a media insights pipeline configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaInsightsPipelineConfigurationElement {
     /// <p>The element type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
+    pub r#type: ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
     /// <p>The analytics configuration settings for transcribing audio in a media insights pipeline configuration element.</p>
     #[doc(hidden)]
     pub amazon_transcribe_call_analytics_processor_configuration:
-        std::option::Option<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>,
+        ::std::option::Option<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>,
     /// <p>The transcription processor configuration settings in a media insights pipeline configuration element.</p>
     #[doc(hidden)]
     pub amazon_transcribe_processor_configuration:
-        std::option::Option<crate::types::AmazonTranscribeProcessorConfiguration>,
+        ::std::option::Option<crate::types::AmazonTranscribeProcessorConfiguration>,
     /// <p>The configuration settings for the Kinesis Data Stream Sink in a media insights pipeline configuration element.</p>
     #[doc(hidden)]
     pub kinesis_data_stream_sink_configuration:
-        std::option::Option<crate::types::KinesisDataStreamSinkConfiguration>,
+        ::std::option::Option<crate::types::KinesisDataStreamSinkConfiguration>,
     /// <p>The configuration settings for the Amazon S3 recording bucket in a media insights pipeline configuration element.</p>
     #[doc(hidden)]
     pub s3_recording_sink_configuration:
-        std::option::Option<crate::types::S3RecordingSinkConfiguration>,
+        ::std::option::Option<crate::types::S3RecordingSinkConfiguration>,
     /// <p>The voice analytics configuration settings in a media insights pipeline configuration element.</p>
     #[doc(hidden)]
     pub voice_analytics_processor_configuration:
-        std::option::Option<crate::types::VoiceAnalyticsProcessorConfiguration>,
+        ::std::option::Option<crate::types::VoiceAnalyticsProcessorConfiguration>,
     /// <p>The configuration settings for the Amazon Web Services Lambda sink in a media insights pipeline configuration element.</p>
     #[doc(hidden)]
     pub lambda_function_sink_configuration:
-        std::option::Option<crate::types::LambdaFunctionSinkConfiguration>,
+        ::std::option::Option<crate::types::LambdaFunctionSinkConfiguration>,
     /// <p>The configuration settings for an SQS queue sink in a media insights pipeline configuration element.</p>
     #[doc(hidden)]
-    pub sqs_queue_sink_configuration: std::option::Option<crate::types::SqsQueueSinkConfiguration>,
+    pub sqs_queue_sink_configuration:
+        ::std::option::Option<crate::types::SqsQueueSinkConfiguration>,
     /// <p>The configuration settings for an SNS topic sink in a media insights pipeline configuration element.</p>
     #[doc(hidden)]
-    pub sns_topic_sink_configuration: std::option::Option<crate::types::SnsTopicSinkConfiguration>,
+    pub sns_topic_sink_configuration:
+        ::std::option::Option<crate::types::SnsTopicSinkConfiguration>,
 }
 impl MediaInsightsPipelineConfigurationElement {
     /// <p>The element type.</p>
     pub fn r#type(
         &self,
-    ) -> std::option::Option<&crate::types::MediaInsightsPipelineConfigurationElementType> {
+    ) -> ::std::option::Option<&crate::types::MediaInsightsPipelineConfigurationElementType> {
         self.r#type.as_ref()
     }
     /// <p>The analytics configuration settings for transcribing audio in a media insights pipeline configuration element.</p>
     pub fn amazon_transcribe_call_analytics_processor_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>
+    ) -> ::std::option::Option<&crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>
     {
         self.amazon_transcribe_call_analytics_processor_configuration
             .as_ref()
@@ -56,43 +58,43 @@ impl MediaInsightsPipelineConfigurationElement {
     /// <p>The transcription processor configuration settings in a media insights pipeline configuration element.</p>
     pub fn amazon_transcribe_processor_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::AmazonTranscribeProcessorConfiguration> {
+    ) -> ::std::option::Option<&crate::types::AmazonTranscribeProcessorConfiguration> {
         self.amazon_transcribe_processor_configuration.as_ref()
     }
     /// <p>The configuration settings for the Kinesis Data Stream Sink in a media insights pipeline configuration element.</p>
     pub fn kinesis_data_stream_sink_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::KinesisDataStreamSinkConfiguration> {
+    ) -> ::std::option::Option<&crate::types::KinesisDataStreamSinkConfiguration> {
         self.kinesis_data_stream_sink_configuration.as_ref()
     }
     /// <p>The configuration settings for the Amazon S3 recording bucket in a media insights pipeline configuration element.</p>
     pub fn s3_recording_sink_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::S3RecordingSinkConfiguration> {
+    ) -> ::std::option::Option<&crate::types::S3RecordingSinkConfiguration> {
         self.s3_recording_sink_configuration.as_ref()
     }
     /// <p>The voice analytics configuration settings in a media insights pipeline configuration element.</p>
     pub fn voice_analytics_processor_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::VoiceAnalyticsProcessorConfiguration> {
+    ) -> ::std::option::Option<&crate::types::VoiceAnalyticsProcessorConfiguration> {
         self.voice_analytics_processor_configuration.as_ref()
     }
     /// <p>The configuration settings for the Amazon Web Services Lambda sink in a media insights pipeline configuration element.</p>
     pub fn lambda_function_sink_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionSinkConfiguration> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionSinkConfiguration> {
         self.lambda_function_sink_configuration.as_ref()
     }
     /// <p>The configuration settings for an SQS queue sink in a media insights pipeline configuration element.</p>
     pub fn sqs_queue_sink_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SqsQueueSinkConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SqsQueueSinkConfiguration> {
         self.sqs_queue_sink_configuration.as_ref()
     }
     /// <p>The configuration settings for an SNS topic sink in a media insights pipeline configuration element.</p>
     pub fn sns_topic_sink_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SnsTopicSinkConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SnsTopicSinkConfiguration> {
         self.sns_topic_sink_configuration.as_ref()
     }
 }
@@ -105,26 +107,28 @@ impl MediaInsightsPipelineConfigurationElement {
 
 /// A builder for [`MediaInsightsPipelineConfigurationElement`](crate::types::MediaInsightsPipelineConfigurationElement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MediaInsightsPipelineConfigurationElementBuilder {
     pub(crate) r#type:
-        std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
+        ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
     pub(crate) amazon_transcribe_call_analytics_processor_configuration:
-        std::option::Option<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>,
+        ::std::option::Option<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration>,
     pub(crate) amazon_transcribe_processor_configuration:
-        std::option::Option<crate::types::AmazonTranscribeProcessorConfiguration>,
+        ::std::option::Option<crate::types::AmazonTranscribeProcessorConfiguration>,
     pub(crate) kinesis_data_stream_sink_configuration:
-        std::option::Option<crate::types::KinesisDataStreamSinkConfiguration>,
+        ::std::option::Option<crate::types::KinesisDataStreamSinkConfiguration>,
     pub(crate) s3_recording_sink_configuration:
-        std::option::Option<crate::types::S3RecordingSinkConfiguration>,
+        ::std::option::Option<crate::types::S3RecordingSinkConfiguration>,
     pub(crate) voice_analytics_processor_configuration:
-        std::option::Option<crate::types::VoiceAnalyticsProcessorConfiguration>,
+        ::std::option::Option<crate::types::VoiceAnalyticsProcessorConfiguration>,
     pub(crate) lambda_function_sink_configuration:
-        std::option::Option<crate::types::LambdaFunctionSinkConfiguration>,
+        ::std::option::Option<crate::types::LambdaFunctionSinkConfiguration>,
     pub(crate) sqs_queue_sink_configuration:
-        std::option::Option<crate::types::SqsQueueSinkConfiguration>,
+        ::std::option::Option<crate::types::SqsQueueSinkConfiguration>,
     pub(crate) sns_topic_sink_configuration:
-        std::option::Option<crate::types::SnsTopicSinkConfiguration>,
+        ::std::option::Option<crate::types::SnsTopicSinkConfiguration>,
 }
 impl MediaInsightsPipelineConfigurationElementBuilder {
     /// <p>The element type.</p>
@@ -132,13 +136,13 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::MediaInsightsPipelineConfigurationElementType,
     ) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The element type.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
+        input: ::std::option::Option<crate::types::MediaInsightsPipelineConfigurationElementType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -148,13 +152,14 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration,
     ) -> Self {
-        self.amazon_transcribe_call_analytics_processor_configuration = Some(input);
+        self.amazon_transcribe_call_analytics_processor_configuration =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>The analytics configuration settings for transcribing audio in a media insights pipeline configuration element.</p>
     pub fn set_amazon_transcribe_call_analytics_processor_configuration(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration,
         >,
     ) -> Self {
@@ -166,13 +171,13 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::AmazonTranscribeProcessorConfiguration,
     ) -> Self {
-        self.amazon_transcribe_processor_configuration = Some(input);
+        self.amazon_transcribe_processor_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The transcription processor configuration settings in a media insights pipeline configuration element.</p>
     pub fn set_amazon_transcribe_processor_configuration(
         mut self,
-        input: std::option::Option<crate::types::AmazonTranscribeProcessorConfiguration>,
+        input: ::std::option::Option<crate::types::AmazonTranscribeProcessorConfiguration>,
     ) -> Self {
         self.amazon_transcribe_processor_configuration = input;
         self
@@ -182,13 +187,13 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::KinesisDataStreamSinkConfiguration,
     ) -> Self {
-        self.kinesis_data_stream_sink_configuration = Some(input);
+        self.kinesis_data_stream_sink_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings for the Kinesis Data Stream Sink in a media insights pipeline configuration element.</p>
     pub fn set_kinesis_data_stream_sink_configuration(
         mut self,
-        input: std::option::Option<crate::types::KinesisDataStreamSinkConfiguration>,
+        input: ::std::option::Option<crate::types::KinesisDataStreamSinkConfiguration>,
     ) -> Self {
         self.kinesis_data_stream_sink_configuration = input;
         self
@@ -198,13 +203,13 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::S3RecordingSinkConfiguration,
     ) -> Self {
-        self.s3_recording_sink_configuration = Some(input);
+        self.s3_recording_sink_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings for the Amazon S3 recording bucket in a media insights pipeline configuration element.</p>
     pub fn set_s3_recording_sink_configuration(
         mut self,
-        input: std::option::Option<crate::types::S3RecordingSinkConfiguration>,
+        input: ::std::option::Option<crate::types::S3RecordingSinkConfiguration>,
     ) -> Self {
         self.s3_recording_sink_configuration = input;
         self
@@ -214,13 +219,13 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::VoiceAnalyticsProcessorConfiguration,
     ) -> Self {
-        self.voice_analytics_processor_configuration = Some(input);
+        self.voice_analytics_processor_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The voice analytics configuration settings in a media insights pipeline configuration element.</p>
     pub fn set_voice_analytics_processor_configuration(
         mut self,
-        input: std::option::Option<crate::types::VoiceAnalyticsProcessorConfiguration>,
+        input: ::std::option::Option<crate::types::VoiceAnalyticsProcessorConfiguration>,
     ) -> Self {
         self.voice_analytics_processor_configuration = input;
         self
@@ -230,13 +235,13 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::LambdaFunctionSinkConfiguration,
     ) -> Self {
-        self.lambda_function_sink_configuration = Some(input);
+        self.lambda_function_sink_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings for the Amazon Web Services Lambda sink in a media insights pipeline configuration element.</p>
     pub fn set_lambda_function_sink_configuration(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionSinkConfiguration>,
+        input: ::std::option::Option<crate::types::LambdaFunctionSinkConfiguration>,
     ) -> Self {
         self.lambda_function_sink_configuration = input;
         self
@@ -246,13 +251,13 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::SqsQueueSinkConfiguration,
     ) -> Self {
-        self.sqs_queue_sink_configuration = Some(input);
+        self.sqs_queue_sink_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings for an SQS queue sink in a media insights pipeline configuration element.</p>
     pub fn set_sqs_queue_sink_configuration(
         mut self,
-        input: std::option::Option<crate::types::SqsQueueSinkConfiguration>,
+        input: ::std::option::Option<crate::types::SqsQueueSinkConfiguration>,
     ) -> Self {
         self.sqs_queue_sink_configuration = input;
         self
@@ -262,13 +267,13 @@ impl MediaInsightsPipelineConfigurationElementBuilder {
         mut self,
         input: crate::types::SnsTopicSinkConfiguration,
     ) -> Self {
-        self.sns_topic_sink_configuration = Some(input);
+        self.sns_topic_sink_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings for an SNS topic sink in a media insights pipeline configuration element.</p>
     pub fn set_sns_topic_sink_configuration(
         mut self,
-        input: std::option::Option<crate::types::SnsTopicSinkConfiguration>,
+        input: ::std::option::Option<crate::types::SnsTopicSinkConfiguration>,
     ) -> Self {
         self.sns_topic_sink_configuration = input;
         self

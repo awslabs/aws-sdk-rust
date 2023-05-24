@@ -2,27 +2,27 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComplianceDetailsByConfigRuleOutput {
     /// <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
     #[doc(hidden)]
-    pub evaluation_results: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
+    pub evaluation_results: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetComplianceDetailsByConfigRuleOutput {
     /// <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
-    pub fn evaluation_results(&self) -> std::option::Option<&[crate::types::EvaluationResult]> {
+    pub fn evaluation_results(&self) -> ::std::option::Option<&[crate::types::EvaluationResult]> {
         self.evaluation_results.as_deref()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetComplianceDetailsByConfigRuleOutput {
+impl ::aws_http::request_id::RequestId for GetComplianceDetailsByConfigRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,11 +36,13 @@ impl GetComplianceDetailsByConfigRuleOutput {
 
 /// A builder for [`GetComplianceDetailsByConfigRuleOutput`](crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetComplianceDetailsByConfigRuleOutputBuilder {
     pub(crate) evaluation_results:
-        std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetComplianceDetailsByConfigRuleOutputBuilder {
@@ -52,24 +54,24 @@ impl GetComplianceDetailsByConfigRuleOutputBuilder {
     pub fn evaluation_results(mut self, input: crate::types::EvaluationResult) -> Self {
         let mut v = self.evaluation_results.unwrap_or_default();
         v.push(input);
-        self.evaluation_results = Some(v);
+        self.evaluation_results = ::std::option::Option::Some(v);
         self
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the specified Config rule.</p>
     pub fn set_evaluation_results(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResult>>,
     ) -> Self {
         self.evaluation_results = input;
         self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

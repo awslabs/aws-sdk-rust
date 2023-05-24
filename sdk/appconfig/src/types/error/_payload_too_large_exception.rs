@@ -2,25 +2,25 @@
 
 /// <p>The configuration size is too large.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PayloadTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub measure: std::option::Option<crate::types::BytesMeasure>,
+    pub measure: ::std::option::Option<crate::types::BytesMeasure>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub limit: f32,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub size: f32,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl PayloadTooLargeException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn measure(&self) -> std::option::Option<&crate::types::BytesMeasure> {
+    pub fn measure(&self) -> ::std::option::Option<&crate::types::BytesMeasure> {
         self.measure.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -34,30 +34,30 @@ impl PayloadTooLargeException {
 }
 impl PayloadTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for PayloadTooLargeException {
+impl ::std::fmt::Display for PayloadTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "PayloadTooLargeException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "PayloadTooLargeException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for PayloadTooLargeException {}
-impl aws_http::request_id::RequestId for crate::types::error::PayloadTooLargeException {
+impl ::std::error::Error for PayloadTooLargeException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::PayloadTooLargeException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PayloadTooLargeException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PayloadTooLargeException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -70,57 +70,59 @@ impl PayloadTooLargeException {
 
 /// A builder for [`PayloadTooLargeException`](crate::types::error::PayloadTooLargeException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PayloadTooLargeExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) measure: std::option::Option<crate::types::BytesMeasure>,
-    pub(crate) limit: std::option::Option<f32>,
-    pub(crate) size: std::option::Option<f32>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) measure: ::std::option::Option<crate::types::BytesMeasure>,
+    pub(crate) limit: ::std::option::Option<f32>,
+    pub(crate) size: ::std::option::Option<f32>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl PayloadTooLargeExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn measure(mut self, input: crate::types::BytesMeasure) -> Self {
-        self.measure = Some(input);
+        self.measure = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_measure(mut self, input: std::option::Option<crate::types::BytesMeasure>) -> Self {
+    pub fn set_measure(mut self, input: ::std::option::Option<crate::types::BytesMeasure>) -> Self {
         self.measure = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn limit(mut self, input: f32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_limit(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<f32>) -> Self {
         self.limit = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn size(mut self, input: f32) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_size(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<f32>) -> Self {
         self.size = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -128,7 +130,7 @@ impl PayloadTooLargeExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

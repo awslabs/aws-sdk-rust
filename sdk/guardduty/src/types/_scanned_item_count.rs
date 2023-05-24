@@ -2,7 +2,7 @@
 
 /// <p>Total number of scanned files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScannedItemCount {
     /// <p>Total GB of files scanned for malware.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl ScannedItemCount {
 
 /// A builder for [`ScannedItemCount`](crate::types::ScannedItemCount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScannedItemCountBuilder {
-    pub(crate) total_gb: std::option::Option<i32>,
-    pub(crate) files: std::option::Option<i32>,
-    pub(crate) volumes: std::option::Option<i32>,
+    pub(crate) total_gb: ::std::option::Option<i32>,
+    pub(crate) files: ::std::option::Option<i32>,
+    pub(crate) volumes: ::std::option::Option<i32>,
 }
 impl ScannedItemCountBuilder {
     /// <p>Total GB of files scanned for malware.</p>
     pub fn total_gb(mut self, input: i32) -> Self {
-        self.total_gb = Some(input);
+        self.total_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total GB of files scanned for malware.</p>
-    pub fn set_total_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_gb = input;
         self
     }
     /// <p>Number of files scanned.</p>
     pub fn files(mut self, input: i32) -> Self {
-        self.files = Some(input);
+        self.files = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of files scanned.</p>
-    pub fn set_files(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_files(mut self, input: ::std::option::Option<i32>) -> Self {
         self.files = input;
         self
     }
     /// <p>Total number of scanned volumes.</p>
     pub fn volumes(mut self, input: i32) -> Self {
-        self.volumes = Some(input);
+        self.volumes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of scanned volumes.</p>
-    pub fn set_volumes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volumes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volumes = input;
         self
     }

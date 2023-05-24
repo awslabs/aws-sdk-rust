@@ -38,13 +38,13 @@
 /// When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmafInitializationVectorInManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmafInitializationVectorInManifest {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmafInitializationVectorInManifest {
+impl ::std::convert::From<&str> for CmafInitializationVectorInManifest {
     fn from(s: &str) -> Self {
         match s {
             "EXCLUDE" => CmafInitializationVectorInManifest::Exclude,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmafInitializationVectorInManifest {
         }
     }
 }
-impl std::str::FromStr for CmafInitializationVectorInManifest {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmafInitializationVectorInManifest {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafInitializationVectorInManifest::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmafInitializationVectorInManifest::from(s))
     }
 }
 impl CmafInitializationVectorInManifest {
@@ -86,7 +86,7 @@ impl CmafInitializationVectorInManifest {
         &["EXCLUDE", "INCLUDE"]
     }
 }
-impl AsRef<str> for CmafInitializationVectorInManifest {
+impl ::std::convert::AsRef<str> for CmafInitializationVectorInManifest {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,22 +2,22 @@
 
 /// <p>An object that represents an HTTP gateway route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
-    pub r#match: std::option::Option<crate::types::HttpGatewayRouteMatch>,
+    pub r#match: ::std::option::Option<crate::types::HttpGatewayRouteMatch>,
     /// <p>An object that represents the action to take if a match is determined.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::HttpGatewayRouteAction>,
+    pub action: ::std::option::Option<crate::types::HttpGatewayRouteAction>,
 }
 impl HttpGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::HttpGatewayRouteMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<&crate::types::HttpGatewayRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::HttpGatewayRouteAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::HttpGatewayRouteAction> {
         self.action.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl HttpGatewayRoute {
 
 /// A builder for [`HttpGatewayRoute`](crate::types::HttpGatewayRoute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpGatewayRouteBuilder {
-    pub(crate) r#match: std::option::Option<crate::types::HttpGatewayRouteMatch>,
-    pub(crate) action: std::option::Option<crate::types::HttpGatewayRouteAction>,
+    pub(crate) r#match: ::std::option::Option<crate::types::HttpGatewayRouteMatch>,
+    pub(crate) action: ::std::option::Option<crate::types::HttpGatewayRouteAction>,
 }
 impl HttpGatewayRouteBuilder {
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn r#match(mut self, input: crate::types::HttpGatewayRouteMatch) -> Self {
-        self.r#match = Some(input);
+        self.r#match = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
     pub fn set_match(
         mut self,
-        input: std::option::Option<crate::types::HttpGatewayRouteMatch>,
+        input: ::std::option::Option<crate::types::HttpGatewayRouteMatch>,
     ) -> Self {
         self.r#match = input;
         self
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn action(mut self, input: crate::types::HttpGatewayRouteAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
     pub fn set_action(
         mut self,
-        input: std::option::Option<crate::types::HttpGatewayRouteAction>,
+        input: ::std::option::Option<crate::types::HttpGatewayRouteAction>,
     ) -> Self {
         self.action = input;
         self

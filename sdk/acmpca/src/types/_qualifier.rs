@@ -2,15 +2,15 @@
 
 /// <p>Defines a <code>PolicyInformation</code> qualifier. Amazon Web Services Private CA supports the <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.4">certification practice statement (CPS) qualifier</a> defined in RFC 5280. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
     #[doc(hidden)]
-    pub cps_uri: std::option::Option<std::string::String>,
+    pub cps_uri: ::std::option::Option<::std::string::String>,
 }
 impl Qualifier {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
-    pub fn cps_uri(&self) -> std::option::Option<&str> {
+    pub fn cps_uri(&self) -> ::std::option::Option<&str> {
         self.cps_uri.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Qualifier {
 
 /// A builder for [`Qualifier`](crate::types::Qualifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QualifierBuilder {
-    pub(crate) cps_uri: std::option::Option<std::string::String>,
+    pub(crate) cps_uri: ::std::option::Option<::std::string::String>,
 }
 impl QualifierBuilder {
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
-    pub fn cps_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cps_uri = Some(input.into());
+    pub fn cps_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cps_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains a pointer to a certification practice statement (CPS) published by the CA.</p>
-    pub fn set_cps_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cps_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cps_uri = input;
         self
     }

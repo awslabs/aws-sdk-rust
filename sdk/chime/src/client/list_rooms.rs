@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_member_id): <p>The member ID (user ID or bot ID).</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`member_id(impl ::std::convert::Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_member_id): <p>The member ID (user ID or bot ID).</p>
     ///   - [`max_results(i32)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_next_token): <p>The token to use to retrieve the next page of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_rooms::builders::ListRoomsFluentBuilder::set_next_token): <p>The token to use to retrieve the next page of results.</p>
     /// - On success, responds with [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput) with field(s):
     ///   - [`rooms(Option<Vec<Room>>)`](crate::operation::list_rooms::ListRoomsOutput::rooms): <p>The room details.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_rooms::ListRoomsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>

@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum QueryType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum QueryType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for QueryType {
+impl ::std::convert::From<&str> for QueryType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUDFORMATION_STACK_1_0" => QueryType::CloudformationStack10,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for QueryType {
         }
     }
 }
-impl std::str::FromStr for QueryType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for QueryType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueryType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(QueryType::from(s))
     }
 }
 impl QueryType {
@@ -84,7 +84,7 @@ impl QueryType {
         &["CLOUDFORMATION_STACK_1_0", "TAG_FILTERS_1_0"]
     }
 }
-impl AsRef<str> for QueryType {
+impl ::std::convert::AsRef<str> for QueryType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

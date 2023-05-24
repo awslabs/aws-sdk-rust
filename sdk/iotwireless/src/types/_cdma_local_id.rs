@@ -2,22 +2,22 @@
 
 /// <p>CDMA local ID information, which corresponds to the local identification parameters of a CDMA cell.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdmaLocalId {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     #[doc(hidden)]
-    pub pn_offset: std::option::Option<i32>,
+    pub pn_offset: ::std::option::Option<i32>,
     /// <p>CDMA channel information.</p>
     #[doc(hidden)]
-    pub cdma_channel: std::option::Option<i32>,
+    pub cdma_channel: ::std::option::Option<i32>,
 }
 impl CdmaLocalId {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    pub fn pn_offset(&self) -> std::option::Option<i32> {
+    pub fn pn_offset(&self) -> ::std::option::Option<i32> {
         self.pn_offset
     }
     /// <p>CDMA channel information.</p>
-    pub fn cdma_channel(&self) -> std::option::Option<i32> {
+    pub fn cdma_channel(&self) -> ::std::option::Option<i32> {
         self.cdma_channel
     }
 }
@@ -30,29 +30,31 @@ impl CdmaLocalId {
 
 /// A builder for [`CdmaLocalId`](crate::types::CdmaLocalId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CdmaLocalIdBuilder {
-    pub(crate) pn_offset: std::option::Option<i32>,
-    pub(crate) cdma_channel: std::option::Option<i32>,
+    pub(crate) pn_offset: ::std::option::Option<i32>,
+    pub(crate) cdma_channel: ::std::option::Option<i32>,
 }
 impl CdmaLocalIdBuilder {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     pub fn pn_offset(mut self, input: i32) -> Self {
-        self.pn_offset = Some(input);
+        self.pn_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    pub fn set_pn_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pn_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pn_offset = input;
         self
     }
     /// <p>CDMA channel information.</p>
     pub fn cdma_channel(mut self, input: i32) -> Self {
-        self.cdma_channel = Some(input);
+        self.cdma_channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>CDMA channel information.</p>
-    pub fn set_cdma_channel(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cdma_channel(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cdma_channel = input;
         self
     }

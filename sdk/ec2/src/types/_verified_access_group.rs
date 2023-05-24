@@ -2,71 +2,71 @@
 
 /// <p>Describes a Verified Access group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessGroup {
     /// <p>The ID of the Verified Access group.</p>
     #[doc(hidden)]
-    pub verified_access_group_id: std::option::Option<std::string::String>,
+    pub verified_access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
     #[doc(hidden)]
-    pub verified_access_instance_id: std::option::Option<std::string::String>,
+    pub verified_access_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the Amazon Web Services Verified Access group.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account number that owns the group.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<std::string::String>,
+    pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Verified Access group.</p>
     #[doc(hidden)]
-    pub verified_access_group_arn: std::option::Option<std::string::String>,
+    pub verified_access_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<std::string::String>,
+    pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The last updated time.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<std::string::String>,
+    pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The deletion time.</p>
     #[doc(hidden)]
-    pub deletion_time: std::option::Option<std::string::String>,
+    pub deletion_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessGroup {
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(&self) -> std::option::Option<&str> {
+    pub fn verified_access_group_id(&self) -> ::std::option::Option<&str> {
         self.verified_access_group_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn verified_access_instance_id(&self) -> std::option::Option<&str> {
+    pub fn verified_access_instance_id(&self) -> ::std::option::Option<&str> {
         self.verified_access_instance_id.as_deref()
     }
     /// <p>A description for the Amazon Web Services Verified Access group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Web Services account number that owns the group.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The ARN of the Verified Access group.</p>
-    pub fn verified_access_group_arn(&self) -> std::option::Option<&str> {
+    pub fn verified_access_group_arn(&self) -> ::std::option::Option<&str> {
         self.verified_access_group_arn.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
     /// <p>The last updated time.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The deletion time.</p>
-    pub fn deletion_time(&self) -> std::option::Option<&str> {
+    pub fn deletion_time(&self) -> ::std::option::Option<&str> {
         self.deletion_time.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -79,108 +79,134 @@ impl VerifiedAccessGroup {
 
 /// A builder for [`VerifiedAccessGroup`](crate::types::VerifiedAccessGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifiedAccessGroupBuilder {
-    pub(crate) verified_access_group_id: std::option::Option<std::string::String>,
-    pub(crate) verified_access_instance_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) owner: std::option::Option<std::string::String>,
-    pub(crate) verified_access_group_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<std::string::String>,
-    pub(crate) last_updated_time: std::option::Option<std::string::String>,
-    pub(crate) deletion_time: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) verified_access_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_time: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessGroupBuilder {
     /// <p>The ID of the Verified Access group.</p>
-    pub fn verified_access_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.verified_access_group_id = Some(input.into());
+    pub fn verified_access_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.verified_access_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Verified Access group.</p>
     pub fn set_verified_access_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verified_access_group_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn verified_access_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.verified_access_instance_id = Some(input.into());
+    pub fn verified_access_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
     pub fn set_verified_access_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verified_access_instance_id = input;
         self
     }
     /// <p>A description for the Amazon Web Services Verified Access group.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the Amazon Web Services Verified Access group.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The Amazon Web Services account number that owns the group.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner = Some(input.into());
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account number that owns the group.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
     /// <p>The ARN of the Verified Access group.</p>
-    pub fn verified_access_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.verified_access_group_arn = Some(input.into());
+    pub fn verified_access_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.verified_access_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Verified Access group.</p>
     pub fn set_verified_access_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verified_access_group_arn = input;
         self
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_time = Some(input.into());
+    pub fn creation_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last updated time.</p>
-    pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_time = Some(input.into());
+    pub fn last_updated_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last updated time.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>The deletion time.</p>
-    pub fn deletion_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deletion_time = Some(input.into());
+    pub fn deletion_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deletion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deletion time.</p>
-    pub fn set_deletion_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deletion_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deletion_time = input;
         self
     }
@@ -192,13 +218,13 @@ impl VerifiedAccessGroupBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

@@ -2,46 +2,46 @@
 
 /// <p>Describes a local gateway virtual interface group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalGatewayVirtualInterfaceGroup {
     /// <p>The ID of the virtual interface group.</p>
     #[doc(hidden)]
-    pub local_gateway_virtual_interface_group_id: std::option::Option<std::string::String>,
+    pub local_gateway_virtual_interface_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the virtual interfaces.</p>
     #[doc(hidden)]
     pub local_gateway_virtual_interface_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the local gateway.</p>
     #[doc(hidden)]
-    pub local_gateway_id: std::option::Option<std::string::String>,
+    pub local_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the virtual interface group.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LocalGatewayVirtualInterfaceGroup {
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_virtual_interface_group_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p>The IDs of the virtual interfaces.</p>
     pub fn local_gateway_virtual_interface_ids(
         &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.local_gateway_virtual_interface_ids.as_deref()
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>The tags assigned to the virtual interface group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -54,28 +54,31 @@ impl LocalGatewayVirtualInterfaceGroup {
 
 /// A builder for [`LocalGatewayVirtualInterfaceGroup`](crate::types::LocalGatewayVirtualInterfaceGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocalGatewayVirtualInterfaceGroupBuilder {
-    pub(crate) local_gateway_virtual_interface_group_id: std::option::Option<std::string::String>,
+    pub(crate) local_gateway_virtual_interface_group_id:
+        ::std::option::Option<::std::string::String>,
     pub(crate) local_gateway_virtual_interface_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) local_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LocalGatewayVirtualInterfaceGroupBuilder {
     /// <p>The ID of the virtual interface group.</p>
     pub fn local_gateway_virtual_interface_group_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.local_gateway_virtual_interface_group_id = Some(input.into());
+        self.local_gateway_virtual_interface_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface group.</p>
     pub fn set_local_gateway_virtual_interface_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.local_gateway_virtual_interface_group_id = input;
         self
@@ -87,38 +90,44 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     /// <p>The IDs of the virtual interfaces.</p>
     pub fn local_gateway_virtual_interface_ids(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.local_gateway_virtual_interface_ids.unwrap_or_default();
         v.push(input.into());
-        self.local_gateway_virtual_interface_ids = Some(v);
+        self.local_gateway_virtual_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the virtual interfaces.</p>
     pub fn set_local_gateway_virtual_interface_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.local_gateway_virtual_interface_ids = input;
         self
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn local_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.local_gateway_id = Some(input.into());
+    pub fn local_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway.</p>
-    pub fn set_local_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_local_gateway_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.local_gateway_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway virtual interface group.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
@@ -130,13 +139,13 @@ impl LocalGatewayVirtualInterfaceGroupBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags assigned to the virtual interface group.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

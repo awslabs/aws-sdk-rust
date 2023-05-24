@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReferenceMetadata`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::set_id): <p>The reference's ID.</p>
-    ///   - [`reference_store_id(impl Into<String>)`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::set_reference_store_id): <p>The reference's reference store ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::set_id): <p>The reference's ID.</p>
+    ///   - [`reference_store_id(impl ::std::convert::Into<String>)`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::reference_store_id) / [`set_reference_store_id(Option<String>)`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataFluentBuilder::set_reference_store_id): <p>The reference's reference store ID.</p>
     /// - On success, responds with [`GetReferenceMetadataOutput`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::id): <p>The reference's ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_reference_metadata::GetReferenceMetadataOutput::arn): <p>The reference's ARN.</p>

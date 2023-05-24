@@ -2,15 +2,15 @@
 
 /// <p>Contains the parameters for CancelReservedInstancesListing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelReservedInstancesListingInput {
     /// <p>The ID of the Reserved Instance listing.</p>
     #[doc(hidden)]
-    pub reserved_instances_listing_id: std::option::Option<std::string::String>,
+    pub reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelReservedInstancesListingInput {
     /// <p>The ID of the Reserved Instance listing.</p>
-    pub fn reserved_instances_listing_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instances_listing_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instances_listing_id.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl CancelReservedInstancesListingInput {
 
 /// A builder for [`CancelReservedInstancesListingInput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelReservedInstancesListingInputBuilder {
-    pub(crate) reserved_instances_listing_id: std::option::Option<std::string::String>,
+    pub(crate) reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelReservedInstancesListingInputBuilder {
     /// <p>The ID of the Reserved Instance listing.</p>
-    pub fn reserved_instances_listing_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reserved_instances_listing_id = Some(input.into());
+    pub fn reserved_instances_listing_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reserved_instances_listing_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance listing.</p>
     pub fn set_reserved_instances_listing_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_instances_listing_id = input;
         self
@@ -44,11 +49,11 @@ impl CancelReservedInstancesListingInputBuilder {
     /// Consumes the builder and constructs a [`CancelReservedInstancesListingInput`](crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingInput {
                 reserved_instances_listing_id: self.reserved_instances_listing_id
                 ,

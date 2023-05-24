@@ -7,264 +7,266 @@
 /// <li> <p> <code>ModifyEndpoint</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Endpoint {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     #[doc(hidden)]
-    pub endpoint_identifier: std::option::Option<std::string::String>,
+    pub endpoint_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     #[doc(hidden)]
-    pub endpoint_type: std::option::Option<crate::types::ReplicationEndpointTypeValue>,
+    pub endpoint_type: ::std::option::Option<crate::types::ReplicationEndpointTypeValue>,
     /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
     #[doc(hidden)]
-    pub engine_name: std::option::Option<std::string::String>,
+    pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
     #[doc(hidden)]
-    pub engine_display_name: std::option::Option<std::string::String>,
+    pub engine_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The user name used to connect to the endpoint.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the server at the endpoint.</p>
     #[doc(hidden)]
-    pub server_name: std::option::Option<std::string::String>,
+    pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>The port value used to access the endpoint.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>The name of the database at the endpoint.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Additional connection attributes used to connect to the endpoint.</p>
     #[doc(hidden)]
-    pub extra_connection_attributes: std::option::Option<std::string::String>,
+    pub extra_connection_attributes: ::std::option::Option<::std::string::String>,
     /// <p>The status of the endpoint.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
-    pub endpoint_arn: std::option::Option<std::string::String>,
+    pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
     #[doc(hidden)]
-    pub ssl_mode: std::option::Option<crate::types::DmsSslModeValue>,
+    pub ssl_mode: ::std::option::Option<crate::types::DmsSslModeValue>,
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     #[doc(hidden)]
-    pub service_access_role_arn: std::option::Option<std::string::String>,
+    pub service_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The external table definition.</p>
     #[doc(hidden)]
-    pub external_table_definition: std::option::Option<std::string::String>,
+    pub external_table_definition: ::std::option::Option<::std::string::String>,
     /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
     #[doc(hidden)]
-    pub external_id: std::option::Option<std::string::String>,
+    pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
     #[doc(hidden)]
-    pub dynamo_db_settings: std::option::Option<crate::types::DynamoDbSettings>,
+    pub dynamo_db_settings: ::std::option::Option<crate::types::DynamoDbSettings>,
     /// <p>The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.</p>
     #[doc(hidden)]
-    pub s3_settings: std::option::Option<crate::types::S3Settings>,
+    pub s3_settings: ::std::option::Option<crate::types::S3Settings>,
     /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
     #[doc(hidden)]
-    pub dms_transfer_settings: std::option::Option<crate::types::DmsTransferSettings>,
+    pub dms_transfer_settings: ::std::option::Option<crate::types::DmsTransferSettings>,
     /// <p>The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code> structure.</p>
     #[doc(hidden)]
-    pub mongo_db_settings: std::option::Option<crate::types::MongoDbSettings>,
+    pub mongo_db_settings: ::std::option::Option<crate::types::MongoDbSettings>,
     /// <p>The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code> structure.</p>
     #[doc(hidden)]
-    pub kinesis_settings: std::option::Option<crate::types::KinesisSettings>,
+    pub kinesis_settings: ::std::option::Option<crate::types::KinesisSettings>,
     /// <p>The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code> structure.</p>
     #[doc(hidden)]
-    pub kafka_settings: std::option::Option<crate::types::KafkaSettings>,
+    pub kafka_settings: ::std::option::Option<crate::types::KafkaSettings>,
     /// <p>The settings for the OpenSearch source endpoint. For more information, see the <code>ElasticsearchSettings</code> structure.</p>
     #[doc(hidden)]
-    pub elasticsearch_settings: std::option::Option<crate::types::ElasticsearchSettings>,
+    pub elasticsearch_settings: ::std::option::Option<crate::types::ElasticsearchSettings>,
     /// <p>The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code> structure.</p>
     #[doc(hidden)]
-    pub neptune_settings: std::option::Option<crate::types::NeptuneSettings>,
+    pub neptune_settings: ::std::option::Option<crate::types::NeptuneSettings>,
     /// <p>Settings for the Amazon Redshift endpoint.</p>
     #[doc(hidden)]
-    pub redshift_settings: std::option::Option<crate::types::RedshiftSettings>,
+    pub redshift_settings: ::std::option::Option<crate::types::RedshiftSettings>,
     /// <p>The settings for the PostgreSQL source and target endpoint. For more information, see the <code>PostgreSQLSettings</code> structure.</p>
     #[doc(hidden)]
-    pub postgre_sql_settings: std::option::Option<crate::types::PostgreSqlSettings>,
+    pub postgre_sql_settings: ::std::option::Option<crate::types::PostgreSqlSettings>,
     /// <p>The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code> structure.</p>
     #[doc(hidden)]
-    pub my_sql_settings: std::option::Option<crate::types::MySqlSettings>,
+    pub my_sql_settings: ::std::option::Option<crate::types::MySqlSettings>,
     /// <p>The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code> structure.</p>
     #[doc(hidden)]
-    pub oracle_settings: std::option::Option<crate::types::OracleSettings>,
+    pub oracle_settings: ::std::option::Option<crate::types::OracleSettings>,
     /// <p>The settings for the SAP ASE source and target endpoint. For more information, see the <code>SybaseSettings</code> structure.</p>
     #[doc(hidden)]
-    pub sybase_settings: std::option::Option<crate::types::SybaseSettings>,
+    pub sybase_settings: ::std::option::Option<crate::types::SybaseSettings>,
     /// <p>The settings for the Microsoft SQL Server source and target endpoint. For more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
     #[doc(hidden)]
     pub microsoft_sql_server_settings:
-        std::option::Option<crate::types::MicrosoftSqlServerSettings>,
+        ::std::option::Option<crate::types::MicrosoftSqlServerSettings>,
     /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
     #[doc(hidden)]
-    pub ibm_db2_settings: std::option::Option<crate::types::IbmDb2Settings>,
+    pub ibm_db2_settings: ::std::option::Option<crate::types::IbmDb2Settings>,
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
     #[doc(hidden)]
-    pub doc_db_settings: std::option::Option<crate::types::DocDbSettings>,
+    pub doc_db_settings: ::std::option::Option<crate::types::DocDbSettings>,
     /// <p>The settings for the Redis target endpoint. For more information, see the <code>RedisSettings</code> structure.</p>
     #[doc(hidden)]
-    pub redis_settings: std::option::Option<crate::types::RedisSettings>,
+    pub redis_settings: ::std::option::Option<crate::types::RedisSettings>,
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
     #[doc(hidden)]
-    pub gcp_my_sql_settings: std::option::Option<crate::types::GcpMySqlSettings>,
+    pub gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
 }
 impl Endpoint {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn endpoint_identifier(&self) -> std::option::Option<&str> {
+    pub fn endpoint_identifier(&self) -> ::std::option::Option<&str> {
         self.endpoint_identifier.as_deref()
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub fn endpoint_type(
         &self,
-    ) -> std::option::Option<&crate::types::ReplicationEndpointTypeValue> {
+    ) -> ::std::option::Option<&crate::types::ReplicationEndpointTypeValue> {
         self.endpoint_type.as_ref()
     }
     /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
-    pub fn engine_name(&self) -> std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<&str> {
         self.engine_name.as_deref()
     }
     /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
-    pub fn engine_display_name(&self) -> std::option::Option<&str> {
+    pub fn engine_display_name(&self) -> ::std::option::Option<&str> {
         self.engine_display_name.as_deref()
     }
     /// <p>The user name used to connect to the endpoint.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The name of the server at the endpoint.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
     /// <p>The port value used to access the endpoint.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The name of the database at the endpoint.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>Additional connection attributes used to connect to the endpoint.</p>
-    pub fn extra_connection_attributes(&self) -> std::option::Option<&str> {
+    pub fn extra_connection_attributes(&self) -> ::std::option::Option<&str> {
         self.extra_connection_attributes.as_deref()
     }
     /// <p>The status of the endpoint.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
-    pub fn ssl_mode(&self) -> std::option::Option<&crate::types::DmsSslModeValue> {
+    pub fn ssl_mode(&self) -> ::std::option::Option<&crate::types::DmsSslModeValue> {
         self.ssl_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>The external table definition.</p>
-    pub fn external_table_definition(&self) -> std::option::Option<&str> {
+    pub fn external_table_definition(&self) -> ::std::option::Option<&str> {
         self.external_table_definition.as_deref()
     }
     /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
-    pub fn dynamo_db_settings(&self) -> std::option::Option<&crate::types::DynamoDbSettings> {
+    pub fn dynamo_db_settings(&self) -> ::std::option::Option<&crate::types::DynamoDbSettings> {
         self.dynamo_db_settings.as_ref()
     }
     /// <p>The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.</p>
-    pub fn s3_settings(&self) -> std::option::Option<&crate::types::S3Settings> {
+    pub fn s3_settings(&self) -> ::std::option::Option<&crate::types::S3Settings> {
         self.s3_settings.as_ref()
     }
     /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
-    pub fn dms_transfer_settings(&self) -> std::option::Option<&crate::types::DmsTransferSettings> {
+    pub fn dms_transfer_settings(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DmsTransferSettings> {
         self.dms_transfer_settings.as_ref()
     }
     /// <p>The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code> structure.</p>
-    pub fn mongo_db_settings(&self) -> std::option::Option<&crate::types::MongoDbSettings> {
+    pub fn mongo_db_settings(&self) -> ::std::option::Option<&crate::types::MongoDbSettings> {
         self.mongo_db_settings.as_ref()
     }
     /// <p>The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code> structure.</p>
-    pub fn kinesis_settings(&self) -> std::option::Option<&crate::types::KinesisSettings> {
+    pub fn kinesis_settings(&self) -> ::std::option::Option<&crate::types::KinesisSettings> {
         self.kinesis_settings.as_ref()
     }
     /// <p>The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code> structure.</p>
-    pub fn kafka_settings(&self) -> std::option::Option<&crate::types::KafkaSettings> {
+    pub fn kafka_settings(&self) -> ::std::option::Option<&crate::types::KafkaSettings> {
         self.kafka_settings.as_ref()
     }
     /// <p>The settings for the OpenSearch source endpoint. For more information, see the <code>ElasticsearchSettings</code> structure.</p>
     pub fn elasticsearch_settings(
         &self,
-    ) -> std::option::Option<&crate::types::ElasticsearchSettings> {
+    ) -> ::std::option::Option<&crate::types::ElasticsearchSettings> {
         self.elasticsearch_settings.as_ref()
     }
     /// <p>The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code> structure.</p>
-    pub fn neptune_settings(&self) -> std::option::Option<&crate::types::NeptuneSettings> {
+    pub fn neptune_settings(&self) -> ::std::option::Option<&crate::types::NeptuneSettings> {
         self.neptune_settings.as_ref()
     }
     /// <p>Settings for the Amazon Redshift endpoint.</p>
-    pub fn redshift_settings(&self) -> std::option::Option<&crate::types::RedshiftSettings> {
+    pub fn redshift_settings(&self) -> ::std::option::Option<&crate::types::RedshiftSettings> {
         self.redshift_settings.as_ref()
     }
     /// <p>The settings for the PostgreSQL source and target endpoint. For more information, see the <code>PostgreSQLSettings</code> structure.</p>
-    pub fn postgre_sql_settings(&self) -> std::option::Option<&crate::types::PostgreSqlSettings> {
+    pub fn postgre_sql_settings(&self) -> ::std::option::Option<&crate::types::PostgreSqlSettings> {
         self.postgre_sql_settings.as_ref()
     }
     /// <p>The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code> structure.</p>
-    pub fn my_sql_settings(&self) -> std::option::Option<&crate::types::MySqlSettings> {
+    pub fn my_sql_settings(&self) -> ::std::option::Option<&crate::types::MySqlSettings> {
         self.my_sql_settings.as_ref()
     }
     /// <p>The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code> structure.</p>
-    pub fn oracle_settings(&self) -> std::option::Option<&crate::types::OracleSettings> {
+    pub fn oracle_settings(&self) -> ::std::option::Option<&crate::types::OracleSettings> {
         self.oracle_settings.as_ref()
     }
     /// <p>The settings for the SAP ASE source and target endpoint. For more information, see the <code>SybaseSettings</code> structure.</p>
-    pub fn sybase_settings(&self) -> std::option::Option<&crate::types::SybaseSettings> {
+    pub fn sybase_settings(&self) -> ::std::option::Option<&crate::types::SybaseSettings> {
         self.sybase_settings.as_ref()
     }
     /// <p>The settings for the Microsoft SQL Server source and target endpoint. For more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
     pub fn microsoft_sql_server_settings(
         &self,
-    ) -> std::option::Option<&crate::types::MicrosoftSqlServerSettings> {
+    ) -> ::std::option::Option<&crate::types::MicrosoftSqlServerSettings> {
         self.microsoft_sql_server_settings.as_ref()
     }
     /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
-    pub fn ibm_db2_settings(&self) -> std::option::Option<&crate::types::IbmDb2Settings> {
+    pub fn ibm_db2_settings(&self) -> ::std::option::Option<&crate::types::IbmDb2Settings> {
         self.ibm_db2_settings.as_ref()
     }
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
-    pub fn doc_db_settings(&self) -> std::option::Option<&crate::types::DocDbSettings> {
+    pub fn doc_db_settings(&self) -> ::std::option::Option<&crate::types::DocDbSettings> {
         self.doc_db_settings.as_ref()
     }
     /// <p>The settings for the Redis target endpoint. For more information, see the <code>RedisSettings</code> structure.</p>
-    pub fn redis_settings(&self) -> std::option::Option<&crate::types::RedisSettings> {
+    pub fn redis_settings(&self) -> ::std::option::Option<&crate::types::RedisSettings> {
         self.redis_settings.as_ref()
     }
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-    pub fn gcp_my_sql_settings(&self) -> std::option::Option<&crate::types::GcpMySqlSettings> {
+    pub fn gcp_my_sql_settings(&self) -> ::std::option::Option<&crate::types::GcpMySqlSettings> {
         self.gcp_my_sql_settings.as_ref()
     }
 }
@@ -277,403 +279,435 @@ impl Endpoint {
 
 /// A builder for [`Endpoint`](crate::types::Endpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointBuilder {
-    pub(crate) endpoint_identifier: std::option::Option<std::string::String>,
-    pub(crate) endpoint_type: std::option::Option<crate::types::ReplicationEndpointTypeValue>,
-    pub(crate) engine_name: std::option::Option<std::string::String>,
-    pub(crate) engine_display_name: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) server_name: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) extra_connection_attributes: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) endpoint_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) ssl_mode: std::option::Option<crate::types::DmsSslModeValue>,
-    pub(crate) service_access_role_arn: std::option::Option<std::string::String>,
-    pub(crate) external_table_definition: std::option::Option<std::string::String>,
-    pub(crate) external_id: std::option::Option<std::string::String>,
-    pub(crate) dynamo_db_settings: std::option::Option<crate::types::DynamoDbSettings>,
-    pub(crate) s3_settings: std::option::Option<crate::types::S3Settings>,
-    pub(crate) dms_transfer_settings: std::option::Option<crate::types::DmsTransferSettings>,
-    pub(crate) mongo_db_settings: std::option::Option<crate::types::MongoDbSettings>,
-    pub(crate) kinesis_settings: std::option::Option<crate::types::KinesisSettings>,
-    pub(crate) kafka_settings: std::option::Option<crate::types::KafkaSettings>,
-    pub(crate) elasticsearch_settings: std::option::Option<crate::types::ElasticsearchSettings>,
-    pub(crate) neptune_settings: std::option::Option<crate::types::NeptuneSettings>,
-    pub(crate) redshift_settings: std::option::Option<crate::types::RedshiftSettings>,
-    pub(crate) postgre_sql_settings: std::option::Option<crate::types::PostgreSqlSettings>,
-    pub(crate) my_sql_settings: std::option::Option<crate::types::MySqlSettings>,
-    pub(crate) oracle_settings: std::option::Option<crate::types::OracleSettings>,
-    pub(crate) sybase_settings: std::option::Option<crate::types::SybaseSettings>,
+    pub(crate) endpoint_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::ReplicationEndpointTypeValue>,
+    pub(crate) engine_name: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) server_name: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) extra_connection_attributes: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ssl_mode: ::std::option::Option<crate::types::DmsSslModeValue>,
+    pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) external_table_definition: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dynamo_db_settings: ::std::option::Option<crate::types::DynamoDbSettings>,
+    pub(crate) s3_settings: ::std::option::Option<crate::types::S3Settings>,
+    pub(crate) dms_transfer_settings: ::std::option::Option<crate::types::DmsTransferSettings>,
+    pub(crate) mongo_db_settings: ::std::option::Option<crate::types::MongoDbSettings>,
+    pub(crate) kinesis_settings: ::std::option::Option<crate::types::KinesisSettings>,
+    pub(crate) kafka_settings: ::std::option::Option<crate::types::KafkaSettings>,
+    pub(crate) elasticsearch_settings: ::std::option::Option<crate::types::ElasticsearchSettings>,
+    pub(crate) neptune_settings: ::std::option::Option<crate::types::NeptuneSettings>,
+    pub(crate) redshift_settings: ::std::option::Option<crate::types::RedshiftSettings>,
+    pub(crate) postgre_sql_settings: ::std::option::Option<crate::types::PostgreSqlSettings>,
+    pub(crate) my_sql_settings: ::std::option::Option<crate::types::MySqlSettings>,
+    pub(crate) oracle_settings: ::std::option::Option<crate::types::OracleSettings>,
+    pub(crate) sybase_settings: ::std::option::Option<crate::types::SybaseSettings>,
     pub(crate) microsoft_sql_server_settings:
-        std::option::Option<crate::types::MicrosoftSqlServerSettings>,
-    pub(crate) ibm_db2_settings: std::option::Option<crate::types::IbmDb2Settings>,
-    pub(crate) doc_db_settings: std::option::Option<crate::types::DocDbSettings>,
-    pub(crate) redis_settings: std::option::Option<crate::types::RedisSettings>,
-    pub(crate) gcp_my_sql_settings: std::option::Option<crate::types::GcpMySqlSettings>,
+        ::std::option::Option<crate::types::MicrosoftSqlServerSettings>,
+    pub(crate) ibm_db2_settings: ::std::option::Option<crate::types::IbmDb2Settings>,
+    pub(crate) doc_db_settings: ::std::option::Option<crate::types::DocDbSettings>,
+    pub(crate) redis_settings: ::std::option::Option<crate::types::RedisSettings>,
+    pub(crate) gcp_my_sql_settings: ::std::option::Option<crate::types::GcpMySqlSettings>,
 }
 impl EndpointBuilder {
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_identifier = Some(input.into());
+    pub fn endpoint_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     pub fn set_endpoint_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.endpoint_identifier = input;
         self
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub fn endpoint_type(mut self, input: crate::types::ReplicationEndpointTypeValue) -> Self {
-        self.endpoint_type = Some(input);
+        self.endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub fn set_endpoint_type(
         mut self,
-        input: std::option::Option<crate::types::ReplicationEndpointTypeValue>,
+        input: ::std::option::Option<crate::types::ReplicationEndpointTypeValue>,
     ) -> Self {
         self.endpoint_type = input;
         self
     }
     /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
-    pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_name = Some(input.into());
+    pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
-    pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
         self
     }
     /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
-    pub fn engine_display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_display_name = Some(input.into());
+    pub fn engine_display_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this value would be "Amazon Aurora MySQL".</p>
     pub fn set_engine_display_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.engine_display_name = input;
         self
     }
     /// <p>The user name used to connect to the endpoint.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name used to connect to the endpoint.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The name of the server at the endpoint.</p>
-    pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_name = Some(input.into());
+    pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the server at the endpoint.</p>
-    pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
     /// <p>The port value used to access the endpoint.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port value used to access the endpoint.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The name of the database at the endpoint.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database at the endpoint.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
     /// <p>Additional connection attributes used to connect to the endpoint.</p>
-    pub fn extra_connection_attributes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.extra_connection_attributes = Some(input.into());
+    pub fn extra_connection_attributes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.extra_connection_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional connection attributes used to connect to the endpoint.</p>
     pub fn set_extra_connection_attributes(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.extra_connection_attributes = input;
         self
     }
     /// <p>The status of the endpoint.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the endpoint.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_arn = Some(input.into());
+    pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
     pub fn ssl_mode(mut self, input: crate::types::DmsSslModeValue) -> Self {
-        self.ssl_mode = Some(input);
+        self.ssl_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
     pub fn set_ssl_mode(
         mut self,
-        input: std::option::Option<crate::types::DmsSslModeValue>,
+        input: ::std::option::Option<crate::types::DmsSslModeValue>,
     ) -> Self {
         self.ssl_mode = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_access_role_arn = Some(input.into());
+    pub fn service_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn set_service_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_access_role_arn = input;
         self
     }
     /// <p>The external table definition.</p>
-    pub fn external_table_definition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_table_definition = Some(input.into());
+    pub fn external_table_definition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.external_table_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external table definition.</p>
     pub fn set_external_table_definition(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.external_table_definition = input;
         self
     }
     /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
-    pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_id = Some(input.into());
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. </p>
-    pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
     }
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
     pub fn dynamo_db_settings(mut self, input: crate::types::DynamoDbSettings) -> Self {
-        self.dynamo_db_settings = Some(input);
+        self.dynamo_db_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code> structure.</p>
     pub fn set_dynamo_db_settings(
         mut self,
-        input: std::option::Option<crate::types::DynamoDbSettings>,
+        input: ::std::option::Option<crate::types::DynamoDbSettings>,
     ) -> Self {
         self.dynamo_db_settings = input;
         self
     }
     /// <p>The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.</p>
     pub fn s3_settings(mut self, input: crate::types::S3Settings) -> Self {
-        self.s3_settings = Some(input);
+        self.s3_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.</p>
-    pub fn set_s3_settings(mut self, input: std::option::Option<crate::types::S3Settings>) -> Self {
+    pub fn set_s3_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::S3Settings>,
+    ) -> Self {
         self.s3_settings = input;
         self
     }
     /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
     pub fn dms_transfer_settings(mut self, input: crate::types::DmsTransferSettings) -> Self {
-        self.dms_transfer_settings = Some(input);
+        self.dms_transfer_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the DMS Transfer type source. For more information, see the DmsTransferSettings structure. </p>
     pub fn set_dms_transfer_settings(
         mut self,
-        input: std::option::Option<crate::types::DmsTransferSettings>,
+        input: ::std::option::Option<crate::types::DmsTransferSettings>,
     ) -> Self {
         self.dms_transfer_settings = input;
         self
     }
     /// <p>The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code> structure.</p>
     pub fn mongo_db_settings(mut self, input: crate::types::MongoDbSettings) -> Self {
-        self.mongo_db_settings = Some(input);
+        self.mongo_db_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code> structure.</p>
     pub fn set_mongo_db_settings(
         mut self,
-        input: std::option::Option<crate::types::MongoDbSettings>,
+        input: ::std::option::Option<crate::types::MongoDbSettings>,
     ) -> Self {
         self.mongo_db_settings = input;
         self
     }
     /// <p>The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code> structure.</p>
     pub fn kinesis_settings(mut self, input: crate::types::KinesisSettings) -> Self {
-        self.kinesis_settings = Some(input);
+        self.kinesis_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code> structure.</p>
     pub fn set_kinesis_settings(
         mut self,
-        input: std::option::Option<crate::types::KinesisSettings>,
+        input: ::std::option::Option<crate::types::KinesisSettings>,
     ) -> Self {
         self.kinesis_settings = input;
         self
     }
     /// <p>The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code> structure.</p>
     pub fn kafka_settings(mut self, input: crate::types::KafkaSettings) -> Self {
-        self.kafka_settings = Some(input);
+        self.kafka_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code> structure.</p>
     pub fn set_kafka_settings(
         mut self,
-        input: std::option::Option<crate::types::KafkaSettings>,
+        input: ::std::option::Option<crate::types::KafkaSettings>,
     ) -> Self {
         self.kafka_settings = input;
         self
     }
     /// <p>The settings for the OpenSearch source endpoint. For more information, see the <code>ElasticsearchSettings</code> structure.</p>
     pub fn elasticsearch_settings(mut self, input: crate::types::ElasticsearchSettings) -> Self {
-        self.elasticsearch_settings = Some(input);
+        self.elasticsearch_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the OpenSearch source endpoint. For more information, see the <code>ElasticsearchSettings</code> structure.</p>
     pub fn set_elasticsearch_settings(
         mut self,
-        input: std::option::Option<crate::types::ElasticsearchSettings>,
+        input: ::std::option::Option<crate::types::ElasticsearchSettings>,
     ) -> Self {
         self.elasticsearch_settings = input;
         self
     }
     /// <p>The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code> structure.</p>
     pub fn neptune_settings(mut self, input: crate::types::NeptuneSettings) -> Self {
-        self.neptune_settings = Some(input);
+        self.neptune_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code> structure.</p>
     pub fn set_neptune_settings(
         mut self,
-        input: std::option::Option<crate::types::NeptuneSettings>,
+        input: ::std::option::Option<crate::types::NeptuneSettings>,
     ) -> Self {
         self.neptune_settings = input;
         self
     }
     /// <p>Settings for the Amazon Redshift endpoint.</p>
     pub fn redshift_settings(mut self, input: crate::types::RedshiftSettings) -> Self {
-        self.redshift_settings = Some(input);
+        self.redshift_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings for the Amazon Redshift endpoint.</p>
     pub fn set_redshift_settings(
         mut self,
-        input: std::option::Option<crate::types::RedshiftSettings>,
+        input: ::std::option::Option<crate::types::RedshiftSettings>,
     ) -> Self {
         self.redshift_settings = input;
         self
     }
     /// <p>The settings for the PostgreSQL source and target endpoint. For more information, see the <code>PostgreSQLSettings</code> structure.</p>
     pub fn postgre_sql_settings(mut self, input: crate::types::PostgreSqlSettings) -> Self {
-        self.postgre_sql_settings = Some(input);
+        self.postgre_sql_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the PostgreSQL source and target endpoint. For more information, see the <code>PostgreSQLSettings</code> structure.</p>
     pub fn set_postgre_sql_settings(
         mut self,
-        input: std::option::Option<crate::types::PostgreSqlSettings>,
+        input: ::std::option::Option<crate::types::PostgreSqlSettings>,
     ) -> Self {
         self.postgre_sql_settings = input;
         self
     }
     /// <p>The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code> structure.</p>
     pub fn my_sql_settings(mut self, input: crate::types::MySqlSettings) -> Self {
-        self.my_sql_settings = Some(input);
+        self.my_sql_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code> structure.</p>
     pub fn set_my_sql_settings(
         mut self,
-        input: std::option::Option<crate::types::MySqlSettings>,
+        input: ::std::option::Option<crate::types::MySqlSettings>,
     ) -> Self {
         self.my_sql_settings = input;
         self
     }
     /// <p>The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code> structure.</p>
     pub fn oracle_settings(mut self, input: crate::types::OracleSettings) -> Self {
-        self.oracle_settings = Some(input);
+        self.oracle_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code> structure.</p>
     pub fn set_oracle_settings(
         mut self,
-        input: std::option::Option<crate::types::OracleSettings>,
+        input: ::std::option::Option<crate::types::OracleSettings>,
     ) -> Self {
         self.oracle_settings = input;
         self
     }
     /// <p>The settings for the SAP ASE source and target endpoint. For more information, see the <code>SybaseSettings</code> structure.</p>
     pub fn sybase_settings(mut self, input: crate::types::SybaseSettings) -> Self {
-        self.sybase_settings = Some(input);
+        self.sybase_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the SAP ASE source and target endpoint. For more information, see the <code>SybaseSettings</code> structure.</p>
     pub fn set_sybase_settings(
         mut self,
-        input: std::option::Option<crate::types::SybaseSettings>,
+        input: ::std::option::Option<crate::types::SybaseSettings>,
     ) -> Self {
         self.sybase_settings = input;
         self
@@ -683,65 +717,65 @@ impl EndpointBuilder {
         mut self,
         input: crate::types::MicrosoftSqlServerSettings,
     ) -> Self {
-        self.microsoft_sql_server_settings = Some(input);
+        self.microsoft_sql_server_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the Microsoft SQL Server source and target endpoint. For more information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
     pub fn set_microsoft_sql_server_settings(
         mut self,
-        input: std::option::Option<crate::types::MicrosoftSqlServerSettings>,
+        input: ::std::option::Option<crate::types::MicrosoftSqlServerSettings>,
     ) -> Self {
         self.microsoft_sql_server_settings = input;
         self
     }
     /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
     pub fn ibm_db2_settings(mut self, input: crate::types::IbmDb2Settings) -> Self {
-        self.ibm_db2_settings = Some(input);
+        self.ibm_db2_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code> structure. </p>
     pub fn set_ibm_db2_settings(
         mut self,
-        input: std::option::Option<crate::types::IbmDb2Settings>,
+        input: ::std::option::Option<crate::types::IbmDb2Settings>,
     ) -> Self {
         self.ibm_db2_settings = input;
         self
     }
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
     pub fn doc_db_settings(mut self, input: crate::types::DocDbSettings) -> Self {
-        self.doc_db_settings = Some(input);
+        self.doc_db_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
     pub fn set_doc_db_settings(
         mut self,
-        input: std::option::Option<crate::types::DocDbSettings>,
+        input: ::std::option::Option<crate::types::DocDbSettings>,
     ) -> Self {
         self.doc_db_settings = input;
         self
     }
     /// <p>The settings for the Redis target endpoint. For more information, see the <code>RedisSettings</code> structure.</p>
     pub fn redis_settings(mut self, input: crate::types::RedisSettings) -> Self {
-        self.redis_settings = Some(input);
+        self.redis_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the Redis target endpoint. For more information, see the <code>RedisSettings</code> structure.</p>
     pub fn set_redis_settings(
         mut self,
-        input: std::option::Option<crate::types::RedisSettings>,
+        input: ::std::option::Option<crate::types::RedisSettings>,
     ) -> Self {
         self.redis_settings = input;
         self
     }
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
     pub fn gcp_my_sql_settings(mut self, input: crate::types::GcpMySqlSettings) -> Self {
-        self.gcp_my_sql_settings = Some(input);
+        self.gcp_my_sql_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
     pub fn set_gcp_my_sql_settings(
         mut self,
-        input: std::option::Option<crate::types::GcpMySqlSettings>,
+        input: ::std::option::Option<crate::types::GcpMySqlSettings>,
     ) -> Self {
         self.gcp_my_sql_settings = input;
         self

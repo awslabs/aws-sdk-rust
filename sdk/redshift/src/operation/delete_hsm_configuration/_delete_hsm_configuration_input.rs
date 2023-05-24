@@ -2,15 +2,15 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHsmConfigurationInput {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     #[doc(hidden)]
-    pub hsm_configuration_identifier: std::option::Option<std::string::String>,
+    pub hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHsmConfigurationInput {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    pub fn hsm_configuration_identifier(&self) -> std::option::Option<&str> {
+    pub fn hsm_configuration_identifier(&self) -> ::std::option::Option<&str> {
         self.hsm_configuration_identifier.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl DeleteHsmConfigurationInput {
 
 /// A builder for [`DeleteHsmConfigurationInput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteHsmConfigurationInputBuilder {
-    pub(crate) hsm_configuration_identifier: std::option::Option<std::string::String>,
+    pub(crate) hsm_configuration_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHsmConfigurationInputBuilder {
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
-    pub fn hsm_configuration_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hsm_configuration_identifier = Some(input.into());
+    pub fn hsm_configuration_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hsm_configuration_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
     pub fn set_hsm_configuration_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.hsm_configuration_identifier = input;
         self
@@ -46,11 +51,11 @@ impl DeleteHsmConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHsmConfigurationInput`](crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_hsm_configuration::DeleteHsmConfigurationInput {
                 hsm_configuration_identifier: self.hsm_configuration_identifier,
             },

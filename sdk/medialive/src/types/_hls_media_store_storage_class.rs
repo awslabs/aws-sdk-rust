@@ -37,13 +37,13 @@
 /// Hls Media Store Storage Class
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsMediaStoreStorageClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum HlsMediaStoreStorageClass {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsMediaStoreStorageClass {
+impl ::std::convert::From<&str> for HlsMediaStoreStorageClass {
     fn from(s: &str) -> Self {
         match s {
             "TEMPORAL" => HlsMediaStoreStorageClass::Temporal,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for HlsMediaStoreStorageClass {
         }
     }
 }
-impl std::str::FromStr for HlsMediaStoreStorageClass {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsMediaStoreStorageClass {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsMediaStoreStorageClass::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsMediaStoreStorageClass::from(s))
     }
 }
 impl HlsMediaStoreStorageClass {
@@ -81,7 +81,7 @@ impl HlsMediaStoreStorageClass {
         &["TEMPORAL"]
     }
 }
-impl AsRef<str> for HlsMediaStoreStorageClass {
+impl ::std::convert::AsRef<str> for HlsMediaStoreStorageClass {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

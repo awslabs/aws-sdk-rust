@@ -2,15 +2,15 @@
 
 /// <p> Information on the instance metadata service (IMDS) configuration of the notebook instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
     /// <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
     #[doc(hidden)]
-    pub minimum_instance_metadata_service_version: std::option::Option<std::string::String>,
+    pub minimum_instance_metadata_service_version: ::std::option::Option<::std::string::String>,
 }
 impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
     /// <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-    pub fn minimum_instance_metadata_service_version(&self) -> std::option::Option<&str> {
+    pub fn minimum_instance_metadata_service_version(&self) -> ::std::option::Option<&str> {
         self.minimum_instance_metadata_service_version.as_deref()
     }
 }
@@ -23,23 +23,26 @@ impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails {
 
 /// A builder for [`AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails`](crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetailsBuilder {
-    pub(crate) minimum_instance_metadata_service_version: std::option::Option<std::string::String>,
+    pub(crate) minimum_instance_metadata_service_version:
+        ::std::option::Option<::std::string::String>,
 }
 impl AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetailsBuilder {
     /// <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
     pub fn minimum_instance_metadata_service_version(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.minimum_instance_metadata_service_version = Some(input.into());
+        self.minimum_instance_metadata_service_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
     pub fn set_minimum_instance_metadata_service_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.minimum_instance_metadata_service_version = input;
         self

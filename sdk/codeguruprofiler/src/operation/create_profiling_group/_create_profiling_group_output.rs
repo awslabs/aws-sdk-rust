@@ -2,20 +2,22 @@
 
 /// <p>The structure representing the createProfilingGroupResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
     #[doc(hidden)]
-    pub profiling_group: std::option::Option<crate::types::ProfilingGroupDescription>,
+    pub profiling_group: ::std::option::Option<crate::types::ProfilingGroupDescription>,
     _request_id: Option<String>,
 }
 impl CreateProfilingGroupOutput {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
-    pub fn profiling_group(&self) -> std::option::Option<&crate::types::ProfilingGroupDescription> {
+    pub fn profiling_group(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ProfilingGroupDescription> {
         self.profiling_group.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateProfilingGroupOutput {
+impl ::aws_http::request_id::RequestId for CreateProfilingGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +32,23 @@ impl CreateProfilingGroupOutput {
 
 /// A builder for [`CreateProfilingGroupOutput`](crate::operation::create_profiling_group::CreateProfilingGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateProfilingGroupOutputBuilder {
-    pub(crate) profiling_group: std::option::Option<crate::types::ProfilingGroupDescription>,
+    pub(crate) profiling_group: ::std::option::Option<crate::types::ProfilingGroupDescription>,
     _request_id: Option<String>,
 }
 impl CreateProfilingGroupOutputBuilder {
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
     pub fn profiling_group(mut self, input: crate::types::ProfilingGroupDescription) -> Self {
-        self.profiling_group = Some(input);
+        self.profiling_group = ::std::option::Option::Some(input);
         self
     }
     /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the created profiling group. </p>
     pub fn set_profiling_group(
         mut self,
-        input: std::option::Option<crate::types::ProfilingGroupDescription>,
+        input: ::std::option::Option<crate::types::ProfilingGroupDescription>,
     ) -> Self {
         self.profiling_group = input;
         self

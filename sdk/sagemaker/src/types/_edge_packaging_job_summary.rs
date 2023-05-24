@@ -2,66 +2,66 @@
 
 /// <p>Summary of edge packaging job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgePackagingJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
     #[doc(hidden)]
-    pub edge_packaging_job_arn: std::option::Option<std::string::String>,
+    pub edge_packaging_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the edge packaging job.</p>
     #[doc(hidden)]
-    pub edge_packaging_job_name: std::option::Option<std::string::String>,
+    pub edge_packaging_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the edge packaging job.</p>
     #[doc(hidden)]
-    pub edge_packaging_job_status: std::option::Option<crate::types::EdgePackagingJobStatus>,
+    pub edge_packaging_job_status: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
     /// <p>The name of the SageMaker Neo compilation job.</p>
     #[doc(hidden)]
-    pub compilation_job_name: std::option::Option<std::string::String>,
+    pub compilation_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the model.</p>
     #[doc(hidden)]
-    pub model_version: std::option::Option<std::string::String>,
+    pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the job was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EdgePackagingJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
-    pub fn edge_packaging_job_arn(&self) -> std::option::Option<&str> {
+    pub fn edge_packaging_job_arn(&self) -> ::std::option::Option<&str> {
         self.edge_packaging_job_arn.as_deref()
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
+    pub fn edge_packaging_job_name(&self) -> ::std::option::Option<&str> {
         self.edge_packaging_job_name.as_deref()
     }
     /// <p>The status of the edge packaging job.</p>
     pub fn edge_packaging_job_status(
         &self,
-    ) -> std::option::Option<&crate::types::EdgePackagingJobStatus> {
+    ) -> ::std::option::Option<&crate::types::EdgePackagingJobStatus> {
         self.edge_packaging_job_status.as_ref()
     }
     /// <p>The name of the SageMaker Neo compilation job.</p>
-    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
+    pub fn compilation_job_name(&self) -> ::std::option::Option<&str> {
         self.compilation_job_name.as_deref()
     }
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<&str> {
         self.model_version.as_deref()
     }
     /// <p>The timestamp of when the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -74,40 +74,49 @@ impl EdgePackagingJobSummary {
 
 /// A builder for [`EdgePackagingJobSummary`](crate::types::EdgePackagingJobSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdgePackagingJobSummaryBuilder {
-    pub(crate) edge_packaging_job_arn: std::option::Option<std::string::String>,
-    pub(crate) edge_packaging_job_name: std::option::Option<std::string::String>,
-    pub(crate) edge_packaging_job_status: std::option::Option<crate::types::EdgePackagingJobStatus>,
-    pub(crate) compilation_job_name: std::option::Option<std::string::String>,
-    pub(crate) model_name: std::option::Option<std::string::String>,
-    pub(crate) model_version: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) edge_packaging_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) edge_packaging_job_status:
+        ::std::option::Option<crate::types::EdgePackagingJobStatus>,
+    pub(crate) compilation_job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_version: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EdgePackagingJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
-    pub fn edge_packaging_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.edge_packaging_job_arn = Some(input.into());
+    pub fn edge_packaging_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.edge_packaging_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the edge packaging job.</p>
     pub fn set_edge_packaging_job_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.edge_packaging_job_arn = input;
         self
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.edge_packaging_job_name = Some(input.into());
+    pub fn edge_packaging_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the edge packaging job.</p>
     pub fn set_edge_packaging_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.edge_packaging_job_name = input;
         self
@@ -117,72 +126,81 @@ impl EdgePackagingJobSummaryBuilder {
         mut self,
         input: crate::types::EdgePackagingJobStatus,
     ) -> Self {
-        self.edge_packaging_job_status = Some(input);
+        self.edge_packaging_job_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the edge packaging job.</p>
     pub fn set_edge_packaging_job_status(
         mut self,
-        input: std::option::Option<crate::types::EdgePackagingJobStatus>,
+        input: ::std::option::Option<crate::types::EdgePackagingJobStatus>,
     ) -> Self {
         self.edge_packaging_job_status = input;
         self
     }
     /// <p>The name of the SageMaker Neo compilation job.</p>
-    pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compilation_job_name = Some(input.into());
+    pub fn compilation_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compilation_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SageMaker Neo compilation job.</p>
     pub fn set_compilation_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.compilation_job_name = input;
         self
     }
     /// <p>The name of the model.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_version = Some(input.into());
+    pub fn model_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the model.</p>
-    pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_version = input;
         self
     }
     /// <p>The timestamp of when the job was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of when the job was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of when the edge packaging job was last updated.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self

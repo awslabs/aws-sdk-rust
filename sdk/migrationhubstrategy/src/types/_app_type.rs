@@ -58,13 +58,13 @@
 /// _Note: `AppType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
@@ -114,7 +114,7 @@ pub enum AppType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AppType {
+impl ::std::convert::From<&str> for AppType {
     fn from(s: &str) -> Self {
         match s {
             "Cassandra" => AppType::Cassandra,
@@ -143,11 +143,11 @@ impl std::convert::From<&str> for AppType {
         }
     }
 }
-impl std::str::FromStr for AppType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AppType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AppType::from(s))
     }
 }
 impl AppType {
@@ -207,7 +207,7 @@ impl AppType {
         ]
     }
 }
-impl AsRef<str> for AppType {
+impl ::std::convert::AsRef<str> for AppType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

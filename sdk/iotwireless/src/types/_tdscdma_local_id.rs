@@ -2,22 +2,22 @@
 
 /// <p>TD-SCDMA local identification (local Id) information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TdscdmaLocalId {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
     #[doc(hidden)]
-    pub uarfcn: std::option::Option<i32>,
+    pub uarfcn: ::std::option::Option<i32>,
     /// <p>Cell parameters for TD-SCDMA.</p>
     #[doc(hidden)]
-    pub cell_params: std::option::Option<i32>,
+    pub cell_params: ::std::option::Option<i32>,
 }
 impl TdscdmaLocalId {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
-    pub fn uarfcn(&self) -> std::option::Option<i32> {
+    pub fn uarfcn(&self) -> ::std::option::Option<i32> {
         self.uarfcn
     }
     /// <p>Cell parameters for TD-SCDMA.</p>
-    pub fn cell_params(&self) -> std::option::Option<i32> {
+    pub fn cell_params(&self) -> ::std::option::Option<i32> {
         self.cell_params
     }
 }
@@ -30,29 +30,31 @@ impl TdscdmaLocalId {
 
 /// A builder for [`TdscdmaLocalId`](crate::types::TdscdmaLocalId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TdscdmaLocalIdBuilder {
-    pub(crate) uarfcn: std::option::Option<i32>,
-    pub(crate) cell_params: std::option::Option<i32>,
+    pub(crate) uarfcn: ::std::option::Option<i32>,
+    pub(crate) cell_params: ::std::option::Option<i32>,
 }
 impl TdscdmaLocalIdBuilder {
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
     pub fn uarfcn(mut self, input: i32) -> Self {
-        self.uarfcn = Some(input);
+        self.uarfcn = ::std::option::Option::Some(input);
         self
     }
     /// <p>TD-SCDMA UTRA (Universal Terrestrial Radio Access Network) absolute RF channel number (UARFCN).</p>
-    pub fn set_uarfcn(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_uarfcn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.uarfcn = input;
         self
     }
     /// <p>Cell parameters for TD-SCDMA.</p>
     pub fn cell_params(mut self, input: i32) -> Self {
-        self.cell_params = Some(input);
+        self.cell_params = ::std::option::Option::Some(input);
         self
     }
     /// <p>Cell parameters for TD-SCDMA.</p>
-    pub fn set_cell_params(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cell_params(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cell_params = input;
         self
     }

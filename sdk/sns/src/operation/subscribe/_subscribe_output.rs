@@ -2,20 +2,20 @@
 
 /// <p>Response for Subscribe action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubscribeOutput {
     /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation" if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code> is true, then the value is always the subscription ARN, even if the subscription requires confirmation.</p>
     #[doc(hidden)]
-    pub subscription_arn: std::option::Option<std::string::String>,
+    pub subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SubscribeOutput {
     /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation" if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code> is true, then the value is always the subscription ARN, even if the subscription requires confirmation.</p>
-    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+    pub fn subscription_arn(&self) -> ::std::option::Option<&str> {
         self.subscription_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for SubscribeOutput {
+impl ::aws_http::request_id::RequestId for SubscribeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,27 @@ impl SubscribeOutput {
 
 /// A builder for [`SubscribeOutput`](crate::operation::subscribe::SubscribeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubscribeOutputBuilder {
-    pub(crate) subscription_arn: std::option::Option<std::string::String>,
+    pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SubscribeOutputBuilder {
     /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation" if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code> is true, then the value is always the subscription ARN, even if the subscription requires confirmation.</p>
-    pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_arn = Some(input.into());
+    pub fn subscription_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the subscription if it is confirmed, or the string "pending confirmation" if the subscription requires confirmation. However, if the API request parameter <code>ReturnSubscriptionArn</code> is true, then the value is always the subscription ARN, even if the subscription requires confirmation.</p>
-    pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subscription_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.subscription_arn = input;
         self
     }

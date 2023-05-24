@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeregisterWebhookWithThirdParty`](crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`webhook_name(impl Into<String>)`](crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyFluentBuilder::webhook_name) / [`set_webhook_name(Option<String>)`](crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyFluentBuilder::set_webhook_name): <p>The name of the webhook you want to deregister.</p>
+    ///   - [`webhook_name(impl ::std::convert::Into<String>)`](crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyFluentBuilder::webhook_name) / [`set_webhook_name(Option<String>)`](crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyFluentBuilder::set_webhook_name): <p>The name of the webhook you want to deregister.</p>
     /// - On success, responds with [`DeregisterWebhookWithThirdPartyOutput`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput)
     /// - On failure, responds with [`SdkError<DeregisterWebhookWithThirdPartyError>`](crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError)
     pub fn deregister_webhook_with_third_party(&self) -> crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyFluentBuilder{

@@ -15,56 +15,59 @@ pub use crate::operation::delete_fleets::_delete_fleets_input::DeleteFleetsInput
 /// <li> <p>Up to 1000 instances can be terminated in a single request to delete <code>instant</code> fleets.</p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Delete an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFleetsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_fleets::builders::DeleteFleetsInputBuilder,
 }
 impl DeleteFleetsFluentBuilder {
     /// Creates a new `DeleteFleets`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_fleets::DeleteFleets,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_fleets::DeleteFleetsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleets::DeleteFleetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_fleets::DeleteFleetsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_fleets::DeleteFleetsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleets::DeleteFleetsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,9 +80,9 @@ impl DeleteFleetsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_fleets::DeleteFleetsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_fleets::DeleteFleetsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_fleets::DeleteFleetsError>,
     > {
         self.send_middleware().await
     }
@@ -89,7 +92,7 @@ impl DeleteFleetsFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -98,14 +101,14 @@ impl DeleteFleetsFluentBuilder {
     /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
     ///
     /// <p>The IDs of the EC2 Fleets.</p>
-    pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_ids(input.into());
         self
     }
     /// <p>The IDs of the EC2 Fleets.</p>
     pub fn set_fleet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_fleet_ids(input);
         self
@@ -120,7 +123,7 @@ impl DeleteFleetsFluentBuilder {
     /// <p>Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to terminate the instances.</p>
     /// <p>To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and <code>request</code>.</p>
     /// <p>For <code>instant</code> fleets, you cannot specify <code>NoTerminateInstances</code>. A deleted <code>instant</code> fleet with running instances is not supported.</p>
-    pub fn set_terminate_instances(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_terminate_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_terminate_instances(input);
         self
     }

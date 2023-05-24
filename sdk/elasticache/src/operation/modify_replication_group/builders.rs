@@ -12,29 +12,29 @@ pub use crate::operation::modify_replication_group::_modify_replication_group_in
 /// </ul> <note>
 /// <p>This operation is valid for Redis only.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyReplicationGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::modify_replication_group::builders::ModifyReplicationGroupInputBuilder,
 }
 impl ModifyReplicationGroupFluentBuilder {
     /// Creates a new `ModifyReplicationGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_replication_group::ModifyReplicationGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_replication_group::ModifyReplicationGroupError,
         >,
     > {
@@ -42,30 +42,33 @@ impl ModifyReplicationGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_replication_group::ModifyReplicationGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,62 +81,74 @@ impl ModifyReplicationGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_replication_group::ModifyReplicationGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_replication_group::ModifyReplicationGroupError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the replication group to modify.</p>
-    pub fn replication_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn replication_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.replication_group_id(input.into());
         self
     }
     /// <p>The identifier of the replication group to modify.</p>
     pub fn set_replication_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_replication_group_id(input);
         self
     }
     /// <p>A description for the replication group. Maximum length is 255 characters.</p>
-    pub fn replication_group_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn replication_group_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.replication_group_description(input.into());
         self
     }
     /// <p>A description for the replication group. Maximum length is 255 characters.</p>
     pub fn set_replication_group_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_replication_group_description(input);
         self
     }
     /// <p>For replication groups with a single primary, if this parameter is specified, ElastiCache promotes the specified cluster in the specified replication group to the primary role. The nodes of all other clusters in the replication group are read replicas.</p>
-    pub fn primary_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn primary_cluster_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.primary_cluster_id(input.into());
         self
     }
     /// <p>For replication groups with a single primary, if this parameter is specified, ElastiCache promotes the specified cluster in the specified replication group to the primary role. The nodes of all other clusters in the replication group are read replicas.</p>
     pub fn set_primary_cluster_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_primary_cluster_id(input);
         self
     }
     /// <p>The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set for Redis (cluster mode enabled) replication groups.</p>
-    pub fn snapshotting_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshotting_cluster_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.snapshotting_cluster_id(input.into());
         self
     }
     /// <p>The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set for Redis (cluster mode enabled) replication groups.</p>
     pub fn set_snapshotting_cluster_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_snapshotting_cluster_id(input);
         self
@@ -146,7 +161,7 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    pub fn set_automatic_failover_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_automatic_failover_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_automatic_failover_enabled(input);
         self
     }
@@ -156,19 +171,25 @@ impl ModifyReplicationGroupFluentBuilder {
         self
     }
     /// <p>A flag to indicate MultiAZ is enabled.</p>
-    pub fn set_multi_az_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_multi_az_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_az_enabled(input);
         self
     }
     /// <p>Deprecated. This parameter is not used.</p>
     #[deprecated]
-    pub fn node_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn node_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.node_group_id(input.into());
         self
     }
     /// <p>Deprecated. This parameter is not used.</p>
     #[deprecated]
-    pub fn set_node_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_node_group_id(input);
         self
     }
@@ -179,7 +200,10 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
-    pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_security_group_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_security_group_names(input.into());
         self
     }
@@ -188,7 +212,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
     pub fn set_cache_security_group_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_cache_security_group_names(input);
         self
@@ -199,7 +223,10 @@ impl ModifyReplicationGroupFluentBuilder {
     ///
     /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
     /// <p>This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
@@ -207,7 +234,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
@@ -224,7 +251,10 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -242,7 +272,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn set_preferred_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
@@ -250,7 +280,10 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
     /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
     /// </note>
-    pub fn notification_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notification_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.notification_topic_arn(input.into());
         self
     }
@@ -259,27 +292,33 @@ impl ModifyReplicationGroupFluentBuilder {
     /// </note>
     pub fn set_notification_topic_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_notification_topic_arn(input);
         self
     }
     /// <p>The name of the cache parameter group to apply to all of the clusters in this replication group. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
-    pub fn cache_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cache parameter group to apply to all of the clusters in this replication group. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
     pub fn set_cache_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }
     /// <p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <code>active</code>.</p>
     /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
-    pub fn notification_topic_status(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notification_topic_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.notification_topic_status(input.into());
         self
     }
@@ -287,7 +326,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Valid values: <code>active</code> | <code>inactive</code> </p>
     pub fn set_notification_topic_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_notification_topic_status(input);
         self
@@ -304,19 +343,25 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
     /// <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -326,7 +371,7 @@ impl ModifyReplicationGroupFluentBuilder {
         self
     }
     /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
@@ -338,31 +383,43 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     /// <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
-    pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_snapshot_retention_limit(input);
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
-    pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.snapshot_window(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
     /// <p>Example: <code>05:00-09:00</code> </p>
     /// <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
-    pub fn set_snapshot_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_window(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_window(input);
         self
     }
     /// <p>A valid cache node type that you want to scale this replication group to.</p>
-    pub fn cache_node_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_node_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_node_type(input.into());
         self
     }
     /// <p>A valid cache node type that you want to scale this replication group to.</p>
-    pub fn set_cache_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cache_node_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cache_node_type(input);
         self
     }
@@ -373,7 +430,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
     /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
-    pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auth_token(input.into());
         self
     }
@@ -384,7 +441,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>
     /// </ul>
     /// <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
-    pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auth_token(input);
         self
     }
@@ -409,7 +466,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
     pub fn set_auth_token_update_strategy(
         mut self,
-        input: std::option::Option<crate::types::AuthTokenUpdateStrategyType>,
+        input: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>,
     ) -> Self {
         self.inner = self.inner.set_auth_token_update_strategy(input);
         self
@@ -419,14 +476,17 @@ impl ModifyReplicationGroupFluentBuilder {
     /// To override the contents of this collection use [`set_user_group_ids_to_add`](Self::set_user_group_ids_to_add).
     ///
     /// <p>The ID of the user group you are associating with the replication group.</p>
-    pub fn user_group_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_group_ids_to_add(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.user_group_ids_to_add(input.into());
         self
     }
     /// <p>The ID of the user group you are associating with the replication group.</p>
     pub fn set_user_group_ids_to_add(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_user_group_ids_to_add(input);
         self
@@ -436,14 +496,17 @@ impl ModifyReplicationGroupFluentBuilder {
     /// To override the contents of this collection use [`set_user_group_ids_to_remove`](Self::set_user_group_ids_to_remove).
     ///
     /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
-    pub fn user_group_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_group_ids_to_remove(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.user_group_ids_to_remove(input.into());
         self
     }
     /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
     pub fn set_user_group_ids_to_remove(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_user_group_ids_to_remove(input);
         self
@@ -454,7 +517,7 @@ impl ModifyReplicationGroupFluentBuilder {
         self
     }
     /// <p>Removes the user group associated with this replication group.</p>
-    pub fn set_remove_user_groups(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_remove_user_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_user_groups(input);
         self
     }
@@ -473,7 +536,9 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Specifies the destination, format and type of the logs.</p>
     pub fn set_log_delivery_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_log_delivery_configurations(input);
         self
@@ -486,7 +551,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(
         mut self,
-        input: std::option::Option<crate::types::IpDiscovery>,
+        input: ::std::option::Option<crate::types::IpDiscovery>,
     ) -> Self {
         self.inner = self.inner.set_ip_discovery(input);
         self
@@ -497,7 +562,7 @@ impl ModifyReplicationGroupFluentBuilder {
         self
     }
     /// <p>A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for an existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.</p>
-    pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_transit_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_transit_encryption_enabled(input);
         self
     }
@@ -513,7 +578,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
     pub fn set_transit_encryption_mode(
         mut self,
-        input: std::option::Option<crate::types::TransitEncryptionMode>,
+        input: ::std::option::Option<crate::types::TransitEncryptionMode>,
     ) -> Self {
         self.inner = self.inner.set_transit_encryption_mode(input);
         self
@@ -526,7 +591,7 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
     pub fn set_cluster_mode(
         mut self,
-        input: std::option::Option<crate::types::ClusterMode>,
+        input: ::std::option::Option<crate::types::ClusterMode>,
     ) -> Self {
         self.inner = self.inner.set_cluster_mode(input);
         self

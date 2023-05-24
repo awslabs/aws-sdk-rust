@@ -2,81 +2,81 @@
 
 /// <p>The forecast computation configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForecastComputation {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
-    pub computation_id: std::option::Option<std::string::String>,
+    pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time field that is used in a computation.</p>
     #[doc(hidden)]
-    pub time: std::option::Option<crate::types::DimensionField>,
+    pub time: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The value field that is used in a computation.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::MeasureField>,
+    pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The periods forward setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub periods_forward: std::option::Option<i32>,
+    pub periods_forward: ::std::option::Option<i32>,
     /// <p>The periods backward setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub periods_backward: std::option::Option<i32>,
+    pub periods_backward: ::std::option::Option<i32>,
     /// <p>The upper boundary setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub upper_boundary: std::option::Option<f64>,
+    pub upper_boundary: ::std::option::Option<f64>,
     /// <p>The lower boundary setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub lower_boundary: std::option::Option<f64>,
+    pub lower_boundary: ::std::option::Option<f64>,
     /// <p>The prediction interval setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub prediction_interval: std::option::Option<i32>,
+    pub prediction_interval: ::std::option::Option<i32>,
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>AUTOMATIC</code> </p> </li>
     /// <li> <p> <code>CUSTOM</code>: Checks the custom seasonality value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub seasonality: std::option::Option<crate::types::ForecastComputationSeasonality>,
+    pub seasonality: ::std::option::Option<crate::types::ForecastComputationSeasonality>,
     /// <p>The custom seasonality value setup of a forecast computation.</p>
     #[doc(hidden)]
-    pub custom_seasonality_value: std::option::Option<i32>,
+    pub custom_seasonality_value: ::std::option::Option<i32>,
 }
 impl ForecastComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> std::option::Option<&str> {
+    pub fn computation_id(&self) -> ::std::option::Option<&str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The time field that is used in a computation.</p>
-    pub fn time(&self) -> std::option::Option<&crate::types::DimensionField> {
+    pub fn time(&self) -> ::std::option::Option<&crate::types::DimensionField> {
         self.time.as_ref()
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::MeasureField> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::MeasureField> {
         self.value.as_ref()
     }
     /// <p>The periods forward setup of a forecast computation.</p>
-    pub fn periods_forward(&self) -> std::option::Option<i32> {
+    pub fn periods_forward(&self) -> ::std::option::Option<i32> {
         self.periods_forward
     }
     /// <p>The periods backward setup of a forecast computation.</p>
-    pub fn periods_backward(&self) -> std::option::Option<i32> {
+    pub fn periods_backward(&self) -> ::std::option::Option<i32> {
         self.periods_backward
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
-    pub fn upper_boundary(&self) -> std::option::Option<f64> {
+    pub fn upper_boundary(&self) -> ::std::option::Option<f64> {
         self.upper_boundary
     }
     /// <p>The lower boundary setup of a forecast computation.</p>
-    pub fn lower_boundary(&self) -> std::option::Option<f64> {
+    pub fn lower_boundary(&self) -> ::std::option::Option<f64> {
         self.lower_boundary
     }
     /// <p>The prediction interval setup of a forecast computation.</p>
-    pub fn prediction_interval(&self) -> std::option::Option<i32> {
+    pub fn prediction_interval(&self) -> ::std::option::Option<i32> {
         self.prediction_interval
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
@@ -86,11 +86,11 @@ impl ForecastComputation {
     /// </ul>
     pub fn seasonality(
         &self,
-    ) -> std::option::Option<&crate::types::ForecastComputationSeasonality> {
+    ) -> ::std::option::Option<&crate::types::ForecastComputationSeasonality> {
         self.seasonality.as_ref()
     }
     /// <p>The custom seasonality value setup of a forecast computation.</p>
-    pub fn custom_seasonality_value(&self) -> std::option::Option<i32> {
+    pub fn custom_seasonality_value(&self) -> ::std::option::Option<i32> {
         self.custom_seasonality_value
     }
 }
@@ -103,108 +103,116 @@ impl ForecastComputation {
 
 /// A builder for [`ForecastComputation`](crate::types::ForecastComputation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForecastComputationBuilder {
-    pub(crate) computation_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) time: std::option::Option<crate::types::DimensionField>,
-    pub(crate) value: std::option::Option<crate::types::MeasureField>,
-    pub(crate) periods_forward: std::option::Option<i32>,
-    pub(crate) periods_backward: std::option::Option<i32>,
-    pub(crate) upper_boundary: std::option::Option<f64>,
-    pub(crate) lower_boundary: std::option::Option<f64>,
-    pub(crate) prediction_interval: std::option::Option<i32>,
-    pub(crate) seasonality: std::option::Option<crate::types::ForecastComputationSeasonality>,
-    pub(crate) custom_seasonality_value: std::option::Option<i32>,
+    pub(crate) computation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) time: ::std::option::Option<crate::types::DimensionField>,
+    pub(crate) value: ::std::option::Option<crate::types::MeasureField>,
+    pub(crate) periods_forward: ::std::option::Option<i32>,
+    pub(crate) periods_backward: ::std::option::Option<i32>,
+    pub(crate) upper_boundary: ::std::option::Option<f64>,
+    pub(crate) lower_boundary: ::std::option::Option<f64>,
+    pub(crate) prediction_interval: ::std::option::Option<i32>,
+    pub(crate) seasonality: ::std::option::Option<crate::types::ForecastComputationSeasonality>,
+    pub(crate) custom_seasonality_value: ::std::option::Option<i32>,
 }
 impl ForecastComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.computation_id = Some(input.into());
+    pub fn computation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_computation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.computation_id = input;
         self
     }
     /// <p>The name of a computation.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a computation.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
-        self.time = Some(input);
+        self.time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time field that is used in a computation.</p>
-    pub fn set_time(mut self, input: std::option::Option<crate::types::DimensionField>) -> Self {
+    pub fn set_time(mut self, input: ::std::option::Option<crate::types::DimensionField>) -> Self {
         self.time = input;
         self
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::MeasureField>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::MeasureField>) -> Self {
         self.value = input;
         self
     }
     /// <p>The periods forward setup of a forecast computation.</p>
     pub fn periods_forward(mut self, input: i32) -> Self {
-        self.periods_forward = Some(input);
+        self.periods_forward = ::std::option::Option::Some(input);
         self
     }
     /// <p>The periods forward setup of a forecast computation.</p>
-    pub fn set_periods_forward(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_periods_forward(mut self, input: ::std::option::Option<i32>) -> Self {
         self.periods_forward = input;
         self
     }
     /// <p>The periods backward setup of a forecast computation.</p>
     pub fn periods_backward(mut self, input: i32) -> Self {
-        self.periods_backward = Some(input);
+        self.periods_backward = ::std::option::Option::Some(input);
         self
     }
     /// <p>The periods backward setup of a forecast computation.</p>
-    pub fn set_periods_backward(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_periods_backward(mut self, input: ::std::option::Option<i32>) -> Self {
         self.periods_backward = input;
         self
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
     pub fn upper_boundary(mut self, input: f64) -> Self {
-        self.upper_boundary = Some(input);
+        self.upper_boundary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upper boundary setup of a forecast computation.</p>
-    pub fn set_upper_boundary(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_upper_boundary(mut self, input: ::std::option::Option<f64>) -> Self {
         self.upper_boundary = input;
         self
     }
     /// <p>The lower boundary setup of a forecast computation.</p>
     pub fn lower_boundary(mut self, input: f64) -> Self {
-        self.lower_boundary = Some(input);
+        self.lower_boundary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lower boundary setup of a forecast computation.</p>
-    pub fn set_lower_boundary(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lower_boundary(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lower_boundary = input;
         self
     }
     /// <p>The prediction interval setup of a forecast computation.</p>
     pub fn prediction_interval(mut self, input: i32) -> Self {
-        self.prediction_interval = Some(input);
+        self.prediction_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The prediction interval setup of a forecast computation.</p>
-    pub fn set_prediction_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_prediction_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.prediction_interval = input;
         self
     }
@@ -214,7 +222,7 @@ impl ForecastComputationBuilder {
     /// <li> <p> <code>CUSTOM</code>: Checks the custom seasonality value.</p> </li>
     /// </ul>
     pub fn seasonality(mut self, input: crate::types::ForecastComputationSeasonality) -> Self {
-        self.seasonality = Some(input);
+        self.seasonality = ::std::option::Option::Some(input);
         self
     }
     /// <p>The seasonality setup of a forecast computation. Choose one of the following options:</p>
@@ -224,18 +232,18 @@ impl ForecastComputationBuilder {
     /// </ul>
     pub fn set_seasonality(
         mut self,
-        input: std::option::Option<crate::types::ForecastComputationSeasonality>,
+        input: ::std::option::Option<crate::types::ForecastComputationSeasonality>,
     ) -> Self {
         self.seasonality = input;
         self
     }
     /// <p>The custom seasonality value setup of a forecast computation.</p>
     pub fn custom_seasonality_value(mut self, input: i32) -> Self {
-        self.custom_seasonality_value = Some(input);
+        self.custom_seasonality_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The custom seasonality value setup of a forecast computation.</p>
-    pub fn set_custom_seasonality_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_custom_seasonality_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.custom_seasonality_value = input;
         self
     }

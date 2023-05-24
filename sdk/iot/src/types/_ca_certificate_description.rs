@@ -2,96 +2,96 @@
 
 /// <p>Describes a CA certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaCertificateDescription {
     /// <p>The CA certificate ARN.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CA certificate ID.</p>
     #[doc(hidden)]
-    pub certificate_id: std::option::Option<std::string::String>,
+    pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of a CA certificate.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CaCertificateStatus>,
+    pub status: ::std::option::Option<crate::types::CaCertificateStatus>,
     /// <p>The CA certificate data, in PEM format.</p>
     #[doc(hidden)]
-    pub certificate_pem: std::option::Option<std::string::String>,
+    pub certificate_pem: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the CA certificate.</p>
     #[doc(hidden)]
-    pub owned_by: std::option::Option<std::string::String>,
+    pub owned_by: ::std::option::Option<::std::string::String>,
     /// <p>The date the CA certificate was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
     #[doc(hidden)]
-    pub auto_registration_status: std::option::Option<crate::types::AutoRegistrationStatus>,
+    pub auto_registration_status: ::std::option::Option<crate::types::AutoRegistrationStatus>,
     /// <p>The date the CA certificate was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The customer version of the CA certificate.</p>
     #[doc(hidden)]
-    pub customer_version: std::option::Option<i32>,
+    pub customer_version: ::std::option::Option<i32>,
     /// <p>The generation ID of the CA certificate.</p>
     #[doc(hidden)]
-    pub generation_id: std::option::Option<std::string::String>,
+    pub generation_id: ::std::option::Option<::std::string::String>,
     /// <p>When the CA certificate is valid.</p>
     #[doc(hidden)]
-    pub validity: std::option::Option<crate::types::CertificateValidity>,
+    pub validity: ::std::option::Option<crate::types::CertificateValidity>,
     /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     #[doc(hidden)]
-    pub certificate_mode: std::option::Option<crate::types::CertificateMode>,
+    pub certificate_mode: ::std::option::Option<crate::types::CertificateMode>,
 }
 impl CaCertificateDescription {
     /// <p>The CA certificate ARN.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The CA certificate ID.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
     /// <p>The status of a CA certificate.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CaCertificateStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CaCertificateStatus> {
         self.status.as_ref()
     }
     /// <p>The CA certificate data, in PEM format.</p>
-    pub fn certificate_pem(&self) -> std::option::Option<&str> {
+    pub fn certificate_pem(&self) -> ::std::option::Option<&str> {
         self.certificate_pem.as_deref()
     }
     /// <p>The owner of the CA certificate.</p>
-    pub fn owned_by(&self) -> std::option::Option<&str> {
+    pub fn owned_by(&self) -> ::std::option::Option<&str> {
         self.owned_by.as_deref()
     }
     /// <p>The date the CA certificate was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
     pub fn auto_registration_status(
         &self,
-    ) -> std::option::Option<&crate::types::AutoRegistrationStatus> {
+    ) -> ::std::option::Option<&crate::types::AutoRegistrationStatus> {
         self.auto_registration_status.as_ref()
     }
     /// <p>The date the CA certificate was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The customer version of the CA certificate.</p>
-    pub fn customer_version(&self) -> std::option::Option<i32> {
+    pub fn customer_version(&self) -> ::std::option::Option<i32> {
         self.customer_version
     }
     /// <p>The generation ID of the CA certificate.</p>
-    pub fn generation_id(&self) -> std::option::Option<&str> {
+    pub fn generation_id(&self) -> ::std::option::Option<&str> {
         self.generation_id.as_deref()
     }
     /// <p>When the CA certificate is valid.</p>
-    pub fn validity(&self) -> std::option::Option<&crate::types::CertificateValidity> {
+    pub fn validity(&self) -> ::std::option::Option<&crate::types::CertificateValidity> {
         self.validity.as_ref()
     }
     /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
-    pub fn certificate_mode(&self) -> std::option::Option<&crate::types::CertificateMode> {
+    pub fn certificate_mode(&self) -> ::std::option::Option<&crate::types::CertificateMode> {
         self.certificate_mode.as_ref()
     }
 }
@@ -104,143 +104,170 @@ impl CaCertificateDescription {
 
 /// A builder for [`CaCertificateDescription`](crate::types::CaCertificateDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaCertificateDescriptionBuilder {
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::CaCertificateStatus>,
-    pub(crate) certificate_pem: std::option::Option<std::string::String>,
-    pub(crate) owned_by: std::option::Option<std::string::String>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) auto_registration_status: std::option::Option<crate::types::AutoRegistrationStatus>,
-    pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) customer_version: std::option::Option<i32>,
-    pub(crate) generation_id: std::option::Option<std::string::String>,
-    pub(crate) validity: std::option::Option<crate::types::CertificateValidity>,
-    pub(crate) certificate_mode: std::option::Option<crate::types::CertificateMode>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::CaCertificateStatus>,
+    pub(crate) certificate_pem: ::std::option::Option<::std::string::String>,
+    pub(crate) owned_by: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) auto_registration_status:
+        ::std::option::Option<crate::types::AutoRegistrationStatus>,
+    pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) customer_version: ::std::option::Option<i32>,
+    pub(crate) generation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) validity: ::std::option::Option<crate::types::CertificateValidity>,
+    pub(crate) certificate_mode: ::std::option::Option<crate::types::CertificateMode>,
 }
 impl CaCertificateDescriptionBuilder {
     /// <p>The CA certificate ARN.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA certificate ARN.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The CA certificate ID.</p>
-    pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_id = Some(input.into());
+    pub fn certificate_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA certificate ID.</p>
-    pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_id = input;
         self
     }
     /// <p>The status of a CA certificate.</p>
     pub fn status(mut self, input: crate::types::CaCertificateStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a CA certificate.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CaCertificateStatus>,
+        input: ::std::option::Option<crate::types::CaCertificateStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The CA certificate data, in PEM format.</p>
-    pub fn certificate_pem(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_pem = Some(input.into());
+    pub fn certificate_pem(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_pem = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA certificate data, in PEM format.</p>
-    pub fn set_certificate_pem(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_pem(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_pem = input;
         self
     }
     /// <p>The owner of the CA certificate.</p>
-    pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owned_by = Some(input.into());
+    pub fn owned_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owned_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the CA certificate.</p>
-    pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owned_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owned_by = input;
         self
     }
     /// <p>The date the CA certificate was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the CA certificate was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
     pub fn auto_registration_status(mut self, input: crate::types::AutoRegistrationStatus) -> Self {
-        self.auto_registration_status = Some(input);
+        self.auto_registration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the CA certificate configured for auto registration of device certificates. Valid values are "ENABLE" and "DISABLE"</p>
     pub fn set_auto_registration_status(
         mut self,
-        input: std::option::Option<crate::types::AutoRegistrationStatus>,
+        input: ::std::option::Option<crate::types::AutoRegistrationStatus>,
     ) -> Self {
         self.auto_registration_status = input;
         self
     }
     /// <p>The date the CA certificate was last modified.</p>
-    pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_date = Some(input);
+    pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the CA certificate was last modified.</p>
     pub fn set_last_modified_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_date = input;
         self
     }
     /// <p>The customer version of the CA certificate.</p>
     pub fn customer_version(mut self, input: i32) -> Self {
-        self.customer_version = Some(input);
+        self.customer_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The customer version of the CA certificate.</p>
-    pub fn set_customer_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_customer_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.customer_version = input;
         self
     }
     /// <p>The generation ID of the CA certificate.</p>
-    pub fn generation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.generation_id = Some(input.into());
+    pub fn generation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.generation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The generation ID of the CA certificate.</p>
-    pub fn set_generation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_generation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.generation_id = input;
         self
     }
     /// <p>When the CA certificate is valid.</p>
     pub fn validity(mut self, input: crate::types::CertificateValidity) -> Self {
-        self.validity = Some(input);
+        self.validity = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the CA certificate is valid.</p>
     pub fn set_validity(
         mut self,
-        input: std::option::Option<crate::types::CertificateValidity>,
+        input: ::std::option::Option<crate::types::CertificateValidity>,
     ) -> Self {
         self.validity = input;
         self
@@ -248,14 +275,14 @@ impl CaCertificateDescriptionBuilder {
     /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     pub fn certificate_mode(mut self, input: crate::types::CertificateMode) -> Self {
-        self.certificate_mode = Some(input);
+        self.certificate_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode of the CA. </p>
     /// <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
     pub fn set_certificate_mode(
         mut self,
-        input: std::option::Option<crate::types::CertificateMode>,
+        input: ::std::option::Option<crate::types::CertificateMode>,
     ) -> Self {
         self.certificate_mode = input;
         self

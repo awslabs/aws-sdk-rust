@@ -11,56 +11,59 @@ pub use crate::operation::create_hsm::_create_hsm_input::CreateHsmInputBuilder;
 /// <p>There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <code>DeleteHsm</code> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important>
 /// <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <code>DescribeHsm</code> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHsmFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_hsm::builders::CreateHsmInputBuilder,
 }
 impl CreateHsmFluentBuilder {
     /// Creates a new `CreateHsm`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_hsm::CreateHsm,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_hsm::CreateHsmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,61 +76,61 @@ impl CreateHsmFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_hsm::CreateHsmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
         self
     }
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
     /// <p>The SSH public key to install on the HSM.</p>
-    pub fn ssh_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ssh_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_key(input.into());
         self
     }
     /// <p>The SSH public key to install on the HSM.</p>
-    pub fn set_ssh_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ssh_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_key(input);
         self
     }
     /// <p>The IP address to assign to the HSM's ENI.</p>
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
-    pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn eni_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.eni_ip(input.into());
         self
     }
     /// <p>The IP address to assign to the HSM's ENI.</p>
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
-    pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_eni_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_eni_ip(input);
         self
     }
     /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
-    pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
         self
     }
     /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
-    pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
-    pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_id(input.into());
         self
     }
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
-    pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_id(input);
         self
     }
@@ -147,28 +150,28 @@ impl CreateHsmFluentBuilder {
     /// </ul>
     pub fn set_subscription_type(
         mut self,
-        input: std::option::Option<crate::types::SubscriptionType>,
+        input: ::std::option::Option<crate::types::SubscriptionType>,
     ) -> Self {
         self.inner = self.inner.set_subscription_type(input);
         self
     }
     /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
-    pub fn syslog_ip(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn syslog_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.syslog_ip(input.into());
         self
     }
     /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
-    pub fn set_syslog_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_syslog_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_syslog_ip(input);
         self
     }

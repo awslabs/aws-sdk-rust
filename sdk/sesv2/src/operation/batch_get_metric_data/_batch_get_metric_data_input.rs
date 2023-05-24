@@ -2,15 +2,15 @@
 
 /// <p>Represents a request to retrieve a batch of metric data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetMetricDataInput {
     /// <p>A list of queries for metrics to be retrieved.</p>
     #[doc(hidden)]
-    pub queries: std::option::Option<std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
+    pub queries: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
 }
 impl BatchGetMetricDataInput {
     /// <p>A list of queries for metrics to be retrieved.</p>
-    pub fn queries(&self) -> std::option::Option<&[crate::types::BatchGetMetricDataQuery]> {
+    pub fn queries(&self) -> ::std::option::Option<&[crate::types::BatchGetMetricDataQuery]> {
         self.queries.as_deref()
     }
 }
@@ -24,9 +24,12 @@ impl BatchGetMetricDataInput {
 
 /// A builder for [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetMetricDataInputBuilder {
-    pub(crate) queries: std::option::Option<std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
+    pub(crate) queries:
+        ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
 }
 impl BatchGetMetricDataInputBuilder {
     /// Appends an item to `queries`.
@@ -37,13 +40,13 @@ impl BatchGetMetricDataInputBuilder {
     pub fn queries(mut self, input: crate::types::BatchGetMetricDataQuery) -> Self {
         let mut v = self.queries.unwrap_or_default();
         v.push(input);
-        self.queries = Some(v);
+        self.queries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of queries for metrics to be retrieved.</p>
     pub fn set_queries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetMetricDataQuery>>,
     ) -> Self {
         self.queries = input;
         self
@@ -51,11 +54,11 @@ impl BatchGetMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_get_metric_data::BatchGetMetricDataInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::batch_get_metric_data::BatchGetMetricDataInput {
                 queries: self.queries,
             },

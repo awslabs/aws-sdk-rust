@@ -2,22 +2,22 @@
 
 /// Settings for a SCTE-35 splice_insert message.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35SpliceInsertScheduleActionSettings {
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
     #[doc(hidden)]
-    pub duration: std::option::Option<i64>,
+    pub duration: ::std::option::Option<i64>,
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     #[doc(hidden)]
-    pub splice_event_id: std::option::Option<i64>,
+    pub splice_event_id: ::std::option::Option<i64>,
 }
 impl Scte35SpliceInsertScheduleActionSettings {
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
-    pub fn duration(&self) -> std::option::Option<i64> {
+    pub fn duration(&self) -> ::std::option::Option<i64> {
         self.duration
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-    pub fn splice_event_id(&self) -> std::option::Option<i64> {
+    pub fn splice_event_id(&self) -> ::std::option::Option<i64> {
         self.splice_event_id
     }
 }
@@ -30,29 +30,31 @@ impl Scte35SpliceInsertScheduleActionSettings {
 
 /// A builder for [`Scte35SpliceInsertScheduleActionSettings`](crate::types::Scte35SpliceInsertScheduleActionSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Scte35SpliceInsertScheduleActionSettingsBuilder {
-    pub(crate) duration: std::option::Option<i64>,
-    pub(crate) splice_event_id: std::option::Option<i64>,
+    pub(crate) duration: ::std::option::Option<i64>,
+    pub(crate) splice_event_id: ::std::option::Option<i64>,
 }
 impl Scte35SpliceInsertScheduleActionSettingsBuilder {
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
     pub fn duration(mut self, input: i64) -> Self {
-        self.duration = Some(input);
+        self.duration = ::std::option::Option::Some(input);
         self
     }
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
-    pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration = input;
         self
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     pub fn splice_event_id(mut self, input: i64) -> Self {
-        self.splice_event_id = Some(input);
+        self.splice_event_id = ::std::option::Option::Some(input);
         self
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-    pub fn set_splice_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_splice_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.splice_event_id = input;
         self
     }

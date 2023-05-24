@@ -2,27 +2,27 @@
 
 /// <p> Container for response returned by <code> <code>GetUpgradeHistory</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUpgradeHistoryOutput {
     /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
     #[doc(hidden)]
-    pub upgrade_histories: std::option::Option<std::vec::Vec<crate::types::UpgradeHistory>>,
+    pub upgrade_histories: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>,
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUpgradeHistoryOutput {
     /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
-    pub fn upgrade_histories(&self) -> std::option::Option<&[crate::types::UpgradeHistory]> {
+    pub fn upgrade_histories(&self) -> ::std::option::Option<&[crate::types::UpgradeHistory]> {
         self.upgrade_histories.as_deref()
     }
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetUpgradeHistoryOutput {
+impl ::aws_http::request_id::RequestId for GetUpgradeHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,13 @@ impl GetUpgradeHistoryOutput {
 
 /// A builder for [`GetUpgradeHistoryOutput`](crate::operation::get_upgrade_history::GetUpgradeHistoryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetUpgradeHistoryOutputBuilder {
-    pub(crate) upgrade_histories: std::option::Option<std::vec::Vec<crate::types::UpgradeHistory>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) upgrade_histories:
+        ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUpgradeHistoryOutputBuilder {
@@ -52,24 +55,24 @@ impl GetUpgradeHistoryOutputBuilder {
     pub fn upgrade_histories(mut self, input: crate::types::UpgradeHistory) -> Self {
         let mut v = self.upgrade_histories.unwrap_or_default();
         v.push(input);
-        self.upgrade_histories = Some(v);
+        self.upgrade_histories = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
     pub fn set_upgrade_histories(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpgradeHistory>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpgradeHistory>>,
     ) -> Self {
         self.upgrade_histories = input;
         self
     }
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

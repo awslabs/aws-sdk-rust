@@ -2,22 +2,22 @@
 
 /// <p>Provides a summary of SSL/TLS certificate metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateSummary {
     /// <p>The name of the SSL/TLS certificate.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
     #[doc(hidden)]
-    pub is_attached: std::option::Option<bool>,
+    pub is_attached: ::std::option::Option<bool>,
 }
 impl LoadBalancerTlsCertificateSummary {
     /// <p>The name of the SSL/TLS certificate.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
-    pub fn is_attached(&self) -> std::option::Option<bool> {
+    pub fn is_attached(&self) -> ::std::option::Option<bool> {
         self.is_attached
     }
 }
@@ -30,29 +30,31 @@ impl LoadBalancerTlsCertificateSummary {
 
 /// A builder for [`LoadBalancerTlsCertificateSummary`](crate::types::LoadBalancerTlsCertificateSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoadBalancerTlsCertificateSummaryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) is_attached: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) is_attached: ::std::option::Option<bool>,
 }
 impl LoadBalancerTlsCertificateSummaryBuilder {
     /// <p>The name of the SSL/TLS certificate.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SSL/TLS certificate.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
     pub fn is_attached(mut self, input: bool) -> Self {
-        self.is_attached = Some(input);
+        self.is_attached = ::std::option::Option::Some(input);
         self
     }
     /// <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.</p>
-    pub fn set_is_attached(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_attached(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_attached = input;
         self
     }

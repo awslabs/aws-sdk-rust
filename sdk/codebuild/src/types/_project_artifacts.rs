@@ -2,7 +2,7 @@
 
 /// <p>Information about the build output artifacts for the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectArtifacts {
     /// <p>The type of build output artifact. Valid values include:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct ProjectArtifacts {
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ArtifactsType>,
+    pub r#type: ::std::option::Option<crate::types::ArtifactsType>,
     /// <p>Information about the build output artifact location:</p>
     /// <ul>
     /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output locations instead of CodeBuild.</p> </li>
@@ -21,7 +21,7 @@ pub struct ProjectArtifacts {
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
     /// <ul>
     /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
@@ -30,7 +30,7 @@ pub struct ProjectArtifacts {
     /// </ul>
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
     /// <ul>
     /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
@@ -46,7 +46,7 @@ pub struct ProjectArtifacts {
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
     #[doc(hidden)]
-    pub namespace_type: std::option::Option<crate::types::ArtifactNamespace>,
+    pub namespace_type: ::std::option::Option<crate::types::ArtifactNamespace>,
     /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
     /// <ul>
     /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output names instead of CodeBuild.</p> </li>
@@ -64,7 +64,7 @@ pub struct ProjectArtifacts {
     /// <build-id></build-id></code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of build output artifact to create:</p>
     /// <ul>
     /// <li> <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this value if specified. This is because CodePipeline manages its build output artifacts instead of CodeBuild.</p> </li>
@@ -76,16 +76,16 @@ pub struct ProjectArtifacts {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub packaging: std::option::Option<crate::types::ArtifactPackaging>,
+    pub packaging: ::std::option::Option<crate::types::ArtifactPackaging>,
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
     #[doc(hidden)]
-    pub override_artifact_name: std::option::Option<bool>,
+    pub override_artifact_name: ::std::option::Option<bool>,
     /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown. </p>
     #[doc(hidden)]
-    pub encryption_disabled: std::option::Option<bool>,
+    pub encryption_disabled: ::std::option::Option<bool>,
     /// <p> An identifier for this artifact definition. </p>
     #[doc(hidden)]
-    pub artifact_identifier: std::option::Option<std::string::String>,
+    pub artifact_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
     /// </note>
@@ -116,7 +116,7 @@ pub struct ProjectArtifacts {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub bucket_owner_access: std::option::Option<crate::types::BucketOwnerAccess>,
+    pub bucket_owner_access: ::std::option::Option<crate::types::BucketOwnerAccess>,
 }
 impl ProjectArtifacts {
     /// <p>The type of build output artifact. Valid values include:</p>
@@ -127,7 +127,7 @@ impl ProjectArtifacts {
     /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ArtifactsType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArtifactsType> {
         self.r#type.as_ref()
     }
     /// <p>Information about the build output artifact location:</p>
@@ -136,7 +136,7 @@ impl ProjectArtifacts {
     /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
     /// </ul>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
@@ -146,7 +146,7 @@ impl ProjectArtifacts {
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
     /// </ul>
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
@@ -163,7 +163,7 @@ impl ProjectArtifacts {
     /// <build-id>
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
-    pub fn namespace_type(&self) -> std::option::Option<&crate::types::ArtifactNamespace> {
+    pub fn namespace_type(&self) -> ::std::option::Option<&crate::types::ArtifactNamespace> {
         self.namespace_type.as_ref()
     }
     /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
@@ -182,7 +182,7 @@ impl ProjectArtifacts {
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
     /// <build-id></build-id></code>. </p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of build output artifact to create:</p>
@@ -195,19 +195,19 @@ impl ProjectArtifacts {
     /// <li> <p> <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that contains the build output.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn packaging(&self) -> std::option::Option<&crate::types::ArtifactPackaging> {
+    pub fn packaging(&self) -> ::std::option::Option<&crate::types::ArtifactPackaging> {
         self.packaging.as_ref()
     }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
-    pub fn override_artifact_name(&self) -> std::option::Option<bool> {
+    pub fn override_artifact_name(&self) -> ::std::option::Option<bool> {
         self.override_artifact_name
     }
     /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown. </p>
-    pub fn encryption_disabled(&self) -> std::option::Option<bool> {
+    pub fn encryption_disabled(&self) -> ::std::option::Option<bool> {
         self.encryption_disabled
     }
     /// <p> An identifier for this artifact definition. </p>
-    pub fn artifact_identifier(&self) -> std::option::Option<&str> {
+    pub fn artifact_identifier(&self) -> ::std::option::Option<&str> {
         self.artifact_identifier.as_deref()
     }
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
@@ -239,7 +239,7 @@ impl ProjectArtifacts {
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn bucket_owner_access(&self) -> std::option::Option<&crate::types::BucketOwnerAccess> {
+    pub fn bucket_owner_access(&self) -> ::std::option::Option<&crate::types::BucketOwnerAccess> {
         self.bucket_owner_access.as_ref()
     }
 }
@@ -252,18 +252,20 @@ impl ProjectArtifacts {
 
 /// A builder for [`ProjectArtifacts`](crate::types::ProjectArtifacts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectArtifactsBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ArtifactsType>,
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) namespace_type: std::option::Option<crate::types::ArtifactNamespace>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) packaging: std::option::Option<crate::types::ArtifactPackaging>,
-    pub(crate) override_artifact_name: std::option::Option<bool>,
-    pub(crate) encryption_disabled: std::option::Option<bool>,
-    pub(crate) artifact_identifier: std::option::Option<std::string::String>,
-    pub(crate) bucket_owner_access: std::option::Option<crate::types::BucketOwnerAccess>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ArtifactsType>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace_type: ::std::option::Option<crate::types::ArtifactNamespace>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) packaging: ::std::option::Option<crate::types::ArtifactPackaging>,
+    pub(crate) override_artifact_name: ::std::option::Option<bool>,
+    pub(crate) encryption_disabled: ::std::option::Option<bool>,
+    pub(crate) artifact_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_owner_access: ::std::option::Option<crate::types::BucketOwnerAccess>,
 }
 impl ProjectArtifactsBuilder {
     /// <p>The type of build output artifact. Valid values include:</p>
@@ -275,7 +277,7 @@ impl ProjectArtifactsBuilder {
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ArtifactsType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of build output artifact. Valid values include:</p>
@@ -286,7 +288,7 @@ impl ProjectArtifactsBuilder {
     /// <li> <p> <code>NO_ARTIFACTS</code>: The build project does not produce any build output.</p> </li>
     /// <li> <p> <code>S3</code>: The build project stores build output in Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ArtifactsType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactsType>) -> Self {
         self.r#type = input;
         self
     }
@@ -296,8 +298,8 @@ impl ProjectArtifactsBuilder {
     /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
     /// </ul>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the build output artifact location:</p>
@@ -306,7 +308,7 @@ impl ProjectArtifactsBuilder {
     /// <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build output is produced.</p> </li>
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.</p> </li>
     /// </ul>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
@@ -317,8 +319,8 @@ impl ProjectArtifactsBuilder {
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
     /// </ul>
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
@@ -328,7 +330,7 @@ impl ProjectArtifactsBuilder {
     /// <li> <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output artifact. If <code>path</code> is not specified, <code>path</code> is not used.</p> </li>
     /// </ul>
     /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
@@ -347,7 +349,7 @@ impl ProjectArtifactsBuilder {
     /// /MyArtifact.zip
     /// </build-id></code>.</p>
     pub fn namespace_type(mut self, input: crate::types::ArtifactNamespace) -> Self {
-        self.namespace_type = Some(input);
+        self.namespace_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to determine the name and location to store the output artifact:</p>
@@ -366,7 +368,7 @@ impl ProjectArtifactsBuilder {
     /// </build-id></code>.</p>
     pub fn set_namespace_type(
         mut self,
-        input: std::option::Option<crate::types::ArtifactNamespace>,
+        input: ::std::option::Option<crate::types::ArtifactNamespace>,
     ) -> Self {
         self.namespace_type = input;
         self
@@ -387,8 +389,8 @@ impl ProjectArtifactsBuilder {
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
     /// <build-id></build-id></code>. </p> </li>
     /// </ul>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild uses to name and store the output artifact:</p>
@@ -407,7 +409,7 @@ impl ProjectArtifactsBuilder {
     /// <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in <code>MyArtifacts/
     /// <build-id></build-id></code>. </p> </li>
     /// </ul>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -422,7 +424,7 @@ impl ProjectArtifactsBuilder {
     /// </ul> </li>
     /// </ul>
     pub fn packaging(mut self, input: crate::types::ArtifactPackaging) -> Self {
-        self.packaging = Some(input);
+        self.packaging = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of build output artifact to create:</p>
@@ -437,40 +439,43 @@ impl ProjectArtifactsBuilder {
     /// </ul>
     pub fn set_packaging(
         mut self,
-        input: std::option::Option<crate::types::ArtifactPackaging>,
+        input: ::std::option::Option<crate::types::ArtifactPackaging>,
     ) -> Self {
         self.packaging = input;
         self
     }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
     pub fn override_artifact_name(mut self, input: bool) -> Self {
-        self.override_artifact_name = Some(input);
+        self.override_artifact_name = ::std::option::Option::Some(input);
         self
     }
     /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique. </p>
-    pub fn set_override_artifact_name(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_override_artifact_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.override_artifact_name = input;
         self
     }
     /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown. </p>
     pub fn encryption_disabled(mut self, input: bool) -> Self {
-        self.encryption_disabled = Some(input);
+        self.encryption_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid only if your artifacts type is Amazon S3. If this is set with another artifacts type, an invalidInputException is thrown. </p>
-    pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_disabled = input;
         self
     }
     /// <p> An identifier for this artifact definition. </p>
-    pub fn artifact_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.artifact_identifier = Some(input.into());
+    pub fn artifact_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.artifact_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An identifier for this artifact definition. </p>
     pub fn set_artifact_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.artifact_identifier = input;
         self
@@ -505,7 +510,7 @@ impl ProjectArtifactsBuilder {
     /// </dd>
     /// </dl>
     pub fn bucket_owner_access(mut self, input: crate::types::BucketOwnerAccess) -> Self {
-        self.bucket_owner_access = Some(input);
+        self.bucket_owner_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
@@ -539,7 +544,7 @@ impl ProjectArtifactsBuilder {
     /// </dl>
     pub fn set_bucket_owner_access(
         mut self,
-        input: std::option::Option<crate::types::BucketOwnerAccess>,
+        input: ::std::option::Option<crate::types::BucketOwnerAccess>,
     ) -> Self {
         self.bucket_owner_access = input;
         self

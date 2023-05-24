@@ -2,46 +2,46 @@
 
 /// <p>Represents a target tracking scaling policy configuration to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
     pub predefined_metric_specification:
-        std::option::Option<crate::types::PredefinedMetricSpecification>,
+        ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
     pub customized_metric_specification:
-        std::option::Option<crate::types::CustomizedMetricSpecification>,
+        ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     /// <p>The target value for the metric.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
     #[doc(hidden)]
-    pub target_value: std::option::Option<f64>,
+    pub target_value: ::std::option::Option<f64>,
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
     #[doc(hidden)]
-    pub disable_scale_in: std::option::Option<bool>,
+    pub disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingConfiguration {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn predefined_metric_specification(
         &self,
-    ) -> std::option::Option<&crate::types::PredefinedMetricSpecification> {
+    ) -> ::std::option::Option<&crate::types::PredefinedMetricSpecification> {
         self.predefined_metric_specification.as_ref()
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn customized_metric_specification(
         &self,
-    ) -> std::option::Option<&crate::types::CustomizedMetricSpecification> {
+    ) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
         self.customized_metric_specification.as_ref()
     }
     /// <p>The target value for the metric.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
-    pub fn target_value(&self) -> std::option::Option<f64> {
+    pub fn target_value(&self) -> ::std::option::Option<f64> {
         self.target_value
     }
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
-    pub fn disable_scale_in(&self) -> std::option::Option<bool> {
+    pub fn disable_scale_in(&self) -> ::std::option::Option<bool> {
         self.disable_scale_in
     }
 }
@@ -54,14 +54,16 @@ impl TargetTrackingConfiguration {
 
 /// A builder for [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetTrackingConfigurationBuilder {
     pub(crate) predefined_metric_specification:
-        std::option::Option<crate::types::PredefinedMetricSpecification>,
+        ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     pub(crate) customized_metric_specification:
-        std::option::Option<crate::types::CustomizedMetricSpecification>,
-    pub(crate) target_value: std::option::Option<f64>,
-    pub(crate) disable_scale_in: std::option::Option<bool>,
+        ::std::option::Option<crate::types::CustomizedMetricSpecification>,
+    pub(crate) target_value: ::std::option::Option<f64>,
+    pub(crate) disable_scale_in: ::std::option::Option<bool>,
 }
 impl TargetTrackingConfigurationBuilder {
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
@@ -69,13 +71,13 @@ impl TargetTrackingConfigurationBuilder {
         mut self,
         input: crate::types::PredefinedMetricSpecification,
     ) -> Self {
-        self.predefined_metric_specification = Some(input);
+        self.predefined_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A predefined metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn set_predefined_metric_specification(
         mut self,
-        input: std::option::Option<crate::types::PredefinedMetricSpecification>,
+        input: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     ) -> Self {
         self.predefined_metric_specification = input;
         self
@@ -85,13 +87,13 @@ impl TargetTrackingConfigurationBuilder {
         mut self,
         input: crate::types::CustomizedMetricSpecification,
     ) -> Self {
-        self.customized_metric_specification = Some(input);
+        self.customized_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A customized metric. You must specify either a predefined metric or a customized metric.</p>
     pub fn set_customized_metric_specification(
         mut self,
-        input: std::option::Option<crate::types::CustomizedMetricSpecification>,
+        input: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
     ) -> Self {
         self.customized_metric_specification = input;
         self
@@ -100,23 +102,23 @@ impl TargetTrackingConfigurationBuilder {
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
     pub fn target_value(mut self, input: f64) -> Self {
-        self.target_value = Some(input);
+        self.target_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target value for the metric.</p> <note>
     /// <p>Some metrics are based on a count instead of a percentage, such as the request count for an Application Load Balancer or the number of messages in an SQS queue. If the scaling policy specifies one of these metrics, specify the target utilization as the optimal average request or message count per instance during any one-minute interval. </p>
     /// </note>
-    pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_value = input;
         self
     }
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
     pub fn disable_scale_in(mut self, input: bool) -> Self {
-        self.disable_scale_in = Some(input);
+        self.disable_scale_in = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether scaling in by the target tracking scaling policy is disabled. If scaling in is disabled, the target tracking scaling policy doesn't remove instances from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove instances from the Auto Scaling group. The default is <code>false</code>.</p>
-    pub fn set_disable_scale_in(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_scale_in = input;
         self
     }

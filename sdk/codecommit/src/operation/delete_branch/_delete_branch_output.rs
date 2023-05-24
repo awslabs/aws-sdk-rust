@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a delete branch operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
     #[doc(hidden)]
-    pub deleted_branch: std::option::Option<crate::types::BranchInfo>,
+    pub deleted_branch: ::std::option::Option<crate::types::BranchInfo>,
     _request_id: Option<String>,
 }
 impl DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
-    pub fn deleted_branch(&self) -> std::option::Option<&crate::types::BranchInfo> {
+    pub fn deleted_branch(&self) -> ::std::option::Option<&crate::types::BranchInfo> {
         self.deleted_branch.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteBranchOutput {
+impl ::aws_http::request_id::RequestId for DeleteBranchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DeleteBranchOutput {
 
 /// A builder for [`DeleteBranchOutput`](crate::operation::delete_branch::DeleteBranchOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteBranchOutputBuilder {
-    pub(crate) deleted_branch: std::option::Option<crate::types::BranchInfo>,
+    pub(crate) deleted_branch: ::std::option::Option<crate::types::BranchInfo>,
     _request_id: Option<String>,
 }
 impl DeleteBranchOutputBuilder {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
     pub fn deleted_branch(mut self, input: crate::types::BranchInfo) -> Self {
-        self.deleted_branch = Some(input);
+        self.deleted_branch = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
     pub fn set_deleted_branch(
         mut self,
-        input: std::option::Option<crate::types::BranchInfo>,
+        input: ::std::option::Option<crate::types::BranchInfo>,
     ) -> Self {
         self.deleted_branch = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyStatus {
     /// <p></p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl PolicyStatus {
 
 /// A builder for [`PolicyStatus`](crate::types::PolicyStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyStatusBuilder {
-    pub(crate) is_public: std::option::Option<bool>,
+    pub(crate) is_public: ::std::option::Option<bool>,
 }
 impl PolicyStatusBuilder {
     /// <p></p>
     pub fn is_public(mut self, input: bool) -> Self {
-        self.is_public = Some(input);
+        self.is_public = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_public = input;
         self
     }

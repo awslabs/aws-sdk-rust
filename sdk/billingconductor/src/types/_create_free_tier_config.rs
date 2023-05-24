@@ -2,15 +2,15 @@
 
 /// <p> The possible Amazon Web Services Free Tier configurations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFreeTierConfig {
     /// <p> Activate or deactivate Amazon Web Services Free Tier. </p>
     #[doc(hidden)]
-    pub activated: std::option::Option<bool>,
+    pub activated: ::std::option::Option<bool>,
 }
 impl CreateFreeTierConfig {
     /// <p> Activate or deactivate Amazon Web Services Free Tier. </p>
-    pub fn activated(&self) -> std::option::Option<bool> {
+    pub fn activated(&self) -> ::std::option::Option<bool> {
         self.activated
     }
 }
@@ -23,18 +23,20 @@ impl CreateFreeTierConfig {
 
 /// A builder for [`CreateFreeTierConfig`](crate::types::CreateFreeTierConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateFreeTierConfigBuilder {
-    pub(crate) activated: std::option::Option<bool>,
+    pub(crate) activated: ::std::option::Option<bool>,
 }
 impl CreateFreeTierConfigBuilder {
     /// <p> Activate or deactivate Amazon Web Services Free Tier. </p>
     pub fn activated(mut self, input: bool) -> Self {
-        self.activated = Some(input);
+        self.activated = ::std::option::Option::Some(input);
         self
     }
     /// <p> Activate or deactivate Amazon Web Services Free Tier. </p>
-    pub fn set_activated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_activated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.activated = input;
         self
     }

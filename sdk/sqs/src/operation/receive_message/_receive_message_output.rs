@@ -2,20 +2,20 @@
 
 /// <p>A list of received messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReceiveMessageOutput {
     /// <p>A list of messages.</p>
     #[doc(hidden)]
-    pub messages: std::option::Option<std::vec::Vec<crate::types::Message>>,
+    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     _request_id: Option<String>,
 }
 impl ReceiveMessageOutput {
     /// <p>A list of messages.</p>
-    pub fn messages(&self) -> std::option::Option<&[crate::types::Message]> {
+    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
         self.messages.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ReceiveMessageOutput {
+impl ::aws_http::request_id::RequestId for ReceiveMessageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl ReceiveMessageOutput {
 
 /// A builder for [`ReceiveMessageOutput`](crate::operation::receive_message::ReceiveMessageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReceiveMessageOutputBuilder {
-    pub(crate) messages: std::option::Option<std::vec::Vec<crate::types::Message>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     _request_id: Option<String>,
 }
 impl ReceiveMessageOutputBuilder {
@@ -43,13 +45,13 @@ impl ReceiveMessageOutputBuilder {
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input);
-        self.messages = Some(v);
+        self.messages = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of messages.</p>
     pub fn set_messages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Message>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     ) -> Self {
         self.messages = input;
         self

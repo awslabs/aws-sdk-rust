@@ -2,17 +2,17 @@
 
 /// <p>Provides settings that enable advanced recognition settings for slot values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedRecognitionSetting {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
     #[doc(hidden)]
-    pub audio_recognition_strategy: std::option::Option<crate::types::AudioRecognitionStrategy>,
+    pub audio_recognition_strategy: ::std::option::Option<crate::types::AudioRecognitionStrategy>,
 }
 impl AdvancedRecognitionSetting {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
     pub fn audio_recognition_strategy(
         &self,
-    ) -> std::option::Option<&crate::types::AudioRecognitionStrategy> {
+    ) -> ::std::option::Option<&crate::types::AudioRecognitionStrategy> {
         self.audio_recognition_strategy.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl AdvancedRecognitionSetting {
 
 /// A builder for [`AdvancedRecognitionSetting`](crate::types::AdvancedRecognitionSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdvancedRecognitionSettingBuilder {
     pub(crate) audio_recognition_strategy:
-        std::option::Option<crate::types::AudioRecognitionStrategy>,
+        ::std::option::Option<crate::types::AudioRecognitionStrategy>,
 }
 impl AdvancedRecognitionSettingBuilder {
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
@@ -36,13 +38,13 @@ impl AdvancedRecognitionSettingBuilder {
         mut self,
         input: crate::types::AudioRecognitionStrategy,
     ) -> Self {
-        self.audio_recognition_strategy = Some(input);
+        self.audio_recognition_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables using the slot values as a custom vocabulary for recognizing user utterances.</p>
     pub fn set_audio_recognition_strategy(
         mut self,
-        input: std::option::Option<crate::types::AudioRecognitionStrategy>,
+        input: ::std::option::Option<crate::types::AudioRecognitionStrategy>,
     ) -> Self {
         self.audio_recognition_strategy = input;
         self

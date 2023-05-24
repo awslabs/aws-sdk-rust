@@ -2,22 +2,22 @@
 
 /// <p>Represents the input to <code>RemoveSourceIdentifierFromSubscription</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveSourceIdentifierFromSubscriptionInput {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
     #[doc(hidden)]
-    pub subscription_name: std::option::Option<std::string::String>,
+    pub subscription_name: ::std::option::Option<::std::string::String>,
     /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
     #[doc(hidden)]
-    pub source_identifier: std::option::Option<std::string::String>,
+    pub source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RemoveSourceIdentifierFromSubscriptionInput {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
-    pub fn subscription_name(&self) -> std::option::Option<&str> {
+    pub fn subscription_name(&self) -> ::std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
     /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
-    pub fn source_identifier(&self) -> std::option::Option<&str> {
+    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
         self.source_identifier.as_deref()
     }
 }
@@ -30,41 +30,49 @@ impl RemoveSourceIdentifierFromSubscriptionInput {
 
 /// A builder for [`RemoveSourceIdentifierFromSubscriptionInput`](crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemoveSourceIdentifierFromSubscriptionInputBuilder {
-    pub(crate) subscription_name: std::option::Option<std::string::String>,
-    pub(crate) source_identifier: std::option::Option<std::string::String>,
+    pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RemoveSourceIdentifierFromSubscriptionInputBuilder {
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
-    pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_name = Some(input.into());
+    pub fn subscription_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to remove a source identifier from.</p>
     pub fn set_subscription_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subscription_name = input;
         self
     }
     /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
-    pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_identifier = Some(input.into());
+    pub fn source_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The source identifier to be removed from the subscription, such as the instance identifier for an instance, or the name of a security group. </p>
     pub fn set_source_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_identifier = input;
         self
     }
     /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionInput`](crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::remove_source_identifier_from_subscription::RemoveSourceIdentifierFromSubscriptionInput {
                 subscription_name: self.subscription_name
                 ,

@@ -2,20 +2,20 @@
 
 /// <p> The result structure for the get backend environment result. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     #[doc(hidden)]
-    pub backend_environment: std::option::Option<crate::types::BackendEnvironment>,
+    pub backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
     _request_id: Option<String>,
 }
 impl GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
-    pub fn backend_environment(&self) -> std::option::Option<&crate::types::BackendEnvironment> {
+    pub fn backend_environment(&self) -> ::std::option::Option<&crate::types::BackendEnvironment> {
         self.backend_environment.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetBackendEnvironmentOutput {
+impl ::aws_http::request_id::RequestId for GetBackendEnvironmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl GetBackendEnvironmentOutput {
 
 /// A builder for [`GetBackendEnvironmentOutput`](crate::operation::get_backend_environment::GetBackendEnvironmentOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetBackendEnvironmentOutputBuilder {
-    pub(crate) backend_environment: std::option::Option<crate::types::BackendEnvironment>,
+    pub(crate) backend_environment: ::std::option::Option<crate::types::BackendEnvironment>,
     _request_id: Option<String>,
 }
 impl GetBackendEnvironmentOutputBuilder {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub fn backend_environment(mut self, input: crate::types::BackendEnvironment) -> Self {
-        self.backend_environment = Some(input);
+        self.backend_environment = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub fn set_backend_environment(
         mut self,
-        input: std::option::Option<crate::types::BackendEnvironment>,
+        input: ::std::option::Option<crate::types::BackendEnvironment>,
     ) -> Self {
         self.backend_environment = input;
         self

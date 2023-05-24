@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SearchResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum SearchResourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SearchResourceType {
+impl ::std::convert::From<&str> for SearchResourceType {
     fn from(s: &str) -> Self {
         match s {
             "COMMENT" => SearchResourceType::Comment,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for SearchResourceType {
         }
     }
 }
-impl std::str::FromStr for SearchResourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SearchResourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SearchResourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SearchResourceType::from(s))
     }
 }
 impl SearchResourceType {
@@ -96,7 +96,7 @@ impl SearchResourceType {
         &["COMMENT", "DOCUMENT", "DOCUMENT_VERSION", "FOLDER"]
     }
 }
-impl AsRef<str> for SearchResourceType {
+impl ::std::convert::AsRef<str> for SearchResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>Represents the output of a <code>BatchWriteItem</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchWriteItemOutput {
     /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
     /// <p>Each <code>UnprocessedItems</code> entry consists of a table name and, for that table, a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).</p>
@@ -18,8 +18,11 @@ pub struct BatchWriteItemOutput {
     /// </ul>
     /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
     #[doc(hidden)]
-    pub unprocessed_items: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::WriteRequest>>,
+    pub unprocessed_items: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::WriteRequest>,
+        >,
     >,
     /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
     /// <p>Each entry consists of the following subelements:</p>
@@ -28,10 +31,10 @@ pub struct BatchWriteItemOutput {
     /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub item_collection_metrics: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::types::ItemCollectionMetrics>,
+    pub item_collection_metrics: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
         >,
     >,
     /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
@@ -41,7 +44,7 @@ pub struct BatchWriteItemOutput {
     /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub consumed_capacity: std::option::Option<std::vec::Vec<crate::types::ConsumedCapacity>>,
+    pub consumed_capacity: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     _request_id: Option<String>,
 }
 impl BatchWriteItemOutput {
@@ -60,8 +63,11 @@ impl BatchWriteItemOutput {
     /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
     pub fn unprocessed_items(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::WriteRequest>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::WriteRequest>,
+        >,
     > {
         self.unprocessed_items.as_ref()
     }
@@ -73,10 +79,10 @@ impl BatchWriteItemOutput {
     /// </ul>
     pub fn item_collection_metrics(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::types::ItemCollectionMetrics>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
         >,
     > {
         self.item_collection_metrics.as_ref()
@@ -87,11 +93,11 @@ impl BatchWriteItemOutput {
     /// <li> <p> <code>TableName</code> - The table that consumed the provisioned throughput.</p> </li>
     /// <li> <p> <code>CapacityUnits</code> - The total number of capacity units consumed.</p> </li>
     /// </ul>
-    pub fn consumed_capacity(&self) -> std::option::Option<&[crate::types::ConsumedCapacity]> {
+    pub fn consumed_capacity(&self) -> ::std::option::Option<&[crate::types::ConsumedCapacity]> {
         self.consumed_capacity.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchWriteItemOutput {
+impl ::aws_http::request_id::RequestId for BatchWriteItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -105,19 +111,24 @@ impl BatchWriteItemOutput {
 
 /// A builder for [`BatchWriteItemOutput`](crate::operation::batch_write_item::BatchWriteItemOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchWriteItemOutputBuilder {
-    pub(crate) unprocessed_items: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::WriteRequest>>,
+    pub(crate) unprocessed_items: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::WriteRequest>,
+        >,
     >,
-    pub(crate) item_collection_metrics: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::types::ItemCollectionMetrics>,
+    pub(crate) item_collection_metrics: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
         >,
     >,
     pub(crate) consumed_capacity:
-        std::option::Option<std::vec::Vec<crate::types::ConsumedCapacity>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     _request_id: Option<String>,
 }
 impl BatchWriteItemOutputBuilder {
@@ -140,12 +151,12 @@ impl BatchWriteItemOutputBuilder {
     /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
     pub fn unprocessed_items(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<crate::types::WriteRequest>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<crate::types::WriteRequest>,
     ) -> Self {
         let mut hash_map = self.unprocessed_items.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.unprocessed_items = Some(hash_map);
+        self.unprocessed_items = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code> value is in the same form as <code>RequestItems</code>, so you can provide this value directly to a subsequent <code>BatchWriteItem</code> operation. For more information, see <code>RequestItems</code> in the Request Parameters section.</p>
@@ -163,10 +174,10 @@ impl BatchWriteItemOutputBuilder {
     /// <p>If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
     pub fn set_unprocessed_items(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::types::WriteRequest>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<crate::types::WriteRequest>,
             >,
         >,
     ) -> Self {
@@ -185,12 +196,12 @@ impl BatchWriteItemOutputBuilder {
     /// </ul>
     pub fn item_collection_metrics(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<crate::types::ItemCollectionMetrics>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
     ) -> Self {
         let mut hash_map = self.item_collection_metrics.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.item_collection_metrics = Some(hash_map);
+        self.item_collection_metrics = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for each table, information about any item collections that were affected by individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
@@ -201,10 +212,10 @@ impl BatchWriteItemOutputBuilder {
     /// </ul>
     pub fn set_item_collection_metrics(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::types::ItemCollectionMetrics>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<crate::types::ItemCollectionMetrics>,
             >,
         >,
     ) -> Self {
@@ -224,7 +235,7 @@ impl BatchWriteItemOutputBuilder {
     pub fn consumed_capacity(mut self, input: crate::types::ConsumedCapacity) -> Self {
         let mut v = self.consumed_capacity.unwrap_or_default();
         v.push(input);
-        self.consumed_capacity = Some(v);
+        self.consumed_capacity = ::std::option::Option::Some(v);
         self
     }
     /// <p>The capacity units consumed by the entire <code>BatchWriteItem</code> operation.</p>
@@ -235,7 +246,7 @@ impl BatchWriteItemOutputBuilder {
     /// </ul>
     pub fn set_consumed_capacity(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConsumedCapacity>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConsumedCapacity>>,
     ) -> Self {
         self.consumed_capacity = input;
         self

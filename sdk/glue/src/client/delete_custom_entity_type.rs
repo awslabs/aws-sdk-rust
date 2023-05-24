@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCustomEntityType`](crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeFluentBuilder::set_name): <p>The name of the custom pattern that you want to delete.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_custom_entity_type::builders::DeleteCustomEntityTypeFluentBuilder::set_name): <p>The name of the custom pattern that you want to delete.</p>
     /// - On success, responds with [`DeleteCustomEntityTypeOutput`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput::name): <p>The name of the custom pattern you deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteCustomEntityTypeError>`](crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError)

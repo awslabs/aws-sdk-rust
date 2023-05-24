@@ -2,22 +2,22 @@
 
 /// <p>Provides information about all the segments that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentsResponse {
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
     #[doc(hidden)]
-    pub item: std::option::Option<std::vec::Vec<crate::types::SegmentResponse>>,
+    pub item: ::std::option::Option<::std::vec::Vec<crate::types::SegmentResponse>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SegmentsResponse {
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
-    pub fn item(&self) -> std::option::Option<&[crate::types::SegmentResponse]> {
+    pub fn item(&self) -> ::std::option::Option<&[crate::types::SegmentResponse]> {
         self.item.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl SegmentsResponse {
 
 /// A builder for [`SegmentsResponse`](crate::types::SegmentsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SegmentsResponseBuilder {
-    pub(crate) item: std::option::Option<std::vec::Vec<crate::types::SegmentResponse>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::SegmentResponse>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl SegmentsResponseBuilder {
     /// Appends an item to `item`.
@@ -44,24 +46,24 @@ impl SegmentsResponseBuilder {
     pub fn item(mut self, input: crate::types::SegmentResponse) -> Self {
         let mut v = self.item.unwrap_or_default();
         v.push(input);
-        self.item = Some(v);
+        self.item = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
     pub fn set_item(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SegmentResponse>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentResponse>>,
     ) -> Self {
         self.item = input;
         self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

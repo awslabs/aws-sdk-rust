@@ -2,16 +2,16 @@
 
 /// <p>Describes a related item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ItemValue {
     /// <p>The Amazon Resource Name (ARN) of the related item, if the related item is an Amazon resource.</p>
-    Arn(std::string::String),
+    Arn(::std::string::String),
     /// <p>The metric definition, if the related item is a metric in Amazon CloudWatch.</p>
-    MetricDefinition(std::string::String),
+    MetricDefinition(::std::string::String),
     /// <p>Details about an incident that is associated with a PagerDuty incident.</p>
     PagerDutyIncidentDetail(crate::types::PagerDutyIncidentDetail),
     /// <p>The URL, if the related item is a non-Amazon Web Services resource.</p>
-    Url(std::string::String),
+    Url(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,26 +23,26 @@ pub enum ItemValue {
     Unknown,
 }
 impl ItemValue {
-    /// Tries to convert the enum instance into [`Arn`](crate::types::ItemValue::Arn), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Arn`](crate::types::ItemValue::Arn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_arn(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ItemValue::Arn(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Arn`](crate::types::ItemValue::Arn).
     pub fn is_arn(&self) -> bool {
         self.as_arn().is_ok()
     }
-    /// Tries to convert the enum instance into [`MetricDefinition`](crate::types::ItemValue::MetricDefinition), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`MetricDefinition`](crate::types::ItemValue::MetricDefinition), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_metric_definition(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_metric_definition(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ItemValue::MetricDefinition(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`MetricDefinition`](crate::types::ItemValue::MetricDefinition).
@@ -53,24 +53,24 @@ impl ItemValue {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_pager_duty_incident_detail(
         &self,
-    ) -> std::result::Result<&crate::types::PagerDutyIncidentDetail, &Self> {
+    ) -> ::std::result::Result<&crate::types::PagerDutyIncidentDetail, &Self> {
         if let ItemValue::PagerDutyIncidentDetail(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PagerDutyIncidentDetail`](crate::types::ItemValue::PagerDutyIncidentDetail).
     pub fn is_pager_duty_incident_detail(&self) -> bool {
         self.as_pager_duty_incident_detail().is_ok()
     }
-    /// Tries to convert the enum instance into [`Url`](crate::types::ItemValue::Url), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Url`](crate::types::ItemValue::Url), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_url(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_url(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ItemValue::Url(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Url`](crate::types::ItemValue::Url).

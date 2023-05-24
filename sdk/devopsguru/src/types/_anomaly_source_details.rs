@@ -2,28 +2,28 @@
 
 /// <p> Details about the source of the anomalous operational data that triggered the anomaly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalySourceDetails {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
     #[doc(hidden)]
     pub cloud_watch_metrics:
-        std::option::Option<std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
     #[doc(hidden)]
     pub performance_insights_metrics:
-        std::option::Option<std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
 }
 impl AnomalySourceDetails {
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
     pub fn cloud_watch_metrics(
         &self,
-    ) -> std::option::Option<&[crate::types::CloudWatchMetricsDetail]> {
+    ) -> ::std::option::Option<&[crate::types::CloudWatchMetricsDetail]> {
         self.cloud_watch_metrics.as_deref()
     }
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
     pub fn performance_insights_metrics(
         &self,
-    ) -> std::option::Option<&[crate::types::PerformanceInsightsMetricsDetail]> {
+    ) -> ::std::option::Option<&[crate::types::PerformanceInsightsMetricsDetail]> {
         self.performance_insights_metrics.as_deref()
     }
 }
@@ -36,12 +36,14 @@ impl AnomalySourceDetails {
 
 /// A builder for [`AnomalySourceDetails`](crate::types::AnomalySourceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnomalySourceDetailsBuilder {
     pub(crate) cloud_watch_metrics:
-        std::option::Option<std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
     pub(crate) performance_insights_metrics:
-        std::option::Option<std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
 }
 impl AnomalySourceDetailsBuilder {
     /// Appends an item to `cloud_watch_metrics`.
@@ -52,13 +54,13 @@ impl AnomalySourceDetailsBuilder {
     pub fn cloud_watch_metrics(mut self, input: crate::types::CloudWatchMetricsDetail) -> Self {
         let mut v = self.cloud_watch_metrics.unwrap_or_default();
         v.push(input);
-        self.cloud_watch_metrics = Some(v);
+        self.cloud_watch_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>CloudWatchMetricsDetail</code> objects that contain information about analyzed CloudWatch metrics that show anomalous behavior. </p>
     pub fn set_cloud_watch_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDetail>>,
     ) -> Self {
         self.cloud_watch_metrics = input;
         self
@@ -74,13 +76,15 @@ impl AnomalySourceDetailsBuilder {
     ) -> Self {
         let mut v = self.performance_insights_metrics.unwrap_or_default();
         v.push(input);
-        self.performance_insights_metrics = Some(v);
+        self.performance_insights_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information about analyzed Performance Insights metrics that show anomalous behavior.</p>
     pub fn set_performance_insights_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::PerformanceInsightsMetricsDetail>,
+        >,
     ) -> Self {
         self.performance_insights_metrics = input;
         self

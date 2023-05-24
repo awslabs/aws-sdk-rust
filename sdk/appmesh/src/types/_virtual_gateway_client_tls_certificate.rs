@@ -2,7 +2,7 @@
 
 /// <p>An object that represents the virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualGatewayClientTlsCertificate {
     /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS) </a>.</p>
     File(crate::types::VirtualGatewayListenerTlsFileCertificate),
@@ -23,11 +23,11 @@ impl VirtualGatewayClientTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsFileCertificate, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayListenerTlsFileCertificate, &Self> {
         if let VirtualGatewayClientTlsCertificate::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayClientTlsCertificate::File).
@@ -38,11 +38,11 @@ impl VirtualGatewayClientTlsCertificate {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsSdsCertificate, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayListenerTlsSdsCertificate, &Self> {
         if let VirtualGatewayClientTlsCertificate::Sds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::types::VirtualGatewayClientTlsCertificate::Sds).

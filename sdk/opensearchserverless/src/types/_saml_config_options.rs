@@ -2,36 +2,36 @@
 
 /// <p>Describes SAML options for an OpenSearch Serverless security configuration in the form of a key-value map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlConfigOptions {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::string::String>,
+    pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>A user attribute for this SAML integration.</p>
     #[doc(hidden)]
-    pub user_attribute: std::option::Option<std::string::String>,
+    pub user_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The group attribute for this SAML integration.</p>
     #[doc(hidden)]
-    pub group_attribute: std::option::Option<std::string::String>,
+    pub group_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     #[doc(hidden)]
-    pub session_timeout: std::option::Option<i32>,
+    pub session_timeout: ::std::option::Option<i32>,
 }
 impl SamlConfigOptions {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
     /// <p>A user attribute for this SAML integration.</p>
-    pub fn user_attribute(&self) -> std::option::Option<&str> {
+    pub fn user_attribute(&self) -> ::std::option::Option<&str> {
         self.user_attribute.as_deref()
     }
     /// <p>The group attribute for this SAML integration.</p>
-    pub fn group_attribute(&self) -> std::option::Option<&str> {
+    pub fn group_attribute(&self) -> ::std::option::Option<&str> {
         self.group_attribute.as_deref()
     }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
-    pub fn session_timeout(&self) -> std::option::Option<i32> {
+    pub fn session_timeout(&self) -> ::std::option::Option<i32> {
         self.session_timeout
     }
 }
@@ -44,51 +44,65 @@ impl SamlConfigOptions {
 
 /// A builder for [`SamlConfigOptions`](crate::types::SamlConfigOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SamlConfigOptionsBuilder {
-    pub(crate) metadata: std::option::Option<std::string::String>,
-    pub(crate) user_attribute: std::option::Option<std::string::String>,
-    pub(crate) group_attribute: std::option::Option<std::string::String>,
-    pub(crate) session_timeout: std::option::Option<i32>,
+    pub(crate) metadata: ::std::option::Option<::std::string::String>,
+    pub(crate) user_attribute: ::std::option::Option<::std::string::String>,
+    pub(crate) group_attribute: ::std::option::Option<::std::string::String>,
+    pub(crate) session_timeout: ::std::option::Option<i32>,
 }
 impl SamlConfigOptionsBuilder {
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metadata = Some(input.into());
+    pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The XML IdP metadata file generated from your identity provider.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>A user attribute for this SAML integration.</p>
-    pub fn user_attribute(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_attribute = Some(input.into());
+    pub fn user_attribute(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.user_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user attribute for this SAML integration.</p>
-    pub fn set_user_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_attribute(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.user_attribute = input;
         self
     }
     /// <p>The group attribute for this SAML integration.</p>
-    pub fn group_attribute(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_attribute = Some(input.into());
+    pub fn group_attribute(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.group_attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group attribute for this SAML integration.</p>
-    pub fn set_group_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_attribute(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.group_attribute = input;
         self
     }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn session_timeout(mut self, input: i32) -> Self {
-        self.session_timeout = Some(input);
+        self.session_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
-    pub fn set_session_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_session_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout = input;
         self
     }

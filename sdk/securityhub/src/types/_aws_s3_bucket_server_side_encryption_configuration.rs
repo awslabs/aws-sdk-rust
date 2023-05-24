@@ -2,18 +2,18 @@
 
 /// <p>The encryption configuration for the S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketServerSideEncryptionConfiguration {
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
     #[doc(hidden)]
     pub rules:
-        std::option::Option<std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
 }
 impl AwsS3BucketServerSideEncryptionConfiguration {
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
     pub fn rules(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsS3BucketServerSideEncryptionRule]> {
+    ) -> ::std::option::Option<&[crate::types::AwsS3BucketServerSideEncryptionRule]> {
         self.rules.as_deref()
     }
 }
@@ -27,10 +27,12 @@ impl AwsS3BucketServerSideEncryptionConfiguration {
 
 /// A builder for [`AwsS3BucketServerSideEncryptionConfiguration`](crate::types::AwsS3BucketServerSideEncryptionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsS3BucketServerSideEncryptionConfigurationBuilder {
     pub(crate) rules:
-        std::option::Option<std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>>,
 }
 impl AwsS3BucketServerSideEncryptionConfigurationBuilder {
     /// Appends an item to `rules`.
@@ -41,14 +43,14 @@ impl AwsS3BucketServerSideEncryptionConfigurationBuilder {
     pub fn rules(mut self, input: crate::types::AwsS3BucketServerSideEncryptionRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsS3BucketServerSideEncryptionRule>,
         >,
     ) -> Self {
         self.rules = input;

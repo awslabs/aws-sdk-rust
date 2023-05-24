@@ -2,17 +2,17 @@
 
 /// <p>The channel membership preferences for an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelMembershipPreferences {
     /// <p>The push notification configuration of a message.</p>
     #[doc(hidden)]
-    pub push_notifications: std::option::Option<crate::types::PushNotificationPreferences>,
+    pub push_notifications: ::std::option::Option<crate::types::PushNotificationPreferences>,
 }
 impl ChannelMembershipPreferences {
     /// <p>The push notification configuration of a message.</p>
     pub fn push_notifications(
         &self,
-    ) -> std::option::Option<&crate::types::PushNotificationPreferences> {
+    ) -> ::std::option::Option<&crate::types::PushNotificationPreferences> {
         self.push_notifications.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ChannelMembershipPreferences {
 
 /// A builder for [`ChannelMembershipPreferences`](crate::types::ChannelMembershipPreferences).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelMembershipPreferencesBuilder {
-    pub(crate) push_notifications: std::option::Option<crate::types::PushNotificationPreferences>,
+    pub(crate) push_notifications: ::std::option::Option<crate::types::PushNotificationPreferences>,
 }
 impl ChannelMembershipPreferencesBuilder {
     /// <p>The push notification configuration of a message.</p>
     pub fn push_notifications(mut self, input: crate::types::PushNotificationPreferences) -> Self {
-        self.push_notifications = Some(input);
+        self.push_notifications = ::std::option::Option::Some(input);
         self
     }
     /// <p>The push notification configuration of a message.</p>
     pub fn set_push_notifications(
         mut self,
-        input: std::option::Option<crate::types::PushNotificationPreferences>,
+        input: ::std::option::Option<crate::types::PushNotificationPreferences>,
     ) -> Self {
         self.push_notifications = input;
         self

@@ -2,7 +2,7 @@
 pub(crate) fn de_sms_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::SmsTemplateResponse>,
+    ::std::option::Option<crate::types::SmsTemplateResponse>,
     crate::operation::get_sms_template::GetSmsTemplateError,
 > {
     (!body.is_empty())

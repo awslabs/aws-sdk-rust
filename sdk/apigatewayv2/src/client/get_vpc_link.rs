@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVpcLink`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vpc_link_id(impl Into<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::set_vpc_link_id): <p>The ID of the VPC link.</p>
+    ///   - [`vpc_link_id(impl ::std::convert::Into<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::vpc_link_id) / [`set_vpc_link_id(Option<String>)`](crate::operation::get_vpc_link::builders::GetVpcLinkFluentBuilder::set_vpc_link_id): <p>The ID of the VPC link.</p>
     /// - On success, responds with [`GetVpcLinkOutput`](crate::operation::get_vpc_link::GetVpcLinkOutput) with field(s):
     ///   - [`created_date(Option<DateTime>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::created_date): <p>The timestamp when the VPC link was created.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_vpc_link::GetVpcLinkOutput::name): <p>The name of the VPC link.</p>

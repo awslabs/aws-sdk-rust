@@ -2,52 +2,55 @@
 
 /// <p>Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3GlueParquetTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     #[doc(hidden)]
-    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub partition_keys:
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>A single Amazon S3 path to write to.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     #[doc(hidden)]
-    pub compression: std::option::Option<crate::types::ParquetCompressionType>,
+    pub compression: ::std::option::Option<crate::types::ParquetCompressionType>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     #[doc(hidden)]
-    pub schema_change_policy: std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    pub schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3GlueParquetTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn partition_keys(
+        &self,
+    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.partition_keys.as_deref()
     }
     /// <p>A single Amazon S3 path to write to.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn compression(&self) -> std::option::Option<&crate::types::ParquetCompressionType> {
+    pub fn compression(&self) -> ::std::option::Option<&crate::types::ParquetCompressionType> {
         self.compression.as_ref()
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(
         &self,
-    ) -> std::option::Option<&crate::types::DirectSchemaChangePolicy> {
+    ) -> ::std::option::Option<&crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
 }
@@ -60,24 +63,26 @@ impl S3GlueParquetTarget {
 
 /// A builder for [`S3GlueParquetTarget`](crate::types::S3GlueParquetTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3GlueParquetTargetBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) partition_keys:
-        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) compression: std::option::Option<crate::types::ParquetCompressionType>,
-    pub(crate) schema_change_policy: std::option::Option<crate::types::DirectSchemaChangePolicy>,
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) compression: ::std::option::Option<crate::types::ParquetCompressionType>,
+    pub(crate) schema_change_policy: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3GlueParquetTargetBuilder {
     /// <p>The name of the data target.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data target.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -86,16 +91,16 @@ impl S3GlueParquetTargetBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input.into());
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inputs = input;
         self
@@ -105,52 +110,52 @@ impl S3GlueParquetTargetBuilder {
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
     ///
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+    pub fn partition_keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
         v.push(input);
-        self.partition_keys = Some(v);
+        self.partition_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     pub fn set_partition_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.partition_keys = input;
         self
     }
     /// <p>A single Amazon S3 path to write to.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single Amazon S3 path to write to.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn compression(mut self, input: crate::types::ParquetCompressionType) -> Self {
-        self.compression = Some(input);
+        self.compression = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn set_compression(
         mut self,
-        input: std::option::Option<crate::types::ParquetCompressionType>,
+        input: ::std::option::Option<crate::types::ParquetCompressionType>,
     ) -> Self {
         self.compression = input;
         self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(mut self, input: crate::types::DirectSchemaChangePolicy) -> Self {
-        self.schema_change_policy = Some(input);
+        self.schema_change_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn set_schema_change_policy(
         mut self,
-        input: std::option::Option<crate::types::DirectSchemaChangePolicy>,
+        input: ::std::option::Option<crate::types::DirectSchemaChangePolicy>,
     ) -> Self {
         self.schema_change_policy = input;
         self

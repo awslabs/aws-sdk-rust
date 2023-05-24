@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
     #[doc(hidden)]
-    pub reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
+    pub reserved_elasticsearch_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The customer-specified identifier used to track this reservation.</p>
     #[doc(hidden)]
-    pub reservation_name: std::option::Option<std::string::String>,
+    pub reservation_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PurchaseReservedElasticsearchInstanceOfferingOutput {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
-    pub fn reserved_elasticsearch_instance_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_elasticsearch_instance_id(&self) -> ::std::option::Option<&str> {
         self.reserved_elasticsearch_instance_id.as_deref()
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
-    pub fn reservation_name(&self) -> std::option::Option<&str> {
+    pub fn reservation_name(&self) -> ::std::option::Option<&str> {
         self.reservation_name.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PurchaseReservedElasticsearchInstanceOfferingOutput {
+impl ::aws_http::request_id::RequestId for PurchaseReservedElasticsearchInstanceOfferingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,36 +36,44 @@ impl PurchaseReservedElasticsearchInstanceOfferingOutput {
 
 /// A builder for [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
-    pub(crate) reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
-    pub(crate) reservation_name: std::option::Option<std::string::String>,
+    pub(crate) reserved_elasticsearch_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) reservation_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PurchaseReservedElasticsearchInstanceOfferingOutputBuilder {
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
     pub fn reserved_elasticsearch_instance_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.reserved_elasticsearch_instance_id = Some(input.into());
+        self.reserved_elasticsearch_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
     pub fn set_reserved_elasticsearch_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_elasticsearch_instance_id = input;
         self
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
-    pub fn reservation_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reservation_name = Some(input.into());
+    pub fn reservation_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reservation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-specified identifier used to track this reservation.</p>
-    pub fn set_reservation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reservation_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.reservation_name = input;
         self
     }

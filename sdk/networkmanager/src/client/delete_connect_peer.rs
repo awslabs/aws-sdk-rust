@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConnectPeer`](crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connect_peer_id(impl Into<String>)`](crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder::connect_peer_id) / [`set_connect_peer_id(Option<String>)`](crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder::set_connect_peer_id): <p>The ID of the deleted Connect peer.</p>
+    ///   - [`connect_peer_id(impl ::std::convert::Into<String>)`](crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder::connect_peer_id) / [`set_connect_peer_id(Option<String>)`](crate::operation::delete_connect_peer::builders::DeleteConnectPeerFluentBuilder::set_connect_peer_id): <p>The ID of the deleted Connect peer.</p>
     /// - On success, responds with [`DeleteConnectPeerOutput`](crate::operation::delete_connect_peer::DeleteConnectPeerOutput) with field(s):
     ///   - [`connect_peer(Option<ConnectPeer>)`](crate::operation::delete_connect_peer::DeleteConnectPeerOutput::connect_peer): <p>Information about the deleted Connect peer.</p>
     /// - On failure, responds with [`SdkError<DeleteConnectPeerError>`](crate::operation::delete_connect_peer::DeleteConnectPeerError)

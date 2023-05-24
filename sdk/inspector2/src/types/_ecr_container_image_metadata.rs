@@ -2,15 +2,15 @@
 
 /// <p>Information on the Amazon ECR image metadata associated with a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tags(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tags.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl EcrContainerImageMetadata {
 
 /// A builder for [`EcrContainerImageMetadata`](crate::types::EcrContainerImageMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcrContainerImageMetadataBuilder {
-    pub(crate) tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EcrContainerImageMetadataBuilder {
     /// Appends an item to `tags`.
@@ -33,16 +35,16 @@ impl EcrContainerImageMetadataBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input.into());
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.tags = input;
         self

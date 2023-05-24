@@ -2,7 +2,7 @@
 
 /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTerminationPolicy {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl AutoTerminationPolicy {
 
 /// A builder for [`AutoTerminationPolicy`](crate::types::AutoTerminationPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoTerminationPolicyBuilder {
-    pub(crate) idle_timeout: std::option::Option<i64>,
+    pub(crate) idle_timeout: ::std::option::Option<i64>,
 }
 impl AutoTerminationPolicyBuilder {
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
     pub fn idle_timeout(mut self, input: i64) -> Self {
-        self.idle_timeout = Some(input);
+        self.idle_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the amount of idle time in seconds after which the cluster automatically terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds (seven days).</p>
-    pub fn set_idle_timeout(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_idle_timeout(mut self, input: ::std::option::Option<i64>) -> Self {
         self.idle_timeout = input;
         self
     }

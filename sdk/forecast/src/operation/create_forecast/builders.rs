@@ -14,56 +14,59 @@ pub use crate::operation::create_forecast::_create_forecast_input::CreateForecas
 /// <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast. Use the <code>DescribeForecast</code> operation to get the status.</p>
 /// </note>
 /// <p>By default, a forecast includes predictions for every item (<code>item_id</code>) in the dataset group that was used to train the predictor. However, you can use the <code>TimeSeriesSelector</code> object to generate a forecast on a subset of time series. Forecast creation is skipped for any time series that you specify that are not in the input dataset. The forecast export file will not contain these time series or their forecasted values.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateForecastFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_forecast::builders::CreateForecastInputBuilder,
 }
 impl CreateForecastFluentBuilder {
     /// Creates a new `CreateForecast`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_forecast::CreateForecast,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_forecast::CreateForecastError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_forecast::CreateForecastError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_forecast::CreateForecastOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_forecast::CreateForecastError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_forecast::CreateForecastError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,29 +79,41 @@ impl CreateForecastFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_forecast::CreateForecastOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_forecast::CreateForecastError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_forecast::CreateForecastError>,
     > {
         self.send_middleware().await
     }
     /// <p>A name for the forecast.</p>
-    pub fn forecast_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn forecast_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.forecast_name(input.into());
         self
     }
     /// <p>A name for the forecast.</p>
-    pub fn set_forecast_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_forecast_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_forecast_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-    pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn predictor_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.predictor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-    pub fn set_predictor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_predictor_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_predictor_arn(input);
         self
     }
@@ -108,7 +123,10 @@ impl CreateForecastFluentBuilder {
     ///
     /// <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). </p>
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
-    pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn forecast_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.forecast_types(input.into());
         self
     }
@@ -116,7 +134,7 @@ impl CreateForecastFluentBuilder {
     /// <p>The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>. </p>
     pub fn set_forecast_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_forecast_types(input);
         self
@@ -153,7 +171,7 @@ impl CreateForecastFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -178,7 +196,7 @@ impl CreateForecastFluentBuilder {
     /// </ul>
     pub fn set_time_series_selector(
         mut self,
-        input: std::option::Option<crate::types::TimeSeriesSelector>,
+        input: ::std::option::Option<crate::types::TimeSeriesSelector>,
     ) -> Self {
         self.inner = self.inner.set_time_series_selector(input);
         self

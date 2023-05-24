@@ -45,13 +45,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ContainerServiceStateDetailCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +75,7 @@ pub enum ContainerServiceStateDetailCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ContainerServiceStateDetailCode {
+impl ::std::convert::From<&str> for ContainerServiceStateDetailCode {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVATING_DEPLOYMENT" => ContainerServiceStateDetailCode::ActivatingDeployment,
@@ -97,11 +97,11 @@ impl std::convert::From<&str> for ContainerServiceStateDetailCode {
         }
     }
 }
-impl std::str::FromStr for ContainerServiceStateDetailCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ContainerServiceStateDetailCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContainerServiceStateDetailCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ContainerServiceStateDetailCode::from(s))
     }
 }
 impl ContainerServiceStateDetailCode {
@@ -139,7 +139,7 @@ impl ContainerServiceStateDetailCode {
         ]
     }
 }
-impl AsRef<str> for ContainerServiceStateDetailCode {
+impl ::std::convert::AsRef<str> for ContainerServiceStateDetailCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

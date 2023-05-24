@@ -2,34 +2,34 @@
 
 /// <p>Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or other error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AthenaError {
     /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
     /// <p> <b>1</b> - System</p>
     /// <p> <b>2</b> - User</p>
     /// <p> <b>3</b> - Other</p>
     #[doc(hidden)]
-    pub error_category: std::option::Option<i32>,
+    pub error_category: ::std::option::Option<i32>,
     /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
     #[doc(hidden)]
-    pub error_type: std::option::Option<i32>,
+    pub error_type: ::std::option::Option<i32>,
     /// <p>True if the query might succeed if resubmitted.</p>
     #[doc(hidden)]
     pub retryable: bool,
     /// <p>Contains a short description of the error that occurred.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl AthenaError {
     /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
     /// <p> <b>1</b> - System</p>
     /// <p> <b>2</b> - User</p>
     /// <p> <b>3</b> - Other</p>
-    pub fn error_category(&self) -> std::option::Option<i32> {
+    pub fn error_category(&self) -> ::std::option::Option<i32> {
         self.error_category
     }
     /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
-    pub fn error_type(&self) -> std::option::Option<i32> {
+    pub fn error_type(&self) -> ::std::option::Option<i32> {
         self.error_type
     }
     /// <p>True if the query might succeed if resubmitted.</p>
@@ -37,7 +37,7 @@ impl AthenaError {
         self.retryable
     }
     /// <p>Contains a short description of the error that occurred.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -50,12 +50,14 @@ impl AthenaError {
 
 /// A builder for [`AthenaError`](crate::types::AthenaError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AthenaErrorBuilder {
-    pub(crate) error_category: std::option::Option<i32>,
-    pub(crate) error_type: std::option::Option<i32>,
-    pub(crate) retryable: std::option::Option<bool>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) error_category: ::std::option::Option<i32>,
+    pub(crate) error_type: ::std::option::Option<i32>,
+    pub(crate) retryable: ::std::option::Option<bool>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl AthenaErrorBuilder {
     /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
@@ -63,44 +65,50 @@ impl AthenaErrorBuilder {
     /// <p> <b>2</b> - User</p>
     /// <p> <b>3</b> - Other</p>
     pub fn error_category(mut self, input: i32) -> Self {
-        self.error_category = Some(input);
+        self.error_category = ::std::option::Option::Some(input);
         self
     }
     /// <p>An integer value that specifies the category of a query failure error. The following list shows the category for each integer value.</p>
     /// <p> <b>1</b> - System</p>
     /// <p> <b>2</b> - User</p>
     /// <p> <b>3</b> - Other</p>
-    pub fn set_error_category(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_error_category(mut self, input: ::std::option::Option<i32>) -> Self {
         self.error_category = input;
         self
     }
     /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
     pub fn error_type(mut self, input: i32) -> Self {
-        self.error_type = Some(input);
+        self.error_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>An integer value that provides specific information about an Athena query error. For the meaning of specific values, see the <a href="https://docs.aws.amazon.com/athena/latest/ug/error-reference.html#error-reference-error-type-reference">Error Type Reference</a> in the <i>Amazon Athena User Guide</i>.</p>
-    pub fn set_error_type(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_error_type(mut self, input: ::std::option::Option<i32>) -> Self {
         self.error_type = input;
         self
     }
     /// <p>True if the query might succeed if resubmitted.</p>
     pub fn retryable(mut self, input: bool) -> Self {
-        self.retryable = Some(input);
+        self.retryable = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if the query might succeed if resubmitted.</p>
-    pub fn set_retryable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_retryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retryable = input;
         self
     }
     /// <p>Contains a short description of the error that occurred.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains a short description of the error that occurred.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

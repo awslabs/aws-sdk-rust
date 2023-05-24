@@ -6,29 +6,29 @@ pub use crate::operation::put_hypervisor_property_mappings::_put_hypervisor_prop
 /// Fluent builder constructing a request to `PutHypervisorPropertyMappings`.
 ///
 /// <p>This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon Web Services.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutHypervisorPropertyMappingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder,
 }
 impl PutHypervisorPropertyMappingsFluentBuilder {
     /// Creates a new `PutHypervisorPropertyMappings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hypervisor_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hypervisor_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hypervisor_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hypervisor_arn(input);
         self
     }
@@ -105,18 +114,18 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
     /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
     pub fn set_vmware_to_aws_tag_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
     ) -> Self {
         self.inner = self.inner.set_vmware_to_aws_tag_mappings(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-    pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-    pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }

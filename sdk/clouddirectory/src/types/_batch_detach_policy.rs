@@ -2,22 +2,22 @@
 
 /// <p>Detaches the specified policy from the specified directory inside a <code>BatchWrite</code> operation. For more information, see <code>DetachPolicy</code> and <code>BatchWriteRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachPolicy {
     /// <p>Reference that identifies the policy object.</p>
     #[doc(hidden)]
-    pub policy_reference: std::option::Option<crate::types::ObjectReference>,
+    pub policy_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
     #[doc(hidden)]
-    pub object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchDetachPolicy {
     /// <p>Reference that identifies the policy object.</p>
-    pub fn policy_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn policy_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.policy_reference.as_ref()
     }
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl BatchDetachPolicy {
 
 /// A builder for [`BatchDetachPolicy`](crate::types::BatchDetachPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDetachPolicyBuilder {
-    pub(crate) policy_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub(crate) policy_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchDetachPolicyBuilder {
     /// <p>Reference that identifies the policy object.</p>
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.policy_reference = Some(input);
+        self.policy_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reference that identifies the policy object.</p>
     pub fn set_policy_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.policy_reference = input;
         self
     }
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.object_reference = Some(input);
+        self.object_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
     pub fn set_object_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.object_reference = input;
         self

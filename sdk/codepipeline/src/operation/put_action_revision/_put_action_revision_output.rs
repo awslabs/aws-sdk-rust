@@ -2,14 +2,14 @@
 
 /// <p>Represents the output of a <code>PutActionRevision</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutActionRevisionOutput {
     /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
     #[doc(hidden)]
     pub new_revision: bool,
     /// <p>The ID of the current workflow state of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_execution_id: std::option::Option<std::string::String>,
+    pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutActionRevisionOutput {
@@ -18,11 +18,11 @@ impl PutActionRevisionOutput {
         self.new_revision
     }
     /// <p>The ID of the current workflow state of the pipeline.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PutActionRevisionOutput {
+impl ::aws_http::request_id::RequestId for PutActionRevisionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,32 +37,37 @@ impl PutActionRevisionOutput {
 
 /// A builder for [`PutActionRevisionOutput`](crate::operation::put_action_revision::PutActionRevisionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutActionRevisionOutputBuilder {
-    pub(crate) new_revision: std::option::Option<bool>,
-    pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
+    pub(crate) new_revision: ::std::option::Option<bool>,
+    pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutActionRevisionOutputBuilder {
     /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
     pub fn new_revision(mut self, input: bool) -> Self {
-        self.new_revision = Some(input);
+        self.new_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
-    pub fn set_new_revision(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_new_revision(mut self, input: ::std::option::Option<bool>) -> Self {
         self.new_revision = input;
         self
     }
     /// <p>The ID of the current workflow state of the pipeline.</p>
-    pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_execution_id = Some(input.into());
+    pub fn pipeline_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the current workflow state of the pipeline.</p>
     pub fn set_pipeline_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_execution_id = input;
         self

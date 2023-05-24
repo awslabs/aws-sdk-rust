@@ -7,56 +7,59 @@ pub use crate::operation::get_ml_model::_get_ml_model_input::GetMlModelInputBuil
 ///
 /// <p>Returns an <code>MLModel</code> that includes detailed metadata, data source information, and the current status of the <code>MLModel</code>.</p>
 /// <p> <code>GetMLModel</code> provides results in normal or verbose format. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMLModelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_ml_model::builders::GetMlModelInputBuilder,
 }
 impl GetMLModelFluentBuilder {
     /// Creates a new `GetMLModel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_ml_model::GetMLModel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_ml_model::GetMLModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_model::GetMLModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_ml_model::GetMlModelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_ml_model::GetMLModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_model::GetMLModelError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl GetMLModelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_ml_model::GetMlModelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_ml_model::GetMLModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_ml_model::GetMLModelError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ml_model_id(input.into());
         self
     }
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ml_model_id(input);
         self
     }
@@ -95,7 +98,7 @@ impl GetMLModelFluentBuilder {
     /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
     /// <p>If true, <code>Recipe</code> is returned.</p>
     /// <p>If false, <code>Recipe</code> is not returned.</p>
-    pub fn set_verbose(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_verbose(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_verbose(input);
         self
     }

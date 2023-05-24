@@ -2,118 +2,118 @@
 
 /// <p>Describes a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The login name of the user.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The given name of the user.</p>
     #[doc(hidden)]
-    pub given_name: std::option::Option<std::string::String>,
+    pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>The surname of the user.</p>
     #[doc(hidden)]
-    pub surname: std::option::Option<std::string::String>,
+    pub surname: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the organization.</p>
     #[doc(hidden)]
-    pub organization_id: std::option::Option<std::string::String>,
+    pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the root folder.</p>
     #[doc(hidden)]
-    pub root_folder_id: std::option::Option<std::string::String>,
+    pub root_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the recycle bin folder.</p>
     #[doc(hidden)]
-    pub recycle_bin_folder_id: std::option::Option<std::string::String>,
+    pub recycle_bin_folder_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the user.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::UserStatusType>,
+    pub status: ::std::option::Option<crate::types::UserStatusType>,
     /// <p>The type of user.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::UserType>,
+    pub r#type: ::std::option::Option<crate::types::UserType>,
     /// <p>The time when the user was created.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the user was modified.</p>
     #[doc(hidden)]
-    pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time zone ID of the user.</p>
     #[doc(hidden)]
-    pub time_zone_id: std::option::Option<std::string::String>,
+    pub time_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale of the user.</p>
     #[doc(hidden)]
-    pub locale: std::option::Option<crate::types::LocaleType>,
+    pub locale: ::std::option::Option<crate::types::LocaleType>,
     /// <p>The storage for the user.</p>
     #[doc(hidden)]
-    pub storage: std::option::Option<crate::types::UserStorageMetadata>,
+    pub storage: ::std::option::Option<crate::types::UserStorageMetadata>,
 }
 impl User {
     /// <p>The ID of the user.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The login name of the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p>The given name of the user.</p>
-    pub fn given_name(&self) -> std::option::Option<&str> {
+    pub fn given_name(&self) -> ::std::option::Option<&str> {
         self.given_name.as_deref()
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(&self) -> std::option::Option<&str> {
+    pub fn surname(&self) -> ::std::option::Option<&str> {
         self.surname.as_deref()
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The ID of the root folder.</p>
-    pub fn root_folder_id(&self) -> std::option::Option<&str> {
+    pub fn root_folder_id(&self) -> ::std::option::Option<&str> {
         self.root_folder_id.as_deref()
     }
     /// <p>The ID of the recycle bin folder.</p>
-    pub fn recycle_bin_folder_id(&self) -> std::option::Option<&str> {
+    pub fn recycle_bin_folder_id(&self) -> ::std::option::Option<&str> {
         self.recycle_bin_folder_id.as_deref()
     }
     /// <p>The status of the user.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::UserStatusType> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::UserStatusType> {
         self.status.as_ref()
     }
     /// <p>The type of user.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::UserType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserType> {
         self.r#type.as_ref()
     }
     /// <p>The time when the user was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the user was modified.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The time zone ID of the user.</p>
-    pub fn time_zone_id(&self) -> std::option::Option<&str> {
+    pub fn time_zone_id(&self) -> ::std::option::Option<&str> {
         self.time_zone_id.as_deref()
     }
     /// <p>The locale of the user.</p>
-    pub fn locale(&self) -> std::option::Option<&crate::types::LocaleType> {
+    pub fn locale(&self) -> ::std::option::Option<&crate::types::LocaleType> {
         self.locale.as_ref()
     }
     /// <p>The storage for the user.</p>
-    pub fn storage(&self) -> std::option::Option<&crate::types::UserStorageMetadata> {
+    pub fn storage(&self) -> ::std::option::Option<&crate::types::UserStorageMetadata> {
         self.storage.as_ref()
     }
 }
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for User {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("id", &self.id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -142,183 +142,207 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) email_address: std::option::Option<std::string::String>,
-    pub(crate) given_name: std::option::Option<std::string::String>,
-    pub(crate) surname: std::option::Option<std::string::String>,
-    pub(crate) organization_id: std::option::Option<std::string::String>,
-    pub(crate) root_folder_id: std::option::Option<std::string::String>,
-    pub(crate) recycle_bin_folder_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::UserStatusType>,
-    pub(crate) r#type: std::option::Option<crate::types::UserType>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) time_zone_id: std::option::Option<std::string::String>,
-    pub(crate) locale: std::option::Option<crate::types::LocaleType>,
-    pub(crate) storage: std::option::Option<crate::types::UserStorageMetadata>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
+    pub(crate) given_name: ::std::option::Option<::std::string::String>,
+    pub(crate) surname: ::std::option::Option<::std::string::String>,
+    pub(crate) organization_id: ::std::option::Option<::std::string::String>,
+    pub(crate) root_folder_id: ::std::option::Option<::std::string::String>,
+    pub(crate) recycle_bin_folder_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::UserStatusType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::UserType>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) time_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) locale: ::std::option::Option<crate::types::LocaleType>,
+    pub(crate) storage: ::std::option::Option<crate::types::UserStorageMetadata>,
 }
 impl UserBuilder {
     /// <p>The ID of the user.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The login name of the user.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The login name of the user.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the user.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
     /// <p>The given name of the user.</p>
-    pub fn given_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.given_name = Some(input.into());
+    pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.given_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The given name of the user.</p>
-    pub fn set_given_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_given_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.given_name = input;
         self
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.surname = Some(input.into());
+    pub fn surname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.surname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The surname of the user.</p>
-    pub fn set_surname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_surname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.surname = input;
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.organization_id = Some(input.into());
+    pub fn organization_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_organization_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.organization_id = input;
         self
     }
     /// <p>The ID of the root folder.</p>
-    pub fn root_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.root_folder_id = Some(input.into());
+    pub fn root_folder_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.root_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the root folder.</p>
-    pub fn set_root_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_root_folder_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.root_folder_id = input;
         self
     }
     /// <p>The ID of the recycle bin folder.</p>
-    pub fn recycle_bin_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recycle_bin_folder_id = Some(input.into());
+    pub fn recycle_bin_folder_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recycle_bin_folder_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the recycle bin folder.</p>
     pub fn set_recycle_bin_folder_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recycle_bin_folder_id = input;
         self
     }
     /// <p>The status of the user.</p>
     pub fn status(mut self, input: crate::types::UserStatusType) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the user.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::UserStatusType>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::UserStatusType>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The type of user.</p>
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of user.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The time when the user was created.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the user was created.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The time when the user was modified.</p>
-    pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified_timestamp = Some(input);
+    pub fn modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the user was modified.</p>
     pub fn set_modified_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.modified_timestamp = input;
         self
     }
     /// <p>The time zone ID of the user.</p>
-    pub fn time_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.time_zone_id = Some(input.into());
+    pub fn time_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.time_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone ID of the user.</p>
-    pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_time_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_zone_id = input;
         self
     }
     /// <p>The locale of the user.</p>
     pub fn locale(mut self, input: crate::types::LocaleType) -> Self {
-        self.locale = Some(input);
+        self.locale = ::std::option::Option::Some(input);
         self
     }
     /// <p>The locale of the user.</p>
-    pub fn set_locale(mut self, input: std::option::Option<crate::types::LocaleType>) -> Self {
+    pub fn set_locale(mut self, input: ::std::option::Option<crate::types::LocaleType>) -> Self {
         self.locale = input;
         self
     }
     /// <p>The storage for the user.</p>
     pub fn storage(mut self, input: crate::types::UserStorageMetadata) -> Self {
-        self.storage = Some(input);
+        self.storage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The storage for the user.</p>
     pub fn set_storage(
         mut self,
-        input: std::option::Option<crate::types::UserStorageMetadata>,
+        input: ::std::option::Option<crate::types::UserStorageMetadata>,
     ) -> Self {
         self.storage = input;
         self
@@ -344,8 +368,8 @@ impl UserBuilder {
         }
     }
 }
-impl std::fmt::Debug for UserBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserBuilder");
         formatter.field("id", &self.id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");

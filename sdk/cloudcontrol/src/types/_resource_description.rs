@@ -2,29 +2,29 @@
 
 /// <p>Represents information about a provisioned resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResourceDescription {
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A list of the resource properties and their current values.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<std::string::String>,
+    pub properties: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDescription {
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>A list of the resource properties and their current values.</p>
-    pub fn properties(&self) -> std::option::Option<&str> {
+    pub fn properties(&self) -> ::std::option::Option<&str> {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ResourceDescription {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDescription");
         formatter.field("identifier", &self.identifier);
         formatter.field("properties", &"*** Sensitive Data Redacted ***");
@@ -40,31 +40,31 @@ impl ResourceDescription {
 
 /// A builder for [`ResourceDescription`](crate::types::ResourceDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ResourceDescriptionBuilder {
-    pub(crate) identifier: std::option::Option<std::string::String>,
-    pub(crate) properties: std::option::Option<std::string::String>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) properties: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDescriptionBuilder {
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The primary identifier for the resource.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p>A list of the resource properties and their current values.</p>
-    pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
-        self.properties = Some(input.into());
+    pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of the resource properties and their current values.</p>
-    pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
         self
     }
@@ -76,8 +76,8 @@ impl ResourceDescriptionBuilder {
         }
     }
 }
-impl std::fmt::Debug for ResourceDescriptionBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ResourceDescriptionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceDescriptionBuilder");
         formatter.field("identifier", &self.identifier);
         formatter.field("properties", &"*** Sensitive Data Redacted ***");

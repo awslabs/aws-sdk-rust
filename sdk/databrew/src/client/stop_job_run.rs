@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopJobRun`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::set_name): <p>The name of the job to be stopped.</p>
-    ///   - [`run_id(impl Into<String>)`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::set_run_id): <p>The ID of the job run to be stopped.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::set_name): <p>The name of the job to be stopped.</p>
+    ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::stop_job_run::builders::StopJobRunFluentBuilder::set_run_id): <p>The ID of the job run to be stopped.</p>
     /// - On success, responds with [`StopJobRunOutput`](crate::operation::stop_job_run::StopJobRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::stop_job_run::StopJobRunOutput::run_id): <p>The ID of the job run that you stopped.</p>
     /// - On failure, responds with [`SdkError<StopJobRunError>`](crate::operation::stop_job_run::StopJobRunError)

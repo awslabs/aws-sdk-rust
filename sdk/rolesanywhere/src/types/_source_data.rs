@@ -2,12 +2,12 @@
 
 /// <p>The data field of the trust anchor depending on its type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SourceData {
     /// <p> The root certificate of the Private Certificate Authority specified by this ARN is used in trust validation for temporary credential requests. Included for trust anchors of type <code>AWS_ACM_PCA</code>. </p>
-    AcmPcaArn(std::string::String),
+    AcmPcaArn(::std::string::String),
     /// <p>The PEM-encoded data for the certificate anchor. Included for trust anchors of type <code>CERTIFICATE_BUNDLE</code>. </p>
-    X509CertificateData(std::string::String),
+    X509CertificateData(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,26 +19,26 @@ pub enum SourceData {
     Unknown,
 }
 impl SourceData {
-    /// Tries to convert the enum instance into [`AcmPcaArn`](crate::types::SourceData::AcmPcaArn), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`AcmPcaArn`](crate::types::SourceData::AcmPcaArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_acm_pca_arn(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_acm_pca_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SourceData::AcmPcaArn(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AcmPcaArn`](crate::types::SourceData::AcmPcaArn).
     pub fn is_acm_pca_arn(&self) -> bool {
         self.as_acm_pca_arn().is_ok()
     }
-    /// Tries to convert the enum instance into [`X509CertificateData`](crate::types::SourceData::X509CertificateData), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`X509CertificateData`](crate::types::SourceData::X509CertificateData), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_x509_certificate_data(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_x509_certificate_data(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let SourceData::X509CertificateData(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`X509CertificateData`](crate::types::SourceData::X509CertificateData).

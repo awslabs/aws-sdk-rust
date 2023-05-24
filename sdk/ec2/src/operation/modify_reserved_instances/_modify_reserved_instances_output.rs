@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of ModifyReservedInstances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReservedInstancesOutput {
     /// <p>The ID for the modification.</p>
     #[doc(hidden)]
-    pub reserved_instances_modification_id: std::option::Option<std::string::String>,
+    pub reserved_instances_modification_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyReservedInstancesOutput {
     /// <p>The ID for the modification.</p>
-    pub fn reserved_instances_modification_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instances_modification_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instances_modification_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ModifyReservedInstancesOutput {
+impl ::aws_http::request_id::RequestId for ModifyReservedInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,24 +31,26 @@ impl ModifyReservedInstancesOutput {
 
 /// A builder for [`ModifyReservedInstancesOutput`](crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyReservedInstancesOutputBuilder {
-    pub(crate) reserved_instances_modification_id: std::option::Option<std::string::String>,
+    pub(crate) reserved_instances_modification_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyReservedInstancesOutputBuilder {
     /// <p>The ID for the modification.</p>
     pub fn reserved_instances_modification_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.reserved_instances_modification_id = Some(input.into());
+        self.reserved_instances_modification_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the modification.</p>
     pub fn set_reserved_instances_modification_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_instances_modification_id = input;
         self

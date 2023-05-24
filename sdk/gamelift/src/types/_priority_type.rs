@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PriorityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum PriorityType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PriorityType {
+impl ::std::convert::From<&str> for PriorityType {
     fn from(s: &str) -> Self {
         match s {
             "COST" => PriorityType::Cost,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for PriorityType {
         }
     }
 }
-impl std::str::FromStr for PriorityType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PriorityType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PriorityType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PriorityType::from(s))
     }
 }
 impl PriorityType {
@@ -96,7 +96,7 @@ impl PriorityType {
         &["COST", "DESTINATION", "LATENCY", "LOCATION"]
     }
 }
-impl AsRef<str> for PriorityType {
+impl ::std::convert::AsRef<str> for PriorityType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

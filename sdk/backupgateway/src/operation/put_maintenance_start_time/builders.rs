@@ -6,30 +6,30 @@ pub use crate::operation::put_maintenance_start_time::_put_maintenance_start_tim
 /// Fluent builder constructing a request to `PutMaintenanceStartTime`.
 ///
 /// <p>Set the maintenance start time for a gateway.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMaintenanceStartTimeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder,
 }
 impl PutMaintenanceStartTimeFluentBuilder {
     /// Creates a new `PutMaintenanceStartTime`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_maintenance_start_time::PutMaintenanceStartTime,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PutMaintenanceStartTimeFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl PutMaintenanceStartTimeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
@@ -97,7 +100,7 @@ impl PutMaintenanceStartTimeFluentBuilder {
         self
     }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
-    pub fn set_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_hour_of_day(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_hour_of_day(input);
         self
     }
@@ -107,7 +110,7 @@ impl PutMaintenanceStartTimeFluentBuilder {
         self
     }
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
-    pub fn set_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_minute_of_hour(input);
         self
     }
@@ -117,7 +120,7 @@ impl PutMaintenanceStartTimeFluentBuilder {
         self
     }
     /// <p>The day of the week to start maintenance on a gateway.</p>
-    pub fn set_day_of_week(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_day_of_week(input);
         self
     }
@@ -129,7 +132,7 @@ impl PutMaintenanceStartTimeFluentBuilder {
     }
     /// <p>The day of the month start maintenance on a gateway.</p>
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
-    pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_day_of_month(input);
         self
     }

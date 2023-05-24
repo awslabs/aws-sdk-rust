@@ -2,22 +2,22 @@
 
 /// <p>IAM policy assignment summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamPolicyAssignmentSummary {
     /// <p>Assignment name.</p>
     #[doc(hidden)]
-    pub assignment_name: std::option::Option<std::string::String>,
+    pub assignment_name: ::std::option::Option<::std::string::String>,
     /// <p>Assignment status.</p>
     #[doc(hidden)]
-    pub assignment_status: std::option::Option<crate::types::AssignmentStatus>,
+    pub assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
 }
 impl IamPolicyAssignmentSummary {
     /// <p>Assignment name.</p>
-    pub fn assignment_name(&self) -> std::option::Option<&str> {
+    pub fn assignment_name(&self) -> ::std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
     /// <p>Assignment status.</p>
-    pub fn assignment_status(&self) -> std::option::Option<&crate::types::AssignmentStatus> {
+    pub fn assignment_status(&self) -> ::std::option::Option<&crate::types::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
 }
@@ -30,31 +30,39 @@ impl IamPolicyAssignmentSummary {
 
 /// A builder for [`IamPolicyAssignmentSummary`](crate::types::IamPolicyAssignmentSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IamPolicyAssignmentSummaryBuilder {
-    pub(crate) assignment_name: std::option::Option<std::string::String>,
-    pub(crate) assignment_status: std::option::Option<crate::types::AssignmentStatus>,
+    pub(crate) assignment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) assignment_status: ::std::option::Option<crate::types::AssignmentStatus>,
 }
 impl IamPolicyAssignmentSummaryBuilder {
     /// <p>Assignment name.</p>
-    pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assignment_name = Some(input.into());
+    pub fn assignment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assignment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Assignment name.</p>
-    pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assignment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assignment_name = input;
         self
     }
     /// <p>Assignment status.</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
-        self.assignment_status = Some(input);
+        self.assignment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Assignment status.</p>
     pub fn set_assignment_status(
         mut self,
-        input: std::option::Option<crate::types::AssignmentStatus>,
+        input: ::std::option::Option<crate::types::AssignmentStatus>,
     ) -> Self {
         self.assignment_status = input;
         self

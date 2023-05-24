@@ -2,29 +2,29 @@
 
 /// <p>Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     #[doc(hidden)]
-    pub ec2: std::option::Option<bool>,
+    pub ec2: ::std::option::Option<bool>,
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     #[doc(hidden)]
-    pub ecr: std::option::Option<bool>,
+    pub ecr: ::std::option::Option<bool>,
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
     #[doc(hidden)]
-    pub lambda: std::option::Option<bool>,
+    pub lambda: ::std::option::Option<bool>,
 }
 impl AutoEnable {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub fn ec2(&self) -> std::option::Option<bool> {
+    pub fn ec2(&self) -> ::std::option::Option<bool> {
         self.ec2
     }
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub fn ecr(&self) -> std::option::Option<bool> {
+    pub fn ecr(&self) -> ::std::option::Option<bool> {
         self.ecr
     }
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
-    pub fn lambda(&self) -> std::option::Option<bool> {
+    pub fn lambda(&self) -> ::std::option::Option<bool> {
         self.lambda
     }
 }
@@ -37,40 +37,42 @@ impl AutoEnable {
 
 /// A builder for [`AutoEnable`](crate::types::AutoEnable).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoEnableBuilder {
-    pub(crate) ec2: std::option::Option<bool>,
-    pub(crate) ecr: std::option::Option<bool>,
-    pub(crate) lambda: std::option::Option<bool>,
+    pub(crate) ec2: ::std::option::Option<bool>,
+    pub(crate) ecr: ::std::option::Option<bool>,
+    pub(crate) lambda: ::std::option::Option<bool>,
 }
 impl AutoEnableBuilder {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn ec2(mut self, input: bool) -> Self {
-        self.ec2 = Some(input);
+        self.ec2 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub fn set_ec2(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ec2(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ec2 = input;
         self
     }
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn ecr(mut self, input: bool) -> Self {
-        self.ecr = Some(input);
+        self.ecr = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
-    pub fn set_ecr(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ecr(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ecr = input;
         self
     }
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
     pub fn lambda(mut self, input: bool) -> Self {
-        self.lambda = Some(input);
+        self.lambda = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. </p>
-    pub fn set_lambda(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_lambda(mut self, input: ::std::option::Option<bool>) -> Self {
         self.lambda = input;
         self
     }

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NetworkType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum NetworkType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NetworkType {
+impl ::std::convert::From<&str> for NetworkType {
     fn from(s: &str) -> Self {
         match s {
             "dual_stack" => NetworkType::DualStack,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for NetworkType {
         }
     }
 }
-impl std::str::FromStr for NetworkType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NetworkType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NetworkType::from(s))
     }
 }
 impl NetworkType {
@@ -89,7 +89,7 @@ impl NetworkType {
         &["dual_stack", "ipv4", "ipv6"]
     }
 }
-impl AsRef<str> for NetworkType {
+impl ::std::convert::AsRef<str> for NetworkType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the specification of a virtual service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     #[doc(hidden)]
-    pub provider: std::option::Option<crate::types::VirtualServiceProvider>,
+    pub provider: ::std::option::Option<crate::types::VirtualServiceProvider>,
 }
 impl VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::VirtualServiceProvider> {
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::VirtualServiceProvider> {
         self.provider.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl VirtualServiceSpec {
 
 /// A builder for [`VirtualServiceSpec`](crate::types::VirtualServiceSpec).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualServiceSpecBuilder {
-    pub(crate) provider: std::option::Option<crate::types::VirtualServiceProvider>,
+    pub(crate) provider: ::std::option::Option<crate::types::VirtualServiceProvider>,
 }
 impl VirtualServiceSpecBuilder {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     pub fn provider(mut self, input: crate::types::VirtualServiceProvider) -> Self {
-        self.provider = Some(input);
+        self.provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     pub fn set_provider(
         mut self,
-        input: std::option::Option<crate::types::VirtualServiceProvider>,
+        input: ::std::option::Option<crate::types::VirtualServiceProvider>,
     ) -> Self {
         self.provider = input;
         self

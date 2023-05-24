@@ -4,22 +4,22 @@
 /// <p>Only Windows 10 WorkSpace images can be programmatically updated at this time.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResult {
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
     #[doc(hidden)]
-    pub update_available: std::option::Option<bool>,
+    pub update_available: ::std::option::Option<bool>,
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResult {
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
-    pub fn update_available(&self) -> std::option::Option<bool> {
+    pub fn update_available(&self) -> ::std::option::Option<bool> {
         self.update_available
     }
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -32,29 +32,31 @@ impl UpdateResult {
 
 /// A builder for [`UpdateResult`](crate::types::UpdateResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateResultBuilder {
-    pub(crate) update_available: std::option::Option<bool>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) update_available: ::std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResultBuilder {
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
     pub fn update_available(mut self, input: bool) -> Self {
-        self.update_available = Some(input);
+        self.update_available = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
-    pub fn set_update_available(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_update_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.update_available = input;
         self
     }
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

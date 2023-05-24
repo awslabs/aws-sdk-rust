@@ -2,7 +2,7 @@
 
 /// <p>Determines whether a service deployment fails if a service cannot reach a steady state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
 
 /// A builder for [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::types::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder {
-    pub(crate) enable: std::option::Option<bool>,
-    pub(crate) rollback: std::option::Option<bool>,
+    pub(crate) enable: ::std::option::Option<bool>,
+    pub(crate) rollback: ::std::option::Option<bool>,
 }
 impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsBuilder {
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
     pub fn enable(mut self, input: bool) -> Self {
-        self.enable = Some(input);
+        self.enable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
-    pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
     }
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(mut self, input: bool) -> Self {
-        self.rollback = Some(input);
+        self.rollback = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
-    pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rollback = input;
         self
     }

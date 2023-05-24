@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_name(impl Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_job_name): <p>The name of the job that these schedules apply to.</p>
+    ///   - [`job_name(impl ::std::convert::Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_job_name): <p>The name of the job that these schedules apply to.</p>
     ///   - [`max_results(i32)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_max_results): <p>The maximum number of results to return in this request. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schedules::builders::ListSchedulesFluentBuilder::set_next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
     /// - On success, responds with [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput) with field(s):
     ///   - [`schedules(Option<Vec<Schedule>>)`](crate::operation::list_schedules::ListSchedulesOutput::schedules): <p>A list of schedules that are defined.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_schedules::ListSchedulesOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>

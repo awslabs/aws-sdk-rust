@@ -2,20 +2,20 @@
 
 /// <p>The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexDocumentsOutput {
     /// <p>The names of the fields that are currently being indexed.</p>
     #[doc(hidden)]
-    pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl IndexDocumentsOutput {
     /// <p>The names of the fields that are currently being indexed.</p>
-    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.field_names.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for IndexDocumentsOutput {
+impl ::aws_http::request_id::RequestId for IndexDocumentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl IndexDocumentsOutput {
 
 /// A builder for [`IndexDocumentsOutput`](crate::operation::index_documents::IndexDocumentsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IndexDocumentsOutputBuilder {
-    pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl IndexDocumentsOutputBuilder {
@@ -40,16 +42,16 @@ impl IndexDocumentsOutputBuilder {
     /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
     ///
     /// <p>The names of the fields that are currently being indexed.</p>
-    pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn field_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.field_names.unwrap_or_default();
         v.push(input.into());
-        self.field_names = Some(v);
+        self.field_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the fields that are currently being indexed.</p>
     pub fn set_field_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.field_names = input;
         self

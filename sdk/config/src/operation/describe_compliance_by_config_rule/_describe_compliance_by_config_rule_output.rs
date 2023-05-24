@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComplianceByConfigRuleOutput {
     /// <p>Indicates whether each of the specified Config rules is compliant.</p>
     #[doc(hidden)]
     pub compliance_by_config_rules:
-        std::option::Option<std::vec::Vec<crate::types::ComplianceByConfigRule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceByConfigRule>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeComplianceByConfigRuleOutput {
     /// <p>Indicates whether each of the specified Config rules is compliant.</p>
     pub fn compliance_by_config_rules(
         &self,
-    ) -> std::option::Option<&[crate::types::ComplianceByConfigRule]> {
+    ) -> ::std::option::Option<&[crate::types::ComplianceByConfigRule]> {
         self.compliance_by_config_rules.as_deref()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeComplianceByConfigRuleOutput {
+impl ::aws_http::request_id::RequestId for DescribeComplianceByConfigRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl DescribeComplianceByConfigRuleOutput {
 
 /// A builder for [`DescribeComplianceByConfigRuleOutput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeComplianceByConfigRuleOutputBuilder {
     pub(crate) compliance_by_config_rules:
-        std::option::Option<std::vec::Vec<crate::types::ComplianceByConfigRule>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceByConfigRule>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeComplianceByConfigRuleOutputBuilder {
@@ -58,24 +60,24 @@ impl DescribeComplianceByConfigRuleOutputBuilder {
     ) -> Self {
         let mut v = self.compliance_by_config_rules.unwrap_or_default();
         v.push(input);
-        self.compliance_by_config_rules = Some(v);
+        self.compliance_by_config_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>Indicates whether each of the specified Config rules is compliant.</p>
     pub fn set_compliance_by_config_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComplianceByConfigRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceByConfigRule>>,
     ) -> Self {
         self.compliance_by_config_rules = input;
         self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

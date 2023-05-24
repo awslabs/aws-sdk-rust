@@ -2,43 +2,43 @@
 
 /// <p>Describes a customer-owned address pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoipPool {
     /// <p>The ID of the address pool.</p>
     #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The address ranges of the address pool.</p>
     #[doc(hidden)]
-    pub pool_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub pool_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the local gateway route table.</p>
     #[doc(hidden)]
-    pub local_gateway_route_table_id: std::option::Option<std::string::String>,
+    pub local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ARN of the address pool.</p>
     #[doc(hidden)]
-    pub pool_arn: std::option::Option<std::string::String>,
+    pub pool_arn: ::std::option::Option<::std::string::String>,
 }
 impl CoipPool {
     /// <p>The ID of the address pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
     /// <p>The address ranges of the address pool.</p>
-    pub fn pool_cidrs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pool_cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.pool_cidrs.as_deref()
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ARN of the address pool.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
         self.pool_arn.as_deref()
     }
 }
@@ -51,22 +51,24 @@ impl CoipPool {
 
 /// A builder for [`CoipPool`](crate::types::CoipPool).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoipPoolBuilder {
-    pub(crate) pool_id: std::option::Option<std::string::String>,
-    pub(crate) pool_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) local_gateway_route_table_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) pool_arn: std::option::Option<std::string::String>,
+    pub(crate) pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) pool_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) local_gateway_route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
 }
 impl CoipPoolBuilder {
     /// <p>The ID of the address pool.</p>
-    pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pool_id = Some(input.into());
+    pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the address pool.</p>
-    pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
@@ -75,29 +77,32 @@ impl CoipPoolBuilder {
     /// To override the contents of this collection use [`set_pool_cidrs`](Self::set_pool_cidrs).
     ///
     /// <p>The address ranges of the address pool.</p>
-    pub fn pool_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pool_cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.pool_cidrs.unwrap_or_default();
         v.push(input.into());
-        self.pool_cidrs = Some(v);
+        self.pool_cidrs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The address ranges of the address pool.</p>
     pub fn set_pool_cidrs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.pool_cidrs = input;
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.local_gateway_route_table_id = Some(input.into());
+    pub fn local_gateway_route_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.local_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn set_local_gateway_route_table_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.local_gateway_route_table_id = input;
         self
@@ -110,24 +115,24 @@ impl CoipPoolBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The ARN of the address pool.</p>
-    pub fn pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pool_arn = Some(input.into());
+    pub fn pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the address pool.</p>
-    pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_arn = input;
         self
     }

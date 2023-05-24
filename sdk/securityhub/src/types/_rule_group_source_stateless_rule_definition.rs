@@ -2,25 +2,25 @@
 
 /// <p>The definition of the stateless rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleDefinition {
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
     #[doc(hidden)]
     pub match_attributes:
-        std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
+        ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
 }
 impl RuleGroupSourceStatelessRuleDefinition {
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn actions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.actions.as_deref()
     }
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
     pub fn match_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::RuleGroupSourceStatelessRuleMatchAttributes> {
+    ) -> ::std::option::Option<&crate::types::RuleGroupSourceStatelessRuleMatchAttributes> {
         self.match_attributes.as_ref()
     }
 }
@@ -33,11 +33,13 @@ impl RuleGroupSourceStatelessRuleDefinition {
 
 /// A builder for [`RuleGroupSourceStatelessRuleDefinition`](crate::types::RuleGroupSourceStatelessRuleDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupSourceStatelessRuleDefinitionBuilder {
-    pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) match_attributes:
-        std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
+        ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
 }
 impl RuleGroupSourceStatelessRuleDefinitionBuilder {
     /// Appends an item to `actions`.
@@ -45,16 +47,16 @@ impl RuleGroupSourceStatelessRuleDefinitionBuilder {
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-    pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input.into());
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.actions = input;
         self
@@ -64,13 +66,13 @@ impl RuleGroupSourceStatelessRuleDefinitionBuilder {
         mut self,
         input: crate::types::RuleGroupSourceStatelessRuleMatchAttributes,
     ) -> Self {
-        self.match_attributes = Some(input);
+        self.match_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
     pub fn set_match_attributes(
         mut self,
-        input: std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
+        input: ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
     ) -> Self {
         self.match_attributes = input;
         self

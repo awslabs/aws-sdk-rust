@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SelfManagedKafkaStartPosition {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SelfManagedKafkaStartPosition {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SelfManagedKafkaStartPosition {
+impl ::std::convert::From<&str> for SelfManagedKafkaStartPosition {
     fn from(s: &str) -> Self {
         match s {
             "LATEST" => SelfManagedKafkaStartPosition::Latest,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SelfManagedKafkaStartPosition {
         }
     }
 }
-impl std::str::FromStr for SelfManagedKafkaStartPosition {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SelfManagedKafkaStartPosition {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SelfManagedKafkaStartPosition::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SelfManagedKafkaStartPosition::from(s))
     }
 }
 impl SelfManagedKafkaStartPosition {
@@ -86,7 +86,7 @@ impl SelfManagedKafkaStartPosition {
         &["LATEST", "TRIM_HORIZON"]
     }
 }
-impl AsRef<str> for SelfManagedKafkaStartPosition {
+impl ::std::convert::AsRef<str> for SelfManagedKafkaStartPosition {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

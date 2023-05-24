@@ -2,43 +2,43 @@
 
 /// <p>Contains details about a specific Map Run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapRunListItem {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
     #[doc(hidden)]
-    pub execution_arn: std::option::Option<std::string::String>,
+    pub execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
     #[doc(hidden)]
-    pub map_run_arn: std::option::Option<std::string::String>,
+    pub map_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
     #[doc(hidden)]
-    pub state_machine_arn: std::option::Option<std::string::String>,
+    pub state_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the Map Run started.</p>
     #[doc(hidden)]
-    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date on which the Map Run stopped.</p>
     #[doc(hidden)]
-    pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MapRunListItem {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
-    pub fn execution_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_arn(&self) -> ::std::option::Option<&str> {
         self.execution_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The date on which the Map Run started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date on which the Map Run stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
 }
@@ -51,68 +51,82 @@ impl MapRunListItem {
 
 /// A builder for [`MapRunListItem`](crate::types::MapRunListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MapRunListItemBuilder {
-    pub(crate) execution_arn: std::option::Option<std::string::String>,
-    pub(crate) map_run_arn: std::option::Option<std::string::String>,
-    pub(crate) state_machine_arn: std::option::Option<std::string::String>,
-    pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) execution_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state_machine_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MapRunListItemBuilder {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
-    pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_arn = Some(input.into());
+    pub fn execution_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
-    pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.execution_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
-    pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.map_run_arn = Some(input.into());
+    pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.map_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
-    pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_run_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
-    pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_machine_arn = Some(input.into());
+    pub fn state_machine_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_machine_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
     pub fn set_state_machine_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.state_machine_arn = input;
         self
     }
     /// <p>The date on which the Map Run started.</p>
-    pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_date = Some(input);
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date on which the Map Run started.</p>
     pub fn set_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_date = input;
         self
     }
     /// <p>The date on which the Map Run stopped.</p>
-    pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.stop_date = Some(input);
+    pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.stop_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date on which the Map Run stopped.</p>
-    pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_stop_date(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.stop_date = input;
         self
     }

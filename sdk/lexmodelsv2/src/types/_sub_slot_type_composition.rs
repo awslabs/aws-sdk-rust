@@ -2,22 +2,22 @@
 
 /// <p>Subslot type composition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubSlotTypeComposition {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
     #[doc(hidden)]
-    pub slot_type_id: std::option::Option<std::string::String>,
+    pub slot_type_id: ::std::option::Option<::std::string::String>,
 }
 impl SubSlotTypeComposition {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> ::std::option::Option<&str> {
         self.slot_type_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SubSlotTypeComposition {
 
 /// A builder for [`SubSlotTypeComposition`](crate::types::SubSlotTypeComposition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubSlotTypeCompositionBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) slot_type_id: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) slot_type_id: ::std::option::Option<::std::string::String>,
 }
 impl SubSlotTypeCompositionBuilder {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
-    pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.slot_type_id = Some(input.into());
+    pub fn slot_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.slot_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
-    pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_slot_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slot_type_id = input;
         self
     }

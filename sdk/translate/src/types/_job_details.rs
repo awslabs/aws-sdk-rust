@@ -2,29 +2,29 @@
 
 /// <p>The number of documents successfully and unsuccessfully processed during a translation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDetails {
     /// <p>The number of documents successfully processed during a translation job.</p>
     #[doc(hidden)]
-    pub translated_documents_count: std::option::Option<i32>,
+    pub translated_documents_count: ::std::option::Option<i32>,
     /// <p>The number of documents that could not be processed during a translation job.</p>
     #[doc(hidden)]
-    pub documents_with_errors_count: std::option::Option<i32>,
+    pub documents_with_errors_count: ::std::option::Option<i32>,
     /// <p>The number of documents used as input in a translation job.</p>
     #[doc(hidden)]
-    pub input_documents_count: std::option::Option<i32>,
+    pub input_documents_count: ::std::option::Option<i32>,
 }
 impl JobDetails {
     /// <p>The number of documents successfully processed during a translation job.</p>
-    pub fn translated_documents_count(&self) -> std::option::Option<i32> {
+    pub fn translated_documents_count(&self) -> ::std::option::Option<i32> {
         self.translated_documents_count
     }
     /// <p>The number of documents that could not be processed during a translation job.</p>
-    pub fn documents_with_errors_count(&self) -> std::option::Option<i32> {
+    pub fn documents_with_errors_count(&self) -> ::std::option::Option<i32> {
         self.documents_with_errors_count
     }
     /// <p>The number of documents used as input in a translation job.</p>
-    pub fn input_documents_count(&self) -> std::option::Option<i32> {
+    pub fn input_documents_count(&self) -> ::std::option::Option<i32> {
         self.input_documents_count
     }
 }
@@ -37,40 +37,42 @@ impl JobDetails {
 
 /// A builder for [`JobDetails`](crate::types::JobDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobDetailsBuilder {
-    pub(crate) translated_documents_count: std::option::Option<i32>,
-    pub(crate) documents_with_errors_count: std::option::Option<i32>,
-    pub(crate) input_documents_count: std::option::Option<i32>,
+    pub(crate) translated_documents_count: ::std::option::Option<i32>,
+    pub(crate) documents_with_errors_count: ::std::option::Option<i32>,
+    pub(crate) input_documents_count: ::std::option::Option<i32>,
 }
 impl JobDetailsBuilder {
     /// <p>The number of documents successfully processed during a translation job.</p>
     pub fn translated_documents_count(mut self, input: i32) -> Self {
-        self.translated_documents_count = Some(input);
+        self.translated_documents_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of documents successfully processed during a translation job.</p>
-    pub fn set_translated_documents_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_translated_documents_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.translated_documents_count = input;
         self
     }
     /// <p>The number of documents that could not be processed during a translation job.</p>
     pub fn documents_with_errors_count(mut self, input: i32) -> Self {
-        self.documents_with_errors_count = Some(input);
+        self.documents_with_errors_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of documents that could not be processed during a translation job.</p>
-    pub fn set_documents_with_errors_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_documents_with_errors_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.documents_with_errors_count = input;
         self
     }
     /// <p>The number of documents used as input in a translation job.</p>
     pub fn input_documents_count(mut self, input: i32) -> Self {
-        self.input_documents_count = Some(input);
+        self.input_documents_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of documents used as input in a translation job.</p>
-    pub fn set_input_documents_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_input_documents_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.input_documents_count = input;
         self
     }

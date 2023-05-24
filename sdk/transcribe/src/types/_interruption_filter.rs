@@ -10,43 +10,43 @@
 /// </ul>
 /// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for post-call categories</a> for usage examples.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InterruptionFilter {
     /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
     #[doc(hidden)]
-    pub threshold: std::option::Option<i64>,
+    pub threshold: ::std::option::Option<i64>,
     /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     #[doc(hidden)]
-    pub participant_role: std::option::Option<crate::types::ParticipantRole>,
+    pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
     #[doc(hidden)]
-    pub absolute_time_range: std::option::Option<crate::types::AbsoluteTimeRange>,
+    pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
     #[doc(hidden)]
-    pub relative_time_range: std::option::Option<crate::types::RelativeTimeRange>,
+    pub relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
     /// <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
     #[doc(hidden)]
-    pub negate: std::option::Option<bool>,
+    pub negate: ::std::option::Option<bool>,
 }
 impl InterruptionFilter {
     /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
-    pub fn threshold(&self) -> std::option::Option<i64> {
+    pub fn threshold(&self) -> ::std::option::Option<i64> {
         self.threshold
     }
     /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub fn participant_role(&self) -> std::option::Option<&crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
-    pub fn absolute_time_range(&self) -> std::option::Option<&crate::types::AbsoluteTimeRange> {
+    pub fn absolute_time_range(&self) -> ::std::option::Option<&crate::types::AbsoluteTimeRange> {
         self.absolute_time_range.as_ref()
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
-    pub fn relative_time_range(&self) -> std::option::Option<&crate::types::RelativeTimeRange> {
+    pub fn relative_time_range(&self) -> ::std::option::Option<&crate::types::RelativeTimeRange> {
         self.relative_time_range.as_ref()
     }
     /// <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
-    pub fn negate(&self) -> std::option::Option<bool> {
+    pub fn negate(&self) -> ::std::option::Option<bool> {
         self.negate
     }
 }
@@ -59,71 +59,73 @@ impl InterruptionFilter {
 
 /// A builder for [`InterruptionFilter`](crate::types::InterruptionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InterruptionFilterBuilder {
-    pub(crate) threshold: std::option::Option<i64>,
-    pub(crate) participant_role: std::option::Option<crate::types::ParticipantRole>,
-    pub(crate) absolute_time_range: std::option::Option<crate::types::AbsoluteTimeRange>,
-    pub(crate) relative_time_range: std::option::Option<crate::types::RelativeTimeRange>,
-    pub(crate) negate: std::option::Option<bool>,
+    pub(crate) threshold: ::std::option::Option<i64>,
+    pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
+    pub(crate) absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
+    pub(crate) relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
+    pub(crate) negate: ::std::option::Option<bool>,
 }
 impl InterruptionFilterBuilder {
     /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
     pub fn threshold(mut self, input: i64) -> Self {
-        self.threshold = Some(input);
+        self.threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more than 10,000 milliseconds of interruptions.</p>
-    pub fn set_threshold(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<i64>) -> Self {
         self.threshold = input;
         self
     }
     /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
-        self.participant_role = Some(input);
+        self.participant_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn set_participant_role(
         mut self,
-        input: std::option::Option<crate::types::ParticipantRole>,
+        input: ::std::option::Option<crate::types::ParticipantRole>,
     ) -> Self {
         self.participant_role = input;
         self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
     pub fn absolute_time_range(mut self, input: crate::types::AbsoluteTimeRange) -> Self {
-        self.absolute_time_range = Some(input);
+        self.absolute_time_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an interruption. See for more detail.</p>
     pub fn set_absolute_time_range(
         mut self,
-        input: std::option::Option<crate::types::AbsoluteTimeRange>,
+        input: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     ) -> Self {
         self.absolute_time_range = input;
         self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
     pub fn relative_time_range(mut self, input: crate::types::RelativeTimeRange) -> Self {
-        self.relative_time_range = Some(input);
+        self.relative_time_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for an interruption. See for more detail.</p>
     pub fn set_relative_time_range(
         mut self,
-        input: std::option::Option<crate::types::RelativeTimeRange>,
+        input: ::std::option::Option<crate::types::RelativeTimeRange>,
     ) -> Self {
         self.relative_time_range = input;
         self
     }
     /// <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
     pub fn negate(mut self, input: bool) -> Self {
-        self.negate = Some(input);
+        self.negate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions. Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
-    pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negate = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>An object that represents a job attempt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttemptDetail {
     /// <p>The details for the container in this job attempt.</p>
     #[doc(hidden)]
-    pub container: std::option::Option<crate::types::AttemptContainerDetail>,
+    pub container: ::std::option::Option<crate::types::AttemptContainerDetail>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<i64>,
+    pub started_at: ::std::option::Option<i64>,
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
     #[doc(hidden)]
-    pub stopped_at: std::option::Option<i64>,
+    pub stopped_at: ::std::option::Option<i64>,
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl AttemptDetail {
     /// <p>The details for the container in this job attempt.</p>
-    pub fn container(&self) -> std::option::Option<&crate::types::AttemptContainerDetail> {
+    pub fn container(&self) -> ::std::option::Option<&crate::types::AttemptContainerDetail> {
         self.container.as_ref()
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    pub fn started_at(&self) -> std::option::Option<i64> {
+    pub fn started_at(&self) -> ::std::option::Option<i64> {
         self.started_at
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    pub fn stopped_at(&self) -> std::option::Option<i64> {
+    pub fn stopped_at(&self) -> ::std::option::Option<i64> {
         self.stopped_at
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
@@ -44,54 +44,62 @@ impl AttemptDetail {
 
 /// A builder for [`AttemptDetail`](crate::types::AttemptDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttemptDetailBuilder {
-    pub(crate) container: std::option::Option<crate::types::AttemptContainerDetail>,
-    pub(crate) started_at: std::option::Option<i64>,
-    pub(crate) stopped_at: std::option::Option<i64>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
+    pub(crate) container: ::std::option::Option<crate::types::AttemptContainerDetail>,
+    pub(crate) started_at: ::std::option::Option<i64>,
+    pub(crate) stopped_at: ::std::option::Option<i64>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl AttemptDetailBuilder {
     /// <p>The details for the container in this job attempt.</p>
     pub fn container(mut self, input: crate::types::AttemptContainerDetail) -> Self {
-        self.container = Some(input);
+        self.container = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for the container in this job attempt.</p>
     pub fn set_container(
         mut self,
-        input: std::option::Option<crate::types::AttemptContainerDetail>,
+        input: ::std::option::Option<crate::types::AttemptContainerDetail>,
     ) -> Self {
         self.container = input;
         self
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
     pub fn started_at(mut self, input: i64) -> Self {
-        self.started_at = Some(input);
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
-    pub fn set_started_at(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_at = input;
         self
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
     pub fn stopped_at(mut self, input: i64) -> Self {
-        self.stopped_at = Some(input);
+        self.stopped_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
-    pub fn set_stopped_at(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_stopped_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.stopped_at = input;
         self
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide additional details for the current status of the job attempt.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeploymentStatus`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::set_deployment_id): The ID of the deployment.
-    ///   - [`group_id(impl Into<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::set_group_id): The ID of the Greengrass group.
+    ///   - [`deployment_id(impl ::std::convert::Into<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::set_deployment_id): The ID of the deployment.
+    ///   - [`group_id(impl ::std::convert::Into<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::get_deployment_status::builders::GetDeploymentStatusFluentBuilder::set_group_id): The ID of the Greengrass group.
     /// - On success, responds with [`GetDeploymentStatusOutput`](crate::operation::get_deployment_status::GetDeploymentStatusOutput) with field(s):
     ///   - [`deployment_status(Option<String>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::deployment_status): The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
     ///   - [`deployment_type(Option<DeploymentType>)`](crate::operation::get_deployment_status::GetDeploymentStatusOutput::deployment_type): The type of the deployment.

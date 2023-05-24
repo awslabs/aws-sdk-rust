@@ -3,22 +3,22 @@
 /// <p>If the email identity is a domain, this object contains information about the DKIM verification status for the domain.</p>
 /// <p>If the email identity is an email address, this object is empty. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEmailIdentityOutput {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     #[doc(hidden)]
-    pub identity_type: std::option::Option<crate::types::IdentityType>,
+    pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     #[doc(hidden)]
     pub verified_for_sending_status: bool,
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     #[doc(hidden)]
-    pub dkim_attributes: std::option::Option<crate::types::DkimAttributes>,
+    pub dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
     _request_id: Option<String>,
 }
 impl CreateEmailIdentityOutput {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
@@ -26,11 +26,11 @@ impl CreateEmailIdentityOutput {
         self.verified_for_sending_status
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
-    pub fn dkim_attributes(&self) -> std::option::Option<&crate::types::DkimAttributes> {
+    pub fn dkim_attributes(&self) -> ::std::option::Option<&crate::types::DkimAttributes> {
         self.dkim_attributes.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateEmailIdentityOutput {
+impl ::aws_http::request_id::RequestId for CreateEmailIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -46,46 +46,48 @@ impl CreateEmailIdentityOutput {
 
 /// A builder for [`CreateEmailIdentityOutput`](crate::operation::create_email_identity::CreateEmailIdentityOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateEmailIdentityOutputBuilder {
-    pub(crate) identity_type: std::option::Option<crate::types::IdentityType>,
-    pub(crate) verified_for_sending_status: std::option::Option<bool>,
-    pub(crate) dkim_attributes: std::option::Option<crate::types::DkimAttributes>,
+    pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
+    pub(crate) verified_for_sending_status: ::std::option::Option<bool>,
+    pub(crate) dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
     _request_id: Option<String>,
 }
 impl CreateEmailIdentityOutputBuilder {
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
-        self.identity_type = Some(input);
+        self.identity_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not supported.</p>
     pub fn set_identity_type(
         mut self,
-        input: std::option::Option<crate::types::IdentityType>,
+        input: ::std::option::Option<crate::types::IdentityType>,
     ) -> Self {
         self.identity_type = input;
         self
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     pub fn verified_for_sending_status(mut self, input: bool) -> Self {
-        self.verified_for_sending_status = Some(input);
+        self.verified_for_sending_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether or not the identity is verified. You can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
-    pub fn set_verified_for_sending_status(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_verified_for_sending_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verified_for_sending_status = input;
         self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub fn dkim_attributes(mut self, input: crate::types::DkimAttributes) -> Self {
-        self.dkim_attributes = Some(input);
+        self.dkim_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity.</p>
     pub fn set_dkim_attributes(
         mut self,
-        input: std::option::Option<crate::types::DkimAttributes>,
+        input: ::std::option::Option<crate::types::DkimAttributes>,
     ) -> Self {
         self.dkim_attributes = input;
         self

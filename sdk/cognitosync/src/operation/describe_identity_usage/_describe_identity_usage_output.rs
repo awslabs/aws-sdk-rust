@@ -2,20 +2,20 @@
 
 /// The response to a successful DescribeIdentityUsage request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityUsageOutput {
     /// Usage information for the identity.
     #[doc(hidden)]
-    pub identity_usage: std::option::Option<crate::types::IdentityUsage>,
+    pub identity_usage: ::std::option::Option<crate::types::IdentityUsage>,
     _request_id: Option<String>,
 }
 impl DescribeIdentityUsageOutput {
     /// Usage information for the identity.
-    pub fn identity_usage(&self) -> std::option::Option<&crate::types::IdentityUsage> {
+    pub fn identity_usage(&self) -> ::std::option::Option<&crate::types::IdentityUsage> {
         self.identity_usage.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeIdentityUsageOutput {
+impl ::aws_http::request_id::RequestId for DescribeIdentityUsageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl DescribeIdentityUsageOutput {
 
 /// A builder for [`DescribeIdentityUsageOutput`](crate::operation::describe_identity_usage::DescribeIdentityUsageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeIdentityUsageOutputBuilder {
-    pub(crate) identity_usage: std::option::Option<crate::types::IdentityUsage>,
+    pub(crate) identity_usage: ::std::option::Option<crate::types::IdentityUsage>,
     _request_id: Option<String>,
 }
 impl DescribeIdentityUsageOutputBuilder {
     /// Usage information for the identity.
     pub fn identity_usage(mut self, input: crate::types::IdentityUsage) -> Self {
-        self.identity_usage = Some(input);
+        self.identity_usage = ::std::option::Option::Some(input);
         self
     }
     /// Usage information for the identity.
     pub fn set_identity_usage(
         mut self,
-        input: std::option::Option<crate::types::IdentityUsage>,
+        input: ::std::option::Option<crate::types::IdentityUsage>,
     ) -> Self {
         self.identity_usage = input;
         self

@@ -2,30 +2,30 @@
 
 /// <p>The output for a <code>ListStackResources</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStackResourcesOutput {
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
     #[doc(hidden)]
     pub stack_resource_summaries:
-        std::option::Option<std::vec::Vec<crate::types::StackResourceSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStackResourcesOutput {
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
     pub fn stack_resource_summaries(
         &self,
-    ) -> std::option::Option<&[crate::types::StackResourceSummary]> {
+    ) -> ::std::option::Option<&[crate::types::StackResourceSummary]> {
         self.stack_resource_summaries.as_deref()
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListStackResourcesOutput {
+impl ::aws_http::request_id::RequestId for ListStackResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,11 +40,13 @@ impl ListStackResourcesOutput {
 
 /// A builder for [`ListStackResourcesOutput`](crate::operation::list_stack_resources::ListStackResourcesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListStackResourcesOutputBuilder {
     pub(crate) stack_resource_summaries:
-        std::option::Option<std::vec::Vec<crate::types::StackResourceSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListStackResourcesOutputBuilder {
@@ -56,24 +58,24 @@ impl ListStackResourcesOutputBuilder {
     pub fn stack_resource_summaries(mut self, input: crate::types::StackResourceSummary) -> Self {
         let mut v = self.stack_resource_summaries.unwrap_or_default();
         v.push(input);
-        self.stack_resource_summaries = Some(v);
+        self.stack_resource_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>StackResourceSummary</code> structures.</p>
     pub fn set_stack_resource_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StackResourceSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StackResourceSummary>>,
     ) -> Self {
         self.stack_resource_summaries = input;
         self
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the output exceeds 1 MB, a string that identifies the next page of stack resources. If no additional page exists, this value is null.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

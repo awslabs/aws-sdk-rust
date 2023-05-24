@@ -2,15 +2,17 @@
 
 /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableConditionalFormattingOption {
     /// <p>The cell conditional formatting option for a pivot table.</p>
     #[doc(hidden)]
-    pub cell: std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
+    pub cell: ::std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
 }
 impl PivotTableConditionalFormattingOption {
     /// <p>The cell conditional formatting option for a pivot table.</p>
-    pub fn cell(&self) -> std::option::Option<&crate::types::PivotTableCellConditionalFormatting> {
+    pub fn cell(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PivotTableCellConditionalFormatting> {
         self.cell.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl PivotTableConditionalFormattingOption {
 
 /// A builder for [`PivotTableConditionalFormattingOption`](crate::types::PivotTableConditionalFormattingOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PivotTableConditionalFormattingOptionBuilder {
-    pub(crate) cell: std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
+    pub(crate) cell: ::std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
 }
 impl PivotTableConditionalFormattingOptionBuilder {
     /// <p>The cell conditional formatting option for a pivot table.</p>
     pub fn cell(mut self, input: crate::types::PivotTableCellConditionalFormatting) -> Self {
-        self.cell = Some(input);
+        self.cell = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cell conditional formatting option for a pivot table.</p>
     pub fn set_cell(
         mut self,
-        input: std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
+        input: ::std::option::Option<crate::types::PivotTableCellConditionalFormatting>,
     ) -> Self {
         self.cell = input;
         self

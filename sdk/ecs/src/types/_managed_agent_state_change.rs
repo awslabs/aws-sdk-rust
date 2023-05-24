@@ -2,36 +2,36 @@
 
 /// <p>An object representing a change in state for a managed agent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedAgentStateChange {
     /// <p>The name of the container that's associated with the managed agent.</p>
     #[doc(hidden)]
-    pub container_name: std::option::Option<std::string::String>,
+    pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed agent.</p>
     #[doc(hidden)]
-    pub managed_agent_name: std::option::Option<crate::types::ManagedAgentName>,
+    pub managed_agent_name: ::std::option::Option<crate::types::ManagedAgentName>,
     /// <p>The status of the managed agent.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the status of the managed agent.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ManagedAgentStateChange {
     /// <p>The name of the container that's associated with the managed agent.</p>
-    pub fn container_name(&self) -> std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
     /// <p>The name of the managed agent.</p>
-    pub fn managed_agent_name(&self) -> std::option::Option<&crate::types::ManagedAgentName> {
+    pub fn managed_agent_name(&self) -> ::std::option::Option<&crate::types::ManagedAgentName> {
         self.managed_agent_name.as_ref()
     }
     /// <p>The status of the managed agent.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The reason for the status of the managed agent.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -44,54 +44,62 @@ impl ManagedAgentStateChange {
 
 /// A builder for [`ManagedAgentStateChange`](crate::types::ManagedAgentStateChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ManagedAgentStateChangeBuilder {
-    pub(crate) container_name: std::option::Option<std::string::String>,
-    pub(crate) managed_agent_name: std::option::Option<crate::types::ManagedAgentName>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+    pub(crate) container_name: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_agent_name: ::std::option::Option<crate::types::ManagedAgentName>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl ManagedAgentStateChangeBuilder {
     /// <p>The name of the container that's associated with the managed agent.</p>
-    pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_name = Some(input.into());
+    pub fn container_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container that's associated with the managed agent.</p>
-    pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.container_name = input;
         self
     }
     /// <p>The name of the managed agent.</p>
     pub fn managed_agent_name(mut self, input: crate::types::ManagedAgentName) -> Self {
-        self.managed_agent_name = Some(input);
+        self.managed_agent_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the managed agent.</p>
     pub fn set_managed_agent_name(
         mut self,
-        input: std::option::Option<crate::types::ManagedAgentName>,
+        input: ::std::option::Option<crate::types::ManagedAgentName>,
     ) -> Self {
         self.managed_agent_name = input;
         self
     }
     /// <p>The status of the managed agent.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the managed agent.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The reason for the status of the managed agent.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the status of the managed agent.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }

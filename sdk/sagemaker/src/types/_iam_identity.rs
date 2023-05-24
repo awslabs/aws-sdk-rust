@@ -2,29 +2,29 @@
 
 /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages and project entities only.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the principal that assumes the IAM identity.</p>
     #[doc(hidden)]
-    pub principal_id: std::option::Option<std::string::String>,
+    pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The person or application which assumes the IAM identity.</p>
     #[doc(hidden)]
-    pub source_identity: std::option::Option<std::string::String>,
+    pub source_identity: ::std::option::Option<::std::string::String>,
 }
 impl IamIdentity {
     /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the principal that assumes the IAM identity.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
     /// <p>The person or application which assumes the IAM identity.</p>
-    pub fn source_identity(&self) -> std::option::Option<&str> {
+    pub fn source_identity(&self) -> ::std::option::Option<&str> {
         self.source_identity.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl IamIdentity {
 
 /// A builder for [`IamIdentity`](crate::types::IamIdentity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IamIdentityBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) principal_id: std::option::Option<std::string::String>,
-    pub(crate) source_identity: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) principal_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_identity: ::std::option::Option<::std::string::String>,
 }
 impl IamIdentityBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM identity.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ID of the principal that assumes the IAM identity.</p>
-    pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.principal_id = Some(input.into());
+    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.principal_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the principal that assumes the IAM identity.</p>
-    pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
     }
     /// <p>The person or application which assumes the IAM identity.</p>
-    pub fn source_identity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_identity = Some(input.into());
+    pub fn source_identity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The person or application which assumes the IAM identity.</p>
-    pub fn set_source_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_identity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_identity = input;
         self
     }

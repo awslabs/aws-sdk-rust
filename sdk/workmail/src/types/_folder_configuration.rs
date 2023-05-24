@@ -2,29 +2,29 @@
 
 /// <p>The configuration applied to an organization's folders by its retention policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FolderConfiguration {
     /// <p>The folder name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::FolderName>,
+    pub name: ::std::option::Option<crate::types::FolderName>,
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::RetentionAction>,
+    pub action: ::std::option::Option<crate::types::RetentionAction>,
     /// <p>The number of days for which the folder-configuration action applies.</p>
     #[doc(hidden)]
-    pub period: std::option::Option<i32>,
+    pub period: ::std::option::Option<i32>,
 }
 impl FolderConfiguration {
     /// <p>The folder name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::FolderName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::FolderName> {
         self.name.as_ref()
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::RetentionAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::RetentionAction> {
         self.action.as_ref()
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
-    pub fn period(&self) -> std::option::Option<i32> {
+    pub fn period(&self) -> ::std::option::Option<i32> {
         self.period
     }
 }
@@ -37,40 +37,45 @@ impl FolderConfiguration {
 
 /// A builder for [`FolderConfiguration`](crate::types::FolderConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FolderConfigurationBuilder {
-    pub(crate) name: std::option::Option<crate::types::FolderName>,
-    pub(crate) action: std::option::Option<crate::types::RetentionAction>,
-    pub(crate) period: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<crate::types::FolderName>,
+    pub(crate) action: ::std::option::Option<crate::types::RetentionAction>,
+    pub(crate) period: ::std::option::Option<i32>,
 }
 impl FolderConfigurationBuilder {
     /// <p>The folder name.</p>
     pub fn name(mut self, input: crate::types::FolderName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The folder name.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::FolderName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FolderName>) -> Self {
         self.name = input;
         self
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
     pub fn action(mut self, input: crate::types::RetentionAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::RetentionAction>) -> Self {
+    pub fn set_action(
+        mut self,
+        input: ::std::option::Option<crate::types::RetentionAction>,
+    ) -> Self {
         self.action = input;
         self
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub fn period(mut self, input: i32) -> Self {
-        self.period = Some(input);
+        self.period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
-    pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
     }

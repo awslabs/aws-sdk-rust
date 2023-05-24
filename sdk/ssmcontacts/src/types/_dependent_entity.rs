@@ -3,22 +3,22 @@
 /// <p>Information about a resource that another resource is related to or depends on.</p>
 /// <p>For example, if a contact is a member of a rotation, the rotation is a dependent entity of the contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DependentEntity {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
     #[doc(hidden)]
-    pub relation_type: std::option::Option<std::string::String>,
+    pub relation_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
     #[doc(hidden)]
-    pub dependent_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub dependent_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DependentEntity {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
-    pub fn relation_type(&self) -> std::option::Option<&str> {
+    pub fn relation_type(&self) -> ::std::option::Option<&str> {
         self.relation_type.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    pub fn dependent_resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dependent_resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.dependent_resource_ids.as_deref()
     }
 }
@@ -31,19 +31,28 @@ impl DependentEntity {
 
 /// A builder for [`DependentEntity`](crate::types::DependentEntity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DependentEntityBuilder {
-    pub(crate) relation_type: std::option::Option<std::string::String>,
-    pub(crate) dependent_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) relation_type: ::std::option::Option<::std::string::String>,
+    pub(crate) dependent_resource_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DependentEntityBuilder {
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
-    pub fn relation_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.relation_type = Some(input.into());
+    pub fn relation_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.relation_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of relationship between one resource and the other resource that it is related to or depends on.</p>
-    pub fn set_relation_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_relation_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.relation_type = input;
         self
     }
@@ -52,16 +61,19 @@ impl DependentEntityBuilder {
     /// To override the contents of this collection use [`set_dependent_resource_ids`](Self::set_dependent_resource_ids).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
-    pub fn dependent_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dependent_resource_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.dependent_resource_ids.unwrap_or_default();
         v.push(input.into());
-        self.dependent_resource_ids = Some(v);
+        self.dependent_resource_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
     pub fn set_dependent_resource_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.dependent_resource_ids = input;
         self

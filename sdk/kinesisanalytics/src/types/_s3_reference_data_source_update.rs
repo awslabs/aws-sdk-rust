@@ -2,29 +2,29 @@
 
 /// <p>Describes the S3 bucket name, object key name, and IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object on your behalf and populate the in-application reference table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ReferenceDataSourceUpdate {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket_arn_update: std::option::Option<std::string::String>,
+    pub bucket_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>Object key name.</p>
     #[doc(hidden)]
-    pub file_key_update: std::option::Option<std::string::String>,
+    pub file_key_update: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
     #[doc(hidden)]
-    pub reference_role_arn_update: std::option::Option<std::string::String>,
+    pub reference_role_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl S3ReferenceDataSourceUpdate {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn_update(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn_update(&self) -> ::std::option::Option<&str> {
         self.bucket_arn_update.as_deref()
     }
     /// <p>Object key name.</p>
-    pub fn file_key_update(&self) -> std::option::Option<&str> {
+    pub fn file_key_update(&self) -> ::std::option::Option<&str> {
         self.file_key_update.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
-    pub fn reference_role_arn_update(&self) -> std::option::Option<&str> {
+    pub fn reference_role_arn_update(&self) -> ::std::option::Option<&str> {
         self.reference_role_arn_update.as_deref()
     }
 }
@@ -37,45 +37,59 @@ impl S3ReferenceDataSourceUpdate {
 
 /// A builder for [`S3ReferenceDataSourceUpdate`](crate::types::S3ReferenceDataSourceUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ReferenceDataSourceUpdateBuilder {
-    pub(crate) bucket_arn_update: std::option::Option<std::string::String>,
-    pub(crate) file_key_update: std::option::Option<std::string::String>,
-    pub(crate) reference_role_arn_update: std::option::Option<std::string::String>,
+    pub(crate) bucket_arn_update: ::std::option::Option<::std::string::String>,
+    pub(crate) file_key_update: ::std::option::Option<::std::string::String>,
+    pub(crate) reference_role_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl S3ReferenceDataSourceUpdateBuilder {
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_arn_update = Some(input.into());
+    pub fn bucket_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bucket_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
     pub fn set_bucket_arn_update(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.bucket_arn_update = input;
         self
     }
     /// <p>Object key name.</p>
-    pub fn file_key_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_key_update = Some(input.into());
+    pub fn file_key_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_key_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Object key name.</p>
-    pub fn set_file_key_update(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_key_update(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_key_update = input;
         self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
-    pub fn reference_role_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reference_role_arn_update = Some(input.into());
+    pub fn reference_role_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reference_role_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the Amazon S3 object and populate the in-application.</p>
     pub fn set_reference_role_arn_update(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reference_role_arn_update = input;
         self

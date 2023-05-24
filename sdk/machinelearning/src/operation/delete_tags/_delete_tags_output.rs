@@ -2,27 +2,27 @@
 
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTagsOutput {
     /// <p>The ID of the ML object from which tags were deleted.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the ML object from which tags were deleted.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::TaggableResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
     _request_id: Option<String>,
 }
 impl DeleteTagsOutput {
     /// <p>The ID of the ML object from which tags were deleted.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the ML object from which tags were deleted.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::TaggableResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TaggableResourceType> {
         self.resource_type.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteTagsOutput {
+impl ::aws_http::request_id::RequestId for DeleteTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,32 +36,34 @@ impl DeleteTagsOutput {
 
 /// A builder for [`DeleteTagsOutput`](crate::operation::delete_tags::DeleteTagsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteTagsOutputBuilder {
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<crate::types::TaggableResourceType>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
     _request_id: Option<String>,
 }
 impl DeleteTagsOutputBuilder {
     /// <p>The ID of the ML object from which tags were deleted.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the ML object from which tags were deleted.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The type of the ML object from which tags were deleted.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the ML object from which tags were deleted.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::TaggableResourceType>,
+        input: ::std::option::Option<crate::types::TaggableResourceType>,
     ) -> Self {
         self.resource_type = input;
         self

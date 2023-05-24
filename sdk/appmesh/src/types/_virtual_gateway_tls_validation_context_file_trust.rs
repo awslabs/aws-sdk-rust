@@ -2,15 +2,15 @@
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     #[doc(hidden)]
-    pub certificate_chain: std::option::Option<std::string::String>,
+    pub certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl VirtualGatewayTlsValidationContextFileTrust {
 
 /// A builder for [`VirtualGatewayTlsValidationContextFileTrust`](crate::types::VirtualGatewayTlsValidationContextFileTrust).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewayTlsValidationContextFileTrustBuilder {
-    pub(crate) certificate_chain: std::option::Option<std::string::String>,
+    pub(crate) certificate_chain: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextFileTrustBuilder {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_chain = Some(input.into());
+    pub fn certificate_chain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     pub fn set_certificate_chain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.certificate_chain = input;
         self

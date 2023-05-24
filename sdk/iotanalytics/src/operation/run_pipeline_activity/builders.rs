@@ -6,29 +6,29 @@ pub use crate::operation::run_pipeline_activity::_run_pipeline_activity_input::R
 /// Fluent builder constructing a request to `RunPipelineActivity`.
 ///
 /// <p>Simulates the results of running a pipeline activity on a message payload.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunPipelineActivityFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder,
 }
 impl RunPipelineActivityFluentBuilder {
     /// Creates a new `RunPipelineActivity`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::run_pipeline_activity::RunPipelineActivity,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::run_pipeline_activity::RunPipelineActivityError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RunPipelineActivityFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::run_pipeline_activity::RunPipelineActivityError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl RunPipelineActivityFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::run_pipeline_activity::RunPipelineActivityError,
         >,
     > {
@@ -88,7 +91,7 @@ impl RunPipelineActivityFluentBuilder {
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
     pub fn set_pipeline_activity(
         mut self,
-        input: std::option::Option<crate::types::PipelineActivity>,
+        input: ::std::option::Option<crate::types::PipelineActivity>,
     ) -> Self {
         self.inner = self.inner.set_pipeline_activity(input);
         self
@@ -98,14 +101,14 @@ impl RunPipelineActivityFluentBuilder {
     /// To override the contents of this collection use [`set_payloads`](Self::set_payloads).
     ///
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
+    pub fn payloads(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.payloads(input);
         self
     }
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
     pub fn set_payloads(
         mut self,
-        input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
+        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>,
     ) -> Self {
         self.inner = self.inner.set_payloads(input);
         self

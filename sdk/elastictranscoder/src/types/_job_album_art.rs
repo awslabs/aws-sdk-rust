@@ -2,7 +2,7 @@
 
 /// <p>The .jpg or .png file associated with an audio file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobAlbumArt {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple album artwork files.</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct JobAlbumArt {
     /// <li> <p> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder uses that artwork for the output. If the original input does not contain artwork, Elastic Transcoder uses the specified album art file.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub merge_policy: std::option::Option<std::string::String>,
+    pub merge_policy: ::std::option::Option<::std::string::String>,
     /// <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code> </p>
     #[doc(hidden)]
-    pub artwork: std::option::Option<std::vec::Vec<crate::types::Artwork>>,
+    pub artwork: ::std::option::Option<::std::vec::Vec<crate::types::Artwork>>,
 }
 impl JobAlbumArt {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple album artwork files.</p>
@@ -25,11 +25,11 @@ impl JobAlbumArt {
     /// <li> <p> <code>Append:</code> The specified album art is placed after any existing album art.</p> </li>
     /// <li> <p> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder uses that artwork for the output. If the original input does not contain artwork, Elastic Transcoder uses the specified album art file.</p> </li>
     /// </ul>
-    pub fn merge_policy(&self) -> std::option::Option<&str> {
+    pub fn merge_policy(&self) -> ::std::option::Option<&str> {
         self.merge_policy.as_deref()
     }
     /// <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code> </p>
-    pub fn artwork(&self) -> std::option::Option<&[crate::types::Artwork]> {
+    pub fn artwork(&self) -> ::std::option::Option<&[crate::types::Artwork]> {
         self.artwork.as_deref()
     }
 }
@@ -42,10 +42,12 @@ impl JobAlbumArt {
 
 /// A builder for [`JobAlbumArt`](crate::types::JobAlbumArt).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobAlbumArtBuilder {
-    pub(crate) merge_policy: std::option::Option<std::string::String>,
-    pub(crate) artwork: std::option::Option<std::vec::Vec<crate::types::Artwork>>,
+    pub(crate) merge_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) artwork: ::std::option::Option<::std::vec::Vec<crate::types::Artwork>>,
 }
 impl JobAlbumArtBuilder {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple album artwork files.</p>
@@ -55,8 +57,8 @@ impl JobAlbumArtBuilder {
     /// <li> <p> <code>Append:</code> The specified album art is placed after any existing album art.</p> </li>
     /// <li> <p> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder uses that artwork for the output. If the original input does not contain artwork, Elastic Transcoder uses the specified album art file.</p> </li>
     /// </ul>
-    pub fn merge_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.merge_policy = Some(input.into());
+    pub fn merge_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.merge_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple album artwork files.</p>
@@ -66,7 +68,7 @@ impl JobAlbumArtBuilder {
     /// <li> <p> <code>Append:</code> The specified album art is placed after any existing album art.</p> </li>
     /// <li> <p> <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder uses that artwork for the output. If the original input does not contain artwork, Elastic Transcoder uses the specified album art file.</p> </li>
     /// </ul>
-    pub fn set_merge_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_merge_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_policy = input;
         self
     }
@@ -78,13 +80,13 @@ impl JobAlbumArtBuilder {
     pub fn artwork(mut self, input: crate::types::Artwork) -> Self {
         let mut v = self.artwork.unwrap_or_default();
         v.push(input);
-        self.artwork = Some(v);
+        self.artwork = ::std::option::Option::Some(v);
         self
     }
     /// <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code> </p>
     pub fn set_artwork(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Artwork>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Artwork>>,
     ) -> Self {
         self.artwork = input;
         self

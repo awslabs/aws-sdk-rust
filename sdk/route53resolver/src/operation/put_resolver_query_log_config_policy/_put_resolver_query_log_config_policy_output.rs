@@ -2,7 +2,7 @@
 
 /// <p>The response to a <code>PutResolverQueryLogConfigPolicy</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResolverQueryLogConfigPolicyOutput {
     /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ impl PutResolverQueryLogConfigPolicyOutput {
         self.return_value
     }
 }
-impl aws_http::request_id::RequestId for PutResolverQueryLogConfigPolicyOutput {
+impl ::aws_http::request_id::RequestId for PutResolverQueryLogConfigPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl PutResolverQueryLogConfigPolicyOutput {
 
 /// A builder for [`PutResolverQueryLogConfigPolicyOutput`](crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutResolverQueryLogConfigPolicyOutputBuilder {
-    pub(crate) return_value: std::option::Option<bool>,
+    pub(crate) return_value: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl PutResolverQueryLogConfigPolicyOutputBuilder {
     /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
     pub fn return_value(mut self, input: bool) -> Self {
-        self.return_value = Some(input);
+        self.return_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the <code>PutResolverQueryLogConfigPolicy</code> request was successful.</p>
-    pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_return_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.return_value = input;
         self
     }

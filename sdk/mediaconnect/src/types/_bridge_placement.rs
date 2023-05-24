@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BridgePlacement {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum BridgePlacement {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BridgePlacement {
+impl ::std::convert::From<&str> for BridgePlacement {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => BridgePlacement::Available,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for BridgePlacement {
         }
     }
 }
-impl std::str::FromStr for BridgePlacement {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BridgePlacement {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BridgePlacement::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BridgePlacement::from(s))
     }
 }
 impl BridgePlacement {
@@ -86,7 +86,7 @@ impl BridgePlacement {
         &["AVAILABLE", "LOCKED"]
     }
 }
-impl AsRef<str> for BridgePlacement {
+impl ::std::convert::AsRef<str> for BridgePlacement {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

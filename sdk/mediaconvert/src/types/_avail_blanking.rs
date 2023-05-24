@@ -2,15 +2,15 @@
 
 /// Use ad avail blanking settings to specify your output content during SCTE-35 triggered ad avails. You can blank your video or overlay it with an image. MediaConvert also removes any audio and embedded captions during the ad avail. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ad-avail-blanking.html.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailBlanking {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
     #[doc(hidden)]
-    pub avail_blanking_image: std::option::Option<std::string::String>,
+    pub avail_blanking_image: ::std::option::Option<::std::string::String>,
 }
 impl AvailBlanking {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    pub fn avail_blanking_image(&self) -> std::option::Option<&str> {
+    pub fn avail_blanking_image(&self) -> ::std::option::Option<&str> {
         self.avail_blanking_image.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl AvailBlanking {
 
 /// A builder for [`AvailBlanking`](crate::types::AvailBlanking).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AvailBlankingBuilder {
-    pub(crate) avail_blanking_image: std::option::Option<std::string::String>,
+    pub(crate) avail_blanking_image: ::std::option::Option<::std::string::String>,
 }
 impl AvailBlankingBuilder {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    pub fn avail_blanking_image(mut self, input: impl Into<std::string::String>) -> Self {
-        self.avail_blanking_image = Some(input.into());
+    pub fn avail_blanking_image(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.avail_blanking_image = ::std::option::Option::Some(input.into());
         self
     }
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
     pub fn set_avail_blanking_image(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.avail_blanking_image = input;
         self

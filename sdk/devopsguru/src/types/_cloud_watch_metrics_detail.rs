@@ -2,49 +2,50 @@
 
 /// <p> Information about an Amazon CloudWatch metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchMetricsDetail {
     /// <p> The name of the CloudWatch metric. </p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p> The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics. </p>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> An array of CloudWatch dimensions associated with </p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
+    pub dimensions:
+        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     #[doc(hidden)]
-    pub stat: std::option::Option<crate::types::CloudWatchMetricsStat>,
+    pub stat: ::std::option::Option<crate::types::CloudWatchMetricsStat>,
     /// <p> The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>, <code>Count</code>, and <code>Percent</code>. </p>
     #[doc(hidden)]
-    pub unit: std::option::Option<std::string::String>,
+    pub unit: ::std::option::Option<::std::string::String>,
     /// <p> The length of time associated with the CloudWatch metric in number of seconds. </p>
     #[doc(hidden)]
     pub period: i32,
     /// <p>This object returns anomaly metric data.</p>
     #[doc(hidden)]
-    pub metric_data_summary: std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
+    pub metric_data_summary: ::std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
 }
 impl CloudWatchMetricsDetail {
     /// <p> The name of the CloudWatch metric. </p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p> The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics. </p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> An array of CloudWatch dimensions associated with </p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::types::CloudWatchMetricsDimension]> {
+    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::CloudWatchMetricsDimension]> {
         self.dimensions.as_deref()
     }
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
-    pub fn stat(&self) -> std::option::Option<&crate::types::CloudWatchMetricsStat> {
+    pub fn stat(&self) -> ::std::option::Option<&crate::types::CloudWatchMetricsStat> {
         self.stat.as_ref()
     }
     /// <p> The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>, <code>Count</code>, and <code>Percent</code>. </p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
     /// <p> The length of time associated with the CloudWatch metric in number of seconds. </p>
@@ -54,7 +55,7 @@ impl CloudWatchMetricsDetail {
     /// <p>This object returns anomaly metric data.</p>
     pub fn metric_data_summary(
         &self,
-    ) -> std::option::Option<&crate::types::CloudWatchMetricsDataSummary> {
+    ) -> ::std::option::Option<&crate::types::CloudWatchMetricsDataSummary> {
         self.metric_data_summary.as_ref()
     }
 }
@@ -67,35 +68,38 @@ impl CloudWatchMetricsDetail {
 
 /// A builder for [`CloudWatchMetricsDetail`](crate::types::CloudWatchMetricsDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchMetricsDetailBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) namespace: std::option::Option<std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions:
-        std::option::Option<std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
-    pub(crate) stat: std::option::Option<crate::types::CloudWatchMetricsStat>,
-    pub(crate) unit: std::option::Option<std::string::String>,
-    pub(crate) period: std::option::Option<i32>,
-    pub(crate) metric_data_summary: std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
+    pub(crate) stat: ::std::option::Option<crate::types::CloudWatchMetricsStat>,
+    pub(crate) unit: ::std::option::Option<::std::string::String>,
+    pub(crate) period: ::std::option::Option<i32>,
+    pub(crate) metric_data_summary:
+        ::std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
 }
 impl CloudWatchMetricsDetailBuilder {
     /// <p> The name of the CloudWatch metric. </p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the CloudWatch metric. </p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p> The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics. </p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics. </p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
@@ -107,47 +111,47 @@ impl CloudWatchMetricsDetailBuilder {
     pub fn dimensions(mut self, input: crate::types::CloudWatchMetricsDimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
         v.push(input);
-        self.dimensions = Some(v);
+        self.dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of CloudWatch dimensions associated with </p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchMetricsDimension>>,
     ) -> Self {
         self.dimensions = input;
         self
     }
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     pub fn stat(mut self, input: crate::types::CloudWatchMetricsStat) -> Self {
-        self.stat = Some(input);
+        self.stat = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of statistic associated with the CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
     pub fn set_stat(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchMetricsStat>,
+        input: ::std::option::Option<crate::types::CloudWatchMetricsStat>,
     ) -> Self {
         self.stat = input;
         self
     }
     /// <p> The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>, <code>Count</code>, and <code>Percent</code>. </p>
-    pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit = Some(input.into());
+    pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>, <code>Count</code>, and <code>Percent</code>. </p>
-    pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
     }
     /// <p> The length of time associated with the CloudWatch metric in number of seconds. </p>
     pub fn period(mut self, input: i32) -> Self {
-        self.period = Some(input);
+        self.period = ::std::option::Option::Some(input);
         self
     }
     /// <p> The length of time associated with the CloudWatch metric in number of seconds. </p>
-    pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period = input;
         self
     }
@@ -156,13 +160,13 @@ impl CloudWatchMetricsDetailBuilder {
         mut self,
         input: crate::types::CloudWatchMetricsDataSummary,
     ) -> Self {
-        self.metric_data_summary = Some(input);
+        self.metric_data_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>This object returns anomaly metric data.</p>
     pub fn set_metric_data_summary(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
+        input: ::std::option::Option<crate::types::CloudWatchMetricsDataSummary>,
     ) -> Self {
         self.metric_data_summary = input;
         self

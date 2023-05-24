@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ControlResponse {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ControlResponse {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ControlResponse {
+impl ::std::convert::From<&str> for ControlResponse {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATE" => ControlResponse::Automate,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ControlResponse {
         }
     }
 }
-impl std::str::FromStr for ControlResponse {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ControlResponse {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ControlResponse::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ControlResponse::from(s))
     }
 }
 impl ControlResponse {
@@ -96,7 +96,7 @@ impl ControlResponse {
         &["AUTOMATE", "DEFER", "IGNORE", "MANUAL"]
     }
 }
-impl AsRef<str> for ControlResponse {
+impl ::std::convert::AsRef<str> for ControlResponse {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

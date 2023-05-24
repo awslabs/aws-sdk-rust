@@ -38,13 +38,13 @@
 /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReservationPlanStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ReservationPlanStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReservationPlanStatus {
+impl ::std::convert::From<&str> for ReservationPlanStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ReservationPlanStatus::Active,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ReservationPlanStatus {
         }
     }
 }
-impl std::str::FromStr for ReservationPlanStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReservationPlanStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservationPlanStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReservationPlanStatus::from(s))
     }
 }
 impl ReservationPlanStatus {
@@ -86,7 +86,7 @@ impl ReservationPlanStatus {
         &["ACTIVE", "EXPIRED"]
     }
 }
-impl AsRef<str> for ReservationPlanStatus {
+impl ::std::convert::AsRef<str> for ReservationPlanStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

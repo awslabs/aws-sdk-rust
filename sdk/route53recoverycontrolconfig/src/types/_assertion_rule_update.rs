@@ -2,29 +2,29 @@
 
 /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssertionRuleUpdate {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
     #[doc(hidden)]
-    pub safety_rule_arn: std::option::Option<std::string::String>,
+    pub safety_rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     #[doc(hidden)]
-    pub wait_period_ms: std::option::Option<i32>,
+    pub wait_period_ms: ::std::option::Option<i32>,
 }
 impl AssertionRuleUpdate {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    pub fn safety_rule_arn(&self) -> std::option::Option<&str> {
+    pub fn safety_rule_arn(&self) -> ::std::option::Option<&str> {
         self.safety_rule_arn.as_deref()
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    pub fn wait_period_ms(&self) -> std::option::Option<i32> {
+    pub fn wait_period_ms(&self) -> ::std::option::Option<i32> {
         self.wait_period_ms
     }
 }
@@ -37,40 +37,48 @@ impl AssertionRuleUpdate {
 
 /// A builder for [`AssertionRuleUpdate`](crate::types::AssertionRuleUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssertionRuleUpdateBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) safety_rule_arn: std::option::Option<std::string::String>,
-    pub(crate) wait_period_ms: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) safety_rule_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) wait_period_ms: ::std::option::Option<i32>,
 }
 impl AssertionRuleUpdateBuilder {
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the assertion rule. You can use any non-white space character in the name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.safety_rule_arn = Some(input.into());
+    pub fn safety_rule_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.safety_rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assertion rule.</p>
-    pub fn set_safety_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_safety_rule_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.safety_rule_arn = input;
         self
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     pub fn wait_period_ms(mut self, input: i32) -> Self {
-        self.wait_period_ms = Some(input);
+        self.wait_period_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    pub fn set_wait_period_ms(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_wait_period_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_period_ms = input;
         self
     }

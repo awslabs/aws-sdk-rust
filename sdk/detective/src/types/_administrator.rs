@@ -2,29 +2,29 @@
 
 /// <p>Information about the Detective administrator account for an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Administrator {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organization behavior graph.</p>
     #[doc(hidden)]
-    pub graph_arn: std::option::Option<std::string::String>,
+    pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[doc(hidden)]
-    pub delegation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub delegation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Administrator {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> std::option::Option<&str> {
+    pub fn graph_arn(&self) -> ::std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn delegation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn delegation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.delegation_time.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl Administrator {
 
 /// A builder for [`Administrator`](crate::types::Administrator).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdministratorBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) graph_arn: std::option::Option<std::string::String>,
-    pub(crate) delegation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) graph_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) delegation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AdministratorBuilder {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.graph_arn = Some(input.into());
+    pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.graph_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.graph_arn = input;
         self
     }
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn delegation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.delegation_time = Some(input);
+    pub fn delegation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.delegation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn set_delegation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.delegation_time = input;
         self

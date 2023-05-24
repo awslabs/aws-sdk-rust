@@ -2,38 +2,38 @@
 
 /// <p>A list of recommendations made by Amazon SageMaker Inference Recommender.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceRecommendation {
     /// <p>The metrics used to decide what recommendation to make.</p>
     #[doc(hidden)]
-    pub metrics: std::option::Option<crate::types::RecommendationMetrics>,
+    pub metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
     /// <p>Defines the endpoint configuration parameters.</p>
     #[doc(hidden)]
-    pub endpoint_configuration: std::option::Option<crate::types::EndpointOutputConfiguration>,
+    pub endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     /// <p>Defines the model configuration.</p>
     #[doc(hidden)]
-    pub model_configuration: std::option::Option<crate::types::ModelConfiguration>,
+    pub model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
     #[doc(hidden)]
-    pub recommendation_id: std::option::Option<std::string::String>,
+    pub recommendation_id: ::std::option::Option<::std::string::String>,
 }
 impl InferenceRecommendation {
     /// <p>The metrics used to decide what recommendation to make.</p>
-    pub fn metrics(&self) -> std::option::Option<&crate::types::RecommendationMetrics> {
+    pub fn metrics(&self) -> ::std::option::Option<&crate::types::RecommendationMetrics> {
         self.metrics.as_ref()
     }
     /// <p>Defines the endpoint configuration parameters.</p>
     pub fn endpoint_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::EndpointOutputConfiguration> {
+    ) -> ::std::option::Option<&crate::types::EndpointOutputConfiguration> {
         self.endpoint_configuration.as_ref()
     }
     /// <p>Defines the model configuration.</p>
-    pub fn model_configuration(&self) -> std::option::Option<&crate::types::ModelConfiguration> {
+    pub fn model_configuration(&self) -> ::std::option::Option<&crate::types::ModelConfiguration> {
         self.model_configuration.as_ref()
     }
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
 }
@@ -46,24 +46,26 @@ impl InferenceRecommendation {
 
 /// A builder for [`InferenceRecommendation`](crate::types::InferenceRecommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceRecommendationBuilder {
-    pub(crate) metrics: std::option::Option<crate::types::RecommendationMetrics>,
+    pub(crate) metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
     pub(crate) endpoint_configuration:
-        std::option::Option<crate::types::EndpointOutputConfiguration>,
-    pub(crate) model_configuration: std::option::Option<crate::types::ModelConfiguration>,
-    pub(crate) recommendation_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::EndpointOutputConfiguration>,
+    pub(crate) model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
+    pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
 }
 impl InferenceRecommendationBuilder {
     /// <p>The metrics used to decide what recommendation to make.</p>
     pub fn metrics(mut self, input: crate::types::RecommendationMetrics) -> Self {
-        self.metrics = Some(input);
+        self.metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metrics used to decide what recommendation to make.</p>
     pub fn set_metrics(
         mut self,
-        input: std::option::Option<crate::types::RecommendationMetrics>,
+        input: ::std::option::Option<crate::types::RecommendationMetrics>,
     ) -> Self {
         self.metrics = input;
         self
@@ -73,39 +75,42 @@ impl InferenceRecommendationBuilder {
         mut self,
         input: crate::types::EndpointOutputConfiguration,
     ) -> Self {
-        self.endpoint_configuration = Some(input);
+        self.endpoint_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the endpoint configuration parameters.</p>
     pub fn set_endpoint_configuration(
         mut self,
-        input: std::option::Option<crate::types::EndpointOutputConfiguration>,
+        input: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     ) -> Self {
         self.endpoint_configuration = input;
         self
     }
     /// <p>Defines the model configuration.</p>
     pub fn model_configuration(mut self, input: crate::types::ModelConfiguration) -> Self {
-        self.model_configuration = Some(input);
+        self.model_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the model configuration.</p>
     pub fn set_model_configuration(
         mut self,
-        input: std::option::Option<crate::types::ModelConfiguration>,
+        input: ::std::option::Option<crate::types::ModelConfiguration>,
     ) -> Self {
         self.model_configuration = input;
         self
     }
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recommendation_id = Some(input.into());
+    pub fn recommendation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recommendation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
     pub fn set_recommendation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recommendation_id = input;
         self

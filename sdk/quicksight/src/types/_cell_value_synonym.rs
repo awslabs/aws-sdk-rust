@@ -2,22 +2,22 @@
 
 /// <p>A structure that represents the cell value synonym.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CellValueSynonym {
     /// <p>The cell value.</p>
     #[doc(hidden)]
-    pub cell_value: std::option::Option<std::string::String>,
+    pub cell_value: ::std::option::Option<::std::string::String>,
     /// <p>Other names or aliases for the cell value.</p>
     #[doc(hidden)]
-    pub synonyms: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CellValueSynonym {
     /// <p>The cell value.</p>
-    pub fn cell_value(&self) -> std::option::Option<&str> {
+    pub fn cell_value(&self) -> ::std::option::Option<&str> {
         self.cell_value.as_deref()
     }
     /// <p>Other names or aliases for the cell value.</p>
-    pub fn synonyms(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn synonyms(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.synonyms.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl CellValueSynonym {
 
 /// A builder for [`CellValueSynonym`](crate::types::CellValueSynonym).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CellValueSynonymBuilder {
-    pub(crate) cell_value: std::option::Option<std::string::String>,
-    pub(crate) synonyms: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) cell_value: ::std::option::Option<::std::string::String>,
+    pub(crate) synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CellValueSynonymBuilder {
     /// <p>The cell value.</p>
-    pub fn cell_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cell_value = Some(input.into());
+    pub fn cell_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cell_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cell value.</p>
-    pub fn set_cell_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cell_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cell_value = input;
         self
     }
@@ -51,16 +53,16 @@ impl CellValueSynonymBuilder {
     /// To override the contents of this collection use [`set_synonyms`](Self::set_synonyms).
     ///
     /// <p>Other names or aliases for the cell value.</p>
-    pub fn synonyms(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn synonyms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.synonyms.unwrap_or_default();
         v.push(input.into());
-        self.synonyms = Some(v);
+        self.synonyms = ::std::option::Option::Some(v);
         self
     }
     /// <p>Other names or aliases for the cell value.</p>
     pub fn set_synonyms(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.synonyms = input;
         self

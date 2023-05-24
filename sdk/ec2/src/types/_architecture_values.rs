@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ArchitectureValues {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ArchitectureValues {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ArchitectureValues {
+impl ::std::convert::From<&str> for ArchitectureValues {
     fn from(s: &str) -> Self {
         match s {
             "arm64" => ArchitectureValues::Arm64,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ArchitectureValues {
         }
     }
 }
-impl std::str::FromStr for ArchitectureValues {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ArchitectureValues {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ArchitectureValues::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ArchitectureValues::from(s))
     }
 }
 impl ArchitectureValues {
@@ -101,7 +101,7 @@ impl ArchitectureValues {
         &["arm64", "arm64_mac", "i386", "x86_64", "x86_64_mac"]
     }
 }
-impl AsRef<str> for ArchitectureValues {
+impl ::std::convert::AsRef<str> for ArchitectureValues {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

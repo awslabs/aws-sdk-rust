@@ -2,20 +2,20 @@
 
 /// <p>A user profile in a Amazon Cognito user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserType {
     /// <p>The user name of the user you want to describe.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>A container with information about the user type attributes.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p>The creation date of the user.</p>
     #[doc(hidden)]
-    pub user_create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub user_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified date of the user.</p>
     #[doc(hidden)]
-    pub user_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub user_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the user is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -30,26 +30,26 @@ pub struct UserType {
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub user_status: std::option::Option<crate::types::UserStatusType>,
+    pub user_status: ::std::option::Option<crate::types::UserStatusType>,
     /// <p>The MFA options for the user.</p>
     #[doc(hidden)]
-    pub mfa_options: std::option::Option<std::vec::Vec<crate::types::MfaOptionType>>,
+    pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
 }
 impl UserType {
     /// <p>The user name of the user you want to describe.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>A container with information about the user type attributes.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::AttributeType]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
         self.attributes.as_deref()
     }
     /// <p>The creation date of the user.</p>
-    pub fn user_create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn user_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.user_create_date.as_ref()
     }
     /// <p>The last modified date of the user.</p>
-    pub fn user_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn user_last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.user_last_modified_date.as_ref()
     }
     /// <p>Specifies whether the user is enabled.</p>
@@ -66,16 +66,16 @@ impl UserType {
     /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
-    pub fn user_status(&self) -> std::option::Option<&crate::types::UserStatusType> {
+    pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatusType> {
         self.user_status.as_ref()
     }
     /// <p>The MFA options for the user.</p>
-    pub fn mfa_options(&self) -> std::option::Option<&[crate::types::MfaOptionType]> {
+    pub fn mfa_options(&self) -> ::std::option::Option<&[crate::types::MfaOptionType]> {
         self.mfa_options.as_deref()
     }
 }
-impl std::fmt::Debug for UserType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserType");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &self.attributes);
@@ -96,24 +96,24 @@ impl UserType {
 
 /// A builder for [`UserType`](crate::types::UserType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserTypeBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
-    pub(crate) user_create_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) user_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) user_status: std::option::Option<crate::types::UserStatusType>,
-    pub(crate) mfa_options: std::option::Option<std::vec::Vec<crate::types::MfaOptionType>>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub(crate) user_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) user_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) user_status: ::std::option::Option<crate::types::UserStatusType>,
+    pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
 }
 impl UserTypeBuilder {
     /// <p>The user name of the user you want to describe.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name of the user you want to describe.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
@@ -125,50 +125,50 @@ impl UserTypeBuilder {
     pub fn attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A container with information about the user type attributes.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The creation date of the user.</p>
-    pub fn user_create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.user_create_date = Some(input);
+    pub fn user_create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.user_create_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation date of the user.</p>
     pub fn set_user_create_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.user_create_date = input;
         self
     }
     /// <p>The last modified date of the user.</p>
-    pub fn user_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.user_last_modified_date = Some(input);
+    pub fn user_last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.user_last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last modified date of the user.</p>
     pub fn set_user_last_modified_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.user_last_modified_date = input;
         self
     }
     /// <p>Specifies whether the user is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the user is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
@@ -183,7 +183,7 @@ impl UserTypeBuilder {
     /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
     /// </ul>
     pub fn user_status(mut self, input: crate::types::UserStatusType) -> Self {
-        self.user_status = Some(input);
+        self.user_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user status. This can be one of the following:</p>
@@ -198,7 +198,7 @@ impl UserTypeBuilder {
     /// </ul>
     pub fn set_user_status(
         mut self,
-        input: std::option::Option<crate::types::UserStatusType>,
+        input: ::std::option::Option<crate::types::UserStatusType>,
     ) -> Self {
         self.user_status = input;
         self
@@ -211,13 +211,13 @@ impl UserTypeBuilder {
     pub fn mfa_options(mut self, input: crate::types::MfaOptionType) -> Self {
         let mut v = self.mfa_options.unwrap_or_default();
         v.push(input);
-        self.mfa_options = Some(v);
+        self.mfa_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The MFA options for the user.</p>
     pub fn set_mfa_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MfaOptionType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
     ) -> Self {
         self.mfa_options = input;
         self
@@ -235,8 +235,8 @@ impl UserTypeBuilder {
         }
     }
 }
-impl std::fmt::Debug for UserTypeBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserTypeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserTypeBuilder");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("attributes", &self.attributes);

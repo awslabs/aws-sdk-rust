@@ -2,7 +2,7 @@
 
 /// <p>Information about the automation option of a single select question.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationFormSingleSelectQuestionAutomationOption {
     /// <p>The automation option based on a rule category for the single select question.</p>
     RuleCategory(crate::types::SingleSelectQuestionRuleCategoryAutomation),
@@ -22,11 +22,12 @@ impl EvaluationFormSingleSelectQuestionAutomationOption {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_rule_category(
         &self,
-    ) -> std::result::Result<&crate::types::SingleSelectQuestionRuleCategoryAutomation, &Self> {
+    ) -> ::std::result::Result<&crate::types::SingleSelectQuestionRuleCategoryAutomation, &Self>
+    {
         if let EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RuleCategory`](crate::types::EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory).

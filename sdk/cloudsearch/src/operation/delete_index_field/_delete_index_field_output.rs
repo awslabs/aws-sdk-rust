@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code><code>DeleteIndexField</code></code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIndexFieldOutput {
     /// <p>The status of the index field being deleted.</p>
     #[doc(hidden)]
-    pub index_field: std::option::Option<crate::types::IndexFieldStatus>,
+    pub index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
 }
 impl DeleteIndexFieldOutput {
     /// <p>The status of the index field being deleted.</p>
-    pub fn index_field(&self) -> std::option::Option<&crate::types::IndexFieldStatus> {
+    pub fn index_field(&self) -> ::std::option::Option<&crate::types::IndexFieldStatus> {
         self.index_field.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteIndexFieldOutput {
+impl ::aws_http::request_id::RequestId for DeleteIndexFieldOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DeleteIndexFieldOutput {
 
 /// A builder for [`DeleteIndexFieldOutput`](crate::operation::delete_index_field::DeleteIndexFieldOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteIndexFieldOutputBuilder {
-    pub(crate) index_field: std::option::Option<crate::types::IndexFieldStatus>,
+    pub(crate) index_field: ::std::option::Option<crate::types::IndexFieldStatus>,
     _request_id: Option<String>,
 }
 impl DeleteIndexFieldOutputBuilder {
     /// <p>The status of the index field being deleted.</p>
     pub fn index_field(mut self, input: crate::types::IndexFieldStatus) -> Self {
-        self.index_field = Some(input);
+        self.index_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the index field being deleted.</p>
     pub fn set_index_field(
         mut self,
-        input: std::option::Option<crate::types::IndexFieldStatus>,
+        input: ::std::option::Option<crate::types::IndexFieldStatus>,
     ) -> Self {
         self.index_field = input;
         self

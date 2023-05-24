@@ -2,22 +2,22 @@
 
 /// <p>The contact that Incident Manager is engaging during an incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     #[doc(hidden)]
-    pub contact_id: std::option::Option<std::string::String>,
+    pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     #[doc(hidden)]
-    pub is_essential: std::option::Option<bool>,
+    pub is_essential: ::std::option::Option<bool>,
 }
 impl ContactTargetInfo {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
-    pub fn is_essential(&self) -> std::option::Option<bool> {
+    pub fn is_essential(&self) -> ::std::option::Option<bool> {
         self.is_essential
     }
 }
@@ -30,29 +30,31 @@ impl ContactTargetInfo {
 
 /// A builder for [`ContactTargetInfo`](crate::types::ContactTargetInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContactTargetInfoBuilder {
-    pub(crate) contact_id: std::option::Option<std::string::String>,
-    pub(crate) is_essential: std::option::Option<bool>,
+    pub(crate) contact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) is_essential: ::std::option::Option<bool>,
 }
 impl ContactTargetInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_id = Some(input.into());
+    pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
     pub fn is_essential(mut self, input: bool) -> Self {
-        self.is_essential = Some(input);
+        self.is_essential = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.</p>
-    pub fn set_is_essential(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_essential(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_essential = input;
         self
     }

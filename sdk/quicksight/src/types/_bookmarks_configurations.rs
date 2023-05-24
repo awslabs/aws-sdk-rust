@@ -2,7 +2,7 @@
 
 /// <p>The bookmarks configuration of an embedded dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BookmarksConfigurations {
     /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl BookmarksConfigurations {
 
 /// A builder for [`BookmarksConfigurations`](crate::types::BookmarksConfigurations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BookmarksConfigurationsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl BookmarksConfigurationsBuilder {
     /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that determines whether a user can bookmark an embedded dashboard.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

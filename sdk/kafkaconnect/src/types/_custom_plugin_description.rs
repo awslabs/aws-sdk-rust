@@ -2,18 +2,18 @@
 
 /// <p>Details about a custom plugin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPluginDescription {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     #[doc(hidden)]
-    pub custom_plugin_arn: std::option::Option<std::string::String>,
+    pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the custom plugin.</p>
     #[doc(hidden)]
     pub revision: i64,
 }
 impl CustomPluginDescription {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The revision of the custom plugin.</p>
@@ -30,32 +30,37 @@ impl CustomPluginDescription {
 
 /// A builder for [`CustomPluginDescription`](crate::types::CustomPluginDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomPluginDescriptionBuilder {
-    pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
-    pub(crate) revision: std::option::Option<i64>,
+    pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<i64>,
 }
 impl CustomPluginDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_plugin_arn = Some(input.into());
+    pub fn custom_plugin_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     pub fn set_custom_plugin_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.custom_plugin_arn = input;
         self
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn revision(mut self, input: i64) -> Self {
-        self.revision = Some(input);
+        self.revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The revision of the custom plugin.</p>
-    pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
     }

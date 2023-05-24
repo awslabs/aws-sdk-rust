@@ -2,20 +2,20 @@
 
 /// The response from an UpdateDataset operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDatasetOutput {
     /// <p>The unique identifier for updated Dataset.</p>
     #[doc(hidden)]
-    pub dataset_id: std::option::Option<std::string::String>,
+    pub dataset_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDatasetOutput {
     /// <p>The unique identifier for updated Dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateDatasetOutput {
+impl ::aws_http::request_id::RequestId for UpdateDatasetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl UpdateDatasetOutput {
 
 /// A builder for [`UpdateDatasetOutput`](crate::operation::update_dataset::UpdateDatasetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDatasetOutputBuilder {
-    pub(crate) dataset_id: std::option::Option<std::string::String>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDatasetOutputBuilder {
     /// <p>The unique identifier for updated Dataset.</p>
-    pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_id = Some(input.into());
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for updated Dataset.</p>
-    pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
     }

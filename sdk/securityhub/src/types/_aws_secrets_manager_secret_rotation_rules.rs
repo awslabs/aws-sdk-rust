@@ -2,7 +2,7 @@
 
 /// <p>Defines the rotation schedule for the secret.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSecretsManagerSecretRotationRules {
     /// <p>The number of days after the previous rotation to rotate the secret.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl AwsSecretsManagerSecretRotationRules {
 
 /// A builder for [`AwsSecretsManagerSecretRotationRules`](crate::types::AwsSecretsManagerSecretRotationRules).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsSecretsManagerSecretRotationRulesBuilder {
-    pub(crate) automatically_after_days: std::option::Option<i32>,
+    pub(crate) automatically_after_days: ::std::option::Option<i32>,
 }
 impl AwsSecretsManagerSecretRotationRulesBuilder {
     /// <p>The number of days after the previous rotation to rotate the secret.</p>
     pub fn automatically_after_days(mut self, input: i32) -> Self {
-        self.automatically_after_days = Some(input);
+        self.automatically_after_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days after the previous rotation to rotate the secret.</p>
-    pub fn set_automatically_after_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_automatically_after_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.automatically_after_days = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Geometry {
     /// <p>An axis-aligned coarse representation of the location of the recognized item on the document page.</p>
     #[doc(hidden)]
-    pub bounding_box: std::option::Option<crate::types::BoundingBox>,
+    pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
     #[doc(hidden)]
-    pub polygon: std::option::Option<std::vec::Vec<crate::types::Point>>,
+    pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
 }
 impl Geometry {
     /// <p>An axis-aligned coarse representation of the location of the recognized item on the document page.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
-    pub fn polygon(&self) -> std::option::Option<&[crate::types::Point]> {
+    pub fn polygon(&self) -> ::std::option::Option<&[crate::types::Point]> {
         self.polygon.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl Geometry {
 
 /// A builder for [`Geometry`](crate::types::Geometry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GeometryBuilder {
-    pub(crate) bounding_box: std::option::Option<crate::types::BoundingBox>,
-    pub(crate) polygon: std::option::Option<std::vec::Vec<crate::types::Point>>,
+    pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
+    pub(crate) polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
 }
 impl GeometryBuilder {
     /// <p>An axis-aligned coarse representation of the location of the recognized item on the document page.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
-        self.bounding_box = Some(input);
+        self.bounding_box = ::std::option::Option::Some(input);
         self
     }
     /// <p>An axis-aligned coarse representation of the location of the recognized item on the document page.</p>
     pub fn set_bounding_box(
         mut self,
-        input: std::option::Option<crate::types::BoundingBox>,
+        input: ::std::option::Option<crate::types::BoundingBox>,
     ) -> Self {
         self.bounding_box = input;
         self
@@ -57,13 +59,13 @@ impl GeometryBuilder {
     pub fn polygon(mut self, input: crate::types::Point) -> Self {
         let mut v = self.polygon.unwrap_or_default();
         v.push(input);
-        self.polygon = Some(v);
+        self.polygon = ::std::option::Option::Some(v);
         self
     }
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
     pub fn set_polygon(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Point>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
     ) -> Self {
         self.polygon = input;
         self

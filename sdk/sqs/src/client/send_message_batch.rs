@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SendMessageBatch`](crate::operation::send_message_batch::builders::SendMessageBatchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`queue_url(impl Into<String>)`](crate::operation::send_message_batch::builders::SendMessageBatchFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::send_message_batch::builders::SendMessageBatchFluentBuilder::set_queue_url): <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>  <p>Queue URLs and names are case-sensitive.</p>
+    ///   - [`queue_url(impl ::std::convert::Into<String>)`](crate::operation::send_message_batch::builders::SendMessageBatchFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::send_message_batch::builders::SendMessageBatchFluentBuilder::set_queue_url): <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>  <p>Queue URLs and names are case-sensitive.</p>
     ///   - [`entries(Vec<SendMessageBatchRequestEntry>)`](crate::operation::send_message_batch::builders::SendMessageBatchFluentBuilder::entries) / [`set_entries(Option<Vec<SendMessageBatchRequestEntry>>)`](crate::operation::send_message_batch::builders::SendMessageBatchFluentBuilder::set_entries): <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
     /// - On success, responds with [`SendMessageBatchOutput`](crate::operation::send_message_batch::SendMessageBatchOutput) with field(s):
     ///   - [`successful(Option<Vec<SendMessageBatchResultEntry>>)`](crate::operation::send_message_batch::SendMessageBatchOutput::successful): <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>

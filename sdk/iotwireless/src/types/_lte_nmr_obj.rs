@@ -2,43 +2,43 @@
 
 /// <p>LTE object for network measurement reports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LteNmrObj {
     /// <p>Physical cell ID.</p>
     #[doc(hidden)]
-    pub pci: std::option::Option<i32>,
+    pub pci: ::std::option::Option<i32>,
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
     #[doc(hidden)]
-    pub earfcn: std::option::Option<i32>,
+    pub earfcn: ::std::option::Option<i32>,
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
     #[doc(hidden)]
-    pub eutran_cid: std::option::Option<i32>,
+    pub eutran_cid: ::std::option::Option<i32>,
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     #[doc(hidden)]
-    pub rsrp: std::option::Option<i32>,
+    pub rsrp: ::std::option::Option<i32>,
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     #[doc(hidden)]
-    pub rsrq: std::option::Option<f32>,
+    pub rsrq: ::std::option::Option<f32>,
 }
 impl LteNmrObj {
     /// <p>Physical cell ID.</p>
-    pub fn pci(&self) -> std::option::Option<i32> {
+    pub fn pci(&self) -> ::std::option::Option<i32> {
         self.pci
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
-    pub fn earfcn(&self) -> std::option::Option<i32> {
+    pub fn earfcn(&self) -> ::std::option::Option<i32> {
         self.earfcn
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
-    pub fn eutran_cid(&self) -> std::option::Option<i32> {
+    pub fn eutran_cid(&self) -> ::std::option::Option<i32> {
         self.eutran_cid
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
-    pub fn rsrp(&self) -> std::option::Option<i32> {
+    pub fn rsrp(&self) -> ::std::option::Option<i32> {
         self.rsrp
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
-    pub fn rsrq(&self) -> std::option::Option<f32> {
+    pub fn rsrq(&self) -> ::std::option::Option<f32> {
         self.rsrq
     }
 }
@@ -51,62 +51,64 @@ impl LteNmrObj {
 
 /// A builder for [`LteNmrObj`](crate::types::LteNmrObj).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LteNmrObjBuilder {
-    pub(crate) pci: std::option::Option<i32>,
-    pub(crate) earfcn: std::option::Option<i32>,
-    pub(crate) eutran_cid: std::option::Option<i32>,
-    pub(crate) rsrp: std::option::Option<i32>,
-    pub(crate) rsrq: std::option::Option<f32>,
+    pub(crate) pci: ::std::option::Option<i32>,
+    pub(crate) earfcn: ::std::option::Option<i32>,
+    pub(crate) eutran_cid: ::std::option::Option<i32>,
+    pub(crate) rsrp: ::std::option::Option<i32>,
+    pub(crate) rsrq: ::std::option::Option<f32>,
 }
 impl LteNmrObjBuilder {
     /// <p>Physical cell ID.</p>
     pub fn pci(mut self, input: i32) -> Self {
-        self.pci = Some(input);
+        self.pci = ::std::option::Option::Some(input);
         self
     }
     /// <p>Physical cell ID.</p>
-    pub fn set_pci(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pci(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pci = input;
         self
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
     pub fn earfcn(mut self, input: i32) -> Self {
-        self.earfcn = Some(input);
+        self.earfcn = ::std::option::Option::Some(input);
         self
     }
     /// <p>E-UTRA (Evolved universal terrestrial Radio Access) absolute radio frequency channel Number (EARFCN).</p>
-    pub fn set_earfcn(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_earfcn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.earfcn = input;
         self
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
     pub fn eutran_cid(mut self, input: i32) -> Self {
-        self.eutran_cid = Some(input);
+        self.eutran_cid = ::std::option::Option::Some(input);
         self
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
-    pub fn set_eutran_cid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_eutran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.eutran_cid = input;
         self
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
     pub fn rsrp(mut self, input: i32) -> Self {
-        self.rsrp = Some(input);
+        self.rsrp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Signal power of the reference signal received, measured in dBm (decibel-milliwatts).</p>
-    pub fn set_rsrp(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rsrp(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rsrp = input;
         self
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
     pub fn rsrq(mut self, input: f32) -> Self {
-        self.rsrq = Some(input);
+        self.rsrq = ::std::option::Option::Some(input);
         self
     }
     /// <p>Signal quality of the reference Signal received, measured in decibels (dB).</p>
-    pub fn set_rsrq(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_rsrq(mut self, input: ::std::option::Option<f32>) -> Self {
         self.rsrq = input;
         self
     }

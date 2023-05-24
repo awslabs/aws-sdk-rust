@@ -2,7 +2,7 @@
 
 /// <p>Information about properties for a question in an evaluation form. The question type properties must be either for a numeric question or a single select question.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationFormQuestionTypeProperties {
     /// <p>The properties of the numeric question.</p>
     Numeric(crate::types::EvaluationFormNumericQuestionProperties),
@@ -23,11 +23,11 @@ impl EvaluationFormQuestionTypeProperties {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_numeric(
         &self,
-    ) -> std::result::Result<&crate::types::EvaluationFormNumericQuestionProperties, &Self> {
+    ) -> ::std::result::Result<&crate::types::EvaluationFormNumericQuestionProperties, &Self> {
         if let EvaluationFormQuestionTypeProperties::Numeric(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Numeric`](crate::types::EvaluationFormQuestionTypeProperties::Numeric).
@@ -38,12 +38,12 @@ impl EvaluationFormQuestionTypeProperties {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_single_select(
         &self,
-    ) -> std::result::Result<&crate::types::EvaluationFormSingleSelectQuestionProperties, &Self>
+    ) -> ::std::result::Result<&crate::types::EvaluationFormSingleSelectQuestionProperties, &Self>
     {
         if let EvaluationFormQuestionTypeProperties::SingleSelect(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SingleSelect`](crate::types::EvaluationFormQuestionTypeProperties::SingleSelect).

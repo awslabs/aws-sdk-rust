@@ -2,20 +2,20 @@
 
 /// <p>The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file system. Use the API operation to monitor the status of the aliases Amazon FSx is removing from the file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
     #[doc(hidden)]
-    pub aliases: std::option::Option<std::vec::Vec<crate::types::Alias>>,
+    pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     _request_id: Option<String>,
 }
 impl DisassociateFileSystemAliasesOutput {
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::types::Alias]> {
+    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::Alias]> {
         self.aliases.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DisassociateFileSystemAliasesOutput {
+impl ::aws_http::request_id::RequestId for DisassociateFileSystemAliasesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl DisassociateFileSystemAliasesOutput {
 
 /// A builder for [`DisassociateFileSystemAliasesOutput`](crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisassociateFileSystemAliasesOutputBuilder {
-    pub(crate) aliases: std::option::Option<std::vec::Vec<crate::types::Alias>>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     _request_id: Option<String>,
 }
 impl DisassociateFileSystemAliasesOutputBuilder {
@@ -43,13 +45,13 @@ impl DisassociateFileSystemAliasesOutputBuilder {
     pub fn aliases(mut self, input: crate::types::Alias) -> Self {
         let mut v = self.aliases.unwrap_or_default();
         v.push(input);
-        self.aliases = Some(v);
+        self.aliases = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of one or more DNS aliases that Amazon FSx is attempting to disassociate from the file system.</p>
     pub fn set_aliases(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Alias>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     ) -> Self {
         self.aliases = input;
         self

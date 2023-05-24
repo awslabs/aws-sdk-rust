@@ -2,15 +2,15 @@
 
 /// <p>Describes the location of the channel data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformDataSource {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
     #[doc(hidden)]
-    pub s3_data_source: std::option::Option<crate::types::TransformS3DataSource>,
+    pub s3_data_source: ::std::option::Option<crate::types::TransformS3DataSource>,
 }
 impl TransformDataSource {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::types::TransformS3DataSource> {
+    pub fn s3_data_source(&self) -> ::std::option::Option<&crate::types::TransformS3DataSource> {
         self.s3_data_source.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl TransformDataSource {
 
 /// A builder for [`TransformDataSource`](crate::types::TransformDataSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransformDataSourceBuilder {
-    pub(crate) s3_data_source: std::option::Option<crate::types::TransformS3DataSource>,
+    pub(crate) s3_data_source: ::std::option::Option<crate::types::TransformS3DataSource>,
 }
 impl TransformDataSourceBuilder {
     /// <p>The S3 location of the data source that is associated with a channel.</p>
     pub fn s3_data_source(mut self, input: crate::types::TransformS3DataSource) -> Self {
-        self.s3_data_source = Some(input);
+        self.s3_data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 location of the data source that is associated with a channel.</p>
     pub fn set_s3_data_source(
         mut self,
-        input: std::option::Option<crate::types::TransformS3DataSource>,
+        input: ::std::option::Option<crate::types::TransformS3DataSource>,
     ) -> Self {
         self.s3_data_source = input;
         self

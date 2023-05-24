@@ -2,14 +2,14 @@
 
 /// <p>Defines an audio channel in a Kinesis video stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelDefinition {
     /// <p>The channel ID.</p>
     #[doc(hidden)]
     pub channel_id: i32,
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
     #[doc(hidden)]
-    pub participant_role: std::option::Option<crate::types::ParticipantRole>,
+    pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
 }
 impl ChannelDefinition {
     /// <p>The channel ID.</p>
@@ -17,7 +17,7 @@ impl ChannelDefinition {
         self.channel_id
     }
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
-    pub fn participant_role(&self) -> std::option::Option<&crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ChannelDefinition {
 
 /// A builder for [`ChannelDefinition`](crate::types::ChannelDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelDefinitionBuilder {
-    pub(crate) channel_id: std::option::Option<i32>,
-    pub(crate) participant_role: std::option::Option<crate::types::ParticipantRole>,
+    pub(crate) channel_id: ::std::option::Option<i32>,
+    pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
 }
 impl ChannelDefinitionBuilder {
     /// <p>The channel ID.</p>
     pub fn channel_id(mut self, input: i32) -> Self {
-        self.channel_id = Some(input);
+        self.channel_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The channel ID.</p>
-    pub fn set_channel_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channel_id = input;
         self
     }
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
-        self.participant_role = Some(input);
+        self.participant_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the audio in a channel belongs to the <code>AGENT</code> or <code>CUSTOMER</code>.</p>
     pub fn set_participant_role(
         mut self,
-        input: std::option::Option<crate::types::ParticipantRole>,
+        input: ::std::option::Option<crate::types::ParticipantRole>,
     ) -> Self {
         self.participant_role = input;
         self

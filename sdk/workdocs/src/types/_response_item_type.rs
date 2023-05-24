@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ResponseItemType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ResponseItemType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ResponseItemType {
+impl ::std::convert::From<&str> for ResponseItemType {
     fn from(s: &str) -> Self {
         match s {
             "COMMENT" => ResponseItemType::Comment,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ResponseItemType {
         }
     }
 }
-impl std::str::FromStr for ResponseItemType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ResponseItemType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResponseItemType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ResponseItemType::from(s))
     }
 }
 impl ResponseItemType {
@@ -96,7 +96,7 @@ impl ResponseItemType {
         &["COMMENT", "DOCUMENT", "DOCUMENT_VERSION", "FOLDER"]
     }
 }
-impl AsRef<str> for ResponseItemType {
+impl ::std::convert::AsRef<str> for ResponseItemType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

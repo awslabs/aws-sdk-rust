@@ -2,28 +2,28 @@
 
 /// <p>Stateless rules and custom actions for a stateless rule group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRulesAndCustomActionsDetails {
     /// <p>Custom actions for the rule group.</p>
     #[doc(hidden)]
     pub custom_actions:
-        std::option::Option<std::vec::Vec<crate::types::RuleGroupSourceCustomActionsDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceCustomActionsDetails>>,
     /// <p>Stateless rules for the rule group.</p>
     #[doc(hidden)]
     pub stateless_rules:
-        std::option::Option<std::vec::Vec<crate::types::RuleGroupSourceStatelessRulesDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRulesDetails>>,
 }
 impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {
     /// <p>Custom actions for the rule group.</p>
     pub fn custom_actions(
         &self,
-    ) -> std::option::Option<&[crate::types::RuleGroupSourceCustomActionsDetails]> {
+    ) -> ::std::option::Option<&[crate::types::RuleGroupSourceCustomActionsDetails]> {
         self.custom_actions.as_deref()
     }
     /// <p>Stateless rules for the rule group.</p>
     pub fn stateless_rules(
         &self,
-    ) -> std::option::Option<&[crate::types::RuleGroupSourceStatelessRulesDetails]> {
+    ) -> ::std::option::Option<&[crate::types::RuleGroupSourceStatelessRulesDetails]> {
         self.stateless_rules.as_deref()
     }
 }
@@ -38,12 +38,14 @@ impl RuleGroupSourceStatelessRulesAndCustomActionsDetails {
 
 /// A builder for [`RuleGroupSourceStatelessRulesAndCustomActionsDetails`](crate::types::RuleGroupSourceStatelessRulesAndCustomActionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupSourceStatelessRulesAndCustomActionsDetailsBuilder {
     pub(crate) custom_actions:
-        std::option::Option<std::vec::Vec<crate::types::RuleGroupSourceCustomActionsDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceCustomActionsDetails>>,
     pub(crate) stateless_rules:
-        std::option::Option<std::vec::Vec<crate::types::RuleGroupSourceStatelessRulesDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupSourceStatelessRulesDetails>>,
 }
 impl RuleGroupSourceStatelessRulesAndCustomActionsDetailsBuilder {
     /// Appends an item to `custom_actions`.
@@ -57,14 +59,14 @@ impl RuleGroupSourceStatelessRulesAndCustomActionsDetailsBuilder {
     ) -> Self {
         let mut v = self.custom_actions.unwrap_or_default();
         v.push(input);
-        self.custom_actions = Some(v);
+        self.custom_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Custom actions for the rule group.</p>
     pub fn set_custom_actions(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RuleGroupSourceCustomActionsDetails>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RuleGroupSourceCustomActionsDetails>,
         >,
     ) -> Self {
         self.custom_actions = input;
@@ -81,14 +83,14 @@ impl RuleGroupSourceStatelessRulesAndCustomActionsDetailsBuilder {
     ) -> Self {
         let mut v = self.stateless_rules.unwrap_or_default();
         v.push(input);
-        self.stateless_rules = Some(v);
+        self.stateless_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>Stateless rules for the rule group.</p>
     pub fn set_stateless_rules(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RuleGroupSourceStatelessRulesDetails>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RuleGroupSourceStatelessRulesDetails>,
         >,
     ) -> Self {
         self.stateless_rules = input;

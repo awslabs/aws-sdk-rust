@@ -4,29 +4,29 @@
 /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringCondition {
     /// <p>The name of the field in the string condition.</p>
     #[doc(hidden)]
-    pub field_name: std::option::Option<std::string::String>,
+    pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the string.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
     #[doc(hidden)]
-    pub comparison_type: std::option::Option<crate::types::StringComparisonType>,
+    pub comparison_type: ::std::option::Option<crate::types::StringComparisonType>,
 }
 impl StringCondition {
     /// <p>The name of the field in the string condition.</p>
-    pub fn field_name(&self) -> std::option::Option<&str> {
+    pub fn field_name(&self) -> ::std::option::Option<&str> {
         self.field_name.as_deref()
     }
     /// <p>The value of the string.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
-    pub fn comparison_type(&self) -> std::option::Option<&crate::types::StringComparisonType> {
+    pub fn comparison_type(&self) -> ::std::option::Option<&crate::types::StringComparisonType> {
         self.comparison_type.as_ref()
     }
 }
@@ -39,42 +39,44 @@ impl StringCondition {
 
 /// A builder for [`StringCondition`](crate::types::StringCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StringConditionBuilder {
-    pub(crate) field_name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) comparison_type: std::option::Option<crate::types::StringComparisonType>,
+    pub(crate) field_name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) comparison_type: ::std::option::Option<crate::types::StringComparisonType>,
 }
 impl StringConditionBuilder {
     /// <p>The name of the field in the string condition.</p>
-    pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_name = Some(input.into());
+    pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the field in the string condition.</p>
-    pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_name = input;
         self
     }
     /// <p>The value of the string.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the string.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
     pub fn comparison_type(mut self, input: crate::types::StringComparisonType) -> Self {
-        self.comparison_type = Some(input);
+        self.comparison_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of comparison to be made when evaluating the string condition.</p>
     pub fn set_comparison_type(
         mut self,
-        input: std::option::Option<crate::types::StringComparisonType>,
+        input: ::std::option::Option<crate::types::StringComparisonType>,
     ) -> Self {
         self.comparison_type = input;
         self

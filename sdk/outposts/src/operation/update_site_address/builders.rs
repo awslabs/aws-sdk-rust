@@ -8,29 +8,29 @@ pub use crate::operation::update_site_address::_update_site_address_input::Updat
 /// <p>Updates the address of the specified site.</p>
 /// <p>You can't update a site address if there is an order in progress. You must wait for the order to complete or cancel the order.</p>
 /// <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSiteAddressFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder,
 }
 impl UpdateSiteAddressFluentBuilder {
     /// Creates a new `UpdateSiteAddress`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_site_address::UpdateSiteAddress,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_site_address::UpdateSiteAddressError,
         >,
     > {
@@ -38,30 +38,33 @@ impl UpdateSiteAddressFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_site_address::UpdateSiteAddressOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_site_address::UpdateSiteAddressError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,21 +77,21 @@ impl UpdateSiteAddressFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_site_address::UpdateSiteAddressOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_site_address::UpdateSiteAddressError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
         self
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
-    pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
     }
@@ -100,7 +103,7 @@ impl UpdateSiteAddressFluentBuilder {
     /// <p> The type of the address. </p>
     pub fn set_address_type(
         mut self,
-        input: std::option::Option<crate::types::AddressType>,
+        input: ::std::option::Option<crate::types::AddressType>,
     ) -> Self {
         self.inner = self.inner.set_address_type(input);
         self
@@ -111,7 +114,7 @@ impl UpdateSiteAddressFluentBuilder {
         self
     }
     /// <p> The address for the site. </p>
-    pub fn set_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<crate::types::Address>) -> Self {
         self.inner = self.inner.set_address(input);
         self
     }

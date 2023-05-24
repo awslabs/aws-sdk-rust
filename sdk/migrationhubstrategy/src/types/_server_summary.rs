@@ -2,22 +2,22 @@
 
 /// <p> Object containing details about the servers imported by Application Discovery Service </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerSummary {
     /// <p> Type of operating system for the servers. </p>
     #[doc(hidden)]
-    pub server_os_type: std::option::Option<crate::types::ServerOsType>,
+    pub server_os_type: ::std::option::Option<crate::types::ServerOsType>,
     /// <p> Number of servers. </p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
 }
 impl ServerSummary {
     /// <p> Type of operating system for the servers. </p>
-    pub fn server_os_type(&self) -> std::option::Option<&crate::types::ServerOsType> {
+    pub fn server_os_type(&self) -> ::std::option::Option<&crate::types::ServerOsType> {
         self.server_os_type.as_ref()
     }
     /// <p> Number of servers. </p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -30,32 +30,34 @@ impl ServerSummary {
 
 /// A builder for [`ServerSummary`](crate::types::ServerSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerSummaryBuilder {
-    pub(crate) server_os_type: std::option::Option<crate::types::ServerOsType>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) server_os_type: ::std::option::Option<crate::types::ServerOsType>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl ServerSummaryBuilder {
     /// <p> Type of operating system for the servers. </p>
     pub fn server_os_type(mut self, input: crate::types::ServerOsType) -> Self {
-        self.server_os_type = Some(input);
+        self.server_os_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> Type of operating system for the servers. </p>
     pub fn set_server_os_type(
         mut self,
-        input: std::option::Option<crate::types::ServerOsType>,
+        input: ::std::option::Option<crate::types::ServerOsType>,
     ) -> Self {
         self.server_os_type = input;
         self
     }
     /// <p> Number of servers. </p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p> Number of servers. </p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

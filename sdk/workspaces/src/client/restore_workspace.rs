@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RestoreWorkspace`](crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
+    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::restore_workspace::builders::RestoreWorkspaceFluentBuilder::set_workspace_id): <p>The identifier of the WorkSpace.</p>
     /// - On success, responds with [`RestoreWorkspaceOutput`](crate::operation::restore_workspace::RestoreWorkspaceOutput)
     /// - On failure, responds with [`SdkError<RestoreWorkspaceError>`](crate::operation::restore_workspace::RestoreWorkspaceError)
     pub fn restore_workspace(

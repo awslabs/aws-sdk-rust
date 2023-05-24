@@ -2,98 +2,98 @@
 
 /// <p>Describes a problem that is detected by correlating observations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Problem {
     /// <p>The ID of the problem.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the problem.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>A detailed analysis of the problem using machine learning.</p>
     #[doc(hidden)]
-    pub insights: std::option::Option<std::string::String>,
+    pub insights: ::std::option::Option<::std::string::String>,
     /// <p>The status of the problem.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The resource affected by the problem.</p>
     #[doc(hidden)]
-    pub affected_resource: std::option::Option<std::string::String>,
+    pub affected_resource: ::std::option::Option<::std::string::String>,
     /// <p>The time when the problem started, in epoch seconds.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the problem ended, in epoch seconds.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A measure of the level of impact of the problem.</p>
     #[doc(hidden)]
-    pub severity_level: std::option::Option<crate::types::SeverityLevel>,
+    pub severity_level: ::std::option::Option<crate::types::SeverityLevel>,
     /// <p>The name of the resource group affected by the problem.</p>
     #[doc(hidden)]
-    pub resource_group_name: std::option::Option<std::string::String>,
+    pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Feedback provided by the user about the problem.</p>
     #[doc(hidden)]
-    pub feedback: std::option::Option<
-        std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
+    pub feedback: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
     >,
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     #[doc(hidden)]
-    pub recurring_count: std::option::Option<i64>,
+    pub recurring_count: ::std::option::Option<i64>,
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
     #[doc(hidden)]
-    pub last_recurrence_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_recurrence_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Problem {
     /// <p>The ID of the problem.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the problem.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>A detailed analysis of the problem using machine learning.</p>
-    pub fn insights(&self) -> std::option::Option<&str> {
+    pub fn insights(&self) -> ::std::option::Option<&str> {
         self.insights.as_deref()
     }
     /// <p>The status of the problem.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The resource affected by the problem.</p>
-    pub fn affected_resource(&self) -> std::option::Option<&str> {
+    pub fn affected_resource(&self) -> ::std::option::Option<&str> {
         self.affected_resource.as_deref()
     }
     /// <p>The time when the problem started, in epoch seconds.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A measure of the level of impact of the problem.</p>
-    pub fn severity_level(&self) -> std::option::Option<&crate::types::SeverityLevel> {
+    pub fn severity_level(&self) -> ::std::option::Option<&crate::types::SeverityLevel> {
         self.severity_level.as_ref()
     }
     /// <p>The name of the resource group affected by the problem.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> ::std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
     /// <p>Feedback provided by the user about the problem.</p>
     pub fn feedback(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
     > {
         self.feedback.as_ref()
     }
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
-    pub fn recurring_count(&self) -> std::option::Option<i64> {
+    pub fn recurring_count(&self) -> ::std::option::Option<i64> {
         self.recurring_count
     }
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
-    pub fn last_recurrence_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_recurrence_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_recurrence_time.as_ref()
     }
 }
@@ -106,122 +106,133 @@ impl Problem {
 
 /// A builder for [`Problem`](crate::types::Problem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProblemBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) insights: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::Status>,
-    pub(crate) affected_resource: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) severity_level: std::option::Option<crate::types::SeverityLevel>,
-    pub(crate) resource_group_name: std::option::Option<std::string::String>,
-    pub(crate) feedback: std::option::Option<
-        std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) insights: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) affected_resource: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) severity_level: ::std::option::Option<crate::types::SeverityLevel>,
+    pub(crate) resource_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) feedback: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
     >,
-    pub(crate) recurring_count: std::option::Option<i64>,
-    pub(crate) last_recurrence_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) recurring_count: ::std::option::Option<i64>,
+    pub(crate) last_recurrence_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ProblemBuilder {
     /// <p>The ID of the problem.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the problem.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the problem.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the problem.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>A detailed analysis of the problem using machine learning.</p>
-    pub fn insights(mut self, input: impl Into<std::string::String>) -> Self {
-        self.insights = Some(input.into());
+    pub fn insights(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.insights = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed analysis of the problem using machine learning.</p>
-    pub fn set_insights(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_insights(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insights = input;
         self
     }
     /// <p>The status of the problem.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the problem.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
     /// <p>The resource affected by the problem.</p>
-    pub fn affected_resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.affected_resource = Some(input.into());
+    pub fn affected_resource(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.affected_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource affected by the problem.</p>
     pub fn set_affected_resource(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.affected_resource = input;
         self
     }
     /// <p>The time when the problem started, in epoch seconds.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the problem started, in epoch seconds.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the problem ended, in epoch seconds.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>A measure of the level of impact of the problem.</p>
     pub fn severity_level(mut self, input: crate::types::SeverityLevel) -> Self {
-        self.severity_level = Some(input);
+        self.severity_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>A measure of the level of impact of the problem.</p>
     pub fn set_severity_level(
         mut self,
-        input: std::option::Option<crate::types::SeverityLevel>,
+        input: ::std::option::Option<crate::types::SeverityLevel>,
     ) -> Self {
         self.severity_level = input;
         self
     }
     /// <p>The name of the resource group affected by the problem.</p>
-    pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_group_name = Some(input.into());
+    pub fn resource_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource group affected by the problem.</p>
     pub fn set_resource_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_group_name = input;
         self
@@ -238,14 +249,14 @@ impl ProblemBuilder {
     ) -> Self {
         let mut hash_map = self.feedback.unwrap_or_default();
         hash_map.insert(k, v);
-        self.feedback = Some(hash_map);
+        self.feedback = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Feedback provided by the user about the problem.</p>
     pub fn set_feedback(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
         >,
     ) -> Self {
         self.feedback = input;
@@ -253,23 +264,23 @@ impl ProblemBuilder {
     }
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
     pub fn recurring_count(mut self, input: i64) -> Self {
-        self.recurring_count = Some(input);
+        self.recurring_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of times that the same problem reoccurred after the first time it was resolved. </p>
-    pub fn set_recurring_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_recurring_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.recurring_count = input;
         self
     }
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
-    pub fn last_recurrence_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_recurrence_time = Some(input);
+    pub fn last_recurrence_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_recurrence_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The last time that the problem reoccurred after its last resolution. </p>
     pub fn set_last_recurrence_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_recurrence_time = input;
         self

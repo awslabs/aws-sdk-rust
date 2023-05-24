@@ -2,36 +2,36 @@
 
 /// <p>A summary of the refresh schedule details for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRefreshScheduleSummary {
     /// <p>The ID of the dataset.</p>
     #[doc(hidden)]
-    pub dataset_id: std::option::Option<std::string::String>,
+    pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
     #[doc(hidden)]
-    pub dataset_arn: std::option::Option<std::string::String>,
+    pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
-    pub dataset_name: std::option::Option<std::string::String>,
+    pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The definition of a refresh schedule.</p>
     #[doc(hidden)]
-    pub refresh_schedule: std::option::Option<crate::types::TopicRefreshSchedule>,
+    pub refresh_schedule: ::std::option::Option<crate::types::TopicRefreshSchedule>,
 }
 impl TopicRefreshScheduleSummary {
     /// <p>The ID of the dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>The definition of a refresh schedule.</p>
-    pub fn refresh_schedule(&self) -> std::option::Option<&crate::types::TopicRefreshSchedule> {
+    pub fn refresh_schedule(&self) -> ::std::option::Option<&crate::types::TopicRefreshSchedule> {
         self.refresh_schedule.as_ref()
     }
 }
@@ -44,53 +44,55 @@ impl TopicRefreshScheduleSummary {
 
 /// A builder for [`TopicRefreshScheduleSummary`](crate::types::TopicRefreshScheduleSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TopicRefreshScheduleSummaryBuilder {
-    pub(crate) dataset_id: std::option::Option<std::string::String>,
-    pub(crate) dataset_arn: std::option::Option<std::string::String>,
-    pub(crate) dataset_name: std::option::Option<std::string::String>,
-    pub(crate) refresh_schedule: std::option::Option<crate::types::TopicRefreshSchedule>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
+    pub(crate) refresh_schedule: ::std::option::Option<crate::types::TopicRefreshSchedule>,
 }
 impl TopicRefreshScheduleSummaryBuilder {
     /// <p>The ID of the dataset.</p>
-    pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_id = Some(input.into());
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the dataset.</p>
-    pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_arn = Some(input.into());
+    pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_name = Some(input.into());
+    pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn refresh_schedule(mut self, input: crate::types::TopicRefreshSchedule) -> Self {
-        self.refresh_schedule = Some(input);
+        self.refresh_schedule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The definition of a refresh schedule.</p>
     pub fn set_refresh_schedule(
         mut self,
-        input: std::option::Option<crate::types::TopicRefreshSchedule>,
+        input: ::std::option::Option<crate::types::TopicRefreshSchedule>,
     ) -> Self {
         self.refresh_schedule = input;
         self

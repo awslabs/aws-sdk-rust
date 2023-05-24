@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEndpoint`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    ///   - [`endpoint_id(impl Into<String>)`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::set_endpoint_id): <p>The unique identifier for the endpoint.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`endpoint_id(impl ::std::convert::Into<String>)`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::operation::get_endpoint::builders::GetEndpointFluentBuilder::set_endpoint_id): <p>The unique identifier for the endpoint.</p>
     /// - On success, responds with [`GetEndpointOutput`](crate::operation::get_endpoint::GetEndpointOutput) with field(s):
     ///   - [`endpoint_response(Option<EndpointResponse>)`](crate::operation::get_endpoint::GetEndpointOutput::endpoint_response): <p>Provides information about the channel type and other settings for an endpoint.</p>
     /// - On failure, responds with [`SdkError<GetEndpointError>`](crate::operation::get_endpoint::GetEndpointError)

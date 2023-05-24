@@ -2,22 +2,22 @@
 
 /// <p>Contains the inputs for the <code>UpdateRadius</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRadiusInput {
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
     #[doc(hidden)]
-    pub directory_id: std::option::Option<std::string::String>,
+    pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     #[doc(hidden)]
-    pub radius_settings: std::option::Option<crate::types::RadiusSettings>,
+    pub radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
 }
 impl UpdateRadiusInput {
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
-    pub fn radius_settings(&self) -> std::option::Option<&crate::types::RadiusSettings> {
+    pub fn radius_settings(&self) -> ::std::option::Option<&crate::types::RadiusSettings> {
         self.radius_settings.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl UpdateRadiusInput {
 
 /// A builder for [`UpdateRadiusInput`](crate::operation::update_radius::UpdateRadiusInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateRadiusInputBuilder {
-    pub(crate) directory_id: std::option::Option<std::string::String>,
-    pub(crate) radius_settings: std::option::Option<crate::types::RadiusSettings>,
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) radius_settings: ::std::option::Option<crate::types::RadiusSettings>,
 }
 impl UpdateRadiusInputBuilder {
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_id = Some(input.into());
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn radius_settings(mut self, input: crate::types::RadiusSettings) -> Self {
-        self.radius_settings = Some(input);
+        self.radius_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>RadiusSettings</code> object that contains information about the RADIUS server.</p>
     pub fn set_radius_settings(
         mut self,
-        input: std::option::Option<crate::types::RadiusSettings>,
+        input: ::std::option::Option<crate::types::RadiusSettings>,
     ) -> Self {
         self.radius_settings = input;
         self
@@ -62,11 +64,11 @@ impl UpdateRadiusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRadiusInput`](crate::operation::update_radius::UpdateRadiusInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_radius::UpdateRadiusInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_radius::UpdateRadiusInput {
+        ::std::result::Result::Ok(crate::operation::update_radius::UpdateRadiusInput {
             directory_id: self.directory_id,
             radius_settings: self.radius_settings,
         })

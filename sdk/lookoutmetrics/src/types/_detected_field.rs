@@ -2,29 +2,29 @@
 
 /// <p>An inferred field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedField {
     /// <p>The field's value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::AttributeValue>,
+    pub value: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>The field's confidence.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<crate::types::Confidence>,
+    pub confidence: ::std::option::Option<crate::types::Confidence>,
     /// <p>The field's message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DetectedField {
     /// <p>The field's value.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::AttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.value.as_ref()
     }
     /// <p>The field's confidence.</p>
-    pub fn confidence(&self) -> std::option::Option<&crate::types::Confidence> {
+    pub fn confidence(&self) -> ::std::option::Option<&crate::types::Confidence> {
         self.confidence.as_ref()
     }
     /// <p>The field's message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -37,40 +37,45 @@ impl DetectedField {
 
 /// A builder for [`DetectedField`](crate::types::DetectedField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectedFieldBuilder {
-    pub(crate) value: std::option::Option<crate::types::AttributeValue>,
-    pub(crate) confidence: std::option::Option<crate::types::Confidence>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) value: ::std::option::Option<crate::types::AttributeValue>,
+    pub(crate) confidence: ::std::option::Option<crate::types::Confidence>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DetectedFieldBuilder {
     /// <p>The field's value.</p>
     pub fn value(mut self, input: crate::types::AttributeValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field's value.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::AttributeValue>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.value = input;
         self
     }
     /// <p>The field's confidence.</p>
     pub fn confidence(mut self, input: crate::types::Confidence) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field's confidence.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<crate::types::Confidence>) -> Self {
+    pub fn set_confidence(
+        mut self,
+        input: ::std::option::Option<crate::types::Confidence>,
+    ) -> Self {
         self.confidence = input;
         self
     }
     /// <p>The field's message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field's message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

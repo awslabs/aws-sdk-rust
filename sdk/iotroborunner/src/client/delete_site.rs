@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSite`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::set_id): Site ARN.
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_site::builders::DeleteSiteFluentBuilder::set_id): Site ARN.
     /// - On success, responds with [`DeleteSiteOutput`](crate::operation::delete_site::DeleteSiteOutput)
     /// - On failure, responds with [`SdkError<DeleteSiteError>`](crate::operation::delete_site::DeleteSiteError)
     pub fn delete_site(&self) -> crate::operation::delete_site::builders::DeleteSiteFluentBuilder {

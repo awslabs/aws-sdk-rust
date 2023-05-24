@@ -2,111 +2,111 @@
 
 /// <p>Describes a layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Layer {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The layer stack ID.</p>
     #[doc(hidden)]
-    pub stack_id: std::option::Option<std::string::String>,
+    pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The layer ID.</p>
     #[doc(hidden)]
-    pub layer_id: std::option::Option<std::string::String>,
+    pub layer_id: ::std::option::Option<::std::string::String>,
     /// <p>The layer type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::LayerType>,
+    pub r#type: ::std::option::Option<crate::types::LayerType>,
     /// <p>The layer name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The layer short name.</p>
     #[doc(hidden)]
-    pub shortname: std::option::Option<std::string::String>,
+    pub shortname: ::std::option::Option<::std::string::String>,
     /// <p>The layer attributes.</p>
     /// <p>For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value</p>
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<crate::types::LayerAttributesKeys, std::string::String>,
+    pub attributes: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
     >,
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
     #[doc(hidden)]
     pub cloud_watch_logs_configuration:
-        std::option::Option<crate::types::CloudWatchLogsConfiguration>,
+        ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     #[doc(hidden)]
-    pub custom_instance_profile_arn: std::option::Option<std::string::String>,
+    pub custom_instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
     #[doc(hidden)]
-    pub custom_json: std::option::Option<std::string::String>,
+    pub custom_json: ::std::option::Option<::std::string::String>,
     /// <p>An array containing the layer's custom security group IDs.</p>
     #[doc(hidden)]
-    pub custom_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub custom_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array containing the layer's security group names.</p>
     #[doc(hidden)]
-    pub default_security_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub default_security_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
     #[doc(hidden)]
-    pub packages: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub packages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     #[doc(hidden)]
     pub volume_configurations:
-        std::option::Option<std::vec::Vec<crate::types::VolumeConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     /// <p>Whether auto healing is disabled for the layer.</p>
     #[doc(hidden)]
-    pub enable_auto_healing: std::option::Option<bool>,
+    pub enable_auto_healing: ::std::option::Option<bool>,
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     #[doc(hidden)]
-    pub auto_assign_elastic_ips: std::option::Option<bool>,
+    pub auto_assign_elastic_ips: ::std::option::Option<bool>,
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     #[doc(hidden)]
-    pub auto_assign_public_ips: std::option::Option<bool>,
+    pub auto_assign_public_ips: ::std::option::Option<bool>,
     /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
     #[doc(hidden)]
-    pub default_recipes: std::option::Option<crate::types::Recipes>,
+    pub default_recipes: ::std::option::Option<crate::types::Recipes>,
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     #[doc(hidden)]
-    pub custom_recipes: std::option::Option<crate::types::Recipes>,
+    pub custom_recipes: ::std::option::Option<crate::types::Recipes>,
     /// <p>Date when the layer was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<std::string::String>,
+    pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     #[doc(hidden)]
-    pub install_updates_on_boot: std::option::Option<bool>,
+    pub install_updates_on_boot: ::std::option::Option<bool>,
     /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
     #[doc(hidden)]
-    pub use_ebs_optimized_instances: std::option::Option<bool>,
+    pub use_ebs_optimized_instances: ::std::option::Option<bool>,
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     #[doc(hidden)]
     pub lifecycle_event_configuration:
-        std::option::Option<crate::types::LifecycleEventConfiguration>,
+        ::std::option::Option<crate::types::LifecycleEventConfiguration>,
 }
 impl Layer {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The layer stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The layer ID.</p>
-    pub fn layer_id(&self) -> std::option::Option<&str> {
+    pub fn layer_id(&self) -> ::std::option::Option<&str> {
         self.layer_id.as_deref()
     }
     /// <p>The layer type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::LayerType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LayerType> {
         self.r#type.as_ref()
     }
     /// <p>The layer name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The layer short name.</p>
-    pub fn shortname(&self) -> std::option::Option<&str> {
+    pub fn shortname(&self) -> ::std::option::Option<&str> {
         self.shortname.as_deref()
     }
     /// <p>The layer attributes.</p>
@@ -114,82 +114,82 @@ impl Layer {
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     pub fn attributes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::LayerAttributesKeys, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
     > {
         self.attributes.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
     pub fn cloud_watch_logs_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::CloudWatchLogsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::CloudWatchLogsConfiguration> {
         self.cloud_watch_logs_configuration.as_ref()
     }
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn custom_instance_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_instance_profile_arn(&self) -> ::std::option::Option<&str> {
         self.custom_instance_profile_arn.as_deref()
     }
     /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
-    pub fn custom_json(&self) -> std::option::Option<&str> {
+    pub fn custom_json(&self) -> ::std::option::Option<&str> {
         self.custom_json.as_deref()
     }
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn custom_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn custom_security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.custom_security_group_ids.as_deref()
     }
     /// <p>An array containing the layer's security group names.</p>
-    pub fn default_security_group_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn default_security_group_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.default_security_group_names.as_deref()
     }
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    pub fn packages(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn packages(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.packages.as_deref()
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     pub fn volume_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::VolumeConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::VolumeConfiguration]> {
         self.volume_configurations.as_deref()
     }
     /// <p>Whether auto healing is disabled for the layer.</p>
-    pub fn enable_auto_healing(&self) -> std::option::Option<bool> {
+    pub fn enable_auto_healing(&self) -> ::std::option::Option<bool> {
         self.enable_auto_healing
     }
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    pub fn auto_assign_elastic_ips(&self) -> std::option::Option<bool> {
+    pub fn auto_assign_elastic_ips(&self) -> ::std::option::Option<bool> {
         self.auto_assign_elastic_ips
     }
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    pub fn auto_assign_public_ips(&self) -> std::option::Option<bool> {
+    pub fn auto_assign_public_ips(&self) -> ::std::option::Option<bool> {
         self.auto_assign_public_ips
     }
     /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
-    pub fn default_recipes(&self) -> std::option::Option<&crate::types::Recipes> {
+    pub fn default_recipes(&self) -> ::std::option::Option<&crate::types::Recipes> {
         self.default_recipes.as_ref()
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-    pub fn custom_recipes(&self) -> std::option::Option<&crate::types::Recipes> {
+    pub fn custom_recipes(&self) -> ::std::option::Option<&crate::types::Recipes> {
         self.custom_recipes.as_ref()
     }
     /// <p>Date when the layer was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> ::std::option::Option<&str> {
         self.created_at.as_deref()
     }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
-    pub fn install_updates_on_boot(&self) -> std::option::Option<bool> {
+    pub fn install_updates_on_boot(&self) -> ::std::option::Option<bool> {
         self.install_updates_on_boot
     }
     /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
-    pub fn use_ebs_optimized_instances(&self) -> std::option::Option<bool> {
+    pub fn use_ebs_optimized_instances(&self) -> ::std::option::Option<bool> {
         self.use_ebs_optimized_instances
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub fn lifecycle_event_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LifecycleEventConfiguration> {
+    ) -> ::std::option::Option<&crate::types::LifecycleEventConfiguration> {
         self.lifecycle_event_configuration.as_ref()
     }
 }
@@ -202,96 +202,99 @@ impl Layer {
 
 /// A builder for [`Layer`](crate::types::Layer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LayerBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) stack_id: std::option::Option<std::string::String>,
-    pub(crate) layer_id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::LayerType>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) shortname: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<
-        std::collections::HashMap<crate::types::LayerAttributesKeys, std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stack_id: ::std::option::Option<::std::string::String>,
+    pub(crate) layer_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::LayerType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) shortname: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
     >,
     pub(crate) cloud_watch_logs_configuration:
-        std::option::Option<crate::types::CloudWatchLogsConfiguration>,
-    pub(crate) custom_instance_profile_arn: std::option::Option<std::string::String>,
-    pub(crate) custom_json: std::option::Option<std::string::String>,
-    pub(crate) custom_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
+    pub(crate) custom_instance_profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_json: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_security_group_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) default_security_group_names:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) packages: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) packages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) volume_configurations:
-        std::option::Option<std::vec::Vec<crate::types::VolumeConfiguration>>,
-    pub(crate) enable_auto_healing: std::option::Option<bool>,
-    pub(crate) auto_assign_elastic_ips: std::option::Option<bool>,
-    pub(crate) auto_assign_public_ips: std::option::Option<bool>,
-    pub(crate) default_recipes: std::option::Option<crate::types::Recipes>,
-    pub(crate) custom_recipes: std::option::Option<crate::types::Recipes>,
-    pub(crate) created_at: std::option::Option<std::string::String>,
-    pub(crate) install_updates_on_boot: std::option::Option<bool>,
-    pub(crate) use_ebs_optimized_instances: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
+    pub(crate) enable_auto_healing: ::std::option::Option<bool>,
+    pub(crate) auto_assign_elastic_ips: ::std::option::Option<bool>,
+    pub(crate) auto_assign_public_ips: ::std::option::Option<bool>,
+    pub(crate) default_recipes: ::std::option::Option<crate::types::Recipes>,
+    pub(crate) custom_recipes: ::std::option::Option<crate::types::Recipes>,
+    pub(crate) created_at: ::std::option::Option<::std::string::String>,
+    pub(crate) install_updates_on_boot: ::std::option::Option<bool>,
+    pub(crate) use_ebs_optimized_instances: ::std::option::Option<bool>,
     pub(crate) lifecycle_event_configuration:
-        std::option::Option<crate::types::LifecycleEventConfiguration>,
+        ::std::option::Option<crate::types::LifecycleEventConfiguration>,
 }
 impl LayerBuilder {
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of a layer.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The layer stack ID.</p>
-    pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_id = Some(input.into());
+    pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The layer stack ID.</p>
-    pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
     }
     /// <p>The layer ID.</p>
-    pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.layer_id = Some(input.into());
+    pub fn layer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.layer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The layer ID.</p>
-    pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_layer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_id = input;
         self
     }
     /// <p>The layer type.</p>
     pub fn r#type(mut self, input: crate::types::LayerType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The layer type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::LayerType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LayerType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The layer name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The layer name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The layer short name.</p>
-    pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.shortname = Some(input.into());
+    pub fn shortname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.shortname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The layer short name.</p>
-    pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shortname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shortname = input;
         self
     }
@@ -305,11 +308,11 @@ impl LayerBuilder {
     pub fn attributes(
         mut self,
         k: crate::types::LayerAttributesKeys,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.attributes = Some(hash_map);
+        self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The layer attributes.</p>
@@ -317,8 +320,8 @@ impl LayerBuilder {
     /// <p>For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LayerAttributesKeys, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
         >,
     ) -> Self {
         self.attributes = input;
@@ -329,37 +332,40 @@ impl LayerBuilder {
         mut self,
         input: crate::types::CloudWatchLogsConfiguration,
     ) -> Self {
-        self.cloud_watch_logs_configuration = Some(input);
+        self.cloud_watch_logs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
     pub fn set_cloud_watch_logs_configuration(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchLogsConfiguration>,
+        input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     ) -> Self {
         self.cloud_watch_logs_configuration = input;
         self
     }
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn custom_instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_instance_profile_arn = Some(input.into());
+    pub fn custom_instance_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_instance_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_custom_instance_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.custom_instance_profile_arn = input;
         self
     }
     /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
-    pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_json = Some(input.into());
+    pub fn custom_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</p>
-    pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_json = input;
         self
     }
@@ -368,16 +374,19 @@ impl LayerBuilder {
     /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
     ///
     /// <p>An array containing the layer's custom security group IDs.</p>
-    pub fn custom_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.custom_security_group_ids.unwrap_or_default();
         v.push(input.into());
-        self.custom_security_group_ids = Some(v);
+        self.custom_security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing the layer's custom security group IDs.</p>
     pub fn set_custom_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.custom_security_group_ids = input;
         self
@@ -387,16 +396,19 @@ impl LayerBuilder {
     /// To override the contents of this collection use [`set_default_security_group_names`](Self::set_default_security_group_names).
     ///
     /// <p>An array containing the layer's security group names.</p>
-    pub fn default_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_security_group_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.default_security_group_names.unwrap_or_default();
         v.push(input.into());
-        self.default_security_group_names = Some(v);
+        self.default_security_group_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing the layer's security group names.</p>
     pub fn set_default_security_group_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.default_security_group_names = input;
         self
@@ -406,16 +418,16 @@ impl LayerBuilder {
     /// To override the contents of this collection use [`set_packages`](Self::set_packages).
     ///
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
-    pub fn packages(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn packages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.packages.unwrap_or_default();
         v.push(input.into());
-        self.packages = Some(v);
+        self.packages = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>Package</code> objects that describe the layer's packages.</p>
     pub fn set_packages(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.packages = input;
         self
@@ -428,79 +440,82 @@ impl LayerBuilder {
     pub fn volume_configurations(mut self, input: crate::types::VolumeConfiguration) -> Self {
         let mut v = self.volume_configurations.unwrap_or_default();
         v.push(input);
-        self.volume_configurations = Some(v);
+        self.volume_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     pub fn set_volume_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     ) -> Self {
         self.volume_configurations = input;
         self
     }
     /// <p>Whether auto healing is disabled for the layer.</p>
     pub fn enable_auto_healing(mut self, input: bool) -> Self {
-        self.enable_auto_healing = Some(input);
+        self.enable_auto_healing = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether auto healing is disabled for the layer.</p>
-    pub fn set_enable_auto_healing(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_auto_healing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_auto_healing = input;
         self
     }
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
-        self.auto_assign_elastic_ips = Some(input);
+        self.auto_assign_elastic_ips = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_assign_elastic_ips(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_assign_elastic_ips = input;
         self
     }
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
     pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
-        self.auto_assign_public_ips = Some(input);
+        self.auto_assign_public_ips = ::std::option::Option::Some(input);
         self
     }
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_assign_public_ips(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_assign_public_ips = input;
         self
     }
     /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
     pub fn default_recipes(mut self, input: crate::types::Recipes) -> Self {
-        self.default_recipes = Some(input);
+        self.default_recipes = ::std::option::Option::Some(input);
         self
     }
     /// <p>AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. You can also provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
     /// <p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the <code>.rb</code> extension. For example: <code>phpapp2::dbsetup</code> specifies the <code>dbsetup.rb</code> recipe in the repository's <code>phpapp2</code> folder.</p>
     pub fn set_default_recipes(
         mut self,
-        input: std::option::Option<crate::types::Recipes>,
+        input: ::std::option::Option<crate::types::Recipes>,
     ) -> Self {
         self.default_recipes = input;
         self
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
     pub fn custom_recipes(mut self, input: crate::types::Recipes) -> Self {
-        self.custom_recipes = Some(input);
+        self.custom_recipes = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-    pub fn set_custom_recipes(mut self, input: std::option::Option<crate::types::Recipes>) -> Self {
+    pub fn set_custom_recipes(
+        mut self,
+        input: ::std::option::Option<crate::types::Recipes>,
+    ) -> Self {
         self.custom_recipes = input;
         self
     }
     /// <p>Date when the layer was created.</p>
-    pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_at = Some(input.into());
+    pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Date when the layer was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
     }
@@ -508,23 +523,23 @@ impl LayerBuilder {
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
     pub fn install_updates_on_boot(mut self, input: bool) -> Self {
-        self.install_updates_on_boot = Some(input);
+        self.install_updates_on_boot = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
-    pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_install_updates_on_boot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.install_updates_on_boot = input;
         self
     }
     /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
     pub fn use_ebs_optimized_instances(mut self, input: bool) -> Self {
-        self.use_ebs_optimized_instances = Some(input);
+        self.use_ebs_optimized_instances = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the layer uses Amazon EBS-optimized instances.</p>
-    pub fn set_use_ebs_optimized_instances(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_ebs_optimized_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_ebs_optimized_instances = input;
         self
     }
@@ -533,13 +548,13 @@ impl LayerBuilder {
         mut self,
         input: crate::types::LifecycleEventConfiguration,
     ) -> Self {
-        self.lifecycle_event_configuration = Some(input);
+        self.lifecycle_event_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>LifeCycleEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub fn set_lifecycle_event_configuration(
         mut self,
-        input: std::option::Option<crate::types::LifecycleEventConfiguration>,
+        input: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
     ) -> Self {
         self.lifecycle_event_configuration = input;
         self

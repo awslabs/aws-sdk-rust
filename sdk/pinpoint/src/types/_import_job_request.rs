@@ -2,23 +2,23 @@
 
 /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportJobRequest {
     /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
     #[doc(hidden)]
-    pub define_segment: std::option::Option<bool>,
+    pub define_segment: ::std::option::Option<bool>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     #[doc(hidden)]
-    pub external_id: std::option::Option<std::string::String>,
+    pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format. If the Amazon S3 location stores multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::Format>,
+    pub format: ::std::option::Option<crate::types::Format>,
     /// <p>Specifies whether to register the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
     #[doc(hidden)]
-    pub register_endpoints: std::option::Option<bool>,
+    pub register_endpoints: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the endpoint definitions to import. This location can be a folder or a single file. If the location is a folder, Amazon Pinpoint imports endpoint definitions from the files in this location, including any subfolders that the folder contains.</p>
     /// <p>The URL should be in the following format: s3://<replaceable>
     /// bucket-name
@@ -28,33 +28,33 @@ pub struct ImportJobRequest {
     /// file-name
     /// </replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
     #[doc(hidden)]
-    pub s3_url: std::option::Option<std::string::String>,
+    pub s3_url: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the segment to update or add the imported endpoint definitions to, if the import job is meant to update an existing segment.</p>
     #[doc(hidden)]
-    pub segment_id: std::option::Option<std::string::String>,
+    pub segment_id: ::std::option::Option<::std::string::String>,
     /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
     #[doc(hidden)]
-    pub segment_name: std::option::Option<std::string::String>,
+    pub segment_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobRequest {
     /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
-    pub fn define_segment(&self) -> std::option::Option<bool> {
+    pub fn define_segment(&self) -> ::std::option::Option<bool> {
         self.define_segment
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format. If the Amazon S3 location stores multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
     /// <p>Specifies whether to register the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
-    pub fn register_endpoints(&self) -> std::option::Option<bool> {
+    pub fn register_endpoints(&self) -> ::std::option::Option<bool> {
         self.register_endpoints
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the endpoint definitions to import. This location can be a folder or a single file. If the location is a folder, Amazon Pinpoint imports endpoint definitions from the files in this location, including any subfolders that the folder contains.</p>
@@ -65,15 +65,15 @@ impl ImportJobRequest {
     /// </replaceable>/<replaceable>
     /// file-name
     /// </replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
-    pub fn s3_url(&self) -> std::option::Option<&str> {
+    pub fn s3_url(&self) -> ::std::option::Option<&str> {
         self.s3_url.as_deref()
     }
     /// <p>The identifier for the segment to update or add the imported endpoint definitions to, if the import job is meant to update an existing segment.</p>
-    pub fn segment_id(&self) -> std::option::Option<&str> {
+    pub fn segment_id(&self) -> ::std::option::Option<&str> {
         self.segment_id.as_deref()
     }
     /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
-    pub fn segment_name(&self) -> std::option::Option<&str> {
+    pub fn segment_name(&self) -> ::std::option::Option<&str> {
         self.segment_name.as_deref()
     }
 }
@@ -86,65 +86,67 @@ impl ImportJobRequest {
 
 /// A builder for [`ImportJobRequest`](crate::types::ImportJobRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportJobRequestBuilder {
-    pub(crate) define_segment: std::option::Option<bool>,
-    pub(crate) external_id: std::option::Option<std::string::String>,
-    pub(crate) format: std::option::Option<crate::types::Format>,
-    pub(crate) register_endpoints: std::option::Option<bool>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) s3_url: std::option::Option<std::string::String>,
-    pub(crate) segment_id: std::option::Option<std::string::String>,
-    pub(crate) segment_name: std::option::Option<std::string::String>,
+    pub(crate) define_segment: ::std::option::Option<bool>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) format: ::std::option::Option<crate::types::Format>,
+    pub(crate) register_endpoints: ::std::option::Option<bool>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_url: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobRequestBuilder {
     /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
     pub fn define_segment(mut self, input: bool) -> Self {
-        self.define_segment = Some(input);
+        self.define_segment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
-    pub fn set_define_segment(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_define_segment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.define_segment = input;
         self
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_id = Some(input.into());
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
-    pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
     }
     /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format. If the Amazon S3 location stores multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format. If the Amazon S3 location stores multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::Format>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
     }
     /// <p>Specifies whether to register the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
     pub fn register_endpoints(mut self, input: bool) -> Self {
-        self.register_endpoints = Some(input);
+        self.register_endpoints = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to register the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
-    pub fn set_register_endpoints(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_register_endpoints(mut self, input: ::std::option::Option<bool>) -> Self {
         self.register_endpoints = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
@@ -156,8 +158,8 @@ impl ImportJobRequestBuilder {
     /// </replaceable>/<replaceable>
     /// file-name
     /// </replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
-    pub fn s3_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_url = Some(input.into());
+    pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the endpoint definitions to import. This location can be a folder or a single file. If the location is a folder, Amazon Pinpoint imports endpoint definitions from the files in this location, including any subfolders that the folder contains.</p>
@@ -168,27 +170,27 @@ impl ImportJobRequestBuilder {
     /// </replaceable>/<replaceable>
     /// file-name
     /// </replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
-    pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_url = input;
         self
     }
     /// <p>The identifier for the segment to update or add the imported endpoint definitions to, if the import job is meant to update an existing segment.</p>
-    pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.segment_id = Some(input.into());
+    pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the segment to update or add the imported endpoint definitions to, if the import job is meant to update an existing segment.</p>
-    pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_segment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_id = input;
         self
     }
     /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
-    pub fn segment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.segment_name = Some(input.into());
+    pub fn segment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
-    pub fn set_segment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_name = input;
         self
     }

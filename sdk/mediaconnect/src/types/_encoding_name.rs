@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EncodingName {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum EncodingName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EncodingName {
+impl ::std::convert::From<&str> for EncodingName {
     fn from(s: &str) -> Self {
         match s {
             "jxsv" => EncodingName::Jxsv,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for EncodingName {
         }
     }
 }
-impl std::str::FromStr for EncodingName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EncodingName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncodingName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EncodingName::from(s))
     }
 }
 impl EncodingName {
@@ -96,7 +96,7 @@ impl EncodingName {
         &["jxsv", "pcm", "raw", "smpte291"]
     }
 }
-impl AsRef<str> for EncodingName {
+impl ::std::convert::AsRef<str> for EncodingName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

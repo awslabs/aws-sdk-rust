@@ -2,56 +2,61 @@
 
 /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendUsersMessageRequest {
     /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
     #[doc(hidden)]
-    pub context:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub context: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
     #[doc(hidden)]
-    pub message_configuration: std::option::Option<crate::types::DirectMessageConfiguration>,
+    pub message_configuration: ::std::option::Option<crate::types::DirectMessageConfiguration>,
     /// <p>The message template to use for the message.</p>
     #[doc(hidden)]
-    pub template_configuration: std::option::Option<crate::types::TemplateConfiguration>,
+    pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
     /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
     #[doc(hidden)]
-    pub trace_id: std::option::Option<std::string::String>,
+    pub trace_id: ::std::option::Option<::std::string::String>,
     /// <p>A map that associates user IDs with <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> objects. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content overrides and message variables.</p>
     #[doc(hidden)]
-    pub users: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::EndpointSendConfiguration>,
+    pub users: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EndpointSendConfiguration>,
     >,
 }
 impl SendUsersMessageRequest {
     /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
     pub fn context(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.context.as_ref()
     }
     /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
     pub fn message_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DirectMessageConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DirectMessageConfiguration> {
         self.message_configuration.as_ref()
     }
     /// <p>The message template to use for the message.</p>
     pub fn template_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::TemplateConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
     /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
-    pub fn trace_id(&self) -> std::option::Option<&str> {
+    pub fn trace_id(&self) -> ::std::option::Option<&str> {
         self.trace_id.as_deref()
     }
     /// <p>A map that associates user IDs with <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> objects. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content overrides and message variables.</p>
     pub fn users(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::EndpointSendConfiguration>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::EndpointSendConfiguration,
+        >,
     > {
         self.users.as_ref()
     }
@@ -65,15 +70,19 @@ impl SendUsersMessageRequest {
 
 /// A builder for [`SendUsersMessageRequest`](crate::types::SendUsersMessageRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendUsersMessageRequestBuilder {
-    pub(crate) context:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) message_configuration: std::option::Option<crate::types::DirectMessageConfiguration>,
-    pub(crate) template_configuration: std::option::Option<crate::types::TemplateConfiguration>,
-    pub(crate) trace_id: std::option::Option<std::string::String>,
-    pub(crate) users: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::EndpointSendConfiguration>,
+    pub(crate) context: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) message_configuration:
+        ::std::option::Option<crate::types::DirectMessageConfiguration>,
+    pub(crate) template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
+    pub(crate) trace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) users: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::EndpointSendConfiguration>,
     >,
 }
 impl SendUsersMessageRequestBuilder {
@@ -84,19 +93,19 @@ impl SendUsersMessageRequestBuilder {
     /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
     pub fn context(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.context = Some(hash_map);
+        self.context = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
     pub fn set_context(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.context = input;
@@ -107,37 +116,37 @@ impl SendUsersMessageRequestBuilder {
         mut self,
         input: crate::types::DirectMessageConfiguration,
     ) -> Self {
-        self.message_configuration = Some(input);
+        self.message_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
     pub fn set_message_configuration(
         mut self,
-        input: std::option::Option<crate::types::DirectMessageConfiguration>,
+        input: ::std::option::Option<crate::types::DirectMessageConfiguration>,
     ) -> Self {
         self.message_configuration = input;
         self
     }
     /// <p>The message template to use for the message.</p>
     pub fn template_configuration(mut self, input: crate::types::TemplateConfiguration) -> Self {
-        self.template_configuration = Some(input);
+        self.template_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The message template to use for the message.</p>
     pub fn set_template_configuration(
         mut self,
-        input: std::option::Option<crate::types::TemplateConfiguration>,
+        input: ::std::option::Option<crate::types::TemplateConfiguration>,
     ) -> Self {
         self.template_configuration = input;
         self
     }
     /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
-    pub fn trace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trace_id = Some(input.into());
+    pub fn trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
-    pub fn set_trace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trace_id = input;
         self
     }
@@ -148,19 +157,22 @@ impl SendUsersMessageRequestBuilder {
     /// <p>A map that associates user IDs with <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> objects. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content overrides and message variables.</p>
     pub fn users(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::EndpointSendConfiguration,
     ) -> Self {
         let mut hash_map = self.users.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.users = Some(hash_map);
+        self.users = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map that associates user IDs with <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> objects. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content overrides and message variables.</p>
     pub fn set_users(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::EndpointSendConfiguration>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                crate::types::EndpointSendConfiguration,
+            >,
         >,
     ) -> Self {
         self.users = input;

@@ -38,13 +38,13 @@
 /// This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DashIsoPlaybackDeviceCompatibility {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DashIsoPlaybackDeviceCompatibility {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DashIsoPlaybackDeviceCompatibility {
+impl ::std::convert::From<&str> for DashIsoPlaybackDeviceCompatibility {
     fn from(s: &str) -> Self {
         match s {
             "CENC_V1" => DashIsoPlaybackDeviceCompatibility::CencV1,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DashIsoPlaybackDeviceCompatibility {
         }
     }
 }
-impl std::str::FromStr for DashIsoPlaybackDeviceCompatibility {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DashIsoPlaybackDeviceCompatibility {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DashIsoPlaybackDeviceCompatibility::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DashIsoPlaybackDeviceCompatibility::from(s))
     }
 }
 impl DashIsoPlaybackDeviceCompatibility {
@@ -86,7 +86,7 @@ impl DashIsoPlaybackDeviceCompatibility {
         &["CENC_V1", "UNENCRYPTED_SEI"]
     }
 }
-impl AsRef<str> for DashIsoPlaybackDeviceCompatibility {
+impl ::std::convert::AsRef<str> for DashIsoPlaybackDeviceCompatibility {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

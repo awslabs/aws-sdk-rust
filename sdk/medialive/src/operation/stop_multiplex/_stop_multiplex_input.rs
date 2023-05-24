@@ -2,15 +2,15 @@
 
 /// Placeholder documentation for StopMultiplexRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopMultiplexInput {
     /// The ID of the multiplex.
     #[doc(hidden)]
-    pub multiplex_id: std::option::Option<std::string::String>,
+    pub multiplex_id: ::std::option::Option<::std::string::String>,
 }
 impl StopMultiplexInput {
     /// The ID of the multiplex.
-    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
         self.multiplex_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl StopMultiplexInput {
 
 /// A builder for [`StopMultiplexInput`](crate::operation::stop_multiplex::StopMultiplexInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopMultiplexInputBuilder {
-    pub(crate) multiplex_id: std::option::Option<std::string::String>,
+    pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
 }
 impl StopMultiplexInputBuilder {
     /// The ID of the multiplex.
-    pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.multiplex_id = Some(input.into());
+    pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multiplex_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the multiplex.
-    pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multiplex_id = input;
         self
     }
     /// Consumes the builder and constructs a [`StopMultiplexInput`](crate::operation::stop_multiplex::StopMultiplexInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_multiplex::StopMultiplexInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::stop_multiplex::StopMultiplexInput {
+        ::std::result::Result::Ok(crate::operation::stop_multiplex::StopMultiplexInput {
             multiplex_id: self.multiplex_id,
         })
     }

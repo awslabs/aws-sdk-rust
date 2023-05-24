@@ -2,21 +2,21 @@
 
 /// <p>Provides details about the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRulePredicateListDetails {
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
     #[doc(hidden)]
-    pub data_id: std::option::Option<std::string::String>,
+    pub data_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
     #[doc(hidden)]
     pub negated: bool,
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRulePredicateListDetails {
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-    pub fn data_id(&self) -> std::option::Option<&str> {
+    pub fn data_id(&self) -> ::std::option::Option<&str> {
         self.data_id.as_deref()
     }
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
@@ -24,7 +24,7 @@ impl AwsWafRulePredicateListDetails {
         self.negated
     }
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl AwsWafRulePredicateListDetails {
 
 /// A builder for [`AwsWafRulePredicateListDetails`](crate::types::AwsWafRulePredicateListDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafRulePredicateListDetailsBuilder {
-    pub(crate) data_id: std::option::Option<std::string::String>,
-    pub(crate) negated: std::option::Option<bool>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) data_id: ::std::option::Option<::std::string::String>,
+    pub(crate) negated: ::std::option::Option<bool>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRulePredicateListDetailsBuilder {
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-    pub fn data_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_id = Some(input.into());
+    pub fn data_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-    pub fn set_data_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_id = input;
         self
     }
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
     pub fn negated(mut self, input: bool) -> Self {
-        self.negated = Some(input);
+        self.negated = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
-    pub fn set_negated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_negated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negated = input;
         self
     }
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

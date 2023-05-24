@@ -2,22 +2,22 @@
 
 /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NielsenConfiguration {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     #[doc(hidden)]
-    pub breakout_code: std::option::Option<i32>,
+    pub breakout_code: ::std::option::Option<i32>,
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
     #[doc(hidden)]
-    pub distributor_id: std::option::Option<std::string::String>,
+    pub distributor_id: ::std::option::Option<::std::string::String>,
 }
 impl NielsenConfiguration {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
-    pub fn breakout_code(&self) -> std::option::Option<i32> {
+    pub fn breakout_code(&self) -> ::std::option::Option<i32> {
         self.breakout_code
     }
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
-    pub fn distributor_id(&self) -> std::option::Option<&str> {
+    pub fn distributor_id(&self) -> ::std::option::Option<&str> {
         self.distributor_id.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl NielsenConfiguration {
 
 /// A builder for [`NielsenConfiguration`](crate::types::NielsenConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NielsenConfigurationBuilder {
-    pub(crate) breakout_code: std::option::Option<i32>,
-    pub(crate) distributor_id: std::option::Option<std::string::String>,
+    pub(crate) breakout_code: ::std::option::Option<i32>,
+    pub(crate) distributor_id: ::std::option::Option<::std::string::String>,
 }
 impl NielsenConfigurationBuilder {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     pub fn breakout_code(mut self, input: i32) -> Self {
-        self.breakout_code = Some(input);
+        self.breakout_code = ::std::option::Option::Some(input);
         self
     }
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
-    pub fn set_breakout_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_breakout_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.breakout_code = input;
         self
     }
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
-    pub fn distributor_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.distributor_id = Some(input.into());
+    pub fn distributor_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.distributor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
-    pub fn set_distributor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_distributor_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.distributor_id = input;
         self
     }

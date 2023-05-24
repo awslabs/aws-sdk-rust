@@ -2,34 +2,34 @@
 
 /// <p>A calculated column for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculatedColumn {
     /// <p>Column name.</p>
     #[doc(hidden)]
-    pub column_name: std::option::Option<std::string::String>,
+    pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
     #[doc(hidden)]
-    pub column_id: std::option::Option<std::string::String>,
+    pub column_id: ::std::option::Option<::std::string::String>,
     /// <p>An expression that defines the calculated column.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
 }
 impl CalculatedColumn {
     /// <p>Column name.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> ::std::option::Option<&str> {
         self.column_name.as_deref()
     }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
-    pub fn column_id(&self) -> std::option::Option<&str> {
+    pub fn column_id(&self) -> ::std::option::Option<&str> {
         self.column_id.as_deref()
     }
     /// <p>An expression that defines the calculated column.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for CalculatedColumn {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CalculatedColumn {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedColumn");
         formatter.field("column_name", &self.column_name);
         formatter.field("column_id", &self.column_id);
@@ -46,40 +46,40 @@ impl CalculatedColumn {
 
 /// A builder for [`CalculatedColumn`](crate::types::CalculatedColumn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CalculatedColumnBuilder {
-    pub(crate) column_name: std::option::Option<std::string::String>,
-    pub(crate) column_id: std::option::Option<std::string::String>,
-    pub(crate) expression: std::option::Option<std::string::String>,
+    pub(crate) column_name: ::std::option::Option<::std::string::String>,
+    pub(crate) column_id: ::std::option::Option<::std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
 }
 impl CalculatedColumnBuilder {
     /// <p>Column name.</p>
-    pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.column_name = Some(input.into());
+    pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Column name.</p>
-    pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
     }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
-    pub fn column_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.column_id = Some(input.into());
+    pub fn column_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.column_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.</p>
-    pub fn set_column_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_column_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_id = input;
         self
     }
     /// <p>An expression that defines the calculated column.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An expression that defines the calculated column.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
@@ -92,8 +92,8 @@ impl CalculatedColumnBuilder {
         }
     }
 }
-impl std::fmt::Debug for CalculatedColumnBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CalculatedColumnBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedColumnBuilder");
         formatter.field("column_name", &self.column_name);
         formatter.field("column_id", &self.column_id);

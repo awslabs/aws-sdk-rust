@@ -2,31 +2,31 @@
 
 /// <p>An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginGroup {
     /// <p>The origin group's ID.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     #[doc(hidden)]
-    pub failover_criteria: std::option::Option<crate::types::OriginGroupFailoverCriteria>,
+    pub failover_criteria: ::std::option::Option<crate::types::OriginGroupFailoverCriteria>,
     /// <p>A complex type that contains information about the origins in an origin group.</p>
     #[doc(hidden)]
-    pub members: std::option::Option<crate::types::OriginGroupMembers>,
+    pub members: ::std::option::Option<crate::types::OriginGroupMembers>,
 }
 impl OriginGroup {
     /// <p>The origin group's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     pub fn failover_criteria(
         &self,
-    ) -> std::option::Option<&crate::types::OriginGroupFailoverCriteria> {
+    ) -> ::std::option::Option<&crate::types::OriginGroupFailoverCriteria> {
         self.failover_criteria.as_ref()
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
-    pub fn members(&self) -> std::option::Option<&crate::types::OriginGroupMembers> {
+    pub fn members(&self) -> ::std::option::Option<&crate::types::OriginGroupMembers> {
         self.members.as_ref()
     }
 }
@@ -39,45 +39,47 @@ impl OriginGroup {
 
 /// A builder for [`OriginGroup`](crate::types::OriginGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginGroupBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) failover_criteria: std::option::Option<crate::types::OriginGroupFailoverCriteria>,
-    pub(crate) members: std::option::Option<crate::types::OriginGroupMembers>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) failover_criteria: ::std::option::Option<crate::types::OriginGroupFailoverCriteria>,
+    pub(crate) members: ::std::option::Option<crate::types::OriginGroupMembers>,
 }
 impl OriginGroupBuilder {
     /// <p>The origin group's ID.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The origin group's ID.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     pub fn failover_criteria(mut self, input: crate::types::OriginGroupFailoverCriteria) -> Self {
-        self.failover_criteria = Some(input);
+        self.failover_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
     pub fn set_failover_criteria(
         mut self,
-        input: std::option::Option<crate::types::OriginGroupFailoverCriteria>,
+        input: ::std::option::Option<crate::types::OriginGroupFailoverCriteria>,
     ) -> Self {
         self.failover_criteria = input;
         self
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
     pub fn members(mut self, input: crate::types::OriginGroupMembers) -> Self {
-        self.members = Some(input);
+        self.members = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about the origins in an origin group.</p>
     pub fn set_members(
         mut self,
-        input: std::option::Option<crate::types::OriginGroupMembers>,
+        input: ::std::option::Option<crate::types::OriginGroupMembers>,
     ) -> Self {
         self.members = input;
         self

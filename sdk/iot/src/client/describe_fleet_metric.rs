@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFleetMetric`](crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`metric_name(impl Into<String>)`](crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder::set_metric_name): <p>The name of the fleet metric to describe.</p>
+    ///   - [`metric_name(impl ::std::convert::Into<String>)`](crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::describe_fleet_metric::builders::DescribeFleetMetricFluentBuilder::set_metric_name): <p>The name of the fleet metric to describe.</p>
     /// - On success, responds with [`DescribeFleetMetricOutput`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::metric_name): <p>The name of the fleet metric to describe.</p>
     ///   - [`query_string(Option<String>)`](crate::operation::describe_fleet_metric::DescribeFleetMetricOutput::query_string): <p>The search query string.</p>

@@ -2,31 +2,31 @@
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPublicKeysOutput {
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
     #[doc(hidden)]
-    pub public_key_list: std::option::Option<std::vec::Vec<crate::types::PublicKey>>,
+    pub public_key_list: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>,
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPublicKeysOutput {
     /// <p>Contains an array of PublicKey objects.</p> <note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
-    pub fn public_key_list(&self) -> std::option::Option<&[crate::types::PublicKey]> {
+    pub fn public_key_list(&self) -> ::std::option::Option<&[crate::types::PublicKey]> {
         self.public_key_list.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPublicKeysOutput {
+impl ::aws_http::request_id::RequestId for ListPublicKeysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,10 +40,12 @@ impl ListPublicKeysOutput {
 
 /// A builder for [`ListPublicKeysOutput`](crate::operation::list_public_keys::ListPublicKeysOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPublicKeysOutputBuilder {
-    pub(crate) public_key_list: std::option::Option<std::vec::Vec<crate::types::PublicKey>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) public_key_list: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPublicKeysOutputBuilder {
@@ -57,7 +59,7 @@ impl ListPublicKeysOutputBuilder {
     pub fn public_key_list(mut self, input: crate::types::PublicKey) -> Self {
         let mut v = self.public_key_list.unwrap_or_default();
         v.push(input);
-        self.public_key_list = Some(v);
+        self.public_key_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains an array of PublicKey objects.</p> <note>
@@ -65,18 +67,18 @@ impl ListPublicKeysOutputBuilder {
     /// </note>
     pub fn set_public_key_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PublicKey>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>,
     ) -> Self {
         self.public_key_list = input;
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

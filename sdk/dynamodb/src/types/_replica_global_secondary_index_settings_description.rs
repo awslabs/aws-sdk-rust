@@ -2,11 +2,11 @@
 
 /// <p>Represents the properties of a global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     #[doc(hidden)]
-    pub index_name: std::option::Option<std::string::String>,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the global secondary index:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The global secondary index is being created.</p> </li>
@@ -15,25 +15,25 @@ pub struct ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <li> <p> <code>ACTIVE</code> - The global secondary index is ready for use.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub index_status: std::option::Option<crate::types::IndexStatus>,
+    pub index_status: ::std::option::Option<crate::types::IndexStatus>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     #[doc(hidden)]
-    pub provisioned_read_capacity_units: std::option::Option<i64>,
+    pub provisioned_read_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
     #[doc(hidden)]
     pub provisioned_read_capacity_auto_scaling_settings:
-        std::option::Option<crate::types::AutoScalingSettingsDescription>,
+        ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     #[doc(hidden)]
-    pub provisioned_write_capacity_units: std::option::Option<i64>,
+    pub provisioned_write_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for a global secondary index replica's write capacity units.</p>
     #[doc(hidden)]
     pub provisioned_write_capacity_auto_scaling_settings:
-        std::option::Option<crate::types::AutoScalingSettingsDescription>,
+        ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
 }
 impl ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p> The current status of the global secondary index:</p>
@@ -43,28 +43,28 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
     /// <li> <p> <code>DELETING</code> - The global secondary index is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The global secondary index is ready for use.</p> </li>
     /// </ul>
-    pub fn index_status(&self) -> std::option::Option<&crate::types::IndexStatus> {
+    pub fn index_status(&self) -> ::std::option::Option<&crate::types::IndexStatus> {
         self.index_status.as_ref()
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
+    pub fn provisioned_read_capacity_units(&self) -> ::std::option::Option<i64> {
         self.provisioned_read_capacity_units
     }
     /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
     pub fn provisioned_read_capacity_auto_scaling_settings(
         &self,
-    ) -> std::option::Option<&crate::types::AutoScalingSettingsDescription> {
+    ) -> ::std::option::Option<&crate::types::AutoScalingSettingsDescription> {
         self.provisioned_read_capacity_auto_scaling_settings
             .as_ref()
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn provisioned_write_capacity_units(&self) -> std::option::Option<i64> {
+    pub fn provisioned_write_capacity_units(&self) -> ::std::option::Option<i64> {
         self.provisioned_write_capacity_units
     }
     /// <p>Auto scaling settings for a global secondary index replica's write capacity units.</p>
     pub fn provisioned_write_capacity_auto_scaling_settings(
         &self,
-    ) -> std::option::Option<&crate::types::AutoScalingSettingsDescription> {
+    ) -> ::std::option::Option<&crate::types::AutoScalingSettingsDescription> {
         self.provisioned_write_capacity_auto_scaling_settings
             .as_ref()
     }
@@ -79,25 +79,27 @@ impl ReplicaGlobalSecondaryIndexSettingsDescription {
 
 /// A builder for [`ReplicaGlobalSecondaryIndexSettingsDescription`](crate::types::ReplicaGlobalSecondaryIndexSettingsDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
-    pub(crate) index_name: std::option::Option<std::string::String>,
-    pub(crate) index_status: std::option::Option<crate::types::IndexStatus>,
-    pub(crate) provisioned_read_capacity_units: std::option::Option<i64>,
+    pub(crate) index_name: ::std::option::Option<::std::string::String>,
+    pub(crate) index_status: ::std::option::Option<crate::types::IndexStatus>,
+    pub(crate) provisioned_read_capacity_units: ::std::option::Option<i64>,
     pub(crate) provisioned_read_capacity_auto_scaling_settings:
-        std::option::Option<crate::types::AutoScalingSettingsDescription>,
-    pub(crate) provisioned_write_capacity_units: std::option::Option<i64>,
+        ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
+    pub(crate) provisioned_write_capacity_units: ::std::option::Option<i64>,
     pub(crate) provisioned_write_capacity_auto_scaling_settings:
-        std::option::Option<crate::types::AutoScalingSettingsDescription>,
+        ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
 }
 impl ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_name = Some(input.into());
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
@@ -109,7 +111,7 @@ impl ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
     /// <li> <p> <code>ACTIVE</code> - The global secondary index is ready for use.</p> </li>
     /// </ul>
     pub fn index_status(mut self, input: crate::types::IndexStatus) -> Self {
-        self.index_status = Some(input);
+        self.index_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The current status of the global secondary index:</p>
@@ -121,18 +123,21 @@ impl ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
     /// </ul>
     pub fn set_index_status(
         mut self,
-        input: std::option::Option<crate::types::IndexStatus>,
+        input: ::std::option::Option<crate::types::IndexStatus>,
     ) -> Self {
         self.index_status = input;
         self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn provisioned_read_capacity_units(mut self, input: i64) -> Self {
-        self.provisioned_read_capacity_units = Some(input);
+        self.provisioned_read_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn set_provisioned_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_provisioned_read_capacity_units(
+        mut self,
+        input: ::std::option::Option<i64>,
+    ) -> Self {
         self.provisioned_read_capacity_units = input;
         self
     }
@@ -141,24 +146,27 @@ impl ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
         mut self,
         input: crate::types::AutoScalingSettingsDescription,
     ) -> Self {
-        self.provisioned_read_capacity_auto_scaling_settings = Some(input);
+        self.provisioned_read_capacity_auto_scaling_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Auto scaling settings for a global secondary index replica's read capacity units.</p>
     pub fn set_provisioned_read_capacity_auto_scaling_settings(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingSettingsDescription>,
+        input: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     ) -> Self {
         self.provisioned_read_capacity_auto_scaling_settings = input;
         self
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn provisioned_write_capacity_units(mut self, input: i64) -> Self {
-        self.provisioned_write_capacity_units = Some(input);
+        self.provisioned_write_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn set_provisioned_write_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_provisioned_write_capacity_units(
+        mut self,
+        input: ::std::option::Option<i64>,
+    ) -> Self {
         self.provisioned_write_capacity_units = input;
         self
     }
@@ -167,13 +175,13 @@ impl ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder {
         mut self,
         input: crate::types::AutoScalingSettingsDescription,
     ) -> Self {
-        self.provisioned_write_capacity_auto_scaling_settings = Some(input);
+        self.provisioned_write_capacity_auto_scaling_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>Auto scaling settings for a global secondary index replica's write capacity units.</p>
     pub fn set_provisioned_write_capacity_auto_scaling_settings(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingSettingsDescription>,
+        input: ::std::option::Option<crate::types::AutoScalingSettingsDescription>,
     ) -> Self {
         self.provisioned_write_capacity_auto_scaling_settings = input;
         self

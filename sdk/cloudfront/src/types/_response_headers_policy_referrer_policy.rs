@@ -3,11 +3,11 @@
 /// <p>Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's value.</p>
 /// <p>For more information about the <code>Referrer-Policy</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyReferrerPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
-    pub r#override: std::option::Option<bool>,
+    pub r#override: ::std::option::Option<bool>,
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>no-referrer</code> </p> </li>
@@ -21,11 +21,11 @@ pub struct ResponseHeadersPolicyReferrerPolicy {
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
-    pub referrer_policy: std::option::Option<crate::types::ReferrerPolicyList>,
+    pub referrer_policy: ::std::option::Option<crate::types::ReferrerPolicyList>,
 }
 impl ResponseHeadersPolicyReferrerPolicy {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn r#override(&self) -> std::option::Option<bool> {
+    pub fn r#override(&self) -> ::std::option::Option<bool> {
         self.r#override
     }
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
@@ -40,7 +40,7 @@ impl ResponseHeadersPolicyReferrerPolicy {
     /// <li> <p> <code>unsafe-url</code> </p> </li>
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
-    pub fn referrer_policy(&self) -> std::option::Option<&crate::types::ReferrerPolicyList> {
+    pub fn referrer_policy(&self) -> ::std::option::Option<&crate::types::ReferrerPolicyList> {
         self.referrer_policy.as_ref()
     }
 }
@@ -53,19 +53,21 @@ impl ResponseHeadersPolicyReferrerPolicy {
 
 /// A builder for [`ResponseHeadersPolicyReferrerPolicy`](crate::types::ResponseHeadersPolicyReferrerPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseHeadersPolicyReferrerPolicyBuilder {
-    pub(crate) r#override: std::option::Option<bool>,
-    pub(crate) referrer_policy: std::option::Option<crate::types::ReferrerPolicyList>,
+    pub(crate) r#override: ::std::option::Option<bool>,
+    pub(crate) referrer_policy: ::std::option::Option<crate::types::ReferrerPolicyList>,
 }
 impl ResponseHeadersPolicyReferrerPolicyBuilder {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(mut self, input: bool) -> Self {
-        self.r#override = Some(input);
+        self.r#override = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#override = input;
         self
     }
@@ -82,7 +84,7 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     /// </ul>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub fn referrer_policy(mut self, input: crate::types::ReferrerPolicyList) -> Self {
-        self.referrer_policy = Some(input);
+        self.referrer_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:</p>
@@ -99,7 +101,7 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in the MDN Web Docs.</p>
     pub fn set_referrer_policy(
         mut self,
-        input: std::option::Option<crate::types::ReferrerPolicyList>,
+        input: ::std::option::Option<crate::types::ReferrerPolicyList>,
     ) -> Self {
         self.referrer_policy = input;
         self

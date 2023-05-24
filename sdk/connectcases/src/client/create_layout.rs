@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateLayout`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::set_domain_id): <p>The unique identifier of the Cases domain. </p>
-    ///   - [`name(impl Into<String>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::set_name): <p>The name of the layout. It must be unique for the Cases domain.</p>
+    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::set_domain_id): <p>The unique identifier of the Cases domain. </p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::set_name): <p>The name of the layout. It must be unique for the Cases domain.</p>
     ///   - [`content(LayoutContent)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::content) / [`set_content(Option<LayoutContent>)`](crate::operation::create_layout::builders::CreateLayoutFluentBuilder::set_content): <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
     /// - On success, responds with [`CreateLayoutOutput`](crate::operation::create_layout::CreateLayoutOutput) with field(s):
     ///   - [`layout_id(Option<String>)`](crate::operation::create_layout::CreateLayoutOutput::layout_id): <p>The unique identifier of the layout.</p>

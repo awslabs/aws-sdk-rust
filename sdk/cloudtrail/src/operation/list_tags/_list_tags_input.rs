@@ -2,22 +2,22 @@
 
 /// <p>Specifies a list of tags to return.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsInput {
     /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     #[doc(hidden)]
-    pub resource_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInput {
     /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
-    pub fn resource_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_id_list.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl ListTagsInput {
 
 /// A builder for [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTagsInputBuilder {
-    pub(crate) resource_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) resource_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTagsInputBuilder {
     /// Appends an item to `resource_id_list`.
@@ -41,38 +43,41 @@ impl ListTagsInputBuilder {
     /// To override the contents of this collection use [`set_resource_id_list`](Self::set_resource_id_list).
     ///
     /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
-    pub fn resource_id_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.resource_id_list.unwrap_or_default();
         v.push(input.into());
-        self.resource_id_list = Some(v);
+        self.resource_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a list of trail, event data store, or channel ARNs whose tags will be listed. The list has a limit of 20 ARNs.</p>
     pub fn set_resource_id_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_id_list = input;
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_tags::ListTagsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_tags::ListTagsInput {
+        ::std::result::Result::Ok(crate::operation::list_tags::ListTagsInput {
             resource_id_list: self.resource_id_list,
             next_token: self.next_token,
         })

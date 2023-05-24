@@ -2,29 +2,29 @@
 
 /// <p>Information about a scheduled execution for a maintenance window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledWindowExecution {
     /// <p>The ID of the maintenance window to be run.</p>
     #[doc(hidden)]
-    pub window_id: std::option::Option<std::string::String>,
+    pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the maintenance window to be run.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
     #[doc(hidden)]
-    pub execution_time: std::option::Option<std::string::String>,
+    pub execution_time: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledWindowExecution {
     /// <p>The ID of the maintenance window to be run.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<&str> {
         self.window_id.as_deref()
     }
     /// <p>The name of the maintenance window to be run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
-    pub fn execution_time(&self) -> std::option::Option<&str> {
+    pub fn execution_time(&self) -> ::std::option::Option<&str> {
         self.execution_time.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl ScheduledWindowExecution {
 
 /// A builder for [`ScheduledWindowExecution`](crate::types::ScheduledWindowExecution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduledWindowExecutionBuilder {
-    pub(crate) window_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) execution_time: std::option::Option<std::string::String>,
+    pub(crate) window_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_time: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledWindowExecutionBuilder {
     /// <p>The ID of the maintenance window to be run.</p>
-    pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.window_id = Some(input.into());
+    pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.window_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window to be run.</p>
-    pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_id = input;
         self
     }
     /// <p>The name of the maintenance window to be run.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance window to be run.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
-    pub fn execution_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_time = Some(input.into());
+    pub fn execution_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time, in ISO-8601 Extended format, that the maintenance window is scheduled to be run.</p>
-    pub fn set_execution_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.execution_time = input;
         self
     }

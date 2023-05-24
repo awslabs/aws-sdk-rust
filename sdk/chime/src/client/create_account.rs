@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateAccount`](crate::operation::create_account::builders::CreateAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_account::builders::CreateAccountFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_account::builders::CreateAccountFluentBuilder::set_name): <p>The name of the Amazon Chime account.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_account::builders::CreateAccountFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_account::builders::CreateAccountFluentBuilder::set_name): <p>The name of the Amazon Chime account.</p>
     /// - On success, responds with [`CreateAccountOutput`](crate::operation::create_account::CreateAccountOutput) with field(s):
     ///   - [`account(Option<Account>)`](crate::operation::create_account::CreateAccountOutput::account): <p>The Amazon Chime account details.</p>
     /// - On failure, responds with [`SdkError<CreateAccountError>`](crate::operation::create_account::CreateAccountError)

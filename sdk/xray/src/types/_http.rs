@@ -2,43 +2,43 @@
 
 /// <p>Information about an HTTP request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Http {
     /// <p>The request URL.</p>
     #[doc(hidden)]
-    pub http_url: std::option::Option<std::string::String>,
+    pub http_url: ::std::option::Option<::std::string::String>,
     /// <p>The response status.</p>
     #[doc(hidden)]
-    pub http_status: std::option::Option<i32>,
+    pub http_status: ::std::option::Option<i32>,
     /// <p>The request method.</p>
     #[doc(hidden)]
-    pub http_method: std::option::Option<std::string::String>,
+    pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>The request's user agent string.</p>
     #[doc(hidden)]
-    pub user_agent: std::option::Option<std::string::String>,
+    pub user_agent: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the requestor.</p>
     #[doc(hidden)]
-    pub client_ip: std::option::Option<std::string::String>,
+    pub client_ip: ::std::option::Option<::std::string::String>,
 }
 impl Http {
     /// <p>The request URL.</p>
-    pub fn http_url(&self) -> std::option::Option<&str> {
+    pub fn http_url(&self) -> ::std::option::Option<&str> {
         self.http_url.as_deref()
     }
     /// <p>The response status.</p>
-    pub fn http_status(&self) -> std::option::Option<i32> {
+    pub fn http_status(&self) -> ::std::option::Option<i32> {
         self.http_status
     }
     /// <p>The request method.</p>
-    pub fn http_method(&self) -> std::option::Option<&str> {
+    pub fn http_method(&self) -> ::std::option::Option<&str> {
         self.http_method.as_deref()
     }
     /// <p>The request's user agent string.</p>
-    pub fn user_agent(&self) -> std::option::Option<&str> {
+    pub fn user_agent(&self) -> ::std::option::Option<&str> {
         self.user_agent.as_deref()
     }
     /// <p>The IP address of the requestor.</p>
-    pub fn client_ip(&self) -> std::option::Option<&str> {
+    pub fn client_ip(&self) -> ::std::option::Option<&str> {
         self.client_ip.as_deref()
     }
 }
@@ -51,62 +51,64 @@ impl Http {
 
 /// A builder for [`Http`](crate::types::Http).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpBuilder {
-    pub(crate) http_url: std::option::Option<std::string::String>,
-    pub(crate) http_status: std::option::Option<i32>,
-    pub(crate) http_method: std::option::Option<std::string::String>,
-    pub(crate) user_agent: std::option::Option<std::string::String>,
-    pub(crate) client_ip: std::option::Option<std::string::String>,
+    pub(crate) http_url: ::std::option::Option<::std::string::String>,
+    pub(crate) http_status: ::std::option::Option<i32>,
+    pub(crate) http_method: ::std::option::Option<::std::string::String>,
+    pub(crate) user_agent: ::std::option::Option<::std::string::String>,
+    pub(crate) client_ip: ::std::option::Option<::std::string::String>,
 }
 impl HttpBuilder {
     /// <p>The request URL.</p>
-    pub fn http_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.http_url = Some(input.into());
+    pub fn http_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.http_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request URL.</p>
-    pub fn set_http_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_http_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_url = input;
         self
     }
     /// <p>The response status.</p>
     pub fn http_status(mut self, input: i32) -> Self {
-        self.http_status = Some(input);
+        self.http_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The response status.</p>
-    pub fn set_http_status(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_http_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_status = input;
         self
     }
     /// <p>The request method.</p>
-    pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
-        self.http_method = Some(input.into());
+    pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.http_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request method.</p>
-    pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_method = input;
         self
     }
     /// <p>The request's user agent string.</p>
-    pub fn user_agent(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_agent = Some(input.into());
+    pub fn user_agent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_agent = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request's user agent string.</p>
-    pub fn set_user_agent(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_agent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_agent = input;
         self
     }
     /// <p>The IP address of the requestor.</p>
-    pub fn client_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_ip = Some(input.into());
+    pub fn client_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of the requestor.</p>
-    pub fn set_client_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_ip = input;
         self
     }

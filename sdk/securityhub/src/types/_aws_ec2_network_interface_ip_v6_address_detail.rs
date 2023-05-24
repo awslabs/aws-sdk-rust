@@ -2,15 +2,15 @@
 
 /// <p>Provides information about an IPV6 address that is associated with the network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceIpV6AddressDetail {
     /// <p>The IPV6 address.</p>
     #[doc(hidden)]
-    pub ip_v6_address: std::option::Option<std::string::String>,
+    pub ip_v6_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfaceIpV6AddressDetail {
     /// <p>The IPV6 address.</p>
-    pub fn ip_v6_address(&self) -> std::option::Option<&str> {
+    pub fn ip_v6_address(&self) -> ::std::option::Option<&str> {
         self.ip_v6_address.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl AwsEc2NetworkInterfaceIpV6AddressDetail {
 
 /// A builder for [`AwsEc2NetworkInterfaceIpV6AddressDetail`](crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2NetworkInterfaceIpV6AddressDetailBuilder {
-    pub(crate) ip_v6_address: std::option::Option<std::string::String>,
+    pub(crate) ip_v6_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfaceIpV6AddressDetailBuilder {
     /// <p>The IPV6 address.</p>
-    pub fn ip_v6_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_v6_address = Some(input.into());
+    pub fn ip_v6_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ip_v6_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPV6 address.</p>
-    pub fn set_ip_v6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_v6_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ip_v6_address = input;
         self
     }

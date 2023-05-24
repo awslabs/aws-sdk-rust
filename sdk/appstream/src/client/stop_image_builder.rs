@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopImageBuilder`](crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder::set_name): <p>The name of the image builder.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_image_builder::builders::StopImageBuilderFluentBuilder::set_name): <p>The name of the image builder.</p>
     /// - On success, responds with [`StopImageBuilderOutput`](crate::operation::stop_image_builder::StopImageBuilderOutput) with field(s):
     ///   - [`image_builder(Option<ImageBuilder>)`](crate::operation::stop_image_builder::StopImageBuilderOutput::image_builder): <p>Information about the image builder.</p>
     /// - On failure, responds with [`SdkError<StopImageBuilderError>`](crate::operation::stop_image_builder::StopImageBuilderError)

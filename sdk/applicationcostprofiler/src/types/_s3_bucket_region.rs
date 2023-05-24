@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum S3BucketRegion {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum S3BucketRegion {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for S3BucketRegion {
+impl ::std::convert::From<&str> for S3BucketRegion {
     fn from(s: &str) -> Self {
         match s {
             "af-south-1" => S3BucketRegion::AfSouth1,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for S3BucketRegion {
         }
     }
 }
-impl std::str::FromStr for S3BucketRegion {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for S3BucketRegion {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3BucketRegion::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(S3BucketRegion::from(s))
     }
 }
 impl S3BucketRegion {
@@ -96,7 +96,7 @@ impl S3BucketRegion {
         &["af-south-1", "ap-east-1", "eu-south-1", "me-south-1"]
     }
 }
-impl AsRef<str> for S3BucketRegion {
+impl ::std::convert::AsRef<str> for S3BucketRegion {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

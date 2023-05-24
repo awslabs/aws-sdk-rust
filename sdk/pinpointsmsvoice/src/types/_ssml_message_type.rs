@@ -2,29 +2,29 @@
 
 /// An object that defines a message that contains SSML-formatted text.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmlMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     #[doc(hidden)]
-    pub language_code: std::option::Option<std::string::String>,
+    pub language_code: ::std::option::Option<::std::string::String>,
     /// The SSML-formatted text to deliver to the recipient.
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
     #[doc(hidden)]
-    pub voice_id: std::option::Option<std::string::String>,
+    pub voice_id: ::std::option::Option<::std::string::String>,
 }
 impl SsmlMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> ::std::option::Option<&str> {
         self.language_code.as_deref()
     }
     /// The SSML-formatted text to deliver to the recipient.
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
-    pub fn voice_id(&self) -> std::option::Option<&str> {
+    pub fn voice_id(&self) -> ::std::option::Option<&str> {
         self.voice_id.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl SsmlMessageType {
 
 /// A builder for [`SsmlMessageType`](crate::types::SsmlMessageType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SsmlMessageTypeBuilder {
-    pub(crate) language_code: std::option::Option<std::string::String>,
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) voice_id: std::option::Option<std::string::String>,
+    pub(crate) language_code: ::std::option::Option<::std::string::String>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) voice_id: ::std::option::Option<::std::string::String>,
 }
 impl SsmlMessageTypeBuilder {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language_code = Some(input.into());
+    pub fn language_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.language_code = input;
         self
     }
     /// The SSML-formatted text to deliver to the recipient.
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// The SSML-formatted text to deliver to the recipient.
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
-    pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.voice_id = Some(input.into());
+    pub fn voice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.voice_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
-    pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_voice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.voice_id = input;
         self
     }

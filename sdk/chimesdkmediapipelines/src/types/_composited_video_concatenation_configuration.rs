@@ -2,15 +2,15 @@
 
 /// <p>The composited video configuration object for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompositedVideoConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ArtifactsConcatenationState>,
+    pub state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
 impl CompositedVideoConcatenationConfiguration {
     /// <p>Enables or disables the configuration object.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ArtifactsConcatenationState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ArtifactsConcatenationState> {
         self.state.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl CompositedVideoConcatenationConfiguration {
 
 /// A builder for [`CompositedVideoConcatenationConfiguration`](crate::types::CompositedVideoConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CompositedVideoConcatenationConfigurationBuilder {
-    pub(crate) state: std::option::Option<crate::types::ArtifactsConcatenationState>,
+    pub(crate) state: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
 }
 impl CompositedVideoConcatenationConfigurationBuilder {
     /// <p>Enables or disables the configuration object.</p>
     pub fn state(mut self, input: crate::types::ArtifactsConcatenationState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables or disables the configuration object.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::ArtifactsConcatenationState>,
+        input: ::std::option::Option<crate::types::ArtifactsConcatenationState>,
     ) -> Self {
         self.state = input;
         self

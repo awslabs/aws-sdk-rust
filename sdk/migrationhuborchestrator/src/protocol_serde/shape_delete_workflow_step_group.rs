@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_workflow_step_group_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput,
@@ -17,7 +17,7 @@ pub fn de_delete_workflow_step_group_http_error(
     .map_err(
         crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -117,7 +117,7 @@ pub fn de_delete_workflow_step_group_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_workflow_step_group_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput,
@@ -127,7 +127,7 @@ pub fn de_delete_workflow_step_group_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_workflow_step_group::builders::DeleteWorkflowStepGroupOutputBuilder::default();
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })

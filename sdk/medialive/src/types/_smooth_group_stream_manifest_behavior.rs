@@ -38,13 +38,13 @@
 /// Smooth Group Stream Manifest Behavior
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SmoothGroupStreamManifestBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SmoothGroupStreamManifestBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SmoothGroupStreamManifestBehavior {
+impl ::std::convert::From<&str> for SmoothGroupStreamManifestBehavior {
     fn from(s: &str) -> Self {
         match s {
             "DO_NOT_SEND" => SmoothGroupStreamManifestBehavior::DoNotSend,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SmoothGroupStreamManifestBehavior {
         }
     }
 }
-impl std::str::FromStr for SmoothGroupStreamManifestBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SmoothGroupStreamManifestBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SmoothGroupStreamManifestBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SmoothGroupStreamManifestBehavior::from(s))
     }
 }
 impl SmoothGroupStreamManifestBehavior {
@@ -86,7 +86,7 @@ impl SmoothGroupStreamManifestBehavior {
         &["DO_NOT_SEND", "SEND"]
     }
 }
-impl AsRef<str> for SmoothGroupStreamManifestBehavior {
+impl ::std::convert::AsRef<str> for SmoothGroupStreamManifestBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

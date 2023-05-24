@@ -2,15 +2,15 @@
 
 /// <p>Container for S3 Glacier job parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
     #[doc(hidden)]
-    pub tier: std::option::Option<crate::types::Tier>,
+    pub tier: ::std::option::Option<crate::types::Tier>,
 }
 impl GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::types::Tier> {
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
         self.tier.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl GlacierJobParameters {
 
 /// A builder for [`GlacierJobParameters`](crate::types::GlacierJobParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlacierJobParametersBuilder {
-    pub(crate) tier: std::option::Option<crate::types::Tier>,
+    pub(crate) tier: ::std::option::Option<crate::types::Tier>,
 }
 impl GlacierJobParametersBuilder {
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
-        self.tier = Some(input);
+        self.tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    pub fn set_tier(mut self, input: std::option::Option<crate::types::Tier>) -> Self {
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
         self.tier = input;
         self
     }

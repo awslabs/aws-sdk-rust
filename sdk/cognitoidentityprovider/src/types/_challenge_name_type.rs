@@ -46,13 +46,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ChallengeNameType {
     #[allow(missing_docs)] // documentation missing in model
@@ -78,7 +78,7 @@ pub enum ChallengeNameType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ChallengeNameType {
+impl ::std::convert::From<&str> for ChallengeNameType {
     fn from(s: &str) -> Self {
         match s {
             "ADMIN_NO_SRP_AUTH" => ChallengeNameType::AdminNoSrpAuth,
@@ -97,11 +97,11 @@ impl std::convert::From<&str> for ChallengeNameType {
         }
     }
 }
-impl std::str::FromStr for ChallengeNameType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ChallengeNameType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChallengeNameType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ChallengeNameType::from(s))
     }
 }
 impl ChallengeNameType {
@@ -137,7 +137,7 @@ impl ChallengeNameType {
         ]
     }
 }
-impl AsRef<str> for ChallengeNameType {
+impl ::std::convert::AsRef<str> for ChallengeNameType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

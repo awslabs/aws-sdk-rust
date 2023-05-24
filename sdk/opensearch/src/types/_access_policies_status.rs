@@ -2,22 +2,22 @@
 
 /// <p>The configured access rules for the domain's search endpoint, and the current status of those rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPoliciesStatus {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<std::string::String>,
+    pub options: ::std::option::Option<::std::string::String>,
     /// <p>The status of the access policy for the domain.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AccessPoliciesStatus {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
-    pub fn options(&self) -> std::option::Option<&str> {
+    pub fn options(&self) -> ::std::option::Option<&str> {
         self.options.as_deref()
     }
     /// <p>The status of the access policy for the domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl AccessPoliciesStatus {
 
 /// A builder for [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessPoliciesStatusBuilder {
-    pub(crate) options: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AccessPoliciesStatusBuilder {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
-    pub fn options(mut self, input: impl Into<std::string::String>) -> Self {
-        self.options = Some(input.into());
+    pub fn options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.options = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
-    pub fn set_options(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.options = input;
         self
     }
     /// <p>The status of the access policy for the domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the access policy for the domain.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

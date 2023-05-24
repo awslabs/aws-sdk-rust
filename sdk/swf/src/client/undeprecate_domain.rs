@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UndeprecateDomain`](crate::operation::undeprecate_domain::builders::UndeprecateDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::undeprecate_domain::builders::UndeprecateDomainFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::undeprecate_domain::builders::UndeprecateDomainFluentBuilder::set_name): <p>The name of the domain of the deprecated workflow type.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::undeprecate_domain::builders::UndeprecateDomainFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::undeprecate_domain::builders::UndeprecateDomainFluentBuilder::set_name): <p>The name of the domain of the deprecated workflow type.</p>
     /// - On success, responds with [`UndeprecateDomainOutput`](crate::operation::undeprecate_domain::UndeprecateDomainOutput)
     /// - On failure, responds with [`SdkError<UndeprecateDomainError>`](crate::operation::undeprecate_domain::UndeprecateDomainError)
     pub fn undeprecate_domain(

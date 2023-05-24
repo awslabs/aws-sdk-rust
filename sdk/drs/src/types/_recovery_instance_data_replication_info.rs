@@ -2,71 +2,71 @@
 
 /// <p>Information about Data Replication</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInfo {
     /// <p>Data replication lag duration.</p>
     #[doc(hidden)]
-    pub lag_duration: std::option::Option<std::string::String>,
+    pub lag_duration: ::std::option::Option<::std::string::String>,
     /// <p>An estimate of when the data replication will be completed.</p>
     #[doc(hidden)]
-    pub eta_date_time: std::option::Option<std::string::String>,
+    pub eta_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The disks that should be replicated.</p>
     #[doc(hidden)]
-    pub replicated_disks: std::option::Option<
-        std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk>,
+    pub replicated_disks: ::std::option::Option<
+        ::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk>,
     >,
     /// <p>The state of the data replication.</p>
     #[doc(hidden)]
     pub data_replication_state:
-        std::option::Option<crate::types::RecoveryInstanceDataReplicationState>,
+        ::std::option::Option<crate::types::RecoveryInstanceDataReplicationState>,
     /// <p>Information about whether the data replication has been initiated.</p>
     #[doc(hidden)]
     pub data_replication_initiation:
-        std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
+        ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
     /// <p>Information about Data Replication</p>
     #[doc(hidden)]
     pub data_replication_error:
-        std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
+        ::std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
     /// <p>AWS Availability zone into which data is being replicated.</p>
     #[doc(hidden)]
-    pub staging_availability_zone: std::option::Option<std::string::String>,
+    pub staging_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDataReplicationInfo {
     /// <p>Data replication lag duration.</p>
-    pub fn lag_duration(&self) -> std::option::Option<&str> {
+    pub fn lag_duration(&self) -> ::std::option::Option<&str> {
         self.lag_duration.as_deref()
     }
     /// <p>An estimate of when the data replication will be completed.</p>
-    pub fn eta_date_time(&self) -> std::option::Option<&str> {
+    pub fn eta_date_time(&self) -> ::std::option::Option<&str> {
         self.eta_date_time.as_deref()
     }
     /// <p>The disks that should be replicated.</p>
     pub fn replicated_disks(
         &self,
-    ) -> std::option::Option<&[crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk]>
+    ) -> ::std::option::Option<&[crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk]>
     {
         self.replicated_disks.as_deref()
     }
     /// <p>The state of the data replication.</p>
     pub fn data_replication_state(
         &self,
-    ) -> std::option::Option<&crate::types::RecoveryInstanceDataReplicationState> {
+    ) -> ::std::option::Option<&crate::types::RecoveryInstanceDataReplicationState> {
         self.data_replication_state.as_ref()
     }
     /// <p>Information about whether the data replication has been initiated.</p>
     pub fn data_replication_initiation(
         &self,
-    ) -> std::option::Option<&crate::types::RecoveryInstanceDataReplicationInitiation> {
+    ) -> ::std::option::Option<&crate::types::RecoveryInstanceDataReplicationInitiation> {
         self.data_replication_initiation.as_ref()
     }
     /// <p>Information about Data Replication</p>
     pub fn data_replication_error(
         &self,
-    ) -> std::option::Option<&crate::types::RecoveryInstanceDataReplicationError> {
+    ) -> ::std::option::Option<&crate::types::RecoveryInstanceDataReplicationError> {
         self.data_replication_error.as_ref()
     }
     /// <p>AWS Availability zone into which data is being replicated.</p>
-    pub fn staging_availability_zone(&self) -> std::option::Option<&str> {
+    pub fn staging_availability_zone(&self) -> ::std::option::Option<&str> {
         self.staging_availability_zone.as_deref()
     }
 }
@@ -79,39 +79,47 @@ impl RecoveryInstanceDataReplicationInfo {
 
 /// A builder for [`RecoveryInstanceDataReplicationInfo`](crate::types::RecoveryInstanceDataReplicationInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecoveryInstanceDataReplicationInfoBuilder {
-    pub(crate) lag_duration: std::option::Option<std::string::String>,
-    pub(crate) eta_date_time: std::option::Option<std::string::String>,
-    pub(crate) replicated_disks: std::option::Option<
-        std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk>,
+    pub(crate) lag_duration: ::std::option::Option<::std::string::String>,
+    pub(crate) eta_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) replicated_disks: ::std::option::Option<
+        ::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk>,
     >,
     pub(crate) data_replication_state:
-        std::option::Option<crate::types::RecoveryInstanceDataReplicationState>,
+        ::std::option::Option<crate::types::RecoveryInstanceDataReplicationState>,
     pub(crate) data_replication_initiation:
-        std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
+        ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
     pub(crate) data_replication_error:
-        std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
-    pub(crate) staging_availability_zone: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
+    pub(crate) staging_availability_zone: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDataReplicationInfoBuilder {
     /// <p>Data replication lag duration.</p>
-    pub fn lag_duration(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lag_duration = Some(input.into());
+    pub fn lag_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lag_duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Data replication lag duration.</p>
-    pub fn set_lag_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lag_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lag_duration = input;
         self
     }
     /// <p>An estimate of when the data replication will be completed.</p>
-    pub fn eta_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.eta_date_time = Some(input.into());
+    pub fn eta_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.eta_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An estimate of when the data replication will be completed.</p>
-    pub fn set_eta_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_eta_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.eta_date_time = input;
         self
     }
@@ -126,14 +134,14 @@ impl RecoveryInstanceDataReplicationInfoBuilder {
     ) -> Self {
         let mut v = self.replicated_disks.unwrap_or_default();
         v.push(input);
-        self.replicated_disks = Some(v);
+        self.replicated_disks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The disks that should be replicated.</p>
     pub fn set_replicated_disks(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInfoReplicatedDisk>,
         >,
     ) -> Self {
         self.replicated_disks = input;
@@ -144,13 +152,13 @@ impl RecoveryInstanceDataReplicationInfoBuilder {
         mut self,
         input: crate::types::RecoveryInstanceDataReplicationState,
     ) -> Self {
-        self.data_replication_state = Some(input);
+        self.data_replication_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the data replication.</p>
     pub fn set_data_replication_state(
         mut self,
-        input: std::option::Option<crate::types::RecoveryInstanceDataReplicationState>,
+        input: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationState>,
     ) -> Self {
         self.data_replication_state = input;
         self
@@ -160,13 +168,13 @@ impl RecoveryInstanceDataReplicationInfoBuilder {
         mut self,
         input: crate::types::RecoveryInstanceDataReplicationInitiation,
     ) -> Self {
-        self.data_replication_initiation = Some(input);
+        self.data_replication_initiation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about whether the data replication has been initiated.</p>
     pub fn set_data_replication_initiation(
         mut self,
-        input: std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
+        input: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationInitiation>,
     ) -> Self {
         self.data_replication_initiation = input;
         self
@@ -176,26 +184,29 @@ impl RecoveryInstanceDataReplicationInfoBuilder {
         mut self,
         input: crate::types::RecoveryInstanceDataReplicationError,
     ) -> Self {
-        self.data_replication_error = Some(input);
+        self.data_replication_error = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about Data Replication</p>
     pub fn set_data_replication_error(
         mut self,
-        input: std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
+        input: ::std::option::Option<crate::types::RecoveryInstanceDataReplicationError>,
     ) -> Self {
         self.data_replication_error = input;
         self
     }
     /// <p>AWS Availability zone into which data is being replicated.</p>
-    pub fn staging_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.staging_availability_zone = Some(input.into());
+    pub fn staging_availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.staging_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>AWS Availability zone into which data is being replicated.</p>
     pub fn set_staging_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.staging_availability_zone = input;
         self

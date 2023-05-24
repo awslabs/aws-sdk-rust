@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of a <code>UpdateApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApiCacheInput {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
-    pub api_id: std::option::Option<std::string::String>,
+    pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     #[doc(hidden)]
-    pub ttl: std::option::Option<i64>,
+    pub ttl: ::std::option::Option<i64>,
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub api_caching_behavior: std::option::Option<crate::types::ApiCachingBehavior>,
+    pub api_caching_behavior: ::std::option::Option<crate::types::ApiCachingBehavior>,
     /// <p>The cache instance type. Valid values are </p>
     /// <ul>
     /// <li> <p> <code>SMALL</code> </p> </li>
@@ -41,16 +41,16 @@ pub struct UpdateApiCacheInput {
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ApiCacheType>,
+    pub r#type: ::std::option::Option<crate::types::ApiCacheType>,
 }
 impl UpdateApiCacheInput {
     /// <p>The GraphQL API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
-    pub fn ttl(&self) -> std::option::Option<i64> {
+    pub fn ttl(&self) -> ::std::option::Option<i64> {
         self.ttl
     }
     /// <p>Caching behavior.</p>
@@ -58,7 +58,7 @@ impl UpdateApiCacheInput {
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
-    pub fn api_caching_behavior(&self) -> std::option::Option<&crate::types::ApiCachingBehavior> {
+    pub fn api_caching_behavior(&self) -> ::std::option::Option<&crate::types::ApiCachingBehavior> {
         self.api_caching_behavior.as_ref()
     }
     /// <p>The cache instance type. Valid values are </p>
@@ -83,7 +83,7 @@ impl UpdateApiCacheInput {
     /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ApiCacheType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApiCacheType> {
         self.r#type.as_ref()
     }
 }
@@ -96,33 +96,35 @@ impl UpdateApiCacheInput {
 
 /// A builder for [`UpdateApiCacheInput`](crate::operation::update_api_cache::UpdateApiCacheInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateApiCacheInputBuilder {
-    pub(crate) api_id: std::option::Option<std::string::String>,
-    pub(crate) ttl: std::option::Option<i64>,
-    pub(crate) api_caching_behavior: std::option::Option<crate::types::ApiCachingBehavior>,
-    pub(crate) r#type: std::option::Option<crate::types::ApiCacheType>,
+    pub(crate) api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ttl: ::std::option::Option<i64>,
+    pub(crate) api_caching_behavior: ::std::option::Option<crate::types::ApiCachingBehavior>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ApiCacheType>,
 }
 impl UpdateApiCacheInputBuilder {
     /// <p>The GraphQL API ID.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_id = Some(input.into());
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The GraphQL API ID.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn ttl(mut self, input: i64) -> Self {
-        self.ttl = Some(input);
+        self.ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
-    pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ttl = input;
         self
     }
@@ -132,7 +134,7 @@ impl UpdateApiCacheInputBuilder {
     /// <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li>
     /// </ul>
     pub fn api_caching_behavior(mut self, input: crate::types::ApiCachingBehavior) -> Self {
-        self.api_caching_behavior = Some(input);
+        self.api_caching_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Caching behavior.</p>
@@ -142,7 +144,7 @@ impl UpdateApiCacheInputBuilder {
     /// </ul>
     pub fn set_api_caching_behavior(
         mut self,
-        input: std::option::Option<crate::types::ApiCachingBehavior>,
+        input: ::std::option::Option<crate::types::ApiCachingBehavior>,
     ) -> Self {
         self.api_caching_behavior = input;
         self
@@ -170,7 +172,7 @@ impl UpdateApiCacheInputBuilder {
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ApiCacheType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cache instance type. Valid values are </p>
@@ -195,18 +197,18 @@ impl UpdateApiCacheInputBuilder {
     /// <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li>
     /// <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ApiCacheType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApiCacheType>) -> Self {
         self.r#type = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateApiCacheInput`](crate::operation::update_api_cache::UpdateApiCacheInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_api_cache::UpdateApiCacheInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_api_cache::UpdateApiCacheInput {
+        ::std::result::Result::Ok(crate::operation::update_api_cache::UpdateApiCacheInput {
             api_id: self.api_id,
             ttl: self.ttl,
             api_caching_behavior: self.api_caching_behavior,

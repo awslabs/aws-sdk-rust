@@ -2,42 +2,42 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPartsOutput {
     /// <p>The ID of the upload to which the parts are associated.</p>
     #[doc(hidden)]
-    pub multipart_upload_id: std::option::Option<std::string::String>,
+    pub multipart_upload_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
     #[doc(hidden)]
-    pub vault_arn: std::option::Option<std::string::String>,
+    pub vault_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     #[doc(hidden)]
-    pub archive_description: std::option::Option<std::string::String>,
+    pub archive_description: ::std::option::Option<::std::string::String>,
     /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
     #[doc(hidden)]
     pub part_size_in_bytes: i64,
     /// <p>The UTC time at which the multipart upload was initiated.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<std::string::String>,
+    pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
     #[doc(hidden)]
-    pub parts: std::option::Option<std::vec::Vec<crate::types::PartListElement>>,
+    pub parts: ::std::option::Option<::std::vec::Vec<crate::types::PartListElement>>,
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPartsOutput {
     /// <p>The ID of the upload to which the parts are associated.</p>
-    pub fn multipart_upload_id(&self) -> std::option::Option<&str> {
+    pub fn multipart_upload_id(&self) -> ::std::option::Option<&str> {
         self.multipart_upload_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
-    pub fn vault_arn(&self) -> std::option::Option<&str> {
+    pub fn vault_arn(&self) -> ::std::option::Option<&str> {
         self.vault_arn.as_deref()
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    pub fn archive_description(&self) -> std::option::Option<&str> {
+    pub fn archive_description(&self) -> ::std::option::Option<&str> {
         self.archive_description.as_deref()
     }
     /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
@@ -45,19 +45,19 @@ impl ListPartsOutput {
         self.part_size_in_bytes
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<&str> {
         self.creation_date.as_deref()
     }
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
-    pub fn parts(&self) -> std::option::Option<&[crate::types::PartListElement]> {
+    pub fn parts(&self) -> ::std::option::Option<&[crate::types::PartListElement]> {
         self.parts.as_deref()
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPartsOutput {
+impl ::aws_http::request_id::RequestId for ListPartsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -71,71 +71,85 @@ impl ListPartsOutput {
 
 /// A builder for [`ListPartsOutput`](crate::operation::list_parts::ListPartsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPartsOutputBuilder {
-    pub(crate) multipart_upload_id: std::option::Option<std::string::String>,
-    pub(crate) vault_arn: std::option::Option<std::string::String>,
-    pub(crate) archive_description: std::option::Option<std::string::String>,
-    pub(crate) part_size_in_bytes: std::option::Option<i64>,
-    pub(crate) creation_date: std::option::Option<std::string::String>,
-    pub(crate) parts: std::option::Option<std::vec::Vec<crate::types::PartListElement>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) multipart_upload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) archive_description: ::std::option::Option<::std::string::String>,
+    pub(crate) part_size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) creation_date: ::std::option::Option<::std::string::String>,
+    pub(crate) parts: ::std::option::Option<::std::vec::Vec<crate::types::PartListElement>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPartsOutputBuilder {
     /// <p>The ID of the upload to which the parts are associated.</p>
-    pub fn multipart_upload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.multipart_upload_id = Some(input.into());
+    pub fn multipart_upload_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.multipart_upload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the upload to which the parts are associated.</p>
     pub fn set_multipart_upload_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.multipart_upload_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
-    pub fn vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vault_arn = Some(input.into());
+    pub fn vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vault_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the vault to which the multipart upload was initiated.</p>
-    pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vault_arn = input;
         self
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.archive_description = Some(input.into());
+    pub fn archive_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.archive_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
     pub fn set_archive_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.archive_description = input;
         self
     }
     /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
     pub fn part_size_in_bytes(mut self, input: i64) -> Self {
-        self.part_size_in_bytes = Some(input);
+        self.part_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The part size in bytes. This is the same value that you specified in the Initiate Multipart Upload request.</p>
-    pub fn set_part_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_part_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.part_size_in_bytes = input;
         self
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_date = Some(input.into());
+    pub fn creation_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_date = input;
         self
     }
@@ -147,24 +161,24 @@ impl ListPartsOutputBuilder {
     pub fn parts(mut self, input: crate::types::PartListElement) -> Self {
         let mut v = self.parts.unwrap_or_default();
         v.push(input);
-        self.parts = Some(v);
+        self.parts = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the part sizes of the multipart upload. Each object in the array contains a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.</p>
     pub fn set_parts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PartListElement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PartListElement>>,
     ) -> Self {
         self.parts = input;
         self
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that represents where to continue pagination of the results. You use the marker in a new List Parts request to obtain more jobs in the list. If there are no more parts, this value is <code>null</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

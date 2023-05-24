@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCoreNetwork`](crate::operation::delete_core_network::builders::DeleteCoreNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`core_network_id(impl Into<String>)`](crate::operation::delete_core_network::builders::DeleteCoreNetworkFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::delete_core_network::builders::DeleteCoreNetworkFluentBuilder::set_core_network_id): <p>The network ID of the deleted core network.</p>
+    ///   - [`core_network_id(impl ::std::convert::Into<String>)`](crate::operation::delete_core_network::builders::DeleteCoreNetworkFluentBuilder::core_network_id) / [`set_core_network_id(Option<String>)`](crate::operation::delete_core_network::builders::DeleteCoreNetworkFluentBuilder::set_core_network_id): <p>The network ID of the deleted core network.</p>
     /// - On success, responds with [`DeleteCoreNetworkOutput`](crate::operation::delete_core_network::DeleteCoreNetworkOutput) with field(s):
     ///   - [`core_network(Option<CoreNetwork>)`](crate::operation::delete_core_network::DeleteCoreNetworkOutput::core_network): <p>Information about the deleted core network.</p>
     /// - On failure, responds with [`SdkError<DeleteCoreNetworkError>`](crate::operation::delete_core_network::DeleteCoreNetworkError)

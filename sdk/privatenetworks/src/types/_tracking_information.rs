@@ -2,15 +2,15 @@
 
 /// <p>Information about tracking a shipment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingInformation {
     /// <p>The tracking number of the shipment.</p>
     #[doc(hidden)]
-    pub tracking_number: std::option::Option<std::string::String>,
+    pub tracking_number: ::std::option::Option<::std::string::String>,
 }
 impl TrackingInformation {
     /// <p>The tracking number of the shipment.</p>
-    pub fn tracking_number(&self) -> std::option::Option<&str> {
+    pub fn tracking_number(&self) -> ::std::option::Option<&str> {
         self.tracking_number.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl TrackingInformation {
 
 /// A builder for [`TrackingInformation`](crate::types::TrackingInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrackingInformationBuilder {
-    pub(crate) tracking_number: std::option::Option<std::string::String>,
+    pub(crate) tracking_number: ::std::option::Option<::std::string::String>,
 }
 impl TrackingInformationBuilder {
     /// <p>The tracking number of the shipment.</p>
-    pub fn tracking_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tracking_number = Some(input.into());
+    pub fn tracking_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.tracking_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tracking number of the shipment.</p>
-    pub fn set_tracking_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tracking_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.tracking_number = input;
         self
     }

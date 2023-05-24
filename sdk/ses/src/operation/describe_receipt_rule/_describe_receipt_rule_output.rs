@@ -2,20 +2,20 @@
 
 /// <p>Represents the details of a receipt rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReceiptRuleOutput {
     /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
     #[doc(hidden)]
-    pub rule: std::option::Option<crate::types::ReceiptRule>,
+    pub rule: ::std::option::Option<crate::types::ReceiptRule>,
     _request_id: Option<String>,
 }
 impl DescribeReceiptRuleOutput {
     /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
-    pub fn rule(&self) -> std::option::Option<&crate::types::ReceiptRule> {
+    pub fn rule(&self) -> ::std::option::Option<&crate::types::ReceiptRule> {
         self.rule.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReceiptRuleOutput {
+impl ::aws_http::request_id::RequestId for DescribeReceiptRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,21 @@ impl DescribeReceiptRuleOutput {
 
 /// A builder for [`DescribeReceiptRuleOutput`](crate::operation::describe_receipt_rule::DescribeReceiptRuleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReceiptRuleOutputBuilder {
-    pub(crate) rule: std::option::Option<crate::types::ReceiptRule>,
+    pub(crate) rule: ::std::option::Option<crate::types::ReceiptRule>,
     _request_id: Option<String>,
 }
 impl DescribeReceiptRuleOutputBuilder {
     /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
     pub fn rule(mut self, input: crate::types::ReceiptRule) -> Self {
-        self.rule = Some(input);
+        self.rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
-    pub fn set_rule(mut self, input: std::option::Option<crate::types::ReceiptRule>) -> Self {
+    pub fn set_rule(mut self, input: ::std::option::Option<crate::types::ReceiptRule>) -> Self {
         self.rule = input;
         self
     }

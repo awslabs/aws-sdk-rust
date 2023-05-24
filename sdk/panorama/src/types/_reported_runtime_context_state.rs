@@ -2,38 +2,38 @@
 
 /// <p>An application instance's state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportedRuntimeContextState {
     /// <p>The application's desired state.</p>
     #[doc(hidden)]
-    pub desired_state: std::option::Option<crate::types::DesiredState>,
+    pub desired_state: ::std::option::Option<crate::types::DesiredState>,
     /// <p>The device's name.</p>
     #[doc(hidden)]
-    pub runtime_context_name: std::option::Option<std::string::String>,
+    pub runtime_context_name: ::std::option::Option<::std::string::String>,
     /// <p>The application's reported status.</p>
     #[doc(hidden)]
-    pub device_reported_status: std::option::Option<crate::types::DeviceReportedStatus>,
+    pub device_reported_status: ::std::option::Option<crate::types::DeviceReportedStatus>,
     /// <p>When the device reported the application's state.</p>
     #[doc(hidden)]
-    pub device_reported_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub device_reported_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportedRuntimeContextState {
     /// <p>The application's desired state.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::types::DesiredState> {
+    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::DesiredState> {
         self.desired_state.as_ref()
     }
     /// <p>The device's name.</p>
-    pub fn runtime_context_name(&self) -> std::option::Option<&str> {
+    pub fn runtime_context_name(&self) -> ::std::option::Option<&str> {
         self.runtime_context_name.as_deref()
     }
     /// <p>The application's reported status.</p>
     pub fn device_reported_status(
         &self,
-    ) -> std::option::Option<&crate::types::DeviceReportedStatus> {
+    ) -> ::std::option::Option<&crate::types::DeviceReportedStatus> {
         self.device_reported_status.as_ref()
     }
     /// <p>When the device reported the application's state.</p>
-    pub fn device_reported_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn device_reported_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.device_reported_time.as_ref()
     }
 }
@@ -46,62 +46,67 @@ impl ReportedRuntimeContextState {
 
 /// A builder for [`ReportedRuntimeContextState`](crate::types::ReportedRuntimeContextState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportedRuntimeContextStateBuilder {
-    pub(crate) desired_state: std::option::Option<crate::types::DesiredState>,
-    pub(crate) runtime_context_name: std::option::Option<std::string::String>,
-    pub(crate) device_reported_status: std::option::Option<crate::types::DeviceReportedStatus>,
-    pub(crate) device_reported_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) desired_state: ::std::option::Option<crate::types::DesiredState>,
+    pub(crate) runtime_context_name: ::std::option::Option<::std::string::String>,
+    pub(crate) device_reported_status: ::std::option::Option<crate::types::DeviceReportedStatus>,
+    pub(crate) device_reported_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReportedRuntimeContextStateBuilder {
     /// <p>The application's desired state.</p>
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
-        self.desired_state = Some(input);
+        self.desired_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The application's desired state.</p>
     pub fn set_desired_state(
         mut self,
-        input: std::option::Option<crate::types::DesiredState>,
+        input: ::std::option::Option<crate::types::DesiredState>,
     ) -> Self {
         self.desired_state = input;
         self
     }
     /// <p>The device's name.</p>
-    pub fn runtime_context_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.runtime_context_name = Some(input.into());
+    pub fn runtime_context_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.runtime_context_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device's name.</p>
     pub fn set_runtime_context_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.runtime_context_name = input;
         self
     }
     /// <p>The application's reported status.</p>
     pub fn device_reported_status(mut self, input: crate::types::DeviceReportedStatus) -> Self {
-        self.device_reported_status = Some(input);
+        self.device_reported_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The application's reported status.</p>
     pub fn set_device_reported_status(
         mut self,
-        input: std::option::Option<crate::types::DeviceReportedStatus>,
+        input: ::std::option::Option<crate::types::DeviceReportedStatus>,
     ) -> Self {
         self.device_reported_status = input;
         self
     }
     /// <p>When the device reported the application's state.</p>
-    pub fn device_reported_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.device_reported_time = Some(input);
+    pub fn device_reported_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.device_reported_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the device reported the application's state.</p>
     pub fn set_device_reported_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.device_reported_time = input;
         self

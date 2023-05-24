@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateKmsKey`](crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_group_name(impl ::std::convert::Into<String>)`](crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::disassociate_kms_key::builders::DisassociateKmsKeyFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
     /// - On success, responds with [`DisassociateKmsKeyOutput`](crate::operation::disassociate_kms_key::DisassociateKmsKeyOutput)
     /// - On failure, responds with [`SdkError<DisassociateKmsKeyError>`](crate::operation::disassociate_kms_key::DisassociateKmsKeyError)
     pub fn disassociate_kms_key(

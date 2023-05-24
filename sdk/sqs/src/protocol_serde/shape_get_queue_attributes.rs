@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_queue_attributes_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_queue_attributes::GetQueueAttributesOutput,
@@ -15,7 +15,7 @@ pub fn de_get_queue_attributes_http_error(
         _response_body,
     )
     .map_err(crate::operation::get_queue_attributes::GetQueueAttributesError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -52,7 +52,7 @@ pub fn de_get_queue_attributes_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_queue_attributes_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_queue_attributes::GetQueueAttributesOutput,
@@ -67,7 +67,7 @@ pub fn de_get_queue_attributes_http_response_with_props(
         )
         .map_err(crate::operation::get_queue_attributes::GetQueueAttributesError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -79,16 +79,16 @@ pub fn de_get_queue_attributes(
     mut builder: crate::operation::get_queue_attributes::builders::GetQueueAttributesOutputBuilder,
 ) -> Result<
     crate::operation::get_queue_attributes::builders::GetQueueAttributesOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetQueueAttributesResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetQueueAttributesResponse got {:?}",
             start_el
         )));
@@ -96,7 +96,7 @@ pub fn de_get_queue_attributes(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetQueueAttributesResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected GetQueueAttributesResult got {:?}",
                 start_el
             )));
@@ -106,7 +106,7 @@ pub fn de_get_queue_attributes(
             s if s.matches("Attribute") /* Attributes com.amazonaws.sqs.synthetic#GetQueueAttributesOutput$Attributes */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::collections::HashMap<crate::types::QueueAttributeName, std::string::String>, aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut map_2 = builder.attributes.take().unwrap_or_default();
                                             crate::protocol_serde::shape_queue_attribute_map::de_queue_attribute_map_entry(&mut tag, &mut map_2)?;
                                             map_2
@@ -121,7 +121,7 @@ pub fn de_get_queue_attributes(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected GetQueueAttributesResult tag",
         ));
     };

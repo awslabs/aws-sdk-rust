@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveTags`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_resource_id): <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_resource_id): <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::remove_tags::builders::RemoveTagsFluentBuilder::set_tag_keys): <p>A list of tag keys to remove from the resource.</p>
     /// - On success, responds with [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput)
     /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::operation::remove_tags::RemoveTagsError)

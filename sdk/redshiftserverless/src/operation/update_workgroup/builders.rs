@@ -6,56 +6,63 @@ pub use crate::operation::update_workgroup::_update_workgroup_input::UpdateWorkg
 /// Fluent builder constructing a request to `UpdateWorkgroup`.
 ///
 /// <p>Updates a workgroup with the specified configuration settings. You can't update multiple parameters in one request. For example, you can update <code>baseCapacity</code> or <code>port</code> in a single request, but you can't update both in the same request.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkgroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_workgroup::builders::UpdateWorkgroupInputBuilder,
 }
 impl UpdateWorkgroupFluentBuilder {
     /// Creates a new `UpdateWorkgroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_workgroup::UpdateWorkgroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_workgroup::UpdateWorkgroupError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workgroup::UpdateWorkgroupError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_workgroup::UpdateWorkgroupOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_workgroup::UpdateWorkgroupError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workgroup::UpdateWorkgroupError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +75,27 @@ impl UpdateWorkgroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_workgroup::UpdateWorkgroupOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_workgroup::UpdateWorkgroupError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workgroup::UpdateWorkgroupError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
-    pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workgroup_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
         self
     }
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
-    pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workgroup_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_workgroup_name(input);
         self
     }
@@ -90,7 +105,7 @@ impl UpdateWorkgroupFluentBuilder {
         self
     }
     /// <p>The new base data warehouse capacity in Redshift Processing Units (RPUs).</p>
-    pub fn set_base_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_base_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_base_capacity(input);
         self
     }
@@ -100,7 +115,7 @@ impl UpdateWorkgroupFluentBuilder {
         self
     }
     /// <p>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
-    pub fn set_enhanced_vpc_routing(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enhanced_vpc_routing(input);
         self
     }
@@ -116,7 +131,7 @@ impl UpdateWorkgroupFluentBuilder {
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub fn set_config_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
     ) -> Self {
         self.inner = self.inner.set_config_parameters(input);
         self
@@ -127,7 +142,7 @@ impl UpdateWorkgroupFluentBuilder {
         self
     }
     /// <p>A value that specifies whether the workgroup can be accessible from a public network.</p>
-    pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publicly_accessible(input);
         self
     }
@@ -136,14 +151,14 @@ impl UpdateWorkgroupFluentBuilder {
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
     /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
     /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
@@ -153,14 +168,17 @@ impl UpdateWorkgroupFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
@@ -171,7 +189,7 @@ impl UpdateWorkgroupFluentBuilder {
         self
     }
     /// <p>The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }

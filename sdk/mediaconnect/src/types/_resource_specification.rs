@@ -2,22 +2,22 @@
 
 /// A definition of what is being billed for, including the type and amount.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSpecification {
     /// The amount of outbound bandwidth that is discounted in the offering.
     #[doc(hidden)]
-    pub reserved_bitrate: std::option::Option<i32>,
+    pub reserved_bitrate: ::std::option::Option<i32>,
     /// The type of resource and the unit that is being billed for.
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl ResourceSpecification {
     /// The amount of outbound bandwidth that is discounted in the offering.
-    pub fn reserved_bitrate(&self) -> std::option::Option<i32> {
+    pub fn reserved_bitrate(&self) -> ::std::option::Option<i32> {
         self.reserved_bitrate
     }
     /// The type of resource and the unit that is being billed for.
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ResourceSpecification {
 
 /// A builder for [`ResourceSpecification`](crate::types::ResourceSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceSpecificationBuilder {
-    pub(crate) reserved_bitrate: std::option::Option<i32>,
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
+    pub(crate) reserved_bitrate: ::std::option::Option<i32>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl ResourceSpecificationBuilder {
     /// The amount of outbound bandwidth that is discounted in the offering.
     pub fn reserved_bitrate(mut self, input: i32) -> Self {
-        self.reserved_bitrate = Some(input);
+        self.reserved_bitrate = ::std::option::Option::Some(input);
         self
     }
     /// The amount of outbound bandwidth that is discounted in the offering.
-    pub fn set_reserved_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_reserved_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reserved_bitrate = input;
         self
     }
     /// The type of resource and the unit that is being billed for.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// The type of resource and the unit that is being billed for.
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self

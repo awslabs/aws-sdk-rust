@@ -2,22 +2,22 @@
 
 /// <p>Details about the AWS Lake Formation resource (Table or Database) included in the AWS Lake Formation data permission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfResourceDetails {
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
     #[doc(hidden)]
-    pub database: std::option::Option<crate::types::DatabaseLfTagPolicy>,
+    pub database: ::std::option::Option<crate::types::DatabaseLfTagPolicy>,
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
     #[doc(hidden)]
-    pub table: std::option::Option<crate::types::TableLfTagPolicy>,
+    pub table: ::std::option::Option<crate::types::TableLfTagPolicy>,
 }
 impl LfResourceDetails {
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
-    pub fn database(&self) -> std::option::Option<&crate::types::DatabaseLfTagPolicy> {
+    pub fn database(&self) -> ::std::option::Option<&crate::types::DatabaseLfTagPolicy> {
         self.database.as_ref()
     }
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
-    pub fn table(&self) -> std::option::Option<&crate::types::TableLfTagPolicy> {
+    pub fn table(&self) -> ::std::option::Option<&crate::types::TableLfTagPolicy> {
         self.table.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl LfResourceDetails {
 
 /// A builder for [`LfResourceDetails`](crate::types::LfResourceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LfResourceDetailsBuilder {
-    pub(crate) database: std::option::Option<crate::types::DatabaseLfTagPolicy>,
-    pub(crate) table: std::option::Option<crate::types::TableLfTagPolicy>,
+    pub(crate) database: ::std::option::Option<crate::types::DatabaseLfTagPolicy>,
+    pub(crate) table: ::std::option::Option<crate::types::TableLfTagPolicy>,
 }
 impl LfResourceDetailsBuilder {
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
     pub fn database(mut self, input: crate::types::DatabaseLfTagPolicy) -> Self {
-        self.database = Some(input);
+        self.database = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
     pub fn set_database(
         mut self,
-        input: std::option::Option<crate::types::DatabaseLfTagPolicy>,
+        input: ::std::option::Option<crate::types::DatabaseLfTagPolicy>,
     ) -> Self {
         self.database = input;
         self
     }
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
     pub fn table(mut self, input: crate::types::TableLfTagPolicy) -> Self {
-        self.table = Some(input);
+        self.table = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
-    pub fn set_table(mut self, input: std::option::Option<crate::types::TableLfTagPolicy>) -> Self {
+    pub fn set_table(
+        mut self,
+        input: ::std::option::Option<crate::types::TableLfTagPolicy>,
+    ) -> Self {
         self.table = input;
         self
     }

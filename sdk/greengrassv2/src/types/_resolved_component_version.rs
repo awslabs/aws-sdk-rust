@@ -2,20 +2,20 @@
 
 /// <p>Contains information about a component version that is compatible to run on a Greengrass core device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolvedComponentVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
     #[doc(hidden)]
-    pub component_name: std::option::Option<std::string::String>,
+    pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
     #[doc(hidden)]
-    pub component_version: std::option::Option<std::string::String>,
+    pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The recipe of the component version.</p>
     #[doc(hidden)]
-    pub recipe: std::option::Option<aws_smithy_types::Blob>,
+    pub recipe: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> – This component version is available and recommended for use.</p> </li>
@@ -23,26 +23,26 @@ pub struct ResolvedComponentVersion {
     /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub vendor_guidance: std::option::Option<crate::types::VendorGuidance>,
+    pub vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ResolvedComponentVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> std::option::Option<&str> {
+    pub fn component_version(&self) -> ::std::option::Option<&str> {
         self.component_version.as_deref()
     }
     /// <p>The recipe of the component version.</p>
-    pub fn recipe(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn recipe(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.recipe.as_ref()
     }
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
@@ -51,11 +51,11 @@ impl ResolvedComponentVersion {
     /// <li> <p> <code>DISCONTINUED</code> – This component version has been discontinued by its publisher. You can deploy this component version, but we recommend that you use a different version of this component.</p> </li>
     /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
-    pub fn vendor_guidance(&self) -> std::option::Option<&crate::types::VendorGuidance> {
+    pub fn vendor_guidance(&self) -> ::std::option::Option<&crate::types::VendorGuidance> {
         self.vendor_guidance.as_ref()
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -68,56 +68,67 @@ impl ResolvedComponentVersion {
 
 /// A builder for [`ResolvedComponentVersion`](crate::types::ResolvedComponentVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResolvedComponentVersionBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) component_name: std::option::Option<std::string::String>,
-    pub(crate) component_version: std::option::Option<std::string::String>,
-    pub(crate) recipe: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) vendor_guidance: std::option::Option<crate::types::VendorGuidance>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) component_version: ::std::option::Option<::std::string::String>,
+    pub(crate) recipe: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) vendor_guidance: ::std::option::Option<crate::types::VendorGuidance>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ResolvedComponentVersionBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_name = Some(input.into());
+    pub fn component_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_name = input;
         self
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_version = Some(input.into());
+    pub fn component_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the component.</p>
     pub fn set_component_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.component_version = input;
         self
     }
     /// <p>The recipe of the component version.</p>
-    pub fn recipe(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.recipe = Some(input);
+    pub fn recipe(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.recipe = ::std::option::Option::Some(input);
         self
     }
     /// <p>The recipe of the component version.</p>
-    pub fn set_recipe(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_recipe(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.recipe = input;
         self
     }
@@ -128,7 +139,7 @@ impl ResolvedComponentVersionBuilder {
     /// <li> <p> <code>DELETED</code> – This component version has been deleted by its publisher, so you can't deploy it. If you have any existing deployments that specify this component version, those deployments will fail.</p> </li>
     /// </ul>
     pub fn vendor_guidance(mut self, input: crate::types::VendorGuidance) -> Self {
-        self.vendor_guidance = Some(input);
+        self.vendor_guidance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The vendor guidance state for the component version. This state indicates whether the component version has any issues that you should consider before you deploy it. The vendor guidance state can be:</p>
@@ -139,18 +150,18 @@ impl ResolvedComponentVersionBuilder {
     /// </ul>
     pub fn set_vendor_guidance(
         mut self,
-        input: std::option::Option<crate::types::VendorGuidance>,
+        input: ::std::option::Option<crate::types::VendorGuidance>,
     ) -> Self {
         self.vendor_guidance = input;
         self
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that communicates details about the vendor guidance state of the component version. This message communicates why a component version is discontinued or deleted.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

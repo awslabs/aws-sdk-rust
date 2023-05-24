@@ -2,15 +2,15 @@
 
 /// <p>Hardware specifications for the service that you want recommendations for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSpecification {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
     #[doc(hidden)]
-    pub ec2_specification: std::option::Option<crate::types::Ec2Specification>,
+    pub ec2_specification: ::std::option::Option<crate::types::Ec2Specification>,
 }
 impl ServiceSpecification {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
-    pub fn ec2_specification(&self) -> std::option::Option<&crate::types::Ec2Specification> {
+    pub fn ec2_specification(&self) -> ::std::option::Option<&crate::types::Ec2Specification> {
         self.ec2_specification.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ServiceSpecification {
 
 /// A builder for [`ServiceSpecification`](crate::types::ServiceSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceSpecificationBuilder {
-    pub(crate) ec2_specification: std::option::Option<crate::types::Ec2Specification>,
+    pub(crate) ec2_specification: ::std::option::Option<crate::types::Ec2Specification>,
 }
 impl ServiceSpecificationBuilder {
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
     pub fn ec2_specification(mut self, input: crate::types::Ec2Specification) -> Self {
-        self.ec2_specification = Some(input);
+        self.ec2_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.</p>
     pub fn set_ec2_specification(
         mut self,
-        input: std::option::Option<crate::types::Ec2Specification>,
+        input: ::std::option::Option<crate::types::Ec2Specification>,
     ) -> Self {
         self.ec2_specification = input;
         self

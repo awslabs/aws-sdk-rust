@@ -2,22 +2,22 @@
 
 /// <p>Contains details of a coverage string filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
     #[doc(hidden)]
-    pub comparison: std::option::Option<crate::types::CoverageStringComparison>,
+    pub comparison: ::std::option::Option<crate::types::CoverageStringComparison>,
     /// <p>The value to compare strings on.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl CoverageStringFilter {
     /// <p>The operator to compare strings on.</p>
-    pub fn comparison(&self) -> std::option::Option<&crate::types::CoverageStringComparison> {
+    pub fn comparison(&self) -> ::std::option::Option<&crate::types::CoverageStringComparison> {
         self.comparison.as_ref()
     }
     /// <p>The value to compare strings on.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl CoverageStringFilter {
 
 /// A builder for [`CoverageStringFilter`](crate::types::CoverageStringFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoverageStringFilterBuilder {
-    pub(crate) comparison: std::option::Option<crate::types::CoverageStringComparison>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) comparison: ::std::option::Option<crate::types::CoverageStringComparison>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl CoverageStringFilterBuilder {
     /// <p>The operator to compare strings on.</p>
     pub fn comparison(mut self, input: crate::types::CoverageStringComparison) -> Self {
-        self.comparison = Some(input);
+        self.comparison = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator to compare strings on.</p>
     pub fn set_comparison(
         mut self,
-        input: std::option::Option<crate::types::CoverageStringComparison>,
+        input: ::std::option::Option<crate::types::CoverageStringComparison>,
     ) -> Self {
         self.comparison = input;
         self
     }
     /// <p>The value to compare strings on.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to compare strings on.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

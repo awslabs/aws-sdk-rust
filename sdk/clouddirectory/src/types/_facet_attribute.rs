@@ -2,42 +2,42 @@
 
 /// <p>An attribute that is associated with the <code>Facet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FacetAttribute {
     /// <p>The name of the facet attribute.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     #[doc(hidden)]
-    pub attribute_definition: std::option::Option<crate::types::FacetAttributeDefinition>,
+    pub attribute_definition: ::std::option::Option<crate::types::FacetAttributeDefinition>,
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     #[doc(hidden)]
-    pub attribute_reference: std::option::Option<crate::types::FacetAttributeReference>,
+    pub attribute_reference: ::std::option::Option<crate::types::FacetAttributeReference>,
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     #[doc(hidden)]
-    pub required_behavior: std::option::Option<crate::types::RequiredAttributeBehavior>,
+    pub required_behavior: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
 }
 impl FacetAttribute {
     /// <p>The name of the facet attribute.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn attribute_definition(
         &self,
-    ) -> std::option::Option<&crate::types::FacetAttributeDefinition> {
+    ) -> ::std::option::Option<&crate::types::FacetAttributeDefinition> {
         self.attribute_definition.as_ref()
     }
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn attribute_reference(
         &self,
-    ) -> std::option::Option<&crate::types::FacetAttributeReference> {
+    ) -> ::std::option::Option<&crate::types::FacetAttributeReference> {
         self.attribute_reference.as_ref()
     }
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     pub fn required_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::RequiredAttributeBehavior> {
+    ) -> ::std::option::Option<&crate::types::RequiredAttributeBehavior> {
         self.required_behavior.as_ref()
     }
 }
@@ -50,59 +50,61 @@ impl FacetAttribute {
 
 /// A builder for [`FacetAttribute`](crate::types::FacetAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FacetAttributeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) attribute_definition: std::option::Option<crate::types::FacetAttributeDefinition>,
-    pub(crate) attribute_reference: std::option::Option<crate::types::FacetAttributeReference>,
-    pub(crate) required_behavior: std::option::Option<crate::types::RequiredAttributeBehavior>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_definition: ::std::option::Option<crate::types::FacetAttributeDefinition>,
+    pub(crate) attribute_reference: ::std::option::Option<crate::types::FacetAttributeReference>,
+    pub(crate) required_behavior: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
 }
 impl FacetAttributeBuilder {
     /// <p>The name of the facet attribute.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the facet attribute.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn attribute_definition(mut self, input: crate::types::FacetAttributeDefinition) -> Self {
-        self.attribute_definition = Some(input);
+        self.attribute_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn set_attribute_definition(
         mut self,
-        input: std::option::Option<crate::types::FacetAttributeDefinition>,
+        input: ::std::option::Option<crate::types::FacetAttributeDefinition>,
     ) -> Self {
         self.attribute_definition = input;
         self
     }
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn attribute_reference(mut self, input: crate::types::FacetAttributeReference) -> Self {
-        self.attribute_reference = Some(input);
+        self.attribute_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn set_attribute_reference(
         mut self,
-        input: std::option::Option<crate::types::FacetAttributeReference>,
+        input: ::std::option::Option<crate::types::FacetAttributeReference>,
     ) -> Self {
         self.attribute_reference = input;
         self
     }
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     pub fn required_behavior(mut self, input: crate::types::RequiredAttributeBehavior) -> Self {
-        self.required_behavior = Some(input);
+        self.required_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
     pub fn set_required_behavior(
         mut self,
-        input: std::option::Option<crate::types::RequiredAttributeBehavior>,
+        input: ::std::option::Option<crate::types::RequiredAttributeBehavior>,
     ) -> Self {
         self.required_behavior = input;
         self

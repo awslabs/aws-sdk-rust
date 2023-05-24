@@ -2,7 +2,7 @@
 
 /// <p>Represents a condition for a device pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rule {
     /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
     /// <p>The supported operators for each attribute are provided in the following list.</p>
@@ -101,13 +101,13 @@ pub struct Rule {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub attribute: std::option::Option<crate::types::DeviceAttribute>,
+    pub attribute: ::std::option::Option<crate::types::DeviceAttribute>,
     /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::RuleOperator>,
+    pub operator: ::std::option::Option<crate::types::RuleOperator>,
     /// <p>The rule's value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl Rule {
     /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
@@ -206,15 +206,15 @@ impl Rule {
     /// <p>Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this filter is ignored.</p>
     /// </dd>
     /// </dl>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::DeviceAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<&crate::types::DeviceAttribute> {
         self.attribute.as_ref()
     }
     /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::RuleOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::RuleOperator> {
         self.operator.as_ref()
     }
     /// <p>The rule's value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -227,11 +227,13 @@ impl Rule {
 
 /// A builder for [`Rule`](crate::types::Rule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleBuilder {
-    pub(crate) attribute: std::option::Option<crate::types::DeviceAttribute>,
-    pub(crate) operator: std::option::Option<crate::types::RuleOperator>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) attribute: ::std::option::Option<crate::types::DeviceAttribute>,
+    pub(crate) operator: ::std::option::Option<crate::types::RuleOperator>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl RuleBuilder {
     /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
@@ -331,7 +333,7 @@ impl RuleBuilder {
     /// </dd>
     /// </dl>
     pub fn attribute(mut self, input: crate::types::DeviceAttribute) -> Self {
-        self.attribute = Some(input);
+        self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
@@ -432,28 +434,31 @@ impl RuleBuilder {
     /// </dl>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::DeviceAttribute>,
+        input: ::std::option::Option<crate::types::DeviceAttribute>,
     ) -> Self {
         self.attribute = input;
         self
     }
     /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
     pub fn operator(mut self, input: crate::types::RuleOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how Device Farm compares the rule's attribute to the value. For the operators that are supported by each attribute, see the attribute descriptions.</p>
-    pub fn set_operator(mut self, input: std::option::Option<crate::types::RuleOperator>) -> Self {
+    pub fn set_operator(
+        mut self,
+        input: ::std::option::Option<crate::types::RuleOperator>,
+    ) -> Self {
         self.operator = input;
         self
     }
     /// <p>The rule's value.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule's value.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

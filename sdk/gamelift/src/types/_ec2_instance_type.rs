@@ -150,13 +150,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Ec2InstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -390,7 +390,7 @@ pub enum Ec2InstanceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Ec2InstanceType {
+impl ::std::convert::From<&str> for Ec2InstanceType {
     fn from(s: &str) -> Self {
         match s {
             "c3.2xlarge" => Ec2InstanceType::C32xlarge,
@@ -513,11 +513,11 @@ impl std::convert::From<&str> for Ec2InstanceType {
         }
     }
 }
-impl std::str::FromStr for Ec2InstanceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Ec2InstanceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Ec2InstanceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Ec2InstanceType::from(s))
     }
 }
 impl Ec2InstanceType {
@@ -761,7 +761,7 @@ impl Ec2InstanceType {
         ]
     }
 }
-impl AsRef<str> for Ec2InstanceType {
+impl ::std::convert::AsRef<str> for Ec2InstanceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

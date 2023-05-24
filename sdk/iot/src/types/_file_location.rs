@@ -2,22 +2,22 @@
 
 /// <p>The location of the OTA update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileLocation {
     /// <p>The stream that contains the OTA update.</p>
     #[doc(hidden)]
-    pub stream: std::option::Option<crate::types::Stream>,
+    pub stream: ::std::option::Option<crate::types::Stream>,
     /// <p>The location of the updated firmware in S3.</p>
     #[doc(hidden)]
-    pub s3_location: std::option::Option<crate::types::S3Location>,
+    pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl FileLocation {
     /// <p>The stream that contains the OTA update.</p>
-    pub fn stream(&self) -> std::option::Option<&crate::types::Stream> {
+    pub fn stream(&self) -> ::std::option::Option<&crate::types::Stream> {
         self.stream.as_ref()
     }
     /// <p>The location of the updated firmware in S3.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl FileLocation {
 
 /// A builder for [`FileLocation`](crate::types::FileLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileLocationBuilder {
-    pub(crate) stream: std::option::Option<crate::types::Stream>,
-    pub(crate) s3_location: std::option::Option<crate::types::S3Location>,
+    pub(crate) stream: ::std::option::Option<crate::types::Stream>,
+    pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl FileLocationBuilder {
     /// <p>The stream that contains the OTA update.</p>
     pub fn stream(mut self, input: crate::types::Stream) -> Self {
-        self.stream = Some(input);
+        self.stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>The stream that contains the OTA update.</p>
-    pub fn set_stream(mut self, input: std::option::Option<crate::types::Stream>) -> Self {
+    pub fn set_stream(mut self, input: ::std::option::Option<crate::types::Stream>) -> Self {
         self.stream = input;
         self
     }
     /// <p>The location of the updated firmware in S3.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
-        self.s3_location = Some(input);
+        self.s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the updated firmware in S3.</p>
-    pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+    pub fn set_s3_location(
+        mut self,
+        input: ::std::option::Option<crate::types::S3Location>,
+    ) -> Self {
         self.s3_location = input;
         self
     }

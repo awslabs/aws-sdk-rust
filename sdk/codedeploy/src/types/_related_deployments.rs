@@ -2,26 +2,27 @@
 
 /// <p>Information about deployments related to the specified deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedDeployments {
     /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
     #[doc(hidden)]
-    pub auto_update_outdated_instances_root_deployment_id: std::option::Option<std::string::String>,
+    pub auto_update_outdated_instances_root_deployment_id:
+        ::std::option::Option<::std::string::String>,
     /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment.</p>
     #[doc(hidden)]
     pub auto_update_outdated_instances_deployment_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RelatedDeployments {
     /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
-    pub fn auto_update_outdated_instances_root_deployment_id(&self) -> std::option::Option<&str> {
+    pub fn auto_update_outdated_instances_root_deployment_id(&self) -> ::std::option::Option<&str> {
         self.auto_update_outdated_instances_root_deployment_id
             .as_deref()
     }
     /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment.</p>
     pub fn auto_update_outdated_instances_deployment_ids(
         &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.auto_update_outdated_instances_deployment_ids
             .as_deref()
     }
@@ -35,26 +36,29 @@ impl RelatedDeployments {
 
 /// A builder for [`RelatedDeployments`](crate::types::RelatedDeployments).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelatedDeploymentsBuilder {
     pub(crate) auto_update_outdated_instances_root_deployment_id:
-        std::option::Option<std::string::String>,
+        ::std::option::Option<::std::string::String>,
     pub(crate) auto_update_outdated_instances_deployment_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RelatedDeploymentsBuilder {
     /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
     pub fn auto_update_outdated_instances_root_deployment_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.auto_update_outdated_instances_root_deployment_id = Some(input.into());
+        self.auto_update_outdated_instances_root_deployment_id =
+            ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment ID of the root deployment that triggered this deployment.</p>
     pub fn set_auto_update_outdated_instances_root_deployment_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.auto_update_outdated_instances_root_deployment_id = input;
         self
@@ -66,19 +70,19 @@ impl RelatedDeploymentsBuilder {
     /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment.</p>
     pub fn auto_update_outdated_instances_deployment_ids(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self
             .auto_update_outdated_instances_deployment_ids
             .unwrap_or_default();
         v.push(input.into());
-        self.auto_update_outdated_instances_deployment_ids = Some(v);
+        self.auto_update_outdated_instances_deployment_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment.</p>
     pub fn set_auto_update_outdated_instances_deployment_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.auto_update_outdated_instances_deployment_ids = input;
         self

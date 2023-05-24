@@ -2,22 +2,22 @@
 
 /// <p>A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statement {
     /// <p>A collection of message objects.</p>
     #[doc(hidden)]
-    pub messages: std::option::Option<std::vec::Vec<crate::types::Message>>,
+    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
     #[doc(hidden)]
-    pub response_card: std::option::Option<std::string::String>,
+    pub response_card: ::std::option::Option<::std::string::String>,
 }
 impl Statement {
     /// <p>A collection of message objects.</p>
-    pub fn messages(&self) -> std::option::Option<&[crate::types::Message]> {
+    pub fn messages(&self) -> ::std::option::Option<&[crate::types::Message]> {
         self.messages.as_deref()
     }
     /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
-    pub fn response_card(&self) -> std::option::Option<&str> {
+    pub fn response_card(&self) -> ::std::option::Option<&str> {
         self.response_card.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl Statement {
 
 /// A builder for [`Statement`](crate::types::Statement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatementBuilder {
-    pub(crate) messages: std::option::Option<std::vec::Vec<crate::types::Message>>,
-    pub(crate) response_card: std::option::Option<std::string::String>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
+    pub(crate) response_card: ::std::option::Option<::std::string::String>,
 }
 impl StatementBuilder {
     /// Appends an item to `messages`.
@@ -44,24 +46,30 @@ impl StatementBuilder {
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input);
-        self.messages = Some(v);
+        self.messages = ::std::option::Option::Some(v);
         self
     }
     /// <p>A collection of message objects.</p>
     pub fn set_messages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Message>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Message>>,
     ) -> Self {
         self.messages = input;
         self
     }
     /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
-    pub fn response_card(mut self, input: impl Into<std::string::String>) -> Self {
-        self.response_card = Some(input.into());
+    pub fn response_card(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.response_card = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response. It substitutes all of the session attributes and slot values for placeholders in the response card. </p>
-    pub fn set_response_card(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_response_card(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.response_card = input;
         self
     }

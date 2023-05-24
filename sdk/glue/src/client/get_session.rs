@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSession`](crate::operation::get_session::builders::GetSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_id): <p>The ID of the session. </p>
-    ///   - [`request_origin(impl Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::request_origin) / [`set_request_origin(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_request_origin): <p>The origin of the request. </p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_id): <p>The ID of the session. </p>
+    ///   - [`request_origin(impl ::std::convert::Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::request_origin) / [`set_request_origin(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_request_origin): <p>The origin of the request. </p>
     /// - On success, responds with [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput) with field(s):
     ///   - [`session(Option<Session>)`](crate::operation::get_session::GetSessionOutput::session): <p>The session object is returned in the response.</p>
     /// - On failure, responds with [`SdkError<GetSessionError>`](crate::operation::get_session::GetSessionError)

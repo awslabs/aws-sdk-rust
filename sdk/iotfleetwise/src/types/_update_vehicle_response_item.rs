@@ -2,22 +2,22 @@
 
 /// <p>Information about the updated vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVehicleResponseItem {
     /// <p>The unique ID of the updated vehicle.</p>
     #[doc(hidden)]
-    pub vehicle_name: std::option::Option<std::string::String>,
+    pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVehicleResponseItem {
     /// <p>The unique ID of the updated vehicle.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl UpdateVehicleResponseItem {
 
 /// A builder for [`UpdateVehicleResponseItem`](crate::types::UpdateVehicleResponseItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateVehicleResponseItemBuilder {
-    pub(crate) vehicle_name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateVehicleResponseItemBuilder {
     /// <p>The unique ID of the updated vehicle.</p>
-    pub fn vehicle_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vehicle_name = Some(input.into());
+    pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vehicle_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the updated vehicle.</p>
-    pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated vehicle.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

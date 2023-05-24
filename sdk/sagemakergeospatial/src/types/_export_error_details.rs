@@ -2,24 +2,24 @@
 
 /// <p>The structure for returning the export error details in a GetEarthObservationJob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportErrorDetails {
     /// <p>The structure for returning the export error details while exporting results of an Earth Observation job.</p>
     #[doc(hidden)]
-    pub export_results: std::option::Option<crate::types::ExportErrorDetailsOutput>,
+    pub export_results: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
     #[doc(hidden)]
-    pub export_source_images: std::option::Option<crate::types::ExportErrorDetailsOutput>,
+    pub export_source_images: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
 }
 impl ExportErrorDetails {
     /// <p>The structure for returning the export error details while exporting results of an Earth Observation job.</p>
-    pub fn export_results(&self) -> std::option::Option<&crate::types::ExportErrorDetailsOutput> {
+    pub fn export_results(&self) -> ::std::option::Option<&crate::types::ExportErrorDetailsOutput> {
         self.export_results.as_ref()
     }
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
     pub fn export_source_images(
         &self,
-    ) -> std::option::Option<&crate::types::ExportErrorDetailsOutput> {
+    ) -> ::std::option::Option<&crate::types::ExportErrorDetailsOutput> {
         self.export_source_images.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl ExportErrorDetails {
 
 /// A builder for [`ExportErrorDetails`](crate::types::ExportErrorDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportErrorDetailsBuilder {
-    pub(crate) export_results: std::option::Option<crate::types::ExportErrorDetailsOutput>,
-    pub(crate) export_source_images: std::option::Option<crate::types::ExportErrorDetailsOutput>,
+    pub(crate) export_results: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
+    pub(crate) export_source_images: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
 }
 impl ExportErrorDetailsBuilder {
     /// <p>The structure for returning the export error details while exporting results of an Earth Observation job.</p>
     pub fn export_results(mut self, input: crate::types::ExportErrorDetailsOutput) -> Self {
-        self.export_results = Some(input);
+        self.export_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure for returning the export error details while exporting results of an Earth Observation job.</p>
     pub fn set_export_results(
         mut self,
-        input: std::option::Option<crate::types::ExportErrorDetailsOutput>,
+        input: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
     ) -> Self {
         self.export_results = input;
         self
     }
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
     pub fn export_source_images(mut self, input: crate::types::ExportErrorDetailsOutput) -> Self {
-        self.export_source_images = Some(input);
+        self.export_source_images = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure for returning the export error details while exporting the source images of an Earth Observation job.</p>
     pub fn set_export_source_images(
         mut self,
-        input: std::option::Option<crate::types::ExportErrorDetailsOutput>,
+        input: ::std::option::Option<crate::types::ExportErrorDetailsOutput>,
     ) -> Self {
         self.export_source_images = input;
         self

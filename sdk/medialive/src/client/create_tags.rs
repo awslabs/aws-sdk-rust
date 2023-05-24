@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateTags`](crate::operation::create_tags::builders::CreateTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_resource_arn): Placeholder documentation for __string
+    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_resource_arn): Placeholder documentation for __string
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_tags): Placeholder documentation for Tags
     /// - On success, responds with [`CreateTagsOutput`](crate::operation::create_tags::CreateTagsOutput)
     /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::operation::create_tags::CreateTagsError)

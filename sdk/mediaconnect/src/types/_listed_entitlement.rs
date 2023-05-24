@@ -2,29 +2,29 @@
 
 /// An entitlement that has been granted to you from other AWS accounts.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedEntitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
-    pub data_transfer_subscriber_fee_percent: std::option::Option<i32>,
+    pub data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     /// The ARN of the entitlement.
     #[doc(hidden)]
-    pub entitlement_arn: std::option::Option<std::string::String>,
+    pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// The name of the entitlement.
     #[doc(hidden)]
-    pub entitlement_name: std::option::Option<std::string::String>,
+    pub entitlement_name: ::std::option::Option<::std::string::String>,
 }
 impl ListedEntitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn data_transfer_subscriber_fee_percent(&self) -> std::option::Option<i32> {
+    pub fn data_transfer_subscriber_fee_percent(&self) -> ::std::option::Option<i32> {
         self.data_transfer_subscriber_fee_percent
     }
     /// The ARN of the entitlement.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> ::std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
     /// The name of the entitlement.
-    pub fn entitlement_name(&self) -> std::option::Option<&str> {
+    pub fn entitlement_name(&self) -> ::std::option::Option<&str> {
         self.entitlement_name.as_deref()
     }
 }
@@ -37,43 +37,57 @@ impl ListedEntitlement {
 
 /// A builder for [`ListedEntitlement`](crate::types::ListedEntitlement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListedEntitlementBuilder {
-    pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
-    pub(crate) entitlement_arn: std::option::Option<std::string::String>,
-    pub(crate) entitlement_name: std::option::Option<std::string::String>,
+    pub(crate) data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
+    pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) entitlement_name: ::std::option::Option<::std::string::String>,
 }
 impl ListedEntitlementBuilder {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn data_transfer_subscriber_fee_percent(mut self, input: i32) -> Self {
-        self.data_transfer_subscriber_fee_percent = Some(input);
+        self.data_transfer_subscriber_fee_percent = ::std::option::Option::Some(input);
         self
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn set_data_transfer_subscriber_fee_percent(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
     /// The ARN of the entitlement.
-    pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entitlement_arn = Some(input.into());
+    pub fn entitlement_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the entitlement.
-    pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entitlement_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.entitlement_arn = input;
         self
     }
     /// The name of the entitlement.
-    pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entitlement_name = Some(input.into());
+    pub fn entitlement_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.entitlement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the entitlement.
-    pub fn set_entitlement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entitlement_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.entitlement_name = input;
         self
     }

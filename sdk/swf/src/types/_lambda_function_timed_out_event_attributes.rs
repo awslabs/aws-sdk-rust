@@ -2,7 +2,7 @@
 
 /// <p>Provides details of the <code>LambdaFunctionTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionTimedOutEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct LambdaFunctionTimedOutEventAttributes {
     pub started_event_id: i64,
     /// <p>The type of the timeout that caused this event.</p>
     #[doc(hidden)]
-    pub timeout_type: std::option::Option<crate::types::LambdaFunctionTimeoutType>,
+    pub timeout_type: ::std::option::Option<crate::types::LambdaFunctionTimeoutType>,
 }
 impl LambdaFunctionTimedOutEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
@@ -24,7 +24,7 @@ impl LambdaFunctionTimedOutEventAttributes {
         self.started_event_id
     }
     /// <p>The type of the timeout that caused this event.</p>
-    pub fn timeout_type(&self) -> std::option::Option<&crate::types::LambdaFunctionTimeoutType> {
+    pub fn timeout_type(&self) -> ::std::option::Option<&crate::types::LambdaFunctionTimeoutType> {
         self.timeout_type.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl LambdaFunctionTimedOutEventAttributes {
 
 /// A builder for [`LambdaFunctionTimedOutEventAttributes`](crate::types::LambdaFunctionTimedOutEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionTimedOutEventAttributesBuilder {
-    pub(crate) scheduled_event_id: std::option::Option<i64>,
-    pub(crate) started_event_id: std::option::Option<i64>,
-    pub(crate) timeout_type: std::option::Option<crate::types::LambdaFunctionTimeoutType>,
+    pub(crate) scheduled_event_id: ::std::option::Option<i64>,
+    pub(crate) started_event_id: ::std::option::Option<i64>,
+    pub(crate) timeout_type: ::std::option::Option<crate::types::LambdaFunctionTimeoutType>,
 }
 impl LambdaFunctionTimedOutEventAttributesBuilder {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
-        self.scheduled_event_id = Some(input);
+        self.scheduled_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scheduled_event_id = input;
         self
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
-        self.started_event_id = Some(input);
+        self.started_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
     }
     /// <p>The type of the timeout that caused this event.</p>
     pub fn timeout_type(mut self, input: crate::types::LambdaFunctionTimeoutType) -> Self {
-        self.timeout_type = Some(input);
+        self.timeout_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the timeout that caused this event.</p>
     pub fn set_timeout_type(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionTimeoutType>,
+        input: ::std::option::Option<crate::types::LambdaFunctionTimeoutType>,
     ) -> Self {
         self.timeout_type = input;
         self

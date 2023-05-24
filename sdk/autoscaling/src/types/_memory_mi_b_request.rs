@@ -2,22 +2,22 @@
 
 /// <p>Specifies the minimum and maximum for the <code>MemoryMiB</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<i32>,
+    pub min: ::std::option::Option<i32>,
     /// <p>The memory maximum in MiB.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<i32>,
+    pub max: ::std::option::Option<i32>,
 }
 impl MemoryMiBRequest {
     /// <p>The memory minimum in MiB.</p>
-    pub fn min(&self) -> std::option::Option<i32> {
+    pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
     }
     /// <p>The memory maximum in MiB.</p>
-    pub fn max(&self) -> std::option::Option<i32> {
+    pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
     }
 }
@@ -30,29 +30,31 @@ impl MemoryMiBRequest {
 
 /// A builder for [`MemoryMiBRequest`](crate::types::MemoryMiBRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemoryMiBRequestBuilder {
-    pub(crate) min: std::option::Option<i32>,
-    pub(crate) max: std::option::Option<i32>,
+    pub(crate) min: ::std::option::Option<i32>,
+    pub(crate) max: ::std::option::Option<i32>,
 }
 impl MemoryMiBRequestBuilder {
     /// <p>The memory minimum in MiB.</p>
     pub fn min(mut self, input: i32) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The memory minimum in MiB.</p>
-    pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
     }
     /// <p>The memory maximum in MiB.</p>
     pub fn max(mut self, input: i32) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The memory maximum in MiB.</p>
-    pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
     }

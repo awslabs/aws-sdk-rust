@@ -2,29 +2,29 @@
 
 /// <p>Describes an EC2 Fleet that was successfully deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetSuccessItem {
     /// <p>The current state of the EC2 Fleet.</p>
     #[doc(hidden)]
-    pub current_fleet_state: std::option::Option<crate::types::FleetStateCode>,
+    pub current_fleet_state: ::std::option::Option<crate::types::FleetStateCode>,
     /// <p>The previous state of the EC2 Fleet.</p>
     #[doc(hidden)]
-    pub previous_fleet_state: std::option::Option<crate::types::FleetStateCode>,
+    pub previous_fleet_state: ::std::option::Option<crate::types::FleetStateCode>,
     /// <p>The ID of the EC2 Fleet.</p>
     #[doc(hidden)]
-    pub fleet_id: std::option::Option<std::string::String>,
+    pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetSuccessItem {
     /// <p>The current state of the EC2 Fleet.</p>
-    pub fn current_fleet_state(&self) -> std::option::Option<&crate::types::FleetStateCode> {
+    pub fn current_fleet_state(&self) -> ::std::option::Option<&crate::types::FleetStateCode> {
         self.current_fleet_state.as_ref()
     }
     /// <p>The previous state of the EC2 Fleet.</p>
-    pub fn previous_fleet_state(&self) -> std::option::Option<&crate::types::FleetStateCode> {
+    pub fn previous_fleet_state(&self) -> ::std::option::Option<&crate::types::FleetStateCode> {
         self.previous_fleet_state.as_ref()
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
 }
@@ -37,46 +37,48 @@ impl DeleteFleetSuccessItem {
 
 /// A builder for [`DeleteFleetSuccessItem`](crate::types::DeleteFleetSuccessItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFleetSuccessItemBuilder {
-    pub(crate) current_fleet_state: std::option::Option<crate::types::FleetStateCode>,
-    pub(crate) previous_fleet_state: std::option::Option<crate::types::FleetStateCode>,
-    pub(crate) fleet_id: std::option::Option<std::string::String>,
+    pub(crate) current_fleet_state: ::std::option::Option<crate::types::FleetStateCode>,
+    pub(crate) previous_fleet_state: ::std::option::Option<crate::types::FleetStateCode>,
+    pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetSuccessItemBuilder {
     /// <p>The current state of the EC2 Fleet.</p>
     pub fn current_fleet_state(mut self, input: crate::types::FleetStateCode) -> Self {
-        self.current_fleet_state = Some(input);
+        self.current_fleet_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the EC2 Fleet.</p>
     pub fn set_current_fleet_state(
         mut self,
-        input: std::option::Option<crate::types::FleetStateCode>,
+        input: ::std::option::Option<crate::types::FleetStateCode>,
     ) -> Self {
         self.current_fleet_state = input;
         self
     }
     /// <p>The previous state of the EC2 Fleet.</p>
     pub fn previous_fleet_state(mut self, input: crate::types::FleetStateCode) -> Self {
-        self.previous_fleet_state = Some(input);
+        self.previous_fleet_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The previous state of the EC2 Fleet.</p>
     pub fn set_previous_fleet_state(
         mut self,
-        input: std::option::Option<crate::types::FleetStateCode>,
+        input: ::std::option::Option<crate::types::FleetStateCode>,
     ) -> Self {
         self.previous_fleet_state = input;
         self
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet_id = Some(input.into());
+    pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }

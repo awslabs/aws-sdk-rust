@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopEntitiesDetectionV2Job`](crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobFluentBuilder::set_job_id): <p>The identifier of the medical entities job to stop.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobFluentBuilder::set_job_id): <p>The identifier of the medical entities job to stop.</p>
     /// - On success, responds with [`StopEntitiesDetectionV2JobOutput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobOutput::job_id): <p>The identifier of the medical entities detection job that was stopped.</p>
     /// - On failure, responds with [`SdkError<StopEntitiesDetectionV2JobError>`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobError)

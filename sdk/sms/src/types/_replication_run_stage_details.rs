@@ -2,22 +2,22 @@
 
 /// <p>Details of the current stage of a replication run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationRunStageDetails {
     /// <p>The current stage of a replication run.</p>
     #[doc(hidden)]
-    pub stage: std::option::Option<std::string::String>,
+    pub stage: ::std::option::Option<::std::string::String>,
     /// <p>The progress of the current stage of a replication run.</p>
     #[doc(hidden)]
-    pub stage_progress: std::option::Option<std::string::String>,
+    pub stage_progress: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationRunStageDetails {
     /// <p>The current stage of a replication run.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> ::std::option::Option<&str> {
         self.stage.as_deref()
     }
     /// <p>The progress of the current stage of a replication run.</p>
-    pub fn stage_progress(&self) -> std::option::Option<&str> {
+    pub fn stage_progress(&self) -> ::std::option::Option<&str> {
         self.stage_progress.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl ReplicationRunStageDetails {
 
 /// A builder for [`ReplicationRunStageDetails`](crate::types::ReplicationRunStageDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationRunStageDetailsBuilder {
-    pub(crate) stage: std::option::Option<std::string::String>,
-    pub(crate) stage_progress: std::option::Option<std::string::String>,
+    pub(crate) stage: ::std::option::Option<::std::string::String>,
+    pub(crate) stage_progress: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationRunStageDetailsBuilder {
     /// <p>The current stage of a replication run.</p>
-    pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage = Some(input.into());
+    pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current stage of a replication run.</p>
-    pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
     }
     /// <p>The progress of the current stage of a replication run.</p>
-    pub fn stage_progress(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage_progress = Some(input.into());
+    pub fn stage_progress(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.stage_progress = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The progress of the current stage of a replication run.</p>
-    pub fn set_stage_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_progress(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.stage_progress = input;
         self
     }

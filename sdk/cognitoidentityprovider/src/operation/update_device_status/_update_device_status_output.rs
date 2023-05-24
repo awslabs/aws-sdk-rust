@@ -2,11 +2,11 @@
 
 /// <p>The response to the request to update the device status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeviceStatusOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UpdateDeviceStatusOutput {
+impl ::aws_http::request_id::RequestId for UpdateDeviceStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl UpdateDeviceStatusOutput {
 
 /// A builder for [`UpdateDeviceStatusOutput`](crate::operation::update_device_status::UpdateDeviceStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDeviceStatusOutputBuilder {
     _request_id: Option<String>,
 }

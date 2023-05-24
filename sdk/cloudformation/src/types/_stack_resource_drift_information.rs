@@ -2,7 +2,7 @@
 
 /// <p>Contains information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackResourceDriftInformation {
     /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct StackResourceDriftInformation {
     /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stack_resource_drift_status: std::option::Option<crate::types::StackResourceDriftStatus>,
+    pub stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     #[doc(hidden)]
-    pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackResourceDriftInformation {
     /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
@@ -27,11 +27,11 @@ impl StackResourceDriftInformation {
     /// </ul>
     pub fn stack_resource_drift_status(
         &self,
-    ) -> std::option::Option<&crate::types::StackResourceDriftStatus> {
+    ) -> ::std::option::Option<&crate::types::StackResourceDriftStatus> {
         self.stack_resource_drift_status.as_ref()
     }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
-    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
 }
@@ -44,11 +44,13 @@ impl StackResourceDriftInformation {
 
 /// A builder for [`StackResourceDriftInformation`](crate::types::StackResourceDriftInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackResourceDriftInformationBuilder {
     pub(crate) stack_resource_drift_status:
-        std::option::Option<crate::types::StackResourceDriftStatus>,
-    pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<crate::types::StackResourceDriftStatus>,
+    pub(crate) last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackResourceDriftInformationBuilder {
     /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
@@ -62,7 +64,7 @@ impl StackResourceDriftInformationBuilder {
         mut self,
         input: crate::types::StackResourceDriftStatus,
     ) -> Self {
-        self.stack_resource_drift_status = Some(input);
+        self.stack_resource_drift_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the resource's actual configuration compared to its expected configuration</p>
@@ -74,20 +76,20 @@ impl StackResourceDriftInformationBuilder {
     /// </ul>
     pub fn set_stack_resource_drift_status(
         mut self,
-        input: std::option::Option<crate::types::StackResourceDriftStatus>,
+        input: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     ) -> Self {
         self.stack_resource_drift_status = input;
         self
     }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
-    pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_check_timestamp = Some(input);
+    pub fn last_check_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_check_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>When CloudFormation last checked if the resource had drifted from its expected configuration.</p>
     pub fn set_last_check_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_check_timestamp = input;
         self

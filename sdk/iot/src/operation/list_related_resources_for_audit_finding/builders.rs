@@ -19,47 +19,50 @@ pub use crate::operation::list_related_resources_for_audit_finding::_list_relate
 /// </ul> <note>
 /// <p>This API is similar to DescribeAuditFinding's <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but provides pagination and is not limited to 10 resources. When calling <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a> for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRelatedResourcesForAuditFindingFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder,
 }
 impl ListRelatedResourcesForAuditFindingFluentBuilder {
     /// Creates a new `ListRelatedResourcesForAuditFinding`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFinding, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFinding, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput, aws_smithy_http::result::SdkError<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,7 +73,7 @@ impl ListRelatedResourcesForAuditFindingFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput, aws_smithy_http::result::SdkError<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError>>
                          {
         self.send_middleware().await
     }
@@ -81,22 +84,22 @@ impl ListRelatedResourcesForAuditFindingFluentBuilder {
         crate::operation::list_related_resources_for_audit_finding::paginator::ListRelatedResourcesForAuditFindingPaginator::new(self.handle, self.inner)
     }
     /// <p>The finding Id.</p>
-    pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_id(input.into());
         self
     }
     /// <p>The finding Id.</p>
-    pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_finding_id(input);
         self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -106,7 +109,7 @@ impl ListRelatedResourcesForAuditFindingFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return at one time.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

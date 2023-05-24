@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteNotebook`](crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`notebook_id(impl Into<String>)`](crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder::notebook_id) / [`set_notebook_id(Option<String>)`](crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder::set_notebook_id): <p>The ID of the notebook to delete.</p>
+    ///   - [`notebook_id(impl ::std::convert::Into<String>)`](crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder::notebook_id) / [`set_notebook_id(Option<String>)`](crate::operation::delete_notebook::builders::DeleteNotebookFluentBuilder::set_notebook_id): <p>The ID of the notebook to delete.</p>
     /// - On success, responds with [`DeleteNotebookOutput`](crate::operation::delete_notebook::DeleteNotebookOutput)
     /// - On failure, responds with [`SdkError<DeleteNotebookError>`](crate::operation::delete_notebook::DeleteNotebookError)
     pub fn delete_notebook(

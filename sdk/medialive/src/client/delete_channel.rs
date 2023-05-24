@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteChannel`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_id(impl Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_channel_id): Unique ID of the channel.
+    ///   - [`channel_id(impl ::std::convert::Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_channel_id): Unique ID of the channel.
     /// - On success, responds with [`DeleteChannelOutput`](crate::operation::delete_channel::DeleteChannelOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_channel::DeleteChannelOutput::arn): The unique arn of the channel.
     ///   - [`cdi_input_specification(Option<CdiInputSpecification>)`](crate::operation::delete_channel::DeleteChannelOutput::cdi_input_specification): Specification of CDI inputs for this channel

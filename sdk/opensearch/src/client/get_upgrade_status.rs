@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUpgradeStatus`](crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder::set_domain_name): <p>The domain of the domain to get upgrade status information for.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_upgrade_status::builders::GetUpgradeStatusFluentBuilder::set_domain_name): <p>The domain of the domain to get upgrade status information for.</p>
     /// - On success, responds with [`GetUpgradeStatusOutput`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput) with field(s):
     ///   - [`upgrade_step(Option<UpgradeStep>)`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput::upgrade_step): <p>One of three steps that an upgrade or upgrade eligibility check goes through.</p>
     ///   - [`step_status(Option<UpgradeStatus>)`](crate::operation::get_upgrade_status::GetUpgradeStatusOutput::step_status): <p>The status of the current step that an upgrade is on.</p>

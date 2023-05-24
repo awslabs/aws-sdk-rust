@@ -2,22 +2,25 @@
 
 /// Audio Channel Mapping
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioChannelMapping {
     /// Indices and gain values for each input channel that should be remixed into this output channel.
     #[doc(hidden)]
-    pub input_channel_levels: std::option::Option<std::vec::Vec<crate::types::InputChannelLevel>>,
+    pub input_channel_levels:
+        ::std::option::Option<::std::vec::Vec<crate::types::InputChannelLevel>>,
     /// The index of the output channel being produced.
     #[doc(hidden)]
-    pub output_channel: std::option::Option<i32>,
+    pub output_channel: ::std::option::Option<i32>,
 }
 impl AudioChannelMapping {
     /// Indices and gain values for each input channel that should be remixed into this output channel.
-    pub fn input_channel_levels(&self) -> std::option::Option<&[crate::types::InputChannelLevel]> {
+    pub fn input_channel_levels(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::InputChannelLevel]> {
         self.input_channel_levels.as_deref()
     }
     /// The index of the output channel being produced.
-    pub fn output_channel(&self) -> std::option::Option<i32> {
+    pub fn output_channel(&self) -> ::std::option::Option<i32> {
         self.output_channel
     }
 }
@@ -30,11 +33,13 @@ impl AudioChannelMapping {
 
 /// A builder for [`AudioChannelMapping`](crate::types::AudioChannelMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioChannelMappingBuilder {
     pub(crate) input_channel_levels:
-        std::option::Option<std::vec::Vec<crate::types::InputChannelLevel>>,
-    pub(crate) output_channel: std::option::Option<i32>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InputChannelLevel>>,
+    pub(crate) output_channel: ::std::option::Option<i32>,
 }
 impl AudioChannelMappingBuilder {
     /// Appends an item to `input_channel_levels`.
@@ -45,24 +50,24 @@ impl AudioChannelMappingBuilder {
     pub fn input_channel_levels(mut self, input: crate::types::InputChannelLevel) -> Self {
         let mut v = self.input_channel_levels.unwrap_or_default();
         v.push(input);
-        self.input_channel_levels = Some(v);
+        self.input_channel_levels = ::std::option::Option::Some(v);
         self
     }
     /// Indices and gain values for each input channel that should be remixed into this output channel.
     pub fn set_input_channel_levels(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputChannelLevel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputChannelLevel>>,
     ) -> Self {
         self.input_channel_levels = input;
         self
     }
     /// The index of the output channel being produced.
     pub fn output_channel(mut self, input: i32) -> Self {
-        self.output_channel = Some(input);
+        self.output_channel = ::std::option::Option::Some(input);
         self
     }
     /// The index of the output channel being produced.
-    pub fn set_output_channel(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_output_channel(mut self, input: ::std::option::Option<i32>) -> Self {
         self.output_channel = input;
         self
     }

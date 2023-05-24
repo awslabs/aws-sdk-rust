@@ -2,22 +2,22 @@
 
 /// <p>The skill store category that is shown. Alexa skills are assigned a specific skill category during creation, such as News, Social, and Sports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Category {
     /// <p>The ID of the skill store category.</p>
     #[doc(hidden)]
-    pub category_id: std::option::Option<i64>,
+    pub category_id: ::std::option::Option<i64>,
     /// <p>The name of the skill store category.</p>
     #[doc(hidden)]
-    pub category_name: std::option::Option<std::string::String>,
+    pub category_name: ::std::option::Option<::std::string::String>,
 }
 impl Category {
     /// <p>The ID of the skill store category.</p>
-    pub fn category_id(&self) -> std::option::Option<i64> {
+    pub fn category_id(&self) -> ::std::option::Option<i64> {
         self.category_id
     }
     /// <p>The name of the skill store category.</p>
-    pub fn category_name(&self) -> std::option::Option<&str> {
+    pub fn category_name(&self) -> ::std::option::Option<&str> {
         self.category_name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl Category {
 
 /// A builder for [`Category`](crate::types::Category).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CategoryBuilder {
-    pub(crate) category_id: std::option::Option<i64>,
-    pub(crate) category_name: std::option::Option<std::string::String>,
+    pub(crate) category_id: ::std::option::Option<i64>,
+    pub(crate) category_name: ::std::option::Option<::std::string::String>,
 }
 impl CategoryBuilder {
     /// <p>The ID of the skill store category.</p>
     pub fn category_id(mut self, input: i64) -> Self {
-        self.category_id = Some(input);
+        self.category_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the skill store category.</p>
-    pub fn set_category_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_category_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.category_id = input;
         self
     }
     /// <p>The name of the skill store category.</p>
-    pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.category_name = Some(input.into());
+    pub fn category_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.category_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the skill store category.</p>
-    pub fn set_category_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.category_name = input;
         self
     }

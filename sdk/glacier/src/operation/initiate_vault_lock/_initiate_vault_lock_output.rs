@@ -2,20 +2,20 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateVaultLockOutput {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
     #[doc(hidden)]
-    pub lock_id: std::option::Option<std::string::String>,
+    pub lock_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InitiateVaultLockOutput {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
-    pub fn lock_id(&self) -> std::option::Option<&str> {
+    pub fn lock_id(&self) -> ::std::option::Option<&str> {
         self.lock_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for InitiateVaultLockOutput {
+impl ::aws_http::request_id::RequestId for InitiateVaultLockOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl InitiateVaultLockOutput {
 
 /// A builder for [`InitiateVaultLockOutput`](crate::operation::initiate_vault_lock::InitiateVaultLockOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InitiateVaultLockOutputBuilder {
-    pub(crate) lock_id: std::option::Option<std::string::String>,
+    pub(crate) lock_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InitiateVaultLockOutputBuilder {
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
-    pub fn lock_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lock_id = Some(input.into());
+    pub fn lock_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lock_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The lock ID, which is used to complete the vault locking process.</p>
-    pub fn set_lock_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lock_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lock_id = input;
         self
     }

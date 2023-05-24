@@ -2,7 +2,7 @@
 
 /// <p> Information about the number of open reactive and proactive insights that can be used to gauge the health of your system. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightHealth {
     /// <p> The number of open proactive insights. </p>
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct InsightHealth {
     pub open_reactive_insights: i32,
     /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
     #[doc(hidden)]
-    pub mean_time_to_recover_in_milliseconds: std::option::Option<i64>,
+    pub mean_time_to_recover_in_milliseconds: ::std::option::Option<i64>,
 }
 impl InsightHealth {
     /// <p> The number of open proactive insights. </p>
@@ -24,7 +24,7 @@ impl InsightHealth {
         self.open_reactive_insights
     }
     /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
-    pub fn mean_time_to_recover_in_milliseconds(&self) -> std::option::Option<i64> {
+    pub fn mean_time_to_recover_in_milliseconds(&self) -> ::std::option::Option<i64> {
         self.mean_time_to_recover_in_milliseconds
     }
 }
@@ -37,42 +37,44 @@ impl InsightHealth {
 
 /// A builder for [`InsightHealth`](crate::types::InsightHealth).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InsightHealthBuilder {
-    pub(crate) open_proactive_insights: std::option::Option<i32>,
-    pub(crate) open_reactive_insights: std::option::Option<i32>,
-    pub(crate) mean_time_to_recover_in_milliseconds: std::option::Option<i64>,
+    pub(crate) open_proactive_insights: ::std::option::Option<i32>,
+    pub(crate) open_reactive_insights: ::std::option::Option<i32>,
+    pub(crate) mean_time_to_recover_in_milliseconds: ::std::option::Option<i64>,
 }
 impl InsightHealthBuilder {
     /// <p> The number of open proactive insights. </p>
     pub fn open_proactive_insights(mut self, input: i32) -> Self {
-        self.open_proactive_insights = Some(input);
+        self.open_proactive_insights = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of open proactive insights. </p>
-    pub fn set_open_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_open_proactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_proactive_insights = input;
         self
     }
     /// <p> The number of open reactive insights. </p>
     pub fn open_reactive_insights(mut self, input: i32) -> Self {
-        self.open_reactive_insights = Some(input);
+        self.open_reactive_insights = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of open reactive insights. </p>
-    pub fn set_open_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_open_reactive_insights(mut self, input: ::std::option::Option<i32>) -> Self {
         self.open_reactive_insights = input;
         self
     }
     /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
     pub fn mean_time_to_recover_in_milliseconds(mut self, input: i64) -> Self {
-        self.mean_time_to_recover_in_milliseconds = Some(input);
+        self.mean_time_to_recover_in_milliseconds = ::std::option::Option::Some(input);
         self
     }
     /// <p> The Meant Time to Recover (MTTR) for the insight. </p>
     pub fn set_mean_time_to_recover_in_milliseconds(
         mut self,
-        input: std::option::Option<i64>,
+        input: ::std::option::Option<i64>,
     ) -> Self {
         self.mean_time_to_recover_in_milliseconds = input;
         self

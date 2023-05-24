@@ -2,71 +2,71 @@
 
 /// <p>A summary of the metrics of a trial component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialComponentMetricSummary {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     #[doc(hidden)]
-    pub source_arn: std::option::Option<std::string::String>,
+    pub source_arn: ::std::option::Option<::std::string::String>,
     /// <p>When the metric was last updated.</p>
     #[doc(hidden)]
-    pub time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The maximum value of the metric.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<f64>,
+    pub max: ::std::option::Option<f64>,
     /// <p>The minimum value of the metric.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<f64>,
+    pub min: ::std::option::Option<f64>,
     /// <p>The most recent value of the metric.</p>
     #[doc(hidden)]
-    pub last: std::option::Option<f64>,
+    pub last: ::std::option::Option<f64>,
     /// <p>The number of samples used to generate the metric.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// <p>The average value of the metric.</p>
     #[doc(hidden)]
-    pub avg: std::option::Option<f64>,
+    pub avg: ::std::option::Option<f64>,
     /// <p>The standard deviation of the metric.</p>
     #[doc(hidden)]
-    pub std_dev: std::option::Option<f64>,
+    pub std_dev: ::std::option::Option<f64>,
 }
 impl TrialComponentMetricSummary {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> ::std::option::Option<&str> {
         self.source_arn.as_deref()
     }
     /// <p>When the metric was last updated.</p>
-    pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_stamp.as_ref()
     }
     /// <p>The maximum value of the metric.</p>
-    pub fn max(&self) -> std::option::Option<f64> {
+    pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
     }
     /// <p>The minimum value of the metric.</p>
-    pub fn min(&self) -> std::option::Option<f64> {
+    pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
     }
     /// <p>The most recent value of the metric.</p>
-    pub fn last(&self) -> std::option::Option<f64> {
+    pub fn last(&self) -> ::std::option::Option<f64> {
         self.last
     }
     /// <p>The number of samples used to generate the metric.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The average value of the metric.</p>
-    pub fn avg(&self) -> std::option::Option<f64> {
+    pub fn avg(&self) -> ::std::option::Option<f64> {
         self.avg
     }
     /// <p>The standard deviation of the metric.</p>
-    pub fn std_dev(&self) -> std::option::Option<f64> {
+    pub fn std_dev(&self) -> ::std::option::Option<f64> {
         self.std_dev
     }
 }
@@ -79,109 +79,111 @@ impl TrialComponentMetricSummary {
 
 /// A builder for [`TrialComponentMetricSummary`](crate::types::TrialComponentMetricSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrialComponentMetricSummaryBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) source_arn: std::option::Option<std::string::String>,
-    pub(crate) time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) max: std::option::Option<f64>,
-    pub(crate) min: std::option::Option<f64>,
-    pub(crate) last: std::option::Option<f64>,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) avg: std::option::Option<f64>,
-    pub(crate) std_dev: std::option::Option<f64>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) max: ::std::option::Option<f64>,
+    pub(crate) min: ::std::option::Option<f64>,
+    pub(crate) last: ::std::option::Option<f64>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) avg: ::std::option::Option<f64>,
+    pub(crate) std_dev: ::std::option::Option<f64>,
 }
 impl TrialComponentMetricSummaryBuilder {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_arn = Some(input.into());
+    pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_arn = input;
         self
     }
     /// <p>When the metric was last updated.</p>
-    pub fn time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.time_stamp = Some(input);
+    pub fn time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.time_stamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the metric was last updated.</p>
     pub fn set_time_stamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.time_stamp = input;
         self
     }
     /// <p>The maximum value of the metric.</p>
     pub fn max(mut self, input: f64) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value of the metric.</p>
-    pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
     }
     /// <p>The minimum value of the metric.</p>
     pub fn min(mut self, input: f64) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value of the metric.</p>
-    pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min = input;
         self
     }
     /// <p>The most recent value of the metric.</p>
     pub fn last(mut self, input: f64) -> Self {
-        self.last = Some(input);
+        self.last = ::std::option::Option::Some(input);
         self
     }
     /// <p>The most recent value of the metric.</p>
-    pub fn set_last(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_last(mut self, input: ::std::option::Option<f64>) -> Self {
         self.last = input;
         self
     }
     /// <p>The number of samples used to generate the metric.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of samples used to generate the metric.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The average value of the metric.</p>
     pub fn avg(mut self, input: f64) -> Self {
-        self.avg = Some(input);
+        self.avg = ::std::option::Option::Some(input);
         self
     }
     /// <p>The average value of the metric.</p>
-    pub fn set_avg(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_avg(mut self, input: ::std::option::Option<f64>) -> Self {
         self.avg = input;
         self
     }
     /// <p>The standard deviation of the metric.</p>
     pub fn std_dev(mut self, input: f64) -> Self {
-        self.std_dev = Some(input);
+        self.std_dev = ::std::option::Option::Some(input);
         self
     }
     /// <p>The standard deviation of the metric.</p>
-    pub fn set_std_dev(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_std_dev(mut self, input: ::std::option::Option<f64>) -> Self {
         self.std_dev = input;
         self
     }

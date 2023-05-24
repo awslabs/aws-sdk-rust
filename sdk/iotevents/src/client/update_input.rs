@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateInput`](crate::operation::update_input::builders::UpdateInputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_name(impl Into<String>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::input_name) / [`set_input_name(Option<String>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::set_input_name): <p>The name of the input you want to update.</p>
-    ///   - [`input_description(impl Into<String>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::input_description) / [`set_input_description(Option<String>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::set_input_description): <p>A brief description of the input.</p>
+    ///   - [`input_name(impl ::std::convert::Into<String>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::input_name) / [`set_input_name(Option<String>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::set_input_name): <p>The name of the input you want to update.</p>
+    ///   - [`input_description(impl ::std::convert::Into<String>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::input_description) / [`set_input_description(Option<String>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::set_input_description): <p>A brief description of the input.</p>
     ///   - [`input_definition(InputDefinition)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::input_definition) / [`set_input_definition(Option<InputDefinition>)`](crate::operation::update_input::builders::UpdateInputFluentBuilder::set_input_definition): <p>The definition of the input.</p>
     /// - On success, responds with [`UpdateInputOutput`](crate::operation::update_input::UpdateInputOutput) with field(s):
     ///   - [`input_configuration(Option<InputConfiguration>)`](crate::operation::update_input::UpdateInputOutput::input_configuration): <p>Information about the configuration of the input.</p>

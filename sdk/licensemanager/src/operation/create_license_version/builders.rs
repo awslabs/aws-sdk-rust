@@ -6,29 +6,29 @@ pub use crate::operation::create_license_version::_create_license_version_input:
 /// Fluent builder constructing a request to `CreateLicenseVersion`.
 ///
 /// <p>Creates a new version of the specified license.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLicenseVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_license_version::builders::CreateLicenseVersionInputBuilder,
 }
 impl CreateLicenseVersionFluentBuilder {
     /// Creates a new `CreateLicenseVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_license_version::CreateLicenseVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_license_version::CreateLicenseVersionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateLicenseVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_license_version::CreateLicenseVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_license_version::CreateLicenseVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,41 @@ impl CreateLicenseVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_license_version::CreateLicenseVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_license_version::CreateLicenseVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_arn(input);
         self
     }
     /// <p>License name.</p>
-    pub fn license_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_name(input.into());
         self
     }
     /// <p>License name.</p>
-    pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_license_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_name(input);
         self
     }
     /// <p>Product name.</p>
-    pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_name(input.into());
         self
     }
     /// <p>Product name.</p>
-    pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_name(input);
         self
     }
@@ -116,17 +119,17 @@ impl CreateLicenseVersionFluentBuilder {
         self
     }
     /// <p>License issuer.</p>
-    pub fn set_issuer(mut self, input: std::option::Option<crate::types::Issuer>) -> Self {
+    pub fn set_issuer(mut self, input: ::std::option::Option<crate::types::Issuer>) -> Self {
         self.inner = self.inner.set_issuer(input);
         self
     }
     /// <p>Home Region of the license.</p>
-    pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.home_region(input.into());
         self
     }
     /// <p>Home Region of the license.</p>
-    pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_home_region(input);
         self
     }
@@ -136,7 +139,10 @@ impl CreateLicenseVersionFluentBuilder {
         self
     }
     /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
-    pub fn set_validity(mut self, input: std::option::Option<crate::types::DatetimeRange>) -> Self {
+    pub fn set_validity(
+        mut self,
+        input: ::std::option::Option<crate::types::DatetimeRange>,
+    ) -> Self {
         self.inner = self.inner.set_validity(input);
         self
     }
@@ -152,7 +158,7 @@ impl CreateLicenseVersionFluentBuilder {
     /// <p>Information about the license.</p>
     pub fn set_license_metadata(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Metadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     ) -> Self {
         self.inner = self.inner.set_license_metadata(input);
         self
@@ -169,7 +175,7 @@ impl CreateLicenseVersionFluentBuilder {
     /// <p>License entitlements.</p>
     pub fn set_entitlements(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Entitlement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
     ) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
@@ -185,7 +191,7 @@ impl CreateLicenseVersionFluentBuilder {
     /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads running with continuous connectivity. Choose a borrow configuration for workloads with offline usage.</p>
     pub fn set_consumption_configuration(
         mut self,
-        input: std::option::Option<crate::types::ConsumptionConfiguration>,
+        input: ::std::option::Option<crate::types::ConsumptionConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_consumption_configuration(input);
         self
@@ -196,27 +202,33 @@ impl CreateLicenseVersionFluentBuilder {
         self
     }
     /// <p>License status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::LicenseStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::LicenseStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>Current version of the license.</p>
-    pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
     /// <p>Current version of the license.</p>
-    pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }

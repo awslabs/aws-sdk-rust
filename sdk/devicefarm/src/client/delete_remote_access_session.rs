@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRemoteAccessSession`](crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     /// - On success, responds with [`DeleteRemoteAccessSessionOutput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput)
     /// - On failure, responds with [`SdkError<DeleteRemoteAccessSessionError>`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionError)
     pub fn delete_remote_access_session(&self) -> crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionFluentBuilder{

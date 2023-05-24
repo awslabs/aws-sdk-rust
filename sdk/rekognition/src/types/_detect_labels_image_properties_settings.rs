@@ -2,7 +2,7 @@
 
 /// <p>Settings for the IMAGE_PROPERTIES feature type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsImagePropertiesSettings {
     /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl DetectLabelsImagePropertiesSettings {
 
 /// A builder for [`DetectLabelsImagePropertiesSettings`](crate::types::DetectLabelsImagePropertiesSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectLabelsImagePropertiesSettingsBuilder {
-    pub(crate) max_dominant_colors: std::option::Option<i32>,
+    pub(crate) max_dominant_colors: ::std::option::Option<i32>,
 }
 impl DetectLabelsImagePropertiesSettingsBuilder {
     /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
     pub fn max_dominant_colors(mut self, input: i32) -> Self {
-        self.max_dominant_colors = Some(input);
+        self.max_dominant_colors = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
-    pub fn set_max_dominant_colors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_dominant_colors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_dominant_colors = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Describes a target Capacity Reservation or Capacity Reservation group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservationTargetResponse {
     /// <p>The ID of the targeted Capacity Reservation.</p>
     #[doc(hidden)]
-    pub capacity_reservation_id: std::option::Option<std::string::String>,
+    pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the targeted Capacity Reservation group.</p>
     #[doc(hidden)]
-    pub capacity_reservation_resource_group_arn: std::option::Option<std::string::String>,
+    pub capacity_reservation_resource_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationTargetResponse {
     /// <p>The ID of the targeted Capacity Reservation.</p>
-    pub fn capacity_reservation_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_id(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_id.as_deref()
     }
     /// <p>The ARN of the targeted Capacity Reservation group.</p>
-    pub fn capacity_reservation_resource_group_arn(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_resource_group_arn(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_resource_group_arn.as_deref()
     }
 }
@@ -30,21 +30,27 @@ impl CapacityReservationTargetResponse {
 
 /// A builder for [`CapacityReservationTargetResponse`](crate::types::CapacityReservationTargetResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityReservationTargetResponseBuilder {
-    pub(crate) capacity_reservation_id: std::option::Option<std::string::String>,
-    pub(crate) capacity_reservation_resource_group_arn: std::option::Option<std::string::String>,
+    pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_reservation_resource_group_arn:
+        ::std::option::Option<::std::string::String>,
 }
 impl CapacityReservationTargetResponseBuilder {
     /// <p>The ID of the targeted Capacity Reservation.</p>
-    pub fn capacity_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capacity_reservation_id = Some(input.into());
+    pub fn capacity_reservation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the targeted Capacity Reservation.</p>
     pub fn set_capacity_reservation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.capacity_reservation_id = input;
         self
@@ -52,15 +58,15 @@ impl CapacityReservationTargetResponseBuilder {
     /// <p>The ARN of the targeted Capacity Reservation group.</p>
     pub fn capacity_reservation_resource_group_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.capacity_reservation_resource_group_arn = Some(input.into());
+        self.capacity_reservation_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the targeted Capacity Reservation group.</p>
     pub fn set_capacity_reservation_resource_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.capacity_reservation_resource_group_arn = input;
         self

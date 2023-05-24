@@ -39,13 +39,13 @@
 /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264FramerateConversionAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum H264FramerateConversionAlgorithm {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264FramerateConversionAlgorithm {
+impl ::std::convert::From<&str> for H264FramerateConversionAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "DUPLICATE_DROP" => H264FramerateConversionAlgorithm::DuplicateDrop,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for H264FramerateConversionAlgorithm {
         }
     }
 }
-impl std::str::FromStr for H264FramerateConversionAlgorithm {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264FramerateConversionAlgorithm {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264FramerateConversionAlgorithm::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264FramerateConversionAlgorithm::from(s))
     }
 }
 impl H264FramerateConversionAlgorithm {
@@ -91,7 +91,7 @@ impl H264FramerateConversionAlgorithm {
         &["DUPLICATE_DROP", "FRAMEFORMER", "INTERPOLATE"]
     }
 }
-impl AsRef<str> for H264FramerateConversionAlgorithm {
+impl ::std::convert::AsRef<str> for H264FramerateConversionAlgorithm {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

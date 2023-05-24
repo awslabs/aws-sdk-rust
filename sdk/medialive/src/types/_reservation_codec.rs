@@ -41,13 +41,13 @@
 /// Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO'
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReservationCodec {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ReservationCodec {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReservationCodec {
+impl ::std::convert::From<&str> for ReservationCodec {
     fn from(s: &str) -> Self {
         match s {
             "AUDIO" => ReservationCodec::Audio,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ReservationCodec {
         }
     }
 }
-impl std::str::FromStr for ReservationCodec {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReservationCodec {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservationCodec::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReservationCodec::from(s))
     }
 }
 impl ReservationCodec {
@@ -101,7 +101,7 @@ impl ReservationCodec {
         &["AUDIO", "AVC", "HEVC", "LINK", "MPEG2"]
     }
 }
-impl AsRef<str> for ReservationCodec {
+impl ::std::convert::AsRef<str> for ReservationCodec {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

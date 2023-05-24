@@ -2,11 +2,11 @@
 
 /// <p>Whether or not the command was successfully canceled. There is no guarantee that a request can be canceled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelCommandOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CancelCommandOutput {
+impl ::aws_http::request_id::RequestId for CancelCommandOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl CancelCommandOutput {
 
 /// A builder for [`CancelCommandOutput`](crate::operation::cancel_command::CancelCommandOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelCommandOutputBuilder {
     _request_id: Option<String>,
 }

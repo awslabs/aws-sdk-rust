@@ -2,25 +2,25 @@
 
 /// <p>Information about the targets specified for a notification rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TargetSummary {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
     #[doc(hidden)]
-    pub target_address: std::option::Option<std::string::String>,
+    pub target_address: ::std::option::Option<::std::string::String>,
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
     /// <ul>
     /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
     /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub target_type: std::option::Option<std::string::String>,
+    pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the target.</p>
     #[doc(hidden)]
-    pub target_status: std::option::Option<crate::types::TargetStatus>,
+    pub target_status: ::std::option::Option<crate::types::TargetStatus>,
 }
 impl TargetSummary {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    pub fn target_address(&self) -> std::option::Option<&str> {
+    pub fn target_address(&self) -> ::std::option::Option<&str> {
         self.target_address.as_deref()
     }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
@@ -28,16 +28,16 @@ impl TargetSummary {
     /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
     /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
-    pub fn target_type(&self) -> std::option::Option<&str> {
+    pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
     }
     /// <p>The status of the target.</p>
-    pub fn target_status(&self) -> std::option::Option<&crate::types::TargetStatus> {
+    pub fn target_status(&self) -> ::std::option::Option<&crate::types::TargetStatus> {
         self.target_status.as_ref()
     }
 }
-impl std::fmt::Debug for TargetSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TargetSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TargetSummary");
         formatter.field("target_address", &"*** Sensitive Data Redacted ***");
         formatter.field("target_type", &self.target_type);
@@ -54,20 +54,26 @@ impl TargetSummary {
 
 /// A builder for [`TargetSummary`](crate::types::TargetSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TargetSummaryBuilder {
-    pub(crate) target_address: std::option::Option<std::string::String>,
-    pub(crate) target_type: std::option::Option<std::string::String>,
-    pub(crate) target_status: std::option::Option<crate::types::TargetStatus>,
+    pub(crate) target_address: ::std::option::Option<::std::string::String>,
+    pub(crate) target_type: ::std::option::Option<::std::string::String>,
+    pub(crate) target_status: ::std::option::Option<crate::types::TargetStatus>,
 }
 impl TargetSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    pub fn target_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_address = Some(input.into());
+    pub fn target_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
-    pub fn set_target_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_address = input;
         self
     }
@@ -76,8 +82,8 @@ impl TargetSummaryBuilder {
     /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
     /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
-    pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_type = Some(input.into());
+    pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the target (for example, <code>SNS</code>).</p>
@@ -85,19 +91,19 @@ impl TargetSummaryBuilder {
     /// <li> <p>Chatbot topics are specified as <code>SNS</code>.</p> </li>
     /// <li> <p>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</p> </li>
     /// </ul>
-    pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
         self
     }
     /// <p>The status of the target.</p>
     pub fn target_status(mut self, input: crate::types::TargetStatus) -> Self {
-        self.target_status = Some(input);
+        self.target_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the target.</p>
     pub fn set_target_status(
         mut self,
-        input: std::option::Option<crate::types::TargetStatus>,
+        input: ::std::option::Option<crate::types::TargetStatus>,
     ) -> Self {
         self.target_status = input;
         self
@@ -111,8 +117,8 @@ impl TargetSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for TargetSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TargetSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TargetSummaryBuilder");
         formatter.field("target_address", &"*** Sensitive Data Redacted ***");
         formatter.field("target_type", &self.target_type);

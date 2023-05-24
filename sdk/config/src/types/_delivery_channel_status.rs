@@ -3,42 +3,43 @@
 /// <p>The status of a specified delivery channel.</p>
 /// <p>Valid values: <code>Success</code> | <code>Failure</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryChannelStatus {
     /// <p>The name of the delivery channel.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub config_snapshot_delivery_info: std::option::Option<crate::types::ConfigExportDeliveryInfo>,
+    pub config_snapshot_delivery_info:
+        ::std::option::Option<crate::types::ConfigExportDeliveryInfo>,
     /// <p>A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub config_history_delivery_info: std::option::Option<crate::types::ConfigExportDeliveryInfo>,
+    pub config_history_delivery_info: ::std::option::Option<crate::types::ConfigExportDeliveryInfo>,
     /// <p>A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS topic.</p>
     #[doc(hidden)]
-    pub config_stream_delivery_info: std::option::Option<crate::types::ConfigStreamDeliveryInfo>,
+    pub config_stream_delivery_info: ::std::option::Option<crate::types::ConfigStreamDeliveryInfo>,
 }
 impl DeliveryChannelStatus {
     /// <p>The name of the delivery channel.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.</p>
     pub fn config_snapshot_delivery_info(
         &self,
-    ) -> std::option::Option<&crate::types::ConfigExportDeliveryInfo> {
+    ) -> ::std::option::Option<&crate::types::ConfigExportDeliveryInfo> {
         self.config_snapshot_delivery_info.as_ref()
     }
     /// <p>A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.</p>
     pub fn config_history_delivery_info(
         &self,
-    ) -> std::option::Option<&crate::types::ConfigExportDeliveryInfo> {
+    ) -> ::std::option::Option<&crate::types::ConfigExportDeliveryInfo> {
         self.config_history_delivery_info.as_ref()
     }
     /// <p>A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS topic.</p>
     pub fn config_stream_delivery_info(
         &self,
-    ) -> std::option::Option<&crate::types::ConfigStreamDeliveryInfo> {
+    ) -> ::std::option::Option<&crate::types::ConfigStreamDeliveryInfo> {
         self.config_stream_delivery_info.as_ref()
     }
 }
@@ -51,24 +52,26 @@ impl DeliveryChannelStatus {
 
 /// A builder for [`DeliveryChannelStatus`](crate::types::DeliveryChannelStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeliveryChannelStatusBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) config_snapshot_delivery_info:
-        std::option::Option<crate::types::ConfigExportDeliveryInfo>,
+        ::std::option::Option<crate::types::ConfigExportDeliveryInfo>,
     pub(crate) config_history_delivery_info:
-        std::option::Option<crate::types::ConfigExportDeliveryInfo>,
+        ::std::option::Option<crate::types::ConfigExportDeliveryInfo>,
     pub(crate) config_stream_delivery_info:
-        std::option::Option<crate::types::ConfigStreamDeliveryInfo>,
+        ::std::option::Option<crate::types::ConfigStreamDeliveryInfo>,
 }
 impl DeliveryChannelStatusBuilder {
     /// <p>The name of the delivery channel.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the delivery channel.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -77,13 +80,13 @@ impl DeliveryChannelStatusBuilder {
         mut self,
         input: crate::types::ConfigExportDeliveryInfo,
     ) -> Self {
-        self.config_snapshot_delivery_info = Some(input);
+        self.config_snapshot_delivery_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list containing the status of the delivery of the snapshot to the specified Amazon S3 bucket.</p>
     pub fn set_config_snapshot_delivery_info(
         mut self,
-        input: std::option::Option<crate::types::ConfigExportDeliveryInfo>,
+        input: ::std::option::Option<crate::types::ConfigExportDeliveryInfo>,
     ) -> Self {
         self.config_snapshot_delivery_info = input;
         self
@@ -93,13 +96,13 @@ impl DeliveryChannelStatusBuilder {
         mut self,
         input: crate::types::ConfigExportDeliveryInfo,
     ) -> Self {
-        self.config_history_delivery_info = Some(input);
+        self.config_history_delivery_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list that contains the status of the delivery of the configuration history to the specified Amazon S3 bucket.</p>
     pub fn set_config_history_delivery_info(
         mut self,
-        input: std::option::Option<crate::types::ConfigExportDeliveryInfo>,
+        input: ::std::option::Option<crate::types::ConfigExportDeliveryInfo>,
     ) -> Self {
         self.config_history_delivery_info = input;
         self
@@ -109,13 +112,13 @@ impl DeliveryChannelStatusBuilder {
         mut self,
         input: crate::types::ConfigStreamDeliveryInfo,
     ) -> Self {
-        self.config_stream_delivery_info = Some(input);
+        self.config_stream_delivery_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list containing the status of the delivery of the configuration stream notification to the specified Amazon SNS topic.</p>
     pub fn set_config_stream_delivery_info(
         mut self,
-        input: std::option::Option<crate::types::ConfigStreamDeliveryInfo>,
+        input: ::std::option::Option<crate::types::ConfigStreamDeliveryInfo>,
     ) -> Self {
         self.config_stream_delivery_info = input;
         self

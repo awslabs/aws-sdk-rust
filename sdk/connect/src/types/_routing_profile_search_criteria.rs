@@ -4,39 +4,39 @@
 /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfileSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     #[doc(hidden)]
     pub or_conditions:
-        std::option::Option<std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
     #[doc(hidden)]
     pub and_conditions:
-        std::option::Option<std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
     /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
     /// </note>
     #[doc(hidden)]
-    pub string_condition: std::option::Option<crate::types::StringCondition>,
+    pub string_condition: ::std::option::Option<crate::types::StringCondition>,
 }
 impl RoutingProfileSearchCriteria {
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     pub fn or_conditions(
         &self,
-    ) -> std::option::Option<&[crate::types::RoutingProfileSearchCriteria]> {
+    ) -> ::std::option::Option<&[crate::types::RoutingProfileSearchCriteria]> {
         self.or_conditions.as_deref()
     }
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
     pub fn and_conditions(
         &self,
-    ) -> std::option::Option<&[crate::types::RoutingProfileSearchCriteria]> {
+    ) -> ::std::option::Option<&[crate::types::RoutingProfileSearchCriteria]> {
         self.and_conditions.as_deref()
     }
     /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
     /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
     /// </note>
-    pub fn string_condition(&self) -> std::option::Option<&crate::types::StringCondition> {
+    pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
     }
 }
@@ -49,13 +49,15 @@ impl RoutingProfileSearchCriteria {
 
 /// A builder for [`RoutingProfileSearchCriteria`](crate::types::RoutingProfileSearchCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoutingProfileSearchCriteriaBuilder {
     pub(crate) or_conditions:
-        std::option::Option<std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
     pub(crate) and_conditions:
-        std::option::Option<std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
-    pub(crate) string_condition: std::option::Option<crate::types::StringCondition>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
+    pub(crate) string_condition: ::std::option::Option<crate::types::StringCondition>,
 }
 impl RoutingProfileSearchCriteriaBuilder {
     /// Appends an item to `or_conditions`.
@@ -66,13 +68,13 @@ impl RoutingProfileSearchCriteriaBuilder {
     pub fn or_conditions(mut self, input: crate::types::RoutingProfileSearchCriteria) -> Self {
         let mut v = self.or_conditions.unwrap_or_default();
         v.push(input);
-        self.or_conditions = Some(v);
+        self.or_conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of conditions which would be applied together with an OR condition.</p>
     pub fn set_or_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
     ) -> Self {
         self.or_conditions = input;
         self
@@ -85,13 +87,13 @@ impl RoutingProfileSearchCriteriaBuilder {
     pub fn and_conditions(mut self, input: crate::types::RoutingProfileSearchCriteria) -> Self {
         let mut v = self.and_conditions.unwrap_or_default();
         v.push(input);
-        self.and_conditions = Some(v);
+        self.and_conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of conditions which would be applied together with an AND condition.</p>
     pub fn set_and_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileSearchCriteria>>,
     ) -> Self {
         self.and_conditions = input;
         self
@@ -100,7 +102,7 @@ impl RoutingProfileSearchCriteriaBuilder {
     /// <p>The currently supported value for <code>FieldName</code>: <code>name</code> </p>
     /// </note>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
-        self.string_condition = Some(input);
+        self.string_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition. </p> <note>
@@ -108,7 +110,7 @@ impl RoutingProfileSearchCriteriaBuilder {
     /// </note>
     pub fn set_string_condition(
         mut self,
-        input: std::option::Option<crate::types::StringCondition>,
+        input: ::std::option::Option<crate::types::StringCondition>,
     ) -> Self {
         self.string_condition = input;
         self

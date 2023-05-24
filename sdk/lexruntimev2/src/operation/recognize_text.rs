@@ -8,12 +8,12 @@ impl RecognizeTextInput {
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
+    ) -> ::std::result::Result<
+        ::aws_smithy_http::operation::Operation<
             crate::operation::recognize_text::RecognizeText,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
@@ -22,39 +22,41 @@ impl RecognizeTextInput {
             .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
                     "could not construct endpoint parameters",
                     err,
                 )
             });
         let (endpoint_result, params) = match params_result {
-            Ok(params) => (
+            ::std::result::Result::Ok(params) => (
                 _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
+                ::std::option::Option::Some(params),
             ),
-            Err(e) => (Err(e), None),
+            ::std::result::Result::Err(e) => {
+                (::std::result::Result::Err(e), ::std::option::Option::None)
+            }
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::recognize_text::RecognizeTextInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+                output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
             {
-                use std::fmt::Write as _;
+                use ::std::fmt::Write as _;
                 let input_1 = &_input.bot_id;
                 let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
                         "bot_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                let bot_id = aws_smithy_http::label::fmt_string(
+                let bot_id = ::aws_smithy_http::label::fmt_string(
                     input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
+                    ::aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if bot_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(
+                        ::aws_smithy_http::operation::error::BuildError::missing_field(
                             "bot_id",
                             "cannot be empty or unset",
                         ),
@@ -62,18 +64,18 @@ impl RecognizeTextInput {
                 }
                 let input_2 = &_input.bot_alias_id;
                 let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
                         "bot_alias_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                let bot_alias_id = aws_smithy_http::label::fmt_string(
+                let bot_alias_id = ::aws_smithy_http::label::fmt_string(
                     input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
+                    ::aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if bot_alias_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(
+                        ::aws_smithy_http::operation::error::BuildError::missing_field(
                             "bot_alias_id",
                             "cannot be empty or unset",
                         ),
@@ -81,18 +83,18 @@ impl RecognizeTextInput {
                 }
                 let input_3 = &_input.locale_id;
                 let input_3 = input_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
                         "locale_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                let locale_id = aws_smithy_http::label::fmt_string(
+                let locale_id = ::aws_smithy_http::label::fmt_string(
                     input_3,
-                    aws_smithy_http::label::EncodingStrategy::Default,
+                    ::aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if locale_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(
+                        ::aws_smithy_http::operation::error::BuildError::missing_field(
                             "locale_id",
                             "cannot be empty or unset",
                         ),
@@ -100,108 +102,108 @@ impl RecognizeTextInput {
                 }
                 let input_4 = &_input.session_id;
                 let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
                         "session_id",
                         "cannot be empty or unset",
                     )
                 })?;
-                let session_id = aws_smithy_http::label::fmt_string(
+                let session_id = ::aws_smithy_http::label::fmt_string(
                     input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
+                    ::aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if session_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(
+                        ::aws_smithy_http::operation::error::BuildError::missing_field(
                             "session_id",
                             "cannot be empty or unset",
                         ),
                     );
                 }
-                write!(output, "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/text", botId = bot_id, botAliasId = bot_alias_id, localeId = locale_id, sessionId = session_id).expect("formatting should succeed");
-                Ok(())
+                ::std::write!(output, "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/text", botId = bot_id, botAliasId = bot_alias_id, localeId = locale_id, sessionId = session_id).expect("formatting should succeed");
+                ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::recognize_text::RecognizeTextInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
+                builder: ::http::request::Builder,
+            ) -> ::std::result::Result<
+                ::http::request::Builder,
+                ::aws_smithy_http::operation::error::BuildError,
             > {
-                let mut uri = String::new();
+                let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                Ok(builder.method("POST").uri(uri))
+                ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
+            let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
-                http::header::CONTENT_TYPE,
+                ::http::header::CONTENT_TYPE,
                 "application/json",
             );
             builder
         };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_http::body::SdkBody::from(
             crate::protocol_serde::shape_recognize_text::ser_recognize_text_input(&self)?,
         );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
+        if let ::std::option::Option::Some(content_length) = body.content_length() {
+            request = ::aws_smithy_http::header::set_request_header_if_absent(
                 request,
-                http::header::CONTENT_LENGTH,
+                ::http::header::CONTENT_LENGTH,
                 content_length,
             );
         }
         let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
+        if let ::std::option::Option::Some(params) = params {
             request.properties_mut().insert(params);
         }
         request
             .properties_mut()
             .insert(vec![http::Version::HTTP_11, http::Version::HTTP_2]);
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
+        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
+            ::aws_types::os_shim_internal::Env::real(),
             crate::meta::API_METADATA.clone(),
         );
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        let mut signing_config = ::aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(aws_types::SigningService::from_static(
+            .insert(::aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
         if let Some(region) = &_config.region {
             request
                 .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
+                .insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_credentials_cache(
+        ::aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
             _config.credentials_cache.clone(),
         );
-        let op = aws_smithy_http::operation::Operation::new(
+        let op = ::aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::recognize_text::RecognizeText::new(),
         )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
+        .with_metadata(::aws_smithy_http::operation::Metadata::new(
             "RecognizeText",
             "lexruntimev2",
         ));
-        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
-        Ok(op)
+        let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
+        ::std::result::Result::Ok(op)
     }
 }
 /// `ParseStrictResponse` impl for `RecognizeText`.
-#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]
 pub struct RecognizeText;
@@ -211,16 +213,16 @@ impl RecognizeText {
         Self
     }
 }
-impl aws_smithy_http::response::ParseStrictResponse for RecognizeText {
-    type Output = std::result::Result<
+impl ::aws_smithy_http::response::ParseStrictResponse for RecognizeText {
+    type Output = ::std::result::Result<
         crate::operation::recognize_text::RecognizeTextOutput,
         crate::operation::recognize_text::RecognizeTextError,
     >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+    fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
         let body = response.body().as_ref();
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         if !success && status != 200 {
             crate::protocol_serde::shape_recognize_text::de_recognize_text_http_error(
                 status, headers, body,
@@ -245,7 +247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecognizeText {
 pub type RecognizeTextErrorKind = RecognizeTextError;
 /// Error type for the `RecognizeTextError` operation.
 #[non_exhaustive]
-#[derive(std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub enum RecognizeTextError {
     /// <p></p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
@@ -264,22 +266,24 @@ pub enum RecognizeTextError {
     /// <p></p>
     ConflictException(crate::types::error::ConflictException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl aws_smithy_http::result::CreateUnhandledError for RecognizeTextError {
+impl ::aws_smithy_http::result::CreateUnhandledError for RecognizeTextError {
     fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        source: ::std::boxed::Box<
+            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+        >,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
             builder.set_meta(meta);
             builder.build()
         })
     }
 }
-impl std::fmt::Display for RecognizeTextError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Display for RecognizeTextError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -293,66 +297,72 @@ impl std::fmt::Display for RecognizeTextError {
         }
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RecognizeTextError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RecognizeTextError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ResourceNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ThrottlingException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::BadGatewayException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ValidationException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::DependencyFailedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ConflictException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::recognize_text::RecognizeTextError {
+impl ::aws_http::request_id::RequestId for crate::operation::recognize_text::RecognizeTextError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind for RecognizeTextError {
-    fn code(&self) -> std::option::Option<&str> {
-        aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+impl ::aws_smithy_types::retry::ProvideErrorKind for RecognizeTextError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
-        None
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
     }
 }
 impl RecognizeTextError {
     /// Creates the `RecognizeTextError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+    pub fn unhandled(
+        err: impl ::std::convert::Into<
+            ::std::boxed::Box<
+                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+            >,
+        >,
+    ) -> Self {
         Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
+            ::aws_smithy_types::error::Unhandled::builder()
                 .source(err)
                 .build(),
         )
     }
 
-    /// Creates the `RecognizeTextError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+    /// Creates the `RecognizeTextError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
+            ::aws_smithy_types::error::Unhandled::builder()
                 .source(err.clone())
                 .meta(err)
                 .build(),
@@ -362,8 +372,8 @@ impl RecognizeTextError {
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
-    pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::AccessDeniedException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
@@ -409,18 +419,18 @@ impl RecognizeTextError {
         matches!(self, Self::ConflictException(_))
     }
 }
-impl std::error::Error for RecognizeTextError {
-    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+impl ::std::error::Error for RecognizeTextError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::AccessDeniedException(_inner) => Some(_inner),
-            Self::ResourceNotFoundException(_inner) => Some(_inner),
-            Self::ThrottlingException(_inner) => Some(_inner),
-            Self::BadGatewayException(_inner) => Some(_inner),
-            Self::ValidationException(_inner) => Some(_inner),
-            Self::DependencyFailedException(_inner) => Some(_inner),
-            Self::InternalServerException(_inner) => Some(_inner),
-            Self::ConflictException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::BadGatewayException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DependencyFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }
 }

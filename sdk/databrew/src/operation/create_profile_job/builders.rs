@@ -6,29 +6,29 @@ pub use crate::operation::create_profile_job::_create_profile_job_input::CreateP
 /// Fluent builder constructing a request to `CreateProfileJob`.
 ///
 /// <p>Creates a new job to analyze a dataset and create its data profile.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProfileJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_profile_job::builders::CreateProfileJobInputBuilder,
 }
 impl CreateProfileJobFluentBuilder {
     /// Creates a new `CreateProfileJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_profile_job::CreateProfileJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_profile_job::CreateProfileJobError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateProfileJobFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_profile_job::CreateProfileJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_profile_job::CreateProfileJobError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,33 +75,36 @@ impl CreateProfileJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_profile_job::CreateProfileJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_profile_job::CreateProfileJobError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the dataset that this job is to act upon.</p>
-    pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
         self
     }
     /// <p>The name of the dataset that this job is to act upon.</p>
-    pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn encryption_key_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.encryption_key_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn set_encryption_key_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_encryption_key_arn(input);
         self
@@ -119,18 +125,18 @@ impl CreateProfileJobFluentBuilder {
     /// </ul>
     pub fn set_encryption_mode(
         mut self,
-        input: std::option::Option<crate::types::EncryptionMode>,
+        input: ::std::option::Option<crate::types::EncryptionMode>,
     ) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
     }
     /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -142,7 +148,7 @@ impl CreateProfileJobFluentBuilder {
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
     pub fn set_log_subscription(
         mut self,
-        input: std::option::Option<crate::types::LogSubscription>,
+        input: ::std::option::Option<crate::types::LogSubscription>,
     ) -> Self {
         self.inner = self.inner.set_log_subscription(input);
         self
@@ -153,7 +159,7 @@ impl CreateProfileJobFluentBuilder {
         self
     }
     /// <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
-    pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_capacity(input);
         self
     }
@@ -163,7 +169,7 @@ impl CreateProfileJobFluentBuilder {
         self
     }
     /// <p>The maximum number of times to retry the job after a job run fails.</p>
-    pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_retries(input);
         self
     }
@@ -175,7 +181,7 @@ impl CreateProfileJobFluentBuilder {
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
     pub fn set_output_location(
         mut self,
-        input: std::option::Option<crate::types::S3Location>,
+        input: ::std::option::Option<crate::types::S3Location>,
     ) -> Self {
         self.inner = self.inner.set_output_location(input);
         self
@@ -188,7 +194,7 @@ impl CreateProfileJobFluentBuilder {
     /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::ProfileConfiguration>,
+        input: ::std::option::Option<crate::types::ProfileConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
@@ -208,18 +214,18 @@ impl CreateProfileJobFluentBuilder {
     /// <p>List of validation configurations that are applied to the profile job.</p>
     pub fn set_validation_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_validation_configurations(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -230,8 +236,8 @@ impl CreateProfileJobFluentBuilder {
     /// <p>Metadata tags to apply to this job.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -239,8 +245,8 @@ impl CreateProfileJobFluentBuilder {
     /// <p>Metadata tags to apply to this job.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -252,7 +258,7 @@ impl CreateProfileJobFluentBuilder {
         self
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout(input);
         self
     }
@@ -262,7 +268,7 @@ impl CreateProfileJobFluentBuilder {
         self
     }
     /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
-    pub fn set_job_sample(mut self, input: std::option::Option<crate::types::JobSample>) -> Self {
+    pub fn set_job_sample(mut self, input: ::std::option::Option<crate::types::JobSample>) -> Self {
         self.inner = self.inner.set_job_sample(input);
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>An object that contains information about a property response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyResponse {
     /// <p>An object that specifies information about a property.</p>
     #[doc(hidden)]
-    pub definition: std::option::Option<crate::types::PropertyDefinitionResponse>,
+    pub definition: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
     /// <p>The value of the property.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::DataValue>,
+    pub value: ::std::option::Option<crate::types::DataValue>,
 }
 impl PropertyResponse {
     /// <p>An object that specifies information about a property.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::types::PropertyDefinitionResponse> {
+    pub fn definition(&self) -> ::std::option::Option<&crate::types::PropertyDefinitionResponse> {
         self.definition.as_ref()
     }
     /// <p>The value of the property.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::DataValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::DataValue> {
         self.value.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl PropertyResponse {
 
 /// A builder for [`PropertyResponse`](crate::types::PropertyResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PropertyResponseBuilder {
-    pub(crate) definition: std::option::Option<crate::types::PropertyDefinitionResponse>,
-    pub(crate) value: std::option::Option<crate::types::DataValue>,
+    pub(crate) definition: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
+    pub(crate) value: ::std::option::Option<crate::types::DataValue>,
 }
 impl PropertyResponseBuilder {
     /// <p>An object that specifies information about a property.</p>
     pub fn definition(mut self, input: crate::types::PropertyDefinitionResponse) -> Self {
-        self.definition = Some(input);
+        self.definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies information about a property.</p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<crate::types::PropertyDefinitionResponse>,
+        input: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
     ) -> Self {
         self.definition = input;
         self
     }
     /// <p>The value of the property.</p>
     pub fn value(mut self, input: crate::types::DataValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the property.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::DataValue>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::DataValue>) -> Self {
         self.value = input;
         self
     }

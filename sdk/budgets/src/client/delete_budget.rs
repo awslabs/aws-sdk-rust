@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBudget`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
-    ///   - [`budget_name(impl Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::budget_name) / [`set_budget_name(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_budget_name): <p>The name of the budget that you want to delete.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_account_id): <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
+    ///   - [`budget_name(impl ::std::convert::Into<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::budget_name) / [`set_budget_name(Option<String>)`](crate::operation::delete_budget::builders::DeleteBudgetFluentBuilder::set_budget_name): <p>The name of the budget that you want to delete.</p>
     /// - On success, responds with [`DeleteBudgetOutput`](crate::operation::delete_budget::DeleteBudgetOutput)
     /// - On failure, responds with [`SdkError<DeleteBudgetError>`](crate::operation::delete_budget::DeleteBudgetError)
     pub fn delete_budget(

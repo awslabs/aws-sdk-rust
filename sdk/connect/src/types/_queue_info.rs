@@ -2,22 +2,22 @@
 
 /// <p>If this contact was queued, this contains information about the queue. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueueInfo {
     /// <p>The unique identifier for the queue.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the contact was added to the queue.</p>
     #[doc(hidden)]
-    pub enqueue_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub enqueue_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QueueInfo {
     /// <p>The unique identifier for the queue.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The timestamp when the contact was added to the queue.</p>
-    pub fn enqueue_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enqueue_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.enqueue_timestamp.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl QueueInfo {
 
 /// A builder for [`QueueInfo`](crate::types::QueueInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueueInfoBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) enqueue_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) enqueue_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QueueInfoBuilder {
     /// <p>The unique identifier for the queue.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the queue.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The timestamp when the contact was added to the queue.</p>
-    pub fn enqueue_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.enqueue_timestamp = Some(input);
+    pub fn enqueue_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.enqueue_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the contact was added to the queue.</p>
     pub fn set_enqueue_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.enqueue_timestamp = input;
         self

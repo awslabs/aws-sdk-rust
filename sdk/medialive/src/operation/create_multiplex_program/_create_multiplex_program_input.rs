@@ -2,38 +2,38 @@
 
 /// A request to create a program in a multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMultiplexProgramInput {
     /// ID of the multiplex where the program is to be created.
     #[doc(hidden)]
-    pub multiplex_id: std::option::Option<std::string::String>,
+    pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The settings for this multiplex program.
     #[doc(hidden)]
-    pub multiplex_program_settings: std::option::Option<crate::types::MultiplexProgramSettings>,
+    pub multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     /// Name of multiplex program.
     #[doc(hidden)]
-    pub program_name: std::option::Option<std::string::String>,
+    pub program_name: ::std::option::Option<::std::string::String>,
     /// Unique request ID. This prevents retries from creating multiple resources.
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateMultiplexProgramInput {
     /// ID of the multiplex where the program is to be created.
-    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
         self.multiplex_id.as_deref()
     }
     /// The settings for this multiplex program.
     pub fn multiplex_program_settings(
         &self,
-    ) -> std::option::Option<&crate::types::MultiplexProgramSettings> {
+    ) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
         self.multiplex_program_settings.as_ref()
     }
     /// Name of multiplex program.
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> ::std::option::Option<&str> {
         self.program_name.as_deref()
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
@@ -48,22 +48,24 @@ impl CreateMultiplexProgramInput {
 
 /// A builder for [`CreateMultiplexProgramInput`](crate::operation::create_multiplex_program::CreateMultiplexProgramInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateMultiplexProgramInputBuilder {
-    pub(crate) multiplex_id: std::option::Option<std::string::String>,
+    pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
     pub(crate) multiplex_program_settings:
-        std::option::Option<crate::types::MultiplexProgramSettings>,
-    pub(crate) program_name: std::option::Option<std::string::String>,
-    pub(crate) request_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::MultiplexProgramSettings>,
+    pub(crate) program_name: ::std::option::Option<::std::string::String>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateMultiplexProgramInputBuilder {
     /// ID of the multiplex where the program is to be created.
-    pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.multiplex_id = Some(input.into());
+    pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multiplex_id = ::std::option::Option::Some(input.into());
         self
     }
     /// ID of the multiplex where the program is to be created.
-    pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multiplex_id = input;
         self
     }
@@ -72,45 +74,45 @@ impl CreateMultiplexProgramInputBuilder {
         mut self,
         input: crate::types::MultiplexProgramSettings,
     ) -> Self {
-        self.multiplex_program_settings = Some(input);
+        self.multiplex_program_settings = ::std::option::Option::Some(input);
         self
     }
     /// The settings for this multiplex program.
     pub fn set_multiplex_program_settings(
         mut self,
-        input: std::option::Option<crate::types::MultiplexProgramSettings>,
+        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     ) -> Self {
         self.multiplex_program_settings = input;
         self
     }
     /// Name of multiplex program.
-    pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.program_name = Some(input.into());
+    pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.program_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Name of multiplex program.
-    pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateMultiplexProgramInput`](crate::operation::create_multiplex_program::CreateMultiplexProgramInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_multiplex_program::CreateMultiplexProgramInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_multiplex_program::CreateMultiplexProgramInput {
                 multiplex_id: self.multiplex_id,
                 multiplex_program_settings: self.multiplex_program_settings,

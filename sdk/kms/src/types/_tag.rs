@@ -5,22 +5,22 @@
 /// </important>
 /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the tag.</p>
     #[doc(hidden)]
-    pub tag_key: std::option::Option<std::string::String>,
+    pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the tag.</p>
     #[doc(hidden)]
-    pub tag_value: std::option::Option<std::string::String>,
+    pub tag_value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {
     /// <p>The key of the tag.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>The value of the tag.</p>
-    pub fn tag_value(&self) -> std::option::Option<&str> {
+    pub fn tag_value(&self) -> ::std::option::Option<&str> {
         self.tag_value.as_deref()
     }
 }
@@ -33,29 +33,31 @@ impl Tag {
 
 /// A builder for [`Tag`](crate::types::Tag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagBuilder {
-    pub(crate) tag_key: std::option::Option<std::string::String>,
-    pub(crate) tag_value: std::option::Option<std::string::String>,
+    pub(crate) tag_key: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_value: ::std::option::Option<::std::string::String>,
 }
 impl TagBuilder {
     /// <p>The key of the tag.</p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_key = Some(input.into());
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key of the tag.</p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
     }
     /// <p>The value of the tag.</p>
-    pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_value = Some(input.into());
+    pub fn tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the tag.</p>
-    pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_value = input;
         self
     }

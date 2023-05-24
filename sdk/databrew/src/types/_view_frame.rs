@@ -2,50 +2,50 @@
 
 /// <p>Represents the data being transformed during an action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewFrame {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
     #[doc(hidden)]
-    pub start_column_index: std::option::Option<i32>,
+    pub start_column_index: ::std::option::Option<i32>,
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
     #[doc(hidden)]
-    pub column_range: std::option::Option<i32>,
+    pub column_range: ::std::option::Option<i32>,
     /// <p>A list of columns to hide in the view frame.</p>
     #[doc(hidden)]
-    pub hidden_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub hidden_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The starting index for the range of rows to return in the view frame.</p>
     #[doc(hidden)]
-    pub start_row_index: std::option::Option<i32>,
+    pub start_row_index: ::std::option::Option<i32>,
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
     #[doc(hidden)]
-    pub row_range: std::option::Option<i32>,
+    pub row_range: ::std::option::Option<i32>,
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
     #[doc(hidden)]
-    pub analytics: std::option::Option<crate::types::AnalyticsMode>,
+    pub analytics: ::std::option::Option<crate::types::AnalyticsMode>,
 }
 impl ViewFrame {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
-    pub fn start_column_index(&self) -> std::option::Option<i32> {
+    pub fn start_column_index(&self) -> ::std::option::Option<i32> {
         self.start_column_index
     }
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
-    pub fn column_range(&self) -> std::option::Option<i32> {
+    pub fn column_range(&self) -> ::std::option::Option<i32> {
         self.column_range
     }
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn hidden_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hidden_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.hidden_columns.as_deref()
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
-    pub fn start_row_index(&self) -> std::option::Option<i32> {
+    pub fn start_row_index(&self) -> ::std::option::Option<i32> {
         self.start_row_index
     }
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
-    pub fn row_range(&self) -> std::option::Option<i32> {
+    pub fn row_range(&self) -> ::std::option::Option<i32> {
         self.row_range
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
-    pub fn analytics(&self) -> std::option::Option<&crate::types::AnalyticsMode> {
+    pub fn analytics(&self) -> ::std::option::Option<&crate::types::AnalyticsMode> {
         self.analytics.as_ref()
     }
 }
@@ -58,33 +58,35 @@ impl ViewFrame {
 
 /// A builder for [`ViewFrame`](crate::types::ViewFrame).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ViewFrameBuilder {
-    pub(crate) start_column_index: std::option::Option<i32>,
-    pub(crate) column_range: std::option::Option<i32>,
-    pub(crate) hidden_columns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) start_row_index: std::option::Option<i32>,
-    pub(crate) row_range: std::option::Option<i32>,
-    pub(crate) analytics: std::option::Option<crate::types::AnalyticsMode>,
+    pub(crate) start_column_index: ::std::option::Option<i32>,
+    pub(crate) column_range: ::std::option::Option<i32>,
+    pub(crate) hidden_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) start_row_index: ::std::option::Option<i32>,
+    pub(crate) row_range: ::std::option::Option<i32>,
+    pub(crate) analytics: ::std::option::Option<crate::types::AnalyticsMode>,
 }
 impl ViewFrameBuilder {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
     pub fn start_column_index(mut self, input: i32) -> Self {
-        self.start_column_index = Some(input);
+        self.start_column_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting index for the range of columns to return in the view frame.</p>
-    pub fn set_start_column_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_column_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_column_index = input;
         self
     }
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
     pub fn column_range(mut self, input: i32) -> Self {
-        self.column_range = Some(input);
+        self.column_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
-    pub fn set_column_range(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_column_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column_range = input;
         self
     }
@@ -93,49 +95,52 @@ impl ViewFrameBuilder {
     /// To override the contents of this collection use [`set_hidden_columns`](Self::set_hidden_columns).
     ///
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn hidden_columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hidden_columns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.hidden_columns.unwrap_or_default();
         v.push(input.into());
-        self.hidden_columns = Some(v);
+        self.hidden_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of columns to hide in the view frame.</p>
     pub fn set_hidden_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.hidden_columns = input;
         self
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
     pub fn start_row_index(mut self, input: i32) -> Self {
-        self.start_row_index = Some(input);
+        self.start_row_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
-    pub fn set_start_row_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_row_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_row_index = input;
         self
     }
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
     pub fn row_range(mut self, input: i32) -> Self {
-        self.row_range = Some(input);
+        self.row_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
-    pub fn set_row_range(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_row_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.row_range = input;
         self
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
     pub fn analytics(mut self, input: crate::types::AnalyticsMode) -> Self {
-        self.analytics = Some(input);
+        self.analytics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
     pub fn set_analytics(
         mut self,
-        input: std::option::Option<crate::types::AnalyticsMode>,
+        input: ::std::option::Option<crate::types::AnalyticsMode>,
     ) -> Self {
         self.analytics = input;
         self

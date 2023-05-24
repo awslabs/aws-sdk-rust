@@ -2,11 +2,11 @@
 
 /// <p> Response of UpdateBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBudgetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UpdateBudgetOutput {
+impl ::aws_http::request_id::RequestId for UpdateBudgetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl UpdateBudgetOutput {
 
 /// A builder for [`UpdateBudgetOutput`](crate::operation::update_budget::UpdateBudgetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateBudgetOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,50 +2,50 @@
 
 /// <p>Summarizes the number of layers, instances, and apps in a stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSummary {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
-    pub stack_id: std::option::Option<std::string::String>,
+    pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The stack name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The stack's ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of layers.</p>
     #[doc(hidden)]
-    pub layers_count: std::option::Option<i32>,
+    pub layers_count: ::std::option::Option<i32>,
     /// <p>The number of apps.</p>
     #[doc(hidden)]
-    pub apps_count: std::option::Option<i32>,
+    pub apps_count: ::std::option::Option<i32>,
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     #[doc(hidden)]
-    pub instances_count: std::option::Option<crate::types::InstancesCount>,
+    pub instances_count: ::std::option::Option<crate::types::InstancesCount>,
 }
 impl StackSummary {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The stack name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The stack's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The number of layers.</p>
-    pub fn layers_count(&self) -> std::option::Option<i32> {
+    pub fn layers_count(&self) -> ::std::option::Option<i32> {
         self.layers_count
     }
     /// <p>The number of apps.</p>
-    pub fn apps_count(&self) -> std::option::Option<i32> {
+    pub fn apps_count(&self) -> ::std::option::Option<i32> {
         self.apps_count
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
-    pub fn instances_count(&self) -> std::option::Option<&crate::types::InstancesCount> {
+    pub fn instances_count(&self) -> ::std::option::Option<&crate::types::InstancesCount> {
         self.instances_count.as_ref()
     }
 }
@@ -58,75 +58,77 @@ impl StackSummary {
 
 /// A builder for [`StackSummary`](crate::types::StackSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackSummaryBuilder {
-    pub(crate) stack_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) layers_count: std::option::Option<i32>,
-    pub(crate) apps_count: std::option::Option<i32>,
-    pub(crate) instances_count: std::option::Option<crate::types::InstancesCount>,
+    pub(crate) stack_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) layers_count: ::std::option::Option<i32>,
+    pub(crate) apps_count: ::std::option::Option<i32>,
+    pub(crate) instances_count: ::std::option::Option<crate::types::InstancesCount>,
 }
 impl StackSummaryBuilder {
     /// <p>The stack ID.</p>
-    pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_id = Some(input.into());
+    pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stack ID.</p>
-    pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
     }
     /// <p>The stack name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stack name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The stack's ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stack's ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The number of layers.</p>
     pub fn layers_count(mut self, input: i32) -> Self {
-        self.layers_count = Some(input);
+        self.layers_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of layers.</p>
-    pub fn set_layers_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_layers_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.layers_count = input;
         self
     }
     /// <p>The number of apps.</p>
     pub fn apps_count(mut self, input: i32) -> Self {
-        self.apps_count = Some(input);
+        self.apps_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of apps.</p>
-    pub fn set_apps_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_apps_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.apps_count = input;
         self
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     pub fn instances_count(mut self, input: crate::types::InstancesCount) -> Self {
-        self.instances_count = Some(input);
+        self.instances_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     pub fn set_instances_count(
         mut self,
-        input: std::option::Option<crate::types::InstancesCount>,
+        input: ::std::option::Option<crate::types::InstancesCount>,
     ) -> Self {
         self.instances_count = input;
         self

@@ -2,33 +2,33 @@
 
 /// <p>An array that contains one or more Destinations, as well as the tags and replacement data associated with each of those Destinations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BulkEmailDestination {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::Destination>,
+    pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     #[doc(hidden)]
-    pub replacement_tags: std::option::Option<std::vec::Vec<crate::types::MessageTag>>,
+    pub replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     #[doc(hidden)]
-    pub replacement_template_data: std::option::Option<std::string::String>,
+    pub replacement_template_data: ::std::option::Option<::std::string::String>,
 }
 impl BulkEmailDestination {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
-    pub fn destination(&self) -> std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn replacement_tags(&self) -> std::option::Option<&[crate::types::MessageTag]> {
+    pub fn replacement_tags(&self) -> ::std::option::Option<&[crate::types::MessageTag]> {
         self.replacement_tags.as_deref()
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn replacement_template_data(&self) -> std::option::Option<&str> {
+    pub fn replacement_template_data(&self) -> ::std::option::Option<&str> {
         self.replacement_template_data.as_deref()
     }
 }
@@ -41,18 +41,20 @@ impl BulkEmailDestination {
 
 /// A builder for [`BulkEmailDestination`](crate::types::BulkEmailDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BulkEmailDestinationBuilder {
-    pub(crate) destination: std::option::Option<crate::types::Destination>,
-    pub(crate) replacement_tags: std::option::Option<std::vec::Vec<crate::types::MessageTag>>,
-    pub(crate) replacement_template_data: std::option::Option<std::string::String>,
+    pub(crate) destination: ::std::option::Option<crate::types::Destination>,
+    pub(crate) replacement_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
+    pub(crate) replacement_template_data: ::std::option::Option<::std::string::String>,
 }
 impl BulkEmailDestinationBuilder {
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
     /// <p>Amazon SES does not support the SMTPUTF8 extension, as described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain <a href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
     /// </note>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</p> <note>
@@ -60,7 +62,7 @@ impl BulkEmailDestinationBuilder {
     /// </note>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::Destination>,
+        input: ::std::option::Option<crate::types::Destination>,
     ) -> Self {
         self.destination = input;
         self
@@ -73,26 +75,29 @@ impl BulkEmailDestinationBuilder {
     pub fn replacement_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.replacement_tags.unwrap_or_default();
         v.push(input);
-        self.replacement_tags = Some(v);
+        self.replacement_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn set_replacement_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MessageTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     ) -> Self {
         self.replacement_tags = input;
         self
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn replacement_template_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replacement_template_data = Some(input.into());
+    pub fn replacement_template_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replacement_template_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn set_replacement_template_data(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replacement_template_data = input;
         self

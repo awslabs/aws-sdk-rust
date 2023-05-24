@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStackSummary`](crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stack_id(impl Into<String>)`](crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder::set_stack_id): <p>The stack ID.</p>
+    ///   - [`stack_id(impl ::std::convert::Into<String>)`](crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::describe_stack_summary::builders::DescribeStackSummaryFluentBuilder::set_stack_id): <p>The stack ID.</p>
     /// - On success, responds with [`DescribeStackSummaryOutput`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput) with field(s):
     ///   - [`stack_summary(Option<StackSummary>)`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput::stack_summary): <p>A <code>StackSummary</code> object that contains the results.</p>
     /// - On failure, responds with [`SdkError<DescribeStackSummaryError>`](crate::operation::describe_stack_summary::DescribeStackSummaryError)

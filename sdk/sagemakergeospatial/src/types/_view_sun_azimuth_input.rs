@@ -2,22 +2,22 @@
 
 /// <p>The input structure for specifying ViewSunAzimuth property filter. ViewSunAzimuth refers to the Sun azimuth angle. From the scene center point on the ground, this is the angle between truth north and the sun. Measured clockwise in degrees (0-360).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ViewSunAzimuthInput {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
     #[doc(hidden)]
-    pub lower_bound: std::option::Option<f32>,
+    pub lower_bound: ::std::option::Option<f32>,
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
     #[doc(hidden)]
-    pub upper_bound: std::option::Option<f32>,
+    pub upper_bound: ::std::option::Option<f32>,
 }
 impl ViewSunAzimuthInput {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
-    pub fn lower_bound(&self) -> std::option::Option<f32> {
+    pub fn lower_bound(&self) -> ::std::option::Option<f32> {
         self.lower_bound
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
-    pub fn upper_bound(&self) -> std::option::Option<f32> {
+    pub fn upper_bound(&self) -> ::std::option::Option<f32> {
         self.upper_bound
     }
 }
@@ -30,29 +30,31 @@ impl ViewSunAzimuthInput {
 
 /// A builder for [`ViewSunAzimuthInput`](crate::types::ViewSunAzimuthInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ViewSunAzimuthInputBuilder {
-    pub(crate) lower_bound: std::option::Option<f32>,
-    pub(crate) upper_bound: std::option::Option<f32>,
+    pub(crate) lower_bound: ::std::option::Option<f32>,
+    pub(crate) upper_bound: ::std::option::Option<f32>,
 }
 impl ViewSunAzimuthInputBuilder {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
     pub fn lower_bound(mut self, input: f32) -> Self {
-        self.lower_bound = Some(input);
+        self.lower_bound = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
-    pub fn set_lower_bound(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_lower_bound(mut self, input: ::std::option::Option<f32>) -> Self {
         self.lower_bound = input;
         self
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
     pub fn upper_bound(mut self, input: f32) -> Self {
-        self.upper_bound = Some(input);
+        self.upper_bound = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
-    pub fn set_upper_bound(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_upper_bound(mut self, input: ::std::option::Option<f32>) -> Self {
         self.upper_bound = input;
         self
     }

@@ -2,17 +2,17 @@
 
 /// <p>Describes whether any Kubernetes data sources are enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesConfiguration {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     #[doc(hidden)]
-    pub audit_logs: std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
+    pub audit_logs: ::std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
 }
 impl KubernetesConfiguration {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub fn audit_logs(
         &self,
-    ) -> std::option::Option<&crate::types::KubernetesAuditLogsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::KubernetesAuditLogsConfiguration> {
         self.audit_logs.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl KubernetesConfiguration {
 
 /// A builder for [`KubernetesConfiguration`](crate::types::KubernetesConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KubernetesConfigurationBuilder {
-    pub(crate) audit_logs: std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
+    pub(crate) audit_logs: ::std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
 }
 impl KubernetesConfigurationBuilder {
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub fn audit_logs(mut self, input: crate::types::KubernetesAuditLogsConfiguration) -> Self {
-        self.audit_logs = Some(input);
+        self.audit_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of Kubernetes audit logs as a data source.</p>
     pub fn set_audit_logs(
         mut self,
-        input: std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
+        input: ::std::option::Option<crate::types::KubernetesAuditLogsConfiguration>,
     ) -> Self {
         self.audit_logs = input;
         self

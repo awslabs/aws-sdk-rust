@@ -2,24 +2,26 @@
 
 /// <p>Describes the burstable performance instance whose credit option for CPU usage was not modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsuccessfulInstanceCreditSpecificationItem {
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The applicable error for the burstable performance instance whose credit option for CPU usage was not modified.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationItemError>,
+    pub error:
+        ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationItemError>,
 }
 impl UnsuccessfulInstanceCreditSpecificationItem {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The applicable error for the burstable performance instance whose credit option for CPU usage was not modified.</p>
     pub fn error(
         &self,
-    ) -> std::option::Option<&crate::types::UnsuccessfulInstanceCreditSpecificationItemError> {
+    ) -> ::std::option::Option<&crate::types::UnsuccessfulInstanceCreditSpecificationItemError>
+    {
         self.error.as_ref()
     }
 }
@@ -32,20 +34,22 @@ impl UnsuccessfulInstanceCreditSpecificationItem {
 
 /// A builder for [`UnsuccessfulInstanceCreditSpecificationItem`](crate::types::UnsuccessfulInstanceCreditSpecificationItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnsuccessfulInstanceCreditSpecificationItemBuilder {
-    pub(crate) instance_id: std::option::Option<std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) error:
-        std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationItemError>,
+        ::std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationItemError>,
 }
 impl UnsuccessfulInstanceCreditSpecificationItemBuilder {
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
@@ -54,13 +58,15 @@ impl UnsuccessfulInstanceCreditSpecificationItemBuilder {
         mut self,
         input: crate::types::UnsuccessfulInstanceCreditSpecificationItemError,
     ) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The applicable error for the burstable performance instance whose credit option for CPU usage was not modified.</p>
     pub fn set_error(
         mut self,
-        input: std::option::Option<crate::types::UnsuccessfulInstanceCreditSpecificationItemError>,
+        input: ::std::option::Option<
+            crate::types::UnsuccessfulInstanceCreditSpecificationItemError,
+        >,
     ) -> Self {
         self.error = input;
         self

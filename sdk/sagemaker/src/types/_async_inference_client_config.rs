@@ -2,15 +2,15 @@
 
 /// <p>Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AsyncInferenceClientConfig {
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     #[doc(hidden)]
-    pub max_concurrent_invocations_per_instance: std::option::Option<i32>,
+    pub max_concurrent_invocations_per_instance: ::std::option::Option<i32>,
 }
 impl AsyncInferenceClientConfig {
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
-    pub fn max_concurrent_invocations_per_instance(&self) -> std::option::Option<i32> {
+    pub fn max_concurrent_invocations_per_instance(&self) -> ::std::option::Option<i32> {
         self.max_concurrent_invocations_per_instance
     }
 }
@@ -23,20 +23,22 @@ impl AsyncInferenceClientConfig {
 
 /// A builder for [`AsyncInferenceClientConfig`](crate::types::AsyncInferenceClientConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AsyncInferenceClientConfigBuilder {
-    pub(crate) max_concurrent_invocations_per_instance: std::option::Option<i32>,
+    pub(crate) max_concurrent_invocations_per_instance: ::std::option::Option<i32>,
 }
 impl AsyncInferenceClientConfigBuilder {
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     pub fn max_concurrent_invocations_per_instance(mut self, input: i32) -> Self {
-        self.max_concurrent_invocations_per_instance = Some(input);
+        self.max_concurrent_invocations_per_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker chooses an optimal value.</p>
     pub fn set_max_concurrent_invocations_per_instance(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.max_concurrent_invocations_per_instance = input;
         self

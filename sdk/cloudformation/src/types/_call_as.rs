@@ -38,13 +38,13 @@
 /// _Note: `CallAs::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CallAs {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CallAs {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CallAs {
+impl ::std::convert::From<&str> for CallAs {
     fn from(s: &str) -> Self {
         match s {
             "DELEGATED_ADMIN" => CallAs::DelegatedAdmin,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for CallAs {
         }
     }
 }
-impl std::str::FromStr for CallAs {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CallAs {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CallAs::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CallAs::from(s))
     }
 }
 impl CallAs {
@@ -84,7 +84,7 @@ impl CallAs {
         &["DELEGATED_ADMIN", "SELF"]
     }
 }
-impl AsRef<str> for CallAs {
+impl ::std::convert::AsRef<str> for CallAs {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

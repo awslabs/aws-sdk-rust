@@ -2,20 +2,22 @@
 
 /// <p>The output for a <code>DescribeStackResource</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackResourceOutput {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
     #[doc(hidden)]
-    pub stack_resource_detail: std::option::Option<crate::types::StackResourceDetail>,
+    pub stack_resource_detail: ::std::option::Option<crate::types::StackResourceDetail>,
     _request_id: Option<String>,
 }
 impl DescribeStackResourceOutput {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
-    pub fn stack_resource_detail(&self) -> std::option::Option<&crate::types::StackResourceDetail> {
+    pub fn stack_resource_detail(
+        &self,
+    ) -> ::std::option::Option<&crate::types::StackResourceDetail> {
         self.stack_resource_detail.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeStackResourceOutput {
+impl ::aws_http::request_id::RequestId for DescribeStackResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +33,23 @@ impl DescribeStackResourceOutput {
 
 /// A builder for [`DescribeStackResourceOutput`](crate::operation::describe_stack_resource::DescribeStackResourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStackResourceOutputBuilder {
-    pub(crate) stack_resource_detail: std::option::Option<crate::types::StackResourceDetail>,
+    pub(crate) stack_resource_detail: ::std::option::Option<crate::types::StackResourceDetail>,
     _request_id: Option<String>,
 }
 impl DescribeStackResourceOutputBuilder {
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
     pub fn stack_resource_detail(mut self, input: crate::types::StackResourceDetail) -> Self {
-        self.stack_resource_detail = Some(input);
+        self.stack_resource_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>StackResourceDetail</code> structure containing the description of the specified resource in the specified stack.</p>
     pub fn set_stack_resource_detail(
         mut self,
-        input: std::option::Option<crate::types::StackResourceDetail>,
+        input: ::std::option::Option<crate::types::StackResourceDetail>,
     ) -> Self {
         self.stack_resource_detail = input;
         self

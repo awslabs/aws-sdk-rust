@@ -2,42 +2,45 @@
 
 /// <p>The parameters for task execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindowTaskInvocationParameters {
     /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
     #[doc(hidden)]
-    pub run_command: std::option::Option<crate::types::MaintenanceWindowRunCommandParameters>,
+    pub run_command: ::std::option::Option<crate::types::MaintenanceWindowRunCommandParameters>,
     /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
     #[doc(hidden)]
-    pub automation: std::option::Option<crate::types::MaintenanceWindowAutomationParameters>,
+    pub automation: ::std::option::Option<crate::types::MaintenanceWindowAutomationParameters>,
     /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
     #[doc(hidden)]
-    pub step_functions: std::option::Option<crate::types::MaintenanceWindowStepFunctionsParameters>,
+    pub step_functions:
+        ::std::option::Option<crate::types::MaintenanceWindowStepFunctionsParameters>,
     /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
     #[doc(hidden)]
-    pub lambda: std::option::Option<crate::types::MaintenanceWindowLambdaParameters>,
+    pub lambda: ::std::option::Option<crate::types::MaintenanceWindowLambdaParameters>,
 }
 impl MaintenanceWindowTaskInvocationParameters {
     /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
     pub fn run_command(
         &self,
-    ) -> std::option::Option<&crate::types::MaintenanceWindowRunCommandParameters> {
+    ) -> ::std::option::Option<&crate::types::MaintenanceWindowRunCommandParameters> {
         self.run_command.as_ref()
     }
     /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
     pub fn automation(
         &self,
-    ) -> std::option::Option<&crate::types::MaintenanceWindowAutomationParameters> {
+    ) -> ::std::option::Option<&crate::types::MaintenanceWindowAutomationParameters> {
         self.automation.as_ref()
     }
     /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
     pub fn step_functions(
         &self,
-    ) -> std::option::Option<&crate::types::MaintenanceWindowStepFunctionsParameters> {
+    ) -> ::std::option::Option<&crate::types::MaintenanceWindowStepFunctionsParameters> {
         self.step_functions.as_ref()
     }
     /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
-    pub fn lambda(&self) -> std::option::Option<&crate::types::MaintenanceWindowLambdaParameters> {
+    pub fn lambda(
+        &self,
+    ) -> ::std::option::Option<&crate::types::MaintenanceWindowLambdaParameters> {
         self.lambda.as_ref()
     }
 }
@@ -50,14 +53,17 @@ impl MaintenanceWindowTaskInvocationParameters {
 
 /// A builder for [`MaintenanceWindowTaskInvocationParameters`](crate::types::MaintenanceWindowTaskInvocationParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaintenanceWindowTaskInvocationParametersBuilder {
     pub(crate) run_command:
-        std::option::Option<crate::types::MaintenanceWindowRunCommandParameters>,
-    pub(crate) automation: std::option::Option<crate::types::MaintenanceWindowAutomationParameters>,
+        ::std::option::Option<crate::types::MaintenanceWindowRunCommandParameters>,
+    pub(crate) automation:
+        ::std::option::Option<crate::types::MaintenanceWindowAutomationParameters>,
     pub(crate) step_functions:
-        std::option::Option<crate::types::MaintenanceWindowStepFunctionsParameters>,
-    pub(crate) lambda: std::option::Option<crate::types::MaintenanceWindowLambdaParameters>,
+        ::std::option::Option<crate::types::MaintenanceWindowStepFunctionsParameters>,
+    pub(crate) lambda: ::std::option::Option<crate::types::MaintenanceWindowLambdaParameters>,
 }
 impl MaintenanceWindowTaskInvocationParametersBuilder {
     /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
@@ -65,13 +71,13 @@ impl MaintenanceWindowTaskInvocationParametersBuilder {
         mut self,
         input: crate::types::MaintenanceWindowRunCommandParameters,
     ) -> Self {
-        self.run_command = Some(input);
+        self.run_command = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
     pub fn set_run_command(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceWindowRunCommandParameters>,
+        input: ::std::option::Option<crate::types::MaintenanceWindowRunCommandParameters>,
     ) -> Self {
         self.run_command = input;
         self
@@ -81,13 +87,13 @@ impl MaintenanceWindowTaskInvocationParametersBuilder {
         mut self,
         input: crate::types::MaintenanceWindowAutomationParameters,
     ) -> Self {
-        self.automation = Some(input);
+        self.automation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
     pub fn set_automation(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceWindowAutomationParameters>,
+        input: ::std::option::Option<crate::types::MaintenanceWindowAutomationParameters>,
     ) -> Self {
         self.automation = input;
         self
@@ -97,26 +103,26 @@ impl MaintenanceWindowTaskInvocationParametersBuilder {
         mut self,
         input: crate::types::MaintenanceWindowStepFunctionsParameters,
     ) -> Self {
-        self.step_functions = Some(input);
+        self.step_functions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
     pub fn set_step_functions(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceWindowStepFunctionsParameters>,
+        input: ::std::option::Option<crate::types::MaintenanceWindowStepFunctionsParameters>,
     ) -> Self {
         self.step_functions = input;
         self
     }
     /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
     pub fn lambda(mut self, input: crate::types::MaintenanceWindowLambdaParameters) -> Self {
-        self.lambda = Some(input);
+        self.lambda = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
     pub fn set_lambda(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceWindowLambdaParameters>,
+        input: ::std::option::Option<crate::types::MaintenanceWindowLambdaParameters>,
     ) -> Self {
         self.lambda = input;
         self

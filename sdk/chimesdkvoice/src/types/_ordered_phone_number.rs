@@ -2,27 +2,27 @@
 
 /// <p>A phone number for which an order has been placed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OrderedPhoneNumber {
     /// <p>The phone number, in E.164 format.</p>
     #[doc(hidden)]
-    pub e164_phone_number: std::option::Option<std::string::String>,
+    pub e164_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The phone number status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OrderedPhoneNumberStatus>,
+    pub status: ::std::option::Option<crate::types::OrderedPhoneNumberStatus>,
 }
 impl OrderedPhoneNumber {
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(&self) -> std::option::Option<&str> {
+    pub fn e164_phone_number(&self) -> ::std::option::Option<&str> {
         self.e164_phone_number.as_deref()
     }
     /// <p>The phone number status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OrderedPhoneNumberStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OrderedPhoneNumberStatus> {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for OrderedPhoneNumber {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for OrderedPhoneNumber {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OrderedPhoneNumber");
         formatter.field("e164_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
@@ -38,34 +38,37 @@ impl OrderedPhoneNumber {
 
 /// A builder for [`OrderedPhoneNumber`](crate::types::OrderedPhoneNumber).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct OrderedPhoneNumberBuilder {
-    pub(crate) e164_phone_number: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::OrderedPhoneNumberStatus>,
+    pub(crate) e164_phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::OrderedPhoneNumberStatus>,
 }
 impl OrderedPhoneNumberBuilder {
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.e164_phone_number = Some(input.into());
+    pub fn e164_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.e164_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number, in E.164 format.</p>
     pub fn set_e164_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.e164_phone_number = input;
         self
     }
     /// <p>The phone number status.</p>
     pub fn status(mut self, input: crate::types::OrderedPhoneNumberStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The phone number status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::OrderedPhoneNumberStatus>,
+        input: ::std::option::Option<crate::types::OrderedPhoneNumberStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -78,8 +81,8 @@ impl OrderedPhoneNumberBuilder {
         }
     }
 }
-impl std::fmt::Debug for OrderedPhoneNumberBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for OrderedPhoneNumberBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OrderedPhoneNumberBuilder");
         formatter.field("e164_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);

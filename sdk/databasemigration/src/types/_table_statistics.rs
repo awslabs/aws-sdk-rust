@@ -2,14 +2,14 @@
 
 /// <p>Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableStatistics {
     /// <p>The schema name.</p>
     #[doc(hidden)]
-    pub schema_name: std::option::Option<std::string::String>,
+    pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of insert actions performed on a table.</p>
     #[doc(hidden)]
     pub inserts: i64,
@@ -24,16 +24,16 @@ pub struct TableStatistics {
     pub ddls: i64,
     /// <p>The number of insert actions applied on a target table.</p>
     #[doc(hidden)]
-    pub applied_inserts: std::option::Option<i64>,
+    pub applied_inserts: ::std::option::Option<i64>,
     /// <p>The number of delete actions applied on a target table.</p>
     #[doc(hidden)]
-    pub applied_deletes: std::option::Option<i64>,
+    pub applied_deletes: ::std::option::Option<i64>,
     /// <p>The number of update actions applied on a target table.</p>
     #[doc(hidden)]
-    pub applied_updates: std::option::Option<i64>,
+    pub applied_updates: ::std::option::Option<i64>,
     /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
     #[doc(hidden)]
-    pub applied_ddls: std::option::Option<i64>,
+    pub applied_ddls: ::std::option::Option<i64>,
     /// <p>The number of rows added during the full load operation.</p>
     #[doc(hidden)]
     pub full_load_rows: i64,
@@ -45,20 +45,20 @@ pub struct TableStatistics {
     pub full_load_error_rows: i64,
     /// <p>The time when the full load operation started.</p>
     #[doc(hidden)]
-    pub full_load_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub full_load_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the full load operation completed.</p>
     #[doc(hidden)]
-    pub full_load_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub full_load_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>).</p>
     #[doc(hidden)]
-    pub full_load_reloaded: std::option::Option<bool>,
+    pub full_load_reloaded: ::std::option::Option<bool>,
     /// <p>The last time a table was updated.</p>
     #[doc(hidden)]
-    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
     #[doc(hidden)]
-    pub table_state: std::option::Option<std::string::String>,
+    pub table_state: ::std::option::Option<::std::string::String>,
     /// <p>The number of records that have yet to be validated.</p>
     #[doc(hidden)]
     pub validation_pending_records: i64,
@@ -84,18 +84,18 @@ pub struct TableStatistics {
     /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub validation_state: std::option::Option<std::string::String>,
+    pub validation_state: ::std::option::Option<::std::string::String>,
     /// <p>Additional details about the state of validation.</p>
     #[doc(hidden)]
-    pub validation_state_details: std::option::Option<std::string::String>,
+    pub validation_state_details: ::std::option::Option<::std::string::String>,
 }
 impl TableStatistics {
     /// <p>The schema name.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The number of insert actions performed on a table.</p>
@@ -115,19 +115,19 @@ impl TableStatistics {
         self.ddls
     }
     /// <p>The number of insert actions applied on a target table.</p>
-    pub fn applied_inserts(&self) -> std::option::Option<i64> {
+    pub fn applied_inserts(&self) -> ::std::option::Option<i64> {
         self.applied_inserts
     }
     /// <p>The number of delete actions applied on a target table.</p>
-    pub fn applied_deletes(&self) -> std::option::Option<i64> {
+    pub fn applied_deletes(&self) -> ::std::option::Option<i64> {
         self.applied_deletes
     }
     /// <p>The number of update actions applied on a target table.</p>
-    pub fn applied_updates(&self) -> std::option::Option<i64> {
+    pub fn applied_updates(&self) -> ::std::option::Option<i64> {
         self.applied_updates
     }
     /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
-    pub fn applied_ddls(&self) -> std::option::Option<i64> {
+    pub fn applied_ddls(&self) -> ::std::option::Option<i64> {
         self.applied_ddls
     }
     /// <p>The number of rows added during the full load operation.</p>
@@ -143,24 +143,24 @@ impl TableStatistics {
         self.full_load_error_rows
     }
     /// <p>The time when the full load operation started.</p>
-    pub fn full_load_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn full_load_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.full_load_start_time.as_ref()
     }
     /// <p>The time when the full load operation completed.</p>
-    pub fn full_load_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn full_load_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.full_load_end_time.as_ref()
     }
     /// <p>A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>).</p>
-    pub fn full_load_reloaded(&self) -> std::option::Option<bool> {
+    pub fn full_load_reloaded(&self) -> ::std::option::Option<bool> {
         self.full_load_reloaded
     }
     /// <p>The last time a table was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
-    pub fn table_state(&self) -> std::option::Option<&str> {
+    pub fn table_state(&self) -> ::std::option::Option<&str> {
         self.table_state.as_deref()
     }
     /// <p>The number of records that have yet to be validated.</p>
@@ -190,11 +190,11 @@ impl TableStatistics {
     /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
     /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
-    pub fn validation_state(&self) -> std::option::Option<&str> {
+    pub fn validation_state(&self) -> ::std::option::Option<&str> {
         self.validation_state.as_deref()
     }
     /// <p>Additional details about the state of validation.</p>
-    pub fn validation_state_details(&self) -> std::option::Option<&str> {
+    pub fn validation_state_details(&self) -> ::std::option::Option<&str> {
         self.validation_state_details.as_deref()
     }
 }
@@ -207,254 +207,256 @@ impl TableStatistics {
 
 /// A builder for [`TableStatistics`](crate::types::TableStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableStatisticsBuilder {
-    pub(crate) schema_name: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) inserts: std::option::Option<i64>,
-    pub(crate) deletes: std::option::Option<i64>,
-    pub(crate) updates: std::option::Option<i64>,
-    pub(crate) ddls: std::option::Option<i64>,
-    pub(crate) applied_inserts: std::option::Option<i64>,
-    pub(crate) applied_deletes: std::option::Option<i64>,
-    pub(crate) applied_updates: std::option::Option<i64>,
-    pub(crate) applied_ddls: std::option::Option<i64>,
-    pub(crate) full_load_rows: std::option::Option<i64>,
-    pub(crate) full_load_condtnl_chk_failed_rows: std::option::Option<i64>,
-    pub(crate) full_load_error_rows: std::option::Option<i64>,
-    pub(crate) full_load_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) full_load_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) full_load_reloaded: std::option::Option<bool>,
-    pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) table_state: std::option::Option<std::string::String>,
-    pub(crate) validation_pending_records: std::option::Option<i64>,
-    pub(crate) validation_failed_records: std::option::Option<i64>,
-    pub(crate) validation_suspended_records: std::option::Option<i64>,
-    pub(crate) validation_state: std::option::Option<std::string::String>,
-    pub(crate) validation_state_details: std::option::Option<std::string::String>,
+    pub(crate) schema_name: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) inserts: ::std::option::Option<i64>,
+    pub(crate) deletes: ::std::option::Option<i64>,
+    pub(crate) updates: ::std::option::Option<i64>,
+    pub(crate) ddls: ::std::option::Option<i64>,
+    pub(crate) applied_inserts: ::std::option::Option<i64>,
+    pub(crate) applied_deletes: ::std::option::Option<i64>,
+    pub(crate) applied_updates: ::std::option::Option<i64>,
+    pub(crate) applied_ddls: ::std::option::Option<i64>,
+    pub(crate) full_load_rows: ::std::option::Option<i64>,
+    pub(crate) full_load_condtnl_chk_failed_rows: ::std::option::Option<i64>,
+    pub(crate) full_load_error_rows: ::std::option::Option<i64>,
+    pub(crate) full_load_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) full_load_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) full_load_reloaded: ::std::option::Option<bool>,
+    pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) table_state: ::std::option::Option<::std::string::String>,
+    pub(crate) validation_pending_records: ::std::option::Option<i64>,
+    pub(crate) validation_failed_records: ::std::option::Option<i64>,
+    pub(crate) validation_suspended_records: ::std::option::Option<i64>,
+    pub(crate) validation_state: ::std::option::Option<::std::string::String>,
+    pub(crate) validation_state_details: ::std::option::Option<::std::string::String>,
 }
 impl TableStatisticsBuilder {
     /// <p>The schema name.</p>
-    pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_name = Some(input.into());
+    pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema name.</p>
-    pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>The number of insert actions performed on a table.</p>
     pub fn inserts(mut self, input: i64) -> Self {
-        self.inserts = Some(input);
+        self.inserts = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of insert actions performed on a table.</p>
-    pub fn set_inserts(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_inserts(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inserts = input;
         self
     }
     /// <p>The number of delete actions performed on a table.</p>
     pub fn deletes(mut self, input: i64) -> Self {
-        self.deletes = Some(input);
+        self.deletes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of delete actions performed on a table.</p>
-    pub fn set_deletes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_deletes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.deletes = input;
         self
     }
     /// <p>The number of update actions performed on a table.</p>
     pub fn updates(mut self, input: i64) -> Self {
-        self.updates = Some(input);
+        self.updates = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of update actions performed on a table.</p>
-    pub fn set_updates(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_updates(mut self, input: ::std::option::Option<i64>) -> Self {
         self.updates = input;
         self
     }
     /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
     pub fn ddls(mut self, input: i64) -> Self {
-        self.ddls = Some(input);
+        self.ddls = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
-    pub fn set_ddls(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ddls(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ddls = input;
         self
     }
     /// <p>The number of insert actions applied on a target table.</p>
     pub fn applied_inserts(mut self, input: i64) -> Self {
-        self.applied_inserts = Some(input);
+        self.applied_inserts = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of insert actions applied on a target table.</p>
-    pub fn set_applied_inserts(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_applied_inserts(mut self, input: ::std::option::Option<i64>) -> Self {
         self.applied_inserts = input;
         self
     }
     /// <p>The number of delete actions applied on a target table.</p>
     pub fn applied_deletes(mut self, input: i64) -> Self {
-        self.applied_deletes = Some(input);
+        self.applied_deletes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of delete actions applied on a target table.</p>
-    pub fn set_applied_deletes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_applied_deletes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.applied_deletes = input;
         self
     }
     /// <p>The number of update actions applied on a target table.</p>
     pub fn applied_updates(mut self, input: i64) -> Self {
-        self.applied_updates = Some(input);
+        self.applied_updates = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of update actions applied on a target table.</p>
-    pub fn set_applied_updates(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_applied_updates(mut self, input: ::std::option::Option<i64>) -> Self {
         self.applied_updates = input;
         self
     }
     /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
     pub fn applied_ddls(mut self, input: i64) -> Self {
-        self.applied_ddls = Some(input);
+        self.applied_ddls = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
-    pub fn set_applied_ddls(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_applied_ddls(mut self, input: ::std::option::Option<i64>) -> Self {
         self.applied_ddls = input;
         self
     }
     /// <p>The number of rows added during the full load operation.</p>
     pub fn full_load_rows(mut self, input: i64) -> Self {
-        self.full_load_rows = Some(input);
+        self.full_load_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows added during the full load operation.</p>
-    pub fn set_full_load_rows(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_full_load_rows(mut self, input: ::std::option::Option<i64>) -> Self {
         self.full_load_rows = input;
         self
     }
     /// <p>The number of rows that failed conditional checks during the full load operation (valid only for migrations where DynamoDB is the target).</p>
     pub fn full_load_condtnl_chk_failed_rows(mut self, input: i64) -> Self {
-        self.full_load_condtnl_chk_failed_rows = Some(input);
+        self.full_load_condtnl_chk_failed_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows that failed conditional checks during the full load operation (valid only for migrations where DynamoDB is the target).</p>
     pub fn set_full_load_condtnl_chk_failed_rows(
         mut self,
-        input: std::option::Option<i64>,
+        input: ::std::option::Option<i64>,
     ) -> Self {
         self.full_load_condtnl_chk_failed_rows = input;
         self
     }
     /// <p>The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB is the target).</p>
     pub fn full_load_error_rows(mut self, input: i64) -> Self {
-        self.full_load_error_rows = Some(input);
+        self.full_load_error_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB is the target).</p>
-    pub fn set_full_load_error_rows(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_full_load_error_rows(mut self, input: ::std::option::Option<i64>) -> Self {
         self.full_load_error_rows = input;
         self
     }
     /// <p>The time when the full load operation started.</p>
-    pub fn full_load_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.full_load_start_time = Some(input);
+    pub fn full_load_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.full_load_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the full load operation started.</p>
     pub fn set_full_load_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.full_load_start_time = input;
         self
     }
     /// <p>The time when the full load operation completed.</p>
-    pub fn full_load_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.full_load_end_time = Some(input);
+    pub fn full_load_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.full_load_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the full load operation completed.</p>
     pub fn set_full_load_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.full_load_end_time = input;
         self
     }
     /// <p>A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>).</p>
     pub fn full_load_reloaded(mut self, input: bool) -> Self {
-        self.full_load_reloaded = Some(input);
+        self.full_load_reloaded = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>).</p>
-    pub fn set_full_load_reloaded(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_full_load_reloaded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.full_load_reloaded = input;
         self
     }
     /// <p>The last time a table was updated.</p>
-    pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_update_time = Some(input);
+    pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time a table was updated.</p>
     pub fn set_last_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_update_time = input;
         self
     }
     /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
-    pub fn table_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_state = Some(input.into());
+    pub fn table_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
-    pub fn set_table_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_state = input;
         self
     }
     /// <p>The number of records that have yet to be validated.</p>
     pub fn validation_pending_records(mut self, input: i64) -> Self {
-        self.validation_pending_records = Some(input);
+        self.validation_pending_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of records that have yet to be validated.</p>
-    pub fn set_validation_pending_records(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_validation_pending_records(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validation_pending_records = input;
         self
     }
     /// <p>The number of records that failed validation.</p>
     pub fn validation_failed_records(mut self, input: i64) -> Self {
-        self.validation_failed_records = Some(input);
+        self.validation_failed_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of records that failed validation.</p>
-    pub fn set_validation_failed_records(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_validation_failed_records(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validation_failed_records = input;
         self
     }
     /// <p>The number of records that couldn't be validated.</p>
     pub fn validation_suspended_records(mut self, input: i64) -> Self {
-        self.validation_suspended_records = Some(input);
+        self.validation_suspended_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of records that couldn't be validated.</p>
-    pub fn set_validation_suspended_records(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_validation_suspended_records(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validation_suspended_records = input;
         self
     }
@@ -473,8 +475,11 @@ impl TableStatisticsBuilder {
     /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
     /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
-    pub fn validation_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.validation_state = Some(input.into());
+    pub fn validation_state(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.validation_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The validation state of the table.</p>
@@ -492,19 +497,25 @@ impl TableStatisticsBuilder {
     /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
     /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
-    pub fn set_validation_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_validation_state(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.validation_state = input;
         self
     }
     /// <p>Additional details about the state of validation.</p>
-    pub fn validation_state_details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.validation_state_details = Some(input.into());
+    pub fn validation_state_details(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.validation_state_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional details about the state of validation.</p>
     pub fn set_validation_state_details(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.validation_state_details = input;
         self

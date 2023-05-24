@@ -2,22 +2,22 @@
 
 /// <p>Errors that occur during namespace creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamespaceError {
     /// <p>The error type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::NamespaceErrorType>,
+    pub r#type: ::std::option::Option<crate::types::NamespaceErrorType>,
     /// <p>The message for the error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceError {
     /// <p>The error type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::NamespaceErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NamespaceErrorType> {
         self.r#type.as_ref()
     }
     /// <p>The message for the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl NamespaceError {
 
 /// A builder for [`NamespaceError`](crate::types::NamespaceError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NamespaceErrorBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::NamespaceErrorType>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NamespaceErrorType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceErrorBuilder {
     /// <p>The error type.</p>
     pub fn r#type(mut self, input: crate::types::NamespaceErrorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error type.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::NamespaceErrorType>,
+        input: ::std::option::Option<crate::types::NamespaceErrorType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The message for the error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message for the error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

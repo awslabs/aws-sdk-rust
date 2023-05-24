@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum VisualCustomActionTrigger {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum VisualCustomActionTrigger {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for VisualCustomActionTrigger {
+impl ::std::convert::From<&str> for VisualCustomActionTrigger {
     fn from(s: &str) -> Self {
         match s {
             "DATA_POINT_CLICK" => VisualCustomActionTrigger::DataPointClick,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for VisualCustomActionTrigger {
         }
     }
 }
-impl std::str::FromStr for VisualCustomActionTrigger {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for VisualCustomActionTrigger {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VisualCustomActionTrigger::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(VisualCustomActionTrigger::from(s))
     }
 }
 impl VisualCustomActionTrigger {
@@ -86,7 +86,7 @@ impl VisualCustomActionTrigger {
         &["DATA_POINT_CLICK", "DATA_POINT_MENU"]
     }
 }
-impl AsRef<str> for VisualCustomActionTrigger {
+impl ::std::convert::AsRef<str> for VisualCustomActionTrigger {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

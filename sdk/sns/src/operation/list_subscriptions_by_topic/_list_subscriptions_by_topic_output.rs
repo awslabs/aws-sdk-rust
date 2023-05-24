@@ -2,27 +2,27 @@
 
 /// <p>Response for ListSubscriptionsByTopic action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscriptionsByTopicOutput {
     /// <p>A list of subscriptions.</p>
     #[doc(hidden)]
-    pub subscriptions: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
+    pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSubscriptionsByTopicOutput {
     /// <p>A list of subscriptions.</p>
-    pub fn subscriptions(&self) -> std::option::Option<&[crate::types::Subscription]> {
+    pub fn subscriptions(&self) -> ::std::option::Option<&[crate::types::Subscription]> {
         self.subscriptions.as_deref()
     }
     /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListSubscriptionsByTopicOutput {
+impl ::aws_http::request_id::RequestId for ListSubscriptionsByTopicOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListSubscriptionsByTopicOutput {
 
 /// A builder for [`ListSubscriptionsByTopicOutput`](crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSubscriptionsByTopicOutputBuilder {
-    pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSubscriptionsByTopicOutputBuilder {
@@ -51,24 +53,24 @@ impl ListSubscriptionsByTopicOutputBuilder {
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
         v.push(input);
-        self.subscriptions = Some(v);
+        self.subscriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of subscriptions.</p>
     pub fn set_subscriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     ) -> Self {
         self.subscriptions = input;
         self
     }
     /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This element is returned if there are more subscriptions to retrieve.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

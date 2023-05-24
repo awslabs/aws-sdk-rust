@@ -2,7 +2,7 @@
 
 /// <p>The collection of algorithms run on a dataset for training the model candidates of an Autopilot job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlAlgorithmConfig {
     /// <p>The selection of algorithms run on a dataset to train the model candidates of an Autopilot job. </p> <note>
     /// <p>Selected algorithms must belong to the list corresponding to the training mode set in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a minimum of 1 algorithm. </p>
@@ -27,7 +27,7 @@ pub struct AutoMlAlgorithmConfig {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub auto_ml_algorithms: std::option::Option<std::vec::Vec<crate::types::AutoMlAlgorithm>>,
+    pub auto_ml_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>>,
 }
 impl AutoMlAlgorithmConfig {
     /// <p>The selection of algorithms run on a dataset to train the model candidates of an Autopilot job. </p> <note>
@@ -52,7 +52,7 @@ impl AutoMlAlgorithmConfig {
     /// <li> <p>"xgboost"</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn auto_ml_algorithms(&self) -> std::option::Option<&[crate::types::AutoMlAlgorithm]> {
+    pub fn auto_ml_algorithms(&self) -> ::std::option::Option<&[crate::types::AutoMlAlgorithm]> {
         self.auto_ml_algorithms.as_deref()
     }
 }
@@ -65,10 +65,12 @@ impl AutoMlAlgorithmConfig {
 
 /// A builder for [`AutoMlAlgorithmConfig`](crate::types::AutoMlAlgorithmConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoMlAlgorithmConfigBuilder {
     pub(crate) auto_ml_algorithms:
-        std::option::Option<std::vec::Vec<crate::types::AutoMlAlgorithm>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>>,
 }
 impl AutoMlAlgorithmConfigBuilder {
     /// Appends an item to `auto_ml_algorithms`.
@@ -100,7 +102,7 @@ impl AutoMlAlgorithmConfigBuilder {
     pub fn auto_ml_algorithms(mut self, input: crate::types::AutoMlAlgorithm) -> Self {
         let mut v = self.auto_ml_algorithms.unwrap_or_default();
         v.push(input);
-        self.auto_ml_algorithms = Some(v);
+        self.auto_ml_algorithms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The selection of algorithms run on a dataset to train the model candidates of an Autopilot job. </p> <note>
@@ -127,7 +129,7 @@ impl AutoMlAlgorithmConfigBuilder {
     /// </ul>
     pub fn set_auto_ml_algorithms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AutoMlAlgorithm>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlAlgorithm>>,
     ) -> Self {
         self.auto_ml_algorithms = input;
         self

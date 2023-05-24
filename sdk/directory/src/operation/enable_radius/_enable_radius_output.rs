@@ -2,11 +2,11 @@
 
 /// <p>Contains the results of the <code>EnableRadius</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableRadiusOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for EnableRadiusOutput {
+impl ::aws_http::request_id::RequestId for EnableRadiusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl EnableRadiusOutput {
 
 /// A builder for [`EnableRadiusOutput`](crate::operation::enable_radius::EnableRadiusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnableRadiusOutputBuilder {
     _request_id: Option<String>,
 }

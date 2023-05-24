@@ -2,12 +2,12 @@
 
 /// <p>AWS Key Management Service (KMS) Key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum KmsKey {
     /// <p>KMS Alias Arn.</p>
-    KmsAliasArn(std::string::String),
+    KmsAliasArn(::std::string::String),
     /// <p>KMS Key Arn.</p>
-    KmsKeyArn(std::string::String),
+    KmsKeyArn(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,26 +19,26 @@ pub enum KmsKey {
     Unknown,
 }
 impl KmsKey {
-    /// Tries to convert the enum instance into [`KmsAliasArn`](crate::types::KmsKey::KmsAliasArn), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`KmsAliasArn`](crate::types::KmsKey::KmsAliasArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_kms_alias_arn(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_kms_alias_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let KmsKey::KmsAliasArn(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`KmsAliasArn`](crate::types::KmsKey::KmsAliasArn).
     pub fn is_kms_alias_arn(&self) -> bool {
         self.as_kms_alias_arn().is_ok()
     }
-    /// Tries to convert the enum instance into [`KmsKeyArn`](crate::types::KmsKey::KmsKeyArn), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`KmsKeyArn`](crate::types::KmsKey::KmsKeyArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_kms_key_arn(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_kms_key_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let KmsKey::KmsKeyArn(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`KmsKeyArn`](crate::types::KmsKey::KmsKeyArn).

@@ -2,67 +2,70 @@
 
 /// <p>The configuration for the artifacts concatenation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactsConcatenationConfiguration {
     /// <p>The configuration for the audio artifacts concatenation.</p>
     #[doc(hidden)]
-    pub audio: std::option::Option<crate::types::AudioConcatenationConfiguration>,
+    pub audio: ::std::option::Option<crate::types::AudioConcatenationConfiguration>,
     /// <p>The configuration for the video artifacts concatenation.</p>
     #[doc(hidden)]
-    pub video: std::option::Option<crate::types::VideoConcatenationConfiguration>,
+    pub video: ::std::option::Option<crate::types::VideoConcatenationConfiguration>,
     /// <p>The configuration for the content artifacts concatenation.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<crate::types::ContentConcatenationConfiguration>,
+    pub content: ::std::option::Option<crate::types::ContentConcatenationConfiguration>,
     /// <p>The configuration for the data channel artifacts concatenation.</p>
     #[doc(hidden)]
-    pub data_channel: std::option::Option<crate::types::DataChannelConcatenationConfiguration>,
+    pub data_channel: ::std::option::Option<crate::types::DataChannelConcatenationConfiguration>,
     /// <p>The configuration for the transcription messages artifacts concatenation.</p>
     #[doc(hidden)]
     pub transcription_messages:
-        std::option::Option<crate::types::TranscriptionMessagesConcatenationConfiguration>,
+        ::std::option::Option<crate::types::TranscriptionMessagesConcatenationConfiguration>,
     /// <p>The configuration for the meeting events artifacts concatenation.</p>
     #[doc(hidden)]
-    pub meeting_events: std::option::Option<crate::types::MeetingEventsConcatenationConfiguration>,
+    pub meeting_events:
+        ::std::option::Option<crate::types::MeetingEventsConcatenationConfiguration>,
     /// <p>The configuration for the composited video artifacts concatenation.</p>
     #[doc(hidden)]
     pub composited_video:
-        std::option::Option<crate::types::CompositedVideoConcatenationConfiguration>,
+        ::std::option::Option<crate::types::CompositedVideoConcatenationConfiguration>,
 }
 impl ArtifactsConcatenationConfiguration {
     /// <p>The configuration for the audio artifacts concatenation.</p>
-    pub fn audio(&self) -> std::option::Option<&crate::types::AudioConcatenationConfiguration> {
+    pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioConcatenationConfiguration> {
         self.audio.as_ref()
     }
     /// <p>The configuration for the video artifacts concatenation.</p>
-    pub fn video(&self) -> std::option::Option<&crate::types::VideoConcatenationConfiguration> {
+    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoConcatenationConfiguration> {
         self.video.as_ref()
     }
     /// <p>The configuration for the content artifacts concatenation.</p>
-    pub fn content(&self) -> std::option::Option<&crate::types::ContentConcatenationConfiguration> {
+    pub fn content(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ContentConcatenationConfiguration> {
         self.content.as_ref()
     }
     /// <p>The configuration for the data channel artifacts concatenation.</p>
     pub fn data_channel(
         &self,
-    ) -> std::option::Option<&crate::types::DataChannelConcatenationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DataChannelConcatenationConfiguration> {
         self.data_channel.as_ref()
     }
     /// <p>The configuration for the transcription messages artifacts concatenation.</p>
     pub fn transcription_messages(
         &self,
-    ) -> std::option::Option<&crate::types::TranscriptionMessagesConcatenationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TranscriptionMessagesConcatenationConfiguration> {
         self.transcription_messages.as_ref()
     }
     /// <p>The configuration for the meeting events artifacts concatenation.</p>
     pub fn meeting_events(
         &self,
-    ) -> std::option::Option<&crate::types::MeetingEventsConcatenationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::MeetingEventsConcatenationConfiguration> {
         self.meeting_events.as_ref()
     }
     /// <p>The configuration for the composited video artifacts concatenation.</p>
     pub fn composited_video(
         &self,
-    ) -> std::option::Option<&crate::types::CompositedVideoConcatenationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::CompositedVideoConcatenationConfiguration> {
         self.composited_video.as_ref()
     }
 }
@@ -75,56 +78,58 @@ impl ArtifactsConcatenationConfiguration {
 
 /// A builder for [`ArtifactsConcatenationConfiguration`](crate::types::ArtifactsConcatenationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArtifactsConcatenationConfigurationBuilder {
-    pub(crate) audio: std::option::Option<crate::types::AudioConcatenationConfiguration>,
-    pub(crate) video: std::option::Option<crate::types::VideoConcatenationConfiguration>,
-    pub(crate) content: std::option::Option<crate::types::ContentConcatenationConfiguration>,
+    pub(crate) audio: ::std::option::Option<crate::types::AudioConcatenationConfiguration>,
+    pub(crate) video: ::std::option::Option<crate::types::VideoConcatenationConfiguration>,
+    pub(crate) content: ::std::option::Option<crate::types::ContentConcatenationConfiguration>,
     pub(crate) data_channel:
-        std::option::Option<crate::types::DataChannelConcatenationConfiguration>,
+        ::std::option::Option<crate::types::DataChannelConcatenationConfiguration>,
     pub(crate) transcription_messages:
-        std::option::Option<crate::types::TranscriptionMessagesConcatenationConfiguration>,
+        ::std::option::Option<crate::types::TranscriptionMessagesConcatenationConfiguration>,
     pub(crate) meeting_events:
-        std::option::Option<crate::types::MeetingEventsConcatenationConfiguration>,
+        ::std::option::Option<crate::types::MeetingEventsConcatenationConfiguration>,
     pub(crate) composited_video:
-        std::option::Option<crate::types::CompositedVideoConcatenationConfiguration>,
+        ::std::option::Option<crate::types::CompositedVideoConcatenationConfiguration>,
 }
 impl ArtifactsConcatenationConfigurationBuilder {
     /// <p>The configuration for the audio artifacts concatenation.</p>
     pub fn audio(mut self, input: crate::types::AudioConcatenationConfiguration) -> Self {
-        self.audio = Some(input);
+        self.audio = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the audio artifacts concatenation.</p>
     pub fn set_audio(
         mut self,
-        input: std::option::Option<crate::types::AudioConcatenationConfiguration>,
+        input: ::std::option::Option<crate::types::AudioConcatenationConfiguration>,
     ) -> Self {
         self.audio = input;
         self
     }
     /// <p>The configuration for the video artifacts concatenation.</p>
     pub fn video(mut self, input: crate::types::VideoConcatenationConfiguration) -> Self {
-        self.video = Some(input);
+        self.video = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the video artifacts concatenation.</p>
     pub fn set_video(
         mut self,
-        input: std::option::Option<crate::types::VideoConcatenationConfiguration>,
+        input: ::std::option::Option<crate::types::VideoConcatenationConfiguration>,
     ) -> Self {
         self.video = input;
         self
     }
     /// <p>The configuration for the content artifacts concatenation.</p>
     pub fn content(mut self, input: crate::types::ContentConcatenationConfiguration) -> Self {
-        self.content = Some(input);
+        self.content = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the content artifacts concatenation.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<crate::types::ContentConcatenationConfiguration>,
+        input: ::std::option::Option<crate::types::ContentConcatenationConfiguration>,
     ) -> Self {
         self.content = input;
         self
@@ -134,13 +139,13 @@ impl ArtifactsConcatenationConfigurationBuilder {
         mut self,
         input: crate::types::DataChannelConcatenationConfiguration,
     ) -> Self {
-        self.data_channel = Some(input);
+        self.data_channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the data channel artifacts concatenation.</p>
     pub fn set_data_channel(
         mut self,
-        input: std::option::Option<crate::types::DataChannelConcatenationConfiguration>,
+        input: ::std::option::Option<crate::types::DataChannelConcatenationConfiguration>,
     ) -> Self {
         self.data_channel = input;
         self
@@ -150,13 +155,13 @@ impl ArtifactsConcatenationConfigurationBuilder {
         mut self,
         input: crate::types::TranscriptionMessagesConcatenationConfiguration,
     ) -> Self {
-        self.transcription_messages = Some(input);
+        self.transcription_messages = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the transcription messages artifacts concatenation.</p>
     pub fn set_transcription_messages(
         mut self,
-        input: std::option::Option<crate::types::TranscriptionMessagesConcatenationConfiguration>,
+        input: ::std::option::Option<crate::types::TranscriptionMessagesConcatenationConfiguration>,
     ) -> Self {
         self.transcription_messages = input;
         self
@@ -166,13 +171,13 @@ impl ArtifactsConcatenationConfigurationBuilder {
         mut self,
         input: crate::types::MeetingEventsConcatenationConfiguration,
     ) -> Self {
-        self.meeting_events = Some(input);
+        self.meeting_events = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the meeting events artifacts concatenation.</p>
     pub fn set_meeting_events(
         mut self,
-        input: std::option::Option<crate::types::MeetingEventsConcatenationConfiguration>,
+        input: ::std::option::Option<crate::types::MeetingEventsConcatenationConfiguration>,
     ) -> Self {
         self.meeting_events = input;
         self
@@ -182,13 +187,13 @@ impl ArtifactsConcatenationConfigurationBuilder {
         mut self,
         input: crate::types::CompositedVideoConcatenationConfiguration,
     ) -> Self {
-        self.composited_video = Some(input);
+        self.composited_video = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the composited video artifacts concatenation.</p>
     pub fn set_composited_video(
         mut self,
-        input: std::option::Option<crate::types::CompositedVideoConcatenationConfiguration>,
+        input: ::std::option::Option<crate::types::CompositedVideoConcatenationConfiguration>,
     ) -> Self {
         self.composited_video = input;
         self

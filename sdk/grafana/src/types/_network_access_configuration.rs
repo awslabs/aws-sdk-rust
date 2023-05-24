@@ -4,26 +4,26 @@
 /// <p>When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace. Standard Grafana authentication and authorization will still be required.</p>
 /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkAccessConfiguration {
     /// <p>An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will be allowed to access the workspace. You create a prefix list using the Amazon VPC console.</p>
     /// <p>Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.</p>
     /// <p>For more information about prefix lists, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Group CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     #[doc(hidden)]
-    pub prefix_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub prefix_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then only VPC endpoints specified here will be allowed to access the workspace.</p>
     /// <p>VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.</p>
     /// <p>For more information about creating an interface VPC endpoint, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/VPC-endpoints">Interface VPC endpoints</a> in the <i>Amazon Managed Grafana User Guide</i>.</p> <note>
     /// <p>The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints will be ignored.</p>
     /// </note>
     #[doc(hidden)]
-    pub vpce_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub vpce_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NetworkAccessConfiguration {
     /// <p>An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will be allowed to access the workspace. You create a prefix list using the Amazon VPC console.</p>
     /// <p>Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.</p>
     /// <p>For more information about prefix lists, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Group CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn prefix_list_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn prefix_list_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.prefix_list_ids.as_deref()
     }
     /// <p>An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then only VPC endpoints specified here will be allowed to access the workspace.</p>
@@ -31,7 +31,7 @@ impl NetworkAccessConfiguration {
     /// <p>For more information about creating an interface VPC endpoint, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/VPC-endpoints">Interface VPC endpoints</a> in the <i>Amazon Managed Grafana User Guide</i>.</p> <note>
     /// <p>The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints will be ignored.</p>
     /// </note>
-    pub fn vpce_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpce_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpce_ids.as_deref()
     }
 }
@@ -44,10 +44,12 @@ impl NetworkAccessConfiguration {
 
 /// A builder for [`NetworkAccessConfiguration`](crate::types::NetworkAccessConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkAccessConfigurationBuilder {
-    pub(crate) prefix_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) vpce_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) prefix_list_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpce_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NetworkAccessConfigurationBuilder {
     /// Appends an item to `prefix_list_ids`.
@@ -57,10 +59,13 @@ impl NetworkAccessConfigurationBuilder {
     /// <p>An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will be allowed to access the workspace. You create a prefix list using the Amazon VPC console.</p>
     /// <p>Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.</p>
     /// <p>For more information about prefix lists, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Group CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    pub fn prefix_list_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn prefix_list_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
         v.push(input.into());
-        self.prefix_list_ids = Some(v);
+        self.prefix_list_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of prefix list IDs. A prefix list is a list of CIDR ranges of IP addresses. The IP addresses specified are allowed to access your workspace. If the list is not included in the configuration then no IP addresses will be allowed to access the workspace. You create a prefix list using the Amazon VPC console.</p>
@@ -68,7 +73,7 @@ impl NetworkAccessConfigurationBuilder {
     /// <p>For more information about prefix lists, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Group CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
     pub fn set_prefix_list_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.prefix_list_ids = input;
         self
@@ -82,10 +87,10 @@ impl NetworkAccessConfigurationBuilder {
     /// <p>For more information about creating an interface VPC endpoint, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/VPC-endpoints">Interface VPC endpoints</a> in the <i>Amazon Managed Grafana User Guide</i>.</p> <note>
     /// <p>The only VPC endpoints that can be specified here are interface VPC endpoints for Grafana workspaces (using the <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other VPC endpoints will be ignored.</p>
     /// </note>
-    pub fn vpce_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpce_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpce_ids.unwrap_or_default();
         v.push(input.into());
-        self.vpce_ids = Some(v);
+        self.vpce_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints to your Amazon Managed Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code> is specified then only VPC endpoints specified here will be allowed to access the workspace.</p>
@@ -95,7 +100,7 @@ impl NetworkAccessConfigurationBuilder {
     /// </note>
     pub fn set_vpce_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.vpce_ids = input;
         self

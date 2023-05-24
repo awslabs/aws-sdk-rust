@@ -2,15 +2,15 @@
 
 /// <p>The axis sort options for a visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualAxisSortOption {
     /// <p>The availaiblity status of a visual's axis sort options.</p>
     #[doc(hidden)]
-    pub availability_status: std::option::Option<crate::types::DashboardBehavior>,
+    pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl VisualAxisSortOption {
     /// <p>The availaiblity status of a visual's axis sort options.</p>
-    pub fn availability_status(&self) -> std::option::Option<&crate::types::DashboardBehavior> {
+    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::DashboardBehavior> {
         self.availability_status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl VisualAxisSortOption {
 
 /// A builder for [`VisualAxisSortOption`](crate::types::VisualAxisSortOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VisualAxisSortOptionBuilder {
-    pub(crate) availability_status: std::option::Option<crate::types::DashboardBehavior>,
+    pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl VisualAxisSortOptionBuilder {
     /// <p>The availaiblity status of a visual's axis sort options.</p>
     pub fn availability_status(mut self, input: crate::types::DashboardBehavior) -> Self {
-        self.availability_status = Some(input);
+        self.availability_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The availaiblity status of a visual's axis sort options.</p>
     pub fn set_availability_status(
         mut self,
-        input: std::option::Option<crate::types::DashboardBehavior>,
+        input: ::std::option::Option<crate::types::DashboardBehavior>,
     ) -> Self {
         self.availability_status = input;
         self

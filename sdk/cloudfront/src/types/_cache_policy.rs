@@ -8,29 +8,29 @@
 /// </ul>
 /// <p>The headers, cookies, and query strings that are included in the cache key are also included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find a valid object in its cache that matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use <code>OriginRequestPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the cache policy was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The cache policy configuration.</p>
     #[doc(hidden)]
-    pub cache_policy_config: std::option::Option<crate::types::CachePolicyConfig>,
+    pub cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
 }
 impl CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The date and time when the cache policy was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The cache policy configuration.</p>
-    pub fn cache_policy_config(&self) -> std::option::Option<&crate::types::CachePolicyConfig> {
+    pub fn cache_policy_config(&self) -> ::std::option::Option<&crate::types::CachePolicyConfig> {
         self.cache_policy_config.as_ref()
     }
 }
@@ -43,45 +43,47 @@ impl CachePolicy {
 
 /// A builder for [`CachePolicy`](crate::types::CachePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CachePolicyBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) cache_policy_config: std::option::Option<crate::types::CachePolicyConfig>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) cache_policy_config: ::std::option::Option<crate::types::CachePolicyConfig>,
 }
 impl CachePolicyBuilder {
     /// <p>The unique identifier for the cache policy.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the cache policy.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The date and time when the cache policy was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the cache policy was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>The cache policy configuration.</p>
     pub fn cache_policy_config(mut self, input: crate::types::CachePolicyConfig) -> Self {
-        self.cache_policy_config = Some(input);
+        self.cache_policy_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cache policy configuration.</p>
     pub fn set_cache_policy_config(
         mut self,
-        input: std::option::Option<crate::types::CachePolicyConfig>,
+        input: ::std::option::Option<crate::types::CachePolicyConfig>,
     ) -> Self {
         self.cache_policy_config = input;
         self

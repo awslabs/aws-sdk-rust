@@ -2,15 +2,15 @@
 
 /// Information about a core definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreDefinitionVersion {
     /// A list of cores in the core definition version.
     #[doc(hidden)]
-    pub cores: std::option::Option<std::vec::Vec<crate::types::Core>>,
+    pub cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
 }
 impl CoreDefinitionVersion {
     /// A list of cores in the core definition version.
-    pub fn cores(&self) -> std::option::Option<&[crate::types::Core]> {
+    pub fn cores(&self) -> ::std::option::Option<&[crate::types::Core]> {
         self.cores.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl CoreDefinitionVersion {
 
 /// A builder for [`CoreDefinitionVersion`](crate::types::CoreDefinitionVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoreDefinitionVersionBuilder {
-    pub(crate) cores: std::option::Option<std::vec::Vec<crate::types::Core>>,
+    pub(crate) cores: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
 }
 impl CoreDefinitionVersionBuilder {
     /// Appends an item to `cores`.
@@ -36,13 +38,13 @@ impl CoreDefinitionVersionBuilder {
     pub fn cores(mut self, input: crate::types::Core) -> Self {
         let mut v = self.cores.unwrap_or_default();
         v.push(input);
-        self.cores = Some(v);
+        self.cores = ::std::option::Option::Some(v);
         self
     }
     /// A list of cores in the core definition version.
     pub fn set_cores(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Core>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Core>>,
     ) -> Self {
         self.cores = input;
         self

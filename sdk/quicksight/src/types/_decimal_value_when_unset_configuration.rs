@@ -2,7 +2,7 @@
 
 /// <p>The configuration that defines the default value of a <code>Decimal</code> parameter when a value has not been set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DecimalValueWhenUnsetConfiguration {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
@@ -10,10 +10,10 @@ pub struct DecimalValueWhenUnsetConfiguration {
     /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub value_when_unset_option: std::option::Option<crate::types::ValueWhenUnsetOption>,
+    pub value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     #[doc(hidden)]
-    pub custom_value: std::option::Option<f64>,
+    pub custom_value: ::std::option::Option<f64>,
 }
 impl DecimalValueWhenUnsetConfiguration {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
@@ -23,16 +23,16 @@ impl DecimalValueWhenUnsetConfiguration {
     /// </ul>
     pub fn value_when_unset_option(
         &self,
-    ) -> std::option::Option<&crate::types::ValueWhenUnsetOption> {
+    ) -> ::std::option::Option<&crate::types::ValueWhenUnsetOption> {
         self.value_when_unset_option.as_ref()
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
-    pub fn custom_value(&self) -> std::option::Option<f64> {
+    pub fn custom_value(&self) -> ::std::option::Option<f64> {
         self.custom_value
     }
 }
-impl std::fmt::Debug for DecimalValueWhenUnsetConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DecimalValueWhenUnsetConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DecimalValueWhenUnsetConfiguration");
         formatter.field("value_when_unset_option", &self.value_when_unset_option);
         formatter.field("custom_value", &"*** Sensitive Data Redacted ***");
@@ -48,10 +48,10 @@ impl DecimalValueWhenUnsetConfiguration {
 
 /// A builder for [`DecimalValueWhenUnsetConfiguration`](crate::types::DecimalValueWhenUnsetConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DecimalValueWhenUnsetConfigurationBuilder {
-    pub(crate) value_when_unset_option: std::option::Option<crate::types::ValueWhenUnsetOption>,
-    pub(crate) custom_value: std::option::Option<f64>,
+    pub(crate) value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
+    pub(crate) custom_value: ::std::option::Option<f64>,
 }
 impl DecimalValueWhenUnsetConfigurationBuilder {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
@@ -60,7 +60,7 @@ impl DecimalValueWhenUnsetConfigurationBuilder {
     /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
     /// </ul>
     pub fn value_when_unset_option(mut self, input: crate::types::ValueWhenUnsetOption) -> Self {
-        self.value_when_unset_option = Some(input);
+        self.value_when_unset_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The built-in options for default values. The value can be one of the following:</p>
@@ -70,18 +70,18 @@ impl DecimalValueWhenUnsetConfigurationBuilder {
     /// </ul>
     pub fn set_value_when_unset_option(
         mut self,
-        input: std::option::Option<crate::types::ValueWhenUnsetOption>,
+        input: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     ) -> Self {
         self.value_when_unset_option = input;
         self
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     pub fn custom_value(mut self, input: f64) -> Self {
-        self.custom_value = Some(input);
+        self.custom_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
-    pub fn set_custom_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_custom_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.custom_value = input;
         self
     }
@@ -93,8 +93,8 @@ impl DecimalValueWhenUnsetConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for DecimalValueWhenUnsetConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DecimalValueWhenUnsetConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DecimalValueWhenUnsetConfigurationBuilder");
         formatter.field("value_when_unset_option", &self.value_when_unset_option);
         formatter.field("custom_value", &"*** Sensitive Data Redacted ***");

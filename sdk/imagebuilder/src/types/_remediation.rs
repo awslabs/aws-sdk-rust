@@ -2,15 +2,17 @@
 
 /// <p>Information about how to remediate a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Remediation {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     #[doc(hidden)]
-    pub recommendation: std::option::Option<crate::types::RemediationRecommendation>,
+    pub recommendation: ::std::option::Option<crate::types::RemediationRecommendation>,
 }
 impl Remediation {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
-    pub fn recommendation(&self) -> std::option::Option<&crate::types::RemediationRecommendation> {
+    pub fn recommendation(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RemediationRecommendation> {
         self.recommendation.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl Remediation {
 
 /// A builder for [`Remediation`](crate::types::Remediation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemediationBuilder {
-    pub(crate) recommendation: std::option::Option<crate::types::RemediationRecommendation>,
+    pub(crate) recommendation: ::std::option::Option<crate::types::RemediationRecommendation>,
 }
 impl RemediationBuilder {
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     pub fn recommendation(mut self, input: crate::types::RemediationRecommendation) -> Self {
-        self.recommendation = Some(input);
+        self.recommendation = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the recommended course of action to remediate the finding.</p>
     pub fn set_recommendation(
         mut self,
-        input: std::option::Option<crate::types::RemediationRecommendation>,
+        input: ::std::option::Option<crate::types::RemediationRecommendation>,
     ) -> Self {
         self.recommendation = input;
         self

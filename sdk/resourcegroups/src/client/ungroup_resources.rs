@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UngroupResources`](crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group(impl Into<String>)`](crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder::set_group): <p>The name or the ARN of the resource group from which to remove the resources.</p>
+    ///   - [`group(impl ::std::convert::Into<String>)`](crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder::set_group): <p>The name or the ARN of the resource group from which to remove the resources.</p>
     ///   - [`resource_arns(Vec<String>)`](crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder::resource_arns) / [`set_resource_arns(Option<Vec<String>>)`](crate::operation::ungroup_resources::builders::UngroupResourcesFluentBuilder::set_resource_arns): <p>The ARNs of the resources to be removed from the group.</p>
     /// - On success, responds with [`UngroupResourcesOutput`](crate::operation::ungroup_resources::UngroupResourcesOutput) with field(s):
     ///   - [`succeeded(Option<Vec<String>>)`](crate::operation::ungroup_resources::UngroupResourcesOutput::succeeded): <p>A list of resources that were successfully removed from the group by this operation.</p>

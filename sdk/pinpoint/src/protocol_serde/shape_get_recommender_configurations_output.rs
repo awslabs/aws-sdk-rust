@@ -2,7 +2,7 @@
 pub(crate) fn de_list_recommender_configurations_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ListRecommenderConfigurationsResponse>,
+    ::std::option::Option<crate::types::ListRecommenderConfigurationsResponse>,
     crate::operation::get_recommender_configurations::GetRecommenderConfigurationsError,
 > {
     (!body.is_empty()).then(||{

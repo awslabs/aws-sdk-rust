@@ -2,78 +2,78 @@
 
 /// <p>Properties associated with the dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetProperties {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
-    pub dataset_arn: std::option::Option<std::string::String>,
+    pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
-    pub dataset_name: std::option::Option<std::string::String>,
+    pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The dataset type (training data or test data).</p>
     #[doc(hidden)]
-    pub dataset_type: std::option::Option<crate::types::DatasetType>,
+    pub dataset_type: ::std::option::Option<crate::types::DatasetType>,
     /// <p>The S3 URI where the dataset is stored.</p>
     #[doc(hidden)]
-    pub dataset_s3_uri: std::option::Option<std::string::String>,
+    pub dataset_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>Description of the dataset.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The dataset status. While the system creates the dataset, the status is <code>CREATING</code>. When the dataset is ready to use, the status changes to <code>COMPLETED</code>. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DatasetStatus>,
+    pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p>A description of the status of the dataset.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents in the dataset.</p>
     #[doc(hidden)]
-    pub number_of_documents: std::option::Option<i64>,
+    pub number_of_documents: ::std::option::Option<i64>,
     /// <p>Creation time of the dataset.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time when the data from the dataset becomes available in the data lake.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasetProperties {
     /// <p>The ARN of the dataset.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>The dataset type (training data or test data).</p>
-    pub fn dataset_type(&self) -> std::option::Option<&crate::types::DatasetType> {
+    pub fn dataset_type(&self) -> ::std::option::Option<&crate::types::DatasetType> {
         self.dataset_type.as_ref()
     }
     /// <p>The S3 URI where the dataset is stored.</p>
-    pub fn dataset_s3_uri(&self) -> std::option::Option<&str> {
+    pub fn dataset_s3_uri(&self) -> ::std::option::Option<&str> {
         self.dataset_s3_uri.as_deref()
     }
     /// <p>Description of the dataset.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The dataset status. While the system creates the dataset, the status is <code>CREATING</code>. When the dataset is ready to use, the status changes to <code>COMPLETED</code>. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DatasetStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>A description of the status of the dataset.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The number of documents in the dataset.</p>
-    pub fn number_of_documents(&self) -> std::option::Option<i64> {
+    pub fn number_of_documents(&self) -> ::std::option::Option<i64> {
         self.number_of_documents
     }
     /// <p>Creation time of the dataset.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Time when the data from the dataset becomes available in the data lake.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -86,123 +86,134 @@ impl DatasetProperties {
 
 /// A builder for [`DatasetProperties`](crate::types::DatasetProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetPropertiesBuilder {
-    pub(crate) dataset_arn: std::option::Option<std::string::String>,
-    pub(crate) dataset_name: std::option::Option<std::string::String>,
-    pub(crate) dataset_type: std::option::Option<crate::types::DatasetType>,
-    pub(crate) dataset_s3_uri: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DatasetStatus>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) number_of_documents: std::option::Option<i64>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetType>,
+    pub(crate) dataset_s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DatasetStatus>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) number_of_documents: ::std::option::Option<i64>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasetPropertiesBuilder {
     /// <p>The ARN of the dataset.</p>
-    pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_arn = Some(input.into());
+    pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset.</p>
-    pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_name = Some(input.into());
+    pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
     }
     /// <p>The dataset type (training data or test data).</p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
-        self.dataset_type = Some(input);
+        self.dataset_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dataset type (training data or test data).</p>
     pub fn set_dataset_type(
         mut self,
-        input: std::option::Option<crate::types::DatasetType>,
+        input: ::std::option::Option<crate::types::DatasetType>,
     ) -> Self {
         self.dataset_type = input;
         self
     }
     /// <p>The S3 URI where the dataset is stored.</p>
-    pub fn dataset_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_s3_uri = Some(input.into());
+    pub fn dataset_s3_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 URI where the dataset is stored.</p>
-    pub fn set_dataset_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_s3_uri(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dataset_s3_uri = input;
         self
     }
     /// <p>Description of the dataset.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the dataset.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The dataset status. While the system creates the dataset, the status is <code>CREATING</code>. When the dataset is ready to use, the status changes to <code>COMPLETED</code>. </p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dataset status. While the system creates the dataset, the status is <code>CREATING</code>. When the dataset is ready to use, the status changes to <code>COMPLETED</code>. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DatasetStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>A description of the status of the dataset.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the status of the dataset.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The number of documents in the dataset.</p>
     pub fn number_of_documents(mut self, input: i64) -> Self {
-        self.number_of_documents = Some(input);
+        self.number_of_documents = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of documents in the dataset.</p>
-    pub fn set_number_of_documents(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_documents(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_documents = input;
         self
     }
     /// <p>Creation time of the dataset.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Creation time of the dataset.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Time when the data from the dataset becomes available in the data lake.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time when the data from the dataset becomes available in the data lake.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }

@@ -2,36 +2,38 @@
 
 /// <p>Provides details about a snapshot of application state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
     #[doc(hidden)]
-    pub snapshot_name: std::option::Option<std::string::String>,
+    pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application snapshot.</p>
     #[doc(hidden)]
-    pub snapshot_status: std::option::Option<crate::types::SnapshotStatus>,
+    pub snapshot_status: ::std::option::Option<crate::types::SnapshotStatus>,
     /// <p>The current application version ID when the snapshot was created.</p>
     #[doc(hidden)]
-    pub application_version_id: std::option::Option<i64>,
+    pub application_version_id: ::std::option::Option<i64>,
     /// <p>The timestamp of the application snapshot.</p>
     #[doc(hidden)]
-    pub snapshot_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The status of the application snapshot.</p>
-    pub fn snapshot_status(&self) -> std::option::Option<&crate::types::SnapshotStatus> {
+    pub fn snapshot_status(&self) -> ::std::option::Option<&crate::types::SnapshotStatus> {
         self.snapshot_status.as_ref()
     }
     /// <p>The current application version ID when the snapshot was created.</p>
-    pub fn application_version_id(&self) -> std::option::Option<i64> {
+    pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
     /// <p>The timestamp of the application snapshot.</p>
-    pub fn snapshot_creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_creation_timestamp(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.snapshot_creation_timestamp.as_ref()
     }
 }
@@ -44,56 +46,64 @@ impl SnapshotDetails {
 
 /// A builder for [`SnapshotDetails`](crate::types::SnapshotDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnapshotDetailsBuilder {
-    pub(crate) snapshot_name: std::option::Option<std::string::String>,
-    pub(crate) snapshot_status: std::option::Option<crate::types::SnapshotStatus>,
-    pub(crate) application_version_id: std::option::Option<i64>,
-    pub(crate) snapshot_creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_status: ::std::option::Option<crate::types::SnapshotStatus>,
+    pub(crate) application_version_id: ::std::option::Option<i64>,
+    pub(crate) snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotDetailsBuilder {
     /// <p>The identifier for the application snapshot.</p>
-    pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_name = Some(input.into());
+    pub fn snapshot_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the application snapshot.</p>
-    pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.snapshot_name = input;
         self
     }
     /// <p>The status of the application snapshot.</p>
     pub fn snapshot_status(mut self, input: crate::types::SnapshotStatus) -> Self {
-        self.snapshot_status = Some(input);
+        self.snapshot_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the application snapshot.</p>
     pub fn set_snapshot_status(
         mut self,
-        input: std::option::Option<crate::types::SnapshotStatus>,
+        input: ::std::option::Option<crate::types::SnapshotStatus>,
     ) -> Self {
         self.snapshot_status = input;
         self
     }
     /// <p>The current application version ID when the snapshot was created.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
-        self.application_version_id = Some(input);
+        self.application_version_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current application version ID when the snapshot was created.</p>
-    pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
     }
     /// <p>The timestamp of the application snapshot.</p>
-    pub fn snapshot_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.snapshot_creation_timestamp = Some(input);
+    pub fn snapshot_creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.snapshot_creation_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the application snapshot.</p>
     pub fn set_snapshot_creation_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.snapshot_creation_timestamp = input;
         self

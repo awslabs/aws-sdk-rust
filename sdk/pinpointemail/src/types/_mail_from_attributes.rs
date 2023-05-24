@@ -2,11 +2,11 @@
 
 /// <p>A list of attributes that are associated with a MAIL FROM domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MailFromAttributes {
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
     #[doc(hidden)]
-    pub mail_from_domain: std::option::Option<std::string::String>,
+    pub mail_from_domain: ::std::option::Option<::std::string::String>,
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li>
@@ -15,15 +15,15 @@ pub struct MailFromAttributes {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub mail_from_domain_status: std::option::Option<crate::types::MailFromDomainStatus>,
+    pub mail_from_domain_status: ::std::option::Option<crate::types::MailFromDomainStatus>,
     /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     #[doc(hidden)]
-    pub behavior_on_mx_failure: std::option::Option<crate::types::BehaviorOnMxFailure>,
+    pub behavior_on_mx_failure: ::std::option::Option<crate::types::BehaviorOnMxFailure>,
 }
 impl MailFromAttributes {
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
-    pub fn mail_from_domain(&self) -> std::option::Option<&str> {
+    pub fn mail_from_domain(&self) -> ::std::option::Option<&str> {
         self.mail_from_domain.as_deref()
     }
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
@@ -35,14 +35,14 @@ impl MailFromAttributes {
     /// </ul>
     pub fn mail_from_domain_status(
         &self,
-    ) -> std::option::Option<&crate::types::MailFromDomainStatus> {
+    ) -> ::std::option::Option<&crate::types::MailFromDomainStatus> {
         self.mail_from_domain_status.as_ref()
     }
     /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn behavior_on_mx_failure(
         &self,
-    ) -> std::option::Option<&crate::types::BehaviorOnMxFailure> {
+    ) -> ::std::option::Option<&crate::types::BehaviorOnMxFailure> {
         self.behavior_on_mx_failure.as_ref()
     }
 }
@@ -55,20 +55,28 @@ impl MailFromAttributes {
 
 /// A builder for [`MailFromAttributes`](crate::types::MailFromAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MailFromAttributesBuilder {
-    pub(crate) mail_from_domain: std::option::Option<std::string::String>,
-    pub(crate) mail_from_domain_status: std::option::Option<crate::types::MailFromDomainStatus>,
-    pub(crate) behavior_on_mx_failure: std::option::Option<crate::types::BehaviorOnMxFailure>,
+    pub(crate) mail_from_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) mail_from_domain_status: ::std::option::Option<crate::types::MailFromDomainStatus>,
+    pub(crate) behavior_on_mx_failure: ::std::option::Option<crate::types::BehaviorOnMxFailure>,
 }
 impl MailFromAttributesBuilder {
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
-    pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mail_from_domain = Some(input.into());
+    pub fn mail_from_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.mail_from_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
-    pub fn set_mail_from_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mail_from_domain(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.mail_from_domain = input;
         self
     }
@@ -80,7 +88,7 @@ impl MailFromAttributesBuilder {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li>
     /// </ul>
     pub fn mail_from_domain_status(mut self, input: crate::types::MailFromDomainStatus) -> Self {
-        self.mail_from_domain_status = Some(input);
+        self.mail_from_domain_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
@@ -92,7 +100,7 @@ impl MailFromAttributesBuilder {
     /// </ul>
     pub fn set_mail_from_domain_status(
         mut self,
-        input: std::option::Option<crate::types::MailFromDomainStatus>,
+        input: ::std::option::Option<crate::types::MailFromDomainStatus>,
     ) -> Self {
         self.mail_from_domain_status = input;
         self
@@ -100,14 +108,14 @@ impl MailFromAttributesBuilder {
     /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn behavior_on_mx_failure(mut self, input: crate::types::BehaviorOnMxFailure) -> Self {
-        self.behavior_on_mx_failure = Some(input);
+        self.behavior_on_mx_failure = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     pub fn set_behavior_on_mx_failure(
         mut self,
-        input: std::option::Option<crate::types::BehaviorOnMxFailure>,
+        input: ::std::option::Option<crate::types::BehaviorOnMxFailure>,
     ) -> Self {
         self.behavior_on_mx_failure = input;
         self

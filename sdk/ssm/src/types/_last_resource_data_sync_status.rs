@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LastResourceDataSyncStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum LastResourceDataSyncStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LastResourceDataSyncStatus {
+impl ::std::convert::From<&str> for LastResourceDataSyncStatus {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => LastResourceDataSyncStatus::Failed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for LastResourceDataSyncStatus {
         }
     }
 }
-impl std::str::FromStr for LastResourceDataSyncStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LastResourceDataSyncStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LastResourceDataSyncStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LastResourceDataSyncStatus::from(s))
     }
 }
 impl LastResourceDataSyncStatus {
@@ -91,7 +91,7 @@ impl LastResourceDataSyncStatus {
         &["Failed", "InProgress", "Successful"]
     }
 }
-impl AsRef<str> for LastResourceDataSyncStatus {
+impl ::std::convert::AsRef<str> for LastResourceDataSyncStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

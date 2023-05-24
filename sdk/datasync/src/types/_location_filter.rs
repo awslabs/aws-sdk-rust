@@ -3,29 +3,29 @@
 /// <p>Narrow down the list of resources returned by <code>ListLocations</code>. For example, to see all your Amazon S3 locations, create a filter using <code>"Name": "LocationType"</code>, <code>"Operator": "Equals"</code>, and <code>"Values": "S3"</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering resources</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::LocationFilterName>,
+    pub name: ::std::option::Option<crate::types::LocationFilterName>,
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::Operator>,
+    pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl LocationFilter {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::LocationFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::LocationFilterName> {
         self.name.as_ref()
     }
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::Operator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
         self.operator.as_ref()
     }
 }
@@ -38,22 +38,24 @@ impl LocationFilter {
 
 /// A builder for [`LocationFilter`](crate::types::LocationFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocationFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::LocationFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) operator: std::option::Option<crate::types::Operator>,
+    pub(crate) name: ::std::option::Option<crate::types::LocationFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operator: ::std::option::Option<crate::types::Operator>,
 }
 impl LocationFilterBuilder {
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
     pub fn name(mut self, input: crate::types::LocationFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the filter being used. Each API call supports a list of filters that are available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::LocationFilterName>,
+        input: ::std::option::Option<crate::types::LocationFilterName>,
     ) -> Self {
         self.name = input;
         self
@@ -63,27 +65,27 @@ impl LocationFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3 locations.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).</p>
-    pub fn set_operator(mut self, input: std::option::Option<crate::types::Operator>) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
         self.operator = input;
         self
     }

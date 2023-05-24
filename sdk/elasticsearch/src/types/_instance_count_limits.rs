@@ -2,7 +2,7 @@
 
 /// <p> InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceCountLimits {
     /// <p> Minimum number of Instances that can be instantiated for given InstanceType. </p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl InstanceCountLimits {
 
 /// A builder for [`InstanceCountLimits`](crate::types::InstanceCountLimits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceCountLimitsBuilder {
-    pub(crate) minimum_instance_count: std::option::Option<i32>,
-    pub(crate) maximum_instance_count: std::option::Option<i32>,
+    pub(crate) minimum_instance_count: ::std::option::Option<i32>,
+    pub(crate) maximum_instance_count: ::std::option::Option<i32>,
 }
 impl InstanceCountLimitsBuilder {
     /// <p> Minimum number of Instances that can be instantiated for given InstanceType. </p>
     pub fn minimum_instance_count(mut self, input: i32) -> Self {
-        self.minimum_instance_count = Some(input);
+        self.minimum_instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> Minimum number of Instances that can be instantiated for given InstanceType. </p>
-    pub fn set_minimum_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minimum_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_instance_count = input;
         self
     }
     /// <p> Maximum number of Instances that can be instantiated for given InstanceType. </p>
     pub fn maximum_instance_count(mut self, input: i32) -> Self {
-        self.maximum_instance_count = Some(input);
+        self.maximum_instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> Maximum number of Instances that can be instantiated for given InstanceType. </p>
-    pub fn set_maximum_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_instance_count = input;
         self
     }

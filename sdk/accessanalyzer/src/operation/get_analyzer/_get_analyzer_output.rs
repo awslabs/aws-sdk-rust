@@ -2,20 +2,20 @@
 
 /// <p>The response to the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnalyzerOutput {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     #[doc(hidden)]
-    pub analyzer: std::option::Option<crate::types::AnalyzerSummary>,
+    pub analyzer: ::std::option::Option<crate::types::AnalyzerSummary>,
     _request_id: Option<String>,
 }
 impl GetAnalyzerOutput {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
-    pub fn analyzer(&self) -> std::option::Option<&crate::types::AnalyzerSummary> {
+    pub fn analyzer(&self) -> ::std::option::Option<&crate::types::AnalyzerSummary> {
         self.analyzer.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetAnalyzerOutput {
+impl ::aws_http::request_id::RequestId for GetAnalyzerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl GetAnalyzerOutput {
 
 /// A builder for [`GetAnalyzerOutput`](crate::operation::get_analyzer::GetAnalyzerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAnalyzerOutputBuilder {
-    pub(crate) analyzer: std::option::Option<crate::types::AnalyzerSummary>,
+    pub(crate) analyzer: ::std::option::Option<crate::types::AnalyzerSummary>,
     _request_id: Option<String>,
 }
 impl GetAnalyzerOutputBuilder {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     pub fn analyzer(mut self, input: crate::types::AnalyzerSummary) -> Self {
-        self.analyzer = Some(input);
+        self.analyzer = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     pub fn set_analyzer(
         mut self,
-        input: std::option::Option<crate::types::AnalyzerSummary>,
+        input: ::std::option::Option<crate::types::AnalyzerSummary>,
     ) -> Self {
         self.analyzer = input;
         self

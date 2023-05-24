@@ -2,69 +2,69 @@
 
 /// <p>Describes a target tracking configuration to use with AWS Auto Scaling. Used with <code>ScalingInstruction</code> and <code>ScalingPolicy</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetTrackingConfiguration {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     #[doc(hidden)]
     pub predefined_scaling_metric_specification:
-        std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
+        ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     #[doc(hidden)]
     pub customized_scaling_metric_specification:
-        std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
+        ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
     #[doc(hidden)]
-    pub target_value: std::option::Option<f64>,
+    pub target_value: ::std::option::Option<f64>,
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
     #[doc(hidden)]
-    pub disable_scale_in: std::option::Option<bool>,
+    pub disable_scale_in: ::std::option::Option<bool>,
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out. After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the cooldown period ends.</p>
     #[doc(hidden)]
-    pub scale_out_cooldown: std::option::Option<i32>,
+    pub scale_out_cooldown: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.</p>
     #[doc(hidden)]
-    pub scale_in_cooldown: std::option::Option<i32>,
+    pub scale_in_cooldown: ::std::option::Option<i32>,
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
     #[doc(hidden)]
-    pub estimated_instance_warmup: std::option::Option<i32>,
+    pub estimated_instance_warmup: ::std::option::Option<i32>,
 }
 impl TargetTrackingConfiguration {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     pub fn predefined_scaling_metric_specification(
         &self,
-    ) -> std::option::Option<&crate::types::PredefinedScalingMetricSpecification> {
+    ) -> ::std::option::Option<&crate::types::PredefinedScalingMetricSpecification> {
         self.predefined_scaling_metric_specification.as_ref()
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     pub fn customized_scaling_metric_specification(
         &self,
-    ) -> std::option::Option<&crate::types::CustomizedScalingMetricSpecification> {
+    ) -> ::std::option::Option<&crate::types::CustomizedScalingMetricSpecification> {
         self.customized_scaling_metric_specification.as_ref()
     }
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
-    pub fn target_value(&self) -> std::option::Option<f64> {
+    pub fn target_value(&self) -> ::std::option::Option<f64> {
         self.target_value
     }
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
-    pub fn disable_scale_in(&self) -> std::option::Option<bool> {
+    pub fn disable_scale_in(&self) -> ::std::option::Option<bool> {
         self.disable_scale_in
     }
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out. After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the cooldown period ends.</p>
-    pub fn scale_out_cooldown(&self) -> std::option::Option<i32> {
+    pub fn scale_out_cooldown(&self) -> ::std::option::Option<i32> {
         self.scale_out_cooldown
     }
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.</p>
-    pub fn scale_in_cooldown(&self) -> std::option::Option<i32> {
+    pub fn scale_in_cooldown(&self) -> ::std::option::Option<i32> {
         self.scale_in_cooldown
     }
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
-    pub fn estimated_instance_warmup(&self) -> std::option::Option<i32> {
+    pub fn estimated_instance_warmup(&self) -> ::std::option::Option<i32> {
         self.estimated_instance_warmup
     }
 }
@@ -77,17 +77,19 @@ impl TargetTrackingConfiguration {
 
 /// A builder for [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetTrackingConfigurationBuilder {
     pub(crate) predefined_scaling_metric_specification:
-        std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
+        ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
     pub(crate) customized_scaling_metric_specification:
-        std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
-    pub(crate) target_value: std::option::Option<f64>,
-    pub(crate) disable_scale_in: std::option::Option<bool>,
-    pub(crate) scale_out_cooldown: std::option::Option<i32>,
-    pub(crate) scale_in_cooldown: std::option::Option<i32>,
-    pub(crate) estimated_instance_warmup: std::option::Option<i32>,
+        ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
+    pub(crate) target_value: ::std::option::Option<f64>,
+    pub(crate) disable_scale_in: ::std::option::Option<bool>,
+    pub(crate) scale_out_cooldown: ::std::option::Option<i32>,
+    pub(crate) scale_in_cooldown: ::std::option::Option<i32>,
+    pub(crate) estimated_instance_warmup: ::std::option::Option<i32>,
 }
 impl TargetTrackingConfigurationBuilder {
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
@@ -95,13 +97,13 @@ impl TargetTrackingConfigurationBuilder {
         mut self,
         input: crate::types::PredefinedScalingMetricSpecification,
     ) -> Self {
-        self.predefined_scaling_metric_specification = Some(input);
+        self.predefined_scaling_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A predefined metric. You can specify either a predefined metric or a customized metric.</p>
     pub fn set_predefined_scaling_metric_specification(
         mut self,
-        input: std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
+        input: ::std::option::Option<crate::types::PredefinedScalingMetricSpecification>,
     ) -> Self {
         self.predefined_scaling_metric_specification = input;
         self
@@ -111,70 +113,70 @@ impl TargetTrackingConfigurationBuilder {
         mut self,
         input: crate::types::CustomizedScalingMetricSpecification,
     ) -> Self {
-        self.customized_scaling_metric_specification = Some(input);
+        self.customized_scaling_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric. </p>
     pub fn set_customized_scaling_metric_specification(
         mut self,
-        input: std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
+        input: ::std::option::Option<crate::types::CustomizedScalingMetricSpecification>,
     ) -> Self {
         self.customized_scaling_metric_specification = input;
         self
     }
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
     pub fn target_value(mut self, input: f64) -> Self {
-        self.target_value = Some(input);
+        self.target_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360.</p>
-    pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_target_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_value = input;
         self
     }
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
     pub fn disable_scale_in(mut self, input: bool) -> Self {
-        self.disable_scale_in = Some(input);
+        self.disable_scale_in = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable resource. </p>
     /// <p>The default value is <code>false</code>.</p>
-    pub fn set_disable_scale_in(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_scale_in = input;
         self
     }
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out. After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the cooldown period ends.</p>
     pub fn scale_out_cooldown(mut self, input: i32) -> Self {
-        self.scale_out_cooldown = Some(input);
+        self.scale_out_cooldown = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out. After Auto Scaling successfully scales out using a target tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the cooldown period ends.</p>
-    pub fn set_scale_out_cooldown(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale_out_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_out_cooldown = input;
         self
     }
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.</p>
     pub fn scale_in_cooldown(mut self, input: i32) -> Self {
-        self.scale_in_cooldown = Some(input);
+        self.scale_in_cooldown = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. This property is not used if the scalable resource is an Auto Scaling group.</p>
     /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.</p>
-    pub fn set_scale_in_cooldown(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale_in_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_in_cooldown = input;
         self
     }
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
     pub fn estimated_instance_warmup(mut self, input: i32) -> Self {
-        self.estimated_instance_warmup = Some(input);
+        self.estimated_instance_warmup = ::std::option::Option::Some(input);
         self
     }
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
-    pub fn set_estimated_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_estimated_instance_warmup(mut self, input: ::std::option::Option<i32>) -> Self {
         self.estimated_instance_warmup = input;
         self
     }

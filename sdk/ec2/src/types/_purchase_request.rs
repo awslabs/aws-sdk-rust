@@ -2,22 +2,22 @@
 
 /// <p>Describes a request to purchase Scheduled Instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseRequest {
     /// <p>The number of instances.</p>
     #[doc(hidden)]
-    pub instance_count: std::option::Option<i32>,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>The purchase token.</p>
     #[doc(hidden)]
-    pub purchase_token: std::option::Option<std::string::String>,
+    pub purchase_token: ::std::option::Option<::std::string::String>,
 }
 impl PurchaseRequest {
     /// <p>The number of instances.</p>
-    pub fn instance_count(&self) -> std::option::Option<i32> {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The purchase token.</p>
-    pub fn purchase_token(&self) -> std::option::Option<&str> {
+    pub fn purchase_token(&self) -> ::std::option::Option<&str> {
         self.purchase_token.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl PurchaseRequest {
 
 /// A builder for [`PurchaseRequest`](crate::types::PurchaseRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PurchaseRequestBuilder {
-    pub(crate) instance_count: std::option::Option<i32>,
-    pub(crate) purchase_token: std::option::Option<std::string::String>,
+    pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) purchase_token: ::std::option::Option<::std::string::String>,
 }
 impl PurchaseRequestBuilder {
     /// <p>The number of instances.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
-        self.instance_count = Some(input);
+        self.instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances.</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
     /// <p>The purchase token.</p>
-    pub fn purchase_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.purchase_token = Some(input.into());
+    pub fn purchase_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.purchase_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The purchase token.</p>
-    pub fn set_purchase_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_purchase_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.purchase_token = input;
         self
     }

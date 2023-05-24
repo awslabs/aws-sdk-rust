@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_subnet_cidr_reservations_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput,
@@ -17,7 +17,7 @@ pub fn de_get_subnet_cidr_reservations_http_error(
     .map_err(
         crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(
         crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError::generic(
@@ -29,7 +29,7 @@ pub fn de_get_subnet_cidr_reservations_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_subnet_cidr_reservations_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsOutput,
@@ -40,22 +40,22 @@ pub fn de_get_subnet_cidr_reservations_http_response_with_props(
         let mut output = crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder::default();
         output = crate::protocol_serde::shape_get_subnet_cidr_reservations::de_get_subnet_cidr_reservations(_response_body, output).map_err(crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservationsError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_get_subnet_cidr_reservations(inp: &[u8], mut builder: crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder) -> Result<crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_get_subnet_cidr_reservations(inp: &[u8], mut builder: crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder) -> Result<crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetSubnetCidrReservationsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetSubnetCidrReservationsResponse got {:?}",
             start_el
         )));
@@ -85,8 +85,8 @@ pub fn de_get_subnet_cidr_reservations(inp: &[u8], mut builder: crate::operation
             s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#GetSubnetCidrReservationsOutput$NextToken */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?

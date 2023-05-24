@@ -38,13 +38,13 @@
 /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Vc3Telecine {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Vc3Telecine {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Vc3Telecine {
+impl ::std::convert::From<&str> for Vc3Telecine {
     fn from(s: &str) -> Self {
         match s {
             "HARD" => Vc3Telecine::Hard,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for Vc3Telecine {
         }
     }
 }
-impl std::str::FromStr for Vc3Telecine {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Vc3Telecine {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Vc3Telecine::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Vc3Telecine::from(s))
     }
 }
 impl Vc3Telecine {
@@ -84,7 +84,7 @@ impl Vc3Telecine {
         &["HARD", "NONE"]
     }
 }
-impl AsRef<str> for Vc3Telecine {
+impl ::std::convert::AsRef<str> for Vc3Telecine {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>The command given to the device to execute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Command {
     /// <p>Reboots the device.</p>
     Reboot(crate::types::Reboot),
@@ -21,11 +21,11 @@ pub enum Command {
 impl Command {
     /// Tries to convert the enum instance into [`Reboot`](crate::types::Command::Reboot), extracting the inner [`Reboot`](crate::types::Reboot).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_reboot(&self) -> std::result::Result<&crate::types::Reboot, &Self> {
+    pub fn as_reboot(&self) -> ::std::result::Result<&crate::types::Reboot, &Self> {
         if let Command::Reboot(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Reboot`](crate::types::Command::Reboot).
@@ -34,11 +34,11 @@ impl Command {
     }
     /// Tries to convert the enum instance into [`Unlock`](crate::types::Command::Unlock), extracting the inner [`Unlock`](crate::types::Unlock).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_unlock(&self) -> std::result::Result<&crate::types::Unlock, &Self> {
+    pub fn as_unlock(&self) -> ::std::result::Result<&crate::types::Unlock, &Self> {
         if let Command::Unlock(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Unlock`](crate::types::Command::Unlock).

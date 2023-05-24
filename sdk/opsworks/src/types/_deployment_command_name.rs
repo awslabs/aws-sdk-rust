@@ -48,13 +48,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeploymentCommandName {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,7 +84,7 @@ pub enum DeploymentCommandName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeploymentCommandName {
+impl ::std::convert::From<&str> for DeploymentCommandName {
     fn from(s: &str) -> Self {
         match s {
             "configure" => DeploymentCommandName::Configure,
@@ -105,11 +105,11 @@ impl std::convert::From<&str> for DeploymentCommandName {
         }
     }
 }
-impl std::str::FromStr for DeploymentCommandName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeploymentCommandName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentCommandName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeploymentCommandName::from(s))
     }
 }
 impl DeploymentCommandName {
@@ -149,7 +149,7 @@ impl DeploymentCommandName {
         ]
     }
 }
-impl AsRef<str> for DeploymentCommandName {
+impl ::std::convert::AsRef<str> for DeploymentCommandName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

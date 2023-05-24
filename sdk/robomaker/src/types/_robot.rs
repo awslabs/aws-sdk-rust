@@ -2,71 +2,71 @@
 
 /// <p>Information about a robot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Robot {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the robot.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
-    pub fleet_arn: std::option::Option<std::string::String>,
+    pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the robot.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::RobotStatus>,
+    pub status: ::std::option::Option<crate::types::RobotStatus>,
     /// <p>The Greengrass group associated with the robot.</p>
     #[doc(hidden)]
-    pub green_grass_group_id: std::option::Option<std::string::String>,
+    pub green_grass_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The architecture of the robot.</p>
     #[doc(hidden)]
-    pub architecture: std::option::Option<crate::types::Architecture>,
+    pub architecture: ::std::option::Option<crate::types::Architecture>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     #[doc(hidden)]
-    pub last_deployment_job: std::option::Option<std::string::String>,
+    pub last_deployment_job: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last deployment.</p>
     #[doc(hidden)]
-    pub last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Robot {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the robot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The status of the robot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::RobotStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::RobotStatus> {
         self.status.as_ref()
     }
     /// <p>The Greengrass group associated with the robot.</p>
-    pub fn green_grass_group_id(&self) -> std::option::Option<&str> {
+    pub fn green_grass_group_id(&self) -> ::std::option::Option<&str> {
         self.green_grass_group_id.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The architecture of the robot.</p>
-    pub fn architecture(&self) -> std::option::Option<&crate::types::Architecture> {
+    pub fn architecture(&self) -> ::std::option::Option<&crate::types::Architecture> {
         self.architecture.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(&self) -> std::option::Option<&str> {
+    pub fn last_deployment_job(&self) -> ::std::option::Option<&str> {
         self.last_deployment_job.as_deref()
     }
     /// <p>The time of the last deployment.</p>
-    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
     }
 }
@@ -79,120 +79,128 @@ impl Robot {
 
 /// A builder for [`Robot`](crate::types::Robot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RobotBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) fleet_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::RobotStatus>,
-    pub(crate) green_grass_group_id: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) architecture: std::option::Option<crate::types::Architecture>,
-    pub(crate) last_deployment_job: std::option::Option<std::string::String>,
-    pub(crate) last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::RobotStatus>,
+    pub(crate) green_grass_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) architecture: ::std::option::Option<crate::types::Architecture>,
+    pub(crate) last_deployment_job: ::std::option::Option<::std::string::String>,
+    pub(crate) last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RobotBuilder {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the robot.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the robot.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet_arn = Some(input.into());
+    pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
     }
     /// <p>The status of the robot.</p>
     pub fn status(mut self, input: crate::types::RobotStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the robot.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::RobotStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RobotStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The Greengrass group associated with the robot.</p>
-    pub fn green_grass_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.green_grass_group_id = Some(input.into());
+    pub fn green_grass_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.green_grass_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Greengrass group associated with the robot.</p>
     pub fn set_green_grass_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.green_grass_group_id = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the robot was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The architecture of the robot.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
-        self.architecture = Some(input);
+        self.architecture = ::std::option::Option::Some(input);
         self
     }
     /// <p>The architecture of the robot.</p>
     pub fn set_architecture(
         mut self,
-        input: std::option::Option<crate::types::Architecture>,
+        input: ::std::option::Option<crate::types::Architecture>,
     ) -> Self {
         self.architecture = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_deployment_job = Some(input.into());
+    pub fn last_deployment_job(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_deployment_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     pub fn set_last_deployment_job(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_deployment_job = input;
         self
     }
     /// <p>The time of the last deployment.</p>
-    pub fn last_deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_deployment_time = Some(input);
+    pub fn last_deployment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_deployment_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the last deployment.</p>
     pub fn set_last_deployment_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_deployment_time = input;
         self

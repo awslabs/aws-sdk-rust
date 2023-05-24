@@ -6,47 +6,50 @@ pub use crate::operation::create_image_builder_streaming_url::_create_image_buil
 /// Fluent builder constructing a request to `CreateImageBuilderStreamingURL`.
 ///
 /// <p>Creates a URL to start an image builder streaming session.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImageBuilderStreamingURLFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_image_builder_streaming_url::builders::CreateImageBuilderStreamingUrlInputBuilder,
 }
 impl CreateImageBuilderStreamingURLFluentBuilder {
     /// Creates a new `CreateImageBuilderStreamingURL`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURL, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURLError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURL, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURLError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput, aws_smithy_http::result::SdkError<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURLError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURLError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,17 @@ impl CreateImageBuilderStreamingURLFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput, aws_smithy_http::result::SdkError<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURLError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingURLError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name of the image builder.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the image builder.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -77,7 +80,7 @@ impl CreateImageBuilderStreamingURLFluentBuilder {
         self
     }
     /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
-    pub fn set_validity(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_validity(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_validity(input);
         self
     }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`target_dpus(i32)`](crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationFluentBuilder::target_dpus) / [`set_target_dpus(Option<i32>)`](crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationFluentBuilder::set_target_dpus): <p>The new number of requested data processing units.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationFluentBuilder::set_name): <p>The name of the capacity reservation.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationFluentBuilder::set_name): <p>The name of the capacity reservation.</p>
     /// - On success, responds with [`UpdateCapacityReservationOutput`](crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput)
     /// - On failure, responds with [`SdkError<UpdateCapacityReservationError>`](crate::operation::update_capacity_reservation::UpdateCapacityReservationError)
     pub fn update_capacity_reservation(&self) -> crate::operation::update_capacity_reservation::builders::UpdateCapacityReservationFluentBuilder{

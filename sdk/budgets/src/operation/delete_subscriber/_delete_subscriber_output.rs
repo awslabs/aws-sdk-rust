@@ -2,11 +2,11 @@
 
 /// <p> Response of DeleteSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubscriberOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteSubscriberOutput {
+impl ::aws_http::request_id::RequestId for DeleteSubscriberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteSubscriberOutput {
 
 /// A builder for [`DeleteSubscriberOutput`](crate::operation::delete_subscriber::DeleteSubscriberOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteSubscriberOutputBuilder {
     _request_id: Option<String>,
 }

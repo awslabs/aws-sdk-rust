@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a get commit operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCommitOutput {
     /// <p>A commit data type object that contains information about the specified commit.</p>
     #[doc(hidden)]
-    pub commit: std::option::Option<crate::types::Commit>,
+    pub commit: ::std::option::Option<crate::types::Commit>,
     _request_id: Option<String>,
 }
 impl GetCommitOutput {
     /// <p>A commit data type object that contains information about the specified commit.</p>
-    pub fn commit(&self) -> std::option::Option<&crate::types::Commit> {
+    pub fn commit(&self) -> ::std::option::Option<&crate::types::Commit> {
         self.commit.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetCommitOutput {
+impl ::aws_http::request_id::RequestId for GetCommitOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetCommitOutput {
 
 /// A builder for [`GetCommitOutput`](crate::operation::get_commit::GetCommitOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCommitOutputBuilder {
-    pub(crate) commit: std::option::Option<crate::types::Commit>,
+    pub(crate) commit: ::std::option::Option<crate::types::Commit>,
     _request_id: Option<String>,
 }
 impl GetCommitOutputBuilder {
     /// <p>A commit data type object that contains information about the specified commit.</p>
     pub fn commit(mut self, input: crate::types::Commit) -> Self {
-        self.commit = Some(input);
+        self.commit = ::std::option::Option::Some(input);
         self
     }
     /// <p>A commit data type object that contains information about the specified commit.</p>
-    pub fn set_commit(mut self, input: std::option::Option<crate::types::Commit>) -> Self {
+    pub fn set_commit(mut self, input: ::std::option::Option<crate::types::Commit>) -> Self {
         self.commit = input;
         self
     }

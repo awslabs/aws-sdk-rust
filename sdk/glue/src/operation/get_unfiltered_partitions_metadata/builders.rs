@@ -7,47 +7,50 @@ pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_pa
 ///
 /// <p>Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.</p>
 /// <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartitions</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder,
 }
 impl GetUnfilteredPartitionsMetadataFluentBuilder {
     /// Creates a new `GetUnfilteredPartitionsMetadata`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadata, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadata, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput, aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,7 +61,7 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput, aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError>>
                          {
         self.send_middleware().await
     }
@@ -69,32 +72,38 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
         crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
         self
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
     /// <p>The name of the table that contains the partition.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
     /// <p>The name of the table that contains the partition.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
@@ -165,7 +174,7 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
     /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expression(input.into());
         self
     }
@@ -236,7 +245,7 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
     /// <li> <p> <code>decimal</code> </p> </li>
     /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expression(input);
         self
     }
@@ -248,7 +257,7 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
     /// <p>A structure containing Lake Formation audit context information.</p>
     pub fn set_audit_context(
         mut self,
-        input: std::option::Option<crate::types::AuditContext>,
+        input: ::std::option::Option<crate::types::AuditContext>,
     ) -> Self {
         self.inner = self.inner.set_audit_context(input);
         self
@@ -265,18 +274,18 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
     /// <p>A list of supported permission types. </p>
     pub fn set_supported_permission_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
     ) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
     }
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -286,7 +295,7 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
         self
     }
     /// <p>The segment of the table's partitions to scan in this request.</p>
-    pub fn set_segment(mut self, input: std::option::Option<crate::types::Segment>) -> Self {
+    pub fn set_segment(mut self, input: ::std::option::Option<crate::types::Segment>) -> Self {
         self.inner = self.inner.set_segment(input);
         self
     }
@@ -296,7 +305,7 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder {
         self
     }
     /// <p>The maximum number of partitions to return in a single response.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

@@ -2,90 +2,90 @@
 
 /// <p>A collection of database objects and users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Namespace {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
     #[doc(hidden)]
-    pub namespace_arn: std::option::Option<std::string::String>,
+    pub namespace_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of a namespace.</p>
     #[doc(hidden)]
-    pub namespace_id: std::option::Option<std::string::String>,
+    pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
     #[doc(hidden)]
-    pub namespace_name: std::option::Option<std::string::String>,
+    pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace.</p>
     #[doc(hidden)]
-    pub admin_username: std::option::Option<std::string::String>,
+    pub admin_username: ::std::option::Option<::std::string::String>,
     /// <p>The name of the first database created in the namespace.</p>
     #[doc(hidden)]
-    pub db_name: std::option::Option<std::string::String>,
+    pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
     #[doc(hidden)]
-    pub default_iam_role_arn: std::option::Option<std::string::String>,
+    pub default_iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of IAM roles to associate with the namespace.</p>
     #[doc(hidden)]
-    pub iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
     #[doc(hidden)]
-    pub log_exports: std::option::Option<std::vec::Vec<crate::types::LogExport>>,
+    pub log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
     /// <p>The status of the namespace.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::NamespaceStatus>,
+    pub status: ::std::option::Option<crate::types::NamespaceStatus>,
     /// <p>The date of when the namespace was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Namespace {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
-    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> ::std::option::Option<&str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The unique identifier of a namespace.</p>
-    pub fn namespace_id(&self) -> std::option::Option<&str> {
+    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
         self.namespace_id.as_deref()
     }
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> ::std::option::Option<&str> {
         self.namespace_name.as_deref()
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn admin_username(&self) -> std::option::Option<&str> {
+    pub fn admin_username(&self) -> ::std::option::Option<&str> {
         self.admin_username.as_deref()
     }
     /// <p>The name of the first database created in the namespace.</p>
-    pub fn db_name(&self) -> std::option::Option<&str> {
+    pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn default_iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn default_iam_role_arn(&self) -> ::std::option::Option<&str> {
         self.default_iam_role_arn.as_deref()
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn iam_roles(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn iam_roles(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.iam_roles.as_deref()
     }
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
-    pub fn log_exports(&self) -> std::option::Option<&[crate::types::LogExport]> {
+    pub fn log_exports(&self) -> ::std::option::Option<&[crate::types::LogExport]> {
         self.log_exports.as_deref()
     }
     /// <p>The status of the namespace.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::NamespaceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::NamespaceStatus> {
         self.status.as_ref()
     }
     /// <p>The date of when the namespace was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
-impl std::fmt::Debug for Namespace {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Namespace {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Namespace");
         formatter.field("namespace_arn", &self.namespace_arn);
         formatter.field("namespace_id", &self.namespace_id);
@@ -110,90 +110,111 @@ impl Namespace {
 
 /// A builder for [`Namespace`](crate::types::Namespace).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct NamespaceBuilder {
-    pub(crate) namespace_arn: std::option::Option<std::string::String>,
-    pub(crate) namespace_id: std::option::Option<std::string::String>,
-    pub(crate) namespace_name: std::option::Option<std::string::String>,
-    pub(crate) admin_username: std::option::Option<std::string::String>,
-    pub(crate) db_name: std::option::Option<std::string::String>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) default_iam_role_arn: std::option::Option<std::string::String>,
-    pub(crate) iam_roles: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) log_exports: std::option::Option<std::vec::Vec<crate::types::LogExport>>,
-    pub(crate) status: std::option::Option<crate::types::NamespaceStatus>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) namespace_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace_name: ::std::option::Option<::std::string::String>,
+    pub(crate) admin_username: ::std::option::Option<::std::string::String>,
+    pub(crate) db_name: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) default_iam_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
+    pub(crate) status: ::std::option::Option<crate::types::NamespaceStatus>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl NamespaceBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
-    pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace_arn = Some(input.into());
+    pub fn namespace_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.namespace_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
-    pub fn set_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.namespace_arn = input;
         self
     }
     /// <p>The unique identifier of a namespace.</p>
-    pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace_id = Some(input.into());
+    pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a namespace.</p>
-    pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_id = input;
         self
     }
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
-    pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace_name = Some(input.into());
+    pub fn namespace_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.namespace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace. Must be between 3-64 alphanumeric characters in lowercase, and it cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p>
-    pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.namespace_name = input;
         self
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn admin_username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.admin_username = Some(input.into());
+    pub fn admin_username(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.admin_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username of the administrator for the first database created in the namespace.</p>
-    pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_admin_username(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.admin_username = input;
         self
     }
     /// <p>The name of the first database created in the namespace.</p>
-    pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_name = Some(input.into());
+    pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the first database created in the namespace.</p>
-    pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Key Management Service key used to encrypt your data.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_iam_role_arn = Some(input.into());
+    pub fn default_iam_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
     pub fn set_default_iam_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.default_iam_role_arn = input;
         self
@@ -203,16 +224,16 @@ impl NamespaceBuilder {
     /// To override the contents of this collection use [`set_iam_roles`](Self::set_iam_roles).
     ///
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn iam_roles(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn iam_roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.iam_roles.unwrap_or_default();
         v.push(input.into());
-        self.iam_roles = Some(v);
+        self.iam_roles = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
     pub fn set_iam_roles(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.iam_roles = input;
         self
@@ -225,36 +246,39 @@ impl NamespaceBuilder {
     pub fn log_exports(mut self, input: crate::types::LogExport) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
         v.push(input);
-        self.log_exports = Some(v);
+        self.log_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>The types of logs the namespace can export. Available export types are User log, Connection log, and User activity log.</p>
     pub fn set_log_exports(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogExport>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
     ) -> Self {
         self.log_exports = input;
         self
     }
     /// <p>The status of the namespace.</p>
     pub fn status(mut self, input: crate::types::NamespaceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the namespace.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::NamespaceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::NamespaceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The date of when the namespace was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date of when the namespace was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
@@ -276,8 +300,8 @@ impl NamespaceBuilder {
         }
     }
 }
-impl std::fmt::Debug for NamespaceBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for NamespaceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("NamespaceBuilder");
         formatter.field("namespace_arn", &self.namespace_arn);
         formatter.field("namespace_id", &self.namespace_id);

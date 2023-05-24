@@ -2,63 +2,65 @@
 
 /// <p>Summary information about the assistant association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssistantAssociationSummary {
     /// <p>The identifier of the assistant association.</p>
     #[doc(hidden)]
-    pub assistant_association_id: std::option::Option<std::string::String>,
+    pub assistant_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
     #[doc(hidden)]
-    pub assistant_association_arn: std::option::Option<std::string::String>,
+    pub assistant_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
     #[doc(hidden)]
-    pub assistant_id: std::option::Option<std::string::String>,
+    pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     #[doc(hidden)]
-    pub assistant_arn: std::option::Option<std::string::String>,
+    pub assistant_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of association.</p>
     #[doc(hidden)]
-    pub association_type: std::option::Option<crate::types::AssociationType>,
+    pub association_type: ::std::option::Option<crate::types::AssociationType>,
     /// <p>The association data.</p>
     #[doc(hidden)]
-    pub association_data: std::option::Option<crate::types::AssistantAssociationOutputData>,
+    pub association_data: ::std::option::Option<crate::types::AssistantAssociationOutputData>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl AssistantAssociationSummary {
     /// <p>The identifier of the assistant association.</p>
-    pub fn assistant_association_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_association_id(&self) -> ::std::option::Option<&str> {
         self.assistant_association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-    pub fn assistant_association_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_association_arn(&self) -> ::std::option::Option<&str> {
         self.assistant_association_arn.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_arn(&self) -> ::std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
     /// <p>The type of association.</p>
-    pub fn association_type(&self) -> std::option::Option<&crate::types::AssociationType> {
+    pub fn association_type(&self) -> ::std::option::Option<&crate::types::AssociationType> {
         self.association_type.as_ref()
     }
     /// <p>The association data.</p>
     pub fn association_data(
         &self,
-    ) -> std::option::Option<&crate::types::AssistantAssociationOutputData> {
+    ) -> ::std::option::Option<&crate::types::AssistantAssociationOutputData> {
         self.association_data.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -71,86 +73,102 @@ impl AssistantAssociationSummary {
 
 /// A builder for [`AssistantAssociationSummary`](crate::types::AssistantAssociationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssistantAssociationSummaryBuilder {
-    pub(crate) assistant_association_id: std::option::Option<std::string::String>,
-    pub(crate) assistant_association_arn: std::option::Option<std::string::String>,
-    pub(crate) assistant_id: std::option::Option<std::string::String>,
-    pub(crate) assistant_arn: std::option::Option<std::string::String>,
-    pub(crate) association_type: std::option::Option<crate::types::AssociationType>,
-    pub(crate) association_data: std::option::Option<crate::types::AssistantAssociationOutputData>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) assistant_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) assistant_association_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
+    pub(crate) assistant_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) association_type: ::std::option::Option<crate::types::AssociationType>,
+    pub(crate) association_data:
+        ::std::option::Option<crate::types::AssistantAssociationOutputData>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl AssistantAssociationSummaryBuilder {
     /// <p>The identifier of the assistant association.</p>
-    pub fn assistant_association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assistant_association_id = Some(input.into());
+    pub fn assistant_association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assistant_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the assistant association.</p>
     pub fn set_assistant_association_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.assistant_association_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
-    pub fn assistant_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assistant_association_arn = Some(input.into());
+    pub fn assistant_association_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assistant_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
     pub fn set_assistant_association_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.assistant_association_arn = input;
         self
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assistant_id = Some(input.into());
+    pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.assistant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assistant_arn = Some(input.into());
+    pub fn assistant_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assistant_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assistant_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assistant_arn = input;
         self
     }
     /// <p>The type of association.</p>
     pub fn association_type(mut self, input: crate::types::AssociationType) -> Self {
-        self.association_type = Some(input);
+        self.association_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of association.</p>
     pub fn set_association_type(
         mut self,
-        input: std::option::Option<crate::types::AssociationType>,
+        input: ::std::option::Option<crate::types::AssociationType>,
     ) -> Self {
         self.association_type = input;
         self
     }
     /// <p>The association data.</p>
     pub fn association_data(mut self, input: crate::types::AssistantAssociationOutputData) -> Self {
-        self.association_data = Some(input);
+        self.association_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The association data.</p>
     pub fn set_association_data(
         mut self,
-        input: std::option::Option<crate::types::AssistantAssociationOutputData>,
+        input: ::std::option::Option<crate::types::AssistantAssociationOutputData>,
     ) -> Self {
         self.association_data = input;
         self
@@ -162,19 +180,19 @@ impl AssistantAssociationSummaryBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

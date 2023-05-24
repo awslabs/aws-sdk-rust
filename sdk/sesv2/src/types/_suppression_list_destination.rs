@@ -2,7 +2,7 @@
 
 /// <p>An object that contains details about the action of suppression list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuppressionListDestination {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct SuppressionListDestination {
     /// </ul>
     #[doc(hidden)]
     pub suppression_list_import_action:
-        std::option::Option<crate::types::SuppressionListImportAction>,
+        ::std::option::Option<crate::types::SuppressionListImportAction>,
 }
 impl SuppressionListDestination {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
@@ -21,7 +21,7 @@ impl SuppressionListDestination {
     /// </ul>
     pub fn suppression_list_import_action(
         &self,
-    ) -> std::option::Option<&crate::types::SuppressionListImportAction> {
+    ) -> ::std::option::Option<&crate::types::SuppressionListImportAction> {
         self.suppression_list_import_action.as_ref()
     }
 }
@@ -34,10 +34,12 @@ impl SuppressionListDestination {
 
 /// A builder for [`SuppressionListDestination`](crate::types::SuppressionListDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuppressionListDestinationBuilder {
     pub(crate) suppression_list_import_action:
-        std::option::Option<crate::types::SuppressionListImportAction>,
+        ::std::option::Option<crate::types::SuppressionListImportAction>,
 }
 impl SuppressionListDestinationBuilder {
     /// <p>The type of action to perform on the address. The following are possible values:</p>
@@ -49,7 +51,7 @@ impl SuppressionListDestinationBuilder {
         mut self,
         input: crate::types::SuppressionListImportAction,
     ) -> Self {
-        self.suppression_list_import_action = Some(input);
+        self.suppression_list_import_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of action to perform on the address. The following are possible values:</p>
@@ -59,7 +61,7 @@ impl SuppressionListDestinationBuilder {
     /// </ul>
     pub fn set_suppression_list_import_action(
         mut self,
-        input: std::option::Option<crate::types::SuppressionListImportAction>,
+        input: ::std::option::Option<crate::types::SuppressionListImportAction>,
     ) -> Self {
         self.suppression_list_import_action = input;
         self

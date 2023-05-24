@@ -4,7 +4,7 @@
 /// <p>This is only used in the context of the <code>ResponseAction</code> setting. </p>
 /// <p>JSON specification: <code>"Block": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockAction {}
 impl BlockAction {
     /// Creates a new builder-style object to manufacture [`BlockAction`](crate::types::BlockAction).
@@ -15,7 +15,9 @@ impl BlockAction {
 
 /// A builder for [`BlockAction`](crate::types::BlockAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlockActionBuilder {}
 impl BlockActionBuilder {
     /// Consumes the builder and constructs a [`BlockAction`](crate::types::BlockAction).

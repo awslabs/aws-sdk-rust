@@ -2,7 +2,7 @@
 
 /// <p>The access log configuration for a virtual gateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualGatewayAccessLog {
     /// <p>The file object to send virtual gateway access logs to.</p>
     File(crate::types::VirtualGatewayFileAccessLog),
@@ -22,11 +22,11 @@ impl VirtualGatewayAccessLog {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayFileAccessLog, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayFileAccessLog, &Self> {
         if let VirtualGatewayAccessLog::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayAccessLog::File).

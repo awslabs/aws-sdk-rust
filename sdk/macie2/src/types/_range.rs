@@ -2,29 +2,29 @@
 
 /// <p>Specifies the location of an occurrence of sensitive data in an email message or a non-binary text file such as an HTML, TXT, or XML file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
     #[doc(hidden)]
-    pub end: std::option::Option<i64>,
+    pub end: ::std::option::Option<i64>,
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
     #[doc(hidden)]
-    pub start: std::option::Option<i64>,
+    pub start: ::std::option::Option<i64>,
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
     #[doc(hidden)]
-    pub start_column: std::option::Option<i64>,
+    pub start_column: ::std::option::Option<i64>,
 }
 impl Range {
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
-    pub fn end(&self) -> std::option::Option<i64> {
+    pub fn end(&self) -> ::std::option::Option<i64> {
         self.end
     }
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
-    pub fn start(&self) -> std::option::Option<i64> {
+    pub fn start(&self) -> ::std::option::Option<i64> {
         self.start
     }
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
-    pub fn start_column(&self) -> std::option::Option<i64> {
+    pub fn start_column(&self) -> ::std::option::Option<i64> {
         self.start_column
     }
 }
@@ -37,40 +37,42 @@ impl Range {
 
 /// A builder for [`Range`](crate::types::Range).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RangeBuilder {
-    pub(crate) end: std::option::Option<i64>,
-    pub(crate) start: std::option::Option<i64>,
-    pub(crate) start_column: std::option::Option<i64>,
+    pub(crate) end: ::std::option::Option<i64>,
+    pub(crate) start: ::std::option::Option<i64>,
+    pub(crate) start_column: ::std::option::Option<i64>,
 }
 impl RangeBuilder {
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
     pub fn end(mut self, input: i64) -> Self {
-        self.end = Some(input);
+        self.end = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
-    pub fn set_end(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_end(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end = input;
         self
     }
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
     pub fn start(mut self, input: i64) -> Self {
-        self.start = Some(input);
+        self.start = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
-    pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start = input;
         self
     }
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
     pub fn start_column(mut self, input: i64) -> Self {
-        self.start_column = Some(input);
+        self.start_column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
-    pub fn set_start_column(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_column(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_column = input;
         self
     }

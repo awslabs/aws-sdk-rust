@@ -2,15 +2,15 @@
 
 /// <p>Describes the type of service for a VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceTypeDetail {
     /// <p>The type of service.</p>
     #[doc(hidden)]
-    pub service_type: std::option::Option<crate::types::ServiceType>,
+    pub service_type: ::std::option::Option<crate::types::ServiceType>,
 }
 impl ServiceTypeDetail {
     /// <p>The type of service.</p>
-    pub fn service_type(&self) -> std::option::Option<&crate::types::ServiceType> {
+    pub fn service_type(&self) -> ::std::option::Option<&crate::types::ServiceType> {
         self.service_type.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ServiceTypeDetail {
 
 /// A builder for [`ServiceTypeDetail`](crate::types::ServiceTypeDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceTypeDetailBuilder {
-    pub(crate) service_type: std::option::Option<crate::types::ServiceType>,
+    pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
 }
 impl ServiceTypeDetailBuilder {
     /// <p>The type of service.</p>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
-        self.service_type = Some(input);
+        self.service_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of service.</p>
     pub fn set_service_type(
         mut self,
-        input: std::option::Option<crate::types::ServiceType>,
+        input: ::std::option::Option<crate::types::ServiceType>,
     ) -> Self {
         self.service_type = input;
         self

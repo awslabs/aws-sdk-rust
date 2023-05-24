@@ -2,18 +2,19 @@
 
 /// <p>Provides information about when an origin group fails over.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginGroupFailover {
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
     #[doc(hidden)]
-    pub status_codes:
-        std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>,
+    pub status_codes: ::std::option::Option<
+        crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes,
+    >,
 }
 impl AwsCloudFrontDistributionOriginGroupFailover {
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
     pub fn status_codes(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>
+    ) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>
     {
         self.status_codes.as_ref()
     }
@@ -28,10 +29,13 @@ impl AwsCloudFrontDistributionOriginGroupFailover {
 
 /// A builder for [`AwsCloudFrontDistributionOriginGroupFailover`](crate::types::AwsCloudFrontDistributionOriginGroupFailover).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCloudFrontDistributionOriginGroupFailoverBuilder {
-    pub(crate) status_codes:
-        std::option::Option<crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>,
+    pub(crate) status_codes: ::std::option::Option<
+        crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes,
+    >,
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverBuilder {
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
@@ -39,13 +43,13 @@ impl AwsCloudFrontDistributionOriginGroupFailoverBuilder {
         mut self,
         input: crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes,
     ) -> Self {
-        self.status_codes = Some(input);
+        self.status_codes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the status codes that cause an origin group to fail over.</p>
     pub fn set_status_codes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes,
         >,
     ) -> Self {

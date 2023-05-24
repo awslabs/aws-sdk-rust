@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRecords`](crate::operation::get_records::builders::GetRecordsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`shard_iterator(impl Into<String>)`](crate::operation::get_records::builders::GetRecordsFluentBuilder::shard_iterator) / [`set_shard_iterator(Option<String>)`](crate::operation::get_records::builders::GetRecordsFluentBuilder::set_shard_iterator): <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
+    ///   - [`shard_iterator(impl ::std::convert::Into<String>)`](crate::operation::get_records::builders::GetRecordsFluentBuilder::shard_iterator) / [`set_shard_iterator(Option<String>)`](crate::operation::get_records::builders::GetRecordsFluentBuilder::set_shard_iterator): <p>A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.</p>
     ///   - [`limit(i32)`](crate::operation::get_records::builders::GetRecordsFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::get_records::builders::GetRecordsFluentBuilder::set_limit): <p>The maximum number of records to return from the shard. The upper limit is 1000.</p>
     /// - On success, responds with [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput) with field(s):
     ///   - [`records(Option<Vec<Record>>)`](crate::operation::get_records::GetRecordsOutput::records): <p>The stream records from the shard, which were retrieved using the shard iterator.</p>

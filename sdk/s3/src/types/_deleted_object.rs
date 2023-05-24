@@ -2,28 +2,28 @@
 
 /// <p>Information about the deleted object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletedObject {
     /// <p>The name of the deleted object.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the deleted object.</p>
     #[doc(hidden)]
-    pub version_id: std::option::Option<std::string::String>,
+    pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
     #[doc(hidden)]
     pub delete_marker: bool,
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
     #[doc(hidden)]
-    pub delete_marker_version_id: std::option::Option<std::string::String>,
+    pub delete_marker_version_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletedObject {
     /// <p>The name of the deleted object.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The version ID of the deleted object.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
@@ -31,7 +31,7 @@ impl DeletedObject {
         self.delete_marker
     }
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
-    pub fn delete_marker_version_id(&self) -> std::option::Option<&str> {
+    pub fn delete_marker_version_id(&self) -> ::std::option::Option<&str> {
         self.delete_marker_version_id.as_deref()
     }
 }
@@ -44,53 +44,58 @@ impl DeletedObject {
 
 /// A builder for [`DeletedObject`](crate::types::DeletedObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeletedObjectBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) version_id: std::option::Option<std::string::String>,
-    pub(crate) delete_marker: std::option::Option<bool>,
-    pub(crate) delete_marker_version_id: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_marker: ::std::option::Option<bool>,
+    pub(crate) delete_marker_version_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletedObjectBuilder {
     /// <p>The name of the deleted object.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deleted object.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The version ID of the deleted object.</p>
-    pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_id = Some(input.into());
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version ID of the deleted object.</p>
-    pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
     pub fn delete_marker(mut self, input: bool) -> Self {
-        self.delete_marker = Some(input);
+        self.delete_marker = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or not (false) a delete marker was created.</p>
-    pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_marker(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_marker = input;
         self
     }
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
-    pub fn delete_marker_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delete_marker_version_id = Some(input.into());
+    pub fn delete_marker_version_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delete_marker_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
     pub fn set_delete_marker_version_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.delete_marker_version_id = input;
         self

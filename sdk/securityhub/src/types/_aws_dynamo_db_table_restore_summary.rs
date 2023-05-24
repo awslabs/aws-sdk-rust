@@ -2,34 +2,34 @@
 
 /// <p>Information about the restore for the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableRestoreSummary {
     /// <p>The ARN of the source backup from which the table was restored.</p>
     #[doc(hidden)]
-    pub source_backup_arn: std::option::Option<std::string::String>,
+    pub source_backup_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the source table for the backup.</p>
     #[doc(hidden)]
-    pub source_table_arn: std::option::Option<std::string::String>,
+    pub source_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the point in time that the table was restored to.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub restore_date_time: std::option::Option<std::string::String>,
+    pub restore_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether a restore is currently in progress.</p>
     #[doc(hidden)]
     pub restore_in_progress: bool,
 }
 impl AwsDynamoDbTableRestoreSummary {
     /// <p>The ARN of the source backup from which the table was restored.</p>
-    pub fn source_backup_arn(&self) -> std::option::Option<&str> {
+    pub fn source_backup_arn(&self) -> ::std::option::Option<&str> {
         self.source_backup_arn.as_deref()
     }
     /// <p>The ARN of the source table for the backup.</p>
-    pub fn source_table_arn(&self) -> std::option::Option<&str> {
+    pub fn source_table_arn(&self) -> ::std::option::Option<&str> {
         self.source_table_arn.as_deref()
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn restore_date_time(&self) -> std::option::Option<&str> {
+    pub fn restore_date_time(&self) -> ::std::option::Option<&str> {
         self.restore_date_time.as_deref()
     }
     /// <p>Whether a restore is currently in progress.</p>
@@ -46,59 +46,73 @@ impl AwsDynamoDbTableRestoreSummary {
 
 /// A builder for [`AwsDynamoDbTableRestoreSummary`](crate::types::AwsDynamoDbTableRestoreSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsDynamoDbTableRestoreSummaryBuilder {
-    pub(crate) source_backup_arn: std::option::Option<std::string::String>,
-    pub(crate) source_table_arn: std::option::Option<std::string::String>,
-    pub(crate) restore_date_time: std::option::Option<std::string::String>,
-    pub(crate) restore_in_progress: std::option::Option<bool>,
+    pub(crate) source_backup_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_table_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) restore_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) restore_in_progress: ::std::option::Option<bool>,
 }
 impl AwsDynamoDbTableRestoreSummaryBuilder {
     /// <p>The ARN of the source backup from which the table was restored.</p>
-    pub fn source_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_backup_arn = Some(input.into());
+    pub fn source_backup_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_backup_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the source backup from which the table was restored.</p>
     pub fn set_source_backup_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_backup_arn = input;
         self
     }
     /// <p>The ARN of the source table for the backup.</p>
-    pub fn source_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_table_arn = Some(input.into());
+    pub fn source_table_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the source table for the backup.</p>
-    pub fn set_source_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_table_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_table_arn = input;
         self
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn restore_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.restore_date_time = Some(input.into());
+    pub fn restore_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.restore_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_restore_date_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.restore_date_time = input;
         self
     }
     /// <p>Whether a restore is currently in progress.</p>
     pub fn restore_in_progress(mut self, input: bool) -> Self {
-        self.restore_in_progress = Some(input);
+        self.restore_in_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether a restore is currently in progress.</p>
-    pub fn set_restore_in_progress(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_restore_in_progress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.restore_in_progress = input;
         self
     }

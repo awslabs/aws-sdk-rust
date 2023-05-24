@@ -2,7 +2,7 @@
 pub(crate) fn de_apns_voip_sandbox_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
+    ::std::option::Option<crate::types::ApnsVoipSandboxChannelResponse>,
     crate::operation::get_apns_voip_sandbox_channel::GetApnsVoipSandboxChannelError,
 > {
     (!body.is_empty()).then(||{

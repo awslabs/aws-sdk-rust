@@ -2,11 +2,11 @@
 
 /// <p> A source identifier and its corresponding version. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSourceVersion {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
     #[doc(hidden)]
-    pub source_identifier: std::option::Option<std::string::String>,
+    pub source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The source version for the corresponding source identifier. If specified, must be one of:</p>
     /// <ul>
     /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
@@ -16,11 +16,11 @@ pub struct ProjectSourceVersion {
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
     #[doc(hidden)]
-    pub source_version: std::option::Option<std::string::String>,
+    pub source_version: ::std::option::Option<::std::string::String>,
 }
 impl ProjectSourceVersion {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
-    pub fn source_identifier(&self) -> std::option::Option<&str> {
+    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
         self.source_identifier.as_deref()
     }
     /// <p>The source version for the corresponding source identifier. If specified, must be one of:</p>
@@ -31,7 +31,7 @@ impl ProjectSourceVersion {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<&str> {
         self.source_version.as_deref()
     }
 }
@@ -44,21 +44,26 @@ impl ProjectSourceVersion {
 
 /// A builder for [`ProjectSourceVersion`](crate::types::ProjectSourceVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectSourceVersionBuilder {
-    pub(crate) source_identifier: std::option::Option<std::string::String>,
-    pub(crate) source_version: std::option::Option<std::string::String>,
+    pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) source_version: ::std::option::Option<::std::string::String>,
 }
 impl ProjectSourceVersionBuilder {
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
-    pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_identifier = Some(input.into());
+    pub fn source_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for a source in the build project. The identifier can only contain alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
     pub fn set_source_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_identifier = input;
         self
@@ -71,8 +76,11 @@ impl ProjectSourceVersionBuilder {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_version = Some(input.into());
+    pub fn source_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source version for the corresponding source identifier. If specified, must be one of:</p>
@@ -83,7 +91,10 @@ impl ProjectSourceVersionBuilder {
     /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
     /// </ul>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_version = input;
         self
     }

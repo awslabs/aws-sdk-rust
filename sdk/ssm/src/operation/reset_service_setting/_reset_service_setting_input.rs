@@ -2,7 +2,7 @@
 
 /// <p>The request body of the ResetServiceSetting API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetServiceSettingInput {
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct ResetServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub setting_id: std::option::Option<std::string::String>,
+    pub setting_id: ::std::option::Option<::std::string::String>,
 }
 impl ResetServiceSettingInput {
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
@@ -30,7 +30,7 @@ impl ResetServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
-    pub fn setting_id(&self) -> std::option::Option<&str> {
+    pub fn setting_id(&self) -> ::std::option::Option<&str> {
         self.setting_id.as_deref()
     }
 }
@@ -45,9 +45,11 @@ impl ResetServiceSettingInput {
 
 /// A builder for [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResetServiceSettingInputBuilder {
-    pub(crate) setting_id: std::option::Option<std::string::String>,
+    pub(crate) setting_id: ::std::option::Option<::std::string::String>,
 }
 impl ResetServiceSettingInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
@@ -61,8 +63,8 @@ impl ResetServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
-    pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.setting_id = Some(input.into());
+    pub fn setting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.setting_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
@@ -76,18 +78,18 @@ impl ResetServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
-    pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_setting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.setting_id = input;
         self
     }
     /// Consumes the builder and constructs a [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::reset_service_setting::ResetServiceSettingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::reset_service_setting::ResetServiceSettingInput {
                 setting_id: self.setting_id,
             },

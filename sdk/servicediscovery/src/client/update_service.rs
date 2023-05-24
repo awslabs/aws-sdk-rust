@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateService`](crate::operation::update_service::builders::UpdateServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_service::builders::UpdateServiceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_service::builders::UpdateServiceFluentBuilder::set_id): <p>The ID of the service that you want to update.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::update_service::builders::UpdateServiceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_service::builders::UpdateServiceFluentBuilder::set_id): <p>The ID of the service that you want to update.</p>
     ///   - [`service(ServiceChange)`](crate::operation::update_service::builders::UpdateServiceFluentBuilder::service) / [`set_service(Option<ServiceChange>)`](crate::operation::update_service::builders::UpdateServiceFluentBuilder::set_service): <p>A complex type that contains the new settings for the service.</p>
     /// - On success, responds with [`UpdateServiceOutput`](crate::operation::update_service::UpdateServiceOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::update_service::UpdateServiceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>

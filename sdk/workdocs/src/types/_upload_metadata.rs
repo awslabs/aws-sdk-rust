@@ -2,31 +2,33 @@
 
 /// <p>Describes the upload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UploadMetadata {
     /// <p>The URL of the upload.</p>
     #[doc(hidden)]
-    pub upload_url: std::option::Option<std::string::String>,
+    pub upload_url: ::std::option::Option<::std::string::String>,
     /// <p>The signed headers.</p>
     #[doc(hidden)]
-    pub signed_headers:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub signed_headers: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl UploadMetadata {
     /// <p>The URL of the upload.</p>
-    pub fn upload_url(&self) -> std::option::Option<&str> {
+    pub fn upload_url(&self) -> ::std::option::Option<&str> {
         self.upload_url.as_deref()
     }
     /// <p>The signed headers.</p>
     pub fn signed_headers(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.signed_headers.as_ref()
     }
 }
-impl std::fmt::Debug for UploadMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UploadMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMetadata");
         formatter.field("upload_url", &"*** Sensitive Data Redacted ***");
         formatter.field("signed_headers", &self.signed_headers);
@@ -42,20 +44,21 @@ impl UploadMetadata {
 
 /// A builder for [`UploadMetadata`](crate::types::UploadMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UploadMetadataBuilder {
-    pub(crate) upload_url: std::option::Option<std::string::String>,
-    pub(crate) signed_headers:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) upload_url: ::std::option::Option<::std::string::String>,
+    pub(crate) signed_headers: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl UploadMetadataBuilder {
     /// <p>The URL of the upload.</p>
-    pub fn upload_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.upload_url = Some(input.into());
+    pub fn upload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upload_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the upload.</p>
-    pub fn set_upload_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_upload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_url = input;
         self
     }
@@ -66,19 +69,19 @@ impl UploadMetadataBuilder {
     /// <p>The signed headers.</p>
     pub fn signed_headers(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.signed_headers.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.signed_headers = Some(hash_map);
+        self.signed_headers = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The signed headers.</p>
     pub fn set_signed_headers(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.signed_headers = input;
@@ -92,8 +95,8 @@ impl UploadMetadataBuilder {
         }
     }
 }
-impl std::fmt::Debug for UploadMetadataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UploadMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMetadataBuilder");
         formatter.field("upload_url", &"*** Sensitive Data Redacted ***");
         formatter.field("signed_headers", &self.signed_headers);

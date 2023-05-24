@@ -3,25 +3,25 @@
 /// <p>Provides the configuration information for applying basic logic to alter document metadata and content when ingesting documents into Amazon Kendra. To apply advanced logic, to go beyond what you can do with basic logic, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_HookConfiguration.html">HookConfiguration</a>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InlineCustomDocumentEnrichmentConfiguration {
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
     #[doc(hidden)]
-    pub condition: std::option::Option<crate::types::DocumentAttributeCondition>,
+    pub condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<crate::types::DocumentAttributeTarget>,
+    pub target: ::std::option::Option<crate::types::DocumentAttributeTarget>,
     /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     #[doc(hidden)]
     pub document_content_deletion: bool,
 }
 impl InlineCustomDocumentEnrichmentConfiguration {
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::types::DocumentAttributeCondition> {
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
         self.condition.as_ref()
     }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
-    pub fn target(&self) -> std::option::Option<&crate::types::DocumentAttributeTarget> {
+    pub fn target(&self) -> ::std::option::Option<&crate::types::DocumentAttributeTarget> {
         self.target.as_ref()
     }
     /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
@@ -38,46 +38,48 @@ impl InlineCustomDocumentEnrichmentConfiguration {
 
 /// A builder for [`InlineCustomDocumentEnrichmentConfiguration`](crate::types::InlineCustomDocumentEnrichmentConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InlineCustomDocumentEnrichmentConfigurationBuilder {
-    pub(crate) condition: std::option::Option<crate::types::DocumentAttributeCondition>,
-    pub(crate) target: std::option::Option<crate::types::DocumentAttributeTarget>,
-    pub(crate) document_content_deletion: std::option::Option<bool>,
+    pub(crate) condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
+    pub(crate) target: ::std::option::Option<crate::types::DocumentAttributeTarget>,
+    pub(crate) document_content_deletion: ::std::option::Option<bool>,
 }
 impl InlineCustomDocumentEnrichmentConfigurationBuilder {
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
     pub fn condition(mut self, input: crate::types::DocumentAttributeCondition) -> Self {
-        self.condition = Some(input);
+        self.condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra.</p>
     pub fn set_condition(
         mut self,
-        input: std::option::Option<crate::types::DocumentAttributeCondition>,
+        input: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     ) -> Self {
         self.condition = input;
         self
     }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
     pub fn target(mut self, input: crate::types::DocumentAttributeTarget) -> Self {
-        self.target = Some(input);
+        self.target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of the target document attribute or metadata field when ingesting documents into Amazon Kendra. You can also include a value.</p>
     pub fn set_target(
         mut self,
-        input: std::option::Option<crate::types::DocumentAttributeTarget>,
+        input: ::std::option::Option<crate::types::DocumentAttributeTarget>,
     ) -> Self {
         self.target = input;
         self
     }
     /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
     pub fn document_content_deletion(mut self, input: bool) -> Self {
-        self.document_content_deletion = Some(input);
+        self.document_content_deletion = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>TRUE</code> to delete content if the condition used for the target attribute is met.</p>
-    pub fn set_document_content_deletion(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_document_content_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.document_content_deletion = input;
         self
     }

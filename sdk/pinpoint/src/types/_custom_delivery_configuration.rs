@@ -2,7 +2,7 @@
 
 /// <p>Specifies the delivery configuration settings for sending a campaign or campaign treatment through a custom channel. This object is required if you use the CampaignCustomMessage object to define the message to send for the campaign or campaign treatment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomDeliveryConfiguration {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
     /// <ul>
@@ -10,10 +10,10 @@ pub struct CustomDeliveryConfiguration {
     /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
     #[doc(hidden)]
-    pub delivery_uri: std::option::Option<std::string::String>,
+    pub delivery_uri: ::std::option::Option<::std::string::String>,
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
     #[doc(hidden)]
-    pub endpoint_types: std::option::Option<std::vec::Vec<crate::types::EndpointTypesElement>>,
+    pub endpoint_types: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
 }
 impl CustomDeliveryConfiguration {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
@@ -21,11 +21,11 @@ impl CustomDeliveryConfiguration {
     /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
     /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
-    pub fn delivery_uri(&self) -> std::option::Option<&str> {
+    pub fn delivery_uri(&self) -> ::std::option::Option<&str> {
         self.delivery_uri.as_deref()
     }
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
-    pub fn endpoint_types(&self) -> std::option::Option<&[crate::types::EndpointTypesElement]> {
+    pub fn endpoint_types(&self) -> ::std::option::Option<&[crate::types::EndpointTypesElement]> {
         self.endpoint_types.as_deref()
     }
 }
@@ -38,11 +38,13 @@ impl CustomDeliveryConfiguration {
 
 /// A builder for [`CustomDeliveryConfiguration`](crate::types::CustomDeliveryConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomDeliveryConfigurationBuilder {
-    pub(crate) delivery_uri: std::option::Option<std::string::String>,
+    pub(crate) delivery_uri: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_types:
-        std::option::Option<std::vec::Vec<crate::types::EndpointTypesElement>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
 }
 impl CustomDeliveryConfigurationBuilder {
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
@@ -50,8 +52,8 @@ impl CustomDeliveryConfigurationBuilder {
     /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
     /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
-    pub fn delivery_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delivery_uri = Some(input.into());
+    pub fn delivery_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delivery_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p>
@@ -59,7 +61,7 @@ impl CustomDeliveryConfigurationBuilder {
     /// <li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li>
     /// <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li>
     /// </ul>
-    pub fn set_delivery_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delivery_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_uri = input;
         self
     }
@@ -71,13 +73,13 @@ impl CustomDeliveryConfigurationBuilder {
     pub fn endpoint_types(mut self, input: crate::types::EndpointTypesElement) -> Self {
         let mut v = self.endpoint_types.unwrap_or_default();
         v.push(input);
-        self.endpoint_types = Some(v);
+        self.endpoint_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
     pub fn set_endpoint_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointTypesElement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointTypesElement>>,
     ) -> Self {
         self.endpoint_types = input;
         self

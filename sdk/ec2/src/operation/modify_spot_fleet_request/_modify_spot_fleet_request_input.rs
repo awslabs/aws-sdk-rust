@@ -2,58 +2,58 @@
 
 /// <p>Contains the parameters for ModifySpotFleetRequest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySpotFleetRequestInput {
     /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     #[doc(hidden)]
     pub excess_capacity_termination_policy:
-        std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
+        ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
     /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
     #[doc(hidden)]
     pub launch_template_configs:
-        std::option::Option<std::vec::Vec<crate::types::LaunchTemplateConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
     /// <p>The ID of the Spot Fleet request.</p>
     #[doc(hidden)]
-    pub spot_fleet_request_id: std::option::Option<std::string::String>,
+    pub spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the fleet.</p>
     #[doc(hidden)]
-    pub target_capacity: std::option::Option<i32>,
+    pub target_capacity: ::std::option::Option<i32>,
     /// <p>The number of On-Demand Instances in the fleet.</p>
     #[doc(hidden)]
-    pub on_demand_target_capacity: std::option::Option<i32>,
+    pub on_demand_target_capacity: ::std::option::Option<i32>,
     /// <p>Reserved.</p>
     #[doc(hidden)]
-    pub context: std::option::Option<std::string::String>,
+    pub context: ::std::option::Option<::std::string::String>,
 }
 impl ModifySpotFleetRequestInput {
     /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn excess_capacity_termination_policy(
         &self,
-    ) -> std::option::Option<&crate::types::ExcessCapacityTerminationPolicy> {
+    ) -> ::std::option::Option<&crate::types::ExcessCapacityTerminationPolicy> {
         self.excess_capacity_termination_policy.as_ref()
     }
     /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
     pub fn launch_template_configs(
         &self,
-    ) -> std::option::Option<&[crate::types::LaunchTemplateConfig]> {
+    ) -> ::std::option::Option<&[crate::types::LaunchTemplateConfig]> {
         self.launch_template_configs.as_deref()
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(&self) -> std::option::Option<&str> {
+    pub fn spot_fleet_request_id(&self) -> ::std::option::Option<&str> {
         self.spot_fleet_request_id.as_deref()
     }
     /// <p>The size of the fleet.</p>
-    pub fn target_capacity(&self) -> std::option::Option<i32> {
+    pub fn target_capacity(&self) -> ::std::option::Option<i32> {
         self.target_capacity
     }
     /// <p>The number of On-Demand Instances in the fleet.</p>
-    pub fn on_demand_target_capacity(&self) -> std::option::Option<i32> {
+    pub fn on_demand_target_capacity(&self) -> ::std::option::Option<i32> {
         self.on_demand_target_capacity
     }
     /// <p>Reserved.</p>
-    pub fn context(&self) -> std::option::Option<&str> {
+    pub fn context(&self) -> ::std::option::Option<&str> {
         self.context.as_deref()
     }
 }
@@ -68,16 +68,18 @@ impl ModifySpotFleetRequestInput {
 
 /// A builder for [`ModifySpotFleetRequestInput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifySpotFleetRequestInputBuilder {
     pub(crate) excess_capacity_termination_policy:
-        std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
+        ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
     pub(crate) launch_template_configs:
-        std::option::Option<std::vec::Vec<crate::types::LaunchTemplateConfig>>,
-    pub(crate) spot_fleet_request_id: std::option::Option<std::string::String>,
-    pub(crate) target_capacity: std::option::Option<i32>,
-    pub(crate) on_demand_target_capacity: std::option::Option<i32>,
-    pub(crate) context: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
+    pub(crate) spot_fleet_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_capacity: ::std::option::Option<i32>,
+    pub(crate) on_demand_target_capacity: ::std::option::Option<i32>,
+    pub(crate) context: ::std::option::Option<::std::string::String>,
 }
 impl ModifySpotFleetRequestInputBuilder {
     /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
@@ -86,14 +88,14 @@ impl ModifySpotFleetRequestInputBuilder {
         mut self,
         input: crate::types::ExcessCapacityTerminationPolicy,
     ) -> Self {
-        self.excess_capacity_termination_policy = Some(input);
+        self.excess_capacity_termination_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether running instances should be terminated if the target capacity of the Spot Fleet request is decreased below the current size of the Spot Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
-        input: std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
+        input: ::std::option::Option<crate::types::ExcessCapacityTerminationPolicy>,
     ) -> Self {
         self.excess_capacity_termination_policy = input;
         self
@@ -106,68 +108,71 @@ impl ModifySpotFleetRequestInputBuilder {
     pub fn launch_template_configs(mut self, input: crate::types::LaunchTemplateConfig) -> Self {
         let mut v = self.launch_template_configs.unwrap_or_default();
         v.push(input);
-        self.launch_template_configs = Some(v);
+        self.launch_template_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The launch template and overrides. You can only use this parameter if you specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.</p>
     pub fn set_launch_template_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
     ) -> Self {
         self.launch_template_configs = input;
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.spot_fleet_request_id = Some(input.into());
+    pub fn spot_fleet_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn set_spot_fleet_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.spot_fleet_request_id = input;
         self
     }
     /// <p>The size of the fleet.</p>
     pub fn target_capacity(mut self, input: i32) -> Self {
-        self.target_capacity = Some(input);
+        self.target_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the fleet.</p>
-    pub fn set_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_capacity = input;
         self
     }
     /// <p>The number of On-Demand Instances in the fleet.</p>
     pub fn on_demand_target_capacity(mut self, input: i32) -> Self {
-        self.on_demand_target_capacity = Some(input);
+        self.on_demand_target_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of On-Demand Instances in the fleet.</p>
-    pub fn set_on_demand_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_on_demand_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.on_demand_target_capacity = input;
         self
     }
     /// <p>Reserved.</p>
-    pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
-        self.context = Some(input.into());
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.context = input;
         self
     }
     /// Consumes the builder and constructs a [`ModifySpotFleetRequestInput`](crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput {
                 excess_capacity_termination_policy: self.excess_capacity_termination_policy,
                 launch_template_configs: self.launch_template_configs,

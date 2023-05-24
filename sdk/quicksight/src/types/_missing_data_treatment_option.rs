@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MissingDataTreatmentOption {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum MissingDataTreatmentOption {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MissingDataTreatmentOption {
+impl ::std::convert::From<&str> for MissingDataTreatmentOption {
     fn from(s: &str) -> Self {
         match s {
             "INTERPOLATE" => MissingDataTreatmentOption::Interpolate,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for MissingDataTreatmentOption {
         }
     }
 }
-impl std::str::FromStr for MissingDataTreatmentOption {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MissingDataTreatmentOption {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MissingDataTreatmentOption::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MissingDataTreatmentOption::from(s))
     }
 }
 impl MissingDataTreatmentOption {
@@ -91,7 +91,7 @@ impl MissingDataTreatmentOption {
         &["INTERPOLATE", "SHOW_AS_BLANK", "SHOW_AS_ZERO"]
     }
 }
-impl AsRef<str> for MissingDataTreatmentOption {
+impl ::std::convert::AsRef<str> for MissingDataTreatmentOption {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

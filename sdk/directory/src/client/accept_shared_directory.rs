@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AcceptSharedDirectory`](crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`shared_directory_id(impl Into<String>)`](crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder::shared_directory_id) / [`set_shared_directory_id(Option<String>)`](crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder::set_shared_directory_id): <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
+    ///   - [`shared_directory_id(impl ::std::convert::Into<String>)`](crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder::shared_directory_id) / [`set_shared_directory_id(Option<String>)`](crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryFluentBuilder::set_shared_directory_id): <p>Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account. </p>
     /// - On success, responds with [`AcceptSharedDirectoryOutput`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput) with field(s):
     ///   - [`shared_directory(Option<SharedDirectory>)`](crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput::shared_directory): <p>The shared directory in the directory consumer account.</p>
     /// - On failure, responds with [`SdkError<AcceptSharedDirectoryError>`](crate::operation::accept_shared_directory::AcceptSharedDirectoryError)

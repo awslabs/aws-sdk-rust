@@ -4,13 +4,13 @@
 /// <p>You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code> represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds in <code>offset</code>.</p>
 /// <p>The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and <code>PT5H</code> represents 5 hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TumblingWindow {
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
     #[doc(hidden)]
-    pub interval: std::option::Option<std::string::String>,
+    pub interval: ::std::option::Option<::std::string::String>,
     /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
     /// <ul>
     /// <li> <p>The offset time.</p> <p>For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
@@ -31,13 +31,13 @@ pub struct TumblingWindow {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub offset: std::option::Option<std::string::String>,
+    pub offset: ::std::option::Option<::std::string::String>,
 }
 impl TumblingWindow {
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
-    pub fn interval(&self) -> std::option::Option<&str> {
+    pub fn interval(&self) -> ::std::option::Option<&str> {
         self.interval.as_deref()
     }
     /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
@@ -59,7 +59,7 @@ impl TumblingWindow {
     /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn offset(&self) -> std::option::Option<&str> {
+    pub fn offset(&self) -> ::std::option::Option<&str> {
         self.offset.as_deref()
     }
 }
@@ -72,23 +72,25 @@ impl TumblingWindow {
 
 /// A builder for [`TumblingWindow`](crate::types::TumblingWindow).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TumblingWindowBuilder {
-    pub(crate) interval: std::option::Option<std::string::String>,
-    pub(crate) offset: std::option::Option<std::string::String>,
+    pub(crate) interval: ::std::option::Option<::std::string::String>,
+    pub(crate) offset: ::std::option::Option<::std::string::String>,
 }
 impl TumblingWindowBuilder {
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
-    pub fn interval(mut self, input: impl Into<std::string::String>) -> Self {
-        self.interval = Some(input.into());
+    pub fn interval(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.interval = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time interval for the tumbling window. The interval time must be between 1 minute and 1 week.</p>
     /// <p>IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC), the <code>1h</code> interval at the end of each hour, and so on. </p>
     /// <p>When IoT SiteWise aggregates data points for metric computations, the start of each interval is exclusive and the end of each interval is inclusive. IoT SiteWise places the computed data point at the end of the interval.</p>
-    pub fn set_interval(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interval = input;
         self
     }
@@ -111,8 +113,8 @@ impl TumblingWindowBuilder {
     /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn offset(mut self, input: impl Into<std::string::String>) -> Self {
-        self.offset = Some(input.into());
+    pub fn offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.offset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The offset for the tumbling window. The <code>offset</code> parameter accepts the following:</p>
@@ -134,7 +136,7 @@ impl TumblingWindowBuilder {
     /// <li> <p>If you create the metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the next day.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offset = input;
         self
     }

@@ -2,7 +2,7 @@
 pub(crate) fn de_distribution_id_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::DistributionIdList>,
+    ::std::option::Option<crate::types::DistributionIdList>,
     crate::operation::list_distributions_by_key_group::ListDistributionsByKeyGroupError,
 > {
     (!body.is_empty()).then(||{
@@ -12,13 +12,13 @@ pub(crate) fn de_distribution_id_list_payload(
 
 pub fn de_distribution_id_list(
     inp: &[u8],
-) -> Result<crate::types::DistributionIdList, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::DistributionIdList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("DistributionIdList")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DistributionIdList got {:?}",
             start_el
         )));

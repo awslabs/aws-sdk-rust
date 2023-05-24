@@ -2,26 +2,27 @@
 
 /// <p>An object that contains details about the resource destination the import job is going to target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDestination {
     /// <p>An object that contains the action of the import job towards suppression list.</p>
     #[doc(hidden)]
-    pub suppression_list_destination: std::option::Option<crate::types::SuppressionListDestination>,
+    pub suppression_list_destination:
+        ::std::option::Option<crate::types::SuppressionListDestination>,
     /// <p>An object that contains the action of the import job towards a contact list.</p>
     #[doc(hidden)]
-    pub contact_list_destination: std::option::Option<crate::types::ContactListDestination>,
+    pub contact_list_destination: ::std::option::Option<crate::types::ContactListDestination>,
 }
 impl ImportDestination {
     /// <p>An object that contains the action of the import job towards suppression list.</p>
     pub fn suppression_list_destination(
         &self,
-    ) -> std::option::Option<&crate::types::SuppressionListDestination> {
+    ) -> ::std::option::Option<&crate::types::SuppressionListDestination> {
         self.suppression_list_destination.as_ref()
     }
     /// <p>An object that contains the action of the import job towards a contact list.</p>
     pub fn contact_list_destination(
         &self,
-    ) -> std::option::Option<&crate::types::ContactListDestination> {
+    ) -> ::std::option::Option<&crate::types::ContactListDestination> {
         self.contact_list_destination.as_ref()
     }
 }
@@ -34,11 +35,14 @@ impl ImportDestination {
 
 /// A builder for [`ImportDestination`](crate::types::ImportDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportDestinationBuilder {
     pub(crate) suppression_list_destination:
-        std::option::Option<crate::types::SuppressionListDestination>,
-    pub(crate) contact_list_destination: std::option::Option<crate::types::ContactListDestination>,
+        ::std::option::Option<crate::types::SuppressionListDestination>,
+    pub(crate) contact_list_destination:
+        ::std::option::Option<crate::types::ContactListDestination>,
 }
 impl ImportDestinationBuilder {
     /// <p>An object that contains the action of the import job towards suppression list.</p>
@@ -46,26 +50,26 @@ impl ImportDestinationBuilder {
         mut self,
         input: crate::types::SuppressionListDestination,
     ) -> Self {
-        self.suppression_list_destination = Some(input);
+        self.suppression_list_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the action of the import job towards suppression list.</p>
     pub fn set_suppression_list_destination(
         mut self,
-        input: std::option::Option<crate::types::SuppressionListDestination>,
+        input: ::std::option::Option<crate::types::SuppressionListDestination>,
     ) -> Self {
         self.suppression_list_destination = input;
         self
     }
     /// <p>An object that contains the action of the import job towards a contact list.</p>
     pub fn contact_list_destination(mut self, input: crate::types::ContactListDestination) -> Self {
-        self.contact_list_destination = Some(input);
+        self.contact_list_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the action of the import job towards a contact list.</p>
     pub fn set_contact_list_destination(
         mut self,
-        input: std::option::Option<crate::types::ContactListDestination>,
+        input: ::std::option::Option<crate::types::ContactListDestination>,
     ) -> Self {
         self.contact_list_destination = input;
         self

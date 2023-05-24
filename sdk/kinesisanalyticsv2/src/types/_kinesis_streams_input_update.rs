@@ -2,15 +2,15 @@
 
 /// <p>When you update the input configuration for a SQL-based Kinesis Data Analytics application, provides information about a Kinesis stream as the streaming source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
     #[doc(hidden)]
-    pub resource_arn_update: std::option::Option<std::string::String>,
+    pub resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+    pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
         self.resource_arn_update.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl KinesisStreamsInputUpdate {
 
 /// A builder for [`KinesisStreamsInputUpdate`](crate::types::KinesisStreamsInputUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisStreamsInputUpdateBuilder {
-    pub(crate) resource_arn_update: std::option::Option<std::string::String>,
+    pub(crate) resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamsInputUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-    pub fn resource_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn_update = Some(input.into());
+    pub fn resource_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
     pub fn set_resource_arn_update(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_arn_update = input;
         self

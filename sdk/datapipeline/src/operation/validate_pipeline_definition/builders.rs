@@ -35,29 +35,29 @@ pub use crate::operation::validate_pipeline_definition::_validate_pipeline_defin
 /// </response>
 /// </example>
 /// </examples>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidatePipelineDefinitionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::validate_pipeline_definition::builders::ValidatePipelineDefinitionInputBuilder,
 }
 impl ValidatePipelineDefinitionFluentBuilder {
     /// Creates a new `ValidatePipelineDefinition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::validate_pipeline_definition::ValidatePipelineDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError,
         >,
     > {
@@ -65,30 +65,33 @@ impl ValidatePipelineDefinitionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -101,21 +104,21 @@ impl ValidatePipelineDefinitionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_id(input.into());
         self
     }
     /// <p>The ID of the pipeline.</p>
-    pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_id(input);
         self
     }
@@ -131,7 +134,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
     /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
     pub fn set_pipeline_objects(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PipelineObject>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineObject>>,
     ) -> Self {
         self.inner = self.inner.set_pipeline_objects(input);
         self
@@ -148,7 +151,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
     /// <p>The parameter objects used with the pipeline.</p>
     pub fn set_parameter_objects(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterObject>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterObject>>,
     ) -> Self {
         self.inner = self.inner.set_parameter_objects(input);
         self
@@ -165,7 +168,7 @@ impl ValidatePipelineDefinitionFluentBuilder {
     /// <p>The parameter values used with the pipeline.</p>
     pub fn set_parameter_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterValue>>,
     ) -> Self {
         self.inner = self.inner.set_parameter_values(input);
         self

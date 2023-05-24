@@ -58,152 +58,156 @@
 /// <li> <p> <code> <code>StartChildWorkflowExecutionDecisionAttributes</code> </code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Decision {
     /// <p>Specifies the type of the decision.</p>
     #[doc(hidden)]
-    pub decision_type: std::option::Option<crate::types::DecisionType>,
+    pub decision_type: ::std::option::Option<crate::types::DecisionType>,
     /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub schedule_activity_task_decision_attributes:
-        std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,
+        ::std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,
     /// <p>Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub request_cancel_activity_task_decision_attributes:
-        std::option::Option<crate::types::RequestCancelActivityTaskDecisionAttributes>,
+        ::std::option::Option<crate::types::RequestCancelActivityTaskDecisionAttributes>,
     /// <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub complete_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::CompleteWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::CompleteWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub fail_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::FailWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::FailWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub cancel_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::CancelWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::CancelWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub continue_as_new_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub record_marker_decision_attributes:
-        std::option::Option<crate::types::RecordMarkerDecisionAttributes>,
+        ::std::option::Option<crate::types::RecordMarkerDecisionAttributes>,
     /// <p>Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub start_timer_decision_attributes:
-        std::option::Option<crate::types::StartTimerDecisionAttributes>,
+        ::std::option::Option<crate::types::StartTimerDecisionAttributes>,
     /// <p>Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub cancel_timer_decision_attributes:
-        std::option::Option<crate::types::CancelTimerDecisionAttributes>,
+        ::std::option::Option<crate::types::CancelTimerDecisionAttributes>,
     /// <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub signal_external_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::SignalExternalWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::SignalExternalWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
-    pub request_cancel_external_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes>,
+    pub request_cancel_external_workflow_execution_decision_attributes: ::std::option::Option<
+        crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes,
+    >,
     /// <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub start_child_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::StartChildWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::StartChildWorkflowExecutionDecisionAttributes>,
     /// <p>Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.</p>
     #[doc(hidden)]
     pub schedule_lambda_function_decision_attributes:
-        std::option::Option<crate::types::ScheduleLambdaFunctionDecisionAttributes>,
+        ::std::option::Option<crate::types::ScheduleLambdaFunctionDecisionAttributes>,
 }
 impl Decision {
     /// <p>Specifies the type of the decision.</p>
-    pub fn decision_type(&self) -> std::option::Option<&crate::types::DecisionType> {
+    pub fn decision_type(&self) -> ::std::option::Option<&crate::types::DecisionType> {
         self.decision_type.as_ref()
     }
     /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.</p>
     pub fn schedule_activity_task_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ScheduleActivityTaskDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::ScheduleActivityTaskDecisionAttributes> {
         self.schedule_activity_task_decision_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision types.</p>
     pub fn request_cancel_activity_task_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::RequestCancelActivityTaskDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::RequestCancelActivityTaskDecisionAttributes> {
         self.request_cancel_activity_task_decision_attributes
             .as_ref()
     }
     /// <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn complete_workflow_execution_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::CompleteWorkflowExecutionDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::CompleteWorkflowExecutionDecisionAttributes> {
         self.complete_workflow_execution_decision_attributes
             .as_ref()
     }
     /// <p>Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn fail_workflow_execution_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::FailWorkflowExecutionDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::FailWorkflowExecutionDecisionAttributes> {
         self.fail_workflow_execution_decision_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn cancel_workflow_execution_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::CancelWorkflowExecutionDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::CancelWorkflowExecutionDecisionAttributes> {
         self.cancel_workflow_execution_decision_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn continue_as_new_workflow_execution_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes>
+    {
         self.continue_as_new_workflow_execution_decision_attributes
             .as_ref()
     }
     /// <p>Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.</p>
     pub fn record_marker_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::RecordMarkerDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::RecordMarkerDecisionAttributes> {
         self.record_marker_decision_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.</p>
     pub fn start_timer_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::StartTimerDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::StartTimerDecisionAttributes> {
         self.start_timer_decision_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.</p>
     pub fn cancel_timer_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::CancelTimerDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::CancelTimerDecisionAttributes> {
         self.cancel_timer_decision_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn signal_external_workflow_execution_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::SignalExternalWorkflowExecutionDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::SignalExternalWorkflowExecutionDecisionAttributes>
+    {
         self.signal_external_workflow_execution_decision_attributes
             .as_ref()
     }
     /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn request_cancel_external_workflow_execution_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes>
-    {
+    ) -> ::std::option::Option<
+        &crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes,
+    > {
         self.request_cancel_external_workflow_execution_decision_attributes
             .as_ref()
     }
     /// <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn start_child_workflow_execution_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::StartChildWorkflowExecutionDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::StartChildWorkflowExecutionDecisionAttributes> {
         self.start_child_workflow_execution_decision_attributes
             .as_ref()
     }
     /// <p>Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.</p>
     pub fn schedule_lambda_function_decision_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ScheduleLambdaFunctionDecisionAttributes> {
+    ) -> ::std::option::Option<&crate::types::ScheduleLambdaFunctionDecisionAttributes> {
         self.schedule_lambda_function_decision_attributes.as_ref()
     }
 }
@@ -216,46 +220,50 @@ impl Decision {
 
 /// A builder for [`Decision`](crate::types::Decision).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DecisionBuilder {
-    pub(crate) decision_type: std::option::Option<crate::types::DecisionType>,
+    pub(crate) decision_type: ::std::option::Option<crate::types::DecisionType>,
     pub(crate) schedule_activity_task_decision_attributes:
-        std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,
+        ::std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,
     pub(crate) request_cancel_activity_task_decision_attributes:
-        std::option::Option<crate::types::RequestCancelActivityTaskDecisionAttributes>,
+        ::std::option::Option<crate::types::RequestCancelActivityTaskDecisionAttributes>,
     pub(crate) complete_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::CompleteWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::CompleteWorkflowExecutionDecisionAttributes>,
     pub(crate) fail_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::FailWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::FailWorkflowExecutionDecisionAttributes>,
     pub(crate) cancel_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::CancelWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::CancelWorkflowExecutionDecisionAttributes>,
     pub(crate) continue_as_new_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes>,
     pub(crate) record_marker_decision_attributes:
-        std::option::Option<crate::types::RecordMarkerDecisionAttributes>,
+        ::std::option::Option<crate::types::RecordMarkerDecisionAttributes>,
     pub(crate) start_timer_decision_attributes:
-        std::option::Option<crate::types::StartTimerDecisionAttributes>,
+        ::std::option::Option<crate::types::StartTimerDecisionAttributes>,
     pub(crate) cancel_timer_decision_attributes:
-        std::option::Option<crate::types::CancelTimerDecisionAttributes>,
+        ::std::option::Option<crate::types::CancelTimerDecisionAttributes>,
     pub(crate) signal_external_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::SignalExternalWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::SignalExternalWorkflowExecutionDecisionAttributes>,
     pub(crate) request_cancel_external_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<
+            crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes,
+        >,
     pub(crate) start_child_workflow_execution_decision_attributes:
-        std::option::Option<crate::types::StartChildWorkflowExecutionDecisionAttributes>,
+        ::std::option::Option<crate::types::StartChildWorkflowExecutionDecisionAttributes>,
     pub(crate) schedule_lambda_function_decision_attributes:
-        std::option::Option<crate::types::ScheduleLambdaFunctionDecisionAttributes>,
+        ::std::option::Option<crate::types::ScheduleLambdaFunctionDecisionAttributes>,
 }
 impl DecisionBuilder {
     /// <p>Specifies the type of the decision.</p>
     pub fn decision_type(mut self, input: crate::types::DecisionType) -> Self {
-        self.decision_type = Some(input);
+        self.decision_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the type of the decision.</p>
     pub fn set_decision_type(
         mut self,
-        input: std::option::Option<crate::types::DecisionType>,
+        input: ::std::option::Option<crate::types::DecisionType>,
     ) -> Self {
         self.decision_type = input;
         self
@@ -265,13 +273,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::ScheduleActivityTaskDecisionAttributes,
     ) -> Self {
-        self.schedule_activity_task_decision_attributes = Some(input);
+        self.schedule_activity_task_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.</p>
     pub fn set_schedule_activity_task_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,
+        input: ::std::option::Option<crate::types::ScheduleActivityTaskDecisionAttributes>,
     ) -> Self {
         self.schedule_activity_task_decision_attributes = input;
         self
@@ -281,13 +289,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::RequestCancelActivityTaskDecisionAttributes,
     ) -> Self {
-        self.request_cancel_activity_task_decision_attributes = Some(input);
+        self.request_cancel_activity_task_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision types.</p>
     pub fn set_request_cancel_activity_task_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::RequestCancelActivityTaskDecisionAttributes>,
+        input: ::std::option::Option<crate::types::RequestCancelActivityTaskDecisionAttributes>,
     ) -> Self {
         self.request_cancel_activity_task_decision_attributes = input;
         self
@@ -297,13 +305,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::CompleteWorkflowExecutionDecisionAttributes,
     ) -> Self {
-        self.complete_workflow_execution_decision_attributes = Some(input);
+        self.complete_workflow_execution_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn set_complete_workflow_execution_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::CompleteWorkflowExecutionDecisionAttributes>,
+        input: ::std::option::Option<crate::types::CompleteWorkflowExecutionDecisionAttributes>,
     ) -> Self {
         self.complete_workflow_execution_decision_attributes = input;
         self
@@ -313,13 +321,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::FailWorkflowExecutionDecisionAttributes,
     ) -> Self {
-        self.fail_workflow_execution_decision_attributes = Some(input);
+        self.fail_workflow_execution_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn set_fail_workflow_execution_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::FailWorkflowExecutionDecisionAttributes>,
+        input: ::std::option::Option<crate::types::FailWorkflowExecutionDecisionAttributes>,
     ) -> Self {
         self.fail_workflow_execution_decision_attributes = input;
         self
@@ -329,13 +337,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::CancelWorkflowExecutionDecisionAttributes,
     ) -> Self {
-        self.cancel_workflow_execution_decision_attributes = Some(input);
+        self.cancel_workflow_execution_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn set_cancel_workflow_execution_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::CancelWorkflowExecutionDecisionAttributes>,
+        input: ::std::option::Option<crate::types::CancelWorkflowExecutionDecisionAttributes>,
     ) -> Self {
         self.cancel_workflow_execution_decision_attributes = input;
         self
@@ -345,13 +353,16 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes,
     ) -> Self {
-        self.continue_as_new_workflow_execution_decision_attributes = Some(input);
+        self.continue_as_new_workflow_execution_decision_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn set_continue_as_new_workflow_execution_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes>,
+        input: ::std::option::Option<
+            crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes,
+        >,
     ) -> Self {
         self.continue_as_new_workflow_execution_decision_attributes = input;
         self
@@ -361,13 +372,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::RecordMarkerDecisionAttributes,
     ) -> Self {
-        self.record_marker_decision_attributes = Some(input);
+        self.record_marker_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.</p>
     pub fn set_record_marker_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::RecordMarkerDecisionAttributes>,
+        input: ::std::option::Option<crate::types::RecordMarkerDecisionAttributes>,
     ) -> Self {
         self.record_marker_decision_attributes = input;
         self
@@ -377,13 +388,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::StartTimerDecisionAttributes,
     ) -> Self {
-        self.start_timer_decision_attributes = Some(input);
+        self.start_timer_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.</p>
     pub fn set_start_timer_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::StartTimerDecisionAttributes>,
+        input: ::std::option::Option<crate::types::StartTimerDecisionAttributes>,
     ) -> Self {
         self.start_timer_decision_attributes = input;
         self
@@ -393,13 +404,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::CancelTimerDecisionAttributes,
     ) -> Self {
-        self.cancel_timer_decision_attributes = Some(input);
+        self.cancel_timer_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.</p>
     pub fn set_cancel_timer_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::CancelTimerDecisionAttributes>,
+        input: ::std::option::Option<crate::types::CancelTimerDecisionAttributes>,
     ) -> Self {
         self.cancel_timer_decision_attributes = input;
         self
@@ -409,13 +420,16 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::SignalExternalWorkflowExecutionDecisionAttributes,
     ) -> Self {
-        self.signal_external_workflow_execution_decision_attributes = Some(input);
+        self.signal_external_workflow_execution_decision_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn set_signal_external_workflow_execution_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::SignalExternalWorkflowExecutionDecisionAttributes>,
+        input: ::std::option::Option<
+            crate::types::SignalExternalWorkflowExecutionDecisionAttributes,
+        >,
     ) -> Self {
         self.signal_external_workflow_execution_decision_attributes = input;
         self
@@ -425,13 +439,14 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes,
     ) -> Self {
-        self.request_cancel_external_workflow_execution_decision_attributes = Some(input);
+        self.request_cancel_external_workflow_execution_decision_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn set_request_cancel_external_workflow_execution_decision_attributes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes,
         >,
     ) -> Self {
@@ -443,13 +458,14 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::StartChildWorkflowExecutionDecisionAttributes,
     ) -> Self {
-        self.start_child_workflow_execution_decision_attributes = Some(input);
+        self.start_child_workflow_execution_decision_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision types.</p>
     pub fn set_start_child_workflow_execution_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::StartChildWorkflowExecutionDecisionAttributes>,
+        input: ::std::option::Option<crate::types::StartChildWorkflowExecutionDecisionAttributes>,
     ) -> Self {
         self.start_child_workflow_execution_decision_attributes = input;
         self
@@ -459,13 +475,13 @@ impl DecisionBuilder {
         mut self,
         input: crate::types::ScheduleLambdaFunctionDecisionAttributes,
     ) -> Self {
-        self.schedule_lambda_function_decision_attributes = Some(input);
+        self.schedule_lambda_function_decision_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set for other decision types.</p>
     pub fn set_schedule_lambda_function_decision_attributes(
         mut self,
-        input: std::option::Option<crate::types::ScheduleLambdaFunctionDecisionAttributes>,
+        input: ::std::option::Option<crate::types::ScheduleLambdaFunctionDecisionAttributes>,
     ) -> Self {
         self.schedule_lambda_function_decision_attributes = input;
         self

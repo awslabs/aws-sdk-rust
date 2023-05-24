@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeJob`](crate::operation::describe_job::builders::DescribeJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_name): <p>The name of the job to be described.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_job::builders::DescribeJobFluentBuilder::set_name): <p>The name of the job to be described.</p>
     /// - On success, responds with [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput) with field(s):
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_job::DescribeJobOutput::create_date): <p>The date and time that the job was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_job::DescribeJobOutput::created_by): <p>The identifier (user name) of the user associated with the creation of the job.</p>

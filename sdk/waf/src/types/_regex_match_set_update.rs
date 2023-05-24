@@ -6,22 +6,22 @@
 /// </note>
 /// <p>In an <code>UpdateRegexMatchSet</code> request, <code>RegexMatchSetUpdate</code> specifies whether to insert or delete a <code>RegexMatchTuple</code> and includes the settings for the <code>RegexMatchTuple</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegexMatchSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>RegexMatchTuple</code>.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::ChangeAction>,
+    pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the identifier of the regular expression (regex) pattern that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>RegexMatchTuple</code> values must exactly match the values in the <code>RegexMatchTuple</code> that you want to delete from the <code>RegexMatchSet</code>.</p>
     #[doc(hidden)]
-    pub regex_match_tuple: std::option::Option<crate::types::RegexMatchTuple>,
+    pub regex_match_tuple: ::std::option::Option<crate::types::RegexMatchTuple>,
 }
 impl RegexMatchSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>RegexMatchTuple</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ChangeAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the identifier of the regular expression (regex) pattern that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>RegexMatchTuple</code> values must exactly match the values in the <code>RegexMatchTuple</code> that you want to delete from the <code>RegexMatchSet</code>.</p>
-    pub fn regex_match_tuple(&self) -> std::option::Option<&crate::types::RegexMatchTuple> {
+    pub fn regex_match_tuple(&self) -> ::std::option::Option<&crate::types::RegexMatchTuple> {
         self.regex_match_tuple.as_ref()
     }
 }
@@ -34,31 +34,33 @@ impl RegexMatchSetUpdate {
 
 /// A builder for [`RegexMatchSetUpdate`](crate::types::RegexMatchSetUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegexMatchSetUpdateBuilder {
-    pub(crate) action: std::option::Option<crate::types::ChangeAction>,
-    pub(crate) regex_match_tuple: std::option::Option<crate::types::RegexMatchTuple>,
+    pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
+    pub(crate) regex_match_tuple: ::std::option::Option<crate::types::RegexMatchTuple>,
 }
 impl RegexMatchSetUpdateBuilder {
     /// <p>Specifies whether to insert or delete a <code>RegexMatchTuple</code>.</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to insert or delete a <code>RegexMatchTuple</code>.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::ChangeAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the identifier of the regular expression (regex) pattern that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>RegexMatchTuple</code> values must exactly match the values in the <code>RegexMatchTuple</code> that you want to delete from the <code>RegexMatchSet</code>.</p>
     pub fn regex_match_tuple(mut self, input: crate::types::RegexMatchTuple) -> Self {
-        self.regex_match_tuple = Some(input);
+        self.regex_match_tuple = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the identifier of the regular expression (regex) pattern that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>RegexMatchTuple</code> values must exactly match the values in the <code>RegexMatchTuple</code> that you want to delete from the <code>RegexMatchSet</code>.</p>
     pub fn set_regex_match_tuple(
         mut self,
-        input: std::option::Option<crate::types::RegexMatchTuple>,
+        input: ::std::option::Option<crate::types::RegexMatchTuple>,
     ) -> Self {
         self.regex_match_tuple = input;
         self

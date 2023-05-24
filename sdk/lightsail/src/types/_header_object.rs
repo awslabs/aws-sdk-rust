@@ -3,7 +3,7 @@
 /// <p>Describes the request headers that a Lightsail distribution bases caching on.</p>
 /// <p>For the headers that you specify, your distribution caches separate versions of the specified content based on the header values in viewer requests. For example, suppose viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header that has a value of either <code>acme</code> or <code>apex</code>, and you configure your distribution to cache your content based on values in the <code>product</code> header. Your distribution forwards the <code>product</code> header to the origin and caches the response from the origin once for each header value. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeaderObject {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
     /// <p>You can configure your distribution to do one of the following:</p>
@@ -13,10 +13,10 @@ pub struct HeaderObject {
     /// <li> <p> <b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub option: std::option::Option<crate::types::ForwardValues>,
+    pub option: ::std::option::Option<crate::types::ForwardValues>,
     /// <p>The specific headers to forward to your distribution's origin.</p>
     #[doc(hidden)]
-    pub headers_allow_list: std::option::Option<std::vec::Vec<crate::types::HeaderEnum>>,
+    pub headers_allow_list: ::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>>,
 }
 impl HeaderObject {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
@@ -26,11 +26,11 @@ impl HeaderObject {
     /// <li> <p> <b> <code>none</code> </b> - Forward only the default headers.</p> </li>
     /// <li> <p> <b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p> </li>
     /// </ul>
-    pub fn option(&self) -> std::option::Option<&crate::types::ForwardValues> {
+    pub fn option(&self) -> ::std::option::Option<&crate::types::ForwardValues> {
         self.option.as_ref()
     }
     /// <p>The specific headers to forward to your distribution's origin.</p>
-    pub fn headers_allow_list(&self) -> std::option::Option<&[crate::types::HeaderEnum]> {
+    pub fn headers_allow_list(&self) -> ::std::option::Option<&[crate::types::HeaderEnum]> {
         self.headers_allow_list.as_deref()
     }
 }
@@ -43,10 +43,12 @@ impl HeaderObject {
 
 /// A builder for [`HeaderObject`](crate::types::HeaderObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HeaderObjectBuilder {
-    pub(crate) option: std::option::Option<crate::types::ForwardValues>,
-    pub(crate) headers_allow_list: std::option::Option<std::vec::Vec<crate::types::HeaderEnum>>,
+    pub(crate) option: ::std::option::Option<crate::types::ForwardValues>,
+    pub(crate) headers_allow_list: ::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>>,
 }
 impl HeaderObjectBuilder {
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
@@ -57,7 +59,7 @@ impl HeaderObjectBuilder {
     /// <li> <p> <b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p> </li>
     /// </ul>
     pub fn option(mut self, input: crate::types::ForwardValues) -> Self {
-        self.option = Some(input);
+        self.option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The headers that you want your distribution to forward to your origin and base caching on.</p>
@@ -67,7 +69,7 @@ impl HeaderObjectBuilder {
     /// <li> <p> <b> <code>none</code> </b> - Forward only the default headers.</p> </li>
     /// <li> <p> <b> <code>allow-list</code> </b> - Forward only the headers you specify using the <code>headersAllowList</code> parameter.</p> </li>
     /// </ul>
-    pub fn set_option(mut self, input: std::option::Option<crate::types::ForwardValues>) -> Self {
+    pub fn set_option(mut self, input: ::std::option::Option<crate::types::ForwardValues>) -> Self {
         self.option = input;
         self
     }
@@ -79,13 +81,13 @@ impl HeaderObjectBuilder {
     pub fn headers_allow_list(mut self, input: crate::types::HeaderEnum) -> Self {
         let mut v = self.headers_allow_list.unwrap_or_default();
         v.push(input);
-        self.headers_allow_list = Some(v);
+        self.headers_allow_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The specific headers to forward to your distribution's origin.</p>
     pub fn set_headers_allow_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HeaderEnum>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HeaderEnum>>,
     ) -> Self {
         self.headers_allow_list = input;
         self

@@ -8,51 +8,51 @@
 /// <li> <p> <code>UpdateChapCredentialsInput$TargetARN</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return the TargetARN for specified VolumeARN.</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
     #[doc(hidden)]
-    pub secret_to_authenticate_initiator: std::option::Option<std::string::String>,
+    pub secret_to_authenticate_initiator: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
     #[doc(hidden)]
-    pub initiator_name: std::option::Option<std::string::String>,
+    pub initiator_name: ::std::option::Option<::std::string::String>,
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
     #[doc(hidden)]
-    pub secret_to_authenticate_target: std::option::Option<std::string::String>,
+    pub secret_to_authenticate_target: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return the TargetARN for specified VolumeARN.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn secret_to_authenticate_initiator(&self) -> std::option::Option<&str> {
+    pub fn secret_to_authenticate_initiator(&self) -> ::std::option::Option<&str> {
         self.secret_to_authenticate_initiator.as_deref()
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(&self) -> std::option::Option<&str> {
+    pub fn initiator_name(&self) -> ::std::option::Option<&str> {
         self.initiator_name.as_deref()
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn secret_to_authenticate_target(&self) -> std::option::Option<&str> {
+    pub fn secret_to_authenticate_target(&self) -> ::std::option::Option<&str> {
         self.secret_to_authenticate_target.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChapCredentialsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateChapCredentialsInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChapCredentialsInput");
         formatter.field("target_arn", &self.target_arn);
         formatter.field(
@@ -78,21 +78,21 @@ impl UpdateChapCredentialsInput {
 
 /// A builder for [`UpdateChapCredentialsInput`](crate::operation::update_chap_credentials::UpdateChapCredentialsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateChapCredentialsInputBuilder {
-    pub(crate) target_arn: std::option::Option<std::string::String>,
-    pub(crate) secret_to_authenticate_initiator: std::option::Option<std::string::String>,
-    pub(crate) initiator_name: std::option::Option<std::string::String>,
-    pub(crate) secret_to_authenticate_target: std::option::Option<std::string::String>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_to_authenticate_initiator: ::std::option::Option<::std::string::String>,
+    pub(crate) initiator_name: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_to_authenticate_target: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChapCredentialsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return the TargetARN for specified VolumeARN.</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return the TargetARN for specified VolumeARN.</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
@@ -101,9 +101,9 @@ impl UpdateChapCredentialsInputBuilder {
     /// </note>
     pub fn secret_to_authenticate_initiator(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.secret_to_authenticate_initiator = Some(input.into());
+        self.secret_to_authenticate_initiator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>
@@ -111,18 +111,24 @@ impl UpdateChapCredentialsInputBuilder {
     /// </note>
     pub fn set_secret_to_authenticate_initiator(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secret_to_authenticate_initiator = input;
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.initiator_name = Some(input.into());
+    pub fn initiator_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.initiator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn set_initiator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_initiator_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.initiator_name = input;
         self
     }
@@ -130,8 +136,11 @@ impl UpdateChapCredentialsInputBuilder {
     /// <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>
     /// <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>
     /// </note>
-    pub fn secret_to_authenticate_target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_to_authenticate_target = Some(input.into());
+    pub fn secret_to_authenticate_target(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secret_to_authenticate_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>
@@ -140,7 +149,7 @@ impl UpdateChapCredentialsInputBuilder {
     /// </note>
     pub fn set_secret_to_authenticate_target(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secret_to_authenticate_target = input;
         self
@@ -148,11 +157,11 @@ impl UpdateChapCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChapCredentialsInput`](crate::operation::update_chap_credentials::UpdateChapCredentialsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_chap_credentials::UpdateChapCredentialsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_chap_credentials::UpdateChapCredentialsInput {
                 target_arn: self.target_arn,
                 secret_to_authenticate_initiator: self.secret_to_authenticate_initiator,
@@ -162,8 +171,8 @@ impl UpdateChapCredentialsInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for UpdateChapCredentialsInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateChapCredentialsInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChapCredentialsInputBuilder");
         formatter.field("target_arn", &self.target_arn);
         formatter.field(

@@ -2,42 +2,42 @@
 
 /// <p>Configuration for the cluster used to run a processing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingClusterConfig {
     /// <p>The number of ML compute instances to use in the processing job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
     #[doc(hidden)]
-    pub instance_count: std::option::Option<i32>,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>The ML compute instance type for the processing job.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::ProcessingInstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,
     /// <p>The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML storage for your scenario.</p> <note>
     /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for processing, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
     /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub volume_size_in_gb: std::option::Option<i32>,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job. </p> <note>
     /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub volume_kms_key_id: std::option::Option<std::string::String>,
+    pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ProcessingClusterConfig {
     /// <p>The number of ML compute instances to use in the processing job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
-    pub fn instance_count(&self) -> std::option::Option<i32> {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The ML compute instance type for the processing job.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::ProcessingInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ProcessingInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML storage for your scenario.</p> <note>
     /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for processing, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
     /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// </note>
-    pub fn volume_size_in_gb(&self) -> std::option::Option<i32> {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job. </p> <note>
@@ -45,7 +45,7 @@ impl ProcessingClusterConfig {
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
-    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
 }
@@ -58,33 +58,35 @@ impl ProcessingClusterConfig {
 
 /// A builder for [`ProcessingClusterConfig`](crate::types::ProcessingClusterConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProcessingClusterConfigBuilder {
-    pub(crate) instance_count: std::option::Option<i32>,
-    pub(crate) instance_type: std::option::Option<crate::types::ProcessingInstanceType>,
-    pub(crate) volume_size_in_gb: std::option::Option<i32>,
-    pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+    pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::ProcessingInstanceType>,
+    pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
+    pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ProcessingClusterConfigBuilder {
     /// <p>The number of ML compute instances to use in the processing job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
-        self.instance_count = Some(input);
+        self.instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of ML compute instances to use in the processing job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
     /// <p>The ML compute instance type for the processing job.</p>
     pub fn instance_type(mut self, input: crate::types::ProcessingInstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ML compute instance type for the processing job.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::ProcessingInstanceType>,
+        input: ::std::option::Option<crate::types::ProcessingInstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
@@ -94,14 +96,14 @@ impl ProcessingClusterConfigBuilder {
     /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// </note>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
-        self.volume_size_in_gb = Some(input);
+        self.volume_size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML storage for your scenario.</p> <note>
     /// <p>Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When using these instances for processing, Amazon SageMaker mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.</p>
     /// <p>For a list of instance types that support local instance storage, including the total size per instance type, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// </note>
-    pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size_in_gb = input;
         self
     }
@@ -110,8 +112,11 @@ impl ProcessingClusterConfigBuilder {
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
-    pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_kms_key_id = Some(input.into());
+    pub fn volume_kms_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the processing job. </p> <note>
@@ -121,7 +126,7 @@ impl ProcessingClusterConfigBuilder {
     /// </note>
     pub fn set_volume_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.volume_kms_key_id = input;
         self

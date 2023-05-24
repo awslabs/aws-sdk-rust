@@ -2,29 +2,29 @@
 
 /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceExecutionSummary {
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
     #[doc(hidden)]
-    pub execution_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
     #[doc(hidden)]
-    pub execution_id: std::option::Option<std::string::String>,
+    pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
     #[doc(hidden)]
-    pub execution_type: std::option::Option<std::string::String>,
+    pub execution_type: ::std::option::Option<::std::string::String>,
 }
 impl ComplianceExecutionSummary {
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn execution_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn execution_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.execution_time.as_ref()
     }
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<&str> {
         self.execution_id.as_deref()
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
-    pub fn execution_type(&self) -> std::option::Option<&str> {
+    pub fn execution_type(&self) -> ::std::option::Option<&str> {
         self.execution_type.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl ComplianceExecutionSummary {
 
 /// A builder for [`ComplianceExecutionSummary`](crate::types::ComplianceExecutionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComplianceExecutionSummaryBuilder {
-    pub(crate) execution_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) execution_id: std::option::Option<std::string::String>,
-    pub(crate) execution_type: std::option::Option<std::string::String>,
+    pub(crate) execution_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_type: ::std::option::Option<::std::string::String>,
 }
 impl ComplianceExecutionSummaryBuilder {
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn execution_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.execution_time = Some(input);
+    pub fn execution_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.execution_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
     pub fn set_execution_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.execution_time = input;
         self
     }
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
-    pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_id = Some(input.into());
+    pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
-    pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
-    pub fn execution_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_type = Some(input.into());
+    pub fn execution_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
-    pub fn set_execution_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.execution_type = input;
         self
     }

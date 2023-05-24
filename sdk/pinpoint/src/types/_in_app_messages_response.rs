@@ -2,18 +2,18 @@
 
 /// <p>Get in-app messages response object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessagesResponse {
     /// <p>List of targeted in-app message campaigns.</p>
     #[doc(hidden)]
     pub in_app_message_campaigns:
-        std::option::Option<std::vec::Vec<crate::types::InAppMessageCampaign>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>>,
 }
 impl InAppMessagesResponse {
     /// <p>List of targeted in-app message campaigns.</p>
     pub fn in_app_message_campaigns(
         &self,
-    ) -> std::option::Option<&[crate::types::InAppMessageCampaign]> {
+    ) -> ::std::option::Option<&[crate::types::InAppMessageCampaign]> {
         self.in_app_message_campaigns.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl InAppMessagesResponse {
 
 /// A builder for [`InAppMessagesResponse`](crate::types::InAppMessagesResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InAppMessagesResponseBuilder {
     pub(crate) in_app_message_campaigns:
-        std::option::Option<std::vec::Vec<crate::types::InAppMessageCampaign>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>>,
 }
 impl InAppMessagesResponseBuilder {
     /// Appends an item to `in_app_message_campaigns`.
@@ -40,13 +42,13 @@ impl InAppMessagesResponseBuilder {
     pub fn in_app_message_campaigns(mut self, input: crate::types::InAppMessageCampaign) -> Self {
         let mut v = self.in_app_message_campaigns.unwrap_or_default();
         v.push(input);
-        self.in_app_message_campaigns = Some(v);
+        self.in_app_message_campaigns = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of targeted in-app message campaigns.</p>
     pub fn set_in_app_message_campaigns(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InAppMessageCampaign>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageCampaign>>,
     ) -> Self {
         self.in_app_message_campaigns = input;
         self

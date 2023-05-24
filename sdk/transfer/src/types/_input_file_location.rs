@@ -2,22 +2,22 @@
 
 /// <p>Specifies the location for the file that's being processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputFileLocation {
     /// <p>Specifies the details for the Amazon S3 file that's being copied or decrypted.</p>
     #[doc(hidden)]
-    pub s3_file_location: std::option::Option<crate::types::S3InputFileLocation>,
+    pub s3_file_location: ::std::option::Option<crate::types::S3InputFileLocation>,
     /// <p>Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.</p>
     #[doc(hidden)]
-    pub efs_file_location: std::option::Option<crate::types::EfsFileLocation>,
+    pub efs_file_location: ::std::option::Option<crate::types::EfsFileLocation>,
 }
 impl InputFileLocation {
     /// <p>Specifies the details for the Amazon S3 file that's being copied or decrypted.</p>
-    pub fn s3_file_location(&self) -> std::option::Option<&crate::types::S3InputFileLocation> {
+    pub fn s3_file_location(&self) -> ::std::option::Option<&crate::types::S3InputFileLocation> {
         self.s3_file_location.as_ref()
     }
     /// <p>Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.</p>
-    pub fn efs_file_location(&self) -> std::option::Option<&crate::types::EfsFileLocation> {
+    pub fn efs_file_location(&self) -> ::std::option::Option<&crate::types::EfsFileLocation> {
         self.efs_file_location.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl InputFileLocation {
 
 /// A builder for [`InputFileLocation`](crate::types::InputFileLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputFileLocationBuilder {
-    pub(crate) s3_file_location: std::option::Option<crate::types::S3InputFileLocation>,
-    pub(crate) efs_file_location: std::option::Option<crate::types::EfsFileLocation>,
+    pub(crate) s3_file_location: ::std::option::Option<crate::types::S3InputFileLocation>,
+    pub(crate) efs_file_location: ::std::option::Option<crate::types::EfsFileLocation>,
 }
 impl InputFileLocationBuilder {
     /// <p>Specifies the details for the Amazon S3 file that's being copied or decrypted.</p>
     pub fn s3_file_location(mut self, input: crate::types::S3InputFileLocation) -> Self {
-        self.s3_file_location = Some(input);
+        self.s3_file_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the details for the Amazon S3 file that's being copied or decrypted.</p>
     pub fn set_s3_file_location(
         mut self,
-        input: std::option::Option<crate::types::S3InputFileLocation>,
+        input: ::std::option::Option<crate::types::S3InputFileLocation>,
     ) -> Self {
         self.s3_file_location = input;
         self
     }
     /// <p>Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.</p>
     pub fn efs_file_location(mut self, input: crate::types::EfsFileLocation) -> Self {
-        self.efs_file_location = Some(input);
+        self.efs_file_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.</p>
     pub fn set_efs_file_location(
         mut self,
-        input: std::option::Option<crate::types::EfsFileLocation>,
+        input: ::std::option::Option<crate::types::EfsFileLocation>,
     ) -> Self {
         self.efs_file_location = input;
         self

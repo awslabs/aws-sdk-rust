@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventSubscriptionOutput {
     /// <p>The event subscription that was deleted.</p>
     #[doc(hidden)]
-    pub event_subscription: std::option::Option<crate::types::EventSubscription>,
+    pub event_subscription: ::std::option::Option<crate::types::EventSubscription>,
     _request_id: Option<String>,
 }
 impl DeleteEventSubscriptionOutput {
     /// <p>The event subscription that was deleted.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::types::EventSubscription> {
+    pub fn event_subscription(&self) -> ::std::option::Option<&crate::types::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteEventSubscriptionOutput {
+impl ::aws_http::request_id::RequestId for DeleteEventSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl DeleteEventSubscriptionOutput {
 
 /// A builder for [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteEventSubscriptionOutputBuilder {
-    pub(crate) event_subscription: std::option::Option<crate::types::EventSubscription>,
+    pub(crate) event_subscription: ::std::option::Option<crate::types::EventSubscription>,
     _request_id: Option<String>,
 }
 impl DeleteEventSubscriptionOutputBuilder {
     /// <p>The event subscription that was deleted.</p>
     pub fn event_subscription(mut self, input: crate::types::EventSubscription) -> Self {
-        self.event_subscription = Some(input);
+        self.event_subscription = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event subscription that was deleted.</p>
     pub fn set_event_subscription(
         mut self,
-        input: std::option::Option<crate::types::EventSubscription>,
+        input: ::std::option::Option<crate::types::EventSubscription>,
     ) -> Self {
         self.event_subscription = input;
         self

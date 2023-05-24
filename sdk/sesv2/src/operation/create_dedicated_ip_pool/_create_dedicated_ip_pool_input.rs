@@ -2,29 +2,29 @@
 
 /// <p>A request to create a new dedicated IP pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool.</p>
     #[doc(hidden)]
-    pub pool_name: std::option::Option<std::string::String>,
+    pub pool_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The type of scaling mode.</p>
     #[doc(hidden)]
-    pub scaling_mode: std::option::Option<crate::types::ScalingMode>,
+    pub scaling_mode: ::std::option::Option<crate::types::ScalingMode>,
 }
 impl CreateDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> ::std::option::Option<&str> {
         self.pool_name.as_deref()
     }
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The type of scaling mode.</p>
-    pub fn scaling_mode(&self) -> std::option::Option<&crate::types::ScalingMode> {
+    pub fn scaling_mode(&self) -> ::std::option::Option<&crate::types::ScalingMode> {
         self.scaling_mode.as_ref()
     }
 }
@@ -39,20 +39,22 @@ impl CreateDedicatedIpPoolInput {
 
 /// A builder for [`CreateDedicatedIpPoolInput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDedicatedIpPoolInputBuilder {
-    pub(crate) pool_name: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) scaling_mode: std::option::Option<crate::types::ScalingMode>,
+    pub(crate) pool_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) scaling_mode: ::std::option::Option<crate::types::ScalingMode>,
 }
 impl CreateDedicatedIpPoolInputBuilder {
     /// <p>The name of the dedicated IP pool.</p>
-    pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pool_name = Some(input.into());
+    pub fn pool_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dedicated IP pool.</p>
-    pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_name = input;
         self
     }
@@ -64,26 +66,26 @@ impl CreateDedicatedIpPoolInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The type of scaling mode.</p>
     pub fn scaling_mode(mut self, input: crate::types::ScalingMode) -> Self {
-        self.scaling_mode = Some(input);
+        self.scaling_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of scaling mode.</p>
     pub fn set_scaling_mode(
         mut self,
-        input: std::option::Option<crate::types::ScalingMode>,
+        input: ::std::option::Option<crate::types::ScalingMode>,
     ) -> Self {
         self.scaling_mode = input;
         self
@@ -91,11 +93,11 @@ impl CreateDedicatedIpPoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateDedicatedIpPoolInput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolInput {
                 pool_name: self.pool_name,
                 tags: self.tags,

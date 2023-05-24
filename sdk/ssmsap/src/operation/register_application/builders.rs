@@ -9,29 +9,29 @@ pub use crate::operation::register_application::_register_application_input::Reg
 /// <p>The SAP application you want to register with AWS Systems Manager for SAP is running on Amazon EC2.</p>
 /// <p>AWS Systems Manager Agent must be setup on an Amazon EC2 instance along with the required IAM permissions.</p>
 /// <p>Amazon EC2 instance(s) must have access to the secrets created in AWS Secrets Manager to manage SAP applications and components.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterApplicationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::register_application::builders::RegisterApplicationInputBuilder,
 }
 impl RegisterApplicationFluentBuilder {
     /// Creates a new `RegisterApplication`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_application::RegisterApplication,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_application::RegisterApplicationError,
         >,
     > {
@@ -39,30 +39,33 @@ impl RegisterApplicationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_application::RegisterApplicationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_application::RegisterApplicationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,21 +78,27 @@ impl RegisterApplicationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_application::RegisterApplicationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_application::RegisterApplicationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the application.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -101,7 +110,7 @@ impl RegisterApplicationFluentBuilder {
     /// <p>The type of the application.</p>
     pub fn set_application_type(
         mut self,
-        input: std::option::Option<crate::types::ApplicationType>,
+        input: ::std::option::Option<crate::types::ApplicationType>,
     ) -> Self {
         self.inner = self.inner.set_application_type(input);
         self
@@ -111,38 +120,41 @@ impl RegisterApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
     ///
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    pub fn instances(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instances(input.into());
         self
     }
     /// <p>The Amazon EC2 instances on which your SAP application is running.</p>
     pub fn set_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_instances(input);
         self
     }
     /// <p>The SAP instance number of the application.</p>
-    pub fn sap_instance_number(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sap_instance_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sap_instance_number(input.into());
         self
     }
     /// <p>The SAP instance number of the application.</p>
     pub fn set_sap_instance_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_sap_instance_number(input);
         self
     }
     /// <p>The System ID of the application.</p>
-    pub fn sid(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sid(input.into());
         self
     }
     /// <p>The System ID of the application.</p>
-    pub fn set_sid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sid(input);
         self
     }
@@ -153,8 +165,8 @@ impl RegisterApplicationFluentBuilder {
     /// <p>The tags to be attached to the SAP application.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -162,8 +174,8 @@ impl RegisterApplicationFluentBuilder {
     /// <p>The tags to be attached to the SAP application.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -181,7 +193,7 @@ impl RegisterApplicationFluentBuilder {
     /// <p>The credentials of the SAP application.</p>
     pub fn set_credentials(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationCredential>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     ) -> Self {
         self.inner = self.inner.set_credentials(input);
         self

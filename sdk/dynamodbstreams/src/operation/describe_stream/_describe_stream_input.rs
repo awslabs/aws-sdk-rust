@@ -2,29 +2,29 @@
 
 /// <p>Represents the input of a <code>DescribeStream</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
-    pub stream_arn: std::option::Option<std::string::String>,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    pub limit: ::std::option::Option<i32>,
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     #[doc(hidden)]
-    pub exclusive_start_shard_id: std::option::Option<std::string::String>,
+    pub exclusive_start_shard_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStreamInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
-    pub fn limit(&self) -> std::option::Option<i32> {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
-    pub fn exclusive_start_shard_id(&self) -> std::option::Option<&str> {
+    pub fn exclusive_start_shard_id(&self) -> ::std::option::Option<&str> {
         self.exclusive_start_shard_id.as_deref()
     }
 }
@@ -37,42 +37,47 @@ impl DescribeStreamInput {
 
 /// A builder for [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStreamInputBuilder {
-    pub(crate) stream_arn: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<i32>,
-    pub(crate) exclusive_start_shard_id: std::option::Option<std::string::String>,
+    pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) exclusive_start_shard_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStreamInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_arn = Some(input.into());
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
-    pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exclusive_start_shard_id = Some(input.into());
+    pub fn exclusive_start_shard_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.exclusive_start_shard_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn set_exclusive_start_shard_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.exclusive_start_shard_id = input;
         self
@@ -80,11 +85,11 @@ impl DescribeStreamInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStreamInput`](crate::operation::describe_stream::DescribeStreamInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_stream::DescribeStreamInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_stream::DescribeStreamInput {
+        ::std::result::Result::Ok(crate::operation::describe_stream::DescribeStreamInput {
             stream_arn: self.stream_arn,
             limit: self.limit,
             exclusive_start_shard_id: self.exclusive_start_shard_id,

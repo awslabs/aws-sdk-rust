@@ -2,12 +2,12 @@
 
 /// <p>Describes a path match type. Each rule can include only one of the following types of paths.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PathMatchType {
     /// <p>An exact match of the path.</p>
-    Exact(std::string::String),
+    Exact(::std::string::String),
     /// <p>A prefix match of the path.</p>
-    Prefix(std::string::String),
+    Prefix(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,26 +19,26 @@ pub enum PathMatchType {
     Unknown,
 }
 impl PathMatchType {
-    /// Tries to convert the enum instance into [`Exact`](crate::types::PathMatchType::Exact), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Exact`](crate::types::PathMatchType::Exact), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_exact(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let PathMatchType::Exact(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Exact`](crate::types::PathMatchType::Exact).
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::PathMatchType::Prefix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Prefix`](crate::types::PathMatchType::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let PathMatchType::Prefix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::types::PathMatchType::Prefix).

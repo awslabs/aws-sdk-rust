@@ -2,29 +2,29 @@
 
 /// <p> A comment that's posted by a user on a control. This includes the author's name, the comment text, and a timestamp. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlComment {
     /// <p> The name of the user who authored the comment. </p>
     #[doc(hidden)]
-    pub author_name: std::option::Option<std::string::String>,
+    pub author_name: ::std::option::Option<::std::string::String>,
     /// <p> The body text of a control comment. </p>
     #[doc(hidden)]
-    pub comment_body: std::option::Option<std::string::String>,
+    pub comment_body: ::std::option::Option<::std::string::String>,
     /// <p> The time when the comment was posted. </p>
     #[doc(hidden)]
-    pub posted_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub posted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlComment {
     /// <p> The name of the user who authored the comment. </p>
-    pub fn author_name(&self) -> std::option::Option<&str> {
+    pub fn author_name(&self) -> ::std::option::Option<&str> {
         self.author_name.as_deref()
     }
     /// <p> The body text of a control comment. </p>
-    pub fn comment_body(&self) -> std::option::Option<&str> {
+    pub fn comment_body(&self) -> ::std::option::Option<&str> {
         self.comment_body.as_deref()
     }
     /// <p> The time when the comment was posted. </p>
-    pub fn posted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn posted_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.posted_date.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl ControlComment {
 
 /// A builder for [`ControlComment`](crate::types::ControlComment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ControlCommentBuilder {
-    pub(crate) author_name: std::option::Option<std::string::String>,
-    pub(crate) comment_body: std::option::Option<std::string::String>,
-    pub(crate) posted_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) author_name: ::std::option::Option<::std::string::String>,
+    pub(crate) comment_body: ::std::option::Option<::std::string::String>,
+    pub(crate) posted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlCommentBuilder {
     /// <p> The name of the user who authored the comment. </p>
-    pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.author_name = Some(input.into());
+    pub fn author_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.author_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the user who authored the comment. </p>
-    pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_author_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.author_name = input;
         self
     }
     /// <p> The body text of a control comment. </p>
-    pub fn comment_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.comment_body = Some(input.into());
+    pub fn comment_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The body text of a control comment. </p>
-    pub fn set_comment_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_comment_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment_body = input;
         self
     }
     /// <p> The time when the comment was posted. </p>
-    pub fn posted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.posted_date = Some(input);
+    pub fn posted_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.posted_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time when the comment was posted. </p>
     pub fn set_posted_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.posted_date = input;
         self

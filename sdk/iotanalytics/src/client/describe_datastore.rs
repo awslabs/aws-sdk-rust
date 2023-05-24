@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDatastore`](crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`datastore_name(impl Into<String>)`](crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder::datastore_name) / [`set_datastore_name(Option<String>)`](crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder::set_datastore_name): <p>The name of the data store</p>
+    ///   - [`datastore_name(impl ::std::convert::Into<String>)`](crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder::datastore_name) / [`set_datastore_name(Option<String>)`](crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder::set_datastore_name): <p>The name of the data store</p>
     ///   - [`include_statistics(bool)`](crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder::include_statistics) / [`set_include_statistics(bool)`](crate::operation::describe_datastore::builders::DescribeDatastoreFluentBuilder::set_include_statistics): <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
     /// - On success, responds with [`DescribeDatastoreOutput`](crate::operation::describe_datastore::DescribeDatastoreOutput) with field(s):
     ///   - [`datastore(Option<Datastore>)`](crate::operation::describe_datastore::DescribeDatastoreOutput::datastore): <p>Information about the data store.</p>

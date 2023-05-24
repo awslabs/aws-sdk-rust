@@ -6,56 +6,59 @@ pub use crate::operation::start_job_run::_start_job_run_input::StartJobRunInputB
 /// Fluent builder constructing a request to `StartJobRun`.
 ///
 /// <p>Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartJobRunFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_job_run::builders::StartJobRunInputBuilder,
 }
 impl StartJobRunFluentBuilder {
     /// Creates a new `StartJobRun`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_job_run::StartJobRun,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_job_run::StartJobRunOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,65 +71,77 @@ impl StartJobRunFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_job_run::StartJobRunOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the job run.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the job run.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The virtual cluster ID for which the job run request is submitted.</p>
-    pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn virtual_cluster_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());
         self
     }
     /// <p>The virtual cluster ID for which the job run request is submitted.</p>
     pub fn set_virtual_cluster_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }
     /// <p>The client idempotency token of the job run request. </p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The client idempotency token of the job run request. </p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>The execution role ARN for the job run.</p>
-    pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The execution role ARN for the job run.</p>
     pub fn set_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
     /// <p>The Amazon EMR release version to use for the job run.</p>
-    pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn release_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.release_label(input.into());
         self
     }
     /// <p>The Amazon EMR release version to use for the job run.</p>
-    pub fn set_release_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_release_label(input);
         self
     }
@@ -136,7 +151,7 @@ impl StartJobRunFluentBuilder {
         self
     }
     /// <p>The job driver for the job run.</p>
-    pub fn set_job_driver(mut self, input: std::option::Option<crate::types::JobDriver>) -> Self {
+    pub fn set_job_driver(mut self, input: ::std::option::Option<crate::types::JobDriver>) -> Self {
         self.inner = self.inner.set_job_driver(input);
         self
     }
@@ -148,7 +163,7 @@ impl StartJobRunFluentBuilder {
     /// <p>The configuration overrides for the job run.</p>
     pub fn set_configuration_overrides(
         mut self,
-        input: std::option::Option<crate::types::ConfigurationOverrides>,
+        input: ::std::option::Option<crate::types::ConfigurationOverrides>,
     ) -> Self {
         self.inner = self.inner.set_configuration_overrides(input);
         self
@@ -160,8 +175,8 @@ impl StartJobRunFluentBuilder {
     /// <p>The tags assigned to job runs.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -169,20 +184,26 @@ impl StartJobRunFluentBuilder {
     /// <p>The tags assigned to job runs.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The job template ID to be used to start the job run.</p>
-    pub fn job_template_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_template_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.job_template_id(input.into());
         self
     }
     /// <p>The job template ID to be used to start the job run.</p>
-    pub fn set_job_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_template_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_job_template_id(input);
         self
     }
@@ -193,8 +214,8 @@ impl StartJobRunFluentBuilder {
     /// <p>The values of job template parameters to start a job run.</p>
     pub fn job_template_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.job_template_parameters(k.into(), v.into());
         self
@@ -202,8 +223,8 @@ impl StartJobRunFluentBuilder {
     /// <p>The values of job template parameters to start a job run.</p>
     pub fn set_job_template_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_job_template_parameters(input);
@@ -220,7 +241,7 @@ impl StartJobRunFluentBuilder {
     /// <p>The retry policy configuration for the job run.</p>
     pub fn set_retry_policy_configuration(
         mut self,
-        input: std::option::Option<crate::types::RetryPolicyConfiguration>,
+        input: ::std::option::Option<crate::types::RetryPolicyConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_retry_policy_configuration(input);
         self

@@ -2,11 +2,11 @@
 
 /// <p> Information about compute hardware assets. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeAttributes {
     /// <p> The host ID of the Dedicated Host on the asset. </p>
     #[doc(hidden)]
-    pub host_id: std::option::Option<std::string::String>,
+    pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The state.</p>
     /// <ul>
     /// <li> <p>ACTIVE - The asset is available and can provide capacity for new compute resources.</p> </li>
@@ -14,11 +14,11 @@ pub struct ComputeAttributes {
     /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ComputeAssetState>,
+    pub state: ::std::option::Option<crate::types::ComputeAssetState>,
 }
 impl ComputeAttributes {
     /// <p> The host ID of the Dedicated Host on the asset. </p>
-    pub fn host_id(&self) -> std::option::Option<&str> {
+    pub fn host_id(&self) -> ::std::option::Option<&str> {
         self.host_id.as_deref()
     }
     /// <p>The state.</p>
@@ -27,7 +27,7 @@ impl ComputeAttributes {
     /// <li> <p>ISOLATED - The asset is undergoing maintenance and can't provide capacity for new compute resources. Existing compute resources on the asset are not affected.</p> </li>
     /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::types::ComputeAssetState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ComputeAssetState> {
         self.state.as_ref()
     }
 }
@@ -40,19 +40,21 @@ impl ComputeAttributes {
 
 /// A builder for [`ComputeAttributes`](crate::types::ComputeAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComputeAttributesBuilder {
-    pub(crate) host_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::ComputeAssetState>,
+    pub(crate) host_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ComputeAssetState>,
 }
 impl ComputeAttributesBuilder {
     /// <p> The host ID of the Dedicated Host on the asset. </p>
-    pub fn host_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host_id = Some(input.into());
+    pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The host ID of the Dedicated Host on the asset. </p>
-    pub fn set_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_id = input;
         self
     }
@@ -63,7 +65,7 @@ impl ComputeAttributesBuilder {
     /// <li> <p>RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute resources is reduced. Amazon Web Services sends notifications for resources that must be stopped before the asset can be replaced.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::ComputeAssetState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state.</p>
@@ -74,7 +76,7 @@ impl ComputeAttributesBuilder {
     /// </ul>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::ComputeAssetState>,
+        input: ::std::option::Option<crate::types::ComputeAssetState>,
     ) -> Self {
         self.state = input;
         self

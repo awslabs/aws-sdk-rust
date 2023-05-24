@@ -2,22 +2,22 @@
 
 /// <p>Describes the status of a volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusInfo {
     /// <p>The details of the volume status.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::vec::Vec<crate::types::VolumeStatusDetails>>,
+    pub details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>>,
     /// <p>The status of the volume.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::VolumeStatusInfoStatus>,
+    pub status: ::std::option::Option<crate::types::VolumeStatusInfoStatus>,
 }
 impl VolumeStatusInfo {
     /// <p>The details of the volume status.</p>
-    pub fn details(&self) -> std::option::Option<&[crate::types::VolumeStatusDetails]> {
+    pub fn details(&self) -> ::std::option::Option<&[crate::types::VolumeStatusDetails]> {
         self.details.as_deref()
     }
     /// <p>The status of the volume.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VolumeStatusInfoStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::VolumeStatusInfoStatus> {
         self.status.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl VolumeStatusInfo {
 
 /// A builder for [`VolumeStatusInfo`](crate::types::VolumeStatusInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeStatusInfoBuilder {
-    pub(crate) details: std::option::Option<std::vec::Vec<crate::types::VolumeStatusDetails>>,
-    pub(crate) status: std::option::Option<crate::types::VolumeStatusInfoStatus>,
+    pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>>,
+    pub(crate) status: ::std::option::Option<crate::types::VolumeStatusInfoStatus>,
 }
 impl VolumeStatusInfoBuilder {
     /// Appends an item to `details`.
@@ -44,26 +46,26 @@ impl VolumeStatusInfoBuilder {
     pub fn details(mut self, input: crate::types::VolumeStatusDetails) -> Self {
         let mut v = self.details.unwrap_or_default();
         v.push(input);
-        self.details = Some(v);
+        self.details = ::std::option::Option::Some(v);
         self
     }
     /// <p>The details of the volume status.</p>
     pub fn set_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeStatusDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeStatusDetails>>,
     ) -> Self {
         self.details = input;
         self
     }
     /// <p>The status of the volume.</p>
     pub fn status(mut self, input: crate::types::VolumeStatusInfoStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the volume.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::VolumeStatusInfoStatus>,
+        input: ::std::option::Option<crate::types::VolumeStatusInfoStatus>,
     ) -> Self {
         self.status = input;
         self

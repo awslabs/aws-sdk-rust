@@ -13,56 +13,59 @@ pub use crate::operation::update_fleet::_update_fleet_input::UpdateFleetInputBui
 /// <li> <p>Elastic fleet type</p> <p>You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, <code>SessionScriptS3Location</code> and <code>UsbDeviceFilterStrings</code> attributes.</p> </li>
 /// </ul>
 /// <p>If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFleetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_fleet::builders::UpdateFleetInputBuilder,
 }
 impl UpdateFleetFluentBuilder {
     /// Creates a new `UpdateFleet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_fleet::UpdateFleet,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_fleet::UpdateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet::UpdateFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_fleet::UpdateFleetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_fleet::UpdateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet::UpdateFleetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,39 +78,39 @@ impl UpdateFleetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_fleet::UpdateFleetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_fleet::UpdateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_fleet::UpdateFleetError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the image used to create the fleet.</p>
-    pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_name(input.into());
         self
     }
     /// <p>The name of the image used to create the fleet.</p>
-    pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_name(input);
         self
     }
     /// <p>The ARN of the public, private, or shared image to use.</p>
-    pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_arn(input.into());
         self
     }
     /// <p>The ARN of the public, private, or shared image to use.</p>
-    pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_arn(input);
         self
     }
     /// <p>A unique name for the fleet.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A unique name for the fleet.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -157,7 +160,10 @@ impl UpdateFleetFluentBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
@@ -207,7 +213,10 @@ impl UpdateFleetFluentBuilder {
     /// <li> <p>stream.standard.xlarge</p> </li>
     /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -219,7 +228,7 @@ impl UpdateFleetFluentBuilder {
     /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets.</p>
     pub fn set_compute_capacity(
         mut self,
-        input: std::option::Option<crate::types::ComputeCapacity>,
+        input: ::std::option::Option<crate::types::ComputeCapacity>,
     ) -> Self {
         self.inner = self.inner.set_compute_capacity(input);
         self
@@ -230,7 +239,7 @@ impl UpdateFleetFluentBuilder {
         self
     }
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones. </p>
-    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
     }
@@ -242,7 +251,7 @@ impl UpdateFleetFluentBuilder {
     }
     /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
-    pub fn set_max_user_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_user_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_user_duration_in_seconds(input);
         self
     }
@@ -254,7 +263,7 @@ impl UpdateFleetFluentBuilder {
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
-    pub fn set_disconnect_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_disconnect_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_disconnect_timeout_in_seconds(input);
         self
     }
@@ -266,27 +275,27 @@ impl UpdateFleetFluentBuilder {
     }
     /// <p>Deletes the VPC association for the specified fleet.</p>
     #[deprecated]
-    pub fn set_delete_vpc_config(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_vpc_config(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_vpc_config(input);
         self
     }
     /// <p>The description to display.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description to display.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The fleet name to display.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
     /// <p>The fleet name to display.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
@@ -296,7 +305,10 @@ impl UpdateFleetFluentBuilder {
         self
     }
     /// <p>Enables or disables default internet access for the fleet.</p>
-    pub fn set_enable_default_internet_access(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_default_internet_access(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.inner = self.inner.set_enable_default_internet_access(input);
         self
     }
@@ -308,7 +320,7 @@ impl UpdateFleetFluentBuilder {
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>
     pub fn set_domain_join_info(
         mut self,
-        input: std::option::Option<crate::types::DomainJoinInfo>,
+        input: ::std::option::Option<crate::types::DomainJoinInfo>,
     ) -> Self {
         self.inner = self.inner.set_domain_join_info(input);
         self
@@ -327,7 +339,7 @@ impl UpdateFleetFluentBuilder {
     /// </note>
     pub fn set_idle_disconnect_timeout_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.inner = self.inner.set_idle_disconnect_timeout_in_seconds(input);
         self
@@ -344,20 +356,20 @@ impl UpdateFleetFluentBuilder {
     /// <p>The fleet attributes to delete.</p>
     pub fn set_attributes_to_delete(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FleetAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetAttribute>>,
     ) -> Self {
         self.inner = self.inner.set_attributes_to_delete(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }
@@ -369,7 +381,10 @@ impl UpdateFleetFluentBuilder {
     }
     /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
-    pub fn set_stream_view(mut self, input: std::option::Option<crate::types::StreamView>) -> Self {
+    pub fn set_stream_view(
+        mut self,
+        input: ::std::option::Option<crate::types::StreamView>,
+    ) -> Self {
         self.inner = self.inner.set_stream_view(input);
         self
     }
@@ -379,7 +394,10 @@ impl UpdateFleetFluentBuilder {
         self
     }
     /// <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
-    pub fn set_platform(mut self, input: std::option::Option<crate::types::PlatformType>) -> Self {
+    pub fn set_platform(
+        mut self,
+        input: ::std::option::Option<crate::types::PlatformType>,
+    ) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }
@@ -389,7 +407,7 @@ impl UpdateFleetFluentBuilder {
         self
     }
     /// <p>The maximum number of concurrent sessions for a fleet.</p>
-    pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_concurrent_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_concurrent_sessions(input);
         self
     }
@@ -398,14 +416,17 @@ impl UpdateFleetFluentBuilder {
     /// To override the contents of this collection use [`set_usb_device_filter_strings`](Self::set_usb_device_filter_strings).
     ///
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-    pub fn usb_device_filter_strings(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn usb_device_filter_strings(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.usb_device_filter_strings(input.into());
         self
     }
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
     pub fn set_usb_device_filter_strings(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_usb_device_filter_strings(input);
         self
@@ -418,7 +439,7 @@ impl UpdateFleetFluentBuilder {
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets. </p>
     pub fn set_session_script_s3_location(
         mut self,
-        input: std::option::Option<crate::types::S3Location>,
+        input: ::std::option::Option<crate::types::S3Location>,
     ) -> Self {
         self.inner = self.inner.set_session_script_s3_location(input);
         self

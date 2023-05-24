@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a get test request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTestOutput {
     /// <p>A test condition that is evaluated.</p>
     #[doc(hidden)]
-    pub test: std::option::Option<crate::types::Test>,
+    pub test: ::std::option::Option<crate::types::Test>,
     _request_id: Option<String>,
 }
 impl GetTestOutput {
     /// <p>A test condition that is evaluated.</p>
-    pub fn test(&self) -> std::option::Option<&crate::types::Test> {
+    pub fn test(&self) -> ::std::option::Option<&crate::types::Test> {
         self.test.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetTestOutput {
+impl ::aws_http::request_id::RequestId for GetTestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetTestOutput {
 
 /// A builder for [`GetTestOutput`](crate::operation::get_test::GetTestOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetTestOutputBuilder {
-    pub(crate) test: std::option::Option<crate::types::Test>,
+    pub(crate) test: ::std::option::Option<crate::types::Test>,
     _request_id: Option<String>,
 }
 impl GetTestOutputBuilder {
     /// <p>A test condition that is evaluated.</p>
     pub fn test(mut self, input: crate::types::Test) -> Self {
-        self.test = Some(input);
+        self.test = ::std::option::Option::Some(input);
         self
     }
     /// <p>A test condition that is evaluated.</p>
-    pub fn set_test(mut self, input: std::option::Option<crate::types::Test>) -> Self {
+    pub fn set_test(mut self, input: ::std::option::Option<crate::types::Test>) -> Self {
         self.test = input;
         self
     }

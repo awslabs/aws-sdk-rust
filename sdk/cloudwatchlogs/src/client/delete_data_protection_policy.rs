@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataProtectionPolicy`](crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_identifier(impl Into<String>)`](crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyFluentBuilder::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyFluentBuilder::set_log_group_identifier): <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
+    ///   - [`log_group_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyFluentBuilder::log_group_identifier) / [`set_log_group_identifier(Option<String>)`](crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyFluentBuilder::set_log_group_identifier): <p>The name or ARN of the log group that you want to delete the data protection policy for.</p>
     /// - On success, responds with [`DeleteDataProtectionPolicyOutput`](crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteDataProtectionPolicyError>`](crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError)
     pub fn delete_data_protection_policy(&self) -> crate::operation::delete_data_protection_policy::builders::DeleteDataProtectionPolicyFluentBuilder{

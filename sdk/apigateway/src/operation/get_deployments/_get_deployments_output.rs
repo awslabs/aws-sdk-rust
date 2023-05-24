@@ -2,27 +2,27 @@
 
 /// <p>Represents a collection resource that contains zero or more references to your existing deployments, and links that guide you on how to interact with your collection. The collection offers a paginated view of the contained deployments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentsOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<std::string::String>,
+    pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDeploymentsOutput {
     /// <p>The current page of elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::Deployment]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::Deployment]> {
         self.items.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<&str> {
         self.position.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetDeploymentsOutput {
+impl ::aws_http::request_id::RequestId for GetDeploymentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl GetDeploymentsOutput {
 
 /// A builder for [`GetDeploymentsOutput`](crate::operation::get_deployments::GetDeploymentsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDeploymentsOutputBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
-    pub(crate) position: std::option::Option<std::string::String>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
+    pub(crate) position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDeploymentsOutputBuilder {
@@ -51,24 +53,24 @@ impl GetDeploymentsOutputBuilder {
     pub fn items(mut self, input: crate::types::Deployment) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The current page of elements from this collection.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Deployment>>,
     ) -> Self {
         self.items = input;
         self
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
-        self.position = Some(input.into());
+    pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
     }

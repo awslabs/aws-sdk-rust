@@ -2,7 +2,7 @@
 
 /// <p>A request to retrieve a count of all the hosted zones that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostedZoneCountInput {}
 impl GetHostedZoneCountInput {
     /// Creates a new builder-style object to manufacture [`GetHostedZoneCountInput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountInput).
@@ -14,16 +14,20 @@ impl GetHostedZoneCountInput {
 
 /// A builder for [`GetHostedZoneCountInput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetHostedZoneCountInputBuilder {}
 impl GetHostedZoneCountInputBuilder {
     /// Consumes the builder and constructs a [`GetHostedZoneCountInput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_hosted_zone_count::GetHostedZoneCountInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_hosted_zone_count::GetHostedZoneCountInput {})
+        ::std::result::Result::Ok(
+            crate::operation::get_hosted_zone_count::GetHostedZoneCountInput {},
+        )
     }
 }

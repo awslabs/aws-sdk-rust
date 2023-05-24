@@ -8,17 +8,17 @@
 /// <li> <p> <code>Schema</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesSelector {
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
     #[doc(hidden)]
-    pub time_series_identifiers: std::option::Option<crate::types::TimeSeriesIdentifiers>,
+    pub time_series_identifiers: ::std::option::Option<crate::types::TimeSeriesIdentifiers>,
 }
 impl TimeSeriesSelector {
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
     pub fn time_series_identifiers(
         &self,
-    ) -> std::option::Option<&crate::types::TimeSeriesIdentifiers> {
+    ) -> ::std::option::Option<&crate::types::TimeSeriesIdentifiers> {
         self.time_series_identifiers.as_ref()
     }
 }
@@ -31,20 +31,22 @@ impl TimeSeriesSelector {
 
 /// A builder for [`TimeSeriesSelector`](crate::types::TimeSeriesSelector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeSeriesSelectorBuilder {
-    pub(crate) time_series_identifiers: std::option::Option<crate::types::TimeSeriesIdentifiers>,
+    pub(crate) time_series_identifiers: ::std::option::Option<crate::types::TimeSeriesIdentifiers>,
 }
 impl TimeSeriesSelectorBuilder {
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
     pub fn time_series_identifiers(mut self, input: crate::types::TimeSeriesIdentifiers) -> Self {
-        self.time_series_identifiers = Some(input);
+        self.time_series_identifiers = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the import file that contains the time series for which you want to create forecasts.</p>
     pub fn set_time_series_identifiers(
         mut self,
-        input: std::option::Option<crate::types::TimeSeriesIdentifiers>,
+        input: ::std::option::Option<crate::types::TimeSeriesIdentifiers>,
     ) -> Self {
         self.time_series_identifiers = input;
         self

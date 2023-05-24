@@ -2,15 +2,15 @@
 
 /// <p>Describes the path information of a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePath {
     /// <p>The components of the resource path.</p>
     #[doc(hidden)]
-    pub components: std::option::Option<std::vec::Vec<crate::types::ResourcePathComponent>>,
+    pub components: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePathComponent>>,
 }
 impl ResourcePath {
     /// <p>The components of the resource path.</p>
-    pub fn components(&self) -> std::option::Option<&[crate::types::ResourcePathComponent]> {
+    pub fn components(&self) -> ::std::option::Option<&[crate::types::ResourcePathComponent]> {
         self.components.as_deref()
     }
 }
@@ -23,9 +23,12 @@ impl ResourcePath {
 
 /// A builder for [`ResourcePath`](crate::types::ResourcePath).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourcePathBuilder {
-    pub(crate) components: std::option::Option<std::vec::Vec<crate::types::ResourcePathComponent>>,
+    pub(crate) components:
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePathComponent>>,
 }
 impl ResourcePathBuilder {
     /// Appends an item to `components`.
@@ -36,13 +39,13 @@ impl ResourcePathBuilder {
     pub fn components(mut self, input: crate::types::ResourcePathComponent) -> Self {
         let mut v = self.components.unwrap_or_default();
         v.push(input);
-        self.components = Some(v);
+        self.components = ::std::option::Option::Some(v);
         self
     }
     /// <p>The components of the resource path.</p>
     pub fn set_components(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePathComponent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePathComponent>>,
     ) -> Self {
         self.components = input;
         self

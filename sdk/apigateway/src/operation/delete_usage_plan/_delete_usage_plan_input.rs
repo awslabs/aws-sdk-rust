@@ -2,15 +2,15 @@
 
 /// <p>The DELETE request to delete a usage plan of a given plan Id.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUsagePlanInput {
     /// <p>The Id of the to-be-deleted usage plan.</p>
     #[doc(hidden)]
-    pub usage_plan_id: std::option::Option<std::string::String>,
+    pub usage_plan_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUsagePlanInput {
     /// <p>The Id of the to-be-deleted usage plan.</p>
-    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+    pub fn usage_plan_id(&self) -> ::std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
 }
@@ -23,29 +23,37 @@ impl DeleteUsagePlanInput {
 
 /// A builder for [`DeleteUsagePlanInput`](crate::operation::delete_usage_plan::DeleteUsagePlanInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteUsagePlanInputBuilder {
-    pub(crate) usage_plan_id: std::option::Option<std::string::String>,
+    pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUsagePlanInputBuilder {
     /// <p>The Id of the to-be-deleted usage plan.</p>
-    pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.usage_plan_id = Some(input.into());
+    pub fn usage_plan_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the to-be-deleted usage plan.</p>
-    pub fn set_usage_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_usage_plan_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.usage_plan_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteUsagePlanInput`](crate::operation::delete_usage_plan::DeleteUsagePlanInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_usage_plan::DeleteUsagePlanInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_usage_plan::DeleteUsagePlanInput {
+        ::std::result::Result::Ok(crate::operation::delete_usage_plan::DeleteUsagePlanInput {
             usage_plan_id: self.usage_plan_id,
         })
     }

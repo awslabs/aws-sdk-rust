@@ -2,35 +2,35 @@
 
 /// <p>Describes the work to be performed by human workers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopConfig {
     /// <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you can create and use with Amazon A2I, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage Workforces</a>.</p>
     #[doc(hidden)]
-    pub workteam_arn: std::option::Option<std::string::String>,
+    pub workteam_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
     /// <p>You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template to create a human task UI.</p>
     /// <p>To learn how to create a custom HTML template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task Template</a>.</p>
     /// <p>To learn how to create a human task UI, which is a worker task template that can be used in a flow definition, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete a Worker Task Templates</a>.</p>
     #[doc(hidden)]
-    pub human_task_ui_arn: std::option::Option<std::string::String>,
+    pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
     /// <p>A title for the human worker task.</p>
     #[doc(hidden)]
-    pub task_title: std::option::Option<std::string::String>,
+    pub task_title: ::std::option::Option<::std::string::String>,
     /// <p>A description for the human worker task.</p>
     #[doc(hidden)]
-    pub task_description: std::option::Option<std::string::String>,
+    pub task_description: ::std::option::Option<::std::string::String>,
     /// <p>The number of distinct workers who will perform the same task on each object. For example, if <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.</p>
     #[doc(hidden)]
-    pub task_count: std::option::Option<i32>,
+    pub task_count: ::std::option::Option<i32>,
     /// <p>The length of time that a task remains available for review by human workers.</p>
     #[doc(hidden)]
-    pub task_availability_lifetime_in_seconds: std::option::Option<i32>,
+    pub task_availability_lifetime_in_seconds: ::std::option::Option<i32>,
     /// <p>The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).</p>
     #[doc(hidden)]
-    pub task_time_limit_in_seconds: std::option::Option<i32>,
+    pub task_time_limit_in_seconds: ::std::option::Option<i32>,
     /// <p>Keywords used to describe the task so that workers can discover the task.</p>
     #[doc(hidden)]
-    pub task_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub task_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
     /// <p>Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the complexity of the task; the longer it takes in your initial testing, the more you should offer.</p>
     /// <ul>
@@ -143,42 +143,42 @@ pub struct HumanLoopConfig {
     /// <li> <p>0.012 </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub public_workforce_task_price: std::option::Option<crate::types::PublicWorkforceTaskPrice>,
+    pub public_workforce_task_price: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
 }
 impl HumanLoopConfig {
     /// <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you can create and use with Amazon A2I, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage Workforces</a>.</p>
-    pub fn workteam_arn(&self) -> std::option::Option<&str> {
+    pub fn workteam_arn(&self) -> ::std::option::Option<&str> {
         self.workteam_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
     /// <p>You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template to create a human task UI.</p>
     /// <p>To learn how to create a custom HTML template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task Template</a>.</p>
     /// <p>To learn how to create a human task UI, which is a worker task template that can be used in a flow definition, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete a Worker Task Templates</a>.</p>
-    pub fn human_task_ui_arn(&self) -> std::option::Option<&str> {
+    pub fn human_task_ui_arn(&self) -> ::std::option::Option<&str> {
         self.human_task_ui_arn.as_deref()
     }
     /// <p>A title for the human worker task.</p>
-    pub fn task_title(&self) -> std::option::Option<&str> {
+    pub fn task_title(&self) -> ::std::option::Option<&str> {
         self.task_title.as_deref()
     }
     /// <p>A description for the human worker task.</p>
-    pub fn task_description(&self) -> std::option::Option<&str> {
+    pub fn task_description(&self) -> ::std::option::Option<&str> {
         self.task_description.as_deref()
     }
     /// <p>The number of distinct workers who will perform the same task on each object. For example, if <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.</p>
-    pub fn task_count(&self) -> std::option::Option<i32> {
+    pub fn task_count(&self) -> ::std::option::Option<i32> {
         self.task_count
     }
     /// <p>The length of time that a task remains available for review by human workers.</p>
-    pub fn task_availability_lifetime_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn task_availability_lifetime_in_seconds(&self) -> ::std::option::Option<i32> {
         self.task_availability_lifetime_in_seconds
     }
     /// <p>The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).</p>
-    pub fn task_time_limit_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn task_time_limit_in_seconds(&self) -> ::std::option::Option<i32> {
         self.task_time_limit_in_seconds
     }
     /// <p>Keywords used to describe the task so that workers can discover the task.</p>
-    pub fn task_keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn task_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.task_keywords.as_deref()
     }
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
@@ -294,7 +294,7 @@ impl HumanLoopConfig {
     /// </ul>
     pub fn public_workforce_task_price(
         &self,
-    ) -> std::option::Option<&crate::types::PublicWorkforceTaskPrice> {
+    ) -> ::std::option::Option<&crate::types::PublicWorkforceTaskPrice> {
         self.public_workforce_task_price.as_ref()
     }
 }
@@ -307,27 +307,29 @@ impl HumanLoopConfig {
 
 /// A builder for [`HumanLoopConfig`](crate::types::HumanLoopConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HumanLoopConfigBuilder {
-    pub(crate) workteam_arn: std::option::Option<std::string::String>,
-    pub(crate) human_task_ui_arn: std::option::Option<std::string::String>,
-    pub(crate) task_title: std::option::Option<std::string::String>,
-    pub(crate) task_description: std::option::Option<std::string::String>,
-    pub(crate) task_count: std::option::Option<i32>,
-    pub(crate) task_availability_lifetime_in_seconds: std::option::Option<i32>,
-    pub(crate) task_time_limit_in_seconds: std::option::Option<i32>,
-    pub(crate) task_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) workteam_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) task_title: ::std::option::Option<::std::string::String>,
+    pub(crate) task_description: ::std::option::Option<::std::string::String>,
+    pub(crate) task_count: ::std::option::Option<i32>,
+    pub(crate) task_availability_lifetime_in_seconds: ::std::option::Option<i32>,
+    pub(crate) task_time_limit_in_seconds: ::std::option::Option<i32>,
+    pub(crate) task_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) public_workforce_task_price:
-        std::option::Option<crate::types::PublicWorkforceTaskPrice>,
+        ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
 }
 impl HumanLoopConfigBuilder {
     /// <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you can create and use with Amazon A2I, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage Workforces</a>.</p>
-    pub fn workteam_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workteam_arn = Some(input.into());
+    pub fn workteam_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workteam_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you can create and use with Amazon A2I, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage Workforces</a>.</p>
-    pub fn set_workteam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workteam_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workteam_arn = input;
         self
     }
@@ -335,8 +337,11 @@ impl HumanLoopConfigBuilder {
     /// <p>You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template to create a human task UI.</p>
     /// <p>To learn how to create a custom HTML template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task Template</a>.</p>
     /// <p>To learn how to create a human task UI, which is a worker task template that can be used in a flow definition, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete a Worker Task Templates</a>.</p>
-    pub fn human_task_ui_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.human_task_ui_arn = Some(input.into());
+    pub fn human_task_ui_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
@@ -345,61 +350,67 @@ impl HumanLoopConfigBuilder {
     /// <p>To learn how to create a human task UI, which is a worker task template that can be used in a flow definition, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete a Worker Task Templates</a>.</p>
     pub fn set_human_task_ui_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.human_task_ui_arn = input;
         self
     }
     /// <p>A title for the human worker task.</p>
-    pub fn task_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_title = Some(input.into());
+    pub fn task_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A title for the human worker task.</p>
-    pub fn set_task_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_title = input;
         self
     }
     /// <p>A description for the human worker task.</p>
-    pub fn task_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_description = Some(input.into());
+    pub fn task_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the human worker task.</p>
-    pub fn set_task_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.task_description = input;
         self
     }
     /// <p>The number of distinct workers who will perform the same task on each object. For example, if <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.</p>
     pub fn task_count(mut self, input: i32) -> Self {
-        self.task_count = Some(input);
+        self.task_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of distinct workers who will perform the same task on each object. For example, if <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.</p>
-    pub fn set_task_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_task_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.task_count = input;
         self
     }
     /// <p>The length of time that a task remains available for review by human workers.</p>
     pub fn task_availability_lifetime_in_seconds(mut self, input: i32) -> Self {
-        self.task_availability_lifetime_in_seconds = Some(input);
+        self.task_availability_lifetime_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The length of time that a task remains available for review by human workers.</p>
     pub fn set_task_availability_lifetime_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.task_availability_lifetime_in_seconds = input;
         self
     }
     /// <p>The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).</p>
     pub fn task_time_limit_in_seconds(mut self, input: i32) -> Self {
-        self.task_time_limit_in_seconds = Some(input);
+        self.task_time_limit_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).</p>
-    pub fn set_task_time_limit_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_task_time_limit_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.task_time_limit_in_seconds = input;
         self
     }
@@ -408,16 +419,19 @@ impl HumanLoopConfigBuilder {
     /// To override the contents of this collection use [`set_task_keywords`](Self::set_task_keywords).
     ///
     /// <p>Keywords used to describe the task so that workers can discover the task.</p>
-    pub fn task_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn task_keywords(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.task_keywords.unwrap_or_default();
         v.push(input.into());
-        self.task_keywords = Some(v);
+        self.task_keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>Keywords used to describe the task so that workers can discover the task.</p>
     pub fn set_task_keywords(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.task_keywords = input;
         self
@@ -537,7 +551,7 @@ impl HumanLoopConfigBuilder {
         mut self,
         input: crate::types::PublicWorkforceTaskPrice,
     ) -> Self {
-        self.public_workforce_task_price = Some(input);
+        self.public_workforce_task_price = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. </p>
@@ -653,7 +667,7 @@ impl HumanLoopConfigBuilder {
     /// </ul>
     pub fn set_public_workforce_task_price(
         mut self,
-        input: std::option::Option<crate::types::PublicWorkforceTaskPrice>,
+        input: ::std::option::Option<crate::types::PublicWorkforceTaskPrice>,
     ) -> Self {
         self.public_workforce_task_price = input;
         self

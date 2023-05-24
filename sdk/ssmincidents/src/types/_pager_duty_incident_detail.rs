@@ -2,29 +2,29 @@
 
 /// <p>Details about the PagerDuty incident associated with an incident created by an Incident Manager response plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PagerDutyIncidentDetail {
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
     #[doc(hidden)]
-    pub auto_resolve: std::option::Option<bool>,
+    pub auto_resolve: ::std::option::Option<bool>,
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
     #[doc(hidden)]
-    pub secret_id: std::option::Option<std::string::String>,
+    pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl PagerDutyIncidentDetail {
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
-    pub fn auto_resolve(&self) -> std::option::Option<bool> {
+    pub fn auto_resolve(&self) -> ::std::option::Option<bool> {
         self.auto_resolve
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    pub fn secret_id(&self) -> std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<&str> {
         self.secret_id.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl PagerDutyIncidentDetail {
 
 /// A builder for [`PagerDutyIncidentDetail`](crate::types::PagerDutyIncidentDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PagerDutyIncidentDetailBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) auto_resolve: std::option::Option<bool>,
-    pub(crate) secret_id: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_resolve: ::std::option::Option<bool>,
+    pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
 impl PagerDutyIncidentDetailBuilder {
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the incident associated with the PagerDuty service for the response plan.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
     pub fn auto_resolve(mut self, input: bool) -> Self {
-        self.auto_resolve = Some(input);
+        self.auto_resolve = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to resolve the PagerDuty incident when you resolve the associated Incident Manager incident.</p>
-    pub fn set_auto_resolve(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_resolve(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_resolve = input;
         self
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_id = Some(input.into());
+    pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or User Token REST API Key, and other user credentials.</p>
-    pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
     }

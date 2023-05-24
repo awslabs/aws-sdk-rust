@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagQueue`](crate::operation::tag_queue::builders::TagQueueFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`queue_url(impl Into<String>)`](crate::operation::tag_queue::builders::TagQueueFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::tag_queue::builders::TagQueueFluentBuilder::set_queue_url): <p>The URL of the queue.</p>
+    ///   - [`queue_url(impl ::std::convert::Into<String>)`](crate::operation::tag_queue::builders::TagQueueFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::tag_queue::builders::TagQueueFluentBuilder::set_queue_url): <p>The URL of the queue.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::tag_queue::builders::TagQueueFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag_queue::builders::TagQueueFluentBuilder::set_tags): <p>The list of tags to be added to the specified queue.</p>
     /// - On success, responds with [`TagQueueOutput`](crate::operation::tag_queue::TagQueueOutput)
     /// - On failure, responds with [`SdkError<TagQueueError>`](crate::operation::tag_queue::TagQueueError)

@@ -4,22 +4,22 @@
 /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeEnvironmentOrder {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
     #[doc(hidden)]
-    pub order: std::option::Option<i32>,
+    pub order: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     #[doc(hidden)]
-    pub compute_environment: std::option::Option<std::string::String>,
+    pub compute_environment: ::std::option::Option<::std::string::String>,
 }
 impl ComputeEnvironmentOrder {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
-    pub fn order(&self) -> std::option::Option<i32> {
+    pub fn order(&self) -> ::std::option::Option<i32> {
         self.order
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn compute_environment(&self) -> std::option::Option<&str> {
+    pub fn compute_environment(&self) -> ::std::option::Option<&str> {
         self.compute_environment.as_deref()
     }
 }
@@ -32,31 +32,36 @@ impl ComputeEnvironmentOrder {
 
 /// A builder for [`ComputeEnvironmentOrder`](crate::types::ComputeEnvironmentOrder).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComputeEnvironmentOrderBuilder {
-    pub(crate) order: std::option::Option<i32>,
-    pub(crate) compute_environment: std::option::Option<std::string::String>,
+    pub(crate) order: ::std::option::Option<i32>,
+    pub(crate) compute_environment: ::std::option::Option<::std::string::String>,
 }
 impl ComputeEnvironmentOrderBuilder {
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
     pub fn order(mut self, input: i32) -> Self {
-        self.order = Some(input);
+        self.order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order of the compute environment. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower <code>order</code> integer value is tried for job placement first.</p>
-    pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.order = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    pub fn compute_environment(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compute_environment = Some(input.into());
+    pub fn compute_environment(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compute_environment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the compute environment.</p>
     pub fn set_compute_environment(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.compute_environment = input;
         self

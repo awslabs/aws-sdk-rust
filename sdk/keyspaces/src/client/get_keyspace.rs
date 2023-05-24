@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetKeyspace`](crate::operation::get_keyspace::builders::GetKeyspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::operation::get_keyspace::builders::GetKeyspaceFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::get_keyspace::builders::GetKeyspaceFluentBuilder::set_keyspace_name): <p>The name of the keyspace.</p>
+    ///   - [`keyspace_name(impl ::std::convert::Into<String>)`](crate::operation::get_keyspace::builders::GetKeyspaceFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::get_keyspace::builders::GetKeyspaceFluentBuilder::set_keyspace_name): <p>The name of the keyspace.</p>
     /// - On success, responds with [`GetKeyspaceOutput`](crate::operation::get_keyspace::GetKeyspaceOutput) with field(s):
     ///   - [`keyspace_name(Option<String>)`](crate::operation::get_keyspace::GetKeyspaceOutput::keyspace_name): <p>The name of the keyspace.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::get_keyspace::GetKeyspaceOutput::resource_arn): <p>The ARN of the keyspace.</p>

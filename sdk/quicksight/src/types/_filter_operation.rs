@@ -2,20 +2,20 @@
 
 /// <p>A transform operation that filters rows based on a condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     #[doc(hidden)]
-    pub condition_expression: std::option::Option<std::string::String>,
+    pub condition_expression: ::std::option::Option<::std::string::String>,
 }
 impl FilterOperation {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    pub fn condition_expression(&self) -> std::option::Option<&str> {
+    pub fn condition_expression(&self) -> ::std::option::Option<&str> {
         self.condition_expression.as_deref()
     }
 }
-impl std::fmt::Debug for FilterOperation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for FilterOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FilterOperation");
         formatter.field("condition_expression", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,20 +30,23 @@ impl FilterOperation {
 
 /// A builder for [`FilterOperation`](crate::types::FilterOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct FilterOperationBuilder {
-    pub(crate) condition_expression: std::option::Option<std::string::String>,
+    pub(crate) condition_expression: ::std::option::Option<::std::string::String>,
 }
 impl FilterOperationBuilder {
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
-    pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.condition_expression = Some(input.into());
+    pub fn condition_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.condition_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in the dataset.</p>
     pub fn set_condition_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.condition_expression = input;
         self
@@ -55,8 +58,8 @@ impl FilterOperationBuilder {
         }
     }
 }
-impl std::fmt::Debug for FilterOperationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for FilterOperationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FilterOperationBuilder");
         formatter.field("condition_expression", &"*** Sensitive Data Redacted ***");
         formatter.finish()

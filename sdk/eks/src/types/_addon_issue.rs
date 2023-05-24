@@ -2,29 +2,29 @@
 
 /// <p>An issue related to an add-on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddonIssue {
     /// <p>A code that describes the type of issue.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::AddonIssueCode>,
+    pub code: ::std::option::Option<crate::types::AddonIssueCode>,
     /// <p>A message that provides details about the issue and what might cause it.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The resource IDs of the issue.</p>
     #[doc(hidden)]
-    pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddonIssue {
     /// <p>A code that describes the type of issue.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::AddonIssueCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::AddonIssueCode> {
         self.code.as_ref()
     }
     /// <p>A message that provides details about the issue and what might cause it.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The resource IDs of the issue.</p>
-    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_ids.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl AddonIssue {
 
 /// A builder for [`AddonIssue`](crate::types::AddonIssue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddonIssueBuilder {
-    pub(crate) code: std::option::Option<crate::types::AddonIssueCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) code: ::std::option::Option<crate::types::AddonIssueCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddonIssueBuilder {
     /// <p>A code that describes the type of issue.</p>
     pub fn code(mut self, input: crate::types::AddonIssueCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>A code that describes the type of issue.</p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::AddonIssueCode>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::AddonIssueCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>A message that provides details about the issue and what might cause it.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that provides details about the issue and what might cause it.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -69,16 +71,16 @@ impl AddonIssueBuilder {
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
     /// <p>The resource IDs of the issue.</p>
-    pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
         v.push(input.into());
-        self.resource_ids = Some(v);
+        self.resource_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The resource IDs of the issue.</p>
     pub fn set_resource_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_ids = input;
         self

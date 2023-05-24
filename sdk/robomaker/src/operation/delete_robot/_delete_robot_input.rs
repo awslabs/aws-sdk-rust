@@ -4,15 +4,15 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     #[doc(hidden)]
-    pub robot: std::option::Option<std::string::String>,
+    pub robot: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn robot(&self) -> std::option::Option<&str> {
+    pub fn robot(&self) -> ::std::option::Option<&str> {
         self.robot.as_deref()
     }
 }
@@ -25,28 +25,32 @@ impl DeleteRobotInput {
 
 /// A builder for [`DeleteRobotInput`](crate::operation::delete_robot::DeleteRobotInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteRobotInputBuilder {
-    pub(crate) robot: std::option::Option<std::string::String>,
+    pub(crate) robot: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRobotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
-        self.robot = Some(input.into());
+    pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.robot = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_robot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.robot = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteRobotInput`](crate::operation::delete_robot::DeleteRobotInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_robot::DeleteRobotInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_robot::DeleteRobotInput { robot: self.robot })
+        ::std::result::Result::Ok(crate::operation::delete_robot::DeleteRobotInput {
+            robot: self.robot,
+        })
     }
 }

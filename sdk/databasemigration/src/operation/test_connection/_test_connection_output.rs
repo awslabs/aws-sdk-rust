@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestConnectionOutput {
     /// <p>The connection tested.</p>
     #[doc(hidden)]
-    pub connection: std::option::Option<crate::types::Connection>,
+    pub connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
 }
 impl TestConnectionOutput {
     /// <p>The connection tested.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::types::Connection> {
+    pub fn connection(&self) -> ::std::option::Option<&crate::types::Connection> {
         self.connection.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for TestConnectionOutput {
+impl ::aws_http::request_id::RequestId for TestConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl TestConnectionOutput {
 
 /// A builder for [`TestConnectionOutput`](crate::operation::test_connection::TestConnectionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestConnectionOutputBuilder {
-    pub(crate) connection: std::option::Option<crate::types::Connection>,
+    pub(crate) connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
 }
 impl TestConnectionOutputBuilder {
     /// <p>The connection tested.</p>
     pub fn connection(mut self, input: crate::types::Connection) -> Self {
-        self.connection = Some(input);
+        self.connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connection tested.</p>
-    pub fn set_connection(mut self, input: std::option::Option<crate::types::Connection>) -> Self {
+    pub fn set_connection(
+        mut self,
+        input: ::std::option::Option<crate::types::Connection>,
+    ) -> Self {
         self.connection = input;
         self
     }

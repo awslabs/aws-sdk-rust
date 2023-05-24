@@ -2,36 +2,36 @@
 
 /// <p>Provides information about a PII entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PiiEntity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<f32>,
+    pub score: ::std::option::Option<f32>,
     /// <p>The entity's type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PiiEntityType>,
+    pub r#type: ::std::option::Option<crate::types::PiiEntityType>,
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
 }
 impl PiiEntity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    pub fn score(&self) -> std::option::Option<f32> {
+    pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
     /// <p>The entity's type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PiiEntityType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PiiEntityType> {
         self.r#type.as_ref()
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
 }
@@ -44,51 +44,53 @@ impl PiiEntity {
 
 /// A builder for [`PiiEntity`](crate::types::PiiEntity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PiiEntityBuilder {
-    pub(crate) score: std::option::Option<f32>,
-    pub(crate) r#type: std::option::Option<crate::types::PiiEntityType>,
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
+    pub(crate) score: ::std::option::Option<f32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PiiEntityType>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
 }
 impl PiiEntityBuilder {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }
     /// <p>The entity's type.</p>
     pub fn r#type(mut self, input: crate::types::PiiEntityType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The entity's type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::PiiEntityType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PiiEntityType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }

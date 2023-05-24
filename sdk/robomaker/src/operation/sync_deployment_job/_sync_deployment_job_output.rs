@@ -4,27 +4,27 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncDeploymentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
-    pub fleet: std::option::Option<std::string::String>,
+    pub fleet: ::std::option::Option<::std::string::String>,
     /// <p>The status of the synchronization job.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DeploymentStatus>,
+    pub status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>Information about the deployment configuration.</p>
     #[doc(hidden)]
-    pub deployment_config: std::option::Option<crate::types::DeploymentConfig>,
+    pub deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     /// <p>Information about the deployment application configurations.</p>
     #[doc(hidden)]
     pub deployment_application_configs:
-        std::option::Option<std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     /// <p>The failure reason if the job fails.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The failure code if the job fails:</p>
     /// <dl>
     /// <dt>
@@ -113,37 +113,37 @@ pub struct SyncDeploymentJobOutput {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub failure_code: std::option::Option<crate::types::DeploymentJobErrorCode>,
+    pub failure_code: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl SyncDeploymentJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(&self) -> std::option::Option<&str> {
+    pub fn fleet(&self) -> ::std::option::Option<&str> {
         self.fleet.as_deref()
     }
     /// <p>The status of the synchronization job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>Information about the deployment configuration.</p>
-    pub fn deployment_config(&self) -> std::option::Option<&crate::types::DeploymentConfig> {
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfig> {
         self.deployment_config.as_ref()
     }
     /// <p>Information about the deployment application configurations.</p>
     pub fn deployment_application_configs(
         &self,
-    ) -> std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
+    ) -> ::std::option::Option<&[crate::types::DeploymentApplicationConfig]> {
         self.deployment_application_configs.as_deref()
     }
     /// <p>The failure reason if the job fails.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The failure code if the job fails:</p>
@@ -233,15 +233,15 @@ impl SyncDeploymentJobOutput {
     /// <p>Etag for SimulationApplication does not match value during version creation.</p>
     /// </dd>
     /// </dl>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::DeploymentJobErrorCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::DeploymentJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for SyncDeploymentJobOutput {
+impl ::aws_http::request_id::RequestId for SyncDeploymentJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -256,62 +256,64 @@ impl SyncDeploymentJobOutput {
 
 /// A builder for [`SyncDeploymentJobOutput`](crate::operation::sync_deployment_job::SyncDeploymentJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SyncDeploymentJobOutputBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) fleet: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DeploymentStatus>,
-    pub(crate) deployment_config: std::option::Option<crate::types::DeploymentConfig>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) fleet: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DeploymentStatus>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfig>,
     pub(crate) deployment_application_configs:
-        std::option::Option<std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
-    pub(crate) failure_code: std::option::Option<crate::types::DeploymentJobErrorCode>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_code: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl SyncDeploymentJobOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the synchronization request.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet = Some(input.into());
+    pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
     }
     /// <p>The status of the synchronization job.</p>
     pub fn status(mut self, input: crate::types::DeploymentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the synchronization job.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DeploymentStatus>,
+        input: ::std::option::Option<crate::types::DeploymentStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Information about the deployment configuration.</p>
     pub fn deployment_config(mut self, input: crate::types::DeploymentConfig) -> Self {
-        self.deployment_config = Some(input);
+        self.deployment_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the deployment configuration.</p>
     pub fn set_deployment_config(
         mut self,
-        input: std::option::Option<crate::types::DeploymentConfig>,
+        input: ::std::option::Option<crate::types::DeploymentConfig>,
     ) -> Self {
         self.deployment_config = input;
         self
@@ -327,24 +329,30 @@ impl SyncDeploymentJobOutputBuilder {
     ) -> Self {
         let mut v = self.deployment_application_configs.unwrap_or_default();
         v.push(input);
-        self.deployment_application_configs = Some(v);
+        self.deployment_application_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the deployment application configurations.</p>
     pub fn set_deployment_application_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentApplicationConfig>>,
     ) -> Self {
         self.deployment_application_configs = input;
         self
     }
     /// <p>The failure reason if the job fails.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure reason if the job fails.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }
@@ -436,7 +444,7 @@ impl SyncDeploymentJobOutputBuilder {
     /// </dd>
     /// </dl>
     pub fn failure_code(mut self, input: crate::types::DeploymentJobErrorCode) -> Self {
-        self.failure_code = Some(input);
+        self.failure_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The failure code if the job fails:</p>
@@ -528,20 +536,20 @@ impl SyncDeploymentJobOutputBuilder {
     /// </dl>
     pub fn set_failure_code(
         mut self,
-        input: std::option::Option<crate::types::DeploymentJobErrorCode>,
+        input: ::std::option::Option<crate::types::DeploymentJobErrorCode>,
     ) -> Self {
         self.failure_code = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self

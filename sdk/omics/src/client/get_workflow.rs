@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkflow`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_id): <p>The workflow's ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_id): <p>The workflow's ID.</p>
     ///   - [`r#type(WorkflowType)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::type) / [`set_type(Option<WorkflowType>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_type): <p>The workflow's type.</p>
     ///   - [`export(Vec<WorkflowExport>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::export) / [`set_export(Option<Vec<WorkflowExport>>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_export): <p>The export format for the workflow.</p>
     /// - On success, responds with [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput) with field(s):

@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum VectorEnrichmentJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum VectorEnrichmentJobStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for VectorEnrichmentJobStatus {
+impl ::std::convert::From<&str> for VectorEnrichmentJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => VectorEnrichmentJobStatus::Completed,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for VectorEnrichmentJobStatus {
         }
     }
 }
-impl std::str::FromStr for VectorEnrichmentJobStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for VectorEnrichmentJobStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VectorEnrichmentJobStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(VectorEnrichmentJobStatus::from(s))
     }
 }
 impl VectorEnrichmentJobStatus {
@@ -125,7 +125,7 @@ impl VectorEnrichmentJobStatus {
         ]
     }
 }
-impl AsRef<str> for VectorEnrichmentJobStatus {
+impl ::std::convert::AsRef<str> for VectorEnrichmentJobStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

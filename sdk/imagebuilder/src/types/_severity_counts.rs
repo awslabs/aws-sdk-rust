@@ -2,36 +2,36 @@
 
 /// <p>Includes counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SeverityCounts {
     /// <p>The total number of findings across all severity levels for the specified filter.</p>
     #[doc(hidden)]
-    pub all: std::option::Option<i64>,
+    pub all: ::std::option::Option<i64>,
     /// <p>The number of critical severity findings for the specified filter.</p>
     #[doc(hidden)]
-    pub critical: std::option::Option<i64>,
+    pub critical: ::std::option::Option<i64>,
     /// <p>The number of high severity findings for the specified filter.</p>
     #[doc(hidden)]
-    pub high: std::option::Option<i64>,
+    pub high: ::std::option::Option<i64>,
     /// <p>The number of medium severity findings for the specified filter.</p>
     #[doc(hidden)]
-    pub medium: std::option::Option<i64>,
+    pub medium: ::std::option::Option<i64>,
 }
 impl SeverityCounts {
     /// <p>The total number of findings across all severity levels for the specified filter.</p>
-    pub fn all(&self) -> std::option::Option<i64> {
+    pub fn all(&self) -> ::std::option::Option<i64> {
         self.all
     }
     /// <p>The number of critical severity findings for the specified filter.</p>
-    pub fn critical(&self) -> std::option::Option<i64> {
+    pub fn critical(&self) -> ::std::option::Option<i64> {
         self.critical
     }
     /// <p>The number of high severity findings for the specified filter.</p>
-    pub fn high(&self) -> std::option::Option<i64> {
+    pub fn high(&self) -> ::std::option::Option<i64> {
         self.high
     }
     /// <p>The number of medium severity findings for the specified filter.</p>
-    pub fn medium(&self) -> std::option::Option<i64> {
+    pub fn medium(&self) -> ::std::option::Option<i64> {
         self.medium
     }
 }
@@ -44,51 +44,53 @@ impl SeverityCounts {
 
 /// A builder for [`SeverityCounts`](crate::types::SeverityCounts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SeverityCountsBuilder {
-    pub(crate) all: std::option::Option<i64>,
-    pub(crate) critical: std::option::Option<i64>,
-    pub(crate) high: std::option::Option<i64>,
-    pub(crate) medium: std::option::Option<i64>,
+    pub(crate) all: ::std::option::Option<i64>,
+    pub(crate) critical: ::std::option::Option<i64>,
+    pub(crate) high: ::std::option::Option<i64>,
+    pub(crate) medium: ::std::option::Option<i64>,
 }
 impl SeverityCountsBuilder {
     /// <p>The total number of findings across all severity levels for the specified filter.</p>
     pub fn all(mut self, input: i64) -> Self {
-        self.all = Some(input);
+        self.all = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of findings across all severity levels for the specified filter.</p>
-    pub fn set_all(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_all(mut self, input: ::std::option::Option<i64>) -> Self {
         self.all = input;
         self
     }
     /// <p>The number of critical severity findings for the specified filter.</p>
     pub fn critical(mut self, input: i64) -> Self {
-        self.critical = Some(input);
+        self.critical = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of critical severity findings for the specified filter.</p>
-    pub fn set_critical(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_critical(mut self, input: ::std::option::Option<i64>) -> Self {
         self.critical = input;
         self
     }
     /// <p>The number of high severity findings for the specified filter.</p>
     pub fn high(mut self, input: i64) -> Self {
-        self.high = Some(input);
+        self.high = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of high severity findings for the specified filter.</p>
-    pub fn set_high(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_high(mut self, input: ::std::option::Option<i64>) -> Self {
         self.high = input;
         self
     }
     /// <p>The number of medium severity findings for the specified filter.</p>
     pub fn medium(mut self, input: i64) -> Self {
-        self.medium = Some(input);
+        self.medium = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of medium severity findings for the specified filter.</p>
-    pub fn set_medium(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_medium(mut self, input: ::std::option::Option<i64>) -> Self {
         self.medium = input;
         self
     }

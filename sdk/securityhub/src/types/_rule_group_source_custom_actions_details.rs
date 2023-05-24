@@ -2,24 +2,24 @@
 
 /// <p>A custom action definition. A custom action is an optional, non-standard action to use for stateless packet handling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceCustomActionsDetails {
     /// <p>The definition of a custom action.</p>
     #[doc(hidden)]
-    pub action_definition: std::option::Option<crate::types::StatelessCustomActionDefinition>,
+    pub action_definition: ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
     /// <p>A descriptive name of the custom action.</p>
     #[doc(hidden)]
-    pub action_name: std::option::Option<std::string::String>,
+    pub action_name: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceCustomActionsDetails {
     /// <p>The definition of a custom action.</p>
     pub fn action_definition(
         &self,
-    ) -> std::option::Option<&crate::types::StatelessCustomActionDefinition> {
+    ) -> ::std::option::Option<&crate::types::StatelessCustomActionDefinition> {
         self.action_definition.as_ref()
     }
     /// <p>A descriptive name of the custom action.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<&str> {
         self.action_name.as_deref()
     }
 }
@@ -32,11 +32,13 @@ impl RuleGroupSourceCustomActionsDetails {
 
 /// A builder for [`RuleGroupSourceCustomActionsDetails`](crate::types::RuleGroupSourceCustomActionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupSourceCustomActionsDetailsBuilder {
     pub(crate) action_definition:
-        std::option::Option<crate::types::StatelessCustomActionDefinition>,
-    pub(crate) action_name: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
+    pub(crate) action_name: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceCustomActionsDetailsBuilder {
     /// <p>The definition of a custom action.</p>
@@ -44,24 +46,24 @@ impl RuleGroupSourceCustomActionsDetailsBuilder {
         mut self,
         input: crate::types::StatelessCustomActionDefinition,
     ) -> Self {
-        self.action_definition = Some(input);
+        self.action_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The definition of a custom action.</p>
     pub fn set_action_definition(
         mut self,
-        input: std::option::Option<crate::types::StatelessCustomActionDefinition>,
+        input: ::std::option::Option<crate::types::StatelessCustomActionDefinition>,
     ) -> Self {
         self.action_definition = input;
         self
     }
     /// <p>A descriptive name of the custom action.</p>
-    pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_name = Some(input.into());
+    pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A descriptive name of the custom action.</p>
-    pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
     }

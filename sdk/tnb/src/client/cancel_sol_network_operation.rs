@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelSolNetworkOperation`](crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ns_lcm_op_occ_id(impl Into<String>)`](crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationFluentBuilder::ns_lcm_op_occ_id) / [`set_ns_lcm_op_occ_id(Option<String>)`](crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationFluentBuilder::set_ns_lcm_op_occ_id): <p>The identifier of the network operation.</p>
+    ///   - [`ns_lcm_op_occ_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationFluentBuilder::ns_lcm_op_occ_id) / [`set_ns_lcm_op_occ_id(Option<String>)`](crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationFluentBuilder::set_ns_lcm_op_occ_id): <p>The identifier of the network operation.</p>
     /// - On success, responds with [`CancelSolNetworkOperationOutput`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationOutput)
     /// - On failure, responds with [`SdkError<CancelSolNetworkOperationError>`](crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError)
     pub fn cancel_sol_network_operation(&self) -> crate::operation::cancel_sol_network_operation::builders::CancelSolNetworkOperationFluentBuilder{

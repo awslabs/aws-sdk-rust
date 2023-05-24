@@ -2,30 +2,30 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamingDistributionConfigOutput {
     /// <p>The streaming distribution's configuration information.</p>
     #[doc(hidden)]
     pub streaming_distribution_config:
-        std::option::Option<crate::types::StreamingDistributionConfig>,
+        ::std::option::Option<crate::types::StreamingDistributionConfig>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
     #[doc(hidden)]
-    pub e_tag: std::option::Option<std::string::String>,
+    pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetStreamingDistributionConfigOutput {
     /// <p>The streaming distribution's configuration information.</p>
     pub fn streaming_distribution_config(
         &self,
-    ) -> std::option::Option<&crate::types::StreamingDistributionConfig> {
+    ) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetStreamingDistributionConfigOutput {
+impl ::aws_http::request_id::RequestId for GetStreamingDistributionConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl GetStreamingDistributionConfigOutput {
 
 /// A builder for [`GetStreamingDistributionConfigOutput`](crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetStreamingDistributionConfigOutputBuilder {
     pub(crate) streaming_distribution_config:
-        std::option::Option<crate::types::StreamingDistributionConfig>,
-    pub(crate) e_tag: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::StreamingDistributionConfig>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetStreamingDistributionConfigOutputBuilder {
@@ -52,24 +54,24 @@ impl GetStreamingDistributionConfigOutputBuilder {
         mut self,
         input: crate::types::StreamingDistributionConfig,
     ) -> Self {
-        self.streaming_distribution_config = Some(input);
+        self.streaming_distribution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The streaming distribution's configuration information.</p>
     pub fn set_streaming_distribution_config(
         mut self,
-        input: std::option::Option<crate::types::StreamingDistributionConfig>,
+        input: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     ) -> Self {
         self.streaming_distribution_config = input;
         self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
-    pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.e_tag = Some(input.into());
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
-    pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }

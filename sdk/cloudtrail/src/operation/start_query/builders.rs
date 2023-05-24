@@ -6,56 +6,59 @@ pub use crate::operation::start_query::_start_query_input::StartQueryInputBuilde
 /// Fluent builder constructing a request to `StartQuery`.
 ///
 /// <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to an S3 bucket.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartQueryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_query::builders::StartQueryInputBuilder,
 }
 impl StartQueryFluentBuilder {
     /// Creates a new `StartQuery`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_query::StartQuery,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_query::StartQueryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,41 @@ impl StartQueryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_query::StartQueryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_query::StartQueryError>,
     > {
         self.send_middleware().await
     }
     /// <p>The SQL code of your query.</p>
-    pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn query_statement(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.query_statement(input.into());
         self
     }
     /// <p>The SQL code of your query.</p>
-    pub fn set_query_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_statement(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_query_statement(input);
         self
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
-    pub fn delivery_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn delivery_s3_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.delivery_s3_uri(input.into());
         self
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
-    pub fn set_delivery_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delivery_s3_uri(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_delivery_s3_uri(input);
         self
     }

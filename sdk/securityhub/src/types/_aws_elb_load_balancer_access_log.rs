@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the access log configuration for the load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerAccessLog {
     /// <p>The interval in minutes for publishing the access logs.</p>
     /// <p>You can publish access logs either every 5 minutes or every 60 minutes.</p>
@@ -13,11 +13,11 @@ pub struct AwsElbLoadBalancerAccessLog {
     pub enabled: bool,
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
     /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
     #[doc(hidden)]
-    pub s3_bucket_prefix: std::option::Option<std::string::String>,
+    pub s3_bucket_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbLoadBalancerAccessLog {
     /// <p>The interval in minutes for publishing the access logs.</p>
@@ -30,12 +30,12 @@ impl AwsElbLoadBalancerAccessLog {
         self.enabled
     }
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
     /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
-    pub fn s3_bucket_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_prefix.as_deref()
     }
 }
@@ -48,55 +48,69 @@ impl AwsElbLoadBalancerAccessLog {
 
 /// A builder for [`AwsElbLoadBalancerAccessLog`](crate::types::AwsElbLoadBalancerAccessLog).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElbLoadBalancerAccessLogBuilder {
-    pub(crate) emit_interval: std::option::Option<i32>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket_prefix: std::option::Option<std::string::String>,
+    pub(crate) emit_interval: ::std::option::Option<i32>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsElbLoadBalancerAccessLogBuilder {
     /// <p>The interval in minutes for publishing the access logs.</p>
     /// <p>You can publish access logs either every 5 minutes or every 60 minutes.</p>
     pub fn emit_interval(mut self, input: i32) -> Self {
-        self.emit_interval = Some(input);
+        self.emit_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The interval in minutes for publishing the access logs.</p>
     /// <p>You can publish access logs either every 5 minutes or every 60 minutes.</p>
-    pub fn set_emit_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_emit_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.emit_interval = input;
         self
     }
     /// <p>Indicates whether access logs are enabled for the load balancer.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether access logs are enabled for the load balancer.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket where the access logs are stored.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
     /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
-    pub fn s3_bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_prefix = Some(input.into());
+    pub fn s3_bucket_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical hierarchy that was created for the S3 bucket.</p>
     /// <p>If a prefix is not provided, the log is placed at the root level of the bucket.</p>
-    pub fn set_s3_bucket_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_prefix = input;
         self
     }

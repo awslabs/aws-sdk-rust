@@ -2,27 +2,27 @@
 
 /// <p>Returned in response to a successful <code>GetCredentialsForIdentity</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCredentialsForIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
-    pub identity_id: std::option::Option<std::string::String>,
+    pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>Credentials for the provided identity ID.</p>
     #[doc(hidden)]
-    pub credentials: std::option::Option<crate::types::Credentials>,
+    pub credentials: ::std::option::Option<crate::types::Credentials>,
     _request_id: Option<String>,
 }
 impl GetCredentialsForIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>Credentials for the provided identity ID.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::types::Credentials> {
+    pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetCredentialsForIdentityOutput {
+impl ::aws_http::request_id::RequestId for GetCredentialsForIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,32 +36,34 @@ impl GetCredentialsForIdentityOutput {
 
 /// A builder for [`GetCredentialsForIdentityOutput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCredentialsForIdentityOutputBuilder {
-    pub(crate) identity_id: std::option::Option<std::string::String>,
-    pub(crate) credentials: std::option::Option<crate::types::Credentials>,
+    pub(crate) identity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     _request_id: Option<String>,
 }
 impl GetCredentialsForIdentityOutputBuilder {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_id = Some(input.into());
+    pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
     }
     /// <p>Credentials for the provided identity ID.</p>
     pub fn credentials(mut self, input: crate::types::Credentials) -> Self {
-        self.credentials = Some(input);
+        self.credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>Credentials for the provided identity ID.</p>
     pub fn set_credentials(
         mut self,
-        input: std::option::Option<crate::types::Credentials>,
+        input: ::std::option::Option<crate::types::Credentials>,
     ) -> Self {
         self.credentials = input;
         self

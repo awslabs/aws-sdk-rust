@@ -3,7 +3,7 @@
 /// <p> <b>[AMI policies only]</b> Specifies an AMI deprecation rule for AMIs created by an AMI lifecycle policy.</p>
 /// <p>For age-based schedules, you must specify <b>Interval</b> and <b>IntervalUnit</b>. For count-based schedules, you must specify <b>Count</b>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeprecateRule {
     /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
     #[doc(hidden)]
@@ -13,7 +13,7 @@ pub struct DeprecateRule {
     pub interval: i32,
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
     #[doc(hidden)]
-    pub interval_unit: std::option::Option<crate::types::RetentionIntervalUnitValues>,
+    pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl DeprecateRule {
     /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
@@ -25,7 +25,9 @@ impl DeprecateRule {
         self.interval
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
-    pub fn interval_unit(&self) -> std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
 }
@@ -38,42 +40,44 @@ impl DeprecateRule {
 
 /// A builder for [`DeprecateRule`](crate::types::DeprecateRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeprecateRuleBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) interval: std::option::Option<i32>,
-    pub(crate) interval_unit: std::option::Option<crate::types::RetentionIntervalUnitValues>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) interval: ::std::option::Option<i32>,
+    pub(crate) interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
 }
 impl DeprecateRuleBuilder {
     /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the schedule has a count-based retention rule, this parameter specifies the number of oldest AMIs to deprecate. The count must be less than or equal to the schedule's retention count, and it can't be greater than 1000.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
     pub fn interval(mut self, input: i32) -> Self {
-        self.interval = Some(input);
+        self.interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the schedule has an age-based retention rule, this parameter specifies the period after which to deprecate AMIs created by the schedule. The period must be less than or equal to the schedule's retention period, and it can't be greater than 10 years. This is equivalent to 120 months, 520 weeks, or 3650 days.</p>
-    pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
     pub fn interval_unit(mut self, input: crate::types::RetentionIntervalUnitValues) -> Self {
-        self.interval_unit = Some(input);
+        self.interval_unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit of time in which to measure the <b>Interval</b>.</p>
     pub fn set_interval_unit(
         mut self,
-        input: std::option::Option<crate::types::RetentionIntervalUnitValues>,
+        input: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
     ) -> Self {
         self.interval_unit = input;
         self

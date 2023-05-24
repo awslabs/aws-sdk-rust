@@ -2,15 +2,15 @@
 
 /// <p>Location information about a manifest file. You can use a manifest file to create a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetGroundTruthManifest {
     /// <p>The S3 bucket location for the manifest file.</p>
     #[doc(hidden)]
-    pub s3_object: std::option::Option<crate::types::InputS3Object>,
+    pub s3_object: ::std::option::Option<crate::types::InputS3Object>,
 }
 impl DatasetGroundTruthManifest {
     /// <p>The S3 bucket location for the manifest file.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::types::InputS3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::InputS3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DatasetGroundTruthManifest {
 
 /// A builder for [`DatasetGroundTruthManifest`](crate::types::DatasetGroundTruthManifest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetGroundTruthManifestBuilder {
-    pub(crate) s3_object: std::option::Option<crate::types::InputS3Object>,
+    pub(crate) s3_object: ::std::option::Option<crate::types::InputS3Object>,
 }
 impl DatasetGroundTruthManifestBuilder {
     /// <p>The S3 bucket location for the manifest file.</p>
     pub fn s3_object(mut self, input: crate::types::InputS3Object) -> Self {
-        self.s3_object = Some(input);
+        self.s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 bucket location for the manifest file.</p>
     pub fn set_s3_object(
         mut self,
-        input: std::option::Option<crate::types::InputS3Object>,
+        input: ::std::option::Option<crate::types::InputS3Object>,
     ) -> Self {
         self.s3_object = input;
         self

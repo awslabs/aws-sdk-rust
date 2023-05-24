@@ -2,15 +2,15 @@
 
 /// A Microsoft Smooth Streaming (MSS) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
-    pub speke_key_provider: std::option::Option<crate::types::SpekeKeyProvider>,
+    pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl MssEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> std::option::Option<&crate::types::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> ::std::option::Option<&crate::types::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MssEncryption {
 
 /// A builder for [`MssEncryption`](crate::types::MssEncryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MssEncryptionBuilder {
-    pub(crate) speke_key_provider: std::option::Option<crate::types::SpekeKeyProvider>,
+    pub(crate) speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl MssEncryptionBuilder {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
-        self.speke_key_provider = Some(input);
+        self.speke_key_provider = ::std::option::Option::Some(input);
         self
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn set_speke_key_provider(
         mut self,
-        input: std::option::Option<crate::types::SpekeKeyProvider>,
+        input: ::std::option::Option<crate::types::SpekeKeyProvider>,
     ) -> Self {
         self.speke_key_provider = input;
         self

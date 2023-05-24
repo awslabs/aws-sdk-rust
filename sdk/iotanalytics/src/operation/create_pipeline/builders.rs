@@ -6,56 +6,59 @@ pub use crate::operation::create_pipeline::_create_pipeline_input::CreatePipelin
 /// Fluent builder constructing a request to `CreatePipeline`.
 ///
 /// <p>Creates a pipeline. A pipeline consumes messages from a channel and allows you to process the messages before storing them in a data store. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePipelineFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_pipeline::builders::CreatePipelineInputBuilder,
 }
 impl CreatePipelineFluentBuilder {
     /// Creates a new `CreatePipeline`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_pipeline::CreatePipeline,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_pipeline::CreatePipelineOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,25 @@ impl CreatePipelineFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_pipeline::CreatePipelineOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipeline::CreatePipelineError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the pipeline.</p>
-    pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pipeline_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_pipeline_name(input);
         self
     }
@@ -100,7 +109,7 @@ impl CreatePipelineFluentBuilder {
     /// <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
     pub fn set_pipeline_activities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PipelineActivity>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineActivity>>,
     ) -> Self {
         self.inner = self.inner.set_pipeline_activities(input);
         self
@@ -117,7 +126,7 @@ impl CreatePipelineFluentBuilder {
     /// <p>Metadata which can be used to manage the pipeline.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

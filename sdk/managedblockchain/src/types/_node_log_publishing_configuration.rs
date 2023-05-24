@@ -2,17 +2,17 @@
 
 /// <p>Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on Managed Blockchain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     #[doc(hidden)]
-    pub fabric: std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>,
+    pub fabric: ::std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>,
 }
 impl NodeLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     pub fn fabric(
         &self,
-    ) -> std::option::Option<&crate::types::NodeFabricLogPublishingConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NodeFabricLogPublishingConfiguration> {
         self.fabric.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl NodeLogPublishingConfiguration {
 
 /// A builder for [`NodeLogPublishingConfiguration`](crate::types::NodeLogPublishingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeLogPublishingConfigurationBuilder {
-    pub(crate) fabric: std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>,
+    pub(crate) fabric: ::std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>,
 }
 impl NodeLogPublishingConfigurationBuilder {
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     pub fn fabric(mut self, input: crate::types::NodeFabricLogPublishingConfiguration) -> Self {
-        self.fabric = Some(input);
+        self.fabric = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration properties for logging events associated with a node that is owned by a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
     pub fn set_fabric(
         mut self,
-        input: std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>,
+        input: ::std::option::Option<crate::types::NodeFabricLogPublishingConfiguration>,
     ) -> Self {
         self.fabric = input;
         self

@@ -2,36 +2,37 @@
 
 /// <p>An object that contains information on which data sources are automatically enabled for new members within the organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationDataSourceConfigurationsResult {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
     #[doc(hidden)]
-    pub s3_logs: std::option::Option<crate::types::OrganizationS3LogsConfigurationResult>,
+    pub s3_logs: ::std::option::Option<crate::types::OrganizationS3LogsConfigurationResult>,
     /// <p>Describes the configuration of Kubernetes data sources.</p>
     #[doc(hidden)]
-    pub kubernetes: std::option::Option<crate::types::OrganizationKubernetesConfigurationResult>,
+    pub kubernetes: ::std::option::Option<crate::types::OrganizationKubernetesConfigurationResult>,
     /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
     #[doc(hidden)]
     pub malware_protection:
-        std::option::Option<crate::types::OrganizationMalwareProtectionConfigurationResult>,
+        ::std::option::Option<crate::types::OrganizationMalwareProtectionConfigurationResult>,
 }
 impl OrganizationDataSourceConfigurationsResult {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
     pub fn s3_logs(
         &self,
-    ) -> std::option::Option<&crate::types::OrganizationS3LogsConfigurationResult> {
+    ) -> ::std::option::Option<&crate::types::OrganizationS3LogsConfigurationResult> {
         self.s3_logs.as_ref()
     }
     /// <p>Describes the configuration of Kubernetes data sources.</p>
     pub fn kubernetes(
         &self,
-    ) -> std::option::Option<&crate::types::OrganizationKubernetesConfigurationResult> {
+    ) -> ::std::option::Option<&crate::types::OrganizationKubernetesConfigurationResult> {
         self.kubernetes.as_ref()
     }
     /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
     pub fn malware_protection(
         &self,
-    ) -> std::option::Option<&crate::types::OrganizationMalwareProtectionConfigurationResult> {
+    ) -> ::std::option::Option<&crate::types::OrganizationMalwareProtectionConfigurationResult>
+    {
         self.malware_protection.as_ref()
     }
 }
@@ -44,24 +45,26 @@ impl OrganizationDataSourceConfigurationsResult {
 
 /// A builder for [`OrganizationDataSourceConfigurationsResult`](crate::types::OrganizationDataSourceConfigurationsResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationDataSourceConfigurationsResultBuilder {
-    pub(crate) s3_logs: std::option::Option<crate::types::OrganizationS3LogsConfigurationResult>,
+    pub(crate) s3_logs: ::std::option::Option<crate::types::OrganizationS3LogsConfigurationResult>,
     pub(crate) kubernetes:
-        std::option::Option<crate::types::OrganizationKubernetesConfigurationResult>,
+        ::std::option::Option<crate::types::OrganizationKubernetesConfigurationResult>,
     pub(crate) malware_protection:
-        std::option::Option<crate::types::OrganizationMalwareProtectionConfigurationResult>,
+        ::std::option::Option<crate::types::OrganizationMalwareProtectionConfigurationResult>,
 }
 impl OrganizationDataSourceConfigurationsResultBuilder {
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
     pub fn s3_logs(mut self, input: crate::types::OrganizationS3LogsConfigurationResult) -> Self {
-        self.s3_logs = Some(input);
+        self.s3_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether S3 data event logs are enabled as a data source.</p>
     pub fn set_s3_logs(
         mut self,
-        input: std::option::Option<crate::types::OrganizationS3LogsConfigurationResult>,
+        input: ::std::option::Option<crate::types::OrganizationS3LogsConfigurationResult>,
     ) -> Self {
         self.s3_logs = input;
         self
@@ -71,13 +74,13 @@ impl OrganizationDataSourceConfigurationsResultBuilder {
         mut self,
         input: crate::types::OrganizationKubernetesConfigurationResult,
     ) -> Self {
-        self.kubernetes = Some(input);
+        self.kubernetes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the configuration of Kubernetes data sources.</p>
     pub fn set_kubernetes(
         mut self,
-        input: std::option::Option<crate::types::OrganizationKubernetesConfigurationResult>,
+        input: ::std::option::Option<crate::types::OrganizationKubernetesConfigurationResult>,
     ) -> Self {
         self.kubernetes = input;
         self
@@ -87,13 +90,15 @@ impl OrganizationDataSourceConfigurationsResultBuilder {
         mut self,
         input: crate::types::OrganizationMalwareProtectionConfigurationResult,
     ) -> Self {
-        self.malware_protection = Some(input);
+        self.malware_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the configuration of Malware Protection data source for an organization.</p>
     pub fn set_malware_protection(
         mut self,
-        input: std::option::Option<crate::types::OrganizationMalwareProtectionConfigurationResult>,
+        input: ::std::option::Option<
+            crate::types::OrganizationMalwareProtectionConfigurationResult,
+        >,
     ) -> Self {
         self.malware_protection = input;
         self

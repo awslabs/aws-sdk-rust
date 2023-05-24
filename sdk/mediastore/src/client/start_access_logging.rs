@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartAccessLogging`](crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl Into<String>)`](crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder::set_container_name): <p>The name of the container that you want to start access logging on.</p>
+    ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::start_access_logging::builders::StartAccessLoggingFluentBuilder::set_container_name): <p>The name of the container that you want to start access logging on.</p>
     /// - On success, responds with [`StartAccessLoggingOutput`](crate::operation::start_access_logging::StartAccessLoggingOutput)
     /// - On failure, responds with [`SdkError<StartAccessLoggingError>`](crate::operation::start_access_logging::StartAccessLoggingError)
     pub fn start_access_logging(

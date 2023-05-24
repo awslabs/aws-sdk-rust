@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEarthObservationJob`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_earth_observation_job::builders::GetEarthObservationJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
     /// - On success, responds with [`GetEarthObservationJobOutput`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::arn): <p>The Amazon Resource Name (ARN) of the Earth Observation job.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_earth_observation_job::GetEarthObservationJobOutput::name): <p>The name of the Earth Observation job.</p>

@@ -2,22 +2,22 @@
 
 /// <p>Describes the annotations associated with a entity recognizer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
-    pub s3_uri: std::option::Option<std::string::String>,
+    pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
     #[doc(hidden)]
-    pub test_s3_uri: std::option::Option<std::string::String>,
+    pub test_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl EntityRecognizerAnnotations {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
     /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn test_s3_uri(&self) -> std::option::Option<&str> {
+    pub fn test_s3_uri(&self) -> ::std::option::Option<&str> {
         self.test_s3_uri.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl EntityRecognizerAnnotations {
 
 /// A builder for [`EntityRecognizerAnnotations`](crate::types::EntityRecognizerAnnotations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityRecognizerAnnotationsBuilder {
-    pub(crate) s3_uri: std::option::Option<std::string::String>,
-    pub(crate) test_s3_uri: std::option::Option<std::string::String>,
+    pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) test_s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl EntityRecognizerAnnotationsBuilder {
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_uri = Some(input.into());
+    pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
     }
     /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn test_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.test_s3_uri = Some(input.into());
+    pub fn test_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.test_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the Amazon S3 location where the test annotations for an entity recognizer are located. The URI must be in the same Region as the API endpoint that you are calling.</p>
-    pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_test_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.test_s3_uri = input;
         self
     }

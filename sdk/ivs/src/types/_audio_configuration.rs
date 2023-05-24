@@ -2,11 +2,11 @@
 
 /// <p>Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioConfiguration {
     /// <p>Codec used for the audio encoding.</p>
     #[doc(hidden)]
-    pub codec: std::option::Option<std::string::String>,
+    pub codec: ::std::option::Option<::std::string::String>,
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     #[doc(hidden)]
     pub target_bitrate: i64,
@@ -19,7 +19,7 @@ pub struct AudioConfiguration {
 }
 impl AudioConfiguration {
     /// <p>Codec used for the audio encoding.</p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> ::std::option::Option<&str> {
         self.codec.as_deref()
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
@@ -44,51 +44,53 @@ impl AudioConfiguration {
 
 /// A builder for [`AudioConfiguration`](crate::types::AudioConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioConfigurationBuilder {
-    pub(crate) codec: std::option::Option<std::string::String>,
-    pub(crate) target_bitrate: std::option::Option<i64>,
-    pub(crate) sample_rate: std::option::Option<i64>,
-    pub(crate) channels: std::option::Option<i64>,
+    pub(crate) codec: ::std::option::Option<::std::string::String>,
+    pub(crate) target_bitrate: ::std::option::Option<i64>,
+    pub(crate) sample_rate: ::std::option::Option<i64>,
+    pub(crate) channels: ::std::option::Option<i64>,
 }
 impl AudioConfigurationBuilder {
     /// <p>Codec used for the audio encoding.</p>
-    pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
-        self.codec = Some(input.into());
+    pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.codec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Codec used for the audio encoding.</p>
-    pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.codec = input;
         self
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     pub fn target_bitrate(mut self, input: i64) -> Self {
-        self.target_bitrate = Some(input);
+        self.target_bitrate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
-    pub fn set_target_bitrate(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_target_bitrate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.target_bitrate = input;
         self
     }
     /// <p>Number of audio samples recorded per second.</p>
     pub fn sample_rate(mut self, input: i64) -> Self {
-        self.sample_rate = Some(input);
+        self.sample_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of audio samples recorded per second.</p>
-    pub fn set_sample_rate(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_sample_rate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.sample_rate = input;
         self
     }
     /// <p>Number of audio channels.</p>
     pub fn channels(mut self, input: i64) -> Self {
-        self.channels = Some(input);
+        self.channels = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of audio channels.</p>
-    pub fn set_channels(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<i64>) -> Self {
         self.channels = input;
         self
     }

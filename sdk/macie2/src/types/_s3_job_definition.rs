@@ -2,32 +2,32 @@
 
 /// <p>Specifies which S3 buckets contain the objects that a classification job analyzes, and the scope of that analysis. The bucket specification can be static (bucketDefinitions) or dynamic (bucketCriteria). If it's static, the job analyzes objects in the same predefined set of buckets each time the job runs. If it's dynamic, the job analyzes objects in any buckets that match the specified criteria each time the job starts to run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3JobDefinition {
     /// <p>The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
     #[doc(hidden)]
-    pub bucket_criteria: std::option::Option<crate::types::S3BucketCriteriaForJob>,
+    pub bucket_criteria: ::std::option::Option<crate::types::S3BucketCriteriaForJob>,
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
     #[doc(hidden)]
     pub bucket_definitions:
-        std::option::Option<std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
     /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
     #[doc(hidden)]
-    pub scoping: std::option::Option<crate::types::Scoping>,
+    pub scoping: ::std::option::Option<crate::types::Scoping>,
 }
 impl S3JobDefinition {
     /// <p>The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
-    pub fn bucket_criteria(&self) -> std::option::Option<&crate::types::S3BucketCriteriaForJob> {
+    pub fn bucket_criteria(&self) -> ::std::option::Option<&crate::types::S3BucketCriteriaForJob> {
         self.bucket_criteria.as_ref()
     }
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
     pub fn bucket_definitions(
         &self,
-    ) -> std::option::Option<&[crate::types::S3BucketDefinitionForJob]> {
+    ) -> ::std::option::Option<&[crate::types::S3BucketDefinitionForJob]> {
         self.bucket_definitions.as_deref()
     }
     /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
-    pub fn scoping(&self) -> std::option::Option<&crate::types::Scoping> {
+    pub fn scoping(&self) -> ::std::option::Option<&crate::types::Scoping> {
         self.scoping.as_ref()
     }
 }
@@ -40,23 +40,25 @@ impl S3JobDefinition {
 
 /// A builder for [`S3JobDefinition`](crate::types::S3JobDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3JobDefinitionBuilder {
-    pub(crate) bucket_criteria: std::option::Option<crate::types::S3BucketCriteriaForJob>,
+    pub(crate) bucket_criteria: ::std::option::Option<crate::types::S3BucketCriteriaForJob>,
     pub(crate) bucket_definitions:
-        std::option::Option<std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
-    pub(crate) scoping: std::option::Option<crate::types::Scoping>,
+        ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
+    pub(crate) scoping: ::std::option::Option<crate::types::Scoping>,
 }
 impl S3JobDefinitionBuilder {
     /// <p>The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
     pub fn bucket_criteria(mut self, input: crate::types::S3BucketCriteriaForJob) -> Self {
-        self.bucket_criteria = Some(input);
+        self.bucket_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
     pub fn set_bucket_criteria(
         mut self,
-        input: std::option::Option<crate::types::S3BucketCriteriaForJob>,
+        input: ::std::option::Option<crate::types::S3BucketCriteriaForJob>,
     ) -> Self {
         self.bucket_criteria = input;
         self
@@ -69,24 +71,24 @@ impl S3JobDefinitionBuilder {
     pub fn bucket_definitions(mut self, input: crate::types::S3BucketDefinitionForJob) -> Self {
         let mut v = self.bucket_definitions.unwrap_or_default();
         v.push(input);
-        self.bucket_definitions = Some(v);
+        self.bucket_definitions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
     pub fn set_bucket_definitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::S3BucketDefinitionForJob>>,
     ) -> Self {
         self.bucket_definitions = input;
         self
     }
     /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
     pub fn scoping(mut self, input: crate::types::Scoping) -> Self {
-        self.scoping = Some(input);
+        self.scoping = ::std::option::Option::Some(input);
         self
     }
     /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
-    pub fn set_scoping(mut self, input: std::option::Option<crate::types::Scoping>) -> Self {
+    pub fn set_scoping(mut self, input: ::std::option::Option<crate::types::Scoping>) -> Self {
         self.scoping = input;
         self
     }

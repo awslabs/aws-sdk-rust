@@ -2,29 +2,29 @@
 
 /// DVB Network Information Table (NIT)
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DvbNitSettings {
     /// The numeric value placed in the Network Information Table (NIT).
     #[doc(hidden)]
-    pub network_id: std::option::Option<i32>,
+    pub network_id: ::std::option::Option<i32>,
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
     #[doc(hidden)]
-    pub network_name: std::option::Option<std::string::String>,
+    pub network_name: ::std::option::Option<::std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
-    pub rep_interval: std::option::Option<i32>,
+    pub rep_interval: ::std::option::Option<i32>,
 }
 impl DvbNitSettings {
     /// The numeric value placed in the Network Information Table (NIT).
-    pub fn network_id(&self) -> std::option::Option<i32> {
+    pub fn network_id(&self) -> ::std::option::Option<i32> {
         self.network_id
     }
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
-    pub fn network_name(&self) -> std::option::Option<&str> {
+    pub fn network_name(&self) -> ::std::option::Option<&str> {
         self.network_name.as_deref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn rep_interval(&self) -> std::option::Option<i32> {
+    pub fn rep_interval(&self) -> ::std::option::Option<i32> {
         self.rep_interval
     }
 }
@@ -37,40 +37,42 @@ impl DvbNitSettings {
 
 /// A builder for [`DvbNitSettings`](crate::types::DvbNitSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DvbNitSettingsBuilder {
-    pub(crate) network_id: std::option::Option<i32>,
-    pub(crate) network_name: std::option::Option<std::string::String>,
-    pub(crate) rep_interval: std::option::Option<i32>,
+    pub(crate) network_id: ::std::option::Option<i32>,
+    pub(crate) network_name: ::std::option::Option<::std::string::String>,
+    pub(crate) rep_interval: ::std::option::Option<i32>,
 }
 impl DvbNitSettingsBuilder {
     /// The numeric value placed in the Network Information Table (NIT).
     pub fn network_id(mut self, input: i32) -> Self {
-        self.network_id = Some(input);
+        self.network_id = ::std::option::Option::Some(input);
         self
     }
     /// The numeric value placed in the Network Information Table (NIT).
-    pub fn set_network_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_network_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_id = input;
         self
     }
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
-    pub fn network_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_name = Some(input.into());
+    pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.
-    pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_name = input;
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn rep_interval(mut self, input: i32) -> Self {
-        self.rep_interval = Some(input);
+        self.rep_interval = ::std::option::Option::Some(input);
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn set_rep_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rep_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rep_interval = input;
         self
     }

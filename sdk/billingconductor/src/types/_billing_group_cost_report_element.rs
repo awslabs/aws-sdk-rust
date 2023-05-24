@@ -2,50 +2,50 @@
 
 /// <p>A summary report of actual Amazon Web Services charges and calculated Amazon Web Services charges, based on the associated pricing plan of a billing group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BillingGroupCostReportElement {
     /// <p>The Amazon Resource Name (ARN) of a billing group. </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The actual Amazon Web Services charges for the billing group. </p>
     #[doc(hidden)]
-    pub aws_cost: std::option::Option<std::string::String>,
+    pub aws_cost: ::std::option::Option<::std::string::String>,
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group. </p>
     #[doc(hidden)]
-    pub proforma_cost: std::option::Option<std::string::String>,
+    pub proforma_cost: ::std::option::Option<::std::string::String>,
     /// <p> The billing group margin. </p>
     #[doc(hidden)]
-    pub margin: std::option::Option<std::string::String>,
+    pub margin: ::std::option::Option<::std::string::String>,
     /// <p> The percentage of billing group margin. </p>
     #[doc(hidden)]
-    pub margin_percentage: std::option::Option<std::string::String>,
+    pub margin_percentage: ::std::option::Option<::std::string::String>,
     /// <p>The displayed currency. </p>
     #[doc(hidden)]
-    pub currency: std::option::Option<std::string::String>,
+    pub currency: ::std::option::Option<::std::string::String>,
 }
 impl BillingGroupCostReportElement {
     /// <p>The Amazon Resource Name (ARN) of a billing group. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The actual Amazon Web Services charges for the billing group. </p>
-    pub fn aws_cost(&self) -> std::option::Option<&str> {
+    pub fn aws_cost(&self) -> ::std::option::Option<&str> {
         self.aws_cost.as_deref()
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group. </p>
-    pub fn proforma_cost(&self) -> std::option::Option<&str> {
+    pub fn proforma_cost(&self) -> ::std::option::Option<&str> {
         self.proforma_cost.as_deref()
     }
     /// <p> The billing group margin. </p>
-    pub fn margin(&self) -> std::option::Option<&str> {
+    pub fn margin(&self) -> ::std::option::Option<&str> {
         self.margin.as_deref()
     }
     /// <p> The percentage of billing group margin. </p>
-    pub fn margin_percentage(&self) -> std::option::Option<&str> {
+    pub fn margin_percentage(&self) -> ::std::option::Option<&str> {
         self.margin_percentage.as_deref()
     }
     /// <p>The displayed currency. </p>
-    pub fn currency(&self) -> std::option::Option<&str> {
+    pub fn currency(&self) -> ::std::option::Option<&str> {
         self.currency.as_deref()
     }
 }
@@ -58,76 +58,87 @@ impl BillingGroupCostReportElement {
 
 /// A builder for [`BillingGroupCostReportElement`](crate::types::BillingGroupCostReportElement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BillingGroupCostReportElementBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) aws_cost: std::option::Option<std::string::String>,
-    pub(crate) proforma_cost: std::option::Option<std::string::String>,
-    pub(crate) margin: std::option::Option<std::string::String>,
-    pub(crate) margin_percentage: std::option::Option<std::string::String>,
-    pub(crate) currency: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_cost: ::std::option::Option<::std::string::String>,
+    pub(crate) proforma_cost: ::std::option::Option<::std::string::String>,
+    pub(crate) margin: ::std::option::Option<::std::string::String>,
+    pub(crate) margin_percentage: ::std::option::Option<::std::string::String>,
+    pub(crate) currency: ::std::option::Option<::std::string::String>,
 }
 impl BillingGroupCostReportElementBuilder {
     /// <p>The Amazon Resource Name (ARN) of a billing group. </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a billing group. </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The actual Amazon Web Services charges for the billing group. </p>
-    pub fn aws_cost(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_cost = Some(input.into());
+    pub fn aws_cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The actual Amazon Web Services charges for the billing group. </p>
-    pub fn set_aws_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_cost = input;
         self
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group. </p>
-    pub fn proforma_cost(mut self, input: impl Into<std::string::String>) -> Self {
-        self.proforma_cost = Some(input.into());
+    pub fn proforma_cost(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.proforma_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hypothetical Amazon Web Services charges based on the associated pricing plan of a billing group. </p>
-    pub fn set_proforma_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_proforma_cost(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.proforma_cost = input;
         self
     }
     /// <p> The billing group margin. </p>
-    pub fn margin(mut self, input: impl Into<std::string::String>) -> Self {
-        self.margin = Some(input.into());
+    pub fn margin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.margin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The billing group margin. </p>
-    pub fn set_margin(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_margin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.margin = input;
         self
     }
     /// <p> The percentage of billing group margin. </p>
-    pub fn margin_percentage(mut self, input: impl Into<std::string::String>) -> Self {
-        self.margin_percentage = Some(input.into());
+    pub fn margin_percentage(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.margin_percentage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The percentage of billing group margin. </p>
     pub fn set_margin_percentage(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.margin_percentage = input;
         self
     }
     /// <p>The displayed currency. </p>
-    pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
-        self.currency = Some(input.into());
+    pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.currency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The displayed currency. </p>
-    pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>Represents a set of options that define how DataBrew will interpret a Microsoft Excel file when creating a dataset from that file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExcelOptions {
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
     #[doc(hidden)]
-    pub sheet_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub sheet_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
     #[doc(hidden)]
-    pub sheet_indexes: std::option::Option<std::vec::Vec<i32>>,
+    pub sheet_indexes: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
     #[doc(hidden)]
-    pub header_row: std::option::Option<bool>,
+    pub header_row: ::std::option::Option<bool>,
 }
 impl ExcelOptions {
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
-    pub fn sheet_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sheet_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.sheet_names.as_deref()
     }
     /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
-    pub fn sheet_indexes(&self) -> std::option::Option<&[i32]> {
+    pub fn sheet_indexes(&self) -> ::std::option::Option<&[i32]> {
         self.sheet_indexes.as_deref()
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
-    pub fn header_row(&self) -> std::option::Option<bool> {
+    pub fn header_row(&self) -> ::std::option::Option<bool> {
         self.header_row
     }
 }
@@ -37,11 +37,13 @@ impl ExcelOptions {
 
 /// A builder for [`ExcelOptions`](crate::types::ExcelOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExcelOptionsBuilder {
-    pub(crate) sheet_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) sheet_indexes: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) header_row: std::option::Option<bool>,
+    pub(crate) sheet_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) sheet_indexes: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) header_row: ::std::option::Option<bool>,
 }
 impl ExcelOptionsBuilder {
     /// Appends an item to `sheet_names`.
@@ -49,16 +51,16 @@ impl ExcelOptionsBuilder {
     /// To override the contents of this collection use [`set_sheet_names`](Self::set_sheet_names).
     ///
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
-    pub fn sheet_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sheet_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sheet_names.unwrap_or_default();
         v.push(input.into());
-        self.sheet_names = Some(v);
+        self.sheet_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
     pub fn set_sheet_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.sheet_names = input;
         self
@@ -71,21 +73,21 @@ impl ExcelOptionsBuilder {
     pub fn sheet_indexes(mut self, input: i32) -> Self {
         let mut v = self.sheet_indexes.unwrap_or_default();
         v.push(input);
-        self.sheet_indexes = Some(v);
+        self.sheet_indexes = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
-    pub fn set_sheet_indexes(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_sheet_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.sheet_indexes = input;
         self
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
     pub fn header_row(mut self, input: bool) -> Self {
-        self.header_row = Some(input);
+        self.header_row = ::std::option::Option::Some(input);
         self
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
-    pub fn set_header_row(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_header_row(mut self, input: ::std::option::Option<bool>) -> Self {
         self.header_row = input;
         self
     }

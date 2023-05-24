@@ -2,15 +2,15 @@
 
 /// Answering Machine Detection config
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
     #[doc(hidden)]
-    pub enable_answer_machine_detection: std::option::Option<bool>,
+    pub enable_answer_machine_detection: ::std::option::Option<bool>,
 }
 impl AnswerMachineDetectionConfig {
     /// Enable or disable answering machine detection
-    pub fn enable_answer_machine_detection(&self) -> std::option::Option<bool> {
+    pub fn enable_answer_machine_detection(&self) -> ::std::option::Option<bool> {
         self.enable_answer_machine_detection
     }
 }
@@ -23,18 +23,23 @@ impl AnswerMachineDetectionConfig {
 
 /// A builder for [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnswerMachineDetectionConfigBuilder {
-    pub(crate) enable_answer_machine_detection: std::option::Option<bool>,
+    pub(crate) enable_answer_machine_detection: ::std::option::Option<bool>,
 }
 impl AnswerMachineDetectionConfigBuilder {
     /// Enable or disable answering machine detection
     pub fn enable_answer_machine_detection(mut self, input: bool) -> Self {
-        self.enable_answer_machine_detection = Some(input);
+        self.enable_answer_machine_detection = ::std::option::Option::Some(input);
         self
     }
     /// Enable or disable answering machine detection
-    pub fn set_enable_answer_machine_detection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_answer_machine_detection(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.enable_answer_machine_detection = input;
         self
     }

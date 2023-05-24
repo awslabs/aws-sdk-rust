@@ -2,22 +2,22 @@
 
 /// <p>This input determines which step to describe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStepInput {
     /// <p>The identifier of the cluster with steps to describe.</p>
     #[doc(hidden)]
-    pub cluster_id: std::option::Option<std::string::String>,
+    pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the step to describe.</p>
     #[doc(hidden)]
-    pub step_id: std::option::Option<std::string::String>,
+    pub step_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStepInput {
     /// <p>The identifier of the cluster with steps to describe.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The identifier of the step to describe.</p>
-    pub fn step_id(&self) -> std::option::Option<&str> {
+    pub fn step_id(&self) -> ::std::option::Option<&str> {
         self.step_id.as_deref()
     }
 }
@@ -30,40 +30,42 @@ impl DescribeStepInput {
 
 /// A builder for [`DescribeStepInput`](crate::operation::describe_step::DescribeStepInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStepInputBuilder {
-    pub(crate) cluster_id: std::option::Option<std::string::String>,
-    pub(crate) step_id: std::option::Option<std::string::String>,
+    pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) step_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStepInputBuilder {
     /// <p>The identifier of the cluster with steps to describe.</p>
-    pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_id = Some(input.into());
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster with steps to describe.</p>
-    pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
     }
     /// <p>The identifier of the step to describe.</p>
-    pub fn step_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.step_id = Some(input.into());
+    pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.step_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the step to describe.</p>
-    pub fn set_step_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeStepInput`](crate::operation::describe_step::DescribeStepInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_step::DescribeStepInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_step::DescribeStepInput {
+        ::std::result::Result::Ok(crate::operation::describe_step::DescribeStepInput {
             cluster_id: self.cluster_id,
             step_id: self.step_id,
         })

@@ -2,7 +2,7 @@
 
 /// <p>The value assigned to a feature variation. This structure must contain exactly one field. It can be <code>boolValue</code>, <code>doubleValue</code>, <code>longValue</code>, or <code>stringValue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VariableValue {
     /// <p>If this feature uses the Boolean variation type, this field contains the Boolean value of this variation.</p>
     BoolValue(bool),
@@ -11,7 +11,7 @@ pub enum VariableValue {
     /// <p>If this feature uses the long variation type, this field contains the long value of this variation.</p>
     LongValue(i64),
     /// <p>If this feature uses the string variation type, this field contains the string value of this variation.</p>
-    StringValue(std::string::String),
+    StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -25,11 +25,11 @@ pub enum VariableValue {
 impl VariableValue {
     /// Tries to convert the enum instance into [`BoolValue`](crate::types::VariableValue::BoolValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_bool_value(&self) -> std::result::Result<&bool, &Self> {
+    pub fn as_bool_value(&self) -> ::std::result::Result<&bool, &Self> {
         if let VariableValue::BoolValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BoolValue`](crate::types::VariableValue::BoolValue).
@@ -38,11 +38,11 @@ impl VariableValue {
     }
     /// Tries to convert the enum instance into [`DoubleValue`](crate::types::VariableValue::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
+    pub fn as_double_value(&self) -> ::std::result::Result<&f64, &Self> {
         if let VariableValue::DoubleValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValue`](crate::types::VariableValue::DoubleValue).
@@ -51,24 +51,24 @@ impl VariableValue {
     }
     /// Tries to convert the enum instance into [`LongValue`](crate::types::VariableValue::LongValue), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
+    pub fn as_long_value(&self) -> ::std::result::Result<&i64, &Self> {
         if let VariableValue::LongValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`LongValue`](crate::types::VariableValue::LongValue).
     pub fn is_long_value(&self) -> bool {
         self.as_long_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`StringValue`](crate::types::VariableValue::StringValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`StringValue`](crate::types::VariableValue::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let VariableValue::StringValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::types::VariableValue::StringValue).

@@ -2,22 +2,22 @@
 
 /// <p> For a SQL-based Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordFormat {
     /// <p>The type of record format.</p>
     #[doc(hidden)]
-    pub record_format_type: std::option::Option<crate::types::RecordFormatType>,
+    pub record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
     /// <p>When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     #[doc(hidden)]
-    pub mapping_parameters: std::option::Option<crate::types::MappingParameters>,
+    pub mapping_parameters: ::std::option::Option<crate::types::MappingParameters>,
 }
 impl RecordFormat {
     /// <p>The type of record format.</p>
-    pub fn record_format_type(&self) -> std::option::Option<&crate::types::RecordFormatType> {
+    pub fn record_format_type(&self) -> ::std::option::Option<&crate::types::RecordFormatType> {
         self.record_format_type.as_ref()
     }
     /// <p>When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
-    pub fn mapping_parameters(&self) -> std::option::Option<&crate::types::MappingParameters> {
+    pub fn mapping_parameters(&self) -> ::std::option::Option<&crate::types::MappingParameters> {
         self.mapping_parameters.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl RecordFormat {
 
 /// A builder for [`RecordFormat`](crate::types::RecordFormat).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordFormatBuilder {
-    pub(crate) record_format_type: std::option::Option<crate::types::RecordFormatType>,
-    pub(crate) mapping_parameters: std::option::Option<crate::types::MappingParameters>,
+    pub(crate) record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
+    pub(crate) mapping_parameters: ::std::option::Option<crate::types::MappingParameters>,
 }
 impl RecordFormatBuilder {
     /// <p>The type of record format.</p>
     pub fn record_format_type(mut self, input: crate::types::RecordFormatType) -> Self {
-        self.record_format_type = Some(input);
+        self.record_format_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of record format.</p>
     pub fn set_record_format_type(
         mut self,
-        input: std::option::Option<crate::types::RecordFormatType>,
+        input: ::std::option::Option<crate::types::RecordFormatType>,
     ) -> Self {
         self.record_format_type = input;
         self
     }
     /// <p>When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub fn mapping_parameters(mut self, input: crate::types::MappingParameters) -> Self {
-        self.mapping_parameters = Some(input);
+        self.mapping_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub fn set_mapping_parameters(
         mut self,
-        input: std::option::Option<crate::types::MappingParameters>,
+        input: ::std::option::Option<crate::types::MappingParameters>,
     ) -> Self {
         self.mapping_parameters = input;
         self

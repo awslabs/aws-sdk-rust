@@ -10,29 +10,29 @@
 /// <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendees can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttendeeCapabilities {
     /// <p>The audio capability assigned to an attendee.</p>
     #[doc(hidden)]
-    pub audio: std::option::Option<crate::types::MediaCapabilities>,
+    pub audio: ::std::option::Option<crate::types::MediaCapabilities>,
     /// <p>The video capability assigned to an attendee.</p>
     #[doc(hidden)]
-    pub video: std::option::Option<crate::types::MediaCapabilities>,
+    pub video: ::std::option::Option<crate::types::MediaCapabilities>,
     /// <p>The content capability assigned to an attendee.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<crate::types::MediaCapabilities>,
+    pub content: ::std::option::Option<crate::types::MediaCapabilities>,
 }
 impl AttendeeCapabilities {
     /// <p>The audio capability assigned to an attendee.</p>
-    pub fn audio(&self) -> std::option::Option<&crate::types::MediaCapabilities> {
+    pub fn audio(&self) -> ::std::option::Option<&crate::types::MediaCapabilities> {
         self.audio.as_ref()
     }
     /// <p>The video capability assigned to an attendee.</p>
-    pub fn video(&self) -> std::option::Option<&crate::types::MediaCapabilities> {
+    pub fn video(&self) -> ::std::option::Option<&crate::types::MediaCapabilities> {
         self.video.as_ref()
     }
     /// <p>The content capability assigned to an attendee.</p>
-    pub fn content(&self) -> std::option::Option<&crate::types::MediaCapabilities> {
+    pub fn content(&self) -> ::std::option::Option<&crate::types::MediaCapabilities> {
         self.content.as_ref()
     }
 }
@@ -45,48 +45,50 @@ impl AttendeeCapabilities {
 
 /// A builder for [`AttendeeCapabilities`](crate::types::AttendeeCapabilities).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttendeeCapabilitiesBuilder {
-    pub(crate) audio: std::option::Option<crate::types::MediaCapabilities>,
-    pub(crate) video: std::option::Option<crate::types::MediaCapabilities>,
-    pub(crate) content: std::option::Option<crate::types::MediaCapabilities>,
+    pub(crate) audio: ::std::option::Option<crate::types::MediaCapabilities>,
+    pub(crate) video: ::std::option::Option<crate::types::MediaCapabilities>,
+    pub(crate) content: ::std::option::Option<crate::types::MediaCapabilities>,
 }
 impl AttendeeCapabilitiesBuilder {
     /// <p>The audio capability assigned to an attendee.</p>
     pub fn audio(mut self, input: crate::types::MediaCapabilities) -> Self {
-        self.audio = Some(input);
+        self.audio = ::std::option::Option::Some(input);
         self
     }
     /// <p>The audio capability assigned to an attendee.</p>
     pub fn set_audio(
         mut self,
-        input: std::option::Option<crate::types::MediaCapabilities>,
+        input: ::std::option::Option<crate::types::MediaCapabilities>,
     ) -> Self {
         self.audio = input;
         self
     }
     /// <p>The video capability assigned to an attendee.</p>
     pub fn video(mut self, input: crate::types::MediaCapabilities) -> Self {
-        self.video = Some(input);
+        self.video = ::std::option::Option::Some(input);
         self
     }
     /// <p>The video capability assigned to an attendee.</p>
     pub fn set_video(
         mut self,
-        input: std::option::Option<crate::types::MediaCapabilities>,
+        input: ::std::option::Option<crate::types::MediaCapabilities>,
     ) -> Self {
         self.video = input;
         self
     }
     /// <p>The content capability assigned to an attendee.</p>
     pub fn content(mut self, input: crate::types::MediaCapabilities) -> Self {
-        self.content = Some(input);
+        self.content = ::std::option::Option::Some(input);
         self
     }
     /// <p>The content capability assigned to an attendee.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<crate::types::MediaCapabilities>,
+        input: ::std::option::Option<crate::types::MediaCapabilities>,
     ) -> Self {
         self.content = input;
         self

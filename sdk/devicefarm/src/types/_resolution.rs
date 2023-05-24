@@ -2,22 +2,22 @@
 
 /// <p>Represents the screen resolution of a device in height and width, expressed in pixels.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resolution {
     /// <p>The screen resolution's width, expressed in pixels.</p>
     #[doc(hidden)]
-    pub width: std::option::Option<i32>,
+    pub width: ::std::option::Option<i32>,
     /// <p>The screen resolution's height, expressed in pixels.</p>
     #[doc(hidden)]
-    pub height: std::option::Option<i32>,
+    pub height: ::std::option::Option<i32>,
 }
 impl Resolution {
     /// <p>The screen resolution's width, expressed in pixels.</p>
-    pub fn width(&self) -> std::option::Option<i32> {
+    pub fn width(&self) -> ::std::option::Option<i32> {
         self.width
     }
     /// <p>The screen resolution's height, expressed in pixels.</p>
-    pub fn height(&self) -> std::option::Option<i32> {
+    pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
     }
 }
@@ -30,29 +30,31 @@ impl Resolution {
 
 /// A builder for [`Resolution`](crate::types::Resolution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResolutionBuilder {
-    pub(crate) width: std::option::Option<i32>,
-    pub(crate) height: std::option::Option<i32>,
+    pub(crate) width: ::std::option::Option<i32>,
+    pub(crate) height: ::std::option::Option<i32>,
 }
 impl ResolutionBuilder {
     /// <p>The screen resolution's width, expressed in pixels.</p>
     pub fn width(mut self, input: i32) -> Self {
-        self.width = Some(input);
+        self.width = ::std::option::Option::Some(input);
         self
     }
     /// <p>The screen resolution's width, expressed in pixels.</p>
-    pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
     }
     /// <p>The screen resolution's height, expressed in pixels.</p>
     pub fn height(mut self, input: i32) -> Self {
-        self.height = Some(input);
+        self.height = ::std::option::Option::Some(input);
         self
     }
     /// <p>The screen resolution's height, expressed in pixels.</p>
-    pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
     }

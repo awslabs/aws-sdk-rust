@@ -2,30 +2,30 @@
 
 /// <p>A result message containing a list of completed and failed managed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionHistoryOutput {
     /// <p>A list of completed and failed managed actions.</p>
     #[doc(hidden)]
     pub managed_action_history_items:
-        std::option::Option<std::vec::Vec<crate::types::ManagedActionHistoryItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ManagedActionHistoryItem>>,
     /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentManagedActionHistoryOutput {
     /// <p>A list of completed and failed managed actions.</p>
     pub fn managed_action_history_items(
         &self,
-    ) -> std::option::Option<&[crate::types::ManagedActionHistoryItem]> {
+    ) -> ::std::option::Option<&[crate::types::ManagedActionHistoryItem]> {
         self.managed_action_history_items.as_deref()
     }
     /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEnvironmentManagedActionHistoryOutput {
+impl ::aws_http::request_id::RequestId for DescribeEnvironmentManagedActionHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl DescribeEnvironmentManagedActionHistoryOutput {
 
 /// A builder for [`DescribeEnvironmentManagedActionHistoryOutput`](crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistoryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEnvironmentManagedActionHistoryOutputBuilder {
     pub(crate) managed_action_history_items:
-        std::option::Option<std::vec::Vec<crate::types::ManagedActionHistoryItem>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ManagedActionHistoryItem>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentManagedActionHistoryOutputBuilder {
@@ -58,24 +60,24 @@ impl DescribeEnvironmentManagedActionHistoryOutputBuilder {
     ) -> Self {
         let mut v = self.managed_action_history_items.unwrap_or_default();
         v.push(input);
-        self.managed_action_history_items = Some(v);
+        self.managed_action_history_items = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of completed and failed managed actions.</p>
     pub fn set_managed_action_history_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ManagedActionHistoryItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedActionHistoryItem>>,
     ) -> Self {
         self.managed_action_history_items = input;
         self
     }
     /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

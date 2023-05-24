@@ -6,29 +6,29 @@ pub use crate::operation::create_connect_peer::_create_connect_peer_input::Creat
 /// Fluent builder constructing a request to `CreateConnectPeer`.
 ///
 /// <p>Creates a core network Connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectPeerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder,
 }
 impl CreateConnectPeerFluentBuilder {
     /// Creates a new `CreateConnectPeer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_connect_peer::CreateConnectPeer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_connect_peer::CreateConnectPeerError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateConnectPeerFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_connect_peer::CreateConnectPeerOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_connect_peer::CreateConnectPeerError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,47 +75,53 @@ impl CreateConnectPeerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_connect_peer::CreateConnectPeerOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_connect_peer::CreateConnectPeerError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the connection attachment.</p>
-    pub fn connect_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connect_attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.connect_attachment_id(input.into());
         self
     }
     /// <p>The ID of the connection attachment.</p>
     pub fn set_connect_attachment_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_connect_attachment_id(input);
         self
     }
     /// <p>A Connect peer core network address.</p>
-    pub fn core_network_address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn core_network_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.core_network_address(input.into());
         self
     }
     /// <p>A Connect peer core network address.</p>
     pub fn set_core_network_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_core_network_address(input);
         self
     }
     /// <p>The Connect peer address.</p>
-    pub fn peer_address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peer_address(input.into());
         self
     }
     /// <p>The Connect peer address.</p>
-    pub fn set_peer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peer_address(input);
         self
     }
@@ -122,7 +131,10 @@ impl CreateConnectPeerFluentBuilder {
         self
     }
     /// <p>The Connect peer BGP options.</p>
-    pub fn set_bgp_options(mut self, input: std::option::Option<crate::types::BgpOptions>) -> Self {
+    pub fn set_bgp_options(
+        mut self,
+        input: ::std::option::Option<crate::types::BgpOptions>,
+    ) -> Self {
         self.inner = self.inner.set_bgp_options(input);
         self
     }
@@ -131,14 +143,17 @@ impl CreateConnectPeerFluentBuilder {
     /// To override the contents of this collection use [`set_inside_cidr_blocks`](Self::set_inside_cidr_blocks).
     ///
     /// <p>The inside IP addresses used for BGP peering.</p>
-    pub fn inside_cidr_blocks(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inside_cidr_blocks(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.inside_cidr_blocks(input.into());
         self
     }
     /// <p>The inside IP addresses used for BGP peering.</p>
     pub fn set_inside_cidr_blocks(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_inside_cidr_blocks(input);
         self
@@ -155,18 +170,18 @@ impl CreateConnectPeerFluentBuilder {
     /// <p>The tags associated with the peer request.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The client token associated with the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

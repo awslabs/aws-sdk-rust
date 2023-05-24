@@ -2,7 +2,7 @@
 
 /// <p>An object that describes workflow billing details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BillingDetails {
     /// <p>Billed memory consumption of your workflow, in MB.</p>
     #[doc(hidden)]
@@ -30,29 +30,34 @@ impl BillingDetails {
 
 /// A builder for [`BillingDetails`](crate::types::BillingDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BillingDetailsBuilder {
-    pub(crate) billed_memory_used_in_mb: std::option::Option<i64>,
-    pub(crate) billed_duration_in_milliseconds: std::option::Option<i64>,
+    pub(crate) billed_memory_used_in_mb: ::std::option::Option<i64>,
+    pub(crate) billed_duration_in_milliseconds: ::std::option::Option<i64>,
 }
 impl BillingDetailsBuilder {
     /// <p>Billed memory consumption of your workflow, in MB.</p>
     pub fn billed_memory_used_in_mb(mut self, input: i64) -> Self {
-        self.billed_memory_used_in_mb = Some(input);
+        self.billed_memory_used_in_mb = ::std::option::Option::Some(input);
         self
     }
     /// <p>Billed memory consumption of your workflow, in MB.</p>
-    pub fn set_billed_memory_used_in_mb(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_billed_memory_used_in_mb(mut self, input: ::std::option::Option<i64>) -> Self {
         self.billed_memory_used_in_mb = input;
         self
     }
     /// <p>Billed duration of your workflow, in milliseconds.</p>
     pub fn billed_duration_in_milliseconds(mut self, input: i64) -> Self {
-        self.billed_duration_in_milliseconds = Some(input);
+        self.billed_duration_in_milliseconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Billed duration of your workflow, in milliseconds.</p>
-    pub fn set_billed_duration_in_milliseconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_billed_duration_in_milliseconds(
+        mut self,
+        input: ::std::option::Option<i64>,
+    ) -> Self {
         self.billed_duration_in_milliseconds = input;
         self
     }

@@ -6,29 +6,29 @@ pub use crate::operation::update_robot_application::_update_robot_application_in
 /// Fluent builder constructing a request to `UpdateRobotApplication`.
 ///
 /// <p>Updates a robot application.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRobotApplicationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder,
 }
 impl UpdateRobotApplicationFluentBuilder {
     /// Creates a new `UpdateRobotApplication`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_robot_application::UpdateRobotApplication,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_robot_application::UpdateRobotApplicationError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateRobotApplicationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_robot_application::UpdateRobotApplicationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_robot_application::UpdateRobotApplicationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl UpdateRobotApplicationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_robot_application::UpdateRobotApplicationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_robot_application::UpdateRobotApplicationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The application information for the robot application.</p>
-    pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
     /// <p>The application information for the robot application.</p>
-    pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self
     }
@@ -102,7 +105,7 @@ impl UpdateRobotApplicationFluentBuilder {
     /// <p>The sources of the robot application.</p>
     pub fn set_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SourceConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfig>>,
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
@@ -115,20 +118,23 @@ impl UpdateRobotApplicationFluentBuilder {
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub fn set_robot_software_suite(
         mut self,
-        input: std::option::Option<crate::types::RobotSoftwareSuite>,
+        input: ::std::option::Option<crate::types::RobotSoftwareSuite>,
     ) -> Self {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn current_revision_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.current_revision_id(input.into());
         self
     }
     /// <p>The revision id for the robot application.</p>
     pub fn set_current_revision_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_current_revision_id(input);
         self
@@ -141,7 +147,7 @@ impl UpdateRobotApplicationFluentBuilder {
     /// <p>The object that contains the Docker image URI for your robot application.</p>
     pub fn set_environment(
         mut self,
-        input: std::option::Option<crate::types::Environment>,
+        input: ::std::option::Option<crate::types::Environment>,
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self

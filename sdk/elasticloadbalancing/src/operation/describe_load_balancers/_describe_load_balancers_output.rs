@@ -2,30 +2,30 @@
 
 /// <p>Contains the parameters for DescribeLoadBalancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
     #[doc(hidden)]
     pub load_balancer_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::LoadBalancerDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBalancersOutput {
     /// <p>Information about the load balancers.</p>
     pub fn load_balancer_descriptions(
         &self,
-    ) -> std::option::Option<&[crate::types::LoadBalancerDescription]> {
+    ) -> ::std::option::Option<&[crate::types::LoadBalancerDescription]> {
         self.load_balancer_descriptions.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeLoadBalancersOutput {
+impl ::aws_http::request_id::RequestId for DescribeLoadBalancersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl DescribeLoadBalancersOutput {
 
 /// A builder for [`DescribeLoadBalancersOutput`](crate::operation::describe_load_balancers::DescribeLoadBalancersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLoadBalancersOutputBuilder {
     pub(crate) load_balancer_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::LoadBalancerDescription>>,
-    pub(crate) next_marker: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBalancersOutputBuilder {
@@ -60,24 +62,24 @@ impl DescribeLoadBalancersOutputBuilder {
     ) -> Self {
         let mut v = self.load_balancer_descriptions.unwrap_or_default();
         v.push(input);
-        self.load_balancer_descriptions = Some(v);
+        self.load_balancer_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the load balancers.</p>
     pub fn set_load_balancer_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LoadBalancerDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancerDescription>>,
     ) -> Self {
         self.load_balancer_descriptions = input;
         self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }

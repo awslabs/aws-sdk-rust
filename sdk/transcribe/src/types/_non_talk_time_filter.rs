@@ -8,36 +8,36 @@
 /// </ul>
 /// <p>See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule criteria for post-call categories</a> for usage examples.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NonTalkTimeFilter {
     /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
     #[doc(hidden)]
-    pub threshold: std::option::Option<i64>,
+    pub threshold: ::std::option::Option<i64>,
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
     #[doc(hidden)]
-    pub absolute_time_range: std::option::Option<crate::types::AbsoluteTimeRange>,
+    pub absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
     #[doc(hidden)]
-    pub relative_time_range: std::option::Option<crate::types::RelativeTimeRange>,
+    pub relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
     /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
     #[doc(hidden)]
-    pub negate: std::option::Option<bool>,
+    pub negate: ::std::option::Option<bool>,
 }
 impl NonTalkTimeFilter {
     /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
-    pub fn threshold(&self) -> std::option::Option<i64> {
+    pub fn threshold(&self) -> ::std::option::Option<i64> {
         self.threshold
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
-    pub fn absolute_time_range(&self) -> std::option::Option<&crate::types::AbsoluteTimeRange> {
+    pub fn absolute_time_range(&self) -> ::std::option::Option<&crate::types::AbsoluteTimeRange> {
         self.absolute_time_range.as_ref()
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
-    pub fn relative_time_range(&self) -> std::option::Option<&crate::types::RelativeTimeRange> {
+    pub fn relative_time_range(&self) -> ::std::option::Option<&crate::types::RelativeTimeRange> {
         self.relative_time_range.as_ref()
     }
     /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
-    pub fn negate(&self) -> std::option::Option<bool> {
+    pub fn negate(&self) -> ::std::option::Option<bool> {
         self.negate
     }
 }
@@ -50,57 +50,59 @@ impl NonTalkTimeFilter {
 
 /// A builder for [`NonTalkTimeFilter`](crate::types::NonTalkTimeFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NonTalkTimeFilterBuilder {
-    pub(crate) threshold: std::option::Option<i64>,
-    pub(crate) absolute_time_range: std::option::Option<crate::types::AbsoluteTimeRange>,
-    pub(crate) relative_time_range: std::option::Option<crate::types::RelativeTimeRange>,
-    pub(crate) negate: std::option::Option<bool>,
+    pub(crate) threshold: ::std::option::Option<i64>,
+    pub(crate) absolute_time_range: ::std::option::Option<crate::types::AbsoluteTimeRange>,
+    pub(crate) relative_time_range: ::std::option::Option<crate::types::RelativeTimeRange>,
+    pub(crate) negate: ::std::option::Option<bool>,
 }
 impl NonTalkTimeFilterBuilder {
     /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
     pub fn threshold(mut self, input: i64) -> Self {
-        self.threshold = Some(input);
+        self.threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the duration, in milliseconds, of the period of silence that you want to flag. For example, you can flag a silent period that lasts 30,000 milliseconds.</p>
-    pub fn set_threshold(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<i64>) -> Self {
         self.threshold = input;
         self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
     pub fn absolute_time_range(mut self, input: crate::types::AbsoluteTimeRange) -> Self {
-        self.absolute_time_range = Some(input);
+        self.absolute_time_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for a period of silence. See for more detail.</p>
     pub fn set_absolute_time_range(
         mut self,
-        input: std::option::Option<crate::types::AbsoluteTimeRange>,
+        input: ::std::option::Option<crate::types::AbsoluteTimeRange>,
     ) -> Self {
         self.absolute_time_range = input;
         self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
     pub fn relative_time_range(mut self, input: crate::types::RelativeTimeRange) -> Self {
-        self.relative_time_range = Some(input);
+        self.relative_time_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for a period of silence. See for more detail.</p>
     pub fn set_relative_time_range(
         mut self,
-        input: std::option::Option<crate::types::RelativeTimeRange>,
+        input: ::std::option::Option<crate::types::RelativeTimeRange>,
     ) -> Self {
         self.relative_time_range = input;
         self
     }
     /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
     pub fn negate(mut self, input: bool) -> Self {
-        self.negate = Some(input);
+        self.negate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag periods of silence</p>
-    pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_negate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negate = input;
         self
     }

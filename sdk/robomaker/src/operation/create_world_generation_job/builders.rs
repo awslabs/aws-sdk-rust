@@ -6,29 +6,29 @@ pub use crate::operation::create_world_generation_job::_create_world_generation_
 /// Fluent builder constructing a request to `CreateWorldGenerationJob`.
 ///
 /// <p>Creates worlds using the specified template.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorldGenerationJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_world_generation_job::builders::CreateWorldGenerationJobInputBuilder,
 }
 impl CreateWorldGenerationJobFluentBuilder {
     /// Creates a new `CreateWorldGenerationJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_world_generation_job::CreateWorldGenerationJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateWorldGenerationJobFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,34 +75,37 @@ impl CreateWorldGenerationJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
     /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
-    pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template(input.into());
         self
     }
     /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
-    pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template(input);
         self
     }
@@ -109,7 +115,10 @@ impl CreateWorldGenerationJobFluentBuilder {
         self
     }
     /// <p>Information about the world count.</p>
-    pub fn set_world_count(mut self, input: std::option::Option<crate::types::WorldCount>) -> Self {
+    pub fn set_world_count(
+        mut self,
+        input: ::std::option::Option<crate::types::WorldCount>,
+    ) -> Self {
         self.inner = self.inner.set_world_count(input);
         self
     }
@@ -120,8 +129,8 @@ impl CreateWorldGenerationJobFluentBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -129,8 +138,8 @@ impl CreateWorldGenerationJobFluentBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -143,8 +152,8 @@ impl CreateWorldGenerationJobFluentBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub fn world_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.world_tags(k.into(), v.into());
         self
@@ -152,8 +161,8 @@ impl CreateWorldGenerationJobFluentBuilder {
     /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
     pub fn set_world_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_world_tags(input);

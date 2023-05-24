@@ -2,24 +2,24 @@
 
 /// <p>Describes a path statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathStatement {
     /// <p>The packet header statement.</p>
     #[doc(hidden)]
-    pub packet_header_statement: std::option::Option<crate::types::PacketHeaderStatement>,
+    pub packet_header_statement: ::std::option::Option<crate::types::PacketHeaderStatement>,
     /// <p>The resource statement.</p>
     #[doc(hidden)]
-    pub resource_statement: std::option::Option<crate::types::ResourceStatement>,
+    pub resource_statement: ::std::option::Option<crate::types::ResourceStatement>,
 }
 impl PathStatement {
     /// <p>The packet header statement.</p>
     pub fn packet_header_statement(
         &self,
-    ) -> std::option::Option<&crate::types::PacketHeaderStatement> {
+    ) -> ::std::option::Option<&crate::types::PacketHeaderStatement> {
         self.packet_header_statement.as_ref()
     }
     /// <p>The resource statement.</p>
-    pub fn resource_statement(&self) -> std::option::Option<&crate::types::ResourceStatement> {
+    pub fn resource_statement(&self) -> ::std::option::Option<&crate::types::ResourceStatement> {
         self.resource_statement.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl PathStatement {
 
 /// A builder for [`PathStatement`](crate::types::PathStatement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PathStatementBuilder {
-    pub(crate) packet_header_statement: std::option::Option<crate::types::PacketHeaderStatement>,
-    pub(crate) resource_statement: std::option::Option<crate::types::ResourceStatement>,
+    pub(crate) packet_header_statement: ::std::option::Option<crate::types::PacketHeaderStatement>,
+    pub(crate) resource_statement: ::std::option::Option<crate::types::ResourceStatement>,
 }
 impl PathStatementBuilder {
     /// <p>The packet header statement.</p>
     pub fn packet_header_statement(mut self, input: crate::types::PacketHeaderStatement) -> Self {
-        self.packet_header_statement = Some(input);
+        self.packet_header_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>The packet header statement.</p>
     pub fn set_packet_header_statement(
         mut self,
-        input: std::option::Option<crate::types::PacketHeaderStatement>,
+        input: ::std::option::Option<crate::types::PacketHeaderStatement>,
     ) -> Self {
         self.packet_header_statement = input;
         self
     }
     /// <p>The resource statement.</p>
     pub fn resource_statement(mut self, input: crate::types::ResourceStatement) -> Self {
-        self.resource_statement = Some(input);
+        self.resource_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource statement.</p>
     pub fn set_resource_statement(
         mut self,
-        input: std::option::Option<crate::types::ResourceStatement>,
+        input: ::std::option::Option<crate::types::ResourceStatement>,
     ) -> Self {
         self.resource_statement = input;
         self

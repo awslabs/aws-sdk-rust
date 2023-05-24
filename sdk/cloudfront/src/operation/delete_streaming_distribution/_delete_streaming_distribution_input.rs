@@ -2,22 +2,22 @@
 
 /// <p>The request to delete a streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStreamingDistributionInput {
     /// <p>The distribution ID.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     #[doc(hidden)]
-    pub if_match: std::option::Option<std::string::String>,
+    pub if_match: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStreamingDistributionInput {
     /// <p>The distribution ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(&self) -> std::option::Option<&str> {
+    pub fn if_match(&self) -> ::std::option::Option<&str> {
         self.if_match.as_deref()
     }
 }
@@ -30,40 +30,42 @@ impl DeleteStreamingDistributionInput {
 
 /// A builder for [`DeleteStreamingDistributionInput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteStreamingDistributionInputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) if_match: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStreamingDistributionInputBuilder {
     /// <p>The distribution ID.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The distribution ID.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
-        self.if_match = Some(input.into());
+    pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.if_match = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.if_match = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteStreamingDistributionInput`](crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_streaming_distribution::DeleteStreamingDistributionInput {
                 id: self.id,
                 if_match: self.if_match,

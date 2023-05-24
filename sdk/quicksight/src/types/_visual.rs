@@ -3,213 +3,219 @@
 /// <p>A visual displayed on a sheet in an analysis, dashboard, or template.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Visual {
     /// <p>A table visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tabular.html">Using tables as visuals</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub table_visual: std::option::Option<crate::types::TableVisual>,
+    pub table_visual: ::std::option::Option<crate::types::TableVisual>,
     /// <p>A pivot table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html">Using pivot tables</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub pivot_table_visual: std::option::Option<crate::types::PivotTableVisual>,
+    pub pivot_table_visual: ::std::option::Option<crate::types::PivotTableVisual>,
     /// <p>A bar chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using bar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub bar_chart_visual: std::option::Option<crate::types::BarChartVisual>,
+    pub bar_chart_visual: ::std::option::Option<crate::types::BarChartVisual>,
     /// <p>A key performance indicator (KPI).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/kpi.html">Using KPIs</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub kpi_visual: std::option::Option<crate::types::KpiVisual>,
+    pub kpi_visual: ::std::option::Option<crate::types::KpiVisual>,
     /// <p>A pie or donut chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using pie charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub pie_chart_visual: std::option::Option<crate::types::PieChartVisual>,
+    pub pie_chart_visual: ::std::option::Option<crate::types::PieChartVisual>,
     /// <p>A gauge chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/gauge-chart.html">Using gauge charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub gauge_chart_visual: std::option::Option<crate::types::GaugeChartVisual>,
+    pub gauge_chart_visual: ::std::option::Option<crate::types::GaugeChartVisual>,
     /// <p>A line chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html">Using line charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub line_chart_visual: std::option::Option<crate::types::LineChartVisual>,
+    pub line_chart_visual: ::std::option::Option<crate::types::LineChartVisual>,
     /// <p>A heat map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html">Using heat maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub heat_map_visual: std::option::Option<crate::types::HeatMapVisual>,
+    pub heat_map_visual: ::std::option::Option<crate::types::HeatMapVisual>,
     /// <p>A tree map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tree-map.html">Using tree maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub tree_map_visual: std::option::Option<crate::types::TreeMapVisual>,
+    pub tree_map_visual: ::std::option::Option<crate::types::TreeMapVisual>,
     /// <p>A geospatial map or a points on map visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html">Creating point maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub geospatial_map_visual: std::option::Option<crate::types::GeospatialMapVisual>,
+    pub geospatial_map_visual: ::std::option::Option<crate::types::GeospatialMapVisual>,
     /// <p>A filled map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub filled_map_visual: std::option::Option<crate::types::FilledMapVisual>,
+    pub filled_map_visual: ::std::option::Option<crate::types::FilledMapVisual>,
     /// <p>A funnel chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub funnel_chart_visual: std::option::Option<crate::types::FunnelChartVisual>,
+    pub funnel_chart_visual: ::std::option::Option<crate::types::FunnelChartVisual>,
     /// <p>A scatter plot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scatter-plot.html">Using scatter plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub scatter_plot_visual: std::option::Option<crate::types::ScatterPlotVisual>,
+    pub scatter_plot_visual: ::std::option::Option<crate::types::ScatterPlotVisual>,
     /// <p>A combo chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html">Using combo charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub combo_chart_visual: std::option::Option<crate::types::ComboChartVisual>,
+    pub combo_chart_visual: ::std::option::Option<crate::types::ComboChartVisual>,
     /// <p>A box plot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html">Using box plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub box_plot_visual: std::option::Option<crate::types::BoxPlotVisual>,
+    pub box_plot_visual: ::std::option::Option<crate::types::BoxPlotVisual>,
     /// <p>A waterfall chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/waterfall-chart.html">Using waterfall charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub waterfall_visual: std::option::Option<crate::types::WaterfallVisual>,
+    pub waterfall_visual: ::std::option::Option<crate::types::WaterfallVisual>,
     /// <p>A histogram.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html">Using histograms</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub histogram_visual: std::option::Option<crate::types::HistogramVisual>,
+    pub histogram_visual: ::std::option::Option<crate::types::HistogramVisual>,
     /// <p>A word cloud.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html">Using word clouds</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub word_cloud_visual: std::option::Option<crate::types::WordCloudVisual>,
+    pub word_cloud_visual: ::std::option::Option<crate::types::WordCloudVisual>,
     /// <p>An insight visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html">Working with insights</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub insight_visual: std::option::Option<crate::types::InsightVisual>,
+    pub insight_visual: ::std::option::Option<crate::types::InsightVisual>,
     /// <p>A sankey diagram.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sankey-diagram.html">Using Sankey diagrams</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub sankey_diagram_visual: std::option::Option<crate::types::SankeyDiagramVisual>,
+    pub sankey_diagram_visual: ::std::option::Option<crate::types::SankeyDiagramVisual>,
     /// <p>A visual that contains custom content.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/custom-visual-content.html">Using custom visual content</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub custom_content_visual: std::option::Option<crate::types::CustomContentVisual>,
+    pub custom_content_visual: ::std::option::Option<crate::types::CustomContentVisual>,
     /// <p>An empty visual.</p>
     #[doc(hidden)]
-    pub empty_visual: std::option::Option<crate::types::EmptyVisual>,
+    pub empty_visual: ::std::option::Option<crate::types::EmptyVisual>,
     /// <p>A radar chart visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     #[doc(hidden)]
-    pub radar_chart_visual: std::option::Option<crate::types::RadarChartVisual>,
+    pub radar_chart_visual: ::std::option::Option<crate::types::RadarChartVisual>,
 }
 impl Visual {
     /// <p>A table visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tabular.html">Using tables as visuals</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn table_visual(&self) -> std::option::Option<&crate::types::TableVisual> {
+    pub fn table_visual(&self) -> ::std::option::Option<&crate::types::TableVisual> {
         self.table_visual.as_ref()
     }
     /// <p>A pivot table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html">Using pivot tables</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn pivot_table_visual(&self) -> std::option::Option<&crate::types::PivotTableVisual> {
+    pub fn pivot_table_visual(&self) -> ::std::option::Option<&crate::types::PivotTableVisual> {
         self.pivot_table_visual.as_ref()
     }
     /// <p>A bar chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using bar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn bar_chart_visual(&self) -> std::option::Option<&crate::types::BarChartVisual> {
+    pub fn bar_chart_visual(&self) -> ::std::option::Option<&crate::types::BarChartVisual> {
         self.bar_chart_visual.as_ref()
     }
     /// <p>A key performance indicator (KPI).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/kpi.html">Using KPIs</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn kpi_visual(&self) -> std::option::Option<&crate::types::KpiVisual> {
+    pub fn kpi_visual(&self) -> ::std::option::Option<&crate::types::KpiVisual> {
         self.kpi_visual.as_ref()
     }
     /// <p>A pie or donut chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using pie charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn pie_chart_visual(&self) -> std::option::Option<&crate::types::PieChartVisual> {
+    pub fn pie_chart_visual(&self) -> ::std::option::Option<&crate::types::PieChartVisual> {
         self.pie_chart_visual.as_ref()
     }
     /// <p>A gauge chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/gauge-chart.html">Using gauge charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn gauge_chart_visual(&self) -> std::option::Option<&crate::types::GaugeChartVisual> {
+    pub fn gauge_chart_visual(&self) -> ::std::option::Option<&crate::types::GaugeChartVisual> {
         self.gauge_chart_visual.as_ref()
     }
     /// <p>A line chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html">Using line charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn line_chart_visual(&self) -> std::option::Option<&crate::types::LineChartVisual> {
+    pub fn line_chart_visual(&self) -> ::std::option::Option<&crate::types::LineChartVisual> {
         self.line_chart_visual.as_ref()
     }
     /// <p>A heat map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html">Using heat maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn heat_map_visual(&self) -> std::option::Option<&crate::types::HeatMapVisual> {
+    pub fn heat_map_visual(&self) -> ::std::option::Option<&crate::types::HeatMapVisual> {
         self.heat_map_visual.as_ref()
     }
     /// <p>A tree map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tree-map.html">Using tree maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn tree_map_visual(&self) -> std::option::Option<&crate::types::TreeMapVisual> {
+    pub fn tree_map_visual(&self) -> ::std::option::Option<&crate::types::TreeMapVisual> {
         self.tree_map_visual.as_ref()
     }
     /// <p>A geospatial map or a points on map visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html">Creating point maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn geospatial_map_visual(&self) -> std::option::Option<&crate::types::GeospatialMapVisual> {
+    pub fn geospatial_map_visual(
+        &self,
+    ) -> ::std::option::Option<&crate::types::GeospatialMapVisual> {
         self.geospatial_map_visual.as_ref()
     }
     /// <p>A filled map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn filled_map_visual(&self) -> std::option::Option<&crate::types::FilledMapVisual> {
+    pub fn filled_map_visual(&self) -> ::std::option::Option<&crate::types::FilledMapVisual> {
         self.filled_map_visual.as_ref()
     }
     /// <p>A funnel chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn funnel_chart_visual(&self) -> std::option::Option<&crate::types::FunnelChartVisual> {
+    pub fn funnel_chart_visual(&self) -> ::std::option::Option<&crate::types::FunnelChartVisual> {
         self.funnel_chart_visual.as_ref()
     }
     /// <p>A scatter plot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scatter-plot.html">Using scatter plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn scatter_plot_visual(&self) -> std::option::Option<&crate::types::ScatterPlotVisual> {
+    pub fn scatter_plot_visual(&self) -> ::std::option::Option<&crate::types::ScatterPlotVisual> {
         self.scatter_plot_visual.as_ref()
     }
     /// <p>A combo chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html">Using combo charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn combo_chart_visual(&self) -> std::option::Option<&crate::types::ComboChartVisual> {
+    pub fn combo_chart_visual(&self) -> ::std::option::Option<&crate::types::ComboChartVisual> {
         self.combo_chart_visual.as_ref()
     }
     /// <p>A box plot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html">Using box plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn box_plot_visual(&self) -> std::option::Option<&crate::types::BoxPlotVisual> {
+    pub fn box_plot_visual(&self) -> ::std::option::Option<&crate::types::BoxPlotVisual> {
         self.box_plot_visual.as_ref()
     }
     /// <p>A waterfall chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/waterfall-chart.html">Using waterfall charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn waterfall_visual(&self) -> std::option::Option<&crate::types::WaterfallVisual> {
+    pub fn waterfall_visual(&self) -> ::std::option::Option<&crate::types::WaterfallVisual> {
         self.waterfall_visual.as_ref()
     }
     /// <p>A histogram.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html">Using histograms</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn histogram_visual(&self) -> std::option::Option<&crate::types::HistogramVisual> {
+    pub fn histogram_visual(&self) -> ::std::option::Option<&crate::types::HistogramVisual> {
         self.histogram_visual.as_ref()
     }
     /// <p>A word cloud.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html">Using word clouds</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn word_cloud_visual(&self) -> std::option::Option<&crate::types::WordCloudVisual> {
+    pub fn word_cloud_visual(&self) -> ::std::option::Option<&crate::types::WordCloudVisual> {
         self.word_cloud_visual.as_ref()
     }
     /// <p>An insight visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html">Working with insights</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn insight_visual(&self) -> std::option::Option<&crate::types::InsightVisual> {
+    pub fn insight_visual(&self) -> ::std::option::Option<&crate::types::InsightVisual> {
         self.insight_visual.as_ref()
     }
     /// <p>A sankey diagram.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sankey-diagram.html">Using Sankey diagrams</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn sankey_diagram_visual(&self) -> std::option::Option<&crate::types::SankeyDiagramVisual> {
+    pub fn sankey_diagram_visual(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SankeyDiagramVisual> {
         self.sankey_diagram_visual.as_ref()
     }
     /// <p>A visual that contains custom content.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/custom-visual-content.html">Using custom visual content</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn custom_content_visual(&self) -> std::option::Option<&crate::types::CustomContentVisual> {
+    pub fn custom_content_visual(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CustomContentVisual> {
         self.custom_content_visual.as_ref()
     }
     /// <p>An empty visual.</p>
-    pub fn empty_visual(&self) -> std::option::Option<&crate::types::EmptyVisual> {
+    pub fn empty_visual(&self) -> ::std::option::Option<&crate::types::EmptyVisual> {
         self.empty_visual.as_ref()
     }
     /// <p>A radar chart visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn radar_chart_visual(&self) -> std::option::Option<&crate::types::RadarChartVisual> {
+    pub fn radar_chart_visual(&self) -> ::std::option::Option<&crate::types::RadarChartVisual> {
         self.radar_chart_visual.as_ref()
     }
 }
@@ -222,44 +228,46 @@ impl Visual {
 
 /// A builder for [`Visual`](crate::types::Visual).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VisualBuilder {
-    pub(crate) table_visual: std::option::Option<crate::types::TableVisual>,
-    pub(crate) pivot_table_visual: std::option::Option<crate::types::PivotTableVisual>,
-    pub(crate) bar_chart_visual: std::option::Option<crate::types::BarChartVisual>,
-    pub(crate) kpi_visual: std::option::Option<crate::types::KpiVisual>,
-    pub(crate) pie_chart_visual: std::option::Option<crate::types::PieChartVisual>,
-    pub(crate) gauge_chart_visual: std::option::Option<crate::types::GaugeChartVisual>,
-    pub(crate) line_chart_visual: std::option::Option<crate::types::LineChartVisual>,
-    pub(crate) heat_map_visual: std::option::Option<crate::types::HeatMapVisual>,
-    pub(crate) tree_map_visual: std::option::Option<crate::types::TreeMapVisual>,
-    pub(crate) geospatial_map_visual: std::option::Option<crate::types::GeospatialMapVisual>,
-    pub(crate) filled_map_visual: std::option::Option<crate::types::FilledMapVisual>,
-    pub(crate) funnel_chart_visual: std::option::Option<crate::types::FunnelChartVisual>,
-    pub(crate) scatter_plot_visual: std::option::Option<crate::types::ScatterPlotVisual>,
-    pub(crate) combo_chart_visual: std::option::Option<crate::types::ComboChartVisual>,
-    pub(crate) box_plot_visual: std::option::Option<crate::types::BoxPlotVisual>,
-    pub(crate) waterfall_visual: std::option::Option<crate::types::WaterfallVisual>,
-    pub(crate) histogram_visual: std::option::Option<crate::types::HistogramVisual>,
-    pub(crate) word_cloud_visual: std::option::Option<crate::types::WordCloudVisual>,
-    pub(crate) insight_visual: std::option::Option<crate::types::InsightVisual>,
-    pub(crate) sankey_diagram_visual: std::option::Option<crate::types::SankeyDiagramVisual>,
-    pub(crate) custom_content_visual: std::option::Option<crate::types::CustomContentVisual>,
-    pub(crate) empty_visual: std::option::Option<crate::types::EmptyVisual>,
-    pub(crate) radar_chart_visual: std::option::Option<crate::types::RadarChartVisual>,
+    pub(crate) table_visual: ::std::option::Option<crate::types::TableVisual>,
+    pub(crate) pivot_table_visual: ::std::option::Option<crate::types::PivotTableVisual>,
+    pub(crate) bar_chart_visual: ::std::option::Option<crate::types::BarChartVisual>,
+    pub(crate) kpi_visual: ::std::option::Option<crate::types::KpiVisual>,
+    pub(crate) pie_chart_visual: ::std::option::Option<crate::types::PieChartVisual>,
+    pub(crate) gauge_chart_visual: ::std::option::Option<crate::types::GaugeChartVisual>,
+    pub(crate) line_chart_visual: ::std::option::Option<crate::types::LineChartVisual>,
+    pub(crate) heat_map_visual: ::std::option::Option<crate::types::HeatMapVisual>,
+    pub(crate) tree_map_visual: ::std::option::Option<crate::types::TreeMapVisual>,
+    pub(crate) geospatial_map_visual: ::std::option::Option<crate::types::GeospatialMapVisual>,
+    pub(crate) filled_map_visual: ::std::option::Option<crate::types::FilledMapVisual>,
+    pub(crate) funnel_chart_visual: ::std::option::Option<crate::types::FunnelChartVisual>,
+    pub(crate) scatter_plot_visual: ::std::option::Option<crate::types::ScatterPlotVisual>,
+    pub(crate) combo_chart_visual: ::std::option::Option<crate::types::ComboChartVisual>,
+    pub(crate) box_plot_visual: ::std::option::Option<crate::types::BoxPlotVisual>,
+    pub(crate) waterfall_visual: ::std::option::Option<crate::types::WaterfallVisual>,
+    pub(crate) histogram_visual: ::std::option::Option<crate::types::HistogramVisual>,
+    pub(crate) word_cloud_visual: ::std::option::Option<crate::types::WordCloudVisual>,
+    pub(crate) insight_visual: ::std::option::Option<crate::types::InsightVisual>,
+    pub(crate) sankey_diagram_visual: ::std::option::Option<crate::types::SankeyDiagramVisual>,
+    pub(crate) custom_content_visual: ::std::option::Option<crate::types::CustomContentVisual>,
+    pub(crate) empty_visual: ::std::option::Option<crate::types::EmptyVisual>,
+    pub(crate) radar_chart_visual: ::std::option::Option<crate::types::RadarChartVisual>,
 }
 impl VisualBuilder {
     /// <p>A table visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tabular.html">Using tables as visuals</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn table_visual(mut self, input: crate::types::TableVisual) -> Self {
-        self.table_visual = Some(input);
+        self.table_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A table visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tabular.html">Using tables as visuals</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_table_visual(
         mut self,
-        input: std::option::Option<crate::types::TableVisual>,
+        input: ::std::option::Option<crate::types::TableVisual>,
     ) -> Self {
         self.table_visual = input;
         self
@@ -267,14 +275,14 @@ impl VisualBuilder {
     /// <p>A pivot table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html">Using pivot tables</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn pivot_table_visual(mut self, input: crate::types::PivotTableVisual) -> Self {
-        self.pivot_table_visual = Some(input);
+        self.pivot_table_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A pivot table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html">Using pivot tables</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_pivot_table_visual(
         mut self,
-        input: std::option::Option<crate::types::PivotTableVisual>,
+        input: ::std::option::Option<crate::types::PivotTableVisual>,
     ) -> Self {
         self.pivot_table_visual = input;
         self
@@ -282,14 +290,14 @@ impl VisualBuilder {
     /// <p>A bar chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using bar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn bar_chart_visual(mut self, input: crate::types::BarChartVisual) -> Self {
-        self.bar_chart_visual = Some(input);
+        self.bar_chart_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A bar chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html">Using bar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_bar_chart_visual(
         mut self,
-        input: std::option::Option<crate::types::BarChartVisual>,
+        input: ::std::option::Option<crate::types::BarChartVisual>,
     ) -> Self {
         self.bar_chart_visual = input;
         self
@@ -297,26 +305,26 @@ impl VisualBuilder {
     /// <p>A key performance indicator (KPI).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/kpi.html">Using KPIs</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn kpi_visual(mut self, input: crate::types::KpiVisual) -> Self {
-        self.kpi_visual = Some(input);
+        self.kpi_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A key performance indicator (KPI).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/kpi.html">Using KPIs</a> in the <i>Amazon QuickSight User Guide</i>.</p>
-    pub fn set_kpi_visual(mut self, input: std::option::Option<crate::types::KpiVisual>) -> Self {
+    pub fn set_kpi_visual(mut self, input: ::std::option::Option<crate::types::KpiVisual>) -> Self {
         self.kpi_visual = input;
         self
     }
     /// <p>A pie or donut chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using pie charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn pie_chart_visual(mut self, input: crate::types::PieChartVisual) -> Self {
-        self.pie_chart_visual = Some(input);
+        self.pie_chart_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A pie or donut chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html">Using pie charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_pie_chart_visual(
         mut self,
-        input: std::option::Option<crate::types::PieChartVisual>,
+        input: ::std::option::Option<crate::types::PieChartVisual>,
     ) -> Self {
         self.pie_chart_visual = input;
         self
@@ -324,14 +332,14 @@ impl VisualBuilder {
     /// <p>A gauge chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/gauge-chart.html">Using gauge charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn gauge_chart_visual(mut self, input: crate::types::GaugeChartVisual) -> Self {
-        self.gauge_chart_visual = Some(input);
+        self.gauge_chart_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A gauge chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/gauge-chart.html">Using gauge charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_gauge_chart_visual(
         mut self,
-        input: std::option::Option<crate::types::GaugeChartVisual>,
+        input: ::std::option::Option<crate::types::GaugeChartVisual>,
     ) -> Self {
         self.gauge_chart_visual = input;
         self
@@ -339,14 +347,14 @@ impl VisualBuilder {
     /// <p>A line chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html">Using line charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn line_chart_visual(mut self, input: crate::types::LineChartVisual) -> Self {
-        self.line_chart_visual = Some(input);
+        self.line_chart_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A line chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html">Using line charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_line_chart_visual(
         mut self,
-        input: std::option::Option<crate::types::LineChartVisual>,
+        input: ::std::option::Option<crate::types::LineChartVisual>,
     ) -> Self {
         self.line_chart_visual = input;
         self
@@ -354,14 +362,14 @@ impl VisualBuilder {
     /// <p>A heat map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html">Using heat maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn heat_map_visual(mut self, input: crate::types::HeatMapVisual) -> Self {
-        self.heat_map_visual = Some(input);
+        self.heat_map_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A heat map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html">Using heat maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_heat_map_visual(
         mut self,
-        input: std::option::Option<crate::types::HeatMapVisual>,
+        input: ::std::option::Option<crate::types::HeatMapVisual>,
     ) -> Self {
         self.heat_map_visual = input;
         self
@@ -369,14 +377,14 @@ impl VisualBuilder {
     /// <p>A tree map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tree-map.html">Using tree maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn tree_map_visual(mut self, input: crate::types::TreeMapVisual) -> Self {
-        self.tree_map_visual = Some(input);
+        self.tree_map_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A tree map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/tree-map.html">Using tree maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_tree_map_visual(
         mut self,
-        input: std::option::Option<crate::types::TreeMapVisual>,
+        input: ::std::option::Option<crate::types::TreeMapVisual>,
     ) -> Self {
         self.tree_map_visual = input;
         self
@@ -384,14 +392,14 @@ impl VisualBuilder {
     /// <p>A geospatial map or a points on map visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html">Creating point maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn geospatial_map_visual(mut self, input: crate::types::GeospatialMapVisual) -> Self {
-        self.geospatial_map_visual = Some(input);
+        self.geospatial_map_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A geospatial map or a points on map visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html">Creating point maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_geospatial_map_visual(
         mut self,
-        input: std::option::Option<crate::types::GeospatialMapVisual>,
+        input: ::std::option::Option<crate::types::GeospatialMapVisual>,
     ) -> Self {
         self.geospatial_map_visual = input;
         self
@@ -399,14 +407,14 @@ impl VisualBuilder {
     /// <p>A filled map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn filled_map_visual(mut self, input: crate::types::FilledMapVisual) -> Self {
-        self.filled_map_visual = Some(input);
+        self.filled_map_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A filled map.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html">Creating filled maps</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_filled_map_visual(
         mut self,
-        input: std::option::Option<crate::types::FilledMapVisual>,
+        input: ::std::option::Option<crate::types::FilledMapVisual>,
     ) -> Self {
         self.filled_map_visual = input;
         self
@@ -414,14 +422,14 @@ impl VisualBuilder {
     /// <p>A funnel chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn funnel_chart_visual(mut self, input: crate::types::FunnelChartVisual) -> Self {
-        self.funnel_chart_visual = Some(input);
+        self.funnel_chart_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A funnel chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_funnel_chart_visual(
         mut self,
-        input: std::option::Option<crate::types::FunnelChartVisual>,
+        input: ::std::option::Option<crate::types::FunnelChartVisual>,
     ) -> Self {
         self.funnel_chart_visual = input;
         self
@@ -429,14 +437,14 @@ impl VisualBuilder {
     /// <p>A scatter plot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scatter-plot.html">Using scatter plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn scatter_plot_visual(mut self, input: crate::types::ScatterPlotVisual) -> Self {
-        self.scatter_plot_visual = Some(input);
+        self.scatter_plot_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A scatter plot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scatter-plot.html">Using scatter plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_scatter_plot_visual(
         mut self,
-        input: std::option::Option<crate::types::ScatterPlotVisual>,
+        input: ::std::option::Option<crate::types::ScatterPlotVisual>,
     ) -> Self {
         self.scatter_plot_visual = input;
         self
@@ -444,14 +452,14 @@ impl VisualBuilder {
     /// <p>A combo chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html">Using combo charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn combo_chart_visual(mut self, input: crate::types::ComboChartVisual) -> Self {
-        self.combo_chart_visual = Some(input);
+        self.combo_chart_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A combo chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html">Using combo charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_combo_chart_visual(
         mut self,
-        input: std::option::Option<crate::types::ComboChartVisual>,
+        input: ::std::option::Option<crate::types::ComboChartVisual>,
     ) -> Self {
         self.combo_chart_visual = input;
         self
@@ -459,14 +467,14 @@ impl VisualBuilder {
     /// <p>A box plot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html">Using box plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn box_plot_visual(mut self, input: crate::types::BoxPlotVisual) -> Self {
-        self.box_plot_visual = Some(input);
+        self.box_plot_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A box plot.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html">Using box plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_box_plot_visual(
         mut self,
-        input: std::option::Option<crate::types::BoxPlotVisual>,
+        input: ::std::option::Option<crate::types::BoxPlotVisual>,
     ) -> Self {
         self.box_plot_visual = input;
         self
@@ -474,14 +482,14 @@ impl VisualBuilder {
     /// <p>A waterfall chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/waterfall-chart.html">Using waterfall charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn waterfall_visual(mut self, input: crate::types::WaterfallVisual) -> Self {
-        self.waterfall_visual = Some(input);
+        self.waterfall_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A waterfall chart.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/waterfall-chart.html">Using waterfall charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_waterfall_visual(
         mut self,
-        input: std::option::Option<crate::types::WaterfallVisual>,
+        input: ::std::option::Option<crate::types::WaterfallVisual>,
     ) -> Self {
         self.waterfall_visual = input;
         self
@@ -489,14 +497,14 @@ impl VisualBuilder {
     /// <p>A histogram.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html">Using histograms</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn histogram_visual(mut self, input: crate::types::HistogramVisual) -> Self {
-        self.histogram_visual = Some(input);
+        self.histogram_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A histogram.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html">Using histograms</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_histogram_visual(
         mut self,
-        input: std::option::Option<crate::types::HistogramVisual>,
+        input: ::std::option::Option<crate::types::HistogramVisual>,
     ) -> Self {
         self.histogram_visual = input;
         self
@@ -504,14 +512,14 @@ impl VisualBuilder {
     /// <p>A word cloud.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html">Using word clouds</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn word_cloud_visual(mut self, input: crate::types::WordCloudVisual) -> Self {
-        self.word_cloud_visual = Some(input);
+        self.word_cloud_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A word cloud.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html">Using word clouds</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_word_cloud_visual(
         mut self,
-        input: std::option::Option<crate::types::WordCloudVisual>,
+        input: ::std::option::Option<crate::types::WordCloudVisual>,
     ) -> Self {
         self.word_cloud_visual = input;
         self
@@ -519,14 +527,14 @@ impl VisualBuilder {
     /// <p>An insight visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html">Working with insights</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn insight_visual(mut self, input: crate::types::InsightVisual) -> Self {
-        self.insight_visual = Some(input);
+        self.insight_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>An insight visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html">Working with insights</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_insight_visual(
         mut self,
-        input: std::option::Option<crate::types::InsightVisual>,
+        input: ::std::option::Option<crate::types::InsightVisual>,
     ) -> Self {
         self.insight_visual = input;
         self
@@ -534,14 +542,14 @@ impl VisualBuilder {
     /// <p>A sankey diagram.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sankey-diagram.html">Using Sankey diagrams</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn sankey_diagram_visual(mut self, input: crate::types::SankeyDiagramVisual) -> Self {
-        self.sankey_diagram_visual = Some(input);
+        self.sankey_diagram_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A sankey diagram.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sankey-diagram.html">Using Sankey diagrams</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_sankey_diagram_visual(
         mut self,
-        input: std::option::Option<crate::types::SankeyDiagramVisual>,
+        input: ::std::option::Option<crate::types::SankeyDiagramVisual>,
     ) -> Self {
         self.sankey_diagram_visual = input;
         self
@@ -549,27 +557,27 @@ impl VisualBuilder {
     /// <p>A visual that contains custom content.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/custom-visual-content.html">Using custom visual content</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn custom_content_visual(mut self, input: crate::types::CustomContentVisual) -> Self {
-        self.custom_content_visual = Some(input);
+        self.custom_content_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A visual that contains custom content.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/custom-visual-content.html">Using custom visual content</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_custom_content_visual(
         mut self,
-        input: std::option::Option<crate::types::CustomContentVisual>,
+        input: ::std::option::Option<crate::types::CustomContentVisual>,
     ) -> Self {
         self.custom_content_visual = input;
         self
     }
     /// <p>An empty visual.</p>
     pub fn empty_visual(mut self, input: crate::types::EmptyVisual) -> Self {
-        self.empty_visual = Some(input);
+        self.empty_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>An empty visual.</p>
     pub fn set_empty_visual(
         mut self,
-        input: std::option::Option<crate::types::EmptyVisual>,
+        input: ::std::option::Option<crate::types::EmptyVisual>,
     ) -> Self {
         self.empty_visual = input;
         self
@@ -577,14 +585,14 @@ impl VisualBuilder {
     /// <p>A radar chart visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn radar_chart_visual(mut self, input: crate::types::RadarChartVisual) -> Self {
-        self.radar_chart_visual = Some(input);
+        self.radar_chart_visual = ::std::option::Option::Some(input);
         self
     }
     /// <p>A radar chart visual.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/radar-chart.html">Using radar charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
     pub fn set_radar_chart_visual(
         mut self,
-        input: std::option::Option<crate::types::RadarChartVisual>,
+        input: ::std::option::Option<crate::types::RadarChartVisual>,
     ) -> Self {
         self.radar_chart_visual = input;
         self

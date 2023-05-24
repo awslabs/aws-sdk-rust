@@ -2,36 +2,36 @@
 
 /// <p>An object that represents a service mesh returned by a describe operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeshData {
     /// <p>The name of the service mesh.</p>
     #[doc(hidden)]
-    pub mesh_name: std::option::Option<std::string::String>,
+    pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The associated specification for the service mesh.</p>
     #[doc(hidden)]
-    pub spec: std::option::Option<crate::types::MeshSpec>,
+    pub spec: ::std::option::Option<crate::types::MeshSpec>,
     /// <p>The associated metadata for the service mesh.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<crate::types::ResourceMetadata>,
+    pub metadata: ::std::option::Option<crate::types::ResourceMetadata>,
     /// <p>The status of the service mesh.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::MeshStatus>,
+    pub status: ::std::option::Option<crate::types::MeshStatus>,
 }
 impl MeshData {
     /// <p>The name of the service mesh.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
     /// <p>The associated specification for the service mesh.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::types::MeshSpec> {
+    pub fn spec(&self) -> ::std::option::Option<&crate::types::MeshSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the service mesh.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::ResourceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The status of the service mesh.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MeshStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::MeshStatus> {
         self.status.as_ref()
     }
 }
@@ -44,54 +44,56 @@ impl MeshData {
 
 /// A builder for [`MeshData`](crate::types::MeshData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MeshDataBuilder {
-    pub(crate) mesh_name: std::option::Option<std::string::String>,
-    pub(crate) spec: std::option::Option<crate::types::MeshSpec>,
-    pub(crate) metadata: std::option::Option<crate::types::ResourceMetadata>,
-    pub(crate) status: std::option::Option<crate::types::MeshStatus>,
+    pub(crate) mesh_name: ::std::option::Option<::std::string::String>,
+    pub(crate) spec: ::std::option::Option<crate::types::MeshSpec>,
+    pub(crate) metadata: ::std::option::Option<crate::types::ResourceMetadata>,
+    pub(crate) status: ::std::option::Option<crate::types::MeshStatus>,
 }
 impl MeshDataBuilder {
     /// <p>The name of the service mesh.</p>
-    pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mesh_name = Some(input.into());
+    pub fn mesh_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mesh_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service mesh.</p>
-    pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mesh_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mesh_name = input;
         self
     }
     /// <p>The associated specification for the service mesh.</p>
     pub fn spec(mut self, input: crate::types::MeshSpec) -> Self {
-        self.spec = Some(input);
+        self.spec = ::std::option::Option::Some(input);
         self
     }
     /// <p>The associated specification for the service mesh.</p>
-    pub fn set_spec(mut self, input: std::option::Option<crate::types::MeshSpec>) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::MeshSpec>) -> Self {
         self.spec = input;
         self
     }
     /// <p>The associated metadata for the service mesh.</p>
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
-        self.metadata = Some(input);
+        self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The associated metadata for the service mesh.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<crate::types::ResourceMetadata>,
+        input: ::std::option::Option<crate::types::ResourceMetadata>,
     ) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The status of the service mesh.</p>
     pub fn status(mut self, input: crate::types::MeshStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the service mesh.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MeshStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MeshStatus>) -> Self {
         self.status = input;
         self
     }

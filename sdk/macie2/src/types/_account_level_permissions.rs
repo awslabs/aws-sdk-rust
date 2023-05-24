@@ -2,15 +2,15 @@
 
 /// <p>Provides information about the account-level permissions settings that apply to an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLevelPermissions {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
     #[doc(hidden)]
-    pub block_public_access: std::option::Option<crate::types::BlockPublicAccess>,
+    pub block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
 }
 impl AccountLevelPermissions {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
-    pub fn block_public_access(&self) -> std::option::Option<&crate::types::BlockPublicAccess> {
+    pub fn block_public_access(&self) -> ::std::option::Option<&crate::types::BlockPublicAccess> {
         self.block_public_access.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AccountLevelPermissions {
 
 /// A builder for [`AccountLevelPermissions`](crate::types::AccountLevelPermissions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountLevelPermissionsBuilder {
-    pub(crate) block_public_access: std::option::Option<crate::types::BlockPublicAccess>,
+    pub(crate) block_public_access: ::std::option::Option<crate::types::BlockPublicAccess>,
 }
 impl AccountLevelPermissionsBuilder {
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
     pub fn block_public_access(mut self, input: crate::types::BlockPublicAccess) -> Self {
-        self.block_public_access = Some(input);
+        self.block_public_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
     pub fn set_block_public_access(
         mut self,
-        input: std::option::Option<crate::types::BlockPublicAccess>,
+        input: ::std::option::Option<crate::types::BlockPublicAccess>,
     ) -> Self {
         self.block_public_access = input;
         self

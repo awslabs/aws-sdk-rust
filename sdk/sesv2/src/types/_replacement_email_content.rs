@@ -2,15 +2,17 @@
 
 /// <p>The <code>ReplaceEmailContent</code> object to be used for a specific <code>BulkEmailEntry</code>. The <code>ReplacementTemplate</code> can be specified within this object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplacementEmailContent {
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
     #[doc(hidden)]
-    pub replacement_template: std::option::Option<crate::types::ReplacementTemplate>,
+    pub replacement_template: ::std::option::Option<crate::types::ReplacementTemplate>,
 }
 impl ReplacementEmailContent {
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
-    pub fn replacement_template(&self) -> std::option::Option<&crate::types::ReplacementTemplate> {
+    pub fn replacement_template(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ReplacementTemplate> {
         self.replacement_template.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl ReplacementEmailContent {
 
 /// A builder for [`ReplacementEmailContent`](crate::types::ReplacementEmailContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplacementEmailContentBuilder {
-    pub(crate) replacement_template: std::option::Option<crate::types::ReplacementTemplate>,
+    pub(crate) replacement_template: ::std::option::Option<crate::types::ReplacementTemplate>,
 }
 impl ReplacementEmailContentBuilder {
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
     pub fn replacement_template(mut self, input: crate::types::ReplacementTemplate) -> Self {
-        self.replacement_template = Some(input);
+        self.replacement_template = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.</p>
     pub fn set_replacement_template(
         mut self,
-        input: std::option::Option<crate::types::ReplacementTemplate>,
+        input: ::std::option::Option<crate::types::ReplacementTemplate>,
     ) -> Self {
         self.replacement_template = input;
         self

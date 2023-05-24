@@ -2,15 +2,15 @@
 
 /// <p>The summary for browser settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrowserSettingsSummary {
     /// <p>The ARN of the browser settings.</p>
     #[doc(hidden)]
-    pub browser_settings_arn: std::option::Option<std::string::String>,
+    pub browser_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl BrowserSettingsSummary {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> std::option::Option<&str> {
+    pub fn browser_settings_arn(&self) -> ::std::option::Option<&str> {
         self.browser_settings_arn.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl BrowserSettingsSummary {
 
 /// A builder for [`BrowserSettingsSummary`](crate::types::BrowserSettingsSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BrowserSettingsSummaryBuilder {
-    pub(crate) browser_settings_arn: std::option::Option<std::string::String>,
+    pub(crate) browser_settings_arn: ::std::option::Option<::std::string::String>,
 }
 impl BrowserSettingsSummaryBuilder {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.browser_settings_arn = Some(input.into());
+    pub fn browser_settings_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.browser_settings_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the browser settings.</p>
     pub fn set_browser_settings_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.browser_settings_arn = input;
         self

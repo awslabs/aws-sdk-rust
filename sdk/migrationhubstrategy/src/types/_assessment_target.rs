@@ -2,29 +2,29 @@
 
 /// <p>Defines the criteria of assessment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTarget {
     /// <p>Condition of an assessment.</p>
     #[doc(hidden)]
-    pub condition: std::option::Option<crate::types::Condition>,
+    pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>Name of an assessment.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Values of an assessment.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssessmentTarget {
     /// <p>Condition of an assessment.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::types::Condition> {
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
         self.condition.as_ref()
     }
     /// <p>Name of an assessment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Values of an assessment.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl AssessmentTarget {
 
 /// A builder for [`AssessmentTarget`](crate::types::AssessmentTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssessmentTargetBuilder {
-    pub(crate) condition: std::option::Option<crate::types::Condition>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) condition: ::std::option::Option<crate::types::Condition>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssessmentTargetBuilder {
     /// <p>Condition of an assessment.</p>
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
-        self.condition = Some(input);
+        self.condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Condition of an assessment.</p>
-    pub fn set_condition(mut self, input: std::option::Option<crate::types::Condition>) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
         self.condition = input;
         self
     }
     /// <p>Name of an assessment.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of an assessment.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -69,16 +71,16 @@ impl AssessmentTargetBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>Values of an assessment.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Values of an assessment.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

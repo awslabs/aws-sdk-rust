@@ -2,15 +2,15 @@
 
 /// <p>Information about the network interface attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceAttachment {
     /// <p>Indicates when the attachment initiated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub attach_time: std::option::Option<std::string::String>,
+    pub attach_time: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the network interface attachment</p>
     #[doc(hidden)]
-    pub attachment_id: std::option::Option<std::string::String>,
+    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     #[doc(hidden)]
     pub delete_on_termination: bool,
@@ -19,23 +19,23 @@ pub struct AwsEc2NetworkInterfaceAttachment {
     pub device_index: i32,
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
     #[doc(hidden)]
-    pub instance_owner_id: std::option::Option<std::string::String>,
+    pub instance_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state.</p>
     /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfaceAttachment {
     /// <p>Indicates when the attachment initiated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn attach_time(&self) -> std::option::Option<&str> {
+    pub fn attach_time(&self) -> ::std::option::Option<&str> {
         self.attach_time.as_deref()
     }
     /// <p>The identifier of the network interface attachment</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
@@ -47,16 +47,16 @@ impl AwsEc2NetworkInterfaceAttachment {
         self.device_index
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
-    pub fn instance_owner_id(&self) -> std::option::Option<&str> {
+    pub fn instance_owner_id(&self) -> ::std::option::Option<&str> {
         self.instance_owner_id.as_deref()
     }
     /// <p>The attachment state.</p>
     /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -69,91 +69,102 @@ impl AwsEc2NetworkInterfaceAttachment {
 
 /// A builder for [`AwsEc2NetworkInterfaceAttachment`](crate::types::AwsEc2NetworkInterfaceAttachment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2NetworkInterfaceAttachmentBuilder {
-    pub(crate) attach_time: std::option::Option<std::string::String>,
-    pub(crate) attachment_id: std::option::Option<std::string::String>,
-    pub(crate) delete_on_termination: std::option::Option<bool>,
-    pub(crate) device_index: std::option::Option<i32>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) instance_owner_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) attach_time: ::std::option::Option<::std::string::String>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_on_termination: ::std::option::Option<bool>,
+    pub(crate) device_index: ::std::option::Option<i32>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2NetworkInterfaceAttachmentBuilder {
     /// <p>Indicates when the attachment initiated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn attach_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attach_time = Some(input.into());
+    pub fn attach_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attach_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the attachment initiated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_attach_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attach_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attach_time = input;
         self
     }
     /// <p>The identifier of the network interface attachment</p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attachment_id = Some(input.into());
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the network interface attachment</p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attachment_id = input;
         self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
-        self.delete_on_termination = Some(input);
+        self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
     /// <p>The device index of the network interface attachment on the instance.</p>
     pub fn device_index(mut self, input: i32) -> Self {
-        self.device_index = Some(input);
+        self.device_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The device index of the network interface attachment on the instance.</p>
-    pub fn set_device_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.device_index = input;
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
-    pub fn instance_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_owner_id = Some(input.into());
+    pub fn instance_owner_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
     pub fn set_instance_owner_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_owner_id = input;
         self
     }
     /// <p>The attachment state.</p>
     /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attachment state.</p>
     /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code> </p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

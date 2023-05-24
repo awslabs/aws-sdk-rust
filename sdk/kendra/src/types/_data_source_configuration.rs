@@ -2,158 +2,160 @@
 
 /// <p>Provides the configuration information for an Amazon Kendra data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
     #[doc(hidden)]
-    pub s3_configuration: std::option::Option<crate::types::S3DataSourceConfiguration>,
+    pub s3_configuration: ::std::option::Option<crate::types::S3DataSourceConfiguration>,
     /// <p>Provides the configuration information to connect to Microsoft SharePoint as your data source.</p>
     #[doc(hidden)]
-    pub share_point_configuration: std::option::Option<crate::types::SharePointConfiguration>,
+    pub share_point_configuration: ::std::option::Option<crate::types::SharePointConfiguration>,
     /// <p>Provides the configuration information to connect to a database as your data source.</p>
     #[doc(hidden)]
-    pub database_configuration: std::option::Option<crate::types::DatabaseConfiguration>,
+    pub database_configuration: ::std::option::Option<crate::types::DatabaseConfiguration>,
     /// <p>Provides the configuration information to connect to Salesforce as your data source.</p>
     #[doc(hidden)]
-    pub salesforce_configuration: std::option::Option<crate::types::SalesforceConfiguration>,
+    pub salesforce_configuration: ::std::option::Option<crate::types::SalesforceConfiguration>,
     /// <p>Provides the configuration information to connect to Microsoft OneDrive as your data source.</p>
     #[doc(hidden)]
-    pub one_drive_configuration: std::option::Option<crate::types::OneDriveConfiguration>,
+    pub one_drive_configuration: ::std::option::Option<crate::types::OneDriveConfiguration>,
     /// <p>Provides the configuration information to connect to ServiceNow as your data source.</p>
     #[doc(hidden)]
-    pub service_now_configuration: std::option::Option<crate::types::ServiceNowConfiguration>,
+    pub service_now_configuration: ::std::option::Option<crate::types::ServiceNowConfiguration>,
     /// <p>Provides the configuration information to connect to Confluence as your data source.</p>
     #[doc(hidden)]
-    pub confluence_configuration: std::option::Option<crate::types::ConfluenceConfiguration>,
+    pub confluence_configuration: ::std::option::Option<crate::types::ConfluenceConfiguration>,
     /// <p>Provides the configuration information to connect to Google Drive as your data source.</p>
     #[doc(hidden)]
-    pub google_drive_configuration: std::option::Option<crate::types::GoogleDriveConfiguration>,
+    pub google_drive_configuration: ::std::option::Option<crate::types::GoogleDriveConfiguration>,
     /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
     #[doc(hidden)]
-    pub web_crawler_configuration: std::option::Option<crate::types::WebCrawlerConfiguration>,
+    pub web_crawler_configuration: ::std::option::Option<crate::types::WebCrawlerConfiguration>,
     /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
     #[doc(hidden)]
-    pub work_docs_configuration: std::option::Option<crate::types::WorkDocsConfiguration>,
+    pub work_docs_configuration: ::std::option::Option<crate::types::WorkDocsConfiguration>,
     /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
     #[doc(hidden)]
-    pub fsx_configuration: std::option::Option<crate::types::FsxConfiguration>,
+    pub fsx_configuration: ::std::option::Option<crate::types::FsxConfiguration>,
     /// <p>Provides the configuration information to connect to Slack as your data source.</p>
     #[doc(hidden)]
-    pub slack_configuration: std::option::Option<crate::types::SlackConfiguration>,
+    pub slack_configuration: ::std::option::Option<crate::types::SlackConfiguration>,
     /// <p>Provides the configuration information to connect to Box as your data source.</p>
     #[doc(hidden)]
-    pub box_configuration: std::option::Option<crate::types::BoxConfiguration>,
+    pub box_configuration: ::std::option::Option<crate::types::BoxConfiguration>,
     /// <p>Provides the configuration information to connect to Quip as your data source.</p>
     #[doc(hidden)]
-    pub quip_configuration: std::option::Option<crate::types::QuipConfiguration>,
+    pub quip_configuration: ::std::option::Option<crate::types::QuipConfiguration>,
     /// <p>Provides the configuration information to connect to Jira as your data source.</p>
     #[doc(hidden)]
-    pub jira_configuration: std::option::Option<crate::types::JiraConfiguration>,
+    pub jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
     /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
     #[doc(hidden)]
-    pub git_hub_configuration: std::option::Option<crate::types::GitHubConfiguration>,
+    pub git_hub_configuration: ::std::option::Option<crate::types::GitHubConfiguration>,
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
     #[doc(hidden)]
-    pub alfresco_configuration: std::option::Option<crate::types::AlfrescoConfiguration>,
+    pub alfresco_configuration: ::std::option::Option<crate::types::AlfrescoConfiguration>,
     /// <p>Provides a template for the configuration information to connect to your data source.</p>
     #[doc(hidden)]
-    pub template_configuration: std::option::Option<crate::types::TemplateConfiguration>,
+    pub template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
 }
 impl DataSourceConfiguration {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
     pub fn s3_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::S3DataSourceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::S3DataSourceConfiguration> {
         self.s3_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Microsoft SharePoint as your data source.</p>
     pub fn share_point_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SharePointConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SharePointConfiguration> {
         self.share_point_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to a database as your data source.</p>
     pub fn database_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DatabaseConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DatabaseConfiguration> {
         self.database_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Salesforce as your data source.</p>
     pub fn salesforce_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SalesforceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SalesforceConfiguration> {
         self.salesforce_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Microsoft OneDrive as your data source.</p>
     pub fn one_drive_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::OneDriveConfiguration> {
+    ) -> ::std::option::Option<&crate::types::OneDriveConfiguration> {
         self.one_drive_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to ServiceNow as your data source.</p>
     pub fn service_now_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ServiceNowConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ServiceNowConfiguration> {
         self.service_now_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Confluence as your data source.</p>
     pub fn confluence_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ConfluenceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ConfluenceConfiguration> {
         self.confluence_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Google Drive as your data source.</p>
     pub fn google_drive_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::GoogleDriveConfiguration> {
+    ) -> ::std::option::Option<&crate::types::GoogleDriveConfiguration> {
         self.google_drive_configuration.as_ref()
     }
     /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
     pub fn web_crawler_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::WebCrawlerConfiguration> {
+    ) -> ::std::option::Option<&crate::types::WebCrawlerConfiguration> {
         self.web_crawler_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
     pub fn work_docs_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::WorkDocsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::WorkDocsConfiguration> {
         self.work_docs_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
-    pub fn fsx_configuration(&self) -> std::option::Option<&crate::types::FsxConfiguration> {
+    pub fn fsx_configuration(&self) -> ::std::option::Option<&crate::types::FsxConfiguration> {
         self.fsx_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Slack as your data source.</p>
-    pub fn slack_configuration(&self) -> std::option::Option<&crate::types::SlackConfiguration> {
+    pub fn slack_configuration(&self) -> ::std::option::Option<&crate::types::SlackConfiguration> {
         self.slack_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Box as your data source.</p>
-    pub fn box_configuration(&self) -> std::option::Option<&crate::types::BoxConfiguration> {
+    pub fn box_configuration(&self) -> ::std::option::Option<&crate::types::BoxConfiguration> {
         self.box_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Quip as your data source.</p>
-    pub fn quip_configuration(&self) -> std::option::Option<&crate::types::QuipConfiguration> {
+    pub fn quip_configuration(&self) -> ::std::option::Option<&crate::types::QuipConfiguration> {
         self.quip_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Jira as your data source.</p>
-    pub fn jira_configuration(&self) -> std::option::Option<&crate::types::JiraConfiguration> {
+    pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::JiraConfiguration> {
         self.jira_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
-    pub fn git_hub_configuration(&self) -> std::option::Option<&crate::types::GitHubConfiguration> {
+    pub fn git_hub_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::GitHubConfiguration> {
         self.git_hub_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
     pub fn alfresco_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::AlfrescoConfiguration> {
+    ) -> ::std::option::Option<&crate::types::AlfrescoConfiguration> {
         self.alfresco_configuration.as_ref()
     }
     /// <p>Provides a template for the configuration information to connect to your data source.</p>
     pub fn template_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::TemplateConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
 }
@@ -166,41 +168,45 @@ impl DataSourceConfiguration {
 
 /// A builder for [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSourceConfigurationBuilder {
-    pub(crate) s3_configuration: std::option::Option<crate::types::S3DataSourceConfiguration>,
+    pub(crate) s3_configuration: ::std::option::Option<crate::types::S3DataSourceConfiguration>,
     pub(crate) share_point_configuration:
-        std::option::Option<crate::types::SharePointConfiguration>,
-    pub(crate) database_configuration: std::option::Option<crate::types::DatabaseConfiguration>,
-    pub(crate) salesforce_configuration: std::option::Option<crate::types::SalesforceConfiguration>,
-    pub(crate) one_drive_configuration: std::option::Option<crate::types::OneDriveConfiguration>,
+        ::std::option::Option<crate::types::SharePointConfiguration>,
+    pub(crate) database_configuration: ::std::option::Option<crate::types::DatabaseConfiguration>,
+    pub(crate) salesforce_configuration:
+        ::std::option::Option<crate::types::SalesforceConfiguration>,
+    pub(crate) one_drive_configuration: ::std::option::Option<crate::types::OneDriveConfiguration>,
     pub(crate) service_now_configuration:
-        std::option::Option<crate::types::ServiceNowConfiguration>,
-    pub(crate) confluence_configuration: std::option::Option<crate::types::ConfluenceConfiguration>,
+        ::std::option::Option<crate::types::ServiceNowConfiguration>,
+    pub(crate) confluence_configuration:
+        ::std::option::Option<crate::types::ConfluenceConfiguration>,
     pub(crate) google_drive_configuration:
-        std::option::Option<crate::types::GoogleDriveConfiguration>,
+        ::std::option::Option<crate::types::GoogleDriveConfiguration>,
     pub(crate) web_crawler_configuration:
-        std::option::Option<crate::types::WebCrawlerConfiguration>,
-    pub(crate) work_docs_configuration: std::option::Option<crate::types::WorkDocsConfiguration>,
-    pub(crate) fsx_configuration: std::option::Option<crate::types::FsxConfiguration>,
-    pub(crate) slack_configuration: std::option::Option<crate::types::SlackConfiguration>,
-    pub(crate) box_configuration: std::option::Option<crate::types::BoxConfiguration>,
-    pub(crate) quip_configuration: std::option::Option<crate::types::QuipConfiguration>,
-    pub(crate) jira_configuration: std::option::Option<crate::types::JiraConfiguration>,
-    pub(crate) git_hub_configuration: std::option::Option<crate::types::GitHubConfiguration>,
-    pub(crate) alfresco_configuration: std::option::Option<crate::types::AlfrescoConfiguration>,
-    pub(crate) template_configuration: std::option::Option<crate::types::TemplateConfiguration>,
+        ::std::option::Option<crate::types::WebCrawlerConfiguration>,
+    pub(crate) work_docs_configuration: ::std::option::Option<crate::types::WorkDocsConfiguration>,
+    pub(crate) fsx_configuration: ::std::option::Option<crate::types::FsxConfiguration>,
+    pub(crate) slack_configuration: ::std::option::Option<crate::types::SlackConfiguration>,
+    pub(crate) box_configuration: ::std::option::Option<crate::types::BoxConfiguration>,
+    pub(crate) quip_configuration: ::std::option::Option<crate::types::QuipConfiguration>,
+    pub(crate) jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
+    pub(crate) git_hub_configuration: ::std::option::Option<crate::types::GitHubConfiguration>,
+    pub(crate) alfresco_configuration: ::std::option::Option<crate::types::AlfrescoConfiguration>,
+    pub(crate) template_configuration: ::std::option::Option<crate::types::TemplateConfiguration>,
 }
 impl DataSourceConfigurationBuilder {
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
     pub fn s3_configuration(mut self, input: crate::types::S3DataSourceConfiguration) -> Self {
-        self.s3_configuration = Some(input);
+        self.s3_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to an Amazon S3 bucket as your data source.</p>
     pub fn set_s3_configuration(
         mut self,
-        input: std::option::Option<crate::types::S3DataSourceConfiguration>,
+        input: ::std::option::Option<crate::types::S3DataSourceConfiguration>,
     ) -> Self {
         self.s3_configuration = input;
         self
@@ -210,26 +216,26 @@ impl DataSourceConfigurationBuilder {
         mut self,
         input: crate::types::SharePointConfiguration,
     ) -> Self {
-        self.share_point_configuration = Some(input);
+        self.share_point_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Microsoft SharePoint as your data source.</p>
     pub fn set_share_point_configuration(
         mut self,
-        input: std::option::Option<crate::types::SharePointConfiguration>,
+        input: ::std::option::Option<crate::types::SharePointConfiguration>,
     ) -> Self {
         self.share_point_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to a database as your data source.</p>
     pub fn database_configuration(mut self, input: crate::types::DatabaseConfiguration) -> Self {
-        self.database_configuration = Some(input);
+        self.database_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to a database as your data source.</p>
     pub fn set_database_configuration(
         mut self,
-        input: std::option::Option<crate::types::DatabaseConfiguration>,
+        input: ::std::option::Option<crate::types::DatabaseConfiguration>,
     ) -> Self {
         self.database_configuration = input;
         self
@@ -239,26 +245,26 @@ impl DataSourceConfigurationBuilder {
         mut self,
         input: crate::types::SalesforceConfiguration,
     ) -> Self {
-        self.salesforce_configuration = Some(input);
+        self.salesforce_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Salesforce as your data source.</p>
     pub fn set_salesforce_configuration(
         mut self,
-        input: std::option::Option<crate::types::SalesforceConfiguration>,
+        input: ::std::option::Option<crate::types::SalesforceConfiguration>,
     ) -> Self {
         self.salesforce_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to Microsoft OneDrive as your data source.</p>
     pub fn one_drive_configuration(mut self, input: crate::types::OneDriveConfiguration) -> Self {
-        self.one_drive_configuration = Some(input);
+        self.one_drive_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Microsoft OneDrive as your data source.</p>
     pub fn set_one_drive_configuration(
         mut self,
-        input: std::option::Option<crate::types::OneDriveConfiguration>,
+        input: ::std::option::Option<crate::types::OneDriveConfiguration>,
     ) -> Self {
         self.one_drive_configuration = input;
         self
@@ -268,13 +274,13 @@ impl DataSourceConfigurationBuilder {
         mut self,
         input: crate::types::ServiceNowConfiguration,
     ) -> Self {
-        self.service_now_configuration = Some(input);
+        self.service_now_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to ServiceNow as your data source.</p>
     pub fn set_service_now_configuration(
         mut self,
-        input: std::option::Option<crate::types::ServiceNowConfiguration>,
+        input: ::std::option::Option<crate::types::ServiceNowConfiguration>,
     ) -> Self {
         self.service_now_configuration = input;
         self
@@ -284,13 +290,13 @@ impl DataSourceConfigurationBuilder {
         mut self,
         input: crate::types::ConfluenceConfiguration,
     ) -> Self {
-        self.confluence_configuration = Some(input);
+        self.confluence_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Confluence as your data source.</p>
     pub fn set_confluence_configuration(
         mut self,
-        input: std::option::Option<crate::types::ConfluenceConfiguration>,
+        input: ::std::option::Option<crate::types::ConfluenceConfiguration>,
     ) -> Self {
         self.confluence_configuration = input;
         self
@@ -300,13 +306,13 @@ impl DataSourceConfigurationBuilder {
         mut self,
         input: crate::types::GoogleDriveConfiguration,
     ) -> Self {
-        self.google_drive_configuration = Some(input);
+        self.google_drive_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Google Drive as your data source.</p>
     pub fn set_google_drive_configuration(
         mut self,
-        input: std::option::Option<crate::types::GoogleDriveConfiguration>,
+        input: ::std::option::Option<crate::types::GoogleDriveConfiguration>,
     ) -> Self {
         self.google_drive_configuration = input;
         self
@@ -316,130 +322,130 @@ impl DataSourceConfigurationBuilder {
         mut self,
         input: crate::types::WebCrawlerConfiguration,
     ) -> Self {
-        self.web_crawler_configuration = Some(input);
+        self.web_crawler_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information required for Amazon Kendra Web Crawler.</p>
     pub fn set_web_crawler_configuration(
         mut self,
-        input: std::option::Option<crate::types::WebCrawlerConfiguration>,
+        input: ::std::option::Option<crate::types::WebCrawlerConfiguration>,
     ) -> Self {
         self.web_crawler_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
     pub fn work_docs_configuration(mut self, input: crate::types::WorkDocsConfiguration) -> Self {
-        self.work_docs_configuration = Some(input);
+        self.work_docs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
     pub fn set_work_docs_configuration(
         mut self,
-        input: std::option::Option<crate::types::WorkDocsConfiguration>,
+        input: ::std::option::Option<crate::types::WorkDocsConfiguration>,
     ) -> Self {
         self.work_docs_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
     pub fn fsx_configuration(mut self, input: crate::types::FsxConfiguration) -> Self {
-        self.fsx_configuration = Some(input);
+        self.fsx_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Amazon FSx as your data source.</p>
     pub fn set_fsx_configuration(
         mut self,
-        input: std::option::Option<crate::types::FsxConfiguration>,
+        input: ::std::option::Option<crate::types::FsxConfiguration>,
     ) -> Self {
         self.fsx_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to Slack as your data source.</p>
     pub fn slack_configuration(mut self, input: crate::types::SlackConfiguration) -> Self {
-        self.slack_configuration = Some(input);
+        self.slack_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Slack as your data source.</p>
     pub fn set_slack_configuration(
         mut self,
-        input: std::option::Option<crate::types::SlackConfiguration>,
+        input: ::std::option::Option<crate::types::SlackConfiguration>,
     ) -> Self {
         self.slack_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to Box as your data source.</p>
     pub fn box_configuration(mut self, input: crate::types::BoxConfiguration) -> Self {
-        self.box_configuration = Some(input);
+        self.box_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Box as your data source.</p>
     pub fn set_box_configuration(
         mut self,
-        input: std::option::Option<crate::types::BoxConfiguration>,
+        input: ::std::option::Option<crate::types::BoxConfiguration>,
     ) -> Self {
         self.box_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to Quip as your data source.</p>
     pub fn quip_configuration(mut self, input: crate::types::QuipConfiguration) -> Self {
-        self.quip_configuration = Some(input);
+        self.quip_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Quip as your data source.</p>
     pub fn set_quip_configuration(
         mut self,
-        input: std::option::Option<crate::types::QuipConfiguration>,
+        input: ::std::option::Option<crate::types::QuipConfiguration>,
     ) -> Self {
         self.quip_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to Jira as your data source.</p>
     pub fn jira_configuration(mut self, input: crate::types::JiraConfiguration) -> Self {
-        self.jira_configuration = Some(input);
+        self.jira_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Jira as your data source.</p>
     pub fn set_jira_configuration(
         mut self,
-        input: std::option::Option<crate::types::JiraConfiguration>,
+        input: ::std::option::Option<crate::types::JiraConfiguration>,
     ) -> Self {
         self.jira_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
     pub fn git_hub_configuration(mut self, input: crate::types::GitHubConfiguration) -> Self {
-        self.git_hub_configuration = Some(input);
+        self.git_hub_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to GitHub as your data source.</p>
     pub fn set_git_hub_configuration(
         mut self,
-        input: std::option::Option<crate::types::GitHubConfiguration>,
+        input: ::std::option::Option<crate::types::GitHubConfiguration>,
     ) -> Self {
         self.git_hub_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
     pub fn alfresco_configuration(mut self, input: crate::types::AlfrescoConfiguration) -> Self {
-        self.alfresco_configuration = Some(input);
+        self.alfresco_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to Alfresco as your data source.</p>
     pub fn set_alfresco_configuration(
         mut self,
-        input: std::option::Option<crate::types::AlfrescoConfiguration>,
+        input: ::std::option::Option<crate::types::AlfrescoConfiguration>,
     ) -> Self {
         self.alfresco_configuration = input;
         self
     }
     /// <p>Provides a template for the configuration information to connect to your data source.</p>
     pub fn template_configuration(mut self, input: crate::types::TemplateConfiguration) -> Self {
-        self.template_configuration = Some(input);
+        self.template_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides a template for the configuration information to connect to your data source.</p>
     pub fn set_template_configuration(
         mut self,
-        input: std::option::Option<crate::types::TemplateConfiguration>,
+        input: ::std::option::Option<crate::types::TemplateConfiguration>,
     ) -> Self {
         self.template_configuration = input;
         self

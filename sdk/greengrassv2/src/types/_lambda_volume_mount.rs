@@ -2,40 +2,40 @@
 
 /// <p>Contains information about a volume that Linux processes in a container can access. When you define a volume, the IoT Greengrass Core software mounts the source files to the destination inside the container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaVolumeMount {
     /// <p>The path to the physical volume in the file system.</p>
     #[doc(hidden)]
-    pub source_path: std::option::Option<std::string::String>,
+    pub source_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the logical volume in the file system.</p>
     #[doc(hidden)]
-    pub destination_path: std::option::Option<std::string::String>,
+    pub destination_path: ::std::option::Option<::std::string::String>,
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
     #[doc(hidden)]
-    pub permission: std::option::Option<crate::types::LambdaFilesystemPermission>,
+    pub permission: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code> </p>
     #[doc(hidden)]
-    pub add_group_owner: std::option::Option<bool>,
+    pub add_group_owner: ::std::option::Option<bool>,
 }
 impl LambdaVolumeMount {
     /// <p>The path to the physical volume in the file system.</p>
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> ::std::option::Option<&str> {
         self.source_path.as_deref()
     }
     /// <p>The path to the logical volume in the file system.</p>
-    pub fn destination_path(&self) -> std::option::Option<&str> {
+    pub fn destination_path(&self) -> ::std::option::Option<&str> {
         self.destination_path.as_deref()
     }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
-    pub fn permission(&self) -> std::option::Option<&crate::types::LambdaFilesystemPermission> {
+    pub fn permission(&self) -> ::std::option::Option<&crate::types::LambdaFilesystemPermission> {
         self.permission.as_ref()
     }
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn add_group_owner(&self) -> std::option::Option<bool> {
+    pub fn add_group_owner(&self) -> ::std::option::Option<bool> {
         self.add_group_owner
     }
 }
@@ -48,45 +48,53 @@ impl LambdaVolumeMount {
 
 /// A builder for [`LambdaVolumeMount`](crate::types::LambdaVolumeMount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaVolumeMountBuilder {
-    pub(crate) source_path: std::option::Option<std::string::String>,
-    pub(crate) destination_path: std::option::Option<std::string::String>,
-    pub(crate) permission: std::option::Option<crate::types::LambdaFilesystemPermission>,
-    pub(crate) add_group_owner: std::option::Option<bool>,
+    pub(crate) source_path: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_path: ::std::option::Option<::std::string::String>,
+    pub(crate) permission: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
+    pub(crate) add_group_owner: ::std::option::Option<bool>,
 }
 impl LambdaVolumeMountBuilder {
     /// <p>The path to the physical volume in the file system.</p>
-    pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_path = Some(input.into());
+    pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the physical volume in the file system.</p>
-    pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_path = input;
         self
     }
     /// <p>The path to the logical volume in the file system.</p>
-    pub fn destination_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_path = Some(input.into());
+    pub fn destination_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the logical volume in the file system.</p>
-    pub fn set_destination_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_path = input;
         self
     }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
     pub fn permission(mut self, input: crate::types::LambdaFilesystemPermission) -> Self {
-        self.permission = Some(input);
+        self.permission = ::std::option::Option::Some(input);
         self
     }
     /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write (<code>rw</code>).</p>
     /// <p>Default: <code>ro</code> </p>
     pub fn set_permission(
         mut self,
-        input: std::option::Option<crate::types::LambdaFilesystemPermission>,
+        input: ::std::option::Option<crate::types::LambdaFilesystemPermission>,
     ) -> Self {
         self.permission = input;
         self
@@ -94,12 +102,12 @@ impl LambdaVolumeMountBuilder {
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn add_group_owner(mut self, input: bool) -> Self {
-        self.add_group_owner = Some(input);
+        self.add_group_owner = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_add_group_owner(mut self, input: ::std::option::Option<bool>) -> Self {
         self.add_group_owner = input;
         self
     }

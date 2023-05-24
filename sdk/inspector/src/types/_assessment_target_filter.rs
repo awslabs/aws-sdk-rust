@@ -2,15 +2,15 @@
 
 /// <p>Used as the request parameter in the <code>ListAssessmentTargets</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentTargetFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
     #[doc(hidden)]
-    pub assessment_target_name_pattern: std::option::Option<std::string::String>,
+    pub assessment_target_name_pattern: ::std::option::Option<::std::string::String>,
 }
 impl AssessmentTargetFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
-    pub fn assessment_target_name_pattern(&self) -> std::option::Option<&str> {
+    pub fn assessment_target_name_pattern(&self) -> ::std::option::Option<&str> {
         self.assessment_target_name_pattern.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl AssessmentTargetFilter {
 
 /// A builder for [`AssessmentTargetFilter`](crate::types::AssessmentTargetFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssessmentTargetFilterBuilder {
-    pub(crate) assessment_target_name_pattern: std::option::Option<std::string::String>,
+    pub(crate) assessment_target_name_pattern: ::std::option::Option<::std::string::String>,
 }
 impl AssessmentTargetFilterBuilder {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
-    pub fn assessment_target_name_pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_target_name_pattern = Some(input.into());
+    pub fn assessment_target_name_pattern(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_target_name_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
     pub fn set_assessment_target_name_pattern(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.assessment_target_name_pattern = input;
         self

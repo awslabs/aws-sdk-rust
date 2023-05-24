@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMaintenanceWindow`](crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`window_id(impl Into<String>)`](crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowFluentBuilder::window_id) / [`set_window_id(Option<String>)`](crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowFluentBuilder::set_window_id): <p>The ID of the maintenance window to delete.</p>
+    ///   - [`window_id(impl ::std::convert::Into<String>)`](crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowFluentBuilder::window_id) / [`set_window_id(Option<String>)`](crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowFluentBuilder::set_window_id): <p>The ID of the maintenance window to delete.</p>
     /// - On success, responds with [`DeleteMaintenanceWindowOutput`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput) with field(s):
     ///   - [`window_id(Option<String>)`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput::window_id): <p>The ID of the deleted maintenance window.</p>
     /// - On failure, responds with [`SdkError<DeleteMaintenanceWindowError>`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowError)

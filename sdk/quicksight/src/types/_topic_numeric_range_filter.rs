@@ -2,17 +2,17 @@
 
 /// <p>A filter that filters topics based on the value of a numeric field. The filter includes only topics whose numeric field value falls within the specified range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicNumericRangeFilter {
     /// <p>A Boolean value that indicates whether the endpoints of the numeric range are included in the filter. If set to true, topics whose numeric field value is equal to the endpoint values will be included in the filter. If set to false, topics whose numeric field value is equal to the endpoint values will be excluded from the filter.</p>
     #[doc(hidden)]
     pub inclusive: bool,
     /// <p>The constant used in a numeric range filter.</p>
     #[doc(hidden)]
-    pub constant: std::option::Option<crate::types::TopicRangeFilterConstant>,
+    pub constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
     #[doc(hidden)]
-    pub aggregation: std::option::Option<crate::types::NamedFilterAggType>,
+    pub aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,
 }
 impl TopicNumericRangeFilter {
     /// <p>A Boolean value that indicates whether the endpoints of the numeric range are included in the filter. If set to true, topics whose numeric field value is equal to the endpoint values will be included in the filter. If set to false, topics whose numeric field value is equal to the endpoint values will be excluded from the filter.</p>
@@ -20,16 +20,16 @@ impl TopicNumericRangeFilter {
         self.inclusive
     }
     /// <p>The constant used in a numeric range filter.</p>
-    pub fn constant(&self) -> std::option::Option<&crate::types::TopicRangeFilterConstant> {
+    pub fn constant(&self) -> ::std::option::Option<&crate::types::TopicRangeFilterConstant> {
         self.constant.as_ref()
     }
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
-    pub fn aggregation(&self) -> std::option::Option<&crate::types::NamedFilterAggType> {
+    pub fn aggregation(&self) -> ::std::option::Option<&crate::types::NamedFilterAggType> {
         self.aggregation.as_ref()
     }
 }
-impl std::fmt::Debug for TopicNumericRangeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TopicNumericRangeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicNumericRangeFilter");
         formatter.field("inclusive", &self.inclusive);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
@@ -46,45 +46,45 @@ impl TopicNumericRangeFilter {
 
 /// A builder for [`TopicNumericRangeFilter`](crate::types::TopicNumericRangeFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TopicNumericRangeFilterBuilder {
-    pub(crate) inclusive: std::option::Option<bool>,
-    pub(crate) constant: std::option::Option<crate::types::TopicRangeFilterConstant>,
-    pub(crate) aggregation: std::option::Option<crate::types::NamedFilterAggType>,
+    pub(crate) inclusive: ::std::option::Option<bool>,
+    pub(crate) constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
+    pub(crate) aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,
 }
 impl TopicNumericRangeFilterBuilder {
     /// <p>A Boolean value that indicates whether the endpoints of the numeric range are included in the filter. If set to true, topics whose numeric field value is equal to the endpoint values will be included in the filter. If set to false, topics whose numeric field value is equal to the endpoint values will be excluded from the filter.</p>
     pub fn inclusive(mut self, input: bool) -> Self {
-        self.inclusive = Some(input);
+        self.inclusive = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that indicates whether the endpoints of the numeric range are included in the filter. If set to true, topics whose numeric field value is equal to the endpoint values will be included in the filter. If set to false, topics whose numeric field value is equal to the endpoint values will be excluded from the filter.</p>
-    pub fn set_inclusive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_inclusive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inclusive = input;
         self
     }
     /// <p>The constant used in a numeric range filter.</p>
     pub fn constant(mut self, input: crate::types::TopicRangeFilterConstant) -> Self {
-        self.constant = Some(input);
+        self.constant = ::std::option::Option::Some(input);
         self
     }
     /// <p>The constant used in a numeric range filter.</p>
     pub fn set_constant(
         mut self,
-        input: std::option::Option<crate::types::TopicRangeFilterConstant>,
+        input: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
     ) -> Self {
         self.constant = input;
         self
     }
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
     pub fn aggregation(mut self, input: crate::types::NamedFilterAggType) -> Self {
-        self.aggregation = Some(input);
+        self.aggregation = ::std::option::Option::Some(input);
         self
     }
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
     pub fn set_aggregation(
         mut self,
-        input: std::option::Option<crate::types::NamedFilterAggType>,
+        input: ::std::option::Option<crate::types::NamedFilterAggType>,
     ) -> Self {
         self.aggregation = input;
         self
@@ -98,8 +98,8 @@ impl TopicNumericRangeFilterBuilder {
         }
     }
 }
-impl std::fmt::Debug for TopicNumericRangeFilterBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TopicNumericRangeFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicNumericRangeFilterBuilder");
         formatter.field("inclusive", &self.inclusive);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");

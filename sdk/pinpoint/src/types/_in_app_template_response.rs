@@ -2,93 +2,97 @@
 
 /// <p>In-App Template Response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppTemplateResponse {
     /// <p>The resource arn of the template.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     /// <p>The creation date of the template.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<std::string::String>,
+    pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>Custom config to be sent to client.</p>
     #[doc(hidden)]
-    pub custom_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub custom_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The last modified date of the template.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<std::string::String>,
+    pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The layout of the message.</p>
     #[doc(hidden)]
-    pub layout: std::option::Option<crate::types::Layout>,
+    pub layout: ::std::option::Option<crate::types::Layout>,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The description of the template.</p>
     #[doc(hidden)]
-    pub template_description: std::option::Option<std::string::String>,
+    pub template_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template.</p>
     #[doc(hidden)]
-    pub template_name: std::option::Option<std::string::String>,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the template.</p>
     #[doc(hidden)]
-    pub template_type: std::option::Option<crate::types::TemplateType>,
+    pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The version id of the template.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl InAppTemplateResponse {
     /// <p>The resource arn of the template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn content(&self) -> std::option::Option<&[crate::types::InAppMessageContent]> {
+    pub fn content(&self) -> ::std::option::Option<&[crate::types::InAppMessageContent]> {
         self.content.as_deref()
     }
     /// <p>The creation date of the template.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<&str> {
         self.creation_date.as_deref()
     }
     /// <p>Custom config to be sent to client.</p>
     pub fn custom_config(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.custom_config.as_ref()
     }
     /// <p>The last modified date of the template.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The layout of the message.</p>
-    pub fn layout(&self) -> std::option::Option<&crate::types::Layout> {
+    pub fn layout(&self) -> ::std::option::Option<&crate::types::Layout> {
         self.layout.as_ref()
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>The description of the template.</p>
-    pub fn template_description(&self) -> std::option::Option<&str> {
+    pub fn template_description(&self) -> ::std::option::Option<&str> {
         self.template_description.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The type of the template.</p>
-    pub fn template_type(&self) -> std::option::Option<&crate::types::TemplateType> {
+    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
         self.template_type.as_ref()
     }
     /// <p>The version id of the template.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -101,30 +105,34 @@ impl InAppTemplateResponse {
 
 /// A builder for [`InAppTemplateResponse`](crate::types::InAppTemplateResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InAppTemplateResponseBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
-    pub(crate) creation_date: std::option::Option<std::string::String>,
-    pub(crate) custom_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) last_modified_date: std::option::Option<std::string::String>,
-    pub(crate) layout: std::option::Option<crate::types::Layout>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) template_description: std::option::Option<std::string::String>,
-    pub(crate) template_name: std::option::Option<std::string::String>,
-    pub(crate) template_type: std::option::Option<crate::types::TemplateType>,
-    pub(crate) version: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub(crate) creation_date: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
+    pub(crate) layout: ::std::option::Option<crate::types::Layout>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) template_description: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) template_type: ::std::option::Option<crate::types::TemplateType>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl InAppTemplateResponseBuilder {
     /// <p>The resource arn of the template.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource arn of the template.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -136,24 +144,30 @@ impl InAppTemplateResponseBuilder {
     pub fn content(mut self, input: crate::types::InAppMessageContent) -> Self {
         let mut v = self.content.unwrap_or_default();
         v.push(input);
-        self.content = Some(v);
+        self.content = ::std::option::Option::Some(v);
         self
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     ) -> Self {
         self.content = input;
         self
     }
     /// <p>The creation date of the template.</p>
-    pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_date = Some(input.into());
+    pub fn creation_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation date of the template.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_date = input;
         self
     }
@@ -164,44 +178,47 @@ impl InAppTemplateResponseBuilder {
     /// <p>Custom config to be sent to client.</p>
     pub fn custom_config(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.custom_config.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.custom_config = Some(hash_map);
+        self.custom_config = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Custom config to be sent to client.</p>
     pub fn set_custom_config(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.custom_config = input;
         self
     }
     /// <p>The last modified date of the template.</p>
-    pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_modified_date = Some(input.into());
+    pub fn last_modified_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last modified date of the template.</p>
     pub fn set_last_modified_date(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_modified_date = input;
         self
     }
     /// <p>The layout of the message.</p>
     pub fn layout(mut self, input: crate::types::Layout) -> Self {
-        self.layout = Some(input);
+        self.layout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The layout of the message.</p>
-    pub fn set_layout(mut self, input: std::option::Option<crate::types::Layout>) -> Self {
+    pub fn set_layout(mut self, input: ::std::option::Option<crate::types::Layout>) -> Self {
         self.layout = input;
         self
     }
@@ -212,67 +229,76 @@ impl InAppTemplateResponseBuilder {
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The description of the template.</p>
-    pub fn template_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_description = Some(input.into());
+    pub fn template_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.template_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the template.</p>
     pub fn set_template_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.template_description = input;
         self
     }
     /// <p>The name of the template.</p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_name = Some(input.into());
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the template.</p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.template_name = input;
         self
     }
     /// <p>The type of the template.</p>
     pub fn template_type(mut self, input: crate::types::TemplateType) -> Self {
-        self.template_type = Some(input);
+        self.template_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the template.</p>
     pub fn set_template_type(
         mut self,
-        input: std::option::Option<crate::types::TemplateType>,
+        input: ::std::option::Option<crate::types::TemplateType>,
     ) -> Self {
         self.template_type = input;
         self
     }
     /// <p>The version id of the template.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version id of the template.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }

@@ -2,37 +2,37 @@
 
 /// <p>Provides the count of documents that match a particular attribute when doing a faceted search.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentAttributeValueCountPair {
     /// <p>The value of the attribute. For example, "HR".</p>
     #[doc(hidden)]
-    pub document_attribute_value: std::option::Option<crate::types::DocumentAttributeValue>,
+    pub document_attribute_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
     /// <p>The number of documents in the response that have the attribute value for the key.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
     /// <p></p>
     /// <p></p>
     #[doc(hidden)]
-    pub facet_results: std::option::Option<std::vec::Vec<crate::types::FacetResult>>,
+    pub facet_results: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
 }
 impl DocumentAttributeValueCountPair {
     /// <p>The value of the attribute. For example, "HR".</p>
     pub fn document_attribute_value(
         &self,
-    ) -> std::option::Option<&crate::types::DocumentAttributeValue> {
+    ) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
         self.document_attribute_value.as_ref()
     }
     /// <p>The number of documents in the response that have the attribute value for the key.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
     /// <p>For example, the document attribute or facet "Department" includes a value called "Engineering". In addition, the document attribute or facet "SubDepartment" includes the values "Frontend" and "Backend" for documents assigned to "Engineering". You can display nested facets in the search results so that documents can be searched not only by department but also by a sub department within a department. The counts for documents that belong to "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
     /// <p></p>
     /// <p></p>
-    pub fn facet_results(&self) -> std::option::Option<&[crate::types::FacetResult]> {
+    pub fn facet_results(&self) -> ::std::option::Option<&[crate::types::FacetResult]> {
         self.facet_results.as_deref()
     }
 }
@@ -45,33 +45,36 @@ impl DocumentAttributeValueCountPair {
 
 /// A builder for [`DocumentAttributeValueCountPair`](crate::types::DocumentAttributeValueCountPair).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentAttributeValueCountPairBuilder {
-    pub(crate) document_attribute_value: std::option::Option<crate::types::DocumentAttributeValue>,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) facet_results: std::option::Option<std::vec::Vec<crate::types::FacetResult>>,
+    pub(crate) document_attribute_value:
+        ::std::option::Option<crate::types::DocumentAttributeValue>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) facet_results: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
 }
 impl DocumentAttributeValueCountPairBuilder {
     /// <p>The value of the attribute. For example, "HR".</p>
     pub fn document_attribute_value(mut self, input: crate::types::DocumentAttributeValue) -> Self {
-        self.document_attribute_value = Some(input);
+        self.document_attribute_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the attribute. For example, "HR".</p>
     pub fn set_document_attribute_value(
         mut self,
-        input: std::option::Option<crate::types::DocumentAttributeValue>,
+        input: ::std::option::Option<crate::types::DocumentAttributeValue>,
     ) -> Self {
         self.document_attribute_value = input;
         self
     }
     /// <p>The number of documents in the response that have the attribute value for the key.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of documents in the response that have the attribute value for the key.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
@@ -86,7 +89,7 @@ impl DocumentAttributeValueCountPairBuilder {
     pub fn facet_results(mut self, input: crate::types::FacetResult) -> Self {
         let mut v = self.facet_results.unwrap_or_default();
         v.push(input);
-        self.facet_results = Some(v);
+        self.facet_results = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the results of a document attribute that is a nested facet. A <code>FacetResult</code> contains the counts for each facet nested within a facet.</p>
@@ -95,7 +98,7 @@ impl DocumentAttributeValueCountPairBuilder {
     /// <p></p>
     pub fn set_facet_results(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FacetResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FacetResult>>,
     ) -> Self {
         self.facet_results = input;
         self

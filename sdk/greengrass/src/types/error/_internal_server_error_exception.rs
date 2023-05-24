@@ -2,48 +2,48 @@
 
 /// General error information.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InternalServerErrorException {
     /// Details about the error.
     #[doc(hidden)]
-    pub error_details: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
+    pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// A message containing information about the error.
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub message: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InternalServerErrorException {
     /// Details about the error.
-    pub fn error_details(&self) -> std::option::Option<&[crate::types::ErrorDetail]> {
+    pub fn error_details(&self) -> ::std::option::Option<&[crate::types::ErrorDetail]> {
         self.error_details.as_deref()
     }
 }
 impl InternalServerErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InternalServerErrorException {
+impl ::std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalServerErrorException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "InternalServerErrorException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for InternalServerErrorException {}
-impl aws_http::request_id::RequestId for crate::types::error::InternalServerErrorException {
+impl ::std::error::Error for InternalServerErrorException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::InternalServerErrorException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServerErrorException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServerErrorException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,11 +56,13 @@ impl InternalServerErrorException {
 
 /// A builder for [`InternalServerErrorException`](crate::types::error::InternalServerErrorException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InternalServerErrorExceptionBuilder {
-    pub(crate) error_details: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InternalServerErrorExceptionBuilder {
     /// Appends an item to `error_details`.
@@ -71,29 +73,29 @@ impl InternalServerErrorExceptionBuilder {
     pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
         let mut v = self.error_details.unwrap_or_default();
         v.push(input);
-        self.error_details = Some(v);
+        self.error_details = ::std::option::Option::Some(v);
         self
     }
     /// Details about the error.
     pub fn set_error_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     ) -> Self {
         self.error_details = input;
         self
     }
     /// A message containing information about the error.
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// A message containing information about the error.
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -101,7 +103,7 @@ impl InternalServerErrorExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

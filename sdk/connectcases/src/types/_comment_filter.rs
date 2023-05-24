@@ -2,7 +2,7 @@
 
 /// <p>A filter for related items of type <code>Comment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommentFilter {}
 impl CommentFilter {
     /// Creates a new builder-style object to manufacture [`CommentFilter`](crate::types::CommentFilter).
@@ -13,7 +13,9 @@ impl CommentFilter {
 
 /// A builder for [`CommentFilter`](crate::types::CommentFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommentFilterBuilder {}
 impl CommentFilterBuilder {
     /// Consumes the builder and constructs a [`CommentFilter`](crate::types::CommentFilter).

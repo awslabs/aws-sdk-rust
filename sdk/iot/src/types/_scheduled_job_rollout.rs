@@ -2,15 +2,15 @@
 
 /// <p>Displays the next seven maintenance window occurrences and their start times.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledJobRollout {
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<std::string::String>,
+    pub start_time: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledJobRollout {
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ScheduledJobRollout {
 
 /// A builder for [`ScheduledJobRollout`](crate::types::ScheduledJobRollout).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduledJobRolloutBuilder {
-    pub(crate) start_time: std::option::Option<std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledJobRolloutBuilder {
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
-    pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_time = Some(input.into());
+    pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Displays the start times of the next seven maintenance window occurrences.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }

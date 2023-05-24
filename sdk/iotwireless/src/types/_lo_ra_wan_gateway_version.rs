@@ -2,29 +2,29 @@
 
 /// <p>LoRaWANGatewayVersion object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanGatewayVersion {
     /// <p>The version of the wireless gateway firmware.</p>
     #[doc(hidden)]
-    pub package_version: std::option::Option<std::string::String>,
+    pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>The model number of the wireless gateway.</p>
     #[doc(hidden)]
-    pub model: std::option::Option<std::string::String>,
+    pub model: ::std::option::Option<::std::string::String>,
     /// <p>The basic station version of the wireless gateway.</p>
     #[doc(hidden)]
-    pub station: std::option::Option<std::string::String>,
+    pub station: ::std::option::Option<::std::string::String>,
 }
 impl LoRaWanGatewayVersion {
     /// <p>The version of the wireless gateway firmware.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> ::std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p>The model number of the wireless gateway.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> ::std::option::Option<&str> {
         self.model.as_deref()
     }
     /// <p>The basic station version of the wireless gateway.</p>
-    pub fn station(&self) -> std::option::Option<&str> {
+    pub fn station(&self) -> ::std::option::Option<&str> {
         self.station.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl LoRaWanGatewayVersion {
 
 /// A builder for [`LoRaWanGatewayVersion`](crate::types::LoRaWanGatewayVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanGatewayVersionBuilder {
-    pub(crate) package_version: std::option::Option<std::string::String>,
-    pub(crate) model: std::option::Option<std::string::String>,
-    pub(crate) station: std::option::Option<std::string::String>,
+    pub(crate) package_version: ::std::option::Option<::std::string::String>,
+    pub(crate) model: ::std::option::Option<::std::string::String>,
+    pub(crate) station: ::std::option::Option<::std::string::String>,
 }
 impl LoRaWanGatewayVersionBuilder {
     /// <p>The version of the wireless gateway firmware.</p>
-    pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_version = Some(input.into());
+    pub fn package_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.package_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the wireless gateway firmware.</p>
-    pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.package_version = input;
         self
     }
     /// <p>The model number of the wireless gateway.</p>
-    pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model = Some(input.into());
+    pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model number of the wireless gateway.</p>
-    pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model = input;
         self
     }
     /// <p>The basic station version of the wireless gateway.</p>
-    pub fn station(mut self, input: impl Into<std::string::String>) -> Self {
-        self.station = Some(input.into());
+    pub fn station(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.station = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The basic station version of the wireless gateway.</p>
-    pub fn set_station(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_station(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.station = input;
         self
     }

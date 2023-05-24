@@ -2,7 +2,7 @@
 
 /// <p>The Amazon S3 object that is the asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SnapshotAsset {
     /// <p>The size of the Amazon S3 object that is the object.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl S3SnapshotAsset {
 
 /// A builder for [`S3SnapshotAsset`](crate::types::S3SnapshotAsset).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3SnapshotAssetBuilder {
-    pub(crate) size: std::option::Option<f64>,
+    pub(crate) size: ::std::option::Option<f64>,
 }
 impl S3SnapshotAssetBuilder {
     /// <p>The size of the Amazon S3 object that is the object.</p>
     pub fn size(mut self, input: f64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the Amazon S3 object that is the object.</p>
-    pub fn set_size(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.size = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains information about the health checks or hosted zones for which you want to list tags.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
     #[doc(hidden)]
-    pub resource_tag_set: std::option::Option<crate::types::ResourceTagSet>,
+    pub resource_tag_set: ::std::option::Option<crate::types::ResourceTagSet>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
-    pub fn resource_tag_set(&self) -> std::option::Option<&crate::types::ResourceTagSet> {
+    pub fn resource_tag_set(&self) -> ::std::option::Option<&crate::types::ResourceTagSet> {
         self.resource_tag_set.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+impl ::aws_http::request_id::RequestId for ListTagsForResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl ListTagsForResourceOutput {
 
 /// A builder for [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTagsForResourceOutputBuilder {
-    pub(crate) resource_tag_set: std::option::Option<crate::types::ResourceTagSet>,
+    pub(crate) resource_tag_set: ::std::option::Option<crate::types::ResourceTagSet>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutputBuilder {
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
     pub fn resource_tag_set(mut self, input: crate::types::ResourceTagSet) -> Self {
-        self.resource_tag_set = Some(input);
+        self.resource_tag_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
     pub fn set_resource_tag_set(
         mut self,
-        input: std::option::Option<crate::types::ResourceTagSet>,
+        input: ::std::option::Option<crate::types::ResourceTagSet>,
     ) -> Self {
         self.resource_tag_set = input;
         self

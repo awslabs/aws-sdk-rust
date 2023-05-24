@@ -2,85 +2,85 @@
 
 /// <p>Details about each OpenSearch Serverless collection, including the collection endpoint and the OpenSearch Dashboards endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectionDetail {
     /// <p>A unique identifier for the collection.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the collection.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the collection.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CollectionStatus>,
+    pub status: ::std::option::Option<crate::types::CollectionStatus>,
     /// <p>The type of collection.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::CollectionType>,
+    pub r#type: ::std::option::Option<crate::types::CollectionType>,
     /// <p>A description of the collection.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Epoch time when the collection was created.</p>
     #[doc(hidden)]
-    pub created_date: std::option::Option<i64>,
+    pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<i64>,
+    pub last_modified_date: ::std::option::Option<i64>,
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
     #[doc(hidden)]
-    pub collection_endpoint: std::option::Option<std::string::String>,
+    pub collection_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
     #[doc(hidden)]
-    pub dashboard_endpoint: std::option::Option<std::string::String>,
+    pub dashboard_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl CollectionDetail {
     /// <p>A unique identifier for the collection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CollectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CollectionStatus> {
         self.status.as_ref()
     }
     /// <p>The type of collection.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::CollectionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CollectionType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the collection.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Epoch time when the collection was created.</p>
-    pub fn created_date(&self) -> std::option::Option<i64> {
+    pub fn created_date(&self) -> ::std::option::Option<i64> {
         self.created_date
     }
     /// <p>The date and time when the collection was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<i64> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<i64> {
         self.last_modified_date
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-    pub fn collection_endpoint(&self) -> std::option::Option<&str> {
+    pub fn collection_endpoint(&self) -> ::std::option::Option<&str> {
         self.collection_endpoint.as_deref()
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-    pub fn dashboard_endpoint(&self) -> std::option::Option<&str> {
+    pub fn dashboard_endpoint(&self) -> ::std::option::Option<&str> {
         self.dashboard_endpoint.as_deref()
     }
 }
@@ -93,136 +93,144 @@ impl CollectionDetail {
 
 /// A builder for [`CollectionDetail`](crate::types::CollectionDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CollectionDetailBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::CollectionStatus>,
-    pub(crate) r#type: std::option::Option<crate::types::CollectionType>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    pub(crate) created_date: std::option::Option<i64>,
-    pub(crate) last_modified_date: std::option::Option<i64>,
-    pub(crate) collection_endpoint: std::option::Option<std::string::String>,
-    pub(crate) dashboard_endpoint: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::CollectionStatus>,
+    pub(crate) r#type: ::std::option::Option<crate::types::CollectionType>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_date: ::std::option::Option<i64>,
+    pub(crate) last_modified_date: ::std::option::Option<i64>,
+    pub(crate) collection_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) dashboard_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl CollectionDetailBuilder {
     /// <p>A unique identifier for the collection.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the collection.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the collection.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the collection.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The current status of the collection.</p>
     pub fn status(mut self, input: crate::types::CollectionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the collection.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CollectionStatus>,
+        input: ::std::option::Option<crate::types::CollectionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The type of collection.</p>
     pub fn r#type(mut self, input: crate::types::CollectionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of collection.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::CollectionType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CollectionType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>A description of the collection.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the collection.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
     /// <p>The Epoch time when the collection was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
-        self.created_date = Some(input);
+        self.created_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Epoch time when the collection was created.</p>
-    pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.created_date = input;
         self
     }
     /// <p>The date and time when the collection was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
-        self.last_modified_date = Some(input);
+        self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the collection was last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_modified_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_date = input;
         self
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-    pub fn collection_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.collection_endpoint = Some(input.into());
+    pub fn collection_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.collection_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
     pub fn set_collection_endpoint(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.collection_endpoint = input;
         self
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-    pub fn dashboard_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dashboard_endpoint = Some(input.into());
+    pub fn dashboard_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dashboard_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
     pub fn set_dashboard_endpoint(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dashboard_endpoint = input;
         self

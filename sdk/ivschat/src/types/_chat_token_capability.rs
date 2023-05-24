@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ChatTokenCapability {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ChatTokenCapability {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ChatTokenCapability {
+impl ::std::convert::From<&str> for ChatTokenCapability {
     fn from(s: &str) -> Self {
         match s {
             "DELETE_MESSAGE" => ChatTokenCapability::DeleteMessage,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ChatTokenCapability {
         }
     }
 }
-impl std::str::FromStr for ChatTokenCapability {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ChatTokenCapability {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChatTokenCapability::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ChatTokenCapability::from(s))
     }
 }
 impl ChatTokenCapability {
@@ -91,7 +91,7 @@ impl ChatTokenCapability {
         &["DELETE_MESSAGE", "DISCONNECT_USER", "SEND_MESSAGE"]
     }
 }
-impl AsRef<str> for ChatTokenCapability {
+impl ::std::convert::AsRef<str> for ChatTokenCapability {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

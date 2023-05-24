@@ -2,15 +2,15 @@
 
 /// <p>The configuration settings of the features available to a meeting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeetingFeaturesConfiguration {
     /// <p>The configuration settings for the audio features available to a meeting.</p>
     #[doc(hidden)]
-    pub audio: std::option::Option<crate::types::AudioFeatures>,
+    pub audio: ::std::option::Option<crate::types::AudioFeatures>,
 }
 impl MeetingFeaturesConfiguration {
     /// <p>The configuration settings for the audio features available to a meeting.</p>
-    pub fn audio(&self) -> std::option::Option<&crate::types::AudioFeatures> {
+    pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioFeatures> {
         self.audio.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl MeetingFeaturesConfiguration {
 
 /// A builder for [`MeetingFeaturesConfiguration`](crate::types::MeetingFeaturesConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MeetingFeaturesConfigurationBuilder {
-    pub(crate) audio: std::option::Option<crate::types::AudioFeatures>,
+    pub(crate) audio: ::std::option::Option<crate::types::AudioFeatures>,
 }
 impl MeetingFeaturesConfigurationBuilder {
     /// <p>The configuration settings for the audio features available to a meeting.</p>
     pub fn audio(mut self, input: crate::types::AudioFeatures) -> Self {
-        self.audio = Some(input);
+        self.audio = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings for the audio features available to a meeting.</p>
-    pub fn set_audio(mut self, input: std::option::Option<crate::types::AudioFeatures>) -> Self {
+    pub fn set_audio(mut self, input: ::std::option::Option<crate::types::AudioFeatures>) -> Self {
         self.audio = input;
         self
     }

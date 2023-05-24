@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for DeleteInputSecurityGroupResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteInputSecurityGroupOutput {
+impl ::aws_http::request_id::RequestId for DeleteInputSecurityGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteInputSecurityGroupOutput {
 
 /// A builder for [`DeleteInputSecurityGroupOutput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteInputSecurityGroupOutputBuilder {
     _request_id: Option<String>,
 }

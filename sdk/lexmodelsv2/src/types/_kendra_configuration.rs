@@ -2,21 +2,21 @@
 
 /// <p>Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
     #[doc(hidden)]
-    pub kendra_index: std::option::Option<std::string::String>,
+    pub kendra_index: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.</p>
     #[doc(hidden)]
     pub query_filter_string_enabled: bool,
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     #[doc(hidden)]
-    pub query_filter_string: std::option::Option<std::string::String>,
+    pub query_filter_string: ::std::option::Option<::std::string::String>,
 }
 impl KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
-    pub fn kendra_index(&self) -> std::option::Option<&str> {
+    pub fn kendra_index(&self) -> ::std::option::Option<&str> {
         self.kendra_index.as_deref()
     }
     /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.</p>
@@ -24,7 +24,7 @@ impl KendraConfiguration {
         self.query_filter_string_enabled
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
-    pub fn query_filter_string(&self) -> std::option::Option<&str> {
+    pub fn query_filter_string(&self) -> ::std::option::Option<&str> {
         self.query_filter_string.as_deref()
     }
 }
@@ -37,42 +37,47 @@ impl KendraConfiguration {
 
 /// A builder for [`KendraConfiguration`](crate::types::KendraConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KendraConfigurationBuilder {
-    pub(crate) kendra_index: std::option::Option<std::string::String>,
-    pub(crate) query_filter_string_enabled: std::option::Option<bool>,
-    pub(crate) query_filter_string: std::option::Option<std::string::String>,
+    pub(crate) kendra_index: ::std::option::Option<::std::string::String>,
+    pub(crate) query_filter_string_enabled: ::std::option::Option<bool>,
+    pub(crate) query_filter_string: ::std::option::Option<::std::string::String>,
 }
 impl KendraConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
-    pub fn kendra_index(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kendra_index = Some(input.into());
+    pub fn kendra_index(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kendra_index = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot.</p>
-    pub fn set_kendra_index(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kendra_index(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kendra_index = input;
         self
     }
     /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.</p>
     pub fn query_filter_string_enabled(mut self, input: bool) -> Self {
-        self.query_filter_string_enabled = Some(input);
+        self.query_filter_string_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string to query the Amazon Kendra index.</p>
-    pub fn set_query_filter_string_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_query_filter_string_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.query_filter_string_enabled = input;
         self
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
-    pub fn query_filter_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_filter_string = Some(input.into());
+    pub fn query_filter_string(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.query_filter_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from a query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     pub fn set_query_filter_string(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.query_filter_string = input;
         self

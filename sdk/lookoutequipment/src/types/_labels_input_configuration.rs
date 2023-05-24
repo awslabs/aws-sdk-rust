@@ -2,24 +2,24 @@
 
 /// <p>Contains the configuration information for the S3 location being used to hold label data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelsInputConfiguration {
     /// <p>Contains location information for the S3 location being used for label data. </p>
     #[doc(hidden)]
-    pub s3_input_configuration: std::option::Option<crate::types::LabelsS3InputConfiguration>,
+    pub s3_input_configuration: ::std::option::Option<crate::types::LabelsS3InputConfiguration>,
     /// <p> The name of the label group to be used for label data. </p>
     #[doc(hidden)]
-    pub label_group_name: std::option::Option<std::string::String>,
+    pub label_group_name: ::std::option::Option<::std::string::String>,
 }
 impl LabelsInputConfiguration {
     /// <p>Contains location information for the S3 location being used for label data. </p>
     pub fn s3_input_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LabelsS3InputConfiguration> {
+    ) -> ::std::option::Option<&crate::types::LabelsS3InputConfiguration> {
         self.s3_input_configuration.as_ref()
     }
     /// <p> The name of the label group to be used for label data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
 }
@@ -32,11 +32,13 @@ impl LabelsInputConfiguration {
 
 /// A builder for [`LabelsInputConfiguration`](crate::types::LabelsInputConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelsInputConfigurationBuilder {
     pub(crate) s3_input_configuration:
-        std::option::Option<crate::types::LabelsS3InputConfiguration>,
-    pub(crate) label_group_name: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::LabelsS3InputConfiguration>,
+    pub(crate) label_group_name: ::std::option::Option<::std::string::String>,
 }
 impl LabelsInputConfigurationBuilder {
     /// <p>Contains location information for the S3 location being used for label data. </p>
@@ -44,24 +46,30 @@ impl LabelsInputConfigurationBuilder {
         mut self,
         input: crate::types::LabelsS3InputConfiguration,
     ) -> Self {
-        self.s3_input_configuration = Some(input);
+        self.s3_input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains location information for the S3 location being used for label data. </p>
     pub fn set_s3_input_configuration(
         mut self,
-        input: std::option::Option<crate::types::LabelsS3InputConfiguration>,
+        input: ::std::option::Option<crate::types::LabelsS3InputConfiguration>,
     ) -> Self {
         self.s3_input_configuration = input;
         self
     }
     /// <p> The name of the label group to be used for label data. </p>
-    pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label_group_name = Some(input.into());
+    pub fn label_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the label group to be used for label data. </p>
-    pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.label_group_name = input;
         self
     }

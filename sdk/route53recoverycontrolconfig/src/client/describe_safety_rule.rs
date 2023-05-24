@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSafetyRule`](crate::operation::describe_safety_rule::builders::DescribeSafetyRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`safety_rule_arn(impl Into<String>)`](crate::operation::describe_safety_rule::builders::DescribeSafetyRuleFluentBuilder::safety_rule_arn) / [`set_safety_rule_arn(Option<String>)`](crate::operation::describe_safety_rule::builders::DescribeSafetyRuleFluentBuilder::set_safety_rule_arn): <p>The ARN of the safety rule.</p>
+    ///   - [`safety_rule_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_safety_rule::builders::DescribeSafetyRuleFluentBuilder::safety_rule_arn) / [`set_safety_rule_arn(Option<String>)`](crate::operation::describe_safety_rule::builders::DescribeSafetyRuleFluentBuilder::set_safety_rule_arn): <p>The ARN of the safety rule.</p>
     /// - On success, responds with [`DescribeSafetyRuleOutput`](crate::operation::describe_safety_rule::DescribeSafetyRuleOutput) with field(s):
     ///   - [`assertion_rule(Option<AssertionRule>)`](crate::operation::describe_safety_rule::DescribeSafetyRuleOutput::assertion_rule): <p>The assertion rule in the response.</p>
     ///   - [`gating_rule(Option<GatingRule>)`](crate::operation::describe_safety_rule::DescribeSafetyRuleOutput::gating_rule): <p>The gating rule in the response.</p>

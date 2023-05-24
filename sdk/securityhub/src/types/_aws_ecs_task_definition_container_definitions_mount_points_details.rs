@@ -2,21 +2,21 @@
 
 /// <p>A mount point for the data volumes in the container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
     /// <p>The path on the container to mount the host volume at.</p>
     #[doc(hidden)]
-    pub container_path: std::option::Option<std::string::String>,
+    pub container_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether the container has read-only access to the volume.</p>
     #[doc(hidden)]
     pub read_only: bool,
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
     #[doc(hidden)]
-    pub source_volume: std::option::Option<std::string::String>,
+    pub source_volume: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
     /// <p>The path on the container to mount the host volume at.</p>
-    pub fn container_path(&self) -> std::option::Option<&str> {
+    pub fn container_path(&self) -> ::std::option::Option<&str> {
         self.container_path.as_deref()
     }
     /// <p>Whether the container has read-only access to the volume.</p>
@@ -24,7 +24,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
         self.read_only
     }
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
-    pub fn source_volume(&self) -> std::option::Option<&str> {
+    pub fn source_volume(&self) -> ::std::option::Option<&str> {
         self.source_volume.as_deref()
     }
 }
@@ -39,40 +39,54 @@ impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
-    pub(crate) container_path: std::option::Option<std::string::String>,
-    pub(crate) read_only: std::option::Option<bool>,
-    pub(crate) source_volume: std::option::Option<std::string::String>,
+    pub(crate) container_path: ::std::option::Option<::std::string::String>,
+    pub(crate) read_only: ::std::option::Option<bool>,
+    pub(crate) source_volume: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsBuilder {
     /// <p>The path on the container to mount the host volume at.</p>
-    pub fn container_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_path = Some(input.into());
+    pub fn container_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path on the container to mount the host volume at.</p>
-    pub fn set_container_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.container_path = input;
         self
     }
     /// <p>Whether the container has read-only access to the volume.</p>
     pub fn read_only(mut self, input: bool) -> Self {
-        self.read_only = Some(input);
+        self.read_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the container has read-only access to the volume.</p>
-    pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
     }
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
-    pub fn source_volume(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_volume = Some(input.into());
+    pub fn source_volume(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_volume = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the volume to mount. Must match the name of a volume listed in <code>VolumeDetails</code> for the task definition.</p>
-    pub fn set_source_volume(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_volume(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_volume = input;
         self
     }

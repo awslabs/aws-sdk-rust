@@ -21,56 +21,59 @@ pub use crate::operation::register_image::_register_image_input::RegisterImageIn
 /// <li> <p>Create an AMI from the instance using <code>CreateImage</code>.</p> </li>
 /// </ol>
 /// <p>If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched from an AMI with a billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterImageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::register_image::builders::RegisterImageInputBuilder,
 }
 impl RegisterImageFluentBuilder {
     /// Creates a new `RegisterImage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_image::RegisterImage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::register_image::RegisterImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_image::RegisterImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_image::RegisterImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_image::RegisterImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_image::RegisterImageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -83,19 +86,25 @@ impl RegisterImageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_image::RegisterImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_image::RegisterImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_image::RegisterImageError>,
     > {
         self.send_middleware().await
     }
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
-    pub fn image_location(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.image_location(input.into());
         self
     }
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
-    pub fn set_image_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_location(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_image_location(input);
         self
     }
@@ -109,7 +118,7 @@ impl RegisterImageFluentBuilder {
     /// <p>Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed AMIs, the architecture specified in the manifest file.</p>
     pub fn set_architecture(
         mut self,
-        input: std::option::Option<crate::types::ArchitectureValues>,
+        input: ::std::option::Option<crate::types::ArchitectureValues>,
     ) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
@@ -130,18 +139,18 @@ impl RegisterImageFluentBuilder {
     /// <p>If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost only. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_block_device_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     ) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
     }
     /// <p>A description for your AMI.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for your AMI.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -151,7 +160,7 @@ impl RegisterImageFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -163,29 +172,29 @@ impl RegisterImageFluentBuilder {
     }
     /// <p>Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any instances that you launch from the AMI.</p>
     /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn set_ena_support(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ena_support(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ena_support(input);
         self
     }
     /// <p>The ID of the kernel.</p>
-    pub fn kernel_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kernel_id(input.into());
         self
     }
     /// <p>The ID of the kernel.</p>
-    pub fn set_kernel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kernel_id(input);
         self
     }
     /// <p>A name for your AMI.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A name for your AMI.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -195,7 +204,10 @@ impl RegisterImageFluentBuilder {
     ///
     /// <p>The billing product codes. Your account must be authorized to specify billing product codes.</p>
     /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
-    pub fn billing_products(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn billing_products(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.billing_products(input.into());
         self
     }
@@ -203,35 +215,44 @@ impl RegisterImageFluentBuilder {
     /// <p>If your account is not authorized to specify billing product codes, you can publish AMIs that include billable software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon Web Services Marketplace. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
     pub fn set_billing_products(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_billing_products(input);
         self
     }
     /// <p>The ID of the RAM disk.</p>
-    pub fn ramdisk_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ramdisk_id(input.into());
         self
     }
     /// <p>The ID of the RAM disk.</p>
-    pub fn set_ramdisk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ramdisk_id(input);
         self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn root_device_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn root_device_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.root_device_name(input.into());
         self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn set_root_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_root_device_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_root_device_name(input);
         self
     }
     /// <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual Function interface for the AMI and any instances that you launch from the AMI.</p>
     /// <p>There is no way to disable <code>sriovNetSupport</code> at this time.</p>
     /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
-    pub fn sriov_net_support(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sriov_net_support(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sriov_net_support(input.into());
         self
     }
@@ -240,14 +261,17 @@ impl RegisterImageFluentBuilder {
     /// <p>This option is supported only for HVM AMIs. Specifying this option with a PV AMI can make instances launched from the AMI unreachable.</p>
     pub fn set_sriov_net_support(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_sriov_net_support(input);
         self
     }
     /// <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
     /// <p>Default: <code>paravirtual</code> </p>
-    pub fn virtualization_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn virtualization_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.virtualization_type(input.into());
         self
     }
@@ -255,7 +279,7 @@ impl RegisterImageFluentBuilder {
     /// <p>Default: <code>paravirtual</code> </p>
     pub fn set_virtualization_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_virtualization_type(input);
         self
@@ -274,7 +298,7 @@ impl RegisterImageFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_boot_mode(
         mut self,
-        input: std::option::Option<crate::types::BootModeValues>,
+        input: ::std::option::Option<crate::types::BootModeValues>,
     ) -> Self {
         self.inner = self.inner.set_boot_mode(input);
         self
@@ -287,18 +311,18 @@ impl RegisterImageFluentBuilder {
     /// <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_tpm_support(
         mut self,
-        input: std::option::Option<crate::types::TpmSupportValues>,
+        input: ::std::option::Option<crate::types::TpmSupportValues>,
     ) -> Self {
         self.inner = self.inner.set_tpm_support(input);
         self
     }
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn uefi_data(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn uefi_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.uefi_data(input.into());
         self
     }
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_uefi_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uefi_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_uefi_data(input);
         self
     }
@@ -314,7 +338,7 @@ impl RegisterImageFluentBuilder {
     /// </note>
     pub fn set_imds_support(
         mut self,
-        input: std::option::Option<crate::types::ImdsSupportValues>,
+        input: ::std::option::Option<crate::types::ImdsSupportValues>,
     ) -> Self {
         self.inner = self.inner.set_imds_support(input);
         self

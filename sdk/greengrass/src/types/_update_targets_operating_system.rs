@@ -40,13 +40,13 @@
 /// The operating system of the cores which are the targets of an update.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UpdateTargetsOperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum UpdateTargetsOperatingSystem {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UpdateTargetsOperatingSystem {
+impl ::std::convert::From<&str> for UpdateTargetsOperatingSystem {
     fn from(s: &str) -> Self {
         match s {
             "amazon_linux" => UpdateTargetsOperatingSystem::AmazonLinux,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for UpdateTargetsOperatingSystem {
         }
     }
 }
-impl std::str::FromStr for UpdateTargetsOperatingSystem {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UpdateTargetsOperatingSystem {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateTargetsOperatingSystem::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UpdateTargetsOperatingSystem::from(s))
     }
 }
 impl UpdateTargetsOperatingSystem {
@@ -96,7 +96,7 @@ impl UpdateTargetsOperatingSystem {
         &["amazon_linux", "openwrt", "raspbian", "ubuntu"]
     }
 }
-impl AsRef<str> for UpdateTargetsOperatingSystem {
+impl ::std::convert::AsRef<str> for UpdateTargetsOperatingSystem {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

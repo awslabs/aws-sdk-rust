@@ -2,29 +2,29 @@
 
 /// <p>Information about a reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentReference {
     /// <p>Identifier of the attachment reference.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The location path of the attachment reference.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>Status of the attachment reference type.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReferenceStatus>,
+    pub status: ::std::option::Option<crate::types::ReferenceStatus>,
 }
 impl AttachmentReference {
     /// <p>Identifier of the attachment reference.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The location path of the attachment reference.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>Status of the attachment reference type.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReferenceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceStatus> {
         self.status.as_ref()
     }
 }
@@ -37,40 +37,45 @@ impl AttachmentReference {
 
 /// A builder for [`AttachmentReference`](crate::types::AttachmentReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttachmentReferenceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ReferenceStatus>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ReferenceStatus>,
 }
 impl AttachmentReferenceBuilder {
     /// <p>Identifier of the attachment reference.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the attachment reference.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The location path of the attachment reference.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location path of the attachment reference.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>Status of the attachment reference type.</p>
     pub fn status(mut self, input: crate::types::ReferenceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the attachment reference type.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ReferenceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ReferenceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }

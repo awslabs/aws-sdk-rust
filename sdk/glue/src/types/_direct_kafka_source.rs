@@ -2,47 +2,47 @@
 
 /// <p>Specifies an Apache Kafka data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectKafkaSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the streaming options.</p>
     #[doc(hidden)]
-    pub streaming_options: std::option::Option<crate::types::KafkaStreamingSourceOptions>,
+    pub streaming_options: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
     /// <p>The amount of time to spend processing each micro batch.</p>
     #[doc(hidden)]
-    pub window_size: std::option::Option<i32>,
+    pub window_size: ::std::option::Option<i32>,
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
     #[doc(hidden)]
-    pub detect_schema: std::option::Option<bool>,
+    pub detect_schema: ::std::option::Option<bool>,
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
     #[doc(hidden)]
-    pub data_preview_options: std::option::Option<crate::types::StreamingDataPreviewOptions>,
+    pub data_preview_options: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
 }
 impl DirectKafkaSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies the streaming options.</p>
     pub fn streaming_options(
         &self,
-    ) -> std::option::Option<&crate::types::KafkaStreamingSourceOptions> {
+    ) -> ::std::option::Option<&crate::types::KafkaStreamingSourceOptions> {
         self.streaming_options.as_ref()
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
-    pub fn window_size(&self) -> std::option::Option<i32> {
+    pub fn window_size(&self) -> ::std::option::Option<i32> {
         self.window_size
     }
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
-    pub fn detect_schema(&self) -> std::option::Option<bool> {
+    pub fn detect_schema(&self) -> ::std::option::Option<bool> {
         self.detect_schema
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
     pub fn data_preview_options(
         &self,
-    ) -> std::option::Option<&crate::types::StreamingDataPreviewOptions> {
+    ) -> ::std::option::Option<&crate::types::StreamingDataPreviewOptions> {
         self.data_preview_options.as_ref()
     }
 }
@@ -55,55 +55,58 @@ impl DirectKafkaSource {
 
 /// A builder for [`DirectKafkaSource`](crate::types::DirectKafkaSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DirectKafkaSourceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) streaming_options: std::option::Option<crate::types::KafkaStreamingSourceOptions>,
-    pub(crate) window_size: std::option::Option<i32>,
-    pub(crate) detect_schema: std::option::Option<bool>,
-    pub(crate) data_preview_options: std::option::Option<crate::types::StreamingDataPreviewOptions>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) streaming_options: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
+    pub(crate) window_size: ::std::option::Option<i32>,
+    pub(crate) detect_schema: ::std::option::Option<bool>,
+    pub(crate) data_preview_options:
+        ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
 }
 impl DirectKafkaSourceBuilder {
     /// <p>The name of the data store.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data store.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Specifies the streaming options.</p>
     pub fn streaming_options(mut self, input: crate::types::KafkaStreamingSourceOptions) -> Self {
-        self.streaming_options = Some(input);
+        self.streaming_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the streaming options.</p>
     pub fn set_streaming_options(
         mut self,
-        input: std::option::Option<crate::types::KafkaStreamingSourceOptions>,
+        input: ::std::option::Option<crate::types::KafkaStreamingSourceOptions>,
     ) -> Self {
         self.streaming_options = input;
         self
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
     pub fn window_size(mut self, input: i32) -> Self {
-        self.window_size = Some(input);
+        self.window_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time to spend processing each micro batch.</p>
-    pub fn set_window_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_window_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.window_size = input;
         self
     }
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
     pub fn detect_schema(mut self, input: bool) -> Self {
-        self.detect_schema = Some(input);
+        self.detect_schema = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to automatically determine the schema from the incoming data.</p>
-    pub fn set_detect_schema(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_detect_schema(mut self, input: ::std::option::Option<bool>) -> Self {
         self.detect_schema = input;
         self
     }
@@ -112,13 +115,13 @@ impl DirectKafkaSourceBuilder {
         mut self,
         input: crate::types::StreamingDataPreviewOptions,
     ) -> Self {
-        self.data_preview_options = Some(input);
+        self.data_preview_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies options related to data preview for viewing a sample of your data.</p>
     pub fn set_data_preview_options(
         mut self,
-        input: std::option::Option<crate::types::StreamingDataPreviewOptions>,
+        input: ::std::option::Option<crate::types::StreamingDataPreviewOptions>,
     ) -> Self {
         self.data_preview_options = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AlternateIdentifier {
     /// <p>The identifier issued to this resource by an external identity provider.</p>
     ExternalId(crate::types::ExternalId),
@@ -21,11 +21,11 @@ pub enum AlternateIdentifier {
 impl AlternateIdentifier {
     /// Tries to convert the enum instance into [`ExternalId`](crate::types::AlternateIdentifier::ExternalId), extracting the inner [`ExternalId`](crate::types::ExternalId).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_external_id(&self) -> std::result::Result<&crate::types::ExternalId, &Self> {
+    pub fn as_external_id(&self) -> ::std::result::Result<&crate::types::ExternalId, &Self> {
         if let AlternateIdentifier::ExternalId(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ExternalId`](crate::types::AlternateIdentifier::ExternalId).
@@ -36,11 +36,11 @@ impl AlternateIdentifier {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unique_attribute(
         &self,
-    ) -> std::result::Result<&crate::types::UniqueAttribute, &Self> {
+    ) -> ::std::result::Result<&crate::types::UniqueAttribute, &Self> {
         if let AlternateIdentifier::UniqueAttribute(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`UniqueAttribute`](crate::types::AlternateIdentifier::UniqueAttribute).

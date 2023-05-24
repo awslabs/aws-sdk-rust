@@ -2,29 +2,29 @@
 
 /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Alternative {
     /// <p>Contains transcribed text.</p>
     #[doc(hidden)]
-    pub transcript: std::option::Option<std::string::String>,
+    pub transcript: ::std::option::Option<::std::string::String>,
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::Item>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
     #[doc(hidden)]
-    pub entities: std::option::Option<std::vec::Vec<crate::types::Entity>>,
+    pub entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
 }
 impl Alternative {
     /// <p>Contains transcribed text.</p>
-    pub fn transcript(&self) -> std::option::Option<&str> {
+    pub fn transcript(&self) -> ::std::option::Option<&str> {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::Item]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::Item]> {
         self.items.as_deref()
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::types::Entity]> {
+    pub fn entities(&self) -> ::std::option::Option<&[crate::types::Entity]> {
         self.entities.as_deref()
     }
 }
@@ -37,20 +37,22 @@ impl Alternative {
 
 /// A builder for [`Alternative`](crate::types::Alternative).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlternativeBuilder {
-    pub(crate) transcript: std::option::Option<std::string::String>,
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::Item>>,
-    pub(crate) entities: std::option::Option<std::vec::Vec<crate::types::Entity>>,
+    pub(crate) transcript: ::std::option::Option<::std::string::String>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
+    pub(crate) entities: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
 }
 impl AlternativeBuilder {
     /// <p>Contains transcribed text.</p>
-    pub fn transcript(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transcript = Some(input.into());
+    pub fn transcript(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transcript = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains transcribed text.</p>
-    pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transcript = input;
         self
     }
@@ -62,13 +64,13 @@ impl AlternativeBuilder {
     pub fn items(mut self, input: crate::types::Item) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Item>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Item>>,
     ) -> Self {
         self.items = input;
         self
@@ -81,13 +83,13 @@ impl AlternativeBuilder {
     pub fn entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.entities.unwrap_or_default();
         v.push(input);
-        self.entities = Some(v);
+        self.entities = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
     pub fn set_entities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Entity>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Entity>>,
     ) -> Self {
         self.entities = input;
         self

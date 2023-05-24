@@ -2,7 +2,7 @@
 
 /// <p>Represents the JSON-specific options that define how input is to be interpreted by Glue DataBrew.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonOptions {
     /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl JsonOptions {
 
 /// A builder for [`JsonOptions`](crate::types::JsonOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JsonOptionsBuilder {
-    pub(crate) multi_line: std::option::Option<bool>,
+    pub(crate) multi_line: ::std::option::Option<bool>,
 }
 impl JsonOptionsBuilder {
     /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
     pub fn multi_line(mut self, input: bool) -> Self {
-        self.multi_line = Some(input);
+        self.multi_line = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
-    pub fn set_multi_line(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_multi_line(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_line = input;
         self
     }

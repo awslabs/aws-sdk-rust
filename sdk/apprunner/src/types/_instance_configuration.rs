@@ -2,33 +2,33 @@
 
 /// <p>Describes the runtime configuration of an App Runner service instance (scaling unit).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceConfiguration {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code> </p>
     #[doc(hidden)]
-    pub cpu: std::option::Option<std::string::String>,
+    pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code> </p>
     #[doc(hidden)]
-    pub memory: std::option::Option<std::string::String>,
+    pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
     #[doc(hidden)]
-    pub instance_role_arn: std::option::Option<std::string::String>,
+    pub instance_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl InstanceConfiguration {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code> </p>
-    pub fn cpu(&self) -> std::option::Option<&str> {
+    pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code> </p>
-    pub fn memory(&self) -> std::option::Option<&str> {
+    pub fn memory(&self) -> ::std::option::Option<&str> {
         self.memory.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
-    pub fn instance_role_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_role_arn(&self) -> ::std::option::Option<&str> {
         self.instance_role_arn.as_deref()
     }
 }
@@ -41,46 +41,51 @@ impl InstanceConfiguration {
 
 /// A builder for [`InstanceConfiguration`](crate::types::InstanceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceConfigurationBuilder {
-    pub(crate) cpu: std::option::Option<std::string::String>,
-    pub(crate) memory: std::option::Option<std::string::String>,
-    pub(crate) instance_role_arn: std::option::Option<std::string::String>,
+    pub(crate) cpu: ::std::option::Option<::std::string::String>,
+    pub(crate) memory: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl InstanceConfigurationBuilder {
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code> </p>
-    pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cpu = Some(input.into());
+    pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cpu = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>1 vCPU</code> </p>
-    pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu = input;
         self
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code> </p>
-    pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
-        self.memory = Some(input.into());
+    pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.memory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
     /// <p>Default: <code>2 GB</code> </p>
-    pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
-    pub fn instance_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_role_arn = Some(input.into());
+    pub fn instance_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls any Amazon Web Services APIs.</p>
     pub fn set_instance_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_role_arn = input;
         self

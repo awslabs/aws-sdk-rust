@@ -3,24 +3,24 @@
 /// <p>Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's value.</p>
 /// <p>For more information about the <code>X-Frame-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyFrameOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
-    pub r#override: std::option::Option<bool>,
+    pub r#override: ::std::option::Option<bool>,
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     #[doc(hidden)]
-    pub frame_option: std::option::Option<crate::types::FrameOptionsList>,
+    pub frame_option: ::std::option::Option<crate::types::FrameOptionsList>,
 }
 impl ResponseHeadersPolicyFrameOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn r#override(&self) -> std::option::Option<bool> {
+    pub fn r#override(&self) -> ::std::option::Option<bool> {
         self.r#override
     }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
-    pub fn frame_option(&self) -> std::option::Option<&crate::types::FrameOptionsList> {
+    pub fn frame_option(&self) -> ::std::option::Option<&crate::types::FrameOptionsList> {
         self.frame_option.as_ref()
     }
 }
@@ -33,33 +33,35 @@ impl ResponseHeadersPolicyFrameOptions {
 
 /// A builder for [`ResponseHeadersPolicyFrameOptions`](crate::types::ResponseHeadersPolicyFrameOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseHeadersPolicyFrameOptionsBuilder {
-    pub(crate) r#override: std::option::Option<bool>,
-    pub(crate) frame_option: std::option::Option<crate::types::FrameOptionsList>,
+    pub(crate) r#override: ::std::option::Option<bool>,
+    pub(crate) frame_option: ::std::option::Option<crate::types::FrameOptionsList>,
 }
 impl ResponseHeadersPolicyFrameOptionsBuilder {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(mut self, input: bool) -> Self {
-        self.r#override = Some(input);
+        self.r#override = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Frame-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#override = input;
         self
     }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn frame_option(mut self, input: crate::types::FrameOptionsList) -> Self {
-        self.frame_option = Some(input);
+        self.frame_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and <code>SAMEORIGIN</code>.</p>
     /// <p>For more information about these values, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn set_frame_option(
         mut self,
-        input: std::option::Option<crate::types::FrameOptionsList>,
+        input: ::std::option::Option<crate::types::FrameOptionsList>,
     ) -> Self {
         self.frame_option = input;
         self

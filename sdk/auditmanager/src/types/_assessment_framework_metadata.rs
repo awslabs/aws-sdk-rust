@@ -2,29 +2,29 @@
 
 /// <p> The metadata that's associated with a standard framework or a custom framework. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentFrameworkMetadata {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the framework. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> The framework type, such as a standard framework or a custom framework. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::FrameworkType>,
+    pub r#type: ::std::option::Option<crate::types::FrameworkType>,
     /// <p> The name of the framework. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the framework. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The logo that's associated with the framework. </p>
     #[doc(hidden)]
-    pub logo: std::option::Option<std::string::String>,
+    pub logo: ::std::option::Option<::std::string::String>,
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     #[doc(hidden)]
-    pub compliance_type: std::option::Option<std::string::String>,
+    pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p> The number of controls that are associated with the framework. </p>
     #[doc(hidden)]
     pub controls_count: i32,
@@ -33,38 +33,38 @@ pub struct AssessmentFrameworkMetadata {
     pub control_sets_count: i32,
     /// <p> The time when the framework was created. </p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time when the framework was most recently updated. </p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssessmentFrameworkMetadata {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The unique identifier for the framework. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The framework type, such as a standard framework or a custom framework. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::FrameworkType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FrameworkType> {
         self.r#type.as_ref()
     }
     /// <p> The name of the framework. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of the framework. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The logo that's associated with the framework. </p>
-    pub fn logo(&self) -> std::option::Option<&str> {
+    pub fn logo(&self) -> ::std::option::Option<&str> {
         self.logo.as_deref()
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn compliance_type(&self) -> std::option::Option<&str> {
+    pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
     /// <p> The number of controls that are associated with the framework. </p>
@@ -76,11 +76,11 @@ impl AssessmentFrameworkMetadata {
         self.control_sets_count
     }
     /// <p> The time when the framework was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The time when the framework was most recently updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -93,133 +93,141 @@ impl AssessmentFrameworkMetadata {
 
 /// A builder for [`AssessmentFrameworkMetadata`](crate::types::AssessmentFrameworkMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssessmentFrameworkMetadataBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::FrameworkType>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) logo: std::option::Option<std::string::String>,
-    pub(crate) compliance_type: std::option::Option<std::string::String>,
-    pub(crate) controls_count: std::option::Option<i32>,
-    pub(crate) control_sets_count: std::option::Option<i32>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::FrameworkType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) logo: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) controls_count: ::std::option::Option<i32>,
+    pub(crate) control_sets_count: ::std::option::Option<i32>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssessmentFrameworkMetadataBuilder {
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the framework. </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p> The unique identifier for the framework. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the framework. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> The framework type, such as a standard framework or a custom framework. </p>
     pub fn r#type(mut self, input: crate::types::FrameworkType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The framework type, such as a standard framework or a custom framework. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::FrameworkType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::FrameworkType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p> The name of the framework. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the framework. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The description of the framework. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of the framework. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> The logo that's associated with the framework. </p>
-    pub fn logo(mut self, input: impl Into<std::string::String>) -> Self {
-        self.logo = Some(input.into());
+    pub fn logo(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.logo = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The logo that's associated with the framework. </p>
-    pub fn set_logo(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_logo(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logo = input;
         self
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compliance_type = Some(input.into());
+    pub fn compliance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_compliance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.compliance_type = input;
         self
     }
     /// <p> The number of controls that are associated with the framework. </p>
     pub fn controls_count(mut self, input: i32) -> Self {
-        self.controls_count = Some(input);
+        self.controls_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of controls that are associated with the framework. </p>
-    pub fn set_controls_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_controls_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.controls_count = input;
         self
     }
     /// <p> The number of control sets that are associated with the framework. </p>
     pub fn control_sets_count(mut self, input: i32) -> Self {
-        self.control_sets_count = Some(input);
+        self.control_sets_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of control sets that are associated with the framework. </p>
-    pub fn set_control_sets_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_control_sets_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.control_sets_count = input;
         self
     }
     /// <p> The time when the framework was created. </p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time when the framework was created. </p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p> The time when the framework was most recently updated. </p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time when the framework was most recently updated. </p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self

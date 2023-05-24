@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`FlushStageCache`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::set_stage_name): <p>The name of the stage to flush its cache.</p>
+    ///   - [`rest_api_id(impl ::std::convert::Into<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
+    ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::flush_stage_cache::builders::FlushStageCacheFluentBuilder::set_stage_name): <p>The name of the stage to flush its cache.</p>
     /// - On success, responds with [`FlushStageCacheOutput`](crate::operation::flush_stage_cache::FlushStageCacheOutput)
     /// - On failure, responds with [`SdkError<FlushStageCacheError>`](crate::operation::flush_stage_cache::FlushStageCacheError)
     pub fn flush_stage_cache(

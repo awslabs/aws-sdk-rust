@@ -2,22 +2,22 @@
 
 /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>The tag key.</p>
     #[doc(hidden)]
-    pub resource_tag_key: std::option::Option<std::string::String>,
+    pub resource_tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value.</p>
     #[doc(hidden)]
-    pub resource_tag_value: std::option::Option<std::string::String>,
+    pub resource_tag_value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceTag {
     /// <p>The tag key.</p>
-    pub fn resource_tag_key(&self) -> std::option::Option<&str> {
+    pub fn resource_tag_key(&self) -> ::std::option::Option<&str> {
         self.resource_tag_key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn resource_tag_value(&self) -> std::option::Option<&str> {
+    pub fn resource_tag_value(&self) -> ::std::option::Option<&str> {
         self.resource_tag_value.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl ResourceTag {
 
 /// A builder for [`ResourceTag`](crate::types::ResourceTag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceTagBuilder {
-    pub(crate) resource_tag_key: std::option::Option<std::string::String>,
-    pub(crate) resource_tag_value: std::option::Option<std::string::String>,
+    pub(crate) resource_tag_key: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_tag_value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceTagBuilder {
     /// <p>The tag key.</p>
-    pub fn resource_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_tag_key = Some(input.into());
+    pub fn resource_tag_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag key.</p>
-    pub fn set_resource_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_tag_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_tag_key = input;
         self
     }
     /// <p>The tag value.</p>
-    pub fn resource_tag_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_tag_value = Some(input.into());
+    pub fn resource_tag_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_tag_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag value.</p>
     pub fn set_resource_tag_value(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_tag_value = input;
         self

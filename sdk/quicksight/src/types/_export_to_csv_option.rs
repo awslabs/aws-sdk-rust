@@ -2,15 +2,15 @@
 
 /// <p>Export to .csv option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportToCsvOption {
     /// <p>Availability status.</p>
     #[doc(hidden)]
-    pub availability_status: std::option::Option<crate::types::DashboardBehavior>,
+    pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl ExportToCsvOption {
     /// <p>Availability status.</p>
-    pub fn availability_status(&self) -> std::option::Option<&crate::types::DashboardBehavior> {
+    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::DashboardBehavior> {
         self.availability_status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ExportToCsvOption {
 
 /// A builder for [`ExportToCsvOption`](crate::types::ExportToCsvOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportToCsvOptionBuilder {
-    pub(crate) availability_status: std::option::Option<crate::types::DashboardBehavior>,
+    pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl ExportToCsvOptionBuilder {
     /// <p>Availability status.</p>
     pub fn availability_status(mut self, input: crate::types::DashboardBehavior) -> Self {
-        self.availability_status = Some(input);
+        self.availability_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Availability status.</p>
     pub fn set_availability_status(
         mut self,
-        input: std::option::Option<crate::types::DashboardBehavior>,
+        input: ::std::option::Option<crate::types::DashboardBehavior>,
     ) -> Self {
         self.availability_status = input;
         self

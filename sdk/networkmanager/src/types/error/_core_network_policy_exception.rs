@@ -2,48 +2,48 @@
 
 /// <p>Describes a core network policy exception.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicyException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Describes a core network policy exception.</p>
     #[doc(hidden)]
-    pub errors: std::option::Option<std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl CoreNetworkPolicyException {
     /// <p>Describes a core network policy exception.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::CoreNetworkPolicyError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::CoreNetworkPolicyError]> {
         self.errors.as_deref()
     }
 }
 impl CoreNetworkPolicyException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CoreNetworkPolicyException {
+impl ::std::fmt::Display for CoreNetworkPolicyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CoreNetworkPolicyException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "CoreNetworkPolicyException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for CoreNetworkPolicyException {}
-impl aws_http::request_id::RequestId for crate::types::error::CoreNetworkPolicyException {
+impl ::std::error::Error for CoreNetworkPolicyException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::CoreNetworkPolicyException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CoreNetworkPolicyException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CoreNetworkPolicyException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,20 +56,22 @@ impl CoreNetworkPolicyException {
 
 /// A builder for [`CoreNetworkPolicyException`](crate::types::error::CoreNetworkPolicyException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoreNetworkPolicyExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl CoreNetworkPolicyExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -81,19 +83,19 @@ impl CoreNetworkPolicyExceptionBuilder {
     pub fn errors(mut self, input: crate::types::CoreNetworkPolicyError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
-        self.errors = Some(v);
+        self.errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Describes a core network policy exception.</p>
     pub fn set_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkPolicyError>>,
     ) -> Self {
         self.errors = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -101,7 +103,7 @@ impl CoreNetworkPolicyExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

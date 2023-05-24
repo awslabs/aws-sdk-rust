@@ -3,15 +3,15 @@
 /// <p>Enable custom Time to Live (TTL) settings for rows and columns without setting a TTL default for the specified table.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_enabling">Enabling TTL on tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeToLive {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::TimeToLiveStatus>,
+    pub status: ::std::option::Option<crate::types::TimeToLiveStatus>,
 }
 impl TimeToLive {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TimeToLiveStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::TimeToLiveStatus> {
         self.status.as_ref()
     }
 }
@@ -24,20 +24,22 @@ impl TimeToLive {
 
 /// A builder for [`TimeToLive`](crate::types::TimeToLive).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeToLiveBuilder {
-    pub(crate) status: std::option::Option<crate::types::TimeToLiveStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::TimeToLiveStatus>,
 }
 impl TimeToLiveBuilder {
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
     pub fn status(mut self, input: crate::types::TimeToLiveStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Shows how to enable custom Time to Live (TTL) settings for the specified table.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::TimeToLiveStatus>,
+        input: ::std::option::Option<crate::types::TimeToLiveStatus>,
     ) -> Self {
         self.status = input;
         self

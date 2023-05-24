@@ -2,22 +2,22 @@
 
 /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTimeRange {
     /// <p> The start time of the time range. </p>
     #[doc(hidden)]
-    pub from_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end time of the time range. </p>
     #[doc(hidden)]
-    pub to_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StartTimeRange {
     /// <p> The start time of the time range. </p>
-    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
     /// <p> The end time of the time range. </p>
-    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
 }
@@ -30,29 +30,37 @@ impl StartTimeRange {
 
 /// A builder for [`StartTimeRange`](crate::types::StartTimeRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartTimeRangeBuilder {
-    pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StartTimeRangeBuilder {
     /// <p> The start time of the time range. </p>
-    pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.from_time = Some(input);
+    pub fn from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.from_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The start time of the time range. </p>
-    pub fn set_from_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_from_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.from_time = input;
         self
     }
     /// <p> The end time of the time range. </p>
-    pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.to_time = Some(input);
+    pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.to_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The end time of the time range. </p>
-    pub fn set_to_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_to_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.to_time = input;
         self
     }

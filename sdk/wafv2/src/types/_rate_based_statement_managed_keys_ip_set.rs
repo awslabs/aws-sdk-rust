@@ -4,22 +4,22 @@
 /// <p>A rate-based rule applies its rule action to requests from IP addresses that are in the rule's managed keys list and that match the rule's scope-down statement. When a rule has no scope-down statement, it applies the action to all requests from the IP addresses that are in the list. The rule applies its rule action to rate limit the matching requests. The action is usually Block but it can be any valid rule action except for Allow. </p>
 /// <p>The maximum number of IP addresses that can be rate limited by a single rate-based rule instance is 10,000. If more than 10,000 addresses exceed the rate limit, WAF limits those with the highest rates. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateBasedStatementManagedKeysIpSet {
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     #[doc(hidden)]
-    pub ip_address_version: std::option::Option<crate::types::IpAddressVersion>,
+    pub ip_address_version: ::std::option::Option<crate::types::IpAddressVersion>,
     /// <p>The IP addresses that are currently blocked.</p>
     #[doc(hidden)]
-    pub addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RateBasedStatementManagedKeysIpSet {
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    pub fn ip_address_version(&self) -> std::option::Option<&crate::types::IpAddressVersion> {
+    pub fn ip_address_version(&self) -> ::std::option::Option<&crate::types::IpAddressVersion> {
         self.ip_address_version.as_ref()
     }
     /// <p>The IP addresses that are currently blocked.</p>
-    pub fn addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.addresses.as_deref()
     }
 }
@@ -32,21 +32,23 @@ impl RateBasedStatementManagedKeysIpSet {
 
 /// A builder for [`RateBasedStatementManagedKeysIpSet`](crate::types::RateBasedStatementManagedKeysIpSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RateBasedStatementManagedKeysIpSetBuilder {
-    pub(crate) ip_address_version: std::option::Option<crate::types::IpAddressVersion>,
-    pub(crate) addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) ip_address_version: ::std::option::Option<crate::types::IpAddressVersion>,
+    pub(crate) addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RateBasedStatementManagedKeysIpSetBuilder {
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     pub fn ip_address_version(mut self, input: crate::types::IpAddressVersion) -> Self {
-        self.ip_address_version = Some(input);
+        self.ip_address_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     pub fn set_ip_address_version(
         mut self,
-        input: std::option::Option<crate::types::IpAddressVersion>,
+        input: ::std::option::Option<crate::types::IpAddressVersion>,
     ) -> Self {
         self.ip_address_version = input;
         self
@@ -56,16 +58,16 @@ impl RateBasedStatementManagedKeysIpSetBuilder {
     /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
     ///
     /// <p>The IP addresses that are currently blocked.</p>
-    pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.addresses.unwrap_or_default();
         v.push(input.into());
-        self.addresses = Some(v);
+        self.addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IP addresses that are currently blocked.</p>
     pub fn set_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.addresses = input;
         self

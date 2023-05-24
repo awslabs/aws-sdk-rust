@@ -2,36 +2,36 @@
 
 /// Use Rectangle to identify a specific area of the video frame.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Rectangle {
     /// Height of rectangle in pixels. Specify only even numbers.
     #[doc(hidden)]
-    pub height: std::option::Option<i32>,
+    pub height: ::std::option::Option<i32>,
     /// Width of rectangle in pixels. Specify only even numbers.
     #[doc(hidden)]
-    pub width: std::option::Option<i32>,
+    pub width: ::std::option::Option<i32>,
     /// The distance, in pixels, between the rectangle and the left edge of the video frame. Specify only even numbers.
     #[doc(hidden)]
-    pub x: std::option::Option<i32>,
+    pub x: ::std::option::Option<i32>,
     /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
     #[doc(hidden)]
-    pub y: std::option::Option<i32>,
+    pub y: ::std::option::Option<i32>,
 }
 impl Rectangle {
     /// Height of rectangle in pixels. Specify only even numbers.
-    pub fn height(&self) -> std::option::Option<i32> {
+    pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
     }
     /// Width of rectangle in pixels. Specify only even numbers.
-    pub fn width(&self) -> std::option::Option<i32> {
+    pub fn width(&self) -> ::std::option::Option<i32> {
         self.width
     }
     /// The distance, in pixels, between the rectangle and the left edge of the video frame. Specify only even numbers.
-    pub fn x(&self) -> std::option::Option<i32> {
+    pub fn x(&self) -> ::std::option::Option<i32> {
         self.x
     }
     /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
-    pub fn y(&self) -> std::option::Option<i32> {
+    pub fn y(&self) -> ::std::option::Option<i32> {
         self.y
     }
 }
@@ -44,51 +44,53 @@ impl Rectangle {
 
 /// A builder for [`Rectangle`](crate::types::Rectangle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RectangleBuilder {
-    pub(crate) height: std::option::Option<i32>,
-    pub(crate) width: std::option::Option<i32>,
-    pub(crate) x: std::option::Option<i32>,
-    pub(crate) y: std::option::Option<i32>,
+    pub(crate) height: ::std::option::Option<i32>,
+    pub(crate) width: ::std::option::Option<i32>,
+    pub(crate) x: ::std::option::Option<i32>,
+    pub(crate) y: ::std::option::Option<i32>,
 }
 impl RectangleBuilder {
     /// Height of rectangle in pixels. Specify only even numbers.
     pub fn height(mut self, input: i32) -> Self {
-        self.height = Some(input);
+        self.height = ::std::option::Option::Some(input);
         self
     }
     /// Height of rectangle in pixels. Specify only even numbers.
-    pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
     }
     /// Width of rectangle in pixels. Specify only even numbers.
     pub fn width(mut self, input: i32) -> Self {
-        self.width = Some(input);
+        self.width = ::std::option::Option::Some(input);
         self
     }
     /// Width of rectangle in pixels. Specify only even numbers.
-    pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
     }
     /// The distance, in pixels, between the rectangle and the left edge of the video frame. Specify only even numbers.
     pub fn x(mut self, input: i32) -> Self {
-        self.x = Some(input);
+        self.x = ::std::option::Option::Some(input);
         self
     }
     /// The distance, in pixels, between the rectangle and the left edge of the video frame. Specify only even numbers.
-    pub fn set_x(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_x(mut self, input: ::std::option::Option<i32>) -> Self {
         self.x = input;
         self
     }
     /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
     pub fn y(mut self, input: i32) -> Self {
-        self.y = Some(input);
+        self.y = ::std::option::Option::Some(input);
         self
     }
     /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
-    pub fn set_y(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.y = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p> Request structure used for requests to update project configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectInput {
     /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
     #[doc(hidden)]
-    pub contents: std::option::Option<aws_smithy_types::Blob>,
+    pub contents: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p> Unique project identifier. </p>
     #[doc(hidden)]
-    pub project_id: std::option::Option<std::string::String>,
+    pub project_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInput {
     /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
-    pub fn contents(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn contents(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.contents.as_ref()
     }
     /// <p> Unique project identifier. </p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<&str> {
         self.project_id.as_deref()
     }
 }
@@ -30,40 +30,42 @@ impl UpdateProjectInput {
 
 /// A builder for [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateProjectInputBuilder {
-    pub(crate) contents: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) project_id: std::option::Option<std::string::String>,
+    pub(crate) contents: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) project_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInputBuilder {
     /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
-    pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.contents = Some(input);
+    pub fn contents(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.contents = ::std::option::Option::Some(input);
         self
     }
     /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
-    pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_contents(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.contents = input;
         self
     }
     /// <p> Unique project identifier. </p>
-    pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_id = Some(input.into());
+    pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Unique project identifier. </p>
-    pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_project::UpdateProjectInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_project::UpdateProjectInput {
+        ::std::result::Result::Ok(crate::operation::update_project::UpdateProjectInput {
             contents: self.contents,
             project_id: self.project_id,
         })

@@ -2,32 +2,32 @@
 
 /// <p>Details from an import from Amazon Redshift datashare response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// <p>A list of Amazon Redshift datashare asset sources.</p>
     #[doc(hidden)]
     pub asset_sources:
-        std::option::Option<std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
     /// <p>The unique identifier for the data set associated with this import job.</p>
     #[doc(hidden)]
-    pub data_set_id: std::option::Option<std::string::String>,
+    pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the revision associated with this import job.</p>
     #[doc(hidden)]
-    pub revision_id: std::option::Option<std::string::String>,
+    pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetsFromRedshiftDataSharesResponseDetails {
     /// <p>A list of Amazon Redshift datashare asset sources.</p>
     pub fn asset_sources(
         &self,
-    ) -> std::option::Option<&[crate::types::RedshiftDataShareAssetSourceEntry]> {
+    ) -> ::std::option::Option<&[crate::types::RedshiftDataShareAssetSourceEntry]> {
         self.asset_sources.as_deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
 }
@@ -41,12 +41,14 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetails {
 
 /// A builder for [`ImportAssetsFromRedshiftDataSharesResponseDetails`](crate::types::ImportAssetsFromRedshiftDataSharesResponseDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
     pub(crate) asset_sources:
-        std::option::Option<std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
-    pub(crate) data_set_id: std::option::Option<std::string::String>,
-    pub(crate) revision_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
+    pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
     /// Appends an item to `asset_sources`.
@@ -57,34 +59,36 @@ impl ImportAssetsFromRedshiftDataSharesResponseDetailsBuilder {
     pub fn asset_sources(mut self, input: crate::types::RedshiftDataShareAssetSourceEntry) -> Self {
         let mut v = self.asset_sources.unwrap_or_default();
         v.push(input);
-        self.asset_sources = Some(v);
+        self.asset_sources = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Amazon Redshift datashare asset sources.</p>
     pub fn set_asset_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RedshiftDataShareAssetSourceEntry>,
+        >,
     ) -> Self {
         self.asset_sources = input;
         self
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_id = Some(input.into());
+    pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revision_id = Some(input.into());
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }

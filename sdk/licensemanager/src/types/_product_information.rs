@@ -2,11 +2,11 @@
 
 /// <p>Describes product information for a license configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductInformation {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
     /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
@@ -27,11 +27,11 @@ pub struct ProductInformation {
     /// </ul>
     #[doc(hidden)]
     pub product_information_filter_list:
-        std::option::Option<std::vec::Vec<crate::types::ProductInformationFilter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>>,
 }
 impl ProductInformation {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
@@ -54,7 +54,7 @@ impl ProductInformation {
     /// </ul>
     pub fn product_information_filter_list(
         &self,
-    ) -> std::option::Option<&[crate::types::ProductInformationFilter]> {
+    ) -> ::std::option::Option<&[crate::types::ProductInformationFilter]> {
         self.product_information_filter_list.as_deref()
     }
 }
@@ -67,20 +67,28 @@ impl ProductInformation {
 
 /// A builder for [`ProductInformation`](crate::types::ProductInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductInformationBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) product_information_filter_list:
-        std::option::Option<std::vec::Vec<crate::types::ProductInformationFilter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>>,
 }
 impl ProductInformationBuilder {
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
@@ -112,7 +120,7 @@ impl ProductInformationBuilder {
     ) -> Self {
         let mut v = self.product_information_filter_list.unwrap_or_default();
         v.push(input);
-        self.product_information_filter_list = Some(v);
+        self.product_information_filter_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
@@ -135,7 +143,7 @@ impl ProductInformationBuilder {
     /// </ul>
     pub fn set_product_information_filter_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductInformationFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>>,
     ) -> Self {
         self.product_information_filter_list = input;
         self

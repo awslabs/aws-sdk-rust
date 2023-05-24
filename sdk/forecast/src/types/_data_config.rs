@@ -2,29 +2,30 @@
 
 /// <p>The data configuration for your dataset group and any additional datasets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataConfig {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
     #[doc(hidden)]
-    pub dataset_group_arn: std::option::Option<std::string::String>,
+    pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
     #[doc(hidden)]
-    pub attribute_configs: std::option::Option<std::vec::Vec<crate::types::AttributeConfig>>,
+    pub attribute_configs: ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
     #[doc(hidden)]
-    pub additional_datasets: std::option::Option<std::vec::Vec<crate::types::AdditionalDataset>>,
+    pub additional_datasets:
+        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
 }
 impl DataConfig {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
-    pub fn attribute_configs(&self) -> std::option::Option<&[crate::types::AttributeConfig]> {
+    pub fn attribute_configs(&self) -> ::std::option::Option<&[crate::types::AttributeConfig]> {
         self.attribute_configs.as_deref()
     }
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
-    pub fn additional_datasets(&self) -> std::option::Option<&[crate::types::AdditionalDataset]> {
+    pub fn additional_datasets(&self) -> ::std::option::Option<&[crate::types::AdditionalDataset]> {
         self.additional_datasets.as_deref()
     }
 }
@@ -37,23 +38,29 @@ impl DataConfig {
 
 /// A builder for [`DataConfig`](crate::types::DataConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataConfigBuilder {
-    pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
-    pub(crate) attribute_configs: std::option::Option<std::vec::Vec<crate::types::AttributeConfig>>,
+    pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_configs:
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
     pub(crate) additional_datasets:
-        std::option::Option<std::vec::Vec<crate::types::AdditionalDataset>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
 }
 impl DataConfigBuilder {
     /// <p>The ARN of the dataset group used to train the predictor.</p>
-    pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_group_arn = Some(input.into());
+    pub fn dataset_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the dataset group used to train the predictor.</p>
     pub fn set_dataset_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataset_group_arn = input;
         self
@@ -66,13 +73,13 @@ impl DataConfigBuilder {
     pub fn attribute_configs(mut self, input: crate::types::AttributeConfig) -> Self {
         let mut v = self.attribute_configs.unwrap_or_default();
         v.push(input);
-        self.attribute_configs = Some(v);
+        self.attribute_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Aggregation and filling options for attributes in your dataset group.</p>
     pub fn set_attribute_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeConfig>>,
     ) -> Self {
         self.attribute_configs = input;
         self
@@ -85,13 +92,13 @@ impl DataConfigBuilder {
     pub fn additional_datasets(mut self, input: crate::types::AdditionalDataset) -> Self {
         let mut v = self.additional_datasets.unwrap_or_default();
         v.push(input);
-        self.additional_datasets = Some(v);
+        self.additional_datasets = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional built-in datasets like Holidays and the Weather Index.</p>
     pub fn set_additional_datasets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdditionalDataset>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDataset>>,
     ) -> Self {
         self.additional_datasets = input;
         self

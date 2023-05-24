@@ -2,15 +2,15 @@
 
 /// <p>A source for a read set activation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartReadSetActivationJobSourceItem {
     /// <p>The source's read set ID.</p>
     #[doc(hidden)]
-    pub read_set_id: std::option::Option<std::string::String>,
+    pub read_set_id: ::std::option::Option<::std::string::String>,
 }
 impl StartReadSetActivationJobSourceItem {
     /// <p>The source's read set ID.</p>
-    pub fn read_set_id(&self) -> std::option::Option<&str> {
+    pub fn read_set_id(&self) -> ::std::option::Option<&str> {
         self.read_set_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl StartReadSetActivationJobSourceItem {
 
 /// A builder for [`StartReadSetActivationJobSourceItem`](crate::types::StartReadSetActivationJobSourceItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartReadSetActivationJobSourceItemBuilder {
-    pub(crate) read_set_id: std::option::Option<std::string::String>,
+    pub(crate) read_set_id: ::std::option::Option<::std::string::String>,
 }
 impl StartReadSetActivationJobSourceItemBuilder {
     /// <p>The source's read set ID.</p>
-    pub fn read_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.read_set_id = Some(input.into());
+    pub fn read_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.read_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's read set ID.</p>
-    pub fn set_read_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_read_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.read_set_id = input;
         self
     }

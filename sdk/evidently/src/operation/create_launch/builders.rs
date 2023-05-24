@@ -8,56 +8,59 @@ pub use crate::operation::create_launch::_create_launch_input::CreateLaunchInput
 /// <p>Creates a <i>launch</i> of a given feature. Before you create a launch, you must create the feature to use for the launch.</p>
 /// <p>You can use a launch to safely validate new features by serving them to a specified percentage of your users while you roll out the feature. You can monitor the performance of the new feature to help you decide when to ramp up traffic to more users. This helps you reduce risk and identify unintended consequences before you fully launch the feature.</p>
 /// <p>Don't use this operation to update an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLaunchFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_launch::builders::CreateLaunchInputBuilder,
 }
 impl CreateLaunchFluentBuilder {
     /// Creates a new `CreateLaunch`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_launch::CreateLaunch,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_launch::CreateLaunchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,39 +73,39 @@ impl CreateLaunchFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_launch::CreateLaunchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_launch::CreateLaunchError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name or ARN of the project that you want to create the launch in.</p>
-    pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
         self
     }
     /// <p>The name or ARN of the project that you want to create the launch in.</p>
-    pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project(input);
         self
     }
     /// <p>The name for the new launch.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name for the new launch.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>An optional description for the launch.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>An optional description for the launch.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -117,7 +120,7 @@ impl CreateLaunchFluentBuilder {
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
     pub fn set_scheduled_splits_config(
         mut self,
-        input: std::option::Option<crate::types::ScheduledSplitsLaunchConfig>,
+        input: ::std::option::Option<crate::types::ScheduledSplitsLaunchConfig>,
     ) -> Self {
         self.inner = self.inner.set_scheduled_splits_config(input);
         self
@@ -134,7 +137,7 @@ impl CreateLaunchFluentBuilder {
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
     pub fn set_metric_monitors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricMonitorConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>,
     ) -> Self {
         self.inner = self.inner.set_metric_monitors(input);
         self
@@ -151,20 +154,23 @@ impl CreateLaunchFluentBuilder {
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LaunchGroupConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>,
     ) -> Self {
         self.inner = self.inner.set_groups(input);
         self
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn randomization_salt(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.randomization_salt(input.into());
         self
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn set_randomization_salt(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_randomization_salt(input);
         self
@@ -180,8 +186,8 @@ impl CreateLaunchFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -193,8 +199,8 @@ impl CreateLaunchFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

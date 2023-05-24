@@ -2,22 +2,22 @@
 
 /// <p>Volume used by the Kubernetes workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
     /// <p>Volume name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
     #[doc(hidden)]
-    pub host_path: std::option::Option<crate::types::HostPath>,
+    pub host_path: ::std::option::Option<crate::types::HostPath>,
 }
 impl Volume {
     /// <p>Volume name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-    pub fn host_path(&self) -> std::option::Option<&crate::types::HostPath> {
+    pub fn host_path(&self) -> ::std::option::Option<&crate::types::HostPath> {
         self.host_path.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Volume {
 
 /// A builder for [`Volume`](crate::types::Volume).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) host_path: std::option::Option<crate::types::HostPath>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) host_path: ::std::option::Option<crate::types::HostPath>,
 }
 impl VolumeBuilder {
     /// <p>Volume name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Volume name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
     pub fn host_path(mut self, input: crate::types::HostPath) -> Self {
-        self.host_path = Some(input);
+        self.host_path = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a pre-existing file or directory on the host machine that the volume maps to.</p>
-    pub fn set_host_path(mut self, input: std::option::Option<crate::types::HostPath>) -> Self {
+    pub fn set_host_path(mut self, input: ::std::option::Option<crate::types::HostPath>) -> Self {
         self.host_path = input;
         self
     }

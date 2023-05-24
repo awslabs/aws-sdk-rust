@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopStack`](crate::operation::stop_stack::builders::StopStackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stack_id(impl Into<String>)`](crate::operation::stop_stack::builders::StopStackFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::stop_stack::builders::StopStackFluentBuilder::set_stack_id): <p>The stack ID.</p>
+    ///   - [`stack_id(impl ::std::convert::Into<String>)`](crate::operation::stop_stack::builders::StopStackFluentBuilder::stack_id) / [`set_stack_id(Option<String>)`](crate::operation::stop_stack::builders::StopStackFluentBuilder::set_stack_id): <p>The stack ID.</p>
     /// - On success, responds with [`StopStackOutput`](crate::operation::stop_stack::StopStackOutput)
     /// - On failure, responds with [`SdkError<StopStackError>`](crate::operation::stop_stack::StopStackError)
     pub fn stop_stack(&self) -> crate::operation::stop_stack::builders::StopStackFluentBuilder {

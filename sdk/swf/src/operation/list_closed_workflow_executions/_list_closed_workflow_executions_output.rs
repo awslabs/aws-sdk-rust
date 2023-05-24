@@ -2,29 +2,30 @@
 
 /// <p>Contains a paginated list of information about workflow executions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
     #[doc(hidden)]
-    pub execution_infos: std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
+    pub execution_infos:
+        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
     #[doc(hidden)]
-    pub next_page_token: std::option::Option<std::string::String>,
+    pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListClosedWorkflowExecutionsOutput {
     /// <p>The list of workflow information structures.</p>
-    pub fn execution_infos(&self) -> std::option::Option<&[crate::types::WorkflowExecutionInfo]> {
+    pub fn execution_infos(&self) -> ::std::option::Option<&[crate::types::WorkflowExecutionInfo]> {
         self.execution_infos.as_deref()
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListClosedWorkflowExecutionsOutput {
+impl ::aws_http::request_id::RequestId for ListClosedWorkflowExecutionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,11 +39,13 @@ impl ListClosedWorkflowExecutionsOutput {
 
 /// A builder for [`ListClosedWorkflowExecutionsOutput`](crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListClosedWorkflowExecutionsOutputBuilder {
     pub(crate) execution_infos:
-        std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
-    pub(crate) next_page_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
+    pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListClosedWorkflowExecutionsOutputBuilder {
@@ -54,26 +57,32 @@ impl ListClosedWorkflowExecutionsOutputBuilder {
     pub fn execution_infos(mut self, input: crate::types::WorkflowExecutionInfo) -> Self {
         let mut v = self.execution_infos.unwrap_or_default();
         v.push(input);
-        self.execution_infos = Some(v);
+        self.execution_infos = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of workflow information structures.</p>
     pub fn set_execution_infos(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionInfo>>,
     ) -> Self {
         self.execution_infos = input;
         self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_page_token = Some(input.into());
+    pub fn next_page_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
-    pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_page_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.next_page_token = input;
         self
     }

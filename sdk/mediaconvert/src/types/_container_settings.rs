@@ -2,71 +2,71 @@
 
 /// Container specific settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerSettings {
     /// These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
     #[doc(hidden)]
-    pub cmfc_settings: std::option::Option<crate::types::CmfcSettings>,
+    pub cmfc_settings: ::std::option::Option<crate::types::CmfcSettings>,
     /// Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
     #[doc(hidden)]
-    pub container: std::option::Option<crate::types::ContainerType>,
+    pub container: ::std::option::Option<crate::types::ContainerType>,
     /// Settings for F4v container
     #[doc(hidden)]
-    pub f4v_settings: std::option::Option<crate::types::F4vSettings>,
+    pub f4v_settings: ::std::option::Option<crate::types::F4vSettings>,
     /// MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
     #[doc(hidden)]
-    pub m2ts_settings: std::option::Option<crate::types::M2tsSettings>,
+    pub m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
     /// These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs.
     #[doc(hidden)]
-    pub m3u8_settings: std::option::Option<crate::types::M3u8Settings>,
+    pub m3u8_settings: ::std::option::Option<crate::types::M3u8Settings>,
     /// These settings relate to your QuickTime MOV output container.
     #[doc(hidden)]
-    pub mov_settings: std::option::Option<crate::types::MovSettings>,
+    pub mov_settings: ::std::option::Option<crate::types::MovSettings>,
     /// These settings relate to your MP4 output container. You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
     #[doc(hidden)]
-    pub mp4_settings: std::option::Option<crate::types::Mp4Settings>,
+    pub mp4_settings: ::std::option::Option<crate::types::Mp4Settings>,
     /// These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
     #[doc(hidden)]
-    pub mpd_settings: std::option::Option<crate::types::MpdSettings>,
+    pub mpd_settings: ::std::option::Option<crate::types::MpdSettings>,
     /// These settings relate to your MXF output container.
     #[doc(hidden)]
-    pub mxf_settings: std::option::Option<crate::types::MxfSettings>,
+    pub mxf_settings: ::std::option::Option<crate::types::MxfSettings>,
 }
 impl ContainerSettings {
     /// These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
-    pub fn cmfc_settings(&self) -> std::option::Option<&crate::types::CmfcSettings> {
+    pub fn cmfc_settings(&self) -> ::std::option::Option<&crate::types::CmfcSettings> {
         self.cmfc_settings.as_ref()
     }
     /// Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
-    pub fn container(&self) -> std::option::Option<&crate::types::ContainerType> {
+    pub fn container(&self) -> ::std::option::Option<&crate::types::ContainerType> {
         self.container.as_ref()
     }
     /// Settings for F4v container
-    pub fn f4v_settings(&self) -> std::option::Option<&crate::types::F4vSettings> {
+    pub fn f4v_settings(&self) -> ::std::option::Option<&crate::types::F4vSettings> {
         self.f4v_settings.as_ref()
     }
     /// MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
-    pub fn m2ts_settings(&self) -> std::option::Option<&crate::types::M2tsSettings> {
+    pub fn m2ts_settings(&self) -> ::std::option::Option<&crate::types::M2tsSettings> {
         self.m2ts_settings.as_ref()
     }
     /// These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs.
-    pub fn m3u8_settings(&self) -> std::option::Option<&crate::types::M3u8Settings> {
+    pub fn m3u8_settings(&self) -> ::std::option::Option<&crate::types::M3u8Settings> {
         self.m3u8_settings.as_ref()
     }
     /// These settings relate to your QuickTime MOV output container.
-    pub fn mov_settings(&self) -> std::option::Option<&crate::types::MovSettings> {
+    pub fn mov_settings(&self) -> ::std::option::Option<&crate::types::MovSettings> {
         self.mov_settings.as_ref()
     }
     /// These settings relate to your MP4 output container. You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
-    pub fn mp4_settings(&self) -> std::option::Option<&crate::types::Mp4Settings> {
+    pub fn mp4_settings(&self) -> ::std::option::Option<&crate::types::Mp4Settings> {
         self.mp4_settings.as_ref()
     }
     /// These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
-    pub fn mpd_settings(&self) -> std::option::Option<&crate::types::MpdSettings> {
+    pub fn mpd_settings(&self) -> ::std::option::Option<&crate::types::MpdSettings> {
         self.mpd_settings.as_ref()
     }
     /// These settings relate to your MXF output container.
-    pub fn mxf_settings(&self) -> std::option::Option<&crate::types::MxfSettings> {
+    pub fn mxf_settings(&self) -> ::std::option::Option<&crate::types::MxfSettings> {
         self.mxf_settings.as_ref()
     }
 }
@@ -79,132 +79,134 @@ impl ContainerSettings {
 
 /// A builder for [`ContainerSettings`](crate::types::ContainerSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerSettingsBuilder {
-    pub(crate) cmfc_settings: std::option::Option<crate::types::CmfcSettings>,
-    pub(crate) container: std::option::Option<crate::types::ContainerType>,
-    pub(crate) f4v_settings: std::option::Option<crate::types::F4vSettings>,
-    pub(crate) m2ts_settings: std::option::Option<crate::types::M2tsSettings>,
-    pub(crate) m3u8_settings: std::option::Option<crate::types::M3u8Settings>,
-    pub(crate) mov_settings: std::option::Option<crate::types::MovSettings>,
-    pub(crate) mp4_settings: std::option::Option<crate::types::Mp4Settings>,
-    pub(crate) mpd_settings: std::option::Option<crate::types::MpdSettings>,
-    pub(crate) mxf_settings: std::option::Option<crate::types::MxfSettings>,
+    pub(crate) cmfc_settings: ::std::option::Option<crate::types::CmfcSettings>,
+    pub(crate) container: ::std::option::Option<crate::types::ContainerType>,
+    pub(crate) f4v_settings: ::std::option::Option<crate::types::F4vSettings>,
+    pub(crate) m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
+    pub(crate) m3u8_settings: ::std::option::Option<crate::types::M3u8Settings>,
+    pub(crate) mov_settings: ::std::option::Option<crate::types::MovSettings>,
+    pub(crate) mp4_settings: ::std::option::Option<crate::types::Mp4Settings>,
+    pub(crate) mpd_settings: ::std::option::Option<crate::types::MpdSettings>,
+    pub(crate) mxf_settings: ::std::option::Option<crate::types::MxfSettings>,
 }
 impl ContainerSettingsBuilder {
     /// These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
     pub fn cmfc_settings(mut self, input: crate::types::CmfcSettings) -> Self {
-        self.cmfc_settings = Some(input);
+        self.cmfc_settings = ::std::option::Option::Some(input);
         self
     }
     /// These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
     pub fn set_cmfc_settings(
         mut self,
-        input: std::option::Option<crate::types::CmfcSettings>,
+        input: ::std::option::Option<crate::types::CmfcSettings>,
     ) -> Self {
         self.cmfc_settings = input;
         self
     }
     /// Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
     pub fn container(mut self, input: crate::types::ContainerType) -> Self {
-        self.container = Some(input);
+        self.container = ::std::option::Option::Some(input);
         self
     }
     /// Container for this output. Some containers require a container settings object. If not specified, the default object will be created.
     pub fn set_container(
         mut self,
-        input: std::option::Option<crate::types::ContainerType>,
+        input: ::std::option::Option<crate::types::ContainerType>,
     ) -> Self {
         self.container = input;
         self
     }
     /// Settings for F4v container
     pub fn f4v_settings(mut self, input: crate::types::F4vSettings) -> Self {
-        self.f4v_settings = Some(input);
+        self.f4v_settings = ::std::option::Option::Some(input);
         self
     }
     /// Settings for F4v container
     pub fn set_f4v_settings(
         mut self,
-        input: std::option::Option<crate::types::F4vSettings>,
+        input: ::std::option::Option<crate::types::F4vSettings>,
     ) -> Self {
         self.f4v_settings = input;
         self
     }
     /// MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
     pub fn m2ts_settings(mut self, input: crate::types::M2tsSettings) -> Self {
-        self.m2ts_settings = Some(input);
+        self.m2ts_settings = ::std::option::Option::Some(input);
         self
     }
     /// MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
     pub fn set_m2ts_settings(
         mut self,
-        input: std::option::Option<crate::types::M2tsSettings>,
+        input: ::std::option::Option<crate::types::M2tsSettings>,
     ) -> Self {
         self.m2ts_settings = input;
         self
     }
     /// These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs.
     pub fn m3u8_settings(mut self, input: crate::types::M3u8Settings) -> Self {
-        self.m3u8_settings = Some(input);
+        self.m3u8_settings = ::std::option::Option::Some(input);
         self
     }
     /// These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs.
     pub fn set_m3u8_settings(
         mut self,
-        input: std::option::Option<crate::types::M3u8Settings>,
+        input: ::std::option::Option<crate::types::M3u8Settings>,
     ) -> Self {
         self.m3u8_settings = input;
         self
     }
     /// These settings relate to your QuickTime MOV output container.
     pub fn mov_settings(mut self, input: crate::types::MovSettings) -> Self {
-        self.mov_settings = Some(input);
+        self.mov_settings = ::std::option::Option::Some(input);
         self
     }
     /// These settings relate to your QuickTime MOV output container.
     pub fn set_mov_settings(
         mut self,
-        input: std::option::Option<crate::types::MovSettings>,
+        input: ::std::option::Option<crate::types::MovSettings>,
     ) -> Self {
         self.mov_settings = input;
         self
     }
     /// These settings relate to your MP4 output container. You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
     pub fn mp4_settings(mut self, input: crate::types::Mp4Settings) -> Self {
-        self.mp4_settings = Some(input);
+        self.mp4_settings = ::std::option::Option::Some(input);
         self
     }
     /// These settings relate to your MP4 output container. You can create audio only outputs with this container. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html#output-codecs-and-containers-supported-for-audio-only.
     pub fn set_mp4_settings(
         mut self,
-        input: std::option::Option<crate::types::Mp4Settings>,
+        input: ::std::option::Option<crate::types::Mp4Settings>,
     ) -> Self {
         self.mp4_settings = input;
         self
     }
     /// These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
     pub fn mpd_settings(mut self, input: crate::types::MpdSettings) -> Self {
-        self.mpd_settings = Some(input);
+        self.mpd_settings = ::std::option::Option::Some(input);
         self
     }
     /// These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
     pub fn set_mpd_settings(
         mut self,
-        input: std::option::Option<crate::types::MpdSettings>,
+        input: ::std::option::Option<crate::types::MpdSettings>,
     ) -> Self {
         self.mpd_settings = input;
         self
     }
     /// These settings relate to your MXF output container.
     pub fn mxf_settings(mut self, input: crate::types::MxfSettings) -> Self {
-        self.mxf_settings = Some(input);
+        self.mxf_settings = ::std::option::Option::Some(input);
         self
     }
     /// These settings relate to your MXF output container.
     pub fn set_mxf_settings(
         mut self,
-        input: std::option::Option<crate::types::MxfSettings>,
+        input: ::std::option::Option<crate::types::MxfSettings>,
     ) -> Self {
         self.mxf_settings = input;
         self

@@ -2,36 +2,39 @@
 
 /// <p>A list of Amazon QuickSight parameters and the list's override values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameters {
     /// <p>The parameters that have a data type of string.</p>
     #[doc(hidden)]
-    pub string_parameters: std::option::Option<std::vec::Vec<crate::types::StringParameter>>,
+    pub string_parameters: ::std::option::Option<::std::vec::Vec<crate::types::StringParameter>>,
     /// <p>The parameters that have a data type of integer.</p>
     #[doc(hidden)]
-    pub integer_parameters: std::option::Option<std::vec::Vec<crate::types::IntegerParameter>>,
+    pub integer_parameters: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameter>>,
     /// <p>The parameters that have a data type of decimal.</p>
     #[doc(hidden)]
-    pub decimal_parameters: std::option::Option<std::vec::Vec<crate::types::DecimalParameter>>,
+    pub decimal_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DecimalParameter>>,
     /// <p>The parameters that have a data type of date-time.</p>
     #[doc(hidden)]
-    pub date_time_parameters: std::option::Option<std::vec::Vec<crate::types::DateTimeParameter>>,
+    pub date_time_parameters:
+        ::std::option::Option<::std::vec::Vec<crate::types::DateTimeParameter>>,
 }
 impl Parameters {
     /// <p>The parameters that have a data type of string.</p>
-    pub fn string_parameters(&self) -> std::option::Option<&[crate::types::StringParameter]> {
+    pub fn string_parameters(&self) -> ::std::option::Option<&[crate::types::StringParameter]> {
         self.string_parameters.as_deref()
     }
     /// <p>The parameters that have a data type of integer.</p>
-    pub fn integer_parameters(&self) -> std::option::Option<&[crate::types::IntegerParameter]> {
+    pub fn integer_parameters(&self) -> ::std::option::Option<&[crate::types::IntegerParameter]> {
         self.integer_parameters.as_deref()
     }
     /// <p>The parameters that have a data type of decimal.</p>
-    pub fn decimal_parameters(&self) -> std::option::Option<&[crate::types::DecimalParameter]> {
+    pub fn decimal_parameters(&self) -> ::std::option::Option<&[crate::types::DecimalParameter]> {
         self.decimal_parameters.as_deref()
     }
     /// <p>The parameters that have a data type of date-time.</p>
-    pub fn date_time_parameters(&self) -> std::option::Option<&[crate::types::DateTimeParameter]> {
+    pub fn date_time_parameters(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::DateTimeParameter]> {
         self.date_time_parameters.as_deref()
     }
 }
@@ -44,15 +47,18 @@ impl Parameters {
 
 /// A builder for [`Parameters`](crate::types::Parameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParametersBuilder {
-    pub(crate) string_parameters: std::option::Option<std::vec::Vec<crate::types::StringParameter>>,
+    pub(crate) string_parameters:
+        ::std::option::Option<::std::vec::Vec<crate::types::StringParameter>>,
     pub(crate) integer_parameters:
-        std::option::Option<std::vec::Vec<crate::types::IntegerParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameter>>,
     pub(crate) decimal_parameters:
-        std::option::Option<std::vec::Vec<crate::types::DecimalParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DecimalParameter>>,
     pub(crate) date_time_parameters:
-        std::option::Option<std::vec::Vec<crate::types::DateTimeParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DateTimeParameter>>,
 }
 impl ParametersBuilder {
     /// Appends an item to `string_parameters`.
@@ -63,13 +69,13 @@ impl ParametersBuilder {
     pub fn string_parameters(mut self, input: crate::types::StringParameter) -> Self {
         let mut v = self.string_parameters.unwrap_or_default();
         v.push(input);
-        self.string_parameters = Some(v);
+        self.string_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parameters that have a data type of string.</p>
     pub fn set_string_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StringParameter>>,
     ) -> Self {
         self.string_parameters = input;
         self
@@ -82,13 +88,13 @@ impl ParametersBuilder {
     pub fn integer_parameters(mut self, input: crate::types::IntegerParameter) -> Self {
         let mut v = self.integer_parameters.unwrap_or_default();
         v.push(input);
-        self.integer_parameters = Some(v);
+        self.integer_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parameters that have a data type of integer.</p>
     pub fn set_integer_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IntegerParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IntegerParameter>>,
     ) -> Self {
         self.integer_parameters = input;
         self
@@ -101,13 +107,13 @@ impl ParametersBuilder {
     pub fn decimal_parameters(mut self, input: crate::types::DecimalParameter) -> Self {
         let mut v = self.decimal_parameters.unwrap_or_default();
         v.push(input);
-        self.decimal_parameters = Some(v);
+        self.decimal_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parameters that have a data type of decimal.</p>
     pub fn set_decimal_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DecimalParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DecimalParameter>>,
     ) -> Self {
         self.decimal_parameters = input;
         self
@@ -120,13 +126,13 @@ impl ParametersBuilder {
     pub fn date_time_parameters(mut self, input: crate::types::DateTimeParameter) -> Self {
         let mut v = self.date_time_parameters.unwrap_or_default();
         v.push(input);
-        self.date_time_parameters = Some(v);
+        self.date_time_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parameters that have a data type of date-time.</p>
     pub fn set_date_time_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DateTimeParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeParameter>>,
     ) -> Self {
         self.date_time_parameters = input;
         self

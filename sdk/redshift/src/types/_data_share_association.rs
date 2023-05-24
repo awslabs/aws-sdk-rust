@@ -2,43 +2,43 @@
 
 /// <p>The association of a datashare from a producer account with a data consumer. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataShareAssociation {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
     #[doc(hidden)]
-    pub consumer_identifier: std::option::Option<std::string::String>,
+    pub consumer_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The status of the datashare that is associated.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DataShareStatus>,
+    pub status: ::std::option::Option<crate::types::DataShareStatus>,
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
     #[doc(hidden)]
-    pub consumer_region: std::option::Option<std::string::String>,
+    pub consumer_region: ::std::option::Option<::std::string::String>,
     /// <p>The creation date of the datashare that is associated.</p>
     #[doc(hidden)]
-    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status change data of the datashare that is associated.</p>
     #[doc(hidden)]
-    pub status_change_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataShareAssociation {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn consumer_identifier(&self) -> std::option::Option<&str> {
+    pub fn consumer_identifier(&self) -> ::std::option::Option<&str> {
         self.consumer_identifier.as_deref()
     }
     /// <p>The status of the datashare that is associated.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DataShareStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataShareStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn consumer_region(&self) -> std::option::Option<&str> {
+    pub fn consumer_region(&self) -> ::std::option::Option<&str> {
         self.consumer_region.as_deref()
     }
     /// <p>The creation date of the datashare that is associated.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The status change data of the datashare that is associated.</p>
-    pub fn status_change_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_change_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.status_change_date.as_ref()
     }
 }
@@ -51,70 +51,84 @@ impl DataShareAssociation {
 
 /// A builder for [`DataShareAssociation`](crate::types::DataShareAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataShareAssociationBuilder {
-    pub(crate) consumer_identifier: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DataShareStatus>,
-    pub(crate) consumer_region: std::option::Option<std::string::String>,
-    pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_change_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) consumer_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DataShareStatus>,
+    pub(crate) consumer_region: ::std::option::Option<::std::string::String>,
+    pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataShareAssociationBuilder {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.consumer_identifier = Some(input.into());
+    pub fn consumer_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.consumer_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
     pub fn set_consumer_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.consumer_identifier = input;
         self
     }
     /// <p>The status of the datashare that is associated.</p>
     pub fn status(mut self, input: crate::types::DataShareStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the datashare that is associated.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DataShareStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::DataShareStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.consumer_region = Some(input.into());
+    pub fn consumer_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.consumer_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.</p>
-    pub fn set_consumer_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_consumer_region(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.consumer_region = input;
         self
     }
     /// <p>The creation date of the datashare that is associated.</p>
-    pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_date = Some(input);
+    pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation date of the datashare that is associated.</p>
     pub fn set_created_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_date = input;
         self
     }
     /// <p>The status change data of the datashare that is associated.</p>
-    pub fn status_change_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.status_change_date = Some(input);
+    pub fn status_change_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.status_change_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status change data of the datashare that is associated.</p>
     pub fn set_status_change_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.status_change_date = input;
         self

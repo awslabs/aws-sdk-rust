@@ -2,7 +2,7 @@
 
 /// <p>Contains the output of ReportTaskRunnerHeartbeat.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeatOutput {
     /// <p>Indicates whether the calling task runner should terminate.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ impl ReportTaskRunnerHeartbeatOutput {
         self.terminate
     }
 }
-impl aws_http::request_id::RequestId for ReportTaskRunnerHeartbeatOutput {
+impl ::aws_http::request_id::RequestId for ReportTaskRunnerHeartbeatOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl ReportTaskRunnerHeartbeatOutput {
 
 /// A builder for [`ReportTaskRunnerHeartbeatOutput`](crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportTaskRunnerHeartbeatOutputBuilder {
-    pub(crate) terminate: std::option::Option<bool>,
+    pub(crate) terminate: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ReportTaskRunnerHeartbeatOutputBuilder {
     /// <p>Indicates whether the calling task runner should terminate.</p>
     pub fn terminate(mut self, input: bool) -> Self {
-        self.terminate = Some(input);
+        self.terminate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the calling task runner should terminate.</p>
-    pub fn set_terminate(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_terminate(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terminate = input;
         self
     }

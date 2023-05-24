@@ -38,13 +38,13 @@
 /// Hls Program Date Time
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsProgramDateTime {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsProgramDateTime {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsProgramDateTime {
+impl ::std::convert::From<&str> for HlsProgramDateTime {
     fn from(s: &str) -> Self {
         match s {
             "EXCLUDE" => HlsProgramDateTime::Exclude,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsProgramDateTime {
         }
     }
 }
-impl std::str::FromStr for HlsProgramDateTime {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsProgramDateTime {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsProgramDateTime::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsProgramDateTime::from(s))
     }
 }
 impl HlsProgramDateTime {
@@ -86,7 +86,7 @@ impl HlsProgramDateTime {
         &["EXCLUDE", "INCLUDE"]
     }
 }
-impl AsRef<str> for HlsProgramDateTime {
+impl ::std::convert::AsRef<str> for HlsProgramDateTime {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

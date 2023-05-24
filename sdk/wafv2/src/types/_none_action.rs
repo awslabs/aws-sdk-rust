@@ -4,7 +4,7 @@
 /// <p>This is used in the context of other settings, for example to specify values for <code>RuleAction</code> and web ACL <code>DefaultAction</code>. </p>
 /// <p>JSON specification: <code>"None": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoneAction {}
 impl NoneAction {
     /// Creates a new builder-style object to manufacture [`NoneAction`](crate::types::NoneAction).
@@ -15,7 +15,9 @@ impl NoneAction {
 
 /// A builder for [`NoneAction`](crate::types::NoneAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NoneActionBuilder {}
 impl NoneActionBuilder {
     /// Consumes the builder and constructs a [`NoneAction`](crate::types::NoneAction).

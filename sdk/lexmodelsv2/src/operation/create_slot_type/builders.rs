@@ -7,56 +7,63 @@ pub use crate::operation::create_slot_type::_create_slot_type_input::CreateSlotT
 ///
 /// <p>Creates a custom slot type</p>
 /// <p> To create a custom slot type, specify a name for the slot type and a set of enumeration values, the values that a slot of this type can assume. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSlotTypeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_slot_type::builders::CreateSlotTypeInputBuilder,
 }
 impl CreateSlotTypeFluentBuilder {
     /// Creates a new `CreateSlotType`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_slot_type::CreateSlotType,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_slot_type::CreateSlotTypeError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_slot_type::CreateSlotTypeError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_slot_type::CreateSlotTypeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_slot_type::CreateSlotTypeError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_slot_type::CreateSlotTypeError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +76,37 @@ impl CreateSlotTypeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_slot_type::CreateSlotTypeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_slot_type::CreateSlotTypeError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_slot_type::CreateSlotTypeError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The name for the slot. A slot type name must be unique within the account.</p>
-    pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn slot_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.slot_type_name(input.into());
         self
     }
     /// <p>The name for the slot. A slot type name must be unique within the account.</p>
-    pub fn set_slot_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_slot_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_slot_type_name(input);
         self
     }
     /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the slot type. Use the description to help identify the slot type in lists.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -107,7 +122,7 @@ impl CreateSlotTypeFluentBuilder {
     /// <p>A list of <code>SlotTypeValue</code> objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.</p>
     pub fn set_slot_type_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SlotTypeValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SlotTypeValue>>,
     ) -> Self {
         self.inner = self.inner.set_slot_type_values(input);
         self
@@ -133,14 +148,17 @@ impl CreateSlotTypeFluentBuilder {
     /// <p>If you don't specify the <code>valueSelectionSetting</code> parameter, the default is <code>OriginalValue</code>.</p>
     pub fn set_value_selection_setting(
         mut self,
-        input: std::option::Option<crate::types::SlotValueSelectionSetting>,
+        input: ::std::option::Option<crate::types::SlotValueSelectionSetting>,
     ) -> Self {
         self.inner = self.inner.set_value_selection_setting(input);
         self
     }
     /// <p>The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.</p>
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-    pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn parent_slot_type_signature(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.parent_slot_type_signature(input.into());
         self
     }
@@ -148,38 +166,38 @@ impl CreateSlotTypeFluentBuilder {
     /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
     pub fn set_parent_slot_type_signature(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_parent_slot_type_signature(input);
         self
     }
     /// <p>The identifier of the bot associated with this slot type.</p>
-    pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
         self
     }
     /// <p>The identifier of the bot associated with this slot type.</p>
-    pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
     }
     /// <p>The identifier of the bot version associated with this slot type.</p>
-    pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
         self
     }
     /// <p>The identifier of the bot version associated with this slot type.</p>
-    pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_version(input);
         self
     }
     /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
         self
     }
     /// <p>The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
     }
@@ -191,7 +209,7 @@ impl CreateSlotTypeFluentBuilder {
     /// <p>Sets the type of external information used to create the slot type.</p>
     pub fn set_external_source_setting(
         mut self,
-        input: std::option::Option<crate::types::ExternalSourceSetting>,
+        input: ::std::option::Option<crate::types::ExternalSourceSetting>,
     ) -> Self {
         self.inner = self.inner.set_external_source_setting(input);
         self
@@ -207,7 +225,7 @@ impl CreateSlotTypeFluentBuilder {
     /// <p>Specifications for a composite slot type.</p>
     pub fn set_composite_slot_type_setting(
         mut self,
-        input: std::option::Option<crate::types::CompositeSlotTypeSetting>,
+        input: ::std::option::Option<crate::types::CompositeSlotTypeSetting>,
     ) -> Self {
         self.inner = self.inner.set_composite_slot_type_setting(input);
         self

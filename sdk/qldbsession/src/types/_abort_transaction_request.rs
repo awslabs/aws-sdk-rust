@@ -2,7 +2,7 @@
 
 /// <p>Contains the details of the transaction to abort.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbortTransactionRequest {}
 impl AbortTransactionRequest {
     /// Creates a new builder-style object to manufacture [`AbortTransactionRequest`](crate::types::AbortTransactionRequest).
@@ -13,7 +13,9 @@ impl AbortTransactionRequest {
 
 /// A builder for [`AbortTransactionRequest`](crate::types::AbortTransactionRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AbortTransactionRequestBuilder {}
 impl AbortTransactionRequestBuilder {
     /// Consumes the builder and constructs a [`AbortTransactionRequest`](crate::types::AbortTransactionRequest).

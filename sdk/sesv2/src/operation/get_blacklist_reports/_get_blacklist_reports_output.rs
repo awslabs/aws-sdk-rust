@@ -2,12 +2,15 @@
 
 /// <p>An object that contains information about blacklist events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
     #[doc(hidden)]
-    pub blacklist_report: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::BlacklistEntry>>,
+    pub blacklist_report: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::BlacklistEntry>,
+        >,
     >,
     _request_id: Option<String>,
 }
@@ -15,16 +18,16 @@ impl GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
     pub fn blacklist_report(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::types::BlacklistEntry>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::BlacklistEntry>,
         >,
     > {
         self.blacklist_report.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetBlacklistReportsOutput {
+impl ::aws_http::request_id::RequestId for GetBlacklistReportsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,10 +43,15 @@ impl GetBlacklistReportsOutput {
 
 /// A builder for [`GetBlacklistReportsOutput`](crate::operation::get_blacklist_reports::GetBlacklistReportsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetBlacklistReportsOutputBuilder {
-    pub(crate) blacklist_report: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<crate::types::BlacklistEntry>>,
+    pub(crate) blacklist_report: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<crate::types::BlacklistEntry>,
+        >,
     >,
     _request_id: Option<String>,
 }
@@ -55,21 +63,21 @@ impl GetBlacklistReportsOutputBuilder {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
     pub fn blacklist_report(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<crate::types::BlacklistEntry>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<crate::types::BlacklistEntry>,
     ) -> Self {
         let mut hash_map = self.blacklist_report.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.blacklist_report = Some(hash_map);
+        self.blacklist_report = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
     pub fn set_blacklist_report(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::types::BlacklistEntry>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<crate::types::BlacklistEntry>,
             >,
         >,
     ) -> Self {

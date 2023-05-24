@@ -9,55 +9,55 @@
 /// <li> <p> <code>DescribeMaintenanceStartTimeOutput$Timezone</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub gateway_arn: std::option::Option<std::string::String>,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     #[doc(hidden)]
-    pub hour_of_day: std::option::Option<i32>,
+    pub hour_of_day: ::std::option::Option<i32>,
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
     #[doc(hidden)]
-    pub minute_of_hour: std::option::Option<i32>,
+    pub minute_of_hour: ::std::option::Option<i32>,
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
     #[doc(hidden)]
-    pub day_of_week: std::option::Option<i32>,
+    pub day_of_week: ::std::option::Option<i32>,
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     #[doc(hidden)]
-    pub day_of_month: std::option::Option<i32>,
+    pub day_of_month: ::std::option::Option<i32>,
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
     #[doc(hidden)]
-    pub timezone: std::option::Option<std::string::String>,
+    pub timezone: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
-    pub fn hour_of_day(&self) -> std::option::Option<i32> {
+    pub fn hour_of_day(&self) -> ::std::option::Option<i32> {
         self.hour_of_day
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
-    pub fn minute_of_hour(&self) -> std::option::Option<i32> {
+    pub fn minute_of_hour(&self) -> ::std::option::Option<i32> {
         self.minute_of_hour
     }
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
-    pub fn day_of_week(&self) -> std::option::Option<i32> {
+    pub fn day_of_week(&self) -> ::std::option::Option<i32> {
         self.day_of_week
     }
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
-    pub fn day_of_month(&self) -> std::option::Option<i32> {
+    pub fn day_of_month(&self) -> ::std::option::Option<i32> {
         self.day_of_month
     }
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeMaintenanceStartTimeOutput {
+impl ::aws_http::request_id::RequestId for DescribeMaintenanceStartTimeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -71,74 +71,76 @@ impl DescribeMaintenanceStartTimeOutput {
 
 /// A builder for [`DescribeMaintenanceStartTimeOutput`](crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeMaintenanceStartTimeOutputBuilder {
-    pub(crate) gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) hour_of_day: std::option::Option<i32>,
-    pub(crate) minute_of_hour: std::option::Option<i32>,
-    pub(crate) day_of_week: std::option::Option<i32>,
-    pub(crate) day_of_month: std::option::Option<i32>,
-    pub(crate) timezone: std::option::Option<std::string::String>,
+    pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) hour_of_day: ::std::option::Option<i32>,
+    pub(crate) minute_of_hour: ::std::option::Option<i32>,
+    pub(crate) day_of_week: ::std::option::Option<i32>,
+    pub(crate) day_of_month: ::std::option::Option<i32>,
+    pub(crate) timezone: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeMaintenanceStartTimeOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_arn = Some(input.into());
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn hour_of_day(mut self, input: i32) -> Self {
-        self.hour_of_day = Some(input);
+        self.hour_of_day = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
-    pub fn set_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_hour_of_day(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hour_of_day = input;
         self
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
     pub fn minute_of_hour(mut self, input: i32) -> Self {
-        self.minute_of_hour = Some(input);
+        self.minute_of_hour = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
-    pub fn set_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minute_of_hour = input;
         self
     }
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
     pub fn day_of_week(mut self, input: i32) -> Self {
-        self.day_of_week = Some(input);
+        self.day_of_week = ::std::option::Option::Some(input);
         self
     }
     /// <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
-    pub fn set_day_of_week(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_day_of_week(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_week = input;
         self
     }
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
-        self.day_of_month = Some(input);
+        self.day_of_month = ::std::option::Option::Some(input);
         self
     }
     /// <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
-    pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_month = input;
         self
     }
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
-    pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timezone = Some(input.into());
+    pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
-    pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }

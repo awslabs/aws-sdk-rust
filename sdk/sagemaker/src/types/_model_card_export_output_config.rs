@@ -2,15 +2,15 @@
 
 /// <p>Configure the export output details for an Amazon SageMaker Model Card.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelCardExportOutputConfig {
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
     #[doc(hidden)]
-    pub s3_output_path: std::option::Option<std::string::String>,
+    pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl ModelCardExportOutputConfig {
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
-    pub fn s3_output_path(&self) -> std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl ModelCardExportOutputConfig {
 
 /// A builder for [`ModelCardExportOutputConfig`](crate::types::ModelCardExportOutputConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelCardExportOutputConfigBuilder {
-    pub(crate) s3_output_path: std::option::Option<std::string::String>,
+    pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl ModelCardExportOutputConfigBuilder {
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
-    pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_output_path = Some(input.into());
+    pub fn s3_output_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 output path to export your model card PDF.</p>
-    pub fn set_s3_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_output_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_output_path = input;
         self
     }

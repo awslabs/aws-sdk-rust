@@ -2,36 +2,36 @@
 
 /// <p>The criteria that are used to filter the task runs for the machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskRunFilterCriteria {
     /// <p>The type of task run.</p>
     #[doc(hidden)]
-    pub task_run_type: std::option::Option<crate::types::TaskType>,
+    pub task_run_type: ::std::option::Option<crate::types::TaskType>,
     /// <p>The current status of the task run.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::TaskStatusType>,
+    pub status: ::std::option::Option<crate::types::TaskStatusType>,
     /// <p>Filter on task runs started before this date.</p>
     #[doc(hidden)]
-    pub started_before: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter on task runs started after this date.</p>
     #[doc(hidden)]
-    pub started_after: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TaskRunFilterCriteria {
     /// <p>The type of task run.</p>
-    pub fn task_run_type(&self) -> std::option::Option<&crate::types::TaskType> {
+    pub fn task_run_type(&self) -> ::std::option::Option<&crate::types::TaskType> {
         self.task_run_type.as_ref()
     }
     /// <p>The current status of the task run.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TaskStatusType> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatusType> {
         self.status.as_ref()
     }
     /// <p>Filter on task runs started before this date.</p>
-    pub fn started_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_before.as_ref()
     }
     /// <p>Filter on task runs started after this date.</p>
-    pub fn started_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_after.as_ref()
     }
 }
@@ -44,56 +44,64 @@ impl TaskRunFilterCriteria {
 
 /// A builder for [`TaskRunFilterCriteria`](crate::types::TaskRunFilterCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaskRunFilterCriteriaBuilder {
-    pub(crate) task_run_type: std::option::Option<crate::types::TaskType>,
-    pub(crate) status: std::option::Option<crate::types::TaskStatusType>,
-    pub(crate) started_before: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) started_after: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) task_run_type: ::std::option::Option<crate::types::TaskType>,
+    pub(crate) status: ::std::option::Option<crate::types::TaskStatusType>,
+    pub(crate) started_before: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TaskRunFilterCriteriaBuilder {
     /// <p>The type of task run.</p>
     pub fn task_run_type(mut self, input: crate::types::TaskType) -> Self {
-        self.task_run_type = Some(input);
+        self.task_run_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of task run.</p>
-    pub fn set_task_run_type(mut self, input: std::option::Option<crate::types::TaskType>) -> Self {
+    pub fn set_task_run_type(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskType>,
+    ) -> Self {
         self.task_run_type = input;
         self
     }
     /// <p>The current status of the task run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the task run.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TaskStatusType>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskStatusType>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>Filter on task runs started before this date.</p>
-    pub fn started_before(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_before = Some(input);
+    pub fn started_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_before = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter on task runs started before this date.</p>
     pub fn set_started_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_before = input;
         self
     }
     /// <p>Filter on task runs started after this date.</p>
-    pub fn started_after(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_after = Some(input);
+    pub fn started_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_after = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter on task runs started after this date.</p>
     pub fn set_started_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_after = input;
         self

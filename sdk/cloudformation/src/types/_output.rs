@@ -2,36 +2,36 @@
 
 /// <p>The Output data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Output {
     /// <p>The key associated with the output.</p>
     #[doc(hidden)]
-    pub output_key: std::option::Option<std::string::String>,
+    pub output_key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the output.</p>
     #[doc(hidden)]
-    pub output_value: std::option::Option<std::string::String>,
+    pub output_value: ::std::option::Option<::std::string::String>,
     /// <p>User defined description associated with the output.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the export associated with the output.</p>
     #[doc(hidden)]
-    pub export_name: std::option::Option<std::string::String>,
+    pub export_name: ::std::option::Option<::std::string::String>,
 }
 impl Output {
     /// <p>The key associated with the output.</p>
-    pub fn output_key(&self) -> std::option::Option<&str> {
+    pub fn output_key(&self) -> ::std::option::Option<&str> {
         self.output_key.as_deref()
     }
     /// <p>The value associated with the output.</p>
-    pub fn output_value(&self) -> std::option::Option<&str> {
+    pub fn output_value(&self) -> ::std::option::Option<&str> {
         self.output_value.as_deref()
     }
     /// <p>User defined description associated with the output.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the export associated with the output.</p>
-    pub fn export_name(&self) -> std::option::Option<&str> {
+    pub fn export_name(&self) -> ::std::option::Option<&str> {
         self.export_name.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl Output {
 
 /// A builder for [`Output`](crate::types::Output).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputBuilder {
-    pub(crate) output_key: std::option::Option<std::string::String>,
-    pub(crate) output_value: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) export_name: std::option::Option<std::string::String>,
+    pub(crate) output_key: ::std::option::Option<::std::string::String>,
+    pub(crate) output_value: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) export_name: ::std::option::Option<::std::string::String>,
 }
 impl OutputBuilder {
     /// <p>The key associated with the output.</p>
-    pub fn output_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_key = Some(input.into());
+    pub fn output_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key associated with the output.</p>
-    pub fn set_output_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_key = input;
         self
     }
     /// <p>The value associated with the output.</p>
-    pub fn output_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_value = Some(input.into());
+    pub fn output_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value associated with the output.</p>
-    pub fn set_output_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_value = input;
         self
     }
     /// <p>User defined description associated with the output.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User defined description associated with the output.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The name of the export associated with the output.</p>
-    pub fn export_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.export_name = Some(input.into());
+    pub fn export_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.export_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the export associated with the output.</p>
-    pub fn set_export_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_export_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_name = input;
         self
     }

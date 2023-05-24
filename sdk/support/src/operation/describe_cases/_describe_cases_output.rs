@@ -2,27 +2,27 @@
 
 /// <p>Returns an array of <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
     #[doc(hidden)]
-    pub cases: std::option::Option<std::vec::Vec<crate::types::CaseDetails>>,
+    pub cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseDetails>>,
     /// <p>A resumption point for pagination.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
-    pub fn cases(&self) -> std::option::Option<&[crate::types::CaseDetails]> {
+    pub fn cases(&self) -> ::std::option::Option<&[crate::types::CaseDetails]> {
         self.cases.as_deref()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCasesOutput {
+impl ::aws_http::request_id::RequestId for DescribeCasesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl DescribeCasesOutput {
 
 /// A builder for [`DescribeCasesOutput`](crate::operation::describe_cases::DescribeCasesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCasesOutputBuilder {
-    pub(crate) cases: std::option::Option<std::vec::Vec<crate::types::CaseDetails>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) cases: ::std::option::Option<::std::vec::Vec<crate::types::CaseDetails>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeCasesOutputBuilder {
@@ -51,24 +53,24 @@ impl DescribeCasesOutputBuilder {
     pub fn cases(mut self, input: crate::types::CaseDetails) -> Self {
         let mut v = self.cases.unwrap_or_default();
         v.push(input);
-        self.cases = Some(v);
+        self.cases = ::std::option::Option::Some(v);
         self
     }
     /// <p>The details for the cases that match the request.</p>
     pub fn set_cases(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CaseDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CaseDetails>>,
     ) -> Self {
         self.cases = input;
         self
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

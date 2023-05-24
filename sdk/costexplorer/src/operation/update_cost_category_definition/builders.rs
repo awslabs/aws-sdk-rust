@@ -6,29 +6,29 @@ pub use crate::operation::update_cost_category_definition::_update_cost_category
 /// Fluent builder constructing a request to `UpdateCostCategoryDefinition`.
 ///
 /// <p>Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder,
 }
 impl UpdateCostCategoryDefinitionFluentBuilder {
     /// Creates a new `UpdateCostCategoryDefinition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_cost_category_definition::UpdateCostCategoryDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,34 +75,43 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier for your Cost Category.</p>
-    pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cost_category_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cost_category_arn(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category.</p>
     pub fn set_cost_category_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cost_category_arn(input);
         self
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn effective_start(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.effective_start(input.into());
         self
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    pub fn set_effective_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_effective_start(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_effective_start(input);
         self
     }
@@ -111,7 +123,7 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn set_rule_version(
         mut self,
-        input: std::option::Option<crate::types::CostCategoryRuleVersion>,
+        input: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
     ) -> Self {
         self.inner = self.inner.set_rule_version(input);
         self
@@ -128,18 +140,24 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.default_value(input.into());
         self
     }
     /// <p>The default value for the cost category.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_default_value(input);
         self
     }
@@ -155,7 +173,7 @@ impl UpdateCostCategoryDefinitionFluentBuilder {
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
     pub fn set_split_charge_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
     ) -> Self {
         self.inner = self.inner.set_split_charge_rules(input);
         self

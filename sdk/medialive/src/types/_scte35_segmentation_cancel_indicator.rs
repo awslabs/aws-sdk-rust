@@ -38,13 +38,13 @@
 /// Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Scte35SegmentationCancelIndicator {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Scte35SegmentationCancelIndicator {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Scte35SegmentationCancelIndicator {
+impl ::std::convert::From<&str> for Scte35SegmentationCancelIndicator {
     fn from(s: &str) -> Self {
         match s {
             "SEGMENTATION_EVENT_CANCELED" => {
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for Scte35SegmentationCancelIndicator {
         }
     }
 }
-impl std::str::FromStr for Scte35SegmentationCancelIndicator {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Scte35SegmentationCancelIndicator {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Scte35SegmentationCancelIndicator::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Scte35SegmentationCancelIndicator::from(s))
     }
 }
 impl Scte35SegmentationCancelIndicator {
@@ -97,7 +97,7 @@ impl Scte35SegmentationCancelIndicator {
         ]
     }
 }
-impl AsRef<str> for Scte35SegmentationCancelIndicator {
+impl ::std::convert::AsRef<str> for Scte35SegmentationCancelIndicator {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,73 +2,73 @@
 
 /// <p>A share invitation summary return object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShareInvitationSummary {
     /// <p>The ID assigned to the share invitation.</p>
     #[doc(hidden)]
-    pub share_invitation_id: std::option::Option<std::string::String>,
+    pub share_invitation_id: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub shared_by: std::option::Option<std::string::String>,
+    pub shared_by: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
-    pub shared_with: std::option::Option<std::string::String>,
+    pub shared_with: ::std::option::Option<::std::string::String>,
     /// <p>Permission granted on a workload share.</p>
     #[doc(hidden)]
-    pub permission_type: std::option::Option<crate::types::PermissionType>,
+    pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>The resource type of the share invitation.</p>
     #[doc(hidden)]
-    pub share_resource_type: std::option::Option<crate::types::ShareResourceType>,
+    pub share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     #[doc(hidden)]
-    pub workload_name: std::option::Option<std::string::String>,
+    pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The full name of the lens.</p>
     #[doc(hidden)]
-    pub lens_name: std::option::Option<std::string::String>,
+    pub lens_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the lens.</p>
     #[doc(hidden)]
-    pub lens_arn: std::option::Option<std::string::String>,
+    pub lens_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationSummary {
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
+    pub fn share_invitation_id(&self) -> ::std::option::Option<&str> {
         self.share_invitation_id.as_deref()
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn shared_by(&self) -> std::option::Option<&str> {
+    pub fn shared_by(&self) -> ::std::option::Option<&str> {
         self.shared_by.as_deref()
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
-    pub fn shared_with(&self) -> std::option::Option<&str> {
+    pub fn shared_with(&self) -> ::std::option::Option<&str> {
         self.shared_with.as_deref()
     }
     /// <p>Permission granted on a workload share.</p>
-    pub fn permission_type(&self) -> std::option::Option<&crate::types::PermissionType> {
+    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
     /// <p>The resource type of the share invitation.</p>
-    pub fn share_resource_type(&self) -> std::option::Option<&crate::types::ShareResourceType> {
+    pub fn share_resource_type(&self) -> ::std::option::Option<&crate::types::ShareResourceType> {
         self.share_resource_type.as_ref()
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(&self) -> std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<&str> {
         self.workload_name.as_deref()
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>The full name of the lens.</p>
-    pub fn lens_name(&self) -> std::option::Option<&str> {
+    pub fn lens_name(&self) -> ::std::option::Option<&str> {
         self.lens_name.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
 }
@@ -81,117 +81,128 @@ impl ShareInvitationSummary {
 
 /// A builder for [`ShareInvitationSummary`](crate::types::ShareInvitationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShareInvitationSummaryBuilder {
-    pub(crate) share_invitation_id: std::option::Option<std::string::String>,
-    pub(crate) shared_by: std::option::Option<std::string::String>,
-    pub(crate) shared_with: std::option::Option<std::string::String>,
-    pub(crate) permission_type: std::option::Option<crate::types::PermissionType>,
-    pub(crate) share_resource_type: std::option::Option<crate::types::ShareResourceType>,
-    pub(crate) workload_name: std::option::Option<std::string::String>,
-    pub(crate) workload_id: std::option::Option<std::string::String>,
-    pub(crate) lens_name: std::option::Option<std::string::String>,
-    pub(crate) lens_arn: std::option::Option<std::string::String>,
+    pub(crate) share_invitation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) shared_by: ::std::option::Option<::std::string::String>,
+    pub(crate) shared_with: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_type: ::std::option::Option<crate::types::PermissionType>,
+    pub(crate) share_resource_type: ::std::option::Option<crate::types::ShareResourceType>,
+    pub(crate) workload_name: ::std::option::Option<::std::string::String>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) lens_name: ::std::option::Option<::std::string::String>,
+    pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
 }
 impl ShareInvitationSummaryBuilder {
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.share_invitation_id = Some(input.into());
+    pub fn share_invitation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.share_invitation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
     pub fn set_share_invitation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.share_invitation_id = input;
         self
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn shared_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.shared_by = Some(input.into());
+    pub fn shared_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.shared_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn set_shared_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shared_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_by = input;
         self
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
-    pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
-        self.shared_with = Some(input.into());
+    pub fn shared_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.shared_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
-    pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shared_with(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.shared_with = input;
         self
     }
     /// <p>Permission granted on a workload share.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
-        self.permission_type = Some(input);
+        self.permission_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Permission granted on a workload share.</p>
     pub fn set_permission_type(
         mut self,
-        input: std::option::Option<crate::types::PermissionType>,
+        input: ::std::option::Option<crate::types::PermissionType>,
     ) -> Self {
         self.permission_type = input;
         self
     }
     /// <p>The resource type of the share invitation.</p>
     pub fn share_resource_type(mut self, input: crate::types::ShareResourceType) -> Self {
-        self.share_resource_type = Some(input);
+        self.share_resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type of the share invitation.</p>
     pub fn set_share_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ShareResourceType>,
+        input: ::std::option::Option<crate::types::ShareResourceType>,
     ) -> Self {
         self.share_resource_type = input;
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_name = Some(input.into());
+    pub fn workload_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn set_workload_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.workload_name = input;
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
     /// <p>The full name of the lens.</p>
-    pub fn lens_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lens_name = Some(input.into());
+    pub fn lens_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lens_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full name of the lens.</p>
-    pub fn set_lens_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lens_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_name = input;
         self
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lens_arn = Some(input.into());
+    pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lens_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the lens.</p>
-    pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_arn = input;
         self
     }

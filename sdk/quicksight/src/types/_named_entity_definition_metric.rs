@@ -2,26 +2,28 @@
 
 /// <p>A structure that represents a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamedEntityDefinitionMetric {
     /// <p>The aggregation of a named entity. Valid values for this structure are <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>AVERAGE</code>, <code>DISTINCT_COUNT</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, <code>PERCENTILE</code>, <code>MEDIAN</code>, and <code>CUSTOM</code>.</p>
     #[doc(hidden)]
-    pub aggregation: std::option::Option<crate::types::NamedEntityAggType>,
+    pub aggregation: ::std::option::Option<crate::types::NamedEntityAggType>,
     /// <p>The additional parameters for an aggregation function.</p>
     #[doc(hidden)]
-    pub aggregation_function_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub aggregation_function_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl NamedEntityDefinitionMetric {
     /// <p>The aggregation of a named entity. Valid values for this structure are <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>AVERAGE</code>, <code>DISTINCT_COUNT</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, <code>PERCENTILE</code>, <code>MEDIAN</code>, and <code>CUSTOM</code>.</p>
-    pub fn aggregation(&self) -> std::option::Option<&crate::types::NamedEntityAggType> {
+    pub fn aggregation(&self) -> ::std::option::Option<&crate::types::NamedEntityAggType> {
         self.aggregation.as_ref()
     }
     /// <p>The additional parameters for an aggregation function.</p>
     pub fn aggregation_function_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.aggregation_function_parameters.as_ref()
     }
 }
@@ -34,22 +36,25 @@ impl NamedEntityDefinitionMetric {
 
 /// A builder for [`NamedEntityDefinitionMetric`](crate::types::NamedEntityDefinitionMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NamedEntityDefinitionMetricBuilder {
-    pub(crate) aggregation: std::option::Option<crate::types::NamedEntityAggType>,
-    pub(crate) aggregation_function_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) aggregation: ::std::option::Option<crate::types::NamedEntityAggType>,
+    pub(crate) aggregation_function_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl NamedEntityDefinitionMetricBuilder {
     /// <p>The aggregation of a named entity. Valid values for this structure are <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>AVERAGE</code>, <code>DISTINCT_COUNT</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, <code>PERCENTILE</code>, <code>MEDIAN</code>, and <code>CUSTOM</code>.</p>
     pub fn aggregation(mut self, input: crate::types::NamedEntityAggType) -> Self {
-        self.aggregation = Some(input);
+        self.aggregation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregation of a named entity. Valid values for this structure are <code>SUM</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>AVERAGE</code>, <code>DISTINCT_COUNT</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, <code>PERCENTILE</code>, <code>MEDIAN</code>, and <code>CUSTOM</code>.</p>
     pub fn set_aggregation(
         mut self,
-        input: std::option::Option<crate::types::NamedEntityAggType>,
+        input: ::std::option::Option<crate::types::NamedEntityAggType>,
     ) -> Self {
         self.aggregation = input;
         self
@@ -61,19 +66,19 @@ impl NamedEntityDefinitionMetricBuilder {
     /// <p>The additional parameters for an aggregation function.</p>
     pub fn aggregation_function_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.aggregation_function_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.aggregation_function_parameters = Some(hash_map);
+        self.aggregation_function_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The additional parameters for an aggregation function.</p>
     pub fn set_aggregation_function_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.aggregation_function_parameters = input;

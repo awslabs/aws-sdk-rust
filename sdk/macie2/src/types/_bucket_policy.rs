@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the permissions settings of the bucket policy for an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketPolicy {
     /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
     #[doc(hidden)]
-    pub allows_public_read_access: std::option::Option<bool>,
+    pub allows_public_read_access: ::std::option::Option<bool>,
     /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
     #[doc(hidden)]
-    pub allows_public_write_access: std::option::Option<bool>,
+    pub allows_public_write_access: ::std::option::Option<bool>,
 }
 impl BucketPolicy {
     /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
-    pub fn allows_public_read_access(&self) -> std::option::Option<bool> {
+    pub fn allows_public_read_access(&self) -> ::std::option::Option<bool> {
         self.allows_public_read_access
     }
     /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
-    pub fn allows_public_write_access(&self) -> std::option::Option<bool> {
+    pub fn allows_public_write_access(&self) -> ::std::option::Option<bool> {
         self.allows_public_write_access
     }
 }
@@ -30,29 +30,31 @@ impl BucketPolicy {
 
 /// A builder for [`BucketPolicy`](crate::types::BucketPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BucketPolicyBuilder {
-    pub(crate) allows_public_read_access: std::option::Option<bool>,
-    pub(crate) allows_public_write_access: std::option::Option<bool>,
+    pub(crate) allows_public_read_access: ::std::option::Option<bool>,
+    pub(crate) allows_public_write_access: ::std::option::Option<bool>,
 }
 impl BucketPolicyBuilder {
     /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
     pub fn allows_public_read_access(mut self, input: bool) -> Self {
-        self.allows_public_read_access = Some(input);
+        self.allows_public_read_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
-    pub fn set_allows_public_read_access(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allows_public_read_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allows_public_read_access = input;
         self
     }
     /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
     pub fn allows_public_write_access(mut self, input: bool) -> Self {
-        self.allows_public_write_access = Some(input);
+        self.allows_public_write_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
-    pub fn set_allows_public_write_access(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allows_public_write_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allows_public_write_access = input;
         self
     }

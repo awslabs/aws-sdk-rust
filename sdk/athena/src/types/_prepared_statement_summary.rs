@@ -2,22 +2,22 @@
 
 /// <p>The name and last modified time of the prepared statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PreparedStatementSummary {
     /// <p>The name of the prepared statement.</p>
     #[doc(hidden)]
-    pub statement_name: std::option::Option<std::string::String>,
+    pub statement_name: ::std::option::Option<::std::string::String>,
     /// <p>The last modified time of the prepared statement.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PreparedStatementSummary {
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(&self) -> std::option::Option<&str> {
+    pub fn statement_name(&self) -> ::std::option::Option<&str> {
         self.statement_name.as_deref()
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -30,31 +30,39 @@ impl PreparedStatementSummary {
 
 /// A builder for [`PreparedStatementSummary`](crate::types::PreparedStatementSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PreparedStatementSummaryBuilder {
-    pub(crate) statement_name: std::option::Option<std::string::String>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) statement_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PreparedStatementSummaryBuilder {
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.statement_name = Some(input.into());
+    pub fn statement_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.statement_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the prepared statement.</p>
-    pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_statement_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.statement_name = input;
         self
     }
     /// <p>The last modified time of the prepared statement.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last modified time of the prepared statement.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self

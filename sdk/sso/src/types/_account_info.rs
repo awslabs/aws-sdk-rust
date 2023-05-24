@@ -2,29 +2,29 @@
 
 /// <p>Provides information about your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountInfo {
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the AWS account that is assigned to the user.</p>
     #[doc(hidden)]
-    pub account_name: std::option::Option<std::string::String>,
+    pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the AWS account that is assigned to the user.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfo {
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The display name of the AWS account that is assigned to the user.</p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
     /// <p>The email address of the AWS account that is assigned to the user.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl AccountInfo {
 
 /// A builder for [`AccountInfo`](crate::types::AccountInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountInfoBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) account_name: std::option::Option<std::string::String>,
-    pub(crate) email_address: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfoBuilder {
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the AWS account that is assigned to the user.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The display name of the AWS account that is assigned to the user.</p>
-    pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_name = Some(input.into());
+    pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the AWS account that is assigned to the user.</p>
-    pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
     /// <p>The email address of the AWS account that is assigned to the user.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the AWS account that is assigned to the user.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }

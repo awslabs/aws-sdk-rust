@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ManagedAgentName {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum ManagedAgentName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ManagedAgentName {
+impl ::std::convert::From<&str> for ManagedAgentName {
     fn from(s: &str) -> Self {
         match s {
             "ExecuteCommandAgent" => ManagedAgentName::ExecuteCommandAgent,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for ManagedAgentName {
         }
     }
 }
-impl std::str::FromStr for ManagedAgentName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ManagedAgentName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ManagedAgentName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ManagedAgentName::from(s))
     }
 }
 impl ManagedAgentName {
@@ -81,7 +81,7 @@ impl ManagedAgentName {
         &["ExecuteCommandAgent"]
     }
 }
-impl AsRef<str> for ManagedAgentName {
+impl ::std::convert::AsRef<str> for ManagedAgentName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

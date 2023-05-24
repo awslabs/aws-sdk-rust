@@ -2,38 +2,38 @@
 
 /// Video Codec Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoCodecSettings {
     /// Frame Capture Settings
     #[doc(hidden)]
-    pub frame_capture_settings: std::option::Option<crate::types::FrameCaptureSettings>,
+    pub frame_capture_settings: ::std::option::Option<crate::types::FrameCaptureSettings>,
     /// H264 Settings
     #[doc(hidden)]
-    pub h264_settings: std::option::Option<crate::types::H264Settings>,
+    pub h264_settings: ::std::option::Option<crate::types::H264Settings>,
     /// H265 Settings
     #[doc(hidden)]
-    pub h265_settings: std::option::Option<crate::types::H265Settings>,
+    pub h265_settings: ::std::option::Option<crate::types::H265Settings>,
     /// Mpeg2 Settings
     #[doc(hidden)]
-    pub mpeg2_settings: std::option::Option<crate::types::Mpeg2Settings>,
+    pub mpeg2_settings: ::std::option::Option<crate::types::Mpeg2Settings>,
 }
 impl VideoCodecSettings {
     /// Frame Capture Settings
     pub fn frame_capture_settings(
         &self,
-    ) -> std::option::Option<&crate::types::FrameCaptureSettings> {
+    ) -> ::std::option::Option<&crate::types::FrameCaptureSettings> {
         self.frame_capture_settings.as_ref()
     }
     /// H264 Settings
-    pub fn h264_settings(&self) -> std::option::Option<&crate::types::H264Settings> {
+    pub fn h264_settings(&self) -> ::std::option::Option<&crate::types::H264Settings> {
         self.h264_settings.as_ref()
     }
     /// H265 Settings
-    pub fn h265_settings(&self) -> std::option::Option<&crate::types::H265Settings> {
+    pub fn h265_settings(&self) -> ::std::option::Option<&crate::types::H265Settings> {
         self.h265_settings.as_ref()
     }
     /// Mpeg2 Settings
-    pub fn mpeg2_settings(&self) -> std::option::Option<&crate::types::Mpeg2Settings> {
+    pub fn mpeg2_settings(&self) -> ::std::option::Option<&crate::types::Mpeg2Settings> {
         self.mpeg2_settings.as_ref()
     }
 }
@@ -46,62 +46,64 @@ impl VideoCodecSettings {
 
 /// A builder for [`VideoCodecSettings`](crate::types::VideoCodecSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoCodecSettingsBuilder {
-    pub(crate) frame_capture_settings: std::option::Option<crate::types::FrameCaptureSettings>,
-    pub(crate) h264_settings: std::option::Option<crate::types::H264Settings>,
-    pub(crate) h265_settings: std::option::Option<crate::types::H265Settings>,
-    pub(crate) mpeg2_settings: std::option::Option<crate::types::Mpeg2Settings>,
+    pub(crate) frame_capture_settings: ::std::option::Option<crate::types::FrameCaptureSettings>,
+    pub(crate) h264_settings: ::std::option::Option<crate::types::H264Settings>,
+    pub(crate) h265_settings: ::std::option::Option<crate::types::H265Settings>,
+    pub(crate) mpeg2_settings: ::std::option::Option<crate::types::Mpeg2Settings>,
 }
 impl VideoCodecSettingsBuilder {
     /// Frame Capture Settings
     pub fn frame_capture_settings(mut self, input: crate::types::FrameCaptureSettings) -> Self {
-        self.frame_capture_settings = Some(input);
+        self.frame_capture_settings = ::std::option::Option::Some(input);
         self
     }
     /// Frame Capture Settings
     pub fn set_frame_capture_settings(
         mut self,
-        input: std::option::Option<crate::types::FrameCaptureSettings>,
+        input: ::std::option::Option<crate::types::FrameCaptureSettings>,
     ) -> Self {
         self.frame_capture_settings = input;
         self
     }
     /// H264 Settings
     pub fn h264_settings(mut self, input: crate::types::H264Settings) -> Self {
-        self.h264_settings = Some(input);
+        self.h264_settings = ::std::option::Option::Some(input);
         self
     }
     /// H264 Settings
     pub fn set_h264_settings(
         mut self,
-        input: std::option::Option<crate::types::H264Settings>,
+        input: ::std::option::Option<crate::types::H264Settings>,
     ) -> Self {
         self.h264_settings = input;
         self
     }
     /// H265 Settings
     pub fn h265_settings(mut self, input: crate::types::H265Settings) -> Self {
-        self.h265_settings = Some(input);
+        self.h265_settings = ::std::option::Option::Some(input);
         self
     }
     /// H265 Settings
     pub fn set_h265_settings(
         mut self,
-        input: std::option::Option<crate::types::H265Settings>,
+        input: ::std::option::Option<crate::types::H265Settings>,
     ) -> Self {
         self.h265_settings = input;
         self
     }
     /// Mpeg2 Settings
     pub fn mpeg2_settings(mut self, input: crate::types::Mpeg2Settings) -> Self {
-        self.mpeg2_settings = Some(input);
+        self.mpeg2_settings = ::std::option::Option::Some(input);
         self
     }
     /// Mpeg2 Settings
     pub fn set_mpeg2_settings(
         mut self,
-        input: std::option::Option<crate::types::Mpeg2Settings>,
+        input: ::std::option::Option<crate::types::Mpeg2Settings>,
     ) -> Self {
         self.mpeg2_settings = input;
         self

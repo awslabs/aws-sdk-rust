@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSubscriptionFilter`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
-    ///   - [`filter_name(impl Into<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::set_filter_name): <p>The name of the subscription filter.</p>
+    ///   - [`log_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`filter_name(impl ::std::convert::Into<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::delete_subscription_filter::builders::DeleteSubscriptionFilterFluentBuilder::set_filter_name): <p>The name of the subscription filter.</p>
     /// - On success, responds with [`DeleteSubscriptionFilterOutput`](crate::operation::delete_subscription_filter::DeleteSubscriptionFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteSubscriptionFilterError>`](crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError)
     pub fn delete_subscription_filter(

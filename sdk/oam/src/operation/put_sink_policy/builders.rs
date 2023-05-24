@@ -13,56 +13,59 @@ pub use crate::operation::put_sink_policy::_put_sink_policy_input::PutSinkPolicy
 /// <li> <p> <b>Traces</b> - Specify with <code>AWS::XRay::Trace</code> </p> </li>
 /// </ul>
 /// <p>See the examples in this section to see how to specify permitted source accounts and data types.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutSinkPolicyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_sink_policy::builders::PutSinkPolicyInputBuilder,
 }
 impl PutSinkPolicyFluentBuilder {
     /// Creates a new `PutSinkPolicy`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_sink_policy::PutSinkPolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_sink_policy::PutSinkPolicyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_sink_policy::PutSinkPolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_sink_policy::PutSinkPolicyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_sink_policy::PutSinkPolicyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_sink_policy::PutSinkPolicyError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,33 +78,39 @@ impl PutSinkPolicyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_sink_policy::PutSinkPolicyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_sink_policy::PutSinkPolicyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_sink_policy::PutSinkPolicyError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the sink to attach this policy to.</p>
-    pub fn sink_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sink_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sink_identifier(input.into());
         self
     }
     /// <p>The ARN of the sink to attach this policy to.</p>
-    pub fn set_sink_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sink_identifier(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sink_identifier(input);
         self
     }
     /// <p>The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.</p>
     /// <p>The policy must be in JSON string format with quotation marks escaped and no newlines.</p>
     /// <p>For examples of different types of policies, see the <b>Examples</b> section on this page.</p>
-    pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
     /// <p>The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.</p>
     /// <p>The policy must be in JSON string format with quotation marks escaped and no newlines.</p>
     /// <p>For examples of different types of policies, see the <b>Examples</b> section on this page.</p>
-    pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }

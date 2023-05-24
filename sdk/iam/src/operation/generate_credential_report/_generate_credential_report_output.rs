@@ -2,27 +2,27 @@
 
 /// <p>Contains the response to a successful <code>GenerateCredentialReport</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GenerateCredentialReportOutput {
     /// <p>Information about the state of the credential report.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ReportStateType>,
+    pub state: ::std::option::Option<crate::types::ReportStateType>,
     /// <p>Information about the credential report.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateCredentialReportOutput {
     /// <p>Information about the state of the credential report.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ReportStateType> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ReportStateType> {
         self.state.as_ref()
     }
     /// <p>Information about the credential report.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GenerateCredentialReportOutput {
+impl ::aws_http::request_id::RequestId for GenerateCredentialReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,30 +38,35 @@ impl GenerateCredentialReportOutput {
 
 /// A builder for [`GenerateCredentialReportOutput`](crate::operation::generate_credential_report::GenerateCredentialReportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GenerateCredentialReportOutputBuilder {
-    pub(crate) state: std::option::Option<crate::types::ReportStateType>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ReportStateType>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GenerateCredentialReportOutputBuilder {
     /// <p>Information about the state of the credential report.</p>
     pub fn state(mut self, input: crate::types::ReportStateType) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the state of the credential report.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ReportStateType>) -> Self {
+    pub fn set_state(
+        mut self,
+        input: ::std::option::Option<crate::types::ReportStateType>,
+    ) -> Self {
         self.state = input;
         self
     }
     /// <p>Information about the credential report.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the credential report.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>The ID and ID type of an artifact source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactSourceType {
     /// <p>The type of ID.</p>
     #[doc(hidden)]
-    pub source_id_type: std::option::Option<crate::types::ArtifactSourceIdType>,
+    pub source_id_type: ::std::option::Option<crate::types::ArtifactSourceIdType>,
     /// <p>The ID.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl ArtifactSourceType {
     /// <p>The type of ID.</p>
-    pub fn source_id_type(&self) -> std::option::Option<&crate::types::ArtifactSourceIdType> {
+    pub fn source_id_type(&self) -> ::std::option::Option<&crate::types::ArtifactSourceIdType> {
         self.source_id_type.as_ref()
     }
     /// <p>The ID.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl ArtifactSourceType {
 
 /// A builder for [`ArtifactSourceType`](crate::types::ArtifactSourceType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArtifactSourceTypeBuilder {
-    pub(crate) source_id_type: std::option::Option<crate::types::ArtifactSourceIdType>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) source_id_type: ::std::option::Option<crate::types::ArtifactSourceIdType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl ArtifactSourceTypeBuilder {
     /// <p>The type of ID.</p>
     pub fn source_id_type(mut self, input: crate::types::ArtifactSourceIdType) -> Self {
-        self.source_id_type = Some(input);
+        self.source_id_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of ID.</p>
     pub fn set_source_id_type(
         mut self,
-        input: std::option::Option<crate::types::ArtifactSourceIdType>,
+        input: ::std::option::Option<crate::types::ArtifactSourceIdType>,
     ) -> Self {
         self.source_id_type = input;
         self
     }
     /// <p>The ID.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTaskExecutionInfo {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<i64>,
+    pub creation_time: ::std::option::Option<i64>,
     /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
-    pub completion_time: std::option::Option<i64>,
+    pub completion_time: ::std::option::Option<i64>,
 }
 impl ExportTaskExecutionInfo {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn creation_time(&self) -> std::option::Option<i64> {
+    pub fn creation_time(&self) -> ::std::option::Option<i64> {
         self.creation_time
     }
     /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn completion_time(&self) -> std::option::Option<i64> {
+    pub fn completion_time(&self) -> ::std::option::Option<i64> {
         self.completion_time
     }
 }
@@ -30,29 +30,31 @@ impl ExportTaskExecutionInfo {
 
 /// A builder for [`ExportTaskExecutionInfo`](crate::types::ExportTaskExecutionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportTaskExecutionInfoBuilder {
-    pub(crate) creation_time: std::option::Option<i64>,
-    pub(crate) completion_time: std::option::Option<i64>,
+    pub(crate) creation_time: ::std::option::Option<i64>,
+    pub(crate) completion_time: ::std::option::Option<i64>,
 }
 impl ExportTaskExecutionInfoBuilder {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
-        self.creation_time = Some(input);
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn completion_time(mut self, input: i64) -> Self {
-        self.completion_time = Some(input);
+        self.completion_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn set_completion_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_completion_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.completion_time = input;
         self
     }

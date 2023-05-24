@@ -2,15 +2,15 @@
 
 /// <p> The request structure for the get webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWebhookInput {
     /// <p> The unique ID for a webhook. </p>
     #[doc(hidden)]
-    pub webhook_id: std::option::Option<std::string::String>,
+    pub webhook_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWebhookInput {
     /// <p> The unique ID for a webhook. </p>
-    pub fn webhook_id(&self) -> std::option::Option<&str> {
+    pub fn webhook_id(&self) -> ::std::option::Option<&str> {
         self.webhook_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl GetWebhookInput {
 
 /// A builder for [`GetWebhookInput`](crate::operation::get_webhook::GetWebhookInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetWebhookInputBuilder {
-    pub(crate) webhook_id: std::option::Option<std::string::String>,
+    pub(crate) webhook_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWebhookInputBuilder {
     /// <p> The unique ID for a webhook. </p>
-    pub fn webhook_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.webhook_id = Some(input.into());
+    pub fn webhook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.webhook_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID for a webhook. </p>
-    pub fn set_webhook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_webhook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.webhook_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetWebhookInput`](crate::operation::get_webhook::GetWebhookInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_webhook::GetWebhookInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_webhook::GetWebhookInput {
+        ::std::result::Result::Ok(crate::operation::get_webhook::GetWebhookInput {
             webhook_id: self.webhook_id,
         })
     }

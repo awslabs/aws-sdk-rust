@@ -43,13 +43,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InstanceFleetState {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum InstanceFleetState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InstanceFleetState {
+impl ::std::convert::From<&str> for InstanceFleetState {
     fn from(s: &str) -> Self {
         match s {
             "BOOTSTRAPPING" => InstanceFleetState::Bootstrapping,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for InstanceFleetState {
         }
     }
 }
-impl std::str::FromStr for InstanceFleetState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InstanceFleetState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceFleetState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InstanceFleetState::from(s))
     }
 }
 impl InstanceFleetState {
@@ -119,7 +119,7 @@ impl InstanceFleetState {
         ]
     }
 }
-impl AsRef<str> for InstanceFleetState {
+impl ::std::convert::AsRef<str> for InstanceFleetState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

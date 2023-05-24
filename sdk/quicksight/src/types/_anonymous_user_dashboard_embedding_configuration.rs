@@ -2,17 +2,17 @@
 
 /// <p>Information about the dashboard that you want to embed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnonymousUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     #[doc(hidden)]
-    pub initial_dashboard_id: std::option::Option<std::string::String>,
+    pub initial_dashboard_id: ::std::option::Option<::std::string::String>,
 }
 impl AnonymousUserDashboardEmbeddingConfiguration {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub fn initial_dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn initial_dashboard_id(&self) -> ::std::option::Option<&str> {
         self.initial_dashboard_id.as_deref()
     }
 }
@@ -26,22 +26,27 @@ impl AnonymousUserDashboardEmbeddingConfiguration {
 
 /// A builder for [`AnonymousUserDashboardEmbeddingConfiguration`](crate::types::AnonymousUserDashboardEmbeddingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnonymousUserDashboardEmbeddingConfigurationBuilder {
-    pub(crate) initial_dashboard_id: std::option::Option<std::string::String>,
+    pub(crate) initial_dashboard_id: ::std::option::Option<::std::string::String>,
 }
 impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
-    pub fn initial_dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.initial_dashboard_id = Some(input.into());
+    pub fn initial_dashboard_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.initial_dashboard_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard.</p>
     /// <p>The Amazon Resource Name (ARN) of this dashboard must be included in the <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.</p>
     pub fn set_initial_dashboard_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.initial_dashboard_id = input;
         self

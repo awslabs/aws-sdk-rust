@@ -2,22 +2,22 @@
 
 /// <p>Provides the identity of a the bot that was exported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotExportSpecification {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
     #[doc(hidden)]
-    pub bot_id: std::option::Option<std::string::String>,
+    pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
     #[doc(hidden)]
-    pub bot_version: std::option::Option<std::string::String>,
+    pub bot_version: ::std::option::Option<::std::string::String>,
 }
 impl BotExportSpecification {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl BotExportSpecification {
 
 /// A builder for [`BotExportSpecification`](crate::types::BotExportSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BotExportSpecificationBuilder {
-    pub(crate) bot_id: std::option::Option<std::string::String>,
-    pub(crate) bot_version: std::option::Option<std::string::String>,
+    pub(crate) bot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) bot_version: ::std::option::Option<::std::string::String>,
 }
 impl BotExportSpecificationBuilder {
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
-    pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_id = Some(input.into());
+    pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the bot assigned by Amazon Lex.</p>
-    pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
     }
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
-    pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_version = Some(input.into());
+    pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the bot that was exported. This will be either <code>DRAFT</code> or the version number.</p>
-    pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
     }

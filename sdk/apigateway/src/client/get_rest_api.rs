@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRestApi`](crate::operation::get_rest_api::builders::GetRestApiFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rest_api_id(impl Into<String>)`](crate::operation::get_rest_api::builders::GetRestApiFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_rest_api::builders::GetRestApiFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
+    ///   - [`rest_api_id(impl ::std::convert::Into<String>)`](crate::operation::get_rest_api::builders::GetRestApiFluentBuilder::rest_api_id) / [`set_rest_api_id(Option<String>)`](crate::operation::get_rest_api::builders::GetRestApiFluentBuilder::set_rest_api_id): <p>The string identifier of the associated RestApi.</p>
     /// - On success, responds with [`GetRestApiOutput`](crate::operation::get_rest_api::GetRestApiOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_rest_api::GetRestApiOutput::id): <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_rest_api::GetRestApiOutput::name): <p>The API's name.</p>

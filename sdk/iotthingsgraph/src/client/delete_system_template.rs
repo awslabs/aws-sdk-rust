@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSystemTemplate`](crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder::set_id): <p>The ID of the system to be deleted.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_system_template::builders::DeleteSystemTemplateFluentBuilder::set_id): <p>The ID of the system to be deleted.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
     /// - On success, responds with [`DeleteSystemTemplateOutput`](crate::operation::delete_system_template::DeleteSystemTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteSystemTemplateError>`](crate::operation::delete_system_template::DeleteSystemTemplateError)
     #[deprecated(note = "since: 2022-08-30")]

@@ -2,25 +2,25 @@
 
 /// <p>The capacity information for instances that can be launched onto the Dedicated Host. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailableCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
     #[doc(hidden)]
     pub available_instance_capacity:
-        std::option::Option<std::vec::Vec<crate::types::InstanceCapacity>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
     #[doc(hidden)]
-    pub available_v_cpus: std::option::Option<i32>,
+    pub available_v_cpus: ::std::option::Option<i32>,
 }
 impl AvailableCapacity {
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
     pub fn available_instance_capacity(
         &self,
-    ) -> std::option::Option<&[crate::types::InstanceCapacity]> {
+    ) -> ::std::option::Option<&[crate::types::InstanceCapacity]> {
         self.available_instance_capacity.as_deref()
     }
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
-    pub fn available_v_cpus(&self) -> std::option::Option<i32> {
+    pub fn available_v_cpus(&self) -> ::std::option::Option<i32> {
         self.available_v_cpus
     }
 }
@@ -33,11 +33,13 @@ impl AvailableCapacity {
 
 /// A builder for [`AvailableCapacity`](crate::types::AvailableCapacity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AvailableCapacityBuilder {
     pub(crate) available_instance_capacity:
-        std::option::Option<std::vec::Vec<crate::types::InstanceCapacity>>,
-    pub(crate) available_v_cpus: std::option::Option<i32>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
+    pub(crate) available_v_cpus: ::std::option::Option<i32>,
 }
 impl AvailableCapacityBuilder {
     /// Appends an item to `available_instance_capacity`.
@@ -48,24 +50,24 @@ impl AvailableCapacityBuilder {
     pub fn available_instance_capacity(mut self, input: crate::types::InstanceCapacity) -> Self {
         let mut v = self.available_instance_capacity.unwrap_or_default();
         v.push(input);
-        self.available_instance_capacity = Some(v);
+        self.available_instance_capacity = ::std::option::Option::Some(v);
         self
     }
     /// <p>The number of instances that can be launched onto the Dedicated Host depending on the host's available capacity. For Dedicated Hosts that support multiple instance types, this parameter represents the number of instances for each instance size that is supported on the host.</p>
     pub fn set_available_instance_capacity(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceCapacity>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCapacity>>,
     ) -> Self {
         self.available_instance_capacity = input;
         self
     }
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
     pub fn available_v_cpus(mut self, input: i32) -> Self {
-        self.available_v_cpus = Some(input);
+        self.available_v_cpus = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of vCPUs available for launching instances onto the Dedicated Host.</p>
-    pub fn set_available_v_cpus(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_available_v_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.available_v_cpus = input;
         self
     }

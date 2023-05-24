@@ -2,43 +2,43 @@
 
 /// <p>The protected query summary for the objects listed by the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQuerySummary {
     /// <p>The unique ID of the protected query.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the membership that initiated the protected query.</p>
     #[doc(hidden)]
-    pub membership_id: std::option::Option<std::string::String>,
+    pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
     #[doc(hidden)]
-    pub membership_arn: std::option::Option<std::string::String>,
+    pub membership_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the protected query was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ProtectedQueryStatus>,
+    pub status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
 }
 impl ProtectedQuerySummary {
     /// <p>The unique ID of the protected query.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The unique ID for the membership that initiated the protected query.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> ::std::option::Option<&str> {
         self.membership_id.as_deref()
     }
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
-    pub fn membership_arn(&self) -> std::option::Option<&str> {
+    pub fn membership_arn(&self) -> ::std::option::Option<&str> {
         self.membership_arn.as_deref()
     }
     /// <p>The time the protected query was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ProtectedQueryStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ProtectedQueryStatus> {
         self.status.as_ref()
     }
 }
@@ -51,67 +51,81 @@ impl ProtectedQuerySummary {
 
 /// A builder for [`ProtectedQuerySummary`](crate::types::ProtectedQuerySummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtectedQuerySummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) membership_id: std::option::Option<std::string::String>,
-    pub(crate) membership_arn: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::ProtectedQueryStatus>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_id: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
 }
 impl ProtectedQuerySummaryBuilder {
     /// <p>The unique ID of the protected query.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the protected query.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The unique ID for the membership that initiated the protected query.</p>
-    pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.membership_id = Some(input.into());
+    pub fn membership_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.membership_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for the membership that initiated the protected query.</p>
-    pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_membership_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.membership_id = input;
         self
     }
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
-    pub fn membership_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.membership_arn = Some(input.into());
+    pub fn membership_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.membership_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ARN for the membership that initiated the protected query.</p>
-    pub fn set_membership_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_membership_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.membership_arn = input;
         self
     }
     /// <p>The time the protected query was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the protected query was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
     pub fn status(mut self, input: crate::types::ProtectedQueryStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ProtectedQueryStatus>,
+        input: ::std::option::Option<crate::types::ProtectedQueryStatus>,
     ) -> Self {
         self.status = input;
         self

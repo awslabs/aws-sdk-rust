@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFlow`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::set_flow_arn): The ARN of the flow that you want to delete.
+    ///   - [`flow_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::set_flow_arn): The ARN of the flow that you want to delete.
     /// - On success, responds with [`DeleteFlowOutput`](crate::operation::delete_flow::DeleteFlowOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::operation::delete_flow::DeleteFlowOutput::flow_arn): The ARN of the flow that was deleted.
     ///   - [`status(Option<Status>)`](crate::operation::delete_flow::DeleteFlowOutput::status): The status of the flow when the DeleteFlow process begins.

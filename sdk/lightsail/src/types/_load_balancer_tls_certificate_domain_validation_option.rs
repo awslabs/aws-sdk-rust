@@ -2,25 +2,25 @@
 
 /// <p>Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificateDomainValidationOption {
     /// <p>The fully qualified domain name in the certificate request.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the domain validation. Valid values are listed below.</p>
     #[doc(hidden)]
     pub validation_status:
-        std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
+        ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
 }
 impl LoadBalancerTlsCertificateDomainValidationOption {
     /// <p>The fully qualified domain name in the certificate request.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The status of the domain validation. Valid values are listed below.</p>
     pub fn validation_status(
         &self,
-    ) -> std::option::Option<&crate::types::LoadBalancerTlsCertificateDomainStatus> {
+    ) -> ::std::option::Option<&crate::types::LoadBalancerTlsCertificateDomainStatus> {
         self.validation_status.as_ref()
     }
 }
@@ -34,20 +34,22 @@ impl LoadBalancerTlsCertificateDomainValidationOption {
 
 /// A builder for [`LoadBalancerTlsCertificateDomainValidationOption`](crate::types::LoadBalancerTlsCertificateDomainValidationOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoadBalancerTlsCertificateDomainValidationOptionBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) validation_status:
-        std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
+        ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
 }
 impl LoadBalancerTlsCertificateDomainValidationOptionBuilder {
     /// <p>The fully qualified domain name in the certificate request.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified domain name in the certificate request.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
@@ -56,13 +58,13 @@ impl LoadBalancerTlsCertificateDomainValidationOptionBuilder {
         mut self,
         input: crate::types::LoadBalancerTlsCertificateDomainStatus,
     ) -> Self {
-        self.validation_status = Some(input);
+        self.validation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the domain validation. Valid values are listed below.</p>
     pub fn set_validation_status(
         mut self,
-        input: std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
+        input: ::std::option::Option<crate::types::LoadBalancerTlsCertificateDomainStatus>,
     ) -> Self {
         self.validation_status = input;
         self

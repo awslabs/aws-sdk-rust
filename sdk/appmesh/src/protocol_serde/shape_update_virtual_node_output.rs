@@ -2,7 +2,7 @@
 pub(crate) fn de_virtual_node_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::VirtualNodeData>,
+    ::std::option::Option<crate::types::VirtualNodeData>,
     crate::operation::update_virtual_node::UpdateVirtualNodeError,
 > {
     (!body.is_empty())

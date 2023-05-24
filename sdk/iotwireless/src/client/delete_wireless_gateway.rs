@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWirelessGateway`](crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_wireless_gateway::builders::DeleteWirelessGatewayFluentBuilder::set_id): <p>The ID of the resource to delete.</p>
     /// - On success, responds with [`DeleteWirelessGatewayOutput`](crate::operation::delete_wireless_gateway::DeleteWirelessGatewayOutput)
     /// - On failure, responds with [`SdkError<DeleteWirelessGatewayError>`](crate::operation::delete_wireless_gateway::DeleteWirelessGatewayError)
     pub fn delete_wireless_gateway(

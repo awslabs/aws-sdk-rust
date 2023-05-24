@@ -2,22 +2,22 @@
 
 /// <p>An internet service provider (ISP) or network in Amazon CloudWatch Internet Monitor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Network {
     /// <p>The internet provider name or network name.</p>
     #[doc(hidden)]
-    pub as_name: std::option::Option<std::string::String>,
+    pub as_name: ::std::option::Option<::std::string::String>,
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     #[doc(hidden)]
-    pub as_number: std::option::Option<i64>,
+    pub as_number: ::std::option::Option<i64>,
 }
 impl Network {
     /// <p>The internet provider name or network name.</p>
-    pub fn as_name(&self) -> std::option::Option<&str> {
+    pub fn as_name(&self) -> ::std::option::Option<&str> {
         self.as_name.as_deref()
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
-    pub fn as_number(&self) -> std::option::Option<i64> {
+    pub fn as_number(&self) -> ::std::option::Option<i64> {
         self.as_number
     }
 }
@@ -30,29 +30,31 @@ impl Network {
 
 /// A builder for [`Network`](crate::types::Network).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkBuilder {
-    pub(crate) as_name: std::option::Option<std::string::String>,
-    pub(crate) as_number: std::option::Option<i64>,
+    pub(crate) as_name: ::std::option::Option<::std::string::String>,
+    pub(crate) as_number: ::std::option::Option<i64>,
 }
 impl NetworkBuilder {
     /// <p>The internet provider name or network name.</p>
-    pub fn as_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.as_name = Some(input.into());
+    pub fn as_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.as_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The internet provider name or network name.</p>
-    pub fn set_as_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_as_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.as_name = input;
         self
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     pub fn as_number(mut self, input: i64) -> Self {
-        self.as_number = Some(input);
+        self.as_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
-    pub fn set_as_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_as_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.as_number = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSink`](crate::operation::delete_sink::builders::DeleteSinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_sink::builders::DeleteSinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_sink::builders::DeleteSinkFluentBuilder::set_identifier): <p>The ARN of the sink to delete.</p>
+    ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_sink::builders::DeleteSinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_sink::builders::DeleteSinkFluentBuilder::set_identifier): <p>The ARN of the sink to delete.</p>
     /// - On success, responds with [`DeleteSinkOutput`](crate::operation::delete_sink::DeleteSinkOutput)
     /// - On failure, responds with [`SdkError<DeleteSinkError>`](crate::operation::delete_sink::DeleteSinkError)
     pub fn delete_sink(&self) -> crate::operation::delete_sink::builders::DeleteSinkFluentBuilder {

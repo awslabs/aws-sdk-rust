@@ -37,13 +37,13 @@
 /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Av1RateControlMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum Av1RateControlMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Av1RateControlMode {
+impl ::std::convert::From<&str> for Av1RateControlMode {
     fn from(s: &str) -> Self {
         match s {
             "QVBR" => Av1RateControlMode::Qvbr,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for Av1RateControlMode {
         }
     }
 }
-impl std::str::FromStr for Av1RateControlMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Av1RateControlMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Av1RateControlMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Av1RateControlMode::from(s))
     }
 }
 impl Av1RateControlMode {
@@ -81,7 +81,7 @@ impl Av1RateControlMode {
         &["QVBR"]
     }
 }
-impl AsRef<str> for Av1RateControlMode {
+impl ::std::convert::AsRef<str> for Av1RateControlMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

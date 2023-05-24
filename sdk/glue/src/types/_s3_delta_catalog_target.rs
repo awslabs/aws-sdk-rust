@@ -2,63 +2,68 @@
 
 /// <p>Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DeltaCatalogTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     #[doc(hidden)]
-    pub partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub partition_keys:
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>The name of the table in the database to write to.</p>
     #[doc(hidden)]
-    pub table: std::option::Option<std::string::String>,
+    pub table: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to write to.</p>
     #[doc(hidden)]
-    pub database: std::option::Option<std::string::String>,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>Specifies additional connection options for the connector.</p>
     #[doc(hidden)]
-    pub additional_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     #[doc(hidden)]
-    pub schema_change_policy: std::option::Option<crate::types::CatalogSchemaChangePolicy>,
+    pub schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
 }
 impl S3DeltaCatalogTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn partition_keys(
+        &self,
+    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.partition_keys.as_deref()
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(&self) -> std::option::Option<&str> {
+    pub fn table(&self) -> ::std::option::Option<&str> {
         self.table.as_deref()
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>Specifies additional connection options for the connector.</p>
     pub fn additional_options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.additional_options.as_ref()
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(
         &self,
-    ) -> std::option::Option<&crate::types::CatalogSchemaChangePolicy> {
+    ) -> ::std::option::Option<&crate::types::CatalogSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
 }
@@ -71,26 +76,29 @@ impl S3DeltaCatalogTarget {
 
 /// A builder for [`S3DeltaCatalogTarget`](crate::types::S3DeltaCatalogTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3DeltaCatalogTargetBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) partition_keys:
-        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-    pub(crate) table: std::option::Option<std::string::String>,
-    pub(crate) database: std::option::Option<std::string::String>,
-    pub(crate) additional_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) schema_change_policy: std::option::Option<crate::types::CatalogSchemaChangePolicy>,
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) table: ::std::option::Option<::std::string::String>,
+    pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) schema_change_policy: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
 }
 impl S3DeltaCatalogTargetBuilder {
     /// <p>The name of the data target.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data target.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -99,16 +107,16 @@ impl S3DeltaCatalogTargetBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input.into());
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inputs = input;
         self
@@ -118,37 +126,37 @@ impl S3DeltaCatalogTargetBuilder {
     /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
     ///
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+    pub fn partition_keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
         v.push(input);
-        self.partition_keys = Some(v);
+        self.partition_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     pub fn set_partition_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.partition_keys = input;
         self
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table = Some(input.into());
+    pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table = input;
         self
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database = Some(input.into());
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database to write to.</p>
-    pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
     }
@@ -159,19 +167,19 @@ impl S3DeltaCatalogTargetBuilder {
     /// <p>Specifies additional connection options for the connector.</p>
     pub fn additional_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.additional_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.additional_options = Some(hash_map);
+        self.additional_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Specifies additional connection options for the connector.</p>
     pub fn set_additional_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.additional_options = input;
@@ -179,13 +187,13 @@ impl S3DeltaCatalogTargetBuilder {
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(mut self, input: crate::types::CatalogSchemaChangePolicy) -> Self {
-        self.schema_change_policy = Some(input);
+        self.schema_change_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn set_schema_change_policy(
         mut self,
-        input: std::option::Option<crate::types::CatalogSchemaChangePolicy>,
+        input: ::std::option::Option<crate::types::CatalogSchemaChangePolicy>,
     ) -> Self {
         self.schema_change_policy = input;
         self

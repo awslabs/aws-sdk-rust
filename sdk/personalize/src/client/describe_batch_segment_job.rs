@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBatchSegmentJob`](crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`batch_segment_job_arn(impl Into<String>)`](crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobFluentBuilder::batch_segment_job_arn) / [`set_batch_segment_job_arn(Option<String>)`](crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobFluentBuilder::set_batch_segment_job_arn): <p>The ARN of the batch segment job to describe.</p>
+    ///   - [`batch_segment_job_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobFluentBuilder::batch_segment_job_arn) / [`set_batch_segment_job_arn(Option<String>)`](crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobFluentBuilder::set_batch_segment_job_arn): <p>The ARN of the batch segment job to describe.</p>
     /// - On success, responds with [`DescribeBatchSegmentJobOutput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput) with field(s):
     ///   - [`batch_segment_job(Option<BatchSegmentJob>)`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput::batch_segment_job): <p>Information on the specified batch segment job.</p>
     /// - On failure, responds with [`SdkError<DescribeBatchSegmentJobError>`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError)

@@ -2,27 +2,27 @@
 
 /// <p>Represents the result of a list projects request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p>Information about the projects.</p>
     #[doc(hidden)]
-    pub projects: std::option::Option<std::vec::Vec<crate::types::Project>>,
+    pub projects: ::std::option::Option<::std::vec::Vec<crate::types::Project>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProjectsOutput {
     /// <p>Information about the projects.</p>
-    pub fn projects(&self) -> std::option::Option<&[crate::types::Project]> {
+    pub fn projects(&self) -> ::std::option::Option<&[crate::types::Project]> {
         self.projects.as_deref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListProjectsOutput {
+impl ::aws_http::request_id::RequestId for ListProjectsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListProjectsOutputBuilder {
-    pub(crate) projects: std::option::Option<std::vec::Vec<crate::types::Project>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) projects: ::std::option::Option<::std::vec::Vec<crate::types::Project>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProjectsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListProjectsOutputBuilder {
     pub fn projects(mut self, input: crate::types::Project) -> Self {
         let mut v = self.projects.unwrap_or_default();
         v.push(input);
-        self.projects = Some(v);
+        self.projects = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the projects.</p>
     pub fn set_projects(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Project>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Project>>,
     ) -> Self {
         self.projects = input;
         self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

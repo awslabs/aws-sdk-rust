@@ -2,22 +2,22 @@
 
 /// <p>Provides the details of a policy finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyDetails {
     /// <p>The action that produced the finding.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::FindingAction>,
+    pub action: ::std::option::Option<crate::types::FindingAction>,
     /// <p>The entity that performed the action that produced the finding.</p>
     #[doc(hidden)]
-    pub actor: std::option::Option<crate::types::FindingActor>,
+    pub actor: ::std::option::Option<crate::types::FindingActor>,
 }
 impl PolicyDetails {
     /// <p>The action that produced the finding.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::FindingAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::FindingAction> {
         self.action.as_ref()
     }
     /// <p>The entity that performed the action that produced the finding.</p>
-    pub fn actor(&self) -> std::option::Option<&crate::types::FindingActor> {
+    pub fn actor(&self) -> ::std::option::Option<&crate::types::FindingActor> {
         self.actor.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl PolicyDetails {
 
 /// A builder for [`PolicyDetails`](crate::types::PolicyDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyDetailsBuilder {
-    pub(crate) action: std::option::Option<crate::types::FindingAction>,
-    pub(crate) actor: std::option::Option<crate::types::FindingActor>,
+    pub(crate) action: ::std::option::Option<crate::types::FindingAction>,
+    pub(crate) actor: ::std::option::Option<crate::types::FindingActor>,
 }
 impl PolicyDetailsBuilder {
     /// <p>The action that produced the finding.</p>
     pub fn action(mut self, input: crate::types::FindingAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that produced the finding.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::FindingAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FindingAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>The entity that performed the action that produced the finding.</p>
     pub fn actor(mut self, input: crate::types::FindingActor) -> Self {
-        self.actor = Some(input);
+        self.actor = ::std::option::Option::Some(input);
         self
     }
     /// <p>The entity that performed the action that produced the finding.</p>
-    pub fn set_actor(mut self, input: std::option::Option<crate::types::FindingActor>) -> Self {
+    pub fn set_actor(mut self, input: ::std::option::Option<crate::types::FindingActor>) -> Self {
         self.actor = input;
         self
     }

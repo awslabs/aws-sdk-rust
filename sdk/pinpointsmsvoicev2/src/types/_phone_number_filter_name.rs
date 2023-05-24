@@ -45,13 +45,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PhoneNumberFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +75,7 @@ pub enum PhoneNumberFilterName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PhoneNumberFilterName {
+impl ::std::convert::From<&str> for PhoneNumberFilterName {
     fn from(s: &str) -> Self {
         match s {
             "deletion-protection-enabled" => PhoneNumberFilterName::DeletionProtectionEnabled,
@@ -93,11 +93,11 @@ impl std::convert::From<&str> for PhoneNumberFilterName {
         }
     }
 }
-impl std::str::FromStr for PhoneNumberFilterName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PhoneNumberFilterName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberFilterName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PhoneNumberFilterName::from(s))
     }
 }
 impl PhoneNumberFilterName {
@@ -131,7 +131,7 @@ impl PhoneNumberFilterName {
         ]
     }
 }
-impl AsRef<str> for PhoneNumberFilterName {
+impl ::std::convert::AsRef<str> for PhoneNumberFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

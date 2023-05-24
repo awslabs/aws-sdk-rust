@@ -2,25 +2,25 @@
 
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValueHistory</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueHistorySuccessEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
-    pub entry_id: std::option::Option<std::string::String>,
+    pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The requested historical values for the specified asset property.</p>
     #[doc(hidden)]
     pub asset_property_value_history:
-        std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
 }
 impl BatchGetAssetPropertyValueHistorySuccessEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> ::std::option::Option<&str> {
         self.entry_id.as_deref()
     }
     /// <p>The requested historical values for the specified asset property.</p>
     pub fn asset_property_value_history(
         &self,
-    ) -> std::option::Option<&[crate::types::AssetPropertyValue]> {
+    ) -> ::std::option::Option<&[crate::types::AssetPropertyValue]> {
         self.asset_property_value_history.as_deref()
     }
 }
@@ -34,20 +34,22 @@ impl BatchGetAssetPropertyValueHistorySuccessEntry {
 
 /// A builder for [`BatchGetAssetPropertyValueHistorySuccessEntry`](crate::types::BatchGetAssetPropertyValueHistorySuccessEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
-    pub(crate) entry_id: std::option::Option<std::string::String>,
+    pub(crate) entry_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_property_value_history:
-        std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
 }
 impl BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entry_id = Some(input.into());
+    pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entry_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the entry.</p>
-    pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_id = input;
         self
     }
@@ -59,13 +61,13 @@ impl BatchGetAssetPropertyValueHistorySuccessEntryBuilder {
     pub fn asset_property_value_history(mut self, input: crate::types::AssetPropertyValue) -> Self {
         let mut v = self.asset_property_value_history.unwrap_or_default();
         v.push(input);
-        self.asset_property_value_history = Some(v);
+        self.asset_property_value_history = ::std::option::Option::Some(v);
         self
     }
     /// <p>The requested historical values for the specified asset property.</p>
     pub fn set_asset_property_value_history(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyValue>>,
     ) -> Self {
         self.asset_property_value_history = input;
         self

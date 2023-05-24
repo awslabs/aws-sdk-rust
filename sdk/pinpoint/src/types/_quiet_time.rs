@@ -2,22 +2,22 @@
 
 /// <p>Specifies the start and end times that define a time range when messages aren't sent to endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuietTime {
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     #[doc(hidden)]
-    pub end: std::option::Option<std::string::String>,
+    pub end: ::std::option::Option<::std::string::String>,
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
     #[doc(hidden)]
-    pub start: std::option::Option<std::string::String>,
+    pub start: ::std::option::Option<::std::string::String>,
 }
 impl QuietTime {
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> ::std::option::Option<&str> {
         self.end.as_deref()
     }
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> ::std::option::Option<&str> {
         self.start.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl QuietTime {
 
 /// A builder for [`QuietTime`](crate::types::QuietTime).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QuietTimeBuilder {
-    pub(crate) end: std::option::Option<std::string::String>,
-    pub(crate) start: std::option::Option<std::string::String>,
+    pub(crate) end: ::std::option::Option<::std::string::String>,
+    pub(crate) start: ::std::option::Option<::std::string::String>,
 }
 impl QuietTimeBuilder {
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
-    pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end = Some(input.into());
+    pub fn end(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
-    pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end = input;
         self
     }
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
-    pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start = Some(input.into());
+    pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
-    pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start = input;
         self
     }

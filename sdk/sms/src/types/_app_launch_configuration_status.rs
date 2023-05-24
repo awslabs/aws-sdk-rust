@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AppLaunchConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AppLaunchConfigurationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AppLaunchConfigurationStatus {
+impl ::std::convert::From<&str> for AppLaunchConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "CONFIGURED" => AppLaunchConfigurationStatus::Configured,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AppLaunchConfigurationStatus {
         }
     }
 }
-impl std::str::FromStr for AppLaunchConfigurationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AppLaunchConfigurationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppLaunchConfigurationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AppLaunchConfigurationStatus::from(s))
     }
 }
 impl AppLaunchConfigurationStatus {
@@ -86,7 +86,7 @@ impl AppLaunchConfigurationStatus {
         &["CONFIGURED", "NOT_CONFIGURED"]
     }
 }
-impl AsRef<str> for AppLaunchConfigurationStatus {
+impl ::std::convert::AsRef<str> for AppLaunchConfigurationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

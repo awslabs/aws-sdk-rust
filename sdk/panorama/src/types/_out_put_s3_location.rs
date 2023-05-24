@@ -2,22 +2,22 @@
 
 /// <p>The location of an output object in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutPutS3Location {
     /// <p>The object's bucket.</p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object's key.</p>
     #[doc(hidden)]
-    pub object_key: std::option::Option<std::string::String>,
+    pub object_key: ::std::option::Option<::std::string::String>,
 }
 impl OutPutS3Location {
     /// <p>The object's bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>The object's key.</p>
-    pub fn object_key(&self) -> std::option::Option<&str> {
+    pub fn object_key(&self) -> ::std::option::Option<&str> {
         self.object_key.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl OutPutS3Location {
 
 /// A builder for [`OutPutS3Location`](crate::types::OutPutS3Location).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutPutS3LocationBuilder {
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
-    pub(crate) object_key: std::option::Option<std::string::String>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) object_key: ::std::option::Option<::std::string::String>,
 }
 impl OutPutS3LocationBuilder {
     /// <p>The object's bucket.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object's bucket.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
     /// <p>The object's key.</p>
-    pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_key = Some(input.into());
+    pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object's key.</p>
-    pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key = input;
         self
     }

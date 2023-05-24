@@ -2,15 +2,15 @@
 
 /// <p>Output data configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerOutputDataConfig {
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
     #[doc(hidden)]
-    pub flywheel_stats_s3_prefix: std::option::Option<std::string::String>,
+    pub flywheel_stats_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl EntityRecognizerOutputDataConfig {
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    pub fn flywheel_stats_s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn flywheel_stats_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.flywheel_stats_s3_prefix.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl EntityRecognizerOutputDataConfig {
 
 /// A builder for [`EntityRecognizerOutputDataConfig`](crate::types::EntityRecognizerOutputDataConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityRecognizerOutputDataConfigBuilder {
-    pub(crate) flywheel_stats_s3_prefix: std::option::Option<std::string::String>,
+    pub(crate) flywheel_stats_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl EntityRecognizerOutputDataConfigBuilder {
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    pub fn flywheel_stats_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flywheel_stats_s3_prefix = Some(input.into());
+    pub fn flywheel_stats_s3_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.flywheel_stats_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
     pub fn set_flywheel_stats_s3_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.flywheel_stats_s3_prefix = input;
         self

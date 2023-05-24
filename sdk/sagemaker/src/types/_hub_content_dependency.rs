@@ -2,22 +2,22 @@
 
 /// <p>Any dependencies related to hub content, such as scripts, model artifacts, datasets, or notebooks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HubContentDependency {
     /// <p>The hub content dependency origin path.</p>
     #[doc(hidden)]
-    pub dependency_origin_path: std::option::Option<std::string::String>,
+    pub dependency_origin_path: ::std::option::Option<::std::string::String>,
     /// <p>The hub content dependency copy path.</p>
     #[doc(hidden)]
-    pub dependency_copy_path: std::option::Option<std::string::String>,
+    pub dependency_copy_path: ::std::option::Option<::std::string::String>,
 }
 impl HubContentDependency {
     /// <p>The hub content dependency origin path.</p>
-    pub fn dependency_origin_path(&self) -> std::option::Option<&str> {
+    pub fn dependency_origin_path(&self) -> ::std::option::Option<&str> {
         self.dependency_origin_path.as_deref()
     }
     /// <p>The hub content dependency copy path.</p>
-    pub fn dependency_copy_path(&self) -> std::option::Option<&str> {
+    pub fn dependency_copy_path(&self) -> ::std::option::Option<&str> {
         self.dependency_copy_path.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl HubContentDependency {
 
 /// A builder for [`HubContentDependency`](crate::types::HubContentDependency).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HubContentDependencyBuilder {
-    pub(crate) dependency_origin_path: std::option::Option<std::string::String>,
-    pub(crate) dependency_copy_path: std::option::Option<std::string::String>,
+    pub(crate) dependency_origin_path: ::std::option::Option<::std::string::String>,
+    pub(crate) dependency_copy_path: ::std::option::Option<::std::string::String>,
 }
 impl HubContentDependencyBuilder {
     /// <p>The hub content dependency origin path.</p>
-    pub fn dependency_origin_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dependency_origin_path = Some(input.into());
+    pub fn dependency_origin_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dependency_origin_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hub content dependency origin path.</p>
     pub fn set_dependency_origin_path(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dependency_origin_path = input;
         self
     }
     /// <p>The hub content dependency copy path.</p>
-    pub fn dependency_copy_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dependency_copy_path = Some(input.into());
+    pub fn dependency_copy_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dependency_copy_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hub content dependency copy path.</p>
     pub fn set_dependency_copy_path(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dependency_copy_path = input;
         self

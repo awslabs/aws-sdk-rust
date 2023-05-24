@@ -2,11 +2,11 @@
 
 /// <p>The response from the server that results from a user's request to retrieve a forgotten password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmForgotPasswordOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for ConfirmForgotPasswordOutput {
+impl ::aws_http::request_id::RequestId for ConfirmForgotPasswordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl ConfirmForgotPasswordOutput {
 
 /// A builder for [`ConfirmForgotPasswordOutput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfirmForgotPasswordOutputBuilder {
     _request_id: Option<String>,
 }

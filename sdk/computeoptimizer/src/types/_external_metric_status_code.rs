@@ -46,13 +46,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ExternalMetricStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -78,7 +78,7 @@ pub enum ExternalMetricStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ExternalMetricStatusCode {
+impl ::std::convert::From<&str> for ExternalMetricStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "DATADOG_INTEGRATION_ERROR" => ExternalMetricStatusCode::DatadogIntegrationError,
@@ -101,11 +101,11 @@ impl std::convert::From<&str> for ExternalMetricStatusCode {
         }
     }
 }
-impl std::str::FromStr for ExternalMetricStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ExternalMetricStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExternalMetricStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ExternalMetricStatusCode::from(s))
     }
 }
 impl ExternalMetricStatusCode {
@@ -145,7 +145,7 @@ impl ExternalMetricStatusCode {
         ]
     }
 }
-impl AsRef<str> for ExternalMetricStatusCode {
+impl ::std::convert::AsRef<str> for ExternalMetricStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

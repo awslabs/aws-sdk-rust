@@ -3,26 +3,26 @@
 /// <p>The Multi-Region Access Point access control policy.</p>
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointPolicyDocument {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
     #[doc(hidden)]
-    pub established: std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>,
+    pub established: ::std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>,
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     #[doc(hidden)]
-    pub proposed: std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>,
+    pub proposed: ::std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>,
 }
 impl MultiRegionAccessPointPolicyDocument {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
     pub fn established(
         &self,
-    ) -> std::option::Option<&crate::types::EstablishedMultiRegionAccessPointPolicy> {
+    ) -> ::std::option::Option<&crate::types::EstablishedMultiRegionAccessPointPolicy> {
         self.established.as_ref()
     }
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     pub fn proposed(
         &self,
-    ) -> std::option::Option<&crate::types::ProposedMultiRegionAccessPointPolicy> {
+    ) -> ::std::option::Option<&crate::types::ProposedMultiRegionAccessPointPolicy> {
         self.proposed.as_ref()
     }
 }
@@ -35,11 +35,13 @@ impl MultiRegionAccessPointPolicyDocument {
 
 /// A builder for [`MultiRegionAccessPointPolicyDocument`](crate::types::MultiRegionAccessPointPolicyDocument).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiRegionAccessPointPolicyDocumentBuilder {
     pub(crate) established:
-        std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>,
-    pub(crate) proposed: std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>,
+        ::std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>,
+    pub(crate) proposed: ::std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>,
 }
 impl MultiRegionAccessPointPolicyDocumentBuilder {
     /// <p>The last established policy for the Multi-Region Access Point.</p>
@@ -47,26 +49,26 @@ impl MultiRegionAccessPointPolicyDocumentBuilder {
         mut self,
         input: crate::types::EstablishedMultiRegionAccessPointPolicy,
     ) -> Self {
-        self.established = Some(input);
+        self.established = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last established policy for the Multi-Region Access Point.</p>
     pub fn set_established(
         mut self,
-        input: std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>,
+        input: ::std::option::Option<crate::types::EstablishedMultiRegionAccessPointPolicy>,
     ) -> Self {
         self.established = input;
         self
     }
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     pub fn proposed(mut self, input: crate::types::ProposedMultiRegionAccessPointPolicy) -> Self {
-        self.proposed = Some(input);
+        self.proposed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The proposed policy for the Multi-Region Access Point.</p>
     pub fn set_proposed(
         mut self,
-        input: std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>,
+        input: ::std::option::Option<crate::types::ProposedMultiRegionAccessPointPolicy>,
     ) -> Self {
         self.proposed = input;
         self

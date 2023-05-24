@@ -2,22 +2,22 @@
 
 /// <p>A toggle for an individual feature at the instance level.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attribute {
     /// <p>The type of attribute.</p>
     #[doc(hidden)]
-    pub attribute_type: std::option::Option<crate::types::InstanceAttributeType>,
+    pub attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
     /// <p>The value of the attribute.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl Attribute {
     /// <p>The type of attribute.</p>
-    pub fn attribute_type(&self) -> std::option::Option<&crate::types::InstanceAttributeType> {
+    pub fn attribute_type(&self) -> ::std::option::Option<&crate::types::InstanceAttributeType> {
         self.attribute_type.as_ref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl Attribute {
 
 /// A builder for [`Attribute`](crate::types::Attribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttributeBuilder {
-    pub(crate) attribute_type: std::option::Option<crate::types::InstanceAttributeType>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) attribute_type: ::std::option::Option<crate::types::InstanceAttributeType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl AttributeBuilder {
     /// <p>The type of attribute.</p>
     pub fn attribute_type(mut self, input: crate::types::InstanceAttributeType) -> Self {
-        self.attribute_type = Some(input);
+        self.attribute_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of attribute.</p>
     pub fn set_attribute_type(
         mut self,
-        input: std::option::Option<crate::types::InstanceAttributeType>,
+        input: ::std::option::Option<crate::types::InstanceAttributeType>,
     ) -> Self {
         self.attribute_type = input;
         self
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the attribute.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Describes a data processor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Processor {
     /// <p>The type of processor.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ProcessorType>,
+    pub r#type: ::std::option::Option<crate::types::ProcessorType>,
     /// <p>The processor parameters.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::ProcessorParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,
 }
 impl Processor {
     /// <p>The type of processor.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ProcessorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProcessorType> {
         self.r#type.as_ref()
     }
     /// <p>The processor parameters.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::ProcessorParameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::ProcessorParameter]> {
         self.parameters.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl Processor {
 
 /// A builder for [`Processor`](crate::types::Processor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProcessorBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ProcessorType>,
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::ProcessorParameter>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ProcessorType>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,
 }
 impl ProcessorBuilder {
     /// <p>The type of processor.</p>
     pub fn r#type(mut self, input: crate::types::ProcessorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of processor.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ProcessorType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProcessorType>) -> Self {
         self.r#type = input;
         self
     }
@@ -54,13 +56,13 @@ impl ProcessorBuilder {
     pub fn parameters(mut self, input: crate::types::ProcessorParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
-        self.parameters = Some(v);
+        self.parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The processor parameters.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProcessorParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProcessorParameter>>,
     ) -> Self {
         self.parameters = input;
         self

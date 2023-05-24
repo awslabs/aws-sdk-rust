@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GenerateChangeSet`](crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder::set_app_id): <p>The ID of the application associated with the change set.</p>
+    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder::set_app_id): <p>The ID of the application associated with the change set.</p>
     ///   - [`changeset_format(OutputFormat)`](crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder::changeset_format) / [`set_changeset_format(Option<OutputFormat>)`](crate::operation::generate_change_set::builders::GenerateChangeSetFluentBuilder::set_changeset_format): <p>The format for the change set.</p>
     /// - On success, responds with [`GenerateChangeSetOutput`](crate::operation::generate_change_set::GenerateChangeSetOutput) with field(s):
     ///   - [`s3_location(Option<S3Location>)`](crate::operation::generate_change_set::GenerateChangeSetOutput::s3_location): <p>The location of the Amazon S3 object.</p>

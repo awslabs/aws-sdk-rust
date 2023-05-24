@@ -2,14 +2,14 @@
 
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortMapping {
     /// <p>The port used for the port mapping.</p>
     #[doc(hidden)]
     pub port: i32,
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::PortProtocol>,
+    pub protocol: ::std::option::Option<crate::types::PortProtocol>,
 }
 impl PortMapping {
     /// <p>The port used for the port mapping.</p>
@@ -17,7 +17,7 @@ impl PortMapping {
         self.port
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::PortProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::PortProtocol> {
         self.protocol.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl PortMapping {
 
 /// A builder for [`PortMapping`](crate::types::PortMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortMappingBuilder {
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) protocol: std::option::Option<crate::types::PortProtocol>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) protocol: ::std::option::Option<crate::types::PortProtocol>,
 }
 impl PortMappingBuilder {
     /// <p>The port used for the port mapping.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port used for the port mapping.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
     pub fn protocol(mut self, input: crate::types::PortProtocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::PortProtocol>) -> Self {
+    pub fn set_protocol(
+        mut self,
+        input: ::std::option::Option<crate::types::PortProtocol>,
+    ) -> Self {
         self.protocol = input;
         self
     }

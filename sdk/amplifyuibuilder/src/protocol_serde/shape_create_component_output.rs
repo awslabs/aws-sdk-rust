@@ -2,7 +2,7 @@
 pub(crate) fn de_entity_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::Component>,
+    ::std::option::Option<crate::types::Component>,
     crate::operation::create_component::CreateComponentError,
 > {
     (!body.is_empty())

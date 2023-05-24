@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HubSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum HubSortBy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HubSortBy {
+impl ::std::convert::From<&str> for HubSortBy {
     fn from(s: &str) -> Self {
         match s {
             "AccountIdOwner" => HubSortBy::AccountIdOwner,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for HubSortBy {
         }
     }
 }
-impl std::str::FromStr for HubSortBy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HubSortBy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HubSortBy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HubSortBy::from(s))
     }
 }
 impl HubSortBy {
@@ -94,7 +94,7 @@ impl HubSortBy {
         &["AccountIdOwner", "CreationTime", "HubName", "HubStatus"]
     }
 }
-impl AsRef<str> for HubSortBy {
+impl ::std::convert::AsRef<str> for HubSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

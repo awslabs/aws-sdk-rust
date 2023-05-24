@@ -2,30 +2,30 @@
 
 /// <p>Contains the output for DescribeNetworkInterfacePermissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNetworkInterfacePermissionsOutput {
     /// <p>The network interface permissions.</p>
     #[doc(hidden)]
     pub network_interface_permissions:
-        std::option::Option<std::vec::Vec<crate::types::NetworkInterfacePermission>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeNetworkInterfacePermissionsOutput {
     /// <p>The network interface permissions.</p>
     pub fn network_interface_permissions(
         &self,
-    ) -> std::option::Option<&[crate::types::NetworkInterfacePermission]> {
+    ) -> ::std::option::Option<&[crate::types::NetworkInterfacePermission]> {
         self.network_interface_permissions.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeNetworkInterfacePermissionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeNetworkInterfacePermissionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl DescribeNetworkInterfacePermissionsOutput {
 
 /// A builder for [`DescribeNetworkInterfacePermissionsOutput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeNetworkInterfacePermissionsOutputBuilder {
     pub(crate) network_interface_permissions:
-        std::option::Option<std::vec::Vec<crate::types::NetworkInterfacePermission>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeNetworkInterfacePermissionsOutputBuilder {
@@ -58,24 +60,24 @@ impl DescribeNetworkInterfacePermissionsOutputBuilder {
     ) -> Self {
         let mut v = self.network_interface_permissions.unwrap_or_default();
         v.push(input);
-        self.network_interface_permissions = Some(v);
+        self.network_interface_permissions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The network interface permissions.</p>
     pub fn set_network_interface_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterfacePermission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterfacePermission>>,
     ) -> Self {
         self.network_interface_permissions = input;
         self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

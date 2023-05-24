@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateReceiptRule`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_set_name(impl Into<String>)`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::set_rule_set_name): <p>The name of the receipt rule set that the receipt rule belongs to.</p>
+    ///   - [`rule_set_name(impl ::std::convert::Into<String>)`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::rule_set_name) / [`set_rule_set_name(Option<String>)`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::set_rule_set_name): <p>The name of the receipt rule set that the receipt rule belongs to.</p>
     ///   - [`rule(ReceiptRule)`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::rule) / [`set_rule(Option<ReceiptRule>)`](crate::operation::update_receipt_rule::builders::UpdateReceiptRuleFluentBuilder::set_rule): <p>A data structure that contains the updated receipt rule information.</p>
     /// - On success, responds with [`UpdateReceiptRuleOutput`](crate::operation::update_receipt_rule::UpdateReceiptRuleOutput)
     /// - On failure, responds with [`SdkError<UpdateReceiptRuleError>`](crate::operation::update_receipt_rule::UpdateReceiptRuleError)

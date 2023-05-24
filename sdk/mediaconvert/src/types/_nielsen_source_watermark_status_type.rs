@@ -38,13 +38,13 @@
 /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NielsenSourceWatermarkStatusType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum NielsenSourceWatermarkStatusType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NielsenSourceWatermarkStatusType {
+impl ::std::convert::From<&str> for NielsenSourceWatermarkStatusType {
     fn from(s: &str) -> Self {
         match s {
             "CLEAN" => NielsenSourceWatermarkStatusType::Clean,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for NielsenSourceWatermarkStatusType {
         }
     }
 }
-impl std::str::FromStr for NielsenSourceWatermarkStatusType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NielsenSourceWatermarkStatusType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NielsenSourceWatermarkStatusType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NielsenSourceWatermarkStatusType::from(s))
     }
 }
 impl NielsenSourceWatermarkStatusType {
@@ -86,7 +86,7 @@ impl NielsenSourceWatermarkStatusType {
         &["CLEAN", "WATERMARKED"]
     }
 }
-impl AsRef<str> for NielsenSourceWatermarkStatusType {
+impl ::std::convert::AsRef<str> for NielsenSourceWatermarkStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

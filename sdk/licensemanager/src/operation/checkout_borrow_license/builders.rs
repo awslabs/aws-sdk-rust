@@ -6,29 +6,29 @@ pub use crate::operation::checkout_borrow_license::_checkout_borrow_license_inpu
 /// Fluent builder constructing a request to `CheckoutBorrowLicense`.
 ///
 /// <p>Checks out the specified license for offline use.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CheckoutBorrowLicenseFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder,
 }
 impl CheckoutBorrowLicenseFluentBuilder {
     /// Creates a new `CheckoutBorrowLicense`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::checkout_borrow_license::CheckoutBorrowLicense,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CheckoutBorrowLicenseFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl CheckoutBorrowLicenseFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::checkout_borrow_license::CheckoutBorrowLicenseOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::checkout_borrow_license::CheckoutBorrowLicenseError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
-    pub fn license_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
-    pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_arn(input);
         self
     }
@@ -102,7 +105,7 @@ impl CheckoutBorrowLicenseFluentBuilder {
     /// <p>License entitlements. Partial checkouts are not supported.</p>
     pub fn set_entitlements(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EntitlementData>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EntitlementData>>,
     ) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
@@ -115,18 +118,18 @@ impl CheckoutBorrowLicenseFluentBuilder {
     /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384. For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
     pub fn set_digital_signature_method(
         mut self,
-        input: std::option::Option<crate::types::DigitalSignatureMethod>,
+        input: ::std::option::Option<crate::types::DigitalSignatureMethod>,
     ) -> Self {
         self.inner = self.inner.set_digital_signature_method(input);
         self
     }
     /// <p>Node ID.</p>
-    pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn node_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_id(input.into());
         self
     }
     /// <p>Node ID.</p>
-    pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_id(input);
         self
     }
@@ -142,18 +145,18 @@ impl CheckoutBorrowLicenseFluentBuilder {
     /// <p>Information about constraints.</p>
     pub fn set_checkout_metadata(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Metadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     ) -> Self {
         self.inner = self.inner.set_checkout_metadata(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

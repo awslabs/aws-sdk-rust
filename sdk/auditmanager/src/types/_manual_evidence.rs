@@ -2,15 +2,15 @@
 
 /// <p> Evidence that's uploaded to Audit Manager manually. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManualEvidence {
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
     #[doc(hidden)]
-    pub s3_resource_path: std::option::Option<std::string::String>,
+    pub s3_resource_path: ::std::option::Option<::std::string::String>,
 }
 impl ManualEvidence {
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
-    pub fn s3_resource_path(&self) -> std::option::Option<&str> {
+    pub fn s3_resource_path(&self) -> ::std::option::Option<&str> {
         self.s3_resource_path.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl ManualEvidence {
 
 /// A builder for [`ManualEvidence`](crate::types::ManualEvidence).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ManualEvidenceBuilder {
-    pub(crate) s3_resource_path: std::option::Option<std::string::String>,
+    pub(crate) s3_resource_path: ::std::option::Option<::std::string::String>,
 }
 impl ManualEvidenceBuilder {
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
-    pub fn s3_resource_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_resource_path = Some(input.into());
+    pub fn s3_resource_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_resource_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
-    pub fn set_s3_resource_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_resource_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_resource_path = input;
         self
     }

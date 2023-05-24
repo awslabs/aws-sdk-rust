@@ -3,17 +3,17 @@
 /// <p>[Service-managed permissions] The Organizations accounts to which StackSets deploys. StackSets doesn't deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization.</p>
 /// <p>For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentTargets {
     /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
     #[doc(hidden)]
-    pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
     #[doc(hidden)]
-    pub accounts_url: std::option::Option<std::string::String>,
+    pub accounts_url: ::std::option::Option<::std::string::String>,
     /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
     #[doc(hidden)]
-    pub organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
     /// <p>The following is a list of possible values for the <code>AccountFilterType</code> operation.</p>
     /// <ul>
@@ -23,19 +23,19 @@ pub struct DeploymentTargets {
     /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub account_filter_type: std::option::Option<crate::types::AccountFilterType>,
+    pub account_filter_type: ::std::option::Option<crate::types::AccountFilterType>,
 }
 impl DeploymentTargets {
     /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
-    pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.accounts.as_deref()
     }
     /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-    pub fn accounts_url(&self) -> std::option::Option<&str> {
+    pub fn accounts_url(&self) -> ::std::option::Option<&str> {
         self.accounts_url.as_deref()
     }
     /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
-    pub fn organizational_unit_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn organizational_unit_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.organizational_unit_ids.as_deref()
     }
     /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
@@ -46,7 +46,7 @@ impl DeploymentTargets {
     /// <li> <p> <code>UNION</code>: StackSets includes additional accounts deployment targets. </p> <p>This is the default value if <code>AccountFilterType</code> is not provided. This enables user to update an entire OU and individual accounts from a different OU in one request, which used to be two separate requests.</p> </li>
     /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
     /// </ul>
-    pub fn account_filter_type(&self) -> std::option::Option<&crate::types::AccountFilterType> {
+    pub fn account_filter_type(&self) -> ::std::option::Option<&crate::types::AccountFilterType> {
         self.account_filter_type.as_ref()
     }
 }
@@ -59,12 +59,15 @@ impl DeploymentTargets {
 
 /// A builder for [`DeploymentTargets`](crate::types::DeploymentTargets).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentTargetsBuilder {
-    pub(crate) accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) accounts_url: std::option::Option<std::string::String>,
-    pub(crate) organizational_unit_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) account_filter_type: std::option::Option<crate::types::AccountFilterType>,
+    pub(crate) accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) accounts_url: ::std::option::Option<::std::string::String>,
+    pub(crate) organizational_unit_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_filter_type: ::std::option::Option<crate::types::AccountFilterType>,
 }
 impl DeploymentTargetsBuilder {
     /// Appends an item to `accounts`.
@@ -72,27 +75,27 @@ impl DeploymentTargetsBuilder {
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
     /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
-    pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
         v.push(input.into());
-        self.accounts = Some(v);
+        self.accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
     pub fn set_accounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.accounts = input;
         self
     }
     /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-    pub fn accounts_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.accounts_url = Some(input.into());
+    pub fn accounts_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.accounts_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
-    pub fn set_accounts_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accounts_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accounts_url = input;
         self
     }
@@ -101,16 +104,19 @@ impl DeploymentTargetsBuilder {
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
     /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
-    pub fn organizational_unit_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn organizational_unit_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.organizational_unit_ids.unwrap_or_default();
         v.push(input.into());
-        self.organizational_unit_ids = Some(v);
+        self.organizational_unit_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
     pub fn set_organizational_unit_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.organizational_unit_ids = input;
         self
@@ -124,7 +130,7 @@ impl DeploymentTargetsBuilder {
     /// <li> <p> <code>NONE</code>: Deploys to all the accounts in specified organizational units (OU).</p> </li>
     /// </ul>
     pub fn account_filter_type(mut self, input: crate::types::AccountFilterType) -> Self {
-        self.account_filter_type = Some(input);
+        self.account_filter_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
@@ -137,7 +143,7 @@ impl DeploymentTargetsBuilder {
     /// </ul>
     pub fn set_account_filter_type(
         mut self,
-        input: std::option::Option<crate::types::AccountFilterType>,
+        input: ::std::option::Option<crate::types::AccountFilterType>,
     ) -> Self {
         self.account_filter_type = input;
         self

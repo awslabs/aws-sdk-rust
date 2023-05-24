@@ -2,29 +2,29 @@
 
 /// <p>The aggregated field well configuration of a <code>RadarChartVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RadarChartAggregatedFieldWells {
     /// <p>The aggregated field well categories of a radar chart.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
     #[doc(hidden)]
-    pub color: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub color: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl RadarChartAggregatedFieldWells {
     /// <p>The aggregated field well categories of a radar chart.</p>
-    pub fn category(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.category.as_deref()
     }
     /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
-    pub fn color(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn color(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.color.as_deref()
     }
     /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
         self.values.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl RadarChartAggregatedFieldWells {
 
 /// A builder for [`RadarChartAggregatedFieldWells`](crate::types::RadarChartAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RadarChartAggregatedFieldWellsBuilder {
-    pub(crate) category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) color: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) color: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl RadarChartAggregatedFieldWellsBuilder {
     /// Appends an item to `category`.
@@ -52,13 +54,13 @@ impl RadarChartAggregatedFieldWellsBuilder {
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.category.unwrap_or_default();
         v.push(input);
-        self.category = Some(v);
+        self.category = ::std::option::Option::Some(v);
         self
     }
     /// <p>The aggregated field well categories of a radar chart.</p>
     pub fn set_category(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.category = input;
         self
@@ -71,13 +73,13 @@ impl RadarChartAggregatedFieldWellsBuilder {
     pub fn color(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.color.unwrap_or_default();
         v.push(input);
-        self.color = Some(v);
+        self.color = ::std::option::Option::Some(v);
         self
     }
     /// <p>The color that are assigned to the aggregated field wells of a radar chart.</p>
     pub fn set_color(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.color = input;
         self
@@ -90,13 +92,13 @@ impl RadarChartAggregatedFieldWellsBuilder {
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values that are assigned to the aggregated field wells of a radar chart.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     ) -> Self {
         self.values = input;
         self

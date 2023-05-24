@@ -2,29 +2,29 @@
 
 /// <p>Returns details of the connector that is specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListedConnector {
     /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
-    pub connector_id: std::option::Option<std::string::String>,
+    pub connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the partner's AS2 endpoint.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
 }
 impl ListedConnector {
     /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the connector.</p>
-    pub fn connector_id(&self) -> std::option::Option<&str> {
+    pub fn connector_id(&self) -> ::std::option::Option<&str> {
         self.connector_id.as_deref()
     }
     /// <p>The URL of the partner's AS2 endpoint.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ListedConnector {
 
 /// A builder for [`ListedConnector`](crate::types::ListedConnector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListedConnectorBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) connector_id: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_id: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl ListedConnectorBuilder {
     /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the specified connector.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The unique identifier for the connector.</p>
-    pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connector_id = Some(input.into());
+    pub fn connector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the connector.</p>
-    pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connector_id = input;
         self
     }
     /// <p>The URL of the partner's AS2 endpoint.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the partner's AS2 endpoint.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }

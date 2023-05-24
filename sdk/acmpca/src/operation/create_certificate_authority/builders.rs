@@ -9,29 +9,29 @@ pub use crate::operation::create_certificate_authority::_create_certificate_auth
 /// <p>Both Amazon Web Services Private CA and the IAM principal must have permission to write to the S3 bucket that you specify. If the IAM principal making the call does not have permission to write to the bucket, then an exception is thrown. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies">Access policies for CRLs in Amazon S3</a>.</p>
 /// </note>
 /// <p>Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your CRLs</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCertificateAuthorityFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityInputBuilder,
 }
 impl CreateCertificateAuthorityFluentBuilder {
     /// Creates a new `CreateCertificateAuthority`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_certificate_authority::CreateCertificateAuthority,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_certificate_authority::CreateCertificateAuthorityError,
         >,
     > {
@@ -39,30 +39,33 @@ impl CreateCertificateAuthorityFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_certificate_authority::CreateCertificateAuthorityError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl CreateCertificateAuthorityFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_certificate_authority::CreateCertificateAuthorityOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_certificate_authority::CreateCertificateAuthorityError,
         >,
     > {
@@ -94,7 +97,7 @@ impl CreateCertificateAuthorityFluentBuilder {
     /// <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
     pub fn set_certificate_authority_configuration(
         mut self,
-        input: std::option::Option<crate::types::CertificateAuthorityConfiguration>,
+        input: ::std::option::Option<crate::types::CertificateAuthorityConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_certificate_authority_configuration(input);
         self
@@ -128,7 +131,7 @@ impl CreateCertificateAuthorityFluentBuilder {
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
     pub fn set_revocation_configuration(
         mut self,
-        input: std::option::Option<crate::types::RevocationConfiguration>,
+        input: ::std::option::Option<crate::types::RevocationConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_revocation_configuration(input);
         self
@@ -144,20 +147,23 @@ impl CreateCertificateAuthorityFluentBuilder {
     /// <p>The type of the certificate authority.</p>
     pub fn set_certificate_authority_type(
         mut self,
-        input: std::option::Option<crate::types::CertificateAuthorityType>,
+        input: ::std::option::Option<crate::types::CertificateAuthorityType>,
     ) -> Self {
         self.inner = self.inner.set_certificate_authority_type(input);
         self
     }
     /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within five minutes, Amazon Web Services Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, Amazon Web Services Private CA recognizes that you are requesting multiple certificate authorities.</p>
-    pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idempotency_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within five minutes, Amazon Web Services Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, Amazon Web Services Private CA recognizes that you are requesting multiple certificate authorities.</p>
     pub fn set_idempotency_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
@@ -187,7 +193,7 @@ impl CreateCertificateAuthorityFluentBuilder {
     /// <p>When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with the message, "A certificate authority cannot be created in this region with the specified security standard."</p>
     pub fn set_key_storage_security_standard(
         mut self,
-        input: std::option::Option<crate::types::KeyStorageSecurityStandard>,
+        input: ::std::option::Option<crate::types::KeyStorageSecurityStandard>,
     ) -> Self {
         self.inner = self.inner.set_key_storage_security_standard(input);
         self
@@ -204,7 +210,7 @@ impl CreateCertificateAuthorityFluentBuilder {
     /// <p>Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -219,7 +225,7 @@ impl CreateCertificateAuthorityFluentBuilder {
     /// <p>The default value is GENERAL_PURPOSE.</p>
     pub fn set_usage_mode(
         mut self,
-        input: std::option::Option<crate::types::CertificateAuthorityUsageMode>,
+        input: ::std::option::Option<crate::types::CertificateAuthorityUsageMode>,
     ) -> Self {
         self.inner = self.inner.set_usage_mode(input);
         self

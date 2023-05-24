@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetServerStrategies`](crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl Into<String>)`](crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder::set_server_id): <p> The ID of the server. </p>
+    ///   - [`server_id(impl ::std::convert::Into<String>)`](crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::get_server_strategies::builders::GetServerStrategiesFluentBuilder::set_server_id): <p> The ID of the server. </p>
     /// - On success, responds with [`GetServerStrategiesOutput`](crate::operation::get_server_strategies::GetServerStrategiesOutput) with field(s):
     ///   - [`server_strategies(Option<Vec<ServerStrategy>>)`](crate::operation::get_server_strategies::GetServerStrategiesOutput::server_strategies): <p> A list of strategy recommendations for the server. </p>
     /// - On failure, responds with [`SdkError<GetServerStrategiesError>`](crate::operation::get_server_strategies::GetServerStrategiesError)

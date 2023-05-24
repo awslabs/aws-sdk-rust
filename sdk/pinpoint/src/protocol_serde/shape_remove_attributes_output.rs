@@ -2,7 +2,7 @@
 pub(crate) fn de_attributes_resource_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::AttributesResource>,
+    ::std::option::Option<crate::types::AttributesResource>,
     crate::operation::remove_attributes::RemoveAttributesError,
 > {
     (!body.is_empty())

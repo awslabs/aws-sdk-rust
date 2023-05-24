@@ -2,15 +2,15 @@
 
 /// <p>Validation constraints imposed on parameters of a request (path, query string, headers).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterConstraints {
     /// <p>Whether or not the parameter is required.</p>
     #[doc(hidden)]
-    pub required: std::option::Option<bool>,
+    pub required: ::std::option::Option<bool>,
 }
 impl ParameterConstraints {
     /// <p>Whether or not the parameter is required.</p>
-    pub fn required(&self) -> std::option::Option<bool> {
+    pub fn required(&self) -> ::std::option::Option<bool> {
         self.required
     }
 }
@@ -23,18 +23,20 @@ impl ParameterConstraints {
 
 /// A builder for [`ParameterConstraints`](crate::types::ParameterConstraints).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterConstraintsBuilder {
-    pub(crate) required: std::option::Option<bool>,
+    pub(crate) required: ::std::option::Option<bool>,
 }
 impl ParameterConstraintsBuilder {
     /// <p>Whether or not the parameter is required.</p>
     pub fn required(mut self, input: bool) -> Self {
-        self.required = Some(input);
+        self.required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not the parameter is required.</p>
-    pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
     }

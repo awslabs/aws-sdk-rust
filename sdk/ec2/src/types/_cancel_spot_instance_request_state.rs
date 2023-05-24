@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CancelSpotInstanceRequestState {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum CancelSpotInstanceRequestState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CancelSpotInstanceRequestState {
+impl ::std::convert::From<&str> for CancelSpotInstanceRequestState {
     fn from(s: &str) -> Self {
         match s {
             "active" => CancelSpotInstanceRequestState::Active,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for CancelSpotInstanceRequestState {
         }
     }
 }
-impl std::str::FromStr for CancelSpotInstanceRequestState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CancelSpotInstanceRequestState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CancelSpotInstanceRequestState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CancelSpotInstanceRequestState::from(s))
     }
 }
 impl CancelSpotInstanceRequestState {
@@ -101,7 +101,7 @@ impl CancelSpotInstanceRequestState {
         &["active", "cancelled", "closed", "completed", "open"]
     }
 }
-impl AsRef<str> for CancelSpotInstanceRequestState {
+impl ::std::convert::AsRef<str> for CancelSpotInstanceRequestState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

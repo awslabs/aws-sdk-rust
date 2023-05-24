@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TerminologyDataFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TerminologyDataFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TerminologyDataFormat {
+impl ::std::convert::From<&str> for TerminologyDataFormat {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => TerminologyDataFormat::Csv,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for TerminologyDataFormat {
         }
     }
 }
-impl std::str::FromStr for TerminologyDataFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TerminologyDataFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TerminologyDataFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TerminologyDataFormat::from(s))
     }
 }
 impl TerminologyDataFormat {
@@ -91,7 +91,7 @@ impl TerminologyDataFormat {
         &["CSV", "TMX", "TSV"]
     }
 }
-impl AsRef<str> for TerminologyDataFormat {
+impl ::std::convert::AsRef<str> for TerminologyDataFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

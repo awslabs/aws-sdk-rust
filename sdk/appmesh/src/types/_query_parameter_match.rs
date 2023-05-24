@@ -2,15 +2,15 @@
 
 /// <p>An object representing the query parameter to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
     #[doc(hidden)]
-    pub exact: std::option::Option<std::string::String>,
+    pub exact: ::std::option::Option<::std::string::String>,
 }
 impl QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> ::std::option::Option<&str> {
         self.exact.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl QueryParameterMatch {
 
 /// A builder for [`QueryParameterMatch`](crate::types::QueryParameterMatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryParameterMatchBuilder {
-    pub(crate) exact: std::option::Option<std::string::String>,
+    pub(crate) exact: ::std::option::Option<::std::string::String>,
 }
 impl QueryParameterMatchBuilder {
     /// <p>The exact query parameter to match on.</p>
-    pub fn exact(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exact = Some(input.into());
+    pub fn exact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exact = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The exact query parameter to match on.</p>
-    pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_exact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exact = input;
         self
     }

@@ -9,56 +9,59 @@ pub use crate::operation::import_instance::_import_instance_input::ImportInstanc
 /// <p>This API action supports only single-volume VMs. To import multi-volume VMs, use <code>ImportImage</code> instead.</p>
 /// <p>This API action is not supported by the Command Line Interface (CLI). For information about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
 /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportInstanceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_instance::builders::ImportInstanceInputBuilder,
 }
 impl ImportInstanceFluentBuilder {
     /// Creates a new `ImportInstance`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_instance::ImportInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::import_instance::ImportInstanceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_instance::ImportInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_instance::ImportInstanceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_instance::ImportInstanceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_instance::ImportInstanceError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,19 +74,19 @@ impl ImportInstanceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_instance::ImportInstanceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_instance::ImportInstanceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_instance::ImportInstanceError>,
     > {
         self.send_middleware().await
     }
     /// <p>A description for the instance being imported.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for the instance being imported.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -99,7 +102,7 @@ impl ImportInstanceFluentBuilder {
     /// <p>The disk image.</p>
     pub fn set_disk_images(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DiskImage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DiskImage>>,
     ) -> Self {
         self.inner = self.inner.set_disk_images(input);
         self
@@ -110,7 +113,7 @@ impl ImportInstanceFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -125,7 +128,7 @@ impl ImportInstanceFluentBuilder {
     /// <p>The launch specification.</p>
     pub fn set_launch_specification(
         mut self,
-        input: std::option::Option<crate::types::ImportInstanceLaunchSpecification>,
+        input: ::std::option::Option<crate::types::ImportInstanceLaunchSpecification>,
     ) -> Self {
         self.inner = self.inner.set_launch_specification(input);
         self
@@ -138,7 +141,7 @@ impl ImportInstanceFluentBuilder {
     /// <p>The instance operating system.</p>
     pub fn set_platform(
         mut self,
-        input: std::option::Option<crate::types::PlatformValues>,
+        input: ::std::option::Option<crate::types::PlatformValues>,
     ) -> Self {
         self.inner = self.inner.set_platform(input);
         self

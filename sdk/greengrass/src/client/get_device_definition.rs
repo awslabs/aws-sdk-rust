@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeviceDefinition`](crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_definition_id(impl Into<String>)`](crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder::device_definition_id) / [`set_device_definition_id(Option<String>)`](crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder::set_device_definition_id): The ID of the device definition.
+    ///   - [`device_definition_id(impl ::std::convert::Into<String>)`](crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder::device_definition_id) / [`set_device_definition_id(Option<String>)`](crate::operation::get_device_definition::builders::GetDeviceDefinitionFluentBuilder::set_device_definition_id): The ID of the device definition.
     /// - On success, responds with [`GetDeviceDefinitionOutput`](crate::operation::get_device_definition::GetDeviceDefinitionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_device_definition::GetDeviceDefinitionOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_device_definition::GetDeviceDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.

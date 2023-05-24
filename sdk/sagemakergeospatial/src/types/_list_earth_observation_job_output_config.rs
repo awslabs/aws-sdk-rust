@@ -2,61 +2,63 @@
 
 /// <p>An object containing information about the output file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEarthObservationJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The names of the Earth Observation jobs in the list.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The duration of the session, in seconds.</p>
     #[doc(hidden)]
-    pub duration_in_seconds: std::option::Option<i32>,
+    pub duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The status of the list of the Earth Observation jobs.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EarthObservationJobStatus>,
+    pub status: ::std::option::Option<crate::types::EarthObservationJobStatus>,
     /// <p>The operation type for an Earth Observation job.</p>
     #[doc(hidden)]
-    pub operation_type: std::option::Option<std::string::String>,
+    pub operation_type: ::std::option::Option<::std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ListEarthObservationJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The names of the Earth Observation jobs in the list.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The duration of the session, in seconds.</p>
-    pub fn duration_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn duration_in_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_in_seconds
     }
     /// <p>The status of the list of the Earth Observation jobs.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EarthObservationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EarthObservationJobStatus> {
         self.status.as_ref()
     }
     /// <p>The operation type for an Earth Observation job.</p>
-    pub fn operation_type(&self) -> std::option::Option<&str> {
+    pub fn operation_type(&self) -> ::std::option::Option<&str> {
         self.operation_type.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -69,81 +71,90 @@ impl ListEarthObservationJobOutputConfig {
 
 /// A builder for [`ListEarthObservationJobOutputConfig`](crate::types::ListEarthObservationJobOutputConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListEarthObservationJobOutputConfigBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) duration_in_seconds: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::EarthObservationJobStatus>,
-    pub(crate) operation_type: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) duration_in_seconds: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::EarthObservationJobStatus>,
+    pub(crate) operation_type: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ListEarthObservationJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the list of the Earth Observation jobs.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The names of the Earth Observation jobs in the list.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The names of the Earth Observation jobs in the list.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation time.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The duration of the session, in seconds.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
-        self.duration_in_seconds = Some(input);
+        self.duration_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration of the session, in seconds.</p>
-    pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_seconds = input;
         self
     }
     /// <p>The status of the list of the Earth Observation jobs.</p>
     pub fn status(mut self, input: crate::types::EarthObservationJobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the list of the Earth Observation jobs.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::EarthObservationJobStatus>,
+        input: ::std::option::Option<crate::types::EarthObservationJobStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The operation type for an Earth Observation job.</p>
-    pub fn operation_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operation_type = Some(input.into());
+    pub fn operation_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.operation_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operation type for an Earth Observation job.</p>
-    pub fn set_operation_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operation_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.operation_type = input;
         self
     }
@@ -154,19 +165,19 @@ impl ListEarthObservationJobOutputConfigBuilder {
     /// <p>Each tag consists of a key and a value.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Each tag consists of a key and a value.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

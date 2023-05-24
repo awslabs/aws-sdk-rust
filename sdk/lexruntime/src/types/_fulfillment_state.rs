@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FulfillmentState {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum FulfillmentState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FulfillmentState {
+impl ::std::convert::From<&str> for FulfillmentState {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => FulfillmentState::Failed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for FulfillmentState {
         }
     }
 }
-impl std::str::FromStr for FulfillmentState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FulfillmentState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FulfillmentState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FulfillmentState::from(s))
     }
 }
 impl FulfillmentState {
@@ -91,7 +91,7 @@ impl FulfillmentState {
         &["Failed", "Fulfilled", "ReadyForFulfillment"]
     }
 }
-impl AsRef<str> for FulfillmentState {
+impl ::std::convert::AsRef<str> for FulfillmentState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

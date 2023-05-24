@@ -2,14 +2,14 @@
 
 /// <p>The duration of a maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Duration {
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
     #[doc(hidden)]
     pub value: i64,
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::TimeUnit>,
+    pub unit: ::std::option::Option<crate::types::TimeUnit>,
 }
 impl Duration {
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
@@ -17,7 +17,7 @@ impl Duration {
         self.value
     }
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::TimeUnit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::TimeUnit> {
         self.unit.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Duration {
 
 /// A builder for [`Duration`](crate::types::Duration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DurationBuilder {
-    pub(crate) value: std::option::Option<i64>,
-    pub(crate) unit: std::option::Option<crate::types::TimeUnit>,
+    pub(crate) value: ::std::option::Option<i64>,
+    pub(crate) unit: ::std::option::Option<crate::types::TimeUnit>,
 }
 impl DurationBuilder {
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
     pub fn value(mut self, input: i64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
-    pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
     }
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
     pub fn unit(mut self, input: crate::types::TimeUnit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::TimeUnit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::TimeUnit>) -> Self {
         self.unit = input;
         self
     }

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EventSourcePosition {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EventSourcePosition {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EventSourcePosition {
+impl ::std::convert::From<&str> for EventSourcePosition {
     fn from(s: &str) -> Self {
         match s {
             "AT_TIMESTAMP" => EventSourcePosition::AtTimestamp,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EventSourcePosition {
         }
     }
 }
-impl std::str::FromStr for EventSourcePosition {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EventSourcePosition {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventSourcePosition::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EventSourcePosition::from(s))
     }
 }
 impl EventSourcePosition {
@@ -91,7 +91,7 @@ impl EventSourcePosition {
         &["AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"]
     }
 }
-impl AsRef<str> for EventSourcePosition {
+impl ::std::convert::AsRef<str> for EventSourcePosition {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

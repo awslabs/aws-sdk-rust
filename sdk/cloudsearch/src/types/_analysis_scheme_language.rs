@@ -71,13 +71,13 @@
 /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AnalysisSchemeLanguage {
     #[allow(missing_docs)] // documentation missing in model
@@ -153,7 +153,7 @@ pub enum AnalysisSchemeLanguage {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AnalysisSchemeLanguage {
+impl ::std::convert::From<&str> for AnalysisSchemeLanguage {
     fn from(s: &str) -> Self {
         match s {
             "ar" => AnalysisSchemeLanguage::Ar,
@@ -197,11 +197,11 @@ impl std::convert::From<&str> for AnalysisSchemeLanguage {
         }
     }
 }
-impl std::str::FromStr for AnalysisSchemeLanguage {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AnalysisSchemeLanguage {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalysisSchemeLanguage::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AnalysisSchemeLanguage::from(s))
     }
 }
 impl AnalysisSchemeLanguage {
@@ -255,7 +255,7 @@ impl AnalysisSchemeLanguage {
         ]
     }
 }
-impl AsRef<str> for AnalysisSchemeLanguage {
+impl ::std::convert::AsRef<str> for AnalysisSchemeLanguage {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

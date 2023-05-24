@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConfiguration`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::describe_configuration::builders::DescribeConfigurationFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     /// - On success, responds with [`DescribeConfigurationOutput`](crate::operation::describe_configuration::DescribeConfigurationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_configuration::DescribeConfigurationOutput::creation_time): <p>The time when the configuration was created.</p>

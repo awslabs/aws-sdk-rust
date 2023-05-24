@@ -2,36 +2,36 @@
 
 /// <p>The results extracted for a lending document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingDetection {
     /// <p>The text extracted for a detected value in a lending document.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
     #[doc(hidden)]
-    pub selection_status: std::option::Option<crate::types::SelectionStatus>,
+    pub selection_status: ::std::option::Option<crate::types::SelectionStatus>,
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     #[doc(hidden)]
-    pub geometry: std::option::Option<crate::types::Geometry>,
+    pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
 }
 impl LendingDetection {
     /// <p>The text extracted for a detected value in a lending document.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
-    pub fn selection_status(&self) -> std::option::Option<&crate::types::SelectionStatus> {
+    pub fn selection_status(&self) -> ::std::option::Option<&crate::types::SelectionStatus> {
         self.selection_status.as_ref()
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
         self.geometry.as_ref()
     }
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
 }
@@ -44,54 +44,56 @@ impl LendingDetection {
 
 /// A builder for [`LendingDetection`](crate::types::LendingDetection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LendingDetectionBuilder {
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) selection_status: std::option::Option<crate::types::SelectionStatus>,
-    pub(crate) geometry: std::option::Option<crate::types::Geometry>,
-    pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) selection_status: ::std::option::Option<crate::types::SelectionStatus>,
+    pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,
+    pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl LendingDetectionBuilder {
     /// <p>The text extracted for a detected value in a lending document.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text extracted for a detected value in a lending document.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
     pub fn selection_status(mut self, input: crate::types::SelectionStatus) -> Self {
-        self.selection_status = Some(input);
+        self.selection_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The selection status of a selection element, such as an option button or check box.</p>
     pub fn set_selection_status(
         mut self,
-        input: std::option::Option<crate::types::SelectionStatus>,
+        input: ::std::option::Option<crate::types::SelectionStatus>,
     ) -> Self {
         self.selection_status = input;
         self
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
-        self.geometry = Some(input);
+        self.geometry = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.</p>
-    pub fn set_geometry(mut self, input: std::option::Option<crate::types::Geometry>) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
         self.geometry = input;
         self
     }
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence level for the text of a detected value in a lending document.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }

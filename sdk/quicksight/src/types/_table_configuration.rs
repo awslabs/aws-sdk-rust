@@ -2,62 +2,64 @@
 
 /// <p>The configuration for a <code>TableVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableConfiguration {
     /// <p>The field wells of the visual.</p>
     #[doc(hidden)]
-    pub field_wells: std::option::Option<crate::types::TableFieldWells>,
+    pub field_wells: ::std::option::Option<crate::types::TableFieldWells>,
     /// <p>The sort configuration for a <code>TableVisual</code>.</p>
     #[doc(hidden)]
-    pub sort_configuration: std::option::Option<crate::types::TableSortConfiguration>,
+    pub sort_configuration: ::std::option::Option<crate::types::TableSortConfiguration>,
     /// <p>The table options for a table visual.</p>
     #[doc(hidden)]
-    pub table_options: std::option::Option<crate::types::TableOptions>,
+    pub table_options: ::std::option::Option<crate::types::TableOptions>,
     /// <p>The total options for a table visual.</p>
     #[doc(hidden)]
-    pub total_options: std::option::Option<crate::types::TotalOptions>,
+    pub total_options: ::std::option::Option<crate::types::TotalOptions>,
     /// <p>The field options for a table visual.</p>
     #[doc(hidden)]
-    pub field_options: std::option::Option<crate::types::TableFieldOptions>,
+    pub field_options: ::std::option::Option<crate::types::TableFieldOptions>,
     /// <p>The paginated report options for a table visual.</p>
     #[doc(hidden)]
-    pub paginated_report_options: std::option::Option<crate::types::TablePaginatedReportOptions>,
+    pub paginated_report_options: ::std::option::Option<crate::types::TablePaginatedReportOptions>,
     /// <p>A collection of inline visualizations to display within a chart.</p>
     #[doc(hidden)]
     pub table_inline_visualizations:
-        std::option::Option<std::vec::Vec<crate::types::TableInlineVisualization>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TableInlineVisualization>>,
 }
 impl TableConfiguration {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> std::option::Option<&crate::types::TableFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::TableFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration for a <code>TableVisual</code>.</p>
-    pub fn sort_configuration(&self) -> std::option::Option<&crate::types::TableSortConfiguration> {
+    pub fn sort_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TableSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The table options for a table visual.</p>
-    pub fn table_options(&self) -> std::option::Option<&crate::types::TableOptions> {
+    pub fn table_options(&self) -> ::std::option::Option<&crate::types::TableOptions> {
         self.table_options.as_ref()
     }
     /// <p>The total options for a table visual.</p>
-    pub fn total_options(&self) -> std::option::Option<&crate::types::TotalOptions> {
+    pub fn total_options(&self) -> ::std::option::Option<&crate::types::TotalOptions> {
         self.total_options.as_ref()
     }
     /// <p>The field options for a table visual.</p>
-    pub fn field_options(&self) -> std::option::Option<&crate::types::TableFieldOptions> {
+    pub fn field_options(&self) -> ::std::option::Option<&crate::types::TableFieldOptions> {
         self.field_options.as_ref()
     }
     /// <p>The paginated report options for a table visual.</p>
     pub fn paginated_report_options(
         &self,
-    ) -> std::option::Option<&crate::types::TablePaginatedReportOptions> {
+    ) -> ::std::option::Option<&crate::types::TablePaginatedReportOptions> {
         self.paginated_report_options.as_ref()
     }
     /// <p>A collection of inline visualizations to display within a chart.</p>
     pub fn table_inline_visualizations(
         &self,
-    ) -> std::option::Option<&[crate::types::TableInlineVisualization]> {
+    ) -> ::std::option::Option<&[crate::types::TableInlineVisualization]> {
         self.table_inline_visualizations.as_deref()
     }
 }
@@ -70,80 +72,82 @@ impl TableConfiguration {
 
 /// A builder for [`TableConfiguration`](crate::types::TableConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableConfigurationBuilder {
-    pub(crate) field_wells: std::option::Option<crate::types::TableFieldWells>,
-    pub(crate) sort_configuration: std::option::Option<crate::types::TableSortConfiguration>,
-    pub(crate) table_options: std::option::Option<crate::types::TableOptions>,
-    pub(crate) total_options: std::option::Option<crate::types::TotalOptions>,
-    pub(crate) field_options: std::option::Option<crate::types::TableFieldOptions>,
+    pub(crate) field_wells: ::std::option::Option<crate::types::TableFieldWells>,
+    pub(crate) sort_configuration: ::std::option::Option<crate::types::TableSortConfiguration>,
+    pub(crate) table_options: ::std::option::Option<crate::types::TableOptions>,
+    pub(crate) total_options: ::std::option::Option<crate::types::TotalOptions>,
+    pub(crate) field_options: ::std::option::Option<crate::types::TableFieldOptions>,
     pub(crate) paginated_report_options:
-        std::option::Option<crate::types::TablePaginatedReportOptions>,
+        ::std::option::Option<crate::types::TablePaginatedReportOptions>,
     pub(crate) table_inline_visualizations:
-        std::option::Option<std::vec::Vec<crate::types::TableInlineVisualization>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TableInlineVisualization>>,
 }
 impl TableConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
     pub fn field_wells(mut self, input: crate::types::TableFieldWells) -> Self {
-        self.field_wells = Some(input);
+        self.field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field wells of the visual.</p>
     pub fn set_field_wells(
         mut self,
-        input: std::option::Option<crate::types::TableFieldWells>,
+        input: ::std::option::Option<crate::types::TableFieldWells>,
     ) -> Self {
         self.field_wells = input;
         self
     }
     /// <p>The sort configuration for a <code>TableVisual</code>.</p>
     pub fn sort_configuration(mut self, input: crate::types::TableSortConfiguration) -> Self {
-        self.sort_configuration = Some(input);
+        self.sort_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort configuration for a <code>TableVisual</code>.</p>
     pub fn set_sort_configuration(
         mut self,
-        input: std::option::Option<crate::types::TableSortConfiguration>,
+        input: ::std::option::Option<crate::types::TableSortConfiguration>,
     ) -> Self {
         self.sort_configuration = input;
         self
     }
     /// <p>The table options for a table visual.</p>
     pub fn table_options(mut self, input: crate::types::TableOptions) -> Self {
-        self.table_options = Some(input);
+        self.table_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The table options for a table visual.</p>
     pub fn set_table_options(
         mut self,
-        input: std::option::Option<crate::types::TableOptions>,
+        input: ::std::option::Option<crate::types::TableOptions>,
     ) -> Self {
         self.table_options = input;
         self
     }
     /// <p>The total options for a table visual.</p>
     pub fn total_options(mut self, input: crate::types::TotalOptions) -> Self {
-        self.total_options = Some(input);
+        self.total_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total options for a table visual.</p>
     pub fn set_total_options(
         mut self,
-        input: std::option::Option<crate::types::TotalOptions>,
+        input: ::std::option::Option<crate::types::TotalOptions>,
     ) -> Self {
         self.total_options = input;
         self
     }
     /// <p>The field options for a table visual.</p>
     pub fn field_options(mut self, input: crate::types::TableFieldOptions) -> Self {
-        self.field_options = Some(input);
+        self.field_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field options for a table visual.</p>
     pub fn set_field_options(
         mut self,
-        input: std::option::Option<crate::types::TableFieldOptions>,
+        input: ::std::option::Option<crate::types::TableFieldOptions>,
     ) -> Self {
         self.field_options = input;
         self
@@ -153,13 +157,13 @@ impl TableConfigurationBuilder {
         mut self,
         input: crate::types::TablePaginatedReportOptions,
     ) -> Self {
-        self.paginated_report_options = Some(input);
+        self.paginated_report_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The paginated report options for a table visual.</p>
     pub fn set_paginated_report_options(
         mut self,
-        input: std::option::Option<crate::types::TablePaginatedReportOptions>,
+        input: ::std::option::Option<crate::types::TablePaginatedReportOptions>,
     ) -> Self {
         self.paginated_report_options = input;
         self
@@ -175,13 +179,13 @@ impl TableConfigurationBuilder {
     ) -> Self {
         let mut v = self.table_inline_visualizations.unwrap_or_default();
         v.push(input);
-        self.table_inline_visualizations = Some(v);
+        self.table_inline_visualizations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A collection of inline visualizations to display within a chart.</p>
     pub fn set_table_inline_visualizations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TableInlineVisualization>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TableInlineVisualization>>,
     ) -> Self {
         self.table_inline_visualizations = input;
         self

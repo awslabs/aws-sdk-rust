@@ -2,22 +2,22 @@
 
 /// <p> Status of the EBS options for the specified Elasticsearch domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsOptionsStatus {
     /// <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<crate::types::EbsOptions>,
+    pub options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl EbsOptionsStatus {
     /// <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::EbsOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::EbsOptions> {
         self.options.as_ref()
     }
     /// <p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl EbsOptionsStatus {
 
 /// A builder for [`EbsOptionsStatus`](crate::types::EbsOptionsStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EbsOptionsStatusBuilder {
-    pub(crate) options: std::option::Option<crate::types::EbsOptions>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<crate::types::EbsOptions>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl EbsOptionsStatusBuilder {
     /// <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
     pub fn options(mut self, input: crate::types::EbsOptions) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the EBS options for the specified Elasticsearch domain.</p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::EbsOptions>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::EbsOptions>) -> Self {
         self.options = input;
         self
     }
     /// <p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

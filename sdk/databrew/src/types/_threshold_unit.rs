@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ThresholdUnit {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ThresholdUnit {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ThresholdUnit {
+impl ::std::convert::From<&str> for ThresholdUnit {
     fn from(s: &str) -> Self {
         match s {
             "COUNT" => ThresholdUnit::Count,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ThresholdUnit {
         }
     }
 }
-impl std::str::FromStr for ThresholdUnit {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ThresholdUnit {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThresholdUnit::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ThresholdUnit::from(s))
     }
 }
 impl ThresholdUnit {
@@ -86,7 +86,7 @@ impl ThresholdUnit {
         &["COUNT", "PERCENTAGE"]
     }
 }
-impl AsRef<str> for ThresholdUnit {
+impl ::std::convert::AsRef<str> for ThresholdUnit {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

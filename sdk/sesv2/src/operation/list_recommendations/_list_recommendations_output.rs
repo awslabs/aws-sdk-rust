@@ -2,27 +2,27 @@
 
 /// <p>Contains the response to your request to retrieve the list of recommendations for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationsOutput {
     /// <p>The recommendations applicable to your account.</p>
     #[doc(hidden)]
-    pub recommendations: std::option::Option<std::vec::Vec<crate::types::Recommendation>>,
+    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRecommendationsOutput {
     /// <p>The recommendations applicable to your account.</p>
-    pub fn recommendations(&self) -> std::option::Option<&[crate::types::Recommendation]> {
+    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::Recommendation]> {
         self.recommendations.as_deref()
     }
     /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListRecommendationsOutput {
+impl ::aws_http::request_id::RequestId for ListRecommendationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,13 @@ impl ListRecommendationsOutput {
 
 /// A builder for [`ListRecommendationsOutput`](crate::operation::list_recommendations::ListRecommendationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListRecommendationsOutputBuilder {
-    pub(crate) recommendations: std::option::Option<std::vec::Vec<crate::types::Recommendation>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) recommendations:
+        ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRecommendationsOutputBuilder {
@@ -53,24 +56,24 @@ impl ListRecommendationsOutputBuilder {
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
         v.push(input);
-        self.recommendations = Some(v);
+        self.recommendations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The recommendations applicable to your account.</p>
     pub fn set_recommendations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Recommendation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     ) -> Self {
         self.recommendations = input;
         self
     }
     /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string token indicating that there might be additional recommendations available to be listed. Use the token provided in the <code>ListRecommendationsResponse</code> to use in the subsequent call to <code>ListRecommendations</code> with the same parameters to retrieve the next page of recommendations.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

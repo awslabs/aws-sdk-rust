@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ContactInitiationMethod {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum ContactInitiationMethod {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ContactInitiationMethod {
+impl ::std::convert::From<&str> for ContactInitiationMethod {
     fn from(s: &str) -> Self {
         match s {
             "API" => ContactInitiationMethod::Api,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for ContactInitiationMethod {
         }
     }
 }
-impl std::str::FromStr for ContactInitiationMethod {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ContactInitiationMethod {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContactInitiationMethod::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ContactInitiationMethod::from(s))
     }
 }
 impl ContactInitiationMethod {
@@ -125,7 +125,7 @@ impl ContactInitiationMethod {
         ]
     }
 }
-impl AsRef<str> for ContactInitiationMethod {
+impl ::std::convert::AsRef<str> for ContactInitiationMethod {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

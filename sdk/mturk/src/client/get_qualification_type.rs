@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQualificationType`](crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`qualification_type_id(impl Into<String>)`](crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::qualification_type_id) / [`set_qualification_type_id(Option<String>)`](crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::set_qualification_type_id): <p>The ID of the QualificationType.</p>
+    ///   - [`qualification_type_id(impl ::std::convert::Into<String>)`](crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::qualification_type_id) / [`set_qualification_type_id(Option<String>)`](crate::operation::get_qualification_type::builders::GetQualificationTypeFluentBuilder::set_qualification_type_id): <p>The ID of the QualificationType.</p>
     /// - On success, responds with [`GetQualificationTypeOutput`](crate::operation::get_qualification_type::GetQualificationTypeOutput) with field(s):
     ///   - [`qualification_type(Option<QualificationType>)`](crate::operation::get_qualification_type::GetQualificationTypeOutput::qualification_type): <p> The returned Qualification Type</p>
     /// - On failure, responds with [`SdkError<GetQualificationTypeError>`](crate::operation::get_qualification_type::GetQualificationTypeError)

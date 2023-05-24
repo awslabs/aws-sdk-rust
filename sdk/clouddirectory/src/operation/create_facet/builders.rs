@@ -6,56 +6,59 @@ pub use crate::operation::create_facet::_create_facet_input::CreateFacetInputBui
 /// Fluent builder constructing a request to `CreateFacet`.
 ///
 /// <p>Creates a new <code>Facet</code> in a schema. Facet creation is allowed only in development or applied schemas.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFacetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_facet::builders::CreateFacetInputBuilder,
 }
 impl CreateFacetFluentBuilder {
     /// Creates a new `CreateFacet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_facet::CreateFacet,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_facet::CreateFacetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl CreateFacetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_facet::CreateFacetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_facet::CreateFacetError>,
     > {
         self.send_middleware().await
     }
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());
         self
     }
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
-    pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_arn(input);
         self
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -106,7 +109,7 @@ impl CreateFacetFluentBuilder {
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FacetAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FacetAttribute>>,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
@@ -141,7 +144,10 @@ impl CreateFacetFluentBuilder {
     /// <ul>
     /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
-    pub fn set_object_type(mut self, input: std::option::Option<crate::types::ObjectType>) -> Self {
+    pub fn set_object_type(
+        mut self,
+        input: ::std::option::Option<crate::types::ObjectType>,
+    ) -> Self {
         self.inner = self.inner.set_object_type(input);
         self
     }
@@ -151,7 +157,10 @@ impl CreateFacetFluentBuilder {
         self
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn set_facet_style(mut self, input: std::option::Option<crate::types::FacetStyle>) -> Self {
+    pub fn set_facet_style(
+        mut self,
+        input: ::std::option::Option<crate::types::FacetStyle>,
+    ) -> Self {
         self.inner = self.inner.set_facet_style(input);
         self
     }

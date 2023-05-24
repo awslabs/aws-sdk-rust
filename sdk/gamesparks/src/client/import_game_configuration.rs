@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ImportGameConfiguration`](crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder::set_game_name): <p>The name of the game.</p>
+    ///   - [`game_name(impl ::std::convert::Into<String>)`](crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder::set_game_name): <p>The name of the game.</p>
     ///   - [`import_source(ImportGameConfigurationSource)`](crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder::import_source) / [`set_import_source(Option<ImportGameConfigurationSource>)`](crate::operation::import_game_configuration::builders::ImportGameConfigurationFluentBuilder::set_import_source): <p>The source used to import configuration sections.</p>
     /// - On success, responds with [`ImportGameConfigurationOutput`](crate::operation::import_game_configuration::ImportGameConfigurationOutput) with field(s):
     ///   - [`game_configuration(Option<GameConfigurationDetails>)`](crate::operation::import_game_configuration::ImportGameConfigurationOutput::game_configuration): <p>Details about the game configuration.</p>

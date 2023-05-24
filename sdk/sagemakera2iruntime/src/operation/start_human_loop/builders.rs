@@ -6,56 +6,63 @@ pub use crate::operation::start_human_loop::_start_human_loop_input::StartHumanL
 /// Fluent builder constructing a request to `StartHumanLoop`.
 ///
 /// <p>Starts a human loop, provided that at least one activation condition is met.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartHumanLoopFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_human_loop::builders::StartHumanLoopInputBuilder,
 }
 impl StartHumanLoopFluentBuilder {
     /// Creates a new `StartHumanLoop`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_human_loop::StartHumanLoop,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_human_loop::StartHumanLoopError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_human_loop::StartHumanLoopOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_human_loop::StartHumanLoopError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,31 +75,42 @@ impl StartHumanLoopFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_human_loop::StartHumanLoopOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_human_loop::StartHumanLoopError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_human_loop::StartHumanLoopError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the human loop.</p>
-    pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn human_loop_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.human_loop_name(input.into());
         self
     }
     /// <p>The name of the human loop.</p>
-    pub fn set_human_loop_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_human_loop_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_human_loop_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
-    pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn flow_definition_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.flow_definition_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>
     pub fn set_flow_definition_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_flow_definition_arn(input);
         self
@@ -105,7 +123,7 @@ impl StartHumanLoopFluentBuilder {
     /// <p>An object that contains information about the human loop.</p>
     pub fn set_human_loop_input(
         mut self,
-        input: std::option::Option<crate::types::HumanLoopInput>,
+        input: ::std::option::Option<crate::types::HumanLoopInput>,
     ) -> Self {
         self.inner = self.inner.set_human_loop_input(input);
         self
@@ -118,7 +136,7 @@ impl StartHumanLoopFluentBuilder {
     /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>
     pub fn set_data_attributes(
         mut self,
-        input: std::option::Option<crate::types::HumanLoopDataAttributes>,
+        input: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
     ) -> Self {
         self.inner = self.inner.set_data_attributes(input);
         self

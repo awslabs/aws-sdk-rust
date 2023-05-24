@@ -2,18 +2,18 @@
 
 /// <p> The object containing details about homogeneous database preferences. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Homogeneous {
     /// <p> The target database engine for homogeneous database migration preferences. </p>
     #[doc(hidden)]
     pub target_database_engine:
-        std::option::Option<std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
 }
 impl Homogeneous {
     /// <p> The target database engine for homogeneous database migration preferences. </p>
     pub fn target_database_engine(
         &self,
-    ) -> std::option::Option<&[crate::types::HomogeneousTargetDatabaseEngine]> {
+    ) -> ::std::option::Option<&[crate::types::HomogeneousTargetDatabaseEngine]> {
         self.target_database_engine.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl Homogeneous {
 
 /// A builder for [`Homogeneous`](crate::types::Homogeneous).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HomogeneousBuilder {
     pub(crate) target_database_engine:
-        std::option::Option<std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
 }
 impl HomogeneousBuilder {
     /// Appends an item to `target_database_engine`.
@@ -43,13 +45,15 @@ impl HomogeneousBuilder {
     ) -> Self {
         let mut v = self.target_database_engine.unwrap_or_default();
         v.push(input);
-        self.target_database_engine = Some(v);
+        self.target_database_engine = ::std::option::Option::Some(v);
         self
     }
     /// <p> The target database engine for homogeneous database migration preferences. </p>
     pub fn set_target_database_engine(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::HomogeneousTargetDatabaseEngine>,
+        >,
     ) -> Self {
         self.target_database_engine = input;
         self

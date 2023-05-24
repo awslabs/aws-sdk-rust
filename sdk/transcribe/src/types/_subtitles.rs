@@ -4,24 +4,24 @@
 /// <p>You can choose a start index of 0 or 1, and you can specify either WebVTT or SubRip (or both) as your output format.</p>
 /// <p>Note that your subtitle files are placed in the same location as your transcription output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subtitles {
     /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
     #[doc(hidden)]
-    pub formats: std::option::Option<std::vec::Vec<crate::types::SubtitleFormat>>,
+    pub formats: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
     /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>
     /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
     #[doc(hidden)]
-    pub output_start_index: std::option::Option<i32>,
+    pub output_start_index: ::std::option::Option<i32>,
 }
 impl Subtitles {
     /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
-    pub fn formats(&self) -> std::option::Option<&[crate::types::SubtitleFormat]> {
+    pub fn formats(&self) -> ::std::option::Option<&[crate::types::SubtitleFormat]> {
         self.formats.as_deref()
     }
     /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>
     /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
-    pub fn output_start_index(&self) -> std::option::Option<i32> {
+    pub fn output_start_index(&self) -> ::std::option::Option<i32> {
         self.output_start_index
     }
 }
@@ -34,10 +34,12 @@ impl Subtitles {
 
 /// A builder for [`Subtitles`](crate::types::Subtitles).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubtitlesBuilder {
-    pub(crate) formats: std::option::Option<std::vec::Vec<crate::types::SubtitleFormat>>,
-    pub(crate) output_start_index: std::option::Option<i32>,
+    pub(crate) formats: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
+    pub(crate) output_start_index: ::std::option::Option<i32>,
 }
 impl SubtitlesBuilder {
     /// Appends an item to `formats`.
@@ -48,13 +50,13 @@ impl SubtitlesBuilder {
     pub fn formats(mut self, input: crate::types::SubtitleFormat) -> Self {
         let mut v = self.formats.unwrap_or_default();
         v.push(input);
-        self.formats = Some(v);
+        self.formats = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, two output files are generated.</p>
     pub fn set_formats(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SubtitleFormat>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SubtitleFormat>>,
     ) -> Self {
         self.formats = input;
         self
@@ -62,12 +64,12 @@ impl SubtitlesBuilder {
     /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>
     /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
     pub fn output_start_index(mut self, input: i32) -> Self {
-        self.output_start_index = Some(input);
+        self.output_start_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the starting value that is assigned to the first subtitle segment.</p>
     /// <p>The default start index for Amazon Transcribe is <code>0</code>, which differs from the more widely used standard of <code>1</code>. If you're uncertain which value to use, we recommend choosing <code>1</code>, as this may improve compatibility with other services.</p>
-    pub fn set_output_start_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_output_start_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.output_start_index = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Show each group result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestResult {
     /// <p>Show each group of test results.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<crate::types::GroupResult>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>,
 }
 impl TestResult {
     /// <p>Show each group of test results.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::GroupResult]> {
+    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupResult]> {
         self.groups.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl TestResult {
 
 /// A builder for [`TestResult`](crate::types::TestResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestResultBuilder {
-    pub(crate) groups: std::option::Option<std::vec::Vec<crate::types::GroupResult>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>,
 }
 impl TestResultBuilder {
     /// Appends an item to `groups`.
@@ -36,13 +38,13 @@ impl TestResultBuilder {
     pub fn groups(mut self, input: crate::types::GroupResult) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input);
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Show each group of test results.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupResult>>,
     ) -> Self {
         self.groups = input;
         self

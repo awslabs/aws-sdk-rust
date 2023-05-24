@@ -2,22 +2,22 @@
 
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDataValidationParameters {
     /// <p>The location of the validation script.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::Source>,
+    pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The type of validation script.</p>
     #[doc(hidden)]
-    pub script_type: std::option::Option<crate::types::ScriptType>,
+    pub script_type: ::std::option::Option<crate::types::ScriptType>,
 }
 impl UserDataValidationParameters {
     /// <p>The location of the validation script.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>The type of validation script.</p>
-    pub fn script_type(&self) -> std::option::Option<&crate::types::ScriptType> {
+    pub fn script_type(&self) -> ::std::option::Option<&crate::types::ScriptType> {
         self.script_type.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl UserDataValidationParameters {
 
 /// A builder for [`UserDataValidationParameters`](crate::types::UserDataValidationParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserDataValidationParametersBuilder {
-    pub(crate) source: std::option::Option<crate::types::Source>,
-    pub(crate) script_type: std::option::Option<crate::types::ScriptType>,
+    pub(crate) source: ::std::option::Option<crate::types::Source>,
+    pub(crate) script_type: ::std::option::Option<crate::types::ScriptType>,
 }
 impl UserDataValidationParametersBuilder {
     /// <p>The location of the validation script.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the validation script.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
     }
     /// <p>The type of validation script.</p>
     pub fn script_type(mut self, input: crate::types::ScriptType) -> Self {
-        self.script_type = Some(input);
+        self.script_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of validation script.</p>
-    pub fn set_script_type(mut self, input: std::option::Option<crate::types::ScriptType>) -> Self {
+    pub fn set_script_type(
+        mut self,
+        input: ::std::option::Option<crate::types::ScriptType>,
+    ) -> Self {
         self.script_type = input;
         self
     }

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AutoSnapshotStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AutoSnapshotStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AutoSnapshotStatus {
+impl ::std::convert::From<&str> for AutoSnapshotStatus {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => AutoSnapshotStatus::Failed,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AutoSnapshotStatus {
         }
     }
 }
-impl std::str::FromStr for AutoSnapshotStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AutoSnapshotStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoSnapshotStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AutoSnapshotStatus::from(s))
     }
 }
 impl AutoSnapshotStatus {
@@ -96,7 +96,7 @@ impl AutoSnapshotStatus {
         &["Failed", "InProgress", "NotFound", "Success"]
     }
 }
-impl AsRef<str> for AutoSnapshotStatus {
+impl ::std::convert::AsRef<str> for AutoSnapshotStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

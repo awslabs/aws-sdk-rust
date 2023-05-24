@@ -2,15 +2,15 @@
 
 /// <p>A request to apply a service update</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceUpdateRequest {
     /// <p>The unique ID of the service update</p>
     #[doc(hidden)]
-    pub service_update_name_to_apply: std::option::Option<std::string::String>,
+    pub service_update_name_to_apply: ::std::option::Option<::std::string::String>,
 }
 impl ServiceUpdateRequest {
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name_to_apply(&self) -> std::option::Option<&str> {
+    pub fn service_update_name_to_apply(&self) -> ::std::option::Option<&str> {
         self.service_update_name_to_apply.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl ServiceUpdateRequest {
 
 /// A builder for [`ServiceUpdateRequest`](crate::types::ServiceUpdateRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceUpdateRequestBuilder {
-    pub(crate) service_update_name_to_apply: std::option::Option<std::string::String>,
+    pub(crate) service_update_name_to_apply: ::std::option::Option<::std::string::String>,
 }
 impl ServiceUpdateRequestBuilder {
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name_to_apply(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_update_name_to_apply = Some(input.into());
+    pub fn service_update_name_to_apply(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_update_name_to_apply = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
     pub fn set_service_update_name_to_apply(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_update_name_to_apply = input;
         self

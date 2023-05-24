@@ -2,29 +2,29 @@
 
 /// <p>A configuration used when creating an Object Lambda Access Point transformation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectLambdaTransformationConfiguration {
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<
-        std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
+    pub actions: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
     >,
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
     #[doc(hidden)]
     pub content_transformation:
-        std::option::Option<crate::types::ObjectLambdaContentTransformation>,
+        ::std::option::Option<crate::types::ObjectLambdaContentTransformation>,
 }
 impl ObjectLambdaTransformationConfiguration {
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
     pub fn actions(
         &self,
-    ) -> std::option::Option<&[crate::types::ObjectLambdaTransformationConfigurationAction]> {
+    ) -> ::std::option::Option<&[crate::types::ObjectLambdaTransformationConfigurationAction]> {
         self.actions.as_deref()
     }
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
     pub fn content_transformation(
         &self,
-    ) -> std::option::Option<&crate::types::ObjectLambdaContentTransformation> {
+    ) -> ::std::option::Option<&crate::types::ObjectLambdaContentTransformation> {
         self.content_transformation.as_ref()
     }
 }
@@ -37,13 +37,15 @@ impl ObjectLambdaTransformationConfiguration {
 
 /// A builder for [`ObjectLambdaTransformationConfiguration`](crate::types::ObjectLambdaTransformationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObjectLambdaTransformationConfigurationBuilder {
-    pub(crate) actions: std::option::Option<
-        std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
+    pub(crate) actions: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
     >,
     pub(crate) content_transformation:
-        std::option::Option<crate::types::ObjectLambdaContentTransformation>,
+        ::std::option::Option<crate::types::ObjectLambdaContentTransformation>,
 }
 impl ObjectLambdaTransformationConfigurationBuilder {
     /// Appends an item to `actions`.
@@ -57,14 +59,14 @@ impl ObjectLambdaTransformationConfigurationBuilder {
     ) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A container for the action of an Object Lambda Access Point configuration. Valid inputs are <code>GetObject</code>, <code>ListObjects</code>, <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ObjectLambdaTransformationConfigurationAction>,
         >,
     ) -> Self {
         self.actions = input;
@@ -75,13 +77,13 @@ impl ObjectLambdaTransformationConfigurationBuilder {
         mut self,
         input: crate::types::ObjectLambdaContentTransformation,
     ) -> Self {
-        self.content_transformation = Some(input);
+        self.content_transformation = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container for the content transformation of an Object Lambda Access Point configuration.</p>
     pub fn set_content_transformation(
         mut self,
-        input: std::option::Option<crate::types::ObjectLambdaContentTransformation>,
+        input: ::std::option::Option<crate::types::ObjectLambdaContentTransformation>,
     ) -> Self {
         self.content_transformation = input;
         self

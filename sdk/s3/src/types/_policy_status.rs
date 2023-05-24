@@ -2,7 +2,7 @@
 
 /// <p>The container element for a bucket's policy status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyStatus {
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl PolicyStatus {
 
 /// A builder for [`PolicyStatus`](crate::types::PolicyStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyStatusBuilder {
-    pub(crate) is_public: std::option::Option<bool>,
+    pub(crate) is_public: ::std::option::Option<bool>,
 }
 impl PolicyStatusBuilder {
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     pub fn is_public(mut self, input: bool) -> Self {
-        self.is_public = Some(input);
+        self.is_public = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
-    pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_public = input;
         self
     }

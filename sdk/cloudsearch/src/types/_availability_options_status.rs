@@ -2,14 +2,14 @@
 
 /// <p>The status and configuration of the domain's availability options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityOptionsStatus {
     /// <p>The availability options configured for the domain.</p>
     #[doc(hidden)]
     pub options: bool,
     /// <p>The status of domain configuration option.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AvailabilityOptionsStatus {
     /// <p>The availability options configured for the domain.</p>
@@ -17,7 +17,7 @@ impl AvailabilityOptionsStatus {
         self.options
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl AvailabilityOptionsStatus {
 
 /// A builder for [`AvailabilityOptionsStatus`](crate::types::AvailabilityOptionsStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AvailabilityOptionsStatusBuilder {
-    pub(crate) options: std::option::Option<bool>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<bool>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AvailabilityOptionsStatusBuilder {
     /// <p>The availability options configured for the domain.</p>
     pub fn options(mut self, input: bool) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The availability options configured for the domain.</p>
-    pub fn set_options(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<bool>) -> Self {
         self.options = input;
         self
     }
     /// <p>The status of domain configuration option.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

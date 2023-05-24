@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGroup`](crate::operation::get_group::builders::GetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_name(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_name): <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
-    ///   - [`group(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group): <p>The name or the ARN of the resource group to retrieve.</p>
+    ///   - [`group_name(impl ::std::convert::Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_name): <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
+    ///   - [`group(impl ::std::convert::Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group) / [`set_group(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group): <p>The name or the ARN of the resource group to retrieve.</p>
     /// - On success, responds with [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput) with field(s):
     ///   - [`group(Option<Group>)`](crate::operation::get_group::GetGroupOutput::group): <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
     /// - On failure, responds with [`SdkError<GetGroupError>`](crate::operation::get_group::GetGroupError)

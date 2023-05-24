@@ -2,22 +2,22 @@
 
 /// <p>Enables the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) and defines the log level to send to CloudWatch Logs (e.g. <code>INFO</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModuleLoggingConfigurationInput {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub log_level: std::option::Option<crate::types::LoggingLevel>,
+    pub log_level: ::std::option::Option<crate::types::LoggingLevel>,
 }
 impl ModuleLoggingConfigurationInput {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::types::LoggingLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LoggingLevel> {
         self.log_level.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl ModuleLoggingConfigurationInput {
 
 /// A builder for [`ModuleLoggingConfigurationInput`](crate::types::ModuleLoggingConfigurationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModuleLoggingConfigurationInputBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) log_level: std::option::Option<crate::types::LoggingLevel>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) log_level: ::std::option::Option<crate::types::LoggingLevel>,
 }
 impl ModuleLoggingConfigurationInputBuilder {
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>).</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
     pub fn log_level(mut self, input: crate::types::LoggingLevel) -> Self {
-        self.log_level = Some(input);
+        self.log_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the Apache Airflow log level (e.g. <code>INFO</code>) to send to CloudWatch Logs.</p>
-    pub fn set_log_level(mut self, input: std::option::Option<crate::types::LoggingLevel>) -> Self {
+    pub fn set_log_level(
+        mut self,
+        input: ::std::option::Option<crate::types::LoggingLevel>,
+    ) -> Self {
         self.log_level = input;
         self
     }

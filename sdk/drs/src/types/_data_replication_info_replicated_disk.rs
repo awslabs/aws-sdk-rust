@@ -2,11 +2,11 @@
 
 /// <p>A disk that should be replicated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataReplicationInfoReplicatedDisk {
     /// <p>The name of the device.</p>
     #[doc(hidden)]
-    pub device_name: std::option::Option<std::string::String>,
+    pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The total amount of data to be replicated in bytes.</p>
     #[doc(hidden)]
     pub total_storage_bytes: i64,
@@ -22,7 +22,7 @@ pub struct DataReplicationInfoReplicatedDisk {
 }
 impl DataReplicationInfoReplicatedDisk {
     /// <p>The name of the device.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>The total amount of data to be replicated in bytes.</p>
@@ -51,62 +51,64 @@ impl DataReplicationInfoReplicatedDisk {
 
 /// A builder for [`DataReplicationInfoReplicatedDisk`](crate::types::DataReplicationInfoReplicatedDisk).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataReplicationInfoReplicatedDiskBuilder {
-    pub(crate) device_name: std::option::Option<std::string::String>,
-    pub(crate) total_storage_bytes: std::option::Option<i64>,
-    pub(crate) replicated_storage_bytes: std::option::Option<i64>,
-    pub(crate) rescanned_storage_bytes: std::option::Option<i64>,
-    pub(crate) backlogged_storage_bytes: std::option::Option<i64>,
+    pub(crate) device_name: ::std::option::Option<::std::string::String>,
+    pub(crate) total_storage_bytes: ::std::option::Option<i64>,
+    pub(crate) replicated_storage_bytes: ::std::option::Option<i64>,
+    pub(crate) rescanned_storage_bytes: ::std::option::Option<i64>,
+    pub(crate) backlogged_storage_bytes: ::std::option::Option<i64>,
 }
 impl DataReplicationInfoReplicatedDiskBuilder {
     /// <p>The name of the device.</p>
-    pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_name = Some(input.into());
+    pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the device.</p>
-    pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
     /// <p>The total amount of data to be replicated in bytes.</p>
     pub fn total_storage_bytes(mut self, input: i64) -> Self {
-        self.total_storage_bytes = Some(input);
+        self.total_storage_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total amount of data to be replicated in bytes.</p>
-    pub fn set_total_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_storage_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_storage_bytes = input;
         self
     }
     /// <p>The amount of data replicated so far in bytes.</p>
     pub fn replicated_storage_bytes(mut self, input: i64) -> Self {
-        self.replicated_storage_bytes = Some(input);
+        self.replicated_storage_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of data replicated so far in bytes.</p>
-    pub fn set_replicated_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_replicated_storage_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.replicated_storage_bytes = input;
         self
     }
     /// <p>The amount of data to be rescanned in bytes.</p>
     pub fn rescanned_storage_bytes(mut self, input: i64) -> Self {
-        self.rescanned_storage_bytes = Some(input);
+        self.rescanned_storage_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of data to be rescanned in bytes.</p>
-    pub fn set_rescanned_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_rescanned_storage_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.rescanned_storage_bytes = input;
         self
     }
     /// <p>The size of the replication backlog in bytes.</p>
     pub fn backlogged_storage_bytes(mut self, input: i64) -> Self {
-        self.backlogged_storage_bytes = Some(input);
+        self.backlogged_storage_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the replication backlog in bytes.</p>
-    pub fn set_backlogged_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_backlogged_storage_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.backlogged_storage_bytes = input;
         self
     }

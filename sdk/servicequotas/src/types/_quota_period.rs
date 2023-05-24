@@ -2,22 +2,22 @@
 
 /// <p>Information about the quota period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QuotaPeriod {
     /// <p>The value.</p>
     #[doc(hidden)]
-    pub period_value: std::option::Option<i32>,
+    pub period_value: ::std::option::Option<i32>,
     /// <p>The time unit.</p>
     #[doc(hidden)]
-    pub period_unit: std::option::Option<crate::types::PeriodUnit>,
+    pub period_unit: ::std::option::Option<crate::types::PeriodUnit>,
 }
 impl QuotaPeriod {
     /// <p>The value.</p>
-    pub fn period_value(&self) -> std::option::Option<i32> {
+    pub fn period_value(&self) -> ::std::option::Option<i32> {
         self.period_value
     }
     /// <p>The time unit.</p>
-    pub fn period_unit(&self) -> std::option::Option<&crate::types::PeriodUnit> {
+    pub fn period_unit(&self) -> ::std::option::Option<&crate::types::PeriodUnit> {
         self.period_unit.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl QuotaPeriod {
 
 /// A builder for [`QuotaPeriod`](crate::types::QuotaPeriod).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QuotaPeriodBuilder {
-    pub(crate) period_value: std::option::Option<i32>,
-    pub(crate) period_unit: std::option::Option<crate::types::PeriodUnit>,
+    pub(crate) period_value: ::std::option::Option<i32>,
+    pub(crate) period_unit: ::std::option::Option<crate::types::PeriodUnit>,
 }
 impl QuotaPeriodBuilder {
     /// <p>The value.</p>
     pub fn period_value(mut self, input: i32) -> Self {
-        self.period_value = Some(input);
+        self.period_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value.</p>
-    pub fn set_period_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_period_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.period_value = input;
         self
     }
     /// <p>The time unit.</p>
     pub fn period_unit(mut self, input: crate::types::PeriodUnit) -> Self {
-        self.period_unit = Some(input);
+        self.period_unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time unit.</p>
-    pub fn set_period_unit(mut self, input: std::option::Option<crate::types::PeriodUnit>) -> Self {
+    pub fn set_period_unit(
+        mut self,
+        input: ::std::option::Option<crate::types::PeriodUnit>,
+    ) -> Self {
         self.period_unit = input;
         self
     }

@@ -2,25 +2,25 @@
 
 /// <p>A summary of the request sent by using <code>SearchPlaceIndexForSuggestions</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForSuggestionsSummary {
     /// <p>The free-form partial text input specified in the request.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     #[doc(hidden)]
-    pub bias_position: std::option::Option<std::vec::Vec<f64>>,
+    pub bias_position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
     #[doc(hidden)]
-    pub filter_b_box: std::option::Option<std::vec::Vec<f64>>,
+    pub filter_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Contains the optional country filter specified in the request.</p>
     #[doc(hidden)]
-    pub filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub filter_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains the optional result count limit specified in the request.</p>
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p>Esri</p> </li>
@@ -29,32 +29,32 @@ pub struct SearchPlaceIndexForSuggestionsSummary {
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<std::string::String>,
+    pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     #[doc(hidden)]
-    pub language: std::option::Option<std::string::String>,
+    pub language: ::std::option::Option<::std::string::String>,
 }
 impl SearchPlaceIndexForSuggestionsSummary {
     /// <p>The free-form partial text input specified in the request.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub fn bias_position(&self) -> std::option::Option<&[f64]> {
+    pub fn bias_position(&self) -> ::std::option::Option<&[f64]> {
         self.bias_position.as_deref()
     }
     /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
-    pub fn filter_b_box(&self) -> std::option::Option<&[f64]> {
+    pub fn filter_b_box(&self) -> ::std::option::Option<&[f64]> {
         self.filter_b_box.as_deref()
     }
     /// <p>Contains the optional country filter specified in the request.</p>
-    pub fn filter_countries(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn filter_countries(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.filter_countries.as_deref()
     }
     /// <p>Contains the optional result count limit specified in the request.</p>
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
@@ -64,16 +64,16 @@ impl SearchPlaceIndexForSuggestionsSummary {
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> ::std::option::Option<&str> {
         self.data_source.as_deref()
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
 }
-impl std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForSuggestionsSummary");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("bias_position", &"*** Sensitive Data Redacted ***");
@@ -94,24 +94,24 @@ impl SearchPlaceIndexForSuggestionsSummary {
 
 /// A builder for [`SearchPlaceIndexForSuggestionsSummary`](crate::types::SearchPlaceIndexForSuggestionsSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SearchPlaceIndexForSuggestionsSummaryBuilder {
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) bias_position: std::option::Option<std::vec::Vec<f64>>,
-    pub(crate) filter_b_box: std::option::Option<std::vec::Vec<f64>>,
-    pub(crate) filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) data_source: std::option::Option<std::string::String>,
-    pub(crate) language: std::option::Option<std::string::String>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) bias_position: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) filter_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) filter_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) data_source: ::std::option::Option<::std::string::String>,
+    pub(crate) language: ::std::option::Option<::std::string::String>,
 }
 impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// <p>The free-form partial text input specified in the request.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The free-form partial text input specified in the request.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
@@ -125,13 +125,13 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     pub fn bias_position(mut self, input: f64) -> Self {
         let mut v = self.bias_position.unwrap_or_default();
         v.push(input);
-        self.bias_position = Some(v);
+        self.bias_position = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the coordinates for the optional bias position specified in the request.</p>
     /// <p>This parameter contains a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_bias_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.bias_position = input;
         self
     }
@@ -143,11 +143,11 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     pub fn filter_b_box(mut self, input: f64) -> Self {
         let mut v = self.filter_b_box.unwrap_or_default();
         v.push(input);
-        self.filter_b_box = Some(v);
+        self.filter_b_box = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the coordinates for the optional bounding box specified in the request.</p>
-    pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_filter_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.filter_b_box = input;
         self
     }
@@ -156,27 +156,30 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// To override the contents of this collection use [`set_filter_countries`](Self::set_filter_countries).
     ///
     /// <p>Contains the optional country filter specified in the request.</p>
-    pub fn filter_countries(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_countries(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.filter_countries.unwrap_or_default();
         v.push(input.into());
-        self.filter_countries = Some(v);
+        self.filter_countries = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the optional country filter specified in the request.</p>
     pub fn set_filter_countries(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.filter_countries = input;
         self
     }
     /// <p>Contains the optional result count limit specified in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the optional result count limit specified in the request.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
@@ -187,8 +190,8 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source = Some(input.into());
+    pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
@@ -198,17 +201,17 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// <li> <p>Here</p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-    pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language = Some(input.into());
+    pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The preferred language used to return results. Matches the language in the request. The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
-    pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
@@ -225,8 +228,8 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for SearchPlaceIndexForSuggestionsSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SearchPlaceIndexForSuggestionsSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SearchPlaceIndexForSuggestionsSummaryBuilder");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("bias_position", &"*** Sensitive Data Redacted ***");

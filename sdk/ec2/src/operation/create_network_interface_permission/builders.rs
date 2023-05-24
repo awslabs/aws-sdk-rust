@@ -7,47 +7,50 @@ pub use crate::operation::create_network_interface_permission::_create_network_i
 ///
 /// <p>Grants an Amazon Web Services-authorized account permission to attach the specified network interface to an instance in their account.</p>
 /// <p>You can grant permission to a single Amazon Web Services account only, and only one account at a time.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNetworkInterfacePermissionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionInputBuilder,
 }
 impl CreateNetworkInterfacePermissionFluentBuilder {
     /// Creates a new `CreateNetworkInterfacePermission`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermission, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermission, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput, aws_smithy_http::result::SdkError<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,40 +61,49 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput, aws_smithy_http::result::SdkError<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionError>>
                          {
         self.send_middleware().await
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.network_interface_id(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
     /// <p>The Amazon Web Service. Currently not supported.</p>
-    pub fn aws_service(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_service(input.into());
         self
     }
     /// <p>The Amazon Web Service. Currently not supported.</p>
-    pub fn set_aws_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_service(input);
         self
     }
@@ -103,7 +115,7 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
     /// <p>The type of permission to grant.</p>
     pub fn set_permission(
         mut self,
-        input: std::option::Option<crate::types::InterfacePermissionType>,
+        input: ::std::option::Option<crate::types::InterfacePermissionType>,
     ) -> Self {
         self.inner = self.inner.set_permission(input);
         self
@@ -114,7 +126,7 @@ impl CreateNetworkInterfacePermissionFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }

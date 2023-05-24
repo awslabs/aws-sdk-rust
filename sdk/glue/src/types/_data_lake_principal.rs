@@ -2,15 +2,15 @@
 
 /// <p>The Lake Formation principal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
     #[doc(hidden)]
-    pub data_lake_principal_identifier: std::option::Option<std::string::String>,
+    pub data_lake_principal_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
-    pub fn data_lake_principal_identifier(&self) -> std::option::Option<&str> {
+    pub fn data_lake_principal_identifier(&self) -> ::std::option::Option<&str> {
         self.data_lake_principal_identifier.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl DataLakePrincipal {
 
 /// A builder for [`DataLakePrincipal`](crate::types::DataLakePrincipal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataLakePrincipalBuilder {
-    pub(crate) data_lake_principal_identifier: std::option::Option<std::string::String>,
+    pub(crate) data_lake_principal_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DataLakePrincipalBuilder {
     /// <p>An identifier for the Lake Formation principal.</p>
-    pub fn data_lake_principal_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_lake_principal_identifier = Some(input.into());
+    pub fn data_lake_principal_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_lake_principal_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for the Lake Formation principal.</p>
     pub fn set_data_lake_principal_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_lake_principal_identifier = input;
         self

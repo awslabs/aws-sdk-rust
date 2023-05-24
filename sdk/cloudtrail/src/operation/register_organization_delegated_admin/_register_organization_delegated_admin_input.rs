@@ -2,15 +2,15 @@
 
 /// <p>Specifies an organization member account ID as a CloudTrail delegated administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterOrganizationDelegatedAdminInput {
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
     #[doc(hidden)]
-    pub member_account_id: std::option::Option<std::string::String>,
+    pub member_account_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterOrganizationDelegatedAdminInput {
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
-    pub fn member_account_id(&self) -> std::option::Option<&str> {
+    pub fn member_account_id(&self) -> ::std::option::Option<&str> {
         self.member_account_id.as_deref()
     }
 }
@@ -23,27 +23,32 @@ impl RegisterOrganizationDelegatedAdminInput {
 
 /// A builder for [`RegisterOrganizationDelegatedAdminInput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterOrganizationDelegatedAdminInputBuilder {
-    pub(crate) member_account_id: std::option::Option<std::string::String>,
+    pub(crate) member_account_id: ::std::option::Option<::std::string::String>,
 }
 impl RegisterOrganizationDelegatedAdminInputBuilder {
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
-    pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_account_id = Some(input.into());
+    pub fn member_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.member_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An organization member account ID that you want to designate as a delegated administrator.</p>
     pub fn set_member_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.member_account_id = input;
         self
     }
     /// Consumes the builder and constructs a [`RegisterOrganizationDelegatedAdminInput`](crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput).
-    pub fn build(self) -> Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminInput {
                 member_account_id: self.member_account_id
                 ,

@@ -2,29 +2,29 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Grantee {
     /// <p></p>
     #[doc(hidden)]
-    pub type_identifier: std::option::Option<crate::types::S3GranteeTypeIdentifier>,
+    pub type_identifier: ::std::option::Option<crate::types::S3GranteeTypeIdentifier>,
     /// <p></p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl S3Grantee {
     /// <p></p>
-    pub fn type_identifier(&self) -> std::option::Option<&crate::types::S3GranteeTypeIdentifier> {
+    pub fn type_identifier(&self) -> ::std::option::Option<&crate::types::S3GranteeTypeIdentifier> {
         self.type_identifier.as_ref()
     }
     /// <p></p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p></p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl S3Grantee {
 
 /// A builder for [`S3Grantee`](crate::types::S3Grantee).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3GranteeBuilder {
-    pub(crate) type_identifier: std::option::Option<crate::types::S3GranteeTypeIdentifier>,
-    pub(crate) identifier: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
+    pub(crate) type_identifier: ::std::option::Option<crate::types::S3GranteeTypeIdentifier>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl S3GranteeBuilder {
     /// <p></p>
     pub fn type_identifier(mut self, input: crate::types::S3GranteeTypeIdentifier) -> Self {
-        self.type_identifier = Some(input);
+        self.type_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
     pub fn set_type_identifier(
         mut self,
-        input: std::option::Option<crate::types::S3GranteeTypeIdentifier>,
+        input: ::std::option::Option<crate::types::S3GranteeTypeIdentifier>,
     ) -> Self {
         self.type_identifier = input;
         self
     }
     /// <p></p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p></p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }

@@ -2,23 +2,23 @@
 
 /// <p>Contains the response to a <code>DescribeElasticLoadBalancers</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticLoadBalancersOutput {
     /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     #[doc(hidden)]
     pub elastic_load_balancers:
-        std::option::Option<std::vec::Vec<crate::types::ElasticLoadBalancer>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ElasticLoadBalancer>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticLoadBalancersOutput {
     /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     pub fn elastic_load_balancers(
         &self,
-    ) -> std::option::Option<&[crate::types::ElasticLoadBalancer]> {
+    ) -> ::std::option::Option<&[crate::types::ElasticLoadBalancer]> {
         self.elastic_load_balancers.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeElasticLoadBalancersOutput {
+impl ::aws_http::request_id::RequestId for DescribeElasticLoadBalancersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeElasticLoadBalancersOutput {
 
 /// A builder for [`DescribeElasticLoadBalancersOutput`](crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeElasticLoadBalancersOutputBuilder {
     pub(crate) elastic_load_balancers:
-        std::option::Option<std::vec::Vec<crate::types::ElasticLoadBalancer>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ElasticLoadBalancer>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticLoadBalancersOutputBuilder {
@@ -47,13 +49,13 @@ impl DescribeElasticLoadBalancersOutputBuilder {
     pub fn elastic_load_balancers(mut self, input: crate::types::ElasticLoadBalancer) -> Self {
         let mut v = self.elastic_load_balancers.unwrap_or_default();
         v.push(input);
-        self.elastic_load_balancers = Some(v);
+        self.elastic_load_balancers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic Load Balancing instances.</p>
     pub fn set_elastic_load_balancers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ElasticLoadBalancer>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticLoadBalancer>>,
     ) -> Self {
         self.elastic_load_balancers = input;
         self

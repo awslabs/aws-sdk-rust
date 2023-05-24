@@ -2,22 +2,22 @@
 
 /// <p>Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html">DescribePlayerSessions</a> with the player session ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacedPlayerSession {
     /// <p>A unique identifier for a player that is associated with this player session.</p>
     #[doc(hidden)]
-    pub player_id: std::option::Option<std::string::String>,
+    pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a player session.</p>
     #[doc(hidden)]
-    pub player_session_id: std::option::Option<std::string::String>,
+    pub player_session_id: ::std::option::Option<::std::string::String>,
 }
 impl PlacedPlayerSession {
     /// <p>A unique identifier for a player that is associated with this player session.</p>
-    pub fn player_id(&self) -> std::option::Option<&str> {
+    pub fn player_id(&self) -> ::std::option::Option<&str> {
         self.player_id.as_deref()
     }
     /// <p>A unique identifier for a player session.</p>
-    pub fn player_session_id(&self) -> std::option::Option<&str> {
+    pub fn player_session_id(&self) -> ::std::option::Option<&str> {
         self.player_session_id.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl PlacedPlayerSession {
 
 /// A builder for [`PlacedPlayerSession`](crate::types::PlacedPlayerSession).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlacedPlayerSessionBuilder {
-    pub(crate) player_id: std::option::Option<std::string::String>,
-    pub(crate) player_session_id: std::option::Option<std::string::String>,
+    pub(crate) player_id: ::std::option::Option<::std::string::String>,
+    pub(crate) player_session_id: ::std::option::Option<::std::string::String>,
 }
 impl PlacedPlayerSessionBuilder {
     /// <p>A unique identifier for a player that is associated with this player session.</p>
-    pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.player_id = Some(input.into());
+    pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.player_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a player that is associated with this player session.</p>
-    pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_id = input;
         self
     }
     /// <p>A unique identifier for a player session.</p>
-    pub fn player_session_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.player_session_id = Some(input.into());
+    pub fn player_session_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.player_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a player session.</p>
     pub fn set_player_session_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.player_session_id = input;
         self

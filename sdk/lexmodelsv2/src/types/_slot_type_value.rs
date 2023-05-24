@@ -2,22 +2,22 @@
 
 /// <p>Each slot type can have a set of values. Each <code>SlotTypeValue</code> represents a value that the slot type can take.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeValue {
     /// <p>The value of the slot type entry.</p>
     #[doc(hidden)]
-    pub sample_value: std::option::Option<crate::types::SampleValue>,
+    pub sample_value: ::std::option::Option<crate::types::SampleValue>,
     /// <p>Additional values related to the slot type entry.</p>
     #[doc(hidden)]
-    pub synonyms: std::option::Option<std::vec::Vec<crate::types::SampleValue>>,
+    pub synonyms: ::std::option::Option<::std::vec::Vec<crate::types::SampleValue>>,
 }
 impl SlotTypeValue {
     /// <p>The value of the slot type entry.</p>
-    pub fn sample_value(&self) -> std::option::Option<&crate::types::SampleValue> {
+    pub fn sample_value(&self) -> ::std::option::Option<&crate::types::SampleValue> {
         self.sample_value.as_ref()
     }
     /// <p>Additional values related to the slot type entry.</p>
-    pub fn synonyms(&self) -> std::option::Option<&[crate::types::SampleValue]> {
+    pub fn synonyms(&self) -> ::std::option::Option<&[crate::types::SampleValue]> {
         self.synonyms.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl SlotTypeValue {
 
 /// A builder for [`SlotTypeValue`](crate::types::SlotTypeValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlotTypeValueBuilder {
-    pub(crate) sample_value: std::option::Option<crate::types::SampleValue>,
-    pub(crate) synonyms: std::option::Option<std::vec::Vec<crate::types::SampleValue>>,
+    pub(crate) sample_value: ::std::option::Option<crate::types::SampleValue>,
+    pub(crate) synonyms: ::std::option::Option<::std::vec::Vec<crate::types::SampleValue>>,
 }
 impl SlotTypeValueBuilder {
     /// <p>The value of the slot type entry.</p>
     pub fn sample_value(mut self, input: crate::types::SampleValue) -> Self {
-        self.sample_value = Some(input);
+        self.sample_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the slot type entry.</p>
     pub fn set_sample_value(
         mut self,
-        input: std::option::Option<crate::types::SampleValue>,
+        input: ::std::option::Option<crate::types::SampleValue>,
     ) -> Self {
         self.sample_value = input;
         self
@@ -57,13 +59,13 @@ impl SlotTypeValueBuilder {
     pub fn synonyms(mut self, input: crate::types::SampleValue) -> Self {
         let mut v = self.synonyms.unwrap_or_default();
         v.push(input);
-        self.synonyms = Some(v);
+        self.synonyms = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional values related to the slot type entry.</p>
     pub fn set_synonyms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SampleValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SampleValue>>,
     ) -> Self {
         self.synonyms = input;
         self

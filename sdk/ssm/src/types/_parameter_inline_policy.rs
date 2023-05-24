@@ -2,29 +2,29 @@
 
 /// <p>One or more policies assigned to a parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterInlinePolicy {
     /// <p>The JSON text of the policy.</p>
     #[doc(hidden)]
-    pub policy_text: std::option::Option<std::string::String>,
+    pub policy_text: ::std::option::Option<::std::string::String>,
     /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     #[doc(hidden)]
-    pub policy_type: std::option::Option<std::string::String>,
+    pub policy_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
     #[doc(hidden)]
-    pub policy_status: std::option::Option<std::string::String>,
+    pub policy_status: ::std::option::Option<::std::string::String>,
 }
 impl ParameterInlinePolicy {
     /// <p>The JSON text of the policy.</p>
-    pub fn policy_text(&self) -> std::option::Option<&str> {
+    pub fn policy_text(&self) -> ::std::option::Option<&str> {
         self.policy_text.as_deref()
     }
     /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
-    pub fn policy_type(&self) -> std::option::Option<&str> {
+    pub fn policy_type(&self) -> ::std::option::Option<&str> {
         self.policy_type.as_deref()
     }
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
-    pub fn policy_status(&self) -> std::option::Option<&str> {
+    pub fn policy_status(&self) -> ::std::option::Option<&str> {
         self.policy_status.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl ParameterInlinePolicy {
 
 /// A builder for [`ParameterInlinePolicy`](crate::types::ParameterInlinePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterInlinePolicyBuilder {
-    pub(crate) policy_text: std::option::Option<std::string::String>,
-    pub(crate) policy_type: std::option::Option<std::string::String>,
-    pub(crate) policy_status: std::option::Option<std::string::String>,
+    pub(crate) policy_text: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_type: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_status: ::std::option::Option<::std::string::String>,
 }
 impl ParameterInlinePolicyBuilder {
     /// <p>The JSON text of the policy.</p>
-    pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_text = Some(input.into());
+    pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON text of the policy.</p>
-    pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_text = input;
         self
     }
     /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
-    pub fn policy_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_type = Some(input.into());
+    pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of policy. Parameter Store, a capability of Amazon Web Services Systems Manager, supports the following policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
-    pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type = input;
         self
     }
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
-    pub fn policy_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_status = Some(input.into());
+    pub fn policy_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't applied), or InProgress (the policy is being applied now). </p>
-    pub fn set_policy_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_status = input;
         self
     }

@@ -2,11 +2,11 @@
 
 /// <p>Represents information about incompatibility.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncompatibilityMessage {
     /// <p>A message about the incompatibility.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The type of incompatibility.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -18,11 +18,11 @@ pub struct IncompatibilityMessage {
     /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DeviceAttribute>,
+    pub r#type: ::std::option::Option<crate::types::DeviceAttribute>,
 }
 impl IncompatibilityMessage {
     /// <p>A message about the incompatibility.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The type of incompatibility.</p>
@@ -35,7 +35,7 @@ impl IncompatibilityMessage {
     /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
     /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DeviceAttribute> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DeviceAttribute> {
         self.r#type.as_ref()
     }
 }
@@ -48,19 +48,21 @@ impl IncompatibilityMessage {
 
 /// A builder for [`IncompatibilityMessage`](crate::types::IncompatibilityMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IncompatibilityMessageBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::DeviceAttribute>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DeviceAttribute>,
 }
 impl IncompatibilityMessageBuilder {
     /// <p>A message about the incompatibility.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the incompatibility.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -75,7 +77,7 @@ impl IncompatibilityMessageBuilder {
     /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::DeviceAttribute) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of incompatibility.</p>
@@ -88,7 +90,7 @@ impl IncompatibilityMessageBuilder {
     /// <li> <p>REMOTE_ACCESS_ENABLED</p> </li>
     /// <li> <p>APPIUM_VERSION</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DeviceAttribute>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DeviceAttribute>) -> Self {
         self.r#type = input;
         self
     }

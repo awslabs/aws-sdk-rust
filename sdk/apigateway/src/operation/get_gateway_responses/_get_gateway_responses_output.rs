@@ -2,27 +2,27 @@
 
 /// <p>The collection of the GatewayResponse instances of a RestApi as a <code>responseType</code>-to-GatewayResponse object map of key-value pairs. As such, pagination is not supported for querying this collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGatewayResponsesOutput {
     /// <p>Returns the entire collection, because of no pagination support.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::GatewayResponse>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>>,
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<std::string::String>,
+    pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetGatewayResponsesOutput {
     /// <p>Returns the entire collection, because of no pagination support.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::GatewayResponse]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::GatewayResponse]> {
         self.items.as_deref()
     }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
-    pub fn position(&self) -> std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<&str> {
         self.position.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetGatewayResponsesOutput {
+impl ::aws_http::request_id::RequestId for GetGatewayResponsesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl GetGatewayResponsesOutput {
 
 /// A builder for [`GetGatewayResponsesOutput`](crate::operation::get_gateway_responses::GetGatewayResponsesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetGatewayResponsesOutputBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::GatewayResponse>>,
-    pub(crate) position: std::option::Option<std::string::String>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>>,
+    pub(crate) position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetGatewayResponsesOutputBuilder {
@@ -53,24 +55,24 @@ impl GetGatewayResponsesOutputBuilder {
     pub fn items(mut self, input: crate::types::GatewayResponse) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns the entire collection, because of no pagination support.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GatewayResponse>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayResponse>>,
     ) -> Self {
         self.items = input;
         self
     }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
-    pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
-        self.position = Some(input.into());
+    pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.</p>
-    pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
     }

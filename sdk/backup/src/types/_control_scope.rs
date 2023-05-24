@@ -4,33 +4,35 @@
 /// <p>To set a control scope that includes all of a particular resource, leave the <code>ControlScope</code> empty or do not pass it when calling <code>CreateFramework</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlScope {
     /// <p>The ID of the only Amazon Web Services resource that you want your control scope to contain.</p>
     #[doc(hidden)]
-    pub compliance_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub compliance_resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Describes whether the control scope includes one or more types of resources, such as <code>EFS</code> or <code>RDS</code>.</p>
     #[doc(hidden)]
-    pub compliance_resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub compliance_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag value is optional, but it cannot be an empty string. The structure to assign a tag is: <code>[{"Key":"string","Value":"string"}]</code>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ControlScope {
     /// <p>The ID of the only Amazon Web Services resource that you want your control scope to contain.</p>
-    pub fn compliance_resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn compliance_resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.compliance_resource_ids.as_deref()
     }
     /// <p>Describes whether the control scope includes one or more types of resources, such as <code>EFS</code> or <code>RDS</code>.</p>
-    pub fn compliance_resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn compliance_resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.compliance_resource_types.as_deref()
     }
     /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag value is optional, but it cannot be an empty string. The structure to assign a tag is: <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -43,12 +45,17 @@ impl ControlScope {
 
 /// A builder for [`ControlScope`](crate::types::ControlScope).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ControlScopeBuilder {
-    pub(crate) compliance_resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) compliance_resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) compliance_resource_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) compliance_resource_types:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ControlScopeBuilder {
     /// Appends an item to `compliance_resource_ids`.
@@ -56,16 +63,19 @@ impl ControlScopeBuilder {
     /// To override the contents of this collection use [`set_compliance_resource_ids`](Self::set_compliance_resource_ids).
     ///
     /// <p>The ID of the only Amazon Web Services resource that you want your control scope to contain.</p>
-    pub fn compliance_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn compliance_resource_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.compliance_resource_ids.unwrap_or_default();
         v.push(input.into());
-        self.compliance_resource_ids = Some(v);
+        self.compliance_resource_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the only Amazon Web Services resource that you want your control scope to contain.</p>
     pub fn set_compliance_resource_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.compliance_resource_ids = input;
         self
@@ -75,16 +85,19 @@ impl ControlScopeBuilder {
     /// To override the contents of this collection use [`set_compliance_resource_types`](Self::set_compliance_resource_types).
     ///
     /// <p>Describes whether the control scope includes one or more types of resources, such as <code>EFS</code> or <code>RDS</code>.</p>
-    pub fn compliance_resource_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn compliance_resource_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.compliance_resource_types.unwrap_or_default();
         v.push(input.into());
-        self.compliance_resource_types = Some(v);
+        self.compliance_resource_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Describes whether the control scope includes one or more types of resources, such as <code>EFS</code> or <code>RDS</code>.</p>
     pub fn set_compliance_resource_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.compliance_resource_types = input;
         self
@@ -96,19 +109,19 @@ impl ControlScopeBuilder {
     /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag value is optional, but it cannot be an empty string. The structure to assign a tag is: <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tag key-value pair applied to those Amazon Web Services resources that you want to trigger an evaluation for a rule. A maximum of one key-value pair can be provided. The tag value is optional, but it cannot be an empty string. The structure to assign a tag is: <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

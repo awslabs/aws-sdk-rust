@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum VpcTenancy {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum VpcTenancy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for VpcTenancy {
+impl ::std::convert::From<&str> for VpcTenancy {
     fn from(s: &str) -> Self {
         match s {
             "default" => VpcTenancy::Default,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for VpcTenancy {
         }
     }
 }
-impl std::str::FromStr for VpcTenancy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for VpcTenancy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VpcTenancy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(VpcTenancy::from(s))
     }
 }
 impl VpcTenancy {
@@ -79,7 +79,7 @@ impl VpcTenancy {
         &["default"]
     }
 }
-impl AsRef<str> for VpcTenancy {
+impl ::std::convert::AsRef<str> for VpcTenancy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

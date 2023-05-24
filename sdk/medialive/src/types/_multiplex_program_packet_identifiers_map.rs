@@ -2,99 +2,99 @@
 
 /// Packet identifiers map for a given Multiplex program.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __listOf__integer
     #[doc(hidden)]
-    pub audio_pids: std::option::Option<std::vec::Vec<i32>>,
+    pub audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Placeholder documentation for __listOf__integer
     #[doc(hidden)]
-    pub dvb_sub_pids: std::option::Option<std::vec::Vec<i32>>,
+    pub dvb_sub_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub dvb_teletext_pid: std::option::Option<i32>,
+    pub dvb_teletext_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub etv_platform_pid: std::option::Option<i32>,
+    pub etv_platform_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub etv_signal_pid: std::option::Option<i32>,
+    pub etv_signal_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __listOf__integer
     #[doc(hidden)]
-    pub klv_data_pids: std::option::Option<std::vec::Vec<i32>>,
+    pub klv_data_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub pcr_pid: std::option::Option<i32>,
+    pub pcr_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub pmt_pid: std::option::Option<i32>,
+    pub pmt_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub private_metadata_pid: std::option::Option<i32>,
+    pub private_metadata_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __listOf__integer
     #[doc(hidden)]
-    pub scte27_pids: std::option::Option<std::vec::Vec<i32>>,
+    pub scte27_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub scte35_pid: std::option::Option<i32>,
+    pub scte35_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub timed_metadata_pid: std::option::Option<i32>,
+    pub timed_metadata_pid: ::std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub video_pid: std::option::Option<i32>,
+    pub video_pid: ::std::option::Option<i32>,
 }
 impl MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __listOf__integer
-    pub fn audio_pids(&self) -> std::option::Option<&[i32]> {
+    pub fn audio_pids(&self) -> ::std::option::Option<&[i32]> {
         self.audio_pids.as_deref()
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn dvb_sub_pids(&self) -> std::option::Option<&[i32]> {
+    pub fn dvb_sub_pids(&self) -> ::std::option::Option<&[i32]> {
         self.dvb_sub_pids.as_deref()
     }
     /// Placeholder documentation for __integer
-    pub fn dvb_teletext_pid(&self) -> std::option::Option<i32> {
+    pub fn dvb_teletext_pid(&self) -> ::std::option::Option<i32> {
         self.dvb_teletext_pid
     }
     /// Placeholder documentation for __integer
-    pub fn etv_platform_pid(&self) -> std::option::Option<i32> {
+    pub fn etv_platform_pid(&self) -> ::std::option::Option<i32> {
         self.etv_platform_pid
     }
     /// Placeholder documentation for __integer
-    pub fn etv_signal_pid(&self) -> std::option::Option<i32> {
+    pub fn etv_signal_pid(&self) -> ::std::option::Option<i32> {
         self.etv_signal_pid
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn klv_data_pids(&self) -> std::option::Option<&[i32]> {
+    pub fn klv_data_pids(&self) -> ::std::option::Option<&[i32]> {
         self.klv_data_pids.as_deref()
     }
     /// Placeholder documentation for __integer
-    pub fn pcr_pid(&self) -> std::option::Option<i32> {
+    pub fn pcr_pid(&self) -> ::std::option::Option<i32> {
         self.pcr_pid
     }
     /// Placeholder documentation for __integer
-    pub fn pmt_pid(&self) -> std::option::Option<i32> {
+    pub fn pmt_pid(&self) -> ::std::option::Option<i32> {
         self.pmt_pid
     }
     /// Placeholder documentation for __integer
-    pub fn private_metadata_pid(&self) -> std::option::Option<i32> {
+    pub fn private_metadata_pid(&self) -> ::std::option::Option<i32> {
         self.private_metadata_pid
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn scte27_pids(&self) -> std::option::Option<&[i32]> {
+    pub fn scte27_pids(&self) -> ::std::option::Option<&[i32]> {
         self.scte27_pids.as_deref()
     }
     /// Placeholder documentation for __integer
-    pub fn scte35_pid(&self) -> std::option::Option<i32> {
+    pub fn scte35_pid(&self) -> ::std::option::Option<i32> {
         self.scte35_pid
     }
     /// Placeholder documentation for __integer
-    pub fn timed_metadata_pid(&self) -> std::option::Option<i32> {
+    pub fn timed_metadata_pid(&self) -> ::std::option::Option<i32> {
         self.timed_metadata_pid
     }
     /// Placeholder documentation for __integer
-    pub fn video_pid(&self) -> std::option::Option<i32> {
+    pub fn video_pid(&self) -> ::std::option::Option<i32> {
         self.video_pid
     }
 }
@@ -107,21 +107,23 @@ impl MultiplexProgramPacketIdentifiersMap {
 
 /// A builder for [`MultiplexProgramPacketIdentifiersMap`](crate::types::MultiplexProgramPacketIdentifiersMap).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiplexProgramPacketIdentifiersMapBuilder {
-    pub(crate) audio_pids: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) dvb_sub_pids: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) dvb_teletext_pid: std::option::Option<i32>,
-    pub(crate) etv_platform_pid: std::option::Option<i32>,
-    pub(crate) etv_signal_pid: std::option::Option<i32>,
-    pub(crate) klv_data_pids: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) pcr_pid: std::option::Option<i32>,
-    pub(crate) pmt_pid: std::option::Option<i32>,
-    pub(crate) private_metadata_pid: std::option::Option<i32>,
-    pub(crate) scte27_pids: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) scte35_pid: std::option::Option<i32>,
-    pub(crate) timed_metadata_pid: std::option::Option<i32>,
-    pub(crate) video_pid: std::option::Option<i32>,
+    pub(crate) audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) dvb_sub_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) dvb_teletext_pid: ::std::option::Option<i32>,
+    pub(crate) etv_platform_pid: ::std::option::Option<i32>,
+    pub(crate) etv_signal_pid: ::std::option::Option<i32>,
+    pub(crate) klv_data_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) pcr_pid: ::std::option::Option<i32>,
+    pub(crate) pmt_pid: ::std::option::Option<i32>,
+    pub(crate) private_metadata_pid: ::std::option::Option<i32>,
+    pub(crate) scte27_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) scte35_pid: ::std::option::Option<i32>,
+    pub(crate) timed_metadata_pid: ::std::option::Option<i32>,
+    pub(crate) video_pid: ::std::option::Option<i32>,
 }
 impl MultiplexProgramPacketIdentifiersMapBuilder {
     /// Appends an item to `audio_pids`.
@@ -132,11 +134,11 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn audio_pids(mut self, input: i32) -> Self {
         let mut v = self.audio_pids.unwrap_or_default();
         v.push(input);
-        self.audio_pids = Some(v);
+        self.audio_pids = ::std::option::Option::Some(v);
         self
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn set_audio_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_audio_pids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.audio_pids = input;
         self
     }
@@ -148,41 +150,41 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn dvb_sub_pids(mut self, input: i32) -> Self {
         let mut v = self.dvb_sub_pids.unwrap_or_default();
         v.push(input);
-        self.dvb_sub_pids = Some(v);
+        self.dvb_sub_pids = ::std::option::Option::Some(v);
         self
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn set_dvb_sub_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_dvb_sub_pids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.dvb_sub_pids = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn dvb_teletext_pid(mut self, input: i32) -> Self {
-        self.dvb_teletext_pid = Some(input);
+        self.dvb_teletext_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_dvb_teletext_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dvb_teletext_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dvb_teletext_pid = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn etv_platform_pid(mut self, input: i32) -> Self {
-        self.etv_platform_pid = Some(input);
+        self.etv_platform_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_etv_platform_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_etv_platform_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.etv_platform_pid = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn etv_signal_pid(mut self, input: i32) -> Self {
-        self.etv_signal_pid = Some(input);
+        self.etv_signal_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_etv_signal_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_etv_signal_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.etv_signal_pid = input;
         self
     }
@@ -194,41 +196,41 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn klv_data_pids(mut self, input: i32) -> Self {
         let mut v = self.klv_data_pids.unwrap_or_default();
         v.push(input);
-        self.klv_data_pids = Some(v);
+        self.klv_data_pids = ::std::option::Option::Some(v);
         self
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn set_klv_data_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_klv_data_pids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.klv_data_pids = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn pcr_pid(mut self, input: i32) -> Self {
-        self.pcr_pid = Some(input);
+        self.pcr_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_pcr_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pcr_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pcr_pid = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn pmt_pid(mut self, input: i32) -> Self {
-        self.pmt_pid = Some(input);
+        self.pmt_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_pmt_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pmt_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pmt_pid = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn private_metadata_pid(mut self, input: i32) -> Self {
-        self.private_metadata_pid = Some(input);
+        self.private_metadata_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_private_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_private_metadata_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.private_metadata_pid = input;
         self
     }
@@ -240,41 +242,41 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
     pub fn scte27_pids(mut self, input: i32) -> Self {
         let mut v = self.scte27_pids.unwrap_or_default();
         v.push(input);
-        self.scte27_pids = Some(v);
+        self.scte27_pids = ::std::option::Option::Some(v);
         self
     }
     /// Placeholder documentation for __listOf__integer
-    pub fn set_scte27_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_scte27_pids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.scte27_pids = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn scte35_pid(mut self, input: i32) -> Self {
-        self.scte35_pid = Some(input);
+        self.scte35_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_scte35_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scte35_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scte35_pid = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn timed_metadata_pid(mut self, input: i32) -> Self {
-        self.timed_metadata_pid = Some(input);
+        self.timed_metadata_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_timed_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timed_metadata_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timed_metadata_pid = input;
         self
     }
     /// Placeholder documentation for __integer
     pub fn video_pid(mut self, input: i32) -> Self {
-        self.video_pid = Some(input);
+        self.video_pid = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for __integer
-    pub fn set_video_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_video_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.video_pid = input;
         self
     }

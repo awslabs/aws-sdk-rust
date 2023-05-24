@@ -11,36 +11,36 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 /// <p>You must specify one of the following value types, depending on the <code>dataType</code> of the specified asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html">AssetProperty</a> in the <i>AWS IoT SiteWise API Reference</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetPropertyVariant {
     /// <p>The asset property value is a string. You must use an expression, and the evaluated result should be a string.</p>
     #[doc(hidden)]
-    pub string_value: std::option::Option<std::string::String>,
+    pub string_value: ::std::option::Option<::std::string::String>,
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
     #[doc(hidden)]
-    pub integer_value: std::option::Option<std::string::String>,
+    pub integer_value: ::std::option::Option<::std::string::String>,
     /// <p>The asset property value is a double. You must use an expression, and the evaluated result should be a double.</p>
     #[doc(hidden)]
-    pub double_value: std::option::Option<std::string::String>,
+    pub double_value: ::std::option::Option<::std::string::String>,
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
     #[doc(hidden)]
-    pub boolean_value: std::option::Option<std::string::String>,
+    pub boolean_value: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyVariant {
     /// <p>The asset property value is a string. You must use an expression, and the evaluated result should be a string.</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
+    pub fn string_value(&self) -> ::std::option::Option<&str> {
         self.string_value.as_deref()
     }
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
-    pub fn integer_value(&self) -> std::option::Option<&str> {
+    pub fn integer_value(&self) -> ::std::option::Option<&str> {
         self.integer_value.as_deref()
     }
     /// <p>The asset property value is a double. You must use an expression, and the evaluated result should be a double.</p>
-    pub fn double_value(&self) -> std::option::Option<&str> {
+    pub fn double_value(&self) -> ::std::option::Option<&str> {
         self.double_value.as_deref()
     }
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
-    pub fn boolean_value(&self) -> std::option::Option<&str> {
+    pub fn boolean_value(&self) -> ::std::option::Option<&str> {
         self.boolean_value.as_deref()
     }
 }
@@ -53,51 +53,65 @@ impl AssetPropertyVariant {
 
 /// A builder for [`AssetPropertyVariant`](crate::types::AssetPropertyVariant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssetPropertyVariantBuilder {
-    pub(crate) string_value: std::option::Option<std::string::String>,
-    pub(crate) integer_value: std::option::Option<std::string::String>,
-    pub(crate) double_value: std::option::Option<std::string::String>,
-    pub(crate) boolean_value: std::option::Option<std::string::String>,
+    pub(crate) string_value: ::std::option::Option<::std::string::String>,
+    pub(crate) integer_value: ::std::option::Option<::std::string::String>,
+    pub(crate) double_value: ::std::option::Option<::std::string::String>,
+    pub(crate) boolean_value: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertyVariantBuilder {
     /// <p>The asset property value is a string. You must use an expression, and the evaluated result should be a string.</p>
-    pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.string_value = Some(input.into());
+    pub fn string_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.string_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The asset property value is a string. You must use an expression, and the evaluated result should be a string.</p>
-    pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_string_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.string_value = input;
         self
     }
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
-    pub fn integer_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.integer_value = Some(input.into());
+    pub fn integer_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.integer_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The asset property value is an integer. You must use an expression, and the evaluated result should be an integer.</p>
-    pub fn set_integer_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_integer_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.integer_value = input;
         self
     }
     /// <p>The asset property value is a double. You must use an expression, and the evaluated result should be a double.</p>
-    pub fn double_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.double_value = Some(input.into());
+    pub fn double_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.double_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The asset property value is a double. You must use an expression, and the evaluated result should be a double.</p>
-    pub fn set_double_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_double_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.double_value = input;
         self
     }
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
-    pub fn boolean_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.boolean_value = Some(input.into());
+    pub fn boolean_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.boolean_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a Boolean value.</p>
-    pub fn set_boolean_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_boolean_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.boolean_value = input;
         self
     }

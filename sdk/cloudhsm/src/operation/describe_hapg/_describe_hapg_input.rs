@@ -2,15 +2,15 @@
 
 /// <p>Contains the inputs for the <code>DescribeHapg</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHapgInput {
     /// <p>The ARN of the high-availability partition group to describe.</p>
     #[doc(hidden)]
-    pub hapg_arn: std::option::Option<std::string::String>,
+    pub hapg_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHapgInput {
     /// <p>The ARN of the high-availability partition group to describe.</p>
-    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> ::std::option::Option<&str> {
         self.hapg_arn.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl DescribeHapgInput {
 
 /// A builder for [`DescribeHapgInput`](crate::operation::describe_hapg::DescribeHapgInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeHapgInputBuilder {
-    pub(crate) hapg_arn: std::option::Option<std::string::String>,
+    pub(crate) hapg_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeHapgInputBuilder {
     /// <p>The ARN of the high-availability partition group to describe.</p>
-    pub fn hapg_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hapg_arn = Some(input.into());
+    pub fn hapg_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hapg_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the high-availability partition group to describe.</p>
-    pub fn set_hapg_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hapg_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hapg_arn = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeHapgInput`](crate::operation::describe_hapg::DescribeHapgInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_hapg::DescribeHapgInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_hapg::DescribeHapgInput {
+        ::std::result::Result::Ok(crate::operation::describe_hapg::DescribeHapgInput {
             hapg_arn: self.hapg_arn,
         })
     }

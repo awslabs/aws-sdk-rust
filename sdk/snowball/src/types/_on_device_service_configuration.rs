@@ -2,44 +2,44 @@
 
 /// <p>An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnDeviceServiceConfiguration {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
     #[doc(hidden)]
-    pub nfs_on_device_service: std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
+    pub nfs_on_device_service: ::std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
     #[doc(hidden)]
-    pub tgw_on_device_service: std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
+    pub tgw_on_device_service: ::std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
     /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
     #[doc(hidden)]
-    pub eks_on_device_service: std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
+    pub eks_on_device_service: ::std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
     /// <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
     #[doc(hidden)]
-    pub s3_on_device_service: std::option::Option<crate::types::S3OnDeviceServiceConfiguration>,
+    pub s3_on_device_service: ::std::option::Option<crate::types::S3OnDeviceServiceConfiguration>,
 }
 impl OnDeviceServiceConfiguration {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
     pub fn nfs_on_device_service(
         &self,
-    ) -> std::option::Option<&crate::types::NfsOnDeviceServiceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NfsOnDeviceServiceConfiguration> {
         self.nfs_on_device_service.as_ref()
     }
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
     pub fn tgw_on_device_service(
         &self,
-    ) -> std::option::Option<&crate::types::TgwOnDeviceServiceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TgwOnDeviceServiceConfiguration> {
         self.tgw_on_device_service.as_ref()
     }
     /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
     pub fn eks_on_device_service(
         &self,
-    ) -> std::option::Option<&crate::types::EksOnDeviceServiceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::EksOnDeviceServiceConfiguration> {
         self.eks_on_device_service.as_ref()
     }
     /// <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
     pub fn s3_on_device_service(
         &self,
-    ) -> std::option::Option<&crate::types::S3OnDeviceServiceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::S3OnDeviceServiceConfiguration> {
         self.s3_on_device_service.as_ref()
     }
 }
@@ -52,16 +52,18 @@ impl OnDeviceServiceConfiguration {
 
 /// A builder for [`OnDeviceServiceConfiguration`](crate::types::OnDeviceServiceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnDeviceServiceConfigurationBuilder {
     pub(crate) nfs_on_device_service:
-        std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
+        ::std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
     pub(crate) tgw_on_device_service:
-        std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
+        ::std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
     pub(crate) eks_on_device_service:
-        std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
+        ::std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
     pub(crate) s3_on_device_service:
-        std::option::Option<crate::types::S3OnDeviceServiceConfiguration>,
+        ::std::option::Option<crate::types::S3OnDeviceServiceConfiguration>,
 }
 impl OnDeviceServiceConfigurationBuilder {
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
@@ -69,13 +71,13 @@ impl OnDeviceServiceConfigurationBuilder {
         mut self,
         input: crate::types::NfsOnDeviceServiceConfiguration,
     ) -> Self {
-        self.nfs_on_device_service = Some(input);
+        self.nfs_on_device_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the NFS (Network File System) service on a Snow Family device.</p>
     pub fn set_nfs_on_device_service(
         mut self,
-        input: std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
+        input: ::std::option::Option<crate::types::NfsOnDeviceServiceConfiguration>,
     ) -> Self {
         self.nfs_on_device_service = input;
         self
@@ -85,13 +87,13 @@ impl OnDeviceServiceConfigurationBuilder {
         mut self,
         input: crate::types::TgwOnDeviceServiceConfiguration,
     ) -> Self {
-        self.tgw_on_device_service = Some(input);
+        self.tgw_on_device_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the Storage Gateway service Tape Gateway type on a Snow Family device.</p>
     pub fn set_tgw_on_device_service(
         mut self,
-        input: std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
+        input: ::std::option::Option<crate::types::TgwOnDeviceServiceConfiguration>,
     ) -> Self {
         self.tgw_on_device_service = input;
         self
@@ -101,13 +103,13 @@ impl OnDeviceServiceConfigurationBuilder {
         mut self,
         input: crate::types::EksOnDeviceServiceConfiguration,
     ) -> Self {
-        self.eks_on_device_service = Some(input);
+        self.eks_on_device_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of EKS Anywhere on the Snow Family device.</p>
     pub fn set_eks_on_device_service(
         mut self,
-        input: std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
+        input: ::std::option::Option<crate::types::EksOnDeviceServiceConfiguration>,
     ) -> Self {
         self.eks_on_device_service = input;
         self
@@ -117,13 +119,13 @@ impl OnDeviceServiceConfigurationBuilder {
         mut self,
         input: crate::types::S3OnDeviceServiceConfiguration,
     ) -> Self {
-        self.s3_on_device_service = Some(input);
+        self.s3_on_device_service = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
     pub fn set_s3_on_device_service(
         mut self,
-        input: std::option::Option<crate::types::S3OnDeviceServiceConfiguration>,
+        input: ::std::option::Option<crate::types::S3OnDeviceServiceConfiguration>,
     ) -> Self {
         self.s3_on_device_service = input;
         self

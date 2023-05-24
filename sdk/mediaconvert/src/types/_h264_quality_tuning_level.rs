@@ -39,13 +39,13 @@
 /// The Quality tuning level you choose represents a trade-off between the encoding speed of your job and the output video quality. For the fastest encoding speed at the cost of video quality: Choose Single pass. For a good balance between encoding speed and video quality: Leave blank or keep the default value Single pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi pass HQ. MediaConvert performs an analysis pass on your input followed by an encoding pass. Outputs that use this feature incur pro-tier pricing.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264QualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum H264QualityTuningLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264QualityTuningLevel {
+impl ::std::convert::From<&str> for H264QualityTuningLevel {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_PASS_HQ" => H264QualityTuningLevel::MultiPassHq,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for H264QualityTuningLevel {
         }
     }
 }
-impl std::str::FromStr for H264QualityTuningLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264QualityTuningLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264QualityTuningLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264QualityTuningLevel::from(s))
     }
 }
 impl H264QualityTuningLevel {
@@ -91,7 +91,7 @@ impl H264QualityTuningLevel {
         &["MULTI_PASS_HQ", "SINGLE_PASS", "SINGLE_PASS_HQ"]
     }
 }
-impl AsRef<str> for H264QualityTuningLevel {
+impl ::std::convert::AsRef<str> for H264QualityTuningLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the path to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
     #[doc(hidden)]
-    pub exact: std::option::Option<std::string::String>,
+    pub exact: ::std::option::Option<::std::string::String>,
 }
 impl HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> ::std::option::Option<&str> {
         self.exact.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl HttpGatewayRoutePathRewrite {
 
 /// A builder for [`HttpGatewayRoutePathRewrite`](crate::types::HttpGatewayRoutePathRewrite).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpGatewayRoutePathRewriteBuilder {
-    pub(crate) exact: std::option::Option<std::string::String>,
+    pub(crate) exact: ::std::option::Option<::std::string::String>,
 }
 impl HttpGatewayRoutePathRewriteBuilder {
     /// <p>The exact path to rewrite.</p>
-    pub fn exact(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exact = Some(input.into());
+    pub fn exact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exact = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The exact path to rewrite.</p>
-    pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_exact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exact = input;
         self
     }

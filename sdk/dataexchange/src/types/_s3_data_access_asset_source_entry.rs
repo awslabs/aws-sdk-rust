@@ -2,36 +2,36 @@
 
 /// <p>Source details for an Amazon S3 data access asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DataAccessAssetSourceEntry {
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub key_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub key_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The keys used to create the Amazon S3 data access.</p>
     #[doc(hidden)]
-    pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
     #[doc(hidden)]
-    pub kms_keys_to_grant: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
+    pub kms_keys_to_grant: ::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAssetSourceEntry {
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
-    pub fn key_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn key_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.key_prefixes.as_deref()
     }
     /// <p>The keys used to create the Amazon S3 data access.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.keys.as_deref()
     }
     /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
-    pub fn kms_keys_to_grant(&self) -> std::option::Option<&[crate::types::KmsKeyToGrant]> {
+    pub fn kms_keys_to_grant(&self) -> ::std::option::Option<&[crate::types::KmsKeyToGrant]> {
         self.kms_keys_to_grant.as_deref()
     }
 }
@@ -44,21 +44,24 @@ impl S3DataAccessAssetSourceEntry {
 
 /// A builder for [`S3DataAccessAssetSourceEntry`](crate::types::S3DataAccessAssetSourceEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3DataAccessAssetSourceEntryBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) key_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) kms_keys_to_grant: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) key_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) kms_keys_to_grant:
+        ::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>>,
 }
 impl S3DataAccessAssetSourceEntryBuilder {
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket used for hosting shared data in the Amazon S3 data access.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
@@ -67,16 +70,16 @@ impl S3DataAccessAssetSourceEntryBuilder {
     /// To override the contents of this collection use [`set_key_prefixes`](Self::set_key_prefixes).
     ///
     /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
-    pub fn key_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.key_prefixes.unwrap_or_default();
         v.push(input.into());
-        self.key_prefixes = Some(v);
+        self.key_prefixes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Organizes Amazon S3 asset key prefixes stored in an Amazon S3 bucket.</p>
     pub fn set_key_prefixes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.key_prefixes = input;
         self
@@ -86,16 +89,16 @@ impl S3DataAccessAssetSourceEntryBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>The keys used to create the Amazon S3 data access.</p>
-    pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
         v.push(input.into());
-        self.keys = Some(v);
+        self.keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The keys used to create the Amazon S3 data access.</p>
     pub fn set_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.keys = input;
         self
@@ -108,13 +111,13 @@ impl S3DataAccessAssetSourceEntryBuilder {
     pub fn kms_keys_to_grant(mut self, input: crate::types::KmsKeyToGrant) -> Self {
         let mut v = self.kms_keys_to_grant.unwrap_or_default();
         v.push(input);
-        self.kms_keys_to_grant = Some(v);
+        self.kms_keys_to_grant = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used to encrypt S3 objects being shared in this S3 Data Access asset.</p>
     pub fn set_kms_keys_to_grant(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KmsKeyToGrant>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KmsKeyToGrant>>,
     ) -> Self {
         self.kms_keys_to_grant = input;
         self

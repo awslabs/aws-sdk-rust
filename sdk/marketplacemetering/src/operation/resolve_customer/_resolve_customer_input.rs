@@ -2,15 +2,15 @@
 
 /// <p>Contains input to the <code>ResolveCustomer</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveCustomerInput {
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
     #[doc(hidden)]
-    pub registration_token: std::option::Option<std::string::String>,
+    pub registration_token: ::std::option::Option<::std::string::String>,
 }
 impl ResolveCustomerInput {
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
-    pub fn registration_token(&self) -> std::option::Option<&str> {
+    pub fn registration_token(&self) -> ::std::option::Option<&str> {
         self.registration_token.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl ResolveCustomerInput {
 
 /// A builder for [`ResolveCustomerInput`](crate::operation::resolve_customer::ResolveCustomerInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResolveCustomerInputBuilder {
-    pub(crate) registration_token: std::option::Option<std::string::String>,
+    pub(crate) registration_token: ::std::option::Option<::std::string::String>,
 }
 impl ResolveCustomerInputBuilder {
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
-    pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registration_token = Some(input.into());
+    pub fn registration_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.registration_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p>
     pub fn set_registration_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.registration_token = input;
         self
@@ -44,11 +49,11 @@ impl ResolveCustomerInputBuilder {
     /// Consumes the builder and constructs a [`ResolveCustomerInput`](crate::operation::resolve_customer::ResolveCustomerInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::resolve_customer::ResolveCustomerInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::resolve_customer::ResolveCustomerInput {
+        ::std::result::Result::Ok(crate::operation::resolve_customer::ResolveCustomerInput {
             registration_token: self.registration_token,
         })
     }

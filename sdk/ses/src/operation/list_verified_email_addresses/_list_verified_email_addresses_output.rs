@@ -2,20 +2,20 @@
 
 /// <p>A list of email addresses that you have verified with Amazon SES under your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVerifiedEmailAddressesOutput {
     /// <p>A list of email addresses that have been verified.</p>
     #[doc(hidden)]
-    pub verified_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub verified_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListVerifiedEmailAddressesOutput {
     /// <p>A list of email addresses that have been verified.</p>
-    pub fn verified_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn verified_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.verified_email_addresses.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListVerifiedEmailAddressesOutput {
+impl ::aws_http::request_id::RequestId for ListVerifiedEmailAddressesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,12 @@ impl ListVerifiedEmailAddressesOutput {
 
 /// A builder for [`ListVerifiedEmailAddressesOutput`](crate::operation::list_verified_email_addresses::ListVerifiedEmailAddressesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListVerifiedEmailAddressesOutputBuilder {
-    pub(crate) verified_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) verified_email_addresses:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl ListVerifiedEmailAddressesOutputBuilder {
@@ -40,16 +43,19 @@ impl ListVerifiedEmailAddressesOutputBuilder {
     /// To override the contents of this collection use [`set_verified_email_addresses`](Self::set_verified_email_addresses).
     ///
     /// <p>A list of email addresses that have been verified.</p>
-    pub fn verified_email_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn verified_email_addresses(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.verified_email_addresses.unwrap_or_default();
         v.push(input.into());
-        self.verified_email_addresses = Some(v);
+        self.verified_email_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of email addresses that have been verified.</p>
     pub fn set_verified_email_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.verified_email_addresses = input;
         self

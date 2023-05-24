@@ -6,29 +6,29 @@ pub use crate::operation::batch_snooze_alarm::_batch_snooze_alarm_input::BatchSn
 /// Fluent builder constructing a request to `BatchSnoozeAlarm`.
 ///
 /// <p>Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after you set them to the snooze mode.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchSnoozeAlarmFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder,
 }
 impl BatchSnoozeAlarmFluentBuilder {
     /// Creates a new `BatchSnoozeAlarm`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::batch_snooze_alarm::BatchSnoozeAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
         >,
     > {
@@ -36,30 +36,33 @@ impl BatchSnoozeAlarmFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl BatchSnoozeAlarmFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
         >,
     > {
@@ -92,7 +95,7 @@ impl BatchSnoozeAlarmFluentBuilder {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
     pub fn set_snooze_action_requests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
     ) -> Self {
         self.inner = self.inner.set_snooze_action_requests(input);
         self

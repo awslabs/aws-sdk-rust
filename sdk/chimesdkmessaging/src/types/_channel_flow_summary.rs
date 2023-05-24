@@ -2,34 +2,34 @@
 
 /// <p>Summary of details of a channel flow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelFlowSummary {
     /// <p>The ARN of the channel flow.</p>
     #[doc(hidden)]
-    pub channel_flow_arn: std::option::Option<std::string::String>,
+    pub channel_flow_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel flow.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the processor Lambda functions.</p>
     #[doc(hidden)]
-    pub processors: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+    pub processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
 }
 impl ChannelFlowSummary {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_flow_arn(&self) -> ::std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
     }
     /// <p>The name of the channel flow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn processors(&self) -> std::option::Option<&[crate::types::Processor]> {
+    pub fn processors(&self) -> ::std::option::Option<&[crate::types::Processor]> {
         self.processors.as_deref()
     }
 }
-impl std::fmt::Debug for ChannelFlowSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ChannelFlowSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelFlowSummary");
         formatter.field("channel_flow_arn", &self.channel_flow_arn);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -46,30 +46,36 @@ impl ChannelFlowSummary {
 
 /// A builder for [`ChannelFlowSummary`](crate::types::ChannelFlowSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ChannelFlowSummaryBuilder {
-    pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) processors: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+    pub(crate) channel_flow_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) processors: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
 }
 impl ChannelFlowSummaryBuilder {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_flow_arn = Some(input.into());
+    pub fn channel_flow_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.channel_flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn set_channel_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_flow_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.channel_flow_arn = input;
         self
     }
     /// <p>The name of the channel flow.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the channel flow.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -81,13 +87,13 @@ impl ChannelFlowSummaryBuilder {
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         let mut v = self.processors.unwrap_or_default();
         v.push(input);
-        self.processors = Some(v);
+        self.processors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the processor Lambda functions.</p>
     pub fn set_processors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Processor>>,
     ) -> Self {
         self.processors = input;
         self
@@ -101,8 +107,8 @@ impl ChannelFlowSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for ChannelFlowSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ChannelFlowSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelFlowSummaryBuilder");
         formatter.field("channel_flow_arn", &self.channel_flow_arn);
         formatter.field("name", &"*** Sensitive Data Redacted ***");

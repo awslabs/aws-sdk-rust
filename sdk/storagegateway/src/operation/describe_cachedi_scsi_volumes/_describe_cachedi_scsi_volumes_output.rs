@@ -2,20 +2,23 @@
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCachediScsiVolumesOutput {
     /// <p>An array of objects where each object contains metadata about one cached volume.</p>
     #[doc(hidden)]
-    pub cachedi_scsi_volumes: std::option::Option<std::vec::Vec<crate::types::CachediScsiVolume>>,
+    pub cachedi_scsi_volumes:
+        ::std::option::Option<::std::vec::Vec<crate::types::CachediScsiVolume>>,
     _request_id: Option<String>,
 }
 impl DescribeCachediScsiVolumesOutput {
     /// <p>An array of objects where each object contains metadata about one cached volume.</p>
-    pub fn cachedi_scsi_volumes(&self) -> std::option::Option<&[crate::types::CachediScsiVolume]> {
+    pub fn cachedi_scsi_volumes(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::CachediScsiVolume]> {
         self.cachedi_scsi_volumes.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCachediScsiVolumesOutput {
+impl ::aws_http::request_id::RequestId for DescribeCachediScsiVolumesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,10 +32,12 @@ impl DescribeCachediScsiVolumesOutput {
 
 /// A builder for [`DescribeCachediScsiVolumesOutput`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCachediScsiVolumesOutputBuilder {
     pub(crate) cachedi_scsi_volumes:
-        std::option::Option<std::vec::Vec<crate::types::CachediScsiVolume>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CachediScsiVolume>>,
     _request_id: Option<String>,
 }
 impl DescribeCachediScsiVolumesOutputBuilder {
@@ -44,13 +49,13 @@ impl DescribeCachediScsiVolumesOutputBuilder {
     pub fn cachedi_scsi_volumes(mut self, input: crate::types::CachediScsiVolume) -> Self {
         let mut v = self.cachedi_scsi_volumes.unwrap_or_default();
         v.push(input);
-        self.cachedi_scsi_volumes = Some(v);
+        self.cachedi_scsi_volumes = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects where each object contains metadata about one cached volume.</p>
     pub fn set_cachedi_scsi_volumes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CachediScsiVolume>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CachediScsiVolume>>,
     ) -> Self {
         self.cachedi_scsi_volumes = input;
         self

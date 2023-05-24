@@ -6,29 +6,29 @@ pub use crate::operation::create_component_type::_create_component_type_input::C
 /// Fluent builder constructing a request to `CreateComponentType`.
 ///
 /// <p>Creates a component type.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateComponentTypeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_component_type::builders::CreateComponentTypeInputBuilder,
 }
 impl CreateComponentTypeFluentBuilder {
     /// Creates a new `CreateComponentType`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_component_type::CreateComponentType,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_component_type::CreateComponentTypeError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateComponentTypeFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_component_type::CreateComponentTypeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_component_type::CreateComponentTypeError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl CreateComponentTypeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_component_type::CreateComponentTypeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_component_type::CreateComponentTypeError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the workspace that contains the component type.</p>
-    pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
     /// <p>The ID of the workspace that contains the component type.</p>
-    pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
@@ -96,30 +99,33 @@ impl CreateComponentTypeFluentBuilder {
         self
     }
     /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
-    pub fn set_is_singleton(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_singleton(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_singleton(input);
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn component_type_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.component_type_id(input.into());
         self
     }
     /// <p>The ID of the component type.</p>
     pub fn set_component_type_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_component_type_id(input);
         self
     }
     /// <p>The description of the component type.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the component type.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -130,7 +136,7 @@ impl CreateComponentTypeFluentBuilder {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn property_definitions(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::PropertyDefinitionRequest,
     ) -> Self {
         self.inner = self.inner.property_definitions(k.into(), v);
@@ -139,8 +145,11 @@ impl CreateComponentTypeFluentBuilder {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn set_property_definitions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::PropertyDefinitionRequest>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                crate::types::PropertyDefinitionRequest,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_property_definitions(input);
@@ -151,14 +160,14 @@ impl CreateComponentTypeFluentBuilder {
     /// To override the contents of this collection use [`set_extends_from`](Self::set_extends_from).
     ///
     /// <p>Specifies the parent component type to extend.</p>
-    pub fn extends_from(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn extends_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.extends_from(input.into());
         self
     }
     /// <p>Specifies the parent component type to extend.</p>
     pub fn set_extends_from(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_extends_from(input);
         self
@@ -170,7 +179,7 @@ impl CreateComponentTypeFluentBuilder {
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn functions(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::FunctionRequest,
     ) -> Self {
         self.inner = self.inner.functions(k.into(), v);
@@ -179,8 +188,8 @@ impl CreateComponentTypeFluentBuilder {
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn set_functions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::FunctionRequest>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>,
         >,
     ) -> Self {
         self.inner = self.inner.set_functions(input);
@@ -193,8 +202,8 @@ impl CreateComponentTypeFluentBuilder {
     /// <p>Metadata that you can use to manage the component type.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -202,8 +211,8 @@ impl CreateComponentTypeFluentBuilder {
     /// <p>Metadata that you can use to manage the component type.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -216,7 +225,7 @@ impl CreateComponentTypeFluentBuilder {
     /// <p></p>
     pub fn property_groups(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::PropertyGroupRequest,
     ) -> Self {
         self.inner = self.inner.property_groups(k.into(), v);
@@ -225,22 +234,25 @@ impl CreateComponentTypeFluentBuilder {
     /// <p></p>
     pub fn set_property_groups(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::PropertyGroupRequest>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>,
         >,
     ) -> Self {
         self.inner = self.inner.set_property_groups(input);
         self
     }
     /// <p>A friendly name for the component type.</p>
-    pub fn component_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn component_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.component_type_name(input.into());
         self
     }
     /// <p>A friendly name for the component type.</p>
     pub fn set_component_type_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_component_type_name(input);
         self

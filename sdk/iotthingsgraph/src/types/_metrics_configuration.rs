@@ -2,14 +2,14 @@
 
 /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricsConfiguration {
     /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
     #[doc(hidden)]
     pub cloud_metric_enabled: bool,
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
     #[doc(hidden)]
-    pub metric_rule_role_arn: std::option::Option<std::string::String>,
+    pub metric_rule_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MetricsConfiguration {
     /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
@@ -17,7 +17,7 @@ impl MetricsConfiguration {
         self.cloud_metric_enabled
     }
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
-    pub fn metric_rule_role_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_rule_role_arn(&self) -> ::std::option::Option<&str> {
         self.metric_rule_role_arn.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl MetricsConfiguration {
 
 /// A builder for [`MetricsConfiguration`](crate::types::MetricsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricsConfigurationBuilder {
-    pub(crate) cloud_metric_enabled: std::option::Option<bool>,
-    pub(crate) metric_rule_role_arn: std::option::Option<std::string::String>,
+    pub(crate) cloud_metric_enabled: ::std::option::Option<bool>,
+    pub(crate) metric_rule_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl MetricsConfigurationBuilder {
     /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
     pub fn cloud_metric_enabled(mut self, input: bool) -> Self {
-        self.cloud_metric_enabled = Some(input);
+        self.cloud_metric_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
-    pub fn set_cloud_metric_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cloud_metric_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cloud_metric_enabled = input;
         self
     }
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
-    pub fn metric_rule_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_rule_role_arn = Some(input.into());
+    pub fn metric_rule_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.metric_rule_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
     pub fn set_metric_rule_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.metric_rule_role_arn = input;
         self

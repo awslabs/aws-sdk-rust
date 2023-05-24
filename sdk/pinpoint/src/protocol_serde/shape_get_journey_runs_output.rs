@@ -2,7 +2,7 @@
 pub(crate) fn de_journey_runs_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::JourneyRunsResponse>,
+    ::std::option::Option<crate::types::JourneyRunsResponse>,
     crate::operation::get_journey_runs::GetJourneyRunsError,
 > {
     (!body.is_empty())

@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeHsmClientCertificatesOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
     #[doc(hidden)]
     pub hsm_client_certificates:
-        std::option::Option<std::vec::Vec<crate::types::HsmClientCertificate>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,
     _request_id: Option<String>,
 }
 impl DescribeHsmClientCertificatesOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
     pub fn hsm_client_certificates(
         &self,
-    ) -> std::option::Option<&[crate::types::HsmClientCertificate]> {
+    ) -> ::std::option::Option<&[crate::types::HsmClientCertificate]> {
         self.hsm_client_certificates.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeHsmClientCertificatesOutput {
+impl ::aws_http::request_id::RequestId for DescribeHsmClientCertificatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeHsmClientCertificatesOutput {
 
 /// A builder for [`DescribeHsmClientCertificatesOutput`](crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeHsmClientCertificatesOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) hsm_client_certificates:
-        std::option::Option<std::vec::Vec<crate::types::HsmClientCertificate>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,
     _request_id: Option<String>,
 }
 impl DescribeHsmClientCertificatesOutputBuilder {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -65,13 +67,13 @@ impl DescribeHsmClientCertificatesOutputBuilder {
     pub fn hsm_client_certificates(mut self, input: crate::types::HsmClientCertificate) -> Self {
         let mut v = self.hsm_client_certificates.unwrap_or_default();
         v.push(input);
-        self.hsm_client_certificates = Some(v);
+        self.hsm_client_certificates = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
     pub fn set_hsm_client_certificates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HsmClientCertificate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HsmClientCertificate>>,
     ) -> Self {
         self.hsm_client_certificates = input;
         self

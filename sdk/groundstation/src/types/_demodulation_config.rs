@@ -2,15 +2,15 @@
 
 /// <p>Information about the demodulation <code>Config</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
     #[doc(hidden)]
-    pub unvalidated_json: std::option::Option<std::string::String>,
+    pub unvalidated_json: ::std::option::Option<::std::string::String>,
 }
 impl DemodulationConfig {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub fn unvalidated_json(&self) -> std::option::Option<&str> {
+    pub fn unvalidated_json(&self) -> ::std::option::Option<&str> {
         self.unvalidated_json.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl DemodulationConfig {
 
 /// A builder for [`DemodulationConfig`](crate::types::DemodulationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DemodulationConfigBuilder {
-    pub(crate) unvalidated_json: std::option::Option<std::string::String>,
+    pub(crate) unvalidated_json: ::std::option::Option<::std::string::String>,
 }
 impl DemodulationConfigBuilder {
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub fn unvalidated_json(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unvalidated_json = Some(input.into());
+    pub fn unvalidated_json(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.unvalidated_json = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
-    pub fn set_unvalidated_json(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unvalidated_json(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.unvalidated_json = input;
         self
     }

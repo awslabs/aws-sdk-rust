@@ -41,13 +41,13 @@
 /// _Note: `DatabaseStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DatabaseStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum DatabaseStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DatabaseStatus {
+impl ::std::convert::From<&str> for DatabaseStatus {
     fn from(s: &str) -> Self {
         match s {
             "RUNNING" => DatabaseStatus::Running,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for DatabaseStatus {
         }
     }
 }
-impl std::str::FromStr for DatabaseStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DatabaseStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatabaseStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DatabaseStatus::from(s))
     }
 }
 impl DatabaseStatus {
@@ -101,7 +101,7 @@ impl DatabaseStatus {
         &["RUNNING", "STARTING", "STOPPED", "UNKNOWN", "WARNING"]
     }
 }
-impl AsRef<str> for DatabaseStatus {
+impl ::std::convert::AsRef<str> for DatabaseStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

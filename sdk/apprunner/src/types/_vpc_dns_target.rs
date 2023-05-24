@@ -2,29 +2,29 @@
 
 /// <p>DNS Target record for a custom domain of this Amazon VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcDnsTarget {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection that is associated with your service.</p>
     #[doc(hidden)]
-    pub vpc_ingress_connection_arn: std::option::Option<std::string::String>,
+    pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon VPC that is associated with the custom domain name of the target DNS.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of your target DNS that is associated with the Amazon VPC.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl VpcDnsTarget {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection that is associated with your service.</p>
-    pub fn vpc_ingress_connection_arn(&self) -> std::option::Option<&str> {
+    pub fn vpc_ingress_connection_arn(&self) -> ::std::option::Option<&str> {
         self.vpc_ingress_connection_arn.as_deref()
     }
     /// <p>The ID of the Amazon VPC that is associated with the custom domain name of the target DNS.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The domain name of your target DNS that is associated with the Amazon VPC.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
@@ -37,43 +37,48 @@ impl VpcDnsTarget {
 
 /// A builder for [`VpcDnsTarget`](crate::types::VpcDnsTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcDnsTargetBuilder {
-    pub(crate) vpc_ingress_connection_arn: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
+    pub(crate) vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl VpcDnsTargetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection that is associated with your service.</p>
-    pub fn vpc_ingress_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_ingress_connection_arn = Some(input.into());
+    pub fn vpc_ingress_connection_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_ingress_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection that is associated with your service.</p>
     pub fn set_vpc_ingress_connection_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpc_ingress_connection_arn = input;
         self
     }
     /// <p>The ID of the Amazon VPC that is associated with the custom domain name of the target DNS.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon VPC that is associated with the custom domain name of the target DNS.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The domain name of your target DNS that is associated with the Amazon VPC.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name of your target DNS that is associated with the Amazon VPC.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }

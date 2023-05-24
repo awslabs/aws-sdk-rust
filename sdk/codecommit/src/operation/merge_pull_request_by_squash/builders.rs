@@ -6,29 +6,29 @@ pub use crate::operation::merge_pull_request_by_squash::_merge_pull_request_by_s
 /// Fluent builder constructing a request to `MergePullRequestBySquash`.
 ///
 /// <p>Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the squash merge strategy. If the merge is successful, it closes the pull request.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MergePullRequestBySquashFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashInputBuilder,
 }
 impl MergePullRequestBySquashFluentBuilder {
     /// Creates a new `MergePullRequestBySquash`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::merge_pull_request_by_squash::MergePullRequestBySquash,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
         >,
     > {
@@ -36,30 +36,33 @@ impl MergePullRequestBySquashFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,59 @@ impl MergePullRequestBySquashFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pull_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pull_request_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The name of the repository where the pull request was created.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_commit_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_commit_id(input.into());
         self
     }
     /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-    pub fn set_source_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_commit_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_commit_id(input);
         self
     }
@@ -121,7 +142,7 @@ impl MergePullRequestBySquashFluentBuilder {
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
     pub fn set_conflict_detail_level(
         mut self,
-        input: std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
+        input: ::std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
     ) -> Self {
         self.inner = self.inner.set_conflict_detail_level(input);
         self
@@ -137,38 +158,44 @@ impl MergePullRequestBySquashFluentBuilder {
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
     pub fn set_conflict_resolution_strategy(
         mut self,
-        input: std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
+        input: ::std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
     ) -> Self {
         self.inner = self.inner.set_conflict_resolution_strategy(input);
         self
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
-    pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn commit_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.commit_message(input.into());
         self
     }
     /// <p>The commit message to include in the commit information for the merge.</p>
-    pub fn set_commit_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_commit_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_commit_message(input);
         self
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
-    pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn author_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.author_name(input.into());
         self
     }
     /// <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
-    pub fn set_author_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_author_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_author_name(input);
         self
     }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
-    pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.email(input.into());
         self
     }
     /// <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
-    pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_email(input);
         self
     }
@@ -178,7 +205,7 @@ impl MergePullRequestBySquashFluentBuilder {
         self
     }
     /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
-    pub fn set_keep_empty_folders(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_keep_empty_folders(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_keep_empty_folders(input);
         self
     }
@@ -190,7 +217,7 @@ impl MergePullRequestBySquashFluentBuilder {
     /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
     pub fn set_conflict_resolution(
         mut self,
-        input: std::option::Option<crate::types::ConflictResolution>,
+        input: ::std::option::Option<crate::types::ConflictResolution>,
     ) -> Self {
         self.inner = self.inner.set_conflict_resolution(input);
         self

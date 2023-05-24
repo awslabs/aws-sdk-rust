@@ -2,7 +2,7 @@
 
 /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisibilityConfig {
     /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct VisibilityConfig {
     pub cloud_watch_metrics_enabled: bool,
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
 }
 impl VisibilityConfig {
     /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
@@ -24,7 +24,7 @@ impl VisibilityConfig {
         self.cloud_watch_metrics_enabled
     }
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl VisibilityConfig {
 
 /// A builder for [`VisibilityConfig`](crate::types::VisibilityConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VisibilityConfigBuilder {
-    pub(crate) sampled_requests_enabled: std::option::Option<bool>,
-    pub(crate) cloud_watch_metrics_enabled: std::option::Option<bool>,
-    pub(crate) metric_name: std::option::Option<std::string::String>,
+    pub(crate) sampled_requests_enabled: ::std::option::Option<bool>,
+    pub(crate) cloud_watch_metrics_enabled: ::std::option::Option<bool>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
 }
 impl VisibilityConfigBuilder {
     /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
     pub fn sampled_requests_enabled(mut self, input: bool) -> Self {
-        self.sampled_requests_enabled = Some(input);
+        self.sampled_requests_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console. </p>
-    pub fn set_sampled_requests_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sampled_requests_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sampled_requests_enabled = input;
         self
     }
     /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
-        self.cloud_watch_metrics_enabled = Some(input);
+        self.cloud_watch_metrics_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cloud_watch_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cloud_watch_metrics_enabled = input;
         self
     }
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>. </p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }

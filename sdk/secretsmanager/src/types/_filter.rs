@@ -2,7 +2,7 @@
 
 /// <p>Allows you to add filters when you use the search function in Secrets Manager. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find secrets in Secrets Manager</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The following are keys you can use:</p>
     /// <ul>
@@ -15,11 +15,11 @@ pub struct Filter {
     /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::FilterNameStringType>,
+    pub key: ::std::option::Option<crate::types::FilterNameStringType>,
     /// <p>The keyword to filter for.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filter {
     /// <p>The following are keys you can use:</p>
@@ -32,12 +32,12 @@ impl Filter {
     /// <li> <p> <b>owning-service</b>: Prefix match, case-sensitive.</p> </li>
     /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
     /// </ul>
-    pub fn key(&self) -> std::option::Option<&crate::types::FilterNameStringType> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::FilterNameStringType> {
         self.key.as_ref()
     }
     /// <p>The keyword to filter for.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -50,10 +50,12 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::FilterNameStringType>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) key: ::std::option::Option<crate::types::FilterNameStringType>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FilterBuilder {
     /// <p>The following are keys you can use:</p>
@@ -67,7 +69,7 @@ impl FilterBuilder {
     /// <li> <p> <b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p> </li>
     /// </ul>
     pub fn key(mut self, input: crate::types::FilterNameStringType) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The following are keys you can use:</p>
@@ -82,7 +84,7 @@ impl FilterBuilder {
     /// </ul>
     pub fn set_key(
         mut self,
-        input: std::option::Option<crate::types::FilterNameStringType>,
+        input: ::std::option::Option<crate::types::FilterNameStringType>,
     ) -> Self {
         self.key = input;
         self
@@ -93,17 +95,17 @@ impl FilterBuilder {
     ///
     /// <p>The keyword to filter for.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The keyword to filter for.</p>
     /// <p>You can prefix your search value with an exclamation mark (<code>!</code>) in order to perform negation filters. </p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

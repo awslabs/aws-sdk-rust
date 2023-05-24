@@ -2,17 +2,17 @@
 
 /// <p>Describes a scaling policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPolicy {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
-    pub auto_scaling_group_name: std::option::Option<std::string::String>,
+    pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the scaling policy.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     #[doc(hidden)]
-    pub policy_arn: std::option::Option<std::string::String>,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the following policy types: </p>
     /// <ul>
     /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
@@ -22,57 +22,57 @@ pub struct ScalingPolicy {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
-    pub policy_type: std::option::Option<std::string::String>,
+    pub policy_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     #[doc(hidden)]
-    pub adjustment_type: std::option::Option<std::string::String>,
+    pub adjustment_type: ::std::option::Option<::std::string::String>,
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
     #[doc(hidden)]
-    pub min_adjustment_step: std::option::Option<i32>,
+    pub min_adjustment_step: ::std::option::Option<i32>,
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
     #[doc(hidden)]
-    pub min_adjustment_magnitude: std::option::Option<i32>,
+    pub min_adjustment_magnitude: ::std::option::Option<i32>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     #[doc(hidden)]
-    pub scaling_adjustment: std::option::Option<i32>,
+    pub scaling_adjustment: ::std::option::Option<i32>,
     /// <p>The duration of the policy's cooldown period, in seconds.</p>
     #[doc(hidden)]
-    pub cooldown: std::option::Option<i32>,
+    pub cooldown: ::std::option::Option<i32>,
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     #[doc(hidden)]
-    pub step_adjustments: std::option::Option<std::vec::Vec<crate::types::StepAdjustment>>,
+    pub step_adjustments: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
     #[doc(hidden)]
-    pub metric_aggregation_type: std::option::Option<std::string::String>,
+    pub metric_aggregation_type: ::std::option::Option<::std::string::String>,
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p>
     #[doc(hidden)]
-    pub estimated_instance_warmup: std::option::Option<i32>,
+    pub estimated_instance_warmup: ::std::option::Option<i32>,
     /// <p>The CloudWatch alarms related to the policy.</p>
     #[doc(hidden)]
-    pub alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    pub alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     /// <p>A target tracking scaling policy.</p>
     #[doc(hidden)]
     pub target_tracking_configuration:
-        std::option::Option<crate::types::TargetTrackingConfiguration>,
+        ::std::option::Option<crate::types::TargetTrackingConfiguration>,
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>A predictive scaling policy.</p>
     #[doc(hidden)]
     pub predictive_scaling_configuration:
-        std::option::Option<crate::types::PredictiveScalingConfiguration>,
+        ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
 }
 impl ScalingPolicy {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The name of the scaling policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>One of the following policy types: </p>
@@ -83,59 +83,59 @@ impl ScalingPolicy {
     /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn policy_type(&self) -> std::option::Option<&str> {
+    pub fn policy_type(&self) -> ::std::option::Option<&str> {
         self.policy_type.as_deref()
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn adjustment_type(&self) -> std::option::Option<&str> {
+    pub fn adjustment_type(&self) -> ::std::option::Option<&str> {
         self.adjustment_type.as_deref()
     }
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
-    pub fn min_adjustment_step(&self) -> std::option::Option<i32> {
+    pub fn min_adjustment_step(&self) -> ::std::option::Option<i32> {
         self.min_adjustment_step
     }
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
-    pub fn min_adjustment_magnitude(&self) -> std::option::Option<i32> {
+    pub fn min_adjustment_magnitude(&self) -> ::std::option::Option<i32> {
         self.min_adjustment_magnitude
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
-    pub fn scaling_adjustment(&self) -> std::option::Option<i32> {
+    pub fn scaling_adjustment(&self) -> ::std::option::Option<i32> {
         self.scaling_adjustment
     }
     /// <p>The duration of the policy's cooldown period, in seconds.</p>
-    pub fn cooldown(&self) -> std::option::Option<i32> {
+    pub fn cooldown(&self) -> ::std::option::Option<i32> {
         self.cooldown
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
-    pub fn step_adjustments(&self) -> std::option::Option<&[crate::types::StepAdjustment]> {
+    pub fn step_adjustments(&self) -> ::std::option::Option<&[crate::types::StepAdjustment]> {
         self.step_adjustments.as_deref()
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
-    pub fn metric_aggregation_type(&self) -> std::option::Option<&str> {
+    pub fn metric_aggregation_type(&self) -> ::std::option::Option<&str> {
         self.metric_aggregation_type.as_deref()
     }
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p>
-    pub fn estimated_instance_warmup(&self) -> std::option::Option<i32> {
+    pub fn estimated_instance_warmup(&self) -> ::std::option::Option<i32> {
         self.estimated_instance_warmup
     }
     /// <p>The CloudWatch alarms related to the policy.</p>
-    pub fn alarms(&self) -> std::option::Option<&[crate::types::Alarm]> {
+    pub fn alarms(&self) -> ::std::option::Option<&[crate::types::Alarm]> {
         self.alarms.as_deref()
     }
     /// <p>A target tracking scaling policy.</p>
     pub fn target_tracking_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::TargetTrackingConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TargetTrackingConfiguration> {
         self.target_tracking_configuration.as_ref()
     }
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>A predictive scaling policy.</p>
     pub fn predictive_scaling_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::PredictiveScalingConfiguration> {
+    ) -> ::std::option::Option<&crate::types::PredictiveScalingConfiguration> {
         self.predictive_scaling_configuration.as_ref()
     }
 }
@@ -148,58 +148,64 @@ impl ScalingPolicy {
 
 /// A builder for [`ScalingPolicy`](crate::types::ScalingPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingPolicyBuilder {
-    pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) policy_arn: std::option::Option<std::string::String>,
-    pub(crate) policy_type: std::option::Option<std::string::String>,
-    pub(crate) adjustment_type: std::option::Option<std::string::String>,
-    pub(crate) min_adjustment_step: std::option::Option<i32>,
-    pub(crate) min_adjustment_magnitude: std::option::Option<i32>,
-    pub(crate) scaling_adjustment: std::option::Option<i32>,
-    pub(crate) cooldown: std::option::Option<i32>,
-    pub(crate) step_adjustments: std::option::Option<std::vec::Vec<crate::types::StepAdjustment>>,
-    pub(crate) metric_aggregation_type: std::option::Option<std::string::String>,
-    pub(crate) estimated_instance_warmup: std::option::Option<i32>,
-    pub(crate) alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_type: ::std::option::Option<::std::string::String>,
+    pub(crate) adjustment_type: ::std::option::Option<::std::string::String>,
+    pub(crate) min_adjustment_step: ::std::option::Option<i32>,
+    pub(crate) min_adjustment_magnitude: ::std::option::Option<i32>,
+    pub(crate) scaling_adjustment: ::std::option::Option<i32>,
+    pub(crate) cooldown: ::std::option::Option<i32>,
+    pub(crate) step_adjustments:
+        ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
+    pub(crate) metric_aggregation_type: ::std::option::Option<::std::string::String>,
+    pub(crate) estimated_instance_warmup: ::std::option::Option<i32>,
+    pub(crate) alarms: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     pub(crate) target_tracking_configuration:
-        std::option::Option<crate::types::TargetTrackingConfiguration>,
-    pub(crate) enabled: std::option::Option<bool>,
+        ::std::option::Option<crate::types::TargetTrackingConfiguration>,
+    pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) predictive_scaling_configuration:
-        std::option::Option<crate::types::PredictiveScalingConfiguration>,
+        ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
 }
 impl ScalingPolicyBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auto_scaling_group_name = Some(input.into());
+    pub fn auto_scaling_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
     /// <p>The name of the scaling policy.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scaling policy.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_arn = Some(input.into());
+    pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }
@@ -211,8 +217,8 @@ impl ScalingPolicyBuilder {
     /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn policy_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_type = Some(input.into());
+    pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the following policy types: </p>
@@ -223,57 +229,63 @@ impl ScalingPolicyBuilder {
     /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_type = input;
         self
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn adjustment_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.adjustment_type = Some(input.into());
+    pub fn adjustment_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.adjustment_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-    pub fn set_adjustment_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_adjustment_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.adjustment_type = input;
         self
     }
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
     pub fn min_adjustment_step(mut self, input: i32) -> Self {
-        self.min_adjustment_step = Some(input);
+        self.min_adjustment_step = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
-    pub fn set_min_adjustment_step(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_adjustment_step(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_adjustment_step = input;
         self
     }
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
     pub fn min_adjustment_magnitude(mut self, input: i32) -> Self {
-        self.min_adjustment_magnitude = Some(input);
+        self.min_adjustment_magnitude = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. </p>
-    pub fn set_min_adjustment_magnitude(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_adjustment_magnitude(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_adjustment_magnitude = input;
         self
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     pub fn scaling_adjustment(mut self, input: i32) -> Self {
-        self.scaling_adjustment = Some(input);
+        self.scaling_adjustment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
-    pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scaling_adjustment = input;
         self
     }
     /// <p>The duration of the policy's cooldown period, in seconds.</p>
     pub fn cooldown(mut self, input: i32) -> Self {
-        self.cooldown = Some(input);
+        self.cooldown = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration of the policy's cooldown period, in seconds.</p>
-    pub fn set_cooldown(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cooldown = input;
         self
     }
@@ -285,37 +297,40 @@ impl ScalingPolicyBuilder {
     pub fn step_adjustments(mut self, input: crate::types::StepAdjustment) -> Self {
         let mut v = self.step_adjustments.unwrap_or_default();
         v.push(input);
-        self.step_adjustments = Some(v);
+        self.step_adjustments = ::std::option::Option::Some(v);
         self
     }
     /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
     pub fn set_step_adjustments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StepAdjustment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
     ) -> Self {
         self.step_adjustments = input;
         self
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
-    pub fn metric_aggregation_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_aggregation_type = Some(input.into());
+    pub fn metric_aggregation_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.metric_aggregation_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
     pub fn set_metric_aggregation_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.metric_aggregation_type = input;
         self
     }
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p>
     pub fn estimated_instance_warmup(mut self, input: i32) -> Self {
-        self.estimated_instance_warmup = Some(input);
+        self.estimated_instance_warmup = ::std::option::Option::Some(input);
         self
     }
     /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.</p>
-    pub fn set_estimated_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_estimated_instance_warmup(mut self, input: ::std::option::Option<i32>) -> Self {
         self.estimated_instance_warmup = input;
         self
     }
@@ -327,13 +342,13 @@ impl ScalingPolicyBuilder {
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
         v.push(input);
-        self.alarms = Some(v);
+        self.alarms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The CloudWatch alarms related to the policy.</p>
     pub fn set_alarms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Alarm>>,
     ) -> Self {
         self.alarms = input;
         self
@@ -343,24 +358,24 @@ impl ScalingPolicyBuilder {
         mut self,
         input: crate::types::TargetTrackingConfiguration,
     ) -> Self {
-        self.target_tracking_configuration = Some(input);
+        self.target_tracking_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A target tracking scaling policy.</p>
     pub fn set_target_tracking_configuration(
         mut self,
-        input: std::option::Option<crate::types::TargetTrackingConfiguration>,
+        input: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
     ) -> Self {
         self.target_tracking_configuration = input;
         self
     }
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
@@ -369,13 +384,13 @@ impl ScalingPolicyBuilder {
         mut self,
         input: crate::types::PredictiveScalingConfiguration,
     ) -> Self {
-        self.predictive_scaling_configuration = Some(input);
+        self.predictive_scaling_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A predictive scaling policy.</p>
     pub fn set_predictive_scaling_configuration(
         mut self,
-        input: std::option::Option<crate::types::PredictiveScalingConfiguration>,
+        input: ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
     ) -> Self {
         self.predictive_scaling_configuration = input;
         self

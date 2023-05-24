@@ -2,29 +2,29 @@
 
 /// <p>Provides information about an entity that performed an action that produced a policy finding for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingActor {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
     #[doc(hidden)]
-    pub domain_details: std::option::Option<crate::types::DomainDetails>,
+    pub domain_details: ::std::option::Option<crate::types::DomainDetails>,
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
     #[doc(hidden)]
-    pub ip_address_details: std::option::Option<crate::types::IpAddressDetails>,
+    pub ip_address_details: ::std::option::Option<crate::types::IpAddressDetails>,
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
     #[doc(hidden)]
-    pub user_identity: std::option::Option<crate::types::UserIdentity>,
+    pub user_identity: ::std::option::Option<crate::types::UserIdentity>,
 }
 impl FindingActor {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
-    pub fn domain_details(&self) -> std::option::Option<&crate::types::DomainDetails> {
+    pub fn domain_details(&self) -> ::std::option::Option<&crate::types::DomainDetails> {
         self.domain_details.as_ref()
     }
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
-    pub fn ip_address_details(&self) -> std::option::Option<&crate::types::IpAddressDetails> {
+    pub fn ip_address_details(&self) -> ::std::option::Option<&crate::types::IpAddressDetails> {
         self.ip_address_details.as_ref()
     }
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
-    pub fn user_identity(&self) -> std::option::Option<&crate::types::UserIdentity> {
+    pub fn user_identity(&self) -> ::std::option::Option<&crate::types::UserIdentity> {
         self.user_identity.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl FindingActor {
 
 /// A builder for [`FindingActor`](crate::types::FindingActor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindingActorBuilder {
-    pub(crate) domain_details: std::option::Option<crate::types::DomainDetails>,
-    pub(crate) ip_address_details: std::option::Option<crate::types::IpAddressDetails>,
-    pub(crate) user_identity: std::option::Option<crate::types::UserIdentity>,
+    pub(crate) domain_details: ::std::option::Option<crate::types::DomainDetails>,
+    pub(crate) ip_address_details: ::std::option::Option<crate::types::IpAddressDetails>,
+    pub(crate) user_identity: ::std::option::Option<crate::types::UserIdentity>,
 }
 impl FindingActorBuilder {
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
     pub fn domain_details(mut self, input: crate::types::DomainDetails) -> Self {
-        self.domain_details = Some(input);
+        self.domain_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
     pub fn set_domain_details(
         mut self,
-        input: std::option::Option<crate::types::DomainDetails>,
+        input: ::std::option::Option<crate::types::DomainDetails>,
     ) -> Self {
         self.domain_details = input;
         self
     }
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
     pub fn ip_address_details(mut self, input: crate::types::IpAddressDetails) -> Self {
-        self.ip_address_details = Some(input);
+        self.ip_address_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
     pub fn set_ip_address_details(
         mut self,
-        input: std::option::Option<crate::types::IpAddressDetails>,
+        input: ::std::option::Option<crate::types::IpAddressDetails>,
     ) -> Self {
         self.ip_address_details = input;
         self
     }
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
     pub fn user_identity(mut self, input: crate::types::UserIdentity) -> Self {
-        self.user_identity = Some(input);
+        self.user_identity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
     pub fn set_user_identity(
         mut self,
-        input: std::option::Option<crate::types::UserIdentity>,
+        input: ::std::option::Option<crate::types::UserIdentity>,
     ) -> Self {
         self.user_identity = input;
         self

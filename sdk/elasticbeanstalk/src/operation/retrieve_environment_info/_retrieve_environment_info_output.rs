@@ -2,23 +2,23 @@
 
 /// <p>Result message containing a description of the requested environment info.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoOutput {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     #[doc(hidden)]
     pub environment_info:
-        std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
     _request_id: Option<String>,
 }
 impl RetrieveEnvironmentInfoOutput {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     pub fn environment_info(
         &self,
-    ) -> std::option::Option<&[crate::types::EnvironmentInfoDescription]> {
+    ) -> ::std::option::Option<&[crate::types::EnvironmentInfoDescription]> {
         self.environment_info.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RetrieveEnvironmentInfoOutput {
+impl ::aws_http::request_id::RequestId for RetrieveEnvironmentInfoOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -34,10 +34,12 @@ impl RetrieveEnvironmentInfoOutput {
 
 /// A builder for [`RetrieveEnvironmentInfoOutput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetrieveEnvironmentInfoOutputBuilder {
     pub(crate) environment_info:
-        std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
     _request_id: Option<String>,
 }
 impl RetrieveEnvironmentInfoOutputBuilder {
@@ -49,13 +51,13 @@ impl RetrieveEnvironmentInfoOutputBuilder {
     pub fn environment_info(mut self, input: crate::types::EnvironmentInfoDescription) -> Self {
         let mut v = self.environment_info.unwrap_or_default();
         v.push(input);
-        self.environment_info = Some(v);
+        self.environment_info = ::std::option::Option::Some(v);
         self
     }
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     pub fn set_environment_info(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
     ) -> Self {
         self.environment_info = input;
         self

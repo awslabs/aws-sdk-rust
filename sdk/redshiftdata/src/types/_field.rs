@@ -2,10 +2,10 @@
 
 /// <p>A data value in a column. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Field {
     /// <p>A value of the BLOB data type. </p>
-    BlobValue(aws_smithy_types::Blob),
+    BlobValue(::aws_smithy_types::Blob),
     /// <p>A value of the Boolean data type. </p>
     BooleanValue(bool),
     /// <p>A value of the double data type. </p>
@@ -15,7 +15,7 @@ pub enum Field {
     /// <p>A value of the long data type. </p>
     LongValue(i64),
     /// <p>A value of the string data type. </p>
-    StringValue(std::string::String),
+    StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -27,13 +27,13 @@ pub enum Field {
     Unknown,
 }
 impl Field {
-    /// Tries to convert the enum instance into [`BlobValue`](crate::types::Field::BlobValue), extracting the inner [`Blob`](aws_smithy_types::Blob).
+    /// Tries to convert the enum instance into [`BlobValue`](crate::types::Field::BlobValue), extracting the inner [`Blob`](::aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_blob_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
+    pub fn as_blob_value(&self) -> ::std::result::Result<&::aws_smithy_types::Blob, &Self> {
         if let Field::BlobValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BlobValue`](crate::types::Field::BlobValue).
@@ -42,11 +42,11 @@ impl Field {
     }
     /// Tries to convert the enum instance into [`BooleanValue`](crate::types::Field::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
+    pub fn as_boolean_value(&self) -> ::std::result::Result<&bool, &Self> {
         if let Field::BooleanValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValue`](crate::types::Field::BooleanValue).
@@ -55,11 +55,11 @@ impl Field {
     }
     /// Tries to convert the enum instance into [`DoubleValue`](crate::types::Field::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
+    pub fn as_double_value(&self) -> ::std::result::Result<&f64, &Self> {
         if let Field::DoubleValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValue`](crate::types::Field::DoubleValue).
@@ -68,11 +68,11 @@ impl Field {
     }
     /// Tries to convert the enum instance into [`IsNull`](crate::types::Field::IsNull), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
+    pub fn as_is_null(&self) -> ::std::result::Result<&bool, &Self> {
         if let Field::IsNull(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`IsNull`](crate::types::Field::IsNull).
@@ -81,24 +81,24 @@ impl Field {
     }
     /// Tries to convert the enum instance into [`LongValue`](crate::types::Field::LongValue), extracting the inner [`i64`](i64).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
+    pub fn as_long_value(&self) -> ::std::result::Result<&i64, &Self> {
         if let Field::LongValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`LongValue`](crate::types::Field::LongValue).
     pub fn is_long_value(&self) -> bool {
         self.as_long_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`StringValue`](crate::types::Field::StringValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`StringValue`](crate::types::Field::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let Field::StringValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::types::Field::StringValue).

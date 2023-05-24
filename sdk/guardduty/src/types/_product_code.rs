@@ -2,22 +2,22 @@
 
 /// <p>Contains information about the product code for the EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductCode {
     /// <p>The product code information.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     /// <p>The product code type.</p>
     #[doc(hidden)]
-    pub product_type: std::option::Option<std::string::String>,
+    pub product_type: ::std::option::Option<::std::string::String>,
 }
 impl ProductCode {
     /// <p>The product code information.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The product code type.</p>
-    pub fn product_type(&self) -> std::option::Option<&str> {
+    pub fn product_type(&self) -> ::std::option::Option<&str> {
         self.product_type.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ProductCode {
 
 /// A builder for [`ProductCode`](crate::types::ProductCode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductCodeBuilder {
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) product_type: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) product_type: ::std::option::Option<::std::string::String>,
 }
 impl ProductCodeBuilder {
     /// <p>The product code information.</p>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product code information.</p>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     /// <p>The product code type.</p>
-    pub fn product_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_type = Some(input.into());
+    pub fn product_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product code type.</p>
-    pub fn set_product_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_type = input;
         self
     }

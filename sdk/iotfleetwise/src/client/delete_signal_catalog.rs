@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSignalCatalog`](crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder::set_name): <p> The name of the signal catalog to delete. </p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_signal_catalog::builders::DeleteSignalCatalogFluentBuilder::set_name): <p> The name of the signal catalog to delete. </p>
     /// - On success, responds with [`DeleteSignalCatalogOutput`](crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput::name): <p>The name of the deleted signal catalog.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_signal_catalog::DeleteSignalCatalogOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted signal catalog.</p>

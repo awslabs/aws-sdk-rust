@@ -2,11 +2,11 @@
 
 /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDataCaptureConfig {
     /// <p>The Amazon S3 location being used to capture the data.</p>
     #[doc(hidden)]
-    pub destination_s3_uri: std::option::Option<std::string::String>,
+    pub destination_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
     /// <p>The KmsKeyId can be any of the following formats: </p>
     /// <ul>
@@ -16,14 +16,14 @@ pub struct BatchDataCaptureConfig {
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Flag that indicates whether to append inference id to the output.</p>
     #[doc(hidden)]
     pub generate_inference_id: bool,
 }
 impl BatchDataCaptureConfig {
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn destination_s3_uri(&self) -> std::option::Option<&str> {
+    pub fn destination_s3_uri(&self) -> ::std::option::Option<&str> {
         self.destination_s3_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
@@ -34,7 +34,7 @@ impl BatchDataCaptureConfig {
     /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Flag that indicates whether to append inference id to the output.</p>
@@ -51,22 +51,27 @@ impl BatchDataCaptureConfig {
 
 /// A builder for [`BatchDataCaptureConfig`](crate::types::BatchDataCaptureConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDataCaptureConfigBuilder {
-    pub(crate) destination_s3_uri: std::option::Option<std::string::String>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) generate_inference_id: std::option::Option<bool>,
+    pub(crate) destination_s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) generate_inference_id: ::std::option::Option<bool>,
 }
 impl BatchDataCaptureConfigBuilder {
     /// <p>The Amazon S3 location being used to capture the data.</p>
-    pub fn destination_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_s3_uri = Some(input.into());
+    pub fn destination_s3_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location being used to capture the data.</p>
     pub fn set_destination_s3_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_s3_uri = input;
         self
@@ -79,8 +84,8 @@ impl BatchDataCaptureConfigBuilder {
     /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the batch transform job.</p>
@@ -91,17 +96,17 @@ impl BatchDataCaptureConfigBuilder {
     /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
     /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
     /// </ul>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>Flag that indicates whether to append inference id to the output.</p>
     pub fn generate_inference_id(mut self, input: bool) -> Self {
-        self.generate_inference_id = Some(input);
+        self.generate_inference_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Flag that indicates whether to append inference id to the output.</p>
-    pub fn set_generate_inference_id(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_generate_inference_id(mut self, input: ::std::option::Option<bool>) -> Self {
         self.generate_inference_id = input;
         self
     }

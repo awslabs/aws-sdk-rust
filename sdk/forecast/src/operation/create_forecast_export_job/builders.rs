@@ -22,30 +22,30 @@ pub use crate::operation::create_forecast_export_job::_create_forecast_export_jo
 /// <p>To get a list of all your forecast export jobs, use the <code>ListForecastExportJobs</code> operation.</p> <note>
 /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your Amazon S3 bucket. To get the status, use the <code>DescribeForecastExportJob</code> operation.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateForecastExportJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder,
 }
 impl CreateForecastExportJobFluentBuilder {
     /// Creates a new `CreateForecastExportJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_forecast_export_job::CreateForecastExportJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_forecast_export_job::CreateForecastExportJobError,
         >,
     > {
@@ -53,30 +53,33 @@ impl CreateForecastExportJobFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_forecast_export_job::CreateForecastExportJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_forecast_export_job::CreateForecastExportJobError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -89,34 +92,37 @@ impl CreateForecastExportJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_forecast_export_job::CreateForecastExportJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_forecast_export_job::CreateForecastExportJobError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name for the forecast export job.</p>
-    pub fn forecast_export_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn forecast_export_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.forecast_export_job_name(input.into());
         self
     }
     /// <p>The name for the forecast export job.</p>
     pub fn set_forecast_export_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_forecast_export_job_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
-    pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
-    pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forecast_arn(input);
         self
     }
@@ -130,7 +136,7 @@ impl CreateForecastExportJobFluentBuilder {
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::DataDestination>,
+        input: ::std::option::Option<crate::types::DataDestination>,
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
@@ -167,18 +173,18 @@ impl CreateForecastExportJobFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.format(input.into());
         self
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }

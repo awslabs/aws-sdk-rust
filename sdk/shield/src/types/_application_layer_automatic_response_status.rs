@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ApplicationLayerAutomaticResponseStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ApplicationLayerAutomaticResponseStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ApplicationLayerAutomaticResponseStatus {
+impl ::std::convert::From<&str> for ApplicationLayerAutomaticResponseStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ApplicationLayerAutomaticResponseStatus::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ApplicationLayerAutomaticResponseStatus {
         }
     }
 }
-impl std::str::FromStr for ApplicationLayerAutomaticResponseStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ApplicationLayerAutomaticResponseStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationLayerAutomaticResponseStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ApplicationLayerAutomaticResponseStatus::from(s))
     }
 }
 impl ApplicationLayerAutomaticResponseStatus {
@@ -86,7 +86,7 @@ impl ApplicationLayerAutomaticResponseStatus {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for ApplicationLayerAutomaticResponseStatus {
+impl ::std::convert::AsRef<str> for ApplicationLayerAutomaticResponseStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

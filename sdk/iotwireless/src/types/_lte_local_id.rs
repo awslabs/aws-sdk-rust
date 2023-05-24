@@ -2,22 +2,22 @@
 
 /// <p>LTE local identification (local ID) information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LteLocalId {
     /// <p>Physical cell ID.</p>
     #[doc(hidden)]
-    pub pci: std::option::Option<i32>,
+    pub pci: ::std::option::Option<i32>,
     /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
     #[doc(hidden)]
-    pub earfcn: std::option::Option<i32>,
+    pub earfcn: ::std::option::Option<i32>,
 }
 impl LteLocalId {
     /// <p>Physical cell ID.</p>
-    pub fn pci(&self) -> std::option::Option<i32> {
+    pub fn pci(&self) -> ::std::option::Option<i32> {
         self.pci
     }
     /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
-    pub fn earfcn(&self) -> std::option::Option<i32> {
+    pub fn earfcn(&self) -> ::std::option::Option<i32> {
         self.earfcn
     }
 }
@@ -30,29 +30,31 @@ impl LteLocalId {
 
 /// A builder for [`LteLocalId`](crate::types::LteLocalId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LteLocalIdBuilder {
-    pub(crate) pci: std::option::Option<i32>,
-    pub(crate) earfcn: std::option::Option<i32>,
+    pub(crate) pci: ::std::option::Option<i32>,
+    pub(crate) earfcn: ::std::option::Option<i32>,
 }
 impl LteLocalIdBuilder {
     /// <p>Physical cell ID.</p>
     pub fn pci(mut self, input: i32) -> Self {
-        self.pci = Some(input);
+        self.pci = ::std::option::Option::Some(input);
         self
     }
     /// <p>Physical cell ID.</p>
-    pub fn set_pci(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pci(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pci = input;
         self
     }
     /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
     pub fn earfcn(mut self, input: i32) -> Self {
-        self.earfcn = Some(input);
+        self.earfcn = ::std::option::Option::Some(input);
         self
     }
     /// <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency channel number (FCN).</p>
-    pub fn set_earfcn(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_earfcn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.earfcn = input;
         self
     }

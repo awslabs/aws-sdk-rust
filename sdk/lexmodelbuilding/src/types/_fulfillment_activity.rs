@@ -7,22 +7,22 @@
 /// <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FulfillmentActivity {
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::FulfillmentActivityType>,
+    pub r#type: ::std::option::Option<crate::types::FulfillmentActivityType>,
     /// <p> A description of the Lambda function that is run to fulfill the intent. </p>
     #[doc(hidden)]
-    pub code_hook: std::option::Option<crate::types::CodeHook>,
+    pub code_hook: ::std::option::Option<crate::types::CodeHook>,
 }
 impl FulfillmentActivity {
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::FulfillmentActivityType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FulfillmentActivityType> {
         self.r#type.as_ref()
     }
     /// <p> A description of the Lambda function that is run to fulfill the intent. </p>
-    pub fn code_hook(&self) -> std::option::Option<&crate::types::CodeHook> {
+    pub fn code_hook(&self) -> ::std::option::Option<&crate::types::CodeHook> {
         self.code_hook.as_ref()
     }
 }
@@ -35,32 +35,34 @@ impl FulfillmentActivity {
 
 /// A builder for [`FulfillmentActivity`](crate::types::FulfillmentActivity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FulfillmentActivityBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::FulfillmentActivityType>,
-    pub(crate) code_hook: std::option::Option<crate::types::CodeHook>,
+    pub(crate) r#type: ::std::option::Option<crate::types::FulfillmentActivityType>,
+    pub(crate) code_hook: ::std::option::Option<crate::types::CodeHook>,
 }
 impl FulfillmentActivityBuilder {
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
     pub fn r#type(mut self, input: crate::types::FulfillmentActivityType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> How the intent should be fulfilled, either by running a Lambda function or by returning the slot data to the client application. </p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::FulfillmentActivityType>,
+        input: ::std::option::Option<crate::types::FulfillmentActivityType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p> A description of the Lambda function that is run to fulfill the intent. </p>
     pub fn code_hook(mut self, input: crate::types::CodeHook) -> Self {
-        self.code_hook = Some(input);
+        self.code_hook = ::std::option::Option::Some(input);
         self
     }
     /// <p> A description of the Lambda function that is run to fulfill the intent. </p>
-    pub fn set_code_hook(mut self, input: std::option::Option<crate::types::CodeHook>) -> Self {
+    pub fn set_code_hook(mut self, input: ::std::option::Option<crate::types::CodeHook>) -> Self {
         self.code_hook = input;
         self
     }

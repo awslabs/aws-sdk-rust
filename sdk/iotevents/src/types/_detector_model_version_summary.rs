@@ -2,64 +2,64 @@
 
 /// <p>Information about the detector model version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorModelVersionSummary {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
-    pub detector_model_name: std::option::Option<std::string::String>,
+    pub detector_model_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the detector model version.</p>
     #[doc(hidden)]
-    pub detector_model_version: std::option::Option<std::string::String>,
+    pub detector_model_version: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the detector model version.</p>
     #[doc(hidden)]
-    pub detector_model_arn: std::option::Option<std::string::String>,
+    pub detector_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the detector model version was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the detector model version was updated.</p>
     #[doc(hidden)]
-    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the detector model version.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DetectorModelVersionStatus>,
+    pub status: ::std::option::Option<crate::types::DetectorModelVersionStatus>,
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     #[doc(hidden)]
-    pub evaluation_method: std::option::Option<crate::types::EvaluationMethod>,
+    pub evaluation_method: ::std::option::Option<crate::types::EvaluationMethod>,
 }
 impl DetectorModelVersionSummary {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> ::std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The ID of the detector model version.</p>
-    pub fn detector_model_version(&self) -> std::option::Option<&str> {
+    pub fn detector_model_version(&self) -> ::std::option::Option<&str> {
         self.detector_model_version.as_deref()
     }
     /// <p>The ARN of the detector model version.</p>
-    pub fn detector_model_arn(&self) -> std::option::Option<&str> {
+    pub fn detector_model_arn(&self) -> ::std::option::Option<&str> {
         self.detector_model_arn.as_deref()
     }
     /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The time the detector model version was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the detector model version was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The status of the detector model version.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DetectorModelVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DetectorModelVersionStatus> {
         self.status.as_ref()
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
-    pub fn evaluation_method(&self) -> std::option::Option<&crate::types::EvaluationMethod> {
+    pub fn evaluation_method(&self) -> ::std::option::Option<&crate::types::EvaluationMethod> {
         self.evaluation_method.as_ref()
     }
 }
@@ -72,115 +72,126 @@ impl DetectorModelVersionSummary {
 
 /// A builder for [`DetectorModelVersionSummary`](crate::types::DetectorModelVersionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectorModelVersionSummaryBuilder {
-    pub(crate) detector_model_name: std::option::Option<std::string::String>,
-    pub(crate) detector_model_version: std::option::Option<std::string::String>,
-    pub(crate) detector_model_arn: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::DetectorModelVersionStatus>,
-    pub(crate) evaluation_method: std::option::Option<crate::types::EvaluationMethod>,
+    pub(crate) detector_model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) detector_model_version: ::std::option::Option<::std::string::String>,
+    pub(crate) detector_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::DetectorModelVersionStatus>,
+    pub(crate) evaluation_method: ::std::option::Option<crate::types::EvaluationMethod>,
 }
 impl DetectorModelVersionSummaryBuilder {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detector_model_name = Some(input.into());
+    pub fn detector_model_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.detector_model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the detector model.</p>
     pub fn set_detector_model_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.detector_model_name = input;
         self
     }
     /// <p>The ID of the detector model version.</p>
-    pub fn detector_model_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detector_model_version = Some(input.into());
+    pub fn detector_model_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.detector_model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the detector model version.</p>
     pub fn set_detector_model_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.detector_model_version = input;
         self
     }
     /// <p>The ARN of the detector model version.</p>
-    pub fn detector_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detector_model_arn = Some(input.into());
+    pub fn detector_model_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.detector_model_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the detector model version.</p>
     pub fn set_detector_model_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.detector_model_arn = input;
         self
     }
     /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The time the detector model version was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the detector model version was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last time the detector model version was updated.</p>
-    pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_update_time = Some(input);
+    pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time the detector model version was updated.</p>
     pub fn set_last_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_update_time = input;
         self
     }
     /// <p>The status of the detector model version.</p>
     pub fn status(mut self, input: crate::types::DetectorModelVersionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the detector model version.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DetectorModelVersionStatus>,
+        input: ::std::option::Option<crate::types::DetectorModelVersionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(mut self, input: crate::types::EvaluationMethod) -> Self {
-        self.evaluation_method = Some(input);
+        self.evaluation_method = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn set_evaluation_method(
         mut self,
-        input: std::option::Option<crate::types::EvaluationMethod>,
+        input: ::std::option::Option<crate::types::EvaluationMethod>,
     ) -> Self {
         self.evaluation_method = input;
         self

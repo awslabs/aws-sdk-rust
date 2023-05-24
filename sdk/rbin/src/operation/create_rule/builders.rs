@@ -6,56 +6,59 @@ pub use crate::operation::create_rule::_create_rule_input::CreateRuleInputBuilde
 /// Fluent builder constructing a request to `CreateRule`.
 ///
 /// <p>Creates a Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-create-rule"> Create Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_rule::builders::CreateRuleInputBuilder,
 }
 impl CreateRuleFluentBuilder {
     /// Creates a new `CreateRule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_rule::CreateRule,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_rule::CreateRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl CreateRuleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_rule::CreateRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
     > {
         self.send_middleware().await
     }
@@ -82,18 +85,18 @@ impl CreateRuleFluentBuilder {
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn set_retention_period(
         mut self,
-        input: std::option::Option<crate::types::RetentionPeriod>,
+        input: ::std::option::Option<crate::types::RetentionPeriod>,
     ) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
     /// <p>The retention rule description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The retention rule description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -109,7 +112,7 @@ impl CreateRuleFluentBuilder {
     /// <p>Information about the tags to assign to the retention rule.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -122,7 +125,7 @@ impl CreateRuleFluentBuilder {
     /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
@@ -143,7 +146,7 @@ impl CreateRuleFluentBuilder {
     /// <p>To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.</p>
     pub fn set_resource_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     ) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
@@ -156,7 +159,7 @@ impl CreateRuleFluentBuilder {
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn set_lock_configuration(
         mut self,
-        input: std::option::Option<crate::types::LockConfiguration>,
+        input: ::std::option::Option<crate::types::LockConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_lock_configuration(input);
         self

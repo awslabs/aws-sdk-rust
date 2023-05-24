@@ -2,7 +2,7 @@
 
 /// Scte27 Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte27DestinationSettings {}
 impl Scte27DestinationSettings {
     /// Creates a new builder-style object to manufacture [`Scte27DestinationSettings`](crate::types::Scte27DestinationSettings).
@@ -13,7 +13,9 @@ impl Scte27DestinationSettings {
 
 /// A builder for [`Scte27DestinationSettings`](crate::types::Scte27DestinationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Scte27DestinationSettingsBuilder {}
 impl Scte27DestinationSettingsBuilder {
     /// Consumes the builder and constructs a [`Scte27DestinationSettings`](crate::types::Scte27DestinationSettings).

@@ -2,22 +2,22 @@
 
 /// Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DolbyVisionLevel6Metadata {
     /// Maximum Content Light Level. Static HDR metadata that corresponds to the brightest pixel in the entire stream. Measured in nits.
     #[doc(hidden)]
-    pub max_cll: std::option::Option<i32>,
+    pub max_cll: ::std::option::Option<i32>,
     /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
     #[doc(hidden)]
-    pub max_fall: std::option::Option<i32>,
+    pub max_fall: ::std::option::Option<i32>,
 }
 impl DolbyVisionLevel6Metadata {
     /// Maximum Content Light Level. Static HDR metadata that corresponds to the brightest pixel in the entire stream. Measured in nits.
-    pub fn max_cll(&self) -> std::option::Option<i32> {
+    pub fn max_cll(&self) -> ::std::option::Option<i32> {
         self.max_cll
     }
     /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
-    pub fn max_fall(&self) -> std::option::Option<i32> {
+    pub fn max_fall(&self) -> ::std::option::Option<i32> {
         self.max_fall
     }
 }
@@ -30,29 +30,31 @@ impl DolbyVisionLevel6Metadata {
 
 /// A builder for [`DolbyVisionLevel6Metadata`](crate::types::DolbyVisionLevel6Metadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DolbyVisionLevel6MetadataBuilder {
-    pub(crate) max_cll: std::option::Option<i32>,
-    pub(crate) max_fall: std::option::Option<i32>,
+    pub(crate) max_cll: ::std::option::Option<i32>,
+    pub(crate) max_fall: ::std::option::Option<i32>,
 }
 impl DolbyVisionLevel6MetadataBuilder {
     /// Maximum Content Light Level. Static HDR metadata that corresponds to the brightest pixel in the entire stream. Measured in nits.
     pub fn max_cll(mut self, input: i32) -> Self {
-        self.max_cll = Some(input);
+        self.max_cll = ::std::option::Option::Some(input);
         self
     }
     /// Maximum Content Light Level. Static HDR metadata that corresponds to the brightest pixel in the entire stream. Measured in nits.
-    pub fn set_max_cll(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_cll(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_cll = input;
         self
     }
     /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
     pub fn max_fall(mut self, input: i32) -> Self {
-        self.max_fall = Some(input);
+        self.max_fall = ::std::option::Option::Some(input);
         self
     }
     /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
-    pub fn set_max_fall(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_fall(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_fall = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Describes an EWS based availability provider when returned from the service. It does not contain the password of the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedactedEwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
     #[doc(hidden)]
-    pub ews_endpoint: std::option::Option<std::string::String>,
+    pub ews_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The username used to authenticate the remote EWS server.</p>
     #[doc(hidden)]
-    pub ews_username: std::option::Option<std::string::String>,
+    pub ews_username: ::std::option::Option<::std::string::String>,
 }
 impl RedactedEwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
-    pub fn ews_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ews_endpoint(&self) -> ::std::option::Option<&str> {
         self.ews_endpoint.as_deref()
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub fn ews_username(&self) -> std::option::Option<&str> {
+    pub fn ews_username(&self) -> ::std::option::Option<&str> {
         self.ews_username.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl RedactedEwsAvailabilityProvider {
 
 /// A builder for [`RedactedEwsAvailabilityProvider`](crate::types::RedactedEwsAvailabilityProvider).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RedactedEwsAvailabilityProviderBuilder {
-    pub(crate) ews_endpoint: std::option::Option<std::string::String>,
-    pub(crate) ews_username: std::option::Option<std::string::String>,
+    pub(crate) ews_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) ews_username: ::std::option::Option<::std::string::String>,
 }
 impl RedactedEwsAvailabilityProviderBuilder {
     /// <p>The endpoint of the remote EWS server.</p>
-    pub fn ews_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ews_endpoint = Some(input.into());
+    pub fn ews_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ews_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the remote EWS server.</p>
-    pub fn set_ews_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ews_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ews_endpoint = input;
         self
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub fn ews_username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ews_username = Some(input.into());
+    pub fn ews_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ews_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub fn set_ews_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ews_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ews_username = input;
         self
     }

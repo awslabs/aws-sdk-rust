@@ -2,22 +2,22 @@
 
 /// <p>Describes the registered tag keys for the current Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceTagNotificationAttribute {
     /// <p>The registered tag keys.</p>
     #[doc(hidden)]
-    pub instance_tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instance_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates wheter all tag keys in the current Region are registered to appear in scheduled event notifications. <code>true</code> indicates that all tag keys in the current Region are registered.</p>
     #[doc(hidden)]
-    pub include_all_tags_of_instance: std::option::Option<bool>,
+    pub include_all_tags_of_instance: ::std::option::Option<bool>,
 }
 impl InstanceTagNotificationAttribute {
     /// <p>The registered tag keys.</p>
-    pub fn instance_tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_tag_keys.as_deref()
     }
     /// <p>Indicates wheter all tag keys in the current Region are registered to appear in scheduled event notifications. <code>true</code> indicates that all tag keys in the current Region are registered.</p>
-    pub fn include_all_tags_of_instance(&self) -> std::option::Option<bool> {
+    pub fn include_all_tags_of_instance(&self) -> ::std::option::Option<bool> {
         self.include_all_tags_of_instance
     }
 }
@@ -30,10 +30,12 @@ impl InstanceTagNotificationAttribute {
 
 /// A builder for [`InstanceTagNotificationAttribute`](crate::types::InstanceTagNotificationAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceTagNotificationAttributeBuilder {
-    pub(crate) instance_tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) include_all_tags_of_instance: std::option::Option<bool>,
+    pub(crate) instance_tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) include_all_tags_of_instance: ::std::option::Option<bool>,
 }
 impl InstanceTagNotificationAttributeBuilder {
     /// Appends an item to `instance_tag_keys`.
@@ -41,27 +43,30 @@ impl InstanceTagNotificationAttributeBuilder {
     /// To override the contents of this collection use [`set_instance_tag_keys`](Self::set_instance_tag_keys).
     ///
     /// <p>The registered tag keys.</p>
-    pub fn instance_tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_tag_keys(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.instance_tag_keys.unwrap_or_default();
         v.push(input.into());
-        self.instance_tag_keys = Some(v);
+        self.instance_tag_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The registered tag keys.</p>
     pub fn set_instance_tag_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instance_tag_keys = input;
         self
     }
     /// <p>Indicates wheter all tag keys in the current Region are registered to appear in scheduled event notifications. <code>true</code> indicates that all tag keys in the current Region are registered.</p>
     pub fn include_all_tags_of_instance(mut self, input: bool) -> Self {
-        self.include_all_tags_of_instance = Some(input);
+        self.include_all_tags_of_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates wheter all tag keys in the current Region are registered to appear in scheduled event notifications. <code>true</code> indicates that all tag keys in the current Region are registered.</p>
-    pub fn set_include_all_tags_of_instance(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_all_tags_of_instance(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all_tags_of_instance = input;
         self
     }

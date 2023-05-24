@@ -2,123 +2,123 @@
 
 /// <p>Provides information about the channel type and other settings for an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointResponse {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For example, the address for a push-notification channel is typically the token provided by a push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. The address for the SMS channel is a phone number in E.164 format, such as +12065550100. The address for the email channel is an email address.</p>
     #[doc(hidden)]
-    pub address: std::option::Option<std::string::String>,
+    pub address: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the application that's associated with the endpoint.</p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
     /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
     #[doc(hidden)]
-    pub channel_type: std::option::Option<crate::types::ChannelType>,
+    pub channel_type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>A number from 0-99 that represents the cohort that the endpoint is assigned to. Endpoints are grouped into cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an application. Amazon Pinpoint assigns cohorts to the holdout or treatment allocations for campaigns.</p>
     #[doc(hidden)]
-    pub cohort_id: std::option::Option<std::string::String>,
+    pub cohort_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when the endpoint was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<std::string::String>,
+    pub creation_date: ::std::option::Option<::std::string::String>,
     /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
     #[doc(hidden)]
-    pub demographic: std::option::Option<crate::types::EndpointDemographic>,
+    pub demographic: ::std::option::Option<crate::types::EndpointDemographic>,
     /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
     #[doc(hidden)]
-    pub effective_date: std::option::Option<std::string::String>,
+    pub effective_date: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether messages or push notifications are sent to the endpoint. Possible values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
     /// <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
     #[doc(hidden)]
-    pub endpoint_status: std::option::Option<std::string::String>,
+    pub endpoint_status: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that you assigned to the endpoint. The identifier should be a globally unique identifier (GUID) to ensure that it doesn't conflict with other endpoint identifiers that are associated with the application.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The geographic information for the endpoint.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::EndpointLocation>,
+    pub location: ::std::option::Option<crate::types::EndpointLocation>,
     /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
     #[doc(hidden)]
-    pub metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+    pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
     #[doc(hidden)]
-    pub opt_out: std::option::Option<std::string::String>,
+    pub opt_out: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the most recent request to update the endpoint.</p>
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
     #[doc(hidden)]
-    pub user: std::option::Option<crate::types::EndpointUser>,
+    pub user: ::std::option::Option<crate::types::EndpointUser>,
 }
 impl EndpointResponse {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For example, the address for a push-notification channel is typically the token provided by a push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. The address for the SMS channel is a phone number in E.164 format, such as +12065550100. The address for the email channel is an email address.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The unique identifier for the application that's associated with the endpoint.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
     pub fn attributes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     > {
         self.attributes.as_ref()
     }
     /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
-    pub fn channel_type(&self) -> std::option::Option<&crate::types::ChannelType> {
+    pub fn channel_type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
         self.channel_type.as_ref()
     }
     /// <p>A number from 0-99 that represents the cohort that the endpoint is assigned to. Endpoints are grouped into cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an application. Amazon Pinpoint assigns cohorts to the holdout or treatment allocations for campaigns.</p>
-    pub fn cohort_id(&self) -> std::option::Option<&str> {
+    pub fn cohort_id(&self) -> ::std::option::Option<&str> {
         self.cohort_id.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<&str> {
         self.creation_date.as_deref()
     }
     /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
-    pub fn demographic(&self) -> std::option::Option<&crate::types::EndpointDemographic> {
+    pub fn demographic(&self) -> ::std::option::Option<&crate::types::EndpointDemographic> {
         self.demographic.as_ref()
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
-    pub fn effective_date(&self) -> std::option::Option<&str> {
+    pub fn effective_date(&self) -> ::std::option::Option<&str> {
         self.effective_date.as_deref()
     }
     /// <p>Specifies whether messages or push notifications are sent to the endpoint. Possible values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
     /// <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
-    pub fn endpoint_status(&self) -> std::option::Option<&str> {
+    pub fn endpoint_status(&self) -> ::std::option::Option<&str> {
         self.endpoint_status.as_deref()
     }
     /// <p>The unique identifier that you assigned to the endpoint. The identifier should be a globally unique identifier (GUID) to ensure that it doesn't conflict with other endpoint identifiers that are associated with the application.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The geographic information for the endpoint.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::EndpointLocation> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::EndpointLocation> {
         self.location.as_ref()
     }
     /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
     pub fn metrics(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.metrics.as_ref()
     }
     /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
-    pub fn opt_out(&self) -> std::option::Option<&str> {
+    pub fn opt_out(&self) -> ::std::option::Option<&str> {
         self.opt_out.as_deref()
     }
     /// <p>The unique identifier for the most recent request to update the endpoint.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
-    pub fn user(&self) -> std::option::Option<&crate::types::EndpointUser> {
+    pub fn user(&self) -> ::std::option::Option<&crate::types::EndpointUser> {
         self.user.as_ref()
     }
 }
@@ -131,44 +131,53 @@ impl EndpointResponse {
 
 /// A builder for [`EndpointResponse`](crate::types::EndpointResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointResponseBuilder {
-    pub(crate) address: std::option::Option<std::string::String>,
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub(crate) address: ::std::option::Option<::std::string::String>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
-    pub(crate) channel_type: std::option::Option<crate::types::ChannelType>,
-    pub(crate) cohort_id: std::option::Option<std::string::String>,
-    pub(crate) creation_date: std::option::Option<std::string::String>,
-    pub(crate) demographic: std::option::Option<crate::types::EndpointDemographic>,
-    pub(crate) effective_date: std::option::Option<std::string::String>,
-    pub(crate) endpoint_status: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<crate::types::EndpointLocation>,
-    pub(crate) metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
-    pub(crate) opt_out: std::option::Option<std::string::String>,
-    pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) user: std::option::Option<crate::types::EndpointUser>,
+    pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,
+    pub(crate) cohort_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<::std::string::String>,
+    pub(crate) demographic: ::std::option::Option<crate::types::EndpointDemographic>,
+    pub(crate) effective_date: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_status: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<crate::types::EndpointLocation>,
+    pub(crate) metrics:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) opt_out: ::std::option::Option<::std::string::String>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user: ::std::option::Option<crate::types::EndpointUser>,
 }
 impl EndpointResponseBuilder {
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For example, the address for a push-notification channel is typically the token provided by a push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. The address for the SMS channel is a phone number in E.164 format, such as +12065550100. The address for the email channel is an email address.</p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.address = Some(input.into());
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For example, the address for a push-notification channel is typically the token provided by a push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. The address for the SMS channel is a phone number in E.164 format, such as +12065550100. The address for the email channel is an email address.</p>
-    pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
     }
     /// <p>The unique identifier for the application that's associated with the endpoint.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that's associated with the endpoint.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
@@ -179,19 +188,22 @@ impl EndpointResponseBuilder {
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
     pub fn attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.attributes = Some(hash_map);
+        self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.attributes = input;
@@ -199,91 +211,109 @@ impl EndpointResponseBuilder {
     }
     /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
     pub fn channel_type(mut self, input: crate::types::ChannelType) -> Self {
-        self.channel_type = Some(input);
+        self.channel_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
     pub fn set_channel_type(
         mut self,
-        input: std::option::Option<crate::types::ChannelType>,
+        input: ::std::option::Option<crate::types::ChannelType>,
     ) -> Self {
         self.channel_type = input;
         self
     }
     /// <p>A number from 0-99 that represents the cohort that the endpoint is assigned to. Endpoints are grouped into cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an application. Amazon Pinpoint assigns cohorts to the holdout or treatment allocations for campaigns.</p>
-    pub fn cohort_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cohort_id = Some(input.into());
+    pub fn cohort_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cohort_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A number from 0-99 that represents the cohort that the endpoint is assigned to. Endpoints are grouped into cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an application. Amazon Pinpoint assigns cohorts to the holdout or treatment allocations for campaigns.</p>
-    pub fn set_cohort_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cohort_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cohort_id = input;
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was created.</p>
-    pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_date = Some(input.into());
+    pub fn creation_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was created.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
     pub fn demographic(mut self, input: crate::types::EndpointDemographic) -> Self {
-        self.demographic = Some(input);
+        self.demographic = ::std::option::Option::Some(input);
         self
     }
     /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
     pub fn set_demographic(
         mut self,
-        input: std::option::Option<crate::types::EndpointDemographic>,
+        input: ::std::option::Option<crate::types::EndpointDemographic>,
     ) -> Self {
         self.demographic = input;
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
-    pub fn effective_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.effective_date = Some(input.into());
+    pub fn effective_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.effective_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
-    pub fn set_effective_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_effective_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.effective_date = input;
         self
     }
     /// <p>Specifies whether messages or push notifications are sent to the endpoint. Possible values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
     /// <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
-    pub fn endpoint_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_status = Some(input.into());
+    pub fn endpoint_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies whether messages or push notifications are sent to the endpoint. Possible values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p>
     /// <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
-    pub fn set_endpoint_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.endpoint_status = input;
         self
     }
     /// <p>The unique identifier that you assigned to the endpoint. The identifier should be a globally unique identifier (GUID) to ensure that it doesn't conflict with other endpoint identifiers that are associated with the application.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that you assigned to the endpoint. The identifier should be a globally unique identifier (GUID) to ensure that it doesn't conflict with other endpoint identifiers that are associated with the application.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The geographic information for the endpoint.</p>
     pub fn location(mut self, input: crate::types::EndpointLocation) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The geographic information for the endpoint.</p>
     pub fn set_location(
         mut self,
-        input: std::option::Option<crate::types::EndpointLocation>,
+        input: ::std::option::Option<crate::types::EndpointLocation>,
     ) -> Self {
         self.location = input;
         self
@@ -293,47 +323,47 @@ impl EndpointResponseBuilder {
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
     /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
-    pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
+    pub fn metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.metrics.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.metrics = Some(hash_map);
+        self.metrics = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
     pub fn set_metrics(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     ) -> Self {
         self.metrics = input;
         self
     }
     /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
-    pub fn opt_out(mut self, input: impl Into<std::string::String>) -> Self {
-        self.opt_out = Some(input.into());
+    pub fn opt_out(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.opt_out = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
-    pub fn set_opt_out(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_opt_out(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_out = input;
         self
     }
     /// <p>The unique identifier for the most recent request to update the endpoint.</p>
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the most recent request to update the endpoint.</p>
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
     /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
     pub fn user(mut self, input: crate::types::EndpointUser) -> Self {
-        self.user = Some(input);
+        self.user = ::std::option::Option::Some(input);
         self
     }
     /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
-    pub fn set_user(mut self, input: std::option::Option<crate::types::EndpointUser>) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<crate::types::EndpointUser>) -> Self {
         self.user = input;
         self
     }

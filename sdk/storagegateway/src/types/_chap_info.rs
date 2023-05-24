@@ -2,43 +2,43 @@
 
 /// <p>Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChapInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
     #[doc(hidden)]
-    pub secret_to_authenticate_initiator: std::option::Option<std::string::String>,
+    pub secret_to_authenticate_initiator: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI initiator that connects to the target.</p>
     #[doc(hidden)]
-    pub initiator_name: std::option::Option<std::string::String>,
+    pub initiator_name: ::std::option::Option<::std::string::String>,
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
     #[doc(hidden)]
-    pub secret_to_authenticate_target: std::option::Option<std::string::String>,
+    pub secret_to_authenticate_target: ::std::option::Option<::std::string::String>,
 }
 impl ChapInfo {
     /// <p>The Amazon Resource Name (ARN) of the volume.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
-    pub fn secret_to_authenticate_initiator(&self) -> std::option::Option<&str> {
+    pub fn secret_to_authenticate_initiator(&self) -> ::std::option::Option<&str> {
         self.secret_to_authenticate_initiator.as_deref()
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(&self) -> std::option::Option<&str> {
+    pub fn initiator_name(&self) -> ::std::option::Option<&str> {
         self.initiator_name.as_deref()
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
-    pub fn secret_to_authenticate_target(&self) -> std::option::Option<&str> {
+    pub fn secret_to_authenticate_target(&self) -> ::std::option::Option<&str> {
         self.secret_to_authenticate_target.as_deref()
     }
 }
-impl std::fmt::Debug for ChapInfo {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ChapInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChapInfo");
         formatter.field("target_arn", &self.target_arn);
         formatter.field(
@@ -62,61 +62,70 @@ impl ChapInfo {
 
 /// A builder for [`ChapInfo`](crate::types::ChapInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ChapInfoBuilder {
-    pub(crate) target_arn: std::option::Option<std::string::String>,
-    pub(crate) secret_to_authenticate_initiator: std::option::Option<std::string::String>,
-    pub(crate) initiator_name: std::option::Option<std::string::String>,
-    pub(crate) secret_to_authenticate_target: std::option::Option<std::string::String>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_to_authenticate_initiator: ::std::option::Option<::std::string::String>,
+    pub(crate) initiator_name: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_to_authenticate_target: ::std::option::Option<::std::string::String>,
 }
 impl ChapInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the volume.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume.</p>
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
     pub fn secret_to_authenticate_initiator(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.secret_to_authenticate_initiator = Some(input.into());
+        self.secret_to_authenticate_initiator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p>
     pub fn set_secret_to_authenticate_initiator(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secret_to_authenticate_initiator = input;
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.initiator_name = Some(input.into());
+    pub fn initiator_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.initiator_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn set_initiator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_initiator_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.initiator_name = input;
         self
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
-    pub fn secret_to_authenticate_target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_to_authenticate_target = Some(input.into());
+    pub fn secret_to_authenticate_target(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secret_to_authenticate_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows client).</p>
     pub fn set_secret_to_authenticate_target(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secret_to_authenticate_target = input;
         self
@@ -131,8 +140,8 @@ impl ChapInfoBuilder {
         }
     }
 }
-impl std::fmt::Debug for ChapInfoBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ChapInfoBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChapInfoBuilder");
         formatter.field("target_arn", &self.target_arn);
         formatter.field(

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartSmartHomeApplianceDiscovery`](crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`room_arn(impl Into<String>)`](crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryFluentBuilder::set_room_arn): <p>The room where smart home appliance discovery was initiated.</p>
+    ///   - [`room_arn(impl ::std::convert::Into<String>)`](crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryFluentBuilder::room_arn) / [`set_room_arn(Option<String>)`](crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryFluentBuilder::set_room_arn): <p>The room where smart home appliance discovery was initiated.</p>
     /// - On success, responds with [`StartSmartHomeApplianceDiscoveryOutput`](crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryOutput)
     /// - On failure, responds with [`SdkError<StartSmartHomeApplianceDiscoveryError>`](crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscoveryError)
     pub fn start_smart_home_appliance_discovery(&self) -> crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryFluentBuilder{

@@ -2,18 +2,18 @@
 
 /// <p> The object containing details about heterogeneous database preferences. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Heterogeneous {
     /// <p> The target database engine for heterogeneous database migration preference. </p>
     #[doc(hidden)]
     pub target_database_engine:
-        std::option::Option<std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
 }
 impl Heterogeneous {
     /// <p> The target database engine for heterogeneous database migration preference. </p>
     pub fn target_database_engine(
         &self,
-    ) -> std::option::Option<&[crate::types::HeterogeneousTargetDatabaseEngine]> {
+    ) -> ::std::option::Option<&[crate::types::HeterogeneousTargetDatabaseEngine]> {
         self.target_database_engine.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl Heterogeneous {
 
 /// A builder for [`Heterogeneous`](crate::types::Heterogeneous).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HeterogeneousBuilder {
     pub(crate) target_database_engine:
-        std::option::Option<std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
 }
 impl HeterogeneousBuilder {
     /// Appends an item to `target_database_engine`.
@@ -43,13 +45,15 @@ impl HeterogeneousBuilder {
     ) -> Self {
         let mut v = self.target_database_engine.unwrap_or_default();
         v.push(input);
-        self.target_database_engine = Some(v);
+        self.target_database_engine = ::std::option::Option::Some(v);
         self
     }
     /// <p> The target database engine for heterogeneous database migration preference. </p>
     pub fn set_target_database_engine(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::HeterogeneousTargetDatabaseEngine>,
+        >,
     ) -> Self {
         self.target_database_engine = input;
         self

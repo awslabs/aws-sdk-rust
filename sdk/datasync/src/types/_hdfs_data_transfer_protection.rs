@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HdfsDataTransferProtection {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum HdfsDataTransferProtection {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HdfsDataTransferProtection {
+impl ::std::convert::From<&str> for HdfsDataTransferProtection {
     fn from(s: &str) -> Self {
         match s {
             "AUTHENTICATION" => HdfsDataTransferProtection::Authentication,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for HdfsDataTransferProtection {
         }
     }
 }
-impl std::str::FromStr for HdfsDataTransferProtection {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HdfsDataTransferProtection {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HdfsDataTransferProtection::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HdfsDataTransferProtection::from(s))
     }
 }
 impl HdfsDataTransferProtection {
@@ -96,7 +96,7 @@ impl HdfsDataTransferProtection {
         &["AUTHENTICATION", "DISABLED", "INTEGRITY", "PRIVACY"]
     }
 }
-impl AsRef<str> for HdfsDataTransferProtection {
+impl ::std::convert::AsRef<str> for HdfsDataTransferProtection {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,32 +2,32 @@
 
 /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
     #[doc(hidden)]
-    pub index_name: std::option::Option<std::string::String>,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     #[doc(hidden)]
-    pub provisioned_read_capacity_units: std::option::Option<i64>,
+    pub provisioned_read_capacity_units: ::std::option::Option<i64>,
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
     #[doc(hidden)]
     pub provisioned_read_capacity_auto_scaling_settings_update:
-        std::option::Option<crate::types::AutoScalingSettingsUpdate>,
+        ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
 }
 impl ReplicaGlobalSecondaryIndexSettingsUpdate {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn provisioned_read_capacity_units(&self) -> std::option::Option<i64> {
+    pub fn provisioned_read_capacity_units(&self) -> ::std::option::Option<i64> {
         self.provisioned_read_capacity_units
     }
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
     pub fn provisioned_read_capacity_auto_scaling_settings_update(
         &self,
-    ) -> std::option::Option<&crate::types::AutoScalingSettingsUpdate> {
+    ) -> ::std::option::Option<&crate::types::AutoScalingSettingsUpdate> {
         self.provisioned_read_capacity_auto_scaling_settings_update
             .as_ref()
     }
@@ -41,31 +41,36 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdate {
 
 /// A builder for [`ReplicaGlobalSecondaryIndexSettingsUpdate`](crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
-    pub(crate) index_name: std::option::Option<std::string::String>,
-    pub(crate) provisioned_read_capacity_units: std::option::Option<i64>,
+    pub(crate) index_name: ::std::option::Option<::std::string::String>,
+    pub(crate) provisioned_read_capacity_units: ::std::option::Option<i64>,
     pub(crate) provisioned_read_capacity_auto_scaling_settings_update:
-        std::option::Option<crate::types::AutoScalingSettingsUpdate>,
+        ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
 }
 impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_name = Some(input.into());
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the global secondary index. The name must be unique among all other indexes on this table.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn provisioned_read_capacity_units(mut self, input: i64) -> Self {
-        self.provisioned_read_capacity_units = Some(input);
+        self.provisioned_read_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn set_provisioned_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_provisioned_read_capacity_units(
+        mut self,
+        input: ::std::option::Option<i64>,
+    ) -> Self {
         self.provisioned_read_capacity_units = input;
         self
     }
@@ -74,13 +79,14 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
         mut self,
         input: crate::types::AutoScalingSettingsUpdate,
     ) -> Self {
-        self.provisioned_read_capacity_auto_scaling_settings_update = Some(input);
+        self.provisioned_read_capacity_auto_scaling_settings_update =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>Auto scaling settings for managing a global secondary index replica's read capacity units.</p>
     pub fn set_provisioned_read_capacity_auto_scaling_settings_update(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingSettingsUpdate>,
+        input: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
     ) -> Self {
         self.provisioned_read_capacity_auto_scaling_settings_update = input;
         self

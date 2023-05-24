@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRetentionPolicy`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::set_organization_id): <p>The organization ID.</p>
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::set_id): <p>The retention policy ID.</p>
+    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::set_organization_id): <p>The organization ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyFluentBuilder::set_id): <p>The retention policy ID.</p>
     /// - On success, responds with [`DeleteRetentionPolicyOutput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteRetentionPolicyError>`](crate::operation::delete_retention_policy::DeleteRetentionPolicyError)
     pub fn delete_retention_policy(

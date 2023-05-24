@@ -2,15 +2,15 @@
 
 /// Information about a logger definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggerDefinitionVersion {
     /// A list of loggers.
     #[doc(hidden)]
-    pub loggers: std::option::Option<std::vec::Vec<crate::types::Logger>>,
+    pub loggers: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
 }
 impl LoggerDefinitionVersion {
     /// A list of loggers.
-    pub fn loggers(&self) -> std::option::Option<&[crate::types::Logger]> {
+    pub fn loggers(&self) -> ::std::option::Option<&[crate::types::Logger]> {
         self.loggers.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl LoggerDefinitionVersion {
 
 /// A builder for [`LoggerDefinitionVersion`](crate::types::LoggerDefinitionVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggerDefinitionVersionBuilder {
-    pub(crate) loggers: std::option::Option<std::vec::Vec<crate::types::Logger>>,
+    pub(crate) loggers: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
 }
 impl LoggerDefinitionVersionBuilder {
     /// Appends an item to `loggers`.
@@ -36,13 +38,13 @@ impl LoggerDefinitionVersionBuilder {
     pub fn loggers(mut self, input: crate::types::Logger) -> Self {
         let mut v = self.loggers.unwrap_or_default();
         v.push(input);
-        self.loggers = Some(v);
+        self.loggers = ::std::option::Option::Some(v);
         self
     }
     /// A list of loggers.
     pub fn set_loggers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Logger>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Logger>>,
     ) -> Self {
         self.loggers = input;
         self

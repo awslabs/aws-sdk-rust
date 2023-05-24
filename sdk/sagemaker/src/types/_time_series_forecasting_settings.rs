@@ -2,22 +2,22 @@
 
 /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesForecastingSettings {
     /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas application.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::FeatureStatus>,
+    pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas application. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
     #[doc(hidden)]
-    pub amazon_forecast_role_arn: std::option::Option<std::string::String>,
+    pub amazon_forecast_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesForecastingSettings {
     /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas application.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.status.as_ref()
     }
     /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas application. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
-    pub fn amazon_forecast_role_arn(&self) -> std::option::Option<&str> {
+    pub fn amazon_forecast_role_arn(&self) -> ::std::option::Option<&str> {
         self.amazon_forecast_role_arn.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl TimeSeriesForecastingSettings {
 
 /// A builder for [`TimeSeriesForecastingSettings`](crate::types::TimeSeriesForecastingSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeSeriesForecastingSettingsBuilder {
-    pub(crate) status: std::option::Option<crate::types::FeatureStatus>,
-    pub(crate) amazon_forecast_role_arn: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
+    pub(crate) amazon_forecast_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesForecastingSettingsBuilder {
     /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas application.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether time series forecasting is enabled or disabled in the Canvas application.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::FeatureStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas application. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
-    pub fn amazon_forecast_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.amazon_forecast_role_arn = Some(input.into());
+    pub fn amazon_forecast_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.amazon_forecast_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By default, Canvas uses the execution role specified in the <code>UserProfile</code> that launches the Canvas application. If an execution role is not specified in the <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess"> AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code> added in the trust relationship as a service principal.</p>
     pub fn set_amazon_forecast_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.amazon_forecast_role_arn = input;
         self

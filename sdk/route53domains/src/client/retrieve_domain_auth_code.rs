@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RetrieveDomainAuthCode`](crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeFluentBuilder::set_domain_name): <p>The name of the domain that you want to get an authorization code for.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeFluentBuilder::set_domain_name): <p>The name of the domain that you want to get an authorization code for.</p>
     /// - On success, responds with [`RetrieveDomainAuthCodeOutput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput) with field(s):
     ///   - [`auth_code(Option<String>)`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput::auth_code): <p>The authorization code for the domain.</p>
     /// - On failure, responds with [`SdkError<RetrieveDomainAuthCodeError>`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError)

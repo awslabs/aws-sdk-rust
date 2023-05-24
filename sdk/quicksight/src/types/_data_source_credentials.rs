@@ -2,34 +2,34 @@
 
 /// <p>Data source credentials. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataSourceCredentials {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
     #[doc(hidden)]
-    pub credential_pair: std::option::Option<crate::types::CredentialPair>,
+    pub credential_pair: ::std::option::Option<crate::types::CredentialPair>,
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
     #[doc(hidden)]
-    pub copy_source_arn: std::option::Option<std::string::String>,
+    pub copy_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
     #[doc(hidden)]
-    pub secret_arn: std::option::Option<std::string::String>,
+    pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceCredentials {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
-    pub fn credential_pair(&self) -> std::option::Option<&crate::types::CredentialPair> {
+    pub fn credential_pair(&self) -> ::std::option::Option<&crate::types::CredentialPair> {
         self.credential_pair.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
-    pub fn copy_source_arn(&self) -> std::option::Option<&str> {
+    pub fn copy_source_arn(&self) -> ::std::option::Option<&str> {
         self.copy_source_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
 }
-impl std::fmt::Debug for DataSourceCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataSourceCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceCredentials");
         formatter.field("credential_pair", &"*** Sensitive Data Redacted ***");
         formatter.field("copy_source_arn", &"*** Sensitive Data Redacted ***");
@@ -46,43 +46,49 @@ impl DataSourceCredentials {
 
 /// A builder for [`DataSourceCredentials`](crate::types::DataSourceCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DataSourceCredentialsBuilder {
-    pub(crate) credential_pair: std::option::Option<crate::types::CredentialPair>,
-    pub(crate) copy_source_arn: std::option::Option<std::string::String>,
-    pub(crate) secret_arn: std::option::Option<std::string::String>,
+    pub(crate) credential_pair: ::std::option::Option<crate::types::CredentialPair>,
+    pub(crate) copy_source_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceCredentialsBuilder {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
     pub fn credential_pair(mut self, input: crate::types::CredentialPair) -> Self {
-        self.credential_pair = Some(input);
+        self.credential_pair = ::std::option::Option::Some(input);
         self
     }
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
     pub fn set_credential_pair(
         mut self,
-        input: std::option::Option<crate::types::CredentialPair>,
+        input: ::std::option::Option<crate::types::CredentialPair>,
     ) -> Self {
         self.credential_pair = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
-    pub fn copy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.copy_source_arn = Some(input.into());
+    pub fn copy_source_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.copy_source_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a data source that has the credential pair that you want to use. When <code>CopySourceArn</code> is not null, the credential pair from the data source in the ARN is used as the credentials for the <code>DataSourceCredentials</code> structure.</p>
-    pub fn set_copy_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_copy_source_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.copy_source_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
-    pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_arn = Some(input.into());
+    pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
-    pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
@@ -95,8 +101,8 @@ impl DataSourceCredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for DataSourceCredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataSourceCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataSourceCredentialsBuilder");
         formatter.field("credential_pair", &"*** Sensitive Data Redacted ***");
         formatter.field("copy_source_arn", &"*** Sensitive Data Redacted ***");

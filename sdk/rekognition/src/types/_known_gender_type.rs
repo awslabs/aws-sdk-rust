@@ -40,13 +40,13 @@
 /// <p>A list of enum string of possible gender values that Celebrity returns.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum KnownGenderType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum KnownGenderType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for KnownGenderType {
+impl ::std::convert::From<&str> for KnownGenderType {
     fn from(s: &str) -> Self {
         match s {
             "Female" => KnownGenderType::Female,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for KnownGenderType {
         }
     }
 }
-impl std::str::FromStr for KnownGenderType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for KnownGenderType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KnownGenderType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(KnownGenderType::from(s))
     }
 }
 impl KnownGenderType {
@@ -96,7 +96,7 @@ impl KnownGenderType {
         &["Female", "Male", "Nonbinary", "Unlisted"]
     }
 }
-impl AsRef<str> for KnownGenderType {
+impl ::std::convert::AsRef<str> for KnownGenderType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

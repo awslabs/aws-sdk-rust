@@ -4,15 +4,15 @@
     note = "This input is deprecated, use DisassociateFromAdministratorAccountRequest instead"
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFromMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
-    pub detector_id: std::option::Option<std::string::String>,
+    pub detector_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateFromMasterAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
 }
@@ -25,29 +25,31 @@ impl DisassociateFromMasterAccountInput {
 
 /// A builder for [`DisassociateFromMasterAccountInput`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisassociateFromMasterAccountInputBuilder {
-    pub(crate) detector_id: std::option::Option<std::string::String>,
+    pub(crate) detector_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateFromMasterAccountInputBuilder {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detector_id = Some(input.into());
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DisassociateFromMasterAccountInput`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput {
                 detector_id: self.detector_id
                 ,

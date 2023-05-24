@@ -38,13 +38,13 @@
 /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Vp9QualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Vp9QualityTuningLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Vp9QualityTuningLevel {
+impl ::std::convert::From<&str> for Vp9QualityTuningLevel {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_PASS" => Vp9QualityTuningLevel::MultiPass,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Vp9QualityTuningLevel {
         }
     }
 }
-impl std::str::FromStr for Vp9QualityTuningLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Vp9QualityTuningLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Vp9QualityTuningLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Vp9QualityTuningLevel::from(s))
     }
 }
 impl Vp9QualityTuningLevel {
@@ -86,7 +86,7 @@ impl Vp9QualityTuningLevel {
         &["MULTI_PASS", "MULTI_PASS_HQ"]
     }
 }
-impl AsRef<str> for Vp9QualityTuningLevel {
+impl ::std::convert::AsRef<str> for Vp9QualityTuningLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

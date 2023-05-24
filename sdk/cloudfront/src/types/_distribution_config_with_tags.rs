@@ -2,22 +2,22 @@
 
 /// <p>A distribution Configuration and a list of tags to be associated with the distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributionConfigWithTags {
     /// <p>A distribution configuration.</p>
     #[doc(hidden)]
-    pub distribution_config: std::option::Option<crate::types::DistributionConfig>,
+    pub distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<crate::types::Tags>,
+    pub tags: ::std::option::Option<crate::types::Tags>,
 }
 impl DistributionConfigWithTags {
     /// <p>A distribution configuration.</p>
-    pub fn distribution_config(&self) -> std::option::Option<&crate::types::DistributionConfig> {
+    pub fn distribution_config(&self) -> ::std::option::Option<&crate::types::DistributionConfig> {
         self.distribution_config.as_ref()
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn tags(&self) -> std::option::Option<&crate::types::Tags> {
+    pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
         self.tags.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl DistributionConfigWithTags {
 
 /// A builder for [`DistributionConfigWithTags`](crate::types::DistributionConfigWithTags).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DistributionConfigWithTagsBuilder {
-    pub(crate) distribution_config: std::option::Option<crate::types::DistributionConfig>,
-    pub(crate) tags: std::option::Option<crate::types::Tags>,
+    pub(crate) distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
+    pub(crate) tags: ::std::option::Option<crate::types::Tags>,
 }
 impl DistributionConfigWithTagsBuilder {
     /// <p>A distribution configuration.</p>
     pub fn distribution_config(mut self, input: crate::types::DistributionConfig) -> Self {
-        self.distribution_config = Some(input);
+        self.distribution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A distribution configuration.</p>
     pub fn set_distribution_config(
         mut self,
-        input: std::option::Option<crate::types::DistributionConfig>,
+        input: ::std::option::Option<crate::types::DistributionConfig>,
     ) -> Self {
         self.distribution_config = input;
         self
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
-        self.tags = Some(input);
+        self.tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn set_tags(mut self, input: std::option::Option<crate::types::Tags>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
         self.tags = input;
         self
     }

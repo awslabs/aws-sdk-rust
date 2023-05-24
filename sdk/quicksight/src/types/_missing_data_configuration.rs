@@ -2,7 +2,7 @@
 
 /// <p>The configuration options that determine how missing data is treated during the rendering of a line chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MissingDataConfiguration {
     /// <p>The treatment option that determines how missing data should be rendered. Choose from the following options:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct MissingDataConfiguration {
     /// <li> <p> <code>SHOW_AS_BLANK</code>: Display a blank space when rendering missing data.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub treatment_option: std::option::Option<crate::types::MissingDataTreatmentOption>,
+    pub treatment_option: ::std::option::Option<crate::types::MissingDataTreatmentOption>,
 }
 impl MissingDataConfiguration {
     /// <p>The treatment option that determines how missing data should be rendered. Choose from the following options:</p>
@@ -22,7 +22,7 @@ impl MissingDataConfiguration {
     /// </ul>
     pub fn treatment_option(
         &self,
-    ) -> std::option::Option<&crate::types::MissingDataTreatmentOption> {
+    ) -> ::std::option::Option<&crate::types::MissingDataTreatmentOption> {
         self.treatment_option.as_ref()
     }
 }
@@ -35,9 +35,11 @@ impl MissingDataConfiguration {
 
 /// A builder for [`MissingDataConfiguration`](crate::types::MissingDataConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MissingDataConfigurationBuilder {
-    pub(crate) treatment_option: std::option::Option<crate::types::MissingDataTreatmentOption>,
+    pub(crate) treatment_option: ::std::option::Option<crate::types::MissingDataTreatmentOption>,
 }
 impl MissingDataConfigurationBuilder {
     /// <p>The treatment option that determines how missing data should be rendered. Choose from the following options:</p>
@@ -47,7 +49,7 @@ impl MissingDataConfigurationBuilder {
     /// <li> <p> <code>SHOW_AS_BLANK</code>: Display a blank space when rendering missing data.</p> </li>
     /// </ul>
     pub fn treatment_option(mut self, input: crate::types::MissingDataTreatmentOption) -> Self {
-        self.treatment_option = Some(input);
+        self.treatment_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The treatment option that determines how missing data should be rendered. Choose from the following options:</p>
@@ -58,7 +60,7 @@ impl MissingDataConfigurationBuilder {
     /// </ul>
     pub fn set_treatment_option(
         mut self,
-        input: std::option::Option<crate::types::MissingDataTreatmentOption>,
+        input: ::std::option::Option<crate::types::MissingDataTreatmentOption>,
     ) -> Self {
         self.treatment_option = input;
         self

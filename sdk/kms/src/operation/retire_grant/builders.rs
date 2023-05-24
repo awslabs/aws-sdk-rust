@@ -17,56 +17,59 @@ pub use crate::operation::retire_grant::_retire_grant_input::RetireGrantInputBui
 /// <li> <p> <code>ListRetirableGrants</code> </p> </li>
 /// <li> <p> <code>RevokeGrant</code> </p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetireGrantFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::retire_grant::builders::RetireGrantInputBuilder,
 }
 impl RetireGrantFluentBuilder {
     /// Creates a new `RetireGrant`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::retire_grant::RetireGrant,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::retire_grant::RetireGrantError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::retire_grant::RetireGrantError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::retire_grant::RetireGrantOutput,
-        aws_smithy_http::result::SdkError<crate::operation::retire_grant::RetireGrantError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::retire_grant::RetireGrantError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -79,33 +82,33 @@ impl RetireGrantFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::retire_grant::RetireGrantOutput,
-        aws_smithy_http::result::SdkError<crate::operation::retire_grant::RetireGrantError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::retire_grant::RetireGrantError>,
     > {
         self.send_middleware().await
     }
     /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency.</p>
     /// <p>Only the <code>CreateGrant</code> operation returns a grant token. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn grant_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_token(input.into());
         self
     }
     /// <p>Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved eventual consistency.</p>
     /// <p>Only the <code>CreateGrant</code> operation returns a grant token. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn set_grant_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_token(input);
         self
     }
     /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <code>ListKeys</code> operation.</p>
     /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_id(input.into());
         self
     }
     /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <code>ListKeys</code> operation.</p>
     /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_id(input);
         self
     }
@@ -113,7 +116,7 @@ impl RetireGrantFluentBuilder {
     /// <ul>
     /// <li> <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p> </li>
     /// </ul>
-    pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_id(input.into());
         self
     }
@@ -121,7 +124,7 @@ impl RetireGrantFluentBuilder {
     /// <ul>
     /// <li> <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p> </li>
     /// </ul>
-    pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_id(input);
         self
     }

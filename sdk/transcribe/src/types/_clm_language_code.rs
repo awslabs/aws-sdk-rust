@@ -43,13 +43,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ClmLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum ClmLanguageCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ClmLanguageCode {
+impl ::std::convert::From<&str> for ClmLanguageCode {
     fn from(s: &str) -> Self {
         match s {
             "de-DE" => ClmLanguageCode::DeDe,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for ClmLanguageCode {
         }
     }
 }
-impl std::str::FromStr for ClmLanguageCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ClmLanguageCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClmLanguageCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ClmLanguageCode::from(s))
     }
 }
 impl ClmLanguageCode {
@@ -113,7 +113,7 @@ impl ClmLanguageCode {
         ]
     }
 }
-impl AsRef<str> for ClmLanguageCode {
+impl ::std::convert::AsRef<str> for ClmLanguageCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

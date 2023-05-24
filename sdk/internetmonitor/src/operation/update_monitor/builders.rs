@@ -7,56 +7,59 @@ pub use crate::operation::update_monitor::_update_monitor_input::UpdateMonitorIn
 ///
 /// <p>Updates a monitor. You can update a monitor to change the maximum number of city-networks (locations and ASNs or internet service providers), to add or remove resources, or to change the status of the monitor. Note that you can't change the name of a monitor.</p>
 /// <p>The city-network maximum that you choose is the limit, but you only pay for the number of city-networks that are actually monitored. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMonitorFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_monitor::builders::UpdateMonitorInputBuilder,
 }
 impl UpdateMonitorFluentBuilder {
     /// Creates a new `UpdateMonitor`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_monitor::UpdateMonitor,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_monitor::UpdateMonitorError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitor::UpdateMonitorError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_monitor::UpdateMonitorOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_monitor::UpdateMonitorError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitor::UpdateMonitorError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl UpdateMonitorFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_monitor::UpdateMonitorOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_monitor::UpdateMonitorError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_monitor::UpdateMonitorError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the monitor. </p>
-    pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn monitor_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_name(input.into());
         self
     }
     /// <p>The name of the monitor. </p>
-    pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_monitor_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_monitor_name(input);
         self
     }
@@ -93,7 +96,10 @@ impl UpdateMonitorFluentBuilder {
     /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
     /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
     /// </note>
-    pub fn resources_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resources_to_add(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resources_to_add(input.into());
         self
     }
@@ -103,7 +109,7 @@ impl UpdateMonitorFluentBuilder {
     /// </note>
     pub fn set_resources_to_add(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_resources_to_add(input);
         self
@@ -113,14 +119,17 @@ impl UpdateMonitorFluentBuilder {
     /// To override the contents of this collection use [`set_resources_to_remove`](Self::set_resources_to_remove).
     ///
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn resources_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resources_to_remove(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resources_to_remove(input.into());
         self
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
     pub fn set_resources_to_remove(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_resources_to_remove(input);
         self
@@ -133,18 +142,18 @@ impl UpdateMonitorFluentBuilder {
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::MonitorConfigState>,
+        input: ::std::option::Option<crate::types::MonitorConfigState>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -154,7 +163,7 @@ impl UpdateMonitorFluentBuilder {
         self
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
-    pub fn set_max_city_networks_to_monitor(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_city_networks_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_city_networks_to_monitor(input);
         self
     }
@@ -169,7 +178,7 @@ impl UpdateMonitorFluentBuilder {
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     pub fn set_internet_measurements_log_delivery(
         mut self,
-        input: std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+        input: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     ) -> Self {
         self.inner = self.inner.set_internet_measurements_log_delivery(input);
         self
@@ -180,7 +189,7 @@ impl UpdateMonitorFluentBuilder {
         self
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
-    pub fn set_traffic_percentage_to_monitor(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_traffic_percentage_to_monitor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_traffic_percentage_to_monitor(input);
         self
     }

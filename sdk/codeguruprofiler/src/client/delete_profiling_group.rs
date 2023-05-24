@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteProfilingGroup`](crate::operation::delete_profiling_group::builders::DeleteProfilingGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profiling_group_name(impl Into<String>)`](crate::operation::delete_profiling_group::builders::DeleteProfilingGroupFluentBuilder::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::operation::delete_profiling_group::builders::DeleteProfilingGroupFluentBuilder::set_profiling_group_name): <p>The name of the profiling group to delete.</p>
+    ///   - [`profiling_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_profiling_group::builders::DeleteProfilingGroupFluentBuilder::profiling_group_name) / [`set_profiling_group_name(Option<String>)`](crate::operation::delete_profiling_group::builders::DeleteProfilingGroupFluentBuilder::set_profiling_group_name): <p>The name of the profiling group to delete.</p>
     /// - On success, responds with [`DeleteProfilingGroupOutput`](crate::operation::delete_profiling_group::DeleteProfilingGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteProfilingGroupError>`](crate::operation::delete_profiling_group::DeleteProfilingGroupError)
     pub fn delete_profiling_group(

@@ -38,13 +38,13 @@
 /// To create an output that complies with the XAVC file format guidelines for interoperability, keep the default value, Drop frames for compliance (DROP_FRAMES_FOR_COMPLIANCE). To include all frames from your input in this output, keep the default setting, Allow any duration (ALLOW_ANY_DURATION). The number of frames that MediaConvert excludes when you set this to Drop frames for compliance depends on the output frame rate and duration.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MxfXavcDurationMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum MxfXavcDurationMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MxfXavcDurationMode {
+impl ::std::convert::From<&str> for MxfXavcDurationMode {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW_ANY_DURATION" => MxfXavcDurationMode::AllowAnyDuration,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for MxfXavcDurationMode {
         }
     }
 }
-impl std::str::FromStr for MxfXavcDurationMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MxfXavcDurationMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MxfXavcDurationMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MxfXavcDurationMode::from(s))
     }
 }
 impl MxfXavcDurationMode {
@@ -86,7 +86,7 @@ impl MxfXavcDurationMode {
         &["ALLOW_ANY_DURATION", "DROP_FRAMES_FOR_COMPLIANCE"]
     }
 }
-impl AsRef<str> for MxfXavcDurationMode {
+impl ::std::convert::AsRef<str> for MxfXavcDurationMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

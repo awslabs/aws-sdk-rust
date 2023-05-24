@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OpenZfsCopyStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum OpenZfsCopyStrategy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OpenZfsCopyStrategy {
+impl ::std::convert::From<&str> for OpenZfsCopyStrategy {
     fn from(s: &str) -> Self {
         match s {
             "CLONE" => OpenZfsCopyStrategy::Clone,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for OpenZfsCopyStrategy {
         }
     }
 }
-impl std::str::FromStr for OpenZfsCopyStrategy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OpenZfsCopyStrategy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OpenZfsCopyStrategy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OpenZfsCopyStrategy::from(s))
     }
 }
 impl OpenZfsCopyStrategy {
@@ -86,7 +86,7 @@ impl OpenZfsCopyStrategy {
         &["CLONE", "FULL_COPY"]
     }
 }
-impl AsRef<str> for OpenZfsCopyStrategy {
+impl ::std::convert::AsRef<str> for OpenZfsCopyStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

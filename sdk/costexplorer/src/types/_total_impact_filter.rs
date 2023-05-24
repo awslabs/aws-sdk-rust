@@ -2,11 +2,11 @@
 
 /// <p>Filters cost anomalies based on the total impact. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TotalImpactFilter {
     /// <p>The comparing value that's used in the filter. </p>
     #[doc(hidden)]
-    pub numeric_operator: std::option::Option<crate::types::NumericOperator>,
+    pub numeric_operator: ::std::option::Option<crate::types::NumericOperator>,
     /// <p>The lower bound dollar value that's used in the filter. </p>
     #[doc(hidden)]
     pub start_value: f64,
@@ -16,7 +16,7 @@ pub struct TotalImpactFilter {
 }
 impl TotalImpactFilter {
     /// <p>The comparing value that's used in the filter. </p>
-    pub fn numeric_operator(&self) -> std::option::Option<&crate::types::NumericOperator> {
+    pub fn numeric_operator(&self) -> ::std::option::Option<&crate::types::NumericOperator> {
         self.numeric_operator.as_ref()
     }
     /// <p>The lower bound dollar value that's used in the filter. </p>
@@ -37,43 +37,45 @@ impl TotalImpactFilter {
 
 /// A builder for [`TotalImpactFilter`](crate::types::TotalImpactFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TotalImpactFilterBuilder {
-    pub(crate) numeric_operator: std::option::Option<crate::types::NumericOperator>,
-    pub(crate) start_value: std::option::Option<f64>,
-    pub(crate) end_value: std::option::Option<f64>,
+    pub(crate) numeric_operator: ::std::option::Option<crate::types::NumericOperator>,
+    pub(crate) start_value: ::std::option::Option<f64>,
+    pub(crate) end_value: ::std::option::Option<f64>,
 }
 impl TotalImpactFilterBuilder {
     /// <p>The comparing value that's used in the filter. </p>
     pub fn numeric_operator(mut self, input: crate::types::NumericOperator) -> Self {
-        self.numeric_operator = Some(input);
+        self.numeric_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The comparing value that's used in the filter. </p>
     pub fn set_numeric_operator(
         mut self,
-        input: std::option::Option<crate::types::NumericOperator>,
+        input: ::std::option::Option<crate::types::NumericOperator>,
     ) -> Self {
         self.numeric_operator = input;
         self
     }
     /// <p>The lower bound dollar value that's used in the filter. </p>
     pub fn start_value(mut self, input: f64) -> Self {
-        self.start_value = Some(input);
+        self.start_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lower bound dollar value that's used in the filter. </p>
-    pub fn set_start_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_start_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.start_value = input;
         self
     }
     /// <p>The upper bound dollar value that's used in the filter. </p>
     pub fn end_value(mut self, input: f64) -> Self {
-        self.end_value = Some(input);
+        self.end_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upper bound dollar value that's used in the filter. </p>
-    pub fn set_end_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_end_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.end_value = input;
         self
     }

@@ -2,46 +2,46 @@
 
 /// <p>Determines the custom condition for an icon set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingCustomIconCondition {
     /// <p>The expression that determines the condition of the icon set.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Custom icon options for an icon set.</p>
     #[doc(hidden)]
-    pub icon_options: std::option::Option<crate::types::ConditionalFormattingCustomIconOptions>,
+    pub icon_options: ::std::option::Option<crate::types::ConditionalFormattingCustomIconOptions>,
     /// <p>Determines the color of the icon.</p>
     #[doc(hidden)]
-    pub color: std::option::Option<std::string::String>,
+    pub color: ::std::option::Option<::std::string::String>,
     /// <p>Determines the icon display configuration.</p>
     #[doc(hidden)]
     pub display_configuration:
-        std::option::Option<crate::types::ConditionalFormattingIconDisplayConfiguration>,
+        ::std::option::Option<crate::types::ConditionalFormattingIconDisplayConfiguration>,
 }
 impl ConditionalFormattingCustomIconCondition {
     /// <p>The expression that determines the condition of the icon set.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>Custom icon options for an icon set.</p>
     pub fn icon_options(
         &self,
-    ) -> std::option::Option<&crate::types::ConditionalFormattingCustomIconOptions> {
+    ) -> ::std::option::Option<&crate::types::ConditionalFormattingCustomIconOptions> {
         self.icon_options.as_ref()
     }
     /// <p>Determines the color of the icon.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<&str> {
         self.color.as_deref()
     }
     /// <p>Determines the icon display configuration.</p>
     pub fn display_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ConditionalFormattingIconDisplayConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ConditionalFormattingIconDisplayConfiguration> {
         self.display_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for ConditionalFormattingCustomIconCondition {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ConditionalFormattingCustomIconCondition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingCustomIconCondition");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("icon_options", &self.icon_options);
@@ -59,23 +59,23 @@ impl ConditionalFormattingCustomIconCondition {
 
 /// A builder for [`ConditionalFormattingCustomIconCondition`](crate::types::ConditionalFormattingCustomIconCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConditionalFormattingCustomIconConditionBuilder {
-    pub(crate) expression: std::option::Option<std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
     pub(crate) icon_options:
-        std::option::Option<crate::types::ConditionalFormattingCustomIconOptions>,
-    pub(crate) color: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::ConditionalFormattingCustomIconOptions>,
+    pub(crate) color: ::std::option::Option<::std::string::String>,
     pub(crate) display_configuration:
-        std::option::Option<crate::types::ConditionalFormattingIconDisplayConfiguration>,
+        ::std::option::Option<crate::types::ConditionalFormattingIconDisplayConfiguration>,
 }
 impl ConditionalFormattingCustomIconConditionBuilder {
     /// <p>The expression that determines the condition of the icon set.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression that determines the condition of the icon set.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
@@ -84,24 +84,24 @@ impl ConditionalFormattingCustomIconConditionBuilder {
         mut self,
         input: crate::types::ConditionalFormattingCustomIconOptions,
     ) -> Self {
-        self.icon_options = Some(input);
+        self.icon_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Custom icon options for an icon set.</p>
     pub fn set_icon_options(
         mut self,
-        input: std::option::Option<crate::types::ConditionalFormattingCustomIconOptions>,
+        input: ::std::option::Option<crate::types::ConditionalFormattingCustomIconOptions>,
     ) -> Self {
         self.icon_options = input;
         self
     }
     /// <p>Determines the color of the icon.</p>
-    pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.color = Some(input.into());
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the color of the icon.</p>
-    pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
     }
@@ -110,13 +110,13 @@ impl ConditionalFormattingCustomIconConditionBuilder {
         mut self,
         input: crate::types::ConditionalFormattingIconDisplayConfiguration,
     ) -> Self {
-        self.display_configuration = Some(input);
+        self.display_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the icon display configuration.</p>
     pub fn set_display_configuration(
         mut self,
-        input: std::option::Option<crate::types::ConditionalFormattingIconDisplayConfiguration>,
+        input: ::std::option::Option<crate::types::ConditionalFormattingIconDisplayConfiguration>,
     ) -> Self {
         self.display_configuration = input;
         self
@@ -131,8 +131,8 @@ impl ConditionalFormattingCustomIconConditionBuilder {
         }
     }
 }
-impl std::fmt::Debug for ConditionalFormattingCustomIconConditionBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ConditionalFormattingCustomIconConditionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingCustomIconConditionBuilder");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("icon_options", &self.icon_options);

@@ -12,29 +12,29 @@ pub use crate::operation::start_label_detection::_start_label_detection_input::S
 /// <p> <i>Optional Parameters</i> </p>
 /// <p> <code>StartLabelDetection</code> has the <code>GENERAL_LABELS</code> Feature applied by default. This feature allows you to provide filtering criteria to the <code>Settings</code> parameter. You can filter with sets of individual labels or with label categories. You can specify inclusive filters, exclusive filters, or a combination of inclusive and exclusive filters. For more information on filtering, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detecting-labels-video.html">Detecting labels in a video</a>.</p>
 /// <p>You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 50.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartLabelDetectionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_label_detection::builders::StartLabelDetectionInputBuilder,
 }
 impl StartLabelDetectionFluentBuilder {
     /// Creates a new `StartLabelDetection`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_label_detection::StartLabelDetection,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_label_detection::StartLabelDetectionError,
         >,
     > {
@@ -42,30 +42,33 @@ impl StartLabelDetectionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_label_detection::StartLabelDetectionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_label_detection::StartLabelDetectionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,9 +81,9 @@ impl StartLabelDetectionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_label_detection::StartLabelDetectionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_label_detection::StartLabelDetectionError,
         >,
     > {
@@ -92,19 +95,22 @@ impl StartLabelDetectionFluentBuilder {
         self
     }
     /// <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
-    pub fn set_video(mut self, input: std::option::Option<crate::types::Video>) -> Self {
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::Video>) -> Self {
         self.inner = self.inner.set_video(input);
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
@@ -117,7 +123,7 @@ impl StartLabelDetectionFluentBuilder {
     }
     /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>
     /// <p>If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.</p>
-    pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_min_confidence(input);
         self
     }
@@ -129,18 +135,18 @@ impl StartLabelDetectionFluentBuilder {
     /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
     pub fn set_notification_channel(
         mut self,
-        input: std::option::Option<crate::types::NotificationChannel>,
+        input: ::std::option::Option<crate::types::NotificationChannel>,
     ) -> Self {
         self.inner = self.inner.set_notification_channel(input);
         self
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-    pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_tag(input.into());
         self
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-    pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_tag(input);
         self
     }
@@ -156,7 +162,7 @@ impl StartLabelDetectionFluentBuilder {
     /// <p>The features to return after video analysis. You can specify that GENERAL_LABELS are returned.</p>
     pub fn set_features(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LabelDetectionFeatureName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LabelDetectionFeatureName>>,
     ) -> Self {
         self.inner = self.inner.set_features(input);
         self
@@ -169,7 +175,7 @@ impl StartLabelDetectionFluentBuilder {
     /// <p>The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.</p>
     pub fn set_settings(
         mut self,
-        input: std::option::Option<crate::types::LabelDetectionSettings>,
+        input: ::std::option::Option<crate::types::LabelDetectionSettings>,
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self

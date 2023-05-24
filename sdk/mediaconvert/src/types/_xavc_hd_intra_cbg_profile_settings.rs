@@ -2,15 +2,15 @@
 
 /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD_INTRA_CBG.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct XavcHdIntraCbgProfileSettings {
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     #[doc(hidden)]
-    pub xavc_class: std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
+    pub xavc_class: ::std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
 }
 impl XavcHdIntraCbgProfileSettings {
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
-    pub fn xavc_class(&self) -> std::option::Option<&crate::types::XavcHdIntraCbgProfileClass> {
+    pub fn xavc_class(&self) -> ::std::option::Option<&crate::types::XavcHdIntraCbgProfileClass> {
         self.xavc_class.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl XavcHdIntraCbgProfileSettings {
 
 /// A builder for [`XavcHdIntraCbgProfileSettings`](crate::types::XavcHdIntraCbgProfileSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct XavcHdIntraCbgProfileSettingsBuilder {
-    pub(crate) xavc_class: std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
+    pub(crate) xavc_class: ::std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
 }
 impl XavcHdIntraCbgProfileSettingsBuilder {
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub fn xavc_class(mut self, input: crate::types::XavcHdIntraCbgProfileClass) -> Self {
-        self.xavc_class = Some(input);
+        self.xavc_class = ::std::option::Option::Some(input);
         self
     }
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub fn set_xavc_class(
         mut self,
-        input: std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
+        input: ::std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
     ) -> Self {
         self.xavc_class = input;
         self

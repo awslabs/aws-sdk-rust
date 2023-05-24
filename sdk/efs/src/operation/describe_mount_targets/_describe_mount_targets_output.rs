@@ -2,34 +2,34 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMountTargetsOutput {
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
     #[doc(hidden)]
-    pub mount_targets: std::option::Option<std::vec::Vec<crate::types::MountTargetDescription>>,
+    pub mount_targets: ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>,
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeMountTargetsOutput {
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
-    pub fn mount_targets(&self) -> std::option::Option<&[crate::types::MountTargetDescription]> {
+    pub fn mount_targets(&self) -> ::std::option::Option<&[crate::types::MountTargetDescription]> {
         self.mount_targets.as_deref()
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeMountTargetsOutput {
+impl ::aws_http::request_id::RequestId for DescribeMountTargetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -44,22 +44,24 @@ impl DescribeMountTargetsOutput {
 
 /// A builder for [`DescribeMountTargetsOutput`](crate::operation::describe_mount_targets::DescribeMountTargetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeMountTargetsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) mount_targets:
-        std::option::Option<std::vec::Vec<crate::types::MountTargetDescription>>,
-    pub(crate) next_marker: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeMountTargetsOutputBuilder {
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -71,24 +73,24 @@ impl DescribeMountTargetsOutputBuilder {
     pub fn mount_targets(mut self, input: crate::types::MountTargetDescription) -> Self {
         let mut v = self.mount_targets.unwrap_or_default();
         v.push(input);
-        self.mount_targets = Some(v);
+        self.mount_targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>
     pub fn set_mount_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MountTargetDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MountTargetDescription>>,
     ) -> Self {
         self.mount_targets = input;
         self
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }

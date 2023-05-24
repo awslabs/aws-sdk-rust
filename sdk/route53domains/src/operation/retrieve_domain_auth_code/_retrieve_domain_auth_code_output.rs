@@ -2,28 +2,28 @@
 
 /// <p>The RetrieveDomainAuthCode response includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrieveDomainAuthCodeOutput {
     /// <p>The authorization code for the domain.</p>
     #[doc(hidden)]
-    pub auth_code: std::option::Option<std::string::String>,
+    pub auth_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetrieveDomainAuthCodeOutput {
     /// <p>The authorization code for the domain.</p>
-    pub fn auth_code(&self) -> std::option::Option<&str> {
+    pub fn auth_code(&self) -> ::std::option::Option<&str> {
         self.auth_code.as_deref()
     }
 }
-impl std::fmt::Debug for RetrieveDomainAuthCodeOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RetrieveDomainAuthCodeOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveDomainAuthCodeOutput");
         formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
-impl aws_http::request_id::RequestId for RetrieveDomainAuthCodeOutput {
+impl ::aws_http::request_id::RequestId for RetrieveDomainAuthCodeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,19 +39,19 @@ impl RetrieveDomainAuthCodeOutput {
 
 /// A builder for [`RetrieveDomainAuthCodeOutput`](crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RetrieveDomainAuthCodeOutputBuilder {
-    pub(crate) auth_code: std::option::Option<std::string::String>,
+    pub(crate) auth_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetrieveDomainAuthCodeOutputBuilder {
     /// <p>The authorization code for the domain.</p>
-    pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auth_code = Some(input.into());
+    pub fn auth_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.auth_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorization code for the domain.</p>
-    pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_code = input;
         self
     }
@@ -74,8 +74,8 @@ impl RetrieveDomainAuthCodeOutputBuilder {
         }
     }
 }
-impl std::fmt::Debug for RetrieveDomainAuthCodeOutputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RetrieveDomainAuthCodeOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveDomainAuthCodeOutputBuilder");
         formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);

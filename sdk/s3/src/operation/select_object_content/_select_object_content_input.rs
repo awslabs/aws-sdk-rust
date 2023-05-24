@@ -2,38 +2,38 @@
 
 /// <p>Request to filter the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement. In the request, along with the SQL expression, you must specify a data serialization format (JSON or CSV) of the object. Amazon S3 uses this to parse object data into records. It returns only records that match the specified SQL expression. You must also specify the data serialization format for the response. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select API Documentation</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SelectObjectContentInput {
     /// <p>The S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The object key.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
-    pub sse_customer_algorithm: std::option::Option<std::string::String>,
+    pub sse_customer_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
-    pub sse_customer_key: std::option::Option<std::string::String>,
+    pub sse_customer_key: ::std::option::Option<::std::string::String>,
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
-    pub sse_customer_key_md5: std::option::Option<std::string::String>,
+    pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>The expression that is used to query the object.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The type of the provided expression (for example, SQL).</p>
     #[doc(hidden)]
-    pub expression_type: std::option::Option<crate::types::ExpressionType>,
+    pub expression_type: ::std::option::Option<crate::types::ExpressionType>,
     /// <p>Specifies if periodic request progress information should be enabled.</p>
     #[doc(hidden)]
-    pub request_progress: std::option::Option<crate::types::RequestProgress>,
+    pub request_progress: ::std::option::Option<crate::types::RequestProgress>,
     /// <p>Describes the format of the data in the object that is being queried.</p>
     #[doc(hidden)]
-    pub input_serialization: std::option::Option<crate::types::InputSerialization>,
+    pub input_serialization: ::std::option::Option<crate::types::InputSerialization>,
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
     #[doc(hidden)]
-    pub output_serialization: std::option::Option<crate::types::OutputSerialization>,
+    pub output_serialization: ::std::option::Option<crate::types::OutputSerialization>,
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
     /// <p> <code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
@@ -60,50 +60,52 @@ pub struct SelectObjectContentInput {
     /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scan_range: std::option::Option<crate::types::ScanRange>,
+    pub scan_range: ::std::option::Option<crate::types::ScanRange>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     #[doc(hidden)]
-    pub expected_bucket_owner: std::option::Option<std::string::String>,
+    pub expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl SelectObjectContentInput {
     /// <p>The S3 bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The object key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
+    pub fn sse_customer_algorithm(&self) -> ::std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_key(&self) -> std::option::Option<&str> {
+    pub fn sse_customer_key(&self) -> ::std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
+    pub fn sse_customer_key_md5(&self) -> ::std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
     /// <p>The expression that is used to query the object.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>The type of the provided expression (for example, SQL).</p>
-    pub fn expression_type(&self) -> std::option::Option<&crate::types::ExpressionType> {
+    pub fn expression_type(&self) -> ::std::option::Option<&crate::types::ExpressionType> {
         self.expression_type.as_ref()
     }
     /// <p>Specifies if periodic request progress information should be enabled.</p>
-    pub fn request_progress(&self) -> std::option::Option<&crate::types::RequestProgress> {
+    pub fn request_progress(&self) -> ::std::option::Option<&crate::types::RequestProgress> {
         self.request_progress.as_ref()
     }
     /// <p>Describes the format of the data in the object that is being queried.</p>
-    pub fn input_serialization(&self) -> std::option::Option<&crate::types::InputSerialization> {
+    pub fn input_serialization(&self) -> ::std::option::Option<&crate::types::InputSerialization> {
         self.input_serialization.as_ref()
     }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
-    pub fn output_serialization(&self) -> std::option::Option<&crate::types::OutputSerialization> {
+    pub fn output_serialization(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OutputSerialization> {
         self.output_serialization.as_ref()
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
@@ -131,16 +133,16 @@ impl SelectObjectContentInput {
     /// </end>
     /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
-    pub fn scan_range(&self) -> std::option::Option<&crate::types::ScanRange> {
+    pub fn scan_range(&self) -> ::std::option::Option<&crate::types::ScanRange> {
         self.scan_range.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
 }
-impl std::fmt::Debug for SelectObjectContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SelectObjectContentInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SelectObjectContentInput");
         formatter.field("bucket", &self.bucket);
         formatter.field("key", &self.key);
@@ -168,136 +170,148 @@ impl SelectObjectContentInput {
 
 /// A builder for [`SelectObjectContentInput`](crate::operation::select_object_content::SelectObjectContentInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SelectObjectContentInputBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) sse_customer_algorithm: std::option::Option<std::string::String>,
-    pub(crate) sse_customer_key: std::option::Option<std::string::String>,
-    pub(crate) sse_customer_key_md5: std::option::Option<std::string::String>,
-    pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) expression_type: std::option::Option<crate::types::ExpressionType>,
-    pub(crate) request_progress: std::option::Option<crate::types::RequestProgress>,
-    pub(crate) input_serialization: std::option::Option<crate::types::InputSerialization>,
-    pub(crate) output_serialization: std::option::Option<crate::types::OutputSerialization>,
-    pub(crate) scan_range: std::option::Option<crate::types::ScanRange>,
-    pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) sse_customer_algorithm: ::std::option::Option<::std::string::String>,
+    pub(crate) sse_customer_key: ::std::option::Option<::std::string::String>,
+    pub(crate) sse_customer_key_md5: ::std::option::Option<::std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
+    pub(crate) expression_type: ::std::option::Option<crate::types::ExpressionType>,
+    pub(crate) request_progress: ::std::option::Option<crate::types::RequestProgress>,
+    pub(crate) input_serialization: ::std::option::Option<crate::types::InputSerialization>,
+    pub(crate) output_serialization: ::std::option::Option<crate::types::OutputSerialization>,
+    pub(crate) scan_range: ::std::option::Option<crate::types::ScanRange>,
+    pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl SelectObjectContentInputBuilder {
     /// <p>The S3 bucket.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The object key.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object key.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sse_customer_algorithm = Some(input.into());
+    pub fn sse_customer_algorithm(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sse_customer_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The server-side encryption (SSE) algorithm used to encrypt the object. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_sse_customer_algorithm(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sse_customer_algorithm = input;
         self
     }
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sse_customer_key = Some(input.into());
+    pub fn sse_customer_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sse_customer_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_sse_customer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sse_customer_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sse_customer_key = input;
         self
     }
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sse_customer_key_md5 = Some(input.into());
+    pub fn sse_customer_key_md5(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sse_customer_key_md5 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MD5 server-side encryption (SSE) customer managed key. This parameter is needed only when the object was created using a checksum algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_sse_customer_key_md5(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sse_customer_key_md5 = input;
         self
     }
     /// <p>The expression that is used to query the object.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression that is used to query the object.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
     /// <p>The type of the provided expression (for example, SQL).</p>
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
-        self.expression_type = Some(input);
+        self.expression_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the provided expression (for example, SQL).</p>
     pub fn set_expression_type(
         mut self,
-        input: std::option::Option<crate::types::ExpressionType>,
+        input: ::std::option::Option<crate::types::ExpressionType>,
     ) -> Self {
         self.expression_type = input;
         self
     }
     /// <p>Specifies if periodic request progress information should be enabled.</p>
     pub fn request_progress(mut self, input: crate::types::RequestProgress) -> Self {
-        self.request_progress = Some(input);
+        self.request_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies if periodic request progress information should be enabled.</p>
     pub fn set_request_progress(
         mut self,
-        input: std::option::Option<crate::types::RequestProgress>,
+        input: ::std::option::Option<crate::types::RequestProgress>,
     ) -> Self {
         self.request_progress = input;
         self
     }
     /// <p>Describes the format of the data in the object that is being queried.</p>
     pub fn input_serialization(mut self, input: crate::types::InputSerialization) -> Self {
-        self.input_serialization = Some(input);
+        self.input_serialization = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the format of the data in the object that is being queried.</p>
     pub fn set_input_serialization(
         mut self,
-        input: std::option::Option<crate::types::InputSerialization>,
+        input: ::std::option::Option<crate::types::InputSerialization>,
     ) -> Self {
         self.input_serialization = input;
         self
     }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
     pub fn output_serialization(mut self, input: crate::types::OutputSerialization) -> Self {
-        self.output_serialization = Some(input);
+        self.output_serialization = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
     pub fn set_output_serialization(
         mut self,
-        input: std::option::Option<crate::types::OutputSerialization>,
+        input: ::std::option::Option<crate::types::OutputSerialization>,
     ) -> Self {
         self.output_serialization = input;
         self
@@ -328,7 +342,7 @@ impl SelectObjectContentInputBuilder {
     /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub fn scan_range(mut self, input: crate::types::ScanRange) -> Self {
-        self.scan_range = Some(input);
+        self.scan_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
@@ -356,19 +370,22 @@ impl SelectObjectContentInputBuilder {
     /// </end>
     /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
-    pub fn set_scan_range(mut self, input: std::option::Option<crate::types::ScanRange>) -> Self {
+    pub fn set_scan_range(mut self, input: ::std::option::Option<crate::types::ScanRange>) -> Self {
         self.scan_range = input;
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expected_bucket_owner = Some(input.into());
+    pub fn expected_bucket_owner(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn set_expected_bucket_owner(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.expected_bucket_owner = input;
         self
@@ -376,11 +393,11 @@ impl SelectObjectContentInputBuilder {
     /// Consumes the builder and constructs a [`SelectObjectContentInput`](crate::operation::select_object_content::SelectObjectContentInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::select_object_content::SelectObjectContentInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::select_object_content::SelectObjectContentInput {
                 bucket: self.bucket,
                 key: self.key,
@@ -398,8 +415,8 @@ impl SelectObjectContentInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for SelectObjectContentInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SelectObjectContentInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SelectObjectContentInputBuilder");
         formatter.field("bucket", &self.bucket);
         formatter.field("key", &self.key);

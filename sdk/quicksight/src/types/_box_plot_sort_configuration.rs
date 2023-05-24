@@ -2,24 +2,24 @@
 
 /// <p>The sort configuration of a <code>BoxPlotVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotSortConfiguration {
     /// <p>The sort configuration of a group by fields.</p>
     #[doc(hidden)]
-    pub category_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The pagination configuration of a table visual or box plot.</p>
     #[doc(hidden)]
-    pub pagination_configuration: std::option::Option<crate::types::PaginationConfiguration>,
+    pub pagination_configuration: ::std::option::Option<crate::types::PaginationConfiguration>,
 }
 impl BoxPlotSortConfiguration {
     /// <p>The sort configuration of a group by fields.</p>
-    pub fn category_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
+    pub fn category_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
         self.category_sort.as_deref()
     }
     /// <p>The pagination configuration of a table visual or box plot.</p>
     pub fn pagination_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::PaginationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::PaginationConfiguration> {
         self.pagination_configuration.as_ref()
     }
 }
@@ -32,10 +32,14 @@ impl BoxPlotSortConfiguration {
 
 /// A builder for [`BoxPlotSortConfiguration`](crate::types::BoxPlotSortConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BoxPlotSortConfigurationBuilder {
-    pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
-    pub(crate) pagination_configuration: std::option::Option<crate::types::PaginationConfiguration>,
+    pub(crate) category_sort:
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) pagination_configuration:
+        ::std::option::Option<crate::types::PaginationConfiguration>,
 }
 impl BoxPlotSortConfigurationBuilder {
     /// Appends an item to `category_sort`.
@@ -46,13 +50,13 @@ impl BoxPlotSortConfigurationBuilder {
     pub fn category_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.category_sort.unwrap_or_default();
         v.push(input);
-        self.category_sort = Some(v);
+        self.category_sort = ::std::option::Option::Some(v);
         self
     }
     /// <p>The sort configuration of a group by fields.</p>
     pub fn set_category_sort(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     ) -> Self {
         self.category_sort = input;
         self
@@ -62,13 +66,13 @@ impl BoxPlotSortConfigurationBuilder {
         mut self,
         input: crate::types::PaginationConfiguration,
     ) -> Self {
-        self.pagination_configuration = Some(input);
+        self.pagination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The pagination configuration of a table visual or box plot.</p>
     pub fn set_pagination_configuration(
         mut self,
-        input: std::option::Option<crate::types::PaginationConfiguration>,
+        input: ::std::option::Option<crate::types::PaginationConfiguration>,
     ) -> Self {
         self.pagination_configuration = input;
         self

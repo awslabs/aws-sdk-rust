@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ServerErrorCategory {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ServerErrorCategory {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ServerErrorCategory {
+impl ::std::convert::From<&str> for ServerErrorCategory {
     fn from(s: &str) -> Self {
         match s {
             "ARCHITECTURE_ERROR" => ServerErrorCategory::ArchitectureError,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ServerErrorCategory {
         }
     }
 }
-impl std::str::FromStr for ServerErrorCategory {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ServerErrorCategory {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerErrorCategory::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ServerErrorCategory::from(s))
     }
 }
 impl ServerErrorCategory {
@@ -107,7 +107,7 @@ impl ServerErrorCategory {
         ]
     }
 }
-impl AsRef<str> for ServerErrorCategory {
+impl ::std::convert::AsRef<str> for ServerErrorCategory {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

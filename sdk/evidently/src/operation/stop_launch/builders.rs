@@ -6,56 +6,59 @@ pub use crate::operation::stop_launch::_stop_launch_input::StopLaunchInputBuilde
 /// Fluent builder constructing a request to `StopLaunch`.
 ///
 /// <p>Stops a launch that is currently running. After you stop a launch, you will not be able to resume it or restart it. Also, it will not be evaluated as a rule for traffic allocation, and the traffic that was allocated to the launch will instead be available to the feature's experiment, if there is one. Otherwise, all traffic will be served the default variation after the launch is stopped.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopLaunchFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::stop_launch::builders::StopLaunchInputBuilder,
 }
 impl StopLaunchFluentBuilder {
     /// Creates a new `StopLaunch`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::stop_launch::StopLaunch,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::stop_launch::StopLaunchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_launch::StopLaunchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_launch::StopLaunchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::stop_launch::StopLaunchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_launch::StopLaunchError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl StopLaunchFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_launch::StopLaunchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::stop_launch::StopLaunchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_launch::StopLaunchError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
-    pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn project(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
         self
     }
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
-    pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project(input);
         self
     }
     /// <p>The name of the launch to stop.</p>
-    pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn launch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.launch(input.into());
         self
     }
     /// <p>The name of the launch to stop.</p>
-    pub fn set_launch(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_launch(input);
         self
     }
@@ -102,18 +105,18 @@ impl StopLaunchFluentBuilder {
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn set_desired_state(
         mut self,
-        input: std::option::Option<crate::types::LaunchStopDesiredState>,
+        input: ::std::option::Option<crate::types::LaunchStopDesiredState>,
     ) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }
     /// <p>A string that describes why you are stopping the launch.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
         self
     }
     /// <p>A string that describes why you are stopping the launch.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }

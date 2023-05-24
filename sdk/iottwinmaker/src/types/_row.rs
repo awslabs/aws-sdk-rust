@@ -2,15 +2,15 @@
 
 /// <p>Represents a single row in the query results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Row {
     /// <p>The data in a row of query results.</p>
     #[doc(hidden)]
-    pub row_data: std::option::Option<std::vec::Vec<aws_smithy_types::Document>>,
+    pub row_data: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
 }
 impl Row {
     /// <p>The data in a row of query results.</p>
-    pub fn row_data(&self) -> std::option::Option<&[aws_smithy_types::Document]> {
+    pub fn row_data(&self) -> ::std::option::Option<&[::aws_smithy_types::Document]> {
         self.row_data.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl Row {
 
 /// A builder for [`Row`](crate::types::Row).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RowBuilder {
-    pub(crate) row_data: std::option::Option<std::vec::Vec<aws_smithy_types::Document>>,
+    pub(crate) row_data: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
 }
 impl RowBuilder {
     /// Appends an item to `row_data`.
@@ -33,16 +35,16 @@ impl RowBuilder {
     /// To override the contents of this collection use [`set_row_data`](Self::set_row_data).
     ///
     /// <p>The data in a row of query results.</p>
-    pub fn row_data(mut self, input: aws_smithy_types::Document) -> Self {
+    pub fn row_data(mut self, input: ::aws_smithy_types::Document) -> Self {
         let mut v = self.row_data.unwrap_or_default();
         v.push(input);
-        self.row_data = Some(v);
+        self.row_data = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data in a row of query results.</p>
     pub fn set_row_data(
         mut self,
-        input: std::option::Option<std::vec::Vec<aws_smithy_types::Document>>,
+        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
     ) -> Self {
         self.row_data = input;
         self

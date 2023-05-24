@@ -2,22 +2,22 @@
 
 /// <p>The error code and error description associated with the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDescribeModelPackageError {
     /// <p></p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub error_response: std::option::Option<std::string::String>,
+    pub error_response: ::std::option::Option<::std::string::String>,
 }
 impl BatchDescribeModelPackageError {
     /// <p></p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p></p>
-    pub fn error_response(&self) -> std::option::Option<&str> {
+    pub fn error_response(&self) -> ::std::option::Option<&str> {
         self.error_response.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl BatchDescribeModelPackageError {
 
 /// A builder for [`BatchDescribeModelPackageError`](crate::types::BatchDescribeModelPackageError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDescribeModelPackageErrorBuilder {
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_response: std::option::Option<std::string::String>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_response: ::std::option::Option<::std::string::String>,
 }
 impl BatchDescribeModelPackageErrorBuilder {
     /// <p></p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p></p>
-    pub fn error_response(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_response = Some(input.into());
+    pub fn error_response(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_response = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_error_response(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_response(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_response = input;
         self
     }

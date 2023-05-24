@@ -7,36 +7,36 @@
 /// <li> <p> <code>RevokeDBSecurityGroupIngress</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2SecurityGroup {
     /// <p>Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the EC2 security group.</p>
     #[doc(hidden)]
-    pub ec2_security_group_name: std::option::Option<std::string::String>,
+    pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the id of the EC2 security group.</p>
     #[doc(hidden)]
-    pub ec2_security_group_id: std::option::Option<std::string::String>,
+    pub ec2_security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     #[doc(hidden)]
-    pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
+    pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl Ec2SecurityGroup {
     /// <p>Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Specifies the name of the EC2 security group.</p>
-    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn ec2_security_group_name(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_name.as_deref()
     }
     /// <p>Specifies the id of the EC2 security group.</p>
-    pub fn ec2_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_security_group_id(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_id.as_deref()
     }
     /// <p>Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
-    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_owner_id.as_deref()
     }
 }
@@ -49,59 +49,70 @@ impl Ec2SecurityGroup {
 
 /// A builder for [`Ec2SecurityGroup`](crate::types::Ec2SecurityGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ec2SecurityGroupBuilder {
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) ec2_security_group_name: std::option::Option<std::string::String>,
-    pub(crate) ec2_security_group_id: std::option::Option<std::string::String>,
-    pub(crate) ec2_security_group_owner_id: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_security_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl Ec2SecurityGroupBuilder {
     /// <p>Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>Specifies the name of the EC2 security group.</p>
-    pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_security_group_name = Some(input.into());
+    pub fn ec2_security_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the EC2 security group.</p>
     pub fn set_ec2_security_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ec2_security_group_name = input;
         self
     }
     /// <p>Specifies the id of the EC2 security group.</p>
-    pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_security_group_id = Some(input.into());
+    pub fn ec2_security_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ec2_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the id of the EC2 security group.</p>
     pub fn set_ec2_security_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ec2_security_group_id = input;
         self
     }
     /// <p>Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
-    pub fn ec2_security_group_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_security_group_owner_id = Some(input.into());
+    pub fn ec2_security_group_owner_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon Web Services ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field.</p>
     pub fn set_ec2_security_group_owner_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ec2_security_group_owner_id = input;
         self

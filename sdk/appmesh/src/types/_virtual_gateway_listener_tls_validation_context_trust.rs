@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context trust.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualGatewayListenerTlsValidationContextTrust {
     /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
     File(crate::types::VirtualGatewayTlsValidationContextFileTrust),
@@ -23,12 +23,12 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self>
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self>
     {
         if let VirtualGatewayListenerTlsValidationContextTrust::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayListenerTlsValidationContextTrust::File).
@@ -39,11 +39,12 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self>
+    {
         if let VirtualGatewayListenerTlsValidationContextTrust::Sds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::types::VirtualGatewayListenerTlsValidationContextTrust::Sds).

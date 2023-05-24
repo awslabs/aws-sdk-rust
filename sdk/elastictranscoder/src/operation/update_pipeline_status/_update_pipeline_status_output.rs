@@ -2,20 +2,20 @@
 
 /// <p>When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipelineStatusOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline: std::option::Option<crate::types::Pipeline>,
+    pub pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,
 }
 impl UpdatePipelineStatusOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::types::Pipeline> {
+    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::Pipeline> {
         self.pipeline.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdatePipelineStatusOutput {
+impl ::aws_http::request_id::RequestId for UpdatePipelineStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl UpdatePipelineStatusOutput {
 
 /// A builder for [`UpdatePipelineStatusOutput`](crate::operation::update_pipeline_status::UpdatePipelineStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdatePipelineStatusOutputBuilder {
-    pub(crate) pipeline: std::option::Option<crate::types::Pipeline>,
+    pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     _request_id: Option<String>,
 }
 impl UpdatePipelineStatusOutputBuilder {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     pub fn pipeline(mut self, input: crate::types::Pipeline) -> Self {
-        self.pipeline = Some(input);
+        self.pipeline = ::std::option::Option::Some(input);
         self
     }
     /// <p>A section of the response body that provides information about the pipeline.</p>
-    pub fn set_pipeline(mut self, input: std::option::Option<crate::types::Pipeline>) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::Pipeline>) -> Self {
         self.pipeline = input;
         self
     }

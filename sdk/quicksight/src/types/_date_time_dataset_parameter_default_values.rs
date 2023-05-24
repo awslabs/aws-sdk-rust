@@ -2,15 +2,15 @@
 
 /// <p>The default values of a date time parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given date time parameter.</p>
     #[doc(hidden)]
-    pub static_values: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    pub static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
 }
 impl DateTimeDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given date time parameter.</p>
-    pub fn static_values(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+    pub fn static_values(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
         self.static_values.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl DateTimeDatasetParameterDefaultValues {
 
 /// A builder for [`DateTimeDatasetParameterDefaultValues`](crate::types::DateTimeDatasetParameterDefaultValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DateTimeDatasetParameterDefaultValuesBuilder {
-    pub(crate) static_values: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
 }
 impl DateTimeDatasetParameterDefaultValuesBuilder {
     /// Appends an item to `static_values`.
@@ -33,16 +35,16 @@ impl DateTimeDatasetParameterDefaultValuesBuilder {
     /// To override the contents of this collection use [`set_static_values`](Self::set_static_values).
     ///
     /// <p>A list of static default values for a given date time parameter.</p>
-    pub fn static_values(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn static_values(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.static_values.unwrap_or_default();
         v.push(input);
-        self.static_values = Some(v);
+        self.static_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of static default values for a given date time parameter.</p>
     pub fn set_static_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     ) -> Self {
         self.static_values = input;
         self

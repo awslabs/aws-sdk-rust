@@ -2,22 +2,22 @@
 
 /// <p>A span in a policy. The span consists of a start position (inclusive) and end position (exclusive).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Span {
     /// <p>The start position of the span (inclusive).</p>
     #[doc(hidden)]
-    pub start: std::option::Option<crate::types::Position>,
+    pub start: ::std::option::Option<crate::types::Position>,
     /// <p>The end position of the span (exclusive).</p>
     #[doc(hidden)]
-    pub end: std::option::Option<crate::types::Position>,
+    pub end: ::std::option::Option<crate::types::Position>,
 }
 impl Span {
     /// <p>The start position of the span (inclusive).</p>
-    pub fn start(&self) -> std::option::Option<&crate::types::Position> {
+    pub fn start(&self) -> ::std::option::Option<&crate::types::Position> {
         self.start.as_ref()
     }
     /// <p>The end position of the span (exclusive).</p>
-    pub fn end(&self) -> std::option::Option<&crate::types::Position> {
+    pub fn end(&self) -> ::std::option::Option<&crate::types::Position> {
         self.end.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Span {
 
 /// A builder for [`Span`](crate::types::Span).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpanBuilder {
-    pub(crate) start: std::option::Option<crate::types::Position>,
-    pub(crate) end: std::option::Option<crate::types::Position>,
+    pub(crate) start: ::std::option::Option<crate::types::Position>,
+    pub(crate) end: ::std::option::Option<crate::types::Position>,
 }
 impl SpanBuilder {
     /// <p>The start position of the span (inclusive).</p>
     pub fn start(mut self, input: crate::types::Position) -> Self {
-        self.start = Some(input);
+        self.start = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start position of the span (inclusive).</p>
-    pub fn set_start(mut self, input: std::option::Option<crate::types::Position>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<crate::types::Position>) -> Self {
         self.start = input;
         self
     }
     /// <p>The end position of the span (exclusive).</p>
     pub fn end(mut self, input: crate::types::Position) -> Self {
-        self.end = Some(input);
+        self.end = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end position of the span (exclusive).</p>
-    pub fn set_end(mut self, input: std::option::Option<crate::types::Position>) -> Self {
+    pub fn set_end(mut self, input: ::std::option::Option<crate::types::Position>) -> Self {
         self.end = input;
         self
     }

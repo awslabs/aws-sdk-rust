@@ -2,7 +2,7 @@
 
 /// <p> The inventory data for installed Migration Evaluator collectors. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerMeCollectorInfo {
     /// <p> The number of active Migration Evaluator collectors. </p>
     #[doc(hidden)]
@@ -65,84 +65,86 @@ impl CustomerMeCollectorInfo {
 
 /// A builder for [`CustomerMeCollectorInfo`](crate::types::CustomerMeCollectorInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomerMeCollectorInfoBuilder {
-    pub(crate) active_me_collectors: std::option::Option<i32>,
-    pub(crate) healthy_me_collectors: std::option::Option<i32>,
-    pub(crate) deny_listed_me_collectors: std::option::Option<i32>,
-    pub(crate) shutdown_me_collectors: std::option::Option<i32>,
-    pub(crate) unhealthy_me_collectors: std::option::Option<i32>,
-    pub(crate) total_me_collectors: std::option::Option<i32>,
-    pub(crate) unknown_me_collectors: std::option::Option<i32>,
+    pub(crate) active_me_collectors: ::std::option::Option<i32>,
+    pub(crate) healthy_me_collectors: ::std::option::Option<i32>,
+    pub(crate) deny_listed_me_collectors: ::std::option::Option<i32>,
+    pub(crate) shutdown_me_collectors: ::std::option::Option<i32>,
+    pub(crate) unhealthy_me_collectors: ::std::option::Option<i32>,
+    pub(crate) total_me_collectors: ::std::option::Option<i32>,
+    pub(crate) unknown_me_collectors: ::std::option::Option<i32>,
 }
 impl CustomerMeCollectorInfoBuilder {
     /// <p> The number of active Migration Evaluator collectors. </p>
     pub fn active_me_collectors(mut self, input: i32) -> Self {
-        self.active_me_collectors = Some(input);
+        self.active_me_collectors = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of active Migration Evaluator collectors. </p>
-    pub fn set_active_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_active_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_me_collectors = input;
         self
     }
     /// <p> The number of healthy Migration Evaluator collectors. </p>
     pub fn healthy_me_collectors(mut self, input: i32) -> Self {
-        self.healthy_me_collectors = Some(input);
+        self.healthy_me_collectors = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of healthy Migration Evaluator collectors. </p>
-    pub fn set_healthy_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_healthy_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_me_collectors = input;
         self
     }
     /// <p> The number of deny-listed Migration Evaluator collectors. </p>
     pub fn deny_listed_me_collectors(mut self, input: i32) -> Self {
-        self.deny_listed_me_collectors = Some(input);
+        self.deny_listed_me_collectors = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of deny-listed Migration Evaluator collectors. </p>
-    pub fn set_deny_listed_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_deny_listed_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deny_listed_me_collectors = input;
         self
     }
     /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
     pub fn shutdown_me_collectors(mut self, input: i32) -> Self {
-        self.shutdown_me_collectors = Some(input);
+        self.shutdown_me_collectors = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. </p>
-    pub fn set_shutdown_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_shutdown_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shutdown_me_collectors = input;
         self
     }
     /// <p> The number of unhealthy Migration Evaluator collectors. </p>
     pub fn unhealthy_me_collectors(mut self, input: i32) -> Self {
-        self.unhealthy_me_collectors = Some(input);
+        self.unhealthy_me_collectors = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of unhealthy Migration Evaluator collectors. </p>
-    pub fn set_unhealthy_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unhealthy_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unhealthy_me_collectors = input;
         self
     }
     /// <p> The total number of Migration Evaluator collectors. </p>
     pub fn total_me_collectors(mut self, input: i32) -> Self {
-        self.total_me_collectors = Some(input);
+        self.total_me_collectors = ::std::option::Option::Some(input);
         self
     }
     /// <p> The total number of Migration Evaluator collectors. </p>
-    pub fn set_total_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_me_collectors = input;
         self
     }
     /// <p> The number of unknown Migration Evaluator collectors. </p>
     pub fn unknown_me_collectors(mut self, input: i32) -> Self {
-        self.unknown_me_collectors = Some(input);
+        self.unknown_me_collectors = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of unknown Migration Evaluator collectors. </p>
-    pub fn set_unknown_me_collectors(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unknown_me_collectors(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown_me_collectors = input;
         self
     }

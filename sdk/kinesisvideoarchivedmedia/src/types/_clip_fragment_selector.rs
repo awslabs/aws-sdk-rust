@@ -3,24 +3,24 @@
 /// <p>Describes the timestamp range and timestamp origin of a range of fragments.</p>
 /// <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClipFragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     #[doc(hidden)]
-    pub fragment_selector_type: std::option::Option<crate::types::ClipFragmentSelectorType>,
+    pub fragment_selector_type: ::std::option::Option<crate::types::ClipFragmentSelectorType>,
     /// <p>The range of timestamps to return.</p>
     #[doc(hidden)]
-    pub timestamp_range: std::option::Option<crate::types::ClipTimestampRange>,
+    pub timestamp_range: ::std::option::Option<crate::types::ClipTimestampRange>,
 }
 impl ClipFragmentSelector {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fn fragment_selector_type(
         &self,
-    ) -> std::option::Option<&crate::types::ClipFragmentSelectorType> {
+    ) -> ::std::option::Option<&crate::types::ClipFragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
     /// <p>The range of timestamps to return.</p>
-    pub fn timestamp_range(&self) -> std::option::Option<&crate::types::ClipTimestampRange> {
+    pub fn timestamp_range(&self) -> ::std::option::Option<&crate::types::ClipTimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
@@ -33,34 +33,37 @@ impl ClipFragmentSelector {
 
 /// A builder for [`ClipFragmentSelector`](crate::types::ClipFragmentSelector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClipFragmentSelectorBuilder {
-    pub(crate) fragment_selector_type: std::option::Option<crate::types::ClipFragmentSelectorType>,
-    pub(crate) timestamp_range: std::option::Option<crate::types::ClipTimestampRange>,
+    pub(crate) fragment_selector_type:
+        ::std::option::Option<crate::types::ClipFragmentSelectorType>,
+    pub(crate) timestamp_range: ::std::option::Option<crate::types::ClipTimestampRange>,
 }
 impl ClipFragmentSelectorBuilder {
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fn fragment_selector_type(mut self, input: crate::types::ClipFragmentSelectorType) -> Self {
-        self.fragment_selector_type = Some(input);
+        self.fragment_selector_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The origin of the timestamps to use (Server or Producer).</p>
     pub fn set_fragment_selector_type(
         mut self,
-        input: std::option::Option<crate::types::ClipFragmentSelectorType>,
+        input: ::std::option::Option<crate::types::ClipFragmentSelectorType>,
     ) -> Self {
         self.fragment_selector_type = input;
         self
     }
     /// <p>The range of timestamps to return.</p>
     pub fn timestamp_range(mut self, input: crate::types::ClipTimestampRange) -> Self {
-        self.timestamp_range = Some(input);
+        self.timestamp_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The range of timestamps to return.</p>
     pub fn set_timestamp_range(
         mut self,
-        input: std::option::Option<crate::types::ClipTimestampRange>,
+        input: ::std::option::Option<crate::types::ClipTimestampRange>,
     ) -> Self {
         self.timestamp_range = input;
         self

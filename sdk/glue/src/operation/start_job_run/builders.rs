@@ -6,56 +6,59 @@ pub use crate::operation::start_job_run::_start_job_run_input::StartJobRunInputB
 /// Fluent builder constructing a request to `StartJobRun`.
 ///
 /// <p>Starts a job run using a job definition.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartJobRunFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_job_run::builders::StartJobRunInputBuilder,
 }
 impl StartJobRunFluentBuilder {
     /// Creates a new `StartJobRun`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_job_run::StartJobRun,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_job_run::StartJobRunOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl StartJobRunFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_job_run::StartJobRunOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_job_run::StartJobRunError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the job definition to use.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
     /// <p>The name of the job definition to use.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
-    pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_run_id(input.into());
         self
     }
     /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
-    pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_run_id(input);
         self
     }
@@ -105,8 +108,8 @@ impl StartJobRunFluentBuilder {
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn arguments(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.arguments(k.into(), v.into());
         self
@@ -118,8 +121,8 @@ impl StartJobRunFluentBuilder {
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn set_arguments(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_arguments(input);
@@ -135,7 +138,7 @@ impl StartJobRunFluentBuilder {
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
     /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     #[deprecated(note = "This property is deprecated, use MaxCapacity instead.")]
-    pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_allocated_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_capacity(input);
         self
     }
@@ -147,7 +150,7 @@ impl StartJobRunFluentBuilder {
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. This value overrides the timeout value set in the parent job.</p>
     /// <p>Streaming jobs do not have a timeout. The default for non-streaming jobs is 2,880 minutes (48 hours).</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout(input);
         self
     }
@@ -169,19 +172,22 @@ impl StartJobRunFluentBuilder {
     /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
     /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
-    pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_max_capacity(input);
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
-    pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_configuration(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_configuration(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
     pub fn set_security_configuration(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_security_configuration(input);
         self
@@ -194,7 +200,7 @@ impl StartJobRunFluentBuilder {
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub fn set_notification_property(
         mut self,
-        input: std::option::Option<crate::types::NotificationProperty>,
+        input: ::std::option::Option<crate::types::NotificationProperty>,
     ) -> Self {
         self.inner = self.inner.set_notification_property(input);
         self
@@ -217,7 +223,10 @@ impl StartJobRunFluentBuilder {
     /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// <li> <p>For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
     /// </ul>
-    pub fn set_worker_type(mut self, input: std::option::Option<crate::types::WorkerType>) -> Self {
+    pub fn set_worker_type(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkerType>,
+    ) -> Self {
         self.inner = self.inner.set_worker_type(input);
         self
     }
@@ -227,7 +236,7 @@ impl StartJobRunFluentBuilder {
         self
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_workers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_workers(input);
         self
     }
@@ -243,7 +252,7 @@ impl StartJobRunFluentBuilder {
     /// <p>Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
     pub fn set_execution_class(
         mut self,
-        input: std::option::Option<crate::types::ExecutionClass>,
+        input: ::std::option::Option<crate::types::ExecutionClass>,
     ) -> Self {
         self.inner = self.inner.set_execution_class(input);
         self

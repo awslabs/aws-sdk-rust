@@ -2,29 +2,29 @@
 
 /// Configuration parameters for where in an S3 bucket to place the harvested content
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Destination {
     /// The name of an S3 bucket within which harvested content will be exported
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
     #[doc(hidden)]
-    pub manifest_key: std::option::Option<std::string::String>,
+    pub manifest_key: ::std::option::Option<::std::string::String>,
     /// The IAM role used to write to the specified S3 bucket
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Destination {
     /// The name of an S3 bucket within which harvested content will be exported
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
-    pub fn manifest_key(&self) -> std::option::Option<&str> {
+    pub fn manifest_key(&self) -> ::std::option::Option<&str> {
         self.manifest_key.as_deref()
     }
     /// The IAM role used to write to the specified S3 bucket
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl S3Destination {
 
 /// A builder for [`S3Destination`](crate::types::S3Destination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3DestinationBuilder {
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
-    pub(crate) manifest_key: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) manifest_key: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3DestinationBuilder {
     /// The name of an S3 bucket within which harvested content will be exported
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of an S3 bucket within which harvested content will be exported
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
     /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
-    pub fn manifest_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.manifest_key = Some(input.into());
+    pub fn manifest_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.manifest_key = ::std::option::Option::Some(input.into());
         self
     }
     /// The key in the specified S3 bucket where the harvested top-level manifest will be placed.
-    pub fn set_manifest_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_manifest_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.manifest_key = input;
         self
     }
     /// The IAM role used to write to the specified S3 bucket
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The IAM role used to write to the specified S3 bucket
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

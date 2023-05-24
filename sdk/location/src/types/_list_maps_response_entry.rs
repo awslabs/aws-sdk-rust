@@ -2,42 +2,42 @@
 
 /// <p>Contains details of an existing map resource in your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMapsResponseEntry {
     /// <p>The name of the associated map resource.</p>
     #[doc(hidden)]
-    pub map_name: std::option::Option<std::string::String>,
+    pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the map resource.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<std::string::String>,
+    pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
     #[deprecated(
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
     #[doc(hidden)]
-    pub pricing_plan: std::option::Option<crate::types::PricingPlan>,
+    pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     #[doc(hidden)]
-    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListMapsResponseEntry {
     /// <p>The name of the associated map resource.</p>
-    pub fn map_name(&self) -> std::option::Option<&str> {
+    pub fn map_name(&self) -> ::std::option::Option<&str> {
         self.map_name.as_deref()
     }
     /// <p>The description for the map resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    pub fn data_source(&self) -> std::option::Option<&str> {
+    pub fn data_source(&self) -> ::std::option::Option<&str> {
         self.data_source.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
@@ -45,15 +45,15 @@ impl ListMapsResponseEntry {
         note = "Deprecated. Always returns RequestBasedUsage.",
         since = "2022-02-01"
     )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::types::PricingPlan> {
+    pub fn pricing_plan(&self) -> ::std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -66,43 +66,45 @@ impl ListMapsResponseEntry {
 
 /// A builder for [`ListMapsResponseEntry`](crate::types::ListMapsResponseEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListMapsResponseEntryBuilder {
-    pub(crate) map_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) data_source: std::option::Option<std::string::String>,
-    pub(crate) pricing_plan: std::option::Option<crate::types::PricingPlan>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) map_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source: ::std::option::Option<::std::string::String>,
+    pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListMapsResponseEntryBuilder {
     /// <p>The name of the associated map resource.</p>
-    pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.map_name = Some(input.into());
+    pub fn map_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.map_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the associated map resource.</p>
-    pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_map_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_name = input;
         self
     }
     /// <p>The description for the map resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the map resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source = Some(input.into());
+    pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the data provider for the associated map tiles.</p>
-    pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_source = input;
         self
     }
@@ -112,7 +114,7 @@ impl ListMapsResponseEntryBuilder {
         since = "2022-02-01"
     )]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
-        self.pricing_plan = Some(input);
+        self.pricing_plan = ::std::option::Option::Some(input);
         self
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
@@ -122,33 +124,33 @@ impl ListMapsResponseEntryBuilder {
     )]
     pub fn set_pricing_plan(
         mut self,
-        input: std::option::Option<crate::types::PricingPlan>,
+        input: ::std::option::Option<crate::types::PricingPlan>,
     ) -> Self {
         self.pricing_plan = input;
         self
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_time = Some(input);
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn set_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_time = input;
         self

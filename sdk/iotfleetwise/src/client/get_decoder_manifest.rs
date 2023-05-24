@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDecoderManifest`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::set_name): <p> The name of the decoder manifest to retrieve information about. </p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::set_name): <p> The name of the decoder manifest to retrieve information about. </p>
     /// - On success, responds with [`GetDecoderManifestOutput`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::name): <p> The name of the decoder manifest. </p>
     ///   - [`arn(Option<String>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::arn): <p> The Amazon Resource Name (ARN) of the decoder manifest. </p>

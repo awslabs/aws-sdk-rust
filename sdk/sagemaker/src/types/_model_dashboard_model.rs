@@ -2,46 +2,46 @@
 
 /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardModel {
     /// <p>A model displayed in the Model Dashboard.</p>
     #[doc(hidden)]
-    pub model: std::option::Option<crate::types::Model>,
+    pub model: ::std::option::Option<crate::types::Model>,
     /// <p>The endpoints that host a model.</p>
     #[doc(hidden)]
-    pub endpoints: std::option::Option<std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
+    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
     #[doc(hidden)]
-    pub last_batch_transform_job: std::option::Option<crate::types::TransformJob>,
+    pub last_batch_transform_job: ::std::option::Option<crate::types::TransformJob>,
     /// <p>The monitoring schedules for a model.</p>
     #[doc(hidden)]
     pub monitoring_schedules:
-        std::option::Option<std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
     /// <p>The model card for a model.</p>
     #[doc(hidden)]
-    pub model_card: std::option::Option<crate::types::ModelDashboardModelCard>,
+    pub model_card: ::std::option::Option<crate::types::ModelDashboardModelCard>,
 }
 impl ModelDashboardModel {
     /// <p>A model displayed in the Model Dashboard.</p>
-    pub fn model(&self) -> std::option::Option<&crate::types::Model> {
+    pub fn model(&self) -> ::std::option::Option<&crate::types::Model> {
         self.model.as_ref()
     }
     /// <p>The endpoints that host a model.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::types::ModelDashboardEndpoint]> {
+    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::ModelDashboardEndpoint]> {
         self.endpoints.as_deref()
     }
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
-    pub fn last_batch_transform_job(&self) -> std::option::Option<&crate::types::TransformJob> {
+    pub fn last_batch_transform_job(&self) -> ::std::option::Option<&crate::types::TransformJob> {
         self.last_batch_transform_job.as_ref()
     }
     /// <p>The monitoring schedules for a model.</p>
     pub fn monitoring_schedules(
         &self,
-    ) -> std::option::Option<&[crate::types::ModelDashboardMonitoringSchedule]> {
+    ) -> ::std::option::Option<&[crate::types::ModelDashboardMonitoringSchedule]> {
         self.monitoring_schedules.as_deref()
     }
     /// <p>The model card for a model.</p>
-    pub fn model_card(&self) -> std::option::Option<&crate::types::ModelDashboardModelCard> {
+    pub fn model_card(&self) -> ::std::option::Option<&crate::types::ModelDashboardModelCard> {
         self.model_card.as_ref()
     }
 }
@@ -54,23 +54,26 @@ impl ModelDashboardModel {
 
 /// A builder for [`ModelDashboardModel`](crate::types::ModelDashboardModel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelDashboardModelBuilder {
-    pub(crate) model: std::option::Option<crate::types::Model>,
-    pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
-    pub(crate) last_batch_transform_job: std::option::Option<crate::types::TransformJob>,
+    pub(crate) model: ::std::option::Option<crate::types::Model>,
+    pub(crate) endpoints:
+        ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
+    pub(crate) last_batch_transform_job: ::std::option::Option<crate::types::TransformJob>,
     pub(crate) monitoring_schedules:
-        std::option::Option<std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
-    pub(crate) model_card: std::option::Option<crate::types::ModelDashboardModelCard>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
+    pub(crate) model_card: ::std::option::Option<crate::types::ModelDashboardModelCard>,
 }
 impl ModelDashboardModelBuilder {
     /// <p>A model displayed in the Model Dashboard.</p>
     pub fn model(mut self, input: crate::types::Model) -> Self {
-        self.model = Some(input);
+        self.model = ::std::option::Option::Some(input);
         self
     }
     /// <p>A model displayed in the Model Dashboard.</p>
-    pub fn set_model(mut self, input: std::option::Option<crate::types::Model>) -> Self {
+    pub fn set_model(mut self, input: ::std::option::Option<crate::types::Model>) -> Self {
         self.model = input;
         self
     }
@@ -82,26 +85,26 @@ impl ModelDashboardModelBuilder {
     pub fn endpoints(mut self, input: crate::types::ModelDashboardEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
         v.push(input);
-        self.endpoints = Some(v);
+        self.endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>The endpoints that host a model.</p>
     pub fn set_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelDashboardEndpoint>>,
     ) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
     pub fn last_batch_transform_job(mut self, input: crate::types::TransformJob) -> Self {
-        self.last_batch_transform_job = Some(input);
+        self.last_batch_transform_job = ::std::option::Option::Some(input);
         self
     }
     /// <p>A batch transform job. For information about SageMaker batch transform, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Use Batch Transform</a>.</p>
     pub fn set_last_batch_transform_job(
         mut self,
-        input: std::option::Option<crate::types::TransformJob>,
+        input: ::std::option::Option<crate::types::TransformJob>,
     ) -> Self {
         self.last_batch_transform_job = input;
         self
@@ -117,26 +120,28 @@ impl ModelDashboardModelBuilder {
     ) -> Self {
         let mut v = self.monitoring_schedules.unwrap_or_default();
         v.push(input);
-        self.monitoring_schedules = Some(v);
+        self.monitoring_schedules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The monitoring schedules for a model.</p>
     pub fn set_monitoring_schedules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ModelDashboardMonitoringSchedule>,
+        >,
     ) -> Self {
         self.monitoring_schedules = input;
         self
     }
     /// <p>The model card for a model.</p>
     pub fn model_card(mut self, input: crate::types::ModelDashboardModelCard) -> Self {
-        self.model_card = Some(input);
+        self.model_card = ::std::option::Option::Some(input);
         self
     }
     /// <p>The model card for a model.</p>
     pub fn set_model_card(
         mut self,
-        input: std::option::Option<crate::types::ModelDashboardModelCard>,
+        input: ::std::option::Option<crate::types::ModelDashboardModelCard>,
     ) -> Self {
         self.model_card = input;
         self

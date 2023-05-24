@@ -3,111 +3,115 @@
 /// <p>Detailed data of an Proton component resource.</p>
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Component {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the component.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Proton environment that this component is associated with.</p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
     #[doc(hidden)]
-    pub service_instance_name: std::option::Option<std::string::String>,
+    pub service_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when the component was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the component was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a deployment of the component was last attempted.</p>
     #[doc(hidden)]
-    pub last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_deployment_attempted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the component was last deployed successfully.</p>
     #[doc(hidden)]
-    pub last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_deployment_succeeded_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The component deployment status.</p>
     #[doc(hidden)]
-    pub deployment_status: std::option::Option<crate::types::DeploymentStatus>,
+    pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The message associated with the component deployment status.</p>
     #[doc(hidden)]
-    pub deployment_status_message: std::option::Option<std::string::String>,
+    pub deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
     #[doc(hidden)]
-    pub service_spec: std::option::Option<std::string::String>,
+    pub service_spec: ::std::option::Option<::std::string::String>,
     /// <p>The last token the client requested.</p>
     #[doc(hidden)]
-    pub last_client_request_token: std::option::Option<std::string::String>,
+    pub last_client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl Component {
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the component.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The time when the component was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the component was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the component was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The component deployment status.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>The message associated with the component deployment status.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
-    pub fn service_spec(&self) -> std::option::Option<&str> {
+    pub fn service_spec(&self) -> ::std::option::Option<&str> {
         self.service_spec.as_deref()
     }
     /// <p>The last token the client requested.</p>
-    pub fn last_client_request_token(&self) -> std::option::Option<&str> {
+    pub fn last_client_request_token(&self) -> ::std::option::Option<&str> {
         self.last_client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for Component {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Component {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Component");
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -144,184 +148,199 @@ impl Component {
 
 /// A builder for [`Component`](crate::types::Component).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ComponentBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) service_instance_name: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_deployment_attempted_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_deployment_succeeded_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) deployment_status: std::option::Option<crate::types::DeploymentStatus>,
-    pub(crate) deployment_status_message: std::option::Option<std::string::String>,
-    pub(crate) service_spec: std::option::Option<std::string::String>,
-    pub(crate) last_client_request_token: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) service_instance_name: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_deployment_attempted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_deployment_succeeded_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
+    pub(crate) deployment_status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) service_spec: ::std::option::Option<::std::string::String>,
+    pub(crate) last_client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl ComponentBuilder {
     /// <p>The name of the component.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description of the component.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the component.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Proton environment that this component is associated with.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. Provided when a component is attached to a service instance.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
-    pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_instance_name = Some(input.into());
+    pub fn service_instance_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service instance that this component is attached to. Provided when a component is attached to a service instance.</p>
     pub fn set_service_instance_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_instance_name = input;
         self
     }
     /// <p>The time when the component was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the component was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The time when the component was last modified.</p>
-    pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_at = Some(input);
+    pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the component was last modified.</p>
     pub fn set_last_modified_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_at = input;
         self
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
-    pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_deployment_attempted_at = Some(input);
+    pub fn last_deployment_attempted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_deployment_attempted_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when a deployment of the component was last attempted.</p>
     pub fn set_last_deployment_attempted_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_deployment_attempted_at = input;
         self
     }
     /// <p>The time when the component was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_deployment_succeeded_at = Some(input);
+    pub fn last_deployment_succeeded_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_deployment_succeeded_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the component was last deployed successfully.</p>
     pub fn set_last_deployment_succeeded_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_deployment_succeeded_at = input;
         self
     }
     /// <p>The component deployment status.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
-        self.deployment_status = Some(input);
+        self.deployment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The component deployment status.</p>
     pub fn set_deployment_status(
         mut self,
-        input: std::option::Option<crate::types::DeploymentStatus>,
+        input: ::std::option::Option<crate::types::DeploymentStatus>,
     ) -> Self {
         self.deployment_status = input;
         self
     }
     /// <p>The message associated with the component deployment status.</p>
-    pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_status_message = Some(input.into());
+    pub fn deployment_status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message associated with the component deployment status.</p>
     pub fn set_deployment_status_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.deployment_status_message = input;
         self
     }
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
-    pub fn service_spec(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_spec = Some(input.into());
+    pub fn service_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_spec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service spec that the component uses to access service inputs. Provided when a component is attached to a service instance.</p>
-    pub fn set_service_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_spec = input;
         self
     }
     /// <p>The last token the client requested.</p>
-    pub fn last_client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_client_request_token = Some(input.into());
+    pub fn last_client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last token the client requested.</p>
     pub fn set_last_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_client_request_token = input;
         self
@@ -346,8 +365,8 @@ impl ComponentBuilder {
         }
     }
 }
-impl std::fmt::Debug for ComponentBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ComponentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentBuilder");
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");

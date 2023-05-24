@@ -2,14 +2,14 @@
 
 /// <p>Describes a Delta Sync configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeltaSyncConfig {
     /// <p>The number of minutes that an Item is stored in the data source.</p>
     #[doc(hidden)]
     pub base_table_ttl: i64,
     /// <p>The Delta Sync table name.</p>
     #[doc(hidden)]
-    pub delta_sync_table_name: std::option::Option<std::string::String>,
+    pub delta_sync_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
     #[doc(hidden)]
     pub delta_sync_table_ttl: i64,
@@ -20,7 +20,7 @@ impl DeltaSyncConfig {
         self.base_table_ttl
     }
     /// <p>The Delta Sync table name.</p>
-    pub fn delta_sync_table_name(&self) -> std::option::Option<&str> {
+    pub fn delta_sync_table_name(&self) -> ::std::option::Option<&str> {
         self.delta_sync_table_name.as_deref()
     }
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
@@ -37,43 +37,48 @@ impl DeltaSyncConfig {
 
 /// A builder for [`DeltaSyncConfig`](crate::types::DeltaSyncConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeltaSyncConfigBuilder {
-    pub(crate) base_table_ttl: std::option::Option<i64>,
-    pub(crate) delta_sync_table_name: std::option::Option<std::string::String>,
-    pub(crate) delta_sync_table_ttl: std::option::Option<i64>,
+    pub(crate) base_table_ttl: ::std::option::Option<i64>,
+    pub(crate) delta_sync_table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) delta_sync_table_ttl: ::std::option::Option<i64>,
 }
 impl DeltaSyncConfigBuilder {
     /// <p>The number of minutes that an Item is stored in the data source.</p>
     pub fn base_table_ttl(mut self, input: i64) -> Self {
-        self.base_table_ttl = Some(input);
+        self.base_table_ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of minutes that an Item is stored in the data source.</p>
-    pub fn set_base_table_ttl(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_base_table_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.base_table_ttl = input;
         self
     }
     /// <p>The Delta Sync table name.</p>
-    pub fn delta_sync_table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delta_sync_table_name = Some(input.into());
+    pub fn delta_sync_table_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delta_sync_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Delta Sync table name.</p>
     pub fn set_delta_sync_table_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.delta_sync_table_name = input;
         self
     }
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
     pub fn delta_sync_table_ttl(mut self, input: i64) -> Self {
-        self.delta_sync_table_ttl = Some(input);
+        self.delta_sync_table_ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync table.</p>
-    pub fn set_delta_sync_table_ttl(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_delta_sync_table_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.delta_sync_table_ttl = input;
         self
     }

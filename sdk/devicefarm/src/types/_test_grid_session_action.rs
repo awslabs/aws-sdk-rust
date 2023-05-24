@@ -2,43 +2,43 @@
 
 /// <p>An action taken by a <code>TestGridSession</code> browser instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestGridSessionAction {
     /// <p>The action taken by the session.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<std::string::String>,
+    pub action: ::std::option::Option<::std::string::String>,
     /// <p>The time that the session invoked the action.</p>
     #[doc(hidden)]
-    pub started: std::option::Option<aws_smithy_types::DateTime>,
+    pub started: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     #[doc(hidden)]
-    pub duration: std::option::Option<i64>,
+    pub duration: ::std::option::Option<i64>,
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<std::string::String>,
+    pub status_code: ::std::option::Option<::std::string::String>,
     /// <p>HTTP method that the browser used to make the request.</p>
     #[doc(hidden)]
-    pub request_method: std::option::Option<std::string::String>,
+    pub request_method: ::std::option::Option<::std::string::String>,
 }
 impl TestGridSessionAction {
     /// <p>The action taken by the session.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
     /// <p>The time that the session invoked the action.</p>
-    pub fn started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started.as_ref()
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
-    pub fn duration(&self) -> std::option::Option<i64> {
+    pub fn duration(&self) -> ::std::option::Option<i64> {
         self.duration
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
-    pub fn status_code(&self) -> std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<&str> {
         self.status_code.as_deref()
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn request_method(&self) -> std::option::Option<&str> {
+    pub fn request_method(&self) -> ::std::option::Option<&str> {
         self.request_method.as_deref()
     }
 }
@@ -51,62 +51,73 @@ impl TestGridSessionAction {
 
 /// A builder for [`TestGridSessionAction`](crate::types::TestGridSessionAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestGridSessionActionBuilder {
-    pub(crate) action: std::option::Option<std::string::String>,
-    pub(crate) started: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) duration: std::option::Option<i64>,
-    pub(crate) status_code: std::option::Option<std::string::String>,
-    pub(crate) request_method: std::option::Option<std::string::String>,
+    pub(crate) action: ::std::option::Option<::std::string::String>,
+    pub(crate) started: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) duration: ::std::option::Option<i64>,
+    pub(crate) status_code: ::std::option::Option<::std::string::String>,
+    pub(crate) request_method: ::std::option::Option<::std::string::String>,
 }
 impl TestGridSessionActionBuilder {
     /// <p>The action taken by the session.</p>
-    pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action = Some(input.into());
+    pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action taken by the session.</p>
-    pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
     /// <p>The time that the session invoked the action.</p>
-    pub fn started(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started = Some(input);
+    pub fn started(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the session invoked the action.</p>
-    pub fn set_started(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_started(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.started = input;
         self
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
     pub fn duration(mut self, input: i64) -> Self {
-        self.duration = Some(input);
+        self.duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds, that the action took to complete in the browser.</p>
-    pub fn set_duration(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration = input;
         self
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
-    pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_code = Some(input.into());
+    pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>HTTP status code returned to the browser when the action was taken.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn request_method(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_method = Some(input.into());
+    pub fn request_method(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.request_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>HTTP method that the browser used to make the request.</p>
-    pub fn set_request_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_method(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.request_method = input;
         self
     }

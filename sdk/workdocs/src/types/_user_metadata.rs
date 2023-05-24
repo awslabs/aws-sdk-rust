@@ -2,48 +2,48 @@
 
 /// <p>Describes the metadata of the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserMetadata {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The given name of the user before a rename operation.</p>
     #[doc(hidden)]
-    pub given_name: std::option::Option<std::string::String>,
+    pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>The surname of the user.</p>
     #[doc(hidden)]
-    pub surname: std::option::Option<std::string::String>,
+    pub surname: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl UserMetadata {
     /// <p>The ID of the user.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The given name of the user before a rename operation.</p>
-    pub fn given_name(&self) -> std::option::Option<&str> {
+    pub fn given_name(&self) -> ::std::option::Option<&str> {
         self.given_name.as_deref()
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(&self) -> std::option::Option<&str> {
+    pub fn surname(&self) -> ::std::option::Option<&str> {
         self.surname.as_deref()
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
 }
-impl std::fmt::Debug for UserMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserMetadata");
         formatter.field("id", &self.id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -62,62 +62,68 @@ impl UserMetadata {
 
 /// A builder for [`UserMetadata`](crate::types::UserMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserMetadataBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) given_name: std::option::Option<std::string::String>,
-    pub(crate) surname: std::option::Option<std::string::String>,
-    pub(crate) email_address: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) given_name: ::std::option::Option<::std::string::String>,
+    pub(crate) surname: ::std::option::Option<::std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }
 impl UserMetadataBuilder {
     /// <p>The ID of the user.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the user.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The given name of the user before a rename operation.</p>
-    pub fn given_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.given_name = Some(input.into());
+    pub fn given_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.given_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The given name of the user before a rename operation.</p>
-    pub fn set_given_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_given_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.given_name = input;
         self
     }
     /// <p>The surname of the user.</p>
-    pub fn surname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.surname = Some(input.into());
+    pub fn surname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.surname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The surname of the user.</p>
-    pub fn set_surname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_surname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.surname = input;
         self
     }
     /// <p>The email address of the user.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the user.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
@@ -132,8 +138,8 @@ impl UserMetadataBuilder {
         }
     }
 }
-impl std::fmt::Debug for UserMetadataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserMetadataBuilder");
         formatter.field("id", &self.id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");

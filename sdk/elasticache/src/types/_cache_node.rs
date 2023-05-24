@@ -30,64 +30,64 @@
 /// <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheNode {
     /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
     #[doc(hidden)]
-    pub cache_node_id: std::option::Option<std::string::String>,
+    pub cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
     #[doc(hidden)]
-    pub cache_node_status: std::option::Option<std::string::String>,
+    pub cache_node_status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the cache node was created.</p>
     #[doc(hidden)]
-    pub cache_node_create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub cache_node_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The hostname for connecting to this cache node.</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<crate::types::Endpoint>,
+    pub endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The status of the parameter group applied to this cache node.</p>
     #[doc(hidden)]
-    pub parameter_group_status: std::option::Option<std::string::String>,
+    pub parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is not associated with a primary cluster.</p>
     #[doc(hidden)]
-    pub source_cache_node_id: std::option::Option<std::string::String>,
+    pub source_cache_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where this node was created and now resides.</p>
     #[doc(hidden)]
-    pub customer_availability_zone: std::option::Option<std::string::String>,
+    pub customer_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The customer outpost ARN of the cache node.</p>
     #[doc(hidden)]
-    pub customer_outpost_arn: std::option::Option<std::string::String>,
+    pub customer_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl CacheNode {
     /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
-    pub fn cache_node_id(&self) -> std::option::Option<&str> {
+    pub fn cache_node_id(&self) -> ::std::option::Option<&str> {
         self.cache_node_id.as_deref()
     }
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
-    pub fn cache_node_status(&self) -> std::option::Option<&str> {
+    pub fn cache_node_status(&self) -> ::std::option::Option<&str> {
         self.cache_node_status.as_deref()
     }
     /// <p>The date and time when the cache node was created.</p>
-    pub fn cache_node_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn cache_node_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.cache_node_create_time.as_ref()
     }
     /// <p>The hostname for connecting to this cache node.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::types::Endpoint> {
+    pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
     /// <p>The status of the parameter group applied to this cache node.</p>
-    pub fn parameter_group_status(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_status(&self) -> ::std::option::Option<&str> {
         self.parameter_group_status.as_deref()
     }
     /// <p>The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is not associated with a primary cluster.</p>
-    pub fn source_cache_node_id(&self) -> std::option::Option<&str> {
+    pub fn source_cache_node_id(&self) -> ::std::option::Option<&str> {
         self.source_cache_node_id.as_deref()
     }
     /// <p>The Availability Zone where this node was created and now resides.</p>
-    pub fn customer_availability_zone(&self) -> std::option::Option<&str> {
+    pub fn customer_availability_zone(&self) -> ::std::option::Option<&str> {
         self.customer_availability_zone.as_deref()
     }
     /// <p>The customer outpost ARN of the cache node.</p>
-    pub fn customer_outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn customer_outpost_arn(&self) -> ::std::option::Option<&str> {
         self.customer_outpost_arn.as_deref()
     }
 }
@@ -100,112 +100,135 @@ impl CacheNode {
 
 /// A builder for [`CacheNode`](crate::types::CacheNode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CacheNodeBuilder {
-    pub(crate) cache_node_id: std::option::Option<std::string::String>,
-    pub(crate) cache_node_status: std::option::Option<std::string::String>,
-    pub(crate) cache_node_create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) endpoint: std::option::Option<crate::types::Endpoint>,
-    pub(crate) parameter_group_status: std::option::Option<std::string::String>,
-    pub(crate) source_cache_node_id: std::option::Option<std::string::String>,
-    pub(crate) customer_availability_zone: std::option::Option<std::string::String>,
-    pub(crate) customer_outpost_arn: std::option::Option<std::string::String>,
+    pub(crate) cache_node_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_node_status: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_node_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
+    pub(crate) parameter_group_status: ::std::option::Option<::std::string::String>,
+    pub(crate) source_cache_node_id: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl CacheNodeBuilder {
     /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
-    pub fn cache_node_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cache_node_id = Some(input.into());
+    pub fn cache_node_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cache_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
-    pub fn set_cache_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cache_node_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cache_node_id = input;
         self
     }
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
-    pub fn cache_node_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cache_node_status = Some(input.into());
+    pub fn cache_node_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cache_node_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
     pub fn set_cache_node_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cache_node_status = input;
         self
     }
     /// <p>The date and time when the cache node was created.</p>
-    pub fn cache_node_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.cache_node_create_time = Some(input);
+    pub fn cache_node_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.cache_node_create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the cache node was created.</p>
     pub fn set_cache_node_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.cache_node_create_time = input;
         self
     }
     /// <p>The hostname for connecting to this cache node.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
-        self.endpoint = Some(input);
+        self.endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hostname for connecting to this cache node.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<crate::types::Endpoint>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.endpoint = input;
         self
     }
     /// <p>The status of the parameter group applied to this cache node.</p>
-    pub fn parameter_group_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_status = Some(input.into());
+    pub fn parameter_group_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the parameter group applied to this cache node.</p>
     pub fn set_parameter_group_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_status = input;
         self
     }
     /// <p>The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is not associated with a primary cluster.</p>
-    pub fn source_cache_node_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_cache_node_id = Some(input.into());
+    pub fn source_cache_node_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_cache_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is not associated with a primary cluster.</p>
     pub fn set_source_cache_node_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_cache_node_id = input;
         self
     }
     /// <p>The Availability Zone where this node was created and now resides.</p>
-    pub fn customer_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.customer_availability_zone = Some(input.into());
+    pub fn customer_availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.customer_availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone where this node was created and now resides.</p>
     pub fn set_customer_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.customer_availability_zone = input;
         self
     }
     /// <p>The customer outpost ARN of the cache node.</p>
-    pub fn customer_outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.customer_outpost_arn = Some(input.into());
+    pub fn customer_outpost_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.customer_outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer outpost ARN of the cache node.</p>
     pub fn set_customer_outpost_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.customer_outpost_arn = input;
         self

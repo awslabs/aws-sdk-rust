@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMulticastGroup`](crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder::set_id): <p>The ID of the multicast group.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_multicast_group::builders::DeleteMulticastGroupFluentBuilder::set_id): <p>The ID of the multicast group.</p>
     /// - On success, responds with [`DeleteMulticastGroupOutput`](crate::operation::delete_multicast_group::DeleteMulticastGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteMulticastGroupError>`](crate::operation::delete_multicast_group::DeleteMulticastGroupError)
     pub fn delete_multicast_group(

@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum KeyEncryptionMechanism {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum KeyEncryptionMechanism {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for KeyEncryptionMechanism {
+impl ::std::convert::From<&str> for KeyEncryptionMechanism {
     fn from(s: &str) -> Self {
         match s {
             "RSAES_OAEP_SHA_256" => KeyEncryptionMechanism::RsaesOaepSha256,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for KeyEncryptionMechanism {
         }
     }
 }
-impl std::str::FromStr for KeyEncryptionMechanism {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for KeyEncryptionMechanism {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyEncryptionMechanism::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(KeyEncryptionMechanism::from(s))
     }
 }
 impl KeyEncryptionMechanism {
@@ -81,7 +81,7 @@ impl KeyEncryptionMechanism {
         &["RSAES_OAEP_SHA_256"]
     }
 }
-impl AsRef<str> for KeyEncryptionMechanism {
+impl ::std::convert::AsRef<str> for KeyEncryptionMechanism {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

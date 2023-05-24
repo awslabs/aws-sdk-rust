@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeReportPlan`](crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_plan_name(impl Into<String>)`](crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder::set_report_plan_name): <p>The unique name of a report plan.</p>
+    ///   - [`report_plan_name(impl ::std::convert::Into<String>)`](crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder::report_plan_name) / [`set_report_plan_name(Option<String>)`](crate::operation::describe_report_plan::builders::DescribeReportPlanFluentBuilder::set_report_plan_name): <p>The unique name of a report plan.</p>
     /// - On success, responds with [`DescribeReportPlanOutput`](crate::operation::describe_report_plan::DescribeReportPlanOutput) with field(s):
     ///   - [`report_plan(Option<ReportPlan>)`](crate::operation::describe_report_plan::DescribeReportPlanOutput::report_plan): <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
     /// - On failure, responds with [`SdkError<DescribeReportPlanError>`](crate::operation::describe_report_plan::DescribeReportPlanError)

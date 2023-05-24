@@ -2,15 +2,15 @@
 
 /// <p> Returns the request structure for the get artifact request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArtifactUrlInput {
     /// <p> The unique ID for an artifact. </p>
     #[doc(hidden)]
-    pub artifact_id: std::option::Option<std::string::String>,
+    pub artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl GetArtifactUrlInput {
     /// <p> The unique ID for an artifact. </p>
-    pub fn artifact_id(&self) -> std::option::Option<&str> {
+    pub fn artifact_id(&self) -> ::std::option::Option<&str> {
         self.artifact_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl GetArtifactUrlInput {
 
 /// A builder for [`GetArtifactUrlInput`](crate::operation::get_artifact_url::GetArtifactUrlInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetArtifactUrlInputBuilder {
-    pub(crate) artifact_id: std::option::Option<std::string::String>,
+    pub(crate) artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl GetArtifactUrlInputBuilder {
     /// <p> The unique ID for an artifact. </p>
-    pub fn artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.artifact_id = Some(input.into());
+    pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID for an artifact. </p>
-    pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetArtifactUrlInput`](crate::operation::get_artifact_url::GetArtifactUrlInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_artifact_url::GetArtifactUrlInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_artifact_url::GetArtifactUrlInput {
+        ::std::result::Result::Ok(crate::operation::get_artifact_url::GetArtifactUrlInput {
             artifact_id: self.artifact_id,
         })
     }

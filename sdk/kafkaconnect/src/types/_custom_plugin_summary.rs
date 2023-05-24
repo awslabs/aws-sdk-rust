@@ -2,52 +2,52 @@
 
 /// <p>A summary of the custom plugin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPluginSummary {
     /// <p>The time that the custom plugin was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     #[doc(hidden)]
-    pub custom_plugin_arn: std::option::Option<std::string::String>,
+    pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the custom plugin.</p>
     #[doc(hidden)]
-    pub custom_plugin_state: std::option::Option<crate::types::CustomPluginState>,
+    pub custom_plugin_state: ::std::option::Option<crate::types::CustomPluginState>,
     /// <p>A description of the custom plugin.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The latest revision of the custom plugin.</p>
     #[doc(hidden)]
-    pub latest_revision: std::option::Option<crate::types::CustomPluginRevisionSummary>,
+    pub latest_revision: ::std::option::Option<crate::types::CustomPluginRevisionSummary>,
     /// <p>The name of the custom plugin.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl CustomPluginSummary {
     /// <p>The time that the custom plugin was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn custom_plugin_state(&self) -> std::option::Option<&crate::types::CustomPluginState> {
+    pub fn custom_plugin_state(&self) -> ::std::option::Option<&crate::types::CustomPluginState> {
         self.custom_plugin_state.as_ref()
     }
     /// <p>A description of the custom plugin.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The latest revision of the custom plugin.</p>
     pub fn latest_revision(
         &self,
-    ) -> std::option::Option<&crate::types::CustomPluginRevisionSummary> {
+    ) -> ::std::option::Option<&crate::types::CustomPluginRevisionSummary> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the custom plugin.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -60,85 +60,90 @@ impl CustomPluginSummary {
 
 /// A builder for [`CustomPluginSummary`](crate::types::CustomPluginSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomPluginSummaryBuilder {
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
-    pub(crate) custom_plugin_state: std::option::Option<crate::types::CustomPluginState>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) latest_revision: std::option::Option<crate::types::CustomPluginRevisionSummary>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) custom_plugin_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_plugin_state: ::std::option::Option<crate::types::CustomPluginState>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_revision: ::std::option::Option<crate::types::CustomPluginRevisionSummary>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl CustomPluginSummaryBuilder {
     /// <p>The time that the custom plugin was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the custom plugin was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_plugin_arn = Some(input.into());
+    pub fn custom_plugin_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_plugin_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     pub fn set_custom_plugin_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.custom_plugin_arn = input;
         self
     }
     /// <p>The state of the custom plugin.</p>
     pub fn custom_plugin_state(mut self, input: crate::types::CustomPluginState) -> Self {
-        self.custom_plugin_state = Some(input);
+        self.custom_plugin_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the custom plugin.</p>
     pub fn set_custom_plugin_state(
         mut self,
-        input: std::option::Option<crate::types::CustomPluginState>,
+        input: ::std::option::Option<crate::types::CustomPluginState>,
     ) -> Self {
         self.custom_plugin_state = input;
         self
     }
     /// <p>A description of the custom plugin.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the custom plugin.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The latest revision of the custom plugin.</p>
     pub fn latest_revision(mut self, input: crate::types::CustomPluginRevisionSummary) -> Self {
-        self.latest_revision = Some(input);
+        self.latest_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latest revision of the custom plugin.</p>
     pub fn set_latest_revision(
         mut self,
-        input: std::option::Option<crate::types::CustomPluginRevisionSummary>,
+        input: ::std::option::Option<crate::types::CustomPluginRevisionSummary>,
     ) -> Self {
         self.latest_revision = input;
         self
     }
     /// <p>The name of the custom plugin.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom plugin.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

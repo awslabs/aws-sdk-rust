@@ -2,15 +2,15 @@
 
 /// <p>Describes how the archive is serialized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     #[doc(hidden)]
-    pub csv: std::option::Option<crate::types::CsvInput>,
+    pub csv: ::std::option::Option<crate::types::CsvInput>,
 }
 impl InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::types::CsvInput> {
+    pub fn csv(&self) -> ::std::option::Option<&crate::types::CsvInput> {
         self.csv.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl InputSerialization {
 
 /// A builder for [`InputSerialization`](crate::types::InputSerialization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputSerializationBuilder {
-    pub(crate) csv: std::option::Option<crate::types::CsvInput>,
+    pub(crate) csv: ::std::option::Option<crate::types::CsvInput>,
 }
 impl InputSerializationBuilder {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     pub fn csv(mut self, input: crate::types::CsvInput) -> Self {
-        self.csv = Some(input);
+        self.csv = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub fn set_csv(mut self, input: std::option::Option<crate::types::CsvInput>) -> Self {
+    pub fn set_csv(mut self, input: ::std::option::Option<crate::types::CsvInput>) -> Self {
         self.csv = input;
         self
     }

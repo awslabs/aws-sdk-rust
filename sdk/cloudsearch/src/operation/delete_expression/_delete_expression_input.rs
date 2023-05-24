@@ -2,22 +2,22 @@
 
 /// <p>Container for the parameters to the <code><code>DeleteExpression</code></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
     #[doc(hidden)]
-    pub expression_name: std::option::Option<std::string::String>,
+    pub expression_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
-    pub fn expression_name(&self) -> std::option::Option<&str> {
+    pub fn expression_name(&self) -> ::std::option::Option<&str> {
         self.expression_name.as_deref()
     }
 }
@@ -31,40 +31,48 @@ impl DeleteExpressionInput {
 
 /// A builder for [`DeleteExpressionInput`](crate::operation::delete_expression::DeleteExpressionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteExpressionInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) expression_name: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) expression_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExpressionInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
-    pub fn expression_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression_name = Some(input.into());
+    pub fn expression_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.expression_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
-    pub fn set_expression_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.expression_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteExpressionInput`](crate::operation::delete_expression::DeleteExpressionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_expression::DeleteExpressionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_expression::DeleteExpressionInput {
+        ::std::result::Result::Ok(crate::operation::delete_expression::DeleteExpressionInput {
             domain_name: self.domain_name,
             expression_name: self.expression_name,
         })

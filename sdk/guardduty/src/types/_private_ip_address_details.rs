@@ -2,22 +2,22 @@
 
 /// <p>Contains other private IP address information of the EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateIpAddressDetails {
     /// <p>The private DNS name of the EC2 instance.</p>
     #[doc(hidden)]
-    pub private_dns_name: std::option::Option<std::string::String>,
+    pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IP address of the EC2 instance.</p>
     #[doc(hidden)]
-    pub private_ip_address: std::option::Option<std::string::String>,
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl PrivateIpAddressDetails {
     /// <p>The private DNS name of the EC2 instance.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private IP address of the EC2 instance.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl PrivateIpAddressDetails {
 
 /// A builder for [`PrivateIpAddressDetails`](crate::types::PrivateIpAddressDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrivateIpAddressDetailsBuilder {
-    pub(crate) private_dns_name: std::option::Option<std::string::String>,
-    pub(crate) private_ip_address: std::option::Option<std::string::String>,
+    pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl PrivateIpAddressDetailsBuilder {
     /// <p>The private DNS name of the EC2 instance.</p>
-    pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_dns_name = Some(input.into());
+    pub fn private_dns_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private DNS name of the EC2 instance.</p>
-    pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_dns_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.private_dns_name = input;
         self
     }
     /// <p>The private IP address of the EC2 instance.</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_ip_address = Some(input.into());
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address of the EC2 instance.</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_ip_address = input;
         self

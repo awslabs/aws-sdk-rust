@@ -2,22 +2,22 @@
 
 /// <p>Contains information about the historical metrics retrieved.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoricalMetricResult {
     /// <p>The dimension for the metrics.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<crate::types::Dimensions>,
+    pub dimensions: ::std::option::Option<crate::types::Dimensions>,
     /// <p>The set of metrics.</p>
     #[doc(hidden)]
-    pub collections: std::option::Option<std::vec::Vec<crate::types::HistoricalMetricData>>,
+    pub collections: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>>,
 }
 impl HistoricalMetricResult {
     /// <p>The dimension for the metrics.</p>
-    pub fn dimensions(&self) -> std::option::Option<&crate::types::Dimensions> {
+    pub fn dimensions(&self) -> ::std::option::Option<&crate::types::Dimensions> {
         self.dimensions.as_ref()
     }
     /// <p>The set of metrics.</p>
-    pub fn collections(&self) -> std::option::Option<&[crate::types::HistoricalMetricData]> {
+    pub fn collections(&self) -> ::std::option::Option<&[crate::types::HistoricalMetricData]> {
         self.collections.as_deref()
     }
 }
@@ -30,19 +30,25 @@ impl HistoricalMetricResult {
 
 /// A builder for [`HistoricalMetricResult`](crate::types::HistoricalMetricResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HistoricalMetricResultBuilder {
-    pub(crate) dimensions: std::option::Option<crate::types::Dimensions>,
-    pub(crate) collections: std::option::Option<std::vec::Vec<crate::types::HistoricalMetricData>>,
+    pub(crate) dimensions: ::std::option::Option<crate::types::Dimensions>,
+    pub(crate) collections:
+        ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>>,
 }
 impl HistoricalMetricResultBuilder {
     /// <p>The dimension for the metrics.</p>
     pub fn dimensions(mut self, input: crate::types::Dimensions) -> Self {
-        self.dimensions = Some(input);
+        self.dimensions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dimension for the metrics.</p>
-    pub fn set_dimensions(mut self, input: std::option::Option<crate::types::Dimensions>) -> Self {
+    pub fn set_dimensions(
+        mut self,
+        input: ::std::option::Option<crate::types::Dimensions>,
+    ) -> Self {
         self.dimensions = input;
         self
     }
@@ -54,13 +60,13 @@ impl HistoricalMetricResultBuilder {
     pub fn collections(mut self, input: crate::types::HistoricalMetricData) -> Self {
         let mut v = self.collections.unwrap_or_default();
         v.push(input);
-        self.collections = Some(v);
+        self.collections = ::std::option::Option::Some(v);
         self
     }
     /// <p>The set of metrics.</p>
     pub fn set_collections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HistoricalMetricData>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HistoricalMetricData>>,
     ) -> Self {
         self.collections = input;
         self

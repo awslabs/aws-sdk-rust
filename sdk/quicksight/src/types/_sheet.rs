@@ -2,22 +2,22 @@
 
 /// <p>A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in Amazon QuickSight. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such as controls, filters, and so on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
     #[doc(hidden)]
-    pub sheet_id: std::option::Option<std::string::String>,
+    pub sheet_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl Sheet {
     /// <p>The unique identifier associated with a sheet.</p>
-    pub fn sheet_id(&self) -> std::option::Option<&str> {
+    pub fn sheet_id(&self) -> ::std::option::Option<&str> {
         self.sheet_id.as_deref()
     }
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Sheet {
 
 /// A builder for [`Sheet`](crate::types::Sheet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SheetBuilder {
-    pub(crate) sheet_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) sheet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl SheetBuilder {
     /// <p>The unique identifier associated with a sheet.</p>
-    pub fn sheet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sheet_id = Some(input.into());
+    pub fn sheet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sheet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier associated with a sheet.</p>
-    pub fn set_sheet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sheet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sheet_id = input;
         self
     }
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a sheet. This name is displayed on the sheet's tab in the Amazon QuickSight console.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

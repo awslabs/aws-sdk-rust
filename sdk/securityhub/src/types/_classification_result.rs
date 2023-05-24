@@ -2,11 +2,11 @@
 
 /// <p>Details about the sensitive data that was detected on the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassificationResult {
     /// <p>The type of content that the finding applies to.</p>
     #[doc(hidden)]
-    pub mime_type: std::option::Option<std::string::String>,
+    pub mime_type: ::std::option::Option<::std::string::String>,
     /// <p>The total size in bytes of the affected data.</p>
     #[doc(hidden)]
     pub size_classified: i64,
@@ -15,17 +15,17 @@ pub struct ClassificationResult {
     pub additional_occurrences: bool,
     /// <p>The current status of the sensitive data detection.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ClassificationStatus>,
+    pub status: ::std::option::Option<crate::types::ClassificationStatus>,
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
     #[doc(hidden)]
-    pub sensitive_data: std::option::Option<std::vec::Vec<crate::types::SensitiveDataResult>>,
+    pub sensitive_data: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
     #[doc(hidden)]
-    pub custom_data_identifiers: std::option::Option<crate::types::CustomDataIdentifiersResult>,
+    pub custom_data_identifiers: ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
 }
 impl ClassificationResult {
     /// <p>The type of content that the finding applies to.</p>
-    pub fn mime_type(&self) -> std::option::Option<&str> {
+    pub fn mime_type(&self) -> ::std::option::Option<&str> {
         self.mime_type.as_deref()
     }
     /// <p>The total size in bytes of the affected data.</p>
@@ -37,17 +37,17 @@ impl ClassificationResult {
         self.additional_occurrences
     }
     /// <p>The current status of the sensitive data detection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ClassificationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ClassificationStatus> {
         self.status.as_ref()
     }
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
-    pub fn sensitive_data(&self) -> std::option::Option<&[crate::types::SensitiveDataResult]> {
+    pub fn sensitive_data(&self) -> ::std::option::Option<&[crate::types::SensitiveDataResult]> {
         self.sensitive_data.as_deref()
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
     pub fn custom_data_identifiers(
         &self,
-    ) -> std::option::Option<&crate::types::CustomDataIdentifiersResult> {
+    ) -> ::std::option::Option<&crate::types::CustomDataIdentifiersResult> {
         self.custom_data_identifiers.as_ref()
     }
 }
@@ -60,57 +60,59 @@ impl ClassificationResult {
 
 /// A builder for [`ClassificationResult`](crate::types::ClassificationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClassificationResultBuilder {
-    pub(crate) mime_type: std::option::Option<std::string::String>,
-    pub(crate) size_classified: std::option::Option<i64>,
-    pub(crate) additional_occurrences: std::option::Option<bool>,
-    pub(crate) status: std::option::Option<crate::types::ClassificationStatus>,
+    pub(crate) mime_type: ::std::option::Option<::std::string::String>,
+    pub(crate) size_classified: ::std::option::Option<i64>,
+    pub(crate) additional_occurrences: ::std::option::Option<bool>,
+    pub(crate) status: ::std::option::Option<crate::types::ClassificationStatus>,
     pub(crate) sensitive_data:
-        std::option::Option<std::vec::Vec<crate::types::SensitiveDataResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
     pub(crate) custom_data_identifiers:
-        std::option::Option<crate::types::CustomDataIdentifiersResult>,
+        ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
 }
 impl ClassificationResultBuilder {
     /// <p>The type of content that the finding applies to.</p>
-    pub fn mime_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mime_type = Some(input.into());
+    pub fn mime_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mime_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of content that the finding applies to.</p>
-    pub fn set_mime_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mime_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mime_type = input;
         self
     }
     /// <p>The total size in bytes of the affected data.</p>
     pub fn size_classified(mut self, input: i64) -> Self {
-        self.size_classified = Some(input);
+        self.size_classified = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total size in bytes of the affected data.</p>
-    pub fn set_size_classified(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size_classified(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_classified = input;
         self
     }
     /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
     pub fn additional_occurrences(mut self, input: bool) -> Self {
-        self.additional_occurrences = Some(input);
+        self.additional_occurrences = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether there are additional occurrences of sensitive data that are not included in the finding. This occurs when the number of occurrences exceeds the maximum that can be included.</p>
-    pub fn set_additional_occurrences(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_additional_occurrences(mut self, input: ::std::option::Option<bool>) -> Self {
         self.additional_occurrences = input;
         self
     }
     /// <p>The current status of the sensitive data detection.</p>
     pub fn status(mut self, input: crate::types::ClassificationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the sensitive data detection.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ClassificationStatus>,
+        input: ::std::option::Option<crate::types::ClassificationStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -123,13 +125,13 @@ impl ClassificationResultBuilder {
     pub fn sensitive_data(mut self, input: crate::types::SensitiveDataResult) -> Self {
         let mut v = self.sensitive_data.unwrap_or_default();
         v.push(input);
-        self.sensitive_data = Some(v);
+        self.sensitive_data = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides details about sensitive data that was identified based on built-in configuration.</p>
     pub fn set_sensitive_data(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SensitiveDataResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SensitiveDataResult>>,
     ) -> Self {
         self.sensitive_data = input;
         self
@@ -139,13 +141,13 @@ impl ClassificationResultBuilder {
         mut self,
         input: crate::types::CustomDataIdentifiersResult,
     ) -> Self {
-        self.custom_data_identifiers = Some(input);
+        self.custom_data_identifiers = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides details about sensitive data that was identified based on customer-defined configuration.</p>
     pub fn set_custom_data_identifiers(
         mut self,
-        input: std::option::Option<crate::types::CustomDataIdentifiersResult>,
+        input: ::std::option::Option<crate::types::CustomDataIdentifiersResult>,
     ) -> Self {
         self.custom_data_identifiers = input;
         self

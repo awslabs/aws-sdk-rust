@@ -2,17 +2,17 @@
 
 /// <p>The image configuration of a table field URL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldImageConfiguration {
     /// <p>The sizing options for the table image configuration.</p>
     #[doc(hidden)]
-    pub sizing_options: std::option::Option<crate::types::TableCellImageSizingConfiguration>,
+    pub sizing_options: ::std::option::Option<crate::types::TableCellImageSizingConfiguration>,
 }
 impl TableFieldImageConfiguration {
     /// <p>The sizing options for the table image configuration.</p>
     pub fn sizing_options(
         &self,
-    ) -> std::option::Option<&crate::types::TableCellImageSizingConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TableCellImageSizingConfiguration> {
         self.sizing_options.as_ref()
     }
 }
@@ -25,9 +25,12 @@ impl TableFieldImageConfiguration {
 
 /// A builder for [`TableFieldImageConfiguration`](crate::types::TableFieldImageConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableFieldImageConfigurationBuilder {
-    pub(crate) sizing_options: std::option::Option<crate::types::TableCellImageSizingConfiguration>,
+    pub(crate) sizing_options:
+        ::std::option::Option<crate::types::TableCellImageSizingConfiguration>,
 }
 impl TableFieldImageConfigurationBuilder {
     /// <p>The sizing options for the table image configuration.</p>
@@ -35,13 +38,13 @@ impl TableFieldImageConfigurationBuilder {
         mut self,
         input: crate::types::TableCellImageSizingConfiguration,
     ) -> Self {
-        self.sizing_options = Some(input);
+        self.sizing_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sizing options for the table image configuration.</p>
     pub fn set_sizing_options(
         mut self,
-        input: std::option::Option<crate::types::TableCellImageSizingConfiguration>,
+        input: ::std::option::Option<crate::types::TableCellImageSizingConfiguration>,
     ) -> Self {
         self.sizing_options = input;
         self

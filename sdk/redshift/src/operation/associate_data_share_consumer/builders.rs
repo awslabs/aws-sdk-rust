@@ -6,29 +6,29 @@ pub use crate::operation::associate_data_share_consumer::_associate_data_share_c
 /// Fluent builder constructing a request to `AssociateDataShareConsumer`.
 ///
 /// <p>From a datashare consumer account, associates a datashare with the account (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make this association, the consumer can consume the datashare.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateDataShareConsumerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder,
 }
 impl AssociateDataShareConsumerFluentBuilder {
     /// Creates a new `AssociateDataShareConsumer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::associate_data_share_consumer::AssociateDataShareConsumer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
         >,
     > {
@@ -36,30 +36,33 @@ impl AssociateDataShareConsumerFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl AssociateDataShareConsumerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
-    pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_share_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
-    pub fn set_data_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_share_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_share_arn(input);
         self
     }
@@ -96,27 +105,33 @@ impl AssociateDataShareConsumerFluentBuilder {
         self
     }
     /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
-    pub fn set_associate_entire_account(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_associate_entire_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_associate_entire_account(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
-    pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
-    pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_arn(input);
         self
     }
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn consumer_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.consumer_region(input.into());
         self
     }
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn set_consumer_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_consumer_region(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_consumer_region(input);
         self
     }

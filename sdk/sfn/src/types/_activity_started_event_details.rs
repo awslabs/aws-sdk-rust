@@ -2,15 +2,15 @@
 
 /// <p>Contains details about the start of an activity during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivityStartedEventDetails {
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
     #[doc(hidden)]
-    pub worker_name: std::option::Option<std::string::String>,
+    pub worker_name: ::std::option::Option<::std::string::String>,
 }
 impl ActivityStartedEventDetails {
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
-    pub fn worker_name(&self) -> std::option::Option<&str> {
+    pub fn worker_name(&self) -> ::std::option::Option<&str> {
         self.worker_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ActivityStartedEventDetails {
 
 /// A builder for [`ActivityStartedEventDetails`](crate::types::ActivityStartedEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActivityStartedEventDetailsBuilder {
-    pub(crate) worker_name: std::option::Option<std::string::String>,
+    pub(crate) worker_name: ::std::option::Option<::std::string::String>,
 }
 impl ActivityStartedEventDetailsBuilder {
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
-    pub fn worker_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.worker_name = Some(input.into());
+    pub fn worker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.worker_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the worker that the task is assigned to. These names are provided by the workers when calling <code>GetActivityTask</code>.</p>
-    pub fn set_worker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_worker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_name = input;
         self
     }

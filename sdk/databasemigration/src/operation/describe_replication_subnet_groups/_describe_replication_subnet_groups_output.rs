@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationSubnetGroupsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A description of the replication subnet groups.</p>
     #[doc(hidden)]
     pub replication_subnet_groups:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationSubnetGroupsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A description of the replication subnet groups.</p>
     pub fn replication_subnet_groups(
         &self,
-    ) -> std::option::Option<&[crate::types::ReplicationSubnetGroup]> {
+    ) -> ::std::option::Option<&[crate::types::ReplicationSubnetGroup]> {
         self.replication_subnet_groups.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReplicationSubnetGroupsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReplicationSubnetGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeReplicationSubnetGroupsOutput {
 
 /// A builder for [`DescribeReplicationSubnetGroupsOutput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReplicationSubnetGroupsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) replication_subnet_groups:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationSubnetGroupsOutputBuilder {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -68,13 +70,13 @@ impl DescribeReplicationSubnetGroupsOutputBuilder {
     ) -> Self {
         let mut v = self.replication_subnet_groups.unwrap_or_default();
         v.push(input);
-        self.replication_subnet_groups = Some(v);
+        self.replication_subnet_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A description of the replication subnet groups.</p>
     pub fn set_replication_subnet_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationSubnetGroup>>,
     ) -> Self {
         self.replication_subnet_groups = input;
         self

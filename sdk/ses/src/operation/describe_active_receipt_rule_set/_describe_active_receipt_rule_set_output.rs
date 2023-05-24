@@ -2,27 +2,27 @@
 
 /// <p>Represents the metadata and receipt rules for the receipt rule set that is currently active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSetOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<crate::types::ReceiptRuleSetMetadata>,
+    pub metadata: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
     /// <p>The receipt rules that belong to the active rule set.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::ReceiptRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,
     _request_id: Option<String>,
 }
 impl DescribeActiveReceiptRuleSetOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::ReceiptRuleSetMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ReceiptRuleSetMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The receipt rules that belong to the active rule set.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::ReceiptRule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ReceiptRule]> {
         self.rules.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeActiveReceiptRuleSetOutput {
+impl ::aws_http::request_id::RequestId for DescribeActiveReceiptRuleSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,22 +36,24 @@ impl DescribeActiveReceiptRuleSetOutput {
 
 /// A builder for [`DescribeActiveReceiptRuleSetOutput`](crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeActiveReceiptRuleSetOutputBuilder {
-    pub(crate) metadata: std::option::Option<crate::types::ReceiptRuleSetMetadata>,
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::ReceiptRule>>,
+    pub(crate) metadata: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,
     _request_id: Option<String>,
 }
 impl DescribeActiveReceiptRuleSetOutputBuilder {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     pub fn metadata(mut self, input: crate::types::ReceiptRuleSetMetadata) -> Self {
-        self.metadata = Some(input);
+        self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<crate::types::ReceiptRuleSetMetadata>,
+        input: ::std::option::Option<crate::types::ReceiptRuleSetMetadata>,
     ) -> Self {
         self.metadata = input;
         self
@@ -64,13 +66,13 @@ impl DescribeActiveReceiptRuleSetOutputBuilder {
     pub fn rules(mut self, input: crate::types::ReceiptRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The receipt rules that belong to the active rule set.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReceiptRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRule>>,
     ) -> Self {
         self.rules = input;
         self

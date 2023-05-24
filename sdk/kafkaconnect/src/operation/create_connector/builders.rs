@@ -6,56 +6,63 @@ pub use crate::operation::create_connector::_create_connector_input::CreateConne
 /// Fluent builder constructing a request to `CreateConnector`.
 ///
 /// <p>Creates a connector using the specified properties.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectorFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_connector::builders::CreateConnectorInputBuilder,
 }
 impl CreateConnectorFluentBuilder {
     /// Creates a new `CreateConnector`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_connector::CreateConnector,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connector::CreateConnectorError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_connector::CreateConnectorOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connector::CreateConnectorError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +75,11 @@ impl CreateConnectorFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_connector::CreateConnectorOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_connector::CreateConnectorError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connector::CreateConnectorError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -80,7 +89,7 @@ impl CreateConnectorFluentBuilder {
         self
     }
     /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
-    pub fn set_capacity(mut self, input: std::option::Option<crate::types::Capacity>) -> Self {
+    pub fn set_capacity(mut self, input: ::std::option::Option<crate::types::Capacity>) -> Self {
         self.inner = self.inner.set_capacity(input);
         self
     }
@@ -91,8 +100,8 @@ impl CreateConnectorFluentBuilder {
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
     pub fn connector_configuration(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.connector_configuration(k.into(), v.into());
         self
@@ -100,33 +109,42 @@ impl CreateConnectorFluentBuilder {
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
     pub fn set_connector_configuration(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_connector_configuration(input);
         self
     }
     /// <p>A summary description of the connector.</p>
-    pub fn connector_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connector_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.connector_description(input.into());
         self
     }
     /// <p>A summary description of the connector.</p>
     pub fn set_connector_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_connector_description(input);
         self
     }
     /// <p>The name of the connector.</p>
-    pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connector_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.connector_name(input.into());
         self
     }
     /// <p>The name of the connector.</p>
-    pub fn set_connector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connector_name(input);
         self
     }
@@ -138,7 +156,7 @@ impl CreateConnectorFluentBuilder {
     /// <p>Specifies which Apache Kafka cluster to connect to.</p>
     pub fn set_kafka_cluster(
         mut self,
-        input: std::option::Option<crate::types::KafkaCluster>,
+        input: ::std::option::Option<crate::types::KafkaCluster>,
     ) -> Self {
         self.inner = self.inner.set_kafka_cluster(input);
         self
@@ -154,7 +172,7 @@ impl CreateConnectorFluentBuilder {
     /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
     pub fn set_kafka_cluster_client_authentication(
         mut self,
-        input: std::option::Option<crate::types::KafkaClusterClientAuthentication>,
+        input: ::std::option::Option<crate::types::KafkaClusterClientAuthentication>,
     ) -> Self {
         self.inner = self.inner.set_kafka_cluster_client_authentication(input);
         self
@@ -170,20 +188,23 @@ impl CreateConnectorFluentBuilder {
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
     pub fn set_kafka_cluster_encryption_in_transit(
         mut self,
-        input: std::option::Option<crate::types::KafkaClusterEncryptionInTransit>,
+        input: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransit>,
     ) -> Self {
         self.inner = self.inner.set_kafka_cluster_encryption_in_transit(input);
         self
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    pub fn kafka_connect_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kafka_connect_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.kafka_connect_version(input.into());
         self
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
     pub fn set_kafka_connect_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_kafka_connect_version(input);
         self
@@ -196,7 +217,7 @@ impl CreateConnectorFluentBuilder {
     /// <p>Details about log delivery.</p>
     pub fn set_log_delivery(
         mut self,
-        input: std::option::Option<crate::types::LogDelivery>,
+        input: ::std::option::Option<crate::types::LogDelivery>,
     ) -> Self {
         self.inner = self.inner.set_log_delivery(input);
         self
@@ -213,20 +234,23 @@ impl CreateConnectorFluentBuilder {
     /// <p>Specifies which plugins to use for the connector.</p>
     pub fn set_plugins(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Plugin>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Plugin>>,
     ) -> Self {
         self.inner = self.inner.set_plugins(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
-    pub fn service_execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.service_execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
     pub fn set_service_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_service_execution_role_arn(input);
         self
@@ -239,7 +263,7 @@ impl CreateConnectorFluentBuilder {
     /// <p>Specifies which worker configuration to use with the connector.</p>
     pub fn set_worker_configuration(
         mut self,
-        input: std::option::Option<crate::types::WorkerConfiguration>,
+        input: ::std::option::Option<crate::types::WorkerConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_worker_configuration(input);
         self

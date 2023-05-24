@@ -2,22 +2,22 @@
 
 /// <p>A range of attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectAttributeRange {
     /// <p>The key of the attribute that the attribute range covers.</p>
     #[doc(hidden)]
-    pub attribute_key: std::option::Option<crate::types::AttributeKey>,
+    pub attribute_key: ::std::option::Option<crate::types::AttributeKey>,
     /// <p>The range of attribute values being selected.</p>
     #[doc(hidden)]
-    pub range: std::option::Option<crate::types::TypedAttributeValueRange>,
+    pub range: ::std::option::Option<crate::types::TypedAttributeValueRange>,
 }
 impl ObjectAttributeRange {
     /// <p>The key of the attribute that the attribute range covers.</p>
-    pub fn attribute_key(&self) -> std::option::Option<&crate::types::AttributeKey> {
+    pub fn attribute_key(&self) -> ::std::option::Option<&crate::types::AttributeKey> {
         self.attribute_key.as_ref()
     }
     /// <p>The range of attribute values being selected.</p>
-    pub fn range(&self) -> std::option::Option<&crate::types::TypedAttributeValueRange> {
+    pub fn range(&self) -> ::std::option::Option<&crate::types::TypedAttributeValueRange> {
         self.range.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl ObjectAttributeRange {
 
 /// A builder for [`ObjectAttributeRange`](crate::types::ObjectAttributeRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObjectAttributeRangeBuilder {
-    pub(crate) attribute_key: std::option::Option<crate::types::AttributeKey>,
-    pub(crate) range: std::option::Option<crate::types::TypedAttributeValueRange>,
+    pub(crate) attribute_key: ::std::option::Option<crate::types::AttributeKey>,
+    pub(crate) range: ::std::option::Option<crate::types::TypedAttributeValueRange>,
 }
 impl ObjectAttributeRangeBuilder {
     /// <p>The key of the attribute that the attribute range covers.</p>
     pub fn attribute_key(mut self, input: crate::types::AttributeKey) -> Self {
-        self.attribute_key = Some(input);
+        self.attribute_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The key of the attribute that the attribute range covers.</p>
     pub fn set_attribute_key(
         mut self,
-        input: std::option::Option<crate::types::AttributeKey>,
+        input: ::std::option::Option<crate::types::AttributeKey>,
     ) -> Self {
         self.attribute_key = input;
         self
     }
     /// <p>The range of attribute values being selected.</p>
     pub fn range(mut self, input: crate::types::TypedAttributeValueRange) -> Self {
-        self.range = Some(input);
+        self.range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The range of attribute values being selected.</p>
     pub fn set_range(
         mut self,
-        input: std::option::Option<crate::types::TypedAttributeValueRange>,
+        input: ::std::option::Option<crate::types::TypedAttributeValueRange>,
     ) -> Self {
         self.range = input;
         self

@@ -2,36 +2,36 @@
 
 /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmrStepMetadata {
     /// <p>The identifier of the EMR cluster.</p>
     #[doc(hidden)]
-    pub cluster_id: std::option::Option<std::string::String>,
+    pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the EMR cluster step.</p>
     #[doc(hidden)]
-    pub step_id: std::option::Option<std::string::String>,
+    pub step_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the EMR cluster step.</p>
     #[doc(hidden)]
-    pub step_name: std::option::Option<std::string::String>,
+    pub step_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
     #[doc(hidden)]
-    pub log_file_path: std::option::Option<std::string::String>,
+    pub log_file_path: ::std::option::Option<::std::string::String>,
 }
 impl EmrStepMetadata {
     /// <p>The identifier of the EMR cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The identifier of the EMR cluster step.</p>
-    pub fn step_id(&self) -> std::option::Option<&str> {
+    pub fn step_id(&self) -> ::std::option::Option<&str> {
         self.step_id.as_deref()
     }
     /// <p>The name of the EMR cluster step.</p>
-    pub fn step_name(&self) -> std::option::Option<&str> {
+    pub fn step_name(&self) -> ::std::option::Option<&str> {
         self.step_name.as_deref()
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
-    pub fn log_file_path(&self) -> std::option::Option<&str> {
+    pub fn log_file_path(&self) -> ::std::option::Option<&str> {
         self.log_file_path.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl EmrStepMetadata {
 
 /// A builder for [`EmrStepMetadata`](crate::types::EmrStepMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmrStepMetadataBuilder {
-    pub(crate) cluster_id: std::option::Option<std::string::String>,
-    pub(crate) step_id: std::option::Option<std::string::String>,
-    pub(crate) step_name: std::option::Option<std::string::String>,
-    pub(crate) log_file_path: std::option::Option<std::string::String>,
+    pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) step_id: ::std::option::Option<::std::string::String>,
+    pub(crate) step_name: ::std::option::Option<::std::string::String>,
+    pub(crate) log_file_path: ::std::option::Option<::std::string::String>,
 }
 impl EmrStepMetadataBuilder {
     /// <p>The identifier of the EMR cluster.</p>
-    pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_id = Some(input.into());
+    pub fn cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the EMR cluster.</p>
-    pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_id = input;
         self
     }
     /// <p>The identifier of the EMR cluster step.</p>
-    pub fn step_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.step_id = Some(input.into());
+    pub fn step_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.step_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the EMR cluster step.</p>
-    pub fn set_step_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_step_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_id = input;
         self
     }
     /// <p>The name of the EMR cluster step.</p>
-    pub fn step_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.step_name = Some(input.into());
+    pub fn step_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.step_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the EMR cluster step.</p>
-    pub fn set_step_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_step_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_name = input;
         self
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
-    pub fn log_file_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_file_path = Some(input.into());
+    pub fn log_file_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the log file where the cluster step's failure root cause is recorded.</p>
-    pub fn set_log_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_file_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_file_path = input;
         self
     }

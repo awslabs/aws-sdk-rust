@@ -2,15 +2,15 @@
 
 /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
     #[doc(hidden)]
-    pub assign_public_ip: std::option::Option<crate::types::AssignPublicIp>,
+    pub assign_public_ip: ::std::option::Option<crate::types::AssignPublicIp>,
 }
 impl NetworkConfiguration {
     /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
-    pub fn assign_public_ip(&self) -> std::option::Option<&crate::types::AssignPublicIp> {
+    pub fn assign_public_ip(&self) -> ::std::option::Option<&crate::types::AssignPublicIp> {
         self.assign_public_ip.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl NetworkConfiguration {
 
 /// A builder for [`NetworkConfiguration`](crate::types::NetworkConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkConfigurationBuilder {
-    pub(crate) assign_public_ip: std::option::Option<crate::types::AssignPublicIp>,
+    pub(crate) assign_public_ip: ::std::option::Option<crate::types::AssignPublicIp>,
 }
 impl NetworkConfigurationBuilder {
     /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
     pub fn assign_public_ip(mut self, input: crate::types::AssignPublicIp) -> Self {
-        self.assign_public_ip = Some(input);
+        self.assign_public_ip = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the job has a public IP address. For a job that's running on Fargate resources in a private subnet to send outbound traffic to the internet (for example, to pull container images), the private subnet requires a NAT gateway be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. The default value is "<code>DISABLED</code>".</p>
     pub fn set_assign_public_ip(
         mut self,
-        input: std::option::Option<crate::types::AssignPublicIp>,
+        input: ::std::option::Option<crate::types::AssignPublicIp>,
     ) -> Self {
         self.assign_public_ip = input;
         self

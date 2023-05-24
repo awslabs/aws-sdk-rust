@@ -2,50 +2,51 @@
 
 /// <p>Information about an Direct Connect location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>The code for the location.</p>
     #[doc(hidden)]
-    pub location_code: std::option::Option<std::string::String>,
+    pub location_code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
     #[doc(hidden)]
-    pub location_name: std::option::Option<std::string::String>,
+    pub location_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for the location.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The available port speeds for the location.</p>
     #[doc(hidden)]
-    pub available_port_speeds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub available_port_speeds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the service provider for the location.</p>
     #[doc(hidden)]
-    pub available_providers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub available_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
     #[doc(hidden)]
-    pub available_mac_sec_port_speeds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub available_mac_sec_port_speeds:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Location {
     /// <p>The code for the location.</p>
-    pub fn location_code(&self) -> std::option::Option<&str> {
+    pub fn location_code(&self) -> ::std::option::Option<&str> {
         self.location_code.as_deref()
     }
     /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> ::std::option::Option<&str> {
         self.location_name.as_deref()
     }
     /// <p>The Amazon Web Services Region for the location.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The available port speeds for the location.</p>
-    pub fn available_port_speeds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn available_port_speeds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.available_port_speeds.as_deref()
     }
     /// <p>The name of the service provider for the location.</p>
-    pub fn available_providers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn available_providers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.available_providers.as_deref()
     }
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
-    pub fn available_mac_sec_port_speeds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn available_mac_sec_port_speeds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.available_mac_sec_port_speeds.as_deref()
     }
 }
@@ -58,44 +59,58 @@ impl Location {
 
 /// A builder for [`Location`](crate::types::Location).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocationBuilder {
-    pub(crate) location_code: std::option::Option<std::string::String>,
-    pub(crate) location_name: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) available_port_speeds: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) available_providers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) location_code: ::std::option::Option<::std::string::String>,
+    pub(crate) location_name: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) available_port_speeds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) available_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) available_mac_sec_port_speeds:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LocationBuilder {
     /// <p>The code for the location.</p>
-    pub fn location_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_code = Some(input.into());
+    pub fn location_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.location_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the location.</p>
-    pub fn set_location_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.location_code = input;
         self
     }
     /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
-    pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_name = Some(input.into());
+    pub fn location_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the location. This includes the name of the colocation partner and the physical site of the building.</p>
-    pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.location_name = input;
         self
     }
     /// <p>The Amazon Web Services Region for the location.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region for the location.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
@@ -104,16 +119,19 @@ impl LocationBuilder {
     /// To override the contents of this collection use [`set_available_port_speeds`](Self::set_available_port_speeds).
     ///
     /// <p>The available port speeds for the location.</p>
-    pub fn available_port_speeds(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn available_port_speeds(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.available_port_speeds.unwrap_or_default();
         v.push(input.into());
-        self.available_port_speeds = Some(v);
+        self.available_port_speeds = ::std::option::Option::Some(v);
         self
     }
     /// <p>The available port speeds for the location.</p>
     pub fn set_available_port_speeds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.available_port_speeds = input;
         self
@@ -123,16 +141,19 @@ impl LocationBuilder {
     /// To override the contents of this collection use [`set_available_providers`](Self::set_available_providers).
     ///
     /// <p>The name of the service provider for the location.</p>
-    pub fn available_providers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn available_providers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.available_providers.unwrap_or_default();
         v.push(input.into());
-        self.available_providers = Some(v);
+        self.available_providers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of the service provider for the location.</p>
     pub fn set_available_providers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.available_providers = input;
         self
@@ -142,16 +163,19 @@ impl LocationBuilder {
     /// To override the contents of this collection use [`set_available_mac_sec_port_speeds`](Self::set_available_mac_sec_port_speeds).
     ///
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
-    pub fn available_mac_sec_port_speeds(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn available_mac_sec_port_speeds(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.available_mac_sec_port_speeds.unwrap_or_default();
         v.push(input.into());
-        self.available_mac_sec_port_speeds = Some(v);
+        self.available_mac_sec_port_speeds = ::std::option::Option::Some(v);
         self
     }
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
     pub fn set_available_mac_sec_port_speeds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.available_mac_sec_port_speeds = input;
         self

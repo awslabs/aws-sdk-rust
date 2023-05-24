@@ -2,24 +2,24 @@
 
 /// <p>The media pipeline's sink configuration settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LiveConnectorSinkConfiguration {
     /// <p>The sink configuration's sink type.</p>
     #[doc(hidden)]
-    pub sink_type: std::option::Option<crate::types::LiveConnectorSinkType>,
+    pub sink_type: ::std::option::Option<crate::types::LiveConnectorSinkType>,
     /// <p>The sink configuration's RTMP configuration settings.</p>
     #[doc(hidden)]
-    pub rtmp_configuration: std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
+    pub rtmp_configuration: ::std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
 }
 impl LiveConnectorSinkConfiguration {
     /// <p>The sink configuration's sink type.</p>
-    pub fn sink_type(&self) -> std::option::Option<&crate::types::LiveConnectorSinkType> {
+    pub fn sink_type(&self) -> ::std::option::Option<&crate::types::LiveConnectorSinkType> {
         self.sink_type.as_ref()
     }
     /// <p>The sink configuration's RTMP configuration settings.</p>
     pub fn rtmp_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LiveConnectorRtmpConfiguration> {
+    ) -> ::std::option::Option<&crate::types::LiveConnectorRtmpConfiguration> {
         self.rtmp_configuration.as_ref()
     }
 }
@@ -32,22 +32,24 @@ impl LiveConnectorSinkConfiguration {
 
 /// A builder for [`LiveConnectorSinkConfiguration`](crate::types::LiveConnectorSinkConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LiveConnectorSinkConfigurationBuilder {
-    pub(crate) sink_type: std::option::Option<crate::types::LiveConnectorSinkType>,
+    pub(crate) sink_type: ::std::option::Option<crate::types::LiveConnectorSinkType>,
     pub(crate) rtmp_configuration:
-        std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
+        ::std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
 }
 impl LiveConnectorSinkConfigurationBuilder {
     /// <p>The sink configuration's sink type.</p>
     pub fn sink_type(mut self, input: crate::types::LiveConnectorSinkType) -> Self {
-        self.sink_type = Some(input);
+        self.sink_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sink configuration's sink type.</p>
     pub fn set_sink_type(
         mut self,
-        input: std::option::Option<crate::types::LiveConnectorSinkType>,
+        input: ::std::option::Option<crate::types::LiveConnectorSinkType>,
     ) -> Self {
         self.sink_type = input;
         self
@@ -57,13 +59,13 @@ impl LiveConnectorSinkConfigurationBuilder {
         mut self,
         input: crate::types::LiveConnectorRtmpConfiguration,
     ) -> Self {
-        self.rtmp_configuration = Some(input);
+        self.rtmp_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sink configuration's RTMP configuration settings.</p>
     pub fn set_rtmp_configuration(
         mut self,
-        input: std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
+        input: ::std::option::Option<crate::types::LiveConnectorRtmpConfiguration>,
     ) -> Self {
         self.rtmp_configuration = input;
         self

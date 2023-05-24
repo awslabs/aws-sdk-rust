@@ -2,29 +2,29 @@
 
 /// <p>Reservation coverage for a specified period, in hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageByTime {
     /// <p>The period that this coverage was used over.</p>
     #[doc(hidden)]
-    pub time_period: std::option::Option<crate::types::DateInterval>,
+    pub time_period: ::std::option::Option<crate::types::DateInterval>,
     /// <p>The groups of instances that the reservation covered.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<crate::types::ReservationCoverageGroup>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
     /// <p>The total reservation coverage, in hours.</p>
     #[doc(hidden)]
-    pub total: std::option::Option<crate::types::Coverage>,
+    pub total: ::std::option::Option<crate::types::Coverage>,
 }
 impl CoverageByTime {
     /// <p>The period that this coverage was used over.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The groups of instances that the reservation covered.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::ReservationCoverageGroup]> {
+    pub fn groups(&self) -> ::std::option::Option<&[crate::types::ReservationCoverageGroup]> {
         self.groups.as_deref()
     }
     /// <p>The total reservation coverage, in hours.</p>
-    pub fn total(&self) -> std::option::Option<&crate::types::Coverage> {
+    pub fn total(&self) -> ::std::option::Option<&crate::types::Coverage> {
         self.total.as_ref()
     }
 }
@@ -37,22 +37,25 @@ impl CoverageByTime {
 
 /// A builder for [`CoverageByTime`](crate::types::CoverageByTime).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoverageByTimeBuilder {
-    pub(crate) time_period: std::option::Option<crate::types::DateInterval>,
-    pub(crate) groups: std::option::Option<std::vec::Vec<crate::types::ReservationCoverageGroup>>,
-    pub(crate) total: std::option::Option<crate::types::Coverage>,
+    pub(crate) time_period: ::std::option::Option<crate::types::DateInterval>,
+    pub(crate) groups:
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
+    pub(crate) total: ::std::option::Option<crate::types::Coverage>,
 }
 impl CoverageByTimeBuilder {
     /// <p>The period that this coverage was used over.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
-        self.time_period = Some(input);
+        self.time_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period that this coverage was used over.</p>
     pub fn set_time_period(
         mut self,
-        input: std::option::Option<crate::types::DateInterval>,
+        input: ::std::option::Option<crate::types::DateInterval>,
     ) -> Self {
         self.time_period = input;
         self
@@ -65,24 +68,24 @@ impl CoverageByTimeBuilder {
     pub fn groups(mut self, input: crate::types::ReservationCoverageGroup) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input);
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The groups of instances that the reservation covered.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservationCoverageGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservationCoverageGroup>>,
     ) -> Self {
         self.groups = input;
         self
     }
     /// <p>The total reservation coverage, in hours.</p>
     pub fn total(mut self, input: crate::types::Coverage) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total reservation coverage, in hours.</p>
-    pub fn set_total(mut self, input: std::option::Option<crate::types::Coverage>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<crate::types::Coverage>) -> Self {
         self.total = input;
         self
     }

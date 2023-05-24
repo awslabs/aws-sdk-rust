@@ -2,34 +2,34 @@
 
 /// <p>Provides the current status of the Auto-Tune options. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneStatus {
     /// <p>Timestamp which tells Auto-Tune options creation date .</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp which tells Auto-Tune options last updated time.</p>
     #[doc(hidden)]
-    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the Auto-Tune options latest version.</p>
     #[doc(hidden)]
     pub update_version: i32,
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::AutoTuneState>,
+    pub state: ::std::option::Option<crate::types::AutoTuneState>,
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune options.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
     #[doc(hidden)]
-    pub pending_deletion: std::option::Option<bool>,
+    pub pending_deletion: ::std::option::Option<bool>,
 }
 impl AutoTuneStatus {
     /// <p>Timestamp which tells Auto-Tune options creation date .</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Timestamp which tells Auto-Tune options last updated time.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>Specifies the Auto-Tune options latest version.</p>
@@ -37,15 +37,15 @@ impl AutoTuneStatus {
         self.update_version
     }
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::AutoTuneState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::AutoTuneState> {
         self.state.as_ref()
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune options.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
-    pub fn pending_deletion(&self) -> std::option::Option<bool> {
+    pub fn pending_deletion(&self) -> ::std::option::Option<bool> {
         self.pending_deletion
     }
 }
@@ -58,79 +58,87 @@ impl AutoTuneStatus {
 
 /// A builder for [`AutoTuneStatus`](crate::types::AutoTuneStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoTuneStatusBuilder {
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_version: std::option::Option<i32>,
-    pub(crate) state: std::option::Option<crate::types::AutoTuneState>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) pending_deletion: std::option::Option<bool>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_version: ::std::option::Option<i32>,
+    pub(crate) state: ::std::option::Option<crate::types::AutoTuneState>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) pending_deletion: ::std::option::Option<bool>,
 }
 impl AutoTuneStatusBuilder {
     /// <p>Timestamp which tells Auto-Tune options creation date .</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp which tells Auto-Tune options creation date .</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>Timestamp which tells Auto-Tune options last updated time.</p>
-    pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_date = Some(input);
+    pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp which tells Auto-Tune options last updated time.</p>
     pub fn set_update_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_date = input;
         self
     }
     /// <p>Specifies the Auto-Tune options latest version.</p>
     pub fn update_version(mut self, input: i32) -> Self {
-        self.update_version = Some(input);
+        self.update_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the Auto-Tune options latest version.</p>
-    pub fn set_update_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_update_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.update_version = input;
         self
     }
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
     pub fn state(mut self, input: crate::types::AutoTuneState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::AutoTuneState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AutoTuneState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune options.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the error message while enabling or disabling the Auto-Tune options.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
     pub fn pending_deletion(mut self, input: bool) -> Self {
-        self.pending_deletion = Some(input);
+        self.pending_deletion = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the Elasticsearch domain is being deleted.</p>
-    pub fn set_pending_deletion(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_pending_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pending_deletion = input;
         self
     }

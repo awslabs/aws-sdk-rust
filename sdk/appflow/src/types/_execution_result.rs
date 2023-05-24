@@ -2,36 +2,36 @@
 
 /// <p> Specifies the end result of the flow run. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionResult {
     /// <p> Provides any error message information related to the flow run. </p>
     #[doc(hidden)]
-    pub error_info: std::option::Option<crate::types::ErrorInfo>,
+    pub error_info: ::std::option::Option<crate::types::ErrorInfo>,
     /// <p> The total number of bytes processed by the flow run. </p>
     #[doc(hidden)]
-    pub bytes_processed: std::option::Option<i64>,
+    pub bytes_processed: ::std::option::Option<i64>,
     /// <p> The total number of bytes written as a result of the flow run. </p>
     #[doc(hidden)]
-    pub bytes_written: std::option::Option<i64>,
+    pub bytes_written: ::std::option::Option<i64>,
     /// <p> The number of records processed in the flow run. </p>
     #[doc(hidden)]
-    pub records_processed: std::option::Option<i64>,
+    pub records_processed: ::std::option::Option<i64>,
 }
 impl ExecutionResult {
     /// <p> Provides any error message information related to the flow run. </p>
-    pub fn error_info(&self) -> std::option::Option<&crate::types::ErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<&crate::types::ErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p> The total number of bytes processed by the flow run. </p>
-    pub fn bytes_processed(&self) -> std::option::Option<i64> {
+    pub fn bytes_processed(&self) -> ::std::option::Option<i64> {
         self.bytes_processed
     }
     /// <p> The total number of bytes written as a result of the flow run. </p>
-    pub fn bytes_written(&self) -> std::option::Option<i64> {
+    pub fn bytes_written(&self) -> ::std::option::Option<i64> {
         self.bytes_written
     }
     /// <p> The number of records processed in the flow run. </p>
-    pub fn records_processed(&self) -> std::option::Option<i64> {
+    pub fn records_processed(&self) -> ::std::option::Option<i64> {
         self.records_processed
     }
 }
@@ -44,51 +44,53 @@ impl ExecutionResult {
 
 /// A builder for [`ExecutionResult`](crate::types::ExecutionResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutionResultBuilder {
-    pub(crate) error_info: std::option::Option<crate::types::ErrorInfo>,
-    pub(crate) bytes_processed: std::option::Option<i64>,
-    pub(crate) bytes_written: std::option::Option<i64>,
-    pub(crate) records_processed: std::option::Option<i64>,
+    pub(crate) error_info: ::std::option::Option<crate::types::ErrorInfo>,
+    pub(crate) bytes_processed: ::std::option::Option<i64>,
+    pub(crate) bytes_written: ::std::option::Option<i64>,
+    pub(crate) records_processed: ::std::option::Option<i64>,
 }
 impl ExecutionResultBuilder {
     /// <p> Provides any error message information related to the flow run. </p>
     pub fn error_info(mut self, input: crate::types::ErrorInfo) -> Self {
-        self.error_info = Some(input);
+        self.error_info = ::std::option::Option::Some(input);
         self
     }
     /// <p> Provides any error message information related to the flow run. </p>
-    pub fn set_error_info(mut self, input: std::option::Option<crate::types::ErrorInfo>) -> Self {
+    pub fn set_error_info(mut self, input: ::std::option::Option<crate::types::ErrorInfo>) -> Self {
         self.error_info = input;
         self
     }
     /// <p> The total number of bytes processed by the flow run. </p>
     pub fn bytes_processed(mut self, input: i64) -> Self {
-        self.bytes_processed = Some(input);
+        self.bytes_processed = ::std::option::Option::Some(input);
         self
     }
     /// <p> The total number of bytes processed by the flow run. </p>
-    pub fn set_bytes_processed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_processed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_processed = input;
         self
     }
     /// <p> The total number of bytes written as a result of the flow run. </p>
     pub fn bytes_written(mut self, input: i64) -> Self {
-        self.bytes_written = Some(input);
+        self.bytes_written = ::std::option::Option::Some(input);
         self
     }
     /// <p> The total number of bytes written as a result of the flow run. </p>
-    pub fn set_bytes_written(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_written(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_written = input;
         self
     }
     /// <p> The number of records processed in the flow run. </p>
     pub fn records_processed(mut self, input: i64) -> Self {
-        self.records_processed = Some(input);
+        self.records_processed = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of records processed in the flow run. </p>
-    pub fn set_records_processed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_records_processed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.records_processed = input;
         self
     }

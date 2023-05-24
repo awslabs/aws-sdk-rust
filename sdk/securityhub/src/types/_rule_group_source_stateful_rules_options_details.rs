@@ -2,22 +2,22 @@
 
 /// <p>A rule option for a stateful rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatefulRulesOptionsDetails {
     /// <p>A keyword to look for.</p>
     #[doc(hidden)]
-    pub keyword: std::option::Option<std::string::String>,
+    pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>A list of settings.</p>
     #[doc(hidden)]
-    pub settings: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub settings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleGroupSourceStatefulRulesOptionsDetails {
     /// <p>A keyword to look for.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> ::std::option::Option<&str> {
         self.keyword.as_deref()
     }
     /// <p>A list of settings.</p>
-    pub fn settings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn settings(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.settings.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl RuleGroupSourceStatefulRulesOptionsDetails {
 
 /// A builder for [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::types::RuleGroupSourceStatefulRulesOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupSourceStatefulRulesOptionsDetailsBuilder {
-    pub(crate) keyword: std::option::Option<std::string::String>,
-    pub(crate) settings: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) keyword: ::std::option::Option<::std::string::String>,
+    pub(crate) settings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleGroupSourceStatefulRulesOptionsDetailsBuilder {
     /// <p>A keyword to look for.</p>
-    pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
-        self.keyword = Some(input.into());
+    pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.keyword = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A keyword to look for.</p>
-    pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyword = input;
         self
     }
@@ -51,16 +53,16 @@ impl RuleGroupSourceStatefulRulesOptionsDetailsBuilder {
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
     ///
     /// <p>A list of settings.</p>
-    pub fn settings(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.settings.unwrap_or_default();
         v.push(input.into());
-        self.settings = Some(v);
+        self.settings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of settings.</p>
     pub fn set_settings(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.settings = input;
         self

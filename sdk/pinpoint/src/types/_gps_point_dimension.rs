@@ -2,22 +2,22 @@
 
 /// <p>Specifies GPS-based criteria for including or excluding endpoints from a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpsPointDimension {
     /// <p>The GPS coordinates to measure distance from.</p>
     #[doc(hidden)]
-    pub coordinates: std::option::Option<crate::types::GpsCoordinates>,
+    pub coordinates: ::std::option::Option<crate::types::GpsCoordinates>,
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
     #[doc(hidden)]
-    pub range_in_kilometers: std::option::Option<f64>,
+    pub range_in_kilometers: ::std::option::Option<f64>,
 }
 impl GpsPointDimension {
     /// <p>The GPS coordinates to measure distance from.</p>
-    pub fn coordinates(&self) -> std::option::Option<&crate::types::GpsCoordinates> {
+    pub fn coordinates(&self) -> ::std::option::Option<&crate::types::GpsCoordinates> {
         self.coordinates.as_ref()
     }
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
-    pub fn range_in_kilometers(&self) -> std::option::Option<f64> {
+    pub fn range_in_kilometers(&self) -> ::std::option::Option<f64> {
         self.range_in_kilometers
     }
 }
@@ -30,32 +30,34 @@ impl GpsPointDimension {
 
 /// A builder for [`GpsPointDimension`](crate::types::GpsPointDimension).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GpsPointDimensionBuilder {
-    pub(crate) coordinates: std::option::Option<crate::types::GpsCoordinates>,
-    pub(crate) range_in_kilometers: std::option::Option<f64>,
+    pub(crate) coordinates: ::std::option::Option<crate::types::GpsCoordinates>,
+    pub(crate) range_in_kilometers: ::std::option::Option<f64>,
 }
 impl GpsPointDimensionBuilder {
     /// <p>The GPS coordinates to measure distance from.</p>
     pub fn coordinates(mut self, input: crate::types::GpsCoordinates) -> Self {
-        self.coordinates = Some(input);
+        self.coordinates = ::std::option::Option::Some(input);
         self
     }
     /// <p>The GPS coordinates to measure distance from.</p>
     pub fn set_coordinates(
         mut self,
-        input: std::option::Option<crate::types::GpsCoordinates>,
+        input: ::std::option::Option<crate::types::GpsCoordinates>,
     ) -> Self {
         self.coordinates = input;
         self
     }
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
     pub fn range_in_kilometers(mut self, input: f64) -> Self {
-        self.range_in_kilometers = Some(input);
+        self.range_in_kilometers = ::std::option::Option::Some(input);
         self
     }
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
-    pub fn set_range_in_kilometers(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_range_in_kilometers(mut self, input: ::std::option::Option<f64>) -> Self {
         self.range_in_kilometers = input;
         self
     }

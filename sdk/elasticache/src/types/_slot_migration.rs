@@ -2,7 +2,7 @@
 
 /// <p>Represents the progress of an online resharding operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotMigration {
     /// <p>The percentage of the slot migration that is complete.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl SlotMigration {
 
 /// A builder for [`SlotMigration`](crate::types::SlotMigration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlotMigrationBuilder {
-    pub(crate) progress_percentage: std::option::Option<f64>,
+    pub(crate) progress_percentage: ::std::option::Option<f64>,
 }
 impl SlotMigrationBuilder {
     /// <p>The percentage of the slot migration that is complete.</p>
     pub fn progress_percentage(mut self, input: f64) -> Self {
-        self.progress_percentage = Some(input);
+        self.progress_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of the slot migration that is complete.</p>
-    pub fn set_progress_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_progress_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.progress_percentage = input;
         self
     }

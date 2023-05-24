@@ -2,50 +2,50 @@
 
 /// <p>Describes the Amazon Cognito user pool configuration for the authorization resource to be configured for your Amplify project on an update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub forgot_password: std::option::Option<crate::types::UpdateBackendAuthForgotPasswordConfig>,
+    pub forgot_password: ::std::option::Option<crate::types::UpdateBackendAuthForgotPasswordConfig>,
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub mfa: std::option::Option<crate::types::UpdateBackendAuthMfaConfig>,
+    pub mfa: ::std::option::Option<crate::types::UpdateBackendAuthMfaConfig>,
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub o_auth: std::option::Option<crate::types::UpdateBackendAuthOAuthConfig>,
+    pub o_auth: ::std::option::Option<crate::types::UpdateBackendAuthOAuthConfig>,
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub password_policy: std::option::Option<crate::types::UpdateBackendAuthPasswordPolicyConfig>,
+    pub password_policy: ::std::option::Option<crate::types::UpdateBackendAuthPasswordPolicyConfig>,
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
     pub verification_message:
-        std::option::Option<crate::types::UpdateBackendAuthVerificationMessageConfig>,
+        ::std::option::Option<crate::types::UpdateBackendAuthVerificationMessageConfig>,
 }
 impl UpdateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn forgot_password(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateBackendAuthForgotPasswordConfig> {
+    ) -> ::std::option::Option<&crate::types::UpdateBackendAuthForgotPasswordConfig> {
         self.forgot_password.as_ref()
     }
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
-    pub fn mfa(&self) -> std::option::Option<&crate::types::UpdateBackendAuthMfaConfig> {
+    pub fn mfa(&self) -> ::std::option::Option<&crate::types::UpdateBackendAuthMfaConfig> {
         self.mfa.as_ref()
     }
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn o_auth(&self) -> std::option::Option<&crate::types::UpdateBackendAuthOAuthConfig> {
+    pub fn o_auth(&self) -> ::std::option::Option<&crate::types::UpdateBackendAuthOAuthConfig> {
         self.o_auth.as_ref()
     }
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn password_policy(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateBackendAuthPasswordPolicyConfig> {
+    ) -> ::std::option::Option<&crate::types::UpdateBackendAuthPasswordPolicyConfig> {
         self.password_policy.as_ref()
     }
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn verification_message(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateBackendAuthVerificationMessageConfig> {
+    ) -> ::std::option::Option<&crate::types::UpdateBackendAuthVerificationMessageConfig> {
         self.verification_message.as_ref()
     }
 }
@@ -58,16 +58,18 @@ impl UpdateBackendAuthUserPoolConfig {
 
 /// A builder for [`UpdateBackendAuthUserPoolConfig`](crate::types::UpdateBackendAuthUserPoolConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateBackendAuthUserPoolConfigBuilder {
     pub(crate) forgot_password:
-        std::option::Option<crate::types::UpdateBackendAuthForgotPasswordConfig>,
-    pub(crate) mfa: std::option::Option<crate::types::UpdateBackendAuthMfaConfig>,
-    pub(crate) o_auth: std::option::Option<crate::types::UpdateBackendAuthOAuthConfig>,
+        ::std::option::Option<crate::types::UpdateBackendAuthForgotPasswordConfig>,
+    pub(crate) mfa: ::std::option::Option<crate::types::UpdateBackendAuthMfaConfig>,
+    pub(crate) o_auth: ::std::option::Option<crate::types::UpdateBackendAuthOAuthConfig>,
     pub(crate) password_policy:
-        std::option::Option<crate::types::UpdateBackendAuthPasswordPolicyConfig>,
+        ::std::option::Option<crate::types::UpdateBackendAuthPasswordPolicyConfig>,
     pub(crate) verification_message:
-        std::option::Option<crate::types::UpdateBackendAuthVerificationMessageConfig>,
+        ::std::option::Option<crate::types::UpdateBackendAuthVerificationMessageConfig>,
 }
 impl UpdateBackendAuthUserPoolConfigBuilder {
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
@@ -75,39 +77,39 @@ impl UpdateBackendAuthUserPoolConfigBuilder {
         mut self,
         input: crate::types::UpdateBackendAuthForgotPasswordConfig,
     ) -> Self {
-        self.forgot_password = Some(input);
+        self.forgot_password = ::std::option::Option::Some(input);
         self
     }
     /// <p><b>(DEPRECATED)</b> Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_forgot_password(
         mut self,
-        input: std::option::Option<crate::types::UpdateBackendAuthForgotPasswordConfig>,
+        input: ::std::option::Option<crate::types::UpdateBackendAuthForgotPasswordConfig>,
     ) -> Self {
         self.forgot_password = input;
         self
     }
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     pub fn mfa(mut self, input: crate::types::UpdateBackendAuthMfaConfig) -> Self {
-        self.mfa = Some(input);
+        self.mfa = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     pub fn set_mfa(
         mut self,
-        input: std::option::Option<crate::types::UpdateBackendAuthMfaConfig>,
+        input: ::std::option::Option<crate::types::UpdateBackendAuthMfaConfig>,
     ) -> Self {
         self.mfa = input;
         self
     }
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn o_auth(mut self, input: crate::types::UpdateBackendAuthOAuthConfig) -> Self {
-        self.o_auth = Some(input);
+        self.o_auth = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_o_auth(
         mut self,
-        input: std::option::Option<crate::types::UpdateBackendAuthOAuthConfig>,
+        input: ::std::option::Option<crate::types::UpdateBackendAuthOAuthConfig>,
     ) -> Self {
         self.o_auth = input;
         self
@@ -117,13 +119,13 @@ impl UpdateBackendAuthUserPoolConfigBuilder {
         mut self,
         input: crate::types::UpdateBackendAuthPasswordPolicyConfig,
     ) -> Self {
-        self.password_policy = Some(input);
+        self.password_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_password_policy(
         mut self,
-        input: std::option::Option<crate::types::UpdateBackendAuthPasswordPolicyConfig>,
+        input: ::std::option::Option<crate::types::UpdateBackendAuthPasswordPolicyConfig>,
     ) -> Self {
         self.password_policy = input;
         self
@@ -133,13 +135,13 @@ impl UpdateBackendAuthUserPoolConfigBuilder {
         mut self,
         input: crate::types::UpdateBackendAuthVerificationMessageConfig,
     ) -> Self {
-        self.verification_message = Some(input);
+        self.verification_message = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_verification_message(
         mut self,
-        input: std::option::Option<crate::types::UpdateBackendAuthVerificationMessageConfig>,
+        input: ::std::option::Option<crate::types::UpdateBackendAuthVerificationMessageConfig>,
     ) -> Self {
         self.verification_message = input;
         self

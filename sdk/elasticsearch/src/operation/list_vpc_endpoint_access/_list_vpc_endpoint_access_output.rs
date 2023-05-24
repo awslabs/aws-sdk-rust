@@ -2,30 +2,30 @@
 
 /// <p>Container for response parameters to the <code><code>ListVpcEndpointAccess</code></code> operation. Returns a list of accounts id and account type authorized to manage VPC endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcEndpointAccessOutput {
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
     #[doc(hidden)]
     pub authorized_principal_list:
-        std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVpcEndpointAccessOutput {
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
     pub fn authorized_principal_list(
         &self,
-    ) -> std::option::Option<&[crate::types::AuthorizedPrincipal]> {
+    ) -> ::std::option::Option<&[crate::types::AuthorizedPrincipal]> {
         self.authorized_principal_list.as_deref()
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListVpcEndpointAccessOutput {
+impl ::aws_http::request_id::RequestId for ListVpcEndpointAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl ListVpcEndpointAccessOutput {
 
 /// A builder for [`ListVpcEndpointAccessOutput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListVpcEndpointAccessOutputBuilder {
     pub(crate) authorized_principal_list:
-        std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVpcEndpointAccessOutputBuilder {
@@ -57,24 +59,24 @@ impl ListVpcEndpointAccessOutputBuilder {
     pub fn authorized_principal_list(mut self, input: crate::types::AuthorizedPrincipal) -> Self {
         let mut v = self.authorized_principal_list.unwrap_or_default();
         v.push(input);
-        self.authorized_principal_list = Some(v);
+        self.authorized_principal_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of <code>AuthorizedPrincipal</code> describing the details of the permissions to manage VPC endpoints against the specified domain.</p>
     pub fn set_authorized_principal_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedPrincipal>>,
     ) -> Self {
         self.authorized_principal_list = input;
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

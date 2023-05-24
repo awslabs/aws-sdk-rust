@@ -2,18 +2,18 @@
 
 /// <p>Defines how Network Firewall performs logging for a <code>Firewall</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups. </p>
     #[doc(hidden)]
     pub log_destination_configs:
-        std::option::Option<std::vec::Vec<crate::types::LogDestinationConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LogDestinationConfig>>,
 }
 impl LoggingConfiguration {
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups. </p>
     pub fn log_destination_configs(
         &self,
-    ) -> std::option::Option<&[crate::types::LogDestinationConfig]> {
+    ) -> ::std::option::Option<&[crate::types::LogDestinationConfig]> {
         self.log_destination_configs.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl LoggingConfiguration {
 
 /// A builder for [`LoggingConfiguration`](crate::types::LoggingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingConfigurationBuilder {
     pub(crate) log_destination_configs:
-        std::option::Option<std::vec::Vec<crate::types::LogDestinationConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LogDestinationConfig>>,
 }
 impl LoggingConfigurationBuilder {
     /// Appends an item to `log_destination_configs`.
@@ -40,13 +42,13 @@ impl LoggingConfigurationBuilder {
     pub fn log_destination_configs(mut self, input: crate::types::LogDestinationConfig) -> Self {
         let mut v = self.log_destination_configs.unwrap_or_default();
         v.push(input);
-        self.log_destination_configs = Some(v);
+        self.log_destination_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates logs for stateful rule groups. </p>
     pub fn set_log_destination_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogDestinationConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDestinationConfig>>,
     ) -> Self {
         self.log_destination_configs = input;
         self

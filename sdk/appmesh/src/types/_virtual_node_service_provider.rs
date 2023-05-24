@@ -2,15 +2,15 @@
 
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
     #[doc(hidden)]
-    pub virtual_node_name: std::option::Option<std::string::String>,
+    pub virtual_node_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
-    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_node_name(&self) -> ::std::option::Option<&str> {
         self.virtual_node_name.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl VirtualNodeServiceProvider {
 
 /// A builder for [`VirtualNodeServiceProvider`](crate::types::VirtualNodeServiceProvider).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualNodeServiceProviderBuilder {
-    pub(crate) virtual_node_name: std::option::Option<std::string::String>,
+    pub(crate) virtual_node_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualNodeServiceProviderBuilder {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
-    pub fn virtual_node_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_node_name = Some(input.into());
+    pub fn virtual_node_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_node_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the virtual node that is acting as a service provider.</p>
     pub fn set_virtual_node_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_node_name = input;
         self

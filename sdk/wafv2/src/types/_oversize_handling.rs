@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OversizeHandling {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum OversizeHandling {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OversizeHandling {
+impl ::std::convert::From<&str> for OversizeHandling {
     fn from(s: &str) -> Self {
         match s {
             "CONTINUE" => OversizeHandling::Continue,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for OversizeHandling {
         }
     }
 }
-impl std::str::FromStr for OversizeHandling {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OversizeHandling {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OversizeHandling::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OversizeHandling::from(s))
     }
 }
 impl OversizeHandling {
@@ -91,7 +91,7 @@ impl OversizeHandling {
         &["CONTINUE", "MATCH", "NO_MATCH"]
     }
 }
-impl AsRef<str> for OversizeHandling {
+impl ::std::convert::AsRef<str> for OversizeHandling {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

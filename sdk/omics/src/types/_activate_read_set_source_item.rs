@@ -2,29 +2,29 @@
 
 /// <p>A source for a read set activation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateReadSetSourceItem {
     /// <p>The source's read set ID.</p>
     #[doc(hidden)]
-    pub read_set_id: std::option::Option<std::string::String>,
+    pub read_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The source's status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
+    pub status: ::std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
     /// <p>The source's status message.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ActivateReadSetSourceItem {
     /// <p>The source's read set ID.</p>
-    pub fn read_set_id(&self) -> std::option::Option<&str> {
+    pub fn read_set_id(&self) -> ::std::option::Option<&str> {
         self.read_set_id.as_deref()
     }
     /// <p>The source's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReadSetActivationJobItemStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetActivationJobItemStatus> {
         self.status.as_ref()
     }
     /// <p>The source's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl ActivateReadSetSourceItem {
 
 /// A builder for [`ActivateReadSetSourceItem`](crate::types::ActivateReadSetSourceItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActivateReadSetSourceItemBuilder {
-    pub(crate) read_set_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) read_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl ActivateReadSetSourceItemBuilder {
     /// <p>The source's read set ID.</p>
-    pub fn read_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.read_set_id = Some(input.into());
+    pub fn read_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.read_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's read set ID.</p>
-    pub fn set_read_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_read_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.read_set_id = input;
         self
     }
     /// <p>The source's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetActivationJobItemStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source's status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
+        input: ::std::option::Option<crate::types::ReadSetActivationJobItemStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The source's status message.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source's status message.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

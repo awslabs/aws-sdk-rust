@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IpamDiscoveryFailureCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum IpamDiscoveryFailureCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IpamDiscoveryFailureCode {
+impl ::std::convert::From<&str> for IpamDiscoveryFailureCode {
     fn from(s: &str) -> Self {
         match s {
             "assume-role-failure" => IpamDiscoveryFailureCode::AssumeRoleFailure,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for IpamDiscoveryFailureCode {
         }
     }
 }
-impl std::str::FromStr for IpamDiscoveryFailureCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IpamDiscoveryFailureCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IpamDiscoveryFailureCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IpamDiscoveryFailureCode::from(s))
     }
 }
 impl IpamDiscoveryFailureCode {
@@ -95,7 +95,7 @@ impl IpamDiscoveryFailureCode {
         ]
     }
 }
-impl AsRef<str> for IpamDiscoveryFailureCode {
+impl ::std::convert::AsRef<str> for IpamDiscoveryFailureCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>The discovery failure reason.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamDiscoveryFailureReason {
     /// <p>The discovery failure code.</p>
     /// <ul>
@@ -16,10 +16,10 @@ pub struct IpamDiscoveryFailureReason {
     /// <li> <p> <code>unauthorized-failure</code> - Amazon Web Services account making the request is not authorized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">AuthFailure</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::IpamDiscoveryFailureCode>,
+    pub code: ::std::option::Option<crate::types::IpamDiscoveryFailureCode>,
     /// <p>The discovery failure message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl IpamDiscoveryFailureReason {
     /// <p>The discovery failure code.</p>
@@ -33,11 +33,11 @@ impl IpamDiscoveryFailureReason {
     /// <li> <p> <code>throttling-failure</code> - IPAM account is already using the allotted transactions per second and IPAM is receiving a throttling error when assuming the Amazon Web Services IAM SLR.</p> </li>
     /// <li> <p> <code>unauthorized-failure</code> - Amazon Web Services account making the request is not authorized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">AuthFailure</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&crate::types::IpamDiscoveryFailureCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::IpamDiscoveryFailureCode> {
         self.code.as_ref()
     }
     /// <p>The discovery failure message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -50,10 +50,12 @@ impl IpamDiscoveryFailureReason {
 
 /// A builder for [`IpamDiscoveryFailureReason`](crate::types::IpamDiscoveryFailureReason).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpamDiscoveryFailureReasonBuilder {
-    pub(crate) code: std::option::Option<crate::types::IpamDiscoveryFailureCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::IpamDiscoveryFailureCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl IpamDiscoveryFailureReasonBuilder {
     /// <p>The discovery failure code.</p>
@@ -68,7 +70,7 @@ impl IpamDiscoveryFailureReasonBuilder {
     /// <li> <p> <code>unauthorized-failure</code> - Amazon Web Services account making the request is not authorized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">AuthFailure</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::IpamDiscoveryFailureCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The discovery failure code.</p>
@@ -84,18 +86,18 @@ impl IpamDiscoveryFailureReasonBuilder {
     /// </ul>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::IpamDiscoveryFailureCode>,
+        input: ::std::option::Option<crate::types::IpamDiscoveryFailureCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>The discovery failure message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The discovery failure message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

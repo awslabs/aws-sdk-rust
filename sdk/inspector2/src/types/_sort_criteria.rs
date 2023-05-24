@@ -2,22 +2,22 @@
 
 /// <p>Details about the criteria used to sort finding results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortCriteria {
     /// <p>The finding detail field by which results are sorted.</p>
     #[doc(hidden)]
-    pub field: std::option::Option<crate::types::SortField>,
+    pub field: ::std::option::Option<crate::types::SortField>,
     /// <p>The order by which findings are sorted.</p>
     #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::types::SortOrder>,
+    pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SortCriteria {
     /// <p>The finding detail field by which results are sorted.</p>
-    pub fn field(&self) -> std::option::Option<&crate::types::SortField> {
+    pub fn field(&self) -> ::std::option::Option<&crate::types::SortField> {
         self.field.as_ref()
     }
     /// <p>The order by which findings are sorted.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl SortCriteria {
 
 /// A builder for [`SortCriteria`](crate::types::SortCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SortCriteriaBuilder {
-    pub(crate) field: std::option::Option<crate::types::SortField>,
-    pub(crate) sort_order: std::option::Option<crate::types::SortOrder>,
+    pub(crate) field: ::std::option::Option<crate::types::SortField>,
+    pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SortCriteriaBuilder {
     /// <p>The finding detail field by which results are sorted.</p>
     pub fn field(mut self, input: crate::types::SortField) -> Self {
-        self.field = Some(input);
+        self.field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The finding detail field by which results are sorted.</p>
-    pub fn set_field(mut self, input: std::option::Option<crate::types::SortField>) -> Self {
+    pub fn set_field(mut self, input: ::std::option::Option<crate::types::SortField>) -> Self {
         self.field = input;
         self
     }
     /// <p>The order by which findings are sorted.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
-        self.sort_order = Some(input);
+        self.sort_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order by which findings are sorted.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }

@@ -2,43 +2,43 @@
 
 /// <p>Lists a summary of the properties of a lineage group. A lineage group provides a group of shareable lineage entity resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineageGroupSummary {
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
     #[doc(hidden)]
-    pub lineage_group_arn: std::option::Option<std::string::String>,
+    pub lineage_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     #[doc(hidden)]
-    pub lineage_group_name: std::option::Option<std::string::String>,
+    pub lineage_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the lineage group summary.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time of the lineage group summary.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified time of the lineage group summary.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LineageGroupSummary {
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
-    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+    pub fn lineage_group_arn(&self) -> ::std::option::Option<&str> {
         self.lineage_group_arn.as_deref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_name(&self) -> std::option::Option<&str> {
+    pub fn lineage_group_name(&self) -> ::std::option::Option<&str> {
         self.lineage_group_name.as_deref()
     }
     /// <p>The display name of the lineage group summary.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The creation time of the lineage group summary.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last modified time of the lineage group summary.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -51,73 +51,81 @@ impl LineageGroupSummary {
 
 /// A builder for [`LineageGroupSummary`](crate::types::LineageGroupSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LineageGroupSummaryBuilder {
-    pub(crate) lineage_group_arn: std::option::Option<std::string::String>,
-    pub(crate) lineage_group_name: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) lineage_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) lineage_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LineageGroupSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
-    pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lineage_group_arn = Some(input.into());
+    pub fn lineage_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lineage_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group resource.</p>
     pub fn set_lineage_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lineage_group_arn = input;
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lineage_group_name = Some(input.into());
+    pub fn lineage_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lineage_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn set_lineage_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lineage_group_name = input;
         self
     }
     /// <p>The display name of the lineage group summary.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the lineage group summary.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>The creation time of the lineage group summary.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation time of the lineage group summary.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last modified time of the lineage group summary.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last modified time of the lineage group summary.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self

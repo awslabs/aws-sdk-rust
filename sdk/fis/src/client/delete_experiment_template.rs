@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteExperimentTemplate`](crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateFluentBuilder::set_id): <p>The ID of the experiment template.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateFluentBuilder::set_id): <p>The ID of the experiment template.</p>
     /// - On success, responds with [`DeleteExperimentTemplateOutput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput) with field(s):
     ///   - [`experiment_template(Option<ExperimentTemplate>)`](crate::operation::delete_experiment_template::DeleteExperimentTemplateOutput::experiment_template): <p>Information about the experiment template.</p>
     /// - On failure, responds with [`SdkError<DeleteExperimentTemplateError>`](crate::operation::delete_experiment_template::DeleteExperimentTemplateError)

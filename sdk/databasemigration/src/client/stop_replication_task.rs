@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopReplicationTask`](crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder::set_replication_task_arn): <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
+    ///   - [`replication_task_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::operation::stop_replication_task::builders::StopReplicationTaskFluentBuilder::set_replication_task_arn): <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
     /// - On success, responds with [`StopReplicationTaskOutput`](crate::operation::stop_replication_task::StopReplicationTaskOutput) with field(s):
     ///   - [`replication_task(Option<ReplicationTask>)`](crate::operation::stop_replication_task::StopReplicationTaskOutput::replication_task): <p>The replication task stopped.</p>
     /// - On failure, responds with [`SdkError<StopReplicationTaskError>`](crate::operation::stop_replication_task::StopReplicationTaskError)

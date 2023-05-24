@@ -3,24 +3,24 @@
 /// <p>The configuration for a grid layout. Also called a tiled layout.</p>
 /// <p>Visuals snap to a grid with standard spacing and alignment. Dashboards are displayed as designed, with options to fit to screen or view at actual size.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GridLayoutConfiguration {
     /// <p>The elements that are included in a grid layout.</p>
     #[doc(hidden)]
-    pub elements: std::option::Option<std::vec::Vec<crate::types::GridLayoutElement>>,
+    pub elements: ::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>>,
     /// <p>Configuration options for the canvas of a grid layout.</p>
     #[doc(hidden)]
-    pub canvas_size_options: std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
+    pub canvas_size_options: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
 }
 impl GridLayoutConfiguration {
     /// <p>The elements that are included in a grid layout.</p>
-    pub fn elements(&self) -> std::option::Option<&[crate::types::GridLayoutElement]> {
+    pub fn elements(&self) -> ::std::option::Option<&[crate::types::GridLayoutElement]> {
         self.elements.as_deref()
     }
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub fn canvas_size_options(
         &self,
-    ) -> std::option::Option<&crate::types::GridLayoutCanvasSizeOptions> {
+    ) -> ::std::option::Option<&crate::types::GridLayoutCanvasSizeOptions> {
         self.canvas_size_options.as_ref()
     }
 }
@@ -33,10 +33,13 @@ impl GridLayoutConfiguration {
 
 /// A builder for [`GridLayoutConfiguration`](crate::types::GridLayoutConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GridLayoutConfigurationBuilder {
-    pub(crate) elements: std::option::Option<std::vec::Vec<crate::types::GridLayoutElement>>,
-    pub(crate) canvas_size_options: std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
+    pub(crate) elements: ::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>>,
+    pub(crate) canvas_size_options:
+        ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
 }
 impl GridLayoutConfigurationBuilder {
     /// Appends an item to `elements`.
@@ -47,26 +50,26 @@ impl GridLayoutConfigurationBuilder {
     pub fn elements(mut self, input: crate::types::GridLayoutElement) -> Self {
         let mut v = self.elements.unwrap_or_default();
         v.push(input);
-        self.elements = Some(v);
+        self.elements = ::std::option::Option::Some(v);
         self
     }
     /// <p>The elements that are included in a grid layout.</p>
     pub fn set_elements(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GridLayoutElement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GridLayoutElement>>,
     ) -> Self {
         self.elements = input;
         self
     }
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub fn canvas_size_options(mut self, input: crate::types::GridLayoutCanvasSizeOptions) -> Self {
-        self.canvas_size_options = Some(input);
+        self.canvas_size_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration options for the canvas of a grid layout.</p>
     pub fn set_canvas_size_options(
         mut self,
-        input: std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
+        input: ::std::option::Option<crate::types::GridLayoutCanvasSizeOptions>,
     ) -> Self {
         self.canvas_size_options = input;
         self

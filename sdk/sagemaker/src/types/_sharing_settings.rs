@@ -2,31 +2,31 @@
 
 /// <p>Specifies options for sharing SageMaker Studio notebooks. These settings are specified as part of <code>DefaultUserSettings</code> when the <code>CreateDomain</code> API is called, and as part of <code>UserSettings</code> when the <code>CreateUserProfile</code> API is called. When <code>SharingSettings</code> is not specified, notebook sharing isn't allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SharingSettings {
     /// <p>Whether to include the notebook cell output when sharing the notebook. The default is <code>Disabled</code>.</p>
     #[doc(hidden)]
-    pub notebook_output_option: std::option::Option<crate::types::NotebookOutputOption>,
+    pub notebook_output_option: ::std::option::Option<crate::types::NotebookOutputOption>,
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared notebook snapshots.</p>
     #[doc(hidden)]
-    pub s3_output_path: std::option::Option<std::string::String>,
+    pub s3_output_path: ::std::option::Option<::std::string::String>,
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub s3_kms_key_id: std::option::Option<std::string::String>,
+    pub s3_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl SharingSettings {
     /// <p>Whether to include the notebook cell output when sharing the notebook. The default is <code>Disabled</code>.</p>
     pub fn notebook_output_option(
         &self,
-    ) -> std::option::Option<&crate::types::NotebookOutputOption> {
+    ) -> ::std::option::Option<&crate::types::NotebookOutputOption> {
         self.notebook_output_option.as_ref()
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared notebook snapshots.</p>
-    pub fn s3_output_path(&self) -> std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
-    pub fn s3_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn s3_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.s3_kms_key_id.as_deref()
     }
 }
@@ -39,43 +39,57 @@ impl SharingSettings {
 
 /// A builder for [`SharingSettings`](crate::types::SharingSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SharingSettingsBuilder {
-    pub(crate) notebook_output_option: std::option::Option<crate::types::NotebookOutputOption>,
-    pub(crate) s3_output_path: std::option::Option<std::string::String>,
-    pub(crate) s3_kms_key_id: std::option::Option<std::string::String>,
+    pub(crate) notebook_output_option: ::std::option::Option<crate::types::NotebookOutputOption>,
+    pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl SharingSettingsBuilder {
     /// <p>Whether to include the notebook cell output when sharing the notebook. The default is <code>Disabled</code>.</p>
     pub fn notebook_output_option(mut self, input: crate::types::NotebookOutputOption) -> Self {
-        self.notebook_output_option = Some(input);
+        self.notebook_output_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to include the notebook cell output when sharing the notebook. The default is <code>Disabled</code>.</p>
     pub fn set_notebook_output_option(
         mut self,
-        input: std::option::Option<crate::types::NotebookOutputOption>,
+        input: ::std::option::Option<crate::types::NotebookOutputOption>,
     ) -> Self {
         self.notebook_output_option = input;
         self
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared notebook snapshots.</p>
-    pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_output_path = Some(input.into());
+    pub fn s3_output_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket used to store the shared notebook snapshots.</p>
-    pub fn set_s3_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_output_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_output_path = input;
         self
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
-    pub fn s3_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_kms_key_id = Some(input.into());
+    pub fn s3_kms_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon S3 bucket.</p>
-    pub fn set_s3_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_kms_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_kms_key_id = input;
         self
     }

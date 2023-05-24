@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IpDiscovery {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum IpDiscovery {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IpDiscovery {
+impl ::std::convert::From<&str> for IpDiscovery {
     fn from(s: &str) -> Self {
         match s {
             "ipv4" => IpDiscovery::Ipv4,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for IpDiscovery {
         }
     }
 }
-impl std::str::FromStr for IpDiscovery {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IpDiscovery {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IpDiscovery::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IpDiscovery::from(s))
     }
 }
 impl IpDiscovery {
@@ -84,7 +84,7 @@ impl IpDiscovery {
         &["ipv4", "ipv6"]
     }
 }
-impl AsRef<str> for IpDiscovery {
+impl ::std::convert::AsRef<str> for IpDiscovery {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

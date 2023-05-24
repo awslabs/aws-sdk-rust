@@ -2,20 +2,20 @@
 
 /// <p>The result body of the ResetServiceSetting API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     #[doc(hidden)]
-    pub service_setting: std::option::Option<crate::types::ServiceSetting>,
+    pub service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,
 }
 impl ResetServiceSettingOutput {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
-    pub fn service_setting(&self) -> std::option::Option<&crate::types::ServiceSetting> {
+    pub fn service_setting(&self) -> ::std::option::Option<&crate::types::ServiceSetting> {
         self.service_setting.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ResetServiceSettingOutput {
+impl ::aws_http::request_id::RequestId for ResetServiceSettingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl ResetServiceSettingOutput {
 
 /// A builder for [`ResetServiceSettingOutput`](crate::operation::reset_service_setting::ResetServiceSettingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResetServiceSettingOutputBuilder {
-    pub(crate) service_setting: std::option::Option<crate::types::ServiceSetting>,
+    pub(crate) service_setting: ::std::option::Option<crate::types::ServiceSetting>,
     _request_id: Option<String>,
 }
 impl ResetServiceSettingOutputBuilder {
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     pub fn service_setting(mut self, input: crate::types::ServiceSetting) -> Self {
-        self.service_setting = Some(input);
+        self.service_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
     pub fn set_service_setting(
         mut self,
-        input: std::option::Option<crate::types::ServiceSetting>,
+        input: ::std::option::Option<crate::types::ServiceSetting>,
     ) -> Self {
         self.service_setting = input;
         self

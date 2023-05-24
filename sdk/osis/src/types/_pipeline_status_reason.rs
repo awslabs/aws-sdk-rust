@@ -2,15 +2,15 @@
 
 /// <p>Information about a pipeline's current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineStatusReason {
     /// <p>A description of why a pipeline has a certain status.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl PipelineStatusReason {
     /// <p>A description of why a pipeline has a certain status.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl PipelineStatusReason {
 
 /// A builder for [`PipelineStatusReason`](crate::types::PipelineStatusReason).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineStatusReasonBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl PipelineStatusReasonBuilder {
     /// <p>A description of why a pipeline has a certain status.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of why a pipeline has a certain status.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

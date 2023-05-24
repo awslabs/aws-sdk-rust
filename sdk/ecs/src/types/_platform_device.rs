@@ -2,22 +2,22 @@
 
 /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformDevice {
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PlatformDeviceType>,
+    pub r#type: ::std::option::Option<crate::types::PlatformDeviceType>,
 }
 impl PlatformDevice {
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PlatformDeviceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PlatformDeviceType> {
         self.r#type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl PlatformDevice {
 
 /// A builder for [`PlatformDevice`](crate::types::PlatformDevice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlatformDeviceBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::PlatformDeviceType>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PlatformDeviceType>,
 }
 impl PlatformDeviceBuilder {
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the GPUs on the container instance. The available GPU IDs can also be obtained on the container instance in the <code>/var/lib/ecs/gpu/nvidia_gpu_info.json</code> file.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
     pub fn r#type(mut self, input: crate::types::PlatformDeviceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of device that's available on the container instance. The only supported value is <code>GPU</code>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::PlatformDeviceType>,
+        input: ::std::option::Option<crate::types::PlatformDeviceType>,
     ) -> Self {
         self.r#type = input;
         self

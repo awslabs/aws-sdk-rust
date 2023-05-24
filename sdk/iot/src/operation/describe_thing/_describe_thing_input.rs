@@ -2,15 +2,15 @@
 
 /// <p>The input for the DescribeThing operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeThingInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThingInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl DescribeThingInput {
 
 /// A builder for [`DescribeThingInput`](crate::operation::describe_thing::DescribeThingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeThingInputBuilder {
-    pub(crate) thing_name: std::option::Option<std::string::String>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeThingInputBuilder {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeThingInput`](crate::operation::describe_thing::DescribeThingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_thing::DescribeThingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_thing::DescribeThingInput {
+        ::std::result::Result::Ok(crate::operation::describe_thing::DescribeThingInput {
             thing_name: self.thing_name,
         })
     }

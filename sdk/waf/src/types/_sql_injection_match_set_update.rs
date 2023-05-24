@@ -6,24 +6,24 @@
 /// </note>
 /// <p>Specifies the part of a web request that you want to inspect for snippets of malicious SQL code and indicates whether you want to add the specification to a <code>SqlInjectionMatchSet</code> or delete it from a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlInjectionMatchSetUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::ChangeAction>,
+    pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.</p>
     #[doc(hidden)]
-    pub sql_injection_match_tuple: std::option::Option<crate::types::SqlInjectionMatchTuple>,
+    pub sql_injection_match_tuple: ::std::option::Option<crate::types::SqlInjectionMatchTuple>,
 }
 impl SqlInjectionMatchSetUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ChangeAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.</p>
     pub fn sql_injection_match_tuple(
         &self,
-    ) -> std::option::Option<&crate::types::SqlInjectionMatchTuple> {
+    ) -> ::std::option::Option<&crate::types::SqlInjectionMatchTuple> {
         self.sql_injection_match_tuple.as_ref()
     }
 }
@@ -36,19 +36,22 @@ impl SqlInjectionMatchSetUpdate {
 
 /// A builder for [`SqlInjectionMatchSetUpdate`](crate::types::SqlInjectionMatchSetUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SqlInjectionMatchSetUpdateBuilder {
-    pub(crate) action: std::option::Option<crate::types::ChangeAction>,
-    pub(crate) sql_injection_match_tuple: std::option::Option<crate::types::SqlInjectionMatchTuple>,
+    pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
+    pub(crate) sql_injection_match_tuple:
+        ::std::option::Option<crate::types::SqlInjectionMatchTuple>,
 }
 impl SqlInjectionMatchSetUpdateBuilder {
     /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::ChangeAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
         self.action = input;
         self
     }
@@ -57,13 +60,13 @@ impl SqlInjectionMatchSetUpdateBuilder {
         mut self,
         input: crate::types::SqlInjectionMatchTuple,
     ) -> Self {
-        self.sql_injection_match_tuple = Some(input);
+        self.sql_injection_match_tuple = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.</p>
     pub fn set_sql_injection_match_tuple(
         mut self,
-        input: std::option::Option<crate::types::SqlInjectionMatchTuple>,
+        input: ::std::option::Option<crate::types::SqlInjectionMatchTuple>,
     ) -> Self {
         self.sql_injection_match_tuple = input;
         self

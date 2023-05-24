@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateTags`](crate::operation::create_tags::builders::CreateTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_resource_id): <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_resource_id): <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_tags::builders::CreateTagsFluentBuilder::set_tags): <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     /// - On success, responds with [`CreateTagsOutput`](crate::operation::create_tags::CreateTagsOutput)
     /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::operation::create_tags::CreateTagsError)

@@ -38,13 +38,13 @@
 /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AvcIntraSlowPal {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AvcIntraSlowPal {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AvcIntraSlowPal {
+impl ::std::convert::From<&str> for AvcIntraSlowPal {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AvcIntraSlowPal::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AvcIntraSlowPal {
         }
     }
 }
-impl std::str::FromStr for AvcIntraSlowPal {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AvcIntraSlowPal {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AvcIntraSlowPal::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AvcIntraSlowPal::from(s))
     }
 }
 impl AvcIntraSlowPal {
@@ -86,7 +86,7 @@ impl AvcIntraSlowPal {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for AvcIntraSlowPal {
+impl ::std::convert::AsRef<str> for AvcIntraSlowPal {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

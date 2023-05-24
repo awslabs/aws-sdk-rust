@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DocumentSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DocumentSourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DocumentSourceType {
+impl ::std::convert::From<&str> for DocumentSourceType {
     fn from(s: &str) -> Self {
         match s {
             "ORIGINAL" => DocumentSourceType::Original,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DocumentSourceType {
         }
     }
 }
-impl std::str::FromStr for DocumentSourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DocumentSourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DocumentSourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DocumentSourceType::from(s))
     }
 }
 impl DocumentSourceType {
@@ -86,7 +86,7 @@ impl DocumentSourceType {
         &["ORIGINAL", "WITH_COMMENTS"]
     }
 }
-impl AsRef<str> for DocumentSourceType {
+impl ::std::convert::AsRef<str> for DocumentSourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

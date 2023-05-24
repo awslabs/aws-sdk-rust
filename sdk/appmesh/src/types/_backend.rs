@@ -2,7 +2,7 @@
 
 /// <p>An object that represents the backends that a virtual node is expected to send outbound traffic to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Backend {
     /// <p>Specifies a virtual service to use as a backend. </p>
     VirtualService(crate::types::VirtualServiceBackend),
@@ -22,11 +22,11 @@ impl Backend {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_virtual_service(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualServiceBackend, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualServiceBackend, &Self> {
         if let Backend::VirtualService(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`VirtualService`](crate::types::Backend::VirtualService).

@@ -2,29 +2,29 @@
 
 /// <p>The configuration for publishing Amazon CloudWatch Internet Monitor internet measurements to Amazon S3. The configuration includes the bucket name and (optionally) prefix for the S3 bucket to store the measurements, and the delivery status. The delivery status is <code>ENABLED</code> or <code>DISABLED</code>, depending on whether you choose to deliver internet measurements to S3 logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix.</p>
     #[doc(hidden)]
-    pub bucket_prefix: std::option::Option<std::string::String>,
+    pub bucket_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The status of publishing Internet Monitor internet measurements to an Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub log_delivery_status: std::option::Option<crate::types::LogDeliveryStatus>,
+    pub log_delivery_status: ::std::option::Option<crate::types::LogDeliveryStatus>,
 }
 impl S3Config {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>The Amazon S3 bucket prefix.</p>
-    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+    pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
     /// <p>The status of publishing Internet Monitor internet measurements to an Amazon S3 bucket.</p>
-    pub fn log_delivery_status(&self) -> std::option::Option<&crate::types::LogDeliveryStatus> {
+    pub fn log_delivery_status(&self) -> ::std::option::Option<&crate::types::LogDeliveryStatus> {
         self.log_delivery_status.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl S3Config {
 
 /// A builder for [`S3Config`](crate::types::S3Config).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ConfigBuilder {
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
-    pub(crate) bucket_prefix: std::option::Option<std::string::String>,
-    pub(crate) log_delivery_status: std::option::Option<crate::types::LogDeliveryStatus>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) log_delivery_status: ::std::option::Option<crate::types::LogDeliveryStatus>,
 }
 impl S3ConfigBuilder {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
     /// <p>The Amazon S3 bucket prefix.</p>
-    pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_prefix = Some(input.into());
+    pub fn bucket_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket prefix.</p>
-    pub fn set_bucket_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.bucket_prefix = input;
         self
     }
     /// <p>The status of publishing Internet Monitor internet measurements to an Amazon S3 bucket.</p>
     pub fn log_delivery_status(mut self, input: crate::types::LogDeliveryStatus) -> Self {
-        self.log_delivery_status = Some(input);
+        self.log_delivery_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of publishing Internet Monitor internet measurements to an Amazon S3 bucket.</p>
     pub fn set_log_delivery_status(
         mut self,
-        input: std::option::Option<crate::types::LogDeliveryStatus>,
+        input: ::std::option::Option<crate::types::LogDeliveryStatus>,
     ) -> Self {
         self.log_delivery_status = input;
         self

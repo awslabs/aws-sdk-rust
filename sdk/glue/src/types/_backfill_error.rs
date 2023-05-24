@@ -10,22 +10,22 @@
 /// <li> <p>InternalError: Any error which does not belong to other error codes.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackfillError {
     /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::BackfillErrorCode>,
+    pub code: ::std::option::Option<crate::types::BackfillErrorCode>,
     /// <p>A list of a limited number of partitions in the response.</p>
     #[doc(hidden)]
-    pub partitions: std::option::Option<std::vec::Vec<crate::types::PartitionValueList>>,
+    pub partitions: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
 }
 impl BackfillError {
     /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::BackfillErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::BackfillErrorCode> {
         self.code.as_ref()
     }
     /// <p>A list of a limited number of partitions in the response.</p>
-    pub fn partitions(&self) -> std::option::Option<&[crate::types::PartitionValueList]> {
+    pub fn partitions(&self) -> ::std::option::Option<&[crate::types::PartitionValueList]> {
         self.partitions.as_deref()
     }
 }
@@ -38,19 +38,24 @@ impl BackfillError {
 
 /// A builder for [`BackfillError`](crate::types::BackfillError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackfillErrorBuilder {
-    pub(crate) code: std::option::Option<crate::types::BackfillErrorCode>,
-    pub(crate) partitions: std::option::Option<std::vec::Vec<crate::types::PartitionValueList>>,
+    pub(crate) code: ::std::option::Option<crate::types::BackfillErrorCode>,
+    pub(crate) partitions: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
 }
 impl BackfillErrorBuilder {
     /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
     pub fn code(mut self, input: crate::types::BackfillErrorCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code for an error that occurred when registering partition indexes for an existing table.</p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::BackfillErrorCode>) -> Self {
+    pub fn set_code(
+        mut self,
+        input: ::std::option::Option<crate::types::BackfillErrorCode>,
+    ) -> Self {
         self.code = input;
         self
     }
@@ -62,13 +67,13 @@ impl BackfillErrorBuilder {
     pub fn partitions(mut self, input: crate::types::PartitionValueList) -> Self {
         let mut v = self.partitions.unwrap_or_default();
         v.push(input);
-        self.partitions = Some(v);
+        self.partitions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of a limited number of partitions in the response.</p>
     pub fn set_partitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PartitionValueList>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PartitionValueList>>,
     ) -> Self {
         self.partitions = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImportJob`](crate::operation::get_import_job::builders::GetImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_import_job::builders::GetImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_import_job::builders::GetImportJobFluentBuilder::set_job_id): <p>The ID of the import job.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::get_import_job::builders::GetImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_import_job::builders::GetImportJobFluentBuilder::set_job_id): <p>The ID of the import job.</p>
     /// - On success, responds with [`GetImportJobOutput`](crate::operation::get_import_job::GetImportJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::get_import_job::GetImportJobOutput::job_id): <p>A string that represents the import job ID.</p>
     ///   - [`import_destination(Option<ImportDestination>)`](crate::operation::get_import_job::GetImportJobOutput::import_destination): <p>The destination of the import job.</p>

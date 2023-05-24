@@ -2,15 +2,17 @@
 
 /// <p>Instance-related attributes that are available for a given instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceLimits {
     /// <p>Limits on the number of instances that can be created for a given instance type.</p>
     #[doc(hidden)]
-    pub instance_count_limits: std::option::Option<crate::types::InstanceCountLimits>,
+    pub instance_count_limits: ::std::option::Option<crate::types::InstanceCountLimits>,
 }
 impl InstanceLimits {
     /// <p>Limits on the number of instances that can be created for a given instance type.</p>
-    pub fn instance_count_limits(&self) -> std::option::Option<&crate::types::InstanceCountLimits> {
+    pub fn instance_count_limits(
+        &self,
+    ) -> ::std::option::Option<&crate::types::InstanceCountLimits> {
         self.instance_count_limits.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl InstanceLimits {
 
 /// A builder for [`InstanceLimits`](crate::types::InstanceLimits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceLimitsBuilder {
-    pub(crate) instance_count_limits: std::option::Option<crate::types::InstanceCountLimits>,
+    pub(crate) instance_count_limits: ::std::option::Option<crate::types::InstanceCountLimits>,
 }
 impl InstanceLimitsBuilder {
     /// <p>Limits on the number of instances that can be created for a given instance type.</p>
     pub fn instance_count_limits(mut self, input: crate::types::InstanceCountLimits) -> Self {
-        self.instance_count_limits = Some(input);
+        self.instance_count_limits = ::std::option::Option::Some(input);
         self
     }
     /// <p>Limits on the number of instances that can be created for a given instance type.</p>
     pub fn set_instance_count_limits(
         mut self,
-        input: std::option::Option<crate::types::InstanceCountLimits>,
+        input: ::std::option::Option<crate::types::InstanceCountLimits>,
     ) -> Self {
         self.instance_count_limits = input;
         self

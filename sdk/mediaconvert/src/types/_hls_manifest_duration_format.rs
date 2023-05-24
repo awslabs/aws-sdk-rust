@@ -38,13 +38,13 @@
 /// Indicates whether the output manifest should use floating point values for segment duration.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsManifestDurationFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsManifestDurationFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsManifestDurationFormat {
+impl ::std::convert::From<&str> for HlsManifestDurationFormat {
     fn from(s: &str) -> Self {
         match s {
             "FLOATING_POINT" => HlsManifestDurationFormat::FloatingPoint,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsManifestDurationFormat {
         }
     }
 }
-impl std::str::FromStr for HlsManifestDurationFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsManifestDurationFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsManifestDurationFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsManifestDurationFormat::from(s))
     }
 }
 impl HlsManifestDurationFormat {
@@ -86,7 +86,7 @@ impl HlsManifestDurationFormat {
         &["FLOATING_POINT", "INTEGER"]
     }
 }
-impl AsRef<str> for HlsManifestDurationFormat {
+impl ::std::convert::AsRef<str> for HlsManifestDurationFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

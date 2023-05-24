@@ -2,21 +2,21 @@
 
 /// <p>Details of a Shield event. This is provided as part of an <code>AttackDetail</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackProperty {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     #[doc(hidden)]
-    pub attack_layer: std::option::Option<crate::types::AttackLayer>,
+    pub attack_layer: ::std::option::Option<crate::types::AttackLayer>,
     /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
     #[doc(hidden)]
-    pub attack_property_identifier: std::option::Option<crate::types::AttackPropertyIdentifier>,
+    pub attack_property_identifier: ::std::option::Option<crate::types::AttackPropertyIdentifier>,
     /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
     #[doc(hidden)]
-    pub top_contributors: std::option::Option<std::vec::Vec<crate::types::Contributor>>,
+    pub top_contributors: ::std::option::Option<::std::vec::Vec<crate::types::Contributor>>,
     /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::Unit>,
+    pub unit: ::std::option::Option<crate::types::Unit>,
     /// <p>The total contributions made to this Shield event by all contributors.</p>
     #[doc(hidden)]
     pub total: i64,
@@ -24,21 +24,21 @@ pub struct AttackProperty {
 impl AttackProperty {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn attack_layer(&self) -> std::option::Option<&crate::types::AttackLayer> {
+    pub fn attack_layer(&self) -> ::std::option::Option<&crate::types::AttackLayer> {
         self.attack_layer.as_ref()
     }
     /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
     pub fn attack_property_identifier(
         &self,
-    ) -> std::option::Option<&crate::types::AttackPropertyIdentifier> {
+    ) -> ::std::option::Option<&crate::types::AttackPropertyIdentifier> {
         self.attack_property_identifier.as_ref()
     }
     /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
-    pub fn top_contributors(&self) -> std::option::Option<&[crate::types::Contributor]> {
+    pub fn top_contributors(&self) -> ::std::option::Option<&[crate::types::Contributor]> {
         self.top_contributors.as_deref()
     }
     /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::Unit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
         self.unit.as_ref()
     }
     /// <p>The total contributions made to this Shield event by all contributors.</p>
@@ -55,27 +55,29 @@ impl AttackProperty {
 
 /// A builder for [`AttackProperty`](crate::types::AttackProperty).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttackPropertyBuilder {
-    pub(crate) attack_layer: std::option::Option<crate::types::AttackLayer>,
+    pub(crate) attack_layer: ::std::option::Option<crate::types::AttackLayer>,
     pub(crate) attack_property_identifier:
-        std::option::Option<crate::types::AttackPropertyIdentifier>,
-    pub(crate) top_contributors: std::option::Option<std::vec::Vec<crate::types::Contributor>>,
-    pub(crate) unit: std::option::Option<crate::types::Unit>,
-    pub(crate) total: std::option::Option<i64>,
+        ::std::option::Option<crate::types::AttackPropertyIdentifier>,
+    pub(crate) top_contributors: ::std::option::Option<::std::vec::Vec<crate::types::Contributor>>,
+    pub(crate) unit: ::std::option::Option<crate::types::Unit>,
+    pub(crate) total: ::std::option::Option<i64>,
 }
 impl AttackPropertyBuilder {
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn attack_layer(mut self, input: crate::types::AttackLayer) -> Self {
-        self.attack_layer = Some(input);
+        self.attack_layer = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.</p>
     /// <p>For infrastructure layer events (L3 and L4 events), you can view metrics for top contributors in Amazon CloudWatch metrics. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn set_attack_layer(
         mut self,
-        input: std::option::Option<crate::types::AttackLayer>,
+        input: ::std::option::Option<crate::types::AttackLayer>,
     ) -> Self {
         self.attack_layer = input;
         self
@@ -85,13 +87,13 @@ impl AttackPropertyBuilder {
         mut self,
         input: crate::types::AttackPropertyIdentifier,
     ) -> Self {
-        self.attack_property_identifier = Some(input);
+        self.attack_property_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective pingback events.</p>
     pub fn set_attack_property_identifier(
         mut self,
-        input: std::option::Option<crate::types::AttackPropertyIdentifier>,
+        input: ::std::option::Option<crate::types::AttackPropertyIdentifier>,
     ) -> Self {
         self.attack_property_identifier = input;
         self
@@ -104,34 +106,34 @@ impl AttackPropertyBuilder {
     pub fn top_contributors(mut self, input: crate::types::Contributor) -> Self {
         let mut v = self.top_contributors.unwrap_or_default();
         v.push(input);
-        self.top_contributors = Some(v);
+        self.top_contributors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contributor objects for the top five contributors to a Shield event. A contributor is a source of traffic that Shield Advanced identifies as responsible for some or all of an event.</p>
     pub fn set_top_contributors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Contributor>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Contributor>>,
     ) -> Self {
         self.top_contributors = input;
         self
     }
     /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit used for the <code>Contributor</code> <code>Value</code> property. </p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::Unit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
         self.unit = input;
         self
     }
     /// <p>The total contributions made to this Shield event by all contributors.</p>
     pub fn total(mut self, input: i64) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total contributions made to this Shield event by all contributors.</p>
-    pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total = input;
         self
     }

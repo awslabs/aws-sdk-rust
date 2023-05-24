@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContact`](crate::operation::get_contact::builders::GetContactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_id(impl Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
+    ///   - [`contact_id(impl ::std::convert::Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_contact_id): <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
     /// - On success, responds with [`GetContactOutput`](crate::operation::get_contact::GetContactOutput) with field(s):
     ///   - [`contact_arn(Option<String>)`](crate::operation::get_contact::GetContactOutput::contact_arn): <p>The ARN of the contact or escalation plan.</p>
     ///   - [`alias(Option<String>)`](crate::operation::get_contact::GetContactOutput::alias): <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>

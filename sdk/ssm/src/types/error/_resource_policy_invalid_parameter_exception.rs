@@ -2,52 +2,52 @@
 
 /// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePolicyInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub parameter_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub parameter_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub message: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourcePolicyInvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn parameter_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parameter_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.parameter_names.as_deref()
     }
 }
 impl ResourcePolicyInvalidParameterException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ResourcePolicyInvalidParameterException {
+impl ::std::fmt::Display for ResourcePolicyInvalidParameterException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ResourcePolicyInvalidParameterException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "ResourcePolicyInvalidParameterException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for ResourcePolicyInvalidParameterException {}
-impl aws_http::request_id::RequestId
+impl ::std::error::Error for ResourcePolicyInvalidParameterException {}
+impl ::aws_http::request_id::RequestId
     for crate::types::error::ResourcePolicyInvalidParameterException
 {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
     for ResourcePolicyInvalidParameterException
 {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -61,43 +61,48 @@ impl ResourcePolicyInvalidParameterException {
 
 /// A builder for [`ResourcePolicyInvalidParameterException`](crate::types::error::ResourcePolicyInvalidParameterException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourcePolicyInvalidParameterExceptionBuilder {
-    pub(crate) parameter_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) parameter_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourcePolicyInvalidParameterExceptionBuilder {
     /// Appends an item to `parameter_names`.
     ///
     /// To override the contents of this collection use [`set_parameter_names`](Self::set_parameter_names).
     ///
-    pub fn parameter_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn parameter_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.parameter_names.unwrap_or_default();
         v.push(input.into());
-        self.parameter_names = Some(v);
+        self.parameter_names = ::std::option::Option::Some(v);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_parameter_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.parameter_names = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -105,7 +110,7 @@ impl ResourcePolicyInvalidParameterExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

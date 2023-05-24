@@ -2,11 +2,11 @@
 
 /// <p>Provides the configuration information to connect to Salesforce as your data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceConfiguration {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
     #[doc(hidden)]
-    pub server_url: std::option::Option<std::string::String>,
+    pub server_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
     /// <li> <p>authenticationUrl - The OAUTH endpoint that Amazon Kendra connects to get an OAUTH token. </p> </li>
@@ -17,38 +17,40 @@ pub struct SalesforceConfiguration {
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub secret_arn: std::option::Option<std::string::String>,
+    pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
     #[doc(hidden)]
     pub standard_object_configurations:
-        std::option::Option<std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>>,
     /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
     #[doc(hidden)]
     pub knowledge_article_configuration:
-        std::option::Option<crate::types::SalesforceKnowledgeArticleConfiguration>,
+        ::std::option::Option<crate::types::SalesforceKnowledgeArticleConfiguration>,
     /// <p>Configuration information for Salesforce chatter feeds.</p>
     #[doc(hidden)]
     pub chatter_feed_configuration:
-        std::option::Option<crate::types::SalesforceChatterFeedConfiguration>,
+        ::std::option::Option<crate::types::SalesforceChatterFeedConfiguration>,
     /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
     #[doc(hidden)]
     pub crawl_attachments: bool,
     /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
     #[doc(hidden)]
     pub standard_object_attachment_configuration:
-        std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
+        ::std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
     /// <p>A list of regular expression patterns to include certain documents in your Salesforce. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
     #[doc(hidden)]
-    pub include_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub include_attachment_file_patterns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain documents in your Salesforce. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
     #[doc(hidden)]
-    pub exclude_attachment_file_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub exclude_attachment_file_patterns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SalesforceConfiguration {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
-    pub fn server_url(&self) -> std::option::Option<&str> {
+    pub fn server_url(&self) -> ::std::option::Option<&str> {
         self.server_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
@@ -60,25 +62,25 @@ impl SalesforceConfiguration {
     /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
     pub fn standard_object_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::SalesforceStandardObjectConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::SalesforceStandardObjectConfiguration]> {
         self.standard_object_configurations.as_deref()
     }
     /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
     pub fn knowledge_article_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SalesforceKnowledgeArticleConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SalesforceKnowledgeArticleConfiguration> {
         self.knowledge_article_configuration.as_ref()
     }
     /// <p>Configuration information for Salesforce chatter feeds.</p>
     pub fn chatter_feed_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SalesforceChatterFeedConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SalesforceChatterFeedConfiguration> {
         self.chatter_feed_configuration.as_ref()
     }
     /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
@@ -88,17 +90,21 @@ impl SalesforceConfiguration {
     /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
     pub fn standard_object_attachment_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SalesforceStandardObjectAttachmentConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SalesforceStandardObjectAttachmentConfiguration> {
         self.standard_object_attachment_configuration.as_ref()
     }
     /// <p>A list of regular expression patterns to include certain documents in your Salesforce. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
-    pub fn include_attachment_file_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn include_attachment_file_patterns(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.include_attachment_file_patterns.as_deref()
     }
     /// <p>A list of regular expression patterns to exclude certain documents in your Salesforce. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
-    pub fn exclude_attachment_file_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exclude_attachment_file_patterns(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.exclude_attachment_file_patterns.as_deref()
     }
 }
@@ -111,32 +117,34 @@ impl SalesforceConfiguration {
 
 /// A builder for [`SalesforceConfiguration`](crate::types::SalesforceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SalesforceConfigurationBuilder {
-    pub(crate) server_url: std::option::Option<std::string::String>,
-    pub(crate) secret_arn: std::option::Option<std::string::String>,
+    pub(crate) server_url: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) standard_object_configurations:
-        std::option::Option<std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>>,
     pub(crate) knowledge_article_configuration:
-        std::option::Option<crate::types::SalesforceKnowledgeArticleConfiguration>,
+        ::std::option::Option<crate::types::SalesforceKnowledgeArticleConfiguration>,
     pub(crate) chatter_feed_configuration:
-        std::option::Option<crate::types::SalesforceChatterFeedConfiguration>,
-    pub(crate) crawl_attachments: std::option::Option<bool>,
+        ::std::option::Option<crate::types::SalesforceChatterFeedConfiguration>,
+    pub(crate) crawl_attachments: ::std::option::Option<bool>,
     pub(crate) standard_object_attachment_configuration:
-        std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
+        ::std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
     pub(crate) include_attachment_file_patterns:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) exclude_attachment_file_patterns:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SalesforceConfigurationBuilder {
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
-    pub fn server_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_url = Some(input.into());
+    pub fn server_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance URL for the Salesforce site that you want to index.</p>
-    pub fn set_server_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_url = input;
         self
     }
@@ -149,8 +157,8 @@ impl SalesforceConfigurationBuilder {
     /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
-    pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_arn = Some(input.into());
+    pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret that contains the key/value pairs required to connect to your Salesforce instance. The secret must contain a JSON structure with the following keys:</p>
@@ -162,7 +170,7 @@ impl SalesforceConfigurationBuilder {
     /// <li> <p>securityToken - The token associated with the user logging in to the Salesforce instance.</p> </li>
     /// <li> <p>username - The user name of the user logging in to the Salesforce instance.</p> </li>
     /// </ul>
-    pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
@@ -177,14 +185,14 @@ impl SalesforceConfigurationBuilder {
     ) -> Self {
         let mut v = self.standard_object_configurations.unwrap_or_default();
         v.push(input);
-        self.standard_object_configurations = Some(v);
+        self.standard_object_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Configuration of the Salesforce standard objects that Amazon Kendra indexes.</p>
     pub fn set_standard_object_configurations(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::SalesforceStandardObjectConfiguration>,
         >,
     ) -> Self {
         self.standard_object_configurations = input;
@@ -195,13 +203,13 @@ impl SalesforceConfigurationBuilder {
         mut self,
         input: crate::types::SalesforceKnowledgeArticleConfiguration,
     ) -> Self {
-        self.knowledge_article_configuration = Some(input);
+        self.knowledge_article_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both.</p>
     pub fn set_knowledge_article_configuration(
         mut self,
-        input: std::option::Option<crate::types::SalesforceKnowledgeArticleConfiguration>,
+        input: ::std::option::Option<crate::types::SalesforceKnowledgeArticleConfiguration>,
     ) -> Self {
         self.knowledge_article_configuration = input;
         self
@@ -211,24 +219,24 @@ impl SalesforceConfigurationBuilder {
         mut self,
         input: crate::types::SalesforceChatterFeedConfiguration,
     ) -> Self {
-        self.chatter_feed_configuration = Some(input);
+        self.chatter_feed_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for Salesforce chatter feeds.</p>
     pub fn set_chatter_feed_configuration(
         mut self,
-        input: std::option::Option<crate::types::SalesforceChatterFeedConfiguration>,
+        input: ::std::option::Option<crate::types::SalesforceChatterFeedConfiguration>,
     ) -> Self {
         self.chatter_feed_configuration = input;
         self
     }
     /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
     pub fn crawl_attachments(mut self, input: bool) -> Self {
-        self.crawl_attachments = Some(input);
+        self.crawl_attachments = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Amazon Kendra should index attachments to Salesforce objects.</p>
-    pub fn set_crawl_attachments(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_crawl_attachments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_attachments = input;
         self
     }
@@ -237,13 +245,13 @@ impl SalesforceConfigurationBuilder {
         mut self,
         input: crate::types::SalesforceStandardObjectAttachmentConfiguration,
     ) -> Self {
-        self.standard_object_attachment_configuration = Some(input);
+        self.standard_object_attachment_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for processing attachments to Salesforce standard objects. </p>
     pub fn set_standard_object_attachment_configuration(
         mut self,
-        input: std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
+        input: ::std::option::Option<crate::types::SalesforceStandardObjectAttachmentConfiguration>,
     ) -> Self {
         self.standard_object_attachment_configuration = input;
         self
@@ -256,18 +264,18 @@ impl SalesforceConfigurationBuilder {
     /// <p>The pattern is applied to the name of the attached file.</p>
     pub fn include_attachment_file_patterns(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.include_attachment_file_patterns.unwrap_or_default();
         v.push(input.into());
-        self.include_attachment_file_patterns = Some(v);
+        self.include_attachment_file_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to include certain documents in your Salesforce. Documents that match the patterns are included in the index. Documents that don't match the patterns are excluded from the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
     pub fn set_include_attachment_file_patterns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.include_attachment_file_patterns = input;
         self
@@ -280,18 +288,18 @@ impl SalesforceConfigurationBuilder {
     /// <p>The pattern is applied to the name of the attached file.</p>
     pub fn exclude_attachment_file_patterns(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.exclude_attachment_file_patterns.unwrap_or_default();
         v.push(input.into());
-        self.exclude_attachment_file_patterns = Some(v);
+        self.exclude_attachment_file_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to exclude certain documents in your Salesforce. Documents that match the patterns are excluded from the index. Documents that don't match the patterns are included in the index. If a document matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the document isn't included in the index.</p>
     /// <p>The pattern is applied to the name of the attached file.</p>
     pub fn set_exclude_attachment_file_patterns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.exclude_attachment_file_patterns = input;
         self

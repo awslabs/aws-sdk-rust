@@ -2,14 +2,14 @@
 
 /// <p>Specifies a metrics configuration filter. The metrics configuration only includes objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html">PutBucketMetricsConfiguration</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum MetricsFilter {
     /// <p>The access point ARN used when evaluating a metrics filter.</p>
-    AccessPointArn(std::string::String),
+    AccessPointArn(::std::string::String),
     /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
     And(crate::types::MetricsAndOperator),
     /// <p>The prefix used when evaluating a metrics filter.</p>
-    Prefix(std::string::String),
+    Prefix(::std::string::String),
     /// <p>The tag used when evaluating a metrics filter.</p>
     Tag(crate::types::Tag),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -23,13 +23,13 @@ pub enum MetricsFilter {
     Unknown,
 }
 impl MetricsFilter {
-    /// Tries to convert the enum instance into [`AccessPointArn`](crate::types::MetricsFilter::AccessPointArn), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`AccessPointArn`](crate::types::MetricsFilter::AccessPointArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_access_point_arn(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_access_point_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let MetricsFilter::AccessPointArn(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AccessPointArn`](crate::types::MetricsFilter::AccessPointArn).
@@ -38,24 +38,24 @@ impl MetricsFilter {
     }
     /// Tries to convert the enum instance into [`And`](crate::types::MetricsFilter::And), extracting the inner [`MetricsAndOperator`](crate::types::MetricsAndOperator).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and(&self) -> std::result::Result<&crate::types::MetricsAndOperator, &Self> {
+    pub fn as_and(&self) -> ::std::result::Result<&crate::types::MetricsAndOperator, &Self> {
         if let MetricsFilter::And(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`And`](crate::types::MetricsFilter::And).
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::MetricsFilter::Prefix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Prefix`](crate::types::MetricsFilter::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let MetricsFilter::Prefix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::types::MetricsFilter::Prefix).
@@ -64,11 +64,11 @@ impl MetricsFilter {
     }
     /// Tries to convert the enum instance into [`Tag`](crate::types::MetricsFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tag(&self) -> std::result::Result<&crate::types::Tag, &Self> {
+    pub fn as_tag(&self) -> ::std::result::Result<&crate::types::Tag, &Self> {
         if let MetricsFilter::Tag(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Tag`](crate::types::MetricsFilter::Tag).

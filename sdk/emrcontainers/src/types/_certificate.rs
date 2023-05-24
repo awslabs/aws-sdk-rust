@@ -2,22 +2,22 @@
 
 /// <p>The entity representing certificate data generated for managed endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Certificate {
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
     #[doc(hidden)]
-    pub certificate_data: std::option::Option<std::string::String>,
+    pub certificate_data: ::std::option::Option<::std::string::String>,
 }
 impl Certificate {
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
-    pub fn certificate_data(&self) -> std::option::Option<&str> {
+    pub fn certificate_data(&self) -> ::std::option::Option<&str> {
         self.certificate_data.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl Certificate {
 
 /// A builder for [`Certificate`](crate::types::Certificate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CertificateBuilder {
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_data: std::option::Option<std::string::String>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_data: ::std::option::Option<::std::string::String>,
 }
 impl CertificateBuilder {
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
-    pub fn certificate_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_data = Some(input.into());
+    pub fn certificate_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
-    pub fn set_certificate_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_data(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_data = input;
         self
     }

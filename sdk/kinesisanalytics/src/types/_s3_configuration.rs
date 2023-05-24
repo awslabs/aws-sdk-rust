@@ -2,29 +2,29 @@
 
 /// <p>Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to access the bucket, and the name of the Amazon S3 object that contains the data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the S3 bucket that contains the data.</p>
     #[doc(hidden)]
-    pub bucket_arn: std::option::Option<std::string::String>,
+    pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the object that contains the data.</p>
     #[doc(hidden)]
-    pub file_key: std::option::Option<std::string::String>,
+    pub file_key: ::std::option::Option<::std::string::String>,
 }
 impl S3Configuration {
     /// <p>IAM ARN of the role used to access the data.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>ARN of the S3 bucket that contains the data.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn file_key(&self) -> std::option::Option<&str> {
+    pub fn file_key(&self) -> ::std::option::Option<&str> {
         self.file_key.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl S3Configuration {
 
 /// A builder for [`S3Configuration`](crate::types::S3Configuration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ConfigurationBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) bucket_arn: std::option::Option<std::string::String>,
-    pub(crate) file_key: std::option::Option<std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) file_key: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigurationBuilder {
     /// <p>IAM ARN of the role used to access the data.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>IAM ARN of the role used to access the data.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>ARN of the S3 bucket that contains the data.</p>
-    pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_arn = Some(input.into());
+    pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the S3 bucket that contains the data.</p>
-    pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_arn = input;
         self
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn file_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_key = Some(input.into());
+    pub fn file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the object that contains the data.</p>
-    pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_key = input;
         self
     }

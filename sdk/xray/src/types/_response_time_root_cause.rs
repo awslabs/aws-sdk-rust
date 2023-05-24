@@ -2,22 +2,23 @@
 
 /// <p>The root cause information for a response time warning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseTimeRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
-    pub services: std::option::Option<std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
+    pub services:
+        ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     #[doc(hidden)]
-    pub client_impacting: std::option::Option<bool>,
+    pub client_impacting: ::std::option::Option<bool>,
 }
 impl ResponseTimeRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::types::ResponseTimeRootCauseService]> {
+    pub fn services(&self) -> ::std::option::Option<&[crate::types::ResponseTimeRootCauseService]> {
         self.services.as_deref()
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
-    pub fn client_impacting(&self) -> std::option::Option<bool> {
+    pub fn client_impacting(&self) -> ::std::option::Option<bool> {
         self.client_impacting
     }
 }
@@ -30,11 +31,13 @@ impl ResponseTimeRootCause {
 
 /// A builder for [`ResponseTimeRootCause`](crate::types::ResponseTimeRootCause).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseTimeRootCauseBuilder {
     pub(crate) services:
-        std::option::Option<std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
-    pub(crate) client_impacting: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
+    pub(crate) client_impacting: ::std::option::Option<bool>,
 }
 impl ResponseTimeRootCauseBuilder {
     /// Appends an item to `services`.
@@ -45,24 +48,24 @@ impl ResponseTimeRootCauseBuilder {
     pub fn services(mut self, input: crate::types::ResponseTimeRootCauseService) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input);
-        self.services = Some(v);
+        self.services = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
     pub fn set_services(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseService>>,
     ) -> Self {
         self.services = input;
         self
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub fn client_impacting(mut self, input: bool) -> Self {
-        self.client_impacting = Some(input);
+        self.client_impacting = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
-    pub fn set_client_impacting(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_client_impacting(mut self, input: ::std::option::Option<bool>) -> Self {
         self.client_impacting = input;
         self
     }

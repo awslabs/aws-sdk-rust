@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTargetGroup`](crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_group_identifier(impl Into<String>)`](crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::set_target_group_identifier): <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`target_group_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::target_group_identifier) / [`set_target_group_identifier(Option<String>)`](crate::operation::delete_target_group::builders::DeleteTargetGroupFluentBuilder::set_target_group_identifier): <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     /// - On success, responds with [`DeleteTargetGroupOutput`](crate::operation::delete_target_group::DeleteTargetGroupOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::delete_target_group::DeleteTargetGroupOutput::id): <p>The ID of the target group.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_target_group::DeleteTargetGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the target group.</p>

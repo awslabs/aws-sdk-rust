@@ -2,29 +2,29 @@
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BasePathMapping {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
-    pub base_path: std::option::Option<std::string::String>,
+    pub base_path: ::std::option::Option<::std::string::String>,
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the associated stage.</p>
     #[doc(hidden)]
-    pub stage: std::option::Option<std::string::String>,
+    pub stage: ::std::option::Option<::std::string::String>,
 }
 impl BasePathMapping {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-    pub fn base_path(&self) -> std::option::Option<&str> {
+    pub fn base_path(&self) -> ::std::option::Option<&str> {
         self.base_path.as_deref()
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the associated stage.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> ::std::option::Option<&str> {
         self.stage.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl BasePathMapping {
 
 /// A builder for [`BasePathMapping`](crate::types::BasePathMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BasePathMappingBuilder {
-    pub(crate) base_path: std::option::Option<std::string::String>,
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) stage: std::option::Option<std::string::String>,
+    pub(crate) base_path: ::std::option::Option<::std::string::String>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) stage: ::std::option::Option<::std::string::String>,
 }
 impl BasePathMappingBuilder {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-    pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.base_path = Some(input.into());
+    pub fn base_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.base_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-    pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_base_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_path = input;
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The name of the associated stage.</p>
-    pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage = Some(input.into());
+    pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the associated stage.</p>
-    pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
     }

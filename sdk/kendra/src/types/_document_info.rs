@@ -2,11 +2,11 @@
 
 /// <p>Identifies a document for which to retrieve status information</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentInfo {
     /// <p>The identifier of the document.</p>
     #[doc(hidden)]
-    pub document_id: std::option::Option<std::string::String>,
+    pub document_id: ::std::option::Option<::std::string::String>,
     /// <p>Attributes that identify a specific version of a document to check.</p>
     /// <p>The only valid attributes are:</p>
     /// <ul>
@@ -21,11 +21,11 @@ pub struct DocumentInfo {
     /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl DocumentInfo {
     /// <p>The identifier of the document.</p>
-    pub fn document_id(&self) -> std::option::Option<&str> {
+    pub fn document_id(&self) -> ::std::option::Option<&str> {
         self.document_id.as_deref()
     }
     /// <p>Attributes that identify a specific version of a document to check.</p>
@@ -41,7 +41,7 @@ impl DocumentInfo {
     /// <li> <p> <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code> are not provided.</p> </li>
     /// <li> <p>If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code> is not, the version defaults to "0".</p> </li>
     /// </ul>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::DocumentAttribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::DocumentAttribute]> {
         self.attributes.as_deref()
     }
 }
@@ -54,19 +54,21 @@ impl DocumentInfo {
 
 /// A builder for [`DocumentInfo`](crate::types::DocumentInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentInfoBuilder {
-    pub(crate) document_id: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::DocumentAttribute>>,
+    pub(crate) document_id: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
 }
 impl DocumentInfoBuilder {
     /// <p>The identifier of the document.</p>
-    pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_id = Some(input.into());
+    pub fn document_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the document.</p>
-    pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_id = input;
         self
     }
@@ -90,7 +92,7 @@ impl DocumentInfoBuilder {
     pub fn attributes(mut self, input: crate::types::DocumentAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Attributes that identify a specific version of a document to check.</p>
@@ -108,7 +110,7 @@ impl DocumentInfoBuilder {
     /// </ul>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttribute>>,
     ) -> Self {
         self.attributes = input;
         self

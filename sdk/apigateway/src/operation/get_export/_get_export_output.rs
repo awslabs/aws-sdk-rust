@@ -2,34 +2,34 @@
 
 /// <p>The binary blob response to GetExport, which contains the generated SDK.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExportOutput {
     /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The content-disposition header value in the HTTP response.</p>
     #[doc(hidden)]
-    pub content_disposition: std::option::Option<std::string::String>,
+    pub content_disposition: ::std::option::Option<::std::string::String>,
     /// <p>The binary blob response to GetExport, which contains the export.</p>
     #[doc(hidden)]
-    pub body: std::option::Option<aws_smithy_types::Blob>,
+    pub body: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl GetExportOutput {
     /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The content-disposition header value in the HTTP response.</p>
-    pub fn content_disposition(&self) -> std::option::Option<&str> {
+    pub fn content_disposition(&self) -> ::std::option::Option<&str> {
         self.content_disposition.as_deref()
     }
     /// <p>The binary blob response to GetExport, which contains the export.</p>
-    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.body.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetExportOutput {
+impl ::aws_http::request_id::RequestId for GetExportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,44 +43,49 @@ impl GetExportOutput {
 
 /// A builder for [`GetExportOutput`](crate::operation::get_export::GetExportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetExportOutputBuilder {
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) content_disposition: std::option::Option<std::string::String>,
-    pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) content_disposition: ::std::option::Option<::std::string::String>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::Blob>,
     _request_id: Option<String>,
 }
 impl GetExportOutputBuilder {
     /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The content-disposition header value in the HTTP response.</p>
-    pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_disposition = Some(input.into());
+    pub fn content_disposition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.content_disposition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content-disposition header value in the HTTP response.</p>
     pub fn set_content_disposition(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.content_disposition = input;
         self
     }
     /// <p>The binary blob response to GetExport, which contains the export.</p>
-    pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.body = Some(input);
+    pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The binary blob response to GetExport, which contains the export.</p>
-    pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.body = input;
         self
     }

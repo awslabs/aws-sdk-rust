@@ -2,98 +2,99 @@
 
 /// <p>Describes a network interface for a Scheduled Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesNetworkInterface {
     /// <p>Indicates whether to assign a public IPv4 address to instances launched in a VPC. The public IPv4 address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
     #[doc(hidden)]
-    pub associate_public_ip_address: std::option::Option<bool>,
+    pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>Indicates whether to delete the interface when the instance is terminated.</p>
     #[doc(hidden)]
-    pub delete_on_termination: std::option::Option<bool>,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The index of the device for the network interface attachment.</p>
     #[doc(hidden)]
-    pub device_index: std::option::Option<i32>,
+    pub device_index: ::std::option::Option<i32>,
     /// <p>The IDs of the security groups.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of IPv6 addresses to assign to the network interface. The IPv6 addresses are automatically selected from the subnet range.</p>
     #[doc(hidden)]
-    pub ipv6_address_count: std::option::Option<i32>,
+    pub ipv6_address_count: ::std::option::Option<i32>,
     /// <p>The specific IPv6 addresses from the subnet range.</p>
     #[doc(hidden)]
     pub ipv6_addresses:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
-    pub network_interface_id: std::option::Option<std::string::String>,
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     #[doc(hidden)]
-    pub private_ip_address: std::option::Option<std::string::String>,
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 addresses.</p>
     #[doc(hidden)]
-    pub private_ip_address_configs:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>>,
+    pub private_ip_address_configs: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
+    >,
     /// <p>The number of secondary private IPv4 addresses.</p>
     #[doc(hidden)]
-    pub secondary_private_ip_address_count: std::option::Option<i32>,
+    pub secondary_private_ip_address_count: ::std::option::Option<i32>,
     /// <p>The ID of the subnet.</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesNetworkInterface {
     /// <p>Indicates whether to assign a public IPv4 address to instances launched in a VPC. The public IPv4 address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
-    pub fn associate_public_ip_address(&self) -> std::option::Option<bool> {
+    pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_public_ip_address
     }
     /// <p>Indicates whether to delete the interface when the instance is terminated.</p>
-    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The index of the device for the network interface attachment.</p>
-    pub fn device_index(&self) -> std::option::Option<i32> {
+    pub fn device_index(&self) -> ::std::option::Option<i32> {
         self.device_index
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.groups.as_deref()
     }
     /// <p>The number of IPv6 addresses to assign to the network interface. The IPv6 addresses are automatically selected from the subnet range.</p>
-    pub fn ipv6_address_count(&self) -> std::option::Option<i32> {
+    pub fn ipv6_address_count(&self) -> ::std::option::Option<i32> {
         self.ipv6_address_count
     }
     /// <p>The specific IPv6 addresses from the subnet range.</p>
     pub fn ipv6_addresses(
         &self,
-    ) -> std::option::Option<&[crate::types::ScheduledInstancesIpv6Address]> {
+    ) -> ::std::option::Option<&[crate::types::ScheduledInstancesIpv6Address]> {
         self.ipv6_addresses.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The private IPv4 addresses.</p>
     pub fn private_ip_address_configs(
         &self,
-    ) -> std::option::Option<&[crate::types::ScheduledInstancesPrivateIpAddressConfig]> {
+    ) -> ::std::option::Option<&[crate::types::ScheduledInstancesPrivateIpAddressConfig]> {
         self.private_ip_address_configs.as_deref()
     }
     /// <p>The number of secondary private IPv4 addresses.</p>
-    pub fn secondary_private_ip_address_count(&self) -> std::option::Option<i32> {
+    pub fn secondary_private_ip_address_count(&self) -> ::std::option::Option<i32> {
         self.secondary_private_ip_address_count
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
 }
@@ -106,61 +107,64 @@ impl ScheduledInstancesNetworkInterface {
 
 /// A builder for [`ScheduledInstancesNetworkInterface`](crate::types::ScheduledInstancesNetworkInterface).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduledInstancesNetworkInterfaceBuilder {
-    pub(crate) associate_public_ip_address: std::option::Option<bool>,
-    pub(crate) delete_on_termination: std::option::Option<bool>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) device_index: std::option::Option<i32>,
-    pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ipv6_address_count: std::option::Option<i32>,
+    pub(crate) associate_public_ip_address: ::std::option::Option<bool>,
+    pub(crate) delete_on_termination: ::std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) device_index: ::std::option::Option<i32>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_address_count: ::std::option::Option<i32>,
     pub(crate) ipv6_addresses:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
-    pub(crate) network_interface_id: std::option::Option<std::string::String>,
-    pub(crate) private_ip_address: std::option::Option<std::string::String>,
-    pub(crate) private_ip_address_configs:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>>,
-    pub(crate) secondary_private_ip_address_count: std::option::Option<i32>,
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) private_ip_address_configs: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
+    >,
+    pub(crate) secondary_private_ip_address_count: ::std::option::Option<i32>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesNetworkInterfaceBuilder {
     /// <p>Indicates whether to assign a public IPv4 address to instances launched in a VPC. The public IPv4 address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
     pub fn associate_public_ip_address(mut self, input: bool) -> Self {
-        self.associate_public_ip_address = Some(input);
+        self.associate_public_ip_address = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to assign a public IPv4 address to instances launched in a VPC. The public IPv4 address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one. You cannot specify more than one network interface in the request. If launching into a default subnet, the default value is <code>true</code>.</p>
-    pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
         self.associate_public_ip_address = input;
         self
     }
     /// <p>Indicates whether to delete the interface when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
-        self.delete_on_termination = Some(input);
+        self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to delete the interface when the instance is terminated.</p>
-    pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
     /// <p>The description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The index of the device for the network interface attachment.</p>
     pub fn device_index(mut self, input: i32) -> Self {
-        self.device_index = Some(input);
+        self.device_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index of the device for the network interface attachment.</p>
-    pub fn set_device_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_device_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.device_index = input;
         self
     }
@@ -169,27 +173,27 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
     /// <p>The IDs of the security groups.</p>
-    pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input.into());
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.groups = input;
         self
     }
     /// <p>The number of IPv6 addresses to assign to the network interface. The IPv6 addresses are automatically selected from the subnet range.</p>
     pub fn ipv6_address_count(mut self, input: i32) -> Self {
-        self.ipv6_address_count = Some(input);
+        self.ipv6_address_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of IPv6 addresses to assign to the network interface. The IPv6 addresses are automatically selected from the subnet range.</p>
-    pub fn set_ipv6_address_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ipv6_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ipv6_address_count = input;
         self
     }
@@ -201,39 +205,45 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     pub fn ipv6_addresses(mut self, input: crate::types::ScheduledInstancesIpv6Address) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
         v.push(input);
-        self.ipv6_addresses = Some(v);
+        self.ipv6_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The specific IPv6 addresses from the subnet range.</p>
     pub fn set_ipv6_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesIpv6Address>>,
     ) -> Self {
         self.ipv6_addresses = input;
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_interface_id = Some(input.into());
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_interface_id = input;
         self
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_ip_address = Some(input.into());
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_ip_address = input;
         self
@@ -249,14 +259,14 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     ) -> Self {
         let mut v = self.private_ip_address_configs.unwrap_or_default();
         v.push(input);
-        self.private_ip_address_configs = Some(v);
+        self.private_ip_address_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The private IPv4 addresses.</p>
     pub fn set_private_ip_address_configs(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ScheduledInstancesPrivateIpAddressConfig>,
         >,
     ) -> Self {
         self.private_ip_address_configs = input;
@@ -264,24 +274,24 @@ impl ScheduledInstancesNetworkInterfaceBuilder {
     }
     /// <p>The number of secondary private IPv4 addresses.</p>
     pub fn secondary_private_ip_address_count(mut self, input: i32) -> Self {
-        self.secondary_private_ip_address_count = Some(input);
+        self.secondary_private_ip_address_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of secondary private IPv4 addresses.</p>
     pub fn set_secondary_private_ip_address_count(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.secondary_private_ip_address_count = input;
         self
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>Contains the configuration information of the requested domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainConfigOutput {
     /// <p>Container for the configuration of the OpenSearch Service domain.</p>
     #[doc(hidden)]
-    pub domain_config: std::option::Option<crate::types::DomainConfig>,
+    pub domain_config: ::std::option::Option<crate::types::DomainConfig>,
     _request_id: Option<String>,
 }
 impl DescribeDomainConfigOutput {
     /// <p>Container for the configuration of the OpenSearch Service domain.</p>
-    pub fn domain_config(&self) -> std::option::Option<&crate::types::DomainConfig> {
+    pub fn domain_config(&self) -> ::std::option::Option<&crate::types::DomainConfig> {
         self.domain_config.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDomainConfigOutput {
+impl ::aws_http::request_id::RequestId for DescribeDomainConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DescribeDomainConfigOutput {
 
 /// A builder for [`DescribeDomainConfigOutput`](crate::operation::describe_domain_config::DescribeDomainConfigOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDomainConfigOutputBuilder {
-    pub(crate) domain_config: std::option::Option<crate::types::DomainConfig>,
+    pub(crate) domain_config: ::std::option::Option<crate::types::DomainConfig>,
     _request_id: Option<String>,
 }
 impl DescribeDomainConfigOutputBuilder {
     /// <p>Container for the configuration of the OpenSearch Service domain.</p>
     pub fn domain_config(mut self, input: crate::types::DomainConfig) -> Self {
-        self.domain_config = Some(input);
+        self.domain_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for the configuration of the OpenSearch Service domain.</p>
     pub fn set_domain_config(
         mut self,
-        input: std::option::Option<crate::types::DomainConfig>,
+        input: ::std::option::Option<crate::types::DomainConfig>,
     ) -> Self {
         self.domain_config = input;
         self

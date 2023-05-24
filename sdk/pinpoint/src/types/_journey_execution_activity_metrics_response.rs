@@ -2,7 +2,7 @@
 
 /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey activity, and provides information about that query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyExecutionActivityMetricsResponse {
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
     /// <ul>
@@ -14,23 +14,24 @@ pub struct JourneyExecutionActivityMetricsResponse {
     /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
     #[doc(hidden)]
-    pub activity_type: std::option::Option<std::string::String>,
+    pub activity_type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the activity that the metric applies to.</p>
     #[doc(hidden)]
-    pub journey_activity_id: std::option::Option<std::string::String>,
+    pub journey_activity_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the journey that the metric applies to.</p>
     #[doc(hidden)]
-    pub journey_id: std::option::Option<std::string::String>,
+    pub journey_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution status of the activity and updated the data for the metric.</p>
     #[doc(hidden)]
-    pub last_evaluated_time: std::option::Option<std::string::String>,
+    pub last_evaluated_time: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object that contains the results of the query. The results vary depending on the type of activity (ActivityType). For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     #[doc(hidden)]
-    pub metrics:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metrics: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl JourneyExecutionActivityMetricsResponse {
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
@@ -42,30 +43,31 @@ impl JourneyExecutionActivityMetricsResponse {
     /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
     /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
-    pub fn activity_type(&self) -> std::option::Option<&str> {
+    pub fn activity_type(&self) -> ::std::option::Option<&str> {
         self.activity_type.as_deref()
     }
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the activity that the metric applies to.</p>
-    pub fn journey_activity_id(&self) -> std::option::Option<&str> {
+    pub fn journey_activity_id(&self) -> ::std::option::Option<&str> {
         self.journey_activity_id.as_deref()
     }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
-    pub fn journey_id(&self) -> std::option::Option<&str> {
+    pub fn journey_id(&self) -> ::std::option::Option<&str> {
         self.journey_id.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution status of the activity and updated the data for the metric.</p>
-    pub fn last_evaluated_time(&self) -> std::option::Option<&str> {
+    pub fn last_evaluated_time(&self) -> ::std::option::Option<&str> {
         self.last_evaluated_time.as_deref()
     }
     /// <p>A JSON object that contains the results of the query. The results vary depending on the type of activity (ActivityType). For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub fn metrics(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.metrics.as_ref()
     }
 }
@@ -78,15 +80,18 @@ impl JourneyExecutionActivityMetricsResponse {
 
 /// A builder for [`JourneyExecutionActivityMetricsResponse`](crate::types::JourneyExecutionActivityMetricsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JourneyExecutionActivityMetricsResponseBuilder {
-    pub(crate) activity_type: std::option::Option<std::string::String>,
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) journey_activity_id: std::option::Option<std::string::String>,
-    pub(crate) journey_id: std::option::Option<std::string::String>,
-    pub(crate) last_evaluated_time: std::option::Option<std::string::String>,
-    pub(crate) metrics:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) activity_type: ::std::option::Option<::std::string::String>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) journey_activity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) journey_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_evaluated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl JourneyExecutionActivityMetricsResponseBuilder {
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
@@ -98,8 +103,11 @@ impl JourneyExecutionActivityMetricsResponseBuilder {
     /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
     /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
-    pub fn activity_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.activity_type = Some(input.into());
+    pub fn activity_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.activity_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of activity that the metric applies to. Possible values are:</p>
@@ -111,52 +119,67 @@ impl JourneyExecutionActivityMetricsResponseBuilder {
     /// <li><p>RANDOM_SPLIT – For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li>
     /// <li><p>WAIT – For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li>
     /// </ul>
-    pub fn set_activity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_activity_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.activity_type = input;
         self
     }
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
     /// <p>The unique identifier for the activity that the metric applies to.</p>
-    pub fn journey_activity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.journey_activity_id = Some(input.into());
+    pub fn journey_activity_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.journey_activity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the activity that the metric applies to.</p>
     pub fn set_journey_activity_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.journey_activity_id = input;
         self
     }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
-    pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.journey_id = Some(input.into());
+    pub fn journey_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.journey_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the journey that the metric applies to.</p>
-    pub fn set_journey_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_journey_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.journey_id = input;
         self
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution status of the activity and updated the data for the metric.</p>
-    pub fn last_evaluated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_evaluated_time = Some(input.into());
+    pub fn last_evaluated_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_evaluated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution status of the activity and updated the data for the metric.</p>
     pub fn set_last_evaluated_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_evaluated_time = input;
         self
@@ -168,19 +191,19 @@ impl JourneyExecutionActivityMetricsResponseBuilder {
     /// <p>A JSON object that contains the results of the query. The results vary depending on the type of activity (ActivityType). For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub fn metrics(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.metrics.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.metrics = Some(hash_map);
+        self.metrics = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A JSON object that contains the results of the query. The results vary depending on the type of activity (ActivityType). For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub fn set_metrics(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.metrics = input;

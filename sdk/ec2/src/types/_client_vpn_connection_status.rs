@@ -2,22 +2,22 @@
 
 /// <p>Describes the status of a client connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpnConnectionStatus {
     /// <p>The state of the client connection.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::ClientVpnConnectionStatusCode>,
+    pub code: ::std::option::Option<crate::types::ClientVpnConnectionStatusCode>,
     /// <p>A message about the status of the client connection, if applicable.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnConnectionStatus {
     /// <p>The state of the client connection.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::ClientVpnConnectionStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::ClientVpnConnectionStatusCode> {
         self.code.as_ref()
     }
     /// <p>A message about the status of the client connection, if applicable.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl ClientVpnConnectionStatus {
 
 /// A builder for [`ClientVpnConnectionStatus`](crate::types::ClientVpnConnectionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientVpnConnectionStatusBuilder {
-    pub(crate) code: std::option::Option<crate::types::ClientVpnConnectionStatusCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::ClientVpnConnectionStatusCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnConnectionStatusBuilder {
     /// <p>The state of the client connection.</p>
     pub fn code(mut self, input: crate::types::ClientVpnConnectionStatusCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the client connection.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::ClientVpnConnectionStatusCode>,
+        input: ::std::option::Option<crate::types::ClientVpnConnectionStatusCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>A message about the status of the client connection, if applicable.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the status of the client connection, if applicable.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

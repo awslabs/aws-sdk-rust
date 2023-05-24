@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>GetThirdPartyJobDetails</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetThirdPartyJobDetailsOutput {
     /// <p>The details of the job, including any protected values defined for the job.</p>
     #[doc(hidden)]
-    pub job_details: std::option::Option<crate::types::ThirdPartyJobDetails>,
+    pub job_details: ::std::option::Option<crate::types::ThirdPartyJobDetails>,
     _request_id: Option<String>,
 }
 impl GetThirdPartyJobDetailsOutput {
     /// <p>The details of the job, including any protected values defined for the job.</p>
-    pub fn job_details(&self) -> std::option::Option<&crate::types::ThirdPartyJobDetails> {
+    pub fn job_details(&self) -> ::std::option::Option<&crate::types::ThirdPartyJobDetails> {
         self.job_details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetThirdPartyJobDetailsOutput {
+impl ::aws_http::request_id::RequestId for GetThirdPartyJobDetailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl GetThirdPartyJobDetailsOutput {
 
 /// A builder for [`GetThirdPartyJobDetailsOutput`](crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetThirdPartyJobDetailsOutputBuilder {
-    pub(crate) job_details: std::option::Option<crate::types::ThirdPartyJobDetails>,
+    pub(crate) job_details: ::std::option::Option<crate::types::ThirdPartyJobDetails>,
     _request_id: Option<String>,
 }
 impl GetThirdPartyJobDetailsOutputBuilder {
     /// <p>The details of the job, including any protected values defined for the job.</p>
     pub fn job_details(mut self, input: crate::types::ThirdPartyJobDetails) -> Self {
-        self.job_details = Some(input);
+        self.job_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the job, including any protected values defined for the job.</p>
     pub fn set_job_details(
         mut self,
-        input: std::option::Option<crate::types::ThirdPartyJobDetails>,
+        input: ::std::option::Option<crate::types::ThirdPartyJobDetails>,
     ) -> Self {
         self.job_details = input;
         self

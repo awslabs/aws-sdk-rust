@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AcceptAttachment`](crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`attachment_id(impl Into<String>)`](crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder::attachment_id) / [`set_attachment_id(Option<String>)`](crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder::set_attachment_id): <p>The ID of the attachment. </p>
+    ///   - [`attachment_id(impl ::std::convert::Into<String>)`](crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder::attachment_id) / [`set_attachment_id(Option<String>)`](crate::operation::accept_attachment::builders::AcceptAttachmentFluentBuilder::set_attachment_id): <p>The ID of the attachment. </p>
     /// - On success, responds with [`AcceptAttachmentOutput`](crate::operation::accept_attachment::AcceptAttachmentOutput) with field(s):
     ///   - [`attachment(Option<Attachment>)`](crate::operation::accept_attachment::AcceptAttachmentOutput::attachment): <p>The response to the attachment request. </p>
     /// - On failure, responds with [`SdkError<AcceptAttachmentError>`](crate::operation::accept_attachment::AcceptAttachmentError)

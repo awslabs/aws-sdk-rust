@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetHypervisorPropertyMappings`](crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hypervisor_arn(impl Into<String>)`](crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsFluentBuilder::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsFluentBuilder::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
+    ///   - [`hypervisor_arn(impl ::std::convert::Into<String>)`](crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsFluentBuilder::hypervisor_arn) / [`set_hypervisor_arn(Option<String>)`](crate::operation::get_hypervisor_property_mappings::builders::GetHypervisorPropertyMappingsFluentBuilder::set_hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     /// - On success, responds with [`GetHypervisorPropertyMappingsOutput`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput) with field(s):
     ///   - [`hypervisor_arn(Option<String>)`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput::hypervisor_arn): <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     ///   - [`vmware_to_aws_tag_mappings(Option<Vec<VmwareToAwsTagMapping>>)`](crate::operation::get_hypervisor_property_mappings::GetHypervisorPropertyMappingsOutput::vmware_to_aws_tag_mappings): <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>

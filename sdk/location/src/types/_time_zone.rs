@@ -2,22 +2,22 @@
 
 /// <p>Information about a time zone. Includes the name of the time zone and the offset from UTC in seconds.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeZone {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     #[doc(hidden)]
-    pub offset: std::option::Option<i32>,
+    pub offset: ::std::option::Option<i32>,
 }
 impl TimeZone {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
-    pub fn offset(&self) -> std::option::Option<i32> {
+    pub fn offset(&self) -> ::std::option::Option<i32> {
         self.offset
     }
 }
@@ -30,29 +30,31 @@ impl TimeZone {
 
 /// A builder for [`TimeZone`](crate::types::TimeZone).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeZoneBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) offset: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) offset: ::std::option::Option<i32>,
 }
 impl TimeZoneBuilder {
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the time zone, following the <a href="https://www.iana.org/time-zones"> IANA time zone standard</a>. For example, <code>America/Los_Angeles</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
     pub fn offset(mut self, input: i32) -> Self {
-        self.offset = Some(input);
+        self.offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time zone's offset, in seconds, from UTC.</p>
-    pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
     }

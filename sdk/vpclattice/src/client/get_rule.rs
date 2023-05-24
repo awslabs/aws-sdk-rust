@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRule`](crate::operation::get_rule::builders::GetRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_service_identifier): <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    ///   - [`listener_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_listener_identifier): <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    ///   - [`rule_identifier(impl Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::rule_identifier) / [`set_rule_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_rule_identifier): <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
+    ///   - [`service_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::service_identifier) / [`set_service_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_service_identifier): <p>The ID or Amazon Resource Name (ARN) of the service.</p>
+    ///   - [`listener_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::listener_identifier) / [`set_listener_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_listener_identifier): <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`rule_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::rule_identifier) / [`set_rule_identifier(Option<String>)`](crate::operation::get_rule::builders::GetRuleFluentBuilder::set_rule_identifier): <p>The ID or Amazon Resource Name (ARN) of the listener rule.</p>
     /// - On success, responds with [`GetRuleOutput`](crate::operation::get_rule::GetRuleOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_rule::GetRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_rule::GetRuleOutput::id): <p>The ID of the listener.</p>

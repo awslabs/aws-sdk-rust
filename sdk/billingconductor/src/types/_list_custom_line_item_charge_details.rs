@@ -2,31 +2,33 @@
 
 /// <p> A representation of the charge details of a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemChargeDetails {
     /// <p> A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
     #[doc(hidden)]
-    pub flat: std::option::Option<crate::types::ListCustomLineItemFlatChargeDetails>,
+    pub flat: ::std::option::Option<crate::types::ListCustomLineItemFlatChargeDetails>,
     /// <p> A <code>ListCustomLineItemPercentageChargeDetails</code> that describes the charge details of a percentage custom line item. </p>
     #[doc(hidden)]
-    pub percentage: std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,
+    pub percentage: ::std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::CustomLineItemType>,
+    pub r#type: ::std::option::Option<crate::types::CustomLineItemType>,
 }
 impl ListCustomLineItemChargeDetails {
     /// <p> A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
-    pub fn flat(&self) -> std::option::Option<&crate::types::ListCustomLineItemFlatChargeDetails> {
+    pub fn flat(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ListCustomLineItemFlatChargeDetails> {
         self.flat.as_ref()
     }
     /// <p> A <code>ListCustomLineItemPercentageChargeDetails</code> that describes the charge details of a percentage custom line item. </p>
     pub fn percentage(
         &self,
-    ) -> std::option::Option<&crate::types::ListCustomLineItemPercentageChargeDetails> {
+    ) -> ::std::option::Option<&crate::types::ListCustomLineItemPercentageChargeDetails> {
         self.percentage.as_ref()
     }
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::CustomLineItemType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CustomLineItemType> {
         self.r#type.as_ref()
     }
 }
@@ -39,23 +41,25 @@ impl ListCustomLineItemChargeDetails {
 
 /// A builder for [`ListCustomLineItemChargeDetails`](crate::types::ListCustomLineItemChargeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListCustomLineItemChargeDetailsBuilder {
-    pub(crate) flat: std::option::Option<crate::types::ListCustomLineItemFlatChargeDetails>,
+    pub(crate) flat: ::std::option::Option<crate::types::ListCustomLineItemFlatChargeDetails>,
     pub(crate) percentage:
-        std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,
-    pub(crate) r#type: std::option::Option<crate::types::CustomLineItemType>,
+        ::std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,
+    pub(crate) r#type: ::std::option::Option<crate::types::CustomLineItemType>,
 }
 impl ListCustomLineItemChargeDetailsBuilder {
     /// <p> A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
     pub fn flat(mut self, input: crate::types::ListCustomLineItemFlatChargeDetails) -> Self {
-        self.flat = Some(input);
+        self.flat = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details of a flat custom line item. </p>
     pub fn set_flat(
         mut self,
-        input: std::option::Option<crate::types::ListCustomLineItemFlatChargeDetails>,
+        input: ::std::option::Option<crate::types::ListCustomLineItemFlatChargeDetails>,
     ) -> Self {
         self.flat = input;
         self
@@ -65,26 +69,26 @@ impl ListCustomLineItemChargeDetailsBuilder {
         mut self,
         input: crate::types::ListCustomLineItemPercentageChargeDetails,
     ) -> Self {
-        self.percentage = Some(input);
+        self.percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>ListCustomLineItemPercentageChargeDetails</code> that describes the charge details of a percentage custom line item. </p>
     pub fn set_percentage(
         mut self,
-        input: std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,
+        input: ::std::option::Option<crate::types::ListCustomLineItemPercentageChargeDetails>,
     ) -> Self {
         self.percentage = input;
         self
     }
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
     pub fn r#type(mut self, input: crate::types::CustomLineItemType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of the custom line item that indicates whether the charge is a <code>fee</code> or <code>credit</code>. </p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::CustomLineItemType>,
+        input: ::std::option::Option<crate::types::CustomLineItemType>,
     ) -> Self {
         self.r#type = input;
         self

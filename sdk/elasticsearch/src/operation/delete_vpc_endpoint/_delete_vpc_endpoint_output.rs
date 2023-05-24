@@ -2,20 +2,20 @@
 
 /// <p>Container for response parameters to the <code><code>DeleteVpcEndpoint</code></code> operation. Contains the summarized detail of the VPC Endpoint being deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcEndpointOutput {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
     #[doc(hidden)]
-    pub vpc_endpoint_summary: std::option::Option<crate::types::VpcEndpointSummary>,
+    pub vpc_endpoint_summary: ::std::option::Option<crate::types::VpcEndpointSummary>,
     _request_id: Option<String>,
 }
 impl DeleteVpcEndpointOutput {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-    pub fn vpc_endpoint_summary(&self) -> std::option::Option<&crate::types::VpcEndpointSummary> {
+    pub fn vpc_endpoint_summary(&self) -> ::std::option::Option<&crate::types::VpcEndpointSummary> {
         self.vpc_endpoint_summary.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteVpcEndpointOutput {
+impl ::aws_http::request_id::RequestId for DeleteVpcEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DeleteVpcEndpointOutput {
 
 /// A builder for [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteVpcEndpointOutputBuilder {
-    pub(crate) vpc_endpoint_summary: std::option::Option<crate::types::VpcEndpointSummary>,
+    pub(crate) vpc_endpoint_summary: ::std::option::Option<crate::types::VpcEndpointSummary>,
     _request_id: Option<String>,
 }
 impl DeleteVpcEndpointOutputBuilder {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
     pub fn vpc_endpoint_summary(mut self, input: crate::types::VpcEndpointSummary) -> Self {
-        self.vpc_endpoint_summary = Some(input);
+        self.vpc_endpoint_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
     pub fn set_vpc_endpoint_summary(
         mut self,
-        input: std::option::Option<crate::types::VpcEndpointSummary>,
+        input: ::std::option::Option<crate::types::VpcEndpointSummary>,
     ) -> Self {
         self.vpc_endpoint_summary = input;
         self

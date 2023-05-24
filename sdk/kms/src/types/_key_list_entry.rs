@@ -2,22 +2,22 @@
 
 /// <p>Contains information about each entry in the key list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyListEntry {
     /// <p>Unique identifier of the key.</p>
     #[doc(hidden)]
-    pub key_id: std::option::Option<std::string::String>,
+    pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the key.</p>
     #[doc(hidden)]
-    pub key_arn: std::option::Option<std::string::String>,
+    pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KeyListEntry {
     /// <p>Unique identifier of the key.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>ARN of the key.</p>
-    pub fn key_arn(&self) -> std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<&str> {
         self.key_arn.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl KeyListEntry {
 
 /// A builder for [`KeyListEntry`](crate::types::KeyListEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KeyListEntryBuilder {
-    pub(crate) key_id: std::option::Option<std::string::String>,
-    pub(crate) key_arn: std::option::Option<std::string::String>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KeyListEntryBuilder {
     /// <p>Unique identifier of the key.</p>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_id = Some(input.into());
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier of the key.</p>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }
     /// <p>ARN of the key.</p>
-    pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_arn = Some(input.into());
+    pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the key.</p>
-    pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
     }

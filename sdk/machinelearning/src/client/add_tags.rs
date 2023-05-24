@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`tags(Vec<Tag>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_tags): <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_resource_id): <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_resource_id): <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
     ///   - [`resource_type(TaggableResourceType)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::resource_type) / [`set_resource_type(Option<TaggableResourceType>)`](crate::operation::add_tags::builders::AddTagsFluentBuilder::set_resource_type): <p>The type of the ML object to tag.</p>
     /// - On success, responds with [`AddTagsOutput`](crate::operation::add_tags::AddTagsOutput) with field(s):
     ///   - [`resource_id(Option<String>)`](crate::operation::add_tags::AddTagsOutput::resource_id): <p>The ID of the ML object that was tagged.</p>

@@ -2,20 +2,20 @@
 
 /// <p>The configuration for a license service that is associated with a studio resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LicenseServiceConfiguration {
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<std::string::String>,
+    pub endpoint: ::std::option::Option<::std::string::String>,
 }
 impl LicenseServiceConfiguration {
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
 }
-impl std::fmt::Debug for LicenseServiceConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for LicenseServiceConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LicenseServiceConfiguration");
         formatter.field("endpoint", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,18 @@ impl LicenseServiceConfiguration {
 
 /// A builder for [`LicenseServiceConfiguration`](crate::types::LicenseServiceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct LicenseServiceConfigurationBuilder {
-    pub(crate) endpoint: std::option::Option<std::string::String>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
 }
 impl LicenseServiceConfigurationBuilder {
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint = Some(input.into());
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the license service that is accessed by the studio component resource.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
@@ -52,8 +52,8 @@ impl LicenseServiceConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for LicenseServiceConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for LicenseServiceConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LicenseServiceConfigurationBuilder");
         formatter.field("endpoint", &"*** Sensitive Data Redacted ***");
         formatter.finish()

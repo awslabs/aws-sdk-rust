@@ -38,13 +38,13 @@
 /// Mpeg2 Display Ratio
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Mpeg2DisplayRatio {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Mpeg2DisplayRatio {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Mpeg2DisplayRatio {
+impl ::std::convert::From<&str> for Mpeg2DisplayRatio {
     fn from(s: &str) -> Self {
         match s {
             "DISPLAYRATIO16X9" => Mpeg2DisplayRatio::Displayratio16X9,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Mpeg2DisplayRatio {
         }
     }
 }
-impl std::str::FromStr for Mpeg2DisplayRatio {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Mpeg2DisplayRatio {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mpeg2DisplayRatio::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Mpeg2DisplayRatio::from(s))
     }
 }
 impl Mpeg2DisplayRatio {
@@ -86,7 +86,7 @@ impl Mpeg2DisplayRatio {
         &["DISPLAYRATIO16X9", "DISPLAYRATIO4X3"]
     }
 }
-impl AsRef<str> for Mpeg2DisplayRatio {
+impl ::std::convert::AsRef<str> for Mpeg2DisplayRatio {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

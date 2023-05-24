@@ -2,57 +2,57 @@
 
 /// <p>Returns information about comments on the comparison between two commits.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommentsForComparedCommit {
     /// <p>The name of the repository that contains the compared commits.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
     #[doc(hidden)]
-    pub before_commit_id: std::option::Option<std::string::String>,
+    pub before_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
     #[doc(hidden)]
-    pub after_commit_id: std::option::Option<std::string::String>,
+    pub after_commit_id: ::std::option::Option<::std::string::String>,
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
     #[doc(hidden)]
-    pub before_blob_id: std::option::Option<std::string::String>,
+    pub before_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
     #[doc(hidden)]
-    pub after_blob_id: std::option::Option<std::string::String>,
+    pub after_blob_id: ::std::option::Option<::std::string::String>,
     /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::Location>,
+    pub location: ::std::option::Option<crate::types::Location>,
     /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
     #[doc(hidden)]
-    pub comments: std::option::Option<std::vec::Vec<crate::types::Comment>>,
+    pub comments: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
 }
 impl CommentsForComparedCommit {
     /// <p>The name of the repository that contains the compared commits.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
-    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+    pub fn before_commit_id(&self) -> ::std::option::Option<&str> {
         self.before_commit_id.as_deref()
     }
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
-    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+    pub fn after_commit_id(&self) -> ::std::option::Option<&str> {
         self.after_commit_id.as_deref()
     }
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
-    pub fn before_blob_id(&self) -> std::option::Option<&str> {
+    pub fn before_blob_id(&self) -> ::std::option::Option<&str> {
         self.before_blob_id.as_deref()
     }
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
-    pub fn after_blob_id(&self) -> std::option::Option<&str> {
+    pub fn after_blob_id(&self) -> ::std::option::Option<&str> {
         self.after_blob_id.as_deref()
     }
     /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
-    pub fn comments(&self) -> std::option::Option<&[crate::types::Comment]> {
+    pub fn comments(&self) -> ::std::option::Option<&[crate::types::Comment]> {
         self.comments.as_deref()
     }
 }
@@ -65,74 +65,106 @@ impl CommentsForComparedCommit {
 
 /// A builder for [`CommentsForComparedCommit`](crate::types::CommentsForComparedCommit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommentsForComparedCommitBuilder {
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) before_commit_id: std::option::Option<std::string::String>,
-    pub(crate) after_commit_id: std::option::Option<std::string::String>,
-    pub(crate) before_blob_id: std::option::Option<std::string::String>,
-    pub(crate) after_blob_id: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<crate::types::Location>,
-    pub(crate) comments: std::option::Option<std::vec::Vec<crate::types::Comment>>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) before_commit_id: ::std::option::Option<::std::string::String>,
+    pub(crate) after_commit_id: ::std::option::Option<::std::string::String>,
+    pub(crate) before_blob_id: ::std::option::Option<::std::string::String>,
+    pub(crate) after_blob_id: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<crate::types::Location>,
+    pub(crate) comments: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
 }
 impl CommentsForComparedCommitBuilder {
     /// <p>The name of the repository that contains the compared commits.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that contains the compared commits.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
-    pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.before_commit_id = Some(input.into());
+    pub fn before_commit_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.before_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit used to establish the before of the comparison.</p>
-    pub fn set_before_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_before_commit_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.before_commit_id = input;
         self
     }
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
-    pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.after_commit_id = Some(input.into());
+    pub fn after_commit_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.after_commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
-    pub fn set_after_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_after_commit_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.after_commit_id = input;
         self
     }
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
-    pub fn before_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.before_blob_id = Some(input.into());
+    pub fn before_blob_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.before_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
-    pub fn set_before_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_before_blob_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.before_blob_id = input;
         self
     }
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
-    pub fn after_blob_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.after_blob_id = Some(input.into());
+    pub fn after_blob_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.after_blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
-    pub fn set_after_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_after_blob_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.after_blob_id = input;
         self
     }
     /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Location information about the comment on the comparison, including the file name, line number, and whether the version of the file where the comment was made is BEFORE or AFTER.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.location = input;
         self
     }
@@ -144,13 +176,13 @@ impl CommentsForComparedCommitBuilder {
     pub fn comments(mut self, input: crate::types::Comment) -> Self {
         let mut v = self.comments.unwrap_or_default();
         v.push(input);
-        self.comments = Some(v);
+        self.comments = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison between commits.</p>
     pub fn set_comments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Comment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Comment>>,
     ) -> Self {
         self.comments = input;
         self

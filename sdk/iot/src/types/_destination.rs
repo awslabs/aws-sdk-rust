@@ -2,15 +2,15 @@
 
 /// <p>Describes the location of the updated firmware.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>Describes the location in S3 of the updated firmware.</p>
     #[doc(hidden)]
-    pub s3_destination: std::option::Option<crate::types::S3Destination>,
+    pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl Destination {
     /// <p>Describes the location in S3 of the updated firmware.</p>
-    pub fn s3_destination(&self) -> std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationBuilder {
-    pub(crate) s3_destination: std::option::Option<crate::types::S3Destination>,
+    pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl DestinationBuilder {
     /// <p>Describes the location in S3 of the updated firmware.</p>
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
-        self.s3_destination = Some(input);
+        self.s3_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the location in S3 of the updated firmware.</p>
     pub fn set_s3_destination(
         mut self,
-        input: std::option::Option<crate::types::S3Destination>,
+        input: ::std::option::Option<crate::types::S3Destination>,
     ) -> Self {
         self.s3_destination = input;
         self

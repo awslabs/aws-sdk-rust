@@ -2,47 +2,48 @@
 
 /// <p>Updates to the configuration of Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZeppelinApplicationConfigurationUpdate {
     /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
     pub monitoring_configuration_update:
-        std::option::Option<crate::types::ZeppelinMonitoringConfigurationUpdate>,
+        ::std::option::Option<crate::types::ZeppelinMonitoringConfigurationUpdate>,
     /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
-    pub catalog_configuration_update: std::option::Option<crate::types::CatalogConfigurationUpdate>,
+    pub catalog_configuration_update:
+        ::std::option::Option<crate::types::CatalogConfigurationUpdate>,
     /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
     #[doc(hidden)]
     pub deploy_as_application_configuration_update:
-        std::option::Option<crate::types::DeployAsApplicationConfigurationUpdate>,
+        ::std::option::Option<crate::types::DeployAsApplicationConfigurationUpdate>,
     /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
     #[doc(hidden)]
     pub custom_artifacts_configuration_update:
-        std::option::Option<std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
 }
 impl ZeppelinApplicationConfigurationUpdate {
     /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     pub fn monitoring_configuration_update(
         &self,
-    ) -> std::option::Option<&crate::types::ZeppelinMonitoringConfigurationUpdate> {
+    ) -> ::std::option::Option<&crate::types::ZeppelinMonitoringConfigurationUpdate> {
         self.monitoring_configuration_update.as_ref()
     }
     /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
     pub fn catalog_configuration_update(
         &self,
-    ) -> std::option::Option<&crate::types::CatalogConfigurationUpdate> {
+    ) -> ::std::option::Option<&crate::types::CatalogConfigurationUpdate> {
         self.catalog_configuration_update.as_ref()
     }
     /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
     pub fn deploy_as_application_configuration_update(
         &self,
-    ) -> std::option::Option<&crate::types::DeployAsApplicationConfigurationUpdate> {
+    ) -> ::std::option::Option<&crate::types::DeployAsApplicationConfigurationUpdate> {
         self.deploy_as_application_configuration_update.as_ref()
     }
     /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
     pub fn custom_artifacts_configuration_update(
         &self,
-    ) -> std::option::Option<&[crate::types::CustomArtifactConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::CustomArtifactConfiguration]> {
         self.custom_artifacts_configuration_update.as_deref()
     }
 }
@@ -55,16 +56,18 @@ impl ZeppelinApplicationConfigurationUpdate {
 
 /// A builder for [`ZeppelinApplicationConfigurationUpdate`](crate::types::ZeppelinApplicationConfigurationUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ZeppelinApplicationConfigurationUpdateBuilder {
     pub(crate) monitoring_configuration_update:
-        std::option::Option<crate::types::ZeppelinMonitoringConfigurationUpdate>,
+        ::std::option::Option<crate::types::ZeppelinMonitoringConfigurationUpdate>,
     pub(crate) catalog_configuration_update:
-        std::option::Option<crate::types::CatalogConfigurationUpdate>,
+        ::std::option::Option<crate::types::CatalogConfigurationUpdate>,
     pub(crate) deploy_as_application_configuration_update:
-        std::option::Option<crate::types::DeployAsApplicationConfigurationUpdate>,
+        ::std::option::Option<crate::types::DeployAsApplicationConfigurationUpdate>,
     pub(crate) custom_artifacts_configuration_update:
-        std::option::Option<std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
 }
 impl ZeppelinApplicationConfigurationUpdateBuilder {
     /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
@@ -72,13 +75,13 @@ impl ZeppelinApplicationConfigurationUpdateBuilder {
         mut self,
         input: crate::types::ZeppelinMonitoringConfigurationUpdate,
     ) -> Self {
-        self.monitoring_configuration_update = Some(input);
+        self.monitoring_configuration_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     pub fn set_monitoring_configuration_update(
         mut self,
-        input: std::option::Option<crate::types::ZeppelinMonitoringConfigurationUpdate>,
+        input: ::std::option::Option<crate::types::ZeppelinMonitoringConfigurationUpdate>,
     ) -> Self {
         self.monitoring_configuration_update = input;
         self
@@ -88,13 +91,13 @@ impl ZeppelinApplicationConfigurationUpdateBuilder {
         mut self,
         input: crate::types::CatalogConfigurationUpdate,
     ) -> Self {
-        self.catalog_configuration_update = Some(input);
+        self.catalog_configuration_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
     pub fn set_catalog_configuration_update(
         mut self,
-        input: std::option::Option<crate::types::CatalogConfigurationUpdate>,
+        input: ::std::option::Option<crate::types::CatalogConfigurationUpdate>,
     ) -> Self {
         self.catalog_configuration_update = input;
         self
@@ -104,13 +107,13 @@ impl ZeppelinApplicationConfigurationUpdateBuilder {
         mut self,
         input: crate::types::DeployAsApplicationConfigurationUpdate,
     ) -> Self {
-        self.deploy_as_application_configuration_update = Some(input);
+        self.deploy_as_application_configuration_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
     pub fn set_deploy_as_application_configuration_update(
         mut self,
-        input: std::option::Option<crate::types::DeployAsApplicationConfigurationUpdate>,
+        input: ::std::option::Option<crate::types::DeployAsApplicationConfigurationUpdate>,
     ) -> Self {
         self.deploy_as_application_configuration_update = input;
         self
@@ -128,13 +131,13 @@ impl ZeppelinApplicationConfigurationUpdateBuilder {
             .custom_artifacts_configuration_update
             .unwrap_or_default();
         v.push(input);
-        self.custom_artifacts_configuration_update = Some(v);
+        self.custom_artifacts_configuration_update = ::std::option::Option::Some(v);
         self
     }
     /// <p>Updates to the customer artifacts. Custom artifacts are dependency JAR files and user-defined functions (UDF).</p>
     pub fn set_custom_artifacts_configuration_update(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomArtifactConfiguration>>,
     ) -> Self {
         self.custom_artifacts_configuration_update = input;
         self

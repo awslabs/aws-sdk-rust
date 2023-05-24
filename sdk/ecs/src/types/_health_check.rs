@@ -24,7 +24,7 @@
 /// <li> <p>Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheck {
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
     /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, enclose the list of commands in double quotes and brackets.</p>
@@ -33,21 +33,21 @@ pub struct HealthCheck {
     /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     #[doc(hidden)]
-    pub interval: std::option::Option<i32>,
+    pub interval: ::std::option::Option<i32>,
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
     #[doc(hidden)]
-    pub timeout: std::option::Option<i32>,
+    pub timeout: ::std::option::Option<i32>,
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
     #[doc(hidden)]
-    pub retries: std::option::Option<i32>,
+    pub retries: ::std::option::Option<i32>,
     /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p> <note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
     #[doc(hidden)]
-    pub start_period: std::option::Option<i32>,
+    pub start_period: ::std::option::Option<i32>,
 }
 impl HealthCheck {
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
@@ -56,25 +56,25 @@ impl HealthCheck {
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.command.as_deref()
     }
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
-    pub fn interval(&self) -> std::option::Option<i32> {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
-    pub fn timeout(&self) -> std::option::Option<i32> {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
-    pub fn retries(&self) -> std::option::Option<i32> {
+    pub fn retries(&self) -> ::std::option::Option<i32> {
         self.retries
     }
     /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p> <note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
-    pub fn start_period(&self) -> std::option::Option<i32> {
+    pub fn start_period(&self) -> ::std::option::Option<i32> {
         self.start_period
     }
 }
@@ -87,13 +87,15 @@ impl HealthCheck {
 
 /// A builder for [`HealthCheck`](crate::types::HealthCheck).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HealthCheckBuilder {
-    pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) interval: std::option::Option<i32>,
-    pub(crate) timeout: std::option::Option<i32>,
-    pub(crate) retries: std::option::Option<i32>,
-    pub(crate) start_period: std::option::Option<i32>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) interval: ::std::option::Option<i32>,
+    pub(crate) timeout: ::std::option::Option<i32>,
+    pub(crate) retries: ::std::option::Option<i32>,
+    pub(crate) start_period: ::std::option::Option<i32>,
 }
 impl HealthCheckBuilder {
     /// Appends an item to `command`.
@@ -106,10 +108,10 @@ impl HealthCheckBuilder {
     /// <p>You don't include the double quotes and brackets when you use the Amazon Web Services Management Console.</p>
     /// <p> <code> CMD-SHELL, curl -f http://localhost/ || exit 1</code> </p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
         v.push(input.into());
-        self.command = Some(v);
+        self.command = ::std::option::Option::Some(v);
         self
     }
     /// <p>A string array representing the command that the container runs to determine if it is healthy. The string array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
@@ -120,38 +122,38 @@ impl HealthCheckBuilder {
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
     pub fn set_command(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.command = input;
         self
     }
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
     pub fn interval(mut self, input: i32) -> Self {
-        self.interval = Some(input);
+        self.interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
-    pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
     }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
     pub fn timeout(mut self, input: i32) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
     pub fn retries(mut self, input: i32) -> Self {
-        self.retries = Some(input);
+        self.retries = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
-    pub fn set_retries(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retries = input;
         self
     }
@@ -159,13 +161,13 @@ impl HealthCheckBuilder {
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
     pub fn start_period(mut self, input: i32) -> Self {
-        self.start_period = Some(input);
+        self.start_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p> <note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
-    pub fn set_start_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_period = input;
         self
     }

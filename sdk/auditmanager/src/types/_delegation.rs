@@ -2,65 +2,65 @@
 
 /// <p> The assignment of a control set to a delegate for review. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Delegation {
     /// <p> The unique identifier for the delegation. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the assessment that's associated with the delegation. </p>
     #[doc(hidden)]
-    pub assessment_name: std::option::Option<std::string::String>,
+    pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p> The identifier for the assessment that's associated with the delegation. </p>
     #[doc(hidden)]
-    pub assessment_id: std::option::Option<std::string::String>,
+    pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The status of the delegation. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DelegationStatus>,
+    pub status: ::std::option::Option<crate::types::DelegationStatus>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The type of customer persona. </p> <note>
     /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub role_type: std::option::Option<crate::types::RoleType>,
+    pub role_type: ::std::option::Option<crate::types::RoleType>,
     /// <p> Specifies when the delegation was created. </p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies when the delegation was last updated. </p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The identifier for the control set that's associated with the delegation. </p>
     #[doc(hidden)]
-    pub control_set_id: std::option::Option<std::string::String>,
+    pub control_set_id: ::std::option::Option<::std::string::String>,
     /// <p> The comment that's related to the delegation. </p>
     #[doc(hidden)]
-    pub comment: std::option::Option<std::string::String>,
+    pub comment: ::std::option::Option<::std::string::String>,
     /// <p> The user or role that created the delegation. </p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<std::string::String>,
+    pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl Delegation {
     /// <p> The unique identifier for the delegation. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The name of the assessment that's associated with the delegation. </p>
-    pub fn assessment_name(&self) -> std::option::Option<&str> {
+    pub fn assessment_name(&self) -> ::std::option::Option<&str> {
         self.assessment_name.as_deref()
     }
     /// <p> The identifier for the assessment that's associated with the delegation. </p>
-    pub fn assessment_id(&self) -> std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
     /// <p> The status of the delegation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DelegationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DelegationStatus> {
         self.status.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p> The type of customer persona. </p> <note>
@@ -68,27 +68,27 @@ impl Delegation {
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
-    pub fn role_type(&self) -> std::option::Option<&crate::types::RoleType> {
+    pub fn role_type(&self) -> ::std::option::Option<&crate::types::RoleType> {
         self.role_type.as_ref()
     }
     /// <p> Specifies when the delegation was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> Specifies when the delegation was last updated. </p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p> The identifier for the control set that's associated with the delegation. </p>
-    pub fn control_set_id(&self) -> std::option::Option<&str> {
+    pub fn control_set_id(&self) -> ::std::option::Option<&str> {
         self.control_set_id.as_deref()
     }
     /// <p> The comment that's related to the delegation. </p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
     /// <p> The user or role that created the delegation. </p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
 }
@@ -101,71 +101,85 @@ impl Delegation {
 
 /// A builder for [`Delegation`](crate::types::Delegation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DelegationBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) assessment_name: std::option::Option<std::string::String>,
-    pub(crate) assessment_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DelegationStatus>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) role_type: std::option::Option<crate::types::RoleType>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) control_set_id: std::option::Option<std::string::String>,
-    pub(crate) comment: std::option::Option<std::string::String>,
-    pub(crate) created_by: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DelegationStatus>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_type: ::std::option::Option<crate::types::RoleType>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) control_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
 }
 impl DelegationBuilder {
     /// <p> The unique identifier for the delegation. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the delegation. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> The name of the assessment that's associated with the delegation. </p>
-    pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_name = Some(input.into());
+    pub fn assessment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the assessment that's associated with the delegation. </p>
-    pub fn set_assessment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assessment_name = input;
         self
     }
     /// <p> The identifier for the assessment that's associated with the delegation. </p>
-    pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_id = Some(input.into());
+    pub fn assessment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the assessment that's associated with the delegation. </p>
-    pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assessment_id = input;
         self
     }
     /// <p> The status of the delegation. </p>
     pub fn status(mut self, input: crate::types::DelegationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the delegation. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DelegationStatus>,
+        input: ::std::option::Option<crate::types::DelegationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
@@ -175,7 +189,7 @@ impl DelegationBuilder {
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
     pub fn role_type(mut self, input: crate::types::RoleType) -> Self {
-        self.role_type = Some(input);
+        self.role_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of customer persona. </p> <note>
@@ -183,63 +197,69 @@ impl DelegationBuilder {
     /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
     /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
     /// </note>
-    pub fn set_role_type(mut self, input: std::option::Option<crate::types::RoleType>) -> Self {
+    pub fn set_role_type(mut self, input: ::std::option::Option<crate::types::RoleType>) -> Self {
         self.role_type = input;
         self
     }
     /// <p> Specifies when the delegation was created. </p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies when the delegation was created. </p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p> Specifies when the delegation was last updated. </p>
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies when the delegation was last updated. </p>
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self
     }
     /// <p> The identifier for the control set that's associated with the delegation. </p>
-    pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_set_id = Some(input.into());
+    pub fn control_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The identifier for the control set that's associated with the delegation. </p>
-    pub fn set_control_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_control_set_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.control_set_id = input;
         self
     }
     /// <p> The comment that's related to the delegation. </p>
-    pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
-        self.comment = Some(input.into());
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The comment that's related to the delegation. </p>
-    pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
     /// <p> The user or role that created the delegation. </p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by = Some(input.into());
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The user or role that created the delegation. </p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }

@@ -2,14 +2,14 @@
 
 /// <p>Returns information about a specific Git blob object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlobMetadata {
     /// <p>The full ID of the blob.</p>
     #[doc(hidden)]
-    pub blob_id: std::option::Option<std::string::String>,
+    pub blob_id: ::std::option::Option<::std::string::String>,
     /// <p>The path to the blob and associated file name, if any.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
     /// <ul>
     /// <li> <p> <code>100644</code> indicates read/write</p> </li>
@@ -18,15 +18,15 @@ pub struct BlobMetadata {
     /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub mode: std::option::Option<std::string::String>,
+    pub mode: ::std::option::Option<::std::string::String>,
 }
 impl BlobMetadata {
     /// <p>The full ID of the blob.</p>
-    pub fn blob_id(&self) -> std::option::Option<&str> {
+    pub fn blob_id(&self) -> ::std::option::Option<&str> {
         self.blob_id.as_deref()
     }
     /// <p>The path to the blob and associated file name, if any.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
@@ -36,7 +36,7 @@ impl BlobMetadata {
     /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
     /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
-    pub fn mode(&self) -> std::option::Option<&str> {
+    pub fn mode(&self) -> ::std::option::Option<&str> {
         self.mode.as_deref()
     }
 }
@@ -49,30 +49,32 @@ impl BlobMetadata {
 
 /// A builder for [`BlobMetadata`](crate::types::BlobMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlobMetadataBuilder {
-    pub(crate) blob_id: std::option::Option<std::string::String>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) mode: std::option::Option<std::string::String>,
+    pub(crate) blob_id: ::std::option::Option<::std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) mode: ::std::option::Option<::std::string::String>,
 }
 impl BlobMetadataBuilder {
     /// <p>The full ID of the blob.</p>
-    pub fn blob_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.blob_id = Some(input.into());
+    pub fn blob_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.blob_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full ID of the blob.</p>
-    pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_blob_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blob_id = input;
         self
     }
     /// <p>The path to the blob and associated file name, if any.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the blob and associated file name, if any.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
@@ -83,8 +85,8 @@ impl BlobMetadataBuilder {
     /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
     /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
-    pub fn mode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mode = Some(input.into());
+    pub fn mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
@@ -94,7 +96,7 @@ impl BlobMetadataBuilder {
     /// <li> <p> <code>160000</code> indicates a submodule</p> </li>
     /// <li> <p> <code>120000</code> indicates a symlink</p> </li>
     /// </ul>
-    pub fn set_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mode = input;
         self
     }

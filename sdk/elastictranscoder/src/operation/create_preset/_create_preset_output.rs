@@ -2,27 +2,27 @@
 
 /// <p>The <code>CreatePresetResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePresetOutput {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
     #[doc(hidden)]
-    pub preset: std::option::Option<crate::types::Preset>,
+    pub preset: ::std::option::Option<crate::types::Preset>,
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
     #[doc(hidden)]
-    pub warning: std::option::Option<std::string::String>,
+    pub warning: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePresetOutput {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
-    pub fn preset(&self) -> std::option::Option<&crate::types::Preset> {
+    pub fn preset(&self) -> ::std::option::Option<&crate::types::Preset> {
         self.preset.as_ref()
     }
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    pub fn warning(&self) -> std::option::Option<&str> {
+    pub fn warning(&self) -> ::std::option::Option<&str> {
         self.warning.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreatePresetOutput {
+impl ::aws_http::request_id::RequestId for CreatePresetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl CreatePresetOutput {
 
 /// A builder for [`CreatePresetOutput`](crate::operation::create_preset::CreatePresetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePresetOutputBuilder {
-    pub(crate) preset: std::option::Option<crate::types::Preset>,
-    pub(crate) warning: std::option::Option<std::string::String>,
+    pub(crate) preset: ::std::option::Option<crate::types::Preset>,
+    pub(crate) warning: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePresetOutputBuilder {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
     pub fn preset(mut self, input: crate::types::Preset) -> Self {
-        self.preset = Some(input);
+        self.preset = ::std::option::Option::Some(input);
         self
     }
     /// <p>A section of the response body that provides information about the preset that is created.</p>
-    pub fn set_preset(mut self, input: std::option::Option<crate::types::Preset>) -> Self {
+    pub fn set_preset(mut self, input: ::std::option::Option<crate::types::Preset>) -> Self {
         self.preset = input;
         self
     }
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    pub fn warning(mut self, input: impl Into<std::string::String>) -> Self {
-        self.warning = Some(input.into());
+    pub fn warning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.warning = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    pub fn set_warning(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_warning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warning = input;
         self
     }

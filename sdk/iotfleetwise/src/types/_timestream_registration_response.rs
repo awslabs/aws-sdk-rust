@@ -2,50 +2,50 @@
 
 /// <p>Information about the registered Amazon Timestream resources or errors, if any.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestreamRegistrationResponse {
     /// <p>The name of the Timestream database.</p>
     #[doc(hidden)]
-    pub timestream_database_name: std::option::Option<std::string::String>,
+    pub timestream_database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Timestream database table.</p>
     #[doc(hidden)]
-    pub timestream_table_name: std::option::Option<std::string::String>,
+    pub timestream_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
     #[doc(hidden)]
-    pub timestream_database_arn: std::option::Option<std::string::String>,
+    pub timestream_database_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Timestream database table.</p>
     #[doc(hidden)]
-    pub timestream_table_arn: std::option::Option<std::string::String>,
+    pub timestream_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
     #[doc(hidden)]
-    pub registration_status: std::option::Option<crate::types::RegistrationStatus>,
+    pub registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>A message associated with a registration error.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamRegistrationResponse {
     /// <p>The name of the Timestream database.</p>
-    pub fn timestream_database_name(&self) -> std::option::Option<&str> {
+    pub fn timestream_database_name(&self) -> ::std::option::Option<&str> {
         self.timestream_database_name.as_deref()
     }
     /// <p>The name of the Timestream database table.</p>
-    pub fn timestream_table_name(&self) -> std::option::Option<&str> {
+    pub fn timestream_table_name(&self) -> ::std::option::Option<&str> {
         self.timestream_table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
-    pub fn timestream_database_arn(&self) -> std::option::Option<&str> {
+    pub fn timestream_database_arn(&self) -> ::std::option::Option<&str> {
         self.timestream_database_arn.as_deref()
     }
     /// <p>The ARN of the Timestream database table.</p>
-    pub fn timestream_table_arn(&self) -> std::option::Option<&str> {
+    pub fn timestream_table_arn(&self) -> ::std::option::Option<&str> {
         self.timestream_table_arn.as_deref()
     }
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
-    pub fn registration_status(&self) -> std::option::Option<&crate::types::RegistrationStatus> {
+    pub fn registration_status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
         self.registration_status.as_ref()
     }
     /// <p>A message associated with a registration error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -58,88 +58,108 @@ impl TimestreamRegistrationResponse {
 
 /// A builder for [`TimestreamRegistrationResponse`](crate::types::TimestreamRegistrationResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimestreamRegistrationResponseBuilder {
-    pub(crate) timestream_database_name: std::option::Option<std::string::String>,
-    pub(crate) timestream_table_name: std::option::Option<std::string::String>,
-    pub(crate) timestream_database_arn: std::option::Option<std::string::String>,
-    pub(crate) timestream_table_arn: std::option::Option<std::string::String>,
-    pub(crate) registration_status: std::option::Option<crate::types::RegistrationStatus>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) timestream_database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) timestream_table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) timestream_database_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) timestream_table_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl TimestreamRegistrationResponseBuilder {
     /// <p>The name of the Timestream database.</p>
-    pub fn timestream_database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestream_database_name = Some(input.into());
+    pub fn timestream_database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.timestream_database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Timestream database.</p>
     pub fn set_timestream_database_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.timestream_database_name = input;
         self
     }
     /// <p>The name of the Timestream database table.</p>
-    pub fn timestream_table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestream_table_name = Some(input.into());
+    pub fn timestream_table_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.timestream_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Timestream database table.</p>
     pub fn set_timestream_table_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.timestream_table_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
-    pub fn timestream_database_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestream_database_arn = Some(input.into());
+    pub fn timestream_database_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.timestream_database_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Timestream database.</p>
     pub fn set_timestream_database_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.timestream_database_arn = input;
         self
     }
     /// <p>The ARN of the Timestream database table.</p>
-    pub fn timestream_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestream_table_arn = Some(input.into());
+    pub fn timestream_table_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.timestream_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Timestream database table.</p>
     pub fn set_timestream_table_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.timestream_table_arn = input;
         self
     }
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
-        self.registration_status = Some(input);
+        self.registration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of registering your Amazon Timestream resources. The status can be one of <code>REGISTRATION_SUCCESS</code>, <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.</p>
     pub fn set_registration_status(
         mut self,
-        input: std::option::Option<crate::types::RegistrationStatus>,
+        input: ::std::option::Option<crate::types::RegistrationStatus>,
     ) -> Self {
         self.registration_status = input;
         self
     }
     /// <p>A message associated with a registration error.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message associated with a registration error.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

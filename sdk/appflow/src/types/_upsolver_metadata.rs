@@ -2,7 +2,7 @@
 
 /// <p> The connector metadata specific to Upsolver. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpsolverMetadata {}
 impl UpsolverMetadata {
     /// Creates a new builder-style object to manufacture [`UpsolverMetadata`](crate::types::UpsolverMetadata).
@@ -13,7 +13,9 @@ impl UpsolverMetadata {
 
 /// A builder for [`UpsolverMetadata`](crate::types::UpsolverMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpsolverMetadataBuilder {}
 impl UpsolverMetadataBuilder {
     /// Consumes the builder and constructs a [`UpsolverMetadata`](crate::types::UpsolverMetadata).

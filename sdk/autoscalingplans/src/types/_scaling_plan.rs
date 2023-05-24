@@ -2,20 +2,21 @@
 
 /// <p>Represents a scaling plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingPlan {
     /// <p>The name of the scaling plan.</p>
     #[doc(hidden)]
-    pub scaling_plan_name: std::option::Option<std::string::String>,
+    pub scaling_plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the scaling plan.</p>
     #[doc(hidden)]
-    pub scaling_plan_version: std::option::Option<i64>,
+    pub scaling_plan_version: ::std::option::Option<i64>,
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
     #[doc(hidden)]
-    pub application_source: std::option::Option<crate::types::ApplicationSource>,
+    pub application_source: ::std::option::Option<crate::types::ApplicationSource>,
     /// <p>The scaling instructions.</p>
     #[doc(hidden)]
-    pub scaling_instructions: std::option::Option<std::vec::Vec<crate::types::ScalingInstruction>>,
+    pub scaling_instructions:
+        ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
     /// <p>The status of the scaling plan.</p>
     /// <ul>
     /// <li> <p> <code>Active</code> - The scaling plan is active.</p> </li>
@@ -28,32 +29,34 @@ pub struct ScalingPlan {
     /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::ScalingPlanStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::ScalingPlanStatusCode>,
     /// <p>A simple message about the current status of the scaling plan.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
     #[doc(hidden)]
-    pub status_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub status_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix time stamp when the scaling plan was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ScalingPlan {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(&self) -> std::option::Option<&str> {
+    pub fn scaling_plan_name(&self) -> ::std::option::Option<&str> {
         self.scaling_plan_name.as_deref()
     }
     /// <p>The version number of the scaling plan.</p>
-    pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
+    pub fn scaling_plan_version(&self) -> ::std::option::Option<i64> {
         self.scaling_plan_version
     }
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
-    pub fn application_source(&self) -> std::option::Option<&crate::types::ApplicationSource> {
+    pub fn application_source(&self) -> ::std::option::Option<&crate::types::ApplicationSource> {
         self.application_source.as_ref()
     }
     /// <p>The scaling instructions.</p>
-    pub fn scaling_instructions(&self) -> std::option::Option<&[crate::types::ScalingInstruction]> {
+    pub fn scaling_instructions(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ScalingInstruction]> {
         self.scaling_instructions.as_deref()
     }
     /// <p>The status of the scaling plan.</p>
@@ -67,19 +70,19 @@ impl ScalingPlan {
     /// <li> <p> <code>UpdateInProgress</code> - The scaling plan is being updated.</p> </li>
     /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::ScalingPlanStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::ScalingPlanStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>A simple message about the current status of the scaling plan.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-    pub fn status_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.status_start_time.as_ref()
     }
     /// <p>The Unix time stamp when the scaling plan was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -92,51 +95,56 @@ impl ScalingPlan {
 
 /// A builder for [`ScalingPlan`](crate::types::ScalingPlan).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingPlanBuilder {
-    pub(crate) scaling_plan_name: std::option::Option<std::string::String>,
-    pub(crate) scaling_plan_version: std::option::Option<i64>,
-    pub(crate) application_source: std::option::Option<crate::types::ApplicationSource>,
+    pub(crate) scaling_plan_name: ::std::option::Option<::std::string::String>,
+    pub(crate) scaling_plan_version: ::std::option::Option<i64>,
+    pub(crate) application_source: ::std::option::Option<crate::types::ApplicationSource>,
     pub(crate) scaling_instructions:
-        std::option::Option<std::vec::Vec<crate::types::ScalingInstruction>>,
-    pub(crate) status_code: std::option::Option<crate::types::ScalingPlanStatusCode>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) status_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
+    pub(crate) status_code: ::std::option::Option<crate::types::ScalingPlanStatusCode>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) status_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ScalingPlanBuilder {
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scaling_plan_name = Some(input.into());
+    pub fn scaling_plan_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.scaling_plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
     pub fn set_scaling_plan_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.scaling_plan_name = input;
         self
     }
     /// <p>The version number of the scaling plan.</p>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
-        self.scaling_plan_version = Some(input);
+        self.scaling_plan_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number of the scaling plan.</p>
-    pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scaling_plan_version = input;
         self
     }
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
     pub fn application_source(mut self, input: crate::types::ApplicationSource) -> Self {
-        self.application_source = Some(input);
+        self.application_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application source.</p>
     pub fn set_application_source(
         mut self,
-        input: std::option::Option<crate::types::ApplicationSource>,
+        input: ::std::option::Option<crate::types::ApplicationSource>,
     ) -> Self {
         self.application_source = input;
         self
@@ -149,13 +157,13 @@ impl ScalingPlanBuilder {
     pub fn scaling_instructions(mut self, input: crate::types::ScalingInstruction) -> Self {
         let mut v = self.scaling_instructions.unwrap_or_default();
         v.push(input);
-        self.scaling_instructions = Some(v);
+        self.scaling_instructions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The scaling instructions.</p>
     pub fn set_scaling_instructions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScalingInstruction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScalingInstruction>>,
     ) -> Self {
         self.scaling_instructions = input;
         self
@@ -172,7 +180,7 @@ impl ScalingPlanBuilder {
     /// <li> <p> <code>UpdateFailed</code> - The scaling plan could not be updated.</p> </li>
     /// </ul>
     pub fn status_code(mut self, input: crate::types::ScalingPlanStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the scaling plan.</p>
@@ -188,43 +196,49 @@ impl ScalingPlanBuilder {
     /// </ul>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::ScalingPlanStatusCode>,
+        input: ::std::option::Option<crate::types::ScalingPlanStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p>A simple message about the current status of the scaling plan.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A simple message about the current status of the scaling plan.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-    pub fn status_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.status_start_time = Some(input);
+    pub fn status_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.status_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
     pub fn set_status_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.status_start_time = input;
         self
     }
     /// <p>The Unix time stamp when the scaling plan was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix time stamp when the scaling plan was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

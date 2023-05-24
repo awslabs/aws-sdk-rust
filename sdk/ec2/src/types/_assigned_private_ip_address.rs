@@ -2,15 +2,15 @@
 
 /// <p>Describes the private IP addresses assigned to a network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssignedPrivateIpAddress {
     /// <p>The private IP address assigned to the network interface.</p>
     #[doc(hidden)]
-    pub private_ip_address: std::option::Option<std::string::String>,
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl AssignedPrivateIpAddress {
     /// <p>The private IP address assigned to the network interface.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl AssignedPrivateIpAddress {
 
 /// A builder for [`AssignedPrivateIpAddress`](crate::types::AssignedPrivateIpAddress).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssignedPrivateIpAddressBuilder {
-    pub(crate) private_ip_address: std::option::Option<std::string::String>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl AssignedPrivateIpAddressBuilder {
     /// <p>The private IP address assigned to the network interface.</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_ip_address = Some(input.into());
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IP address assigned to the network interface.</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_ip_address = input;
         self

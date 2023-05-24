@@ -2,7 +2,7 @@
 
 /// <p>A range of double values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DoubleRange {
     /// <p>The minimum value in the range.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl DoubleRange {
 
 /// A builder for [`DoubleRange`](crate::types::DoubleRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DoubleRangeBuilder {
-    pub(crate) from: std::option::Option<f64>,
-    pub(crate) to: std::option::Option<f64>,
+    pub(crate) from: ::std::option::Option<f64>,
+    pub(crate) to: ::std::option::Option<f64>,
 }
 impl DoubleRangeBuilder {
     /// <p>The minimum value in the range.</p>
     pub fn from(mut self, input: f64) -> Self {
-        self.from = Some(input);
+        self.from = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value in the range.</p>
-    pub fn set_from(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_from(mut self, input: ::std::option::Option<f64>) -> Self {
         self.from = input;
         self
     }
     /// <p>The maximum value in the range.</p>
     pub fn to(mut self, input: f64) -> Self {
-        self.to = Some(input);
+        self.to = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value in the range.</p>
-    pub fn set_to(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_to(mut self, input: ::std::option::Option<f64>) -> Self {
         self.to = input;
         self
     }

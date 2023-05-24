@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ConfluenceSpaceFieldName {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ConfluenceSpaceFieldName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ConfluenceSpaceFieldName {
+impl ::std::convert::From<&str> for ConfluenceSpaceFieldName {
     fn from(s: &str) -> Self {
         match s {
             "DISPLAY_URL" => ConfluenceSpaceFieldName::DisplayUrl,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ConfluenceSpaceFieldName {
         }
     }
 }
-impl std::str::FromStr for ConfluenceSpaceFieldName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ConfluenceSpaceFieldName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfluenceSpaceFieldName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ConfluenceSpaceFieldName::from(s))
     }
 }
 impl ConfluenceSpaceFieldName {
@@ -96,7 +96,7 @@ impl ConfluenceSpaceFieldName {
         &["DISPLAY_URL", "ITEM_TYPE", "SPACE_KEY", "URL"]
     }
 }
-impl AsRef<str> for ConfluenceSpaceFieldName {
+impl ::std::convert::AsRef<str> for ConfluenceSpaceFieldName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -42,56 +42,59 @@ pub use crate::operation::detect_labels::_detect_labels_input::DetectLabelsInput
 /// </note>
 /// <p>This is a stateless API operation that doesn't return any data.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:DetectLabels</code> action. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectLabelsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::detect_labels::builders::DetectLabelsInputBuilder,
 }
 impl DetectLabelsFluentBuilder {
     /// Creates a new `DetectLabels`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::detect_labels::DetectLabels,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::detect_labels::DetectLabelsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -104,9 +107,9 @@ impl DetectLabelsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::detect_labels::DetectLabelsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::detect_labels::DetectLabelsError>,
     > {
         self.send_middleware().await
     }
@@ -118,7 +121,7 @@ impl DetectLabelsFluentBuilder {
     }
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    pub fn set_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_image(input);
         self
     }
@@ -128,7 +131,7 @@ impl DetectLabelsFluentBuilder {
         self
     }
     /// <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
-    pub fn set_max_labels(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_labels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_labels(input);
         self
     }
@@ -140,7 +143,7 @@ impl DetectLabelsFluentBuilder {
     }
     /// <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>
     /// <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
-    pub fn set_min_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_min_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_min_confidence(input);
         self
     }
@@ -156,7 +159,7 @@ impl DetectLabelsFluentBuilder {
     /// <p>A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.</p>
     pub fn set_features(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectLabelsFeatureName>>,
     ) -> Self {
         self.inner = self.inner.set_features(input);
         self
@@ -169,7 +172,7 @@ impl DetectLabelsFluentBuilder {
     /// <p>A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.</p>
     pub fn set_settings(
         mut self,
-        input: std::option::Option<crate::types::DetectLabelsSettings>,
+        input: ::std::option::Option<crate::types::DetectLabelsSettings>,
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self

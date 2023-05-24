@@ -8,17 +8,17 @@
 /// </ul>
 /// <p>Data repository associations are supported on Amazon File Cache resources and all Amazon FSx for Lustre file systems excluding <code>Scratch_1</code> deployment types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataRepositoryAssociation {
     /// <p>The system-generated, unique ID of the data repository association.</p>
     #[doc(hidden)]
-    pub association_id: std::option::Option<std::string::String>,
+    pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
     #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
+    pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The data repository association between the file system or cache and the data repository is being created. The data repository is unavailable.</p> </li>
@@ -29,16 +29,16 @@ pub struct DataRepositoryAssociation {
     /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub lifecycle: std::option::Option<crate::types::DataRepositoryLifecycle>,
+    pub lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     #[doc(hidden)]
-    pub failure_details: std::option::Option<crate::types::DataRepositoryFailureDetails>,
+    pub failure_details: ::std::option::Option<crate::types::DataRepositoryFailureDetails>,
     /// <p>A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
     #[doc(hidden)]
-    pub file_system_path: std::option::Option<std::string::String>,
+    pub file_system_path: ::std::option::Option<::std::string::String>,
     /// <p>The path to the data repository that will be linked to the cache or file system.</p>
     /// <ul>
     /// <li> <p>For Amazon File Cache, the path can be an NFS data repository that will be linked to the cache. The path can be in one of two formats:</p>
@@ -50,53 +50,54 @@ pub struct DataRepositoryAssociation {
     /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub data_repository_path: std::option::Option<std::string::String>,
+    pub data_repository_path: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
     /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
     /// </note>
     #[doc(hidden)]
-    pub batch_import_meta_data_on_create: std::option::Option<bool>,
+    pub batch_import_meta_data_on_create: ::std::option::Option<bool>,
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     #[doc(hidden)]
-    pub imported_file_chunk_size: std::option::Option<i32>,
+    pub imported_file_chunk_size: ::std::option::Option<i32>,
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association.</p>
     #[doc(hidden)]
-    pub s3: std::option::Option<crate::types::S3DataRepositoryConfiguration>,
+    pub s3: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>,
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The globally unique ID of the Amazon File Cache resource.</p>
     #[doc(hidden)]
-    pub file_cache_id: std::option::Option<std::string::String>,
+    pub file_cache_id: ::std::option::Option<::std::string::String>,
     /// <p>A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies the directory in your cache where files will be exported from. This cache directory can be linked to only one data repository (S3 or NFS) and no other data repository can be linked to the directory.</p> <note>
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
     #[doc(hidden)]
-    pub file_cache_path: std::option::Option<std::string::String>,
+    pub file_cache_path: ::std::option::Option<::std::string::String>,
     /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
     #[doc(hidden)]
-    pub data_repository_subdirectories: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub data_repository_subdirectories:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
     #[doc(hidden)]
-    pub nfs: std::option::Option<crate::types::NfsDataRepositoryConfiguration>,
+    pub nfs: ::std::option::Option<crate::types::NfsDataRepositoryConfiguration>,
 }
 impl DataRepositoryAssociation {
     /// <p>The system-generated, unique ID of the data repository association.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
@@ -108,20 +109,20 @@ impl DataRepositoryAssociation {
     /// <li> <p> <code>DELETING</code> - The data repository association is undergoing a customer initiated deletion.</p> </li>
     /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
     /// </ul>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::types::DataRepositoryLifecycle> {
+    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::DataRepositoryLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub fn failure_details(
         &self,
-    ) -> std::option::Option<&crate::types::DataRepositoryFailureDetails> {
+    ) -> ::std::option::Option<&crate::types::DataRepositoryFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
-    pub fn file_system_path(&self) -> std::option::Option<&str> {
+    pub fn file_system_path(&self) -> ::std::option::Option<&str> {
         self.file_system_path.as_deref()
     }
     /// <p>The path to the data repository that will be linked to the cache or file system.</p>
@@ -134,34 +135,34 @@ impl DataRepositoryAssociation {
     /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
     /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
     /// </ul>
-    pub fn data_repository_path(&self) -> std::option::Option<&str> {
+    pub fn data_repository_path(&self) -> ::std::option::Option<&str> {
         self.data_repository_path.as_deref()
     }
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
     /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
     /// </note>
-    pub fn batch_import_meta_data_on_create(&self) -> std::option::Option<bool> {
+    pub fn batch_import_meta_data_on_create(&self) -> ::std::option::Option<bool> {
         self.batch_import_meta_data_on_create
     }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
-    pub fn imported_file_chunk_size(&self) -> std::option::Option<i32> {
+    pub fn imported_file_chunk_size(&self) -> ::std::option::Option<i32> {
         self.imported_file_chunk_size
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::types::S3DataRepositoryConfiguration> {
+    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3DataRepositoryConfiguration> {
         self.s3.as_ref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The globally unique ID of the Amazon File Cache resource.</p>
-    pub fn file_cache_id(&self) -> std::option::Option<&str> {
+    pub fn file_cache_id(&self) -> ::std::option::Option<&str> {
         self.file_cache_id.as_deref()
     }
     /// <p>A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
@@ -169,15 +170,17 @@ impl DataRepositoryAssociation {
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
-    pub fn file_cache_path(&self) -> std::option::Option<&str> {
+    pub fn file_cache_path(&self) -> ::std::option::Option<&str> {
         self.file_cache_path.as_deref()
     }
     /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    pub fn data_repository_subdirectories(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn data_repository_subdirectories(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.data_repository_subdirectories.as_deref()
     }
     /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
-    pub fn nfs(&self) -> std::option::Option<&crate::types::NfsDataRepositoryConfiguration> {
+    pub fn nfs(&self) -> ::std::option::Option<&crate::types::NfsDataRepositoryConfiguration> {
         self.nfs.as_ref()
     }
 }
@@ -190,54 +193,68 @@ impl DataRepositoryAssociation {
 
 /// A builder for [`DataRepositoryAssociation`](crate::types::DataRepositoryAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataRepositoryAssociationBuilder {
-    pub(crate) association_id: std::option::Option<std::string::String>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) file_system_id: std::option::Option<std::string::String>,
-    pub(crate) lifecycle: std::option::Option<crate::types::DataRepositoryLifecycle>,
-    pub(crate) failure_details: std::option::Option<crate::types::DataRepositoryFailureDetails>,
-    pub(crate) file_system_path: std::option::Option<std::string::String>,
-    pub(crate) data_repository_path: std::option::Option<std::string::String>,
-    pub(crate) batch_import_meta_data_on_create: std::option::Option<bool>,
-    pub(crate) imported_file_chunk_size: std::option::Option<i32>,
-    pub(crate) s3: std::option::Option<crate::types::S3DataRepositoryConfiguration>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) file_cache_id: std::option::Option<std::string::String>,
-    pub(crate) file_cache_path: std::option::Option<std::string::String>,
+    pub(crate) association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) lifecycle: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
+    pub(crate) failure_details: ::std::option::Option<crate::types::DataRepositoryFailureDetails>,
+    pub(crate) file_system_path: ::std::option::Option<::std::string::String>,
+    pub(crate) data_repository_path: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_import_meta_data_on_create: ::std::option::Option<bool>,
+    pub(crate) imported_file_chunk_size: ::std::option::Option<i32>,
+    pub(crate) s3: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) file_cache_id: ::std::option::Option<::std::string::String>,
+    pub(crate) file_cache_path: ::std::option::Option<::std::string::String>,
     pub(crate) data_repository_subdirectories:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) nfs: std::option::Option<crate::types::NfsDataRepositoryConfiguration>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) nfs: ::std::option::Option<crate::types::NfsDataRepositoryConfiguration>,
 }
 impl DataRepositoryAssociationBuilder {
     /// <p>The system-generated, unique ID of the data repository association.</p>
-    pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.association_id = Some(input.into());
+    pub fn association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated, unique ID of the data repository association.</p>
-    pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_association_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.association_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_id = Some(input.into());
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the file system, assigned by Amazon FSx.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_id = input;
         self
     }
@@ -251,7 +268,7 @@ impl DataRepositoryAssociationBuilder {
     /// <li> <p> <code>FAILED</code> - The data repository association is in a terminal state that cannot be recovered.</p> </li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::DataRepositoryLifecycle) -> Self {
-        self.lifecycle = Some(input);
+        self.lifecycle = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the state of a data repository association. The lifecycle can have the following values:</p>
@@ -265,20 +282,20 @@ impl DataRepositoryAssociationBuilder {
     /// </ul>
     pub fn set_lifecycle(
         mut self,
-        input: std::option::Option<crate::types::DataRepositoryLifecycle>,
+        input: ::std::option::Option<crate::types::DataRepositoryLifecycle>,
     ) -> Self {
         self.lifecycle = input;
         self
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub fn failure_details(mut self, input: crate::types::DataRepositoryFailureDetails) -> Self {
-        self.failure_details = Some(input);
+        self.failure_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
     pub fn set_failure_details(
         mut self,
-        input: std::option::Option<crate::types::DataRepositoryFailureDetails>,
+        input: ::std::option::Option<crate::types::DataRepositoryFailureDetails>,
     ) -> Self {
         self.failure_details = input;
         self
@@ -287,15 +304,21 @@ impl DataRepositoryAssociationBuilder {
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
-    pub fn file_system_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_path = Some(input.into());
+    pub fn file_system_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A path on the Amazon FSx for Lustre file system that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the name is required. Two data repository associations cannot have overlapping file system paths. For example, if a data repository is associated with file system path <code>/ns1/</code>, then you cannot link another data repository with file system path <code>/ns1/ns2</code>.</p>
     /// <p>This path specifies where in your file system files will be exported from or imported to. This file system directory can be linked to only one Amazon S3 bucket, and no other S3 bucket can be linked to the directory.</p> <note>
     /// <p>If you specify only a forward slash (<code>/</code>) as the file system path, you can link only one data repository to the file system. You can only specify "/" as the file system path for the first data repository associated with a file system.</p>
     /// </note>
-    pub fn set_file_system_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_path = input;
         self
     }
@@ -309,8 +332,11 @@ impl DataRepositoryAssociationBuilder {
     /// <li> <p>For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
     /// <li> <p>For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.</p> </li>
     /// </ul>
-    pub fn data_repository_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_repository_path = Some(input.into());
+    pub fn data_repository_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_repository_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the data repository that will be linked to the cache or file system.</p>
@@ -325,7 +351,7 @@ impl DataRepositoryAssociationBuilder {
     /// </ul>
     pub fn set_data_repository_path(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_repository_path = input;
         self
@@ -334,7 +360,7 @@ impl DataRepositoryAssociationBuilder {
     /// <p> <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked to an Amazon File Cache resource.</p>
     /// </note>
     pub fn batch_import_meta_data_on_create(mut self, input: bool) -> Self {
-        self.batch_import_meta_data_on_create = Some(input);
+        self.batch_import_meta_data_on_create = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean flag indicating whether an import data repository task to import metadata should run after the data repository association is created. The task runs if this flag is set to <code>true</code>.</p> <note>
@@ -342,7 +368,7 @@ impl DataRepositoryAssociationBuilder {
     /// </note>
     pub fn set_batch_import_meta_data_on_create(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.batch_import_meta_data_on_create = input;
         self
@@ -350,24 +376,24 @@ impl DataRepositoryAssociationBuilder {
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
     pub fn imported_file_chunk_size(mut self, input: i32) -> Self {
-        self.imported_file_chunk_size = Some(input);
+        self.imported_file_chunk_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system or cache.</p>
     /// <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
-    pub fn set_imported_file_chunk_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_imported_file_chunk_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.imported_file_chunk_size = input;
         self
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association.</p>
     pub fn s3(mut self, input: crate::types::S3DataRepositoryConfiguration) -> Self {
-        self.s3 = Some(input);
+        self.s3 = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association.</p>
     pub fn set_s3(
         mut self,
-        input: std::option::Option<crate::types::S3DataRepositoryConfiguration>,
+        input: ::std::option::Option<crate::types::S3DataRepositoryConfiguration>,
     ) -> Self {
         self.s3 = input;
         self
@@ -380,37 +406,43 @@ impl DataRepositoryAssociationBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the resource was created, in seconds (since 1970-01-01T00:00:00Z), also known as Unix time.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The globally unique ID of the Amazon File Cache resource.</p>
-    pub fn file_cache_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_cache_id = Some(input.into());
+    pub fn file_cache_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_cache_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique ID of the Amazon File Cache resource.</p>
-    pub fn set_file_cache_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_cache_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_cache_id = input;
         self
     }
@@ -419,8 +451,11 @@ impl DataRepositoryAssociationBuilder {
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
-    pub fn file_cache_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_cache_path = Some(input.into());
+    pub fn file_cache_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_cache_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash in the path is required. Two data repository associations cannot have overlapping cache paths. For example, if a data repository is associated with cache path <code>/ns1/</code>, then you cannot link another data repository with cache path <code>/ns1/ns2</code>.</p>
@@ -428,7 +463,10 @@ impl DataRepositoryAssociationBuilder {
     /// <p>The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code> is specified. If you specify root (/) as the cache path, you can create only one DRA on the cache.</p>
     /// <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
     /// </note>
-    pub fn set_file_cache_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_cache_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_cache_path = input;
         self
     }
@@ -437,29 +475,32 @@ impl DataRepositoryAssociationBuilder {
     /// To override the contents of this collection use [`set_data_repository_subdirectories`](Self::set_data_repository_subdirectories).
     ///
     /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
-    pub fn data_repository_subdirectories(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_repository_subdirectories(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.data_repository_subdirectories.unwrap_or_default();
         v.push(input.into());
-        self.data_repository_subdirectories = Some(v);
+        self.data_repository_subdirectories = ::std::option::Option::Some(v);
         self
     }
     /// <p>For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data repository association. All the subdirectories must be on a single NFS file system. The Export paths are in the format <code>/exportpath1</code>. To use this parameter, you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file system. The NFS file system domain name in effect is the root of the subdirectories. Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.</p>
     pub fn set_data_repository_subdirectories(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.data_repository_subdirectories = input;
         self
     }
     /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
     pub fn nfs(mut self, input: crate::types::NfsDataRepositoryConfiguration) -> Self {
-        self.nfs = Some(input);
+        self.nfs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for an NFS data repository linked to an Amazon File Cache resource with a data repository association.</p>
     pub fn set_nfs(
         mut self,
-        input: std::option::Option<crate::types::NfsDataRepositoryConfiguration>,
+        input: ::std::option::Option<crate::types::NfsDataRepositoryConfiguration>,
     ) -> Self {
         self.nfs = input;
         self

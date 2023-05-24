@@ -2,22 +2,22 @@
 
 /// <p>Specifies the subject or body of an email message, represented as textual email data and the applicable character set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimpleEmailPart {
     /// <p>The applicable character set for the message content.</p>
     #[doc(hidden)]
-    pub charset: std::option::Option<std::string::String>,
+    pub charset: ::std::option::Option<::std::string::String>,
     /// <p>The textual data of the message content.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<std::string::String>,
+    pub data: ::std::option::Option<::std::string::String>,
 }
 impl SimpleEmailPart {
     /// <p>The applicable character set for the message content.</p>
-    pub fn charset(&self) -> std::option::Option<&str> {
+    pub fn charset(&self) -> ::std::option::Option<&str> {
         self.charset.as_deref()
     }
     /// <p>The textual data of the message content.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SimpleEmailPart {
 
 /// A builder for [`SimpleEmailPart`](crate::types::SimpleEmailPart).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SimpleEmailPartBuilder {
-    pub(crate) charset: std::option::Option<std::string::String>,
-    pub(crate) data: std::option::Option<std::string::String>,
+    pub(crate) charset: ::std::option::Option<::std::string::String>,
+    pub(crate) data: ::std::option::Option<::std::string::String>,
 }
 impl SimpleEmailPartBuilder {
     /// <p>The applicable character set for the message content.</p>
-    pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
-        self.charset = Some(input.into());
+    pub fn charset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.charset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The applicable character set for the message content.</p>
-    pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charset = input;
         self
     }
     /// <p>The textual data of the message content.</p>
-    pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data = Some(input.into());
+    pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The textual data of the message content.</p>
-    pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }

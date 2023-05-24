@@ -2,7 +2,7 @@
 
 /// <p>Information about signal messages using the on-board diagnostics (OBD) II protocol in a vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObdSignal {
     /// <p>The length of the requested data.</p>
     #[doc(hidden)]
@@ -15,22 +15,22 @@ pub struct ObdSignal {
     pub pid: i32,
     /// <p>A multiplier used to decode the message.</p>
     #[doc(hidden)]
-    pub scaling: std::option::Option<f64>,
+    pub scaling: ::std::option::Option<f64>,
     /// <p>Indicates where data appears in the message.</p>
     #[doc(hidden)]
-    pub offset: std::option::Option<f64>,
+    pub offset: ::std::option::Option<f64>,
     /// <p>Indicates the beginning of the message.</p>
     #[doc(hidden)]
     pub start_byte: i32,
     /// <p>The length of a message.</p>
     #[doc(hidden)]
-    pub byte_length: std::option::Option<i32>,
+    pub byte_length: ::std::option::Option<i32>,
     /// <p>The number of positions to shift bits in the message.</p>
     #[doc(hidden)]
     pub bit_right_shift: i32,
     /// <p>The number of bits to mask in a message.</p>
     #[doc(hidden)]
-    pub bit_mask_length: std::option::Option<i32>,
+    pub bit_mask_length: ::std::option::Option<i32>,
 }
 impl ObdSignal {
     /// <p>The length of the requested data.</p>
@@ -46,11 +46,11 @@ impl ObdSignal {
         self.pid
     }
     /// <p>A multiplier used to decode the message.</p>
-    pub fn scaling(&self) -> std::option::Option<f64> {
+    pub fn scaling(&self) -> ::std::option::Option<f64> {
         self.scaling
     }
     /// <p>Indicates where data appears in the message.</p>
-    pub fn offset(&self) -> std::option::Option<f64> {
+    pub fn offset(&self) -> ::std::option::Option<f64> {
         self.offset
     }
     /// <p>Indicates the beginning of the message.</p>
@@ -58,7 +58,7 @@ impl ObdSignal {
         self.start_byte
     }
     /// <p>The length of a message.</p>
-    pub fn byte_length(&self) -> std::option::Option<i32> {
+    pub fn byte_length(&self) -> ::std::option::Option<i32> {
         self.byte_length
     }
     /// <p>The number of positions to shift bits in the message.</p>
@@ -66,7 +66,7 @@ impl ObdSignal {
         self.bit_right_shift
     }
     /// <p>The number of bits to mask in a message.</p>
-    pub fn bit_mask_length(&self) -> std::option::Option<i32> {
+    pub fn bit_mask_length(&self) -> ::std::option::Option<i32> {
         self.bit_mask_length
     }
 }
@@ -79,106 +79,108 @@ impl ObdSignal {
 
 /// A builder for [`ObdSignal`](crate::types::ObdSignal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObdSignalBuilder {
-    pub(crate) pid_response_length: std::option::Option<i32>,
-    pub(crate) service_mode: std::option::Option<i32>,
-    pub(crate) pid: std::option::Option<i32>,
-    pub(crate) scaling: std::option::Option<f64>,
-    pub(crate) offset: std::option::Option<f64>,
-    pub(crate) start_byte: std::option::Option<i32>,
-    pub(crate) byte_length: std::option::Option<i32>,
-    pub(crate) bit_right_shift: std::option::Option<i32>,
-    pub(crate) bit_mask_length: std::option::Option<i32>,
+    pub(crate) pid_response_length: ::std::option::Option<i32>,
+    pub(crate) service_mode: ::std::option::Option<i32>,
+    pub(crate) pid: ::std::option::Option<i32>,
+    pub(crate) scaling: ::std::option::Option<f64>,
+    pub(crate) offset: ::std::option::Option<f64>,
+    pub(crate) start_byte: ::std::option::Option<i32>,
+    pub(crate) byte_length: ::std::option::Option<i32>,
+    pub(crate) bit_right_shift: ::std::option::Option<i32>,
+    pub(crate) bit_mask_length: ::std::option::Option<i32>,
 }
 impl ObdSignalBuilder {
     /// <p>The length of the requested data.</p>
     pub fn pid_response_length(mut self, input: i32) -> Self {
-        self.pid_response_length = Some(input);
+        self.pid_response_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The length of the requested data.</p>
-    pub fn set_pid_response_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pid_response_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pid_response_length = input;
         self
     }
     /// <p>The mode of operation (diagnostic service) in a message.</p>
     pub fn service_mode(mut self, input: i32) -> Self {
-        self.service_mode = Some(input);
+        self.service_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode of operation (diagnostic service) in a message.</p>
-    pub fn set_service_mode(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_service_mode(mut self, input: ::std::option::Option<i32>) -> Self {
         self.service_mode = input;
         self
     }
     /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
     pub fn pid(mut self, input: i32) -> Self {
-        self.pid = Some(input);
+        self.pid = ::std::option::Option::Some(input);
         self
     }
     /// <p>The diagnostic code used to request data from a vehicle for this signal.</p>
-    pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pid = input;
         self
     }
     /// <p>A multiplier used to decode the message.</p>
     pub fn scaling(mut self, input: f64) -> Self {
-        self.scaling = Some(input);
+        self.scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>A multiplier used to decode the message.</p>
-    pub fn set_scaling(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_scaling(mut self, input: ::std::option::Option<f64>) -> Self {
         self.scaling = input;
         self
     }
     /// <p>Indicates where data appears in the message.</p>
     pub fn offset(mut self, input: f64) -> Self {
-        self.offset = Some(input);
+        self.offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates where data appears in the message.</p>
-    pub fn set_offset(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_offset(mut self, input: ::std::option::Option<f64>) -> Self {
         self.offset = input;
         self
     }
     /// <p>Indicates the beginning of the message.</p>
     pub fn start_byte(mut self, input: i32) -> Self {
-        self.start_byte = Some(input);
+        self.start_byte = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the beginning of the message.</p>
-    pub fn set_start_byte(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_byte(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_byte = input;
         self
     }
     /// <p>The length of a message.</p>
     pub fn byte_length(mut self, input: i32) -> Self {
-        self.byte_length = Some(input);
+        self.byte_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The length of a message.</p>
-    pub fn set_byte_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_byte_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.byte_length = input;
         self
     }
     /// <p>The number of positions to shift bits in the message.</p>
     pub fn bit_right_shift(mut self, input: i32) -> Self {
-        self.bit_right_shift = Some(input);
+        self.bit_right_shift = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of positions to shift bits in the message.</p>
-    pub fn set_bit_right_shift(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_bit_right_shift(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bit_right_shift = input;
         self
     }
     /// <p>The number of bits to mask in a message.</p>
     pub fn bit_mask_length(mut self, input: i32) -> Self {
-        self.bit_mask_length = Some(input);
+        self.bit_mask_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of bits to mask in a message.</p>
-    pub fn set_bit_mask_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_bit_mask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bit_mask_length = input;
         self
     }

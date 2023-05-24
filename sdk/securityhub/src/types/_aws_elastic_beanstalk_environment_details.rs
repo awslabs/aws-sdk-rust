@@ -2,51 +2,51 @@
 
 /// <p>Contains details about an Elastic Beanstalk environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticBeanstalkEnvironmentDetails {
     /// <p>The name of the application that is associated with the environment.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
     #[doc(hidden)]
-    pub cname: std::option::Option<std::string::String>,
+    pub cname: ::std::option::Option<::std::string::String>,
     /// <p>The creation date for this environment.</p>
     #[doc(hidden)]
-    pub date_created: std::option::Option<std::string::String>,
+    pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The date when this environment was last modified.</p>
     #[doc(hidden)]
-    pub date_updated: std::option::Option<std::string::String>,
+    pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>For load-balanced, autoscaling environments, the URL to the load balancer. For single-instance environments, the IP address of the instance.</p>
     #[doc(hidden)]
-    pub endpoint_url: std::option::Option<std::string::String>,
+    pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the environment.</p>
     #[doc(hidden)]
-    pub environment_arn: std::option::Option<std::string::String>,
+    pub environment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the environment.</p>
     #[doc(hidden)]
-    pub environment_id: std::option::Option<std::string::String>,
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Links to other environments in the same group.</p>
     #[doc(hidden)]
-    pub environment_links: std::option::Option<
-        std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
+    pub environment_links: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
     >,
     /// <p>The name of the environment.</p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration setting for the environment.</p>
     #[doc(hidden)]
-    pub option_settings: std::option::Option<
-        std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
+    pub option_settings: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
     >,
     /// <p>The ARN of the platform version for the environment.</p>
     #[doc(hidden)]
-    pub platform_arn: std::option::Option<std::string::String>,
+    pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the solution stack that is deployed with the environment.</p>
     #[doc(hidden)]
-    pub solution_stack_name: std::option::Option<std::string::String>,
+    pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>Aborting</code> </p> </li>
@@ -59,69 +59,69 @@ pub struct AwsElasticBeanstalkEnvironmentDetails {
     /// <li> <p> <code>Updating</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The tier of the environment.</p>
     #[doc(hidden)]
-    pub tier: std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>,
+    pub tier: ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>,
     /// <p>The application version of the environment.</p>
     #[doc(hidden)]
-    pub version_label: std::option::Option<std::string::String>,
+    pub version_label: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticBeanstalkEnvironmentDetails {
     /// <p>The name of the application that is associated with the environment.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The URL to the CNAME for this environment.</p>
-    pub fn cname(&self) -> std::option::Option<&str> {
+    pub fn cname(&self) -> ::std::option::Option<&str> {
         self.cname.as_deref()
     }
     /// <p>The creation date for this environment.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> ::std::option::Option<&str> {
         self.date_created.as_deref()
     }
     /// <p>The date when this environment was last modified.</p>
-    pub fn date_updated(&self) -> std::option::Option<&str> {
+    pub fn date_updated(&self) -> ::std::option::Option<&str> {
         self.date_updated.as_deref()
     }
     /// <p>A description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>For load-balanced, autoscaling environments, the URL to the load balancer. For single-instance environments, the IP address of the instance.</p>
-    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+    pub fn endpoint_url(&self) -> ::std::option::Option<&str> {
         self.endpoint_url.as_deref()
     }
     /// <p>The ARN of the environment.</p>
-    pub fn environment_arn(&self) -> std::option::Option<&str> {
+    pub fn environment_arn(&self) -> ::std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
     /// <p>The identifier of the environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>Links to other environments in the same group.</p>
     pub fn environment_links(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink]> {
+    ) -> ::std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink]> {
         self.environment_links.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The configuration setting for the environment.</p>
     pub fn option_settings(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentOptionSetting]> {
+    ) -> ::std::option::Option<&[crate::types::AwsElasticBeanstalkEnvironmentOptionSetting]> {
         self.option_settings.as_deref()
     }
     /// <p>The ARN of the platform version for the environment.</p>
-    pub fn platform_arn(&self) -> std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
     /// <p>The name of the solution stack that is deployed with the environment.</p>
-    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> ::std::option::Option<&str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
@@ -135,15 +135,15 @@ impl AwsElasticBeanstalkEnvironmentDetails {
     /// <li> <p> <code>Terminating</code> </p> </li>
     /// <li> <p> <code>Updating</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The tier of the environment.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::types::AwsElasticBeanstalkEnvironmentTier> {
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::AwsElasticBeanstalkEnvironmentTier> {
         self.tier.as_ref()
     }
     /// <p>The application version of the environment.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
 }
@@ -156,107 +156,127 @@ impl AwsElasticBeanstalkEnvironmentDetails {
 
 /// A builder for [`AwsElasticBeanstalkEnvironmentDetails`](crate::types::AwsElasticBeanstalkEnvironmentDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElasticBeanstalkEnvironmentDetailsBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) cname: std::option::Option<std::string::String>,
-    pub(crate) date_created: std::option::Option<std::string::String>,
-    pub(crate) date_updated: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) endpoint_url: std::option::Option<std::string::String>,
-    pub(crate) environment_arn: std::option::Option<std::string::String>,
-    pub(crate) environment_id: std::option::Option<std::string::String>,
-    pub(crate) environment_links: std::option::Option<
-        std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) cname: ::std::option::Option<::std::string::String>,
+    pub(crate) date_created: ::std::option::Option<::std::string::String>,
+    pub(crate) date_updated: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_url: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_links: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
     >,
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) option_settings: std::option::Option<
-        std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) option_settings: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
     >,
-    pub(crate) platform_arn: std::option::Option<std::string::String>,
-    pub(crate) solution_stack_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) tier: std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>,
-    pub(crate) version_label: std::option::Option<std::string::String>,
+    pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) tier: ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>,
+    pub(crate) version_label: ::std::option::Option<::std::string::String>,
 }
 impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     /// <p>The name of the application that is associated with the environment.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application that is associated with the environment.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>The URL to the CNAME for this environment.</p>
-    pub fn cname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cname = Some(input.into());
+    pub fn cname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to the CNAME for this environment.</p>
-    pub fn set_cname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cname = input;
         self
     }
     /// <p>The creation date for this environment.</p>
-    pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
-        self.date_created = Some(input.into());
+    pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.date_created = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation date for this environment.</p>
-    pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_created = input;
         self
     }
     /// <p>The date when this environment was last modified.</p>
-    pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
-        self.date_updated = Some(input.into());
+    pub fn date_updated(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.date_updated = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date when this environment was last modified.</p>
-    pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_date_updated(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_updated = input;
         self
     }
     /// <p>A description of the environment.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the environment.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>For load-balanced, autoscaling environments, the URL to the load balancer. For single-instance environments, the IP address of the instance.</p>
-    pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_url = Some(input.into());
+    pub fn endpoint_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For load-balanced, autoscaling environments, the URL to the load balancer. For single-instance environments, the IP address of the instance.</p>
-    pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_url = input;
         self
     }
     /// <p>The ARN of the environment.</p>
-    pub fn environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_arn = Some(input.into());
+    pub fn environment_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the environment.</p>
-    pub fn set_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_arn = input;
         self
     }
     /// <p>The identifier of the environment.</p>
-    pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_id = Some(input.into());
+    pub fn environment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the environment.</p>
-    pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_id = input;
         self
     }
@@ -271,26 +291,32 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     ) -> Self {
         let mut v = self.environment_links.unwrap_or_default();
         v.push(input);
-        self.environment_links = Some(v);
+        self.environment_links = ::std::option::Option::Some(v);
         self
     }
     /// <p>Links to other environments in the same group.</p>
     pub fn set_environment_links(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentEnvironmentLink>,
         >,
     ) -> Self {
         self.environment_links = input;
         self
     }
     /// <p>The name of the environment.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
@@ -305,38 +331,41 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     ) -> Self {
         let mut v = self.option_settings.unwrap_or_default();
         v.push(input);
-        self.option_settings = Some(v);
+        self.option_settings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The configuration setting for the environment.</p>
     pub fn set_option_settings(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsElasticBeanstalkEnvironmentOptionSetting>,
         >,
     ) -> Self {
         self.option_settings = input;
         self
     }
     /// <p>The ARN of the platform version for the environment.</p>
-    pub fn platform_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_arn = Some(input.into());
+    pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the platform version for the environment.</p>
-    pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_arn = input;
         self
     }
     /// <p>The name of the solution stack that is deployed with the environment.</p>
-    pub fn solution_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.solution_stack_name = Some(input.into());
+    pub fn solution_stack_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the solution stack that is deployed with the environment.</p>
     pub fn set_solution_stack_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.solution_stack_name = input;
         self
@@ -352,8 +381,8 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     /// <li> <p> <code>Terminating</code> </p> </li>
     /// <li> <p> <code>Updating</code> </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current operational status of the environment. Valid values are as follows:</p>
@@ -367,30 +396,36 @@ impl AwsElasticBeanstalkEnvironmentDetailsBuilder {
     /// <li> <p> <code>Terminating</code> </p> </li>
     /// <li> <p> <code>Updating</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The tier of the environment.</p>
     pub fn tier(mut self, input: crate::types::AwsElasticBeanstalkEnvironmentTier) -> Self {
-        self.tier = Some(input);
+        self.tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tier of the environment.</p>
     pub fn set_tier(
         mut self,
-        input: std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>,
+        input: ::std::option::Option<crate::types::AwsElasticBeanstalkEnvironmentTier>,
     ) -> Self {
         self.tier = input;
         self
     }
     /// <p>The application version of the environment.</p>
-    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_label = Some(input.into());
+    pub fn version_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application version of the environment.</p>
-    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.version_label = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>The Amazon CloudWatch Logs configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogConfig {
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
     /// <ul>
@@ -20,10 +20,10 @@ pub struct LogConfig {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub field_log_level: std::option::Option<crate::types::FieldLogLevel>,
+    pub field_log_level: ::std::option::Option<crate::types::FieldLogLevel>,
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
+    pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     #[doc(hidden)]
     pub exclude_verbose_content: bool,
@@ -44,11 +44,11 @@ impl LogConfig {
     /// <li> <p>The generated request/response functions that got resolved for each field.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn field_log_level(&self) -> std::option::Option<&crate::types::FieldLogLevel> {
+    pub fn field_log_level(&self) -> ::std::option::Option<&crate::types::FieldLogLevel> {
         self.field_log_level.as_ref()
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
@@ -65,11 +65,13 @@ impl LogConfig {
 
 /// A builder for [`LogConfig`](crate::types::LogConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogConfigBuilder {
-    pub(crate) field_log_level: std::option::Option<crate::types::FieldLogLevel>,
-    pub(crate) cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    pub(crate) exclude_verbose_content: std::option::Option<bool>,
+    pub(crate) field_log_level: ::std::option::Option<crate::types::FieldLogLevel>,
+    pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) exclude_verbose_content: ::std::option::Option<bool>,
 }
 impl LogConfigBuilder {
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
@@ -88,7 +90,7 @@ impl LogConfigBuilder {
     /// </ul> </li>
     /// </ul>
     pub fn field_log_level(mut self, input: crate::types::FieldLogLevel) -> Self {
-        self.field_log_level = Some(input);
+        self.field_log_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field logging level. Values can be NONE, ERROR, or ALL.</p>
@@ -108,31 +110,34 @@ impl LogConfigBuilder {
     /// </ul>
     pub fn set_field_log_level(
         mut self,
-        input: std::option::Option<crate::types::FieldLogLevel>,
+        input: ::std::option::Option<crate::types::FieldLogLevel>,
     ) -> Self {
         self.field_log_level = input;
         self
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
-    pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_logs_role_arn = Some(input.into());
+    pub fn cloud_watch_logs_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service role that AppSync assumes to publish to CloudWatch logs in your account.</p>
     pub fn set_cloud_watch_logs_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_logs_role_arn = input;
         self
     }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
     pub fn exclude_verbose_content(mut self, input: bool) -> Self {
-        self.exclude_verbose_content = Some(input);
+        self.exclude_verbose_content = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and evaluated mapping templates, regardless of logging level.</p>
-    pub fn set_exclude_verbose_content(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_exclude_verbose_content(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_verbose_content = input;
         self
     }

@@ -6,56 +6,59 @@ pub use crate::operation::get_tile::_get_tile_input::GetTileInputBuilder;
 /// Fluent builder constructing a request to `GetTile`.
 ///
 /// <p>Gets a web mercator tile for the given Earth Observation job.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTileFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_tile::builders::GetTileInputBuilder,
 }
 impl GetTileFluentBuilder {
     /// Creates a new `GetTile`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_tile::GetTile,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_tile::GetTileOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl GetTileFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_tile::GetTileOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_tile::GetTileError>,
     > {
         self.send_middleware().await
     }
@@ -80,7 +83,7 @@ impl GetTileFluentBuilder {
         self
     }
     /// <p>The x coordinate of the tile input.</p>
-    pub fn set_x(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_x(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_x(input);
         self
     }
@@ -90,7 +93,7 @@ impl GetTileFluentBuilder {
         self
     }
     /// <p>The y coordinate of the tile input.</p>
-    pub fn set_y(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_y(input);
         self
     }
@@ -100,7 +103,7 @@ impl GetTileFluentBuilder {
         self
     }
     /// <p>The z coordinate of the tile input.</p>
-    pub fn set_z(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_z(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_z(input);
         self
     }
@@ -109,14 +112,14 @@ impl GetTileFluentBuilder {
     /// To override the contents of this collection use [`set_image_assets`](Self::set_image_assets).
     ///
     /// <p>The particular assets or bands to tile.</p>
-    pub fn image_assets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_assets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_assets(input.into());
         self
     }
     /// <p>The particular assets or bands to tile.</p>
     pub fn set_image_assets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_image_assets(input);
         self
@@ -127,17 +130,17 @@ impl GetTileFluentBuilder {
         self
     }
     /// <p>Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.</p>
-    pub fn set_target(mut self, input: std::option::Option<crate::types::TargetOptions>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<crate::types::TargetOptions>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the tile operation.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the tile operation.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
@@ -147,40 +150,55 @@ impl GetTileFluentBuilder {
         self
     }
     /// <p>Determines whether or not to return a valid data mask.</p>
-    pub fn set_image_mask(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_image_mask(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_image_mask(input);
         self
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn output_format(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn output_format(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.output_format(input.into());
         self
     }
     /// <p>The data format of the output tile. The formats include .npy, .png and .jpg.</p>
-    pub fn set_output_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_format(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
-    pub fn time_range_filter(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn time_range_filter(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.time_range_filter(input.into());
         self
     }
     /// <p>Time range filter applied to imagery to find the images to tile.</p>
     pub fn set_time_range_filter(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_time_range_filter(input);
         self
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn property_filters(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn property_filters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.property_filters(input.into());
         self
     }
     /// <p>Property filters for the imagery to tile.</p>
-    pub fn set_property_filters(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_property_filters(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_property_filters(input);
         self
     }
@@ -192,20 +210,23 @@ impl GetTileFluentBuilder {
     /// <p>The output data type of the tile operation.</p>
     pub fn set_output_data_type(
         mut self,
-        input: std::option::Option<crate::types::OutputType>,
+        input: ::std::option::Option<crate::types::OutputType>,
     ) -> Self {
         self.inner = self.inner.set_output_data_type(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
-    pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
     pub fn set_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self

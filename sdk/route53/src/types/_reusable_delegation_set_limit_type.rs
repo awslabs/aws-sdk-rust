@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReusableDelegationSetLimitType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum ReusableDelegationSetLimitType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReusableDelegationSetLimitType {
+impl ::std::convert::From<&str> for ReusableDelegationSetLimitType {
     fn from(s: &str) -> Self {
         match s {
             "MAX_ZONES_BY_REUSABLE_DELEGATION_SET" => {
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for ReusableDelegationSetLimitType {
         }
     }
 }
-impl std::str::FromStr for ReusableDelegationSetLimitType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReusableDelegationSetLimitType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReusableDelegationSetLimitType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReusableDelegationSetLimitType::from(s))
     }
 }
 impl ReusableDelegationSetLimitType {
@@ -85,7 +85,7 @@ impl ReusableDelegationSetLimitType {
         &["MAX_ZONES_BY_REUSABLE_DELEGATION_SET"]
     }
 }
-impl AsRef<str> for ReusableDelegationSetLimitType {
+impl ::std::convert::AsRef<str> for ReusableDelegationSetLimitType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

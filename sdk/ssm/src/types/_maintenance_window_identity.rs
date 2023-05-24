@@ -2,17 +2,17 @@
 
 /// <p>Information about the maintenance window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowIdentity {
     /// <p>The ID of the maintenance window.</p>
     #[doc(hidden)]
-    pub window_id: std::option::Option<std::string::String>,
+    pub window_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the maintenance window.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the maintenance window.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the maintenance window is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -24,34 +24,34 @@ pub struct MaintenanceWindowIdentity {
     pub cutoff: i32,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     #[doc(hidden)]
-    pub schedule: std::option::Option<std::string::String>,
+    pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.</p>
     #[doc(hidden)]
-    pub schedule_timezone: std::option::Option<std::string::String>,
+    pub schedule_timezone: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     #[doc(hidden)]
-    pub schedule_offset: std::option::Option<i32>,
+    pub schedule_offset: ::std::option::Option<i32>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.</p>
     #[doc(hidden)]
-    pub end_date: std::option::Option<std::string::String>,
+    pub end_date: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.</p>
     #[doc(hidden)]
-    pub start_date: std::option::Option<std::string::String>,
+    pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
     #[doc(hidden)]
-    pub next_execution_time: std::option::Option<std::string::String>,
+    pub next_execution_time: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceWindowIdentity {
     /// <p>The ID of the maintenance window.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> ::std::option::Option<&str> {
         self.window_id.as_deref()
     }
     /// <p>The name of the maintenance window.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the maintenance window.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the maintenance window is enabled.</p>
@@ -67,32 +67,32 @@ impl MaintenanceWindowIdentity {
         self.cutoff
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    pub fn schedule(&self) -> std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<&str> {
         self.schedule.as_deref()
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.</p>
-    pub fn schedule_timezone(&self) -> std::option::Option<&str> {
+    pub fn schedule_timezone(&self) -> ::std::option::Option<&str> {
         self.schedule_timezone.as_deref()
     }
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
-    pub fn schedule_offset(&self) -> std::option::Option<i32> {
+    pub fn schedule_offset(&self) -> ::std::option::Option<i32> {
         self.schedule_offset
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.</p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> ::std::option::Option<&str> {
         self.end_date.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> ::std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    pub fn next_execution_time(&self) -> std::option::Option<&str> {
+    pub fn next_execution_time(&self) -> ::std::option::Option<&str> {
         self.next_execution_time.as_deref()
     }
 }
-impl std::fmt::Debug for MaintenanceWindowIdentity {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MaintenanceWindowIdentity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowIdentity");
         formatter.field("window_id", &self.window_id);
         formatter.field("name", &self.name);
@@ -118,144 +118,150 @@ impl MaintenanceWindowIdentity {
 
 /// A builder for [`MaintenanceWindowIdentity`](crate::types::MaintenanceWindowIdentity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MaintenanceWindowIdentityBuilder {
-    pub(crate) window_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) duration: std::option::Option<i32>,
-    pub(crate) cutoff: std::option::Option<i32>,
-    pub(crate) schedule: std::option::Option<std::string::String>,
-    pub(crate) schedule_timezone: std::option::Option<std::string::String>,
-    pub(crate) schedule_offset: std::option::Option<i32>,
-    pub(crate) end_date: std::option::Option<std::string::String>,
-    pub(crate) start_date: std::option::Option<std::string::String>,
-    pub(crate) next_execution_time: std::option::Option<std::string::String>,
+    pub(crate) window_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) duration: ::std::option::Option<i32>,
+    pub(crate) cutoff: ::std::option::Option<i32>,
+    pub(crate) schedule: ::std::option::Option<::std::string::String>,
+    pub(crate) schedule_timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) schedule_offset: ::std::option::Option<i32>,
+    pub(crate) end_date: ::std::option::Option<::std::string::String>,
+    pub(crate) start_date: ::std::option::Option<::std::string::String>,
+    pub(crate) next_execution_time: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceWindowIdentityBuilder {
     /// <p>The ID of the maintenance window.</p>
-    pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.window_id = Some(input.into());
+    pub fn window_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.window_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the maintenance window.</p>
-    pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_window_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.window_id = input;
         self
     }
     /// <p>The name of the maintenance window.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance window.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description of the maintenance window.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the maintenance window.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Indicates whether the maintenance window is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the maintenance window is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The duration of the maintenance window in hours.</p>
     pub fn duration(mut self, input: i32) -> Self {
-        self.duration = Some(input);
+        self.duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration of the maintenance window in hours.</p>
-    pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub fn cutoff(mut self, input: i32) -> Self {
-        self.cutoff = Some(input);
+        self.cutoff = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
-    pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cutoff(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cutoff = input;
         self
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schedule = Some(input.into());
+    pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schedule = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule = input;
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.</p>
-    pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schedule_timezone = Some(input.into());
+    pub fn schedule_timezone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.schedule_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format.</p>
     pub fn set_schedule_timezone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.schedule_timezone = input;
         self
     }
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     pub fn schedule_offset(mut self, input: i32) -> Self {
-        self.schedule_offset = Some(input);
+        self.schedule_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
-    pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_schedule_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schedule_offset = input;
         self
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.</p>
-    pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_date = Some(input.into());
+    pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.</p>
-    pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date = input;
         self
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.</p>
-    pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_date = Some(input.into());
+    pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active.</p>
-    pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_date = input;
         self
     }
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
-    pub fn next_execution_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_execution_time = Some(input.into());
+    pub fn next_execution_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_execution_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
     pub fn set_next_execution_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.next_execution_time = input;
         self
@@ -278,8 +284,8 @@ impl MaintenanceWindowIdentityBuilder {
         }
     }
 }
-impl std::fmt::Debug for MaintenanceWindowIdentityBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MaintenanceWindowIdentityBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowIdentityBuilder");
         formatter.field("window_id", &self.window_id);
         formatter.field("name", &self.name);

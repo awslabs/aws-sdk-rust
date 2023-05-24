@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDeviceFleet`](crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder::set_device_fleet_name): <p>The name of the fleet.</p>
+    ///   - [`device_fleet_name(impl ::std::convert::Into<String>)`](crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::operation::describe_device_fleet::builders::DescribeDeviceFleetFluentBuilder::set_device_fleet_name): <p>The name of the fleet.</p>
     /// - On success, responds with [`DescribeDeviceFleetOutput`](crate::operation::describe_device_fleet::DescribeDeviceFleetOutput) with field(s):
     ///   - [`device_fleet_name(Option<String>)`](crate::operation::describe_device_fleet::DescribeDeviceFleetOutput::device_fleet_name): <p>The name of the fleet.</p>
     ///   - [`device_fleet_arn(Option<String>)`](crate::operation::describe_device_fleet::DescribeDeviceFleetOutput::device_fleet_arn): <p>The The Amazon Resource Name (ARN) of the fleet.</p>

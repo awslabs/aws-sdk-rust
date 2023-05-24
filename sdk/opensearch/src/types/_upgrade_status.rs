@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UpgradeStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum UpgradeStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UpgradeStatus {
+impl ::std::convert::From<&str> for UpgradeStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => UpgradeStatus::Failed,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for UpgradeStatus {
         }
     }
 }
-impl std::str::FromStr for UpgradeStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UpgradeStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpgradeStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UpgradeStatus::from(s))
     }
 }
 impl UpgradeStatus {
@@ -101,7 +101,7 @@ impl UpgradeStatus {
         ]
     }
 }
-impl AsRef<str> for UpgradeStatus {
+impl ::std::convert::AsRef<str> for UpgradeStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

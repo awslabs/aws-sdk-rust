@@ -2,22 +2,22 @@
 
 /// Dvb Sub Source Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DvbSubSourceSettings {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     #[doc(hidden)]
-    pub ocr_language: std::option::Option<crate::types::DvbSubOcrLanguage>,
+    pub ocr_language: ::std::option::Option<crate::types::DvbSubOcrLanguage>,
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
     #[doc(hidden)]
-    pub pid: std::option::Option<i32>,
+    pub pid: ::std::option::Option<i32>,
 }
 impl DvbSubSourceSettings {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
-    pub fn ocr_language(&self) -> std::option::Option<&crate::types::DvbSubOcrLanguage> {
+    pub fn ocr_language(&self) -> ::std::option::Option<&crate::types::DvbSubOcrLanguage> {
         self.ocr_language.as_ref()
     }
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
-    pub fn pid(&self) -> std::option::Option<i32> {
+    pub fn pid(&self) -> ::std::option::Option<i32> {
         self.pid
     }
 }
@@ -30,32 +30,34 @@ impl DvbSubSourceSettings {
 
 /// A builder for [`DvbSubSourceSettings`](crate::types::DvbSubSourceSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DvbSubSourceSettingsBuilder {
-    pub(crate) ocr_language: std::option::Option<crate::types::DvbSubOcrLanguage>,
-    pub(crate) pid: std::option::Option<i32>,
+    pub(crate) ocr_language: ::std::option::Option<crate::types::DvbSubOcrLanguage>,
+    pub(crate) pid: ::std::option::Option<i32>,
 }
 impl DvbSubSourceSettingsBuilder {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub fn ocr_language(mut self, input: crate::types::DvbSubOcrLanguage) -> Self {
-        self.ocr_language = Some(input);
+        self.ocr_language = ::std::option::Option::Some(input);
         self
     }
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
     pub fn set_ocr_language(
         mut self,
-        input: std::option::Option<crate::types::DvbSubOcrLanguage>,
+        input: ::std::option::Option<crate::types::DvbSubOcrLanguage>,
     ) -> Self {
         self.ocr_language = input;
         self
     }
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
     pub fn pid(mut self, input: i32) -> Self {
-        self.pid = Some(input);
+        self.pid = ::std::option::Option::Some(input);
         self
     }
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
-    pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pid = input;
         self
     }

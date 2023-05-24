@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`endpoint_identifiers(Vec<EndpointIdentifier>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::endpoint_identifiers) / [`set_endpoint_identifiers(Option<Vec<EndpointIdentifier>>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::set_endpoint_identifiers): <p>The identifiers of the endpoints that you want to remove.</p>
-    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    ///   - [`endpoint_group_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::remove_endpoints::builders::RemoveEndpointsFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     /// - On success, responds with [`RemoveEndpointsOutput`](crate::operation::remove_endpoints::RemoveEndpointsOutput)
     /// - On failure, responds with [`SdkError<RemoveEndpointsError>`](crate::operation::remove_endpoints::RemoveEndpointsError)
     pub fn remove_endpoints(

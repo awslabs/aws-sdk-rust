@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetReputationOptionsOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutConfigurationSetReputationOptionsOutput {
+impl ::aws_http::request_id::RequestId for PutConfigurationSetReputationOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl PutConfigurationSetReputationOptionsOutput {
 
 /// A builder for [`PutConfigurationSetReputationOptionsOutput`](crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutConfigurationSetReputationOptionsOutputBuilder {
     _request_id: Option<String>,
 }

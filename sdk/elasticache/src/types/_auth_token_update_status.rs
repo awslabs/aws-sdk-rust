@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AuthTokenUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AuthTokenUpdateStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AuthTokenUpdateStatus {
+impl ::std::convert::From<&str> for AuthTokenUpdateStatus {
     fn from(s: &str) -> Self {
         match s {
             "ROTATING" => AuthTokenUpdateStatus::Rotating,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AuthTokenUpdateStatus {
         }
     }
 }
-impl std::str::FromStr for AuthTokenUpdateStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AuthTokenUpdateStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthTokenUpdateStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AuthTokenUpdateStatus::from(s))
     }
 }
 impl AuthTokenUpdateStatus {
@@ -86,7 +86,7 @@ impl AuthTokenUpdateStatus {
         &["ROTATING", "SETTING"]
     }
 }
-impl AsRef<str> for AuthTokenUpdateStatus {
+impl ::std::convert::AsRef<str> for AuthTokenUpdateStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

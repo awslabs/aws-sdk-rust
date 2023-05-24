@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ConfirmationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ConfirmationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ConfirmationStatus {
+impl ::std::convert::From<&str> for ConfirmationStatus {
     fn from(s: &str) -> Self {
         match s {
             "Confirmed" => ConfirmationStatus::Confirmed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ConfirmationStatus {
         }
     }
 }
-impl std::str::FromStr for ConfirmationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ConfirmationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfirmationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ConfirmationStatus::from(s))
     }
 }
 impl ConfirmationStatus {
@@ -91,7 +91,7 @@ impl ConfirmationStatus {
         &["Confirmed", "Denied", "None"]
     }
 }
-impl AsRef<str> for ConfirmationStatus {
+impl ::std::convert::AsRef<str> for ConfirmationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

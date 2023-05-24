@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CustomEngineVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum CustomEngineVersionStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CustomEngineVersionStatus {
+impl ::std::convert::From<&str> for CustomEngineVersionStatus {
     fn from(s: &str) -> Self {
         match s {
             "available" => CustomEngineVersionStatus::Available,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for CustomEngineVersionStatus {
         }
     }
 }
-impl std::str::FromStr for CustomEngineVersionStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CustomEngineVersionStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomEngineVersionStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CustomEngineVersionStatus::from(s))
     }
 }
 impl CustomEngineVersionStatus {
@@ -91,7 +91,7 @@ impl CustomEngineVersionStatus {
         &["available", "inactive", "inactive-except-restore"]
     }
 }
-impl AsRef<str> for CustomEngineVersionStatus {
+impl ::std::convert::AsRef<str> for CustomEngineVersionStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

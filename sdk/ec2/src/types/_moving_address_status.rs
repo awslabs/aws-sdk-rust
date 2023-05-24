@@ -4,22 +4,22 @@
 /// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MovingAddressStatus {
     /// <p>The status of the Elastic IP address that's being moved to the EC2-VPC platform, or restored to the EC2-Classic platform.</p>
     #[doc(hidden)]
-    pub move_status: std::option::Option<crate::types::MoveStatus>,
+    pub move_status: ::std::option::Option<crate::types::MoveStatus>,
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
-    pub public_ip: std::option::Option<std::string::String>,
+    pub public_ip: ::std::option::Option<::std::string::String>,
 }
 impl MovingAddressStatus {
     /// <p>The status of the Elastic IP address that's being moved to the EC2-VPC platform, or restored to the EC2-Classic platform.</p>
-    pub fn move_status(&self) -> std::option::Option<&crate::types::MoveStatus> {
+    pub fn move_status(&self) -> ::std::option::Option<&crate::types::MoveStatus> {
         self.move_status.as_ref()
     }
     /// <p>The Elastic IP address.</p>
-    pub fn public_ip(&self) -> std::option::Option<&str> {
+    pub fn public_ip(&self) -> ::std::option::Option<&str> {
         self.public_ip.as_deref()
     }
 }
@@ -32,29 +32,34 @@ impl MovingAddressStatus {
 
 /// A builder for [`MovingAddressStatus`](crate::types::MovingAddressStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MovingAddressStatusBuilder {
-    pub(crate) move_status: std::option::Option<crate::types::MoveStatus>,
-    pub(crate) public_ip: std::option::Option<std::string::String>,
+    pub(crate) move_status: ::std::option::Option<crate::types::MoveStatus>,
+    pub(crate) public_ip: ::std::option::Option<::std::string::String>,
 }
 impl MovingAddressStatusBuilder {
     /// <p>The status of the Elastic IP address that's being moved to the EC2-VPC platform, or restored to the EC2-Classic platform.</p>
     pub fn move_status(mut self, input: crate::types::MoveStatus) -> Self {
-        self.move_status = Some(input);
+        self.move_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the Elastic IP address that's being moved to the EC2-VPC platform, or restored to the EC2-Classic platform.</p>
-    pub fn set_move_status(mut self, input: std::option::Option<crate::types::MoveStatus>) -> Self {
+    pub fn set_move_status(
+        mut self,
+        input: ::std::option::Option<crate::types::MoveStatus>,
+    ) -> Self {
         self.move_status = input;
         self
     }
     /// <p>The Elastic IP address.</p>
-    pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_ip = Some(input.into());
+    pub fn public_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Elastic IP address.</p>
-    pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_ip = input;
         self
     }

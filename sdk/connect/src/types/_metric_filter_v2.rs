@@ -2,28 +2,28 @@
 
 /// <p>Contains information about the filter used when retrieving metrics. <code>MetricFiltersV2</code> can be used on the following metrics: <code>AVG_AGENT_CONNECTING_TIME</code>, <code>CONTACTS_CREATED</code>, <code>CONTACTS_HANDLED</code>, <code>SUM_CONTACTS_DISCONNECTED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricFilterV2 {
     /// <p>The key to use for filtering data. </p>
     /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
     #[doc(hidden)]
-    pub metric_filter_key: std::option::Option<std::string::String>,
+    pub metric_filter_key: ::std::option::Option<::std::string::String>,
     /// <p>The values to use for filtering data. </p>
     /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> </p>
     /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code> </p>
     #[doc(hidden)]
-    pub metric_filter_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub metric_filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricFilterV2 {
     /// <p>The key to use for filtering data. </p>
     /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
-    pub fn metric_filter_key(&self) -> std::option::Option<&str> {
+    pub fn metric_filter_key(&self) -> ::std::option::Option<&str> {
         self.metric_filter_key.as_deref()
     }
     /// <p>The values to use for filtering data. </p>
     /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> </p>
     /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code> </p>
-    pub fn metric_filter_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn metric_filter_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.metric_filter_values.as_deref()
     }
 }
@@ -36,23 +36,28 @@ impl MetricFilterV2 {
 
 /// A builder for [`MetricFilterV2`](crate::types::MetricFilterV2).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricFilterV2Builder {
-    pub(crate) metric_filter_key: std::option::Option<std::string::String>,
-    pub(crate) metric_filter_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) metric_filter_key: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricFilterV2Builder {
     /// <p>The key to use for filtering data. </p>
     /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
-    pub fn metric_filter_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_filter_key = Some(input.into());
+    pub fn metric_filter_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.metric_filter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key to use for filtering data. </p>
     /// <p>Valid metric filter keys: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the same values as the <code>InitiationMethod</code> and <code>DisconnectReason</code> in the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
     pub fn set_metric_filter_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.metric_filter_key = input;
         self
@@ -64,10 +69,13 @@ impl MetricFilterV2Builder {
     /// <p>The values to use for filtering data. </p>
     /// <p>Valid metric filter values for <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> | <code>API</code> </p>
     /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code> </p>
-    pub fn metric_filter_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_filter_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.metric_filter_values.unwrap_or_default();
         v.push(input.into());
-        self.metric_filter_values = Some(v);
+        self.metric_filter_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values to use for filtering data. </p>
@@ -75,7 +83,7 @@ impl MetricFilterV2Builder {
     /// <p>Valid metric filter values for <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> | <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code> | <code>API</code> </p>
     pub fn set_metric_filter_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.metric_filter_values = input;
         self

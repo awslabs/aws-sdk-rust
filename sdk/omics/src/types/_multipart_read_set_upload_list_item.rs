@@ -2,89 +2,91 @@
 
 /// <p> Part of the response to ListMultipartReadSetUploads, excluding completed and aborted multipart uploads. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultipartReadSetUploadListItem {
     /// <p> The sequence store ID used for the multipart upload. </p>
     #[doc(hidden)]
-    pub sequence_store_id: std::option::Option<std::string::String>,
+    pub sequence_store_id: ::std::option::Option<::std::string::String>,
     /// <p> The ID for the initiated multipart upload. </p>
     #[doc(hidden)]
-    pub upload_id: std::option::Option<std::string::String>,
+    pub upload_id: ::std::option::Option<::std::string::String>,
     /// <p> The type of file the read set originated from. </p>
     #[doc(hidden)]
-    pub source_file_type: std::option::Option<crate::types::FileType>,
+    pub source_file_type: ::std::option::Option<crate::types::FileType>,
     /// <p> The read set source's subject ID. </p>
     #[doc(hidden)]
-    pub subject_id: std::option::Option<std::string::String>,
+    pub subject_id: ::std::option::Option<::std::string::String>,
     /// <p> The read set source's sample ID. </p>
     #[doc(hidden)]
-    pub sample_id: std::option::Option<std::string::String>,
+    pub sample_id: ::std::option::Option<::std::string::String>,
     /// <p> The source of an uploaded part. </p>
     #[doc(hidden)]
-    pub generated_from: std::option::Option<std::string::String>,
+    pub generated_from: ::std::option::Option<::std::string::String>,
     /// <p> The source's reference ARN. </p>
     #[doc(hidden)]
-    pub reference_arn: std::option::Option<std::string::String>,
+    pub reference_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of a read set. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of a read set. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> Any tags you wish to add to a read set. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p> The time stamp for when a direct upload was created. </p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MultipartReadSetUploadListItem {
     /// <p> The sequence store ID used for the multipart upload. </p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> ::std::option::Option<&str> {
         self.sequence_store_id.as_deref()
     }
     /// <p> The ID for the initiated multipart upload. </p>
-    pub fn upload_id(&self) -> std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// <p> The type of file the read set originated from. </p>
-    pub fn source_file_type(&self) -> std::option::Option<&crate::types::FileType> {
+    pub fn source_file_type(&self) -> ::std::option::Option<&crate::types::FileType> {
         self.source_file_type.as_ref()
     }
     /// <p> The read set source's subject ID. </p>
-    pub fn subject_id(&self) -> std::option::Option<&str> {
+    pub fn subject_id(&self) -> ::std::option::Option<&str> {
         self.subject_id.as_deref()
     }
     /// <p> The read set source's sample ID. </p>
-    pub fn sample_id(&self) -> std::option::Option<&str> {
+    pub fn sample_id(&self) -> ::std::option::Option<&str> {
         self.sample_id.as_deref()
     }
     /// <p> The source of an uploaded part. </p>
-    pub fn generated_from(&self) -> std::option::Option<&str> {
+    pub fn generated_from(&self) -> ::std::option::Option<&str> {
         self.generated_from.as_deref()
     }
     /// <p> The source's reference ARN. </p>
-    pub fn reference_arn(&self) -> std::option::Option<&str> {
+    pub fn reference_arn(&self) -> ::std::option::Option<&str> {
         self.reference_arn.as_deref()
     }
     /// <p> The name of a read set. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of a read set. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> Any tags you wish to add to a read set. </p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p> The time stamp for when a direct upload was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -97,115 +99,133 @@ impl MultipartReadSetUploadListItem {
 
 /// A builder for [`MultipartReadSetUploadListItem`](crate::types::MultipartReadSetUploadListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultipartReadSetUploadListItemBuilder {
-    pub(crate) sequence_store_id: std::option::Option<std::string::String>,
-    pub(crate) upload_id: std::option::Option<std::string::String>,
-    pub(crate) source_file_type: std::option::Option<crate::types::FileType>,
-    pub(crate) subject_id: std::option::Option<std::string::String>,
-    pub(crate) sample_id: std::option::Option<std::string::String>,
-    pub(crate) generated_from: std::option::Option<std::string::String>,
-    pub(crate) reference_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) sequence_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) upload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_file_type: ::std::option::Option<crate::types::FileType>,
+    pub(crate) subject_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sample_id: ::std::option::Option<::std::string::String>,
+    pub(crate) generated_from: ::std::option::Option<::std::string::String>,
+    pub(crate) reference_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MultipartReadSetUploadListItemBuilder {
     /// <p> The sequence store ID used for the multipart upload. </p>
-    pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sequence_store_id = Some(input.into());
+    pub fn sequence_store_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sequence_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The sequence store ID used for the multipart upload. </p>
     pub fn set_sequence_store_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sequence_store_id = input;
         self
     }
     /// <p> The ID for the initiated multipart upload. </p>
-    pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.upload_id = Some(input.into());
+    pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID for the initiated multipart upload. </p>
-    pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
     }
     /// <p> The type of file the read set originated from. </p>
     pub fn source_file_type(mut self, input: crate::types::FileType) -> Self {
-        self.source_file_type = Some(input);
+        self.source_file_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of file the read set originated from. </p>
     pub fn set_source_file_type(
         mut self,
-        input: std::option::Option<crate::types::FileType>,
+        input: ::std::option::Option<crate::types::FileType>,
     ) -> Self {
         self.source_file_type = input;
         self
     }
     /// <p> The read set source's subject ID. </p>
-    pub fn subject_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subject_id = Some(input.into());
+    pub fn subject_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subject_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The read set source's subject ID. </p>
-    pub fn set_subject_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subject_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_id = input;
         self
     }
     /// <p> The read set source's sample ID. </p>
-    pub fn sample_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sample_id = Some(input.into());
+    pub fn sample_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sample_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The read set source's sample ID. </p>
-    pub fn set_sample_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sample_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_id = input;
         self
     }
     /// <p> The source of an uploaded part. </p>
-    pub fn generated_from(mut self, input: impl Into<std::string::String>) -> Self {
-        self.generated_from = Some(input.into());
+    pub fn generated_from(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.generated_from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The source of an uploaded part. </p>
-    pub fn set_generated_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_generated_from(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.generated_from = input;
         self
     }
     /// <p> The source's reference ARN. </p>
-    pub fn reference_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reference_arn = Some(input.into());
+    pub fn reference_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reference_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The source's reference ARN. </p>
-    pub fn set_reference_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reference_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.reference_arn = input;
         self
     }
     /// <p> The name of a read set. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of a read set. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The description of a read set. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of a read set. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -216,33 +236,33 @@ impl MultipartReadSetUploadListItemBuilder {
     /// <p> Any tags you wish to add to a read set. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> Any tags you wish to add to a read set. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p> The time stamp for when a direct upload was created. </p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time stamp for when a direct upload was created. </p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

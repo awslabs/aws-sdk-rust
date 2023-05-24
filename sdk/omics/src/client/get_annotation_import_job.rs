@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAnnotationImportJob`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
     /// - On success, responds with [`GetAnnotationImportJobOutput`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput::id): <p>The job's ID.</p>
     ///   - [`destination_name(Option<String>)`](crate::operation::get_annotation_import_job::GetAnnotationImportJobOutput::destination_name): <p>The job's destination annotation store.</p>

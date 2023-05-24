@@ -2,41 +2,47 @@
 
 /// <p>A list of items that represent cases.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchCasesResponseItem {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
-    pub case_id: std::option::Option<std::string::String>,
+    pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of a template.</p>
     #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>List of case field values.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<std::vec::Vec<crate::types::FieldValue>>,
+    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
     >,
 }
 impl SearchCasesResponseItem {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<&str> {
         self.template_id.as_deref()
     }
     /// <p>List of case field values.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::types::FieldValue]> {
+    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldValue]> {
         self.fields.as_deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
     > {
         self.tags.as_ref()
     }
@@ -50,33 +56,38 @@ impl SearchCasesResponseItem {
 
 /// A builder for [`SearchCasesResponseItem`](crate::types::SearchCasesResponseItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchCasesResponseItemBuilder {
-    pub(crate) case_id: std::option::Option<std::string::String>,
-    pub(crate) template_id: std::option::Option<std::string::String>,
-    pub(crate) fields: std::option::Option<std::vec::Vec<crate::types::FieldValue>>,
-    pub(crate) tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
+    pub(crate) case_id: ::std::option::Option<::std::string::String>,
+    pub(crate) template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::option::Option<::std::string::String>,
+        >,
     >,
 }
 impl SearchCasesResponseItemBuilder {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.case_id = Some(input.into());
+    pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.case_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_id = Some(input.into());
+    pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
     }
@@ -88,13 +99,13 @@ impl SearchCasesResponseItemBuilder {
     pub fn fields(mut self, input: crate::types::FieldValue) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input);
-        self.fields = Some(v);
+        self.fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of case field values.</p>
     pub fn set_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     ) -> Self {
         self.fields = input;
         self
@@ -106,21 +117,21 @@ impl SearchCasesResponseItemBuilder {
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::option::Option<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::option::Option<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::option::Option<::std::string::String>,
             >,
         >,
     ) -> Self {

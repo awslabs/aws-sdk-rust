@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
     #[doc(hidden)]
-    pub application_detail: std::option::Option<crate::types::ApplicationDetail>,
+    pub application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
-    pub fn application_detail(&self) -> std::option::Option<&crate::types::ApplicationDetail> {
+    pub fn application_detail(&self) -> ::std::option::Option<&crate::types::ApplicationDetail> {
         self.application_detail.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeApplicationOutput {
+impl ::aws_http::request_id::RequestId for DescribeApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl DescribeApplicationOutput {
 
 /// A builder for [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeApplicationOutputBuilder {
-    pub(crate) application_detail: std::option::Option<crate::types::ApplicationDetail>,
+    pub(crate) application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
 }
 impl DescribeApplicationOutputBuilder {
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
     pub fn application_detail(mut self, input: crate::types::ApplicationDetail) -> Self {
-        self.application_detail = Some(input);
+        self.application_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
     pub fn set_application_detail(
         mut self,
-        input: std::option::Option<crate::types::ApplicationDetail>,
+        input: ::std::option::Option<crate::types::ApplicationDetail>,
     ) -> Self {
         self.application_detail = input;
         self

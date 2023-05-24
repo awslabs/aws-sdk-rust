@@ -2,15 +2,15 @@
 
 /// <p>This data type contains information about the progress event of an operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProgressEvent {
     /// <p>The Progress event details.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<crate::types::Progress>,
+    pub details: ::std::option::Option<crate::types::Progress>,
 }
 impl ProgressEvent {
     /// <p>The Progress event details.</p>
-    pub fn details(&self) -> std::option::Option<&crate::types::Progress> {
+    pub fn details(&self) -> ::std::option::Option<&crate::types::Progress> {
         self.details.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl ProgressEvent {
 
 /// A builder for [`ProgressEvent`](crate::types::ProgressEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProgressEventBuilder {
-    pub(crate) details: std::option::Option<crate::types::Progress>,
+    pub(crate) details: ::std::option::Option<crate::types::Progress>,
 }
 impl ProgressEventBuilder {
     /// <p>The Progress event details.</p>
     pub fn details(mut self, input: crate::types::Progress) -> Self {
-        self.details = Some(input);
+        self.details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Progress event details.</p>
-    pub fn set_details(mut self, input: std::option::Option<crate::types::Progress>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<crate::types::Progress>) -> Self {
         self.details = input;
         self
     }

@@ -2,24 +2,24 @@
 
 /// Failed response of campaign state
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCampaignStateResponse {
     /// Identifier representing a Campaign
     #[doc(hidden)]
-    pub campaign_id: std::option::Option<std::string::String>,
+    pub campaign_id: ::std::option::Option<::std::string::String>,
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
     #[doc(hidden)]
-    pub failure_code: std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
+    pub failure_code: ::std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
 }
 impl FailedCampaignStateResponse {
     /// Identifier representing a Campaign
-    pub fn campaign_id(&self) -> std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
     pub fn failure_code(
         &self,
-    ) -> std::option::Option<&crate::types::GetCampaignStateBatchFailureCode> {
+    ) -> ::std::option::Option<&crate::types::GetCampaignStateBatchFailureCode> {
         self.failure_code.as_ref()
     }
 }
@@ -32,31 +32,33 @@ impl FailedCampaignStateResponse {
 
 /// A builder for [`FailedCampaignStateResponse`](crate::types::FailedCampaignStateResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedCampaignStateResponseBuilder {
-    pub(crate) campaign_id: std::option::Option<std::string::String>,
-    pub(crate) failure_code: std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
+    pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_code: ::std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
 }
 impl FailedCampaignStateResponseBuilder {
     /// Identifier representing a Campaign
-    pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.campaign_id = Some(input.into());
+    pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.campaign_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Identifier representing a Campaign
-    pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_id = input;
         self
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
     pub fn failure_code(mut self, input: crate::types::GetCampaignStateBatchFailureCode) -> Self {
-        self.failure_code = Some(input);
+        self.failure_code = ::std::option::Option::Some(input);
         self
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
     pub fn set_failure_code(
         mut self,
-        input: std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
+        input: ::std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
     ) -> Self {
         self.failure_code = input;
         self

@@ -3,31 +3,31 @@ pub(crate) fn de___list_of__string_min36_max36_pattern09a_faf809a_faf409a_faf409
     'a,
     I,
 >(
-    tokens: &mut std::iter::Peekable<I>,
+    tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<
-    Option<std::vec::Vec<std::string::String>>,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    Option<::std::vec::Vec<::std::string::String>>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
     I: Iterator<
         Item = Result<
-            aws_smithy_json::deserialize::Token<'a>,
-            aws_smithy_json::deserialize::error::DeserializeError,
+            ::aws_smithy_json::deserialize::Token<'a>,
+            ::aws_smithy_json::deserialize::error::DeserializeError,
         >,
     >,
 {
     match tokens.next().transpose()? {
-        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
-        Some(aws_smithy_json::deserialize::Token::StartArray { .. }) => {
+        Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(::aws_smithy_json::deserialize::Token::StartArray { .. }) => {
             let mut items = Vec::new();
             loop {
                 match tokens.peek() {
-                    Some(Ok(aws_smithy_json::deserialize::Token::EndArray { .. })) => {
+                    Some(Ok(::aws_smithy_json::deserialize::Token::EndArray { .. })) => {
                         tokens.next().transpose().unwrap();
                         break;
                     }
                     _ => {
-                        let value = aws_smithy_json::deserialize::token::expect_string_or_null(
+                        let value = ::aws_smithy_json::deserialize::token::expect_string_or_null(
                             tokens.next(),
                         )?
                         .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -41,7 +41,7 @@ where
             Ok(Some(items))
         }
         _ => Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start array or null",
             ),
         ),

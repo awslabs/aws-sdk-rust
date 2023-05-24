@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartRecommender`](crate::operation::start_recommender::builders::StartRecommenderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`recommender_arn(impl Into<String>)`](crate::operation::start_recommender::builders::StartRecommenderFluentBuilder::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::operation::start_recommender::builders::StartRecommenderFluentBuilder::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
+    ///   - [`recommender_arn(impl ::std::convert::Into<String>)`](crate::operation::start_recommender::builders::StartRecommenderFluentBuilder::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::operation::start_recommender::builders::StartRecommenderFluentBuilder::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
     /// - On success, responds with [`StartRecommenderOutput`](crate::operation::start_recommender::StartRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::operation::start_recommender::StartRecommenderOutput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender you started.</p>
     /// - On failure, responds with [`SdkError<StartRecommenderError>`](crate::operation::start_recommender::StartRecommenderError)

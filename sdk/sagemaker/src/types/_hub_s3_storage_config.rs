@@ -2,15 +2,15 @@
 
 /// <p>The Amazon S3 storage configuration of a hub.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HubS3StorageConfig {
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
     #[doc(hidden)]
-    pub s3_output_path: std::option::Option<std::string::String>,
+    pub s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl HubS3StorageConfig {
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
-    pub fn s3_output_path(&self) -> std::option::Option<&str> {
+    pub fn s3_output_path(&self) -> ::std::option::Option<&str> {
         self.s3_output_path.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl HubS3StorageConfig {
 
 /// A builder for [`HubS3StorageConfig`](crate::types::HubS3StorageConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HubS3StorageConfigBuilder {
-    pub(crate) s3_output_path: std::option::Option<std::string::String>,
+    pub(crate) s3_output_path: ::std::option::Option<::std::string::String>,
 }
 impl HubS3StorageConfigBuilder {
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
-    pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_output_path = Some(input.into());
+    pub fn s3_output_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_output_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket prefix for hosting hub content.</p>
-    pub fn set_s3_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_output_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_output_path = input;
         self
     }

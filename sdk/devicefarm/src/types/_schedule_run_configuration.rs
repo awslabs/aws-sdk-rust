@@ -2,77 +2,77 @@
 
 /// <p>Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleRunConfiguration {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
     #[doc(hidden)]
-    pub extra_data_package_arn: std::option::Option<std::string::String>,
+    pub extra_data_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for internal use.</p>
     #[doc(hidden)]
-    pub network_profile_arn: std::option::Option<std::string::String>,
+    pub network_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the locale that is used for the run.</p>
     #[doc(hidden)]
-    pub locale: std::option::Option<std::string::String>,
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location that is used for the run.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::Location>,
+    pub location: ::std::option::Option<crate::types::Location>,
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
     #[doc(hidden)]
-    pub vpce_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     #[doc(hidden)]
-    pub customer_artifact_paths: std::option::Option<crate::types::CustomerArtifactPaths>,
+    pub customer_artifact_paths: ::std::option::Option<crate::types::CustomerArtifactPaths>,
     /// <p>Information about the radio states for the run.</p>
     #[doc(hidden)]
-    pub radios: std::option::Option<crate::types::Radios>,
+    pub radios: ::std::option::Option<crate::types::Radios>,
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
     #[doc(hidden)]
-    pub auxiliary_apps: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub auxiliary_apps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     #[doc(hidden)]
-    pub billing_method: std::option::Option<crate::types::BillingMethod>,
+    pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
 }
 impl ScheduleRunConfiguration {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
-    pub fn extra_data_package_arn(&self) -> std::option::Option<&str> {
+    pub fn extra_data_package_arn(&self) -> ::std::option::Option<&str> {
         self.extra_data_package_arn.as_deref()
     }
     /// <p>Reserved for internal use.</p>
-    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> ::std::option::Option<&str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>Information about the locale that is used for the run.</p>
-    pub fn locale(&self) -> std::option::Option<&str> {
+    pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
     /// <p>Information about the location that is used for the run.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
-    pub fn vpce_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpce_configuration_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpce_configuration_arns.as_deref()
     }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub fn customer_artifact_paths(
         &self,
-    ) -> std::option::Option<&crate::types::CustomerArtifactPaths> {
+    ) -> ::std::option::Option<&crate::types::CustomerArtifactPaths> {
         self.customer_artifact_paths.as_ref()
     }
     /// <p>Information about the radio states for the run.</p>
-    pub fn radios(&self) -> std::option::Option<&crate::types::Radios> {
+    pub fn radios(&self) -> ::std::option::Option<&crate::types::Radios> {
         self.radios.as_ref()
     }
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
-    pub fn auxiliary_apps(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auxiliary_apps(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.auxiliary_apps.as_deref()
     }
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
-    pub fn billing_method(&self) -> std::option::Option<&crate::types::BillingMethod> {
+    pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
         self.billing_method.as_ref()
     }
 }
@@ -85,62 +85,71 @@ impl ScheduleRunConfiguration {
 
 /// A builder for [`ScheduleRunConfiguration`](crate::types::ScheduleRunConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduleRunConfigurationBuilder {
-    pub(crate) extra_data_package_arn: std::option::Option<std::string::String>,
-    pub(crate) network_profile_arn: std::option::Option<std::string::String>,
-    pub(crate) locale: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<crate::types::Location>,
-    pub(crate) vpce_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) customer_artifact_paths: std::option::Option<crate::types::CustomerArtifactPaths>,
-    pub(crate) radios: std::option::Option<crate::types::Radios>,
-    pub(crate) auxiliary_apps: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) billing_method: std::option::Option<crate::types::BillingMethod>,
+    pub(crate) extra_data_package_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) network_profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<crate::types::Location>,
+    pub(crate) vpce_configuration_arns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) customer_artifact_paths: ::std::option::Option<crate::types::CustomerArtifactPaths>,
+    pub(crate) radios: ::std::option::Option<crate::types::Radios>,
+    pub(crate) auxiliary_apps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
 }
 impl ScheduleRunConfigurationBuilder {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
-    pub fn extra_data_package_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.extra_data_package_arn = Some(input.into());
+    pub fn extra_data_package_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.extra_data_package_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
     pub fn set_extra_data_package_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.extra_data_package_arn = input;
         self
     }
     /// <p>Reserved for internal use.</p>
-    pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_profile_arn = Some(input.into());
+    pub fn network_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for internal use.</p>
     pub fn set_network_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_profile_arn = input;
         self
     }
     /// <p>Information about the locale that is used for the run.</p>
-    pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
-        self.locale = Some(input.into());
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the locale that is used for the run.</p>
-    pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
     /// <p>Information about the location that is used for the run.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the location that is used for the run.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.location = input;
         self
     }
@@ -149,40 +158,43 @@ impl ScheduleRunConfigurationBuilder {
     /// To override the contents of this collection use [`set_vpce_configuration_arns`](Self::set_vpce_configuration_arns).
     ///
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
-    pub fn vpce_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpce_configuration_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.vpce_configuration_arns.unwrap_or_default();
         v.push(input.into());
-        self.vpce_configuration_arns = Some(v);
+        self.vpce_configuration_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
     pub fn set_vpce_configuration_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.vpce_configuration_arns = input;
         self
     }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub fn customer_artifact_paths(mut self, input: crate::types::CustomerArtifactPaths) -> Self {
-        self.customer_artifact_paths = Some(input);
+        self.customer_artifact_paths = ::std::option::Option::Some(input);
         self
     }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub fn set_customer_artifact_paths(
         mut self,
-        input: std::option::Option<crate::types::CustomerArtifactPaths>,
+        input: ::std::option::Option<crate::types::CustomerArtifactPaths>,
     ) -> Self {
         self.customer_artifact_paths = input;
         self
     }
     /// <p>Information about the radio states for the run.</p>
     pub fn radios(mut self, input: crate::types::Radios) -> Self {
-        self.radios = Some(input);
+        self.radios = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the radio states for the run.</p>
-    pub fn set_radios(mut self, input: std::option::Option<crate::types::Radios>) -> Self {
+    pub fn set_radios(mut self, input: ::std::option::Option<crate::types::Radios>) -> Self {
         self.radios = input;
         self
     }
@@ -191,16 +203,19 @@ impl ScheduleRunConfigurationBuilder {
     /// To override the contents of this collection use [`set_auxiliary_apps`](Self::set_auxiliary_apps).
     ///
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
-    pub fn auxiliary_apps(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auxiliary_apps(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.auxiliary_apps.unwrap_or_default();
         v.push(input.into());
-        self.auxiliary_apps = Some(v);
+        self.auxiliary_apps = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
     pub fn set_auxiliary_apps(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.auxiliary_apps = input;
         self
@@ -209,7 +224,7 @@ impl ScheduleRunConfigurationBuilder {
     /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
     /// </note>
     pub fn billing_method(mut self, input: crate::types::BillingMethod) -> Self {
-        self.billing_method = Some(input);
+        self.billing_method = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
@@ -217,7 +232,7 @@ impl ScheduleRunConfigurationBuilder {
     /// </note>
     pub fn set_billing_method(
         mut self,
-        input: std::option::Option<crate::types::BillingMethod>,
+        input: ::std::option::Option<crate::types::BillingMethod>,
     ) -> Self {
         self.billing_method = input;
         self

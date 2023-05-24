@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BucketLogsPermission {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BucketLogsPermission {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BucketLogsPermission {
+impl ::std::convert::From<&str> for BucketLogsPermission {
     fn from(s: &str) -> Self {
         match s {
             "FULL_CONTROL" => BucketLogsPermission::FullControl,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for BucketLogsPermission {
         }
     }
 }
-impl std::str::FromStr for BucketLogsPermission {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BucketLogsPermission {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BucketLogsPermission::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BucketLogsPermission::from(s))
     }
 }
 impl BucketLogsPermission {
@@ -91,7 +91,7 @@ impl BucketLogsPermission {
         &["FULL_CONTROL", "READ", "WRITE"]
     }
 }
-impl AsRef<str> for BucketLogsPermission {
+impl ::std::convert::AsRef<str> for BucketLogsPermission {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

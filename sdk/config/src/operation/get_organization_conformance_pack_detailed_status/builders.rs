@@ -6,47 +6,50 @@ pub use crate::operation::get_organization_conformance_pack_detailed_status::_ge
 /// Fluent builder constructing a request to `GetOrganizationConformancePackDetailedStatus`.
 ///
 /// <p>Returns detailed status for each member account within an organization for a given organization conformance pack.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOrganizationConformancePackDetailedStatusFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_organization_conformance_pack_detailed_status::builders::GetOrganizationConformancePackDetailedStatusInputBuilder,
 }
 impl GetOrganizationConformancePackDetailedStatusFluentBuilder {
     /// Creates a new `GetOrganizationConformancePackDetailedStatus`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatus, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusOutput, aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl GetOrganizationConformancePackDetailedStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusOutput, aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError>>
                          {
         self.send_middleware().await
     }
@@ -70,7 +73,7 @@ impl GetOrganizationConformancePackDetailedStatusFluentBuilder {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
     pub fn organization_conformance_pack_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.organization_conformance_pack_name(input.into());
         self
@@ -78,7 +81,7 @@ impl GetOrganizationConformancePackDetailedStatusFluentBuilder {
     /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
     pub fn set_organization_conformance_pack_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_organization_conformance_pack_name(input);
         self
@@ -94,7 +97,7 @@ impl GetOrganizationConformancePackDetailedStatusFluentBuilder {
     /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>,
+        input: ::std::option::Option<crate::types::OrganizationResourceDetailedStatusFilters>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -105,17 +108,17 @@ impl GetOrganizationConformancePackDetailedStatusFluentBuilder {
         self
     }
     /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100. </p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

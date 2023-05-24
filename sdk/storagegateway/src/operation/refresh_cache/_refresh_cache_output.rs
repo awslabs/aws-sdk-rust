@@ -2,27 +2,27 @@
 
 /// <p>RefreshCacheOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     #[doc(hidden)]
-    pub file_share_arn: std::option::Option<std::string::String>,
+    pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
     #[doc(hidden)]
-    pub notification_id: std::option::Option<std::string::String>,
+    pub notification_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RefreshCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+    pub fn file_share_arn(&self) -> ::std::option::Option<&str> {
         self.file_share_arn.as_deref()
     }
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
-    pub fn notification_id(&self) -> std::option::Option<&str> {
+    pub fn notification_id(&self) -> ::std::option::Option<&str> {
         self.notification_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RefreshCacheOutput {
+impl ::aws_http::request_id::RequestId for RefreshCacheOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,44 @@ impl RefreshCacheOutput {
 
 /// A builder for [`RefreshCacheOutput`](crate::operation::refresh_cache::RefreshCacheOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RefreshCacheOutputBuilder {
-    pub(crate) file_share_arn: std::option::Option<std::string::String>,
-    pub(crate) notification_id: std::option::Option<std::string::String>,
+    pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) notification_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RefreshCacheOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn file_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_share_arn = Some(input.into());
+    pub fn file_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
-    pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_share_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_share_arn = input;
         self
     }
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
-    pub fn notification_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notification_id = Some(input.into());
+    pub fn notification_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.notification_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
-    pub fn set_notification_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notification_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.notification_id = input;
         self
     }

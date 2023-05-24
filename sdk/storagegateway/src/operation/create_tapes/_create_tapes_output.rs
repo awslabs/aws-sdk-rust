@@ -2,20 +2,20 @@
 
 /// <p>CreateTapeOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTapesOutput {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
     #[doc(hidden)]
-    pub tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateTapesOutput {
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
-    pub fn tape_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tape_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tape_ar_ns.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateTapesOutput {
+impl ::aws_http::request_id::RequestId for CreateTapesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl CreateTapesOutput {
 
 /// A builder for [`CreateTapesOutput`](crate::operation::create_tapes::CreateTapesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateTapesOutputBuilder {
-    pub(crate) tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) tape_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateTapesOutputBuilder {
@@ -40,16 +42,16 @@ impl CreateTapesOutputBuilder {
     /// To override the contents of this collection use [`set_tape_ar_ns`](Self::set_tape_ar_ns).
     ///
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
-    pub fn tape_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tape_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tape_ar_ns.unwrap_or_default();
         v.push(input.into());
-        self.tape_ar_ns = Some(v);
+        self.tape_ar_ns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
     pub fn set_tape_ar_ns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.tape_ar_ns = input;
         self

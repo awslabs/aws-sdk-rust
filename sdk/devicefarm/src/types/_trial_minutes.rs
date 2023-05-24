@@ -2,22 +2,22 @@
 
 /// <p>Represents information about free trial device minutes for an AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrialMinutes {
     /// <p>The total number of free trial minutes that the account started with.</p>
     #[doc(hidden)]
-    pub total: std::option::Option<f64>,
+    pub total: ::std::option::Option<f64>,
     /// <p>The number of free trial minutes remaining in the account.</p>
     #[doc(hidden)]
-    pub remaining: std::option::Option<f64>,
+    pub remaining: ::std::option::Option<f64>,
 }
 impl TrialMinutes {
     /// <p>The total number of free trial minutes that the account started with.</p>
-    pub fn total(&self) -> std::option::Option<f64> {
+    pub fn total(&self) -> ::std::option::Option<f64> {
         self.total
     }
     /// <p>The number of free trial minutes remaining in the account.</p>
-    pub fn remaining(&self) -> std::option::Option<f64> {
+    pub fn remaining(&self) -> ::std::option::Option<f64> {
         self.remaining
     }
 }
@@ -30,29 +30,31 @@ impl TrialMinutes {
 
 /// A builder for [`TrialMinutes`](crate::types::TrialMinutes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrialMinutesBuilder {
-    pub(crate) total: std::option::Option<f64>,
-    pub(crate) remaining: std::option::Option<f64>,
+    pub(crate) total: ::std::option::Option<f64>,
+    pub(crate) remaining: ::std::option::Option<f64>,
 }
 impl TrialMinutesBuilder {
     /// <p>The total number of free trial minutes that the account started with.</p>
     pub fn total(mut self, input: f64) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of free trial minutes that the account started with.</p>
-    pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total = input;
         self
     }
     /// <p>The number of free trial minutes remaining in the account.</p>
     pub fn remaining(mut self, input: f64) -> Self {
-        self.remaining = Some(input);
+        self.remaining = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of free trial minutes remaining in the account.</p>
-    pub fn set_remaining(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_remaining(mut self, input: ::std::option::Option<f64>) -> Self {
         self.remaining = input;
         self
     }

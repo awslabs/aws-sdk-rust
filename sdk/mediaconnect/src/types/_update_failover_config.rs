@@ -2,36 +2,36 @@
 
 /// The settings for source failover.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
     #[doc(hidden)]
-    pub failover_mode: std::option::Option<crate::types::FailoverMode>,
+    pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     /// Recovery window time to look for dash-7 packets
     #[doc(hidden)]
-    pub recovery_window: std::option::Option<i32>,
+    pub recovery_window: ::std::option::Option<i32>,
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     #[doc(hidden)]
-    pub source_priority: std::option::Option<crate::types::SourcePriority>,
+    pub source_priority: ::std::option::Option<crate::types::SourcePriority>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::State>,
+    pub state: ::std::option::Option<crate::types::State>,
 }
 impl UpdateFailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-    pub fn failover_mode(&self) -> std::option::Option<&crate::types::FailoverMode> {
+    pub fn failover_mode(&self) -> ::std::option::Option<&crate::types::FailoverMode> {
         self.failover_mode.as_ref()
     }
     /// Recovery window time to look for dash-7 packets
-    pub fn recovery_window(&self) -> std::option::Option<i32> {
+    pub fn recovery_window(&self) -> ::std::option::Option<i32> {
         self.recovery_window
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-    pub fn source_priority(&self) -> std::option::Option<&crate::types::SourcePriority> {
+    pub fn source_priority(&self) -> ::std::option::Option<&crate::types::SourcePriority> {
         self.source_priority.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state(&self) -> std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
         self.state.as_ref()
     }
 }
@@ -44,57 +44,59 @@ impl UpdateFailoverConfig {
 
 /// A builder for [`UpdateFailoverConfig`](crate::types::UpdateFailoverConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateFailoverConfigBuilder {
-    pub(crate) failover_mode: std::option::Option<crate::types::FailoverMode>,
-    pub(crate) recovery_window: std::option::Option<i32>,
-    pub(crate) source_priority: std::option::Option<crate::types::SourcePriority>,
-    pub(crate) state: std::option::Option<crate::types::State>,
+    pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
+    pub(crate) recovery_window: ::std::option::Option<i32>,
+    pub(crate) source_priority: ::std::option::Option<crate::types::SourcePriority>,
+    pub(crate) state: ::std::option::Option<crate::types::State>,
 }
 impl UpdateFailoverConfigBuilder {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
     pub fn failover_mode(mut self, input: crate::types::FailoverMode) -> Self {
-        self.failover_mode = Some(input);
+        self.failover_mode = ::std::option::Option::Some(input);
         self
     }
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
     pub fn set_failover_mode(
         mut self,
-        input: std::option::Option<crate::types::FailoverMode>,
+        input: ::std::option::Option<crate::types::FailoverMode>,
     ) -> Self {
         self.failover_mode = input;
         self
     }
     /// Recovery window time to look for dash-7 packets
     pub fn recovery_window(mut self, input: i32) -> Self {
-        self.recovery_window = Some(input);
+        self.recovery_window = ::std::option::Option::Some(input);
         self
     }
     /// Recovery window time to look for dash-7 packets
-    pub fn set_recovery_window(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_recovery_window(mut self, input: ::std::option::Option<i32>) -> Self {
         self.recovery_window = input;
         self
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     pub fn source_priority(mut self, input: crate::types::SourcePriority) -> Self {
-        self.source_priority = Some(input);
+        self.source_priority = ::std::option::Option::Some(input);
         self
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     pub fn set_source_priority(
         mut self,
-        input: std::option::Option<crate::types::SourcePriority>,
+        input: ::std::option::Option<crate::types::SourcePriority>,
     ) -> Self {
         self.source_priority = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn state(mut self, input: crate::types::State) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
         self
     }

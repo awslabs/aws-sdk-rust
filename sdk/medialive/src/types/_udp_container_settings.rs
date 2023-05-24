@@ -2,15 +2,15 @@
 
 /// Udp Container Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UdpContainerSettings {
     /// M2ts Settings
     #[doc(hidden)]
-    pub m2ts_settings: std::option::Option<crate::types::M2tsSettings>,
+    pub m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
 }
 impl UdpContainerSettings {
     /// M2ts Settings
-    pub fn m2ts_settings(&self) -> std::option::Option<&crate::types::M2tsSettings> {
+    pub fn m2ts_settings(&self) -> ::std::option::Option<&crate::types::M2tsSettings> {
         self.m2ts_settings.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl UdpContainerSettings {
 
 /// A builder for [`UdpContainerSettings`](crate::types::UdpContainerSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UdpContainerSettingsBuilder {
-    pub(crate) m2ts_settings: std::option::Option<crate::types::M2tsSettings>,
+    pub(crate) m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
 }
 impl UdpContainerSettingsBuilder {
     /// M2ts Settings
     pub fn m2ts_settings(mut self, input: crate::types::M2tsSettings) -> Self {
-        self.m2ts_settings = Some(input);
+        self.m2ts_settings = ::std::option::Option::Some(input);
         self
     }
     /// M2ts Settings
     pub fn set_m2ts_settings(
         mut self,
-        input: std::option::Option<crate::types::M2tsSettings>,
+        input: ::std::option::Option<crate::types::M2tsSettings>,
     ) -> Self {
         self.m2ts_settings = input;
         self

@@ -2,18 +2,18 @@
 
 /// <p>Describes a resize operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResizeInfo {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
     #[doc(hidden)]
-    pub resize_type: std::option::Option<std::string::String>,
+    pub resize_type: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
     #[doc(hidden)]
     pub allow_cancel_resize: bool,
 }
 impl ResizeInfo {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
-    pub fn resize_type(&self) -> std::option::Option<&str> {
+    pub fn resize_type(&self) -> ::std::option::Option<&str> {
         self.resize_type.as_deref()
     }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
@@ -30,29 +30,31 @@ impl ResizeInfo {
 
 /// A builder for [`ResizeInfo`](crate::types::ResizeInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResizeInfoBuilder {
-    pub(crate) resize_type: std::option::Option<std::string::String>,
-    pub(crate) allow_cancel_resize: std::option::Option<bool>,
+    pub(crate) resize_type: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_cancel_resize: ::std::option::Option<bool>,
 }
 impl ResizeInfoBuilder {
     /// <p>Returns the value <code>ClassicResize</code>.</p>
-    pub fn resize_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resize_type = Some(input.into());
+    pub fn resize_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resize_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the value <code>ClassicResize</code>.</p>
-    pub fn set_resize_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resize_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resize_type = input;
         self
     }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
     pub fn allow_cancel_resize(mut self, input: bool) -> Self {
-        self.allow_cancel_resize = Some(input);
+        self.allow_cancel_resize = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean value indicating if the resize operation can be cancelled.</p>
-    pub fn set_allow_cancel_resize(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_cancel_resize(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_cancel_resize = input;
         self
     }

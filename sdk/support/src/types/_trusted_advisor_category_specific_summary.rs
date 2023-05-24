@@ -2,17 +2,17 @@
 
 /// <p>The container for summary information that relates to the category of the Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCategorySpecificSummary {
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     #[doc(hidden)]
-    pub cost_optimizing: std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>,
+    pub cost_optimizing: ::std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>,
 }
 impl TrustedAdvisorCategorySpecificSummary {
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     pub fn cost_optimizing(
         &self,
-    ) -> std::option::Option<&crate::types::TrustedAdvisorCostOptimizingSummary> {
+    ) -> ::std::option::Option<&crate::types::TrustedAdvisorCostOptimizingSummary> {
         self.cost_optimizing.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl TrustedAdvisorCategorySpecificSummary {
 
 /// A builder for [`TrustedAdvisorCategorySpecificSummary`](crate::types::TrustedAdvisorCategorySpecificSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrustedAdvisorCategorySpecificSummaryBuilder {
     pub(crate) cost_optimizing:
-        std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>,
+        ::std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>,
 }
 impl TrustedAdvisorCategorySpecificSummaryBuilder {
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
@@ -36,13 +38,13 @@ impl TrustedAdvisorCategorySpecificSummaryBuilder {
         mut self,
         input: crate::types::TrustedAdvisorCostOptimizingSummary,
     ) -> Self {
-        self.cost_optimizing = Some(input);
+        self.cost_optimizing = ::std::option::Option::Some(input);
         self
     }
     /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     pub fn set_cost_optimizing(
         mut self,
-        input: std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>,
+        input: ::std::option::Option<crate::types::TrustedAdvisorCostOptimizingSummary>,
     ) -> Self {
         self.cost_optimizing = input;
         self

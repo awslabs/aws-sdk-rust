@@ -2,22 +2,22 @@
 
 /// <p>Specifies a field to sort by and a sort order.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortCriterion {
     /// <p>The name of the field on which to sort.</p>
     #[doc(hidden)]
-    pub field_name: std::option::Option<std::string::String>,
+    pub field_name: ::std::option::Option<::std::string::String>,
     /// <p>An ascending or descending sort.</p>
     #[doc(hidden)]
-    pub sort: std::option::Option<crate::types::Sort>,
+    pub sort: ::std::option::Option<crate::types::Sort>,
 }
 impl SortCriterion {
     /// <p>The name of the field on which to sort.</p>
-    pub fn field_name(&self) -> std::option::Option<&str> {
+    pub fn field_name(&self) -> ::std::option::Option<&str> {
         self.field_name.as_deref()
     }
     /// <p>An ascending or descending sort.</p>
-    pub fn sort(&self) -> std::option::Option<&crate::types::Sort> {
+    pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
         self.sort.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl SortCriterion {
 
 /// A builder for [`SortCriterion`](crate::types::SortCriterion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SortCriterionBuilder {
-    pub(crate) field_name: std::option::Option<std::string::String>,
-    pub(crate) sort: std::option::Option<crate::types::Sort>,
+    pub(crate) field_name: ::std::option::Option<::std::string::String>,
+    pub(crate) sort: ::std::option::Option<crate::types::Sort>,
 }
 impl SortCriterionBuilder {
     /// <p>The name of the field on which to sort.</p>
-    pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_name = Some(input.into());
+    pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the field on which to sort.</p>
-    pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_name = input;
         self
     }
     /// <p>An ascending or descending sort.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
-        self.sort = Some(input);
+        self.sort = ::std::option::Option::Some(input);
         self
     }
     /// <p>An ascending or descending sort.</p>
-    pub fn set_sort(mut self, input: std::option::Option<crate::types::Sort>) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.sort = input;
         self
     }

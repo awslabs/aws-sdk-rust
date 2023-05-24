@@ -2,29 +2,29 @@
 
 /// <p>Defines different defaults to the users or groups based on mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamicDefaultValue {
     /// <p>The column that contains the username.</p>
     #[doc(hidden)]
-    pub user_name_column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub user_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The column that contains the group name.</p>
     #[doc(hidden)]
-    pub group_name_column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub group_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The column that contains the default value of each user or group.</p>
     #[doc(hidden)]
-    pub default_value_column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub default_value_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl DynamicDefaultValue {
     /// <p>The column that contains the username.</p>
-    pub fn user_name_column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn user_name_column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.user_name_column.as_ref()
     }
     /// <p>The column that contains the group name.</p>
-    pub fn group_name_column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn group_name_column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.group_name_column.as_ref()
     }
     /// <p>The column that contains the default value of each user or group.</p>
-    pub fn default_value_column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn default_value_column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.default_value_column.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl DynamicDefaultValue {
 
 /// A builder for [`DynamicDefaultValue`](crate::types::DynamicDefaultValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DynamicDefaultValueBuilder {
-    pub(crate) user_name_column: std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) group_name_column: std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) default_value_column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub(crate) user_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
+    pub(crate) group_name_column: ::std::option::Option<crate::types::ColumnIdentifier>,
+    pub(crate) default_value_column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl DynamicDefaultValueBuilder {
     /// <p>The column that contains the username.</p>
     pub fn user_name_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.user_name_column = Some(input);
+        self.user_name_column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column that contains the username.</p>
     pub fn set_user_name_column(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.user_name_column = input;
         self
     }
     /// <p>The column that contains the group name.</p>
     pub fn group_name_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.group_name_column = Some(input);
+        self.group_name_column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column that contains the group name.</p>
     pub fn set_group_name_column(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.group_name_column = input;
         self
     }
     /// <p>The column that contains the default value of each user or group.</p>
     pub fn default_value_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.default_value_column = Some(input);
+        self.default_value_column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column that contains the default value of each user or group.</p>
     pub fn set_default_value_column(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.default_value_column = input;
         self

@@ -2,26 +2,26 @@
 
 /// <p>Represents information about the run of a stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageExecution {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
     #[doc(hidden)]
-    pub pipeline_execution_id: std::option::Option<std::string::String>,
+    pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StageExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::StageExecutionStatus>,
 }
 impl StageExecution {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
-    pub fn status(&self) -> std::option::Option<&crate::types::StageExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StageExecutionStatus> {
         self.status.as_ref()
     }
 }
@@ -34,21 +34,26 @@ impl StageExecution {
 
 /// A builder for [`StageExecution`](crate::types::StageExecution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StageExecutionBuilder {
-    pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::StageExecutionStatus>,
+    pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::StageExecutionStatus>,
 }
 impl StageExecutionBuilder {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
-    pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_execution_id = Some(input.into());
+    pub fn pipeline_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the pipeline execution associated with the stage.</p>
     pub fn set_pipeline_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_execution_id = input;
         self
@@ -57,7 +62,7 @@ impl StageExecutionBuilder {
     /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
     /// </note>
     pub fn status(mut self, input: crate::types::StageExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
@@ -65,7 +70,7 @@ impl StageExecutionBuilder {
     /// </note>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::StageExecutionStatus>,
+        input: ::std::option::Option<crate::types::StageExecutionStatus>,
     ) -> Self {
         self.status = input;
         self

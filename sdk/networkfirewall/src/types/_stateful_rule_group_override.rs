@@ -2,15 +2,15 @@
 
 /// <p>The setting that allows the policy owner to change the behavior of the rule group within a policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatefulRuleGroupOverride {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::OverrideAction>,
+    pub action: ::std::option::Option<crate::types::OverrideAction>,
 }
 impl StatefulRuleGroupOverride {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::OverrideAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::OverrideAction> {
         self.action.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl StatefulRuleGroupOverride {
 
 /// A builder for [`StatefulRuleGroupOverride`](crate::types::StatefulRuleGroupOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatefulRuleGroupOverrideBuilder {
-    pub(crate) action: std::option::Option<crate::types::OverrideAction>,
+    pub(crate) action: ::std::option::Option<crate::types::OverrideAction>,
 }
 impl StatefulRuleGroupOverrideBuilder {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
     pub fn action(mut self, input: crate::types::OverrideAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::OverrideAction>) -> Self {
+    pub fn set_action(
+        mut self,
+        input: ::std::option::Option<crate::types::OverrideAction>,
+    ) -> Self {
         self.action = input;
         self
     }

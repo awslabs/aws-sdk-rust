@@ -2,26 +2,26 @@
 
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
-    pub trust: std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContextTrust>,
+    pub trust: ::std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
     #[doc(hidden)]
-    pub subject_alternative_names: std::option::Option<crate::types::SubjectAlternativeNames>,
+    pub subject_alternative_names: ::std::option::Option<crate::types::SubjectAlternativeNames>,
 }
 impl VirtualGatewayListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub fn trust(
         &self,
-    ) -> std::option::Option<&crate::types::VirtualGatewayListenerTlsValidationContextTrust> {
+    ) -> ::std::option::Option<&crate::types::VirtualGatewayListenerTlsValidationContextTrust> {
         self.trust.as_ref()
     }
     /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
     pub fn subject_alternative_names(
         &self,
-    ) -> std::option::Option<&crate::types::SubjectAlternativeNames> {
+    ) -> ::std::option::Option<&crate::types::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
     }
 }
@@ -34,12 +34,14 @@ impl VirtualGatewayListenerTlsValidationContext {
 
 /// A builder for [`VirtualGatewayListenerTlsValidationContext`](crate::types::VirtualGatewayListenerTlsValidationContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewayListenerTlsValidationContextBuilder {
     pub(crate) trust:
-        std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContextTrust>,
+        ::std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContextTrust>,
     pub(crate) subject_alternative_names:
-        std::option::Option<crate::types::SubjectAlternativeNames>,
+        ::std::option::Option<crate::types::SubjectAlternativeNames>,
 }
 impl VirtualGatewayListenerTlsValidationContextBuilder {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
@@ -47,13 +49,13 @@ impl VirtualGatewayListenerTlsValidationContextBuilder {
         mut self,
         input: crate::types::VirtualGatewayListenerTlsValidationContextTrust,
     ) -> Self {
-        self.trust = Some(input);
+        self.trust = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub fn set_trust(
         mut self,
-        input: std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContextTrust>,
+        input: ::std::option::Option<crate::types::VirtualGatewayListenerTlsValidationContextTrust>,
     ) -> Self {
         self.trust = input;
         self
@@ -63,13 +65,13 @@ impl VirtualGatewayListenerTlsValidationContextBuilder {
         mut self,
         input: crate::types::SubjectAlternativeNames,
     ) -> Self {
-        self.subject_alternative_names = Some(input);
+        self.subject_alternative_names = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
     pub fn set_subject_alternative_names(
         mut self,
-        input: std::option::Option<crate::types::SubjectAlternativeNames>,
+        input: ::std::option::Option<crate::types::SubjectAlternativeNames>,
     ) -> Self {
         self.subject_alternative_names = input;
         self

@@ -2,19 +2,19 @@
 
 /// <p>Information about metrics to publish to CloudWatch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatelessCustomPublishMetricAction {
     /// <p>Defines CloudWatch dimension values to publish.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<
-        std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>,
+    pub dimensions: ::std::option::Option<
+        ::std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>,
     >,
 }
 impl StatelessCustomPublishMetricAction {
     /// <p>Defines CloudWatch dimension values to publish.</p>
     pub fn dimensions(
         &self,
-    ) -> std::option::Option<&[crate::types::StatelessCustomPublishMetricActionDimension]> {
+    ) -> ::std::option::Option<&[crate::types::StatelessCustomPublishMetricActionDimension]> {
         self.dimensions.as_deref()
     }
 }
@@ -27,10 +27,12 @@ impl StatelessCustomPublishMetricAction {
 
 /// A builder for [`StatelessCustomPublishMetricAction`](crate::types::StatelessCustomPublishMetricAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatelessCustomPublishMetricActionBuilder {
-    pub(crate) dimensions: std::option::Option<
-        std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>,
+    pub(crate) dimensions: ::std::option::Option<
+        ::std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>,
     >,
 }
 impl StatelessCustomPublishMetricActionBuilder {
@@ -45,14 +47,14 @@ impl StatelessCustomPublishMetricActionBuilder {
     ) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
         v.push(input);
-        self.dimensions = Some(v);
+        self.dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Defines CloudWatch dimension values to publish.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::StatelessCustomPublishMetricActionDimension>,
         >,
     ) -> Self {
         self.dimensions = input;

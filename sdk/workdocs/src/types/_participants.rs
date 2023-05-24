@@ -2,22 +2,22 @@
 
 /// <p>Describes the users or user groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Participants {
     /// <p>The list of users.</p>
     #[doc(hidden)]
-    pub users: std::option::Option<std::vec::Vec<crate::types::UserMetadata>>,
+    pub users: ::std::option::Option<::std::vec::Vec<crate::types::UserMetadata>>,
     /// <p>The list of user groups.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<crate::types::GroupMetadata>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
 }
 impl Participants {
     /// <p>The list of users.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::types::UserMetadata]> {
+    pub fn users(&self) -> ::std::option::Option<&[crate::types::UserMetadata]> {
         self.users.as_deref()
     }
     /// <p>The list of user groups.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::GroupMetadata]> {
+    pub fn groups(&self) -> ::std::option::Option<&[crate::types::GroupMetadata]> {
         self.groups.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl Participants {
 
 /// A builder for [`Participants`](crate::types::Participants).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParticipantsBuilder {
-    pub(crate) users: std::option::Option<std::vec::Vec<crate::types::UserMetadata>>,
-    pub(crate) groups: std::option::Option<std::vec::Vec<crate::types::GroupMetadata>>,
+    pub(crate) users: ::std::option::Option<::std::vec::Vec<crate::types::UserMetadata>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
 }
 impl ParticipantsBuilder {
     /// Appends an item to `users`.
@@ -44,13 +46,13 @@ impl ParticipantsBuilder {
     pub fn users(mut self, input: crate::types::UserMetadata) -> Self {
         let mut v = self.users.unwrap_or_default();
         v.push(input);
-        self.users = Some(v);
+        self.users = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of users.</p>
     pub fn set_users(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UserMetadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UserMetadata>>,
     ) -> Self {
         self.users = input;
         self
@@ -63,13 +65,13 @@ impl ParticipantsBuilder {
     pub fn groups(mut self, input: crate::types::GroupMetadata) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input);
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of user groups.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupMetadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupMetadata>>,
     ) -> Self {
         self.groups = input;
         self

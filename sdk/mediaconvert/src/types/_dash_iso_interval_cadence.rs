@@ -38,13 +38,13 @@
 /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DashIsoIntervalCadence {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DashIsoIntervalCadence {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DashIsoIntervalCadence {
+impl ::std::convert::From<&str> for DashIsoIntervalCadence {
     fn from(s: &str) -> Self {
         match s {
             "FOLLOW_CUSTOM" => DashIsoIntervalCadence::FollowCustom,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DashIsoIntervalCadence {
         }
     }
 }
-impl std::str::FromStr for DashIsoIntervalCadence {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DashIsoIntervalCadence {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DashIsoIntervalCadence::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DashIsoIntervalCadence::from(s))
     }
 }
 impl DashIsoIntervalCadence {
@@ -86,7 +86,7 @@ impl DashIsoIntervalCadence {
         &["FOLLOW_CUSTOM", "FOLLOW_IFRAME"]
     }
 }
-impl AsRef<str> for DashIsoIntervalCadence {
+impl ::std::convert::AsRef<str> for DashIsoIntervalCadence {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

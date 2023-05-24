@@ -2,36 +2,36 @@
 
 /// <p>Contains the identifiers for a group, a group member, and a <code>GroupMembership</code> object in the identity store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
-    pub identity_store_id: std::option::Option<std::string::String>,
+    pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
     #[doc(hidden)]
-    pub membership_id: std::option::Option<std::string::String>,
+    pub membership_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a group in the identity store.</p>
     #[doc(hidden)]
-    pub group_id: std::option::Option<std::string::String>,
+    pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     #[doc(hidden)]
-    pub member_id: std::option::Option<crate::types::MemberId>,
+    pub member_id: ::std::option::Option<crate::types::MemberId>,
 }
 impl GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> ::std::option::Option<&str> {
         self.membership_id.as_deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    pub fn member_id(&self) -> std::option::Option<&crate::types::MemberId> {
+    pub fn member_id(&self) -> ::std::option::Option<&crate::types::MemberId> {
         self.member_id.as_ref()
     }
 }
@@ -44,54 +44,65 @@ impl GroupMembership {
 
 /// A builder for [`GroupMembership`](crate::types::GroupMembership).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupMembershipBuilder {
-    pub(crate) identity_store_id: std::option::Option<std::string::String>,
-    pub(crate) membership_id: std::option::Option<std::string::String>,
-    pub(crate) group_id: std::option::Option<std::string::String>,
-    pub(crate) member_id: std::option::Option<crate::types::MemberId>,
+    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) member_id: ::std::option::Option<crate::types::MemberId>,
 }
 impl GroupMembershipBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_store_id = Some(input.into());
+    pub fn identity_store_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn set_identity_store_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.identity_store_id = input;
         self
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-    pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.membership_id = Some(input.into());
+    pub fn membership_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.membership_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-    pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_membership_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.membership_id = input;
         self
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_id = Some(input.into());
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
-        self.member_id = Some(input);
+        self.member_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    pub fn set_member_id(mut self, input: std::option::Option<crate::types::MemberId>) -> Self {
+    pub fn set_member_id(mut self, input: ::std::option::Option<crate::types::MemberId>) -> Self {
         self.member_id = input;
         self
     }

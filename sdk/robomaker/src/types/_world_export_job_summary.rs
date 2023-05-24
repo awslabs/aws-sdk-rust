@@ -2,11 +2,11 @@
 
 /// <p>Information about a world export job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorldExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the world export job.</p>
     /// <dl>
     /// <dt>
@@ -47,20 +47,20 @@ pub struct WorldExportJobSummary {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WorldExportJobStatus>,
+    pub status: ::std::option::Option<crate::types::WorldExportJobStatus>,
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of worlds.</p>
     #[doc(hidden)]
-    pub worlds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The output location.</p>
     #[doc(hidden)]
-    pub output_location: std::option::Option<crate::types::OutputLocation>,
+    pub output_location: ::std::option::Option<crate::types::OutputLocation>,
 }
 impl WorldExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The status of the world export job.</p>
@@ -102,19 +102,19 @@ impl WorldExportJobSummary {
     /// <p>The world export job is being cancelled.</p>
     /// </dd>
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::types::WorldExportJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WorldExportJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A list of worlds.</p>
-    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn worlds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.worlds.as_deref()
     }
     /// <p>The output location.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::types::OutputLocation> {
+    pub fn output_location(&self) -> ::std::option::Option<&crate::types::OutputLocation> {
         self.output_location.as_ref()
     }
 }
@@ -127,22 +127,24 @@ impl WorldExportJobSummary {
 
 /// A builder for [`WorldExportJobSummary`](crate::types::WorldExportJobSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorldExportJobSummaryBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::WorldExportJobStatus>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) worlds: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) output_location: std::option::Option<crate::types::OutputLocation>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::WorldExportJobStatus>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) worlds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
 }
 impl WorldExportJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -186,7 +188,7 @@ impl WorldExportJobSummaryBuilder {
     /// </dd>
     /// </dl>
     pub fn status(mut self, input: crate::types::WorldExportJobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the world export job.</p>
@@ -230,20 +232,20 @@ impl WorldExportJobSummaryBuilder {
     /// </dl>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::WorldExportJobStatus>,
+        input: ::std::option::Option<crate::types::WorldExportJobStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
@@ -253,29 +255,29 @@ impl WorldExportJobSummaryBuilder {
     /// To override the contents of this collection use [`set_worlds`](Self::set_worlds).
     ///
     /// <p>A list of worlds.</p>
-    pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn worlds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.worlds.unwrap_or_default();
         v.push(input.into());
-        self.worlds = Some(v);
+        self.worlds = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of worlds.</p>
     pub fn set_worlds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.worlds = input;
         self
     }
     /// <p>The output location.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
-        self.output_location = Some(input);
+        self.output_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output location.</p>
     pub fn set_output_location(
         mut self,
-        input: std::option::Option<crate::types::OutputLocation>,
+        input: ::std::option::Option<crate::types::OutputLocation>,
     ) -> Self {
         self.output_location = input;
         self

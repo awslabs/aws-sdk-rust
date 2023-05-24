@@ -6,30 +6,30 @@ pub use crate::operation::send_alexa_offer_to_master::_send_alexa_offer_to_maste
 /// Fluent builder constructing a request to `SendAlexaOfferToMaster`.
 ///
 /// <p>This API allows you to connect WebRTC-enabled devices with Alexa display devices. When invoked, it sends the Alexa Session Description Protocol (SDP) offer to the master peer. The offer is delivered as soon as the master is connected to the specified signaling channel. This API returns the SDP answer from the connected master. If the master is not connected to the signaling channel, redelivery requests are made until the message expires.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder,
 }
 impl SendAlexaOfferToMasterFluentBuilder {
     /// Creates a new `SendAlexaOfferToMaster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMaster,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
         >,
     > {
@@ -37,30 +37,33 @@ impl SendAlexaOfferToMasterFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,41 +76,53 @@ impl SendAlexaOfferToMasterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
-    pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
         self
     }
     /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
-    pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_arn(input);
         self
     }
     /// <p>The unique identifier for the sender client.</p>
-    pub fn sender_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sender_client_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sender_client_id(input.into());
         self
     }
     /// <p>The unique identifier for the sender client.</p>
-    pub fn set_sender_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sender_client_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sender_client_id(input);
         self
     }
     /// <p>The base64-encoded SDP offer content.</p>
-    pub fn message_payload(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn message_payload(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.message_payload(input.into());
         self
     }
     /// <p>The base64-encoded SDP offer content.</p>
-    pub fn set_message_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_payload(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_message_payload(input);
         self
     }

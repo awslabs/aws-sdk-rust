@@ -2,50 +2,50 @@
 
 /// <p>A control panel represents a group of routing controls that can be changed together in a single transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlPanel {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
-    pub control_panel_arn: std::option::Option<std::string::String>,
+    pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
     #[doc(hidden)]
-    pub default_control_panel: std::option::Option<bool>,
+    pub default_control_panel: ::std::option::Option<bool>,
     /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The number of routing controls in the control panel.</p>
     #[doc(hidden)]
-    pub routing_control_count: std::option::Option<i32>,
+    pub routing_control_count: ::std::option::Option<i32>,
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
 }
 impl ControlPanel {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
-    pub fn default_control_panel(&self) -> std::option::Option<bool> {
+    pub fn default_control_panel(&self) -> ::std::option::Option<bool> {
         self.default_control_panel
     }
     /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The number of routing controls in the control panel.</p>
-    pub fn routing_control_count(&self) -> std::option::Option<i32> {
+    pub fn routing_control_count(&self) -> ::std::option::Option<i32> {
         self.routing_control_count
     }
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
 }
@@ -58,76 +58,81 @@ impl ControlPanel {
 
 /// A builder for [`ControlPanel`](crate::types::ControlPanel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ControlPanelBuilder {
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) control_panel_arn: std::option::Option<std::string::String>,
-    pub(crate) default_control_panel: std::option::Option<bool>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) routing_control_count: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::Status>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) default_control_panel: ::std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_control_count: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
 }
 impl ControlPanelBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the control panel.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_panel_arn = Some(input.into());
+    pub fn control_panel_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn set_control_panel_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.control_panel_arn = input;
         self
     }
     /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
     pub fn default_control_panel(mut self, input: bool) -> Self {
-        self.default_control_panel = Some(input);
+        self.default_control_panel = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
-    pub fn set_default_control_panel(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_default_control_panel(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_control_panel = input;
         self
     }
     /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The number of routing controls in the control panel.</p>
     pub fn routing_control_count(mut self, input: i32) -> Self {
-        self.routing_control_count = Some(input);
+        self.routing_control_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of routing controls in the control panel.</p>
-    pub fn set_routing_control_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_routing_control_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.routing_control_count = input;
         self
     }
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }

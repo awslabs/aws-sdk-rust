@@ -2,17 +2,17 @@
 
 /// <p>Information needed to define a schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
     #[doc(hidden)]
-    pub columns: std::option::Option<std::vec::Vec<crate::types::Column>>,
+    pub columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
 }
 impl SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
-    pub fn columns(&self) -> std::option::Option<&[crate::types::Column]> {
+    pub fn columns(&self) -> ::std::option::Option<&[crate::types::Column]> {
         self.columns.as_deref()
     }
 }
@@ -25,9 +25,11 @@ impl SchemaDefinition {
 
 /// A builder for [`SchemaDefinition`](crate::types::SchemaDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SchemaDefinitionBuilder {
-    pub(crate) columns: std::option::Option<std::vec::Vec<crate::types::Column>>,
+    pub(crate) columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
 }
 impl SchemaDefinitionBuilder {
     /// Appends an item to `columns`.
@@ -39,14 +41,14 @@ impl SchemaDefinitionBuilder {
     pub fn columns(mut self, input: crate::types::Column) -> Self {
         let mut v = self.columns.unwrap_or_default();
         v.push(input);
-        self.columns = Some(v);
+        self.columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies one or more columns that store your data.</p>
     /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
     pub fn set_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Column>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     ) -> Self {
         self.columns = input;
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApiMapping`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_mapping_id(impl Into<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::api_mapping_id) / [`set_api_mapping_id(Option<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::set_api_mapping_id): <p>The API mapping identifier.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::set_domain_name): <p>The domain name.</p>
+    ///   - [`api_mapping_id(impl ::std::convert::Into<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::api_mapping_id) / [`set_api_mapping_id(Option<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::set_api_mapping_id): <p>The API mapping identifier.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_api_mapping::builders::DeleteApiMappingFluentBuilder::set_domain_name): <p>The domain name.</p>
     /// - On success, responds with [`DeleteApiMappingOutput`](crate::operation::delete_api_mapping::DeleteApiMappingOutput)
     /// - On failure, responds with [`SdkError<DeleteApiMappingError>`](crate::operation::delete_api_mapping::DeleteApiMappingError)
     pub fn delete_api_mapping(

@@ -2,22 +2,22 @@
 
 /// <p>Information about the uplink spectral <code>Config</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UplinkSpectrumConfig {
     /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
     #[doc(hidden)]
-    pub center_frequency: std::option::Option<crate::types::Frequency>,
+    pub center_frequency: ::std::option::Option<crate::types::Frequency>,
     /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     #[doc(hidden)]
-    pub polarization: std::option::Option<crate::types::Polarization>,
+    pub polarization: ::std::option::Option<crate::types::Polarization>,
 }
 impl UplinkSpectrumConfig {
     /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
-    pub fn center_frequency(&self) -> std::option::Option<&crate::types::Frequency> {
+    pub fn center_frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
         self.center_frequency.as_ref()
     }
     /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
-    pub fn polarization(&self) -> std::option::Option<&crate::types::Polarization> {
+    pub fn polarization(&self) -> ::std::option::Option<&crate::types::Polarization> {
         self.polarization.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl UplinkSpectrumConfig {
 
 /// A builder for [`UplinkSpectrumConfig`](crate::types::UplinkSpectrumConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UplinkSpectrumConfigBuilder {
-    pub(crate) center_frequency: std::option::Option<crate::types::Frequency>,
-    pub(crate) polarization: std::option::Option<crate::types::Polarization>,
+    pub(crate) center_frequency: ::std::option::Option<crate::types::Frequency>,
+    pub(crate) polarization: ::std::option::Option<crate::types::Polarization>,
 }
 impl UplinkSpectrumConfigBuilder {
     /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
     pub fn center_frequency(mut self, input: crate::types::Frequency) -> Self {
-        self.center_frequency = Some(input);
+        self.center_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
     pub fn set_center_frequency(
         mut self,
-        input: std::option::Option<crate::types::Frequency>,
+        input: ::std::option::Option<crate::types::Frequency>,
     ) -> Self {
         self.center_frequency = input;
         self
     }
     /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub fn polarization(mut self, input: crate::types::Polarization) -> Self {
-        self.polarization = Some(input);
+        self.polarization = ::std::option::Option::Some(input);
         self
     }
     /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
     pub fn set_polarization(
         mut self,
-        input: std::option::Option<crate::types::Polarization>,
+        input: ::std::option::Option<crate::types::Polarization>,
     ) -> Self {
         self.polarization = input;
         self

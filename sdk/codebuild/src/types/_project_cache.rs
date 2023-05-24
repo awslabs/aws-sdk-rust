@@ -2,7 +2,7 @@
 
 /// <p>Information about the cache for the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectCache {
     /// <p>The type of cache used by the build project. Valid values include:</p>
     /// <ul>
@@ -11,14 +11,14 @@ pub struct ProjectCache {
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::CacheType>,
+    pub r#type: ::std::option::Option<crate::types::CacheType>,
     /// <p>Information about the cache location: </p>
     /// <ul>
     /// <li> <p> <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p> </li>
     /// <li> <p> <code>S3</code>: This is the S3 bucket name/prefix.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
     /// <p>Possible values are:</p>
     /// <dl>
@@ -53,7 +53,7 @@ pub struct ProjectCache {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub modes: std::option::Option<std::vec::Vec<crate::types::CacheMode>>,
+    pub modes: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
 }
 impl ProjectCache {
     /// <p>The type of cache used by the build project. Valid values include:</p>
@@ -62,7 +62,7 @@ impl ProjectCache {
     /// <li> <p> <code>S3</code>: The build project reads and writes from and to S3.</p> </li>
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::CacheType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::CacheType> {
         self.r#type.as_ref()
     }
     /// <p>Information about the cache location: </p>
@@ -70,7 +70,7 @@ impl ProjectCache {
     /// <li> <p> <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p> </li>
     /// <li> <p> <code>S3</code>: This is the S3 bucket name/prefix.</p> </li>
     /// </ul>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
@@ -106,7 +106,7 @@ impl ProjectCache {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn modes(&self) -> std::option::Option<&[crate::types::CacheMode]> {
+    pub fn modes(&self) -> ::std::option::Option<&[crate::types::CacheMode]> {
         self.modes.as_deref()
     }
 }
@@ -119,11 +119,13 @@ impl ProjectCache {
 
 /// A builder for [`ProjectCache`](crate::types::ProjectCache).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectCacheBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::CacheType>,
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) modes: std::option::Option<std::vec::Vec<crate::types::CacheMode>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::CacheType>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) modes: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
 }
 impl ProjectCacheBuilder {
     /// <p>The type of cache used by the build project. Valid values include:</p>
@@ -133,7 +135,7 @@ impl ProjectCacheBuilder {
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::CacheType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of cache used by the build project. Valid values include:</p>
@@ -142,7 +144,7 @@ impl ProjectCacheBuilder {
     /// <li> <p> <code>S3</code>: The build project reads and writes from and to S3.</p> </li>
     /// <li> <p> <code>LOCAL</code>: The build project stores a cache locally on a build host that is only available to that build host.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::CacheType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::CacheType>) -> Self {
         self.r#type = input;
         self
     }
@@ -151,8 +153,8 @@ impl ProjectCacheBuilder {
     /// <li> <p> <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p> </li>
     /// <li> <p> <code>S3</code>: This is the S3 bucket name/prefix.</p> </li>
     /// </ul>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the cache location: </p>
@@ -160,7 +162,7 @@ impl ProjectCacheBuilder {
     /// <li> <p> <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p> </li>
     /// <li> <p> <code>S3</code>: This is the S3 bucket name/prefix.</p> </li>
     /// </ul>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
@@ -204,7 +206,7 @@ impl ProjectCacheBuilder {
     pub fn modes(mut self, input: crate::types::CacheMode) -> Self {
         let mut v = self.modes.unwrap_or_default();
         v.push(input);
-        self.modes = Some(v);
+        self.modes = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings that specify the local cache modes. You can use one or more local cache modes at the same time. This is only used for <code>LOCAL</code> cache types.</p>
@@ -242,7 +244,7 @@ impl ProjectCacheBuilder {
     /// </dl>
     pub fn set_modes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CacheMode>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
     ) -> Self {
         self.modes = input;
         self

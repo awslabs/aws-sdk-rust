@@ -38,13 +38,13 @@
 /// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PadVideo {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum PadVideo {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PadVideo {
+impl ::std::convert::From<&str> for PadVideo {
     fn from(s: &str) -> Self {
         match s {
             "BLACK" => PadVideo::Black,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for PadVideo {
         }
     }
 }
-impl std::str::FromStr for PadVideo {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PadVideo {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PadVideo::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PadVideo::from(s))
     }
 }
 impl PadVideo {
@@ -84,7 +84,7 @@ impl PadVideo {
         &["BLACK", "DISABLED"]
     }
 }
-impl AsRef<str> for PadVideo {
+impl ::std::convert::AsRef<str> for PadVideo {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

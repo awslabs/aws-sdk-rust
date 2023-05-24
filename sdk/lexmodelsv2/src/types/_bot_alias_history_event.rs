@@ -2,29 +2,29 @@
 
 /// <p>Provides a record of an event that affects a bot alias. For example, when the version of a bot that the alias points to changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotAliasHistoryEvent {
     /// <p>The version of the bot that was used in the event. </p>
     #[doc(hidden)]
-    pub bot_version: std::option::Option<std::string::String>,
+    pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the event started.</p>
     #[doc(hidden)]
-    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the event ended.</p>
     #[doc(hidden)]
-    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotAliasHistoryEvent {
     /// <p>The version of the bot that was used in the event. </p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>The date and time that the event started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date and time that the event ended.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
@@ -37,43 +37,48 @@ impl BotAliasHistoryEvent {
 
 /// A builder for [`BotAliasHistoryEvent`](crate::types::BotAliasHistoryEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BotAliasHistoryEventBuilder {
-    pub(crate) bot_version: std::option::Option<std::string::String>,
-    pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) bot_version: ::std::option::Option<::std::string::String>,
+    pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotAliasHistoryEventBuilder {
     /// <p>The version of the bot that was used in the event. </p>
-    pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_version = Some(input.into());
+    pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the bot that was used in the event. </p>
-    pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
     }
     /// <p>The date and time that the event started.</p>
-    pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_date = Some(input);
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the event started.</p>
     pub fn set_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_date = input;
         self
     }
     /// <p>The date and time that the event ended.</p>
-    pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_date = Some(input);
+    pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the event ended.</p>
-    pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_date(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_date = input;
         self
     }

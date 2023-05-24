@@ -6,56 +6,59 @@ pub use crate::operation::create_data_set::_create_data_set_input::CreateDataSet
 /// Fluent builder constructing a request to `CreateDataSet`.
 ///
 /// <p>Creates a dataset. This operation doesn't support datasets that include uploaded files as a source.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_data_set::builders::CreateDataSetInputBuilder,
 }
 impl CreateDataSetFluentBuilder {
     /// Creates a new `CreateDataSet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_data_set::CreateDataSet,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_data_set::CreateDataSetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_set::CreateDataSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_data_set::CreateDataSetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_data_set::CreateDataSetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_set::CreateDataSetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,45 @@ impl CreateDataSetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_data_set::CreateDataSetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_data_set::CreateDataSetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_data_set::CreateDataSetError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
     /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_set_id(input.into());
         self
     }
     /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_set_id(input);
         self
     }
     /// <p>The display name for the dataset.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The display name for the dataset.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -111,7 +120,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
     pub fn physical_table_map(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::PhysicalTable,
     ) -> Self {
         self.inner = self.inner.physical_table_map(k.into(), v);
@@ -120,8 +129,8 @@ impl CreateDataSetFluentBuilder {
     /// <p>Declares the physical tables that are available in the underlying data sources.</p>
     pub fn set_physical_table_map(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::PhysicalTable>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::PhysicalTable>,
         >,
     ) -> Self {
         self.inner = self.inner.set_physical_table_map(input);
@@ -134,7 +143,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
     pub fn logical_table_map(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::LogicalTable,
     ) -> Self {
         self.inner = self.inner.logical_table_map(k.into(), v);
@@ -143,8 +152,8 @@ impl CreateDataSetFluentBuilder {
     /// <p>Configures the combination and transformation of the data from the physical tables.</p>
     pub fn set_logical_table_map(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::LogicalTable>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::LogicalTable>,
         >,
     ) -> Self {
         self.inner = self.inner.set_logical_table_map(input);
@@ -158,7 +167,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>Indicates whether you want to import the data into SPICE.</p>
     pub fn set_import_mode(
         mut self,
-        input: std::option::Option<crate::types::DataSetImportMode>,
+        input: ::std::option::Option<crate::types::DataSetImportMode>,
     ) -> Self {
         self.inner = self.inner.set_import_mode(input);
         self
@@ -175,7 +184,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p>
     pub fn set_column_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnGroup>>,
     ) -> Self {
         self.inner = self.inner.set_column_groups(input);
         self
@@ -187,7 +196,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub fn field_folders(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::FieldFolder,
     ) -> Self {
         self.inner = self.inner.field_folders(k.into(), v);
@@ -196,8 +205,8 @@ impl CreateDataSetFluentBuilder {
     /// <p>The folder that contains fields and nested subfolders for your dataset.</p>
     pub fn set_field_folders(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::FieldFolder>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::FieldFolder>,
         >,
     ) -> Self {
         self.inner = self.inner.set_field_folders(input);
@@ -215,7 +224,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>A list of resource permissions on the dataset.</p>
     pub fn set_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     ) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
@@ -231,7 +240,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>The row-level security configuration for the data that you want to create.</p>
     pub fn set_row_level_permission_data_set(
         mut self,
-        input: std::option::Option<crate::types::RowLevelPermissionDataSet>,
+        input: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     ) -> Self {
         self.inner = self.inner.set_row_level_permission_data_set(input);
         self
@@ -247,7 +256,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
     pub fn set_row_level_permission_tag_configuration(
         mut self,
-        input: std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
+        input: ::std::option::Option<crate::types::RowLevelPermissionTagConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_row_level_permission_tag_configuration(input);
         self
@@ -267,7 +276,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p>
     pub fn set_column_level_permission_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
     ) -> Self {
         self.inner = self.inner.set_column_level_permission_rules(input);
         self
@@ -284,7 +293,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -300,7 +309,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     pub fn set_data_set_usage_configuration(
         mut self,
-        input: std::option::Option<crate::types::DataSetUsageConfiguration>,
+        input: ::std::option::Option<crate::types::DataSetUsageConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_data_set_usage_configuration(input);
         self
@@ -317,7 +326,7 @@ impl CreateDataSetFluentBuilder {
     /// <p>The parameter declarations of the dataset.</p>
     pub fn set_dataset_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
     ) -> Self {
         self.inner = self.inner.set_dataset_parameters(input);
         self

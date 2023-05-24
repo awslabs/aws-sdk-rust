@@ -2,22 +2,22 @@
 
 /// <p>Information about items that were not successfully processed in a batch call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsuccessfulItem {
     /// <p>Information about the error.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::UnsuccessfulItemError>,
+    pub error: ::std::option::Option<crate::types::UnsuccessfulItemError>,
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl UnsuccessfulItem {
     /// <p>Information about the error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::UnsuccessfulItemError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::UnsuccessfulItemError> {
         self.error.as_ref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl UnsuccessfulItem {
 
 /// A builder for [`UnsuccessfulItem`](crate::types::UnsuccessfulItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnsuccessfulItemBuilder {
-    pub(crate) error: std::option::Option<crate::types::UnsuccessfulItemError>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
+    pub(crate) error: ::std::option::Option<crate::types::UnsuccessfulItemError>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }
 impl UnsuccessfulItemBuilder {
     /// <p>Information about the error.</p>
     pub fn error(mut self, input: crate::types::UnsuccessfulItemError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the error.</p>
     pub fn set_error(
         mut self,
-        input: std::option::Option<crate::types::UnsuccessfulItemError>,
+        input: ::std::option::Option<crate::types::UnsuccessfulItemError>,
     ) -> Self {
         self.error = input;
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }

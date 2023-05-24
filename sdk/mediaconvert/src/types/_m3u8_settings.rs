@@ -2,141 +2,141 @@
 
 /// These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS outputs.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct M3u8Settings {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     #[doc(hidden)]
-    pub audio_duration: std::option::Option<crate::types::M3u8AudioDuration>,
+    pub audio_duration: ::std::option::Option<crate::types::M3u8AudioDuration>,
     /// The number of audio frames to insert for each PES packet.
     #[doc(hidden)]
-    pub audio_frames_per_pes: std::option::Option<i32>,
+    pub audio_frames_per_pes: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
     #[doc(hidden)]
-    pub audio_pids: std::option::Option<std::vec::Vec<i32>>,
+    pub audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
     #[doc(hidden)]
-    pub data_pts_control: std::option::Option<crate::types::M3u8DataPtsControl>,
+    pub data_pts_control: ::std::option::Option<crate::types::M3u8DataPtsControl>,
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
     #[doc(hidden)]
-    pub max_pcr_interval: std::option::Option<i32>,
+    pub max_pcr_interval: ::std::option::Option<i32>,
     /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     #[doc(hidden)]
-    pub nielsen_id3: std::option::Option<crate::types::M3u8NielsenId3>,
+    pub nielsen_id3: ::std::option::Option<crate::types::M3u8NielsenId3>,
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
-    pub pat_interval: std::option::Option<i32>,
+    pub pat_interval: ::std::option::Option<i32>,
     /// When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     #[doc(hidden)]
-    pub pcr_control: std::option::Option<crate::types::M3u8PcrControl>,
+    pub pcr_control: ::std::option::Option<crate::types::M3u8PcrControl>,
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID.
     #[doc(hidden)]
-    pub pcr_pid: std::option::Option<i32>,
+    pub pcr_pid: ::std::option::Option<i32>,
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
-    pub pmt_interval: std::option::Option<i32>,
+    pub pmt_interval: ::std::option::Option<i32>,
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
     #[doc(hidden)]
-    pub pmt_pid: std::option::Option<i32>,
+    pub pmt_pid: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the private metadata stream in the transport stream.
     #[doc(hidden)]
-    pub private_metadata_pid: std::option::Option<i32>,
+    pub private_metadata_pid: ::std::option::Option<i32>,
     /// The value of the program number field in the Program Map Table.
     #[doc(hidden)]
-    pub program_number: std::option::Option<i32>,
+    pub program_number: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
     #[doc(hidden)]
-    pub scte35_pid: std::option::Option<i32>,
+    pub scte35_pid: ::std::option::Option<i32>,
     /// For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
     #[doc(hidden)]
-    pub scte35_source: std::option::Option<crate::types::M3u8Scte35Source>,
+    pub scte35_source: ::std::option::Option<crate::types::M3u8Scte35Source>,
     /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
     #[doc(hidden)]
-    pub timed_metadata: std::option::Option<crate::types::TimedMetadata>,
+    pub timed_metadata: ::std::option::Option<crate::types::TimedMetadata>,
     /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
     #[doc(hidden)]
-    pub timed_metadata_pid: std::option::Option<i32>,
+    pub timed_metadata_pid: ::std::option::Option<i32>,
     /// The value of the transport stream ID field in the Program Map Table.
     #[doc(hidden)]
-    pub transport_stream_id: std::option::Option<i32>,
+    pub transport_stream_id: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream.
     #[doc(hidden)]
-    pub video_pid: std::option::Option<i32>,
+    pub video_pid: ::std::option::Option<i32>,
 }
 impl M3u8Settings {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
-    pub fn audio_duration(&self) -> std::option::Option<&crate::types::M3u8AudioDuration> {
+    pub fn audio_duration(&self) -> ::std::option::Option<&crate::types::M3u8AudioDuration> {
         self.audio_duration.as_ref()
     }
     /// The number of audio frames to insert for each PES packet.
-    pub fn audio_frames_per_pes(&self) -> std::option::Option<i32> {
+    pub fn audio_frames_per_pes(&self) -> ::std::option::Option<i32> {
         self.audio_frames_per_pes
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
-    pub fn audio_pids(&self) -> std::option::Option<&[i32]> {
+    pub fn audio_pids(&self) -> ::std::option::Option<&[i32]> {
         self.audio_pids.as_deref()
     }
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
-    pub fn data_pts_control(&self) -> std::option::Option<&crate::types::M3u8DataPtsControl> {
+    pub fn data_pts_control(&self) -> ::std::option::Option<&crate::types::M3u8DataPtsControl> {
         self.data_pts_control.as_ref()
     }
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
-    pub fn max_pcr_interval(&self) -> std::option::Option<i32> {
+    pub fn max_pcr_interval(&self) -> ::std::option::Option<i32> {
         self.max_pcr_interval
     }
     /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    pub fn nielsen_id3(&self) -> std::option::Option<&crate::types::M3u8NielsenId3> {
+    pub fn nielsen_id3(&self) -> ::std::option::Option<&crate::types::M3u8NielsenId3> {
         self.nielsen_id3.as_ref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn pat_interval(&self) -> std::option::Option<i32> {
+    pub fn pat_interval(&self) -> ::std::option::Option<i32> {
         self.pat_interval
     }
     /// When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-    pub fn pcr_control(&self) -> std::option::Option<&crate::types::M3u8PcrControl> {
+    pub fn pcr_control(&self) -> ::std::option::Option<&crate::types::M3u8PcrControl> {
         self.pcr_control.as_ref()
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID.
-    pub fn pcr_pid(&self) -> std::option::Option<i32> {
+    pub fn pcr_pid(&self) -> ::std::option::Option<i32> {
         self.pcr_pid
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn pmt_interval(&self) -> std::option::Option<i32> {
+    pub fn pmt_interval(&self) -> ::std::option::Option<i32> {
         self.pmt_interval
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
-    pub fn pmt_pid(&self) -> std::option::Option<i32> {
+    pub fn pmt_pid(&self) -> ::std::option::Option<i32> {
         self.pmt_pid
     }
     /// Packet Identifier (PID) of the private metadata stream in the transport stream.
-    pub fn private_metadata_pid(&self) -> std::option::Option<i32> {
+    pub fn private_metadata_pid(&self) -> ::std::option::Option<i32> {
         self.private_metadata_pid
     }
     /// The value of the program number field in the Program Map Table.
-    pub fn program_number(&self) -> std::option::Option<i32> {
+    pub fn program_number(&self) -> ::std::option::Option<i32> {
         self.program_number
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
-    pub fn scte35_pid(&self) -> std::option::Option<i32> {
+    pub fn scte35_pid(&self) -> ::std::option::Option<i32> {
         self.scte35_pid
     }
     /// For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
-    pub fn scte35_source(&self) -> std::option::Option<&crate::types::M3u8Scte35Source> {
+    pub fn scte35_source(&self) -> ::std::option::Option<&crate::types::M3u8Scte35Source> {
         self.scte35_source.as_ref()
     }
     /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
-    pub fn timed_metadata(&self) -> std::option::Option<&crate::types::TimedMetadata> {
+    pub fn timed_metadata(&self) -> ::std::option::Option<&crate::types::TimedMetadata> {
         self.timed_metadata.as_ref()
     }
     /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
-    pub fn timed_metadata_pid(&self) -> std::option::Option<i32> {
+    pub fn timed_metadata_pid(&self) -> ::std::option::Option<i32> {
         self.timed_metadata_pid
     }
     /// The value of the transport stream ID field in the Program Map Table.
-    pub fn transport_stream_id(&self) -> std::option::Option<i32> {
+    pub fn transport_stream_id(&self) -> ::std::option::Option<i32> {
         self.transport_stream_id
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream.
-    pub fn video_pid(&self) -> std::option::Option<i32> {
+    pub fn video_pid(&self) -> ::std::option::Option<i32> {
         self.video_pid
     }
 }
@@ -149,49 +149,51 @@ impl M3u8Settings {
 
 /// A builder for [`M3u8Settings`](crate::types::M3u8Settings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct M3u8SettingsBuilder {
-    pub(crate) audio_duration: std::option::Option<crate::types::M3u8AudioDuration>,
-    pub(crate) audio_frames_per_pes: std::option::Option<i32>,
-    pub(crate) audio_pids: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) data_pts_control: std::option::Option<crate::types::M3u8DataPtsControl>,
-    pub(crate) max_pcr_interval: std::option::Option<i32>,
-    pub(crate) nielsen_id3: std::option::Option<crate::types::M3u8NielsenId3>,
-    pub(crate) pat_interval: std::option::Option<i32>,
-    pub(crate) pcr_control: std::option::Option<crate::types::M3u8PcrControl>,
-    pub(crate) pcr_pid: std::option::Option<i32>,
-    pub(crate) pmt_interval: std::option::Option<i32>,
-    pub(crate) pmt_pid: std::option::Option<i32>,
-    pub(crate) private_metadata_pid: std::option::Option<i32>,
-    pub(crate) program_number: std::option::Option<i32>,
-    pub(crate) scte35_pid: std::option::Option<i32>,
-    pub(crate) scte35_source: std::option::Option<crate::types::M3u8Scte35Source>,
-    pub(crate) timed_metadata: std::option::Option<crate::types::TimedMetadata>,
-    pub(crate) timed_metadata_pid: std::option::Option<i32>,
-    pub(crate) transport_stream_id: std::option::Option<i32>,
-    pub(crate) video_pid: std::option::Option<i32>,
+    pub(crate) audio_duration: ::std::option::Option<crate::types::M3u8AudioDuration>,
+    pub(crate) audio_frames_per_pes: ::std::option::Option<i32>,
+    pub(crate) audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) data_pts_control: ::std::option::Option<crate::types::M3u8DataPtsControl>,
+    pub(crate) max_pcr_interval: ::std::option::Option<i32>,
+    pub(crate) nielsen_id3: ::std::option::Option<crate::types::M3u8NielsenId3>,
+    pub(crate) pat_interval: ::std::option::Option<i32>,
+    pub(crate) pcr_control: ::std::option::Option<crate::types::M3u8PcrControl>,
+    pub(crate) pcr_pid: ::std::option::Option<i32>,
+    pub(crate) pmt_interval: ::std::option::Option<i32>,
+    pub(crate) pmt_pid: ::std::option::Option<i32>,
+    pub(crate) private_metadata_pid: ::std::option::Option<i32>,
+    pub(crate) program_number: ::std::option::Option<i32>,
+    pub(crate) scte35_pid: ::std::option::Option<i32>,
+    pub(crate) scte35_source: ::std::option::Option<crate::types::M3u8Scte35Source>,
+    pub(crate) timed_metadata: ::std::option::Option<crate::types::TimedMetadata>,
+    pub(crate) timed_metadata_pid: ::std::option::Option<i32>,
+    pub(crate) transport_stream_id: ::std::option::Option<i32>,
+    pub(crate) video_pid: ::std::option::Option<i32>,
 }
 impl M3u8SettingsBuilder {
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub fn audio_duration(mut self, input: crate::types::M3u8AudioDuration) -> Self {
-        self.audio_duration = Some(input);
+        self.audio_duration = ::std::option::Option::Some(input);
         self
     }
     /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
     pub fn set_audio_duration(
         mut self,
-        input: std::option::Option<crate::types::M3u8AudioDuration>,
+        input: ::std::option::Option<crate::types::M3u8AudioDuration>,
     ) -> Self {
         self.audio_duration = input;
         self
     }
     /// The number of audio frames to insert for each PES packet.
     pub fn audio_frames_per_pes(mut self, input: i32) -> Self {
-        self.audio_frames_per_pes = Some(input);
+        self.audio_frames_per_pes = ::std::option::Option::Some(input);
         self
     }
     /// The number of audio frames to insert for each PES packet.
-    pub fn set_audio_frames_per_pes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_audio_frames_per_pes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.audio_frames_per_pes = input;
         self
     }
@@ -203,186 +205,186 @@ impl M3u8SettingsBuilder {
     pub fn audio_pids(mut self, input: i32) -> Self {
         let mut v = self.audio_pids.unwrap_or_default();
         v.push(input);
-        self.audio_pids = Some(v);
+        self.audio_pids = ::std::option::Option::Some(v);
         self
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
-    pub fn set_audio_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_audio_pids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.audio_pids = input;
         self
     }
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
     pub fn data_pts_control(mut self, input: crate::types::M3u8DataPtsControl) -> Self {
-        self.data_pts_control = Some(input);
+        self.data_pts_control = ::std::option::Option::Some(input);
         self
     }
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
     pub fn set_data_pts_control(
         mut self,
-        input: std::option::Option<crate::types::M3u8DataPtsControl>,
+        input: ::std::option::Option<crate::types::M3u8DataPtsControl>,
     ) -> Self {
         self.data_pts_control = input;
         self
     }
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
     pub fn max_pcr_interval(mut self, input: i32) -> Self {
-        self.max_pcr_interval = Some(input);
+        self.max_pcr_interval = ::std::option::Option::Some(input);
         self
     }
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
-    pub fn set_max_pcr_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_pcr_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_pcr_interval = input;
         self
     }
     /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub fn nielsen_id3(mut self, input: crate::types::M3u8NielsenId3) -> Self {
-        self.nielsen_id3 = Some(input);
+        self.nielsen_id3 = ::std::option::Option::Some(input);
         self
     }
     /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub fn set_nielsen_id3(
         mut self,
-        input: std::option::Option<crate::types::M3u8NielsenId3>,
+        input: ::std::option::Option<crate::types::M3u8NielsenId3>,
     ) -> Self {
         self.nielsen_id3 = input;
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn pat_interval(mut self, input: i32) -> Self {
-        self.pat_interval = Some(input);
+        self.pat_interval = ::std::option::Option::Some(input);
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn set_pat_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pat_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pat_interval = input;
         self
     }
     /// When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     pub fn pcr_control(mut self, input: crate::types::M3u8PcrControl) -> Self {
-        self.pcr_control = Some(input);
+        self.pcr_control = ::std::option::Option::Some(input);
         self
     }
     /// When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     pub fn set_pcr_control(
         mut self,
-        input: std::option::Option<crate::types::M3u8PcrControl>,
+        input: ::std::option::Option<crate::types::M3u8PcrControl>,
     ) -> Self {
         self.pcr_control = input;
         self
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID.
     pub fn pcr_pid(mut self, input: i32) -> Self {
-        self.pcr_pid = Some(input);
+        self.pcr_pid = ::std::option::Option::Some(input);
         self
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID.
-    pub fn set_pcr_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pcr_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pcr_pid = input;
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn pmt_interval(mut self, input: i32) -> Self {
-        self.pmt_interval = Some(input);
+        self.pmt_interval = ::std::option::Option::Some(input);
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn set_pmt_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pmt_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pmt_interval = input;
         self
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
     pub fn pmt_pid(mut self, input: i32) -> Self {
-        self.pmt_pid = Some(input);
+        self.pmt_pid = ::std::option::Option::Some(input);
         self
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
-    pub fn set_pmt_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pmt_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pmt_pid = input;
         self
     }
     /// Packet Identifier (PID) of the private metadata stream in the transport stream.
     pub fn private_metadata_pid(mut self, input: i32) -> Self {
-        self.private_metadata_pid = Some(input);
+        self.private_metadata_pid = ::std::option::Option::Some(input);
         self
     }
     /// Packet Identifier (PID) of the private metadata stream in the transport stream.
-    pub fn set_private_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_private_metadata_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.private_metadata_pid = input;
         self
     }
     /// The value of the program number field in the Program Map Table.
     pub fn program_number(mut self, input: i32) -> Self {
-        self.program_number = Some(input);
+        self.program_number = ::std::option::Option::Some(input);
         self
     }
     /// The value of the program number field in the Program Map Table.
-    pub fn set_program_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_program_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_number = input;
         self
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
     pub fn scte35_pid(mut self, input: i32) -> Self {
-        self.scte35_pid = Some(input);
+        self.scte35_pid = ::std::option::Option::Some(input);
         self
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
-    pub fn set_scte35_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scte35_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scte35_pid = input;
         self
     }
     /// For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
     pub fn scte35_source(mut self, input: crate::types::M3u8Scte35Source) -> Self {
-        self.scte35_source = Some(input);
+        self.scte35_source = ::std::option::Option::Some(input);
         self
     }
     /// For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
     pub fn set_scte35_source(
         mut self,
-        input: std::option::Option<crate::types::M3u8Scte35Source>,
+        input: ::std::option::Option<crate::types::M3u8Scte35Source>,
     ) -> Self {
         self.scte35_source = input;
         self
     }
     /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
     pub fn timed_metadata(mut self, input: crate::types::TimedMetadata) -> Self {
-        self.timed_metadata = Some(input);
+        self.timed_metadata = ::std::option::Option::Some(input);
         self
     }
     /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
     pub fn set_timed_metadata(
         mut self,
-        input: std::option::Option<crate::types::TimedMetadata>,
+        input: ::std::option::Option<crate::types::TimedMetadata>,
     ) -> Self {
         self.timed_metadata = input;
         self
     }
     /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
     pub fn timed_metadata_pid(mut self, input: i32) -> Self {
-        self.timed_metadata_pid = Some(input);
+        self.timed_metadata_pid = ::std::option::Option::Some(input);
         self
     }
     /// Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
-    pub fn set_timed_metadata_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timed_metadata_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timed_metadata_pid = input;
         self
     }
     /// The value of the transport stream ID field in the Program Map Table.
     pub fn transport_stream_id(mut self, input: i32) -> Self {
-        self.transport_stream_id = Some(input);
+        self.transport_stream_id = ::std::option::Option::Some(input);
         self
     }
     /// The value of the transport stream ID field in the Program Map Table.
-    pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_transport_stream_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transport_stream_id = input;
         self
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream.
     pub fn video_pid(mut self, input: i32) -> Self {
-        self.video_pid = Some(input);
+        self.video_pid = ::std::option::Option::Some(input);
         self
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream.
-    pub fn set_video_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_video_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.video_pid = input;
         self
     }

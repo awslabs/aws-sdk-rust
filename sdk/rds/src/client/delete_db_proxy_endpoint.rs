@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDBProxyEndpoint`](crate::operation::delete_db_proxy_endpoint::builders::DeleteDBProxyEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_proxy_endpoint_name(impl Into<String>)`](crate::operation::delete_db_proxy_endpoint::builders::DeleteDBProxyEndpointFluentBuilder::db_proxy_endpoint_name) / [`set_db_proxy_endpoint_name(Option<String>)`](crate::operation::delete_db_proxy_endpoint::builders::DeleteDBProxyEndpointFluentBuilder::set_db_proxy_endpoint_name): <p>The name of the DB proxy endpoint to delete.</p>
+    ///   - [`db_proxy_endpoint_name(impl ::std::convert::Into<String>)`](crate::operation::delete_db_proxy_endpoint::builders::DeleteDBProxyEndpointFluentBuilder::db_proxy_endpoint_name) / [`set_db_proxy_endpoint_name(Option<String>)`](crate::operation::delete_db_proxy_endpoint::builders::DeleteDBProxyEndpointFluentBuilder::set_db_proxy_endpoint_name): <p>The name of the DB proxy endpoint to delete.</p>
     /// - On success, responds with [`DeleteDbProxyEndpointOutput`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput) with field(s):
     ///   - [`db_proxy_endpoint(Option<DbProxyEndpoint>)`](crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput::db_proxy_endpoint): <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
     /// - On failure, responds with [`SdkError<DeleteDBProxyEndpointError>`](crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError)

@@ -2,7 +2,7 @@
 
 /// <p>HLS playlist configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl HlsPlaylistSettings {
 
 /// A builder for [`HlsPlaylistSettings`](crate::types::HlsPlaylistSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HlsPlaylistSettingsBuilder {
-    pub(crate) manifest_window_seconds: std::option::Option<i32>,
+    pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
 }
 impl HlsPlaylistSettingsBuilder {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     pub fn manifest_window_seconds(mut self, input: i32) -> Self {
-        self.manifest_window_seconds = Some(input);
+        self.manifest_window_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
-    pub fn set_manifest_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_manifest_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manifest_window_seconds = input;
         self
     }

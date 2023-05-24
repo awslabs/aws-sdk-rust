@@ -2,43 +2,43 @@
 
 /// <p>An estimate that's associated with a time period. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EstimateByTime {
     /// <p>The amount of cost or usage that's measured for the cost estimate.</p>
     #[doc(hidden)]
-    pub usage_cost: std::option::Option<f64>,
+    pub usage_cost: ::std::option::Option<f64>,
     /// <p>The unit of measurement that's used for the cost estimate.</p>
     #[doc(hidden)]
-    pub pricing_unit: std::option::Option<crate::types::PricingUnit>,
+    pub pricing_unit: ::std::option::Option<crate::types::PricingUnit>,
     /// <p>The number of pricing units used to calculate the total number of hours. For example, 1 unit equals 1 hour.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<f64>,
+    pub unit: ::std::option::Option<f64>,
     /// <p>The currency of the estimate in USD.</p>
     #[doc(hidden)]
-    pub currency: std::option::Option<crate::types::Currency>,
+    pub currency: ::std::option::Option<crate::types::Currency>,
     /// <p>The period of time, in days, that an estimate covers. The period has a start date and an end date. The start date must come before the end date.</p>
     #[doc(hidden)]
-    pub time_period: std::option::Option<crate::types::TimePeriod>,
+    pub time_period: ::std::option::Option<crate::types::TimePeriod>,
 }
 impl EstimateByTime {
     /// <p>The amount of cost or usage that's measured for the cost estimate.</p>
-    pub fn usage_cost(&self) -> std::option::Option<f64> {
+    pub fn usage_cost(&self) -> ::std::option::Option<f64> {
         self.usage_cost
     }
     /// <p>The unit of measurement that's used for the cost estimate.</p>
-    pub fn pricing_unit(&self) -> std::option::Option<&crate::types::PricingUnit> {
+    pub fn pricing_unit(&self) -> ::std::option::Option<&crate::types::PricingUnit> {
         self.pricing_unit.as_ref()
     }
     /// <p>The number of pricing units used to calculate the total number of hours. For example, 1 unit equals 1 hour.</p>
-    pub fn unit(&self) -> std::option::Option<f64> {
+    pub fn unit(&self) -> ::std::option::Option<f64> {
         self.unit
     }
     /// <p>The currency of the estimate in USD.</p>
-    pub fn currency(&self) -> std::option::Option<&crate::types::Currency> {
+    pub fn currency(&self) -> ::std::option::Option<&crate::types::Currency> {
         self.currency.as_ref()
     }
     /// <p>The period of time, in days, that an estimate covers. The period has a start date and an end date. The start date must come before the end date.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::types::TimePeriod> {
+    pub fn time_period(&self) -> ::std::option::Option<&crate::types::TimePeriod> {
         self.time_period.as_ref()
     }
 }
@@ -51,65 +51,70 @@ impl EstimateByTime {
 
 /// A builder for [`EstimateByTime`](crate::types::EstimateByTime).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EstimateByTimeBuilder {
-    pub(crate) usage_cost: std::option::Option<f64>,
-    pub(crate) pricing_unit: std::option::Option<crate::types::PricingUnit>,
-    pub(crate) unit: std::option::Option<f64>,
-    pub(crate) currency: std::option::Option<crate::types::Currency>,
-    pub(crate) time_period: std::option::Option<crate::types::TimePeriod>,
+    pub(crate) usage_cost: ::std::option::Option<f64>,
+    pub(crate) pricing_unit: ::std::option::Option<crate::types::PricingUnit>,
+    pub(crate) unit: ::std::option::Option<f64>,
+    pub(crate) currency: ::std::option::Option<crate::types::Currency>,
+    pub(crate) time_period: ::std::option::Option<crate::types::TimePeriod>,
 }
 impl EstimateByTimeBuilder {
     /// <p>The amount of cost or usage that's measured for the cost estimate.</p>
     pub fn usage_cost(mut self, input: f64) -> Self {
-        self.usage_cost = Some(input);
+        self.usage_cost = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of cost or usage that's measured for the cost estimate.</p>
-    pub fn set_usage_cost(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_usage_cost(mut self, input: ::std::option::Option<f64>) -> Self {
         self.usage_cost = input;
         self
     }
     /// <p>The unit of measurement that's used for the cost estimate.</p>
     pub fn pricing_unit(mut self, input: crate::types::PricingUnit) -> Self {
-        self.pricing_unit = Some(input);
+        self.pricing_unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit of measurement that's used for the cost estimate.</p>
     pub fn set_pricing_unit(
         mut self,
-        input: std::option::Option<crate::types::PricingUnit>,
+        input: ::std::option::Option<crate::types::PricingUnit>,
     ) -> Self {
         self.pricing_unit = input;
         self
     }
     /// <p>The number of pricing units used to calculate the total number of hours. For example, 1 unit equals 1 hour.</p>
     pub fn unit(mut self, input: f64) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of pricing units used to calculate the total number of hours. For example, 1 unit equals 1 hour.</p>
-    pub fn set_unit(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<f64>) -> Self {
         self.unit = input;
         self
     }
     /// <p>The currency of the estimate in USD.</p>
     pub fn currency(mut self, input: crate::types::Currency) -> Self {
-        self.currency = Some(input);
+        self.currency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The currency of the estimate in USD.</p>
-    pub fn set_currency(mut self, input: std::option::Option<crate::types::Currency>) -> Self {
+    pub fn set_currency(mut self, input: ::std::option::Option<crate::types::Currency>) -> Self {
         self.currency = input;
         self
     }
     /// <p>The period of time, in days, that an estimate covers. The period has a start date and an end date. The start date must come before the end date.</p>
     pub fn time_period(mut self, input: crate::types::TimePeriod) -> Self {
-        self.time_period = Some(input);
+        self.time_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period of time, in days, that an estimate covers. The period has a start date and an end date. The start date must come before the end date.</p>
-    pub fn set_time_period(mut self, input: std::option::Option<crate::types::TimePeriod>) -> Self {
+    pub fn set_time_period(
+        mut self,
+        input: ::std::option::Option<crate::types::TimePeriod>,
+    ) -> Self {
         self.time_period = input;
         self
     }

@@ -2,38 +2,40 @@
 
 /// <p>Describes a set of filters for a path analysis. Use path filters to scope the analysis when there can be multiple resulting paths.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathRequestFilter {
     /// <p>The source IPv4 address.</p>
     #[doc(hidden)]
-    pub source_address: std::option::Option<std::string::String>,
+    pub source_address: ::std::option::Option<::std::string::String>,
     /// <p>The source port range.</p>
     #[doc(hidden)]
-    pub source_port_range: std::option::Option<crate::types::RequestFilterPortRange>,
+    pub source_port_range: ::std::option::Option<crate::types::RequestFilterPortRange>,
     /// <p>The destination IPv4 address.</p>
     #[doc(hidden)]
-    pub destination_address: std::option::Option<std::string::String>,
+    pub destination_address: ::std::option::Option<::std::string::String>,
     /// <p>The destination port range.</p>
     #[doc(hidden)]
-    pub destination_port_range: std::option::Option<crate::types::RequestFilterPortRange>,
+    pub destination_port_range: ::std::option::Option<crate::types::RequestFilterPortRange>,
 }
 impl PathRequestFilter {
     /// <p>The source IPv4 address.</p>
-    pub fn source_address(&self) -> std::option::Option<&str> {
+    pub fn source_address(&self) -> ::std::option::Option<&str> {
         self.source_address.as_deref()
     }
     /// <p>The source port range.</p>
-    pub fn source_port_range(&self) -> std::option::Option<&crate::types::RequestFilterPortRange> {
+    pub fn source_port_range(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RequestFilterPortRange> {
         self.source_port_range.as_ref()
     }
     /// <p>The destination IPv4 address.</p>
-    pub fn destination_address(&self) -> std::option::Option<&str> {
+    pub fn destination_address(&self) -> ::std::option::Option<&str> {
         self.destination_address.as_deref()
     }
     /// <p>The destination port range.</p>
     pub fn destination_port_range(
         &self,
-    ) -> std::option::Option<&crate::types::RequestFilterPortRange> {
+    ) -> ::std::option::Option<&crate::types::RequestFilterPortRange> {
         self.destination_port_range.as_ref()
     }
 }
@@ -46,59 +48,70 @@ impl PathRequestFilter {
 
 /// A builder for [`PathRequestFilter`](crate::types::PathRequestFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PathRequestFilterBuilder {
-    pub(crate) source_address: std::option::Option<std::string::String>,
-    pub(crate) source_port_range: std::option::Option<crate::types::RequestFilterPortRange>,
-    pub(crate) destination_address: std::option::Option<std::string::String>,
-    pub(crate) destination_port_range: std::option::Option<crate::types::RequestFilterPortRange>,
+    pub(crate) source_address: ::std::option::Option<::std::string::String>,
+    pub(crate) source_port_range: ::std::option::Option<crate::types::RequestFilterPortRange>,
+    pub(crate) destination_address: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_port_range: ::std::option::Option<crate::types::RequestFilterPortRange>,
 }
 impl PathRequestFilterBuilder {
     /// <p>The source IPv4 address.</p>
-    pub fn source_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_address = Some(input.into());
+    pub fn source_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source IPv4 address.</p>
-    pub fn set_source_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_address = input;
         self
     }
     /// <p>The source port range.</p>
     pub fn source_port_range(mut self, input: crate::types::RequestFilterPortRange) -> Self {
-        self.source_port_range = Some(input);
+        self.source_port_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source port range.</p>
     pub fn set_source_port_range(
         mut self,
-        input: std::option::Option<crate::types::RequestFilterPortRange>,
+        input: ::std::option::Option<crate::types::RequestFilterPortRange>,
     ) -> Self {
         self.source_port_range = input;
         self
     }
     /// <p>The destination IPv4 address.</p>
-    pub fn destination_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_address = Some(input.into());
+    pub fn destination_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination IPv4 address.</p>
     pub fn set_destination_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_address = input;
         self
     }
     /// <p>The destination port range.</p>
     pub fn destination_port_range(mut self, input: crate::types::RequestFilterPortRange) -> Self {
-        self.destination_port_range = Some(input);
+        self.destination_port_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination port range.</p>
     pub fn set_destination_port_range(
         mut self,
-        input: std::option::Option<crate::types::RequestFilterPortRange>,
+        input: ::std::option::Option<crate::types::RequestFilterPortRange>,
     ) -> Self {
         self.destination_port_range = input;
         self

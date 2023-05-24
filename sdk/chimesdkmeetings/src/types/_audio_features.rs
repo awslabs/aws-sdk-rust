@@ -2,15 +2,15 @@
 
 /// <p>An optional category of meeting features that contains audio-specific configurations, such as operating parameters for Amazon Voice Focus. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioFeatures {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
     #[doc(hidden)]
-    pub echo_reduction: std::option::Option<crate::types::MeetingFeatureStatus>,
+    pub echo_reduction: ::std::option::Option<crate::types::MeetingFeatureStatus>,
 }
 impl AudioFeatures {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
-    pub fn echo_reduction(&self) -> std::option::Option<&crate::types::MeetingFeatureStatus> {
+    pub fn echo_reduction(&self) -> ::std::option::Option<&crate::types::MeetingFeatureStatus> {
         self.echo_reduction.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AudioFeatures {
 
 /// A builder for [`AudioFeatures`](crate::types::AudioFeatures).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioFeaturesBuilder {
-    pub(crate) echo_reduction: std::option::Option<crate::types::MeetingFeatureStatus>,
+    pub(crate) echo_reduction: ::std::option::Option<crate::types::MeetingFeatureStatus>,
 }
 impl AudioFeaturesBuilder {
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
     pub fn echo_reduction(mut self, input: crate::types::MeetingFeatureStatus) -> Self {
-        self.echo_reduction = Some(input);
+        self.echo_reduction = ::std::option::Option::Some(input);
         self
     }
     /// <p>Makes echo reduction available to clients who connect to the meeting.</p>
     pub fn set_echo_reduction(
         mut self,
-        input: std::option::Option<crate::types::MeetingFeatureStatus>,
+        input: ::std::option::Option<crate::types::MeetingFeatureStatus>,
     ) -> Self {
         self.echo_reduction = input;
         self

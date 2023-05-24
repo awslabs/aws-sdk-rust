@@ -2,22 +2,22 @@
 
 /// <p>Contains information about the column used to track time in a source data file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampColumn {
     /// <p>The name of the timestamp column.</p>
     #[doc(hidden)]
-    pub column_name: std::option::Option<std::string::String>,
+    pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the timestamp column.</p>
     #[doc(hidden)]
-    pub column_format: std::option::Option<std::string::String>,
+    pub column_format: ::std::option::Option<::std::string::String>,
 }
 impl TimestampColumn {
     /// <p>The name of the timestamp column.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> ::std::option::Option<&str> {
         self.column_name.as_deref()
     }
     /// <p>The format of the timestamp column.</p>
-    pub fn column_format(&self) -> std::option::Option<&str> {
+    pub fn column_format(&self) -> ::std::option::Option<&str> {
         self.column_format.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl TimestampColumn {
 
 /// A builder for [`TimestampColumn`](crate::types::TimestampColumn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimestampColumnBuilder {
-    pub(crate) column_name: std::option::Option<std::string::String>,
-    pub(crate) column_format: std::option::Option<std::string::String>,
+    pub(crate) column_name: ::std::option::Option<::std::string::String>,
+    pub(crate) column_format: ::std::option::Option<::std::string::String>,
 }
 impl TimestampColumnBuilder {
     /// <p>The name of the timestamp column.</p>
-    pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.column_name = Some(input.into());
+    pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the timestamp column.</p>
-    pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
     }
     /// <p>The format of the timestamp column.</p>
-    pub fn column_format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.column_format = Some(input.into());
+    pub fn column_format(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.column_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the timestamp column.</p>
-    pub fn set_column_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_column_format(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.column_format = input;
         self
     }

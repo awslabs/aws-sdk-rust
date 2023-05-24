@@ -2,43 +2,43 @@
 
 /// <p>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedThroughputDescription {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
     #[doc(hidden)]
-    pub last_increase_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_increase_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
     #[doc(hidden)]
-    pub last_decrease_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_decrease_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub number_of_decreases_today: std::option::Option<i64>,
+    pub number_of_decreases_today: ::std::option::Option<i64>,
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.</p>
     #[doc(hidden)]
-    pub read_capacity_units: std::option::Option<i64>,
+    pub read_capacity_units: ::std::option::Option<i64>,
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     #[doc(hidden)]
-    pub write_capacity_units: std::option::Option<i64>,
+    pub write_capacity_units: ::std::option::Option<i64>,
 }
 impl ProvisionedThroughputDescription {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
-    pub fn last_increase_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_increase_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_increase_date_time.as_ref()
     }
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
-    pub fn last_decrease_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_decrease_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_decrease_date_time.as_ref()
     }
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn number_of_decreases_today(&self) -> std::option::Option<i64> {
+    pub fn number_of_decreases_today(&self) -> ::std::option::Option<i64> {
         self.number_of_decreases_today
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.</p>
-    pub fn read_capacity_units(&self) -> std::option::Option<i64> {
+    pub fn read_capacity_units(&self) -> ::std::option::Option<i64> {
         self.read_capacity_units
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn write_capacity_units(&self) -> std::option::Option<i64> {
+    pub fn write_capacity_units(&self) -> ::std::option::Option<i64> {
         self.write_capacity_units
     }
 }
@@ -51,68 +51,70 @@ impl ProvisionedThroughputDescription {
 
 /// A builder for [`ProvisionedThroughputDescription`](crate::types::ProvisionedThroughputDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisionedThroughputDescriptionBuilder {
-    pub(crate) last_increase_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_decrease_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) number_of_decreases_today: std::option::Option<i64>,
-    pub(crate) read_capacity_units: std::option::Option<i64>,
-    pub(crate) write_capacity_units: std::option::Option<i64>,
+    pub(crate) last_increase_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_decrease_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) number_of_decreases_today: ::std::option::Option<i64>,
+    pub(crate) read_capacity_units: ::std::option::Option<i64>,
+    pub(crate) write_capacity_units: ::std::option::Option<i64>,
 }
 impl ProvisionedThroughputDescriptionBuilder {
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
-    pub fn last_increase_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_increase_date_time = Some(input);
+    pub fn last_increase_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_increase_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time of the last provisioned throughput increase for this table.</p>
     pub fn set_last_increase_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_increase_date_time = input;
         self
     }
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
-    pub fn last_decrease_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_decrease_date_time = Some(input);
+    pub fn last_decrease_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_decrease_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time of the last provisioned throughput decrease for this table.</p>
     pub fn set_last_decrease_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_decrease_date_time = input;
         self
     }
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn number_of_decreases_today(mut self, input: i64) -> Self {
-        self.number_of_decreases_today = Some(input);
+        self.number_of_decreases_today = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput decreases, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_number_of_decreases_today(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_decreases_today(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_decreases_today = input;
         self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.</p>
     pub fn read_capacity_units(mut self, input: i64) -> Self {
-        self.read_capacity_units = Some(input);
+        self.read_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads require less effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code> per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.</p>
-    pub fn set_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.read_capacity_units = input;
         self
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
     pub fn write_capacity_units(mut self, input: i64) -> Self {
-        self.write_capacity_units = Some(input);
+        self.write_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.</p>
-    pub fn set_write_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.write_capacity_units = input;
         self
     }

@@ -3,7 +3,7 @@
 /// <p>Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p>
 /// <p>It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <code>ListDevices</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceFilter {
     /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
     /// <p>The supported operators for each attribute are provided in the following list.</p>
@@ -95,10 +95,10 @@ pub struct DeviceFilter {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub attribute: std::option::Option<crate::types::DeviceFilterAttribute>,
+    pub attribute: ::std::option::Option<crate::types::DeviceFilterAttribute>,
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::RuleOperator>,
+    pub operator: ::std::option::Option<crate::types::RuleOperator>,
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"> <b>Operator Values</b> </p>
     /// <ul>
@@ -113,7 +113,7 @@ pub struct DeviceFilter {
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeviceFilter {
     /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
@@ -205,11 +205,11 @@ impl DeviceFilter {
     /// <p>Supported operators: <code>EQUALS</code> </p>
     /// </dd>
     /// </dl>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::DeviceFilterAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<&crate::types::DeviceFilterAttribute> {
         self.attribute.as_ref()
     }
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::RuleOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::RuleOperator> {
         self.operator.as_ref()
     }
     /// <p>An array of one or more filter values used in a device filter.</p>
@@ -225,7 +225,7 @@ impl DeviceFilter {
     /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -238,11 +238,13 @@ impl DeviceFilter {
 
 /// A builder for [`DeviceFilter`](crate::types::DeviceFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceFilterBuilder {
-    pub(crate) attribute: std::option::Option<crate::types::DeviceFilterAttribute>,
-    pub(crate) operator: std::option::Option<crate::types::RuleOperator>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) attribute: ::std::option::Option<crate::types::DeviceFilterAttribute>,
+    pub(crate) operator: ::std::option::Option<crate::types::RuleOperator>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DeviceFilterBuilder {
     /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
@@ -335,7 +337,7 @@ impl DeviceFilterBuilder {
     /// </dd>
     /// </dl>
     pub fn attribute(mut self, input: crate::types::DeviceFilterAttribute) -> Self {
-        self.attribute = Some(input);
+        self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aspect of a device such as platform or model used as the selection criteria in a device filter.</p>
@@ -429,18 +431,21 @@ impl DeviceFilterBuilder {
     /// </dl>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::DeviceFilterAttribute>,
+        input: ::std::option::Option<crate::types::DeviceFilterAttribute>,
     ) -> Self {
         self.attribute = input;
         self
     }
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
     pub fn operator(mut self, input: crate::types::RuleOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how Device Farm compares the filter's attribute to the value. See the attribute descriptions.</p>
-    pub fn set_operator(mut self, input: std::option::Option<crate::types::RuleOperator>) -> Self {
+    pub fn set_operator(
+        mut self,
+        input: ::std::option::Option<crate::types::RuleOperator>,
+    ) -> Self {
         self.operator = input;
         self
     }
@@ -461,10 +466,10 @@ impl DeviceFilterBuilder {
     /// <li> <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li>
     /// <li> <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li>
     /// </ul>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of one or more filter values used in a device filter.</p>
@@ -482,7 +487,7 @@ impl DeviceFilterBuilder {
     /// </ul>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

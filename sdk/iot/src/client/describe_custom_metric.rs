@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCustomMetric`](crate::operation::describe_custom_metric::builders::DescribeCustomMetricFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`metric_name(impl Into<String>)`](crate::operation::describe_custom_metric::builders::DescribeCustomMetricFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::describe_custom_metric::builders::DescribeCustomMetricFluentBuilder::set_metric_name): <p> The name of the custom metric. </p>
+    ///   - [`metric_name(impl ::std::convert::Into<String>)`](crate::operation::describe_custom_metric::builders::DescribeCustomMetricFluentBuilder::metric_name) / [`set_metric_name(Option<String>)`](crate::operation::describe_custom_metric::builders::DescribeCustomMetricFluentBuilder::set_metric_name): <p> The name of the custom metric. </p>
     /// - On success, responds with [`DescribeCustomMetricOutput`](crate::operation::describe_custom_metric::DescribeCustomMetricOutput) with field(s):
     ///   - [`metric_name(Option<String>)`](crate::operation::describe_custom_metric::DescribeCustomMetricOutput::metric_name): <p> The name of the custom metric. </p>
     ///   - [`metric_arn(Option<String>)`](crate::operation::describe_custom_metric::DescribeCustomMetricOutput::metric_arn): <p> The Amazon Resource Number (ARN) of the custom metric. </p>

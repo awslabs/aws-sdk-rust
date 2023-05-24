@@ -2,22 +2,22 @@
 
 /// <p>Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack, users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint for an image builder, administrators can connect to the image builder only through that endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessEndpoint {
     /// <p>The type of interface endpoint.</p>
     #[doc(hidden)]
-    pub endpoint_type: std::option::Option<crate::types::AccessEndpointType>,
+    pub endpoint_type: ::std::option::Option<crate::types::AccessEndpointType>,
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
     #[doc(hidden)]
-    pub vpce_id: std::option::Option<std::string::String>,
+    pub vpce_id: ::std::option::Option<::std::string::String>,
 }
 impl AccessEndpoint {
     /// <p>The type of interface endpoint.</p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::types::AccessEndpointType> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::AccessEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-    pub fn vpce_id(&self) -> std::option::Option<&str> {
+    pub fn vpce_id(&self) -> ::std::option::Option<&str> {
         self.vpce_id.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl AccessEndpoint {
 
 /// A builder for [`AccessEndpoint`](crate::types::AccessEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessEndpointBuilder {
-    pub(crate) endpoint_type: std::option::Option<crate::types::AccessEndpointType>,
-    pub(crate) vpce_id: std::option::Option<std::string::String>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::AccessEndpointType>,
+    pub(crate) vpce_id: ::std::option::Option<::std::string::String>,
 }
 impl AccessEndpointBuilder {
     /// <p>The type of interface endpoint.</p>
     pub fn endpoint_type(mut self, input: crate::types::AccessEndpointType) -> Self {
-        self.endpoint_type = Some(input);
+        self.endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of interface endpoint.</p>
     pub fn set_endpoint_type(
         mut self,
-        input: std::option::Option<crate::types::AccessEndpointType>,
+        input: ::std::option::Option<crate::types::AccessEndpointType>,
     ) -> Self {
         self.endpoint_type = input;
         self
     }
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-    pub fn vpce_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpce_id = Some(input.into());
+    pub fn vpce_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpce_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier (ID) of the VPC in which the interface endpoint is used.</p>
-    pub fn set_vpce_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpce_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpce_id = input;
         self
     }

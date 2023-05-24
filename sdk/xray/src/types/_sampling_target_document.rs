@@ -2,27 +2,27 @@
 
 /// <p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
-    pub rule_name: std::option::Option<std::string::String>,
+    pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     #[doc(hidden)]
     pub fixed_rate: f64,
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
     #[doc(hidden)]
-    pub reservoir_quota: std::option::Option<i32>,
+    pub reservoir_quota: ::std::option::Option<i32>,
     /// <p>When the reservoir quota expires.</p>
     #[doc(hidden)]
-    pub reservoir_quota_ttl: std::option::Option<aws_smithy_types::DateTime>,
+    pub reservoir_quota_ttl: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     #[doc(hidden)]
-    pub interval: std::option::Option<i32>,
+    pub interval: ::std::option::Option<i32>,
 }
 impl SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
@@ -30,15 +30,15 @@ impl SamplingTargetDocument {
         self.fixed_rate
     }
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
-    pub fn reservoir_quota(&self) -> std::option::Option<i32> {
+    pub fn reservoir_quota(&self) -> ::std::option::Option<i32> {
         self.reservoir_quota
     }
     /// <p>When the reservoir quota expires.</p>
-    pub fn reservoir_quota_ttl(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn reservoir_quota_ttl(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.reservoir_quota_ttl.as_ref()
     }
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
-    pub fn interval(&self) -> std::option::Option<i32> {
+    pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
 }
@@ -51,65 +51,67 @@ impl SamplingTargetDocument {
 
 /// A builder for [`SamplingTargetDocument`](crate::types::SamplingTargetDocument).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SamplingTargetDocumentBuilder {
-    pub(crate) rule_name: std::option::Option<std::string::String>,
-    pub(crate) fixed_rate: std::option::Option<f64>,
-    pub(crate) reservoir_quota: std::option::Option<i32>,
-    pub(crate) reservoir_quota_ttl: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) interval: std::option::Option<i32>,
+    pub(crate) rule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) fixed_rate: ::std::option::Option<f64>,
+    pub(crate) reservoir_quota: ::std::option::Option<i32>,
+    pub(crate) reservoir_quota_ttl: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) interval: ::std::option::Option<i32>,
 }
 impl SamplingTargetDocumentBuilder {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_name = Some(input.into());
+    pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the sampling rule.</p>
-    pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn fixed_rate(mut self, input: f64) -> Self {
-        self.fixed_rate = Some(input);
+        self.fixed_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
-    pub fn set_fixed_rate(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_fixed_rate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.fixed_rate = input;
         self
     }
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
     pub fn reservoir_quota(mut self, input: i32) -> Self {
-        self.reservoir_quota = Some(input);
+        self.reservoir_quota = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
-    pub fn set_reservoir_quota(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_reservoir_quota(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reservoir_quota = input;
         self
     }
     /// <p>When the reservoir quota expires.</p>
-    pub fn reservoir_quota_ttl(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.reservoir_quota_ttl = Some(input);
+    pub fn reservoir_quota_ttl(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.reservoir_quota_ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the reservoir quota expires.</p>
     pub fn set_reservoir_quota_ttl(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.reservoir_quota_ttl = input;
         self
     }
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     pub fn interval(mut self, input: i32) -> Self {
-        self.interval = Some(input);
+        self.interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
-    pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
     }

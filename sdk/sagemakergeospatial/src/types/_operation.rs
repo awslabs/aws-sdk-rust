@@ -2,29 +2,29 @@
 
 /// <p>Represents an arithmetic operation to compute spectral index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operation {
     /// <p>The name of the operation.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
     #[doc(hidden)]
-    pub equation: std::option::Option<std::string::String>,
+    pub equation: ::std::option::Option<::std::string::String>,
     /// <p>The type of the operation.</p>
     #[doc(hidden)]
-    pub output_type: std::option::Option<crate::types::OutputType>,
+    pub output_type: ::std::option::Option<crate::types::OutputType>,
 }
 impl Operation {
     /// <p>The name of the operation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
-    pub fn equation(&self) -> std::option::Option<&str> {
+    pub fn equation(&self) -> ::std::option::Option<&str> {
         self.equation.as_deref()
     }
     /// <p>The type of the operation.</p>
-    pub fn output_type(&self) -> std::option::Option<&crate::types::OutputType> {
+    pub fn output_type(&self) -> ::std::option::Option<&crate::types::OutputType> {
         self.output_type.as_ref()
     }
 }
@@ -37,40 +37,45 @@ impl Operation {
 
 /// A builder for [`Operation`](crate::types::Operation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OperationBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) equation: std::option::Option<std::string::String>,
-    pub(crate) output_type: std::option::Option<crate::types::OutputType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) equation: ::std::option::Option<::std::string::String>,
+    pub(crate) output_type: ::std::option::Option<crate::types::OutputType>,
 }
 impl OperationBuilder {
     /// <p>The name of the operation.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the operation.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
-    pub fn equation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.equation = Some(input.into());
+    pub fn equation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.equation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Textual representation of the math operation; Equation used to compute the spectral index.</p>
-    pub fn set_equation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_equation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.equation = input;
         self
     }
     /// <p>The type of the operation.</p>
     pub fn output_type(mut self, input: crate::types::OutputType) -> Self {
-        self.output_type = Some(input);
+        self.output_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the operation.</p>
-    pub fn set_output_type(mut self, input: std::option::Option<crate::types::OutputType>) -> Self {
+    pub fn set_output_type(
+        mut self,
+        input: ::std::option::Option<crate::types::OutputType>,
+    ) -> Self {
         self.output_type = input;
         self
     }

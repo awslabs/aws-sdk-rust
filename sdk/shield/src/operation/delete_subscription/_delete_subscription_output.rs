@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSubscriptionOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteSubscriptionOutput {
+impl ::aws_http::request_id::RequestId for DeleteSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteSubscriptionOutput {
 
 /// A builder for [`DeleteSubscriptionOutput`](crate::operation::delete_subscription::DeleteSubscriptionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteSubscriptionOutputBuilder {
     _request_id: Option<String>,
 }

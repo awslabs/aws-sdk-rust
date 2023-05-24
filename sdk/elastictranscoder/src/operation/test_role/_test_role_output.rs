@@ -3,27 +3,27 @@
 /// <p>The <code>TestRoleResponse</code> structure.</p>
 #[deprecated]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRoleOutput {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     #[doc(hidden)]
-    pub success: std::option::Option<std::string::String>,
+    pub success: ::std::option::Option<::std::string::String>,
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     #[doc(hidden)]
-    pub messages: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestRoleOutput {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
-    pub fn success(&self) -> std::option::Option<&str> {
+    pub fn success(&self) -> ::std::option::Option<&str> {
         self.success.as_deref()
     }
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    pub fn messages(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn messages(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.messages.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for TestRoleOutput {
+impl ::aws_http::request_id::RequestId for TestRoleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,20 +37,22 @@ impl TestRoleOutput {
 
 /// A builder for [`TestRoleOutput`](crate::operation::test_role::TestRoleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestRoleOutputBuilder {
-    pub(crate) success: std::option::Option<std::string::String>,
-    pub(crate) messages: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) success: ::std::option::Option<::std::string::String>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl TestRoleOutputBuilder {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
-    pub fn success(mut self, input: impl Into<std::string::String>) -> Self {
-        self.success = Some(input.into());
+    pub fn success(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.success = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
-    pub fn set_success(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_success(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.success = input;
         self
     }
@@ -59,16 +61,16 @@ impl TestRoleOutputBuilder {
     /// To override the contents of this collection use [`set_messages`](Self::set_messages).
     ///
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    pub fn messages(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn messages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input.into());
-        self.messages = Some(v);
+        self.messages = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     pub fn set_messages(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.messages = input;
         self

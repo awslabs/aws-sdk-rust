@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WirelessDeviceIdType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum WirelessDeviceIdType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WirelessDeviceIdType {
+impl ::std::convert::From<&str> for WirelessDeviceIdType {
     fn from(s: &str) -> Self {
         match s {
             "DevEui" => WirelessDeviceIdType::DevEui,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for WirelessDeviceIdType {
         }
     }
 }
-impl std::str::FromStr for WirelessDeviceIdType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WirelessDeviceIdType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WirelessDeviceIdType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WirelessDeviceIdType::from(s))
     }
 }
 impl WirelessDeviceIdType {
@@ -101,7 +101,7 @@ impl WirelessDeviceIdType {
         ]
     }
 }
-impl AsRef<str> for WirelessDeviceIdType {
+impl ::std::convert::AsRef<str> for WirelessDeviceIdType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

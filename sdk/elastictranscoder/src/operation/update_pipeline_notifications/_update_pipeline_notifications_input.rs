@@ -2,11 +2,11 @@
 
 /// <p>The <code>UpdatePipelineNotificationsRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsInput {
     /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
     /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
     /// </important>
@@ -17,11 +17,11 @@ pub struct UpdatePipelineNotificationsInput {
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub notifications: std::option::Option<crate::types::Notifications>,
+    pub notifications: ::std::option::Option<crate::types::Notifications>,
 }
 impl UpdatePipelineNotificationsInput {
     /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
@@ -33,7 +33,7 @@ impl UpdatePipelineNotificationsInput {
     /// <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
-    pub fn notifications(&self) -> std::option::Option<&crate::types::Notifications> {
+    pub fn notifications(&self) -> ::std::option::Option<&crate::types::Notifications> {
         self.notifications.as_ref()
     }
 }
@@ -46,19 +46,21 @@ impl UpdatePipelineNotificationsInput {
 
 /// A builder for [`UpdatePipelineNotificationsInput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdatePipelineNotificationsInputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) notifications: std::option::Option<crate::types::Notifications>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) notifications: ::std::option::Option<crate::types::Notifications>,
 }
 impl UpdatePipelineNotificationsInputBuilder {
     /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -72,7 +74,7 @@ impl UpdatePipelineNotificationsInputBuilder {
     /// <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>
     /// </ul>
     pub fn notifications(mut self, input: crate::types::Notifications) -> Self {
-        self.notifications = Some(input);
+        self.notifications = ::std::option::Option::Some(input);
         self
     }
     /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>
@@ -86,7 +88,7 @@ impl UpdatePipelineNotificationsInputBuilder {
     /// </ul>
     pub fn set_notifications(
         mut self,
-        input: std::option::Option<crate::types::Notifications>,
+        input: ::std::option::Option<crate::types::Notifications>,
     ) -> Self {
         self.notifications = input;
         self
@@ -94,11 +96,11 @@ impl UpdatePipelineNotificationsInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePipelineNotificationsInput`](crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsInput {
                 id: self.id,
                 notifications: self.notifications,

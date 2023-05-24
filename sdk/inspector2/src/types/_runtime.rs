@@ -49,13 +49,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,7 +87,7 @@ pub enum Runtime {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Runtime {
+impl ::std::convert::From<&str> for Runtime {
     fn from(s: &str) -> Self {
         match s {
             "GO_1_X" => Runtime::Go1X,
@@ -107,11 +107,11 @@ impl std::convert::From<&str> for Runtime {
         }
     }
 }
-impl std::str::FromStr for Runtime {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Runtime {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Runtime::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Runtime::from(s))
     }
 }
 impl Runtime {
@@ -153,7 +153,7 @@ impl Runtime {
         ]
     }
 }
-impl AsRef<str> for Runtime {
+impl ::std::convert::AsRef<str> for Runtime {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,29 +2,29 @@
 
 /// <p>Information about the evaluation performance of a trained model. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPerformance {
     /// <p>The overall F1 score metric for the trained model.</p>
     #[doc(hidden)]
-    pub f1_score: std::option::Option<f32>,
+    pub f1_score: ::std::option::Option<f32>,
     /// <p>The overall recall metric value for the trained model. </p>
     #[doc(hidden)]
-    pub recall: std::option::Option<f32>,
+    pub recall: ::std::option::Option<f32>,
     /// <p>The overall precision metric value for the trained model.</p>
     #[doc(hidden)]
-    pub precision: std::option::Option<f32>,
+    pub precision: ::std::option::Option<f32>,
 }
 impl ModelPerformance {
     /// <p>The overall F1 score metric for the trained model.</p>
-    pub fn f1_score(&self) -> std::option::Option<f32> {
+    pub fn f1_score(&self) -> ::std::option::Option<f32> {
         self.f1_score
     }
     /// <p>The overall recall metric value for the trained model. </p>
-    pub fn recall(&self) -> std::option::Option<f32> {
+    pub fn recall(&self) -> ::std::option::Option<f32> {
         self.recall
     }
     /// <p>The overall precision metric value for the trained model.</p>
-    pub fn precision(&self) -> std::option::Option<f32> {
+    pub fn precision(&self) -> ::std::option::Option<f32> {
         self.precision
     }
 }
@@ -37,40 +37,42 @@ impl ModelPerformance {
 
 /// A builder for [`ModelPerformance`](crate::types::ModelPerformance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelPerformanceBuilder {
-    pub(crate) f1_score: std::option::Option<f32>,
-    pub(crate) recall: std::option::Option<f32>,
-    pub(crate) precision: std::option::Option<f32>,
+    pub(crate) f1_score: ::std::option::Option<f32>,
+    pub(crate) recall: ::std::option::Option<f32>,
+    pub(crate) precision: ::std::option::Option<f32>,
 }
 impl ModelPerformanceBuilder {
     /// <p>The overall F1 score metric for the trained model.</p>
     pub fn f1_score(mut self, input: f32) -> Self {
-        self.f1_score = Some(input);
+        self.f1_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The overall F1 score metric for the trained model.</p>
-    pub fn set_f1_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_f1_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.f1_score = input;
         self
     }
     /// <p>The overall recall metric value for the trained model. </p>
     pub fn recall(mut self, input: f32) -> Self {
-        self.recall = Some(input);
+        self.recall = ::std::option::Option::Some(input);
         self
     }
     /// <p>The overall recall metric value for the trained model. </p>
-    pub fn set_recall(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_recall(mut self, input: ::std::option::Option<f32>) -> Self {
         self.recall = input;
         self
     }
     /// <p>The overall precision metric value for the trained model.</p>
     pub fn precision(mut self, input: f32) -> Self {
-        self.precision = Some(input);
+        self.precision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The overall precision metric value for the trained model.</p>
-    pub fn set_precision(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_precision(mut self, input: ::std::option::Option<f32>) -> Self {
         self.precision = input;
         self
     }

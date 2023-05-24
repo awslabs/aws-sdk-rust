@@ -2,18 +2,18 @@
 
 /// <p>The status codes that cause an origin group to fail over.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<i32>>,
+    pub items: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The number of status codes that can cause a failover.</p>
     #[doc(hidden)]
     pub quantity: i32,
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
-    pub fn items(&self) -> std::option::Option<&[i32]> {
+    pub fn items(&self) -> ::std::option::Option<&[i32]> {
         self.items.as_deref()
     }
     /// <p>The number of status codes that can cause a failover.</p>
@@ -32,10 +32,12 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
 
 /// A builder for [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) quantity: std::option::Option<i32>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) quantity: ::std::option::Option<i32>,
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
     /// Appends an item to `items`.
@@ -46,21 +48,21 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
     pub fn items(mut self, input: i32) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.items = input;
         self
     }
     /// <p>The number of status codes that can cause a failover.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of status codes that can cause a failover.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }

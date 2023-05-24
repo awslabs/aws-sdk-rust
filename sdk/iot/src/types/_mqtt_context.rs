@@ -2,29 +2,29 @@
 
 /// <p>Specifies the MQTT context to use for the test authorizer request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MqttContext {
     /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
     #[doc(hidden)]
-    pub password: std::option::Option<aws_smithy_types::Blob>,
+    pub password: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl MqttContext {
     /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
-    pub fn password(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn password(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.password.as_ref()
     }
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl MqttContext {
 
 /// A builder for [`MqttContext`](crate::types::MqttContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MqttContextBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) password: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) client_id: std::option::Option<std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) password: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
 impl MqttContextBuilder {
     /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the <code>username</code> key in an MQTT authorization request.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
-    pub fn password(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.password = Some(input);
+    pub fn password(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.password = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the <code>password</code> key in an MQTT authorization request.</p>
-    pub fn set_password(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.password = input;
         self
     }
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the <code>clientId</code> key in an MQTT authorization request.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }

@@ -2,27 +2,27 @@
 
 /// <p>The SIP address for the contact containing the URI and SIP address type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SipAddress {
     /// <p>The URI for the SIP address.</p>
     #[doc(hidden)]
-    pub uri: std::option::Option<std::string::String>,
+    pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of the SIP address.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SipType>,
+    pub r#type: ::std::option::Option<crate::types::SipType>,
 }
 impl SipAddress {
     /// <p>The URI for the SIP address.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>The type of the SIP address.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SipType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SipType> {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for SipAddress {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SipAddress {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SipAddress");
         formatter.field("uri", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl SipAddress {
 
 /// A builder for [`SipAddress`](crate::types::SipAddress).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SipAddressBuilder {
-    pub(crate) uri: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::SipType>,
+    pub(crate) uri: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SipType>,
 }
 impl SipAddressBuilder {
     /// <p>The URI for the SIP address.</p>
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri = Some(input.into());
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI for the SIP address.</p>
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
     }
     /// <p>The type of the SIP address.</p>
     pub fn r#type(mut self, input: crate::types::SipType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the SIP address.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::SipType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SipType>) -> Self {
         self.r#type = input;
         self
     }
@@ -72,8 +72,8 @@ impl SipAddressBuilder {
         }
     }
 }
-impl std::fmt::Debug for SipAddressBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SipAddressBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SipAddressBuilder");
         formatter.field("uri", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &"*** Sensitive Data Redacted ***");

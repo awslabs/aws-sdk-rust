@@ -2,34 +2,34 @@
 
 /// <p>The data in a particular data cell defined on the screen.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataItem {
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
     #[doc(hidden)]
-    pub override_format: std::option::Option<crate::types::Format>,
+    pub override_format: ::std::option::Option<crate::types::Format>,
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
     #[doc(hidden)]
-    pub raw_value: std::option::Option<std::string::String>,
+    pub raw_value: ::std::option::Option<::std::string::String>,
     /// <p>The formatted value of the data. e.g. John Smith.</p>
     #[doc(hidden)]
-    pub formatted_value: std::option::Option<std::string::String>,
+    pub formatted_value: ::std::option::Option<::std::string::String>,
 }
 impl DataItem {
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
-    pub fn override_format(&self) -> std::option::Option<&crate::types::Format> {
+    pub fn override_format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.override_format.as_ref()
     }
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
-    pub fn raw_value(&self) -> std::option::Option<&str> {
+    pub fn raw_value(&self) -> ::std::option::Option<&str> {
         self.raw_value.as_deref()
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
-    pub fn formatted_value(&self) -> std::option::Option<&str> {
+    pub fn formatted_value(&self) -> ::std::option::Option<&str> {
         self.formatted_value.as_deref()
     }
 }
-impl std::fmt::Debug for DataItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataItem");
         formatter.field("override_format", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
@@ -46,40 +46,49 @@ impl DataItem {
 
 /// A builder for [`DataItem`](crate::types::DataItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DataItemBuilder {
-    pub(crate) override_format: std::option::Option<crate::types::Format>,
-    pub(crate) raw_value: std::option::Option<std::string::String>,
-    pub(crate) formatted_value: std::option::Option<std::string::String>,
+    pub(crate) override_format: ::std::option::Option<crate::types::Format>,
+    pub(crate) raw_value: ::std::option::Option<::std::string::String>,
+    pub(crate) formatted_value: ::std::option::Option<::std::string::String>,
 }
 impl DataItemBuilder {
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
     pub fn override_format(mut self, input: crate::types::Format) -> Self {
-        self.override_format = Some(input);
+        self.override_format = ::std::option::Option::Some(input);
         self
     }
     /// <p> The overrideFormat is optional and is specified only if a particular row of data has a different format for the data than the default format defined on the screen or the table. </p>
-    pub fn set_override_format(mut self, input: std::option::Option<crate::types::Format>) -> Self {
+    pub fn set_override_format(
+        mut self,
+        input: ::std::option::Option<crate::types::Format>,
+    ) -> Self {
         self.override_format = input;
         self
     }
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
-    pub fn raw_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raw_value = Some(input.into());
+    pub fn raw_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.raw_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The raw value of the data. e.g. jsmith@example.com</p>
-    pub fn set_raw_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_raw_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_value = input;
         self
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
-    pub fn formatted_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.formatted_value = Some(input.into());
+    pub fn formatted_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.formatted_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The formatted value of the data. e.g. John Smith.</p>
-    pub fn set_formatted_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_formatted_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.formatted_value = input;
         self
     }
@@ -92,8 +101,8 @@ impl DataItemBuilder {
         }
     }
 }
-impl std::fmt::Debug for DataItemBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataItemBuilder");
         formatter.field("override_format", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_value", &"*** Sensitive Data Redacted ***");

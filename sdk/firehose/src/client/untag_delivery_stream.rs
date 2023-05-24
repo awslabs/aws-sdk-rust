@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagDeliveryStream`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::set_delivery_stream_name): <p>The name of the delivery stream.</p>
+    ///   - [`delivery_stream_name(impl ::std::convert::Into<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::set_delivery_stream_name): <p>The name of the delivery stream.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_delivery_stream::builders::UntagDeliveryStreamFluentBuilder::set_tag_keys): <p>A list of tag keys. Each corresponding tag is removed from the delivery stream.</p>
     /// - On success, responds with [`UntagDeliveryStreamOutput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamOutput)
     /// - On failure, responds with [`SdkError<UntagDeliveryStreamError>`](crate::operation::untag_delivery_stream::UntagDeliveryStreamError)

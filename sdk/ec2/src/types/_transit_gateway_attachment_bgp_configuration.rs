@@ -2,43 +2,43 @@
 
 /// <p>The BGP configuration information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayAttachmentBgpConfiguration {
     /// <p>The transit gateway Autonomous System Number (ASN).</p>
     #[doc(hidden)]
-    pub transit_gateway_asn: std::option::Option<i64>,
+    pub transit_gateway_asn: ::std::option::Option<i64>,
     /// <p>The peer Autonomous System Number (ASN).</p>
     #[doc(hidden)]
-    pub peer_asn: std::option::Option<i64>,
+    pub peer_asn: ::std::option::Option<i64>,
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
     #[doc(hidden)]
-    pub transit_gateway_address: std::option::Option<std::string::String>,
+    pub transit_gateway_address: ::std::option::Option<::std::string::String>,
     /// <p>The interior BGP peer IP address for the appliance.</p>
     #[doc(hidden)]
-    pub peer_address: std::option::Option<std::string::String>,
+    pub peer_address: ::std::option::Option<::std::string::String>,
     /// <p>The BGP status.</p>
     #[doc(hidden)]
-    pub bgp_status: std::option::Option<crate::types::BgpStatus>,
+    pub bgp_status: ::std::option::Option<crate::types::BgpStatus>,
 }
 impl TransitGatewayAttachmentBgpConfiguration {
     /// <p>The transit gateway Autonomous System Number (ASN).</p>
-    pub fn transit_gateway_asn(&self) -> std::option::Option<i64> {
+    pub fn transit_gateway_asn(&self) -> ::std::option::Option<i64> {
         self.transit_gateway_asn
     }
     /// <p>The peer Autonomous System Number (ASN).</p>
-    pub fn peer_asn(&self) -> std::option::Option<i64> {
+    pub fn peer_asn(&self) -> ::std::option::Option<i64> {
         self.peer_asn
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
-    pub fn transit_gateway_address(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_address(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_address.as_deref()
     }
     /// <p>The interior BGP peer IP address for the appliance.</p>
-    pub fn peer_address(&self) -> std::option::Option<&str> {
+    pub fn peer_address(&self) -> ::std::option::Option<&str> {
         self.peer_address.as_deref()
     }
     /// <p>The BGP status.</p>
-    pub fn bgp_status(&self) -> std::option::Option<&crate::types::BgpStatus> {
+    pub fn bgp_status(&self) -> ::std::option::Option<&crate::types::BgpStatus> {
         self.bgp_status.as_ref()
     }
 }
@@ -51,65 +51,70 @@ impl TransitGatewayAttachmentBgpConfiguration {
 
 /// A builder for [`TransitGatewayAttachmentBgpConfiguration`](crate::types::TransitGatewayAttachmentBgpConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransitGatewayAttachmentBgpConfigurationBuilder {
-    pub(crate) transit_gateway_asn: std::option::Option<i64>,
-    pub(crate) peer_asn: std::option::Option<i64>,
-    pub(crate) transit_gateway_address: std::option::Option<std::string::String>,
-    pub(crate) peer_address: std::option::Option<std::string::String>,
-    pub(crate) bgp_status: std::option::Option<crate::types::BgpStatus>,
+    pub(crate) transit_gateway_asn: ::std::option::Option<i64>,
+    pub(crate) peer_asn: ::std::option::Option<i64>,
+    pub(crate) transit_gateway_address: ::std::option::Option<::std::string::String>,
+    pub(crate) peer_address: ::std::option::Option<::std::string::String>,
+    pub(crate) bgp_status: ::std::option::Option<crate::types::BgpStatus>,
 }
 impl TransitGatewayAttachmentBgpConfigurationBuilder {
     /// <p>The transit gateway Autonomous System Number (ASN).</p>
     pub fn transit_gateway_asn(mut self, input: i64) -> Self {
-        self.transit_gateway_asn = Some(input);
+        self.transit_gateway_asn = ::std::option::Option::Some(input);
         self
     }
     /// <p>The transit gateway Autonomous System Number (ASN).</p>
-    pub fn set_transit_gateway_asn(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_transit_gateway_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.transit_gateway_asn = input;
         self
     }
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub fn peer_asn(mut self, input: i64) -> Self {
-        self.peer_asn = Some(input);
+        self.peer_asn = ::std::option::Option::Some(input);
         self
     }
     /// <p>The peer Autonomous System Number (ASN).</p>
-    pub fn set_peer_asn(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_peer_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.peer_asn = input;
         self
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
-    pub fn transit_gateway_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transit_gateway_address = Some(input.into());
+    pub fn transit_gateway_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transit_gateway_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
     pub fn set_transit_gateway_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_address = input;
         self
     }
     /// <p>The interior BGP peer IP address for the appliance.</p>
-    pub fn peer_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.peer_address = Some(input.into());
+    pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.peer_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The interior BGP peer IP address for the appliance.</p>
-    pub fn set_peer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_address = input;
         self
     }
     /// <p>The BGP status.</p>
     pub fn bgp_status(mut self, input: crate::types::BgpStatus) -> Self {
-        self.bgp_status = Some(input);
+        self.bgp_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The BGP status.</p>
-    pub fn set_bgp_status(mut self, input: std::option::Option<crate::types::BgpStatus>) -> Self {
+    pub fn set_bgp_status(mut self, input: ::std::option::Option<crate::types::BgpStatus>) -> Self {
         self.bgp_status = input;
         self
     }

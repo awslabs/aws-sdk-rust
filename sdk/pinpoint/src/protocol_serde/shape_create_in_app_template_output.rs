@@ -2,7 +2,7 @@
 pub(crate) fn de_template_create_message_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::TemplateCreateMessageBody>,
+    ::std::option::Option<crate::types::TemplateCreateMessageBody>,
     crate::operation::create_in_app_template::CreateInAppTemplateError,
 > {
     (!body.is_empty()).then(||{

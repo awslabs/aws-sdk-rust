@@ -7,56 +7,59 @@ pub use crate::operation::describe_users::_describe_users_input::DescribeUsersIn
 ///
 /// <p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p>
 /// <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeUsersFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_users::builders::DescribeUsersInputBuilder,
 }
 impl DescribeUsersFluentBuilder {
     /// Creates a new `DescribeUsers`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_users::DescribeUsers,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_users::DescribeUsersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +72,9 @@ impl DescribeUsersFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_users::DescribeUsersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>,
     > {
         self.send_middleware().await
     }
@@ -87,35 +90,44 @@ impl DescribeUsersFluentBuilder {
         )
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn authentication_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn set_authentication_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn organization_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The ID of the organization.</p>
-    pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_organization_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
     /// <p>The IDs of the users.</p>
-    pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_ids(input.into());
         self
     }
     /// <p>The IDs of the users.</p>
-    pub fn set_user_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_ids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
     }
@@ -126,7 +138,7 @@ impl DescribeUsersFluentBuilder {
     /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
     /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
-    pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query(input.into());
         self
     }
@@ -137,7 +149,7 @@ impl DescribeUsersFluentBuilder {
     /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
     /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
-    pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query(input);
         self
     }
@@ -147,7 +159,10 @@ impl DescribeUsersFluentBuilder {
         self
     }
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
-    pub fn set_include(mut self, input: std::option::Option<crate::types::UserFilterType>) -> Self {
+    pub fn set_include(
+        mut self,
+        input: ::std::option::Option<crate::types::UserFilterType>,
+    ) -> Self {
         self.inner = self.inner.set_include(input);
         self
     }
@@ -157,7 +172,7 @@ impl DescribeUsersFluentBuilder {
         self
     }
     /// <p>The order for the results.</p>
-    pub fn set_order(mut self, input: std::option::Option<crate::types::OrderType>) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::OrderType>) -> Self {
         self.inner = self.inner.set_order(input);
         self
     }
@@ -167,17 +182,17 @@ impl DescribeUsersFluentBuilder {
         self
     }
     /// <p>The sorting criteria.</p>
-    pub fn set_sort(mut self, input: std::option::Option<crate::types::UserSortType>) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::UserSortType>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
@@ -187,17 +202,17 @@ impl DescribeUsersFluentBuilder {
         self
     }
     /// <p>The maximum number of items to return.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
-    pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fields(input.into());
         self
     }
     /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
-    pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fields(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }

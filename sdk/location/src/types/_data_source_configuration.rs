@@ -9,7 +9,7 @@
 /// <p>For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceConfiguration {
     /// <p>Specifies how the results of an operation will be stored by the caller. </p>
     /// <p>Valid values include:</p>
@@ -19,7 +19,7 @@ pub struct DataSourceConfiguration {
     /// </ul>
     /// <p>Default value: <code>SingleUse</code> </p>
     #[doc(hidden)]
-    pub intended_use: std::option::Option<crate::types::IntendedUse>,
+    pub intended_use: ::std::option::Option<crate::types::IntendedUse>,
 }
 impl DataSourceConfiguration {
     /// <p>Specifies how the results of an operation will be stored by the caller. </p>
@@ -29,7 +29,7 @@ impl DataSourceConfiguration {
     /// <li> <p> <code>Storage</code> specifies that the result can be cached or stored in a database.</p> </li>
     /// </ul>
     /// <p>Default value: <code>SingleUse</code> </p>
-    pub fn intended_use(&self) -> std::option::Option<&crate::types::IntendedUse> {
+    pub fn intended_use(&self) -> ::std::option::Option<&crate::types::IntendedUse> {
         self.intended_use.as_ref()
     }
 }
@@ -42,9 +42,11 @@ impl DataSourceConfiguration {
 
 /// A builder for [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSourceConfigurationBuilder {
-    pub(crate) intended_use: std::option::Option<crate::types::IntendedUse>,
+    pub(crate) intended_use: ::std::option::Option<crate::types::IntendedUse>,
 }
 impl DataSourceConfigurationBuilder {
     /// <p>Specifies how the results of an operation will be stored by the caller. </p>
@@ -55,7 +57,7 @@ impl DataSourceConfigurationBuilder {
     /// </ul>
     /// <p>Default value: <code>SingleUse</code> </p>
     pub fn intended_use(mut self, input: crate::types::IntendedUse) -> Self {
-        self.intended_use = Some(input);
+        self.intended_use = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how the results of an operation will be stored by the caller. </p>
@@ -67,7 +69,7 @@ impl DataSourceConfigurationBuilder {
     /// <p>Default value: <code>SingleUse</code> </p>
     pub fn set_intended_use(
         mut self,
-        input: std::option::Option<crate::types::IntendedUse>,
+        input: ::std::option::Option<crate::types::IntendedUse>,
     ) -> Self {
         self.intended_use = input;
         self

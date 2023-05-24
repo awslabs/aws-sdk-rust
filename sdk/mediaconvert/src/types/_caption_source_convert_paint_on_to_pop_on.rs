@@ -38,13 +38,13 @@
 /// Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you choose Enabled if you notice additional repeated lines in your output captions.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CaptionSourceConvertPaintOnToPopOn {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CaptionSourceConvertPaintOnToPopOn {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CaptionSourceConvertPaintOnToPopOn {
+impl ::std::convert::From<&str> for CaptionSourceConvertPaintOnToPopOn {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => CaptionSourceConvertPaintOnToPopOn::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CaptionSourceConvertPaintOnToPopOn {
         }
     }
 }
-impl std::str::FromStr for CaptionSourceConvertPaintOnToPopOn {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CaptionSourceConvertPaintOnToPopOn {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CaptionSourceConvertPaintOnToPopOn::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CaptionSourceConvertPaintOnToPopOn::from(s))
     }
 }
 impl CaptionSourceConvertPaintOnToPopOn {
@@ -86,7 +86,7 @@ impl CaptionSourceConvertPaintOnToPopOn {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for CaptionSourceConvertPaintOnToPopOn {
+impl ::std::convert::AsRef<str> for CaptionSourceConvertPaintOnToPopOn {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -6,56 +6,63 @@ pub use crate::operation::create_data_view::_create_data_view_input::CreateDataV
 /// Fluent builder constructing a request to `CreateDataView`.
 ///
 /// <p>Creates a Dataview for a Dataset.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataViewFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_data_view::builders::CreateDataViewInputBuilder,
 }
 impl CreateDataViewFluentBuilder {
     /// Creates a new `CreateDataView`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_data_view::CreateDataView,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_view::CreateDataViewError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_data_view::CreateDataViewOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_view::CreateDataViewError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +75,31 @@ impl CreateDataViewFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_data_view::CreateDataViewOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_view::CreateDataViewError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
-    pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_id(input.into());
         self
     }
     /// <p>The unique Dataset identifier that is used to create a Dataview.</p>
-    pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_id(input);
         self
     }
@@ -100,7 +109,7 @@ impl CreateDataViewFluentBuilder {
         self
     }
     /// <p>Flag to indicate Dataview should be updated automatically.</p>
-    pub fn set_auto_update(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_update(input);
         self
     }
@@ -109,14 +118,14 @@ impl CreateDataViewFluentBuilder {
     /// To override the contents of this collection use [`set_sort_columns`](Self::set_sort_columns).
     ///
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn sort_columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sort_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sort_columns(input.into());
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
     pub fn set_sort_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_sort_columns(input);
         self
@@ -126,14 +135,17 @@ impl CreateDataViewFluentBuilder {
     /// To override the contents of this collection use [`set_partition_columns`](Self::set_partition_columns).
     ///
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn partition_columns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.partition_columns(input.into());
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
     pub fn set_partition_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_partition_columns(input);
         self
@@ -144,7 +156,7 @@ impl CreateDataViewFluentBuilder {
         self
     }
     /// <p>Beginning time to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_as_of_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_as_of_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_as_of_timestamp(input);
         self
     }
@@ -159,7 +171,7 @@ impl CreateDataViewFluentBuilder {
     /// <p>Options that define the destination type for the Dataview.</p>
     pub fn set_destination_type_params(
         mut self,
-        input: std::option::Option<crate::types::DataViewDestinationTypeParams>,
+        input: ::std::option::Option<crate::types::DataViewDestinationTypeParams>,
     ) -> Self {
         self.inner = self.inner.set_destination_type_params(input);
         self

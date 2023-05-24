@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentRunsOutput {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
     #[doc(hidden)]
     pub replication_task_assessment_runs:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentRunsOutput {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
     pub fn replication_task_assessment_runs(
         &self,
-    ) -> std::option::Option<&[crate::types::ReplicationTaskAssessmentRun]> {
+    ) -> ::std::option::Option<&[crate::types::ReplicationTaskAssessmentRun]> {
         self.replication_task_assessment_runs.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReplicationTaskAssessmentRunsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReplicationTaskAssessmentRunsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeReplicationTaskAssessmentRunsOutput {
 
 /// A builder for [`DescribeReplicationTaskAssessmentRunsOutput`](crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReplicationTaskAssessmentRunsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) replication_task_assessment_runs:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -68,13 +70,13 @@ impl DescribeReplicationTaskAssessmentRunsOutputBuilder {
     ) -> Self {
         let mut v = self.replication_task_assessment_runs.unwrap_or_default();
         v.push(input);
-        self.replication_task_assessment_runs = Some(v);
+        self.replication_task_assessment_runs = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
     pub fn set_replication_task_assessment_runs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskAssessmentRun>>,
     ) -> Self {
         self.replication_task_assessment_runs = input;
         self

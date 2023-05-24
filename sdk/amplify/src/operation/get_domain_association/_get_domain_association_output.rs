@@ -2,20 +2,20 @@
 
 /// <p> The result structure for the get domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
-    pub domain_association: std::option::Option<crate::types::DomainAssociation>,
+    pub domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,
 }
 impl GetDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
-    pub fn domain_association(&self) -> std::option::Option<&crate::types::DomainAssociation> {
+    pub fn domain_association(&self) -> ::std::option::Option<&crate::types::DomainAssociation> {
         self.domain_association.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDomainAssociationOutput {
+impl ::aws_http::request_id::RequestId for GetDomainAssociationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl GetDomainAssociationOutput {
 
 /// A builder for [`GetDomainAssociationOutput`](crate::operation::get_domain_association::GetDomainAssociationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDomainAssociationOutputBuilder {
-    pub(crate) domain_association: std::option::Option<crate::types::DomainAssociation>,
+    pub(crate) domain_association: ::std::option::Option<crate::types::DomainAssociation>,
     _request_id: Option<String>,
 }
 impl GetDomainAssociationOutputBuilder {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(mut self, input: crate::types::DomainAssociation) -> Self {
-        self.domain_association = Some(input);
+        self.domain_association = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn set_domain_association(
         mut self,
-        input: std::option::Option<crate::types::DomainAssociation>,
+        input: ::std::option::Option<crate::types::DomainAssociation>,
     ) -> Self {
         self.domain_association = input;
         self

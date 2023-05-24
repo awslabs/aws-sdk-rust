@@ -2,22 +2,22 @@
 
 /// <p>Details on a data volume from another container in the same task definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeFrom {
     /// <p>The name of another container within the same task definition to mount volumes from.</p>
     #[doc(hidden)]
-    pub source_container: std::option::Option<std::string::String>,
+    pub source_container: ::std::option::Option<::std::string::String>,
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     #[doc(hidden)]
-    pub read_only: std::option::Option<bool>,
+    pub read_only: ::std::option::Option<bool>,
 }
 impl VolumeFrom {
     /// <p>The name of another container within the same task definition to mount volumes from.</p>
-    pub fn source_container(&self) -> std::option::Option<&str> {
+    pub fn source_container(&self) -> ::std::option::Option<&str> {
         self.source_container.as_deref()
     }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
-    pub fn read_only(&self) -> std::option::Option<bool> {
+    pub fn read_only(&self) -> ::std::option::Option<bool> {
         self.read_only
     }
 }
@@ -30,29 +30,37 @@ impl VolumeFrom {
 
 /// A builder for [`VolumeFrom`](crate::types::VolumeFrom).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeFromBuilder {
-    pub(crate) source_container: std::option::Option<std::string::String>,
-    pub(crate) read_only: std::option::Option<bool>,
+    pub(crate) source_container: ::std::option::Option<::std::string::String>,
+    pub(crate) read_only: ::std::option::Option<bool>,
 }
 impl VolumeFromBuilder {
     /// <p>The name of another container within the same task definition to mount volumes from.</p>
-    pub fn source_container(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_container = Some(input.into());
+    pub fn source_container(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_container = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of another container within the same task definition to mount volumes from.</p>
-    pub fn set_source_container(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_container(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_container = input;
         self
     }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn read_only(mut self, input: bool) -> Self {
-        self.read_only = Some(input);
+        self.read_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. If this value is <code>false</code>, then the container can write to the volume. The default value is <code>false</code>.</p>
-    pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGateway`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway.</p>
+    ///   - [`gateway_arn(impl ::std::convert::Into<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::get_gateway::builders::GetGatewayFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway.</p>
     /// - On success, responds with [`GetGatewayOutput`](crate::operation::get_gateway::GetGatewayOutput) with field(s):
     ///   - [`gateway(Option<GatewayDetails>)`](crate::operation::get_gateway::GetGatewayOutput::gateway): <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
     /// - On failure, responds with [`SdkError<GetGatewayError>`](crate::operation::get_gateway::GetGatewayError)

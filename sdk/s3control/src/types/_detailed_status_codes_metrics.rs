@@ -3,7 +3,7 @@
 /// <p>The container element for Amazon S3 Storage Lens detailed status code metrics. Detailed status code metrics generate metrics for HTTP status codes, such as <code>200 OK</code>, <code>403 Forbidden</code>, <code>503 Service Unavailable</code> and others. </p>
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetailedStatusCodesMetrics {
     /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
     #[doc(hidden)]
@@ -24,18 +24,20 @@ impl DetailedStatusCodesMetrics {
 
 /// A builder for [`DetailedStatusCodesMetrics`](crate::types::DetailedStatusCodesMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetailedStatusCodesMetricsBuilder {
-    pub(crate) is_enabled: std::option::Option<bool>,
+    pub(crate) is_enabled: ::std::option::Option<bool>,
 }
 impl DetailedStatusCodesMetricsBuilder {
     /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
     pub fn is_enabled(mut self, input: bool) -> Self {
-        self.is_enabled = Some(input);
+        self.is_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container that indicates whether detailed status code metrics are enabled.</p>
-    pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_enabled = input;
         self
     }

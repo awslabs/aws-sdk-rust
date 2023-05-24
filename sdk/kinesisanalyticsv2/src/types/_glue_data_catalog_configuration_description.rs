@@ -2,15 +2,15 @@
 
 /// <p>The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueDataCatalogConfigurationDescription {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     #[doc(hidden)]
-    pub database_arn: std::option::Option<std::string::String>,
+    pub database_arn: ::std::option::Option<::std::string::String>,
 }
 impl GlueDataCatalogConfigurationDescription {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn(&self) -> std::option::Option<&str> {
+    pub fn database_arn(&self) -> ::std::option::Option<&str> {
         self.database_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl GlueDataCatalogConfigurationDescription {
 
 /// A builder for [`GlueDataCatalogConfigurationDescription`](crate::types::GlueDataCatalogConfigurationDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlueDataCatalogConfigurationDescriptionBuilder {
-    pub(crate) database_arn: std::option::Option<std::string::String>,
+    pub(crate) database_arn: ::std::option::Option<::std::string::String>,
 }
 impl GlueDataCatalogConfigurationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_arn = Some(input.into());
+    pub fn database_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn set_database_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_arn = input;
         self
     }

@@ -2,31 +2,31 @@
 
 /// <p>Provides the current status of an entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionStatus {
     /// <p>The timestamp when the entity was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last time the entity was updated.</p>
     #[doc(hidden)]
-    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The latest version of the entity.</p>
     #[doc(hidden)]
     pub update_version: i32,
     /// <p>The state of the entity.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::OptionState>,
+    pub state: ::std::option::Option<crate::types::OptionState>,
     /// <p>Indicates whether the entity is being deleted.</p>
     #[doc(hidden)]
-    pub pending_deletion: std::option::Option<bool>,
+    pub pending_deletion: ::std::option::Option<bool>,
 }
 impl OptionStatus {
     /// <p>The timestamp when the entity was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The timestamp of the last time the entity was updated.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>The latest version of the entity.</p>
@@ -34,11 +34,11 @@ impl OptionStatus {
         self.update_version
     }
     /// <p>The state of the entity.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::OptionState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::OptionState> {
         self.state.as_ref()
     }
     /// <p>Indicates whether the entity is being deleted.</p>
-    pub fn pending_deletion(&self) -> std::option::Option<bool> {
+    pub fn pending_deletion(&self) -> ::std::option::Option<bool> {
         self.pending_deletion
     }
 }
@@ -51,68 +51,70 @@ impl OptionStatus {
 
 /// A builder for [`OptionStatus`](crate::types::OptionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OptionStatusBuilder {
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_version: std::option::Option<i32>,
-    pub(crate) state: std::option::Option<crate::types::OptionState>,
-    pub(crate) pending_deletion: std::option::Option<bool>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_version: ::std::option::Option<i32>,
+    pub(crate) state: ::std::option::Option<crate::types::OptionState>,
+    pub(crate) pending_deletion: ::std::option::Option<bool>,
 }
 impl OptionStatusBuilder {
     /// <p>The timestamp when the entity was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the entity was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The timestamp of the last time the entity was updated.</p>
-    pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_date = Some(input);
+    pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the last time the entity was updated.</p>
     pub fn set_update_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_date = input;
         self
     }
     /// <p>The latest version of the entity.</p>
     pub fn update_version(mut self, input: i32) -> Self {
-        self.update_version = Some(input);
+        self.update_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latest version of the entity.</p>
-    pub fn set_update_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_update_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.update_version = input;
         self
     }
     /// <p>The state of the entity.</p>
     pub fn state(mut self, input: crate::types::OptionState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the entity.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::OptionState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::OptionState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Indicates whether the entity is being deleted.</p>
     pub fn pending_deletion(mut self, input: bool) -> Self {
-        self.pending_deletion = Some(input);
+        self.pending_deletion = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the entity is being deleted.</p>
-    pub fn set_pending_deletion(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_pending_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pending_deletion = input;
         self
     }

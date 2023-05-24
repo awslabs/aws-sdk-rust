@@ -2,22 +2,22 @@
 
 /// <p>Contains metadata related to a message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageMetadata {
     /// <p>The identifier of the message that contains the metadata information. </p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of receipt information for a message for different recipients.</p>
     #[doc(hidden)]
-    pub receipts: std::option::Option<std::vec::Vec<crate::types::Receipt>>,
+    pub receipts: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
 }
 impl MessageMetadata {
     /// <p>The identifier of the message that contains the metadata information. </p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>The list of receipt information for a message for different recipients.</p>
-    pub fn receipts(&self) -> std::option::Option<&[crate::types::Receipt]> {
+    pub fn receipts(&self) -> ::std::option::Option<&[crate::types::Receipt]> {
         self.receipts.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl MessageMetadata {
 
 /// A builder for [`MessageMetadata`](crate::types::MessageMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MessageMetadataBuilder {
-    pub(crate) message_id: std::option::Option<std::string::String>,
-    pub(crate) receipts: std::option::Option<std::vec::Vec<crate::types::Receipt>>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
+    pub(crate) receipts: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
 }
 impl MessageMetadataBuilder {
     /// <p>The identifier of the message that contains the metadata information. </p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the message that contains the metadata information. </p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
@@ -54,13 +56,13 @@ impl MessageMetadataBuilder {
     pub fn receipts(mut self, input: crate::types::Receipt) -> Self {
         let mut v = self.receipts.unwrap_or_default();
         v.push(input);
-        self.receipts = Some(v);
+        self.receipts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of receipt information for a message for different recipients.</p>
     pub fn set_receipts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Receipt>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Receipt>>,
     ) -> Self {
         self.receipts = input;
         self

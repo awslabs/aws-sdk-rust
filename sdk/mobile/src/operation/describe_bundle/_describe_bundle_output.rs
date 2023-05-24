@@ -2,20 +2,20 @@
 
 /// <p> Result structure contains the details of the bundle. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
     #[doc(hidden)]
-    pub details: std::option::Option<crate::types::BundleDetails>,
+    pub details: ::std::option::Option<crate::types::BundleDetails>,
     _request_id: Option<String>,
 }
 impl DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
-    pub fn details(&self) -> std::option::Option<&crate::types::BundleDetails> {
+    pub fn details(&self) -> ::std::option::Option<&crate::types::BundleDetails> {
         self.details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeBundleOutput {
+impl ::aws_http::request_id::RequestId for DescribeBundleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl DescribeBundleOutput {
 
 /// A builder for [`DescribeBundleOutput`](crate::operation::describe_bundle::DescribeBundleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeBundleOutputBuilder {
-    pub(crate) details: std::option::Option<crate::types::BundleDetails>,
+    pub(crate) details: ::std::option::Option<crate::types::BundleDetails>,
     _request_id: Option<String>,
 }
 impl DescribeBundleOutputBuilder {
     /// <p> The details of the bundle. </p>
     pub fn details(mut self, input: crate::types::BundleDetails) -> Self {
-        self.details = Some(input);
+        self.details = ::std::option::Option::Some(input);
         self
     }
     /// <p> The details of the bundle. </p>
-    pub fn set_details(mut self, input: std::option::Option<crate::types::BundleDetails>) -> Self {
+    pub fn set_details(
+        mut self,
+        input: ::std::option::Option<crate::types::BundleDetails>,
+    ) -> Self {
         self.details = input;
         self
     }

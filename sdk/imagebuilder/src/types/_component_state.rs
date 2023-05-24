@@ -2,22 +2,22 @@
 
 /// <p>A group of fields that describe the current status of components that are no longer active.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentState {
     /// <p>The current state of the component.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ComponentStatus>,
+    pub status: ::std::option::Option<crate::types::ComponentStatus>,
     /// <p>Describes how or why the component changed state.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ComponentState {
     /// <p>The current state of the component.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ComponentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ComponentStatus> {
         self.status.as_ref()
     }
     /// <p>Describes how or why the component changed state.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -30,29 +30,34 @@ impl ComponentState {
 
 /// A builder for [`ComponentState`](crate::types::ComponentState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentStateBuilder {
-    pub(crate) status: std::option::Option<crate::types::ComponentStatus>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ComponentStatus>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl ComponentStateBuilder {
     /// <p>The current state of the component.</p>
     pub fn status(mut self, input: crate::types::ComponentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the component.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ComponentStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ComponentStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>Describes how or why the component changed state.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes how or why the component changed state.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// Configuration settings for running telemetry.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryConfigurationUpdate {
     /// Configure telemetry to be on or off.
     #[doc(hidden)]
-    pub telemetry: std::option::Option<crate::types::Telemetry>,
+    pub telemetry: ::std::option::Option<crate::types::Telemetry>,
 }
 impl TelemetryConfigurationUpdate {
     /// Configure telemetry to be on or off.
-    pub fn telemetry(&self) -> std::option::Option<&crate::types::Telemetry> {
+    pub fn telemetry(&self) -> ::std::option::Option<&crate::types::Telemetry> {
         self.telemetry.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl TelemetryConfigurationUpdate {
 
 /// A builder for [`TelemetryConfigurationUpdate`](crate::types::TelemetryConfigurationUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TelemetryConfigurationUpdateBuilder {
-    pub(crate) telemetry: std::option::Option<crate::types::Telemetry>,
+    pub(crate) telemetry: ::std::option::Option<crate::types::Telemetry>,
 }
 impl TelemetryConfigurationUpdateBuilder {
     /// Configure telemetry to be on or off.
     pub fn telemetry(mut self, input: crate::types::Telemetry) -> Self {
-        self.telemetry = Some(input);
+        self.telemetry = ::std::option::Option::Some(input);
         self
     }
     /// Configure telemetry to be on or off.
-    pub fn set_telemetry(mut self, input: std::option::Option<crate::types::Telemetry>) -> Self {
+    pub fn set_telemetry(mut self, input: ::std::option::Option<crate::types::Telemetry>) -> Self {
         self.telemetry = input;
         self
     }

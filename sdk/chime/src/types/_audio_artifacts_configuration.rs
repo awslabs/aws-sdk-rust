@@ -2,15 +2,15 @@
 
 /// <p>The audio artifact configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
     #[doc(hidden)]
-    pub mux_type: std::option::Option<crate::types::AudioMuxType>,
+    pub mux_type: ::std::option::Option<crate::types::AudioMuxType>,
 }
 impl AudioArtifactsConfiguration {
     /// <p>The MUX type of the audio artifact configuration object.</p>
-    pub fn mux_type(&self) -> std::option::Option<&crate::types::AudioMuxType> {
+    pub fn mux_type(&self) -> ::std::option::Option<&crate::types::AudioMuxType> {
         self.mux_type.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl AudioArtifactsConfiguration {
 
 /// A builder for [`AudioArtifactsConfiguration`](crate::types::AudioArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioArtifactsConfigurationBuilder {
-    pub(crate) mux_type: std::option::Option<crate::types::AudioMuxType>,
+    pub(crate) mux_type: ::std::option::Option<crate::types::AudioMuxType>,
 }
 impl AudioArtifactsConfigurationBuilder {
     /// <p>The MUX type of the audio artifact configuration object.</p>
     pub fn mux_type(mut self, input: crate::types::AudioMuxType) -> Self {
-        self.mux_type = Some(input);
+        self.mux_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The MUX type of the audio artifact configuration object.</p>
-    pub fn set_mux_type(mut self, input: std::option::Option<crate::types::AudioMuxType>) -> Self {
+    pub fn set_mux_type(
+        mut self,
+        input: ::std::option::Option<crate::types::AudioMuxType>,
+    ) -> Self {
         self.mux_type = input;
         self
     }

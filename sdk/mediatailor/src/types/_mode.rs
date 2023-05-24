@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Mode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum Mode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Mode {
+impl ::std::convert::From<&str> for Mode {
     fn from(s: &str) -> Self {
         match s {
             "AFTER_LIVE_EDGE" => Mode::AfterLiveEdge,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for Mode {
         }
     }
 }
-impl std::str::FromStr for Mode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Mode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Mode::from(s))
     }
 }
 impl Mode {
@@ -89,7 +89,7 @@ impl Mode {
         &["AFTER_LIVE_EDGE", "BEHIND_LIVE_EDGE", "OFF"]
     }
 }
-impl AsRef<str> for Mode {
+impl ::std::convert::AsRef<str> for Mode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

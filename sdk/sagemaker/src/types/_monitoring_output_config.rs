@@ -2,22 +2,22 @@
 
 /// <p>The output configuration for monitoring jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringOutputConfig {
     /// <p>Monitoring outputs for monitoring jobs. This is where the output of the periodic monitoring jobs is uploaded.</p>
     #[doc(hidden)]
-    pub monitoring_outputs: std::option::Option<std::vec::Vec<crate::types::MonitoringOutput>>,
+    pub monitoring_outputs: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringOutput>>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl MonitoringOutputConfig {
     /// <p>Monitoring outputs for monitoring jobs. This is where the output of the periodic monitoring jobs is uploaded.</p>
-    pub fn monitoring_outputs(&self) -> std::option::Option<&[crate::types::MonitoringOutput]> {
+    pub fn monitoring_outputs(&self) -> ::std::option::Option<&[crate::types::MonitoringOutput]> {
         self.monitoring_outputs.as_deref()
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -30,11 +30,13 @@ impl MonitoringOutputConfig {
 
 /// A builder for [`MonitoringOutputConfig`](crate::types::MonitoringOutputConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringOutputConfigBuilder {
     pub(crate) monitoring_outputs:
-        std::option::Option<std::vec::Vec<crate::types::MonitoringOutput>>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringOutput>>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl MonitoringOutputConfigBuilder {
     /// Appends an item to `monitoring_outputs`.
@@ -45,24 +47,24 @@ impl MonitoringOutputConfigBuilder {
     pub fn monitoring_outputs(mut self, input: crate::types::MonitoringOutput) -> Self {
         let mut v = self.monitoring_outputs.unwrap_or_default();
         v.push(input);
-        self.monitoring_outputs = Some(v);
+        self.monitoring_outputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Monitoring outputs for monitoring jobs. This is where the output of the periodic monitoring jobs is uploaded.</p>
     pub fn set_monitoring_outputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MonitoringOutput>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringOutput>>,
     ) -> Self {
         self.monitoring_outputs = input;
         self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }

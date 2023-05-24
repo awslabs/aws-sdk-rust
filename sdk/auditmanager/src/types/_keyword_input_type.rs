@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum KeywordInputType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum KeywordInputType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for KeywordInputType {
+impl ::std::convert::From<&str> for KeywordInputType {
     fn from(s: &str) -> Self {
         match s {
             "SELECT_FROM_LIST" => KeywordInputType::SelectFromList,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for KeywordInputType {
         }
     }
 }
-impl std::str::FromStr for KeywordInputType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for KeywordInputType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeywordInputType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(KeywordInputType::from(s))
     }
 }
 impl KeywordInputType {
@@ -81,7 +81,7 @@ impl KeywordInputType {
         &["SELECT_FROM_LIST"]
     }
 }
-impl AsRef<str> for KeywordInputType {
+impl ::std::convert::AsRef<str> for KeywordInputType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

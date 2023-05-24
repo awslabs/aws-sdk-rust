@@ -2,22 +2,22 @@
 
 /// <p>Used in the exception error that is thrown if you start an assessment run for an assessment target that includes an EC2 instance that is already participating in another started assessment run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentAlreadyRunningAssessment {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
     #[doc(hidden)]
-    pub agent_id: std::option::Option<std::string::String>,
+    pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the assessment run that has already been started.</p>
     #[doc(hidden)]
-    pub assessment_run_arn: std::option::Option<std::string::String>,
+    pub assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl AgentAlreadyRunningAssessment {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<&str> {
         self.agent_id.as_deref()
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> ::std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl AgentAlreadyRunningAssessment {
 
 /// A builder for [`AgentAlreadyRunningAssessment`](crate::types::AgentAlreadyRunningAssessment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentAlreadyRunningAssessmentBuilder {
-    pub(crate) agent_id: std::option::Option<std::string::String>,
-    pub(crate) assessment_run_arn: std::option::Option<std::string::String>,
+    pub(crate) agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl AgentAlreadyRunningAssessmentBuilder {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
-    pub fn agent_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.agent_id = Some(input.into());
+    pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
-    pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_id = input;
         self
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
-    pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_run_arn = Some(input.into());
+    pub fn assessment_run_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
     pub fn set_assessment_run_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.assessment_run_arn = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>The override configuration of the rendering rules of a sheet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetElementConfigurationOverrides {
     /// <p>Determines whether or not the overrides are visible. Choose one of the following options:</p>
     /// <ul>
@@ -10,7 +10,7 @@ pub struct SheetElementConfigurationOverrides {
     /// <li> <p> <code>HIDDEN</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::Visibility>,
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl SheetElementConfigurationOverrides {
     /// <p>Determines whether or not the overrides are visible. Choose one of the following options:</p>
@@ -18,7 +18,7 @@ impl SheetElementConfigurationOverrides {
     /// <li> <p> <code>VISIBLE</code> </p> </li>
     /// <li> <p> <code>HIDDEN</code> </p> </li>
     /// </ul>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -31,9 +31,11 @@ impl SheetElementConfigurationOverrides {
 
 /// A builder for [`SheetElementConfigurationOverrides`](crate::types::SheetElementConfigurationOverrides).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SheetElementConfigurationOverridesBuilder {
-    pub(crate) visibility: std::option::Option<crate::types::Visibility>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl SheetElementConfigurationOverridesBuilder {
     /// <p>Determines whether or not the overrides are visible. Choose one of the following options:</p>
@@ -42,7 +44,7 @@ impl SheetElementConfigurationOverridesBuilder {
     /// <li> <p> <code>HIDDEN</code> </p> </li>
     /// </ul>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether or not the overrides are visible. Choose one of the following options:</p>
@@ -50,7 +52,10 @@ impl SheetElementConfigurationOverridesBuilder {
     /// <li> <p> <code>VISIBLE</code> </p> </li>
     /// <li> <p> <code>HIDDEN</code> </p> </li>
     /// </ul>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.visibility = input;
         self
     }

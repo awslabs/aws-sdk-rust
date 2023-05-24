@@ -2,22 +2,22 @@
 
 /// <p>The configuration sent to a cluster for configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The cloud provider for the target cluster to connect.</p>
     #[doc(hidden)]
-    pub provider: std::option::Option<crate::types::ConnectorConfigProvider>,
+    pub provider: ::std::option::Option<crate::types::ConnectorConfigProvider>,
 }
 impl ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::ConnectorConfigProvider> {
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::ConnectorConfigProvider> {
         self.provider.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ConnectorConfigRequest {
 
 /// A builder for [`ConnectorConfigRequest`](crate::types::ConnectorConfigRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectorConfigRequestBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) provider: std::option::Option<crate::types::ConnectorConfigProvider>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) provider: ::std::option::Option<crate::types::ConnectorConfigProvider>,
 }
 impl ConnectorConfigRequestBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
     pub fn provider(mut self, input: crate::types::ConnectorConfigProvider) -> Self {
-        self.provider = Some(input);
+        self.provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
     pub fn set_provider(
         mut self,
-        input: std::option::Option<crate::types::ConnectorConfigProvider>,
+        input: ::std::option::Option<crate::types::ConnectorConfigProvider>,
     ) -> Self {
         self.provider = input;
         self

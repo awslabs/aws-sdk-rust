@@ -2,32 +2,32 @@
 
 /// <p>The information for a pool in an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PoolInformation {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
     #[doc(hidden)]
-    pub pool_arn: std::option::Option<std::string::String>,
+    pub pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the pool.</p>
     #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the pool.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PoolStatus>,
+    pub status: ::std::option::Option<crate::types::PoolStatus>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     #[doc(hidden)]
-    pub message_type: std::option::Option<crate::types::MessageType>,
+    pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
     #[doc(hidden)]
     pub two_way_enabled: bool,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     #[doc(hidden)]
-    pub two_way_channel_arn: std::option::Option<std::string::String>,
+    pub two_way_channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>When set to false, an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
     #[doc(hidden)]
     pub self_managed_opt_outs_enabled: bool,
     /// <p>The name of the OptOutList associated with the pool.</p>
     #[doc(hidden)]
-    pub opt_out_list_name: std::option::Option<std::string::String>,
+    pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>Allows you to enable shared routes on your pool.</p>
     /// <p>By default, this is set to <code>False</code>. If you set this value to <code>True</code>, your messages are sent using phone numbers or sender IDs (depending on the country) that are shared with other Amazon Pinpoint users. In some countries, such as the United States, senders aren't allowed to use shared routes and must use a dedicated phone number or short code.</p>
     #[doc(hidden)]
@@ -37,23 +37,23 @@ pub struct PoolInformation {
     pub deletion_protection_enabled: bool,
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PoolInformation {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> ::std::option::Option<&str> {
         self.pool_arn.as_deref()
     }
     /// <p>The unique identifier for the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
     /// <p>The current status of the pool.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PoolStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PoolStatus> {
         self.status.as_ref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::types::MessageType> {
+    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
@@ -61,7 +61,7 @@ impl PoolInformation {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> ::std::option::Option<&str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>When set to false, an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
@@ -69,7 +69,7 @@ impl PoolInformation {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>Allows you to enable shared routes on your pool.</p>
@@ -82,7 +82,7 @@ impl PoolInformation {
         self.deletion_protection_enabled
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -95,106 +95,114 @@ impl PoolInformation {
 
 /// A builder for [`PoolInformation`](crate::types::PoolInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PoolInformationBuilder {
-    pub(crate) pool_arn: std::option::Option<std::string::String>,
-    pub(crate) pool_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::PoolStatus>,
-    pub(crate) message_type: std::option::Option<crate::types::MessageType>,
-    pub(crate) two_way_enabled: std::option::Option<bool>,
-    pub(crate) two_way_channel_arn: std::option::Option<std::string::String>,
-    pub(crate) self_managed_opt_outs_enabled: std::option::Option<bool>,
-    pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
-    pub(crate) shared_routes_enabled: std::option::Option<bool>,
-    pub(crate) deletion_protection_enabled: std::option::Option<bool>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) pool_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::PoolStatus>,
+    pub(crate) message_type: ::std::option::Option<crate::types::MessageType>,
+    pub(crate) two_way_enabled: ::std::option::Option<bool>,
+    pub(crate) two_way_channel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) self_managed_opt_outs_enabled: ::std::option::Option<bool>,
+    pub(crate) opt_out_list_name: ::std::option::Option<::std::string::String>,
+    pub(crate) shared_routes_enabled: ::std::option::Option<bool>,
+    pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PoolInformationBuilder {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    pub fn pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pool_arn = Some(input.into());
+    pub fn pool_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_arn = input;
         self
     }
     /// <p>The unique identifier for the pool.</p>
-    pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pool_id = Some(input.into());
+    pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the pool.</p>
-    pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
     /// <p>The current status of the pool.</p>
     pub fn status(mut self, input: crate::types::PoolStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the pool.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::PoolStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::PoolStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
-        self.message_type = Some(input);
+        self.message_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn set_message_type(
         mut self,
-        input: std::option::Option<crate::types::MessageType>,
+        input: ::std::option::Option<crate::types::MessageType>,
     ) -> Self {
         self.message_type = input;
         self
     }
     /// <p>When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
-        self.two_way_enabled = Some(input);
+        self.two_way_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>When set to true you can receive incoming text messages from your end recipients using the TwoWayChannelArn.</p>
-    pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.two_way_enabled = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.two_way_channel_arn = Some(input.into());
+    pub fn two_way_channel_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.two_way_channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn set_two_way_channel_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.two_way_channel_arn = input;
         self
     }
     /// <p>When set to false, an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
-        self.self_managed_opt_outs_enabled = Some(input);
+        self.self_managed_opt_outs_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>When set to false, an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-managing.html#settings-account-sms-self-managed-opt-out">Self-managed opt-outs</a> </p>
-    pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.self_managed_opt_outs_enabled = input;
         self
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
-    pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.opt_out_list_name = Some(input.into());
+    pub fn opt_out_list_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.opt_out_list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
     pub fn set_opt_out_list_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.opt_out_list_name = input;
         self
@@ -202,34 +210,34 @@ impl PoolInformationBuilder {
     /// <p>Allows you to enable shared routes on your pool.</p>
     /// <p>By default, this is set to <code>False</code>. If you set this value to <code>True</code>, your messages are sent using phone numbers or sender IDs (depending on the country) that are shared with other Amazon Pinpoint users. In some countries, such as the United States, senders aren't allowed to use shared routes and must use a dedicated phone number or short code.</p>
     pub fn shared_routes_enabled(mut self, input: bool) -> Self {
-        self.shared_routes_enabled = Some(input);
+        self.shared_routes_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Allows you to enable shared routes on your pool.</p>
     /// <p>By default, this is set to <code>False</code>. If you set this value to <code>True</code>, your messages are sent using phone numbers or sender IDs (depending on the country) that are shared with other Amazon Pinpoint users. In some countries, such as the United States, senders aren't allowed to use shared routes and must use a dedicated phone number or short code.</p>
-    pub fn set_shared_routes_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_shared_routes_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.shared_routes_enabled = input;
         self
     }
     /// <p>When set to true the pool can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
-        self.deletion_protection_enabled = Some(input);
+        self.deletion_protection_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>When set to true the pool can't be deleted.</p>
-    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection_enabled = input;
         self
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self

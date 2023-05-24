@@ -2,36 +2,36 @@
 
 /// <p>A corrected misspelled word in a query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Correction {
     /// <p>The zero-based location in the response string or text where the corrected word starts.</p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based location in the response string or text where the corrected word ends.</p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
     /// <p>The string or text of a misspelled word in a query.</p>
     #[doc(hidden)]
-    pub term: std::option::Option<std::string::String>,
+    pub term: ::std::option::Option<::std::string::String>,
     /// <p>The string or text of a corrected misspelled word in a query.</p>
     #[doc(hidden)]
-    pub corrected_term: std::option::Option<std::string::String>,
+    pub corrected_term: ::std::option::Option<::std::string::String>,
 }
 impl Correction {
     /// <p>The zero-based location in the response string or text where the corrected word starts.</p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p>The zero-based location in the response string or text where the corrected word ends.</p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
     /// <p>The string or text of a misspelled word in a query.</p>
-    pub fn term(&self) -> std::option::Option<&str> {
+    pub fn term(&self) -> ::std::option::Option<&str> {
         self.term.as_deref()
     }
     /// <p>The string or text of a corrected misspelled word in a query.</p>
-    pub fn corrected_term(&self) -> std::option::Option<&str> {
+    pub fn corrected_term(&self) -> ::std::option::Option<&str> {
         self.corrected_term.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl Correction {
 
 /// A builder for [`Correction`](crate::types::Correction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CorrectionBuilder {
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
-    pub(crate) term: std::option::Option<std::string::String>,
-    pub(crate) corrected_term: std::option::Option<std::string::String>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
+    pub(crate) term: ::std::option::Option<::std::string::String>,
+    pub(crate) corrected_term: ::std::option::Option<::std::string::String>,
 }
 impl CorrectionBuilder {
     /// <p>The zero-based location in the response string or text where the corrected word starts.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based location in the response string or text where the corrected word starts.</p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p>The zero-based location in the response string or text where the corrected word ends.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based location in the response string or text where the corrected word ends.</p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }
     /// <p>The string or text of a misspelled word in a query.</p>
-    pub fn term(mut self, input: impl Into<std::string::String>) -> Self {
-        self.term = Some(input.into());
+    pub fn term(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.term = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string or text of a misspelled word in a query.</p>
-    pub fn set_term(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_term(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.term = input;
         self
     }
     /// <p>The string or text of a corrected misspelled word in a query.</p>
-    pub fn corrected_term(mut self, input: impl Into<std::string::String>) -> Self {
-        self.corrected_term = Some(input.into());
+    pub fn corrected_term(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.corrected_term = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string or text of a corrected misspelled word in a query.</p>
-    pub fn set_corrected_term(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_corrected_term(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.corrected_term = input;
         self
     }

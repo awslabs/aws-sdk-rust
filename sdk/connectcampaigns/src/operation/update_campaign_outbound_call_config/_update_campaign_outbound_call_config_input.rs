@@ -2,39 +2,39 @@
 
 /// UpdateCampaignOutboundCallConfigRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCampaignOutboundCallConfigInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// The identifier of the contact flow for the outbound call.
     #[doc(hidden)]
-    pub connect_contact_flow_id: std::option::Option<std::string::String>,
+    pub connect_contact_flow_id: ::std::option::Option<::std::string::String>,
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     #[doc(hidden)]
-    pub connect_source_phone_number: std::option::Option<std::string::String>,
+    pub connect_source_phone_number: ::std::option::Option<::std::string::String>,
     /// Answering Machine Detection config
     #[doc(hidden)]
     pub answer_machine_detection_config:
-        std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+        ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
 }
 impl UpdateCampaignOutboundCallConfigInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// The identifier of the contact flow for the outbound call.
-    pub fn connect_contact_flow_id(&self) -> std::option::Option<&str> {
+    pub fn connect_contact_flow_id(&self) -> ::std::option::Option<&str> {
         self.connect_contact_flow_id.as_deref()
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-    pub fn connect_source_phone_number(&self) -> std::option::Option<&str> {
+    pub fn connect_source_phone_number(&self) -> ::std::option::Option<&str> {
         self.connect_source_phone_number.as_deref()
     }
     /// Answering Machine Detection config
     pub fn answer_machine_detection_config(
         &self,
-    ) -> std::option::Option<&crate::types::AnswerMachineDetectionConfig> {
+    ) -> ::std::option::Option<&crate::types::AnswerMachineDetectionConfig> {
         self.answer_machine_detection_config.as_ref()
     }
 }
@@ -47,47 +47,55 @@ impl UpdateCampaignOutboundCallConfigInput {
 
 /// A builder for [`UpdateCampaignOutboundCallConfigInput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateCampaignOutboundCallConfigInputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) connect_contact_flow_id: std::option::Option<std::string::String>,
-    pub(crate) connect_source_phone_number: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) connect_contact_flow_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connect_source_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) answer_machine_detection_config:
-        std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+        ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
 }
 impl UpdateCampaignOutboundCallConfigInputBuilder {
     /// Identifier representing a Campaign
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// Identifier representing a Campaign
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// The identifier of the contact flow for the outbound call.
-    pub fn connect_contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connect_contact_flow_id = Some(input.into());
+    pub fn connect_contact_flow_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connect_contact_flow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The identifier of the contact flow for the outbound call.
     pub fn set_connect_contact_flow_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connect_contact_flow_id = input;
         self
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-    pub fn connect_source_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connect_source_phone_number = Some(input.into());
+    pub fn connect_source_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connect_source_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
     pub fn set_connect_source_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connect_source_phone_number = input;
         self
@@ -97,20 +105,20 @@ impl UpdateCampaignOutboundCallConfigInputBuilder {
         mut self,
         input: crate::types::AnswerMachineDetectionConfig,
     ) -> Self {
-        self.answer_machine_detection_config = Some(input);
+        self.answer_machine_detection_config = ::std::option::Option::Some(input);
         self
     }
     /// Answering Machine Detection config
     pub fn set_answer_machine_detection_config(
         mut self,
-        input: std::option::Option<crate::types::AnswerMachineDetectionConfig>,
+        input: ::std::option::Option<crate::types::AnswerMachineDetectionConfig>,
     ) -> Self {
         self.answer_machine_detection_config = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateCampaignOutboundCallConfigInput`](crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput).
-    pub fn build(self) -> Result<crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::update_campaign_outbound_call_config::UpdateCampaignOutboundCallConfigInput {
                 id: self.id
                 ,

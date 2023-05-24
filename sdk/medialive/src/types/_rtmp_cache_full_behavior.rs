@@ -38,13 +38,13 @@
 /// Rtmp Cache Full Behavior
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RtmpCacheFullBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RtmpCacheFullBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RtmpCacheFullBehavior {
+impl ::std::convert::From<&str> for RtmpCacheFullBehavior {
     fn from(s: &str) -> Self {
         match s {
             "DISCONNECT_IMMEDIATELY" => RtmpCacheFullBehavior::DisconnectImmediately,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for RtmpCacheFullBehavior {
         }
     }
 }
-impl std::str::FromStr for RtmpCacheFullBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RtmpCacheFullBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RtmpCacheFullBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RtmpCacheFullBehavior::from(s))
     }
 }
 impl RtmpCacheFullBehavior {
@@ -86,7 +86,7 @@ impl RtmpCacheFullBehavior {
         &["DISCONNECT_IMMEDIATELY", "WAIT_FOR_SERVER"]
     }
 }
-impl AsRef<str> for RtmpCacheFullBehavior {
+impl ::std::convert::AsRef<str> for RtmpCacheFullBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

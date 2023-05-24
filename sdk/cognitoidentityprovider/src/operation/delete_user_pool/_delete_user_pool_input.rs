@@ -2,15 +2,15 @@
 
 /// <p>Represents the request to delete a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUserPoolInput {
     /// <p>The user pool ID for the user pool you want to delete.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserPoolInput {
     /// <p>The user pool ID for the user pool you want to delete.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl DeleteUserPoolInput {
 
 /// A builder for [`DeleteUserPoolInput`](crate::operation::delete_user_pool::DeleteUserPoolInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteUserPoolInputBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUserPoolInputBuilder {
     /// <p>The user pool ID for the user pool you want to delete.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID for the user pool you want to delete.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteUserPoolInput`](crate::operation::delete_user_pool::DeleteUserPoolInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_user_pool::DeleteUserPoolInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_user_pool::DeleteUserPoolInput {
+        ::std::result::Result::Ok(crate::operation::delete_user_pool::DeleteUserPoolInput {
             user_pool_id: self.user_pool_id,
         })
     }

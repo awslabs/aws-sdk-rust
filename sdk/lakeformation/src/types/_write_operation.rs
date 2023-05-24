@@ -2,22 +2,22 @@
 
 /// <p>Defines an object to add to or delete from a governed table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WriteOperation {
     /// <p>A new object to add to the governed table.</p>
     #[doc(hidden)]
-    pub add_object: std::option::Option<crate::types::AddObjectInput>,
+    pub add_object: ::std::option::Option<crate::types::AddObjectInput>,
     /// <p>An object to delete from the governed table.</p>
     #[doc(hidden)]
-    pub delete_object: std::option::Option<crate::types::DeleteObjectInput>,
+    pub delete_object: ::std::option::Option<crate::types::DeleteObjectInput>,
 }
 impl WriteOperation {
     /// <p>A new object to add to the governed table.</p>
-    pub fn add_object(&self) -> std::option::Option<&crate::types::AddObjectInput> {
+    pub fn add_object(&self) -> ::std::option::Option<&crate::types::AddObjectInput> {
         self.add_object.as_ref()
     }
     /// <p>An object to delete from the governed table.</p>
-    pub fn delete_object(&self) -> std::option::Option<&crate::types::DeleteObjectInput> {
+    pub fn delete_object(&self) -> ::std::option::Option<&crate::types::DeleteObjectInput> {
         self.delete_object.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl WriteOperation {
 
 /// A builder for [`WriteOperation`](crate::types::WriteOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WriteOperationBuilder {
-    pub(crate) add_object: std::option::Option<crate::types::AddObjectInput>,
-    pub(crate) delete_object: std::option::Option<crate::types::DeleteObjectInput>,
+    pub(crate) add_object: ::std::option::Option<crate::types::AddObjectInput>,
+    pub(crate) delete_object: ::std::option::Option<crate::types::DeleteObjectInput>,
 }
 impl WriteOperationBuilder {
     /// <p>A new object to add to the governed table.</p>
     pub fn add_object(mut self, input: crate::types::AddObjectInput) -> Self {
-        self.add_object = Some(input);
+        self.add_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>A new object to add to the governed table.</p>
     pub fn set_add_object(
         mut self,
-        input: std::option::Option<crate::types::AddObjectInput>,
+        input: ::std::option::Option<crate::types::AddObjectInput>,
     ) -> Self {
         self.add_object = input;
         self
     }
     /// <p>An object to delete from the governed table.</p>
     pub fn delete_object(mut self, input: crate::types::DeleteObjectInput) -> Self {
-        self.delete_object = Some(input);
+        self.delete_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object to delete from the governed table.</p>
     pub fn set_delete_object(
         mut self,
-        input: std::option::Option<crate::types::DeleteObjectInput>,
+        input: ::std::option::Option<crate::types::DeleteObjectInput>,
     ) -> Self {
         self.delete_object = input;
         self

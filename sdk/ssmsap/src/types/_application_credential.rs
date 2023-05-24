@@ -2,34 +2,34 @@
 
 /// <p>The credentials of your SAP application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ApplicationCredential {
     /// <p>The name of the SAP HANA database.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the application credentials. </p>
     #[doc(hidden)]
-    pub credential_type: std::option::Option<crate::types::CredentialType>,
+    pub credential_type: ::std::option::Option<crate::types::CredentialType>,
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
     #[doc(hidden)]
-    pub secret_id: std::option::Option<std::string::String>,
+    pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationCredential {
     /// <p>The name of the SAP HANA database.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The type of the application credentials. </p>
-    pub fn credential_type(&self) -> std::option::Option<&crate::types::CredentialType> {
+    pub fn credential_type(&self) -> ::std::option::Option<&crate::types::CredentialType> {
         self.credential_type.as_ref()
     }
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
-    pub fn secret_id(&self) -> std::option::Option<&str> {
+    pub fn secret_id(&self) -> ::std::option::Option<&str> {
         self.secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for ApplicationCredential {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ApplicationCredential {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationCredential");
         formatter.field("database_name", &self.database_name);
         formatter.field("credential_type", &self.credential_type);
@@ -46,43 +46,49 @@ impl ApplicationCredential {
 
 /// A builder for [`ApplicationCredential`](crate::types::ApplicationCredential).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ApplicationCredentialBuilder {
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) credential_type: std::option::Option<crate::types::CredentialType>,
-    pub(crate) secret_id: std::option::Option<std::string::String>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) credential_type: ::std::option::Option<crate::types::CredentialType>,
+    pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationCredentialBuilder {
     /// <p>The name of the SAP HANA database.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SAP HANA database.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
     /// <p>The type of the application credentials. </p>
     pub fn credential_type(mut self, input: crate::types::CredentialType) -> Self {
-        self.credential_type = Some(input);
+        self.credential_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the application credentials. </p>
     pub fn set_credential_type(
         mut self,
-        input: std::option::Option<crate::types::CredentialType>,
+        input: ::std::option::Option<crate::types::CredentialType>,
     ) -> Self {
         self.credential_type = input;
         self
     }
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
-    pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_id = Some(input.into());
+    pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret ID created in AWS Secrets Manager to store the credentials of the SAP application. </p>
-    pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
     }
@@ -95,8 +101,8 @@ impl ApplicationCredentialBuilder {
         }
     }
 }
-impl std::fmt::Debug for ApplicationCredentialBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ApplicationCredentialBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ApplicationCredentialBuilder");
         formatter.field("database_name", &self.database_name);
         formatter.field("credential_type", &self.credential_type);

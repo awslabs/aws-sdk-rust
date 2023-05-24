@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`trace_ids(Vec<String>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::trace_ids) / [`set_trace_ids(Option<Vec<String>>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::set_trace_ids): <p>Trace IDs of requests for which to generate a service graph.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::set_next_token): <p>Pagination token.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_trace_graph::builders::GetTraceGraphFluentBuilder::set_next_token): <p>Pagination token.</p>
     /// - On success, responds with [`GetTraceGraphOutput`](crate::operation::get_trace_graph::GetTraceGraphOutput) with field(s):
     ///   - [`services(Option<Vec<Service>>)`](crate::operation::get_trace_graph::GetTraceGraphOutput::services): <p>The services that have processed one of the specified requests.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_trace_graph::GetTraceGraphOutput::next_token): <p>Pagination token.</p>

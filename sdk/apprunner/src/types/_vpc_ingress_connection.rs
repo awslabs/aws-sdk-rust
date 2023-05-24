@@ -2,73 +2,73 @@
 
 /// <p>The App Runner resource that specifies an App Runner endpoint for incoming traffic. It establishes a connection between a VPC interface endpoint and a App Runner service, to make your App Runner service accessible from only within an Amazon VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcIngressConnection {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
     #[doc(hidden)]
-    pub vpc_ingress_connection_arn: std::option::Option<std::string::String>,
+    pub vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided VPC Ingress Connection name.</p>
     #[doc(hidden)]
-    pub vpc_ingress_connection_name: std::option::Option<std::string::String>,
+    pub vpc_ingress_connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     #[doc(hidden)]
-    pub service_arn: std::option::Option<std::string::String>,
+    pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the VPC Ingress Connection. The VPC Ingress Connection displays one of the following statuses: <code>AVAILABLE</code>, <code>PENDING_CREATION</code>, <code>PENDING_UPDATE</code>, <code>PENDING_DELETION</code>,<code>FAILED_CREATION</code>, <code>FAILED_UPDATE</code>, <code>FAILED_DELETION</code>, and <code>DELETED</code>.. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::VpcIngressConnectionStatus>,
+    pub status: ::std::option::Option<crate::types::VpcIngressConnectionStatus>,
     /// <p>The Account Id you use to create the VPC Ingress Connection resource.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name associated with the VPC Ingress Connection resource.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifications for the customer’s VPC and related PrivateLink VPC endpoint that are used to associate with the VPC Ingress Connection resource.</p>
     #[doc(hidden)]
-    pub ingress_vpc_configuration: std::option::Option<crate::types::IngressVpcConfiguration>,
+    pub ingress_vpc_configuration: ::std::option::Option<crate::types::IngressVpcConfiguration>,
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
     /// <ul>
     /// <li> <p> Type: Timestamp </p> </li>
     /// <li> <p> Required: Yes </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
     /// <ul>
     /// <li> <p> Type: Timestamp </p> </li>
     /// <li> <p> Required: No </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub deleted_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcIngressConnection {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
-    pub fn vpc_ingress_connection_arn(&self) -> std::option::Option<&str> {
+    pub fn vpc_ingress_connection_arn(&self) -> ::std::option::Option<&str> {
         self.vpc_ingress_connection_arn.as_deref()
     }
     /// <p>The customer-provided VPC Ingress Connection name.</p>
-    pub fn vpc_ingress_connection_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_ingress_connection_name(&self) -> ::std::option::Option<&str> {
         self.vpc_ingress_connection_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
-    pub fn service_arn(&self) -> std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<&str> {
         self.service_arn.as_deref()
     }
     /// <p>The current status of the VPC Ingress Connection. The VPC Ingress Connection displays one of the following statuses: <code>AVAILABLE</code>, <code>PENDING_CREATION</code>, <code>PENDING_UPDATE</code>, <code>PENDING_DELETION</code>,<code>FAILED_CREATION</code>, <code>FAILED_UPDATE</code>, <code>FAILED_DELETION</code>, and <code>DELETED</code>.. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VpcIngressConnectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcIngressConnectionStatus> {
         self.status.as_ref()
     }
     /// <p>The Account Id you use to create the VPC Ingress Connection resource.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The domain name associated with the VPC Ingress Connection resource.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Specifications for the customer’s VPC and related PrivateLink VPC endpoint that are used to associate with the VPC Ingress Connection resource.</p>
     pub fn ingress_vpc_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::IngressVpcConfiguration> {
+    ) -> ::std::option::Option<&crate::types::IngressVpcConfiguration> {
         self.ingress_vpc_configuration.as_ref()
     }
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
@@ -76,7 +76,7 @@ impl VpcIngressConnection {
     /// <li> <p> Type: Timestamp </p> </li>
     /// <li> <p> Required: Yes </p> </li>
     /// </ul>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
@@ -84,7 +84,7 @@ impl VpcIngressConnection {
     /// <li> <p> Type: Timestamp </p> </li>
     /// <li> <p> Required: No </p> </li>
     /// </ul>
-    pub fn deleted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deleted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deleted_at.as_ref()
     }
 }
@@ -97,86 +97,94 @@ impl VpcIngressConnection {
 
 /// A builder for [`VpcIngressConnection`](crate::types::VpcIngressConnection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcIngressConnectionBuilder {
-    pub(crate) vpc_ingress_connection_arn: std::option::Option<std::string::String>,
-    pub(crate) vpc_ingress_connection_name: std::option::Option<std::string::String>,
-    pub(crate) service_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::VpcIngressConnectionStatus>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
+    pub(crate) vpc_ingress_connection_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_ingress_connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) service_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::VpcIngressConnectionStatus>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_vpc_configuration:
-        std::option::Option<crate::types::IngressVpcConfiguration>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) deleted_at: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<crate::types::IngressVpcConfiguration>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) deleted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcIngressConnectionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
-    pub fn vpc_ingress_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_ingress_connection_arn = Some(input.into());
+    pub fn vpc_ingress_connection_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_ingress_connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
     pub fn set_vpc_ingress_connection_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpc_ingress_connection_arn = input;
         self
     }
     /// <p>The customer-provided VPC Ingress Connection name.</p>
-    pub fn vpc_ingress_connection_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_ingress_connection_name = Some(input.into());
+    pub fn vpc_ingress_connection_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_ingress_connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-provided VPC Ingress Connection name.</p>
     pub fn set_vpc_ingress_connection_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpc_ingress_connection_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
-    pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_arn = Some(input.into());
+    pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
-    pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
     }
     /// <p>The current status of the VPC Ingress Connection. The VPC Ingress Connection displays one of the following statuses: <code>AVAILABLE</code>, <code>PENDING_CREATION</code>, <code>PENDING_UPDATE</code>, <code>PENDING_DELETION</code>,<code>FAILED_CREATION</code>, <code>FAILED_UPDATE</code>, <code>FAILED_DELETION</code>, and <code>DELETED</code>.. </p>
     pub fn status(mut self, input: crate::types::VpcIngressConnectionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the VPC Ingress Connection. The VPC Ingress Connection displays one of the following statuses: <code>AVAILABLE</code>, <code>PENDING_CREATION</code>, <code>PENDING_UPDATE</code>, <code>PENDING_DELETION</code>,<code>FAILED_CREATION</code>, <code>FAILED_UPDATE</code>, <code>FAILED_DELETION</code>, and <code>DELETED</code>.. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::VpcIngressConnectionStatus>,
+        input: ::std::option::Option<crate::types::VpcIngressConnectionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The Account Id you use to create the VPC Ingress Connection resource.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Account Id you use to create the VPC Ingress Connection resource.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The domain name associated with the VPC Ingress Connection resource.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name associated with the VPC Ingress Connection resource.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
@@ -185,13 +193,13 @@ impl VpcIngressConnectionBuilder {
         mut self,
         input: crate::types::IngressVpcConfiguration,
     ) -> Self {
-        self.ingress_vpc_configuration = Some(input);
+        self.ingress_vpc_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifications for the customer’s VPC and related PrivateLink VPC endpoint that are used to associate with the VPC Ingress Connection resource.</p>
     pub fn set_ingress_vpc_configuration(
         mut self,
-        input: std::option::Option<crate::types::IngressVpcConfiguration>,
+        input: ::std::option::Option<crate::types::IngressVpcConfiguration>,
     ) -> Self {
         self.ingress_vpc_configuration = input;
         self
@@ -201,8 +209,8 @@ impl VpcIngressConnectionBuilder {
     /// <li> <p> Type: Timestamp </p> </li>
     /// <li> <p> Required: Yes </p> </li>
     /// </ul>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the VPC Ingress Connection was created. It's in the Unix time stamp format.</p>
@@ -212,7 +220,7 @@ impl VpcIngressConnectionBuilder {
     /// </ul>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
@@ -222,8 +230,8 @@ impl VpcIngressConnectionBuilder {
     /// <li> <p> Type: Timestamp </p> </li>
     /// <li> <p> Required: No </p> </li>
     /// </ul>
-    pub fn deleted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.deleted_at = Some(input);
+    pub fn deleted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.deleted_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
@@ -233,7 +241,7 @@ impl VpcIngressConnectionBuilder {
     /// </ul>
     pub fn set_deleted_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.deleted_at = input;
         self

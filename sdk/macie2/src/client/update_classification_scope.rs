@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateClassificationScope`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     ///   - [`s3(S3ClassificationScopeUpdate)`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::s3) / [`set_s3(Option<S3ClassificationScopeUpdate>)`](crate::operation::update_classification_scope::builders::UpdateClassificationScopeFluentBuilder::set_s3): <p>The S3 buckets to add or remove from the exclusion list defined by the classification scope.</p>
     /// - On success, responds with [`UpdateClassificationScopeOutput`](crate::operation::update_classification_scope::UpdateClassificationScopeOutput)
     /// - On failure, responds with [`SdkError<UpdateClassificationScopeError>`](crate::operation::update_classification_scope::UpdateClassificationScopeError)

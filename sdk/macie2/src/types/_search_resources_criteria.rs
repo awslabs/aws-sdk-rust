@@ -2,24 +2,26 @@
 
 /// <p>Specifies a property- or tag-based filter condition for including or excluding Amazon Web Services resources from the query results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesCriteria {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
     #[doc(hidden)]
-    pub simple_criterion: std::option::Option<crate::types::SearchResourcesSimpleCriterion>,
+    pub simple_criterion: ::std::option::Option<crate::types::SearchResourcesSimpleCriterion>,
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
     #[doc(hidden)]
-    pub tag_criterion: std::option::Option<crate::types::SearchResourcesTagCriterion>,
+    pub tag_criterion: ::std::option::Option<crate::types::SearchResourcesTagCriterion>,
 }
 impl SearchResourcesCriteria {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
     pub fn simple_criterion(
         &self,
-    ) -> std::option::Option<&crate::types::SearchResourcesSimpleCriterion> {
+    ) -> ::std::option::Option<&crate::types::SearchResourcesSimpleCriterion> {
         self.simple_criterion.as_ref()
     }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
-    pub fn tag_criterion(&self) -> std::option::Option<&crate::types::SearchResourcesTagCriterion> {
+    pub fn tag_criterion(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SearchResourcesTagCriterion> {
         self.tag_criterion.as_ref()
     }
 }
@@ -32,34 +34,37 @@ impl SearchResourcesCriteria {
 
 /// A builder for [`SearchResourcesCriteria`](crate::types::SearchResourcesCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchResourcesCriteriaBuilder {
-    pub(crate) simple_criterion: std::option::Option<crate::types::SearchResourcesSimpleCriterion>,
-    pub(crate) tag_criterion: std::option::Option<crate::types::SearchResourcesTagCriterion>,
+    pub(crate) simple_criterion:
+        ::std::option::Option<crate::types::SearchResourcesSimpleCriterion>,
+    pub(crate) tag_criterion: ::std::option::Option<crate::types::SearchResourcesTagCriterion>,
 }
 impl SearchResourcesCriteriaBuilder {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
     pub fn simple_criterion(mut self, input: crate::types::SearchResourcesSimpleCriterion) -> Self {
-        self.simple_criterion = Some(input);
+        self.simple_criterion = ::std::option::Option::Some(input);
         self
     }
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
     pub fn set_simple_criterion(
         mut self,
-        input: std::option::Option<crate::types::SearchResourcesSimpleCriterion>,
+        input: ::std::option::Option<crate::types::SearchResourcesSimpleCriterion>,
     ) -> Self {
         self.simple_criterion = input;
         self
     }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
     pub fn tag_criterion(mut self, input: crate::types::SearchResourcesTagCriterion) -> Self {
-        self.tag_criterion = Some(input);
+        self.tag_criterion = ::std::option::Option::Some(input);
         self
     }
     /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
     pub fn set_tag_criterion(
         mut self,
-        input: std::option::Option<crate::types::SearchResourcesTagCriterion>,
+        input: ::std::option::Option<crate::types::SearchResourcesTagCriterion>,
     ) -> Self {
         self.tag_criterion = input;
         self

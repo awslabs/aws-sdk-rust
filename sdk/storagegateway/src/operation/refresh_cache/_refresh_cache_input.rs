@@ -2,31 +2,31 @@
 
 /// <p>RefreshCacheInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
     #[doc(hidden)]
-    pub file_share_arn: std::option::Option<std::string::String>,
+    pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
     #[doc(hidden)]
-    pub folder_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub folder_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
-    pub recursive: std::option::Option<bool>,
+    pub recursive: ::std::option::Option<bool>,
 }
 impl RefreshCacheInput {
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
-    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+    pub fn file_share_arn(&self) -> ::std::option::Option<&str> {
         self.file_share_arn.as_deref()
     }
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
-    pub fn folder_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn folder_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.folder_list.as_deref()
     }
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn recursive(&self) -> std::option::Option<bool> {
+    pub fn recursive(&self) -> ::std::option::Option<bool> {
         self.recursive
     }
 }
@@ -39,20 +39,28 @@ impl RefreshCacheInput {
 
 /// A builder for [`RefreshCacheInput`](crate::operation::refresh_cache::RefreshCacheInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RefreshCacheInputBuilder {
-    pub(crate) file_share_arn: std::option::Option<std::string::String>,
-    pub(crate) folder_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) recursive: std::option::Option<bool>,
+    pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) folder_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recursive: ::std::option::Option<bool>,
 }
 impl RefreshCacheInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
-    pub fn file_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_share_arn = Some(input.into());
+    pub fn file_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
-    pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_share_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_share_arn = input;
         self
     }
@@ -61,16 +69,16 @@ impl RefreshCacheInputBuilder {
     /// To override the contents of this collection use [`set_folder_list`](Self::set_folder_list).
     ///
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
-    pub fn folder_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn folder_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.folder_list.unwrap_or_default();
         v.push(input.into());
-        self.folder_list = Some(v);
+        self.folder_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
     pub fn set_folder_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.folder_list = input;
         self
@@ -78,23 +86,23 @@ impl RefreshCacheInputBuilder {
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn recursive(mut self, input: bool) -> Self {
-        self.recursive = Some(input);
+        self.recursive = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.recursive = input;
         self
     }
     /// Consumes the builder and constructs a [`RefreshCacheInput`](crate::operation::refresh_cache::RefreshCacheInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::refresh_cache::RefreshCacheInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::refresh_cache::RefreshCacheInput {
+        ::std::result::Result::Ok(crate::operation::refresh_cache::RefreshCacheInput {
             file_share_arn: self.file_share_arn,
             folder_list: self.folder_list,
             recursive: self.recursive,

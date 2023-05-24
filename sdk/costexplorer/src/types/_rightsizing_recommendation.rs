@@ -2,55 +2,59 @@
 
 /// <p>Recommendations to rightsize resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RightsizingRecommendation {
     /// <p>The account that this recommendation is for.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Context regarding the current instance.</p>
     #[doc(hidden)]
-    pub current_instance: std::option::Option<crate::types::CurrentInstance>,
+    pub current_instance: ::std::option::Option<crate::types::CurrentInstance>,
     /// <p>A recommendation to either terminate or modify the resource.</p>
     #[doc(hidden)]
-    pub rightsizing_type: std::option::Option<crate::types::RightsizingType>,
+    pub rightsizing_type: ::std::option::Option<crate::types::RightsizingType>,
     /// <p>The details for the modification recommendations. </p>
     #[doc(hidden)]
-    pub modify_recommendation_detail: std::option::Option<crate::types::ModifyRecommendationDetail>,
+    pub modify_recommendation_detail:
+        ::std::option::Option<crate::types::ModifyRecommendationDetail>,
     /// <p>The details for termination recommendations.</p>
     #[doc(hidden)]
     pub terminate_recommendation_detail:
-        std::option::Option<crate::types::TerminateRecommendationDetail>,
+        ::std::option::Option<crate::types::TerminateRecommendationDetail>,
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     #[doc(hidden)]
-    pub finding_reason_codes: std::option::Option<std::vec::Vec<crate::types::FindingReasonCode>>,
+    pub finding_reason_codes:
+        ::std::option::Option<::std::vec::Vec<crate::types::FindingReasonCode>>,
 }
 impl RightsizingRecommendation {
     /// <p>The account that this recommendation is for.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Context regarding the current instance.</p>
-    pub fn current_instance(&self) -> std::option::Option<&crate::types::CurrentInstance> {
+    pub fn current_instance(&self) -> ::std::option::Option<&crate::types::CurrentInstance> {
         self.current_instance.as_ref()
     }
     /// <p>A recommendation to either terminate or modify the resource.</p>
-    pub fn rightsizing_type(&self) -> std::option::Option<&crate::types::RightsizingType> {
+    pub fn rightsizing_type(&self) -> ::std::option::Option<&crate::types::RightsizingType> {
         self.rightsizing_type.as_ref()
     }
     /// <p>The details for the modification recommendations. </p>
     pub fn modify_recommendation_detail(
         &self,
-    ) -> std::option::Option<&crate::types::ModifyRecommendationDetail> {
+    ) -> ::std::option::Option<&crate::types::ModifyRecommendationDetail> {
         self.modify_recommendation_detail.as_ref()
     }
     /// <p>The details for termination recommendations.</p>
     pub fn terminate_recommendation_detail(
         &self,
-    ) -> std::option::Option<&crate::types::TerminateRecommendationDetail> {
+    ) -> ::std::option::Option<&crate::types::TerminateRecommendationDetail> {
         self.terminate_recommendation_detail.as_ref()
     }
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
-    pub fn finding_reason_codes(&self) -> std::option::Option<&[crate::types::FindingReasonCode]> {
+    pub fn finding_reason_codes(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::FindingReasonCode]> {
         self.finding_reason_codes.as_deref()
     }
 }
@@ -63,51 +67,53 @@ impl RightsizingRecommendation {
 
 /// A builder for [`RightsizingRecommendation`](crate::types::RightsizingRecommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RightsizingRecommendationBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) current_instance: std::option::Option<crate::types::CurrentInstance>,
-    pub(crate) rightsizing_type: std::option::Option<crate::types::RightsizingType>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) current_instance: ::std::option::Option<crate::types::CurrentInstance>,
+    pub(crate) rightsizing_type: ::std::option::Option<crate::types::RightsizingType>,
     pub(crate) modify_recommendation_detail:
-        std::option::Option<crate::types::ModifyRecommendationDetail>,
+        ::std::option::Option<crate::types::ModifyRecommendationDetail>,
     pub(crate) terminate_recommendation_detail:
-        std::option::Option<crate::types::TerminateRecommendationDetail>,
+        ::std::option::Option<crate::types::TerminateRecommendationDetail>,
     pub(crate) finding_reason_codes:
-        std::option::Option<std::vec::Vec<crate::types::FindingReasonCode>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FindingReasonCode>>,
 }
 impl RightsizingRecommendationBuilder {
     /// <p>The account that this recommendation is for.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account that this recommendation is for.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>Context regarding the current instance.</p>
     pub fn current_instance(mut self, input: crate::types::CurrentInstance) -> Self {
-        self.current_instance = Some(input);
+        self.current_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Context regarding the current instance.</p>
     pub fn set_current_instance(
         mut self,
-        input: std::option::Option<crate::types::CurrentInstance>,
+        input: ::std::option::Option<crate::types::CurrentInstance>,
     ) -> Self {
         self.current_instance = input;
         self
     }
     /// <p>A recommendation to either terminate or modify the resource.</p>
     pub fn rightsizing_type(mut self, input: crate::types::RightsizingType) -> Self {
-        self.rightsizing_type = Some(input);
+        self.rightsizing_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>A recommendation to either terminate or modify the resource.</p>
     pub fn set_rightsizing_type(
         mut self,
-        input: std::option::Option<crate::types::RightsizingType>,
+        input: ::std::option::Option<crate::types::RightsizingType>,
     ) -> Self {
         self.rightsizing_type = input;
         self
@@ -117,13 +123,13 @@ impl RightsizingRecommendationBuilder {
         mut self,
         input: crate::types::ModifyRecommendationDetail,
     ) -> Self {
-        self.modify_recommendation_detail = Some(input);
+        self.modify_recommendation_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for the modification recommendations. </p>
     pub fn set_modify_recommendation_detail(
         mut self,
-        input: std::option::Option<crate::types::ModifyRecommendationDetail>,
+        input: ::std::option::Option<crate::types::ModifyRecommendationDetail>,
     ) -> Self {
         self.modify_recommendation_detail = input;
         self
@@ -133,13 +139,13 @@ impl RightsizingRecommendationBuilder {
         mut self,
         input: crate::types::TerminateRecommendationDetail,
     ) -> Self {
-        self.terminate_recommendation_detail = Some(input);
+        self.terminate_recommendation_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for termination recommendations.</p>
     pub fn set_terminate_recommendation_detail(
         mut self,
-        input: std::option::Option<crate::types::TerminateRecommendationDetail>,
+        input: ::std::option::Option<crate::types::TerminateRecommendationDetail>,
     ) -> Self {
         self.terminate_recommendation_detail = input;
         self
@@ -152,13 +158,13 @@ impl RightsizingRecommendationBuilder {
     pub fn finding_reason_codes(mut self, input: crate::types::FindingReasonCode) -> Self {
         let mut v = self.finding_reason_codes.unwrap_or_default();
         v.push(input);
-        self.finding_reason_codes = Some(v);
+        self.finding_reason_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of possible reasons why the recommendation is generated, such as under- or over-utilization of specific metrics (for example, CPU, Memory, Network). </p>
     pub fn set_finding_reason_codes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FindingReasonCode>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingReasonCode>>,
     ) -> Self {
         self.finding_reason_codes = input;
         self

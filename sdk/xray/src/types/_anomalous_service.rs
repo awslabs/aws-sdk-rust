@@ -2,15 +2,15 @@
 
 /// <p>The service within the service graph that has anomalously high fault rates. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalousService {
     /// <p></p>
     #[doc(hidden)]
-    pub service_id: std::option::Option<crate::types::ServiceId>,
+    pub service_id: ::std::option::Option<crate::types::ServiceId>,
 }
 impl AnomalousService {
     /// <p></p>
-    pub fn service_id(&self) -> std::option::Option<&crate::types::ServiceId> {
+    pub fn service_id(&self) -> ::std::option::Option<&crate::types::ServiceId> {
         self.service_id.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl AnomalousService {
 
 /// A builder for [`AnomalousService`](crate::types::AnomalousService).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnomalousServiceBuilder {
-    pub(crate) service_id: std::option::Option<crate::types::ServiceId>,
+    pub(crate) service_id: ::std::option::Option<crate::types::ServiceId>,
 }
 impl AnomalousServiceBuilder {
     /// <p></p>
     pub fn service_id(mut self, input: crate::types::ServiceId) -> Self {
-        self.service_id = Some(input);
+        self.service_id = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_service_id(mut self, input: std::option::Option<crate::types::ServiceId>) -> Self {
+    pub fn set_service_id(mut self, input: ::std::option::Option<crate::types::ServiceId>) -> Self {
         self.service_id = input;
         self
     }

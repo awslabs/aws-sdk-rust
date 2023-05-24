@@ -2,27 +2,27 @@
 
 /// <p>Provides information on any <code>TranscriptFilterType</code> categories that matched your transcription output. Matches are identified for each segment upon completion of that segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryEvent {
     /// <p>Lists the categories that were matched in your audio segment.</p>
     #[doc(hidden)]
-    pub matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub matched_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     #[doc(hidden)]
-    pub matched_details: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::PointsOfInterest>,
+    pub matched_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
     >,
 }
 impl CategoryEvent {
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn matched_categories(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn matched_categories(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.matched_categories.as_deref()
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     pub fn matched_details(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::PointsOfInterest>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
     > {
         self.matched_details.as_ref()
     }
@@ -36,11 +36,13 @@ impl CategoryEvent {
 
 /// A builder for [`CategoryEvent`](crate::types::CategoryEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CategoryEventBuilder {
-    pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) matched_details: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::PointsOfInterest>,
+    pub(crate) matched_categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) matched_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
     >,
 }
 impl CategoryEventBuilder {
@@ -49,16 +51,19 @@ impl CategoryEventBuilder {
     /// To override the contents of this collection use [`set_matched_categories`](Self::set_matched_categories).
     ///
     /// <p>Lists the categories that were matched in your audio segment.</p>
-    pub fn matched_categories(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn matched_categories(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.matched_categories.unwrap_or_default();
         v.push(input.into());
-        self.matched_categories = Some(v);
+        self.matched_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lists the categories that were matched in your audio segment.</p>
     pub fn set_matched_categories(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.matched_categories = input;
         self
@@ -70,19 +75,19 @@ impl CategoryEventBuilder {
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     pub fn matched_details(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::PointsOfInterest,
     ) -> Self {
         let mut hash_map = self.matched_details.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.matched_details = Some(hash_map);
+        self.matched_details = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Contains information about the matched categories, including category names and timestamps.</p>
     pub fn set_matched_details(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::PointsOfInterest>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::PointsOfInterest>,
         >,
     ) -> Self {
         self.matched_details = input;

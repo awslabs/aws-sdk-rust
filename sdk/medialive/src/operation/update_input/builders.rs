@@ -6,56 +6,59 @@ pub use crate::operation::update_input::_update_input_input::UpdateInputInputBui
 /// Fluent builder constructing a request to `UpdateInput`.
 ///
 /// Updates an input.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInputFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_input::builders::UpdateInputInputBuilder,
 }
 impl UpdateInputFluentBuilder {
     /// Creates a new `UpdateInput`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_input::UpdateInput,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_input::UpdateInputOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl UpdateInputFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_input::UpdateInputOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
     > {
         self.send_middleware().await
     }
@@ -86,7 +89,7 @@ impl UpdateInputFluentBuilder {
     /// Destination settings for PUSH type inputs.
     pub fn set_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputDestinationRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDestinationRequest>>,
     ) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
@@ -103,18 +106,18 @@ impl UpdateInputFluentBuilder {
     /// Settings for the devices.
     pub fn set_input_devices(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputDeviceRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceRequest>>,
     ) -> Self {
         self.inner = self.inner.set_input_devices(input);
         self
     }
     /// Unique ID of the input.
-    pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_id(input.into());
         self
     }
     /// Unique ID of the input.
-    pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_id(input);
         self
     }
@@ -123,14 +126,17 @@ impl UpdateInputFluentBuilder {
     /// To override the contents of this collection use [`set_input_security_groups`](Self::set_input_security_groups).
     ///
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn input_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn input_security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.input_security_groups(input.into());
         self
     }
     /// A list of security groups referenced by IDs to attach to the input.
     pub fn set_input_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_input_security_groups(input);
         self
@@ -147,28 +153,28 @@ impl UpdateInputFluentBuilder {
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
     pub fn set_media_connect_flows(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
     ) -> Self {
         self.inner = self.inner.set_media_connect_flows(input);
         self
     }
     /// Name of the input.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// Name of the input.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -184,7 +190,7 @@ impl UpdateInputFluentBuilder {
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
     pub fn set_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputSourceRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self

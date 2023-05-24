@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeGateway`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::set_gateway_arn): The Amazon Resource Name (ARN) of the gateway that you want to describe.
+    ///   - [`gateway_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::describe_gateway::builders::DescribeGatewayFluentBuilder::set_gateway_arn): The Amazon Resource Name (ARN) of the gateway that you want to describe.
     /// - On success, responds with [`DescribeGatewayOutput`](crate::operation::describe_gateway::DescribeGatewayOutput) with field(s):
     ///   - [`gateway(Option<Gateway>)`](crate::operation::describe_gateway::DescribeGatewayOutput::gateway): The settings for a gateway, including its networks.
     /// - On failure, responds with [`SdkError<DescribeGatewayError>`](crate::operation::describe_gateway::DescribeGatewayError)

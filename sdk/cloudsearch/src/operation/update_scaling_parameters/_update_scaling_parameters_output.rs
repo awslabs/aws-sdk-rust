@@ -2,22 +2,22 @@
 
 /// <p>The result of a <code>UpdateScalingParameters</code> request. Contains the status of the newly-configured scaling parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     #[doc(hidden)]
-    pub scaling_parameters: std::option::Option<crate::types::ScalingParametersStatus>,
+    pub scaling_parameters: ::std::option::Option<crate::types::ScalingParametersStatus>,
     _request_id: Option<String>,
 }
 impl UpdateScalingParametersOutput {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub fn scaling_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::ScalingParametersStatus> {
+    ) -> ::std::option::Option<&crate::types::ScalingParametersStatus> {
         self.scaling_parameters.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateScalingParametersOutput {
+impl ::aws_http::request_id::RequestId for UpdateScalingParametersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,21 +33,23 @@ impl UpdateScalingParametersOutput {
 
 /// A builder for [`UpdateScalingParametersOutput`](crate::operation::update_scaling_parameters::UpdateScalingParametersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateScalingParametersOutputBuilder {
-    pub(crate) scaling_parameters: std::option::Option<crate::types::ScalingParametersStatus>,
+    pub(crate) scaling_parameters: ::std::option::Option<crate::types::ScalingParametersStatus>,
     _request_id: Option<String>,
 }
 impl UpdateScalingParametersOutputBuilder {
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub fn scaling_parameters(mut self, input: crate::types::ScalingParametersStatus) -> Self {
-        self.scaling_parameters = Some(input);
+        self.scaling_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status and configuration of a search domain's scaling parameters. </p>
     pub fn set_scaling_parameters(
         mut self,
-        input: std::option::Option<crate::types::ScalingParametersStatus>,
+        input: ::std::option::Option<crate::types::ScalingParametersStatus>,
     ) -> Self {
         self.scaling_parameters = input;
         self

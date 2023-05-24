@@ -9,29 +9,29 @@ pub use crate::operation::set_user_pool_mfa_config::_set_user_pool_mfa_config_in
 /// <p>This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.</p>
 /// <p>If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification Service might place your account in the SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"> SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetUserPoolMfaConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::set_user_pool_mfa_config::builders::SetUserPoolMfaConfigInputBuilder,
 }
 impl SetUserPoolMfaConfigFluentBuilder {
     /// Creates a new `SetUserPoolMfaConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfig,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
         >,
     > {
@@ -39,30 +39,33 @@ impl SetUserPoolMfaConfigFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,21 +78,21 @@ impl SetUserPoolMfaConfigFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
     /// <p>The user pool ID.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
@@ -101,7 +104,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
     /// <p>The SMS text message MFA configuration.</p>
     pub fn set_sms_mfa_configuration(
         mut self,
-        input: std::option::Option<crate::types::SmsMfaConfigType>,
+        input: ::std::option::Option<crate::types::SmsMfaConfigType>,
     ) -> Self {
         self.inner = self.inner.set_sms_mfa_configuration(input);
         self
@@ -117,7 +120,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
     /// <p>The software token MFA configuration.</p>
     pub fn set_software_token_mfa_configuration(
         mut self,
-        input: std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
+        input: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     ) -> Self {
         self.inner = self.inner.set_software_token_mfa_configuration(input);
         self
@@ -140,7 +143,7 @@ impl SetUserPoolMfaConfigFluentBuilder {
     /// </ul>
     pub fn set_mfa_configuration(
         mut self,
-        input: std::option::Option<crate::types::UserPoolMfaType>,
+        input: ::std::option::Option<crate::types::UserPoolMfaType>,
     ) -> Self {
         self.inner = self.inner.set_mfa_configuration(input);
         self

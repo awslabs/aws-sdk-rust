@@ -2,7 +2,7 @@
 
 /// <p>The value label configuration of the label in a reference line.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceLineValueLabelConfiguration {
     /// <p>The relative position of the value label. Choose one of the following options:</p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct ReferenceLineValueLabelConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub relative_position:
-        std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
+        ::std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
     /// <p>The format configuration of the value label.</p>
     #[doc(hidden)]
-    pub format_configuration: std::option::Option<crate::types::NumericFormatConfiguration>,
+    pub format_configuration: ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl ReferenceLineValueLabelConfiguration {
     /// <p>The relative position of the value label. Choose one of the following options:</p>
@@ -24,13 +24,13 @@ impl ReferenceLineValueLabelConfiguration {
     /// </ul>
     pub fn relative_position(
         &self,
-    ) -> std::option::Option<&crate::types::ReferenceLineValueLabelRelativePosition> {
+    ) -> ::std::option::Option<&crate::types::ReferenceLineValueLabelRelativePosition> {
         self.relative_position.as_ref()
     }
     /// <p>The format configuration of the value label.</p>
     pub fn format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NumericFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NumericFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -43,11 +43,14 @@ impl ReferenceLineValueLabelConfiguration {
 
 /// A builder for [`ReferenceLineValueLabelConfiguration`](crate::types::ReferenceLineValueLabelConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReferenceLineValueLabelConfigurationBuilder {
     pub(crate) relative_position:
-        std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
-    pub(crate) format_configuration: std::option::Option<crate::types::NumericFormatConfiguration>,
+        ::std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
+    pub(crate) format_configuration:
+        ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl ReferenceLineValueLabelConfigurationBuilder {
     /// <p>The relative position of the value label. Choose one of the following options:</p>
@@ -59,7 +62,7 @@ impl ReferenceLineValueLabelConfigurationBuilder {
         mut self,
         input: crate::types::ReferenceLineValueLabelRelativePosition,
     ) -> Self {
-        self.relative_position = Some(input);
+        self.relative_position = ::std::option::Option::Some(input);
         self
     }
     /// <p>The relative position of the value label. Choose one of the following options:</p>
@@ -69,20 +72,20 @@ impl ReferenceLineValueLabelConfigurationBuilder {
     /// </ul>
     pub fn set_relative_position(
         mut self,
-        input: std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
+        input: ::std::option::Option<crate::types::ReferenceLineValueLabelRelativePosition>,
     ) -> Self {
         self.relative_position = input;
         self
     }
     /// <p>The format configuration of the value label.</p>
     pub fn format_configuration(mut self, input: crate::types::NumericFormatConfiguration) -> Self {
-        self.format_configuration = Some(input);
+        self.format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format configuration of the value label.</p>
     pub fn set_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::NumericFormatConfiguration>,
+        input: ::std::option::Option<crate::types::NumericFormatConfiguration>,
     ) -> Self {
         self.format_configuration = input;
         self

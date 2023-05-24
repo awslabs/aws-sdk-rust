@@ -2,30 +2,30 @@
 
 /// <p>Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of reserved Elasticsearch instance offerings</p>
     #[doc(hidden)]
     pub reserved_elasticsearch_instance_offerings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedElasticsearchInstanceOfferingsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>List of reserved Elasticsearch instance offerings</p>
     pub fn reserved_elasticsearch_instance_offerings(
         &self,
-    ) -> std::option::Option<&[crate::types::ReservedElasticsearchInstanceOffering]> {
+    ) -> ::std::option::Option<&[crate::types::ReservedElasticsearchInstanceOffering]> {
         self.reserved_elasticsearch_instance_offerings.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedElasticsearchInstanceOfferingsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedElasticsearchInstanceOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutput {
 
 /// A builder for [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_elasticsearch_instance_offerings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -70,14 +72,14 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutputBuilder {
             .reserved_elasticsearch_instance_offerings
             .unwrap_or_default();
         v.push(input);
-        self.reserved_elasticsearch_instance_offerings = Some(v);
+        self.reserved_elasticsearch_instance_offerings = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of reserved Elasticsearch instance offerings</p>
     pub fn set_reserved_elasticsearch_instance_offerings(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ReservedElasticsearchInstanceOffering>,
         >,
     ) -> Self {
         self.reserved_elasticsearch_instance_offerings = input;

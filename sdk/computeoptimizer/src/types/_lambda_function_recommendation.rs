@@ -2,17 +2,17 @@
 
 /// <p>Describes an Lambda function recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
     #[doc(hidden)]
-    pub function_arn: std::option::Option<std::string::String>,
+    pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the current function.</p>
     #[doc(hidden)]
-    pub function_version: std::option::Option<std::string::String>,
+    pub function_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the function.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory, in MB, that's allocated to the current function.</p>
     #[doc(hidden)]
     pub current_memory_size: i32,
@@ -22,13 +22,13 @@ pub struct LambdaFunctionRecommendation {
     /// <p>An array of objects that describe the utilization metrics of the function.</p>
     #[doc(hidden)]
     pub utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::LambdaFunctionUtilizationMetric>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionUtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the function.</p>
     #[doc(hidden)]
     pub lookback_period_in_days: f64,
     /// <p>The timestamp of when the function recommendation was last generated.</p>
     #[doc(hidden)]
-    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The finding classification of the function.</p>
     /// <p>Findings for functions include:</p>
     /// <ul>
@@ -39,7 +39,7 @@ pub struct LambdaFunctionRecommendation {
     /// </note> </li>
     /// </ul>
     #[doc(hidden)]
-    pub finding: std::option::Option<crate::types::LambdaFunctionRecommendationFinding>,
+    pub finding: ::std::option::Option<crate::types::LambdaFunctionRecommendationFinding>,
     /// <p>The reason for the finding classification of the function.</p> <note>
     /// <p>Functions that have a finding classification of <code>Optimized</code> don't have a finding reason code.</p>
     /// </note>
@@ -51,31 +51,32 @@ pub struct LambdaFunctionRecommendation {
     /// <li> <p> <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation because Compute Optimizer cannot generate a recommendation with a high degree of confidence. This finding reason code is part of the <code>Unavailable</code> finding classification.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub finding_reason_codes: std::option::Option<
-        std::vec::Vec<crate::types::LambdaFunctionRecommendationFindingReasonCode>,
+    pub finding_reason_codes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::LambdaFunctionRecommendationFindingReasonCode>,
     >,
     /// <p>An array of objects that describe the memory configuration recommendation options for the function.</p>
     #[doc(hidden)]
-    pub memory_size_recommendation_options:
-        std::option::Option<std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>>,
+    pub memory_size_recommendation_options: ::std::option::Option<
+        ::std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>,
+    >,
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     #[doc(hidden)]
-    pub current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p> A list of tags assigned to your Lambda function recommendations. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaFunctionRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> ::std::option::Option<&str> {
         self.function_arn.as_deref()
     }
     /// <p>The version number of the current function.</p>
-    pub fn function_version(&self) -> std::option::Option<&str> {
+    pub fn function_version(&self) -> ::std::option::Option<&str> {
         self.function_version.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the function.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The amount of memory, in MB, that's allocated to the current function.</p>
@@ -89,7 +90,7 @@ impl LambdaFunctionRecommendation {
     /// <p>An array of objects that describe the utilization metrics of the function.</p>
     pub fn utilization_metrics(
         &self,
-    ) -> std::option::Option<&[crate::types::LambdaFunctionUtilizationMetric]> {
+    ) -> ::std::option::Option<&[crate::types::LambdaFunctionUtilizationMetric]> {
         self.utilization_metrics.as_deref()
     }
     /// <p>The number of days for which utilization metrics were analyzed for the function.</p>
@@ -97,7 +98,7 @@ impl LambdaFunctionRecommendation {
         self.lookback_period_in_days
     }
     /// <p>The timestamp of when the function recommendation was last generated.</p>
-    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_refresh_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
     /// <p>The finding classification of the function.</p>
@@ -111,7 +112,7 @@ impl LambdaFunctionRecommendation {
     /// </ul>
     pub fn finding(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionRecommendationFinding> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionRecommendationFinding> {
         self.finding.as_ref()
     }
     /// <p>The reason for the finding classification of the function.</p> <note>
@@ -126,23 +127,23 @@ impl LambdaFunctionRecommendation {
     /// </ul>
     pub fn finding_reason_codes(
         &self,
-    ) -> std::option::Option<&[crate::types::LambdaFunctionRecommendationFindingReasonCode]> {
+    ) -> ::std::option::Option<&[crate::types::LambdaFunctionRecommendationFindingReasonCode]> {
         self.finding_reason_codes.as_deref()
     }
     /// <p>An array of objects that describe the memory configuration recommendation options for the function.</p>
     pub fn memory_size_recommendation_options(
         &self,
-    ) -> std::option::Option<&[crate::types::LambdaFunctionMemoryRecommendationOption]> {
+    ) -> ::std::option::Option<&[crate::types::LambdaFunctionMemoryRecommendationOption]> {
         self.memory_size_recommendation_options.as_deref()
     }
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     pub fn current_performance_risk(
         &self,
-    ) -> std::option::Option<&crate::types::CurrentPerformanceRisk> {
+    ) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
     /// <p> A list of tags assigned to your Lambda function recommendations. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -155,74 +156,84 @@ impl LambdaFunctionRecommendation {
 
 /// A builder for [`LambdaFunctionRecommendation`](crate::types::LambdaFunctionRecommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionRecommendationBuilder {
-    pub(crate) function_arn: std::option::Option<std::string::String>,
-    pub(crate) function_version: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) current_memory_size: std::option::Option<i32>,
-    pub(crate) number_of_invocations: std::option::Option<i64>,
+    pub(crate) function_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) function_version: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) current_memory_size: ::std::option::Option<i32>,
+    pub(crate) number_of_invocations: ::std::option::Option<i64>,
     pub(crate) utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::LambdaFunctionUtilizationMetric>>,
-    pub(crate) lookback_period_in_days: std::option::Option<f64>,
-    pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) finding: std::option::Option<crate::types::LambdaFunctionRecommendationFinding>,
-    pub(crate) finding_reason_codes: std::option::Option<
-        std::vec::Vec<crate::types::LambdaFunctionRecommendationFindingReasonCode>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LambdaFunctionUtilizationMetric>>,
+    pub(crate) lookback_period_in_days: ::std::option::Option<f64>,
+    pub(crate) last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) finding: ::std::option::Option<crate::types::LambdaFunctionRecommendationFinding>,
+    pub(crate) finding_reason_codes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::LambdaFunctionRecommendationFindingReasonCode>,
     >,
-    pub(crate) memory_size_recommendation_options:
-        std::option::Option<std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>>,
-    pub(crate) current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) memory_size_recommendation_options: ::std::option::Option<
+        ::std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>,
+    >,
+    pub(crate) current_performance_risk:
+        ::std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaFunctionRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
-    pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_arn = Some(input.into());
+    pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
-    pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_arn = input;
         self
     }
     /// <p>The version number of the current function.</p>
-    pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_version = Some(input.into());
+    pub fn function_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.function_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the current function.</p>
-    pub fn set_function_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.function_version = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the function.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the function.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The amount of memory, in MB, that's allocated to the current function.</p>
     pub fn current_memory_size(mut self, input: i32) -> Self {
-        self.current_memory_size = Some(input);
+        self.current_memory_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of memory, in MB, that's allocated to the current function.</p>
-    pub fn set_current_memory_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_current_memory_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_memory_size = input;
         self
     }
     /// <p>The number of times your function code was applied during the look-back period.</p>
     pub fn number_of_invocations(mut self, input: i64) -> Self {
-        self.number_of_invocations = Some(input);
+        self.number_of_invocations = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of times your function code was applied during the look-back period.</p>
-    pub fn set_number_of_invocations(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_invocations(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_invocations = input;
         self
     }
@@ -237,36 +248,38 @@ impl LambdaFunctionRecommendationBuilder {
     ) -> Self {
         let mut v = self.utilization_metrics.unwrap_or_default();
         v.push(input);
-        self.utilization_metrics = Some(v);
+        self.utilization_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe the utilization metrics of the function.</p>
     pub fn set_utilization_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionUtilizationMetric>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::LambdaFunctionUtilizationMetric>,
+        >,
     ) -> Self {
         self.utilization_metrics = input;
         self
     }
     /// <p>The number of days for which utilization metrics were analyzed for the function.</p>
     pub fn lookback_period_in_days(mut self, input: f64) -> Self {
-        self.lookback_period_in_days = Some(input);
+        self.lookback_period_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days for which utilization metrics were analyzed for the function.</p>
-    pub fn set_lookback_period_in_days(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lookback_period_in_days(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lookback_period_in_days = input;
         self
     }
     /// <p>The timestamp of when the function recommendation was last generated.</p>
-    pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_refresh_timestamp = Some(input);
+    pub fn last_refresh_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_refresh_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of when the function recommendation was last generated.</p>
     pub fn set_last_refresh_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_refresh_timestamp = input;
         self
@@ -281,7 +294,7 @@ impl LambdaFunctionRecommendationBuilder {
     /// </note> </li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::LambdaFunctionRecommendationFinding) -> Self {
-        self.finding = Some(input);
+        self.finding = ::std::option::Option::Some(input);
         self
     }
     /// <p>The finding classification of the function.</p>
@@ -295,7 +308,7 @@ impl LambdaFunctionRecommendationBuilder {
     /// </ul>
     pub fn set_finding(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionRecommendationFinding>,
+        input: ::std::option::Option<crate::types::LambdaFunctionRecommendationFinding>,
     ) -> Self {
         self.finding = input;
         self
@@ -320,7 +333,7 @@ impl LambdaFunctionRecommendationBuilder {
     ) -> Self {
         let mut v = self.finding_reason_codes.unwrap_or_default();
         v.push(input);
-        self.finding_reason_codes = Some(v);
+        self.finding_reason_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The reason for the finding classification of the function.</p> <note>
@@ -335,8 +348,8 @@ impl LambdaFunctionRecommendationBuilder {
     /// </ul>
     pub fn set_finding_reason_codes(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::LambdaFunctionRecommendationFindingReasonCode>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::LambdaFunctionRecommendationFindingReasonCode>,
         >,
     ) -> Self {
         self.finding_reason_codes = input;
@@ -353,14 +366,14 @@ impl LambdaFunctionRecommendationBuilder {
     ) -> Self {
         let mut v = self.memory_size_recommendation_options.unwrap_or_default();
         v.push(input);
-        self.memory_size_recommendation_options = Some(v);
+        self.memory_size_recommendation_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe the memory configuration recommendation options for the function.</p>
     pub fn set_memory_size_recommendation_options(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>,
         >,
     ) -> Self {
         self.memory_size_recommendation_options = input;
@@ -368,13 +381,13 @@ impl LambdaFunctionRecommendationBuilder {
     }
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     pub fn current_performance_risk(mut self, input: crate::types::CurrentPerformanceRisk) -> Self {
-        self.current_performance_risk = Some(input);
+        self.current_performance_risk = ::std::option::Option::Some(input);
         self
     }
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     pub fn set_current_performance_risk(
         mut self,
-        input: std::option::Option<crate::types::CurrentPerformanceRisk>,
+        input: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     ) -> Self {
         self.current_performance_risk = input;
         self
@@ -387,13 +400,13 @@ impl LambdaFunctionRecommendationBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of tags assigned to your Lambda function recommendations. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

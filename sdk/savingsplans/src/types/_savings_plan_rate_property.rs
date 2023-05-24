@@ -2,22 +2,22 @@
 
 /// <p>Information about a property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SavingsPlanRateProperty {
     /// <p>The property name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::SavingsPlanRatePropertyKey>,
+    pub name: ::std::option::Option<crate::types::SavingsPlanRatePropertyKey>,
     /// <p>The property value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlanRateProperty {
     /// <p>The property name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::SavingsPlanRatePropertyKey> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::SavingsPlanRatePropertyKey> {
         self.name.as_ref()
     }
     /// <p>The property value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl SavingsPlanRateProperty {
 
 /// A builder for [`SavingsPlanRateProperty`](crate::types::SavingsPlanRateProperty).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SavingsPlanRatePropertyBuilder {
-    pub(crate) name: std::option::Option<crate::types::SavingsPlanRatePropertyKey>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<crate::types::SavingsPlanRatePropertyKey>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl SavingsPlanRatePropertyBuilder {
     /// <p>The property name.</p>
     pub fn name(mut self, input: crate::types::SavingsPlanRatePropertyKey) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The property name.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::SavingsPlanRatePropertyKey>,
+        input: ::std::option::Option<crate::types::SavingsPlanRatePropertyKey>,
     ) -> Self {
         self.name = input;
         self
     }
     /// <p>The property value.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property value.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataQualityRuleset`](crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetFluentBuilder::set_name): <p>A name for the data quality ruleset.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetFluentBuilder::set_name): <p>A name for the data quality ruleset.</p>
     /// - On success, responds with [`DeleteDataQualityRulesetOutput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetOutput)
     /// - On failure, responds with [`SdkError<DeleteDataQualityRulesetError>`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetError)
     pub fn delete_data_quality_ruleset(&self) -> crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetFluentBuilder{

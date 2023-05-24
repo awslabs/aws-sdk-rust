@@ -39,13 +39,13 @@
 /// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DvbSubtitleTeletextSpacing {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DvbSubtitleTeletextSpacing {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DvbSubtitleTeletextSpacing {
+impl ::std::convert::From<&str> for DvbSubtitleTeletextSpacing {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => DvbSubtitleTeletextSpacing::Auto,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DvbSubtitleTeletextSpacing {
         }
     }
 }
-impl std::str::FromStr for DvbSubtitleTeletextSpacing {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DvbSubtitleTeletextSpacing {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DvbSubtitleTeletextSpacing::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DvbSubtitleTeletextSpacing::from(s))
     }
 }
 impl DvbSubtitleTeletextSpacing {
@@ -91,7 +91,7 @@ impl DvbSubtitleTeletextSpacing {
         &["AUTO", "FIXED_GRID", "PROPORTIONAL"]
     }
 }
-impl AsRef<str> for DvbSubtitleTeletextSpacing {
+impl ::std::convert::AsRef<str> for DvbSubtitleTeletextSpacing {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

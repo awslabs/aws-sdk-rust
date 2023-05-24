@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the configuration and other settings for all the campaigns that are associated with an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignsResponse {
     /// <p>An array of responses, one for each campaign that's associated with the application.</p>
     #[doc(hidden)]
-    pub item: std::option::Option<std::vec::Vec<crate::types::CampaignResponse>>,
+    pub item: ::std::option::Option<::std::vec::Vec<crate::types::CampaignResponse>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl CampaignsResponse {
     /// <p>An array of responses, one for each campaign that's associated with the application.</p>
-    pub fn item(&self) -> std::option::Option<&[crate::types::CampaignResponse]> {
+    pub fn item(&self) -> ::std::option::Option<&[crate::types::CampaignResponse]> {
         self.item.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl CampaignsResponse {
 
 /// A builder for [`CampaignsResponse`](crate::types::CampaignsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CampaignsResponseBuilder {
-    pub(crate) item: std::option::Option<std::vec::Vec<crate::types::CampaignResponse>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::CampaignResponse>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl CampaignsResponseBuilder {
     /// Appends an item to `item`.
@@ -44,24 +46,24 @@ impl CampaignsResponseBuilder {
     pub fn item(mut self, input: crate::types::CampaignResponse) -> Self {
         let mut v = self.item.unwrap_or_default();
         v.push(input);
-        self.item = Some(v);
+        self.item = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of responses, one for each campaign that's associated with the application.</p>
     pub fn set_item(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CampaignResponse>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CampaignResponse>>,
     ) -> Self {
         self.item = input;
         self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

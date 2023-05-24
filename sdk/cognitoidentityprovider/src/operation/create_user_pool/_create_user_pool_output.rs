@@ -2,20 +2,20 @@
 
 /// <p>Represents the response from the server for the request to create a user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserPoolOutput {
     /// <p>A container for the user pool details.</p>
     #[doc(hidden)]
-    pub user_pool: std::option::Option<crate::types::UserPoolType>,
+    pub user_pool: ::std::option::Option<crate::types::UserPoolType>,
     _request_id: Option<String>,
 }
 impl CreateUserPoolOutput {
     /// <p>A container for the user pool details.</p>
-    pub fn user_pool(&self) -> std::option::Option<&crate::types::UserPoolType> {
+    pub fn user_pool(&self) -> ::std::option::Option<&crate::types::UserPoolType> {
         self.user_pool.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateUserPoolOutput {
+impl ::aws_http::request_id::RequestId for CreateUserPoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl CreateUserPoolOutput {
 
 /// A builder for [`CreateUserPoolOutput`](crate::operation::create_user_pool::CreateUserPoolOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateUserPoolOutputBuilder {
-    pub(crate) user_pool: std::option::Option<crate::types::UserPoolType>,
+    pub(crate) user_pool: ::std::option::Option<crate::types::UserPoolType>,
     _request_id: Option<String>,
 }
 impl CreateUserPoolOutputBuilder {
     /// <p>A container for the user pool details.</p>
     pub fn user_pool(mut self, input: crate::types::UserPoolType) -> Self {
-        self.user_pool = Some(input);
+        self.user_pool = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container for the user pool details.</p>
-    pub fn set_user_pool(mut self, input: std::option::Option<crate::types::UserPoolType>) -> Self {
+    pub fn set_user_pool(
+        mut self,
+        input: ::std::option::Option<crate::types::UserPoolType>,
+    ) -> Self {
         self.user_pool = input;
         self
     }

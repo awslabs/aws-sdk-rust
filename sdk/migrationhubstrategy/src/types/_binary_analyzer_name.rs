@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BinaryAnalyzerName {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum BinaryAnalyzerName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BinaryAnalyzerName {
+impl ::std::convert::From<&str> for BinaryAnalyzerName {
     fn from(s: &str) -> Self {
         match s {
             "BYTECODE_ANALYZER" => BinaryAnalyzerName::BytecodeAnalyzer,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for BinaryAnalyzerName {
         }
     }
 }
-impl std::str::FromStr for BinaryAnalyzerName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BinaryAnalyzerName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BinaryAnalyzerName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BinaryAnalyzerName::from(s))
     }
 }
 impl BinaryAnalyzerName {
@@ -86,7 +86,7 @@ impl BinaryAnalyzerName {
         &["BYTECODE_ANALYZER", "DLL_ANALYZER"]
     }
 }
-impl AsRef<str> for BinaryAnalyzerName {
+impl ::std::convert::AsRef<str> for BinaryAnalyzerName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

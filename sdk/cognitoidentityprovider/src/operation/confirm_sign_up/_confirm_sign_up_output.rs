@@ -2,11 +2,11 @@
 
 /// <p>Represents the response from the server for the registration confirmation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmSignUpOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for ConfirmSignUpOutput {
+impl ::aws_http::request_id::RequestId for ConfirmSignUpOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl ConfirmSignUpOutput {
 
 /// A builder for [`ConfirmSignUpOutput`](crate::operation::confirm_sign_up::ConfirmSignUpOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfirmSignUpOutputBuilder {
     _request_id: Option<String>,
 }

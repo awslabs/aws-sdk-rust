@@ -2,56 +2,57 @@
 
 /// <p>Defines how to perform inference generation after a training job is run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceSpecification {
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
     #[doc(hidden)]
     pub containers:
-        std::option::Option<std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
     #[doc(hidden)]
     pub supported_transform_instance_types:
-        std::option::Option<std::vec::Vec<crate::types::TransformInstanceType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
     #[doc(hidden)]
     pub supported_realtime_inference_instance_types:
-        std::option::Option<std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
     /// <p>The supported MIME types for the input data.</p>
     #[doc(hidden)]
-    pub supported_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The supported MIME types for the output data.</p>
     #[doc(hidden)]
-    pub supported_response_mime_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub supported_response_mime_types:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InferenceSpecification {
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
     pub fn containers(
         &self,
-    ) -> std::option::Option<&[crate::types::ModelPackageContainerDefinition]> {
+    ) -> ::std::option::Option<&[crate::types::ModelPackageContainerDefinition]> {
         self.containers.as_deref()
     }
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
     pub fn supported_transform_instance_types(
         &self,
-    ) -> std::option::Option<&[crate::types::TransformInstanceType]> {
+    ) -> ::std::option::Option<&[crate::types::TransformInstanceType]> {
         self.supported_transform_instance_types.as_deref()
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
     pub fn supported_realtime_inference_instance_types(
         &self,
-    ) -> std::option::Option<&[crate::types::ProductionVariantInstanceType]> {
+    ) -> ::std::option::Option<&[crate::types::ProductionVariantInstanceType]> {
         self.supported_realtime_inference_instance_types.as_deref()
     }
     /// <p>The supported MIME types for the input data.</p>
-    pub fn supported_content_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_content_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_content_types.as_deref()
     }
     /// <p>The supported MIME types for the output data.</p>
-    pub fn supported_response_mime_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_response_mime_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_response_mime_types.as_deref()
     }
 }
@@ -64,17 +65,20 @@ impl InferenceSpecification {
 
 /// A builder for [`InferenceSpecification`](crate::types::InferenceSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceSpecificationBuilder {
     pub(crate) containers:
-        std::option::Option<std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
     pub(crate) supported_transform_instance_types:
-        std::option::Option<std::vec::Vec<crate::types::TransformInstanceType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,
     pub(crate) supported_realtime_inference_instance_types:
-        std::option::Option<std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
-    pub(crate) supported_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
+    pub(crate) supported_content_types:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) supported_response_mime_types:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InferenceSpecificationBuilder {
     /// Appends an item to `containers`.
@@ -85,13 +89,15 @@ impl InferenceSpecificationBuilder {
     pub fn containers(mut self, input: crate::types::ModelPackageContainerDefinition) -> Self {
         let mut v = self.containers.unwrap_or_default();
         v.push(input);
-        self.containers = Some(v);
+        self.containers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon ECR registry path of the Docker image that contains the inference code.</p>
     pub fn set_containers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ModelPackageContainerDefinition>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ModelPackageContainerDefinition>,
+        >,
     ) -> Self {
         self.containers = input;
         self
@@ -108,14 +114,14 @@ impl InferenceSpecificationBuilder {
     ) -> Self {
         let mut v = self.supported_transform_instance_types.unwrap_or_default();
         v.push(input);
-        self.supported_transform_instance_types = Some(v);
+        self.supported_transform_instance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
     pub fn set_supported_transform_instance_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TransformInstanceType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransformInstanceType>>,
     ) -> Self {
         self.supported_transform_instance_types = input;
         self
@@ -134,14 +140,14 @@ impl InferenceSpecificationBuilder {
             .supported_realtime_inference_instance_types
             .unwrap_or_default();
         v.push(input);
-        self.supported_realtime_inference_instance_types = Some(v);
+        self.supported_realtime_inference_instance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the instance types that are used to generate inferences in real-time.</p>
     /// <p>This parameter is required for unversioned models, and optional for versioned models.</p>
     pub fn set_supported_realtime_inference_instance_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantInstanceType>>,
     ) -> Self {
         self.supported_realtime_inference_instance_types = input;
         self
@@ -151,16 +157,19 @@ impl InferenceSpecificationBuilder {
     /// To override the contents of this collection use [`set_supported_content_types`](Self::set_supported_content_types).
     ///
     /// <p>The supported MIME types for the input data.</p>
-    pub fn supported_content_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn supported_content_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.supported_content_types.unwrap_or_default();
         v.push(input.into());
-        self.supported_content_types = Some(v);
+        self.supported_content_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported MIME types for the input data.</p>
     pub fn set_supported_content_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.supported_content_types = input;
         self
@@ -170,16 +179,19 @@ impl InferenceSpecificationBuilder {
     /// To override the contents of this collection use [`set_supported_response_mime_types`](Self::set_supported_response_mime_types).
     ///
     /// <p>The supported MIME types for the output data.</p>
-    pub fn supported_response_mime_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn supported_response_mime_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.supported_response_mime_types.unwrap_or_default();
         v.push(input.into());
-        self.supported_response_mime_types = Some(v);
+        self.supported_response_mime_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The supported MIME types for the output data.</p>
     pub fn set_supported_response_mime_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.supported_response_mime_types = input;
         self

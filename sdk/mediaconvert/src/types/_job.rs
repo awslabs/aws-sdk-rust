@@ -2,207 +2,212 @@
 
 /// Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Job {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
     #[doc(hidden)]
-    pub acceleration_settings: std::option::Option<crate::types::AccelerationSettings>,
+    pub acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
     /// Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
     #[doc(hidden)]
-    pub acceleration_status: std::option::Option<crate::types::AccelerationStatus>,
+    pub acceleration_status: ::std::option::Option<crate::types::AccelerationStatus>,
     /// An identifier for this resource that is unique within all of AWS.
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     #[doc(hidden)]
-    pub billing_tags_source: std::option::Option<crate::types::BillingTagsSource>,
+    pub billing_tags_source: ::std::option::Option<crate::types::BillingTagsSource>,
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
     #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
+    pub client_request_token: ::std::option::Option<::std::string::String>,
     /// The time, in Unix epoch format in seconds, when the job got created.
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
     #[doc(hidden)]
-    pub current_phase: std::option::Option<crate::types::JobPhase>,
+    pub current_phase: ::std::option::Option<crate::types::JobPhase>,
     /// Error code for the job
     #[doc(hidden)]
-    pub error_code: std::option::Option<i32>,
+    pub error_code: ::std::option::Option<i32>,
     /// Error message of Job
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// Optional list of hop destinations.
     #[doc(hidden)]
-    pub hop_destinations: std::option::Option<std::vec::Vec<crate::types::HopDestination>>,
+    pub hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
     #[doc(hidden)]
-    pub job_percent_complete: std::option::Option<i32>,
+    pub job_percent_complete: ::std::option::Option<i32>,
     /// The job template that the job is created from, if it is created from a job template.
     #[doc(hidden)]
-    pub job_template: std::option::Option<std::string::String>,
+    pub job_template: ::std::option::Option<::std::string::String>,
     /// Provides messages from the service about jobs that you have already successfully submitted.
     #[doc(hidden)]
-    pub messages: std::option::Option<crate::types::JobMessages>,
+    pub messages: ::std::option::Option<crate::types::JobMessages>,
     /// List of output group details
     #[doc(hidden)]
-    pub output_group_details: std::option::Option<std::vec::Vec<crate::types::OutputGroupDetail>>,
+    pub output_group_details:
+        ::std::option::Option<::std::vec::Vec<crate::types::OutputGroupDetail>>,
     /// Relative priority on the job.
     #[doc(hidden)]
-    pub priority: std::option::Option<i32>,
+    pub priority: ::std::option::Option<i32>,
     /// When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
-    pub queue: std::option::Option<std::string::String>,
+    pub queue: ::std::option::Option<::std::string::String>,
     /// The job's queue hopping history.
     #[doc(hidden)]
-    pub queue_transitions: std::option::Option<std::vec::Vec<crate::types::QueueTransition>>,
+    pub queue_transitions: ::std::option::Option<::std::vec::Vec<crate::types::QueueTransition>>,
     /// The number of times that the service automatically attempted to process your job after encountering an error.
     #[doc(hidden)]
-    pub retry_count: std::option::Option<i32>,
+    pub retry_count: ::std::option::Option<i32>,
     /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
     #[doc(hidden)]
-    pub role: std::option::Option<std::string::String>,
+    pub role: ::std::option::Option<::std::string::String>,
     /// JobSettings contains all the transcode settings for a job.
     #[doc(hidden)]
-    pub settings: std::option::Option<crate::types::JobSettings>,
+    pub settings: ::std::option::Option<crate::types::JobSettings>,
     /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
     #[doc(hidden)]
-    pub simulate_reserved_queue: std::option::Option<crate::types::SimulateReservedQueue>,
+    pub simulate_reserved_queue: ::std::option::Option<crate::types::SimulateReservedQueue>,
     /// A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::JobStatus>,
+    pub status: ::std::option::Option<crate::types::JobStatus>,
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     #[doc(hidden)]
-    pub status_update_interval: std::option::Option<crate::types::StatusUpdateInterval>,
+    pub status_update_interval: ::std::option::Option<crate::types::StatusUpdateInterval>,
     /// Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
     #[doc(hidden)]
-    pub timing: std::option::Option<crate::types::Timing>,
+    pub timing: ::std::option::Option<crate::types::Timing>,
     /// User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.
     #[doc(hidden)]
-    pub user_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub user_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
     #[doc(hidden)]
-    pub warnings: std::option::Option<std::vec::Vec<crate::types::WarningGroup>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningGroup>>,
 }
 impl Job {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
     pub fn acceleration_settings(
         &self,
-    ) -> std::option::Option<&crate::types::AccelerationSettings> {
+    ) -> ::std::option::Option<&crate::types::AccelerationSettings> {
         self.acceleration_settings.as_ref()
     }
     /// Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
-    pub fn acceleration_status(&self) -> std::option::Option<&crate::types::AccelerationStatus> {
+    pub fn acceleration_status(&self) -> ::std::option::Option<&crate::types::AccelerationStatus> {
         self.acceleration_status.as_ref()
     }
     /// An identifier for this resource that is unique within all of AWS.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
-    pub fn billing_tags_source(&self) -> std::option::Option<&crate::types::BillingTagsSource> {
+    pub fn billing_tags_source(&self) -> ::std::option::Option<&crate::types::BillingTagsSource> {
         self.billing_tags_source.as_ref()
     }
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// The time, in Unix epoch format in seconds, when the job got created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
-    pub fn current_phase(&self) -> std::option::Option<&crate::types::JobPhase> {
+    pub fn current_phase(&self) -> ::std::option::Option<&crate::types::JobPhase> {
         self.current_phase.as_ref()
     }
     /// Error code for the job
-    pub fn error_code(&self) -> std::option::Option<i32> {
+    pub fn error_code(&self) -> ::std::option::Option<i32> {
         self.error_code
     }
     /// Error message of Job
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// Optional list of hop destinations.
-    pub fn hop_destinations(&self) -> std::option::Option<&[crate::types::HopDestination]> {
+    pub fn hop_destinations(&self) -> ::std::option::Option<&[crate::types::HopDestination]> {
         self.hop_destinations.as_deref()
     }
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
-    pub fn job_percent_complete(&self) -> std::option::Option<i32> {
+    pub fn job_percent_complete(&self) -> ::std::option::Option<i32> {
         self.job_percent_complete
     }
     /// The job template that the job is created from, if it is created from a job template.
-    pub fn job_template(&self) -> std::option::Option<&str> {
+    pub fn job_template(&self) -> ::std::option::Option<&str> {
         self.job_template.as_deref()
     }
     /// Provides messages from the service about jobs that you have already successfully submitted.
-    pub fn messages(&self) -> std::option::Option<&crate::types::JobMessages> {
+    pub fn messages(&self) -> ::std::option::Option<&crate::types::JobMessages> {
         self.messages.as_ref()
     }
     /// List of output group details
-    pub fn output_group_details(&self) -> std::option::Option<&[crate::types::OutputGroupDetail]> {
+    pub fn output_group_details(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::OutputGroupDetail]> {
         self.output_group_details.as_deref()
     }
     /// Relative priority on the job.
-    pub fn priority(&self) -> std::option::Option<i32> {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn queue(&self) -> std::option::Option<&str> {
+    pub fn queue(&self) -> ::std::option::Option<&str> {
         self.queue.as_deref()
     }
     /// The job's queue hopping history.
-    pub fn queue_transitions(&self) -> std::option::Option<&[crate::types::QueueTransition]> {
+    pub fn queue_transitions(&self) -> ::std::option::Option<&[crate::types::QueueTransition]> {
         self.queue_transitions.as_deref()
     }
     /// The number of times that the service automatically attempted to process your job after encountering an error.
-    pub fn retry_count(&self) -> std::option::Option<i32> {
+    pub fn retry_count(&self) -> ::std::option::Option<i32> {
         self.retry_count
     }
     /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
     /// JobSettings contains all the transcode settings for a job.
-    pub fn settings(&self) -> std::option::Option<&crate::types::JobSettings> {
+    pub fn settings(&self) -> ::std::option::Option<&crate::types::JobSettings> {
         self.settings.as_ref()
     }
     /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
     pub fn simulate_reserved_queue(
         &self,
-    ) -> std::option::Option<&crate::types::SimulateReservedQueue> {
+    ) -> ::std::option::Option<&crate::types::SimulateReservedQueue> {
         self.simulate_reserved_queue.as_ref()
     }
     /// A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
-    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn status_update_interval(
         &self,
-    ) -> std::option::Option<&crate::types::StatusUpdateInterval> {
+    ) -> ::std::option::Option<&crate::types::StatusUpdateInterval> {
         self.status_update_interval.as_ref()
     }
     /// Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
-    pub fn timing(&self) -> std::option::Option<&crate::types::Timing> {
+    pub fn timing(&self) -> ::std::option::Option<&crate::types::Timing> {
         self.timing.as_ref()
     }
     /// User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.
     pub fn user_metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.user_metadata.as_ref()
     }
     /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    pub fn warnings(&self) -> std::option::Option<&[crate::types::WarningGroup]> {
+    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::WarningGroup]> {
         self.warnings.as_deref()
     }
 }
@@ -215,141 +220,158 @@ impl Job {
 
 /// A builder for [`Job`](crate::types::Job).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobBuilder {
-    pub(crate) acceleration_settings: std::option::Option<crate::types::AccelerationSettings>,
-    pub(crate) acceleration_status: std::option::Option<crate::types::AccelerationStatus>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) billing_tags_source: std::option::Option<crate::types::BillingTagsSource>,
-    pub(crate) client_request_token: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) current_phase: std::option::Option<crate::types::JobPhase>,
-    pub(crate) error_code: std::option::Option<i32>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) hop_destinations: std::option::Option<std::vec::Vec<crate::types::HopDestination>>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) job_percent_complete: std::option::Option<i32>,
-    pub(crate) job_template: std::option::Option<std::string::String>,
-    pub(crate) messages: std::option::Option<crate::types::JobMessages>,
+    pub(crate) acceleration_settings: ::std::option::Option<crate::types::AccelerationSettings>,
+    pub(crate) acceleration_status: ::std::option::Option<crate::types::AccelerationStatus>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) billing_tags_source: ::std::option::Option<crate::types::BillingTagsSource>,
+    pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) current_phase: ::std::option::Option<crate::types::JobPhase>,
+    pub(crate) error_code: ::std::option::Option<i32>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) hop_destinations:
+        ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_percent_complete: ::std::option::Option<i32>,
+    pub(crate) job_template: ::std::option::Option<::std::string::String>,
+    pub(crate) messages: ::std::option::Option<crate::types::JobMessages>,
     pub(crate) output_group_details:
-        std::option::Option<std::vec::Vec<crate::types::OutputGroupDetail>>,
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) queue: std::option::Option<std::string::String>,
-    pub(crate) queue_transitions: std::option::Option<std::vec::Vec<crate::types::QueueTransition>>,
-    pub(crate) retry_count: std::option::Option<i32>,
-    pub(crate) role: std::option::Option<std::string::String>,
-    pub(crate) settings: std::option::Option<crate::types::JobSettings>,
-    pub(crate) simulate_reserved_queue: std::option::Option<crate::types::SimulateReservedQueue>,
-    pub(crate) status: std::option::Option<crate::types::JobStatus>,
-    pub(crate) status_update_interval: std::option::Option<crate::types::StatusUpdateInterval>,
-    pub(crate) timing: std::option::Option<crate::types::Timing>,
-    pub(crate) user_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) warnings: std::option::Option<std::vec::Vec<crate::types::WarningGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OutputGroupDetail>>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) queue: ::std::option::Option<::std::string::String>,
+    pub(crate) queue_transitions:
+        ::std::option::Option<::std::vec::Vec<crate::types::QueueTransition>>,
+    pub(crate) retry_count: ::std::option::Option<i32>,
+    pub(crate) role: ::std::option::Option<::std::string::String>,
+    pub(crate) settings: ::std::option::Option<crate::types::JobSettings>,
+    pub(crate) simulate_reserved_queue: ::std::option::Option<crate::types::SimulateReservedQueue>,
+    pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
+    pub(crate) status_update_interval: ::std::option::Option<crate::types::StatusUpdateInterval>,
+    pub(crate) timing: ::std::option::Option<crate::types::Timing>,
+    pub(crate) user_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningGroup>>,
 }
 impl JobBuilder {
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
     pub fn acceleration_settings(mut self, input: crate::types::AccelerationSettings) -> Self {
-        self.acceleration_settings = Some(input);
+        self.acceleration_settings = ::std::option::Option::Some(input);
         self
     }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content.
     pub fn set_acceleration_settings(
         mut self,
-        input: std::option::Option<crate::types::AccelerationSettings>,
+        input: ::std::option::Option<crate::types::AccelerationSettings>,
     ) -> Self {
         self.acceleration_settings = input;
         self
     }
     /// Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
     pub fn acceleration_status(mut self, input: crate::types::AccelerationStatus) -> Self {
-        self.acceleration_status = Some(input);
+        self.acceleration_status = ::std::option::Option::Some(input);
         self
     }
     /// Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED.
     pub fn set_acceleration_status(
         mut self,
-        input: std::option::Option<crate::types::AccelerationStatus>,
+        input: ::std::option::Option<crate::types::AccelerationStatus>,
     ) -> Self {
         self.acceleration_status = input;
         self
     }
     /// An identifier for this resource that is unique within all of AWS.
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// An identifier for this resource that is unique within all of AWS.
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     pub fn billing_tags_source(mut self, input: crate::types::BillingTagsSource) -> Self {
-        self.billing_tags_source = Some(input);
+        self.billing_tags_source = ::std::option::Option::Some(input);
         self
     }
     /// The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up.
     pub fn set_billing_tags_source(
         mut self,
-        input: std::option::Option<crate::types::BillingTagsSource>,
+        input: ::std::option::Option<crate::types::BillingTagsSource>,
     ) -> Self {
         self.billing_tags_source = input;
         self
     }
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_request_token = Some(input.into());
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a successful request, the API returns the job details of the original request instead. For more information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_request_token = input;
         self
     }
     /// The time, in Unix epoch format in seconds, when the job got created.
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// The time, in Unix epoch format in seconds, when the job got created.
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
     pub fn current_phase(mut self, input: crate::types::JobPhase) -> Self {
-        self.current_phase = Some(input);
+        self.current_phase = ::std::option::Option::Some(input);
         self
     }
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
-    pub fn set_current_phase(mut self, input: std::option::Option<crate::types::JobPhase>) -> Self {
+    pub fn set_current_phase(
+        mut self,
+        input: ::std::option::Option<crate::types::JobPhase>,
+    ) -> Self {
         self.current_phase = input;
         self
     }
     /// Error code for the job
     pub fn error_code(mut self, input: i32) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// Error code for the job
-    pub fn set_error_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.error_code = input;
         self
     }
     /// Error message of Job
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// Error message of Job
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
@@ -361,54 +383,54 @@ impl JobBuilder {
     pub fn hop_destinations(mut self, input: crate::types::HopDestination) -> Self {
         let mut v = self.hop_destinations.unwrap_or_default();
         v.push(input);
-        self.hop_destinations = Some(v);
+        self.hop_destinations = ::std::option::Option::Some(v);
         self
     }
     /// Optional list of hop destinations.
     pub fn set_hop_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HopDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
     ) -> Self {
         self.hop_destinations = input;
         self
     }
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
     pub fn job_percent_complete(mut self, input: i32) -> Self {
-        self.job_percent_complete = Some(input);
+        self.job_percent_complete = ::std::option::Option::Some(input);
         self
     }
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
-    pub fn set_job_percent_complete(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_job_percent_complete(mut self, input: ::std::option::Option<i32>) -> Self {
         self.job_percent_complete = input;
         self
     }
     /// The job template that the job is created from, if it is created from a job template.
-    pub fn job_template(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_template = Some(input.into());
+    pub fn job_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_template = ::std::option::Option::Some(input.into());
         self
     }
     /// The job template that the job is created from, if it is created from a job template.
-    pub fn set_job_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_template = input;
         self
     }
     /// Provides messages from the service about jobs that you have already successfully submitted.
     pub fn messages(mut self, input: crate::types::JobMessages) -> Self {
-        self.messages = Some(input);
+        self.messages = ::std::option::Option::Some(input);
         self
     }
     /// Provides messages from the service about jobs that you have already successfully submitted.
-    pub fn set_messages(mut self, input: std::option::Option<crate::types::JobMessages>) -> Self {
+    pub fn set_messages(mut self, input: ::std::option::Option<crate::types::JobMessages>) -> Self {
         self.messages = input;
         self
     }
@@ -420,34 +442,34 @@ impl JobBuilder {
     pub fn output_group_details(mut self, input: crate::types::OutputGroupDetail) -> Self {
         let mut v = self.output_group_details.unwrap_or_default();
         v.push(input);
-        self.output_group_details = Some(v);
+        self.output_group_details = ::std::option::Option::Some(v);
         self
     }
     /// List of output group details
     pub fn set_output_group_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputGroupDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroupDetail>>,
     ) -> Self {
         self.output_group_details = input;
         self
     }
     /// Relative priority on the job.
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// Relative priority on the job.
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
     /// When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn queue(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue = Some(input.into());
+    pub fn queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue = ::std::option::Option::Some(input.into());
         self
     }
     /// When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn set_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue = input;
         self
     }
@@ -459,90 +481,90 @@ impl JobBuilder {
     pub fn queue_transitions(mut self, input: crate::types::QueueTransition) -> Self {
         let mut v = self.queue_transitions.unwrap_or_default();
         v.push(input);
-        self.queue_transitions = Some(v);
+        self.queue_transitions = ::std::option::Option::Some(v);
         self
     }
     /// The job's queue hopping history.
     pub fn set_queue_transitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueueTransition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueTransition>>,
     ) -> Self {
         self.queue_transitions = input;
         self
     }
     /// The number of times that the service automatically attempted to process your job after encountering an error.
     pub fn retry_count(mut self, input: i32) -> Self {
-        self.retry_count = Some(input);
+        self.retry_count = ::std::option::Option::Some(input);
         self
     }
     /// The number of times that the service automatically attempted to process your job after encountering an error.
-    pub fn set_retry_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retry_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_count = input;
         self
     }
     /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role = Some(input.into());
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role = ::std::option::Option::Some(input.into());
         self
     }
     /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }
     /// JobSettings contains all the transcode settings for a job.
     pub fn settings(mut self, input: crate::types::JobSettings) -> Self {
-        self.settings = Some(input);
+        self.settings = ::std::option::Option::Some(input);
         self
     }
     /// JobSettings contains all the transcode settings for a job.
-    pub fn set_settings(mut self, input: std::option::Option<crate::types::JobSettings>) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::JobSettings>) -> Self {
         self.settings = input;
         self
     }
     /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
     pub fn simulate_reserved_queue(mut self, input: crate::types::SimulateReservedQueue) -> Self {
-        self.simulate_reserved_queue = Some(input);
+        self.simulate_reserved_queue = ::std::option::Option::Some(input);
         self
     }
     /// Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
     pub fn set_simulate_reserved_queue(
         mut self,
-        input: std::option::Option<crate::types::SimulateReservedQueue>,
+        input: ::std::option::Option<crate::types::SimulateReservedQueue>,
     ) -> Self {
         self.simulate_reserved_queue = input;
         self
     }
     /// A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
-    pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn status_update_interval(mut self, input: crate::types::StatusUpdateInterval) -> Self {
-        self.status_update_interval = Some(input);
+        self.status_update_interval = ::std::option::Option::Some(input);
         self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
     pub fn set_status_update_interval(
         mut self,
-        input: std::option::Option<crate::types::StatusUpdateInterval>,
+        input: ::std::option::Option<crate::types::StatusUpdateInterval>,
     ) -> Self {
         self.status_update_interval = input;
         self
     }
     /// Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
     pub fn timing(mut self, input: crate::types::Timing) -> Self {
-        self.timing = Some(input);
+        self.timing = ::std::option::Option::Some(input);
         self
     }
     /// Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds.
-    pub fn set_timing(mut self, input: std::option::Option<crate::types::Timing>) -> Self {
+    pub fn set_timing(mut self, input: ::std::option::Option<crate::types::Timing>) -> Self {
         self.timing = input;
         self
     }
@@ -553,19 +575,19 @@ impl JobBuilder {
     /// User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.
     pub fn user_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.user_metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.user_metadata = Some(hash_map);
+        self.user_metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs.
     pub fn set_user_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.user_metadata = input;
@@ -579,13 +601,13 @@ impl JobBuilder {
     pub fn warnings(mut self, input: crate::types::WarningGroup) -> Self {
         let mut v = self.warnings.unwrap_or_default();
         v.push(input);
-        self.warnings = Some(v);
+        self.warnings = ::std::option::Option::Some(v);
         self
     }
     /// Contains any warning messages for the job. Use to help identify potential issues with your input, output, or job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
     pub fn set_warnings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WarningGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WarningGroup>>,
     ) -> Self {
         self.warnings = input;
         self

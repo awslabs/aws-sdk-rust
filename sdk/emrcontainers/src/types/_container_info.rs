@@ -2,7 +2,7 @@
 
 /// <p>The information about the container used for a job run or a managed endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ContainerInfo {
     /// <p>The information about the Amazon EKS cluster.</p>
     EksInfo(crate::types::EksInfo),
@@ -20,11 +20,11 @@ impl ContainerInfo {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`EksInfo`](crate::types::ContainerInfo::EksInfo), extracting the inner [`EksInfo`](crate::types::EksInfo).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_eks_info(&self) -> std::result::Result<&crate::types::EksInfo, &Self> {
+    pub fn as_eks_info(&self) -> ::std::result::Result<&crate::types::EksInfo, &Self> {
         if let ContainerInfo::EksInfo(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`EksInfo`](crate::types::ContainerInfo::EksInfo).

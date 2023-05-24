@@ -2,29 +2,29 @@
 
 /// <p>A complex type that contains information about the CIDR collection change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrCollectionChange {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
     #[doc(hidden)]
-    pub location_name: std::option::Option<std::string::String>,
+    pub location_name: ::std::option::Option<::std::string::String>,
     /// <p>CIDR collection change action. </p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::CidrCollectionChangeAction>,
+    pub action: ::std::option::Option<crate::types::CidrCollectionChangeAction>,
     /// <p>List of CIDR blocks.</p>
     #[doc(hidden)]
-    pub cidr_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cidr_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CidrCollectionChange {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> ::std::option::Option<&str> {
         self.location_name.as_deref()
     }
     /// <p>CIDR collection change action. </p>
-    pub fn action(&self) -> std::option::Option<&crate::types::CidrCollectionChangeAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::CidrCollectionChangeAction> {
         self.action.as_ref()
     }
     /// <p>List of CIDR blocks.</p>
-    pub fn cidr_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidr_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cidr_list.as_deref()
     }
 }
@@ -37,32 +37,40 @@ impl CidrCollectionChange {
 
 /// A builder for [`CidrCollectionChange`](crate::types::CidrCollectionChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CidrCollectionChangeBuilder {
-    pub(crate) location_name: std::option::Option<std::string::String>,
-    pub(crate) action: std::option::Option<crate::types::CidrCollectionChangeAction>,
-    pub(crate) cidr_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) location_name: ::std::option::Option<::std::string::String>,
+    pub(crate) action: ::std::option::Option<crate::types::CidrCollectionChangeAction>,
+    pub(crate) cidr_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CidrCollectionChangeBuilder {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_name = Some(input.into());
+    pub fn location_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.location_name = input;
         self
     }
     /// <p>CIDR collection change action. </p>
     pub fn action(mut self, input: crate::types::CidrCollectionChangeAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>CIDR collection change action. </p>
     pub fn set_action(
         mut self,
-        input: std::option::Option<crate::types::CidrCollectionChangeAction>,
+        input: ::std::option::Option<crate::types::CidrCollectionChangeAction>,
     ) -> Self {
         self.action = input;
         self
@@ -72,16 +80,16 @@ impl CidrCollectionChangeBuilder {
     /// To override the contents of this collection use [`set_cidr_list`](Self::set_cidr_list).
     ///
     /// <p>List of CIDR blocks.</p>
-    pub fn cidr_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cidr_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_list.unwrap_or_default();
         v.push(input.into());
-        self.cidr_list = Some(v);
+        self.cidr_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of CIDR blocks.</p>
     pub fn set_cidr_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cidr_list = input;
         self

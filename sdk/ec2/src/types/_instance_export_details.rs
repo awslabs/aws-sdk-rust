@@ -2,22 +2,22 @@
 
 /// <p>Describes an instance to export.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceExportDetails {
     /// <p>The ID of the resource being exported.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The target virtualization environment.</p>
     #[doc(hidden)]
-    pub target_environment: std::option::Option<crate::types::ExportEnvironment>,
+    pub target_environment: ::std::option::Option<crate::types::ExportEnvironment>,
 }
 impl InstanceExportDetails {
     /// <p>The ID of the resource being exported.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The target virtualization environment.</p>
-    pub fn target_environment(&self) -> std::option::Option<&crate::types::ExportEnvironment> {
+    pub fn target_environment(&self) -> ::std::option::Option<&crate::types::ExportEnvironment> {
         self.target_environment.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl InstanceExportDetails {
 
 /// A builder for [`InstanceExportDetails`](crate::types::InstanceExportDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceExportDetailsBuilder {
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) target_environment: std::option::Option<crate::types::ExportEnvironment>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_environment: ::std::option::Option<crate::types::ExportEnvironment>,
 }
 impl InstanceExportDetailsBuilder {
     /// <p>The ID of the resource being exported.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource being exported.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The target virtualization environment.</p>
     pub fn target_environment(mut self, input: crate::types::ExportEnvironment) -> Self {
-        self.target_environment = Some(input);
+        self.target_environment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target virtualization environment.</p>
     pub fn set_target_environment(
         mut self,
-        input: std::option::Option<crate::types::ExportEnvironment>,
+        input: ::std::option::Option<crate::types::ExportEnvironment>,
     ) -> Self {
         self.target_environment = input;
         self

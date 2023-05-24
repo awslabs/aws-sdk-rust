@@ -2,26 +2,26 @@
 
 /// <p>Contains information about a training job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingJob {
     /// <p>The name of the training job.</p>
     #[doc(hidden)]
-    pub training_job_name: std::option::Option<std::string::String>,
+    pub training_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
     #[doc(hidden)]
-    pub training_job_arn: std::option::Option<std::string::String>,
+    pub training_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a hyperparameter tuning job.</p>
     #[doc(hidden)]
-    pub tuning_job_arn: std::option::Option<std::string::String>,
+    pub tuning_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
     #[doc(hidden)]
-    pub labeling_job_arn: std::option::Option<std::string::String>,
+    pub labeling_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     #[doc(hidden)]
-    pub auto_ml_job_arn: std::option::Option<std::string::String>,
+    pub auto_ml_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Amazon S3 location that is configured for storing model artifacts.</p>
     #[doc(hidden)]
-    pub model_artifacts: std::option::Option<crate::types::ModelArtifacts>,
+    pub model_artifacts: ::std::option::Option<crate::types::ModelArtifacts>,
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
@@ -33,7 +33,7 @@ pub struct TrainingJob {
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     #[doc(hidden)]
-    pub training_job_status: std::option::Option<crate::types::TrainingJobStatus>,
+    pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
     /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
     /// <p>SageMaker provides primary statuses and secondary statuses that apply to each of them:</p>
     /// <dl>
@@ -91,55 +91,56 @@ pub struct TrainingJob {
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub secondary_status: std::option::Option<crate::types::SecondaryStatus>,
+    pub secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
     /// <p>If the training job failed, the reason it failed.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Algorithm-specific parameters.</p>
     #[doc(hidden)]
-    pub hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub hyper_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Information about the algorithm used for training, and algorithm metadata.</p>
     #[doc(hidden)]
-    pub algorithm_specification: std::option::Option<crate::types::AlgorithmSpecification>,
+    pub algorithm_specification: ::std::option::Option<crate::types::AlgorithmSpecification>,
     /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
     #[doc(hidden)]
-    pub input_data_config: std::option::Option<std::vec::Vec<crate::types::Channel>>,
+    pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
     #[doc(hidden)]
-    pub output_data_config: std::option::Option<crate::types::OutputDataConfig>,
+    pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
     #[doc(hidden)]
-    pub resource_config: std::option::Option<crate::types::ResourceConfig>,
+    pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     #[doc(hidden)]
-    pub vpc_config: std::option::Option<crate::types::VpcConfig>,
+    pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     #[doc(hidden)]
-    pub stopping_condition: std::option::Option<crate::types::StoppingCondition>,
+    pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>A timestamp that indicates when the training job was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.</p>
     #[doc(hidden)]
-    pub training_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub training_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     #[doc(hidden)]
-    pub training_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the status of the training job was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A history of all of the secondary statuses that the training job has transitioned through.</p>
     #[doc(hidden)]
     pub secondary_status_transitions:
-        std::option::Option<std::vec::Vec<crate::types::SecondaryStatusTransition>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SecondaryStatusTransition>>,
     /// <p>A list of final metric values that are set when the training job completes. Used only if the training job was configured to use metrics.</p>
     #[doc(hidden)]
-    pub final_metric_data_list: std::option::Option<std::vec::Vec<crate::types::MetricData>>,
+    pub final_metric_data_list: ::std::option::Option<::std::vec::Vec<crate::types::MetricData>>,
     /// <p>If the <code>TrainingJob</code> was created with network isolation, the value is set to <code>true</code>. If network isolation is enabled, nodes can't communicate beyond the VPC they run in.</p>
     #[doc(hidden)]
     pub enable_network_isolation: bool,
@@ -151,16 +152,16 @@ pub struct TrainingJob {
     pub enable_managed_spot_training: bool,
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     #[doc(hidden)]
-    pub checkpoint_config: std::option::Option<crate::types::CheckpointConfig>,
+    pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The training time in seconds.</p>
     #[doc(hidden)]
-    pub training_time_in_seconds: std::option::Option<i32>,
+    pub training_time_in_seconds: ::std::option::Option<i32>,
     /// <p>The billable time in seconds.</p>
     #[doc(hidden)]
-    pub billable_time_in_seconds: std::option::Option<i32>,
+    pub billable_time_in_seconds: ::std::option::Option<i32>,
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     #[doc(hidden)]
-    pub debug_hook_config: std::option::Option<crate::types::DebugHookConfig>,
+    pub debug_hook_config: ::std::option::Option<crate::types::DebugHookConfig>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
@@ -168,52 +169,53 @@ pub struct TrainingJob {
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub experiment_config: std::option::Option<crate::types::ExperimentConfig>,
+    pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     /// <p>Information about the debug rule configuration.</p>
     #[doc(hidden)]
     pub debug_rule_configurations:
-        std::option::Option<std::vec::Vec<crate::types::DebugRuleConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>>,
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     #[doc(hidden)]
-    pub tensor_board_output_config: std::option::Option<crate::types::TensorBoardOutputConfig>,
+    pub tensor_board_output_config: ::std::option::Option<crate::types::TensorBoardOutputConfig>,
     /// <p>Information about the evaluation status of the rules for the training job.</p>
     #[doc(hidden)]
     pub debug_rule_evaluation_statuses:
-        std::option::Option<std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
     /// <p>The environment variables to set in the Docker container.</p>
     #[doc(hidden)]
-    pub environment:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     #[doc(hidden)]
-    pub retry_strategy: std::option::Option<crate::types::RetryStrategy>,
+    pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TrainingJob {
     /// <p>The name of the training job.</p>
-    pub fn training_job_name(&self) -> std::option::Option<&str> {
+    pub fn training_job_name(&self) -> ::std::option::Option<&str> {
         self.training_job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn training_job_arn(&self) -> std::option::Option<&str> {
+    pub fn training_job_arn(&self) -> ::std::option::Option<&str> {
         self.training_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a hyperparameter tuning job.</p>
-    pub fn tuning_job_arn(&self) -> std::option::Option<&str> {
+    pub fn tuning_job_arn(&self) -> ::std::option::Option<&str> {
         self.tuning_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
-    pub fn labeling_job_arn(&self) -> std::option::Option<&str> {
+    pub fn labeling_job_arn(&self) -> ::std::option::Option<&str> {
         self.labeling_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    pub fn auto_ml_job_arn(&self) -> std::option::Option<&str> {
+    pub fn auto_ml_job_arn(&self) -> ::std::option::Option<&str> {
         self.auto_ml_job_arn.as_deref()
     }
     /// <p>Information about the Amazon S3 location that is configured for storing model artifacts.</p>
-    pub fn model_artifacts(&self) -> std::option::Option<&crate::types::ModelArtifacts> {
+    pub fn model_artifacts(&self) -> ::std::option::Option<&crate::types::ModelArtifacts> {
         self.model_artifacts.as_ref()
     }
     /// <p>The status of the training job.</p>
@@ -226,7 +228,7 @@ impl TrainingJob {
     /// <li> <p> <code>Stopped</code> - The training job has stopped.</p> </li>
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
-    pub fn training_job_status(&self) -> std::option::Option<&crate::types::TrainingJobStatus> {
+    pub fn training_job_status(&self) -> ::std::option::Option<&crate::types::TrainingJobStatus> {
         self.training_job_status.as_ref()
     }
     /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
@@ -285,75 +287,76 @@ impl TrainingJob {
     /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
-    pub fn secondary_status(&self) -> std::option::Option<&crate::types::SecondaryStatus> {
+    pub fn secondary_status(&self) -> ::std::option::Option<&crate::types::SecondaryStatus> {
         self.secondary_status.as_ref()
     }
     /// <p>If the training job failed, the reason it failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>Algorithm-specific parameters.</p>
     pub fn hyper_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.hyper_parameters.as_ref()
     }
     /// <p>Information about the algorithm used for training, and algorithm metadata.</p>
     pub fn algorithm_specification(
         &self,
-    ) -> std::option::Option<&crate::types::AlgorithmSpecification> {
+    ) -> ::std::option::Option<&crate::types::AlgorithmSpecification> {
         self.algorithm_specification.as_ref()
     }
     /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
-    pub fn input_data_config(&self) -> std::option::Option<&[crate::types::Channel]> {
+    pub fn input_data_config(&self) -> ::std::option::Option<&[crate::types::Channel]> {
         self.input_data_config.as_deref()
     }
     /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
-    pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
-    pub fn resource_config(&self) -> std::option::Option<&crate::types::ResourceConfig> {
+    pub fn resource_config(&self) -> ::std::option::Option<&crate::types::ResourceConfig> {
         self.resource_config.as_ref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
-    pub fn stopping_condition(&self) -> std::option::Option<&crate::types::StoppingCondition> {
+    pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::StoppingCondition> {
         self.stopping_condition.as_ref()
     }
     /// <p>A timestamp that indicates when the training job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.</p>
-    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn training_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.training_start_time.as_ref()
     }
     /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn training_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.training_end_time.as_ref()
     }
     /// <p>A timestamp that indicates when the status of the training job was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>A history of all of the secondary statuses that the training job has transitioned through.</p>
     pub fn secondary_status_transitions(
         &self,
-    ) -> std::option::Option<&[crate::types::SecondaryStatusTransition]> {
+    ) -> ::std::option::Option<&[crate::types::SecondaryStatusTransition]> {
         self.secondary_status_transitions.as_deref()
     }
     /// <p>A list of final metric values that are set when the training job completes. Used only if the training job was configured to use metrics.</p>
-    pub fn final_metric_data_list(&self) -> std::option::Option<&[crate::types::MetricData]> {
+    pub fn final_metric_data_list(&self) -> ::std::option::Option<&[crate::types::MetricData]> {
         self.final_metric_data_list.as_deref()
     }
     /// <p>If the <code>TrainingJob</code> was created with network isolation, the value is set to <code>true</code>. If network isolation is enabled, nodes can't communicate beyond the VPC they run in.</p>
@@ -369,19 +372,19 @@ impl TrainingJob {
         self.enable_managed_spot_training
     }
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
-    pub fn checkpoint_config(&self) -> std::option::Option<&crate::types::CheckpointConfig> {
+    pub fn checkpoint_config(&self) -> ::std::option::Option<&crate::types::CheckpointConfig> {
         self.checkpoint_config.as_ref()
     }
     /// <p>The training time in seconds.</p>
-    pub fn training_time_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn training_time_in_seconds(&self) -> ::std::option::Option<i32> {
         self.training_time_in_seconds
     }
     /// <p>The billable time in seconds.</p>
-    pub fn billable_time_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn billable_time_in_seconds(&self) -> ::std::option::Option<i32> {
         self.billable_time_in_seconds
     }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-    pub fn debug_hook_config(&self) -> std::option::Option<&crate::types::DebugHookConfig> {
+    pub fn debug_hook_config(&self) -> ::std::option::Option<&crate::types::DebugHookConfig> {
         self.debug_hook_config.as_ref()
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
@@ -390,40 +393,41 @@ impl TrainingJob {
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
-    pub fn experiment_config(&self) -> std::option::Option<&crate::types::ExperimentConfig> {
+    pub fn experiment_config(&self) -> ::std::option::Option<&crate::types::ExperimentConfig> {
         self.experiment_config.as_ref()
     }
     /// <p>Information about the debug rule configuration.</p>
     pub fn debug_rule_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::DebugRuleConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::DebugRuleConfiguration]> {
         self.debug_rule_configurations.as_deref()
     }
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     pub fn tensor_board_output_config(
         &self,
-    ) -> std::option::Option<&crate::types::TensorBoardOutputConfig> {
+    ) -> ::std::option::Option<&crate::types::TensorBoardOutputConfig> {
         self.tensor_board_output_config.as_ref()
     }
     /// <p>Information about the evaluation status of the rules for the training job.</p>
     pub fn debug_rule_evaluation_statuses(
         &self,
-    ) -> std::option::Option<&[crate::types::DebugRuleEvaluationStatus]> {
+    ) -> ::std::option::Option<&[crate::types::DebugRuleEvaluationStatus]> {
         self.debug_rule_evaluation_statuses.as_deref()
     }
     /// <p>The environment variables to set in the Docker container.</p>
     pub fn environment(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.environment.as_ref()
     }
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    pub fn retry_strategy(&self) -> std::option::Option<&crate::types::RetryStrategy> {
+    pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -436,115 +440,147 @@ impl TrainingJob {
 
 /// A builder for [`TrainingJob`](crate::types::TrainingJob).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrainingJobBuilder {
-    pub(crate) training_job_name: std::option::Option<std::string::String>,
-    pub(crate) training_job_arn: std::option::Option<std::string::String>,
-    pub(crate) tuning_job_arn: std::option::Option<std::string::String>,
-    pub(crate) labeling_job_arn: std::option::Option<std::string::String>,
-    pub(crate) auto_ml_job_arn: std::option::Option<std::string::String>,
-    pub(crate) model_artifacts: std::option::Option<crate::types::ModelArtifacts>,
-    pub(crate) training_job_status: std::option::Option<crate::types::TrainingJobStatus>,
-    pub(crate) secondary_status: std::option::Option<crate::types::SecondaryStatus>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
-    pub(crate) hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) algorithm_specification: std::option::Option<crate::types::AlgorithmSpecification>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) input_data_config: std::option::Option<std::vec::Vec<crate::types::Channel>>,
-    pub(crate) output_data_config: std::option::Option<crate::types::OutputDataConfig>,
-    pub(crate) resource_config: std::option::Option<crate::types::ResourceConfig>,
-    pub(crate) vpc_config: std::option::Option<crate::types::VpcConfig>,
-    pub(crate) stopping_condition: std::option::Option<crate::types::StoppingCondition>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) training_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) training_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) training_job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) training_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tuning_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) labeling_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_ml_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) model_artifacts: ::std::option::Option<crate::types::ModelArtifacts>,
+    pub(crate) training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
+    pub(crate) secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) hyper_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) algorithm_specification: ::std::option::Option<crate::types::AlgorithmSpecification>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
+    pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
+    pub(crate) resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) training_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) training_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) secondary_status_transitions:
-        std::option::Option<std::vec::Vec<crate::types::SecondaryStatusTransition>>,
-    pub(crate) final_metric_data_list: std::option::Option<std::vec::Vec<crate::types::MetricData>>,
-    pub(crate) enable_network_isolation: std::option::Option<bool>,
-    pub(crate) enable_inter_container_traffic_encryption: std::option::Option<bool>,
-    pub(crate) enable_managed_spot_training: std::option::Option<bool>,
-    pub(crate) checkpoint_config: std::option::Option<crate::types::CheckpointConfig>,
-    pub(crate) training_time_in_seconds: std::option::Option<i32>,
-    pub(crate) billable_time_in_seconds: std::option::Option<i32>,
-    pub(crate) debug_hook_config: std::option::Option<crate::types::DebugHookConfig>,
-    pub(crate) experiment_config: std::option::Option<crate::types::ExperimentConfig>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SecondaryStatusTransition>>,
+    pub(crate) final_metric_data_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::MetricData>>,
+    pub(crate) enable_network_isolation: ::std::option::Option<bool>,
+    pub(crate) enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
+    pub(crate) enable_managed_spot_training: ::std::option::Option<bool>,
+    pub(crate) checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
+    pub(crate) training_time_in_seconds: ::std::option::Option<i32>,
+    pub(crate) billable_time_in_seconds: ::std::option::Option<i32>,
+    pub(crate) debug_hook_config: ::std::option::Option<crate::types::DebugHookConfig>,
+    pub(crate) experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     pub(crate) debug_rule_configurations:
-        std::option::Option<std::vec::Vec<crate::types::DebugRuleConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>>,
     pub(crate) tensor_board_output_config:
-        std::option::Option<crate::types::TensorBoardOutputConfig>,
+        ::std::option::Option<crate::types::TensorBoardOutputConfig>,
     pub(crate) debug_rule_evaluation_statuses:
-        std::option::Option<std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
-    pub(crate) environment:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) retry_strategy: std::option::Option<crate::types::RetryStrategy>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
+    pub(crate) environment: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TrainingJobBuilder {
     /// <p>The name of the training job.</p>
-    pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.training_job_name = Some(input.into());
+    pub fn training_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.training_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the training job.</p>
     pub fn set_training_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.training_job_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn training_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.training_job_arn = Some(input.into());
+    pub fn training_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.training_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn set_training_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_training_job_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.training_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a hyperparameter tuning job.</p>
-    pub fn tuning_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tuning_job_arn = Some(input.into());
+    pub fn tuning_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.tuning_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a hyperparameter tuning job.</p>
-    pub fn set_tuning_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tuning_job_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.tuning_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
-    pub fn labeling_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.labeling_job_arn = Some(input.into());
+    pub fn labeling_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.labeling_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the labeling job.</p>
-    pub fn set_labeling_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_labeling_job_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.labeling_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    pub fn auto_ml_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auto_ml_job_arn = Some(input.into());
+    pub fn auto_ml_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auto_ml_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
-    pub fn set_auto_ml_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auto_ml_job_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.auto_ml_job_arn = input;
         self
     }
     /// <p>Information about the Amazon S3 location that is configured for storing model artifacts.</p>
     pub fn model_artifacts(mut self, input: crate::types::ModelArtifacts) -> Self {
-        self.model_artifacts = Some(input);
+        self.model_artifacts = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Amazon S3 location that is configured for storing model artifacts.</p>
     pub fn set_model_artifacts(
         mut self,
-        input: std::option::Option<crate::types::ModelArtifacts>,
+        input: ::std::option::Option<crate::types::ModelArtifacts>,
     ) -> Self {
         self.model_artifacts = input;
         self
@@ -560,7 +596,7 @@ impl TrainingJobBuilder {
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub fn training_job_status(mut self, input: crate::types::TrainingJobStatus) -> Self {
-        self.training_job_status = Some(input);
+        self.training_job_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the training job.</p>
@@ -575,7 +611,7 @@ impl TrainingJobBuilder {
     /// <p>For more detailed information, see <code>SecondaryStatus</code>. </p>
     pub fn set_training_job_status(
         mut self,
-        input: std::option::Option<crate::types::TrainingJobStatus>,
+        input: ::std::option::Option<crate::types::TrainingJobStatus>,
     ) -> Self {
         self.training_job_status = input;
         self
@@ -637,7 +673,7 @@ impl TrainingJobBuilder {
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     pub fn secondary_status(mut self, input: crate::types::SecondaryStatus) -> Self {
-        self.secondary_status = Some(input);
+        self.secondary_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> Provides detailed information about the state of the training job. For detailed information about the secondary status of the training job, see <code>StatusMessage</code> under <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.</p>
@@ -698,18 +734,24 @@ impl TrainingJobBuilder {
     /// </ul>
     pub fn set_secondary_status(
         mut self,
-        input: std::option::Option<crate::types::SecondaryStatus>,
+        input: ::std::option::Option<crate::types::SecondaryStatus>,
     ) -> Self {
         self.secondary_status = input;
         self
     }
     /// <p>If the training job failed, the reason it failed.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the training job failed, the reason it failed.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }
@@ -720,19 +762,19 @@ impl TrainingJobBuilder {
     /// <p>Algorithm-specific parameters.</p>
     pub fn hyper_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.hyper_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.hyper_parameters = Some(hash_map);
+        self.hyper_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Algorithm-specific parameters.</p>
     pub fn set_hyper_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.hyper_parameters = input;
@@ -740,24 +782,24 @@ impl TrainingJobBuilder {
     }
     /// <p>Information about the algorithm used for training, and algorithm metadata.</p>
     pub fn algorithm_specification(mut self, input: crate::types::AlgorithmSpecification) -> Self {
-        self.algorithm_specification = Some(input);
+        self.algorithm_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the algorithm used for training, and algorithm metadata.</p>
     pub fn set_algorithm_specification(
         mut self,
-        input: std::option::Option<crate::types::AlgorithmSpecification>,
+        input: ::std::option::Option<crate::types::AlgorithmSpecification>,
     ) -> Self {
         self.algorithm_specification = input;
         self
     }
     /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Identity and Access Management (IAM) role configured for the training job.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
@@ -769,116 +811,116 @@ impl TrainingJobBuilder {
     pub fn input_data_config(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.input_data_config.unwrap_or_default();
         v.push(input);
-        self.input_data_config = Some(v);
+        self.input_data_config = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>Channel</code> objects that describes each data input channel.</p>
     pub fn set_input_data_config(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Channel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     ) -> Self {
         self.input_data_config = input;
         self
     }
     /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
-        self.output_data_config = Some(input);
+        self.output_data_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 path where model artifacts that you configured when creating the job are stored. SageMaker creates subfolders for model artifacts.</p>
     pub fn set_output_data_config(
         mut self,
-        input: std::option::Option<crate::types::OutputDataConfig>,
+        input: ::std::option::Option<crate::types::OutputDataConfig>,
     ) -> Self {
         self.output_data_config = input;
         self
     }
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
     pub fn resource_config(mut self, input: crate::types::ResourceConfig) -> Self {
-        self.resource_config = Some(input);
+        self.resource_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
     pub fn set_resource_config(
         mut self,
-        input: std::option::Option<crate::types::ResourceConfig>,
+        input: ::std::option::Option<crate::types::ResourceConfig>,
     ) -> Self {
         self.resource_config = input;
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
-        self.vpc_config = Some(input);
+        self.vpc_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
-        self.stopping_condition = Some(input);
+        self.stopping_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// <p>To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
     pub fn set_stopping_condition(
         mut self,
-        input: std::option::Option<crate::types::StoppingCondition>,
+        input: ::std::option::Option<crate::types::StoppingCondition>,
     ) -> Self {
         self.stopping_condition = input;
         self
     }
     /// <p>A timestamp that indicates when the training job was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the training job was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.</p>
-    pub fn training_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.training_start_time = Some(input);
+    pub fn training_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.training_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.</p>
     pub fn set_training_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.training_start_time = input;
         self
     }
     /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-    pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.training_end_time = Some(input);
+    pub fn training_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.training_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     pub fn set_training_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.training_end_time = input;
         self
     }
     /// <p>A timestamp that indicates when the status of the training job was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the status of the training job was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
@@ -894,13 +936,13 @@ impl TrainingJobBuilder {
     ) -> Self {
         let mut v = self.secondary_status_transitions.unwrap_or_default();
         v.push(input);
-        self.secondary_status_transitions = Some(v);
+        self.secondary_status_transitions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A history of all of the secondary statuses that the training job has transitioned through.</p>
     pub fn set_secondary_status_transitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SecondaryStatusTransition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SecondaryStatusTransition>>,
     ) -> Self {
         self.secondary_status_transitions = input;
         self
@@ -913,92 +955,92 @@ impl TrainingJobBuilder {
     pub fn final_metric_data_list(mut self, input: crate::types::MetricData) -> Self {
         let mut v = self.final_metric_data_list.unwrap_or_default();
         v.push(input);
-        self.final_metric_data_list = Some(v);
+        self.final_metric_data_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of final metric values that are set when the training job completes. Used only if the training job was configured to use metrics.</p>
     pub fn set_final_metric_data_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricData>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricData>>,
     ) -> Self {
         self.final_metric_data_list = input;
         self
     }
     /// <p>If the <code>TrainingJob</code> was created with network isolation, the value is set to <code>true</code>. If network isolation is enabled, nodes can't communicate beyond the VPC they run in.</p>
     pub fn enable_network_isolation(mut self, input: bool) -> Self {
-        self.enable_network_isolation = Some(input);
+        self.enable_network_isolation = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the <code>TrainingJob</code> was created with network isolation, the value is set to <code>true</code>. If network isolation is enabled, nodes can't communicate beyond the VPC they run in.</p>
-    pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_network_isolation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_network_isolation = input;
         self
     }
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
     pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
-        self.enable_inter_container_traffic_encryption = Some(input);
+        self.enable_inter_container_traffic_encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training.</p>
     pub fn set_enable_inter_container_traffic_encryption(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.enable_inter_container_traffic_encryption = input;
         self
     }
     /// <p>When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of on-demand instances. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot Training</a>.</p>
     pub fn enable_managed_spot_training(mut self, input: bool) -> Self {
-        self.enable_managed_spot_training = Some(input);
+        self.enable_managed_spot_training = ::std::option::Option::Some(input);
         self
     }
     /// <p>When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of on-demand instances. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot Training</a>.</p>
-    pub fn set_enable_managed_spot_training(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_managed_spot_training(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_managed_spot_training = input;
         self
     }
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn checkpoint_config(mut self, input: crate::types::CheckpointConfig) -> Self {
-        self.checkpoint_config = Some(input);
+        self.checkpoint_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the output location for managed spot training checkpoint data. </p>
     pub fn set_checkpoint_config(
         mut self,
-        input: std::option::Option<crate::types::CheckpointConfig>,
+        input: ::std::option::Option<crate::types::CheckpointConfig>,
     ) -> Self {
         self.checkpoint_config = input;
         self
     }
     /// <p>The training time in seconds.</p>
     pub fn training_time_in_seconds(mut self, input: i32) -> Self {
-        self.training_time_in_seconds = Some(input);
+        self.training_time_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The training time in seconds.</p>
-    pub fn set_training_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_training_time_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.training_time_in_seconds = input;
         self
     }
     /// <p>The billable time in seconds.</p>
     pub fn billable_time_in_seconds(mut self, input: i32) -> Self {
-        self.billable_time_in_seconds = Some(input);
+        self.billable_time_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The billable time in seconds.</p>
-    pub fn set_billable_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_billable_time_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.billable_time_in_seconds = input;
         self
     }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub fn debug_hook_config(mut self, input: crate::types::DebugHookConfig) -> Self {
-        self.debug_hook_config = Some(input);
+        self.debug_hook_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
     pub fn set_debug_hook_config(
         mut self,
-        input: std::option::Option<crate::types::DebugHookConfig>,
+        input: ::std::option::Option<crate::types::DebugHookConfig>,
     ) -> Self {
         self.debug_hook_config = input;
         self
@@ -1010,7 +1052,7 @@ impl TrainingJobBuilder {
     /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn experiment_config(mut self, input: crate::types::ExperimentConfig) -> Self {
-        self.experiment_config = Some(input);
+        self.experiment_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
@@ -1021,7 +1063,7 @@ impl TrainingJobBuilder {
     /// </ul>
     pub fn set_experiment_config(
         mut self,
-        input: std::option::Option<crate::types::ExperimentConfig>,
+        input: ::std::option::Option<crate::types::ExperimentConfig>,
     ) -> Self {
         self.experiment_config = input;
         self
@@ -1037,13 +1079,13 @@ impl TrainingJobBuilder {
     ) -> Self {
         let mut v = self.debug_rule_configurations.unwrap_or_default();
         v.push(input);
-        self.debug_rule_configurations = Some(v);
+        self.debug_rule_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the debug rule configuration.</p>
     pub fn set_debug_rule_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DebugRuleConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleConfiguration>>,
     ) -> Self {
         self.debug_rule_configurations = input;
         self
@@ -1053,13 +1095,13 @@ impl TrainingJobBuilder {
         mut self,
         input: crate::types::TensorBoardOutputConfig,
     ) -> Self {
-        self.tensor_board_output_config = Some(input);
+        self.tensor_board_output_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.</p>
     pub fn set_tensor_board_output_config(
         mut self,
-        input: std::option::Option<crate::types::TensorBoardOutputConfig>,
+        input: ::std::option::Option<crate::types::TensorBoardOutputConfig>,
     ) -> Self {
         self.tensor_board_output_config = input;
         self
@@ -1075,13 +1117,13 @@ impl TrainingJobBuilder {
     ) -> Self {
         let mut v = self.debug_rule_evaluation_statuses.unwrap_or_default();
         v.push(input);
-        self.debug_rule_evaluation_statuses = Some(v);
+        self.debug_rule_evaluation_statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the evaluation status of the rules for the training job.</p>
     pub fn set_debug_rule_evaluation_statuses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DebugRuleEvaluationStatus>>,
     ) -> Self {
         self.debug_rule_evaluation_statuses = input;
         self
@@ -1093,19 +1135,19 @@ impl TrainingJobBuilder {
     /// <p>The environment variables to set in the Docker container.</p>
     pub fn environment(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.environment = Some(hash_map);
+        self.environment = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The environment variables to set in the Docker container.</p>
     pub fn set_environment(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.environment = input;
@@ -1113,13 +1155,13 @@ impl TrainingJobBuilder {
     }
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub fn retry_strategy(mut self, input: crate::types::RetryStrategy) -> Self {
-        self.retry_strategy = Some(input);
+        self.retry_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub fn set_retry_strategy(
         mut self,
-        input: std::option::Option<crate::types::RetryStrategy>,
+        input: ::std::option::Option<crate::types::RetryStrategy>,
     ) -> Self {
         self.retry_strategy = input;
         self
@@ -1132,13 +1174,13 @@ impl TrainingJobBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

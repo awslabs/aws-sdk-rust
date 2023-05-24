@@ -4,37 +4,39 @@
 /// <p>For example, you can create the 'Department' target field and have it prefill department names associated with the documents based on information in the 'Source_URI' field. Set the condition that if the 'Source_URI' field contains 'financial' in its URI value, then prefill the target field 'Department' with the target value 'Finance' for the document.</p>
 /// <p>Amazon Kendra cannot create a target field if it has not already been created as an index field. After you create your index field, you can create a document metadata field using <code>DocumentAttributeTarget</code>. Amazon Kendra then will map your newly created metadata field to your index field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentAttributeCondition {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     #[doc(hidden)]
-    pub condition_document_attribute_key: std::option::Option<std::string::String>,
+    pub condition_document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::ConditionOperator>,
+    pub operator: ::std::option::Option<crate::types::ConditionOperator>,
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
     #[doc(hidden)]
-    pub condition_on_value: std::option::Option<crate::types::DocumentAttributeValue>,
+    pub condition_on_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
 impl DocumentAttributeCondition {
     /// <p>The identifier of the document attribute used for the condition.</p>
     /// <p>For example, 'Source_URI' could be an identifier for the attribute or metadata field that contains source URIs associated with the documents.</p>
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
-    pub fn condition_document_attribute_key(&self) -> std::option::Option<&str> {
+    pub fn condition_document_attribute_key(&self) -> ::std::option::Option<&str> {
         self.condition_document_attribute_key.as_deref()
     }
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::ConditionOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::ConditionOperator> {
         self.operator.as_ref()
     }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
-    pub fn condition_on_value(&self) -> std::option::Option<&crate::types::DocumentAttributeValue> {
+    pub fn condition_on_value(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DocumentAttributeValue> {
         self.condition_on_value.as_ref()
     }
 }
@@ -47,11 +49,13 @@ impl DocumentAttributeCondition {
 
 /// A builder for [`DocumentAttributeCondition`](crate::types::DocumentAttributeCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentAttributeConditionBuilder {
-    pub(crate) condition_document_attribute_key: std::option::Option<std::string::String>,
-    pub(crate) operator: std::option::Option<crate::types::ConditionOperator>,
-    pub(crate) condition_on_value: std::option::Option<crate::types::DocumentAttributeValue>,
+    pub(crate) condition_document_attribute_key: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<crate::types::ConditionOperator>,
+    pub(crate) condition_on_value: ::std::option::Option<crate::types::DocumentAttributeValue>,
 }
 impl DocumentAttributeConditionBuilder {
     /// <p>The identifier of the document attribute used for the condition.</p>
@@ -59,9 +63,9 @@ impl DocumentAttributeConditionBuilder {
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub fn condition_document_attribute_key(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.condition_document_attribute_key = Some(input.into());
+        self.condition_document_attribute_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the document attribute used for the condition.</p>
@@ -69,7 +73,7 @@ impl DocumentAttributeConditionBuilder {
     /// <p>Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.</p>
     pub fn set_condition_document_attribute_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.condition_document_attribute_key = input;
         self
@@ -77,14 +81,14 @@ impl DocumentAttributeConditionBuilder {
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
     pub fn operator(mut self, input: crate::types::ConditionOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The condition operator.</p>
     /// <p>For example, you can use 'Contains' to partially match a string.</p>
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::ConditionOperator>,
+        input: ::std::option::Option<crate::types::ConditionOperator>,
     ) -> Self {
         self.operator = input;
         self
@@ -92,14 +96,14 @@ impl DocumentAttributeConditionBuilder {
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
     pub fn condition_on_value(mut self, input: crate::types::DocumentAttributeValue) -> Self {
-        self.condition_on_value = Some(input);
+        self.condition_on_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value used by the operator.</p>
     /// <p>For example, you can specify the value 'financial' for strings in the 'Source_URI' field that partially match or contain this value.</p>
     pub fn set_condition_on_value(
         mut self,
-        input: std::option::Option<crate::types::DocumentAttributeValue>,
+        input: ::std::option::Option<crate::types::DocumentAttributeValue>,
     ) -> Self {
         self.condition_on_value = input;
         self

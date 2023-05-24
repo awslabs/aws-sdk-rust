@@ -2,11 +2,11 @@
 
 /// <p>Configuration settings for the handling of the stateful rule groups in a firewall policy. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     #[doc(hidden)]
-    pub rule_order: std::option::Option<crate::types::RuleOrder>,
+    pub rule_order: ::std::option::Option<crate::types::RuleOrder>,
     /// <p>Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections can break due to disruptions in external networks or within the firewall itself.</p>
     /// <ul>
     /// <li> <p> <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. This is the default behavior.</p> </li>
@@ -14,11 +14,11 @@ pub struct StatefulEngineOptions {
     /// <li> <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. Network Firewall also sends a TCP reject packet back to your client so that the client can immediately establish a new session. Network Firewall will have context about the new session and will apply rules to the subsequent traffic.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stream_exception_policy: std::option::Option<crate::types::StreamExceptionPolicy>,
+    pub stream_exception_policy: ::std::option::Option<crate::types::StreamExceptionPolicy>,
 }
 impl StatefulEngineOptions {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
-    pub fn rule_order(&self) -> std::option::Option<&crate::types::RuleOrder> {
+    pub fn rule_order(&self) -> ::std::option::Option<&crate::types::RuleOrder> {
         self.rule_order.as_ref()
     }
     /// <p>Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections can break due to disruptions in external networks or within the firewall itself.</p>
@@ -29,7 +29,7 @@ impl StatefulEngineOptions {
     /// </ul>
     pub fn stream_exception_policy(
         &self,
-    ) -> std::option::Option<&crate::types::StreamExceptionPolicy> {
+    ) -> ::std::option::Option<&crate::types::StreamExceptionPolicy> {
         self.stream_exception_policy.as_ref()
     }
 }
@@ -42,19 +42,21 @@ impl StatefulEngineOptions {
 
 /// A builder for [`StatefulEngineOptions`](crate::types::StatefulEngineOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatefulEngineOptionsBuilder {
-    pub(crate) rule_order: std::option::Option<crate::types::RuleOrder>,
-    pub(crate) stream_exception_policy: std::option::Option<crate::types::StreamExceptionPolicy>,
+    pub(crate) rule_order: ::std::option::Option<crate::types::RuleOrder>,
+    pub(crate) stream_exception_policy: ::std::option::Option<crate::types::StreamExceptionPolicy>,
 }
 impl StatefulEngineOptionsBuilder {
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
     pub fn rule_order(mut self, input: crate::types::RuleOrder) -> Self {
-        self.rule_order = Some(input);
+        self.rule_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are provided to the rule engine as Suricata compatible strings, and Suricata evaluates them based on certain settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </p>
-    pub fn set_rule_order(mut self, input: std::option::Option<crate::types::RuleOrder>) -> Self {
+    pub fn set_rule_order(mut self, input: ::std::option::Option<crate::types::RuleOrder>) -> Self {
         self.rule_order = input;
         self
     }
@@ -65,7 +67,7 @@ impl StatefulEngineOptionsBuilder {
     /// <li> <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall. Network Firewall also sends a TCP reject packet back to your client so that the client can immediately establish a new session. Network Firewall will have context about the new session and will apply rules to the subsequent traffic.</p> </li>
     /// </ul>
     pub fn stream_exception_policy(mut self, input: crate::types::StreamExceptionPolicy) -> Self {
-        self.stream_exception_policy = Some(input);
+        self.stream_exception_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures how Network Firewall processes traffic when a network connection breaks midstream. Network connections can break due to disruptions in external networks or within the firewall itself.</p>
@@ -76,7 +78,7 @@ impl StatefulEngineOptionsBuilder {
     /// </ul>
     pub fn set_stream_exception_policy(
         mut self,
-        input: std::option::Option<crate::types::StreamExceptionPolicy>,
+        input: ::std::option::Option<crate::types::StreamExceptionPolicy>,
     ) -> Self {
         self.stream_exception_policy = input;
         self

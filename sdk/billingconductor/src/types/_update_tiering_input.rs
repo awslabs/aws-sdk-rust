@@ -2,15 +2,15 @@
 
 /// <p> The set of tiering configurations for the pricing rule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTieringInput {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
     #[doc(hidden)]
-    pub free_tier: std::option::Option<crate::types::UpdateFreeTierConfig>,
+    pub free_tier: ::std::option::Option<crate::types::UpdateFreeTierConfig>,
 }
 impl UpdateTieringInput {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
-    pub fn free_tier(&self) -> std::option::Option<&crate::types::UpdateFreeTierConfig> {
+    pub fn free_tier(&self) -> ::std::option::Option<&crate::types::UpdateFreeTierConfig> {
         self.free_tier.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl UpdateTieringInput {
 
 /// A builder for [`UpdateTieringInput`](crate::types::UpdateTieringInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateTieringInputBuilder {
-    pub(crate) free_tier: std::option::Option<crate::types::UpdateFreeTierConfig>,
+    pub(crate) free_tier: ::std::option::Option<crate::types::UpdateFreeTierConfig>,
 }
 impl UpdateTieringInputBuilder {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
     pub fn free_tier(mut self, input: crate::types::UpdateFreeTierConfig) -> Self {
-        self.free_tier = Some(input);
+        self.free_tier = ::std::option::Option::Some(input);
         self
     }
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
     pub fn set_free_tier(
         mut self,
-        input: std::option::Option<crate::types::UpdateFreeTierConfig>,
+        input: ::std::option::Option<crate::types::UpdateFreeTierConfig>,
     ) -> Self {
         self.free_tier = input;
         self

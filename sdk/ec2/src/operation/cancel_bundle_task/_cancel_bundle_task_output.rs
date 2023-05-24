@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of CancelBundleTask.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelBundleTaskOutput {
     /// <p>Information about the bundle task.</p>
     #[doc(hidden)]
-    pub bundle_task: std::option::Option<crate::types::BundleTask>,
+    pub bundle_task: ::std::option::Option<crate::types::BundleTask>,
     _request_id: Option<String>,
 }
 impl CancelBundleTaskOutput {
     /// <p>Information about the bundle task.</p>
-    pub fn bundle_task(&self) -> std::option::Option<&crate::types::BundleTask> {
+    pub fn bundle_task(&self) -> ::std::option::Option<&crate::types::BundleTask> {
         self.bundle_task.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CancelBundleTaskOutput {
+impl ::aws_http::request_id::RequestId for CancelBundleTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,24 @@ impl CancelBundleTaskOutput {
 
 /// A builder for [`CancelBundleTaskOutput`](crate::operation::cancel_bundle_task::CancelBundleTaskOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelBundleTaskOutputBuilder {
-    pub(crate) bundle_task: std::option::Option<crate::types::BundleTask>,
+    pub(crate) bundle_task: ::std::option::Option<crate::types::BundleTask>,
     _request_id: Option<String>,
 }
 impl CancelBundleTaskOutputBuilder {
     /// <p>Information about the bundle task.</p>
     pub fn bundle_task(mut self, input: crate::types::BundleTask) -> Self {
-        self.bundle_task = Some(input);
+        self.bundle_task = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the bundle task.</p>
-    pub fn set_bundle_task(mut self, input: std::option::Option<crate::types::BundleTask>) -> Self {
+    pub fn set_bundle_task(
+        mut self,
+        input: ::std::option::Option<crate::types::BundleTask>,
+    ) -> Self {
         self.bundle_task = input;
         self
     }

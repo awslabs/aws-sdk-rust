@@ -23,56 +23,59 @@ pub use crate::operation::put_intent::_put_intent_input::PutIntentInputBuilder;
 /// <p>If you specify an existing intent name to update the intent, Amazon Lex replaces the values in the <code>$LATEST</code> version of the intent with the values in the request. Amazon Lex removes fields that you don't provide in the request. If you don't specify the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code> version of the intent is set to <code>NOT_BUILT</code>.</p>
 /// <p>For more information, see <code>how-it-works</code>.</p>
 /// <p>This operation requires permissions for the <code>lex:PutIntent</code> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutIntentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_intent::builders::PutIntentInputBuilder,
 }
 impl PutIntentFluentBuilder {
     /// Creates a new `PutIntent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_intent::PutIntent,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_intent::PutIntentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_intent::PutIntentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_intent::PutIntentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_intent::PutIntentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_intent::PutIntentError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -85,33 +88,33 @@ impl PutIntentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_intent::PutIntentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_intent::PutIntentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_intent::PutIntentError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
     /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
     /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
     /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description of the intent.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the intent.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -127,7 +130,7 @@ impl PutIntentFluentBuilder {
     /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
     pub fn set_slots(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Slot>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Slot>>,
     ) -> Self {
         self.inner = self.inner.set_slots(input);
         self
@@ -138,7 +141,10 @@ impl PutIntentFluentBuilder {
     ///
     /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
     /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
-    pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sample_utterances(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sample_utterances(input.into());
         self
     }
@@ -146,7 +152,7 @@ impl PutIntentFluentBuilder {
     /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
     pub fn set_sample_utterances(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_sample_utterances(input);
         self
@@ -165,7 +171,7 @@ impl PutIntentFluentBuilder {
     /// </note>
     pub fn set_confirmation_prompt(
         mut self,
-        input: std::option::Option<crate::types::Prompt>,
+        input: ::std::option::Option<crate::types::Prompt>,
     ) -> Self {
         self.inner = self.inner.set_confirmation_prompt(input);
         self
@@ -182,7 +188,7 @@ impl PutIntentFluentBuilder {
     /// </note>
     pub fn set_rejection_statement(
         mut self,
-        input: std::option::Option<crate::types::Statement>,
+        input: ::std::option::Option<crate::types::Statement>,
     ) -> Self {
         self.inner = self.inner.set_rejection_statement(input);
         self
@@ -211,7 +217,7 @@ impl PutIntentFluentBuilder {
     /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
     pub fn set_follow_up_prompt(
         mut self,
-        input: std::option::Option<crate::types::FollowUpPrompt>,
+        input: ::std::option::Option<crate::types::FollowUpPrompt>,
     ) -> Self {
         self.inner = self.inner.set_follow_up_prompt(input);
         self
@@ -230,7 +236,7 @@ impl PutIntentFluentBuilder {
     /// </note>
     pub fn set_conclusion_statement(
         mut self,
-        input: std::option::Option<crate::types::Statement>,
+        input: ::std::option::Option<crate::types::Statement>,
     ) -> Self {
         self.inner = self.inner.set_conclusion_statement(input);
         self
@@ -245,7 +251,7 @@ impl PutIntentFluentBuilder {
     /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
     pub fn set_dialog_code_hook(
         mut self,
-        input: std::option::Option<crate::types::CodeHook>,
+        input: ::std::option::Option<crate::types::CodeHook>,
     ) -> Self {
         self.inner = self.inner.set_dialog_code_hook(input);
         self
@@ -260,20 +266,23 @@ impl PutIntentFluentBuilder {
     /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
     pub fn set_fulfillment_activity(
         mut self,
-        input: std::option::Option<crate::types::FulfillmentActivity>,
+        input: ::std::option::Option<crate::types::FulfillmentActivity>,
     ) -> Self {
         self.inner = self.inner.set_fulfillment_activity(input);
         self
     }
     /// <p>A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-    pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn parent_intent_signature(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.parent_intent_signature(input.into());
         self
     }
     /// <p>A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
     pub fn set_parent_intent_signature(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_parent_intent_signature(input);
         self
@@ -281,14 +290,14 @@ impl PutIntentFluentBuilder {
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new intent, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a intent, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
-    pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.checksum(input.into());
         self
     }
     /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
     /// <p>When you create a new intent, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
     /// <p>When you want to update a intent, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
-    pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_checksum(input);
         self
     }
@@ -298,7 +307,7 @@ impl PutIntentFluentBuilder {
         self
     }
     /// <p>When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
-    pub fn set_create_version(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_create_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_create_version(input);
         self
     }
@@ -310,7 +319,7 @@ impl PutIntentFluentBuilder {
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html"> AMAZON.KendraSearchIntent</a>.</p>
     pub fn set_kendra_configuration(
         mut self,
-        input: std::option::Option<crate::types::KendraConfiguration>,
+        input: ::std::option::Option<crate::types::KendraConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_kendra_configuration(input);
         self
@@ -327,7 +336,7 @@ impl PutIntentFluentBuilder {
     /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
     pub fn set_input_contexts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputContext>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     ) -> Self {
         self.inner = self.inner.set_input_contexts(input);
         self
@@ -344,7 +353,7 @@ impl PutIntentFluentBuilder {
     /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
     pub fn set_output_contexts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputContext>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     ) -> Self {
         self.inner = self.inner.set_output_contexts(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLink`](crate::operation::delete_link::builders::DeleteLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_link::builders::DeleteLinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_link::builders::DeleteLinkFluentBuilder::set_identifier): <p>The ARN of the link to delete.</p>
+    ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_link::builders::DeleteLinkFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_link::builders::DeleteLinkFluentBuilder::set_identifier): <p>The ARN of the link to delete.</p>
     /// - On success, responds with [`DeleteLinkOutput`](crate::operation::delete_link::DeleteLinkOutput)
     /// - On failure, responds with [`SdkError<DeleteLinkError>`](crate::operation::delete_link::DeleteLinkError)
     pub fn delete_link(&self) -> crate::operation::delete_link::builders::DeleteLinkFluentBuilder {

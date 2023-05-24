@@ -2,40 +2,40 @@
 
 /// <p>The ListDomains request includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainsInput {
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
     #[doc(hidden)]
-    pub filter_conditions: std::option::Option<std::vec::Vec<crate::types::FilterCondition>>,
+    pub filter_conditions: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
     #[doc(hidden)]
-    pub sort_condition: std::option::Option<crate::types::SortCondition>,
+    pub sort_condition: ::std::option::Option<crate::types::SortCondition>,
     /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
     #[doc(hidden)]
-    pub max_items: std::option::Option<i32>,
+    pub max_items: ::std::option::Option<i32>,
 }
 impl ListDomainsInput {
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
-    pub fn filter_conditions(&self) -> std::option::Option<&[crate::types::FilterCondition]> {
+    pub fn filter_conditions(&self) -> ::std::option::Option<&[crate::types::FilterCondition]> {
         self.filter_conditions.as_deref()
     }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
-    pub fn sort_condition(&self) -> std::option::Option<&crate::types::SortCondition> {
+    pub fn sort_condition(&self) -> ::std::option::Option<&crate::types::SortCondition> {
         self.sort_condition.as_ref()
     }
     /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
-    pub fn max_items(&self) -> std::option::Option<i32> {
+    pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
 }
@@ -48,12 +48,15 @@ impl ListDomainsInput {
 
 /// A builder for [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDomainsInputBuilder {
-    pub(crate) filter_conditions: std::option::Option<std::vec::Vec<crate::types::FilterCondition>>,
-    pub(crate) sort_condition: std::option::Option<crate::types::SortCondition>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) max_items: std::option::Option<i32>,
+    pub(crate) filter_conditions:
+        ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
+    pub(crate) sort_condition: ::std::option::Option<crate::types::SortCondition>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) max_items: ::std::option::Option<i32>,
 }
 impl ListDomainsInputBuilder {
     /// Appends an item to `filter_conditions`.
@@ -64,62 +67,62 @@ impl ListDomainsInputBuilder {
     pub fn filter_conditions(mut self, input: crate::types::FilterCondition) -> Self {
         let mut v = self.filter_conditions.unwrap_or_default();
         v.push(input);
-        self.filter_conditions = Some(v);
+        self.filter_conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains information about the filters applied during the <code>ListDomains</code> request. The filter conditions can include domain name and domain expiration.</p>
     pub fn set_filter_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FilterCondition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterCondition>>,
     ) -> Self {
         self.filter_conditions = input;
         self
     }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
     pub fn sort_condition(mut self, input: crate::types::SortCondition) -> Self {
-        self.sort_condition = Some(input);
+        self.sort_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about the requested ordering of domains in the returned list.</p>
     pub fn set_sort_condition(
         mut self,
-        input: std::option::Option<crate::types::SortCondition>,
+        input: ::std::option::Option<crate::types::SortCondition>,
     ) -> Self {
         self.sort_condition = input;
         self
     }
     /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
     pub fn max_items(mut self, input: i32) -> Self {
-        self.max_items = Some(input);
+        self.max_items = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
-    pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }
     /// Consumes the builder and constructs a [`ListDomainsInput`](crate::operation::list_domains::ListDomainsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_domains::ListDomainsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_domains::ListDomainsInput {
+        ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsInput {
             filter_conditions: self.filter_conditions,
             sort_condition: self.sort_condition,
             marker: self.marker,

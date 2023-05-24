@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EventScopeCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EventScopeCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EventScopeCode {
+impl ::std::convert::From<&str> for EventScopeCode {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_SPECIFIC" => EventScopeCode::AccountSpecific,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EventScopeCode {
         }
     }
 }
-impl std::str::FromStr for EventScopeCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EventScopeCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventScopeCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EventScopeCode::from(s))
     }
 }
 impl EventScopeCode {
@@ -91,7 +91,7 @@ impl EventScopeCode {
         &["ACCOUNT_SPECIFIC", "NONE", "PUBLIC"]
     }
 }
-impl AsRef<str> for EventScopeCode {
+impl ::std::convert::AsRef<str> for EventScopeCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

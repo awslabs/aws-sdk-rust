@@ -2,23 +2,23 @@
 
 /// <p>Provides the details of the <code>WorkflowExecutionCancelRequested</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution for which the cancellation was requested.</p>
     #[doc(hidden)]
-    pub external_workflow_execution: std::option::Option<crate::types::WorkflowExecution>,
+    pub external_workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     #[doc(hidden)]
     pub external_initiated_event_id: i64,
     /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
     #[doc(hidden)]
-    pub cause: std::option::Option<crate::types::WorkflowExecutionCancelRequestedCause>,
+    pub cause: ::std::option::Option<crate::types::WorkflowExecutionCancelRequestedCause>,
 }
 impl WorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution for which the cancellation was requested.</p>
     pub fn external_workflow_execution(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecution> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecution> {
         self.external_workflow_execution.as_ref()
     }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -28,7 +28,7 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
     /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
     pub fn cause(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionCancelRequestedCause> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionCancelRequestedCause> {
         self.cause.as_ref()
     }
 }
@@ -42,45 +42,47 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
 
 /// A builder for [`WorkflowExecutionCancelRequestedEventAttributes`](crate::types::WorkflowExecutionCancelRequestedEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkflowExecutionCancelRequestedEventAttributesBuilder {
-    pub(crate) external_workflow_execution: std::option::Option<crate::types::WorkflowExecution>,
-    pub(crate) external_initiated_event_id: std::option::Option<i64>,
-    pub(crate) cause: std::option::Option<crate::types::WorkflowExecutionCancelRequestedCause>,
+    pub(crate) external_workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
+    pub(crate) external_initiated_event_id: ::std::option::Option<i64>,
+    pub(crate) cause: ::std::option::Option<crate::types::WorkflowExecutionCancelRequestedCause>,
 }
 impl WorkflowExecutionCancelRequestedEventAttributesBuilder {
     /// <p>The external workflow execution for which the cancellation was requested.</p>
     pub fn external_workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
-        self.external_workflow_execution = Some(input);
+        self.external_workflow_execution = ::std::option::Option::Some(input);
         self
     }
     /// <p>The external workflow execution for which the cancellation was requested.</p>
     pub fn set_external_workflow_execution(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecution>,
+        input: ::std::option::Option<crate::types::WorkflowExecution>,
     ) -> Self {
         self.external_workflow_execution = input;
         self
     }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn external_initiated_event_id(mut self, input: i64) -> Self {
-        self.external_initiated_event_id = Some(input);
+        self.external_initiated_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_external_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_external_initiated_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.external_initiated_event_id = input;
         self
     }
     /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
     pub fn cause(mut self, input: crate::types::WorkflowExecutionCancelRequestedCause) -> Self {
-        self.cause = Some(input);
+        self.cause = ::std::option::Option::Some(input);
         self
     }
     /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
     pub fn set_cause(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionCancelRequestedCause>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionCancelRequestedCause>,
     ) -> Self {
         self.cause = input;
         self

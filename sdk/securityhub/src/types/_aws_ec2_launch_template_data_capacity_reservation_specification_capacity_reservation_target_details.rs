@@ -2,23 +2,23 @@
 
 /// <p> Information about the target Capacity Reservation or Capacity Reservation group in which to run an Amazon EC2 instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails
 {
     /// <p> The ID of the Capacity Reservation in which to run the instance. </p>
     #[doc(hidden)]
-    pub capacity_reservation_id: std::option::Option<std::string::String>,
+    pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Capacity Reservation resource group in which to run the instance. </p>
     #[doc(hidden)]
-    pub capacity_reservation_resource_group_arn: std::option::Option<std::string::String>,
+    pub capacity_reservation_resource_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails {
     /// <p> The ID of the Capacity Reservation in which to run the instance. </p>
-    pub fn capacity_reservation_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_id(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_id.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the Capacity Reservation resource group in which to run the instance. </p>
-    pub fn capacity_reservation_resource_group_arn(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_resource_group_arn(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_resource_group_arn.as_deref()
     }
 }
@@ -31,24 +31,30 @@ impl AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservation
 
 /// A builder for [`AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails`](crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder
 {
-    pub(crate) capacity_reservation_id: std::option::Option<std::string::String>,
-    pub(crate) capacity_reservation_resource_group_arn: std::option::Option<std::string::String>,
+    pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_reservation_resource_group_arn:
+        ::std::option::Option<::std::string::String>,
 }
 impl
     AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetailsBuilder
 {
     /// <p> The ID of the Capacity Reservation in which to run the instance. </p>
-    pub fn capacity_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capacity_reservation_id = Some(input.into());
+    pub fn capacity_reservation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Capacity Reservation in which to run the instance. </p>
     pub fn set_capacity_reservation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.capacity_reservation_id = input;
         self
@@ -56,15 +62,15 @@ impl
     /// <p> The Amazon Resource Name (ARN) of the Capacity Reservation resource group in which to run the instance. </p>
     pub fn capacity_reservation_resource_group_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.capacity_reservation_resource_group_arn = Some(input.into());
+        self.capacity_reservation_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Capacity Reservation resource group in which to run the instance. </p>
     pub fn set_capacity_reservation_resource_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.capacity_reservation_resource_group_arn = input;
         self

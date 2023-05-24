@@ -2,29 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
     /// <p>List of <code>ApplicationSummary</code> objects. </p>
     #[doc(hidden)]
-    pub application_summaries: std::option::Option<std::vec::Vec<crate::types::ApplicationSummary>>,
+    pub application_summaries:
+        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
     /// <p>Returns true if there are more applications to retrieve.</p>
     #[doc(hidden)]
-    pub has_more_applications: std::option::Option<bool>,
+    pub has_more_applications: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
     /// <p>List of <code>ApplicationSummary</code> objects. </p>
     pub fn application_summaries(
         &self,
-    ) -> std::option::Option<&[crate::types::ApplicationSummary]> {
+    ) -> ::std::option::Option<&[crate::types::ApplicationSummary]> {
         self.application_summaries.as_deref()
     }
     /// <p>Returns true if there are more applications to retrieve.</p>
-    pub fn has_more_applications(&self) -> std::option::Option<bool> {
+    pub fn has_more_applications(&self) -> ::std::option::Option<bool> {
         self.has_more_applications
     }
 }
-impl aws_http::request_id::RequestId for ListApplicationsOutput {
+impl ::aws_http::request_id::RequestId for ListApplicationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +40,13 @@ impl ListApplicationsOutput {
 
 /// A builder for [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListApplicationsOutputBuilder {
     pub(crate) application_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationSummary>>,
-    pub(crate) has_more_applications: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
+    pub(crate) has_more_applications: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutputBuilder {
@@ -55,24 +58,24 @@ impl ListApplicationsOutputBuilder {
     pub fn application_summaries(mut self, input: crate::types::ApplicationSummary) -> Self {
         let mut v = self.application_summaries.unwrap_or_default();
         v.push(input);
-        self.application_summaries = Some(v);
+        self.application_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of <code>ApplicationSummary</code> objects. </p>
     pub fn set_application_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
     ) -> Self {
         self.application_summaries = input;
         self
     }
     /// <p>Returns true if there are more applications to retrieve.</p>
     pub fn has_more_applications(mut self, input: bool) -> Self {
-        self.has_more_applications = Some(input);
+        self.has_more_applications = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns true if there are more applications to retrieve.</p>
-    pub fn set_has_more_applications(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_more_applications(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_applications = input;
         self
     }

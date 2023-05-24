@@ -2,22 +2,22 @@
 
 /// <p> Request of UpdateBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The budget that you want to update your budget to.</p>
     #[doc(hidden)]
-    pub new_budget: std::option::Option<crate::types::Budget>,
+    pub new_budget: ::std::option::Option<crate::types::Budget>,
 }
 impl UpdateBudgetInput {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The budget that you want to update your budget to.</p>
-    pub fn new_budget(&self) -> std::option::Option<&crate::types::Budget> {
+    pub fn new_budget(&self) -> ::std::option::Option<&crate::types::Budget> {
         self.new_budget.as_ref()
     }
 }
@@ -30,40 +30,42 @@ impl UpdateBudgetInput {
 
 /// A builder for [`UpdateBudgetInput`](crate::operation::update_budget::UpdateBudgetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateBudgetInputBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) new_budget: std::option::Option<crate::types::Budget>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) new_budget: ::std::option::Option<crate::types::Budget>,
 }
 impl UpdateBudgetInputBuilder {
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The budget that you want to update your budget to.</p>
     pub fn new_budget(mut self, input: crate::types::Budget) -> Self {
-        self.new_budget = Some(input);
+        self.new_budget = ::std::option::Option::Some(input);
         self
     }
     /// <p>The budget that you want to update your budget to.</p>
-    pub fn set_new_budget(mut self, input: std::option::Option<crate::types::Budget>) -> Self {
+    pub fn set_new_budget(mut self, input: ::std::option::Option<crate::types::Budget>) -> Self {
         self.new_budget = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateBudgetInput`](crate::operation::update_budget::UpdateBudgetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_budget::UpdateBudgetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_budget::UpdateBudgetInput {
+        ::std::result::Result::Ok(crate::operation::update_budget::UpdateBudgetInput {
             account_id: self.account_id,
             new_budget: self.new_budget,
         })

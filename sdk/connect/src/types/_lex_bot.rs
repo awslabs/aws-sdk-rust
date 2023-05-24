@@ -2,22 +2,22 @@
 
 /// <p>Configuration information of an Amazon Lex bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexBot {
     /// <p>The name of the Amazon Lex bot.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     #[doc(hidden)]
-    pub lex_region: std::option::Option<std::string::String>,
+    pub lex_region: ::std::option::Option<::std::string::String>,
 }
 impl LexBot {
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
-    pub fn lex_region(&self) -> std::option::Option<&str> {
+    pub fn lex_region(&self) -> ::std::option::Option<&str> {
         self.lex_region.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl LexBot {
 
 /// A builder for [`LexBot`](crate::types::LexBot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LexBotBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) lex_region: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) lex_region: ::std::option::Option<::std::string::String>,
 }
 impl LexBotBuilder {
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
-    pub fn lex_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lex_region = Some(input.into());
+    pub fn lex_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lex_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
-    pub fn set_lex_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lex_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lex_region = input;
         self
     }

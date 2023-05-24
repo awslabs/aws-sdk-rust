@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSourceLocation`](crate::operation::describe_source_location::builders::DescribeSourceLocationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_location_name(impl Into<String>)`](crate::operation::describe_source_location::builders::DescribeSourceLocationFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::describe_source_location::builders::DescribeSourceLocationFluentBuilder::set_source_location_name): <p>The name of the source location.</p>
+    ///   - [`source_location_name(impl ::std::convert::Into<String>)`](crate::operation::describe_source_location::builders::DescribeSourceLocationFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::describe_source_location::builders::DescribeSourceLocationFluentBuilder::set_source_location_name): <p>The name of the source location.</p>
     /// - On success, responds with [`DescribeSourceLocationOutput`](crate::operation::describe_source_location::DescribeSourceLocationOutput) with field(s):
     ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::operation::describe_source_location::DescribeSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_source_location::DescribeSourceLocationOutput::arn): <p>The ARN of the source location.</p>

@@ -6,29 +6,29 @@ pub use crate::operation::start_route_analysis::_start_route_analysis_input::Sta
 /// Fluent builder constructing a request to `StartRouteAnalysis`.
 ///
 /// <p>Starts analyzing the routing path between the specified source and destination. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRouteAnalysisFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder,
 }
 impl StartRouteAnalysisFluentBuilder {
     /// Creates a new `StartRouteAnalysis`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_route_analysis::StartRouteAnalysis,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_route_analysis::StartRouteAnalysisError,
         >,
     > {
@@ -36,30 +36,33 @@ impl StartRouteAnalysisFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_route_analysis::StartRouteAnalysisOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_route_analysis::StartRouteAnalysisError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl StartRouteAnalysisFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_route_analysis::StartRouteAnalysisOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_route_analysis::StartRouteAnalysisError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn global_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
@@ -104,7 +110,7 @@ impl StartRouteAnalysisFluentBuilder {
     /// <p>The source from which traffic originates.</p>
     pub fn set_source(
         mut self,
-        input: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
+        input: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
     ) -> Self {
         self.inner = self.inner.set_source(input);
         self
@@ -120,7 +126,7 @@ impl StartRouteAnalysisFluentBuilder {
     /// <p>The destination.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
+        input: ::std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
@@ -131,7 +137,7 @@ impl StartRouteAnalysisFluentBuilder {
         self
     }
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
-    pub fn set_include_return_path(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_return_path(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_return_path(input);
         self
     }
@@ -141,7 +147,7 @@ impl StartRouteAnalysisFluentBuilder {
         self
     }
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
-    pub fn set_use_middleboxes(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_middleboxes(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_middleboxes(input);
         self
     }

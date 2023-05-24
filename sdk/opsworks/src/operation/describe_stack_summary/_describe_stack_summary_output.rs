@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeStackSummary</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackSummaryOutput {
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
     #[doc(hidden)]
-    pub stack_summary: std::option::Option<crate::types::StackSummary>,
+    pub stack_summary: ::std::option::Option<crate::types::StackSummary>,
     _request_id: Option<String>,
 }
 impl DescribeStackSummaryOutput {
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
-    pub fn stack_summary(&self) -> std::option::Option<&crate::types::StackSummary> {
+    pub fn stack_summary(&self) -> ::std::option::Option<&crate::types::StackSummary> {
         self.stack_summary.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeStackSummaryOutput {
+impl ::aws_http::request_id::RequestId for DescribeStackSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DescribeStackSummaryOutput {
 
 /// A builder for [`DescribeStackSummaryOutput`](crate::operation::describe_stack_summary::DescribeStackSummaryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStackSummaryOutputBuilder {
-    pub(crate) stack_summary: std::option::Option<crate::types::StackSummary>,
+    pub(crate) stack_summary: ::std::option::Option<crate::types::StackSummary>,
     _request_id: Option<String>,
 }
 impl DescribeStackSummaryOutputBuilder {
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
     pub fn stack_summary(mut self, input: crate::types::StackSummary) -> Self {
-        self.stack_summary = Some(input);
+        self.stack_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>StackSummary</code> object that contains the results.</p>
     pub fn set_stack_summary(
         mut self,
-        input: std::option::Option<crate::types::StackSummary>,
+        input: ::std::option::Option<crate::types::StackSummary>,
     ) -> Self {
         self.stack_summary = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>The parameters for using a Lambda function as a target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipeTargetLambdaFunctionParameters {
     /// <p>Choose from the following options.</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct PipeTargetLambdaFunctionParameters {
     /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub invocation_type: std::option::Option<crate::types::PipeTargetInvocationType>,
+    pub invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetLambdaFunctionParameters {
     /// <p>Choose from the following options.</p>
@@ -20,7 +20,9 @@ impl PipeTargetLambdaFunctionParameters {
     /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
     /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn invocation_type(&self) -> std::option::Option<&crate::types::PipeTargetInvocationType> {
+    pub fn invocation_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -33,9 +35,11 @@ impl PipeTargetLambdaFunctionParameters {
 
 /// A builder for [`PipeTargetLambdaFunctionParameters`](crate::types::PipeTargetLambdaFunctionParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipeTargetLambdaFunctionParametersBuilder {
-    pub(crate) invocation_type: std::option::Option<crate::types::PipeTargetInvocationType>,
+    pub(crate) invocation_type: ::std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetLambdaFunctionParametersBuilder {
     /// <p>Choose from the following options.</p>
@@ -45,7 +49,7 @@ impl PipeTargetLambdaFunctionParametersBuilder {
     /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
     pub fn invocation_type(mut self, input: crate::types::PipeTargetInvocationType) -> Self {
-        self.invocation_type = Some(input);
+        self.invocation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Choose from the following options.</p>
@@ -56,7 +60,7 @@ impl PipeTargetLambdaFunctionParametersBuilder {
     /// </ul>
     pub fn set_invocation_type(
         mut self,
-        input: std::option::Option<crate::types::PipeTargetInvocationType>,
+        input: ::std::option::Option<crate::types::PipeTargetInvocationType>,
     ) -> Self {
         self.invocation_type = input;
         self

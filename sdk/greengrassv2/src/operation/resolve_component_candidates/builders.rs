@@ -10,29 +10,29 @@ pub use crate::operation::resolve_component_candidates::_resolve_component_candi
 /// <p>When you specify the component candidates to resolve, IoT Greengrass compares each component's digest from the core device with the component's digest in the Amazon Web Services Cloud. If the digests don't match, then IoT Greengrass specifies to use the version from the Amazon Web Services Cloud.</p> <important>
 /// <p>To use this operation, you must use the data plane API endpoint and authenticate with an IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT Greengrass endpoints and quotas</a>.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResolveComponentCandidatesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::resolve_component_candidates::builders::ResolveComponentCandidatesInputBuilder,
 }
 impl ResolveComponentCandidatesFluentBuilder {
     /// Creates a new `ResolveComponentCandidates`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::resolve_component_candidates::ResolveComponentCandidates,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
         >,
     > {
@@ -40,30 +40,33 @@ impl ResolveComponentCandidatesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,9 +79,9 @@ impl ResolveComponentCandidatesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
         >,
     > {
@@ -92,7 +95,7 @@ impl ResolveComponentCandidatesFluentBuilder {
     /// <p>The platform to use to resolve compatible components.</p>
     pub fn set_platform(
         mut self,
-        input: std::option::Option<crate::types::ComponentPlatform>,
+        input: ::std::option::Option<crate::types::ComponentPlatform>,
     ) -> Self {
         self.inner = self.inner.set_platform(input);
         self
@@ -109,7 +112,7 @@ impl ResolveComponentCandidatesFluentBuilder {
     /// <p>The list of components to resolve.</p>
     pub fn set_component_candidates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComponentCandidate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentCandidate>>,
     ) -> Self {
         self.inner = self.inner.set_component_candidates(input);
         self

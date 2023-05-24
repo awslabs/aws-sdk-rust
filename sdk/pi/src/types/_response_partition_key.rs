@@ -2,19 +2,21 @@
 
 /// <p>If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code> request, the dimensions are returned in an array. Each element in the array specifies one dimension. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     #[doc(hidden)]
-    pub dimensions:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub dimensions: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ResponsePartitionKey {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     pub fn dimensions(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.dimensions.as_ref()
     }
 }
@@ -27,10 +29,13 @@ impl ResponsePartitionKey {
 
 /// A builder for [`ResponsePartitionKey`](crate::types::ResponsePartitionKey).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponsePartitionKeyBuilder {
-    pub(crate) dimensions:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) dimensions: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ResponsePartitionKeyBuilder {
     /// Adds a key-value pair to `dimensions`.
@@ -40,19 +45,19 @@ impl ResponsePartitionKeyBuilder {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     pub fn dimensions(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.dimensions = Some(hash_map);
+        self.dimensions = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.dimensions = input;

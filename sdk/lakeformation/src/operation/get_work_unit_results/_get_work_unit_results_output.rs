@@ -2,19 +2,19 @@
 
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
-#[derive(std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub struct GetWorkUnitResultsOutput {
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
-    pub result_stream: aws_smithy_http::byte_stream::ByteStream,
+    pub result_stream: ::aws_smithy_http::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
 impl GetWorkUnitResultsOutput {
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
-    pub fn result_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn result_stream(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
         &self.result_stream
     }
 }
-impl aws_http::request_id::RequestId for GetWorkUnitResultsOutput {
+impl ::aws_http::request_id::RequestId for GetWorkUnitResultsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,21 @@ impl GetWorkUnitResultsOutput {
 
 /// A builder for [`GetWorkUnitResultsOutput`](crate::operation::get_work_unit_results::GetWorkUnitResultsOutput).
 #[non_exhaustive]
-#[derive(std::default::Default, std::fmt::Debug)]
+#[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetWorkUnitResultsOutputBuilder {
-    pub(crate) result_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) result_stream: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     _request_id: Option<String>,
 }
 impl GetWorkUnitResultsOutputBuilder {
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
-    pub fn result_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
-        self.result_stream = Some(input);
+    pub fn result_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+        self.result_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache Arrow v1.0 messages.</p>
     pub fn set_result_stream(
         mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     ) -> Self {
         self.result_stream = input;
         self

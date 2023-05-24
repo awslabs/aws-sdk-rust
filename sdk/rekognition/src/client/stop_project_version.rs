@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopProjectVersion`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_version_arn(impl Into<String>)`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::project_version_arn) / [`set_project_version_arn(Option<String>)`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::set_project_version_arn): <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>  <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
+    ///   - [`project_version_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::project_version_arn) / [`set_project_version_arn(Option<String>)`](crate::operation::stop_project_version::builders::StopProjectVersionFluentBuilder::set_project_version_arn): <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>  <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
     /// - On success, responds with [`StopProjectVersionOutput`](crate::operation::stop_project_version::StopProjectVersionOutput) with field(s):
     ///   - [`status(Option<ProjectVersionStatus>)`](crate::operation::stop_project_version::StopProjectVersionOutput::status): <p>The current status of the stop operation. </p>
     /// - On failure, responds with [`SdkError<StopProjectVersionError>`](crate::operation::stop_project_version::StopProjectVersionError)

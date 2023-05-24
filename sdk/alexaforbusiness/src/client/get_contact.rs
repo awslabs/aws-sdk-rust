@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContact`](crate::operation::get_contact::builders::GetContactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_arn(impl Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::contact_arn) / [`set_contact_arn(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_contact_arn): <p>The ARN of the contact for which to request details.</p>
+    ///   - [`contact_arn(impl ::std::convert::Into<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::contact_arn) / [`set_contact_arn(Option<String>)`](crate::operation::get_contact::builders::GetContactFluentBuilder::set_contact_arn): <p>The ARN of the contact for which to request details.</p>
     /// - On success, responds with [`GetContactOutput`](crate::operation::get_contact::GetContactOutput) with field(s):
     ///   - [`contact(Option<Contact>)`](crate::operation::get_contact::GetContactOutput::contact): <p>The details of the requested contact.</p>
     /// - On failure, responds with [`SdkError<GetContactError>`](crate::operation::get_contact::GetContactError)

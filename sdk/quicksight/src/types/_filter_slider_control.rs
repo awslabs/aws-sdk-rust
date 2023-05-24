@@ -2,27 +2,27 @@
 
 /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterSliderControl {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
     #[doc(hidden)]
-    pub filter_control_id: std::option::Option<std::string::String>,
+    pub filter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
     #[doc(hidden)]
-    pub source_filter_id: std::option::Option<std::string::String>,
+    pub source_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
     #[doc(hidden)]
-    pub display_options: std::option::Option<crate::types::SliderControlDisplayOptions>,
+    pub display_options: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p> </li>
     /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SheetControlSliderType>,
+    pub r#type: ::std::option::Option<crate::types::SheetControlSliderType>,
     /// <p>The smaller value that is displayed at the left of the slider.</p>
     #[doc(hidden)]
     pub maximum_value: f64,
@@ -35,21 +35,21 @@ pub struct FilterSliderControl {
 }
 impl FilterSliderControl {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
-    pub fn filter_control_id(&self) -> std::option::Option<&str> {
+    pub fn filter_control_id(&self) -> ::std::option::Option<&str> {
         self.filter_control_id.as_deref()
     }
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
-    pub fn source_filter_id(&self) -> std::option::Option<&str> {
+    pub fn source_filter_id(&self) -> ::std::option::Option<&str> {
         self.source_filter_id.as_deref()
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(
         &self,
-    ) -> std::option::Option<&crate::types::SliderControlDisplayOptions> {
+    ) -> ::std::option::Option<&crate::types::SliderControlDisplayOptions> {
         self.display_options.as_ref()
     }
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
@@ -57,7 +57,7 @@ impl FilterSliderControl {
     /// <li> <p> <code>SINGLE_POINT</code>: Filter against(equals) a single data point.</p> </li>
     /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SheetControlSliderType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlSliderType> {
         self.r#type.as_ref()
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
@@ -82,60 +82,71 @@ impl FilterSliderControl {
 
 /// A builder for [`FilterSliderControl`](crate::types::FilterSliderControl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterSliderControlBuilder {
-    pub(crate) filter_control_id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) source_filter_id: std::option::Option<std::string::String>,
-    pub(crate) display_options: std::option::Option<crate::types::SliderControlDisplayOptions>,
-    pub(crate) r#type: std::option::Option<crate::types::SheetControlSliderType>,
-    pub(crate) maximum_value: std::option::Option<f64>,
-    pub(crate) minimum_value: std::option::Option<f64>,
-    pub(crate) step_size: std::option::Option<f64>,
+    pub(crate) filter_control_id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) source_filter_id: ::std::option::Option<::std::string::String>,
+    pub(crate) display_options: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SheetControlSliderType>,
+    pub(crate) maximum_value: ::std::option::Option<f64>,
+    pub(crate) minimum_value: ::std::option::Option<f64>,
+    pub(crate) step_size: ::std::option::Option<f64>,
 }
 impl FilterSliderControlBuilder {
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
-    pub fn filter_control_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filter_control_id = Some(input.into());
+    pub fn filter_control_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.filter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>FilterSliderControl</code>.</p>
     pub fn set_filter_control_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.filter_control_id = input;
         self
     }
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the <code>FilterSliderControl</code>.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
-    pub fn source_filter_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_filter_id = Some(input.into());
+    pub fn source_filter_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
-    pub fn set_source_filter_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_filter_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_filter_id = input;
         self
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(mut self, input: crate::types::SliderControlDisplayOptions) -> Self {
-        self.display_options = Some(input);
+        self.display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display options of a control.</p>
     pub fn set_display_options(
         mut self,
-        input: std::option::Option<crate::types::SliderControlDisplayOptions>,
+        input: ::std::option::Option<crate::types::SliderControlDisplayOptions>,
     ) -> Self {
         self.display_options = input;
         self
@@ -146,7 +157,7 @@ impl FilterSliderControlBuilder {
     /// <li> <p> <code>RANGE</code>: Filter data that is in a specified range.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SheetControlSliderType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of <code>FilterSliderControl</code>. Choose one of the following options:</p>
@@ -156,38 +167,38 @@ impl FilterSliderControlBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::SheetControlSliderType>,
+        input: ::std::option::Option<crate::types::SheetControlSliderType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
     pub fn maximum_value(mut self, input: f64) -> Self {
-        self.maximum_value = Some(input);
+        self.maximum_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The smaller value that is displayed at the left of the slider.</p>
-    pub fn set_maximum_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_maximum_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum_value = input;
         self
     }
     /// <p>The larger value that is displayed at the right of the slider.</p>
     pub fn minimum_value(mut self, input: f64) -> Self {
-        self.minimum_value = Some(input);
+        self.minimum_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The larger value that is displayed at the right of the slider.</p>
-    pub fn set_minimum_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_minimum_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum_value = input;
         self
     }
     /// <p>The number of increments that the slider bar is divided into.</p>
     pub fn step_size(mut self, input: f64) -> Self {
-        self.step_size = Some(input);
+        self.step_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of increments that the slider bar is divided into.</p>
-    pub fn set_step_size(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_step_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.step_size = input;
         self
     }

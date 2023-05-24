@@ -26,7 +26,7 @@ Then in code, a client can be created with the following:
 ```rust,ignore
 use aws_sdk_sts as sts;
 
-#[tokio::main]
+#[::tokio::main]
 async fn main() -> Result<(), sts::Error> {
     let config = aws_config::load_from_env().await;
     let client = sts::Client::new(&config);

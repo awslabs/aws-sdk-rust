@@ -2,22 +2,22 @@
 
 /// <p>A version of an IAM policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamPolicyVersion {
     /// <p>The identifier of the policy version.</p>
     #[doc(hidden)]
-    pub version_id: std::option::Option<std::string::String>,
+    pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the version is the default version.</p>
     #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub create_date: std::option::Option<std::string::String>,
+    pub create_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamPolicyVersion {
     /// <p>The identifier of the policy version.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>Whether the version is the default version.</p>
@@ -26,7 +26,7 @@ impl AwsIamPolicyVersion {
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn create_date(&self) -> std::option::Option<&str> {
+    pub fn create_date(&self) -> ::std::option::Option<&str> {
         self.create_date.as_deref()
     }
 }
@@ -39,42 +39,44 @@ impl AwsIamPolicyVersion {
 
 /// A builder for [`AwsIamPolicyVersion`](crate::types::AwsIamPolicyVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsIamPolicyVersionBuilder {
-    pub(crate) version_id: std::option::Option<std::string::String>,
-    pub(crate) is_default_version: std::option::Option<bool>,
-    pub(crate) create_date: std::option::Option<std::string::String>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) is_default_version: ::std::option::Option<bool>,
+    pub(crate) create_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamPolicyVersionBuilder {
     /// <p>The identifier of the policy version.</p>
-    pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_id = Some(input.into());
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the policy version.</p>
-    pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
     /// <p>Whether the version is the default version.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
-        self.is_default_version = Some(input);
+        self.is_default_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the version is the default version.</p>
-    pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_version = input;
         self
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn create_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.create_date = Some(input.into());
+    pub fn create_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.create_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_create_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_date = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of CopyImage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyImageOutput {
     /// <p>The ID of the new AMI.</p>
     #[doc(hidden)]
-    pub image_id: std::option::Option<std::string::String>,
+    pub image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CopyImageOutput {
     /// <p>The ID of the new AMI.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CopyImageOutput {
+impl ::aws_http::request_id::RequestId for CopyImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CopyImageOutput {
 
 /// A builder for [`CopyImageOutput`](crate::operation::copy_image::CopyImageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CopyImageOutputBuilder {
-    pub(crate) image_id: std::option::Option<std::string::String>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CopyImageOutputBuilder {
     /// <p>The ID of the new AMI.</p>
-    pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_id = Some(input.into());
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the new AMI.</p>
-    pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }

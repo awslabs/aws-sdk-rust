@@ -2,15 +2,15 @@
 
 /// <p>The LF-tag policy for database resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseLfTagPolicy {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+    pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
 impl DatabaseLfTagPolicy {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub fn expression(&self) -> std::option::Option<&[crate::types::LfTag]> {
+    pub fn expression(&self) -> ::std::option::Option<&[crate::types::LfTag]> {
         self.expression.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl DatabaseLfTagPolicy {
 
 /// A builder for [`DatabaseLfTagPolicy`](crate::types::DatabaseLfTagPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatabaseLfTagPolicyBuilder {
-    pub(crate) expression: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+    pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
 impl DatabaseLfTagPolicyBuilder {
     /// Appends an item to `expression`.
@@ -36,13 +38,13 @@ impl DatabaseLfTagPolicyBuilder {
     pub fn expression(mut self, input: crate::types::LfTag) -> Self {
         let mut v = self.expression.unwrap_or_default();
         v.push(input);
-        self.expression = Some(v);
+        self.expression = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
     pub fn set_expression(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
     ) -> Self {
         self.expression = input;
         self

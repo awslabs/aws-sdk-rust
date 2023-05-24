@@ -3,7 +3,7 @@
 /// <p>If the action is successful, the service sends back an HTTP 200 response.</p>
 /// <p>The following data is returned in JSON format by the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEmailIdentityDkimSigningAttributesOutput {
     /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p>
     /// <p>If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses the selector that you specified. The value of the TXT record must be a public key that's paired with the private key that you specified in the process of creating the identity.</p>
@@ -16,12 +16,12 @@ pub struct PutEmailIdentityDkimSigningAttributesOutput {
     /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub dkim_status: std::option::Option<crate::types::DkimStatus>,
+    pub dkim_status: ::std::option::Option<crate::types::DkimStatus>,
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
     #[doc(hidden)]
-    pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub dkim_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl PutEmailIdentityDkimSigningAttributesOutput {
@@ -35,17 +35,17 @@ impl PutEmailIdentityDkimSigningAttributesOutput {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
     /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
-    pub fn dkim_status(&self) -> std::option::Option<&crate::types::DkimStatus> {
+    pub fn dkim_status(&self) -> ::std::option::Option<&crate::types::DkimStatus> {
         self.dkim_status.as_ref()
     }
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    pub fn dkim_tokens(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dkim_tokens(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.dkim_tokens.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PutEmailIdentityDkimSigningAttributesOutput {
+impl ::aws_http::request_id::RequestId for PutEmailIdentityDkimSigningAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -59,10 +59,12 @@ impl PutEmailIdentityDkimSigningAttributesOutput {
 
 /// A builder for [`PutEmailIdentityDkimSigningAttributesOutput`](crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutEmailIdentityDkimSigningAttributesOutputBuilder {
-    pub(crate) dkim_status: std::option::Option<crate::types::DkimStatus>,
-    pub(crate) dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) dkim_status: ::std::option::Option<crate::types::DkimStatus>,
+    pub(crate) dkim_tokens: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl PutEmailIdentityDkimSigningAttributesOutputBuilder {
@@ -77,7 +79,7 @@ impl PutEmailIdentityDkimSigningAttributesOutputBuilder {
     /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
     pub fn dkim_status(mut self, input: crate::types::DkimStatus) -> Self {
-        self.dkim_status = Some(input);
+        self.dkim_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DKIM authentication status of the identity. Amazon SES determines the authentication status by searching for specific records in the DNS configuration for your domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your domain.</p>
@@ -90,7 +92,10 @@ impl PutEmailIdentityDkimSigningAttributesOutputBuilder {
     /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.</p> </li>
     /// <li> <p> <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.</p> </li>
     /// </ul>
-    pub fn set_dkim_status(mut self, input: std::option::Option<crate::types::DkimStatus>) -> Self {
+    pub fn set_dkim_status(
+        mut self,
+        input: ::std::option::Option<crate::types::DkimStatus>,
+    ) -> Self {
         self.dkim_status = input;
         self
     }
@@ -101,10 +106,10 @@ impl PutEmailIdentityDkimSigningAttributesOutputBuilder {
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
     /// <p>If you configured DKIM authentication for the domain by providing your own public-private key pair, then this object contains the selector that's associated with your public key.</p>
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
-    pub fn dkim_tokens(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dkim_tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dkim_tokens.unwrap_or_default();
         v.push(input.into());
-        self.dkim_tokens = Some(v);
+        self.dkim_tokens = ::std::option::Option::Some(v);
         self
     }
     /// <p>If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process is complete.</p>
@@ -112,7 +117,7 @@ impl PutEmailIdentityDkimSigningAttributesOutputBuilder {
     /// <p>Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS configuration of the domain for up to 72 hours.</p>
     pub fn set_dkim_tokens(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.dkim_tokens = input;
         self

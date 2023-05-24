@@ -7,22 +7,22 @@
 /// <li> <p>A <code>unit</code> of <code>GB</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Spend {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
     #[doc(hidden)]
-    pub amount: std::option::Option<std::string::String>,
+    pub amount: ::std::option::Option<::std::string::String>,
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<std::string::String>,
+    pub unit: ::std::option::Option<::std::string::String>,
 }
 impl Spend {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
-    pub fn amount(&self) -> std::option::Option<&str> {
+    pub fn amount(&self) -> ::std::option::Option<&str> {
         self.amount.as_deref()
     }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
 }
@@ -35,29 +35,31 @@ impl Spend {
 
 /// A builder for [`Spend`](crate::types::Spend).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpendBuilder {
-    pub(crate) amount: std::option::Option<std::string::String>,
-    pub(crate) unit: std::option::Option<std::string::String>,
+    pub(crate) amount: ::std::option::Option<::std::string::String>,
+    pub(crate) unit: ::std::option::Option<::std::string::String>,
 }
 impl SpendBuilder {
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
-    pub fn amount(mut self, input: impl Into<std::string::String>) -> Self {
-        self.amount = Some(input.into());
+    pub fn amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.amount = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cost or usage amount that's associated with a budget forecast, actual spend, or budget threshold.</p>
-    pub fn set_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amount = input;
         self
     }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
-    pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit = Some(input.into());
+    pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit of measurement that's used for the budget forecast, actual spend, or budget threshold, such as USD or GBP.</p>
-    pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Filter the datasets based on creation time or dataset status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetFilter {
     /// <p>Filter the datasets based on the dataset status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DatasetStatus>,
+    pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p>Filter the datasets based on the dataset type.</p>
     #[doc(hidden)]
-    pub dataset_type: std::option::Option<crate::types::DatasetType>,
+    pub dataset_type: ::std::option::Option<crate::types::DatasetType>,
     /// <p>Filter the datasets to include datasets created after the specified time.</p>
     #[doc(hidden)]
-    pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
     #[doc(hidden)]
-    pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasetFilter {
     /// <p>Filter the datasets based on the dataset status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DatasetStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>Filter the datasets based on the dataset type.</p>
-    pub fn dataset_type(&self) -> std::option::Option<&crate::types::DatasetType> {
+    pub fn dataset_type(&self) -> ::std::option::Option<&crate::types::DatasetType> {
         self.dataset_type.as_ref()
     }
     /// <p>Filter the datasets to include datasets created after the specified time.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
 }
@@ -44,59 +44,61 @@ impl DatasetFilter {
 
 /// A builder for [`DatasetFilter`](crate::types::DatasetFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetFilterBuilder {
-    pub(crate) status: std::option::Option<crate::types::DatasetStatus>,
-    pub(crate) dataset_type: std::option::Option<crate::types::DatasetType>,
-    pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::DatasetStatus>,
+    pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetType>,
+    pub(crate) creation_time_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) creation_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasetFilterBuilder {
     /// <p>Filter the datasets based on the dataset status.</p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter the datasets based on the dataset status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DatasetStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Filter the datasets based on the dataset type.</p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
-        self.dataset_type = Some(input);
+        self.dataset_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter the datasets based on the dataset type.</p>
     pub fn set_dataset_type(
         mut self,
-        input: std::option::Option<crate::types::DatasetType>,
+        input: ::std::option::Option<crate::types::DatasetType>,
     ) -> Self {
         self.dataset_type = input;
         self
     }
     /// <p>Filter the datasets to include datasets created after the specified time.</p>
-    pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time_after = Some(input);
+    pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time_after = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter the datasets to include datasets created after the specified time.</p>
     pub fn set_creation_time_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time_after = input;
         self
     }
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
-    pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time_before = Some(input);
+    pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time_before = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter the datasets to include datasets created before the specified time.</p>
     pub fn set_creation_time_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time_before = input;
         self

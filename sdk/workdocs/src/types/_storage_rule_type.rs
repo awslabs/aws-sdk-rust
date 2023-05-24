@@ -2,22 +2,22 @@
 
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageRuleType {
     /// <p>The amount of storage allocated, in bytes.</p>
     #[doc(hidden)]
-    pub storage_allocated_in_bytes: std::option::Option<i64>,
+    pub storage_allocated_in_bytes: ::std::option::Option<i64>,
     /// <p>The type of storage.</p>
     #[doc(hidden)]
-    pub storage_type: std::option::Option<crate::types::StorageType>,
+    pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl StorageRuleType {
     /// <p>The amount of storage allocated, in bytes.</p>
-    pub fn storage_allocated_in_bytes(&self) -> std::option::Option<i64> {
+    pub fn storage_allocated_in_bytes(&self) -> ::std::option::Option<i64> {
         self.storage_allocated_in_bytes
     }
     /// <p>The type of storage.</p>
-    pub fn storage_type(&self) -> std::option::Option<&crate::types::StorageType> {
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl StorageRuleType {
 
 /// A builder for [`StorageRuleType`](crate::types::StorageRuleType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StorageRuleTypeBuilder {
-    pub(crate) storage_allocated_in_bytes: std::option::Option<i64>,
-    pub(crate) storage_type: std::option::Option<crate::types::StorageType>,
+    pub(crate) storage_allocated_in_bytes: ::std::option::Option<i64>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl StorageRuleTypeBuilder {
     /// <p>The amount of storage allocated, in bytes.</p>
     pub fn storage_allocated_in_bytes(mut self, input: i64) -> Self {
-        self.storage_allocated_in_bytes = Some(input);
+        self.storage_allocated_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of storage allocated, in bytes.</p>
-    pub fn set_storage_allocated_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_storage_allocated_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.storage_allocated_in_bytes = input;
         self
     }
     /// <p>The type of storage.</p>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
-        self.storage_type = Some(input);
+        self.storage_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of storage.</p>
     pub fn set_storage_type(
         mut self,
-        input: std::option::Option<crate::types::StorageType>,
+        input: ::std::option::Option<crate::types::StorageType>,
     ) -> Self {
         self.storage_type = input;
         self

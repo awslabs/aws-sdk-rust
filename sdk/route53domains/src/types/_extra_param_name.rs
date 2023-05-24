@@ -67,13 +67,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ExtraParamName {
     #[allow(missing_docs)] // documentation missing in model
@@ -141,7 +141,7 @@ pub enum ExtraParamName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ExtraParamName {
+impl ::std::convert::From<&str> for ExtraParamName {
     fn from(s: &str) -> Self {
         match s {
             "AU_ID_NUMBER" => ExtraParamName::AuIdNumber,
@@ -181,11 +181,11 @@ impl std::convert::From<&str> for ExtraParamName {
         }
     }
 }
-impl std::str::FromStr for ExtraParamName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ExtraParamName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExtraParamName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ExtraParamName::from(s))
     }
 }
 impl ExtraParamName {
@@ -263,7 +263,7 @@ impl ExtraParamName {
         ]
     }
 }
-impl AsRef<str> for ExtraParamName {
+impl ::std::convert::AsRef<str> for ExtraParamName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

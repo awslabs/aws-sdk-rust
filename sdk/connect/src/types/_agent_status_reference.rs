@@ -2,29 +2,29 @@
 
 /// <p>Information about the agent's status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentStatusReference {
     /// <p>The start timestamp of the agent's status.</p>
     #[doc(hidden)]
-    pub status_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub status_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
     #[doc(hidden)]
-    pub status_arn: std::option::Option<std::string::String>,
+    pub status_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the agent status.</p>
     #[doc(hidden)]
-    pub status_name: std::option::Option<std::string::String>,
+    pub status_name: ::std::option::Option<::std::string::String>,
 }
 impl AgentStatusReference {
     /// <p>The start timestamp of the agent's status.</p>
-    pub fn status_start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.status_start_timestamp.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
-    pub fn status_arn(&self) -> std::option::Option<&str> {
+    pub fn status_arn(&self) -> ::std::option::Option<&str> {
         self.status_arn.as_deref()
     }
     /// <p>The name of the agent status.</p>
-    pub fn status_name(&self) -> std::option::Option<&str> {
+    pub fn status_name(&self) -> ::std::option::Option<&str> {
         self.status_name.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl AgentStatusReference {
 
 /// A builder for [`AgentStatusReference`](crate::types::AgentStatusReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentStatusReferenceBuilder {
-    pub(crate) status_start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_arn: std::option::Option<std::string::String>,
-    pub(crate) status_name: std::option::Option<std::string::String>,
+    pub(crate) status_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status_name: ::std::option::Option<::std::string::String>,
 }
 impl AgentStatusReferenceBuilder {
     /// <p>The start timestamp of the agent's status.</p>
-    pub fn status_start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.status_start_timestamp = Some(input);
+    pub fn status_start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.status_start_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start timestamp of the agent's status.</p>
     pub fn set_status_start_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.status_start_timestamp = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
-    pub fn status_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_arn = Some(input.into());
+    pub fn status_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the agent's status.</p>
-    pub fn set_status_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_arn = input;
         self
     }
     /// <p>The name of the agent status.</p>
-    pub fn status_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_name = Some(input.into());
+    pub fn status_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the agent status.</p>
-    pub fn set_status_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_name = input;
         self
     }

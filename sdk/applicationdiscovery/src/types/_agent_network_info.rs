@@ -2,22 +2,22 @@
 
 /// <p>Network details about the host where the agent/connector resides.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentNetworkInfo {
     /// <p>The IP address for the host where the agent/connector resides.</p>
     #[doc(hidden)]
-    pub ip_address: std::option::Option<std::string::String>,
+    pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The MAC address for the host where the agent/connector resides.</p>
     #[doc(hidden)]
-    pub mac_address: std::option::Option<std::string::String>,
+    pub mac_address: ::std::option::Option<::std::string::String>,
 }
 impl AgentNetworkInfo {
     /// <p>The IP address for the host where the agent/connector resides.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p>The MAC address for the host where the agent/connector resides.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> ::std::option::Option<&str> {
         self.mac_address.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AgentNetworkInfo {
 
 /// A builder for [`AgentNetworkInfo`](crate::types::AgentNetworkInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentNetworkInfoBuilder {
-    pub(crate) ip_address: std::option::Option<std::string::String>,
-    pub(crate) mac_address: std::option::Option<std::string::String>,
+    pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) mac_address: ::std::option::Option<::std::string::String>,
 }
 impl AgentNetworkInfoBuilder {
     /// <p>The IP address for the host where the agent/connector resides.</p>
-    pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_address = Some(input.into());
+    pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address for the host where the agent/connector resides.</p>
-    pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
     /// <p>The MAC address for the host where the agent/connector resides.</p>
-    pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mac_address = Some(input.into());
+    pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mac_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MAC address for the host where the agent/connector resides.</p>
-    pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mac_address = input;
         self
     }

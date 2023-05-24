@@ -2,22 +2,22 @@
 
 /// <p>The default values of the <code>StringParameterDeclaration</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringDefaultValues {
     /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
     #[doc(hidden)]
-    pub dynamic_value: std::option::Option<crate::types::DynamicDefaultValue>,
+    pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
     /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
     #[doc(hidden)]
-    pub static_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StringDefaultValues {
     /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
-    pub fn dynamic_value(&self) -> std::option::Option<&crate::types::DynamicDefaultValue> {
+    pub fn dynamic_value(&self) -> ::std::option::Option<&crate::types::DynamicDefaultValue> {
         self.dynamic_value.as_ref()
     }
     /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-    pub fn static_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn static_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.static_values.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl StringDefaultValues {
 
 /// A builder for [`StringDefaultValues`](crate::types::StringDefaultValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StringDefaultValuesBuilder {
-    pub(crate) dynamic_value: std::option::Option<crate::types::DynamicDefaultValue>,
-    pub(crate) static_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
+    pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StringDefaultValuesBuilder {
     /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
     pub fn dynamic_value(mut self, input: crate::types::DynamicDefaultValue) -> Self {
-        self.dynamic_value = Some(input);
+        self.dynamic_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
     pub fn set_dynamic_value(
         mut self,
-        input: std::option::Option<crate::types::DynamicDefaultValue>,
+        input: ::std::option::Option<crate::types::DynamicDefaultValue>,
     ) -> Self {
         self.dynamic_value = input;
         self
@@ -54,16 +56,19 @@ impl StringDefaultValuesBuilder {
     /// To override the contents of this collection use [`set_static_values`](Self::set_static_values).
     ///
     /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-    pub fn static_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn static_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.static_values.unwrap_or_default();
         v.push(input.into());
-        self.static_values = Some(v);
+        self.static_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
     pub fn set_static_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.static_values = input;
         self

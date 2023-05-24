@@ -2,14 +2,14 @@
 
 /// <p>Limits settings on protection groups for your subscription. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectionGroupLimits {
     /// <p>The maximum number of protection groups that you can have at one time. </p>
     #[doc(hidden)]
     pub max_protection_groups: i64,
     /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
     #[doc(hidden)]
-    pub pattern_type_limits: std::option::Option<crate::types::ProtectionGroupPatternTypeLimits>,
+    pub pattern_type_limits: ::std::option::Option<crate::types::ProtectionGroupPatternTypeLimits>,
 }
 impl ProtectionGroupLimits {
     /// <p>The maximum number of protection groups that you can have at one time. </p>
@@ -19,7 +19,7 @@ impl ProtectionGroupLimits {
     /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
     pub fn pattern_type_limits(
         &self,
-    ) -> std::option::Option<&crate::types::ProtectionGroupPatternTypeLimits> {
+    ) -> ::std::option::Option<&crate::types::ProtectionGroupPatternTypeLimits> {
         self.pattern_type_limits.as_ref()
     }
 }
@@ -32,20 +32,22 @@ impl ProtectionGroupLimits {
 
 /// A builder for [`ProtectionGroupLimits`](crate::types::ProtectionGroupLimits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtectionGroupLimitsBuilder {
-    pub(crate) max_protection_groups: std::option::Option<i64>,
+    pub(crate) max_protection_groups: ::std::option::Option<i64>,
     pub(crate) pattern_type_limits:
-        std::option::Option<crate::types::ProtectionGroupPatternTypeLimits>,
+        ::std::option::Option<crate::types::ProtectionGroupPatternTypeLimits>,
 }
 impl ProtectionGroupLimitsBuilder {
     /// <p>The maximum number of protection groups that you can have at one time. </p>
     pub fn max_protection_groups(mut self, input: i64) -> Self {
-        self.max_protection_groups = Some(input);
+        self.max_protection_groups = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of protection groups that you can have at one time. </p>
-    pub fn set_max_protection_groups(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_max_protection_groups(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_protection_groups = input;
         self
     }
@@ -54,13 +56,13 @@ impl ProtectionGroupLimitsBuilder {
         mut self,
         input: crate::types::ProtectionGroupPatternTypeLimits,
     ) -> Self {
-        self.pattern_type_limits = Some(input);
+        self.pattern_type_limits = ::std::option::Option::Some(input);
         self
     }
     /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
     pub fn set_pattern_type_limits(
         mut self,
-        input: std::option::Option<crate::types::ProtectionGroupPatternTypeLimits>,
+        input: ::std::option::Option<crate::types::ProtectionGroupPatternTypeLimits>,
     ) -> Self {
         self.pattern_type_limits = input;
         self

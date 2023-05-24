@@ -2,47 +2,49 @@
 
 /// <p>Provides a summary of an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentSummary {
     /// <p>The ID of the experiment.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the experiment template.</p>
     #[doc(hidden)]
-    pub experiment_template_id: std::option::Option<std::string::String>,
+    pub experiment_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the experiment.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ExperimentState>,
+    pub state: ::std::option::Option<crate::types::ExperimentState>,
     /// <p>The time that the experiment was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ExperimentSummary {
     /// <p>The ID of the experiment.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ID of the experiment template.</p>
-    pub fn experiment_template_id(&self) -> std::option::Option<&str> {
+    pub fn experiment_template_id(&self) -> ::std::option::Option<&str> {
         self.experiment_template_id.as_deref()
     }
     /// <p>The state of the experiment.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ExperimentState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ExperimentState> {
         self.state.as_ref()
     }
     /// <p>The time that the experiment was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The tags for the experiment.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -55,58 +57,67 @@ impl ExperimentSummary {
 
 /// A builder for [`ExperimentSummary`](crate::types::ExperimentSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperimentSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) experiment_template_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::ExperimentState>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ExperimentState>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ExperimentSummaryBuilder {
     /// <p>The ID of the experiment.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the experiment.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ID of the experiment template.</p>
-    pub fn experiment_template_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.experiment_template_id = Some(input.into());
+    pub fn experiment_template_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.experiment_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the experiment template.</p>
     pub fn set_experiment_template_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.experiment_template_id = input;
         self
     }
     /// <p>The state of the experiment.</p>
     pub fn state(mut self, input: crate::types::ExperimentState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the experiment.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ExperimentState>) -> Self {
+    pub fn set_state(
+        mut self,
+        input: ::std::option::Option<crate::types::ExperimentState>,
+    ) -> Self {
         self.state = input;
         self
     }
     /// <p>The time that the experiment was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the experiment was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
@@ -118,19 +129,19 @@ impl ExperimentSummaryBuilder {
     /// <p>The tags for the experiment.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags for the experiment.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

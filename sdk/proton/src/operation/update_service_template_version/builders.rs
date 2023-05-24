@@ -6,29 +6,29 @@ pub use crate::operation::update_service_template_version::_update_service_templ
 /// Fluent builder constructing a request to `UpdateServiceTemplateVersion`.
 ///
 /// <p>Update a major or minor version of a service template.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServiceTemplateVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder,
 }
 impl UpdateServiceTemplateVersionFluentBuilder {
     /// Creates a new `UpdateServiceTemplateVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_service_template_version::UpdateServiceTemplateVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateServiceTemplateVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_service_template_version::UpdateServiceTemplateVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,51 +75,69 @@ impl UpdateServiceTemplateVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_service_template_version::UpdateServiceTemplateVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the service template.</p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
-    pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn major_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
-    pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_major_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
-    pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn minor_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.minor_version(input.into());
         self
     }
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
-    pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_minor_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_minor_version(input);
         self
     }
     /// <p>A description of a service template version to update.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of a service template version to update.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -128,7 +149,7 @@ impl UpdateServiceTemplateVersionFluentBuilder {
     /// <p>The status of the service template minor version to update.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::TemplateVersionStatus>,
+        input: ::std::option::Option<crate::types::TemplateVersionStatus>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
@@ -148,7 +169,9 @@ impl UpdateServiceTemplateVersionFluentBuilder {
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     pub fn set_compatible_environment_templates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_compatible_environment_templates(input);
         self
@@ -174,8 +197,8 @@ impl UpdateServiceTemplateVersionFluentBuilder {
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_supported_component_sources(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
         >,
     ) -> Self {
         self.inner = self.inner.set_supported_component_sources(input);

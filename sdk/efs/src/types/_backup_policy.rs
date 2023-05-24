@@ -2,7 +2,7 @@
 
 /// <p>The backup policy for the file system used to create automatic daily backups. If status has a value of <code>ENABLED</code>, the file system is being automatically backed up. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic backups</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupPolicy {
     /// <p>Describes the status of the file system's backup policy.</p>
     /// <ul>
@@ -12,7 +12,7 @@ pub struct BackupPolicy {
     /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
 }
 impl BackupPolicy {
     /// <p>Describes the status of the file system's backup policy.</p>
@@ -22,7 +22,7 @@ impl BackupPolicy {
     /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
     /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
 }
@@ -35,9 +35,11 @@ impl BackupPolicy {
 
 /// A builder for [`BackupPolicy`](crate::types::BackupPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackupPolicyBuilder {
-    pub(crate) status: std::option::Option<crate::types::Status>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
 }
 impl BackupPolicyBuilder {
     /// <p>Describes the status of the file system's backup policy.</p>
@@ -48,7 +50,7 @@ impl BackupPolicyBuilder {
     /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the status of the file system's backup policy.</p>
@@ -58,7 +60,7 @@ impl BackupPolicyBuilder {
     /// <li> <p> <b> <code>DISABLED</code> </b> - Automatic back ups are turned off for the file system.</p> </li>
     /// <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off automatic backups for the file system.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }

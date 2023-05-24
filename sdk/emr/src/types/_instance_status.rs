@@ -2,31 +2,31 @@
 
 /// <p>The instance status details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStatus {
     /// <p>The current state of the instance.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::InstanceState>,
+    pub state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>The details of the status change reason for the instance.</p>
     #[doc(hidden)]
-    pub state_change_reason: std::option::Option<crate::types::InstanceStateChangeReason>,
+    pub state_change_reason: ::std::option::Option<crate::types::InstanceStateChangeReason>,
     /// <p>The timeline of the instance status over time.</p>
     #[doc(hidden)]
-    pub timeline: std::option::Option<crate::types::InstanceTimeline>,
+    pub timeline: ::std::option::Option<crate::types::InstanceTimeline>,
 }
 impl InstanceStatus {
     /// <p>The current state of the instance.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::InstanceState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
         self.state.as_ref()
     }
     /// <p>The details of the status change reason for the instance.</p>
     pub fn state_change_reason(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceStateChangeReason> {
+    ) -> ::std::option::Option<&crate::types::InstanceStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The timeline of the instance status over time.</p>
-    pub fn timeline(&self) -> std::option::Option<&crate::types::InstanceTimeline> {
+    pub fn timeline(&self) -> ::std::option::Option<&crate::types::InstanceTimeline> {
         self.timeline.as_ref()
     }
 }
@@ -39,45 +39,47 @@ impl InstanceStatus {
 
 /// A builder for [`InstanceStatus`](crate::types::InstanceStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceStatusBuilder {
-    pub(crate) state: std::option::Option<crate::types::InstanceState>,
-    pub(crate) state_change_reason: std::option::Option<crate::types::InstanceStateChangeReason>,
-    pub(crate) timeline: std::option::Option<crate::types::InstanceTimeline>,
+    pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
+    pub(crate) state_change_reason: ::std::option::Option<crate::types::InstanceStateChangeReason>,
+    pub(crate) timeline: ::std::option::Option<crate::types::InstanceTimeline>,
 }
 impl InstanceStatusBuilder {
     /// <p>The current state of the instance.</p>
     pub fn state(mut self, input: crate::types::InstanceState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the instance.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::InstanceState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The details of the status change reason for the instance.</p>
     pub fn state_change_reason(mut self, input: crate::types::InstanceStateChangeReason) -> Self {
-        self.state_change_reason = Some(input);
+        self.state_change_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the status change reason for the instance.</p>
     pub fn set_state_change_reason(
         mut self,
-        input: std::option::Option<crate::types::InstanceStateChangeReason>,
+        input: ::std::option::Option<crate::types::InstanceStateChangeReason>,
     ) -> Self {
         self.state_change_reason = input;
         self
     }
     /// <p>The timeline of the instance status over time.</p>
     pub fn timeline(mut self, input: crate::types::InstanceTimeline) -> Self {
-        self.timeline = Some(input);
+        self.timeline = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timeline of the instance status over time.</p>
     pub fn set_timeline(
         mut self,
-        input: std::option::Option<crate::types::InstanceTimeline>,
+        input: ::std::option::Option<crate::types::InstanceTimeline>,
     ) -> Self {
         self.timeline = input;
         self

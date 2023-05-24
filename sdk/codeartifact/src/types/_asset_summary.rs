@@ -2,34 +2,34 @@
 
 /// <p> Contains details about a package version asset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetSummary {
     /// <p> The name of the asset. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The size of the asset. </p>
     #[doc(hidden)]
-    pub size: std::option::Option<i64>,
+    pub size: ::std::option::Option<i64>,
     /// <p> The hashes of the asset. </p>
     #[doc(hidden)]
-    pub hashes: std::option::Option<
-        std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>,
+    pub hashes: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
     >,
 }
 impl AssetSummary {
     /// <p> The name of the asset. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The size of the asset. </p>
-    pub fn size(&self) -> std::option::Option<i64> {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
     /// <p> The hashes of the asset. </p>
     pub fn hashes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
     > {
         self.hashes.as_ref()
     }
@@ -43,32 +43,34 @@ impl AssetSummary {
 
 /// A builder for [`AssetSummary`](crate::types::AssetSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssetSummaryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) size: std::option::Option<i64>,
-    pub(crate) hashes: std::option::Option<
-        std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) size: ::std::option::Option<i64>,
+    pub(crate) hashes: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
     >,
 }
 impl AssetSummaryBuilder {
     /// <p> The name of the asset. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the asset. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The size of the asset. </p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p> The size of the asset. </p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }
@@ -80,18 +82,18 @@ impl AssetSummaryBuilder {
     pub fn hashes(
         mut self,
         k: crate::types::HashAlgorithm,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.hashes.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.hashes = Some(hash_map);
+        self.hashes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The hashes of the asset. </p>
     pub fn set_hashes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::HashAlgorithm, ::std::string::String>,
         >,
     ) -> Self {
         self.hashes = input;

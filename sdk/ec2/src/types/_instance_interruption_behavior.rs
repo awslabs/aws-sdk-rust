@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InstanceInterruptionBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum InstanceInterruptionBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InstanceInterruptionBehavior {
+impl ::std::convert::From<&str> for InstanceInterruptionBehavior {
     fn from(s: &str) -> Self {
         match s {
             "hibernate" => InstanceInterruptionBehavior::Hibernate,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for InstanceInterruptionBehavior {
         }
     }
 }
-impl std::str::FromStr for InstanceInterruptionBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InstanceInterruptionBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceInterruptionBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InstanceInterruptionBehavior::from(s))
     }
 }
 impl InstanceInterruptionBehavior {
@@ -91,7 +91,7 @@ impl InstanceInterruptionBehavior {
         &["hibernate", "stop", "terminate"]
     }
 }
-impl AsRef<str> for InstanceInterruptionBehavior {
+impl ::std::convert::AsRef<str> for InstanceInterruptionBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,10 +2,10 @@
 
 /// <p>An object containing the identifier of a group member.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum MemberId {
     /// <p>An object containing the identifiers of resources that can be members.</p>
-    UserId(std::string::String),
+    UserId(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum MemberId {
 }
 impl MemberId {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`UserId`](crate::types::MemberId::UserId), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`UserId`](crate::types::MemberId::UserId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_user_id(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_user_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let MemberId::UserId(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`UserId`](crate::types::MemberId::UserId).

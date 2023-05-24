@@ -2,36 +2,36 @@
 
 /// <p>Information about an item of Personal Protective Equipment (PPE) detected by <code>DetectProtectiveEquipment</code>. For more information, see <code>DetectProtectiveEquipment</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EquipmentDetection {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
     #[doc(hidden)]
-    pub bounding_box: std::option::Option<crate::types::BoundingBox>,
+    pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
     /// <p>The type of detected PPE.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ProtectiveEquipmentType>,
+    pub r#type: ::std::option::Option<crate::types::ProtectiveEquipmentType>,
     /// <p>Information about the body part covered by the detected PPE.</p>
     #[doc(hidden)]
-    pub covers_body_part: std::option::Option<crate::types::CoversBodyPart>,
+    pub covers_body_part: ::std::option::Option<crate::types::CoversBodyPart>,
 }
 impl EquipmentDetection {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p>The type of detected PPE.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ProtectiveEquipmentType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProtectiveEquipmentType> {
         self.r#type.as_ref()
     }
     /// <p>Information about the body part covered by the detected PPE.</p>
-    pub fn covers_body_part(&self) -> std::option::Option<&crate::types::CoversBodyPart> {
+    pub fn covers_body_part(&self) -> ::std::option::Option<&crate::types::CoversBodyPart> {
         self.covers_body_part.as_ref()
     }
 }
@@ -44,59 +44,61 @@ impl EquipmentDetection {
 
 /// A builder for [`EquipmentDetection`](crate::types::EquipmentDetection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EquipmentDetectionBuilder {
-    pub(crate) bounding_box: std::option::Option<crate::types::BoundingBox>,
-    pub(crate) confidence: std::option::Option<f32>,
-    pub(crate) r#type: std::option::Option<crate::types::ProtectiveEquipmentType>,
-    pub(crate) covers_body_part: std::option::Option<crate::types::CoversBodyPart>,
+    pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
+    pub(crate) confidence: ::std::option::Option<f32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ProtectiveEquipmentType>,
+    pub(crate) covers_body_part: ::std::option::Option<crate::types::CoversBodyPart>,
 }
 impl EquipmentDetectionBuilder {
     /// <p>A bounding box surrounding the item of detected PPE.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
-        self.bounding_box = Some(input);
+        self.bounding_box = ::std::option::Option::Some(input);
         self
     }
     /// <p>A bounding box surrounding the item of detected PPE.</p>
     pub fn set_bounding_box(
         mut self,
-        input: std::option::Option<crate::types::BoundingBox>,
+        input: ::std::option::Option<crate::types::BoundingBox>,
     ) -> Self {
         self.bounding_box = input;
         self
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>) contains an item of PPE.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }
     /// <p>The type of detected PPE.</p>
     pub fn r#type(mut self, input: crate::types::ProtectiveEquipmentType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of detected PPE.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ProtectiveEquipmentType>,
+        input: ::std::option::Option<crate::types::ProtectiveEquipmentType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Information about the body part covered by the detected PPE.</p>
     pub fn covers_body_part(mut self, input: crate::types::CoversBodyPart) -> Self {
-        self.covers_body_part = Some(input);
+        self.covers_body_part = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the body part covered by the detected PPE.</p>
     pub fn set_covers_body_part(
         mut self,
-        input: std::option::Option<crate::types::CoversBodyPart>,
+        input: ::std::option::Option<crate::types::CoversBodyPart>,
     ) -> Self {
         self.covers_body_part = input;
         self

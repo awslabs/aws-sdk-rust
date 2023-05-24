@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApplication`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::set_application_id): <p>The unique Id of the web application.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::describe_application::builders::DescribeApplicationFluentBuilder::set_application_id): <p>The unique Id of the web application.</p>
     /// - On success, responds with [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::application_id): <p>The unique Id of the web application.</p>
     ///   - [`application_arn(Option<String>)`](crate::operation::describe_application::DescribeApplicationOutput::application_arn): <p>The ARN of the web application.</p>

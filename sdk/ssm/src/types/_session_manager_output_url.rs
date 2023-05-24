@@ -2,22 +2,22 @@
 
 /// <p>Reserved for future use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionManagerOutputUrl {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
-    pub s3_output_url: std::option::Option<std::string::String>,
+    pub s3_output_url: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
-    pub cloud_watch_output_url: std::option::Option<std::string::String>,
+    pub cloud_watch_output_url: ::std::option::Option<::std::string::String>,
 }
 impl SessionManagerOutputUrl {
     /// <p>Reserved for future use.</p>
-    pub fn s3_output_url(&self) -> std::option::Option<&str> {
+    pub fn s3_output_url(&self) -> ::std::option::Option<&str> {
         self.s3_output_url.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn cloud_watch_output_url(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_output_url(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_output_url.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl SessionManagerOutputUrl {
 
 /// A builder for [`SessionManagerOutputUrl`](crate::types::SessionManagerOutputUrl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionManagerOutputUrlBuilder {
-    pub(crate) s3_output_url: std::option::Option<std::string::String>,
-    pub(crate) cloud_watch_output_url: std::option::Option<std::string::String>,
+    pub(crate) s3_output_url: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_watch_output_url: ::std::option::Option<::std::string::String>,
 }
 impl SessionManagerOutputUrlBuilder {
     /// <p>Reserved for future use.</p>
-    pub fn s3_output_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_output_url = Some(input.into());
+    pub fn s3_output_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_output_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_s3_output_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_output_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_output_url = input;
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn cloud_watch_output_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_output_url = Some(input.into());
+    pub fn cloud_watch_output_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_output_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
     pub fn set_cloud_watch_output_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_output_url = input;
         self

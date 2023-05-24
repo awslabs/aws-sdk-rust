@@ -2,54 +2,56 @@
 
 /// <p>Error associated with a resource returned for a Get or List resource response. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorResponse {
     /// <p>The error code associated with the error. </p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::ErrorCode>,
+    pub code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The message associated with the error. </p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the resource owner. </p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource. </p>
     #[doc(hidden)]
-    pub resource_identifier: std::option::Option<std::string::String>,
+    pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource. </p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ErrorResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ErrorResourceType>,
     /// <p>Additional details about the error. </p>
     #[doc(hidden)]
-    pub additional_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ErrorResponse {
     /// <p>The error code associated with the error. </p>
-    pub fn code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.code.as_ref()
     }
     /// <p>The message associated with the error. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the resource owner. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the resource. </p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The type of resource. </p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ErrorResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ErrorResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Additional details about the error. </p>
     pub fn additional_details(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.additional_details.as_ref()
     }
 }
@@ -62,69 +64,75 @@ impl ErrorResponse {
 
 /// A builder for [`ErrorResponse`](crate::types::ErrorResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ErrorResponseBuilder {
-    pub(crate) code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) resource_identifier: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<crate::types::ErrorResourceType>,
-    pub(crate) additional_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ErrorResourceType>,
+    pub(crate) additional_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ErrorResponseBuilder {
     /// <p>The error code associated with the error. </p>
     pub fn code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code associated with the error. </p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>The message associated with the error. </p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message associated with the error. </p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the resource owner. </p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the resource owner. </p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The ID of the resource. </p>
-    pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_identifier = Some(input.into());
+    pub fn resource_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource. </p>
     pub fn set_resource_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>The type of resource. </p>
     pub fn resource_type(mut self, input: crate::types::ErrorResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of resource. </p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ErrorResourceType>,
+        input: ::std::option::Option<crate::types::ErrorResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
@@ -136,19 +144,19 @@ impl ErrorResponseBuilder {
     /// <p>Additional details about the error. </p>
     pub fn additional_details(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.additional_details.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.additional_details = Some(hash_map);
+        self.additional_details = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Additional details about the error. </p>
     pub fn set_additional_details(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.additional_details = input;

@@ -2,43 +2,43 @@
 
 /// An HTTP Live Streaming (HLS) packaging configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsPackage {
     /// An HTTP Live Streaming (HLS) encryption configuration.
     #[doc(hidden)]
-    pub encryption: std::option::Option<crate::types::HlsEncryption>,
+    pub encryption: ::std::option::Option<crate::types::HlsEncryption>,
     /// A list of HLS manifest configurations.
     #[doc(hidden)]
-    pub hls_manifests: std::option::Option<std::vec::Vec<crate::types::HlsManifest>>,
+    pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     #[doc(hidden)]
-    pub include_dvb_subtitles: std::option::Option<bool>,
+    pub include_dvb_subtitles: ::std::option::Option<bool>,
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     #[doc(hidden)]
-    pub segment_duration_seconds: std::option::Option<i32>,
+    pub segment_duration_seconds: ::std::option::Option<i32>,
     /// When enabled, audio streams will be placed in rendition groups in the output.
     #[doc(hidden)]
-    pub use_audio_rendition_group: std::option::Option<bool>,
+    pub use_audio_rendition_group: ::std::option::Option<bool>,
 }
 impl HlsPackage {
     /// An HTTP Live Streaming (HLS) encryption configuration.
-    pub fn encryption(&self) -> std::option::Option<&crate::types::HlsEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<&crate::types::HlsEncryption> {
         self.encryption.as_ref()
     }
     /// A list of HLS manifest configurations.
-    pub fn hls_manifests(&self) -> std::option::Option<&[crate::types::HlsManifest]> {
+    pub fn hls_manifests(&self) -> ::std::option::Option<&[crate::types::HlsManifest]> {
         self.hls_manifests.as_deref()
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
-    pub fn include_dvb_subtitles(&self) -> std::option::Option<bool> {
+    pub fn include_dvb_subtitles(&self) -> ::std::option::Option<bool> {
         self.include_dvb_subtitles
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
-    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
+    pub fn segment_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.segment_duration_seconds
     }
     /// When enabled, audio streams will be placed in rendition groups in the output.
-    pub fn use_audio_rendition_group(&self) -> std::option::Option<bool> {
+    pub fn use_audio_rendition_group(&self) -> ::std::option::Option<bool> {
         self.use_audio_rendition_group
     }
 }
@@ -51,24 +51,26 @@ impl HlsPackage {
 
 /// A builder for [`HlsPackage`](crate::types::HlsPackage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HlsPackageBuilder {
-    pub(crate) encryption: std::option::Option<crate::types::HlsEncryption>,
-    pub(crate) hls_manifests: std::option::Option<std::vec::Vec<crate::types::HlsManifest>>,
-    pub(crate) include_dvb_subtitles: std::option::Option<bool>,
-    pub(crate) segment_duration_seconds: std::option::Option<i32>,
-    pub(crate) use_audio_rendition_group: std::option::Option<bool>,
+    pub(crate) encryption: ::std::option::Option<crate::types::HlsEncryption>,
+    pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
+    pub(crate) include_dvb_subtitles: ::std::option::Option<bool>,
+    pub(crate) segment_duration_seconds: ::std::option::Option<i32>,
+    pub(crate) use_audio_rendition_group: ::std::option::Option<bool>,
 }
 impl HlsPackageBuilder {
     /// An HTTP Live Streaming (HLS) encryption configuration.
     pub fn encryption(mut self, input: crate::types::HlsEncryption) -> Self {
-        self.encryption = Some(input);
+        self.encryption = ::std::option::Option::Some(input);
         self
     }
     /// An HTTP Live Streaming (HLS) encryption configuration.
     pub fn set_encryption(
         mut self,
-        input: std::option::Option<crate::types::HlsEncryption>,
+        input: ::std::option::Option<crate::types::HlsEncryption>,
     ) -> Self {
         self.encryption = input;
         self
@@ -81,44 +83,44 @@ impl HlsPackageBuilder {
     pub fn hls_manifests(mut self, input: crate::types::HlsManifest) -> Self {
         let mut v = self.hls_manifests.unwrap_or_default();
         v.push(input);
-        self.hls_manifests = Some(v);
+        self.hls_manifests = ::std::option::Option::Some(v);
         self
     }
     /// A list of HLS manifest configurations.
     pub fn set_hls_manifests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HlsManifest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HlsManifest>>,
     ) -> Self {
         self.hls_manifests = input;
         self
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     pub fn include_dvb_subtitles(mut self, input: bool) -> Self {
-        self.include_dvb_subtitles = Some(input);
+        self.include_dvb_subtitles = ::std::option::Option::Some(input);
         self
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
-    pub fn set_include_dvb_subtitles(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_dvb_subtitles(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_dvb_subtitles = input;
         self
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
-        self.segment_duration_seconds = Some(input);
+        self.segment_duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
-    pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_segment_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_duration_seconds = input;
         self
     }
     /// When enabled, audio streams will be placed in rendition groups in the output.
     pub fn use_audio_rendition_group(mut self, input: bool) -> Self {
-        self.use_audio_rendition_group = Some(input);
+        self.use_audio_rendition_group = ::std::option::Option::Some(input);
         self
     }
     /// When enabled, audio streams will be placed in rendition groups in the output.
-    pub fn set_use_audio_rendition_group(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_audio_rendition_group(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_audio_rendition_group = input;
         self
     }

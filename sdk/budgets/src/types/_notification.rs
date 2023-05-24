@@ -10,31 +10,31 @@
 /// <li> <p>A notification <code>threshold</code> of <code>80</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Notification {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
     #[doc(hidden)]
-    pub notification_type: std::option::Option<crate::types::NotificationType>,
+    pub notification_type: ::std::option::Option<crate::types::NotificationType>,
     /// <p>The comparison that's used for this notification.</p>
     #[doc(hidden)]
-    pub comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
     #[doc(hidden)]
     pub threshold: f64,
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
     #[doc(hidden)]
-    pub threshold_type: std::option::Option<crate::types::ThresholdType>,
+    pub threshold_type: ::std::option::Option<crate::types::ThresholdType>,
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
     #[doc(hidden)]
-    pub notification_state: std::option::Option<crate::types::NotificationState>,
+    pub notification_state: ::std::option::Option<crate::types::NotificationState>,
 }
 impl Notification {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
-    pub fn notification_type(&self) -> std::option::Option<&crate::types::NotificationType> {
+    pub fn notification_type(&self) -> ::std::option::Option<&crate::types::NotificationType> {
         self.notification_type.as_ref()
     }
     /// <p>The comparison that's used for this notification.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
@@ -42,11 +42,11 @@ impl Notification {
         self.threshold
     }
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
-    pub fn threshold_type(&self) -> std::option::Option<&crate::types::ThresholdType> {
+    pub fn threshold_type(&self) -> ::std::option::Option<&crate::types::ThresholdType> {
         self.threshold_type.as_ref()
     }
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
-    pub fn notification_state(&self) -> std::option::Option<&crate::types::NotificationState> {
+    pub fn notification_state(&self) -> ::std::option::Option<&crate::types::NotificationState> {
         self.notification_state.as_ref()
     }
 }
@@ -59,73 +59,75 @@ impl Notification {
 
 /// A builder for [`Notification`](crate::types::Notification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationBuilder {
-    pub(crate) notification_type: std::option::Option<crate::types::NotificationType>,
-    pub(crate) comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
-    pub(crate) threshold: std::option::Option<f64>,
-    pub(crate) threshold_type: std::option::Option<crate::types::ThresholdType>,
-    pub(crate) notification_state: std::option::Option<crate::types::NotificationState>,
+    pub(crate) notification_type: ::std::option::Option<crate::types::NotificationType>,
+    pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
+    pub(crate) threshold: ::std::option::Option<f64>,
+    pub(crate) threshold_type: ::std::option::Option<crate::types::ThresholdType>,
+    pub(crate) notification_state: ::std::option::Option<crate::types::NotificationState>,
 }
 impl NotificationBuilder {
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
-        self.notification_type = Some(input);
+        self.notification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much that you're forecasted to spend (<code>FORECASTED</code>).</p>
     pub fn set_notification_type(
         mut self,
-        input: std::option::Option<crate::types::NotificationType>,
+        input: ::std::option::Option<crate::types::NotificationType>,
     ) -> Self {
         self.notification_type = input;
         self
     }
     /// <p>The comparison that's used for this notification.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
-        self.comparison_operator = Some(input);
+        self.comparison_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The comparison that's used for this notification.</p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<crate::types::ComparisonOperator>,
+        input: ::std::option::Option<crate::types::ComparisonOperator>,
     ) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
     pub fn threshold(mut self, input: f64) -> Self {
-        self.threshold = Some(input);
+        self.threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>The threshold that's associated with a notification. Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000% above the budgeted amount.</p>
-    pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.threshold = input;
         self
     }
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
     pub fn threshold_type(mut self, input: crate::types::ThresholdType) -> Self {
-        self.threshold_type = Some(input);
+        self.threshold_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.</p>
     pub fn set_threshold_type(
         mut self,
-        input: std::option::Option<crate::types::ThresholdType>,
+        input: ::std::option::Option<crate::types::ThresholdType>,
     ) -> Self {
         self.threshold_type = input;
         self
     }
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
     pub fn notification_state(mut self, input: crate::types::NotificationState) -> Self {
-        self.notification_state = Some(input);
+        self.notification_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you passed the set threshold for the budget.</p>
     pub fn set_notification_state(
         mut self,
-        input: std::option::Option<crate::types::NotificationState>,
+        input: ::std::option::Option<crate::types::NotificationState>,
     ) -> Self {
         self.notification_state = input;
         self

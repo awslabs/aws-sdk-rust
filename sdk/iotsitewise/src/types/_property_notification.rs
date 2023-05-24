@@ -2,22 +2,22 @@
 
 /// <p>Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyNotification {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
     #[doc(hidden)]
-    pub topic: std::option::Option<std::string::String>,
+    pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The current notification state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::PropertyNotificationState>,
+    pub state: ::std::option::Option<crate::types::PropertyNotificationState>,
 }
 impl PropertyNotification {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<&str> {
         self.topic.as_deref()
     }
     /// <p>The current notification state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::PropertyNotificationState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::PropertyNotificationState> {
         self.state.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl PropertyNotification {
 
 /// A builder for [`PropertyNotification`](crate::types::PropertyNotification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PropertyNotificationBuilder {
-    pub(crate) topic: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::PropertyNotificationState>,
+    pub(crate) topic: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::PropertyNotificationState>,
 }
 impl PropertyNotificationBuilder {
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic = Some(input.into());
+    pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MQTT topic to which IoT SiteWise publishes property value update notifications.</p>
-    pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic = input;
         self
     }
     /// <p>The current notification state.</p>
     pub fn state(mut self, input: crate::types::PropertyNotificationState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current notification state.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::PropertyNotificationState>,
+        input: ::std::option::Option<crate::types::PropertyNotificationState>,
     ) -> Self {
         self.state = input;
         self

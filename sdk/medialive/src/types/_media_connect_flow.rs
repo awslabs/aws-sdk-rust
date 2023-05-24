@@ -2,15 +2,15 @@
 
 /// The settings for a MediaConnect Flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaConnectFlow {
     /// The unique ARN of the MediaConnect Flow being used as a source.
     #[doc(hidden)]
-    pub flow_arn: std::option::Option<std::string::String>,
+    pub flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaConnectFlow {
     /// The unique ARN of the MediaConnect Flow being used as a source.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl MediaConnectFlow {
 
 /// A builder for [`MediaConnectFlow`](crate::types::MediaConnectFlow).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MediaConnectFlowBuilder {
-    pub(crate) flow_arn: std::option::Option<std::string::String>,
+    pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl MediaConnectFlowBuilder {
     /// The unique ARN of the MediaConnect Flow being used as a source.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_arn = Some(input.into());
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique ARN of the MediaConnect Flow being used as a source.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }

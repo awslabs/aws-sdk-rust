@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNetworkSite`](crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`network_site_arn(impl Into<String>)`](crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder::network_site_arn) / [`set_network_site_arn(Option<String>)`](crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder::set_network_site_arn): <p>The Amazon Resource Name (ARN) of the network site.</p>
+    ///   - [`network_site_arn(impl ::std::convert::Into<String>)`](crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder::network_site_arn) / [`set_network_site_arn(Option<String>)`](crate::operation::get_network_site::builders::GetNetworkSiteFluentBuilder::set_network_site_arn): <p>The Amazon Resource Name (ARN) of the network site.</p>
     /// - On success, responds with [`GetNetworkSiteOutput`](crate::operation::get_network_site::GetNetworkSiteOutput) with field(s):
     ///   - [`network_site(Option<NetworkSite>)`](crate::operation::get_network_site::GetNetworkSiteOutput::network_site): <p>Information about the network site.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_network_site::GetNetworkSiteOutput::tags): <p> The network site tags. </p>

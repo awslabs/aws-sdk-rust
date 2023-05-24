@@ -2,29 +2,29 @@
 
 /// <p>Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have several different values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionSetting {
     /// <p>The name of the option that has settings that you can set.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current value of the option setting.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The default value of the option setting.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The description of the option setting.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The DB engine specific parameter type.</p>
     #[doc(hidden)]
-    pub apply_type: std::option::Option<std::string::String>,
+    pub apply_type: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the option setting.</p>
     #[doc(hidden)]
-    pub data_type: std::option::Option<std::string::String>,
+    pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>The allowed values of the option setting.</p>
     #[doc(hidden)]
-    pub allowed_values: std::option::Option<std::string::String>,
+    pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
     #[doc(hidden)]
     pub is_modifiable: bool,
@@ -34,31 +34,31 @@ pub struct OptionSetting {
 }
 impl OptionSetting {
     /// <p>The name of the option that has settings that you can set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current value of the option setting.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The default value of the option setting.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p>The description of the option setting.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The DB engine specific parameter type.</p>
-    pub fn apply_type(&self) -> std::option::Option<&str> {
+    pub fn apply_type(&self) -> ::std::option::Option<&str> {
         self.apply_type.as_deref()
     }
     /// <p>The data type of the option setting.</p>
-    pub fn data_type(&self) -> std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<&str> {
         self.data_type.as_deref()
     }
     /// <p>The allowed values of the option setting.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&str> {
+    pub fn allowed_values(&self) -> ::std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
     /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
@@ -79,106 +79,120 @@ impl OptionSetting {
 
 /// A builder for [`OptionSetting`](crate::types::OptionSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OptionSettingBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) apply_type: std::option::Option<std::string::String>,
-    pub(crate) data_type: std::option::Option<std::string::String>,
-    pub(crate) allowed_values: std::option::Option<std::string::String>,
-    pub(crate) is_modifiable: std::option::Option<bool>,
-    pub(crate) is_collection: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) apply_type: ::std::option::Option<::std::string::String>,
+    pub(crate) data_type: ::std::option::Option<::std::string::String>,
+    pub(crate) allowed_values: ::std::option::Option<::std::string::String>,
+    pub(crate) is_modifiable: ::std::option::Option<bool>,
+    pub(crate) is_collection: ::std::option::Option<bool>,
 }
 impl OptionSettingBuilder {
     /// <p>The name of the option that has settings that you can set.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the option that has settings that you can set.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The current value of the option setting.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current value of the option setting.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The default value of the option setting.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the option setting.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }
     /// <p>The description of the option setting.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the option setting.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The DB engine specific parameter type.</p>
-    pub fn apply_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.apply_type = Some(input.into());
+    pub fn apply_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.apply_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB engine specific parameter type.</p>
-    pub fn set_apply_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_apply_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_type = input;
         self
     }
     /// <p>The data type of the option setting.</p>
-    pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_type = Some(input.into());
+    pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type of the option setting.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>The allowed values of the option setting.</p>
-    pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
-        self.allowed_values = Some(input.into());
+    pub fn allowed_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allowed values of the option setting.</p>
-    pub fn set_allowed_values(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_allowed_values(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.allowed_values = input;
         self
     }
     /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
-        self.is_modifiable = Some(input);
+        self.is_modifiable = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
-    pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_modifiable = input;
         self
     }
     /// <p>Indicates if the option setting is part of a collection.</p>
     pub fn is_collection(mut self, input: bool) -> Self {
-        self.is_collection = Some(input);
+        self.is_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if the option setting is part of a collection.</p>
-    pub fn set_is_collection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_collection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_collection = input;
         self
     }

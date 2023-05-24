@@ -2,22 +2,22 @@
 
 /// The owner setting for downloaded machine learning resources.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDownloadOwnerSetting {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
     #[doc(hidden)]
-    pub group_owner: std::option::Option<std::string::String>,
+    pub group_owner: ::std::option::Option<::std::string::String>,
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
     #[doc(hidden)]
-    pub group_permission: std::option::Option<crate::types::Permission>,
+    pub group_permission: ::std::option::Option<crate::types::Permission>,
 }
 impl ResourceDownloadOwnerSetting {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
-    pub fn group_owner(&self) -> std::option::Option<&str> {
+    pub fn group_owner(&self) -> ::std::option::Option<&str> {
         self.group_owner.as_deref()
     }
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
-    pub fn group_permission(&self) -> std::option::Option<&crate::types::Permission> {
+    pub fn group_permission(&self) -> ::std::option::Option<&crate::types::Permission> {
         self.group_permission.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ResourceDownloadOwnerSetting {
 
 /// A builder for [`ResourceDownloadOwnerSetting`](crate::types::ResourceDownloadOwnerSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceDownloadOwnerSettingBuilder {
-    pub(crate) group_owner: std::option::Option<std::string::String>,
-    pub(crate) group_permission: std::option::Option<crate::types::Permission>,
+    pub(crate) group_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) group_permission: ::std::option::Option<crate::types::Permission>,
 }
 impl ResourceDownloadOwnerSettingBuilder {
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
-    pub fn group_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_owner = Some(input.into());
+    pub fn group_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// The group owner of the resource. This is the name of an existing Linux OS group on the system or a GID. The group's permissions are added to the Lambda process.
-    pub fn set_group_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_owner = input;
         self
     }
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
     pub fn group_permission(mut self, input: crate::types::Permission) -> Self {
-        self.group_permission = Some(input);
+        self.group_permission = ::std::option::Option::Some(input);
         self
     }
     /// The permissions that the group owner has to the resource. Valid values are ''rw'' (read/write) or ''ro'' (read-only).
     pub fn set_group_permission(
         mut self,
-        input: std::option::Option<crate::types::Permission>,
+        input: ::std::option::Option<crate::types::Permission>,
     ) -> Self {
         self.group_permission = input;
         self

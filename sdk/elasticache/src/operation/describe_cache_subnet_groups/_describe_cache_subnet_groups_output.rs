@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCacheSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
     #[doc(hidden)]
-    pub cache_subnet_groups: std::option::Option<std::vec::Vec<crate::types::CacheSubnetGroup>>,
+    pub cache_subnet_groups: ::std::option::Option<::std::vec::Vec<crate::types::CacheSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    pub fn cache_subnet_groups(&self) -> std::option::Option<&[crate::types::CacheSubnetGroup]> {
+    pub fn cache_subnet_groups(&self) -> ::std::option::Option<&[crate::types::CacheSubnetGroup]> {
         self.cache_subnet_groups.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCacheSubnetGroupsOutput {
+impl ::aws_http::request_id::RequestId for DescribeCacheSubnetGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,21 +36,23 @@ impl DescribeCacheSubnetGroupsOutput {
 
 /// A builder for [`DescribeCacheSubnetGroupsOutput`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCacheSubnetGroupsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cache_subnet_groups:
-        std::option::Option<std::vec::Vec<crate::types::CacheSubnetGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CacheSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheSubnetGroupsOutputBuilder {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -62,13 +64,13 @@ impl DescribeCacheSubnetGroupsOutputBuilder {
     pub fn cache_subnet_groups(mut self, input: crate::types::CacheSubnetGroup) -> Self {
         let mut v = self.cache_subnet_groups.unwrap_or_default();
         v.push(input);
-        self.cache_subnet_groups = Some(v);
+        self.cache_subnet_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
     pub fn set_cache_subnet_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CacheSubnetGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheSubnetGroup>>,
     ) -> Self {
         self.cache_subnet_groups = input;
         self

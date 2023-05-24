@@ -3,7 +3,7 @@
 /// <p>Describes the data repository association's automatic import policy. The AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory listings up to date by importing changes to your Amazon FSx for Lustre file system as you modify objects in a linked S3 bucket.</p>
 /// <p>The <code>AutoImportPolicy</code> is only supported on Amazon FSx for Lustre file systems with a data repository association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoImportPolicy {
     /// <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct AutoImportPolicy {
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoImportPolicy</code>.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl AutoImportPolicy {
     /// <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
@@ -23,7 +23,7 @@ impl AutoImportPolicy {
     /// <li> <p> <code>DELETED</code> - Amazon FSx automatically deletes files on the file system as corresponding files are deleted in the data repository.</p> </li>
     /// </ul>
     /// <p>You can define any combination of event types for your <code>AutoImportPolicy</code>.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::EventType]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::EventType]> {
         self.events.as_deref()
     }
 }
@@ -36,9 +36,11 @@ impl AutoImportPolicy {
 
 /// A builder for [`AutoImportPolicy`](crate::types::AutoImportPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoImportPolicyBuilder {
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl AutoImportPolicyBuilder {
     /// Appends an item to `events`.
@@ -55,7 +57,7 @@ impl AutoImportPolicyBuilder {
     pub fn events(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>The <code>AutoImportPolicy</code> can have the following event values:</p>
@@ -67,7 +69,7 @@ impl AutoImportPolicyBuilder {
     /// <p>You can define any combination of event types for your <code>AutoImportPolicy</code>.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     ) -> Self {
         self.events = input;
         self

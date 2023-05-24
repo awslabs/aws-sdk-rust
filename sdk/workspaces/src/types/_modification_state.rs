@@ -2,22 +2,22 @@
 
 /// <p>Describes a WorkSpace modification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModificationState {
     /// <p>The resource.</p>
     #[doc(hidden)]
-    pub resource: std::option::Option<crate::types::ModificationResourceEnum>,
+    pub resource: ::std::option::Option<crate::types::ModificationResourceEnum>,
     /// <p>The modification state.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ModificationStateEnum>,
+    pub state: ::std::option::Option<crate::types::ModificationStateEnum>,
 }
 impl ModificationState {
     /// <p>The resource.</p>
-    pub fn resource(&self) -> std::option::Option<&crate::types::ModificationResourceEnum> {
+    pub fn resource(&self) -> ::std::option::Option<&crate::types::ModificationResourceEnum> {
         self.resource.as_ref()
     }
     /// <p>The modification state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ModificationStateEnum> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ModificationStateEnum> {
         self.state.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl ModificationState {
 
 /// A builder for [`ModificationState`](crate::types::ModificationState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModificationStateBuilder {
-    pub(crate) resource: std::option::Option<crate::types::ModificationResourceEnum>,
-    pub(crate) state: std::option::Option<crate::types::ModificationStateEnum>,
+    pub(crate) resource: ::std::option::Option<crate::types::ModificationResourceEnum>,
+    pub(crate) state: ::std::option::Option<crate::types::ModificationStateEnum>,
 }
 impl ModificationStateBuilder {
     /// <p>The resource.</p>
     pub fn resource(mut self, input: crate::types::ModificationResourceEnum) -> Self {
-        self.resource = Some(input);
+        self.resource = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource.</p>
     pub fn set_resource(
         mut self,
-        input: std::option::Option<crate::types::ModificationResourceEnum>,
+        input: ::std::option::Option<crate::types::ModificationResourceEnum>,
     ) -> Self {
         self.resource = input;
         self
     }
     /// <p>The modification state.</p>
     pub fn state(mut self, input: crate::types::ModificationStateEnum) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The modification state.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::ModificationStateEnum>,
+        input: ::std::option::Option<crate::types::ModificationStateEnum>,
     ) -> Self {
         self.state = input;
         self

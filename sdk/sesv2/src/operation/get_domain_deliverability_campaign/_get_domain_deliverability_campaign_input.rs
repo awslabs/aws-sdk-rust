@@ -2,15 +2,15 @@
 
 /// <p>Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignInput {
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
     #[doc(hidden)]
-    pub campaign_id: std::option::Option<std::string::String>,
+    pub campaign_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainDeliverabilityCampaignInput {
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
-    pub fn campaign_id(&self) -> std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl GetDomainDeliverabilityCampaignInput {
 
 /// A builder for [`GetDomainDeliverabilityCampaignInput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDomainDeliverabilityCampaignInputBuilder {
-    pub(crate) campaign_id: std::option::Option<std::string::String>,
+    pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainDeliverabilityCampaignInputBuilder {
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
-    pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.campaign_id = Some(input.into());
+    pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.campaign_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.</p>
-    pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignInput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignInput {
                 campaign_id: self.campaign_id
                 ,

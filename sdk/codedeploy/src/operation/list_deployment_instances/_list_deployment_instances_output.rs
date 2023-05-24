@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a <code>ListDeploymentInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentInstancesOutput {
     /// <p>A list of instance IDs.</p>
     #[doc(hidden)]
-    pub instances_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instances_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeploymentInstancesOutput {
     /// <p>A list of instance IDs.</p>
-    pub fn instances_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instances_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instances_list.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDeploymentInstancesOutput {
+impl ::aws_http::request_id::RequestId for ListDeploymentInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ListDeploymentInstancesOutput {
 
 /// A builder for [`ListDeploymentInstancesOutput`](crate::operation::list_deployment_instances::ListDeploymentInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDeploymentInstancesOutputBuilder {
-    pub(crate) instances_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) instances_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeploymentInstancesOutputBuilder {
@@ -50,27 +52,30 @@ impl ListDeploymentInstancesOutputBuilder {
     /// To override the contents of this collection use [`set_instances_list`](Self::set_instances_list).
     ///
     /// <p>A list of instance IDs.</p>
-    pub fn instances_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instances_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.instances_list.unwrap_or_default();
         v.push(input.into());
-        self.instances_list = Some(v);
+        self.instances_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of instance IDs.</p>
     pub fn set_instances_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instances_list = input;
         self
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list deployment instances call to return the next set of deployment instances in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

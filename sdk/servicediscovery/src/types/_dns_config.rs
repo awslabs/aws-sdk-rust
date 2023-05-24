@@ -4,13 +4,13 @@
 /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsConfig {
     /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
     #[doc(hidden)]
-    pub namespace_id: std::option::Option<std::string::String>,
+    pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
     /// <p>If you want to use this service to register instances that create alias records, specify <code>WEIGHTED</code> for the routing policy.</p>
     /// </note>
@@ -36,16 +36,16 @@ pub struct DnsConfig {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub routing_policy: std::option::Option<crate::types::RoutingPolicy>,
+    pub routing_policy: ::std::option::Option<crate::types::RoutingPolicy>,
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
     #[doc(hidden)]
-    pub dns_records: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>,
+    pub dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
 }
 impl DnsConfig {
     /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
-    pub fn namespace_id(&self) -> std::option::Option<&str> {
+    pub fn namespace_id(&self) -> ::std::option::Option<&str> {
         self.namespace_id.as_deref()
     }
     /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
@@ -72,11 +72,11 @@ impl DnsConfig {
     /// <p>For more information about the weighted routing policy, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted Routing</a> in the <i>Route&nbsp;53 Developer Guide</i>.</p>
     /// </dd>
     /// </dl>
-    pub fn routing_policy(&self) -> std::option::Option<&crate::types::RoutingPolicy> {
+    pub fn routing_policy(&self) -> ::std::option::Option<&crate::types::RoutingPolicy> {
         self.routing_policy.as_ref()
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
-    pub fn dns_records(&self) -> std::option::Option<&[crate::types::DnsRecord]> {
+    pub fn dns_records(&self) -> ::std::option::Option<&[crate::types::DnsRecord]> {
         self.dns_records.as_deref()
     }
 }
@@ -89,24 +89,26 @@ impl DnsConfig {
 
 /// A builder for [`DnsConfig`](crate::types::DnsConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsConfigBuilder {
-    pub(crate) namespace_id: std::option::Option<std::string::String>,
-    pub(crate) routing_policy: std::option::Option<crate::types::RoutingPolicy>,
-    pub(crate) dns_records: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>,
+    pub(crate) namespace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_policy: ::std::option::Option<crate::types::RoutingPolicy>,
+    pub(crate) dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
 }
 impl DnsConfigBuilder {
     /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
-    pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace_id = Some(input.into());
+    pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>Use NamespaceId in <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_Service.html">Service</a> instead.</i> </p>
     /// <p>The ID of the namespace to use for DNS configuration.</p>
     #[deprecated(note = "Top level attribute in request should be used to reference namespace-id")]
-    pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_id = input;
         self
     }
@@ -135,7 +137,7 @@ impl DnsConfigBuilder {
     /// </dd>
     /// </dl>
     pub fn routing_policy(mut self, input: crate::types::RoutingPolicy) -> Self {
-        self.routing_policy = Some(input);
+        self.routing_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The routing policy that you want to apply to all Route&nbsp;53 DNS records that Cloud Map creates when you register an instance and specify this service.</p> <note>
@@ -164,7 +166,7 @@ impl DnsConfigBuilder {
     /// </dl>
     pub fn set_routing_policy(
         mut self,
-        input: std::option::Option<crate::types::RoutingPolicy>,
+        input: ::std::option::Option<crate::types::RoutingPolicy>,
     ) -> Self {
         self.routing_policy = input;
         self
@@ -177,13 +179,13 @@ impl DnsConfigBuilder {
     pub fn dns_records(mut self, input: crate::types::DnsRecord) -> Self {
         let mut v = self.dns_records.unwrap_or_default();
         v.push(input);
-        self.dns_records = Some(v);
+        self.dns_records = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 DNS record that you want Cloud Map to create when you register an instance.</p>
     pub fn set_dns_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
     ) -> Self {
         self.dns_records = input;
         self

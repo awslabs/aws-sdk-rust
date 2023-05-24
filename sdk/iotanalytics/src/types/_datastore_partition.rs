@@ -2,22 +2,22 @@
 
 /// <p> A single dimension to partition a data store. The dimension must be an <code>AttributePartition</code> or a <code>TimestampPartition</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatastorePartition {
     /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
     #[doc(hidden)]
-    pub attribute_partition: std::option::Option<crate::types::Partition>,
+    pub attribute_partition: ::std::option::Option<crate::types::Partition>,
     /// <p> A partition dimension defined by a timestamp attribute. </p>
     #[doc(hidden)]
-    pub timestamp_partition: std::option::Option<crate::types::TimestampPartition>,
+    pub timestamp_partition: ::std::option::Option<crate::types::TimestampPartition>,
 }
 impl DatastorePartition {
     /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
-    pub fn attribute_partition(&self) -> std::option::Option<&crate::types::Partition> {
+    pub fn attribute_partition(&self) -> ::std::option::Option<&crate::types::Partition> {
         self.attribute_partition.as_ref()
     }
     /// <p> A partition dimension defined by a timestamp attribute. </p>
-    pub fn timestamp_partition(&self) -> std::option::Option<&crate::types::TimestampPartition> {
+    pub fn timestamp_partition(&self) -> ::std::option::Option<&crate::types::TimestampPartition> {
         self.timestamp_partition.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl DatastorePartition {
 
 /// A builder for [`DatastorePartition`](crate::types::DatastorePartition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatastorePartitionBuilder {
-    pub(crate) attribute_partition: std::option::Option<crate::types::Partition>,
-    pub(crate) timestamp_partition: std::option::Option<crate::types::TimestampPartition>,
+    pub(crate) attribute_partition: ::std::option::Option<crate::types::Partition>,
+    pub(crate) timestamp_partition: ::std::option::Option<crate::types::TimestampPartition>,
 }
 impl DatastorePartitionBuilder {
     /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
     pub fn attribute_partition(mut self, input: crate::types::Partition) -> Self {
-        self.attribute_partition = Some(input);
+        self.attribute_partition = ::std::option::Option::Some(input);
         self
     }
     /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
     pub fn set_attribute_partition(
         mut self,
-        input: std::option::Option<crate::types::Partition>,
+        input: ::std::option::Option<crate::types::Partition>,
     ) -> Self {
         self.attribute_partition = input;
         self
     }
     /// <p> A partition dimension defined by a timestamp attribute. </p>
     pub fn timestamp_partition(mut self, input: crate::types::TimestampPartition) -> Self {
-        self.timestamp_partition = Some(input);
+        self.timestamp_partition = ::std::option::Option::Some(input);
         self
     }
     /// <p> A partition dimension defined by a timestamp attribute. </p>
     pub fn set_timestamp_partition(
         mut self,
-        input: std::option::Option<crate::types::TimestampPartition>,
+        input: ::std::option::Option<crate::types::TimestampPartition>,
     ) -> Self {
         self.timestamp_partition = input;
         self

@@ -2,12 +2,12 @@
 
 /// <p>Describes the configuration settings for the form's style properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum FormStyleConfig {
     /// <p>A reference to a design token to use to bind the form's style properties to an existing theme.</p>
-    TokenReference(std::string::String),
+    TokenReference(::std::string::String),
     /// <p>The value of the style setting.</p>
-    Value(std::string::String),
+    Value(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,26 +19,26 @@ pub enum FormStyleConfig {
     Unknown,
 }
 impl FormStyleConfig {
-    /// Tries to convert the enum instance into [`TokenReference`](crate::types::FormStyleConfig::TokenReference), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`TokenReference`](crate::types::FormStyleConfig::TokenReference), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_token_reference(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_token_reference(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let FormStyleConfig::TokenReference(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TokenReference`](crate::types::FormStyleConfig::TokenReference).
     pub fn is_token_reference(&self) -> bool {
         self.as_token_reference().is_ok()
     }
-    /// Tries to convert the enum instance into [`Value`](crate::types::FormStyleConfig::Value), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Value`](crate::types::FormStyleConfig::Value), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let FormStyleConfig::Value(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Value`](crate::types::FormStyleConfig::Value).

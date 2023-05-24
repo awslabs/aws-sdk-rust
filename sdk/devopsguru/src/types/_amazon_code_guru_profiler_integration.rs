@@ -2,15 +2,15 @@
 
 /// <p>Information about your account's integration with Amazon CodeGuru Profiler. This returns whether DevOps Guru is configured to consume recommendations generated from Amazon CodeGuru Profiler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonCodeGuruProfilerIntegration {
     /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EventSourceOptInStatus>,
+    pub status: ::std::option::Option<crate::types::EventSourceOptInStatus>,
 }
 impl AmazonCodeGuruProfilerIntegration {
     /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EventSourceOptInStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EventSourceOptInStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AmazonCodeGuruProfilerIntegration {
 
 /// A builder for [`AmazonCodeGuruProfilerIntegration`](crate::types::AmazonCodeGuruProfilerIntegration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AmazonCodeGuruProfilerIntegrationBuilder {
-    pub(crate) status: std::option::Option<crate::types::EventSourceOptInStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::EventSourceOptInStatus>,
 }
 impl AmazonCodeGuruProfilerIntegrationBuilder {
     /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
     pub fn status(mut self, input: crate::types::EventSourceOptInStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled to consume recommendations that are generated from Amazon CodeGuru Profiler.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::EventSourceOptInStatus>,
+        input: ::std::option::Option<crate::types::EventSourceOptInStatus>,
     ) -> Self {
         self.status = input;
         self

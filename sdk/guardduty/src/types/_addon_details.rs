@@ -2,22 +2,22 @@
 
 /// <p>Information about the installed EKS add-on (GuardDuty security agent).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddonDetails {
     /// <p>Version of the installed EKS add-on.</p>
     #[doc(hidden)]
-    pub addon_version: std::option::Option<std::string::String>,
+    pub addon_version: ::std::option::Option<::std::string::String>,
     /// <p>Status of the installed EKS add-on.</p>
     #[doc(hidden)]
-    pub addon_status: std::option::Option<std::string::String>,
+    pub addon_status: ::std::option::Option<::std::string::String>,
 }
 impl AddonDetails {
     /// <p>Version of the installed EKS add-on.</p>
-    pub fn addon_version(&self) -> std::option::Option<&str> {
+    pub fn addon_version(&self) -> ::std::option::Option<&str> {
         self.addon_version.as_deref()
     }
     /// <p>Status of the installed EKS add-on.</p>
-    pub fn addon_status(&self) -> std::option::Option<&str> {
+    pub fn addon_status(&self) -> ::std::option::Option<&str> {
         self.addon_status.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AddonDetails {
 
 /// A builder for [`AddonDetails`](crate::types::AddonDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddonDetailsBuilder {
-    pub(crate) addon_version: std::option::Option<std::string::String>,
-    pub(crate) addon_status: std::option::Option<std::string::String>,
+    pub(crate) addon_version: ::std::option::Option<::std::string::String>,
+    pub(crate) addon_status: ::std::option::Option<::std::string::String>,
 }
 impl AddonDetailsBuilder {
     /// <p>Version of the installed EKS add-on.</p>
-    pub fn addon_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.addon_version = Some(input.into());
+    pub fn addon_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.addon_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Version of the installed EKS add-on.</p>
-    pub fn set_addon_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_addon_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.addon_version = input;
         self
     }
     /// <p>Status of the installed EKS add-on.</p>
-    pub fn addon_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.addon_status = Some(input.into());
+    pub fn addon_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.addon_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Status of the installed EKS add-on.</p>
-    pub fn set_addon_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_addon_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_status = input;
         self
     }

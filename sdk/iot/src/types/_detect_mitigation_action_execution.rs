@@ -2,73 +2,73 @@
 
 /// <p> Describes which mitigation actions should be executed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectMitigationActionExecution {
     /// <p> The unique identifier of the task. </p>
     #[doc(hidden)]
-    pub task_id: std::option::Option<std::string::String>,
+    pub task_id: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the violation. </p>
     #[doc(hidden)]
-    pub violation_id: std::option::Option<std::string::String>,
+    pub violation_id: ::std::option::Option<::std::string::String>,
     /// <p> The friendly name that uniquely identifies the mitigation action. </p>
     #[doc(hidden)]
-    pub action_name: std::option::Option<std::string::String>,
+    pub action_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the thing. </p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p> The date a mitigation action was started. </p>
     #[doc(hidden)]
-    pub execution_start_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub execution_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date a mitigation action ended. </p>
     #[doc(hidden)]
-    pub execution_end_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub execution_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The status of a mitigation action. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DetectMitigationActionExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::DetectMitigationActionExecutionStatus>,
     /// <p> The error code of a mitigation action. </p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p> The message of a mitigation action. </p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DetectMitigationActionExecution {
     /// <p> The unique identifier of the task. </p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
     /// <p> The unique identifier of the violation. </p>
-    pub fn violation_id(&self) -> std::option::Option<&str> {
+    pub fn violation_id(&self) -> ::std::option::Option<&str> {
         self.violation_id.as_deref()
     }
     /// <p> The friendly name that uniquely identifies the mitigation action. </p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p> The name of the thing. </p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p> The date a mitigation action was started. </p>
-    pub fn execution_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn execution_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.execution_start_date.as_ref()
     }
     /// <p> The date a mitigation action ended. </p>
-    pub fn execution_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn execution_end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.execution_end_date.as_ref()
     }
     /// <p> The status of a mitigation action. </p>
     pub fn status(
         &self,
-    ) -> std::option::Option<&crate::types::DetectMitigationActionExecutionStatus> {
+    ) -> ::std::option::Option<&crate::types::DetectMitigationActionExecutionStatus> {
         self.status.as_ref()
     }
     /// <p> The error code of a mitigation action. </p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p> The message of a mitigation action. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -81,115 +81,117 @@ impl DetectMitigationActionExecution {
 
 /// A builder for [`DetectMitigationActionExecution`](crate::types::DetectMitigationActionExecution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectMitigationActionExecutionBuilder {
-    pub(crate) task_id: std::option::Option<std::string::String>,
-    pub(crate) violation_id: std::option::Option<std::string::String>,
-    pub(crate) action_name: std::option::Option<std::string::String>,
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) execution_start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) execution_end_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::DetectMitigationActionExecutionStatus>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) task_id: ::std::option::Option<::std::string::String>,
+    pub(crate) violation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) action_name: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) execution_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::DetectMitigationActionExecutionStatus>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DetectMitigationActionExecutionBuilder {
     /// <p> The unique identifier of the task. </p>
-    pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_id = Some(input.into());
+    pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the task. </p>
-    pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
     /// <p> The unique identifier of the violation. </p>
-    pub fn violation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.violation_id = Some(input.into());
+    pub fn violation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.violation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the violation. </p>
-    pub fn set_violation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_violation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_id = input;
         self
     }
     /// <p> The friendly name that uniquely identifies the mitigation action. </p>
-    pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_name = Some(input.into());
+    pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The friendly name that uniquely identifies the mitigation action. </p>
-    pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
     }
     /// <p> The name of the thing. </p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the thing. </p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// <p> The date a mitigation action was started. </p>
-    pub fn execution_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.execution_start_date = Some(input);
+    pub fn execution_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.execution_start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date a mitigation action was started. </p>
     pub fn set_execution_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.execution_start_date = input;
         self
     }
     /// <p> The date a mitigation action ended. </p>
-    pub fn execution_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.execution_end_date = Some(input);
+    pub fn execution_end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.execution_end_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date a mitigation action ended. </p>
     pub fn set_execution_end_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.execution_end_date = input;
         self
     }
     /// <p> The status of a mitigation action. </p>
     pub fn status(mut self, input: crate::types::DetectMitigationActionExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of a mitigation action. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DetectMitigationActionExecutionStatus>,
+        input: ::std::option::Option<crate::types::DetectMitigationActionExecutionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> The error code of a mitigation action. </p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The error code of a mitigation action. </p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p> The message of a mitigation action. </p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The message of a mitigation action. </p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>CreateLoginProfile</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoginProfileOutput {
     /// <p>A structure containing the user name and password create date.</p>
     #[doc(hidden)]
-    pub login_profile: std::option::Option<crate::types::LoginProfile>,
+    pub login_profile: ::std::option::Option<crate::types::LoginProfile>,
     _request_id: Option<String>,
 }
 impl CreateLoginProfileOutput {
     /// <p>A structure containing the user name and password create date.</p>
-    pub fn login_profile(&self) -> std::option::Option<&crate::types::LoginProfile> {
+    pub fn login_profile(&self) -> ::std::option::Option<&crate::types::LoginProfile> {
         self.login_profile.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateLoginProfileOutput {
+impl ::aws_http::request_id::RequestId for CreateLoginProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl CreateLoginProfileOutput {
 
 /// A builder for [`CreateLoginProfileOutput`](crate::operation::create_login_profile::CreateLoginProfileOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateLoginProfileOutputBuilder {
-    pub(crate) login_profile: std::option::Option<crate::types::LoginProfile>,
+    pub(crate) login_profile: ::std::option::Option<crate::types::LoginProfile>,
     _request_id: Option<String>,
 }
 impl CreateLoginProfileOutputBuilder {
     /// <p>A structure containing the user name and password create date.</p>
     pub fn login_profile(mut self, input: crate::types::LoginProfile) -> Self {
-        self.login_profile = Some(input);
+        self.login_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing the user name and password create date.</p>
     pub fn set_login_profile(
         mut self,
-        input: std::option::Option<crate::types::LoginProfile>,
+        input: ::std::option::Option<crate::types::LoginProfile>,
     ) -> Self {
         self.login_profile = input;
         self

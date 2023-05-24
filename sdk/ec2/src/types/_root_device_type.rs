@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RootDeviceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RootDeviceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RootDeviceType {
+impl ::std::convert::From<&str> for RootDeviceType {
     fn from(s: &str) -> Self {
         match s {
             "ebs" => RootDeviceType::Ebs,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for RootDeviceType {
         }
     }
 }
-impl std::str::FromStr for RootDeviceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RootDeviceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RootDeviceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RootDeviceType::from(s))
     }
 }
 impl RootDeviceType {
@@ -86,7 +86,7 @@ impl RootDeviceType {
         &["ebs", "instance-store"]
     }
 }
-impl AsRef<str> for RootDeviceType {
+impl ::std::convert::AsRef<str> for RootDeviceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

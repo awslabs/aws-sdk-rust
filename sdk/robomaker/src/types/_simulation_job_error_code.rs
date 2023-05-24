@@ -67,13 +67,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SimulationJobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -141,7 +141,7 @@ pub enum SimulationJobErrorCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SimulationJobErrorCode {
+impl ::std::convert::From<&str> for SimulationJobErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "BadPermissionsCloudwatchLogs" => SimulationJobErrorCode::BadPermissionsCloudwatchLogs,
@@ -201,11 +201,11 @@ impl std::convert::From<&str> for SimulationJobErrorCode {
         }
     }
 }
-impl std::str::FromStr for SimulationJobErrorCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SimulationJobErrorCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationJobErrorCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SimulationJobErrorCode::from(s))
     }
 }
 impl SimulationJobErrorCode {
@@ -303,7 +303,7 @@ impl SimulationJobErrorCode {
         ]
     }
 }
-impl AsRef<str> for SimulationJobErrorCode {
+impl ::std::convert::AsRef<str> for SimulationJobErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

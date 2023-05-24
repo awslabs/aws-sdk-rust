@@ -2,20 +2,20 @@
 
 /// <p> The result structure for the start a deployment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDeploymentOutput {
     /// <p> The summary for the job. </p>
     #[doc(hidden)]
-    pub job_summary: std::option::Option<crate::types::JobSummary>,
+    pub job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,
 }
 impl StartDeploymentOutput {
     /// <p> The summary for the job. </p>
-    pub fn job_summary(&self) -> std::option::Option<&crate::types::JobSummary> {
+    pub fn job_summary(&self) -> ::std::option::Option<&crate::types::JobSummary> {
         self.job_summary.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for StartDeploymentOutput {
+impl ::aws_http::request_id::RequestId for StartDeploymentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl StartDeploymentOutput {
 
 /// A builder for [`StartDeploymentOutput`](crate::operation::start_deployment::StartDeploymentOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartDeploymentOutputBuilder {
-    pub(crate) job_summary: std::option::Option<crate::types::JobSummary>,
+    pub(crate) job_summary: ::std::option::Option<crate::types::JobSummary>,
     _request_id: Option<String>,
 }
 impl StartDeploymentOutputBuilder {
     /// <p> The summary for the job. </p>
     pub fn job_summary(mut self, input: crate::types::JobSummary) -> Self {
-        self.job_summary = Some(input);
+        self.job_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p> The summary for the job. </p>
-    pub fn set_job_summary(mut self, input: std::option::Option<crate::types::JobSummary>) -> Self {
+    pub fn set_job_summary(
+        mut self,
+        input: ::std::option::Option<crate::types::JobSummary>,
+    ) -> Self {
         self.job_summary = input;
         self
     }

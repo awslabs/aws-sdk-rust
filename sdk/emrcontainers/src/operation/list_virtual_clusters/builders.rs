@@ -6,29 +6,29 @@ pub use crate::operation::list_virtual_clusters::_list_virtual_clusters_input::L
 /// Fluent builder constructing a request to `ListVirtualClusters`.
 ///
 /// <p>Lists information about the specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListVirtualClustersFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_virtual_clusters::builders::ListVirtualClustersInputBuilder,
 }
 impl ListVirtualClustersFluentBuilder {
     /// Creates a new `ListVirtualClusters`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_virtual_clusters::ListVirtualClusters,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_virtual_clusters::ListVirtualClustersError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListVirtualClustersFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_virtual_clusters::ListVirtualClustersOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_virtual_clusters::ListVirtualClustersError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListVirtualClustersFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_virtual_clusters::ListVirtualClustersOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_virtual_clusters::ListVirtualClustersError,
         >,
     > {
@@ -92,14 +95,17 @@ impl ListVirtualClustersFluentBuilder {
         )
     }
     /// <p>The container provider ID of the virtual cluster.</p>
-    pub fn container_provider_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn container_provider_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.container_provider_id(input.into());
         self
     }
     /// <p>The container provider ID of the virtual cluster.</p>
     pub fn set_container_provider_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_container_provider_id(input);
         self
@@ -112,33 +118,33 @@ impl ListVirtualClustersFluentBuilder {
     /// <p>The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</p>
     pub fn set_container_provider_type(
         mut self,
-        input: std::option::Option<crate::types::ContainerProviderType>,
+        input: ::std::option::Option<crate::types::ContainerProviderType>,
     ) -> Self {
         self.inner = self.inner.set_container_provider_type(input);
         self
     }
     /// <p>The date and time after which the virtual clusters are created.</p>
-    pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
         self
     }
     /// <p>The date and time after which the virtual clusters are created.</p>
     pub fn set_created_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
     /// <p>The date and time before which the virtual clusters are created.</p>
-    pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
         self
     }
     /// <p>The date and time before which the virtual clusters are created.</p>
     pub fn set_created_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
@@ -155,7 +161,7 @@ impl ListVirtualClustersFluentBuilder {
     /// <p>The states of the requested virtual clusters.</p>
     pub fn set_states(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VirtualClusterState>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualClusterState>>,
     ) -> Self {
         self.inner = self.inner.set_states(input);
         self
@@ -166,17 +172,17 @@ impl ListVirtualClustersFluentBuilder {
         self
     }
     /// <p>The maximum number of virtual clusters that can be listed.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token for the next set of virtual clusters to return. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next set of virtual clusters to return. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

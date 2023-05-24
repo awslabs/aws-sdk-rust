@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateLenses`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workload_id(impl Into<String>)`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`workload_id(impl ::std::convert::Into<String>)`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::workload_id) / [`set_workload_id(Option<String>)`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::set_workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     ///   - [`lens_aliases(Vec<String>)`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::lens_aliases) / [`set_lens_aliases(Option<Vec<String>>)`](crate::operation::associate_lenses::builders::AssociateLensesFluentBuilder::set_lens_aliases): <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>  <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
     /// - On success, responds with [`AssociateLensesOutput`](crate::operation::associate_lenses::AssociateLensesOutput)
     /// - On failure, responds with [`SdkError<AssociateLensesError>`](crate::operation::associate_lenses::AssociateLensesError)

@@ -2,15 +2,15 @@
 
 /// <p>The replication configuration for a registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationConfiguration {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::ReplicationRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>,
 }
 impl ReplicationConfiguration {
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::ReplicationRule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::ReplicationRule]> {
         self.rules.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ReplicationConfiguration {
 
 /// A builder for [`ReplicationConfiguration`](crate::types::ReplicationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationConfigurationBuilder {
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::ReplicationRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>,
 }
 impl ReplicationConfigurationBuilder {
     /// Appends an item to `rules`.
@@ -36,13 +38,13 @@ impl ReplicationConfigurationBuilder {
     pub fn rules(mut self, input: crate::types::ReplicationRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationRule>>,
     ) -> Self {
         self.rules = input;
         self

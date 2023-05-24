@@ -5,29 +5,29 @@
 /// <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> </p>
 /// <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchFilter {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<std::string::String>,
+    pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<std::string::String>,
+    pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchFilter {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
-    pub fn attribute(&self) -> std::option::Option<&str> {
+    pub fn attribute(&self) -> ::std::option::Option<&str> {
         self.attribute.as_deref()
     }
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
-    pub fn operator(&self) -> std::option::Option<&str> {
+    pub fn operator(&self) -> ::std::option::Option<&str> {
         self.operator.as_deref()
     }
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -40,30 +40,32 @@ impl SearchFilter {
 
 /// A builder for [`SearchFilter`](crate::types::SearchFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchFilterBuilder {
-    pub(crate) attribute: std::option::Option<std::string::String>,
-    pub(crate) operator: std::option::Option<std::string::String>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) attribute: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<::std::string::String>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchFilterBuilder {
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
-    pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute = Some(input.into());
+    pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
-    pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operator = Some(input.into());
+    pub fn operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
-    pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operator = input;
         self
     }
@@ -72,16 +74,16 @@ impl SearchFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

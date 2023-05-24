@@ -6,29 +6,29 @@ pub use crate::operation::start_protected_query::_start_protected_query_input::S
 /// Fluent builder constructing a request to `StartProtectedQuery`.
 ///
 /// <p>Creates a protected query that is started by AWS Clean Rooms.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartProtectedQueryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_protected_query::builders::StartProtectedQueryInputBuilder,
 }
 impl StartProtectedQueryFluentBuilder {
     /// Creates a new `StartProtectedQuery`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_protected_query::StartProtectedQuery,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_protected_query::StartProtectedQueryError,
         >,
     > {
@@ -36,30 +36,33 @@ impl StartProtectedQueryFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_protected_query::StartProtectedQueryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_protected_query::StartProtectedQueryError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl StartProtectedQueryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_protected_query::StartProtectedQueryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_protected_query::StartProtectedQueryError,
         >,
     > {
@@ -88,20 +91,23 @@ impl StartProtectedQueryFluentBuilder {
     /// <p>The type of the protected query to be started.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ProtectedQueryType>,
+        input: ::std::option::Option<crate::types::ProtectedQueryType>,
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn membership_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
     pub fn set_membership_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
@@ -114,7 +120,7 @@ impl StartProtectedQueryFluentBuilder {
     /// <p>The protected SQL query parameters.</p>
     pub fn set_sql_parameters(
         mut self,
-        input: std::option::Option<crate::types::ProtectedQuerySqlParameters>,
+        input: ::std::option::Option<crate::types::ProtectedQuerySqlParameters>,
     ) -> Self {
         self.inner = self.inner.set_sql_parameters(input);
         self
@@ -130,7 +136,7 @@ impl StartProtectedQueryFluentBuilder {
     /// <p>The details needed to write the query results.</p>
     pub fn set_result_configuration(
         mut self,
-        input: std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
+        input: ::std::option::Option<crate::types::ProtectedQueryResultConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_result_configuration(input);
         self

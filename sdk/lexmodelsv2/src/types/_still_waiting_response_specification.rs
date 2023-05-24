@@ -2,36 +2,36 @@
 
 /// <p>Defines the messages that Amazon Lex sends to a user to remind them that the bot is waiting for a response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StillWaitingResponseSpecification {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     #[doc(hidden)]
-    pub message_groups: std::option::Option<std::vec::Vec<crate::types::MessageGroup>>,
+    pub message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     #[doc(hidden)]
-    pub frequency_in_seconds: std::option::Option<i32>,
+    pub frequency_in_seconds: ::std::option::Option<i32>,
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
     #[doc(hidden)]
-    pub timeout_in_seconds: std::option::Option<i32>,
+    pub timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     #[doc(hidden)]
-    pub allow_interrupt: std::option::Option<bool>,
+    pub allow_interrupt: ::std::option::Option<bool>,
 }
 impl StillWaitingResponseSpecification {
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
-    pub fn message_groups(&self) -> std::option::Option<&[crate::types::MessageGroup]> {
+    pub fn message_groups(&self) -> ::std::option::Option<&[crate::types::MessageGroup]> {
         self.message_groups.as_deref()
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
-    pub fn frequency_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn frequency_in_seconds(&self) -> ::std::option::Option<i32> {
         self.frequency_in_seconds
     }
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
-    pub fn timeout_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_in_seconds
     }
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
-    pub fn allow_interrupt(&self) -> std::option::Option<bool> {
+    pub fn allow_interrupt(&self) -> ::std::option::Option<bool> {
         self.allow_interrupt
     }
 }
@@ -44,12 +44,14 @@ impl StillWaitingResponseSpecification {
 
 /// A builder for [`StillWaitingResponseSpecification`](crate::types::StillWaitingResponseSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StillWaitingResponseSpecificationBuilder {
-    pub(crate) message_groups: std::option::Option<std::vec::Vec<crate::types::MessageGroup>>,
-    pub(crate) frequency_in_seconds: std::option::Option<i32>,
-    pub(crate) timeout_in_seconds: std::option::Option<i32>,
-    pub(crate) allow_interrupt: std::option::Option<bool>,
+    pub(crate) message_groups: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
+    pub(crate) frequency_in_seconds: ::std::option::Option<i32>,
+    pub(crate) timeout_in_seconds: ::std::option::Option<i32>,
+    pub(crate) allow_interrupt: ::std::option::Option<bool>,
 }
 impl StillWaitingResponseSpecificationBuilder {
     /// Appends an item to `message_groups`.
@@ -60,44 +62,44 @@ impl StillWaitingResponseSpecificationBuilder {
     pub fn message_groups(mut self, input: crate::types::MessageGroup) -> Self {
         let mut v = self.message_groups.unwrap_or_default();
         v.push(input);
-        self.message_groups = Some(v);
+        self.message_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more message groups, each containing one or more messages, that define the prompts that Amazon Lex sends to the user.</p>
     pub fn set_message_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MessageGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MessageGroup>>,
     ) -> Self {
         self.message_groups = input;
         self
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
     pub fn frequency_in_seconds(mut self, input: i32) -> Self {
-        self.frequency_in_seconds = Some(input);
+        self.frequency_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>How often a message should be sent to the user. Minimum of 1 second, maximum of 5 minutes.</p>
-    pub fn set_frequency_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_frequency_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.frequency_in_seconds = input;
         self
     }
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
-        self.timeout_in_seconds = Some(input);
+        self.timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>If Amazon Lex waits longer than this length of time for a response, it will stop sending messages.</p>
-    pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_in_seconds = input;
         self
     }
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
     pub fn allow_interrupt(mut self, input: bool) -> Self {
-        self.allow_interrupt = Some(input);
+        self.allow_interrupt = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates that the user can interrupt the response by speaking while the message is being played.</p>
-    pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_interrupt(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_interrupt = input;
         self
     }

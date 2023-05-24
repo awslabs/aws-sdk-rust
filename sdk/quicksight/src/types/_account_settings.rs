@@ -2,20 +2,20 @@
 
 /// <p>The Amazon QuickSight settings associated with your Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountSettings {
     /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
     #[doc(hidden)]
-    pub account_name: std::option::Option<std::string::String>,
+    pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
     #[doc(hidden)]
-    pub edition: std::option::Option<crate::types::Edition>,
+    pub edition: ::std::option::Option<crate::types::Edition>,
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
     #[doc(hidden)]
-    pub default_namespace: std::option::Option<std::string::String>,
+    pub default_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
     #[doc(hidden)]
-    pub notification_email: std::option::Option<std::string::String>,
+    pub notification_email: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     #[doc(hidden)]
     pub public_sharing_enabled: bool,
@@ -25,19 +25,19 @@ pub struct AccountSettings {
 }
 impl AccountSettings {
     /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
     /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
-    pub fn edition(&self) -> std::option::Option<&crate::types::Edition> {
+    pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
         self.edition.as_ref()
     }
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
-    pub fn default_namespace(&self) -> std::option::Option<&str> {
+    pub fn default_namespace(&self) -> ::std::option::Option<&str> {
         self.default_namespace.as_deref()
     }
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
-    pub fn notification_email(&self) -> std::option::Option<&str> {
+    pub fn notification_email(&self) -> ::std::option::Option<&str> {
         self.notification_email.as_deref()
     }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
@@ -58,79 +58,90 @@ impl AccountSettings {
 
 /// A builder for [`AccountSettings`](crate::types::AccountSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountSettingsBuilder {
-    pub(crate) account_name: std::option::Option<std::string::String>,
-    pub(crate) edition: std::option::Option<crate::types::Edition>,
-    pub(crate) default_namespace: std::option::Option<std::string::String>,
-    pub(crate) notification_email: std::option::Option<std::string::String>,
-    pub(crate) public_sharing_enabled: std::option::Option<bool>,
-    pub(crate) termination_protection_enabled: std::option::Option<bool>,
+    pub(crate) account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) edition: ::std::option::Option<crate::types::Edition>,
+    pub(crate) default_namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) notification_email: ::std::option::Option<::std::string::String>,
+    pub(crate) public_sharing_enabled: ::std::option::Option<bool>,
+    pub(crate) termination_protection_enabled: ::std::option::Option<bool>,
 }
 impl AccountSettingsBuilder {
     /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
-    pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_name = Some(input.into());
+    pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The "account name" you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It is unique in all of Amazon Web Services and it appears only when users sign in.</p>
-    pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
     /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
-        self.edition = Some(input);
+        self.edition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.</p>
-    pub fn set_edition(mut self, input: std::option::Option<crate::types::Edition>) -> Self {
+    pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
         self.edition = input;
         self
     }
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
-    pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_namespace = Some(input.into());
+    pub fn default_namespace(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default Amazon QuickSight namespace for your Amazon Web Services account. </p>
     pub fn set_default_namespace(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.default_namespace = input;
         self
     }
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
-    pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notification_email = Some(input.into());
+    pub fn notification_email(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.notification_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The main notification email for your Amazon QuickSight subscription.</p>
     pub fn set_notification_email(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.notification_email = input;
         self
     }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
     pub fn public_sharing_enabled(mut self, input: bool) -> Self {
-        self.public_sharing_enabled = Some(input);
+        self.public_sharing_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
-    pub fn set_public_sharing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_public_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_sharing_enabled = input;
         self
     }
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
     pub fn termination_protection_enabled(mut self, input: bool) -> Self {
-        self.termination_protection_enabled = Some(input);
+        self.termination_protection_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted. </p>
-    pub fn set_termination_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_termination_protection_enabled(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.termination_protection_enabled = input;
         self
     }

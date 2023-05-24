@@ -2,22 +2,24 @@
 
 /// <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capacity {
     /// <p>Information about the auto scaling parameters for the connector.</p>
     #[doc(hidden)]
-    pub auto_scaling: std::option::Option<crate::types::AutoScaling>,
+    pub auto_scaling: ::std::option::Option<crate::types::AutoScaling>,
     /// <p>Details about a fixed capacity allocated to a connector.</p>
     #[doc(hidden)]
-    pub provisioned_capacity: std::option::Option<crate::types::ProvisionedCapacity>,
+    pub provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacity>,
 }
 impl Capacity {
     /// <p>Information about the auto scaling parameters for the connector.</p>
-    pub fn auto_scaling(&self) -> std::option::Option<&crate::types::AutoScaling> {
+    pub fn auto_scaling(&self) -> ::std::option::Option<&crate::types::AutoScaling> {
         self.auto_scaling.as_ref()
     }
     /// <p>Details about a fixed capacity allocated to a connector.</p>
-    pub fn provisioned_capacity(&self) -> std::option::Option<&crate::types::ProvisionedCapacity> {
+    pub fn provisioned_capacity(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ProvisionedCapacity> {
         self.provisioned_capacity.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl Capacity {
 
 /// A builder for [`Capacity`](crate::types::Capacity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityBuilder {
-    pub(crate) auto_scaling: std::option::Option<crate::types::AutoScaling>,
-    pub(crate) provisioned_capacity: std::option::Option<crate::types::ProvisionedCapacity>,
+    pub(crate) auto_scaling: ::std::option::Option<crate::types::AutoScaling>,
+    pub(crate) provisioned_capacity: ::std::option::Option<crate::types::ProvisionedCapacity>,
 }
 impl CapacityBuilder {
     /// <p>Information about the auto scaling parameters for the connector.</p>
     pub fn auto_scaling(mut self, input: crate::types::AutoScaling) -> Self {
-        self.auto_scaling = Some(input);
+        self.auto_scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the auto scaling parameters for the connector.</p>
     pub fn set_auto_scaling(
         mut self,
-        input: std::option::Option<crate::types::AutoScaling>,
+        input: ::std::option::Option<crate::types::AutoScaling>,
     ) -> Self {
         self.auto_scaling = input;
         self
     }
     /// <p>Details about a fixed capacity allocated to a connector.</p>
     pub fn provisioned_capacity(mut self, input: crate::types::ProvisionedCapacity) -> Self {
-        self.provisioned_capacity = Some(input);
+        self.provisioned_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about a fixed capacity allocated to a connector.</p>
     pub fn set_provisioned_capacity(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedCapacity>,
+        input: ::std::option::Option<crate::types::ProvisionedCapacity>,
     ) -> Self {
         self.provisioned_capacity = input;
         self

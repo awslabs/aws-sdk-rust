@@ -2,7 +2,7 @@
 
 /// <p>Ephemeris data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EphemerisData {
     /// <p>Ephemeris data in Orbit Ephemeris Message (OEM) format.</p>
     Oem(crate::types::OemEphemeris),
@@ -21,11 +21,11 @@ pub enum EphemerisData {
 impl EphemerisData {
     /// Tries to convert the enum instance into [`Oem`](crate::types::EphemerisData::Oem), extracting the inner [`OemEphemeris`](crate::types::OemEphemeris).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_oem(&self) -> std::result::Result<&crate::types::OemEphemeris, &Self> {
+    pub fn as_oem(&self) -> ::std::result::Result<&crate::types::OemEphemeris, &Self> {
         if let EphemerisData::Oem(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Oem`](crate::types::EphemerisData::Oem).
@@ -34,11 +34,11 @@ impl EphemerisData {
     }
     /// Tries to convert the enum instance into [`Tle`](crate::types::EphemerisData::Tle), extracting the inner [`TleEphemeris`](crate::types::TleEphemeris).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tle(&self) -> std::result::Result<&crate::types::TleEphemeris, &Self> {
+    pub fn as_tle(&self) -> ::std::result::Result<&crate::types::TleEphemeris, &Self> {
         if let EphemerisData::Tle(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Tle`](crate::types::EphemerisData::Tle).

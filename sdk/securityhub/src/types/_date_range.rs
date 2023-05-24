@@ -2,14 +2,14 @@
 
 /// <p>A date range for the date filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateRange {
     /// <p>A date range value for the date filter.</p>
     #[doc(hidden)]
     pub value: i32,
     /// <p>A date range unit for the date filter.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::DateRangeUnit>,
+    pub unit: ::std::option::Option<crate::types::DateRangeUnit>,
 }
 impl DateRange {
     /// <p>A date range value for the date filter.</p>
@@ -17,7 +17,7 @@ impl DateRange {
         self.value
     }
     /// <p>A date range unit for the date filter.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::DateRangeUnit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::DateRangeUnit> {
         self.unit.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl DateRange {
 
 /// A builder for [`DateRange`](crate::types::DateRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DateRangeBuilder {
-    pub(crate) value: std::option::Option<i32>,
-    pub(crate) unit: std::option::Option<crate::types::DateRangeUnit>,
+    pub(crate) value: ::std::option::Option<i32>,
+    pub(crate) unit: ::std::option::Option<crate::types::DateRangeUnit>,
 }
 impl DateRangeBuilder {
     /// <p>A date range value for the date filter.</p>
     pub fn value(mut self, input: i32) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>A date range value for the date filter.</p>
-    pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
     }
     /// <p>A date range unit for the date filter.</p>
     pub fn unit(mut self, input: crate::types::DateRangeUnit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>A date range unit for the date filter.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::DateRangeUnit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::DateRangeUnit>) -> Self {
         self.unit = input;
         self
     }

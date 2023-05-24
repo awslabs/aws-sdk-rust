@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMigration`](crate::operation::get_migration::builders::GetMigrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`migration_id(impl Into<String>)`](crate::operation::get_migration::builders::GetMigrationFluentBuilder::migration_id) / [`set_migration_id(Option<String>)`](crate::operation::get_migration::builders::GetMigrationFluentBuilder::set_migration_id): <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
+    ///   - [`migration_id(impl ::std::convert::Into<String>)`](crate::operation::get_migration::builders::GetMigrationFluentBuilder::migration_id) / [`set_migration_id(Option<String>)`](crate::operation::get_migration::builders::GetMigrationFluentBuilder::set_migration_id): <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
     /// - On success, responds with [`GetMigrationOutput`](crate::operation::get_migration::GetMigrationOutput) with field(s):
     ///   - [`migration_id(Option<String>)`](crate::operation::get_migration::GetMigrationOutput::migration_id): <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
     ///   - [`v1_bot_name(Option<String>)`](crate::operation::get_migration::GetMigrationOutput::v1_bot_name): <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>

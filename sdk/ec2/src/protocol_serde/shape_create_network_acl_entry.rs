@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_network_acl_entry_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_network_acl_entry::CreateNetworkAclEntryOutput,
@@ -15,7 +15,7 @@ pub fn de_create_network_acl_entry_http_error(
         _response_body,
     )
     .map_err(crate::operation::create_network_acl_entry::CreateNetworkAclEntryError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::create_network_acl_entry::CreateNetworkAclEntryError::generic(generic))
 }
@@ -23,7 +23,7 @@ pub fn de_create_network_acl_entry_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_network_acl_entry_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_network_acl_entry::CreateNetworkAclEntryOutput,
@@ -33,7 +33,7 @@ pub fn de_create_network_acl_entry_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryOutputBuilder::default();
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })

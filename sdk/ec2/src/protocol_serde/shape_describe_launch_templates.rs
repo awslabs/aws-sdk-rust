@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_launch_templates_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput,
@@ -17,7 +17,7 @@ pub fn de_describe_launch_templates_http_error(
     .map_err(
         crate::operation::describe_launch_templates::DescribeLaunchTemplatesError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::describe_launch_templates::DescribeLaunchTemplatesError::generic(generic))
 }
@@ -25,7 +25,7 @@ pub fn de_describe_launch_templates_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_launch_templates_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput,
@@ -36,7 +36,7 @@ pub fn de_describe_launch_templates_http_response_with_props(
         let mut output = crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesOutputBuilder::default();
         output = crate::protocol_serde::shape_describe_launch_templates::de_describe_launch_templates(_response_body, output).map_err(crate::operation::describe_launch_templates::DescribeLaunchTemplatesError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -48,16 +48,16 @@ pub fn de_describe_launch_templates(
     mut builder: crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesOutputBuilder,
 ) -> Result<
     crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLaunchTemplatesResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeLaunchTemplatesResponse got {:?}",
             start_el
         )));
@@ -77,8 +77,8 @@ pub fn de_describe_launch_templates(
             s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#DescribeLaunchTemplatesOutput$NextToken */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?

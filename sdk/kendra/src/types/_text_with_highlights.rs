@@ -2,22 +2,22 @@
 
 /// <p>Provides text and information about where to highlight the text.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextWithHighlights {
     /// <p>The text to display to the user.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>The beginning and end of the text that should be highlighted.</p>
     #[doc(hidden)]
-    pub highlights: std::option::Option<std::vec::Vec<crate::types::Highlight>>,
+    pub highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
 }
 impl TextWithHighlights {
     /// <p>The text to display to the user.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The beginning and end of the text that should be highlighted.</p>
-    pub fn highlights(&self) -> std::option::Option<&[crate::types::Highlight]> {
+    pub fn highlights(&self) -> ::std::option::Option<&[crate::types::Highlight]> {
         self.highlights.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl TextWithHighlights {
 
 /// A builder for [`TextWithHighlights`](crate::types::TextWithHighlights).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TextWithHighlightsBuilder {
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) highlights: std::option::Option<std::vec::Vec<crate::types::Highlight>>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
 }
 impl TextWithHighlightsBuilder {
     /// <p>The text to display to the user.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text to display to the user.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
@@ -54,13 +56,13 @@ impl TextWithHighlightsBuilder {
     pub fn highlights(mut self, input: crate::types::Highlight) -> Self {
         let mut v = self.highlights.unwrap_or_default();
         v.push(input);
-        self.highlights = Some(v);
+        self.highlights = ::std::option::Option::Some(v);
         self
     }
     /// <p>The beginning and end of the text that should be highlighted.</p>
     pub fn set_highlights(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Highlight>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
     ) -> Self {
         self.highlights = input;
         self

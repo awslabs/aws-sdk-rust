@@ -2,15 +2,15 @@
 
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobScopingBlock {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     #[doc(hidden)]
-    pub and: std::option::Option<std::vec::Vec<crate::types::JobScopeTerm>>,
+    pub and: ::std::option::Option<::std::vec::Vec<crate::types::JobScopeTerm>>,
 }
 impl JobScopingBlock {
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
-    pub fn and(&self) -> std::option::Option<&[crate::types::JobScopeTerm]> {
+    pub fn and(&self) -> ::std::option::Option<&[crate::types::JobScopeTerm]> {
         self.and.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl JobScopingBlock {
 
 /// A builder for [`JobScopingBlock`](crate::types::JobScopingBlock).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobScopingBlockBuilder {
-    pub(crate) and: std::option::Option<std::vec::Vec<crate::types::JobScopeTerm>>,
+    pub(crate) and: ::std::option::Option<::std::vec::Vec<crate::types::JobScopeTerm>>,
 }
 impl JobScopingBlockBuilder {
     /// Appends an item to `and`.
@@ -36,13 +38,13 @@ impl JobScopingBlockBuilder {
     pub fn and(mut self, input: crate::types::JobScopeTerm) -> Self {
         let mut v = self.and.unwrap_or_default();
         v.push(input);
-        self.and = Some(v);
+        self.and = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
     pub fn set_and(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobScopeTerm>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::JobScopeTerm>>,
     ) -> Self {
         self.and = input;
         self

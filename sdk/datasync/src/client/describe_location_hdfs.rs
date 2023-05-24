@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationHdfs`](crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+    ///   - [`location_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
     /// - On success, responds with [`DescribeLocationHdfsOutput`](crate::operation::describe_location_hdfs::DescribeLocationHdfsOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_hdfs::DescribeLocationHdfsOutput::location_arn): <p>The ARN of the HDFS cluster location.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_hdfs::DescribeLocationHdfsOutput::location_uri): <p>The URI of the HDFS cluster location.</p>

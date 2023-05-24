@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of CreateVpnGateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpnGatewayOutput {
     /// <p>Information about the virtual private gateway.</p>
     #[doc(hidden)]
-    pub vpn_gateway: std::option::Option<crate::types::VpnGateway>,
+    pub vpn_gateway: ::std::option::Option<crate::types::VpnGateway>,
     _request_id: Option<String>,
 }
 impl CreateVpnGatewayOutput {
     /// <p>Information about the virtual private gateway.</p>
-    pub fn vpn_gateway(&self) -> std::option::Option<&crate::types::VpnGateway> {
+    pub fn vpn_gateway(&self) -> ::std::option::Option<&crate::types::VpnGateway> {
         self.vpn_gateway.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateVpnGatewayOutput {
+impl ::aws_http::request_id::RequestId for CreateVpnGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,24 @@ impl CreateVpnGatewayOutput {
 
 /// A builder for [`CreateVpnGatewayOutput`](crate::operation::create_vpn_gateway::CreateVpnGatewayOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVpnGatewayOutputBuilder {
-    pub(crate) vpn_gateway: std::option::Option<crate::types::VpnGateway>,
+    pub(crate) vpn_gateway: ::std::option::Option<crate::types::VpnGateway>,
     _request_id: Option<String>,
 }
 impl CreateVpnGatewayOutputBuilder {
     /// <p>Information about the virtual private gateway.</p>
     pub fn vpn_gateway(mut self, input: crate::types::VpnGateway) -> Self {
-        self.vpn_gateway = Some(input);
+        self.vpn_gateway = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the virtual private gateway.</p>
-    pub fn set_vpn_gateway(mut self, input: std::option::Option<crate::types::VpnGateway>) -> Self {
+    pub fn set_vpn_gateway(
+        mut self,
+        input: ::std::option::Option<crate::types::VpnGateway>,
+    ) -> Self {
         self.vpn_gateway = input;
         self
     }

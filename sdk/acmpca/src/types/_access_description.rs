@@ -2,22 +2,22 @@
 
 /// <p>Provides access information used by the <code>authorityInfoAccess</code> and <code>subjectInfoAccess</code> extensions described in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDescription {
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
     #[doc(hidden)]
-    pub access_method: std::option::Option<crate::types::AccessMethod>,
+    pub access_method: ::std::option::Option<crate::types::AccessMethod>,
     /// <p>The location of <code>AccessDescription</code> information.</p>
     #[doc(hidden)]
-    pub access_location: std::option::Option<crate::types::GeneralName>,
+    pub access_location: ::std::option::Option<crate::types::GeneralName>,
 }
 impl AccessDescription {
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
-    pub fn access_method(&self) -> std::option::Option<&crate::types::AccessMethod> {
+    pub fn access_method(&self) -> ::std::option::Option<&crate::types::AccessMethod> {
         self.access_method.as_ref()
     }
     /// <p>The location of <code>AccessDescription</code> information.</p>
-    pub fn access_location(&self) -> std::option::Option<&crate::types::GeneralName> {
+    pub fn access_location(&self) -> ::std::option::Option<&crate::types::GeneralName> {
         self.access_location.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl AccessDescription {
 
 /// A builder for [`AccessDescription`](crate::types::AccessDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessDescriptionBuilder {
-    pub(crate) access_method: std::option::Option<crate::types::AccessMethod>,
-    pub(crate) access_location: std::option::Option<crate::types::GeneralName>,
+    pub(crate) access_method: ::std::option::Option<crate::types::AccessMethod>,
+    pub(crate) access_location: ::std::option::Option<crate::types::GeneralName>,
 }
 impl AccessDescriptionBuilder {
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
     pub fn access_method(mut self, input: crate::types::AccessMethod) -> Self {
-        self.access_method = Some(input);
+        self.access_method = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type and format of <code>AccessDescription</code> information.</p>
     pub fn set_access_method(
         mut self,
-        input: std::option::Option<crate::types::AccessMethod>,
+        input: ::std::option::Option<crate::types::AccessMethod>,
     ) -> Self {
         self.access_method = input;
         self
     }
     /// <p>The location of <code>AccessDescription</code> information.</p>
     pub fn access_location(mut self, input: crate::types::GeneralName) -> Self {
-        self.access_location = Some(input);
+        self.access_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of <code>AccessDescription</code> information.</p>
     pub fn set_access_location(
         mut self,
-        input: std::option::Option<crate::types::GeneralName>,
+        input: ::std::option::Option<crate::types::GeneralName>,
     ) -> Self {
         self.access_location = input;
         self

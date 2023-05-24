@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCluster`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    ///   - [`current_version(impl Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_current_version): <p>The current version of the MSK cluster.</p>
+    ///   - [`cluster_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_cluster_arn): <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+    ///   - [`current_version(impl ::std::convert::Into<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::current_version) / [`set_current_version(Option<String>)`](crate::operation::delete_cluster::builders::DeleteClusterFluentBuilder::set_current_version): <p>The current version of the MSK cluster.</p>
     /// - On success, responds with [`DeleteClusterOutput`](crate::operation::delete_cluster::DeleteClusterOutput) with field(s):
     ///   - [`cluster_arn(Option<String>)`](crate::operation::delete_cluster::DeleteClusterOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
     ///   - [`state(Option<ClusterState>)`](crate::operation::delete_cluster::DeleteClusterOutput::state): <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>

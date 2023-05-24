@@ -2,49 +2,49 @@
 
 /// <p>Represents a gateway's local disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Disk {
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
     #[doc(hidden)]
-    pub disk_id: std::option::Option<std::string::String>,
+    pub disk_id: ::std::option::Option<::std::string::String>,
     /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
     #[doc(hidden)]
-    pub disk_path: std::option::Option<std::string::String>,
+    pub disk_path: ::std::option::Option<::std::string::String>,
     /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
     #[doc(hidden)]
-    pub disk_node: std::option::Option<std::string::String>,
+    pub disk_node: ::std::option::Option<::std::string::String>,
     /// <p>A value that represents the status of a local disk.</p>
     #[doc(hidden)]
-    pub disk_status: std::option::Option<std::string::String>,
+    pub disk_status: ::std::option::Option<::std::string::String>,
     /// <p>The local disk size in bytes.</p>
     #[doc(hidden)]
     pub disk_size_in_bytes: i64,
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
     #[doc(hidden)]
-    pub disk_allocation_type: std::option::Option<std::string::String>,
+    pub disk_allocation_type: ::std::option::Option<::std::string::String>,
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
     #[doc(hidden)]
-    pub disk_allocation_resource: std::option::Option<std::string::String>,
+    pub disk_allocation_resource: ::std::option::Option<::std::string::String>,
     /// <p>A list of values that represents attributes of a local disk.</p>
     #[doc(hidden)]
-    pub disk_attribute_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub disk_attribute_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Disk {
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
-    pub fn disk_id(&self) -> std::option::Option<&str> {
+    pub fn disk_id(&self) -> ::std::option::Option<&str> {
         self.disk_id.as_deref()
     }
     /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
-    pub fn disk_path(&self) -> std::option::Option<&str> {
+    pub fn disk_path(&self) -> ::std::option::Option<&str> {
         self.disk_path.as_deref()
     }
     /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
-    pub fn disk_node(&self) -> std::option::Option<&str> {
+    pub fn disk_node(&self) -> ::std::option::Option<&str> {
         self.disk_node.as_deref()
     }
     /// <p>A value that represents the status of a local disk.</p>
-    pub fn disk_status(&self) -> std::option::Option<&str> {
+    pub fn disk_status(&self) -> ::std::option::Option<&str> {
         self.disk_status.as_deref()
     }
     /// <p>The local disk size in bytes.</p>
@@ -53,15 +53,15 @@ impl Disk {
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-    pub fn disk_allocation_type(&self) -> std::option::Option<&str> {
+    pub fn disk_allocation_type(&self) -> ::std::option::Option<&str> {
         self.disk_allocation_type.as_deref()
     }
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
-    pub fn disk_allocation_resource(&self) -> std::option::Option<&str> {
+    pub fn disk_allocation_resource(&self) -> ::std::option::Option<&str> {
         self.disk_allocation_resource.as_deref()
     }
     /// <p>A list of values that represents attributes of a local disk.</p>
-    pub fn disk_attribute_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn disk_attribute_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.disk_attribute_list.as_deref()
     }
 }
@@ -74,92 +74,100 @@ impl Disk {
 
 /// A builder for [`Disk`](crate::types::Disk).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DiskBuilder {
-    pub(crate) disk_id: std::option::Option<std::string::String>,
-    pub(crate) disk_path: std::option::Option<std::string::String>,
-    pub(crate) disk_node: std::option::Option<std::string::String>,
-    pub(crate) disk_status: std::option::Option<std::string::String>,
-    pub(crate) disk_size_in_bytes: std::option::Option<i64>,
-    pub(crate) disk_allocation_type: std::option::Option<std::string::String>,
-    pub(crate) disk_allocation_resource: std::option::Option<std::string::String>,
-    pub(crate) disk_attribute_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) disk_id: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_path: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_node: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_status: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) disk_allocation_type: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_allocation_resource: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_attribute_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DiskBuilder {
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
-    pub fn disk_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_id = Some(input.into());
+    pub fn disk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.disk_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique device ID or other distinguishing data that identifies a local disk.</p>
-    pub fn set_disk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_disk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_id = input;
         self
     }
     /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
-    pub fn disk_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_path = Some(input.into());
+    pub fn disk_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.disk_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path of a local disk in the gateway virtual machine (VM).</p>
-    pub fn set_disk_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_disk_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_path = input;
         self
     }
     /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
-    pub fn disk_node(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_node = Some(input.into());
+    pub fn disk_node(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.disk_node = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device node of a local disk as assigned by the virtualization environment.</p>
-    pub fn set_disk_node(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_disk_node(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_node = input;
         self
     }
     /// <p>A value that represents the status of a local disk.</p>
-    pub fn disk_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_status = Some(input.into());
+    pub fn disk_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.disk_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that represents the status of a local disk.</p>
-    pub fn set_disk_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_disk_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_status = input;
         self
     }
     /// <p>The local disk size in bytes.</p>
     pub fn disk_size_in_bytes(mut self, input: i64) -> Self {
-        self.disk_size_in_bytes = Some(input);
+        self.disk_size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The local disk size in bytes.</p>
-    pub fn set_disk_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_disk_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.disk_size_in_bytes = input;
         self
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-    pub fn disk_allocation_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_allocation_type = Some(input.into());
+    pub fn disk_allocation_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disk_allocation_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p>
     /// <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
     pub fn set_disk_allocation_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.disk_allocation_type = input;
         self
     }
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
-    pub fn disk_allocation_resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_allocation_resource = Some(input.into());
+    pub fn disk_allocation_resource(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disk_allocation_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The iSCSI qualified name (IQN) that is defined for a disk. This field is not included in the response if the local disk is not defined as an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.</p>
     pub fn set_disk_allocation_resource(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.disk_allocation_resource = input;
         self
@@ -169,16 +177,19 @@ impl DiskBuilder {
     /// To override the contents of this collection use [`set_disk_attribute_list`](Self::set_disk_attribute_list).
     ///
     /// <p>A list of values that represents attributes of a local disk.</p>
-    pub fn disk_attribute_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn disk_attribute_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.disk_attribute_list.unwrap_or_default();
         v.push(input.into());
-        self.disk_attribute_list = Some(v);
+        self.disk_attribute_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values that represents attributes of a local disk.</p>
     pub fn set_disk_attribute_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.disk_attribute_list = input;
         self

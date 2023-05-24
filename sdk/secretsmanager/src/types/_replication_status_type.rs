@@ -2,43 +2,43 @@
 
 /// <p>A replication object consisting of a <code>RegionReplicationStatus</code> object and includes a Region, KMSKeyId, status, and status message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationStatusType {
     /// <p>The Region where replication occurs.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StatusType>,
+    pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     #[doc(hidden)]
-    pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_accessed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationStatusType {
     /// <p>The Region where replication occurs.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StatusType> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
         self.status.as_ref()
     }
     /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-    pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_accessed_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
 }
@@ -51,64 +51,72 @@ impl ReplicationStatusType {
 
 /// A builder for [`ReplicationStatusType`](crate::types::ReplicationStatusType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationStatusTypeBuilder {
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::StatusType>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::StatusType>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) last_accessed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationStatusTypeBuilder {
     /// <p>The Region where replication occurs.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where replication occurs.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>. </p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status can be <code>InProgress</code>, <code>Failed</code>, or <code>InSync</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::StatusType>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
     }
     /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Status message such as "<i>Secret with this name already exists in this region</i>".</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
-    pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_accessed_date = Some(input);
+    pub fn last_accessed_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_accessed_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date that the secret was last accessed in the Region. This field is omitted if the secret has never been retrieved in the Region.</p>
     pub fn set_last_accessed_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_accessed_date = input;
         self

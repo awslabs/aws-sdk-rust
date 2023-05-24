@@ -18,56 +18,59 @@ pub use crate::operation::batch_get_item::_batch_get_item_input::BatchGetItemInp
 /// <p>In order to minimize response latency, <code>BatchGetItem</code> may retrieve items in parallel.</p>
 /// <p>When designing your application, keep in mind that DynamoDB does not return items in any particular order. To help parse the response by item, include the primary key values for the items in your request in the <code>ProjectionExpression</code> parameter.</p>
 /// <p>If a requested item does not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of read. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetItemFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::batch_get_item::builders::BatchGetItemInputBuilder,
 }
 impl BatchGetItemFluentBuilder {
     /// Creates a new `BatchGetItem`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::batch_get_item::BatchGetItem,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::batch_get_item::BatchGetItemError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_item::BatchGetItemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_get_item::BatchGetItemOutput,
-        aws_smithy_http::result::SdkError<crate::operation::batch_get_item::BatchGetItemError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_item::BatchGetItemError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -80,9 +83,9 @@ impl BatchGetItemFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_get_item::BatchGetItemOutput,
-        aws_smithy_http::result::SdkError<crate::operation::batch_get_item::BatchGetItemError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::batch_get_item::BatchGetItemError>,
     > {
         self.send_middleware().await
     }
@@ -117,7 +120,7 @@ impl BatchGetItemFluentBuilder {
     /// </ul>
     pub fn request_items(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::KeysAndAttributes,
     ) -> Self {
         self.inner = self.inner.request_items(k.into(), v);
@@ -150,8 +153,8 @@ impl BatchGetItemFluentBuilder {
     /// </ul>
     pub fn set_request_items(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::KeysAndAttributes>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::KeysAndAttributes>,
         >,
     ) -> Self {
         self.inner = self.inner.set_request_items(input);
@@ -175,7 +178,7 @@ impl BatchGetItemFluentBuilder {
     /// </ul>
     pub fn set_return_consumed_capacity(
         mut self,
-        input: std::option::Option<crate::types::ReturnConsumedCapacity>,
+        input: ::std::option::Option<crate::types::ReturnConsumedCapacity>,
     ) -> Self {
         self.inner = self.inner.set_return_consumed_capacity(input);
         self

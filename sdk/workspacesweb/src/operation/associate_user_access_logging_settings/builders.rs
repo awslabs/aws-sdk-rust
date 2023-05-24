@@ -6,47 +6,50 @@ pub use crate::operation::associate_user_access_logging_settings::_associate_use
 /// Fluent builder constructing a request to `AssociateUserAccessLoggingSettings`.
 ///
 /// <p>Associates a user access logging settings resource with a web portal.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateUserAccessLoggingSettingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsInputBuilder,
 }
 impl AssociateUserAccessLoggingSettingsFluentBuilder {
     /// Creates a new `AssociateUserAccessLoggingSettings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettings, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput, aws_smithy_http::result::SdkError<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,24 +60,24 @@ impl AssociateUserAccessLoggingSettingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput, aws_smithy_http::result::SdkError<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError>>
                          {
         self.send_middleware().await
     }
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn portal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.portal_arn(input.into());
         self
     }
     /// <p>The ARN of the web portal.</p>
-    pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_portal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_portal_arn(input);
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
     pub fn user_access_logging_settings_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.user_access_logging_settings_arn(input.into());
         self
@@ -82,7 +85,7 @@ impl AssociateUserAccessLoggingSettingsFluentBuilder {
     /// <p>The ARN of the user access logging settings.</p>
     pub fn set_user_access_logging_settings_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_user_access_logging_settings_arn(input);
         self

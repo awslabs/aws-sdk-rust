@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetClassificationScope`](crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_classification_scope::builders::GetClassificationScopeFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`GetClassificationScopeOutput`](crate::operation::get_classification_scope::GetClassificationScopeOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_classification_scope::GetClassificationScopeOutput::id): <p>The unique identifier for the classification scope.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_classification_scope::GetClassificationScopeOutput::name): <p>The name of the classification scope: automated-sensitive-data-discovery.</p>

@@ -2,43 +2,43 @@
 
 /// <p>Describes a principal for use with Resource Access Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Principal {
     /// <p>The ID of the principal that can be associated with a resource share.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
     #[doc(hidden)]
-    pub resource_share_arn: std::option::Option<std::string::String>,
+    pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the principal was associated with the resource share.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the association between the resource share and the principal was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
     /// <ul>
     /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
     /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub external: std::option::Option<bool>,
+    pub external: ::std::option::Option<bool>,
 }
 impl Principal {
     /// <p>The ID of the principal that can be associated with a resource share.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The date and time when the principal was associated with the resource share.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the association between the resource share and the principal was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
@@ -46,7 +46,7 @@ impl Principal {
     /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
     /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
-    pub fn external(&self) -> std::option::Option<bool> {
+    pub fn external(&self) -> ::std::option::Option<bool> {
         self.external
     }
 }
@@ -59,60 +59,65 @@ impl Principal {
 
 /// A builder for [`Principal`](crate::types::Principal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrincipalBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) resource_share_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) external: std::option::Option<bool>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) external: ::std::option::Option<bool>,
 }
 impl PrincipalBuilder {
     /// <p>The ID of the principal that can be associated with a resource share.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the principal that can be associated with a resource share.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
-    pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_share_arn = Some(input.into());
+    pub fn resource_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of a resource share the principal is associated with.</p>
     pub fn set_resource_share_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_share_arn = input;
         self
     }
     /// <p>The date and time when the principal was associated with the resource share.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the principal was associated with the resource share.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The date and time when the association between the resource share and the principal was last updated.</p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the association between the resource share and the principal was last updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self
@@ -123,7 +128,7 @@ impl PrincipalBuilder {
     /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
     pub fn external(mut self, input: bool) -> Self {
-        self.external = Some(input);
+        self.external = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that owns the resource share:</p>
@@ -131,7 +136,7 @@ impl PrincipalBuilder {
     /// <li> <p> <code>True</code> – The two accounts belong to same organization.</p> </li>
     /// <li> <p> <code>False</code> – The two accounts do not belong to the same organization.</p> </li>
     /// </ul>
-    pub fn set_external(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_external(mut self, input: ::std::option::Option<bool>) -> Self {
         self.external = input;
         self
     }

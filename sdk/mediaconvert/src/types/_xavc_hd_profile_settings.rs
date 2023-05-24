@@ -2,76 +2,76 @@
 
 /// Required when you set (Profile) under (VideoDescription)&gt;(CodecSettings)&gt;(XavcSettings) to the value XAVC_HD.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct XavcHdProfileSettings {
     /// Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     #[doc(hidden)]
-    pub bitrate_class: std::option::Option<crate::types::XavcHdProfileBitrateClass>,
+    pub bitrate_class: ::std::option::Option<crate::types::XavcHdProfileBitrateClass>,
     /// The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
     #[doc(hidden)]
     pub flicker_adaptive_quantization:
-        std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
+        ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the encoder from using B-frames as reference frames.
     #[doc(hidden)]
-    pub gop_b_reference: std::option::Option<crate::types::XavcGopBReference>,
+    pub gop_b_reference: ::std::option::Option<crate::types::XavcGopBReference>,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     #[doc(hidden)]
-    pub gop_closed_cadence: std::option::Option<i32>,
+    pub gop_closed_cadence: ::std::option::Option<i32>,
     /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
     #[doc(hidden)]
-    pub hrd_buffer_size: std::option::Option<i32>,
+    pub hrd_buffer_size: ::std::option::Option<i32>,
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     #[doc(hidden)]
-    pub interlace_mode: std::option::Option<crate::types::XavcInterlaceMode>,
+    pub interlace_mode: ::std::option::Option<crate::types::XavcInterlaceMode>,
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     #[doc(hidden)]
-    pub quality_tuning_level: std::option::Option<crate::types::XavcHdProfileQualityTuningLevel>,
+    pub quality_tuning_level: ::std::option::Option<crate::types::XavcHdProfileQualityTuningLevel>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     #[doc(hidden)]
-    pub slices: std::option::Option<i32>,
+    pub slices: ::std::option::Option<i32>,
     /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
     #[doc(hidden)]
-    pub telecine: std::option::Option<crate::types::XavcHdProfileTelecine>,
+    pub telecine: ::std::option::Option<crate::types::XavcHdProfileTelecine>,
 }
 impl XavcHdProfileSettings {
     /// Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
-    pub fn bitrate_class(&self) -> std::option::Option<&crate::types::XavcHdProfileBitrateClass> {
+    pub fn bitrate_class(&self) -> ::std::option::Option<&crate::types::XavcHdProfileBitrateClass> {
         self.bitrate_class.as_ref()
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
     pub fn flicker_adaptive_quantization(
         &self,
-    ) -> std::option::Option<&crate::types::XavcFlickerAdaptiveQuantization> {
+    ) -> ::std::option::Option<&crate::types::XavcFlickerAdaptiveQuantization> {
         self.flicker_adaptive_quantization.as_ref()
     }
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the encoder from using B-frames as reference frames.
-    pub fn gop_b_reference(&self) -> std::option::Option<&crate::types::XavcGopBReference> {
+    pub fn gop_b_reference(&self) -> ::std::option::Option<&crate::types::XavcGopBReference> {
         self.gop_b_reference.as_ref()
     }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
-    pub fn gop_closed_cadence(&self) -> std::option::Option<i32> {
+    pub fn gop_closed_cadence(&self) -> ::std::option::Option<i32> {
         self.gop_closed_cadence
     }
     /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
-    pub fn hrd_buffer_size(&self) -> std::option::Option<i32> {
+    pub fn hrd_buffer_size(&self) -> ::std::option::Option<i32> {
         self.hrd_buffer_size
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
-    pub fn interlace_mode(&self) -> std::option::Option<&crate::types::XavcInterlaceMode> {
+    pub fn interlace_mode(&self) -> ::std::option::Option<&crate::types::XavcInterlaceMode> {
         self.interlace_mode.as_ref()
     }
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     pub fn quality_tuning_level(
         &self,
-    ) -> std::option::Option<&crate::types::XavcHdProfileQualityTuningLevel> {
+    ) -> ::std::option::Option<&crate::types::XavcHdProfileQualityTuningLevel> {
         self.quality_tuning_level.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-    pub fn slices(&self) -> std::option::Option<i32> {
+    pub fn slices(&self) -> ::std::option::Option<i32> {
         self.slices
     }
     /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
-    pub fn telecine(&self) -> std::option::Option<&crate::types::XavcHdProfileTelecine> {
+    pub fn telecine(&self) -> ::std::option::Option<&crate::types::XavcHdProfileTelecine> {
         self.telecine.as_ref()
     }
 }
@@ -84,30 +84,32 @@ impl XavcHdProfileSettings {
 
 /// A builder for [`XavcHdProfileSettings`](crate::types::XavcHdProfileSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct XavcHdProfileSettingsBuilder {
-    pub(crate) bitrate_class: std::option::Option<crate::types::XavcHdProfileBitrateClass>,
+    pub(crate) bitrate_class: ::std::option::Option<crate::types::XavcHdProfileBitrateClass>,
     pub(crate) flicker_adaptive_quantization:
-        std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
-    pub(crate) gop_b_reference: std::option::Option<crate::types::XavcGopBReference>,
-    pub(crate) gop_closed_cadence: std::option::Option<i32>,
-    pub(crate) hrd_buffer_size: std::option::Option<i32>,
-    pub(crate) interlace_mode: std::option::Option<crate::types::XavcInterlaceMode>,
+        ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
+    pub(crate) gop_b_reference: ::std::option::Option<crate::types::XavcGopBReference>,
+    pub(crate) gop_closed_cadence: ::std::option::Option<i32>,
+    pub(crate) hrd_buffer_size: ::std::option::Option<i32>,
+    pub(crate) interlace_mode: ::std::option::Option<crate::types::XavcInterlaceMode>,
     pub(crate) quality_tuning_level:
-        std::option::Option<crate::types::XavcHdProfileQualityTuningLevel>,
-    pub(crate) slices: std::option::Option<i32>,
-    pub(crate) telecine: std::option::Option<crate::types::XavcHdProfileTelecine>,
+        ::std::option::Option<crate::types::XavcHdProfileQualityTuningLevel>,
+    pub(crate) slices: ::std::option::Option<i32>,
+    pub(crate) telecine: ::std::option::Option<crate::types::XavcHdProfileTelecine>,
 }
 impl XavcHdProfileSettingsBuilder {
     /// Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub fn bitrate_class(mut self, input: crate::types::XavcHdProfileBitrateClass) -> Self {
-        self.bitrate_class = Some(input);
+        self.bitrate_class = ::std::option::Option::Some(input);
         self
     }
     /// Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub fn set_bitrate_class(
         mut self,
-        input: std::option::Option<crate::types::XavcHdProfileBitrateClass>,
+        input: ::std::option::Option<crate::types::XavcHdProfileBitrateClass>,
     ) -> Self {
         self.bitrate_class = input;
         self
@@ -117,59 +119,59 @@ impl XavcHdProfileSettingsBuilder {
         mut self,
         input: crate::types::XavcFlickerAdaptiveQuantization,
     ) -> Self {
-        self.flicker_adaptive_quantization = Some(input);
+        self.flicker_adaptive_quantization = ::std::option::Option::Some(input);
         self
     }
     /// The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
     pub fn set_flicker_adaptive_quantization(
         mut self,
-        input: std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
+        input: ::std::option::Option<crate::types::XavcFlickerAdaptiveQuantization>,
     ) -> Self {
         self.flicker_adaptive_quantization = input;
         self
     }
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the encoder from using B-frames as reference frames.
     pub fn gop_b_reference(mut self, input: crate::types::XavcGopBReference) -> Self {
-        self.gop_b_reference = Some(input);
+        self.gop_b_reference = ::std::option::Option::Some(input);
         self
     }
     /// Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the encoder from using B-frames as reference frames.
     pub fn set_gop_b_reference(
         mut self,
-        input: std::option::Option<crate::types::XavcGopBReference>,
+        input: ::std::option::Option<crate::types::XavcGopBReference>,
     ) -> Self {
         self.gop_b_reference = input;
         self
     }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     pub fn gop_closed_cadence(mut self, input: i32) -> Self {
-        self.gop_closed_cadence = Some(input);
+        self.gop_closed_cadence = ::std::option::Option::Some(input);
         self
     }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
-    pub fn set_gop_closed_cadence(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_gop_closed_cadence(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gop_closed_cadence = input;
         self
     }
     /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
     pub fn hrd_buffer_size(mut self, input: i32) -> Self {
-        self.hrd_buffer_size = Some(input);
+        self.hrd_buffer_size = ::std::option::Option::Some(input);
         self
     }
     /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
-    pub fn set_hrd_buffer_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_hrd_buffer_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hrd_buffer_size = input;
         self
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub fn interlace_mode(mut self, input: crate::types::XavcInterlaceMode) -> Self {
-        self.interlace_mode = Some(input);
+        self.interlace_mode = ::std::option::Option::Some(input);
         self
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub fn set_interlace_mode(
         mut self,
-        input: std::option::Option<crate::types::XavcInterlaceMode>,
+        input: ::std::option::Option<crate::types::XavcInterlaceMode>,
     ) -> Self {
         self.interlace_mode = input;
         self
@@ -179,36 +181,36 @@ impl XavcHdProfileSettingsBuilder {
         mut self,
         input: crate::types::XavcHdProfileQualityTuningLevel,
     ) -> Self {
-        self.quality_tuning_level = Some(input);
+        self.quality_tuning_level = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     pub fn set_quality_tuning_level(
         mut self,
-        input: std::option::Option<crate::types::XavcHdProfileQualityTuningLevel>,
+        input: ::std::option::Option<crate::types::XavcHdProfileQualityTuningLevel>,
     ) -> Self {
         self.quality_tuning_level = input;
         self
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     pub fn slices(mut self, input: i32) -> Self {
-        self.slices = Some(input);
+        self.slices = ::std::option::Option::Some(input);
         self
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-    pub fn set_slices(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_slices(mut self, input: ::std::option::Option<i32>) -> Self {
         self.slices = input;
         self
     }
     /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
     pub fn telecine(mut self, input: crate::types::XavcHdProfileTelecine) -> Self {
-        self.telecine = Some(input);
+        self.telecine = ::std::option::Option::Some(input);
         self
     }
     /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
     pub fn set_telecine(
         mut self,
-        input: std::option::Option<crate::types::XavcHdProfileTelecine>,
+        input: ::std::option::Option<crate::types::XavcHdProfileTelecine>,
     ) -> Self {
         self.telecine = input;
         self

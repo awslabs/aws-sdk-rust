@@ -2,11 +2,11 @@
 
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReusableDelegationSetLimitOutput {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<crate::types::ReusableDelegationSetLimit>,
+    pub limit: ::std::option::Option<crate::types::ReusableDelegationSetLimit>,
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
     pub count: i64,
@@ -14,7 +14,7 @@ pub struct GetReusableDelegationSetLimitOutput {
 }
 impl GetReusableDelegationSetLimitOutput {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn limit(&self) -> std::option::Option<&crate::types::ReusableDelegationSetLimit> {
+    pub fn limit(&self) -> ::std::option::Option<&crate::types::ReusableDelegationSetLimit> {
         self.limit.as_ref()
     }
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
@@ -22,7 +22,7 @@ impl GetReusableDelegationSetLimitOutput {
         self.count
     }
 }
-impl aws_http::request_id::RequestId for GetReusableDelegationSetLimitOutput {
+impl ::aws_http::request_id::RequestId for GetReusableDelegationSetLimitOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,33 +36,35 @@ impl GetReusableDelegationSetLimitOutput {
 
 /// A builder for [`GetReusableDelegationSetLimitOutput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetReusableDelegationSetLimitOutputBuilder {
-    pub(crate) limit: std::option::Option<crate::types::ReusableDelegationSetLimit>,
-    pub(crate) count: std::option::Option<i64>,
+    pub(crate) limit: ::std::option::Option<crate::types::ReusableDelegationSetLimit>,
+    pub(crate) count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetReusableDelegationSetLimitOutputBuilder {
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
     pub fn limit(mut self, input: crate::types::ReusableDelegationSetLimit) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
     pub fn set_limit(
         mut self,
-        input: std::option::Option<crate::types::ReusableDelegationSetLimit>,
+        input: ::std::option::Option<crate::types::ReusableDelegationSetLimit>,
     ) -> Self {
         self.limit = input;
         self
     }
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
     pub fn count(mut self, input: i64) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
     }

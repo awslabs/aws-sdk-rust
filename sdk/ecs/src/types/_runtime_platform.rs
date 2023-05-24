@@ -3,24 +3,24 @@
 /// <p>Information about the platform for the Amazon ECS service or task.</p>
 /// <p>For more information about <code>RuntimePlatform</code>, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform">RuntimePlatform</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimePlatform {
     /// <p>The CPU architecture.</p>
     /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
     #[doc(hidden)]
-    pub cpu_architecture: std::option::Option<crate::types::CpuArchitecture>,
+    pub cpu_architecture: ::std::option::Option<crate::types::CpuArchitecture>,
     /// <p>The operating system.</p>
     #[doc(hidden)]
-    pub operating_system_family: std::option::Option<crate::types::OsFamily>,
+    pub operating_system_family: ::std::option::Option<crate::types::OsFamily>,
 }
 impl RuntimePlatform {
     /// <p>The CPU architecture.</p>
     /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
-    pub fn cpu_architecture(&self) -> std::option::Option<&crate::types::CpuArchitecture> {
+    pub fn cpu_architecture(&self) -> ::std::option::Option<&crate::types::CpuArchitecture> {
         self.cpu_architecture.as_ref()
     }
     /// <p>The operating system.</p>
-    pub fn operating_system_family(&self) -> std::option::Option<&crate::types::OsFamily> {
+    pub fn operating_system_family(&self) -> ::std::option::Option<&crate::types::OsFamily> {
         self.operating_system_family.as_ref()
     }
 }
@@ -33,36 +33,38 @@ impl RuntimePlatform {
 
 /// A builder for [`RuntimePlatform`](crate::types::RuntimePlatform).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuntimePlatformBuilder {
-    pub(crate) cpu_architecture: std::option::Option<crate::types::CpuArchitecture>,
-    pub(crate) operating_system_family: std::option::Option<crate::types::OsFamily>,
+    pub(crate) cpu_architecture: ::std::option::Option<crate::types::CpuArchitecture>,
+    pub(crate) operating_system_family: ::std::option::Option<crate::types::OsFamily>,
 }
 impl RuntimePlatformBuilder {
     /// <p>The CPU architecture.</p>
     /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
     pub fn cpu_architecture(mut self, input: crate::types::CpuArchitecture) -> Self {
-        self.cpu_architecture = Some(input);
+        self.cpu_architecture = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CPU architecture.</p>
     /// <p>You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>. This option is available for tasks that run on Linux Amazon EC2 instance or Linux containers on Fargate.</p>
     pub fn set_cpu_architecture(
         mut self,
-        input: std::option::Option<crate::types::CpuArchitecture>,
+        input: ::std::option::Option<crate::types::CpuArchitecture>,
     ) -> Self {
         self.cpu_architecture = input;
         self
     }
     /// <p>The operating system.</p>
     pub fn operating_system_family(mut self, input: crate::types::OsFamily) -> Self {
-        self.operating_system_family = Some(input);
+        self.operating_system_family = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operating system.</p>
     pub fn set_operating_system_family(
         mut self,
-        input: std::option::Option<crate::types::OsFamily>,
+        input: ::std::option::Option<crate::types::OsFamily>,
     ) -> Self {
         self.operating_system_family = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>The result of calling the operation. The operation returns one object that is successfully processed by the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetectSyntaxItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
     #[doc(hidden)]
-    pub index: std::option::Option<i32>,
+    pub index: ::std::option::Option<i32>,
     /// <p>The syntax tokens for the words in the document, one token for each word.</p>
     #[doc(hidden)]
-    pub syntax_tokens: std::option::Option<std::vec::Vec<crate::types::SyntaxToken>>,
+    pub syntax_tokens: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
 }
 impl BatchDetectSyntaxItemResult {
     /// <p>The zero-based index of the document in the input list.</p>
-    pub fn index(&self) -> std::option::Option<i32> {
+    pub fn index(&self) -> ::std::option::Option<i32> {
         self.index
     }
     /// <p>The syntax tokens for the words in the document, one token for each word.</p>
-    pub fn syntax_tokens(&self) -> std::option::Option<&[crate::types::SyntaxToken]> {
+    pub fn syntax_tokens(&self) -> ::std::option::Option<&[crate::types::SyntaxToken]> {
         self.syntax_tokens.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl BatchDetectSyntaxItemResult {
 
 /// A builder for [`BatchDetectSyntaxItemResult`](crate::types::BatchDetectSyntaxItemResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDetectSyntaxItemResultBuilder {
-    pub(crate) index: std::option::Option<i32>,
-    pub(crate) syntax_tokens: std::option::Option<std::vec::Vec<crate::types::SyntaxToken>>,
+    pub(crate) index: ::std::option::Option<i32>,
+    pub(crate) syntax_tokens: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
 }
 impl BatchDetectSyntaxItemResultBuilder {
     /// <p>The zero-based index of the document in the input list.</p>
     pub fn index(mut self, input: i32) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based index of the document in the input list.</p>
-    pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
     }
@@ -54,13 +56,13 @@ impl BatchDetectSyntaxItemResultBuilder {
     pub fn syntax_tokens(mut self, input: crate::types::SyntaxToken) -> Self {
         let mut v = self.syntax_tokens.unwrap_or_default();
         v.push(input);
-        self.syntax_tokens = Some(v);
+        self.syntax_tokens = ::std::option::Option::Some(v);
         self
     }
     /// <p>The syntax tokens for the words in the document, one token for each word.</p>
     pub fn set_syntax_tokens(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SyntaxToken>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SyntaxToken>>,
     ) -> Self {
         self.syntax_tokens = input;
         self

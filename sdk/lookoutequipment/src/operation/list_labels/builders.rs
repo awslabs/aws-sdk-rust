@@ -6,56 +6,59 @@ pub use crate::operation::list_labels::_list_labels_input::ListLabelsInputBuilde
 /// Fluent builder constructing a request to `ListLabels`.
 ///
 /// <p> Provides a list of labels. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLabelsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_labels::builders::ListLabelsInputBuilder,
 }
 impl ListLabelsFluentBuilder {
     /// Creates a new `ListLabels`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_labels::ListLabels,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_labels::ListLabelsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_labels::ListLabelsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_labels::ListLabelsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_labels::ListLabelsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_labels::ListLabelsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListLabelsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_labels::ListLabelsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_labels::ListLabelsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_labels::ListLabelsError>,
     > {
         self.send_middleware().await
     }
@@ -81,68 +84,74 @@ impl ListLabelsFluentBuilder {
         crate::operation::list_labels::paginator::ListLabelsPaginator::new(self.handle, self.inner)
     }
     /// <p> Retruns the name of the label group. </p>
-    pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn label_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
     /// <p> Retruns the name of the label group. </p>
-    pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
     /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
-    pub fn interval_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn interval_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.interval_start_time(input);
         self
     }
     /// <p> Returns all the labels with a end time equal to or later than the start time given. </p>
     pub fn set_interval_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_interval_start_time(input);
         self
     }
     /// <p> Returns all labels with a start time earlier than the end time given. </p>
-    pub fn interval_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn interval_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.interval_end_time(input);
         self
     }
     /// <p> Returns all labels with a start time earlier than the end time given. </p>
     pub fn set_interval_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_interval_end_time(input);
         self
     }
     /// <p> Returns labels with a particular fault code. </p>
-    pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fault_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fault_code(input.into());
         self
     }
     /// <p> Returns labels with a particular fault code. </p>
-    pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fault_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fault_code(input);
         self
     }
     /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
-    pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn equipment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.equipment(input.into());
         self
     }
     /// <p> Lists the labels that pertain to a particular piece of equipment. </p>
-    pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_equipment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_equipment(input);
         self
     }
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p> An opaque pagination token indicating where to continue the listing of label groups. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -152,7 +161,7 @@ impl ListLabelsFluentBuilder {
         self
     }
     /// <p> Specifies the maximum number of labels to list. </p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

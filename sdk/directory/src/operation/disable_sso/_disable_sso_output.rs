@@ -2,11 +2,11 @@
 
 /// <p>Contains the results of the <code>DisableSso</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableSsoOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DisableSsoOutput {
+impl ::aws_http::request_id::RequestId for DisableSsoOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DisableSsoOutput {
 
 /// A builder for [`DisableSsoOutput`](crate::operation::disable_sso::DisableSsoOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisableSsoOutputBuilder {
     _request_id: Option<String>,
 }

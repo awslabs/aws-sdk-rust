@@ -6,56 +6,63 @@ pub use crate::operation::remove_ip_routes::_remove_ip_routes_input::RemoveIpRou
 /// Fluent builder constructing a request to `RemoveIpRoutes`.
 ///
 /// <p>Removes IP address blocks from a directory.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveIpRoutesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::remove_ip_routes::builders::RemoveIpRoutesInputBuilder,
 }
 impl RemoveIpRoutesFluentBuilder {
     /// Creates a new `RemoveIpRoutes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::remove_ip_routes::RemoveIpRoutes,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::remove_ip_routes::RemoveIpRoutesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_ip_routes::RemoveIpRoutesError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_ip_routes::RemoveIpRoutesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::remove_ip_routes::RemoveIpRoutesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_ip_routes::RemoveIpRoutesError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +75,21 @@ impl RemoveIpRoutesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_ip_routes::RemoveIpRoutesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::remove_ip_routes::RemoveIpRoutesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_ip_routes::RemoveIpRoutesError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
         self
     }
     /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
     }
@@ -89,14 +98,14 @@ impl RemoveIpRoutesFluentBuilder {
     /// To override the contents of this collection use [`set_cidr_ips`](Self::set_cidr_ips).
     ///
     /// <p>IP address blocks that you want to remove.</p>
-    pub fn cidr_ips(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cidr_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr_ips(input.into());
         self
     }
     /// <p>IP address blocks that you want to remove.</p>
     pub fn set_cidr_ips(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_cidr_ips(input);
         self

@@ -2,15 +2,15 @@
 
 /// <p>A structure that contains the configuration of a shareable link to the dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LinkSharingConfiguration {
     /// <p>A structure that contains the permissions of a shareable link.</p>
     #[doc(hidden)]
-    pub permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl LinkSharingConfiguration {
     /// <p>A structure that contains the permissions of a shareable link.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::ResourcePermission]> {
         self.permissions.as_deref()
     }
 }
@@ -23,9 +23,12 @@ impl LinkSharingConfiguration {
 
 /// A builder for [`LinkSharingConfiguration`](crate::types::LinkSharingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LinkSharingConfigurationBuilder {
-    pub(crate) permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) permissions:
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl LinkSharingConfigurationBuilder {
     /// Appends an item to `permissions`.
@@ -36,13 +39,13 @@ impl LinkSharingConfigurationBuilder {
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
         v.push(input);
-        self.permissions = Some(v);
+        self.permissions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A structure that contains the permissions of a shareable link.</p>
     pub fn set_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     ) -> Self {
         self.permissions = input;
         self

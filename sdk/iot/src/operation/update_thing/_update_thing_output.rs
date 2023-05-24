@@ -2,11 +2,11 @@
 
 /// <p>The output from the UpdateThing operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateThingOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UpdateThingOutput {
+impl ::aws_http::request_id::RequestId for UpdateThingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl UpdateThingOutput {
 
 /// A builder for [`UpdateThingOutput`](crate::operation::update_thing::UpdateThingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateThingOutputBuilder {
     _request_id: Option<String>,
 }

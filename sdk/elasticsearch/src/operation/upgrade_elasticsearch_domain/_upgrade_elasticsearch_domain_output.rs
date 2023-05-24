@@ -2,43 +2,43 @@
 
 /// <p> Container for response returned by <code> <code>UpgradeElasticsearchDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeElasticsearchDomainOutput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
     #[doc(hidden)]
-    pub target_version: std::option::Option<std::string::String>,
+    pub target_version: ::std::option::Option<::std::string::String>,
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     #[doc(hidden)]
-    pub perform_check_only: std::option::Option<bool>,
+    pub perform_check_only: ::std::option::Option<bool>,
     /// <p>Specifies change details of the domain configuration change.</p>
     #[doc(hidden)]
-    pub change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }
 impl UpgradeElasticsearchDomainOutput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn target_version(&self) -> std::option::Option<&str> {
+    pub fn target_version(&self) -> ::std::option::Option<&str> {
         self.target_version.as_deref()
     }
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
-    pub fn perform_check_only(&self) -> std::option::Option<bool> {
+    pub fn perform_check_only(&self) -> ::std::option::Option<bool> {
         self.perform_check_only
     }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn change_progress_details(
         &self,
-    ) -> std::option::Option<&crate::types::ChangeProgressDetails> {
+    ) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpgradeElasticsearchDomainOutput {
+impl ::aws_http::request_id::RequestId for UpgradeElasticsearchDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -52,54 +52,62 @@ impl UpgradeElasticsearchDomainOutput {
 
 /// A builder for [`UpgradeElasticsearchDomainOutput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpgradeElasticsearchDomainOutputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) target_version: std::option::Option<std::string::String>,
-    pub(crate) perform_check_only: std::option::Option<bool>,
-    pub(crate) change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) target_version: ::std::option::Option<::std::string::String>,
+    pub(crate) perform_check_only: ::std::option::Option<bool>,
+    pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }
 impl UpgradeElasticsearchDomainOutputBuilder {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_version = Some(input.into());
+    pub fn target_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn set_target_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_version = input;
         self
     }
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
-        self.perform_check_only = Some(input);
+        self.perform_check_only = ::std::option::Option::Some(input);
         self
     }
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
-    pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_check_only = input;
         self
     }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn change_progress_details(mut self, input: crate::types::ChangeProgressDetails) -> Self {
-        self.change_progress_details = Some(input);
+        self.change_progress_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies change details of the domain configuration change.</p>
     pub fn set_change_progress_details(
         mut self,
-        input: std::option::Option<crate::types::ChangeProgressDetails>,
+        input: ::std::option::Option<crate::types::ChangeProgressDetails>,
     ) -> Self {
         self.change_progress_details = input;
         self

@@ -4,8 +4,8 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     ///   - [`max_results(i32)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_devices::builders::ListDevicesFluentBuilder::set_max_results): <p>The maximum number of results to be included in the next page.</p>
     /// - On success, responds with [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput) with field(s):
     ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::operation::list_devices::ListDevicesOutput::devices): <p>Information about the devices.</p>

@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FilterKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum FilterKey {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FilterKey {
+impl ::std::convert::From<&str> for FilterKey {
     fn from(s: &str) -> Self {
         match s {
             "hasAccessTo" => FilterKey::HasAccessTo,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for FilterKey {
         }
     }
 }
-impl std::str::FromStr for FilterKey {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FilterKey {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterKey::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FilterKey::from(s))
     }
 }
 impl FilterKey {
@@ -79,7 +79,7 @@ impl FilterKey {
         &["hasAccessTo"]
     }
 }
-impl AsRef<str> for FilterKey {
+impl ::std::convert::AsRef<str> for FilterKey {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

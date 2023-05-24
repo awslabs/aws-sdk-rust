@@ -38,13 +38,13 @@
 /// Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TimedMetadata {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum TimedMetadata {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TimedMetadata {
+impl ::std::convert::From<&str> for TimedMetadata {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => TimedMetadata::None,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for TimedMetadata {
         }
     }
 }
-impl std::str::FromStr for TimedMetadata {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TimedMetadata {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimedMetadata::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TimedMetadata::from(s))
     }
 }
 impl TimedMetadata {
@@ -86,7 +86,7 @@ impl TimedMetadata {
         &["NONE", "PASSTHROUGH"]
     }
 }
-impl AsRef<str> for TimedMetadata {
+impl ::std::convert::AsRef<str> for TimedMetadata {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

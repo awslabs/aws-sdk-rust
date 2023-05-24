@@ -2,24 +2,24 @@
 
 /// <p>Details about an Amazon CloudWatch datasource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Settings for backtest mode.</p>
     #[doc(hidden)]
-    pub back_test_configuration: std::option::Option<crate::types::BackTestConfiguration>,
+    pub back_test_configuration: ::std::option::Option<crate::types::BackTestConfiguration>,
 }
 impl CloudWatchConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Settings for backtest mode.</p>
     pub fn back_test_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::BackTestConfiguration> {
+    ) -> ::std::option::Option<&crate::types::BackTestConfiguration> {
         self.back_test_configuration.as_ref()
     }
 }
@@ -32,31 +32,33 @@ impl CloudWatchConfig {
 
 /// A builder for [`CloudWatchConfig`](crate::types::CloudWatchConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchConfigBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) back_test_configuration: std::option::Option<crate::types::BackTestConfiguration>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) back_test_configuration: ::std::option::Option<crate::types::BackTestConfiguration>,
 }
 impl CloudWatchConfigBuilder {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access data in Amazon CloudWatch.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>Settings for backtest mode.</p>
     pub fn back_test_configuration(mut self, input: crate::types::BackTestConfiguration) -> Self {
-        self.back_test_configuration = Some(input);
+        self.back_test_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings for backtest mode.</p>
     pub fn set_back_test_configuration(
         mut self,
-        input: std::option::Option<crate::types::BackTestConfiguration>,
+        input: ::std::option::Option<crate::types::BackTestConfiguration>,
     ) -> Self {
         self.back_test_configuration = input;
         self

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EventSourceState {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EventSourceState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EventSourceState {
+impl ::std::convert::From<&str> for EventSourceState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => EventSourceState::Active,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EventSourceState {
         }
     }
 }
-impl std::str::FromStr for EventSourceState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EventSourceState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventSourceState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EventSourceState::from(s))
     }
 }
 impl EventSourceState {
@@ -91,7 +91,7 @@ impl EventSourceState {
         &["ACTIVE", "DELETED", "PENDING"]
     }
 }
-impl AsRef<str> for EventSourceState {
+impl ::std::convert::AsRef<str> for EventSourceState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

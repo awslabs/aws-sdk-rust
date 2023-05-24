@@ -2,7 +2,7 @@
 
 /// <p>A structure containing the schema version information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaVersionNumber {
     /// <p>The latest version available for the schema.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl SchemaVersionNumber {
 
 /// A builder for [`SchemaVersionNumber`](crate::types::SchemaVersionNumber).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SchemaVersionNumberBuilder {
-    pub(crate) latest_version: std::option::Option<bool>,
-    pub(crate) version_number: std::option::Option<i64>,
+    pub(crate) latest_version: ::std::option::Option<bool>,
+    pub(crate) version_number: ::std::option::Option<i64>,
 }
 impl SchemaVersionNumberBuilder {
     /// <p>The latest version available for the schema.</p>
     pub fn latest_version(mut self, input: bool) -> Self {
-        self.latest_version = Some(input);
+        self.latest_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latest version available for the schema.</p>
-    pub fn set_latest_version(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_latest_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.latest_version = input;
         self
     }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
-        self.version_number = Some(input);
+        self.version_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }

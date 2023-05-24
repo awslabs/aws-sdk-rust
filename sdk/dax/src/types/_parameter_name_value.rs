@@ -2,22 +2,22 @@
 
 /// <p>An individual DAX parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterNameValue {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
-    pub parameter_name: std::option::Option<std::string::String>,
+    pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the parameter.</p>
     #[doc(hidden)]
-    pub parameter_value: std::option::Option<std::string::String>,
+    pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ParameterNameValue {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
     /// <p>The value of the parameter.</p>
-    pub fn parameter_value(&self) -> std::option::Option<&str> {
+    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl ParameterNameValue {
 
 /// A builder for [`ParameterNameValue`](crate::types::ParameterNameValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterNameValueBuilder {
-    pub(crate) parameter_name: std::option::Option<std::string::String>,
-    pub(crate) parameter_value: std::option::Option<std::string::String>,
+    pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl ParameterNameValueBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_name = Some(input.into());
+    pub fn parameter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_name = input;
         self
     }
     /// <p>The value of the parameter.</p>
-    pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_value = Some(input.into());
+    pub fn parameter_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the parameter.</p>
-    pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_value = input;
         self
     }

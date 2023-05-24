@@ -2,22 +2,22 @@
 
 /// <p>Represents the drift check data quality baselines that can be used when the model monitor is set using the model package. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DriftCheckModelDataQuality {
     /// <p>The drift check model data quality statistics.</p>
     #[doc(hidden)]
-    pub statistics: std::option::Option<crate::types::MetricsSource>,
+    pub statistics: ::std::option::Option<crate::types::MetricsSource>,
     /// <p>The drift check model data quality constraints.</p>
     #[doc(hidden)]
-    pub constraints: std::option::Option<crate::types::MetricsSource>,
+    pub constraints: ::std::option::Option<crate::types::MetricsSource>,
 }
 impl DriftCheckModelDataQuality {
     /// <p>The drift check model data quality statistics.</p>
-    pub fn statistics(&self) -> std::option::Option<&crate::types::MetricsSource> {
+    pub fn statistics(&self) -> ::std::option::Option<&crate::types::MetricsSource> {
         self.statistics.as_ref()
     }
     /// <p>The drift check model data quality constraints.</p>
-    pub fn constraints(&self) -> std::option::Option<&crate::types::MetricsSource> {
+    pub fn constraints(&self) -> ::std::option::Option<&crate::types::MetricsSource> {
         self.constraints.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl DriftCheckModelDataQuality {
 
 /// A builder for [`DriftCheckModelDataQuality`](crate::types::DriftCheckModelDataQuality).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DriftCheckModelDataQualityBuilder {
-    pub(crate) statistics: std::option::Option<crate::types::MetricsSource>,
-    pub(crate) constraints: std::option::Option<crate::types::MetricsSource>,
+    pub(crate) statistics: ::std::option::Option<crate::types::MetricsSource>,
+    pub(crate) constraints: ::std::option::Option<crate::types::MetricsSource>,
 }
 impl DriftCheckModelDataQualityBuilder {
     /// <p>The drift check model data quality statistics.</p>
     pub fn statistics(mut self, input: crate::types::MetricsSource) -> Self {
-        self.statistics = Some(input);
+        self.statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The drift check model data quality statistics.</p>
     pub fn set_statistics(
         mut self,
-        input: std::option::Option<crate::types::MetricsSource>,
+        input: ::std::option::Option<crate::types::MetricsSource>,
     ) -> Self {
         self.statistics = input;
         self
     }
     /// <p>The drift check model data quality constraints.</p>
     pub fn constraints(mut self, input: crate::types::MetricsSource) -> Self {
-        self.constraints = Some(input);
+        self.constraints = ::std::option::Option::Some(input);
         self
     }
     /// <p>The drift check model data quality constraints.</p>
     pub fn set_constraints(
         mut self,
-        input: std::option::Option<crate::types::MetricsSource>,
+        input: ::std::option::Option<crate::types::MetricsSource>,
     ) -> Self {
         self.constraints = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>An object that represents the HTTP header in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpRouteHeader {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     #[doc(hidden)]
-    pub invert: std::option::Option<bool>,
+    pub invert: ::std::option::Option<bool>,
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
     #[doc(hidden)]
-    pub r#match: std::option::Option<crate::types::HeaderMatchMethod>,
+    pub r#match: ::std::option::Option<crate::types::HeaderMatchMethod>,
 }
 impl HttpRouteHeader {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
-    pub fn invert(&self) -> std::option::Option<bool> {
+    pub fn invert(&self) -> ::std::option::Option<bool> {
         self.invert
     }
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::HeaderMatchMethod> {
+    pub fn r#match(&self) -> ::std::option::Option<&crate::types::HeaderMatchMethod> {
         self.r#match.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl HttpRouteHeader {
 
 /// A builder for [`HttpRouteHeader`](crate::types::HttpRouteHeader).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpRouteHeaderBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) invert: std::option::Option<bool>,
-    pub(crate) r#match: std::option::Option<crate::types::HeaderMatchMethod>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) invert: ::std::option::Option<bool>,
+    pub(crate) r#match: ::std::option::Option<crate::types::HeaderMatchMethod>,
 }
 impl HttpRouteHeaderBuilder {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
     pub fn invert(mut self, input: bool) -> Self {
-        self.invert = Some(input);
+        self.invert = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
-    pub fn set_invert(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_invert(mut self, input: ::std::option::Option<bool>) -> Self {
         self.invert = input;
         self
     }
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
     pub fn r#match(mut self, input: crate::types::HeaderMatchMethod) -> Self {
-        self.r#match = Some(input);
+        self.r#match = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
     pub fn set_match(
         mut self,
-        input: std::option::Option<crate::types::HeaderMatchMethod>,
+        input: ::std::option::Option<crate::types::HeaderMatchMethod>,
     ) -> Self {
         self.r#match = input;
         self

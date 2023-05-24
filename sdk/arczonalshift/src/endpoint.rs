@@ -7,7 +7,7 @@ mod test {
     /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
     #[test]
     fn test_1() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-gov-east-1".to_string())
@@ -20,7 +20,7 @@ mod test {
             .expect("Expected valid endpoint: https://arc-zonal-shift-fips.us-gov-east-1.api.aws");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift-fips.us-gov-east-1.api.aws")
                 .build()
         );
@@ -29,7 +29,7 @@ mod test {
     /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_2() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-gov-east-1".to_string())
@@ -43,7 +43,7 @@ mod test {
         );
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift-fips.us-gov-east-1.amazonaws.com")
                 .build()
         );
@@ -52,7 +52,7 @@ mod test {
     /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
     #[test]
     fn test_3() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-gov-east-1".to_string())
@@ -65,7 +65,7 @@ mod test {
             .expect("Expected valid endpoint: https://arc-zonal-shift.us-gov-east-1.api.aws");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift.us-gov-east-1.api.aws")
                 .build()
         );
@@ -74,7 +74,7 @@ mod test {
     /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_4() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-gov-east-1".to_string())
@@ -87,7 +87,7 @@ mod test {
             .expect("Expected valid endpoint: https://arc-zonal-shift.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift.us-gov-east-1.amazonaws.com")
                 .build()
         );
@@ -96,7 +96,7 @@ mod test {
     /// For region cn-north-1 with FIPS enabled and DualStack enabled
     #[test]
     fn test_5() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("cn-north-1".to_string())
@@ -108,7 +108,7 @@ mod test {
         let endpoint = endpoint.expect("Expected valid endpoint: https://arc-zonal-shift-fips.cn-north-1.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift-fips.cn-north-1.api.amazonwebservices.com.cn")
                 .build()
         );
@@ -117,7 +117,7 @@ mod test {
     /// For region cn-north-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_6() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("cn-north-1".to_string())
@@ -131,7 +131,7 @@ mod test {
         );
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift-fips.cn-north-1.amazonaws.com.cn")
                 .build()
         );
@@ -140,7 +140,7 @@ mod test {
     /// For region cn-north-1 with FIPS disabled and DualStack enabled
     #[test]
     fn test_7() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("cn-north-1".to_string())
@@ -152,7 +152,7 @@ mod test {
         let endpoint = endpoint.expect("Expected valid endpoint: https://arc-zonal-shift.cn-north-1.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift.cn-north-1.api.amazonwebservices.com.cn")
                 .build()
         );
@@ -161,7 +161,7 @@ mod test {
     /// For region cn-north-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_8() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("cn-north-1".to_string())
@@ -174,7 +174,7 @@ mod test {
             .expect("Expected valid endpoint: https://arc-zonal-shift.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift.cn-north-1.amazonaws.com.cn")
                 .build()
         );
@@ -183,7 +183,7 @@ mod test {
     /// For region us-iso-east-1 with FIPS enabled and DualStack enabled
     #[test]
     fn test_9() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-iso-east-1".to_string())
@@ -202,7 +202,7 @@ mod test {
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_10() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-iso-east-1".to_string())
@@ -216,7 +216,7 @@ mod test {
         );
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift-fips.us-iso-east-1.c2s.ic.gov")
                 .build()
         );
@@ -225,7 +225,7 @@ mod test {
     /// For region us-iso-east-1 with FIPS disabled and DualStack enabled
     #[test]
     fn test_11() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-iso-east-1".to_string())
@@ -244,7 +244,7 @@ mod test {
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_12() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-iso-east-1".to_string())
@@ -257,7 +257,7 @@ mod test {
             .expect("Expected valid endpoint: https://arc-zonal-shift.us-iso-east-1.c2s.ic.gov");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift.us-iso-east-1.c2s.ic.gov")
                 .build()
         );
@@ -266,7 +266,7 @@ mod test {
     /// For region us-east-1 with FIPS enabled and DualStack enabled
     #[test]
     fn test_13() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-east-1".to_string())
@@ -279,7 +279,7 @@ mod test {
             .expect("Expected valid endpoint: https://arc-zonal-shift-fips.us-east-1.api.aws");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift-fips.us-east-1.api.aws")
                 .build()
         );
@@ -288,7 +288,7 @@ mod test {
     /// For region us-east-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_14() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-east-1".to_string())
@@ -302,7 +302,7 @@ mod test {
         );
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift-fips.us-east-1.amazonaws.com")
                 .build()
         );
@@ -311,7 +311,7 @@ mod test {
     /// For region us-east-1 with FIPS disabled and DualStack enabled
     #[test]
     fn test_15() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-east-1".to_string())
@@ -324,7 +324,7 @@ mod test {
             endpoint.expect("Expected valid endpoint: https://arc-zonal-shift.us-east-1.api.aws");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift.us-east-1.api.aws")
                 .build()
         );
@@ -333,7 +333,7 @@ mod test {
     /// For region us-east-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_16() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-east-1".to_string())
@@ -346,7 +346,7 @@ mod test {
             .expect("Expected valid endpoint: https://arc-zonal-shift.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift.us-east-1.amazonaws.com")
                 .build()
         );
@@ -355,7 +355,7 @@ mod test {
     /// For region us-isob-east-1 with FIPS enabled and DualStack enabled
     #[test]
     fn test_17() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-isob-east-1".to_string())
@@ -374,7 +374,7 @@ mod test {
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_18() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-isob-east-1".to_string())
@@ -388,7 +388,7 @@ mod test {
         );
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift-fips.us-isob-east-1.sc2s.sgov.gov")
                 .build()
         );
@@ -397,7 +397,7 @@ mod test {
     /// For region us-isob-east-1 with FIPS disabled and DualStack enabled
     #[test]
     fn test_19() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-isob-east-1".to_string())
@@ -416,7 +416,7 @@ mod test {
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_20() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-isob-east-1".to_string())
@@ -430,7 +430,7 @@ mod test {
         );
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://arc-zonal-shift.us-isob-east-1.sc2s.sgov.gov")
                 .build()
         );
@@ -439,7 +439,7 @@ mod test {
     /// For custom endpoint with fips disabled and dualstack disabled
     #[test]
     fn test_21() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-east-1".to_string())
@@ -452,7 +452,7 @@ mod test {
         let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            aws_smithy_types::endpoint::Endpoint::builder()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://example.com")
                 .build()
         );
@@ -461,7 +461,7 @@ mod test {
     /// For custom endpoint with fips enabled and dualstack disabled
     #[test]
     fn test_22() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(false)
             .region("us-east-1".to_string())
@@ -481,7 +481,7 @@ mod test {
     /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
     fn test_23() {
-        use aws_smithy_http::endpoint::ResolveEndpoint;
+        use ::aws_smithy_http::endpoint::ResolveEndpoint;
         let params = crate::endpoint::Params::builder()
             .use_dual_stack(true)
             .region("us-east-1".to_string())
@@ -500,17 +500,17 @@ mod test {
 }
 
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 /// Configuration parameters for resolving the correct endpoint
 pub struct Params {
     /// The AWS region used to dispatch the request.
-    pub(crate) region: std::option::Option<std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
     pub(crate) use_dual_stack: bool,
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
     pub(crate) use_fips: bool,
     /// Override the endpoint used to send this request
-    pub(crate) endpoint: std::option::Option<std::string::String>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
 }
 impl Params {
     /// Create a builder for [`Params`]
@@ -518,19 +518,19 @@ impl Params {
         crate::endpoint::ParamsBuilder::default()
     }
     /// The AWS region used to dispatch the request.
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
-    pub fn use_dual_stack(&self) -> std::option::Option<bool> {
+    pub fn use_dual_stack(&self) -> ::std::option::Option<bool> {
         Some(self.use_dual_stack)
     }
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
-    pub fn use_fips(&self) -> std::option::Option<bool> {
+    pub fn use_fips(&self) -> ::std::option::Option<bool> {
         Some(self.use_fips)
     }
     /// Override the endpoint used to send this request
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
 }
@@ -548,8 +548,8 @@ impl DefaultResolver {
     }
 }
 
-impl aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params> for DefaultResolver {
-    fn resolve_endpoint(&self, params: &Params) -> aws_smithy_http::endpoint::Result {
+impl ::aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params> for DefaultResolver {
+    fn resolve_endpoint(&self, params: &Params) -> ::aws_smithy_http::endpoint::Result {
         let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
         crate::endpoint::internals::resolve_endpoint(
             params,
@@ -561,12 +561,14 @@ impl aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params> for Def
 }
 
 /// Builder for [`Params`]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParamsBuilder {
-    region: std::option::Option<std::string::String>,
-    use_dual_stack: std::option::Option<bool>,
-    use_fips: std::option::Option<bool>,
-    endpoint: std::option::Option<std::string::String>,
+    region: ::std::option::Option<::std::string::String>,
+    use_dual_stack: ::std::option::Option<bool>,
+    use_fips: ::std::option::Option<bool>,
+    endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -590,7 +592,7 @@ impl ParamsBuilder {
     /// Sets the value for region
     ///
     /// The AWS region used to dispatch the request.
-    pub fn region(mut self, value: impl Into<std::string::String>) -> Self {
+    pub fn region(mut self, value: impl Into<::std::string::String>) -> Self {
         self.region = Some(value.into());
         self
     }
@@ -598,7 +600,7 @@ impl ParamsBuilder {
     /// Sets the value for region
     ///
     /// The AWS region used to dispatch the request.
-    pub fn set_region(mut self, param: Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, param: Option<::std::string::String>) -> Self {
         self.region = param;
         self
     }
@@ -639,7 +641,7 @@ impl ParamsBuilder {
     /// Sets the value for endpoint
     ///
     /// Override the endpoint used to send this request
-    pub fn endpoint(mut self, value: impl Into<std::string::String>) -> Self {
+    pub fn endpoint(mut self, value: impl Into<::std::string::String>) -> Self {
         self.endpoint = Some(value.into());
         self
     }
@@ -647,7 +649,7 @@ impl ParamsBuilder {
     /// Sets the value for endpoint
     ///
     /// Override the endpoint used to send this request
-    pub fn set_endpoint(mut self, param: Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, param: Option<::std::string::String>) -> Self {
         self.endpoint = param;
         self
     }

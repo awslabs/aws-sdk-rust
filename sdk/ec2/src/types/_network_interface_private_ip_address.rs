@@ -2,36 +2,36 @@
 
 /// <p>Describes the private IPv4 address of a network interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfacePrivateIpAddress {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
     #[doc(hidden)]
-    pub association: std::option::Option<crate::types::NetworkInterfaceAssociation>,
+    pub association: ::std::option::Option<crate::types::NetworkInterfaceAssociation>,
     /// <p>Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.</p>
     #[doc(hidden)]
-    pub primary: std::option::Option<bool>,
+    pub primary: ::std::option::Option<bool>,
     /// <p>The private DNS name.</p>
     #[doc(hidden)]
-    pub private_dns_name: std::option::Option<std::string::String>,
+    pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address.</p>
     #[doc(hidden)]
-    pub private_ip_address: std::option::Option<std::string::String>,
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfacePrivateIpAddress {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
-    pub fn association(&self) -> std::option::Option<&crate::types::NetworkInterfaceAssociation> {
+    pub fn association(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceAssociation> {
         self.association.as_ref()
     }
     /// <p>Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.</p>
-    pub fn primary(&self) -> std::option::Option<bool> {
+    pub fn primary(&self) -> ::std::option::Option<bool> {
         self.primary
     }
     /// <p>The private DNS name.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private IPv4 address.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
 }
@@ -44,56 +44,67 @@ impl NetworkInterfacePrivateIpAddress {
 
 /// A builder for [`NetworkInterfacePrivateIpAddress`](crate::types::NetworkInterfacePrivateIpAddress).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkInterfacePrivateIpAddressBuilder {
-    pub(crate) association: std::option::Option<crate::types::NetworkInterfaceAssociation>,
-    pub(crate) primary: std::option::Option<bool>,
-    pub(crate) private_dns_name: std::option::Option<std::string::String>,
-    pub(crate) private_ip_address: std::option::Option<std::string::String>,
+    pub(crate) association: ::std::option::Option<crate::types::NetworkInterfaceAssociation>,
+    pub(crate) primary: ::std::option::Option<bool>,
+    pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInterfacePrivateIpAddressBuilder {
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
     pub fn association(mut self, input: crate::types::NetworkInterfaceAssociation) -> Self {
-        self.association = Some(input);
+        self.association = ::std::option::Option::Some(input);
         self
     }
     /// <p>The association information for an Elastic IP address (IPv4) associated with the network interface.</p>
     pub fn set_association(
         mut self,
-        input: std::option::Option<crate::types::NetworkInterfaceAssociation>,
+        input: ::std::option::Option<crate::types::NetworkInterfaceAssociation>,
     ) -> Self {
         self.association = input;
         self
     }
     /// <p>Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.</p>
     pub fn primary(mut self, input: bool) -> Self {
-        self.primary = Some(input);
+        self.primary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this IPv4 address is the primary private IPv4 address of the network interface.</p>
-    pub fn set_primary(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_primary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.primary = input;
         self
     }
     /// <p>The private DNS name.</p>
-    pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_dns_name = Some(input.into());
+    pub fn private_dns_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private DNS name.</p>
-    pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_dns_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.private_dns_name = input;
         self
     }
     /// <p>The private IPv4 address.</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_ip_address = Some(input.into());
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IPv4 address.</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_ip_address = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>Represents a replica to be deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
     #[doc(hidden)]
-    pub region_name: std::option::Option<std::string::String>,
+    pub region_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationGroupMemberAction {
     /// <p>The Region where the replica exists.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl DeleteReplicationGroupMemberAction {
 
 /// A builder for [`DeleteReplicationGroupMemberAction`](crate::types::DeleteReplicationGroupMemberAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteReplicationGroupMemberActionBuilder {
-    pub(crate) region_name: std::option::Option<std::string::String>,
+    pub(crate) region_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReplicationGroupMemberActionBuilder {
     /// <p>The Region where the replica exists.</p>
-    pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region_name = Some(input.into());
+    pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where the replica exists.</p>
-    pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }

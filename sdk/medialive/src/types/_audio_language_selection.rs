@@ -2,24 +2,25 @@
 
 /// Audio Language Selection
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioLanguageSelection {
     /// Selects a specific three-letter language code from within an audio source.
     #[doc(hidden)]
-    pub language_code: std::option::Option<std::string::String>,
+    pub language_code: ::std::option::Option<::std::string::String>,
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
     #[doc(hidden)]
-    pub language_selection_policy: std::option::Option<crate::types::AudioLanguageSelectionPolicy>,
+    pub language_selection_policy:
+        ::std::option::Option<crate::types::AudioLanguageSelectionPolicy>,
 }
 impl AudioLanguageSelection {
     /// Selects a specific three-letter language code from within an audio source.
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> ::std::option::Option<&str> {
         self.language_code.as_deref()
     }
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
     pub fn language_selection_policy(
         &self,
-    ) -> std::option::Option<&crate::types::AudioLanguageSelectionPolicy> {
+    ) -> ::std::option::Option<&crate::types::AudioLanguageSelectionPolicy> {
         self.language_selection_policy.as_ref()
     }
 }
@@ -32,20 +33,28 @@ impl AudioLanguageSelection {
 
 /// A builder for [`AudioLanguageSelection`](crate::types::AudioLanguageSelection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioLanguageSelectionBuilder {
-    pub(crate) language_code: std::option::Option<std::string::String>,
+    pub(crate) language_code: ::std::option::Option<::std::string::String>,
     pub(crate) language_selection_policy:
-        std::option::Option<crate::types::AudioLanguageSelectionPolicy>,
+        ::std::option::Option<crate::types::AudioLanguageSelectionPolicy>,
 }
 impl AudioLanguageSelectionBuilder {
     /// Selects a specific three-letter language code from within an audio source.
-    pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language_code = Some(input.into());
+    pub fn language_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// Selects a specific three-letter language code from within an audio source.
-    pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.language_code = input;
         self
     }
@@ -54,13 +63,13 @@ impl AudioLanguageSelectionBuilder {
         mut self,
         input: crate::types::AudioLanguageSelectionPolicy,
     ) -> Self {
-        self.language_selection_policy = Some(input);
+        self.language_selection_policy = ::std::option::Option::Some(input);
         self
     }
     /// When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
     pub fn set_language_selection_policy(
         mut self,
-        input: std::option::Option<crate::types::AudioLanguageSelectionPolicy>,
+        input: ::std::option::Option<crate::types::AudioLanguageSelectionPolicy>,
     ) -> Self {
         self.language_selection_policy = input;
         self

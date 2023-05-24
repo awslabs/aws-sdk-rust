@@ -2,15 +2,15 @@
 
 /// <p>Operating System.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Os {
     /// <p>OS full string.</p>
     #[doc(hidden)]
-    pub full_string: std::option::Option<std::string::String>,
+    pub full_string: ::std::option::Option<::std::string::String>,
 }
 impl Os {
     /// <p>OS full string.</p>
-    pub fn full_string(&self) -> std::option::Option<&str> {
+    pub fn full_string(&self) -> ::std::option::Option<&str> {
         self.full_string.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Os {
 
 /// A builder for [`Os`](crate::types::Os).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OsBuilder {
-    pub(crate) full_string: std::option::Option<std::string::String>,
+    pub(crate) full_string: ::std::option::Option<::std::string::String>,
 }
 impl OsBuilder {
     /// <p>OS full string.</p>
-    pub fn full_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.full_string = Some(input.into());
+    pub fn full_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.full_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>OS full string.</p>
-    pub fn set_full_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_full_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.full_string = input;
         self
     }

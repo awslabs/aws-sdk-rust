@@ -2,29 +2,29 @@
 
 /// <p>Container for the parameters to the <code><code>DescribeSuggester</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular suggesters, specify the names of the suggesters you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSuggestersInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The suggesters you want to describe.</p>
     #[doc(hidden)]
-    pub suggester_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub suggester_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     #[doc(hidden)]
-    pub deployed: std::option::Option<bool>,
+    pub deployed: ::std::option::Option<bool>,
 }
 impl DescribeSuggestersInput {
     /// <p>The name of the domain you want to describe.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The suggesters you want to describe.</p>
-    pub fn suggester_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn suggester_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.suggester_names.as_deref()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-    pub fn deployed(&self) -> std::option::Option<bool> {
+    pub fn deployed(&self) -> ::std::option::Option<bool> {
         self.deployed
     }
 }
@@ -38,20 +38,22 @@ impl DescribeSuggestersInput {
 
 /// A builder for [`DescribeSuggestersInput`](crate::operation::describe_suggesters::DescribeSuggestersInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeSuggestersInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) suggester_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) deployed: std::option::Option<bool>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) suggester_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deployed: ::std::option::Option<bool>,
 }
 impl DescribeSuggestersInputBuilder {
     /// <p>The name of the domain you want to describe.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain you want to describe.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
@@ -60,38 +62,41 @@ impl DescribeSuggestersInputBuilder {
     /// To override the contents of this collection use [`set_suggester_names`](Self::set_suggester_names).
     ///
     /// <p>The suggesters you want to describe.</p>
-    pub fn suggester_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn suggester_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.suggester_names.unwrap_or_default();
         v.push(input.into());
-        self.suggester_names = Some(v);
+        self.suggester_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The suggesters you want to describe.</p>
     pub fn set_suggester_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.suggester_names = input;
         self
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
-        self.deployed = Some(input);
+        self.deployed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-    pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deployed = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeSuggestersInput`](crate::operation::describe_suggesters::DescribeSuggestersInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_suggesters::DescribeSuggestersInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_suggesters::DescribeSuggestersInput {
                 domain_name: self.domain_name,
                 suggester_names: self.suggester_names,

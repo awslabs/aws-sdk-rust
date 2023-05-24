@@ -2,15 +2,17 @@
 
 /// <p>This structure specifies the network configuration for an Amazon ECS task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkConfiguration {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
     #[doc(hidden)]
-    pub awsvpc_configuration: std::option::Option<crate::types::AwsVpcConfiguration>,
+    pub awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
 impl NetworkConfiguration {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
-    pub fn awsvpc_configuration(&self) -> std::option::Option<&crate::types::AwsVpcConfiguration> {
+    pub fn awsvpc_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl NetworkConfiguration {
 
 /// A builder for [`NetworkConfiguration`](crate::types::NetworkConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkConfigurationBuilder {
-    pub(crate) awsvpc_configuration: std::option::Option<crate::types::AwsVpcConfiguration>,
+    pub(crate) awsvpc_configuration: ::std::option::Option<crate::types::AwsVpcConfiguration>,
 }
 impl NetworkConfigurationBuilder {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
     pub fn awsvpc_configuration(mut self, input: crate::types::AwsVpcConfiguration) -> Self {
-        self.awsvpc_configuration = Some(input);
+        self.awsvpc_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
     pub fn set_awsvpc_configuration(
         mut self,
-        input: std::option::Option<crate::types::AwsVpcConfiguration>,
+        input: ::std::option::Option<crate::types::AwsVpcConfiguration>,
     ) -> Self {
         self.awsvpc_configuration = input;
         self

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Gid {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum Gid {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Gid {
+impl ::std::convert::From<&str> for Gid {
     fn from(s: &str) -> Self {
         match s {
             "BOTH" => Gid::Both,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for Gid {
         }
     }
 }
-impl std::str::FromStr for Gid {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Gid {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Gid::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Gid::from(s))
     }
 }
 impl Gid {
@@ -94,7 +94,7 @@ impl Gid {
         &["BOTH", "INT_VALUE", "NAME", "NONE"]
     }
 }
-impl AsRef<str> for Gid {
+impl ::std::convert::AsRef<str> for Gid {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

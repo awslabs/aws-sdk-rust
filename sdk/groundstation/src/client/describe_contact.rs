@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeContact`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_id(impl Into<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::set_contact_id): <p>UUID of a contact.</p>
+    ///   - [`contact_id(impl ::std::convert::Into<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::describe_contact::builders::DescribeContactFluentBuilder::set_contact_id): <p>UUID of a contact.</p>
     /// - On success, responds with [`DescribeContactOutput`](crate::operation::describe_contact::DescribeContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::contact_id): <p>UUID of a contact.</p>
     ///   - [`mission_profile_arn(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::mission_profile_arn): <p>ARN of a mission profile.</p>

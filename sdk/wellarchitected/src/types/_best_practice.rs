@@ -2,22 +2,22 @@
 
 /// <p>A best practice, or question choice, that has been identified as a risk in this question.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BestPractice {
     /// <p>The ID of a choice.</p>
     #[doc(hidden)]
-    pub choice_id: std::option::Option<std::string::String>,
+    pub choice_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of a choice.</p>
     #[doc(hidden)]
-    pub choice_title: std::option::Option<std::string::String>,
+    pub choice_title: ::std::option::Option<::std::string::String>,
 }
 impl BestPractice {
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(&self) -> std::option::Option<&str> {
+    pub fn choice_id(&self) -> ::std::option::Option<&str> {
         self.choice_id.as_deref()
     }
     /// <p>The title of a choice.</p>
-    pub fn choice_title(&self) -> std::option::Option<&str> {
+    pub fn choice_title(&self) -> ::std::option::Option<&str> {
         self.choice_title.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl BestPractice {
 
 /// A builder for [`BestPractice`](crate::types::BestPractice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BestPracticeBuilder {
-    pub(crate) choice_id: std::option::Option<std::string::String>,
-    pub(crate) choice_title: std::option::Option<std::string::String>,
+    pub(crate) choice_id: ::std::option::Option<::std::string::String>,
+    pub(crate) choice_title: ::std::option::Option<::std::string::String>,
 }
 impl BestPracticeBuilder {
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.choice_id = Some(input.into());
+    pub fn choice_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.choice_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a choice.</p>
-    pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_choice_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.choice_id = input;
         self
     }
     /// <p>The title of a choice.</p>
-    pub fn choice_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.choice_title = Some(input.into());
+    pub fn choice_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.choice_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of a choice.</p>
-    pub fn set_choice_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_choice_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.choice_title = input;
         self
     }

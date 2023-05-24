@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted suggester.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSuggesterOutput {
     /// <p>The status of the suggester being deleted.</p>
     #[doc(hidden)]
-    pub suggester: std::option::Option<crate::types::SuggesterStatus>,
+    pub suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
 }
 impl DeleteSuggesterOutput {
     /// <p>The status of the suggester being deleted.</p>
-    pub fn suggester(&self) -> std::option::Option<&crate::types::SuggesterStatus> {
+    pub fn suggester(&self) -> ::std::option::Option<&crate::types::SuggesterStatus> {
         self.suggester.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteSuggesterOutput {
+impl ::aws_http::request_id::RequestId for DeleteSuggesterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DeleteSuggesterOutput {
 
 /// A builder for [`DeleteSuggesterOutput`](crate::operation::delete_suggester::DeleteSuggesterOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteSuggesterOutputBuilder {
-    pub(crate) suggester: std::option::Option<crate::types::SuggesterStatus>,
+    pub(crate) suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
 }
 impl DeleteSuggesterOutputBuilder {
     /// <p>The status of the suggester being deleted.</p>
     pub fn suggester(mut self, input: crate::types::SuggesterStatus) -> Self {
-        self.suggester = Some(input);
+        self.suggester = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the suggester being deleted.</p>
     pub fn set_suggester(
         mut self,
-        input: std::option::Option<crate::types::SuggesterStatus>,
+        input: ::std::option::Option<crate::types::SuggesterStatus>,
     ) -> Self {
         self.suggester = input;
         self

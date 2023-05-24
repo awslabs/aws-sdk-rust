@@ -2,20 +2,20 @@
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReportDefinitionOutput {
     /// <p>Whether the deletion was successful or not.</p>
     #[doc(hidden)]
-    pub response_message: std::option::Option<std::string::String>,
+    pub response_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteReportDefinitionOutput {
     /// <p>Whether the deletion was successful or not.</p>
-    pub fn response_message(&self) -> std::option::Option<&str> {
+    pub fn response_message(&self) -> ::std::option::Option<&str> {
         self.response_message.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteReportDefinitionOutput {
+impl ::aws_http::request_id::RequestId for DeleteReportDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,27 @@ impl DeleteReportDefinitionOutput {
 
 /// A builder for [`DeleteReportDefinitionOutput`](crate::operation::delete_report_definition::DeleteReportDefinitionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteReportDefinitionOutputBuilder {
-    pub(crate) response_message: std::option::Option<std::string::String>,
+    pub(crate) response_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteReportDefinitionOutputBuilder {
     /// <p>Whether the deletion was successful or not.</p>
-    pub fn response_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.response_message = Some(input.into());
+    pub fn response_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.response_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether the deletion was successful or not.</p>
-    pub fn set_response_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_response_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.response_message = input;
         self
     }

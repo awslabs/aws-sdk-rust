@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FileModeTypeEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum FileModeTypeEnum {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FileModeTypeEnum {
+impl ::std::convert::From<&str> for FileModeTypeEnum {
     fn from(s: &str) -> Self {
         match s {
             "EXECUTABLE" => FileModeTypeEnum::Executable,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for FileModeTypeEnum {
         }
     }
 }
-impl std::str::FromStr for FileModeTypeEnum {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FileModeTypeEnum {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileModeTypeEnum::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FileModeTypeEnum::from(s))
     }
 }
 impl FileModeTypeEnum {
@@ -91,7 +91,7 @@ impl FileModeTypeEnum {
         &["EXECUTABLE", "NORMAL", "SYMLINK"]
     }
 }
-impl AsRef<str> for FileModeTypeEnum {
+impl ::std::convert::AsRef<str> for FileModeTypeEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

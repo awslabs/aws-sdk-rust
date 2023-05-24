@@ -2,17 +2,17 @@
 
 /// <p>The specifications for a worker type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerTypeSpecificationInput {
     /// <p>The image configuration for a worker type.</p>
     #[doc(hidden)]
-    pub image_configuration: std::option::Option<crate::types::ImageConfigurationInput>,
+    pub image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
 }
 impl WorkerTypeSpecificationInput {
     /// <p>The image configuration for a worker type.</p>
     pub fn image_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ImageConfigurationInput> {
+    ) -> ::std::option::Option<&crate::types::ImageConfigurationInput> {
         self.image_configuration.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl WorkerTypeSpecificationInput {
 
 /// A builder for [`WorkerTypeSpecificationInput`](crate::types::WorkerTypeSpecificationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkerTypeSpecificationInputBuilder {
-    pub(crate) image_configuration: std::option::Option<crate::types::ImageConfigurationInput>,
+    pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfigurationInput>,
 }
 impl WorkerTypeSpecificationInputBuilder {
     /// <p>The image configuration for a worker type.</p>
     pub fn image_configuration(mut self, input: crate::types::ImageConfigurationInput) -> Self {
-        self.image_configuration = Some(input);
+        self.image_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image configuration for a worker type.</p>
     pub fn set_image_configuration(
         mut self,
-        input: std::option::Option<crate::types::ImageConfigurationInput>,
+        input: ::std::option::Option<crate::types::ImageConfigurationInput>,
     ) -> Self {
         self.image_configuration = input;
         self

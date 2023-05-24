@@ -6,47 +6,50 @@ pub use crate::operation::associate_environment_operations_role::_associate_envi
 /// Fluent builder constructing a request to `AssociateEnvironmentOperationsRole`.
 ///
 /// <p>Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the associated operations role for permissions to downstream services during subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEnvironmentOperationsRoleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::associate_environment_operations_role::builders::AssociateEnvironmentOperationsRoleInputBuilder,
 }
 impl AssociateEnvironmentOperationsRoleFluentBuilder {
     /// Creates a new `AssociateEnvironmentOperationsRole`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRole, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRole, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput, aws_smithy_http::result::SdkError<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,27 +60,39 @@ impl AssociateEnvironmentOperationsRoleFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput, aws_smithy_http::result::SdkError<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name of the environment to which to set the operations role.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
     /// <p>The name of the environment to which to set the operations role.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
-    pub fn operations_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn operations_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.operations_role(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
-    pub fn set_operations_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operations_role(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_operations_role(input);
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Information about a world.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorldSummary {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
     #[doc(hidden)]
-    pub generation_job: std::option::Option<std::string::String>,
+    pub generation_job: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     #[doc(hidden)]
-    pub template: std::option::Option<std::string::String>,
+    pub template: ::std::option::Option<::std::string::String>,
 }
 impl WorldSummary {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
-    pub fn generation_job(&self) -> std::option::Option<&str> {
+    pub fn generation_job(&self) -> ::std::option::Option<&str> {
         self.generation_job.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> std::option::Option<&str> {
+    pub fn template(&self) -> ::std::option::Option<&str> {
         self.template.as_deref()
     }
 }
@@ -44,54 +44,62 @@ impl WorldSummary {
 
 /// A builder for [`WorldSummary`](crate::types::WorldSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorldSummaryBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) generation_job: std::option::Option<std::string::String>,
-    pub(crate) template: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) generation_job: ::std::option::Option<::std::string::String>,
+    pub(crate) template: ::std::option::Option<::std::string::String>,
 }
 impl WorldSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the world.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
-    pub fn generation_job(mut self, input: impl Into<std::string::String>) -> Self {
-        self.generation_job = Some(input.into());
+    pub fn generation_job(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.generation_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job.</p>
-    pub fn set_generation_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_generation_job(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.generation_job = input;
         self
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template = Some(input.into());
+    pub fn template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template = input;
         self
     }

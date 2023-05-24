@@ -2,15 +2,15 @@
 
 /// <p>Filter the results of a <code>ListVpcEndpoints</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpointFilters {
     /// <p>The current status of the endpoint.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::VpcEndpointStatus>,
+    pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
 impl VpcEndpointFilters {
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VpcEndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl VpcEndpointFilters {
 
 /// A builder for [`VpcEndpointFilters`](crate::types::VpcEndpointFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcEndpointFiltersBuilder {
-    pub(crate) status: std::option::Option<crate::types::VpcEndpointStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
 impl VpcEndpointFiltersBuilder {
     /// <p>The current status of the endpoint.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the endpoint.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::VpcEndpointStatus>,
+        input: ::std::option::Option<crate::types::VpcEndpointStatus>,
     ) -> Self {
         self.status = input;
         self

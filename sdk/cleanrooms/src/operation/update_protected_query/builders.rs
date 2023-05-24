@@ -6,29 +6,29 @@ pub use crate::operation::update_protected_query::_update_protected_query_input:
 /// Fluent builder constructing a request to `UpdateProtectedQuery`.
 ///
 /// <p>Updates the processing of a currently running query.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProtectedQueryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder,
 }
 impl UpdateProtectedQueryFluentBuilder {
     /// Creates a new `UpdateProtectedQuery`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_protected_query::UpdateProtectedQuery,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_protected_query::UpdateProtectedQueryError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateProtectedQueryFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_protected_query::UpdateProtectedQueryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_protected_query::UpdateProtectedQueryError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,36 +75,42 @@ impl UpdateProtectedQueryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_protected_query::UpdateProtectedQueryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_protected_query::UpdateProtectedQueryError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier for a member of a protected query instance.</p>
-    pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn membership_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.membership_identifier(input.into());
         self
     }
     /// <p>The identifier for a member of a protected query instance.</p>
     pub fn set_membership_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_membership_identifier(input);
         self
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn protected_query_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.protected_query_identifier(input.into());
         self
     }
     /// <p>The identifier for a protected query instance.</p>
     pub fn set_protected_query_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_protected_query_identifier(input);
         self
@@ -114,7 +123,7 @@ impl UpdateProtectedQueryFluentBuilder {
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
     pub fn set_target_status(
         mut self,
-        input: std::option::Option<crate::types::TargetProtectedQueryStatus>,
+        input: ::std::option::Option<crate::types::TargetProtectedQueryStatus>,
     ) -> Self {
         self.inner = self.inner.set_target_status(input);
         self

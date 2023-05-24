@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopPipeline`](crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_name(impl Into<String>)`](crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder::set_pipeline_name): <p>The name of the pipeline to stop.</p>
+    ///   - [`pipeline_name(impl ::std::convert::Into<String>)`](crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::stop_pipeline::builders::StopPipelineFluentBuilder::set_pipeline_name): <p>The name of the pipeline to stop.</p>
     /// - On success, responds with [`StopPipelineOutput`](crate::operation::stop_pipeline::StopPipelineOutput) with field(s):
     ///   - [`pipeline(Option<Pipeline>)`](crate::operation::stop_pipeline::StopPipelineOutput::pipeline): <p>Information about an existing OpenSearch Ingestion pipeline.</p>
     /// - On failure, responds with [`SdkError<StopPipelineError>`](crate::operation::stop_pipeline::StopPipelineError)

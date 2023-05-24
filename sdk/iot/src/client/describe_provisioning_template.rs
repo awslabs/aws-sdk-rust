@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProvisioningTemplate`](crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateFluentBuilder::set_template_name): <p>The name of the provisioning template.</p>
+    ///   - [`template_name(impl ::std::convert::Into<String>)`](crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateFluentBuilder::set_template_name): <p>The name of the provisioning template.</p>
     /// - On success, responds with [`DescribeProvisioningTemplateOutput`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput) with field(s):
     ///   - [`template_arn(Option<String>)`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput::template_arn): <p>The ARN of the provisioning template.</p>
     ///   - [`template_name(Option<String>)`](crate::operation::describe_provisioning_template::DescribeProvisioningTemplateOutput::template_name): <p>The name of the provisioning template.</p>

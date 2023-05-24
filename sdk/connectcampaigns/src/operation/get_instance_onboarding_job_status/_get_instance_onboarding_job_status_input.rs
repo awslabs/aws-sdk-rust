@@ -2,15 +2,15 @@
 
 /// GetInstanceOnboardingJobStatusRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInstanceOnboardingJobStatusInput {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
-    pub connect_instance_id: std::option::Option<std::string::String>,
+    pub connect_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceOnboardingJobStatusInput {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
         self.connect_instance_id.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl GetInstanceOnboardingJobStatusInput {
 
 /// A builder for [`GetInstanceOnboardingJobStatusInput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetInstanceOnboardingJobStatusInputBuilder {
-    pub(crate) connect_instance_id: std::option::Option<std::string::String>,
+    pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetInstanceOnboardingJobStatusInputBuilder {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connect_instance_id = Some(input.into());
+    pub fn connect_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
     pub fn set_connect_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connect_instance_id = input;
         self
@@ -44,11 +49,11 @@ impl GetInstanceOnboardingJobStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceOnboardingJobStatusInput`](crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusInput {
                 connect_instance_id: self.connect_instance_id
                 ,

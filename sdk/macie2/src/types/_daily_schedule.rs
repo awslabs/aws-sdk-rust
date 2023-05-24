@@ -2,7 +2,7 @@
 
 /// <p>Specifies that a classification job runs once a day, every day. This is an empty object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DailySchedule {}
 impl DailySchedule {
     /// Creates a new builder-style object to manufacture [`DailySchedule`](crate::types::DailySchedule).
@@ -13,7 +13,9 @@ impl DailySchedule {
 
 /// A builder for [`DailySchedule`](crate::types::DailySchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DailyScheduleBuilder {}
 impl DailyScheduleBuilder {
     /// Consumes the builder and constructs a [`DailySchedule`](crate::types::DailySchedule).

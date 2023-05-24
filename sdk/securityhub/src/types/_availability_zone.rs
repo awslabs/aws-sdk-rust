@@ -2,22 +2,22 @@
 
 /// <p>Information about an Availability Zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
-    pub zone_name: std::option::Option<std::string::String>,
+    pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
-    pub fn zone_name(&self) -> std::option::Option<&str> {
+    pub fn zone_name(&self) -> ::std::option::Option<&str> {
         self.zone_name.as_deref()
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AvailabilityZone {
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AvailabilityZoneBuilder {
-    pub(crate) zone_name: std::option::Option<std::string::String>,
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
+    pub(crate) zone_name: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZoneBuilder {
     /// <p>The name of the Availability Zone.</p>
-    pub fn zone_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.zone_name = Some(input.into());
+    pub fn zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone.</p>
-    pub fn set_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zone_name = input;
         self
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }

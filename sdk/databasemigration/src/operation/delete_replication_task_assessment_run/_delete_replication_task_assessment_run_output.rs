@@ -2,23 +2,23 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReplicationTaskAssessmentRunOutput {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
     #[doc(hidden)]
     pub replication_task_assessment_run:
-        std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
+        ::std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
     _request_id: Option<String>,
 }
 impl DeleteReplicationTaskAssessmentRunOutput {
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
     pub fn replication_task_assessment_run(
         &self,
-    ) -> std::option::Option<&crate::types::ReplicationTaskAssessmentRun> {
+    ) -> ::std::option::Option<&crate::types::ReplicationTaskAssessmentRun> {
         self.replication_task_assessment_run.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteReplicationTaskAssessmentRunOutput {
+impl ::aws_http::request_id::RequestId for DeleteReplicationTaskAssessmentRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DeleteReplicationTaskAssessmentRunOutput {
 
 /// A builder for [`DeleteReplicationTaskAssessmentRunOutput`](crate::operation::delete_replication_task_assessment_run::DeleteReplicationTaskAssessmentRunOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteReplicationTaskAssessmentRunOutputBuilder {
     pub(crate) replication_task_assessment_run:
-        std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
+        ::std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
     _request_id: Option<String>,
 }
 impl DeleteReplicationTaskAssessmentRunOutputBuilder {
@@ -44,13 +46,13 @@ impl DeleteReplicationTaskAssessmentRunOutputBuilder {
         mut self,
         input: crate::types::ReplicationTaskAssessmentRun,
     ) -> Self {
-        self.replication_task_assessment_run = Some(input);
+        self.replication_task_assessment_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
     pub fn set_replication_task_assessment_run(
         mut self,
-        input: std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
+        input: ::std::option::Option<crate::types::ReplicationTaskAssessmentRun>,
     ) -> Self {
         self.replication_task_assessment_run = input;
         self

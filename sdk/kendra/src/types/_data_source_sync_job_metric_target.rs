@@ -2,26 +2,26 @@
 
 /// <p>Maps a particular data source sync job to a particular data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceSyncJobMetricTarget {
     /// <p>The ID of the data source that is running the sync job.</p>
     #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    pub data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the sync job that is running on the data source.</p>
     /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
     #[doc(hidden)]
-    pub data_source_sync_job_id: std::option::Option<std::string::String>,
+    pub data_source_sync_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceSyncJobMetricTarget {
     /// <p>The ID of the data source that is running the sync job.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
     /// <p>The ID of the sync job that is running on the data source.</p>
     /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
-    pub fn data_source_sync_job_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_sync_job_id(&self) -> ::std::option::Option<&str> {
         self.data_source_sync_job_id.as_deref()
     }
 }
@@ -34,27 +34,38 @@ impl DataSourceSyncJobMetricTarget {
 
 /// A builder for [`DataSourceSyncJobMetricTarget`](crate::types::DataSourceSyncJobMetricTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSourceSyncJobMetricTargetBuilder {
-    pub(crate) data_source_id: std::option::Option<std::string::String>,
-    pub(crate) data_source_sync_job_id: std::option::Option<std::string::String>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_sync_job_id: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceSyncJobMetricTargetBuilder {
     /// <p>The ID of the data source that is running the sync job.</p>
-    pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source_id = Some(input.into());
+    pub fn data_source_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the data source that is running the sync job.</p>
-    pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.data_source_id = input;
         self
     }
     /// <p>The ID of the sync job that is running on the data source.</p>
     /// <p>If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and metrics are generated for this sync job.</p>
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
-    pub fn data_source_sync_job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source_sync_job_id = Some(input.into());
+    pub fn data_source_sync_job_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_source_sync_job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the sync job that is running on the data source.</p>
@@ -62,7 +73,7 @@ impl DataSourceSyncJobMetricTargetBuilder {
     /// <p>If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and documents are indexed/deleted at the index level without sync job metrics included.</p>
     pub fn set_data_source_sync_job_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_source_sync_job_id = input;
         self

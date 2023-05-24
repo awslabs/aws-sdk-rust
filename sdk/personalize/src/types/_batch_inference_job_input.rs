@@ -2,15 +2,15 @@
 
 /// <p>The input configuration of a batch inference job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
     #[doc(hidden)]
-    pub s3_data_source: std::option::Option<crate::types::S3DataConfig>,
+    pub s3_data_source: ::std::option::Option<crate::types::S3DataConfig>,
 }
 impl BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::types::S3DataConfig> {
+    pub fn s3_data_source(&self) -> ::std::option::Option<&crate::types::S3DataConfig> {
         self.s3_data_source.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BatchInferenceJobInput {
 
 /// A builder for [`BatchInferenceJobInput`](crate::types::BatchInferenceJobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchInferenceJobInputBuilder {
-    pub(crate) s3_data_source: std::option::Option<crate::types::S3DataConfig>,
+    pub(crate) s3_data_source: ::std::option::Option<crate::types::S3DataConfig>,
 }
 impl BatchInferenceJobInputBuilder {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
     pub fn s3_data_source(mut self, input: crate::types::S3DataConfig) -> Self {
-        self.s3_data_source = Some(input);
+        self.s3_data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
     pub fn set_s3_data_source(
         mut self,
-        input: std::option::Option<crate::types::S3DataConfig>,
+        input: ::std::option::Option<crate::types::S3DataConfig>,
     ) -> Self {
         self.s3_data_source = input;
         self

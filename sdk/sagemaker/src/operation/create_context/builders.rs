@@ -6,56 +6,59 @@ pub use crate::operation::create_context::_create_context_input::CreateContextIn
 /// Fluent builder constructing a request to `CreateContext`.
 ///
 /// <p>Creates a <i>context</i>. A context is a lineage tracking entity that represents a logical grouping of other tracking or experiment entities. Some examples are an endpoint and a model package. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContextFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_context::builders::CreateContextInputBuilder,
 }
 impl CreateContextFluentBuilder {
     /// Creates a new `CreateContext`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_context::CreateContext,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_context::CreateContextError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_context::CreateContextError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_context::CreateContextOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_context::CreateContextError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_context::CreateContextError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl CreateContextFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_context::CreateContextOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_context::CreateContextError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_context::CreateContextError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn context_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context_name(input.into());
         self
     }
     /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn set_context_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_context_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context_name(input);
         self
     }
@@ -90,27 +93,27 @@ impl CreateContextFluentBuilder {
         self
     }
     /// <p>The source type, ID, and URI.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::ContextSource>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ContextSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
     /// <p>The context type.</p>
-    pub fn context_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn context_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context_type(input.into());
         self
     }
     /// <p>The context type.</p>
-    pub fn set_context_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_context_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context_type(input);
         self
     }
     /// <p>The description of the context.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the context.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -121,8 +124,8 @@ impl CreateContextFluentBuilder {
     /// <p>A list of properties to add to the context.</p>
     pub fn properties(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.properties(k.into(), v.into());
         self
@@ -130,8 +133,8 @@ impl CreateContextFluentBuilder {
     /// <p>A list of properties to add to the context.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_properties(input);
@@ -149,7 +152,7 @@ impl CreateContextFluentBuilder {
     /// <p>A list of tags to apply to the context.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

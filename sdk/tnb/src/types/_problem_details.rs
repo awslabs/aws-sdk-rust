@@ -2,22 +2,22 @@
 
 /// <p>Details related to problems with AWS TNB resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProblemDetails {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
     #[doc(hidden)]
-    pub detail: std::option::Option<std::string::String>,
+    pub detail: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable title of the problem type.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
 }
 impl ProblemDetails {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
-    pub fn detail(&self) -> std::option::Option<&str> {
+    pub fn detail(&self) -> ::std::option::Option<&str> {
         self.detail.as_deref()
     }
     /// <p>A human-readable title of the problem type.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ProblemDetails {
 
 /// A builder for [`ProblemDetails`](crate::types::ProblemDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProblemDetailsBuilder {
-    pub(crate) detail: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
+    pub(crate) detail: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
 }
 impl ProblemDetailsBuilder {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
-    pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detail = Some(input.into());
+    pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
-    pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail = input;
         self
     }
     /// <p>A human-readable title of the problem type.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A human-readable title of the problem type.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }

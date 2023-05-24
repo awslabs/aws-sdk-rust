@@ -2,18 +2,18 @@
 
 /// <p>Describes the Classic Load Balancers to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these Classic Load Balancers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassicLoadBalancersConfig {
     /// <p>One or more Classic Load Balancers.</p>
     #[doc(hidden)]
     pub classic_load_balancers:
-        std::option::Option<std::vec::Vec<crate::types::ClassicLoadBalancer>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
 }
 impl ClassicLoadBalancersConfig {
     /// <p>One or more Classic Load Balancers.</p>
     pub fn classic_load_balancers(
         &self,
-    ) -> std::option::Option<&[crate::types::ClassicLoadBalancer]> {
+    ) -> ::std::option::Option<&[crate::types::ClassicLoadBalancer]> {
         self.classic_load_balancers.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl ClassicLoadBalancersConfig {
 
 /// A builder for [`ClassicLoadBalancersConfig`](crate::types::ClassicLoadBalancersConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClassicLoadBalancersConfigBuilder {
     pub(crate) classic_load_balancers:
-        std::option::Option<std::vec::Vec<crate::types::ClassicLoadBalancer>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
 }
 impl ClassicLoadBalancersConfigBuilder {
     /// Appends an item to `classic_load_balancers`.
@@ -40,13 +42,13 @@ impl ClassicLoadBalancersConfigBuilder {
     pub fn classic_load_balancers(mut self, input: crate::types::ClassicLoadBalancer) -> Self {
         let mut v = self.classic_load_balancers.unwrap_or_default();
         v.push(input);
-        self.classic_load_balancers = Some(v);
+        self.classic_load_balancers = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more Classic Load Balancers.</p>
     pub fn set_classic_load_balancers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClassicLoadBalancer>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClassicLoadBalancer>>,
     ) -> Self {
         self.classic_load_balancers = input;
         self

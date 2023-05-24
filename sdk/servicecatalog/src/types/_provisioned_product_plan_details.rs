@@ -2,116 +2,116 @@
 
 /// <p>Information about a plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp of the creation time.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     #[doc(hidden)]
-    pub path_id: std::option::Option<std::string::String>,
+    pub path_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
     #[doc(hidden)]
-    pub product_id: std::option::Option<std::string::String>,
+    pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the plan.</p>
     #[doc(hidden)]
-    pub plan_name: std::option::Option<std::string::String>,
+    pub plan_name: ::std::option::Option<::std::string::String>,
     /// <p>The plan identifier.</p>
     #[doc(hidden)]
-    pub plan_id: std::option::Option<std::string::String>,
+    pub plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
     #[doc(hidden)]
-    pub provision_product_id: std::option::Option<std::string::String>,
+    pub provision_product_id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of the provisioned product.</p>
     #[doc(hidden)]
-    pub provision_product_name: std::option::Option<std::string::String>,
+    pub provision_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The plan type.</p>
     #[doc(hidden)]
-    pub plan_type: std::option::Option<crate::types::ProvisionedProductPlanType>,
+    pub plan_type: ::std::option::Option<crate::types::ProvisionedProductPlanType>,
     /// <p>The identifier of the provisioning artifact.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_id: std::option::Option<std::string::String>,
+    pub provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ProvisionedProductPlanStatus>,
+    pub status: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>,
     /// <p>The UTC time stamp when the plan was last updated.</p>
     #[doc(hidden)]
-    pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     #[doc(hidden)]
-    pub notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     #[doc(hidden)]
     pub provisioning_parameters:
-        std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The status message.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedProductPlanDetails {
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
-    pub fn path_id(&self) -> std::option::Option<&str> {
+    pub fn path_id(&self) -> ::std::option::Option<&str> {
         self.path_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>The name of the plan.</p>
-    pub fn plan_name(&self) -> std::option::Option<&str> {
+    pub fn plan_name(&self) -> ::std::option::Option<&str> {
         self.plan_name.as_deref()
     }
     /// <p>The plan identifier.</p>
-    pub fn plan_id(&self) -> std::option::Option<&str> {
+    pub fn plan_id(&self) -> ::std::option::Option<&str> {
         self.plan_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(&self) -> std::option::Option<&str> {
+    pub fn provision_product_id(&self) -> ::std::option::Option<&str> {
         self.provision_product_id.as_deref()
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provision_product_name(&self) -> std::option::Option<&str> {
+    pub fn provision_product_name(&self) -> ::std::option::Option<&str> {
         self.provision_product_name.as_deref()
     }
     /// <p>The plan type.</p>
-    pub fn plan_type(&self) -> std::option::Option<&crate::types::ProvisionedProductPlanType> {
+    pub fn plan_type(&self) -> ::std::option::Option<&crate::types::ProvisionedProductPlanType> {
         self.plan_type.as_ref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ProvisionedProductPlanStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisionedProductPlanStatus> {
         self.status.as_ref()
     }
     /// <p>The UTC time stamp when the plan was last updated.</p>
-    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn notification_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.notification_arns.as_deref()
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub fn provisioning_parameters(
         &self,
-    ) -> std::option::Option<&[crate::types::UpdateProvisioningParameter]> {
+    ) -> ::std::option::Option<&[crate::types::UpdateProvisioningParameter]> {
         self.provisioning_parameters.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -124,153 +124,164 @@ impl ProvisionedProductPlanDetails {
 
 /// A builder for [`ProvisionedProductPlanDetails`](crate::types::ProvisionedProductPlanDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisionedProductPlanDetailsBuilder {
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) path_id: std::option::Option<std::string::String>,
-    pub(crate) product_id: std::option::Option<std::string::String>,
-    pub(crate) plan_name: std::option::Option<std::string::String>,
-    pub(crate) plan_id: std::option::Option<std::string::String>,
-    pub(crate) provision_product_id: std::option::Option<std::string::String>,
-    pub(crate) provision_product_name: std::option::Option<std::string::String>,
-    pub(crate) plan_type: std::option::Option<crate::types::ProvisionedProductPlanType>,
-    pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ProvisionedProductPlanStatus>,
-    pub(crate) updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) notification_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) path_id: ::std::option::Option<::std::string::String>,
+    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) plan_name: ::std::option::Option<::std::string::String>,
+    pub(crate) plan_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provision_product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) provision_product_name: ::std::option::Option<::std::string::String>,
+    pub(crate) plan_type: ::std::option::Option<crate::types::ProvisionedProductPlanType>,
+    pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>,
+    pub(crate) updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) provisioning_parameters:
-        std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedProductPlanDetailsBuilder {
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
-    pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path_id = Some(input.into());
+    pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
-    pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_id = input;
         self
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_id = Some(input.into());
+    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product identifier.</p>
-    pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
     }
     /// <p>The name of the plan.</p>
-    pub fn plan_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.plan_name = Some(input.into());
+    pub fn plan_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.plan_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the plan.</p>
-    pub fn set_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_plan_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plan_name = input;
         self
     }
     /// <p>The plan identifier.</p>
-    pub fn plan_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.plan_id = Some(input.into());
+    pub fn plan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The plan identifier.</p>
-    pub fn set_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_plan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plan_id = input;
         self
     }
     /// <p>The product identifier.</p>
-    pub fn provision_product_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provision_product_id = Some(input.into());
+    pub fn provision_product_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provision_product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product identifier.</p>
     pub fn set_provision_product_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provision_product_id = input;
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
-    pub fn provision_product_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provision_product_name = Some(input.into());
+    pub fn provision_product_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provision_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of the provisioned product.</p>
     pub fn set_provision_product_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provision_product_name = input;
         self
     }
     /// <p>The plan type.</p>
     pub fn plan_type(mut self, input: crate::types::ProvisionedProductPlanType) -> Self {
-        self.plan_type = Some(input);
+        self.plan_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The plan type.</p>
     pub fn set_plan_type(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedProductPlanType>,
+        input: ::std::option::Option<crate::types::ProvisionedProductPlanType>,
     ) -> Self {
         self.plan_type = input;
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provisioning_artifact_id = Some(input.into());
+    pub fn provisioning_artifact_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_provisioning_artifact_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.provisioning_artifact_id = input;
         self
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::ProvisionedProductPlanStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedProductPlanStatus>,
+        input: ::std::option::Option<crate::types::ProvisionedProductPlanStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The UTC time stamp when the plan was last updated.</p>
-    pub fn updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_time = Some(input);
+    pub fn updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The UTC time stamp when the plan was last updated.</p>
     pub fn set_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_time = input;
         self
@@ -280,16 +291,19 @@ impl ProvisionedProductPlanDetailsBuilder {
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notification_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
-        self.notification_arns = Some(v);
+        self.notification_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub fn set_notification_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.notification_arns = input;
         self
@@ -305,13 +319,13 @@ impl ProvisionedProductPlanDetailsBuilder {
     ) -> Self {
         let mut v = self.provisioning_parameters.unwrap_or_default();
         v.push(input);
-        self.provisioning_parameters = Some(v);
+        self.provisioning_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub fn set_provisioning_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     ) -> Self {
         self.provisioning_parameters = input;
         self
@@ -324,24 +338,30 @@ impl ProvisionedProductPlanDetailsBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The status message.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

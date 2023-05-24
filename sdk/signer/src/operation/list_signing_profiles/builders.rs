@@ -6,29 +6,29 @@ pub use crate::operation::list_signing_profiles::_list_signing_profiles_input::L
 /// Fluent builder constructing a request to `ListSigningProfiles`.
 ///
 /// <p>Lists all available signing profiles in your AWS account. Returns only profiles with an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field is set to <code>true</code>. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSigningProfilesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_signing_profiles::builders::ListSigningProfilesInputBuilder,
 }
 impl ListSigningProfilesFluentBuilder {
     /// Creates a new `ListSigningProfiles`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_signing_profiles::ListSigningProfiles,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_signing_profiles::ListSigningProfilesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListSigningProfilesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_signing_profiles::ListSigningProfilesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListSigningProfilesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_signing_profiles::ListSigningProfilesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_signing_profiles::ListSigningProfilesError,
         >,
     > {
@@ -97,7 +100,7 @@ impl ListSigningProfilesFluentBuilder {
         self
     }
     /// <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
-    pub fn set_include_canceled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_canceled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_canceled(input);
         self
     }
@@ -107,27 +110,27 @@ impl ListSigningProfilesFluentBuilder {
         self
     }
     /// <p>The maximum number of profiles to be returned.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
-    pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn platform_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_id(input.into());
         self
     }
     /// <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
-    pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_id(input);
         self
     }
@@ -143,7 +146,7 @@ impl ListSigningProfilesFluentBuilder {
     /// <p>Filters results to return only signing jobs with statuses in the specified list.</p>
     pub fn set_statuses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SigningProfileStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SigningProfileStatus>>,
     ) -> Self {
         self.inner = self.inner.set_statuses(input);
         self

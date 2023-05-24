@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UseCaseType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum UseCaseType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UseCaseType {
+impl ::std::convert::From<&str> for UseCaseType {
     fn from(s: &str) -> Self {
         match s {
             "CONNECT_CAMPAIGNS" => UseCaseType::ConnectCampaigns,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for UseCaseType {
         }
     }
 }
-impl std::str::FromStr for UseCaseType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UseCaseType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UseCaseType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UseCaseType::from(s))
     }
 }
 impl UseCaseType {
@@ -84,7 +84,7 @@ impl UseCaseType {
         &["CONNECT_CAMPAIGNS", "RULES_EVALUATION"]
     }
 }
-impl AsRef<str> for UseCaseType {
+impl ::std::convert::AsRef<str> for UseCaseType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

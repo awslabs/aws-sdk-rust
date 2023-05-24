@@ -2,22 +2,22 @@
 
 /// <p>Details about the target configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetConfigurationRequest {
     /// <p>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot be specified in a request</p>
     #[doc(hidden)]
-    pub instance_count: std::option::Option<i32>,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>The Convertible Reserved Instance offering ID.</p>
     #[doc(hidden)]
-    pub offering_id: std::option::Option<std::string::String>,
+    pub offering_id: ::std::option::Option<::std::string::String>,
 }
 impl TargetConfigurationRequest {
     /// <p>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot be specified in a request</p>
-    pub fn instance_count(&self) -> std::option::Option<i32> {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The Convertible Reserved Instance offering ID.</p>
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<&str> {
         self.offering_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl TargetConfigurationRequest {
 
 /// A builder for [`TargetConfigurationRequest`](crate::types::TargetConfigurationRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetConfigurationRequestBuilder {
-    pub(crate) instance_count: std::option::Option<i32>,
-    pub(crate) offering_id: std::option::Option<std::string::String>,
+    pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) offering_id: ::std::option::Option<::std::string::String>,
 }
 impl TargetConfigurationRequestBuilder {
     /// <p>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot be specified in a request</p>
     pub fn instance_count(mut self, input: i32) -> Self {
-        self.instance_count = Some(input);
+        self.instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances the Convertible Reserved Instance offering can be applied to. This parameter is reserved and cannot be specified in a request</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
     /// <p>The Convertible Reserved Instance offering ID.</p>
-    pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.offering_id = Some(input.into());
+    pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Convertible Reserved Instance offering ID.</p>
-    pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
     }

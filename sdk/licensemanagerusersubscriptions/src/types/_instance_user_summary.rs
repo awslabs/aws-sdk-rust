@@ -2,64 +2,64 @@
 
 /// <p>Describes users of an EC2 instance providing user-based subscriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
-    pub identity_provider: std::option::Option<crate::types::IdentityProvider>,
+    pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The status of a user associated with an EC2 instance.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The status message for users of an EC2 instance.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the user.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The date a user was associated with an EC2 instance.</p>
     #[doc(hidden)]
-    pub association_date: std::option::Option<std::string::String>,
+    pub association_date: ::std::option::Option<::std::string::String>,
     /// <p>The date a user was disassociated from an EC2 instance.</p>
     #[doc(hidden)]
-    pub disassociation_date: std::option::Option<std::string::String>,
+    pub disassociation_date: ::std::option::Option<::std::string::String>,
 }
 impl InstanceUserSummary {
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn association_date(&self) -> std::option::Option<&str> {
+    pub fn association_date(&self) -> ::std::option::Option<&str> {
         self.association_date.as_deref()
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
-    pub fn disassociation_date(&self) -> std::option::Option<&str> {
+    pub fn disassociation_date(&self) -> ::std::option::Option<&str> {
         self.disassociation_date.as_deref()
     }
 }
@@ -72,100 +72,117 @@ impl InstanceUserSummary {
 
 /// A builder for [`InstanceUserSummary`](crate::types::InstanceUserSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceUserSummaryBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) identity_provider: std::option::Option<crate::types::IdentityProvider>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) domain: std::option::Option<std::string::String>,
-    pub(crate) association_date: std::option::Option<std::string::String>,
-    pub(crate) disassociation_date: std::option::Option<std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) association_date: ::std::option::Option<::std::string::String>,
+    pub(crate) disassociation_date: ::std::option::Option<::std::string::String>,
 }
 impl InstanceUserSummaryBuilder {
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
-        self.identity_provider = Some(input);
+        self.identity_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn set_identity_provider(
         mut self,
-        input: std::option::Option<crate::types::IdentityProvider>,
+        input: ::std::option::Option<crate::types::IdentityProvider>,
     ) -> Self {
         self.identity_provider = input;
         self
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of a user associated with an EC2 instance.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for users of an EC2 instance.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The domain name of the user.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name of the user.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn association_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.association_date = Some(input.into());
+    pub fn association_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.association_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date a user was associated with an EC2 instance.</p>
-    pub fn set_association_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_association_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.association_date = input;
         self
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
-    pub fn disassociation_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disassociation_date = Some(input.into());
+    pub fn disassociation_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disassociation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date a user was disassociated from an EC2 instance.</p>
     pub fn set_disassociation_date(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.disassociation_date = input;
         self

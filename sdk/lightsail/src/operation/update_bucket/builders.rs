@@ -7,56 +7,59 @@ pub use crate::operation::update_bucket::_update_bucket_input::UpdateBucketInput
 ///
 /// <p>Updates an existing Amazon Lightsail bucket.</p>
 /// <p>Use this action to update the configuration of an existing bucket, such as versioning, public accessibility, and the Amazon Web Services accounts that can access the bucket.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBucketFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_bucket::builders::UpdateBucketInputBuilder,
 }
 impl UpdateBucketFluentBuilder {
     /// Creates a new `UpdateBucket`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_bucket::UpdateBucket,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_bucket::UpdateBucketOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl UpdateBucketFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_bucket::UpdateBucketOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_bucket::UpdateBucketError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the bucket to update.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
         self
     }
     /// <p>The name of the bucket to update.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
@@ -93,7 +96,7 @@ impl UpdateBucketFluentBuilder {
     /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
     pub fn set_access_rules(
         mut self,
-        input: std::option::Option<crate::types::AccessRules>,
+        input: ::std::option::Option<crate::types::AccessRules>,
     ) -> Self {
         self.inner = self.inner.set_access_rules(input);
         self
@@ -104,7 +107,7 @@ impl UpdateBucketFluentBuilder {
     /// <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>
     /// <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>
     /// </ul>
-    pub fn versioning(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn versioning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.versioning(input.into());
         self
     }
@@ -114,7 +117,7 @@ impl UpdateBucketFluentBuilder {
     /// <li> <p> <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p> </li>
     /// <li> <p> <code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p> </li>
     /// </ul>
-    pub fn set_versioning(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_versioning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_versioning(input);
         self
     }
@@ -124,7 +127,10 @@ impl UpdateBucketFluentBuilder {
     ///
     /// <p>An array of strings to specify the Amazon Web Services account IDs that can access the bucket.</p>
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
-    pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn readonly_access_accounts(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.readonly_access_accounts(input.into());
         self
     }
@@ -132,7 +138,7 @@ impl UpdateBucketFluentBuilder {
     /// <p>You can give a maximum of 10 Amazon Web Services accounts access to a bucket.</p>
     pub fn set_readonly_access_accounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_readonly_access_accounts(input);
         self
@@ -145,7 +151,7 @@ impl UpdateBucketFluentBuilder {
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub fn set_access_log_config(
         mut self,
-        input: std::option::Option<crate::types::BucketAccessLogConfig>,
+        input: ::std::option::Option<crate::types::BucketAccessLogConfig>,
     ) -> Self {
         self.inner = self.inner.set_access_log_config(input);
         self

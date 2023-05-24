@@ -2,14 +2,14 @@
 
 /// <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Minimum object size to which the rule applies.</p>
     #[doc(hidden)]
     pub object_size_greater_than: i64,
@@ -19,11 +19,11 @@ pub struct LifecycleRuleAndOperator {
 }
 impl LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Minimum object size to which the rule applies.</p>
@@ -44,21 +44,23 @@ impl LifecycleRuleAndOperator {
 
 /// A builder for [`LifecycleRuleAndOperator`](crate::types::LifecycleRuleAndOperator).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LifecycleRuleAndOperatorBuilder {
-    pub(crate) prefix: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) object_size_greater_than: std::option::Option<i64>,
-    pub(crate) object_size_less_than: std::option::Option<i64>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) object_size_greater_than: ::std::option::Option<i64>,
+    pub(crate) object_size_less_than: ::std::option::Option<i64>,
 }
 impl LifecycleRuleAndOperatorBuilder {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
@@ -70,34 +72,34 @@ impl LifecycleRuleAndOperatorBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>Minimum object size to which the rule applies.</p>
     pub fn object_size_greater_than(mut self, input: i64) -> Self {
-        self.object_size_greater_than = Some(input);
+        self.object_size_greater_than = ::std::option::Option::Some(input);
         self
     }
     /// <p>Minimum object size to which the rule applies.</p>
-    pub fn set_object_size_greater_than(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_object_size_greater_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_size_greater_than = input;
         self
     }
     /// <p>Maximum object size to which the rule applies.</p>
     pub fn object_size_less_than(mut self, input: i64) -> Self {
-        self.object_size_less_than = Some(input);
+        self.object_size_less_than = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum object size to which the rule applies.</p>
-    pub fn set_object_size_less_than(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_object_size_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.object_size_less_than = input;
         self
     }

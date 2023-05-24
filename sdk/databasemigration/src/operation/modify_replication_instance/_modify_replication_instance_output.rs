@@ -2,20 +2,22 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationInstanceOutput {
     /// <p>The modified replication instance.</p>
     #[doc(hidden)]
-    pub replication_instance: std::option::Option<crate::types::ReplicationInstance>,
+    pub replication_instance: ::std::option::Option<crate::types::ReplicationInstance>,
     _request_id: Option<String>,
 }
 impl ModifyReplicationInstanceOutput {
     /// <p>The modified replication instance.</p>
-    pub fn replication_instance(&self) -> std::option::Option<&crate::types::ReplicationInstance> {
+    pub fn replication_instance(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ReplicationInstance> {
         self.replication_instance.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ModifyReplicationInstanceOutput {
+impl ::aws_http::request_id::RequestId for ModifyReplicationInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +31,23 @@ impl ModifyReplicationInstanceOutput {
 
 /// A builder for [`ModifyReplicationInstanceOutput`](crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyReplicationInstanceOutputBuilder {
-    pub(crate) replication_instance: std::option::Option<crate::types::ReplicationInstance>,
+    pub(crate) replication_instance: ::std::option::Option<crate::types::ReplicationInstance>,
     _request_id: Option<String>,
 }
 impl ModifyReplicationInstanceOutputBuilder {
     /// <p>The modified replication instance.</p>
     pub fn replication_instance(mut self, input: crate::types::ReplicationInstance) -> Self {
-        self.replication_instance = Some(input);
+        self.replication_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The modified replication instance.</p>
     pub fn set_replication_instance(
         mut self,
-        input: std::option::Option<crate::types::ReplicationInstance>,
+        input: ::std::option::Option<crate::types::ReplicationInstance>,
     ) -> Self {
         self.replication_instance = input;
         self

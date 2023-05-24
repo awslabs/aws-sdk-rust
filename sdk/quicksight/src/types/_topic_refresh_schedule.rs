@@ -2,30 +2,30 @@
 
 /// <p>A structure that represents a topic refresh schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRefreshSchedule {
     /// <p>A Boolean value that controls whether to schedule is enabled.</p>
     #[doc(hidden)]
-    pub is_enabled: std::option::Option<bool>,
+    pub is_enabled: ::std::option::Option<bool>,
     /// <p>A Boolean value that controls whether to schedule runs at the same schedule that is specified in SPICE dataset.</p>
     #[doc(hidden)]
     pub based_on_spice_schedule: bool,
     /// <p>The starting date and time for the refresh schedule.</p>
     #[doc(hidden)]
-    pub starting_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub starting_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timezone that you want the refresh schedule to use.</p>
     #[doc(hidden)]
-    pub timezone: std::option::Option<std::string::String>,
+    pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The time of day when the refresh should run, for example, Monday-Sunday.</p>
     #[doc(hidden)]
-    pub repeat_at: std::option::Option<std::string::String>,
+    pub repeat_at: ::std::option::Option<::std::string::String>,
     /// <p>The type of refresh schedule. Valid values for this structure are <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, and <code>MONTHLY</code>.</p>
     #[doc(hidden)]
-    pub topic_schedule_type: std::option::Option<crate::types::TopicScheduleType>,
+    pub topic_schedule_type: ::std::option::Option<crate::types::TopicScheduleType>,
 }
 impl TopicRefreshSchedule {
     /// <p>A Boolean value that controls whether to schedule is enabled.</p>
-    pub fn is_enabled(&self) -> std::option::Option<bool> {
+    pub fn is_enabled(&self) -> ::std::option::Option<bool> {
         self.is_enabled
     }
     /// <p>A Boolean value that controls whether to schedule runs at the same schedule that is specified in SPICE dataset.</p>
@@ -33,19 +33,19 @@ impl TopicRefreshSchedule {
         self.based_on_spice_schedule
     }
     /// <p>The starting date and time for the refresh schedule.</p>
-    pub fn starting_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn starting_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.starting_at.as_ref()
     }
     /// <p>The timezone that you want the refresh schedule to use.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
     /// <p>The time of day when the refresh should run, for example, Monday-Sunday.</p>
-    pub fn repeat_at(&self) -> std::option::Option<&str> {
+    pub fn repeat_at(&self) -> ::std::option::Option<&str> {
         self.repeat_at.as_deref()
     }
     /// <p>The type of refresh schedule. Valid values for this structure are <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, and <code>MONTHLY</code>.</p>
-    pub fn topic_schedule_type(&self) -> std::option::Option<&crate::types::TopicScheduleType> {
+    pub fn topic_schedule_type(&self) -> ::std::option::Option<&crate::types::TopicScheduleType> {
         self.topic_schedule_type.as_ref()
     }
 }
@@ -58,78 +58,80 @@ impl TopicRefreshSchedule {
 
 /// A builder for [`TopicRefreshSchedule`](crate::types::TopicRefreshSchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TopicRefreshScheduleBuilder {
-    pub(crate) is_enabled: std::option::Option<bool>,
-    pub(crate) based_on_spice_schedule: std::option::Option<bool>,
-    pub(crate) starting_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) timezone: std::option::Option<std::string::String>,
-    pub(crate) repeat_at: std::option::Option<std::string::String>,
-    pub(crate) topic_schedule_type: std::option::Option<crate::types::TopicScheduleType>,
+    pub(crate) is_enabled: ::std::option::Option<bool>,
+    pub(crate) based_on_spice_schedule: ::std::option::Option<bool>,
+    pub(crate) starting_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) repeat_at: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_schedule_type: ::std::option::Option<crate::types::TopicScheduleType>,
 }
 impl TopicRefreshScheduleBuilder {
     /// <p>A Boolean value that controls whether to schedule is enabled.</p>
     pub fn is_enabled(mut self, input: bool) -> Self {
-        self.is_enabled = Some(input);
+        self.is_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that controls whether to schedule is enabled.</p>
-    pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_enabled = input;
         self
     }
     /// <p>A Boolean value that controls whether to schedule runs at the same schedule that is specified in SPICE dataset.</p>
     pub fn based_on_spice_schedule(mut self, input: bool) -> Self {
-        self.based_on_spice_schedule = Some(input);
+        self.based_on_spice_schedule = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that controls whether to schedule runs at the same schedule that is specified in SPICE dataset.</p>
-    pub fn set_based_on_spice_schedule(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_based_on_spice_schedule(mut self, input: ::std::option::Option<bool>) -> Self {
         self.based_on_spice_schedule = input;
         self
     }
     /// <p>The starting date and time for the refresh schedule.</p>
-    pub fn starting_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.starting_at = Some(input);
+    pub fn starting_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.starting_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting date and time for the refresh schedule.</p>
     pub fn set_starting_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.starting_at = input;
         self
     }
     /// <p>The timezone that you want the refresh schedule to use.</p>
-    pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timezone = Some(input.into());
+    pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timezone that you want the refresh schedule to use.</p>
-    pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }
     /// <p>The time of day when the refresh should run, for example, Monday-Sunday.</p>
-    pub fn repeat_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repeat_at = Some(input.into());
+    pub fn repeat_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.repeat_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time of day when the refresh should run, for example, Monday-Sunday.</p>
-    pub fn set_repeat_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repeat_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repeat_at = input;
         self
     }
     /// <p>The type of refresh schedule. Valid values for this structure are <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, and <code>MONTHLY</code>.</p>
     pub fn topic_schedule_type(mut self, input: crate::types::TopicScheduleType) -> Self {
-        self.topic_schedule_type = Some(input);
+        self.topic_schedule_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of refresh schedule. Valid values for this structure are <code>HOURLY</code>, <code>DAILY</code>, <code>WEEKLY</code>, and <code>MONTHLY</code>.</p>
     pub fn set_topic_schedule_type(
         mut self,
-        input: std::option::Option<crate::types::TopicScheduleType>,
+        input: ::std::option::Option<crate::types::TopicScheduleType>,
     ) -> Self {
         self.topic_schedule_type = input;
         self

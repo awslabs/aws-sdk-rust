@@ -2,22 +2,24 @@
 
 /// <p>VectorEnrichmentJob export error details in response from GetVectorEnrichmentJob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VectorEnrichmentJobExportErrorDetails {
     /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
+    pub r#type: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl VectorEnrichmentJobExportErrorDetails {
     /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobExportErrorType> {
+    pub fn r#type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::VectorEnrichmentJobExportErrorType> {
         self.r#type.as_ref()
     }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +32,34 @@ impl VectorEnrichmentJobExportErrorDetails {
 
 /// A builder for [`VectorEnrichmentJobExportErrorDetails`](crate::types::VectorEnrichmentJobExportErrorDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VectorEnrichmentJobExportErrorDetailsBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl VectorEnrichmentJobExportErrorDetailsBuilder {
     /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
     pub fn r#type(mut self, input: crate::types::VectorEnrichmentJobExportErrorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output error details for an Export operation on a Vector Enrichment job.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
+        input: ::std::option::Option<crate::types::VectorEnrichmentJobExportErrorType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message providing details about the errors generated during the Vector Enrichment job.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExecution`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`execution_id(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::execution_id) / [`set_execution_id(Option<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_execution_id): <p>A unique identifier for the execution of a workflow.</p>
-    ///   - [`workflow_id(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_workflow_id): <p>A unique identifier for the workflow.</p>
+    ///   - [`execution_id(impl ::std::convert::Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::execution_id) / [`set_execution_id(Option<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_execution_id): <p>A unique identifier for the execution of a workflow.</p>
+    ///   - [`workflow_id(impl ::std::convert::Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_workflow_id): <p>A unique identifier for the workflow.</p>
     /// - On success, responds with [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput) with field(s):
     ///   - [`workflow_id(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::workflow_id): <p>A unique identifier for the workflow.</p>
     ///   - [`execution(Option<DescribedExecution>)`](crate::operation::describe_execution::DescribeExecutionOutput::execution): <p>The structure that contains the details of the workflow' execution.</p>

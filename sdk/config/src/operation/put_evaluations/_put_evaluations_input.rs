@@ -2,33 +2,33 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEvaluationsInput {
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
     #[doc(hidden)]
-    pub evaluations: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
+    pub evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
     #[doc(hidden)]
-    pub result_token: std::option::Option<std::string::String>,
+    pub result_token: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
     /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
     #[doc(hidden)]
-    pub test_mode: std::option::Option<bool>,
+    pub test_mode: ::std::option::Option<bool>,
 }
 impl PutEvaluationsInput {
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
-    pub fn evaluations(&self) -> std::option::Option<&[crate::types::Evaluation]> {
+    pub fn evaluations(&self) -> ::std::option::Option<&[crate::types::Evaluation]> {
         self.evaluations.as_deref()
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
-    pub fn result_token(&self) -> std::option::Option<&str> {
+    pub fn result_token(&self) -> ::std::option::Option<&str> {
         self.result_token.as_deref()
     }
     /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
     /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
-    pub fn test_mode(&self) -> std::option::Option<bool> {
+    pub fn test_mode(&self) -> ::std::option::Option<bool> {
         self.test_mode
     }
 }
@@ -41,11 +41,13 @@ impl PutEvaluationsInput {
 
 /// A builder for [`PutEvaluationsInput`](crate::operation::put_evaluations::PutEvaluationsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutEvaluationsInputBuilder {
-    pub(crate) evaluations: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
-    pub(crate) result_token: std::option::Option<std::string::String>,
-    pub(crate) test_mode: std::option::Option<bool>,
+    pub(crate) evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
+    pub(crate) result_token: ::std::option::Option<::std::string::String>,
+    pub(crate) test_mode: ::std::option::Option<bool>,
 }
 impl PutEvaluationsInputBuilder {
     /// Appends an item to `evaluations`.
@@ -56,24 +58,24 @@ impl PutEvaluationsInputBuilder {
     pub fn evaluations(mut self, input: crate::types::Evaluation) -> Self {
         let mut v = self.evaluations.unwrap_or_default();
         v.push(input);
-        self.evaluations = Some(v);
+        self.evaluations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
     pub fn set_evaluations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     ) -> Self {
         self.evaluations = input;
         self
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
-    pub fn result_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.result_token = Some(input.into());
+    pub fn result_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.result_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
-    pub fn set_result_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_result_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_token = input;
         self
     }
@@ -81,24 +83,24 @@ impl PutEvaluationsInputBuilder {
     /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
     pub fn test_mode(mut self, input: bool) -> Self {
-        self.test_mode = Some(input);
+        self.test_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
     /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
-    pub fn set_test_mode(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_test_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.test_mode = input;
         self
     }
     /// Consumes the builder and constructs a [`PutEvaluationsInput`](crate::operation::put_evaluations::PutEvaluationsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::put_evaluations::PutEvaluationsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::put_evaluations::PutEvaluationsInput {
+        ::std::result::Result::Ok(crate::operation::put_evaluations::PutEvaluationsInput {
             evaluations: self.evaluations,
             result_token: self.result_token,
             test_mode: self.test_mode,

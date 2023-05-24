@@ -2,22 +2,22 @@
 
 /// <p>A set of genome reference files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceFiles {
     /// <p>The source file's location in Amazon S3.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::FileInformation>,
+    pub source: ::std::option::Option<crate::types::FileInformation>,
     /// <p>The files' index.</p>
     #[doc(hidden)]
-    pub index: std::option::Option<crate::types::FileInformation>,
+    pub index: ::std::option::Option<crate::types::FileInformation>,
 }
 impl ReferenceFiles {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::FileInformation> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::FileInformation> {
         self.source.as_ref()
     }
     /// <p>The files' index.</p>
-    pub fn index(&self) -> std::option::Option<&crate::types::FileInformation> {
+    pub fn index(&self) -> ::std::option::Option<&crate::types::FileInformation> {
         self.index.as_ref()
     }
 }
@@ -30,29 +30,37 @@ impl ReferenceFiles {
 
 /// A builder for [`ReferenceFiles`](crate::types::ReferenceFiles).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReferenceFilesBuilder {
-    pub(crate) source: std::option::Option<crate::types::FileInformation>,
-    pub(crate) index: std::option::Option<crate::types::FileInformation>,
+    pub(crate) source: ::std::option::Option<crate::types::FileInformation>,
+    pub(crate) index: ::std::option::Option<crate::types::FileInformation>,
 }
 impl ReferenceFilesBuilder {
     /// <p>The source file's location in Amazon S3.</p>
     pub fn source(mut self, input: crate::types::FileInformation) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::FileInformation>) -> Self {
+    pub fn set_source(
+        mut self,
+        input: ::std::option::Option<crate::types::FileInformation>,
+    ) -> Self {
         self.source = input;
         self
     }
     /// <p>The files' index.</p>
     pub fn index(mut self, input: crate::types::FileInformation) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The files' index.</p>
-    pub fn set_index(mut self, input: std::option::Option<crate::types::FileInformation>) -> Self {
+    pub fn set_index(
+        mut self,
+        input: ::std::option::Option<crate::types::FileInformation>,
+    ) -> Self {
         self.index = input;
         self
     }

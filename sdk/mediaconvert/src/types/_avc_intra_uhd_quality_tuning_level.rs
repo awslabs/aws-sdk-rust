@@ -38,13 +38,13 @@
 /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how many transcoding passes MediaConvert does with your video. When you choose Multi-pass (MULTI_PASS), your video quality is better and your output bitrate is more accurate. That is, the actual bitrate of your output is closer to the target bitrate defined in the specification. When you choose Single-pass (SINGLE_PASS), your encoding time is faster. The default behavior is Single-pass (SINGLE_PASS).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AvcIntraUhdQualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AvcIntraUhdQualityTuningLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AvcIntraUhdQualityTuningLevel {
+impl ::std::convert::From<&str> for AvcIntraUhdQualityTuningLevel {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_PASS" => AvcIntraUhdQualityTuningLevel::MultiPass,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AvcIntraUhdQualityTuningLevel {
         }
     }
 }
-impl std::str::FromStr for AvcIntraUhdQualityTuningLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AvcIntraUhdQualityTuningLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AvcIntraUhdQualityTuningLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AvcIntraUhdQualityTuningLevel::from(s))
     }
 }
 impl AvcIntraUhdQualityTuningLevel {
@@ -86,7 +86,7 @@ impl AvcIntraUhdQualityTuningLevel {
         &["MULTI_PASS", "SINGLE_PASS"]
     }
 }
-impl AsRef<str> for AvcIntraUhdQualityTuningLevel {
+impl ::std::convert::AsRef<str> for AvcIntraUhdQualityTuningLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

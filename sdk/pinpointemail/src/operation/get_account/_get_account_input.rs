@@ -2,7 +2,7 @@
 
 /// <p>A request to obtain information about the email-sending capabilities of your Amazon Pinpoint account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountInput {}
 impl GetAccountInput {
     /// Creates a new builder-style object to manufacture [`GetAccountInput`](crate::operation::get_account::GetAccountInput).
@@ -13,16 +13,18 @@ impl GetAccountInput {
 
 /// A builder for [`GetAccountInput`](crate::operation::get_account::GetAccountInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAccountInputBuilder {}
 impl GetAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountInput`](crate::operation::get_account::GetAccountInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_account::GetAccountInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_account::GetAccountInput {})
+        ::std::result::Result::Ok(crate::operation::get_account::GetAccountInput {})
     }
 }

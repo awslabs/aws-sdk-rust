@@ -2,22 +2,22 @@
 
 /// <p>Provides geographic coordinates that indicate where a specified IP address originated from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpGeoLocation {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
     #[doc(hidden)]
-    pub lat: std::option::Option<f64>,
+    pub lat: ::std::option::Option<f64>,
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
     #[doc(hidden)]
-    pub lon: std::option::Option<f64>,
+    pub lon: ::std::option::Option<f64>,
 }
 impl IpGeoLocation {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
-    pub fn lat(&self) -> std::option::Option<f64> {
+    pub fn lat(&self) -> ::std::option::Option<f64> {
         self.lat
     }
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
-    pub fn lon(&self) -> std::option::Option<f64> {
+    pub fn lon(&self) -> ::std::option::Option<f64> {
         self.lon
     }
 }
@@ -30,29 +30,31 @@ impl IpGeoLocation {
 
 /// A builder for [`IpGeoLocation`](crate::types::IpGeoLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpGeoLocationBuilder {
-    pub(crate) lat: std::option::Option<f64>,
-    pub(crate) lon: std::option::Option<f64>,
+    pub(crate) lat: ::std::option::Option<f64>,
+    pub(crate) lon: ::std::option::Option<f64>,
 }
 impl IpGeoLocationBuilder {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
     pub fn lat(mut self, input: f64) -> Self {
-        self.lat = Some(input);
+        self.lat = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
-    pub fn set_lat(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lat(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lat = input;
         self
     }
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
     pub fn lon(mut self, input: f64) -> Self {
-        self.lon = Some(input);
+        self.lon = ::std::option::Option::Some(input);
         self
     }
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
-    pub fn set_lon(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lon(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lon = input;
         self
     }

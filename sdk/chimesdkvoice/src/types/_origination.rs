@@ -4,22 +4,22 @@
 /// <p>The parameters listed below are not required, but you must use at least one.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Origination {
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
     #[doc(hidden)]
-    pub routes: std::option::Option<std::vec::Vec<crate::types::OriginationRoute>>,
+    pub routes: ::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>>,
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime SDK Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
     #[doc(hidden)]
-    pub disabled: std::option::Option<bool>,
+    pub disabled: ::std::option::Option<bool>,
 }
 impl Origination {
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
-    pub fn routes(&self) -> std::option::Option<&[crate::types::OriginationRoute]> {
+    pub fn routes(&self) -> ::std::option::Option<&[crate::types::OriginationRoute]> {
         self.routes.as_deref()
     }
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime SDK Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
-    pub fn disabled(&self) -> std::option::Option<bool> {
+    pub fn disabled(&self) -> ::std::option::Option<bool> {
         self.disabled
     }
 }
@@ -32,10 +32,12 @@ impl Origination {
 
 /// A builder for [`Origination`](crate::types::Origination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginationBuilder {
-    pub(crate) routes: std::option::Option<std::vec::Vec<crate::types::OriginationRoute>>,
-    pub(crate) disabled: std::option::Option<bool>,
+    pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>>,
+    pub(crate) disabled: ::std::option::Option<bool>,
 }
 impl OriginationBuilder {
     /// Appends an item to `routes`.
@@ -46,24 +48,24 @@ impl OriginationBuilder {
     pub fn routes(mut self, input: crate::types::OriginationRoute) -> Self {
         let mut v = self.routes.unwrap_or_default();
         v.push(input);
-        self.routes = Some(v);
+        self.routes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The call distribution properties defined for your SIP hosts. Valid range: Minimum value of 1. Maximum value of 20. This parameter is not required, but you must specify this parameter or <code>Disabled</code>.</p>
     pub fn set_routes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OriginationRoute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OriginationRoute>>,
     ) -> Self {
         self.routes = input;
         self
     }
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime SDK Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
     pub fn disabled(mut self, input: bool) -> Self {
-        self.disabled = Some(input);
+        self.disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>When origination settings are disabled, inbound calls are not enabled for your Amazon Chime SDK Voice Connector. This parameter is not required, but you must specify this parameter or <code>Routes</code>.</p>
-    pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
     }

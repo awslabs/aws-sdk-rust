@@ -38,13 +38,13 @@
 /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AuthorizerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AuthorizerType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AuthorizerType {
+impl ::std::convert::From<&str> for AuthorizerType {
     fn from(s: &str) -> Self {
         match s {
             "JWT" => AuthorizerType::Jwt,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AuthorizerType {
         }
     }
 }
-impl std::str::FromStr for AuthorizerType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AuthorizerType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthorizerType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AuthorizerType::from(s))
     }
 }
 impl AuthorizerType {
@@ -86,7 +86,7 @@ impl AuthorizerType {
         &["JWT", "REQUEST"]
     }
 }
-impl AsRef<str> for AuthorizerType {
+impl ::std::convert::AsRef<str> for AuthorizerType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`eula_ids(Vec<String>)`](crate::operation::list_eulas::builders::ListEulasFluentBuilder::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::operation::list_eulas::builders::ListEulasFluentBuilder::set_eula_ids): <p>The list of EULA IDs that should be returned</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_eulas::builders::ListEulasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_eulas::builders::ListEulasFluentBuilder::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_eulas::builders::ListEulasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_eulas::builders::ListEulasFluentBuilder::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
     /// - On success, responds with [`ListEulasOutput`](crate::operation::list_eulas::ListEulasOutput) with field(s):
     ///   - [`eulas(Option<Vec<Eula>>)`](crate::operation::list_eulas::ListEulasOutput::eulas): <p>A collection of EULA resources.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_eulas::ListEulasOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>

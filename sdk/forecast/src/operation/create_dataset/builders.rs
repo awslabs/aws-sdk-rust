@@ -16,56 +16,59 @@ pub use crate::operation::create_dataset::_create_dataset_input::CreateDatasetIn
 /// <p>For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast Sample GitHub repository</a>.</p> <note>
 /// <p>The <code>Status</code> of a dataset must be <code>ACTIVE</code> before you can import training data. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a> operation to get the status.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDatasetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_dataset::builders::CreateDatasetInputBuilder,
 }
 impl CreateDatasetFluentBuilder {
     /// Creates a new `CreateDataset`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_dataset::CreateDataset,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_dataset::CreateDatasetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,19 +81,19 @@ impl CreateDatasetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_dataset::CreateDatasetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
     > {
         self.send_middleware().await
     }
     /// <p>A name for the dataset.</p>
-    pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
         self
     }
     /// <p>A name for the dataset.</p>
-    pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
@@ -102,7 +105,7 @@ impl CreateDatasetFluentBuilder {
     }
     /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation must match.</p>
     /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Importing datasets</a>.</p>
-    pub fn set_domain(mut self, input: std::option::Option<crate::types::Domain>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
@@ -114,7 +117,7 @@ impl CreateDatasetFluentBuilder {
     /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
     pub fn set_dataset_type(
         mut self,
-        input: std::option::Option<crate::types::DatasetType>,
+        input: ::std::option::Option<crate::types::DatasetType>,
     ) -> Self {
         self.inner = self.inner.set_dataset_type(input);
         self
@@ -130,7 +133,10 @@ impl CreateDatasetFluentBuilder {
     /// <li> <p>Year - 1</p> </li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
-    pub fn data_frequency(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_frequency(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_frequency(input.into());
         self
     }
@@ -145,7 +151,10 @@ impl CreateDatasetFluentBuilder {
     /// <li> <p>Year - 1</p> </li>
     /// </ul>
     /// <p>Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".</p>
-    pub fn set_data_frequency(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_frequency(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_frequency(input);
         self
     }
@@ -155,7 +164,7 @@ impl CreateDatasetFluentBuilder {
         self
     }
     /// <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html">Dataset Domains and Dataset Types</a>.</p>
-    pub fn set_schema(mut self, input: std::option::Option<crate::types::Schema>) -> Self {
+    pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
@@ -167,7 +176,7 @@ impl CreateDatasetFluentBuilder {
     /// <p>An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
     pub fn set_encryption_config(
         mut self,
-        input: std::option::Option<crate::types::EncryptionConfig>,
+        input: ::std::option::Option<crate::types::EncryptionConfig>,
     ) -> Self {
         self.inner = self.inner.set_encryption_config(input);
         self
@@ -204,7 +213,7 @@ impl CreateDatasetFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

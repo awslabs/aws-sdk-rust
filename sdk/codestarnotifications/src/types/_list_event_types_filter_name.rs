@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ListEventTypesFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ListEventTypesFilterName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ListEventTypesFilterName {
+impl ::std::convert::From<&str> for ListEventTypesFilterName {
     fn from(s: &str) -> Self {
         match s {
             "RESOURCE_TYPE" => ListEventTypesFilterName::ResourceType,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ListEventTypesFilterName {
         }
     }
 }
-impl std::str::FromStr for ListEventTypesFilterName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ListEventTypesFilterName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListEventTypesFilterName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ListEventTypesFilterName::from(s))
     }
 }
 impl ListEventTypesFilterName {
@@ -86,7 +86,7 @@ impl ListEventTypesFilterName {
         &["RESOURCE_TYPE", "SERVICE_NAME"]
     }
 }
-impl AsRef<str> for ListEventTypesFilterName {
+impl ::std::convert::AsRef<str> for ListEventTypesFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

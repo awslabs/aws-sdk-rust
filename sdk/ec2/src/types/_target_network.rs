@@ -2,50 +2,50 @@
 
 /// <p>Describes a target network associated with a Client VPN endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetNetwork {
     /// <p>The ID of the association.</p>
     #[doc(hidden)]
-    pub association_id: std::option::Option<std::string::String>,
+    pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC in which the target network (subnet) is located.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet specified as the target network.</p>
     #[doc(hidden)]
-    pub target_network_id: std::option::Option<std::string::String>,
+    pub target_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
     #[doc(hidden)]
-    pub client_vpn_endpoint_id: std::option::Option<std::string::String>,
+    pub client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the target network association.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AssociationStatus>,
+    pub status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>The IDs of the security groups applied to the target network association.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TargetNetwork {
     /// <p>The ID of the association.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> ::std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>The ID of the VPC in which the target network (subnet) is located.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the subnet specified as the target network.</p>
-    pub fn target_network_id(&self) -> std::option::Option<&str> {
+    pub fn target_network_id(&self) -> ::std::option::Option<&str> {
         self.target_network_id.as_deref()
     }
     /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
-    pub fn client_vpn_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn client_vpn_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The current state of the target network association.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AssociationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AssociationStatus> {
         self.status.as_ref()
     }
     /// <p>The IDs of the security groups applied to the target network association.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_groups.as_deref()
     }
 }
@@ -58,71 +58,85 @@ impl TargetNetwork {
 
 /// A builder for [`TargetNetwork`](crate::types::TargetNetwork).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetNetworkBuilder {
-    pub(crate) association_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) target_network_id: std::option::Option<std::string::String>,
-    pub(crate) client_vpn_endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::AssociationStatus>,
-    pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_vpn_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::AssociationStatus>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TargetNetworkBuilder {
     /// <p>The ID of the association.</p>
-    pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.association_id = Some(input.into());
+    pub fn association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the association.</p>
-    pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_association_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.association_id = input;
         self
     }
     /// <p>The ID of the VPC in which the target network (subnet) is located.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC in which the target network (subnet) is located.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The ID of the subnet specified as the target network.</p>
-    pub fn target_network_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_network_id = Some(input.into());
+    pub fn target_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet specified as the target network.</p>
     pub fn set_target_network_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_network_id = input;
         self
     }
     /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
-    pub fn client_vpn_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = Some(input.into());
+    pub fn client_vpn_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_vpn_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Client VPN endpoint with which the target network is associated.</p>
     pub fn set_client_vpn_endpoint_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_vpn_endpoint_id = input;
         self
     }
     /// <p>The current state of the target network association.</p>
     pub fn status(mut self, input: crate::types::AssociationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the target network association.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AssociationStatus>,
+        input: ::std::option::Option<crate::types::AssociationStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -132,16 +146,19 @@ impl TargetNetworkBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The IDs of the security groups applied to the target network association.</p>
-    pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups applied to the target network association.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_groups = input;
         self

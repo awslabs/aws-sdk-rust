@@ -2,15 +2,15 @@
 
 /// <p>Contains logging options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
     #[doc(hidden)]
-    pub level: std::option::Option<crate::types::LoggingLevel>,
+    pub level: ::std::option::Option<crate::types::LoggingLevel>,
 }
 impl LoggingOptions {
     /// <p>The IoT SiteWise logging verbosity level.</p>
-    pub fn level(&self) -> std::option::Option<&crate::types::LoggingLevel> {
+    pub fn level(&self) -> ::std::option::Option<&crate::types::LoggingLevel> {
         self.level.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl LoggingOptions {
 
 /// A builder for [`LoggingOptions`](crate::types::LoggingOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingOptionsBuilder {
-    pub(crate) level: std::option::Option<crate::types::LoggingLevel>,
+    pub(crate) level: ::std::option::Option<crate::types::LoggingLevel>,
 }
 impl LoggingOptionsBuilder {
     /// <p>The IoT SiteWise logging verbosity level.</p>
     pub fn level(mut self, input: crate::types::LoggingLevel) -> Self {
-        self.level = Some(input);
+        self.level = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IoT SiteWise logging verbosity level.</p>
-    pub fn set_level(mut self, input: std::option::Option<crate::types::LoggingLevel>) -> Self {
+    pub fn set_level(mut self, input: ::std::option::Option<crate::types::LoggingLevel>) -> Self {
         self.level = input;
         self
     }

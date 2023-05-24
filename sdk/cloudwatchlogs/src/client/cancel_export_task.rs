@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelExportTask`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::set_task_id): <p>The ID of the export task.</p>
+    ///   - [`task_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::cancel_export_task::builders::CancelExportTaskFluentBuilder::set_task_id): <p>The ID of the export task.</p>
     /// - On success, responds with [`CancelExportTaskOutput`](crate::operation::cancel_export_task::CancelExportTaskOutput)
     /// - On failure, responds with [`SdkError<CancelExportTaskError>`](crate::operation::cancel_export_task::CancelExportTaskError)
     pub fn cancel_export_task(

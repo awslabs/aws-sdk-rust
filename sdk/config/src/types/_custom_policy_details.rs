@@ -2,25 +2,25 @@
 
 /// <p>Provides the runtime system, policy definition, and whether debug logging enabled. You can specify the following CustomPolicyDetails parameter values only for Config Custom Policy rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPolicyDetails {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
     #[doc(hidden)]
-    pub policy_runtime: std::option::Option<std::string::String>,
+    pub policy_runtime: ::std::option::Option<::std::string::String>,
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
     #[doc(hidden)]
-    pub policy_text: std::option::Option<std::string::String>,
+    pub policy_text: ::std::option::Option<::std::string::String>,
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub enable_debug_log_delivery: bool,
 }
 impl CustomPolicyDetails {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub fn policy_runtime(&self) -> std::option::Option<&str> {
+    pub fn policy_runtime(&self) -> ::std::option::Option<&str> {
         self.policy_runtime.as_deref()
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    pub fn policy_text(&self) -> std::option::Option<&str> {
+    pub fn policy_text(&self) -> ::std::option::Option<&str> {
         self.policy_text.as_deref()
     }
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
@@ -37,40 +37,48 @@ impl CustomPolicyDetails {
 
 /// A builder for [`CustomPolicyDetails`](crate::types::CustomPolicyDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomPolicyDetailsBuilder {
-    pub(crate) policy_runtime: std::option::Option<std::string::String>,
-    pub(crate) policy_text: std::option::Option<std::string::String>,
-    pub(crate) enable_debug_log_delivery: std::option::Option<bool>,
+    pub(crate) policy_runtime: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_text: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_debug_log_delivery: ::std::option::Option<bool>,
 }
 impl CustomPolicyDetailsBuilder {
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub fn policy_runtime(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_runtime = Some(input.into());
+    pub fn policy_runtime(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_runtime = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The runtime system for your Config Custom Policy rule. Guard is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. For more information about Guard, see the <a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>.</p>
-    pub fn set_policy_runtime(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_runtime(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_runtime = input;
         self
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_text = Some(input.into());
+    pub fn policy_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy definition containing the logic for your Config Custom Policy rule.</p>
-    pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_text = input;
         self
     }
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
     pub fn enable_debug_log_delivery(mut self, input: bool) -> Self {
-        self.enable_debug_log_delivery = Some(input);
+        self.enable_debug_log_delivery = ::std::option::Option::Some(input);
         self
     }
     /// <p>The boolean expression for enabling debug logging for your Config Custom Policy rule. The default value is <code>false</code>.</p>
-    pub fn set_enable_debug_log_delivery(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_debug_log_delivery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_debug_log_delivery = input;
         self
     }

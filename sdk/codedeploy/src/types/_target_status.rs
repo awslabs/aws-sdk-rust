@@ -43,13 +43,13 @@
 /// _Note: `TargetStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum TargetStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetStatus {
+impl ::std::convert::From<&str> for TargetStatus {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => TargetStatus::Failed,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for TargetStatus {
         }
     }
 }
-impl std::str::FromStr for TargetStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetStatus::from(s))
     }
 }
 impl TargetStatus {
@@ -119,7 +119,7 @@ impl TargetStatus {
         ]
     }
 }
-impl AsRef<str> for TargetStatus {
+impl ::std::convert::AsRef<str> for TargetStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

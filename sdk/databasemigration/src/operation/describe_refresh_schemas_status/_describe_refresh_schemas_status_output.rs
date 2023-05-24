@@ -2,22 +2,22 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRefreshSchemasStatusOutput {
     /// <p>The status of the schema.</p>
     #[doc(hidden)]
-    pub refresh_schemas_status: std::option::Option<crate::types::RefreshSchemasStatus>,
+    pub refresh_schemas_status: ::std::option::Option<crate::types::RefreshSchemasStatus>,
     _request_id: Option<String>,
 }
 impl DescribeRefreshSchemasStatusOutput {
     /// <p>The status of the schema.</p>
     pub fn refresh_schemas_status(
         &self,
-    ) -> std::option::Option<&crate::types::RefreshSchemasStatus> {
+    ) -> ::std::option::Option<&crate::types::RefreshSchemasStatus> {
         self.refresh_schemas_status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeRefreshSchemasStatusOutput {
+impl ::aws_http::request_id::RequestId for DescribeRefreshSchemasStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl DescribeRefreshSchemasStatusOutput {
 
 /// A builder for [`DescribeRefreshSchemasStatusOutput`](crate::operation::describe_refresh_schemas_status::DescribeRefreshSchemasStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeRefreshSchemasStatusOutputBuilder {
-    pub(crate) refresh_schemas_status: std::option::Option<crate::types::RefreshSchemasStatus>,
+    pub(crate) refresh_schemas_status: ::std::option::Option<crate::types::RefreshSchemasStatus>,
     _request_id: Option<String>,
 }
 impl DescribeRefreshSchemasStatusOutputBuilder {
     /// <p>The status of the schema.</p>
     pub fn refresh_schemas_status(mut self, input: crate::types::RefreshSchemasStatus) -> Self {
-        self.refresh_schemas_status = Some(input);
+        self.refresh_schemas_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the schema.</p>
     pub fn set_refresh_schemas_status(
         mut self,
-        input: std::option::Option<crate::types::RefreshSchemasStatus>,
+        input: ::std::option::Option<crate::types::RefreshSchemasStatus>,
     ) -> Self {
         self.refresh_schemas_status = input;
         self

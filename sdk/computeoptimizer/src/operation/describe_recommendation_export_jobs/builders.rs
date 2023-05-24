@@ -7,47 +7,50 @@ pub use crate::operation::describe_recommendation_export_jobs::_describe_recomme
 ///
 /// <p>Describes recommendation export jobs created in the last seven days.</p>
 /// <p>Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations. Then use the <code>DescribeRecommendationExportJobs</code> action to view your export jobs.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRecommendationExportJobsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder,
 }
 impl DescribeRecommendationExportJobsFluentBuilder {
     /// Creates a new `DescribeRecommendationExportJobs`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobs, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,7 +61,7 @@ impl DescribeRecommendationExportJobsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsError>>
                          {
         self.send_middleware().await
     }
@@ -75,7 +78,7 @@ impl DescribeRecommendationExportJobsFluentBuilder {
     /// <p>The identification numbers of the export jobs to return.</p>
     /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
-    pub fn job_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_ids(input.into());
         self
     }
@@ -84,7 +87,7 @@ impl DescribeRecommendationExportJobsFluentBuilder {
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
     pub fn set_job_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_job_ids(input);
         self
@@ -101,18 +104,18 @@ impl DescribeRecommendationExportJobsFluentBuilder {
     /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::JobFilter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>The token to advance to the next page of export jobs.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to advance to the next page of export jobs.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -124,7 +127,7 @@ impl DescribeRecommendationExportJobsFluentBuilder {
     }
     /// <p>The maximum number of export jobs to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

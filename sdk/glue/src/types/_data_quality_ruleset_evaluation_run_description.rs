@@ -2,36 +2,36 @@
 
 /// <p>Describes the result of a data quality ruleset evaluation run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityRulesetEvaluationRunDescription {
     /// <p>The unique run identifier associated with this run.</p>
     #[doc(hidden)]
-    pub run_id: std::option::Option<std::string::String>,
+    pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The status for this run.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::TaskStatusType>,
+    pub status: ::std::option::Option<crate::types::TaskStatusType>,
     /// <p>The date and time when the run started.</p>
     #[doc(hidden)]
-    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data source (an Glue table) associated with the run.</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<crate::types::DataSource>,
+    pub data_source: ::std::option::Option<crate::types::DataSource>,
 }
 impl DataQualityRulesetEvaluationRunDescription {
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
     /// <p>The status for this run.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TaskStatusType> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskStatusType> {
         self.status.as_ref()
     }
     /// <p>The date and time when the run started.</p>
-    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>The data source (an Glue table) associated with the run.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
 }
@@ -44,54 +44,62 @@ impl DataQualityRulesetEvaluationRunDescription {
 
 /// A builder for [`DataQualityRulesetEvaluationRunDescription`](crate::types::DataQualityRulesetEvaluationRunDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataQualityRulesetEvaluationRunDescriptionBuilder {
-    pub(crate) run_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::TaskStatusType>,
-    pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) data_source: std::option::Option<crate::types::DataSource>,
+    pub(crate) run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::TaskStatusType>,
+    pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
 }
 impl DataQualityRulesetEvaluationRunDescriptionBuilder {
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.run_id = Some(input.into());
+    pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
     }
     /// <p>The status for this run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status for this run.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TaskStatusType>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskStatusType>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The date and time when the run started.</p>
-    pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_on = Some(input);
+    pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the run started.</p>
     pub fn set_started_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_on = input;
         self
     }
     /// <p>The data source (an Glue table) associated with the run.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
-        self.data_source = Some(input);
+        self.data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data source (an Glue table) associated with the run.</p>
-    pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
+    pub fn set_data_source(
+        mut self,
+        input: ::std::option::Option<crate::types::DataSource>,
+    ) -> Self {
         self.data_source = input;
         self
     }

@@ -38,13 +38,13 @@
 /// H264 Quality Level
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264QualityLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum H264QualityLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264QualityLevel {
+impl ::std::convert::From<&str> for H264QualityLevel {
     fn from(s: &str) -> Self {
         match s {
             "ENHANCED_QUALITY" => H264QualityLevel::EnhancedQuality,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for H264QualityLevel {
         }
     }
 }
-impl std::str::FromStr for H264QualityLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264QualityLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264QualityLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264QualityLevel::from(s))
     }
 }
 impl H264QualityLevel {
@@ -86,7 +86,7 @@ impl H264QualityLevel {
         &["ENHANCED_QUALITY", "STANDARD_QUALITY"]
     }
 }
-impl AsRef<str> for H264QualityLevel {
+impl ::std::convert::AsRef<str> for H264QualityLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

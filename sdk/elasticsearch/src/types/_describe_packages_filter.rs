@@ -2,22 +2,22 @@
 
 /// <p>Filter to apply in <code>DescribePackage</code> response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackagesFilter {
     /// <p>Any field from <code>PackageDetails</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::DescribePackagesFilterName>,
+    pub name: ::std::option::Option<crate::types::DescribePackagesFilterName>,
     /// <p>A non-empty list of values for the specified field.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribePackagesFilter {
     /// <p>Any field from <code>PackageDetails</code>.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::DescribePackagesFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::DescribePackagesFilterName> {
         self.name.as_ref()
     }
     /// <p>A non-empty list of values for the specified field.</p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.value.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl DescribePackagesFilter {
 
 /// A builder for [`DescribePackagesFilter`](crate::types::DescribePackagesFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribePackagesFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::DescribePackagesFilterName>,
-    pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<crate::types::DescribePackagesFilterName>,
+    pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribePackagesFilterBuilder {
     /// <p>Any field from <code>PackageDetails</code>.</p>
     pub fn name(mut self, input: crate::types::DescribePackagesFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Any field from <code>PackageDetails</code>.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::DescribePackagesFilterName>,
+        input: ::std::option::Option<crate::types::DescribePackagesFilterName>,
     ) -> Self {
         self.name = input;
         self
@@ -54,16 +56,16 @@ impl DescribePackagesFilterBuilder {
     /// To override the contents of this collection use [`set_value`](Self::set_value).
     ///
     /// <p>A non-empty list of values for the specified field.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
         v.push(input.into());
-        self.value = Some(v);
+        self.value = ::std::option::Option::Some(v);
         self
     }
     /// <p>A non-empty list of values for the specified field.</p>
     pub fn set_value(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.value = input;
         self

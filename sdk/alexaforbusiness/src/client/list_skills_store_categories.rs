@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder::set_next_token): <p>The tokens used for pagination.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder::set_next_token): <p>The tokens used for pagination.</p>
     ///   - [`max_results(i32)`](crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_skills_store_categories::builders::ListSkillsStoreCategoriesFluentBuilder::set_max_results): <p>The maximum number of categories returned, per paginated calls.</p>
     /// - On success, responds with [`ListSkillsStoreCategoriesOutput`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput) with field(s):
     ///   - [`category_list(Option<Vec<Category>>)`](crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput::category_list): <p>The list of categories.</p>

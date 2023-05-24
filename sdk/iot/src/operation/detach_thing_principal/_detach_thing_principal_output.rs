@@ -2,11 +2,11 @@
 
 /// <p>The output from the DetachThingPrincipal operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachThingPrincipalOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DetachThingPrincipalOutput {
+impl ::aws_http::request_id::RequestId for DetachThingPrincipalOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DetachThingPrincipalOutput {
 
 /// A builder for [`DetachThingPrincipalOutput`](crate::operation::detach_thing_principal::DetachThingPrincipalOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetachThingPrincipalOutputBuilder {
     _request_id: Option<String>,
 }

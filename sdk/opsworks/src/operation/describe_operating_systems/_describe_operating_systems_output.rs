@@ -2,20 +2,20 @@
 
 /// <p>The response to a <code>DescribeOperatingSystems</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOperatingSystemsOutput {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
     #[doc(hidden)]
-    pub operating_systems: std::option::Option<std::vec::Vec<crate::types::OperatingSystem>>,
+    pub operating_systems: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
     _request_id: Option<String>,
 }
 impl DescribeOperatingSystemsOutput {
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
-    pub fn operating_systems(&self) -> std::option::Option<&[crate::types::OperatingSystem]> {
+    pub fn operating_systems(&self) -> ::std::option::Option<&[crate::types::OperatingSystem]> {
         self.operating_systems.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeOperatingSystemsOutput {
+impl ::aws_http::request_id::RequestId for DescribeOperatingSystemsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,12 @@ impl DescribeOperatingSystemsOutput {
 
 /// A builder for [`DescribeOperatingSystemsOutput`](crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOperatingSystemsOutputBuilder {
-    pub(crate) operating_systems: std::option::Option<std::vec::Vec<crate::types::OperatingSystem>>,
+    pub(crate) operating_systems:
+        ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
     _request_id: Option<String>,
 }
 impl DescribeOperatingSystemsOutputBuilder {
@@ -45,13 +48,13 @@ impl DescribeOperatingSystemsOutputBuilder {
     pub fn operating_systems(mut self, input: crate::types::OperatingSystem) -> Self {
         let mut v = self.operating_systems.unwrap_or_default();
         v.push(input);
-        self.operating_systems = Some(v);
+        self.operating_systems = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains information in response to a <code>DescribeOperatingSystems</code> request.</p>
     pub fn set_operating_systems(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OperatingSystem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OperatingSystem>>,
     ) -> Self {
         self.operating_systems = input;
         self

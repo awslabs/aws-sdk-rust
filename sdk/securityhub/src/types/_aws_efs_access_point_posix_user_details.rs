@@ -2,29 +2,29 @@
 
 /// <p>Provides details for all file system operations using this Amazon EFS access point. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEfsAccessPointPosixUserDetails {
     /// <p>The POSIX group ID used for all file system operations using this access point. </p>
     #[doc(hidden)]
-    pub gid: std::option::Option<std::string::String>,
+    pub gid: ::std::option::Option<::std::string::String>,
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
     #[doc(hidden)]
-    pub secondary_gids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub secondary_gids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The POSIX user ID used for all file system operations using this access point. </p>
     #[doc(hidden)]
-    pub uid: std::option::Option<std::string::String>,
+    pub uid: ::std::option::Option<::std::string::String>,
 }
 impl AwsEfsAccessPointPosixUserDetails {
     /// <p>The POSIX group ID used for all file system operations using this access point. </p>
-    pub fn gid(&self) -> std::option::Option<&str> {
+    pub fn gid(&self) -> ::std::option::Option<&str> {
         self.gid.as_deref()
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
-    pub fn secondary_gids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn secondary_gids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.secondary_gids.as_deref()
     }
     /// <p>The POSIX user ID used for all file system operations using this access point. </p>
-    pub fn uid(&self) -> std::option::Option<&str> {
+    pub fn uid(&self) -> ::std::option::Option<&str> {
         self.uid.as_deref()
     }
 }
@@ -37,20 +37,22 @@ impl AwsEfsAccessPointPosixUserDetails {
 
 /// A builder for [`AwsEfsAccessPointPosixUserDetails`](crate::types::AwsEfsAccessPointPosixUserDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEfsAccessPointPosixUserDetailsBuilder {
-    pub(crate) gid: std::option::Option<std::string::String>,
-    pub(crate) secondary_gids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) uid: std::option::Option<std::string::String>,
+    pub(crate) gid: ::std::option::Option<::std::string::String>,
+    pub(crate) secondary_gids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) uid: ::std::option::Option<::std::string::String>,
 }
 impl AwsEfsAccessPointPosixUserDetailsBuilder {
     /// <p>The POSIX group ID used for all file system operations using this access point. </p>
-    pub fn gid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gid = Some(input.into());
+    pub fn gid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The POSIX group ID used for all file system operations using this access point. </p>
-    pub fn set_gid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gid = input;
         self
     }
@@ -59,27 +61,30 @@ impl AwsEfsAccessPointPosixUserDetailsBuilder {
     /// To override the contents of this collection use [`set_secondary_gids`](Self::set_secondary_gids).
     ///
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
-    pub fn secondary_gids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn secondary_gids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.secondary_gids.unwrap_or_default();
         v.push(input.into());
-        self.secondary_gids = Some(v);
+        self.secondary_gids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Secondary POSIX group IDs used for all file system operations using this access point. </p>
     pub fn set_secondary_gids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.secondary_gids = input;
         self
     }
     /// <p>The POSIX user ID used for all file system operations using this access point. </p>
-    pub fn uid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uid = Some(input.into());
+    pub fn uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The POSIX user ID used for all file system operations using this access point. </p>
-    pub fn set_uid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uid = input;
         self
     }

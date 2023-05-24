@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInputSecurityGroup`](crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_security_group_id(impl Into<String>)`](crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupFluentBuilder::input_security_group_id) / [`set_input_security_group_id(Option<String>)`](crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupFluentBuilder::set_input_security_group_id): The id of the Input Security Group to describe
+    ///   - [`input_security_group_id(impl ::std::convert::Into<String>)`](crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupFluentBuilder::input_security_group_id) / [`set_input_security_group_id(Option<String>)`](crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupFluentBuilder::set_input_security_group_id): The id of the Input Security Group to describe
     /// - On success, responds with [`DescribeInputSecurityGroupOutput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::arn): Unique ARN of Input Security Group
     ///   - [`id(Option<String>)`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput::id): The Id of the Input Security Group

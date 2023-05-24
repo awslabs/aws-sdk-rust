@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteChannel`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel(impl Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::channel) / [`set_channel(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_channel): <p>The ARN or the <code>UUID</code> value of the channel that you want to delete.</p>
+    ///   - [`channel(impl ::std::convert::Into<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::channel) / [`set_channel(Option<String>)`](crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::set_channel): <p>The ARN or the <code>UUID</code> value of the channel that you want to delete.</p>
     /// - On success, responds with [`DeleteChannelOutput`](crate::operation::delete_channel::DeleteChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::operation::delete_channel::DeleteChannelError)
     pub fn delete_channel(

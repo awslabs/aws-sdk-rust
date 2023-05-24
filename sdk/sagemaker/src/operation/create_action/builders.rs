@@ -6,56 +6,59 @@ pub use crate::operation::create_action::_create_action_input::CreateActionInput
 /// Fluent builder constructing a request to `CreateAction`.
 ///
 /// <p>Creates an <i>action</i>. An action is a lineage tracking entity that represents an action or activity. For example, a model deployment or an HPO job. Generally, an action involves at least one input or output artifact. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateActionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_action::builders::CreateActionInputBuilder,
 }
 impl CreateActionFluentBuilder {
     /// Creates a new `CreateAction`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_action::CreateAction,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_action::CreateActionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_action::CreateActionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_action::CreateActionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_action::CreateActionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_action::CreateActionError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl CreateActionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_action::CreateActionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_action::CreateActionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_action::CreateActionError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_name(input.into());
         self
     }
     /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_name(input);
         self
     }
@@ -90,27 +93,27 @@ impl CreateActionFluentBuilder {
         self
     }
     /// <p>The source type, ID, and URI.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::ActionSource>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ActionSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
     /// <p>The action type.</p>
-    pub fn action_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn action_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_type(input.into());
         self
     }
     /// <p>The action type.</p>
-    pub fn set_action_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
     }
     /// <p>The description of the action.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the action.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -120,7 +123,7 @@ impl CreateActionFluentBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ActionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ActionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -131,8 +134,8 @@ impl CreateActionFluentBuilder {
     /// <p>A list of properties to add to the action.</p>
     pub fn properties(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.properties(k.into(), v.into());
         self
@@ -140,8 +143,8 @@ impl CreateActionFluentBuilder {
     /// <p>A list of properties to add to the action.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_properties(input);
@@ -155,7 +158,7 @@ impl CreateActionFluentBuilder {
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn set_metadata_properties(
         mut self,
-        input: std::option::Option<crate::types::MetadataProperties>,
+        input: ::std::option::Option<crate::types::MetadataProperties>,
     ) -> Self {
         self.inner = self.inner.set_metadata_properties(input);
         self
@@ -172,7 +175,7 @@ impl CreateActionFluentBuilder {
     /// <p>A list of tags to apply to the action.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

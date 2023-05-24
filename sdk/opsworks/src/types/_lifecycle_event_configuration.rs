@@ -2,15 +2,15 @@
 
 /// <p>Specifies the lifecycle event configuration</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleEventConfiguration {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     #[doc(hidden)]
-    pub shutdown: std::option::Option<crate::types::ShutdownEventConfiguration>,
+    pub shutdown: ::std::option::Option<crate::types::ShutdownEventConfiguration>,
 }
 impl LifecycleEventConfiguration {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
-    pub fn shutdown(&self) -> std::option::Option<&crate::types::ShutdownEventConfiguration> {
+    pub fn shutdown(&self) -> ::std::option::Option<&crate::types::ShutdownEventConfiguration> {
         self.shutdown.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl LifecycleEventConfiguration {
 
 /// A builder for [`LifecycleEventConfiguration`](crate::types::LifecycleEventConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LifecycleEventConfigurationBuilder {
-    pub(crate) shutdown: std::option::Option<crate::types::ShutdownEventConfiguration>,
+    pub(crate) shutdown: ::std::option::Option<crate::types::ShutdownEventConfiguration>,
 }
 impl LifecycleEventConfigurationBuilder {
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub fn shutdown(mut self, input: crate::types::ShutdownEventConfiguration) -> Self {
-        self.shutdown = Some(input);
+        self.shutdown = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event configuration.</p>
     pub fn set_shutdown(
         mut self,
-        input: std::option::Option<crate::types::ShutdownEventConfiguration>,
+        input: ::std::option::Option<crate::types::ShutdownEventConfiguration>,
     ) -> Self {
         self.shutdown = input;
         self

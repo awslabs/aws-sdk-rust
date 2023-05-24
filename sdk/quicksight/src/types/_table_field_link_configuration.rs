@@ -2,24 +2,24 @@
 
 /// <p>The link configuration of a table field URL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldLinkConfiguration {
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<crate::types::UrlTargetConfiguration>,
+    pub target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
     /// <p>The URL content (text, icon) for the table link configuration.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
+    pub content: ::std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
 }
 impl TableFieldLinkConfiguration {
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
-    pub fn target(&self) -> std::option::Option<&crate::types::UrlTargetConfiguration> {
+    pub fn target(&self) -> ::std::option::Option<&crate::types::UrlTargetConfiguration> {
         self.target.as_ref()
     }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
     pub fn content(
         &self,
-    ) -> std::option::Option<&crate::types::TableFieldLinkContentConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TableFieldLinkContentConfiguration> {
         self.content.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl TableFieldLinkConfiguration {
 
 /// A builder for [`TableFieldLinkConfiguration`](crate::types::TableFieldLinkConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableFieldLinkConfigurationBuilder {
-    pub(crate) target: std::option::Option<crate::types::UrlTargetConfiguration>,
-    pub(crate) content: std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
+    pub(crate) target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
+    pub(crate) content: ::std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
 }
 impl TableFieldLinkConfigurationBuilder {
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
     pub fn target(mut self, input: crate::types::UrlTargetConfiguration) -> Self {
-        self.target = Some(input);
+        self.target = ::std::option::Option::Some(input);
         self
     }
     /// <p>The URL target (new tab, new window, same tab) for the table link configuration.</p>
     pub fn set_target(
         mut self,
-        input: std::option::Option<crate::types::UrlTargetConfiguration>,
+        input: ::std::option::Option<crate::types::UrlTargetConfiguration>,
     ) -> Self {
         self.target = input;
         self
     }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
     pub fn content(mut self, input: crate::types::TableFieldLinkContentConfiguration) -> Self {
-        self.content = Some(input);
+        self.content = ::std::option::Option::Some(input);
         self
     }
     /// <p>The URL content (text, icon) for the table link configuration.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
+        input: ::std::option::Option<crate::types::TableFieldLinkContentConfiguration>,
     ) -> Self {
         self.content = input;
         self

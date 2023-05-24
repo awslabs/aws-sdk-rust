@@ -4,10 +4,10 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`storage_job_id(impl Into<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::storage_job_id) / [`set_storage_job_id(Option<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_storage_job_id): Storage job id
-    ///   - [`object_token(impl Into<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::object_token) / [`set_object_token(Option<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_object_token): Object token
+    ///   - [`storage_job_id(impl ::std::convert::Into<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::storage_job_id) / [`set_storage_job_id(Option<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_storage_job_id): Storage job id
+    ///   - [`object_token(impl ::std::convert::Into<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::object_token) / [`set_object_token(Option<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_object_token): Object token
     ///   - [`max_results(i32)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_max_results): Maximum number of chunks
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_next_token): Pagination token
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_chunks::builders::ListChunksFluentBuilder::set_next_token): Pagination token
     /// - On success, responds with [`ListChunksOutput`](crate::operation::list_chunks::ListChunksOutput) with field(s):
     ///   - [`chunk_list(Option<Vec<Chunk>>)`](crate::operation::list_chunks::ListChunksOutput::chunk_list): List of chunks
     ///   - [`next_token(Option<String>)`](crate::operation::list_chunks::ListChunksOutput::next_token): Pagination token

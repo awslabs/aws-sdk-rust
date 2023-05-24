@@ -2,15 +2,15 @@
 
 /// <p>The type of action to be taken.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicyRuleAction {
     /// <p>The type of action to be taken.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ImageActionType>,
+    pub r#type: ::std::option::Option<crate::types::ImageActionType>,
 }
 impl LifecyclePolicyRuleAction {
     /// <p>The type of action to be taken.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ImageActionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImageActionType> {
         self.r#type.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl LifecyclePolicyRuleAction {
 
 /// A builder for [`LifecyclePolicyRuleAction`](crate::types::LifecyclePolicyRuleAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LifecyclePolicyRuleActionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ImageActionType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ImageActionType>,
 }
 impl LifecyclePolicyRuleActionBuilder {
     /// <p>The type of action to be taken.</p>
     pub fn r#type(mut self, input: crate::types::ImageActionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of action to be taken.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ImageActionType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImageActionType>) -> Self {
         self.r#type = input;
         self
     }

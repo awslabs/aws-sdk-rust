@@ -2,37 +2,37 @@
 
 /// <p>Gets information about a Sidewalk device profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SidewalkGetDeviceProfile {
     /// <p>The Sidewalk application server public key.</p>
     #[doc(hidden)]
-    pub application_server_public_key: std::option::Option<std::string::String>,
+    pub application_server_public_key: ::std::option::Option<::std::string::String>,
     /// <p>Gets information about the certification status of a Sidewalk device profile.</p>
     #[doc(hidden)]
-    pub qualification_status: std::option::Option<bool>,
+    pub qualification_status: ::std::option::Option<bool>,
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
     #[doc(hidden)]
     pub dak_certificate_metadata:
-        std::option::Option<std::vec::Vec<crate::types::DakCertificateMetadata>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
 }
 impl SidewalkGetDeviceProfile {
     /// <p>The Sidewalk application server public key.</p>
-    pub fn application_server_public_key(&self) -> std::option::Option<&str> {
+    pub fn application_server_public_key(&self) -> ::std::option::Option<&str> {
         self.application_server_public_key.as_deref()
     }
     /// <p>Gets information about the certification status of a Sidewalk device profile.</p>
-    pub fn qualification_status(&self) -> std::option::Option<bool> {
+    pub fn qualification_status(&self) -> ::std::option::Option<bool> {
         self.qualification_status
     }
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
     pub fn dak_certificate_metadata(
         &self,
-    ) -> std::option::Option<&[crate::types::DakCertificateMetadata]> {
+    ) -> ::std::option::Option<&[crate::types::DakCertificateMetadata]> {
         self.dak_certificate_metadata.as_deref()
     }
 }
-impl std::fmt::Debug for SidewalkGetDeviceProfile {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SidewalkGetDeviceProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkGetDeviceProfile");
         formatter.field(
             "application_server_public_key",
@@ -52,34 +52,37 @@ impl SidewalkGetDeviceProfile {
 
 /// A builder for [`SidewalkGetDeviceProfile`](crate::types::SidewalkGetDeviceProfile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SidewalkGetDeviceProfileBuilder {
-    pub(crate) application_server_public_key: std::option::Option<std::string::String>,
-    pub(crate) qualification_status: std::option::Option<bool>,
+    pub(crate) application_server_public_key: ::std::option::Option<::std::string::String>,
+    pub(crate) qualification_status: ::std::option::Option<bool>,
     pub(crate) dak_certificate_metadata:
-        std::option::Option<std::vec::Vec<crate::types::DakCertificateMetadata>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
 }
 impl SidewalkGetDeviceProfileBuilder {
     /// <p>The Sidewalk application server public key.</p>
-    pub fn application_server_public_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_server_public_key = Some(input.into());
+    pub fn application_server_public_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_server_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Sidewalk application server public key.</p>
     pub fn set_application_server_public_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.application_server_public_key = input;
         self
     }
     /// <p>Gets information about the certification status of a Sidewalk device profile.</p>
     pub fn qualification_status(mut self, input: bool) -> Self {
-        self.qualification_status = Some(input);
+        self.qualification_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Gets information about the certification status of a Sidewalk device profile.</p>
-    pub fn set_qualification_status(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_qualification_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.qualification_status = input;
         self
     }
@@ -91,13 +94,13 @@ impl SidewalkGetDeviceProfileBuilder {
     pub fn dak_certificate_metadata(mut self, input: crate::types::DakCertificateMetadata) -> Self {
         let mut v = self.dak_certificate_metadata.unwrap_or_default();
         v.push(input);
-        self.dak_certificate_metadata = Some(v);
+        self.dak_certificate_metadata = ::std::option::Option::Some(v);
         self
     }
     /// <p>The DAK certificate information of the Sidewalk device profile.</p>
     pub fn set_dak_certificate_metadata(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DakCertificateMetadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DakCertificateMetadata>>,
     ) -> Self {
         self.dak_certificate_metadata = input;
         self
@@ -111,8 +114,8 @@ impl SidewalkGetDeviceProfileBuilder {
         }
     }
 }
-impl std::fmt::Debug for SidewalkGetDeviceProfileBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SidewalkGetDeviceProfileBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkGetDeviceProfileBuilder");
         formatter.field(
             "application_server_public_key",

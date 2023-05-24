@@ -2,40 +2,42 @@
 
 /// <p>Identifying information about the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSummary {
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
-    pub managed_device_id: std::option::Option<std::string::String>,
+    pub managed_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     #[doc(hidden)]
-    pub managed_device_arn: std::option::Option<std::string::String>,
+    pub managed_device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job used to order the device.</p>
     #[doc(hidden)]
-    pub associated_with_job: std::option::Option<std::string::String>,
+    pub associated_with_job: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl DeviceSummary {
     /// <p>The ID of the device.</p>
-    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
         self.managed_device_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn managed_device_arn(&self) -> std::option::Option<&str> {
+    pub fn managed_device_arn(&self) -> ::std::option::Option<&str> {
         self.managed_device_arn.as_deref()
     }
     /// <p>The ID of the job used to order the device.</p>
-    pub fn associated_with_job(&self) -> std::option::Option<&str> {
+    pub fn associated_with_job(&self) -> ::std::option::Option<&str> {
         self.associated_with_job.as_deref()
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -48,50 +50,62 @@ impl DeviceSummary {
 
 /// A builder for [`DeviceSummary`](crate::types::DeviceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceSummaryBuilder {
-    pub(crate) managed_device_id: std::option::Option<std::string::String>,
-    pub(crate) managed_device_arn: std::option::Option<std::string::String>,
-    pub(crate) associated_with_job: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_device_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) associated_with_job: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl DeviceSummaryBuilder {
     /// <p>The ID of the device.</p>
-    pub fn managed_device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.managed_device_id = Some(input.into());
+    pub fn managed_device_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.managed_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device.</p>
     pub fn set_managed_device_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.managed_device_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn managed_device_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.managed_device_arn = Some(input.into());
+    pub fn managed_device_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.managed_device_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
     pub fn set_managed_device_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.managed_device_arn = input;
         self
     }
     /// <p>The ID of the job used to order the device.</p>
-    pub fn associated_with_job(mut self, input: impl Into<std::string::String>) -> Self {
-        self.associated_with_job = Some(input.into());
+    pub fn associated_with_job(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.associated_with_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job used to order the device.</p>
     pub fn set_associated_with_job(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.associated_with_job = input;
         self
@@ -103,19 +117,19 @@ impl DeviceSummaryBuilder {
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

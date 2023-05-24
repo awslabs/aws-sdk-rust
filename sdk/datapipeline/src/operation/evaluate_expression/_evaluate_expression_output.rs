@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of EvaluateExpression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
     #[doc(hidden)]
-    pub evaluated_expression: std::option::Option<std::string::String>,
+    pub evaluated_expression: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EvaluateExpressionOutput {
     /// <p>The evaluated expression.</p>
-    pub fn evaluated_expression(&self) -> std::option::Option<&str> {
+    pub fn evaluated_expression(&self) -> ::std::option::Option<&str> {
         self.evaluated_expression.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for EvaluateExpressionOutput {
+impl ::aws_http::request_id::RequestId for EvaluateExpressionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,26 @@ impl EvaluateExpressionOutput {
 
 /// A builder for [`EvaluateExpressionOutput`](crate::operation::evaluate_expression::EvaluateExpressionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluateExpressionOutputBuilder {
-    pub(crate) evaluated_expression: std::option::Option<std::string::String>,
+    pub(crate) evaluated_expression: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EvaluateExpressionOutputBuilder {
     /// <p>The evaluated expression.</p>
-    pub fn evaluated_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluated_expression = Some(input.into());
+    pub fn evaluated_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluated_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The evaluated expression.</p>
     pub fn set_evaluated_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.evaluated_expression = input;
         self

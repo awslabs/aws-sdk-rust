@@ -2,23 +2,23 @@
 
 /// <p>Contains the output of RequestSpotInstances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestSpotInstancesOutput {
     /// <p>The Spot Instance requests.</p>
     #[doc(hidden)]
     pub spot_instance_requests:
-        std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     _request_id: Option<String>,
 }
 impl RequestSpotInstancesOutput {
     /// <p>The Spot Instance requests.</p>
     pub fn spot_instance_requests(
         &self,
-    ) -> std::option::Option<&[crate::types::SpotInstanceRequest]> {
+    ) -> ::std::option::Option<&[crate::types::SpotInstanceRequest]> {
         self.spot_instance_requests.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RequestSpotInstancesOutput {
+impl ::aws_http::request_id::RequestId for RequestSpotInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,10 +33,12 @@ impl RequestSpotInstancesOutput {
 
 /// A builder for [`RequestSpotInstancesOutput`](crate::operation::request_spot_instances::RequestSpotInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RequestSpotInstancesOutputBuilder {
     pub(crate) spot_instance_requests:
-        std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     _request_id: Option<String>,
 }
 impl RequestSpotInstancesOutputBuilder {
@@ -48,13 +50,13 @@ impl RequestSpotInstancesOutputBuilder {
     pub fn spot_instance_requests(mut self, input: crate::types::SpotInstanceRequest) -> Self {
         let mut v = self.spot_instance_requests.unwrap_or_default();
         v.push(input);
-        self.spot_instance_requests = Some(v);
+        self.spot_instance_requests = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Spot Instance requests.</p>
     pub fn set_spot_instance_requests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     ) -> Self {
         self.spot_instance_requests = input;
         self

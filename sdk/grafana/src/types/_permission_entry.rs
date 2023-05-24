@@ -2,22 +2,22 @@
 
 /// <p>A structure containing the identity of one user or group and the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role that they have.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
     #[doc(hidden)]
-    pub user: std::option::Option<crate::types::User>,
+    pub user: ::std::option::Option<crate::types::User>,
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<crate::types::Role>,
+    pub role: ::std::option::Option<crate::types::Role>,
 }
 impl PermissionEntry {
     /// <p>A structure with the ID of the user or group with this role.</p>
-    pub fn user(&self) -> std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> ::std::option::Option<&crate::types::User> {
         self.user.as_ref()
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::types::Role> {
+    pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
         self.role.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl PermissionEntry {
 
 /// A builder for [`PermissionEntry`](crate::types::PermissionEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PermissionEntryBuilder {
-    pub(crate) user: std::option::Option<crate::types::User>,
-    pub(crate) role: std::option::Option<crate::types::Role>,
+    pub(crate) user: ::std::option::Option<crate::types::User>,
+    pub(crate) role: ::std::option::Option<crate::types::Role>,
 }
 impl PermissionEntryBuilder {
     /// <p>A structure with the ID of the user or group with this role.</p>
     pub fn user(mut self, input: crate::types::User) -> Self {
-        self.user = Some(input);
+        self.user = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure with the ID of the user or group with this role.</p>
-    pub fn set_user(mut self, input: std::option::Option<crate::types::User>) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<crate::types::User>) -> Self {
         self.user = input;
         self
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
     pub fn role(mut self, input: crate::types::Role) -> Self {
-        self.role = Some(input);
+        self.role = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.</p>
-    pub fn set_role(mut self, input: std::option::Option<crate::types::Role>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.role = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>A structure describing the source of an artifact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArtifactSource {
     /// <p>The URI of the source.</p>
     #[doc(hidden)]
-    pub source_uri: std::option::Option<std::string::String>,
+    pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>A list of source types.</p>
     #[doc(hidden)]
-    pub source_types: std::option::Option<std::vec::Vec<crate::types::ArtifactSourceType>>,
+    pub source_types: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
 }
 impl ArtifactSource {
     /// <p>The URI of the source.</p>
-    pub fn source_uri(&self) -> std::option::Option<&str> {
+    pub fn source_uri(&self) -> ::std::option::Option<&str> {
         self.source_uri.as_deref()
     }
     /// <p>A list of source types.</p>
-    pub fn source_types(&self) -> std::option::Option<&[crate::types::ArtifactSourceType]> {
+    pub fn source_types(&self) -> ::std::option::Option<&[crate::types::ArtifactSourceType]> {
         self.source_types.as_deref()
     }
 }
@@ -30,19 +30,22 @@ impl ArtifactSource {
 
 /// A builder for [`ArtifactSource`](crate::types::ArtifactSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArtifactSourceBuilder {
-    pub(crate) source_uri: std::option::Option<std::string::String>,
-    pub(crate) source_types: std::option::Option<std::vec::Vec<crate::types::ArtifactSourceType>>,
+    pub(crate) source_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) source_types:
+        ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
 }
 impl ArtifactSourceBuilder {
     /// <p>The URI of the source.</p>
-    pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_uri = Some(input.into());
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the source.</p>
-    pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_uri = input;
         self
     }
@@ -54,13 +57,13 @@ impl ArtifactSourceBuilder {
     pub fn source_types(mut self, input: crate::types::ArtifactSourceType) -> Self {
         let mut v = self.source_types.unwrap_or_default();
         v.push(input);
-        self.source_types = Some(v);
+        self.source_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of source types.</p>
     pub fn set_source_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ArtifactSourceType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactSourceType>>,
     ) -> Self {
         self.source_types = input;
         self
